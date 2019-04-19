@@ -136,4 +136,142 @@ interactions:
       Date: ['Mon, 01 Apr 2019 22:46:51 GMT']
       Server: [Jetty(9.4.7.v20170914)]
     status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=core&apiName=CreateLocalPeeringGateway
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:51:21 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?serviceName=core&apiName=CreateLocalPeeringGateway&lang=Python&clientName=virtualNetwork
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq","endpoint":null,"fingerprint":"ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9","passPhrase":"dexsdk","keyFile":"java_sdk_admin_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,0C9B64A4AA0303EC02C79E91D0F8B0D0\n\naSd0uIKreq5NirzJ+Esa36lYJo4lU2zSjIIw8wvZEsd+LdaifqONZIfHHiB6/KgG\nse4wd/58tPsiEgnK7D1q8wmdVDouMSX31mhcbq2bwRjXATpNnOMnhDtahJv6cw4M\nDtlXYplk0LzpP6WjqXqFST4Yz0l1NO90ahnruwcb/SUCm12ONMJ5o4G1UO2/0IkX\nTRlMRpm/etIpStNSP+1IsD1gSWlAzhs1zodkpd+2eW2ovlAaY25Hm/aqK97jzsCF\n1f4dCm7spCHYOfv10XHNB99/jomN1KQuDy29MmVaJ9oYpOIDlu0yj4Q/XempLxa6\nhqgt0gUO9cMV2bfStsHKWJwq+KoncamBHpU/+CyNjoYq1QTC0urWlCP5hNo5VZhF\nzXBJa188FD2TiPFU8Z4EhercM83TfBsRVEQOpu5sbMaUOT6xXwnCWfM5Pjxy/0xE\n6oF2zq+H0ES12dh19C5P8ueRFLyhaWFliWJv3SXy9iCslcso6USnBBKnA26xMile\nY3m9uRP31yZW8czxYSIgKEV3Mp3GFAYwuebNjLgIM7xT+PvDiOO4qAhA0waGPhYH\n2QMl9ThSahKT6vpjVUQuGOjaRcJ5Vr73VGX4MnxXVxsl5de6y/ZfP5ndx5Lb4K43\njwrMbCIzrM1ZzR2JMTuMJFDasLjEW/Y9nf7FRh2gByeGLObAmHsjlUdW65QQu+Qy\nu4ADc6TbpqvLobocF5fKgML7JCAA/YqmYlZCV6gGOdKUXUT3VMmZcebcTtw1Zmxh\nwaUQe99D90w3Q/7CCCiGO2waZaTNl+ahVnQZEGHN9xJydkCkfVZDgVmdDmsSXmxo\n2DWf2c2/1me2zZAcW0SFBnyrt3uphdCnICaqXR0AnQUmw49YY4nk2fPTMxZs1r+2\n+poVVEfr//cHTTs4yu9ZVT2wGWf/Ooo4sm7obB8EhGkrXs3ormx9WHj6ezexupsd\nanWE7Uy54ovKdOosKB6nQOfP+Iwe4sSJ6oYPNvvh19v05+AhOCdONjMeCwTfBvtJ\nA5luj6CtFbgSX96A3zTRrTXQO3N4aLTF8niL+FcZ69RzYcxp3rlDSK88JyJ9xsu1\n+lNIcAPAFhzisC/eB9b1eDJ4JErJyIdBTZ4bPv4dtl/RpFcyIA4WMjskGCRo60I7\nN3DVqGGXLlC7KDjvPmdvvfAx3lzcIANhwBhLSQJ+y1bcyW6FcX0ZtY962Hb06Qj5\nXG5nDmT1qVkfDmzpIOF9GtDgch7gtf/EjHOUyaw60dDgJ5RF6lORLjFeuU9W7I1e\nD3mpWb6WP6DKoaQTgrLLrIJCLIdXr92XmvDj+iuYdGhCIkqHWqNbRW4TyiuukNJH\n12Zq/LlA1s58YJVa520o7EOXpmD4sGIrctlI3keSmKhiavy7j5ULz5J++jL+Yxlc\n6h9q4v71oyFmVgNpIEJNg7sSCkE72yzUCaglBUdUIMG3D0sI+VwufC7lbhohvHBr\nNzmbg2bW4x0CCprf/o5JvdNiB+bQdKG4t2Q7fhhZIW7ACii591ZBbpnUakDUQBZa\nV2yMaErypILHlQvlReHXVK1adUTxLNWf//VDoyclQk5k0uFIkUmpn+EXWnEHw7e8\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2261']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:51:21 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=core&apiName=CreateLocalPeeringGateway&lang=Python&sessionId=0843
+  response:
+    body: {string: '[{"containerId":"65deaa86-e4ab-46ae-a01a-cf4893420e21","request":{"createLocalPeeringGatewayDetails":{"compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","definedTags":{"testing_service_tag_ns_001":{"testing_service_tag_01":"tag4.__STS0843_7949","testing_service_tag_02":"tag5.__STS0843_7949","testing_service_tag_03":"tag6.__STS0843_7949"}},"displayName":"__STS0843_9472","freeformTags":{"tag1":"value1.__STS0843_1592","tag2":"value2.__STS0843_1592"},"routeTableId":"ocid1.routetable.oc1.phx.aaaaaaaaqi4is6poct4zaszkql6dxm73p2jn7pf4evx5p2x6z7ouiaumhc5a","vcnId":"ocid1.vcn.oc1.phx.aaaaaaaa46oxk6skx34oxnsxzpgs3ve4a6r7opaghk2gwewiimvogwdagq3q"},"opcRetryToken":"b4963bee-e4e9-4c5e-9627-9ace14cc32f8"}}]'}
+    headers:
+      Content-Length: ['752']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:51:21 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"compartmentId": "ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba",
+      "definedTags": {"testing_service_tag_ns_001": {"testing_service_tag_01": "tag4.__STS0843_7949",
+      "testing_service_tag_02": "tag5.__STS0843_7949", "testing_service_tag_03": "tag6.__STS0843_7949"}},
+      "displayName": "__STS0843_9472", "freeformTags": {"tag1": "value1.__STS0843_1592",
+      "tag2": "value2.__STS0843_1592"}, "routeTableId": "ocid1.routetable.oc1.phx.aaaaaaaaqi4is6poct4zaszkql6dxm73p2jn7pf4evx5p2x6z7ouiaumhc5a",
+      "vcnId": "ocid1.vcn.oc1.phx.aaaaaaaa46oxk6skx34oxnsxzpgs3ve4a6r7opaghk2gwewiimvogwdagq3q"}'
+    headers:
+      Content-Length: ['613']
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host content-length content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="EFIZLW3PaG8fPl+uri4iCdwTnm+CizYdRfLVcNBaEq45j/KmOcJAh6pvRdkIbH1OXpXLhEngCMs2QcTcmiEwj0XpJmQDYfiNQwiNAss6yk+5Gih1EkWJitC50FEBVqpkJyx3OXU5LcNFg1RBrKYnSN9rWFrMj+sfkftcuT80SRPIOmttu7zr697WDh/W7PmHvlB8qAvOejIH1Mw22kSVfHaslG7iS/X9bRZPGRFKNZ9D++bKKULbwsuZCK/oD2mwYHrPygcBDVf1jvc+Bh+A5kFWw7VMO/+JIDZwk+p7Yxf1A8I0kVHDkc5ODn/4E7/MTMBj8bX9cWVdkPyAbpDd+w==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 18:51:24 GMT']
+      host: [iaas.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [409A3591CF834BAF8D66803444EE96B4]
+      opc-retry-token: [b4963bee-e4e9-4c5e-9627-9ace14cc32f8]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+      x-content-sha256: [iBucAdUJUeomAm6R976ZPFi0Hryqk6usJUj+wRDcqRo=]
+    method: POST
+    uri: https://iaas.us-phoenix-1.oraclecloud.com/20160918/localPeeringGateways
+  response:
+    body: {string: "{\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"definedTags\" : {\n    \"testing_service_tag_ns_001\" : {\n      \"\
+        testing_service_tag_01\" : \"tag4.__STS0843_7949\",\n      \"testing_service_tag_02\"\
+        \ : \"tag5.__STS0843_7949\",\n      \"testing_service_tag_03\" : \"tag6.__STS0843_7949\"\
+        \n    }\n  },\n  \"displayName\" : \"__STS0843_9472\",\n  \"freeformTags\"\
+        \ : {\n    \"tag1\" : \"value1.__STS0843_1592\",\n    \"tag2\" : \"value2.__STS0843_1592\"\
+        \n  },\n  \"id\" : \"ocid1.localpeeringgateway.oc1.phx.aaaaaaaadj4a6ns5yr3kgorhicteeugotr3664a5hjlygih6uikvurdjyhia\"\
+        ,\n  \"isCrossTenancyPeering\" : false,\n  \"lifecycleState\" : \"AVAILABLE\"\
+        ,\n  \"peeringStatus\" : \"NEW\",\n  \"peeringStatusDetails\" : \"Not connected\
+        \ to a peer.\",\n  \"routeTableId\" : \"ocid1.routetable.oc1.phx.aaaaaaaaqi4is6poct4zaszkql6dxm73p2jn7pf4evx5p2x6z7ouiaumhc5a\"\
+        ,\n  \"timeCreated\" : \"2019-04-18T18:51:24.888Z\",\n  \"vcnId\" : \"ocid1.vcn.oc1.phx.aaaaaaaa46oxk6skx34oxnsxzpgs3ve4a6r7opaghk2gwewiimvogwdagq3q\"\
+        \n}"}
+    headers:
+      Connection: [keep-alive]
+      Content-Length: ['987']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:51:24 GMT']
+      ETag: [d1ffdfa4]
+      X-Content-Type-Options: [nosniff]
+      opc-request-id: [409A3591CF834BAF8D66803444EE96B4/AEA4F47D69E17EFB1FCA7622A78D57A3/B630BA8312B5463EB6F4245DCA1A4623]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"containerId": "65deaa86-e4ab-46ae-a01a-cf4893420e21", "listResponse":
+      false, "requestClass": "com.oracle.bmc.core.requests.CreateLocalPeeringGatewayRequest",
+      "requestJson": "{\"createLocalPeeringGatewayDetails\": {\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"definedTags\": {\"testing_service_tag_ns_001\": {\"testing_service_tag_01\":
+      \"tag4.__STS0843_7949\", \"testing_service_tag_02\": \"tag5.__STS0843_7949\",
+      \"testing_service_tag_03\": \"tag6.__STS0843_7949\"}}, \"displayName\": \"__STS0843_9472\",
+      \"freeformTags\": {\"tag1\": \"value1.__STS0843_1592\", \"tag2\": \"value2.__STS0843_1592\"},
+      \"routeTableId\": \"ocid1.routetable.oc1.phx.aaaaaaaaqi4is6poct4zaszkql6dxm73p2jn7pf4evx5p2x6z7ouiaumhc5a\",
+      \"vcnId\": \"ocid1.vcn.oc1.phx.aaaaaaaa46oxk6skx34oxnsxzpgs3ve4a6r7opaghk2gwewiimvogwdagq3q\"},
+      \"opcRetryToken\": \"b4963bee-e4e9-4c5e-9627-9ace14cc32f8\"}", "responseJson":
+      "{\"localPeeringGateway\": {\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"definedTags\": {\"testing_service_tag_ns_001\": {\"testing_service_tag_01\":
+      \"tag4.__STS0843_7949\", \"testing_service_tag_02\": \"tag5.__STS0843_7949\",
+      \"testing_service_tag_03\": \"tag6.__STS0843_7949\"}}, \"displayName\": \"__STS0843_9472\",
+      \"freeformTags\": {\"tag1\": \"value1.__STS0843_1592\", \"tag2\": \"value2.__STS0843_1592\"},
+      \"id\": \"ocid1.localpeeringgateway.oc1.phx.aaaaaaaadj4a6ns5yr3kgorhicteeugotr3664a5hjlygih6uikvurdjyhia\",
+      \"isCrossTenancyPeering\": false, \"lifecycleState\": \"AVAILABLE\", \"peerAdvertisedCidr\":
+      null, \"peerAdvertisedCidrDetails\": null, \"peeringStatus\": \"NEW\", \"peeringStatusDetails\":
+      \"Not connected to a peer.\", \"routeTableId\": \"ocid1.routetable.oc1.phx.aaaaaaaaqi4is6poct4zaszkql6dxm73p2jn7pf4evx5p2x6z7ouiaumhc5a\",
+      \"timeCreated\": \"2019-04-18T18:51:24.888000+00:00\", \"vcnId\": \"ocid1.vcn.oc1.phx.aaaaaaaa46oxk6skx34oxnsxzpgs3ve4a6r7opaghk2gwewiimvogwdagq3q\"},
+      \"opcRequestId\": \"975CB1B8C9EC48988D1AFADC26140162\", \"opcNextPage\": null,
+      \"eTag\": \"d1ffdfa4\"}", "responseClass": "com.oracle.bmc.core.responses.CreateLocalPeeringGatewayResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2206']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0843&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:51:25 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
 version: 1

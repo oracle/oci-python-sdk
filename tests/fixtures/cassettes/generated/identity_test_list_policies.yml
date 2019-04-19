@@ -511,4 +511,509 @@ interactions:
       Date: ['Mon, 01 Apr 2019 21:53:19 GMT']
       Server: [Jetty(9.4.7.v20170914)]
     status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=identity&apiName=ListPolicies
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:54:15 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?serviceName=identity&apiName=ListPolicies&lang=Python&clientName=identity
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq","endpoint":null,"fingerprint":"ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9","passPhrase":"dexsdk","keyFile":"java_sdk_admin_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,0C9B64A4AA0303EC02C79E91D0F8B0D0\n\naSd0uIKreq5NirzJ+Esa36lYJo4lU2zSjIIw8wvZEsd+LdaifqONZIfHHiB6/KgG\nse4wd/58tPsiEgnK7D1q8wmdVDouMSX31mhcbq2bwRjXATpNnOMnhDtahJv6cw4M\nDtlXYplk0LzpP6WjqXqFST4Yz0l1NO90ahnruwcb/SUCm12ONMJ5o4G1UO2/0IkX\nTRlMRpm/etIpStNSP+1IsD1gSWlAzhs1zodkpd+2eW2ovlAaY25Hm/aqK97jzsCF\n1f4dCm7spCHYOfv10XHNB99/jomN1KQuDy29MmVaJ9oYpOIDlu0yj4Q/XempLxa6\nhqgt0gUO9cMV2bfStsHKWJwq+KoncamBHpU/+CyNjoYq1QTC0urWlCP5hNo5VZhF\nzXBJa188FD2TiPFU8Z4EhercM83TfBsRVEQOpu5sbMaUOT6xXwnCWfM5Pjxy/0xE\n6oF2zq+H0ES12dh19C5P8ueRFLyhaWFliWJv3SXy9iCslcso6USnBBKnA26xMile\nY3m9uRP31yZW8czxYSIgKEV3Mp3GFAYwuebNjLgIM7xT+PvDiOO4qAhA0waGPhYH\n2QMl9ThSahKT6vpjVUQuGOjaRcJ5Vr73VGX4MnxXVxsl5de6y/ZfP5ndx5Lb4K43\njwrMbCIzrM1ZzR2JMTuMJFDasLjEW/Y9nf7FRh2gByeGLObAmHsjlUdW65QQu+Qy\nu4ADc6TbpqvLobocF5fKgML7JCAA/YqmYlZCV6gGOdKUXUT3VMmZcebcTtw1Zmxh\nwaUQe99D90w3Q/7CCCiGO2waZaTNl+ahVnQZEGHN9xJydkCkfVZDgVmdDmsSXmxo\n2DWf2c2/1me2zZAcW0SFBnyrt3uphdCnICaqXR0AnQUmw49YY4nk2fPTMxZs1r+2\n+poVVEfr//cHTTs4yu9ZVT2wGWf/Ooo4sm7obB8EhGkrXs3ormx9WHj6ezexupsd\nanWE7Uy54ovKdOosKB6nQOfP+Iwe4sSJ6oYPNvvh19v05+AhOCdONjMeCwTfBvtJ\nA5luj6CtFbgSX96A3zTRrTXQO3N4aLTF8niL+FcZ69RzYcxp3rlDSK88JyJ9xsu1\n+lNIcAPAFhzisC/eB9b1eDJ4JErJyIdBTZ4bPv4dtl/RpFcyIA4WMjskGCRo60I7\nN3DVqGGXLlC7KDjvPmdvvfAx3lzcIANhwBhLSQJ+y1bcyW6FcX0ZtY962Hb06Qj5\nXG5nDmT1qVkfDmzpIOF9GtDgch7gtf/EjHOUyaw60dDgJ5RF6lORLjFeuU9W7I1e\nD3mpWb6WP6DKoaQTgrLLrIJCLIdXr92XmvDj+iuYdGhCIkqHWqNbRW4TyiuukNJH\n12Zq/LlA1s58YJVa520o7EOXpmD4sGIrctlI3keSmKhiavy7j5ULz5J++jL+Yxlc\n6h9q4v71oyFmVgNpIEJNg7sSCkE72yzUCaglBUdUIMG3D0sI+VwufC7lbhohvHBr\nNzmbg2bW4x0CCprf/o5JvdNiB+bQdKG4t2Q7fhhZIW7ACii591ZBbpnUakDUQBZa\nV2yMaErypILHlQvlReHXVK1adUTxLNWf//VDoyclQk5k0uFIkUmpn+EXWnEHw7e8\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2261']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:54:15 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=identity&apiName=ListPolicies&lang=Python&sessionId=0577
+  response:
+    body: {string: '[{"containerId":"cff8dd3c-3dc6-462c-b561-c487c656616e","request":{"compartmentId":"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq","limit":10}}]'}
+    headers:
+      Content-Length: ['177']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:54:15 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="AIOv7u/Wdj0eE9l2skFbcsbpSXES1SlyN1nVLLg2FsuIogddRPeX9lQX3C39HIIcm6jIMA4rjvTBdNcHFoPgVhekzxWq3J+UFNXxoKm3Hlx1WVwraubm4NhPmbx44eoXhQAj90wusmZKWi5aVlkd1+2M/5LKIYXmENoQcrf9K3Qj0Nv19kzjiYmYx/bNFU3mmotrGqLf+DI2IXDdmcCEjqfwmsUtJLWm7FOkV2CKvdrVF5FgHsy3vZ0W5zR/jtRpDwRwjq4KRY+F35S+IvmyX2FIgxgJNrBErMzmme/pI2VSeTXoxZwcpn3Jwa659//j13m/lYooKfOOtG9J30d1JA==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 18:54:15 GMT']
+      host: [identity.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [8D93D232493C48B1900ED0CB836B4F04]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/policies/?compartmentId=ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq&limit=10
+  response:
+    body: {string: "[ {\n  \"statements\" : [ \"Allow group __STS0577_2174 manage\
+        \ all-resources on compartment JavaSDKTestCompartment\" ],\n  \"id\" : \"\
+        ocid1.policy.oc1..aaaaaaaa2yhu5gdnfqgeqsjlic2oodtmol66h4kl4f7q3rxinvl542sojmvq\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"__STS0577_9220\",\n  \"description\" : \"__STS0577_1010\"\
+        ,\n  \"timeCreated\" : \"2019-04-18T18:53:15.598Z\",\n  \"freeformTags\" :\
+        \ {\n    \"tag1\" : \"value1.__STS0577_9318\",\n    \"tag2\" : \"value2.__STS0577_9318\"\
+        \n  },\n  \"definedTags\" : {\n    \"testing_service_tag_ns_001\" : {\n  \
+        \    \"testing_service_tag_01\" : \"tag4.__STS0577_1577\",\n      \"testing_service_tag_02\"\
+        \ : \"tag5.__STS0577_1577\",\n      \"testing_service_tag_03\" : \"tag6.__STS0577_1577\"\
+        \n    }\n  },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n  \"statements\" :\
+        \ [ \"define tenancy boat as ocid1.tenancy.oc1..aaaaaaaagkbzgg6lpzrf47xzy4rjoxg4de6ncfiq2rncmjiujvy2hjgxvziq\"\
+        , \"define group BoatDEX as ocid1.group.oc1..aaaaaaaayjbdokqo7c5supzqmy4dvh435brpork3p4cphsw5hhq36scic7oa\"\
+        , \"admit group BoatDEX of tenancy boat to {TANDEN_BLUEPRINT_READ, TANDEN_BLUEPRINT_CREATE,\
+        \ TANDEN_BLUEPRINT_UPDATE, TANDEN_BLUEPRINT_DELETE} in compartment OCITestingService\"\
+        \ ],\n  \"id\" : \"ocid1.policy.oc1..aaaaaaaaktau5ml4kfzdfh6wzfzj6rms5ytgu64qyfnbecdlz4xsivown7xq\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"CanaryTest\",\n  \"description\" : \"CanaryTest\",\n  \"\
+        timeCreated\" : \"2019-02-20T18:04:52.938Z\",\n  \"freeformTags\" : { },\n\
+        \  \"definedTags\" : {\n    \"testing_service_andy_tag_ns_001\" : {\n    \
+        \  \"__sts0438_8918\" : \"__STS0438_2554\",\n      \"__sts0476_4908\" : \"\
+        __STS0476_6855\"\n    }\n  },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n \
+        \ \"statements\" : [ \"ALLOW SERVICE objectstorage-us-phoenix-1 TO MANAGE\
+        \ objects IN TENANCY\" ],\n  \"id\" : \"ocid1.policy.oc1..aaaaaaaatzlxnyp5cpym24tg76kgebsq4h4n53guwdiu3eyd544l6mffizzq\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"Casper-XRC\",\n  \"description\" : \"For Cross Region Copy\"\
+        ,\n  \"timeCreated\" : \"2018-05-22T19:00:44.611Z\",\n  \"freeformTags\" :\
+        \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
+        \  \"statements\" : [ \"allow dynamic-group InstancePrincipalsTestGroup to\
+        \ inspect bucket in tenancy\", \"allow dynamic-group InstancePrincipalsTestGroup\
+        \ to inspect objects in tenancy\", \"allow dynamic-group InstancePrincipalsTestGroup\
+        \ to read objects in tenancy\", \"allow dynamic-group ImageTestingIInstancePrincipalDynGroup\
+        \ to inspect groups in tenancy\", \"allow dynamic-group InstancePrincipalsTestGroup\
+        \ to manage users in tenancy\" ],\n  \"id\" : \"ocid1.policy.oc1..aaaaaaaapknmuph33y22n4anxddtgmjws5stpclrlridhrzbip6fdlxdyauq\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"InstancePrincipalTest\",\n  \"description\" : \"Testing\
+        \ for instance principals\",\n  \"timeCreated\" : \"2018-10-19T20:38:46.058Z\"\
+        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"lifecycleState\"\
+        \ : \"ACTIVE\"\n}, {\n  \"statements\" : [ \"ALLOW GROUP JavaSDKIntegrationTestGroup\
+        \ to manage all-resources in compartment JavaSDKTestCompartment\", \"Allow\
+        \ group JavaSDKIntegrationTestGroup to use tag-namespaces in compartment JavaSDKTestCompartment\"\
+        , \"Allow group JavaSDKIntegrationTestGroup to use tag-namespaces in tenancy\"\
+        , \"Allow group JavaSDKIntegrationTestGroup to manage volume-backups in compartment\
+        \ JavaSDKTestCompartment\", \"Allow group JavaSDKIntegrationTestGroup to manage\
+        \ volume-backups in tenancy\", \"Allow group JavaSDKIntegrationTestGroup to\
+        \ inspect backup-policies in tenancy\" ],\n  \"id\" : \"ocid1.policy.oc1..aaaaaaaang6djlkv5w5exom6wdorvjwvrna2mjwlrjkdzsnh7obxf2b7ou2a\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"JavaSDKIntegrationTestPolicy\",\n  \"description\" : \"\
+        Test user policy for the Java SDK automated integration tests\",\n  \"timeCreated\"\
+        \ : \"2018-12-13T00:44:18.514Z\",\n  \"freeformTags\" : { },\n  \"definedTags\"\
+        \ : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n  \"statements\" : [ \"\
+        define tenancy kms as ocid1.tenancy.oc1..aaaaaaaa343rmve2t2ibyb2qbzxjhuoqig2nlcsnubbmcbwgjalab3f3xhiq\"\
+        , \"endorse group Administrators to manage vaults in tenancy kms\", \"endorse\
+        \ group Administrators to manage keys in tenancy kms\", \"endorse group Administrators\
+        \ to associate keys in tenancy with vaults in tenancy kms\", \"endorse service\
+        \ blockstorage to use keys in tenancy kms\", \"endorse group Administrators\
+        \ to use key-delegate in tenancy kms\", \"endorse group Administrators to\
+        \ use keys in tenancy kms\", \"endorse group Administrators to associate volumes\
+        \ in tenancy with keys in tenancy kms\", \"endorse group Administrators to\
+        \ {KEY_ASSOCIATE} in tenancy kms where target.key.id = 'ocid1.key.oc1.phx.avnybakjaafna.abyhqljtckpdqnayjwraeiu226vhzw55rlcbqfjc5apfuwm65dtyqcywpqlq'\"\
+        , \"endorse group Administrators to associate buckets in tenancy with keys\
+        \ in tenancy kms where 2.key.id = 'ocid1.key.oc1.phx.avnybakjaafna.abyhqljtckpdqnayjwraeiu226vhzw55rlcbqfjc5apfuwm65dtyqcywpqlq'\"\
+        , \"endorse group Administrators to manage tag-namespaces in tenancy kms where\
+        \ target.tag-namespace.id = 'ocid1.tagnamespace.oc1..aaaaaaaaldolj5vkbuhtiaqkylfavpyijigfy4lxgaefodinpswish3734vq'\"\
+        \ ],\n  \"id\" : \"ocid1.policy.oc1..aaaaaaaahk7zxp553bgnq2jezu325h7klv46evyb6imuqbl3ti2ltkyrwaia\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"KMStesting\",\n  \"description\" : \"testing\",\n  \"timeCreated\"\
+        \ : \"2018-09-21T20:23:33.558Z\",\n  \"freeformTags\" : { },\n  \"definedTags\"\
+        \ : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n  \"statements\" : [ \"\
+        define tenancy kms as ocid1.tenancy.oc1..aaaaaaaa343rmve2t2ibyb2qbzxjhuoqig2nlcsnubbmcbwgjalab3f3xhiq\"\
+        , \"endorse group OCITestingServiceGroup to use key-delegate in tenancy kms\"\
+        , \"endorse group OCITestingServiceGroup to use keys in tenancy kms\", \"\
+        endorse group OCITestingServiceGroup to associate volumes in tenancy with\
+        \ keys in tenancy kms\", \"endorse group OCITestingServiceGroup to associate\
+        \ buckets in tenancy with keys in tenancy kms\" ],\n  \"id\" : \"ocid1.policy.oc1..aaaaaaaa2bf5hk7fmt5f7kayfbbgc26miqwehea5bp7hi453cx6sqhxrtj5q\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"OCITestingServiceKmsPolicy\",\n  \"description\" : \"Testing\
+        \ Service policy for accessing KMS test keys used for integration tests\"\
+        ,\n  \"timeCreated\" : \"2018-12-14T20:29:51.952Z\",\n  \"freeformTags\" :\
+        \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
+        \  \"statements\" : [ \"ALLOW GROUP OCITestingServiceGroup to manage all-resources\
+        \ in compartment OCITestingService\", \"Allow group OCITestingServiceGroup\
+        \ to use tag-namespaces in tenancy\", \"Allow group OCITestingServiceGroup\
+        \ to inspect backup-policies in tenancy\", \"Allow group OCITestingServiceGroup\
+        \ to manage volume-backups in tenancy\", \"Allow group OCITestingServiceGroup\
+        \ to manage buckets in tenancy\", \"allow service objectstorage-us-phoenix-1\
+        \ to manage object-family in compartment OCITestingService\" ],\n  \"id\"\
+        \ : \"ocid1.policy.oc1..aaaaaaaa53v3q2g4cure22su4o22st2xdo5wpk3t4cye2vofymhdoancsfhq\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"OCITestingServicePolicy\",\n  \"description\" : \"Policy\
+        \ for the OCI Testing service\",\n  \"timeCreated\" : \"2018-12-14T01:47:41.974Z\"\
+        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"lifecycleState\"\
+        \ : \"ACTIVE\"\n}, {\n  \"statements\" : [ \"allow service OKE to manage all-resources\
+        \ in tenancy\" ],\n  \"id\" : \"ocid1.policy.oc1..aaaaaaaaycid76psaljo2v4ywgw364vwqpslb5v6ukzrj6kyt4vygwye3csq\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"OKE\",\n  \"description\" : \"Allow OKE access to tenancy\
+        \ resources\",\n  \"timeCreated\" : \"2018-05-10T17:44:49.548Z\",\n  \"freeformTags\"\
+        \ : { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n},\
+        \ {\n  \"statements\" : [ \"define tenancy kms as ocid1.tenancy.oc1..aaaaaaaa343rmve2t2ibyb2qbzxjhuoqig2nlcsnubbmcbwgjalab3f3xhiq\"\
+        , \"endorse group OCITestingServiceGroup to associate buckets in tenancy with\
+        \ keys in tenancy kms where 2.key.id = 'ocid1.key.oc1.phx.avnybakjaafna.abyhqljtckpdqnayjwraeiu226vhzw55rlcbqfjc5apfuwm65dtyqcywpqlq'\"\
+        , \"endorse group OCITestingServiceGroup to {KEY_ASSOCIATE} in tenancy kms\
+        \ where target.key.id = 'ocid1.key.oc1.phx.avnybakjaafna.abyhqljtckpdqnayjwraeiu226vhzw55rlcbqfjc5apfuwm65dtyqcywpqlq'\"\
+        , \"endorse group OCITestingServiceGroup to {KEY_DISASSOCIATE} in tenancy\
+        \ kms where target.key.id = 'ocid1.key.oc1.phx.avnybakjaafna.abyhqljtckpdqnayjwraeiu226vhzw55rlcbqfjc5apfuwm65dtyqcywpqlq'\"\
+        , \"endorse group OCITestingServiceGroup to associate buckets in tenancy with\
+        \ keys in tenancy kms where 2.key.id = 'ocid1.key.oc1.phx.avnzdivwaadfa.abyhqljtltwsnew33ks7dggpwwkisjcghddkkeommqhd7gyqqlqek36of6zq'\"\
+        , \"endorse group OCITestingServiceGroup to {KEY_ASSOCIATE} in tenancy kms\
+        \ where target.key.id = 'ocid1.key.oc1.phx.avnzdivwaadfa.abyhqljtltwsnew33ks7dggpwwkisjcghddkkeommqhd7gyqqlqek36of6zq'\"\
+        , \"endorse group OCITestingServiceGroup to {KEY_DISASSOCIATE} in tenancy\
+        \ kms where target.key.id = 'ocid1.key.oc1.phx.avnzdivwaadfa.abyhqljtltwsnew33ks7dggpwwkisjcghddkkeommqhd7gyqqlqek36of6zq'\"\
+        , \"endorse group OCITestingServiceGroup to {KEY_ASSOCIATE} in tenancy kms\
+        \ where target.key.id = 'ocid1.key.oc1.phx.avnzdivwaadfa.abyhqljtkc2ugasfnrwetmifqubi4jwj5ahopptqw6k3qw4rtiosoik23vza'\"\
+        , \"endorse group OCITestingServiceGroup to {KEY_DISASSOCIATE} in tenancy\
+        \ kms where target.key.id = 'ocid1.key.oc1.phx.avnzdivwaadfa.abyhqljtkc2ugasfnrwetmifqubi4jwj5ahopptqw6k3qw4rtiosoik23vza'\"\
+        \ ],\n  \"id\" : \"ocid1.policy.oc1..aaaaaaaajryhskbilhfc7s77bevtr4lrj5ndts4pv6whx6zi7szoxjwov4zq\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"policy-ENDORSE_KMSKEY\",\n  \"description\" : \"policy-ENDORSE_KMSKEY\"\
+        ,\n  \"timeCreated\" : \"2019-01-08T00:46:22.564Z\",\n  \"freeformTags\" :\
+        \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n} ]"}
+    headers:
+      Cache-Control: ['no-cache, no-store, must-revalidate']
+      Connection: [keep-alive]
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:54:16 GMT']
+      Pragma: [no-cache]
+      Transfer-Encoding: [chunked]
+      X-Content-Type-Options: [nosniff]
+      opc-limit: ['10']
+      opc-next-page: [AAAAAAAAAAJleUpyYVdRaU9pSTBNallpTENKbGJtTWlPaUpCTWpVMlIwTk5JaXdpWVd4bklqb2laR2x5SW4wLi5TbDRXaXozMVhzakk5eG10Lm5Ja0FpWW1MS2lIb1FuUFBRZVVxbjJONUEyRmVHOGxJd19sZFVYMF9xXzdVZXYyVEtoYjRVdmp3ZFVTTWo0ZkVubVlLQnpuVlZXVjFSOWtsOUxvYURzejNFdVJ0TC1JR0ExMGxUSXpDTXdZRE02TmhROXdzTDVwcWN4M0NXaGJ1SXVZX2hSMndFaEtnajJDN2U0SF91ank1a0U0emwwQzR6dF85M09jMy1fWnNXNTBDb3VKNXV0MVRxMTVCU0VUSndRdzV5OVFoQUVfZmpHejg0S1Z3bHd5Y1FsSllSdFFpY2JLVkNNcEI1Z2t5LVNDU3NKcE5vUElUSW1TY1FnTTdDWDkxMmgwOVFnU1pWZktjT2QyajN0VDViTEtlQ2JnS0dFLU41LVJBMXN6Q3djeHhpbm9qY1h2YlJFY2o5dHVlcnA3cmRoOGdFX3JicnBjdVpSNG91TjBGb2tYWE9XMUlmdUlRT3hTQ3BwLVg0YVlXVURMVkZ0Ty1ZUHhjQUxObXFaM1hiZnNNZllJaTZ1M0FyWS1lU0o3ZWVLWi1VamUzR2kxLW9qcFFRTTluMHVBU3BvbGFyZ0d6OHJhdS11amJRNW9fczE1VEtZcDFyQ2lvSkI5QmJIb3ZoZkpJMFRWMTVXc1JSVkE1VF93dUtOMDZsUjhMT2p3VGoyeGN4dUUwT1ppYmc3WDlZMXpVMC0xVWp0MEUwRGVCM2s4QlhGNm1PdFNwNHB6MWFRLlNKcHlKTmdTdFdzU3ZhSXRwUFo2TFE=]
+      opc-request-id: [8D93D232493C48B1900ED0CB836B4F04/DE1C5CF04E3B5089EE48618B502735FE/DCABC48B828EB88EABFB63838B9A4B12]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="xWreGmWCnIL3h/Rf+1Xy6OoBTk2oWZWITuJojRBc7n9fvCaXJ1TyO5zCiAY9rX+juH9+LdS4FQIkjAma7zh8Xh6YH77qW+dykdOFgL07qUJziI87w6hyPp00jeQz9POj79R3CQPMPrdvPC6reuicKjwsSA+NOOR0Aj8wRSxJtxjYVlRFZM+I1kSNrBb/6oLHukbH+Mdi9onf1zOd834/IdS5bLzjydZWTrbKyQVqcDjgz6c3CrhF5vNNgatEU/52Le7Fu5H7NrtVXxSUAxB8I84AE2Sd5YinZRy1sUJGOEEkbFIeTrNGbOCtXPyCr79O4MsADHO/RE7wK04vomZZYg==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 18:54:16 GMT']
+      host: [identity.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [FD90E77764E84840A053B2109B13B9AB]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/policies/?compartmentId=ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq&page=AAAAAAAAAAJleUpyYVdRaU9pSTBNallpTENKbGJtTWlPaUpCTWpVMlIwTk5JaXdpWVd4bklqb2laR2x5SW4wLi5TbDRXaXozMVhzakk5eG10Lm5Ja0FpWW1MS2lIb1FuUFBRZVVxbjJONUEyRmVHOGxJd19sZFVYMF9xXzdVZXYyVEtoYjRVdmp3ZFVTTWo0ZkVubVlLQnpuVlZXVjFSOWtsOUxvYURzejNFdVJ0TC1JR0ExMGxUSXpDTXdZRE02TmhROXdzTDVwcWN4M0NXaGJ1SXVZX2hSMndFaEtnajJDN2U0SF91ank1a0U0emwwQzR6dF85M09jMy1fWnNXNTBDb3VKNXV0MVRxMTVCU0VUSndRdzV5OVFoQUVfZmpHejg0S1Z3bHd5Y1FsSllSdFFpY2JLVkNNcEI1Z2t5LVNDU3NKcE5vUElUSW1TY1FnTTdDWDkxMmgwOVFnU1pWZktjT2QyajN0VDViTEtlQ2JnS0dFLU41LVJBMXN6Q3djeHhpbm9qY1h2YlJFY2o5dHVlcnA3cmRoOGdFX3JicnBjdVpSNG91TjBGb2tYWE9XMUlmdUlRT3hTQ3BwLVg0YVlXVURMVkZ0Ty1ZUHhjQUxObXFaM1hiZnNNZllJaTZ1M0FyWS1lU0o3ZWVLWi1VamUzR2kxLW9qcFFRTTluMHVBU3BvbGFyZ0d6OHJhdS11amJRNW9fczE1VEtZcDFyQ2lvSkI5QmJIb3ZoZkpJMFRWMTVXc1JSVkE1VF93dUtOMDZsUjhMT2p3VGoyeGN4dUUwT1ppYmc3WDlZMXpVMC0xVWp0MEUwRGVCM2s4QlhGNm1PdFNwNHB6MWFRLlNKcHlKTmdTdFdzU3ZhSXRwUFo2TFE%3D&limit=10
+  response:
+    body: {string: "[ {\n  \"statements\" : [ \"Allow group GroupFor.ImageTestsUser\
+        \ to read volume-family in tenancy\", \"Allow group GroupFor.ImageTestsUser\
+        \ manage all-resources on compartment ImageTestsCompartment\", \"Allow group\
+        \ GroupFor.ImageTestsUser to use tag-namespaces in tenancy\", \"allow dynamic-group\
+        \ imageTestingInstancePrincipals to manage all-resources in tenancy\" ],\n\
+        \  \"id\" : \"ocid1.policy.oc1..aaaaaaaa6dcl54tqia6wvwxitosf4t3ld3wgrnhthzqmdnqonaztu3hmlnla\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"PolicyFor.ImageTestsUser\",\n  \"description\" : \"Policy\
+        \ for ImageTestsUser\",\n  \"timeCreated\" : \"2019-03-14T19:56:45.931Z\"\
+        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"lifecycleState\"\
+        \ : \"ACTIVE\"\n}, {\n  \"statements\" : [ \"Allow group GroupFor.JavaSDK.TestUser\
+        \ manage all-resources on compartment JavaSDKTestCompartment\", \"Allow group\
+        \ GroupFor.JavaSDK.TestUser to read volume-family in tenancy\", \"Allow group\
+        \ GroupFor.JavaSDK.TestUser to use tag-namespaces in tenancy\" ],\n  \"id\"\
+        \ : \"ocid1.policy.oc1..aaaaaaaaevzshkpyxpkx33n22zzebm7mrnmgtl6vsa6z3dxd3syk7qz564xa\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"PolicyFor.JavaSDK.TestUser\",\n  \"description\" : \"OK\
+        \ to delete\",\n  \"timeCreated\" : \"2019-04-17T00:47:35.456Z\",\n  \"freeformTags\"\
+        \ : { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n},\
+        \ {\n  \"statements\" : [ \"Allow group PythonCLITestGroup to manage all-resources\
+        \ on compartment PythonCLITestCompartment\", \"Allow group PythonCLITestGroup\
+        \ to use tag-namespaces in compartment PythonCLITestCompartment\", \"Allow\
+        \ group PythonCLITestGroup to manage all-resources on compartment PythonCliCompartmentRenameTest-10000\"\
+        , \"Allow group PythonCLITestGroup to manage all-resources on compartment\
+        \ OCITestingService\" ],\n  \"id\" : \"ocid1.policy.oc1..aaaaaaaa4u3otfam25pb2ekhgtnkt6mufb65luz4tck5hvtvuxn6i4zm7beq\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"PythonCLITestUserPolicy\",\n  \"description\" : \"Policy\
+        \ used by CLI integration tests.\",\n  \"timeCreated\" : \"2018-05-25T15:16:05.088Z\"\
+        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"lifecycleState\"\
+        \ : \"ACTIVE\"\n}, {\n  \"statements\" : [ \"ALLOW GROUP RubySDKIntegrationTestGroup\
+        \ to manage all-resources in compartment RubySDKTestCompartment\", \"Allow\
+        \ group RubySDKIntegrationTestGroup to use tag-namespaces in compartment RubySDKTestCompartment\"\
+        , \"Allow group RubySDKIntegrationTestGroup to use tag-namespaces in tenancy\"\
+        , \"Allow group RubySDKIntegrationTestGroup to manage volume-backups in compartment\
+        \ RubySDKTestCompartment\", \"Allow group RubySDKIntegrationTestGroup to manage\
+        \ load-balancers in compartment RubySDKTestCompartment\" ],\n  \"id\" : \"\
+        ocid1.policy.oc1..aaaaaaaac3ckwvkxz5tclkvpyqlv4cagqst7dya4jphdqcz56p5n6t4xbzca\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"RubySDKIntegrationTestPolicy\",\n  \"description\" : \"\
+        Test user policy for the SDK/CLI automated integration tests.\",\n  \"timeCreated\"\
+        \ : \"2018-12-07T18:18:56.455Z\",\n  \"freeformTags\" : { },\n  \"definedTags\"\
+        \ : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n  \"statements\" : [ \"\
+        allow dynamic-group Sumit_HDFS_InstancePrincipals to inspect bucket in compartment\
+        \ hdfs-test\", \"allow dynamic-group Sumit_HDFS_InstancePrincipals to inspect\
+        \ objects in compartment hdfs-test\", \"allow dynamic-group Sumit_HDFS_InstancePrincipals\
+        \ to read objects in compartment hdfs-test\", \"allow dynamic-group Sumit_HDFS_InstancePrincipals\
+        \ to manage object-family in compartment hdfs-test\" ],\n  \"id\" : \"ocid1.policy.oc1..aaaaaaaaoynsyzxw2mdfukwqzpsm7vjkius5fwestc4fkisypdwgyjqhmcvq\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"Sumit_HDFS_Policy\",\n  \"description\" : \"HDFS Instance\
+        \ Principals\",\n  \"timeCreated\" : \"2018-12-02T07:21:06.153Z\",\n  \"freeformTags\"\
+        \ : { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n},\
+        \ {\n  \"statements\" : [ \"ALLOW GROUP Administrators to manage all-resources\
+        \ IN TENANCY\" ],\n  \"id\" : \"ocid1.policy.oc1..aaaaaaaawkpbmo6tzz6lmqb2je3q2n3q4vjg5mppwrukgkpg6g5cls4t4yva\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"Tenant Admin Policy\",\n  \"description\" : \"Tenant Admin\
+        \ Policy\",\n  \"timeCreated\" : \"2018-01-12T22:27:09.954Z\",\n  \"freeformTags\"\
+        \ : { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n},\
+        \ {\n  \"statements\" : [ \"Allow group TestPermissionsGroup to inspect volume-backups\
+        \ in tenancy\", \"Allow group TestPermissionsGroup to read volume-backups\
+        \ in tenancy\", \"Allow group TestPermissionsGroup to inspect volume-family\
+        \ in tenancy\", \"Allow group TestPermissionsGroup to read volume-family in\
+        \ tenancy\", \"Allow group TestPermissionsGroup to inspect load-balancers\
+        \ in tenancy\", \"Allow group TestPermissionsGroup to read load-balancers\
+        \ in tenancy\" ],\n  \"id\" : \"ocid1.policy.oc1..aaaaaaaais3ikvka2plijx7rw3xuucyuxnznphbxh2e4kzl2zljvezav56vq\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"TestPermissionsPolicy\",\n  \"description\" : \"Safe to\
+        \ delete\",\n  \"timeCreated\" : \"2019-02-22T21:25:27.067Z\",\n  \"freeformTags\"\
+        \ : { },\n  \"definedTags\" : {\n    \"testing_service_andy_tag_ns_001\" :\
+        \ {\n      \"__sts0438_8918\" : \"__STS0438_2554\",\n      \"__sts0476_4908\"\
+        \ : \"__STS0476_6855\"\n    }\n  },\n  \"lifecycleState\" : \"ACTIVE\"\n}\
+        \ ]"}
+    headers:
+      Cache-Control: ['no-cache, no-store, must-revalidate']
+      Connection: [keep-alive]
+      Content-Length: ['5497']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:54:16 GMT']
+      Pragma: [no-cache]
+      X-Content-Type-Options: [nosniff]
+      opc-limit: ['10']
+      opc-next-page: [AAAAAAAAAAJleUpyYVdRaU9pSTBNallpTENKbGJtTWlPaUpCTWpVMlIwTk5JaXdpWVd4bklqb2laR2x5SW4wLi52Nk9GQ3NfVXpfNmRYQk91LllYTzVyY2c5TXd4RjVTTEhFR0I4YlpITnFfTmlES0o0ekFHbE9ueEI0bDRjcFF4Q2d3aDFMX2NkTFRsQ3laSmhBbVdyRFRGajF3alh3cGxwQ2U1UllxU2N3eG1kdWtRUkNCTnhwbXF1N2xEWlBHNkpRcmlGWUx2czh2U1Y1ajlNVnNHdHBPbmxiWVAxMjRDOVltYTg3eGgtaTAwTzdLS0t0Zk1nWmhWakVJOXROZ2lqVzRJTlR3XzlhdHJQOHk5YWRWZHNZM2hzNWNCbXV5V1pkZGZWNExfY1dIbFJkWWNBaGRXekJaYjVOVE1BSm1YTFlGZnUyWnFIMWlKMWpvWnZOaWRDMnVEbnFnZWFfd0hhcXkwRzRDSzRnT19wQjVjRFA2RWRCVVc2Z2M5dXdFNjVJeTgyNEpPUUI1a1RwajRwZExfdkZOSmVORElKM29NcDh5SWpUNThJWThKaDNqYTNGcWdrMHlLRHdHZGpyYjZnUVZma2hGTjZ3QkhHTGp0WEdUUmo3OWhUamFZMjQ1NE9MNl90bnA4VTRiU2hLUHd5VVV4Q1RLb3VLbEc0VUVrUXU5TEtOR1hGaDJCbmZwejJ1eDItVGg0SlBCbVI2UmtCSGE0SmUtZ1Z4MlhaSGh5bVpOczFjX3A4UEN1aW0xX3JLazd4cVoxamQzM0xUdGJHaXZIQ1VXYnhBWVNYNWFUb1JZR0NEMktCa3R2S05sQzY3dE04WEFlSTNRLjl0TTFHbmRWUGJISU5JVVZXcjczdnc=]
+      opc-request-id: [FD90E77764E84840A053B2109B13B9AB/808596C7B215C908F0C3DD078EF17EC8/12D28A6A8BE25C8CEFE983D503B06C27]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"containerId": "cff8dd3c-3dc6-462c-b561-c487c656616e", "listResponse":
+      true, "requestClass": "com.oracle.bmc.identity.requests.ListPoliciesRequest",
+      "requestJson": "{\"compartmentId\": \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\",
+      \"limit\": 10}", "responseJson": "[{\"items\": [{\"id\": \"ocid1.policy.oc1..aaaaaaaa2yhu5gdnfqgeqsjlic2oodtmol66h4kl4f7q3rxinvl542sojmvq\",
+      \"compartmentId\": \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\",
+      \"name\": \"__STS0577_9220\", \"statements\": [\"Allow group __STS0577_2174
+      manage all-resources on compartment JavaSDKTestCompartment\"], \"description\":
+      \"__STS0577_1010\", \"timeCreated\": \"2019-04-18T18:53:15.598000+00:00\", \"lifecycleState\":
+      \"ACTIVE\", \"inactiveStatus\": null, \"versionDate\": null, \"freeformTags\":
+      {\"tag1\": \"value1.__STS0577_9318\", \"tag2\": \"value2.__STS0577_9318\"},
+      \"definedTags\": {\"testingServiceTagNs001\": {\"testingServiceTag01\": \"tag4.__STS0577_1577\",
+      \"testingServiceTag02\": \"tag5.__STS0577_1577\", \"testingServiceTag03\": \"tag6.__STS0577_1577\"}}},
+      {\"id\": \"ocid1.policy.oc1..aaaaaaaaktau5ml4kfzdfh6wzfzj6rms5ytgu64qyfnbecdlz4xsivown7xq\",
+      \"compartmentId\": \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\",
+      \"name\": \"CanaryTest\", \"statements\": [\"define tenancy boat as ocid1.tenancy.oc1..aaaaaaaagkbzgg6lpzrf47xzy4rjoxg4de6ncfiq2rncmjiujvy2hjgxvziq\",
+      \"define group BoatDEX as ocid1.group.oc1..aaaaaaaayjbdokqo7c5supzqmy4dvh435brpork3p4cphsw5hhq36scic7oa\",
+      \"admit group BoatDEX of tenancy boat to {TANDEN_BLUEPRINT_READ, TANDEN_BLUEPRINT_CREATE,
+      TANDEN_BLUEPRINT_UPDATE, TANDEN_BLUEPRINT_DELETE} in compartment OCITestingService\"],
+      \"description\": \"CanaryTest\", \"timeCreated\": \"2019-02-20T18:04:52.938000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"inactiveStatus\": null, \"versionDate\": null,
+      \"freeformTags\": {}, \"definedTags\": {\"testingServiceAndyTagNs001\": {\"_Sts04388918\":
+      \"__STS0438_2554\", \"_Sts04764908\": \"__STS0476_6855\"}}}, {\"id\": \"ocid1.policy.oc1..aaaaaaaatzlxnyp5cpym24tg76kgebsq4h4n53guwdiu3eyd544l6mffizzq\",
+      \"compartmentId\": \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\",
+      \"name\": \"Casper-XRC\", \"statements\": [\"ALLOW SERVICE objectstorage-us-phoenix-1
+      TO MANAGE objects IN TENANCY\"], \"description\": \"For Cross Region Copy\",
+      \"timeCreated\": \"2018-05-22T19:00:44.611000+00:00\", \"lifecycleState\": \"ACTIVE\",
+      \"inactiveStatus\": null, \"versionDate\": null, \"freeformTags\": {}, \"definedTags\":
+      {}}, {\"id\": \"ocid1.policy.oc1..aaaaaaaapknmuph33y22n4anxddtgmjws5stpclrlridhrzbip6fdlxdyauq\",
+      \"compartmentId\": \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\",
+      \"name\": \"InstancePrincipalTest\", \"statements\": [\"allow dynamic-group
+      InstancePrincipalsTestGroup to inspect bucket in tenancy\", \"allow dynamic-group
+      InstancePrincipalsTestGroup to inspect objects in tenancy\", \"allow dynamic-group
+      InstancePrincipalsTestGroup to read objects in tenancy\", \"allow dynamic-group
+      ImageTestingIInstancePrincipalDynGroup to inspect groups in tenancy\", \"allow
+      dynamic-group InstancePrincipalsTestGroup to manage users in tenancy\"], \"description\":
+      \"Testing for instance principals\", \"timeCreated\": \"2018-10-19T20:38:46.058000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"inactiveStatus\": null, \"versionDate\": null,
+      \"freeformTags\": {}, \"definedTags\": {}}, {\"id\": \"ocid1.policy.oc1..aaaaaaaang6djlkv5w5exom6wdorvjwvrna2mjwlrjkdzsnh7obxf2b7ou2a\",
+      \"compartmentId\": \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\",
+      \"name\": \"JavaSDKIntegrationTestPolicy\", \"statements\": [\"ALLOW GROUP JavaSDKIntegrationTestGroup
+      to manage all-resources in compartment JavaSDKTestCompartment\", \"Allow group
+      JavaSDKIntegrationTestGroup to use tag-namespaces in compartment JavaSDKTestCompartment\",
+      \"Allow group JavaSDKIntegrationTestGroup to use tag-namespaces in tenancy\",
+      \"Allow group JavaSDKIntegrationTestGroup to manage volume-backups in compartment
+      JavaSDKTestCompartment\", \"Allow group JavaSDKIntegrationTestGroup to manage
+      volume-backups in tenancy\", \"Allow group JavaSDKIntegrationTestGroup to inspect
+      backup-policies in tenancy\"], \"description\": \"Test user policy for the Java
+      SDK automated integration tests\", \"timeCreated\": \"2018-12-13T00:44:18.514000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"inactiveStatus\": null, \"versionDate\": null,
+      \"freeformTags\": {}, \"definedTags\": {}}, {\"id\": \"ocid1.policy.oc1..aaaaaaaahk7zxp553bgnq2jezu325h7klv46evyb6imuqbl3ti2ltkyrwaia\",
+      \"compartmentId\": \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\",
+      \"name\": \"KMStesting\", \"statements\": [\"define tenancy kms as ocid1.tenancy.oc1..aaaaaaaa343rmve2t2ibyb2qbzxjhuoqig2nlcsnubbmcbwgjalab3f3xhiq\",
+      \"endorse group Administrators to manage vaults in tenancy kms\", \"endorse
+      group Administrators to manage keys in tenancy kms\", \"endorse group Administrators
+      to associate keys in tenancy with vaults in tenancy kms\", \"endorse service
+      blockstorage to use keys in tenancy kms\", \"endorse group Administrators to
+      use key-delegate in tenancy kms\", \"endorse group Administrators to use keys
+      in tenancy kms\", \"endorse group Administrators to associate volumes in tenancy
+      with keys in tenancy kms\", \"endorse group Administrators to {KEY_ASSOCIATE}
+      in tenancy kms where target.key.id = ''ocid1.key.oc1.phx.avnybakjaafna.abyhqljtckpdqnayjwraeiu226vhzw55rlcbqfjc5apfuwm65dtyqcywpqlq''\",
+      \"endorse group Administrators to associate buckets in tenancy with keys in
+      tenancy kms where 2.key.id = ''ocid1.key.oc1.phx.avnybakjaafna.abyhqljtckpdqnayjwraeiu226vhzw55rlcbqfjc5apfuwm65dtyqcywpqlq''\",
+      \"endorse group Administrators to manage tag-namespaces in tenancy kms where
+      target.tag-namespace.id = ''ocid1.tagnamespace.oc1..aaaaaaaaldolj5vkbuhtiaqkylfavpyijigfy4lxgaefodinpswish3734vq''\"],
+      \"description\": \"testing\", \"timeCreated\": \"2018-09-21T20:23:33.558000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"inactiveStatus\": null, \"versionDate\": null,
+      \"freeformTags\": {}, \"definedTags\": {}}, {\"id\": \"ocid1.policy.oc1..aaaaaaaa2bf5hk7fmt5f7kayfbbgc26miqwehea5bp7hi453cx6sqhxrtj5q\",
+      \"compartmentId\": \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\",
+      \"name\": \"OCITestingServiceKmsPolicy\", \"statements\": [\"define tenancy
+      kms as ocid1.tenancy.oc1..aaaaaaaa343rmve2t2ibyb2qbzxjhuoqig2nlcsnubbmcbwgjalab3f3xhiq\",
+      \"endorse group OCITestingServiceGroup to use key-delegate in tenancy kms\",
+      \"endorse group OCITestingServiceGroup to use keys in tenancy kms\", \"endorse
+      group OCITestingServiceGroup to associate volumes in tenancy with keys in tenancy
+      kms\", \"endorse group OCITestingServiceGroup to associate buckets in tenancy
+      with keys in tenancy kms\"], \"description\": \"Testing Service policy for accessing
+      KMS test keys used for integration tests\", \"timeCreated\": \"2018-12-14T20:29:51.952000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"inactiveStatus\": null, \"versionDate\": null,
+      \"freeformTags\": {}, \"definedTags\": {}}, {\"id\": \"ocid1.policy.oc1..aaaaaaaa53v3q2g4cure22su4o22st2xdo5wpk3t4cye2vofymhdoancsfhq\",
+      \"compartmentId\": \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\",
+      \"name\": \"OCITestingServicePolicy\", \"statements\": [\"ALLOW GROUP OCITestingServiceGroup
+      to manage all-resources in compartment OCITestingService\", \"Allow group OCITestingServiceGroup
+      to use tag-namespaces in tenancy\", \"Allow group OCITestingServiceGroup to
+      inspect backup-policies in tenancy\", \"Allow group OCITestingServiceGroup to
+      manage volume-backups in tenancy\", \"Allow group OCITestingServiceGroup to
+      manage buckets in tenancy\", \"allow service objectstorage-us-phoenix-1 to manage
+      object-family in compartment OCITestingService\"], \"description\": \"Policy
+      for the OCI Testing service\", \"timeCreated\": \"2018-12-14T01:47:41.974000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"inactiveStatus\": null, \"versionDate\": null,
+      \"freeformTags\": {}, \"definedTags\": {}}, {\"id\": \"ocid1.policy.oc1..aaaaaaaaycid76psaljo2v4ywgw364vwqpslb5v6ukzrj6kyt4vygwye3csq\",
+      \"compartmentId\": \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\",
+      \"name\": \"OKE\", \"statements\": [\"allow service OKE to manage all-resources
+      in tenancy\"], \"description\": \"Allow OKE access to tenancy resources\", \"timeCreated\":
+      \"2018-05-10T17:44:49.548000+00:00\", \"lifecycleState\": \"ACTIVE\", \"inactiveStatus\":
+      null, \"versionDate\": null, \"freeformTags\": {}, \"definedTags\": {}}, {\"id\":
+      \"ocid1.policy.oc1..aaaaaaaajryhskbilhfc7s77bevtr4lrj5ndts4pv6whx6zi7szoxjwov4zq\",
+      \"compartmentId\": \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\",
+      \"name\": \"policy-ENDORSE_KMSKEY\", \"statements\": [\"define tenancy kms as
+      ocid1.tenancy.oc1..aaaaaaaa343rmve2t2ibyb2qbzxjhuoqig2nlcsnubbmcbwgjalab3f3xhiq\",
+      \"endorse group OCITestingServiceGroup to associate buckets in tenancy with
+      keys in tenancy kms where 2.key.id = ''ocid1.key.oc1.phx.avnybakjaafna.abyhqljtckpdqnayjwraeiu226vhzw55rlcbqfjc5apfuwm65dtyqcywpqlq''\",
+      \"endorse group OCITestingServiceGroup to {KEY_ASSOCIATE} in tenancy kms where
+      target.key.id = ''ocid1.key.oc1.phx.avnybakjaafna.abyhqljtckpdqnayjwraeiu226vhzw55rlcbqfjc5apfuwm65dtyqcywpqlq''\",
+      \"endorse group OCITestingServiceGroup to {KEY_DISASSOCIATE} in tenancy kms
+      where target.key.id = ''ocid1.key.oc1.phx.avnybakjaafna.abyhqljtckpdqnayjwraeiu226vhzw55rlcbqfjc5apfuwm65dtyqcywpqlq''\",
+      \"endorse group OCITestingServiceGroup to associate buckets in tenancy with
+      keys in tenancy kms where 2.key.id = ''ocid1.key.oc1.phx.avnzdivwaadfa.abyhqljtltwsnew33ks7dggpwwkisjcghddkkeommqhd7gyqqlqek36of6zq''\",
+      \"endorse group OCITestingServiceGroup to {KEY_ASSOCIATE} in tenancy kms where
+      target.key.id = ''ocid1.key.oc1.phx.avnzdivwaadfa.abyhqljtltwsnew33ks7dggpwwkisjcghddkkeommqhd7gyqqlqek36of6zq''\",
+      \"endorse group OCITestingServiceGroup to {KEY_DISASSOCIATE} in tenancy kms
+      where target.key.id = ''ocid1.key.oc1.phx.avnzdivwaadfa.abyhqljtltwsnew33ks7dggpwwkisjcghddkkeommqhd7gyqqlqek36of6zq''\",
+      \"endorse group OCITestingServiceGroup to {KEY_ASSOCIATE} in tenancy kms where
+      target.key.id = ''ocid1.key.oc1.phx.avnzdivwaadfa.abyhqljtkc2ugasfnrwetmifqubi4jwj5ahopptqw6k3qw4rtiosoik23vza''\",
+      \"endorse group OCITestingServiceGroup to {KEY_DISASSOCIATE} in tenancy kms
+      where target.key.id = ''ocid1.key.oc1.phx.avnzdivwaadfa.abyhqljtkc2ugasfnrwetmifqubi4jwj5ahopptqw6k3qw4rtiosoik23vza''\"],
+      \"description\": \"policy-ENDORSE_KMSKEY\", \"timeCreated\": \"2019-01-08T00:46:22.564000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"inactiveStatus\": null, \"versionDate\": null,
+      \"freeformTags\": {}, \"definedTags\": {}}], \"opcRequestId\": \"44CC725C3C04485AB1FB19EF4EAD2585\",
+      \"opcNextPage\": \"AAAAAAAAAAJleUpyYVdRaU9pSTBNallpTENKbGJtTWlPaUpCTWpVMlIwTk5JaXdpWVd4bklqb2laR2x5SW4wLi5TbDRXaXozMVhzakk5eG10Lm5Ja0FpWW1MS2lIb1FuUFBRZVVxbjJONUEyRmVHOGxJd19sZFVYMF9xXzdVZXYyVEtoYjRVdmp3ZFVTTWo0ZkVubVlLQnpuVlZXVjFSOWtsOUxvYURzejNFdVJ0TC1JR0ExMGxUSXpDTXdZRE02TmhROXdzTDVwcWN4M0NXaGJ1SXVZX2hSMndFaEtnajJDN2U0SF91ank1a0U0emwwQzR6dF85M09jMy1fWnNXNTBDb3VKNXV0MVRxMTVCU0VUSndRdzV5OVFoQUVfZmpHejg0S1Z3bHd5Y1FsSllSdFFpY2JLVkNNcEI1Z2t5LVNDU3NKcE5vUElUSW1TY1FnTTdDWDkxMmgwOVFnU1pWZktjT2QyajN0VDViTEtlQ2JnS0dFLU41LVJBMXN6Q3djeHhpbm9qY1h2YlJFY2o5dHVlcnA3cmRoOGdFX3JicnBjdVpSNG91TjBGb2tYWE9XMUlmdUlRT3hTQ3BwLVg0YVlXVURMVkZ0Ty1ZUHhjQUxObXFaM1hiZnNNZllJaTZ1M0FyWS1lU0o3ZWVLWi1VamUzR2kxLW9qcFFRTTluMHVBU3BvbGFyZ0d6OHJhdS11amJRNW9fczE1VEtZcDFyQ2lvSkI5QmJIb3ZoZkpJMFRWMTVXc1JSVkE1VF93dUtOMDZsUjhMT2p3VGoyeGN4dUUwT1ppYmc3WDlZMXpVMC0xVWp0MEUwRGVCM2s4QlhGNm1PdFNwNHB6MWFRLlNKcHlKTmdTdFdzU3ZhSXRwUFo2TFE=\"},
+      {\"items\": [{\"id\": \"ocid1.policy.oc1..aaaaaaaa6dcl54tqia6wvwxitosf4t3ld3wgrnhthzqmdnqonaztu3hmlnla\",
+      \"compartmentId\": \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\",
+      \"name\": \"PolicyFor.ImageTestsUser\", \"statements\": [\"Allow group GroupFor.ImageTestsUser
+      to read volume-family in tenancy\", \"Allow group GroupFor.ImageTestsUser manage
+      all-resources on compartment ImageTestsCompartment\", \"Allow group GroupFor.ImageTestsUser
+      to use tag-namespaces in tenancy\", \"allow dynamic-group imageTestingInstancePrincipals
+      to manage all-resources in tenancy\"], \"description\": \"Policy for ImageTestsUser\",
+      \"timeCreated\": \"2019-03-14T19:56:45.931000+00:00\", \"lifecycleState\": \"ACTIVE\",
+      \"inactiveStatus\": null, \"versionDate\": null, \"freeformTags\": {}, \"definedTags\":
+      {}}, {\"id\": \"ocid1.policy.oc1..aaaaaaaaevzshkpyxpkx33n22zzebm7mrnmgtl6vsa6z3dxd3syk7qz564xa\",
+      \"compartmentId\": \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\",
+      \"name\": \"PolicyFor.JavaSDK.TestUser\", \"statements\": [\"Allow group GroupFor.JavaSDK.TestUser
+      manage all-resources on compartment JavaSDKTestCompartment\", \"Allow group
+      GroupFor.JavaSDK.TestUser to read volume-family in tenancy\", \"Allow group
+      GroupFor.JavaSDK.TestUser to use tag-namespaces in tenancy\"], \"description\":
+      \"OK to delete\", \"timeCreated\": \"2019-04-17T00:47:35.456000+00:00\", \"lifecycleState\":
+      \"ACTIVE\", \"inactiveStatus\": null, \"versionDate\": null, \"freeformTags\":
+      {}, \"definedTags\": {}}, {\"id\": \"ocid1.policy.oc1..aaaaaaaa4u3otfam25pb2ekhgtnkt6mufb65luz4tck5hvtvuxn6i4zm7beq\",
+      \"compartmentId\": \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\",
+      \"name\": \"PythonCLITestUserPolicy\", \"statements\": [\"Allow group PythonCLITestGroup
+      to manage all-resources on compartment PythonCLITestCompartment\", \"Allow group
+      PythonCLITestGroup to use tag-namespaces in compartment PythonCLITestCompartment\",
+      \"Allow group PythonCLITestGroup to manage all-resources on compartment PythonCliCompartmentRenameTest-10000\",
+      \"Allow group PythonCLITestGroup to manage all-resources on compartment OCITestingService\"],
+      \"description\": \"Policy used by CLI integration tests.\", \"timeCreated\":
+      \"2018-05-25T15:16:05.088000+00:00\", \"lifecycleState\": \"ACTIVE\", \"inactiveStatus\":
+      null, \"versionDate\": null, \"freeformTags\": {}, \"definedTags\": {}}, {\"id\":
+      \"ocid1.policy.oc1..aaaaaaaac3ckwvkxz5tclkvpyqlv4cagqst7dya4jphdqcz56p5n6t4xbzca\",
+      \"compartmentId\": \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\",
+      \"name\": \"RubySDKIntegrationTestPolicy\", \"statements\": [\"ALLOW GROUP RubySDKIntegrationTestGroup
+      to manage all-resources in compartment RubySDKTestCompartment\", \"Allow group
+      RubySDKIntegrationTestGroup to use tag-namespaces in compartment RubySDKTestCompartment\",
+      \"Allow group RubySDKIntegrationTestGroup to use tag-namespaces in tenancy\",
+      \"Allow group RubySDKIntegrationTestGroup to manage volume-backups in compartment
+      RubySDKTestCompartment\", \"Allow group RubySDKIntegrationTestGroup to manage
+      load-balancers in compartment RubySDKTestCompartment\"], \"description\": \"Test
+      user policy for the SDK/CLI automated integration tests.\", \"timeCreated\":
+      \"2018-12-07T18:18:56.455000+00:00\", \"lifecycleState\": \"ACTIVE\", \"inactiveStatus\":
+      null, \"versionDate\": null, \"freeformTags\": {}, \"definedTags\": {}}, {\"id\":
+      \"ocid1.policy.oc1..aaaaaaaaoynsyzxw2mdfukwqzpsm7vjkius5fwestc4fkisypdwgyjqhmcvq\",
+      \"compartmentId\": \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\",
+      \"name\": \"Sumit_HDFS_Policy\", \"statements\": [\"allow dynamic-group Sumit_HDFS_InstancePrincipals
+      to inspect bucket in compartment hdfs-test\", \"allow dynamic-group Sumit_HDFS_InstancePrincipals
+      to inspect objects in compartment hdfs-test\", \"allow dynamic-group Sumit_HDFS_InstancePrincipals
+      to read objects in compartment hdfs-test\", \"allow dynamic-group Sumit_HDFS_InstancePrincipals
+      to manage object-family in compartment hdfs-test\"], \"description\": \"HDFS
+      Instance Principals\", \"timeCreated\": \"2018-12-02T07:21:06.153000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"inactiveStatus\": null, \"versionDate\": null,
+      \"freeformTags\": {}, \"definedTags\": {}}, {\"id\": \"ocid1.policy.oc1..aaaaaaaawkpbmo6tzz6lmqb2je3q2n3q4vjg5mppwrukgkpg6g5cls4t4yva\",
+      \"compartmentId\": \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\",
+      \"name\": \"Tenant Admin Policy\", \"statements\": [\"ALLOW GROUP Administrators
+      to manage all-resources IN TENANCY\"], \"description\": \"Tenant Admin Policy\",
+      \"timeCreated\": \"2018-01-12T22:27:09.954000+00:00\", \"lifecycleState\": \"ACTIVE\",
+      \"inactiveStatus\": null, \"versionDate\": null, \"freeformTags\": {}, \"definedTags\":
+      {}}, {\"id\": \"ocid1.policy.oc1..aaaaaaaais3ikvka2plijx7rw3xuucyuxnznphbxh2e4kzl2zljvezav56vq\",
+      \"compartmentId\": \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\",
+      \"name\": \"TestPermissionsPolicy\", \"statements\": [\"Allow group TestPermissionsGroup
+      to inspect volume-backups in tenancy\", \"Allow group TestPermissionsGroup to
+      read volume-backups in tenancy\", \"Allow group TestPermissionsGroup to inspect
+      volume-family in tenancy\", \"Allow group TestPermissionsGroup to read volume-family
+      in tenancy\", \"Allow group TestPermissionsGroup to inspect load-balancers in
+      tenancy\", \"Allow group TestPermissionsGroup to read load-balancers in tenancy\"],
+      \"description\": \"Safe to delete\", \"timeCreated\": \"2019-02-22T21:25:27.067000+00:00\",
+      \"lifecycleState\": \"ACTIVE\", \"inactiveStatus\": null, \"versionDate\": null,
+      \"freeformTags\": {}, \"definedTags\": {\"testingServiceAndyTagNs001\": {\"_Sts04388918\":
+      \"__STS0438_2554\", \"_Sts04764908\": \"__STS0476_6855\"}}}], \"opcRequestId\":
+      \"A4178C2F5E42499ABB7B13C100FC7510\", \"opcNextPage\": \"AAAAAAAAAAJleUpyYVdRaU9pSTBNallpTENKbGJtTWlPaUpCTWpVMlIwTk5JaXdpWVd4bklqb2laR2x5SW4wLi52Nk9GQ3NfVXpfNmRYQk91LllYTzVyY2c5TXd4RjVTTEhFR0I4YlpITnFfTmlES0o0ekFHbE9ueEI0bDRjcFF4Q2d3aDFMX2NkTFRsQ3laSmhBbVdyRFRGajF3alh3cGxwQ2U1UllxU2N3eG1kdWtRUkNCTnhwbXF1N2xEWlBHNkpRcmlGWUx2czh2U1Y1ajlNVnNHdHBPbmxiWVAxMjRDOVltYTg3eGgtaTAwTzdLS0t0Zk1nWmhWakVJOXROZ2lqVzRJTlR3XzlhdHJQOHk5YWRWZHNZM2hzNWNCbXV5V1pkZGZWNExfY1dIbFJkWWNBaGRXekJaYjVOVE1BSm1YTFlGZnUyWnFIMWlKMWpvWnZOaWRDMnVEbnFnZWFfd0hhcXkwRzRDSzRnT19wQjVjRFA2RWRCVVc2Z2M5dXdFNjVJeTgyNEpPUUI1a1RwajRwZExfdkZOSmVORElKM29NcDh5SWpUNThJWThKaDNqYTNGcWdrMHlLRHdHZGpyYjZnUVZma2hGTjZ3QkhHTGp0WEdUUmo3OWhUamFZMjQ1NE9MNl90bnA4VTRiU2hLUHd5VVV4Q1RLb3VLbEc0VUVrUXU5TEtOR1hGaDJCbmZwejJ1eDItVGg0SlBCbVI2UmtCSGE0SmUtZ1Z4MlhaSGh5bVpOczFjX3A4UEN1aW0xX3JLazd4cVoxamQzM0xUdGJHaXZIQ1VXYnhBWVNYNWFUb1JZR0NEMktCa3R2S05sQzY3dE04WEFlSTNRLjl0TTFHbmRWUGJISU5JVVZXcjczdnc=\"}]",
+      "responseClass": "com.oracle.bmc.identity.responses.ListPoliciesResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['18835']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0577&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:54:16 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
 version: 1

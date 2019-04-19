@@ -16,4 +16,21 @@ interactions:
       Date: ['Mon, 01 Apr 2019 22:52:52 GMT']
       Server: [Jetty(9.4.7.v20170914)]
     status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=core&apiName=GetBootVolumeAttachment
+  response:
+    body: {string: 'false'}
+    headers:
+      Content-Length: ['5']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:50:08 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
 version: 1

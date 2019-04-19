@@ -1,6 +1,7 @@
 # coding: utf-8
 # Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
+import base64
 import json
 import requests
 import uuid
@@ -157,7 +158,7 @@ class TestingServiceClient:
                 if api_name.lower().startswith('list'):
                     data_field_name = 'items'
                 response_dict = self.get_response_dictionary(oci_response, is_delete_operation, data_field_name)
-                response_json = util.make_dict_keys_camel_case(response_dict)
+                response_json = util.make_dict_keys_camel_case(response_dict, ['freeformTags', 'definedTags', 'metadata'])
 
             data['responseJson'] = json.dumps(response_json)
             data['responseClass'] = response_class
@@ -185,7 +186,14 @@ class TestingServiceClient:
         if is_delete_operation:
             oci_response.data = {}
 
-        response_dict = oci_util.to_dict({data_field_name: oci_response.data})
+        if data_field_name == 'stream':
+            # for binary data, decode them first then put into inputStream
+            response_dict = {"inputStream": str(base64.b64encode(oci_response.data.content).decode('utf-8')),
+                             "contentLength": len(oci_response.data.content)}
+        else:
+            response_dict = oci_util.to_dict({data_field_name: oci_response.data})
+
+        # response_dict = oci_util.to_dict({data_field_name: oci_response.data})
         response_dict['opcRequestId'] = self.build_request_id()
         response_dict['opcNextPage'] = oci_response.next_page
 
@@ -273,3 +281,20 @@ class TestingServiceClient:
 
         assert api_enabled_response is True or api_enabled_response is False, 'Received invalid response from testing service, should be true or false. Response: {}'.format(api_enabled_response)
         return api_enabled_response
+
+    def get_endpoint(self, service_name, client_name, api_name):
+        # standardize service name to convention for Java SDK model namespaces (all lower case one word)
+        service_name = service_name.replace('_', '').lower()
+
+        url = '{service_root_url}/endpoint'.format(service_root_url=SERVICE_ROOT_URL)
+        params = {
+            'sessionId': self.session_id,
+            'serviceName': service_name,
+            'clientName': client_name,
+            'lang': SERVICE_LANGUAGE,
+            'apiName': api_name
+        }
+
+        response = requests.get(url, params=params)
+        assert response.status_code == 200, response.content
+        return response.content.decode('UTF-8')

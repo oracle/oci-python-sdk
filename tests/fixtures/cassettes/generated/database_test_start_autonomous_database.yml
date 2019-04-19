@@ -1,0 +1,139 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=database&apiName=StartAutonomousDatabase
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 19:21:37 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?serviceName=database&apiName=StartAutonomousDatabase&lang=Python&clientName=database
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq","endpoint":null,"fingerprint":"ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9","passPhrase":"dexsdk","keyFile":"java_sdk_admin_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,0C9B64A4AA0303EC02C79E91D0F8B0D0\n\naSd0uIKreq5NirzJ+Esa36lYJo4lU2zSjIIw8wvZEsd+LdaifqONZIfHHiB6/KgG\nse4wd/58tPsiEgnK7D1q8wmdVDouMSX31mhcbq2bwRjXATpNnOMnhDtahJv6cw4M\nDtlXYplk0LzpP6WjqXqFST4Yz0l1NO90ahnruwcb/SUCm12ONMJ5o4G1UO2/0IkX\nTRlMRpm/etIpStNSP+1IsD1gSWlAzhs1zodkpd+2eW2ovlAaY25Hm/aqK97jzsCF\n1f4dCm7spCHYOfv10XHNB99/jomN1KQuDy29MmVaJ9oYpOIDlu0yj4Q/XempLxa6\nhqgt0gUO9cMV2bfStsHKWJwq+KoncamBHpU/+CyNjoYq1QTC0urWlCP5hNo5VZhF\nzXBJa188FD2TiPFU8Z4EhercM83TfBsRVEQOpu5sbMaUOT6xXwnCWfM5Pjxy/0xE\n6oF2zq+H0ES12dh19C5P8ueRFLyhaWFliWJv3SXy9iCslcso6USnBBKnA26xMile\nY3m9uRP31yZW8czxYSIgKEV3Mp3GFAYwuebNjLgIM7xT+PvDiOO4qAhA0waGPhYH\n2QMl9ThSahKT6vpjVUQuGOjaRcJ5Vr73VGX4MnxXVxsl5de6y/ZfP5ndx5Lb4K43\njwrMbCIzrM1ZzR2JMTuMJFDasLjEW/Y9nf7FRh2gByeGLObAmHsjlUdW65QQu+Qy\nu4ADc6TbpqvLobocF5fKgML7JCAA/YqmYlZCV6gGOdKUXUT3VMmZcebcTtw1Zmxh\nwaUQe99D90w3Q/7CCCiGO2waZaTNl+ahVnQZEGHN9xJydkCkfVZDgVmdDmsSXmxo\n2DWf2c2/1me2zZAcW0SFBnyrt3uphdCnICaqXR0AnQUmw49YY4nk2fPTMxZs1r+2\n+poVVEfr//cHTTs4yu9ZVT2wGWf/Ooo4sm7obB8EhGkrXs3ormx9WHj6ezexupsd\nanWE7Uy54ovKdOosKB6nQOfP+Iwe4sSJ6oYPNvvh19v05+AhOCdONjMeCwTfBvtJ\nA5luj6CtFbgSX96A3zTRrTXQO3N4aLTF8niL+FcZ69RzYcxp3rlDSK88JyJ9xsu1\n+lNIcAPAFhzisC/eB9b1eDJ4JErJyIdBTZ4bPv4dtl/RpFcyIA4WMjskGCRo60I7\nN3DVqGGXLlC7KDjvPmdvvfAx3lzcIANhwBhLSQJ+y1bcyW6FcX0ZtY962Hb06Qj5\nXG5nDmT1qVkfDmzpIOF9GtDgch7gtf/EjHOUyaw60dDgJ5RF6lORLjFeuU9W7I1e\nD3mpWb6WP6DKoaQTgrLLrIJCLIdXr92XmvDj+iuYdGhCIkqHWqNbRW4TyiuukNJH\n12Zq/LlA1s58YJVa520o7EOXpmD4sGIrctlI3keSmKhiavy7j5ULz5J++jL+Yxlc\n6h9q4v71oyFmVgNpIEJNg7sSCkE72yzUCaglBUdUIMG3D0sI+VwufC7lbhohvHBr\nNzmbg2bW4x0CCprf/o5JvdNiB+bQdKG4t2Q7fhhZIW7ACii591ZBbpnUakDUQBZa\nV2yMaErypILHlQvlReHXVK1adUTxLNWf//VDoyclQk5k0uFIkUmpn+EXWnEHw7e8\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2261']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 19:21:38 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=database&apiName=StartAutonomousDatabase&lang=Python&sessionId=0919
+  response:
+    body: {string: '[{"containerId":"97f52ed0-7bde-4de4-b913-595e939f8276","request":{"autonomousDatabaseId":"ocid1.autonomousdatabase.oc1.phx.abyhqljtio52dc2s2mdlakvv6o5byzohywffqs3fqwavkp3zvh7fzak67z4a"}}]'}
+    headers:
+      Content-Length: ['187']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 19:21:38 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host content-length content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="Rx9seeAFeDerXWuRS0zf2hE8ZWQaDQZjDNomocBMbBMXM2JudN23s1m7TpJ3oSnVQMbIcNrgoamgwzbxdXhxKAu/t1tZJ91mfB3o3vaf1vYXJiJr1otuTwL64a2pZP31BY/Y8GDGOzNFxRfCXci+DlKYxtMx8lw6xutcKg8J78hezfZdxBAy2EewA5RV0laJHyrRLEY3gV7lwnuLbnwercXDnQxe6uL3ukTwlIo8gvkgzn5ePQ4hzVM0bA7Ea0UdKsQOyphi36QHk3MIP+MS2+6C3LUa7CYbFz3f8gVt90fj0pV7YbepCbFKCsullxKr8kAf37wBWLwEuVPjimWN0w==",version="1"']
+      connection: [keep-alive]
+      content-length: ['0']
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 19:22:42 GMT']
+      host: [database.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [F1B690B6385D49DE8BFE0EF1CF6DB4A7]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+      x-content-sha256: [47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=]
+    method: POST
+    uri: https://database.us-phoenix-1.oraclecloud.com/20160918/autonomousDatabases/ocid1.autonomousdatabase.oc1.phx.abyhqljtio52dc2s2mdlakvv6o5byzohywffqs3fqwavkp3zvh7fzak67z4a/actions/start
+  response:
+    body: {string: "{\n  \"additionalDatabaseStatus\" : [ \"OML is down\", \"Backup\
+        \ ETA 1h\" ],\n  \"autonomousContainerDatabaseId\" : null,\n  \"compartmentId\"\
+        \ : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"connectionStrings\" : {\n    \"allConnectionStrings\" : {\n      \"\
+        high\" : \"jdbc://adwc.uscom-east-1.oraclecloud.com:1522/hgeN5l2l3Y7AE5SS_D0919315_high.adwc.oraclecloud.com\"\
+        ,\n      \"low\" : \"jdbc://adwc.uscom-east-1.oraclecloud.com:1522/hgeN5l2l3Y7AE5SS_D0919315_low.adwc.oraclecloud.com\"\
+        ,\n      \"parallel\" : \"jdbc://adwc.uscom-east-1.oraclecloud.com:1522/hgeN5l2l3Y7AE5SS_D0919315_parallel.adwc.oraclecloud.com\"\
+        ,\n      \"medium\" : \"jdbc://adwc.uscom-east-1.oraclecloud.com:1522/hgeN5l2l3Y7AE5SS_D0919315_medium.adwc.oraclecloud.com\"\
+        \n    },\n    \"dedicated\" : null,\n    \"high\" : \"jdbc://adwc.uscom-east-1.oraclecloud.com:1522/wOMGv2Qiidf2xiAv_D0919315_high.adwc.oraclecloud.com\"\
+        ,\n    \"low\" : \"jdbc://adwc.uscom-east-1.oraclecloud.com:1522/wOMGv2Qiidf2xiAv_D0919315_low.adwc.oraclecloud.com\"\
+        ,\n    \"medium\" : \"jdbc://adwc.uscom-east-1.oraclecloud.com:1522/wOMGv2Qiidf2xiAv_D0919315_medium.adwc.oraclecloud.com\"\
+        \n  },\n  \"cpuCoreCount\" : 1,\n  \"dataStorageSizeInTBs\" : 1,\n  \"dbName\"\
+        \ : \"D0919315\",\n  \"dbVersion\" : \"11.2.0.4\",\n  \"dbWorkload\" : \"\
+        OLTP\",\n  \"definedTags\" : { },\n  \"displayName\" : \"__STS0919_4977\"\
+        ,\n  \"freeformTags\" : { },\n  \"id\" : \"ocid1.autonomousdatabase.oc1.phx.abyhqljtio52dc2s2mdlakvv6o5byzohywffqs3fqwavkp3zvh7fzak67z4a\"\
+        ,\n  \"isAutoScalingEnabled\" : false,\n  \"isDedicated\" : false,\n  \"licenseModel\"\
+        \ : \"BRING_YOUR_OWN_LICENSE\",\n  \"lifecycleDetails\" : null,\n  \"lifecycleState\"\
+        \ : \"STARTING\",\n  \"serviceConsoleUrl\" : null,\n  \"sqlWebDeveloperUrl\"\
+        \ : null,\n  \"timeCreated\" : \"2019-04-18T19:21:39.973Z\",\n  \"usedDataStorageSizeInTBs\"\
+        \ : null,\n  \"whitelistedIps\" : null\n}"}
+    headers:
+      Connection: [keep-alive]
+      Content-Length: ['1783']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 19:22:42 GMT']
+      ETag: [3390baf3]
+      X-Content-Type-Options: [nosniff]
+      opc-request-id: [F1B690B6385D49DE8BFE0EF1CF6DB4A7/065D250F0937AC2CD701C7F8FEF4E053/EE01190FA08FFD359F7ABF4A990984C4]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"containerId": "97f52ed0-7bde-4de4-b913-595e939f8276", "listResponse":
+      false, "requestClass": "com.oracle.bmc.database.requests.StartAutonomousDatabaseRequest",
+      "requestJson": "{\"autonomousDatabaseId\": \"ocid1.autonomousdatabase.oc1.phx.abyhqljtio52dc2s2mdlakvv6o5byzohywffqs3fqwavkp3zvh7fzak67z4a\"}",
+      "responseJson": "{\"autonomousDatabase\": {\"id\": \"ocid1.autonomousdatabase.oc1.phx.abyhqljtio52dc2s2mdlakvv6o5byzohywffqs3fqwavkp3zvh7fzak67z4a\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"lifecycleState\": \"STARTING\", \"lifecycleDetails\": null, \"dbName\": \"D0919315\",
+      \"cpuCoreCount\": 1, \"dataStorageSizeInTbs\": 1, \"timeCreated\": \"2019-04-18T19:21:39.973000+00:00\",
+      \"displayName\": \"__STS0919_4977\", \"serviceConsoleUrl\": null, \"connectionStrings\":
+      {\"high\": \"jdbc://adwc.uscom-east-1.oraclecloud.com:1522/wOMGv2Qiidf2xiAv_D0919315_high.adwc.oraclecloud.com\",
+      \"medium\": \"jdbc://adwc.uscom-east-1.oraclecloud.com:1522/wOMGv2Qiidf2xiAv_D0919315_medium.adwc.oraclecloud.com\",
+      \"low\": \"jdbc://adwc.uscom-east-1.oraclecloud.com:1522/wOMGv2Qiidf2xiAv_D0919315_low.adwc.oraclecloud.com\",
+      \"allConnectionStrings\": {\"high\": \"jdbc://adwc.uscom-east-1.oraclecloud.com:1522/hgeN5l2l3Y7AE5SS_D0919315_high.adwc.oraclecloud.com\",
+      \"low\": \"jdbc://adwc.uscom-east-1.oraclecloud.com:1522/hgeN5l2l3Y7AE5SS_D0919315_low.adwc.oraclecloud.com\",
+      \"parallel\": \"jdbc://adwc.uscom-east-1.oraclecloud.com:1522/hgeN5l2l3Y7AE5SS_D0919315_parallel.adwc.oraclecloud.com\",
+      \"medium\": \"jdbc://adwc.uscom-east-1.oraclecloud.com:1522/hgeN5l2l3Y7AE5SS_D0919315_medium.adwc.oraclecloud.com\"}},
+      \"licenseModel\": \"BRING_YOUR_OWN_LICENSE\", \"usedDataStorageSizeInTbs\":
+      null, \"freeformTags\": {}, \"definedTags\": {}, \"dbVersion\": \"11.2.0.4\",
+      \"dbWorkload\": \"OLTP\", \"whitelistedIps\": null}, \"opcRequestId\": \"251384FC85E5470AB9B0A86CBF77DF6A\",
+      \"opcNextPage\": null, \"eTag\": \"3390baf3\"}", "responseClass": "com.oracle.bmc.database.responses.StartAutonomousDatabaseResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2076']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0919&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 19:22:43 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+version: 1

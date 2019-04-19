@@ -1,0 +1,99 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=streaming&apiName=CreateStream
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:50:30 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?serviceName=streaming&apiName=CreateStream&lang=Python&clientName=streamAdmin
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq","endpoint":null,"fingerprint":"ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9","passPhrase":"dexsdk","keyFile":"java_sdk_admin_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,0C9B64A4AA0303EC02C79E91D0F8B0D0\n\naSd0uIKreq5NirzJ+Esa36lYJo4lU2zSjIIw8wvZEsd+LdaifqONZIfHHiB6/KgG\nse4wd/58tPsiEgnK7D1q8wmdVDouMSX31mhcbq2bwRjXATpNnOMnhDtahJv6cw4M\nDtlXYplk0LzpP6WjqXqFST4Yz0l1NO90ahnruwcb/SUCm12ONMJ5o4G1UO2/0IkX\nTRlMRpm/etIpStNSP+1IsD1gSWlAzhs1zodkpd+2eW2ovlAaY25Hm/aqK97jzsCF\n1f4dCm7spCHYOfv10XHNB99/jomN1KQuDy29MmVaJ9oYpOIDlu0yj4Q/XempLxa6\nhqgt0gUO9cMV2bfStsHKWJwq+KoncamBHpU/+CyNjoYq1QTC0urWlCP5hNo5VZhF\nzXBJa188FD2TiPFU8Z4EhercM83TfBsRVEQOpu5sbMaUOT6xXwnCWfM5Pjxy/0xE\n6oF2zq+H0ES12dh19C5P8ueRFLyhaWFliWJv3SXy9iCslcso6USnBBKnA26xMile\nY3m9uRP31yZW8czxYSIgKEV3Mp3GFAYwuebNjLgIM7xT+PvDiOO4qAhA0waGPhYH\n2QMl9ThSahKT6vpjVUQuGOjaRcJ5Vr73VGX4MnxXVxsl5de6y/ZfP5ndx5Lb4K43\njwrMbCIzrM1ZzR2JMTuMJFDasLjEW/Y9nf7FRh2gByeGLObAmHsjlUdW65QQu+Qy\nu4ADc6TbpqvLobocF5fKgML7JCAA/YqmYlZCV6gGOdKUXUT3VMmZcebcTtw1Zmxh\nwaUQe99D90w3Q/7CCCiGO2waZaTNl+ahVnQZEGHN9xJydkCkfVZDgVmdDmsSXmxo\n2DWf2c2/1me2zZAcW0SFBnyrt3uphdCnICaqXR0AnQUmw49YY4nk2fPTMxZs1r+2\n+poVVEfr//cHTTs4yu9ZVT2wGWf/Ooo4sm7obB8EhGkrXs3ormx9WHj6ezexupsd\nanWE7Uy54ovKdOosKB6nQOfP+Iwe4sSJ6oYPNvvh19v05+AhOCdONjMeCwTfBvtJ\nA5luj6CtFbgSX96A3zTRrTXQO3N4aLTF8niL+FcZ69RzYcxp3rlDSK88JyJ9xsu1\n+lNIcAPAFhzisC/eB9b1eDJ4JErJyIdBTZ4bPv4dtl/RpFcyIA4WMjskGCRo60I7\nN3DVqGGXLlC7KDjvPmdvvfAx3lzcIANhwBhLSQJ+y1bcyW6FcX0ZtY962Hb06Qj5\nXG5nDmT1qVkfDmzpIOF9GtDgch7gtf/EjHOUyaw60dDgJ5RF6lORLjFeuU9W7I1e\nD3mpWb6WP6DKoaQTgrLLrIJCLIdXr92XmvDj+iuYdGhCIkqHWqNbRW4TyiuukNJH\n12Zq/LlA1s58YJVa520o7EOXpmD4sGIrctlI3keSmKhiavy7j5ULz5J++jL+Yxlc\n6h9q4v71oyFmVgNpIEJNg7sSCkE72yzUCaglBUdUIMG3D0sI+VwufC7lbhohvHBr\nNzmbg2bW4x0CCprf/o5JvdNiB+bQdKG4t2Q7fhhZIW7ACii591ZBbpnUakDUQBZa\nV2yMaErypILHlQvlReHXVK1adUTxLNWf//VDoyclQk5k0uFIkUmpn+EXWnEHw7e8\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2261']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:50:30 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=streaming&apiName=CreateStream&lang=Python&sessionId=0589
+  response:
+    body: {string: '[{"containerId":"645023cb-dbfe-46a9-ac4e-b512794b7723","request":{"createStreamDetails":{"name":"sdkInteg-0589-2e7d3460-51ae-4bf3-81e4-592e96338e74","partitions":1,"compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","freeformTags":{"tag1":"value1.__STS0589_746","tag2":"value2.__STS0589_746"},"definedTags":{"testing_service_tag_ns_001":{"testing_service_tag_01":"tag4.__STS0589_7243","testing_service_tag_02":"tag5.__STS0589_7243","testing_service_tag_03":"tag6.__STS0589_7243"}}}}}]'}
+    headers:
+      Content-Length: ['534']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:50:30 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"name": "sdkInteg-0589-2e7d3460-51ae-4bf3-81e4-592e96338e74", "partitions":
+      1, "compartmentId": "ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba",
+      "freeformTags": {"tag1": "value1.__STS0589_746", "tag2": "value2.__STS0589_746"},
+      "definedTags": {"testing_service_tag_ns_001": {"testing_service_tag_01": "tag4.__STS0589_7243",
+      "testing_service_tag_02": "tag5.__STS0589_7243", "testing_service_tag_03": "tag6.__STS0589_7243"}}}'
+    headers:
+      Content-Length: ['461']
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host content-length content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="SCFSzAbhJ1wMpuhTO0M+WyhTW9jvy3vSd0gnUIHxQ9/y4E43lSnl7j1fnjzthZKknkIKM+J0xXd8eyBaIgwE42UTEen8t/ALbtJ0PQjLUjIPdhixrUJvfjzmwlgPvw43+S/1qAhI9O6jZjLXAatPoB/eURVGv5meO1RJf7EMFROPwk4aLo9bLNSCuXGEzEOQP4QGwIaw4OLTqBe2TURZWdO9ELImtFaYa85N5Ce4Is1ySwYSamkC/0YQuu4Ds6pMFBQuynJXiQVl3NBZbJ6TWFo55YxxvpdnJ5nVopR4wed6UNNYWvGQqy17NonYd3oTfF9mgJa5VT8Wda3G+l4nVg==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 18:50:31 GMT']
+      host: [streams.us-phoenix-1.streaming.oci.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [04986348AA5D4316BC77400BD1A485D4]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+      x-content-sha256: [8R4CkdnnzcZQKYa3wgxSg8bbBisFyg6hJLG6f9QXEPY=]
+    method: POST
+    uri: https://streams.us-phoenix-1.streaming.oci.oraclecloud.com/20180418/streams
+  response:
+    body: {string: "{\n  \"name\" : \"sdkInteg-0589-2e7d3460-51ae-4bf3-81e4-592e96338e74\"\
+        ,\n  \"id\" : \"ocid1.stream.oc1.phx.aaaaaaaaqxi52l6nqjfchaxbknm3p62cckrvi3r7kflbzlpcrv7naxz5bebq\"\
+        ,\n  \"partitions\" : 1,\n  \"retentionInHours\" : 24,\n  \"compartmentId\"\
+        \ : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"lifecycleState\" : \"CREATING\",\n  \"timeCreated\" : \"2019-04-18T18:50:31.808Z\"\
+        ,\n  \"messagesEndpoint\" : \"https://api.cell-1.us-phoenix-1.streaming.oci.oraclecloud.com\"\
+        ,\n  \"freeformTags\" : {\n    \"tag1\" : \"value1.__STS0589_746\",\n    \"\
+        tag2\" : \"value2.__STS0589_746\"\n  },\n  \"definedTags\" : {\n    \"testing_service_tag_ns_001\"\
+        \ : {\n      \"testing_service_tag_01\" : \"tag4.__STS0589_7243\",\n     \
+        \ \"testing_service_tag_02\" : \"tag5.__STS0589_7243\",\n      \"testing_service_tag_03\"\
+        \ : \"tag6.__STS0589_7243\"\n    }\n  }\n}"}
+    headers:
+      Strict-Transport-Security: [max-age=15768000]
+      access-control-allow-credentials: ['true']
+      access-control-allow-methods: ['POST,PUT,GET,HEAD,DELETE,OPTIONS']
+      access-control-allow-origin: ['*']
+      access-control-expose-headers: ['access-control-allow-credentials,access-control-allow-methods,access-control-allow-origin,connection,content-length,content-type,opc-client-info,opc-request-id']
+      content-length: ['816']
+      content-type: [application/json]
+      opc-request-id: [04986348AA5D4316BC77400BD1A485D4/AC0B6D48028112B20ABBD8ED1C3FA321/F86400B053712A7CF4450A61AF897335]
+    status: {code: 200, message: OK}
+version: 1

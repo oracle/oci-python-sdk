@@ -45,7 +45,8 @@ def test_decrypt(testing_service_client):
         service_error = None
 
         try:
-            client = oci.key_management.KmsCryptoClient(config)
+            endpoint = testing_service_client.get_endpoint("key_management", "KmsCryptoClient", "Decrypt")
+            client = oci.key_management.KmsCryptoClient(config, endpoint)
             response = client.decrypt(
                 decrypt_data_details=request.pop(util.camelize('decrypt_data_details')),
                 **(util.camel_to_snake_keys(request))
@@ -84,7 +85,8 @@ def test_encrypt(testing_service_client):
         service_error = None
 
         try:
-            client = oci.key_management.KmsCryptoClient(config)
+            endpoint = testing_service_client.get_endpoint("key_management", "KmsCryptoClient", "Encrypt")
+            client = oci.key_management.KmsCryptoClient(config, endpoint)
             response = client.encrypt(
                 encrypt_data_details=request.pop(util.camelize('encrypt_data_details')),
                 **(util.camel_to_snake_keys(request))
@@ -123,7 +125,8 @@ def test_generate_data_encryption_key(testing_service_client):
         service_error = None
 
         try:
-            client = oci.key_management.KmsCryptoClient(config)
+            endpoint = testing_service_client.get_endpoint("key_management", "KmsCryptoClient", "GenerateDataEncryptionKey")
+            client = oci.key_management.KmsCryptoClient(config, endpoint)
             response = client.generate_data_encryption_key(
                 generate_key_details=request.pop(util.camelize('generate_key_details')),
                 **(util.camel_to_snake_keys(request))

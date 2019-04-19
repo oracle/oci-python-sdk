@@ -1,0 +1,123 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=identity&apiName=CreateIdpGroupMapping
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:51:37 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?serviceName=identity&apiName=CreateIdpGroupMapping&lang=Python&clientName=identity
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq","endpoint":null,"fingerprint":"ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9","passPhrase":"dexsdk","keyFile":"java_sdk_admin_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,0C9B64A4AA0303EC02C79E91D0F8B0D0\n\naSd0uIKreq5NirzJ+Esa36lYJo4lU2zSjIIw8wvZEsd+LdaifqONZIfHHiB6/KgG\nse4wd/58tPsiEgnK7D1q8wmdVDouMSX31mhcbq2bwRjXATpNnOMnhDtahJv6cw4M\nDtlXYplk0LzpP6WjqXqFST4Yz0l1NO90ahnruwcb/SUCm12ONMJ5o4G1UO2/0IkX\nTRlMRpm/etIpStNSP+1IsD1gSWlAzhs1zodkpd+2eW2ovlAaY25Hm/aqK97jzsCF\n1f4dCm7spCHYOfv10XHNB99/jomN1KQuDy29MmVaJ9oYpOIDlu0yj4Q/XempLxa6\nhqgt0gUO9cMV2bfStsHKWJwq+KoncamBHpU/+CyNjoYq1QTC0urWlCP5hNo5VZhF\nzXBJa188FD2TiPFU8Z4EhercM83TfBsRVEQOpu5sbMaUOT6xXwnCWfM5Pjxy/0xE\n6oF2zq+H0ES12dh19C5P8ueRFLyhaWFliWJv3SXy9iCslcso6USnBBKnA26xMile\nY3m9uRP31yZW8czxYSIgKEV3Mp3GFAYwuebNjLgIM7xT+PvDiOO4qAhA0waGPhYH\n2QMl9ThSahKT6vpjVUQuGOjaRcJ5Vr73VGX4MnxXVxsl5de6y/ZfP5ndx5Lb4K43\njwrMbCIzrM1ZzR2JMTuMJFDasLjEW/Y9nf7FRh2gByeGLObAmHsjlUdW65QQu+Qy\nu4ADc6TbpqvLobocF5fKgML7JCAA/YqmYlZCV6gGOdKUXUT3VMmZcebcTtw1Zmxh\nwaUQe99D90w3Q/7CCCiGO2waZaTNl+ahVnQZEGHN9xJydkCkfVZDgVmdDmsSXmxo\n2DWf2c2/1me2zZAcW0SFBnyrt3uphdCnICaqXR0AnQUmw49YY4nk2fPTMxZs1r+2\n+poVVEfr//cHTTs4yu9ZVT2wGWf/Ooo4sm7obB8EhGkrXs3ormx9WHj6ezexupsd\nanWE7Uy54ovKdOosKB6nQOfP+Iwe4sSJ6oYPNvvh19v05+AhOCdONjMeCwTfBvtJ\nA5luj6CtFbgSX96A3zTRrTXQO3N4aLTF8niL+FcZ69RzYcxp3rlDSK88JyJ9xsu1\n+lNIcAPAFhzisC/eB9b1eDJ4JErJyIdBTZ4bPv4dtl/RpFcyIA4WMjskGCRo60I7\nN3DVqGGXLlC7KDjvPmdvvfAx3lzcIANhwBhLSQJ+y1bcyW6FcX0ZtY962Hb06Qj5\nXG5nDmT1qVkfDmzpIOF9GtDgch7gtf/EjHOUyaw60dDgJ5RF6lORLjFeuU9W7I1e\nD3mpWb6WP6DKoaQTgrLLrIJCLIdXr92XmvDj+iuYdGhCIkqHWqNbRW4TyiuukNJH\n12Zq/LlA1s58YJVa520o7EOXpmD4sGIrctlI3keSmKhiavy7j5ULz5J++jL+Yxlc\n6h9q4v71oyFmVgNpIEJNg7sSCkE72yzUCaglBUdUIMG3D0sI+VwufC7lbhohvHBr\nNzmbg2bW4x0CCprf/o5JvdNiB+bQdKG4t2Q7fhhZIW7ACii591ZBbpnUakDUQBZa\nV2yMaErypILHlQvlReHXVK1adUTxLNWf//VDoyclQk5k0uFIkUmpn+EXWnEHw7e8\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2261']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:51:37 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=identity&apiName=CreateIdpGroupMapping&lang=Python&sessionId=0577
+  response:
+    body: {string: '[{"containerId":"cff8dd3c-3dc6-462c-b561-c487c656616e","request":{"createIdpGroupMappingDetails":{"idpGroupName":"__STS0577_425","groupId":"ocid1.group.oc1..aaaaaaaamznomu4vqqgrkyytwktiv2ldmizjyuidbszjcd2t2e4d3laxilwq"},"identityProviderId":"ocid1.saml2idp.oc1..aaaaaaaa4rmq5jonbah6qe4nytle5qol2zd4hoenrfbumq2o4liu7cqibjla","opcRetryToken":"a5058e77-58a8-4629-b842-56359aaafb7b"}}]'}
+    headers:
+      Content-Length: ['381']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:51:38 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"idpGroupName": "__STS0577_425", "groupId": "ocid1.group.oc1..aaaaaaaamznomu4vqqgrkyytwktiv2ldmizjyuidbszjcd2t2e4d3laxilwq"}'
+    headers:
+      Content-Length: ['125']
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host content-length content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="jIKNwez0xxP2JJcA0oahCidiFIzfD+4YFA75b4smqEUrMZyxZiZbSQ+9gAmQjN3cx38hNrNoo+uN2x/tdYzXj6a5WPASupftOijPNPsNCTOcLV9gOt0INAwVPrAaXpzhnsLE3yXrg5ajbr8MTyYoR6gKJQ45Vq/ucTqrSDPlWo6h0MQdj81YF83QX4Vx6qj3q8BnmnnvtU5qG/PwWFpPWG+2rscvaucUE8yc1yh/OJdO8Hkk/cySom8N/knSEjiWkAfj7/f4KNyWdN1IPd/LjuocYn3C/LkpMpub4LA/oENc+5stzhcvJUuIjll7EsfPXBNhxsVdxgbT7gTMFZgARw==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 18:51:38 GMT']
+      host: [identity.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [5AAAA3B97B6A494D8D68B5F4EDAC513D]
+      opc-retry-token: [a5058e77-58a8-4629-b842-56359aaafb7b]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+      x-content-sha256: [cBt6ysyoDd00Caz3M9osGZKidASHGDVNiiGeMkKtpcQ=]
+    method: POST
+    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/identityProviders/ocid1.saml2idp.oc1..aaaaaaaa4rmq5jonbah6qe4nytle5qol2zd4hoenrfbumq2o4liu7cqibjla/groupMappings/
+  response:
+    body: {string: "{\n  \"idpId\" : \"ocid1.saml2idp.oc1..aaaaaaaa4rmq5jonbah6qe4nytle5qol2zd4hoenrfbumq2o4liu7cqibjla\"\
+        ,\n  \"idpGroupName\" : \"__STS0577_425\",\n  \"groupId\" : \"ocid1.group.oc1..aaaaaaaamznomu4vqqgrkyytwktiv2ldmizjyuidbszjcd2t2e4d3laxilwq\"\
+        ,\n  \"id\" : \"ocid1.idpgroupmapping.oc1..aaaaaaaau7gn3b5ekci2zni4br6a3ggaarn4rl5qcpaonv3eurexriklveya\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"timeCreated\" : \"2019-04-18T18:51:39.443Z\",\n  \"lifecycleState\"\
+        \ : \"ACTIVE\"\n}"}
+    headers:
+      Cache-Control: ['no-cache, no-store, must-revalidate']
+      Connection: [keep-alive]
+      Content-Length: ['509']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:51:39 GMT']
+      ETag: [5c904514c74e0e0952b3279ede737a7b2adb8569]
+      Pragma: [no-cache]
+      X-Content-Type-Options: [nosniff]
+      opc-request-id: [5AAAA3B97B6A494D8D68B5F4EDAC513D/011FB8E7EDC9278EFF4627F5ADFD99D5/C2C33763942B022E29BF1802A4E15C67]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"containerId": "cff8dd3c-3dc6-462c-b561-c487c656616e", "listResponse":
+      false, "requestClass": "com.oracle.bmc.identity.requests.CreateIdpGroupMappingRequest",
+      "requestJson": "{\"createIdpGroupMappingDetails\": {\"idpGroupName\": \"__STS0577_425\",
+      \"groupId\": \"ocid1.group.oc1..aaaaaaaamznomu4vqqgrkyytwktiv2ldmizjyuidbszjcd2t2e4d3laxilwq\"},
+      \"identityProviderId\": \"ocid1.saml2idp.oc1..aaaaaaaa4rmq5jonbah6qe4nytle5qol2zd4hoenrfbumq2o4liu7cqibjla\",
+      \"opcRetryToken\": \"a5058e77-58a8-4629-b842-56359aaafb7b\"}", "responseJson":
+      "{\"idpGroupMapping\": {\"id\": \"ocid1.idpgroupmapping.oc1..aaaaaaaau7gn3b5ekci2zni4br6a3ggaarn4rl5qcpaonv3eurexriklveya\",
+      \"idpId\": \"ocid1.saml2idp.oc1..aaaaaaaa4rmq5jonbah6qe4nytle5qol2zd4hoenrfbumq2o4liu7cqibjla\",
+      \"idpGroupName\": \"__STS0577_425\", \"groupId\": \"ocid1.group.oc1..aaaaaaaamznomu4vqqgrkyytwktiv2ldmizjyuidbszjcd2t2e4d3laxilwq\",
+      \"compartmentId\": \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\",
+      \"timeCreated\": \"2019-04-18T18:51:39.443000+00:00\", \"lifecycleState\": \"ACTIVE\",
+      \"inactiveStatus\": null}, \"opcRequestId\": \"8A1ECAA704D849D0B5BD7581C9E1B1A5\",
+      \"opcNextPage\": null, \"eTag\": \"5c904514c74e0e0952b3279ede737a7b2adb8569\"}",
+      "responseClass": "com.oracle.bmc.identity.responses.CreateIdpGroupMappingResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['1328']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0577&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:51:39 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+version: 1

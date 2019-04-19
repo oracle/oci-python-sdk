@@ -165,4 +165,213 @@ interactions:
       Date: ['Mon, 01 Apr 2019 22:47:26 GMT']
       Server: [Jetty(9.4.7.v20170914)]
     status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=core&apiName=ListFastConnectProviderServices
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 19:00:00 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?serviceName=core&apiName=ListFastConnectProviderServices&lang=Python&clientName=virtualNetwork
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq","endpoint":null,"fingerprint":"ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9","passPhrase":"dexsdk","keyFile":"java_sdk_admin_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,0C9B64A4AA0303EC02C79E91D0F8B0D0\n\naSd0uIKreq5NirzJ+Esa36lYJo4lU2zSjIIw8wvZEsd+LdaifqONZIfHHiB6/KgG\nse4wd/58tPsiEgnK7D1q8wmdVDouMSX31mhcbq2bwRjXATpNnOMnhDtahJv6cw4M\nDtlXYplk0LzpP6WjqXqFST4Yz0l1NO90ahnruwcb/SUCm12ONMJ5o4G1UO2/0IkX\nTRlMRpm/etIpStNSP+1IsD1gSWlAzhs1zodkpd+2eW2ovlAaY25Hm/aqK97jzsCF\n1f4dCm7spCHYOfv10XHNB99/jomN1KQuDy29MmVaJ9oYpOIDlu0yj4Q/XempLxa6\nhqgt0gUO9cMV2bfStsHKWJwq+KoncamBHpU/+CyNjoYq1QTC0urWlCP5hNo5VZhF\nzXBJa188FD2TiPFU8Z4EhercM83TfBsRVEQOpu5sbMaUOT6xXwnCWfM5Pjxy/0xE\n6oF2zq+H0ES12dh19C5P8ueRFLyhaWFliWJv3SXy9iCslcso6USnBBKnA26xMile\nY3m9uRP31yZW8czxYSIgKEV3Mp3GFAYwuebNjLgIM7xT+PvDiOO4qAhA0waGPhYH\n2QMl9ThSahKT6vpjVUQuGOjaRcJ5Vr73VGX4MnxXVxsl5de6y/ZfP5ndx5Lb4K43\njwrMbCIzrM1ZzR2JMTuMJFDasLjEW/Y9nf7FRh2gByeGLObAmHsjlUdW65QQu+Qy\nu4ADc6TbpqvLobocF5fKgML7JCAA/YqmYlZCV6gGOdKUXUT3VMmZcebcTtw1Zmxh\nwaUQe99D90w3Q/7CCCiGO2waZaTNl+ahVnQZEGHN9xJydkCkfVZDgVmdDmsSXmxo\n2DWf2c2/1me2zZAcW0SFBnyrt3uphdCnICaqXR0AnQUmw49YY4nk2fPTMxZs1r+2\n+poVVEfr//cHTTs4yu9ZVT2wGWf/Ooo4sm7obB8EhGkrXs3ormx9WHj6ezexupsd\nanWE7Uy54ovKdOosKB6nQOfP+Iwe4sSJ6oYPNvvh19v05+AhOCdONjMeCwTfBvtJ\nA5luj6CtFbgSX96A3zTRrTXQO3N4aLTF8niL+FcZ69RzYcxp3rlDSK88JyJ9xsu1\n+lNIcAPAFhzisC/eB9b1eDJ4JErJyIdBTZ4bPv4dtl/RpFcyIA4WMjskGCRo60I7\nN3DVqGGXLlC7KDjvPmdvvfAx3lzcIANhwBhLSQJ+y1bcyW6FcX0ZtY962Hb06Qj5\nXG5nDmT1qVkfDmzpIOF9GtDgch7gtf/EjHOUyaw60dDgJ5RF6lORLjFeuU9W7I1e\nD3mpWb6WP6DKoaQTgrLLrIJCLIdXr92XmvDj+iuYdGhCIkqHWqNbRW4TyiuukNJH\n12Zq/LlA1s58YJVa520o7EOXpmD4sGIrctlI3keSmKhiavy7j5ULz5J++jL+Yxlc\n6h9q4v71oyFmVgNpIEJNg7sSCkE72yzUCaglBUdUIMG3D0sI+VwufC7lbhohvHBr\nNzmbg2bW4x0CCprf/o5JvdNiB+bQdKG4t2Q7fhhZIW7ACii591ZBbpnUakDUQBZa\nV2yMaErypILHlQvlReHXVK1adUTxLNWf//VDoyclQk5k0uFIkUmpn+EXWnEHw7e8\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2261']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 19:00:00 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=core&apiName=ListFastConnectProviderServices&lang=Python&sessionId=0843
+  response:
+    body: {string: '[{"containerId":"65deaa86-e4ab-46ae-a01a-cf4893420e21","request":{"compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","limit":10}}]'}
+    headers:
+      Content-Length: ['181']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 19:00:00 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="ugN2vHiPdM9k6HWXpmctf47Yloqh+a7rtx6mszMkaBHtu1dmg+Sd1hNVvplAqnXVPbnIqRxut4jO330bN5zbw4byABTLeL3UsvYWw6q8VPP26vYuKPbg6vbDwUbRg6ug0GX+q2V40G6t2rr52fZVrlE1m8QZJDQ7t2QX3SUrEozFx6Akmkwc4wSyKAqB2OUxALJLl1mBSJ+aqyiW5btxk+ccnB/Yp1LEkX8Fw4pm5Ln7OL7XURbd29x+outDy4wgquOHbeoEycE4Wa5PZxQgq5u0xdjL4htdr0YYK20qRVU8x6htpaMD0ur40M4xWwzNaw+ldWkJoAQ9OUmvUFSpww==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 19:00:00 GMT']
+      host: [iaas.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [7A7A571A94DC4FDEB35F9B5ABF729FD0]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://iaas.us-phoenix-1.oraclecloud.com/20160918/fastConnectProviderServices?compartmentId=ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba&limit=10
+  response:
+    body: {string: '[{"description":"https://www.centurylink.com/business/hybrid-it-cloud/cloud-connect.html","id":"ocid1.providerservice.oc1.phx.aaaaaaaa5dbfeyv4ndgbbd7j26a7yjzttgyxrh37jvrmmei6w7rikubd7lkq","privatePeeringBgpManagement":"CUSTOMER_MANAGED","providerName":"CenturyLink","providerServiceName":"Cloud
+        Connect","publicPeeringBgpManagement":"ORACLE_MANAGED","supportedVirtualCircuitTypes":["PRIVATE","PUBLIC"],"customerAsnManagement":"CUSTOMER_MANAGED","providerServiceKeyManagement":"PROVIDER_MANAGED","bandwithShapeManagement":"CUSTOMER_MANAGED","requiredTotalCrossConnects":1,"type":"LAYER2"},{"description":"Verizon","id":"ocid1.providerservice.oc1.phx.aaaaaaaa7qf6aygb5iuis7oadx4ij4vmn2nisneaqkbvcvjty547tihxiama","privatePeeringBgpManagement":"PROVIDER_MANAGED","providerName":"Verizon","providerServiceName":"Service","publicPeeringBgpManagement":"ORACLE_MANAGED","supportedVirtualCircuitTypes":["PRIVATE"],"customerAsnManagement":"PROVIDER_MANAGED","providerServiceKeyManagement":"PROVIDER_MANAGED","bandwithShapeManagement":"CUSTOMER_MANAGED","requiredTotalCrossConnects":2,"type":"LAYER3"},{"description":"https://megaport.al/","id":"ocid1.providerservice.oc1.phx.aaaaaaaahsq7azrgct4mzdtlmdjwwolhxbz4p3htjfmmxbv3zs6sjj6te44q","privatePeeringBgpManagement":"CUSTOMER_MANAGED","providerName":"Megaport","providerServiceName":"VXC","publicPeeringBgpManagement":"ORACLE_MANAGED","supportedVirtualCircuitTypes":null,"customerAsnManagement":"CUSTOMER_MANAGED","providerServiceKeyManagement":"PROVIDER_MANAGED","bandwithShapeManagement":"CUSTOMER_MANAGED","requiredTotalCrossConnects":1,"type":"LAYER2"},{"description":"https://www.zayo.com/services/cloud-connectivity/\t","id":"ocid1.providerservice.oc1.phx.aaaaaaaaiscawhoymnpkudonpna3ohvh5bcu4e7bllxymfgtuavc4wwwliea","privatePeeringBgpManagement":"CUSTOMER_MANAGED","providerName":"Zayo","providerServiceName":"CloudLink","publicPeeringBgpManagement":"ORACLE_MANAGED","supportedVirtualCircuitTypes":["PRIVATE","PUBLIC"],"customerAsnManagement":"CUSTOMER_MANAGED","providerServiceKeyManagement":"PROVIDER_MANAGED","bandwithShapeManagement":"CUSTOMER_MANAGED","requiredTotalCrossConnects":1,"type":"LAYER2"},{"description":"https://www.edgeconnex.com/","id":"ocid1.providerservice.oc1.phx.aaaaaaaakaplcuq6oxfdcbeb2g2syfudupywyfelaajfbvoupz2ulljho3jq","privatePeeringBgpManagement":"CUSTOMER_MANAGED","providerName":"EdgeConneX","providerServiceName":"Cloud
+        Services","publicPeeringBgpManagement":"ORACLE_MANAGED","supportedVirtualCircuitTypes":["PRIVATE","PUBLIC"],"customerAsnManagement":"CUSTOMER_MANAGED","providerServiceKeyManagement":"PROVIDER_MANAGED","bandwithShapeManagement":"CUSTOMER_MANAGED","requiredTotalCrossConnects":1,"type":"LAYER2"},{"description":"https:c3ntro.com","id":"ocid1.providerservice.oc1.phx.aaaaaaaaly42pwdcfm2c7l4vgiuj37a2e6ljkpuxzo7mc4hl4ronpffbvxva","privatePeeringBgpManagement":"CUSTOMER_MANAGED","providerName":"C3ntro","providerServiceName":"Cloud
+        Connectivity ","publicPeeringBgpManagement":"ORACLE_MANAGED","supportedVirtualCircuitTypes":["PRIVATE","PUBLIC"],"customerAsnManagement":"CUSTOMER_MANAGED","providerServiceKeyManagement":"PROVIDER_MANAGED","bandwithShapeManagement":"CUSTOMER_MANAGED","requiredTotalCrossConnects":1,"type":"LAYER2"},{"description":"https://megaport.al/","id":"ocid1.providerservice.oc1.phx.aaaaaaaamj33a2ebotdg5jzwjmlrp7ufslcgl2r4skusfse4ijlgzqonvy3a","privatePeeringBgpManagement":"CUSTOMER_MANAGED","providerName":"Megaport","providerServiceName":"Service","publicPeeringBgpManagement":"ORACLE_MANAGED","supportedVirtualCircuitTypes":null,"customerAsnManagement":"CUSTOMER_MANAGED","providerServiceKeyManagement":"PROVIDER_MANAGED","bandwithShapeManagement":"CUSTOMER_MANAGED","requiredTotalCrossConnects":1,"type":"LAYER2"},{"description":"https://qtsdatacenters.com","id":"ocid1.providerservice.oc1.phx.aaaaaaaarzjvobr2cyhz2h4eujhlpyoltjo4zlfu74fre46kggiwkabuyxjq","privatePeeringBgpManagement":"CUSTOMER_MANAGED","providerName":"QTS","providerServiceName":"Cloud
+        Connect","publicPeeringBgpManagement":"ORACLE_MANAGED","supportedVirtualCircuitTypes":null,"customerAsnManagement":"CUSTOMER_MANAGED","providerServiceKeyManagement":"PROVIDER_MANAGED","bandwithShapeManagement":"CUSTOMER_MANAGED","requiredTotalCrossConnects":1,"type":"LAYER2"},{"description":"https://marketplaceportal.com/web/guest/login","id":"ocid1.providerservice.oc1.phx.aaaaaaaashhewqxvazysllofspiuang2osntf5x4qjua2u2v4brcsjpmnlya","privatePeeringBgpManagement":"CUSTOMER_MANAGED","providerName":"Digital
+        Realty","providerServiceName":"Service Exchange","publicPeeringBgpManagement":"ORACLE_MANAGED","supportedVirtualCircuitTypes":["PRIVATE","PUBLIC"],"customerAsnManagement":"CUSTOMER_MANAGED","providerServiceKeyManagement":"PROVIDER_MANAGED","bandwithShapeManagement":"CUSTOMER_MANAGED","requiredTotalCrossConnects":1,"type":"LAYER2"},{"description":"http://www.equinix.com/services/interconnection-connectivity/cloud-exchange/","id":"ocid1.providerservice.oc1.phx.aaaaaaaavaux3ugttlfiwv3mctfikgt4ofm4r7eyvly3a2usvrec34aamv7q","privatePeeringBgpManagement":"CUSTOMER_MANAGED","providerName":"Equinix","providerServiceName":"CloudExchange","publicPeeringBgpManagement":"ORACLE_MANAGED","supportedVirtualCircuitTypes":["PRIVATE","PUBLIC"],"customerAsnManagement":"CUSTOMER_MANAGED","providerServiceKeyManagement":"PROVIDER_MANAGED","bandwithShapeManagement":"CUSTOMER_MANAGED","requiredTotalCrossConnects":1,"type":"LAYER2"}]'}
+    headers:
+      Connection: [keep-alive]
+      Content-Length: ['5415']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 19:00:01 GMT']
+      X-Content-Type-Options: [nosniff]
+      opc-next-page: [AAAAAAAAAAAAFICBIFAUCQKBIFAUCQKKNRSVK4DZLFLGIUTBKU4XAU2YOBHVMR3UOBKEKTSLMJDUU5CUK5WFAYKVOBBVIV3QKZGWYSLXKRVTKSTBLBSHAV2WMQ2GE23MOFRDE3DBKIZHQNKTK42HOTDJGUZGEV3DPFMTE5DPKZVWOMDBNJSEQUZQPBCEY2ZVMZLVORTWKJVVE2KYPJSEEUSIJZIWI2SBGVJTGWRSJ5CFERKNKU4WWYKFKJMWC22SMZMHSMLBMJVFUMKXIRFGQWSGLJVGCMSKJBKG4WJVKZWUMYKVPJLHGWKUIJBE4MLEOZSDAOLJJVVE4SKXNNHHKTSIKZEE2MCGJRKGWVRRK5LGO6CWNVCXSTSGLJWFIVRYGNNHUTJQKZLFEVSVKZSGUTKUIIYWIRCSKFLEOVRWLEZUU2DDNVDEITCYIYYWG6SONVMW2MKUKJEGY3DCGI2UWT2GJZ4FI6JRLJJW253YMVCGI2STPJWHQVKXORFWK3KWOVIVQQSPJVXHAMK2NVJFUV3LORJE4MDQLFMTAVTKJRLFEVCSKVNDEWSYLJ2VSMCGJBMVKOD2JZLVSNCSGJ2DEUKUJEYWEWDPGNGUMQSELJDFU4SNI54DKZCWKJWVOVSWJZHEMWTGK5WWQT2OIRFHUTTZGFCGC2ZRLFKG2OKWJZVVEM2OI42W2U2YIJWFQMDIKBIWU2DBK5LU44C2GJYFEWL2IZGWCVLQGVNG42BVMJEGI5KWIVHESZDLPBUVU2S2K5KTASRRLFLVU2KVGE4VSY2HJEYFMVSOGBMVQSSLJRMFENKOK5YFGWSYJJDU4R2GO5RHUZZRKVCWQSLENNHGCTJQJV5FIM3EJFJWWNBQMFVTA52SIV3TATSYKF3VIV22IZJDARLUKRCWYT3CGNLDET2WLJLWIVDEPJLG2URQKRCTK6CWIRNE2ZLLN4ZGIRCVGRJEOUSFMFLU4RKWI4YUYTSYMRZU2VCGGNLEMSJVKVVXQ5DEGFBHEU2EIZDFIRZQGBKUMTSMLJCVEUSMNJUG2ZDMJIYWGWCGGNHUOMKWLJCVEMKOGB4G2URRHEYVUSDDHU]
+      opc-request-id: [7A7A571A94DC4FDEB35F9B5ABF729FD0/3145D06B9F49876FE4B0575BBAAEC7DA/4C6164130FD3F4ACEFD6B71E700D71D7]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="T+afNiiTWUyQ9wnYTKxudsrF4VcLUD+woPzssDdv1wcV1rr3SXgvn57oPbjL4yOXOGxyCsH60j0nTiCz/feqtqPE1xTUWXFE0WyWU/AK4Mpqkgeca0Z5jZSPUd24T4A0UsGNGMBM9r5dBD6KjxNeyihfCa2plZr4G8g7ayIrGtqrFHpq5U9pdEPOagbm2nyzhQCkCD9zoa63naej2piFsWN1FUZBJhP69VRc+to6RNs5J7+Kf++yLPAE4IjtLoJdfnsGnQeFOh9xOElgsGedsix9bQQs8b/5l+6QVYoYpxLZiSgh0W28hO7KrAanlKoeZ9ZU0gzL9DNUHWmMM9oQGQ==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 19:00:01 GMT']
+      host: [iaas.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [867D35FFD40744DCA7B1009D34581418]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://iaas.us-phoenix-1.oraclecloud.com/20160918/fastConnectProviderServices?compartmentId=ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba&limit=10&page=AAAAAAAAAAAAFICBIFAUCQKBIFAUCQKKNRSVK4DZLFLGIUTBKU4XAU2YOBHVMR3UOBKEKTSLMJDUU5CUK5WFAYKVOBBVIV3QKZGWYSLXKRVTKSTBLBSHAV2WMQ2GE23MOFRDE3DBKIZHQNKTK42HOTDJGUZGEV3DPFMTE5DPKZVWOMDBNJSEQUZQPBCEY2ZVMZLVORTWKJVVE2KYPJSEEUSIJZIWI2SBGVJTGWRSJ5CFERKNKU4WWYKFKJMWC22SMZMHSMLBMJVFUMKXIRFGQWSGLJVGCMSKJBKG4WJVKZWUMYKVPJLHGWKUIJBE4MLEOZSDAOLJJVVE4SKXNNHHKTSIKZEE2MCGJRKGWVRRK5LGO6CWNVCXSTSGLJWFIVRYGNNHUTJQKZLFEVSVKZSGUTKUIIYWIRCSKFLEOVRWLEZUU2DDNVDEITCYIYYWG6SONVMW2MKUKJEGY3DCGI2UWT2GJZ4FI6JRLJJW253YMVCGI2STPJWHQVKXORFWK3KWOVIVQQSPJVXHAMK2NVJFUV3LORJE4MDQLFMTAVTKJRLFEVCSKVNDEWSYLJ2VSMCGJBMVKOD2JZLVSNCSGJ2DEUKUJEYWEWDPGNGUMQSELJDFU4SNI54DKZCWKJWVOVSWJZHEMWTGK5WWQT2OIRFHUTTZGFCGC2ZRLFKG2OKWJZVVEM2OI42W2U2YIJWFQMDIKBIWU2DBK5LU44C2GJYFEWL2IZGWCVLQGVNG42BVMJEGI5KWIVHESZDLPBUVU2S2K5KTASRRLFLVU2KVGE4VSY2HJEYFMVSOGBMVQSSLJRMFENKOK5YFGWSYJJDU4R2GO5RHUZZRKVCWQSLENNHGCTJQJV5FIM3EJFJWWNBQMFVTA52SIV3TATSYKF3VIV22IZJDARLUKRCWYT3CGNLDET2WLJLWIVDEPJLG2URQKRCTK6CWIRNE2ZLLN4ZGIRCVGRJEOUSFMFLU4RKWI4YUYTSYMRZU2VCGGNLEMSJVKVVXQ5DEGFBHEU2EIZDFIRZQGBKUMTSMLJCVEUSMNJUG2ZDMJIYWGWCGGNHUOMKWLJCVEMKOGB4G2URRHEYVUSDDHU
+  response:
+    body: {string: '[{"description":"https://www.packetfabric.com/packetcor","id":"ocid1.providerservice.oc1.phx.aaaaaaaawwxrzsc7d3d633xcd3n6al3jwiukjxi7aghikbdj4eygztgf5oza","privatePeeringBgpManagement":"CUSTOMER_MANAGED","providerName":"PacketFabric","providerServiceName":"PacketCOR","publicPeeringBgpManagement":"ORACLE_MANAGED","supportedVirtualCircuitTypes":["PRIVATE","PUBLIC"],"customerAsnManagement":"CUSTOMER_MANAGED","providerServiceKeyManagement":"PROVIDER_MANAGED","bandwithShapeManagement":"CUSTOMER_MANAGED","requiredTotalCrossConnects":1,"type":"LAYER2"}]'}
+    headers:
+      Connection: [keep-alive]
+      Content-Length: ['552']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 19:00:01 GMT']
+      X-Content-Type-Options: [nosniff]
+      opc-request-id: [867D35FFD40744DCA7B1009D34581418/9D70DFD567DF036E042EE3289AE04075/98EED0D79A8973DE563903FD82D0B3BB]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"containerId": "65deaa86-e4ab-46ae-a01a-cf4893420e21", "listResponse":
+      true, "requestClass": "com.oracle.bmc.core.requests.ListFastConnectProviderServicesRequest",
+      "requestJson": "{\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"limit\": 10}", "responseJson": "[{\"items\": [{\"description\": \"https://www.centurylink.com/business/hybrid-it-cloud/cloud-connect.html\",
+      \"id\": \"ocid1.providerservice.oc1.phx.aaaaaaaa5dbfeyv4ndgbbd7j26a7yjzttgyxrh37jvrmmei6w7rikubd7lkq\",
+      \"privatePeeringBgpManagement\": \"CUSTOMER_MANAGED\", \"providerName\": \"CenturyLink\",
+      \"providerServiceName\": \"Cloud Connect\", \"publicPeeringBgpManagement\":
+      \"ORACLE_MANAGED\", \"supportedVirtualCircuitTypes\": [\"PRIVATE\", \"PUBLIC\"],
+      \"customerAsnManagement\": \"CUSTOMER_MANAGED\", \"providerServiceKeyManagement\":
+      \"PROVIDER_MANAGED\", \"bandwithShapeManagement\": \"CUSTOMER_MANAGED\", \"requiredTotalCrossConnects\":
+      1, \"type\": \"LAYER2\"}, {\"description\": \"Verizon\", \"id\": \"ocid1.providerservice.oc1.phx.aaaaaaaa7qf6aygb5iuis7oadx4ij4vmn2nisneaqkbvcvjty547tihxiama\",
+      \"privatePeeringBgpManagement\": \"PROVIDER_MANAGED\", \"providerName\": \"Verizon\",
+      \"providerServiceName\": \"Service\", \"publicPeeringBgpManagement\": \"ORACLE_MANAGED\",
+      \"supportedVirtualCircuitTypes\": [\"PRIVATE\"], \"customerAsnManagement\":
+      \"PROVIDER_MANAGED\", \"providerServiceKeyManagement\": \"PROVIDER_MANAGED\",
+      \"bandwithShapeManagement\": \"CUSTOMER_MANAGED\", \"requiredTotalCrossConnects\":
+      2, \"type\": \"LAYER3\"}, {\"description\": \"https://megaport.al/\", \"id\":
+      \"ocid1.providerservice.oc1.phx.aaaaaaaahsq7azrgct4mzdtlmdjwwolhxbz4p3htjfmmxbv3zs6sjj6te44q\",
+      \"privatePeeringBgpManagement\": \"CUSTOMER_MANAGED\", \"providerName\": \"Megaport\",
+      \"providerServiceName\": \"VXC\", \"publicPeeringBgpManagement\": \"ORACLE_MANAGED\",
+      \"supportedVirtualCircuitTypes\": null, \"customerAsnManagement\": \"CUSTOMER_MANAGED\",
+      \"providerServiceKeyManagement\": \"PROVIDER_MANAGED\", \"bandwithShapeManagement\":
+      \"CUSTOMER_MANAGED\", \"requiredTotalCrossConnects\": 1, \"type\": \"LAYER2\"},
+      {\"description\": \"https://www.zayo.com/services/cloud-connectivity/\\t\",
+      \"id\": \"ocid1.providerservice.oc1.phx.aaaaaaaaiscawhoymnpkudonpna3ohvh5bcu4e7bllxymfgtuavc4wwwliea\",
+      \"privatePeeringBgpManagement\": \"CUSTOMER_MANAGED\", \"providerName\": \"Zayo\",
+      \"providerServiceName\": \"CloudLink\", \"publicPeeringBgpManagement\": \"ORACLE_MANAGED\",
+      \"supportedVirtualCircuitTypes\": [\"PRIVATE\", \"PUBLIC\"], \"customerAsnManagement\":
+      \"CUSTOMER_MANAGED\", \"providerServiceKeyManagement\": \"PROVIDER_MANAGED\",
+      \"bandwithShapeManagement\": \"CUSTOMER_MANAGED\", \"requiredTotalCrossConnects\":
+      1, \"type\": \"LAYER2\"}, {\"description\": \"https://www.edgeconnex.com/\",
+      \"id\": \"ocid1.providerservice.oc1.phx.aaaaaaaakaplcuq6oxfdcbeb2g2syfudupywyfelaajfbvoupz2ulljho3jq\",
+      \"privatePeeringBgpManagement\": \"CUSTOMER_MANAGED\", \"providerName\": \"EdgeConneX\",
+      \"providerServiceName\": \"Cloud Services\", \"publicPeeringBgpManagement\":
+      \"ORACLE_MANAGED\", \"supportedVirtualCircuitTypes\": [\"PRIVATE\", \"PUBLIC\"],
+      \"customerAsnManagement\": \"CUSTOMER_MANAGED\", \"providerServiceKeyManagement\":
+      \"PROVIDER_MANAGED\", \"bandwithShapeManagement\": \"CUSTOMER_MANAGED\", \"requiredTotalCrossConnects\":
+      1, \"type\": \"LAYER2\"}, {\"description\": \"https:c3ntro.com\", \"id\": \"ocid1.providerservice.oc1.phx.aaaaaaaaly42pwdcfm2c7l4vgiuj37a2e6ljkpuxzo7mc4hl4ronpffbvxva\",
+      \"privatePeeringBgpManagement\": \"CUSTOMER_MANAGED\", \"providerName\": \"C3ntro\",
+      \"providerServiceName\": \"Cloud Connectivity \", \"publicPeeringBgpManagement\":
+      \"ORACLE_MANAGED\", \"supportedVirtualCircuitTypes\": [\"PRIVATE\", \"PUBLIC\"],
+      \"customerAsnManagement\": \"CUSTOMER_MANAGED\", \"providerServiceKeyManagement\":
+      \"PROVIDER_MANAGED\", \"bandwithShapeManagement\": \"CUSTOMER_MANAGED\", \"requiredTotalCrossConnects\":
+      1, \"type\": \"LAYER2\"}, {\"description\": \"https://megaport.al/\", \"id\":
+      \"ocid1.providerservice.oc1.phx.aaaaaaaamj33a2ebotdg5jzwjmlrp7ufslcgl2r4skusfse4ijlgzqonvy3a\",
+      \"privatePeeringBgpManagement\": \"CUSTOMER_MANAGED\", \"providerName\": \"Megaport\",
+      \"providerServiceName\": \"Service\", \"publicPeeringBgpManagement\": \"ORACLE_MANAGED\",
+      \"supportedVirtualCircuitTypes\": null, \"customerAsnManagement\": \"CUSTOMER_MANAGED\",
+      \"providerServiceKeyManagement\": \"PROVIDER_MANAGED\", \"bandwithShapeManagement\":
+      \"CUSTOMER_MANAGED\", \"requiredTotalCrossConnects\": 1, \"type\": \"LAYER2\"},
+      {\"description\": \"https://qtsdatacenters.com\", \"id\": \"ocid1.providerservice.oc1.phx.aaaaaaaarzjvobr2cyhz2h4eujhlpyoltjo4zlfu74fre46kggiwkabuyxjq\",
+      \"privatePeeringBgpManagement\": \"CUSTOMER_MANAGED\", \"providerName\": \"QTS\",
+      \"providerServiceName\": \"Cloud Connect\", \"publicPeeringBgpManagement\":
+      \"ORACLE_MANAGED\", \"supportedVirtualCircuitTypes\": null, \"customerAsnManagement\":
+      \"CUSTOMER_MANAGED\", \"providerServiceKeyManagement\": \"PROVIDER_MANAGED\",
+      \"bandwithShapeManagement\": \"CUSTOMER_MANAGED\", \"requiredTotalCrossConnects\":
+      1, \"type\": \"LAYER2\"}, {\"description\": \"https://marketplaceportal.com/web/guest/login\",
+      \"id\": \"ocid1.providerservice.oc1.phx.aaaaaaaashhewqxvazysllofspiuang2osntf5x4qjua2u2v4brcsjpmnlya\",
+      \"privatePeeringBgpManagement\": \"CUSTOMER_MANAGED\", \"providerName\": \"Digital
+      Realty\", \"providerServiceName\": \"Service Exchange\", \"publicPeeringBgpManagement\":
+      \"ORACLE_MANAGED\", \"supportedVirtualCircuitTypes\": [\"PRIVATE\", \"PUBLIC\"],
+      \"customerAsnManagement\": \"CUSTOMER_MANAGED\", \"providerServiceKeyManagement\":
+      \"PROVIDER_MANAGED\", \"bandwithShapeManagement\": \"CUSTOMER_MANAGED\", \"requiredTotalCrossConnects\":
+      1, \"type\": \"LAYER2\"}, {\"description\": \"http://www.equinix.com/services/interconnection-connectivity/cloud-exchange/\",
+      \"id\": \"ocid1.providerservice.oc1.phx.aaaaaaaavaux3ugttlfiwv3mctfikgt4ofm4r7eyvly3a2usvrec34aamv7q\",
+      \"privatePeeringBgpManagement\": \"CUSTOMER_MANAGED\", \"providerName\": \"Equinix\",
+      \"providerServiceName\": \"CloudExchange\", \"publicPeeringBgpManagement\":
+      \"ORACLE_MANAGED\", \"supportedVirtualCircuitTypes\": [\"PRIVATE\", \"PUBLIC\"],
+      \"customerAsnManagement\": \"CUSTOMER_MANAGED\", \"providerServiceKeyManagement\":
+      \"PROVIDER_MANAGED\", \"bandwithShapeManagement\": \"CUSTOMER_MANAGED\", \"requiredTotalCrossConnects\":
+      1, \"type\": \"LAYER2\"}], \"opcRequestId\": \"9B519144CC5B4D75A4A2105D5803C29C\",
+      \"opcNextPage\": \"AAAAAAAAAAAAFICBIFAUCQKBIFAUCQKKNRSVK4DZLFLGIUTBKU4XAU2YOBHVMR3UOBKEKTSLMJDUU5CUK5WFAYKVOBBVIV3QKZGWYSLXKRVTKSTBLBSHAV2WMQ2GE23MOFRDE3DBKIZHQNKTK42HOTDJGUZGEV3DPFMTE5DPKZVWOMDBNJSEQUZQPBCEY2ZVMZLVORTWKJVVE2KYPJSEEUSIJZIWI2SBGVJTGWRSJ5CFERKNKU4WWYKFKJMWC22SMZMHSMLBMJVFUMKXIRFGQWSGLJVGCMSKJBKG4WJVKZWUMYKVPJLHGWKUIJBE4MLEOZSDAOLJJVVE4SKXNNHHKTSIKZEE2MCGJRKGWVRRK5LGO6CWNVCXSTSGLJWFIVRYGNNHUTJQKZLFEVSVKZSGUTKUIIYWIRCSKFLEOVRWLEZUU2DDNVDEITCYIYYWG6SONVMW2MKUKJEGY3DCGI2UWT2GJZ4FI6JRLJJW253YMVCGI2STPJWHQVKXORFWK3KWOVIVQQSPJVXHAMK2NVJFUV3LORJE4MDQLFMTAVTKJRLFEVCSKVNDEWSYLJ2VSMCGJBMVKOD2JZLVSNCSGJ2DEUKUJEYWEWDPGNGUMQSELJDFU4SNI54DKZCWKJWVOVSWJZHEMWTGK5WWQT2OIRFHUTTZGFCGC2ZRLFKG2OKWJZVVEM2OI42W2U2YIJWFQMDIKBIWU2DBK5LU44C2GJYFEWL2IZGWCVLQGVNG42BVMJEGI5KWIVHESZDLPBUVU2S2K5KTASRRLFLVU2KVGE4VSY2HJEYFMVSOGBMVQSSLJRMFENKOK5YFGWSYJJDU4R2GO5RHUZZRKVCWQSLENNHGCTJQJV5FIM3EJFJWWNBQMFVTA52SIV3TATSYKF3VIV22IZJDARLUKRCWYT3CGNLDET2WLJLWIVDEPJLG2URQKRCTK6CWIRNE2ZLLN4ZGIRCVGRJEOUSFMFLU4RKWI4YUYTSYMRZU2VCGGNLEMSJVKVVXQ5DEGFBHEU2EIZDFIRZQGBKUMTSMLJCVEUSMNJUG2ZDMJIYWGWCGGNHUOMKWLJCVEMKOGB4G2URRHEYVUSDDHU\"},
+      {\"items\": [{\"description\": \"https://www.packetfabric.com/packetcor\", \"id\":
+      \"ocid1.providerservice.oc1.phx.aaaaaaaawwxrzsc7d3d633xcd3n6al3jwiukjxi7aghikbdj4eygztgf5oza\",
+      \"privatePeeringBgpManagement\": \"CUSTOMER_MANAGED\", \"providerName\": \"PacketFabric\",
+      \"providerServiceName\": \"PacketCOR\", \"publicPeeringBgpManagement\": \"ORACLE_MANAGED\",
+      \"supportedVirtualCircuitTypes\": [\"PRIVATE\", \"PUBLIC\"], \"customerAsnManagement\":
+      \"CUSTOMER_MANAGED\", \"providerServiceKeyManagement\": \"PROVIDER_MANAGED\",
+      \"bandwithShapeManagement\": \"CUSTOMER_MANAGED\", \"requiredTotalCrossConnects\":
+      1, \"type\": \"LAYER2\"}], \"opcRequestId\": \"41851DD431EA4BB0B82CB0850F7AA1FD\",
+      \"opcNextPage\": null}]", "responseClass": "com.oracle.bmc.core.responses.ListFastConnectProviderServicesResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['8445']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0843&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 19:00:01 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
 version: 1

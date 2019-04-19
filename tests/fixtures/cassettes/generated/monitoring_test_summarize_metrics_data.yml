@@ -1,0 +1,312 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=monitoring&apiName=SummarizeMetricsData
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:51:20 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?serviceName=monitoring&apiName=SummarizeMetricsData&lang=Python&clientName=monitoring
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq","endpoint":null,"fingerprint":"ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9","passPhrase":"dexsdk","keyFile":"java_sdk_admin_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,0C9B64A4AA0303EC02C79E91D0F8B0D0\n\naSd0uIKreq5NirzJ+Esa36lYJo4lU2zSjIIw8wvZEsd+LdaifqONZIfHHiB6/KgG\nse4wd/58tPsiEgnK7D1q8wmdVDouMSX31mhcbq2bwRjXATpNnOMnhDtahJv6cw4M\nDtlXYplk0LzpP6WjqXqFST4Yz0l1NO90ahnruwcb/SUCm12ONMJ5o4G1UO2/0IkX\nTRlMRpm/etIpStNSP+1IsD1gSWlAzhs1zodkpd+2eW2ovlAaY25Hm/aqK97jzsCF\n1f4dCm7spCHYOfv10XHNB99/jomN1KQuDy29MmVaJ9oYpOIDlu0yj4Q/XempLxa6\nhqgt0gUO9cMV2bfStsHKWJwq+KoncamBHpU/+CyNjoYq1QTC0urWlCP5hNo5VZhF\nzXBJa188FD2TiPFU8Z4EhercM83TfBsRVEQOpu5sbMaUOT6xXwnCWfM5Pjxy/0xE\n6oF2zq+H0ES12dh19C5P8ueRFLyhaWFliWJv3SXy9iCslcso6USnBBKnA26xMile\nY3m9uRP31yZW8czxYSIgKEV3Mp3GFAYwuebNjLgIM7xT+PvDiOO4qAhA0waGPhYH\n2QMl9ThSahKT6vpjVUQuGOjaRcJ5Vr73VGX4MnxXVxsl5de6y/ZfP5ndx5Lb4K43\njwrMbCIzrM1ZzR2JMTuMJFDasLjEW/Y9nf7FRh2gByeGLObAmHsjlUdW65QQu+Qy\nu4ADc6TbpqvLobocF5fKgML7JCAA/YqmYlZCV6gGOdKUXUT3VMmZcebcTtw1Zmxh\nwaUQe99D90w3Q/7CCCiGO2waZaTNl+ahVnQZEGHN9xJydkCkfVZDgVmdDmsSXmxo\n2DWf2c2/1me2zZAcW0SFBnyrt3uphdCnICaqXR0AnQUmw49YY4nk2fPTMxZs1r+2\n+poVVEfr//cHTTs4yu9ZVT2wGWf/Ooo4sm7obB8EhGkrXs3ormx9WHj6ezexupsd\nanWE7Uy54ovKdOosKB6nQOfP+Iwe4sSJ6oYPNvvh19v05+AhOCdONjMeCwTfBvtJ\nA5luj6CtFbgSX96A3zTRrTXQO3N4aLTF8niL+FcZ69RzYcxp3rlDSK88JyJ9xsu1\n+lNIcAPAFhzisC/eB9b1eDJ4JErJyIdBTZ4bPv4dtl/RpFcyIA4WMjskGCRo60I7\nN3DVqGGXLlC7KDjvPmdvvfAx3lzcIANhwBhLSQJ+y1bcyW6FcX0ZtY962Hb06Qj5\nXG5nDmT1qVkfDmzpIOF9GtDgch7gtf/EjHOUyaw60dDgJ5RF6lORLjFeuU9W7I1e\nD3mpWb6WP6DKoaQTgrLLrIJCLIdXr92XmvDj+iuYdGhCIkqHWqNbRW4TyiuukNJH\n12Zq/LlA1s58YJVa520o7EOXpmD4sGIrctlI3keSmKhiavy7j5ULz5J++jL+Yxlc\n6h9q4v71oyFmVgNpIEJNg7sSCkE72yzUCaglBUdUIMG3D0sI+VwufC7lbhohvHBr\nNzmbg2bW4x0CCprf/o5JvdNiB+bQdKG4t2Q7fhhZIW7ACii591ZBbpnUakDUQBZa\nV2yMaErypILHlQvlReHXVK1adUTxLNWf//VDoyclQk5k0uFIkUmpn+EXWnEHw7e8\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2261']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:51:21 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=monitoring&apiName=SummarizeMetricsData&lang=Python&sessionId=0915
+  response:
+    body: {string: '[{"containerId":"40ba2957-d4e3-4c9e-bd36-b1da05aa5c63","request":{"compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","summarizeMetricsDataDetails":{"namespace":"oci_telemetry","query":"RequestCount[1m].sum()
+        > 0","startTime":"2019-04-18T18:46:21.095Z","endTime":"2019-04-18T18:51:21.095Z","resolution":"1m"}}}]'}
+    headers:
+      Content-Length: ['361']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:51:21 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"namespace": "oci_telemetry", "query": "RequestCount[1m].sum() > 0", "startTime":
+      "2019-04-18T18:46:21.095Z", "endTime": "2019-04-18T18:51:21.095Z", "resolution":
+      "1m"}'
+    headers:
+      Content-Length: ['169']
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host content-length content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="Ds/Ii8EIDIFtoigvo+QptmxmjxStFFO3hKiTfjs42DmahqporgzNzYc6d7rU/w/m5fGPJhJGH0fbe65za9FGAvzsq+KiV/QFOuYPLwZdBZ8T0Nvby8LGnm9L7omVF4I3wMfri6p8L6cflB+l3Pt5k2OyjpOT+O62vt1O/NdmAfxG8FN4IpHG5AvqVSQn6EDm0UM3Pe8GBiumJ1x2TQeZBX8bVwV0a0Sto3LNqyaJM3fIbkaiwGJrOGMxpFt7OhE8YvNDxI00qHb6iObq31PIdjjKZPzNWmC6jJfzQxoK1P1ZOAZXIeBJAlkU3C2IIT0X8FN+jw1F29qW7o102n4gTQ==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 18:51:21 GMT']
+      host: [telemetry.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [5AFC504FCCAE482EB46A510EB7729DD3]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+      x-content-sha256: [ShSF26uu6NhtDKEcXZZoGKbA/GIfxbDPAHU8h2K4FSU=]
+    method: POST
+    uri: https://telemetry.us-phoenix-1.oraclecloud.com/20180401/metrics/actions/summarizeMetricsData?compartmentId=ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba
+  response:
+    body: {string: '[ ]'}
+    headers:
+      Content-Length: ['3']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:51:21 GMT']
+      opc-request-id: [5AFC504FCCAE482EB46A510EB7729DD3/35E412657F3A871FD0F1A36004FB1D75/9E0AF073A14400F1D22C73074FEE0C3A]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"containerId": "40ba2957-d4e3-4c9e-bd36-b1da05aa5c63", "listResponse":
+      false, "requestClass": "com.oracle.bmc.monitoring.requests.SummarizeMetricsDataRequest",
+      "requestJson": "{\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"summarizeMetricsDataDetails\": {\"namespace\": \"oci_telemetry\", \"query\":
+      \"RequestCount[1m].sum() > 0\", \"startTime\": \"2019-04-18T18:46:21.095Z\",
+      \"endTime\": \"2019-04-18T18:51:21.095Z\", \"resolution\": \"1m\"}}", "responseJson":
+      "{\"metricData\": [], \"opcRequestId\": \"DD79ABF7835D48F89D3548BEB124783D\",
+      \"opcNextPage\": null}", "responseClass": "com.oracle.bmc.monitoring.responses.SummarizeMetricsDataResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['715']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0915&lang=Python
+  response:
+    body: {string: "The following exception happened in testing service, most probably\
+        \ caused by testing data or validator.\njava.lang.NullPointerException\n\t\
+        at com.oracle.bmc.service.validator.monitoring.MonitoringValidator.lambda$installValidators$4(MonitoringValidator.java:98)\n\
+        \tat com.oracle.bmc.service.ValidatorRepository.validate(ValidatorRepository.java:41)\n\
+        \tat com.oracle.bmc.service.ValidatorRepository.validate(ValidatorRepository.java:58)\n\
+        \tat com.oracle.bmc.service.SDKTestingService.validateSingleResponse(SDKTestingService.java:919)\n\
+        \tat com.oracle.bmc.service.SDKTestingService.validateResponse(SDKTestingService.java:974)\n\
+        \tat sun.reflect.GeneratedMethodAccessor100.invoke(Unknown Source)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\
+        \tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory.lambda$static$0(ResourceMethodInvocationHandlerFactory.java:76)\n\
+        \tat org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:148)\n\
+        \tat org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:191)\n\
+        \tat org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:243)\n\
+        \tat org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:103)\n\
+        \tat org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:493)\n\
+        \tat org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:415)\n\
+        \tat org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:104)\n\
+        \tat org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:277)\n\
+        \tat org.glassfish.jersey.internal.Errors$1.call(Errors.java:272)\n\tat org.glassfish.jersey.internal.Errors$1.call(Errors.java:268)\n\
+        \tat org.glassfish.jersey.internal.Errors.process(Errors.java:316)\n\tat org.glassfish.jersey.internal.Errors.process(Errors.java:298)\n\
+        \tat org.glassfish.jersey.internal.Errors.process(Errors.java:268)\n\tat org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:289)\n\
+        \tat org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:256)\n\
+        \tat org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:703)\n\
+        \tat org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:416)\n\
+        \tat org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:370)\n\
+        \tat org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:389)\n\
+        \tat org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:342)\n\
+        \tat org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:229)\n\
+        \tat org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:841)\n\
+        \tat org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)\n\
+        \tat org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:188)\n\
+        \tat org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1253)\n\
+        \tat org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:168)\n\
+        \tat org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473)\n\
+        \tat org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:166)\n\
+        \tat org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1155)\n\
+        \tat org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)\n\
+        \tat org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)\n\
+        \tat org.eclipse.jetty.server.Server.handle(Server.java:561)\n\tat org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:334)\n\
+        \tat org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:251)\n\
+        \tat org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:279)\n\
+        \tat org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:104)\n\t\
+        at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:124)\n\t\
+        at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:247)\n\
+        \tat org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.produce(EatWhatYouKill.java:140)\n\
+        \tat org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131)\n\
+        \tat org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:243)\n\
+        \tat org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:679)\n\
+        \tat org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:597)\n\
+        \tat java.lang.Thread.run(Thread.java:748)\n"}
+    headers:
+      Content-Length: ['4779']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:51:21 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 500, message: Internal Server Error}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=monitoring&apiName=SummarizeMetricsData
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 19:59:17 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?serviceName=monitoring&apiName=SummarizeMetricsData&lang=Python&clientName=monitoring
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq","endpoint":null,"fingerprint":"ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9","passPhrase":"dexsdk","keyFile":"java_sdk_admin_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,0C9B64A4AA0303EC02C79E91D0F8B0D0\n\naSd0uIKreq5NirzJ+Esa36lYJo4lU2zSjIIw8wvZEsd+LdaifqONZIfHHiB6/KgG\nse4wd/58tPsiEgnK7D1q8wmdVDouMSX31mhcbq2bwRjXATpNnOMnhDtahJv6cw4M\nDtlXYplk0LzpP6WjqXqFST4Yz0l1NO90ahnruwcb/SUCm12ONMJ5o4G1UO2/0IkX\nTRlMRpm/etIpStNSP+1IsD1gSWlAzhs1zodkpd+2eW2ovlAaY25Hm/aqK97jzsCF\n1f4dCm7spCHYOfv10XHNB99/jomN1KQuDy29MmVaJ9oYpOIDlu0yj4Q/XempLxa6\nhqgt0gUO9cMV2bfStsHKWJwq+KoncamBHpU/+CyNjoYq1QTC0urWlCP5hNo5VZhF\nzXBJa188FD2TiPFU8Z4EhercM83TfBsRVEQOpu5sbMaUOT6xXwnCWfM5Pjxy/0xE\n6oF2zq+H0ES12dh19C5P8ueRFLyhaWFliWJv3SXy9iCslcso6USnBBKnA26xMile\nY3m9uRP31yZW8czxYSIgKEV3Mp3GFAYwuebNjLgIM7xT+PvDiOO4qAhA0waGPhYH\n2QMl9ThSahKT6vpjVUQuGOjaRcJ5Vr73VGX4MnxXVxsl5de6y/ZfP5ndx5Lb4K43\njwrMbCIzrM1ZzR2JMTuMJFDasLjEW/Y9nf7FRh2gByeGLObAmHsjlUdW65QQu+Qy\nu4ADc6TbpqvLobocF5fKgML7JCAA/YqmYlZCV6gGOdKUXUT3VMmZcebcTtw1Zmxh\nwaUQe99D90w3Q/7CCCiGO2waZaTNl+ahVnQZEGHN9xJydkCkfVZDgVmdDmsSXmxo\n2DWf2c2/1me2zZAcW0SFBnyrt3uphdCnICaqXR0AnQUmw49YY4nk2fPTMxZs1r+2\n+poVVEfr//cHTTs4yu9ZVT2wGWf/Ooo4sm7obB8EhGkrXs3ormx9WHj6ezexupsd\nanWE7Uy54ovKdOosKB6nQOfP+Iwe4sSJ6oYPNvvh19v05+AhOCdONjMeCwTfBvtJ\nA5luj6CtFbgSX96A3zTRrTXQO3N4aLTF8niL+FcZ69RzYcxp3rlDSK88JyJ9xsu1\n+lNIcAPAFhzisC/eB9b1eDJ4JErJyIdBTZ4bPv4dtl/RpFcyIA4WMjskGCRo60I7\nN3DVqGGXLlC7KDjvPmdvvfAx3lzcIANhwBhLSQJ+y1bcyW6FcX0ZtY962Hb06Qj5\nXG5nDmT1qVkfDmzpIOF9GtDgch7gtf/EjHOUyaw60dDgJ5RF6lORLjFeuU9W7I1e\nD3mpWb6WP6DKoaQTgrLLrIJCLIdXr92XmvDj+iuYdGhCIkqHWqNbRW4TyiuukNJH\n12Zq/LlA1s58YJVa520o7EOXpmD4sGIrctlI3keSmKhiavy7j5ULz5J++jL+Yxlc\n6h9q4v71oyFmVgNpIEJNg7sSCkE72yzUCaglBUdUIMG3D0sI+VwufC7lbhohvHBr\nNzmbg2bW4x0CCprf/o5JvdNiB+bQdKG4t2Q7fhhZIW7ACii591ZBbpnUakDUQBZa\nV2yMaErypILHlQvlReHXVK1adUTxLNWf//VDoyclQk5k0uFIkUmpn+EXWnEHw7e8\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2261']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 19:59:17 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=monitoring&apiName=SummarizeMetricsData&lang=Python&sessionId=0164
+  response:
+    body: {string: '[{"containerId":"40ba2957-d4e3-4c9e-bd36-b1da05aa5c63","request":{"compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","summarizeMetricsDataDetails":{"namespace":"oci_telemetry","query":"RequestCount[1m].sum()
+        > 0","startTime":"2019-04-18T19:54:17.763Z","endTime":"2019-04-18T19:59:17.763Z","resolution":"1m"}}}]'}
+    headers:
+      Content-Length: ['361']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 19:59:17 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"namespace": "oci_telemetry", "query": "RequestCount[1m].sum() > 0", "startTime":
+      "2019-04-18T19:54:17.763Z", "endTime": "2019-04-18T19:59:17.763Z", "resolution":
+      "1m"}'
+    headers:
+      Content-Length: ['169']
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host content-length content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="riHEcTbd9usexr2R2250G9Y+Sn8Xn4VMcQDQPA+eDzffsvJWGluVn8QZ1/Eh41Z+5XyG24H0FD0jjTcJgZg1KFgHuCsxmMCph+/NJW3Zmpzeblc5lkkxor/6Z90IPEoKsBEct3Ym2OPh9ujeRy6MkoT1ACTJ+GiiNszKD5/HtjBLA18qt0ZRGVwWFFV7A8mIDf4/z5PgMAUFxNyY8+JLvFAe7LPIwvw2Sca/s4Hft8JykPWurj8EGTRp5A6J4uH/sgVBxDG7gm4Gbv74o2dz4z76uefoHjmEUORbNngnWTW36zpznZV8mJ2M1EywO52VC42/+umlTdj+ClDLwxs9mQ==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 19:59:17 GMT']
+      host: [telemetry.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [410EADD64AAF47C2BD4A68465DD8A14F]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+      x-content-sha256: [z4BhGZ0uqvjoLJTdnvr9C41r8IVTKyyM4Z7hLkeifQo=]
+    method: POST
+    uri: https://telemetry.us-phoenix-1.oraclecloud.com/20180401/metrics/actions/summarizeMetricsData?compartmentId=ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba
+  response:
+    body: {string: '[ ]'}
+    headers:
+      Content-Length: ['3']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 19:59:18 GMT']
+      opc-request-id: [410EADD64AAF47C2BD4A68465DD8A14F/AFEE4C0963AB0BEB968C9C714BAD5234/DD31D9B8476ECE4AA60F7E2B061598EB]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"containerId": "40ba2957-d4e3-4c9e-bd36-b1da05aa5c63", "listResponse":
+      false, "requestClass": "com.oracle.bmc.monitoring.requests.SummarizeMetricsDataRequest",
+      "requestJson": "{\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"summarizeMetricsDataDetails\": {\"namespace\": \"oci_telemetry\", \"query\":
+      \"RequestCount[1m].sum() > 0\", \"startTime\": \"2019-04-18T19:54:17.763Z\",
+      \"endTime\": \"2019-04-18T19:59:17.763Z\", \"resolution\": \"1m\"}}", "responseJson":
+      "{\"metricData\": [], \"opcRequestId\": \"B4BAEC7EB1904006B006DF3944C317A5\",
+      \"opcNextPage\": null}", "responseClass": "com.oracle.bmc.monitoring.responses.SummarizeMetricsDataResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['715']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0164&lang=Python
+  response:
+    body: {string: "The following exception happened in testing service, most probably\
+        \ caused by testing data or validator.\njava.lang.NullPointerException\n\t\
+        at com.oracle.bmc.service.validator.monitoring.MonitoringValidator.lambda$installValidators$4(MonitoringValidator.java:98)\n\
+        \tat com.oracle.bmc.service.ValidatorRepository.validate(ValidatorRepository.java:41)\n\
+        \tat com.oracle.bmc.service.ValidatorRepository.validate(ValidatorRepository.java:58)\n\
+        \tat com.oracle.bmc.service.SDKTestingService.validateSingleResponse(SDKTestingService.java:919)\n\
+        \tat com.oracle.bmc.service.SDKTestingService.validateResponse(SDKTestingService.java:974)\n\
+        \tat sun.reflect.GeneratedMethodAccessor100.invoke(Unknown Source)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\
+        \tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory.lambda$static$0(ResourceMethodInvocationHandlerFactory.java:76)\n\
+        \tat org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:148)\n\
+        \tat org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:191)\n\
+        \tat org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:243)\n\
+        \tat org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:103)\n\
+        \tat org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:493)\n\
+        \tat org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:415)\n\
+        \tat org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:104)\n\
+        \tat org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:277)\n\
+        \tat org.glassfish.jersey.internal.Errors$1.call(Errors.java:272)\n\tat org.glassfish.jersey.internal.Errors$1.call(Errors.java:268)\n\
+        \tat org.glassfish.jersey.internal.Errors.process(Errors.java:316)\n\tat org.glassfish.jersey.internal.Errors.process(Errors.java:298)\n\
+        \tat org.glassfish.jersey.internal.Errors.process(Errors.java:268)\n\tat org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:289)\n\
+        \tat org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:256)\n\
+        \tat org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:703)\n\
+        \tat org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:416)\n\
+        \tat org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:370)\n\
+        \tat org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:389)\n\
+        \tat org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:342)\n\
+        \tat org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:229)\n\
+        \tat org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:841)\n\
+        \tat org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)\n\
+        \tat org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:188)\n\
+        \tat org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1253)\n\
+        \tat org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:168)\n\
+        \tat org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473)\n\
+        \tat org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:166)\n\
+        \tat org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1155)\n\
+        \tat org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)\n\
+        \tat org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)\n\
+        \tat org.eclipse.jetty.server.Server.handle(Server.java:561)\n\tat org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:334)\n\
+        \tat org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:251)\n\
+        \tat org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:279)\n\
+        \tat org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:104)\n\t\
+        at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:124)\n\t\
+        at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:247)\n\
+        \tat org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.produce(EatWhatYouKill.java:140)\n\
+        \tat org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131)\n\
+        \tat org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:243)\n\
+        \tat org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:679)\n\
+        \tat org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:597)\n\
+        \tat java.lang.Thread.run(Thread.java:748)\n"}
+    headers:
+      Content-Length: ['4779']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 19:59:18 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 500, message: Internal Server Error}
+version: 1

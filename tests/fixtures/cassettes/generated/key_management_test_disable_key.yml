@@ -1,0 +1,216 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=keymanagement&apiName=DisableKey
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:42:21 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?serviceName=keymanagement&apiName=DisableKey&lang=Python&clientName=kmsManagement
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq","endpoint":null,"fingerprint":"ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9","passPhrase":"dexsdk","keyFile":"java_sdk_admin_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,0C9B64A4AA0303EC02C79E91D0F8B0D0\n\naSd0uIKreq5NirzJ+Esa36lYJo4lU2zSjIIw8wvZEsd+LdaifqONZIfHHiB6/KgG\nse4wd/58tPsiEgnK7D1q8wmdVDouMSX31mhcbq2bwRjXATpNnOMnhDtahJv6cw4M\nDtlXYplk0LzpP6WjqXqFST4Yz0l1NO90ahnruwcb/SUCm12ONMJ5o4G1UO2/0IkX\nTRlMRpm/etIpStNSP+1IsD1gSWlAzhs1zodkpd+2eW2ovlAaY25Hm/aqK97jzsCF\n1f4dCm7spCHYOfv10XHNB99/jomN1KQuDy29MmVaJ9oYpOIDlu0yj4Q/XempLxa6\nhqgt0gUO9cMV2bfStsHKWJwq+KoncamBHpU/+CyNjoYq1QTC0urWlCP5hNo5VZhF\nzXBJa188FD2TiPFU8Z4EhercM83TfBsRVEQOpu5sbMaUOT6xXwnCWfM5Pjxy/0xE\n6oF2zq+H0ES12dh19C5P8ueRFLyhaWFliWJv3SXy9iCslcso6USnBBKnA26xMile\nY3m9uRP31yZW8czxYSIgKEV3Mp3GFAYwuebNjLgIM7xT+PvDiOO4qAhA0waGPhYH\n2QMl9ThSahKT6vpjVUQuGOjaRcJ5Vr73VGX4MnxXVxsl5de6y/ZfP5ndx5Lb4K43\njwrMbCIzrM1ZzR2JMTuMJFDasLjEW/Y9nf7FRh2gByeGLObAmHsjlUdW65QQu+Qy\nu4ADc6TbpqvLobocF5fKgML7JCAA/YqmYlZCV6gGOdKUXUT3VMmZcebcTtw1Zmxh\nwaUQe99D90w3Q/7CCCiGO2waZaTNl+ahVnQZEGHN9xJydkCkfVZDgVmdDmsSXmxo\n2DWf2c2/1me2zZAcW0SFBnyrt3uphdCnICaqXR0AnQUmw49YY4nk2fPTMxZs1r+2\n+poVVEfr//cHTTs4yu9ZVT2wGWf/Ooo4sm7obB8EhGkrXs3ormx9WHj6ezexupsd\nanWE7Uy54ovKdOosKB6nQOfP+Iwe4sSJ6oYPNvvh19v05+AhOCdONjMeCwTfBvtJ\nA5luj6CtFbgSX96A3zTRrTXQO3N4aLTF8niL+FcZ69RzYcxp3rlDSK88JyJ9xsu1\n+lNIcAPAFhzisC/eB9b1eDJ4JErJyIdBTZ4bPv4dtl/RpFcyIA4WMjskGCRo60I7\nN3DVqGGXLlC7KDjvPmdvvfAx3lzcIANhwBhLSQJ+y1bcyW6FcX0ZtY962Hb06Qj5\nXG5nDmT1qVkfDmzpIOF9GtDgch7gtf/EjHOUyaw60dDgJ5RF6lORLjFeuU9W7I1e\nD3mpWb6WP6DKoaQTgrLLrIJCLIdXr92XmvDj+iuYdGhCIkqHWqNbRW4TyiuukNJH\n12Zq/LlA1s58YJVa520o7EOXpmD4sGIrctlI3keSmKhiavy7j5ULz5J++jL+Yxlc\n6h9q4v71oyFmVgNpIEJNg7sSCkE72yzUCaglBUdUIMG3D0sI+VwufC7lbhohvHBr\nNzmbg2bW4x0CCprf/o5JvdNiB+bQdKG4t2Q7fhhZIW7ACii591ZBbpnUakDUQBZa\nV2yMaErypILHlQvlReHXVK1adUTxLNWf//VDoyclQk5k0uFIkUmpn+EXWnEHw7e8\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2261']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:42:21 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=keymanagement&apiName=DisableKey&lang=Python&sessionId=0409
+  response:
+    body: {string: '[{"containerId":"6e706348-1933-4808-bf6f-add281b047ea","request":{"keyId":"ocid1.key.oc1.phx.avnybakjaafna.abyhqljtoitspnwptcbb4qmjjq5ieat3dbqd5a4qqah5w4dvym6x6ot2ebaa","opcRetryToken":"10604916-00f4-4fa2-aae2-d30ac55ce040"}},{"containerId":"9ac70b7b-36d6-4527-9258-ac1cbe9a2675","request":{"keyId":"ocid1.key.region1.sea.afnxza26aag4s.abzwkljro36ax34op7azackfebkdagznrcpzwquyn633oxqqqlu6wzxi2h7a","opcRetryToken":"91bdf8e8-1084-425a-bf92-e9715a48156f"}}]'}
+    headers:
+      Content-Length: ['455']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:42:21 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/endpoint?sessionId=0409&serviceName=keymanagement&clientName=KmsManagementClient&lang=Python&apiName=DisableKey
+  response:
+    body: {string: 'https://avnybakjaafna-management.kms.us-phoenix-1.oraclecloud.com'}
+    headers:
+      Content-Length: ['65']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:42:57 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host content-length content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="hkhjtN2L3De423ZiLHejVeVyShWdsPuuc2Q3voLWwcPBhlIwLmNB13vhyFpA1/wpd/iK5p3Ub7xtc131RB3QVyotukOlASfeDyGZZLcxPP8fL8d2yCfWMdHv5BN0ExMA9jQXW33D2ghgcsv7hBKOo9SbgEEJ2fkgrhoknOPE1KfYNvCSEXQoEZt9eNqN7nlgP2dhSrZE997KJkh4uA7abHIMS1w+9mDlWv1KNHDbfrKjUS7JiFdnUtnGDDsgrh2tGuuYN3oHzFXxrGgVminS/eQCrEGS559O5+ZuBPdsWFb+MRxxjbWkoMsKKQx8QKdkeVK2yDpRUq8UCk6CVOA3rA==",version="1"']
+      connection: [keep-alive]
+      content-length: ['0']
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 18:42:58 GMT']
+      host: [avnybakjaafna-management.kms.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [2F29D0AE4E7A46DE965C1237BE15A71E]
+      opc-retry-token: [10604916-00f4-4fa2-aae2-d30ac55ce040]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+      x-content-sha256: [47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=]
+    method: POST
+    uri: https://avnybakjaafna-management.kms.us-phoenix-1.oraclecloud.com/20180608/keys/ocid1.key.oc1.phx.avnybakjaafna.abyhqljtoitspnwptcbb4qmjjq5ieat3dbqd5a4qqah5w4dvym6x6ot2ebaa/actions/disable
+  response:
+    body: {string: "{\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\"\
+        ,\n  \"currentKeyVersion\" : \"ocid1.keyversion.oc1.phx.avnybakjaafna.ardyls4mkdyaa.abyhqljtobpyf5mohnopuvhdj5jeplxt4z6vm67nifih4ouwxq5p52hkklua\"\
+        ,\n  \"definedTags\" : {\n    \"testing_service_tag_ns_001\" : {\n      \"\
+        testing_service_tag_01\" : \"tag4.__STS0409_1619\",\n      \"testing_service_tag_02\"\
+        \ : \"tag5.__STS0409_1619\",\n      \"testing_service_tag_03\" : \"tag6.__STS0409_1619\"\
+        \n    }\n  },\n  \"displayName\" : \"KMS integrations - DO NOT DELETEf88271e3-ca55-4402-85f4-1882058d8d9c\"\
+        ,\n  \"freeformTags\" : {\n    \"tag1\" : \"value1.__STS0409_4969\",\n   \
+        \ \"tag2\" : \"value2.__STS0409_4969\"\n  },\n  \"id\" : \"ocid1.key.oc1.phx.avnybakjaafna.abyhqljtoitspnwptcbb4qmjjq5ieat3dbqd5a4qqah5w4dvym6x6ot2ebaa\"\
+        ,\n  \"keyShape\" : {\n    \"algorithm\" : \"AES\",\n    \"length\" : 32\n\
+        \  },\n  \"lifecycleState\" : \"DISABLING\",\n  \"timeCreated\" : \"2019-04-18T18:42:23.971Z\"\
+        ,\n  \"vaultId\" : \"ocid1.vault.oc1.phx.avnybakjaafna.abyhqljswc5wb7nn6pdehcvzn7s2r5yfwanl2nr6x64bny55rq3ofrdg3e7q\"\
+        \n}"}
+    headers:
+      Cache-Control: ['no-cache, no-store, no-transform, must-revalidate']
+      Content-Length: ['1038']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:42:58 GMT']
+      ETag: [9837ec5517c6c689024d2518b9df341e1b3d82e1]
+      opc-request-id: [2F29D0AE4E7A46DE965C1237BE15A71E/75C1BF8F2F9642CE89D76003995DDF77/7105DEF9C41533DF87BD60B5F87A7768]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"containerId": "6e706348-1933-4808-bf6f-add281b047ea", "listResponse":
+      false, "requestClass": "com.oracle.bmc.keymanagement.requests.DisableKeyRequest",
+      "requestJson": "{\"keyId\": \"ocid1.key.oc1.phx.avnybakjaafna.abyhqljtoitspnwptcbb4qmjjq5ieat3dbqd5a4qqah5w4dvym6x6ot2ebaa\",
+      \"opcRetryToken\": \"10604916-00f4-4fa2-aae2-d30ac55ce040\"}", "responseJson":
+      "{\"key\": {\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"currentKeyVersion\": \"ocid1.keyversion.oc1.phx.avnybakjaafna.ardyls4mkdyaa.abyhqljtobpyf5mohnopuvhdj5jeplxt4z6vm67nifih4ouwxq5p52hkklua\",
+      \"definedTags\": {\"testing_service_tag_ns_001\": {\"testing_service_tag_01\":
+      \"tag4.__STS0409_1619\", \"testing_service_tag_02\": \"tag5.__STS0409_1619\",
+      \"testing_service_tag_03\": \"tag6.__STS0409_1619\"}}, \"displayName\": \"KMS
+      integrations - DO NOT DELETEf88271e3-ca55-4402-85f4-1882058d8d9c\", \"freeformTags\":
+      {\"tag1\": \"value1.__STS0409_4969\", \"tag2\": \"value2.__STS0409_4969\"},
+      \"id\": \"ocid1.key.oc1.phx.avnybakjaafna.abyhqljtoitspnwptcbb4qmjjq5ieat3dbqd5a4qqah5w4dvym6x6ot2ebaa\",
+      \"keyShape\": {\"algorithm\": \"AES\", \"length\": 32}, \"lifecycleState\":
+      \"DISABLING\", \"timeCreated\": \"2019-04-18T18:42:23.971000+00:00\", \"vaultId\":
+      \"ocid1.vault.oc1.phx.avnybakjaafna.abyhqljswc5wb7nn6pdehcvzn7s2r5yfwanl2nr6x64bny55rq3ofrdg3e7q\"},
+      \"opcRequestId\": \"0EC28BA1C1904E0E91155CF606E6E062\", \"opcNextPage\": null,
+      \"eTag\": \"9837ec5517c6c689024d2518b9df341e1b3d82e1\"}", "responseClass": "com.oracle.bmc.keymanagement.responses.DisableKeyResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['1598']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0409&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:42:58 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/endpoint?sessionId=0409&serviceName=keymanagement&clientName=KmsManagementClient&lang=Python&apiName=DisableKey
+  response:
+    body: {string: 'https://avnybakjaafna-management.kms.us-phoenix-1.oraclecloud.com'}
+    headers:
+      Content-Length: ['65']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:43:13 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host content-length content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="ZCr9hPTFtWEZQzwvQG/uMFvEXpDAuK7HXXSW6Vc8oWezzZRV//JazO1TVr1+myhxrVivMQM5lD9bKMsC3QAKarY6aIEUNzZ2nk6Thwgn8U3QDk04MyXbIdNh5PxuegGx/ZnVmqlC7HooFhBAau19B3J3Fh5W7vUQxRkWXCZps9nY21P2e/hISTh/BVitWg1dG5btrL2yGFcmltRSatBFO96JUjejQTSoLhNV7akBmQbuxDxz11d3FQW7sY4PHXZ35pu6z6NDc8R6m4j69QuPp5zHDQYLqzQM+f/qauZ3ANk3DshzK6jq+9ITaOyBd0ThwYJYfKhq3I+eAA84MXdzEg==",version="1"']
+      connection: [keep-alive]
+      content-length: ['0']
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 18:43:14 GMT']
+      host: [avnybakjaafna-management.kms.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [51F0923E81CF46EB81847C0770117FF0]
+      opc-retry-token: [91bdf8e8-1084-425a-bf92-e9715a48156f]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+      x-content-sha256: [47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=]
+    method: POST
+    uri: https://avnybakjaafna-management.kms.us-phoenix-1.oraclecloud.com/20180608/keys/ocid1.key.region1.sea.afnxza26aag4s.abzwkljro36ax34op7azackfebkdagznrcpzwquyn633oxqqqlu6wzxi2h7a/actions/disable
+  response:
+    body: {string: "{\n  \"code\" : \"NotAuthorizedOrNotFound\",\n  \"message\" :\
+        \ \"Key does not exist or you are not authorized to access it.\"\n}"}
+    headers:
+      Cache-Control: ['no-cache, no-store, no-transform, must-revalidate']
+      Content-Length: ['116']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:43:14 GMT']
+      opc-request-id: [51F0923E81CF46EB81847C0770117FF0/3C134782B5DDF2F2B8ADDD8FECBD1E1A/5245536BE1C321D0FFD8860062326FDC]
+    status: {code: 404, message: Not Found}
+- request:
+    body: '{"containerId": "9ac70b7b-36d6-4527-9258-ac1cbe9a2675", "listResponse":
+      false, "requestClass": "com.oracle.bmc.keymanagement.requests.DisableKeyRequest",
+      "requestJson": "{\"keyId\": \"ocid1.key.region1.sea.afnxza26aag4s.abzwkljro36ax34op7azackfebkdagznrcpzwquyn633oxqqqlu6wzxi2h7a\",
+      \"opcRetryToken\": \"91bdf8e8-1084-425a-bf92-e9715a48156f\"}", "errorJson":
+      "{\"code\": \"NotAuthorizedOrNotFound\", \"statusCode\": 404, \"message\": \"Key
+      does not exist or you are not authorized to access it.\", \"opcRequestId\":
+      \"51F0923E81CF46EB81847C0770117FF0/3C134782B5DDF2F2B8ADDD8FECBD1E1A/5245536BE1C321D0FFD8860062326FDC\"}"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['622']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/error?sessionId=0409&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:43:14 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+version: 1

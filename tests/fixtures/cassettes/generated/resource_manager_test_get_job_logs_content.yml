@@ -253,4 +253,258 @@ interactions:
       Date: ['Mon, 01 Apr 2019 22:35:33 GMT']
       Server: [Jetty(9.4.7.v20170914)]
     status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=resourcemanager&apiName=GetJobLogsContent
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:54:53 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?serviceName=resourcemanager&apiName=GetJobLogsContent&lang=Python&clientName=resourceManager
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq","endpoint":null,"fingerprint":"ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9","passPhrase":"dexsdk","keyFile":"java_sdk_admin_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,0C9B64A4AA0303EC02C79E91D0F8B0D0\n\naSd0uIKreq5NirzJ+Esa36lYJo4lU2zSjIIw8wvZEsd+LdaifqONZIfHHiB6/KgG\nse4wd/58tPsiEgnK7D1q8wmdVDouMSX31mhcbq2bwRjXATpNnOMnhDtahJv6cw4M\nDtlXYplk0LzpP6WjqXqFST4Yz0l1NO90ahnruwcb/SUCm12ONMJ5o4G1UO2/0IkX\nTRlMRpm/etIpStNSP+1IsD1gSWlAzhs1zodkpd+2eW2ovlAaY25Hm/aqK97jzsCF\n1f4dCm7spCHYOfv10XHNB99/jomN1KQuDy29MmVaJ9oYpOIDlu0yj4Q/XempLxa6\nhqgt0gUO9cMV2bfStsHKWJwq+KoncamBHpU/+CyNjoYq1QTC0urWlCP5hNo5VZhF\nzXBJa188FD2TiPFU8Z4EhercM83TfBsRVEQOpu5sbMaUOT6xXwnCWfM5Pjxy/0xE\n6oF2zq+H0ES12dh19C5P8ueRFLyhaWFliWJv3SXy9iCslcso6USnBBKnA26xMile\nY3m9uRP31yZW8czxYSIgKEV3Mp3GFAYwuebNjLgIM7xT+PvDiOO4qAhA0waGPhYH\n2QMl9ThSahKT6vpjVUQuGOjaRcJ5Vr73VGX4MnxXVxsl5de6y/ZfP5ndx5Lb4K43\njwrMbCIzrM1ZzR2JMTuMJFDasLjEW/Y9nf7FRh2gByeGLObAmHsjlUdW65QQu+Qy\nu4ADc6TbpqvLobocF5fKgML7JCAA/YqmYlZCV6gGOdKUXUT3VMmZcebcTtw1Zmxh\nwaUQe99D90w3Q/7CCCiGO2waZaTNl+ahVnQZEGHN9xJydkCkfVZDgVmdDmsSXmxo\n2DWf2c2/1me2zZAcW0SFBnyrt3uphdCnICaqXR0AnQUmw49YY4nk2fPTMxZs1r+2\n+poVVEfr//cHTTs4yu9ZVT2wGWf/Ooo4sm7obB8EhGkrXs3ormx9WHj6ezexupsd\nanWE7Uy54ovKdOosKB6nQOfP+Iwe4sSJ6oYPNvvh19v05+AhOCdONjMeCwTfBvtJ\nA5luj6CtFbgSX96A3zTRrTXQO3N4aLTF8niL+FcZ69RzYcxp3rlDSK88JyJ9xsu1\n+lNIcAPAFhzisC/eB9b1eDJ4JErJyIdBTZ4bPv4dtl/RpFcyIA4WMjskGCRo60I7\nN3DVqGGXLlC7KDjvPmdvvfAx3lzcIANhwBhLSQJ+y1bcyW6FcX0ZtY962Hb06Qj5\nXG5nDmT1qVkfDmzpIOF9GtDgch7gtf/EjHOUyaw60dDgJ5RF6lORLjFeuU9W7I1e\nD3mpWb6WP6DKoaQTgrLLrIJCLIdXr92XmvDj+iuYdGhCIkqHWqNbRW4TyiuukNJH\n12Zq/LlA1s58YJVa520o7EOXpmD4sGIrctlI3keSmKhiavy7j5ULz5J++jL+Yxlc\n6h9q4v71oyFmVgNpIEJNg7sSCkE72yzUCaglBUdUIMG3D0sI+VwufC7lbhohvHBr\nNzmbg2bW4x0CCprf/o5JvdNiB+bQdKG4t2Q7fhhZIW7ACii591ZBbpnUakDUQBZa\nV2yMaErypILHlQvlReHXVK1adUTxLNWf//VDoyclQk5k0uFIkUmpn+EXWnEHw7e8\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2261']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:54:53 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=resourcemanager&apiName=GetJobLogsContent&lang=Python&sessionId=0556
+  response:
+    body: {string: '[{"containerId":"a8b44602-8abc-4a6f-a8ea-a803151dd6c8","request":{"jobId":"ocid1.ormjob.oc1.phx.aaaaaaaakisgsk7kzmqdlyhhfnq5s5o2dc7rp5ttxnjoq4gbiqazww6h6nua"}}]'}
+    headers:
+      Content-Length: ['160']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:54:53 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [text/plain; charset=utf-8]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="ypTfsNoJAwVmdn53oZoJJ7Ugt94D6lv+JUKUUd+hYc6FxbiMudQPGGeZa7wzen34BpruF9I3cZVIG4zLN2M02rvH7A0sr2hvtabgIsOXgCc7aVGrT9km39bu9T25vQ04ubeRyXAL+jflQoXWMpf8CRhEOV4nql4cW0dYIKoCq1USkIZBWW+ue4oqMqRVXCnQ3IfP3yQqBNtP/EpvCiylLEeQMqp778RtSnymTWDZDfpEpiSIcvZANKj3w5M9fxiO3y5Dlq2BBlM0PoZvmFW7xoZMjL8qjZouUJ9w7yoMRi2/TcNI0G9E0BGbLB+YW3jRJ/MoX71+LLt9IRs+jzQ8Jw==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 18:54:53 GMT']
+      host: [resourcemanager.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [F0AF6753BA05486B800ACEC517A01CCF]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://resourcemanager.us-phoenix-1.oraclecloud.com/20180917/jobs/ocid1.ormjob.oc1.phx.aaaaaaaakisgsk7kzmqdlyhhfnq5s5o2dc7rp5ttxnjoq4gbiqazww6h6nua/logs/content
+  response:
+    body: {string: "2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] \n2019/04/18 18:54:14[TERRAFORM_CONSOLE]\
+        \ [INFO] Initializing provider plugins...\n2019/04/18 18:54:14[TERRAFORM_CONSOLE]\
+        \ [INFO] \n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] The following providers\
+        \ do not have any version constraints in configuration,\n2019/04/18 18:54:14[TERRAFORM_CONSOLE]\
+        \ [INFO] so the latest version was installed.\n2019/04/18 18:54:14[TERRAFORM_CONSOLE]\
+        \ [INFO] \n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] To prevent automatic\
+        \ upgrades to new major versions that may contain breaking\n2019/04/18 18:54:14[TERRAFORM_CONSOLE]\
+        \ [INFO] changes, it is recommended to add version = \"...\" constraints to\
+        \ the\n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] corresponding provider\
+        \ blocks in configuration, with the constraint strings\n2019/04/18 18:54:14[TERRAFORM_CONSOLE]\
+        \ [INFO] suggested below.\n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] \n\
+        2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] * provider.archive: version\
+        \ = \"~> 1.1\"\n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] * provider.null:\
+        \ version = \"~> 1.0\"\n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] * provider.random:\
+        \ version = \"~> 2.0\"\n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] * provider.template:\
+        \ version = \"~> 1.0\"\n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] * provider.tls:\
+        \ version = \"~> 1.2\"\n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] Terraform\
+        \ has been successfully initialized!\n2019/04/18 18:54:14[TERRAFORM_CONSOLE]\
+        \ [INFO] \n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] You may now begin\
+        \ working with Terraform. Try running \"terraform plan\" to see\n2019/04/18\
+        \ 18:54:14[TERRAFORM_CONSOLE] [INFO] any changes that are required for your\
+        \ infrastructure. All Terraform commands\n2019/04/18 18:54:14[TERRAFORM_CONSOLE]\
+        \ [INFO] should now work.\n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] \n\
+        2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] If you ever set or change modules\
+        \ or backend configuration for Terraform,\n2019/04/18 18:54:14[TERRAFORM_CONSOLE]\
+        \ [INFO] rerun this command to reinitialize your working directory. If you\
+        \ forget, other\n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] commands will\
+        \ detect it and remind you to do so if necessary.\n2019/04/18 18:54:14[TERRAFORM_CONSOLE]\
+        \ [INFO] Refreshing Terraform state in-memory prior to plan...\n2019/04/18\
+        \ 18:54:14[TERRAFORM_CONSOLE] [INFO] The refreshed state will be used to calculate\
+        \ this plan, but will not be\n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO]\
+        \ persisted to local or remote state storage.\n2019/04/18 18:54:14[TERRAFORM_CONSOLE]\
+        \ [INFO] \n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] data.template_file.init:\
+        \ Refreshing state...\n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] \n2019/04/18\
+        \ 18:54:14[TERRAFORM_CONSOLE] [INFO] ------------------------------------------------------------------------\n\
+        2019/04/18 18:54:15[TERRAFORM_CONSOLE] [INFO] \n2019/04/18 18:54:15[TERRAFORM_CONSOLE]\
+        \ [INFO] An execution plan has been generated and is shown below.\n2019/04/18\
+        \ 18:54:15[TERRAFORM_CONSOLE] [INFO] Resource actions are indicated with the\
+        \ following symbols:\n2019/04/18 18:54:15[TERRAFORM_CONSOLE] [INFO]   + create\n\
+        2019/04/18 18:54:15[TERRAFORM_CONSOLE] [INFO] \n2019/04/18 18:54:15[TERRAFORM_CONSOLE]\
+        \ [INFO] Terraform will perform the following actions:\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]\
+        \ [INFO] \n2019/04/18 18:54:15[TERRAFORM_CONSOLE] [INFO] + null_resource.basic\n\
+        2019/04/18 18:54:15[TERRAFORM_CONSOLE] [INFO]       id:                  \
+        \       <computed>\n2019/04/18 18:54:15[TERRAFORM_CONSOLE] [INFO] \n2019/04/18\
+        \ 18:54:15[TERRAFORM_CONSOLE] [INFO]   + random_string.password\n2019/04/18\
+        \ 18:54:15[TERRAFORM_CONSOLE] [INFO]       id:                         <computed>\n\
+        2019/04/18 18:54:15[TERRAFORM_CONSOLE] [INFO]       length:              \
+        \       \"16\"\n2019/04/18 18:54:15[TERRAFORM_CONSOLE] [INFO]       lower:\
+        \                      \"true\"\n2019/04/18 18:54:15[TERRAFORM_CONSOLE] [INFO]\
+        \       min_lower:                  \"0\"\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]\
+        \ [INFO]       min_numeric:                \"0\"\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]\
+        \ [INFO]       min_special:                \"0\"\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]\
+        \ [INFO]       min_upper:                  \"0\"\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]\
+        \ [INFO]       number:                     \"true\"\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]\
+        \ [INFO]       override_special:           \"/@\\\" \"\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]\
+        \ [INFO]       result:                     <computed>\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]\
+        \ [INFO]       special:                    \"true\"\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]\
+        \ [INFO]       upper:                      \"true\"\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]\
+        \ [INFO] \n2019/04/18 18:54:15[TERRAFORM_CONSOLE] [INFO]   + tls_private_key.example\n\
+        2019/04/18 18:54:15[TERRAFORM_CONSOLE] [INFO]       id:                  \
+        \       <computed>\n2019/04/18 18:54:15[TERRAFORM_CONSOLE] [INFO]       algorithm:\
+        \                  \"ECDSA\"\n2019/04/18 18:54:15[TERRAFORM_CONSOLE] [INFO]\
+        \       ecdsa_curve:                \"P224\"\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]\
+        \ [INFO]       private_key_pem:            <computed>\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]\
+        \ [INFO]       public_key_fingerprint_md5: <computed>\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]\
+        \ [INFO]       public_key_openssh:         <computed>\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]\
+        \ [INFO]       public_key_pem:             <computed>\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]\
+        \ [INFO]       rsa_bits:                   \"2048\"\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]\
+        \ [INFO] Plan: 3 to add, 0 to change, 0 to destroy.\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]\
+        \ [INFO] \n2019/04/18 18:54:15[TERRAFORM_CONSOLE] [INFO] ------------------------------------------------------------------------\n\
+        2019/04/18 18:54:15[TERRAFORM_CONSOLE] [INFO] \n2019/04/18 18:54:15[TERRAFORM_CONSOLE]\
+        \ [INFO] This plan was saved to: <path hidden>\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]\
+        \ [INFO] \n2019/04/18 18:54:15[TERRAFORM_CONSOLE] [INFO] To perform exactly\
+        \ these actions, run the following command to apply:\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]\
+        \ [INFO]     terraform apply \"<path hidden>\"\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]\
+        \ [INFO] \n2019/04/18 18:54:15[TERRAFORM_CONSOLE] [INFO] "}
+    headers:
+      Cache-Control: ['no-cache, no-store, must-revalidate']
+      Connection: [keep-alive]
+      Content-Length: ['6157']
+      Content-Type: [text/plain;charset=utf-8]
+      Date: ['Thu, 18 Apr 2019 18:54:54 GMT']
+      Pragma: [no-cache]
+      Strict-Transport-Security: [max-age=31536000; includeSubDomains;]
+      Vary: [Accept-Encoding]
+      X-Content-Type-Options: [nosniff]
+      X-XSS-Protection: [1; mode=block]
+      opc-request-id: [F0AF6753BA05486B800ACEC517A01CCF/8DE774A0AB25EAEA3BCB0BE83151E8B8/625457888320FF3E770223EF831C2906]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"containerId": "a8b44602-8abc-4a6f-a8ea-a803151dd6c8", "listResponse":
+      false, "requestClass": "com.oracle.bmc.resourcemanager.requests.GetJobLogsContentRequest",
+      "requestJson": "{\"jobId\": \"ocid1.ormjob.oc1.phx.aaaaaaaakisgsk7kzmqdlyhhfnq5s5o2dc7rp5ttxnjoq4gbiqazww6h6nua\"}",
+      "responseJson": "{\"str\": \"2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] \\n2019/04/18
+      18:54:14[TERRAFORM_CONSOLE] [INFO] Initializing provider plugins...\\n2019/04/18
+      18:54:14[TERRAFORM_CONSOLE] [INFO] \\n2019/04/18 18:54:14[TERRAFORM_CONSOLE]
+      [INFO] The following providers do not have any version constraints in configuration,\\n2019/04/18
+      18:54:14[TERRAFORM_CONSOLE] [INFO] so the latest version was installed.\\n2019/04/18
+      18:54:14[TERRAFORM_CONSOLE] [INFO] \\n2019/04/18 18:54:14[TERRAFORM_CONSOLE]
+      [INFO] To prevent automatic upgrades to new major versions that may contain
+      breaking\\n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] changes, it is recommended
+      to add version = \\\"...\\\" constraints to the\\n2019/04/18 18:54:14[TERRAFORM_CONSOLE]
+      [INFO] corresponding provider blocks in configuration, with the constraint strings\\n2019/04/18
+      18:54:14[TERRAFORM_CONSOLE] [INFO] suggested below.\\n2019/04/18 18:54:14[TERRAFORM_CONSOLE]
+      [INFO] \\n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] * provider.archive:
+      version = \\\"~> 1.1\\\"\\n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] * provider.null:
+      version = \\\"~> 1.0\\\"\\n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] * provider.random:
+      version = \\\"~> 2.0\\\"\\n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] * provider.template:
+      version = \\\"~> 1.0\\\"\\n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] * provider.tls:
+      version = \\\"~> 1.2\\\"\\n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] Terraform
+      has been successfully initialized!\\n2019/04/18 18:54:14[TERRAFORM_CONSOLE]
+      [INFO] \\n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] You may now begin working
+      with Terraform. Try running \\\"terraform plan\\\" to see\\n2019/04/18 18:54:14[TERRAFORM_CONSOLE]
+      [INFO] any changes that are required for your infrastructure. All Terraform
+      commands\\n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] should now work.\\n2019/04/18
+      18:54:14[TERRAFORM_CONSOLE] [INFO] \\n2019/04/18 18:54:14[TERRAFORM_CONSOLE]
+      [INFO] If you ever set or change modules or backend configuration for Terraform,\\n2019/04/18
+      18:54:14[TERRAFORM_CONSOLE] [INFO] rerun this command to reinitialize your working
+      directory. If you forget, other\\n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO]
+      commands will detect it and remind you to do so if necessary.\\n2019/04/18 18:54:14[TERRAFORM_CONSOLE]
+      [INFO] Refreshing Terraform state in-memory prior to plan...\\n2019/04/18 18:54:14[TERRAFORM_CONSOLE]
+      [INFO] The refreshed state will be used to calculate this plan, but will not
+      be\\n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] persisted to local or remote
+      state storage.\\n2019/04/18 18:54:14[TERRAFORM_CONSOLE] [INFO] \\n2019/04/18
+      18:54:14[TERRAFORM_CONSOLE] [INFO] data.template_file.init: Refreshing state...\\n2019/04/18
+      18:54:14[TERRAFORM_CONSOLE] [INFO] \\n2019/04/18 18:54:14[TERRAFORM_CONSOLE]
+      [INFO] ------------------------------------------------------------------------\\n2019/04/18
+      18:54:15[TERRAFORM_CONSOLE] [INFO] \\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]
+      [INFO] An execution plan has been generated and is shown below.\\n2019/04/18
+      18:54:15[TERRAFORM_CONSOLE] [INFO] Resource actions are indicated with the following
+      symbols:\\n2019/04/18 18:54:15[TERRAFORM_CONSOLE] [INFO]   + create\\n2019/04/18
+      18:54:15[TERRAFORM_CONSOLE] [INFO] \\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]
+      [INFO] Terraform will perform the following actions:\\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]
+      [INFO] \\n2019/04/18 18:54:15[TERRAFORM_CONSOLE] [INFO] + null_resource.basic\\n2019/04/18
+      18:54:15[TERRAFORM_CONSOLE] [INFO]       id:                         <computed>\\n2019/04/18
+      18:54:15[TERRAFORM_CONSOLE] [INFO] \\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]
+      [INFO]   + random_string.password\\n2019/04/18 18:54:15[TERRAFORM_CONSOLE] [INFO]       id:                         <computed>\\n2019/04/18
+      18:54:15[TERRAFORM_CONSOLE] [INFO]       length:                     \\\"16\\\"\\n2019/04/18
+      18:54:15[TERRAFORM_CONSOLE] [INFO]       lower:                      \\\"true\\\"\\n2019/04/18
+      18:54:15[TERRAFORM_CONSOLE] [INFO]       min_lower:                  \\\"0\\\"\\n2019/04/18
+      18:54:15[TERRAFORM_CONSOLE] [INFO]       min_numeric:                \\\"0\\\"\\n2019/04/18
+      18:54:15[TERRAFORM_CONSOLE] [INFO]       min_special:                \\\"0\\\"\\n2019/04/18
+      18:54:15[TERRAFORM_CONSOLE] [INFO]       min_upper:                  \\\"0\\\"\\n2019/04/18
+      18:54:15[TERRAFORM_CONSOLE] [INFO]       number:                     \\\"true\\\"\\n2019/04/18
+      18:54:15[TERRAFORM_CONSOLE] [INFO]       override_special:           \\\"/@\\\\\\\"
+      \\\"\\n2019/04/18 18:54:15[TERRAFORM_CONSOLE] [INFO]       result:                     <computed>\\n2019/04/18
+      18:54:15[TERRAFORM_CONSOLE] [INFO]       special:                    \\\"true\\\"\\n2019/04/18
+      18:54:15[TERRAFORM_CONSOLE] [INFO]       upper:                      \\\"true\\\"\\n2019/04/18
+      18:54:15[TERRAFORM_CONSOLE] [INFO] \\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]
+      [INFO]   + tls_private_key.example\\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]
+      [INFO]       id:                         <computed>\\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]
+      [INFO]       algorithm:                  \\\"ECDSA\\\"\\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]
+      [INFO]       ecdsa_curve:                \\\"P224\\\"\\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]
+      [INFO]       private_key_pem:            <computed>\\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]
+      [INFO]       public_key_fingerprint_md5: <computed>\\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]
+      [INFO]       public_key_openssh:         <computed>\\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]
+      [INFO]       public_key_pem:             <computed>\\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]
+      [INFO]       rsa_bits:                   \\\"2048\\\"\\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]
+      [INFO] Plan: 3 to add, 0 to change, 0 to destroy.\\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]
+      [INFO] \\n2019/04/18 18:54:15[TERRAFORM_CONSOLE] [INFO] ------------------------------------------------------------------------\\n2019/04/18
+      18:54:15[TERRAFORM_CONSOLE] [INFO] \\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]
+      [INFO] This plan was saved to: <path hidden>\\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]
+      [INFO] \\n2019/04/18 18:54:15[TERRAFORM_CONSOLE] [INFO] To perform exactly these
+      actions, run the following command to apply:\\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]
+      [INFO]     terraform apply \\\"<path hidden>\\\"\\n2019/04/18 18:54:15[TERRAFORM_CONSOLE]
+      [INFO] \\n2019/04/18 18:54:15[TERRAFORM_CONSOLE] [INFO] \", \"opcRequestId\":
+      \"D4D7E2D129AF4A14828F5464147026F0\", \"opcNextPage\": null}", "responseClass":
+      "com.oracle.bmc.resourcemanager.responses.GetJobLogsContentResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['6917']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0556&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:54:54 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
 version: 1

@@ -45,7 +45,8 @@ def test_create_key(testing_service_client):
         service_error = None
 
         try:
-            client = oci.key_management.KmsManagementClient(config)
+            endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "CreateKey")
+            client = oci.key_management.KmsManagementClient(config, endpoint)
             response = client.create_key(
                 create_key_details=request.pop(util.camelize('create_key_details')),
                 **(util.camel_to_snake_keys(request))
@@ -84,7 +85,8 @@ def test_create_key_version(testing_service_client):
         service_error = None
 
         try:
-            client = oci.key_management.KmsManagementClient(config)
+            endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "CreateKeyVersion")
+            client = oci.key_management.KmsManagementClient(config, endpoint)
             response = client.create_key_version(
                 key_id=request.pop(util.camelize('key_id')),
                 **(util.camel_to_snake_keys(request))
@@ -123,7 +125,8 @@ def test_disable_key(testing_service_client):
         service_error = None
 
         try:
-            client = oci.key_management.KmsManagementClient(config)
+            endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "DisableKey")
+            client = oci.key_management.KmsManagementClient(config, endpoint)
             response = client.disable_key(
                 key_id=request.pop(util.camelize('key_id')),
                 **(util.camel_to_snake_keys(request))
@@ -162,7 +165,8 @@ def test_enable_key(testing_service_client):
         service_error = None
 
         try:
-            client = oci.key_management.KmsManagementClient(config)
+            endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "EnableKey")
+            client = oci.key_management.KmsManagementClient(config, endpoint)
             response = client.enable_key(
                 key_id=request.pop(util.camelize('key_id')),
                 **(util.camel_to_snake_keys(request))
@@ -201,7 +205,8 @@ def test_get_key(testing_service_client):
         service_error = None
 
         try:
-            client = oci.key_management.KmsManagementClient(config)
+            endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "GetKey")
+            client = oci.key_management.KmsManagementClient(config, endpoint)
             response = client.get_key(
                 key_id=request.pop(util.camelize('key_id')),
                 **(util.camel_to_snake_keys(request))
@@ -240,7 +245,8 @@ def test_get_key_version(testing_service_client):
         service_error = None
 
         try:
-            client = oci.key_management.KmsManagementClient(config)
+            endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "GetKeyVersion")
+            client = oci.key_management.KmsManagementClient(config, endpoint)
             response = client.get_key_version(
                 key_id=request.pop(util.camelize('key_id')),
                 key_version_id=request.pop(util.camelize('key_version_id')),
@@ -280,7 +286,8 @@ def test_list_key_versions(testing_service_client):
         service_error = None
 
         try:
-            client = oci.key_management.KmsManagementClient(config)
+            endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "ListKeyVersions")
+            client = oci.key_management.KmsManagementClient(config, endpoint)
             response = client.list_key_versions(
                 key_id=request.pop(util.camelize('key_id')),
                 **(util.camel_to_snake_keys(request))
@@ -338,7 +345,8 @@ def test_list_keys(testing_service_client):
         service_error = None
 
         try:
-            client = oci.key_management.KmsManagementClient(config)
+            endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "ListKeys")
+            client = oci.key_management.KmsManagementClient(config, endpoint)
             response = client.list_keys(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -396,7 +404,8 @@ def test_update_key(testing_service_client):
         service_error = None
 
         try:
-            client = oci.key_management.KmsManagementClient(config)
+            endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "UpdateKey")
+            client = oci.key_management.KmsManagementClient(config, endpoint)
             response = client.update_key(
                 key_id=request.pop(util.camelize('key_id')),
                 update_key_details=request.pop(util.camelize('update_key_details')),

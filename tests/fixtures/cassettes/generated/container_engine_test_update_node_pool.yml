@@ -113,4 +113,118 @@ interactions:
       Date: ['Mon, 01 Apr 2019 23:36:32 GMT']
       Server: [Jetty(9.4.7.v20170914)]
     status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=containerengine&apiName=UpdateNodePool
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:55:17 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?serviceName=containerengine&apiName=UpdateNodePool&lang=Python&clientName=containerEngine
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq","endpoint":null,"fingerprint":"ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9","passPhrase":"dexsdk","keyFile":"java_sdk_admin_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,0C9B64A4AA0303EC02C79E91D0F8B0D0\n\naSd0uIKreq5NirzJ+Esa36lYJo4lU2zSjIIw8wvZEsd+LdaifqONZIfHHiB6/KgG\nse4wd/58tPsiEgnK7D1q8wmdVDouMSX31mhcbq2bwRjXATpNnOMnhDtahJv6cw4M\nDtlXYplk0LzpP6WjqXqFST4Yz0l1NO90ahnruwcb/SUCm12ONMJ5o4G1UO2/0IkX\nTRlMRpm/etIpStNSP+1IsD1gSWlAzhs1zodkpd+2eW2ovlAaY25Hm/aqK97jzsCF\n1f4dCm7spCHYOfv10XHNB99/jomN1KQuDy29MmVaJ9oYpOIDlu0yj4Q/XempLxa6\nhqgt0gUO9cMV2bfStsHKWJwq+KoncamBHpU/+CyNjoYq1QTC0urWlCP5hNo5VZhF\nzXBJa188FD2TiPFU8Z4EhercM83TfBsRVEQOpu5sbMaUOT6xXwnCWfM5Pjxy/0xE\n6oF2zq+H0ES12dh19C5P8ueRFLyhaWFliWJv3SXy9iCslcso6USnBBKnA26xMile\nY3m9uRP31yZW8czxYSIgKEV3Mp3GFAYwuebNjLgIM7xT+PvDiOO4qAhA0waGPhYH\n2QMl9ThSahKT6vpjVUQuGOjaRcJ5Vr73VGX4MnxXVxsl5de6y/ZfP5ndx5Lb4K43\njwrMbCIzrM1ZzR2JMTuMJFDasLjEW/Y9nf7FRh2gByeGLObAmHsjlUdW65QQu+Qy\nu4ADc6TbpqvLobocF5fKgML7JCAA/YqmYlZCV6gGOdKUXUT3VMmZcebcTtw1Zmxh\nwaUQe99D90w3Q/7CCCiGO2waZaTNl+ahVnQZEGHN9xJydkCkfVZDgVmdDmsSXmxo\n2DWf2c2/1me2zZAcW0SFBnyrt3uphdCnICaqXR0AnQUmw49YY4nk2fPTMxZs1r+2\n+poVVEfr//cHTTs4yu9ZVT2wGWf/Ooo4sm7obB8EhGkrXs3ormx9WHj6ezexupsd\nanWE7Uy54ovKdOosKB6nQOfP+Iwe4sSJ6oYPNvvh19v05+AhOCdONjMeCwTfBvtJ\nA5luj6CtFbgSX96A3zTRrTXQO3N4aLTF8niL+FcZ69RzYcxp3rlDSK88JyJ9xsu1\n+lNIcAPAFhzisC/eB9b1eDJ4JErJyIdBTZ4bPv4dtl/RpFcyIA4WMjskGCRo60I7\nN3DVqGGXLlC7KDjvPmdvvfAx3lzcIANhwBhLSQJ+y1bcyW6FcX0ZtY962Hb06Qj5\nXG5nDmT1qVkfDmzpIOF9GtDgch7gtf/EjHOUyaw60dDgJ5RF6lORLjFeuU9W7I1e\nD3mpWb6WP6DKoaQTgrLLrIJCLIdXr92XmvDj+iuYdGhCIkqHWqNbRW4TyiuukNJH\n12Zq/LlA1s58YJVa520o7EOXpmD4sGIrctlI3keSmKhiavy7j5ULz5J++jL+Yxlc\n6h9q4v71oyFmVgNpIEJNg7sSCkE72yzUCaglBUdUIMG3D0sI+VwufC7lbhohvHBr\nNzmbg2bW4x0CCprf/o5JvdNiB+bQdKG4t2Q7fhhZIW7ACii591ZBbpnUakDUQBZa\nV2yMaErypILHlQvlReHXVK1adUTxLNWf//VDoyclQk5k0uFIkUmpn+EXWnEHw7e8\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2261']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:55:17 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=containerengine&apiName=UpdateNodePool&lang=Python&sessionId=1007
+  response:
+    body: {string: '[{"containerId":"f276e3c9-3435-4862-90ca-ebbc430ed8ca","request":{"nodePoolId":"ocid1.nodepool.oc1.phx.aaaaaaaaae2diyzwgnswmnzugy4timlcgu2gcmjzgnqwmztbgn2giyzxhe4w","updateNodePoolDetails":{"name":"__STS1007_468","kubernetesVersion":"v1.10.11","quantityPerSubnet":1}}}]'}
+    headers:
+      Content-Length: ['269']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:55:17 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"name": "__STS1007_468", "kubernetesVersion": "v1.10.11", "quantityPerSubnet":
+      1}'
+    headers:
+      Content-Length: ['82']
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host content-length content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="LhGSuZATwXXWjBMKpuvMXskT1k8xH6cX5EKBPU9aceeh/deVR1JB+pPup/g1GBQpT7S5qSQJzt+3B2q1mG2uk4zxGJhPVZ8hr8W1KbKQZ6w1J4Nbig5KPxrS//EVOQ/9b2dQxT3uOO4d9jwqSIxRMin+mBVdoGDQTz+K22G6Ul4/+39h7T4dyuqtWPEVvu4eReSgAyShFPHwHgw3WPARfvpp2/u5YcZwCGoGfSnzQO53hiAWra+yK5ly7RnppEg6/DubcqNeVfd7Bm9txnk1zhifk38U8kBHZ6yrjIfqsKJScynAKPxTxb/fLcYm68fsG09+dW6GKpuS2FMYj0RZdw==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 18:55:17 GMT']
+      host: [containerengine.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [24BF99B76F284F4DB80D562C0D7270EA]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+      x-content-sha256: [hktIbDUGL13aupqOF6+Rz9hzLJvPaRFJX27XCcI9OrY=]
+    method: PUT
+    uri: https://containerengine.us-phoenix-1.oraclecloud.com/20180222/nodePools/ocid1.nodepool.oc1.phx.aaaaaaaaae2diyzwgnswmnzugy4timlcgu2gcmjzgnqwmztbgn2giyzxhe4w
+  response:
+    body: {string: ''}
+    headers:
+      Access-Control-Allow-Methods: ['DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT']
+      Access-Control-Allow-Origin: ['*']
+      Access-Control-Expose-Headers: ['opc-work-request-id, opc-retry-token, opc-request-id']
+      Content-Length: ['0']
+      Date: ['Thu, 18 Apr 2019 18:55:18 GMT']
+      Opc-Request-Id: [24BF99B76F284F4DB80D562C0D7270EA/F9E5177B261D43988734D4FE30E4AA5F/F0C51876BD514CF2AC89685DBACC3DB5]
+      Opc-Work-Request-Id: [ocid1.clustersworkrequest.oc1.phx.aaaaaaaaafsdemdcha4gcnrqhfqtiojzgm3wkzrugu3dqmjugwrtsyzvhftd]
+      Uri: [/20180222/nodePools/_id_]
+      Vary: [Accept-Encoding]
+      X-Rate-Limit-Duration: ['1']
+      X-Rate-Limit-Limit: ['16.70']
+      X-Rate-Limit-Request-Forwarded-For: ['10.0.88.8, 10.237.9.210']
+      X-Rate-Limit-Request-Remote-Addr: ['10.237.9.210:47268']
+    status: {code: 202, message: Accepted}
+- request:
+    body: '{"containerId": "f276e3c9-3435-4862-90ca-ebbc430ed8ca", "listResponse":
+      false, "requestClass": "com.oracle.bmc.containerengine.requests.UpdateNodePoolRequest",
+      "requestJson": "{\"nodePoolId\": \"ocid1.nodepool.oc1.phx.aaaaaaaaae2diyzwgnswmnzugy4timlcgu2gcmjzgnqwmztbgn2giyzxhe4w\",
+      \"updateNodePoolDetails\": {\"name\": \"__STS1007_468\", \"kubernetesVersion\":
+      \"v1.10.11\", \"quantityPerSubnet\": 1}}", "responseJson": "{\"updateNodePool\":
+      null, \"opcRequestId\": \"1BE69DBD0190499188DE06DA1B4ABD6A\", \"opcNextPage\":
+      null, \"opcWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaafsdemdcha4gcnrqhfqtiojzgm3wkzrugu3dqmjugwrtsyzvhftd\"}",
+      "responseClass": "com.oracle.bmc.containerengine.responses.UpdateNodePoolResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['735']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=1007&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:55:18 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
 version: 1

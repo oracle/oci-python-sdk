@@ -15,4 +15,404 @@ interactions:
       Date: ['Mon, 01 Apr 2019 21:30:14 GMT']
       Server: [Jetty(9.4.7.v20170914)]
     status: {code: 204, message: No Content}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [python-requests/2.21.0]
+    method: DELETE
+    uri: http://localhost:8090/SDKTestingService/sessions/0016
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Thu, 18 Apr 2019 18:14:28 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 204, message: No Content}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [python-requests/2.21.0]
+    method: DELETE
+    uri: http://localhost:8090/SDKTestingService/sessions/0545
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Thu, 18 Apr 2019 18:31:38 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 204, message: No Content}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [python-requests/2.21.0]
+    method: DELETE
+    uri: http://localhost:8090/SDKTestingService/sessions/0966
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Thu, 18 Apr 2019 18:35:39 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 204, message: No Content}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [python-requests/2.21.0]
+    method: DELETE
+    uri: http://localhost:8090/SDKTestingService/sessions/0937
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Thu, 18 Apr 2019 18:39:43 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 204, message: No Content}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [python-requests/2.21.0]
+    method: DELETE
+    uri: http://localhost:8090/SDKTestingService/sessions/0409
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Thu, 18 Apr 2019 18:44:00 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 204, message: No Content}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [python-requests/2.21.0]
+    method: DELETE
+    uri: http://localhost:8090/SDKTestingService/sessions/0690
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Thu, 18 Apr 2019 18:50:50 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 204, message: No Content}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [python-requests/2.21.0]
+    method: DELETE
+    uri: http://localhost:8090/SDKTestingService/sessions/0122
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Thu, 18 Apr 2019 18:52:20 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 204, message: No Content}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [python-requests/2.21.0]
+    method: DELETE
+    uri: http://localhost:8090/SDKTestingService/sessions/1007
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Thu, 18 Apr 2019 18:55:19 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 204, message: No Content}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [python-requests/2.21.0]
+    method: DELETE
+    uri: http://localhost:8090/SDKTestingService/sessions/0843
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Thu, 18 Apr 2019 19:01:23 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 204, message: No Content}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [python-requests/2.21.0]
+    method: DELETE
+    uri: http://localhost:8090/SDKTestingService/sessions/0164
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Thu, 18 Apr 2019 19:59:26 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 204, message: No Content}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [python-requests/2.21.0]
+    method: DELETE
+    uri: http://localhost:8090/SDKTestingService/sessions/0497
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Thu, 18 Apr 2019 20:01:23 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 204, message: No Content}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [python-requests/2.21.0]
+    method: DELETE
+    uri: http://localhost:8090/SDKTestingService/sessions/0319
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Thu, 18 Apr 2019 20:08:00 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 204, message: No Content}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [python-requests/2.21.0]
+    method: DELETE
+    uri: http://localhost:8090/SDKTestingService/sessions/0720
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Thu, 18 Apr 2019 20:10:41 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 204, message: No Content}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [python-requests/2.21.0]
+    method: DELETE
+    uri: http://localhost:8090/SDKTestingService/sessions/0028
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Thu, 18 Apr 2019 20:12:42 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 204, message: No Content}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [python-requests/2.21.0]
+    method: DELETE
+    uri: http://localhost:8090/SDKTestingService/sessions/0811
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Thu, 18 Apr 2019 20:29:01 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 204, message: No Content}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [python-requests/2.21.0]
+    method: DELETE
+    uri: http://localhost:8090/SDKTestingService/sessions/0589
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Thu, 18 Apr 2019 20:59:39 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 204, message: No Content}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [python-requests/2.21.0]
+    method: DELETE
+    uri: http://localhost:8090/SDKTestingService/sessions/0033
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Thu, 18 Apr 2019 21:35:57 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 204, message: No Content}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [python-requests/2.21.0]
+    method: DELETE
+    uri: http://localhost:8090/SDKTestingService/sessions/0658
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Thu, 18 Apr 2019 22:18:07 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 204, message: No Content}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [python-requests/2.21.0]
+    method: DELETE
+    uri: http://localhost:8090/SDKTestingService/sessions/0070
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Thu, 18 Apr 2019 22:31:11 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 204, message: No Content}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [python-requests/2.21.0]
+    method: DELETE
+    uri: http://localhost:8090/SDKTestingService/sessions/0078
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Thu, 18 Apr 2019 22:33:59 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 204, message: No Content}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [python-requests/2.21.0]
+    method: DELETE
+    uri: http://localhost:8090/SDKTestingService/sessions/0884
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Thu, 18 Apr 2019 22:49:00 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 204, message: No Content}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [python-requests/2.21.0]
+    method: DELETE
+    uri: http://localhost:8090/SDKTestingService/sessions/0710
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Thu, 18 Apr 2019 23:25:49 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 204, message: No Content}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [python-requests/2.21.0]
+    method: DELETE
+    uri: http://localhost:8090/SDKTestingService/sessions/0178
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Thu, 18 Apr 2019 23:27:29 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 204, message: No Content}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [python-requests/2.21.0]
+    method: DELETE
+    uri: http://localhost:8090/SDKTestingService/sessions/0648
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Thu, 18 Apr 2019 23:34:32 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 204, message: No Content}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [python-requests/2.21.0]
+    method: DELETE
+    uri: http://localhost:8090/SDKTestingService/sessions/0405
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Thu, 18 Apr 2019 23:37:07 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 204, message: No Content}
 version: 1

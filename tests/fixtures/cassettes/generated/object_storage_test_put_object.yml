@@ -1,0 +1,118 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=objectstorage&apiName=PutObject
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:51:50 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?serviceName=objectstorage&apiName=PutObject&lang=Python&clientName=objectStorage
+  response:
+    body: {string: '{"region":"us-ashburn-1","tenantId":"ocid1.tenancy.oc1..aaaaaaaayqotwvxvy4t433xh3b5ccj4z3w6ke4t4m2sjlib32lyio244pucq","compartmentId":"ocid1.compartment.oc1..aaaaaaaat66temidfhltnebadklfputkvgyb5ahqlfze6kgzjo5pcsml3doa","userId":"ocid1.user.oc1..aaaaaaaaapaeefq5nmeucbq5bfmkknljawq6eiz2wrgssricgrmkxuf54j7a","endpoint":null,"fingerprint":"ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9","passPhrase":"dexsdk","keyFile":"java_sdk_admin_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,0C9B64A4AA0303EC02C79E91D0F8B0D0\n\naSd0uIKreq5NirzJ+Esa36lYJo4lU2zSjIIw8wvZEsd+LdaifqONZIfHHiB6/KgG\nse4wd/58tPsiEgnK7D1q8wmdVDouMSX31mhcbq2bwRjXATpNnOMnhDtahJv6cw4M\nDtlXYplk0LzpP6WjqXqFST4Yz0l1NO90ahnruwcb/SUCm12ONMJ5o4G1UO2/0IkX\nTRlMRpm/etIpStNSP+1IsD1gSWlAzhs1zodkpd+2eW2ovlAaY25Hm/aqK97jzsCF\n1f4dCm7spCHYOfv10XHNB99/jomN1KQuDy29MmVaJ9oYpOIDlu0yj4Q/XempLxa6\nhqgt0gUO9cMV2bfStsHKWJwq+KoncamBHpU/+CyNjoYq1QTC0urWlCP5hNo5VZhF\nzXBJa188FD2TiPFU8Z4EhercM83TfBsRVEQOpu5sbMaUOT6xXwnCWfM5Pjxy/0xE\n6oF2zq+H0ES12dh19C5P8ueRFLyhaWFliWJv3SXy9iCslcso6USnBBKnA26xMile\nY3m9uRP31yZW8czxYSIgKEV3Mp3GFAYwuebNjLgIM7xT+PvDiOO4qAhA0waGPhYH\n2QMl9ThSahKT6vpjVUQuGOjaRcJ5Vr73VGX4MnxXVxsl5de6y/ZfP5ndx5Lb4K43\njwrMbCIzrM1ZzR2JMTuMJFDasLjEW/Y9nf7FRh2gByeGLObAmHsjlUdW65QQu+Qy\nu4ADc6TbpqvLobocF5fKgML7JCAA/YqmYlZCV6gGOdKUXUT3VMmZcebcTtw1Zmxh\nwaUQe99D90w3Q/7CCCiGO2waZaTNl+ahVnQZEGHN9xJydkCkfVZDgVmdDmsSXmxo\n2DWf2c2/1me2zZAcW0SFBnyrt3uphdCnICaqXR0AnQUmw49YY4nk2fPTMxZs1r+2\n+poVVEfr//cHTTs4yu9ZVT2wGWf/Ooo4sm7obB8EhGkrXs3ormx9WHj6ezexupsd\nanWE7Uy54ovKdOosKB6nQOfP+Iwe4sSJ6oYPNvvh19v05+AhOCdONjMeCwTfBvtJ\nA5luj6CtFbgSX96A3zTRrTXQO3N4aLTF8niL+FcZ69RzYcxp3rlDSK88JyJ9xsu1\n+lNIcAPAFhzisC/eB9b1eDJ4JErJyIdBTZ4bPv4dtl/RpFcyIA4WMjskGCRo60I7\nN3DVqGGXLlC7KDjvPmdvvfAx3lzcIANhwBhLSQJ+y1bcyW6FcX0ZtY962Hb06Qj5\nXG5nDmT1qVkfDmzpIOF9GtDgch7gtf/EjHOUyaw60dDgJ5RF6lORLjFeuU9W7I1e\nD3mpWb6WP6DKoaQTgrLLrIJCLIdXr92XmvDj+iuYdGhCIkqHWqNbRW4TyiuukNJH\n12Zq/LlA1s58YJVa520o7EOXpmD4sGIrctlI3keSmKhiavy7j5ULz5J++jL+Yxlc\n6h9q4v71oyFmVgNpIEJNg7sSCkE72yzUCaglBUdUIMG3D0sI+VwufC7lbhohvHBr\nNzmbg2bW4x0CCprf/o5JvdNiB+bQdKG4t2Q7fhhZIW7ACii591ZBbpnUakDUQBZa\nV2yMaErypILHlQvlReHXVK1adUTxLNWf//VDoyclQk5k0uFIkUmpn+EXWnEHw7e8\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2261']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:51:50 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=objectstorage&apiName=PutObject&lang=Python&sessionId=0035
+  response:
+    body: {string: '[{"containerId":"bd4f21e5-4aa7-440c-acb5-830097de51a5","request":{"namespaceName":"dex-us-phoenix-1","bucketName":"__STS0035_F0vyLIYBGud6jb_destinationBucket","objectName":"__STS0035_
+        %ZeV^fMbIA--DnkEk*XqMFOB","putObjectBody":"SGVsbG8gT2JqZWN0IFN0b3JhZ2UgMDAzNQ=="}}]'}
+    headers:
+      Content-Length: ['267']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:51:51 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: SGVsbG8gT2JqZWN0IFN0b3JhZ2UgMDAzNQ==
+    headers:
+      Content-Length: ['36']
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaayqotwvxvy4t433xh3b5ccj4z3w6ke4t4m2sjlib32lyio244pucq/ocid1.user.oc1..aaaaaaaaapaeefq5nmeucbq5bfmkknljawq6eiz2wrgssricgrmkxuf54j7a/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="SXtI+GEQWUCN5aTR/k4QJ0k7eiFmWtqhGUsc3XJ78emwuAIDnPbojK4HhXrqVkOdo/V3cZq/fiJdsLm70YsuUpF4xVRWttb6u4WOSX4eC/mvC+pLi4UQBKv27sNhFfkarMNMl+yaqvTzcRC9HAROIfHce9v8jr05cmBH+wcHWCMu0GYlMTih3c5JT8PCfjhvuYNpEEa2BQV7PlgO8ACkxc4okFsuFCKYZGGumAFUdJyLN+RjezWPVVBRxwwHxQCXfG7Mdg437AsNTWljcN48QJ5zK9tKe6i5s9NjJ04KbFflo41AYECPKrY1G/9UAQ+e2UiQCF6t11PjJZN6+e7DUw==",version="1"']
+      connection: [keep-alive]
+      date: ['Thu, 18 Apr 2019 18:51:52 GMT']
+      host: [objectstorage.us-ashburn-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [4631620FCC7F4C80BD2B7C66A67F88C9]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+    method: PUT
+    uri: https://objectstorage.us-ashburn-1.oraclecloud.com/n/dex-us-phoenix-1/b/__STS0035_F0vyLIYBGud6jb_destinationBucket/o/__STS0035_%20%25ZeV%5EfMbIA--DnkEk%2AXqMFOB
+  response:
+    body: {string: '{"code":"BucketNotFound","message":"Either the bucket named ''__STS0035_F0vyLIYBGud6jb_destinationBucket''
+        does not exist in the namespace ''dex-us-phoenix-1'' or you are not authorized
+        to access it"}'}
+    headers:
+      Access-Control-Allow-Credentials: ['true']
+      Access-Control-Allow-Methods: ['POST,PUT,GET,HEAD,DELETE,OPTIONS']
+      Access-Control-Allow-Origin: ['*']
+      Access-Control-Expose-Headers: ['Access-Control-Allow-Credentials,Access-Control-Allow-Methods,Access-Control-Allow-Origin,Connection,Content-Length,Content-Type,opc-client-info,opc-request-id']
+      Connection: [keep-alive]
+      Content-Length: ['196']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:51:53 GMT']
+      opc-request-id: [5a0bea2f-7188-9100-f5d5-30612e61ff9a]
+    status: {code: 404, message: Not Found}
+- request:
+    body: '{"containerId": "bd4f21e5-4aa7-440c-acb5-830097de51a5", "listResponse":
+      false, "requestClass": "com.oracle.bmc.objectstorage.requests.PutObjectRequest",
+      "requestJson": "{\"namespaceName\": \"dex-us-phoenix-1\", \"bucketName\": \"__STS0035_F0vyLIYBGud6jb_destinationBucket\",
+      \"objectName\": \"__STS0035_ %ZeV^fMbIA--DnkEk*XqMFOB\", \"putObjectBody\":
+      \"SGVsbG8gT2JqZWN0IFN0b3JhZ2UgMDAzNQ==\"}", "errorJson": "{\"code\": \"BucketNotFound\",
+      \"statusCode\": 404, \"message\": \"Either the bucket named ''__STS0035_F0vyLIYBGud6jb_destinationBucket''
+      does not exist in the namespace ''dex-us-phoenix-1'' or you are not authorized
+      to access it\", \"opcRequestId\": \"5a0bea2f-7188-9100-f5d5-30612e61ff9a\"}"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['699']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/error?sessionId=0035&lang=Python
+  response:
+    body: {string: 'The service returns the following error, please investigate why
+        service returns the error or define a validator if this is the failure scenario
+        you are testing.
+
+        {"statusCode":404,"code":"BucketNotFound","message":"Either the bucket named
+        ''__STS0035_F0vyLIYBGud6jb_destinationBucket'' does not exist in the namespace
+        ''dex-us-phoenix-1'' or you are not authorized to access it"}'}
+    headers:
+      Content-Length: ['374']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:51:53 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+version: 1

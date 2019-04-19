@@ -1,0 +1,256 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=waas&apiName=ListWaasPolicies
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:51:33 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?serviceName=waas&apiName=ListWaasPolicies&lang=Python&clientName=waas
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq","endpoint":null,"fingerprint":"ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9","passPhrase":"dexsdk","keyFile":"java_sdk_admin_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,0C9B64A4AA0303EC02C79E91D0F8B0D0\n\naSd0uIKreq5NirzJ+Esa36lYJo4lU2zSjIIw8wvZEsd+LdaifqONZIfHHiB6/KgG\nse4wd/58tPsiEgnK7D1q8wmdVDouMSX31mhcbq2bwRjXATpNnOMnhDtahJv6cw4M\nDtlXYplk0LzpP6WjqXqFST4Yz0l1NO90ahnruwcb/SUCm12ONMJ5o4G1UO2/0IkX\nTRlMRpm/etIpStNSP+1IsD1gSWlAzhs1zodkpd+2eW2ovlAaY25Hm/aqK97jzsCF\n1f4dCm7spCHYOfv10XHNB99/jomN1KQuDy29MmVaJ9oYpOIDlu0yj4Q/XempLxa6\nhqgt0gUO9cMV2bfStsHKWJwq+KoncamBHpU/+CyNjoYq1QTC0urWlCP5hNo5VZhF\nzXBJa188FD2TiPFU8Z4EhercM83TfBsRVEQOpu5sbMaUOT6xXwnCWfM5Pjxy/0xE\n6oF2zq+H0ES12dh19C5P8ueRFLyhaWFliWJv3SXy9iCslcso6USnBBKnA26xMile\nY3m9uRP31yZW8czxYSIgKEV3Mp3GFAYwuebNjLgIM7xT+PvDiOO4qAhA0waGPhYH\n2QMl9ThSahKT6vpjVUQuGOjaRcJ5Vr73VGX4MnxXVxsl5de6y/ZfP5ndx5Lb4K43\njwrMbCIzrM1ZzR2JMTuMJFDasLjEW/Y9nf7FRh2gByeGLObAmHsjlUdW65QQu+Qy\nu4ADc6TbpqvLobocF5fKgML7JCAA/YqmYlZCV6gGOdKUXUT3VMmZcebcTtw1Zmxh\nwaUQe99D90w3Q/7CCCiGO2waZaTNl+ahVnQZEGHN9xJydkCkfVZDgVmdDmsSXmxo\n2DWf2c2/1me2zZAcW0SFBnyrt3uphdCnICaqXR0AnQUmw49YY4nk2fPTMxZs1r+2\n+poVVEfr//cHTTs4yu9ZVT2wGWf/Ooo4sm7obB8EhGkrXs3ormx9WHj6ezexupsd\nanWE7Uy54ovKdOosKB6nQOfP+Iwe4sSJ6oYPNvvh19v05+AhOCdONjMeCwTfBvtJ\nA5luj6CtFbgSX96A3zTRrTXQO3N4aLTF8niL+FcZ69RzYcxp3rlDSK88JyJ9xsu1\n+lNIcAPAFhzisC/eB9b1eDJ4JErJyIdBTZ4bPv4dtl/RpFcyIA4WMjskGCRo60I7\nN3DVqGGXLlC7KDjvPmdvvfAx3lzcIANhwBhLSQJ+y1bcyW6FcX0ZtY962Hb06Qj5\nXG5nDmT1qVkfDmzpIOF9GtDgch7gtf/EjHOUyaw60dDgJ5RF6lORLjFeuU9W7I1e\nD3mpWb6WP6DKoaQTgrLLrIJCLIdXr92XmvDj+iuYdGhCIkqHWqNbRW4TyiuukNJH\n12Zq/LlA1s58YJVa520o7EOXpmD4sGIrctlI3keSmKhiavy7j5ULz5J++jL+Yxlc\n6h9q4v71oyFmVgNpIEJNg7sSCkE72yzUCaglBUdUIMG3D0sI+VwufC7lbhohvHBr\nNzmbg2bW4x0CCprf/o5JvdNiB+bQdKG4t2Q7fhhZIW7ACii591ZBbpnUakDUQBZa\nV2yMaErypILHlQvlReHXVK1adUTxLNWf//VDoyclQk5k0uFIkUmpn+EXWnEHw7e8\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2261']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:51:33 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=waas&apiName=ListWaasPolicies&lang=Python&sessionId=0814
+  response:
+    body: {string: '[{"containerId":"6f9dee51-34b3-40da-a5d4-bf1a671f9127","request":{"compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","limit":10}}]'}
+    headers:
+      Content-Length: ['181']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:51:34 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="xtkft1inwBC095esREWaH/2Wug6+oQ9Rjf+F8weXHI37GC0JtCSAnYjvQB7t23S1vLgQl+S5ew8l5IRkKaukJpZCRWM15UoCZBvsVee2d5zQMlzV6Pf4NlX7bhyWZTuUUdvgBekNGZuMI6/81TvZnppXiS88RkbcGaIID0vXTDARUPm9uH5XLCx6schGqTyS1Ulj+1FzOfOcIlPgD4IGwnytTToGuUjdnVIxg7dsWMVCW5Y+c2tvNZvi3M/5pEYgTx0xhZjUh9gjcUZwotxRrtfV/Qg/EfEFgWvtGBVegrpEzcvG0OOybhbBAwieNrssT3hSh88oAr9CB4OztNj9Vg==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 18:51:34 GMT']
+      host: [waas.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [0FCD4AAED74545A4BCB64E844D833657]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://waas.us-phoenix-1.oraclecloud.com/20181116/waasPolicies?compartmentId=ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba&limit=10
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA83W3aukNhQA8Pf+GfO8K5pPZ96W3Uu5UJaF3rbQ0oeoUfNl1EQTLf3fmxl6acsd
+        luK+jAqChuTw43DO+e2PU23NyGZv+OCfm9PlZGvRFNm/vma2LrKM/X3tY2U8WOa6n9few0FwSJ1U
+        rsVua2c8zO0uNVo80HtLCN4crNjp3akRbtRs+8wMT2f8wpj7YrWoN5AX5xwVZVHi9LoutIaJIa2J
+        0XmXlwWKAJAssDbFITIemRk1v8aXFot/Ag5py/G25X/jnbpprEZShdpFUxkpJdIRN85iIIUaMFSR
+        RSfN4LneAZA6omu8WrS83mrNf/TMX0P+8PHl+een9McLwz/OPH29Hn6N/32O3hflS1FecH5BRVZA
+        /Ovpz3ePQpuXgOTgHi2JZQnocdsVtoE2YMU77FcMA3FhaOsdewntbFZvrMaSklUFMonBxDp2d20/
+        Pf3w9PL8+fuv6eblBZBLDpLu+YF0adIt0T1dRGMJz/C4rt5ohZcoxykKaGZkjVrJSofKNUphgZRT
+        MIR+kMRs3eqkVuSu7k9fPn34ui696ZYXBDJaPlLuXnUpwPd1ESTguG7XQUJgsIDve01J2Ko5Ua89
+        b9W4dR2jE10HLy1gJtoaV6O6Xxf+ry69AJzB82PlbpFu+FYXpKILUYr3sO6y2W0Wc1tR3/dabroR
+        cqqV5tNqvFLrElbVeIuXIQ5sXyc/h+mwbnG5PjArAHogXZhyFwPyVhefccSAouO6TW1Cu3M64U4r
+        v7XCN1Ul+zCinfHdWLgh6FAv5y0sUwum4NFBXXjLXZxKb5bjR6oM4NbVyju6NI+o/IamFnY0YxG4
+        VRWbhOTL4ncmMAOybUJH1go52cyErZPABgslY3MQF7w2tTLLAX0g3CLhInynMJwJjojCK95B3dX0
+        hA28JYuosEOCaJoGB486sQaPIR24Jx0Z4by3YmKLb6E9WHaLmy66YJidEXgg3fyme2dkKACO4Jyy
+        4bDugM0ogw9KYAEn6kfFxk4n7gE2ArWilo66OC/d2EYm5xWCcFA3f9VNI8MjDWT5+aabv9WltIi4
+        /JbK4KJFNFQb2SAyCjV61mke67vJWDdR0CtuI0c2AQ98ZlhtvD5WGfLzq26eAXxtar9/9xfwQRE4
+        qg0AAA==
+    headers:
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:51:35 GMT']
+      Opc-Next-Page: [MjAxOS0wNC0wN1QwODoyNzo0Ny40MzFafA==]
+      Opc-Request-Id: [0FCD4AAED74545A4BCB64E844D833657/953bb1bd9a5e00fcc8a51d71d2b68837/701f7a019e86cc875f843bb930260000]
+      Server: [ZENEDGE]
+      Transfer-Encoding: [chunked]
+      X-Cache-Status: [NOTCACHED]
+      X-Cdn: [Served-By-Zenedge]
+      X-Zen-Fury: [4948c9da434401105b539e4d2a8e455ab34f30a2]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="LxuSx+FjXZ03SvK6PKnCRjF4+unaSsAiTmR6zN3q2hBrddFo94WYm8wLKH1t5NFOlv7Q5yA0h5LNN2JWoQKTHZ2HrAQnfG5KB04dxrQ8ekkrrRAcmBwS0FJjeZ/T59vaQ2aKdvyXwbpftIVECWXc4nL3/fHoVnMGUIXiwt8ljvEDFQTjPLIo92FTjv6s0LhvCSiieFa0PNv1pdMSmMtmvFfQ5ADvA634NuO1HIyZB6Hk8OLM4cirBtkgajCDC2YDXG1aqokH8NKdK3HThS9UKS+8k4VFoSZtPonMdQkFjZ9WQJf66SHbFvxiGikIcQizQ6eRE3cgfp/hlCx0+PoQcQ==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 18:51:35 GMT']
+      host: [waas.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [DDCBFCF86A384844A6C57BDF0B1F1547]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://waas.us-phoenix-1.oraclecloud.com/20181116/waasPolicies?compartmentId=ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba&limit=10&page=MjAxOS0wNC0wN1QwODoyNzo0Ny40MzFafA%3D%3D
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA83WTaulNhgH8H0/xlnPlZhXPbvSQpnNMNBbCi1dxJiYaHyJiRot/e6Nh4G2nK68
+        myNujME8/vjzJL//eRNjP/E59HIIn+vb/TYKU+fZv0azUeRZxr9dx1T1AS6z0POqAxqMRMy3nVfE
+        72omw6yO1uIlQHsoSsnuUcVvn2618ZPl+xfey7TGr5z7r6M1YocgLwEGFBSggOU5cey5GdKcGH3w
+        53DMS1JmG1epEJPJyPvJyrPANNv8U/GWvjk9vvnfgqkla9W5gxsWqmaxqNurfopyW71n3T7ZjTRr
+        20QL5UxUDcU+nAVbo6TYhZU/Bx7Omn/5+uP375+//JTeBdPLH2aZxs/lz194A/gN0HdQ3NMNywyW
+        5W+3vz69iC4BJS4JfNYFBEVGSnBd1452dN6LCga9bhup6R5DEIgrXCkLucAr3aZpR6qVzVaxZund
+        NV3yDso7Lu8EZgzSF9LFoMgxYc+6COCIUQmv6+4RRjNr2syy3Vc9cg4pZ42pUOiIlquQlNdkppVD
+        dpaeSDVe1MVndnN8JyyDqHghXZRaQImKZ12cgwghwR/QXeoGcxcbavSIbaT2YHB3odUhuIVDNExi
+        9jyYoeZpSFRbe7EzoEdnKO+oyFDBXkgXpuzmMH/WLUoYKSAfyK4xy+iWblBDN86o2WkfQpyHmWnj
+        a04bzZu4KSQIpfLoFD4OdVEXPrKb32GeFcXr9F0ES4hgDsCzLkm6GBJ0XZcE3hqFDkLoYchciXno
+        nVpW2i+1NMT3EDeST2Rzva906LfUKS7oojdYvkOUaO8AZCXGr6SbaEvyP9mlBY0oteTrujMmYkDB
+        +b2KGxl95/TeSKzNQZ0ZuHB+I8c+knnpuzoyOjTqSt996Obg7AwkT7qvs6shWOQgB5g+60LIIgaA
+        XddtldotC94PeonCOtG59NR2na99bHgrpFM+arvt9WIoq0wrL+oWp266MU0nslfKLku6EDyfGVKk
+        WSRpm7iM28VoxzVufTt3bdNQPVR20AerSdUFWzvMVdV3FnfraJU60OjMRVz2wIX3FIUCvhIuPaOL
+        0BMuKM/GUBQf2NS04243sB7EMridoMZF3ep5UU5NTd2LaVoPVw20aheqV+ZCTS7q0m/RRShtaueR
+        4Y/v/gaA7iwzrQ0AAA==
+    headers:
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:51:35 GMT']
+      Opc-Next-Page: [MjAxOS0wMy0yMlQxMDowODoxNC41MTlafA==]
+      Opc-Request-Id: [DDCBFCF86A384844A6C57BDF0B1F1547/a8144dd5acbcb5c82b041c0dbb0730ee/078e407ec97202ade08ae54c68af2ea6]
+      Server: [ZENEDGE]
+      Transfer-Encoding: [chunked]
+      X-Cache-Status: [NOTCACHED]
+      X-Cdn: [Served-By-Zenedge]
+      X-Zen-Fury: [4948c9da434401105b539e4d2a8e455ab34f30a2]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"containerId": "6f9dee51-34b3-40da-a5d4-bf1a671f9127", "listResponse":
+      true, "requestClass": "com.oracle.bmc.waas.requests.ListWaasPoliciesRequest",
+      "requestJson": "{\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"limit\": 10}", "responseJson": "[{\"items\": [{\"id\": \"ocid1.waaspolicy.oc1..aaaaaaaaqgqpbp6bwcsxmbmjjj4lx5dso52jikn53kxaxsjmntelz22jlx4a\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"WaasPolicy20190418185041\", \"domain\": \"xxsts0814x226.waf.oci.example.com\",
+      \"lifecycleState\": \"ACTIVE\", \"timeCreated\": \"2019-04-18T18:50:41.135000+00:00\",
+      \"freeformTags\": null, \"definedTags\": null}, {\"id\": \"ocid1.waaspolicy.oc1..aaaaaaaav3fw7d2v5z3hv53w6swnfcz5tj3ormvtmol5j76vkw6qinmxcxga\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"WaasPolicy20190418082602\", \"domain\": \"xxsts0816x8827.waf.oci.example.com\",
+      \"lifecycleState\": \"DELETING\", \"timeCreated\": \"2019-04-18T08:26:02.139000+00:00\",
+      \"freeformTags\": null, \"definedTags\": null}, {\"id\": \"ocid1.waaspolicy.oc1..aaaaaaaaly7b5uxjpqxi3mr4omkv6v7nbsdkk5i4ksk3wwhnj6mygvsjlk6a\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"WaasPolicy20190417082842\", \"domain\": \"xxsts0847x8393.waf.oci.example.com\",
+      \"lifecycleState\": \"UPDATING\", \"timeCreated\": \"2019-04-17T08:28:42.785000+00:00\",
+      \"freeformTags\": null, \"definedTags\": null}, {\"id\": \"ocid1.waaspolicy.oc1..aaaaaaaagg3663wo2ezzc76wybrxjpvhefkpygga7q7vntjo2amxoc5bpk4a\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"WaasPolicy20190417082725\", \"domain\": \"xxsts0847x4362.waf.oci.example.com\",
+      \"lifecycleState\": \"UPDATING\", \"timeCreated\": \"2019-04-17T08:27:25.399000+00:00\",
+      \"freeformTags\": null, \"definedTags\": null}, {\"id\": \"ocid1.waaspolicy.oc1..aaaaaaaauyoyrirfb7thhljyldijqckleqvmtkkvuwvkdto5unxnazvqtrwq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"WaasPolicy20190417010103\", \"domain\": \"xxsts0214x3425.waf.oci.example.com\",
+      \"lifecycleState\": \"UPDATING\", \"timeCreated\": \"2019-04-17T01:01:03.124000+00:00\",
+      \"freeformTags\": null, \"definedTags\": null}, {\"id\": \"ocid1.waaspolicy.oc1..aaaaaaaadcmwfze7q5glktyfitdbbjhwp4zaezmo3y43s4hjrywuqf2qwt4q\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"WaasPolicy20190413082526\", \"domain\": \"xxsts0595x5274.waf.oci.example.com\",
+      \"lifecycleState\": \"UPDATING\", \"timeCreated\": \"2019-04-13T08:25:26.055000+00:00\",
+      \"freeformTags\": null, \"definedTags\": null}, {\"id\": \"ocid1.waaspolicy.oc1..aaaaaaaawz4r5iweokbaqijeuutzai5a2jfdwg6vb4sjdr6avqi5m5ikjxdq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"WaasPolicy20190412082608\", \"domain\": \"xxsts0570x487.waf.oci.example.com\",
+      \"lifecycleState\": \"UPDATING\", \"timeCreated\": \"2019-04-12T08:26:08.027000+00:00\",
+      \"freeformTags\": null, \"definedTags\": null}, {\"id\": \"ocid1.waaspolicy.oc1..aaaaaaaavmh6anef6uib5s4i6l753wt4givwt537net6g6p3rzfiqautf3oa\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"WaasPolicy20190411082453\", \"domain\": \"xxsts0965x4731.waf.oci.example.com\",
+      \"lifecycleState\": \"UPDATING\", \"timeCreated\": \"2019-04-11T08:24:53.942000+00:00\",
+      \"freeformTags\": null, \"definedTags\": null}, {\"id\": \"ocid1.waaspolicy.oc1..aaaaaaaan5mpjwtwki5i3q7tpkapglnefn3di4ficjs7sxrugpfxajrv32wa\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"WaasPolicy20190410082452\", \"domain\": \"xxsts0125x2908.waf.oci.example.com\",
+      \"lifecycleState\": \"UPDATING\", \"timeCreated\": \"2019-04-10T08:24:52.739000+00:00\",
+      \"freeformTags\": null, \"definedTags\": null}, {\"id\": \"ocid1.waaspolicy.oc1..aaaaaaaasxo47wby6y34mk4dlrl6v7hgqmosq72hkeoxe4osxrnera5kyecq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"WaasPolicy20190409082450\", \"domain\": \"xxsts0771x5887.waf.oci.example.com\",
+      \"lifecycleState\": \"UPDATING\", \"timeCreated\": \"2019-04-09T08:24:50.254000+00:00\",
+      \"freeformTags\": null, \"definedTags\": null}], \"opcRequestId\": \"99B0CD900C084A5B9F742CE071757931\",
+      \"opcNextPage\": \"MjAxOS0wNC0wN1QwODoyNzo0Ny40MzFafA==\"}, {\"items\": [{\"id\":
+      \"ocid1.waaspolicy.oc1..aaaaaaaa6l5vbkqzai7tbgul3kybmpxewvss7kyplw5gvjgxl2er5fd2cyna\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"WaasPolicy20190406080829\", \"domain\": \"xxsts0808x1959.waf.oci.example.com\",
+      \"lifecycleState\": \"UPDATING\", \"timeCreated\": \"2019-04-06T08:08:29.299000+00:00\",
+      \"freeformTags\": null, \"definedTags\": null}, {\"id\": \"ocid1.waaspolicy.oc1..aaaaaaaaloloqsscb2thvww5d6yxttc3af4bfl2ac4v6wppy3fjegwb7gumq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"WaasPolicy20190405094952\", \"domain\": \"xxsts0053x7590.waf.oci.example.com\",
+      \"lifecycleState\": \"UPDATING\", \"timeCreated\": \"2019-04-05T09:49:52.726000+00:00\",
+      \"freeformTags\": null, \"definedTags\": null}, {\"id\": \"ocid1.waaspolicy.oc1..aaaaaaaayx2xirh6grejyvhoaa26a7gib3tk5hevce6ad5r6bq3lres5efoq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"WaasPolicy20190404081457\", \"domain\": \"xxsts0304x4392.waf.oci.example.com\",
+      \"lifecycleState\": \"UPDATING\", \"timeCreated\": \"2019-04-04T08:14:57.238000+00:00\",
+      \"freeformTags\": null, \"definedTags\": null}, {\"id\": \"ocid1.waaspolicy.oc1..aaaaaaaayudg4aqxg6iho4lx6lz72yqtjhttqua23npcrsatindahttcbwja\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"WaasPolicy20190403080938\", \"domain\": \"xxsts0410x2254.waf.oci.example.com\",
+      \"lifecycleState\": \"UPDATING\", \"timeCreated\": \"2019-04-03T08:09:38.387000+00:00\",
+      \"freeformTags\": null, \"definedTags\": null}, {\"id\": \"ocid1.waaspolicy.oc1..aaaaaaaaiiuoquknfnkor3gy6mttxrnr7hisda6ghagxwf3c566ezkf4zzfa\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"WaasPolicy20190402081121\", \"domain\": \"xxsts0892x6052.waf.oci.example.com\",
+      \"lifecycleState\": \"UPDATING\", \"timeCreated\": \"2019-04-02T08:11:21.889000+00:00\",
+      \"freeformTags\": null, \"definedTags\": null}, {\"id\": \"ocid1.waaspolicy.oc1..aaaaaaaa5tajif3z556zi5rbcrnmqfuv6mudei5sm24geap5wqmsbhtmwe6a\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"WaasPolicy20190329232100\", \"domain\": \"xxsts0592x4253.waf.oci.example.com\",
+      \"lifecycleState\": \"UPDATING\", \"timeCreated\": \"2019-03-29T23:21:00.944000+00:00\",
+      \"freeformTags\": null, \"definedTags\": null}, {\"id\": \"ocid1.waaspolicy.oc1..aaaaaaaar45cn3tqsybxw5oskqhyge4hiz6qinacqsw5zyo5rumkdx76ngfq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"WaasPolicy20190329100951\", \"domain\": \"xxsts0686x3145.waf.oci.example.com\",
+      \"lifecycleState\": \"UPDATING\", \"timeCreated\": \"2019-03-29T10:09:51.946000+00:00\",
+      \"freeformTags\": null, \"definedTags\": null}, {\"id\": \"ocid1.waaspolicy.oc1..aaaaaaaajffyl7tssnhuxclqckq7tsjkksdsxgajceqfsxhlwydui67bijeq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"WaasPolicy20190328101046\", \"domain\": \"xxsts0227x4007.waf.oci.example.com\",
+      \"lifecycleState\": \"UPDATING\", \"timeCreated\": \"2019-03-28T10:10:46.294000+00:00\",
+      \"freeformTags\": null, \"definedTags\": null}, {\"id\": \"ocid1.waaspolicy.oc1..aaaaaaaakxxlovxwmjrkjgg6hnblnhz7d5bktldq4afbmkl4kvolffz3oqiq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"WaasPolicy20190327101207\", \"domain\": \"xxsts1007x538.waf.oci.example.com\",
+      \"lifecycleState\": \"UPDATING\", \"timeCreated\": \"2019-03-27T10:12:07.824000+00:00\",
+      \"freeformTags\": null, \"definedTags\": null}, {\"id\": \"ocid1.waaspolicy.oc1..aaaaaaaahqaqyi2dncunqy53gqxhjhrufqfpgdmcppvzqbn6bju6hv7qtd5q\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"WaasPolicy20190326101033\", \"domain\": \"xxsts0986x3882.waf.oci.example.com\",
+      \"lifecycleState\": \"UPDATING\", \"timeCreated\": \"2019-03-26T10:10:33.887000+00:00\",
+      \"freeformTags\": null, \"definedTags\": null}], \"opcRequestId\": \"0095F65C5EEB4E57BEA57ED0027863B8\",
+      \"opcNextPage\": \"MjAxOS0wMy0yMlQxMDowODoxNC41MTlafA==\"}]", "responseClass":
+      "com.oracle.bmc.waas.responses.ListWaasPoliciesResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['9461']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0814&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:51:35 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+version: 1

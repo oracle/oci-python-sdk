@@ -155,4 +155,273 @@ interactions:
       Date: ['Mon, 01 Apr 2019 22:27:23 GMT']
       Server: [Jetty(9.4.7.v20170914)]
     status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=loadbalancer&apiName=GetHostname
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:51:16 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?serviceName=loadbalancer&apiName=GetHostname&lang=Python&clientName=loadBalancer
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq","endpoint":null,"fingerprint":"ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9","passPhrase":"dexsdk","keyFile":"java_sdk_admin_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,0C9B64A4AA0303EC02C79E91D0F8B0D0\n\naSd0uIKreq5NirzJ+Esa36lYJo4lU2zSjIIw8wvZEsd+LdaifqONZIfHHiB6/KgG\nse4wd/58tPsiEgnK7D1q8wmdVDouMSX31mhcbq2bwRjXATpNnOMnhDtahJv6cw4M\nDtlXYplk0LzpP6WjqXqFST4Yz0l1NO90ahnruwcb/SUCm12ONMJ5o4G1UO2/0IkX\nTRlMRpm/etIpStNSP+1IsD1gSWlAzhs1zodkpd+2eW2ovlAaY25Hm/aqK97jzsCF\n1f4dCm7spCHYOfv10XHNB99/jomN1KQuDy29MmVaJ9oYpOIDlu0yj4Q/XempLxa6\nhqgt0gUO9cMV2bfStsHKWJwq+KoncamBHpU/+CyNjoYq1QTC0urWlCP5hNo5VZhF\nzXBJa188FD2TiPFU8Z4EhercM83TfBsRVEQOpu5sbMaUOT6xXwnCWfM5Pjxy/0xE\n6oF2zq+H0ES12dh19C5P8ueRFLyhaWFliWJv3SXy9iCslcso6USnBBKnA26xMile\nY3m9uRP31yZW8czxYSIgKEV3Mp3GFAYwuebNjLgIM7xT+PvDiOO4qAhA0waGPhYH\n2QMl9ThSahKT6vpjVUQuGOjaRcJ5Vr73VGX4MnxXVxsl5de6y/ZfP5ndx5Lb4K43\njwrMbCIzrM1ZzR2JMTuMJFDasLjEW/Y9nf7FRh2gByeGLObAmHsjlUdW65QQu+Qy\nu4ADc6TbpqvLobocF5fKgML7JCAA/YqmYlZCV6gGOdKUXUT3VMmZcebcTtw1Zmxh\nwaUQe99D90w3Q/7CCCiGO2waZaTNl+ahVnQZEGHN9xJydkCkfVZDgVmdDmsSXmxo\n2DWf2c2/1me2zZAcW0SFBnyrt3uphdCnICaqXR0AnQUmw49YY4nk2fPTMxZs1r+2\n+poVVEfr//cHTTs4yu9ZVT2wGWf/Ooo4sm7obB8EhGkrXs3ormx9WHj6ezexupsd\nanWE7Uy54ovKdOosKB6nQOfP+Iwe4sSJ6oYPNvvh19v05+AhOCdONjMeCwTfBvtJ\nA5luj6CtFbgSX96A3zTRrTXQO3N4aLTF8niL+FcZ69RzYcxp3rlDSK88JyJ9xsu1\n+lNIcAPAFhzisC/eB9b1eDJ4JErJyIdBTZ4bPv4dtl/RpFcyIA4WMjskGCRo60I7\nN3DVqGGXLlC7KDjvPmdvvfAx3lzcIANhwBhLSQJ+y1bcyW6FcX0ZtY962Hb06Qj5\nXG5nDmT1qVkfDmzpIOF9GtDgch7gtf/EjHOUyaw60dDgJ5RF6lORLjFeuU9W7I1e\nD3mpWb6WP6DKoaQTgrLLrIJCLIdXr92XmvDj+iuYdGhCIkqHWqNbRW4TyiuukNJH\n12Zq/LlA1s58YJVa520o7EOXpmD4sGIrctlI3keSmKhiavy7j5ULz5J++jL+Yxlc\n6h9q4v71oyFmVgNpIEJNg7sSCkE72yzUCaglBUdUIMG3D0sI+VwufC7lbhohvHBr\nNzmbg2bW4x0CCprf/o5JvdNiB+bQdKG4t2Q7fhhZIW7ACii591ZBbpnUakDUQBZa\nV2yMaErypILHlQvlReHXVK1adUTxLNWf//VDoyclQk5k0uFIkUmpn+EXWnEHw7e8\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2261']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:51:16 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=loadbalancer&apiName=GetHostname&lang=Python&sessionId=0122
+  response:
+    body: {string: "The following exception happened in testing service, most probably\
+        \ caused by testing data or validator.\ncom.oracle.bmc.model.BmcException:\
+        \ (400, LimitExceeded, false) The limit for this tenancy has been exceeded.\
+        \ (opc-request-id: FD6234D1F7524346BAD0B5FA9BEFF209/31A2BDAB5236B059F69F2C09EE93D140/CAF6C52F0113E5845CE9327D7616E5B6)\n\
+        \tat com.oracle.bmc.http.internal.ResponseHelper.throwIfNotSuccessful(ResponseHelper.java:120)\n\
+        \tat com.oracle.bmc.http.internal.ResponseConversionFunctionFactory$ValidatingParseResponseFunction.apply(ResponseConversionFunctionFactory.java:86)\n\
+        \tat com.oracle.bmc.http.internal.ResponseConversionFunctionFactory$ValidatingParseResponseFunction.apply(ResponseConversionFunctionFactory.java:82)\n\
+        \tat com.oracle.bmc.loadbalancer.internal.http.CreateLoadBalancerConverter$1.apply(CreateLoadBalancerConverter.java:65)\n\
+        \tat com.oracle.bmc.loadbalancer.internal.http.CreateLoadBalancerConverter$1.apply(CreateLoadBalancerConverter.java:53)\n\
+        \tat com.oracle.bmc.loadbalancer.LoadBalancerClient.createLoadBalancer(LoadBalancerClient.java:513)\n\
+        \tat com.oracle.bmc.service.data.loadbalancer.LoadBalancerDataContainer.createLoadBalancer(LoadBalancerDataContainer.java:205)\n\
+        \tat com.oracle.bmc.service.data.loadbalancer.LoadBalancerDataContainer.lambda$null$5(LoadBalancerDataContainer.java:124)\n\
+        \tat com.oracle.bmc.service.helper.ResourceHelper.getResourceProperty(ResourceHelper.java:66)\n\
+        \tat com.oracle.bmc.service.data.loadbalancer.LoadBalancerDataContainer.lambda$new$6(LoadBalancerDataContainer.java:120)\n\
+        \tat com.oracle.bmc.service.data.DataContainer.lambda$registerType$4(DataContainer.java:193)\n\
+        \tat com.oracle.bmc.service.data.DataContainer.findFieldValue(DataContainer.java:359)\n\
+        \tat com.oracle.bmc.service.data.DataContainer.getInstance(DataContainer.java:312)\n\
+        \tat com.oracle.bmc.service.ObjectRepository.resolve(ObjectRepository.java:56)\n\
+        \tat com.oracle.bmc.service.SDKTestingService.getRequests(SDKTestingService.java:885)\n\
+        \tat sun.reflect.GeneratedMethodAccessor64.invoke(Unknown Source)\n\tat sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)\n\
+        \tat java.lang.reflect.Method.invoke(Method.java:498)\n\tat org.glassfish.jersey.server.model.internal.ResourceMethodInvocationHandlerFactory.lambda$static$0(ResourceMethodInvocationHandlerFactory.java:76)\n\
+        \tat org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher$1.run(AbstractJavaResourceMethodDispatcher.java:148)\n\
+        \tat org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.invoke(AbstractJavaResourceMethodDispatcher.java:191)\n\
+        \tat org.glassfish.jersey.server.model.internal.JavaResourceMethodDispatcherProvider$TypeOutInvoker.doDispatch(JavaResourceMethodDispatcherProvider.java:243)\n\
+        \tat org.glassfish.jersey.server.model.internal.AbstractJavaResourceMethodDispatcher.dispatch(AbstractJavaResourceMethodDispatcher.java:103)\n\
+        \tat org.glassfish.jersey.server.model.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:493)\n\
+        \tat org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:415)\n\
+        \tat org.glassfish.jersey.server.model.ResourceMethodInvoker.apply(ResourceMethodInvoker.java:104)\n\
+        \tat org.glassfish.jersey.server.ServerRuntime$1.run(ServerRuntime.java:277)\n\
+        \tat org.glassfish.jersey.internal.Errors$1.call(Errors.java:272)\n\tat org.glassfish.jersey.internal.Errors$1.call(Errors.java:268)\n\
+        \tat org.glassfish.jersey.internal.Errors.process(Errors.java:316)\n\tat org.glassfish.jersey.internal.Errors.process(Errors.java:298)\n\
+        \tat org.glassfish.jersey.internal.Errors.process(Errors.java:268)\n\tat org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:289)\n\
+        \tat org.glassfish.jersey.server.ServerRuntime.process(ServerRuntime.java:256)\n\
+        \tat org.glassfish.jersey.server.ApplicationHandler.handle(ApplicationHandler.java:703)\n\
+        \tat org.glassfish.jersey.servlet.WebComponent.serviceImpl(WebComponent.java:416)\n\
+        \tat org.glassfish.jersey.servlet.WebComponent.service(WebComponent.java:370)\n\
+        \tat org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:389)\n\
+        \tat org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:342)\n\
+        \tat org.glassfish.jersey.servlet.ServletContainer.service(ServletContainer.java:229)\n\
+        \tat org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:841)\n\
+        \tat org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:535)\n\
+        \tat org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:188)\n\
+        \tat org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1253)\n\
+        \tat org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:168)\n\
+        \tat org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:473)\n\
+        \tat org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:166)\n\
+        \tat org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1155)\n\
+        \tat org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)\n\
+        \tat org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)\n\
+        \tat org.eclipse.jetty.server.Server.handle(Server.java:561)\n\tat org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:334)\n\
+        \tat org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:251)\n\
+        \tat org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:279)\n\
+        \tat org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:104)\n\t\
+        at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:124)\n\t\
+        at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:247)\n\
+        \tat org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.produce(EatWhatYouKill.java:140)\n\
+        \tat org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131)\n\
+        \tat org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:243)\n\
+        \tat org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:679)\n\
+        \tat org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:597)\n\
+        \tat java.lang.Thread.run(Thread.java:748)\n"}
+    headers:
+      Content-Length: ['6102']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:51:16 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 500, message: Internal Server Error}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=loadbalancer&apiName=GetHostname
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 20:06:33 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?serviceName=loadbalancer&apiName=GetHostname&lang=Python&clientName=loadBalancer
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq","endpoint":null,"fingerprint":"ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9","passPhrase":"dexsdk","keyFile":"java_sdk_admin_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,0C9B64A4AA0303EC02C79E91D0F8B0D0\n\naSd0uIKreq5NirzJ+Esa36lYJo4lU2zSjIIw8wvZEsd+LdaifqONZIfHHiB6/KgG\nse4wd/58tPsiEgnK7D1q8wmdVDouMSX31mhcbq2bwRjXATpNnOMnhDtahJv6cw4M\nDtlXYplk0LzpP6WjqXqFST4Yz0l1NO90ahnruwcb/SUCm12ONMJ5o4G1UO2/0IkX\nTRlMRpm/etIpStNSP+1IsD1gSWlAzhs1zodkpd+2eW2ovlAaY25Hm/aqK97jzsCF\n1f4dCm7spCHYOfv10XHNB99/jomN1KQuDy29MmVaJ9oYpOIDlu0yj4Q/XempLxa6\nhqgt0gUO9cMV2bfStsHKWJwq+KoncamBHpU/+CyNjoYq1QTC0urWlCP5hNo5VZhF\nzXBJa188FD2TiPFU8Z4EhercM83TfBsRVEQOpu5sbMaUOT6xXwnCWfM5Pjxy/0xE\n6oF2zq+H0ES12dh19C5P8ueRFLyhaWFliWJv3SXy9iCslcso6USnBBKnA26xMile\nY3m9uRP31yZW8czxYSIgKEV3Mp3GFAYwuebNjLgIM7xT+PvDiOO4qAhA0waGPhYH\n2QMl9ThSahKT6vpjVUQuGOjaRcJ5Vr73VGX4MnxXVxsl5de6y/ZfP5ndx5Lb4K43\njwrMbCIzrM1ZzR2JMTuMJFDasLjEW/Y9nf7FRh2gByeGLObAmHsjlUdW65QQu+Qy\nu4ADc6TbpqvLobocF5fKgML7JCAA/YqmYlZCV6gGOdKUXUT3VMmZcebcTtw1Zmxh\nwaUQe99D90w3Q/7CCCiGO2waZaTNl+ahVnQZEGHN9xJydkCkfVZDgVmdDmsSXmxo\n2DWf2c2/1me2zZAcW0SFBnyrt3uphdCnICaqXR0AnQUmw49YY4nk2fPTMxZs1r+2\n+poVVEfr//cHTTs4yu9ZVT2wGWf/Ooo4sm7obB8EhGkrXs3ormx9WHj6ezexupsd\nanWE7Uy54ovKdOosKB6nQOfP+Iwe4sSJ6oYPNvvh19v05+AhOCdONjMeCwTfBvtJ\nA5luj6CtFbgSX96A3zTRrTXQO3N4aLTF8niL+FcZ69RzYcxp3rlDSK88JyJ9xsu1\n+lNIcAPAFhzisC/eB9b1eDJ4JErJyIdBTZ4bPv4dtl/RpFcyIA4WMjskGCRo60I7\nN3DVqGGXLlC7KDjvPmdvvfAx3lzcIANhwBhLSQJ+y1bcyW6FcX0ZtY962Hb06Qj5\nXG5nDmT1qVkfDmzpIOF9GtDgch7gtf/EjHOUyaw60dDgJ5RF6lORLjFeuU9W7I1e\nD3mpWb6WP6DKoaQTgrLLrIJCLIdXr92XmvDj+iuYdGhCIkqHWqNbRW4TyiuukNJH\n12Zq/LlA1s58YJVa520o7EOXpmD4sGIrctlI3keSmKhiavy7j5ULz5J++jL+Yxlc\n6h9q4v71oyFmVgNpIEJNg7sSCkE72yzUCaglBUdUIMG3D0sI+VwufC7lbhohvHBr\nNzmbg2bW4x0CCprf/o5JvdNiB+bQdKG4t2Q7fhhZIW7ACii591ZBbpnUakDUQBZa\nV2yMaErypILHlQvlReHXVK1adUTxLNWf//VDoyclQk5k0uFIkUmpn+EXWnEHw7e8\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2261']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 20:06:33 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=loadbalancer&apiName=GetHostname&lang=Python&sessionId=0319
+  response:
+    body: {string: '[{"containerId":"b2359f33-b9de-47a6-9c64-af2639c2613e","request":{"loadBalancerId":"ocid1.loadbalancer.oc1.phx.aaaaaaaamuznu5b3kkjpaojigy5byor4pdoaul4gmnon22bf5sjv7kaad4fa","name":"__STS0319_4641"}},{"containerId":"dc697749-f2ad-4e3e-b2e1-893ea12c872b","request":{"loadBalancerId":"ocid1.loadbalancer.oc1.phx.aaaaaaaamuznu5b3kkjpaojigy5byor4pdoaul4gmnon22bf5sjv7kaad4fa","name":"ARANDOMNAME$#$#$"}}]'}
+    headers:
+      Content-Length: ['399']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 20:06:33 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="gJSowA/WYfq2IftLMsGYS61bGvxL7t5O9Ly4N9O6LNoM5DeboA+DE0ejGgnxKV1JEyCEd/L+SFQJ1VK5smP0Y+CzkGaSODHFggRmTrxI6nPG6KFGltnIqwBqyba3WgViDe6+DGW4UxBhloRK4mA2X6AlJYU7hu16MuS6HGFYracSVegd4XGHsrjFlfDbUQFO9auadZCc5AJ4AhDeI58EpFsGBB68ye77OsIu4SPvn9fEBJuVPmtiPRjB0ohKeckdZs7Ek5acGgMvLYaNq3sPHeAWQaT4axF+wUkdWmGLP9RT03at8XjYrZv1ptunIxGg2/zMhfQMcirurviGoiT9dg==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 20:06:48 GMT']
+      host: [iaas.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [16CAD09C9A3A48C8BC45CDA98BF3C82C]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://iaas.us-phoenix-1.oraclecloud.com/20170115/loadBalancers/ocid1.loadbalancer.oc1.phx.aaaaaaaamuznu5b3kkjpaojigy5byor4pdoaul4gmnon22bf5sjv7kaad4fa/hostnames/__STS0319_4641
+  response:
+    body: {string: "{\n  \"name\" : \"__STS0319_4641\",\n  \"hostname\" : \"app02.oracle.com\"\
+        \n}"}
+    headers:
+      Connection: [keep-alive]
+      Content-Length: ['66']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 20:06:49 GMT']
+      ETag: ['1108360048']
+      Vary: [Accept-Encoding]
+      X-Content-Type-Options: [nosniff]
+      opc-request-id: [16CAD09C9A3A48C8BC45CDA98BF3C82C/464F793C778C62CF9C7185C24BF8A06B/289CA54EBF43A12A42CF278331BE46AB]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"containerId": "b2359f33-b9de-47a6-9c64-af2639c2613e", "listResponse":
+      false, "requestClass": "com.oracle.bmc.loadbalancer.requests.GetHostnameRequest",
+      "requestJson": "{\"loadBalancerId\": \"ocid1.loadbalancer.oc1.phx.aaaaaaaamuznu5b3kkjpaojigy5byor4pdoaul4gmnon22bf5sjv7kaad4fa\",
+      \"name\": \"__STS0319_4641\"}", "responseJson": "{\"hostname\": {\"name\": \"__STS0319_4641\",
+      \"hostname\": \"app02.oracle.com\"}, \"opcRequestId\": \"A6ED3C21ECF0407E8E79CD65EF6F0608\",
+      \"opcNextPage\": null, \"eTag\": \"1108360048\"}", "responseClass": "com.oracle.bmc.loadbalancer.responses.GetHostnameResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['600']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0319&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 20:06:49 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="oM1RsdUZFe1qElUvvuOSvD6XaM3FojnefjbqKNk1I932ndA9Cfc24/SsxVah8eIyolzTGBHHd10lvMZN3uTY7jnGRyBj/qM+gDZOiaUXYkKXTU1GFz57y6ijTo4tCV9Tg1KnG3TH3jx7cAjxIDlaxam65QWhBuHhMUfSZFvxd6CAvF6cMpmG8nz02CI/4RxquF7J/J5G+8ejrMbzA9pm7u3I1SrD3EtbHco8j3zfRElZCFuIqxLgpu+VcAiXej19Iah4UcN3fGmXp+pViCnJM60dSRClt9Rsy6cJ4TNzdQ/iy04GVTHaCxtM9JfHRJvC8fl9n8udbL10/8l86ni4Mg==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 20:06:49 GMT']
+      host: [iaas.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [24AF3E11A262478898BDBFDB084E10D2]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://iaas.us-phoenix-1.oraclecloud.com/20170115/loadBalancers/ocid1.loadbalancer.oc1.phx.aaaaaaaamuznu5b3kkjpaojigy5byor4pdoaul4gmnon22bf5sjv7kaad4fa/hostnames/ARANDOMNAME%24%23%24%23%24
+  response:
+    body: {string: "{\n  \"code\" : \"NotFound\",\n  \"message\" : \"Load balancer\
+        \ ocid1.loadbalancer.oc1.phx.aaaaaaaamuznu5b3kkjpaojigy5byor4pdoaul4gmnon22bf5sjv7kaad4fa\
+        \ has no hostname named 'ARANDOMNAME$#$#$'\"\n}"}
+    headers:
+      Connection: [keep-alive]
+      Content-Length: ['185']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 20:06:50 GMT']
+      X-Content-Type-Options: [nosniff]
+      opc-request-id: [24AF3E11A262478898BDBFDB084E10D2/264A19E0C6C50C7234F93F6F5F701C0B/60A63878408F240A5F713F3ADEB31D5F]
+    status: {code: 404, message: Not Found}
+- request:
+    body: '{"containerId": "dc697749-f2ad-4e3e-b2e1-893ea12c872b", "listResponse":
+      false, "requestClass": "com.oracle.bmc.loadbalancer.requests.GetHostnameRequest",
+      "requestJson": "{\"loadBalancerId\": \"ocid1.loadbalancer.oc1.phx.aaaaaaaamuznu5b3kkjpaojigy5byor4pdoaul4gmnon22bf5sjv7kaad4fa\",
+      \"name\": \"ARANDOMNAME$#$#$\"}", "errorJson": "{\"code\": \"NotFound\", \"statusCode\":
+      404, \"message\": \"Load balancer ocid1.loadbalancer.oc1.phx.aaaaaaaamuznu5b3kkjpaojigy5byor4pdoaul4gmnon22bf5sjv7kaad4fa
+      has no hostname named ''ARANDOMNAME$#$#$''\", \"opcRequestId\": \"24AF3E11A262478898BDBFDB084E10D2/264A19E0C6C50C7234F93F6F5F701C0B/60A63878408F240A5F713F3ADEB31D5F\"}"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['662']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/error?sessionId=0319&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 20:06:50 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
 version: 1

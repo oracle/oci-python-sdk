@@ -1,0 +1,414 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=keymanagement&apiName=ListKeys
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:43:50 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?serviceName=keymanagement&apiName=ListKeys&lang=Python&clientName=kmsManagement
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq","endpoint":null,"fingerprint":"ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9","passPhrase":"dexsdk","keyFile":"java_sdk_admin_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,0C9B64A4AA0303EC02C79E91D0F8B0D0\n\naSd0uIKreq5NirzJ+Esa36lYJo4lU2zSjIIw8wvZEsd+LdaifqONZIfHHiB6/KgG\nse4wd/58tPsiEgnK7D1q8wmdVDouMSX31mhcbq2bwRjXATpNnOMnhDtahJv6cw4M\nDtlXYplk0LzpP6WjqXqFST4Yz0l1NO90ahnruwcb/SUCm12ONMJ5o4G1UO2/0IkX\nTRlMRpm/etIpStNSP+1IsD1gSWlAzhs1zodkpd+2eW2ovlAaY25Hm/aqK97jzsCF\n1f4dCm7spCHYOfv10XHNB99/jomN1KQuDy29MmVaJ9oYpOIDlu0yj4Q/XempLxa6\nhqgt0gUO9cMV2bfStsHKWJwq+KoncamBHpU/+CyNjoYq1QTC0urWlCP5hNo5VZhF\nzXBJa188FD2TiPFU8Z4EhercM83TfBsRVEQOpu5sbMaUOT6xXwnCWfM5Pjxy/0xE\n6oF2zq+H0ES12dh19C5P8ueRFLyhaWFliWJv3SXy9iCslcso6USnBBKnA26xMile\nY3m9uRP31yZW8czxYSIgKEV3Mp3GFAYwuebNjLgIM7xT+PvDiOO4qAhA0waGPhYH\n2QMl9ThSahKT6vpjVUQuGOjaRcJ5Vr73VGX4MnxXVxsl5de6y/ZfP5ndx5Lb4K43\njwrMbCIzrM1ZzR2JMTuMJFDasLjEW/Y9nf7FRh2gByeGLObAmHsjlUdW65QQu+Qy\nu4ADc6TbpqvLobocF5fKgML7JCAA/YqmYlZCV6gGOdKUXUT3VMmZcebcTtw1Zmxh\nwaUQe99D90w3Q/7CCCiGO2waZaTNl+ahVnQZEGHN9xJydkCkfVZDgVmdDmsSXmxo\n2DWf2c2/1me2zZAcW0SFBnyrt3uphdCnICaqXR0AnQUmw49YY4nk2fPTMxZs1r+2\n+poVVEfr//cHTTs4yu9ZVT2wGWf/Ooo4sm7obB8EhGkrXs3ormx9WHj6ezexupsd\nanWE7Uy54ovKdOosKB6nQOfP+Iwe4sSJ6oYPNvvh19v05+AhOCdONjMeCwTfBvtJ\nA5luj6CtFbgSX96A3zTRrTXQO3N4aLTF8niL+FcZ69RzYcxp3rlDSK88JyJ9xsu1\n+lNIcAPAFhzisC/eB9b1eDJ4JErJyIdBTZ4bPv4dtl/RpFcyIA4WMjskGCRo60I7\nN3DVqGGXLlC7KDjvPmdvvfAx3lzcIANhwBhLSQJ+y1bcyW6FcX0ZtY962Hb06Qj5\nXG5nDmT1qVkfDmzpIOF9GtDgch7gtf/EjHOUyaw60dDgJ5RF6lORLjFeuU9W7I1e\nD3mpWb6WP6DKoaQTgrLLrIJCLIdXr92XmvDj+iuYdGhCIkqHWqNbRW4TyiuukNJH\n12Zq/LlA1s58YJVa520o7EOXpmD4sGIrctlI3keSmKhiavy7j5ULz5J++jL+Yxlc\n6h9q4v71oyFmVgNpIEJNg7sSCkE72yzUCaglBUdUIMG3D0sI+VwufC7lbhohvHBr\nNzmbg2bW4x0CCprf/o5JvdNiB+bQdKG4t2Q7fhhZIW7ACii591ZBbpnUakDUQBZa\nV2yMaErypILHlQvlReHXVK1adUTxLNWf//VDoyclQk5k0uFIkUmpn+EXWnEHw7e8\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2261']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:43:50 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=keymanagement&apiName=ListKeys&lang=Python&sessionId=0409
+  response:
+    body: {string: '[{"containerId":"6e706348-1933-4808-bf6f-add281b047ea","request":{"compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","limit":10}},{"containerId":"9ac70b7b-36d6-4527-9258-ac1cbe9a2675","request":{"compartmentId":"ocid1.tenancy.region1..aaaaaaaazix3o3iddtw3izrsyui36m6yzqwfbkvq4dimwvgbqrpmenruovmb","limit":10}}]'}
+    headers:
+      Content-Length: ['361']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:43:50 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/endpoint?sessionId=0409&serviceName=keymanagement&clientName=KmsManagementClient&lang=Python&apiName=ListKeys
+  response:
+    body: {string: 'https://avnybakjaafna-management.kms.us-phoenix-1.oraclecloud.com'}
+    headers:
+      Content-Length: ['65']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:43:50 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="wo6sUvGOW2Z6E8+UycH8X8AoXIB61iyR3U+LdmhVuNdplNX9hV0ZxQKSO60waskl0jUZjzhy3XLs/vpzF5X0qPhHu2whdOmAnkIHJQ10GU7xrzBoKCy5X53ELeuF5mq7dKnmz+h6UGpYSq1GbOIndhhLHulbPv0rZP8+jpFG8wReXuaF4hpCkNZ//FqnNilmMHmjCUh4wDaHKGcF59R60QlECyp2bgxxbBmDNxDN9bpZvOv67l+jXtEV9GBXE7E0JqPEOMET6jkmCEddLh82WoHSGXz73iTbU+5RKlNsUzI8KZ1Yq0MNlsc8vACaoryhkSSIzOoq85H3VJSIZZEOrw==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 18:43:50 GMT']
+      host: [avnybakjaafna-management.kms.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [1E1CC040656945F18321762B7EBBBA9A]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://avnybakjaafna-management.kms.us-phoenix-1.oraclecloud.com/20180608/keys?compartmentId=ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba&limit=10
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAO2YW2/bNhiG7/srjFxHgngWc7etuRjWtRfN1YbBIEVSR1MH6jz0v0+24zRNmyZx
+        UixoYgiGQL+v+Yl4H0qf/l79+2a1OonKTSWadqNt+7s6WZ2tTsooVcC/Nu6XEfB9cfmZK7lpYddE
+        SdMnLbKpRsxluTPETaYhtjFzVuCuhcVsKCWTQ1KcnG6nUtqkVqsLEbvtRNvpl9FWuza18drppk8j
+        vW5FvLZuHQTgs+gW2V5yspxif73+ePFxMQVrQAjaTXi7Dx585GE+dPDRm76d7dPy/Wl/qamrCjG9
+        Fxu9s/zx58dValsdN6JNS+tW3urth9X7Dxert+fvzi/OgyDgijPpLQsceljT0OMAhh4EhHKtsCKB
+        2i+iabQ2ZbO5uYoi3i9GL4pOg2vlYQoPl7VVwc8qeFN1VX56PQm5nnYJqJLRF72dpMgzIYwVvpBT
+        UheZazCVUkyDcH1R1UVaD3HcNSifeuuEHYp0qPJE6LQgvbLdmLciu4xEkRodTVGhP7ai3S/V+ftf
+        fn13/nb/e5tu9G+NXn7bVwQDwL0AehBewOAMLAf0Oed/7dW96IovU7wbuaP6ISKDZNbSSukk6mfL
+        HGzIZAZhC2gbOlIs7URIU6PSNCpGmtUnbz6dPlN+hFXTbRCt1651AUbhOuQg3FW7j8B2CBKCP+f/
+        UsroGvPgC+kyRENCLiN/+oMo5ozwYyi+h++bFO98z5diyNndEG9FRzLc6p5M2M4kwTaC2VhKPOTt
+        psyonTdwtmNsBoRJ39eoIrgah0VZPwnD4AwCH5DgleGfimFCgzVhnDyU4Xv6vmL4yvc8Gd6WhzkK
+        vg/xlepYivMuG9O2m7SirCgzYcYSUmmXU2sngTI8J33i5NAkzolm6kUNn4RiCM4w9jENXybFx2YN
+        cEYxJZ6KEPAw4MbjocYe4SEgRnJFSXhL1o6KR1N3+RI2VJIRZ7Blmz6aYZdmfU1kXcY022RxKTKD
+        ax2P1QATN9fHxyP0AFyOi+UpLQiXfd7HIXiNxzOOR6uqruuxKatcQWikag1lcrZ1ng+6mmSWi6pP
+        2FzUtmidkLOLx6eJBz0LmM8oe43Hc46H6UaJXZRQVccm113qcpvMGRGRqvQy46YmhuFs2TzyLi/F
+        RCJ1fJt3PR7sDAc+Cl9vLg+Lh1Q6QsiLmGIeZlx40ixnCgjDtYSYGvKkN5d+Q0fkcBcRJV0vxyFi
+        wzirsa47nMWdFJNo3WicSbtRsUbRzDw2HvgyHoD7QYBfZjyO6SAOPcBtbcHpDel3mo0f2EFAuAbL
+        DvfgDuJ+vq87iIPvsR0ExNwAzTwk4LIvI8M8oSH1MOGaI70sOWXHdBBLeeFdbwEOoiP7h4bkKcOj
+        TNWYZjXCkYB90uFyWCahKiF2wwaCWN33jarrMUPpgB7bP7Atw9uD+gCgl8zwMrq9yF08t5Hd47PE
+        zlViSe36BkXflO/+Od3m8qA/AEvQmiD0A3ndzYDDh+J6P9tXtB5sj4UVccQ4Rl6AkPYwl8iTmHIP
+        YgQAiZbOP8BHwLqtjuMAf5/WK9WxuDZTWucRoS7K59yWomoVlvXcpDBr0KZ3RSnnmQ6ZMalJBuWq
+        NnrUi3fsBeFFwJde/4wQP6AvtJ/7aXCFgIBjeL2H75vA7nzPl1hAQn43sTvVkcQ6nReCJpskiYqk
+        aFHCchUnqTEaSiqoaLoJUZEn7cximw1G6/YRPdSXxALss/B/eUhe/fMfkq24920eAAA=
+    headers:
+      Cache-Control: ['no-cache, no-store, no-transform, must-revalidate']
+      Content-Encoding: [gzip]
+      Content-Length: ['1304']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:43:51 GMT']
+      Vary: [Accept-Encoding]
+      opc-limit: ['10']
+      opc-next-page: [AAAAAAAAAAJleUpyYVdRaU9pSTBOalFpTENKbGJtTWlPaUpCTWpVMlIwTk5JaXdpWVd4bklqb2laR2x5SW4wLi5pVkZ3WU1DYjJIbHJYanV6LnNESzhxQmc0RUJjNVVfLUhwZkVTTlRDR2FBdmppYk9IS1YtUUhKX28teUxQM0pSUWxvRERQbk1hYU81Q01LZzdURUJyWUJ3M3Jxb3p5S3JpTkhFakVlM3YzTFFjSVBtSXZ5WGJNSDZ6WVZHTWhMOGxPQWV4NmFhWThreGozLTZnZXRUdWJjdXNnNGN6V1NQVE41Mlg4ZGwyak14dXJWSm1BNVdVV1h6c0tSVmlDN09HTjBGQjFBOVZxaUNBcG82TFlUWjZKUlJNNlRtbmNUeXVZX1JPemlNYkx4VG1xXzFxMjBIbThIbWpOektPZ285MEswakJwcUVZd0RKZ2lrMjA2MUdVMGZ2STJvaGkyaFlzTkhMMEpPd0V5LUJjaThoQzdUUzRQMWVRUGdadlRlZFI0LTVyMVB3LVNzeEN4UW56LVdFSnJuVnE1VzRpZUFKb1JkQlBocW9VbnJUZzItUm5ZdWRpTU54MVRIc3J0THlvTjlqUjFjbGhwcDNmNThOZ3NnWkZITDcwMzk4amJ0VldvZm0wanQxVWktR2V1TTBWN2RycVJlaVdTN3V1Y1ROM2hESHlKal9WZU1PZTgtTVFpazByYi11Q3BYd1BJYVFLOHhwQmM4WWZuOUJESHdmdmlGVWhJWkxYNkhmM1lncnNHeU1VdHpESkFRSGhGX0p6aGpiSlhVek5FNF9CMmgzc1NUM1ktN3NNdDE4Zkg5dkEtN01mdjNBVEZ3YzNfcDIxOVVWRFItRjFmOVVDS05PV2tGUW13dHB0QzhUQ1VxQk5KZDZUNllzWWRiNFBUamF5U08xczBtSFZQTEsxekpwbFBpel9zRnBBaW44VUhqcFJ3REVxdUVwaWN1NmtNVHNrQm9DbzFTWGF6S2FIa29ZQUZybHBzaGc1bW4xLUxTSTZhaG9ra2JhTlJTbjkwcFVXV0FDQUZOYS1vZERzeUNweURUWEtoWWhaVFJYRUg2OE5TQXRLSF91OVlOb1F5U1ZTVjRfZXN0N05zanJ5eE9ia1RGcTZXV2NOa19FVUxiSlpkSkhfM2FRVFFhM1dxR1JNTHNBUHhCd2M2TVN1NzQ1N2ZJWFlyRGc3alFpbmFoTVI5c1RFYnZBUjBjNDI5cll1Qy01bE5rNUdzUzlZemFsVW8wSU1OZmw2OHhBTnZRZFkxOGtuNVRBYW13cmc2WEN3NU01Rzg3bDVlQUQtejZKcjhKaHlXOU5TTHl1R09IQ0YyVlBKUTNSR0ZYNG1LSkdzdTFJTUVQbHFYQkNPdlJiUDB4cWpnSmxhTzFFZVpGTTFjYTVjU3BYUkdWOGRkNFJsams2bEtFNUQ5eG5tNUZGT210S2VKUkx3Qlh0N0QzZkIya2hZcGExZUVZMXJxZmJoeENvMlVCN3NuWTNWRUJySGFrbGRWeEdZMmIyRFBuanY5ZGllN3FUOThLXzFISHRtaHJ1bC5EWkFtUHlvNDlkZmhwczVlVS1uUWRB]
+      opc-request-id: [1E1CC040656945F18321762B7EBBBA9A/4154A126D7100324E30862C7E91171B6/6703A2A05D5D6F4270D159EC98AFAE46]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="pSFXwIbeZsu8IHwgCVtM97hn05iIVbT8nYQRZGEk7LACbevnJ6x+pmmwmwrAEDFkWoFsMxHMLj9/Ad7qBKBLpUIdzqIy3YTjryxrkqv7ilF6Vi3Uui0pdK+Eq1GCclKIa6wMziSrfJcV8XSLHFG8p1bIvGRS7FUlCcg+nqEU/7rfYMEk+nW91HKJaJmbYtucifVmCUJGNFWhGxF/jv+lv+Fu+coT5kRG//if7UI+Tc3m2wpmPsxCzKGC8mQM0eV7lYpwSv0R6DwujA24KWZM2sf9R4unRdSF5TTyLxenvn0RjlmsUOaIy2uIHymBC8fybS5Vc7Cr2WZRH6RYbtHtlQ==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 18:43:51 GMT']
+      host: [avnybakjaafna-management.kms.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [5BAB51CC0B1B4DCDBB30D5BD395F7E76]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://avnybakjaafna-management.kms.us-phoenix-1.oraclecloud.com/20180608/keys?compartmentId=ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba&limit=10&page=AAAAAAAAAAJleUpyYVdRaU9pSTBOalFpTENKbGJtTWlPaUpCTWpVMlIwTk5JaXdpWVd4bklqb2laR2x5SW4wLi5pVkZ3WU1DYjJIbHJYanV6LnNESzhxQmc0RUJjNVVfLUhwZkVTTlRDR2FBdmppYk9IS1YtUUhKX28teUxQM0pSUWxvRERQbk1hYU81Q01LZzdURUJyWUJ3M3Jxb3p5S3JpTkhFakVlM3YzTFFjSVBtSXZ5WGJNSDZ6WVZHTWhMOGxPQWV4NmFhWThreGozLTZnZXRUdWJjdXNnNGN6V1NQVE41Mlg4ZGwyak14dXJWSm1BNVdVV1h6c0tSVmlDN09HTjBGQjFBOVZxaUNBcG82TFlUWjZKUlJNNlRtbmNUeXVZX1JPemlNYkx4VG1xXzFxMjBIbThIbWpOektPZ285MEswakJwcUVZd0RKZ2lrMjA2MUdVMGZ2STJvaGkyaFlzTkhMMEpPd0V5LUJjaThoQzdUUzRQMWVRUGdadlRlZFI0LTVyMVB3LVNzeEN4UW56LVdFSnJuVnE1VzRpZUFKb1JkQlBocW9VbnJUZzItUm5ZdWRpTU54MVRIc3J0THlvTjlqUjFjbGhwcDNmNThOZ3NnWkZITDcwMzk4amJ0VldvZm0wanQxVWktR2V1TTBWN2RycVJlaVdTN3V1Y1ROM2hESHlKal9WZU1PZTgtTVFpazByYi11Q3BYd1BJYVFLOHhwQmM4WWZuOUJESHdmdmlGVWhJWkxYNkhmM1lncnNHeU1VdHpESkFRSGhGX0p6aGpiSlhVek5FNF9CMmgzc1NUM1ktN3NNdDE4Zkg5dkEtN01mdjNBVEZ3YzNfcDIxOVVWRFItRjFmOVVDS05PV2tGUW13dHB0QzhUQ1VxQk5KZDZUNllzWWRiNFBUamF5U08xczBtSFZQTEsxekpwbFBpel9zRnBBaW44VUhqcFJ3REVxdUVwaWN1NmtNVHNrQm9DbzFTWGF6S2FIa29ZQUZybHBzaGc1bW4xLUxTSTZhaG9ra2JhTlJTbjkwcFVXV0FDQUZOYS1vZERzeUNweURUWEtoWWhaVFJYRUg2OE5TQXRLSF91OVlOb1F5U1ZTVjRfZXN0N05zanJ5eE9ia1RGcTZXV2NOa19FVUxiSlpkSkhfM2FRVFFhM1dxR1JNTHNBUHhCd2M2TVN1NzQ1N2ZJWFlyRGc3alFpbmFoTVI5c1RFYnZBUjBjNDI5cll1Qy01bE5rNUdzUzlZemFsVW8wSU1OZmw2OHhBTnZRZFkxOGtuNVRBYW13cmc2WEN3NU01Rzg3bDVlQUQtejZKcjhKaHlXOU5TTHl1R09IQ0YyVlBKUTNSR0ZYNG1LSkdzdTFJTUVQbHFYQkNPdlJiUDB4cWpnSmxhTzFFZVpGTTFjYTVjU3BYUkdWOGRkNFJsams2bEtFNUQ5eG5tNUZGT210S2VKUkx3Qlh0N0QzZkIya2hZcGExZUVZMXJxZmJoeENvMlVCN3NuWTNWRUJySGFrbGRWeEdZMmIyRFBuanY5ZGllN3FUOThLXzFISHRtaHJ1bC5EWkFtUHlvNDlkZmhwczVlVS1uUWRB
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAO2Zy47bNhSG93kKw+uRIPEqedc2syiaJovMqkVhUBSpOyWR1LXIu1e2Z5x0MpmL
+        baADdAwBFqT/1zmiz6dDyn+u/n63Wq15XTVM20oo+2u8Xm1W65pnse9+c9ytue+67PYzN1FlQad5
+        qvvUQpUJSE1eGInNJDVWWs55iToLylkSgicDI7a+2oWKhcyUiG9YYnaBduEPR1lX2q1lydYKc9hR
+        rBKmYVxst57/Vfwj+f7Kmc1qdadfb7efbz57CMMthnC9d3+5OkTc2TKVbI3QfbaE2Ac0W+9epIdk
+        txdfdpH7NQJCOFxfPeoDdz78Mh+885H7vsMtvbu9rXWcmaZk08dl4PaW337/vMqUFYlmu3ExK2f1
+        /tPq46eb1fvrD9c31x4MIQ0RdDwIhYPCCDoRIqEDEPR9zH0QeOjws0kthKx1de93W3I6DEbPyk74
+        36QHKKLrq6MKfFWB+6pj+tm3tVeIaV9zTTq6rFdTxIqcMamYy6IpbcvcdrDIckaNMIimLBa60wOT
+        XQY7IQaUoQ6jnCvT9xGKNSh6kzXt4W7KTAo+8VJ8tswehur6408/f7h+fzhvs0r8osVy7pAR8PzQ
+        8ZDjBTdeuEF4A4iLPfLHQd3vavFf3OyPPJ69GTgeIqoUaWKR8n5W1ACNJzkwVQKlyUhQpCaMdQtr
+        qeMECtqu3325eiXEXpQfD+MtBR55KT/P9H3Hz9F3Lj8ISeqH/gKMCBwUB9wJPOk5PvZh5AUhjQA/
+        gZ9deoh4weP8HFUn8mNkiRDndoQCDKxA2QxUVFhq6kzH41DzhCaMJEDMSdzlc1W0CWTn8LMME7zx
+        vY1HNyBwkY/f+LkgPzAM8Sn8PMP3ID973+vlh4T0if5zVJ3af3KF67bDUVknzcTHTFjVTkWnCyP6
+        TpK6y8a+irpkyhOUG9s2qT6r/9zx44ONB9yQem/8XJAfEpLgFH6e4XuQn73v9fKDl+s+zc9edSo/
+        /Zwr04GCGCVj0Kdsroe852mXG6NUNacpESBGLctSEZeMlc10kf6z8AOR6wdv87dL8QNpsAU+fnH/
+        eabvO36OvrP5oR5hMl6AwcBBPN6tfzhzcAQICDmTEIUn8LNLDwbBE/3nqDqRHy36KQODKthoozSy
+        ohqquoR9UyE5Ll8RJzLHmulhtkwUuq6tOXP945MbL1gmbxscuMuIvfFzQX4oDl+8/nmm70F+9r7X
+        yw8l8In1z1F1Kj+W5GWdN2zsbFmPKY1ia8pZjUUi47KcjU4n3Pc67eMsj3jRRE19Vv858kM3ELuU
+        vq1/LsUP8MmWBvTF/DzT9x0/R9/r5GefHsTgcX6OqlP56TPVEsuqnvSSdnWZ1h0vM5gMSFcIla2N
+        mbSd6ERZ8HYu+nwYLtJ/INzN30L6Nn+7ZP/BAPmn9J9n+B7sP3vf6+Tndnr5BD9H1anrH7nUYNPK
+        Op9BAdjUoGaEUBeWNHNejx3JdWdRYqhJeVEWSNHh3PfXt/0nXDaXov/p/O3kWmO+zzzPiQGBDhIM
+        O+Gy6wQRgJREoUDC/0GtnfZ4TZgd1TgtD9i0rVU+pzw3VBXLBKXBRaYjIvhg42Fq5FwlRTX0OD6r
+        PMCy7f7e2L2eDV3f89/K4xWXh6F5BrXNo4KMsp+ElZzqbsjnERs0lMhMFYIiZ1Oc6ph2MZ7n9jLl
+        QTaYugFE/0V5rP76BwZjeVKyHgAA
+    headers:
+      Cache-Control: ['no-cache, no-store, no-transform, must-revalidate']
+      Content-Encoding: [gzip]
+      Content-Length: ['1275']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:43:51 GMT']
+      Vary: [Accept-Encoding]
+      opc-limit: ['10']
+      opc-next-page: [AAAAAAAAAAJleUpyYVdRaU9pSTBOalFpTENKbGJtTWlPaUpCTWpVMlIwTk5JaXdpWVd4bklqb2laR2x5SW4wLi44ZDMxYmVYLXEyR1ZySXQyLllBcGExQVRPTW5CT1F2cnNNaDNHbkJUTUFLNTZBQnFoOVBsNmJTblh6X3VPUGlXRXBXLUpHT1p6NVdjZGx6d1cwLXo5Q3NkVFNZOGJ0a3ZSRUJZSUpTX1lIRm9YRXhkaTREYWpHVjBWSnRFTE5KZ25BdHVCRlBiMjVaYUpkQTF2bTRHRktWY25ITGhkQUdIcjVlNGJSWFMxd3ZHU3pnenA0NXo4UmNxaE13R0xvN1JtcVFnM1g0Y2pKcmJ3c3JSNmdIZ05kZ09BTzNsNVV0UW4xVUpLLUI1MFJpRGJDejVfeE15bllyZEZHeUIyRmVpNkg5ZlZBdXdKaE12ZFdRbDAwMG9pdzdMMXgxbkJYUDNZN29BamRwdk1iSFZlR21naDRhajdNLTBvWFpzYmlzcXlPS0RDWkczWXl1WU41ei1uZXBQVFdPem8tWmFFQXNIall5akkzWmdDQnIzOEM5S0x6RlFzdUZnZGlRYkNzdmxsc04td2Y2MDI2OUxJek1fTHg2ZlFPWkVaemZrUXJUZUtHM1VlcjNHR0p3Y3pwSXlMTF8wQmcxM0dMSUhfT0hPeHhIdU1iV3FfX3daak90SHVaWmRrdndEeElURFlST0JRZTd0M0ZGS2hVcG5KVXJPTk9nY1hUZmxIakRGREVfTjl5cDZFRU52bTN5WENIR0t4eDdlUExacWlZVmZ3bTRhSlNkZmNwZHhpTFliVzduNmViSFN3X3hWM2xkcE5FbzNrdS15MTBLbEQ4S1pWZ3VReGxCeW9nVExXVEs3Z1pSc2J5QXc0Vjl4Z3FfZnE0LXdXcmlZMWJvSkNTclYyMXhpSXZjc1lwWUc5NEY1dGxOZWxVXzBLX1BDZ2I1bzJsNVJGbVU5TzZac29QR2lUajhYOTRlY2ZvemNGT2IxVlBIeHpQWklsdXdjeWlpTUstSG5VX2M1Nkh4OUNqWkk3ek9JZFlBbWJoMUdDcjZGa1o4VlRpMVRrLTZXQnNsbHdhaUlyTC1IMUNPWU1RZUIxbmIwLUVUOEFXUlh0Vk5NamZ6cnA2Vk9hM2k0eng0YkJnOEdaNE9IRUU5UzczTE5kTHhsMEtqZUZ6ODhlZG1iVm1WcVlicXROcDNsRHN5VjRpM1hYelE4aHVQc041UWh6ZmQ3MGdfeDBYZ3Z6cmJUVTBPSUwyUFpvTEpXRmpvdmlnZWtIZHVXTGtaOHhaMWp1aVBQVlRQSnNNSUQ0VzlfVWN6MTAxTmpNMjJJQ1dMLVRKUTBWZTRqRFJ3d0pXVGZ2NGUtQnN0YS1rMVZOUmZUYlM1anVMR1RDTG9teGdCWW5hX0ZsZzA1bjlsZ09DQ1pXU1FhVnR3RUdzc2hOUEoxMlZtR0dlTTdzVUJyRXE1Z2tubF9LX3d6OURXcWh6VE9LYkF5R2F4SmFrSk5oeHJPb1k5YTJPTXhRcFNDT2VWRVRqN3FJWk4xSS5pc0ZhVFdXVmI0bVdkZlh6bUVRVnRB]
+      opc-request-id: [5BAB51CC0B1B4DCDBB30D5BD395F7E76/9A332C10FD7D010CBF7053DB071535F9/34B1F2CD941AC9C63B47BB756648FF3E]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"containerId": "6e706348-1933-4808-bf6f-add281b047ea", "listResponse":
+      true, "requestClass": "com.oracle.bmc.keymanagement.requests.ListKeysRequest",
+      "requestJson": "{\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"limit\": 10}", "responseJson": "[{\"items\": [{\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"definedTags\": {\"testingServiceTagNs001\": {\"testingServiceTag01\": \"tag4.__STS0010_1553\",
+      \"testingServiceTag02\": \"tag5.__STS0010_1553\", \"testingServiceTag03\": \"tag6.__STS0010_1553\"}},
+      \"displayName\": \"KMS integrations - DO NOT DELETE0009d97b-aaa8-4e68-9128-21569ed4d50d\",
+      \"freeformTags\": {\"tag1\": \"value1.__STS0010_4623\", \"tag2\": \"value2.__STS0010_4623\"},
+      \"id\": \"ocid1.key.oc1.phx.avnybakjaafna.abyhqljsr46bbaywasvlpqliqwggur3kyvnsanwliwpkhaeil5vdnuxktaja\",
+      \"lifecycleState\": \"ENABLED\", \"timeCreated\": \"2019-02-22T20:10:12.999000+00:00\",
+      \"vaultId\": \"ocid1.vault.oc1.phx.avnybakjaafna.abyhqljswc5wb7nn6pdehcvzn7s2r5yfwanl2nr6x64bny55rq3ofrdg3e7q\"},
+      {\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"definedTags\": {\"testingServiceAndyTagNs001\": {\"_Sts04388918\": \"__STS0438_2554\",
+      \"_Sts04764908\": \"__STS0476_6855\"}, \"testingServiceTagNs001\": {\"testingServiceTag01\":
+      \"tag4.__STS0010_9759\", \"testingServiceTag02\": \"tag5.__STS0010_9759\", \"testingServiceTag03\":
+      \"tag6.__STS0010_9759\"}}, \"displayName\": \"KMS integrations - DO NOT DELETE0009d97b-aaa8-4e68-9128-21569ed4d50d\",
+      \"freeformTags\": {\"tag1\": \"value1.__STS0010_297\", \"tag2\": \"value2.__STS0010_297\"},
+      \"id\": \"ocid1.key.oc1.phx.avnybakjaafna.abyhqljtev5y4nz5h4nc2jxob4wktmoj6nzm2znxgfw345vvq3p54pxwz5hq\",
+      \"lifecycleState\": \"ENABLED\", \"timeCreated\": \"2019-02-22T20:11:21.150000+00:00\",
+      \"vaultId\": \"ocid1.vault.oc1.phx.avnybakjaafna.abyhqljswc5wb7nn6pdehcvzn7s2r5yfwanl2nr6x64bny55rq3ofrdg3e7q\"},
+      {\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"definedTags\": {\"testingServiceAndyTagNs001\": {\"_Sts04388918\": \"__STS0438_2554\",
+      \"_Sts04764908\": \"__STS0476_6855\"}, \"testingServiceTagNs001\": {\"testingServiceTag01\":
+      \"tag4.__STS0560_5795\", \"testingServiceTag02\": \"tag5.__STS0560_5795\", \"testingServiceTag03\":
+      \"tag6.__STS0560_5795\"}}, \"displayName\": \"KMS integrations - DO NOT DELETE0009d97b-aaa8-4e68-9128-21569ed4d50d\",
+      \"freeformTags\": {\"tag1\": \"value1.__STS0560_4930\", \"tag2\": \"value2.__STS0560_4930\"},
+      \"id\": \"ocid1.key.oc1.phx.avnybakjaafna.abyhqljtkujxituyed67lojafxo26bnlojnnya3j4zhvhsbwrhssaryvaq2q\",
+      \"lifecycleState\": \"ENABLED\", \"timeCreated\": \"2019-02-22T20:21:44.468000+00:00\",
+      \"vaultId\": \"ocid1.vault.oc1.phx.avnybakjaafna.abyhqljswc5wb7nn6pdehcvzn7s2r5yfwanl2nr6x64bny55rq3ofrdg3e7q\"},
+      {\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"definedTags\": {}, \"displayName\": \"KMS integrations - DO NOT DELETE01976465-dc31-419f-98e4-59815fb9d658\",
+      \"freeformTags\": {}, \"id\": \"ocid1.key.oc1.phx.avnybakjaafna.abyhqljrqukue23o5x4j2t7mvcz2uijvq5bqog6jmjgoajf4qegxpw2hszqq\",
+      \"lifecycleState\": \"ENABLED\", \"timeCreated\": \"2018-12-12T10:08:11.481000+00:00\",
+      \"vaultId\": \"ocid1.vault.oc1.phx.avnybakjaafna.abyhqljswc5wb7nn6pdehcvzn7s2r5yfwanl2nr6x64bny55rq3ofrdg3e7q\"},
+      {\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"definedTags\": {}, \"displayName\": \"KMS integrations - DO NOT DELETE01976465-dc31-419f-98e4-59815fb9d658\",
+      \"freeformTags\": {}, \"id\": \"ocid1.key.oc1.phx.avnybakjaafna.abyhqljtdpuuv4fopkd22fbdtf67bznqkkwepybjkapvh7zlqnltsabzsgxq\",
+      \"lifecycleState\": \"ENABLED\", \"timeCreated\": \"2018-12-12T10:06:07.767000+00:00\",
+      \"vaultId\": \"ocid1.vault.oc1.phx.avnybakjaafna.abyhqljswc5wb7nn6pdehcvzn7s2r5yfwanl2nr6x64bny55rq3ofrdg3e7q\"},
+      {\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"definedTags\": {}, \"displayName\": \"KMS integrations - DO NOT DELETE01976465-dc31-419f-98e4-59815fb9d658\",
+      \"freeformTags\": {}, \"id\": \"ocid1.key.oc1.phx.avnybakjaafna.abyhqljtfuxb4sch6dqgfkeuisknhzj5acdpe5fbmq5f74jqegkukoay5cda\",
+      \"lifecycleState\": \"ENABLED\", \"timeCreated\": \"2018-12-12T10:07:40.388000+00:00\",
+      \"vaultId\": \"ocid1.vault.oc1.phx.avnybakjaafna.abyhqljswc5wb7nn6pdehcvzn7s2r5yfwanl2nr6x64bny55rq3ofrdg3e7q\"},
+      {\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"definedTags\": {}, \"displayName\": \"KMS integrations - DO NOT DELETE01bdec33-c7d7-479a-bfd7-d1af9eb246f5\",
+      \"freeformTags\": {}, \"id\": \"ocid1.key.oc1.phx.avnybakjaafna.abyhqljrvm6x3s4uc5dbsvbxwc7wxzdxqqu4jgubayatsxfsfiuxd7rd6jfa\",
+      \"lifecycleState\": \"ENABLED\", \"timeCreated\": \"2018-12-14T10:07:19.004000+00:00\",
+      \"vaultId\": \"ocid1.vault.oc1.phx.avnybakjaafna.abyhqljswc5wb7nn6pdehcvzn7s2r5yfwanl2nr6x64bny55rq3ofrdg3e7q\"},
+      {\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"definedTags\": {\"testingServiceAndyTagNs001\": {\"_STS04764908\": \"__STS0476_6855\",
+      \"_STS04388918\": \"__STS0438_2554\"}, \"testingServiceTagNs001\": {\"testingServiceTag01\":
+      \"tag4.__STS0522_1764\", \"testingServiceTag02\": \"tag5.__STS0522_1764\", \"testingServiceTag03\":
+      \"tag6.__STS0522_1764\"}}, \"displayName\": \"KMS integrations - DO NOT DELETE0249f1e7-3a21-43f7-ae26-459e93e90867\",
+      \"freeformTags\": {\"tag1\": \"value1.__STS0522_897\", \"tag2\": \"value2.__STS0522_897\"},
+      \"id\": \"ocid1.key.oc1.phx.avnybakjaafna.abyhqljr5ki74xbidxijq34ca2vhu4owval6dh5nm7w537qvvrdqqxj3iw3q\",
+      \"lifecycleState\": \"ENABLED\", \"timeCreated\": \"2019-02-27T10:10:16.113000+00:00\",
+      \"vaultId\": \"ocid1.vault.oc1.phx.avnybakjaafna.abyhqljswc5wb7nn6pdehcvzn7s2r5yfwanl2nr6x64bny55rq3ofrdg3e7q\"},
+      {\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"definedTags\": {\"defaultTagTestTagNamespace_01\": {\"defaultTagTestTagDefinition_01\":
+      \"__STS0453_533\"}, \"testingServiceTagNs001\": {\"testingServiceTag01\": \"tag4.__STS0453_548\",
+      \"testingServiceTag02\": \"tag5.__STS0453_548\", \"testingServiceTag03\": \"tag6.__STS0453_548\"}},
+      \"displayName\": \"KMS integrations - DO NOT DELETE03937943-033e-49b3-b469-243115c12804\",
+      \"freeformTags\": {\"tag1\": \"value1.__STS0453_9404\", \"tag2\": \"value2.__STS0453_9404\"},
+      \"id\": \"ocid1.key.oc1.phx.avnybakjaafna.abyhqljrryiqkc56sckzknoaptd4bqzri2jr3mvslobzz6wjffifhwdsptca\",
+      \"lifecycleState\": \"ENABLED\", \"timeCreated\": \"2019-04-08T09:44:55.061000+00:00\",
+      \"vaultId\": \"ocid1.vault.oc1.phx.avnybakjaafna.abyhqljswc5wb7nn6pdehcvzn7s2r5yfwanl2nr6x64bny55rq3ofrdg3e7q\"},
+      {\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"definedTags\": {\"defaultTagTestTagNamespace_01\": {\"defaultTagTestTagDefinition_01\":
+      \"__STS0453_533\"}, \"testingServiceTagNs001\": {\"testingServiceTag01\": \"tag4.__STS0453_2151\",
+      \"testingServiceTag02\": \"tag5.__STS0453_2151\", \"testingServiceTag03\": \"tag6.__STS0453_2151\"}},
+      \"displayName\": \"KMS integrations - DO NOT DELETE03937943-033e-49b3-b469-243115c12804\",
+      \"freeformTags\": {\"tag1\": \"value1.__STS0453_1589\", \"tag2\": \"value2.__STS0453_1589\"},
+      \"id\": \"ocid1.key.oc1.phx.avnybakjaafna.abyhqljsekla6hmhhclhlt3h7kdghiffe2b6a6aruy36akhtz7gnjwfeetda\",
+      \"lifecycleState\": \"ENABLED\", \"timeCreated\": \"2019-04-08T09:44:14.784000+00:00\",
+      \"vaultId\": \"ocid1.vault.oc1.phx.avnybakjaafna.abyhqljswc5wb7nn6pdehcvzn7s2r5yfwanl2nr6x64bny55rq3ofrdg3e7q\"}],
+      \"opcRequestId\": \"8BAFC2A3499E442D8030EF1EFAD87AFA\", \"opcNextPage\": \"AAAAAAAAAAJleUpyYVdRaU9pSTBOalFpTENKbGJtTWlPaUpCTWpVMlIwTk5JaXdpWVd4bklqb2laR2x5SW4wLi5pVkZ3WU1DYjJIbHJYanV6LnNESzhxQmc0RUJjNVVfLUhwZkVTTlRDR2FBdmppYk9IS1YtUUhKX28teUxQM0pSUWxvRERQbk1hYU81Q01LZzdURUJyWUJ3M3Jxb3p5S3JpTkhFakVlM3YzTFFjSVBtSXZ5WGJNSDZ6WVZHTWhMOGxPQWV4NmFhWThreGozLTZnZXRUdWJjdXNnNGN6V1NQVE41Mlg4ZGwyak14dXJWSm1BNVdVV1h6c0tSVmlDN09HTjBGQjFBOVZxaUNBcG82TFlUWjZKUlJNNlRtbmNUeXVZX1JPemlNYkx4VG1xXzFxMjBIbThIbWpOektPZ285MEswakJwcUVZd0RKZ2lrMjA2MUdVMGZ2STJvaGkyaFlzTkhMMEpPd0V5LUJjaThoQzdUUzRQMWVRUGdadlRlZFI0LTVyMVB3LVNzeEN4UW56LVdFSnJuVnE1VzRpZUFKb1JkQlBocW9VbnJUZzItUm5ZdWRpTU54MVRIc3J0THlvTjlqUjFjbGhwcDNmNThOZ3NnWkZITDcwMzk4amJ0VldvZm0wanQxVWktR2V1TTBWN2RycVJlaVdTN3V1Y1ROM2hESHlKal9WZU1PZTgtTVFpazByYi11Q3BYd1BJYVFLOHhwQmM4WWZuOUJESHdmdmlGVWhJWkxYNkhmM1lncnNHeU1VdHpESkFRSGhGX0p6aGpiSlhVek5FNF9CMmgzc1NUM1ktN3NNdDE4Zkg5dkEtN01mdjNBVEZ3YzNfcDIxOVVWRFItRjFmOVVDS05PV2tGUW13dHB0QzhUQ1VxQk5KZDZUNllzWWRiNFBUamF5U08xczBtSFZQTEsxekpwbFBpel9zRnBBaW44VUhqcFJ3REVxdUVwaWN1NmtNVHNrQm9DbzFTWGF6S2FIa29ZQUZybHBzaGc1bW4xLUxTSTZhaG9ra2JhTlJTbjkwcFVXV0FDQUZOYS1vZERzeUNweURUWEtoWWhaVFJYRUg2OE5TQXRLSF91OVlOb1F5U1ZTVjRfZXN0N05zanJ5eE9ia1RGcTZXV2NOa19FVUxiSlpkSkhfM2FRVFFhM1dxR1JNTHNBUHhCd2M2TVN1NzQ1N2ZJWFlyRGc3alFpbmFoTVI5c1RFYnZBUjBjNDI5cll1Qy01bE5rNUdzUzlZemFsVW8wSU1OZmw2OHhBTnZRZFkxOGtuNVRBYW13cmc2WEN3NU01Rzg3bDVlQUQtejZKcjhKaHlXOU5TTHl1R09IQ0YyVlBKUTNSR0ZYNG1LSkdzdTFJTUVQbHFYQkNPdlJiUDB4cWpnSmxhTzFFZVpGTTFjYTVjU3BYUkdWOGRkNFJsams2bEtFNUQ5eG5tNUZGT210S2VKUkx3Qlh0N0QzZkIya2hZcGExZUVZMXJxZmJoeENvMlVCN3NuWTNWRUJySGFrbGRWeEdZMmIyRFBuanY5ZGllN3FUOThLXzFISHRtaHJ1bC5EWkFtUHlvNDlkZmhwczVlVS1uUWRB\"},
+      {\"items\": [{\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"definedTags\": {\"defaultTagTestTagNamespace_01\": {\"defaultTagTestTagDefinition_01\":
+      \"__STS0453_533\"}, \"testingServiceTagNs001\": {\"testingServiceTag01\": \"tag4.__STS0453_4459\",
+      \"testingServiceTag02\": \"tag5.__STS0453_4459\", \"testingServiceTag03\": \"tag6.__STS0453_4459\"}},
+      \"displayName\": \"KMS integrations - DO NOT DELETE03937943-033e-49b3-b469-243115c12804\",
+      \"freeformTags\": {\"tag1\": \"value1.__STS0453_2747\", \"tag2\": \"value2.__STS0453_2747\"},
+      \"id\": \"ocid1.key.oc1.phx.avnybakjaafna.abyhqljtu3kija7ses47haderurwafui3ueew4i4u54jcnsvvb4dr2kvsipq\",
+      \"lifecycleState\": \"ENABLED\", \"timeCreated\": \"2019-04-08T09:45:26.506000+00:00\",
+      \"vaultId\": \"ocid1.vault.oc1.phx.avnybakjaafna.abyhqljswc5wb7nn6pdehcvzn7s2r5yfwanl2nr6x64bny55rq3ofrdg3e7q\"},
+      {\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"definedTags\": {\"testingServiceTagNs001\": {\"testingServiceTag01\": \"tag4.__STS0055_7206\",
+      \"testingServiceTag02\": \"tag5.__STS0055_7206\", \"testingServiceTag03\": \"tag6.__STS0055_7206\"}},
+      \"displayName\": \"KMS integrations - DO NOT DELETE044f7191-24e8-4d8c-80f0-1513b0897b2c\",
+      \"freeformTags\": {\"tag1\": \"value1.__STS0055_4608\", \"tag2\": \"value2.__STS0055_4608\"},
+      \"id\": \"ocid1.key.oc1.phx.avnybakjaafna.abyhqljsfl44cctx3e2wak4iz2nbkt7soirdxwocg7ga6g2ezgdujzmkqg3a\",
+      \"lifecycleState\": \"ENABLED\", \"timeCreated\": \"2019-01-23T10:07:28.415000+00:00\",
+      \"vaultId\": \"ocid1.vault.oc1.phx.avnybakjaafna.abyhqljswc5wb7nn6pdehcvzn7s2r5yfwanl2nr6x64bny55rq3ofrdg3e7q\"},
+      {\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"definedTags\": {\"testingServiceTagNs001\": {\"testingServiceTag01\": \"tag4.__STS0055_3995\",
+      \"testingServiceTag02\": \"tag5.__STS0055_3995\", \"testingServiceTag03\": \"tag6.__STS0055_3995\"}},
+      \"displayName\": \"KMS integrations - DO NOT DELETE044f7191-24e8-4d8c-80f0-1513b0897b2c\",
+      \"freeformTags\": {\"tag1\": \"value1.__STS0055_6977\", \"tag2\": \"value2.__STS0055_6977\"},
+      \"id\": \"ocid1.key.oc1.phx.avnybakjaafna.abyhqljtjn5oqu5blogpycxietnqykurksevuf6ouixvmbugyjg4jstqphrq\",
+      \"lifecycleState\": \"ENABLED\", \"timeCreated\": \"2019-01-23T10:12:02.970000+00:00\",
+      \"vaultId\": \"ocid1.vault.oc1.phx.avnybakjaafna.abyhqljswc5wb7nn6pdehcvzn7s2r5yfwanl2nr6x64bny55rq3ofrdg3e7q\"},
+      {\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"definedTags\": {\"testingServiceTagNs001\": {\"testingServiceTag01\": \"tag4.__STS0055_6968\",
+      \"testingServiceTag02\": \"tag5.__STS0055_6968\", \"testingServiceTag03\": \"tag6.__STS0055_6968\"}},
+      \"displayName\": \"KMS integrations - DO NOT DELETE044f7191-24e8-4d8c-80f0-1513b0897b2c\",
+      \"freeformTags\": {\"tag1\": \"value1.__STS0055_5719\", \"tag2\": \"value2.__STS0055_5719\"},
+      \"id\": \"ocid1.key.oc1.phx.avnybakjaafna.abyhqljtvzjnsu2k6snfd2vhazowjvchujssnnmzhh6e2d4qaihedlaalpya\",
+      \"lifecycleState\": \"ENABLED\", \"timeCreated\": \"2019-01-23T10:12:34.186000+00:00\",
+      \"vaultId\": \"ocid1.vault.oc1.phx.avnybakjaafna.abyhqljswc5wb7nn6pdehcvzn7s2r5yfwanl2nr6x64bny55rq3ofrdg3e7q\"},
+      {\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"definedTags\": {\"testingServiceTagNs001\": {\"testingServiceTag01\": \"tag4.__STS0378_2155\",
+      \"testingServiceTag02\": \"tag5.__STS0378_2155\", \"testingServiceTag03\": \"tag6.__STS0378_2155\"}},
+      \"displayName\": \"KMS integrations - DO NOT DELETE04706afd-1552-4cd3-b4ca-5b2629caf349\",
+      \"freeformTags\": {\"tag1\": \"value1.__STS0378_3887\", \"tag2\": \"value2.__STS0378_3887\"},
+      \"id\": \"ocid1.key.oc1.phx.avnybakjaafna.abyhqljrevyi2wnkaxtbhbtemwmol3vpm4fx3vpbc6fj5rarwztaekrootsq\",
+      \"lifecycleState\": \"ENABLED\", \"timeCreated\": \"2019-04-16T08:28:58.552000+00:00\",
+      \"vaultId\": \"ocid1.vault.oc1.phx.avnybakjaafna.abyhqljswc5wb7nn6pdehcvzn7s2r5yfwanl2nr6x64bny55rq3ofrdg3e7q\"},
+      {\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"definedTags\": {\"testingServiceTagNs001\": {\"testingServiceTag01\": \"tag4.__STS0378_7596\",
+      \"testingServiceTag02\": \"tag5.__STS0378_7596\", \"testingServiceTag03\": \"tag6.__STS0378_7596\"}},
+      \"displayName\": \"KMS integrations - DO NOT DELETE04706afd-1552-4cd3-b4ca-5b2629caf349\",
+      \"freeformTags\": {\"tag1\": \"value1.__STS0378_7638\", \"tag2\": \"value2.__STS0378_7638\"},
+      \"id\": \"ocid1.key.oc1.phx.avnybakjaafna.abyhqljrt6jlojpaxutloxh7bdtslznxkgfdllzsrhy5vvrhvdijbckpbpoa\",
+      \"lifecycleState\": \"ENABLED\", \"timeCreated\": \"2019-04-16T08:27:35.775000+00:00\",
+      \"vaultId\": \"ocid1.vault.oc1.phx.avnybakjaafna.abyhqljswc5wb7nn6pdehcvzn7s2r5yfwanl2nr6x64bny55rq3ofrdg3e7q\"},
+      {\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"definedTags\": {\"testingServiceTagNs001\": {\"testingServiceTag01\": \"tag4.__STS0216_7876\",
+      \"testingServiceTag02\": \"tag5.__STS0216_7876\", \"testingServiceTag03\": \"tag6.__STS0216_7876\"}},
+      \"displayName\": \"KMS integrations - DO NOT DELETE04706afd-1552-4cd3-b4ca-5b2629caf349\",
+      \"freeformTags\": {\"tag1\": \"value1.__STS0216_7352\", \"tag2\": \"value2.__STS0216_7352\"},
+      \"id\": \"ocid1.key.oc1.phx.avnybakjaafna.abyhqljrvinq6tamv6vf7uolhoucli3gw4rm44lqtdaftueuelkcqzkvjwwq\",
+      \"lifecycleState\": \"ENABLED\", \"timeCreated\": \"2019-04-16T08:33:34.976000+00:00\",
+      \"vaultId\": \"ocid1.vault.oc1.phx.avnybakjaafna.abyhqljswc5wb7nn6pdehcvzn7s2r5yfwanl2nr6x64bny55rq3ofrdg3e7q\"},
+      {\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"definedTags\": {\"testingServiceTagNs001\": {\"testingServiceTag01\": \"tag4.__STS0378_5241\",
+      \"testingServiceTag02\": \"tag5.__STS0378_5241\", \"testingServiceTag03\": \"tag6.__STS0378_5241\"}},
+      \"displayName\": \"KMS integrations - DO NOT DELETE04706afd-1552-4cd3-b4ca-5b2629caf349\",
+      \"freeformTags\": {\"tag1\": \"value1.__STS0378_2152\", \"tag2\": \"value2.__STS0378_2152\"},
+      \"id\": \"ocid1.key.oc1.phx.avnybakjaafna.abyhqljtfswcpqfojz2k2ayp4px33rkt6pzjoxu6jrut4gs7shcklk4n7wpq\",
+      \"lifecycleState\": \"ENABLED\", \"timeCreated\": \"2019-04-16T08:29:29.742000+00:00\",
+      \"vaultId\": \"ocid1.vault.oc1.phx.avnybakjaafna.abyhqljswc5wb7nn6pdehcvzn7s2r5yfwanl2nr6x64bny55rq3ofrdg3e7q\"},
+      {\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"definedTags\": {}, \"displayName\": \"KMS integrations - DO NOT DELETE04a11a00-d263-4ea5-9d26-8b2376b9e4e1\",
+      \"freeformTags\": {}, \"id\": \"ocid1.key.oc1.phx.avnybakjaafna.abyhqljrgatxnxytamhqonjzhcjs7nkznxp5kirb6ecwtdwypfzmgkmwv5dq\",
+      \"lifecycleState\": \"ENABLED\", \"timeCreated\": \"2019-02-02T09:07:29.101000+00:00\",
+      \"vaultId\": \"ocid1.vault.oc1.phx.avnybakjaafna.abyhqljswc5wb7nn6pdehcvzn7s2r5yfwanl2nr6x64bny55rq3ofrdg3e7q\"},
+      {\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"definedTags\": {}, \"displayName\": \"KMS integrations - DO NOT DELETE04a11a00-d263-4ea5-9d26-8b2376b9e4e1\",
+      \"freeformTags\": {}, \"id\": \"ocid1.key.oc1.phx.avnybakjaafna.abyhqljs7ji3rtjbk6xfvyetfc7ruwjzx5s4wl4sym43ejaydhrd7ud5zzqq\",
+      \"lifecycleState\": \"ENABLED\", \"timeCreated\": \"2019-02-02T09:06:57.834000+00:00\",
+      \"vaultId\": \"ocid1.vault.oc1.phx.avnybakjaafna.abyhqljswc5wb7nn6pdehcvzn7s2r5yfwanl2nr6x64bny55rq3ofrdg3e7q\"}],
+      \"opcRequestId\": \"AD48857628474C398227D0D2E179860F\", \"opcNextPage\": \"AAAAAAAAAAJleUpyYVdRaU9pSTBOalFpTENKbGJtTWlPaUpCTWpVMlIwTk5JaXdpWVd4bklqb2laR2x5SW4wLi44ZDMxYmVYLXEyR1ZySXQyLllBcGExQVRPTW5CT1F2cnNNaDNHbkJUTUFLNTZBQnFoOVBsNmJTblh6X3VPUGlXRXBXLUpHT1p6NVdjZGx6d1cwLXo5Q3NkVFNZOGJ0a3ZSRUJZSUpTX1lIRm9YRXhkaTREYWpHVjBWSnRFTE5KZ25BdHVCRlBiMjVaYUpkQTF2bTRHRktWY25ITGhkQUdIcjVlNGJSWFMxd3ZHU3pnenA0NXo4UmNxaE13R0xvN1JtcVFnM1g0Y2pKcmJ3c3JSNmdIZ05kZ09BTzNsNVV0UW4xVUpLLUI1MFJpRGJDejVfeE15bllyZEZHeUIyRmVpNkg5ZlZBdXdKaE12ZFdRbDAwMG9pdzdMMXgxbkJYUDNZN29BamRwdk1iSFZlR21naDRhajdNLTBvWFpzYmlzcXlPS0RDWkczWXl1WU41ei1uZXBQVFdPem8tWmFFQXNIall5akkzWmdDQnIzOEM5S0x6RlFzdUZnZGlRYkNzdmxsc04td2Y2MDI2OUxJek1fTHg2ZlFPWkVaemZrUXJUZUtHM1VlcjNHR0p3Y3pwSXlMTF8wQmcxM0dMSUhfT0hPeHhIdU1iV3FfX3daak90SHVaWmRrdndEeElURFlST0JRZTd0M0ZGS2hVcG5KVXJPTk9nY1hUZmxIakRGREVfTjl5cDZFRU52bTN5WENIR0t4eDdlUExacWlZVmZ3bTRhSlNkZmNwZHhpTFliVzduNmViSFN3X3hWM2xkcE5FbzNrdS15MTBLbEQ4S1pWZ3VReGxCeW9nVExXVEs3Z1pSc2J5QXc0Vjl4Z3FfZnE0LXdXcmlZMWJvSkNTclYyMXhpSXZjc1lwWUc5NEY1dGxOZWxVXzBLX1BDZ2I1bzJsNVJGbVU5TzZac29QR2lUajhYOTRlY2ZvemNGT2IxVlBIeHpQWklsdXdjeWlpTUstSG5VX2M1Nkh4OUNqWkk3ek9JZFlBbWJoMUdDcjZGa1o4VlRpMVRrLTZXQnNsbHdhaUlyTC1IMUNPWU1RZUIxbmIwLUVUOEFXUlh0Vk5NamZ6cnA2Vk9hM2k0eng0YkJnOEdaNE9IRUU5UzczTE5kTHhsMEtqZUZ6ODhlZG1iVm1WcVlicXROcDNsRHN5VjRpM1hYelE4aHVQc041UWh6ZmQ3MGdfeDBYZ3Z6cmJUVTBPSUwyUFpvTEpXRmpvdmlnZWtIZHVXTGtaOHhaMWp1aVBQVlRQSnNNSUQ0VzlfVWN6MTAxTmpNMjJJQ1dMLVRKUTBWZTRqRFJ3d0pXVGZ2NGUtQnN0YS1rMVZOUmZUYlM1anVMR1RDTG9teGdCWW5hX0ZsZzA1bjlsZ09DQ1pXU1FhVnR3RUdzc2hOUEoxMlZtR0dlTTdzVUJyRXE1Z2tubF9LX3d6OURXcWh6VE9LYkF5R2F4SmFrSk5oeHJPb1k5YTJPTXhRcFNDT2VWRVRqN3FJWk4xSS5pc0ZhVFdXVmI0bVdkZlh6bUVRVnRB\"}]",
+      "responseClass": "com.oracle.bmc.keymanagement.responses.ListKeysResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['18887']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0409&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:43:51 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/endpoint?sessionId=0409&serviceName=keymanagement&clientName=KmsManagementClient&lang=Python&apiName=ListKeys
+  response:
+    body: {string: 'https://avnybakjaafna-management.kms.us-phoenix-1.oraclecloud.com'}
+    headers:
+      Content-Length: ['65']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:43:51 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="fRCaxXmirhFSx8hXz1TqJjRhJfF0G58kcX3zrdEo5abW/HCzIddMx9AFAoyP5yfj5PsVTQEiiuvofWEuK0CWLf823h+RTeYOuqyhYHimLOvBttbsT6lV3crHdRGymUwAV/ZS8xkSYjz6usTH1ygx3tn4w17xGEndl5S4c3azHiG6rhgks6u9pKIdXua8bXJy3z0W2euKb25pHLldiGz529VY2g8kFXKZasLwu/iUsP32WAFEbZ1JyZxcZJu/KUbkeqVZnGPqpLrmIPQpYK5Mo7lsuk+uan70P/cRFCMCWY9BEeh6DX2hn09/gXSroqg5SklYhkvIaDmr+snzsT/d1Q==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 18:43:52 GMT']
+      host: [avnybakjaafna-management.kms.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [4417E40DA0BC42479683009202371695]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://avnybakjaafna-management.kms.us-phoenix-1.oraclecloud.com/20180608/keys?compartmentId=ocid1.tenancy.region1..aaaaaaaazix3o3iddtw3izrsyui36m6yzqwfbkvq4dimwvgbqrpmenruovmb&limit=10
+  response:
+    body: {string: "{\n  \"code\" : \"NotAuthorizedOrNotFound\",\n  \"message\" :\
+        \ \"User is not authorized.\"\n}"}
+    headers:
+      Cache-Control: ['no-cache, no-store, no-transform, must-revalidate']
+      Content-Length: ['81']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:43:52 GMT']
+      opc-request-id: [4417E40DA0BC42479683009202371695/3DDCABFFA969873137506299BA905F1A/33630A372CAA2290E4C3D4CC107D03AC]
+    status: {code: 404, message: Not Found}
+- request:
+    body: '{"containerId": "9ac70b7b-36d6-4527-9258-ac1cbe9a2675", "listResponse":
+      true, "requestClass": "com.oracle.bmc.keymanagement.requests.ListKeysRequest",
+      "requestJson": "{\"compartmentId\": \"ocid1.tenancy.region1..aaaaaaaazix3o3iddtw3izrsyui36m6yzqwfbkvq4dimwvgbqrpmenruovmb\",
+      \"limit\": 10}", "errorJson": "{\"code\": \"NotAuthorizedOrNotFound\", \"statusCode\":
+      404, \"message\": \"User is not authorized.\", \"opcRequestId\": \"4417E40DA0BC42479683009202371695/3DDCABFFA969873137506299BA905F1A/33630A372CAA2290E4C3D4CC107D03AC\"}"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['533']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/error?sessionId=0409&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:43:52 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+version: 1

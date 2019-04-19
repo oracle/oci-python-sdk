@@ -118,4 +118,288 @@ interactions:
       Date: ['Mon, 01 Apr 2019 23:20:21 GMT']
       Server: [Jetty(9.4.7.v20170914)]
     status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=database&apiName=ListDbSystems
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 19:11:02 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?serviceName=database&apiName=ListDbSystems&lang=Python&clientName=database
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq","endpoint":null,"fingerprint":"ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9","passPhrase":"dexsdk","keyFile":"java_sdk_admin_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,0C9B64A4AA0303EC02C79E91D0F8B0D0\n\naSd0uIKreq5NirzJ+Esa36lYJo4lU2zSjIIw8wvZEsd+LdaifqONZIfHHiB6/KgG\nse4wd/58tPsiEgnK7D1q8wmdVDouMSX31mhcbq2bwRjXATpNnOMnhDtahJv6cw4M\nDtlXYplk0LzpP6WjqXqFST4Yz0l1NO90ahnruwcb/SUCm12ONMJ5o4G1UO2/0IkX\nTRlMRpm/etIpStNSP+1IsD1gSWlAzhs1zodkpd+2eW2ovlAaY25Hm/aqK97jzsCF\n1f4dCm7spCHYOfv10XHNB99/jomN1KQuDy29MmVaJ9oYpOIDlu0yj4Q/XempLxa6\nhqgt0gUO9cMV2bfStsHKWJwq+KoncamBHpU/+CyNjoYq1QTC0urWlCP5hNo5VZhF\nzXBJa188FD2TiPFU8Z4EhercM83TfBsRVEQOpu5sbMaUOT6xXwnCWfM5Pjxy/0xE\n6oF2zq+H0ES12dh19C5P8ueRFLyhaWFliWJv3SXy9iCslcso6USnBBKnA26xMile\nY3m9uRP31yZW8czxYSIgKEV3Mp3GFAYwuebNjLgIM7xT+PvDiOO4qAhA0waGPhYH\n2QMl9ThSahKT6vpjVUQuGOjaRcJ5Vr73VGX4MnxXVxsl5de6y/ZfP5ndx5Lb4K43\njwrMbCIzrM1ZzR2JMTuMJFDasLjEW/Y9nf7FRh2gByeGLObAmHsjlUdW65QQu+Qy\nu4ADc6TbpqvLobocF5fKgML7JCAA/YqmYlZCV6gGOdKUXUT3VMmZcebcTtw1Zmxh\nwaUQe99D90w3Q/7CCCiGO2waZaTNl+ahVnQZEGHN9xJydkCkfVZDgVmdDmsSXmxo\n2DWf2c2/1me2zZAcW0SFBnyrt3uphdCnICaqXR0AnQUmw49YY4nk2fPTMxZs1r+2\n+poVVEfr//cHTTs4yu9ZVT2wGWf/Ooo4sm7obB8EhGkrXs3ormx9WHj6ezexupsd\nanWE7Uy54ovKdOosKB6nQOfP+Iwe4sSJ6oYPNvvh19v05+AhOCdONjMeCwTfBvtJ\nA5luj6CtFbgSX96A3zTRrTXQO3N4aLTF8niL+FcZ69RzYcxp3rlDSK88JyJ9xsu1\n+lNIcAPAFhzisC/eB9b1eDJ4JErJyIdBTZ4bPv4dtl/RpFcyIA4WMjskGCRo60I7\nN3DVqGGXLlC7KDjvPmdvvfAx3lzcIANhwBhLSQJ+y1bcyW6FcX0ZtY962Hb06Qj5\nXG5nDmT1qVkfDmzpIOF9GtDgch7gtf/EjHOUyaw60dDgJ5RF6lORLjFeuU9W7I1e\nD3mpWb6WP6DKoaQTgrLLrIJCLIdXr92XmvDj+iuYdGhCIkqHWqNbRW4TyiuukNJH\n12Zq/LlA1s58YJVa520o7EOXpmD4sGIrctlI3keSmKhiavy7j5ULz5J++jL+Yxlc\n6h9q4v71oyFmVgNpIEJNg7sSCkE72yzUCaglBUdUIMG3D0sI+VwufC7lbhohvHBr\nNzmbg2bW4x0CCprf/o5JvdNiB+bQdKG4t2Q7fhhZIW7ACii591ZBbpnUakDUQBZa\nV2yMaErypILHlQvlReHXVK1adUTxLNWf//VDoyclQk5k0uFIkUmpn+EXWnEHw7e8\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2261']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 19:11:02 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=database&apiName=ListDbSystems&lang=Python&sessionId=0919
+  response:
+    body: {string: '[{"containerId":"97f52ed0-7bde-4de4-b913-595e939f8276","request":{"compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","limit":10,"availabilityDomain":"FjmN:PHX-AD-1"}}]'}
+    headers:
+      Content-Length: ['218']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 19:11:02 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="Hj40g59PJb+wbQx0It7HTybkV74P3JNmGCIcqZu1AtKNww8DsbY6rp/D6zwm1yGfmR4dGBh4A/Cf7lCe0k1nVvbkToojwK+/Jq0exZXyioc59h58lqmXINcoHBHM2Gwxupc7OsGgi8i6KZvaJ0nhiIzuDBDnM8moiZUFOOkORDB6s24uqIKvRri6gJDqX0Df3nymQY9RsKTK2T3El5HT8PsE5YrDgwkIaSCctEJ1zBbLGlQHySwdFKVHuBN2zTdRSIoD38H/mElUceHn/oH2/MGojLNfAPqggQuj1VLNje9IRZX+jKITFE6LwWDQJJJn3uZsSAc9uxeTzpT3uayK1g==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 19:11:03 GMT']
+      host: [database.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [731ACF6D5DA84726910D7FA05497DECB]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://database.us-phoenix-1.oraclecloud.com/20160918/dbSystems?compartmentId=ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba&limit=10&availabilityDomain=FjmN%3APHX-AD-1
+  response:
+    body: {string: '[{"availabilityDomain":"FjmN:PHX-AD-1","backupSubnetId":null,"clusterName":null,"compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","cpuCoreCount":1,"dataStoragePercentage":80,"dataStorageSizeInGBs":256,"databaseEdition":"ENTERPRISE_EDITION_EXTREME_PERFORMANCE","definedTags":{},"diskRedundancy":"HIGH","displayName":"__STS0919_9178","domain":"sts09192561.sts09192561.oraclevcn.com","faultDomains":["FAULT-DOMAIN-2"],"freeformTags":{},"hostname":"host0919810","id":"ocid1.dbsystem.oc1.phx.abyhqljt3u5lkxud34vd3w2rutbojxazfial47ywmnosc3vpdyjzfjk55k5a","lastPatchHistoryEntryId":null,"licenseModel":"LICENSE_INCLUDED","lifecycleDetails":null,"lifecycleState":"AVAILABLE","listenerPort":1521,"nodeCount":1,"recoStorageSizeInGB":256,"scanDnsRecordId":null,"scanIpIds":null,"shape":"VM.Standard2.1","sparseDiskgroup":null,"sshPublicKeys":["ssh-rsa
+        AAAAB3NzaC1yc2EAAAADAQABAAABAQDokoG4lDsCN/E9F7KsaVZmYYKZMdljJwxjwsoyFdTTQop0TH0lMSDiZeZ3w/8wsZ5esR5uiW/WS5RMBxrfy1/z12qHbOP8vTLCZ19X33UDS8yhEarDldmBbeQ5penrjHM54+lLBTKolGfXvszbUP8ohsN/If7nfn2caUNRiE9Ep9T+xIr/ElmSyq9qrBbUdg0ltz3yIbkmv7SwgxW+NZSD2mhmfYJJDWq5QpJqc3lcNSCU/0f1mQGm754qI7wJKGEhSEOJkBvS7YrfDRINtNABaKGIDUCijwp+dl7btRaxBDwiF/+zHrX43ZEypVcbgVnOcxtz3E/CgxRHZ1plfEpd
+        dhshshah@dhshshah-Mac"],"subnetId":"ocid1.subnet.oc1.phx.aaaaaaaabxr3nlqc3ls32l32a3cn6vughsofkctc2eoty3lrkwmcjcsfwbjq","timeCreated":"2019-04-18T19:01:25.846Z","timeZone":"UTC","version":null,"vipIds":null},{"availabilityDomain":"FjmN:PHX-AD-1","backupSubnetId":null,"clusterName":null,"compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","cpuCoreCount":1,"dataStoragePercentage":80,"dataStorageSizeInGBs":256,"databaseEdition":"ENTERPRISE_EDITION_EXTREME_PERFORMANCE","definedTags":{},"diskRedundancy":"HIGH","displayName":"dg0326271","domain":"sts03266928.sts03266928.oraclevcn.com","faultDomains":["FAULT-DOMAIN-1"],"freeformTags":{},"hostname":"host0326581","id":"ocid1.dbsystem.oc1.phx.abyhqljt7eptljuv5ngay3qilfbmsdvxsb7ut3xyiyqjiuhrf4q5r7utawha","lastPatchHistoryEntryId":null,"licenseModel":"LICENSE_INCLUDED","lifecycleDetails":null,"lifecycleState":"AVAILABLE","listenerPort":1521,"nodeCount":1,"recoStorageSizeInGB":256,"scanDnsRecordId":null,"scanIpIds":null,"shape":"VM.Standard2.1","sparseDiskgroup":null,"sshPublicKeys":["ssh-rsa
+        AAAAB3NzaC1yc2EAAAADAQABAAABAQDokoG4lDsCN/E9F7KsaVZmYYKZMdljJwxjwsoyFdTTQop0TH0lMSDiZeZ3w/8wsZ5esR5uiW/WS5RMBxrfy1/z12qHbOP8vTLCZ19X33UDS8yhEarDldmBbeQ5penrjHM54+lLBTKolGfXvszbUP8ohsN/If7nfn2caUNRiE9Ep9T+xIr/ElmSyq9qrBbUdg0ltz3yIbkmv7SwgxW+NZSD2mhmfYJJDWq5QpJqc3lcNSCU/0f1mQGm754qI7wJKGEhSEOJkBvS7YrfDRINtNABaKGIDUCijwp+dl7btRaxBDwiF/+zHrX43ZEypVcbgVnOcxtz3E/CgxRHZ1plfEpd
+        dhshshah@dhshshah-Mac"],"subnetId":"ocid1.subnet.oc1.phx.aaaaaaaayof6lvxchncylkfkzducdu7y5w5pwhbdo3yvqr4d4xfb2gpgjxcq","timeCreated":"2019-04-18T10:38:25.305Z","timeZone":"UTC","version":null,"vipIds":null},{"availabilityDomain":"FjmN:PHX-AD-1","backupSubnetId":"ocid1.subnet.oc1.phx.aaaaaaaaxujztfotw6fwlzne3aligz3hzm4q3hxebs6zqv7jidx4ayis5kna","clusterName":"cl-r5qelhpq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","cpuCoreCount":2,"dataStoragePercentage":80,"dataStorageSizeInGBs":null,"databaseEdition":"ENTERPRISE_EDITION_EXTREME_PERFORMANCE","definedTags":{},"diskRedundancy":"HIGH","displayName":"__STS0919_59","domain":"sts09192561.sts09192561.oraclevcn.com","faultDomains":null,"freeformTags":{},"hostname":"host0919269-ltonr","id":"ocid1.dbsystem.oc1.phx.abyhqljtb7almxagblgrnvb5e65gf2zurnyjdyodb4yu776zl42yr5qelhpq","lastPatchHistoryEntryId":null,"licenseModel":"LICENSE_INCLUDED","lifecycleDetails":null,"lifecycleState":"AVAILABLE","listenerPort":1521,"nodeCount":null,"recoStorageSizeInGB":null,"scanDnsRecordId":null,"scanIpIds":null,"shape":"Exadata.Quarter2.92","sparseDiskgroup":false,"sshPublicKeys":["ssh-rsa
+        AAAAB3NzaC1yc2EAAAADAQABAAABAQDokoG4lDsCN/E9F7KsaVZmYYKZMdljJwxjwsoyFdTTQop0TH0lMSDiZeZ3w/8wsZ5esR5uiW/WS5RMBxrfy1/z12qHbOP8vTLCZ19X33UDS8yhEarDldmBbeQ5penrjHM54+lLBTKolGfXvszbUP8ohsN/If7nfn2caUNRiE9Ep9T+xIr/ElmSyq9qrBbUdg0ltz3yIbkmv7SwgxW+NZSD2mhmfYJJDWq5QpJqc3lcNSCU/0f1mQGm754qI7wJKGEhSEOJkBvS7YrfDRINtNABaKGIDUCijwp+dl7btRaxBDwiF/+zHrX43ZEypVcbgVnOcxtz3E/CgxRHZ1plfEpd
+        dhshshah@dhshshah-Mac"],"subnetId":"ocid1.subnet.oc1.phx.aaaaaaaabxr3nlqc3ls32l32a3cn6vughsofkctc2eoty3lrkwmcjcsfwbjq","timeCreated":"2019-04-18T19:09:07.395Z","timeZone":"US/Pacific","version":null,"vipIds":null},{"availabilityDomain":"FjmN:PHX-AD-1","backupSubnetId":null,"clusterName":null,"compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","cpuCoreCount":1,"dataStoragePercentage":80,"dataStorageSizeInGBs":256,"databaseEdition":"ENTERPRISE_EDITION_EXTREME_PERFORMANCE","definedTags":{},"diskRedundancy":"HIGH","displayName":"__STS0326_6088","domain":"sts03266928.sts03266928.oraclevcn.com","faultDomains":["FAULT-DOMAIN-1"],"freeformTags":{},"hostname":"host0326221","id":"ocid1.dbsystem.oc1.phx.abyhqljtccdvyxao6jnccmp6xqvq4lc5n3lo3ywziords7mlxws35hzsessq","lastPatchHistoryEntryId":null,"licenseModel":"LICENSE_INCLUDED","lifecycleDetails":null,"lifecycleState":"AVAILABLE","listenerPort":1521,"nodeCount":1,"recoStorageSizeInGB":256,"scanDnsRecordId":null,"scanIpIds":null,"shape":"VM.Standard2.1","sparseDiskgroup":null,"sshPublicKeys":["ssh-rsa
+        AAAAB3NzaC1yc2EAAAADAQABAAABAQDokoG4lDsCN/E9F7KsaVZmYYKZMdljJwxjwsoyFdTTQop0TH0lMSDiZeZ3w/8wsZ5esR5uiW/WS5RMBxrfy1/z12qHbOP8vTLCZ19X33UDS8yhEarDldmBbeQ5penrjHM54+lLBTKolGfXvszbUP8ohsN/If7nfn2caUNRiE9Ep9T+xIr/ElmSyq9qrBbUdg0ltz3yIbkmv7SwgxW+NZSD2mhmfYJJDWq5QpJqc3lcNSCU/0f1mQGm754qI7wJKGEhSEOJkBvS7YrfDRINtNABaKGIDUCijwp+dl7btRaxBDwiF/+zHrX43ZEypVcbgVnOcxtz3E/CgxRHZ1plfEpd
+        dhshshah@dhshshah-Mac"],"subnetId":"ocid1.subnet.oc1.phx.aaaaaaaayof6lvxchncylkfkzducdu7y5w5pwhbdo3yvqr4d4xfb2gpgjxcq","timeCreated":"2019-04-18T10:34:13.760Z","timeZone":"UTC","version":null,"vipIds":null},{"availabilityDomain":"FjmN:PHX-AD-1","backupSubnetId":null,"clusterName":null,"compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","cpuCoreCount":1,"dataStoragePercentage":80,"dataStorageSizeInGBs":256,"databaseEdition":"ENTERPRISE_EDITION_EXTREME_PERFORMANCE","definedTags":{},"diskRedundancy":"HIGH","displayName":"__STS0919_3688","domain":"sts09192561.sts09192561.oraclevcn.com","faultDomains":["FAULT-DOMAIN-3"],"freeformTags":{},"hostname":"host0919841","id":"ocid1.dbsystem.oc1.phx.abyhqljthafszeau5tr6ikrggac5weajsqm7xrxn2juqx7av6avv6fyyobdq","lastPatchHistoryEntryId":null,"licenseModel":"LICENSE_INCLUDED","lifecycleDetails":null,"lifecycleState":"AVAILABLE","listenerPort":1521,"nodeCount":1,"recoStorageSizeInGB":256,"scanDnsRecordId":null,"scanIpIds":null,"shape":"VM.Standard2.1","sparseDiskgroup":null,"sshPublicKeys":["ssh-rsa
+        AAAAB3NzaC1yc2EAAAADAQABAAABAQDokoG4lDsCN/E9F7KsaVZmYYKZMdljJwxjwsoyFdTTQop0TH0lMSDiZeZ3w/8wsZ5esR5uiW/WS5RMBxrfy1/z12qHbOP8vTLCZ19X33UDS8yhEarDldmBbeQ5penrjHM54+lLBTKolGfXvszbUP8ohsN/If7nfn2caUNRiE9Ep9T+xIr/ElmSyq9qrBbUdg0ltz3yIbkmv7SwgxW+NZSD2mhmfYJJDWq5QpJqc3lcNSCU/0f1mQGm754qI7wJKGEhSEOJkBvS7YrfDRINtNABaKGIDUCijwp+dl7btRaxBDwiF/+zHrX43ZEypVcbgVnOcxtz3E/CgxRHZ1plfEpd
+        dhshshah@dhshshah-Mac"],"subnetId":"ocid1.subnet.oc1.phx.aaaaaaaabxr3nlqc3ls32l32a3cn6vughsofkctc2eoty3lrkwmcjcsfwbjq","timeCreated":"2019-04-18T18:48:19.696Z","timeZone":"UTC","version":null,"vipIds":null},{"availabilityDomain":"FjmN:PHX-AD-1","backupSubnetId":null,"clusterName":null,"compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","cpuCoreCount":1,"dataStoragePercentage":80,"dataStorageSizeInGBs":256,"databaseEdition":"ENTERPRISE_EDITION_EXTREME_PERFORMANCE","definedTags":{},"diskRedundancy":"HIGH","displayName":"dg0919466","domain":"sts09192561.sts09192561.oraclevcn.com","faultDomains":["FAULT-DOMAIN-1"],"freeformTags":{},"hostname":"host091973","id":"ocid1.dbsystem.oc1.phx.abyhqljtib34dru2t75gquxadpjrliy4qn6tvyz65ip7oknkdg2i6dr4rj4a","lastPatchHistoryEntryId":null,"licenseModel":"LICENSE_INCLUDED","lifecycleDetails":null,"lifecycleState":"AVAILABLE","listenerPort":1521,"nodeCount":1,"recoStorageSizeInGB":256,"scanDnsRecordId":null,"scanIpIds":null,"shape":"VM.Standard2.1","sparseDiskgroup":null,"sshPublicKeys":["ssh-rsa
+        AAAAB3NzaC1yc2EAAAADAQABAAABAQDokoG4lDsCN/E9F7KsaVZmYYKZMdljJwxjwsoyFdTTQop0TH0lMSDiZeZ3w/8wsZ5esR5uiW/WS5RMBxrfy1/z12qHbOP8vTLCZ19X33UDS8yhEarDldmBbeQ5penrjHM54+lLBTKolGfXvszbUP8ohsN/If7nfn2caUNRiE9Ep9T+xIr/ElmSyq9qrBbUdg0ltz3yIbkmv7SwgxW+NZSD2mhmfYJJDWq5QpJqc3lcNSCU/0f1mQGm754qI7wJKGEhSEOJkBvS7YrfDRINtNABaKGIDUCijwp+dl7btRaxBDwiF/+zHrX43ZEypVcbgVnOcxtz3E/CgxRHZ1plfEpd
+        dhshshah@dhshshah-Mac"],"subnetId":"ocid1.subnet.oc1.phx.aaaaaaaabxr3nlqc3ls32l32a3cn6vughsofkctc2eoty3lrkwmcjcsfwbjq","timeCreated":"2019-04-18T19:01:48.970Z","timeZone":"UTC","version":null,"vipIds":null},{"availabilityDomain":"FjmN:PHX-AD-1","backupSubnetId":null,"clusterName":null,"compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","cpuCoreCount":1,"dataStoragePercentage":80,"dataStorageSizeInGBs":256,"databaseEdition":"ENTERPRISE_EDITION_EXTREME_PERFORMANCE","definedTags":{},"diskRedundancy":"HIGH","displayName":"__STS0326_2121","domain":"sts03266928.sts03266928.oraclevcn.com","faultDomains":["FAULT-DOMAIN-3"],"freeformTags":{},"hostname":"host0326552","id":"ocid1.dbsystem.oc1.phx.abyhqljtj7uu3kmynpyrqlexaacbj4di46xitsgnsqvaf6hxvzfy4mh3sfca","lastPatchHistoryEntryId":null,"licenseModel":"LICENSE_INCLUDED","lifecycleDetails":null,"lifecycleState":"AVAILABLE","listenerPort":1521,"nodeCount":1,"recoStorageSizeInGB":256,"scanDnsRecordId":null,"scanIpIds":null,"shape":"VM.Standard2.1","sparseDiskgroup":null,"sshPublicKeys":["ssh-rsa
+        AAAAB3NzaC1yc2EAAAADAQABAAABAQDokoG4lDsCN/E9F7KsaVZmYYKZMdljJwxjwsoyFdTTQop0TH0lMSDiZeZ3w/8wsZ5esR5uiW/WS5RMBxrfy1/z12qHbOP8vTLCZ19X33UDS8yhEarDldmBbeQ5penrjHM54+lLBTKolGfXvszbUP8ohsN/If7nfn2caUNRiE9Ep9T+xIr/ElmSyq9qrBbUdg0ltz3yIbkmv7SwgxW+NZSD2mhmfYJJDWq5QpJqc3lcNSCU/0f1mQGm754qI7wJKGEhSEOJkBvS7YrfDRINtNABaKGIDUCijwp+dl7btRaxBDwiF/+zHrX43ZEypVcbgVnOcxtz3E/CgxRHZ1plfEpd
+        dhshshah@dhshshah-Mac"],"subnetId":"ocid1.subnet.oc1.phx.aaaaaaaayof6lvxchncylkfkzducdu7y5w5pwhbdo3yvqr4d4xfb2gpgjxcq","timeCreated":"2019-04-18T08:37:57.390Z","timeZone":"UTC","version":null,"vipIds":null},{"availabilityDomain":"FjmN:PHX-AD-1","backupSubnetId":null,"clusterName":null,"compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","cpuCoreCount":1,"dataStoragePercentage":80,"dataStorageSizeInGBs":256,"databaseEdition":"ENTERPRISE_EDITION_EXTREME_PERFORMANCE","definedTags":{},"diskRedundancy":"HIGH","displayName":"dg0326357","domain":"sts03266928.sts03266928.oraclevcn.com","faultDomains":["FAULT-DOMAIN-1"],"freeformTags":{},"hostname":"host0326562","id":"ocid1.dbsystem.oc1.phx.abyhqljtkmvdfvxxhj6g5jhabnp7o22pvoqeimgisx4m6r27hkcrs6wvyedq","lastPatchHistoryEntryId":null,"licenseModel":"LICENSE_INCLUDED","lifecycleDetails":null,"lifecycleState":"AVAILABLE","listenerPort":1521,"nodeCount":1,"recoStorageSizeInGB":256,"scanDnsRecordId":null,"scanIpIds":null,"shape":"VM.Standard2.1","sparseDiskgroup":null,"sshPublicKeys":["ssh-rsa
+        AAAAB3NzaC1yc2EAAAADAQABAAABAQDokoG4lDsCN/E9F7KsaVZmYYKZMdljJwxjwsoyFdTTQop0TH0lMSDiZeZ3w/8wsZ5esR5uiW/WS5RMBxrfy1/z12qHbOP8vTLCZ19X33UDS8yhEarDldmBbeQ5penrjHM54+lLBTKolGfXvszbUP8ohsN/If7nfn2caUNRiE9Ep9T+xIr/ElmSyq9qrBbUdg0ltz3yIbkmv7SwgxW+NZSD2mhmfYJJDWq5QpJqc3lcNSCU/0f1mQGm754qI7wJKGEhSEOJkBvS7YrfDRINtNABaKGIDUCijwp+dl7btRaxBDwiF/+zHrX43ZEypVcbgVnOcxtz3E/CgxRHZ1plfEpd
+        dhshshah@dhshshah-Mac"],"subnetId":"ocid1.subnet.oc1.phx.aaaaaaaayof6lvxchncylkfkzducdu7y5w5pwhbdo3yvqr4d4xfb2gpgjxcq","timeCreated":"2019-04-18T08:38:33.458Z","timeZone":"UTC","version":null,"vipIds":null}]'}
+    headers:
+      Connection: [keep-alive]
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 19:11:03 GMT']
+      Transfer-Encoding: [chunked]
+      X-Content-Type-Options: [nosniff]
+      opc-next-page: [ABYHQLJTAAAAIBCBIFAUCQKBIFAUCQKKNRSVK4DZLFLGIUTBKU4XAU2YOBHVMRJROBKEKTSLMJDUU5CUK5WFAYKVOBBVIV3QKZGWYSLXKRVTKSTBLBSHAV2WMQ2GE23MOFRDE3DBKIZHQNKTK42HOTDJGQYGGMKKKVLFOWSWKREFS52SIZSFUUSEKJHUY22KGZIVKODUKVVU4T3CGBYGQVDMNRKFERTLGNRGUTTZLEYGIU2NIRJDET2EIJ5GIV3INVGVKWSRMQYEUUCRLBFEWVKUKJ2FMSCCONLDETL2KZDVE32WKVLHCTJSOR5GCM2BPFHHUSTNMEYFEYKZGFGXQTLMKZVGIMKCGRIVKWJVKMYWW6SVLBUDITLONRWVU3JROBQVISTOKFKVSNDFI4YWYYRQORUGE6SSOVSGW5DTKMZHA4DCIRLGWYKVIZLVI6SOJRKUQRJUKRDVESDDGNHHATSFGQ2GCWCCOBJDEZCKJVDFMMKWKRWE2URTOBGFUMDUIJGVOTTILIYWQ42ZGNNDAZKGLIZU2MTLORSHUQTXKVWGIRDBKVUE2VSXIZYGK3BZKVMW4ZCXKYYHOMKZKZUEWVCUNRCVCMKWOBGFKRT2JRLU25CPI52FKYKXNQZVKM3IOFKHUQSRMNCUUU2WNNETEVTNGUYGG2SGNBQWWODZJVKU4WCVNJNG4YLNKJBVCV22JBMWUQSKMEYUMVSRKVNEKVBQPBVVC2SWOFLUM4DWJ5CXAZSNPJSEEY3LKF3WCMSKK5RTGWSMKJVWQRKNNRLHGY2YJZ4U4WCOIRJUK6CSKJVUUTSUGNHFEU2YKJKFE3CNGBJTGTSHKNXGG6CPKZAXSTSENRCVCVLUNBKTE3DXKRCGISTFNRFGMY2YIZMGCWDENNREIZ3ZMVVXAMSRK5KTKZKVOBHVK3SSOZGXUVTUMNDVM2TDGA4DAU2XGR3U2MSFPFJVOZCEKEYTS6DBLBNEYZCWNR4FSVZRGNKEI3CEMVLVC6KZGJNEUYJQGFIWCMDPGVJVOWTMLEZVMRCVK52GCUKVJY2E4RDIJFLGYTTBMJDEMTC2NJNFEVBQHFLFEV3UGVSWUZZSMRLTQ6CZLBUEGTLLPB4U2RCKMZKWWUSCKFLWYTTEGFEXITKYJV2E6RRZPBQUQZDNKNLWYTSTLBYEGTTMMRJVERZZJFLVMOBRKNLEMUTBNRUFSTKGMR3VIR2GN5GTA6CYKZXHAMSTJBFEIT2ILJCWIMKGNBJTGRTIJZWE42KZGFNFET2FPB3E6RCNGFHEOZZUMIYTSRSVNEYVSVT2KJYFC2ZRJBGUKVTRJV5GQ6STNJLDIYTKLJ3VOWDMNRSGYTRQKJKUMRS2GFHHKWBQJUYVG3LIJFSDANKQK5MG6MKTPJNGUVCUJY3E4RSVPJJVQZCGKVDFM5TFKVJFIWKVIZ3VUMCOJJHGY3CJMFCTC3LENNFFQYJQOBWVC3SCNBRVOUTJKNKTI6TEKU2VUUTLMN4VGMLEKBNG2Y3UJRLVU5SUJBYHMVSWMR5FI3CJPFIVKWSMK5LVUVCUJBWFEVDLLJCFMMS2O5GW2ZDVMIYHIRSMKZFEQV2VIZYVSMJZGFJWUULVKNDXIMKRKVSHAUJTKEYVEM22OZNEOUSVKVKXQ32UIZWHEUKRHU6Q]
+      opc-request-id: [731ACF6D5DA84726910D7FA05497DECB/A9A3F79C06B026629A6971E57DDEDF25/927CDBADEA47D18E8056D7848CF8DBAE]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="fA5g4Pog/Gpjb1vOXq8Ogdhe3ZUXhgZmyoPOfaULAw04acg5DQBet83FY0NTyGdsDaFpGLPhM2Ov9CnhX+K1nHSPSRy2+SAWyHHtChc/1AESiiAN5FsgfUAuuwPdFfpSXXSMV1f9FRXJBSTBtYTUS9A9zbHQ89oNe1s0wAWvyCvwl0jUANKtMFpmhE27oE+q7FDsS504qCZqgwWJTcl838x2RzKN+P0we1Bzd5Ggp0tWBhGPrMn4vqFlx+nDhnAKxQgSQzfRM5Yr3my0tjqwQ8+952BOB4UM3cwqKPj2P9w3bfZsYeQPXZuAv4/Er8aRMblMCPAf5gWIWMztc4th2w==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 19:11:03 GMT']
+      host: [database.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [0D656A92F0534D5580718CC25AA38F88]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://database.us-phoenix-1.oraclecloud.com/20160918/dbSystems?compartmentId=ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba&limit=10&page=ABYHQLJTAAAAIBCBIFAUCQKBIFAUCQKKNRSVK4DZLFLGIUTBKU4XAU2YOBHVMRJROBKEKTSLMJDUU5CUK5WFAYKVOBBVIV3QKZGWYSLXKRVTKSTBLBSHAV2WMQ2GE23MOFRDE3DBKIZHQNKTK42HOTDJGQYGGMKKKVLFOWSWKREFS52SIZSFUUSEKJHUY22KGZIVKODUKVVU4T3CGBYGQVDMNRKFERTLGNRGUTTZLEYGIU2NIRJDET2EIJ5GIV3INVGVKWSRMQYEUUCRLBFEWVKUKJ2FMSCCONLDETL2KZDVE32WKVLHCTJSOR5GCM2BPFHHUSTNMEYFEYKZGFGXQTLMKZVGIMKCGRIVKWJVKMYWW6SVLBUDITLONRWVU3JROBQVISTOKFKVSNDFI4YWYYRQORUGE6SSOVSGW5DTKMZHA4DCIRLGWYKVIZLVI6SOJRKUQRJUKRDVESDDGNHHATSFGQ2GCWCCOBJDEZCKJVDFMMKWKRWE2URTOBGFUMDUIJGVOTTILIYWQ42ZGNNDAZKGLIZU2MTLORSHUQTXKVWGIRDBKVUE2VSXIZYGK3BZKVMW4ZCXKYYHOMKZKZUEWVCUNRCVCMKWOBGFKRT2JRLU25CPI52FKYKXNQZVKM3IOFKHUQSRMNCUUU2WNNETEVTNGUYGG2SGNBQWWODZJVKU4WCVNJNG4YLNKJBVCV22JBMWUQSKMEYUMVSRKVNEKVBQPBVVC2SWOFLUM4DWJ5CXAZSNPJSEEY3LKF3WCMSKK5RTGWSMKJVWQRKNNRLHGY2YJZ4U4WCOIRJUK6CSKJVUUTSUGNHFEU2YKJKFE3CNGBJTGTSHKNXGG6CPKZAXSTSENRCVCVLUNBKTE3DXKRCGISTFNRFGMY2YIZMGCWDENNREIZ3ZMVVXAMSRK5KTKZKVOBHVK3SSOZGXUVTUMNDVM2TDGA4DAU2XGR3U2MSFPFJVOZCEKEYTS6DBLBNEYZCWNR4FSVZRGNKEI3CEMVLVC6KZGJNEUYJQGFIWCMDPGVJVOWTMLEZVMRCVK52GCUKVJY2E4RDIJFLGYTTBMJDEMTC2NJNFEVBQHFLFEV3UGVSWUZZSMRLTQ6CZLBUEGTLLPB4U2RCKMZKWWUSCKFLWYTTEGFEXITKYJV2E6RRZPBQUQZDNKNLWYTSTLBYEGTTMMRJVERZZJFLVMOBRKNLEMUTBNRUFSTKGMR3VIR2GN5GTA6CYKZXHAMSTJBFEIT2ILJCWIMKGNBJTGRTIJZWE42KZGFNFET2FPB3E6RCNGFHEOZZUMIYTSRSVNEYVSVT2KJYFC2ZRJBGUKVTRJV5GQ6STNJLDIYTKLJ3VOWDMNRSGYTRQKJKUMRS2GFHHKWBQJUYVG3LIJFSDANKQK5MG6MKTPJNGUVCUJY3E4RSVPJJVQZCGKVDFM5TFKVJFIWKVIZ3VUMCOJJHGY3CJMFCTC3LENNFFQYJQOBWVC3SCNBRVOUTJKNKTI6TEKU2VUUTLMN4VGMLEKBNG2Y3UJRLVU5SUJBYHMVSWMR5FI3CJPFIVKWSMK5LVUVCUJBWFEVDLLJCFMMS2O5GW2ZDVMIYHIRSMKZFEQV2VIZYVSMJZGFJWUULVKNDXIMKRKVSHAUJTKEYVEM22OZNEOUSVKVKXQ32UIZWHEUKRHU6Q&availabilityDomain=FjmN%3APHX-AD-1
+  response:
+    body: {string: '[{"availabilityDomain":"FjmN:PHX-AD-1","backupSubnetId":null,"clusterName":null,"compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","cpuCoreCount":1,"dataStoragePercentage":80,"dataStorageSizeInGBs":256,"databaseEdition":"ENTERPRISE_EDITION_EXTREME_PERFORMANCE","definedTags":{},"diskRedundancy":"HIGH","displayName":"__STS0919_9891","domain":"sts09192561.sts09192561.oraclevcn.com","faultDomains":["FAULT-DOMAIN-2"],"freeformTags":{},"hostname":"host0919796","id":"ocid1.dbsystem.oc1.phx.abyhqljtutlbcwbubtsagug2vyrignys2vd2hyhcv3eq7kygmepiur4hzqjq","lastPatchHistoryEntryId":null,"licenseModel":"LICENSE_INCLUDED","lifecycleDetails":null,"lifecycleState":"AVAILABLE","listenerPort":1521,"nodeCount":1,"recoStorageSizeInGB":256,"scanDnsRecordId":null,"scanIpIds":null,"shape":"VM.Standard2.1","sparseDiskgroup":null,"sshPublicKeys":["ssh-rsa
+        AAAAB3NzaC1yc2EAAAADAQABAAABAQDokoG4lDsCN/E9F7KsaVZmYYKZMdljJwxjwsoyFdTTQop0TH0lMSDiZeZ3w/8wsZ5esR5uiW/WS5RMBxrfy1/z12qHbOP8vTLCZ19X33UDS8yhEarDldmBbeQ5penrjHM54+lLBTKolGfXvszbUP8ohsN/If7nfn2caUNRiE9Ep9T+xIr/ElmSyq9qrBbUdg0ltz3yIbkmv7SwgxW+NZSD2mhmfYJJDWq5QpJqc3lcNSCU/0f1mQGm754qI7wJKGEhSEOJkBvS7YrfDRINtNABaKGIDUCijwp+dl7btRaxBDwiF/+zHrX43ZEypVcbgVnOcxtz3E/CgxRHZ1plfEpd
+        dhshshah@dhshshah-Mac"],"subnetId":"ocid1.subnet.oc1.phx.aaaaaaaabxr3nlqc3ls32l32a3cn6vughsofkctc2eoty3lrkwmcjcsfwbjq","timeCreated":"2019-04-18T18:49:25.227Z","timeZone":"UTC","version":null,"vipIds":null}]'}
+    headers:
+      Connection: [keep-alive]
+      Content-Length: ['1473']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 19:11:03 GMT']
+      X-Content-Type-Options: [nosniff]
+      opc-request-id: [0D656A92F0534D5580718CC25AA38F88/5E9F4A069494A976029AAFD605335DFB/379E34DD147AA6413A7F2DF0A20E7C0D]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"containerId": "97f52ed0-7bde-4de4-b913-595e939f8276", "listResponse":
+      true, "requestClass": "com.oracle.bmc.database.requests.ListDbSystemsRequest",
+      "requestJson": "{\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"limit\": 10, \"availabilityDomain\": \"FjmN:PHX-AD-1\"}", "responseJson":
+      "[{\"items\": [{\"id\": \"ocid1.dbsystem.oc1.phx.abyhqljt3u5lkxud34vd3w2rutbojxazfial47ywmnosc3vpdyjzfjk55k5a\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0919_9178\", \"availabilityDomain\": \"FjmN:PHX-AD-1\",
+      \"faultDomains\": [\"FAULT-DOMAIN-2\"], \"subnetId\": \"ocid1.subnet.oc1.phx.aaaaaaaabxr3nlqc3ls32l32a3cn6vughsofkctc2eoty3lrkwmcjcsfwbjq\",
+      \"backupSubnetId\": null, \"shape\": \"VM.Standard2.1\", \"sshPublicKeys\":
+      [\"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDokoG4lDsCN/E9F7KsaVZmYYKZMdljJwxjwsoyFdTTQop0TH0lMSDiZeZ3w/8wsZ5esR5uiW/WS5RMBxrfy1/z12qHbOP8vTLCZ19X33UDS8yhEarDldmBbeQ5penrjHM54+lLBTKolGfXvszbUP8ohsN/If7nfn2caUNRiE9Ep9T+xIr/ElmSyq9qrBbUdg0ltz3yIbkmv7SwgxW+NZSD2mhmfYJJDWq5QpJqc3lcNSCU/0f1mQGm754qI7wJKGEhSEOJkBvS7YrfDRINtNABaKGIDUCijwp+dl7btRaxBDwiF/+zHrX43ZEypVcbgVnOcxtz3E/CgxRHZ1plfEpd
+      dhshshah@dhshshah-Mac\"], \"timeZone\": \"UTC\", \"hostname\": \"host0919810\",
+      \"domain\": \"sts09192561.sts09192561.oraclevcn.com\", \"version\": null, \"cpuCoreCount\":
+      1, \"clusterName\": null, \"dataStoragePercentage\": 80, \"databaseEdition\":
+      \"ENTERPRISE_EDITION_EXTREME_PERFORMANCE\", \"lastPatchHistoryEntryId\": null,
+      \"listenerPort\": 1521, \"lifecycleState\": \"AVAILABLE\", \"timeCreated\":
+      \"2019-04-18T19:01:25.846000+00:00\", \"lifecycleDetails\": null, \"diskRedundancy\":
+      \"HIGH\", \"sparseDiskgroup\": null, \"scanIpIds\": null, \"vipIds\": null,
+      \"scanDnsRecordId\": null, \"dataStorageSizeInGbs\": 256, \"recoStorageSizeInGb\":
+      256, \"nodeCount\": 1, \"licenseModel\": \"LICENSE_INCLUDED\", \"freeformTags\":
+      {}, \"definedTags\": {}}, {\"id\": \"ocid1.dbsystem.oc1.phx.abyhqljt7eptljuv5ngay3qilfbmsdvxsb7ut3xyiyqjiuhrf4q5r7utawha\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"dg0326271\", \"availabilityDomain\": \"FjmN:PHX-AD-1\", \"faultDomains\":
+      [\"FAULT-DOMAIN-1\"], \"subnetId\": \"ocid1.subnet.oc1.phx.aaaaaaaayof6lvxchncylkfkzducdu7y5w5pwhbdo3yvqr4d4xfb2gpgjxcq\",
+      \"backupSubnetId\": null, \"shape\": \"VM.Standard2.1\", \"sshPublicKeys\":
+      [\"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDokoG4lDsCN/E9F7KsaVZmYYKZMdljJwxjwsoyFdTTQop0TH0lMSDiZeZ3w/8wsZ5esR5uiW/WS5RMBxrfy1/z12qHbOP8vTLCZ19X33UDS8yhEarDldmBbeQ5penrjHM54+lLBTKolGfXvszbUP8ohsN/If7nfn2caUNRiE9Ep9T+xIr/ElmSyq9qrBbUdg0ltz3yIbkmv7SwgxW+NZSD2mhmfYJJDWq5QpJqc3lcNSCU/0f1mQGm754qI7wJKGEhSEOJkBvS7YrfDRINtNABaKGIDUCijwp+dl7btRaxBDwiF/+zHrX43ZEypVcbgVnOcxtz3E/CgxRHZ1plfEpd
+      dhshshah@dhshshah-Mac\"], \"timeZone\": \"UTC\", \"hostname\": \"host0326581\",
+      \"domain\": \"sts03266928.sts03266928.oraclevcn.com\", \"version\": null, \"cpuCoreCount\":
+      1, \"clusterName\": null, \"dataStoragePercentage\": 80, \"databaseEdition\":
+      \"ENTERPRISE_EDITION_EXTREME_PERFORMANCE\", \"lastPatchHistoryEntryId\": null,
+      \"listenerPort\": 1521, \"lifecycleState\": \"AVAILABLE\", \"timeCreated\":
+      \"2019-04-18T10:38:25.305000+00:00\", \"lifecycleDetails\": null, \"diskRedundancy\":
+      \"HIGH\", \"sparseDiskgroup\": null, \"scanIpIds\": null, \"vipIds\": null,
+      \"scanDnsRecordId\": null, \"dataStorageSizeInGbs\": 256, \"recoStorageSizeInGb\":
+      256, \"nodeCount\": 1, \"licenseModel\": \"LICENSE_INCLUDED\", \"freeformTags\":
+      {}, \"definedTags\": {}}, {\"id\": \"ocid1.dbsystem.oc1.phx.abyhqljtb7almxagblgrnvb5e65gf2zurnyjdyodb4yu776zl42yr5qelhpq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0919_59\", \"availabilityDomain\": \"FjmN:PHX-AD-1\",
+      \"faultDomains\": null, \"subnetId\": \"ocid1.subnet.oc1.phx.aaaaaaaabxr3nlqc3ls32l32a3cn6vughsofkctc2eoty3lrkwmcjcsfwbjq\",
+      \"backupSubnetId\": \"ocid1.subnet.oc1.phx.aaaaaaaaxujztfotw6fwlzne3aligz3hzm4q3hxebs6zqv7jidx4ayis5kna\",
+      \"shape\": \"Exadata.Quarter2.92\", \"sshPublicKeys\": [\"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDokoG4lDsCN/E9F7KsaVZmYYKZMdljJwxjwsoyFdTTQop0TH0lMSDiZeZ3w/8wsZ5esR5uiW/WS5RMBxrfy1/z12qHbOP8vTLCZ19X33UDS8yhEarDldmBbeQ5penrjHM54+lLBTKolGfXvszbUP8ohsN/If7nfn2caUNRiE9Ep9T+xIr/ElmSyq9qrBbUdg0ltz3yIbkmv7SwgxW+NZSD2mhmfYJJDWq5QpJqc3lcNSCU/0f1mQGm754qI7wJKGEhSEOJkBvS7YrfDRINtNABaKGIDUCijwp+dl7btRaxBDwiF/+zHrX43ZEypVcbgVnOcxtz3E/CgxRHZ1plfEpd
+      dhshshah@dhshshah-Mac\"], \"timeZone\": \"US/Pacific\", \"hostname\": \"host0919269-ltonr\",
+      \"domain\": \"sts09192561.sts09192561.oraclevcn.com\", \"version\": null, \"cpuCoreCount\":
+      2, \"clusterName\": \"cl-r5qelhpq\", \"dataStoragePercentage\": 80, \"databaseEdition\":
+      \"ENTERPRISE_EDITION_EXTREME_PERFORMANCE\", \"lastPatchHistoryEntryId\": null,
+      \"listenerPort\": 1521, \"lifecycleState\": \"AVAILABLE\", \"timeCreated\":
+      \"2019-04-18T19:09:07.395000+00:00\", \"lifecycleDetails\": null, \"diskRedundancy\":
+      \"HIGH\", \"sparseDiskgroup\": false, \"scanIpIds\": null, \"vipIds\": null,
+      \"scanDnsRecordId\": null, \"dataStorageSizeInGbs\": null, \"recoStorageSizeInGb\":
+      null, \"nodeCount\": null, \"licenseModel\": \"LICENSE_INCLUDED\", \"freeformTags\":
+      {}, \"definedTags\": {}}, {\"id\": \"ocid1.dbsystem.oc1.phx.abyhqljtccdvyxao6jnccmp6xqvq4lc5n3lo3ywziords7mlxws35hzsessq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0326_6088\", \"availabilityDomain\": \"FjmN:PHX-AD-1\",
+      \"faultDomains\": [\"FAULT-DOMAIN-1\"], \"subnetId\": \"ocid1.subnet.oc1.phx.aaaaaaaayof6lvxchncylkfkzducdu7y5w5pwhbdo3yvqr4d4xfb2gpgjxcq\",
+      \"backupSubnetId\": null, \"shape\": \"VM.Standard2.1\", \"sshPublicKeys\":
+      [\"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDokoG4lDsCN/E9F7KsaVZmYYKZMdljJwxjwsoyFdTTQop0TH0lMSDiZeZ3w/8wsZ5esR5uiW/WS5RMBxrfy1/z12qHbOP8vTLCZ19X33UDS8yhEarDldmBbeQ5penrjHM54+lLBTKolGfXvszbUP8ohsN/If7nfn2caUNRiE9Ep9T+xIr/ElmSyq9qrBbUdg0ltz3yIbkmv7SwgxW+NZSD2mhmfYJJDWq5QpJqc3lcNSCU/0f1mQGm754qI7wJKGEhSEOJkBvS7YrfDRINtNABaKGIDUCijwp+dl7btRaxBDwiF/+zHrX43ZEypVcbgVnOcxtz3E/CgxRHZ1plfEpd
+      dhshshah@dhshshah-Mac\"], \"timeZone\": \"UTC\", \"hostname\": \"host0326221\",
+      \"domain\": \"sts03266928.sts03266928.oraclevcn.com\", \"version\": null, \"cpuCoreCount\":
+      1, \"clusterName\": null, \"dataStoragePercentage\": 80, \"databaseEdition\":
+      \"ENTERPRISE_EDITION_EXTREME_PERFORMANCE\", \"lastPatchHistoryEntryId\": null,
+      \"listenerPort\": 1521, \"lifecycleState\": \"AVAILABLE\", \"timeCreated\":
+      \"2019-04-18T10:34:13.760000+00:00\", \"lifecycleDetails\": null, \"diskRedundancy\":
+      \"HIGH\", \"sparseDiskgroup\": null, \"scanIpIds\": null, \"vipIds\": null,
+      \"scanDnsRecordId\": null, \"dataStorageSizeInGbs\": 256, \"recoStorageSizeInGb\":
+      256, \"nodeCount\": 1, \"licenseModel\": \"LICENSE_INCLUDED\", \"freeformTags\":
+      {}, \"definedTags\": {}}, {\"id\": \"ocid1.dbsystem.oc1.phx.abyhqljthafszeau5tr6ikrggac5weajsqm7xrxn2juqx7av6avv6fyyobdq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0919_3688\", \"availabilityDomain\": \"FjmN:PHX-AD-1\",
+      \"faultDomains\": [\"FAULT-DOMAIN-3\"], \"subnetId\": \"ocid1.subnet.oc1.phx.aaaaaaaabxr3nlqc3ls32l32a3cn6vughsofkctc2eoty3lrkwmcjcsfwbjq\",
+      \"backupSubnetId\": null, \"shape\": \"VM.Standard2.1\", \"sshPublicKeys\":
+      [\"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDokoG4lDsCN/E9F7KsaVZmYYKZMdljJwxjwsoyFdTTQop0TH0lMSDiZeZ3w/8wsZ5esR5uiW/WS5RMBxrfy1/z12qHbOP8vTLCZ19X33UDS8yhEarDldmBbeQ5penrjHM54+lLBTKolGfXvszbUP8ohsN/If7nfn2caUNRiE9Ep9T+xIr/ElmSyq9qrBbUdg0ltz3yIbkmv7SwgxW+NZSD2mhmfYJJDWq5QpJqc3lcNSCU/0f1mQGm754qI7wJKGEhSEOJkBvS7YrfDRINtNABaKGIDUCijwp+dl7btRaxBDwiF/+zHrX43ZEypVcbgVnOcxtz3E/CgxRHZ1plfEpd
+      dhshshah@dhshshah-Mac\"], \"timeZone\": \"UTC\", \"hostname\": \"host0919841\",
+      \"domain\": \"sts09192561.sts09192561.oraclevcn.com\", \"version\": null, \"cpuCoreCount\":
+      1, \"clusterName\": null, \"dataStoragePercentage\": 80, \"databaseEdition\":
+      \"ENTERPRISE_EDITION_EXTREME_PERFORMANCE\", \"lastPatchHistoryEntryId\": null,
+      \"listenerPort\": 1521, \"lifecycleState\": \"AVAILABLE\", \"timeCreated\":
+      \"2019-04-18T18:48:19.696000+00:00\", \"lifecycleDetails\": null, \"diskRedundancy\":
+      \"HIGH\", \"sparseDiskgroup\": null, \"scanIpIds\": null, \"vipIds\": null,
+      \"scanDnsRecordId\": null, \"dataStorageSizeInGbs\": 256, \"recoStorageSizeInGb\":
+      256, \"nodeCount\": 1, \"licenseModel\": \"LICENSE_INCLUDED\", \"freeformTags\":
+      {}, \"definedTags\": {}}, {\"id\": \"ocid1.dbsystem.oc1.phx.abyhqljtib34dru2t75gquxadpjrliy4qn6tvyz65ip7oknkdg2i6dr4rj4a\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"dg0919466\", \"availabilityDomain\": \"FjmN:PHX-AD-1\", \"faultDomains\":
+      [\"FAULT-DOMAIN-1\"], \"subnetId\": \"ocid1.subnet.oc1.phx.aaaaaaaabxr3nlqc3ls32l32a3cn6vughsofkctc2eoty3lrkwmcjcsfwbjq\",
+      \"backupSubnetId\": null, \"shape\": \"VM.Standard2.1\", \"sshPublicKeys\":
+      [\"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDokoG4lDsCN/E9F7KsaVZmYYKZMdljJwxjwsoyFdTTQop0TH0lMSDiZeZ3w/8wsZ5esR5uiW/WS5RMBxrfy1/z12qHbOP8vTLCZ19X33UDS8yhEarDldmBbeQ5penrjHM54+lLBTKolGfXvszbUP8ohsN/If7nfn2caUNRiE9Ep9T+xIr/ElmSyq9qrBbUdg0ltz3yIbkmv7SwgxW+NZSD2mhmfYJJDWq5QpJqc3lcNSCU/0f1mQGm754qI7wJKGEhSEOJkBvS7YrfDRINtNABaKGIDUCijwp+dl7btRaxBDwiF/+zHrX43ZEypVcbgVnOcxtz3E/CgxRHZ1plfEpd
+      dhshshah@dhshshah-Mac\"], \"timeZone\": \"UTC\", \"hostname\": \"host091973\",
+      \"domain\": \"sts09192561.sts09192561.oraclevcn.com\", \"version\": null, \"cpuCoreCount\":
+      1, \"clusterName\": null, \"dataStoragePercentage\": 80, \"databaseEdition\":
+      \"ENTERPRISE_EDITION_EXTREME_PERFORMANCE\", \"lastPatchHistoryEntryId\": null,
+      \"listenerPort\": 1521, \"lifecycleState\": \"AVAILABLE\", \"timeCreated\":
+      \"2019-04-18T19:01:48.970000+00:00\", \"lifecycleDetails\": null, \"diskRedundancy\":
+      \"HIGH\", \"sparseDiskgroup\": null, \"scanIpIds\": null, \"vipIds\": null,
+      \"scanDnsRecordId\": null, \"dataStorageSizeInGbs\": 256, \"recoStorageSizeInGb\":
+      256, \"nodeCount\": 1, \"licenseModel\": \"LICENSE_INCLUDED\", \"freeformTags\":
+      {}, \"definedTags\": {}}, {\"id\": \"ocid1.dbsystem.oc1.phx.abyhqljtj7uu3kmynpyrqlexaacbj4di46xitsgnsqvaf6hxvzfy4mh3sfca\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0326_2121\", \"availabilityDomain\": \"FjmN:PHX-AD-1\",
+      \"faultDomains\": [\"FAULT-DOMAIN-3\"], \"subnetId\": \"ocid1.subnet.oc1.phx.aaaaaaaayof6lvxchncylkfkzducdu7y5w5pwhbdo3yvqr4d4xfb2gpgjxcq\",
+      \"backupSubnetId\": null, \"shape\": \"VM.Standard2.1\", \"sshPublicKeys\":
+      [\"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDokoG4lDsCN/E9F7KsaVZmYYKZMdljJwxjwsoyFdTTQop0TH0lMSDiZeZ3w/8wsZ5esR5uiW/WS5RMBxrfy1/z12qHbOP8vTLCZ19X33UDS8yhEarDldmBbeQ5penrjHM54+lLBTKolGfXvszbUP8ohsN/If7nfn2caUNRiE9Ep9T+xIr/ElmSyq9qrBbUdg0ltz3yIbkmv7SwgxW+NZSD2mhmfYJJDWq5QpJqc3lcNSCU/0f1mQGm754qI7wJKGEhSEOJkBvS7YrfDRINtNABaKGIDUCijwp+dl7btRaxBDwiF/+zHrX43ZEypVcbgVnOcxtz3E/CgxRHZ1plfEpd
+      dhshshah@dhshshah-Mac\"], \"timeZone\": \"UTC\", \"hostname\": \"host0326552\",
+      \"domain\": \"sts03266928.sts03266928.oraclevcn.com\", \"version\": null, \"cpuCoreCount\":
+      1, \"clusterName\": null, \"dataStoragePercentage\": 80, \"databaseEdition\":
+      \"ENTERPRISE_EDITION_EXTREME_PERFORMANCE\", \"lastPatchHistoryEntryId\": null,
+      \"listenerPort\": 1521, \"lifecycleState\": \"AVAILABLE\", \"timeCreated\":
+      \"2019-04-18T08:37:57.390000+00:00\", \"lifecycleDetails\": null, \"diskRedundancy\":
+      \"HIGH\", \"sparseDiskgroup\": null, \"scanIpIds\": null, \"vipIds\": null,
+      \"scanDnsRecordId\": null, \"dataStorageSizeInGbs\": 256, \"recoStorageSizeInGb\":
+      256, \"nodeCount\": 1, \"licenseModel\": \"LICENSE_INCLUDED\", \"freeformTags\":
+      {}, \"definedTags\": {}}, {\"id\": \"ocid1.dbsystem.oc1.phx.abyhqljtkmvdfvxxhj6g5jhabnp7o22pvoqeimgisx4m6r27hkcrs6wvyedq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"dg0326357\", \"availabilityDomain\": \"FjmN:PHX-AD-1\", \"faultDomains\":
+      [\"FAULT-DOMAIN-1\"], \"subnetId\": \"ocid1.subnet.oc1.phx.aaaaaaaayof6lvxchncylkfkzducdu7y5w5pwhbdo3yvqr4d4xfb2gpgjxcq\",
+      \"backupSubnetId\": null, \"shape\": \"VM.Standard2.1\", \"sshPublicKeys\":
+      [\"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDokoG4lDsCN/E9F7KsaVZmYYKZMdljJwxjwsoyFdTTQop0TH0lMSDiZeZ3w/8wsZ5esR5uiW/WS5RMBxrfy1/z12qHbOP8vTLCZ19X33UDS8yhEarDldmBbeQ5penrjHM54+lLBTKolGfXvszbUP8ohsN/If7nfn2caUNRiE9Ep9T+xIr/ElmSyq9qrBbUdg0ltz3yIbkmv7SwgxW+NZSD2mhmfYJJDWq5QpJqc3lcNSCU/0f1mQGm754qI7wJKGEhSEOJkBvS7YrfDRINtNABaKGIDUCijwp+dl7btRaxBDwiF/+zHrX43ZEypVcbgVnOcxtz3E/CgxRHZ1plfEpd
+      dhshshah@dhshshah-Mac\"], \"timeZone\": \"UTC\", \"hostname\": \"host0326562\",
+      \"domain\": \"sts03266928.sts03266928.oraclevcn.com\", \"version\": null, \"cpuCoreCount\":
+      1, \"clusterName\": null, \"dataStoragePercentage\": 80, \"databaseEdition\":
+      \"ENTERPRISE_EDITION_EXTREME_PERFORMANCE\", \"lastPatchHistoryEntryId\": null,
+      \"listenerPort\": 1521, \"lifecycleState\": \"AVAILABLE\", \"timeCreated\":
+      \"2019-04-18T08:38:33.458000+00:00\", \"lifecycleDetails\": null, \"diskRedundancy\":
+      \"HIGH\", \"sparseDiskgroup\": null, \"scanIpIds\": null, \"vipIds\": null,
+      \"scanDnsRecordId\": null, \"dataStorageSizeInGbs\": 256, \"recoStorageSizeInGb\":
+      256, \"nodeCount\": 1, \"licenseModel\": \"LICENSE_INCLUDED\", \"freeformTags\":
+      {}, \"definedTags\": {}}], \"opcRequestId\": \"5D7BA882FC6A45DDB08728ABC1A6AB77\",
+      \"opcNextPage\": \"ABYHQLJTAAAAIBCBIFAUCQKBIFAUCQKKNRSVK4DZLFLGIUTBKU4XAU2YOBHVMRJROBKEKTSLMJDUU5CUK5WFAYKVOBBVIV3QKZGWYSLXKRVTKSTBLBSHAV2WMQ2GE23MOFRDE3DBKIZHQNKTK42HOTDJGQYGGMKKKVLFOWSWKREFS52SIZSFUUSEKJHUY22KGZIVKODUKVVU4T3CGBYGQVDMNRKFERTLGNRGUTTZLEYGIU2NIRJDET2EIJ5GIV3INVGVKWSRMQYEUUCRLBFEWVKUKJ2FMSCCONLDETL2KZDVE32WKVLHCTJSOR5GCM2BPFHHUSTNMEYFEYKZGFGXQTLMKZVGIMKCGRIVKWJVKMYWW6SVLBUDITLONRWVU3JROBQVISTOKFKVSNDFI4YWYYRQORUGE6SSOVSGW5DTKMZHA4DCIRLGWYKVIZLVI6SOJRKUQRJUKRDVESDDGNHHATSFGQ2GCWCCOBJDEZCKJVDFMMKWKRWE2URTOBGFUMDUIJGVOTTILIYWQ42ZGNNDAZKGLIZU2MTLORSHUQTXKVWGIRDBKVUE2VSXIZYGK3BZKVMW4ZCXKYYHOMKZKZUEWVCUNRCVCMKWOBGFKRT2JRLU25CPI52FKYKXNQZVKM3IOFKHUQSRMNCUUU2WNNETEVTNGUYGG2SGNBQWWODZJVKU4WCVNJNG4YLNKJBVCV22JBMWUQSKMEYUMVSRKVNEKVBQPBVVC2SWOFLUM4DWJ5CXAZSNPJSEEY3LKF3WCMSKK5RTGWSMKJVWQRKNNRLHGY2YJZ4U4WCOIRJUK6CSKJVUUTSUGNHFEU2YKJKFE3CNGBJTGTSHKNXGG6CPKZAXSTSENRCVCVLUNBKTE3DXKRCGISTFNRFGMY2YIZMGCWDENNREIZ3ZMVVXAMSRK5KTKZKVOBHVK3SSOZGXUVTUMNDVM2TDGA4DAU2XGR3U2MSFPFJVOZCEKEYTS6DBLBNEYZCWNR4FSVZRGNKEI3CEMVLVC6KZGJNEUYJQGFIWCMDPGVJVOWTMLEZVMRCVK52GCUKVJY2E4RDIJFLGYTTBMJDEMTC2NJNFEVBQHFLFEV3UGVSWUZZSMRLTQ6CZLBUEGTLLPB4U2RCKMZKWWUSCKFLWYTTEGFEXITKYJV2E6RRZPBQUQZDNKNLWYTSTLBYEGTTMMRJVERZZJFLVMOBRKNLEMUTBNRUFSTKGMR3VIR2GN5GTA6CYKZXHAMSTJBFEIT2ILJCWIMKGNBJTGRTIJZWE42KZGFNFET2FPB3E6RCNGFHEOZZUMIYTSRSVNEYVSVT2KJYFC2ZRJBGUKVTRJV5GQ6STNJLDIYTKLJ3VOWDMNRSGYTRQKJKUMRS2GFHHKWBQJUYVG3LIJFSDANKQK5MG6MKTPJNGUVCUJY3E4RSVPJJVQZCGKVDFM5TFKVJFIWKVIZ3VUMCOJJHGY3CJMFCTC3LENNFFQYJQOBWVC3SCNBRVOUTJKNKTI6TEKU2VUUTLMN4VGMLEKBNG2Y3UJRLVU5SUJBYHMVSWMR5FI3CJPFIVKWSMK5LVUVCUJBWFEVDLLJCFMMS2O5GW2ZDVMIYHIRSMKZFEQV2VIZYVSMJZGFJWUULVKNDXIMKRKVSHAUJTKEYVEM22OZNEOUSVKVKXQ32UIZWHEUKRHU6Q\"},
+      {\"items\": [{\"id\": \"ocid1.dbsystem.oc1.phx.abyhqljtutlbcwbubtsagug2vyrignys2vd2hyhcv3eq7kygmepiur4hzqjq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"displayName\": \"__STS0919_9891\", \"availabilityDomain\": \"FjmN:PHX-AD-1\",
+      \"faultDomains\": [\"FAULT-DOMAIN-2\"], \"subnetId\": \"ocid1.subnet.oc1.phx.aaaaaaaabxr3nlqc3ls32l32a3cn6vughsofkctc2eoty3lrkwmcjcsfwbjq\",
+      \"backupSubnetId\": null, \"shape\": \"VM.Standard2.1\", \"sshPublicKeys\":
+      [\"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDokoG4lDsCN/E9F7KsaVZmYYKZMdljJwxjwsoyFdTTQop0TH0lMSDiZeZ3w/8wsZ5esR5uiW/WS5RMBxrfy1/z12qHbOP8vTLCZ19X33UDS8yhEarDldmBbeQ5penrjHM54+lLBTKolGfXvszbUP8ohsN/If7nfn2caUNRiE9Ep9T+xIr/ElmSyq9qrBbUdg0ltz3yIbkmv7SwgxW+NZSD2mhmfYJJDWq5QpJqc3lcNSCU/0f1mQGm754qI7wJKGEhSEOJkBvS7YrfDRINtNABaKGIDUCijwp+dl7btRaxBDwiF/+zHrX43ZEypVcbgVnOcxtz3E/CgxRHZ1plfEpd
+      dhshshah@dhshshah-Mac\"], \"timeZone\": \"UTC\", \"hostname\": \"host0919796\",
+      \"domain\": \"sts09192561.sts09192561.oraclevcn.com\", \"version\": null, \"cpuCoreCount\":
+      1, \"clusterName\": null, \"dataStoragePercentage\": 80, \"databaseEdition\":
+      \"ENTERPRISE_EDITION_EXTREME_PERFORMANCE\", \"lastPatchHistoryEntryId\": null,
+      \"listenerPort\": 1521, \"lifecycleState\": \"AVAILABLE\", \"timeCreated\":
+      \"2019-04-18T18:49:25.227000+00:00\", \"lifecycleDetails\": null, \"diskRedundancy\":
+      \"HIGH\", \"sparseDiskgroup\": null, \"scanIpIds\": null, \"vipIds\": null,
+      \"scanDnsRecordId\": null, \"dataStorageSizeInGbs\": 256, \"recoStorageSizeInGb\":
+      256, \"nodeCount\": 1, \"licenseModel\": \"LICENSE_INCLUDED\", \"freeformTags\":
+      {}, \"definedTags\": {}}], \"opcRequestId\": \"FDE07897233740C3BF9204A1AD6F1B23\",
+      \"opcNextPage\": null}]", "responseClass": "com.oracle.bmc.database.responses.ListDbSystemsResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['17157']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0919&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 19:11:04 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
 version: 1

@@ -555,4 +555,564 @@ interactions:
       Date: ['Mon, 01 Apr 2019 23:36:27 GMT']
       Server: [Jetty(9.4.7.v20170914)]
     status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=containerengine&apiName=ListClusters
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:55:00 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?serviceName=containerengine&apiName=ListClusters&lang=Python&clientName=containerEngine
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq","endpoint":null,"fingerprint":"ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9","passPhrase":"dexsdk","keyFile":"java_sdk_admin_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,0C9B64A4AA0303EC02C79E91D0F8B0D0\n\naSd0uIKreq5NirzJ+Esa36lYJo4lU2zSjIIw8wvZEsd+LdaifqONZIfHHiB6/KgG\nse4wd/58tPsiEgnK7D1q8wmdVDouMSX31mhcbq2bwRjXATpNnOMnhDtahJv6cw4M\nDtlXYplk0LzpP6WjqXqFST4Yz0l1NO90ahnruwcb/SUCm12ONMJ5o4G1UO2/0IkX\nTRlMRpm/etIpStNSP+1IsD1gSWlAzhs1zodkpd+2eW2ovlAaY25Hm/aqK97jzsCF\n1f4dCm7spCHYOfv10XHNB99/jomN1KQuDy29MmVaJ9oYpOIDlu0yj4Q/XempLxa6\nhqgt0gUO9cMV2bfStsHKWJwq+KoncamBHpU/+CyNjoYq1QTC0urWlCP5hNo5VZhF\nzXBJa188FD2TiPFU8Z4EhercM83TfBsRVEQOpu5sbMaUOT6xXwnCWfM5Pjxy/0xE\n6oF2zq+H0ES12dh19C5P8ueRFLyhaWFliWJv3SXy9iCslcso6USnBBKnA26xMile\nY3m9uRP31yZW8czxYSIgKEV3Mp3GFAYwuebNjLgIM7xT+PvDiOO4qAhA0waGPhYH\n2QMl9ThSahKT6vpjVUQuGOjaRcJ5Vr73VGX4MnxXVxsl5de6y/ZfP5ndx5Lb4K43\njwrMbCIzrM1ZzR2JMTuMJFDasLjEW/Y9nf7FRh2gByeGLObAmHsjlUdW65QQu+Qy\nu4ADc6TbpqvLobocF5fKgML7JCAA/YqmYlZCV6gGOdKUXUT3VMmZcebcTtw1Zmxh\nwaUQe99D90w3Q/7CCCiGO2waZaTNl+ahVnQZEGHN9xJydkCkfVZDgVmdDmsSXmxo\n2DWf2c2/1me2zZAcW0SFBnyrt3uphdCnICaqXR0AnQUmw49YY4nk2fPTMxZs1r+2\n+poVVEfr//cHTTs4yu9ZVT2wGWf/Ooo4sm7obB8EhGkrXs3ormx9WHj6ezexupsd\nanWE7Uy54ovKdOosKB6nQOfP+Iwe4sSJ6oYPNvvh19v05+AhOCdONjMeCwTfBvtJ\nA5luj6CtFbgSX96A3zTRrTXQO3N4aLTF8niL+FcZ69RzYcxp3rlDSK88JyJ9xsu1\n+lNIcAPAFhzisC/eB9b1eDJ4JErJyIdBTZ4bPv4dtl/RpFcyIA4WMjskGCRo60I7\nN3DVqGGXLlC7KDjvPmdvvfAx3lzcIANhwBhLSQJ+y1bcyW6FcX0ZtY962Hb06Qj5\nXG5nDmT1qVkfDmzpIOF9GtDgch7gtf/EjHOUyaw60dDgJ5RF6lORLjFeuU9W7I1e\nD3mpWb6WP6DKoaQTgrLLrIJCLIdXr92XmvDj+iuYdGhCIkqHWqNbRW4TyiuukNJH\n12Zq/LlA1s58YJVa520o7EOXpmD4sGIrctlI3keSmKhiavy7j5ULz5J++jL+Yxlc\n6h9q4v71oyFmVgNpIEJNg7sSCkE72yzUCaglBUdUIMG3D0sI+VwufC7lbhohvHBr\nNzmbg2bW4x0CCprf/o5JvdNiB+bQdKG4t2Q7fhhZIW7ACii591ZBbpnUakDUQBZa\nV2yMaErypILHlQvlReHXVK1adUTxLNWf//VDoyclQk5k0uFIkUmpn+EXWnEHw7e8\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2261']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:55:00 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=containerengine&apiName=ListClusters&lang=Python&sessionId=1007
+  response:
+    body: {string: '[{"containerId":"f276e3c9-3435-4862-90ca-ebbc430ed8ca","request":{"compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","limit":10}}]'}
+    headers:
+      Content-Length: ['181']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:55:00 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="w1UjJomT8sT0mA/TtNY6QLwwitONBCj8msCtSKvC+TGoOUJXUJUZwRkqAIu6jvAiaOGDKFqcL9eJeu7t0FqKszu6O97QzwiNrNBjMuATZi2gr49b4tRreSVfLF2KCoe4mrkcMVtxTxuNVE/0fnDgaN6qc39QQ3WrUJGEqTjxPEEn5pqgZd9jkBYsz9tu91Wb8W9IfH75VwPIpzltsYkhDCSYZ7h8W++dzbLDnlAxodt0xafC2btyW4Io0s8N0z8bU0/IkmZv69gV1xKyodwtZsiwc8TCy0/KDjCHt6g5SGAB6QE14Emy+5NqibZUAibcHDbZXjCsxQyH8tYzSXm+gA==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 18:55:01 GMT']
+      host: [containerengine.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [8ACE1F4BA2B3417FBD59E0461BA62B26]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://containerengine.us-phoenix-1.oraclecloud.com/20180222/clusters?compartmentId=ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba&limit=10
+  response:
+    body:
+      string: !!binary |
+        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
+        I1jSB0EAAA==
+    headers:
+      Access-Control-Allow-Methods: ['DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT']
+      Access-Control-Allow-Origin: ['*']
+      Access-Control-Expose-Headers: ['opc-work-request-id, opc-retry-token, opc-request-id']
+      Content-Encoding: [gzip]
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:55:01 GMT']
+      Opc-Next-Page: ['1']
+      Opc-Request-Id: [8ACE1F4BA2B3417FBD59E0461BA62B26/A24EDE68E5E84172A5A1EFB634245726/39DAC80E41794E9AB8982DE934E3429C]
+      Transfer-Encoding: [chunked]
+      Uri: [/20180222/clusters]
+      Vary: [Accept-Encoding]
+      X-Rate-Limit-Duration: ['1']
+      X-Rate-Limit-Limit: ['16.70']
+      X-Rate-Limit-Request-Forwarded-For: ['10.0.88.8, 10.237.1.100']
+      X-Rate-Limit-Request-Remote-Addr: ['10.237.1.100:47289']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="RLU3U0DIExCK/Vfv03BNDSc9PZsGYluY7k15GRXigSbcBMFRi69iLMraYdORiqaMtY0je1ICUQJ/1kTotKNBYhzfeOEAgXjNjNj63uE0NDUrmPeSjbJZS5p3ARXGtlhOfzk8vT4Ui4gIVvLJd4VV1G4j47NuXTU4O3rRUYvG169M2rC7thvOijickgyMIwDydzOfxRqM+7uVPl0/6TC2sGE6YqqlDHJDou6TGvdJtXSEbSWe9zmTNj1eSZteXtFJ/ODKxnvwYjsvEc1qjIyIdtJVsGtbLQQ691bOY36aL7RmWez67Axw4AlgDFZ1pn6bGHCiXpD/J+KwfzWgP9zhug==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 18:55:01 GMT']
+      host: [containerengine.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [60C2BD35EB90473EB6C8E0ED1F8E3FE7]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://containerengine.us-phoenix-1.oraclecloud.com/20180222/clusters?compartmentId=ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba&limit=10&page=1
+  response:
+    body:
+      string: !!binary |
+        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
+        AAA=
+    headers:
+      Access-Control-Allow-Methods: ['DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT']
+      Access-Control-Allow-Origin: ['*']
+      Access-Control-Expose-Headers: ['opc-work-request-id, opc-retry-token, opc-request-id']
+      Content-Encoding: [gzip]
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:55:02 GMT']
+      Opc-Next-Page: ['2']
+      Opc-Request-Id: [60C2BD35EB90473EB6C8E0ED1F8E3FE7/B9EBA9CCDE784D658981DE8F169B43C5/E5A789CAEB2349F78C3D0B1DA0011DC8]
+      Transfer-Encoding: [chunked]
+      Uri: [/20180222/clusters]
+      Vary: [Accept-Encoding]
+      X-Rate-Limit-Duration: ['1']
+      X-Rate-Limit-Limit: ['16.70']
+      X-Rate-Limit-Request-Forwarded-For: ['10.0.88.8, 10.237.1.100']
+      X-Rate-Limit-Request-Remote-Addr: ['10.237.1.100:39540']
+    status: {code: 200, message: OK}
+- request:
+    body: '{"containerId": "f276e3c9-3435-4862-90ca-ebbc430ed8ca", "listResponse":
+      true, "requestClass": "com.oracle.bmc.containerengine.requests.ListClustersRequest",
+      "requestJson": "{\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"limit\": 10}", "responseJson": "[{\"items\": [{\"id\": \"ocid1.cluster.oc1.phx.aaaaaaaaafstqy3cgeytcntbgiygcobsmrrtqy3emm4timdfgc4dkmbtmrst\",
+      \"name\": \"__STS0508_2499\", \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"vcnId\": \"ocid1.vcn.oc1.phx.aaaaaaaaw6kjkxqz7pu5eat5damursum3gv3teh6rwxn2cc2p2j4mxu6uvlq\",
+      \"kubernetesVersion\": \"v1.10.11\", \"options\": {\"serviceLbSubnetIds\": [\"ocid1.subnet.oc1.phx.aaaaaaaafxl7pik2lcvalmfreufvknj4khp2xdorx7zer3gwlxyjxrskswgq\",
+      \"ocid1.subnet.oc1.phx.aaaaaaaajt6dkb3io3zc5gvticfctuukv3yfc3cl2vzyrwbunse6utayowiq\"],
+      \"kubernetesNetworkConfig\": {\"podsCidr\": \"10.96.0.0/16\", \"servicesCidr\":
+      \"10.244.0.0/16\"}, \"addOns\": {\"isKubernetesDashboardEnabled\": true, \"isTillerEnabled\":
+      true}}, \"metadata\": {\"timeCreated\": \"2019-04-12T08:46:35+00:00\", \"createdByUserId\":
+      \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"createdByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaaftdcyzumy3tmmztgaywmojwgm4gkzlcmyytoojqgw2day3dmvrd\",
+      \"timeDeleted\": \"2019-04-17T22:13:09+00:00\", \"deletedByUserId\": \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"deletedByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaaeygcolfmmzdomjymzqtanzzmnsgiyrsheywcmrqgw3tam3eme3d\",
+      \"timeUpdated\": null, \"updatedByUserId\": null, \"updatedByWorkRequestId\":
+      null}, \"lifecycleState\": \"DELETED\", \"lifecycleDetails\": \"\", \"endpoints\":
+      {\"kubernetes\": \"c4dkmbtmrst.us-phoenix-1.clusters.oci.oraclecloud.com:6443\"},
+      \"availableKubernetesUpgrades\": [\"v1.11.9\", \"v1.12.7\"]}, {\"id\": \"ocid1.cluster.oc1.phx.aaaaaaaaafrgmy3bmu2wgmrrgrrwkmtdgi4dqmlfmfrdenjrmc4gknrzgu4d\",
+      \"name\": \"__STS0243_6720\", \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"vcnId\": \"ocid1.vcn.oc1.phx.aaaaaaaamqtkit7o6y2vvfixbusn5prvkzcr3pxw6j7mr4ggcfbndsblbi7a\",
+      \"kubernetesVersion\": \"v1.10.11\", \"options\": {\"serviceLbSubnetIds\": [\"ocid1.subnet.oc1.phx.aaaaaaaa7q2xookj6l22gr557s3v43pzjl7ezcac6qrdvu5thzbyyowwz6zq\",
+      \"ocid1.subnet.oc1.phx.aaaaaaaa355wqgukhoe33ocubgvvauwf766y4uomwkvyn27ptr65xube2atq\"],
+      \"kubernetesNetworkConfig\": {\"podsCidr\": \"10.96.0.0/16\", \"servicesCidr\":
+      \"10.244.0.0/16\"}, \"addOns\": {\"isKubernetesDashboardEnabled\": true, \"isTillerEnabled\":
+      true}}, \"metadata\": {\"timeCreated\": \"2019-04-13T08:17:51+00:00\", \"createdByUserId\":
+      \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"createdByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaafqtsmbugq3giobzmiywmnjqgmzwgnbwgvqwmmtcgw2wiylcgizt\",
+      \"timeDeleted\": \"2019-04-15T21:51:46+00:00\", \"deletedByUserId\": \"ocid1.user.oc1..aaaaaaaapcpmfyitxvyungcqg5e4ndqw5ncdtpzqqkt3jpsc7gfh6ilgb65q\",
+      \"deletedByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaafrwkyjzgi3gkodbhfrdgmdfmm3dkndcgaytenrrgwqtamddgjst\",
+      \"timeUpdated\": null, \"updatedByUserId\": null, \"updatedByWorkRequestId\":
+      null}, \"lifecycleState\": \"DELETED\", \"lifecycleDetails\": \"\", \"endpoints\":
+      {\"kubernetes\": \"\"}, \"availableKubernetesUpgrades\": [\"v1.11.9\", \"v1.12.7\"]},
+      {\"id\": \"ocid1.cluster.oc1.phx.aaaaaaaaafstimjxgjstqztbmyydsyjrge2ggmzrhfrtsolfgcydcmlfguyg\",
+      \"name\": \"__STS0243_697\", \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"vcnId\": \"ocid1.vcn.oc1.phx.aaaaaaaaopoajk5aluvq73eqfnue2zwy7g34n322qfcwblqushdksjpcs5hq\",
+      \"kubernetesVersion\": \"v1.10.11\", \"options\": {\"serviceLbSubnetIds\": [\"ocid1.subnet.oc1.phx.aaaaaaaa3imxi4fz2eo64ce7hjj66plxkcqoacwrq33eaq4j6fjvske7zpza\",
+      \"ocid1.subnet.oc1.phx.aaaaaaaahd4jyyxiqcnp3clohmwcejeadfo7bulmnnop2zlgq3cnriodywoq\"],
+      \"kubernetesNetworkConfig\": {\"podsCidr\": \"10.96.0.0/16\", \"servicesCidr\":
+      \"10.244.0.0/16\"}, \"addOns\": {\"isKubernetesDashboardEnabled\": true, \"isTillerEnabled\":
+      true}}, \"metadata\": {\"timeCreated\": \"2019-04-13T08:27:15+00:00\", \"createdByUserId\":
+      \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"createdByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaaeytentbge2dcolbha4demtemjstinzuhazgmnlegwygcnzvmjtd\",
+      \"timeDeleted\": \"2019-04-15T21:51:53+00:00\", \"deletedByUserId\": \"ocid1.user.oc1..aaaaaaaapcpmfyitxvyungcqg5e4ndqw5ncdtpzqqkt3jpsc7gfh6ilgb65q\",
+      \"deletedByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaafrweyzrmvtdkyzrhazdmntggrqtimlemzrdsolcgwygmntfga2g\",
+      \"timeUpdated\": null, \"updatedByUserId\": null, \"updatedByWorkRequestId\":
+      null}, \"lifecycleState\": \"DELETED\", \"lifecycleDetails\": \"\", \"endpoints\":
+      {\"kubernetes\": \"\"}, \"availableKubernetesUpgrades\": [\"v1.11.9\", \"v1.12.7\"]},
+      {\"id\": \"ocid1.cluster.oc1.phx.aaaaaaaaaftdcodcmu4gcndchfsdcnbrgjqwmojsgvtggzlbmcrdszlbha2t\",
+      \"name\": \"__STS0243_2669\", \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"vcnId\": \"ocid1.vcn.oc1.phx.aaaaaaaanv6is56wt2o3lxu76flhagrju6psr24qtfjpndyiq75ppdycygva\",
+      \"kubernetesVersion\": \"v1.10.11\", \"options\": {\"serviceLbSubnetIds\": [\"ocid1.subnet.oc1.phx.aaaaaaaacq27c3gc3os7uvwnhm4wpzojtqt456ygbgnvsnnzw66bxvujaqpa\",
+      \"ocid1.subnet.oc1.phx.aaaaaaaah6j2hwqucod5fsydeani4oqmsp63oszxgcupep3p4uuaslmaxjja\"],
+      \"kubernetesNetworkConfig\": {\"podsCidr\": \"10.96.0.0/16\", \"servicesCidr\":
+      \"10.244.0.0/16\"}, \"addOns\": {\"isKubernetesDashboardEnabled\": true, \"isTillerEnabled\":
+      true}}, \"metadata\": {\"timeCreated\": \"2019-04-13T08:32:52+00:00\", \"createdByUserId\":
+      \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"createdByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaae2ggzrrmi2gmmlbgnqtozlbhaywmylfgizdgmzvmw2dsnlfhe3w\",
+      \"timeDeleted\": \"2019-04-15T21:51:50+00:00\", \"deletedByUserId\": \"ocid1.user.oc1..aaaaaaaapcpmfyitxvyungcqg5e4ndqw5ncdtpzqqkt3jpsc7gfh6ilgb65q\",
+      \"deletedByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaae4tantemy4wizjzgiydmnzumfswgy3dg5qtmolcgwsdeodgg4zw\",
+      \"timeUpdated\": null, \"updatedByUserId\": null, \"updatedByWorkRequestId\":
+      null}, \"lifecycleState\": \"DELETED\", \"lifecycleDetails\": \"\", \"endpoints\":
+      {\"kubernetes\": \"\"}, \"availableKubernetesUpgrades\": [\"v1.11.9\", \"v1.12.7\"]},
+      {\"id\": \"ocid1.cluster.oc1.phx.aaaaaaaaaeztenzxgi4doyjqgrqwgojygqzwgztghbsgemrumc2wiyzsmezt\",
+      \"name\": \"__STS0243_1274\", \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"vcnId\": \"ocid1.vcn.oc1.phx.aaaaaaaa4mary5xcoubz64guelkl5voupeb7drade6cx3i2yca5hkelwdtoq\",
+      \"kubernetesVersion\": \"v1.10.11\", \"options\": {\"serviceLbSubnetIds\": [\"ocid1.subnet.oc1.phx.aaaaaaaatfunwjkemnrsilk7w57weiqlp6flsth2ov3ovsu3n5xvpxrepvqa\",
+      \"ocid1.subnet.oc1.phx.aaaaaaaa6q3zrrkpf7lhljbcfprkvabbr32ghlrxucqlcrqvbmh6a5rssaja\"],
+      \"kubernetesNetworkConfig\": {\"podsCidr\": \"10.96.0.0/16\", \"servicesCidr\":
+      \"10.244.0.0/16\"}, \"addOns\": {\"isKubernetesDashboardEnabled\": true, \"isTillerEnabled\":
+      true}}, \"metadata\": {\"timeCreated\": \"2019-04-13T08:52:50+00:00\", \"createdByUserId\":
+      \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"createdByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaafsgeodcgaydqodbmy2winrrgjtdsnrygq4gcnjvgwztgnlfga2w\",
+      \"timeDeleted\": \"2019-04-15T21:51:56+00:00\", \"deletedByUserId\": \"ocid1.user.oc1..aaaaaaaapcpmfyitxvyungcqg5e4ndqw5ncdtpzqqkt3jpsc7gfh6ilgb65q\",
+      \"deletedByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaaeztkolgg5qteodegrqwcmzymmywinrxmuyggntbmw4tqmjzgrrd\",
+      \"timeUpdated\": null, \"updatedByUserId\": null, \"updatedByWorkRequestId\":
+      null}, \"lifecycleState\": \"DELETED\", \"lifecycleDetails\": \"\", \"endpoints\":
+      {\"kubernetes\": \"\"}, \"availableKubernetesUpgrades\": [\"v1.11.9\", \"v1.12.7\"]},
+      {\"id\": \"ocid1.cluster.oc1.phx.aaaaaaaaaezdmztfmiywezlcmezgkzrqha2tgm3egyywmyjtgczdizbzguzw\",
+      \"name\": \"__STS0214_3605\", \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"vcnId\": \"ocid1.vcn.oc1.phx.aaaaaaaa732ndataxq2osvuiitblyimw53n36o7lr55bnft6tzvj7t25pxxq\",
+      \"kubernetesVersion\": \"v1.10.11\", \"options\": {\"serviceLbSubnetIds\": [\"ocid1.subnet.oc1.phx.aaaaaaaamrg3vzg365oa3bsngkxkmzapdz4x7d4jn2lllvnip5rxmrhp6haa\",
+      \"ocid1.subnet.oc1.phx.aaaaaaaaubtfzvqxtwctombnew7u6wgo6x7apiwfehas4gemdhlzv2dqgmva\"],
+      \"kubernetesNetworkConfig\": {\"podsCidr\": \"10.96.0.0/16\", \"servicesCidr\":
+      \"10.244.0.0/16\"}, \"addOns\": {\"isKubernetesDashboardEnabled\": true, \"isTillerEnabled\":
+      true}}, \"metadata\": {\"timeCreated\": \"2019-04-16T02:21:36+00:00\", \"createdByUserId\":
+      \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"createdByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaae2wgmdcgq3wcy3egfsgkntgmvrgmnbqmi2dinjrgwywgyjvha3d\",
+      \"timeDeleted\": \"2019-04-16T02:29:23+00:00\", \"deletedByUserId\": \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"deletedByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaaeywgmbqg5tdqzdemmytcyrxgbswenzwg4ywenbumw2tgnbugm2g\",
+      \"timeUpdated\": null, \"updatedByUserId\": null, \"updatedByWorkRequestId\":
+      null}, \"lifecycleState\": \"DELETED\", \"lifecycleDetails\": \"\", \"endpoints\":
+      {\"kubernetes\": \"czdizbzguzw.us-phoenix-1.clusters.oci.oraclecloud.com:6443\"},
+      \"availableKubernetesUpgrades\": [\"v1.11.9\", \"v1.12.7\"]}, {\"id\": \"ocid1.cluster.oc1.phx.aaaaaaaaae2tczbwg5rtayrtha2tinbugiztcobummzdkzrxgcqtomrugu4t\",
+      \"name\": \"__STS0214_8952\", \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"vcnId\": \"ocid1.vcn.oc1.phx.aaaaaaaah6z34whylfjawsho7vectomwv5lrigblcjfqkifizcsj4t367rzq\",
+      \"kubernetesVersion\": \"v1.10.11\", \"options\": {\"serviceLbSubnetIds\": [\"ocid1.subnet.oc1.phx.aaaaaaaaephtrfkq5unl7yujse3kewi4f7siaxm5theuetj5q27ul7gqezbq\",
+      \"ocid1.subnet.oc1.phx.aaaaaaaak5gdul6mffvsunatgapm6wndicl6bnvmlx2ovzf2fpaw34wjvcmq\"],
+      \"kubernetesNetworkConfig\": {\"podsCidr\": \"10.96.0.0/16\", \"servicesCidr\":
+      \"10.244.0.0/16\"}, \"addOns\": {\"isKubernetesDashboardEnabled\": true, \"isTillerEnabled\":
+      true}}, \"metadata\": {\"timeCreated\": \"2019-04-16T02:31:34+00:00\", \"createdByUserId\":
+      \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"createdByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaafqtszjvgzrgkmrvgbqtaylbga2danzrgeygiyjzgw4dknbrge4d\",
+      \"timeDeleted\": \"2019-04-17T22:16:44+00:00\", \"deletedByUserId\": \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"deletedByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaafswmyjshazwgojxmqydsmzxmiywcodggq3teojzgwztmmtfhfrg\",
+      \"timeUpdated\": null, \"updatedByUserId\": null, \"updatedByWorkRequestId\":
+      null}, \"lifecycleState\": \"DELETED\", \"lifecycleDetails\": \"\", \"endpoints\":
+      {\"kubernetes\": \"cqtomrugu4t.us-phoenix-1.clusters.oci.oraclecloud.com:6443\"},
+      \"availableKubernetesUpgrades\": [\"v1.11.9\", \"v1.12.7\"]}, {\"id\": \"ocid1.cluster.oc1.phx.aaaaaaaaaeydgnzvhbrdqztegqydkntfgy2dqytfhe3winzrgcytszrsgm2d\",
+      \"name\": \"__STS0221_1896\", \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"vcnId\": \"ocid1.vcn.oc1.phx.aaaaaaaaeud7am5vdskizzjbdqg54uhp65iv3oulzhpsyy4aw5ntoun64p2q\",
+      \"kubernetesVersion\": \"v1.10.11\", \"options\": {\"serviceLbSubnetIds\": [\"ocid1.subnet.oc1.phx.aaaaaaaavggyled64na3ejdsrbdinrhfkw6swioqi64xsh4t3fducgb6dwla\",
+      \"ocid1.subnet.oc1.phx.aaaaaaaayqc6ebsswwxevh4v53j52khh4kg67t6warzqwa3jvy3lw6q4e57q\"],
+      \"kubernetesNetworkConfig\": {\"podsCidr\": \"10.96.0.0/16\", \"servicesCidr\":
+      \"10.244.0.0/16\"}, \"addOns\": {\"isKubernetesDashboardEnabled\": true, \"isTillerEnabled\":
+      true}}, \"metadata\": {\"timeCreated\": \"2019-04-16T08:08:06+00:00\", \"createdByUserId\":
+      \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"createdByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaafrtgytfmnrdky3bgvrtonjrgbstcnlghazdmmjzgwtdkzbsgezd\",
+      \"timeDeleted\": \"2019-04-16T08:15:51+00:00\", \"deletedByUserId\": \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"deletedByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaae4tszjvmy2tayrsgyydcmbwmm4ginzwhbrgiobvgw3tazlfgm4w\",
+      \"timeUpdated\": null, \"updatedByUserId\": null, \"updatedByWorkRequestId\":
+      null}, \"lifecycleState\": \"DELETED\", \"lifecycleDetails\": \"\", \"endpoints\":
+      {\"kubernetes\": \"cytszrsgm2d.us-phoenix-1.clusters.oci.oraclecloud.com:6443\"},
+      \"availableKubernetesUpgrades\": [\"v1.11.9\", \"v1.12.7\"]}, {\"id\": \"ocid1.cluster.oc1.phx.aaaaaaaaae3tcmldmyygemjxmy3tcnrqhe3dsodcg43day3gmc2tenbzmi3t\",
+      \"name\": \"__STS0221_2050\", \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"vcnId\": \"ocid1.vcn.oc1.phx.aaaaaaaab2p6weiwgqfpmq6a3gdnoz6l2wgng324mwrvgmak63eq5sjkxvwa\",
+      \"kubernetesVersion\": \"v1.10.11\", \"options\": {\"serviceLbSubnetIds\": [\"ocid1.subnet.oc1.phx.aaaaaaaakxih25fcuv55xgjgklckmqkteu44kk36me42pvc4x4cpk5d36nza\",
+      \"ocid1.subnet.oc1.phx.aaaaaaaanu652gsheiyhk6gzcfbbepuabjbkkc5d25yksumtvjyh5oq5tcca\"],
+      \"kubernetesNetworkConfig\": {\"podsCidr\": \"10.96.0.0/16\", \"servicesCidr\":
+      \"10.244.0.0/16\"}, \"addOns\": {\"isKubernetesDashboardEnabled\": true, \"isTillerEnabled\":
+      true}}, \"metadata\": {\"timeCreated\": \"2019-04-16T08:18:34+00:00\", \"createdByUserId\":
+      \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"createdByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaae4dsnzxmvsdsnbumi2dcobrgiywmolcgmytcyrvgwsdkyjwgzrt\",
+      \"timeDeleted\": \"2019-04-16T10:01:45+00:00\", \"deletedByUserId\": \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"deletedByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaafrtezbymuygizddmi3teoldheztinjrmyzggodfmwrdanddg5tg\",
+      \"timeUpdated\": null, \"updatedByUserId\": null, \"updatedByWorkRequestId\":
+      null}, \"lifecycleState\": \"DELETED\", \"lifecycleDetails\": \"\", \"endpoints\":
+      {\"kubernetes\": \"c2tenbzmi3t.us-phoenix-1.clusters.oci.oraclecloud.com:6443\"},
+      \"availableKubernetesUpgrades\": [\"v1.11.9\", \"v1.12.7\"]}, {\"id\": \"ocid1.cluster.oc1.phx.aaaaaaaaae3tiolcgrqtknjqgyzdanjumeywcobwgy4denzrgc4dkndbmu4d\",
+      \"name\": \"__STS0665_7932\", \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"vcnId\": \"ocid1.vcn.oc1.phx.aaaaaaaahvwngffxfa35vm4itop3kgw6e57ky4qoy7ze5ylyoa5pthsqrwjq\",
+      \"kubernetesVersion\": \"v1.10.11\", \"options\": {\"serviceLbSubnetIds\": [\"ocid1.subnet.oc1.phx.aaaaaaaaqerao7uzi6kdnxsyypklpiurz73sksg2hjfqq7izdbbwkgw4w6da\",
+      \"ocid1.subnet.oc1.phx.aaaaaaaawbglxqj7vwqshgltsutvgd6hfecym5mgtgfz67pw3yjuwtfnftnq\"],
+      \"kubernetesNetworkConfig\": {\"podsCidr\": \"10.96.0.0/16\", \"servicesCidr\":
+      \"10.244.0.0/16\"}, \"addOns\": {\"isKubernetesDashboardEnabled\": true, \"isTillerEnabled\":
+      true}}, \"metadata\": {\"timeCreated\": \"2019-04-16T08:26:22+00:00\", \"createdByUserId\":
+      \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"createdByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaafswkyjymvrdcnbzmnrgenjzmrtgiolegiydmodggwydizbygjrd\",
+      \"timeDeleted\": \"2019-04-16T08:34:44+00:00\", \"deletedByUserId\": \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"deletedByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaae3dknjvme2tkm3bmu4wezjvge2dgnjugjrtsnrtgw4winlbmvst\",
+      \"timeUpdated\": null, \"updatedByUserId\": null, \"updatedByWorkRequestId\":
+      null}, \"lifecycleState\": \"DELETED\", \"lifecycleDetails\": \"\", \"endpoints\":
+      {\"kubernetes\": \"c4dkndbmu4d.us-phoenix-1.clusters.oci.oraclecloud.com:6443\"},
+      \"availableKubernetesUpgrades\": [\"v1.11.9\", \"v1.12.7\"]}], \"opcRequestId\":
+      \"9FD1C23EDE9E49D687C8427923B313E4\", \"opcNextPage\": \"1\"}, {\"items\": [{\"id\":
+      \"ocid1.cluster.oc1.phx.aaaaaaaaafrgmy3bmu2wgmrrgrrwkmtdgi4dqmlfmfrdenjrmc4gknrzgu4d\",
+      \"name\": \"__STS0243_6720\", \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"vcnId\": \"ocid1.vcn.oc1.phx.aaaaaaaamqtkit7o6y2vvfixbusn5prvkzcr3pxw6j7mr4ggcfbndsblbi7a\",
+      \"kubernetesVersion\": \"v1.10.11\", \"options\": {\"serviceLbSubnetIds\": [\"ocid1.subnet.oc1.phx.aaaaaaaa7q2xookj6l22gr557s3v43pzjl7ezcac6qrdvu5thzbyyowwz6zq\",
+      \"ocid1.subnet.oc1.phx.aaaaaaaa355wqgukhoe33ocubgvvauwf766y4uomwkvyn27ptr65xube2atq\"],
+      \"kubernetesNetworkConfig\": {\"podsCidr\": \"10.96.0.0/16\", \"servicesCidr\":
+      \"10.244.0.0/16\"}, \"addOns\": {\"isKubernetesDashboardEnabled\": true, \"isTillerEnabled\":
+      true}}, \"metadata\": {\"timeCreated\": \"2019-04-13T08:17:51+00:00\", \"createdByUserId\":
+      \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"createdByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaafqtsmbugq3giobzmiywmnjqgmzwgnbwgvqwmmtcgw2wiylcgizt\",
+      \"timeDeleted\": \"2019-04-15T21:51:46+00:00\", \"deletedByUserId\": \"ocid1.user.oc1..aaaaaaaapcpmfyitxvyungcqg5e4ndqw5ncdtpzqqkt3jpsc7gfh6ilgb65q\",
+      \"deletedByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaafrwkyjzgi3gkodbhfrdgmdfmm3dkndcgaytenrrgwqtamddgjst\",
+      \"timeUpdated\": null, \"updatedByUserId\": null, \"updatedByWorkRequestId\":
+      null}, \"lifecycleState\": \"DELETED\", \"lifecycleDetails\": \"\", \"endpoints\":
+      {\"kubernetes\": \"\"}, \"availableKubernetesUpgrades\": [\"v1.11.9\", \"v1.12.7\"]},
+      {\"id\": \"ocid1.cluster.oc1.phx.aaaaaaaaafstimjxgjstqztbmyydsyjrge2ggmzrhfrtsolfgcydcmlfguyg\",
+      \"name\": \"__STS0243_697\", \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"vcnId\": \"ocid1.vcn.oc1.phx.aaaaaaaaopoajk5aluvq73eqfnue2zwy7g34n322qfcwblqushdksjpcs5hq\",
+      \"kubernetesVersion\": \"v1.10.11\", \"options\": {\"serviceLbSubnetIds\": [\"ocid1.subnet.oc1.phx.aaaaaaaa3imxi4fz2eo64ce7hjj66plxkcqoacwrq33eaq4j6fjvske7zpza\",
+      \"ocid1.subnet.oc1.phx.aaaaaaaahd4jyyxiqcnp3clohmwcejeadfo7bulmnnop2zlgq3cnriodywoq\"],
+      \"kubernetesNetworkConfig\": {\"podsCidr\": \"10.96.0.0/16\", \"servicesCidr\":
+      \"10.244.0.0/16\"}, \"addOns\": {\"isKubernetesDashboardEnabled\": true, \"isTillerEnabled\":
+      true}}, \"metadata\": {\"timeCreated\": \"2019-04-13T08:27:15+00:00\", \"createdByUserId\":
+      \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"createdByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaaeytentbge2dcolbha4demtemjstinzuhazgmnlegwygcnzvmjtd\",
+      \"timeDeleted\": \"2019-04-15T21:51:53+00:00\", \"deletedByUserId\": \"ocid1.user.oc1..aaaaaaaapcpmfyitxvyungcqg5e4ndqw5ncdtpzqqkt3jpsc7gfh6ilgb65q\",
+      \"deletedByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaafrweyzrmvtdkyzrhazdmntggrqtimlemzrdsolcgwygmntfga2g\",
+      \"timeUpdated\": null, \"updatedByUserId\": null, \"updatedByWorkRequestId\":
+      null}, \"lifecycleState\": \"DELETED\", \"lifecycleDetails\": \"\", \"endpoints\":
+      {\"kubernetes\": \"\"}, \"availableKubernetesUpgrades\": [\"v1.11.9\", \"v1.12.7\"]},
+      {\"id\": \"ocid1.cluster.oc1.phx.aaaaaaaaaftdcodcmu4gcndchfsdcnbrgjqwmojsgvtggzlbmcrdszlbha2t\",
+      \"name\": \"__STS0243_2669\", \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"vcnId\": \"ocid1.vcn.oc1.phx.aaaaaaaanv6is56wt2o3lxu76flhagrju6psr24qtfjpndyiq75ppdycygva\",
+      \"kubernetesVersion\": \"v1.10.11\", \"options\": {\"serviceLbSubnetIds\": [\"ocid1.subnet.oc1.phx.aaaaaaaacq27c3gc3os7uvwnhm4wpzojtqt456ygbgnvsnnzw66bxvujaqpa\",
+      \"ocid1.subnet.oc1.phx.aaaaaaaah6j2hwqucod5fsydeani4oqmsp63oszxgcupep3p4uuaslmaxjja\"],
+      \"kubernetesNetworkConfig\": {\"podsCidr\": \"10.96.0.0/16\", \"servicesCidr\":
+      \"10.244.0.0/16\"}, \"addOns\": {\"isKubernetesDashboardEnabled\": true, \"isTillerEnabled\":
+      true}}, \"metadata\": {\"timeCreated\": \"2019-04-13T08:32:52+00:00\", \"createdByUserId\":
+      \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"createdByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaae2ggzrrmi2gmmlbgnqtozlbhaywmylfgizdgmzvmw2dsnlfhe3w\",
+      \"timeDeleted\": \"2019-04-15T21:51:50+00:00\", \"deletedByUserId\": \"ocid1.user.oc1..aaaaaaaapcpmfyitxvyungcqg5e4ndqw5ncdtpzqqkt3jpsc7gfh6ilgb65q\",
+      \"deletedByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaae4tantemy4wizjzgiydmnzumfswgy3dg5qtmolcgwsdeodgg4zw\",
+      \"timeUpdated\": null, \"updatedByUserId\": null, \"updatedByWorkRequestId\":
+      null}, \"lifecycleState\": \"DELETED\", \"lifecycleDetails\": \"\", \"endpoints\":
+      {\"kubernetes\": \"\"}, \"availableKubernetesUpgrades\": [\"v1.11.9\", \"v1.12.7\"]},
+      {\"id\": \"ocid1.cluster.oc1.phx.aaaaaaaaaeztenzxgi4doyjqgrqwgojygqzwgztghbsgemrumc2wiyzsmezt\",
+      \"name\": \"__STS0243_1274\", \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"vcnId\": \"ocid1.vcn.oc1.phx.aaaaaaaa4mary5xcoubz64guelkl5voupeb7drade6cx3i2yca5hkelwdtoq\",
+      \"kubernetesVersion\": \"v1.10.11\", \"options\": {\"serviceLbSubnetIds\": [\"ocid1.subnet.oc1.phx.aaaaaaaatfunwjkemnrsilk7w57weiqlp6flsth2ov3ovsu3n5xvpxrepvqa\",
+      \"ocid1.subnet.oc1.phx.aaaaaaaa6q3zrrkpf7lhljbcfprkvabbr32ghlrxucqlcrqvbmh6a5rssaja\"],
+      \"kubernetesNetworkConfig\": {\"podsCidr\": \"10.96.0.0/16\", \"servicesCidr\":
+      \"10.244.0.0/16\"}, \"addOns\": {\"isKubernetesDashboardEnabled\": true, \"isTillerEnabled\":
+      true}}, \"metadata\": {\"timeCreated\": \"2019-04-13T08:52:50+00:00\", \"createdByUserId\":
+      \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"createdByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaafsgeodcgaydqodbmy2winrrgjtdsnrygq4gcnjvgwztgnlfga2w\",
+      \"timeDeleted\": \"2019-04-15T21:51:56+00:00\", \"deletedByUserId\": \"ocid1.user.oc1..aaaaaaaapcpmfyitxvyungcqg5e4ndqw5ncdtpzqqkt3jpsc7gfh6ilgb65q\",
+      \"deletedByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaaeztkolgg5qteodegrqwcmzymmywinrxmuyggntbmw4tqmjzgrrd\",
+      \"timeUpdated\": null, \"updatedByUserId\": null, \"updatedByWorkRequestId\":
+      null}, \"lifecycleState\": \"DELETED\", \"lifecycleDetails\": \"\", \"endpoints\":
+      {\"kubernetes\": \"\"}, \"availableKubernetesUpgrades\": [\"v1.11.9\", \"v1.12.7\"]},
+      {\"id\": \"ocid1.cluster.oc1.phx.aaaaaaaaaezdmztfmiywezlcmezgkzrqha2tgm3egyywmyjtgczdizbzguzw\",
+      \"name\": \"__STS0214_3605\", \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"vcnId\": \"ocid1.vcn.oc1.phx.aaaaaaaa732ndataxq2osvuiitblyimw53n36o7lr55bnft6tzvj7t25pxxq\",
+      \"kubernetesVersion\": \"v1.10.11\", \"options\": {\"serviceLbSubnetIds\": [\"ocid1.subnet.oc1.phx.aaaaaaaamrg3vzg365oa3bsngkxkmzapdz4x7d4jn2lllvnip5rxmrhp6haa\",
+      \"ocid1.subnet.oc1.phx.aaaaaaaaubtfzvqxtwctombnew7u6wgo6x7apiwfehas4gemdhlzv2dqgmva\"],
+      \"kubernetesNetworkConfig\": {\"podsCidr\": \"10.96.0.0/16\", \"servicesCidr\":
+      \"10.244.0.0/16\"}, \"addOns\": {\"isKubernetesDashboardEnabled\": true, \"isTillerEnabled\":
+      true}}, \"metadata\": {\"timeCreated\": \"2019-04-16T02:21:36+00:00\", \"createdByUserId\":
+      \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"createdByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaae2wgmdcgq3wcy3egfsgkntgmvrgmnbqmi2dinjrgwywgyjvha3d\",
+      \"timeDeleted\": \"2019-04-16T02:29:23+00:00\", \"deletedByUserId\": \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"deletedByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaaeywgmbqg5tdqzdemmytcyrxgbswenzwg4ywenbumw2tgnbugm2g\",
+      \"timeUpdated\": null, \"updatedByUserId\": null, \"updatedByWorkRequestId\":
+      null}, \"lifecycleState\": \"DELETED\", \"lifecycleDetails\": \"\", \"endpoints\":
+      {\"kubernetes\": \"czdizbzguzw.us-phoenix-1.clusters.oci.oraclecloud.com:6443\"},
+      \"availableKubernetesUpgrades\": [\"v1.11.9\", \"v1.12.7\"]}, {\"id\": \"ocid1.cluster.oc1.phx.aaaaaaaaae2tczbwg5rtayrtha2tinbugiztcobummzdkzrxgcqtomrugu4t\",
+      \"name\": \"__STS0214_8952\", \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"vcnId\": \"ocid1.vcn.oc1.phx.aaaaaaaah6z34whylfjawsho7vectomwv5lrigblcjfqkifizcsj4t367rzq\",
+      \"kubernetesVersion\": \"v1.10.11\", \"options\": {\"serviceLbSubnetIds\": [\"ocid1.subnet.oc1.phx.aaaaaaaaephtrfkq5unl7yujse3kewi4f7siaxm5theuetj5q27ul7gqezbq\",
+      \"ocid1.subnet.oc1.phx.aaaaaaaak5gdul6mffvsunatgapm6wndicl6bnvmlx2ovzf2fpaw34wjvcmq\"],
+      \"kubernetesNetworkConfig\": {\"podsCidr\": \"10.96.0.0/16\", \"servicesCidr\":
+      \"10.244.0.0/16\"}, \"addOns\": {\"isKubernetesDashboardEnabled\": true, \"isTillerEnabled\":
+      true}}, \"metadata\": {\"timeCreated\": \"2019-04-16T02:31:34+00:00\", \"createdByUserId\":
+      \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"createdByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaafqtszjvgzrgkmrvgbqtaylbga2danzrgeygiyjzgw4dknbrge4d\",
+      \"timeDeleted\": \"2019-04-17T22:16:44+00:00\", \"deletedByUserId\": \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"deletedByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaafswmyjshazwgojxmqydsmzxmiywcodggq3teojzgwztmmtfhfrg\",
+      \"timeUpdated\": null, \"updatedByUserId\": null, \"updatedByWorkRequestId\":
+      null}, \"lifecycleState\": \"DELETED\", \"lifecycleDetails\": \"\", \"endpoints\":
+      {\"kubernetes\": \"cqtomrugu4t.us-phoenix-1.clusters.oci.oraclecloud.com:6443\"},
+      \"availableKubernetesUpgrades\": [\"v1.11.9\", \"v1.12.7\"]}, {\"id\": \"ocid1.cluster.oc1.phx.aaaaaaaaaeydgnzvhbrdqztegqydkntfgy2dqytfhe3winzrgcytszrsgm2d\",
+      \"name\": \"__STS0221_1896\", \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"vcnId\": \"ocid1.vcn.oc1.phx.aaaaaaaaeud7am5vdskizzjbdqg54uhp65iv3oulzhpsyy4aw5ntoun64p2q\",
+      \"kubernetesVersion\": \"v1.10.11\", \"options\": {\"serviceLbSubnetIds\": [\"ocid1.subnet.oc1.phx.aaaaaaaavggyled64na3ejdsrbdinrhfkw6swioqi64xsh4t3fducgb6dwla\",
+      \"ocid1.subnet.oc1.phx.aaaaaaaayqc6ebsswwxevh4v53j52khh4kg67t6warzqwa3jvy3lw6q4e57q\"],
+      \"kubernetesNetworkConfig\": {\"podsCidr\": \"10.96.0.0/16\", \"servicesCidr\":
+      \"10.244.0.0/16\"}, \"addOns\": {\"isKubernetesDashboardEnabled\": true, \"isTillerEnabled\":
+      true}}, \"metadata\": {\"timeCreated\": \"2019-04-16T08:08:06+00:00\", \"createdByUserId\":
+      \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"createdByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaafrtgytfmnrdky3bgvrtonjrgbstcnlghazdmmjzgwtdkzbsgezd\",
+      \"timeDeleted\": \"2019-04-16T08:15:51+00:00\", \"deletedByUserId\": \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"deletedByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaae4tszjvmy2tayrsgyydcmbwmm4ginzwhbrgiobvgw3tazlfgm4w\",
+      \"timeUpdated\": null, \"updatedByUserId\": null, \"updatedByWorkRequestId\":
+      null}, \"lifecycleState\": \"DELETED\", \"lifecycleDetails\": \"\", \"endpoints\":
+      {\"kubernetes\": \"cytszrsgm2d.us-phoenix-1.clusters.oci.oraclecloud.com:6443\"},
+      \"availableKubernetesUpgrades\": [\"v1.11.9\", \"v1.12.7\"]}, {\"id\": \"ocid1.cluster.oc1.phx.aaaaaaaaae3tcmldmyygemjxmy3tcnrqhe3dsodcg43day3gmc2tenbzmi3t\",
+      \"name\": \"__STS0221_2050\", \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"vcnId\": \"ocid1.vcn.oc1.phx.aaaaaaaab2p6weiwgqfpmq6a3gdnoz6l2wgng324mwrvgmak63eq5sjkxvwa\",
+      \"kubernetesVersion\": \"v1.10.11\", \"options\": {\"serviceLbSubnetIds\": [\"ocid1.subnet.oc1.phx.aaaaaaaakxih25fcuv55xgjgklckmqkteu44kk36me42pvc4x4cpk5d36nza\",
+      \"ocid1.subnet.oc1.phx.aaaaaaaanu652gsheiyhk6gzcfbbepuabjbkkc5d25yksumtvjyh5oq5tcca\"],
+      \"kubernetesNetworkConfig\": {\"podsCidr\": \"10.96.0.0/16\", \"servicesCidr\":
+      \"10.244.0.0/16\"}, \"addOns\": {\"isKubernetesDashboardEnabled\": true, \"isTillerEnabled\":
+      true}}, \"metadata\": {\"timeCreated\": \"2019-04-16T08:18:34+00:00\", \"createdByUserId\":
+      \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"createdByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaae4dsnzxmvsdsnbumi2dcobrgiywmolcgmytcyrvgwsdkyjwgzrt\",
+      \"timeDeleted\": \"2019-04-16T10:01:45+00:00\", \"deletedByUserId\": \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"deletedByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaafrtezbymuygizddmi3teoldheztinjrmyzggodfmwrdanddg5tg\",
+      \"timeUpdated\": null, \"updatedByUserId\": null, \"updatedByWorkRequestId\":
+      null}, \"lifecycleState\": \"DELETED\", \"lifecycleDetails\": \"\", \"endpoints\":
+      {\"kubernetes\": \"c2tenbzmi3t.us-phoenix-1.clusters.oci.oraclecloud.com:6443\"},
+      \"availableKubernetesUpgrades\": [\"v1.11.9\", \"v1.12.7\"]}, {\"id\": \"ocid1.cluster.oc1.phx.aaaaaaaaae3tiolcgrqtknjqgyzdanjumeywcobwgy4denzrgc4dkndbmu4d\",
+      \"name\": \"__STS0665_7932\", \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"vcnId\": \"ocid1.vcn.oc1.phx.aaaaaaaahvwngffxfa35vm4itop3kgw6e57ky4qoy7ze5ylyoa5pthsqrwjq\",
+      \"kubernetesVersion\": \"v1.10.11\", \"options\": {\"serviceLbSubnetIds\": [\"ocid1.subnet.oc1.phx.aaaaaaaaqerao7uzi6kdnxsyypklpiurz73sksg2hjfqq7izdbbwkgw4w6da\",
+      \"ocid1.subnet.oc1.phx.aaaaaaaawbglxqj7vwqshgltsutvgd6hfecym5mgtgfz67pw3yjuwtfnftnq\"],
+      \"kubernetesNetworkConfig\": {\"podsCidr\": \"10.96.0.0/16\", \"servicesCidr\":
+      \"10.244.0.0/16\"}, \"addOns\": {\"isKubernetesDashboardEnabled\": true, \"isTillerEnabled\":
+      true}}, \"metadata\": {\"timeCreated\": \"2019-04-16T08:26:22+00:00\", \"createdByUserId\":
+      \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"createdByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaafswkyjymvrdcnbzmnrgenjzmrtgiolegiydmodggwydizbygjrd\",
+      \"timeDeleted\": \"2019-04-16T08:34:44+00:00\", \"deletedByUserId\": \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"deletedByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaae3dknjvme2tkm3bmu4wezjvge2dgnjugjrtsnrtgw4winlbmvst\",
+      \"timeUpdated\": null, \"updatedByUserId\": null, \"updatedByWorkRequestId\":
+      null}, \"lifecycleState\": \"DELETED\", \"lifecycleDetails\": \"\", \"endpoints\":
+      {\"kubernetes\": \"c4dkndbmu4d.us-phoenix-1.clusters.oci.oraclecloud.com:6443\"},
+      \"availableKubernetesUpgrades\": [\"v1.11.9\", \"v1.12.7\"]}, {\"id\": \"ocid1.cluster.oc1.phx.aaaaaaaaafqtkojxgnsdgntcmqydcmtfmm2gmzdgmqzdayzqgcsdmy3cgnrd\",
+      \"name\": \"__STS0299_8007\", \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"vcnId\": \"ocid1.vcn.oc1.phx.aaaaaaaa4e4y5bdry7qjnqbdqo2gnaijmqvlurlprln3lsmvjz2du6jqi64a\",
+      \"kubernetesVersion\": \"v1.10.11\", \"options\": {\"serviceLbSubnetIds\": [\"ocid1.subnet.oc1.phx.aaaaaaaacp3opykj2sgou7zmbn5vuxthdphsfgrhw4htrhcv3whacnrbm2vq\",
+      \"ocid1.subnet.oc1.phx.aaaaaaaajiern2cpc7es7a3n4iqox7eqdav7h3iwnwrnvbk7ompyg6rrq7ua\"],
+      \"kubernetesNetworkConfig\": {\"podsCidr\": \"10.96.0.0/16\", \"servicesCidr\":
+      \"10.244.0.0/16\"}, \"addOns\": {\"isKubernetesDashboardEnabled\": true, \"isTillerEnabled\":
+      true}}, \"metadata\": {\"timeCreated\": \"2019-04-16T08:28:08+00:00\", \"createdByUserId\":
+      \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"createdByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaaezdoodbgiztantcg44wkodbmjswmnzyg4ytoyjugw3wmylcgu2g\",
+      \"timeDeleted\": \"2019-04-16T08:36:27+00:00\", \"deletedByUserId\": \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\",
+      \"deletedByWorkRequestId\": \"ocid1.clustersworkrequest.oc1.phx.aaaaaaaaafswmytemqydqnjtha4dsztdgvrggzruge3wimrrgwtdaojzgeyt\",
+      \"timeUpdated\": null, \"updatedByUserId\": null, \"updatedByWorkRequestId\":
+      null}, \"lifecycleState\": \"DELETED\", \"lifecycleDetails\": \"\", \"endpoints\":
+      {\"kubernetes\": \"csdmy3cgnrd.us-phoenix-1.clusters.oci.oraclecloud.com:6443\"},
+      \"availableKubernetesUpgrades\": [\"v1.11.9\", \"v1.12.7\"]}], \"opcRequestId\":
+      \"FB13C6951EE7416A877B8970530C952D\", \"opcNextPage\": \"2\"}]", "responseClass":
+      "com.oracle.bmc.containerengine.responses.ListClustersResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['32944']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=1007&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:55:02 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
 version: 1

@@ -13,7 +13,26 @@ interactions:
     headers:
       Content-Length: ['4']
       Content-Type: [text/plain]
-      Date: ['Mon, 01 Apr 2019 21:30:14 GMT']
+      Date: ['Thu, 18 Apr 2019 17:42:26 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?serviceName=announcementsservice&apiName=UpdateAnnouncementUserStatus&lang=Python&clientName=announcement
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq","endpoint":null,"fingerprint":"ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9","passPhrase":"dexsdk","keyFile":"java_sdk_admin_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,0C9B64A4AA0303EC02C79E91D0F8B0D0\n\naSd0uIKreq5NirzJ+Esa36lYJo4lU2zSjIIw8wvZEsd+LdaifqONZIfHHiB6/KgG\nse4wd/58tPsiEgnK7D1q8wmdVDouMSX31mhcbq2bwRjXATpNnOMnhDtahJv6cw4M\nDtlXYplk0LzpP6WjqXqFST4Yz0l1NO90ahnruwcb/SUCm12ONMJ5o4G1UO2/0IkX\nTRlMRpm/etIpStNSP+1IsD1gSWlAzhs1zodkpd+2eW2ovlAaY25Hm/aqK97jzsCF\n1f4dCm7spCHYOfv10XHNB99/jomN1KQuDy29MmVaJ9oYpOIDlu0yj4Q/XempLxa6\nhqgt0gUO9cMV2bfStsHKWJwq+KoncamBHpU/+CyNjoYq1QTC0urWlCP5hNo5VZhF\nzXBJa188FD2TiPFU8Z4EhercM83TfBsRVEQOpu5sbMaUOT6xXwnCWfM5Pjxy/0xE\n6oF2zq+H0ES12dh19C5P8ueRFLyhaWFliWJv3SXy9iCslcso6USnBBKnA26xMile\nY3m9uRP31yZW8czxYSIgKEV3Mp3GFAYwuebNjLgIM7xT+PvDiOO4qAhA0waGPhYH\n2QMl9ThSahKT6vpjVUQuGOjaRcJ5Vr73VGX4MnxXVxsl5de6y/ZfP5ndx5Lb4K43\njwrMbCIzrM1ZzR2JMTuMJFDasLjEW/Y9nf7FRh2gByeGLObAmHsjlUdW65QQu+Qy\nu4ADc6TbpqvLobocF5fKgML7JCAA/YqmYlZCV6gGOdKUXUT3VMmZcebcTtw1Zmxh\nwaUQe99D90w3Q/7CCCiGO2waZaTNl+ahVnQZEGHN9xJydkCkfVZDgVmdDmsSXmxo\n2DWf2c2/1me2zZAcW0SFBnyrt3uphdCnICaqXR0AnQUmw49YY4nk2fPTMxZs1r+2\n+poVVEfr//cHTTs4yu9ZVT2wGWf/Ooo4sm7obB8EhGkrXs3ormx9WHj6ezexupsd\nanWE7Uy54ovKdOosKB6nQOfP+Iwe4sSJ6oYPNvvh19v05+AhOCdONjMeCwTfBvtJ\nA5luj6CtFbgSX96A3zTRrTXQO3N4aLTF8niL+FcZ69RzYcxp3rlDSK88JyJ9xsu1\n+lNIcAPAFhzisC/eB9b1eDJ4JErJyIdBTZ4bPv4dtl/RpFcyIA4WMjskGCRo60I7\nN3DVqGGXLlC7KDjvPmdvvfAx3lzcIANhwBhLSQJ+y1bcyW6FcX0ZtY962Hb06Qj5\nXG5nDmT1qVkfDmzpIOF9GtDgch7gtf/EjHOUyaw60dDgJ5RF6lORLjFeuU9W7I1e\nD3mpWb6WP6DKoaQTgrLLrIJCLIdXr92XmvDj+iuYdGhCIkqHWqNbRW4TyiuukNJH\n12Zq/LlA1s58YJVa520o7EOXpmD4sGIrctlI3keSmKhiavy7j5ULz5J++jL+Yxlc\n6h9q4v71oyFmVgNpIEJNg7sSCkE72yzUCaglBUdUIMG3D0sI+VwufC7lbhohvHBr\nNzmbg2bW4x0CCprf/o5JvdNiB+bQdKG4t2Q7fhhZIW7ACii591ZBbpnUakDUQBZa\nV2yMaErypILHlQvlReHXVK1adUTxLNWf//VDoyclQk5k0uFIkUmpn+EXWnEHw7e8\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2261']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 17:42:26 GMT']
       Server: [Jetty(9.4.7.v20170914)]
     status: {code: 200, message: OK}
 - request:
@@ -26,11 +45,11 @@ interactions:
     method: GET
     uri: http://localhost:8090/SDKTestingService/request?serviceName=announcementsservice&apiName=UpdateAnnouncementUserStatus&lang=Python&sessionId=0836
   response:
-    body: {string: '[{"containerId":"96a5e011-5814-4ecb-9cf7-6473a397904a","request":{"announcementId":"ocid1.announcement.oc1..aaaaaaaat6pge2h5jp4e2tsgfpz2zuaocqtg3tsjqqvlqmp5w5ivv55szwsa","statusDetails":{"userStatusAnnouncementId":"ocid1.announcement.oc1..aaaaaaaat6pge2h5jp4e2tsgfpz2zuaocqtg3tsjqqvlqmp5w5ivv55szwsa","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq"}}}]'}
+    body: {string: '[{"containerId":"96d936a9-e68f-46da-a3c0-d71a0823ecc1","request":{"announcementId":"ocid1.announcement.oc1..aaaaaaaat6pge2h5jp4e2tsgfpz2zuaocqtg3tsjqqvlqmp5w5ivv55szwsa","statusDetails":{"userStatusAnnouncementId":"ocid1.announcement.oc1..aaaaaaaat6pge2h5jp4e2tsgfpz2zuaocqtg3tsjqqvlqmp5w5ivv55szwsa","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq"}}}]'}
     headers:
       Content-Length: ['392']
       Content-Type: [text/plain]
-      Date: ['Mon, 01 Apr 2019 21:30:14 GMT']
+      Date: ['Thu, 18 Apr 2019 17:42:26 GMT']
       Server: [Jetty(9.4.7.v20170914)]
     status: {code: 200, message: OK}
 - request:
@@ -41,14 +60,14 @@ interactions:
       accept: [application/json]
       accept-encoding: ['gzip, deflate']
       authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
-          host content-length content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="m7IHrLfTj+0eF5HVq9JTyCTQd08BP8POmxvaK09sgf8Hed2Uwokl5+FNDgWW4f/2x2vVLS9/pEzjNeKQg16egGbok3LYz/QnK4AdNl4IjjH6diGvu4eF61/32sXvgojfYT1God8RFte53jTSQV9gZCqaiNDSAyS+JYIbONrndMxGAFDFUzTxUt0Ru5//Eybo5uOILEefambo3WQd/5sRFtwtTQSbJptwt1/FE36HLV8MQyai4r50vfXJNESrzTerXzGtVV1XFOv6y9YBv0EC32UP24kpDXfL/uSVlOOtVnVhqLBKnmTyQc7o8dECHAjdHqz232Ed2LOtBeQkzAPvSg==",version="1"']
+          host content-length content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="v2y0yDXCIdpUAL/br99tW4imMUNL4O7Ed0SSKh8vGmVQnGtkDuHcnsLBRANiMRvq6+vmx/C/ADgKckfnlyq8upGgGQEGbeypw7u5avp6il8bhrUMPvlcmN+HMEuw3TauGUN58q54RjzdGTj8bavaqJUhMlLnFTNoQY2oY4PGN21wgY3xwMl4olXOmktNCiuMV4vFfZI87ajVYhchNvpCvOgCg62q3sOfXPWTRdNrYl2pSkOYTsumVdJSz+KnzMsJ4zkeo5Uuv5LQ8N8l8qMLfJ1NuQyIE5z50XdCEeWatKdmt7lcQ7E0X1My3Z7fF0kmJxfJk0U0Ln4fZ+57fIjE/g==",version="1"']
       connection: [keep-alive]
       content-type: [application/json]
-      date: ['Mon, 01 Apr 2019 21:30:14 GMT']
+      date: ['Thu, 18 Apr 2019 17:42:26 GMT']
       host: [announcements.us-phoenix-1.oraclecloud.com]
-      opc-client-info: [Oracle-PythonSDK/2.2.5]
-      opc-request-id: [B852AFAF2DD9420EB9C2A1AFB7FBD5C0]
-      user-agent: [Oracle-PythonSDK/2.2.5 (python 3.6.4; x86_64-Darwin)]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [FF2BEAF86E9548059CF9B6FD6C3237B1]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
       x-content-sha256: [2j6LuPpMBN5CXi32P8aoMe22hQiS1QevaSks6/FAl00=]
     method: PUT
     uri: https://announcements.us-phoenix-1.oraclecloud.com/20180904/announcements/ocid1.announcement.oc1..aaaaaaaat6pge2h5jp4e2tsgfpz2zuaocqtg3tsjqqvlqmp5w5ivv55szwsa/userStatus
@@ -57,18 +76,18 @@ interactions:
     headers:
       Connection: [keep-alive]
       Content-Type: [application/json]
-      Date: ['Mon, 01 Apr 2019 21:30:14 GMT']
+      Date: ['Thu, 18 Apr 2019 17:42:27 GMT']
       X-Content-Type-Options: [nosniff]
-      opc-request-id: [B852AFAF2DD9420EB9C2A1AFB7FBD5C0/EA824DC41F18A0BA45849DB69C6A42C1/D1024F21AC3944DB9230AD0E0FC3C36C]
+      opc-request-id: [FF2BEAF86E9548059CF9B6FD6C3237B1/972B939FF2FE7FF61AA22FB72F40566E/82491B060EA84041AAB60559BAB4203E]
     status: {code: 204, message: No Content}
 - request:
-    body: '{"containerId": "96a5e011-5814-4ecb-9cf7-6473a397904a", "listResponse":
+    body: '{"containerId": "96d936a9-e68f-46da-a3c0-d71a0823ecc1", "listResponse":
       false, "requestClass": "com.oracle.bmc.announcementsservice.requests.UpdateAnnouncementUserStatusRequest",
       "requestJson": "{\"announcementId\": \"ocid1.announcement.oc1..aaaaaaaat6pge2h5jp4e2tsgfpz2zuaocqtg3tsjqqvlqmp5w5ivv55szwsa\",
       \"statusDetails\": {\"userStatusAnnouncementId\": \"ocid1.announcement.oc1..aaaaaaaat6pge2h5jp4e2tsgfpz2zuaocqtg3tsjqqvlqmp5w5ivv55szwsa\",
       \"userId\": \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\"}}",
       "responseJson": "{\"updateAnnouncementUserStatus\": null, \"opcRequestId\":
-      \"5181B425EC99400F8F770D720B09C74D\", \"opcNextPage\": null}", "responseClass":
+      \"21F81AB5D3234C83B8E896ABDB5ED64C\", \"opcNextPage\": null}", "responseClass":
       "com.oracle.bmc.announcementsservice.responses.UpdateAnnouncementUserStatusResponse"}'
     headers:
       Accept: ['*/*']
@@ -83,7 +102,7 @@ interactions:
     headers:
       Content-Length: ['0']
       Content-Type: [text/plain]
-      Date: ['Mon, 01 Apr 2019 21:30:14 GMT']
+      Date: ['Thu, 18 Apr 2019 17:42:27 GMT']
       Server: [Jetty(9.4.7.v20170914)]
     status: {code: 200, message: OK}
 version: 1

@@ -216,4 +216,329 @@ interactions:
       Date: ['Mon, 01 Apr 2019 22:56:12 GMT']
       Server: [Jetty(9.4.7.v20170914)]
     status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?lang=Python&serviceName=objectstorage&apiName=ListWorkRequests
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:51:45 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?serviceName=objectstorage&apiName=ListWorkRequests&lang=Python&clientName=objectStorage
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","userId":"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq","endpoint":null,"fingerprint":"ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9","passPhrase":"dexsdk","keyFile":"java_sdk_admin_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,0C9B64A4AA0303EC02C79E91D0F8B0D0\n\naSd0uIKreq5NirzJ+Esa36lYJo4lU2zSjIIw8wvZEsd+LdaifqONZIfHHiB6/KgG\nse4wd/58tPsiEgnK7D1q8wmdVDouMSX31mhcbq2bwRjXATpNnOMnhDtahJv6cw4M\nDtlXYplk0LzpP6WjqXqFST4Yz0l1NO90ahnruwcb/SUCm12ONMJ5o4G1UO2/0IkX\nTRlMRpm/etIpStNSP+1IsD1gSWlAzhs1zodkpd+2eW2ovlAaY25Hm/aqK97jzsCF\n1f4dCm7spCHYOfv10XHNB99/jomN1KQuDy29MmVaJ9oYpOIDlu0yj4Q/XempLxa6\nhqgt0gUO9cMV2bfStsHKWJwq+KoncamBHpU/+CyNjoYq1QTC0urWlCP5hNo5VZhF\nzXBJa188FD2TiPFU8Z4EhercM83TfBsRVEQOpu5sbMaUOT6xXwnCWfM5Pjxy/0xE\n6oF2zq+H0ES12dh19C5P8ueRFLyhaWFliWJv3SXy9iCslcso6USnBBKnA26xMile\nY3m9uRP31yZW8czxYSIgKEV3Mp3GFAYwuebNjLgIM7xT+PvDiOO4qAhA0waGPhYH\n2QMl9ThSahKT6vpjVUQuGOjaRcJ5Vr73VGX4MnxXVxsl5de6y/ZfP5ndx5Lb4K43\njwrMbCIzrM1ZzR2JMTuMJFDasLjEW/Y9nf7FRh2gByeGLObAmHsjlUdW65QQu+Qy\nu4ADc6TbpqvLobocF5fKgML7JCAA/YqmYlZCV6gGOdKUXUT3VMmZcebcTtw1Zmxh\nwaUQe99D90w3Q/7CCCiGO2waZaTNl+ahVnQZEGHN9xJydkCkfVZDgVmdDmsSXmxo\n2DWf2c2/1me2zZAcW0SFBnyrt3uphdCnICaqXR0AnQUmw49YY4nk2fPTMxZs1r+2\n+poVVEfr//cHTTs4yu9ZVT2wGWf/Ooo4sm7obB8EhGkrXs3ormx9WHj6ezexupsd\nanWE7Uy54ovKdOosKB6nQOfP+Iwe4sSJ6oYPNvvh19v05+AhOCdONjMeCwTfBvtJ\nA5luj6CtFbgSX96A3zTRrTXQO3N4aLTF8niL+FcZ69RzYcxp3rlDSK88JyJ9xsu1\n+lNIcAPAFhzisC/eB9b1eDJ4JErJyIdBTZ4bPv4dtl/RpFcyIA4WMjskGCRo60I7\nN3DVqGGXLlC7KDjvPmdvvfAx3lzcIANhwBhLSQJ+y1bcyW6FcX0ZtY962Hb06Qj5\nXG5nDmT1qVkfDmzpIOF9GtDgch7gtf/EjHOUyaw60dDgJ5RF6lORLjFeuU9W7I1e\nD3mpWb6WP6DKoaQTgrLLrIJCLIdXr92XmvDj+iuYdGhCIkqHWqNbRW4TyiuukNJH\n12Zq/LlA1s58YJVa520o7EOXpmD4sGIrctlI3keSmKhiavy7j5ULz5J++jL+Yxlc\n6h9q4v71oyFmVgNpIEJNg7sSCkE72yzUCaglBUdUIMG3D0sI+VwufC7lbhohvHBr\nNzmbg2bW4x0CCprf/o5JvdNiB+bQdKG4t2Q7fhhZIW7ACii591ZBbpnUakDUQBZa\nV2yMaErypILHlQvlReHXVK1adUTxLNWf//VDoyclQk5k0uFIkUmpn+EXWnEHw7e8\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2261']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:51:45 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?serviceName=objectstorage&apiName=ListWorkRequests&lang=Python&sessionId=0035
+  response:
+    body: {string: '[{"containerId":"bd4f21e5-4aa7-440c-acb5-830097de51a5","request":{"compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","limit":10}}]'}
+    headers:
+      Content-Length: ['181']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:51:45 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="buhWAH0Jh7+0CWAjtdfoDjsBUxGP+Mr93mrvPMqGHpU6pnZoJhHoYEVrKRAZja99n8i4KWicT/SDbLNTaeTwP3dGXLsVERmYi1RtafOun+WYk+DlkP94XFI2wPgYVjQaba57IwZSzNA+lrTtpScUlGxjJcC2vHkwmLKdcNnExzarcuesGLIRLat5yyqtHYl2Wt44H1ScdRvYiqJghiv8vCuhiB8QsxsgGYgJpTmI3NLqA6Qr3NeFHR1bgPb4MYKgYm9YMhu5QdPy8KqMYtFkpZiX1knO83aYViIfOIWoi4+LbMVqh/YJuIFEUG21fpAoj7TjF/P3t94a2ty7mJd4FA==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 18:51:45 GMT']
+      host: [objectstorage.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [F04CF359C01B4976BB040B8B3E2D40F7]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://objectstorage.us-phoenix-1.oraclecloud.com/workRequests?compartmentId=ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba&limit=10
+  response:
+    body: {string: '[{"operationType":"COPY_OBJECT","status":"COMPLETED","id":"10fc22a5-448f-4ecd-9049-5676e286029f","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","resources":[{"actionType":"READ","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__sts0164_1863_sourceBucket/o/__sts0164_2093_sourceObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__sts0164_1863_sourceBucket","OBJECT":"__sts0164_2093_sourceObject"}},{"actionType":"WRITTEN","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__sts0164_4637_destinationBucket/o/__STS0164_8724_destinationObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__sts0164_4637_destinationBucket","OBJECT":"__STS0164_8724_destinationObject"}}],"timeAccepted":"2019-04-17T17:57:08Z","timeStarted":"2019-04-17T17:57:11Z","timeFinished":"2019-04-17T17:57:11Z","percentComplete":100.0},{"operationType":"COPY_OBJECT","status":"COMPLETED","id":"15329f05-d0de-4b91-abc2-7fc3898a6935","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","resources":[{"actionType":"READ","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__STS0929_EsnWWtlXvVXCSuLuTuJ9_sourceBucket/o/__STS0929_XlFu%25V-xYp%26kRD_sourceObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__STS0929_EsnWWtlXvVXCSuLuTuJ9_sourceBucket","OBJECT":"__STS0929_XlFu%V-xYp&kRD_sourceObject"}},{"actionType":"WRITTEN","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__STS0929_esXagCStJdco8dtp8DZt-9h40RcRBqNSMZ_destinationBucket/o/__STS0929_M%29rabUEeLW+QITEgptDHUcVlVLtTAAjLvs%24QxkYesaLbpZZSt_destinationObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__STS0929_esXagCStJdco8dtp8DZt-9h40RcRBqNSMZ_destinationBucket","OBJECT":"__STS0929_M)rabUEeLW
+        QITEgptDHUcVlVLtTAAjLvs$QxkYesaLbpZZSt_destinationObject"}}],"timeAccepted":"2019-04-18T11:10:15Z","timeStarted":"2019-04-18T11:10:15Z","timeFinished":"2019-04-18T11:10:15Z","percentComplete":100.0},{"operationType":"COPY_OBJECT","status":"COMPLETED","id":"279bebd8-422f-4151-92b9-bc44059cb3ff","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","resources":[{"actionType":"READ","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__sts0062_1620_sourceBucket/o/__sts0062_6532_sourceObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__sts0062_1620_sourceBucket","OBJECT":"__sts0062_6532_sourceObject"}},{"actionType":"WRITTEN","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__sts0062_4783_destinationBucket/o/__STS0062_7152_destinationObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__sts0062_4783_destinationBucket","OBJECT":"__STS0062_7152_destinationObject"}}],"timeAccepted":"2019-04-17T11:57:19Z","timeStarted":"2019-04-17T11:57:19Z","timeFinished":"2019-04-17T11:57:19Z","percentComplete":100.0},{"operationType":"COPY_OBJECT","status":"COMPLETED","id":"45a6ad93-f8c9-4538-b8e6-8979548069c6","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","resources":[{"actionType":"READ","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__sts0347_6755_sourceBucket/o/__sts0347_4233_sourceObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__sts0347_6755_sourceBucket","OBJECT":"__sts0347_4233_sourceObject"}},{"actionType":"WRITTEN","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__sts0347_8047_destinationBucket/o/__STS0347_9249_destinationObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__sts0347_8047_destinationBucket","OBJECT":"__STS0347_9249_destinationObject"}}],"timeAccepted":"2019-04-18T11:57:05Z","timeStarted":"2019-04-18T11:57:05Z","timeFinished":"2019-04-18T11:57:06Z","percentComplete":100.0},{"operationType":"COPY_OBJECT","status":"COMPLETED","id":"4f7169d3-9c12-414a-a5c4-2f533c6b77ab","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","resources":[{"actionType":"READ","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__sts0813_3026_sourceBucket/o/__sts0813_8680_sourceObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__sts0813_3026_sourceBucket","OBJECT":"__sts0813_8680_sourceObject"}},{"actionType":"WRITTEN","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__sts0813_9726_destinationBucket/o/__STS0813_4415_destinationObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__sts0813_9726_destinationBucket","OBJECT":"__STS0813_4415_destinationObject"}}],"timeAccepted":"2019-04-17T23:57:10Z","timeStarted":"2019-04-17T23:57:10Z","timeFinished":"2019-04-17T23:57:10Z","percentComplete":100.0},{"operationType":"COPY_OBJECT","status":"COMPLETED","id":"543b5817-0535-4ea6-87ca-5223f20346c0","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","resources":[{"actionType":"READ","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__STS0035_eBbbud7vtypFhsuTnEs_sourceBucket/o/__STS0035_g%25XuxpxNiLWDPH%29jdVf%24ZUBwNBrC%24i%29HlHrXmQVhHQu_sourceObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__STS0035_eBbbud7vtypFhsuTnEs_sourceBucket","OBJECT":"__STS0035_g%XuxpxNiLWDPH)jdVf$ZUBwNBrC$i)HlHrXmQVhHQu_sourceObject"}},{"actionType":"WRITTEN","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__STS0035_F0vyLIYBGud6jb_destinationBucket/o/__STS0035_LFDeBMXf+kb%24VqGJRBg%5EnyA%5EFvkQB%25C%28M%25TWgNoIOumGy_destinationObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__STS0035_F0vyLIYBGud6jb_destinationBucket","OBJECT":"__STS0035_LFDeBMXf
+        kb$VqGJRBg^nyA^FvkQB%C(M%TWgNoIOumGy_destinationObject"}}],"timeAccepted":"2019-04-18T18:50:40Z","timeStarted":"2019-04-18T18:50:40Z","timeFinished":"2019-04-18T18:50:40Z","percentComplete":100.0},{"operationType":"COPY_OBJECT","status":"COMPLETED","id":"6e729643-4cbb-4670-9f69-fc2174074647","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","resources":[{"actionType":"READ","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__sts0119_9375_sourceBucket/o/__sts0119_5371_sourceObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__sts0119_9375_sourceBucket","OBJECT":"__sts0119_5371_sourceObject"}},{"actionType":"WRITTEN","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__sts0119_5907_destinationBucket/o/__STS0119_9008_destinationObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__sts0119_5907_destinationBucket","OBJECT":"__STS0119_9008_destinationObject"}}],"timeAccepted":"2019-04-17T08:28:22Z","timeStarted":"2019-04-17T08:28:22Z","timeFinished":"2019-04-17T08:28:23Z","percentComplete":100.0},{"operationType":"COPY_OBJECT","status":"COMPLETED","id":"800df2f9-0f4e-4218-a62b-02ac381db8f4","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","resources":[{"actionType":"READ","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__sts0990_1255_sourceBucket/o/__sts0990_7084_sourceObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__sts0990_1255_sourceBucket","OBJECT":"__sts0990_7084_sourceObject"}},{"actionType":"WRITTEN","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__sts0990_9098_destinationBucket/o/__STS0990_1284_destinationObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__sts0990_9098_destinationBucket","OBJECT":"__STS0990_1284_destinationObject"}}],"timeAccepted":"2019-04-18T08:26:46Z","timeStarted":"2019-04-18T08:26:47Z","timeFinished":"2019-04-18T08:26:47Z","percentComplete":100.0},{"operationType":"COPY_OBJECT","status":"COMPLETED","id":"a32e469a-e5b4-4452-93c4-5ff7aa16a4d7","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","resources":[{"actionType":"READ","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__sts0917_5460_sourceBucket/o/__sts0917_1974_sourceObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__sts0917_5460_sourceBucket","OBJECT":"__sts0917_1974_sourceObject"}},{"actionType":"WRITTEN","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__sts0917_20_destinationBucket/o/__STS0917_841_destinationObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__sts0917_20_destinationBucket","OBJECT":"__STS0917_841_destinationObject"}}],"timeAccepted":"2019-04-18T05:56:47Z","timeStarted":"2019-04-18T05:56:48Z","timeFinished":"2019-04-18T05:56:48Z","percentComplete":100.0},{"operationType":"COPY_OBJECT","status":"COMPLETED","id":"c9fff2fb-b9a2-4fdd-a50e-829c0e362a3d","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","resources":[{"actionType":"READ","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__sts0214_7098_sourceBucket/o/__sts0214_3121_sourceObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__sts0214_7098_sourceBucket","OBJECT":"__sts0214_3121_sourceObject"}},{"actionType":"WRITTEN","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__sts0214_9410_destinationBucket/o/__STS0214_8608_destinationObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__sts0214_9410_destinationBucket","OBJECT":"__STS0214_8608_destinationObject"}}],"timeAccepted":"2019-04-16T22:25:27Z","timeStarted":"2019-04-16T22:25:28Z","timeFinished":"2019-04-16T22:25:29Z","percentComplete":100.0}]'}
+    headers:
+      Access-Control-Allow-Credentials: ['true']
+      Access-Control-Allow-Methods: ['POST,PUT,GET,HEAD,DELETE,OPTIONS']
+      Access-Control-Allow-Origin: ['*']
+      Access-Control-Expose-Headers: ['Access-Control-Allow-Credentials,Access-Control-Allow-Methods,Access-Control-Allow-Origin,Content-Length,Content-Type,opc-client-info,opc-next-page,opc-request-id']
+      Connection: [keep-alive]
+      Content-Length: ['10207']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:51:46 GMT']
+      opc-next-page: ['0:zUaihjXk+pgXDDlz5MmiwOqZw83pwFLSKClI5reHQ5P+ha3pQyXy0H60Z9Wv17L4ougKaaE/oNanwQEh9d/r9Q==']
+      opc-request-id: [c4be1e4b-82f3-01f4-b561-e70148716297]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq/ec:28:a8:ff:92:ef:cb:59:30:c2:43:f7:44:4b:dc:d9",signature="eJh7Gm/l/Uun2A8BusW5PVY8+CoSJz6LU5baRd7ACDkxKc7LGYbZrKpBqMPCb/uHd+uUb9jOTo3EVrg8c517YHrUlDhVVrtZkMsE54IFaXUsQ7bYxbmVqEYCrl5/3Aks6yComEQPewRA0tdw2tqOPB2EdNBtY0Nd+b81NXhNSsTGPeZDfXkw0mMLNhOVqJyvK1NWwcVSUboeZve4h3SCGGv9Na3pcQSLdXLvHfipqlow4Vh4EJEBwnDE0eg8GV5divhPR742/KvKaIkn2Qiyo0CAOFFhI9nQIf5H9Uci2uHYoXI/YYjbaB2OhQrqxcppq7ATImMaOHcVT95NyYziwA==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 18 Apr 2019 18:51:46 GMT']
+      host: [objectstorage.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.8]
+      opc-request-id: [B7405BF8F13D4908A6F544CFE389FB21]
+      user-agent: [Oracle-PythonSDK/2.2.8 (python 3.6.4; x86_64-Darwin)]
+    method: GET
+    uri: https://objectstorage.us-phoenix-1.oraclecloud.com/workRequests?compartmentId=ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba&page=0%3AzUaihjXk%2BpgXDDlz5MmiwOqZw83pwFLSKClI5reHQ5P%2Bha3pQyXy0H60Z9Wv17L4ougKaaE%2FoNanwQEh9d%2Fr9Q%3D%3D&limit=10
+  response:
+    body: {string: '[{"operationType":"COPY_OBJECT","status":"COMPLETED","id":"d1b1b682-da3d-40c6-a1eb-d9d9db128c88","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","resources":[{"actionType":"READ","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__STS0722_XoVOu8RMWCK_sourceBucket/o/__STS0722_%28uq%21WwZmhV%24clQ%26i%25NooXZrGa*pXAr_sourceObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__STS0722_XoVOu8RMWCK_sourceBucket","OBJECT":"__STS0722_(uq!WwZmhV$clQ&i%NooXZrGa*pXAr_sourceObject"}},{"actionType":"WRITTEN","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__STS0722_Q0ujdkNVU59lR9vxdUNepByvTSRAdPQYnel9M93X_destinationBucket/o/__STS0722_%29rsnHk%40Qqk%5Ea%5E-y+oATT%28I%29lJ*WlwRhXjIJ%26mHB_destinationObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__STS0722_Q0ujdkNVU59lR9vxdUNepByvTSRAdPQYnel9M93X_destinationBucket","OBJECT":"__STS0722_)rsnHk@Qqk^a^-y
+        oATT(I)lJ*WlwRhXjIJ&mHB_destinationObject"}}],"timeAccepted":"2019-04-17T08:24:17Z","timeStarted":"2019-04-17T08:24:18Z","timeFinished":"2019-04-17T08:24:18Z","percentComplete":100.0},{"operationType":"COPY_OBJECT","status":"COMPLETED","id":"d1c15558-004a-4341-8028-3b396485beda","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","resources":[{"actionType":"READ","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__sts0184_3627_sourceBucket/o/__sts0184_9863_sourceObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__sts0184_3627_sourceBucket","OBJECT":"__sts0184_9863_sourceObject"}},{"actionType":"WRITTEN","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__sts0184_6600_destinationBucket/o/__STS0184_6529_destinationObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__sts0184_6600_destinationBucket","OBJECT":"__STS0184_6529_destinationObject"}}],"timeAccepted":"2019-04-16T23:57:00Z","timeStarted":"2019-04-16T23:57:01Z","timeFinished":"2019-04-16T23:57:01Z","percentComplete":100.0},{"operationType":"COPY_OBJECT","status":"COMPLETED","id":"dccba991-e3f9-47e9-b289-18691ec00ae7","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","resources":[{"actionType":"READ","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__sts0118_1934_sourceBucket/o/__sts0118_4142_sourceObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__sts0118_1934_sourceBucket","OBJECT":"__sts0118_4142_sourceObject"}},{"actionType":"WRITTEN","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__sts0118_4412_destinationBucket/o/__STS0118_5130_destinationObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__sts0118_4412_destinationBucket","OBJECT":"__STS0118_5130_destinationObject"}}],"timeAccepted":"2019-04-17T05:57:18Z","timeStarted":"2019-04-17T05:57:19Z","timeFinished":"2019-04-17T05:57:20Z","percentComplete":100.0},{"operationType":"COPY_OBJECT","status":"COMPLETED","id":"e16ffc9e-e213-45ef-b2d6-52a52b4c58e3","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","resources":[{"actionType":"READ","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__STS0151_cycU3f8ASFhGDydUF1jXZXWh7k5PEDwr1BphYOZWSGsK9c0w1_sourceBucket/o/__STS0151_%5EJnao+aRd%21HpdrD%26nA%24ezk-NZwtN%25Pr%29a-naERFoO%40JQifRatOgfPHBZadVPxuqsKJrGy_sourceObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__STS0151_cycU3f8ASFhGDydUF1jXZXWh7k5PEDwr1BphYOZWSGsK9c0w1_sourceBucket","OBJECT":"__STS0151_^Jnao
+        aRd!HpdrD&nA$ezk-NZwtN%Pr)a-naERFoO@JQifRatOgfPHBZadVPxuqsKJrGy_sourceObject"}},{"actionType":"WRITTEN","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__STS0151_W4UikFv35spIcLIxHNBmiz-DLjbRQ3EWur0-3OgziFzf_destinationBucket/o/__STS0151_lc%28VIeKsqsFKfk%24*i%24y_destinationObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__STS0151_W4UikFv35spIcLIxHNBmiz-DLjbRQ3EWur0-3OgziFzf_destinationBucket","OBJECT":"__STS0151_lc(VIeKsqsFKfk$*i$y_destinationObject"}}],"timeAccepted":"2019-04-18T08:23:16Z","timeStarted":"2019-04-18T08:23:16Z","timeFinished":"2019-04-18T08:23:16Z","percentComplete":100.0},{"operationType":"COPY_OBJECT","status":"COMPLETED","id":"ff808647-4562-466b-bc1a-47f17e667b99","compartmentId":"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba","resources":[{"actionType":"READ","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__sts0258_8640_sourceBucket/o/__sts0258_342_sourceObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__sts0258_8640_sourceBucket","OBJECT":"__sts0258_342_sourceObject"}},{"actionType":"WRITTEN","entityType":"object","identifier":null,"entityUri":"/n/dex-us-phoenix-1/b/__sts0258_2695_destinationBucket/o/__STS0258_3358_destinationObject","metadata":{"REGION":"us-phoenix-1","NAMESPACE":"dex-us-phoenix-1","BUCKET":"__sts0258_2695_destinationBucket","OBJECT":"__STS0258_3358_destinationObject"}}],"timeAccepted":"2019-04-18T17:56:54Z","timeStarted":"2019-04-18T17:56:55Z","timeFinished":"2019-04-18T17:56:55Z","percentComplete":100.0}]'}
+    headers:
+      Access-Control-Allow-Credentials: ['true']
+      Access-Control-Allow-Methods: ['POST,PUT,GET,HEAD,DELETE,OPTIONS']
+      Access-Control-Allow-Origin: ['*']
+      Access-Control-Expose-Headers: ['Access-Control-Allow-Credentials,Access-Control-Allow-Methods,Access-Control-Allow-Origin,Content-Length,Content-Type,opc-client-info,opc-request-id']
+      Connection: [keep-alive]
+      Content-Length: ['5466']
+      Content-Type: [application/json]
+      Date: ['Thu, 18 Apr 2019 18:51:46 GMT']
+      opc-request-id: [60b81a2e-206d-c999-3369-8ecc55f56e79]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"containerId": "bd4f21e5-4aa7-440c-acb5-830097de51a5", "listResponse":
+      true, "requestClass": "com.oracle.bmc.objectstorage.requests.ListWorkRequestsRequest",
+      "requestJson": "{\"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"limit\": 10}", "responseJson": "[{\"items\": [{\"operationType\": \"COPY_OBJECT\",
+      \"status\": \"COMPLETED\", \"id\": \"10fc22a5-448f-4ecd-9049-5676e286029f\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"resources\": [{\"actionType\": \"READ\", \"entityType\": \"object\", \"identifier\":
+      null, \"entityUri\": \"/n/dex-us-phoenix-1/b/__sts0164_1863_sourceBucket/o/__sts0164_2093_sourceObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__sts0164_1863_sourceBucket\", \"oBJECT\": \"__sts0164_2093_sourceObject\"}},
+      {\"actionType\": \"WRITTEN\", \"entityType\": \"object\", \"identifier\": null,
+      \"entityUri\": \"/n/dex-us-phoenix-1/b/__sts0164_4637_destinationBucket/o/__STS0164_8724_destinationObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__sts0164_4637_destinationBucket\", \"oBJECT\": \"__STS0164_8724_destinationObject\"}}],
+      \"percentComplete\": 100.0, \"timeAccepted\": \"2019-04-17T17:57:08+00:00\",
+      \"timeStarted\": \"2019-04-17T17:57:11+00:00\", \"timeFinished\": \"2019-04-17T17:57:11+00:00\"},
+      {\"operationType\": \"COPY_OBJECT\", \"status\": \"COMPLETED\", \"id\": \"15329f05-d0de-4b91-abc2-7fc3898a6935\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"resources\": [{\"actionType\": \"READ\", \"entityType\": \"object\", \"identifier\":
+      null, \"entityUri\": \"/n/dex-us-phoenix-1/b/__STS0929_EsnWWtlXvVXCSuLuTuJ9_sourceBucket/o/__STS0929_XlFu%25V-xYp%26kRD_sourceObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__STS0929_EsnWWtlXvVXCSuLuTuJ9_sourceBucket\", \"oBJECT\": \"__STS0929_XlFu%V-xYp&kRD_sourceObject\"}},
+      {\"actionType\": \"WRITTEN\", \"entityType\": \"object\", \"identifier\": null,
+      \"entityUri\": \"/n/dex-us-phoenix-1/b/__STS0929_esXagCStJdco8dtp8DZt-9h40RcRBqNSMZ_destinationBucket/o/__STS0929_M%29rabUEeLW+QITEgptDHUcVlVLtTAAjLvs%24QxkYesaLbpZZSt_destinationObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__STS0929_esXagCStJdco8dtp8DZt-9h40RcRBqNSMZ_destinationBucket\",
+      \"oBJECT\": \"__STS0929_M)rabUEeLW QITEgptDHUcVlVLtTAAjLvs$QxkYesaLbpZZSt_destinationObject\"}}],
+      \"percentComplete\": 100.0, \"timeAccepted\": \"2019-04-18T11:10:15+00:00\",
+      \"timeStarted\": \"2019-04-18T11:10:15+00:00\", \"timeFinished\": \"2019-04-18T11:10:15+00:00\"},
+      {\"operationType\": \"COPY_OBJECT\", \"status\": \"COMPLETED\", \"id\": \"279bebd8-422f-4151-92b9-bc44059cb3ff\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"resources\": [{\"actionType\": \"READ\", \"entityType\": \"object\", \"identifier\":
+      null, \"entityUri\": \"/n/dex-us-phoenix-1/b/__sts0062_1620_sourceBucket/o/__sts0062_6532_sourceObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__sts0062_1620_sourceBucket\", \"oBJECT\": \"__sts0062_6532_sourceObject\"}},
+      {\"actionType\": \"WRITTEN\", \"entityType\": \"object\", \"identifier\": null,
+      \"entityUri\": \"/n/dex-us-phoenix-1/b/__sts0062_4783_destinationBucket/o/__STS0062_7152_destinationObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__sts0062_4783_destinationBucket\", \"oBJECT\": \"__STS0062_7152_destinationObject\"}}],
+      \"percentComplete\": 100.0, \"timeAccepted\": \"2019-04-17T11:57:19+00:00\",
+      \"timeStarted\": \"2019-04-17T11:57:19+00:00\", \"timeFinished\": \"2019-04-17T11:57:19+00:00\"},
+      {\"operationType\": \"COPY_OBJECT\", \"status\": \"COMPLETED\", \"id\": \"45a6ad93-f8c9-4538-b8e6-8979548069c6\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"resources\": [{\"actionType\": \"READ\", \"entityType\": \"object\", \"identifier\":
+      null, \"entityUri\": \"/n/dex-us-phoenix-1/b/__sts0347_6755_sourceBucket/o/__sts0347_4233_sourceObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__sts0347_6755_sourceBucket\", \"oBJECT\": \"__sts0347_4233_sourceObject\"}},
+      {\"actionType\": \"WRITTEN\", \"entityType\": \"object\", \"identifier\": null,
+      \"entityUri\": \"/n/dex-us-phoenix-1/b/__sts0347_8047_destinationBucket/o/__STS0347_9249_destinationObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__sts0347_8047_destinationBucket\", \"oBJECT\": \"__STS0347_9249_destinationObject\"}}],
+      \"percentComplete\": 100.0, \"timeAccepted\": \"2019-04-18T11:57:05+00:00\",
+      \"timeStarted\": \"2019-04-18T11:57:05+00:00\", \"timeFinished\": \"2019-04-18T11:57:06+00:00\"},
+      {\"operationType\": \"COPY_OBJECT\", \"status\": \"COMPLETED\", \"id\": \"4f7169d3-9c12-414a-a5c4-2f533c6b77ab\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"resources\": [{\"actionType\": \"READ\", \"entityType\": \"object\", \"identifier\":
+      null, \"entityUri\": \"/n/dex-us-phoenix-1/b/__sts0813_3026_sourceBucket/o/__sts0813_8680_sourceObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__sts0813_3026_sourceBucket\", \"oBJECT\": \"__sts0813_8680_sourceObject\"}},
+      {\"actionType\": \"WRITTEN\", \"entityType\": \"object\", \"identifier\": null,
+      \"entityUri\": \"/n/dex-us-phoenix-1/b/__sts0813_9726_destinationBucket/o/__STS0813_4415_destinationObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__sts0813_9726_destinationBucket\", \"oBJECT\": \"__STS0813_4415_destinationObject\"}}],
+      \"percentComplete\": 100.0, \"timeAccepted\": \"2019-04-17T23:57:10+00:00\",
+      \"timeStarted\": \"2019-04-17T23:57:10+00:00\", \"timeFinished\": \"2019-04-17T23:57:10+00:00\"},
+      {\"operationType\": \"COPY_OBJECT\", \"status\": \"COMPLETED\", \"id\": \"543b5817-0535-4ea6-87ca-5223f20346c0\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"resources\": [{\"actionType\": \"READ\", \"entityType\": \"object\", \"identifier\":
+      null, \"entityUri\": \"/n/dex-us-phoenix-1/b/__STS0035_eBbbud7vtypFhsuTnEs_sourceBucket/o/__STS0035_g%25XuxpxNiLWDPH%29jdVf%24ZUBwNBrC%24i%29HlHrXmQVhHQu_sourceObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__STS0035_eBbbud7vtypFhsuTnEs_sourceBucket\", \"oBJECT\": \"__STS0035_g%XuxpxNiLWDPH)jdVf$ZUBwNBrC$i)HlHrXmQVhHQu_sourceObject\"}},
+      {\"actionType\": \"WRITTEN\", \"entityType\": \"object\", \"identifier\": null,
+      \"entityUri\": \"/n/dex-us-phoenix-1/b/__STS0035_F0vyLIYBGud6jb_destinationBucket/o/__STS0035_LFDeBMXf+kb%24VqGJRBg%5EnyA%5EFvkQB%25C%28M%25TWgNoIOumGy_destinationObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__STS0035_F0vyLIYBGud6jb_destinationBucket\", \"oBJECT\": \"__STS0035_LFDeBMXf
+      kb$VqGJRBg^nyA^FvkQB%C(M%TWgNoIOumGy_destinationObject\"}}], \"percentComplete\":
+      100.0, \"timeAccepted\": \"2019-04-18T18:50:40+00:00\", \"timeStarted\": \"2019-04-18T18:50:40+00:00\",
+      \"timeFinished\": \"2019-04-18T18:50:40+00:00\"}, {\"operationType\": \"COPY_OBJECT\",
+      \"status\": \"COMPLETED\", \"id\": \"6e729643-4cbb-4670-9f69-fc2174074647\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"resources\": [{\"actionType\": \"READ\", \"entityType\": \"object\", \"identifier\":
+      null, \"entityUri\": \"/n/dex-us-phoenix-1/b/__sts0119_9375_sourceBucket/o/__sts0119_5371_sourceObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__sts0119_9375_sourceBucket\", \"oBJECT\": \"__sts0119_5371_sourceObject\"}},
+      {\"actionType\": \"WRITTEN\", \"entityType\": \"object\", \"identifier\": null,
+      \"entityUri\": \"/n/dex-us-phoenix-1/b/__sts0119_5907_destinationBucket/o/__STS0119_9008_destinationObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__sts0119_5907_destinationBucket\", \"oBJECT\": \"__STS0119_9008_destinationObject\"}}],
+      \"percentComplete\": 100.0, \"timeAccepted\": \"2019-04-17T08:28:22+00:00\",
+      \"timeStarted\": \"2019-04-17T08:28:22+00:00\", \"timeFinished\": \"2019-04-17T08:28:23+00:00\"},
+      {\"operationType\": \"COPY_OBJECT\", \"status\": \"COMPLETED\", \"id\": \"800df2f9-0f4e-4218-a62b-02ac381db8f4\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"resources\": [{\"actionType\": \"READ\", \"entityType\": \"object\", \"identifier\":
+      null, \"entityUri\": \"/n/dex-us-phoenix-1/b/__sts0990_1255_sourceBucket/o/__sts0990_7084_sourceObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__sts0990_1255_sourceBucket\", \"oBJECT\": \"__sts0990_7084_sourceObject\"}},
+      {\"actionType\": \"WRITTEN\", \"entityType\": \"object\", \"identifier\": null,
+      \"entityUri\": \"/n/dex-us-phoenix-1/b/__sts0990_9098_destinationBucket/o/__STS0990_1284_destinationObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__sts0990_9098_destinationBucket\", \"oBJECT\": \"__STS0990_1284_destinationObject\"}}],
+      \"percentComplete\": 100.0, \"timeAccepted\": \"2019-04-18T08:26:46+00:00\",
+      \"timeStarted\": \"2019-04-18T08:26:47+00:00\", \"timeFinished\": \"2019-04-18T08:26:47+00:00\"},
+      {\"operationType\": \"COPY_OBJECT\", \"status\": \"COMPLETED\", \"id\": \"a32e469a-e5b4-4452-93c4-5ff7aa16a4d7\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"resources\": [{\"actionType\": \"READ\", \"entityType\": \"object\", \"identifier\":
+      null, \"entityUri\": \"/n/dex-us-phoenix-1/b/__sts0917_5460_sourceBucket/o/__sts0917_1974_sourceObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__sts0917_5460_sourceBucket\", \"oBJECT\": \"__sts0917_1974_sourceObject\"}},
+      {\"actionType\": \"WRITTEN\", \"entityType\": \"object\", \"identifier\": null,
+      \"entityUri\": \"/n/dex-us-phoenix-1/b/__sts0917_20_destinationBucket/o/__STS0917_841_destinationObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__sts0917_20_destinationBucket\", \"oBJECT\": \"__STS0917_841_destinationObject\"}}],
+      \"percentComplete\": 100.0, \"timeAccepted\": \"2019-04-18T05:56:47+00:00\",
+      \"timeStarted\": \"2019-04-18T05:56:48+00:00\", \"timeFinished\": \"2019-04-18T05:56:48+00:00\"},
+      {\"operationType\": \"COPY_OBJECT\", \"status\": \"COMPLETED\", \"id\": \"c9fff2fb-b9a2-4fdd-a50e-829c0e362a3d\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"resources\": [{\"actionType\": \"READ\", \"entityType\": \"object\", \"identifier\":
+      null, \"entityUri\": \"/n/dex-us-phoenix-1/b/__sts0214_7098_sourceBucket/o/__sts0214_3121_sourceObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__sts0214_7098_sourceBucket\", \"oBJECT\": \"__sts0214_3121_sourceObject\"}},
+      {\"actionType\": \"WRITTEN\", \"entityType\": \"object\", \"identifier\": null,
+      \"entityUri\": \"/n/dex-us-phoenix-1/b/__sts0214_9410_destinationBucket/o/__STS0214_8608_destinationObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__sts0214_9410_destinationBucket\", \"oBJECT\": \"__STS0214_8608_destinationObject\"}}],
+      \"percentComplete\": 100.0, \"timeAccepted\": \"2019-04-16T22:25:27+00:00\",
+      \"timeStarted\": \"2019-04-16T22:25:28+00:00\", \"timeFinished\": \"2019-04-16T22:25:29+00:00\"}],
+      \"opcRequestId\": \"9741B57059954DEB92013831CACE4F67\", \"opcNextPage\": \"0:zUaihjXk+pgXDDlz5MmiwOqZw83pwFLSKClI5reHQ5P+ha3pQyXy0H60Z9Wv17L4ougKaaE/oNanwQEh9d/r9Q==\"},
+      {\"items\": [{\"operationType\": \"COPY_OBJECT\", \"status\": \"COMPLETED\",
+      \"id\": \"d1b1b682-da3d-40c6-a1eb-d9d9db128c88\", \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"resources\": [{\"actionType\": \"READ\", \"entityType\": \"object\", \"identifier\":
+      null, \"entityUri\": \"/n/dex-us-phoenix-1/b/__STS0722_XoVOu8RMWCK_sourceBucket/o/__STS0722_%28uq%21WwZmhV%24clQ%26i%25NooXZrGa*pXAr_sourceObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__STS0722_XoVOu8RMWCK_sourceBucket\", \"oBJECT\": \"__STS0722_(uq!WwZmhV$clQ&i%NooXZrGa*pXAr_sourceObject\"}},
+      {\"actionType\": \"WRITTEN\", \"entityType\": \"object\", \"identifier\": null,
+      \"entityUri\": \"/n/dex-us-phoenix-1/b/__STS0722_Q0ujdkNVU59lR9vxdUNepByvTSRAdPQYnel9M93X_destinationBucket/o/__STS0722_%29rsnHk%40Qqk%5Ea%5E-y+oATT%28I%29lJ*WlwRhXjIJ%26mHB_destinationObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__STS0722_Q0ujdkNVU59lR9vxdUNepByvTSRAdPQYnel9M93X_destinationBucket\",
+      \"oBJECT\": \"__STS0722_)rsnHk@Qqk^a^-y oATT(I)lJ*WlwRhXjIJ&mHB_destinationObject\"}}],
+      \"percentComplete\": 100.0, \"timeAccepted\": \"2019-04-17T08:24:17+00:00\",
+      \"timeStarted\": \"2019-04-17T08:24:18+00:00\", \"timeFinished\": \"2019-04-17T08:24:18+00:00\"},
+      {\"operationType\": \"COPY_OBJECT\", \"status\": \"COMPLETED\", \"id\": \"d1c15558-004a-4341-8028-3b396485beda\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"resources\": [{\"actionType\": \"READ\", \"entityType\": \"object\", \"identifier\":
+      null, \"entityUri\": \"/n/dex-us-phoenix-1/b/__sts0184_3627_sourceBucket/o/__sts0184_9863_sourceObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__sts0184_3627_sourceBucket\", \"oBJECT\": \"__sts0184_9863_sourceObject\"}},
+      {\"actionType\": \"WRITTEN\", \"entityType\": \"object\", \"identifier\": null,
+      \"entityUri\": \"/n/dex-us-phoenix-1/b/__sts0184_6600_destinationBucket/o/__STS0184_6529_destinationObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__sts0184_6600_destinationBucket\", \"oBJECT\": \"__STS0184_6529_destinationObject\"}}],
+      \"percentComplete\": 100.0, \"timeAccepted\": \"2019-04-16T23:57:00+00:00\",
+      \"timeStarted\": \"2019-04-16T23:57:01+00:00\", \"timeFinished\": \"2019-04-16T23:57:01+00:00\"},
+      {\"operationType\": \"COPY_OBJECT\", \"status\": \"COMPLETED\", \"id\": \"dccba991-e3f9-47e9-b289-18691ec00ae7\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"resources\": [{\"actionType\": \"READ\", \"entityType\": \"object\", \"identifier\":
+      null, \"entityUri\": \"/n/dex-us-phoenix-1/b/__sts0118_1934_sourceBucket/o/__sts0118_4142_sourceObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__sts0118_1934_sourceBucket\", \"oBJECT\": \"__sts0118_4142_sourceObject\"}},
+      {\"actionType\": \"WRITTEN\", \"entityType\": \"object\", \"identifier\": null,
+      \"entityUri\": \"/n/dex-us-phoenix-1/b/__sts0118_4412_destinationBucket/o/__STS0118_5130_destinationObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__sts0118_4412_destinationBucket\", \"oBJECT\": \"__STS0118_5130_destinationObject\"}}],
+      \"percentComplete\": 100.0, \"timeAccepted\": \"2019-04-17T05:57:18+00:00\",
+      \"timeStarted\": \"2019-04-17T05:57:19+00:00\", \"timeFinished\": \"2019-04-17T05:57:20+00:00\"},
+      {\"operationType\": \"COPY_OBJECT\", \"status\": \"COMPLETED\", \"id\": \"e16ffc9e-e213-45ef-b2d6-52a52b4c58e3\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"resources\": [{\"actionType\": \"READ\", \"entityType\": \"object\", \"identifier\":
+      null, \"entityUri\": \"/n/dex-us-phoenix-1/b/__STS0151_cycU3f8ASFhGDydUF1jXZXWh7k5PEDwr1BphYOZWSGsK9c0w1_sourceBucket/o/__STS0151_%5EJnao+aRd%21HpdrD%26nA%24ezk-NZwtN%25Pr%29a-naERFoO%40JQifRatOgfPHBZadVPxuqsKJrGy_sourceObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__STS0151_cycU3f8ASFhGDydUF1jXZXWh7k5PEDwr1BphYOZWSGsK9c0w1_sourceBucket\",
+      \"oBJECT\": \"__STS0151_^Jnao aRd!HpdrD&nA$ezk-NZwtN%Pr)a-naERFoO@JQifRatOgfPHBZadVPxuqsKJrGy_sourceObject\"}},
+      {\"actionType\": \"WRITTEN\", \"entityType\": \"object\", \"identifier\": null,
+      \"entityUri\": \"/n/dex-us-phoenix-1/b/__STS0151_W4UikFv35spIcLIxHNBmiz-DLjbRQ3EWur0-3OgziFzf_destinationBucket/o/__STS0151_lc%28VIeKsqsFKfk%24*i%24y_destinationObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__STS0151_W4UikFv35spIcLIxHNBmiz-DLjbRQ3EWur0-3OgziFzf_destinationBucket\",
+      \"oBJECT\": \"__STS0151_lc(VIeKsqsFKfk$*i$y_destinationObject\"}}], \"percentComplete\":
+      100.0, \"timeAccepted\": \"2019-04-18T08:23:16+00:00\", \"timeStarted\": \"2019-04-18T08:23:16+00:00\",
+      \"timeFinished\": \"2019-04-18T08:23:16+00:00\"}, {\"operationType\": \"COPY_OBJECT\",
+      \"status\": \"COMPLETED\", \"id\": \"ff808647-4562-466b-bc1a-47f17e667b99\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaazpbmt2urchrvht3nie37sjksf5syfr5nrfzjl4ut2lzf665ys3ba\",
+      \"resources\": [{\"actionType\": \"READ\", \"entityType\": \"object\", \"identifier\":
+      null, \"entityUri\": \"/n/dex-us-phoenix-1/b/__sts0258_8640_sourceBucket/o/__sts0258_342_sourceObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__sts0258_8640_sourceBucket\", \"oBJECT\": \"__sts0258_342_sourceObject\"}},
+      {\"actionType\": \"WRITTEN\", \"entityType\": \"object\", \"identifier\": null,
+      \"entityUri\": \"/n/dex-us-phoenix-1/b/__sts0258_2695_destinationBucket/o/__STS0258_3358_destinationObject\",
+      \"metadata\": {\"rEGION\": \"us-phoenix-1\", \"nAMESPACE\": \"dex-us-phoenix-1\",
+      \"bUCKET\": \"__sts0258_2695_destinationBucket\", \"oBJECT\": \"__STS0258_3358_destinationObject\"}}],
+      \"percentComplete\": 100.0, \"timeAccepted\": \"2019-04-18T17:56:54+00:00\",
+      \"timeStarted\": \"2019-04-18T17:56:55+00:00\", \"timeFinished\": \"2019-04-18T17:56:55+00:00\"}],
+      \"opcRequestId\": \"5F38B3F86FCE47FAA4494083459C614C\", \"opcNextPage\": null}]",
+      "responseClass": "com.oracle.bmc.objectstorage.responses.ListWorkRequestsResponse"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['18783']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0035&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Thu, 18 Apr 2019 18:51:47 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
 version: 1
