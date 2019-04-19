@@ -194,9 +194,10 @@ class ShowOCIService(object):
     C_BUDGETS = "budgets"
     C_BUDGETS_BUDGETS = "budgets"
 
-    # Error flag
+    # Error flag and reboot migration
     error = 0
     warning = 0
+    reboot_migration_counter = 0
 
     ##########################################################################
     # Local Variables
@@ -2334,6 +2335,10 @@ class ShowOCIService(object):
                     if self.__if_managed_paas_compartment(compartment['name']):
                         val['image_os'] = "PaaS Image"
                         val['image'] = "PaaS Image"
+
+                    # mark reboot migration flag
+                    if arr.time_maintenance_reboot_due is not None:
+                        self.reboot_migration_counter += 1
 
                     # get image info
                     try:

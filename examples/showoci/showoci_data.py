@@ -132,6 +132,13 @@ class ShowOCIData(object):
         return self.service.warning
 
     ##########################################################################
+    # get service reboot migration
+    ##########################################################################
+    def get_service_reboot_migration(self):
+
+        return self.service.reboot_migration_counter
+
+    ##########################################################################
     # print print error
     ##########################################################################
     def __print_error(self, msg, e):

@@ -15,6 +15,7 @@ Added
 * Added Budgets
 * Added Compute Autoscaling
 * Add OS Version to the compute summary
+* Add Reboot migration alert
 
 Fixed / Changed
 ---------------

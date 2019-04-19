@@ -157,6 +157,10 @@ def execute_extract():
     ############################################
     complete_message = return_error_message(data.get_service_errors(), data.get_service_warnings(), data.error)
 
+    # if reboot migration
+    if data.get_service_reboot_migration() > 0:
+        output.print_header(str(data.get_service_reboot_migration()) + " Reboot Migration Alert for Compute", 0)
+
     # print completion
     output.print_header("Completed " + complete_message + " at " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")), 0)
 
