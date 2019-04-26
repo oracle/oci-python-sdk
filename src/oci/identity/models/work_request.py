@@ -17,6 +17,10 @@ class WorkRequest(object):
     #: This constant has a value of "DELETE_COMPARTMENT"
     OPERATION_TYPE_DELETE_COMPARTMENT = "DELETE_COMPARTMENT"
 
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_TAG_DEFINITION"
+    OPERATION_TYPE_DELETE_TAG_DEFINITION = "DELETE_TAG_DEFINITION"
+
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -52,7 +56,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "DELETE_COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DELETE_COMPARTMENT", "DELETE_TAG_DEFINITION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -165,7 +169,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         An enum-like description of the type of work the work request is doing.
 
-        Allowed values for this property are: "DELETE_COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DELETE_COMPARTMENT", "DELETE_TAG_DEFINITION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -184,7 +188,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["DELETE_COMPARTMENT"]
+        allowed_values = ["DELETE_COMPARTMENT", "DELETE_TAG_DEFINITION"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
