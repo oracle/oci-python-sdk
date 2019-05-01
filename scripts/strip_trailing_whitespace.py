@@ -4,6 +4,7 @@
 # whitespace (which would otherwise cause Flake8 to complain). This is a bit hacky
 # but it's easier than messing around with mustache templates
 
+# TODO: Determine if any changes have been made and only write when needed?
 import os
 import os.path
 
@@ -16,7 +17,7 @@ for dirpath, dirnames, filenames in os.walk(SOURCE_CODE_LOCAITON):
         if extention not in CODE_EXTENTIONS:
             continue
         file_path = os.path.join(dirpath, f)
-        print('Stripping whitespace from {}'.format(file_path))
+        # print('Stripping whitespace from {}'.format(file_path))
         with open(file_path, 'r') as file:
             content = file.readlines()
 

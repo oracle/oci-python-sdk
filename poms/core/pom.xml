@@ -1,5 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <groupId>com.oracle.bmc.sdk</groupId>
+    <artifactId>python-sdk</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <relativePath>../../pom.xml</relativePath>
+  </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.bmc.sdk</groupId>
   <artifactId>python-sdk-core-codegen</artifactId>
@@ -51,7 +57,7 @@
       <plugin>
         <groupId>com.oracle.oci.sdk.utilities</groupId>
         <artifactId>spec-conditionals-preprocessor-plugin</artifactId>
-        <version>1.0.6-SNAPSHOT</version>
+        <version>${preprocessor-version}</version>
         <executions>
           <execution>
             <id>spec-conditionals-prefer-coreservices-api-spec</id>
@@ -85,7 +91,7 @@
       <plugin>
         <groupId>com.oracle.bmc.sdk</groupId>
         <artifactId>bmc-sdk-swagger-maven-plugin</artifactId>
-        <version>1.78-SNAPSHOT</version>
+        <version>${codegen-version}</version>
         <configuration>
           <isTestGenerationEnabled>false</isTestGenerationEnabled>
         </configuration>
@@ -97,7 +103,7 @@
               <goal>generate</goal>
             </goals>
             <configuration>
-              <language>oracle-python-sdk</language>
+              <language>${codegen-language}</language>
               <specPath>${preprocessed-temp-dir}/coreservices-api-spec/${coreservices-api-spec-spec-file}</specPath>
               <outputDir>src/oci</outputDir>
               <basePackage>OCI</basePackage>
@@ -120,7 +126,7 @@
         <configuration>
           <filesets>
             <fileset>
-              <directory>src/oci/core</directory>
+              <directory>${sdk-root-dir}/src/oci/core</directory>
               <includes>
                 <include>**/*</include>
               </includes>

@@ -38,7 +38,7 @@ def do_skip_file(file_path):
     return False
 
 
-print('Processing directory {}'.format(base_path))
+# print('Processing directory {}'.format(base_path))
 for dir_path, dir_names, file_names in os.walk(base_path):
     for f in file_names:
         file_path = os.path.join(dir_path, f)
@@ -47,7 +47,7 @@ for dir_path, dir_names, file_names in os.walk(base_path):
             continue
 
         # Input
-        print('Processing {}'.format(file_path))
+        # print('Processing {}'.format(file_path))
         with open(file_path, 'r') as file:
             content = file.read()
 
