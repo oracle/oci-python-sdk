@@ -11,6 +11,7 @@ REGIONS_SHORT_NAMES = {
     'yyz': 'ca-toronto-1'
 }
 REGION_REALMS = {
+    'ap-tokyo-1': 'oc1',
     'us-phoenix-1': 'oc1',
     'us-ashburn-1': 'oc1',
     'eu-frankfurt-1': 'oc1',
@@ -30,6 +31,7 @@ REALMS = {
     'oc3': 'oraclegovcloud.com'
 }
 REGIONS = [
+    "ap-tokyo-1",
     "us-phoenix-1",
     "us-ashburn-1",
     "eu-frankfurt-1",

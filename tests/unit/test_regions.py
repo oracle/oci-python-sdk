@@ -70,3 +70,8 @@ def test_short_name_to_region():
 def test_short_name_to_realm():
     for shortname in six.iterkeys(REGIONS_SHORT_NAMES):
         assert(REGIONS_SHORT_NAMES[shortname] in REGION_REALMS)
+
+
+def test_region_to_realm():
+    for region in REGIONS:
+        assert(region in REGION_REALMS)
