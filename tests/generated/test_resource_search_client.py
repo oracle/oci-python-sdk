@@ -28,7 +28,7 @@ def vcr_fixture(request):
         yield
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="rqs_engg_team_us_grp@oracle.com" jiraProject="RQS" opsJiraProject="RQS"
 def test_get_resource_type(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_search', 'GetResourceType'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -67,7 +67,7 @@ def test_get_resource_type(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="rqs_engg_team_us_grp@oracle.com" jiraProject="RQS" opsJiraProject="RQS"
 def test_list_resource_types(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_search', 'ListResourceTypes'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -122,7 +122,7 @@ def test_list_resource_types(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="rqs_engg_team_us_grp@oracle.com" jiraProject="RQS" opsJiraProject="RQS"
 def test_search_resources(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_search', 'SearchResources'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
