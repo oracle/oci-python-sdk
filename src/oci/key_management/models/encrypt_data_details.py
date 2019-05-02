@@ -25,6 +25,10 @@ class EncryptDataDetails(object):
             The value to assign to the key_id property of this EncryptDataDetails.
         :type key_id: str
 
+        :param logging_context:
+            The value to assign to the logging_context property of this EncryptDataDetails.
+        :type logging_context: dict(str, str)
+
         :param plaintext:
             The value to assign to the plaintext property of this EncryptDataDetails.
         :type plaintext: str
@@ -33,17 +37,20 @@ class EncryptDataDetails(object):
         self.swagger_types = {
             'associated_data': 'dict(str, str)',
             'key_id': 'str',
+            'logging_context': 'dict(str, str)',
             'plaintext': 'str'
         }
 
         self.attribute_map = {
             'associated_data': 'associatedData',
             'key_id': 'keyId',
+            'logging_context': 'loggingContext',
             'plaintext': 'plaintext'
         }
 
         self._associated_data = None
         self._key_id = None
+        self._logging_context = None
         self._plaintext = None
 
     @property
@@ -97,6 +104,32 @@ class EncryptDataDetails(object):
         :type: str
         """
         self._key_id = key_id
+
+    @property
+    def logging_context(self):
+        """
+        Gets the logging_context of this EncryptDataDetails.
+        Information that can be used to provide context for audit logging. It is a map that contains any addtional
+        data the users may have and will be added to the audit logs (if audit logging is enabled)
+
+
+        :return: The logging_context of this EncryptDataDetails.
+        :rtype: dict(str, str)
+        """
+        return self._logging_context
+
+    @logging_context.setter
+    def logging_context(self, logging_context):
+        """
+        Sets the logging_context of this EncryptDataDetails.
+        Information that can be used to provide context for audit logging. It is a map that contains any addtional
+        data the users may have and will be added to the audit logs (if audit logging is enabled)
+
+
+        :param logging_context: The logging_context of this EncryptDataDetails.
+        :type: dict(str, str)
+        """
+        self._logging_context = logging_context
 
     @property
     def plaintext(self):
