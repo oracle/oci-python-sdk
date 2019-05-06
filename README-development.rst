@@ -64,6 +64,23 @@ variables to be set:
 
     * ``OCI_PYSDK_PUBLIC_SSH_KEY_FILE``: path to a public SSH key (.pub file) that will be given access to the instance launched in ``test_launch_instance_tutorial.py``.
 
+
+Checking Style
+==============
+The Python SDK adheres to PEP8 style guilds and uses Flake8 to validate style.  There are some exceptions and they can
+be viewed in the ``setup.cfg`` file.
+
+If you run tox with no environment specified Flake8 will be run.  You can also run flake8 with no arguments to check
+the style consistency for the whole project.  If you want to check a single file you can run flake8 with a path to the
+file to check.
+
+.. code-block:: sh
+    flake8 path/to/python_file_to_check.py
+
+If flake8 is not found, make sure you have ``requirements.txt`` installed into your virtualenv.  See the
+"Getting Started" section.
+
+
 Generating Documentation
 ========================
 Sphinx is used for documentation. You can generate HTML locally with the following:
