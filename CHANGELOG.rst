@@ -5,12 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-2.2.8 - TBD
+2.2.8 - 2019-05-07
 ====================
 
 Added
 -----
-* TBD
+* Support for the Tokyo (NRT) region
+* A sample demonstrating how to find, stop and report on instances that have been improperly tagged is available on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/stop_untagged_instances.py>`__.
+* A sample demonstrating adding and deleting an API key is available on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/add_API_key.py>`__.
+* New services to showoci.py on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/showoci/showoci.py>`__.
+
+Fixed
+-----
+* Updated example for Streaming service to address issue with encoding in Python 3 is available on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/stream_example.py>`__.
 
 ====================
 2.2.7 - 2019-04-16
