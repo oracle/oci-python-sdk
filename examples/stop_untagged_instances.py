@@ -55,12 +55,12 @@ def stop_resource(instance_id, region):
 
 
 # determines the list of subscribed regions for the tenancy
-def list_of_regions():
+def list_of_regions(tenancy_id):
     identity = oci.identity.IdentityClient(config)
     list_of_regions = []
-    list_regions_response = identity.list_regions()
+    list_regions_response = identity.list_region_subscriptions(tenancy_id)
     for r in list_regions_response.data:
-        list_of_regions.append(r.name)
+        list_of_regions.append(r.region_name)
     return list_of_regions
 
 
@@ -68,7 +68,7 @@ def list_of_regions():
 # from the find_resources_wo_tags function.  The LaunchInstance events give it the principal (usually email) of the
 # 'person' who started the resource and joins it to the exisitng instances_to_stop so it now contains the email of who
 # started it.
-def find_audit_events(instances_to_stop, instance_stop_list, compartment_id_stop_list):
+def find_audit_events(instances_to_stop, instance_stop_list, compartment_id_stop_list, tenancy_id):
     end_time = datetime.datetime.utcnow()
     start_time = end_time + datetime.timedelta(hours=-int(audit_hours))
     list_of_audit_events = []
@@ -77,7 +77,7 @@ def find_audit_events(instances_to_stop, instance_stop_list, compartment_id_stop
     print('\nGetting list of audit events for the last {0} hour(s).' .format(audit_hours))
 
     # Finding all Resources in a region
-    region_list = list_of_regions()
+    region_list = list_of_regions(tenancy_id)
     for region in region_list:
         audit.base_client.set_region(region)
 
@@ -110,14 +110,14 @@ def find_audit_events(instances_to_stop, instance_stop_list, compartment_id_stop
 # For any resources that are in the correct state and that are either missing tags entirely or not tag correctly.
 # It records those which are going to be stopped and calls stop_resource with a list of all compute instances to be
 # stopped.
-def find_resources_wo_tags(instances_to_stop_list, search_string):
+def find_resources_wo_tags(instances_to_stop_list, search_string, tenancy_id):
     instances_stop_list = []
     compartment_id_stop_list = []
     search_client = oci.resource_search.ResourceSearchClient(config)
     compute_client = oci.core.ComputeClient(config)
 
     # Finding all Resources in a region
-    region_list = list_of_regions()
+    region_list = list_of_regions(tenancy_id)
     for region in region_list:
         print('Searching RQS to find mis-tagged resources in Region:{0}' .format(region))
         try:
@@ -162,7 +162,7 @@ def find_resources_wo_tags(instances_to_stop_list, search_string):
 
     # Only find audit events for  those compartments with a stopped instance
     if len(instances_to_stop_list) != 0:
-        find_audit_events(instances_to_stop_list, instances_stop_list, compartment_id_stop_list)
+        find_audit_events(instances_to_stop_list, instances_stop_list, compartment_id_stop_list, tenancy_id)
 
 
 # A helper function that processes the two arguments for this program.  Tag_string is the string that is searched for.
@@ -177,13 +177,14 @@ def prep_arguments():
 
 if __name__ == "__main__":
     # Starts a timer for the execution time.
-    print('Stop the Untagged v0.6')
+    print('Stop the Untagged v0.61')
     start_time = datetime.datetime.now()
     print('Start Time: {0}'.format(start_time.replace(microsecond=0).isoformat()))
 
     config = oci.config.from_file()
     identity_client = oci.identity.IdentityClient(config)
 
+    tenancy_id = config['tenancy']
     # Set the search_string and audit_hours from arguments
     args = prep_arguments()
     search_string = args.tag_string
@@ -198,7 +199,7 @@ if __name__ == "__main__":
     instances_to_stop.append(instance_line)
 
     # This is the main function that finds any instance that's not tagged with the search_string
-    find_resources_wo_tags(instances_to_stop, search_string)
+    find_resources_wo_tags(instances_to_stop, search_string, tenancy_id)
 
     # Completes the program and shows the duration of the run
     end_time = datetime.datetime.now()
