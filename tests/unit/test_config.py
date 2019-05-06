@@ -10,8 +10,8 @@ from tests.util import get_resource_path
 DEFAULT_REGION = "us-phoenix-1"
 HARDCODED_TENANCY = "ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq"
 HARDCODED_USER = "ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq"
-HARDCODED_FINGERPRINT = "e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8"
-HARDCODED_KEYFILE = "keys/sdk_test_admin_user_key.pem"
+HARDCODED_FINGERPRINT = "5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42"
+HARDCODED_KEYFILE = "shared_keys/oci_sdk_admin_key.pem"
 HARDCODED_KEYFILE_NO_PASSPHRASE = 'keys/no_permissions_unencrypted_key.pem'
 HARDCODED_REGION = "us-phoenix-1"
 

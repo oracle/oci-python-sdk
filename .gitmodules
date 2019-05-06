@@ -1,0 +1,3 @@
+[submodule "shared_keys"]
+	path = shared_keys
+	url = ssh://git@bitbucket.oci.oraclecorp.com:7999/sdk/oci-sdk-keys.git
