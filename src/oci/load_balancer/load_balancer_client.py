@@ -740,7 +740,10 @@ class LoadBalancerClient(object):
     def create_rule_set(self, load_balancer_id, create_rule_set_details, **kwargs):
         """
         CreateRuleSet
-        Creates a new rule set associated with the specified load balancer.
+        Creates a new rule set associated with the specified load balancer. For more information, see
+        `Managing Rule Sets`__.
+
+        __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingrulesets.htm
 
 
         :param str load_balancer_id: (required)

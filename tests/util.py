@@ -160,6 +160,20 @@ def camel_to_snake_keys(dictionary):
 
 
 def camelize(to_camelize, uppercase_first_letter=False):
+    # some cases are not be able to handle by this method such as: ip will be changed to Ip
+    # here is a hard coded list for that cases. As of right now, haven't figured out a good way to handle it
+    # as the list need to be updated in the future with new spec changes
+    camelized_dict = {
+        'create_ip_sec_connection_details': 'CreateIPSecConnectionDetails',
+        'update_ip_sec_connection_details': 'UpdateIPSecConnectionDetails'
+    }
+
+    if to_camelize in camelized_dict:
+        if uppercase_first_letter:
+            return camelized_dict[to_camelize]
+        else:
+            return camelized_dict[to_camelize][0].lower() + camelized_dict[to_camelize][1:]
+
     if not to_camelize:
         return ''
 
@@ -169,7 +183,9 @@ def camelize(to_camelize, uppercase_first_letter=False):
         return to_camelize[0].lower() + camelize(to_camelize, uppercase_first_letter=True)[1:]
 
 
-def make_dict_keys_camel_case(original_obj):
+# ignore_for_parent_keys will not convert the sub-nodes of that key in dictionary
+# such as for defineTag the key is defined by user, we don't want to covert it to camel case
+def make_dict_keys_camel_case(original_obj, ignore_for_parent_keys=None):
     if isinstance(original_obj, six.string_types):
         return original_obj
 
@@ -182,14 +198,18 @@ def make_dict_keys_camel_case(original_obj):
         new_dict = {}
         for key, value in six.iteritems(original_obj):
             camelized_key = camelize(key)
-            new_dict[camelized_key] = make_dict_keys_camel_case(value)
+
+            if ignore_for_parent_keys is not None and camelized_key in ignore_for_parent_keys:
+                new_dict[camelized_key] = value
+            else:
+                new_dict[camelized_key] = make_dict_keys_camel_case(value, ignore_for_parent_keys)
 
         return new_dict
 
     if isinstance(original_obj, abc.Iterable):
         new_list = []
         for obj in original_obj:
-            new_list.append(make_dict_keys_camel_case(obj))
+            new_list.append(make_dict_keys_camel_case(obj, ignore_for_parent_keys))
 
         return new_list
 

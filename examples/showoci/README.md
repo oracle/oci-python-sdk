@@ -15,7 +15,8 @@ Modules Included:
 - oci.email.EmailClient
 - oci.container_engine.ContainerEngineClient
 - oci.streaming.StreamAdminClient
-
+- oci.budget.BudgetClient
+- oci.autoscaling.AutoScalingClient
 
 ## OCI User Requirement
 Required OCI IAM user with read only privileges:  
@@ -44,7 +45,8 @@ pip3 install oci oci-cli
 
 ### Installation on OCI VM with Oracle Cloud Developer Image
 ```
-All Installed, just run the config below
+Default is python 2.7 , please run as below:
+python showoci.py
 ```
 
 ### Installation on OCI VM with Oracle Linux 7  
@@ -110,8 +112,8 @@ Execute
 ```
 $ ./showoci.py  
 
-usage: showoci [-h] [-a] [-ani] [-n] [-i] [-c] [-cn] [-o] [-l] [-d] [-f] [-e]
-               [-s] [-rm] [-so] [-mc] [-nr] [-t PROFILE] [-p PROXY]
+usage: showoci [-h] [-a] [-ani] [-b] [-n] [-i] [-c] [-cn] [-o] [-l] [-d] [-f]
+               [-e] [-s] [-rm] [-so] [-mc] [-nr] [-t PROFILE] [-p PROXY]
                [-rg REGION] [-cp COMPART] [-cf CONFIG] [-jf JOUTFILE] [-js]
                [-cachef SERVICEFILE] [-caches] [--version]
 
@@ -119,6 +121,7 @@ optional arguments:
   -h, --help           show this help message and exit
   -a                   Print All Resources
   -ani                 Print All Resources but identity
+  -b                   Print Budgets
   -n                   Print Network
   -i                   Print Identity
   -c                   Print Compute
@@ -143,7 +146,6 @@ optional arguments:
   -cachef SERVICEFILE  Output Cache to file (JSON format)
   -caches              Output Cache to screen (JSON format)
   --version            show program's version number and exit
-
 
 ```
 
@@ -333,6 +335,24 @@ Compartment gse00000000 (root):
     Group Map :DemoUsers <-> demousers
     Group Map :OCI_Administrators <-> Administrators
 
+##############################
+#     Cost Tracking Tags     #
+##############################
+--> Project.Billing
+    Desc      :Billing Cost
+    Created   :2019-04-03 12:38
+
+##############################
+#          Budgets           #
+##############################
+--> DemoBudget for Compartment: Demo (MONTHLY)
+    Costs   : Spent: 0.0, Forcasted: 0.0 , Time Computed: 2019-04-17 17:45
+    Created : 2019-04-17 15:57, Total Alert Rules: 0
+
+--> BudgetForAdiCompartment for Compartment: Adi (MONTHLY)
+    Costs   : Spent: 0.0, Forcasted: 0.0 , Time Computed: 2019-04-17 17:45
+    Created : 2019-04-17 13:29, Total Alert Rules: 2
+
 ##########################################################################################
 #                                  Region us-ashburn-1                                   #
 ##########################################################################################
@@ -489,6 +509,16 @@ Compartment gse00000000 (root):
         Config: AdiInstanceConfig - VM.Standard2.1
 
 ##############################
+#    Compute Autoscaling     #
+##############################
+--> AutoScallingConfig (ENABLED)
+    Resource    : instancePool: Adi-Instance-Pool
+    Policy      : auto-scaling-policy-20190417-1627 (threshold)
+       Capacity : Initial = 1, Min = 1, Max = 2
+       Rule     : CHANGE_COUNT_BY -1  when CPU_UTILIZATION LT 20
+       Rule     : CHANGE_COUNT_BY 1   when CPU_UTILIZATION GT 80
+
+##############################
 #   Compute Custom Images    #
 ##############################
 --> adi_custom_image1 - Oracle Linux - 47gb - Base:  Oracle-Linux-7.4-2018.01.10-0
@@ -502,22 +532,17 @@ Compartment gse00000000 (root):
 ##############################
 #    Boot Volume Backups     #
 ##############################
---> demohost (Boot Volume),  - Auto-backup for 2018-08-01 04:00:00 via policy: bronze
-        Type : INCREMENTAL, SCHEDULED, 2018-08-01 16:27 -> 2019-08-01 23:07
-        Size : 47gb , Stored 1gb
---> demohost (Boot Volume),  - Auto-backup for 2018-09-01 04:00:00 via policy: bronze
-        Type : INCREMENTAL, SCHEDULED, 2018-09-01 07:50 -> 2019-09-01 14:30
-        Size : 47gb , Stored 1gb
+--> demohost (Boot Volume),  47gb , Stored   1gb, AUTO (bronze), INCR, SCHEDU, 2018-08-01 16:27 -> 2019-08-01 23:07
+--> demohost (Boot Volume),  47gb , Stored   1gb, AUTO (bronze), INCR, SCHEDU, 2018-09-01 07:50 -> 2019-09-01 14:30
+--> demohost (Boot Volume),  47gb , Stored   1gb, AUTO (bronze), INCR, SCHEDU, 2018-10-01 09:02 -> 2019-10-01 15:42
 
 ##############################
 #    Block Volume Backups    #
 ##############################
---> Adi_50G ( Source TERMINATED ) - Adi_Backup_50G
-        Type : FULL, MANUAL, 2018-10-22 02:52 -> Keep
-        Size : 50gb , Stored 1gb
---> Adi_50G ( Source TERMINATED ) - Auto-backup for 2018-11-01 04:00:00 via policy: bronze
-        Type : INCREMENTAL, SCHEDULED, 2018-11-01 04:40 -> 2019-11-01 11:20
-        Size : 50gb , Stored 1gb
+--> Adi_50G (Source TERMINATED),  50gb , Stored   1gb, Adi_Backup_50G, FULL, MANUAL, 2018-10-22 02:52 -> Keep
+--> Adi_50G (Source TERMINATED),  50gb , Stored   1gb, AUTO (bronze), INCR, SCHEDU, 2018-11-01 04:40 -> 2019-11-01 11:20
+--> Adi_50G (Source TERMINATED),  50gb , Stored   1gb, AUTO (bronze), INCR, SCHEDU, 2018-12-01 05:53 -> 2019-12-01 12:33
+--> Adi_50G (Source TERMINATED),  50gb , Stored   1gb, AUTO (bronze), FULL, SCHEDU, 2019-01-01 06:23 -> 2023-12-31 06:23
 
 ##############################
 #         Databases          #
@@ -678,53 +703,52 @@ Compartment gse00000000 (root):
 ###########################################################################
 #                      Summary - Compartment generic                      #
 ###########################################################################
-Compute - Block Storage (gb)          -       3547
-Compute - VM.Standard1.1              -          1
-Compute - VM.Standard2.1              -          7
-Compute - VM.Standard2.4              -          1
-Object Storage - BV Backups (gb)      -       1276
-Object Storage - Buckets (gb)         -        216
+Compute - Block Storage (gb)              -       3547
+Compute - Oracle Linux - VM.Standard1.1   -          1
+Compute - Oracle Linux - VM.Standard2.1   -          7
+Compute - Oracle Linux - VM.Standard2.4   -          1
+Object Storage - BV Backups (gb)          -       1276
+Object Storage - Buckets (gb)             -        216
 
 ###########################################################################
 #                        Summary - Compartment npdb                       #
 ###########################################################################
-Database - Exadata.Half2.184          -          1
-Object Storage - Buckets (gb)         -       6152
+Database - Exadata.Half2.184              -          1
+Object Storage - Buckets (gb)             -       6152
 
 ###########################################################################
 #                       Summary - Compartment npebs                       #
 ###########################################################################
-Compute - Block Storage (gb)          -      14121
-Compute - VM.Standard2.1              -         16
-Compute - VM.Standard2.2              -         28
-Compute - VM.Standard2.4              -          6
-Compute - VM.Standard2.8              -          5
-File Storage (gb)                     -       2617
-Load Balancer 100Mbps                 -         10
-Object Storage - BV Backups (gb)      -       2806
-Object Storage - Images (gb)          -       1862
+Compute - Block Storage (gb)              -      14121
+Compute - Oracle Linux - VM.Standard2.1   -         16
+Compute - Oracle Linux - VM.Standard2.4   -          6
+Compute - Oracle Linux - VM.Standard2.8   -          5
+Compute - Windows - VM.Standard2.2        -         28
+File Storage (gb)                         -       2617
+Load Balancer 100Mbps                     -         10
+Object Storage - BV Backups (gb)          -       2806
+Object Storage - Images (gb)              -       1862
 
 ##########################################################################################
 #                                     Summary Total                                      #
 ##########################################################################################
-Compute - Block Storage (gb)          -      17668
-Compute - VM.Standard1.1              -          1
-Compute - VM.Standard2.1              -         23
-Compute - VM.Standard2.2              -         28
-Compute - VM.Standard2.4              -          7
-Compute - VM.Standard2.8              -          5
-Database - Exadata.Half2.184          -          1
-File Storage (gb)                     -       2617
-Load Balancer 100Mbps                 -         10
-Object Storage - BV Backups (gb)      -       4082
-Object Storage - Buckets (gb)         -       6368
-Object Storage - Images (gb)          -       1862
+Compute - Block Storage (gb)              -      17668
+Compute - Oracle Linux - VM.Standard1.1   -          1
+Compute - Oracle Linux - VM.Standard2.1   -         23
+Compute - Oracle Linux - VM.Standard2.4   -          7
+Compute - Oracle Linux - VM.Standard2.8   -          5
+Compute - Windows - VM.Standard2.2        -         28
+Database - Exadata.Half2.184              -          1
+File Storage (gb)                         -       2617
+Load Balancer 100Mbps                     -         10
+Object Storage - BV Backups (gb)          -       4082
+Object Storage - Buckets (gb)             -       6368
+Object Storage - Images (gb)              -       1862
 ```
   
 ## Below example JSON report on us-ashburn-1 region, compartment Adi without identity 
 
 ```
-
 > showoci -t gse00015259 -ani -js -rg us-ashburn-1 -cp Adi
 
 ############################################################

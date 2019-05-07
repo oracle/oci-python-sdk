@@ -44,9 +44,6 @@ API Reference
 * :doc:`Utilities <utilities>`
 * :doc:`Waiters <waiters>`
 
-.. rubric:: Single Page Reference
-
-* :doc:`Single Page Reference <index>`
 
 .. toctree::
     :hidden:
@@ -82,4 +79,3 @@ API Reference
     upload_manager
     utilities
     waiters
-    index

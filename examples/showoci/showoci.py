@@ -3,12 +3,10 @@
 # Copyright(c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 # showoci.py
 #
-# @Created On  : Mar 17 2019
-# @Last Updated: Apr 14 2019
-# @author      : Adi Zohar
-# @Version     : 19.4.14
+# @author: Adi Zohar
 #
 # Supports Python 2.7 and above, Python 3 recommended
+# With Python 2, execute using - python showoci.py
 #
 # coding: utf-8
 ##########################################################################
@@ -30,19 +28,28 @@
 ##########################################################################
 #
 # Modules Included:
-#    identity , virtual_network, compute , block_storage, file_storage
-#    object_storage, database, load_balancer, email
-#    resource_management, ContainerEngine, Streams
+# - oci.core.VirtualNetworkClient
+# - oci.core.ComputeClient
+# - oci.core.ComputeManagementClient
+# - oci.core.BlockstorageClient
+# - oci.file_storage.FileStorageClient
+# - oci.object_storage.ObjectStorageClient
+# - oci.database.DatabaseClient
+# - oci.identity.IdentityClient
+# - oci.load_balancer.LoadBalancerClient
+# - oci.email.EmailClient
+# - oci.container_engine.ContainerEngineClient
+# - oci.streaming.StreamAdminClient
+# - oci.budget.BudgetClient
+# - oci.autoscaling.AutoScalingClient
 #
 # Modules Not Yet Covered:
-#    Monitoring
-#    Notifications
-#    WaasClient
-#    HealthChecksClient
-#    DnsClient
-#    BudgetClient
-#    AutoScalingClient
-#    AnnouncementClient
+# - oci.ons.NotificationDataPlaneClient
+# - oci.waas.WaasClient
+# - oci.monitoring.MonitoringClient
+# - oci.healthchecks.HealthChecksClient
+# - oci.dns.DnsClient
+# - oci.announcements_service.AnnouncementClient
 #
 ##########################################################################
 from __future__ import print_function
@@ -54,7 +61,7 @@ import sys
 import argparse
 import datetime
 
-version = "19.4.14"
+version = "19.4.23"
 
 ##########################################################################
 # execute_extract
@@ -150,6 +157,10 @@ def execute_extract():
     ############################################
     complete_message = return_error_message(data.get_service_errors(), data.get_service_warnings(), data.error)
 
+    # if reboot migration
+    if data.get_service_reboot_migration() > 0:
+        output.print_header(str(data.get_service_reboot_migration()) + " Reboot Migration Alert for Compute", 0)
+
     # print completion
     output.print_header("Completed " + complete_message + " at " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")), 0)
 
@@ -182,6 +193,7 @@ def set_parser_arguments():
     parser = argparse.ArgumentParser()
     parser.add_argument('-a', action='store_true', default=False, dest='all', help='Print All Resources')
     parser.add_argument('-ani', action='store_true', default=False, dest='allnoiam', help='Print All Resources but identity')
+    parser.add_argument('-b', action='store_true', default=False, dest='budgets', help='Print Budgets')
     parser.add_argument('-n', action='store_true', default=False, dest='network', help='Print Network')
     parser.add_argument('-i', action='store_true', default=False, dest='identity', help='Print Identity')
     parser.add_argument('-c', action='store_true', default=False, dest='compute', help='Print Compute')
@@ -216,7 +228,7 @@ def set_parser_arguments():
     if not (result.all or result.allnoiam or result.network or result.identity or
             result.compute or result.object or
             result.load or result.database or result.file or result.email or result.orm or result.container or
-            result.streams):
+            result.streams or result.budgets):
 
         parser.print_help()
 
@@ -275,6 +287,9 @@ def set_service_extract_flags(cmd):
 
     if cmd.all or cmd.allnoiam or cmd.streams:
         prm.read_streams = True
+
+    if cmd.all or cmd.allnoiam or cmd.budgets:
+        prm.read_budgets = True
 
     if cmd.noroot:
         prm.read_root_compartment = False
