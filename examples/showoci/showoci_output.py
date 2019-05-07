@@ -1,11 +1,8 @@
 ##########################################################################
 # Copyright(c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
-# showocy_output.py
+# showoci_output.py
 #
-# @Created On  : Mar 17 2019
-# @Last Updated: Apr 14 2019
-# @author      : Adi Zohar
-# @Version     : 19.4.14
+# @author: Adi Zohar
 #
 # Supports Python 2.7 and above, Python 3 recommended
 #
@@ -58,6 +55,10 @@ class ShowOCIOutput(object):
 
                     elif d['type'] == "identity":
                         self.__print_identity_main(d['data'])
+                        has_data = True
+
+                    elif d['type'] == "budgets":
+                        self.__print_budgets_main(d['data'])
                         has_data = True
 
                     elif d['type'] == "region":
@@ -226,6 +227,24 @@ class ShowOCIOutput(object):
             self.__print_error("__print_identity_dynamic_groups", e)
 
     ##########################################################################
+    # Print Cost Tracking Tags
+    ##########################################################################
+    def __print_identity_cost_tracking_tags(self, tags):
+        try:
+            if not tags:
+                return
+            self.print_header("Cost Tracking Tags", 2)
+
+            for tag in tags:
+                print(self.taba + tag['tag_namespace_name'] + "." + tag['name'])
+                print(self.tabs + "Desc      :" + tag['description'])
+                print(self.tabs + "Created   :" + tag['time_created'][0:16])
+            print("")
+
+        except Exception as e:
+            self.__print_error("__print_identity_cost_tracking_tags", e)
+
+    ##########################################################################
     # Identity Module
     ##########################################################################
 
@@ -243,6 +262,8 @@ class ShowOCIOutput(object):
                 self.__print_identity_policies(data['policies'])
             if 'providers' in data:
                 self.__print_identity_providers(data['providers'])
+            if 'cost_tracking_tags' in data:
+                self.__print_identity_cost_tracking_tags(data['cost_tracking_tags'])
 
         except Exception as e:
             self.__print_error("__print_identity_data", e)
@@ -583,7 +604,7 @@ class ShowOCIOutput(object):
                     print(self.tabs + "Path Route : " + prs['name'])
                     if 'path_routes' in prs:
                         for p in prs['path_routes']:
-                            print(self.tabs + "           : Backend: " + str(p.backend_set_name) + ',  Path: ' + p.path)
+                            print(self.tabs + "           : Backend: " + str(p['backend_set_name']) + ',  Path: ' + p['path'])
 
             # Hostnames
             if 'hostnames' in lb:
@@ -789,13 +810,15 @@ class ShowOCIOutput(object):
             for db in dbs:
                 print(self.taba + db['name'])
                 if 'cpu_core_count' in db:
-                    print(self.tabs + "Cores   : " + str(db['cpu_core_count']))
+                    print(self.tabs + "Cores       : " + str(db['cpu_core_count']))
                 if 'data_storage_size_in_tbs' in db:
-                    print(self.tabs + "Size TB : " + str(db['data_storage_size_in_tbs']))
+                    print(self.tabs + "Size TB     : " + str(db['data_storage_size_in_tbs']))
                 if 'db_name' in db:
-                    print(self.tabs + "DB Name : " + db['db_name'])
+                    print(self.tabs + "DB Name     : " + db['db_name'])
                 if 'time_created' in db:
-                    print(self.tabs + "Created : " + db['time_created'])
+                    print(self.tabs + "Created     : " + db['time_created'])
+                if 'whitelisted_ips' in db:
+                    print(self.tabs + "Allowed IPs : " + db['whitelisted_ips'])
 
                 # print backups
                 if db['backups']:
@@ -891,6 +914,26 @@ class ShowOCIOutput(object):
             self.__print_error("__print_streams_main", e)
 
     ##########################################################################
+    # Budgets
+    ##########################################################################
+    def __print_budgets_main(self, budgets):
+
+        try:
+            if not budgets:
+                return
+
+            self.print_header("Budgets", 2)
+
+            for budget in budgets:
+                print(self.taba + budget['display_name'] + " for Compartment: " + budget['compartment_name'] + " (" + budget['reset_period'] + ")")
+                print(self.tabs + "Costs   : Spent: " + budget['actual_spend'] + ", Forcasted: " + budget['forecasted_spend'], ", Time Computed: " + budget['time_spend_computed'][0:16])
+                print(self.tabs + "Created : " + budget['time_created'][0:16] + ", Total Alert Rules: " + budget['alert_rule_count'])
+                print("")
+
+        except Exception as e:
+            self.__print_error("__print_budgets_main", e)
+
+    ##########################################################################
     # Container
     ##########################################################################
     def __print_container_main(self, containers):
@@ -980,8 +1023,10 @@ class ShowOCIOutput(object):
                         print(self.tabs2 + "VNIC: " + vnic['desc'])
 
                 if 'console' in instance:
-                    print(self.tabs2 + instance['console'])
-                    print("")
+                    if instance['console']:
+                        print(self.tabs2 + instance['console'])
+
+                print("")
 
         except Exception as e:
             self.__print_error("__print_core_compute_instances", e)
@@ -1003,7 +1048,7 @@ class ShowOCIOutput(object):
             self.__print_error("__print_core_compute_images", e)
 
     ##########################################################################
-    # print compute images
+    # print compute pool
     ##########################################################################
     def __print_core_compute_instance_pool(self, pools):
 
@@ -1020,6 +1065,34 @@ class ShowOCIOutput(object):
 
         except Exception as e:
             self.__print_error("__print_core_compute_instance_pool", e)
+
+    ##########################################################################
+    # print compute autoscaling
+    ##########################################################################
+    def __print_core_compute_autoscaling(self, autos):
+
+        try:
+            if len(autos) == 0:
+                return
+
+            self.print_header("Compute Autoscaling", 2)
+            for auto in autos:
+                print(self.taba + auto['name'])
+                print(self.tabs + "Resource    : " + auto['resource_type'] + ": " + auto['resource_name'])
+
+                # Policies
+                for pol in auto['policies']:
+                    print(self.tabs + "Policy      : " + pol['display_name'] + " (" + pol['policy_type'] + ")")
+                    print(self.tabs + "   Capacity : Initial = " + pol['capacity_initial'] + ", Min = " + pol['capacity_min'] + ", Max = " + pol['capacity_max'])
+
+                    # Rules
+                    for rule in pol['rules']:
+                        print(self.tabs + "   Rule     : " + rule)
+
+                print("")
+
+        except Exception as e:
+            self.__print_error("__print_core_compute_autoscaling", e)
 
     ##########################################################################
     # print compute images
@@ -1041,48 +1114,33 @@ class ShowOCIOutput(object):
             self.__print_error("__print_core_compute_instance_configuration", e)
 
     ##########################################################################
-    # print compute boot volume
+    # print compute boot volume or volumes
     ##########################################################################
-    def __print_core_compute_boot_volume_backup(self, backups):
+    def __print_core_compute_boot_volume_backup(self, backups, header):
 
         try:
             if len(backups) == 0:
                 return
 
-            self.print_header("Boot Volume Backups", 2)
+            self.print_header(header, 2)
             prev_id = ""
             for backup in backups:
-                if prev_id and prev_id != backup['boot_volume_id']:
+                if prev_id and prev_id != backup['id']:
                     print("")
-                print(self.taba + backup['name'] + " - " + backup['desc'])
-                print(self.tabs + self.tabs + "Type : " + backup['type'])
-                print(self.tabs + self.tabs + "Size : " + backup['size'])
-                prev_id = backup['boot_volume_id']
+
+                # if auto backup, print only the policy name
+                desc_name = backup['desc']
+                if 'via policy' in backup['desc']:
+                    start = backup['desc'].find('via policy') + 12
+                    desc_name = "AUTO (" + backup['desc'][start:] + ")"
+
+                # print the line
+                print(self.taba + backup['name'] + ", " + backup['size'] + ", " + desc_name + ", " + backup['type'])
+
+                prev_id = backup['id']
 
         except Exception as e:
             self.__print_error("__print_core_compute_boot_volume_backup", e)
-
-    ##########################################################################
-    # print compute block volume
-    ##########################################################################
-    def __print_core_compute_volume_backup(self, backups):
-
-        try:
-            if len(backups) == 0:
-                return
-
-            self.print_header("Block Volume Backups", 2)
-            prev_id = ""
-            for backup in backups:
-                if prev_id and prev_id != backup['volume_id']:
-                    print("")
-                print(self.taba + backup['name'] + " - " + backup['desc'])
-                print(self.tabs + self.tabs + "Type : " + backup['type'])
-                print(self.tabs + self.tabs + "Size : " + backup['size'])
-                prev_id = backup['volume_id']
-
-        except Exception as e:
-            self.__print_error("__print_core_compute_volume_backup", e)
 
     ##########################################################################
     # print compute block volume Groups
@@ -1152,6 +1210,9 @@ class ShowOCIOutput(object):
             if 'instance_pool' in data:
                 self.__print_core_compute_instance_pool(data['instance_pool'])
 
+            if 'autoscaling' in data:
+                self.__print_core_compute_autoscaling(data['autoscaling'])
+
             if 'images' in data:
                 self.__print_core_compute_images(data['images'])
 
@@ -1165,10 +1226,10 @@ class ShowOCIOutput(object):
                 self.__print_core_compute_volume_groups(data['volume_group'])
 
             if 'boot_volume_backup' in data:
-                self.__print_core_compute_boot_volume_backup(data['boot_volume_backup'])
+                self.__print_core_compute_boot_volume_backup(data['boot_volume_backup'], "Boot Volume Backups")
 
             if 'volume_backup' in data:
-                self.__print_core_compute_volume_backup(data['volume_backup'])
+                self.__print_core_compute_boot_volume_backup(data['volume_backup'], "Block Volume Backups")
 
         except Exception as e:
             self.__print_error("__print_core_compute_main", e)
@@ -1493,7 +1554,7 @@ class ShowOCISummary(object):
 
                 # sort and print
                 for d in sorted(grouped_data, key=lambda i: i['type']):
-                    print(d['type'].ljust(43)[0:42] + " - " + str(round(d['size'])).rjust(10))
+                    print(d['type'].ljust(46)[0:45] + " - " + str(round(d['size'])).rjust(10))
 
         except Exception as e:
             self.__print_error("__summary_print_results", e)

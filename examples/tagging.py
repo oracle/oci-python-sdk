@@ -84,7 +84,7 @@ virtual_network = oci.core.VirtualNetworkClient(config)
 # correspond to the name of a tag within the specified namespace (and the namespace must exist).
 #
 # Resources where we can create/update tags will have the freeform_tags and defined_tags attributes. Consult the API
-# documentation to see what these are (https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/api/index.html)
+# documentation to see what these are (https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/api/landing.html)
 num_tries = 0
 while True:
     # You may get a 404 if you create/reactivate a tag and try and use it straight away. If you have a delay/sleep between
@@ -118,7 +118,7 @@ while True:
 # We can also update tags on a resource. Note that this is a total replacement for any previously set freeform or defined tags.
 #
 # Resources where we can create/update tags will have the freeform_tags and defined_tags attributes. Consult the API
-# documentation to see what these are (https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/api/index.html)
+# documentation to see what these are (https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/api/landing.html)
 update_vcn_response = virtual_network.update_vcn(
     vcn_id,
     oci.core.models.UpdateVcnDetails(

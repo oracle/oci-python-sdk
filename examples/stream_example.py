@@ -3,8 +3,8 @@
 
 import oci
 import sys
-import base64
 import time
+from codecs import encode, decode
 
 # ==========================================================
 # This file provides an example of basic streaming usage
@@ -29,8 +29,8 @@ def publish_example_messages(client, stream_id):
     for i in range(100):
         key = "key" + str(i)
         value = "value" + str(i)
-        encoded_key = base64.b64encode(key)
-        encoded_value = base64.b64encode(value)
+        encoded_key = encode(key.encode(), "base-64").decode().strip()
+        encoded_value = encode(value.encode(), "base-64").decode().strip()
         message_list.append(oci.streaming.models.PutMessagesDetailsEntry(key=encoded_key, value=encoded_value))
 
     print("Publishing {} messages to the stream {} ".format(len(message_list), stream_id))
@@ -74,8 +74,8 @@ def get_stream(admin_client, stream_id):
 
 def delete_stream(client, stream_id):
     print(" Deleting Stream {}".format(stream_id))
-    # Stream deletion is an asynchronous operation, give it some time to complete.
-    client.delete_stream_and_wait_for_state(stream_id, oci.streaming.models.StreamSummary.LIFECYCLE_STATE_DELETED)
+    print("  Stream deletion is an asynchronous operation, give it some time to complete.")
+    client.delete_stream_and_wait_for_state(stream_id, wait_for_states=[oci.streaming.models.StreamSummary.LIFECYCLE_STATE_DELETED])
 
 
 def get_cursor_by_partition(client, stream_id, partition):
@@ -99,7 +99,8 @@ def simple_message_loop(client, stream_id, initial_cursor):
         # Process the messages
         print(" Read {} messages".format(len(get_response.data)))
         for message in get_response.data:
-            print("{}: {}".format(base64.b64decode(message.key), base64.b64decode(message.value)))
+            print("{}: {}".format(decode(message.key.encode(), "base64").decode(),
+                                  decode(message.value.encode(), "base64").decode()))
 
         # get_messages is a throttled method; clients should retrieve sufficiently large message
         # batches, as to avoid too many http requests.

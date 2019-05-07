@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 class AddHttpResponseHeaderRule(Rule):
     """
     An object that represents the action of adding a header to a response.
-    This rule applies only to HTTP or HTTP2 listeners.
+    This rule applies only to HTTP listeners.
 
     **NOTES:**
 

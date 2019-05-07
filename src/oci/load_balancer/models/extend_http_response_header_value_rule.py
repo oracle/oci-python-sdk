@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExtendHttpResponseHeaderValueRule(Rule):
     """
-    An object that represents the action of modifying a response header value. This rule applies only to HTTP or HTTP2 listeners.
+    An object that represents the action of modifying a response header value. This rule applies only to HTTP listeners.
 
     This rule adds a prefix, a suffix, or both to the header value.
 

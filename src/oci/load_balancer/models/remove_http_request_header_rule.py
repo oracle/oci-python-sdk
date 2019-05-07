@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RemoveHttpRequestHeaderRule(Rule):
     """
-    An object that represents the action of removing a header from a request. This rule applies only to HTTP or HTTP2 listeners.
+    An object that represents the action of removing a header from a request. This rule applies only to HTTP listeners.
 
     If the same header appears more than once in the request, the load balancer removes all occurances of the specified header.
 

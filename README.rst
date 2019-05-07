@@ -79,7 +79,7 @@ Full documentation, including prerequisites and installation and configuration i
 API reference can be found `here`__.
 
 __ https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/index.html
-__ https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/api/index.html
+__ https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/api/landing.html
 
 A downloadable version of the documentation is include with in the release zip, which can be found `here`__.
 
