@@ -61,6 +61,10 @@ class ShowOCIOutput(object):
                         self.__print_budgets_main(d['data'])
                         has_data = True
 
+                    elif d['type'] == "announcement":
+                        self.__print_announcement_main(d['data'])
+                        has_data = True
+
                     elif d['type'] == "region":
                         self.__print_region_data(d['region'], d['data'])
                         has_data = True
@@ -934,6 +938,101 @@ class ShowOCIOutput(object):
             self.__print_error("__print_budgets_main", e)
 
     ##########################################################################
+    # Announcement
+    ##########################################################################
+    def __print_announcement_main(self, announcements):
+
+        try:
+            if not announcements:
+                return
+
+            self.print_header("Announcements", 2)
+
+            for ann in announcements:
+                print(self.taba + ann['summary'][0:100] + " (" + ann['reference_ticket_number'] + ") - " + ann['announcement_type'] + ", " + ann['time_one_value'][0:16])
+                print(self.tabs + "Regions  : " + ann['affected_regions'])
+                print(self.tabs + "Services : " + ann['services'])
+                print("")
+
+        except Exception as e:
+            self.__print_error("__print_announcement_main", e)
+
+    ##########################################################################
+    # Monitoring
+    ##########################################################################
+    def __print_monitoring_main(self, alarms):
+
+        try:
+            if not alarms:
+                return
+
+            self.print_header("Monitoring - Alarms", 2)
+
+            for alarm in alarms:
+                print(self.taba + alarm['display_name'] + " (" + alarm['namespace'] + "), Enabled = " + str(alarm['is_enabled']) + ", Severity = " + alarm['severity'])
+                print(self.tabs + "Query : " + alarm['query'])
+                for dest in alarm['destinations_names']:
+                    print(self.tabs + "Topic : " + dest)
+                print("")
+
+        except Exception as e:
+            self.__print_error("__print_monitoring_main", e)
+
+    ##########################################################################
+    # Notifications
+    ##########################################################################
+    def __print_notifications_main(self, topics):
+
+        try:
+            if not topics:
+                return
+
+            self.print_header("Notifications - Topics", 2)
+
+            for topic in topics:
+                print(self.taba + topic['name'] + " - " + topic['description'] + ",  Created: " + topic['time_created'][0:16])
+                for sub in topic['subscriptions']:
+                    print(self.tabs + "Sub   : " + sub['protocol'] + ": " + sub['endpoint'])
+                print("")
+
+        except Exception as e:
+            self.__print_error("__print_notifications_main", e)
+
+    ##########################################################################
+    # Edge Services
+    ##########################################################################
+    def __print_edge_services_main(self, edge):
+
+        try:
+            if not edge:
+                return
+
+            # if healthcheck
+            if 'healthcheck' in edge:
+                self.print_header("Edge - Healthcheck", 2)
+
+                # if http check
+                if 'http' in edge['healthcheck']:
+                    for arr in edge['healthcheck']['http']:
+                        print(self.taba + arr['display_name'] + " (" + arr['protocol'] + ": " + arr['method'] + "), Path = " + arr['path'] + ", Enabled = " + str(arr['is_enabled']))
+                        print(self.tabs + "Interval : " + arr['interval_in_seconds'] + " secs")
+                        print(self.tabs + "Targets  : " + arr['targets'])
+                        print(self.tabs + "VPoints  : " + arr['vantage_point_names'])
+                        print("")
+
+                # if ping check
+                if 'ping' in edge['healthcheck']:
+                    for arr in edge['healthcheck']['ping']:
+                        print(self.taba + arr['display_name'] + " (" + arr['protocol'] + ", Port: " + arr['port'] + "), Enabled = " + str(arr['is_enabled']))
+                        print(self.tabs + "Interval : " + arr['interval_in_seconds'] + " secs, Timeout = " + arr['timeout_in_seconds'] + " secs")
+                        print(self.tabs + "Targets  : " + arr['targets'])
+                        print(self.tabs + "VPoints  : " + arr['vantage_point_names'])
+                        print("")
+
+        except Exception as e:
+            self.__print_error("__print_edge_services_main", e)
+
+    ##########################################################################
     # Container
     ##########################################################################
     def __print_container_main(self, containers):
@@ -1267,6 +1366,12 @@ class ShowOCIOutput(object):
                     self.__print_container_main(cdata['containers'])
                 if 'streams' in cdata:
                     self.__print_streams_main(cdata['streams'])
+                if 'monitoring' in cdata:
+                    self.__print_monitoring_main(cdata['monitoring'])
+                if 'notifications' in cdata:
+                    self.__print_notifications_main(cdata['notifications'])
+                if 'edge_services' in cdata:
+                    self.__print_edge_services_main(cdata['edge_services'])
 
         except Exception as e:
             self.__print_error("__print_region_data", e)
@@ -1286,6 +1391,7 @@ class ShowOCISummary(object):
     taba = '--> '
 
     summary_global_list = []
+    summary_global_data = []
     summary_global_total = []
 
     ############################################
@@ -1293,6 +1399,12 @@ class ShowOCISummary(object):
     ############################################
     def __init__(self):
         pass
+
+    ##########################################################################
+    # get summary total
+    ##########################################################################
+    def get_summary_json(self):
+        return {'data': self.summary_global_data, 'total': self.summary_global_total}
 
     ##########################################################################
     # print_main
@@ -1542,6 +1654,7 @@ class ShowOCISummary(object):
     ##########################################################################
     def __summary_print_results(self, data, header, header_size):
 
+        return_val = []
         try:
 
             if len(data) > 0:
@@ -1555,7 +1668,9 @@ class ShowOCISummary(object):
                 # sort and print
                 for d in sorted(grouped_data, key=lambda i: i['type']):
                     print(d['type'].ljust(46)[0:45] + " - " + str(round(d['size'])).rjust(10))
+                    return_val.append({'type': d['type'], 'size': d['size']})
 
+                return return_val
         except Exception as e:
             self.__print_error("__summary_print_results", e)
 
@@ -1592,8 +1707,11 @@ class ShowOCISummary(object):
                     compartment_header = "Summary - Compartment " + cdata['path']
                     region_data_exist = True
 
-                # print results compartment
-                self.__summary_print_results(self.summary_global_list, compartment_header, 3)
+                # print results compartment and return aggregated info
+                return_val = self.__summary_print_results(self.summary_global_list, compartment_header, 3)
+
+                # add the aggregated summary to global data
+                self.summary_global_data.append({'region': region_name, 'compartment_name': cdata['path'], 'summary': return_val})
 
             # if not data , print not found
             if not region_data_exist:
