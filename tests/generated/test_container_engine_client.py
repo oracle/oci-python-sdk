@@ -45,7 +45,8 @@ def test_create_cluster(testing_service_client):
         service_error = None
 
         try:
-            client = oci.container_engine.ContainerEngineClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
             response = client.create_cluster(
                 create_cluster_details=request.pop(util.camelize('create_cluster_details')),
                 **(util.camel_to_snake_keys(request))
@@ -84,7 +85,8 @@ def test_create_kubeconfig(testing_service_client):
         service_error = None
 
         try:
-            client = oci.container_engine.ContainerEngineClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
             response = client.create_kubeconfig(
                 cluster_id=request.pop(util.camelize('cluster_id')),
                 **(util.camel_to_snake_keys(request))
@@ -123,7 +125,8 @@ def test_create_node_pool(testing_service_client):
         service_error = None
 
         try:
-            client = oci.container_engine.ContainerEngineClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
             response = client.create_node_pool(
                 create_node_pool_details=request.pop(util.camelize('create_node_pool_details')),
                 **(util.camel_to_snake_keys(request))
@@ -162,7 +165,8 @@ def test_delete_cluster(testing_service_client):
         service_error = None
 
         try:
-            client = oci.container_engine.ContainerEngineClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
             response = client.delete_cluster(
                 cluster_id=request.pop(util.camelize('cluster_id')),
                 **(util.camel_to_snake_keys(request))
@@ -201,7 +205,8 @@ def test_delete_node_pool(testing_service_client):
         service_error = None
 
         try:
-            client = oci.container_engine.ContainerEngineClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
             response = client.delete_node_pool(
                 node_pool_id=request.pop(util.camelize('node_pool_id')),
                 **(util.camel_to_snake_keys(request))
@@ -240,7 +245,8 @@ def test_delete_work_request(testing_service_client):
         service_error = None
 
         try:
-            client = oci.container_engine.ContainerEngineClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
             response = client.delete_work_request(
                 work_request_id=request.pop(util.camelize('work_request_id')),
                 **(util.camel_to_snake_keys(request))
@@ -279,7 +285,8 @@ def test_get_cluster(testing_service_client):
         service_error = None
 
         try:
-            client = oci.container_engine.ContainerEngineClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
             response = client.get_cluster(
                 cluster_id=request.pop(util.camelize('cluster_id')),
                 **(util.camel_to_snake_keys(request))
@@ -318,7 +325,8 @@ def test_get_cluster_options(testing_service_client):
         service_error = None
 
         try:
-            client = oci.container_engine.ContainerEngineClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
             response = client.get_cluster_options(
                 cluster_option_id=request.pop(util.camelize('cluster_option_id')),
                 **(util.camel_to_snake_keys(request))
@@ -357,7 +365,8 @@ def test_get_node_pool(testing_service_client):
         service_error = None
 
         try:
-            client = oci.container_engine.ContainerEngineClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
             response = client.get_node_pool(
                 node_pool_id=request.pop(util.camelize('node_pool_id')),
                 **(util.camel_to_snake_keys(request))
@@ -396,7 +405,8 @@ def test_get_node_pool_options(testing_service_client):
         service_error = None
 
         try:
-            client = oci.container_engine.ContainerEngineClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
             response = client.get_node_pool_options(
                 node_pool_option_id=request.pop(util.camelize('node_pool_option_id')),
                 **(util.camel_to_snake_keys(request))
@@ -435,7 +445,8 @@ def test_get_work_request(testing_service_client):
         service_error = None
 
         try:
-            client = oci.container_engine.ContainerEngineClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('work_request_id')),
                 **(util.camel_to_snake_keys(request))
@@ -474,7 +485,8 @@ def test_list_clusters(testing_service_client):
         service_error = None
 
         try:
-            client = oci.container_engine.ContainerEngineClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
             response = client.list_clusters(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -532,7 +544,8 @@ def test_list_node_pools(testing_service_client):
         service_error = None
 
         try:
-            client = oci.container_engine.ContainerEngineClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
             response = client.list_node_pools(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -590,7 +603,8 @@ def test_list_work_request_errors(testing_service_client):
         service_error = None
 
         try:
-            client = oci.container_engine.ContainerEngineClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 work_request_id=request.pop(util.camelize('work_request_id')),
@@ -630,7 +644,8 @@ def test_list_work_request_logs(testing_service_client):
         service_error = None
 
         try:
-            client = oci.container_engine.ContainerEngineClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 work_request_id=request.pop(util.camelize('work_request_id')),
@@ -670,7 +685,8 @@ def test_list_work_requests(testing_service_client):
         service_error = None
 
         try:
-            client = oci.container_engine.ContainerEngineClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -728,7 +744,8 @@ def test_update_cluster(testing_service_client):
         service_error = None
 
         try:
-            client = oci.container_engine.ContainerEngineClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
             response = client.update_cluster(
                 cluster_id=request.pop(util.camelize('cluster_id')),
                 update_cluster_details=request.pop(util.camelize('update_cluster_details')),
@@ -768,7 +785,8 @@ def test_update_node_pool(testing_service_client):
         service_error = None
 
         try:
-            client = oci.container_engine.ContainerEngineClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.container_engine.ContainerEngineClient(config, service_endpoint=service_endpoint)
             response = client.update_node_pool(
                 node_pool_id=request.pop(util.camelize('node_pool_id')),
                 update_node_pool_details=request.pop(util.camelize('update_node_pool_details')),

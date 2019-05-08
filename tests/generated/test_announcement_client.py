@@ -45,7 +45,8 @@ def test_get_announcement(testing_service_client):
         service_error = None
 
         try:
-            client = oci.announcements_service.AnnouncementClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.announcements_service.AnnouncementClient(config, service_endpoint=service_endpoint)
             response = client.get_announcement(
                 announcement_id=request.pop(util.camelize('announcement_id')),
                 **(util.camel_to_snake_keys(request))
@@ -84,7 +85,8 @@ def test_get_announcement_user_status(testing_service_client):
         service_error = None
 
         try:
-            client = oci.announcements_service.AnnouncementClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.announcements_service.AnnouncementClient(config, service_endpoint=service_endpoint)
             response = client.get_announcement_user_status(
                 announcement_id=request.pop(util.camelize('announcement_id')),
                 **(util.camel_to_snake_keys(request))
@@ -123,7 +125,8 @@ def test_list_announcements(testing_service_client):
         service_error = None
 
         try:
-            client = oci.announcements_service.AnnouncementClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.announcements_service.AnnouncementClient(config, service_endpoint=service_endpoint)
             response = client.list_announcements(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -181,7 +184,8 @@ def test_update_announcement_user_status(testing_service_client):
         service_error = None
 
         try:
-            client = oci.announcements_service.AnnouncementClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.announcements_service.AnnouncementClient(config, service_endpoint=service_endpoint)
             response = client.update_announcement_user_status(
                 announcement_id=request.pop(util.camelize('announcement_id')),
                 status_details=request.pop(util.camelize('status_details')),

@@ -45,7 +45,8 @@ def test_get_resource_type(testing_service_client):
         service_error = None
 
         try:
-            client = oci.resource_search.ResourceSearchClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.resource_search.ResourceSearchClient(config, service_endpoint=service_endpoint)
             response = client.get_resource_type(
                 name=request.pop(util.camelize('name')),
                 **(util.camel_to_snake_keys(request))
@@ -84,7 +85,8 @@ def test_list_resource_types(testing_service_client):
         service_error = None
 
         try:
-            client = oci.resource_search.ResourceSearchClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.resource_search.ResourceSearchClient(config, service_endpoint=service_endpoint)
             response = client.list_resource_types(
                 **(util.camel_to_snake_keys(request))
             )
@@ -139,7 +141,8 @@ def test_search_resources(testing_service_client):
         service_error = None
 
         try:
-            client = oci.resource_search.ResourceSearchClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.resource_search.ResourceSearchClient(config, service_endpoint=service_endpoint)
             response = client.search_resources(
                 search_details=request.pop(util.camelize('search_details')),
                 **(util.camel_to_snake_keys(request))

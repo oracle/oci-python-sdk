@@ -45,7 +45,8 @@ def test_cancel_vault_deletion(testing_service_client):
         service_error = None
 
         try:
-            client = oci.key_management.KmsVaultClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.key_management.KmsVaultClient(config, service_endpoint=service_endpoint)
             response = client.cancel_vault_deletion(
                 vault_id=request.pop(util.camelize('vault_id')),
                 **(util.camel_to_snake_keys(request))
@@ -84,7 +85,8 @@ def test_create_vault(testing_service_client):
         service_error = None
 
         try:
-            client = oci.key_management.KmsVaultClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.key_management.KmsVaultClient(config, service_endpoint=service_endpoint)
             response = client.create_vault(
                 create_vault_details=request.pop(util.camelize('create_vault_details')),
                 **(util.camel_to_snake_keys(request))
@@ -123,7 +125,8 @@ def test_get_vault(testing_service_client):
         service_error = None
 
         try:
-            client = oci.key_management.KmsVaultClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.key_management.KmsVaultClient(config, service_endpoint=service_endpoint)
             response = client.get_vault(
                 vault_id=request.pop(util.camelize('vault_id')),
                 **(util.camel_to_snake_keys(request))
@@ -162,7 +165,8 @@ def test_list_vaults(testing_service_client):
         service_error = None
 
         try:
-            client = oci.key_management.KmsVaultClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.key_management.KmsVaultClient(config, service_endpoint=service_endpoint)
             response = client.list_vaults(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -220,7 +224,8 @@ def test_schedule_vault_deletion(testing_service_client):
         service_error = None
 
         try:
-            client = oci.key_management.KmsVaultClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.key_management.KmsVaultClient(config, service_endpoint=service_endpoint)
             response = client.schedule_vault_deletion(
                 vault_id=request.pop(util.camelize('vault_id')),
                 schedule_vault_deletion_details=request.pop(util.camelize('schedule_vault_deletion_details')),
@@ -260,7 +265,8 @@ def test_update_vault(testing_service_client):
         service_error = None
 
         try:
-            client = oci.key_management.KmsVaultClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.key_management.KmsVaultClient(config, service_endpoint=service_endpoint)
             response = client.update_vault(
                 vault_id=request.pop(util.camelize('vault_id')),
                 update_vault_details=request.pop(util.camelize('update_vault_details')),

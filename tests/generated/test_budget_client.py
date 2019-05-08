@@ -45,7 +45,8 @@ def test_create_alert_rule(testing_service_client):
         service_error = None
 
         try:
-            client = oci.budget.BudgetClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.budget.BudgetClient(config, service_endpoint=service_endpoint)
             response = client.create_alert_rule(
                 budget_id=request.pop(util.camelize('budget_id')),
                 create_alert_rule_details=request.pop(util.camelize('create_alert_rule_details')),
@@ -85,7 +86,8 @@ def test_create_budget(testing_service_client):
         service_error = None
 
         try:
-            client = oci.budget.BudgetClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.budget.BudgetClient(config, service_endpoint=service_endpoint)
             response = client.create_budget(
                 create_budget_details=request.pop(util.camelize('create_budget_details')),
                 **(util.camel_to_snake_keys(request))
@@ -124,7 +126,8 @@ def test_delete_alert_rule(testing_service_client):
         service_error = None
 
         try:
-            client = oci.budget.BudgetClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.budget.BudgetClient(config, service_endpoint=service_endpoint)
             response = client.delete_alert_rule(
                 budget_id=request.pop(util.camelize('budget_id')),
                 alert_rule_id=request.pop(util.camelize('alert_rule_id')),
@@ -164,7 +167,8 @@ def test_delete_budget(testing_service_client):
         service_error = None
 
         try:
-            client = oci.budget.BudgetClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.budget.BudgetClient(config, service_endpoint=service_endpoint)
             response = client.delete_budget(
                 budget_id=request.pop(util.camelize('budget_id')),
                 **(util.camel_to_snake_keys(request))
@@ -203,7 +207,8 @@ def test_get_alert_rule(testing_service_client):
         service_error = None
 
         try:
-            client = oci.budget.BudgetClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.budget.BudgetClient(config, service_endpoint=service_endpoint)
             response = client.get_alert_rule(
                 budget_id=request.pop(util.camelize('budget_id')),
                 alert_rule_id=request.pop(util.camelize('alert_rule_id')),
@@ -243,7 +248,8 @@ def test_get_budget(testing_service_client):
         service_error = None
 
         try:
-            client = oci.budget.BudgetClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.budget.BudgetClient(config, service_endpoint=service_endpoint)
             response = client.get_budget(
                 budget_id=request.pop(util.camelize('budget_id')),
                 **(util.camel_to_snake_keys(request))
@@ -282,7 +288,8 @@ def test_list_alert_rules(testing_service_client):
         service_error = None
 
         try:
-            client = oci.budget.BudgetClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.budget.BudgetClient(config, service_endpoint=service_endpoint)
             response = client.list_alert_rules(
                 budget_id=request.pop(util.camelize('budget_id')),
                 **(util.camel_to_snake_keys(request))
@@ -340,7 +347,8 @@ def test_list_budgets(testing_service_client):
         service_error = None
 
         try:
-            client = oci.budget.BudgetClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.budget.BudgetClient(config, service_endpoint=service_endpoint)
             response = client.list_budgets(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -398,7 +406,8 @@ def test_update_alert_rule(testing_service_client):
         service_error = None
 
         try:
-            client = oci.budget.BudgetClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.budget.BudgetClient(config, service_endpoint=service_endpoint)
             response = client.update_alert_rule(
                 budget_id=request.pop(util.camelize('budget_id')),
                 alert_rule_id=request.pop(util.camelize('alert_rule_id')),
@@ -439,7 +448,8 @@ def test_update_budget(testing_service_client):
         service_error = None
 
         try:
-            client = oci.budget.BudgetClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.budget.BudgetClient(config, service_endpoint=service_endpoint)
             response = client.update_budget(
                 budget_id=request.pop(util.camelize('budget_id')),
                 update_budget_details=request.pop(util.camelize('update_budget_details')),

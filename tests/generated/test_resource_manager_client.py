@@ -45,7 +45,8 @@ def test_cancel_job(testing_service_client):
         service_error = None
 
         try:
-            client = oci.resource_manager.ResourceManagerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
             response = client.cancel_job(
                 job_id=request.pop(util.camelize('job_id')),
                 **(util.camel_to_snake_keys(request))
@@ -84,7 +85,8 @@ def test_create_job(testing_service_client):
         service_error = None
 
         try:
-            client = oci.resource_manager.ResourceManagerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
             response = client.create_job(
                 create_job_details=request.pop(util.camelize('create_job_details')),
                 **(util.camel_to_snake_keys(request))
@@ -123,7 +125,8 @@ def test_create_stack(testing_service_client):
         service_error = None
 
         try:
-            client = oci.resource_manager.ResourceManagerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
             response = client.create_stack(
                 create_stack_details=request.pop(util.camelize('create_stack_details')),
                 **(util.camel_to_snake_keys(request))
@@ -162,7 +165,8 @@ def test_delete_stack(testing_service_client):
         service_error = None
 
         try:
-            client = oci.resource_manager.ResourceManagerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
             response = client.delete_stack(
                 stack_id=request.pop(util.camelize('stack_id')),
                 **(util.camel_to_snake_keys(request))
@@ -201,7 +205,8 @@ def test_get_job(testing_service_client):
         service_error = None
 
         try:
-            client = oci.resource_manager.ResourceManagerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
             response = client.get_job(
                 job_id=request.pop(util.camelize('job_id')),
                 **(util.camel_to_snake_keys(request))
@@ -240,7 +245,8 @@ def test_get_job_logs(testing_service_client):
         service_error = None
 
         try:
-            client = oci.resource_manager.ResourceManagerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
             response = client.get_job_logs(
                 job_id=request.pop(util.camelize('job_id')),
                 **(util.camel_to_snake_keys(request))
@@ -298,7 +304,8 @@ def test_get_job_logs_content(testing_service_client):
         service_error = None
 
         try:
-            client = oci.resource_manager.ResourceManagerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
             response = client.get_job_logs_content(
                 job_id=request.pop(util.camelize('job_id')),
                 **(util.camel_to_snake_keys(request))
@@ -337,7 +344,8 @@ def test_get_job_tf_config(testing_service_client):
         service_error = None
 
         try:
-            client = oci.resource_manager.ResourceManagerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
             response = client.get_job_tf_config(
                 job_id=request.pop(util.camelize('job_id')),
                 **(util.camel_to_snake_keys(request))
@@ -376,7 +384,8 @@ def test_get_job_tf_state(testing_service_client):
         service_error = None
 
         try:
-            client = oci.resource_manager.ResourceManagerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
             response = client.get_job_tf_state(
                 job_id=request.pop(util.camelize('job_id')),
                 **(util.camel_to_snake_keys(request))
@@ -415,7 +424,8 @@ def test_get_stack(testing_service_client):
         service_error = None
 
         try:
-            client = oci.resource_manager.ResourceManagerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
             response = client.get_stack(
                 stack_id=request.pop(util.camelize('stack_id')),
                 **(util.camel_to_snake_keys(request))
@@ -454,7 +464,8 @@ def test_get_stack_tf_config(testing_service_client):
         service_error = None
 
         try:
-            client = oci.resource_manager.ResourceManagerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
             response = client.get_stack_tf_config(
                 stack_id=request.pop(util.camelize('stack_id')),
                 **(util.camel_to_snake_keys(request))
@@ -493,7 +504,8 @@ def test_list_jobs(testing_service_client):
         service_error = None
 
         try:
-            client = oci.resource_manager.ResourceManagerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
             response = client.list_jobs(
                 **(util.camel_to_snake_keys(request))
             )
@@ -548,7 +560,8 @@ def test_list_stacks(testing_service_client):
         service_error = None
 
         try:
-            client = oci.resource_manager.ResourceManagerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
             response = client.list_stacks(
                 **(util.camel_to_snake_keys(request))
             )
@@ -603,7 +616,8 @@ def test_update_job(testing_service_client):
         service_error = None
 
         try:
-            client = oci.resource_manager.ResourceManagerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
             response = client.update_job(
                 job_id=request.pop(util.camelize('job_id')),
                 update_job_details=request.pop(util.camelize('update_job_details')),
@@ -643,7 +657,8 @@ def test_update_stack(testing_service_client):
         service_error = None
 
         try:
-            client = oci.resource_manager.ResourceManagerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
             response = client.update_stack(
                 stack_id=request.pop(util.camelize('stack_id')),
                 update_stack_details=request.pop(util.camelize('update_stack_details')),

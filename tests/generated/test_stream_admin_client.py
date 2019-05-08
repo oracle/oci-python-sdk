@@ -45,7 +45,8 @@ def test_create_stream(testing_service_client):
         service_error = None
 
         try:
-            client = oci.streaming.StreamAdminClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.create_stream(
                 create_stream_details=request.pop(util.camelize('create_stream_details')),
                 **(util.camel_to_snake_keys(request))
@@ -84,7 +85,8 @@ def test_delete_stream(testing_service_client):
         service_error = None
 
         try:
-            client = oci.streaming.StreamAdminClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.delete_stream(
                 stream_id=request.pop(util.camelize('stream_id')),
                 **(util.camel_to_snake_keys(request))
@@ -123,7 +125,8 @@ def test_get_stream(testing_service_client):
         service_error = None
 
         try:
-            client = oci.streaming.StreamAdminClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.get_stream(
                 stream_id=request.pop(util.camelize('stream_id')),
                 **(util.camel_to_snake_keys(request))
@@ -162,7 +165,8 @@ def test_list_streams(testing_service_client):
         service_error = None
 
         try:
-            client = oci.streaming.StreamAdminClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.list_streams(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -220,7 +224,8 @@ def test_update_stream(testing_service_client):
         service_error = None
 
         try:
-            client = oci.streaming.StreamAdminClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.update_stream(
                 stream_id=request.pop(util.camelize('stream_id')),
                 update_stream_details=request.pop(util.camelize('update_stream_details')),

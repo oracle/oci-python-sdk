@@ -45,7 +45,8 @@ def test_accept_recommendations(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.accept_recommendations(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 protection_rule_keys=request.pop(util.camelize('protection_rule_keys')),
@@ -85,7 +86,8 @@ def test_cancel_work_request(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.cancel_work_request(
                 work_request_id=request.pop(util.camelize('work_request_id')),
                 **(util.camel_to_snake_keys(request))
@@ -124,7 +126,8 @@ def test_create_certificate(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.create_certificate(
                 create_certificate_details=request.pop(util.camelize('create_certificate_details')),
                 **(util.camel_to_snake_keys(request))
@@ -163,7 +166,8 @@ def test_create_waas_policy(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.create_waas_policy(
                 create_waas_policy_details=request.pop(util.camelize('create_waas_policy_details')),
                 **(util.camel_to_snake_keys(request))
@@ -202,7 +206,8 @@ def test_delete_certificate(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.delete_certificate(
                 certificate_id=request.pop(util.camelize('certificate_id')),
                 **(util.camel_to_snake_keys(request))
@@ -241,7 +246,8 @@ def test_delete_waas_policy(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.delete_waas_policy(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 **(util.camel_to_snake_keys(request))
@@ -280,7 +286,8 @@ def test_get_certificate(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.get_certificate(
                 certificate_id=request.pop(util.camelize('certificate_id')),
                 **(util.camel_to_snake_keys(request))
@@ -319,7 +326,8 @@ def test_get_device_fingerprint_challenge(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.get_device_fingerprint_challenge(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 **(util.camel_to_snake_keys(request))
@@ -358,7 +366,8 @@ def test_get_human_interaction_challenge(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.get_human_interaction_challenge(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 **(util.camel_to_snake_keys(request))
@@ -397,7 +406,8 @@ def test_get_js_challenge(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.get_js_challenge(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 **(util.camel_to_snake_keys(request))
@@ -436,7 +446,8 @@ def test_get_policy_config(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.get_policy_config(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 **(util.camel_to_snake_keys(request))
@@ -475,7 +486,8 @@ def test_get_protection_rule(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.get_protection_rule(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 protection_rule_key=request.pop(util.camelize('protection_rule_key')),
@@ -515,7 +527,8 @@ def test_get_protection_settings(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.get_protection_settings(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 **(util.camel_to_snake_keys(request))
@@ -554,7 +567,8 @@ def test_get_waas_policy(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.get_waas_policy(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 **(util.camel_to_snake_keys(request))
@@ -593,7 +607,8 @@ def test_get_waf_address_rate_limiting(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.get_waf_address_rate_limiting(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 **(util.camel_to_snake_keys(request))
@@ -632,7 +647,8 @@ def test_get_waf_config(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.get_waf_config(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 **(util.camel_to_snake_keys(request))
@@ -671,7 +687,8 @@ def test_get_work_request(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('work_request_id')),
                 **(util.camel_to_snake_keys(request))
@@ -710,7 +727,8 @@ def test_list_access_rules(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_access_rules(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 **(util.camel_to_snake_keys(request))
@@ -768,7 +786,8 @@ def test_list_captchas(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_captchas(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 **(util.camel_to_snake_keys(request))
@@ -826,7 +845,8 @@ def test_list_certificates(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_certificates(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -884,7 +904,8 @@ def test_list_edge_subnets(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_edge_subnets(
                 **(util.camel_to_snake_keys(request))
             )
@@ -939,7 +960,8 @@ def test_list_good_bots(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_good_bots(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 **(util.camel_to_snake_keys(request))
@@ -997,7 +1019,8 @@ def test_list_protection_rules(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_protection_rules(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1055,7 +1078,8 @@ def test_list_recommendations(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_recommendations(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1113,7 +1137,8 @@ def test_list_threat_feeds(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_threat_feeds(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1171,7 +1196,8 @@ def test_list_waas_policies(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_waas_policies(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1229,7 +1255,8 @@ def test_list_waf_blocked_requests(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_waf_blocked_requests(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1287,7 +1314,8 @@ def test_list_waf_logs(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_waf_logs(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1345,7 +1373,8 @@ def test_list_waf_requests(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_waf_requests(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1403,7 +1432,8 @@ def test_list_waf_traffic(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_waf_traffic(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1461,7 +1491,8 @@ def test_list_whitelists(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_whitelists(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1519,7 +1550,8 @@ def test_list_work_requests(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -1580,7 +1612,8 @@ def test_update_access_rules(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.update_access_rules(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 access_rules=request.pop(util.camelize('access_rules')),
@@ -1620,7 +1653,8 @@ def test_update_captchas(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.update_captchas(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 captchas=request.pop(util.camelize('captchas')),
@@ -1660,7 +1694,8 @@ def test_update_certificate(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.update_certificate(
                 certificate_id=request.pop(util.camelize('certificate_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1699,7 +1734,8 @@ def test_update_device_fingerprint_challenge(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.update_device_fingerprint_challenge(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 update_device_fingerprint_challenge_details=request.pop(util.camelize('update_device_fingerprint_challenge_details')),
@@ -1739,7 +1775,8 @@ def test_update_good_bots(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.update_good_bots(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 good_bots=request.pop(util.camelize('good_bots')),
@@ -1779,7 +1816,8 @@ def test_update_human_interaction_challenge(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.update_human_interaction_challenge(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 update_human_interaction_challenge_details=request.pop(util.camelize('update_human_interaction_challenge_details')),
@@ -1819,7 +1857,8 @@ def test_update_js_challenge(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.update_js_challenge(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 update_js_challenge_details=request.pop(util.camelize('update_js_challenge_details')),
@@ -1859,7 +1898,8 @@ def test_update_policy_config(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.update_policy_config(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 update_policy_config_details=request.pop(util.camelize('update_policy_config_details')),
@@ -1899,7 +1939,8 @@ def test_update_protection_rules(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.update_protection_rules(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 protection_rules=request.pop(util.camelize('protection_rules')),
@@ -1939,7 +1980,8 @@ def test_update_protection_settings(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.update_protection_settings(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 update_protection_settings_details=request.pop(util.camelize('update_protection_settings_details')),
@@ -1979,7 +2021,8 @@ def test_update_threat_feeds(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.update_threat_feeds(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 threat_feeds=request.pop(util.camelize('threat_feeds')),
@@ -2019,7 +2062,8 @@ def test_update_waas_policy(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.update_waas_policy(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 update_waas_policy_details=request.pop(util.camelize('update_waas_policy_details')),
@@ -2059,7 +2103,8 @@ def test_update_waf_address_rate_limiting(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.update_waf_address_rate_limiting(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 update_waf_address_rate_limiting_details=request.pop(util.camelize('update_waf_address_rate_limiting_details')),
@@ -2099,7 +2144,8 @@ def test_update_waf_config(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.update_waf_config(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 update_waf_config_details=request.pop(util.camelize('update_waf_config_details')),
@@ -2139,7 +2185,8 @@ def test_update_whitelists(testing_service_client):
         service_error = None
 
         try:
-            client = oci.waas.WaasClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
             response = client.update_whitelists(
                 waas_policy_id=request.pop(util.camelize('waas_policy_id')),
                 whitelists=request.pop(util.camelize('whitelists')),

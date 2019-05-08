@@ -85,7 +85,7 @@
       <plugin>
         <groupId>com.oracle.bmc.sdk</groupId>
         <artifactId>bmc-sdk-swagger-maven-plugin</artifactId>
-        <version>1.76-SNAPSHOT</version>
+        <version>1.78-SNAPSHOT</version>
         <configuration>
           <isTestGenerationEnabled>false</isTestGenerationEnabled>
         </configuration>

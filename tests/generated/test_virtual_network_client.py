@@ -45,7 +45,8 @@ def test_attach_service_id(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.attach_service_id(
                 service_gateway_id=request.pop(util.camelize('service_gateway_id')),
                 attach_service_details=request.pop(util.camelize('attach_service_details')),
@@ -85,7 +86,8 @@ def test_bulk_add_virtual_circuit_public_prefixes(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.bulk_add_virtual_circuit_public_prefixes(
                 virtual_circuit_id=request.pop(util.camelize('virtual_circuit_id')),
                 bulk_add_virtual_circuit_public_prefixes_details=request.pop(util.camelize('bulk_add_virtual_circuit_public_prefixes_details')),
@@ -125,7 +127,8 @@ def test_bulk_delete_virtual_circuit_public_prefixes(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.bulk_delete_virtual_circuit_public_prefixes(
                 virtual_circuit_id=request.pop(util.camelize('virtual_circuit_id')),
                 bulk_delete_virtual_circuit_public_prefixes_details=request.pop(util.camelize('bulk_delete_virtual_circuit_public_prefixes_details')),
@@ -165,7 +168,8 @@ def test_connect_local_peering_gateways(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.connect_local_peering_gateways(
                 local_peering_gateway_id=request.pop(util.camelize('local_peering_gateway_id')),
                 connect_local_peering_gateways_details=request.pop(util.camelize('connect_local_peering_gateways_details')),
@@ -205,7 +209,8 @@ def test_connect_remote_peering_connections(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.connect_remote_peering_connections(
                 remote_peering_connection_id=request.pop(util.camelize('remote_peering_connection_id')),
                 connect_remote_peering_connections_details=request.pop(util.camelize('connect_remote_peering_connections_details')),
@@ -245,7 +250,8 @@ def test_create_cpe(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_cpe(
                 create_cpe_details=request.pop(util.camelize('create_cpe_details')),
                 **(util.camel_to_snake_keys(request))
@@ -284,7 +290,8 @@ def test_create_cross_connect(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_cross_connect(
                 create_cross_connect_details=request.pop(util.camelize('create_cross_connect_details')),
                 **(util.camel_to_snake_keys(request))
@@ -323,7 +330,8 @@ def test_create_cross_connect_group(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_cross_connect_group(
                 create_cross_connect_group_details=request.pop(util.camelize('create_cross_connect_group_details')),
                 **(util.camel_to_snake_keys(request))
@@ -362,7 +370,8 @@ def test_create_dhcp_options(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_dhcp_options(
                 create_dhcp_details=request.pop(util.camelize('create_dhcp_details')),
                 **(util.camel_to_snake_keys(request))
@@ -401,7 +410,8 @@ def test_create_drg(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_drg(
                 create_drg_details=request.pop(util.camelize('create_drg_details')),
                 **(util.camel_to_snake_keys(request))
@@ -440,7 +450,8 @@ def test_create_drg_attachment(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_drg_attachment(
                 create_drg_attachment_details=request.pop(util.camelize('create_drg_attachment_details')),
                 **(util.camel_to_snake_keys(request))
@@ -479,7 +490,8 @@ def test_create_internet_gateway(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_internet_gateway(
                 create_internet_gateway_details=request.pop(util.camelize('create_internet_gateway_details')),
                 **(util.camel_to_snake_keys(request))
@@ -518,7 +530,8 @@ def test_create_ip_sec_connection(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_ip_sec_connection(
                 create_ip_sec_connection_details=request.pop(util.camelize('create_ip_sec_connection_details')),
                 **(util.camel_to_snake_keys(request))
@@ -557,7 +570,8 @@ def test_create_local_peering_gateway(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_local_peering_gateway(
                 create_local_peering_gateway_details=request.pop(util.camelize('create_local_peering_gateway_details')),
                 **(util.camel_to_snake_keys(request))
@@ -596,7 +610,8 @@ def test_create_nat_gateway(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_nat_gateway(
                 create_nat_gateway_details=request.pop(util.camelize('create_nat_gateway_details')),
                 **(util.camel_to_snake_keys(request))
@@ -635,7 +650,8 @@ def test_create_private_ip(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_private_ip(
                 create_private_ip_details=request.pop(util.camelize('create_private_ip_details')),
                 **(util.camel_to_snake_keys(request))
@@ -674,7 +690,8 @@ def test_create_public_ip(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_public_ip(
                 create_public_ip_details=request.pop(util.camelize('create_public_ip_details')),
                 **(util.camel_to_snake_keys(request))
@@ -713,7 +730,8 @@ def test_create_remote_peering_connection(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_remote_peering_connection(
                 create_remote_peering_connection_details=request.pop(util.camelize('create_remote_peering_connection_details')),
                 **(util.camel_to_snake_keys(request))
@@ -752,7 +770,8 @@ def test_create_route_table(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_route_table(
                 create_route_table_details=request.pop(util.camelize('create_route_table_details')),
                 **(util.camel_to_snake_keys(request))
@@ -791,7 +810,8 @@ def test_create_security_list(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_security_list(
                 create_security_list_details=request.pop(util.camelize('create_security_list_details')),
                 **(util.camel_to_snake_keys(request))
@@ -830,7 +850,8 @@ def test_create_service_gateway(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_service_gateway(
                 create_service_gateway_details=request.pop(util.camelize('create_service_gateway_details')),
                 **(util.camel_to_snake_keys(request))
@@ -869,7 +890,8 @@ def test_create_subnet(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_subnet(
                 create_subnet_details=request.pop(util.camelize('create_subnet_details')),
                 **(util.camel_to_snake_keys(request))
@@ -908,7 +930,8 @@ def test_create_vcn(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_vcn(
                 create_vcn_details=request.pop(util.camelize('create_vcn_details')),
                 **(util.camel_to_snake_keys(request))
@@ -947,7 +970,8 @@ def test_create_virtual_circuit(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.create_virtual_circuit(
                 create_virtual_circuit_details=request.pop(util.camelize('create_virtual_circuit_details')),
                 **(util.camel_to_snake_keys(request))
@@ -986,7 +1010,8 @@ def test_delete_cpe(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_cpe(
                 cpe_id=request.pop(util.camelize('cpe_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1025,7 +1050,8 @@ def test_delete_cross_connect(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_cross_connect(
                 cross_connect_id=request.pop(util.camelize('cross_connect_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1064,7 +1090,8 @@ def test_delete_cross_connect_group(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_cross_connect_group(
                 cross_connect_group_id=request.pop(util.camelize('cross_connect_group_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1103,7 +1130,8 @@ def test_delete_dhcp_options(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_dhcp_options(
                 dhcp_id=request.pop(util.camelize('dhcp_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1142,7 +1170,8 @@ def test_delete_drg(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_drg(
                 drg_id=request.pop(util.camelize('drg_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1181,7 +1210,8 @@ def test_delete_drg_attachment(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_drg_attachment(
                 drg_attachment_id=request.pop(util.camelize('drg_attachment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1220,7 +1250,8 @@ def test_delete_internet_gateway(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_internet_gateway(
                 ig_id=request.pop(util.camelize('ig_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1259,7 +1290,8 @@ def test_delete_ip_sec_connection(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_ip_sec_connection(
                 ipsc_id=request.pop(util.camelize('ipsc_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1298,7 +1330,8 @@ def test_delete_local_peering_gateway(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_local_peering_gateway(
                 local_peering_gateway_id=request.pop(util.camelize('local_peering_gateway_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1337,7 +1370,8 @@ def test_delete_nat_gateway(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_nat_gateway(
                 nat_gateway_id=request.pop(util.camelize('nat_gateway_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1376,7 +1410,8 @@ def test_delete_private_ip(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_private_ip(
                 private_ip_id=request.pop(util.camelize('private_ip_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1415,7 +1450,8 @@ def test_delete_public_ip(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_public_ip(
                 public_ip_id=request.pop(util.camelize('public_ip_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1454,7 +1490,8 @@ def test_delete_remote_peering_connection(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_remote_peering_connection(
                 remote_peering_connection_id=request.pop(util.camelize('remote_peering_connection_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1493,7 +1530,8 @@ def test_delete_route_table(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_route_table(
                 rt_id=request.pop(util.camelize('rt_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1532,7 +1570,8 @@ def test_delete_security_list(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_security_list(
                 security_list_id=request.pop(util.camelize('security_list_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1571,7 +1610,8 @@ def test_delete_service_gateway(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_service_gateway(
                 service_gateway_id=request.pop(util.camelize('service_gateway_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1610,7 +1650,8 @@ def test_delete_subnet(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_subnet(
                 subnet_id=request.pop(util.camelize('subnet_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1649,7 +1690,8 @@ def test_delete_vcn(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_vcn(
                 vcn_id=request.pop(util.camelize('vcn_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1688,7 +1730,8 @@ def test_delete_virtual_circuit(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.delete_virtual_circuit(
                 virtual_circuit_id=request.pop(util.camelize('virtual_circuit_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1727,7 +1770,8 @@ def test_detach_service_id(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.detach_service_id(
                 service_gateway_id=request.pop(util.camelize('service_gateway_id')),
                 detach_service_details=request.pop(util.camelize('detach_service_details')),
@@ -1767,7 +1811,8 @@ def test_get_cpe(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_cpe(
                 cpe_id=request.pop(util.camelize('cpe_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1806,7 +1851,8 @@ def test_get_cross_connect(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_cross_connect(
                 cross_connect_id=request.pop(util.camelize('cross_connect_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1845,7 +1891,8 @@ def test_get_cross_connect_group(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_cross_connect_group(
                 cross_connect_group_id=request.pop(util.camelize('cross_connect_group_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1884,7 +1931,8 @@ def test_get_cross_connect_letter_of_authority(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_cross_connect_letter_of_authority(
                 cross_connect_id=request.pop(util.camelize('cross_connect_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1923,7 +1971,8 @@ def test_get_cross_connect_status(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_cross_connect_status(
                 cross_connect_id=request.pop(util.camelize('cross_connect_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1962,7 +2011,8 @@ def test_get_dhcp_options(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_dhcp_options(
                 dhcp_id=request.pop(util.camelize('dhcp_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2001,7 +2051,8 @@ def test_get_drg(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_drg(
                 drg_id=request.pop(util.camelize('drg_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2040,7 +2091,8 @@ def test_get_drg_attachment(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_drg_attachment(
                 drg_attachment_id=request.pop(util.camelize('drg_attachment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2079,7 +2131,8 @@ def test_get_fast_connect_provider_service(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_fast_connect_provider_service(
                 provider_service_id=request.pop(util.camelize('provider_service_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2118,7 +2171,8 @@ def test_get_fast_connect_provider_service_key(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_fast_connect_provider_service_key(
                 provider_service_id=request.pop(util.camelize('provider_service_id')),
                 provider_service_key_name=request.pop(util.camelize('provider_service_key_name')),
@@ -2158,7 +2212,8 @@ def test_get_internet_gateway(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_internet_gateway(
                 ig_id=request.pop(util.camelize('ig_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2197,7 +2252,8 @@ def test_get_ip_sec_connection(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_ip_sec_connection(
                 ipsc_id=request.pop(util.camelize('ipsc_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2236,7 +2292,8 @@ def test_get_ip_sec_connection_device_config(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_ip_sec_connection_device_config(
                 ipsc_id=request.pop(util.camelize('ipsc_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2275,7 +2332,8 @@ def test_get_ip_sec_connection_device_status(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_ip_sec_connection_device_status(
                 ipsc_id=request.pop(util.camelize('ipsc_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2314,7 +2372,8 @@ def test_get_local_peering_gateway(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_local_peering_gateway(
                 local_peering_gateway_id=request.pop(util.camelize('local_peering_gateway_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2353,7 +2412,8 @@ def test_get_nat_gateway(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_nat_gateway(
                 nat_gateway_id=request.pop(util.camelize('nat_gateway_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2392,7 +2452,8 @@ def test_get_private_ip(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_private_ip(
                 private_ip_id=request.pop(util.camelize('private_ip_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2431,7 +2492,8 @@ def test_get_public_ip(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_public_ip(
                 public_ip_id=request.pop(util.camelize('public_ip_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2470,7 +2532,8 @@ def test_get_public_ip_by_ip_address(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_public_ip_by_ip_address(
                 get_public_ip_by_ip_address_details=request.pop(util.camelize('get_public_ip_by_ip_address_details')),
                 **(util.camel_to_snake_keys(request))
@@ -2509,7 +2572,8 @@ def test_get_public_ip_by_private_ip_id(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_public_ip_by_private_ip_id(
                 get_public_ip_by_private_ip_id_details=request.pop(util.camelize('get_public_ip_by_private_ip_id_details')),
                 **(util.camel_to_snake_keys(request))
@@ -2548,7 +2612,8 @@ def test_get_remote_peering_connection(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_remote_peering_connection(
                 remote_peering_connection_id=request.pop(util.camelize('remote_peering_connection_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2587,7 +2652,8 @@ def test_get_route_table(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_route_table(
                 rt_id=request.pop(util.camelize('rt_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2626,7 +2692,8 @@ def test_get_security_list(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_security_list(
                 security_list_id=request.pop(util.camelize('security_list_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2665,7 +2732,8 @@ def test_get_service(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_service(
                 service_id=request.pop(util.camelize('service_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2704,7 +2772,8 @@ def test_get_service_gateway(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_service_gateway(
                 service_gateway_id=request.pop(util.camelize('service_gateway_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2743,7 +2812,8 @@ def test_get_subnet(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_subnet(
                 subnet_id=request.pop(util.camelize('subnet_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2782,7 +2852,8 @@ def test_get_vcn(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_vcn(
                 vcn_id=request.pop(util.camelize('vcn_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2821,7 +2892,8 @@ def test_get_virtual_circuit(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_virtual_circuit(
                 virtual_circuit_id=request.pop(util.camelize('virtual_circuit_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2860,7 +2932,8 @@ def test_get_vnic(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.get_vnic(
                 vnic_id=request.pop(util.camelize('vnic_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2899,7 +2972,8 @@ def test_list_allowed_peer_regions_for_remote_peering(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_allowed_peer_regions_for_remote_peering(
                 **(util.camel_to_snake_keys(request))
             )
@@ -2937,7 +3011,8 @@ def test_list_cpes(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_cpes(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2995,7 +3070,8 @@ def test_list_cross_connect_groups(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_cross_connect_groups(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -3053,7 +3129,8 @@ def test_list_cross_connect_locations(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_cross_connect_locations(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -3111,7 +3188,8 @@ def test_list_cross_connects(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_cross_connects(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -3169,7 +3247,8 @@ def test_list_crossconnect_port_speed_shapes(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_crossconnect_port_speed_shapes(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -3227,7 +3306,8 @@ def test_list_dhcp_options(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_dhcp_options(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 vcn_id=request.pop(util.camelize('vcn_id')),
@@ -3288,7 +3368,8 @@ def test_list_drg_attachments(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_drg_attachments(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -3346,7 +3427,8 @@ def test_list_drgs(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_drgs(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -3404,7 +3486,8 @@ def test_list_fast_connect_provider_services(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_fast_connect_provider_services(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -3462,7 +3545,8 @@ def test_list_fast_connect_provider_virtual_circuit_bandwidth_shapes(testing_ser
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_fast_connect_provider_virtual_circuit_bandwidth_shapes(
                 provider_service_id=request.pop(util.camelize('provider_service_id')),
                 **(util.camel_to_snake_keys(request))
@@ -3520,7 +3604,8 @@ def test_list_internet_gateways(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_internet_gateways(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 vcn_id=request.pop(util.camelize('vcn_id')),
@@ -3581,7 +3666,8 @@ def test_list_ip_sec_connections(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_ip_sec_connections(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -3639,7 +3725,8 @@ def test_list_local_peering_gateways(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_local_peering_gateways(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 vcn_id=request.pop(util.camelize('vcn_id')),
@@ -3700,7 +3787,8 @@ def test_list_nat_gateways(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_nat_gateways(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -3758,7 +3846,8 @@ def test_list_private_ips(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_private_ips(
                 **(util.camel_to_snake_keys(request))
             )
@@ -3813,7 +3902,8 @@ def test_list_public_ips(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_public_ips(
                 scope=request.pop(util.camelize('scope')),
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -3874,7 +3964,8 @@ def test_list_remote_peering_connections(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_remote_peering_connections(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -3932,7 +4023,8 @@ def test_list_route_tables(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_route_tables(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 vcn_id=request.pop(util.camelize('vcn_id')),
@@ -3993,7 +4085,8 @@ def test_list_security_lists(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_security_lists(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 vcn_id=request.pop(util.camelize('vcn_id')),
@@ -4054,7 +4147,8 @@ def test_list_service_gateways(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_service_gateways(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -4112,7 +4206,8 @@ def test_list_services(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_services(
                 **(util.camel_to_snake_keys(request))
             )
@@ -4167,7 +4262,8 @@ def test_list_subnets(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_subnets(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 vcn_id=request.pop(util.camelize('vcn_id')),
@@ -4228,7 +4324,8 @@ def test_list_vcns(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_vcns(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -4286,7 +4383,8 @@ def test_list_virtual_circuit_bandwidth_shapes(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_virtual_circuit_bandwidth_shapes(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -4344,7 +4442,8 @@ def test_list_virtual_circuit_public_prefixes(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_virtual_circuit_public_prefixes(
                 virtual_circuit_id=request.pop(util.camelize('virtual_circuit_id')),
                 **(util.camel_to_snake_keys(request))
@@ -4383,7 +4482,8 @@ def test_list_virtual_circuits(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_virtual_circuits(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -4441,7 +4541,8 @@ def test_update_cpe(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.update_cpe(
                 cpe_id=request.pop(util.camelize('cpe_id')),
                 update_cpe_details=request.pop(util.camelize('update_cpe_details')),
@@ -4481,7 +4582,8 @@ def test_update_cross_connect(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.update_cross_connect(
                 cross_connect_id=request.pop(util.camelize('cross_connect_id')),
                 update_cross_connect_details=request.pop(util.camelize('update_cross_connect_details')),
@@ -4521,7 +4623,8 @@ def test_update_cross_connect_group(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.update_cross_connect_group(
                 cross_connect_group_id=request.pop(util.camelize('cross_connect_group_id')),
                 update_cross_connect_group_details=request.pop(util.camelize('update_cross_connect_group_details')),
@@ -4561,7 +4664,8 @@ def test_update_dhcp_options(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.update_dhcp_options(
                 dhcp_id=request.pop(util.camelize('dhcp_id')),
                 update_dhcp_details=request.pop(util.camelize('update_dhcp_details')),
@@ -4601,7 +4705,8 @@ def test_update_drg(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.update_drg(
                 drg_id=request.pop(util.camelize('drg_id')),
                 update_drg_details=request.pop(util.camelize('update_drg_details')),
@@ -4641,7 +4746,8 @@ def test_update_drg_attachment(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.update_drg_attachment(
                 drg_attachment_id=request.pop(util.camelize('drg_attachment_id')),
                 update_drg_attachment_details=request.pop(util.camelize('update_drg_attachment_details')),
@@ -4681,7 +4787,8 @@ def test_update_internet_gateway(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.update_internet_gateway(
                 ig_id=request.pop(util.camelize('ig_id')),
                 update_internet_gateway_details=request.pop(util.camelize('update_internet_gateway_details')),
@@ -4721,7 +4828,8 @@ def test_update_ip_sec_connection(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.update_ip_sec_connection(
                 ipsc_id=request.pop(util.camelize('ipsc_id')),
                 update_ip_sec_connection_details=request.pop(util.camelize('update_ip_sec_connection_details')),
@@ -4761,7 +4869,8 @@ def test_update_local_peering_gateway(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.update_local_peering_gateway(
                 local_peering_gateway_id=request.pop(util.camelize('local_peering_gateway_id')),
                 update_local_peering_gateway_details=request.pop(util.camelize('update_local_peering_gateway_details')),
@@ -4801,7 +4910,8 @@ def test_update_nat_gateway(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.update_nat_gateway(
                 nat_gateway_id=request.pop(util.camelize('nat_gateway_id')),
                 update_nat_gateway_details=request.pop(util.camelize('update_nat_gateway_details')),
@@ -4841,7 +4951,8 @@ def test_update_private_ip(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.update_private_ip(
                 private_ip_id=request.pop(util.camelize('private_ip_id')),
                 update_private_ip_details=request.pop(util.camelize('update_private_ip_details')),
@@ -4881,7 +4992,8 @@ def test_update_public_ip(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.update_public_ip(
                 public_ip_id=request.pop(util.camelize('public_ip_id')),
                 update_public_ip_details=request.pop(util.camelize('update_public_ip_details')),
@@ -4921,7 +5033,8 @@ def test_update_remote_peering_connection(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.update_remote_peering_connection(
                 remote_peering_connection_id=request.pop(util.camelize('remote_peering_connection_id')),
                 update_remote_peering_connection_details=request.pop(util.camelize('update_remote_peering_connection_details')),
@@ -4961,7 +5074,8 @@ def test_update_route_table(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.update_route_table(
                 rt_id=request.pop(util.camelize('rt_id')),
                 update_route_table_details=request.pop(util.camelize('update_route_table_details')),
@@ -5001,7 +5115,8 @@ def test_update_security_list(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.update_security_list(
                 security_list_id=request.pop(util.camelize('security_list_id')),
                 update_security_list_details=request.pop(util.camelize('update_security_list_details')),
@@ -5041,7 +5156,8 @@ def test_update_service_gateway(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.update_service_gateway(
                 service_gateway_id=request.pop(util.camelize('service_gateway_id')),
                 update_service_gateway_details=request.pop(util.camelize('update_service_gateway_details')),
@@ -5081,7 +5197,8 @@ def test_update_subnet(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.update_subnet(
                 subnet_id=request.pop(util.camelize('subnet_id')),
                 update_subnet_details=request.pop(util.camelize('update_subnet_details')),
@@ -5121,7 +5238,8 @@ def test_update_vcn(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.update_vcn(
                 vcn_id=request.pop(util.camelize('vcn_id')),
                 update_vcn_details=request.pop(util.camelize('update_vcn_details')),
@@ -5161,7 +5279,8 @@ def test_update_virtual_circuit(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.update_virtual_circuit(
                 virtual_circuit_id=request.pop(util.camelize('virtual_circuit_id')),
                 update_virtual_circuit_details=request.pop(util.camelize('update_virtual_circuit_details')),
@@ -5201,7 +5320,8 @@ def test_update_vnic(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.VirtualNetworkClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.update_vnic(
                 vnic_id=request.pop(util.camelize('vnic_id')),
                 update_vnic_details=request.pop(util.camelize('update_vnic_details')),

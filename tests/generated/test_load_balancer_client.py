@@ -45,7 +45,8 @@ def test_create_backend(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.create_backend(
                 create_backend_details=request.pop(util.camelize('create_backend_details')),
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
@@ -86,7 +87,8 @@ def test_create_backend_set(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.create_backend_set(
                 create_backend_set_details=request.pop(util.camelize('create_backend_set_details')),
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
@@ -126,7 +128,8 @@ def test_create_certificate(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.create_certificate(
                 create_certificate_details=request.pop(util.camelize('create_certificate_details')),
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
@@ -166,7 +169,8 @@ def test_create_hostname(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.create_hostname(
                 create_hostname_details=request.pop(util.camelize('create_hostname_details')),
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
@@ -206,7 +210,8 @@ def test_create_listener(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.create_listener(
                 create_listener_details=request.pop(util.camelize('create_listener_details')),
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
@@ -246,7 +251,8 @@ def test_create_load_balancer(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.create_load_balancer(
                 create_load_balancer_details=request.pop(util.camelize('create_load_balancer_details')),
                 **(util.camel_to_snake_keys(request))
@@ -285,7 +291,8 @@ def test_create_path_route_set(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.create_path_route_set(
                 create_path_route_set_details=request.pop(util.camelize('create_path_route_set_details')),
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
@@ -325,7 +332,8 @@ def test_create_rule_set(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.create_rule_set(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 create_rule_set_details=request.pop(util.camelize('create_rule_set_details')),
@@ -365,7 +373,8 @@ def test_delete_backend(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.delete_backend(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 backend_set_name=request.pop(util.camelize('backend_set_name')),
@@ -406,7 +415,8 @@ def test_delete_backend_set(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.delete_backend_set(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 backend_set_name=request.pop(util.camelize('backend_set_name')),
@@ -446,7 +456,8 @@ def test_delete_certificate(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.delete_certificate(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 certificate_name=request.pop(util.camelize('certificate_name')),
@@ -486,7 +497,8 @@ def test_delete_hostname(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.delete_hostname(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 name=request.pop(util.camelize('name')),
@@ -526,7 +538,8 @@ def test_delete_listener(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.delete_listener(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 listener_name=request.pop(util.camelize('listener_name')),
@@ -566,7 +579,8 @@ def test_delete_load_balancer(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.delete_load_balancer(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 **(util.camel_to_snake_keys(request))
@@ -605,7 +619,8 @@ def test_delete_path_route_set(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.delete_path_route_set(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 path_route_set_name=request.pop(util.camelize('path_route_set_name')),
@@ -645,7 +660,8 @@ def test_delete_rule_set(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.delete_rule_set(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 rule_set_name=request.pop(util.camelize('rule_set_name')),
@@ -685,7 +701,8 @@ def test_get_backend(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.get_backend(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 backend_set_name=request.pop(util.camelize('backend_set_name')),
@@ -726,7 +743,8 @@ def test_get_backend_health(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.get_backend_health(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 backend_set_name=request.pop(util.camelize('backend_set_name')),
@@ -767,7 +785,8 @@ def test_get_backend_set(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.get_backend_set(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 backend_set_name=request.pop(util.camelize('backend_set_name')),
@@ -807,7 +826,8 @@ def test_get_backend_set_health(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.get_backend_set_health(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 backend_set_name=request.pop(util.camelize('backend_set_name')),
@@ -847,7 +867,8 @@ def test_get_health_checker(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.get_health_checker(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 backend_set_name=request.pop(util.camelize('backend_set_name')),
@@ -887,7 +908,8 @@ def test_get_hostname(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.get_hostname(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 name=request.pop(util.camelize('name')),
@@ -927,7 +949,8 @@ def test_get_load_balancer(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.get_load_balancer(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 **(util.camel_to_snake_keys(request))
@@ -966,7 +989,8 @@ def test_get_load_balancer_health(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.get_load_balancer_health(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1005,7 +1029,8 @@ def test_get_path_route_set(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.get_path_route_set(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 path_route_set_name=request.pop(util.camelize('path_route_set_name')),
@@ -1045,7 +1070,8 @@ def test_get_rule_set(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.get_rule_set(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 rule_set_name=request.pop(util.camelize('rule_set_name')),
@@ -1085,7 +1111,8 @@ def test_get_work_request(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('work_request_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1124,7 +1151,8 @@ def test_list_backend_sets(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.list_backend_sets(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1163,7 +1191,8 @@ def test_list_backends(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.list_backends(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 backend_set_name=request.pop(util.camelize('backend_set_name')),
@@ -1203,7 +1232,8 @@ def test_list_certificates(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.list_certificates(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1242,7 +1272,8 @@ def test_list_hostnames(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.list_hostnames(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1281,7 +1312,8 @@ def test_list_load_balancer_healths(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.list_load_balancer_healths(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1339,7 +1371,8 @@ def test_list_load_balancers(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.list_load_balancers(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1397,7 +1430,8 @@ def test_list_path_route_sets(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.list_path_route_sets(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1436,7 +1470,8 @@ def test_list_policies(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.list_policies(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1494,7 +1529,8 @@ def test_list_protocols(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.list_protocols(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1552,7 +1588,8 @@ def test_list_rule_sets(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.list_rule_sets(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1591,7 +1628,8 @@ def test_list_shapes(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.list_shapes(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1649,7 +1687,8 @@ def test_list_work_requests(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1707,7 +1746,8 @@ def test_update_backend(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.update_backend(
                 update_backend_details=request.pop(util.camelize('update_backend_details')),
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
@@ -1749,7 +1789,8 @@ def test_update_backend_set(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.update_backend_set(
                 update_backend_set_details=request.pop(util.camelize('update_backend_set_details')),
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
@@ -1790,7 +1831,8 @@ def test_update_health_checker(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.update_health_checker(
                 health_checker=request.pop(util.camelize('health_checker')),
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
@@ -1831,7 +1873,8 @@ def test_update_hostname(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.update_hostname(
                 update_hostname_details=request.pop(util.camelize('update_hostname_details')),
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
@@ -1872,7 +1915,8 @@ def test_update_listener(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.update_listener(
                 update_listener_details=request.pop(util.camelize('update_listener_details')),
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
@@ -1913,7 +1957,8 @@ def test_update_load_balancer(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.update_load_balancer(
                 update_load_balancer_details=request.pop(util.camelize('update_load_balancer_details')),
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
@@ -1953,7 +1998,8 @@ def test_update_path_route_set(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.update_path_route_set(
                 update_path_route_set_details=request.pop(util.camelize('update_path_route_set_details')),
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
@@ -1994,7 +2040,8 @@ def test_update_rule_set(testing_service_client):
         service_error = None
 
         try:
-            client = oci.load_balancer.LoadBalancerClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
             response = client.update_rule_set(
                 load_balancer_id=request.pop(util.camelize('load_balancer_id')),
                 rule_set_name=request.pop(util.camelize('rule_set_name')),

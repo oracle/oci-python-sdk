@@ -45,7 +45,8 @@ def test_create_sender(testing_service_client):
         service_error = None
 
         try:
-            client = oci.email.EmailClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.create_sender(
                 create_sender_details=request.pop(util.camelize('create_sender_details')),
                 **(util.camel_to_snake_keys(request))
@@ -84,7 +85,8 @@ def test_create_suppression(testing_service_client):
         service_error = None
 
         try:
-            client = oci.email.EmailClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.create_suppression(
                 create_suppression_details=request.pop(util.camelize('create_suppression_details')),
                 **(util.camel_to_snake_keys(request))
@@ -123,7 +125,8 @@ def test_delete_sender(testing_service_client):
         service_error = None
 
         try:
-            client = oci.email.EmailClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.delete_sender(
                 sender_id=request.pop(util.camelize('sender_id')),
                 **(util.camel_to_snake_keys(request))
@@ -162,7 +165,8 @@ def test_delete_suppression(testing_service_client):
         service_error = None
 
         try:
-            client = oci.email.EmailClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.delete_suppression(
                 suppression_id=request.pop(util.camelize('suppression_id')),
                 **(util.camel_to_snake_keys(request))
@@ -201,7 +205,8 @@ def test_get_sender(testing_service_client):
         service_error = None
 
         try:
-            client = oci.email.EmailClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.get_sender(
                 sender_id=request.pop(util.camelize('sender_id')),
                 **(util.camel_to_snake_keys(request))
@@ -240,7 +245,8 @@ def test_get_suppression(testing_service_client):
         service_error = None
 
         try:
-            client = oci.email.EmailClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.get_suppression(
                 suppression_id=request.pop(util.camelize('suppression_id')),
                 **(util.camel_to_snake_keys(request))
@@ -279,7 +285,8 @@ def test_list_senders(testing_service_client):
         service_error = None
 
         try:
-            client = oci.email.EmailClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.list_senders(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -337,7 +344,8 @@ def test_list_suppressions(testing_service_client):
         service_error = None
 
         try:
-            client = oci.email.EmailClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.list_suppressions(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -395,7 +403,8 @@ def test_update_sender(testing_service_client):
         service_error = None
 
         try:
-            client = oci.email.EmailClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.update_sender(
                 sender_id=request.pop(util.camelize('sender_id')),
                 update_sender_details=request.pop(util.camelize('update_sender_details')),

@@ -45,7 +45,8 @@ def test_create_export(testing_service_client):
         service_error = None
 
         try:
-            client = oci.file_storage.FileStorageClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.create_export(
                 create_export_details=request.pop(util.camelize('create_export_details')),
                 **(util.camel_to_snake_keys(request))
@@ -84,7 +85,8 @@ def test_create_file_system(testing_service_client):
         service_error = None
 
         try:
-            client = oci.file_storage.FileStorageClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.create_file_system(
                 create_file_system_details=request.pop(util.camelize('create_file_system_details')),
                 **(util.camel_to_snake_keys(request))
@@ -123,7 +125,8 @@ def test_create_mount_target(testing_service_client):
         service_error = None
 
         try:
-            client = oci.file_storage.FileStorageClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.create_mount_target(
                 create_mount_target_details=request.pop(util.camelize('create_mount_target_details')),
                 **(util.camel_to_snake_keys(request))
@@ -162,7 +165,8 @@ def test_create_snapshot(testing_service_client):
         service_error = None
 
         try:
-            client = oci.file_storage.FileStorageClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.create_snapshot(
                 create_snapshot_details=request.pop(util.camelize('create_snapshot_details')),
                 **(util.camel_to_snake_keys(request))
@@ -201,7 +205,8 @@ def test_delete_export(testing_service_client):
         service_error = None
 
         try:
-            client = oci.file_storage.FileStorageClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_export(
                 export_id=request.pop(util.camelize('export_id')),
                 **(util.camel_to_snake_keys(request))
@@ -240,7 +245,8 @@ def test_delete_file_system(testing_service_client):
         service_error = None
 
         try:
-            client = oci.file_storage.FileStorageClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_file_system(
                 file_system_id=request.pop(util.camelize('file_system_id')),
                 **(util.camel_to_snake_keys(request))
@@ -279,7 +285,8 @@ def test_delete_mount_target(testing_service_client):
         service_error = None
 
         try:
-            client = oci.file_storage.FileStorageClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_mount_target(
                 mount_target_id=request.pop(util.camelize('mount_target_id')),
                 **(util.camel_to_snake_keys(request))
@@ -318,7 +325,8 @@ def test_delete_snapshot(testing_service_client):
         service_error = None
 
         try:
-            client = oci.file_storage.FileStorageClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_snapshot(
                 snapshot_id=request.pop(util.camelize('snapshot_id')),
                 **(util.camel_to_snake_keys(request))
@@ -357,7 +365,8 @@ def test_get_export(testing_service_client):
         service_error = None
 
         try:
-            client = oci.file_storage.FileStorageClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.get_export(
                 export_id=request.pop(util.camelize('export_id')),
                 **(util.camel_to_snake_keys(request))
@@ -396,7 +405,8 @@ def test_get_export_set(testing_service_client):
         service_error = None
 
         try:
-            client = oci.file_storage.FileStorageClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.get_export_set(
                 export_set_id=request.pop(util.camelize('export_set_id')),
                 **(util.camel_to_snake_keys(request))
@@ -435,7 +445,8 @@ def test_get_file_system(testing_service_client):
         service_error = None
 
         try:
-            client = oci.file_storage.FileStorageClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.get_file_system(
                 file_system_id=request.pop(util.camelize('file_system_id')),
                 **(util.camel_to_snake_keys(request))
@@ -474,7 +485,8 @@ def test_get_mount_target(testing_service_client):
         service_error = None
 
         try:
-            client = oci.file_storage.FileStorageClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.get_mount_target(
                 mount_target_id=request.pop(util.camelize('mount_target_id')),
                 **(util.camel_to_snake_keys(request))
@@ -513,7 +525,8 @@ def test_get_snapshot(testing_service_client):
         service_error = None
 
         try:
-            client = oci.file_storage.FileStorageClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.get_snapshot(
                 snapshot_id=request.pop(util.camelize('snapshot_id')),
                 **(util.camel_to_snake_keys(request))
@@ -552,7 +565,8 @@ def test_list_export_sets(testing_service_client):
         service_error = None
 
         try:
-            client = oci.file_storage.FileStorageClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.list_export_sets(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 availability_domain=request.pop(util.camelize('availability_domain')),
@@ -613,7 +627,8 @@ def test_list_exports(testing_service_client):
         service_error = None
 
         try:
-            client = oci.file_storage.FileStorageClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.list_exports(
                 **(util.camel_to_snake_keys(request))
             )
@@ -668,7 +683,8 @@ def test_list_file_systems(testing_service_client):
         service_error = None
 
         try:
-            client = oci.file_storage.FileStorageClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.list_file_systems(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 availability_domain=request.pop(util.camelize('availability_domain')),
@@ -729,7 +745,8 @@ def test_list_mount_targets(testing_service_client):
         service_error = None
 
         try:
-            client = oci.file_storage.FileStorageClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.list_mount_targets(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 availability_domain=request.pop(util.camelize('availability_domain')),
@@ -790,7 +807,8 @@ def test_list_snapshots(testing_service_client):
         service_error = None
 
         try:
-            client = oci.file_storage.FileStorageClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.list_snapshots(
                 file_system_id=request.pop(util.camelize('file_system_id')),
                 **(util.camel_to_snake_keys(request))
@@ -848,7 +866,8 @@ def test_update_export(testing_service_client):
         service_error = None
 
         try:
-            client = oci.file_storage.FileStorageClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.update_export(
                 export_id=request.pop(util.camelize('export_id')),
                 update_export_details=request.pop(util.camelize('update_export_details')),
@@ -888,7 +907,8 @@ def test_update_export_set(testing_service_client):
         service_error = None
 
         try:
-            client = oci.file_storage.FileStorageClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.update_export_set(
                 export_set_id=request.pop(util.camelize('export_set_id')),
                 update_export_set_details=request.pop(util.camelize('update_export_set_details')),
@@ -928,7 +948,8 @@ def test_update_file_system(testing_service_client):
         service_error = None
 
         try:
-            client = oci.file_storage.FileStorageClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.update_file_system(
                 file_system_id=request.pop(util.camelize('file_system_id')),
                 update_file_system_details=request.pop(util.camelize('update_file_system_details')),
@@ -968,7 +989,8 @@ def test_update_mount_target(testing_service_client):
         service_error = None
 
         try:
-            client = oci.file_storage.FileStorageClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.update_mount_target(
                 mount_target_id=request.pop(util.camelize('mount_target_id')),
                 update_mount_target_details=request.pop(util.camelize('update_mount_target_details')),
@@ -1008,7 +1030,8 @@ def test_update_snapshot(testing_service_client):
         service_error = None
 
         try:
-            client = oci.file_storage.FileStorageClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
             response = client.update_snapshot(
                 snapshot_id=request.pop(util.camelize('snapshot_id')),
                 update_snapshot_details=request.pop(util.camelize('update_snapshot_details')),

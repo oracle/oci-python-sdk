@@ -45,7 +45,8 @@ def test_complete_external_backup_job(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.complete_external_backup_job(
                 backup_id=request.pop(util.camelize('backup_id')),
                 complete_external_backup_job_details=request.pop(util.camelize('complete_external_backup_job_details')),
@@ -85,7 +86,8 @@ def test_create_autonomous_data_warehouse(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.create_autonomous_data_warehouse(
                 create_autonomous_data_warehouse_details=request.pop(util.camelize('create_autonomous_data_warehouse_details')),
                 **(util.camel_to_snake_keys(request))
@@ -124,7 +126,8 @@ def test_create_autonomous_data_warehouse_backup(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.create_autonomous_data_warehouse_backup(
                 create_autonomous_data_warehouse_backup_details=request.pop(util.camelize('create_autonomous_data_warehouse_backup_details')),
                 **(util.camel_to_snake_keys(request))
@@ -163,7 +166,8 @@ def test_create_autonomous_database(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.create_autonomous_database(
                 create_autonomous_database_details=request.pop(util.camelize('create_autonomous_database_details')),
                 **(util.camel_to_snake_keys(request))
@@ -202,7 +206,8 @@ def test_create_autonomous_database_backup(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.create_autonomous_database_backup(
                 create_autonomous_database_backup_details=request.pop(util.camelize('create_autonomous_database_backup_details')),
                 **(util.camel_to_snake_keys(request))
@@ -241,7 +246,8 @@ def test_create_backup(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.create_backup(
                 create_backup_details=request.pop(util.camelize('create_backup_details')),
                 **(util.camel_to_snake_keys(request))
@@ -280,7 +286,8 @@ def test_create_data_guard_association(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.create_data_guard_association(
                 database_id=request.pop(util.camelize('database_id')),
                 create_data_guard_association_details=request.pop(util.camelize('create_data_guard_association_details')),
@@ -320,7 +327,8 @@ def test_create_db_home(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.create_db_home(
                 create_db_home_with_db_system_id_details=request.pop(util.camelize('create_db_home_with_db_system_id_details')),
                 **(util.camel_to_snake_keys(request))
@@ -359,7 +367,8 @@ def test_create_external_backup_job(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.create_external_backup_job(
                 create_external_backup_job_details=request.pop(util.camelize('create_external_backup_job_details')),
                 **(util.camel_to_snake_keys(request))
@@ -398,7 +407,8 @@ def test_db_node_action(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.db_node_action(
                 db_node_id=request.pop(util.camelize('db_node_id')),
                 action=request.pop(util.camelize('action')),
@@ -438,7 +448,8 @@ def test_delete_autonomous_data_warehouse(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.delete_autonomous_data_warehouse(
                 autonomous_data_warehouse_id=request.pop(util.camelize('autonomous_data_warehouse_id')),
                 **(util.camel_to_snake_keys(request))
@@ -477,7 +488,8 @@ def test_delete_autonomous_database(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.delete_autonomous_database(
                 autonomous_database_id=request.pop(util.camelize('autonomous_database_id')),
                 **(util.camel_to_snake_keys(request))
@@ -516,7 +528,8 @@ def test_delete_backup(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.delete_backup(
                 backup_id=request.pop(util.camelize('backup_id')),
                 **(util.camel_to_snake_keys(request))
@@ -555,7 +568,8 @@ def test_delete_db_home(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.delete_db_home(
                 db_home_id=request.pop(util.camelize('db_home_id')),
                 **(util.camel_to_snake_keys(request))
@@ -594,7 +608,8 @@ def test_failover_data_guard_association(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.failover_data_guard_association(
                 database_id=request.pop(util.camelize('database_id')),
                 data_guard_association_id=request.pop(util.camelize('data_guard_association_id')),
@@ -635,7 +650,8 @@ def test_generate_autonomous_data_warehouse_wallet(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.generate_autonomous_data_warehouse_wallet(
                 autonomous_data_warehouse_id=request.pop(util.camelize('autonomous_data_warehouse_id')),
                 generate_autonomous_data_warehouse_wallet_details=request.pop(util.camelize('generate_autonomous_data_warehouse_wallet_details')),
@@ -675,7 +691,8 @@ def test_generate_autonomous_database_wallet(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.generate_autonomous_database_wallet(
                 autonomous_database_id=request.pop(util.camelize('autonomous_database_id')),
                 generate_autonomous_database_wallet_details=request.pop(util.camelize('generate_autonomous_database_wallet_details')),
@@ -715,7 +732,8 @@ def test_get_autonomous_data_warehouse(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.get_autonomous_data_warehouse(
                 autonomous_data_warehouse_id=request.pop(util.camelize('autonomous_data_warehouse_id')),
                 **(util.camel_to_snake_keys(request))
@@ -754,7 +772,8 @@ def test_get_autonomous_data_warehouse_backup(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.get_autonomous_data_warehouse_backup(
                 autonomous_data_warehouse_backup_id=request.pop(util.camelize('autonomous_data_warehouse_backup_id')),
                 **(util.camel_to_snake_keys(request))
@@ -793,7 +812,8 @@ def test_get_autonomous_database(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.get_autonomous_database(
                 autonomous_database_id=request.pop(util.camelize('autonomous_database_id')),
                 **(util.camel_to_snake_keys(request))
@@ -832,7 +852,8 @@ def test_get_autonomous_database_backup(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.get_autonomous_database_backup(
                 autonomous_database_backup_id=request.pop(util.camelize('autonomous_database_backup_id')),
                 **(util.camel_to_snake_keys(request))
@@ -871,7 +892,8 @@ def test_get_backup(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.get_backup(
                 backup_id=request.pop(util.camelize('backup_id')),
                 **(util.camel_to_snake_keys(request))
@@ -910,7 +932,8 @@ def test_get_data_guard_association(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.get_data_guard_association(
                 database_id=request.pop(util.camelize('database_id')),
                 data_guard_association_id=request.pop(util.camelize('data_guard_association_id')),
@@ -950,7 +973,8 @@ def test_get_database(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.get_database(
                 database_id=request.pop(util.camelize('database_id')),
                 **(util.camel_to_snake_keys(request))
@@ -989,7 +1013,8 @@ def test_get_db_home(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.get_db_home(
                 db_home_id=request.pop(util.camelize('db_home_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1028,7 +1053,8 @@ def test_get_db_home_patch(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.get_db_home_patch(
                 db_home_id=request.pop(util.camelize('db_home_id')),
                 patch_id=request.pop(util.camelize('patch_id')),
@@ -1068,7 +1094,8 @@ def test_get_db_home_patch_history_entry(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.get_db_home_patch_history_entry(
                 db_home_id=request.pop(util.camelize('db_home_id')),
                 patch_history_entry_id=request.pop(util.camelize('patch_history_entry_id')),
@@ -1108,7 +1135,8 @@ def test_get_db_node(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.get_db_node(
                 db_node_id=request.pop(util.camelize('db_node_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1147,7 +1175,8 @@ def test_get_db_system(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.get_db_system(
                 db_system_id=request.pop(util.camelize('db_system_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1186,7 +1215,8 @@ def test_get_db_system_patch(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.get_db_system_patch(
                 db_system_id=request.pop(util.camelize('db_system_id')),
                 patch_id=request.pop(util.camelize('patch_id')),
@@ -1226,7 +1256,8 @@ def test_get_db_system_patch_history_entry(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.get_db_system_patch_history_entry(
                 db_system_id=request.pop(util.camelize('db_system_id')),
                 patch_history_entry_id=request.pop(util.camelize('patch_history_entry_id')),
@@ -1266,7 +1297,8 @@ def test_get_exadata_iorm_config(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.get_exadata_iorm_config(
                 db_system_id=request.pop(util.camelize('db_system_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1305,7 +1337,8 @@ def test_get_external_backup_job(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.get_external_backup_job(
                 backup_id=request.pop(util.camelize('backup_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1344,7 +1377,8 @@ def test_launch_db_system(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.launch_db_system(
                 launch_db_system_details=request.pop(util.camelize('launch_db_system_details')),
                 **(util.camel_to_snake_keys(request))
@@ -1383,7 +1417,8 @@ def test_list_autonomous_data_warehouse_backups(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.list_autonomous_data_warehouse_backups(
                 **(util.camel_to_snake_keys(request))
             )
@@ -1438,7 +1473,8 @@ def test_list_autonomous_data_warehouses(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.list_autonomous_data_warehouses(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1496,7 +1532,8 @@ def test_list_autonomous_database_backups(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.list_autonomous_database_backups(
                 **(util.camel_to_snake_keys(request))
             )
@@ -1551,7 +1588,8 @@ def test_list_autonomous_databases(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.list_autonomous_databases(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1609,7 +1647,8 @@ def test_list_backups(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.list_backups(
                 **(util.camel_to_snake_keys(request))
             )
@@ -1664,7 +1703,8 @@ def test_list_data_guard_associations(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.list_data_guard_associations(
                 database_id=request.pop(util.camelize('database_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1722,7 +1762,8 @@ def test_list_databases(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.list_databases(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 db_home_id=request.pop(util.camelize('db_home_id')),
@@ -1783,7 +1824,8 @@ def test_list_db_home_patch_history_entries(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.list_db_home_patch_history_entries(
                 db_home_id=request.pop(util.camelize('db_home_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1841,7 +1883,8 @@ def test_list_db_home_patches(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.list_db_home_patches(
                 db_home_id=request.pop(util.camelize('db_home_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1899,7 +1942,8 @@ def test_list_db_homes(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.list_db_homes(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 db_system_id=request.pop(util.camelize('db_system_id')),
@@ -1960,7 +2004,8 @@ def test_list_db_nodes(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.list_db_nodes(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 db_system_id=request.pop(util.camelize('db_system_id')),
@@ -2021,7 +2066,8 @@ def test_list_db_system_patch_history_entries(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.list_db_system_patch_history_entries(
                 db_system_id=request.pop(util.camelize('db_system_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2079,7 +2125,8 @@ def test_list_db_system_patches(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.list_db_system_patches(
                 db_system_id=request.pop(util.camelize('db_system_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2137,7 +2184,8 @@ def test_list_db_system_shapes(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.list_db_system_shapes(
                 availability_domain=request.pop(util.camelize('availability_domain')),
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -2198,7 +2246,8 @@ def test_list_db_systems(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.list_db_systems(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2256,7 +2305,8 @@ def test_list_db_versions(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.list_db_versions(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2314,7 +2364,8 @@ def test_reinstate_data_guard_association(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.reinstate_data_guard_association(
                 database_id=request.pop(util.camelize('database_id')),
                 data_guard_association_id=request.pop(util.camelize('data_guard_association_id')),
@@ -2355,7 +2406,8 @@ def test_restore_autonomous_data_warehouse(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.restore_autonomous_data_warehouse(
                 autonomous_data_warehouse_id=request.pop(util.camelize('autonomous_data_warehouse_id')),
                 restore_autonomous_data_warehouse_details=request.pop(util.camelize('restore_autonomous_data_warehouse_details')),
@@ -2395,7 +2447,8 @@ def test_restore_autonomous_database(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.restore_autonomous_database(
                 autonomous_database_id=request.pop(util.camelize('autonomous_database_id')),
                 restore_autonomous_database_details=request.pop(util.camelize('restore_autonomous_database_details')),
@@ -2435,7 +2488,8 @@ def test_restore_database(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.restore_database(
                 database_id=request.pop(util.camelize('database_id')),
                 restore_database_details=request.pop(util.camelize('restore_database_details')),
@@ -2475,7 +2529,8 @@ def test_start_autonomous_data_warehouse(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.start_autonomous_data_warehouse(
                 autonomous_data_warehouse_id=request.pop(util.camelize('autonomous_data_warehouse_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2514,7 +2569,8 @@ def test_start_autonomous_database(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.start_autonomous_database(
                 autonomous_database_id=request.pop(util.camelize('autonomous_database_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2553,7 +2609,8 @@ def test_stop_autonomous_data_warehouse(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.stop_autonomous_data_warehouse(
                 autonomous_data_warehouse_id=request.pop(util.camelize('autonomous_data_warehouse_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2592,7 +2649,8 @@ def test_stop_autonomous_database(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.stop_autonomous_database(
                 autonomous_database_id=request.pop(util.camelize('autonomous_database_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2631,7 +2689,8 @@ def test_switchover_data_guard_association(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.switchover_data_guard_association(
                 database_id=request.pop(util.camelize('database_id')),
                 data_guard_association_id=request.pop(util.camelize('data_guard_association_id')),
@@ -2672,7 +2731,8 @@ def test_terminate_db_system(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.terminate_db_system(
                 db_system_id=request.pop(util.camelize('db_system_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2711,7 +2771,8 @@ def test_update_autonomous_data_warehouse(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.update_autonomous_data_warehouse(
                 autonomous_data_warehouse_id=request.pop(util.camelize('autonomous_data_warehouse_id')),
                 update_autonomous_data_warehouse_details=request.pop(util.camelize('update_autonomous_data_warehouse_details')),
@@ -2751,7 +2812,8 @@ def test_update_autonomous_database(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.update_autonomous_database(
                 autonomous_database_id=request.pop(util.camelize('autonomous_database_id')),
                 update_autonomous_database_details=request.pop(util.camelize('update_autonomous_database_details')),
@@ -2791,7 +2853,8 @@ def test_update_database(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.update_database(
                 database_id=request.pop(util.camelize('database_id')),
                 update_database_details=request.pop(util.camelize('update_database_details')),
@@ -2831,7 +2894,8 @@ def test_update_db_home(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.update_db_home(
                 db_home_id=request.pop(util.camelize('db_home_id')),
                 update_db_home_details=request.pop(util.camelize('update_db_home_details')),
@@ -2871,7 +2935,8 @@ def test_update_db_system(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.update_db_system(
                 db_system_id=request.pop(util.camelize('db_system_id')),
                 update_db_system_details=request.pop(util.camelize('update_db_system_details')),
@@ -2911,7 +2976,8 @@ def test_update_exadata_iorm_config(testing_service_client):
         service_error = None
 
         try:
-            client = oci.database.DatabaseClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.update_exadata_iorm_config(
                 db_system_id=request.pop(util.camelize('db_system_id')),
                 exadata_iorm_config_update_details=request.pop(util.camelize('exadata_iorm_config_update_details')),

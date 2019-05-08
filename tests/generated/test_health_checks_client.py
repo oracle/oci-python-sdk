@@ -45,7 +45,8 @@ def test_create_http_monitor(testing_service_client):
         service_error = None
 
         try:
-            client = oci.healthchecks.HealthChecksClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.create_http_monitor(
                 create_http_monitor_details=request.pop(util.camelize('create_http_monitor_details')),
                 **(util.camel_to_snake_keys(request))
@@ -84,7 +85,8 @@ def test_create_on_demand_http_probe(testing_service_client):
         service_error = None
 
         try:
-            client = oci.healthchecks.HealthChecksClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.create_on_demand_http_probe(
                 create_on_demand_http_probe_details=request.pop(util.camelize('create_on_demand_http_probe_details')),
                 **(util.camel_to_snake_keys(request))
@@ -123,7 +125,8 @@ def test_create_on_demand_ping_probe(testing_service_client):
         service_error = None
 
         try:
-            client = oci.healthchecks.HealthChecksClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.create_on_demand_ping_probe(
                 create_on_demand_ping_probe_details=request.pop(util.camelize('create_on_demand_ping_probe_details')),
                 **(util.camel_to_snake_keys(request))
@@ -162,7 +165,8 @@ def test_create_ping_monitor(testing_service_client):
         service_error = None
 
         try:
-            client = oci.healthchecks.HealthChecksClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.create_ping_monitor(
                 create_ping_monitor_details=request.pop(util.camelize('create_ping_monitor_details')),
                 **(util.camel_to_snake_keys(request))
@@ -201,7 +205,8 @@ def test_delete_http_monitor(testing_service_client):
         service_error = None
 
         try:
-            client = oci.healthchecks.HealthChecksClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.delete_http_monitor(
                 monitor_id=request.pop(util.camelize('monitor_id')),
                 **(util.camel_to_snake_keys(request))
@@ -240,7 +245,8 @@ def test_delete_ping_monitor(testing_service_client):
         service_error = None
 
         try:
-            client = oci.healthchecks.HealthChecksClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.delete_ping_monitor(
                 monitor_id=request.pop(util.camelize('monitor_id')),
                 **(util.camel_to_snake_keys(request))
@@ -279,7 +285,8 @@ def test_get_http_monitor(testing_service_client):
         service_error = None
 
         try:
-            client = oci.healthchecks.HealthChecksClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.get_http_monitor(
                 monitor_id=request.pop(util.camelize('monitor_id')),
                 **(util.camel_to_snake_keys(request))
@@ -318,7 +325,8 @@ def test_get_ping_monitor(testing_service_client):
         service_error = None
 
         try:
-            client = oci.healthchecks.HealthChecksClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.get_ping_monitor(
                 monitor_id=request.pop(util.camelize('monitor_id')),
                 **(util.camel_to_snake_keys(request))
@@ -357,7 +365,8 @@ def test_list_health_checks_vantage_points(testing_service_client):
         service_error = None
 
         try:
-            client = oci.healthchecks.HealthChecksClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.list_health_checks_vantage_points(
                 **(util.camel_to_snake_keys(request))
             )
@@ -412,7 +421,8 @@ def test_list_http_monitors(testing_service_client):
         service_error = None
 
         try:
-            client = oci.healthchecks.HealthChecksClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.list_http_monitors(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -470,7 +480,8 @@ def test_list_http_probe_results(testing_service_client):
         service_error = None
 
         try:
-            client = oci.healthchecks.HealthChecksClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.list_http_probe_results(
                 probe_configuration_id=request.pop(util.camelize('probe_configuration_id')),
                 **(util.camel_to_snake_keys(request))
@@ -528,7 +539,8 @@ def test_list_ping_monitors(testing_service_client):
         service_error = None
 
         try:
-            client = oci.healthchecks.HealthChecksClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.list_ping_monitors(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -586,7 +598,8 @@ def test_list_ping_probe_results(testing_service_client):
         service_error = None
 
         try:
-            client = oci.healthchecks.HealthChecksClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.list_ping_probe_results(
                 probe_configuration_id=request.pop(util.camelize('probe_configuration_id')),
                 **(util.camel_to_snake_keys(request))
@@ -644,7 +657,8 @@ def test_update_http_monitor(testing_service_client):
         service_error = None
 
         try:
-            client = oci.healthchecks.HealthChecksClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.update_http_monitor(
                 monitor_id=request.pop(util.camelize('monitor_id')),
                 update_http_monitor_details=request.pop(util.camelize('update_http_monitor_details')),
@@ -684,7 +698,8 @@ def test_update_ping_monitor(testing_service_client):
         service_error = None
 
         try:
-            client = oci.healthchecks.HealthChecksClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.update_ping_monitor(
                 monitor_id=request.pop(util.camelize('monitor_id')),
                 update_ping_monitor_details=request.pop(util.camelize('update_ping_monitor_details')),

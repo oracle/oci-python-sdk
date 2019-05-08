@@ -45,7 +45,8 @@ def test_create_auto_scaling_configuration(testing_service_client):
         service_error = None
 
         try:
-            client = oci.autoscaling.AutoScalingClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.autoscaling.AutoScalingClient(config, service_endpoint=service_endpoint)
             response = client.create_auto_scaling_configuration(
                 create_auto_scaling_configuration_details=request.pop(util.camelize('create_auto_scaling_configuration_details')),
                 **(util.camel_to_snake_keys(request))
@@ -84,7 +85,8 @@ def test_create_auto_scaling_policy(testing_service_client):
         service_error = None
 
         try:
-            client = oci.autoscaling.AutoScalingClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.autoscaling.AutoScalingClient(config, service_endpoint=service_endpoint)
             response = client.create_auto_scaling_policy(
                 auto_scaling_configuration_id=request.pop(util.camelize('auto_scaling_configuration_id')),
                 create_auto_scaling_policy_details=request.pop(util.camelize('create_auto_scaling_policy_details')),
@@ -124,7 +126,8 @@ def test_delete_auto_scaling_configuration(testing_service_client):
         service_error = None
 
         try:
-            client = oci.autoscaling.AutoScalingClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.autoscaling.AutoScalingClient(config, service_endpoint=service_endpoint)
             response = client.delete_auto_scaling_configuration(
                 auto_scaling_configuration_id=request.pop(util.camelize('auto_scaling_configuration_id')),
                 **(util.camel_to_snake_keys(request))
@@ -163,7 +166,8 @@ def test_delete_auto_scaling_policy(testing_service_client):
         service_error = None
 
         try:
-            client = oci.autoscaling.AutoScalingClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.autoscaling.AutoScalingClient(config, service_endpoint=service_endpoint)
             response = client.delete_auto_scaling_policy(
                 auto_scaling_configuration_id=request.pop(util.camelize('auto_scaling_configuration_id')),
                 auto_scaling_policy_id=request.pop(util.camelize('auto_scaling_policy_id')),
@@ -203,7 +207,8 @@ def test_get_auto_scaling_configuration(testing_service_client):
         service_error = None
 
         try:
-            client = oci.autoscaling.AutoScalingClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.autoscaling.AutoScalingClient(config, service_endpoint=service_endpoint)
             response = client.get_auto_scaling_configuration(
                 auto_scaling_configuration_id=request.pop(util.camelize('auto_scaling_configuration_id')),
                 **(util.camel_to_snake_keys(request))
@@ -242,7 +247,8 @@ def test_get_auto_scaling_policy(testing_service_client):
         service_error = None
 
         try:
-            client = oci.autoscaling.AutoScalingClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.autoscaling.AutoScalingClient(config, service_endpoint=service_endpoint)
             response = client.get_auto_scaling_policy(
                 auto_scaling_configuration_id=request.pop(util.camelize('auto_scaling_configuration_id')),
                 auto_scaling_policy_id=request.pop(util.camelize('auto_scaling_policy_id')),
@@ -282,7 +288,8 @@ def test_list_auto_scaling_configurations(testing_service_client):
         service_error = None
 
         try:
-            client = oci.autoscaling.AutoScalingClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.autoscaling.AutoScalingClient(config, service_endpoint=service_endpoint)
             response = client.list_auto_scaling_configurations(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -340,7 +347,8 @@ def test_list_auto_scaling_policies(testing_service_client):
         service_error = None
 
         try:
-            client = oci.autoscaling.AutoScalingClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.autoscaling.AutoScalingClient(config, service_endpoint=service_endpoint)
             response = client.list_auto_scaling_policies(
                 auto_scaling_configuration_id=request.pop(util.camelize('auto_scaling_configuration_id')),
                 **(util.camel_to_snake_keys(request))
@@ -398,7 +406,8 @@ def test_update_auto_scaling_configuration(testing_service_client):
         service_error = None
 
         try:
-            client = oci.autoscaling.AutoScalingClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.autoscaling.AutoScalingClient(config, service_endpoint=service_endpoint)
             response = client.update_auto_scaling_configuration(
                 auto_scaling_configuration_id=request.pop(util.camelize('auto_scaling_configuration_id')),
                 update_auto_scaling_configuration_details=request.pop(util.camelize('update_auto_scaling_configuration_details')),
@@ -438,7 +447,8 @@ def test_update_auto_scaling_policy(testing_service_client):
         service_error = None
 
         try:
-            client = oci.autoscaling.AutoScalingClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.autoscaling.AutoScalingClient(config, service_endpoint=service_endpoint)
             response = client.update_auto_scaling_policy(
                 auto_scaling_configuration_id=request.pop(util.camelize('auto_scaling_configuration_id')),
                 auto_scaling_policy_id=request.pop(util.camelize('auto_scaling_policy_id')),

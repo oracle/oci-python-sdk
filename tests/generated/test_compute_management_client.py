@@ -45,7 +45,8 @@ def test_attach_load_balancer(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.ComputeManagementClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.attach_load_balancer(
                 instance_pool_id=request.pop(util.camelize('instance_pool_id')),
                 attach_load_balancer_details=request.pop(util.camelize('attach_load_balancer_details')),
@@ -85,7 +86,8 @@ def test_create_instance_configuration(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.ComputeManagementClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_instance_configuration(
                 create_instance_configuration=request.pop(util.camelize('create_instance_configuration')),
                 **(util.camel_to_snake_keys(request))
@@ -124,7 +126,8 @@ def test_create_instance_pool(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.ComputeManagementClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_instance_pool(
                 create_instance_pool_details=request.pop(util.camelize('create_instance_pool_details')),
                 **(util.camel_to_snake_keys(request))
@@ -163,7 +166,8 @@ def test_delete_instance_configuration(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.ComputeManagementClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.delete_instance_configuration(
                 instance_configuration_id=request.pop(util.camelize('instance_configuration_id')),
                 **(util.camel_to_snake_keys(request))
@@ -202,7 +206,8 @@ def test_detach_load_balancer(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.ComputeManagementClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.detach_load_balancer(
                 instance_pool_id=request.pop(util.camelize('instance_pool_id')),
                 detach_load_balancer_details=request.pop(util.camelize('detach_load_balancer_details')),
@@ -242,7 +247,8 @@ def test_get_instance_configuration(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.ComputeManagementClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_instance_configuration(
                 instance_configuration_id=request.pop(util.camelize('instance_configuration_id')),
                 **(util.camel_to_snake_keys(request))
@@ -281,7 +287,8 @@ def test_get_instance_pool(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.ComputeManagementClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_instance_pool(
                 instance_pool_id=request.pop(util.camelize('instance_pool_id')),
                 **(util.camel_to_snake_keys(request))
@@ -320,7 +327,8 @@ def test_launch_instance_configuration(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.ComputeManagementClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.launch_instance_configuration(
                 instance_configuration_id=request.pop(util.camelize('instance_configuration_id')),
                 instance_configuration=request.pop(util.camelize('instance_configuration')),
@@ -360,7 +368,8 @@ def test_list_instance_configurations(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.ComputeManagementClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_instance_configurations(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -418,7 +427,8 @@ def test_list_instance_pool_instances(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.ComputeManagementClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_instance_pool_instances(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 instance_pool_id=request.pop(util.camelize('instance_pool_id')),
@@ -479,7 +489,8 @@ def test_list_instance_pools(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.ComputeManagementClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_instance_pools(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -537,7 +548,8 @@ def test_reset_instance_pool(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.ComputeManagementClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.reset_instance_pool(
                 instance_pool_id=request.pop(util.camelize('instance_pool_id')),
                 **(util.camel_to_snake_keys(request))
@@ -576,7 +588,8 @@ def test_softreset_instance_pool(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.ComputeManagementClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.softreset_instance_pool(
                 instance_pool_id=request.pop(util.camelize('instance_pool_id')),
                 **(util.camel_to_snake_keys(request))
@@ -615,7 +628,8 @@ def test_start_instance_pool(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.ComputeManagementClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.start_instance_pool(
                 instance_pool_id=request.pop(util.camelize('instance_pool_id')),
                 **(util.camel_to_snake_keys(request))
@@ -654,7 +668,8 @@ def test_stop_instance_pool(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.ComputeManagementClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.stop_instance_pool(
                 instance_pool_id=request.pop(util.camelize('instance_pool_id')),
                 **(util.camel_to_snake_keys(request))
@@ -693,7 +708,8 @@ def test_terminate_instance_pool(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.ComputeManagementClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.terminate_instance_pool(
                 instance_pool_id=request.pop(util.camelize('instance_pool_id')),
                 **(util.camel_to_snake_keys(request))
@@ -732,7 +748,8 @@ def test_update_instance_configuration(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.ComputeManagementClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.update_instance_configuration(
                 instance_configuration_id=request.pop(util.camelize('instance_configuration_id')),
                 update_instance_configuration_details=request.pop(util.camelize('update_instance_configuration_details')),
@@ -772,7 +789,8 @@ def test_update_instance_pool(testing_service_client):
         service_error = None
 
         try:
-            client = oci.core.ComputeManagementClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
             response = client.update_instance_pool(
                 instance_pool_id=request.pop(util.camelize('instance_pool_id')),
                 update_instance_pool_details=request.pop(util.camelize('update_instance_pool_details')),

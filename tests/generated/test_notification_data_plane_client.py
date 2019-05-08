@@ -45,7 +45,8 @@ def test_create_subscription(testing_service_client):
         service_error = None
 
         try:
-            client = oci.ons.NotificationDataPlaneClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.ons.NotificationDataPlaneClient(config, service_endpoint=service_endpoint)
             response = client.create_subscription(
                 create_subscription_details=request.pop(util.camelize('create_subscription_details')),
                 **(util.camel_to_snake_keys(request))
@@ -84,7 +85,8 @@ def test_delete_subscription(testing_service_client):
         service_error = None
 
         try:
-            client = oci.ons.NotificationDataPlaneClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.ons.NotificationDataPlaneClient(config, service_endpoint=service_endpoint)
             response = client.delete_subscription(
                 subscription_id=request.pop(util.camelize('subscription_id')),
                 **(util.camel_to_snake_keys(request))
@@ -123,7 +125,8 @@ def test_get_confirm_subscription(testing_service_client):
         service_error = None
 
         try:
-            client = oci.ons.NotificationDataPlaneClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.ons.NotificationDataPlaneClient(config, service_endpoint=service_endpoint)
             response = client.get_confirm_subscription(
                 id=request.pop(util.camelize('id')),
                 token=request.pop(util.camelize('token')),
@@ -164,7 +167,8 @@ def test_get_subscription(testing_service_client):
         service_error = None
 
         try:
-            client = oci.ons.NotificationDataPlaneClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.ons.NotificationDataPlaneClient(config, service_endpoint=service_endpoint)
             response = client.get_subscription(
                 subscription_id=request.pop(util.camelize('subscription_id')),
                 **(util.camel_to_snake_keys(request))
@@ -203,7 +207,8 @@ def test_get_unsubscription(testing_service_client):
         service_error = None
 
         try:
-            client = oci.ons.NotificationDataPlaneClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.ons.NotificationDataPlaneClient(config, service_endpoint=service_endpoint)
             response = client.get_unsubscription(
                 id=request.pop(util.camelize('id')),
                 token=request.pop(util.camelize('token')),
@@ -244,7 +249,8 @@ def test_list_subscriptions(testing_service_client):
         service_error = None
 
         try:
-            client = oci.ons.NotificationDataPlaneClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.ons.NotificationDataPlaneClient(config, service_endpoint=service_endpoint)
             response = client.list_subscriptions(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -302,7 +308,8 @@ def test_publish_message(testing_service_client):
         service_error = None
 
         try:
-            client = oci.ons.NotificationDataPlaneClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.ons.NotificationDataPlaneClient(config, service_endpoint=service_endpoint)
             response = client.publish_message(
                 topic_id=request.pop(util.camelize('topic_id')),
                 message_details=request.pop(util.camelize('message_details')),
@@ -342,7 +349,8 @@ def test_resend_subscription_confirmation(testing_service_client):
         service_error = None
 
         try:
-            client = oci.ons.NotificationDataPlaneClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.ons.NotificationDataPlaneClient(config, service_endpoint=service_endpoint)
             response = client.resend_subscription_confirmation(
                 id=request.pop(util.camelize('id')),
                 **(util.camel_to_snake_keys(request))
@@ -381,7 +389,8 @@ def test_update_subscription(testing_service_client):
         service_error = None
 
         try:
-            client = oci.ons.NotificationDataPlaneClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.ons.NotificationDataPlaneClient(config, service_endpoint=service_endpoint)
             response = client.update_subscription(
                 subscription_id=request.pop(util.camelize('subscription_id')),
                 update_subscription_details=request.pop(util.camelize('update_subscription_details')),

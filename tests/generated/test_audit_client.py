@@ -45,7 +45,8 @@ def test_get_configuration(testing_service_client):
         service_error = None
 
         try:
-            client = oci.audit.AuditClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.audit.AuditClient(config, service_endpoint=service_endpoint)
             response = client.get_configuration(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -84,7 +85,8 @@ def test_list_events(testing_service_client):
         service_error = None
 
         try:
-            client = oci.audit.AuditClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.audit.AuditClient(config, service_endpoint=service_endpoint)
             response = client.list_events(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 start_time=request.pop(util.camelize('start_time')),
@@ -148,7 +150,8 @@ def test_update_configuration(testing_service_client):
         service_error = None
 
         try:
-            client = oci.audit.AuditClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.audit.AuditClient(config, service_endpoint=service_endpoint)
             response = client.update_configuration(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 update_configuration_details=request.pop(util.camelize('update_configuration_details')),

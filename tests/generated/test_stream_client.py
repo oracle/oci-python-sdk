@@ -45,7 +45,8 @@ def test_consumer_commit(testing_service_client):
         service_error = None
 
         try:
-            client = oci.streaming.StreamClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamClient(config, service_endpoint=service_endpoint)
             response = client.consumer_commit(
                 stream_id=request.pop(util.camelize('stream_id')),
                 cursor=request.pop(util.camelize('cursor')),
@@ -85,7 +86,8 @@ def test_consumer_heartbeat(testing_service_client):
         service_error = None
 
         try:
-            client = oci.streaming.StreamClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamClient(config, service_endpoint=service_endpoint)
             response = client.consumer_heartbeat(
                 stream_id=request.pop(util.camelize('stream_id')),
                 cursor=request.pop(util.camelize('cursor')),
@@ -125,7 +127,8 @@ def test_create_cursor(testing_service_client):
         service_error = None
 
         try:
-            client = oci.streaming.StreamClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamClient(config, service_endpoint=service_endpoint)
             response = client.create_cursor(
                 stream_id=request.pop(util.camelize('stream_id')),
                 create_cursor_details=request.pop(util.camelize('create_cursor_details')),
@@ -165,7 +168,8 @@ def test_create_group_cursor(testing_service_client):
         service_error = None
 
         try:
-            client = oci.streaming.StreamClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamClient(config, service_endpoint=service_endpoint)
             response = client.create_group_cursor(
                 stream_id=request.pop(util.camelize('stream_id')),
                 create_group_cursor_details=request.pop(util.camelize('create_group_cursor_details')),
@@ -205,7 +209,8 @@ def test_get_group(testing_service_client):
         service_error = None
 
         try:
-            client = oci.streaming.StreamClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamClient(config, service_endpoint=service_endpoint)
             response = client.get_group(
                 stream_id=request.pop(util.camelize('stream_id')),
                 group_name=request.pop(util.camelize('group_name')),
@@ -245,7 +250,8 @@ def test_get_messages(testing_service_client):
         service_error = None
 
         try:
-            client = oci.streaming.StreamClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamClient(config, service_endpoint=service_endpoint)
             response = client.get_messages(
                 stream_id=request.pop(util.camelize('stream_id')),
                 cursor=request.pop(util.camelize('cursor')),
@@ -285,7 +291,8 @@ def test_put_messages(testing_service_client):
         service_error = None
 
         try:
-            client = oci.streaming.StreamClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamClient(config, service_endpoint=service_endpoint)
             response = client.put_messages(
                 stream_id=request.pop(util.camelize('stream_id')),
                 put_messages_details=request.pop(util.camelize('put_messages_details')),
@@ -325,7 +332,8 @@ def test_update_group(testing_service_client):
         service_error = None
 
         try:
-            client = oci.streaming.StreamClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamClient(config, service_endpoint=service_endpoint)
             response = client.update_group(
                 stream_id=request.pop(util.camelize('stream_id')),
                 group_name=request.pop(util.camelize('group_name')),

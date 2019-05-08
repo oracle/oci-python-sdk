@@ -45,7 +45,8 @@ def test_create_topic(testing_service_client):
         service_error = None
 
         try:
-            client = oci.ons.NotificationControlPlaneClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.ons.NotificationControlPlaneClient(config, service_endpoint=service_endpoint)
             response = client.create_topic(
                 create_topic_details=request.pop(util.camelize('create_topic_details')),
                 **(util.camel_to_snake_keys(request))
@@ -84,7 +85,8 @@ def test_delete_topic(testing_service_client):
         service_error = None
 
         try:
-            client = oci.ons.NotificationControlPlaneClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.ons.NotificationControlPlaneClient(config, service_endpoint=service_endpoint)
             response = client.delete_topic(
                 topic_id=request.pop(util.camelize('topic_id')),
                 **(util.camel_to_snake_keys(request))
@@ -123,7 +125,8 @@ def test_get_topic(testing_service_client):
         service_error = None
 
         try:
-            client = oci.ons.NotificationControlPlaneClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.ons.NotificationControlPlaneClient(config, service_endpoint=service_endpoint)
             response = client.get_topic(
                 topic_id=request.pop(util.camelize('topic_id')),
                 **(util.camel_to_snake_keys(request))
@@ -162,7 +165,8 @@ def test_list_topics(testing_service_client):
         service_error = None
 
         try:
-            client = oci.ons.NotificationControlPlaneClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.ons.NotificationControlPlaneClient(config, service_endpoint=service_endpoint)
             response = client.list_topics(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -220,7 +224,8 @@ def test_update_topic(testing_service_client):
         service_error = None
 
         try:
-            client = oci.ons.NotificationControlPlaneClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.ons.NotificationControlPlaneClient(config, service_endpoint=service_endpoint)
             response = client.update_topic(
                 topic_id=request.pop(util.camelize('topic_id')),
                 **(util.camel_to_snake_keys(request))

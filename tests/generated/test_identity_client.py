@@ -45,7 +45,8 @@ def test_activate_mfa_totp_device(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.activate_mfa_totp_device(
                 user_id=request.pop(util.camelize('user_id')),
                 mfa_totp_device_id=request.pop(util.camelize('mfa_totp_device_id')),
@@ -86,7 +87,8 @@ def test_add_user_to_group(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.add_user_to_group(
                 add_user_to_group_details=request.pop(util.camelize('add_user_to_group_details')),
                 **(util.camel_to_snake_keys(request))
@@ -125,7 +127,8 @@ def test_change_tag_namespace_compartment(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.change_tag_namespace_compartment(
                 tag_namespace_id=request.pop(util.camelize('tag_namespace_id')),
                 change_tag_namespace_compartment_detail=request.pop(util.camelize('change_tag_namespace_compartment_detail')),
@@ -165,7 +168,8 @@ def test_create_auth_token(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_auth_token(
                 create_auth_token_details=request.pop(util.camelize('create_auth_token_details')),
                 user_id=request.pop(util.camelize('user_id')),
@@ -205,7 +209,8 @@ def test_create_compartment(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_compartment(
                 create_compartment_details=request.pop(util.camelize('create_compartment_details')),
                 **(util.camel_to_snake_keys(request))
@@ -244,7 +249,8 @@ def test_create_customer_secret_key(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_customer_secret_key(
                 create_customer_secret_key_details=request.pop(util.camelize('create_customer_secret_key_details')),
                 user_id=request.pop(util.camelize('user_id')),
@@ -284,7 +290,8 @@ def test_create_dynamic_group(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_dynamic_group(
                 create_dynamic_group_details=request.pop(util.camelize('create_dynamic_group_details')),
                 **(util.camel_to_snake_keys(request))
@@ -323,7 +330,8 @@ def test_create_group(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_group(
                 create_group_details=request.pop(util.camelize('create_group_details')),
                 **(util.camel_to_snake_keys(request))
@@ -362,7 +370,8 @@ def test_create_identity_provider(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_identity_provider(
                 create_identity_provider_details=request.pop(util.camelize('create_identity_provider_details')),
                 **(util.camel_to_snake_keys(request))
@@ -401,7 +410,8 @@ def test_create_idp_group_mapping(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_idp_group_mapping(
                 create_idp_group_mapping_details=request.pop(util.camelize('create_idp_group_mapping_details')),
                 identity_provider_id=request.pop(util.camelize('identity_provider_id')),
@@ -441,7 +451,8 @@ def test_create_mfa_totp_device(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_mfa_totp_device(
                 user_id=request.pop(util.camelize('user_id')),
                 **(util.camel_to_snake_keys(request))
@@ -480,7 +491,8 @@ def test_create_or_reset_ui_password(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_or_reset_ui_password(
                 user_id=request.pop(util.camelize('user_id')),
                 **(util.camel_to_snake_keys(request))
@@ -519,7 +531,8 @@ def test_create_policy(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_policy(
                 create_policy_details=request.pop(util.camelize('create_policy_details')),
                 **(util.camel_to_snake_keys(request))
@@ -558,7 +571,8 @@ def test_create_region_subscription(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_region_subscription(
                 create_region_subscription_details=request.pop(util.camelize('create_region_subscription_details')),
                 tenancy_id=request.pop(util.camelize('tenancy_id')),
@@ -598,7 +612,8 @@ def test_create_smtp_credential(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_smtp_credential(
                 create_smtp_credential_details=request.pop(util.camelize('create_smtp_credential_details')),
                 user_id=request.pop(util.camelize('user_id')),
@@ -638,7 +653,8 @@ def test_create_swift_password(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_swift_password(
                 create_swift_password_details=request.pop(util.camelize('create_swift_password_details')),
                 user_id=request.pop(util.camelize('user_id')),
@@ -678,7 +694,8 @@ def test_create_tag(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_tag(
                 tag_namespace_id=request.pop(util.camelize('tag_namespace_id')),
                 create_tag_details=request.pop(util.camelize('create_tag_details')),
@@ -718,7 +735,8 @@ def test_create_tag_default(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_tag_default(
                 create_tag_default_details=request.pop(util.camelize('create_tag_default_details')),
                 **(util.camel_to_snake_keys(request))
@@ -757,7 +775,8 @@ def test_create_tag_namespace(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_tag_namespace(
                 create_tag_namespace_details=request.pop(util.camelize('create_tag_namespace_details')),
                 **(util.camel_to_snake_keys(request))
@@ -796,7 +815,8 @@ def test_create_user(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.create_user(
                 create_user_details=request.pop(util.camelize('create_user_details')),
                 **(util.camel_to_snake_keys(request))
@@ -835,7 +855,8 @@ def test_delete_api_key(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.delete_api_key(
                 user_id=request.pop(util.camelize('user_id')),
                 fingerprint=request.pop(util.camelize('fingerprint')),
@@ -875,7 +896,8 @@ def test_delete_auth_token(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.delete_auth_token(
                 user_id=request.pop(util.camelize('user_id')),
                 auth_token_id=request.pop(util.camelize('auth_token_id')),
@@ -915,7 +937,8 @@ def test_delete_compartment(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.delete_compartment(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -954,7 +977,8 @@ def test_delete_customer_secret_key(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.delete_customer_secret_key(
                 user_id=request.pop(util.camelize('user_id')),
                 customer_secret_key_id=request.pop(util.camelize('customer_secret_key_id')),
@@ -994,7 +1018,8 @@ def test_delete_dynamic_group(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.delete_dynamic_group(
                 dynamic_group_id=request.pop(util.camelize('dynamic_group_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1033,7 +1058,8 @@ def test_delete_group(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.delete_group(
                 group_id=request.pop(util.camelize('group_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1072,7 +1098,8 @@ def test_delete_identity_provider(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.delete_identity_provider(
                 identity_provider_id=request.pop(util.camelize('identity_provider_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1111,7 +1138,8 @@ def test_delete_idp_group_mapping(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.delete_idp_group_mapping(
                 identity_provider_id=request.pop(util.camelize('identity_provider_id')),
                 mapping_id=request.pop(util.camelize('mapping_id')),
@@ -1151,7 +1179,8 @@ def test_delete_mfa_totp_device(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.delete_mfa_totp_device(
                 user_id=request.pop(util.camelize('user_id')),
                 mfa_totp_device_id=request.pop(util.camelize('mfa_totp_device_id')),
@@ -1191,7 +1220,8 @@ def test_delete_policy(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.delete_policy(
                 policy_id=request.pop(util.camelize('policy_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1230,7 +1260,8 @@ def test_delete_smtp_credential(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.delete_smtp_credential(
                 user_id=request.pop(util.camelize('user_id')),
                 smtp_credential_id=request.pop(util.camelize('smtp_credential_id')),
@@ -1270,7 +1301,8 @@ def test_delete_swift_password(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.delete_swift_password(
                 user_id=request.pop(util.camelize('user_id')),
                 swift_password_id=request.pop(util.camelize('swift_password_id')),
@@ -1310,7 +1342,8 @@ def test_delete_tag_default(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.delete_tag_default(
                 tag_default_id=request.pop(util.camelize('tag_default_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1349,7 +1382,8 @@ def test_delete_user(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.delete_user(
                 user_id=request.pop(util.camelize('user_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1388,7 +1422,8 @@ def test_generate_totp_seed(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.generate_totp_seed(
                 user_id=request.pop(util.camelize('user_id')),
                 mfa_totp_device_id=request.pop(util.camelize('mfa_totp_device_id')),
@@ -1428,7 +1463,8 @@ def test_get_authentication_policy(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_authentication_policy(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1467,7 +1503,8 @@ def test_get_compartment(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_compartment(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1506,7 +1543,8 @@ def test_get_dynamic_group(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_dynamic_group(
                 dynamic_group_id=request.pop(util.camelize('dynamic_group_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1545,7 +1583,8 @@ def test_get_group(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_group(
                 group_id=request.pop(util.camelize('group_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1584,7 +1623,8 @@ def test_get_identity_provider(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_identity_provider(
                 identity_provider_id=request.pop(util.camelize('identity_provider_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1623,7 +1663,8 @@ def test_get_idp_group_mapping(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_idp_group_mapping(
                 identity_provider_id=request.pop(util.camelize('identity_provider_id')),
                 mapping_id=request.pop(util.camelize('mapping_id')),
@@ -1663,7 +1704,8 @@ def test_get_mfa_totp_device(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_mfa_totp_device(
                 user_id=request.pop(util.camelize('user_id')),
                 mfa_totp_device_id=request.pop(util.camelize('mfa_totp_device_id')),
@@ -1703,7 +1745,8 @@ def test_get_policy(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_policy(
                 policy_id=request.pop(util.camelize('policy_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1742,7 +1785,8 @@ def test_get_tag(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_tag(
                 tag_namespace_id=request.pop(util.camelize('tag_namespace_id')),
                 tag_name=request.pop(util.camelize('tag_name')),
@@ -1782,7 +1826,8 @@ def test_get_tag_default(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_tag_default(
                 tag_default_id=request.pop(util.camelize('tag_default_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1821,7 +1866,8 @@ def test_get_tag_namespace(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_tag_namespace(
                 tag_namespace_id=request.pop(util.camelize('tag_namespace_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1860,7 +1906,8 @@ def test_get_tenancy(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_tenancy(
                 tenancy_id=request.pop(util.camelize('tenancy_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1899,7 +1946,8 @@ def test_get_user(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_user(
                 user_id=request.pop(util.camelize('user_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1938,7 +1986,8 @@ def test_get_user_group_membership(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_user_group_membership(
                 user_group_membership_id=request.pop(util.camelize('user_group_membership_id')),
                 **(util.camel_to_snake_keys(request))
@@ -1977,7 +2026,8 @@ def test_get_work_request(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
                 work_request_id=request.pop(util.camelize('work_request_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2016,7 +2066,8 @@ def test_list_api_keys(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_api_keys(
                 user_id=request.pop(util.camelize('user_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2055,7 +2106,8 @@ def test_list_auth_tokens(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_auth_tokens(
                 user_id=request.pop(util.camelize('user_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2094,7 +2146,8 @@ def test_list_availability_domains(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_availability_domains(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2133,7 +2186,8 @@ def test_list_compartments(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_compartments(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2191,7 +2245,8 @@ def test_list_cost_tracking_tags(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_cost_tracking_tags(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2249,7 +2304,8 @@ def test_list_customer_secret_keys(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_customer_secret_keys(
                 user_id=request.pop(util.camelize('user_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2288,7 +2344,8 @@ def test_list_dynamic_groups(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_dynamic_groups(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2346,7 +2403,8 @@ def test_list_fault_domains(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_fault_domains(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 availability_domain=request.pop(util.camelize('availability_domain')),
@@ -2386,7 +2444,8 @@ def test_list_groups(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_groups(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2444,7 +2503,8 @@ def test_list_identity_provider_groups(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_identity_provider_groups(
                 identity_provider_id=request.pop(util.camelize('identity_provider_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2502,7 +2562,8 @@ def test_list_identity_providers(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_identity_providers(
                 protocol=request.pop(util.camelize('protocol')),
                 compartment_id=request.pop(util.camelize('compartment_id')),
@@ -2563,7 +2624,8 @@ def test_list_idp_group_mappings(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_idp_group_mappings(
                 identity_provider_id=request.pop(util.camelize('identity_provider_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2621,7 +2683,8 @@ def test_list_mfa_totp_devices(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_mfa_totp_devices(
                 user_id=request.pop(util.camelize('user_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2679,7 +2742,8 @@ def test_list_policies(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_policies(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2737,7 +2801,8 @@ def test_list_region_subscriptions(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_region_subscriptions(
                 tenancy_id=request.pop(util.camelize('tenancy_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2776,7 +2841,8 @@ def test_list_regions(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_regions(
                 **(util.camel_to_snake_keys(request))
             )
@@ -2814,7 +2880,8 @@ def test_list_smtp_credentials(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_smtp_credentials(
                 user_id=request.pop(util.camelize('user_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2853,7 +2920,8 @@ def test_list_swift_passwords(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_swift_passwords(
                 user_id=request.pop(util.camelize('user_id')),
                 **(util.camel_to_snake_keys(request))
@@ -2892,7 +2960,8 @@ def test_list_tag_defaults(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_tag_defaults(
                 **(util.camel_to_snake_keys(request))
             )
@@ -2947,7 +3016,8 @@ def test_list_tag_namespaces(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_tag_namespaces(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -3005,7 +3075,8 @@ def test_list_tags(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_tags(
                 tag_namespace_id=request.pop(util.camelize('tag_namespace_id')),
                 **(util.camel_to_snake_keys(request))
@@ -3063,7 +3134,8 @@ def test_list_user_group_memberships(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_user_group_memberships(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -3121,7 +3193,8 @@ def test_list_users(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_users(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -3179,7 +3252,8 @@ def test_list_work_requests(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -3237,7 +3311,8 @@ def test_remove_user_from_group(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.remove_user_from_group(
                 user_group_membership_id=request.pop(util.camelize('user_group_membership_id')),
                 **(util.camel_to_snake_keys(request))
@@ -3276,7 +3351,8 @@ def test_reset_idp_scim_client(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.reset_idp_scim_client(
                 identity_provider_id=request.pop(util.camelize('identity_provider_id')),
                 **(util.camel_to_snake_keys(request))
@@ -3315,7 +3391,8 @@ def test_update_auth_token(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.update_auth_token(
                 user_id=request.pop(util.camelize('user_id')),
                 auth_token_id=request.pop(util.camelize('auth_token_id')),
@@ -3356,7 +3433,8 @@ def test_update_authentication_policy(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.update_authentication_policy(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 update_authentication_policy_details=request.pop(util.camelize('update_authentication_policy_details')),
@@ -3396,7 +3474,8 @@ def test_update_compartment(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.update_compartment(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 update_compartment_details=request.pop(util.camelize('update_compartment_details')),
@@ -3436,7 +3515,8 @@ def test_update_customer_secret_key(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.update_customer_secret_key(
                 user_id=request.pop(util.camelize('user_id')),
                 customer_secret_key_id=request.pop(util.camelize('customer_secret_key_id')),
@@ -3477,7 +3557,8 @@ def test_update_dynamic_group(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.update_dynamic_group(
                 dynamic_group_id=request.pop(util.camelize('dynamic_group_id')),
                 update_dynamic_group_details=request.pop(util.camelize('update_dynamic_group_details')),
@@ -3517,7 +3598,8 @@ def test_update_group(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.update_group(
                 group_id=request.pop(util.camelize('group_id')),
                 update_group_details=request.pop(util.camelize('update_group_details')),
@@ -3557,7 +3639,8 @@ def test_update_identity_provider(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.update_identity_provider(
                 identity_provider_id=request.pop(util.camelize('identity_provider_id')),
                 update_identity_provider_details=request.pop(util.camelize('update_identity_provider_details')),
@@ -3597,7 +3680,8 @@ def test_update_idp_group_mapping(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.update_idp_group_mapping(
                 identity_provider_id=request.pop(util.camelize('identity_provider_id')),
                 mapping_id=request.pop(util.camelize('mapping_id')),
@@ -3638,7 +3722,8 @@ def test_update_policy(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.update_policy(
                 policy_id=request.pop(util.camelize('policy_id')),
                 update_policy_details=request.pop(util.camelize('update_policy_details')),
@@ -3678,7 +3763,8 @@ def test_update_smtp_credential(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.update_smtp_credential(
                 user_id=request.pop(util.camelize('user_id')),
                 smtp_credential_id=request.pop(util.camelize('smtp_credential_id')),
@@ -3719,7 +3805,8 @@ def test_update_swift_password(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.update_swift_password(
                 user_id=request.pop(util.camelize('user_id')),
                 swift_password_id=request.pop(util.camelize('swift_password_id')),
@@ -3760,7 +3847,8 @@ def test_update_tag(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.update_tag(
                 tag_namespace_id=request.pop(util.camelize('tag_namespace_id')),
                 tag_name=request.pop(util.camelize('tag_name')),
@@ -3801,7 +3889,8 @@ def test_update_tag_default(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.update_tag_default(
                 tag_default_id=request.pop(util.camelize('tag_default_id')),
                 update_tag_default_details=request.pop(util.camelize('update_tag_default_details')),
@@ -3841,7 +3930,8 @@ def test_update_tag_namespace(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.update_tag_namespace(
                 tag_namespace_id=request.pop(util.camelize('tag_namespace_id')),
                 update_tag_namespace_details=request.pop(util.camelize('update_tag_namespace_details')),
@@ -3881,7 +3971,8 @@ def test_update_user(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.update_user(
                 user_id=request.pop(util.camelize('user_id')),
                 update_user_details=request.pop(util.camelize('update_user_details')),
@@ -3921,7 +4012,8 @@ def test_update_user_capabilities(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.update_user_capabilities(
                 user_id=request.pop(util.camelize('user_id')),
                 update_user_capabilities_details=request.pop(util.camelize('update_user_capabilities_details')),
@@ -3961,7 +4053,8 @@ def test_update_user_state(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.update_user_state(
                 user_id=request.pop(util.camelize('user_id')),
                 update_state_details=request.pop(util.camelize('update_state_details')),
@@ -4001,7 +4094,8 @@ def test_upload_api_key(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.upload_api_key(
                 user_id=request.pop(util.camelize('user_id')),
                 create_api_key_details=request.pop(util.camelize('create_api_key_details')),

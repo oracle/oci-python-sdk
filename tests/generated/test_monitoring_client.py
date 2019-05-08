@@ -45,7 +45,8 @@ def test_create_alarm(testing_service_client):
         service_error = None
 
         try:
-            client = oci.monitoring.MonitoringClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.create_alarm(
                 create_alarm_details=request.pop(util.camelize('create_alarm_details')),
                 **(util.camel_to_snake_keys(request))
@@ -84,7 +85,8 @@ def test_delete_alarm(testing_service_client):
         service_error = None
 
         try:
-            client = oci.monitoring.MonitoringClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.delete_alarm(
                 alarm_id=request.pop(util.camelize('alarm_id')),
                 **(util.camel_to_snake_keys(request))
@@ -123,7 +125,8 @@ def test_get_alarm(testing_service_client):
         service_error = None
 
         try:
-            client = oci.monitoring.MonitoringClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.get_alarm(
                 alarm_id=request.pop(util.camelize('alarm_id')),
                 **(util.camel_to_snake_keys(request))
@@ -162,7 +165,8 @@ def test_get_alarm_history(testing_service_client):
         service_error = None
 
         try:
-            client = oci.monitoring.MonitoringClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.get_alarm_history(
                 alarm_id=request.pop(util.camelize('alarm_id')),
                 **(util.camel_to_snake_keys(request))
@@ -220,7 +224,8 @@ def test_list_alarms(testing_service_client):
         service_error = None
 
         try:
-            client = oci.monitoring.MonitoringClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.list_alarms(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -278,7 +283,8 @@ def test_list_alarms_status(testing_service_client):
         service_error = None
 
         try:
-            client = oci.monitoring.MonitoringClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.list_alarms_status(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
@@ -336,7 +342,8 @@ def test_list_metrics(testing_service_client):
         service_error = None
 
         try:
-            client = oci.monitoring.MonitoringClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.list_metrics(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 list_metrics_details=request.pop(util.camelize('list_metrics_details')),
@@ -397,7 +404,8 @@ def test_post_metric_data(testing_service_client):
         service_error = None
 
         try:
-            client = oci.monitoring.MonitoringClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.post_metric_data(
                 post_metric_data_details=request.pop(util.camelize('post_metric_data_details')),
                 **(util.camel_to_snake_keys(request))
@@ -436,7 +444,8 @@ def test_remove_alarm_suppression(testing_service_client):
         service_error = None
 
         try:
-            client = oci.monitoring.MonitoringClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.remove_alarm_suppression(
                 alarm_id=request.pop(util.camelize('alarm_id')),
                 **(util.camel_to_snake_keys(request))
@@ -475,7 +484,8 @@ def test_summarize_metrics_data(testing_service_client):
         service_error = None
 
         try:
-            client = oci.monitoring.MonitoringClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.summarize_metrics_data(
                 compartment_id=request.pop(util.camelize('compartment_id')),
                 summarize_metrics_data_details=request.pop(util.camelize('summarize_metrics_data_details')),
@@ -515,7 +525,8 @@ def test_update_alarm(testing_service_client):
         service_error = None
 
         try:
-            client = oci.monitoring.MonitoringClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.update_alarm(
                 alarm_id=request.pop(util.camelize('alarm_id')),
                 update_alarm_details=request.pop(util.camelize('update_alarm_details')),
