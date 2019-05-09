@@ -62,6 +62,10 @@ class CreateIPSecConnectionDetails(object):
             The value to assign to the static_routes property of this CreateIPSecConnectionDetails.
         :type static_routes: list[str]
 
+        :param tunnel_configuration:
+            The value to assign to the tunnel_configuration property of this CreateIPSecConnectionDetails.
+        :type tunnel_configuration: list[CreateIPSecConnectionTunnelDetails]
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -72,7 +76,8 @@ class CreateIPSecConnectionDetails(object):
             'freeform_tags': 'dict(str, str)',
             'cpe_local_identifier': 'str',
             'cpe_local_identifier_type': 'str',
-            'static_routes': 'list[str]'
+            'static_routes': 'list[str]',
+            'tunnel_configuration': 'list[CreateIPSecConnectionTunnelDetails]'
         }
 
         self.attribute_map = {
@@ -84,7 +89,8 @@ class CreateIPSecConnectionDetails(object):
             'freeform_tags': 'freeformTags',
             'cpe_local_identifier': 'cpeLocalIdentifier',
             'cpe_local_identifier_type': 'cpeLocalIdentifierType',
-            'static_routes': 'staticRoutes'
+            'static_routes': 'staticRoutes',
+            'tunnel_configuration': 'tunnelConfiguration'
         }
 
         self._compartment_id = None
@@ -96,6 +102,7 @@ class CreateIPSecConnectionDetails(object):
         self._cpe_local_identifier = None
         self._cpe_local_identifier_type = None
         self._static_routes = None
+        self._tunnel_configuration = None
 
     @property
     def compartment_id(self):
@@ -372,6 +379,30 @@ class CreateIPSecConnectionDetails(object):
         :type: list[str]
         """
         self._static_routes = static_routes
+
+    @property
+    def tunnel_configuration(self):
+        """
+        Gets the tunnel_configuration of this CreateIPSecConnectionDetails.
+        array of tunnel parameters to create tunnels for IPSecConnection.
+
+
+        :return: The tunnel_configuration of this CreateIPSecConnectionDetails.
+        :rtype: list[CreateIPSecConnectionTunnelDetails]
+        """
+        return self._tunnel_configuration
+
+    @tunnel_configuration.setter
+    def tunnel_configuration(self, tunnel_configuration):
+        """
+        Sets the tunnel_configuration of this CreateIPSecConnectionDetails.
+        array of tunnel parameters to create tunnels for IPSecConnection.
+
+
+        :param tunnel_configuration: The tunnel_configuration of this CreateIPSecConnectionDetails.
+        :type: list[CreateIPSecConnectionTunnelDetails]
+        """
+        self._tunnel_configuration = tunnel_configuration
 
     def __repr__(self):
         return formatted_flat_dict(self)

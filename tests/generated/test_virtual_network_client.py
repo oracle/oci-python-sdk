@@ -2355,7 +2355,89 @@ def test_get_ip_sec_connection_device_status(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_get_ip_sec_connection_tunnel(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetIPSecConnectionTunnel'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'GetIPSecConnectionTunnel')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetIPSecConnectionTunnel')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.get_ip_sec_connection_tunnel(
+                ipsc_id=request.pop(util.camelize('ipsc_id')),
+                tunnel_id=request.pop(util.camelize('tunnel_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetIPSecConnectionTunnel',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'iPSecConnectionTunnel',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_get_ip_sec_connection_tunnel_shared_secret(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetIPSecConnectionTunnelSharedSecret'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'GetIPSecConnectionTunnelSharedSecret')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetIPSecConnectionTunnelSharedSecret')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.get_ip_sec_connection_tunnel_shared_secret(
+                ipsc_id=request.pop(util.camelize('ipsc_id')),
+                tunnel_id=request.pop(util.camelize('tunnel_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetIPSecConnectionTunnelSharedSecret',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'iPSecConnectionTunnelSharedSecret',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
 def test_get_local_peering_gateway(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetLocalPeeringGateway'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3649,7 +3731,66 @@ def test_list_internet_gateways(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_list_ip_sec_connection_tunnels(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListIPSecConnectionTunnels'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ListIPSecConnectionTunnels')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListIPSecConnectionTunnels')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.list_ip_sec_connection_tunnels(
+                ipsc_id=request.pop(util.camelize('ipsc_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_ip_sec_connection_tunnels(
+                    ipsc_id=request.pop(util.camelize('ipsc_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_ip_sec_connection_tunnels(
+                        ipsc_id=request.pop(util.camelize('ipsc_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListIPSecConnectionTunnels',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'iPSecConnectionTunnel',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
 def test_list_ip_sec_connections(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListIPSecConnections'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4852,7 +4993,91 @@ def test_update_ip_sec_connection(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_update_ip_sec_connection_tunnel(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'UpdateIPSecConnectionTunnel'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'UpdateIPSecConnectionTunnel')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateIPSecConnectionTunnel')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.update_ip_sec_connection_tunnel(
+                ipsc_id=request.pop(util.camelize('ipsc_id')),
+                tunnel_id=request.pop(util.camelize('tunnel_id')),
+                update_ip_sec_connection_tunnel_details=request.pop(util.camelize('update_ip_sec_connection_tunnel_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'UpdateIPSecConnectionTunnel',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'iPSecConnectionTunnel',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_update_ip_sec_connection_tunnel_shared_secret(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'UpdateIPSecConnectionTunnelSharedSecret'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'UpdateIPSecConnectionTunnelSharedSecret')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateIPSecConnectionTunnelSharedSecret')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.update_ip_sec_connection_tunnel_shared_secret(
+                ipsc_id=request.pop(util.camelize('ipsc_id')),
+                tunnel_id=request.pop(util.camelize('tunnel_id')),
+                update_ip_sec_connection_tunnel_shared_secret_details=request.pop(util.camelize('update_ip_sec_connection_tunnel_shared_secret_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'UpdateIPSecConnectionTunnelSharedSecret',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'iPSecConnectionTunnelSharedSecret',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
 def test_update_local_peering_gateway(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'UpdateLocalPeeringGateway'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
