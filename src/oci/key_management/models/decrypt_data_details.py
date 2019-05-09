@@ -29,22 +29,29 @@ class DecryptDataDetails(object):
             The value to assign to the key_id property of this DecryptDataDetails.
         :type key_id: str
 
+        :param logging_context:
+            The value to assign to the logging_context property of this DecryptDataDetails.
+        :type logging_context: dict(str, str)
+
         """
         self.swagger_types = {
             'associated_data': 'dict(str, str)',
             'ciphertext': 'str',
-            'key_id': 'str'
+            'key_id': 'str',
+            'logging_context': 'dict(str, str)'
         }
 
         self.attribute_map = {
             'associated_data': 'associatedData',
             'ciphertext': 'ciphertext',
-            'key_id': 'keyId'
+            'key_id': 'keyId',
+            'logging_context': 'loggingContext'
         }
 
         self._associated_data = None
         self._ciphertext = None
         self._key_id = None
+        self._logging_context = None
 
     @property
     def associated_data(self):
@@ -121,6 +128,32 @@ class DecryptDataDetails(object):
         :type: str
         """
         self._key_id = key_id
+
+    @property
+    def logging_context(self):
+        """
+        Gets the logging_context of this DecryptDataDetails.
+        Information that can be used to provide context for audit logging. It is a map that contains any addtional
+        data the users may have and will be added to the audit logs (if audit logging is enabled)
+
+
+        :return: The logging_context of this DecryptDataDetails.
+        :rtype: dict(str, str)
+        """
+        return self._logging_context
+
+    @logging_context.setter
+    def logging_context(self, logging_context):
+        """
+        Sets the logging_context of this DecryptDataDetails.
+        Information that can be used to provide context for audit logging. It is a map that contains any addtional
+        data the users may have and will be added to the audit logs (if audit logging is enabled)
+
+
+        :param logging_context: The logging_context of this DecryptDataDetails.
+        :type: dict(str, str)
+        """
+        self._logging_context = logging_context
 
     def __repr__(self):
         return formatted_flat_dict(self)

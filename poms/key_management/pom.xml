@@ -137,7 +137,7 @@
       <dependency>
         <groupId>com.oracle.pic.kms</groupId>
         <artifactId>kms-api-spec</artifactId>
-        <version>0.1.94</version>
+        <version>0.1.104</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
