@@ -74,6 +74,7 @@ class ResourceSearchClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
             'base_path': '/20180409',
+            'service_endpoint_template': 'https://query.{region}.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("resource_search", config, signer, resource_search_type_mapping, **base_client_init_kwargs)
