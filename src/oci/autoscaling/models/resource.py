@@ -9,7 +9,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Resource(object):
     """
-    A resource that the AutoScalingConfiguration manages. The only supported type is 'instancePool'
+    A resource that is managed by an autoscaling configuration. The only supported type is \"instancePool.\"
+
+    Each instance pool can have one autoscaling configuration.
     """
 
     def __init__(self, **kwargs):
@@ -60,7 +62,7 @@ class Resource(object):
     def type(self):
         """
         **[Required]** Gets the type of this Resource.
-        Indicates type of derived class
+        The type of resource.
 
 
         :return: The type of this Resource.
@@ -72,7 +74,7 @@ class Resource(object):
     def type(self, type):
         """
         Sets the type of this Resource.
-        Indicates type of derived class
+        The type of resource.
 
 
         :param type: The type of this Resource.
@@ -84,7 +86,9 @@ class Resource(object):
     def id(self):
         """
         **[Required]** Gets the id of this Resource.
-        The OCID of resource that the AutoScalingConfiguration will manage.
+        The `OCID`__ of the resource that is managed by the autoscaling configuration.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Resource.
@@ -96,7 +100,9 @@ class Resource(object):
     def id(self, id):
         """
         Sets the id of this Resource.
-        The OCID of resource that the AutoScalingConfiguration will manage.
+        The `OCID`__ of the resource that is managed by the autoscaling configuration.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Resource.

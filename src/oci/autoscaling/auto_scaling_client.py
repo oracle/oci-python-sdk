@@ -17,7 +17,8 @@ missing = Sentinel("Missing")
 
 class AutoScalingClient(object):
     """
-    Auto Scaling API spec
+    APIs for dynamically scaling Compute resources to meet application requirements.
+    For information about the Compute service, see [Overview of the Compute Service](/Content/Compute/Concepts/computeoverview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -83,11 +84,11 @@ class AutoScalingClient(object):
     def create_auto_scaling_configuration(self, create_auto_scaling_configuration_details, **kwargs):
         """
         CreateAutoScalingConfiguration
-        Create an AutoScalingConfiguration
+        Creates an autoscaling configuration.
 
 
         :param CreateAutoScalingConfigurationDetails create_auto_scaling_configuration_details: (required)
-            AutoScalingConfiguration creation details
+            Creation details for an autoscaling configuration.
 
         :param str opc_request_id: (optional)
 
@@ -156,14 +157,16 @@ class AutoScalingClient(object):
     def create_auto_scaling_policy(self, auto_scaling_configuration_id, create_auto_scaling_policy_details, **kwargs):
         """
         CreateAutoScalingPolicy
-        Create a Policy for AutoScalingConfiguration
+        Creates an autoscaling policy for the specified autoscaling configuration.
 
 
         :param str auto_scaling_configuration_id: (required)
-            The OCID of the auto scaling configuration.
+            The `OCID`__ of the autoscaling configuration.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param CreateAutoScalingPolicyDetails create_auto_scaling_policy_details: (required)
-            AutoScalingConfiguration Policy creation details
+            Creation details for an autoscaling policy.
 
         :param str opc_request_id: (optional)
 
@@ -244,11 +247,13 @@ class AutoScalingClient(object):
     def delete_auto_scaling_configuration(self, auto_scaling_configuration_id, **kwargs):
         """
         DeleteAutoScalingConfiguration
-        Deletes an AutoScalingConfiguration
+        Deletes an autoscaling configuration.
 
 
         :param str auto_scaling_configuration_id: (required)
-            The OCID of the auto scaling configuration.
+            The `OCID`__ of the autoscaling configuration.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -321,14 +326,16 @@ class AutoScalingClient(object):
     def delete_auto_scaling_policy(self, auto_scaling_configuration_id, auto_scaling_policy_id, **kwargs):
         """
         DeleteAutoScalingPolicy
-        Deletes an AutoScalingConfiguration Policy
+        Deletes an autoscaling policy for the specified autoscaling configuration.
 
 
         :param str auto_scaling_configuration_id: (required)
-            The OCID of the auto scaling configuration.
+            The `OCID`__ of the autoscaling configuration.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str auto_scaling_policy_id: (required)
-            The ID of the auto scaling configuration policy.
+            The ID of the autoscaling policy.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -402,11 +409,13 @@ class AutoScalingClient(object):
     def get_auto_scaling_configuration(self, auto_scaling_configuration_id, **kwargs):
         """
         GetAutoScalingConfiguration
-        Get AutoScalingConfiguration
+        Gets information about the specified autoscaling configuration.
 
 
         :param str auto_scaling_configuration_id: (required)
-            The OCID of the auto scaling configuration.
+            The `OCID`__ of the autoscaling configuration.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
 
@@ -474,14 +483,16 @@ class AutoScalingClient(object):
     def get_auto_scaling_policy(self, auto_scaling_configuration_id, auto_scaling_policy_id, **kwargs):
         """
         GetAutoScalingPolicy
-        Get Policy from a specific AutoScalingConfiguration
+        Gets information about the specified autoscaling policy in the specified autoscaling configuration.
 
 
         :param str auto_scaling_configuration_id: (required)
-            The OCID of the auto scaling configuration.
+            The `OCID`__ of the autoscaling configuration.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str auto_scaling_policy_id: (required)
-            The ID of the auto scaling configuration policy.
+            The ID of the autoscaling policy.
 
         :param str opc_request_id: (optional)
 
@@ -550,7 +561,7 @@ class AutoScalingClient(object):
     def list_auto_scaling_configurations(self, compartment_id, **kwargs):
         """
         ListAutoScalingConfigurations
-        Lists AutoScalingConfigurations in the specific compartment.
+        Lists autoscaling configurations in the specifed compartment.
 
 
         :param str compartment_id: (required)
@@ -566,16 +577,16 @@ class AutoScalingClient(object):
         :param str opc_request_id: (optional)
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call. For information about pagination, see
-            `List Pagination`__.
+            For list pagination. The maximum number of items to return in a paginated \"List\" call. For important details
+            about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call. For information about
-            pagination, see `List Pagination`__.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
+            details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -673,11 +684,13 @@ class AutoScalingClient(object):
     def list_auto_scaling_policies(self, auto_scaling_configuration_id, **kwargs):
         """
         ListAutoScalingPolicies
-        Lists Policies in an AutoScalingConfiguration.
+        Lists the autoscaling policies in the specified autoscaling configuration.
 
 
         :param str auto_scaling_configuration_id: (required)
-            The OCID of the auto scaling configuration.
+            The `OCID`__ of the autoscaling configuration.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -685,16 +698,16 @@ class AutoScalingClient(object):
         :param str opc_request_id: (optional)
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call. For information about pagination, see
-            `List Pagination`__.
+            For list pagination. The maximum number of items to return in a paginated \"List\" call. For important details
+            about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call. For information about
-            pagination, see `List Pagination`__.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important
+            details about how pagination works, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
@@ -803,14 +816,17 @@ class AutoScalingClient(object):
     def update_auto_scaling_configuration(self, auto_scaling_configuration_id, update_auto_scaling_configuration_details, **kwargs):
         """
         UpdateAutoScalingConfiguration
-        Updates an AutoScalingConfiguration
+        Updates certain fields on the specified autoscaling configuration, such as the name, the cooldown period,
+        and whether the autoscaling configuration is enabled.
 
 
         :param str auto_scaling_configuration_id: (required)
-            The OCID of the auto scaling configuration.
+            The `OCID`__ of the autoscaling configuration.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateAutoScalingConfigurationDetails update_auto_scaling_configuration_details: (required)
-            AutoScalingConfiguration update details
+            Update details for an autoscaling configuration.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -898,17 +914,19 @@ class AutoScalingClient(object):
     def update_auto_scaling_policy(self, auto_scaling_configuration_id, auto_scaling_policy_id, update_auto_scaling_policy_details, **kwargs):
         """
         UpdateAutoScalingPolicy
-        Updates a Policy in the specific AutoScalingConfiguration
+        Updates an autoscaling policy in the specified autoscaling configuration.
 
 
         :param str auto_scaling_configuration_id: (required)
-            The OCID of the auto scaling configuration.
+            The `OCID`__ of the autoscaling configuration.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str auto_scaling_policy_id: (required)
-            The ID of the auto scaling configuration policy.
+            The ID of the autoscaling policy.
 
         :param UpdateAutoScalingPolicyDetails update_auto_scaling_policy_details: (required)
-            AutoScalingConfiguration Policy update details
+            Update details for an autoscaling policy.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`

@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutoScalingPolicySummary(object):
     """
-    AutoScalingPolicySummary model.
+    Summary information for an autoscaling policy.
     """
 
     def __init__(self, **kwargs):
@@ -50,7 +50,7 @@ class AutoScalingPolicySummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this AutoScalingPolicySummary.
-        The ID of the policy that is assigned after creation
+        The ID of the autoscaling policy that is assigned after creation.
 
 
         :return: The id of this AutoScalingPolicySummary.
@@ -62,7 +62,7 @@ class AutoScalingPolicySummary(object):
     def id(self, id):
         """
         Sets the id of this AutoScalingPolicySummary.
-        The ID of the policy that is assigned after creation
+        The ID of the autoscaling policy that is assigned after creation.
 
 
         :param id: The id of this AutoScalingPolicySummary.
@@ -74,8 +74,7 @@ class AutoScalingPolicySummary(object):
     def display_name(self):
         """
         Gets the display_name of this AutoScalingPolicySummary.
-        A user-friendly name for the Policy. Does not have to be unique, and it's changeable. Avoid entering
-        confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :return: The display_name of this AutoScalingPolicySummary.
@@ -87,8 +86,7 @@ class AutoScalingPolicySummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this AutoScalingPolicySummary.
-        A user-friendly name for the Policy. Does not have to be unique, and it's changeable. Avoid entering
-        confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this AutoScalingPolicySummary.
@@ -100,7 +98,7 @@ class AutoScalingPolicySummary(object):
     def policy_type(self):
         """
         **[Required]** Gets the policy_type of this AutoScalingPolicySummary.
-        Indicates type of Policy
+        The type of autoscaling policy.
 
 
         :return: The policy_type of this AutoScalingPolicySummary.
@@ -112,7 +110,7 @@ class AutoScalingPolicySummary(object):
     def policy_type(self, policy_type):
         """
         Sets the policy_type of this AutoScalingPolicySummary.
-        Indicates type of Policy
+        The type of autoscaling policy.
 
 
         :param policy_type: The policy_type of this AutoScalingPolicySummary.

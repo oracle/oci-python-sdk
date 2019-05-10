@@ -12,7 +12,7 @@
     <enabled-groups-dir>${sdk-root-dir}/codegenConfig/enabledGroups</enabled-groups-dir>
     <feature-id-file>${sdk-root-dir}/featureId.yaml</feature-id-file>
     <feature-id-dir>${sdk-root-dir}/codegenConfig/featureIds</feature-id-dir>
-    <autoscaling-public-api-spec-spec-file>release/autoscaling-api-spec.yaml</autoscaling-public-api-spec-spec-file>
+    <autoscaling-public-api-spec-spec-file>source/autoscaling-api-spec.cond.yaml</autoscaling-public-api-spec-spec-file>
   </properties>
   <dependencies>
     <dependency>
@@ -135,7 +135,7 @@
       <dependency>
         <groupId>com.oracle.pic.autoscaling.api</groupId>
         <artifactId>autoscaling-public-api-spec</artifactId>
-        <version>0.0.25</version>
+        <version>0.0.42</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
