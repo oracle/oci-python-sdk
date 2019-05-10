@@ -71,7 +71,7 @@ class CreateServiceGatewayDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateServiceGatewayDetails.
-        The `OCID]`__  of the compartment to contain the service gateway.
+        The `OCID]`__ of the compartment to contain the service gateway.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -85,7 +85,7 @@ class CreateServiceGatewayDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateServiceGatewayDetails.
-        The `OCID]`__  of the compartment to contain the service gateway.
+        The `OCID]`__ of the compartment to contain the service gateway.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -195,7 +195,15 @@ class CreateServiceGatewayDetails(object):
     def services(self):
         """
         **[Required]** Gets the services of this CreateServiceGatewayDetails.
-        List of the service OCIDs. These are the services that will be enabled on the service gateway. This list can be empty.
+        List of the OCIDs of the :class:`Service` objects to
+        enable for the service gateway. This list can be empty if you don't want to enable any
+        `Service` objects when you create the gateway. You can enable a `Service`
+        object later by using either :func:`attach_service_id`
+        or :func:`update_service_gateway`.
+
+        For each enabled `Service`, make sure there's a route rule with the `Service` object's `cidrBlock`
+        as the rule's destination and the service gateway as the rule's target. See
+        :class:`RouteTable`.
 
 
         :return: The services of this CreateServiceGatewayDetails.
@@ -207,7 +215,15 @@ class CreateServiceGatewayDetails(object):
     def services(self, services):
         """
         Sets the services of this CreateServiceGatewayDetails.
-        List of the service OCIDs. These are the services that will be enabled on the service gateway. This list can be empty.
+        List of the OCIDs of the :class:`Service` objects to
+        enable for the service gateway. This list can be empty if you don't want to enable any
+        `Service` objects when you create the gateway. You can enable a `Service`
+        object later by using either :func:`attach_service_id`
+        or :func:`update_service_gateway`.
+
+        For each enabled `Service`, make sure there's a route rule with the `Service` object's `cidrBlock`
+        as the rule's destination and the service gateway as the rule's target. See
+        :class:`RouteTable`.
 
 
         :param services: The services of this CreateServiceGatewayDetails.

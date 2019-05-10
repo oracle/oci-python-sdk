@@ -69,7 +69,7 @@ class ComputeManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param CreateInstancePoolDetails create_instance_pool_details: (required)
-            Instance Pool creation details
+            Instance pool creation details
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.InstancePool.lifecycle_state`

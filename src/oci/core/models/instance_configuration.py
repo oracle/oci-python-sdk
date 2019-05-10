@@ -247,6 +247,9 @@ class InstanceConfiguration(object):
     def deferred_fields(self):
         """
         Gets the deferred_fields of this InstanceConfiguration.
+        The required details when using the :func:`launch_instance_configuration` operation.
+        These attributes are optional when using the :func:`create_instance_configuration` operation.
+
 
         :return: The deferred_fields of this InstanceConfiguration.
         :rtype: list[str]
@@ -257,6 +260,9 @@ class InstanceConfiguration(object):
     def deferred_fields(self, deferred_fields):
         """
         Sets the deferred_fields of this InstanceConfiguration.
+        The required details when using the :func:`launch_instance_configuration` operation.
+        These attributes are optional when using the :func:`create_instance_configuration` operation.
+
 
         :param deferred_fields: The deferred_fields of this InstanceConfiguration.
         :type: list[str]

@@ -9,7 +9,14 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Service(object):
     """
-    Information about a service that is accessible through a service gateway.
+    An object that represents one or multiple Oracle services that you can enable for a
+    :class:`ServiceGateway`. In the User Guide topic
+    `Access to Oracle Services: Service Gateway`__, the
+    term *service CIDR label* is used to refer to the string that represents the regional public
+    IP address ranges of the Oracle service or services covered by a given `Service` object. That
+    unique string is the value of the `Service` object's `cidrBlock` attribute.
+
+    __ https://docs.cloud.oracle.com/Content/Network/Tasks/servicegateway.htm
     """
 
     def __init__(self, **kwargs):
@@ -57,9 +64,17 @@ class Service(object):
     def cidr_block(self):
         """
         **[Required]** Gets the cidr_block of this Service.
-        A string that represents the public endpoints for the service. When you set up a route rule
-        to route traffic to the service gateway, use this value as the destination CIDR block for
-        the rule. See :class:`RouteTable`.
+        A string that represents the regional public IP address ranges for the Oracle service or
+        services covered by this `Service` object. Also known as the `Service` object's *service
+        CIDR label*.
+
+        When you set up a route rule to route traffic to the service gateway, use this value as the
+        rule's destination. See :class:`RouteTable`. Also, when you set up
+        a security list rule to cover traffic with the service gateway, use the `cidrBlock` value
+        as the rule's destination (for an egress rule) or the source (for an ingress rule).
+        See :class:`SecurityList`.
+
+        Example: `oci-phx-objectstorage`
 
 
         :return: The cidr_block of this Service.
@@ -71,9 +86,17 @@ class Service(object):
     def cidr_block(self, cidr_block):
         """
         Sets the cidr_block of this Service.
-        A string that represents the public endpoints for the service. When you set up a route rule
-        to route traffic to the service gateway, use this value as the destination CIDR block for
-        the rule. See :class:`RouteTable`.
+        A string that represents the regional public IP address ranges for the Oracle service or
+        services covered by this `Service` object. Also known as the `Service` object's *service
+        CIDR label*.
+
+        When you set up a route rule to route traffic to the service gateway, use this value as the
+        rule's destination. See :class:`RouteTable`. Also, when you set up
+        a security list rule to cover traffic with the service gateway, use the `cidrBlock` value
+        as the rule's destination (for an egress rule) or the source (for an ingress rule).
+        See :class:`SecurityList`.
+
+        Example: `oci-phx-objectstorage`
 
 
         :param cidr_block: The cidr_block of this Service.
@@ -85,7 +108,9 @@ class Service(object):
     def description(self):
         """
         **[Required]** Gets the description of this Service.
-        Description of the service.
+        Description of the Oracle service or services covered by this `Service` object.
+
+        Example: `OCI PHX Object Storage`
 
 
         :return: The description of this Service.
@@ -97,7 +122,9 @@ class Service(object):
     def description(self, description):
         """
         Sets the description of this Service.
-        Description of the service.
+        Description of the Oracle service or services covered by this `Service` object.
+
+        Example: `OCI PHX Object Storage`
 
 
         :param description: The description of this Service.
@@ -109,7 +136,7 @@ class Service(object):
     def id(self):
         """
         **[Required]** Gets the id of this Service.
-        The service's `OCID`__.
+        The `Service` object's `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -123,7 +150,7 @@ class Service(object):
     def id(self, id):
         """
         Sets the id of this Service.
-        The service's `OCID`__.
+        The `Service` object's `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -137,7 +164,9 @@ class Service(object):
     def name(self):
         """
         **[Required]** Gets the name of this Service.
-        Name of the service. This name can change and is not guaranteed to be unique.
+        Name of the `Service` object. This name can change and is not guaranteed to be unique.
+
+        Example: `OCI PHX Object Storage`
 
 
         :return: The name of this Service.
@@ -149,7 +178,9 @@ class Service(object):
     def name(self, name):
         """
         Sets the name of this Service.
-        Name of the service. This name can change and is not guaranteed to be unique.
+        Name of the `Service` object. This name can change and is not guaranteed to be unique.
+
+        Example: `OCI PHX Object Storage`
 
 
         :param name: The name of this Service.

@@ -17,7 +17,11 @@ missing = Sentinel("Missing")
 
 class BlockstorageClient(object):
     """
-    APIs for Networking Service, Compute Service, and Block Volume Service.
+    API covering the [Networking](/iaas/Content/Network/Concepts/overview.htm),
+    [Compute](/iaas/Content/Compute/Concepts/computeoverview.htm), and
+    [Block Volume](/iaas/Content/Block/Concepts/overview.htm) services. Use this API
+    to manage resources such as virtual cloud networks (VCNs), compute instances, and
+    block storage volumes.
     """
 
     def __init__(self, config, **kwargs):
@@ -844,7 +848,7 @@ class BlockstorageClient(object):
     def delete_boot_volume_kms_key(self, boot_volume_id, **kwargs):
         """
         DeleteBootVolumeKmsKey
-        Remove kms for the specific boot volume. If the volume doesn't use KMS, then do nothing.
+        Removes the KMS key for the specified boot volume.
 
 
         :param str boot_volume_id: (required)
@@ -1292,7 +1296,7 @@ class BlockstorageClient(object):
     def delete_volume_kms_key(self, volume_id, **kwargs):
         """
         DeleteVolumeKmsKey
-        Remove kms for the specific volume. If the volume doesn't use KMS, then do nothing.
+        Removes the KMS key for the specified volume.
 
 
         :param str volume_id: (required)
@@ -1493,7 +1497,7 @@ class BlockstorageClient(object):
     def get_boot_volume_kms_key(self, boot_volume_id, **kwargs):
         """
         GetBootVolumeKmsKey
-        Gets kms key id for the specified boot volume.
+        Gets the KMS key ID for the specified boot volume.
 
 
         :param str boot_volume_id: (required)
@@ -2040,7 +2044,7 @@ class BlockstorageClient(object):
     def get_volume_kms_key(self, volume_id, **kwargs):
         """
         GetVolumeKmsKey
-        Gets kms key id for the specified volume.
+        Gets the KMS key ID for the specified volume.
 
 
         :param str volume_id: (required)
@@ -3163,14 +3167,14 @@ class BlockstorageClient(object):
     def update_boot_volume_kms_key(self, boot_volume_id, update_boot_volume_kms_key_details, **kwargs):
         """
         UpdateBootVolumeKmsKey
-        Update kms key id for the specific volume.
+        Updates the KMS key ID for the specified volume.
 
 
         :param str boot_volume_id: (required)
             The OCID of the boot volume.
 
         :param UpdateBootVolumeKmsKeyDetails update_boot_volume_kms_key_details: (required)
-            Update kms key id for the specific boot volume.
+            Updates the KMS key ID for the specified boot volume.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -3574,14 +3578,14 @@ class BlockstorageClient(object):
     def update_volume_kms_key(self, volume_id, update_volume_kms_key_details, **kwargs):
         """
         UpdateVolumeKmsKey
-        Update kms key id for the specific volume.
+        Updates the KMS key ID for the specified volume.
 
 
         :param str volume_id: (required)
             The OCID of the volume.
 
         :param UpdateVolumeKmsKeyDetails update_volume_kms_key_details: (required)
-            Update kms key id for the specific volume.
+            Update the KMS key ID for the specified volume.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`

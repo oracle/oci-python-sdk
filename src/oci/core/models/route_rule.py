@@ -74,6 +74,7 @@ class RouteRule(object):
         A destination IP address range in CIDR notation. Matching packets will
         be routed to the indicated network entity (the target).
 
+
         Example: `0.0.0.0/0`
 
 
@@ -91,6 +92,7 @@ class RouteRule(object):
 
         A destination IP address range in CIDR notation. Matching packets will
         be routed to the indicated network entity (the target).
+
 
         Example: `0.0.0.0/0`
 
@@ -112,8 +114,8 @@ class RouteRule(object):
           * IP address range in CIDR notation. For example: `192.168.1.0/24`
 
           * The `cidrBlock` value for a :class:`Service`, if you're
-            setting up a route rule for traffic destined for a particular service through
-            a service gateway. For example: `oci-phx-objectstorage`
+            setting up a route rule for traffic destined for a particular `Service` through
+            a service gateway. For example: `oci-phx-objectstorage`.
 
 
         :return: The destination of this RouteRule.
@@ -133,8 +135,8 @@ class RouteRule(object):
           * IP address range in CIDR notation. For example: `192.168.1.0/24`
 
           * The `cidrBlock` value for a :class:`Service`, if you're
-            setting up a route rule for traffic destined for a particular service through
-            a service gateway. For example: `oci-phx-objectstorage`
+            setting up a route rule for traffic destined for a particular `Service` through
+            a service gateway. For example: `oci-phx-objectstorage`.
 
 
         :param destination: The destination of this RouteRule.
@@ -152,7 +154,7 @@ class RouteRule(object):
 
           * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a
             :class:`Service` (the rule is for traffic destined for a
-            particular service through a service gateway).
+            particular `Service` through a service gateway).
 
         Allowed values for this property are: "CIDR_BLOCK", "SERVICE_CIDR_BLOCK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -173,7 +175,7 @@ class RouteRule(object):
 
           * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a
             :class:`Service` (the rule is for traffic destined for a
-            particular service through a service gateway).
+            particular `Service` through a service gateway).
 
 
         :param destination_type: The destination_type of this RouteRule.

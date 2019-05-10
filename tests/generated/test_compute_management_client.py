@@ -28,7 +28,7 @@ def vcr_fixture(request):
         yield
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
 def test_attach_load_balancer(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'AttachLoadBalancer'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -69,7 +69,7 @@ def test_attach_load_balancer(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
 def test_create_instance_configuration(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateInstanceConfiguration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -109,7 +109,7 @@ def test_create_instance_configuration(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
 def test_create_instance_pool(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateInstancePool'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -149,7 +149,7 @@ def test_create_instance_pool(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
 def test_delete_instance_configuration(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DeleteInstanceConfiguration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -189,7 +189,7 @@ def test_delete_instance_configuration(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
 def test_detach_load_balancer(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DetachLoadBalancer'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -230,7 +230,7 @@ def test_detach_load_balancer(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
 def test_get_instance_configuration(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetInstanceConfiguration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -270,7 +270,7 @@ def test_get_instance_configuration(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
 def test_get_instance_pool(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetInstancePool'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -310,7 +310,7 @@ def test_get_instance_pool(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
 def test_launch_instance_configuration(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'LaunchInstanceConfiguration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -351,7 +351,7 @@ def test_launch_instance_configuration(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
 def test_list_instance_configurations(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListInstanceConfigurations'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -410,7 +410,7 @@ def test_list_instance_configurations(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
 def test_list_instance_pool_instances(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListInstancePoolInstances'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -472,7 +472,7 @@ def test_list_instance_pool_instances(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
 def test_list_instance_pools(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListInstancePools'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -531,7 +531,7 @@ def test_list_instance_pools(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
 def test_reset_instance_pool(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ResetInstancePool'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -571,7 +571,7 @@ def test_reset_instance_pool(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
 def test_softreset_instance_pool(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'SoftresetInstancePool'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -611,7 +611,7 @@ def test_softreset_instance_pool(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
 def test_start_instance_pool(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'StartInstancePool'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -651,7 +651,7 @@ def test_start_instance_pool(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
 def test_stop_instance_pool(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'StopInstancePool'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -691,7 +691,7 @@ def test_stop_instance_pool(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
 def test_terminate_instance_pool(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'TerminateInstancePool'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -731,7 +731,7 @@ def test_terminate_instance_pool(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
 def test_update_instance_configuration(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'UpdateInstanceConfiguration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -772,7 +772,7 @@ def test_update_instance_configuration(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
 def test_update_instance_pool(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'UpdateInstancePool'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

@@ -11,8 +11,7 @@ class IPSecConnection(object):
     """
     A connection between a DRG and CPE. This connection consists of multiple IPSec
     tunnels. Creating this connection is one of the steps required when setting up
-    an IPSec VPN. For more information, see
-    `IPSec VPN`__.
+    an IPSec VPN. For more information, see `IPSec VPN`__.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
@@ -450,8 +449,10 @@ class IPSecConnection(object):
     def static_routes(self):
         """
         **[Required]** Gets the static_routes of this IPSecConnection.
-        Static routes to the CPE. At least one route must be included. The CIDR must not be a
+        Static routes to the CPE. The CIDR must not be a
         multicast address or class E address.
+
+
 
         Example: `10.0.1.0/24`
 
@@ -465,8 +466,10 @@ class IPSecConnection(object):
     def static_routes(self, static_routes):
         """
         Sets the static_routes of this IPSecConnection.
-        Static routes to the CPE. At least one route must be included. The CIDR must not be a
+        Static routes to the CPE. The CIDR must not be a
         multicast address or class E address.
+
+
 
         Example: `10.0.1.0/24`
 

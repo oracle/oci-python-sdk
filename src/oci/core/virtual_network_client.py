@@ -17,7 +17,11 @@ missing = Sentinel("Missing")
 
 class VirtualNetworkClient(object):
     """
-    APIs for Networking Service, Compute Service, and Block Volume Service.
+    API covering the [Networking](/iaas/Content/Network/Concepts/overview.htm),
+    [Compute](/iaas/Content/Compute/Concepts/computeoverview.htm), and
+    [Block Volume](/iaas/Content/Block/Concepts/overview.htm) services. Use this API
+    to manage resources such as virtual cloud networks (VCNs), compute instances, and
+    block storage volumes.
     """
 
     def __init__(self, config, **kwargs):
@@ -83,16 +87,16 @@ class VirtualNetworkClient(object):
     def attach_service_id(self, service_gateway_id, attach_service_details, **kwargs):
         """
         AttachService
-        Enables the specified service on the specified gateway. In other words, enables the service
-        gateway to send traffic to the specified service. You must also set up a route rule with the
-        service's `cidrBlock` as the rule's destination CIDR and the gateway as the rule's target.
-        See :class:`RouteTable`.
+        Adds the specified :class:`Service` to the list of enabled
+        `Service` objects for the specified gateway. You must also set up a route rule with the
+        `cidrBlock` of the `Service` as the rule's destination and the service gateway as the rule's
+        target. See :class:`RouteTable`.
 
-        **Note:** The `AttachServiceId` operation is an easy way to enable an individual service on
+        **Note:** The `AttachServiceId` operation is an easy way to add an individual `Service` to
         the service gateway. Compare it with
-        :func:`update_service_gateway`, which also
-        lets you enable an individual service. However, with `UpdateServiceGateway`, you must specify
-        the *entire* list of services you want enabled on the service gateway.
+        :func:`update_service_gateway`, which replaces
+        the entire existing list of enabled `Service` objects with the list that you provide in the
+        `Update` call.
 
 
         :param str service_gateway_id: (required)
@@ -3575,19 +3579,18 @@ class VirtualNetworkClient(object):
     def detach_service_id(self, service_gateway_id, detach_service_details, **kwargs):
         """
         DetachService
-        Disables the specified service on the specified gateway. In other words, stops the service
-        gateway from sending traffic to the specified service. You do not need to remove any route
-        rules that specify this service's `cidrBlock` as the destination CIDR. However, consider
-        removing the rules if your intent is to permanently disable use of the service through this
+        Removes the specified :class:`Service` from the list of enabled
+        `Service` objects for the specified gateway. You do not need to remove any route
+        rules that specify this `Service` object's `cidrBlock` as the destination CIDR. However, consider
+        removing the rules if your intent is to permanently disable use of the `Service` through this
         service gateway.
 
-        **Note:** The `DetachServiceId` operation is an easy way to disable an individual service on
+        **Note:** The `DetachServiceId` operation is an easy way to remove an individual `Service` from
         the service gateway. Compare it with
-        :func:`update_service_gateway`, which also
-        lets you disable an individual service. However, with `UpdateServiceGateway`, you must specify
-        the *entire* list of services you want enabled on the service gateway. `UpdateServiceGateway`
-        also lets you block all traffic through the service gateway without having to disable each of
-        the individual services.
+        :func:`update_service_gateway`, which replaces
+        the entire existing list of enabled `Service` objects with the list that you provide in the
+        `Update` call. `UpdateServiceGateway` also lets you block all traffic through the service
+        gateway without having to remove each of the individual `Service` objects.
 
 
         :param str service_gateway_id: (required)
@@ -5164,7 +5167,7 @@ class VirtualNetworkClient(object):
     def get_service(self, service_id, **kwargs):
         """
         GetService
-        Gets the specified service's information.
+        Gets the specified :class:`Service` object.
 
 
         :param str service_id: (required)
@@ -7865,7 +7868,8 @@ class VirtualNetworkClient(object):
     def list_services(self, **kwargs):
         """
         ListServices
-        Lists the available services that you can access through a service gateway in this region.
+        Lists the available :class:`Service` objects that you can enable for a
+        service gateway in this region.
 
 
         :param int limit: (optional)
@@ -9099,8 +9103,7 @@ class VirtualNetworkClient(object):
     def update_ip_sec_connection(self, ipsc_id, update_ip_sec_connection_details, **kwargs):
         """
         UpdateIPSecConnection
-        Updates the display name or tags for the specified IPSec connection.
-        Avoid entering confidential information.
+        Updates the specified IPSec connection.
 
 
         :param str ipsc_id: (required)

@@ -28,7 +28,7 @@ def vcr_fixture(request):
         yield
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_copy_volume_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CopyVolumeBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -69,7 +69,7 @@ def test_copy_volume_backup(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_create_boot_volume(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateBootVolume'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -109,7 +109,7 @@ def test_create_boot_volume(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_create_boot_volume_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateBootVolumeBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -149,7 +149,7 @@ def test_create_boot_volume_backup(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_create_volume(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateVolume'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -189,7 +189,7 @@ def test_create_volume(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_create_volume_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateVolumeBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -229,7 +229,7 @@ def test_create_volume_backup(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_create_volume_backup_policy_assignment(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateVolumeBackupPolicyAssignment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -269,7 +269,7 @@ def test_create_volume_backup_policy_assignment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_create_volume_group(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateVolumeGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -309,7 +309,7 @@ def test_create_volume_group(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_create_volume_group_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateVolumeGroupBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -349,7 +349,7 @@ def test_create_volume_group_backup(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_delete_boot_volume(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DeleteBootVolume'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -389,7 +389,7 @@ def test_delete_boot_volume(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_delete_boot_volume_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DeleteBootVolumeBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -429,7 +429,7 @@ def test_delete_boot_volume_backup(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_delete_boot_volume_kms_key(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DeleteBootVolumeKmsKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -469,7 +469,7 @@ def test_delete_boot_volume_kms_key(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_delete_volume(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DeleteVolume'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -509,7 +509,7 @@ def test_delete_volume(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_delete_volume_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DeleteVolumeBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -549,7 +549,7 @@ def test_delete_volume_backup(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_delete_volume_backup_policy_assignment(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DeleteVolumeBackupPolicyAssignment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -589,7 +589,7 @@ def test_delete_volume_backup_policy_assignment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_delete_volume_group(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DeleteVolumeGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -629,7 +629,7 @@ def test_delete_volume_group(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_delete_volume_group_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DeleteVolumeGroupBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -669,7 +669,7 @@ def test_delete_volume_group_backup(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_delete_volume_kms_key(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DeleteVolumeKmsKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -709,7 +709,7 @@ def test_delete_volume_kms_key(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_get_boot_volume(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetBootVolume'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -749,7 +749,7 @@ def test_get_boot_volume(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_get_boot_volume_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetBootVolumeBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -789,7 +789,7 @@ def test_get_boot_volume_backup(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_get_boot_volume_kms_key(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetBootVolumeKmsKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -829,7 +829,7 @@ def test_get_boot_volume_kms_key(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_get_volume(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetVolume'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -869,7 +869,7 @@ def test_get_volume(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_get_volume_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetVolumeBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -909,7 +909,7 @@ def test_get_volume_backup(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_get_volume_backup_policy(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetVolumeBackupPolicy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -949,7 +949,7 @@ def test_get_volume_backup_policy(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_get_volume_backup_policy_asset_assignment(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetVolumeBackupPolicyAssetAssignment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1008,7 +1008,7 @@ def test_get_volume_backup_policy_asset_assignment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_get_volume_backup_policy_assignment(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetVolumeBackupPolicyAssignment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1048,7 +1048,7 @@ def test_get_volume_backup_policy_assignment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_get_volume_group(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetVolumeGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1088,7 +1088,7 @@ def test_get_volume_group(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_get_volume_group_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetVolumeGroupBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1128,7 +1128,7 @@ def test_get_volume_group_backup(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_get_volume_kms_key(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetVolumeKmsKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1168,7 +1168,7 @@ def test_get_volume_kms_key(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_list_boot_volume_backups(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListBootVolumeBackups'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1227,7 +1227,7 @@ def test_list_boot_volume_backups(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_list_boot_volumes(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListBootVolumes'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1289,7 +1289,7 @@ def test_list_boot_volumes(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_list_volume_backup_policies(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListVolumeBackupPolicies'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1345,7 +1345,7 @@ def test_list_volume_backup_policies(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_list_volume_backups(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListVolumeBackups'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1404,7 +1404,7 @@ def test_list_volume_backups(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_list_volume_group_backups(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListVolumeGroupBackups'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1463,7 +1463,7 @@ def test_list_volume_group_backups(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_list_volume_groups(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListVolumeGroups'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1522,7 +1522,7 @@ def test_list_volume_groups(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_list_volumes(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListVolumes'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1581,7 +1581,7 @@ def test_list_volumes(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_update_boot_volume(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'UpdateBootVolume'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1622,7 +1622,7 @@ def test_update_boot_volume(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_update_boot_volume_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'UpdateBootVolumeBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1663,7 +1663,7 @@ def test_update_boot_volume_backup(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_update_boot_volume_kms_key(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'UpdateBootVolumeKmsKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1704,7 +1704,7 @@ def test_update_boot_volume_kms_key(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_update_volume(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'UpdateVolume'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1745,7 +1745,7 @@ def test_update_volume(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_update_volume_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'UpdateVolumeBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1786,7 +1786,7 @@ def test_update_volume_backup(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_update_volume_group(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'UpdateVolumeGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1827,7 +1827,7 @@ def test_update_volume_group(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_update_volume_group_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'UpdateVolumeGroupBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1868,7 +1868,7 @@ def test_update_volume_group_backup(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_update_volume_kms_key(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'UpdateVolumeKmsKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
