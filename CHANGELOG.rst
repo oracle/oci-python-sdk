@@ -5,12 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-2.2.9 - TBD
+2.2.9 - 2019-05-14
 ====================
 
 Added
 -----
-* TBD
+* Support for the Seoul (ICN) region
+* Support for logging context fields on data-plane APIs of the Key Management Service
+* Support for reverse pagination on list operations of the Email service
+* Support for configuring backup retention windows on database backups in the Database service
+* Support for subscribed regions in stop_untagged_instances.py on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/stop_untagged_instances.py>`__.
+* New services to showoci.py on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/showoci/showoci.py>`__.
 
 ====================
 2.2.8 - 2019-05-07
