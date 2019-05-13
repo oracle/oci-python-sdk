@@ -28,7 +28,89 @@ def vcr_fixture(request):
         yield
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_change_file_system_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'ChangeFileSystemCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'ChangeFileSystemCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='ChangeFileSystemCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.change_file_system_compartment(
+                file_system_id=request.pop(util.camelize('file_system_id')),
+                change_file_system_compartment_details=request.pop(util.camelize('change_file_system_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'ChangeFileSystemCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_file_system_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
+def test_change_mount_target_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('file_storage', 'ChangeMountTargetCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('file_storage', util.camelize('file_storage'), 'ChangeMountTargetCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='file_storage', api_name='ChangeMountTargetCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.file_storage.FileStorageClient(config, service_endpoint=service_endpoint)
+            response = client.change_mount_target_compartment(
+                mount_target_id=request.pop(util.camelize('mount_target_id')),
+                change_mount_target_compartment_details=request.pop(util.camelize('change_mount_target_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'file_storage',
+            'ChangeMountTargetCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_mount_target_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_create_export(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'CreateExport'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -68,7 +150,7 @@ def test_create_export(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_create_file_system(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'CreateFileSystem'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -108,7 +190,7 @@ def test_create_file_system(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_create_mount_target(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'CreateMountTarget'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -148,7 +230,7 @@ def test_create_mount_target(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_create_snapshot(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'CreateSnapshot'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -188,7 +270,7 @@ def test_create_snapshot(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_delete_export(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'DeleteExport'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -228,7 +310,7 @@ def test_delete_export(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_delete_file_system(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'DeleteFileSystem'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -268,7 +350,7 @@ def test_delete_file_system(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_delete_mount_target(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'DeleteMountTarget'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -308,7 +390,7 @@ def test_delete_mount_target(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_delete_snapshot(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'DeleteSnapshot'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -348,7 +430,7 @@ def test_delete_snapshot(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_get_export(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'GetExport'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -388,7 +470,7 @@ def test_get_export(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_get_export_set(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'GetExportSet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -428,7 +510,7 @@ def test_get_export_set(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_get_file_system(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'GetFileSystem'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -468,7 +550,7 @@ def test_get_file_system(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_get_mount_target(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'GetMountTarget'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -508,7 +590,7 @@ def test_get_mount_target(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_get_snapshot(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'GetSnapshot'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -548,7 +630,7 @@ def test_get_snapshot(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_list_export_sets(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'ListExportSets'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -610,7 +692,7 @@ def test_list_export_sets(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_list_exports(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'ListExports'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -666,7 +748,7 @@ def test_list_exports(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_list_file_systems(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'ListFileSystems'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -728,7 +810,7 @@ def test_list_file_systems(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_list_mount_targets(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'ListMountTargets'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -790,7 +872,7 @@ def test_list_mount_targets(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_list_snapshots(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'ListSnapshots'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -849,7 +931,7 @@ def test_list_snapshots(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_update_export(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'UpdateExport'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -890,7 +972,7 @@ def test_update_export(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_update_export_set(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'UpdateExportSet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -931,7 +1013,7 @@ def test_update_export_set(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_update_file_system(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'UpdateFileSystem'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -972,7 +1054,7 @@ def test_update_file_system(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_update_mount_target(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'UpdateMountTarget'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1013,7 +1095,7 @@ def test_update_mount_target(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="sic_ffsw_us_grp@oracle.com" jiraProject="FFSW" opsJiraProject="FSS"
 def test_update_snapshot(testing_service_client):
     if not testing_service_client.is_api_enabled('file_storage', 'UpdateSnapshot'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
