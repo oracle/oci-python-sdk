@@ -33,7 +33,7 @@ requires = [
     "configparser>=3.5.0b1",
     "cryptography>=2.1.4",
     "pyOpenSSL>=17.5.0",
-    "python-dateutil>=2.5.3,<=2.7.3",
+    "python-dateutil>=2.5.3,<3.0.0",
     "pytz>=2016.10",
 ]
 
