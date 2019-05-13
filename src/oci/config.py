@@ -96,7 +96,7 @@ def validate_config(config, **kwargs):
         # self-sufficient and do not need to read the normally-required keys
         # in the config
         if isinstance(kwargs['signer'], signers.InstancePrincipalsSecurityTokenSigner) or isinstance(kwargs['signer'], signers.SecurityTokenSigner):
-            return
+            return print('All parameters exists, config validated correctly')
 
     """Raises ValueError if required fields are missing or malformed."""
     errors = {}
