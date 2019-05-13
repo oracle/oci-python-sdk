@@ -373,7 +373,9 @@ class TestVirtualNetwork:
         create_route_table_details.vcn_id = self.vcn_ocid
 
         route_rule = oci.core.models.RouteRule()
-        route_rule.cidr_block = '0.0.0.0/0'
+        route_rule.cidr_block = None
+        route_rule.destination = '0.0.0.0/0'
+        route_rule.destination_type = 'CIDR_BLOCK'
         route_rule.network_entity_id = self.ig_ocid
 
         create_route_table_details.route_rules = [route_rule]
@@ -394,7 +396,9 @@ class TestVirtualNetwork:
         update_route_table_details.display_name = rt_name
 
         updated_route_rule = oci.core.models.RouteRule()
-        updated_route_rule.cidr_block = '0.0.0.0/1'
+        updated_route_rule.cidr_block = None
+        updated_route_rule.destination = '0.0.0.0/1'
+        updated_route_rule.destination_type = 'CIDR_BLOCK'
         updated_route_rule.network_entity_id = self.ig_ocid
         update_route_table_details.route_rules = [updated_route_rule]
 

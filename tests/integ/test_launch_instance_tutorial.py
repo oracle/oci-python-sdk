@@ -173,7 +173,9 @@ def delete_internet_gateway(virtual_network, gateway_id):
 def update_route_table(virtual_network, test_id, vcn, gateway):
     # print('Updating route table')
     route_rule = oci.core.models.RouteRule()
-    route_rule.cidr_block = '0.0.0.0/0'
+    route_rule.cidr_block = None
+    route_rule.destination = '0.0.0.0/0'
+    route_rule.destination_type = 'CIDR_BLOCK'
     route_rule.display_name = 'pythonsdk_route_rule_' + test_id
     route_rule.network_entity_id = gateway.id
     route_rule.network_entity_type = 'INTERNET_GATEWAY'

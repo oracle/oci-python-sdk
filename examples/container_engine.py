@@ -299,7 +299,9 @@ def create_vcn(vn_client, ads, number_of_worker_subnets=3, number_of_lb_subnets=
     print('Gateway Id: {}'.format(gateway_id))
 
     # Setup the route table
-    route_table_rule = oci.core.models.RouteRule(cidr_block='0.0.0.0/0',
+    route_table_rule = oci.core.models.RouteRule(cidr_block=None,
+                                                 destination='0.0.0.0/0',
+                                                 destination_type='CIDR_BLOCK',
                                                  network_entity_id=gateway_id)
 
     route_table_details = oci.core.models.CreateRouteTableDetails(compartment_id=compartment_id,

@@ -141,7 +141,9 @@ def add_route_rule_to_default_route_table_for_internet_gateway(virtual_network, 
     # them back to the service as part of any update
     route_rules.append(
         oci.core.models.RouteRule(
-            cidr_block='0.0.0.0/0',
+            cidr_block=None,
+            destination='0.0.0.0/0',
+            destination_type='CIDR_BLOCK',
             network_entity_id=internet_gateway.id
         )
     )
