@@ -529,8 +529,11 @@ class EmailClient(object):
             The email address of the approved sender.
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous
-            GET request.
+            For list pagination. The value of the opc-next-page response header from the previous \"List\" call.
+            For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a
@@ -679,8 +682,11 @@ class EmailClient(object):
             **Example:** 2016-12-19T16:39:57.600Z
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous
-            GET request.
+            For list pagination. The value of the opc-next-page response header from the previous \"List\" call.
+            For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a

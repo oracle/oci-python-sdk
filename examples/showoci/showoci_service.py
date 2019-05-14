@@ -38,6 +38,9 @@ class ShowOCIFlags(object):
     read_containers = False
     read_streams = False
     read_budgets = False
+    read_monitoring_notifications = False
+    read_edge = False
+    read_announcement = False
     read_ManagedCompartmentForPaaS = True
     read_root_compartment = True
 
@@ -74,7 +77,9 @@ class ShowOCIFlags(object):
                 self.read_resource_management or
                 self.read_containers or
                 self.read_streams or
-                self.read_budgets)
+                self.read_budgets or
+                self.read_monitoring_notifications or
+                self.read_edge)
 
     ############################################
     # check if to load basic network (vcn+subnets)
@@ -97,6 +102,7 @@ class ShowOCIService(object):
     ##########################################################################
     # Global Constants
     ##########################################################################
+
     # print header options
     print_header_options = {0: 90, 1: 60, 2: 30, 3: 75}
 
@@ -194,10 +200,43 @@ class ShowOCIService(object):
     C_BUDGETS = "budgets"
     C_BUDGETS_BUDGETS = "budgets"
 
+    # monitoring
+    C_MONITORING = "monitoring"
+    C_MONITORING_ALARMS = "alarms"
+
+    # notifications
+    C_NOTIFICATIONS = "notifications"
+    C_NOTIFICATIONS_TOPICS = "topics"
+    C_NOTIFICATIONS_SUBSCRIPTIONS = "subscriptions"
+
+    # edge services
+    C_EDGE = "edge"
+    C_EDGE_HEALTHCHECK_PING = "healthcheck_ping"
+    C_EDGE_HEALTHCHECK_HTTP = "healthcheck_http"
+
+    # edge services
+    C_ANNOUNCEMENT = "announcement"
+    C_ANNOUNCEMENT_ANNOUNCEMENT = "announcements"
+
     # Error flag and reboot migration
     error = 0
     warning = 0
     reboot_migration_counter = 0
+
+    ##########################################################################
+    # Service not yet available - need to remove on availability
+    ##########################################################################
+    service_not_available_array = [
+        {'eu-frankfurt-1', C_EMAIL},
+        {'uk-london-1', C_EMAIL},
+        {'ca-toronto-1', C_EMAIL},
+        {'ap-tokyo-1', C_EMAIL},
+        {'ap-tokyo-1', C_EDGE},
+        {'ap-tokyo-1', C_MONITORING},
+        {'ap-tokyo-1', C_COMPUTE_AUTOSCALING},
+        {'ap-tokyo-1', C_STREAMS},
+        {'ap-tokyo-1', C_NOTIFICATIONS}
+    ]
 
     ##########################################################################
     # Local Variables
@@ -277,6 +316,15 @@ class ShowOCIService(object):
         return []
 
     ##########################################################################
+    # return announcement data
+    ##########################################################################
+    def get_announcement(self):
+        if self.C_ANNOUNCEMENT in self.data:
+            if self.C_ANNOUNCEMENT_ANNOUNCEMENT in self.data[self.C_ANNOUNCEMENT]:
+                return self.data[self.C_ANNOUNCEMENT][self.C_ANNOUNCEMENT_ANNOUNCEMENT]
+        return []
+
+    ##########################################################################
     # return subnet
     ##########################################################################
     def get_network_subnet(self, subnet_id, detailed=False):
@@ -303,6 +351,15 @@ class ShowOCIService(object):
     ##########################################################################
     def get_oci_version(self):
         return oci.version.__version__
+
+    ##########################################################################
+    # check if service available (if not exist in the array then available
+    ##########################################################################
+    def check_if_service_available(self, region_name, service_name):
+        for region, service in self.service_not_available_array:
+            if region_name == region and service_name == service:
+                return False
+        return True
 
     ##########################################################################
     # check oci version
@@ -417,10 +474,10 @@ class ShowOCIService(object):
         self.error += 1
 
     ##########################################################################
-    # check service error to ignore
+    # check service error to warn instead of error
     ##########################################################################
     def __check_service_error(self, code):
-        return 'auth' in str(code).lower() or code == 'Forbidden' or code == 'TooManyRequests' or 'notfound' in str(code).lower()
+        return 'auth' in str(code).lower() or 'notfound' in str(code).lower() or code == 'Forbidden' or code == 'TooManyRequests' or code == 'IncorrectState' or code == 'LimitExceeded'
 
     ##########################################################################
     # check if managed paas compartment
@@ -461,6 +518,10 @@ class ShowOCIService(object):
 
             # load identity
             self.__load_identity_main()
+
+            # if announcement
+            if self.flags.read_announcement:
+                self.__load_announcement_main()
 
             # check if data not loaded, abort
             if self.C_IDENTITY not in self.data:
@@ -503,49 +564,66 @@ class ShowOCIService(object):
 
         # Load Network
         if self.flags.is_load_basic_network():
-            self.__load_core_network_main()
+            if self.check_if_service_available(region_name, self.C_NETWORK):
+                self.__load_core_network_main()
 
         # if load compute
         if self.flags.read_compute:
-            self.__load_core_compute_main()
+            if self.check_if_service_available(region_name, self.C_COMPUTE):
+                self.__load_core_compute_main()
 
         # database
         if self.flags.read_database:
-            self.__load_database_main()
+            if self.check_if_service_available(region_name, self.C_DATABASE):
+                self.__load_database_main()
 
         # load balancers
         if self.flags.read_load_balancer:
-            self.__load_load_balancer_main()
+            if self.check_if_service_available(region_name, self.C_LB):
+                self.__load_load_balancer_main()
 
         # object storage
         if self.flags.read_object_storage:
-            self.__load_object_storage_main()
+            if self.check_if_service_available(region_name, self.C_OS):
+                self.__load_object_storage_main()
 
         # file storage
         if self.flags.read_file_storage:
-            self.__load_file_storage_main()
+            if self.check_if_service_available(region_name, self.C_FILE_STORAGE):
+                self.__load_file_storage_main()
 
         # containers
         if self.flags.read_containers:
-            self.__load_container_main()
+            if self.check_if_service_available(region_name, self.C_CONTAINER):
+                self.__load_container_main()
 
         # resource management
         if self.flags.read_resource_management:
-            self.__load_resource_management_main()
+            if self.check_if_service_available(region_name, self.C_ORM):
+                self.__load_resource_management_main()
 
         # if streams
         if self.flags.read_streams:
-            self.__load_streams_main()
+            if self.check_if_service_available(region_name, self.C_STREAMS):
+                self.__load_streams_main()
 
         # if budgets
         if self.flags.read_budgets:
-            self.__load_budgets_main()
+            if self.check_if_service_available(region_name, self.C_BUDGETS):
+                self.__load_budgets_main()
 
-        # only available in US Regions
-        if region_name == "us-ashburn-1" or region_name == "us-phoenix-1":
+        # if monitoring
+        if self.flags.read_monitoring_notifications:
+            if self.check_if_service_available(region_name, self.C_NOTIFICATIONS):
+                self.__load_monitor_notification_main()
 
-            # email distributions
-            if self.flags.read_email_distribution:
+        if self.flags.read_edge:
+            if self.check_if_service_available(region_name, self.C_EDGE):
+                self.__load_edge_services_main()
+
+        # email distributions
+        if self.flags.read_email_distribution:
+            if self.check_if_service_available(region_name, self.C_EMAIL):
                 self.__load_email_main()
 
     ##########################################################################
@@ -1181,6 +1259,7 @@ class ShowOCIService(object):
             for vcn in vcns:
                 print("+", end="")
                 foundIgw = False
+                warning_printed_for_vcn = False
 
                 # check if igw in the vcn compartment
                 igws = []
@@ -1192,7 +1271,9 @@ class ShowOCIService(object):
 
                 except oci.exceptions.ServiceError as e:
                     if self.__check_service_error(e.code):
-                        self.__load_print_auth_warning()
+                        if not warning_printed_for_vcn:
+                            self.__load_print_auth_warning()
+                            warning_printed_for_vcn = True
                     else:
                         raise
 
@@ -1221,7 +1302,9 @@ class ShowOCIService(object):
 
                     except oci.exceptions.ServiceError as e:
                         if self.__check_service_error(e.code):
-                            self.__load_print_auth_warning()
+                            if not warning_printed_for_vcn:
+                                self.__load_print_auth_warning()
+                                warning_printed_for_vcn = True
                             continue
                         raise
 
@@ -2249,7 +2332,10 @@ class ShowOCIService(object):
             compute[self.C_COMPUTE_VNIC_ATTACH] += self.__load_core_compute_vnic_attach(compute_client, virtual_network, compartments)
             compute[self.C_COMPUTE_INST_CONFIG] += self.__load_core_compute_inst_config(compute_client, compute_manage, block_storage, compartments)
             compute[self.C_COMPUTE_INST_POOL] += self.__load_core_compute_inst_pool(compute_manage, compartments)
-            compute[self.C_COMPUTE_AUTOSCALING] += self.__load_core_compute_autoscaling(auto_scaling, compute_manage, compartments)
+
+            # Auto scalling is not available on all regions
+            if self.check_if_service_available(str(self.config['region']), self.C_COMPUTE_AUTOSCALING):
+                compute[self.C_COMPUTE_AUTOSCALING] += self.__load_core_compute_autoscaling(auto_scaling, compute_manage, compartments)
 
             print("")
             print("Block Storage...")
@@ -5166,4 +5252,549 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_budgets_budgets", e)
+            return data
+
+    ##########################################################################
+    # __load_monitoring_main
+    ##########################################################################
+    #
+    # OCI Classes used:
+    #
+    # class oci.monitoring.MonitoringClient(config, **kwargs)
+    # class oci.ons.NotificationControlPlaneClient(config, **kwargs)
+    # class oci.ons.NotificationDataPlaneClient(config, **kwargs)
+    #
+    ##########################################################################
+    def __load_monitor_notification_main(self):
+
+        try:
+            print("Monitoring and Notifications...")
+
+            # MonitoringClient
+            monitor_client = oci.monitoring.MonitoringClient(self.config)
+            if self.flags.proxy:
+                monitor_client.base_client.session.proxies = {'https': self.flags.proxy}
+
+            # NotificationControlPlaneClient
+            ons_cp_client = oci.ons.NotificationControlPlaneClient(self.config)
+            if self.flags.proxy:
+                ons_cp_client.base_client.session.proxies = {'https': self.flags.proxy}
+
+            # NotificationDataPlaneClient
+            ons_dp_client = oci.ons.NotificationDataPlaneClient(self.config)
+            if self.flags.proxy:
+                ons_dp_client.base_client.session.proxies = {'https': self.flags.proxy}
+
+            # reference to compartments
+            compartments = self.get_compartment()
+
+            # add the key if not exists
+            self.__initialize_data_key(self.C_MONITORING, self.C_MONITORING_ALARMS)
+            self.__initialize_data_key(self.C_NOTIFICATIONS, self.C_NOTIFICATIONS_TOPICS)
+            self.__initialize_data_key(self.C_NOTIFICATIONS, self.C_NOTIFICATIONS_SUBSCRIPTIONS)
+
+            # append the data for monitoring
+            monitor = self.data[self.C_MONITORING]
+            monitor[self.C_MONITORING_ALARMS] += self.__load_monitoring_alarms(monitor_client, compartments)
+
+            # append the data for notifications
+            notifications = self.data[self.C_NOTIFICATIONS]
+            notifications[self.C_NOTIFICATIONS_TOPICS] += self.__load_notifications_topics(ons_cp_client, compartments)
+            notifications[self.C_NOTIFICATIONS_SUBSCRIPTIONS] += self.__load_notifications_subscriptions(ons_dp_client, compartments)
+            print("")
+
+        except oci.exceptions.RequestException:
+            raise
+        except oci.exceptions.ServiceError:
+            raise
+        except Exception as e:
+            self.__print_error("__load_monitor_notification_main", e)
+
+    ##########################################################################
+    # __load_monitoring_alarms
+    ##########################################################################
+    def __load_monitoring_alarms(self, monitor_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("Alarms")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                alarms = []
+                try:
+                    alarms = oci.pagination.list_call_get_all_results(
+                        monitor_client.list_alarms,
+                        compartment['id'],
+                        sort_by="displayName",
+                        lifecycle_state=oci.monitoring.models.Alarm.LIFECYCLE_STATE_ACTIVE
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+
+                print(".", end="")
+
+                # alarm = oci.monitoring.models.AlarmSummary
+                for alarm in alarms:
+                    val = {'id': str(alarm.id),
+                           'display_name': str(alarm.display_name),
+                           'metric_compartment_id': str(alarm.metric_compartment_id),
+                           'namespace': str(alarm.namespace),
+                           'query': str(alarm.query),
+                           'severity': str(alarm.severity),
+                           'destinations': alarm.destinations,
+                           'is_enabled': alarm.is_enabled,
+                           'compartment_name': str(compartment['name']),
+                           'compartment_id': str(compartment['id']),
+                           'defined_tags': [] if alarm.defined_tags is None else alarm.defined_tags,
+                           'freeform_tags': [] if alarm.freeform_tags is None else alarm.freeform_tags,
+                           'region_name': str(self.config['region'])}
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException:
+            raise
+        except Exception as e:
+            self.__print_error("__load_monitoring_alarms", e)
+            return data
+
+    ##########################################################################
+    # __load_notifications_topics
+    ##########################################################################
+    def __load_notifications_topics(self, ons_cp_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("Topics")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                topics = []
+                try:
+                    topics = oci.pagination.list_call_get_all_results(
+                        ons_cp_client.list_topics,
+                        compartment['id'],
+                        sort_by="TIMECREATED",
+                        lifecycle_state=oci.ons.models.NotificationTopicSummary.LIFECYCLE_STATE_ACTIVE
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+
+                print(".", end="")
+
+                # topic = oci.ons.models.NotificationTopicSummary
+                for topic in topics:
+                    val = {'topic_id': str(topic.topic_id),
+                           'name': str(topic.name),
+                           'description': str(topic.description),
+                           'time_created': str(topic.time_created),
+                           'etag': str(topic.etag),
+                           'api_endpoint': str(topic.api_endpoint),
+                           'compartment_name': str(compartment['name']),
+                           'compartment_id': str(compartment['id']),
+                           'defined_tags': [] if topic.defined_tags is None else topic.defined_tags,
+                           'freeform_tags': [] if topic.freeform_tags is None else topic.freeform_tags,
+                           'region_name': str(self.config['region'])}
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException:
+            raise
+        except Exception as e:
+            self.__print_error("__load_notifications_topics", e)
+            return data
+
+    ##########################################################################
+    # __load_notifications_subscriptions
+    ##########################################################################
+    def __load_notifications_subscriptions(self, ons_dp_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("Subscriptions")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                subs = []
+                try:
+                    subs = oci.pagination.list_call_get_all_results(
+                        ons_dp_client.list_subscriptions,
+                        compartment['id']
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning("a", False)
+                        continue
+                    raise
+
+                print(".", end="")
+
+                # sub = oci.ons.models.SubscriptionSummary
+                for sub in subs:
+                    if sub.lifecycle_state != oci.ons.models.SubscriptionSummary.LIFECYCLE_STATE_ACTIVE:
+                        continue
+
+                    val = {'id': str(sub.id),
+                           'topic_id': str(sub.topic_id),
+                           'protocol': str(sub.protocol),
+                           'endpoint': str(sub.endpoint),
+                           'created_time': str(sub.created_time),
+                           'etag': str(sub.etag),
+                           'compartment_name': str(compartment['name']),
+                           'compartment_id': str(compartment['id']),
+                           'defined_tags': [] if sub.defined_tags is None else sub.defined_tags,
+                           'freeform_tags': [] if sub.freeform_tags is None else sub.freeform_tags,
+                           'region_name': str(self.config['region'])}
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException:
+            raise
+        except Exception as e:
+            self.__print_error("__load_notifications_subscriptions", e)
+            return data
+
+    ##########################################################################
+    # __load_edge_services_main
+    ##########################################################################
+    #
+    # OCI Classes used:
+    #
+    # class oci.healthchecks.HealthChecksClient(config, **kwargs)
+    #
+    ##########################################################################
+    def __load_edge_services_main(self):
+
+        try:
+            print("Edge Services...")
+
+            # BudgetClient
+            healthcheck_client = oci.healthchecks.HealthChecksClient(self.config)
+            if self.flags.proxy:
+                healthcheck_client.base_client.session.proxies = {'https': self.flags.proxy}
+
+            # reference to compartments
+            compartments = self.get_compartment()
+
+            # add the key if not exists
+            self.__initialize_data_key(self.C_EDGE, self.C_EDGE_HEALTHCHECK_PING)
+            self.__initialize_data_key(self.C_EDGE, self.C_EDGE_HEALTHCHECK_HTTP)
+
+            # reference to stream
+            edge = self.data[self.C_EDGE]
+
+            # append the data
+            edge[self.C_EDGE_HEALTHCHECK_PING] += self.__load_edge_healthchecks_ping(healthcheck_client, compartments)
+            edge[self.C_EDGE_HEALTHCHECK_HTTP] += self.__load_edge_healthchecks_http(healthcheck_client, compartments)
+            print("")
+
+        except oci.exceptions.RequestException:
+            raise
+        except oci.exceptions.ServiceError:
+            raise
+        except Exception as e:
+            self.__print_error("__load_edge_services_main", e)
+
+    ##########################################################################
+    # __load_edge_healthchecks_ping
+    ##########################################################################
+    def __load_edge_healthchecks_ping(self, healthcheck_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("Healthcheck Ping")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                healthchecks = []
+                try:
+                    healthchecks = oci.pagination.list_call_get_all_results(
+                        healthcheck_client.list_ping_monitors,
+                        compartment['id'],
+                        sort_by="displayName"
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+
+                print(".", end="")
+
+                # healthcheck = oci.healthchecks.models.PingMonitorSummary
+                for healthcheck in healthchecks:
+
+                    # health = oci.healthchecks.models.PingMonitor
+                    # get the proper monitor for more details
+                    health = []
+                    try:
+                        health = healthcheck_client.get_ping_monitor(healthcheck.id).data
+                    except oci.exceptions.ServiceError as e:
+                        if self.__check_service_error(e.code):
+                            self.__load_print_auth_warning()
+                            continue
+                        raise
+                    val = {'id': str(health.id),
+                           'results_url': str(health.results_url),
+                           'targets': str(', '.join(x for x in health.targets)),
+                           'vantage_point_names': str(', '.join(x for x in health.vantage_point_names)),
+                           'port': str(health.port),
+                           'timeout_in_seconds': str(health.timeout_in_seconds),
+                           'display_name': str(health.display_name),
+                           'interval_in_seconds': str(health.interval_in_seconds),
+                           'is_enabled': health.is_enabled,
+                           'protocol': str(health.protocol),
+                           'compartment_name': str(compartment['name']),
+                           'compartment_id': str(compartment['id']),
+                           'defined_tags': [] if health.defined_tags is None else health.defined_tags,
+                           'freeform_tags': [] if health.freeform_tags is None else health.freeform_tags,
+                           'region_name': str(self.config['region'])}
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException:
+            raise
+        except Exception as e:
+            self.__print_error("__load_edge_healthchecks_ping", e)
+            return data
+
+    ##########################################################################
+    # __load_edge_healthchecks_http
+    ##########################################################################
+    def __load_edge_healthchecks_http(self, healthcheck_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("Healthcheck HTTP")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                healthchecks = []
+                try:
+                    healthchecks = oci.pagination.list_call_get_all_results(
+                        healthcheck_client.list_http_monitors,
+                        compartment['id'],
+                        sort_by="displayName"
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+
+                print(".", end="")
+
+                # health = oci.healthchecks.models.HttpMonitorSummary
+                for healthcheck in healthchecks:
+
+                    # health = oci.healthchecks.models.HttpMonitor
+                    # get the proper monitor for more details
+                    health = []
+                    try:
+                        health = healthcheck_client.get_http_monitor(healthcheck.id).data
+                    except oci.exceptions.ServiceError as e:
+                        if self.__check_service_error(e.code):
+                            self.__load_print_auth_warning()
+                            continue
+                        raise
+
+                    val = {'id': str(health.id),
+                           'results_url': str(health.results_url),
+                           'display_name': str(health.display_name),
+                           'interval_in_seconds': str(health.interval_in_seconds),
+                           'is_enabled': health.is_enabled,
+                           'protocol': str(health.protocol),
+                           'method': str(health.method),
+                           'path': str(health.path),
+                           'targets': str(', '.join(x for x in health.targets)),
+                           'vantage_point_names': str(', '.join(x for x in health.vantage_point_names)),
+                           'headers': health.headers,
+                           'compartment_name': str(compartment['name']),
+                           'compartment_id': str(compartment['id']),
+                           'defined_tags': [] if health.defined_tags is None else health.defined_tags,
+                           'freeform_tags': [] if health.freeform_tags is None else health.freeform_tags,
+                           'region_name': str(self.config['region'])}
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException:
+            raise
+        except Exception as e:
+            self.__print_error("__load_edge_healthchecks_http", e)
+            return data
+
+    ##########################################################################
+    # __load_announcement_main
+    ##########################################################################
+    #
+    # OCI Classes used:
+    #
+    # oci.announcements_service.AnnouncementClient
+    #
+    ##########################################################################
+    def __load_announcement_main(self):
+        try:
+            print("Announcements...")
+
+            # AnnouncementClient
+            announcement_client = oci.announcements_service.AnnouncementClient(self.config)
+            if self.flags.proxy:
+                announcement_client.base_client.session.proxies = {'https': self.flags.proxy}
+
+            # reference to tenancy
+            tenancy = self.get_tenancy()
+
+            # add the key if not exists
+            self.__initialize_data_key(self.C_ANNOUNCEMENT, self.C_ANNOUNCEMENT_ANNOUNCEMENT)
+
+            # reference to stream
+            announcement = self.data[self.C_ANNOUNCEMENT]
+
+            # append the data
+            announcement[self.C_ANNOUNCEMENT_ANNOUNCEMENT] += self.__load_announcements(announcement_client, tenancy['id'])
+            print("")
+
+        except oci.exceptions.RequestException:
+            raise
+        except oci.exceptions.ServiceError:
+            raise
+        except Exception as e:
+            self.__print_error("__load_announcement_main", e)
+
+    ##########################################################################
+    # __load_announcements
+    ##########################################################################
+    def __load_announcements(self, announcement_client, tenancy_id):
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("Announcement Items")
+
+            announcements = []
+            try:
+                announcements = announcement_client.list_announcements(tenancy_id, lifecycle_state=oci.announcements_service.models.AnnouncementSummary.LIFECYCLE_STATE_ACTIVE, sort_by="timeCreated").data
+
+            except oci.exceptions.ServiceError as e:
+                if self.__check_service_error(e.code):
+                    self.__load_print_auth_warning()
+                else:
+                    raise
+
+            print(".", end="")
+
+            if announcements:
+
+                # oci.announcements_service.models.AnnouncementsCollection
+                # oci.announcements_service.models.AnnouncementSummary
+                for ann in announcements.items:
+                    val = {'id': str(ann.id),
+                           'type': str(ann.type),
+                           'reference_ticket_number': str(ann.reference_ticket_number),
+                           'summary': str(ann.summary),
+                           'time_one_title': str(ann.time_one_title),
+                           'time_one_value': str(ann.time_one_value),
+                           'time_two_title': str(ann.time_two_title),
+                           'time_two_value': str(ann.time_two_value),
+                           'services': str(ann.services),
+                           'affected_regions': str(', '.join(x for x in ann.affected_regions)),
+                           'announcement_type': str(ann.announcement_type),
+                           'is_banner': ann.is_banner,
+                           'time_created': str(ann.time_created),
+                           'time_updated': str(ann.time_updated),
+                           'region_name': str(self.config['region'])}
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException:
+            raise
+        except Exception as e:
+            self.__print_error("__load_announcements", e)
             return data

@@ -33,25 +33,32 @@ class GenerateKeyDetails(object):
             The value to assign to the key_shape property of this GenerateKeyDetails.
         :type key_shape: KeyShape
 
+        :param logging_context:
+            The value to assign to the logging_context property of this GenerateKeyDetails.
+        :type logging_context: dict(str, str)
+
         """
         self.swagger_types = {
             'associated_data': 'dict(str, str)',
             'include_plaintext_key': 'bool',
             'key_id': 'str',
-            'key_shape': 'KeyShape'
+            'key_shape': 'KeyShape',
+            'logging_context': 'dict(str, str)'
         }
 
         self.attribute_map = {
             'associated_data': 'associatedData',
             'include_plaintext_key': 'includePlaintextKey',
             'key_id': 'keyId',
-            'key_shape': 'keyShape'
+            'key_shape': 'keyShape',
+            'logging_context': 'loggingContext'
         }
 
         self._associated_data = None
         self._include_plaintext_key = None
         self._key_id = None
         self._key_shape = None
+        self._logging_context = None
 
     @property
     def associated_data(self):
@@ -148,6 +155,32 @@ class GenerateKeyDetails(object):
         :type: KeyShape
         """
         self._key_shape = key_shape
+
+    @property
+    def logging_context(self):
+        """
+        Gets the logging_context of this GenerateKeyDetails.
+        Information that can be used to provide context for audit logging. It is a map that contains any addtional
+        data the users may have and will be added to the audit logs (if audit logging is enabled)
+
+
+        :return: The logging_context of this GenerateKeyDetails.
+        :rtype: dict(str, str)
+        """
+        return self._logging_context
+
+    @logging_context.setter
+    def logging_context(self, logging_context):
+        """
+        Sets the logging_context of this GenerateKeyDetails.
+        Information that can be used to provide context for audit logging. It is a map that contains any addtional
+        data the users may have and will be added to the audit logs (if audit logging is enabled)
+
+
+        :param logging_context: The logging_context of this GenerateKeyDetails.
+        :type: dict(str, str)
+        """
+        self._logging_context = logging_context
 
     def __repr__(self):
         return formatted_flat_dict(self)
