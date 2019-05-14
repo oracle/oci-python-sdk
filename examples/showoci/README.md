@@ -1,6 +1,6 @@
 ## showoci - Oracle Cloud Infrastructure Reporting Tool
 
-SHOWOCI is an reporting tool which uses the Python SDK to extract list of resources from your tenant. It covers more than 80% of OCI components, Output can be printer friendly or JSON file.
+SHOWOCI is an reporting tool which uses the Python SDK to extract list of resources from your tenant. It covers most of OCI components, Output can be printer friendly or JSON file.
 
 Modules Included:  
 - oci.core.VirtualNetworkClient          
@@ -17,13 +17,40 @@ Modules Included:
 - oci.streaming.StreamAdminClient
 - oci.budget.BudgetClient
 - oci.autoscaling.AutoScalingClient
+- oci.monitoring.MonitoringClient
+- oci.ons.NotificationControlPlaneClient
+- oci.ons.NotificationDataPlaneClient
+- oci.healthchecks.HealthChecksClient
+- oci.announcements_service.AnnouncementClient
 
 ## OCI User Requirement
 Required OCI IAM user with read only privileges:  
 
-Inspect privilege will have some limitations especially on object storage sizes
 ```
 ALLOW GROUP ReadOnlyUsers to read all-resources IN TENANCY  
+```
+
+For restrictive privileges:
+
+```
+Allow group ReadOnlyUsers to inspect all-objects in tenancy
+Allow group ReadOnlyUsers to read instances      in tenancy
+Allow group ReadOnlyUsers to read load-balancers in tenancy
+Allow group ReadOnlyUsers to read buckets        in tenancy
+Allow group ReadOnlyUsers to read nat-gateways   in tenancy
+Allow group ReadOnlyUsers to read public-ips     in tenancy
+Allow group ReadOnlyUsers to read file-family    in tenancy
+Allow group ReadOnlyUsers to read instance-configurations in tenancy
+    
+# Explanation:
+    read instances      allows - ListInstances
+    read load-balancers allows - ListBackendSets, ListBackends, GetHealthChecker (for status)
+    read buckets        allows - GetBucket (for size), GetObjectLifecyclePolicy
+    read nat-gateways   allows - ListNatGateways
+    read public-ips     allows - ListPublicIps (not used yet)
+    read file-family    allows - ListExports, ListSnapshots
+    read instance-configurations allows - GetInstanceConfiguration
+
 ```
 ** DISCLAIMER – This is not official Oracle application
 
@@ -112,15 +139,17 @@ Execute
 ```
 $ ./showoci.py  
 
-usage: showoci [-h] [-a] [-ani] [-b] [-n] [-i] [-c] [-cn] [-o] [-l] [-d] [-f]
-               [-e] [-s] [-rm] [-so] [-mc] [-nr] [-t PROFILE] [-p PROXY]
-               [-rg REGION] [-cp COMPART] [-cf CONFIG] [-jf JOUTFILE] [-js]
-               [-cachef SERVICEFILE] [-caches] [--version]
+usage: showoci.py [-h] [-a] [-ani] [-an] [-b] [-n] [-i] [-c] [-cn] [-o] [-l]
+                  [-d] [-f] [-e] [-m] [-s] [-rm] [-so] [-edge] [-mc] [-nr]
+                  [-t PROFILE] [-p PROXY] [-rg REGION] [-cp COMPART]
+                  [-cf CONFIG] [-jf JOUTFILE] [-js] [-sjf SJOUTFILE]
+                  [-cachef SERVICEFILE] [-caches] [--version]
 
 optional arguments:
   -h, --help           show this help message and exit
   -a                   Print All Resources
   -ani                 Print All Resources but identity
+  -an                  Print Announcements
   -b                   Print Budgets
   -n                   Print Network
   -i                   Print Identity
@@ -131,9 +160,11 @@ optional arguments:
   -d                   Print Database
   -f                   Print File Storage
   -e                   Print EMail
+  -m                   Print Monitoring and Notifications
   -s                   Print Streams
   -rm                  Print Resource management
   -so                  Print Summary Only
+  -edge                Print Edge Services (Healthcheck)
   -mc                  exclude ManagedCompartmentForPaaS
   -nr                  Not include root compartment
   -t PROFILE           Config file section to use (tenancy profile)
@@ -143,6 +174,7 @@ optional arguments:
   -cf CONFIG           Config File
   -jf JOUTFILE         Output to file (JSON format)
   -js                  Output to screen (JSON format)
+  -sjf SJOUTFILE       Output to screen (nice format) and JSON File
   -cachef SERVICEFILE  Output Cache to file (JSON format)
   -caches              Output Cache to screen (JSON format)
   --version            show program's version number and exit
@@ -695,7 +727,53 @@ Compartment gse00000000 (root):
 ##############################
 --> AdiStream, partitions (1), Created: 2019-04-10 20:42
     URL   : https://api.cell-1.us-ashburn-1.streaming.oci.oraclecloud.com
-			
+
+##############################
+#    Monitoring - Alarms     #
+##############################
+--> host_cpu_over_80 (oci_computeagent), Enabled = True, Severity = CRITICAL
+    Query : CpuUtilization[1m]{resourceDisplayName = "demohost"}.mean() > 80
+    Topic : adi_topic - adi_topic_desc
+
+
+##############################
+#   Notifications - Topics   #
+##############################
+--> adi_topic - adi_topic_desc Created: 2018-12-25 12:00
+    Sub   : EMAIL: abc@email.net
+
+##############################
+#     Edge - Healthcheck     #
+##############################
+--> public_http_check (HTTPS: HEAD), Path = /, Enabled = False
+    Interval : 30 secs
+    Targets  : 129.213.148.40
+    VPoints  : aws-cdg
+
+--> public_demohost_check (ICMP, Port: 80), Enabled = False
+    Interval : 30 secs, Timeout = 30 secs
+    Targets  : 129.213.148.40
+    VPoints  : aws-cmh, aws-iad
+
+##############################
+#       Announcements        #
+##############################
+--> Container Engine for Kubernetes (CN-4368) - PRODUCTION_EVENT_NOTIFICATION, 2019-03-22 12:00
+    Regions  : Multiple Regions
+    Services : ['Oracle Cloud Infrastructure Container Engine for Kubernetes']
+
+--> Container Engine for Kubernetes (CN-4368) - PRODUCTION_EVENT_NOTIFICATION, 2019-03-22 12:25
+    Regions  : Multiple Regions
+    Services : ['Oracle Cloud Infrastructure Container Engine for Kubernetes']
+
+--> Container Engine for Kubernetes (CN-4368) - PRODUCTION_EVENT_NOTIFICATION, 2019-03-22 12:25
+    Regions  : Multiple Regions
+    Services : ['Oracle Cloud Infrastructure Container Engine for Kubernetes']
+
+--> Developer Services : Container Engine for Kubernetes: Node Pool Security List Update (CN-3934) - ACTION_REQUIRED, 2019-02-05 15:00
+    Regions  : All Regions
+    Services : ['Developer Services : Container Engine for Kubernetes']
+
 ##########################################################################################
 #                                 Summary - us-ashburn-1                                 #
 ##########################################################################################

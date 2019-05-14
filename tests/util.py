@@ -220,4 +220,5 @@ def test_config_to_python_config(test_config):
     converted_config['tenancy'] = converted_config.pop('tenant_id')
     converted_config['user'] = converted_config.pop('user_id')
     converted_config['key_content'] = converted_config.pop('key_file_content')
+    converted_config['service_endpoint'] = converted_config.pop('endpoint')
     return converted_config

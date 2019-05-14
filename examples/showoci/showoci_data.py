@@ -69,6 +69,11 @@ class ShowOCIData(object):
                 budgets_data = {'type': "budgets", 'data': self.service.get_budgets()}
                 self.data.append(budgets_data)
 
+            # run on announcement module
+            if self.service.flags.read_announcement:
+                announcement_data = {'type': "announcement", 'data': self.service.get_announcement()}
+                self.data.append(announcement_data)
+
             # run on compartments
             if self.service.flags.is_loop_on_compartments:
 
@@ -254,6 +259,30 @@ class ShowOCIData(object):
                     if value is not None:
                         if len(value) > 0:
                             data['streams'] = value
+                            has_data = True
+
+                # monitoring
+                if self.service.flags.read_monitoring_notifications:
+                    value = self.__get_monitoring_main(region_name, compartment)
+                    if value is not None:
+                        if len(value) > 0:
+                            data['monitoring'] = value
+                            has_data = True
+
+                # notifications
+                if self.service.flags.read_monitoring_notifications:
+                    value = self.__get_notifications_main(region_name, compartment)
+                    if value is not None:
+                        if len(value) > 0:
+                            data['notifications'] = value
+                            has_data = True
+
+                # edge services
+                if self.service.flags.read_edge:
+                    value = self.__get_load_edge_main(region_name, compartment)
+                    if value is not None:
+                        if len(value) > 0:
+                            data['edge_services'] = value
                             has_data = True
 
                 # add the data to main Variable
@@ -1924,11 +1953,6 @@ class ShowOCIData(object):
     ##########################################################################
     # Load Balancer
     ##########################################################################
-    #
-    # class oci.load_balancer.LoadBalancerClient(config, **kwargs)
-    #
-    ##########################################################################
-
     def __get_load_balancer_main(self, region_name, compartment):
 
         data = []
@@ -1948,13 +1972,8 @@ class ShowOCIData(object):
             return data
 
     ##########################################################################
-    # Load Balancer
+    # resource Management
     ##########################################################################
-    #
-    # class oci.resource_management.ResourceManagerClient(config, **kwargs)
-    #
-    ##########################################################################
-
     def __get_resource_management_main(self, region_name, compartment):
         data = []
         try:
@@ -2082,3 +2101,86 @@ class ShowOCIData(object):
         except Exception as e:
             self.__print_error("__get_streams_main", e)
             pass
+
+    ##########################################################################
+    # monitoring
+    ##########################################################################
+    def __get_monitoring_main(self, region_name, compartment):
+        try:
+            alarms = self.service.search_multi_items(self.service.C_MONITORING, self.service.C_MONITORING_ALARMS, 'region_name', region_name, 'compartment_id', compartment['id'])
+
+            data = []
+            if alarms:
+                for alarm in alarms:
+                    val = {'id': alarm['id'],
+                           'display_name': alarm['display_name'],
+                           'metric_compartment_id': alarm['metric_compartment_id'],
+                           'namespace': alarm['namespace'],
+                           'query': alarm['query'],
+                           'is_enabled': alarm['is_enabled'],
+                           'destinations': alarm['destinations'],
+                           'destinations_names': [],
+                           'severity': alarm['severity'],
+                           'defined_tags': alarm['defined_tags'],
+                           'freeform_tags': alarm['freeform_tags'],
+                           'compartment_name': alarm['compartment_name']}
+
+                    # find the topics
+                    for dest in alarm['destinations']:
+                        topic = self.service.search_unique_item(self.service.C_NOTIFICATIONS, self.service.C_NOTIFICATIONS_TOPICS, 'topic_id', dest)
+                        if topic:
+                            val['destinations_names'].append(topic['name'] + " - " + topic['description'])
+
+                    data.append(val)
+            return data
+
+        except Exception as e:
+            self.__print_error("__get_monitoring_main", e)
+            pass
+
+    ##########################################################################
+    # notifications
+    ##########################################################################
+    def __get_notifications_main(self, region_name, compartment):
+        try:
+            topics = self.service.search_multi_items(self.service.C_NOTIFICATIONS, self.service.C_NOTIFICATIONS_TOPICS, 'region_name', region_name, 'compartment_id', compartment['id'])
+
+            data = []
+            if topics:
+                for topic in topics:
+                    val = {'topic_id': topic['topic_id'],
+                           'name': topic['name'],
+                           'description': topic['description'],
+                           'time_created': topic['time_created'],
+                           'etag': topic['etag'],
+                           'api_endpoint': topic['api_endpoint'],
+                           'defined_tags': topic['defined_tags'],
+                           'freeform_tags': topic['freeform_tags'],
+                           'compartment_name': topic['compartment_name'],
+                           'subscriptions': self.service.search_multi_items(self.service.C_NOTIFICATIONS, self.service.C_NOTIFICATIONS_SUBSCRIPTIONS, 'topic_id', topic['topic_id'])
+                           }
+
+                    data.append(val)
+            return data
+
+        except Exception as e:
+            self.__print_error("__get_notifications_main", e)
+            pass
+
+    ##########################################################################
+    # edge
+    ##########################################################################
+    def __get_load_edge_main(self, region_name, compartment):
+
+        try:
+            healthcheck_http = self.service.search_multi_items(self.service.C_EDGE, self.service.C_EDGE_HEALTHCHECK_HTTP, 'region_name', region_name, 'compartment_id', compartment['id'])
+            healthcheck_ping = self.service.search_multi_items(self.service.C_EDGE, self.service.C_EDGE_HEALTHCHECK_PING, 'region_name', region_name, 'compartment_id', compartment['id'])
+
+            data = {}
+            if len(healthcheck_http) > 0 or len(healthcheck_ping) > 0:
+                data['healthcheck'] = {'http': healthcheck_http, 'ping': healthcheck_ping}
+            return data
+
+        except Exception as e:
+            self.__print_error("__get_load_edge_main", e)
+            return []

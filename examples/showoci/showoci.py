@@ -42,14 +42,15 @@
 # - oci.streaming.StreamAdminClient
 # - oci.budget.BudgetClient
 # - oci.autoscaling.AutoScalingClient
+# - oci.monitoring.MonitoringClient
+# - oci.ons.NotificationControlPlaneClient
+# - oci.ons.NotificationDataPlaneClient
+# - oci.healthchecks.HealthChecksClient
+# - oci.announcements_service.AnnouncementClient
 #
 # Modules Not Yet Covered:
-# - oci.ons.NotificationDataPlaneClient
 # - oci.waas.WaasClient
-# - oci.monitoring.MonitoringClient
-# - oci.healthchecks.HealthChecksClient
 # - oci.dns.DnsClient
-# - oci.announcements_service.AnnouncementClient
 #
 ##########################################################################
 from __future__ import print_function
@@ -61,7 +62,7 @@ import sys
 import argparse
 import datetime
 
-version = "19.4.23"
+version = "19.5.13"
 
 ##########################################################################
 # execute_extract
@@ -126,16 +127,33 @@ def execute_extract():
         extracted_data = data.process_oci_data()
 
         ############################################
-        # Check output config
+        # if JSON and screen
         ############################################
-        if cmd.joutfile:
-            if cmd.joutfile.name:
-                print_to_json_file(cmd.joutfile.name, extracted_data, "JSON Data")
+        if cmd.sjoutfile:
+            # print nice
+            output.print_data(extracted_data)
+            summary.print_summary(extracted_data)
+
+            # Add summary to JSON and print to JSON file
+            extracted_data.append({'summary': summary.get_summary_json()})
+            if cmd.sjoutfile.name:
+                print_to_json_file(output, cmd.sjoutfile.name, extracted_data, "JSON Data")
 
         ############################################
-        # print JSON to screen
+        # JSON File only
+        ############################################
+        elif cmd.joutfile:
+            if cmd.joutfile.name:
+                summary.print_summary(extracted_data)
+                extracted_data.append({'summary': summary.get_summary_json()})
+                print_to_json_file(output, cmd.joutfile.name, extracted_data, "JSON Data")
+
+        ############################################
+        # JSON to screen only
         ############################################
         elif cmd.joutscr:
+            summary.print_summary(extracted_data)
+            extracted_data.append({'summary': summary.get_summary_json()})
             print(json.dumps(extracted_data, indent=4, sort_keys=False))
 
         ############################################
@@ -193,6 +211,7 @@ def set_parser_arguments():
     parser = argparse.ArgumentParser()
     parser.add_argument('-a', action='store_true', default=False, dest='all', help='Print All Resources')
     parser.add_argument('-ani', action='store_true', default=False, dest='allnoiam', help='Print All Resources but identity')
+    parser.add_argument('-an', action='store_true', default=False, dest='announcement', help='Print Announcements')
     parser.add_argument('-b', action='store_true', default=False, dest='budgets', help='Print Budgets')
     parser.add_argument('-n', action='store_true', default=False, dest='network', help='Print Network')
     parser.add_argument('-i', action='store_true', default=False, dest='identity', help='Print Identity')
@@ -203,9 +222,11 @@ def set_parser_arguments():
     parser.add_argument('-d', action='store_true', default=False, dest='database', help='Print Database')
     parser.add_argument('-f', action='store_true', default=False, dest='file', help='Print File Storage')
     parser.add_argument('-e', action='store_true', default=False, dest='email', help='Print EMail')
+    parser.add_argument('-m', action='store_true', default=False, dest='monitoring', help='Print Monitoring and Notifications')
     parser.add_argument('-s', action='store_true', default=False, dest='streams', help='Print Streams')
     parser.add_argument('-rm', action='store_true', default=False, dest='orm', help='Print Resource management')
     parser.add_argument('-so', action='store_true', default=False, dest='sumonly', help='Print Summary Only')
+    parser.add_argument('-edge', action='store_true', default=False, dest='edge', help='Print Edge Services (Healthcheck)')
     parser.add_argument('-mc', action='store_true', default=False, dest='mgdcompart', help='exclude ManagedCompartmentForPaaS')
     parser.add_argument('-nr', action='store_true', default=False, dest='noroot', help='Not include root compartment')
     parser.add_argument('-t', default="", dest='profile', help='Config file section to use (tenancy profile)')
@@ -215,6 +236,7 @@ def set_parser_arguments():
     parser.add_argument('-cf', type=argparse.FileType('r'), dest='config', help="Config File")
     parser.add_argument('-jf', type=argparse.FileType('w'), dest='joutfile', help="Output to file   (JSON format)")
     parser.add_argument('-js', action='store_true', default=False, dest='joutscr', help="Output to screen (JSON format)")
+    parser.add_argument('-sjf', type=argparse.FileType('w'), dest='sjoutfile', help="Output to screen (nice format) and JSON File")
     parser.add_argument('-cachef', type=argparse.FileType('w'), dest='servicefile', help="Output Cache to file   (JSON format)")
     parser.add_argument('-caches', action='store_true', default=False, dest='servicescr', help="Output Cache to screen (JSON format)")
     parser.add_argument('--version', action='version', version='%(prog)s ' + version)
@@ -228,7 +250,7 @@ def set_parser_arguments():
     if not (result.all or result.allnoiam or result.network or result.identity or
             result.compute or result.object or
             result.load or result.database or result.file or result.email or result.orm or result.container or
-            result.streams or result.budgets):
+            result.streams or result.budgets or result.monitoring or result.edge or result.announcement):
 
         parser.print_help()
 
@@ -291,6 +313,15 @@ def set_service_extract_flags(cmd):
     if cmd.all or cmd.allnoiam or cmd.budgets:
         prm.read_budgets = True
 
+    if cmd.all or cmd.allnoiam or cmd.monitoring:
+        prm.read_monitoring_notifications = True
+
+    if cmd.all or cmd.allnoiam or cmd.announcement:
+        prm.read_announcement = True
+
+    if cmd.all or cmd.allnoiam or cmd.edge:
+        prm.read_edge = True
+
     if cmd.noroot:
         prm.read_root_compartment = False
 
@@ -313,12 +344,12 @@ def set_service_extract_flags(cmd):
 ############################################
 # print data to json file
 ############################################
-def print_to_json_file(file_name, data, header):
+def print_to_json_file(output, file_name, data, header):
 
     with open(file_name, 'w') as outfile:
         json.dump(data, outfile, indent=4, sort_keys=False)
 
-    print(header + " has been exported to " + file_name)
+    output.print_header(header + " exported to " + file_name, 0)
 
 
 ##########################################################################

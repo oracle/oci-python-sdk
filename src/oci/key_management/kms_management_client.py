@@ -71,7 +71,7 @@ class KmsManagementClient(object):
             'regional_client': False,
             'service_endpoint': service_endpoint,
             'timeout': kwargs.get('timeout'),
-            'base_path': '/',
+            'base_path': '/20180608',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("kms_management", config, signer, key_management_type_mapping, **base_client_init_kwargs)
@@ -110,7 +110,7 @@ class KmsManagementClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Key`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/20180608/keys"
+        resource_path = "/keys"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -188,7 +188,7 @@ class KmsManagementClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.KeyVersion`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/20180608/keys/{keyId}/keyVersions"
+        resource_path = "/keys/{keyId}/keyVersions"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -283,7 +283,7 @@ class KmsManagementClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Key`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/20180608/keys/{keyId}/actions/disable"
+        resource_path = "/keys/{keyId}/actions/disable"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -380,7 +380,7 @@ class KmsManagementClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Key`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/20180608/keys/{keyId}/actions/enable"
+        resource_path = "/keys/{keyId}/actions/enable"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -461,7 +461,7 @@ class KmsManagementClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Key`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/20180608/keys/{keyId}"
+        resource_path = "/keys/{keyId}"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -539,7 +539,7 @@ class KmsManagementClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.KeyVersion`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/20180608/keys/{keyId}/keyVersions/{keyVersionId}"
+        resource_path = "/keys/{keyId}/keyVersions/{keyVersionId}"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -634,7 +634,7 @@ class KmsManagementClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.key_management.models.KeyVersionSummary`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/20180608/keys/{keyId}/keyVersions"
+        resource_path = "/keys/{keyId}/keyVersions"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -756,7 +756,7 @@ class KmsManagementClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.key_management.models.KeySummary`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/20180608/keys"
+        resource_path = "/keys"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -860,7 +860,7 @@ class KmsManagementClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Key`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/20180608/keys/{keyId}"
+        resource_path = "/keys/{keyId}"
         method = "PUT"
 
         # Don't accept unknown kwargs

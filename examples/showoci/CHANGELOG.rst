@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+19.5.13 - 2019-05-13
+====================
+
+Added
+-----
+* Option to print nice to screen + JSON file using -sjf switch
+* Added summary to JSON output file or screen
+* Added Monitoring Service
+* Added Notifications Service
+* Added Edge Services (Healthcheck)
+* Added Announcement
+* Added Array check for service availability to support Tokyo
+
+====================
 19.4.23 - 2019-04-23
 ====================
 

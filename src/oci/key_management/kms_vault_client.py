@@ -73,7 +73,7 @@ class KmsVaultClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
-            'base_path': '/',
+            'base_path': '/20180608',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("kms_vault", config, signer, key_management_type_mapping, **base_client_init_kwargs)
@@ -121,7 +121,7 @@ class KmsVaultClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Vault`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/20180608/vaults/{vaultId}/actions/cancelDeletion"
+        resource_path = "/vaults/{vaultId}/actions/cancelDeletion"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -213,7 +213,7 @@ class KmsVaultClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Vault`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/20180608/vaults"
+        resource_path = "/vaults"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -282,7 +282,7 @@ class KmsVaultClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Vault`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/20180608/vaults/{vaultId}"
+        resource_path = "/vaults/{vaultId}"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -376,7 +376,7 @@ class KmsVaultClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.key_management.models.VaultSummary`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/20180608/vaults"
+        resource_path = "/vaults"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -487,7 +487,7 @@ class KmsVaultClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Vault`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/20180608/vaults/{vaultId}/actions/scheduleDeletion"
+        resource_path = "/vaults/{vaultId}/actions/scheduleDeletion"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -582,7 +582,7 @@ class KmsVaultClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Vault`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/20180608/vaults/{vaultId}"
+        resource_path = "/vaults/{vaultId}"
         method = "PUT"
 
         # Don't accept unknown kwargs
