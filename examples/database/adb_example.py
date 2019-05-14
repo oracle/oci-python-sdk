@@ -13,6 +13,7 @@ config = oci.config.from_file()
 # has privileges for creating an Autonomous Database
 compartment_id = config["tenancy"]
 
+
 def create_adb(db_client):
     # Create the model and populate the values
     # See: https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/adbcreating.htm
@@ -36,10 +37,12 @@ def create_adb(db_client):
 
     return adb_response.data.id
 
+
 def delete_adb(db_client, adb_id):
     # Delete the autonomous database
     response = db_client.delete_autonomous_database(adb_id)
     print(response)
+
 
 def update_adb(db_client, adb_id):
     # Create the model and populate the values
@@ -51,8 +54,8 @@ def update_adb(db_client, adb_id):
     adb_request.is_auto_scaling_enabled = True
 
     adb_response = db_client.update_autonomous_database(adb_id,
-        update_autonomous_database_details=adb_request,
-        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY)
+                                                        update_autonomous_database_details=adb_request,
+                                                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY)
 
     print("Created Automated Data Warehouse {}".format(adb_response.data.id))
 
@@ -64,5 +67,3 @@ if __name__ == "__main__":
     db_client = oci.database.DatabaseClient(config)
     adb_id = create_adb(db_client)
     delete_adb(db_client, adb_id)
-
-
