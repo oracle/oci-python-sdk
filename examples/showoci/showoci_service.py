@@ -235,7 +235,13 @@ class ShowOCIService(object):
         {'ap-tokyo-1', C_MONITORING},
         {'ap-tokyo-1', C_COMPUTE_AUTOSCALING},
         {'ap-tokyo-1', C_STREAMS},
-        {'ap-tokyo-1', C_NOTIFICATIONS}
+        {'ap-tokyo-1', C_NOTIFICATIONS},
+        {'ap-seoul-1', C_EMAIL},
+        {'ap-seoul-1', C_EDGE},
+        {'ap-seoul-1', C_MONITORING},
+        {'ap-seoul-1', C_COMPUTE_AUTOSCALING},
+        {'ap-seoul-1', C_STREAMS},
+        {'ap-seoul-1', C_NOTIFICATIONS}
     ]
 
     ##########################################################################
@@ -1017,6 +1023,7 @@ class ShowOCIService(object):
         start_time = time.time()
 
         try:
+            tags = []
             try:
                 tags = oci.pagination.list_call_get_all_results(identity.list_cost_tracking_tags, tenancy_id).data
             except oci.exceptions.ServiceError as e:
@@ -3522,7 +3529,7 @@ class ShowOCIService(object):
                     datahosts = []
                     for hostname in arr.hostnames:
                         ho = arr.hostnames[hostname]
-                        datahosts.append(str(ho.name) + " - " + str(ho.hostname))
+                        datahosts.append(str(ho.name).ljust(20) + " - " + str(ho.hostname))
                     val['hostnames'] = datahosts
 
                     # check boot volume backup policy

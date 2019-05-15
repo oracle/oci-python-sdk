@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+19.5.20 - 2019-05-20
+====================
+
+Added
+-----
+* Added Array check for service availability to support Seoul
+* Added run_daily_report.sh for daily crontab use
+
+====================
 19.5.13 - 2019-05-13
 ====================
 
