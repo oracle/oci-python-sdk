@@ -53,6 +53,7 @@ class ShowOCIFlags(object):
     showoci_version = ""
     config_file = oci.config.DEFAULT_LOCATION
     config_section = oci.config.DEFAULT_PROFILE
+    use_instance_principals = False
 
     # flag if to run on compartment
     run_on_compartments = False
@@ -259,9 +260,6 @@ class ShowOCIService(object):
     # required:
     #    flags parameters - Class ShowOCIFlags
     #
-    # Optional Parameters:
-    #    config_file - config_File to authenticate to OCI
-    #    config_section - section in the config file
     ##########################################################################
     def __init__(self, flags):
 
@@ -274,8 +272,47 @@ class ShowOCIService(object):
         # assign the flags variable
         self.flags = flags
 
-        # initialize the oci config
-        self.config = oci.config.from_file(flags.config_file, flags.config_section)
+        # if intance pricipals - generate signer from token or config
+        if flags.use_instance_principals:
+            self.generate_signer_from_instance_principals()
+        else:
+            self.generate_signer_from_config(flags.config_file, flags.config_section)
+
+    ##########################################################################
+    # Generate Signer from config
+    ###########################################################################
+    def generate_signer_from_config(self, config_file, config_section):
+
+        # create signer from config for authentication
+        self.config = oci.config.from_file(config_file, config_section)
+        self.signer = oci.signer.Signer(
+            tenancy=self.config["tenancy"],
+            user=self.config["user"],
+            fingerprint=self.config["fingerprint"],
+            private_key_file_location=self.config.get("key_file"),
+            pass_phrase=oci.config.get_config_value_or_default(self.config, "pass_phrase"),
+            private_key_content=self.config.get("key_content")
+        )
+
+    ##########################################################################
+    # Generate Signer from instance_principals
+    ###########################################################################
+    def generate_signer_from_instance_principals(self):
+
+        try:
+            # get signer from instance principals token
+            self.signer = oci.auth.signers.InstancePrincipalsSecurityTokenSigner()
+
+        except Exception:
+            print("*********************************************************************")
+            print("* Error obtaining instance principals certificate.                  *")
+            print("* Aboting.                                                          *")
+            print("*********************************************************************")
+            print("")
+            raise SystemExit
+
+        # generate config info from signer
+        self.config = {'region': self.signer.region, 'tenancy': self.signer.tenancy_id}
 
     ##########################################################################
     # load_data
@@ -336,11 +373,12 @@ class ShowOCIService(object):
     def get_network_subnet(self, subnet_id, detailed=False):
         try:
             result = self.search_unique_item(self.C_NETWORK, self.C_NETWORK_SUBNET, 'id', subnet_id)
-            if result != "":
-                if detailed:
-                    return result['name'] + ",  " + result['cidr_block'] + ", VCN (" + result['vcn_name'] + ")"
-                else:
-                    return result['name']
+            if result:
+                if result != "":
+                    if detailed:
+                        return result['name'] + ",  " + result['cidr_block'] + ", VCN (" + result['vcn_name'] + ")"
+                    else:
+                        return result['name']
             return ""
 
         except Exception as e:
@@ -563,6 +601,7 @@ class ShowOCIService(object):
 
         self.print_header("Region " + region_name, 2)
         self.config['region'] = region_name
+        self.signer.region = region_name
 
         # load ADs
         if self.flags.is_load_basic_network():
@@ -640,7 +679,7 @@ class ShowOCIService(object):
             print("Identity...")
 
             # create identity object
-            identity = oci.identity.IdentityClient(self.config)
+            identity = oci.identity.IdentityClient(self.config, signer=self.signer)
             if self.flags.proxy:
                 identity.base_client.session.proxies = {'https': self.flags.proxy}
 
@@ -1063,7 +1102,7 @@ class ShowOCIService(object):
             print("Identity...")
 
             # create identity object
-            identity = oci.identity.IdentityClient(self.config)
+            identity = oci.identity.IdentityClient(self.config, signer=self.signer)
             if self.flags.proxy:
                 identity.base_client.session.proxies = {'https': self.flags.proxy}
 
@@ -1124,7 +1163,7 @@ class ShowOCIService(object):
             print("Network...")
 
             # Open connectivity to OCI
-            virtual_network = oci.core.VirtualNetworkClient(self.config)
+            virtual_network = oci.core.VirtualNetworkClient(self.config, signer=self.signer)
             if self.flags.proxy:
                 virtual_network.base_client.session.proxies = {'https': self.flags.proxy}
 
@@ -2283,27 +2322,27 @@ class ShowOCIService(object):
             print("Compute...")
 
             # BlockstorageClient
-            block_storage = oci.core.BlockstorageClient(self.config)
+            block_storage = oci.core.BlockstorageClient(self.config, signer=self.signer)
             if self.flags.proxy:
                 block_storage.base_client.session.proxies = {'https': self.flags.proxy}
 
             # ComputeManagementClient
-            compute_manage = oci.core.ComputeManagementClient(self.config)
+            compute_manage = oci.core.ComputeManagementClient(self.config, signer=self.signer)
             if self.flags.proxy:
                 compute_manage.base_client.session.proxies = {'https': self.flags.proxy}
 
             # ComputeClient
-            compute_client = oci.core.ComputeClient(self.config)
+            compute_client = oci.core.ComputeClient(self.config, signer=self.signer)
             if self.flags.proxy:
                 compute_client.base_client.session.proxies = {'https': self.flags.proxy}
 
             # virtual_network - for vnics
-            virtual_network = oci.core.VirtualNetworkClient(self.config)
+            virtual_network = oci.core.VirtualNetworkClient(self.config, signer=self.signer)
             if self.flags.proxy:
                 virtual_network.base_client.session.proxies = {'https': self.flags.proxy}
 
             # auto scaling
-            auto_scaling = oci.autoscaling.AutoScalingClient(self.config)
+            auto_scaling = oci.autoscaling.AutoScalingClient(self.config, signer=self.signer)
             if self.flags.proxy:
                 auto_scaling.base_client.session.proxies = {'https': self.flags.proxy}
 
@@ -3393,7 +3432,7 @@ class ShowOCIService(object):
             print("Load Balancer...")
 
             # LoadBalancerClient
-            load_balancer = oci.load_balancer.LoadBalancerClient(self.config)
+            load_balancer = oci.load_balancer.LoadBalancerClient(self.config, signer=self.signer)
             if self.flags.proxy:
                 load_balancer.base_client.session.proxies = {'https': self.flags.proxy}
 
@@ -3518,10 +3557,10 @@ class ShowOCIService(object):
                         array_path = []
                         if pro.path_routes is not None:
                             for path_route in pro.path_routes:
-                                array_path.append({'path': path_route.path, 'backend_set_name': path_route.backend_set_name})
+                                array_path.append({'path': str(path_route.path), 'backend_set_name': str(path_route.backend_set_name)})
 
                         # add the paths
-                        datapath.append({'name': pro.name, 'path_routes': array_path})
+                        datapath.append({'name': str(pro.name), 'path_routes': array_path})
 
                     val['path_route'] = datapath
 
@@ -3678,7 +3717,7 @@ class ShowOCIService(object):
             print("Object Storage...")
 
             # LoadBalancerClient
-            object_storage = oci.object_storage.ObjectStorageClient(self.config)
+            object_storage = oci.object_storage.ObjectStorageClient(self.config, signer=self.signer)
             if self.flags.proxy:
                 object_storage.base_client.session.proxies = {'https': self.flags.proxy}
 
@@ -3828,7 +3867,7 @@ class ShowOCIService(object):
             print("Resource Management...")
 
             # LoadBalancerClient
-            orm = oci.resource_manager.ResourceManagerClient(self.config)
+            orm = oci.resource_manager.ResourceManagerClient(self.config, signer=self.signer)
             if self.flags.proxy:
                 orm.base_client.session.proxies = {'https': self.flags.proxy}
 
@@ -3948,7 +3987,7 @@ class ShowOCIService(object):
             print("Email Notifications...")
 
             # EmailClient
-            email_client = oci.email.EmailClient(self.config)
+            email_client = oci.email.EmailClient(self.config, signer=self.signer)
             if self.flags.proxy:
                 email_client.base_client.session.proxies = {'https': self.flags.proxy}
 
@@ -4097,11 +4136,11 @@ class ShowOCIService(object):
             print("File Storage...")
 
             # LoadBalancerClient
-            file_storage = oci.file_storage.FileStorageClient(self.config)
+            file_storage = oci.file_storage.FileStorageClient(self.config, signer=self.signer)
             if self.flags.proxy:
                 file_storage.base_client.session.proxies = {'https': self.flags.proxy}
 
-            virtual_network = oci.core.VirtualNetworkClient(self.config)
+            virtual_network = oci.core.VirtualNetworkClient(self.config, signer=self.signer)
             if self.flags.proxy:
                 virtual_network.base_client.session.proxies = {'https': self.flags.proxy}
 
@@ -4357,11 +4396,11 @@ class ShowOCIService(object):
             print("Database...")
 
             # LoadBalancerClient
-            database_client = oci.database.DatabaseClient(self.config)
+            database_client = oci.database.DatabaseClient(self.config, signer=self.signer)
             if self.flags.proxy:
                 database_client.base_client.session.proxies = {'https': self.flags.proxy}
 
-            virtual_network = oci.core.VirtualNetworkClient(self.config)
+            virtual_network = oci.core.VirtualNetworkClient(self.config, signer=self.signer)
             if self.flags.proxy:
                 virtual_network.base_client.session.proxies = {'https': self.flags.proxy}
 
@@ -4922,7 +4961,7 @@ class ShowOCIService(object):
             print("Containers...")
 
             # ContainerEngineClient
-            container_client = oci.container_engine.ContainerEngineClient(self.config)
+            container_client = oci.container_engine.ContainerEngineClient(self.config, signer=self.signer)
             if self.flags.proxy:
                 container_client.base_client.session.proxies = {'https': self.flags.proxy}
 
@@ -5078,7 +5117,7 @@ class ShowOCIService(object):
             print("Streams...")
 
             # StreamAdminClient
-            stream_client = oci.streaming.StreamAdminClient(self.config)
+            stream_client = oci.streaming.StreamAdminClient(self.config, signer=self.signer)
             if self.flags.proxy:
                 stream_client.base_client.session.proxies = {'https': self.flags.proxy}
 
@@ -5171,7 +5210,7 @@ class ShowOCIService(object):
             print("Budgets...")
 
             # BudgetClient
-            budget_client = oci.budget.BudgetClient(self.config)
+            budget_client = oci.budget.BudgetClient(self.config, signer=self.signer)
             if self.flags.proxy:
                 budget_client.base_client.session.proxies = {'https': self.flags.proxy}
 
@@ -5278,17 +5317,17 @@ class ShowOCIService(object):
             print("Monitoring and Notifications...")
 
             # MonitoringClient
-            monitor_client = oci.monitoring.MonitoringClient(self.config)
+            monitor_client = oci.monitoring.MonitoringClient(self.config, signer=self.signer)
             if self.flags.proxy:
                 monitor_client.base_client.session.proxies = {'https': self.flags.proxy}
 
             # NotificationControlPlaneClient
-            ons_cp_client = oci.ons.NotificationControlPlaneClient(self.config)
+            ons_cp_client = oci.ons.NotificationControlPlaneClient(self.config, signer=self.signer)
             if self.flags.proxy:
                 ons_cp_client.base_client.session.proxies = {'https': self.flags.proxy}
 
             # NotificationDataPlaneClient
-            ons_dp_client = oci.ons.NotificationDataPlaneClient(self.config)
+            ons_dp_client = oci.ons.NotificationDataPlaneClient(self.config, signer=self.signer)
             if self.flags.proxy:
                 ons_dp_client.base_client.session.proxies = {'https': self.flags.proxy}
 
@@ -5527,7 +5566,7 @@ class ShowOCIService(object):
             print("Edge Services...")
 
             # BudgetClient
-            healthcheck_client = oci.healthchecks.HealthChecksClient(self.config)
+            healthcheck_client = oci.healthchecks.HealthChecksClient(self.config, signer=self.signer)
             if self.flags.proxy:
                 healthcheck_client.base_client.session.proxies = {'https': self.flags.proxy}
 
@@ -5725,7 +5764,7 @@ class ShowOCIService(object):
             print("Announcements...")
 
             # AnnouncementClient
-            announcement_client = oci.announcements_service.AnnouncementClient(self.config)
+            announcement_client = oci.announcements_service.AnnouncementClient(self.config, signer=self.signer)
             if self.flags.proxy:
                 announcement_client.base_client.session.proxies = {'https': self.flags.proxy}
 

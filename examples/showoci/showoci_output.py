@@ -86,8 +86,12 @@ class ShowOCIOutput(object):
     def print_showoci_config(self, data):
         try:
             self.print_header(data['program'], 1)
-            print("Config File    : " + data['config_file'])
-            print("Config Profile : " + data['config_profile'])
+            if data['use_instance_principals']:
+                print("Authentication : Instance Principals")
+            else:
+                print("Authentication : Config File")
+                print("Config File    : " + data['config_file'])
+                print("Config Profile : " + data['config_profile'])
             print("Version        : " + data['version'])
             print("Date/Time      : " + data['datetime'])
             print("Comand Line    : " + data['cmdline'])
