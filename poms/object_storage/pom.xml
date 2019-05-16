@@ -135,7 +135,7 @@
       <dependency>
         <groupId>com.oracle.pic.casper</groupId>
         <artifactId>casper-api-spec</artifactId>
-        <version>1.1.237</version>
+        <version>1.1.240</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
