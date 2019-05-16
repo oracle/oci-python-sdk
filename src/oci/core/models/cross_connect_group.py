@@ -135,7 +135,7 @@ class CrossConnectGroup(object):
     def display_name(self):
         """
         Gets the display_name of this CrossConnectGroup.
-        The display name of A user-friendly name. Does not have to be unique, and it's changeable.
+        The display name of a user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
 
@@ -148,7 +148,7 @@ class CrossConnectGroup(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CrossConnectGroup.
-        The display name of A user-friendly name. Does not have to be unique, and it's changeable.
+        The display name of a user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
 

@@ -17,7 +17,11 @@ missing = Sentinel("Missing")
 
 class ComputeClient(object):
     """
-    APIs for Networking Service, Compute Service, and Block Volume Service.
+    API covering the [Networking](/iaas/Content/Network/Concepts/overview.htm),
+    [Compute](/iaas/Content/Compute/Concepts/computeoverview.htm), and
+    [Block Volume](/iaas/Content/Block/Concepts/overview.htm) services. Use this API
+    to manage resources such as virtual cloud networks (VCNs), compute instances, and
+    block storage volumes.
     """
 
     def __init__(self, config, **kwargs):
