@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateIPSecConnectionTunnelDetails(object):
     """
-    Details to modify an IPSecConnection Tunnel paramaters.
+    UpdateIPSecConnectionTunnelDetails model.
     """
 
     #: A constant which can be used with the routing property of a UpdateIPSecConnectionTunnelDetails.
@@ -85,7 +85,7 @@ class UpdateIPSecConnectionTunnelDetails(object):
     def routing(self):
         """
         Gets the routing of this UpdateIPSecConnectionTunnelDetails.
-        the routing strategy used for this tunnel, either static route or BGP.
+        The type of routing to use for this tunnel (either BGP dynamic routing or static routing).
 
         Allowed values for this property are: "BGP", "STATIC"
 
@@ -99,7 +99,7 @@ class UpdateIPSecConnectionTunnelDetails(object):
     def routing(self, routing):
         """
         Sets the routing of this UpdateIPSecConnectionTunnelDetails.
-        the routing strategy used for this tunnel, either static route or BGP.
+        The type of routing to use for this tunnel (either BGP dynamic routing or static routing).
 
 
         :param routing: The routing of this UpdateIPSecConnectionTunnelDetails.
@@ -117,7 +117,7 @@ class UpdateIPSecConnectionTunnelDetails(object):
     def bgp_session_config(self):
         """
         Gets the bgp_session_config of this UpdateIPSecConnectionTunnelDetails.
-        Information needed to establish a BGP Session on an interface.
+        Information for establishing a BGP session for the IPSec tunnel.
 
 
         :return: The bgp_session_config of this UpdateIPSecConnectionTunnelDetails.
@@ -129,7 +129,7 @@ class UpdateIPSecConnectionTunnelDetails(object):
     def bgp_session_config(self, bgp_session_config):
         """
         Sets the bgp_session_config of this UpdateIPSecConnectionTunnelDetails.
-        Information needed to establish a BGP Session on an interface.
+        Information for establishing a BGP session for the IPSec tunnel.
 
 
         :param bgp_session_config: The bgp_session_config of this UpdateIPSecConnectionTunnelDetails.

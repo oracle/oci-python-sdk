@@ -1081,8 +1081,11 @@ class VirtualNetworkClient(object):
         Creates a new IPSec connection between the specified DRG and CPE. For more information, see
         `IPSec VPNs`__.
 
-        In the request, you must include at least one static route to the CPE object (you're allowed a maximum
-        of 10). For example: 10.0.8.0/16.
+        If you configure at least one tunnel to use static routing, then in the request you must provide
+        at least one valid static route (you're allowed a maximum of 10). For example: 10.0.0.0/16.
+        If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for
+        the static routes. For more information, see the important note in
+        :class:`IPSecConnection`.
 
         For the purposes of access control, you must provide the OCID of the compartment where you want the
         IPSec connection to reside. Notice that the IPSec connection doesn't have to be in the same compartment
@@ -1096,14 +1099,14 @@ class VirtualNetworkClient(object):
         It does not have to be unique, and you can change it. Avoid entering confidential information.
 
         After creating the IPSec connection, you need to configure your on-premises router
-        with tunnel-specific information returned by
-        :func:`get_ip_sec_connection_device_config`.
-        For each tunnel, that operation gives you the IP address of Oracle's VPN headend and the shared secret
+        with tunnel-specific information. For tunnel status and the required configuration information, see:
+
+          * :class:`IPSecConnectionTunnel`
+          * :class:`IPSecConnectionTunnelSharedSecret`
+
+        For each tunnel, you need the IP address of Oracle's VPN headend and the shared secret
         (that is, the pre-shared key). For more information, see
         `Configuring Your On-Premises Router for an IPSec VPN`__.
-
-        To get the status of the tunnels (whether they're up or down), use
-        :func:`get_ip_sec_connection_device_status`.
 
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingIPsec.htm
         __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
@@ -4389,7 +4392,7 @@ class VirtualNetworkClient(object):
         GetIPSecConnection
         Gets the specified IPSec connection's basic information, including the static routes for the
         on-premises router. If you want the status of the connection (whether it's up or down), use
-        :func:`get_ip_sec_connection_device_status`.
+        :func:`get_ip_sec_connection_tunnel`.
 
 
         :param str ipsc_id: (required)
@@ -4453,8 +4456,10 @@ class VirtualNetworkClient(object):
     def get_ip_sec_connection_device_config(self, ipsc_id, **kwargs):
         """
         GetIPSecConnectionDeviceConfig
-        Gets the configuration information for the specified IPSec connection. For each tunnel, the
-        response includes the IP address of Oracle's VPN headend and the shared secret.
+        Deprecated. To get tunnel information, instead use:
+
+        * :func:`get_ip_sec_connection_tunnel`
+        * :func:`get_ip_sec_connection_tunnel_shared_secret`
 
 
         :param str ipsc_id: (required)
@@ -4518,7 +4523,8 @@ class VirtualNetworkClient(object):
     def get_ip_sec_connection_device_status(self, ipsc_id, **kwargs):
         """
         GetIPSecConnectionDeviceStatus
-        Gets the status of the specified IPSec connection (whether it's up or down).
+        Deprecated. To get the tunnel status, instead use
+        :func:`get_ip_sec_connection_tunnel`.
 
 
         :param str ipsc_id: (required)
@@ -4582,14 +4588,18 @@ class VirtualNetworkClient(object):
     def get_ip_sec_connection_tunnel(self, ipsc_id, tunnel_id, **kwargs):
         """
         GetIPSecConnectionTunnel
-        Gets the specified IPSec connection's specified tunnel basic information.
+        Gets the specified tunnel's information. The resulting object does not include the tunnel's
+        shared secret (pre-shared key). To retrieve that, use
+        :func:`get_ip_sec_connection_tunnel_shared_secret`.
 
 
         :param str ipsc_id: (required)
             The OCID of the IPSec connection.
 
         :param str tunnel_id: (required)
-            The OCID of the IPSec connection's tunnel.
+            The `OCID`__ of the tunnel.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -4650,14 +4660,17 @@ class VirtualNetworkClient(object):
     def get_ip_sec_connection_tunnel_shared_secret(self, ipsc_id, tunnel_id, **kwargs):
         """
         GetIPSecConnectionTunnelSharedSecret
-        Gets the specified IPSec connection's specific tunnel's shared secret.
+        Gets the specified tunnel's shared secret (pre-shared key). To get other information
+        about the tunnel, use :func:`get_ip_sec_connection_tunnel`.
 
 
         :param str ipsc_id: (required)
             The OCID of the IPSec connection.
 
         :param str tunnel_id: (required)
-            The OCID of the IPSec connection's tunnel.
+            The `OCID`__ of the tunnel.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -6922,7 +6935,7 @@ class VirtualNetworkClient(object):
     def list_ip_sec_connection_tunnels(self, ipsc_id, **kwargs):
         """
         ListIPSecConnectionTunnels
-        Gets the lists of tunnel information for the specified IPSec connection.
+        Lists the tunnel information for the specified IPSec connection.
 
 
         :param str ipsc_id: (required)
@@ -9334,6 +9347,9 @@ class VirtualNetworkClient(object):
         UpdateIPSecConnection
         Updates the specified IPSec connection.
 
+        To update an individual IPSec tunnel's attributes, use
+        :func:`update_ip_sec_connection_tunnel`.
+
 
         :param str ipsc_id: (required)
             The OCID of the IPSec connection.
@@ -9412,14 +9428,27 @@ class VirtualNetworkClient(object):
     def update_ip_sec_connection_tunnel(self, ipsc_id, tunnel_id, update_ip_sec_connection_tunnel_details, **kwargs):
         """
         UpdateIPSecConnectionTunnelDetails
-        Update an IPsecConnection tunnel
+        Updates the specified tunnel. This operation lets you change tunnel attributes such as the
+        routing type (BGP dynamic routing or static routing). Here are some important notes:
+
+          * If you change the tunnel's routing type or BGP session configuration, the tunnel will go
+            down while it's reprovisioned.
+
+          * If you want to switch the tunnel's `routing` from `STATIC` to `BGP`, make sure the tunnel's
+            BGP session configuration attributes have been set (:func:`bgp_session_info`).
+
+          * If you want to switch the tunnel's `routing` from `BGP` to `STATIC`, make sure the
+            :class:`IPSecConnection` already has at least one valid CIDR
+            static route.
 
 
         :param str ipsc_id: (required)
             The OCID of the IPSec connection.
 
         :param str tunnel_id: (required)
-            The OCID of the IPSec connection's tunnel.
+            The `OCID`__ of the tunnel.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateIPSecConnectionTunnelDetails update_ip_sec_connection_tunnel_details: (required)
             Details object for updating a IPSecConnection tunnel's details.
@@ -9502,14 +9531,18 @@ class VirtualNetworkClient(object):
     def update_ip_sec_connection_tunnel_shared_secret(self, ipsc_id, tunnel_id, update_ip_sec_connection_tunnel_shared_secret_details, **kwargs):
         """
         UpdateIPSecConnectionTunnelSharedSecret
-        update shared secret for specifed Ipsec connection's specified tunnel
+        Updates the shared secret (pre-shared key) for the specified tunnel.
+
+        **Important:** If you change the shared secret, the tunnel will go down while it's reprovisioned.
 
 
         :param str ipsc_id: (required)
             The OCID of the IPSec connection.
 
         :param str tunnel_id: (required)
-            The OCID of the IPSec connection's tunnel.
+            The `OCID`__ of the tunnel.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateIPSecConnectionTunnelSharedSecretDetails update_ip_sec_connection_tunnel_shared_secret_details: (required)
             Details object for updating a IPSec connection tunnel's sharedSecret.

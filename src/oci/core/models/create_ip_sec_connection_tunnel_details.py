@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateIPSecConnectionTunnelDetails(object):
     """
-    details need to create an IPSecConnection tunnel.
+    CreateIPSecConnectionTunnelDetails model.
     """
 
     #: A constant which can be used with the routing property of a CreateIPSecConnectionTunnelDetails.
@@ -92,7 +92,7 @@ class CreateIPSecConnectionTunnelDetails(object):
     def routing(self):
         """
         Gets the routing of this CreateIPSecConnectionTunnelDetails.
-        the routing strategy used for this tunnel, either static route or BGP.
+        The type of routing to use for this tunnel (either BGP dynamic routing or static routing).
 
         Allowed values for this property are: "BGP", "STATIC"
 
@@ -106,7 +106,7 @@ class CreateIPSecConnectionTunnelDetails(object):
     def routing(self, routing):
         """
         Sets the routing of this CreateIPSecConnectionTunnelDetails.
-        the routing strategy used for this tunnel, either static route or BGP.
+        The type of routing to use for this tunnel (either BGP dynamic routing or static routing).
 
 
         :param routing: The routing of this CreateIPSecConnectionTunnelDetails.
@@ -124,9 +124,11 @@ class CreateIPSecConnectionTunnelDetails(object):
     def shared_secret(self):
         """
         Gets the shared_secret of this CreateIPSecConnectionTunnelDetails.
-        The shared secret of the IPSec tunnel.
+        The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value,
+        Oracle generates a value for you. You can specify your own shared secret later if
+        you like with :func:`update_ip_sec_connection_tunnel_shared_secret`.
 
-        Example: `vFG2IF6TWq4UToUiLSRDoJEUs6j1c.p8G.dVQxiMfMO0yXMLi.lZTbYIWhGu4V8o`
+        Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
 
 
         :return: The shared_secret of this CreateIPSecConnectionTunnelDetails.
@@ -138,9 +140,11 @@ class CreateIPSecConnectionTunnelDetails(object):
     def shared_secret(self, shared_secret):
         """
         Sets the shared_secret of this CreateIPSecConnectionTunnelDetails.
-        The shared secret of the IPSec tunnel.
+        The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value,
+        Oracle generates a value for you. You can specify your own shared secret later if
+        you like with :func:`update_ip_sec_connection_tunnel_shared_secret`.
 
-        Example: `vFG2IF6TWq4UToUiLSRDoJEUs6j1c.p8G.dVQxiMfMO0yXMLi.lZTbYIWhGu4V8o`
+        Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
 
 
         :param shared_secret: The shared_secret of this CreateIPSecConnectionTunnelDetails.
@@ -152,7 +156,12 @@ class CreateIPSecConnectionTunnelDetails(object):
     def bgp_session_config(self):
         """
         Gets the bgp_session_config of this CreateIPSecConnectionTunnelDetails.
-        Information needed to establish a BGP Session on an interface.
+        Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses
+        BGP dynamic routing.
+
+        If the tunnel instead uses static routing, you may optionally provide
+        this object and set an IP address for one or both ends of the IPSec tunnel for the purposes
+        of troubleshooting or monitoring the tunnel.
 
 
         :return: The bgp_session_config of this CreateIPSecConnectionTunnelDetails.
@@ -164,7 +173,12 @@ class CreateIPSecConnectionTunnelDetails(object):
     def bgp_session_config(self, bgp_session_config):
         """
         Sets the bgp_session_config of this CreateIPSecConnectionTunnelDetails.
-        Information needed to establish a BGP Session on an interface.
+        Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses
+        BGP dynamic routing.
+
+        If the tunnel instead uses static routing, you may optionally provide
+        this object and set an IP address for one or both ends of the IPSec tunnel for the purposes
+        of troubleshooting or monitoring the tunnel.
 
 
         :param bgp_session_config: The bgp_session_config of this CreateIPSecConnectionTunnelDetails.

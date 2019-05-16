@@ -9,7 +9,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class IPSecConnectionTunnel(object):
     """
-    information about IPSecConnection tunnel.
+    Information about a single tunnel in an IPSec connection. This object does not include the tunnel's
+    shared secret (pre-shared key). That is in the
+    :class:`IPSecConnectionTunnelSharedSecret` object.
     """
 
     #: A constant which can be used with the status property of a IPSecConnectionTunnel.
@@ -148,7 +150,9 @@ class IPSecConnectionTunnel(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this IPSecConnectionTunnel.
-        The OCID of the compartment containing the tunnel.
+        The `OCID`__ of the compartment containing the tunnel.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this IPSecConnectionTunnel.
@@ -160,7 +164,9 @@ class IPSecConnectionTunnel(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this IPSecConnectionTunnel.
-        The OCID of the compartment containing the tunnel.
+        The `OCID`__ of the compartment containing the tunnel.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this IPSecConnectionTunnel.
@@ -172,7 +178,9 @@ class IPSecConnectionTunnel(object):
     def id(self):
         """
         **[Required]** Gets the id of this IPSecConnectionTunnel.
-        The tunnel's Oracle ID (OCID).
+        The `OCID`__ of the tunnel.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this IPSecConnectionTunnel.
@@ -184,7 +192,9 @@ class IPSecConnectionTunnel(object):
     def id(self, id):
         """
         Sets the id of this IPSecConnectionTunnel.
-        The tunnel's Oracle ID (OCID).
+        The `OCID`__ of the tunnel.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this IPSecConnectionTunnel.
@@ -198,7 +208,7 @@ class IPSecConnectionTunnel(object):
         Gets the vpn_ip of this IPSecConnectionTunnel.
         The IP address of Oracle's VPN headend.
 
-        Example: `129.146.17.50`
+        Example: `192.0.2.5`
 
 
         :return: The vpn_ip of this IPSecConnectionTunnel.
@@ -212,7 +222,7 @@ class IPSecConnectionTunnel(object):
         Sets the vpn_ip of this IPSecConnectionTunnel.
         The IP address of Oracle's VPN headend.
 
-        Example: `129.146.17.50`
+        Example: `192.0.2.5`
 
 
         :param vpn_ip: The vpn_ip of this IPSecConnectionTunnel.
@@ -224,9 +234,9 @@ class IPSecConnectionTunnel(object):
     def cpe_ip(self):
         """
         Gets the cpe_ip of this IPSecConnectionTunnel.
-        The IP address of Cpe headend.
+        The IP address of the CPE's VPN headend.
 
-        Example: `129.146.17.50`
+        Example: `192.0.2.157`
 
 
         :return: The cpe_ip of this IPSecConnectionTunnel.
@@ -238,9 +248,9 @@ class IPSecConnectionTunnel(object):
     def cpe_ip(self, cpe_ip):
         """
         Sets the cpe_ip of this IPSecConnectionTunnel.
-        The IP address of Cpe headend.
+        The IP address of the CPE's VPN headend.
 
-        Example: `129.146.17.50`
+        Example: `192.0.2.157`
 
 
         :param cpe_ip: The cpe_ip of this IPSecConnectionTunnel.
@@ -252,7 +262,7 @@ class IPSecConnectionTunnel(object):
     def status(self):
         """
         Gets the status of this IPSecConnectionTunnel.
-        The tunnel's current state.
+        The status of the tunnel based on IPSec protocol characteristics.
 
         Allowed values for this property are: "UP", "DOWN", "DOWN_FOR_MAINTENANCE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -267,7 +277,7 @@ class IPSecConnectionTunnel(object):
     def status(self, status):
         """
         Sets the status of this IPSecConnectionTunnel.
-        The tunnel's current state.
+        The status of the tunnel based on IPSec protocol characteristics.
 
 
         :param status: The status of this IPSecConnectionTunnel.
@@ -282,7 +292,7 @@ class IPSecConnectionTunnel(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this IPSecConnectionTunnel.
-        The IPSec connection's tunnel's lifecycle state.
+        The tunnel's lifecycle state.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -297,7 +307,7 @@ class IPSecConnectionTunnel(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this IPSecConnectionTunnel.
-        The IPSec connection's tunnel's lifecycle state.
+        The tunnel's lifecycle state.
 
 
         :param lifecycle_state: The lifecycle_state of this IPSecConnectionTunnel.
@@ -338,7 +348,7 @@ class IPSecConnectionTunnel(object):
     def bgp_session_info(self):
         """
         Gets the bgp_session_info of this IPSecConnectionTunnel.
-        Information needed to establish a BGP Session on an interface.
+        Information for establishing the tunnel's BGP session.
 
 
         :return: The bgp_session_info of this IPSecConnectionTunnel.
@@ -350,7 +360,7 @@ class IPSecConnectionTunnel(object):
     def bgp_session_info(self, bgp_session_info):
         """
         Sets the bgp_session_info of this IPSecConnectionTunnel.
-        Information needed to establish a BGP Session on an interface.
+        Information for establishing the tunnel's BGP session.
 
 
         :param bgp_session_info: The bgp_session_info of this IPSecConnectionTunnel.
@@ -362,7 +372,7 @@ class IPSecConnectionTunnel(object):
     def routing(self):
         """
         Gets the routing of this IPSecConnectionTunnel.
-        the routing strategy used for this tunnel, either static route or BGP dynamic routing
+        The type of routing used for this tunnel (either BGP dynamic routing or static routing).
 
         Allowed values for this property are: "BGP", "STATIC", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -377,7 +387,7 @@ class IPSecConnectionTunnel(object):
     def routing(self, routing):
         """
         Sets the routing of this IPSecConnectionTunnel.
-        the routing strategy used for this tunnel, either static route or BGP dynamic routing
+        The type of routing used for this tunnel (either BGP dynamic routing or static routing).
 
 
         :param routing: The routing of this IPSecConnectionTunnel.

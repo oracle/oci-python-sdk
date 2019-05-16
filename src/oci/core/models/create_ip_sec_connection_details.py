@@ -353,6 +353,11 @@ class CreateIPSecConnectionDetails(object):
         Static routes to the CPE. A static route's CIDR must not be a
         multicast address or class E address.
 
+        Used for routing a given IPSec tunnel's traffic only if the tunnel
+        is using static routing. If you configure at least one tunnel to use static routing, then
+        you must provide at least one valid static route. If you configure both
+        tunnels to use BGP dynamic routing, you can provide an empty list for the static routes.
+        For more information, see the important note in :class:`IPSecConnection`.
 
 
         Example: `10.0.1.0/24`
@@ -370,6 +375,11 @@ class CreateIPSecConnectionDetails(object):
         Static routes to the CPE. A static route's CIDR must not be a
         multicast address or class E address.
 
+        Used for routing a given IPSec tunnel's traffic only if the tunnel
+        is using static routing. If you configure at least one tunnel to use static routing, then
+        you must provide at least one valid static route. If you configure both
+        tunnels to use BGP dynamic routing, you can provide an empty list for the static routes.
+        For more information, see the important note in :class:`IPSecConnection`.
 
 
         Example: `10.0.1.0/24`
@@ -384,7 +394,9 @@ class CreateIPSecConnectionDetails(object):
     def tunnel_configuration(self):
         """
         Gets the tunnel_configuration of this CreateIPSecConnectionDetails.
-        array of tunnel parameters to create tunnels for IPSecConnection.
+        Information for creating the individual tunnels in the IPSec connection. You can provide a
+        maximum of 2 `tunnelConfiguration` objects in the array (one for each of the
+        two tunnels).
 
 
         :return: The tunnel_configuration of this CreateIPSecConnectionDetails.
@@ -396,7 +408,9 @@ class CreateIPSecConnectionDetails(object):
     def tunnel_configuration(self, tunnel_configuration):
         """
         Sets the tunnel_configuration of this CreateIPSecConnectionDetails.
-        array of tunnel parameters to create tunnels for IPSecConnection.
+        Information for creating the individual tunnels in the IPSec connection. You can provide a
+        maximum of 2 `tunnelConfiguration` objects in the array (one for each of the
+        two tunnels).
 
 
         :param tunnel_configuration: The tunnel_configuration of this CreateIPSecConnectionDetails.

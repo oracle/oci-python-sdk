@@ -36,9 +36,9 @@ class UpdateIPSecConnectionTunnelSharedSecretDetails(object):
     def shared_secret(self):
         """
         Gets the shared_secret of this UpdateIPSecConnectionTunnelSharedSecretDetails.
-        The shared secret of the IPSec tunnel.
+        The shared secret (pre-shared key) to use for the tunnel.
 
-        Example: `vFG2IF6TWq4UToUiLSRDoJEUs6j1c.p8G.dVQxiMfMO0yXMLi.lZTbYIWhGu4V8o`
+        Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
 
 
         :return: The shared_secret of this UpdateIPSecConnectionTunnelSharedSecretDetails.
@@ -50,9 +50,9 @@ class UpdateIPSecConnectionTunnelSharedSecretDetails(object):
     def shared_secret(self, shared_secret):
         """
         Sets the shared_secret of this UpdateIPSecConnectionTunnelSharedSecretDetails.
-        The shared secret of the IPSec tunnel.
+        The shared secret (pre-shared key) to use for the tunnel.
 
-        Example: `vFG2IF6TWq4UToUiLSRDoJEUs6j1c.p8G.dVQxiMfMO0yXMLi.lZTbYIWhGu4V8o`
+        Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
 
 
         :param shared_secret: The shared_secret of this UpdateIPSecConnectionTunnelSharedSecretDetails.

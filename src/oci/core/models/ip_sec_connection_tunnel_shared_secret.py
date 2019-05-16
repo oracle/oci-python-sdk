@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class IPSecConnectionTunnelSharedSecret(object):
     """
-    The shared secret of a IPSec connection's specified tunnel.
+    The tunnel's shared secret (pre-shared key).
     """
 
     def __init__(self, **kwargs):
@@ -36,9 +36,9 @@ class IPSecConnectionTunnelSharedSecret(object):
     def shared_secret(self):
         """
         **[Required]** Gets the shared_secret of this IPSecConnectionTunnelSharedSecret.
-        The shared secret of the IPSec tunnel.
+        The tunnel's shared secret (pre-shared key).
 
-        Example: `vFG2IF6TWq4UToUiLSRDoJEUs6j1c.p8G.dVQxiMfMO0yXMLi.lZTbYIWhGu4V8o`
+        Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
 
 
         :return: The shared_secret of this IPSecConnectionTunnelSharedSecret.
@@ -50,9 +50,9 @@ class IPSecConnectionTunnelSharedSecret(object):
     def shared_secret(self, shared_secret):
         """
         Sets the shared_secret of this IPSecConnectionTunnelSharedSecret.
-        The shared secret of the IPSec tunnel.
+        The tunnel's shared secret (pre-shared key).
 
-        Example: `vFG2IF6TWq4UToUiLSRDoJEUs6j1c.p8G.dVQxiMfMO0yXMLi.lZTbYIWhGu4V8o`
+        Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
 
 
         :param shared_secret: The shared_secret of this IPSecConnectionTunnelSharedSecret.

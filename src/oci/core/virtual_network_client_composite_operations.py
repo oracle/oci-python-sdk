@@ -1853,7 +1853,9 @@ class VirtualNetworkClientCompositeOperations(object):
             The OCID of the IPSec connection.
 
         :param str tunnel_id: (required)
-            The OCID of the IPSec connection's tunnel.
+            The `OCID`__ of the tunnel.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateIPSecConnectionTunnelDetails update_ip_sec_connection_tunnel_details: (required)
             Details object for updating a IPSecConnection tunnel's details.
