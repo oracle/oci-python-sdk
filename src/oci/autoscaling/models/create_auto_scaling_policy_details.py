@@ -9,7 +9,12 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateAutoScalingPolicyDetails(object):
     """
-    An AutoScalingConfiguration Policy creation details
+    Creation details for an autoscaling policy.
+
+    Each autoscaling configuration can have one autoscaling policy.
+
+    In a threshold-based autoscaling policy, an autoscaling action is triggered when a performance metric meets
+    or exceeds a threshold.
     """
 
     def __init__(self, **kwargs):
@@ -67,7 +72,7 @@ class CreateAutoScalingPolicyDetails(object):
     def capacity(self):
         """
         **[Required]** Gets the capacity of this CreateAutoScalingPolicyDetails.
-        The capacity requirements of the Policy
+        The capacity requirements of the autoscaling policy.
 
 
         :return: The capacity of this CreateAutoScalingPolicyDetails.
@@ -79,7 +84,7 @@ class CreateAutoScalingPolicyDetails(object):
     def capacity(self, capacity):
         """
         Sets the capacity of this CreateAutoScalingPolicyDetails.
-        The capacity requirements of the Policy
+        The capacity requirements of the autoscaling policy.
 
 
         :param capacity: The capacity of this CreateAutoScalingPolicyDetails.
@@ -91,8 +96,7 @@ class CreateAutoScalingPolicyDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateAutoScalingPolicyDetails.
-        A user-friendly name for the Policy. Does not have to be unique, and it's changeable. Avoid entering
-        confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :return: The display_name of this CreateAutoScalingPolicyDetails.
@@ -104,8 +108,7 @@ class CreateAutoScalingPolicyDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateAutoScalingPolicyDetails.
-        A user-friendly name for the Policy. Does not have to be unique, and it's changeable. Avoid entering
-        confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateAutoScalingPolicyDetails.
@@ -117,7 +120,7 @@ class CreateAutoScalingPolicyDetails(object):
     def policy_type(self):
         """
         **[Required]** Gets the policy_type of this CreateAutoScalingPolicyDetails.
-        Indicates type of Policy
+        The type of autoscaling policy.
 
 
         :return: The policy_type of this CreateAutoScalingPolicyDetails.
@@ -129,7 +132,7 @@ class CreateAutoScalingPolicyDetails(object):
     def policy_type(self, policy_type):
         """
         Sets the policy_type of this CreateAutoScalingPolicyDetails.
-        Indicates type of Policy
+        The type of autoscaling policy.
 
 
         :param policy_type: The policy_type of this CreateAutoScalingPolicyDetails.

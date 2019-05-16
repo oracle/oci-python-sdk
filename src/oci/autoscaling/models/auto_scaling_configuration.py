@@ -9,7 +9,10 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutoScalingConfiguration(object):
     """
-    AutoScalingConfiguration model.
+    An autoscaling configuration allows you to dynamically scale the resources in a Compute instance pool.
+    For more information, see `Autoscaling`__.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/autoscalinginstancepools.htm
     """
 
     def __init__(self, **kwargs):
@@ -99,7 +102,9 @@ class AutoScalingConfiguration(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this AutoScalingConfiguration.
-        The OCID of the compartment containing the AutoScalingConfiguration.
+        The `OCID`__ of the compartment containing the autoscaling configuration.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this AutoScalingConfiguration.
@@ -111,7 +116,9 @@ class AutoScalingConfiguration(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this AutoScalingConfiguration.
-        The OCID of the compartment containing the AutoScalingConfiguration.
+        The `OCID`__ of the compartment containing the autoscaling configuration.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this AutoScalingConfiguration.
@@ -157,8 +164,7 @@ class AutoScalingConfiguration(object):
     def display_name(self):
         """
         Gets the display_name of this AutoScalingConfiguration.
-        A user-friendly name for the AutoScalingConfiguration. Does not have to be unique, and it's changeable.
-        Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :return: The display_name of this AutoScalingConfiguration.
@@ -170,8 +176,7 @@ class AutoScalingConfiguration(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this AutoScalingConfiguration.
-        A user-friendly name for the AutoScalingConfiguration. Does not have to be unique, and it's changeable.
-        Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this AutoScalingConfiguration.
@@ -217,7 +222,9 @@ class AutoScalingConfiguration(object):
     def id(self):
         """
         **[Required]** Gets the id of this AutoScalingConfiguration.
-        The OCID of the AutoScalingConfiguration
+        The `OCID`__ of the autoscaling configuration.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this AutoScalingConfiguration.
@@ -229,7 +236,9 @@ class AutoScalingConfiguration(object):
     def id(self, id):
         """
         Sets the id of this AutoScalingConfiguration.
-        The OCID of the AutoScalingConfiguration
+        The `OCID`__ of the autoscaling configuration.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this AutoScalingConfiguration.
@@ -241,7 +250,8 @@ class AutoScalingConfiguration(object):
     def cool_down_in_seconds(self):
         """
         Gets the cool_down_in_seconds of this AutoScalingConfiguration.
-        The minimum period of time between scaling actions. The default is 300 seconds.
+        The minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize
+        before rescaling. The minimum value is 300 seconds, which is also the default.
 
 
         :return: The cool_down_in_seconds of this AutoScalingConfiguration.
@@ -253,7 +263,8 @@ class AutoScalingConfiguration(object):
     def cool_down_in_seconds(self, cool_down_in_seconds):
         """
         Sets the cool_down_in_seconds of this AutoScalingConfiguration.
-        The minimum period of time between scaling actions. The default is 300 seconds.
+        The minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize
+        before rescaling. The minimum value is 300 seconds, which is also the default.
 
 
         :param cool_down_in_seconds: The cool_down_in_seconds of this AutoScalingConfiguration.
@@ -265,7 +276,7 @@ class AutoScalingConfiguration(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this AutoScalingConfiguration.
-        If the AutoScalingConfiguration is enabled
+        Whether the autoscaling configuration is enabled.
 
 
         :return: The is_enabled of this AutoScalingConfiguration.
@@ -277,7 +288,7 @@ class AutoScalingConfiguration(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this AutoScalingConfiguration.
-        If the AutoScalingConfiguration is enabled
+        Whether the autoscaling configuration is enabled.
 
 
         :param is_enabled: The is_enabled of this AutoScalingConfiguration.
@@ -309,7 +320,10 @@ class AutoScalingConfiguration(object):
     def policies(self):
         """
         **[Required]** Gets the policies of this AutoScalingConfiguration.
-        AutoScalingConfiguration policy definitions
+        Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that
+        trigger autoscaling actions and the actions to take.
+
+        Each autoscaling configuration can have one autoscaling policy.
 
 
         :return: The policies of this AutoScalingConfiguration.
@@ -321,7 +335,10 @@ class AutoScalingConfiguration(object):
     def policies(self, policies):
         """
         Sets the policies of this AutoScalingConfiguration.
-        AutoScalingConfiguration policy definitions
+        Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that
+        trigger autoscaling actions and the actions to take.
+
+        Each autoscaling configuration can have one autoscaling policy.
 
 
         :param policies: The policies of this AutoScalingConfiguration.
@@ -334,6 +351,7 @@ class AutoScalingConfiguration(object):
         """
         **[Required]** Gets the time_created of this AutoScalingConfiguration.
         The date and time the AutoScalingConfiguration was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
 
 
@@ -347,6 +365,7 @@ class AutoScalingConfiguration(object):
         """
         Sets the time_created of this AutoScalingConfiguration.
         The date and time the AutoScalingConfiguration was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
 
 

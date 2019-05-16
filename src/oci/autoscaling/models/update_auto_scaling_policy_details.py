@@ -91,7 +91,7 @@ class UpdateAutoScalingPolicyDetails(object):
     def capacity(self):
         """
         Gets the capacity of this UpdateAutoScalingPolicyDetails.
-        The capacity requirements of the Policy
+        The capacity requirements of the autoscaling policy.
 
 
         :return: The capacity of this UpdateAutoScalingPolicyDetails.
@@ -103,7 +103,7 @@ class UpdateAutoScalingPolicyDetails(object):
     def capacity(self, capacity):
         """
         Sets the capacity of this UpdateAutoScalingPolicyDetails.
-        The capacity requirements of the Policy
+        The capacity requirements of the autoscaling policy.
 
 
         :param capacity: The capacity of this UpdateAutoScalingPolicyDetails.
@@ -115,7 +115,7 @@ class UpdateAutoScalingPolicyDetails(object):
     def policy_type(self):
         """
         **[Required]** Gets the policy_type of this UpdateAutoScalingPolicyDetails.
-        Indicates type of Policy
+        Indicates the type of autoscaling policy.
 
 
         :return: The policy_type of this UpdateAutoScalingPolicyDetails.
@@ -127,7 +127,7 @@ class UpdateAutoScalingPolicyDetails(object):
     def policy_type(self, policy_type):
         """
         Sets the policy_type of this UpdateAutoScalingPolicyDetails.
-        Indicates type of Policy
+        Indicates the type of autoscaling policy.
 
 
         :param policy_type: The policy_type of this UpdateAutoScalingPolicyDetails.

@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Condition(object):
     """
-    A container for metric and action details
+    A rule that defines a specific autoscaling action to take (scale in or scale out) and the metric that triggers that action.
     """
 
     def __init__(self, **kwargs):
@@ -77,8 +77,7 @@ class Condition(object):
     def display_name(self):
         """
         Gets the display_name of this Condition.
-        A user-friendly name for the AutoScalingConfiguration condition details. Does not have to be unique, and
-        it's changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :return: The display_name of this Condition.
@@ -90,8 +89,7 @@ class Condition(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Condition.
-        A user-friendly name for the AutoScalingConfiguration condition details. Does not have to be unique, and
-        it's changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this Condition.
@@ -103,7 +101,7 @@ class Condition(object):
     def id(self):
         """
         Gets the id of this Condition.
-        Id of the condition that is assigned after creation
+        ID of the condition that is assigned after creation.
 
 
         :return: The id of this Condition.
@@ -115,7 +113,7 @@ class Condition(object):
     def id(self, id):
         """
         Sets the id of this Condition.
-        Id of the condition that is assigned after creation
+        ID of the condition that is assigned after creation.
 
 
         :param id: The id of this Condition.

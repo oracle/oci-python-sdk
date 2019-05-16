@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Capacity(object):
     """
-    Capacity boundaries for the pool
+    Capacity limits for the instance pool.
     """
 
     def __init__(self, **kwargs):
@@ -50,7 +50,7 @@ class Capacity(object):
     def max(self):
         """
         **[Required]** Gets the max of this Capacity.
-        The maximum size the pool is allowed to increase to
+        The maximum number of instances the instance pool is allowed to increase to (scale out).
 
 
         :return: The max of this Capacity.
@@ -62,7 +62,7 @@ class Capacity(object):
     def max(self, max):
         """
         Sets the max of this Capacity.
-        The maximum size the pool is allowed to increase to
+        The maximum number of instances the instance pool is allowed to increase to (scale out).
 
 
         :param max: The max of this Capacity.
@@ -74,7 +74,7 @@ class Capacity(object):
     def min(self):
         """
         **[Required]** Gets the min of this Capacity.
-        The minimum size the pool is allowed to decrease to
+        The minimum number of instances the instance pool is allowed to decrease to (scale in).
 
 
         :return: The min of this Capacity.
@@ -86,7 +86,7 @@ class Capacity(object):
     def min(self, min):
         """
         Sets the min of this Capacity.
-        The minimum size the pool is allowed to decrease to
+        The minimum number of instances the instance pool is allowed to decrease to (scale in).
 
 
         :param min: The min of this Capacity.
@@ -98,7 +98,9 @@ class Capacity(object):
     def initial(self):
         """
         **[Required]** Gets the initial of this Capacity.
-        The initial size of the pool
+        The initial number of instances to launch in the instance pool immediately after autoscaling is
+        enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this
+        initial number to a number that is based on the limits that you set.
 
 
         :return: The initial of this Capacity.
@@ -110,7 +112,9 @@ class Capacity(object):
     def initial(self, initial):
         """
         Sets the initial of this Capacity.
-        The initial size of the pool
+        The initial number of instances to launch in the instance pool immediately after autoscaling is
+        enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this
+        initial number to a number that is based on the limits that you set.
 
 
         :param initial: The initial of this Capacity.

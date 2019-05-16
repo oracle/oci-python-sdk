@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstancePoolResource(Resource):
     """
-    An Instance Pool resource
+    A Compute instance pool.
     """
 
     def __init__(self, **kwargs):
