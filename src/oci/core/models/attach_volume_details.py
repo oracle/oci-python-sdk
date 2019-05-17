@@ -17,6 +17,8 @@ class AttachVolumeDetails(object):
         Initializes a new AttachVolumeDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.core.models.AttachServiceDeterminedVolumeDetails`
+        * :class:`~oci.core.models.AttachEmulatedVolumeDetails`
         * :class:`~oci.core.models.AttachIScsiVolumeDetails`
         * :class:`~oci.core.models.AttachParavirtualizedVolumeDetails`
 
@@ -79,6 +81,12 @@ class AttachVolumeDetails(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['type']
+
+        if type == 'service_determined':
+            return 'AttachServiceDeterminedVolumeDetails'
+
+        if type == 'emulated':
+            return 'AttachEmulatedVolumeDetails'
 
         if type == 'iscsi':
             return 'AttachIScsiVolumeDetails'
