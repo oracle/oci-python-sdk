@@ -2010,6 +2010,46 @@ def test_get_user_group_membership(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_user_ui_password_information(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity', 'GetUserUIPasswordInformation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'GetUserUIPasswordInformation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='GetUserUIPasswordInformation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
+            response = client.get_user_ui_password_information(
+                user_id=request.pop(util.camelize('user_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'GetUserUIPasswordInformation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'uIPasswordInformation',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_get_work_request(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'GetWorkRequest'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
