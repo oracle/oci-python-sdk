@@ -31,6 +31,7 @@ API Reference
 * :doc:`Stream Admin <streaming/client/oci.streaming.StreamAdminClient>`
 * :doc:`Stream <streaming/client/oci.streaming.StreamClient>`
 * :doc:`Waas <waas/client/oci.waas.WaasClient>`
+* :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
 
 .. rubric:: Other Modules
 
@@ -70,6 +71,7 @@ API Reference
     resource_search
     streaming
     waas
+    work_requests
     config
     exceptions
     pagination
