@@ -228,21 +228,21 @@ class ShowOCIService(object):
     # Service not yet available - need to remove on availability
     ##########################################################################
     service_not_available_array = [
-        {'eu-frankfurt-1', C_EMAIL},
-        {'uk-london-1', C_EMAIL},
-        {'ca-toronto-1', C_EMAIL},
-        {'ap-tokyo-1', C_EMAIL},
-        {'ap-tokyo-1', C_EDGE},
-        {'ap-tokyo-1', C_MONITORING},
-        {'ap-tokyo-1', C_COMPUTE_AUTOSCALING},
-        {'ap-tokyo-1', C_STREAMS},
-        {'ap-tokyo-1', C_NOTIFICATIONS},
-        {'ap-seoul-1', C_EMAIL},
-        {'ap-seoul-1', C_EDGE},
-        {'ap-seoul-1', C_MONITORING},
-        {'ap-seoul-1', C_COMPUTE_AUTOSCALING},
-        {'ap-seoul-1', C_STREAMS},
-        {'ap-seoul-1', C_NOTIFICATIONS}
+        {'region': 'eu-frankfurt-1', 'service': C_EMAIL},
+        {'region': 'uk-london-1', 'service': C_EMAIL},
+        {'region': 'ca-toronto-1', 'service': C_EMAIL},
+        {'region': 'ap-tokyo-1', 'service': C_EMAIL},
+        {'region': 'ap-tokyo-1', 'service': C_EDGE},
+        {'region': 'ap-tokyo-1', 'service': C_MONITORING},
+        {'region': 'ap-tokyo-1', 'service': C_COMPUTE_AUTOSCALING},
+        {'region': 'ap-tokyo-1', 'service': C_STREAMS},
+        {'region': 'ap-tokyo-1', 'service': C_NOTIFICATIONS},
+        {'region': 'ap-seoul-1', 'service': C_EMAIL},
+        {'region': 'ap-seoul-1', 'service': C_EDGE},
+        {'region': 'ap-seoul-1', 'service': C_MONITORING},
+        {'region': 'ap-seoul-1', 'service': C_COMPUTE_AUTOSCALING},
+        {'region': 'ap-seoul-1', 'service': C_STREAMS},
+        {'region': 'ap-seoul-1', 'service': C_NOTIFICATIONS}
     ]
 
     ##########################################################################
@@ -400,8 +400,8 @@ class ShowOCIService(object):
     # check if service available (if not exist in the array then available
     ##########################################################################
     def check_if_service_available(self, region_name, service_name):
-        for region, service in self.service_not_available_array:
-            if region_name == region and service_name == service:
+        for array in self.service_not_available_array:
+            if array['region'] == region_name and array['service'] == service_name:
                 return False
         return True
 
