@@ -9,7 +9,10 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateThresholdPolicyDetails(CreateAutoScalingPolicyDetails):
     """
-    An AutoScalingConfiguration ThresholdPolicy creation details
+    Creation details for a threshold-based autoscaling policy.
+
+    In a threshold-based autoscaling policy, an autoscaling action is triggered when a performance metric meets
+    or exceeds a threshold.
     """
 
     def __init__(self, **kwargs):

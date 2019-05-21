@@ -203,7 +203,7 @@ class CreateInstancePoolDetails(object):
     def instance_configuration_id(self):
         """
         **[Required]** Gets the instance_configuration_id of this CreateInstancePoolDetails.
-        The OCID of the instance configuration associated to the instance pool.
+        The OCID of the instance configuration associated with the instance pool.
 
 
         :return: The instance_configuration_id of this CreateInstancePoolDetails.
@@ -215,7 +215,7 @@ class CreateInstancePoolDetails(object):
     def instance_configuration_id(self, instance_configuration_id):
         """
         Sets the instance_configuration_id of this CreateInstancePoolDetails.
-        The OCID of the instance configuration associated to the instance pool.
+        The OCID of the instance configuration associated with the instance pool.
 
 
         :param instance_configuration_id: The instance_configuration_id of this CreateInstancePoolDetails.
@@ -227,8 +227,12 @@ class CreateInstancePoolDetails(object):
     def placement_configurations(self):
         """
         **[Required]** Gets the placement_configurations of this CreateInstancePoolDetails.
-        The placement configurations for the instance pool.
-        There should be 1 placement configuration for each desired AD.
+        The placement configurations for the instance pool. Provide one placement configuration for
+        each availability domain.
+
+        To use the instance pool with a regional subnet, provide a placement configuration for
+        each availability domain, and include the regional subnet in each placement
+        configuration.
 
 
         :return: The placement_configurations of this CreateInstancePoolDetails.
@@ -240,8 +244,12 @@ class CreateInstancePoolDetails(object):
     def placement_configurations(self, placement_configurations):
         """
         Sets the placement_configurations of this CreateInstancePoolDetails.
-        The placement configurations for the instance pool.
-        There should be 1 placement configuration for each desired AD.
+        The placement configurations for the instance pool. Provide one placement configuration for
+        each availability domain.
+
+        To use the instance pool with a regional subnet, provide a placement configuration for
+        each availability domain, and include the regional subnet in each placement
+        configuration.
 
 
         :param placement_configurations: The placement_configurations of this CreateInstancePoolDetails.

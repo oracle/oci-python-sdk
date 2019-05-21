@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateAutoScalingConfigurationDetails(object):
     """
-    An AutoScalingConfiguration creation details
+    Creation details for an autoscaling configuration.
     """
 
     def __init__(self, **kwargs):
@@ -85,7 +85,10 @@ class CreateAutoScalingConfigurationDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateAutoScalingConfigurationDetails.
-        The OCID of the compartment containing the AutoScalingConfiguration.
+        The `OCID`__ of the compartment containing the autoscaling configuration.
+        The autoscaling configuration and the instance pool that it manages must be in the same compartment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateAutoScalingConfigurationDetails.
@@ -97,7 +100,10 @@ class CreateAutoScalingConfigurationDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateAutoScalingConfigurationDetails.
-        The OCID of the compartment containing the AutoScalingConfiguration.
+        The `OCID`__ of the compartment containing the autoscaling configuration.
+        The autoscaling configuration and the instance pool that it manages must be in the same compartment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateAutoScalingConfigurationDetails.
@@ -143,8 +149,7 @@ class CreateAutoScalingConfigurationDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateAutoScalingConfigurationDetails.
-        A user-friendly name for the AutoScalingConfiguration. Does not have to be unique, and it's changeable.
-        Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :return: The display_name of this CreateAutoScalingConfigurationDetails.
@@ -156,8 +161,7 @@ class CreateAutoScalingConfigurationDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateAutoScalingConfigurationDetails.
-        A user-friendly name for the AutoScalingConfiguration. Does not have to be unique, and it's changeable.
-        Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateAutoScalingConfigurationDetails.
@@ -203,7 +207,8 @@ class CreateAutoScalingConfigurationDetails(object):
     def cool_down_in_seconds(self):
         """
         Gets the cool_down_in_seconds of this CreateAutoScalingConfigurationDetails.
-        The minimum period of time between scaling actions. The default is 300 seconds.
+        The minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize
+        before rescaling. The minimum value is 300 seconds, which is also the default.
 
 
         :return: The cool_down_in_seconds of this CreateAutoScalingConfigurationDetails.
@@ -215,7 +220,8 @@ class CreateAutoScalingConfigurationDetails(object):
     def cool_down_in_seconds(self, cool_down_in_seconds):
         """
         Sets the cool_down_in_seconds of this CreateAutoScalingConfigurationDetails.
-        The minimum period of time between scaling actions. The default is 300 seconds.
+        The minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize
+        before rescaling. The minimum value is 300 seconds, which is also the default.
 
 
         :param cool_down_in_seconds: The cool_down_in_seconds of this CreateAutoScalingConfigurationDetails.
@@ -227,7 +233,7 @@ class CreateAutoScalingConfigurationDetails(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this CreateAutoScalingConfigurationDetails.
-        If the AutoScalingConfiguration is enabled
+        Whether the autoscaling configuration is enabled.
 
 
         :return: The is_enabled of this CreateAutoScalingConfigurationDetails.
@@ -239,7 +245,7 @@ class CreateAutoScalingConfigurationDetails(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this CreateAutoScalingConfigurationDetails.
-        If the AutoScalingConfiguration is enabled
+        Whether the autoscaling configuration is enabled.
 
 
         :param is_enabled: The is_enabled of this CreateAutoScalingConfigurationDetails.

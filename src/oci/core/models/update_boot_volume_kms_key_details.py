@@ -36,10 +36,9 @@ class UpdateBootVolumeKmsKeyDetails(object):
     def kms_key_id(self):
         """
         Gets the kms_key_id of this UpdateBootVolumeKmsKeyDetails.
-        The new kms key which will be used to protect the specific volume.
-        This key has to be a valid kms key ocid, and user must have key delegation policy to allow them to access this key.
-        Even if this new kms key is the same as the previous kms key id, block storage service will use it to regenerate a new volume encryption key.
-        Example: `{\"kmsKeyId\": \"ocid1.key.region1.sea.afnl2n7daag4s.abzwkljs6uevhlgcznhmh7oiatyrxngrywc3tje3uk3g77hzmewqiieuk75f\"}`
+        The OCID of the new KMS key which will be used to protect the specified volume.
+        This key has to be a valid KMS key OCID, and the user must have key delegation policy to allow them to access this key.
+        Even if the new KMS key is the same as the previous KMS key ID, the Block Volume service will use it to regenerate a new volume encryption key.
 
 
         :return: The kms_key_id of this UpdateBootVolumeKmsKeyDetails.
@@ -51,10 +50,9 @@ class UpdateBootVolumeKmsKeyDetails(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this UpdateBootVolumeKmsKeyDetails.
-        The new kms key which will be used to protect the specific volume.
-        This key has to be a valid kms key ocid, and user must have key delegation policy to allow them to access this key.
-        Even if this new kms key is the same as the previous kms key id, block storage service will use it to regenerate a new volume encryption key.
-        Example: `{\"kmsKeyId\": \"ocid1.key.region1.sea.afnl2n7daag4s.abzwkljs6uevhlgcznhmh7oiatyrxngrywc3tje3uk3g77hzmewqiieuk75f\"}`
+        The OCID of the new KMS key which will be used to protect the specified volume.
+        This key has to be a valid KMS key OCID, and the user must have key delegation policy to allow them to access this key.
+        Even if the new KMS key is the same as the previous KMS key ID, the Block Volume service will use it to regenerate a new volume encryption key.
 
 
         :param kms_key_id: The kms_key_id of this UpdateBootVolumeKmsKeyDetails.

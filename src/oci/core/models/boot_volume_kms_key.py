@@ -36,7 +36,7 @@ class BootVolumeKmsKey(object):
     def kms_key_id(self):
         """
         Gets the kms_key_id of this BootVolumeKmsKey.
-        Kms key id associated with this volume. If volume is not using KMS, then kmsKeyId will be null string.
+        The OCID of the KMS key associated with this volume. If volume is not using KMS, then the `kmsKeyId` will be a null string.
 
 
         :return: The kms_key_id of this BootVolumeKmsKey.
@@ -48,7 +48,7 @@ class BootVolumeKmsKey(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this BootVolumeKmsKey.
-        Kms key id associated with this volume. If volume is not using KMS, then kmsKeyId will be null string.
+        The OCID of the KMS key associated with this volume. If volume is not using KMS, then the `kmsKeyId` will be a null string.
 
 
         :param kms_key_id: The kms_key_id of this BootVolumeKmsKey.

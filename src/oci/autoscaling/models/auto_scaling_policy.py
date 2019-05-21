@@ -9,7 +9,12 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutoScalingPolicy(object):
     """
-    A Policy defines the rules and actions of an AutoScalingConfiguration. The only supported type is 'threshold'
+    Autoscaling policies define the criteria that trigger autoscaling actions and the actions to take.
+
+    An autoscaling policy is part of an autoscaling configuration. For more information, see
+    `Autoscaling`__.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/autoscalinginstancepools.htm
     """
 
     def __init__(self, **kwargs):
@@ -81,7 +86,7 @@ class AutoScalingPolicy(object):
     def capacity(self):
         """
         **[Required]** Gets the capacity of this AutoScalingPolicy.
-        The capacity requirements of the Policy
+        The capacity requirements of the autoscaling policy.
 
 
         :return: The capacity of this AutoScalingPolicy.
@@ -93,7 +98,7 @@ class AutoScalingPolicy(object):
     def capacity(self, capacity):
         """
         Sets the capacity of this AutoScalingPolicy.
-        The capacity requirements of the Policy
+        The capacity requirements of the autoscaling policy.
 
 
         :param capacity: The capacity of this AutoScalingPolicy.
@@ -105,7 +110,7 @@ class AutoScalingPolicy(object):
     def id(self):
         """
         Gets the id of this AutoScalingPolicy.
-        The ID of the policy that is assigned after creation
+        The ID of the autoscaling policy that is assigned after creation.
 
 
         :return: The id of this AutoScalingPolicy.
@@ -117,7 +122,7 @@ class AutoScalingPolicy(object):
     def id(self, id):
         """
         Sets the id of this AutoScalingPolicy.
-        The ID of the policy that is assigned after creation
+        The ID of the autoscaling policy that is assigned after creation.
 
 
         :param id: The id of this AutoScalingPolicy.
@@ -129,8 +134,7 @@ class AutoScalingPolicy(object):
     def display_name(self):
         """
         Gets the display_name of this AutoScalingPolicy.
-        A user-friendly name for the Policy. Does not have to be unique, and it's changeable. Avoid entering
-        confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :return: The display_name of this AutoScalingPolicy.
@@ -142,8 +146,7 @@ class AutoScalingPolicy(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this AutoScalingPolicy.
-        A user-friendly name for the Policy. Does not have to be unique, and it's changeable. Avoid entering
-        confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this AutoScalingPolicy.
@@ -155,7 +158,7 @@ class AutoScalingPolicy(object):
     def policy_type(self):
         """
         **[Required]** Gets the policy_type of this AutoScalingPolicy.
-        Indicates type of Policy
+        The type of autoscaling policy.
 
 
         :return: The policy_type of this AutoScalingPolicy.
@@ -167,7 +170,7 @@ class AutoScalingPolicy(object):
     def policy_type(self, policy_type):
         """
         Sets the policy_type of this AutoScalingPolicy.
-        Indicates type of Policy
+        The type of autoscaling policy.
 
 
         :param policy_type: The policy_type of this AutoScalingPolicy.
@@ -179,7 +182,8 @@ class AutoScalingPolicy(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this AutoScalingPolicy.
-        The date and time the AutoScalingConfiguration was created, in the format defined by RFC3339.
+        The date and time the autoscaling configuration was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
 
 
@@ -192,7 +196,8 @@ class AutoScalingPolicy(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this AutoScalingPolicy.
-        The date and time the AutoScalingConfiguration was created, in the format defined by RFC3339.
+        The date and time the autoscaling configuration was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
 
 

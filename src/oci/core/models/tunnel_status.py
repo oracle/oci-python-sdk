@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TunnelStatus(object):
     """
-    Specific connection details for an IPSec tunnel.
+    Deprecated. For tunnel information, instead see :class:`IPSecConnectionTunnel`.
     """
 
     #: A constant which can be used with the lifecycle_state property of a TunnelStatus.

@@ -156,7 +156,7 @@ class UpdateAutoScalingConfigurationDetails(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this UpdateAutoScalingConfigurationDetails.
-        If the AutoScalingConfiguration is enabled
+        Whether the autoscaling configuration is enabled.
 
 
         :return: The is_enabled of this UpdateAutoScalingConfigurationDetails.
@@ -168,7 +168,7 @@ class UpdateAutoScalingConfigurationDetails(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this UpdateAutoScalingConfigurationDetails.
-        If the AutoScalingConfiguration is enabled
+        Whether the autoscaling configuration is enabled.
 
 
         :param is_enabled: The is_enabled of this UpdateAutoScalingConfigurationDetails.
@@ -180,7 +180,8 @@ class UpdateAutoScalingConfigurationDetails(object):
     def cool_down_in_seconds(self):
         """
         Gets the cool_down_in_seconds of this UpdateAutoScalingConfigurationDetails.
-        The minimum period of time between scaling actions. The default is 300 seconds.
+        The minimum period of time to wait between scaling actions. The cooldown period gives the system time
+        to stabilize before rescaling. The minimum value is 300 seconds, which is also the default.
 
 
         :return: The cool_down_in_seconds of this UpdateAutoScalingConfigurationDetails.
@@ -192,7 +193,8 @@ class UpdateAutoScalingConfigurationDetails(object):
     def cool_down_in_seconds(self, cool_down_in_seconds):
         """
         Sets the cool_down_in_seconds of this UpdateAutoScalingConfigurationDetails.
-        The minimum period of time between scaling actions. The default is 300 seconds.
+        The minimum period of time to wait between scaling actions. The cooldown period gives the system time
+        to stabilize before rescaling. The minimum value is 300 seconds, which is also the default.
 
 
         :param cool_down_in_seconds: The cool_down_in_seconds of this UpdateAutoScalingConfigurationDetails.

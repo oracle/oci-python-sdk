@@ -189,8 +189,12 @@ class UpdateInstancePoolDetails(object):
     def placement_configurations(self):
         """
         Gets the placement_configurations of this UpdateInstancePoolDetails.
-        The placement configurations for the instance pool.
-        There should be 1 placement configuration for each desired AD.
+        The placement configurations for the instance pool. Provide one placement configuration for
+        each availability domain.
+
+        To use the instance pool with a regional subnet, provide a placement configuration for
+        each availability domain, and include the regional subnet in each placement
+        configuration.
 
 
         :return: The placement_configurations of this UpdateInstancePoolDetails.
@@ -202,8 +206,12 @@ class UpdateInstancePoolDetails(object):
     def placement_configurations(self, placement_configurations):
         """
         Sets the placement_configurations of this UpdateInstancePoolDetails.
-        The placement configurations for the instance pool.
-        There should be 1 placement configuration for each desired AD.
+        The placement configurations for the instance pool. Provide one placement configuration for
+        each availability domain.
+
+        To use the instance pool with a regional subnet, provide a placement configuration for
+        each availability domain, and include the regional subnet in each placement
+        configuration.
 
 
         :param placement_configurations: The placement_configurations of this UpdateInstancePoolDetails.
