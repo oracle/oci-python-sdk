@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutoScalingConfigurationSummary(object):
     """
-    AutoScalingConfigurationSummary model.
+    Summary information for an autoscaling configuration.
     """
 
     def __init__(self, **kwargs):
@@ -41,6 +41,14 @@ class AutoScalingConfigurationSummary(object):
             The value to assign to the resource property of this AutoScalingConfigurationSummary.
         :type resource: Resource
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this AutoScalingConfigurationSummary.
+        :type defined_tags: dict(str, dict(str, object))
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this AutoScalingConfigurationSummary.
+        :type freeform_tags: dict(str, str)
+
         :param time_created:
             The value to assign to the time_created property of this AutoScalingConfigurationSummary.
         :type time_created: datetime
@@ -53,6 +61,8 @@ class AutoScalingConfigurationSummary(object):
             'cool_down_in_seconds': 'int',
             'is_enabled': 'bool',
             'resource': 'Resource',
+            'defined_tags': 'dict(str, dict(str, object))',
+            'freeform_tags': 'dict(str, str)',
             'time_created': 'datetime'
         }
 
@@ -63,6 +73,8 @@ class AutoScalingConfigurationSummary(object):
             'cool_down_in_seconds': 'coolDownInSeconds',
             'is_enabled': 'isEnabled',
             'resource': 'resource',
+            'defined_tags': 'definedTags',
+            'freeform_tags': 'freeformTags',
             'time_created': 'timeCreated'
         }
 
@@ -72,13 +84,17 @@ class AutoScalingConfigurationSummary(object):
         self._cool_down_in_seconds = None
         self._is_enabled = None
         self._resource = None
+        self._defined_tags = None
+        self._freeform_tags = None
         self._time_created = None
 
     @property
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this AutoScalingConfigurationSummary.
-        The OCID of the compartment containing the AutoScalingConfiguration.
+        The `OCID`__ of the compartment containing the autoscaling configuration.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this AutoScalingConfigurationSummary.
@@ -90,7 +106,9 @@ class AutoScalingConfigurationSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this AutoScalingConfigurationSummary.
-        The OCID of the compartment containing the AutoScalingConfiguration.
+        The `OCID`__ of the compartment containing the autoscaling configuration.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this AutoScalingConfigurationSummary.
@@ -102,8 +120,7 @@ class AutoScalingConfigurationSummary(object):
     def display_name(self):
         """
         Gets the display_name of this AutoScalingConfigurationSummary.
-        A user-friendly name for the AutoScalingConfiguration. Does not have to be unique, and it's changeable.
-        Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :return: The display_name of this AutoScalingConfigurationSummary.
@@ -115,8 +132,7 @@ class AutoScalingConfigurationSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this AutoScalingConfigurationSummary.
-        A user-friendly name for the AutoScalingConfiguration. Does not have to be unique, and it's changeable.
-        Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this AutoScalingConfigurationSummary.
@@ -128,7 +144,9 @@ class AutoScalingConfigurationSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this AutoScalingConfigurationSummary.
-        The OCID of the AutoScalingConfiguration
+        The `OCID`__ of the autoscaling configuration.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this AutoScalingConfigurationSummary.
@@ -140,7 +158,9 @@ class AutoScalingConfigurationSummary(object):
     def id(self, id):
         """
         Sets the id of this AutoScalingConfigurationSummary.
-        The OCID of the AutoScalingConfiguration
+        The `OCID`__ of the autoscaling configuration.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this AutoScalingConfigurationSummary.
@@ -152,7 +172,8 @@ class AutoScalingConfigurationSummary(object):
     def cool_down_in_seconds(self):
         """
         Gets the cool_down_in_seconds of this AutoScalingConfigurationSummary.
-        The minimum period of time between scaling actions. The default is 300 seconds.
+        The minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize
+        before rescaling. The minimum value is 300 seconds, which is also the default.
 
 
         :return: The cool_down_in_seconds of this AutoScalingConfigurationSummary.
@@ -164,7 +185,8 @@ class AutoScalingConfigurationSummary(object):
     def cool_down_in_seconds(self, cool_down_in_seconds):
         """
         Sets the cool_down_in_seconds of this AutoScalingConfigurationSummary.
-        The minimum period of time between scaling actions. The default is 300 seconds.
+        The minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize
+        before rescaling. The minimum value is 300 seconds, which is also the default.
 
 
         :param cool_down_in_seconds: The cool_down_in_seconds of this AutoScalingConfigurationSummary.
@@ -176,7 +198,7 @@ class AutoScalingConfigurationSummary(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this AutoScalingConfigurationSummary.
-        If the AutoScalingConfiguration is enabled
+        Whether the autoscaling configuration is enabled.
 
 
         :return: The is_enabled of this AutoScalingConfigurationSummary.
@@ -188,7 +210,7 @@ class AutoScalingConfigurationSummary(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this AutoScalingConfigurationSummary.
-        If the AutoScalingConfiguration is enabled
+        Whether the autoscaling configuration is enabled.
 
 
         :param is_enabled: The is_enabled of this AutoScalingConfigurationSummary.
@@ -217,10 +239,79 @@ class AutoScalingConfigurationSummary(object):
         self._resource = resource
 
     @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this AutoScalingConfigurationSummary.
+        Defined tags for this resource. Each key is predefined and scoped to a
+        namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this AutoScalingConfigurationSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this AutoScalingConfigurationSummary.
+        Defined tags for this resource. Each key is predefined and scoped to a
+        namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this AutoScalingConfigurationSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this AutoScalingConfigurationSummary.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this AutoScalingConfigurationSummary.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this AutoScalingConfigurationSummary.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this AutoScalingConfigurationSummary.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
     def time_created(self):
         """
         **[Required]** Gets the time_created of this AutoScalingConfigurationSummary.
         The date and time the AutoScalingConfiguration was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
 
 
@@ -234,6 +325,7 @@ class AutoScalingConfigurationSummary(object):
         """
         Sets the time_created of this AutoScalingConfigurationSummary.
         The date and time the AutoScalingConfiguration was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
 
 

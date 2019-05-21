@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateConditionDetails(object):
     """
-    Update details for Condition in a ThresholdPolicy
+    Update details for a condition in a threshold-based autoscaling policy.
     """
 
     def __init__(self, **kwargs):
@@ -70,8 +70,7 @@ class UpdateConditionDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateConditionDetails.
-        A user-friendly name for the AutoScalingConfiguration condition details. Does not have to be unique, and
-        it's changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateConditionDetails.
@@ -83,8 +82,7 @@ class UpdateConditionDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateConditionDetails.
-        A user-friendly name for the AutoScalingConfiguration condition details. Does not have to be unique, and
-        it's changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateConditionDetails.

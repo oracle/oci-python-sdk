@@ -36,7 +36,7 @@ class ServiceIdRequestDetails(object):
     def service_id(self):
         """
         **[Required]** Gets the service_id of this ServiceIdRequestDetails.
-        The `OCID`__ of the service.
+        The `OCID`__ of the :class:`Service`.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -50,7 +50,7 @@ class ServiceIdRequestDetails(object):
     def service_id(self, service_id):
         """
         Sets the service_id of this ServiceIdRequestDetails.
-        The `OCID`__ of the service.
+        The `OCID`__ of the :class:`Service`.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

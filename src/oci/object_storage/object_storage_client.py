@@ -74,6 +74,7 @@ class ObjectStorageClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
             'base_path': '/',
+            'service_endpoint_template': 'https://objectstorage.{region}.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("object_storage", config, signer, object_storage_type_mapping, **base_client_init_kwargs)
@@ -1145,10 +1146,16 @@ class ObjectStorageClient(object):
         the tenancy name in all lower-case letters. You cannot edit a namespace.
 
         GetNamespace returns the name of the Object Storage namespace for the user making the request.
+        If an optional compartmentId query parameter is provided, GetNamespace returns the namespace name of the corresponding
+        tenancy, provided the user has access to it.
 
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
+
+        :param str compartment_id: (optional)
+            This is an optional field representing the tenancy OCID or the compartment OCID within the tenancy whose Object Storage namespace
+            name has to be retrieved.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1167,12 +1174,18 @@ class ObjectStorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "opc_client_request_id"
+            "opc_client_request_id",
+            "compartment_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_namespace got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "compartmentId": kwargs.get("compartment_id", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -1190,12 +1203,14 @@ class ObjectStorageClient(object):
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="str")
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="str")
 
@@ -2641,7 +2656,11 @@ class ObjectStorageClient(object):
             100-continue
 
         :param str content_md5: (optional)
-            The base-64 encoded MD5 hash of the body.
+            The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Object Storage performs an integrity check
+            on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
+            If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
+
+            \"The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)\"
 
         :param str content_type: (optional)
             The content type of the object.  Defaults to 'application/octet-stream' if not overridden during the PutObject call.
@@ -3226,7 +3245,11 @@ class ObjectStorageClient(object):
             100-continue
 
         :param str content_md5: (optional)
-            The base-64 encoded MD5 hash of the body.
+            The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Object Storage performs an integrity check
+            on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
+            If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
+
+            \"The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)\"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.

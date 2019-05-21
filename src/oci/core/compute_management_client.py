@@ -17,7 +17,11 @@ missing = Sentinel("Missing")
 
 class ComputeManagementClient(object):
     """
-    APIs for Networking Service, Compute Service, and Block Volume Service.
+    API covering the [Networking](/iaas/Content/Network/Concepts/overview.htm),
+    [Compute](/iaas/Content/Compute/Concepts/computeoverview.htm), and
+    [Block Volume](/iaas/Content/Block/Concepts/overview.htm) services. Use this API
+    to manage resources such as virtual cloud networks (VCNs), compute instances, and
+    block storage volumes.
     """
 
     def __init__(self, config, **kwargs):
@@ -247,7 +251,7 @@ class ComputeManagementClient(object):
 
 
         :param CreateInstancePoolDetails create_instance_pool_details: (required)
-            Instance Pool creation details
+            Instance pool creation details
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or

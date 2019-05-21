@@ -61,11 +61,8 @@ class Threshold(object):
     def operator(self):
         """
         **[Required]** Gets the operator of this Threshold.
-        Support for the following operators
-        GT  - Greater than
-        GTE - Greater than equal to
-        LT  - Less than
-        LTE - Less than equal to
+        The comparison operator to use. Options are greater than (`GT`), greater than or equal to
+        (`GTE`), less than (`LT`), and less than or equal to (`LTE`).
 
         Allowed values for this property are: "GT", "GTE", "LT", "LTE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -80,11 +77,8 @@ class Threshold(object):
     def operator(self, operator):
         """
         Sets the operator of this Threshold.
-        Support for the following operators
-        GT  - Greater than
-        GTE - Greater than equal to
-        LT  - Less than
-        LTE - Less than equal to
+        The comparison operator to use. Options are greater than (`GT`), greater than or equal to
+        (`GTE`), less than (`LT`), and less than or equal to (`LTE`).
 
 
         :param operator: The operator of this Threshold.

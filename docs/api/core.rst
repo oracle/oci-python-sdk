@@ -37,6 +37,7 @@ Core Services
     oci.core.models.AttachParavirtualizedVolumeDetails
     oci.core.models.AttachVnicDetails
     oci.core.models.AttachVolumeDetails
+    oci.core.models.BgpSessionInfo
     oci.core.models.BootVolume
     oci.core.models.BootVolumeAttachment
     oci.core.models.BootVolumeBackup
@@ -63,6 +64,8 @@ Core Services
     oci.core.models.CreateDrgAttachmentDetails
     oci.core.models.CreateDrgDetails
     oci.core.models.CreateIPSecConnectionDetails
+    oci.core.models.CreateIPSecConnectionTunnelDetails
+    oci.core.models.CreateIPSecTunnelBgpSessionDetails
     oci.core.models.CreateImageDetails
     oci.core.models.CreateInstanceConfigurationDetails
     oci.core.models.CreateInstanceConsoleConnectionDetails
@@ -113,6 +116,8 @@ Core Services
     oci.core.models.IPSecConnection
     oci.core.models.IPSecConnectionDeviceConfig
     oci.core.models.IPSecConnectionDeviceStatus
+    oci.core.models.IPSecConnectionTunnel
+    oci.core.models.IPSecConnectionTunnelSharedSecret
     oci.core.models.IScsiVolumeAttachment
     oci.core.models.IcmpOptions
     oci.core.models.Image
@@ -189,6 +194,9 @@ Core Services
     oci.core.models.UpdateDrgAttachmentDetails
     oci.core.models.UpdateDrgDetails
     oci.core.models.UpdateIPSecConnectionDetails
+    oci.core.models.UpdateIPSecConnectionTunnelDetails
+    oci.core.models.UpdateIPSecConnectionTunnelSharedSecretDetails
+    oci.core.models.UpdateIPSecTunnelBgpSessionDetails
     oci.core.models.UpdateImageDetails
     oci.core.models.UpdateInstanceAgentConfigDetails
     oci.core.models.UpdateInstanceConfigurationDetails

@@ -16,6 +16,7 @@ from .attach_load_balancer_details import AttachLoadBalancerDetails
 from .attach_paravirtualized_volume_details import AttachParavirtualizedVolumeDetails
 from .attach_vnic_details import AttachVnicDetails
 from .attach_volume_details import AttachVolumeDetails
+from .bgp_session_info import BgpSessionInfo
 from .boot_volume import BootVolume
 from .boot_volume_attachment import BootVolumeAttachment
 from .boot_volume_backup import BootVolumeBackup
@@ -42,6 +43,8 @@ from .create_dhcp_details import CreateDhcpDetails
 from .create_drg_attachment_details import CreateDrgAttachmentDetails
 from .create_drg_details import CreateDrgDetails
 from .create_ip_sec_connection_details import CreateIPSecConnectionDetails
+from .create_ip_sec_connection_tunnel_details import CreateIPSecConnectionTunnelDetails
+from .create_ip_sec_tunnel_bgp_session_details import CreateIPSecTunnelBgpSessionDetails
 from .create_image_details import CreateImageDetails
 from .create_instance_configuration_details import CreateInstanceConfigurationDetails
 from .create_instance_console_connection_details import CreateInstanceConsoleConnectionDetails
@@ -92,6 +95,8 @@ from .get_public_ip_by_private_ip_id_details import GetPublicIpByPrivateIpIdDeta
 from .ip_sec_connection import IPSecConnection
 from .ip_sec_connection_device_config import IPSecConnectionDeviceConfig
 from .ip_sec_connection_device_status import IPSecConnectionDeviceStatus
+from .ip_sec_connection_tunnel import IPSecConnectionTunnel
+from .ip_sec_connection_tunnel_shared_secret import IPSecConnectionTunnelSharedSecret
 from .i_scsi_volume_attachment import IScsiVolumeAttachment
 from .icmp_options import IcmpOptions
 from .image import Image
@@ -168,6 +173,9 @@ from .update_dhcp_details import UpdateDhcpDetails
 from .update_drg_attachment_details import UpdateDrgAttachmentDetails
 from .update_drg_details import UpdateDrgDetails
 from .update_ip_sec_connection_details import UpdateIPSecConnectionDetails
+from .update_ip_sec_connection_tunnel_details import UpdateIPSecConnectionTunnelDetails
+from .update_ip_sec_connection_tunnel_shared_secret_details import UpdateIPSecConnectionTunnelSharedSecretDetails
+from .update_ip_sec_tunnel_bgp_session_details import UpdateIPSecTunnelBgpSessionDetails
 from .update_image_details import UpdateImageDetails
 from .update_instance_agent_config_details import UpdateInstanceAgentConfigDetails
 from .update_instance_configuration_details import UpdateInstanceConfigurationDetails
@@ -230,6 +238,7 @@ core_type_mapping = {
     "AttachParavirtualizedVolumeDetails": AttachParavirtualizedVolumeDetails,
     "AttachVnicDetails": AttachVnicDetails,
     "AttachVolumeDetails": AttachVolumeDetails,
+    "BgpSessionInfo": BgpSessionInfo,
     "BootVolume": BootVolume,
     "BootVolumeAttachment": BootVolumeAttachment,
     "BootVolumeBackup": BootVolumeBackup,
@@ -256,6 +265,8 @@ core_type_mapping = {
     "CreateDrgAttachmentDetails": CreateDrgAttachmentDetails,
     "CreateDrgDetails": CreateDrgDetails,
     "CreateIPSecConnectionDetails": CreateIPSecConnectionDetails,
+    "CreateIPSecConnectionTunnelDetails": CreateIPSecConnectionTunnelDetails,
+    "CreateIPSecTunnelBgpSessionDetails": CreateIPSecTunnelBgpSessionDetails,
     "CreateImageDetails": CreateImageDetails,
     "CreateInstanceConfigurationDetails": CreateInstanceConfigurationDetails,
     "CreateInstanceConsoleConnectionDetails": CreateInstanceConsoleConnectionDetails,
@@ -306,6 +317,8 @@ core_type_mapping = {
     "IPSecConnection": IPSecConnection,
     "IPSecConnectionDeviceConfig": IPSecConnectionDeviceConfig,
     "IPSecConnectionDeviceStatus": IPSecConnectionDeviceStatus,
+    "IPSecConnectionTunnel": IPSecConnectionTunnel,
+    "IPSecConnectionTunnelSharedSecret": IPSecConnectionTunnelSharedSecret,
     "IScsiVolumeAttachment": IScsiVolumeAttachment,
     "IcmpOptions": IcmpOptions,
     "Image": Image,
@@ -382,6 +395,9 @@ core_type_mapping = {
     "UpdateDrgAttachmentDetails": UpdateDrgAttachmentDetails,
     "UpdateDrgDetails": UpdateDrgDetails,
     "UpdateIPSecConnectionDetails": UpdateIPSecConnectionDetails,
+    "UpdateIPSecConnectionTunnelDetails": UpdateIPSecConnectionTunnelDetails,
+    "UpdateIPSecConnectionTunnelSharedSecretDetails": UpdateIPSecConnectionTunnelSharedSecretDetails,
+    "UpdateIPSecTunnelBgpSessionDetails": UpdateIPSecTunnelBgpSessionDetails,
     "UpdateImageDetails": UpdateImageDetails,
     "UpdateInstanceAgentConfigDetails": UpdateInstanceAgentConfigDetails,
     "UpdateInstanceConfigurationDetails": UpdateInstanceConfigurationDetails,

@@ -204,8 +204,8 @@ class IngressSecurityRule(object):
           * IP address range in CIDR notation. For example: `192.168.1.0/24`
 
           * The `cidrBlock` value for a :class:`Service`, if you're
-            setting up a security list rule for traffic coming from a particular service through
-            a service gateway. For example: `oci-phx-objectstorage`
+            setting up a security list rule for traffic coming from a particular `Service` through
+            a service gateway. For example: `oci-phx-objectstorage`.
 
 
         :return: The source of this IngressSecurityRule.
@@ -225,8 +225,8 @@ class IngressSecurityRule(object):
           * IP address range in CIDR notation. For example: `192.168.1.0/24`
 
           * The `cidrBlock` value for a :class:`Service`, if you're
-            setting up a security list rule for traffic coming from a particular service through
-            a service gateway. For example: `oci-phx-objectstorage`
+            setting up a security list rule for traffic coming from a particular `Service` through
+            a service gateway. For example: `oci-phx-objectstorage`.
 
 
         :param source: The source of this IngressSecurityRule.
@@ -244,7 +244,7 @@ class IngressSecurityRule(object):
 
           * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a
             :class:`Service` (the rule is for traffic coming from a
-            particular service through a service gateway).
+            particular `Service` through a service gateway).
 
         Allowed values for this property are: "CIDR_BLOCK", "SERVICE_CIDR_BLOCK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -265,7 +265,7 @@ class IngressSecurityRule(object):
 
           * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a
             :class:`Service` (the rule is for traffic coming from a
-            particular service through a service gateway).
+            particular `Service` through a service gateway).
 
 
         :param source_type: The source_type of this IngressSecurityRule.

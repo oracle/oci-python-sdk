@@ -9,7 +9,10 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TunnelConfig(object):
     """
-    Specific connection details for an IPSec tunnel.
+    Deprecated. For tunnel information, instead see:
+
+    * :class:`IPSecConnectionTunnel`
+    * :class:`IPSecConnectionTunnelSharedSecret`
     """
 
     def __init__(self, **kwargs):
@@ -80,7 +83,7 @@ class TunnelConfig(object):
         **[Required]** Gets the shared_secret of this TunnelConfig.
         The shared secret of the IPSec tunnel.
 
-        Example: `vFG2IF6TWq4UToUiLSRDoJEUs6j1c.p8G.dVQxiMfMO0yXMLi.lZTbYIWhGu4V8o`
+        Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
 
 
         :return: The shared_secret of this TunnelConfig.
@@ -94,7 +97,7 @@ class TunnelConfig(object):
         Sets the shared_secret of this TunnelConfig.
         The shared secret of the IPSec tunnel.
 
-        Example: `vFG2IF6TWq4UToUiLSRDoJEUs6j1c.p8G.dVQxiMfMO0yXMLi.lZTbYIWhGu4V8o`
+        Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
 
 
         :param shared_secret: The shared_secret of this TunnelConfig.

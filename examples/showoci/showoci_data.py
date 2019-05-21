@@ -1942,7 +1942,7 @@ class ShowOCIData(object):
                     ssl_details = " - Cert: " + lo['ssl_configuration']
 
                 # add data
-                datalis.append(lo['id'] + " - " + str(lo['port']) + "/" + str(lo['protocol']) + " - Default BS: " + str(lo['default_backend_set_name']) + ssl_details)
+                datalis.append(lo['id'].ljust(20) + " - " + str(lo['port']) + "/" + str(lo['protocol']) + " - Default BS: " + str(lo['default_backend_set_name']) + ssl_details)
             data['listeners'] = datalis
 
             return data

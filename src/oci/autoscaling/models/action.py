@@ -9,8 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Action(object):
     """
-    The action to take if a scale event has been triggered. Positive values indicate scale out
-    and negative value indicate scale in.
+    The action to take when autoscaling is triggered.
     """
 
     #: A constant which can be used with the type property of a Action.
@@ -50,7 +49,7 @@ class Action(object):
     def type(self):
         """
         **[Required]** Gets the type of this Action.
-        Action type to take
+        The type of action to take.
 
         Allowed values for this property are: "CHANGE_COUNT_BY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -65,7 +64,7 @@ class Action(object):
     def type(self, type):
         """
         Sets the type of this Action.
-        Action type to take
+        The type of action to take.
 
 
         :param type: The type of this Action.
@@ -80,6 +79,9 @@ class Action(object):
     def value(self):
         """
         **[Required]** Gets the value of this Action.
+        To scale out (increase the number of instances), provide a positive value. To scale in (decrease the number of
+        instances), provide a negative value.
+
 
         :return: The value of this Action.
         :rtype: int
@@ -90,6 +92,9 @@ class Action(object):
     def value(self, value):
         """
         Sets the value of this Action.
+        To scale out (increase the number of instances), provide a positive value. To scale in (decrease the number of
+        instances), provide a negative value.
+
 
         :param value: The value of this Action.
         :type: int

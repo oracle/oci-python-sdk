@@ -9,7 +9,10 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstanceConfigurationCreateVnicDetails(object):
     """
-    Please see :class:`CreateVnicDetails`
+    Contains the properties of the VNIC for an instance configuration. See :class:`CreateVnicDetails`
+    and `Instance Configurations`__ for more information.
+
+    __ https://docs.cloud.oracle.com/Content/Compute/Concepts/instancemanagement.htm#config
     """
 
     def __init__(self, **kwargs):
@@ -71,6 +74,9 @@ class InstanceConfigurationCreateVnicDetails(object):
     def assign_public_ip(self):
         """
         Gets the assign_public_ip of this InstanceConfigurationCreateVnicDetails.
+        Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of :class:`CreateVnicDetails`
+        for more information.
+
 
         :return: The assign_public_ip of this InstanceConfigurationCreateVnicDetails.
         :rtype: bool
@@ -81,6 +87,9 @@ class InstanceConfigurationCreateVnicDetails(object):
     def assign_public_ip(self, assign_public_ip):
         """
         Sets the assign_public_ip of this InstanceConfigurationCreateVnicDetails.
+        Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of :class:`CreateVnicDetails`
+        for more information.
+
 
         :param assign_public_ip: The assign_public_ip of this InstanceConfigurationCreateVnicDetails.
         :type: bool
@@ -117,6 +126,9 @@ class InstanceConfigurationCreateVnicDetails(object):
     def hostname_label(self):
         """
         Gets the hostname_label of this InstanceConfigurationCreateVnicDetails.
+        The hostname for the VNIC's primary private IP.
+        See the `hostnameLabel` attribute of :class:`CreateVnicDetails` for more information.
+
 
         :return: The hostname_label of this InstanceConfigurationCreateVnicDetails.
         :rtype: str
@@ -127,6 +139,9 @@ class InstanceConfigurationCreateVnicDetails(object):
     def hostname_label(self, hostname_label):
         """
         Sets the hostname_label of this InstanceConfigurationCreateVnicDetails.
+        The hostname for the VNIC's primary private IP.
+        See the `hostnameLabel` attribute of :class:`CreateVnicDetails` for more information.
+
 
         :param hostname_label: The hostname_label of this InstanceConfigurationCreateVnicDetails.
         :type: str
@@ -137,6 +152,9 @@ class InstanceConfigurationCreateVnicDetails(object):
     def private_ip(self):
         """
         Gets the private_ip of this InstanceConfigurationCreateVnicDetails.
+        A private IP address of your choice to assign to the VNIC.
+        See the `privateIp` attribute of :class:`CreateVnicDetails` for more information.
+
 
         :return: The private_ip of this InstanceConfigurationCreateVnicDetails.
         :rtype: str
@@ -147,6 +165,9 @@ class InstanceConfigurationCreateVnicDetails(object):
     def private_ip(self, private_ip):
         """
         Sets the private_ip of this InstanceConfigurationCreateVnicDetails.
+        A private IP address of your choice to assign to the VNIC.
+        See the `privateIp` attribute of :class:`CreateVnicDetails` for more information.
+
 
         :param private_ip: The private_ip of this InstanceConfigurationCreateVnicDetails.
         :type: str
@@ -157,6 +178,9 @@ class InstanceConfigurationCreateVnicDetails(object):
     def skip_source_dest_check(self):
         """
         Gets the skip_source_dest_check of this InstanceConfigurationCreateVnicDetails.
+        Whether the source/destination check is disabled on the VNIC.
+        See the `skipSourceDestCheck` attribute of :class:`CreateVnicDetails` for more information.
+
 
         :return: The skip_source_dest_check of this InstanceConfigurationCreateVnicDetails.
         :rtype: bool
@@ -167,6 +191,9 @@ class InstanceConfigurationCreateVnicDetails(object):
     def skip_source_dest_check(self, skip_source_dest_check):
         """
         Sets the skip_source_dest_check of this InstanceConfigurationCreateVnicDetails.
+        Whether the source/destination check is disabled on the VNIC.
+        See the `skipSourceDestCheck` attribute of :class:`CreateVnicDetails` for more information.
+
 
         :param skip_source_dest_check: The skip_source_dest_check of this InstanceConfigurationCreateVnicDetails.
         :type: bool
@@ -177,6 +204,9 @@ class InstanceConfigurationCreateVnicDetails(object):
     def subnet_id(self):
         """
         Gets the subnet_id of this InstanceConfigurationCreateVnicDetails.
+        The OCID of the subnet to create the VNIC in.
+        See the `subnetId` attribute of :class:`CreateVnicDetails` for more information.
+
 
         :return: The subnet_id of this InstanceConfigurationCreateVnicDetails.
         :rtype: str
@@ -187,6 +217,9 @@ class InstanceConfigurationCreateVnicDetails(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this InstanceConfigurationCreateVnicDetails.
+        The OCID of the subnet to create the VNIC in.
+        See the `subnetId` attribute of :class:`CreateVnicDetails` for more information.
+
 
         :param subnet_id: The subnet_id of this InstanceConfigurationCreateVnicDetails.
         :type: str

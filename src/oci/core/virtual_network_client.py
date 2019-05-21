@@ -17,7 +17,11 @@ missing = Sentinel("Missing")
 
 class VirtualNetworkClient(object):
     """
-    APIs for Networking Service, Compute Service, and Block Volume Service.
+    API covering the [Networking](/iaas/Content/Network/Concepts/overview.htm),
+    [Compute](/iaas/Content/Compute/Concepts/computeoverview.htm), and
+    [Block Volume](/iaas/Content/Block/Concepts/overview.htm) services. Use this API
+    to manage resources such as virtual cloud networks (VCNs), compute instances, and
+    block storage volumes.
     """
 
     def __init__(self, config, **kwargs):
@@ -83,16 +87,16 @@ class VirtualNetworkClient(object):
     def attach_service_id(self, service_gateway_id, attach_service_details, **kwargs):
         """
         AttachService
-        Enables the specified service on the specified gateway. In other words, enables the service
-        gateway to send traffic to the specified service. You must also set up a route rule with the
-        service's `cidrBlock` as the rule's destination CIDR and the gateway as the rule's target.
-        See :class:`RouteTable`.
+        Adds the specified :class:`Service` to the list of enabled
+        `Service` objects for the specified gateway. You must also set up a route rule with the
+        `cidrBlock` of the `Service` as the rule's destination and the service gateway as the rule's
+        target. See :class:`RouteTable`.
 
-        **Note:** The `AttachServiceId` operation is an easy way to enable an individual service on
+        **Note:** The `AttachServiceId` operation is an easy way to add an individual `Service` to
         the service gateway. Compare it with
-        :func:`update_service_gateway`, which also
-        lets you enable an individual service. However, with `UpdateServiceGateway`, you must specify
-        the *entire* list of services you want enabled on the service gateway.
+        :func:`update_service_gateway`, which replaces
+        the entire existing list of enabled `Service` objects with the list that you provide in the
+        `Update` call.
 
 
         :param str service_gateway_id: (required)
@@ -1077,8 +1081,11 @@ class VirtualNetworkClient(object):
         Creates a new IPSec connection between the specified DRG and CPE. For more information, see
         `IPSec VPNs`__.
 
-        In the request, you must include at least one static route to the CPE object (you're allowed a maximum
-        of 10). For example: 10.0.8.0/16.
+        If you configure at least one tunnel to use static routing, then in the request you must provide
+        at least one valid static route (you're allowed a maximum of 10). For example: 10.0.0.0/16.
+        If you configure both tunnels to use BGP dynamic routing, you can provide an empty list for
+        the static routes. For more information, see the important note in
+        :class:`IPSecConnection`.
 
         For the purposes of access control, you must provide the OCID of the compartment where you want the
         IPSec connection to reside. Notice that the IPSec connection doesn't have to be in the same compartment
@@ -1092,14 +1099,14 @@ class VirtualNetworkClient(object):
         It does not have to be unique, and you can change it. Avoid entering confidential information.
 
         After creating the IPSec connection, you need to configure your on-premises router
-        with tunnel-specific information returned by
-        :func:`get_ip_sec_connection_device_config`.
-        For each tunnel, that operation gives you the IP address of Oracle's VPN headend and the shared secret
+        with tunnel-specific information. For tunnel status and the required configuration information, see:
+
+          * :class:`IPSecConnectionTunnel`
+          * :class:`IPSecConnectionTunnelSharedSecret`
+
+        For each tunnel, you need the IP address of Oracle's VPN headend and the shared secret
         (that is, the pre-shared key). For more information, see
         `Configuring Your On-Premises Router for an IPSec VPN`__.
-
-        To get the status of the tunnels (whether they're up or down), use
-        :func:`get_ip_sec_connection_device_status`.
 
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingIPsec.htm
         __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
@@ -3575,19 +3582,18 @@ class VirtualNetworkClient(object):
     def detach_service_id(self, service_gateway_id, detach_service_details, **kwargs):
         """
         DetachService
-        Disables the specified service on the specified gateway. In other words, stops the service
-        gateway from sending traffic to the specified service. You do not need to remove any route
-        rules that specify this service's `cidrBlock` as the destination CIDR. However, consider
-        removing the rules if your intent is to permanently disable use of the service through this
+        Removes the specified :class:`Service` from the list of enabled
+        `Service` objects for the specified gateway. You do not need to remove any route
+        rules that specify this `Service` object's `cidrBlock` as the destination CIDR. However, consider
+        removing the rules if your intent is to permanently disable use of the `Service` through this
         service gateway.
 
-        **Note:** The `DetachServiceId` operation is an easy way to disable an individual service on
+        **Note:** The `DetachServiceId` operation is an easy way to remove an individual `Service` from
         the service gateway. Compare it with
-        :func:`update_service_gateway`, which also
-        lets you disable an individual service. However, with `UpdateServiceGateway`, you must specify
-        the *entire* list of services you want enabled on the service gateway. `UpdateServiceGateway`
-        also lets you block all traffic through the service gateway without having to disable each of
-        the individual services.
+        :func:`update_service_gateway`, which replaces
+        the entire existing list of enabled `Service` objects with the list that you provide in the
+        `Update` call. `UpdateServiceGateway` also lets you block all traffic through the service
+        gateway without having to remove each of the individual `Service` objects.
 
 
         :param str service_gateway_id: (required)
@@ -4386,7 +4392,7 @@ class VirtualNetworkClient(object):
         GetIPSecConnection
         Gets the specified IPSec connection's basic information, including the static routes for the
         on-premises router. If you want the status of the connection (whether it's up or down), use
-        :func:`get_ip_sec_connection_device_status`.
+        :func:`get_ip_sec_connection_tunnel`.
 
 
         :param str ipsc_id: (required)
@@ -4450,8 +4456,10 @@ class VirtualNetworkClient(object):
     def get_ip_sec_connection_device_config(self, ipsc_id, **kwargs):
         """
         GetIPSecConnectionDeviceConfig
-        Gets the configuration information for the specified IPSec connection. For each tunnel, the
-        response includes the IP address of Oracle's VPN headend and the shared secret.
+        Deprecated. To get tunnel information, instead use:
+
+        * :func:`get_ip_sec_connection_tunnel`
+        * :func:`get_ip_sec_connection_tunnel_shared_secret`
 
 
         :param str ipsc_id: (required)
@@ -4515,7 +4523,8 @@ class VirtualNetworkClient(object):
     def get_ip_sec_connection_device_status(self, ipsc_id, **kwargs):
         """
         GetIPSecConnectionDeviceStatus
-        Gets the status of the specified IPSec connection (whether it's up or down).
+        Deprecated. To get the tunnel status, instead use
+        :func:`get_ip_sec_connection_tunnel`.
 
 
         :param str ipsc_id: (required)
@@ -4575,6 +4584,149 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="IPSecConnectionDeviceStatus")
+
+    def get_ip_sec_connection_tunnel(self, ipsc_id, tunnel_id, **kwargs):
+        """
+        GetIPSecConnectionTunnel
+        Gets the specified tunnel's information. The resulting object does not include the tunnel's
+        shared secret (pre-shared key). To retrieve that, use
+        :func:`get_ip_sec_connection_tunnel_shared_secret`.
+
+
+        :param str ipsc_id: (required)
+            The OCID of the IPSec connection.
+
+        :param str tunnel_id: (required)
+            The `OCID`__ of the tunnel.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.IPSecConnectionTunnel`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}"
+        method = "GET"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_ip_sec_connection_tunnel got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "ipscId": ipsc_id,
+            "tunnelId": tunnel_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="IPSecConnectionTunnel")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="IPSecConnectionTunnel")
+
+    def get_ip_sec_connection_tunnel_shared_secret(self, ipsc_id, tunnel_id, **kwargs):
+        """
+        GetIPSecConnectionTunnelSharedSecret
+        Gets the specified tunnel's shared secret (pre-shared key). To get other information
+        about the tunnel, use :func:`get_ip_sec_connection_tunnel`.
+
+
+        :param str ipsc_id: (required)
+            The OCID of the IPSec connection.
+
+        :param str tunnel_id: (required)
+            The `OCID`__ of the tunnel.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.IPSecConnectionTunnelSharedSecret`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}/sharedSecret"
+        method = "GET"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_ip_sec_connection_tunnel_shared_secret got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "ipscId": ipsc_id,
+            "tunnelId": tunnel_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="IPSecConnectionTunnelSharedSecret")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="IPSecConnectionTunnelSharedSecret")
 
     def get_local_peering_gateway(self, local_peering_gateway_id, **kwargs):
         """
@@ -5164,7 +5316,7 @@ class VirtualNetworkClient(object):
     def get_service(self, service_id, **kwargs):
         """
         GetService
-        Gets the specified service's information.
+        Gets the specified :class:`Service` object.
 
 
         :param str service_id: (required)
@@ -6780,6 +6932,99 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 response_type="list[InternetGateway]")
 
+    def list_ip_sec_connection_tunnels(self, ipsc_id, **kwargs):
+        """
+        ListIPSecConnectionTunnels
+        Lists the tunnel information for the specified IPSec connection.
+
+
+        :param str ipsc_id: (required)
+            The OCID of the IPSec connection.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.IPSecConnectionTunnel`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/ipsecConnections/{ipscId}/tunnels"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_ip_sec_connection_tunnels got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "ipscId": ipsc_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[IPSecConnectionTunnel]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[IPSecConnectionTunnel]")
+
     def list_ip_sec_connections(self, compartment_id, **kwargs):
         """
         ListIPSecConnections
@@ -7865,7 +8110,8 @@ class VirtualNetworkClient(object):
     def list_services(self, **kwargs):
         """
         ListServices
-        Lists the available services that you can access through a service gateway in this region.
+        Lists the available :class:`Service` objects that you can enable for a
+        service gateway in this region.
 
 
         :param int limit: (optional)
@@ -9099,8 +9345,10 @@ class VirtualNetworkClient(object):
     def update_ip_sec_connection(self, ipsc_id, update_ip_sec_connection_details, **kwargs):
         """
         UpdateIPSecConnection
-        Updates the display name or tags for the specified IPSec connection.
-        Avoid entering confidential information.
+        Updates the specified IPSec connection.
+
+        To update an individual IPSec tunnel's attributes, use
+        :func:`update_ip_sec_connection_tunnel`.
 
 
         :param str ipsc_id: (required)
@@ -9176,6 +9424,197 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 body=update_ip_sec_connection_details,
                 response_type="IPSecConnection")
+
+    def update_ip_sec_connection_tunnel(self, ipsc_id, tunnel_id, update_ip_sec_connection_tunnel_details, **kwargs):
+        """
+        UpdateIPSecConnectionTunnelDetails
+        Updates the specified tunnel. This operation lets you change tunnel attributes such as the
+        routing type (BGP dynamic routing or static routing). Here are some important notes:
+
+          * If you change the tunnel's routing type or BGP session configuration, the tunnel will go
+            down while it's reprovisioned.
+
+          * If you want to switch the tunnel's `routing` from `STATIC` to `BGP`, make sure the tunnel's
+            BGP session configuration attributes have been set (:func:`bgp_session_info`).
+
+          * If you want to switch the tunnel's `routing` from `BGP` to `STATIC`, make sure the
+            :class:`IPSecConnection` already has at least one valid CIDR
+            static route.
+
+
+        :param str ipsc_id: (required)
+            The OCID of the IPSec connection.
+
+        :param str tunnel_id: (required)
+            The `OCID`__ of the tunnel.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param UpdateIPSecConnectionTunnelDetails update_ip_sec_connection_tunnel_details: (required)
+            Details object for updating a IPSecConnection tunnel's details.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.IPSecConnectionTunnel`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_ip_sec_connection_tunnel got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "ipscId": ipsc_id,
+            "tunnelId": tunnel_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_ip_sec_connection_tunnel_details,
+                response_type="IPSecConnectionTunnel")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_ip_sec_connection_tunnel_details,
+                response_type="IPSecConnectionTunnel")
+
+    def update_ip_sec_connection_tunnel_shared_secret(self, ipsc_id, tunnel_id, update_ip_sec_connection_tunnel_shared_secret_details, **kwargs):
+        """
+        UpdateIPSecConnectionTunnelSharedSecret
+        Updates the shared secret (pre-shared key) for the specified tunnel.
+
+        **Important:** If you change the shared secret, the tunnel will go down while it's reprovisioned.
+
+
+        :param str ipsc_id: (required)
+            The OCID of the IPSec connection.
+
+        :param str tunnel_id: (required)
+            The `OCID`__ of the tunnel.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param UpdateIPSecConnectionTunnelSharedSecretDetails update_ip_sec_connection_tunnel_shared_secret_details: (required)
+            Details object for updating a IPSec connection tunnel's sharedSecret.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.IPSecConnectionTunnelSharedSecret`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}/sharedSecret"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_ip_sec_connection_tunnel_shared_secret got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "ipscId": ipsc_id,
+            "tunnelId": tunnel_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_ip_sec_connection_tunnel_shared_secret_details,
+                response_type="IPSecConnectionTunnelSharedSecret")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_ip_sec_connection_tunnel_shared_secret_details,
+                response_type="IPSecConnectionTunnelSharedSecret")
 
     def update_local_peering_gateway(self, local_peering_gateway_id, update_local_peering_gateway_details, **kwargs):
         """
