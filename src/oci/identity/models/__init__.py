@@ -55,6 +55,7 @@ from .tag_namespace_summary import TagNamespaceSummary
 from .tag_summary import TagSummary
 from .tenancy import Tenancy
 from .ui_password import UIPassword
+from .ui_password_information import UIPasswordInformation
 from .update_auth_token_details import UpdateAuthTokenDetails
 from .update_authentication_policy_details import UpdateAuthenticationPolicyDetails
 from .update_compartment_details import UpdateCompartmentDetails
@@ -136,6 +137,7 @@ identity_type_mapping = {
     "TagSummary": TagSummary,
     "Tenancy": Tenancy,
     "UIPassword": UIPassword,
+    "UIPasswordInformation": UIPasswordInformation,
     "UpdateAuthTokenDetails": UpdateAuthTokenDetails,
     "UpdateAuthenticationPolicyDetails": UpdateAuthenticationPolicyDetails,
     "UpdateCompartmentDetails": UpdateCompartmentDetails,
