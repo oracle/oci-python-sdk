@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateFileSystemDetails(object):
     """
-    UpdateFileSystemDetails model.
+    Details for updating the file system.
     """
 
     def __init__(self, **kwargs):

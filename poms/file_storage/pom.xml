@@ -18,7 +18,7 @@
     <enabled-groups-dir>${sdk-root-dir}/codegenConfig/enabledGroups</enabled-groups-dir>
     <feature-id-file>${sdk-root-dir}/featureId.yaml</feature-id-file>
     <feature-id-dir>${sdk-root-dir}/codegenConfig/featureIds</feature-id-dir>
-    <fss-api-spec-spec-file>fss-api-spec-20171215.yaml</fss-api-spec-spec-file>
+    <fss-api-spec-spec-file>source/fss-api-spec-20171215.cond.yaml</fss-api-spec-spec-file>
   </properties>
   <dependencies>
     <dependency>
@@ -141,7 +141,7 @@
       <dependency>
         <groupId>com.oracle.pic.ffsw</groupId>
         <artifactId>fss-api-spec</artifactId>
-        <version>0.0.14</version>
+        <version>0.0.20</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

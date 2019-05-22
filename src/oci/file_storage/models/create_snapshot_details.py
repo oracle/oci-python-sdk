@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateSnapshotDetails(object):
     """
-    CreateSnapshotDetails model.
+    Details for creating the snapshot.
     """
 
     def __init__(self, **kwargs):

@@ -3,6 +3,8 @@
 
 from __future__ import absolute_import
 
+from .change_file_system_compartment_details import ChangeFileSystemCompartmentDetails
+from .change_mount_target_compartment_details import ChangeMountTargetCompartmentDetails
 from .client_options import ClientOptions
 from .create_export_details import CreateExportDetails
 from .create_file_system_details import CreateFileSystemDetails
@@ -26,6 +28,8 @@ from .update_snapshot_details import UpdateSnapshotDetails
 
 # Maps type names to classes for file_storage services.
 file_storage_type_mapping = {
+    "ChangeFileSystemCompartmentDetails": ChangeFileSystemCompartmentDetails,
+    "ChangeMountTargetCompartmentDetails": ChangeMountTargetCompartmentDetails,
     "ClientOptions": ClientOptions,
     "CreateExportDetails": CreateExportDetails,
     "CreateFileSystemDetails": CreateFileSystemDetails,

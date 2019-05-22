@@ -18,6 +18,8 @@ File Storage
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.file_storage.models.ChangeFileSystemCompartmentDetails
+    oci.file_storage.models.ChangeMountTargetCompartmentDetails
     oci.file_storage.models.ClientOptions
     oci.file_storage.models.CreateExportDetails
     oci.file_storage.models.CreateFileSystemDetails
