@@ -61,3 +61,4 @@
 ^src/oci/resource_search/.*\.py$
 ^src/oci/streaming/.*\.py$
 ^src/oci/waas/.*\.py$
+^src/oci/work_requests/.*\.py$
