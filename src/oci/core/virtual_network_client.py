@@ -3436,7 +3436,9 @@ class VirtualNetworkClient(object):
 
 
         :param str vcn_id: (required)
-            The OCID of the VCN.
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -5516,7 +5518,9 @@ class VirtualNetworkClient(object):
 
 
         :param str vcn_id: (required)
-            The OCID of the VCN.
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -5763,7 +5767,9 @@ class VirtualNetworkClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -5845,7 +5851,9 @@ class VirtualNetworkClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -5983,7 +5991,9 @@ class VirtualNetworkClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -6066,7 +6076,9 @@ class VirtualNetworkClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str cross_connect_group_id: (optional)
             The OCID of the cross-connect group.
@@ -6210,7 +6222,9 @@ class VirtualNetworkClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -6294,10 +6308,14 @@ class VirtualNetworkClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str vcn_id: (required)
-            The OCID of the VCN.
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -6436,10 +6454,14 @@ class VirtualNetworkClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str vcn_id: (optional)
-            The OCID of the VCN.
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str drg_id: (optional)
             The OCID of the DRG.
@@ -6528,7 +6550,9 @@ class VirtualNetworkClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -6618,7 +6642,9 @@ class VirtualNetworkClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -6798,10 +6824,14 @@ class VirtualNetworkClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str vcn_id: (required)
-            The OCID of the VCN.
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -7033,7 +7063,9 @@ class VirtualNetworkClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str drg_id: (optional)
             The OCID of the DRG.
@@ -7126,10 +7158,14 @@ class VirtualNetworkClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str vcn_id: (required)
-            The OCID of the VCN.
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -7213,10 +7249,14 @@ class VirtualNetworkClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str vcn_id: (optional)
-            The OCID of the VCN.
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -7494,7 +7534,9 @@ class VirtualNetworkClient(object):
             Allowed values are: "REGION", "AVAILABILITY_DOMAIN"
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -7605,7 +7647,9 @@ class VirtualNetworkClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str drg_id: (optional)
             The OCID of the DRG.
@@ -7694,10 +7738,14 @@ class VirtualNetworkClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str vcn_id: (required)
-            The OCID of the VCN.
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -7835,10 +7883,14 @@ class VirtualNetworkClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str vcn_id: (required)
-            The OCID of the VCN.
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -7977,10 +8029,14 @@ class VirtualNetworkClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str vcn_id: (optional)
-            The OCID of the VCN.
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -8193,10 +8249,14 @@ class VirtualNetworkClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str vcn_id: (required)
-            The OCID of the VCN.
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -8334,7 +8394,9 @@ class VirtualNetworkClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -8471,7 +8533,9 @@ class VirtualNetworkClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -8642,7 +8706,9 @@ class VirtualNetworkClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -10404,7 +10470,9 @@ class VirtualNetworkClient(object):
 
 
         :param str vcn_id: (required)
-            The OCID of the VCN.
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateVcnDetails update_vcn_details: (required)
             Details object for updating a VCN.

@@ -630,7 +630,9 @@ class ComputeClient(object):
             The OCID of the listing.
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str resource_version: (required)
             Listing Resource Version.
@@ -2484,7 +2486,9 @@ class ComputeClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -2613,7 +2617,9 @@ class ComputeClient(object):
             Example: `Uocm:PHX-AD-1`
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to return in a paginated
@@ -2706,7 +2712,9 @@ class ComputeClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -2859,7 +2867,9 @@ class ComputeClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -3019,7 +3029,9 @@ class ComputeClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str instance_id: (optional)
             The OCID of the instance.
@@ -3254,7 +3266,9 @@ class ComputeClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -3399,7 +3413,9 @@ class ComputeClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -3495,7 +3511,9 @@ class ComputeClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.
@@ -3598,7 +3616,9 @@ class ComputeClient(object):
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str availability_domain: (optional)
             The name of the availability domain.

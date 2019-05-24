@@ -205,8 +205,8 @@ class LocalPeeringGateway(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this LocalPeeringGateway.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        For more information, see `Resource Tags`__.
+        Defined tags for this resource. Each key is predefined and scoped to a
+        namespace. For more information, see `Resource Tags`__.
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
@@ -222,8 +222,8 @@ class LocalPeeringGateway(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this LocalPeeringGateway.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        For more information, see `Resource Tags`__.
+        Defined tags for this resource. Each key is predefined and scoped to a
+        namespace. For more information, see `Resource Tags`__.
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
@@ -266,8 +266,7 @@ class LocalPeeringGateway(object):
         """
         Gets the freeform_tags of this LocalPeeringGateway.
         Free-form tags for this resource. Each tag is a simple key-value pair with no
-        predefined name, type, or namespace. For more information, see
-        `Resource Tags`__.
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
 
         Example: `{\"Department\": \"Finance\"}`
 
@@ -284,8 +283,7 @@ class LocalPeeringGateway(object):
         """
         Sets the freeform_tags of this LocalPeeringGateway.
         Free-form tags for this resource. Each tag is a simple key-value pair with no
-        predefined name, type, or namespace. For more information, see
-        `Resource Tags`__.
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
 
         Example: `{\"Department\": \"Finance\"}`
 

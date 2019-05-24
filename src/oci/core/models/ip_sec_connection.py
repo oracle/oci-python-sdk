@@ -215,8 +215,8 @@ class IPSecConnection(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this IPSecConnection.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        For more information, see `Resource Tags`__.
+        Defined tags for this resource. Each key is predefined and scoped to a
+        namespace. For more information, see `Resource Tags`__.
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
@@ -232,8 +232,8 @@ class IPSecConnection(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this IPSecConnection.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        For more information, see `Resource Tags`__.
+        Defined tags for this resource. Each key is predefined and scoped to a
+        namespace. For more information, see `Resource Tags`__.
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
@@ -300,8 +300,7 @@ class IPSecConnection(object):
         """
         Gets the freeform_tags of this IPSecConnection.
         Free-form tags for this resource. Each tag is a simple key-value pair with no
-        predefined name, type, or namespace. For more information, see
-        `Resource Tags`__.
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
 
         Example: `{\"Department\": \"Finance\"}`
 
@@ -318,8 +317,7 @@ class IPSecConnection(object):
         """
         Sets the freeform_tags of this IPSecConnection.
         Free-form tags for this resource. Each tag is a simple key-value pair with no
-        predefined name, type, or namespace. For more information, see
-        `Resource Tags`__.
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
 
         Example: `{\"Department\": \"Finance\"}`
 
@@ -396,9 +394,14 @@ class IPSecConnection(object):
         If you don't provide a value when creating the IPSec connection, the `ipAddress` attribute
         for the :class:`Cpe` object specified by `cpeId` is used as the `cpeLocalIdentifier`.
 
+        For information about why you'd provide this value, see
+        `If Your CPE Is Behind a NAT Device`__.
+
         Example IP address: `10.0.3.3`
 
         Example hostname: `cpe.example.com`
+
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/overviewIPsec.htm#nat
 
 
         :return: The cpe_local_identifier of this IPSecConnection.
@@ -417,9 +420,14 @@ class IPSecConnection(object):
         If you don't provide a value when creating the IPSec connection, the `ipAddress` attribute
         for the :class:`Cpe` object specified by `cpeId` is used as the `cpeLocalIdentifier`.
 
+        For information about why you'd provide this value, see
+        `If Your CPE Is Behind a NAT Device`__.
+
         Example IP address: `10.0.3.3`
 
         Example hostname: `cpe.example.com`
+
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/overviewIPsec.htm#nat
 
 
         :param cpe_local_identifier: The cpe_local_identifier of this IPSecConnection.
