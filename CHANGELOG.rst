@@ -5,12 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-2.2.11 - TBD
+2.2.11 - 2019-05-28
 ====================
 
 Added
 -----
-*
+* Support for the Work Requests service, and tracking of a number of Core Services operations through work requests
+* Support for emulated volume attachments in Core Services
+* Support for changing the compartment of resources in the File Storage service
+* Support for tags in list operations in the File Storage service
+* Support for returning UI password creation dates in the Identity service
 
 ====================
 2.2.10 - 2019-05-21
