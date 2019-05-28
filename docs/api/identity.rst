@@ -70,6 +70,7 @@ Identity
     oci.identity.models.TagSummary
     oci.identity.models.Tenancy
     oci.identity.models.UIPassword
+    oci.identity.models.UIPasswordInformation
     oci.identity.models.UpdateAuthTokenDetails
     oci.identity.models.UpdateAuthenticationPolicyDetails
     oci.identity.models.UpdateCompartmentDetails

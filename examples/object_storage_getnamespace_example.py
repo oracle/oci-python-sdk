@@ -9,13 +9,13 @@
 # a policy similar to following:
 #
 # DEFINE TENANCY TenantB AS <TenantB OCID>
-# ENDORSE GROUP <TenantA user group OCID> TO {TENANCY_INSPECT} IN TENANCY TenantB
+# ENDORSE GROUP <TenantA user group name> TO {OBJECTSTORAGE_NAMESPACE_READ} IN TENANCY TenantB
 #
 # and Tenant B should add a policy similar to following:
 #
 # DEFINE TENANCY TenantA AS <TenantA OCID>
 # DEFINE GROUP TenantAGroup AS <TenantA user group OCID>
-# ADMIT GROUP TenantAGroup OF TENANCY TenantA TO {TENANCY_INSPECT} IN TENANCY
+# ADMIT GROUP TenantAGroup OF TENANCY TenantA TO {OBJECTSTORAGE_NAMESPACE_READ} IN TENANCY
 #
 # This example covers only GetNamespace operation across tenants. Additional permissions
 # will be required to perform more Object Storage operations.

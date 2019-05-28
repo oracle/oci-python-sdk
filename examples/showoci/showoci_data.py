@@ -111,6 +111,7 @@ class ShowOCIData(object):
             'author': "Adi Zohar",
             'config_file': self.service.flags.config_file,
             'config_profile': self.service.flags.config_section,
+            'use_instance_principals': self.service.flags.use_instance_principals,
             'version': self.service.flags.showoci_version,
             'datetime': start_time,
             'cmdline': cmdline,
@@ -1930,7 +1931,10 @@ class ShowOCIData(object):
             # subnets
             datasub = []
             for subnet in lb['subnet_ids']:
-                datasub.append(self.service.get_network_subnet(subnet, True))
+                subnet_name = self.service.get_network_subnet(subnet, True)
+                if subnet_name:
+                    if subnet_name != "":
+                        datasub.append(subnet_name)
             data['subnets'] = datasub
 
             # listeners
@@ -1939,7 +1943,7 @@ class ShowOCIData(object):
 
                 ssl_details = ""
                 if lo['ssl_configuration'] != "":
-                    ssl_details = " - Cert: " + lo['ssl_configuration']
+                    ssl_details = " - Cert: " + str(lo['ssl_configuration'])
 
                 # add data
                 datalis.append(lo['id'].ljust(20) + " - " + str(lo['port']) + "/" + str(lo['protocol']) + " - Default BS: " + str(lo['default_backend_set_name']) + ssl_details)

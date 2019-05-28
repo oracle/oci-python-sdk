@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+19.5.27 - 2019-05-27
+====================
+
+Added
+-----
+* Added support for instance principals using -ip flag
+
+====================
 19.5.20 - 2019-05-20
 ====================
 
