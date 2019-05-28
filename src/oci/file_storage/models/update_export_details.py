@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateExportDetails(object):
     """
-    UpdateExportDetails model.
+    Details for updating the export.
     """
 
     def __init__(self, **kwargs):

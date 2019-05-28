@@ -62,7 +62,7 @@ import sys
 import argparse
 import datetime
 
-version = "19.5.20"
+version = "19.5.27"
 
 ##########################################################################
 # execute_extract
@@ -229,6 +229,7 @@ def set_parser_arguments():
     parser.add_argument('-edge', action='store_true', default=False, dest='edge', help='Print Edge Services (Healthcheck)')
     parser.add_argument('-mc', action='store_true', default=False, dest='mgdcompart', help='exclude ManagedCompartmentForPaaS')
     parser.add_argument('-nr', action='store_true', default=False, dest='noroot', help='Not include root compartment')
+    parser.add_argument('-ip', action='store_true', default=False, dest='instance_principals', help='Use Instance Principals for Authentication')
     parser.add_argument('-t', default="", dest='profile', help='Config file section to use (tenancy profile)')
     parser.add_argument('-p', default="", dest='proxy', help='Set Proxy (i.e. www-proxy-server.com:80) ')
     parser.add_argument('-rg', default="", dest='region', help='Filter by Region')
@@ -337,6 +338,9 @@ def set_service_extract_flags(cmd):
 
     if cmd.compart:
         prm.filter_by_compartment = str(cmd.compart)
+
+    if cmd.instance_principals:
+        prm.use_instance_principals = True
 
     return prm
 

@@ -11,9 +11,11 @@ from .app_catalog_listing_summary import AppCatalogListingSummary
 from .app_catalog_subscription import AppCatalogSubscription
 from .app_catalog_subscription_summary import AppCatalogSubscriptionSummary
 from .attach_boot_volume_details import AttachBootVolumeDetails
+from .attach_emulated_volume_details import AttachEmulatedVolumeDetails
 from .attach_i_scsi_volume_details import AttachIScsiVolumeDetails
 from .attach_load_balancer_details import AttachLoadBalancerDetails
 from .attach_paravirtualized_volume_details import AttachParavirtualizedVolumeDetails
+from .attach_service_determined_volume_details import AttachServiceDeterminedVolumeDetails
 from .attach_vnic_details import AttachVnicDetails
 from .attach_volume_details import AttachVolumeDetails
 from .bgp_session_info import BgpSessionInfo
@@ -85,6 +87,7 @@ from .dhcp_search_domain_option import DhcpSearchDomainOption
 from .drg import Drg
 from .drg_attachment import DrgAttachment
 from .egress_security_rule import EgressSecurityRule
+from .emulated_volume_attachment import EmulatedVolumeAttachment
 from .export_image_details import ExportImageDetails
 from .export_image_via_object_storage_tuple_details import ExportImageViaObjectStorageTupleDetails
 from .export_image_via_object_storage_uri_details import ExportImageViaObjectStorageUriDetails
@@ -233,9 +236,11 @@ core_type_mapping = {
     "AppCatalogSubscription": AppCatalogSubscription,
     "AppCatalogSubscriptionSummary": AppCatalogSubscriptionSummary,
     "AttachBootVolumeDetails": AttachBootVolumeDetails,
+    "AttachEmulatedVolumeDetails": AttachEmulatedVolumeDetails,
     "AttachIScsiVolumeDetails": AttachIScsiVolumeDetails,
     "AttachLoadBalancerDetails": AttachLoadBalancerDetails,
     "AttachParavirtualizedVolumeDetails": AttachParavirtualizedVolumeDetails,
+    "AttachServiceDeterminedVolumeDetails": AttachServiceDeterminedVolumeDetails,
     "AttachVnicDetails": AttachVnicDetails,
     "AttachVolumeDetails": AttachVolumeDetails,
     "BgpSessionInfo": BgpSessionInfo,
@@ -307,6 +312,7 @@ core_type_mapping = {
     "Drg": Drg,
     "DrgAttachment": DrgAttachment,
     "EgressSecurityRule": EgressSecurityRule,
+    "EmulatedVolumeAttachment": EmulatedVolumeAttachment,
     "ExportImageDetails": ExportImageDetails,
     "ExportImageViaObjectStorageTupleDetails": ExportImageViaObjectStorageTupleDetails,
     "ExportImageViaObjectStorageUriDetails": ExportImageViaObjectStorageUriDetails,

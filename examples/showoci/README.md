@@ -1,6 +1,9 @@
 ## showoci - Oracle Cloud Infrastructure Reporting Tool
 
-SHOWOCI is an reporting tool which uses the Python SDK to extract list of resources from your tenant. It covers most of OCI components, Output can be printer friendly or JSON file.
+SHOWOCI is an reporting tool which uses the Python SDK to extract list of resources from your tenant. 
+It covers most of OCI components, 
+Authentication by User or Compute using instant principals, 
+Output can be printer friendly or JSON file.
 
 Modules Included:  
 - oci.core.VirtualNetworkClient          
@@ -23,8 +26,22 @@ Modules Included:
 - oci.healthchecks.HealthChecksClient
 - oci.announcements_service.AnnouncementClient
 
-## OCI User Requirement
-Required OCI IAM user with read only privileges:  
+** DISCLAIMER – This is not official Oracle application
+
+## OCI Authentication using Instant Principals 
+
+Create Dynamic Group ShowOCIDynamicGroup:
+```
+any {ALL {instance.id = 'ocid1.instance.oc1.xxxxxxxxxx'}}
+```
+
+Add Policy:
+```
+allow dynamic-group ShowOCIDynamicGroup to read all-resources in tenancy
+```
+
+## OCI Authentication using Read Only User
+Required OCI IAM user with read only privileges
 
 ```
 ALLOW GROUP ReadOnlyUsers to read all-resources IN TENANCY  
@@ -52,7 +69,6 @@ Allow group ReadOnlyUsers to read instance-configurations in tenancy
     read instance-configurations allows - GetInstanceConfiguration
 
 ```
-** DISCLAIMER – This is not official Oracle application
 
 ## Installation Guide for Python 3 with OCI SDK  
 
@@ -104,8 +120,16 @@ python3 --version
 pip3 install --upgrade pip  
 pip3 install oci oci-cli  
 ```
+## Setup connectivity using Instant Principals
 
-## Setup OCI CLI connectivity  
+```  
+1. Login to your OCI Cloud console
+2. Create new Dynamic Group : ShowOCIDynamicGroup  
+   Obtain Compute OCID and add rule - any {ALL {instance.id = 'ocid1.instance.oc1.xxxxxxxxxx'}}
+3. Create new Policy: ShowOCIDynamicGroupPolicy with Statement - allow dynamic-group ShowOCIDynamicGroup to read all-resources in tenancy
+```
+
+## Setup connectivity using Read Only User
 
 ```  
 1. Login to your OCI Cloud console
@@ -132,6 +156,7 @@ $ oci os ns get
 }  
 ```
 
+## Copy the Software
 Download the showoci*.py from this project  
 
 Execute  
@@ -141,7 +166,7 @@ $ ./showoci.py
 
 usage: showoci.py [-h] [-a] [-ani] [-an] [-b] [-n] [-i] [-c] [-cn] [-o] [-l]
                   [-d] [-f] [-e] [-m] [-s] [-rm] [-so] [-edge] [-mc] [-nr]
-                  [-t PROFILE] [-p PROXY] [-rg REGION] [-cp COMPART]
+                  [-ip] [-t PROFILE] [-p PROXY] [-rg REGION] [-cp COMPART]
                   [-cf CONFIG] [-jf JOUTFILE] [-js] [-sjf SJOUTFILE]
                   [-cachef SERVICEFILE] [-caches] [--version]
 
@@ -167,6 +192,7 @@ optional arguments:
   -edge                Print Edge Services (Healthcheck)
   -mc                  exclude ManagedCompartmentForPaaS
   -nr                  Not include root compartment
+  -ip                  Use Instance Principals for Authentication
   -t PROFILE           Config file section to use (tenancy profile)
   -p PROXY             Set Proxy (i.e. www-proxy-server.com:80)
   -rg REGION           Filter by Region
@@ -191,6 +217,7 @@ optional arguments:
 ############################################################
 #                        showoci.py                        #
 ############################################################
+Authentication : Config File
 Config File    : ~/.oci/config
 Config Profile : adi
 Version        : 19.4.2

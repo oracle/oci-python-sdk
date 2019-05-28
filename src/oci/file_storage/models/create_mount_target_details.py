@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateMountTargetDetails(object):
     """
-    CreateMountTargetDetails model.
+    Details for creating the mount target.
     """
 
     def __init__(self, **kwargs):

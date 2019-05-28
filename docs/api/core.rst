@@ -32,9 +32,11 @@ Core Services
     oci.core.models.AppCatalogSubscription
     oci.core.models.AppCatalogSubscriptionSummary
     oci.core.models.AttachBootVolumeDetails
+    oci.core.models.AttachEmulatedVolumeDetails
     oci.core.models.AttachIScsiVolumeDetails
     oci.core.models.AttachLoadBalancerDetails
     oci.core.models.AttachParavirtualizedVolumeDetails
+    oci.core.models.AttachServiceDeterminedVolumeDetails
     oci.core.models.AttachVnicDetails
     oci.core.models.AttachVolumeDetails
     oci.core.models.BgpSessionInfo
@@ -106,6 +108,7 @@ Core Services
     oci.core.models.Drg
     oci.core.models.DrgAttachment
     oci.core.models.EgressSecurityRule
+    oci.core.models.EmulatedVolumeAttachment
     oci.core.models.ExportImageDetails
     oci.core.models.ExportImageViaObjectStorageTupleDetails
     oci.core.models.ExportImageViaObjectStorageUriDetails
