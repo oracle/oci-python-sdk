@@ -56,6 +56,14 @@ class LaunchDbSystemBase(object):
             The value to assign to the backup_subnet_id property of this LaunchDbSystemBase.
         :type backup_subnet_id: str
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this LaunchDbSystemBase.
+        :type nsg_ids: list[str]
+
+        :param backup_network_nsg_ids:
+            The value to assign to the backup_network_nsg_ids property of this LaunchDbSystemBase.
+        :type backup_network_nsg_ids: list[str]
+
         :param shape:
             The value to assign to the shape property of this LaunchDbSystemBase.
         :type shape: str
@@ -121,6 +129,8 @@ class LaunchDbSystemBase(object):
             'availability_domain': 'str',
             'subnet_id': 'str',
             'backup_subnet_id': 'str',
+            'nsg_ids': 'list[str]',
+            'backup_network_nsg_ids': 'list[str]',
             'shape': 'str',
             'time_zone': 'str',
             'sparse_diskgroup': 'bool',
@@ -144,6 +154,8 @@ class LaunchDbSystemBase(object):
             'availability_domain': 'availabilityDomain',
             'subnet_id': 'subnetId',
             'backup_subnet_id': 'backupSubnetId',
+            'nsg_ids': 'nsgIds',
+            'backup_network_nsg_ids': 'backupNetworkNsgIds',
             'shape': 'shape',
             'time_zone': 'timeZone',
             'sparse_diskgroup': 'sparseDiskgroup',
@@ -166,6 +178,8 @@ class LaunchDbSystemBase(object):
         self._availability_domain = None
         self._subnet_id = None
         self._backup_subnet_id = None
+        self._nsg_ids = None
+        self._backup_network_nsg_ids = None
         self._shape = None
         self._time_zone = None
         self._sparse_diskgroup = None
@@ -404,6 +418,68 @@ class LaunchDbSystemBase(object):
         :type: str
         """
         self._backup_subnet_id = backup_subnet_id
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this LaunchDbSystemBase.
+        The list of Network Security Group `OCIDs`__ associated with this DB system.
+        A maximum of 5 allowed.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The nsg_ids of this LaunchDbSystemBase.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this LaunchDbSystemBase.
+        The list of Network Security Group `OCIDs`__ associated with this DB system.
+        A maximum of 5 allowed.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param nsg_ids: The nsg_ids of this LaunchDbSystemBase.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
+
+    @property
+    def backup_network_nsg_ids(self):
+        """
+        Gets the backup_network_nsg_ids of this LaunchDbSystemBase.
+        The list of Network Security Group `OCIDs`__ associated with the backup network of this DB system.
+        Applicable only to Exadata DB systems.
+        A maximum of 5 allowed.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The backup_network_nsg_ids of this LaunchDbSystemBase.
+        :rtype: list[str]
+        """
+        return self._backup_network_nsg_ids
+
+    @backup_network_nsg_ids.setter
+    def backup_network_nsg_ids(self, backup_network_nsg_ids):
+        """
+        Sets the backup_network_nsg_ids of this LaunchDbSystemBase.
+        The list of Network Security Group `OCIDs`__ associated with the backup network of this DB system.
+        Applicable only to Exadata DB systems.
+        A maximum of 5 allowed.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param backup_network_nsg_ids: The backup_network_nsg_ids of this LaunchDbSystemBase.
+        :type: list[str]
+        """
+        self._backup_network_nsg_ids = backup_network_nsg_ids
 
     @property
     def shape(self):
