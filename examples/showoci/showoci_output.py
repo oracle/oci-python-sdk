@@ -494,8 +494,12 @@ class ShowOCIOutput(object):
                 print(self.tabs + "CPE    : " + ips['cpe'])
                 # get tunnel status
                 for t in ips['tunnels']:
-                    print(self.tabs + "Tunnel : " + t['ip_address'] + " - " + t['status'] + " - " + t['status_date'])
-                print(self.tabs + "Routes : " + "\n    Routes : ".join(ips['routes']))
+                    print(self.tabs + "Tunnel : " + t['display_name'].ljust(12) + " - " + t['status'] + ", " + t['routing'] + ", VPN: " + t['vpn_ip'] + ", CPE: " + t['cpe_ip'] + ", " + t['status_date'])
+                    if t['bgp_info']:
+                        print(self.tabs + "       : " + t['bgp_info'])
+
+                if ips['routes']:
+                    print(self.tabs + "Routes : " + "\n    Static : ".join(ips['routes']))
                 print("")
 
         except Exception as e:
