@@ -1342,7 +1342,8 @@ def test_delete_tag(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.delete_tag(
                 tag_namespace_id=request.pop(util.camelize('tag_namespace_id')),
                 tag_name=request.pop(util.camelize('tag_name')),
@@ -1422,7 +1423,8 @@ def test_delete_tag_namespace(testing_service_client):
         service_error = None
 
         try:
-            client = oci.identity.IdentityClient(config)
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
             response = client.delete_tag_namespace(
                 tag_namespace_id=request.pop(util.camelize('tag_namespace_id')),
                 **(util.camel_to_snake_keys(request))
