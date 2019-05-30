@@ -61,6 +61,10 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             The value to assign to the source_details property of this InstanceConfigurationLaunchInstanceDetails.
         :type source_details: InstanceConfigurationInstanceSourceDetails
 
+        :param fault_domain:
+            The value to assign to the fault_domain property of this InstanceConfigurationLaunchInstanceDetails.
+        :type fault_domain: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -73,7 +77,8 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             'ipxe_script': 'str',
             'metadata': 'dict(str, str)',
             'shape': 'str',
-            'source_details': 'InstanceConfigurationInstanceSourceDetails'
+            'source_details': 'InstanceConfigurationInstanceSourceDetails',
+            'fault_domain': 'str'
         }
 
         self.attribute_map = {
@@ -87,7 +92,8 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             'ipxe_script': 'ipxeScript',
             'metadata': 'metadata',
             'shape': 'shape',
-            'source_details': 'sourceDetails'
+            'source_details': 'sourceDetails',
+            'fault_domain': 'faultDomain'
         }
 
         self._availability_domain = None
@@ -101,6 +107,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         self._metadata = None
         self._shape = None
         self._source_details = None
+        self._fault_domain = None
 
     @property
     def availability_domain(self):
@@ -184,8 +191,8 @@ class InstanceConfigurationLaunchInstanceDetails(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this InstanceConfigurationLaunchInstanceDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        For more information, see `Resource Tags`__.
+        Defined tags for this resource. Each key is predefined and scoped to a
+        namespace. For more information, see `Resource Tags`__.
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
@@ -201,8 +208,8 @@ class InstanceConfigurationLaunchInstanceDetails(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this InstanceConfigurationLaunchInstanceDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        For more information, see `Resource Tags`__.
+        Defined tags for this resource. Each key is predefined and scoped to a
+        namespace. For more information, see `Resource Tags`__.
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
@@ -277,8 +284,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         """
         Gets the freeform_tags of this InstanceConfigurationLaunchInstanceDetails.
         Free-form tags for this resource. Each tag is a simple key-value pair with no
-        predefined name, type, or namespace. For more information, see
-        `Resource Tags`__.
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
 
         Example: `{\"Department\": \"Finance\"}`
 
@@ -295,8 +301,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         """
         Sets the freeform_tags of this InstanceConfigurationLaunchInstanceDetails.
         Free-form tags for this resource. Each tag is a simple key-value pair with no
-        predefined name, type, or namespace. For more information, see
-        `Resource Tags`__.
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
 
         Example: `{\"Department\": \"Finance\"}`
 
@@ -581,6 +586,56 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         :type: InstanceConfigurationInstanceSourceDetails
         """
         self._source_details = source_details
+
+    @property
+    def fault_domain(self):
+        """
+        Gets the fault_domain of this InstanceConfigurationLaunchInstanceDetails.
+        A fault domain is a grouping of hardware and infrastructure within an availability domain.
+        Each availability domain contains three fault domains. Fault domains let you distribute your
+        instances so that they are not on the same physical hardware within a single availability domain.
+        A hardware failure or Compute hardware maintenance that affects one fault domain does not affect
+        instances in other fault domains.
+
+        If you do not specify the fault domain, the system selects one for you. To change the fault
+        domain for an instance, terminate it and launch a new instance in the preferred fault domain.
+
+        To get a list of fault domains, use the
+        :func:`list_fault_domains` operation in the
+        Identity and Access Management Service API.
+
+        Example: `FAULT-DOMAIN-1`
+
+
+        :return: The fault_domain of this InstanceConfigurationLaunchInstanceDetails.
+        :rtype: str
+        """
+        return self._fault_domain
+
+    @fault_domain.setter
+    def fault_domain(self, fault_domain):
+        """
+        Sets the fault_domain of this InstanceConfigurationLaunchInstanceDetails.
+        A fault domain is a grouping of hardware and infrastructure within an availability domain.
+        Each availability domain contains three fault domains. Fault domains let you distribute your
+        instances so that they are not on the same physical hardware within a single availability domain.
+        A hardware failure or Compute hardware maintenance that affects one fault domain does not affect
+        instances in other fault domains.
+
+        If you do not specify the fault domain, the system selects one for you. To change the fault
+        domain for an instance, terminate it and launch a new instance in the preferred fault domain.
+
+        To get a list of fault domains, use the
+        :func:`list_fault_domains` operation in the
+        Identity and Access Management Service API.
+
+        Example: `FAULT-DOMAIN-1`
+
+
+        :param fault_domain: The fault_domain of this InstanceConfigurationLaunchInstanceDetails.
+        :type: str
+        """
+        self._fault_domain = fault_domain
 
     def __repr__(self):
         return formatted_flat_dict(self)
