@@ -169,6 +169,10 @@ class AutonomousDatabaseSummary(object):
             The value to assign to the whitelisted_ips property of this AutonomousDatabaseSummary.
         :type whitelisted_ips: list[str]
 
+        :param is_auto_scaling_enabled:
+            The value to assign to the is_auto_scaling_enabled property of this AutonomousDatabaseSummary.
+        :type is_auto_scaling_enabled: bool
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -188,7 +192,8 @@ class AutonomousDatabaseSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'db_version': 'str',
             'db_workload': 'str',
-            'whitelisted_ips': 'list[str]'
+            'whitelisted_ips': 'list[str]',
+            'is_auto_scaling_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -209,7 +214,8 @@ class AutonomousDatabaseSummary(object):
             'defined_tags': 'definedTags',
             'db_version': 'dbVersion',
             'db_workload': 'dbWorkload',
-            'whitelisted_ips': 'whitelistedIps'
+            'whitelisted_ips': 'whitelistedIps',
+            'is_auto_scaling_enabled': 'isAutoScalingEnabled'
         }
 
         self._id = None
@@ -230,6 +236,7 @@ class AutonomousDatabaseSummary(object):
         self._db_version = None
         self._db_workload = None
         self._whitelisted_ips = None
+        self._is_auto_scaling_enabled = None
 
     @property
     def id(self):
@@ -708,6 +715,30 @@ class AutonomousDatabaseSummary(object):
         :type: list[str]
         """
         self._whitelisted_ips = whitelisted_ips
+
+    @property
+    def is_auto_scaling_enabled(self):
+        """
+        Gets the is_auto_scaling_enabled of this AutonomousDatabaseSummary.
+        Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
+
+
+        :return: The is_auto_scaling_enabled of this AutonomousDatabaseSummary.
+        :rtype: bool
+        """
+        return self._is_auto_scaling_enabled
+
+    @is_auto_scaling_enabled.setter
+    def is_auto_scaling_enabled(self, is_auto_scaling_enabled):
+        """
+        Sets the is_auto_scaling_enabled of this AutonomousDatabaseSummary.
+        Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
+
+
+        :param is_auto_scaling_enabled: The is_auto_scaling_enabled of this AutonomousDatabaseSummary.
+        :type: bool
+        """
+        self._is_auto_scaling_enabled = is_auto_scaling_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

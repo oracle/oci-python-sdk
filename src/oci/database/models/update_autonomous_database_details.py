@@ -60,6 +60,10 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the whitelisted_ips property of this UpdateAutonomousDatabaseDetails.
         :type whitelisted_ips: list[str]
 
+        :param is_auto_scaling_enabled:
+            The value to assign to the is_auto_scaling_enabled property of this UpdateAutonomousDatabaseDetails.
+        :type is_auto_scaling_enabled: bool
+
         """
         self.swagger_types = {
             'cpu_core_count': 'int',
@@ -69,7 +73,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'license_model': 'str',
-            'whitelisted_ips': 'list[str]'
+            'whitelisted_ips': 'list[str]',
+            'is_auto_scaling_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -80,7 +85,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'license_model': 'licenseModel',
-            'whitelisted_ips': 'whitelistedIps'
+            'whitelisted_ips': 'whitelistedIps',
+            'is_auto_scaling_enabled': 'isAutoScalingEnabled'
         }
 
         self._cpu_core_count = None
@@ -91,6 +97,7 @@ class UpdateAutonomousDatabaseDetails(object):
         self._defined_tags = None
         self._license_model = None
         self._whitelisted_ips = None
+        self._is_auto_scaling_enabled = None
 
     @property
     def cpu_core_count(self):
@@ -311,6 +318,30 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: list[str]
         """
         self._whitelisted_ips = whitelisted_ips
+
+    @property
+    def is_auto_scaling_enabled(self):
+        """
+        Gets the is_auto_scaling_enabled of this UpdateAutonomousDatabaseDetails.
+        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is false.
+
+
+        :return: The is_auto_scaling_enabled of this UpdateAutonomousDatabaseDetails.
+        :rtype: bool
+        """
+        return self._is_auto_scaling_enabled
+
+    @is_auto_scaling_enabled.setter
+    def is_auto_scaling_enabled(self, is_auto_scaling_enabled):
+        """
+        Sets the is_auto_scaling_enabled of this UpdateAutonomousDatabaseDetails.
+        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is false.
+
+
+        :param is_auto_scaling_enabled: The is_auto_scaling_enabled of this UpdateAutonomousDatabaseDetails.
+        :type: bool
+        """
+        self._is_auto_scaling_enabled = is_auto_scaling_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)
