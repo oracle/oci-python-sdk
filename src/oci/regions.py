@@ -72,7 +72,7 @@ def endpoint_for(service, region=None, endpoint=None, service_endpoint_template=
         # for backwards compatibility, if region already has a '.'
         # then consider it the full domain and do not append '.oraclecloud.com'
         if '.' in region:
-            return _format_endpoint(service, region)
+            return _format_endpoint(service, region, service_endpoint_template)
         else:
             # get endpoint from template
             return _endpoint(service, region, service_endpoint_template)
@@ -99,9 +99,24 @@ def _second_level_domain(region):
     return REALMS[realm]
 
 
-def _format_endpoint(service, domain):
-    if service.lower() not in SERVICE_ENDPOINTS:
-        raise ValueError("Unknown service {!r}".format(service))
+def _format_endpoint(service, domain, service_endpoint_template=None):
+    url_format = None
 
-    url_format = SERVICE_ENDPOINTS[service.lower()]
+    if service.lower() not in SERVICE_ENDPOINTS:
+        if service_endpoint_template is None:
+            raise ValueError("Unknown service {!r}".format(service))
+        else:
+            # If there is no entry in SERVICE_ENDPOINTS and there is
+            # a service_enpoint_template attempt to convert from new service template
+            # to old template.
+            # From "https://service.{region}.{subdomain}" to "https://service.{domain}"
+            pos = service_endpoint_template.find("{region}")
+            if pos != -1:
+                url_format = service_endpoint_template[:pos] + "{domain}"
+    else:
+        url_format = SERVICE_ENDPOINTS[service.lower()]
+
+    if url_format is None:
+        raise ValueError("Unable to format endpoint for service, {} , and service_endpoint_template, {}".format(service, service_endpoint_template))
+
     return url_format.format(domain=domain)
