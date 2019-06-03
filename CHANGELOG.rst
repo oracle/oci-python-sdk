@@ -5,12 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-2.2.12 - TBD
+2.2.12 - 2019-06-04
 ====================
 
 Added
 -----
-* TBD
+* Support for autoscaling autonomous databases and autonomous data warehouses in the Database service
+* Support for specifying fault domains as part of instance configurations in the Compute Autoscaling service
+* Support for deleting tag definitions and tag namespaces in the Identity service
+
+Fixed
+-----
+* Support for regions in realms other than oraclecloud.com in the Load Balancing service
 
 ====================
 2.2.11 - 2019-05-28
