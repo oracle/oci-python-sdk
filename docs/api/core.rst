@@ -56,6 +56,7 @@ Core Services
     oci.core.models.ChangeVolumeCompartmentDetails
     oci.core.models.ChangeVolumeGroupBackupCompartmentDetails
     oci.core.models.ChangeVolumeGroupCompartmentDetails
+    oci.core.models.ChangeServiceGatewayCompartmentDetails
     oci.core.models.ComputeInstanceDetails
     oci.core.models.ConnectLocalPeeringGatewaysDetails
     oci.core.models.ConnectRemotePeeringConnectionsDetails
