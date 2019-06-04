@@ -71,8 +71,8 @@ class UpdateSubnetDetails(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this UpdateSubnetDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        For more information, see `Resource Tags`__.
+        Defined tags for this resource. Each key is predefined and scoped to a
+        namespace. For more information, see `Resource Tags`__.
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
@@ -88,8 +88,8 @@ class UpdateSubnetDetails(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this UpdateSubnetDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        For more information, see `Resource Tags`__.
+        Defined tags for this resource. Each key is predefined and scoped to a
+        namespace. For more information, see `Resource Tags`__.
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
@@ -156,8 +156,7 @@ class UpdateSubnetDetails(object):
         """
         Gets the freeform_tags of this UpdateSubnetDetails.
         Free-form tags for this resource. Each tag is a simple key-value pair with no
-        predefined name, type, or namespace. For more information, see
-        `Resource Tags`__.
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
 
         Example: `{\"Department\": \"Finance\"}`
 
@@ -174,8 +173,7 @@ class UpdateSubnetDetails(object):
         """
         Sets the freeform_tags of this UpdateSubnetDetails.
         Free-form tags for this resource. Each tag is a simple key-value pair with no
-        predefined name, type, or namespace. For more information, see
-        `Resource Tags`__.
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
 
         Example: `{\"Department\": \"Finance\"}`
 

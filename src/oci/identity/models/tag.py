@@ -16,6 +16,22 @@ class Tag(object):
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm
     """
 
+    #: A constant which can be used with the lifecycle_state property of a Tag.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a Tag.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a Tag.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a Tag.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Tag object with values from keyword arguments.
@@ -57,6 +73,12 @@ class Tag(object):
             The value to assign to the is_retired property of this Tag.
         :type is_retired: bool
 
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this Tag.
+            Allowed values for this property are: "ACTIVE", "INACTIVE", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
         :param time_created:
             The value to assign to the time_created property of this Tag.
         :type time_created: datetime
@@ -76,6 +98,7 @@ class Tag(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'is_retired': 'bool',
+            'lifecycle_state': 'str',
             'time_created': 'datetime',
             'is_cost_tracking': 'bool'
         }
@@ -90,6 +113,7 @@ class Tag(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'is_retired': 'isRetired',
+            'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'is_cost_tracking': 'isCostTracking'
         }
@@ -103,6 +127,7 @@ class Tag(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._is_retired = None
+        self._lifecycle_state = None
         self._time_created = None
         self._is_cost_tracking = None
 
@@ -343,6 +368,36 @@ class Tag(object):
         :type: bool
         """
         self._is_retired = is_retired
+
+    @property
+    def lifecycle_state(self):
+        """
+        Gets the lifecycle_state of this Tag.
+        The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it.
+
+        Allowed values for this property are: "ACTIVE", "INACTIVE", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The lifecycle_state of this Tag.
+        :rtype: str
+        """
+        return self._lifecycle_state
+
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
+        """
+        Sets the lifecycle_state of this Tag.
+        The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it.
+
+
+        :param lifecycle_state: The lifecycle_state of this Tag.
+        :type: str
+        """
+        allowed_values = ["ACTIVE", "INACTIVE", "DELETING", "DELETED"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
+        self._lifecycle_state = lifecycle_state
 
     @property
     def time_created(self):

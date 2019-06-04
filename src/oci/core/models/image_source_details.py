@@ -30,6 +30,14 @@ class ImageSourceDetails(object):
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param operating_system:
+            The value to assign to the operating_system property of this ImageSourceDetails.
+        :type operating_system: str
+
+        :param operating_system_version:
+            The value to assign to the operating_system_version property of this ImageSourceDetails.
+        :type operating_system_version: str
+
         :param source_image_type:
             The value to assign to the source_image_type property of this ImageSourceDetails.
             Allowed values for this property are: "QCOW2", "VMDK"
@@ -41,15 +49,21 @@ class ImageSourceDetails(object):
 
         """
         self.swagger_types = {
+            'operating_system': 'str',
+            'operating_system_version': 'str',
             'source_image_type': 'str',
             'source_type': 'str'
         }
 
         self.attribute_map = {
+            'operating_system': 'operatingSystem',
+            'operating_system_version': 'operatingSystemVersion',
             'source_image_type': 'sourceImageType',
             'source_type': 'sourceType'
         }
 
+        self._operating_system = None
+        self._operating_system_version = None
         self._source_image_type = None
         self._source_type = None
 
@@ -68,6 +82,46 @@ class ImageSourceDetails(object):
             return 'ImageSourceViaObjectStorageUriDetails'
         else:
             return 'ImageSourceDetails'
+
+    @property
+    def operating_system(self):
+        """
+        Gets the operating_system of this ImageSourceDetails.
+
+        :return: The operating_system of this ImageSourceDetails.
+        :rtype: str
+        """
+        return self._operating_system
+
+    @operating_system.setter
+    def operating_system(self, operating_system):
+        """
+        Sets the operating_system of this ImageSourceDetails.
+
+        :param operating_system: The operating_system of this ImageSourceDetails.
+        :type: str
+        """
+        self._operating_system = operating_system
+
+    @property
+    def operating_system_version(self):
+        """
+        Gets the operating_system_version of this ImageSourceDetails.
+
+        :return: The operating_system_version of this ImageSourceDetails.
+        :rtype: str
+        """
+        return self._operating_system_version
+
+    @operating_system_version.setter
+    def operating_system_version(self, operating_system_version):
+        """
+        Sets the operating_system_version of this ImageSourceDetails.
+
+        :param operating_system_version: The operating_system_version of this ImageSourceDetails.
+        :type: str
+        """
+        self._operating_system_version = operating_system_version
 
     @property
     def source_image_type(self):

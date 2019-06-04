@@ -45,6 +45,10 @@ class TagSummary(object):
             The value to assign to the is_retired property of this TagSummary.
         :type is_retired: bool
 
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this TagSummary.
+        :type lifecycle_state: str
+
         :param time_created:
             The value to assign to the time_created property of this TagSummary.
         :type time_created: datetime
@@ -62,6 +66,7 @@ class TagSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'is_retired': 'bool',
+            'lifecycle_state': 'str',
             'time_created': 'datetime',
             'is_cost_tracking': 'bool'
         }
@@ -74,6 +79,7 @@ class TagSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'is_retired': 'isRetired',
+            'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'is_cost_tracking': 'isCostTracking'
         }
@@ -85,6 +91,7 @@ class TagSummary(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._is_retired = None
+        self._lifecycle_state = None
         self._time_created = None
         self._is_cost_tracking = None
 
@@ -277,6 +284,30 @@ class TagSummary(object):
         :type: bool
         """
         self._is_retired = is_retired
+
+    @property
+    def lifecycle_state(self):
+        """
+        Gets the lifecycle_state of this TagSummary.
+        The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it.
+
+
+        :return: The lifecycle_state of this TagSummary.
+        :rtype: str
+        """
+        return self._lifecycle_state
+
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
+        """
+        Sets the lifecycle_state of this TagSummary.
+        The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it.
+
+
+        :param lifecycle_state: The lifecycle_state of this TagSummary.
+        :type: str
+        """
+        self._lifecycle_state = lifecycle_state
 
     @property
     def time_created(self):

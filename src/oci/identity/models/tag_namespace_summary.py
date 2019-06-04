@@ -45,6 +45,10 @@ class TagNamespaceSummary(object):
             The value to assign to the is_retired property of this TagNamespaceSummary.
         :type is_retired: bool
 
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this TagNamespaceSummary.
+        :type lifecycle_state: str
+
         :param time_created:
             The value to assign to the time_created property of this TagNamespaceSummary.
         :type time_created: datetime
@@ -58,6 +62,7 @@ class TagNamespaceSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'is_retired': 'bool',
+            'lifecycle_state': 'str',
             'time_created': 'datetime'
         }
 
@@ -69,6 +74,7 @@ class TagNamespaceSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'is_retired': 'isRetired',
+            'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated'
         }
 
@@ -79,6 +85,7 @@ class TagNamespaceSummary(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._is_retired = None
+        self._lifecycle_state = None
         self._time_created = None
 
     @property
@@ -270,6 +277,30 @@ class TagNamespaceSummary(object):
         :type: bool
         """
         self._is_retired = is_retired
+
+    @property
+    def lifecycle_state(self):
+        """
+        Gets the lifecycle_state of this TagNamespaceSummary.
+        The tagnamespace's current state. After creating a tagnamespace, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tagnamespace, make sure its `lifecycleState` is INACTIVE before using it.
+
+
+        :return: The lifecycle_state of this TagNamespaceSummary.
+        :rtype: str
+        """
+        return self._lifecycle_state
+
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
+        """
+        Sets the lifecycle_state of this TagNamespaceSummary.
+        The tagnamespace's current state. After creating a tagnamespace, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tagnamespace, make sure its `lifecycleState` is INACTIVE before using it.
+
+
+        :param lifecycle_state: The lifecycle_state of this TagNamespaceSummary.
+        :type: str
+        """
+        self._lifecycle_state = lifecycle_state
 
     @property
     def time_created(self):

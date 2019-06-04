@@ -1426,7 +1426,9 @@ class VirtualNetworkClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str vcn_id: (required)
-            The OCID of the VCN.
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.Vcn.lifecycle_state`
@@ -2228,7 +2230,9 @@ class VirtualNetworkClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str vcn_id: (required)
-            The OCID of the VCN.
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateVcnDetails update_vcn_details: (required)
             Details object for updating a VCN.

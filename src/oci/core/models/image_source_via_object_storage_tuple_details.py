@@ -18,6 +18,14 @@ class ImageSourceViaObjectStorageTupleDetails(ImageSourceDetails):
         of this class is ``objectStorageTuple`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param operating_system:
+            The value to assign to the operating_system property of this ImageSourceViaObjectStorageTupleDetails.
+        :type operating_system: str
+
+        :param operating_system_version:
+            The value to assign to the operating_system_version property of this ImageSourceViaObjectStorageTupleDetails.
+        :type operating_system_version: str
+
         :param source_image_type:
             The value to assign to the source_image_type property of this ImageSourceViaObjectStorageTupleDetails.
             Allowed values for this property are: "QCOW2", "VMDK"
@@ -41,6 +49,8 @@ class ImageSourceViaObjectStorageTupleDetails(ImageSourceDetails):
 
         """
         self.swagger_types = {
+            'operating_system': 'str',
+            'operating_system_version': 'str',
             'source_image_type': 'str',
             'source_type': 'str',
             'bucket_name': 'str',
@@ -49,6 +59,8 @@ class ImageSourceViaObjectStorageTupleDetails(ImageSourceDetails):
         }
 
         self.attribute_map = {
+            'operating_system': 'operatingSystem',
+            'operating_system_version': 'operatingSystemVersion',
             'source_image_type': 'sourceImageType',
             'source_type': 'sourceType',
             'bucket_name': 'bucketName',
@@ -56,6 +68,8 @@ class ImageSourceViaObjectStorageTupleDetails(ImageSourceDetails):
             'object_name': 'objectName'
         }
 
+        self._operating_system = None
+        self._operating_system_version = None
         self._source_image_type = None
         self._source_type = None
         self._bucket_name = None
