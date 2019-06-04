@@ -29,6 +29,46 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_cancel_key_deletion(testing_service_client):
+    if not testing_service_client.is_api_enabled('key_management', 'CancelKeyDeletion'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_management'), 'CancelKeyDeletion')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='key_management', api_name='CancelKeyDeletion')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "CancelKeyDeletion")
+            client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.cancel_key_deletion(
+                key_id=request.pop(util.camelize('key_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'key_management',
+            'CancelKeyDeletion',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'key',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
 def test_create_key(testing_service_client):
     if not testing_service_client.is_api_enabled('key_management', 'CreateKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -384,6 +424,47 @@ def test_list_keys(testing_service_client):
             'keySummary',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_schedule_key_deletion(testing_service_client):
+    if not testing_service_client.is_api_enabled('key_management', 'ScheduleKeyDeletion'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_management'), 'ScheduleKeyDeletion')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='key_management', api_name='ScheduleKeyDeletion')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "ScheduleKeyDeletion")
+            client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.schedule_key_deletion(
+                key_id=request.pop(util.camelize('key_id')),
+                schedule_key_deletion_details=request.pop(util.camelize('schedule_key_deletion_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'key_management',
+            'ScheduleKeyDeletion',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'key',
+            False,
+            False
         )
 
 

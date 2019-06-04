@@ -18,7 +18,7 @@
     <enabled-groups-dir>${sdk-root-dir}/codegenConfig/enabledGroups</enabled-groups-dir>
     <feature-id-file>${sdk-root-dir}/featureId.yaml</feature-id-file>
     <feature-id-dir>${sdk-root-dir}/codegenConfig/featureIds</feature-id-dir>
-    <kms-api-spec-spec-file>kms-api-spec-20180608.yaml</kms-api-spec-spec-file>
+    <kms-api-spec-spec-file>source/kms-api-spec-20180608.cond.yaml</kms-api-spec-spec-file>
   </properties>
   <dependencies>
     <dependency>
@@ -143,7 +143,7 @@
       <dependency>
         <groupId>com.oracle.pic.kms</groupId>
         <artifactId>kms-api-spec</artifactId>
-        <version>0.1.104</version>
+        <version>0.1.115</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

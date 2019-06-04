@@ -71,7 +71,7 @@ class KmsCryptoClient(object):
             'regional_client': False,
             'service_endpoint': service_endpoint,
             'timeout': kwargs.get('timeout'),
-            'base_path': '/20180608',
+            'base_path': '/',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("kms_crypto", config, signer, key_management_type_mapping, **base_client_init_kwargs)
@@ -102,7 +102,7 @@ class KmsCryptoClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.DecryptedData`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/decrypt"
+        resource_path = "/20180608/decrypt"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -169,7 +169,7 @@ class KmsCryptoClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.EncryptedData`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/encrypt"
+        resource_path = "/20180608/encrypt"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -234,7 +234,7 @@ class KmsCryptoClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.GeneratedKey`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/generateDataEncryptionKey"
+        resource_path = "/20180608/generateDataEncryptionKey"
         method = "POST"
 
         # Don't accept unknown kwargs

@@ -35,6 +35,7 @@ Key Management
     oci.key_management.models.KeySummary
     oci.key_management.models.KeyVersion
     oci.key_management.models.KeyVersionSummary
+    oci.key_management.models.ScheduleKeyDeletionDetails
     oci.key_management.models.ScheduleVaultDeletionDetails
     oci.key_management.models.UpdateKeyDetails
     oci.key_management.models.UpdateVaultDetails
