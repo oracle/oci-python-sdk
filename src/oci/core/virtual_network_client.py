@@ -83,6 +83,8 @@ class VirtualNetworkClient(object):
         }
         self.base_client = BaseClient("virtual_network", config, signer, core_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
+        self._config = config
+        self._kwargs = kwargs
 
     def attach_service_id(self, service_gateway_id, attach_service_details, **kwargs):
         """

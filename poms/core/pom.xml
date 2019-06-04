@@ -112,6 +112,7 @@
                 <specName>core</specName>
                 <generateInitFile>true</generateInitFile>
                 <endpoint>https://iaas.{domain}</endpoint>
+                <specUsesWorkRequestService>true</specUsesWorkRequestService>
               </additionalProperties>
               <featureIdConfigFile>${feature-id-file}</featureIdConfigFile>
               <featureIdConfigDir>${feature-id-dir}</featureIdConfigDir>

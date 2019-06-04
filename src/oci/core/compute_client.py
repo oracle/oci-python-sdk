@@ -83,6 +83,8 @@ class ComputeClient(object):
         }
         self.base_client = BaseClient("compute", config, signer, core_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
+        self._config = config
+        self._kwargs = kwargs
 
     def attach_boot_volume(self, attach_boot_volume_details, **kwargs):
         """
