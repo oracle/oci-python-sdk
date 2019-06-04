@@ -75,7 +75,7 @@ class LoadBalancerClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
             'base_path': '/20170115',
-            'service_endpoint_template': 'https://iaas.{region}.oraclecloud.com',
+            'service_endpoint_template': 'https://iaas.{region}.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("load_balancer", config, signer, load_balancer_type_mapping, **base_client_init_kwargs)

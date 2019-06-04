@@ -83,7 +83,7 @@ class TunnelConfig(object):
         **[Required]** Gets the shared_secret of this TunnelConfig.
         The shared secret of the IPSec tunnel.
 
-        Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
+        Example: `EXAMPLEToUis6j1cp8GdVQxcmdfMO0yXMLilZTbYCMDGu4V8o`
 
 
         :return: The shared_secret of this TunnelConfig.
@@ -97,7 +97,7 @@ class TunnelConfig(object):
         Sets the shared_secret of this TunnelConfig.
         The shared secret of the IPSec tunnel.
 
-        Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
+        Example: `EXAMPLEToUis6j1cp8GdVQxcmdfMO0yXMLilZTbYCMDGu4V8o`
 
 
         :param shared_secret: The shared_secret of this TunnelConfig.

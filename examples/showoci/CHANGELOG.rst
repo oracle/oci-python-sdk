@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+19.6.3 - 2019-06-03
+====================
+
+Added
+-----
+* Added support for ipsec dynamic routing (bgp)
+
+====================
 19.5.27 - 2019-05-27
 ====================
 

@@ -29,29 +29,43 @@ class UpdateImageDetails(object):
             The value to assign to the freeform_tags property of this UpdateImageDetails.
         :type freeform_tags: dict(str, str)
 
+        :param operating_system:
+            The value to assign to the operating_system property of this UpdateImageDetails.
+        :type operating_system: str
+
+        :param operating_system_version:
+            The value to assign to the operating_system_version property of this UpdateImageDetails.
+        :type operating_system_version: str
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
-            'freeform_tags': 'dict(str, str)'
+            'freeform_tags': 'dict(str, str)',
+            'operating_system': 'str',
+            'operating_system_version': 'str'
         }
 
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
-            'freeform_tags': 'freeformTags'
+            'freeform_tags': 'freeformTags',
+            'operating_system': 'operatingSystem',
+            'operating_system_version': 'operatingSystemVersion'
         }
 
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
+        self._operating_system = None
+        self._operating_system_version = None
 
     @property
     def defined_tags(self):
         """
         Gets the defined_tags of this UpdateImageDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        For more information, see `Resource Tags`__.
+        Defined tags for this resource. Each key is predefined and scoped to a
+        namespace. For more information, see `Resource Tags`__.
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
@@ -67,8 +81,8 @@ class UpdateImageDetails(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this UpdateImageDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        For more information, see `Resource Tags`__.
+        Defined tags for this resource. Each key is predefined and scoped to a
+        namespace. For more information, see `Resource Tags`__.
 
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
@@ -115,8 +129,7 @@ class UpdateImageDetails(object):
         """
         Gets the freeform_tags of this UpdateImageDetails.
         Free-form tags for this resource. Each tag is a simple key-value pair with no
-        predefined name, type, or namespace. For more information, see
-        `Resource Tags`__.
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
 
         Example: `{\"Department\": \"Finance\"}`
 
@@ -133,8 +146,7 @@ class UpdateImageDetails(object):
         """
         Sets the freeform_tags of this UpdateImageDetails.
         Free-form tags for this resource. Each tag is a simple key-value pair with no
-        predefined name, type, or namespace. For more information, see
-        `Resource Tags`__.
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
 
         Example: `{\"Department\": \"Finance\"}`
 
@@ -145,6 +157,62 @@ class UpdateImageDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def operating_system(self):
+        """
+        Gets the operating_system of this UpdateImageDetails.
+        Operating system
+
+        Example: `Oracle Linux`
+
+
+        :return: The operating_system of this UpdateImageDetails.
+        :rtype: str
+        """
+        return self._operating_system
+
+    @operating_system.setter
+    def operating_system(self, operating_system):
+        """
+        Sets the operating_system of this UpdateImageDetails.
+        Operating system
+
+        Example: `Oracle Linux`
+
+
+        :param operating_system: The operating_system of this UpdateImageDetails.
+        :type: str
+        """
+        self._operating_system = operating_system
+
+    @property
+    def operating_system_version(self):
+        """
+        Gets the operating_system_version of this UpdateImageDetails.
+        Operating system version
+
+        Example: `7.4`
+
+
+        :return: The operating_system_version of this UpdateImageDetails.
+        :rtype: str
+        """
+        return self._operating_system_version
+
+    @operating_system_version.setter
+    def operating_system_version(self, operating_system_version):
+        """
+        Sets the operating_system_version of this UpdateImageDetails.
+        Operating system version
+
+        Example: `7.4`
+
+
+        :param operating_system_version: The operating_system_version of this UpdateImageDetails.
+        :type: str
+        """
+        self._operating_system_version = operating_system_version
 
     def __repr__(self):
         return formatted_flat_dict(self)

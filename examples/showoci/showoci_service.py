@@ -98,7 +98,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.2.7"
+    oci_compatible_version = "2.2.10"
 
     ##########################################################################
     # Global Constants
@@ -413,9 +413,9 @@ class ShowOCIService(object):
         try:
             # loop on digits
             for i, rl in zip(self.get_oci_version().split("."), self.oci_compatible_version.split(".")):
-                if i > rl:
+                if int(i) > int(rl):
                     return True
-                if i < rl:
+                if int(i) < int(rl):
                     print("")
                     print("*********************************************************************")
                     print("Error, OCI version " + self.oci_compatible_version + " required !")
@@ -2276,13 +2276,25 @@ class ShowOCIService(object):
                     if arr.lifecycle_state == oci.core.models.IPSecConnection.LIFECYCLE_STATE_AVAILABLE:
 
                         # get tunnel info
+                        # ipss = oci.core.models.IPSecConnectionTunnel
                         data_tun = []
                         try:
-                            ipss = virtual_network.get_ip_sec_connection_device_status(arr.id).data
-                            for tunnel in ipss.tunnels:
-                                data_tun.append(
-                                    {'ip_address': str(tunnel.ip_address), 'status': str(tunnel.lifecycle_state),
-                                     'status_date': tunnel.time_state_modified.strftime("%Y-%m-%d %H:%M")})
+                            tunnels = virtual_network.list_ip_sec_connection_tunnels(arr.id).data
+                            for tunnel in tunnels:
+                                tun_val = {'status': str(tunnel.status),
+                                           'lifecycle_state': str(tunnel.lifecycle_state),
+                                           'status_date': tunnel.time_status_updated.strftime("%Y-%m-%d %H:%M"),
+                                           'display_name': str(tunnel.display_name),
+                                           'routing': str(tunnel.routing),
+                                           'cpe_ip': str(tunnel.cpe_ip),
+                                           'vpn_ip': str(tunnel.vpn_ip),
+                                           'bgp_info': ""}
+
+                                if tunnel.bgp_session_info:
+                                    bs = tunnel.bgp_session_info
+                                    tun_val['bgp_info'] = "BGP Status ".ljust(12) + " - " + str(bs.bgp_state + ", Cust: " + bs.customer_interface_ip + " (" + bs.customer_bgp_asn + "), Oracle: " + bs.oracle_interface_ip + " (" + bs.oracle_bgp_asn) + ")"
+
+                                data_tun.append(tun_val)
                         except Exception:
                             pass
 

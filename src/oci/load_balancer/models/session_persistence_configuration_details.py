@@ -13,6 +13,7 @@ class SessionPersistenceConfigurationDetails(object):
     Service to direct any number of requests that originate from a single logical client to a single backend web server.
     For more information, see `Session Persistence`__.
 
+
     To disable session persistence on a running load balancer, use the
     :func:`update_backend_set` operation and specify \"null\" for the
     `SessionPersistenceConfigurationDetails` object.

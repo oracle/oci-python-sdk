@@ -18,6 +18,14 @@ class ImageSourceViaObjectStorageUriDetails(ImageSourceDetails):
         of this class is ``objectStorageUri`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param operating_system:
+            The value to assign to the operating_system property of this ImageSourceViaObjectStorageUriDetails.
+        :type operating_system: str
+
+        :param operating_system_version:
+            The value to assign to the operating_system_version property of this ImageSourceViaObjectStorageUriDetails.
+        :type operating_system_version: str
+
         :param source_image_type:
             The value to assign to the source_image_type property of this ImageSourceViaObjectStorageUriDetails.
             Allowed values for this property are: "QCOW2", "VMDK"
@@ -33,17 +41,23 @@ class ImageSourceViaObjectStorageUriDetails(ImageSourceDetails):
 
         """
         self.swagger_types = {
+            'operating_system': 'str',
+            'operating_system_version': 'str',
             'source_image_type': 'str',
             'source_type': 'str',
             'source_uri': 'str'
         }
 
         self.attribute_map = {
+            'operating_system': 'operatingSystem',
+            'operating_system_version': 'operatingSystemVersion',
             'source_image_type': 'sourceImageType',
             'source_type': 'sourceType',
             'source_uri': 'sourceUri'
         }
 
+        self._operating_system = None
+        self._operating_system_version = None
         self._source_image_type = None
         self._source_type = None
         self._source_uri = None
