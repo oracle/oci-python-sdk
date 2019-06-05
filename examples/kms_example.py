@@ -72,7 +72,7 @@ def schedule_deletion_vault(vault_id, vc_composite, deletion_time):
         time_of_deletion=deletion_time)
 
     # Since scheduling vault deletion is asynchronous; we need to wait for the vault to go to pending deletion state.
-    response = vc_composite.create_vault_and_wait_for_state(
+    response = vc_composite.schedule_vault_deletion_and_wait_for_state(
         schedule_vault_deletion_details,
         wait_for_states=[
             oci.key_management.models.Vault.LIFECYCLE_STATE_PENDING_DELETION])
@@ -128,17 +128,17 @@ def enable_key(key_mgmt_composite, key_id):
     return response
 
 
-def schedule_deletion_key(key_id, key_mgmt_composite, deletion_time):
+def schedule_deletion_key(key_mgmt_composite, deletion_time, key_id):
     print(" Scheduling Deletion for Key {}".format(key_id))
     # Create schedule_vault_deletion_details object that needs to be passed when scheduling vault deletion.
-    schedule_vault_deletion_details = oci.key_management.models(
+    schedule_key_deletion_details = oci.key_management.models.sc(
         time_of_deletion=deletion_time)
 
     # Since scheduling vault deletion is asynchronous; we need to wait for the vault to go to pending deletion state.
-    response = vc_composite.create_vault_and_wait_for_state(
-        schedule_vault_deletion_details,
+    response = key_mgmt_composite.schedule_key_deletion_and_wait_for_state(
+        schedule_key_deletion_details,
         wait_for_states=[
-            oci.key_management.models.Vault.LIFECYCLE_STATE_PENDING_DELETION])
+            oci.key_management.models.Key.LIFECYCLE_STATE_PENDING_DELETION])
     return response
 
 
@@ -146,10 +146,10 @@ def cancel_deletion_key(key_mgmt_composite, key_id):
     print(" Canceling key deletion {}.".format(key_id))
 
     # Since enabling key is asynchronous; we need to wait for the key to become enabled.
-    response = key_mgmt_composite.enable_key_and_wait_for_state(key_id,
-                                                                wait_for_states=[
-                                                                    oci.key_management.models.Key.LIFECYCLE_STATE_ENABLED,
-                                                                    oci.key_management.models.Key.LIFECYCLE_STATE_DISABLED])
+    response = key_mgmt_composite.cancel_key_deletion_and_wait_for_state(key_id,
+                                                                         wait_for_states=[
+                                                                             oci.key_management.models.Key.LIFECYCLE_STATE_ENABLED,
+                                                                             oci.key_management.models.Key.LIFECYCLE_STATE_DISABLED])
     return response
 
 
