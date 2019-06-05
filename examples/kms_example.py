@@ -257,7 +257,8 @@ print(" Enabling key {}.".format(k_id))
 enable_key(vault_management_client_composite, k_id)
 
 print(" Scheduling key deletion {}.".format(k_id))
-schedule_deletion_key(vault_management_client_composite, k_id)
+schedule_deletion_key(vault_management_client_composite, k_id,
+                      datetime.now() + timedelta(days=15))
 
 print(" Canceling key deletion {}.".format(k_id))
 enable_key(vault_management_client_composite, k_id)
