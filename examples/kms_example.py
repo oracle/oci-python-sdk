@@ -229,9 +229,8 @@ vault_management_client_composite = oci.key_management.KmsManagementClientCompos
 
 # Create a vault crypto client using the endpoint in the vault object.
 vault_crypto_client = oci.key_management.KmsCryptoClient(config,
-                                                         service_endpoint=vault.crypto_endpoint) \
- \
-    # Schedule vault deletion
+                                                         service_endpoint=vault.crypto_endpoint)
+# Schedule vault deletion
 print(" Scheduling vault deletion for vault {} with time {}".format(vault.id,
                                                                     datetime.now() + timedelta(
                                                                         days=15)))
@@ -261,7 +260,7 @@ schedule_deletion_key(vault_management_client_composite, k_id,
                       datetime.now() + timedelta(days=15))
 
 print(" Canceling key deletion {}.".format(k_id))
-enable_key(vault_management_client_composite, k_id)
+cancel_deletion_key(vault_management_client_composite, k_id)
 
 # Generate Data Encryption Key
 generate_dek(vault_crypto_client, k_id)
