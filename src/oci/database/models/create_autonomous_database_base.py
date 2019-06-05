@@ -86,6 +86,14 @@ class CreateAutonomousDatabaseBase(object):
             The value to assign to the is_auto_scaling_enabled property of this CreateAutonomousDatabaseBase.
         :type is_auto_scaling_enabled: bool
 
+        :param is_dedicated:
+            The value to assign to the is_dedicated property of this CreateAutonomousDatabaseBase.
+        :type is_dedicated: bool
+
+        :param autonomous_container_database_id:
+            The value to assign to the autonomous_container_database_id property of this CreateAutonomousDatabaseBase.
+        :type autonomous_container_database_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateAutonomousDatabaseBase.
         :type freeform_tags: dict(str, str)
@@ -110,6 +118,8 @@ class CreateAutonomousDatabaseBase(object):
             'display_name': 'str',
             'license_model': 'str',
             'is_auto_scaling_enabled': 'bool',
+            'is_dedicated': 'bool',
+            'autonomous_container_database_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'source': 'str'
@@ -125,6 +135,8 @@ class CreateAutonomousDatabaseBase(object):
             'display_name': 'displayName',
             'license_model': 'licenseModel',
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
+            'is_dedicated': 'isDedicated',
+            'autonomous_container_database_id': 'autonomousContainerDatabaseId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'source': 'source'
@@ -139,6 +151,8 @@ class CreateAutonomousDatabaseBase(object):
         self._display_name = None
         self._license_model = None
         self._is_auto_scaling_enabled = None
+        self._is_dedicated = None
+        self._autonomous_container_database_id = None
         self._freeform_tags = None
         self._defined_tags = None
         self._source = None
@@ -394,6 +408,58 @@ class CreateAutonomousDatabaseBase(object):
         :type: bool
         """
         self._is_auto_scaling_enabled = is_auto_scaling_enabled
+
+    @property
+    def is_dedicated(self):
+        """
+        Gets the is_dedicated of this CreateAutonomousDatabaseBase.
+        True if it is dedicated database.
+
+
+        :return: The is_dedicated of this CreateAutonomousDatabaseBase.
+        :rtype: bool
+        """
+        return self._is_dedicated
+
+    @is_dedicated.setter
+    def is_dedicated(self, is_dedicated):
+        """
+        Sets the is_dedicated of this CreateAutonomousDatabaseBase.
+        True if it is dedicated database.
+
+
+        :param is_dedicated: The is_dedicated of this CreateAutonomousDatabaseBase.
+        :type: bool
+        """
+        self._is_dedicated = is_dedicated
+
+    @property
+    def autonomous_container_database_id(self):
+        """
+        Gets the autonomous_container_database_id of this CreateAutonomousDatabaseBase.
+        The Autonomous Container Database `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The autonomous_container_database_id of this CreateAutonomousDatabaseBase.
+        :rtype: str
+        """
+        return self._autonomous_container_database_id
+
+    @autonomous_container_database_id.setter
+    def autonomous_container_database_id(self, autonomous_container_database_id):
+        """
+        Sets the autonomous_container_database_id of this CreateAutonomousDatabaseBase.
+        The Autonomous Container Database `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param autonomous_container_database_id: The autonomous_container_database_id of this CreateAutonomousDatabaseBase.
+        :type: str
+        """
+        self._autonomous_container_database_id = autonomous_container_database_id
 
     @property
     def freeform_tags(self):

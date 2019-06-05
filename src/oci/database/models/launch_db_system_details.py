@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LaunchDbSystemDetails(LaunchDbSystemBase):
     """
-    LaunchDbSystemDetails model.
+    Used for creating a new DB system. Does not use backups or an existing database for the creation of the initial database.
     """
 
     #: A constant which can be used with the database_edition property of a LaunchDbSystemDetails.

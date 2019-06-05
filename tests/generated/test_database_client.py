@@ -69,6 +69,46 @@ def test_complete_external_backup_job(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_create_autonomous_container_database(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'CreateAutonomousContainerDatabase'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'CreateAutonomousContainerDatabase')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='CreateAutonomousContainerDatabase')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.create_autonomous_container_database(
+                create_autonomous_container_database_details=request.pop(util.camelize('create_autonomous_container_database_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'CreateAutonomousContainerDatabase',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousContainerDatabase',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_create_autonomous_data_warehouse(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateAutonomousDataWarehouse'):
@@ -715,6 +755,46 @@ def test_generate_autonomous_database_wallet(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_autonomous_container_database(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'GetAutonomousContainerDatabase'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetAutonomousContainerDatabase')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetAutonomousContainerDatabase')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.get_autonomous_container_database(
+                autonomous_container_database_id=request.pop(util.camelize('autonomous_container_database_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetAutonomousContainerDatabase',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousContainerDatabase',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_get_autonomous_data_warehouse(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetAutonomousDataWarehouse'):
@@ -870,6 +950,46 @@ def test_get_autonomous_database_backup(testing_service_client):
             result,
             service_error,
             'autonomousDatabaseBackup',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_autonomous_exadata_infrastructure(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'GetAutonomousExadataInfrastructure'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetAutonomousExadataInfrastructure')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetAutonomousExadataInfrastructure')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.get_autonomous_exadata_infrastructure(
+                autonomous_exadata_infrastructure_id=request.pop(util.camelize('autonomous_exadata_infrastructure_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetAutonomousExadataInfrastructure',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousExadataInfrastructure',
             False,
             False
         )
@@ -1360,6 +1480,86 @@ def test_get_external_backup_job(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_maintenance_run(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'GetMaintenanceRun'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetMaintenanceRun')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetMaintenanceRun')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.get_maintenance_run(
+                maintenance_run_id=request.pop(util.camelize('maintenance_run_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetMaintenanceRun',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'maintenanceRun',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_launch_autonomous_exadata_infrastructure(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'LaunchAutonomousExadataInfrastructure'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'LaunchAutonomousExadataInfrastructure')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='LaunchAutonomousExadataInfrastructure')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.launch_autonomous_exadata_infrastructure(
+                launch_autonomous_exadata_infrastructure_details=request.pop(util.camelize('launch_autonomous_exadata_infrastructure_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'LaunchAutonomousExadataInfrastructure',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousExadataInfrastructure',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_launch_db_system(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'LaunchDbSystem'):
@@ -1397,6 +1597,65 @@ def test_launch_db_system(testing_service_client):
             'dbSystem',
             False,
             False
+        )
+
+
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_autonomous_container_databases(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ListAutonomousContainerDatabases'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListAutonomousContainerDatabases')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListAutonomousContainerDatabases')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.list_autonomous_container_databases(
+                compartment_id=request.pop(util.camelize('compartment_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_autonomous_container_databases(
+                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_autonomous_container_databases(
+                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ListAutonomousContainerDatabases',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousContainerDatabaseSummary',
+            False,
+            True
         )
 
 
@@ -1625,6 +1884,127 @@ def test_list_autonomous_databases(testing_service_client):
             result,
             service_error,
             'autonomousDatabaseSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_autonomous_exadata_infrastructure_shapes(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ListAutonomousExadataInfrastructureShapes'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListAutonomousExadataInfrastructureShapes')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListAutonomousExadataInfrastructureShapes')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.list_autonomous_exadata_infrastructure_shapes(
+                availability_domain=request.pop(util.camelize('availability_domain')),
+                compartment_id=request.pop(util.camelize('compartment_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_autonomous_exadata_infrastructure_shapes(
+                    availability_domain=request.pop(util.camelize('availability_domain')),
+                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_autonomous_exadata_infrastructure_shapes(
+                        availability_domain=request.pop(util.camelize('availability_domain')),
+                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ListAutonomousExadataInfrastructureShapes',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousExadataInfrastructureShapeSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_autonomous_exadata_infrastructures(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ListAutonomousExadataInfrastructures'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListAutonomousExadataInfrastructures')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListAutonomousExadataInfrastructures')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.list_autonomous_exadata_infrastructures(
+                compartment_id=request.pop(util.camelize('compartment_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_autonomous_exadata_infrastructures(
+                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_autonomous_exadata_infrastructures(
+                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ListAutonomousExadataInfrastructures',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousExadataInfrastructureSummary',
             False,
             True
         )
@@ -1946,7 +2326,6 @@ def test_list_db_homes(testing_service_client):
             client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.list_db_homes(
                 compartment_id=request.pop(util.camelize('compartment_id')),
-                db_system_id=request.pop(util.camelize('db_system_id')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1955,7 +2334,6 @@ def test_list_db_homes(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_db_homes(
                     compartment_id=request.pop(util.camelize('compartment_id')),
-                    db_system_id=request.pop(util.camelize('db_system_id')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1966,7 +2344,6 @@ def test_list_db_homes(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_db_homes(
                         compartment_id=request.pop(util.camelize('compartment_id')),
-                        db_system_id=request.pop(util.camelize('db_system_id')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -2008,7 +2385,6 @@ def test_list_db_nodes(testing_service_client):
             client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.list_db_nodes(
                 compartment_id=request.pop(util.camelize('compartment_id')),
-                db_system_id=request.pop(util.camelize('db_system_id')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2017,7 +2393,6 @@ def test_list_db_nodes(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_db_nodes(
                     compartment_id=request.pop(util.camelize('compartment_id')),
-                    db_system_id=request.pop(util.camelize('db_system_id')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -2028,7 +2403,6 @@ def test_list_db_nodes(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_db_nodes(
                         compartment_id=request.pop(util.camelize('compartment_id')),
-                        db_system_id=request.pop(util.camelize('db_system_id')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -2347,6 +2721,65 @@ def test_list_db_versions(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_maintenance_runs(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ListMaintenanceRuns'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListMaintenanceRuns')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListMaintenanceRuns')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.list_maintenance_runs(
+                compartment_id=request.pop(util.camelize('compartment_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_maintenance_runs(
+                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_maintenance_runs(
+                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ListMaintenanceRuns',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'maintenanceRunSummary',
+            False,
+            True
+        )
+
+
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_reinstate_data_guard_association(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ReinstateDataGuardAssociation'):
@@ -2384,6 +2817,46 @@ def test_reinstate_data_guard_association(testing_service_client):
             result,
             service_error,
             'dataGuardAssociation',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_restart_autonomous_container_database(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'RestartAutonomousContainerDatabase'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'RestartAutonomousContainerDatabase')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='RestartAutonomousContainerDatabase')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.restart_autonomous_container_database(
+                autonomous_container_database_id=request.pop(util.camelize('autonomous_container_database_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'RestartAutonomousContainerDatabase',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousContainerDatabase',
             False,
             False
         )
@@ -2714,6 +3187,86 @@ def test_switchover_data_guard_association(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_terminate_autonomous_container_database(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'TerminateAutonomousContainerDatabase'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'TerminateAutonomousContainerDatabase')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='TerminateAutonomousContainerDatabase')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.terminate_autonomous_container_database(
+                autonomous_container_database_id=request.pop(util.camelize('autonomous_container_database_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'TerminateAutonomousContainerDatabase',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'terminate_autonomous_container_database',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_terminate_autonomous_exadata_infrastructure(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'TerminateAutonomousExadataInfrastructure'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'TerminateAutonomousExadataInfrastructure')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='TerminateAutonomousExadataInfrastructure')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.terminate_autonomous_exadata_infrastructure(
+                autonomous_exadata_infrastructure_id=request.pop(util.camelize('autonomous_exadata_infrastructure_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'TerminateAutonomousExadataInfrastructure',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'terminate_autonomous_exadata_infrastructure',
+            True,
+            False
+        )
+
+
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_terminate_db_system(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'TerminateDbSystem'):
@@ -2750,6 +3303,47 @@ def test_terminate_db_system(testing_service_client):
             service_error,
             'terminate_db_system',
             True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_update_autonomous_container_database(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'UpdateAutonomousContainerDatabase'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'UpdateAutonomousContainerDatabase')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='UpdateAutonomousContainerDatabase')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.update_autonomous_container_database(
+                autonomous_container_database_id=request.pop(util.camelize('autonomous_container_database_id')),
+                update_autonomous_container_database_details=request.pop(util.camelize('update_autonomous_container_database_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'UpdateAutonomousContainerDatabase',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousContainerDatabase',
+            False,
             False
         )
 
@@ -2831,6 +3425,47 @@ def test_update_autonomous_database(testing_service_client):
             result,
             service_error,
             'autonomousDatabase',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_update_autonomous_exadata_infrastructure(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'UpdateAutonomousExadataInfrastructure'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'UpdateAutonomousExadataInfrastructure')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='UpdateAutonomousExadataInfrastructure')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.update_autonomous_exadata_infrastructure(
+                autonomous_exadata_infrastructure_id=request.pop(util.camelize('autonomous_exadata_infrastructure_id')),
+                update_autonomous_exadata_infrastructures_details=request.pop(util.camelize('update_autonomous_exadata_infrastructures_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'UpdateAutonomousExadataInfrastructure',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousExadataInfrastructure',
             False,
             False
         )
@@ -2995,6 +3630,47 @@ def test_update_exadata_iorm_config(testing_service_client):
             result,
             service_error,
             'exadataIormConfig',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_update_maintenance_run(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'UpdateMaintenanceRun'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'UpdateMaintenanceRun')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='UpdateMaintenanceRun')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.update_maintenance_run(
+                maintenance_run_id=request.pop(util.camelize('maintenance_run_id')),
+                update_maintenance_run_details=request.pop(util.camelize('update_maintenance_run_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'UpdateMaintenanceRun',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'maintenanceRun',
             False,
             False
         )

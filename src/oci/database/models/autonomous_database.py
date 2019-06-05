@@ -68,6 +68,10 @@ class AutonomousDatabase(object):
     #: This constant has a value of "UPDATING"
     LIFECYCLE_STATE_UPDATING = "UPDATING"
 
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabase.
+    #: This constant has a value of "MAINTENANCE_IN_PROGRESS"
+    LIFECYCLE_STATE_MAINTENANCE_IN_PROGRESS = "MAINTENANCE_IN_PROGRESS"
+
     #: A constant which can be used with the license_model property of a AutonomousDatabase.
     #: This constant has a value of "LICENSE_INCLUDED"
     LICENSE_MODEL_LICENSE_INCLUDED = "LICENSE_INCLUDED"
@@ -99,7 +103,7 @@ class AutonomousDatabase(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AutonomousDatabase.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -119,6 +123,14 @@ class AutonomousDatabase(object):
             The value to assign to the data_storage_size_in_tbs property of this AutonomousDatabase.
         :type data_storage_size_in_tbs: int
 
+        :param is_dedicated:
+            The value to assign to the is_dedicated property of this AutonomousDatabase.
+        :type is_dedicated: bool
+
+        :param autonomous_container_database_id:
+            The value to assign to the autonomous_container_database_id property of this AutonomousDatabase.
+        :type autonomous_container_database_id: str
+
         :param time_created:
             The value to assign to the time_created property of this AutonomousDatabase.
         :type time_created: datetime
@@ -134,6 +146,10 @@ class AutonomousDatabase(object):
         :param connection_strings:
             The value to assign to the connection_strings property of this AutonomousDatabase.
         :type connection_strings: AutonomousDatabaseConnectionStrings
+
+        :param connection_urls:
+            The value to assign to the connection_urls property of this AutonomousDatabase.
+        :type connection_urls: AutonomousDatabaseConnectionUrls
 
         :param license_model:
             The value to assign to the license_model property of this AutonomousDatabase.
@@ -180,10 +196,13 @@ class AutonomousDatabase(object):
             'db_name': 'str',
             'cpu_core_count': 'int',
             'data_storage_size_in_tbs': 'int',
+            'is_dedicated': 'bool',
+            'autonomous_container_database_id': 'str',
             'time_created': 'datetime',
             'display_name': 'str',
             'service_console_url': 'str',
             'connection_strings': 'AutonomousDatabaseConnectionStrings',
+            'connection_urls': 'AutonomousDatabaseConnectionUrls',
             'license_model': 'str',
             'used_data_storage_size_in_tbs': 'int',
             'freeform_tags': 'dict(str, str)',
@@ -202,10 +221,13 @@ class AutonomousDatabase(object):
             'db_name': 'dbName',
             'cpu_core_count': 'cpuCoreCount',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
+            'is_dedicated': 'isDedicated',
+            'autonomous_container_database_id': 'autonomousContainerDatabaseId',
             'time_created': 'timeCreated',
             'display_name': 'displayName',
             'service_console_url': 'serviceConsoleUrl',
             'connection_strings': 'connectionStrings',
+            'connection_urls': 'connectionUrls',
             'license_model': 'licenseModel',
             'used_data_storage_size_in_tbs': 'usedDataStorageSizeInTBs',
             'freeform_tags': 'freeformTags',
@@ -223,10 +245,13 @@ class AutonomousDatabase(object):
         self._db_name = None
         self._cpu_core_count = None
         self._data_storage_size_in_tbs = None
+        self._is_dedicated = None
+        self._autonomous_container_database_id = None
         self._time_created = None
         self._display_name = None
         self._service_console_url = None
         self._connection_strings = None
+        self._connection_urls = None
         self._license_model = None
         self._used_data_storage_size_in_tbs = None
         self._freeform_tags = None
@@ -298,7 +323,7 @@ class AutonomousDatabase(object):
         **[Required]** Gets the lifecycle_state of this AutonomousDatabase.
         The current state of the database.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -317,7 +342,7 @@ class AutonomousDatabase(object):
         :param lifecycle_state: The lifecycle_state of this AutonomousDatabase.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -419,6 +444,58 @@ class AutonomousDatabase(object):
         self._data_storage_size_in_tbs = data_storage_size_in_tbs
 
     @property
+    def is_dedicated(self):
+        """
+        Gets the is_dedicated of this AutonomousDatabase.
+        True if it is dedicated database.
+
+
+        :return: The is_dedicated of this AutonomousDatabase.
+        :rtype: bool
+        """
+        return self._is_dedicated
+
+    @is_dedicated.setter
+    def is_dedicated(self, is_dedicated):
+        """
+        Sets the is_dedicated of this AutonomousDatabase.
+        True if it is dedicated database.
+
+
+        :param is_dedicated: The is_dedicated of this AutonomousDatabase.
+        :type: bool
+        """
+        self._is_dedicated = is_dedicated
+
+    @property
+    def autonomous_container_database_id(self):
+        """
+        Gets the autonomous_container_database_id of this AutonomousDatabase.
+        The Autonomous Container Database `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The autonomous_container_database_id of this AutonomousDatabase.
+        :rtype: str
+        """
+        return self._autonomous_container_database_id
+
+    @autonomous_container_database_id.setter
+    def autonomous_container_database_id(self, autonomous_container_database_id):
+        """
+        Sets the autonomous_container_database_id of this AutonomousDatabase.
+        The Autonomous Container Database `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param autonomous_container_database_id: The autonomous_container_database_id of this AutonomousDatabase.
+        :type: str
+        """
+        self._autonomous_container_database_id = autonomous_container_database_id
+
+    @property
     def time_created(self):
         """
         Gets the time_created of this AutonomousDatabase.
@@ -513,6 +590,26 @@ class AutonomousDatabase(object):
         :type: AutonomousDatabaseConnectionStrings
         """
         self._connection_strings = connection_strings
+
+    @property
+    def connection_urls(self):
+        """
+        Gets the connection_urls of this AutonomousDatabase.
+
+        :return: The connection_urls of this AutonomousDatabase.
+        :rtype: AutonomousDatabaseConnectionUrls
+        """
+        return self._connection_urls
+
+    @connection_urls.setter
+    def connection_urls(self, connection_urls):
+        """
+        Sets the connection_urls of this AutonomousDatabase.
+
+        :param connection_urls: The connection_urls of this AutonomousDatabase.
+        :type: AutonomousDatabaseConnectionUrls
+        """
+        self._connection_urls = connection_urls
 
     @property
     def license_model(self):

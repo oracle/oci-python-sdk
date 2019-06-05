@@ -802,7 +802,7 @@ class LaunchDbSystemBase(object):
         """
         Gets the source of this LaunchDbSystemBase.
         The source of the database:
-          NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a backup. The default is NONE.
+        NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a backup. The default is NONE.
 
         Allowed values for this property are: "NONE", "DB_BACKUP"
 
@@ -817,7 +817,7 @@ class LaunchDbSystemBase(object):
         """
         Sets the source of this LaunchDbSystemBase.
         The source of the database:
-          NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a backup. The default is NONE.
+        NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a backup. The default is NONE.
 
 
         :param source: The source of this LaunchDbSystemBase.
