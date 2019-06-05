@@ -29,6 +29,252 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
+def test_change_boot_volume_backup_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangeBootVolumeBackupCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'ChangeBootVolumeBackupCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangeBootVolumeBackupCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
+            response = client.change_boot_volume_backup_compartment(
+                boot_volume_backup_id=request.pop(util.camelize('boot_volume_backup_id')),
+                change_boot_volume_backup_compartment_details=request.pop(util.camelize('change_boot_volume_backup_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangeBootVolumeBackupCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_boot_volume_backup_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
+def test_change_boot_volume_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangeBootVolumeCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'ChangeBootVolumeCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangeBootVolumeCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
+            response = client.change_boot_volume_compartment(
+                boot_volume_id=request.pop(util.camelize('boot_volume_id')),
+                change_boot_volume_compartment_details=request.pop(util.camelize('change_boot_volume_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangeBootVolumeCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_boot_volume_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
+def test_change_volume_backup_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangeVolumeBackupCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'ChangeVolumeBackupCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangeVolumeBackupCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
+            response = client.change_volume_backup_compartment(
+                volume_backup_id=request.pop(util.camelize('volume_backup_id')),
+                change_volume_backup_compartment_details=request.pop(util.camelize('change_volume_backup_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangeVolumeBackupCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_volume_backup_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
+def test_change_volume_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangeVolumeCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'ChangeVolumeCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangeVolumeCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
+            response = client.change_volume_compartment(
+                volume_id=request.pop(util.camelize('volume_id')),
+                change_volume_compartment_details=request.pop(util.camelize('change_volume_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangeVolumeCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_volume_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
+def test_change_volume_group_backup_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangeVolumeGroupBackupCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'ChangeVolumeGroupBackupCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangeVolumeGroupBackupCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
+            response = client.change_volume_group_backup_compartment(
+                volume_group_backup_id=request.pop(util.camelize('volume_group_backup_id')),
+                change_volume_group_backup_compartment_details=request.pop(util.camelize('change_volume_group_backup_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangeVolumeGroupBackupCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_volume_group_backup_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
+def test_change_volume_group_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangeVolumeGroupCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'ChangeVolumeGroupCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangeVolumeGroupCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
+            response = client.change_volume_group_compartment(
+                volume_group_id=request.pop(util.camelize('volume_group_id')),
+                change_volume_group_compartment_details=request.pop(util.camelize('change_volume_group_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangeVolumeGroupCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_volume_group_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_copy_volume_backup(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CopyVolumeBackup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
