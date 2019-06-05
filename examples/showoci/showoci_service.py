@@ -98,7 +98,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.2.10"
+    oci_compatible_version = "2.2.12"
 
     ##########################################################################
     # Global Constants
@@ -4893,6 +4893,8 @@ class ShowOCIService(object):
                              'freeform_tags': [] if dbs.freeform_tags is None else dbs.freeform_tags,
                              'region_name': str(self.config['region']),
                              'whitelisted_ips': "" if dbs.whitelisted_ips is None else str(', '.join(x for x in dbs.whitelisted_ips)),
+                             'db_workload': str(dbs.db_workload),
+                             'is_auto_scaling_enabled': dbs.is_auto_scaling_enabled,
                              'backups': self.__load_database_autonomouns_backups(database_client, dbs.id)}
 
                     # license model

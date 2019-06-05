@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+19.6.10 - 2019-06-10
+====================
+
+Added
+-----
+* Added support for autoscale Autonomous Database
+* Added Workload Type for the Autonomous Database Summary
+
+====================
 19.6.3 - 2019-06-03
 ====================
 
