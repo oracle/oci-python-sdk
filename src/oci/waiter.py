@@ -6,6 +6,7 @@ import time
 from .exceptions import MaximumWaitTimeExceeded, WaitUntilNotSupported, ServiceError
 from .util import WAIT_RESOURCE_NOT_FOUND
 from . import retry
+from oci.work_requests.models import WorkRequest
 
 
 def wait_until(client, response, property=None, state=None, max_interval_seconds=30, max_wait_seconds=1200, succeed_on_not_found=False, **kwargs):
@@ -108,3 +109,11 @@ def wait_until(client, response, property=None, state=None, max_interval_seconds
                     return WAIT_RESOURCE_NOT_FOUND
             else:
                 raise
+
+
+# list of termination states for work request service used by composite operation waiters
+_WORK_REQUEST_TERMINATION_STATES = [
+    WorkRequest.STATUS_SUCCEEDED,
+    WorkRequest.STATUS_FAILED,
+    WorkRequest.STATUS_CANCELED
+]
