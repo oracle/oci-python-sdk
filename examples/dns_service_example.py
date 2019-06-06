@@ -67,12 +67,13 @@ def get_zone(dns_client, zone_name):
 config = oci.config.from_file()
 dns_client = oci.dns.DnsClient(config)
 
-if len(sys.argv) != 3:
-    raise RuntimeError('This script expects an argument of a compartment OCID where the zone will be created, and the name of the zone')
+if len(sys.argv) != 4:
+    raise RuntimeError('This script expects an argument of a compartment OCID where the zone will be created,  the name of the zone, and a target compartment OCID to which the zone will be moved.')
 
 # The first argument is the name of the script, so start the index at 1
 compartment_id = sys.argv[1]
 zone_name = sys.argv[2]
+target_compartment_id = sys.argv[3]
 
 create_response = dns_client.create_zone(
     oci.dns.models.CreateZoneDetails(
@@ -449,6 +450,9 @@ dns_client.delete_rr_set(zone_name, subdomain, 'TXT')
 all_rr_set_records = get_all_rr_set_records(dns_client, zone_name, subdomain, get_zone(dns_client, zone_name).version, 'TXT')
 print('RRSet records after delete: {}'.format(all_rr_set_records))
 print('\n=========================\n')
+
+# We can also move the the zone to a new compartment
+dns_client.change_zone_compartment(get_zone(dns_client, zone_name).compartment_id)
 
 dns_client.delete_zone(zone_name)
 print('Deleted zone')
