@@ -25,6 +25,10 @@ class BackupSummary(object):
     #: This constant has a value of "FULL"
     TYPE_FULL = "FULL"
 
+    #: A constant which can be used with the type property of a BackupSummary.
+    #: This constant has a value of "VIRTUAL_FULL"
+    TYPE_VIRTUAL_FULL = "VIRTUAL_FULL"
+
     #: A constant which can be used with the lifecycle_state property of a BackupSummary.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -88,7 +92,7 @@ class BackupSummary(object):
 
         :param type:
             The value to assign to the type property of this BackupSummary.
-            Allowed values for this property are: "INCREMENTAL", "FULL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INCREMENTAL", "FULL", "VIRTUAL_FULL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -282,7 +286,7 @@ class BackupSummary(object):
         Gets the type of this BackupSummary.
         The type of backup.
 
-        Allowed values for this property are: "INCREMENTAL", "FULL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "INCREMENTAL", "FULL", "VIRTUAL_FULL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -301,7 +305,7 @@ class BackupSummary(object):
         :param type: The type of this BackupSummary.
         :type: str
         """
-        allowed_values = ["INCREMENTAL", "FULL"]
+        allowed_values = ["INCREMENTAL", "FULL", "VIRTUAL_FULL"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

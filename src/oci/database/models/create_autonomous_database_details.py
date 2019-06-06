@@ -56,6 +56,14 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
             The value to assign to the is_auto_scaling_enabled property of this CreateAutonomousDatabaseDetails.
         :type is_auto_scaling_enabled: bool
 
+        :param is_dedicated:
+            The value to assign to the is_dedicated property of this CreateAutonomousDatabaseDetails.
+        :type is_dedicated: bool
+
+        :param autonomous_container_database_id:
+            The value to assign to the autonomous_container_database_id property of this CreateAutonomousDatabaseDetails.
+        :type autonomous_container_database_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateAutonomousDatabaseDetails.
         :type freeform_tags: dict(str, str)
@@ -80,6 +88,8 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
             'display_name': 'str',
             'license_model': 'str',
             'is_auto_scaling_enabled': 'bool',
+            'is_dedicated': 'bool',
+            'autonomous_container_database_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'source': 'str'
@@ -95,6 +105,8 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
             'display_name': 'displayName',
             'license_model': 'licenseModel',
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
+            'is_dedicated': 'isDedicated',
+            'autonomous_container_database_id': 'autonomousContainerDatabaseId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'source': 'source'
@@ -109,6 +121,8 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
         self._display_name = None
         self._license_model = None
         self._is_auto_scaling_enabled = None
+        self._is_dedicated = None
+        self._autonomous_container_database_id = None
         self._freeform_tags = None
         self._defined_tags = None
         self._source = None
