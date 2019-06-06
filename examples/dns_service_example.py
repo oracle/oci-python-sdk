@@ -452,7 +452,7 @@ print('RRSet records after delete: {}'.format(all_rr_set_records))
 print('\n=========================\n')
 
 # We can also move the the zone to a new compartment
-dns_client.change_zone_compartment(get_zone(dns_client, zone_name).compartment_id)
+dns_client.change_zone_compartment(get_zone(dns_client, zone_name).zone_id, target_compartment_id)
 
 dns_client.delete_zone(zone_name)
 print('Deleted zone')
