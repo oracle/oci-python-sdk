@@ -5,12 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-2.2.13 - TBD
+2.2.13 - 2019-06-11
 ====================
 
 Added
 -----
-* TBD
+* Support for specifying custom boot volume sizes on instance configurations in the Compute Autoscaling service
+* Support for 'Autonomous Transaction Processing - Dedicated' features, as well as maintenance run and backup operations on autonomous databases, autonomous container databases, and autonomous Exadata infrastructure in the Database service
 
 ====================
 2.2.12 - 2019-06-04
