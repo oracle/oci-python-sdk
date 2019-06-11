@@ -29,6 +29,10 @@ class AutonomousDatabaseConnectionStrings(object):
             The value to assign to the low property of this AutonomousDatabaseConnectionStrings.
         :type low: str
 
+        :param dedicated:
+            The value to assign to the dedicated property of this AutonomousDatabaseConnectionStrings.
+        :type dedicated: str
+
         :param all_connection_strings:
             The value to assign to the all_connection_strings property of this AutonomousDatabaseConnectionStrings.
         :type all_connection_strings: dict(str, str)
@@ -38,6 +42,7 @@ class AutonomousDatabaseConnectionStrings(object):
             'high': 'str',
             'medium': 'str',
             'low': 'str',
+            'dedicated': 'str',
             'all_connection_strings': 'dict(str, str)'
         }
 
@@ -45,12 +50,14 @@ class AutonomousDatabaseConnectionStrings(object):
             'high': 'high',
             'medium': 'medium',
             'low': 'low',
+            'dedicated': 'dedicated',
             'all_connection_strings': 'allConnectionStrings'
         }
 
         self._high = None
         self._medium = None
         self._low = None
+        self._dedicated = None
         self._all_connection_strings = None
 
     @property
@@ -124,6 +131,30 @@ class AutonomousDatabaseConnectionStrings(object):
         :type: str
         """
         self._low = low
+
+    @property
+    def dedicated(self):
+        """
+        Gets the dedicated of this AutonomousDatabaseConnectionStrings.
+        The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
+
+
+        :return: The dedicated of this AutonomousDatabaseConnectionStrings.
+        :rtype: str
+        """
+        return self._dedicated
+
+    @dedicated.setter
+    def dedicated(self, dedicated):
+        """
+        Sets the dedicated of this AutonomousDatabaseConnectionStrings.
+        The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
+
+
+        :param dedicated: The dedicated of this AutonomousDatabaseConnectionStrings.
+        :type: str
+        """
+        self._dedicated = dedicated
 
     @property
     def all_connection_strings(self):

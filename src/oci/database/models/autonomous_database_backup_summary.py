@@ -88,6 +88,10 @@ class AutonomousDatabaseBackupSummary(object):
             The value to assign to the lifecycle_details property of this AutonomousDatabaseBackupSummary.
         :type lifecycle_details: str
 
+        :param database_size_in_tbs:
+            The value to assign to the database_size_in_tbs property of this AutonomousDatabaseBackupSummary.
+        :type database_size_in_tbs: float
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AutonomousDatabaseBackupSummary.
             Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -105,6 +109,7 @@ class AutonomousDatabaseBackupSummary(object):
             'time_started': 'datetime',
             'time_ended': 'datetime',
             'lifecycle_details': 'str',
+            'database_size_in_tbs': 'float',
             'lifecycle_state': 'str'
         }
 
@@ -118,6 +123,7 @@ class AutonomousDatabaseBackupSummary(object):
             'time_started': 'timeStarted',
             'time_ended': 'timeEnded',
             'lifecycle_details': 'lifecycleDetails',
+            'database_size_in_tbs': 'databaseSizeInTBs',
             'lifecycle_state': 'lifecycleState'
         }
 
@@ -130,6 +136,7 @@ class AutonomousDatabaseBackupSummary(object):
         self._time_started = None
         self._time_ended = None
         self._lifecycle_details = None
+        self._database_size_in_tbs = None
         self._lifecycle_state = None
 
     @property
@@ -365,6 +372,30 @@ class AutonomousDatabaseBackupSummary(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def database_size_in_tbs(self):
+        """
+        Gets the database_size_in_tbs of this AutonomousDatabaseBackupSummary.
+        The size of the database in terabytes at the time the backup was taken.
+
+
+        :return: The database_size_in_tbs of this AutonomousDatabaseBackupSummary.
+        :rtype: float
+        """
+        return self._database_size_in_tbs
+
+    @database_size_in_tbs.setter
+    def database_size_in_tbs(self, database_size_in_tbs):
+        """
+        Sets the database_size_in_tbs of this AutonomousDatabaseBackupSummary.
+        The size of the database in terabytes at the time the backup was taken.
+
+
+        :param database_size_in_tbs: The database_size_in_tbs of this AutonomousDatabaseBackupSummary.
+        :type: float
+        """
+        self._database_size_in_tbs = database_size_in_tbs
 
     @property
     def lifecycle_state(self):

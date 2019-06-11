@@ -22,6 +22,10 @@ class InstanceConfigurationInstanceSourceViaImageDetails(InstanceConfigurationIn
             The value to assign to the source_type property of this InstanceConfigurationInstanceSourceViaImageDetails.
         :type source_type: str
 
+        :param boot_volume_size_in_gbs:
+            The value to assign to the boot_volume_size_in_gbs property of this InstanceConfigurationInstanceSourceViaImageDetails.
+        :type boot_volume_size_in_gbs: int
+
         :param image_id:
             The value to assign to the image_id property of this InstanceConfigurationInstanceSourceViaImageDetails.
         :type image_id: str
@@ -29,17 +33,44 @@ class InstanceConfigurationInstanceSourceViaImageDetails(InstanceConfigurationIn
         """
         self.swagger_types = {
             'source_type': 'str',
+            'boot_volume_size_in_gbs': 'int',
             'image_id': 'str'
         }
 
         self.attribute_map = {
             'source_type': 'sourceType',
+            'boot_volume_size_in_gbs': 'bootVolumeSizeInGBs',
             'image_id': 'imageId'
         }
 
         self._source_type = None
+        self._boot_volume_size_in_gbs = None
         self._image_id = None
         self._source_type = 'image'
+
+    @property
+    def boot_volume_size_in_gbs(self):
+        """
+        Gets the boot_volume_size_in_gbs of this InstanceConfigurationInstanceSourceViaImageDetails.
+        The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 16384 GB (16TB).
+
+
+        :return: The boot_volume_size_in_gbs of this InstanceConfigurationInstanceSourceViaImageDetails.
+        :rtype: int
+        """
+        return self._boot_volume_size_in_gbs
+
+    @boot_volume_size_in_gbs.setter
+    def boot_volume_size_in_gbs(self, boot_volume_size_in_gbs):
+        """
+        Sets the boot_volume_size_in_gbs of this InstanceConfigurationInstanceSourceViaImageDetails.
+        The size of the boot volume in GBs. Minimum value is 50 GB and maximum value is 16384 GB (16TB).
+
+
+        :param boot_volume_size_in_gbs: The boot_volume_size_in_gbs of this InstanceConfigurationInstanceSourceViaImageDetails.
+        :type: int
+        """
+        self._boot_volume_size_in_gbs = boot_volume_size_in_gbs
 
     @property
     def image_id(self):
