@@ -83,6 +83,8 @@ class ComputeManagementClient(object):
         }
         self.base_client = BaseClient("compute_management", config, signer, core_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
+        self._config = config
+        self._kwargs = kwargs
 
     def attach_load_balancer(self, instance_pool_id, attach_load_balancer_details, **kwargs):
         """

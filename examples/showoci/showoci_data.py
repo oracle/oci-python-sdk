@@ -1642,13 +1642,15 @@ class ShowOCIData(object):
             list_autos = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_AUTONOMOUS, 'region_name', region_name, 'compartment_id', compartment['id'])
 
             for dbs in list_autos:
-                value = {'id': str(dbs['id']), 'name': (str(dbs['display_name']) + " - " + str(dbs['license_model']) + " - " + str(dbs['lifecycle_state']) + " (" + str(dbs['sum_count']) + " OCPUs)"),
+                value = {'id': str(dbs['id']), 'name': (str(dbs['display_name']) + " - " + str(dbs['license_model']) + " - " + str(dbs['lifecycle_state']) + " (" + str(dbs['sum_count']) + " OCPUs" + (" AutoScale" if dbs['is_auto_scaling_enabled'] else "") + ") - " + dbs['db_workload']),
                          'cpu_core_count': str(dbs['cpu_core_count']), 'data_storage_size_in_tbs': str(dbs['data_storage_size_in_tbs']),
                          'db_name': str(dbs['db_name']), 'service_console_url': str(dbs['service_console_url']), 'time_created': str(dbs['time_created'])[0:16],
-                         'connection_strings': str(dbs['connection_strings']), 'sum_info': "Autonomous Database (OCPUs) - " + dbs['license_model'],
+                         'connection_strings': str(dbs['connection_strings']), 'sum_info': "Autonomous Database " + str(dbs['db_workload']) + " (OCPUs) - " + dbs['license_model'],
                          'sum_count': str(dbs['sum_count']), 'sum_info_storage': "Autonomous Database (tb)",
                          'sum_size_tb': str(dbs['data_storage_size_in_tbs']), 'backups': self.__get_database_autonomous_backups(dbs['backups']),
                          'whitelisted_ips': dbs['whitelisted_ips'],
+                         'is_auto_scaling_enabled': dbs['is_auto_scaling_enabled'],
+                         'db_workload': dbs['db_workload'],
                          'defined_tags': dbs['defined_tags'], 'freeform_tags': dbs['freeform_tags']}
 
                 data.append(value)

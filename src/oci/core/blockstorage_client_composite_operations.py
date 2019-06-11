@@ -13,14 +13,18 @@ class BlockstorageClientCompositeOperations(object):
     to enter a given state, you can call a single method in this class to accomplish the same functionality
     """
 
-    def __init__(self, client, **kwargs):
+    def __init__(self, client, work_request_client=None, **kwargs):
         """
         Creates a new BlockstorageClientCompositeOperations object
 
         :param BlockstorageClient client:
             The service client which will be wrapped by this object
+
+        :param oci.work_requests.WorkRequestClient work_request_client: (optional)
+            The work request service client which will be used to wait for work request states. Default is None.
         """
         self.client = client
+        self._work_request_client = work_request_client if work_request_client else oci.work_requests.WorkRequestClient(self.client._config, **self.client._kwargs)
 
     def copy_volume_backup_and_wait_for_state(self, volume_backup_id, copy_volume_backup_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """

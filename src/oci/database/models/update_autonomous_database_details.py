@@ -43,6 +43,10 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the admin_password property of this UpdateAutonomousDatabaseDetails.
         :type admin_password: str
 
+        :param db_name:
+            The value to assign to the db_name property of this UpdateAutonomousDatabaseDetails.
+        :type db_name: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateAutonomousDatabaseDetails.
         :type freeform_tags: dict(str, str)
@@ -70,6 +74,7 @@ class UpdateAutonomousDatabaseDetails(object):
             'data_storage_size_in_tbs': 'int',
             'display_name': 'str',
             'admin_password': 'str',
+            'db_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'license_model': 'str',
@@ -82,6 +87,7 @@ class UpdateAutonomousDatabaseDetails(object):
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
             'display_name': 'displayName',
             'admin_password': 'adminPassword',
+            'db_name': 'dbName',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'license_model': 'licenseModel',
@@ -93,6 +99,7 @@ class UpdateAutonomousDatabaseDetails(object):
         self._data_storage_size_in_tbs = None
         self._display_name = None
         self._admin_password = None
+        self._db_name = None
         self._freeform_tags = None
         self._defined_tags = None
         self._license_model = None
@@ -194,6 +201,34 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: str
         """
         self._admin_password = admin_password
+
+    @property
+    def db_name(self):
+        """
+        Gets the db_name of this UpdateAutonomousDatabaseDetails.
+        New name for this Autonomous Database. It must begin with an alphabetic character and can contain a
+        maximum of eight alphanumeric characters. Special characters are not permitted. This is valid only
+        for dedicated databases.
+
+
+        :return: The db_name of this UpdateAutonomousDatabaseDetails.
+        :rtype: str
+        """
+        return self._db_name
+
+    @db_name.setter
+    def db_name(self, db_name):
+        """
+        Sets the db_name of this UpdateAutonomousDatabaseDetails.
+        New name for this Autonomous Database. It must begin with an alphabetic character and can contain a
+        maximum of eight alphanumeric characters. Special characters are not permitted. This is valid only
+        for dedicated databases.
+
+
+        :param db_name: The db_name of this UpdateAutonomousDatabaseDetails.
+        :type: str
+        """
+        self._db_name = db_name
 
     @property
     def freeform_tags(self):

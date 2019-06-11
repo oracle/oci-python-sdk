@@ -21,16 +21,30 @@ class RestoreAutonomousDatabaseDetails(object):
             The value to assign to the timestamp property of this RestoreAutonomousDatabaseDetails.
         :type timestamp: datetime
 
+        :param database_scn:
+            The value to assign to the database_scn property of this RestoreAutonomousDatabaseDetails.
+        :type database_scn: str
+
+        :param latest:
+            The value to assign to the latest property of this RestoreAutonomousDatabaseDetails.
+        :type latest: bool
+
         """
         self.swagger_types = {
-            'timestamp': 'datetime'
+            'timestamp': 'datetime',
+            'database_scn': 'str',
+            'latest': 'bool'
         }
 
         self.attribute_map = {
-            'timestamp': 'timestamp'
+            'timestamp': 'timestamp',
+            'database_scn': 'databaseSCN',
+            'latest': 'latest'
         }
 
         self._timestamp = None
+        self._database_scn = None
+        self._latest = None
 
     @property
     def timestamp(self):
@@ -55,6 +69,54 @@ class RestoreAutonomousDatabaseDetails(object):
         :type: datetime
         """
         self._timestamp = timestamp
+
+    @property
+    def database_scn(self):
+        """
+        Gets the database_scn of this RestoreAutonomousDatabaseDetails.
+        Restores using the backup with the System Change Number (SCN) specified.
+
+
+        :return: The database_scn of this RestoreAutonomousDatabaseDetails.
+        :rtype: str
+        """
+        return self._database_scn
+
+    @database_scn.setter
+    def database_scn(self, database_scn):
+        """
+        Sets the database_scn of this RestoreAutonomousDatabaseDetails.
+        Restores using the backup with the System Change Number (SCN) specified.
+
+
+        :param database_scn: The database_scn of this RestoreAutonomousDatabaseDetails.
+        :type: str
+        """
+        self._database_scn = database_scn
+
+    @property
+    def latest(self):
+        """
+        Gets the latest of this RestoreAutonomousDatabaseDetails.
+        Restores to the last known good state with the least possible data loss.
+
+
+        :return: The latest of this RestoreAutonomousDatabaseDetails.
+        :rtype: bool
+        """
+        return self._latest
+
+    @latest.setter
+    def latest(self, latest):
+        """
+        Sets the latest of this RestoreAutonomousDatabaseDetails.
+        Restores to the last known good state with the least possible data loss.
+
+
+        :param latest: The latest of this RestoreAutonomousDatabaseDetails.
+        :type: bool
+        """
+        self._latest = latest
 
     def __repr__(self):
         return formatted_flat_dict(self)

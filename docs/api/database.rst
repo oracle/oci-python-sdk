@@ -18,6 +18,9 @@ Database
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.database.models.AutonomousContainerDatabase
+    oci.database.models.AutonomousContainerDatabaseBackupConfig
+    oci.database.models.AutonomousContainerDatabaseSummary
     oci.database.models.AutonomousDataWarehouse
     oci.database.models.AutonomousDataWarehouseBackup
     oci.database.models.AutonomousDataWarehouseBackupSummary
@@ -27,10 +30,16 @@ Database
     oci.database.models.AutonomousDatabaseBackup
     oci.database.models.AutonomousDatabaseBackupSummary
     oci.database.models.AutonomousDatabaseConnectionStrings
+    oci.database.models.AutonomousDatabaseConnectionUrls
     oci.database.models.AutonomousDatabaseSummary
+    oci.database.models.AutonomousExadataInfrastructure
+    oci.database.models.AutonomousExadataInfrastructureMaintenanceWindow
+    oci.database.models.AutonomousExadataInfrastructureShapeSummary
+    oci.database.models.AutonomousExadataInfrastructureSummary
     oci.database.models.Backup
     oci.database.models.BackupSummary
     oci.database.models.CompleteExternalBackupJobDetails
+    oci.database.models.CreateAutonomousContainerDatabaseDetails
     oci.database.models.CreateAutonomousDataWarehouseBackupDetails
     oci.database.models.CreateAutonomousDataWarehouseDetails
     oci.database.models.CreateAutonomousDatabaseBackupDetails
@@ -54,6 +63,7 @@ Database
     oci.database.models.Database
     oci.database.models.DatabaseConnectionStrings
     oci.database.models.DatabaseSummary
+    oci.database.models.DayOfWeek
     oci.database.models.DbBackupConfig
     oci.database.models.DbHome
     oci.database.models.DbHomeSummary
@@ -71,9 +81,14 @@ Database
     oci.database.models.FailoverDataGuardAssociationDetails
     oci.database.models.GenerateAutonomousDataWarehouseWalletDetails
     oci.database.models.GenerateAutonomousDatabaseWalletDetails
+    oci.database.models.LaunchAutonomousExadataInfrastructureDetails
     oci.database.models.LaunchDbSystemBase
     oci.database.models.LaunchDbSystemDetails
     oci.database.models.LaunchDbSystemFromBackupDetails
+    oci.database.models.MaintenanceRun
+    oci.database.models.MaintenanceRunSummary
+    oci.database.models.MaintenanceWindow
+    oci.database.models.Month
     oci.database.models.Patch
     oci.database.models.PatchDetails
     oci.database.models.PatchHistoryEntry
@@ -84,8 +99,11 @@ Database
     oci.database.models.RestoreAutonomousDatabaseDetails
     oci.database.models.RestoreDatabaseDetails
     oci.database.models.SwitchoverDataGuardAssociationDetails
+    oci.database.models.UpdateAutonomousContainerDatabaseDetails
     oci.database.models.UpdateAutonomousDataWarehouseDetails
     oci.database.models.UpdateAutonomousDatabaseDetails
+    oci.database.models.UpdateAutonomousExadataInfrastructureDetails
     oci.database.models.UpdateDatabaseDetails
     oci.database.models.UpdateDbHomeDetails
     oci.database.models.UpdateDbSystemDetails
+    oci.database.models.UpdateMaintenanceRunDetails

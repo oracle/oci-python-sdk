@@ -83,6 +83,8 @@ class BlockstorageClient(object):
         }
         self.base_client = BaseClient("blockstorage", config, signer, core_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
+        self._config = config
+        self._kwargs = kwargs
 
     def copy_volume_backup(self, volume_backup_id, copy_volume_backup_details, **kwargs):
         """
