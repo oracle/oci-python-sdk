@@ -1,0 +1,11 @@
+UpdateSecurityRuleDetails
+=========================
+
+.. currentmodule:: oci.core.models
+
+.. autoclass:: UpdateSecurityRuleDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

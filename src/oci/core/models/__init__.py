@@ -3,6 +3,9 @@
 
 from __future__ import absolute_import
 
+from .add_network_security_group_security_rules_details import AddNetworkSecurityGroupSecurityRulesDetails
+from .add_security_rule_details import AddSecurityRuleDetails
+from .added_network_security_group_security_rules import AddedNetworkSecurityGroupSecurityRules
 from .app_catalog_listing import AppCatalogListing
 from .app_catalog_listing_resource_version import AppCatalogListingResourceVersion
 from .app_catalog_listing_resource_version_agreements import AppCatalogListingResourceVersionAgreements
@@ -70,6 +73,7 @@ from .create_instance_pool_placement_configuration_details import CreateInstance
 from .create_internet_gateway_details import CreateInternetGatewayDetails
 from .create_local_peering_gateway_details import CreateLocalPeeringGatewayDetails
 from .create_nat_gateway_details import CreateNatGatewayDetails
+from .create_network_security_group_details import CreateNetworkSecurityGroupDetails
 from .create_private_ip_details import CreatePrivateIpDetails
 from .create_public_ip_details import CreatePublicIpDetails
 from .create_remote_peering_connection_details import CreateRemotePeeringConnectionDetails
@@ -161,15 +165,19 @@ from .launch_options import LaunchOptions
 from .letter_of_authority import LetterOfAuthority
 from .local_peering_gateway import LocalPeeringGateway
 from .nat_gateway import NatGateway
+from .network_security_group import NetworkSecurityGroup
+from .network_security_group_vnic import NetworkSecurityGroupVnic
 from .paravirtualized_volume_attachment import ParavirtualizedVolumeAttachment
 from .peer_region_for_remote_peering import PeerRegionForRemotePeering
 from .port_range import PortRange
 from .private_ip import PrivateIp
 from .public_ip import PublicIp
 from .remote_peering_connection import RemotePeeringConnection
+from .remove_network_security_group_security_rules_details import RemoveNetworkSecurityGroupSecurityRulesDetails
 from .route_rule import RouteRule
 from .route_table import RouteTable
 from .security_list import SecurityList
+from .security_rule import SecurityRule
 from .service import Service
 from .service_gateway import ServiceGateway
 from .service_id_request_details import ServiceIdRequestDetails
@@ -203,11 +211,14 @@ from .update_instance_pool_placement_configuration_details import UpdateInstance
 from .update_internet_gateway_details import UpdateInternetGatewayDetails
 from .update_local_peering_gateway_details import UpdateLocalPeeringGatewayDetails
 from .update_nat_gateway_details import UpdateNatGatewayDetails
+from .update_network_security_group_details import UpdateNetworkSecurityGroupDetails
+from .update_network_security_group_security_rules_details import UpdateNetworkSecurityGroupSecurityRulesDetails
 from .update_private_ip_details import UpdatePrivateIpDetails
 from .update_public_ip_details import UpdatePublicIpDetails
 from .update_remote_peering_connection_details import UpdateRemotePeeringConnectionDetails
 from .update_route_table_details import UpdateRouteTableDetails
 from .update_security_list_details import UpdateSecurityListDetails
+from .update_security_rule_details import UpdateSecurityRuleDetails
 from .update_service_gateway_details import UpdateServiceGatewayDetails
 from .update_subnet_details import UpdateSubnetDetails
 from .update_vcn_details import UpdateVcnDetails
@@ -218,6 +229,7 @@ from .update_volume_details import UpdateVolumeDetails
 from .update_volume_group_backup_details import UpdateVolumeGroupBackupDetails
 from .update_volume_group_details import UpdateVolumeGroupDetails
 from .update_volume_kms_key_details import UpdateVolumeKmsKeyDetails
+from .updated_network_security_group_security_rules import UpdatedNetworkSecurityGroupSecurityRules
 from .vcn import Vcn
 from .virtual_circuit import VirtualCircuit
 from .virtual_circuit_bandwidth_shape import VirtualCircuitBandwidthShape
@@ -243,6 +255,9 @@ from .volume_source_from_volume_details import VolumeSourceFromVolumeDetails
 
 # Maps type names to classes for core services.
 core_type_mapping = {
+    "AddNetworkSecurityGroupSecurityRulesDetails": AddNetworkSecurityGroupSecurityRulesDetails,
+    "AddSecurityRuleDetails": AddSecurityRuleDetails,
+    "AddedNetworkSecurityGroupSecurityRules": AddedNetworkSecurityGroupSecurityRules,
     "AppCatalogListing": AppCatalogListing,
     "AppCatalogListingResourceVersion": AppCatalogListingResourceVersion,
     "AppCatalogListingResourceVersionAgreements": AppCatalogListingResourceVersionAgreements,
@@ -310,6 +325,7 @@ core_type_mapping = {
     "CreateInternetGatewayDetails": CreateInternetGatewayDetails,
     "CreateLocalPeeringGatewayDetails": CreateLocalPeeringGatewayDetails,
     "CreateNatGatewayDetails": CreateNatGatewayDetails,
+    "CreateNetworkSecurityGroupDetails": CreateNetworkSecurityGroupDetails,
     "CreatePrivateIpDetails": CreatePrivateIpDetails,
     "CreatePublicIpDetails": CreatePublicIpDetails,
     "CreateRemotePeeringConnectionDetails": CreateRemotePeeringConnectionDetails,
@@ -401,15 +417,19 @@ core_type_mapping = {
     "LetterOfAuthority": LetterOfAuthority,
     "LocalPeeringGateway": LocalPeeringGateway,
     "NatGateway": NatGateway,
+    "NetworkSecurityGroup": NetworkSecurityGroup,
+    "NetworkSecurityGroupVnic": NetworkSecurityGroupVnic,
     "ParavirtualizedVolumeAttachment": ParavirtualizedVolumeAttachment,
     "PeerRegionForRemotePeering": PeerRegionForRemotePeering,
     "PortRange": PortRange,
     "PrivateIp": PrivateIp,
     "PublicIp": PublicIp,
     "RemotePeeringConnection": RemotePeeringConnection,
+    "RemoveNetworkSecurityGroupSecurityRulesDetails": RemoveNetworkSecurityGroupSecurityRulesDetails,
     "RouteRule": RouteRule,
     "RouteTable": RouteTable,
     "SecurityList": SecurityList,
+    "SecurityRule": SecurityRule,
     "Service": Service,
     "ServiceGateway": ServiceGateway,
     "ServiceIdRequestDetails": ServiceIdRequestDetails,
@@ -443,11 +463,14 @@ core_type_mapping = {
     "UpdateInternetGatewayDetails": UpdateInternetGatewayDetails,
     "UpdateLocalPeeringGatewayDetails": UpdateLocalPeeringGatewayDetails,
     "UpdateNatGatewayDetails": UpdateNatGatewayDetails,
+    "UpdateNetworkSecurityGroupDetails": UpdateNetworkSecurityGroupDetails,
+    "UpdateNetworkSecurityGroupSecurityRulesDetails": UpdateNetworkSecurityGroupSecurityRulesDetails,
     "UpdatePrivateIpDetails": UpdatePrivateIpDetails,
     "UpdatePublicIpDetails": UpdatePublicIpDetails,
     "UpdateRemotePeeringConnectionDetails": UpdateRemotePeeringConnectionDetails,
     "UpdateRouteTableDetails": UpdateRouteTableDetails,
     "UpdateSecurityListDetails": UpdateSecurityListDetails,
+    "UpdateSecurityRuleDetails": UpdateSecurityRuleDetails,
     "UpdateServiceGatewayDetails": UpdateServiceGatewayDetails,
     "UpdateSubnetDetails": UpdateSubnetDetails,
     "UpdateVcnDetails": UpdateVcnDetails,
@@ -458,6 +481,7 @@ core_type_mapping = {
     "UpdateVolumeGroupBackupDetails": UpdateVolumeGroupBackupDetails,
     "UpdateVolumeGroupDetails": UpdateVolumeGroupDetails,
     "UpdateVolumeKmsKeyDetails": UpdateVolumeKmsKeyDetails,
+    "UpdatedNetworkSecurityGroupSecurityRules": UpdatedNetworkSecurityGroupSecurityRules,
     "Vcn": Vcn,
     "VirtualCircuit": VirtualCircuit,
     "VirtualCircuitBandwidthShape": VirtualCircuitBandwidthShape,

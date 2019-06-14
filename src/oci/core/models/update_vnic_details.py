@@ -33,6 +33,10 @@ class UpdateVnicDetails(object):
             The value to assign to the hostname_label property of this UpdateVnicDetails.
         :type hostname_label: str
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this UpdateVnicDetails.
+        :type nsg_ids: list[str]
+
         :param skip_source_dest_check:
             The value to assign to the skip_source_dest_check property of this UpdateVnicDetails.
         :type skip_source_dest_check: bool
@@ -43,6 +47,7 @@ class UpdateVnicDetails(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'hostname_label': 'str',
+            'nsg_ids': 'list[str]',
             'skip_source_dest_check': 'bool'
         }
 
@@ -51,6 +56,7 @@ class UpdateVnicDetails(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'hostname_label': 'hostnameLabel',
+            'nsg_ids': 'nsgIds',
             'skip_source_dest_check': 'skipSourceDestCheck'
         }
 
@@ -58,6 +64,7 @@ class UpdateVnicDetails(object):
         self._display_name = None
         self._freeform_tags = None
         self._hostname_label = None
+        self._nsg_ids = None
         self._skip_source_dest_check = None
 
     @property
@@ -207,6 +214,38 @@ class UpdateVnicDetails(object):
         :type: str
         """
         self._hostname_label = hostname_label
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this UpdateVnicDetails.
+        A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. Setting this as
+        an empty array removes the VNIC from all network security groups.
+
+        For more information about NSGs, see
+        :class:`NetworkSecurityGroup`.
+
+
+        :return: The nsg_ids of this UpdateVnicDetails.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this UpdateVnicDetails.
+        A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. Setting this as
+        an empty array removes the VNIC from all network security groups.
+
+        For more information about NSGs, see
+        :class:`NetworkSecurityGroup`.
+
+
+        :param nsg_ids: The nsg_ids of this UpdateVnicDetails.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
 
     @property
     def skip_source_dest_check(self):

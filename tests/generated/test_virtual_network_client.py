@@ -28,6 +28,47 @@ def vcr_fixture(request):
         yield
 
 
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_add_network_security_group_security_rules(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'AddNetworkSecurityGroupSecurityRules'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'AddNetworkSecurityGroupSecurityRules')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='AddNetworkSecurityGroupSecurityRules')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.add_network_security_group_security_rules(
+                network_security_group_id=request.pop(util.camelize('network_security_group_id')),
+                add_network_security_group_security_rules_details=request.pop(util.camelize('add_network_security_group_security_rules_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'AddNetworkSecurityGroupSecurityRules',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'addedNetworkSecurityGroupSecurityRules',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="serviceGateway" email="oci_sgw_ops_us_grp@oracle.com" jiraProject="SG" opsJiraProject="SGW"
 def test_attach_service_id(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'AttachServiceId'):
@@ -880,6 +921,46 @@ def test_create_nat_gateway(testing_service_client):
 
 
 # IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_create_network_security_group(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'CreateNetworkSecurityGroup'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'CreateNetworkSecurityGroup')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='CreateNetworkSecurityGroup')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.create_network_security_group(
+                create_network_security_group_details=request.pop(util.camelize('create_network_security_group_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'CreateNetworkSecurityGroup',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'networkSecurityGroup',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
 def test_create_private_ip(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreatePrivateIp'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1634,6 +1715,46 @@ def test_delete_nat_gateway(testing_service_client):
             result,
             service_error,
             'delete_nat_gateway',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_delete_network_security_group(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'DeleteNetworkSecurityGroup'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'DeleteNetworkSecurityGroup')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='DeleteNetworkSecurityGroup')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.delete_network_security_group(
+                network_security_group_id=request.pop(util.camelize('network_security_group_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'DeleteNetworkSecurityGroup',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_network_security_group',
             True,
             False
         )
@@ -2758,6 +2879,46 @@ def test_get_nat_gateway(testing_service_client):
             result,
             service_error,
             'natGateway',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_get_network_security_group(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetNetworkSecurityGroup'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'GetNetworkSecurityGroup')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetNetworkSecurityGroup')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.get_network_security_group(
+                network_security_group_id=request.pop(util.camelize('network_security_group_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetNetworkSecurityGroup',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'networkSecurityGroup',
             False,
             False
         )
@@ -4217,6 +4378,183 @@ def test_list_nat_gateways(testing_service_client):
 
 
 # IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_list_network_security_group_security_rules(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListNetworkSecurityGroupSecurityRules'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ListNetworkSecurityGroupSecurityRules')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListNetworkSecurityGroupSecurityRules')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.list_network_security_group_security_rules(
+                network_security_group_id=request.pop(util.camelize('network_security_group_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_network_security_group_security_rules(
+                    network_security_group_id=request.pop(util.camelize('network_security_group_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_network_security_group_security_rules(
+                        network_security_group_id=request.pop(util.camelize('network_security_group_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListNetworkSecurityGroupSecurityRules',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'securityRule',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_list_network_security_group_vnics(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListNetworkSecurityGroupVnics'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ListNetworkSecurityGroupVnics')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListNetworkSecurityGroupVnics')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.list_network_security_group_vnics(
+                network_security_group_id=request.pop(util.camelize('network_security_group_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_network_security_group_vnics(
+                    network_security_group_id=request.pop(util.camelize('network_security_group_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_network_security_group_vnics(
+                        network_security_group_id=request.pop(util.camelize('network_security_group_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListNetworkSecurityGroupVnics',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'networkSecurityGroupVnic',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_list_network_security_groups(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListNetworkSecurityGroups'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ListNetworkSecurityGroups')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListNetworkSecurityGroups')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.list_network_security_groups(
+                compartment_id=request.pop(util.camelize('compartment_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_network_security_groups(
+                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_network_security_groups(
+                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListNetworkSecurityGroups',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'networkSecurityGroup',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
 def test_list_private_ips(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListPrivateIps'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4911,6 +5249,47 @@ def test_list_virtual_circuits(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_remove_network_security_group_security_rules(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'RemoveNetworkSecurityGroupSecurityRules'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'RemoveNetworkSecurityGroupSecurityRules')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='RemoveNetworkSecurityGroupSecurityRules')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.remove_network_security_group_security_rules(
+                network_security_group_id=request.pop(util.camelize('network_security_group_id')),
+                remove_network_security_group_security_rules_details=request.pop(util.camelize('remove_network_security_group_security_rules_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'RemoveNetworkSecurityGroupSecurityRules',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'remove_network_security_group_security_rules',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
 def test_update_cpe(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'UpdateCpe'):
@@ -5400,6 +5779,88 @@ def test_update_nat_gateway(testing_service_client):
             result,
             service_error,
             'natGateway',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_update_network_security_group(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'UpdateNetworkSecurityGroup'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'UpdateNetworkSecurityGroup')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateNetworkSecurityGroup')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.update_network_security_group(
+                network_security_group_id=request.pop(util.camelize('network_security_group_id')),
+                update_network_security_group_details=request.pop(util.camelize('update_network_security_group_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'UpdateNetworkSecurityGroup',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'networkSecurityGroup',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_update_network_security_group_security_rules(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'UpdateNetworkSecurityGroupSecurityRules'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'UpdateNetworkSecurityGroupSecurityRules')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateNetworkSecurityGroupSecurityRules')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.update_network_security_group_security_rules(
+                network_security_group_id=request.pop(util.camelize('network_security_group_id')),
+                update_network_security_group_security_rules_details=request.pop(util.camelize('update_network_security_group_security_rules_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'UpdateNetworkSecurityGroupSecurityRules',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'updatedNetworkSecurityGroupSecurityRules',
             False,
             False
         )
