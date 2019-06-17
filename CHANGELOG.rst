@@ -5,12 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-2.2.14 - TBD
+2.2.14 - 2019-06-18
 ====================
 
 Added
 -----
-*
+* Support for moving service gateway resources across compartments in Core Services
+* Support for moving block storage resources across compartments in Core Services
+* Support for key deletion in the Key Management service
 
 ====================
 2.2.13 - 2019-06-11
