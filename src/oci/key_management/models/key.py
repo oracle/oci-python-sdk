@@ -95,6 +95,10 @@ class Key(object):
             The value to assign to the time_created property of this Key.
         :type time_created: datetime
 
+        :param time_of_deletion:
+            The value to assign to the time_of_deletion property of this Key.
+        :type time_of_deletion: datetime
+
         :param vault_id:
             The value to assign to the vault_id property of this Key.
         :type vault_id: str
@@ -110,6 +114,7 @@ class Key(object):
             'key_shape': 'KeyShape',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
+            'time_of_deletion': 'datetime',
             'vault_id': 'str'
         }
 
@@ -123,6 +128,7 @@ class Key(object):
             'key_shape': 'keyShape',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
+            'time_of_deletion': 'timeOfDeletion',
             'vault_id': 'vaultId'
         }
 
@@ -135,6 +141,7 @@ class Key(object):
         self._key_shape = None
         self._lifecycle_state = None
         self._time_created = None
+        self._time_of_deletion = None
         self._vault_id = None
 
     @property
@@ -378,6 +385,36 @@ class Key(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def time_of_deletion(self):
+        """
+        Gets the time_of_deletion of this Key.
+        An optional property for the deletion time of the key, expressed in `RFC 3339`__ timestamp format.
+        Example: `2019-04-03T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_of_deletion of this Key.
+        :rtype: datetime
+        """
+        return self._time_of_deletion
+
+    @time_of_deletion.setter
+    def time_of_deletion(self, time_of_deletion):
+        """
+        Sets the time_of_deletion of this Key.
+        An optional property for the deletion time of the key, expressed in `RFC 3339`__ timestamp format.
+        Example: `2019-04-03T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_of_deletion: The time_of_deletion of this Key.
+        :type: datetime
+        """
+        self._time_of_deletion = time_of_deletion
 
     @property
     def vault_id(self):
