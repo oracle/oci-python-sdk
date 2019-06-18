@@ -29,6 +29,13 @@ from .boot_volume_source_from_boot_volume_details import BootVolumeSourceFromBoo
 from .bulk_add_virtual_circuit_public_prefixes_details import BulkAddVirtualCircuitPublicPrefixesDetails
 from .bulk_delete_virtual_circuit_public_prefixes_details import BulkDeleteVirtualCircuitPublicPrefixesDetails
 from .capture_console_history_details import CaptureConsoleHistoryDetails
+from .change_boot_volume_backup_compartment_details import ChangeBootVolumeBackupCompartmentDetails
+from .change_boot_volume_compartment_details import ChangeBootVolumeCompartmentDetails
+from .change_service_gateway_compartment_details import ChangeServiceGatewayCompartmentDetails
+from .change_volume_backup_compartment_details import ChangeVolumeBackupCompartmentDetails
+from .change_volume_compartment_details import ChangeVolumeCompartmentDetails
+from .change_volume_group_backup_compartment_details import ChangeVolumeGroupBackupCompartmentDetails
+from .change_volume_group_compartment_details import ChangeVolumeGroupCompartmentDetails
 from .compute_instance_details import ComputeInstanceDetails
 from .connect_local_peering_gateways_details import ConnectLocalPeeringGatewaysDetails
 from .connect_remote_peering_connections_details import ConnectRemotePeeringConnectionsDetails
@@ -254,6 +261,13 @@ core_type_mapping = {
     "BulkAddVirtualCircuitPublicPrefixesDetails": BulkAddVirtualCircuitPublicPrefixesDetails,
     "BulkDeleteVirtualCircuitPublicPrefixesDetails": BulkDeleteVirtualCircuitPublicPrefixesDetails,
     "CaptureConsoleHistoryDetails": CaptureConsoleHistoryDetails,
+    "ChangeBootVolumeBackupCompartmentDetails": ChangeBootVolumeBackupCompartmentDetails,
+    "ChangeBootVolumeCompartmentDetails": ChangeBootVolumeCompartmentDetails,
+    "ChangeServiceGatewayCompartmentDetails": ChangeServiceGatewayCompartmentDetails,
+    "ChangeVolumeBackupCompartmentDetails": ChangeVolumeBackupCompartmentDetails,
+    "ChangeVolumeCompartmentDetails": ChangeVolumeCompartmentDetails,
+    "ChangeVolumeGroupBackupCompartmentDetails": ChangeVolumeGroupBackupCompartmentDetails,
+    "ChangeVolumeGroupCompartmentDetails": ChangeVolumeGroupCompartmentDetails,
     "ComputeInstanceDetails": ComputeInstanceDetails,
     "ConnectLocalPeeringGatewaysDetails": ConnectLocalPeeringGatewaysDetails,
     "ConnectRemotePeeringConnectionsDetails": ConnectRemotePeeringConnectionsDetails,

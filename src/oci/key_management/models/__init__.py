@@ -16,6 +16,7 @@ from .key_shape import KeyShape
 from .key_summary import KeySummary
 from .key_version import KeyVersion
 from .key_version_summary import KeyVersionSummary
+from .schedule_key_deletion_details import ScheduleKeyDeletionDetails
 from .schedule_vault_deletion_details import ScheduleVaultDeletionDetails
 from .update_key_details import UpdateKeyDetails
 from .update_vault_details import UpdateVaultDetails
@@ -37,6 +38,7 @@ key_management_type_mapping = {
     "KeySummary": KeySummary,
     "KeyVersion": KeyVersion,
     "KeyVersionSummary": KeyVersionSummary,
+    "ScheduleKeyDeletionDetails": ScheduleKeyDeletionDetails,
     "ScheduleVaultDeletionDetails": ScheduleVaultDeletionDetails,
     "UpdateKeyDetails": UpdateKeyDetails,
     "UpdateVaultDetails": UpdateVaultDetails,

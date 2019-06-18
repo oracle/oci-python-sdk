@@ -73,7 +73,7 @@ class KmsVaultClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
-            'base_path': '/20180608',
+            'base_path': '/',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("kms_vault", config, signer, key_management_type_mapping, **base_client_init_kwargs)
@@ -84,7 +84,8 @@ class KmsVaultClient(object):
         Cancels the scheduled deletion of a vault.
         Cancels the scheduled deletion of the specified vault. Canceling a scheduled deletion
         restores the vault and all keys in it to the respective states they were in before
-        the deletion was scheduled.
+        the deletion was scheduled. All the keys that have already been scheduled deletion before the
+        scheduled deletion of the vault will also remain in their state and timeOfDeletion.
 
 
         :param str vault_id: (required)
@@ -121,7 +122,7 @@ class KmsVaultClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Vault`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/vaults/{vaultId}/actions/cancelDeletion"
+        resource_path = "/20180608/vaults/{vaultId}/actions/cancelDeletion"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -213,7 +214,7 @@ class KmsVaultClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Vault`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/vaults"
+        resource_path = "/20180608/vaults"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -282,7 +283,7 @@ class KmsVaultClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Vault`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/vaults/{vaultId}"
+        resource_path = "/20180608/vaults/{vaultId}"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -376,7 +377,7 @@ class KmsVaultClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.key_management.models.VaultSummary`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/vaults"
+        resource_path = "/20180608/vaults"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -446,8 +447,12 @@ class KmsVaultClient(object):
     def schedule_vault_deletion(self, vault_id, schedule_vault_deletion_details, **kwargs):
         """
         Schedules the deletion of a vault.
-        Schedules the deletion of the specified vault. This sets the state of the vault and all keys in it
-        to `PENDING_DELETION` and then deletes them after the retention period ends.
+        Schedules the deletion of the specified vault. This sets the state of the vault and
+        keys that are not scheduled deletion in it to `PENDING_DELETION` and then deletes them
+        after the retention period ends.
+        The state and the timeOfDeletion of the keys that have already been scheduled for deletion
+        will not change. If any keys in it are scheduled for deletion after the specified timeOfDeletion
+        for the vault, the call will be rejected with status code 409.
 
 
         :param str vault_id: (required)
@@ -487,7 +492,7 @@ class KmsVaultClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Vault`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/vaults/{vaultId}/actions/scheduleDeletion"
+        resource_path = "/20180608/vaults/{vaultId}/actions/scheduleDeletion"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -582,7 +587,7 @@ class KmsVaultClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.Vault`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/vaults/{vaultId}"
+        resource_path = "/20180608/vaults/{vaultId}"
         method = "PUT"
 
         # Don't accept unknown kwargs
