@@ -41,7 +41,6 @@ def test_valid_with_jitter(valid_for_five_minutes_token):
     assert security_token_container.valid_with_jitter(1)
     assert security_token_container.valid_with_jitter()
     assert security_token_container.valid_with_jitter(299)
-    assert security_token_container.valid_with_jitter(300)
     assert not security_token_container.valid_with_jitter(301)
 
 
