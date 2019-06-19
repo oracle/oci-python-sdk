@@ -4,7 +4,7 @@
 #
 # @author: Adi Zohar
 #
-# Supports Python 2.7 and above, Python 3 recommended
+# Supports Python 3 and above
 #
 # coding: utf-8
 ##########################################################################
@@ -467,6 +467,9 @@ class ShowOCIData(object):
                     'id': subnet['id'],
                     'subnet': subnet['subnet'],
                     'name': subnet['name'],
+                    'cidr_block': subnet['cidr_block'],
+                    'availability_domain': subnet['availability_domain'],
+                    'public_private': subnet['public_private'],
                     'dns': subnet['dns_label'],
                     'compartment': subnet['compartment_name'],
                     'dhcp_options': dhcp_options,
@@ -653,7 +656,7 @@ class ShowOCIData(object):
                        'dhcp_options': self.__get_core_network_vcn_dhcp_options(vcn['id'])}
 
                 # assign the data to the vcn
-                vcn_data.append({'id': vcn['id'], 'name': vcn['name'], 'compartment': str(compartment['name']), 'data': val})
+                vcn_data.append({'id': vcn['id'], 'name': vcn['name'], 'display_name': vcn['display_name'], 'cidr_block': vcn['cidr_block'], 'compartment': str(compartment['name']), 'data': val})
             return vcn_data
 
         except BaseException as e:
@@ -979,7 +982,9 @@ class ShowOCIData(object):
                     'sum_info': 'Compute - Block Storage (gb)',
                     'sum_size_gb': bv['size_in_gbs'],
                     'desc': (str(bv['size_in_gbs']) + "gb - " + str(bv['display_name']) + " " + bv['backup_policy'] + volume_group + comp_text),
+                    'backup_policy': "None" if bv['backup_policy'] == "" else bv['backup_policy'],
                     'time_created': bv['time_created'],
+                    'display_name': bv['display_name'],
                     'defined_tags': bv['defined_tags'],
                     'freeform_tags': bv['freeform_tags']
                 }
@@ -1014,6 +1019,9 @@ class ShowOCIData(object):
                     'sum_size_gb': bv['size_in_gbs'],
                     'desc': (str(bv['size_in_gbs']) + "gb - " + str(bv['display_name']) + bv['backup_policy'] + volume_group + comp_text),
                     'time_created': bv['time_created'],
+                    'backup_policy': "None" if bv['backup_policy'] == "" else bv['backup_policy'],
+                    'display_name': bv['display_name'],
+                    'size': str(bv['size_in_gbs']),
                     'defined_tags': bv['defined_tags'],
                     'freeform_tags': bv['freeform_tags']
                 }
@@ -1189,12 +1197,20 @@ class ShowOCIData(object):
 
             for instance in instances:
                 inst = {'id': instance['id'], 'name': instance['shape'] + " - " + instance['display_name'] + " - " + instance['lifecycle_state'],
-                        'sum_info': 'Compute', 'sum_shape': instance['image_os'][0:14] + " - " + instance['shape'],
+                        'sum_info': 'Compute',
+                        'sum_shape': instance['image_os'][0:14] + " - " + instance['shape'],
                         'availability_domain': instance['availability_domain'],
                         'fault_domain': instance['fault_domain'],
                         'time_maintenance_reboot_due': str(instance['time_maintenance_reboot_due']),
                         'image': instance['image'], 'image_id': instance['image_id'],
                         'image_os': instance['image_os'],
+                        'shape': instance['shape'],
+                        'shape_ocpu': instance['shape_ocpu'],
+                        'shape_memory_gb': instance['shape_memory_gb'],
+                        'shape_storage_tb': instance['shape_storage_tb'],
+                        'display_name': instance['display_name'],
+                        'compartment_name': instance['compartment_name'],
+                        'lifecycle_state': instance['lifecycle_state'],
                         'console_id': instance['console_id'], 'console': instance['console'],
                         'time_created': instance['time_created'],
                         'defined_tags': instance['defined_tags'], 'freeform_tags': instance['freeform_tags']}
@@ -1233,7 +1249,7 @@ class ShowOCIData(object):
                     if vnic['compartment_name'] != compartment['name']:
                         comp_text = " (Compartment=" + vnic['compartment_name'] + ")"
 
-                    val = {'id': vnic['vnic_id'], 'desc': vnic['vnic_name'] + str(comp_text)}
+                    val = {'id': vnic['vnic_id'], 'desc': vnic['vnic_details']['display_name'] + str(comp_text), 'details': vnic['vnic_details']}
                     vnicdata.append(val)
 
                 inst['vnic'] = vnicdata
@@ -1428,7 +1444,15 @@ class ShowOCIData(object):
                 if len(db_nodes) > 1:
                     nodeidstr = str(nodeid)
 
-                data.append("Node " + str(nodeidstr) + "  : " + str(db_node['hostname']) + " - " + str(db_node['lifecycle_state']) + " - " + str(db_node['vnic_name'] + " - " + str(db_node['fault_domain'])))
+                value = {'desc': "Node " + str(nodeidstr) + "  : " + str(db_node['hostname']) + " - " + str(db_node['lifecycle_state']) + " - " + str(db_node['vnic_details']['dbdesc'] + ("" if db_node['fault_domain'] == "None" else " - " + str(db_node['fault_domain']))),
+                         'software_storage_size_in_gb': db_node['software_storage_size_in_gb'],
+                         'lifecycle_state': db_node['lifecycle_state'],
+                         'hostname': db_node['hostname'],
+                         'vnic_details': db_node['vnic_details'],
+                         'fault_domain': ("" if db_node['fault_domain'] == "None" else db_node['fault_domain'])
+                         }
+
+                data.append(value)
 
             return data
 
@@ -1581,9 +1605,16 @@ class ShowOCIData(object):
 
             for dbs in list_db_systems:
                 value = {'id': dbs['id'], 'name': dbs['display_name'] + " - " + dbs['shape'] + " - " + dbs['lifecycle_state'],
+                         'shape': dbs['shape'],
+                         'shape_ocpu': dbs['shape_ocpu'],
+                         'shape_memory_gb': dbs['shape_memory_gb'],
+                         'shape_storage_tb': dbs['shape_storage_tb'],
+                         'display_name': dbs['display_name'],
+                         'lifecycle_state': dbs['lifecycle_state'],
                          'sum_info': 'Database ' + dbs['database_edition_short'] + " - " + dbs['shape'] + " - " + dbs['license_model'], 'sum_info_storage': 'Database - Storage (gb)',
                          'sum_size_gb': dbs['data_storage_size_in_gbs'],
-                         'availability_domain': dbs['availability_domain'], 'cpu_core_count': dbs['cpu_core_count'],
+                         'availability_domain': dbs['availability_domain'],
+                         'cpu_core_count': dbs['cpu_core_count'],
                          'node_count': dbs['node_count'],
                          'version': dbs['version'] + " - " + dbs['database_edition'] + " - " + dbs['license_model'],
                          'host': dbs['hostname'],
@@ -1593,13 +1624,15 @@ class ShowOCIData(object):
                          'scan_dns': dbs['scan_dns_record_id'],
                          'scan_ips': dbs['scan_ips'],
                          'vip_ips': dbs['vip_ips'],
+                         'compartment_name': dbs['compartment_name'],
                          'patches': self.__get_database_db_patches(dbs['patches']),
                          'listener_port': dbs['listener_port'],
                          'db_homes': self.__get_database_db_homes(dbs['db_homes']),
                          'db_nodes': self.__get_database_db_nodes(dbs['db_nodes']),
                          'cluster_name': dbs['cluster_name'],
                          'time_created': dbs['time_created'],
-                         'defined_tags': dbs['defined_tags'], 'freeform_tags': dbs['freeform_tags']}
+                         'defined_tags': dbs['defined_tags'],
+                         'freeform_tags': dbs['freeform_tags']}
 
                 if dbs['data_storage_size_in_gbs']:
                     value['data'] = str(dbs['data_storage_size_in_gbs']) + "gb - " + str(dbs['data_storage_percentage']) + "%"
@@ -1643,10 +1676,19 @@ class ShowOCIData(object):
 
             for dbs in list_autos:
                 value = {'id': str(dbs['id']), 'name': (str(dbs['display_name']) + " - " + str(dbs['license_model']) + " - " + str(dbs['lifecycle_state']) + " (" + str(dbs['sum_count']) + " OCPUs" + (" AutoScale" if dbs['is_auto_scaling_enabled'] else "") + ") - " + dbs['db_workload']),
-                         'cpu_core_count': str(dbs['cpu_core_count']), 'data_storage_size_in_tbs': str(dbs['data_storage_size_in_tbs']),
-                         'db_name': str(dbs['db_name']), 'service_console_url': str(dbs['service_console_url']), 'time_created': str(dbs['time_created'])[0:16],
-                         'connection_strings': str(dbs['connection_strings']), 'sum_info': "Autonomous Database " + str(dbs['db_workload']) + " (OCPUs) - " + dbs['license_model'],
-                         'sum_count': str(dbs['sum_count']), 'sum_info_storage': "Autonomous Database (tb)",
+                         'display_name': dbs['display_name'],
+                         'license_model': dbs['license_model'],
+                         'lifecycle_state': dbs['lifecycle_state'],
+                         'cpu_core_count': str(dbs['cpu_core_count']),
+                         'data_storage_size_in_tbs': str(dbs['data_storage_size_in_tbs']),
+                         'db_name': str(dbs['db_name']),
+                         'compartment_name': str(dbs['compartment_name']),
+                         'service_console_url': str(dbs['service_console_url']),
+                         'time_created': str(dbs['time_created'])[0:16],
+                         'connection_strings': str(dbs['connection_strings']),
+                         'sum_info': "Autonomous Database " + str(dbs['db_workload']) + " (OCPUs) - " + dbs['license_model'],
+                         'sum_count': str(dbs['sum_count']),
+                         'sum_info_storage': "Autonomous Database (tb)",
                          'sum_size_tb': str(dbs['data_storage_size_in_tbs']), 'backups': self.__get_database_autonomous_backups(dbs['backups']),
                          'whitelisted_ips': dbs['whitelisted_ips'],
                          'is_auto_scaling_enabled': dbs['is_auto_scaling_enabled'],
@@ -1926,9 +1968,13 @@ class ShowOCIData(object):
             data['id'] = str(lb['id'])
             data['name'] = str(lb['display_name']) + " - " + str(lb['shape_name']) + " - " + ("(Private)" if lb['is_private'] else "(Public)")
             data['status'] = lb['status']
+            data['shape_name'] = lb['shape_name']
+            data['display_name'] = lb['display_name']
+            data['is_private'] = lb['is_private']
             data['ips'] = lb['ip_addresses']
             data['path_route'] = lb['path_route']
-            data['hostnames'] = lb['hostnames']
+            data['hostnames'] = [x['desc'] for x in lb['hostnames']]
+            data['compartment_name'] = lb['compartment_name']
 
             # subnets
             datasub = []
@@ -1942,13 +1988,23 @@ class ShowOCIData(object):
             # listeners
             datalis = []
             for lo in lb['listeners']:
+                value = {
+                    'ssl_configuration': str(lo['ssl_configuration']),
+                    'port': str(lo['port']) + "/" + str(lo['protocol']),
+                    'default_backend_set_name': str(lo['default_backend_set_name']),
+                    'path_route_set_name': lo['path_route_set_name'],
+                    'rule_set_names': lo['rule_set_names'],
+                    'desc': (lo['id'].ljust(20) + " - " + str(lo['port']) + "/" + str(lo['protocol']) + " - BS: " + str(lo['default_backend_set_name']) + ("" if lo['ssl_configuration'] == "" else " - Cert: " + str(lo['ssl_configuration'])))
+                }
 
-                ssl_details = ""
-                if lo['ssl_configuration'] != "":
-                    ssl_details = " - Cert: " + str(lo['ssl_configuration'])
-
-                # add data
-                datalis.append(lo['id'].ljust(20) + " - " + str(lo['port']) + "/" + str(lo['protocol']) + " - Default BS: " + str(lo['default_backend_set_name']) + ssl_details)
+                # hostnames
+                datahost = []
+                for hostname in lo['hostname_names']:
+                    for hostname_master in lb['hostnames']:
+                        if hostname == hostname_master['name']:
+                            datahost.append(hostname_master['desc'])
+                value['hostname_names'] = datahost
+                datalis.append(value)
             data['listeners'] = datalis
 
             return data

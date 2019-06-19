@@ -3,7 +3,7 @@
 SHOWOCI is an reporting tool which uses the Python SDK to extract list of resources from your tenant. 
 It covers most of OCI components, 
 Authentication by User or Compute using instant principals, 
-Output can be printer friendly or JSON file.
+Output can be printer friendly, CSV files or JSON file.
 
 Modules Included:  
 - oci.core.VirtualNetworkClient          
@@ -167,8 +167,8 @@ $ ./showoci.py
 usage: showoci.py [-h] [-a] [-ani] [-an] [-b] [-n] [-i] [-c] [-cn] [-o] [-l]
                   [-d] [-f] [-e] [-m] [-s] [-rm] [-so] [-edge] [-mc] [-nr]
                   [-ip] [-t PROFILE] [-p PROXY] [-rg REGION] [-cp COMPART]
-                  [-cf CONFIG] [-jf JOUTFILE] [-js] [-sjf SJOUTFILE]
-                  [-cachef SERVICEFILE] [-caches] [--version]
+                  [-cf CONFIG] [-csv CSV] [-jf JOUTFILE] [-js]
+                  [-sjf SJOUTFILE] [-cachef SERVICEFILE] [-caches] [--version]
 
 optional arguments:
   -h, --help           show this help message and exit
@@ -198,6 +198,7 @@ optional arguments:
   -rg REGION           Filter by Region
   -cp COMPART          Filter by Compartment
   -cf CONFIG           Config File
+  -csv CSV             Output to CSV files, , Input as file header
   -jf JOUTFILE         Output to file (JSON format)
   -js                  Output to screen (JSON format)
   -sjf SJOUTFILE       Output to screen (nice format) and JSON File

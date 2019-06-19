@@ -4,7 +4,7 @@
 #
 # @author: Adi Zohar
 #
-# Supports Python 2.7 and above, Python 3 recommended
+# Supports Python 3 and above
 #
 # coding: utf-8
 ##########################################################################
@@ -98,7 +98,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.2.12"
+    oci_compatible_version = "2.2.13"
 
     ##########################################################################
     # Global Constants
@@ -243,6 +243,55 @@ class ShowOCIService(object):
         {'region': 'ap-seoul-1', 'service': C_COMPUTE_AUTOSCALING},
         {'region': 'ap-seoul-1', 'service': C_STREAMS},
         {'region': 'ap-seoul-1', 'service': C_NOTIFICATIONS}
+    ]
+
+    ##########################################################################
+    # Shapes
+    ##########################################################################
+    shapes_array = [
+        {'shape': 'BM.CPU3.8', 'cpu': 52, 'memory': 768, 'storage': 0},
+        {'shape': 'BM.DenseIO1.36', 'cpu': 36, 'memory': 512, 'storage': 28.8},
+        {'shape': 'BM.DenseIO2.52', 'cpu': 52, 'memory': 768, 'storage': 51.2},
+        {'shape': 'BM.GPU2.2', 'cpu': 28, 'memory': 192, 'storage': 0},
+        {'shape': 'BM.HPC2.36', 'cpu': 36, 'memory': 384, 'storage': 0},
+        {'shape': 'BM.HighIO1.36', 'cpu': 36, 'memory': 512, 'storage': 12.8},
+        {'shape': 'BM.RACLocalStorage1.72', 'cpu': 72, 'memory': 1024, 'storage': 64},
+        {'shape': 'BM.Standard1.36', 'cpu': 36, 'memory': 256, 'storage': 0},
+        {'shape': 'BM.Standard2.52', 'cpu': 52, 'memory': 768, 'storage': 0},
+        {'shape': 'BM.StandardE2.64', 'cpu': 64, 'memory': 512, 'storage': 0},
+        {'shape': 'BM.Standard.E2.64', 'cpu': 64, 'memory': 512, 'storage': 0},
+        {'shape': 'Exadata.Full1.336', 'cpu': 336, 'memory': 5760, 'storage': 336},
+        {'shape': 'Exadata.Full2.368', 'cpu': 368, 'memory': 5760, 'storage': 424},
+        {'shape': 'Exadata.Half1.168', 'cpu': 168, 'memory': 2880, 'storage': 168},
+        {'shape': 'Exadata.Half2.184', 'cpu': 184, 'memory': 2880, 'storage': 212},
+        {'shape': 'Exadata.Quarter1.84', 'cpu': 84, 'memory': 1440, 'storage': 84},
+        {'shape': 'Exadata.Quarter2.92', 'cpu': 92, 'memory': 1440, 'storage': 106},
+        {'shape': 'Exadata.Base.48', 'cpu': 48, 'memory': 720, 'storage': 74.8},
+        {'shape': 'VM.CPU3.1', 'cpu': 6, 'memory': 90, 'storage': 0},
+        {'shape': 'VM.CPU3.2', 'cpu': 12, 'memory': 180, 'storage': 0},
+        {'shape': 'VM.CPU3.4', 'cpu': 24, 'memory': 360, 'storage': 0},
+        {'shape': 'VM.DenseIO1.16', 'cpu': 16, 'memory': 240, 'storage': 12.8},
+        {'shape': 'VM.DenseIO1.4', 'cpu': 4, 'memory': 60, 'storage': 3.2},
+        {'shape': 'VM.DenseIO1.8', 'cpu': 8, 'memory': 120, 'storage': 6.4},
+        {'shape': 'VM.DenseIO2.16', 'cpu': 16, 'memory': 240, 'storage': 12.8},
+        {'shape': 'VM.DenseIO2.24', 'cpu': 24, 'memory': 320, 'storage': 25.6},
+        {'shape': 'VM.DenseIO2.8', 'cpu': 8, 'memory': 120, 'storage': 6.4},
+        {'shape': 'VM.GPU2.1', 'cpu': 12, 'memory': 104, 'storage': 0},
+        {'shape': 'VM.Standard.E2.1', 'cpu': 1, 'memory': 8, 'storage': 0},
+        {'shape': 'VM.Standard.E2.2', 'cpu': 2, 'memory': 16, 'storage': 0},
+        {'shape': 'VM.Standard.E2.4', 'cpu': 4, 'memory': 32, 'storage': 0},
+        {'shape': 'VM.Standard.E2.8', 'cpu': 8, 'memory': 64, 'storage': 0},
+        {'shape': 'VM.Standard1.1', 'cpu': 1, 'memory': 7, 'storage': 0},
+        {'shape': 'VM.Standard1.2', 'cpu': 2, 'memory': 14, 'storage': 0},
+        {'shape': 'VM.Standard1.4', 'cpu': 4, 'memory': 28, 'storage': 0},
+        {'shape': 'VM.Standard1.8', 'cpu': 8, 'memory': 56, 'storage': 0},
+        {'shape': 'VM.Standard1.16', 'cpu': 16, 'memory': 112, 'storage': 0},
+        {'shape': 'VM.Standard2.1', 'cpu': 1, 'memory': 15, 'storage': 0},
+        {'shape': 'VM.Standard2.2', 'cpu': 2, 'memory': 30, 'storage': 0},
+        {'shape': 'VM.Standard2.4', 'cpu': 4, 'memory': 60, 'storage': 0},
+        {'shape': 'VM.Standard2.8', 'cpu': 8, 'memory': 120, 'storage': 0},
+        {'shape': 'VM.Standard2.16', 'cpu': 16, 'memory': 240, 'storage': 0},
+        {'shape': 'VM.Standard2.24', 'cpu': 24, 'memory': 320, 'storage': 0}
     ]
 
     ##########################################################################
@@ -406,6 +455,16 @@ class ShowOCIService(object):
         return True
 
     ##########################################################################
+    # find shape info
+    # returns CPUs, Memory and Local Storage SSD
+    ##########################################################################
+    def get_shape_details(self, shape_name):
+        for array in self.shapes_array:
+            if array['shape'] == shape_name:
+                return array
+        return {}
+
+    ##########################################################################
     # check oci version
     ##########################################################################
     def check_oci_version_compatible(self):
@@ -418,8 +477,11 @@ class ShowOCIService(object):
                 if int(i) < int(rl):
                     print("")
                     print("*********************************************************************")
-                    print("Error, OCI version " + self.oci_compatible_version + " required !")
-                    print("OCI Version installed = " + self.get_oci_version())
+                    print("Error, OCI SDK version " + self.oci_compatible_version + " required !")
+                    print("OCI SDK Version installed = " + self.get_oci_version())
+                    print("Please use below command to upgrade OCI SDK:")
+                    print("   pip install --upgrade oci")
+                    print("")
                     print("Aboting.")
                     print("*********************************************************************")
                     print("")
@@ -938,8 +1000,10 @@ class ShowOCIService(object):
                         datapol = []
                         for policy in policies:
                             datapol.append({'name': policy.name, 'statements': [str(e) for e in policy.statements]})
-                        dataval = {'compartment_id': str(c['id']), 'compartment_name': "Compartment " + c['name'],
-                                   'compartment_path': "Compartment " + c['path'], 'policies': datapol}
+                        dataval = {'compartment_id': str(c['id']),
+                                   'compartment_name': c['name'],
+                                   'compartment_path': c['path'],
+                                   'policies': datapol}
                         data.append(dataval)
 
                 except oci.exceptions.ServiceError as e:
@@ -1267,6 +1331,7 @@ class ShowOCIService(object):
                 for vcn in vcns:
                     val = {'id': str(vcn.id), 'name': str(vcn.cidr_block) + " - " + str(vcn.display_name) + " - " + str(vcn.vcn_domain_name),
                            'display_name': str(vcn.display_name),
+                           'cidr_block': str(vcn.cidr_block),
                            'time_created': str(vcn.time_created), 'compartment_name': str(compartment['name']),
                            'defined_tags': [] if vcn.defined_tags is None else vcn.defined_tags,
                            'freeform_tags': [] if vcn.freeform_tags is None else vcn.freeform_tags,
@@ -1645,7 +1710,7 @@ class ShowOCIService(object):
     def __load_core_network_seclst_rule_port_range(self, name, port_range):
 
         if port_range is None:
-            return ""
+            return name + "(ALL) "
 
         if port_range.min == port_range.max:
             return name + "(" + str(port_range.min) + ") "
@@ -1655,7 +1720,7 @@ class ShowOCIService(object):
     ##########################################################################
     # get Network vcn security rule
     ##########################################################################
-    def __load_core_network_seclst_rule(self, security_rule):
+    def __load_core_network_seclst_rule(self, security_rule, protocol_name):
         line = ""
         if isinstance(security_rule, oci.core.models.EgressSecurityRule):
             line = "Dst: " + str(security_rule.destination).ljust(18)
@@ -1664,16 +1729,7 @@ class ShowOCIService(object):
             line = "Src: " + str(security_rule.source).ljust(18)
 
         # protocol
-        if security_rule.protocol == "1":
-            line += "ICMP "
-        elif security_rule.protocol == "6":
-            line += "TCP  "
-        elif security_rule.protocol == "17":
-            line += "UDP  "
-        elif security_rule.protocol == "all":
-            line += "ALL  "
-        else:
-            line += str(" Prt(" + str(security_rule.protocol) + "), ").ljust(20)
+        line += str(protocol_name).ljust(6)
 
         # tcp options
         if security_rule.tcp_options is not None:
@@ -1699,6 +1755,30 @@ class ShowOCIService(object):
             line += " (Stateless) "
 
         return line
+
+    ##########################################################################
+    # protocol name
+    ##########################################################################
+    def __load_core_network_seclst_protocl_name(self, protocol):
+
+        try:
+            protocol_name = ""
+            if str(protocol) == "1":
+                protocol_name = "ICMP"
+            elif str(protocol) == "6":
+                protocol_name = "TCP"
+            elif str(protocol) == "17":
+                protocol_name = "UDP"
+            elif str(protocol) == "all" or str(protocol) == "":
+                protocol_name = "ALL"
+            else:
+                protocol_name = str("Prot(" + str(protocol) + ")")
+
+            return protocol_name
+
+        except Exception as e:
+            self.__print_error("__load_core_network_seclst_protocl_name", e)
+            return str(protocol)
 
     ##########################################################################
     # data network read security list
@@ -1743,16 +1823,20 @@ class ShowOCIService(object):
                         sec_rules = []
 
                         for sli in sl.ingress_security_rules:
+                            protocol_name = self.__load_core_network_seclst_protocl_name(str(sli.protocol))
                             sec_rules.append(
                                 {'is_stateless': str(sli.is_stateless),
                                  'protocol': str(sli.protocol),
-                                 'desc': "Ingres  : " + self.__load_core_network_seclst_rule(sli)})
+                                 'protocol_name': protocol_name,
+                                 'desc': "Ingres  : " + self.__load_core_network_seclst_rule(sli, protocol_name)})
 
                         for sle in sl.egress_security_rules:
+                            protocol_name = self.__load_core_network_seclst_protocl_name(str(sle.protocol))
                             sec_rules.append(
                                 {'is_stateless': str(sle.is_stateless),
                                  'protocol': str(sle.protocol),
-                                 'desc': "Egres   : " + self.__load_core_network_seclst_rule(sle)})
+                                 'protocol_name': protocol_name,
+                                 'desc': "Egres   : " + self.__load_core_network_seclst_rule(sle, protocol_name)})
 
                         # Add info
                         val = {'id': str(sl.id), 'vcn_id': str(sl.vcn_id), 'name': str(sl.display_name),
@@ -1812,9 +1896,12 @@ class ShowOCIService(object):
                     # subnet = oci.core.models.Subnet.
                     for subnet in subnets:
                         availability_domain = (str(subnet.availability_domain) if str(subnet.availability_domain) != "None" else "Regional")
-                        val = {'id': str(subnet.id), 'vcn_id': str(subnet.vcn_id), 'vcn_name': vcn['display_name'],
-                               'name': str(subnet.display_name), 'cidr_block': str(subnet.cidr_block),
+                        val = {'id': str(subnet.id), 'vcn_id': str(subnet.vcn_id), 'vcn_name': vcn['display_name'], 'vcn_cidr': vcn['cidr_block'],
+                               'name': str(subnet.display_name),
+                               'cidr_block': str(subnet.cidr_block),
                                'subnet': (str(subnet.cidr_block) + "  " + availability_domain + (" (Private) " if subnet.prohibit_public_ip_on_vnic else " (Public)")),
+                               'availability_domain': availability_domain,
+                               'public_private': ("Private" if subnet.prohibit_public_ip_on_vnic else "Public"),
                                'time_created': str(subnet.time_created),
                                'security_list_ids': [str(es) for es in subnet.security_list_ids],
                                'dhcp_options_id': str(subnet.dhcp_options_id),
@@ -2473,7 +2560,18 @@ class ShowOCIService(object):
                            'console_id': "", 'console': "", 'console_connection_string': "",
                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                            'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                           'shape_ocpu': 0,
+                           'shape_memory_gb': 0,
+                           'shape_storage_tb': 0,
                            'console_vnc_connection_string': "", 'image': "Not Found", 'image_os': "Oracle Linux"}
+
+                    # get shape
+                    if arr.shape:
+                        shape_sizes = self.get_shape_details(str(arr.shape))
+                        if shape_sizes:
+                            val['shape_ocpu'] = shape_sizes['cpu']
+                            val['shape_memory_gb'] = shape_sizes['memory']
+                            val['shape_storage_tb'] = shape_sizes['storage']
 
                     # if PaaS compartment assign Paas Image
                     if self.__if_managed_paas_compartment(compartment['name']):
@@ -2980,42 +3078,54 @@ class ShowOCIService(object):
     ##########################################################################
 
     def __load_core_compute_vnic(self, virtual_network, vnic_id):
+        data = {}
         try:
             if vnic_id is None:
-                return ""
+                return {}
 
             # get the vnic
             vnic = virtual_network.get_vnic(vnic_id).data
 
+            # add attributes to data
+            data['private_ip'] = str(vnic.private_ip)
+            data['display_name'] = (str(vnic.private_ip) + " (Prv)")
+            data['public_ip'] = ""
+            data['skip_source_dest_check'] = vnic.skip_source_dest_check
+            data['is_primary'] = vnic.is_primary
+            data['subnet'] = ""
+            data['vcn'] = ""
+
             # search the subnet
-            subnet_name = ""
+            subnet_display = ""
             subnet = self.search_unique_item(self.C_NETWORK, self.C_NETWORK_SUBNET, 'id', str(vnic.subnet_id))
             if subnet:
-                subnet_name = (", Subnet (" + subnet['name'] + " " + subnet['cidr_block'] + "), VCN (" + subnet[
-                    'vcn_name'] + ")")
+                data['subnet'] = subnet['name'] + " " + subnet['cidr_block']
+                data['vcn'] = subnet['vcn_name'] + " " + subnet['vcn_cidr']
+                subnet_display = ", Subnet (" + data['subnet'] + "), VCN (" + data['vcn'] + ")"
 
             # check vnic information
-            returnstr = (str(vnic.private_ip) + " (Prv)")
             if vnic.public_ip is not None:
-                returnstr += ", " + str(vnic.public_ip) + " (Pub)"
+                data['display_name'] += ", " + str(vnic.public_ip) + " (Pub)"
+                data['public_ip'] = str(vnic.public_ip)
 
             # if source dest
             if vnic.skip_source_dest_check:
-                returnstr += " - Skip=Y"
+                data['display_name'] += " - Skip=Y"
 
             # if primary
             if vnic.is_primary:
-                returnstr += " - Primary "
+                data['display_name'] += " - Primary "
 
             # subnet
-            returnstr += subnet_name
-            return returnstr
+            data['dbdesc'] = data['display_name']
+            data['display_name'] += subnet_display
+            return data
 
         except oci.exceptions.RequestException:
             raise
         except oci.exceptions.ServiceError as e:
             if self.__check_service_error(e.code):
-                return ""
+                return data
             raise
         except Exception as e:
             self.__print_error("__load_core_compute_vnic", e)
@@ -3055,7 +3165,7 @@ class ShowOCIService(object):
                         continue
 
                     val = {'id': str(arr.id), 'display_name': str(arr.display_name), 'vnic_id': str(arr.vnic_id),
-                           'vnic_name': self.__load_core_compute_vnic(virtual_network, arr.vnic_id),
+                           'vnic_details': self.__load_core_compute_vnic(virtual_network, arr.vnic_id),
                            'instance_id': str(arr.instance_id), 'time_created': str(arr.time_created),
                            'nic_index': str(arr.nic_index), 'subnet_id': str(arr.subnet_id),
                            'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
@@ -3519,7 +3629,8 @@ class ShowOCIService(object):
                     # add the rest
                     val = {'id': str(arr.id), 'shape_name': str(arr.shape_name), 'display_name': str(arr.display_name), 'is_private': str(arr.is_private),
                            'status': str(status),
-                           'ip_addresses': [(str(ip.ip_address) + " - " + ("Public" if ip.is_public else "Private")) for ip in arr.ip_addresses], 'compartment_name': str(compartment['name']),
+                           'ip_addresses': [(str(ip.ip_address) + " - " + ("Public" if ip.is_public else "Private")) for ip in arr.ip_addresses],
+                           'compartment_name': str(compartment['name']),
                            'compartment_id': str(compartment['id']),
                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                            'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
@@ -3580,10 +3691,10 @@ class ShowOCIService(object):
                     datahosts = []
                     for hostname in arr.hostnames:
                         ho = arr.hostnames[hostname]
-                        datahosts.append(str(ho.name).ljust(20) + " - " + str(ho.hostname))
+                        datahosts.append({'name': str(ho.name), 'desc': str(ho.name).ljust(20) + " - " + str(ho.hostname)})
                     val['hostnames'] = datahosts
 
-                    # check boot volume backup policy
+                    # Add data
                     data.append(val)
                     cnt += 1
 
@@ -4486,6 +4597,9 @@ class ShowOCIService(object):
                     value = {'id': str(dbs.id),
                              'display_name': str(dbs.display_name),
                              'shape': str(dbs.shape),
+                             'shape_ocpu': 0,
+                             'shape_memory_gb': 0,
+                             'shape_storage_tb': 0,
                              'lifecycle_state': str(dbs.lifecycle_state),
                              'data_storage_size_in_gbs': "" if dbs.data_storage_size_in_gbs is None else str(dbs.data_storage_size_in_gbs),
                              'availability_domain': str(dbs.availability_domain),
@@ -4495,8 +4609,8 @@ class ShowOCIService(object):
                              'hostname': str(dbs.hostname),
                              'domain': str(dbs.domain),
                              'data_storage_percentage': str(dbs.data_storage_percentage),
-                             'data_subnet': self.get_network_subnet(str(dbs.subnet_id)),
-                             'backup_subnet': "" if dbs.backup_subnet_id is None else self.get_network_subnet(str(dbs.backup_subnet_id)),
+                             'data_subnet': self.get_network_subnet(str(dbs.subnet_id), True),
+                             'backup_subnet': "" if dbs.backup_subnet_id is None else self.get_network_subnet(str(dbs.backup_subnet_id), True),
                              'scan_dns_record_id': "" if dbs.scan_dns_record_id is None else str(dbs.scan_dns_record_id),
                              'listener_port': str(dbs.listener_port),
                              'cluster_name': "" if dbs.cluster_name is None else str(dbs.cluster_name),
@@ -4510,6 +4624,14 @@ class ShowOCIService(object):
                              'patches': self.__load_database_dbsystems_patches(database_client, dbs.id),
                              'db_nodes': self.__load_database_dbsystems_dbnodes(database_client, virtual_network, dbs.id, compartment),
                              'db_homes': self.__load_database_dbsystems_dbhomes(database_client, virtual_network, dbs.id, compartment)}
+
+                    # get shape
+                    if dbs.shape:
+                        shape_sizes = self.get_shape_details(str(dbs.shape))
+                        if shape_sizes:
+                            value['shape_ocpu'] = shape_sizes['cpu']
+                            value['shape_memory_gb'] = shape_sizes['memory']
+                            value['shape_storage_tb'] = shape_sizes['storage']
 
                     # license model
                     if dbs.license_model == oci.database.models.DbSystem.LICENSE_MODEL_LICENSE_INCLUDED:
@@ -4567,7 +4689,7 @@ class ShowOCIService(object):
 
         data = []
         try:
-            db_nodes = database_client.list_db_nodes(compartment['id'], dbs_id).data
+            db_nodes = database_client.list_db_nodes(compartment['id'], db_system_id=dbs_id).data
 
             # db_node = oci.database.models.DbNodeSummary
             for db_node in db_nodes:
@@ -4577,7 +4699,7 @@ class ShowOCIService(object):
                      'fault_domain': str(db_node.fault_domain),
                      'lifecycle_state': str(db_node.lifecycle_state),
                      'vnic_id': str(db_node.vnic_id),
-                     'vnic_name': self.__load_core_compute_vnic(virtual_network, str(db_node.vnic_id)),
+                     'vnic_details': self.__load_core_compute_vnic(virtual_network, str(db_node.vnic_id)),
                      'software_storage_size_in_gb': str(db_node.software_storage_size_in_gb)})
 
             # add to main data
@@ -4602,7 +4724,7 @@ class ShowOCIService(object):
 
         data = []
         try:
-            db_homes = oci.pagination.list_call_get_all_results(database_client.list_db_homes, compartment['id'], dbs_id).data
+            db_homes = oci.pagination.list_call_get_all_results(database_client.list_db_homes, compartment['id'], db_system_id=dbs_id).data
 
             # db_home = oci.database.models.DbHomeSummary
             for db_home in db_homes:

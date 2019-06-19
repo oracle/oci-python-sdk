@@ -4,14 +4,17 @@
 #
 # @author: Adi Zohar
 #
-# Supports Python 2.7 and above, Python 3 recommended
+# Supports Python 3 and above
 #
 # coding: utf-8
 ##########################################################################
-# This file has ShowOCIOutput class and ShowOCISummary class
-# it accept data as JSON format and print nice output
+# ShowOCIOutput class, ShowOCISummary class
+# accept data as JSON format and print nice output
+#
+# ShowOCICSV class - accept data as JSON and write CSV output files.
 ##########################################################################
 from __future__ import print_function
+import csv
 
 
 class ShowOCIOutput(object):
@@ -179,7 +182,7 @@ class ShowOCIOutput(object):
                 if not policies:
                     continue
 
-                print("\n" + c['compartment_path'] + ":")
+                print("\nCompartment " + c['compartment_path'] + ":")
                 for policy in policies:
                     print("")
                     print(self.taba + policy['name'] + ":")
@@ -608,15 +611,22 @@ class ShowOCIOutput(object):
                 if not lb['listeners']:
                     print(self.tabs + "Listener   : None")
                 for listener in lb['listeners']:
-                    print(self.tabs + "Listener   : " + listener)
+                    print(self.tabs + "Listener   : " + listener['desc'])
+                    if listener['path_route_set_name']:
+                        print(self.tabs + "           : Paths: " + listener['path_route_set_name'])
+                    if listener['rule_set_names']:
+                        print(self.tabs + "           : Rules: " + str(', '.join(x for x in listener['rule_set_names'])))
+                    if listener['hostname_names']:
+                        print(self.tabs + "           : Hosts: " + str(', '.join(x for x in listener['hostname_names'])))
+                print("")
 
-            # Path route set - need to test -  TBD
+            # Path route set
             if 'path_route' in lb:
                 for prs in lb['path_route']:
                     print(self.tabs + "Path Route : " + prs['name'])
                     if 'path_routes' in prs:
                         for p in prs['path_routes']:
-                            print(self.tabs + "           : Backend: " + str(p['backend_set_name']) + ',  Path: ' + p['path'])
+                            print(self.tabs + "           : Backendset: " + str(p['backend_set_name']) + ',  Path: ' + p['path'])
 
             # Hostnames
             if 'hostnames' in lb:
@@ -788,7 +798,7 @@ class ShowOCIOutput(object):
 
                 # db nodes
                 for db_node in dbs['db_nodes']:
-                    print(self.tabs + db_node)
+                    print(self.tabs + db_node['desc'])
 
                 # db homes
                 for db_home in dbs['db_homes']:
@@ -1107,27 +1117,30 @@ class ShowOCIOutput(object):
                 if 'name' in instance:
                     print(self.taba + instance['name'])
 
+                if instance['shape_ocpu'] > 0:
+                    print(self.tabs2 + "Shape: Ocpus: " + str(instance['shape_ocpu']) + ", Memory: " + str(instance['shape_memory_gb']) + "gb, Local Storage: " + str(instance['shape_storage_tb']) + "tb")
+
                 if 'availability_domain' in instance and 'fault_domain' in instance:
-                    print(self.tabs2 + "AD  : " + instance['availability_domain'] + " - " + instance['fault_domain'])
+                    print(self.tabs2 + "AD   : " + instance['availability_domain'] + " - " + instance['fault_domain'])
 
                 if 'time_maintenance_reboot_due' in instance:
                     if instance['time_maintenance_reboot_due'] != "None":
-                        print(self.tabs2 + "MRB : Maintenance Reboot Due " + instance['time_maintenance_reboot_due'])
+                        print(self.tabs2 + "MRB  : Maintenance Reboot Due " + instance['time_maintenance_reboot_due'])
 
                 if 'image' in instance:
-                    print(self.tabs2 + "Img : " + instance['image'])
+                    print(self.tabs2 + "Img  : " + instance['image'])
 
                 if 'boot_volume' in instance:
                     for bv in instance['boot_volume']:
-                        print(self.tabs2 + "Boot: " + bv['desc'])
+                        print(self.tabs2 + "Boot : " + bv['desc'])
 
                 if 'block_volume' in instance:
                     for bv in instance['block_volume']:
-                        print(self.tabs2 + "Vol : " + bv['desc'])
+                        print(self.tabs2 + "Vol  : " + bv['desc'])
 
                 if 'vnic' in instance:
                     for vnic in instance['vnic']:
-                        print(self.tabs2 + "VNIC: " + vnic['desc'])
+                        print(self.tabs2 + "VNIC : " + vnic['desc'])
 
                 if 'console' in instance:
                     if instance['console']:
@@ -1728,4 +1741,681 @@ class ShowOCISummary(object):
 
         except Exception as e:
             self.__print_error("__summary_region_data", e)
+            raise
+
+
+##########################################################################
+# This section has ShowOCICSV class
+# it accept data as JSON format and compile CSV files
+##########################################################################
+class ShowOCICSV(object):
+
+    ############################################
+    # class variables
+    ############################################
+    csv_file_header = ""
+    csv_identity_groups = []
+    csv_identity_policies = []
+    csv_compute = []
+    csv_database = []
+    csv_network_subnet = []
+    csv_network_security_list = []
+    csv_network_routes = []
+    csv_network_dhcp_options = []
+    csv_load_balancer = []
+    csv_load_balancer_bs = []
+
+    ############################################
+    # Init
+    ############################################
+    def __init__(self):
+        pass
+
+    ##########################################################################
+    # generate_csv
+    ##########################################################################
+    def generate_csv(self, data, csv_file_header):
+
+        self.csv_file_header = csv_file_header
+        try:
+            for d in data:
+                if 'type' in d:
+
+                    if d['type'] == "identity":
+                        self.__csv_identity_main(d['data'])
+
+                    elif d['type'] == "region":
+                        self.__csv_region_data(d['region'], d['data'])
+
+                    else:
+                        continue
+
+            # generate CSV files from each file
+            self.__print_header("Processing CSV Files", 0)
+            self.__export_to_csv_file("identity_policy", self.csv_identity_policies)
+            self.__export_to_csv_file("identity_groups", self.csv_identity_groups)
+            self.__export_to_csv_file("compute", self.csv_compute)
+            self.__export_to_csv_file("network_subnet", self.csv_network_subnet)
+            self.__export_to_csv_file("network_routes", self.csv_network_routes)
+            self.__export_to_csv_file("network_security_list", self.csv_network_security_list)
+            self.__export_to_csv_file("network_dhcp_options", self.csv_network_dhcp_options)
+            self.__export_to_csv_file("database", self.csv_database)
+            self.__export_to_csv_file("load_balancer_listeners", self.csv_load_balancer)
+            self.__export_to_csv_file("load_balancer_backendset", self.csv_load_balancer_bs)
+
+            print("")
+        except Exception as e:
+            raise Exception("Error in generate_csv: " + str(e.args))
+
+    ##########################################################################
+    # Print header centered
+    ##########################################################################
+    def __print_header(self, name, category):
+        options = {0: 90, 1: 60, 2: 30, 3: 75}
+        chars = int(options[category])
+        print("")
+        print('#' * chars)
+        print("#" + name.center(chars - 2, " ") + "#")
+        print('#' * chars)
+
+    ##########################################################################
+    # create csv file
+    ##########################################################################
+    def __export_to_csv_file(self, file_subject, data):
+
+        try:
+            # if no data
+            if len(data) == 0:
+                return
+
+            # get the file name of the CSV
+            file_name = self.csv_file_header + "_" + file_subject + ".csv"
+
+            # generate fields
+            fields = [key for key in data[0].keys()]
+
+            with open(file_name, mode='w', newline='') as csv_file:
+                writer = csv.DictWriter(csv_file, fieldnames=fields)
+
+                # write header
+                writer.writeheader()
+
+                for row in data:
+                    writer.writerow(row)
+
+            print("CSV: " + file_subject.ljust(22) + " --> " + file_name)
+
+        except Exception as e:
+            raise Exception("Error in __export_to_csv_file: " + str(e.args))
+
+    ##########################################################################
+    # print error
+    ##########################################################################
+    def __print_error(self, msg, e):
+        classname = type(self).__name__
+
+        if isinstance(e, KeyError):
+            print("\nError in " + classname + ":" + msg + ": KeyError " + str(e.args))
+        else:
+            print("\nError in " + classname + ":" + msg + ": " + str(e))
+
+    ##########################################################################
+    # check if managed paas compartment
+    ##########################################################################
+    def __if_managed_paas_compartment(self, name):
+        return name == "ManagedCompartmentForPaaS"
+
+    ##########################################################################
+    # CSV Identity Groups
+    ##########################################################################
+
+    def __csv_identity_groups(self, groups):
+        try:
+            for group in groups:
+                for user in group['users'].split(','):
+
+                    data = {'group_name': group['name'], 'user_name': user}
+
+                    self.csv_identity_groups.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_identity_groups", e)
+
+    ##########################################################################
+    # csv Identity Policies
+    ##########################################################################
+    def __csv_identity_policies(self, policies_data):
+        try:
+            if not policies_data:
+                return
+
+            for c in policies_data:
+                if self.__if_managed_paas_compartment(c['compartment_name']):
+                    continue
+
+                policies = c['policies']
+                if not policies:
+                    continue
+
+                for policy in policies:
+                    seq = 0
+                    for statement in policy['statements']:
+                        seq += 1
+                        self.csv_identity_policies.append({'compartment': c['compartment_path'], 'policy_name': policy['name'], 'seq': seq, 'statement': statement})
+
+        except Exception as e:
+            self.__print_error("__csv_identity_policies", e)
+
+    ##########################################################################
+    # CSV Identity Module
+    ##########################################################################
+    def __csv_identity_main(self, data):
+        try:
+            if 'groups' in data:
+                self.__csv_identity_groups(data['groups'])
+
+            if 'policies' in data:
+                self.__csv_identity_policies(data['policies'])
+
+        except Exception as e:
+            self.__print_error("__csv_identity_main", e)
+
+    ##########################################################################
+    # CSV Network Subnets
+    ##########################################################################
+    def __csv_core_network_vcn_subnet(self, region_name, subnets, vcn, igw, sgw, nat, drg, lpg):
+        try:
+            for subnet in subnets:
+                data = {'region_name': region_name,
+                        'vcn_name': vcn['display_name'],
+                        'vcn_cidr': vcn['cidr_block'],
+                        'vcn_compartment': vcn['compartment'],
+                        'internet_gateway': igw,
+                        'service_gateway': sgw,
+                        'nat': nat,
+                        'drg': drg,
+                        'local_peering': lpg,
+                        'subnet_name': subnet['name'],
+                        'subnet_cidr': subnet['cidr_block'],
+                        'availability_domain': subnet['availability_domain'],
+                        'subnet_compartment': subnet['compartment'],
+                        'public_private': subnet['public_private'],
+                        'dhcp_options': subnet['dhcp_options'],
+                        'route': subnet['route'],
+                        'security_list': str(', '.join(x for x in subnet['security_list'])),
+                        'dns': subnet['dns']}
+                self.csv_network_subnet.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_core_network_vcn_subnet", e)
+
+    ##########################################################################
+    # Print Network vcn security list
+    ##########################################################################
+    def __csv_core_network_vcn_security_lists(self, region_name, sec_lists, vcn):
+        try:
+            if not sec_lists:
+                return
+
+            for sl in sec_lists:
+                if len(sl['sec_rules']) == 0:
+                    data = {'region_name': region_name,
+                            'vcn_name': vcn['display_name'],
+                            'vcn_cidr': vcn['cidr_block'],
+                            'vcn_compartment': vcn['compartment'],
+                            'sec_name': sl['name'],
+                            'sec_compartment': sl['compartment'],
+                            'sec_protocol': "",
+                            'is_stateless': "",
+                            'sec_rules': "Empty",
+                            'time_created': sl['time_created'][0:16]}
+                    self.csv_network_security_list.append(data)
+
+                else:
+                    for slr in sl['sec_rules']:
+                        data = {'region_name': region_name,
+                                'vcn_name': vcn['display_name'],
+                                'vcn_cidr': vcn['cidr_block'],
+                                'vcn_compartment': vcn['compartment'],
+                                'sec_name': sl['name'],
+                                'sec_compartment': sl['compartment'],
+                                'sec_protocol': slr['protocol_name'],
+                                'is_stateless': slr['is_stateless'],
+                                'sec_rules': slr['desc'],
+                                'time_created': sl['time_created']
+                                }
+                        self.csv_network_security_list.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_core_network_vcn_security_lists", e)
+
+    ##########################################################################
+    # csv DHCP options for DHCP_ID
+    ##########################################################################
+
+    def __csv_core_network_vcn_dhcp_options(self, region_name, dhcp_options, vcn):
+        try:
+            for dhcp in dhcp_options:
+                data = {'region_name': region_name,
+                        'vcn_name': vcn['display_name'],
+                        'vcn_cidr': vcn['cidr_block'],
+                        'vcn_compartment': vcn['compartment'],
+                        'dhcp_name': dhcp['name'],
+                        'option_1': "",
+                        'option_2': "",
+                        'dhcp_compartment': dhcp['compartment'],
+                        'time_created': dhcp['time_created'][0:16]}
+
+                seq = 0
+                for opt in dhcp['opt']:
+                    seq += 1
+                    opt_str = "option_" + str(seq)
+                    data[opt_str] = opt
+
+                self.csv_network_dhcp_options.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_core_network_vcn_dhcp_options", e)
+
+    ########################################################################
+    # CSV Network vcn Route Tables
+    ##########################################################################
+    def __csv_core_network_vcn_route_tables(self, region_name, route_tables, vcn):
+        try:
+            if not route_tables:
+                return
+
+            for rt in route_tables:
+
+                if len(rt['route_rules']) == 0:
+                    data = {'region_name': region_name,
+                            'vcn_name': vcn['display_name'],
+                            'vcn_cidr': vcn['cidr_block'],
+                            'vcn_compartment': vcn['compartment'],
+                            'route_name': rt['name'],
+                            'route_compartment': rt['compartment'],
+                            'destination': "",
+                            'route': "Empty",
+                            'time_created': rt['time_created'][0:16]}
+                    self.csv_network_routes.append(data)
+
+                else:
+                    for rl in rt['route_rules']:
+                        data = {'region_name': region_name,
+                                'vcn_name': vcn['display_name'],
+                                'vcn_cidr': vcn['cidr_block'],
+                                'vcn_compartment': vcn['compartment'],
+                                'route_name': rt['name'],
+                                'route_compartment': rt['compartment'],
+                                'destination': rl['destination'],
+                                'route': rl['desc'],
+                                'time_created': rt['time_created'][0:16]}
+                        self.csv_network_routes.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_core_network_vcn_route_tables", e)
+
+    ##########################################################################
+    # csv network vcn
+    ##########################################################################
+    def __csv_core_network_vcn(self, region_name, vcns):
+
+        try:
+            if len(vcns) == 0:
+                return
+
+            for vcn in vcns:
+
+                # don't extract managed compartment
+                if self.__if_managed_paas_compartment(vcn['compartment']):
+                    continue
+
+                igw = ""
+                sgw = ""
+                nat = ""
+                drg = ""
+                lpg = ""
+
+                if 'igw' in vcn['data']:
+                    igw = str(', '.join(x['name'] for x in vcn['data']['igw']))
+
+                if 'sgw' in vcn['data']:
+                    sgw = str(', '.join(x['name'] + " " + x['services'] for x in vcn['data']['sgw']))
+
+                if 'nat' in vcn['data']:
+                    nat = str(', '.join(x['name'] for x in vcn['data']['nat']))
+
+                if 'drg_attached' in vcn['data']:
+                    drg = str(', '.join(x['name'] for x in vcn['data']['drg_attached']))
+
+                if 'local_peering' in vcn['data']:
+                    lpg = str(', '.join(x['name'] for x in vcn['data']['local_peering']))
+
+                if 'subnets' in vcn['data']:
+                    self.__csv_core_network_vcn_subnet(region_name, vcn['data']['subnets'], vcn, igw, sgw, nat, drg, lpg)
+
+                if 'security_lists' in vcn['data']:
+                    self.__csv_core_network_vcn_security_lists(region_name, vcn['data']['security_lists'], vcn)
+
+                if 'route_tables' in vcn['data']:
+                    self.__csv_core_network_vcn_route_tables(region_name, vcn['data']['route_tables'], vcn)
+
+                if 'dhcp_options' in vcn['data']:
+                    self.__csv_core_network_vcn_dhcp_options(region_name, vcn['data']['dhcp_options'], vcn)
+
+        except BaseException as e:
+            self.__print_error("__csv_core_network_vcn", e)
+
+    ##########################################################################
+    # csv network Main
+    ##########################################################################
+    def __csv_core_network_main(self, region_name, data):
+        try:
+            if 'vcn' in data:
+                self.__csv_core_network_vcn(region_name, data['vcn'])
+
+        except Exception as e:
+            self.__print_error("__csv_core_network_main", e)
+
+    ##########################################################################
+    # csv database db systems
+    ##########################################################################
+    def __csv_database_db_system(self, region_name, list_db_systems):
+
+        try:
+            for dbs in list_db_systems:
+
+                for db_home in dbs['db_homes']:
+
+                    for db in db_home['databases']:
+
+                        data = {'region_name': region_name,
+                                'availability_domain': dbs['availability_domain'],
+                                'compartment_name': dbs['compartment_name'],
+                                'status': dbs['lifecycle_state'],
+                                'type': "DB System",
+                                'name': dbs['display_name'],
+                                'shape': dbs['shape'],
+                                'cpu_core_count': dbs['cpu_core_count'],
+                                'db_storage_gb': dbs['sum_size_gb'],
+                                'shape_ocpus': dbs['shape_ocpu'],
+                                'memory_gb': dbs['shape_memory_gb'],
+                                'local_storage_tb': dbs['shape_storage_tb'],
+                                'node_count': len(dbs['db_nodes']),
+                                'database': db['name'],
+                                'version_license_model': dbs['version'],
+                                'data_subnet': dbs['data_subnet'],
+                                'backup_subnet': dbs['backup_subnet'],
+                                'scan_ips': str(', '.join(x for x in dbs['scan_ips'])),
+                                'vip_ips': str(', '.join(x for x in dbs['vip_ips'])),
+                                'cluster_name': dbs['cluster_name'],
+                                'time_created': dbs['time_created'][0:16],
+                                'domain': dbs['domain'],
+                                'db_nodes': str(', '.join(x['desc'] for x in dbs['db_nodes']))
+                                }
+                        self.csv_database.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_database_db_system", e)
+
+    ##########################################################################
+    # csv database db system
+    ##########################################################################
+
+    def __csv_database_db_autonomous(self, region_name, databases):
+        try:
+            for dbs in databases:
+                data = {'region_name': region_name,
+                        'availability_domain': "",
+                        'compartment_name': dbs['compartment_name'],
+                        'status': dbs['lifecycle_state'],
+                        'type': "Autonomous " + dbs['db_workload'],
+                        'name': dbs['display_name'], 'shape': "",
+                        'cpu_core_count': dbs['cpu_core_count'],
+                        'db_storage_gb': str(int(dbs['data_storage_size_in_tbs']) * 1024),
+                        'shape_ocpus': "",
+                        'memory_gb': "",
+                        'local_storage_tb': "",
+                        'node_count': "",
+                        'database': dbs['db_name'],
+                        'version_license_model': dbs['license_model'],
+                        'domain': "",
+                        'data_subnet': "",
+                        'backup_subnet': "",
+                        'scan_ips': "",
+                        'vip_ips': "",
+                        'cluster_name': "",
+                        'time_created': dbs['time_created'],
+                        'domain': "",
+                        'db_nodes': ""}
+                self.csv_database.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_database_db_autonomous", e)
+
+    ##########################################################################
+    # database
+    ##########################################################################
+
+    def __csv_database_main(self, region_name, list_databases):
+        try:
+
+            if len(list_databases) == 0:
+                return
+
+            if 'db_system' in list_databases:
+                self.__csv_database_db_system(region_name, list_databases['db_system'])
+
+            if 'autonomous' in list_databases:
+                self.__csv_database_db_autonomous(region_name, list_databases['autonomous'])
+
+        except Exception as e:
+            self.__print_error("__print_database_main", e)
+
+    ##########################################################################
+    # csv compute instances
+    ##########################################################################
+    def __csv_core_compute_instances(self, region_name, instances):
+
+        try:
+
+            if len(instances) == 0:
+                return
+
+            for instance in instances:
+                data = {'region_name': region_name,
+                        'availability_domain': instance['availability_domain'],
+                        'compartment_name': instance['compartment_name'],
+                        'server_name': instance['display_name'],
+                        'Status': instance['lifecycle_state'],
+                        'Type': instance['image_os'],
+                        'image': instance['image'],
+                        'fault_domain': instance['fault_domain'],
+                        'primary_vcn': "",
+                        'primary_subnet': "",
+                        'shape': instance['shape'],
+                        'ocpus': instance['shape_ocpu'],
+                        'memory_gb': instance['shape_memory_gb'],
+                        'local_storage_tb': instance['shape_storage_tb'],
+                        'public_ips': str(', '.join(x['details']['public_ip'] for x in instance['vnic'])),
+                        'private_ips': str(', '.join(x['details']['private_ip'] for x in instance['vnic'])),
+                        'time_created': instance['time_created'][0:16],
+                        'boot_volume': "",
+                        'boot_volume_size_gb': "",
+                        'boot_volume_b_policy': "",
+                        'block_volumes': "",
+                        'block_volumes_size_gb': "",
+                        'block_volumes_b_policy': ""
+                        }
+
+                # go over the vnics
+                if 'vnic' in instance:
+
+                    vnic_num = 0
+                    for vnic in instance['vnic']:
+                        vnic_num += 1
+
+                        # for vnic #1 add primary vcn_subnet
+                        if vnic_num == 1:
+                            data['primary_vcn'] = vnic['details']['vcn']
+                            data['primary_subnet'] = vnic['details']['subnet']
+
+                if 'boot_volume' in instance:
+                    for bv in instance['boot_volume']:
+                        data['boot_volume'] = bv['display_name']
+                        data['boot_volume_size_gb'] = bv['sum_size_gb']
+                        data['boot_volume_b_policy'] = bv['backup_policy']
+
+                if 'block_volume' in instance:
+                    for bv in instance['block_volume']:
+                        data['block_volumes'] = str(', '.join(x['display_name'] for x in instance['block_volume']))
+                        data['block_volumes_size_gb'] = str('+ '.join(x['size'] for x in instance['block_volume']))
+                        data['block_volumes_b_policy'] = str(', '.join(x['backup_policy'] for x in instance['block_volume']))
+
+                self.csv_compute.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_core_compute_instances", e)
+
+    ##########################################################################
+    # csv Compute
+    ##########################################################################
+    def __csv_core_compute_main(self, region_name, data):
+
+        try:
+            if len(data) == 0:
+                return
+
+            if 'instances' in data:
+                self.__csv_core_compute_instances(region_name, data['instances'])
+
+        except Exception as e:
+            self.__print_error("__csv_core_compute_main", e)
+
+    ##########################################################################
+    # csv load balancer config
+    ##########################################################################
+    def __csv_load_balancer_details(self, region_name, load_balance_obj):
+        try:
+            lb = load_balance_obj['details']
+
+            # listeners
+            if 'listeners' in lb:
+
+                # if no listener
+                if not lb['listeners']:
+                    data = {'region_name': region_name,
+                            'compartment_name': lb['compartment_name'],
+                            'name': lb['display_name'],
+                            'status': lb['status'],
+                            'shape': lb['shape_name'],
+                            'type': ("Private" if lb['is_private'] else "Public"),
+                            'ip_addresses': str(', '.join(x for x in lb['ips'])),
+                            'subnets': str(', '.join(x for x in lb['subnets'])),
+                            'listener_port': "No Listener",
+                            'listener_def_bs': "",
+                            'listener_ssl': "",
+                            'listener_path': "",
+                            'listener_rule': "",
+                            'listener_host': "",
+                            }
+                    self.csv_load_balancer.append(data)
+
+                # look over the listeners
+                for listener in lb['listeners']:
+                    data = {'region_name': region_name,
+                            'compartment_name': lb['compartment_name'],
+                            'name': lb['display_name'],
+                            'status': lb['status'],
+                            'shape': lb['shape_name'],
+                            'type': ("Private" if lb['is_private'] else "Public"),
+                            'ip_addresses': str(', '.join(x for x in lb['ips'])),
+                            'subnets': str(', '.join(x for x in lb['subnets'])),
+                            'listener_port': listener['port'],
+                            'listener_def_bs': listener['default_backend_set_name'],
+                            'listener_ssl': listener['ssl_configuration'],
+                            'listener_host': str(', '.join(x for x in listener['hostname_names'])),
+                            'listener_path': listener['path_route_set_name'],
+                            'listener_rule': str(', '.join(x for x in listener['rule_set_names'])),
+                            }
+                    self.csv_load_balancer.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_load_balancer_details", e)
+
+    ##########################################################################
+    # csv load balancer backedset
+    ##########################################################################
+    def __csv_load_balancer_backendset(self, region_name, load_balance_obj):
+
+        try:
+            lb = load_balance_obj['details']
+            backendset = load_balance_obj['backendset']
+
+            for bs in backendset:
+                # list of backends
+                if 'backends' in bs:
+                    for backend in bs['backends']:
+
+                        data = {'region_name': region_name,
+                                'compartment_name': lb['compartment_name'],
+                                'name': lb['display_name'],
+                                'status': lb['status'],
+                                'shape': lb['shape_name'],
+                                'type': ("Private" if lb['is_private'] else "Public"),
+                                'ip_addresses': str(', '.join(x for x in lb['ips'])),
+                                'subnets': str(', '.join(x for x in lb['subnets'])),
+                                'bs_name': bs['backend_set'],
+                                'bs_status': bs['status'],
+                                'health_check': str(', '.join(x for x in bs['health_check'])),
+                                'session_persistence': bs['session_persistence'],
+                                'ssl_cert': bs['ssl_cert'],
+                                'backend': backend
+                                }
+                        self.csv_load_balancer_bs.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_load_balancer_backendset", e)
+
+    ##########################################################################
+    # Load Balancer
+    ##########################################################################
+
+    def __csv_load_balancer_main(self, region_name, load_balancers):
+        try:
+
+            if len(load_balancers) == 0:
+                return
+
+            for load_balance_obj in load_balancers:
+                if 'details' in load_balance_obj:
+                    self.__csv_load_balancer_details(region_name, load_balance_obj)
+
+                if 'backendset' in load_balance_obj:
+                    self.__csv_load_balancer_backendset(region_name, load_balance_obj)
+
+        except Exception as e:
+            self.__print_error("__csv_load_balancer_main", e)
+
+    ##########################################################################
+    # Print Identity data
+    ##########################################################################
+    def __csv_region_data(self, region_name, data):
+
+        try:
+            if not data:
+                return
+
+            for cdata in data:
+                if 'network' in cdata:
+                    self.__csv_core_network_main(region_name, cdata['network'])
+                if 'compute' in cdata:
+                    self.__csv_core_compute_main(region_name, cdata['compute'])
+                if 'database' in cdata:
+                    self.__csv_database_main(region_name, cdata['database'])
+                if 'load_balancer' in cdata:
+                    self.__csv_load_balancer_main(region_name, cdata['load_balancer'])
+
+        except Exception as e:
+            self.__print_error("__csv_region_data", e)
             raise
