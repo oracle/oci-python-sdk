@@ -151,47 +151,6 @@ def test_bulk_delete_virtual_circuit_public_prefixes(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="serviceGateway" email="oci_sgw_ops_us_grp@oracle.com" jiraProject="SG" opsJiraProject="SGW"
-def test_change_service_gateway_compartment(testing_service_client):
-    if not testing_service_client.is_api_enabled('core', 'ChangeServiceGatewayCompartment'):
-        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
-
-    config = util.test_config_to_python_config(
-        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ChangeServiceGatewayCompartment')
-    )
-
-    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangeServiceGatewayCompartment')
-
-    for i in range(len(request_containers)):
-        request = request_containers[i]['request'].copy()
-        result = []
-        service_error = None
-
-        try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
-            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
-            response = client.change_service_gateway_compartment(
-                service_gateway_id=request.pop(util.camelize('service_gateway_id')),
-                change_service_gateway_compartment_details=request.pop(util.camelize('change_service_gateway_compartment_details')),
-                **(util.camel_to_snake_keys(request))
-            )
-            result.append(response)
-        except oci_exception.ServiceError as service_exception:
-            service_error = service_exception
-
-        testing_service_client.validate_result(
-            'core',
-            'ChangeServiceGatewayCompartment',
-            request_containers[i]['containerId'],
-            request_containers[i]['request'],
-            result,
-            service_error,
-            'change_service_gateway_compartment',
-            False,
-            False
-        )
-
-
 # IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
 def test_change_nat_gateway_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ChangeNatGatewayCompartment'):
@@ -228,6 +187,47 @@ def test_change_nat_gateway_compartment(testing_service_client):
             result,
             service_error,
             'change_nat_gateway_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="serviceGateway" email="oci_sgw_ops_us_grp@oracle.com" jiraProject="SG" opsJiraProject="SGW"
+def test_change_service_gateway_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangeServiceGatewayCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ChangeServiceGatewayCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangeServiceGatewayCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.change_service_gateway_compartment(
+                service_gateway_id=request.pop(util.camelize('service_gateway_id')),
+                change_service_gateway_compartment_details=request.pop(util.camelize('change_service_gateway_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangeServiceGatewayCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_service_gateway_compartment',
             False,
             False
         )

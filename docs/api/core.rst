@@ -52,12 +52,12 @@ Core Services
     oci.core.models.CaptureConsoleHistoryDetails
     oci.core.models.ChangeBootVolumeBackupCompartmentDetails
     oci.core.models.ChangeBootVolumeCompartmentDetails
+    oci.core.models.ChangeNatGatewayCompartmentDetails
     oci.core.models.ChangeServiceGatewayCompartmentDetails
     oci.core.models.ChangeVolumeBackupCompartmentDetails
     oci.core.models.ChangeVolumeCompartmentDetails
     oci.core.models.ChangeVolumeGroupBackupCompartmentDetails
     oci.core.models.ChangeVolumeGroupCompartmentDetails
-    oci.core.models.ChangeNatGatewayCompartmentDetails
     oci.core.models.ComputeInstanceDetails
     oci.core.models.ConnectLocalPeeringGatewaysDetails
     oci.core.models.ConnectRemotePeeringConnectionsDetails
