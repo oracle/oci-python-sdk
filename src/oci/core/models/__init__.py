@@ -36,6 +36,7 @@ from .change_volume_backup_compartment_details import ChangeVolumeBackupCompartm
 from .change_volume_compartment_details import ChangeVolumeCompartmentDetails
 from .change_volume_group_backup_compartment_details import ChangeVolumeGroupBackupCompartmentDetails
 from .change_volume_group_compartment_details import ChangeVolumeGroupCompartmentDetails
+from .change_nat_gateway_compartment_details import ChangeNatGatewayCompartmentDetails
 from .compute_instance_details import ComputeInstanceDetails
 from .connect_local_peering_gateways_details import ConnectLocalPeeringGatewaysDetails
 from .connect_remote_peering_connections_details import ConnectRemotePeeringConnectionsDetails
@@ -268,6 +269,7 @@ core_type_mapping = {
     "ChangeVolumeCompartmentDetails": ChangeVolumeCompartmentDetails,
     "ChangeVolumeGroupBackupCompartmentDetails": ChangeVolumeGroupBackupCompartmentDetails,
     "ChangeVolumeGroupCompartmentDetails": ChangeVolumeGroupCompartmentDetails,
+    "ChangeNatGatewayCompartmentDetails": ChangeNatGatewayCompartmentDetails,
     "ComputeInstanceDetails": ComputeInstanceDetails,
     "ConnectLocalPeeringGatewaysDetails": ConnectLocalPeeringGatewaysDetails,
     "ConnectRemotePeeringConnectionsDetails": ConnectRemotePeeringConnectionsDetails,
