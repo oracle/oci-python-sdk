@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+19.6.24 - 2019-06-24
+====================
+Added
+-----
+* Added Freeform Tags and Defined Tages to the Compute and Database CSVs extract
+
+====================
 19.6.17 - 2019-06-17
 ====================
 Added

@@ -1860,6 +1860,24 @@ class ShowOCICSV(object):
             print("\nError in " + classname + ":" + msg + ": " + str(e))
 
     ##########################################################################
+    # extract defined tags to string
+    ##########################################################################
+    def __get_defined_tags(self, defined_tags):
+
+        try:
+            if not defined_tags:
+                return ""
+
+            defarr = []
+            for namespace in defined_tags.keys():
+                for key in defined_tags[namespace].keys():
+                    defarr.append(namespace + "." + key + "=" + defined_tags[namespace][key])
+            return str(', '.join(x for x in defarr))
+
+        except Exception as e:
+            self.__print_error("__get_defined_tags", e)
+
+    ##########################################################################
     # check if managed paas compartment
     ##########################################################################
     def __if_managed_paas_compartment(self, name):
@@ -2151,8 +2169,11 @@ class ShowOCICSV(object):
                                 'cluster_name': dbs['cluster_name'],
                                 'time_created': dbs['time_created'][0:16],
                                 'domain': dbs['domain'],
-                                'db_nodes': str(', '.join(x['desc'] for x in dbs['db_nodes']))
+                                'db_nodes': str(', '.join(x['desc'] for x in dbs['db_nodes'])),
+                                'freeform_tags': str(', '.join(key + "=" + dbs['freeform_tags'][key] for key in dbs['freeform_tags'].keys())),
+                                'defined_tags': self.__get_defined_tags(dbs['defined_tags'])
                                 }
+
                         self.csv_database.append(data)
 
         except Exception as e:
@@ -2187,7 +2208,11 @@ class ShowOCICSV(object):
                         'cluster_name': "",
                         'time_created': dbs['time_created'],
                         'domain': "",
-                        'db_nodes': ""}
+                        'db_nodes': "",
+                        'freeform_tags': str(', '.join(key + "=" + dbs['freeform_tags'][key] for key in dbs['freeform_tags'].keys())),
+                        'defined_tags': self.__get_defined_tags(dbs['defined_tags'])
+                        }
+
                 self.csv_database.append(data)
 
         except Exception as e:
@@ -2245,7 +2270,9 @@ class ShowOCICSV(object):
                         'boot_volume_b_policy': "",
                         'block_volumes': "",
                         'block_volumes_size_gb': "",
-                        'block_volumes_b_policy': ""
+                        'block_volumes_b_policy': "",
+                        'freeform_tags': str(', '.join(key + "=" + instance['freeform_tags'][key] for key in instance['freeform_tags'].keys())),
+                        'defined_tags': self.__get_defined_tags(instance['defined_tags'])
                         }
 
                 # go over the vnics
