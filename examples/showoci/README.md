@@ -5,7 +5,13 @@ It covers most of OCI components,
 Authentication by User or Compute using instant principals, 
 Output can be printer friendly, CSV files or JSON file.
 
-Modules Included:  
+![](img/screen_xls.png)
+![](img/screen_scr1.png)
+![](img/screen_scr2.png)
+![](img/screen_json1.png)
+![](img/screen_json2.png)
+
+## Modules Included:  
 - oci.core.VirtualNetworkClient          
 - oci.core.ComputeClient                 
 - oci.core.ComputeManagementClient       
@@ -535,18 +541,20 @@ Compartment gse00000000 (root):
 #     Compute Instances      #
 ##############################
 
---> VM.Standard1.1 - demohost - RUNNING
-        AD  : fHBa:US-ASHBURN-AD-1 - FAULT-DOMAIN-2
-        Img : Oracle-Linux-7.5-2018.06.14-0
-        Boot: 47gb - demohost (Boot Volume) bronze  - Group AdiVol1
-        VNIC: 10.1.0.2 (Prv), 129.213.148.40 (Pub) - Primary , Subnet (sub1 10.1.0.0/26), VCN (vcn)
+--> VM.Standard2.1 - demohost - RUNNING
+        Shape: Ocpus: 1, Memory: 15gb, Local Storage: 0tb
+        AD   : fHBa:US-ASHBURN-AD-1 - FAULT-DOMAIN-2
+        Img  : Oracle-Linux-7.5-2018.06.14-0
+        Boot : 47gb - demohost (Boot Volume) bronze  - Group AdiVol1
+        VNIC : 10.1.0.2 (Prv), 129.213.148.40 (Pub) - Primary , Subnet (sub1 10.1.0.0/26), VCN (vcn 10.1.0.0/16)
         Console Connection Active
 
 --> VM.Standard2.1 - inst-hari6-Adi-Instance-Pool - RUNNING
+        Shape: Ocpus: 1, Memory: 15gb, Local Storage: 0tb
         AD  : fHBa:US-ASHBURN-AD-3 - FAULT-DOMAIN-3
         Img : Oracle-Linux-7.5-2018.10.16-0
         Boot: 47gb - inst-hari6-Adi-Instance-Pool (Boot Volume) 
-        VNIC: 10.1.0.204 (Prv), 129.213.110.160 (Pub) - Primary , Subnet (sub3 10.1.0.192/27), VCN (vcn)
+        VNIC: 10.1.0.204 (Prv), 129.213.110.160 (Pub) - Primary , Subnet (sub3 10.1.0.192/27), VCN (vcn 10.1.0.0/16)
 
 ##############################
 # Compute Inst Configuration #
