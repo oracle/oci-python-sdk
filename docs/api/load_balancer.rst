@@ -71,6 +71,7 @@ Load Balancer
     oci.load_balancer.models.UpdateHostnameDetails
     oci.load_balancer.models.UpdateListenerDetails
     oci.load_balancer.models.UpdateLoadBalancerDetails
+    oci.load_balancer.models.UpdateNetworkSecurityGroupsDetails
     oci.load_balancer.models.UpdatePathRouteSetDetails
     oci.load_balancer.models.UpdateRuleSetDetails
     oci.load_balancer.models.WorkRequest
