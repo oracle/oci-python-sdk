@@ -2,7 +2,7 @@
 
 SHOWOCI is a reporting tool which uses the Python SDK to extract list of resources from your tenant. 
 It covers most of OCI components, 
-Authentication by User or Compute using instant principals, 
+Authentication by User or Compute using instance principals, 
 Output can be printer friendly, CSV files or JSON file.
 
 ![](img/screen_xls.png)
@@ -34,7 +34,7 @@ Output can be printer friendly, CSV files or JSON file.
 
 ** DISCLAIMER – This is not an official Oracle application
 
-## OCI Authentication using Instant Principals 
+## OCI Authentication using Instance Principals 
 
 Create Dynamic Group ShowOCIDynamicGroup:
 ```
@@ -126,7 +126,7 @@ python3 --version
 pip3 install --upgrade pip  
 pip3 install oci oci-cli  
 ```
-## Setup connectivity using Instant Principals
+## Setup connectivity using Instance Principals
 
 ```  
 1. Login to your OCI Cloud console
