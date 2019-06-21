@@ -1,6 +1,6 @@
 ## showoci - Oracle Cloud Infrastructure Reporting Tool
 
-SHOWOCI is an reporting tool which uses the Python SDK to extract list of resources from your tenant. 
+SHOWOCI is a reporting tool which uses the Python SDK to extract list of resources from your tenant. 
 It covers most of OCI components, 
 Authentication by User or Compute using instant principals, 
 Output can be printer friendly, CSV files or JSON file.
@@ -32,7 +32,7 @@ Output can be printer friendly, CSV files or JSON file.
 - oci.healthchecks.HealthChecksClient
 - oci.announcements_service.AnnouncementClient
 
-** DISCLAIMER – This is not official Oracle application
+** DISCLAIMER – This is not an official Oracle application
 
 ## OCI Authentication using Instant Principals 
 
