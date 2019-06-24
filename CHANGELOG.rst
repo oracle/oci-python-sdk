@@ -5,12 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-2.2.15 - TBD
+2.2.15 - 2019-06-25
 ====================
 
 Added
 -----
-*
+* Support for moving senders across compartments in the Email service
+* Support for moving NAT gateway resources across compartments in Core Services
 
 ====================
 2.2.14 - 2019-06-18
