@@ -86,7 +86,6 @@ class CreateAutoScalingConfigurationDetails(object):
         """
         **[Required]** Gets the compartment_id of this CreateAutoScalingConfigurationDetails.
         The `OCID`__ of the compartment containing the autoscaling configuration.
-        The autoscaling configuration and the instance pool that it manages must be in the same compartment.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -101,7 +100,6 @@ class CreateAutoScalingConfigurationDetails(object):
         """
         Sets the compartment_id of this CreateAutoScalingConfigurationDetails.
         The `OCID`__ of the compartment containing the autoscaling configuration.
-        The autoscaling configuration and the instance pool that it manages must be in the same compartment.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

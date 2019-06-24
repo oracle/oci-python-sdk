@@ -29,6 +29,47 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="COM"
+def test_change_auto_scaling_configuration_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('autoscaling', 'ChangeAutoScalingConfigurationCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('autoscaling', util.camelize('auto_scaling'), 'ChangeAutoScalingConfigurationCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='autoscaling', api_name='ChangeAutoScalingConfigurationCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.autoscaling.AutoScalingClient(config, service_endpoint=service_endpoint)
+            response = client.change_auto_scaling_configuration_compartment(
+                auto_scaling_configuration_id=request.pop(util.camelize('auto_scaling_configuration_id')),
+                change_compartment_details=request.pop(util.camelize('change_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'autoscaling',
+            'ChangeAutoScalingConfigurationCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_auto_scaling_configuration_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="COM"
 def test_create_auto_scaling_configuration(testing_service_client):
     if not testing_service_client.is_api_enabled('autoscaling', 'CreateAutoScalingConfiguration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
