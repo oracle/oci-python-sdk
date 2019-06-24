@@ -769,7 +769,9 @@ class ComputeClient(object):
 
 
         :param str image_id: (required)
-            The OCID of the image.
+            The `OCID`__ of the image.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -1165,7 +1167,9 @@ class ComputeClient(object):
 
 
         :param str image_id: (required)
-            The OCID of the image.
+            The `OCID`__ of the image.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param ExportImageDetails export_image_details: (required)
             Details for the image export.
@@ -1671,7 +1675,9 @@ class ComputeClient(object):
 
 
         :param str image_id: (required)
-            The OCID of the image.
+            The `OCID`__ of the image.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3441,7 +3447,9 @@ class ComputeClient(object):
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str image_id: (optional)
-            The OCID of an image.
+            The `OCID`__ of an image.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3891,7 +3899,9 @@ class ComputeClient(object):
 
 
         :param str image_id: (required)
-            The OCID of the image.
+            The `OCID`__ of the image.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param UpdateImageDetails update_image_details: (required)
             Updates the image display name field. Avoid entering confidential information.

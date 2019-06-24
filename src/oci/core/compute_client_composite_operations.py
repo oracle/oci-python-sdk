@@ -342,7 +342,9 @@ class ComputeClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str image_id: (required)
-            The OCID of the image.
+            The `OCID`__ of the image.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.Image.lifecycle_state`
@@ -577,7 +579,9 @@ class ComputeClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str image_id: (required)
-            The OCID of the image.
+            The `OCID`__ of the image.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param ExportImageDetails export_image_details: (required)
             Details for the image export.
@@ -615,7 +619,9 @@ class ComputeClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str image_id: (required)
-            The OCID of the image.
+            The `OCID`__ of the image.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param ExportImageDetails export_image_details: (required)
             Details for the image export.
@@ -860,7 +866,9 @@ class ComputeClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str image_id: (required)
-            The OCID of the image.
+            The `OCID`__ of the image.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param UpdateImageDetails update_image_details: (required)
             Updates the image display name field. Avoid entering confidential information.

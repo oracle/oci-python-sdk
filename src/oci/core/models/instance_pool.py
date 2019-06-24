@@ -9,7 +9,11 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstancePool(object):
     """
-    Instance Pool
+    An instance pool is a group of instances within the same region that are created based off of the same
+    instance configuration. For more information about instance pools and instance configurations, see
+    `Managing Compute Instances`__.
+
+    __ https://docs.cloud.oracle.com/Content/Compute/Concepts/instancemanagement.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a InstancePool.
