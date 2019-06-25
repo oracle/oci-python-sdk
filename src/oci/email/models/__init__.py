@@ -3,6 +3,7 @@
 
 from __future__ import absolute_import
 
+from .change_sender_compartment_details import ChangeSenderCompartmentDetails
 from .create_sender_details import CreateSenderDetails
 from .create_suppression_details import CreateSuppressionDetails
 from .sender import Sender
@@ -13,6 +14,7 @@ from .update_sender_details import UpdateSenderDetails
 
 # Maps type names to classes for email services.
 email_type_mapping = {
+    "ChangeSenderCompartmentDetails": ChangeSenderCompartmentDetails,
     "CreateSenderDetails": CreateSenderDetails,
     "CreateSuppressionDetails": CreateSuppressionDetails,
     "Sender": Sender,

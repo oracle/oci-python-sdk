@@ -31,6 +31,7 @@ from .bulk_delete_virtual_circuit_public_prefixes_details import BulkDeleteVirtu
 from .capture_console_history_details import CaptureConsoleHistoryDetails
 from .change_boot_volume_backup_compartment_details import ChangeBootVolumeBackupCompartmentDetails
 from .change_boot_volume_compartment_details import ChangeBootVolumeCompartmentDetails
+from .change_nat_gateway_compartment_details import ChangeNatGatewayCompartmentDetails
 from .change_service_gateway_compartment_details import ChangeServiceGatewayCompartmentDetails
 from .change_volume_backup_compartment_details import ChangeVolumeBackupCompartmentDetails
 from .change_volume_compartment_details import ChangeVolumeCompartmentDetails
@@ -263,6 +264,7 @@ core_type_mapping = {
     "CaptureConsoleHistoryDetails": CaptureConsoleHistoryDetails,
     "ChangeBootVolumeBackupCompartmentDetails": ChangeBootVolumeBackupCompartmentDetails,
     "ChangeBootVolumeCompartmentDetails": ChangeBootVolumeCompartmentDetails,
+    "ChangeNatGatewayCompartmentDetails": ChangeNatGatewayCompartmentDetails,
     "ChangeServiceGatewayCompartmentDetails": ChangeServiceGatewayCompartmentDetails,
     "ChangeVolumeBackupCompartmentDetails": ChangeVolumeBackupCompartmentDetails,
     "ChangeVolumeCompartmentDetails": ChangeVolumeCompartmentDetails,
