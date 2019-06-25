@@ -18,7 +18,7 @@
     <enabled-groups-dir>${sdk-root-dir}/codegenConfig/enabledGroups</enabled-groups-dir>
     <feature-id-file>${sdk-root-dir}/featureId.yaml</feature-id-file>
     <feature-id-dir>${sdk-root-dir}/codegenConfig/featureIds</feature-id-dir>
-    <rest-api-spec-spec-file>api.yaml</rest-api-spec-spec-file>
+    <rest-api-spec-spec-file>source/api.cond.yaml</rest-api-spec-spec-file>
   </properties>
   <dependencies>
     <dependency>
@@ -141,7 +141,7 @@
       <dependency>
         <groupId>com.oracle.pic.oss</groupId>
         <artifactId>rest-api-spec</artifactId>
-        <version>0.1.250</version>
+        <version>0.3.333</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

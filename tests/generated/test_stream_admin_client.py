@@ -28,7 +28,7 @@ def vcr_fixture(request):
         yield
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
 def test_create_stream(testing_service_client):
     if not testing_service_client.is_api_enabled('streaming', 'CreateStream'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -68,7 +68,7 @@ def test_create_stream(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
 def test_delete_stream(testing_service_client):
     if not testing_service_client.is_api_enabled('streaming', 'DeleteStream'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -108,7 +108,7 @@ def test_delete_stream(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
 def test_get_stream(testing_service_client):
     if not testing_service_client.is_api_enabled('streaming', 'GetStream'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -148,7 +148,7 @@ def test_get_stream(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
 def test_list_streams(testing_service_client):
     if not testing_service_client.is_api_enabled('streaming', 'ListStreams'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -207,7 +207,7 @@ def test_list_streams(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
 def test_update_stream(testing_service_client):
     if not testing_service_client.is_api_enabled('streaming', 'UpdateStream'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

@@ -28,7 +28,7 @@ def vcr_fixture(request):
         yield
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
 def test_consumer_commit(testing_service_client):
     if not testing_service_client.is_api_enabled('streaming', 'ConsumerCommit'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -69,7 +69,7 @@ def test_consumer_commit(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
 def test_consumer_heartbeat(testing_service_client):
     if not testing_service_client.is_api_enabled('streaming', 'ConsumerHeartbeat'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -110,7 +110,7 @@ def test_consumer_heartbeat(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
 def test_create_cursor(testing_service_client):
     if not testing_service_client.is_api_enabled('streaming', 'CreateCursor'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -151,7 +151,7 @@ def test_create_cursor(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
 def test_create_group_cursor(testing_service_client):
     if not testing_service_client.is_api_enabled('streaming', 'CreateGroupCursor'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -192,7 +192,7 @@ def test_create_group_cursor(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
 def test_get_group(testing_service_client):
     if not testing_service_client.is_api_enabled('streaming', 'GetGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -233,7 +233,7 @@ def test_get_group(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
 def test_get_messages(testing_service_client):
     if not testing_service_client.is_api_enabled('streaming', 'GetMessages'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -274,7 +274,7 @@ def test_get_messages(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
 def test_put_messages(testing_service_client):
     if not testing_service_client.is_api_enabled('streaming', 'PutMessages'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -315,7 +315,7 @@ def test_put_messages(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
 def test_update_group(testing_service_client):
     if not testing_service_client.is_api_enabled('streaming', 'UpdateGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
