@@ -5,8 +5,7 @@
 #
 # @author: Adi Zohar
 #
-# Supports Python 2.7 and above, Python 3 recommended
-# With Python 2, execute using - python showoci.py
+# Supports Python 3 and above
 #
 # coding: utf-8
 ##########################################################################
@@ -55,14 +54,14 @@
 ##########################################################################
 from __future__ import print_function
 from showoci_data import ShowOCIData
-from showoci_output import ShowOCIOutput, ShowOCISummary
+from showoci_output import ShowOCIOutput, ShowOCISummary, ShowOCICSV
 from showoci_service import ShowOCIFlags
 import json
 import sys
 import argparse
 import datetime
 
-version = "19.6.10"
+version = "19.6.24"
 
 ##########################################################################
 # execute_extract
@@ -92,6 +91,7 @@ def execute_extract():
     ############################################
     output = ShowOCIOutput()
     summary = ShowOCISummary()
+    csv = ShowOCICSV()
 
     ############################################
     # print showoci config
@@ -170,6 +170,12 @@ def execute_extract():
             output.print_data(extracted_data)
             summary.print_summary(extracted_data)
 
+        ############################################
+        # if print to CSV
+        ############################################
+        if cmd.csv:
+            csv.generate_csv(extracted_data, cmd.csv)
+
     ############################################
     # print completion
     ############################################
@@ -235,6 +241,7 @@ def set_parser_arguments():
     parser.add_argument('-rg', default="", dest='region', help='Filter by Region')
     parser.add_argument('-cp', default="", dest='compart', help='Filter by Compartment')
     parser.add_argument('-cf', type=argparse.FileType('r'), dest='config', help="Config File")
+    parser.add_argument('-csv', default="", dest='csv', help="Output to CSV files, Input as file header")
     parser.add_argument('-jf', type=argparse.FileType('w'), dest='joutfile', help="Output to file   (JSON format)")
     parser.add_argument('-js', action='store_true', default=False, dest='joutscr', help="Output to screen (JSON format)")
     parser.add_argument('-sjf', type=argparse.FileType('w'), dest='sjoutfile', help="Output to screen (nice format) and JSON File")

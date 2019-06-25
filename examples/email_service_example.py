@@ -4,15 +4,16 @@
 # This script provides a basic example of how to use the Email Service in the Python SDK. This script accepts two
 # will demonstrate:
 #
-#   * Creating, retrieving, listing and deleting email senders
+#   * Creating, retrieving, moving, listing and deleting email senders
 #   * Creating, retrieving, listing and deleting email suppressions
 #   * Obtaining SMTP credentials for your IAM user so that you can send emails.
 #     See https://docs.cloud.oracle.com/Content/Email/Tasks/configuresmtpconnection.htm for more
 #     information on sending emails
 #
-# This script accepts three arguments:
+# This script accepts four arguments:
 #
 #   * The compartment ID where email senders will be created
+#   * The target compartment ID where email senders will be moved to
 #   * The address of the email sender
 #   * The address of the email suppression
 #
@@ -27,13 +28,14 @@ config = oci.config.from_file()
 email_client = oci.email.EmailClient(config)
 identity_client = oci.identity.IdentityClient(config)
 
-if len(sys.argv) != 4:
-    raise RuntimeError('This script expects an argument of a compartment OCID, sender email address and suppression email address')
+if len(sys.argv) != 5:
+    raise RuntimeError('This script expects an argument of a compartment OCID, a target compartment OCID, sender email address and suppression email address')
 
 # The first argument is the name of the script, so start the index at 1
 compartment_id = sys.argv[1]
-sender_address = sys.argv[2]
-suppression_address = sys.argv[3]
+target_compartment_id = sys.argv[2]
+sender_address = sys.argv[3]
+suppression_address = sys.argv[4]
 
 create_sender_response = email_client.create_sender(
     oci.email.models.CreateSenderDetails(
@@ -47,6 +49,16 @@ print('\n=========================\n')
 # A sender has a lifecycle state, so we can wait for it to become available
 get_sender_response = oci.wait_until(email_client, email_client.get_sender(create_sender_response.data.id), 'lifecycle_state', 'ACTIVE')
 print('Waited for sender to become available:\n{}'.format(get_sender_response.data))
+print('\n=========================\n')
+
+# change sender compartment
+change_sender_response = email_client.change_sender_compartment(
+    create_sender_response.data.id,
+    oci.email.models.ChangeSenderCompartmentDetails(
+        compartment_id=target_compartment_id
+    )
+)
+print('Moved sender:\n{}'.format(create_sender_response.data.id))
 print('\n=========================\n')
 
 # We can list all senders, and also provide optional filters and sorts. Here we'll list all

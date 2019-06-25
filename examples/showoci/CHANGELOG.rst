@@ -5,6 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+19.6.24 - 2019-06-24
+====================
+Added
+-----
+* Added Freeform Tags and Defined Tages to the Compute and Database CSVs extract
+
+====================
+19.6.17 - 2019-06-17
+====================
+Added
+-----
+* Support to extract to CSV using -csv, currently supported IAM Groups and Policies, Network, Load Balancers and Databases
+* Added subnet IP for the database node
+* Added Shape base OCPU, Memory and local storage to instances and databases
+* Added host+rules+path for load balancer listeners
+* Added Support for Exadata.Base.48
+
+Fixed
+-----
+* Several Bugs
+* Fix Instances + db_node VNIC information
+* Fix All ports display at network security list
+
+====================
 19.6.10 - 2019-06-10
 ====================
 

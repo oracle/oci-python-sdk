@@ -18,6 +18,7 @@ Email
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.email.models.ChangeSenderCompartmentDetails
     oci.email.models.CreateSenderDetails
     oci.email.models.CreateSuppressionDetails
     oci.email.models.Sender

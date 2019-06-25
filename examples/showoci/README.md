@@ -1,11 +1,17 @@
 ## showoci - Oracle Cloud Infrastructure Reporting Tool
 
-SHOWOCI is an reporting tool which uses the Python SDK to extract list of resources from your tenant. 
+SHOWOCI is a reporting tool which uses the Python SDK to extract list of resources from your tenant. 
 It covers most of OCI components, 
-Authentication by User or Compute using instant principals, 
-Output can be printer friendly or JSON file.
+Authentication by User or Compute using instance principals, 
+Output can be printer friendly, CSV files or JSON file.
 
-Modules Included:  
+![](img/screen_xls.png)
+![](img/screen_scr1.png)
+![](img/screen_scr2.png)
+![](img/screen_json1.png)
+![](img/screen_json2.png)
+
+## Modules Included:  
 - oci.core.VirtualNetworkClient          
 - oci.core.ComputeClient                 
 - oci.core.ComputeManagementClient       
@@ -26,9 +32,9 @@ Modules Included:
 - oci.healthchecks.HealthChecksClient
 - oci.announcements_service.AnnouncementClient
 
-** DISCLAIMER – This is not official Oracle application
+** DISCLAIMER – This is not an official Oracle application
 
-## OCI Authentication using Instant Principals 
+## OCI Authentication using Instance Principals 
 
 Create Dynamic Group ShowOCIDynamicGroup:
 ```
@@ -120,7 +126,7 @@ python3 --version
 pip3 install --upgrade pip  
 pip3 install oci oci-cli  
 ```
-## Setup connectivity using Instant Principals
+## Setup connectivity using Instance Principals
 
 ```  
 1. Login to your OCI Cloud console
@@ -167,8 +173,8 @@ $ ./showoci.py
 usage: showoci.py [-h] [-a] [-ani] [-an] [-b] [-n] [-i] [-c] [-cn] [-o] [-l]
                   [-d] [-f] [-e] [-m] [-s] [-rm] [-so] [-edge] [-mc] [-nr]
                   [-ip] [-t PROFILE] [-p PROXY] [-rg REGION] [-cp COMPART]
-                  [-cf CONFIG] [-jf JOUTFILE] [-js] [-sjf SJOUTFILE]
-                  [-cachef SERVICEFILE] [-caches] [--version]
+                  [-cf CONFIG] [-csv CSV] [-jf JOUTFILE] [-js]
+                  [-sjf SJOUTFILE] [-cachef SERVICEFILE] [-caches] [--version]
 
 optional arguments:
   -h, --help           show this help message and exit
@@ -198,6 +204,7 @@ optional arguments:
   -rg REGION           Filter by Region
   -cp COMPART          Filter by Compartment
   -cf CONFIG           Config File
+  -csv CSV             Output to CSV files, , Input as file header
   -jf JOUTFILE         Output to file (JSON format)
   -js                  Output to screen (JSON format)
   -sjf SJOUTFILE       Output to screen (nice format) and JSON File
@@ -534,18 +541,20 @@ Compartment gse00000000 (root):
 #     Compute Instances      #
 ##############################
 
---> VM.Standard1.1 - demohost - RUNNING
-        AD  : fHBa:US-ASHBURN-AD-1 - FAULT-DOMAIN-2
-        Img : Oracle-Linux-7.5-2018.06.14-0
-        Boot: 47gb - demohost (Boot Volume) bronze  - Group AdiVol1
-        VNIC: 10.1.0.2 (Prv), 129.213.148.40 (Pub) - Primary , Subnet (sub1 10.1.0.0/26), VCN (vcn)
+--> VM.Standard2.1 - demohost - RUNNING
+        Shape: Ocpus: 1, Memory: 15gb, Local Storage: 0tb
+        AD   : fHBa:US-ASHBURN-AD-1 - FAULT-DOMAIN-2
+        Img  : Oracle-Linux-7.5-2018.06.14-0
+        Boot : 47gb - demohost (Boot Volume) bronze  - Group AdiVol1
+        VNIC : 10.1.0.2 (Prv), 129.213.148.40 (Pub) - Primary , Subnet (sub1 10.1.0.0/26), VCN (vcn 10.1.0.0/16)
         Console Connection Active
 
 --> VM.Standard2.1 - inst-hari6-Adi-Instance-Pool - RUNNING
+        Shape: Ocpus: 1, Memory: 15gb, Local Storage: 0tb
         AD  : fHBa:US-ASHBURN-AD-3 - FAULT-DOMAIN-3
         Img : Oracle-Linux-7.5-2018.10.16-0
         Boot: 47gb - inst-hari6-Adi-Instance-Pool (Boot Volume) 
-        VNIC: 10.1.0.204 (Prv), 129.213.110.160 (Pub) - Primary , Subnet (sub3 10.1.0.192/27), VCN (vcn)
+        VNIC: 10.1.0.204 (Prv), 129.213.110.160 (Pub) - Primary , Subnet (sub3 10.1.0.192/27), VCN (vcn 10.1.0.0/16)
 
 ##############################
 # Compute Inst Configuration #
