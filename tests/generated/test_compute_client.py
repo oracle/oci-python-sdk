@@ -189,6 +189,47 @@ def test_capture_console_history(testing_service_client):
 
 
 # IssueRoutingInfo tag="computeImaging" email="imaging_dev_us_grp@oracle.com" jiraProject="COM" opsJiraProject="COM"
+def test_change_image_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangeImageCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'ChangeImageCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangeImageCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.change_image_compartment(
+                image_id=request.pop(util.camelize('image_id')),
+                change_image_compartment_details=request.pop(util.camelize('change_image_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangeImageCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_image_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="computeImaging" email="imaging_dev_us_grp@oracle.com" jiraProject="COM" opsJiraProject="COM"
 def test_create_app_catalog_subscription(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateAppCatalogSubscription'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

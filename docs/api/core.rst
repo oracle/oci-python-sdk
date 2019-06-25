@@ -52,6 +52,7 @@ Core Services
     oci.core.models.CaptureConsoleHistoryDetails
     oci.core.models.ChangeBootVolumeBackupCompartmentDetails
     oci.core.models.ChangeBootVolumeCompartmentDetails
+    oci.core.models.ChangeImageCompartmentDetails
     oci.core.models.ChangeInstanceConfigurationCompartmentDetails
     oci.core.models.ChangeInstancePoolCompartmentDetails
     oci.core.models.ChangeNatGatewayCompartmentDetails
