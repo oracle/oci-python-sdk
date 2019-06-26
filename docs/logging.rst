@@ -10,7 +10,7 @@
 Logging
 ~~~~~~~
 
-The Python SDK uses Python's `logging <https://docs.python.org/3.6/library/logging.html>`_ module. 
+The Python SDK uses Python's `logging <https://docs.python.org/3.6/library/logging.html>`_ module.
 
 Loggers for the Python SDK are ordered hierarchically, with the top level being ``oci`` (or ``oraclebmc`` if you are using the legacy OracleBMC package).
 
@@ -43,9 +43,11 @@ Or programmatically, for example:
         "log_requests": True
     }
 
+Note that when request logging is enabled the output from Python's http module will go to standard out.  This module does not use Python's logging module.
+
 Once you have request logging in your config, you can create the appropriate logging handler(s) for your use case. For example to log to an output stream such as ``stderr`` you could do:
 
-.. code-block:: python 
+.. code-block:: python
 
     import oci
     import logging
