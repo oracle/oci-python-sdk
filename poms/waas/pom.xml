@@ -141,7 +141,7 @@
       <dependency>
         <groupId>com.oracle.oci.waas</groupId>
         <artifactId>oci-waas-api-spec</artifactId>
-        <version>1.0.410</version>
+        <version>1.0.581</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

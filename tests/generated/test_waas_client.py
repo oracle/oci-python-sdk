@@ -110,6 +110,88 @@ def test_cancel_work_request(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_waas_dev_us_grp@oracle.com" jiraProject="WAAS" opsJiraProject="WAF"
+def test_change_certificate_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('waas', 'ChangeCertificateCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('waas', util.camelize('waas'), 'ChangeCertificateCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='waas', api_name='ChangeCertificateCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
+            response = client.change_certificate_compartment(
+                certificate_id=request.pop(util.camelize('certificate_id')),
+                change_certificate_compartment_details=request.pop(util.camelize('change_certificate_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'waas',
+            'ChangeCertificateCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_certificate_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_waas_dev_us_grp@oracle.com" jiraProject="WAAS" opsJiraProject="WAF"
+def test_change_waas_policy_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('waas', 'ChangeWaasPolicyCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('waas', util.camelize('waas'), 'ChangeWaasPolicyCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='waas', api_name='ChangeWaasPolicyCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
+            response = client.change_waas_policy_compartment(
+                waas_policy_id=request.pop(util.camelize('waas_policy_id')),
+                change_waas_policy_compartment_details=request.pop(util.camelize('change_waas_policy_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'waas',
+            'ChangeWaasPolicyCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_waas_policy_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_waas_dev_us_grp@oracle.com" jiraProject="WAAS" opsJiraProject="WAF"
 def test_create_certificate(testing_service_client):
     if not testing_service_client.is_api_enabled('waas', 'CreateCertificate'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

@@ -13,6 +13,8 @@ from .certificate_extensions import CertificateExtensions
 from .certificate_public_key_info import CertificatePublicKeyInfo
 from .certificate_subject_name import CertificateSubjectName
 from .certificate_summary import CertificateSummary
+from .change_certificate_compartment_details import ChangeCertificateCompartmentDetails
+from .change_waas_policy_compartment_details import ChangeWaasPolicyCompartmentDetails
 from .create_certificate_details import CreateCertificateDetails
 from .create_waas_policy_details import CreateWaasPolicyDetails
 from .device_fingerprint_challenge import DeviceFingerprintChallenge
@@ -60,6 +62,8 @@ waas_type_mapping = {
     "CertificatePublicKeyInfo": CertificatePublicKeyInfo,
     "CertificateSubjectName": CertificateSubjectName,
     "CertificateSummary": CertificateSummary,
+    "ChangeCertificateCompartmentDetails": ChangeCertificateCompartmentDetails,
+    "ChangeWaasPolicyCompartmentDetails": ChangeWaasPolicyCompartmentDetails,
     "CreateCertificateDetails": CreateCertificateDetails,
     "CreateWaasPolicyDetails": CreateWaasPolicyDetails,
     "DeviceFingerprintChallenge": DeviceFingerprintChallenge,
