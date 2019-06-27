@@ -56,7 +56,11 @@ Core Services
     oci.core.models.ChangeInstanceConfigurationCompartmentDetails
     oci.core.models.ChangeInstancePoolCompartmentDetails
     oci.core.models.ChangeNatGatewayCompartmentDetails
+    oci.core.models.ChangeRouteTableCompartmentDetails
+    oci.core.models.ChangeSecurityListCompartmentDetails
     oci.core.models.ChangeServiceGatewayCompartmentDetails
+    oci.core.models.ChangeSubnetCompartmentDetails
+    oci.core.models.ChangeVcnCompartmentDetails
     oci.core.models.ChangeVolumeBackupCompartmentDetails
     oci.core.models.ChangeVolumeCompartmentDetails
     oci.core.models.ChangeVolumeGroupBackupCompartmentDetails

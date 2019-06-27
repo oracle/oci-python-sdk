@@ -35,7 +35,11 @@ from .change_image_compartment_details import ChangeImageCompartmentDetails
 from .change_instance_configuration_compartment_details import ChangeInstanceConfigurationCompartmentDetails
 from .change_instance_pool_compartment_details import ChangeInstancePoolCompartmentDetails
 from .change_nat_gateway_compartment_details import ChangeNatGatewayCompartmentDetails
+from .change_route_table_compartment_details import ChangeRouteTableCompartmentDetails
+from .change_security_list_compartment_details import ChangeSecurityListCompartmentDetails
 from .change_service_gateway_compartment_details import ChangeServiceGatewayCompartmentDetails
+from .change_subnet_compartment_details import ChangeSubnetCompartmentDetails
+from .change_vcn_compartment_details import ChangeVcnCompartmentDetails
 from .change_volume_backup_compartment_details import ChangeVolumeBackupCompartmentDetails
 from .change_volume_compartment_details import ChangeVolumeCompartmentDetails
 from .change_volume_group_backup_compartment_details import ChangeVolumeGroupBackupCompartmentDetails
@@ -271,7 +275,11 @@ core_type_mapping = {
     "ChangeInstanceConfigurationCompartmentDetails": ChangeInstanceConfigurationCompartmentDetails,
     "ChangeInstancePoolCompartmentDetails": ChangeInstancePoolCompartmentDetails,
     "ChangeNatGatewayCompartmentDetails": ChangeNatGatewayCompartmentDetails,
+    "ChangeRouteTableCompartmentDetails": ChangeRouteTableCompartmentDetails,
+    "ChangeSecurityListCompartmentDetails": ChangeSecurityListCompartmentDetails,
     "ChangeServiceGatewayCompartmentDetails": ChangeServiceGatewayCompartmentDetails,
+    "ChangeSubnetCompartmentDetails": ChangeSubnetCompartmentDetails,
+    "ChangeVcnCompartmentDetails": ChangeVcnCompartmentDetails,
     "ChangeVolumeBackupCompartmentDetails": ChangeVolumeBackupCompartmentDetails,
     "ChangeVolumeCompartmentDetails": ChangeVolumeCompartmentDetails,
     "ChangeVolumeGroupBackupCompartmentDetails": ChangeVolumeGroupBackupCompartmentDetails,
