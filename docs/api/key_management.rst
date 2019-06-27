@@ -22,6 +22,8 @@ Key Management
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.key_management.models.ChangeKeyCompartmentDetails
+    oci.key_management.models.ChangeVaultCompartmentDetails
     oci.key_management.models.CreateKeyDetails
     oci.key_management.models.CreateVaultDetails
     oci.key_management.models.DecryptDataDetails

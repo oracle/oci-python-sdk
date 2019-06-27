@@ -3,6 +3,8 @@
 
 from __future__ import absolute_import
 
+from .change_key_compartment_details import ChangeKeyCompartmentDetails
+from .change_vault_compartment_details import ChangeVaultCompartmentDetails
 from .create_key_details import CreateKeyDetails
 from .create_vault_details import CreateVaultDetails
 from .decrypt_data_details import DecryptDataDetails
@@ -25,6 +27,8 @@ from .vault_summary import VaultSummary
 
 # Maps type names to classes for key_management services.
 key_management_type_mapping = {
+    "ChangeKeyCompartmentDetails": ChangeKeyCompartmentDetails,
+    "ChangeVaultCompartmentDetails": ChangeVaultCompartmentDetails,
     "CreateKeyDetails": CreateKeyDetails,
     "CreateVaultDetails": CreateVaultDetails,
     "DecryptDataDetails": DecryptDataDetails,

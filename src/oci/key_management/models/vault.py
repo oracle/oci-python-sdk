@@ -40,6 +40,10 @@ class Vault(object):
     #: This constant has a value of "CANCELLING_DELETION"
     LIFECYCLE_STATE_CANCELLING_DELETION = "CANCELLING_DELETION"
 
+    #: A constant which can be used with the lifecycle_state property of a Vault.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
     #: A constant which can be used with the vault_type property of a Vault.
     #: This constant has a value of "VIRTUAL_PRIVATE"
     VAULT_TYPE_VIRTUAL_PRIVATE = "VIRTUAL_PRIVATE"
@@ -75,7 +79,7 @@ class Vault(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Vault.
-            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "PENDING_DELETION", "SCHEDULING_DELETION", "CANCELLING_DELETION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "PENDING_DELETION", "SCHEDULING_DELETION", "CANCELLING_DELETION", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -298,7 +302,7 @@ class Vault(object):
 
         Example: `DELETED`
 
-        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "PENDING_DELETION", "SCHEDULING_DELETION", "CANCELLING_DELETION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "PENDING_DELETION", "SCHEDULING_DELETION", "CANCELLING_DELETION", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -319,7 +323,7 @@ class Vault(object):
         :param lifecycle_state: The lifecycle_state of this Vault.
         :type: str
         """
-        allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "PENDING_DELETION", "SCHEDULING_DELETION", "CANCELLING_DELETION"]
+        allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "PENDING_DELETION", "SCHEDULING_DELETION", "CANCELLING_DELETION", "UPDATING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
