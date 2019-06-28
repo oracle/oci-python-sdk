@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConfirmationResult(object):
     """
-    The confirmation result.
+    The confirmation details for the specified subscription.
     """
 
     def __init__(self, **kwargs):
@@ -95,7 +95,7 @@ class ConfirmationResult(object):
     def topic_id(self):
         """
         **[Required]** Gets the topic_id of this ConfirmationResult.
-        The `OCID`__ of the topic to delete.
+        The `OCID`__ of the topic associated with the specified subscription.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -109,7 +109,7 @@ class ConfirmationResult(object):
     def topic_id(self, topic_id):
         """
         Sets the topic_id of this ConfirmationResult.
-        The `OCID`__ of the topic to delete.
+        The `OCID`__ of the topic associated with the specified subscription.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -125,7 +125,6 @@ class ConfirmationResult(object):
         **[Required]** Gets the endpoint of this ConfirmationResult.
         The endpoint of the subscription. Valid values depend on the protocol.
         For EMAIL, only an email address is valid. For HTTPS, only a PagerDuty URL is valid. A URL cannot exceed 512 characters.
-        Avoid entering confidential information.
 
 
         :return: The endpoint of this ConfirmationResult.
@@ -139,7 +138,6 @@ class ConfirmationResult(object):
         Sets the endpoint of this ConfirmationResult.
         The endpoint of the subscription. Valid values depend on the protocol.
         For EMAIL, only an email address is valid. For HTTPS, only a PagerDuty URL is valid. A URL cannot exceed 512 characters.
-        Avoid entering confidential information.
 
 
         :param endpoint: The endpoint of this ConfirmationResult.
@@ -151,7 +149,7 @@ class ConfirmationResult(object):
     def unsubscribe_url(self):
         """
         **[Required]** Gets the unsubscribe_url of this ConfirmationResult.
-        The URL user can use to unsubscribe the topic.
+        The URL for unsubscribing from the topic.
 
 
         :return: The unsubscribe_url of this ConfirmationResult.
@@ -163,7 +161,7 @@ class ConfirmationResult(object):
     def unsubscribe_url(self, unsubscribe_url):
         """
         Sets the unsubscribe_url of this ConfirmationResult.
-        The URL user can use to unsubscribe the topic.
+        The URL for unsubscribing from the topic.
 
 
         :param unsubscribe_url: The unsubscribe_url of this ConfirmationResult.
@@ -175,7 +173,7 @@ class ConfirmationResult(object):
     def message(self):
         """
         **[Required]** Gets the message of this ConfirmationResult.
-        Human readable text which tells the user if the confirmation succeeds.
+        A human-readable string indicating the status of the subscription confirmation.
 
 
         :return: The message of this ConfirmationResult.
@@ -187,7 +185,7 @@ class ConfirmationResult(object):
     def message(self, message):
         """
         Sets the message of this ConfirmationResult.
-        Human readable text which tells the user if the confirmation succeeds.
+        A human-readable string indicating the status of the subscription confirmation.
 
 
         :param message: The message of this ConfirmationResult.
@@ -199,7 +197,7 @@ class ConfirmationResult(object):
     def subscription_id(self):
         """
         Gets the subscription_id of this ConfirmationResult.
-        The `OCID`__ of the subscription.
+        The `OCID`__ of the subscription specified in the request.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -213,7 +211,7 @@ class ConfirmationResult(object):
     def subscription_id(self, subscription_id):
         """
         Sets the subscription_id of this ConfirmationResult.
-        The `OCID`__ of the subscription.
+        The `OCID`__ of the subscription specified in the request.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 

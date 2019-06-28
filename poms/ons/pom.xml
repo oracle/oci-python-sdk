@@ -18,7 +18,7 @@
     <enabled-groups-dir>${sdk-root-dir}/codegenConfig/enabledGroups</enabled-groups-dir>
     <feature-id-file>${sdk-root-dir}/featureId.yaml</feature-id-file>
     <feature-id-dir>${sdk-root-dir}/codegenConfig/featureIds</feature-id-dir>
-    <ons-gateway-spec-spec-file>api.yaml</ons-gateway-spec-spec-file>
+    <ons-gateway-spec-spec-file>source/notification-api.cond.yaml</ons-gateway-spec-spec-file>
   </properties>
   <dependencies>
     <dependency>
@@ -111,7 +111,7 @@
               <additionalProperties>
                 <specName>ons</specName>
                 <generateInitFile>true</generateInitFile>
-                <endpoint>https://notification.{domain}</endpoint>
+                <endpoint>https://notifications.{domain}</endpoint>
               </additionalProperties>
               <featureIdConfigFile>${feature-id-file}</featureIdConfigFile>
               <featureIdConfigDir>${feature-id-dir}</featureIdConfigDir>
@@ -141,7 +141,7 @@
       <dependency>
         <groupId>com.oracle.pic.ons</groupId>
         <artifactId>ons-gateway-spec</artifactId>
-        <version>1.0.1016</version>
+        <version>1.0.1238</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

@@ -113,7 +113,7 @@ class NotificationTopic(object):
     def name(self):
         """
         **[Required]** Gets the name of this NotificationTopic.
-        The name of the topic. Avoid entering confidential information.
+        The name of the topic.
 
 
         :return: The name of this NotificationTopic.
@@ -125,7 +125,7 @@ class NotificationTopic(object):
     def name(self, name):
         """
         Sets the name of this NotificationTopic.
-        The name of the topic. Avoid entering confidential information.
+        The name of the topic.
 
 
         :param name: The name of this NotificationTopic.
@@ -223,7 +223,7 @@ class NotificationTopic(object):
     def description(self):
         """
         Gets the description of this NotificationTopic.
-        The description of the topic. Avoid entering confidential information.
+        The description of the topic.
 
 
         :return: The description of this NotificationTopic.
@@ -235,7 +235,7 @@ class NotificationTopic(object):
     def description(self, description):
         """
         Sets the description of this NotificationTopic.
-        The description of the topic. Avoid entering confidential information.
+        The description of the topic.
 
 
         :param description: The description of this NotificationTopic.

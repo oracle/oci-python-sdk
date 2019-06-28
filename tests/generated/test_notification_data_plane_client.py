@@ -28,7 +28,48 @@ def vcr_fixture(request):
         yield
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="team_oci_ons_us_grp@oracle.com" jiraProject="ONS" opsJiraProject="ONS"
+def test_change_subscription_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('ons', 'ChangeSubscriptionCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ons', util.camelize('notification_data_plane'), 'ChangeSubscriptionCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ons', api_name='ChangeSubscriptionCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.ons.NotificationDataPlaneClient(config, service_endpoint=service_endpoint)
+            response = client.change_subscription_compartment(
+                subscription_id=request.pop(util.camelize('subscription_id')),
+                change_subscription_compartment_details=request.pop(util.camelize('change_subscription_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ons',
+            'ChangeSubscriptionCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_subscription_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_ons_us_grp@oracle.com" jiraProject="ONS" opsJiraProject="ONS"
 def test_create_subscription(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'CreateSubscription'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -68,7 +109,7 @@ def test_create_subscription(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="team_oci_ons_us_grp@oracle.com" jiraProject="ONS" opsJiraProject="ONS"
 def test_delete_subscription(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'DeleteSubscription'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -108,7 +149,7 @@ def test_delete_subscription(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="team_oci_ons_us_grp@oracle.com" jiraProject="ONS" opsJiraProject="ONS"
 def test_get_confirm_subscription(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'GetConfirmSubscription'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -150,7 +191,7 @@ def test_get_confirm_subscription(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="team_oci_ons_us_grp@oracle.com" jiraProject="ONS" opsJiraProject="ONS"
 def test_get_subscription(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'GetSubscription'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -190,7 +231,7 @@ def test_get_subscription(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="team_oci_ons_us_grp@oracle.com" jiraProject="ONS" opsJiraProject="ONS"
 def test_get_unsubscription(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'GetUnsubscription'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -232,7 +273,7 @@ def test_get_unsubscription(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="team_oci_ons_us_grp@oracle.com" jiraProject="ONS" opsJiraProject="ONS"
 def test_list_subscriptions(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'ListSubscriptions'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -291,7 +332,7 @@ def test_list_subscriptions(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="team_oci_ons_us_grp@oracle.com" jiraProject="ONS" opsJiraProject="ONS"
 def test_publish_message(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'PublishMessage'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -332,7 +373,7 @@ def test_publish_message(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="team_oci_ons_us_grp@oracle.com" jiraProject="ONS" opsJiraProject="ONS"
 def test_resend_subscription_confirmation(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'ResendSubscriptionConfirmation'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -372,7 +413,7 @@ def test_resend_subscription_confirmation(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="team_oci_ons_us_grp@oracle.com" jiraProject="ONS" opsJiraProject="ONS"
 def test_update_subscription(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'UpdateSubscription'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

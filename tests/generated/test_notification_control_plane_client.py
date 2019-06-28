@@ -28,7 +28,48 @@ def vcr_fixture(request):
         yield
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="team_oci_ons_us_grp@oracle.com" jiraProject="ONS" opsJiraProject="ONS"
+def test_change_topic_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('ons', 'ChangeTopicCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ons', util.camelize('notification_control_plane'), 'ChangeTopicCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ons', api_name='ChangeTopicCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.ons.NotificationControlPlaneClient(config, service_endpoint=service_endpoint)
+            response = client.change_topic_compartment(
+                topic_id=request.pop(util.camelize('topic_id')),
+                change_topic_compartment_details=request.pop(util.camelize('change_topic_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ons',
+            'ChangeTopicCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_topic_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_ons_us_grp@oracle.com" jiraProject="ONS" opsJiraProject="ONS"
 def test_create_topic(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'CreateTopic'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -68,7 +109,7 @@ def test_create_topic(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="team_oci_ons_us_grp@oracle.com" jiraProject="ONS" opsJiraProject="ONS"
 def test_delete_topic(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'DeleteTopic'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -108,7 +149,7 @@ def test_delete_topic(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="team_oci_ons_us_grp@oracle.com" jiraProject="ONS" opsJiraProject="ONS"
 def test_get_topic(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'GetTopic'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -148,7 +189,7 @@ def test_get_topic(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="team_oci_ons_us_grp@oracle.com" jiraProject="ONS" opsJiraProject="ONS"
 def test_list_topics(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'ListTopics'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -207,7 +248,7 @@ def test_list_topics(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="team_oci_ons_us_grp@oracle.com" jiraProject="ONS" opsJiraProject="ONS"
 def test_update_topic(testing_service_client):
     if not testing_service_client.is_api_enabled('ons', 'UpdateTopic'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

@@ -51,6 +51,10 @@ class SubscriptionSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this SubscriptionSummary.
+        :type compartment_id: str
+
         :param created_time:
             The value to assign to the created_time property of this SubscriptionSummary.
         :type created_time: int
@@ -78,6 +82,7 @@ class SubscriptionSummary(object):
             'protocol': 'str',
             'endpoint': 'str',
             'lifecycle_state': 'str',
+            'compartment_id': 'str',
             'created_time': 'int',
             'delivery_policy': 'DeliveryPolicy',
             'etag': 'str',
@@ -91,6 +96,7 @@ class SubscriptionSummary(object):
             'protocol': 'protocol',
             'endpoint': 'endpoint',
             'lifecycle_state': 'lifecycleState',
+            'compartment_id': 'compartmentId',
             'created_time': 'createdTime',
             'delivery_policy': 'deliveryPolicy',
             'etag': 'etag',
@@ -103,6 +109,7 @@ class SubscriptionSummary(object):
         self._protocol = None
         self._endpoint = None
         self._lifecycle_state = None
+        self._compartment_id = None
         self._created_time = None
         self._delivery_policy = None
         self._etag = None
@@ -195,7 +202,6 @@ class SubscriptionSummary(object):
         **[Required]** Gets the endpoint of this SubscriptionSummary.
         The endpoint of the subscription. Valid values depend on the protocol.
         For EMAIL, only an email address is valid. For HTTPS, only a PagerDuty URL is valid. A URL cannot exceed 512 characters.
-        Avoid entering confidential information.
 
 
         :return: The endpoint of this SubscriptionSummary.
@@ -209,7 +215,6 @@ class SubscriptionSummary(object):
         Sets the endpoint of this SubscriptionSummary.
         The endpoint of the subscription. Valid values depend on the protocol.
         For EMAIL, only an email address is valid. For HTTPS, only a PagerDuty URL is valid. A URL cannot exceed 512 characters.
-        Avoid entering confidential information.
 
 
         :param endpoint: The endpoint of this SubscriptionSummary.
@@ -221,7 +226,7 @@ class SubscriptionSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this SubscriptionSummary.
-        The lifecycle state of the subscription. Default value for a newly created subscription: PENDING.
+        The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
 
         Allowed values for this property are: "PENDING", "ACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -236,7 +241,7 @@ class SubscriptionSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this SubscriptionSummary.
-        The lifecycle state of the subscription. Default value for a newly created subscription: PENDING.
+        The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
 
 
         :param lifecycle_state: The lifecycle_state of this SubscriptionSummary.
@@ -246,6 +251,34 @@ class SubscriptionSummary(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def compartment_id(self):
+        """
+        **[Required]** Gets the compartment_id of this SubscriptionSummary.
+        The `OCID`__ of the compartment for the subscription.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The compartment_id of this SubscriptionSummary.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this SubscriptionSummary.
+        The `OCID`__ of the compartment for the subscription.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param compartment_id: The compartment_id of this SubscriptionSummary.
+        :type: str
+        """
+        self._compartment_id = compartment_id
 
     @property
     def created_time(self):
