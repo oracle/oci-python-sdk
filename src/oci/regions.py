@@ -78,7 +78,7 @@ def endpoint_for(service, region=None, endpoint=None, service_endpoint_template=
         raise ValueError("Must supply either a region or an endpoint.")
     elif endpoint:
         # endpoint takes priority
-        return _format_endpoint(service, endpoint)
+        return _format_endpoint(service, endpoint, service_endpoint_template)
     else:
         # no endpoint provided
         region = region.lower()
