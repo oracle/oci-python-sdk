@@ -270,7 +270,6 @@ class TestUploadManager:
         os.remove(downloaded_large_file_path)
         os.remove(large_file_path)
 
-    @pytest.mark.skip('There is a potential bug in the upload manager where it does not close a multipart upload if no parts where uploaded')
     def test_upload_manager_pipe_empty_file_from_stream(self, object_storage, non_vcr_bucket, config_file, config_profile, config):
         if sys.platform == 'win32':
             pytest.skip("Stream piping tests don't run on Windows")
