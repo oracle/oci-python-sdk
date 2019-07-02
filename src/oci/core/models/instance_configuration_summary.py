@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstanceConfigurationSummary(object):
     """
-    Instance Configuration Summary
+    Summary information for an instance configuration.
     """
 
     def __init__(self, **kwargs):
@@ -95,7 +95,7 @@ class InstanceConfigurationSummary(object):
     def display_name(self):
         """
         Gets the display_name of this InstanceConfigurationSummary.
-        A user-friendly name for the instance configuration
+        A user-friendly name for the instance configuration.
 
 
         :return: The display_name of this InstanceConfigurationSummary.
@@ -107,7 +107,7 @@ class InstanceConfigurationSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this InstanceConfigurationSummary.
-        A user-friendly name for the instance configuration
+        A user-friendly name for the instance configuration.
 
 
         :param display_name: The display_name of this InstanceConfigurationSummary.
@@ -119,7 +119,7 @@ class InstanceConfigurationSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this InstanceConfigurationSummary.
-        The OCID of the instance configuration
+        The OCID of the instance configuration.
 
 
         :return: The id of this InstanceConfigurationSummary.
@@ -131,7 +131,7 @@ class InstanceConfigurationSummary(object):
     def id(self, id):
         """
         Sets the id of this InstanceConfigurationSummary.
-        The OCID of the instance configuration
+        The OCID of the instance configuration.
 
 
         :param id: The id of this InstanceConfigurationSummary.

@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstancePoolSummary(object):
     """
-    Condensed InstancePool data when listing instance pools.
+    Summary information for an instance pool.
     """
 
     #: A constant which can be used with the lifecycle_state property of a InstancePoolSummary.
@@ -133,7 +133,7 @@ class InstancePoolSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this InstancePoolSummary.
-        The OCID of the instance pool
+        The OCID of the instance pool.
 
 
         :return: The id of this InstancePoolSummary.
@@ -145,7 +145,7 @@ class InstancePoolSummary(object):
     def id(self, id):
         """
         Sets the id of this InstancePoolSummary.
-        The OCID of the instance pool
+        The OCID of the instance pool.
 
 
         :param id: The id of this InstancePoolSummary.
@@ -157,7 +157,7 @@ class InstancePoolSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this InstancePoolSummary.
-        The OCID of the compartment containing the instance pool
+        The OCID of the compartment containing the instance pool.
 
 
         :return: The compartment_id of this InstancePoolSummary.
@@ -169,7 +169,7 @@ class InstancePoolSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this InstancePoolSummary.
-        The OCID of the compartment containing the instance pool
+        The OCID of the compartment containing the instance pool.
 
 
         :param compartment_id: The compartment_id of this InstancePoolSummary.

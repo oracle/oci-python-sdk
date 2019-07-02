@@ -10,15 +10,26 @@
 Logging
 ~~~~~~~
 
-The Python SDK uses Python's `logging <https://docs.python.org/3.6/library/logging.html>`_ module. 
+The Python SDK uses Python's `logging <https://docs.python.org/3.6/library/logging.html>`_ module.
 
 Loggers for the Python SDK are ordered hierarchically, with the top level being ``oci`` (or ``oraclebmc`` if you are using the legacy OracleBMC package).
 
 Logger names are of the form ``<hierarchy>.<id>`` where the ``<hierarchy>`` is similar to ``oci.base_client`` and ``<id>`` is the result of Python's built-in ``id()`` function. The implication of this is that different instances of the same class have different loggers.
 
+The following code snippet is an example for configuring debug level logging for the oci package:
+
+.. code-block:: python
+    import oci
+    import logging
+
+    # Enable debug logging
+    logging.getLogger('oci').setLevel(logging.DEBUG)
+
+    # Rest of code ...
+
 Request Logging
 ================
-Logging of the requests which the Python SDK sends to Oracle Cloud Infrastructure services can be enabled by setting the ``log_requests`` attribute to ``True`` in your configuration. This could be done in your configuration file, for example:
+Request logging can be enabled for more detailed debugging information.  Request logging outputs the requests that the Python SDK sends to Oracle Cloud Infrastructure services.  This option can be enabled by setting the configuration attribute ``log_requests`` to ``True``. Alternatively, request logging can be enabled in your configuration file. For example:
 
 .. code-block:: text
 
@@ -43,9 +54,11 @@ Or programmatically, for example:
         "log_requests": True
     }
 
+Request logging enables debugging information in the Python http module.  This debugging information can be quite verbose and the output will go to standard out.  This http module does not use Python's logging module.
+
 Once you have request logging in your config, you can create the appropriate logging handler(s) for your use case. For example to log to an output stream such as ``stderr`` you could do:
 
-.. code-block:: python 
+.. code-block:: python
 
     import oci
     import logging
@@ -60,9 +73,10 @@ Once you have request logging in your config, you can create the appropriate log
     # This call will emit log information to stderr
     client.list_regions()
 
-Note that request logging occurs at the following levels:
+The oci module has logging at the following levels:
 
 * ``INFO``: Request method and request URL
 * ``DEBUG``: Request headers and body, and response headers
+
 
 The raw response body is not logged.

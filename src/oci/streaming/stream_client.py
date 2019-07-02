@@ -74,7 +74,7 @@ class StreamClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
             'base_path': '/20180418',
-            'service_endpoint_template': 'https://streams.{region}.streaming.oci.{secondLevelDomain}',
+            'service_endpoint_template': 'https://streaming.{region}.oci.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("stream", config, signer, streaming_type_mapping, **base_client_init_kwargs)
