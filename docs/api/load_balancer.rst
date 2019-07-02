@@ -29,6 +29,7 @@ Load Balancer
     oci.load_balancer.models.Certificate
     oci.load_balancer.models.CertificateDetails
     oci.load_balancer.models.ConnectionConfiguration
+    oci.load_balancer.models.ControlAccessUsingHttpMethodsRule
     oci.load_balancer.models.CreateBackendDetails
     oci.load_balancer.models.CreateBackendSetDetails
     oci.load_balancer.models.CreateCertificateDetails
