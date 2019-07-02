@@ -393,6 +393,47 @@ def test_get_instance_pool(testing_service_client):
 
 
 # IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
+def test_get_instance_pool_load_balancer_attachment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetInstancePoolLoadBalancerAttachment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'GetInstancePoolLoadBalancerAttachment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetInstancePoolLoadBalancerAttachment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_instance_pool_load_balancer_attachment(
+                instance_pool_id=request.pop(util.camelize('instance_pool_id')),
+                instance_pool_load_balancer_attachment_id=request.pop(util.camelize('instance_pool_load_balancer_attachment_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetInstancePoolLoadBalancerAttachment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'instancePoolLoadBalancerAttachment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
 def test_launch_instance_configuration(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'LaunchInstanceConfiguration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
