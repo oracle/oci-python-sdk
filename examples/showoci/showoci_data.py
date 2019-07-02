@@ -1620,7 +1620,9 @@ class ShowOCIData(object):
                          'host': dbs['hostname'],
                          'domain': dbs['domain'],
                          'data_subnet': dbs['data_subnet'],
+                         'data_subnet_id': dbs['data_subnet_id'],
                          'backup_subnet': dbs['backup_subnet'],
+                         'backup_subnet_id': dbs['backup_subnet_id'],
                          'scan_dns': dbs['scan_dns_record_id'],
                          'scan_ips': dbs['scan_ips'],
                          'vip_ips': dbs['vip_ips'],
@@ -1975,6 +1977,7 @@ class ShowOCIData(object):
             data['path_route'] = lb['path_route']
             data['hostnames'] = [x['desc'] for x in lb['hostnames']]
             data['compartment_name'] = lb['compartment_name']
+            data['subnet_ids'] = lb['subnet_ids']
 
             # subnets
             datasub = []

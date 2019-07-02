@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+19.7.10 - 2019-07-10
+====================
+
+* Added subnet_ids and vcn_id to json resources 
+* If region do not have VCNs do not fetch resources that base on VCNS like compute, load balancer, database, ..
+* Removed preauthenticated URL for object storage to avoid service errors on permission
+* Fixed several bugs
+* Added showoci_to_se.py - convert showoci JSON file to simple JSON format for easier processing.
+
+====================
 19.6.24 - 2019-06-24
 ====================
 Added
