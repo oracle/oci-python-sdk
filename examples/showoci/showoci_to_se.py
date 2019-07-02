@@ -205,6 +205,7 @@ class ShowOCI2SE(object):
                         'vcn_name': vcn['display_name'],
                         'vcn_cidr': vcn['cidr_block'],
                         'vcn_compartment': vcn['compartment'],
+                        'subnet_id': subnet['id'],
                         'subnet_name': subnet['name'],
                         'subnet_cidr': subnet['cidr_block'],
                         'availability_domain': subnet['availability_domain'],
