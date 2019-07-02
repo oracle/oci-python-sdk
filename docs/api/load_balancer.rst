@@ -45,6 +45,7 @@ Load Balancer
     oci.load_balancer.models.Hostname
     oci.load_balancer.models.HostnameDetails
     oci.load_balancer.models.IpAddress
+    oci.load_balancer.models.LBCookieSessionPersistenceConfigurationDetails
     oci.load_balancer.models.Listener
     oci.load_balancer.models.ListenerDetails
     oci.load_balancer.models.LoadBalancer
