@@ -9,6 +9,7 @@ from .auto_scaling_configuration_summary import AutoScalingConfigurationSummary
 from .auto_scaling_policy import AutoScalingPolicy
 from .auto_scaling_policy_summary import AutoScalingPolicySummary
 from .capacity import Capacity
+from .change_auto_scaling_compartment_details import ChangeAutoScalingCompartmentDetails
 from .condition import Condition
 from .create_auto_scaling_configuration_details import CreateAutoScalingConfigurationDetails
 from .create_auto_scaling_policy_details import CreateAutoScalingPolicyDetails
@@ -32,6 +33,7 @@ autoscaling_type_mapping = {
     "AutoScalingPolicy": AutoScalingPolicy,
     "AutoScalingPolicySummary": AutoScalingPolicySummary,
     "Capacity": Capacity,
+    "ChangeAutoScalingCompartmentDetails": ChangeAutoScalingCompartmentDetails,
     "Condition": Condition,
     "CreateAutoScalingConfigurationDetails": CreateAutoScalingConfigurationDetails,
     "CreateAutoScalingPolicyDetails": CreateAutoScalingPolicyDetails,

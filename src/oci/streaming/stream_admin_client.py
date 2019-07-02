@@ -74,7 +74,7 @@ class StreamAdminClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
             'base_path': '/20180418',
-            'service_endpoint_template': 'https://streams.{region}.streaming.oci.{secondLevelDomain}',
+            'service_endpoint_template': 'https://streaming.{region}.oci.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("stream_admin", config, signer, streaming_type_mapping, **base_client_init_kwargs)
@@ -150,7 +150,7 @@ class StreamAdminClient(object):
         """
         Deletes a stream.
         Deletes a stream and its content. Stream contents are deleted immediately. The service retains records of the stream itself for 90 days after deletion.
-        The `lifeCycleState` parameter of the `Stream` object changes to `DELETING` and the stream becomes inaccessible for read or write operations.
+        The `lifecycleState` parameter of the `Stream` object changes to `DELETING` and the stream becomes inaccessible for read or write operations.
         To verify that a stream has been deleted, make a :func:`get_stream` request. If the call returns the stream's
         lifecycle state as `DELETED`, then the stream has been deleted. If the call returns a \"404 Not Found\" error, that means all records of the
         stream have been deleted.

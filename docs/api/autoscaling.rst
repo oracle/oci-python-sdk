@@ -24,6 +24,7 @@ Autoscaling
     oci.autoscaling.models.AutoScalingPolicy
     oci.autoscaling.models.AutoScalingPolicySummary
     oci.autoscaling.models.Capacity
+    oci.autoscaling.models.ChangeAutoScalingCompartmentDetails
     oci.autoscaling.models.Condition
     oci.autoscaling.models.CreateAutoScalingConfigurationDetails
     oci.autoscaling.models.CreateAutoScalingPolicyDetails

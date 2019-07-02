@@ -549,7 +549,8 @@ class Image(object):
     def size_in_mbs(self):
         """
         Gets the size_in_mbs of this Image.
-        Image size (1 MB = 1048576 bytes)
+        The boot volume size for an instance launched from this image, (1 MB = 1048576 bytes).
+        Note this is not the same as the size of the image when it was exported or the actual size of the image.
 
         Example: `47694`
 
@@ -563,7 +564,8 @@ class Image(object):
     def size_in_mbs(self, size_in_mbs):
         """
         Sets the size_in_mbs of this Image.
-        Image size (1 MB = 1048576 bytes)
+        The boot volume size for an instance launched from this image, (1 MB = 1048576 bytes).
+        Note this is not the same as the size of the image when it was exported or the actual size of the image.
 
         Example: `47694`
 

@@ -129,11 +129,12 @@ class UploadManager:
             raise
 
         # It is possible we did not upload any parts (e.g. if the stream was empty). If we did
-        # upload parts then commit the upload, otherwise put an empty object into Object Storage
-        # to reflect what the customer intended
+        # upload parts then commit the upload, otherwise abort the upload and put an empty object
+        # into Object Storage to reflect what the customer intended.
         if len(ma.manifest['parts']) > 0:
             response = ma.commit()
         else:
+            ma.abort()
             copy_kwargs = kwargs.copy()
             # put_object expects 'opc_meta' not metadata
             if 'metadata' in copy_kwargs:
