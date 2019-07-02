@@ -176,7 +176,9 @@ if __name__ == "__main__":
         instance_pool = compute_management_client.get_instance_pool(instance_pool.id).data
 
         # get lb attachment info
-        lb_attachment_info = compute_management_client.get_instance_pool_load_balancer_attachment(instance_pool.id, instance_pool.load_balancers[0].id).data
+        lb_attachment_info = compute_management_client.get_instance_pool_load_balancer_attachment(
+            instance_pool.id,
+            instance_pool.load_balancers[0].id).data
 
         print("Lb attachment: ", lb_attachment_info)
 
