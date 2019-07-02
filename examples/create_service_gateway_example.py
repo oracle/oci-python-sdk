@@ -1,5 +1,6 @@
 # coding: utf-8
 # Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+
 # This script provides a basic example of how to create a Service Gateway.
 #
 # USAGE:
@@ -14,6 +15,7 @@
 #   * The route table ID to which the Service Gateway will be assigned (optional)
 #
 # for more information on Service Gateways see: https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/servicegateway.htm
+
 
 import oci
 import argparse

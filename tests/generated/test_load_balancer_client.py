@@ -1337,6 +1337,47 @@ def test_list_hostnames(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
+def test_list_listener_rules(testing_service_client):
+    if not testing_service_client.is_api_enabled('load_balancer', 'ListListenerRules'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('load_balancer', util.camelize('load_balancer'), 'ListListenerRules')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='load_balancer', api_name='ListListenerRules')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
+            response = client.list_listener_rules(
+                load_balancer_id=request.pop(util.camelize('load_balancer_id')),
+                listener_name=request.pop(util.camelize('listener_name')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'load_balancer',
+            'ListListenerRules',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'listenerRuleSummary',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_list_load_balancer_healths(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'ListLoadBalancerHealths'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

@@ -5,6 +5,7 @@ from __future__ import absolute_import
 
 from .add_http_request_header_rule import AddHttpRequestHeaderRule
 from .add_http_response_header_rule import AddHttpResponseHeaderRule
+from .allow_rule import AllowRule
 from .backend import Backend
 from .backend_details import BackendDetails
 from .backend_health import BackendHealth
@@ -35,6 +36,7 @@ from .ip_address import IpAddress
 from .lb_cookie_session_persistence_configuration_details import LBCookieSessionPersistenceConfigurationDetails
 from .listener import Listener
 from .listener_details import ListenerDetails
+from .listener_rule_summary import ListenerRuleSummary
 from .load_balancer import LoadBalancer
 from .load_balancer_health import LoadBalancerHealth
 from .load_balancer_health_summary import LoadBalancerHealthSummary
@@ -48,11 +50,15 @@ from .path_route_set_details import PathRouteSetDetails
 from .remove_http_request_header_rule import RemoveHttpRequestHeaderRule
 from .remove_http_response_header_rule import RemoveHttpResponseHeaderRule
 from .rule import Rule
+from .rule_condition import RuleCondition
 from .rule_set import RuleSet
 from .rule_set_details import RuleSetDetails
 from .ssl_configuration import SSLConfiguration
 from .ssl_configuration_details import SSLConfigurationDetails
 from .session_persistence_configuration_details import SessionPersistenceConfigurationDetails
+from .source_ip_address_condition import SourceIpAddressCondition
+from .source_vcn_id_condition import SourceVcnIdCondition
+from .source_vcn_ip_address_condition import SourceVcnIpAddressCondition
 from .update_backend_details import UpdateBackendDetails
 from .update_backend_set_details import UpdateBackendSetDetails
 from .update_health_checker_details import UpdateHealthCheckerDetails
@@ -69,6 +75,7 @@ from .work_request_error import WorkRequestError
 load_balancer_type_mapping = {
     "AddHttpRequestHeaderRule": AddHttpRequestHeaderRule,
     "AddHttpResponseHeaderRule": AddHttpResponseHeaderRule,
+    "AllowRule": AllowRule,
     "Backend": Backend,
     "BackendDetails": BackendDetails,
     "BackendHealth": BackendHealth,
@@ -99,6 +106,7 @@ load_balancer_type_mapping = {
     "LBCookieSessionPersistenceConfigurationDetails": LBCookieSessionPersistenceConfigurationDetails,
     "Listener": Listener,
     "ListenerDetails": ListenerDetails,
+    "ListenerRuleSummary": ListenerRuleSummary,
     "LoadBalancer": LoadBalancer,
     "LoadBalancerHealth": LoadBalancerHealth,
     "LoadBalancerHealthSummary": LoadBalancerHealthSummary,
@@ -112,11 +120,15 @@ load_balancer_type_mapping = {
     "RemoveHttpRequestHeaderRule": RemoveHttpRequestHeaderRule,
     "RemoveHttpResponseHeaderRule": RemoveHttpResponseHeaderRule,
     "Rule": Rule,
+    "RuleCondition": RuleCondition,
     "RuleSet": RuleSet,
     "RuleSetDetails": RuleSetDetails,
     "SSLConfiguration": SSLConfiguration,
     "SSLConfigurationDetails": SSLConfigurationDetails,
     "SessionPersistenceConfigurationDetails": SessionPersistenceConfigurationDetails,
+    "SourceIpAddressCondition": SourceIpAddressCondition,
+    "SourceVcnIdCondition": SourceVcnIdCondition,
+    "SourceVcnIpAddressCondition": SourceVcnIpAddressCondition,
     "UpdateBackendDetails": UpdateBackendDetails,
     "UpdateBackendSetDetails": UpdateBackendSetDetails,
     "UpdateHealthCheckerDetails": UpdateHealthCheckerDetails,
