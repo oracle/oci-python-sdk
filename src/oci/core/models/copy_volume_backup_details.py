@@ -25,19 +25,26 @@ class CopyVolumeBackupDetails(object):
             The value to assign to the display_name property of this CopyVolumeBackupDetails.
         :type display_name: str
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this CopyVolumeBackupDetails.
+        :type kms_key_id: str
+
         """
         self.swagger_types = {
             'destination_region': 'str',
-            'display_name': 'str'
+            'display_name': 'str',
+            'kms_key_id': 'str'
         }
 
         self.attribute_map = {
             'destination_region': 'destinationRegion',
-            'display_name': 'displayName'
+            'display_name': 'displayName',
+            'kms_key_id': 'kmsKeyId'
         }
 
         self._destination_region = None
         self._display_name = None
+        self._kms_key_id = None
 
     @property
     def destination_region(self):
@@ -92,6 +99,52 @@ class CopyVolumeBackupDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this CopyVolumeBackupDetails.
+        The OCID of the KMS key in the destination region which will be the master encryption key
+        for the copied volume backup.
+        If you do not specify this attribute the volume backup will be encrypted with the Oracle-provided encryption
+        key when it is copied to the destination region.
+
+
+        For more information about the Key Management service and encryption keys, see
+        `Overview of Key Management`__ and
+        `Using Keys`__.
+
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/usingkeys.htm
+
+
+        :return: The kms_key_id of this CopyVolumeBackupDetails.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this CopyVolumeBackupDetails.
+        The OCID of the KMS key in the destination region which will be the master encryption key
+        for the copied volume backup.
+        If you do not specify this attribute the volume backup will be encrypted with the Oracle-provided encryption
+        key when it is copied to the destination region.
+
+
+        For more information about the Key Management service and encryption keys, see
+        `Overview of Key Management`__ and
+        `Using Keys`__.
+
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/usingkeys.htm
+
+
+        :param kms_key_id: The kms_key_id of this CopyVolumeBackupDetails.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

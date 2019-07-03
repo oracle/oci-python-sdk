@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeVolumeGroupBackupCompartmentDetails(object):
     """
-    Contains details indicating which compartment the resource should move to
+    Contains the details for the compartment to move the volume group backup to.
     """
 
     def __init__(self, **kwargs):
@@ -36,7 +36,9 @@ class ChangeVolumeGroupBackupCompartmentDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ChangeVolumeGroupBackupCompartmentDetails.
-        The OCID of the new compartment
+        The `OCID`__ of the compartment to move the volume group backup to.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ChangeVolumeGroupBackupCompartmentDetails.
@@ -48,7 +50,9 @@ class ChangeVolumeGroupBackupCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ChangeVolumeGroupBackupCompartmentDetails.
-        The OCID of the new compartment
+        The `OCID`__ of the compartment to move the volume group backup to.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ChangeVolumeGroupBackupCompartmentDetails.
