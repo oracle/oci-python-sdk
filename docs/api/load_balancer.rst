@@ -28,6 +28,7 @@ Load Balancer
     oci.load_balancer.models.BackendSetHealth
     oci.load_balancer.models.Certificate
     oci.load_balancer.models.CertificateDetails
+    oci.load_balancer.models.ChangeLoadBalancerCompartmentDetails
     oci.load_balancer.models.ConnectionConfiguration
     oci.load_balancer.models.ControlAccessUsingHttpMethodsRule
     oci.load_balancer.models.CreateBackendDetails

@@ -13,6 +13,7 @@ from .backend_set_details import BackendSetDetails
 from .backend_set_health import BackendSetHealth
 from .certificate import Certificate
 from .certificate_details import CertificateDetails
+from .change_load_balancer_compartment_details import ChangeLoadBalancerCompartmentDetails
 from .connection_configuration import ConnectionConfiguration
 from .control_access_using_http_methods_rule import ControlAccessUsingHttpMethodsRule
 from .create_backend_details import CreateBackendDetails
@@ -76,6 +77,7 @@ load_balancer_type_mapping = {
     "BackendSetHealth": BackendSetHealth,
     "Certificate": Certificate,
     "CertificateDetails": CertificateDetails,
+    "ChangeLoadBalancerCompartmentDetails": ChangeLoadBalancerCompartmentDetails,
     "ConnectionConfiguration": ConnectionConfiguration,
     "ControlAccessUsingHttpMethodsRule": ControlAccessUsingHttpMethodsRule,
     "CreateBackendDetails": CreateBackendDetails,
