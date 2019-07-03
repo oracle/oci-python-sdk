@@ -60,6 +60,10 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
         :type license_model: str
 
+        :param is_preview_version_with_service_terms_accepted:
+            The value to assign to the is_preview_version_with_service_terms_accepted property of this CreateAutonomousDatabaseCloneDetails.
+        :type is_preview_version_with_service_terms_accepted: bool
+
         :param is_auto_scaling_enabled:
             The value to assign to the is_auto_scaling_enabled property of this CreateAutonomousDatabaseCloneDetails.
         :type is_auto_scaling_enabled: bool
@@ -104,6 +108,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
             'admin_password': 'str',
             'display_name': 'str',
             'license_model': 'str',
+            'is_preview_version_with_service_terms_accepted': 'bool',
             'is_auto_scaling_enabled': 'bool',
             'is_dedicated': 'bool',
             'autonomous_container_database_id': 'str',
@@ -123,6 +128,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
             'admin_password': 'adminPassword',
             'display_name': 'displayName',
             'license_model': 'licenseModel',
+            'is_preview_version_with_service_terms_accepted': 'isPreviewVersionWithServiceTermsAccepted',
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
             'is_dedicated': 'isDedicated',
             'autonomous_container_database_id': 'autonomousContainerDatabaseId',
@@ -141,6 +147,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
         self._admin_password = None
         self._display_name = None
         self._license_model = None
+        self._is_preview_version_with_service_terms_accepted = None
         self._is_auto_scaling_enabled = None
         self._is_dedicated = None
         self._autonomous_container_database_id = None

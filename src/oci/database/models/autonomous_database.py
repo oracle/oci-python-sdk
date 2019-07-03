@@ -173,6 +173,10 @@ class AutonomousDatabase(object):
             The value to assign to the db_version property of this AutonomousDatabase.
         :type db_version: str
 
+        :param is_preview:
+            The value to assign to the is_preview property of this AutonomousDatabase.
+        :type is_preview: bool
+
         :param db_workload:
             The value to assign to the db_workload property of this AutonomousDatabase.
             Allowed values for this property are: "OLTP", "DW", 'UNKNOWN_ENUM_VALUE'.
@@ -208,6 +212,7 @@ class AutonomousDatabase(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'db_version': 'str',
+            'is_preview': 'bool',
             'db_workload': 'str',
             'whitelisted_ips': 'list[str]',
             'is_auto_scaling_enabled': 'bool'
@@ -233,6 +238,7 @@ class AutonomousDatabase(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'db_version': 'dbVersion',
+            'is_preview': 'isPreview',
             'db_workload': 'dbWorkload',
             'whitelisted_ips': 'whitelistedIps',
             'is_auto_scaling_enabled': 'isAutoScalingEnabled'
@@ -257,6 +263,7 @@ class AutonomousDatabase(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._db_version = None
+        self._is_preview = None
         self._db_workload = None
         self._whitelisted_ips = None
         self._is_auto_scaling_enabled = None
@@ -756,6 +763,30 @@ class AutonomousDatabase(object):
         :type: str
         """
         self._db_version = db_version
+
+    @property
+    def is_preview(self):
+        """
+        Gets the is_preview of this AutonomousDatabase.
+        Indicates if the Autonomous Database version is a preview version.
+
+
+        :return: The is_preview of this AutonomousDatabase.
+        :rtype: bool
+        """
+        return self._is_preview
+
+    @is_preview.setter
+    def is_preview(self, is_preview):
+        """
+        Sets the is_preview of this AutonomousDatabase.
+        Indicates if the Autonomous Database version is a preview version.
+
+
+        :param is_preview: The is_preview of this AutonomousDatabase.
+        :type: bool
+        """
+        self._is_preview = is_preview
 
     @property
     def db_workload(self):

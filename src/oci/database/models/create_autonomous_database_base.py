@@ -82,6 +82,10 @@ class CreateAutonomousDatabaseBase(object):
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
         :type license_model: str
 
+        :param is_preview_version_with_service_terms_accepted:
+            The value to assign to the is_preview_version_with_service_terms_accepted property of this CreateAutonomousDatabaseBase.
+        :type is_preview_version_with_service_terms_accepted: bool
+
         :param is_auto_scaling_enabled:
             The value to assign to the is_auto_scaling_enabled property of this CreateAutonomousDatabaseBase.
         :type is_auto_scaling_enabled: bool
@@ -117,6 +121,7 @@ class CreateAutonomousDatabaseBase(object):
             'admin_password': 'str',
             'display_name': 'str',
             'license_model': 'str',
+            'is_preview_version_with_service_terms_accepted': 'bool',
             'is_auto_scaling_enabled': 'bool',
             'is_dedicated': 'bool',
             'autonomous_container_database_id': 'str',
@@ -134,6 +139,7 @@ class CreateAutonomousDatabaseBase(object):
             'admin_password': 'adminPassword',
             'display_name': 'displayName',
             'license_model': 'licenseModel',
+            'is_preview_version_with_service_terms_accepted': 'isPreviewVersionWithServiceTermsAccepted',
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
             'is_dedicated': 'isDedicated',
             'autonomous_container_database_id': 'autonomousContainerDatabaseId',
@@ -150,6 +156,7 @@ class CreateAutonomousDatabaseBase(object):
         self._admin_password = None
         self._display_name = None
         self._license_model = None
+        self._is_preview_version_with_service_terms_accepted = None
         self._is_auto_scaling_enabled = None
         self._is_dedicated = None
         self._autonomous_container_database_id = None
@@ -384,6 +391,30 @@ class CreateAutonomousDatabaseBase(object):
                 .format(allowed_values)
             )
         self._license_model = license_model
+
+    @property
+    def is_preview_version_with_service_terms_accepted(self):
+        """
+        Gets the is_preview_version_with_service_terms_accepted of this CreateAutonomousDatabaseBase.
+        If set to true, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted.
+
+
+        :return: The is_preview_version_with_service_terms_accepted of this CreateAutonomousDatabaseBase.
+        :rtype: bool
+        """
+        return self._is_preview_version_with_service_terms_accepted
+
+    @is_preview_version_with_service_terms_accepted.setter
+    def is_preview_version_with_service_terms_accepted(self, is_preview_version_with_service_terms_accepted):
+        """
+        Sets the is_preview_version_with_service_terms_accepted of this CreateAutonomousDatabaseBase.
+        If set to true, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted.
+
+
+        :param is_preview_version_with_service_terms_accepted: The is_preview_version_with_service_terms_accepted of this CreateAutonomousDatabaseBase.
+        :type: bool
+        """
+        self._is_preview_version_with_service_terms_accepted = is_preview_version_with_service_terms_accepted
 
     @property
     def is_auto_scaling_enabled(self):

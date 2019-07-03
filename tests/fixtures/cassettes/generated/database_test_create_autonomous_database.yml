@@ -537,4 +537,765 @@ interactions:
       Date: ['Fri, 10 May 2019 19:06:02 GMT']
       Server: [Jetty(9.4.7.v20170914)]
     status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?apiName=CreateAutonomousDatabase&serviceName=database&lang=Python
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Mon, 10 Jun 2019 21:23:19 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?apiName=CreateAutonomousDatabase&clientName=database&serviceName=database&lang=Python
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocidv1:tenancy:oc1:phx:1458753575596:aaaaaaaavary4yqe4ljpv5wzp74eflkwpu","compartmentId":"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia","userId":"ocid1.user.oc1..aaaaaaaama4xixhnuqdci3t4zmmeoh2kfs2q4gz7tx3bs3hihwkpbw4lr64q","endpoint":null,"fingerprint":"8b:3e:78:cd:6a:66:81:8f:c4:14:e4:03:b6:20:d8:5c","passPhrase":"ociTestingService","keyFile":"/root/sdk/sdk-docker/service-team-config/dbaas_api_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,3EBFDE38454FA1BD43E5777C8DBCB35F\n\nS+Fq0qB5fP5c8PAb2HC51NcD34ec54TZIP85wrrhuO7bdAE1RqvJ82Pj06x9N9yJ\nlTFPrtwF8Peptzw+WrYevxesSw+NLEvI8bkPAYpneIx6wbYnz1mWGzuqYfoMyrct\npGC2qS0JFV4jPnocPJj5HW1UVCwio0m2yutsLb9g3wJRnlBstD/2VFMpqlFDLzIZ\ner2h+nR86t4HFGisMX8ihcqUaPGkgRetx8pNsmUlegfb59jq2qkU/8ac/cQ7ltre\nSnqADgAz+vXANnoFMHMfcTiRjQdBoCtHpiBkKabkkAmiPf9YGcG3FFHcs6IesbAf\ncXtavWoiEAQ1GJDyOeCfMLv0M6/ElVS7OSRQ5NDUrca8HqNzWGyevl7r2pUV2qow\ngoKCeLctVVN00nN14roPBdx/4QGBD+Ez1bP9u4e84UShk/zLpmLmEhL9cRO7Cqz4\nCXGShUo5Z9/7a3d2gbKOL/2ZvyXyVxDHdQruhiHq//zo5FtEWdHacIm5vL+wLVvA\nybN5L1lf4O7ZuwwdHakCswfWeGWb8K/K4kbb2TsKLIe04jSoTtQX6pknZBZ/y2pd\nHgtKnwn1uo2QteByrAxaNTHIioQWIiJkqAczxb1etHxrZKdJ2IIL3iOrT7ZSIVJ4\nRS4qBbMiCR92FZqlR0YsxzYLEbrxNdXOFG24acoY4BPTbe6ge2mX0RfjmD49bEAJ\n039mQl6TqH8n5BCLk5nek9VWDasBI5wQV0grGoG8U2uz+W2ZqXe8znvmo9Y1EOa9\nz3GFU3j1jxk0Y7PTP2v8vOSGqlkMct2gCGGZwxhkWWSFKeO95gxE9NdVnwIldFX/\nENe6yuTgYvGvjCB+xLqJqlmeSdgrMmGWgvxpRCm2HzZHs2ioeeI2qNvATxg8EsCS\nFE+FQg0ig9rAyQWL2Eaz+I3jSmXIG4//LJ1l+ivgl902k4pjktA5fUz2QL2b7slS\nszasMtkky3B2UzZNYQOWUbPSXbTvSO9uREqRr0CK0NKHJ2svo7EFgzooXtaPARWv\nXlTMFsBx2ck14/o8Dm8/d/0PESwj9RMmJ5ySMB5l6J35Cli5vi6AGbLseITjvD5K\npuc+Xw1t/dqphWMx2UjT6DM+42HupJp0zR2ZQYnaQgcWNbMmwo+EcLqsFNEbRyF3\nAVmAexGFd3EingrO/uLBBK8w4zY4UJvRPRzpouZ7VuDqUvh3hTJdXh40nn/Dx4f3\n4UvtqRSPpbrRwQEBqI0OY9lwj16ux7ta+SZWrKJ2WPf6KPfUscOq9bU1TB1mJ8RV\nplwed96sc4TRpkmuw74wTzu5yzV5U7SXkGUhrZex5cbFm5qSlhBO2tEY/djHutN0\nt7VmFZyMcSqNdQ6ulAbLxKWLHGS832wtnH1piZBgFyy/KDV5HsgMsvIXE8rvovvs\nNggMCOSAXA+cublPoFZOswbUvG643OQguodrzX89VEPalnGXI6mXltpCPfkkOJ0T\nPSPKP0jptsotjtp3GCGKm4oEDxb50F8fSNYBJ8arIuEhHCMr417aCGBEoN5BOFDW\n9IqsQmPQc0PQGqx26LKjtz3c87NzjoE9usLKHOx7IVwj8qJ/C2eVhk8KvnUMjHMX\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2300']
+      Content-Type: [application/json]
+      Date: ['Mon, 10 Jun 2019 21:23:19 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?sessionId=0593&apiName=CreateAutonomousDatabase&serviceName=database&lang=Python
+  response:
+    body: {string: '[{"containerId":"2ab03be9-f29e-4b54-869a-c239c83964c4","request":{"createAutonomousDatabaseDetails":{"source":"NONE","compartmentId":"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia","dbName":"E0593139","cpuCoreCount":1,"dbWorkload":"OLTP","dataStorageSizeInTBs":1,"adminPassword":"DBaaS12345_#","displayName":"__STS0593_4396","isAutoScalingEnabled":true},"opcRetryToken":"69c90165-e971-4554-afbf-fb8abf1321eb"}},{"containerId":"844b8ae9-3343-4c13-8915-d96766f12003","request":{"createAutonomousDatabaseDetails":{"source":"NONE","compartmentId":"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia","dbName":"E059390","cpuCoreCount":1,"dbWorkload":"OLTP","dataStorageSizeInTBs":1,"adminPassword":"DBaaS12345_#","displayName":"__STS0593_707","isDedicated":true,"autonomousContainerDatabaseId":"ocid1.autonomouscontainerdatabase.oc1.phx.abyhqljt3k6ekuk4jrnd2aqggiodupzog2hwmp2itrsva2axyoe23hhfozfa"},"opcRetryToken":"83a66fb0-14ec-46eb-8161-258ef39a572f"}},{"containerId":"96dc4074-b80a-4436-a16b-dd50dba4dfa8","request":{"createAutonomousDatabaseDetails":{"source":"DATABASE","compartmentId":"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia","dbName":"E0593567","cpuCoreCount":1,"dataStorageSizeInTBs":1,"adminPassword":"DBaaS12345_#","displayName":"__STS0593_122","sourceId":"ocid1.autonomousdatabase.oc1.phx.abyhqljs77voajhbgllks656nyzzyhvp4lsykbeiardx3j6lfnhh7cmbhrsa","cloneType":"FULL"},"opcRetryToken":"e10e7454-fcff-47d4-9ce1-b6c596bcad98"}},{"containerId":"5dda02d0-8fde-4689-a291-eedfefcb1aac","request":{"createAutonomousDatabaseDetails":{"source":"NONE","compartmentId":"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia","dbName":"E0593801","cpuCoreCount":1,"dbWorkload":"OLTP","dataStorageSizeInTBs":1,"adminPassword":"DBaaS12345_#","displayName":"preview__STS0593_837","isPreviewVersionWithServiceTermsAccepted":true,"isAutoScalingEnabled":false},"opcRetryToken":"36693929-2f0f-497d-ae19-6c3d14092a43"}}]'}
+    headers:
+      Content-Length: ['2055']
+      Content-Type: [text/plain]
+      Date: ['Mon, 10 Jun 2019 21:23:19 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"cpuCoreCount": 1, "compartmentId": "ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia",
+      "dbWorkload": "OLTP", "isAutoScalingEnabled": true, "displayName": "__STS0593_4396",
+      "source": "NONE", "dataStorageSizeInTBs": 1, "dbName": "E0593139", "adminPassword":
+      "DBaaS12345_#"}'
+    headers:
+      Content-Length: ['308']
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host content-length content-type x-content-sha256",keyId="ocidv1:tenancy:oc1:phx:1458753575596:aaaaaaaavary4yqe4ljpv5wzp74eflkwpu/ocid1.user.oc1..aaaaaaaama4xixhnuqdci3t4zmmeoh2kfs2q4gz7tx3bs3hihwkpbw4lr64q/8b:3e:78:cd:6a:66:81:8f:c4:14:e4:03:b6:20:d8:5c",signature="HcLBooXkEjOto8ZOUEo08vguXs65/R0EZMf29DoxCm2ov+FnYQBBk/+/mMTeyzfMtNHf6nPliLR50DHIHgJlhFogSVggKNRuDQG3oCtq2aV7pkUH7n8U67wJMcvYLIzyOBtRGPJ5KrwOSh2VdFKHoR/9tqKoWS0IMe/EaPaydz/uoGLi1/rwQZ7Gbye+xKtygyPlZVOCwGSTvBsTx6e9dLYQA5IpXy/pdykjuC6Qjf0yviKnYiWbAarsAlbU7vEACPBn1XSzglkooP/cixFwtJAGaap+T8SHfmPwP9U8tRvbBzhv/f4npg6CoLEfm16WSHMwU5H02ayQv4umExLE4w==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Mon, 10 Jun 2019 21:25:04 GMT']
+      host: [database.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.13+preview.1]
+      opc-request-id: [FC38B518AC344D619ED7411E88609E8B]
+      opc-retry-token: [69c90165-e971-4554-afbf-fb8abf1321eb]
+      user-agent: [Oracle-PythonSDK/2.2.13+preview.1 (python 3.5.3; x86_64-Linux)]
+      x-content-sha256: [k9axeY08eXMKG23RdJuTx3pkhDv0vvwQkTQzcuUjkP4=]
+    method: POST
+    uri: https://database.us-phoenix-1.oraclecloud.com/20160918/autonomousDatabases
+  response:
+    body: {string: "{\n  \"additionalDatabaseStatus\" : null,\n  \"autonomousContainerDatabaseId\"\
+        \ : null,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia\"\
+        ,\n  \"connectionStrings\" : null,\n  \"connectionUrls\" : null,\n  \"cpuCoreCount\"\
+        \ : 1,\n  \"dataStorageSizeInTBs\" : 1,\n  \"dbName\" : \"E0593139\",\n  \"\
+        dbVersion\" : null,\n  \"dbWorkload\" : \"OLTP\",\n  \"definedTags\" : { },\n\
+        \  \"displayName\" : \"__STS0593_4396\",\n  \"freeformTags\" : { },\n  \"\
+        id\" : \"ocid1.autonomousdatabase.oc1.phx.abyhqljse56jji5rdzclpmokyqrf5txlin5a5fj6oujlav3vsnxtestku6ca\"\
+        ,\n  \"isAutoScalingEnabled\" : true,\n  \"isDedicated\" : false,\n  \"isPreview\"\
+        \ : false,\n  \"licenseModel\" : \"BRING_YOUR_OWN_LICENSE\",\n  \"lifecycleDetails\"\
+        \ : null,\n  \"lifecycleState\" : \"PROVISIONING\",\n  \"serviceConsoleUrl\"\
+        \ : null,\n  \"sqlWebDeveloperUrl\" : null,\n  \"timeCreated\" : \"2019-06-10T21:25:04.926Z\"\
+        ,\n  \"usedDataStorageSizeInTBs\" : null,\n  \"whitelistedIps\" : null\n}"}
+    headers:
+      Connection: [keep-alive]
+      Content-Length: ['921']
+      Content-Type: [application/json]
+      Date: ['Mon, 10 Jun 2019 21:25:05 GMT']
+      ETag: [a259c80a]
+      X-Content-Type-Options: [nosniff]
+      opc-request-id: [FC38B518AC344D619ED7411E88609E8B/E6B8111831CD33C2E70633D3A4A81172/63CED8F05D25061BA12178B402D8BD0B]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"responseJson": "{\"opcRequestId\": \"1E3383106CD647D38BD61C94B823A479\",
+      \"opcNextPage\": null, \"autonomousDatabase\": {\"isDedicated\": false, \"autonomousContainerDatabaseId\":
+      null, \"dbVersion\": null, \"lifecycleDetails\": null, \"timeCreated\": \"2019-06-10T21:25:04.926000+00:00\",
+      \"additionalDatabaseStatus\": null, \"whitelistedIps\": null, \"serviceConsoleUrl\":
+      null, \"isAutoScalingEnabled\": true, \"usedDataStorageSizeInTbs\": null, \"connectionStrings\":
+      null, \"dbName\": \"E0593139\", \"definedTags\": {}, \"freeformTags\": {}, \"cpuCoreCount\":
+      1, \"displayName\": \"__STS0593_4396\", \"lifecycleState\": \"PROVISIONING\",
+      \"id\": \"ocid1.autonomousdatabase.oc1.phx.abyhqljse56jji5rdzclpmokyqrf5txlin5a5fj6oujlav3vsnxtestku6ca\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia\",
+      \"isPreview\": false, \"connectionUrls\": null, \"licenseModel\": \"BRING_YOUR_OWN_LICENSE\",
+      \"dataStorageSizeInTbs\": 1, \"dbWorkload\": \"OLTP\"}, \"eTag\": \"a259c80a\"}",
+      "requestJson": "{\"createAutonomousDatabaseDetails\": {\"cpuCoreCount\": 1,
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia\",
+      \"dbName\": \"E0593139\", \"isAutoScalingEnabled\": true, \"displayName\": \"__STS0593_4396\",
+      \"source\": \"NONE\", \"dataStorageSizeInTBs\": 1, \"dbWorkload\": \"OLTP\",
+      \"adminPassword\": \"DBaaS12345_#\"}, \"opcRetryToken\": \"69c90165-e971-4554-afbf-fb8abf1321eb\"}",
+      "requestClass": "com.oracle.bmc.database.requests.CreateAutonomousDatabaseRequest",
+      "responseClass": "com.oracle.bmc.database.responses.CreateAutonomousDatabaseResponse",
+      "listResponse": false, "containerId": "2ab03be9-f29e-4b54-869a-c239c83964c4"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['1741']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0593&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Mon, 10 Jun 2019 21:25:05 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"isDedicated": true, "cpuCoreCount": 1, "compartmentId": "ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia",
+      "dbWorkload": "OLTP", "autonomousContainerDatabaseId": "ocid1.autonomouscontainerdatabase.oc1.phx.abyhqljt3k6ekuk4jrnd2aqggiodupzog2hwmp2itrsva2axyoe23hhfozfa",
+      "displayName": "__STS0593_707", "source": "NONE", "dataStorageSizeInTBs": 1,
+      "dbName": "E059390", "adminPassword": "DBaaS12345_#"}'
+    headers:
+      Content-Length: ['436']
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host content-length content-type x-content-sha256",keyId="ocidv1:tenancy:oc1:phx:1458753575596:aaaaaaaavary4yqe4ljpv5wzp74eflkwpu/ocid1.user.oc1..aaaaaaaama4xixhnuqdci3t4zmmeoh2kfs2q4gz7tx3bs3hihwkpbw4lr64q/8b:3e:78:cd:6a:66:81:8f:c4:14:e4:03:b6:20:d8:5c",signature="NWRhLHY9DRXa1vtMxek3bbtTGZ2h7Mm+VKjOhBZ2cAd4zHBRBl0U6tJCK8/DwASVSRPsL97RjxWwfwdmurMAYma2M93/EnrupjVl2o7qCqZSAgCXD9dDCYBE6vJFcYV3Cay1nsU/XC8Tf7Rcqp46cB1MF80T5KKSH5s84nBEdE+8UcNtJBKBbfQWzfPs/xe/xA/rGfQ1i4pmAlW4YDreH0Kew/AceWQ1QRj0SqHYO+/qSlclspOCFmNQ6aDerJKi2s1tmDIVzd3Q+/JJjc1FLX4tC2A/lZ8jGAVTyWB6cAlSwD6krkgtkhJxP9wnPWP+PjWtuEz/hRDM3O1wR9M7wQ==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Mon, 10 Jun 2019 21:26:39 GMT']
+      host: [database.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.13+preview.1]
+      opc-request-id: [E8EB9D9EE45E40759A98F79CF2546E45]
+      opc-retry-token: [83a66fb0-14ec-46eb-8161-258ef39a572f]
+      user-agent: [Oracle-PythonSDK/2.2.13+preview.1 (python 3.5.3; x86_64-Linux)]
+      x-content-sha256: [QYwgWojqVFOo3w4SpEdNKqULpXBNBkHtgRZD9KxqRG0=]
+    method: POST
+    uri: https://database.us-phoenix-1.oraclecloud.com/20160918/autonomousDatabases
+  response:
+    body: {string: "{\n  \"additionalDatabaseStatus\" : null,\n  \"autonomousContainerDatabaseId\"\
+        \ : \"ocid1.autonomouscontainerdatabase.oc1.phx.abyhqljt3k6ekuk4jrnd2aqggiodupzog2hwmp2itrsva2axyoe23hhfozfa\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia\"\
+        ,\n  \"connectionStrings\" : {\n    \"allConnectionStrings\" : null,\n   \
+        \ \"dedicated\" : null,\n    \"high\" : null,\n    \"low\" : null,\n    \"\
+        medium\" : null\n  },\n  \"connectionUrls\" : {\n    \"apexUrl\" : null,\n\
+        \    \"sqlDevWebUrl\" : null\n  },\n  \"cpuCoreCount\" : 1,\n  \"dataStorageSizeInTBs\"\
+        \ : 1,\n  \"dbName\" : \"E059390\",\n  \"dbVersion\" : \"18.1.0.0\",\n  \"\
+        dbWorkload\" : \"OLTP\",\n  \"definedTags\" : { },\n  \"displayName\" : \"\
+        __STS0593_707\",\n  \"freeformTags\" : { },\n  \"id\" : \"ocid1.autonomousdatabase.oc1.phx.abyhqljthupog2x3o7ktjjj3otqtuuhqtdwljq5zo5htykzo4c3enixk3cpa\"\
+        ,\n  \"isAutoScalingEnabled\" : null,\n  \"isDedicated\" : true,\n  \"isPreview\"\
+        \ : null,\n  \"licenseModel\" : null,\n  \"lifecycleDetails\" : null,\n  \"\
+        lifecycleState\" : \"PROVISIONING\",\n  \"serviceConsoleUrl\" : null,\n  \"\
+        sqlWebDeveloperUrl\" : null,\n  \"timeCreated\" : \"2019-06-10T21:26:39.701Z\"\
+        ,\n  \"usedDataStorageSizeInTBs\" : null,\n  \"whitelistedIps\" : null\n}"}
+    headers:
+      Connection: [keep-alive]
+      Content-Length: ['1169']
+      Content-Type: [application/json]
+      Date: ['Mon, 10 Jun 2019 21:26:39 GMT']
+      ETag: [e9453658]
+      X-Content-Type-Options: [nosniff]
+      opc-request-id: [E8EB9D9EE45E40759A98F79CF2546E45/1CB534E4029760ECE9823BD549AA1B9E/BFE42391D3D6B27AC9F9B832A6E167DB]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"responseJson": "{\"opcRequestId\": \"8F8A5674E5E24F83A4E5229B4D333EDE\",
+      \"opcNextPage\": null, \"autonomousDatabase\": {\"isDedicated\": true, \"autonomousContainerDatabaseId\":
+      \"ocid1.autonomouscontainerdatabase.oc1.phx.abyhqljt3k6ekuk4jrnd2aqggiodupzog2hwmp2itrsva2axyoe23hhfozfa\",
+      \"dbVersion\": \"18.1.0.0\", \"lifecycleDetails\": null, \"timeCreated\": \"2019-06-10T21:26:39.701000+00:00\",
+      \"additionalDatabaseStatus\": null, \"whitelistedIps\": null, \"serviceConsoleUrl\":
+      null, \"isAutoScalingEnabled\": null, \"usedDataStorageSizeInTbs\": null, \"connectionStrings\":
+      {\"high\": null, \"allConnectionStrings\": null, \"low\": null, \"medium\":
+      null, \"dedicated\": null}, \"dbName\": \"E059390\", \"definedTags\": {}, \"freeformTags\":
+      {}, \"cpuCoreCount\": 1, \"displayName\": \"__STS0593_707\", \"lifecycleState\":
+      \"PROVISIONING\", \"id\": \"ocid1.autonomousdatabase.oc1.phx.abyhqljthupog2x3o7ktjjj3otqtuuhqtdwljq5zo5htykzo4c3enixk3cpa\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia\",
+      \"isPreview\": null, \"connectionUrls\": {\"apexUrl\": null, \"sqlDevWebUrl\":
+      null}, \"licenseModel\": null, \"dataStorageSizeInTbs\": 1, \"dbWorkload\":
+      \"OLTP\"}, \"eTag\": \"e9453658\"}", "requestJson": "{\"createAutonomousDatabaseDetails\":
+      {\"isDedicated\": true, \"cpuCoreCount\": 1, \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia\",
+      \"dbName\": \"E059390\", \"autonomousContainerDatabaseId\": \"ocid1.autonomouscontainerdatabase.oc1.phx.abyhqljt3k6ekuk4jrnd2aqggiodupzog2hwmp2itrsva2axyoe23hhfozfa\",
+      \"displayName\": \"__STS0593_707\", \"source\": \"NONE\", \"dataStorageSizeInTBs\":
+      1, \"dbWorkload\": \"OLTP\", \"adminPassword\": \"DBaaS12345_#\"}, \"opcRetryToken\":
+      \"83a66fb0-14ec-46eb-8161-258ef39a572f\"}", "requestClass": "com.oracle.bmc.database.requests.CreateAutonomousDatabaseRequest",
+      "responseClass": "com.oracle.bmc.database.responses.CreateAutonomousDatabaseResponse",
+      "listResponse": false, "containerId": "844b8ae9-3343-4c13-8915-d96766f12003"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2094']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0593&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Mon, 10 Jun 2019 21:26:39 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"cpuCoreCount": 1, "compartmentId": "ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia",
+      "cloneType": "FULL", "displayName": "__STS0593_122", "source": "DATABASE", "sourceId":
+      "ocid1.autonomousdatabase.oc1.phx.abyhqljs77voajhbgllks656nyzzyhvp4lsykbeiardx3j6lfnhh7cmbhrsa",
+      "dataStorageSizeInTBs": 1, "dbName": "E0593567", "adminPassword": "DBaaS12345_#"}'
+    headers:
+      Content-Length: ['389']
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host content-length content-type x-content-sha256",keyId="ocidv1:tenancy:oc1:phx:1458753575596:aaaaaaaavary4yqe4ljpv5wzp74eflkwpu/ocid1.user.oc1..aaaaaaaama4xixhnuqdci3t4zmmeoh2kfs2q4gz7tx3bs3hihwkpbw4lr64q/8b:3e:78:cd:6a:66:81:8f:c4:14:e4:03:b6:20:d8:5c",signature="mM4bMSSUspCRh6J8fT2aZha8ynumFK2+vIZkVxv7I7X6IAmj6ZZbtNs4rQD3Ig7EL8m4BZFe22NxKw4/lQmxWSCX0cwh8e8esKKKnFOky8HpWDGDZ/2XWJswCYu6sWP7BuBaLiTYMPRbGFmC3HYldtehDpnDs7N5l9HPkqi2BbRnkJPrczcYYHH8+5/zRLUi0uO08XZkhKbz3wCXdbr6ToHEzqDhONH8FH8Zm5Gob4ddIyMfqK2CzdBp/h+RtBdO+8Vf08Y8zTuGys2xeqmUMHtYlA7N2cT0Vk+ZyEq1hsUvKmqDJ+bkB0SmRPxL7NoREY+28fF6KgXJ27xWftPMzA==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Mon, 10 Jun 2019 21:26:44 GMT']
+      host: [database.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.13+preview.1]
+      opc-request-id: [DCD3CABC58EA44E39CA8935A66DCDEDB]
+      opc-retry-token: [e10e7454-fcff-47d4-9ce1-b6c596bcad98]
+      user-agent: [Oracle-PythonSDK/2.2.13+preview.1 (python 3.5.3; x86_64-Linux)]
+      x-content-sha256: [+3d1u7w3sPnSntgrQOedRiJ8QIPumlF+ndnhcOAM6og=]
+    method: POST
+    uri: https://database.us-phoenix-1.oraclecloud.com/20160918/autonomousDatabases
+  response:
+    body: {string: "{\n  \"additionalDatabaseStatus\" : null,\n  \"autonomousContainerDatabaseId\"\
+        \ : null,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia\"\
+        ,\n  \"connectionStrings\" : null,\n  \"connectionUrls\" : null,\n  \"cpuCoreCount\"\
+        \ : 1,\n  \"dataStorageSizeInTBs\" : 1,\n  \"dbName\" : \"E0593567\",\n  \"\
+        dbVersion\" : null,\n  \"dbWorkload\" : \"OLTP\",\n  \"definedTags\" : { },\n\
+        \  \"displayName\" : \"__STS0593_122\",\n  \"freeformTags\" : { },\n  \"id\"\
+        \ : \"ocid1.autonomousdatabase.oc1.phx.abyhqljsf65c4qyvaaha6o2ghrjv2sgw7kzbg4gr7r5rp7j37snb3vzdwy3a\"\
+        ,\n  \"isAutoScalingEnabled\" : false,\n  \"isDedicated\" : false,\n  \"isPreview\"\
+        \ : false,\n  \"licenseModel\" : \"BRING_YOUR_OWN_LICENSE\",\n  \"lifecycleDetails\"\
+        \ : null,\n  \"lifecycleState\" : \"PROVISIONING\",\n  \"serviceConsoleUrl\"\
+        \ : null,\n  \"sqlWebDeveloperUrl\" : null,\n  \"timeCreated\" : \"2019-06-10T21:26:45.138Z\"\
+        ,\n  \"usedDataStorageSizeInTBs\" : null,\n  \"whitelistedIps\" : null\n}"}
+    headers:
+      Connection: [keep-alive]
+      Content-Length: ['921']
+      Content-Type: [application/json]
+      Date: ['Mon, 10 Jun 2019 21:26:45 GMT']
+      ETag: [d279db7f]
+      X-Content-Type-Options: [nosniff]
+      opc-request-id: [DCD3CABC58EA44E39CA8935A66DCDEDB/DF713121C261012C81CE16B684BFB017/4A267F11CDF7C02A9BB3FEDF708F379E]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"responseJson": "{\"opcRequestId\": \"53CCEC348B7A482C93FE29856BAAACBD\",
+      \"opcNextPage\": null, \"autonomousDatabase\": {\"isDedicated\": false, \"autonomousContainerDatabaseId\":
+      null, \"dbVersion\": null, \"lifecycleDetails\": null, \"timeCreated\": \"2019-06-10T21:26:45.138000+00:00\",
+      \"additionalDatabaseStatus\": null, \"whitelistedIps\": null, \"serviceConsoleUrl\":
+      null, \"isAutoScalingEnabled\": false, \"usedDataStorageSizeInTbs\": null, \"connectionStrings\":
+      null, \"dbName\": \"E0593567\", \"definedTags\": {}, \"freeformTags\": {}, \"cpuCoreCount\":
+      1, \"displayName\": \"__STS0593_122\", \"lifecycleState\": \"PROVISIONING\",
+      \"id\": \"ocid1.autonomousdatabase.oc1.phx.abyhqljsf65c4qyvaaha6o2ghrjv2sgw7kzbg4gr7r5rp7j37snb3vzdwy3a\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia\",
+      \"isPreview\": false, \"connectionUrls\": null, \"licenseModel\": \"BRING_YOUR_OWN_LICENSE\",
+      \"dataStorageSizeInTbs\": 1, \"dbWorkload\": \"OLTP\"}, \"eTag\": \"d279db7f\"}",
+      "requestJson": "{\"createAutonomousDatabaseDetails\": {\"cpuCoreCount\": 1,
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia\",
+      \"cloneType\": \"FULL\", \"displayName\": \"__STS0593_122\", \"source\": \"DATABASE\",
+      \"sourceId\": \"ocid1.autonomousdatabase.oc1.phx.abyhqljs77voajhbgllks656nyzzyhvp4lsykbeiardx3j6lfnhh7cmbhrsa\",
+      \"dataStorageSizeInTBs\": 1, \"dbName\": \"E0593567\", \"adminPassword\": \"DBaaS12345_#\"},
+      \"opcRetryToken\": \"e10e7454-fcff-47d4-9ce1-b6c596bcad98\"}", "requestClass":
+      "com.oracle.bmc.database.requests.CreateAutonomousDatabaseRequest", "responseClass":
+      "com.oracle.bmc.database.responses.CreateAutonomousDatabaseResponse", "listResponse":
+      false, "containerId": "96dc4074-b80a-4436-a16b-dd50dba4dfa8"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['1824']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0593&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Mon, 10 Jun 2019 21:26:45 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"cpuCoreCount": 1, "compartmentId": "ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia",
+      "dbWorkload": "OLTP", "isAutoScalingEnabled": false, "isPreviewVersionWithServiceTermsAccepted":
+      true, "displayName": "preview__STS0593_837", "source": "NONE", "dataStorageSizeInTBs":
+      1, "dbName": "E0593801", "adminPassword": "DBaaS12345_#"}'
+    headers:
+      Content-Length: ['365']
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host content-length content-type x-content-sha256",keyId="ocidv1:tenancy:oc1:phx:1458753575596:aaaaaaaavary4yqe4ljpv5wzp74eflkwpu/ocid1.user.oc1..aaaaaaaama4xixhnuqdci3t4zmmeoh2kfs2q4gz7tx3bs3hihwkpbw4lr64q/8b:3e:78:cd:6a:66:81:8f:c4:14:e4:03:b6:20:d8:5c",signature="OfRAek5vQJ2DdGtOKgH3fQBUq7vB0RGc13voXyxTgkDjrCNZCJIpTK4QNYnqaDnZNh5Z20YWDcGJjQ/9ZnOcsBzoWgiQ89F0KFOkynji82LFBIYuNyix2SUtAct4PeQ6N6QLJSqik/cyd7P4R5pGYe1QmahFB9ofd+G869D+KY1Z/ayiau0ajrOLoqaU2zS0L6Lv5QXDCw4T/+0jtCWSF6KjRWsyo2U76DQqtHmZlh5NB/8fptQHPl206Pl6LWlLFvBQU48VvMkW91auDb+KcZYLYGEA+d2afGceqKbgUO8KnfS5dZ/YCbf4P7bxmI9iuokrpZpp7LKmH8f1IowoLg==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Mon, 10 Jun 2019 21:26:53 GMT']
+      host: [database.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.13+preview.1]
+      opc-request-id: [6F8FB97E72F34BE688E431227EA0D040]
+      opc-retry-token: [36693929-2f0f-497d-ae19-6c3d14092a43]
+      user-agent: [Oracle-PythonSDK/2.2.13+preview.1 (python 3.5.3; x86_64-Linux)]
+      x-content-sha256: [szDFAG/+9X15McGy0t3NHyCRtfdERPe9FJJRrQ2J6F8=]
+    method: POST
+    uri: https://database.us-phoenix-1.oraclecloud.com/20160918/autonomousDatabases
+  response:
+    body: {string: "{\n  \"additionalDatabaseStatus\" : null,\n  \"autonomousContainerDatabaseId\"\
+        \ : null,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia\"\
+        ,\n  \"connectionStrings\" : null,\n  \"connectionUrls\" : null,\n  \"cpuCoreCount\"\
+        \ : 1,\n  \"dataStorageSizeInTBs\" : 1,\n  \"dbName\" : \"E0593801\",\n  \"\
+        dbVersion\" : null,\n  \"dbWorkload\" : \"OLTP\",\n  \"definedTags\" : { },\n\
+        \  \"displayName\" : \"preview__STS0593_837\",\n  \"freeformTags\" : { },\n\
+        \  \"id\" : \"ocid1.autonomousdatabase.oc1.phx.abyhqljrpz7emvcol3imxzlshdrqkc6wggpfxfzvf33fjdph6ztgof4g7olq\"\
+        ,\n  \"isAutoScalingEnabled\" : false,\n  \"isDedicated\" : false,\n  \"isPreview\"\
+        \ : true,\n  \"licenseModel\" : \"BRING_YOUR_OWN_LICENSE\",\n  \"lifecycleDetails\"\
+        \ : null,\n  \"lifecycleState\" : \"PROVISIONING\",\n  \"serviceConsoleUrl\"\
+        \ : null,\n  \"sqlWebDeveloperUrl\" : null,\n  \"timeCreated\" : \"2019-06-10T21:26:53.922Z\"\
+        ,\n  \"usedDataStorageSizeInTBs\" : null,\n  \"whitelistedIps\" : null\n}"}
+    headers:
+      Connection: [keep-alive]
+      Content-Length: ['927']
+      Content-Type: [application/json]
+      Date: ['Mon, 10 Jun 2019 21:26:54 GMT']
+      ETag: [6b1d3c68]
+      X-Content-Type-Options: [nosniff]
+      opc-request-id: [6F8FB97E72F34BE688E431227EA0D040/0CBEC067E11CA7129108A782E96872AA/C2620E86681928A88B7EA07D8CA70006]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"responseJson": "{\"opcRequestId\": \"AF5FD3F50EAB4D37A3A116A8CE5C21B9\",
+      \"opcNextPage\": null, \"autonomousDatabase\": {\"isDedicated\": false, \"autonomousContainerDatabaseId\":
+      null, \"dbVersion\": null, \"lifecycleDetails\": null, \"timeCreated\": \"2019-06-10T21:26:53.922000+00:00\",
+      \"additionalDatabaseStatus\": null, \"whitelistedIps\": null, \"serviceConsoleUrl\":
+      null, \"isAutoScalingEnabled\": false, \"usedDataStorageSizeInTbs\": null, \"connectionStrings\":
+      null, \"dbName\": \"E0593801\", \"definedTags\": {}, \"freeformTags\": {}, \"cpuCoreCount\":
+      1, \"displayName\": \"preview__STS0593_837\", \"lifecycleState\": \"PROVISIONING\",
+      \"id\": \"ocid1.autonomousdatabase.oc1.phx.abyhqljrpz7emvcol3imxzlshdrqkc6wggpfxfzvf33fjdph6ztgof4g7olq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia\",
+      \"isPreview\": true, \"connectionUrls\": null, \"licenseModel\": \"BRING_YOUR_OWN_LICENSE\",
+      \"dataStorageSizeInTbs\": 1, \"dbWorkload\": \"OLTP\"}, \"eTag\": \"6b1d3c68\"}",
+      "requestJson": "{\"createAutonomousDatabaseDetails\": {\"cpuCoreCount\": 1,
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia\",
+      \"dbName\": \"E0593801\", \"isAutoScalingEnabled\": false, \"isPreviewVersionWithServiceTermsAccepted\":
+      true, \"displayName\": \"preview__STS0593_837\", \"source\": \"NONE\", \"dataStorageSizeInTBs\":
+      1, \"dbWorkload\": \"OLTP\", \"adminPassword\": \"DBaaS12345_#\"}, \"opcRetryToken\":
+      \"36693929-2f0f-497d-ae19-6c3d14092a43\"}", "requestClass": "com.oracle.bmc.database.requests.CreateAutonomousDatabaseRequest",
+      "responseClass": "com.oracle.bmc.database.responses.CreateAutonomousDatabaseResponse",
+      "listResponse": false, "containerId": "5dda02d0-8fde-4689-a291-eedfefcb1aac"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['1806']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0593&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Mon, 10 Jun 2019 21:26:54 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request/enable?apiName=CreateAutonomousDatabase&serviceName=database&lang=Python
+  response:
+    body: {string: 'true'}
+    headers:
+      Content-Length: ['4']
+      Content-Type: [text/plain]
+      Date: ['Thu, 27 Jun 2019 22:59:27 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/config?apiName=CreateAutonomousDatabase&clientName=database&serviceName=database&lang=Python
+  response:
+    body: {string: '{"region":"us-phoenix-1","tenantId":"ocidv1:tenancy:oc1:phx:1458753575596:aaaaaaaavary4yqe4ljpv5wzp74eflkwpu","compartmentId":"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia","userId":"ocid1.user.oc1..aaaaaaaama4xixhnuqdci3t4zmmeoh2kfs2q4gz7tx3bs3hihwkpbw4lr64q","endpoint":null,"fingerprint":"8b:3e:78:cd:6a:66:81:8f:c4:14:e4:03:b6:20:d8:5c","passPhrase":"ociTestingService","keyFile":"/root/sdk/sdk-docker/service-team-config/dbaas_api_key.pem","keyFileContent":"-----BEGIN
+        RSA PRIVATE KEY-----\nProc-Type: 4,ENCRYPTED\nDEK-Info: AES-128-CBC,3EBFDE38454FA1BD43E5777C8DBCB35F\n\nS+Fq0qB5fP5c8PAb2HC51NcD34ec54TZIP85wrrhuO7bdAE1RqvJ82Pj06x9N9yJ\nlTFPrtwF8Peptzw+WrYevxesSw+NLEvI8bkPAYpneIx6wbYnz1mWGzuqYfoMyrct\npGC2qS0JFV4jPnocPJj5HW1UVCwio0m2yutsLb9g3wJRnlBstD/2VFMpqlFDLzIZ\ner2h+nR86t4HFGisMX8ihcqUaPGkgRetx8pNsmUlegfb59jq2qkU/8ac/cQ7ltre\nSnqADgAz+vXANnoFMHMfcTiRjQdBoCtHpiBkKabkkAmiPf9YGcG3FFHcs6IesbAf\ncXtavWoiEAQ1GJDyOeCfMLv0M6/ElVS7OSRQ5NDUrca8HqNzWGyevl7r2pUV2qow\ngoKCeLctVVN00nN14roPBdx/4QGBD+Ez1bP9u4e84UShk/zLpmLmEhL9cRO7Cqz4\nCXGShUo5Z9/7a3d2gbKOL/2ZvyXyVxDHdQruhiHq//zo5FtEWdHacIm5vL+wLVvA\nybN5L1lf4O7ZuwwdHakCswfWeGWb8K/K4kbb2TsKLIe04jSoTtQX6pknZBZ/y2pd\nHgtKnwn1uo2QteByrAxaNTHIioQWIiJkqAczxb1etHxrZKdJ2IIL3iOrT7ZSIVJ4\nRS4qBbMiCR92FZqlR0YsxzYLEbrxNdXOFG24acoY4BPTbe6ge2mX0RfjmD49bEAJ\n039mQl6TqH8n5BCLk5nek9VWDasBI5wQV0grGoG8U2uz+W2ZqXe8znvmo9Y1EOa9\nz3GFU3j1jxk0Y7PTP2v8vOSGqlkMct2gCGGZwxhkWWSFKeO95gxE9NdVnwIldFX/\nENe6yuTgYvGvjCB+xLqJqlmeSdgrMmGWgvxpRCm2HzZHs2ioeeI2qNvATxg8EsCS\nFE+FQg0ig9rAyQWL2Eaz+I3jSmXIG4//LJ1l+ivgl902k4pjktA5fUz2QL2b7slS\nszasMtkky3B2UzZNYQOWUbPSXbTvSO9uREqRr0CK0NKHJ2svo7EFgzooXtaPARWv\nXlTMFsBx2ck14/o8Dm8/d/0PESwj9RMmJ5ySMB5l6J35Cli5vi6AGbLseITjvD5K\npuc+Xw1t/dqphWMx2UjT6DM+42HupJp0zR2ZQYnaQgcWNbMmwo+EcLqsFNEbRyF3\nAVmAexGFd3EingrO/uLBBK8w4zY4UJvRPRzpouZ7VuDqUvh3hTJdXh40nn/Dx4f3\n4UvtqRSPpbrRwQEBqI0OY9lwj16ux7ta+SZWrKJ2WPf6KPfUscOq9bU1TB1mJ8RV\nplwed96sc4TRpkmuw74wTzu5yzV5U7SXkGUhrZex5cbFm5qSlhBO2tEY/djHutN0\nt7VmFZyMcSqNdQ6ulAbLxKWLHGS832wtnH1piZBgFyy/KDV5HsgMsvIXE8rvovvs\nNggMCOSAXA+cublPoFZOswbUvG643OQguodrzX89VEPalnGXI6mXltpCPfkkOJ0T\nPSPKP0jptsotjtp3GCGKm4oEDxb50F8fSNYBJ8arIuEhHCMr417aCGBEoN5BOFDW\n9IqsQmPQc0PQGqx26LKjtz3c87NzjoE9usLKHOx7IVwj8qJ/C2eVhk8KvnUMjHMX\n-----END
+        RSA PRIVATE KEY-----\n"}'}
+    headers:
+      Content-Length: ['2300']
+      Content-Type: [application/json]
+      Date: ['Thu, 27 Jun 2019 22:59:27 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: http://localhost:8090/SDKTestingService/request?sessionId=0241&apiName=CreateAutonomousDatabase&serviceName=database&lang=Python
+  response:
+    body: {string: '[{"containerId":"e91bb1c1-d6a2-4559-8b19-4d0f2fc267bd","request":{"createAutonomousDatabaseDetails":{"source":"NONE","compartmentId":"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia","dbName":"E0241569","cpuCoreCount":1,"dbWorkload":"DW","dataStorageSizeInTBs":1,"adminPassword":"P_A_S_S#w-o-r-d#2017","displayName":"__STS0241_1156","isAutoScalingEnabled":false},"opcRetryToken":"6823126a-5d3d-4b63-a99b-db3a4515d374"}},{"containerId":"48446b69-9df9-46da-886b-a595672de3cb","request":{"createAutonomousDatabaseDetails":{"source":"NONE","compartmentId":"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia","dbName":"E024183","cpuCoreCount":1,"dbWorkload":"OLTP","dataStorageSizeInTBs":1,"adminPassword":"P_A_S_S#w-o-r-d#2017","displayName":"__STS0241_4622","isDedicated":true,"autonomousContainerDatabaseId":"ocid1.autonomouscontainerdatabase.oc1.phx.abyhqljsocdijdvjuqta4ytwchcaqlyu5jyuowjwtq2vnwkrvdtjqndeldeq"},"opcRetryToken":"c703d8af-8e86-49b6-af02-7e075895acae"}},{"containerId":"595ffe0a-098e-4009-afc6-c4ac899e7c08","request":{"createAutonomousDatabaseDetails":{"source":"DATABASE","compartmentId":"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia","dbName":"E0241631","cpuCoreCount":1,"dataStorageSizeInTBs":1,"adminPassword":"DBaaS12345_#","displayName":"__STS0241_2982","sourceId":"ocid1.autonomousdatabase.oc1.phx.abyhqljsdhmx7lervdkouzk25zegc4gtx4664ltjedkrkncbrutme3niajja","cloneType":"FULL"},"opcRetryToken":"610f42cf-9416-404f-8734-47d0d997b357"}},{"containerId":"21be972a-d541-4ede-b31c-187202dc86af","request":{"createAutonomousDatabaseDetails":{"source":"NONE","compartmentId":"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia","dbName":"E0241100","cpuCoreCount":1,"dbWorkload":"DW","dataStorageSizeInTBs":1,"adminPassword":"DBaaS12345_#","displayName":"preview__STS0241_6412","isAutoScalingEnabled":true},"opcRetryToken":"a2e4c976-5f67-4de7-8c7d-a67dd72d7fc7"}}]'}
+    headers:
+      Content-Length: ['2022']
+      Content-Type: [text/plain]
+      Date: ['Thu, 27 Jun 2019 22:59:27 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"cpuCoreCount": 1, "compartmentId": "ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia",
+      "dbWorkload": "DW", "isAutoScalingEnabled": false, "displayName": "__STS0241_1156",
+      "source": "NONE", "dataStorageSizeInTBs": 1, "dbName": "E0241569", "adminPassword":
+      "P_A_S_S#w-o-r-d#2017"}'
+    headers:
+      Content-Length: ['315']
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host content-length content-type x-content-sha256",keyId="ocidv1:tenancy:oc1:phx:1458753575596:aaaaaaaavary4yqe4ljpv5wzp74eflkwpu/ocid1.user.oc1..aaaaaaaama4xixhnuqdci3t4zmmeoh2kfs2q4gz7tx3bs3hihwkpbw4lr64q/8b:3e:78:cd:6a:66:81:8f:c4:14:e4:03:b6:20:d8:5c",signature="WqZw0McZeDUkcYFBJ6/n0dV8RkZbMgUavGVqv3SORH9zE/av0yaOdq/1txVN74McrNM0eI/Oc63caktA5tIwv0GXbGWVkqlrT5Z9G1CHEP9wB87LrUowHzux9FbDXKlCb9zgWjSO8MCyTS6Y8ot9mSWWss+FgwM2r5pv3SbhTcGrpxkOSUVkUUBusKV5+gMw7Cs60wAhgVfTCKFJ8Gncn6hlwhCnpw5IUhF9g2fdrWPxTfI5sx8lK9Q7Jk2RjbxxMnq4e2Zsr+tFLPSLIgtaXc33RJE6g9Pt4ZXqny/Bbj5OZ2q+JYeJO9Ans98OFrzLX9t2Rf4sV0ksLWu8QmkbPg==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 27 Jun 2019 23:01:19 GMT']
+      host: [database.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.16]
+      opc-request-id: [B9FCE1E2FCFC40C3A5DEF2CACA519E9C]
+      opc-retry-token: [6823126a-5d3d-4b63-a99b-db3a4515d374]
+      user-agent: [Oracle-PythonSDK/2.2.16 (python 3.5.3; x86_64-Linux)]
+      x-content-sha256: [st8GYen5UcEZIr74q30ZahpYY7/ULPFhLEOLtBWc+ZY=]
+    method: POST
+    uri: https://database.us-phoenix-1.oraclecloud.com/20160918/autonomousDatabases
+  response:
+    body: {string: "{\n  \"additionalDatabaseStatus\" : null,\n  \"autonomousContainerDatabaseId\"\
+        \ : null,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia\"\
+        ,\n  \"connectionStrings\" : null,\n  \"connectionUrls\" : null,\n  \"cpuCoreCount\"\
+        \ : 1,\n  \"dataStorageSizeInTBs\" : 1,\n  \"dbName\" : \"E0241569\",\n  \"\
+        dbVersion\" : null,\n  \"dbWorkload\" : \"DW\",\n  \"definedTags\" : { },\n\
+        \  \"displayName\" : \"__STS0241_1156\",\n  \"freeformTags\" : { },\n  \"\
+        id\" : \"ocid1.autonomousdatabase.oc1.phx.abyhqljscrbdpvwoe2gjrafmc3r23v6dtqz6av43mf4zyldh3yxotntioexa\"\
+        ,\n  \"isAutoScalingEnabled\" : false,\n  \"isDedicated\" : false,\n  \"isPreview\"\
+        \ : false,\n  \"licenseModel\" : \"BRING_YOUR_OWN_LICENSE\",\n  \"lifecycleDetails\"\
+        \ : null,\n  \"lifecycleState\" : \"PROVISIONING\",\n  \"serviceConsoleUrl\"\
+        \ : null,\n  \"sqlWebDeveloperUrl\" : null,\n  \"timeCreated\" : \"2019-06-27T23:01:20.019Z\"\
+        ,\n  \"usedDataStorageSizeInTBs\" : null,\n  \"whitelistedIps\" : [ \"0.0.0.0/0\"\
+        \ ]\n}"}
+    headers:
+      Connection: [keep-alive]
+      Content-Length: ['931']
+      Content-Type: [application/json]
+      Date: ['Thu, 27 Jun 2019 23:01:20 GMT']
+      ETag: [c9f14038]
+      X-Content-Type-Options: [nosniff]
+      opc-request-id: [B9FCE1E2FCFC40C3A5DEF2CACA519E9C/67D001312070781843E696F6E4D0D44F/CFFA0B66CAF434ED934E02F457259D4C]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"responseJson": "{\"opcRequestId\": \"D71480A892B4432D974A87CDF832CBF0\",
+      \"opcNextPage\": null, \"autonomousDatabase\": {\"isDedicated\": false, \"autonomousContainerDatabaseId\":
+      null, \"dbVersion\": null, \"lifecycleDetails\": null, \"connectionUrls\": null,
+      \"whitelistedIps\": [\"0.0.0.0/0\"], \"licenseModel\": \"BRING_YOUR_OWN_LICENSE\",
+      \"isAutoScalingEnabled\": false, \"usedDataStorageSizeInTbs\": null, \"connectionStrings\":
+      null, \"dbName\": \"E0241569\", \"definedTags\": {}, \"freeformTags\": {}, \"cpuCoreCount\":
+      1, \"displayName\": \"__STS0241_1156\", \"lifecycleState\": \"PROVISIONING\",
+      \"id\": \"ocid1.autonomousdatabase.oc1.phx.abyhqljscrbdpvwoe2gjrafmc3r23v6dtqz6av43mf4zyldh3yxotntioexa\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia\",
+      \"isPreview\": false, \"timeCreated\": \"2019-06-27T23:01:20.019000+00:00\",
+      \"serviceConsoleUrl\": null, \"dataStorageSizeInTbs\": 1, \"dbWorkload\": \"DW\"},
+      \"eTag\": \"c9f14038\"}", "requestJson": "{\"createAutonomousDatabaseDetails\":
+      {\"cpuCoreCount\": 1, \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia\",
+      \"dbName\": \"E0241569\", \"isAutoScalingEnabled\": false, \"displayName\":
+      \"__STS0241_1156\", \"source\": \"NONE\", \"dataStorageSizeInTBs\": 1, \"dbWorkload\":
+      \"DW\", \"adminPassword\": \"P_A_S_S#w-o-r-d#2017\"}, \"opcRetryToken\": \"6823126a-5d3d-4b63-a99b-db3a4515d374\"}",
+      "requestClass": "com.oracle.bmc.database.requests.CreateAutonomousDatabaseRequest",
+      "responseClass": "com.oracle.bmc.database.responses.CreateAutonomousDatabaseResponse",
+      "listResponse": false, "containerId": "e91bb1c1-d6a2-4559-8b19-4d0f2fc267bd"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['1722']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0241&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Thu, 27 Jun 2019 23:01:20 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"isDedicated": true, "cpuCoreCount": 1, "compartmentId": "ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia",
+      "dbWorkload": "OLTP", "autonomousContainerDatabaseId": "ocid1.autonomouscontainerdatabase.oc1.phx.abyhqljsocdijdvjuqta4ytwchcaqlyu5jyuowjwtq2vnwkrvdtjqndeldeq",
+      "displayName": "__STS0241_4622", "source": "NONE", "dataStorageSizeInTBs": 1,
+      "dbName": "E024183", "adminPassword": "P_A_S_S#w-o-r-d#2017"}'
+    headers:
+      Content-Length: ['445']
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host content-length content-type x-content-sha256",keyId="ocidv1:tenancy:oc1:phx:1458753575596:aaaaaaaavary4yqe4ljpv5wzp74eflkwpu/ocid1.user.oc1..aaaaaaaama4xixhnuqdci3t4zmmeoh2kfs2q4gz7tx3bs3hihwkpbw4lr64q/8b:3e:78:cd:6a:66:81:8f:c4:14:e4:03:b6:20:d8:5c",signature="vXm/VqmhPHrKO+SbrA6QCm4yd0sQi3capOOknYVsAgpnz4lVYCtGXl3ZeGIUR916erzDSPh3w4Uze82jms/Mg0pe8YAshfKFkQiMZRMHHOAq0BsGhk581pY6ay6aZgC9/iL6B+NhzSEhcRnzDuKwHxxWdybVYy8pzKzb0CFa4BNiVaF5nSppq2K4XuUkHCi14TMlfoQZVAKS1u6pDKOVYKyqGasWljxBd51SO1lkBp8V6PhmQIS4v5saCa0ejKCKwmiGJ0FyrMQwE3CdlwTEw0QQq9DSJRjR28yk+X0k+o7gb5fI4RTBhXi5aPVVpO6bT5UOVSmrPEDzyutMZa/p3Q==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 27 Jun 2019 23:02:54 GMT']
+      host: [database.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.16]
+      opc-request-id: [B9D54D8215CF4C3AAB683E55284993B7]
+      opc-retry-token: [c703d8af-8e86-49b6-af02-7e075895acae]
+      user-agent: [Oracle-PythonSDK/2.2.16 (python 3.5.3; x86_64-Linux)]
+      x-content-sha256: [gRx+Waq+FTpdZhvycnjviBvBf9gcZBsYc7C8vDGxwx4=]
+    method: POST
+    uri: https://database.us-phoenix-1.oraclecloud.com/20160918/autonomousDatabases
+  response:
+    body: {string: "{\n  \"additionalDatabaseStatus\" : null,\n  \"autonomousContainerDatabaseId\"\
+        \ : \"ocid1.autonomouscontainerdatabase.oc1.phx.abyhqljsocdijdvjuqta4ytwchcaqlyu5jyuowjwtq2vnwkrvdtjqndeldeq\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia\"\
+        ,\n  \"connectionStrings\" : {\n    \"allConnectionStrings\" : null,\n   \
+        \ \"dedicated\" : null,\n    \"high\" : null,\n    \"low\" : null,\n    \"\
+        medium\" : null\n  },\n  \"connectionUrls\" : {\n    \"apexUrl\" : null,\n\
+        \    \"sqlDevWebUrl\" : null\n  },\n  \"cpuCoreCount\" : 1,\n  \"dataStorageSizeInTBs\"\
+        \ : 1,\n  \"dbName\" : \"E024183\",\n  \"dbVersion\" : \"18.1.0.0\",\n  \"\
+        dbWorkload\" : \"OLTP\",\n  \"definedTags\" : { },\n  \"displayName\" : \"\
+        __STS0241_4622\",\n  \"freeformTags\" : { },\n  \"id\" : \"ocid1.autonomousdatabase.oc1.phx.abyhqljszgzms5ypxxcercmujywqsails3ksvnr6rjrnwyok364b72zoonnq\"\
+        ,\n  \"isAutoScalingEnabled\" : null,\n  \"isDedicated\" : true,\n  \"isPreview\"\
+        \ : null,\n  \"licenseModel\" : null,\n  \"lifecycleDetails\" : null,\n  \"\
+        lifecycleState\" : \"PROVISIONING\",\n  \"serviceConsoleUrl\" : null,\n  \"\
+        sqlWebDeveloperUrl\" : null,\n  \"timeCreated\" : \"2019-06-27T23:02:54.756Z\"\
+        ,\n  \"usedDataStorageSizeInTBs\" : null,\n  \"whitelistedIps\" : null\n}"}
+    headers:
+      Connection: [keep-alive]
+      Content-Length: ['1170']
+      Content-Type: [application/json]
+      Date: ['Thu, 27 Jun 2019 23:02:54 GMT']
+      ETag: [2631d95b]
+      X-Content-Type-Options: [nosniff]
+      opc-request-id: [B9D54D8215CF4C3AAB683E55284993B7/4B84E768BCB2321651451FCCED31F7C2/631059426B8AEA52BD337E7958675B99]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"responseJson": "{\"opcRequestId\": \"2000726989F24FFCBBFAFBE04EA0247A\",
+      \"opcNextPage\": null, \"autonomousDatabase\": {\"isDedicated\": true, \"autonomousContainerDatabaseId\":
+      \"ocid1.autonomouscontainerdatabase.oc1.phx.abyhqljsocdijdvjuqta4ytwchcaqlyu5jyuowjwtq2vnwkrvdtjqndeldeq\",
+      \"dbVersion\": \"18.1.0.0\", \"lifecycleDetails\": null, \"connectionUrls\":
+      {\"apexUrl\": null, \"sqlDevWebUrl\": null}, \"whitelistedIps\": null, \"licenseModel\":
+      null, \"isAutoScalingEnabled\": null, \"usedDataStorageSizeInTbs\": null, \"connectionStrings\":
+      {\"high\": null, \"allConnectionStrings\": null, \"low\": null, \"medium\":
+      null, \"dedicated\": null}, \"dbName\": \"E024183\", \"definedTags\": {}, \"freeformTags\":
+      {}, \"cpuCoreCount\": 1, \"displayName\": \"__STS0241_4622\", \"lifecycleState\":
+      \"PROVISIONING\", \"id\": \"ocid1.autonomousdatabase.oc1.phx.abyhqljszgzms5ypxxcercmujywqsails3ksvnr6rjrnwyok364b72zoonnq\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia\",
+      \"isPreview\": null, \"timeCreated\": \"2019-06-27T23:02:54.756000+00:00\",
+      \"serviceConsoleUrl\": null, \"dataStorageSizeInTbs\": 1, \"dbWorkload\": \"OLTP\"},
+      \"eTag\": \"2631d95b\"}", "requestJson": "{\"createAutonomousDatabaseDetails\":
+      {\"isDedicated\": true, \"cpuCoreCount\": 1, \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia\",
+      \"dbName\": \"E024183\", \"autonomousContainerDatabaseId\": \"ocid1.autonomouscontainerdatabase.oc1.phx.abyhqljsocdijdvjuqta4ytwchcaqlyu5jyuowjwtq2vnwkrvdtjqndeldeq\",
+      \"displayName\": \"__STS0241_4622\", \"source\": \"NONE\", \"dataStorageSizeInTBs\":
+      1, \"dbWorkload\": \"OLTP\", \"adminPassword\": \"P_A_S_S#w-o-r-d#2017\"}, \"opcRetryToken\":
+      \"c703d8af-8e86-49b6-af02-7e075895acae\"}", "requestClass": "com.oracle.bmc.database.requests.CreateAutonomousDatabaseRequest",
+      "responseClass": "com.oracle.bmc.database.responses.CreateAutonomousDatabaseResponse",
+      "listResponse": false, "containerId": "48446b69-9df9-46da-886b-a595672de3cb"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['2068']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0241&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Thu, 27 Jun 2019 23:02:55 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"cpuCoreCount": 1, "compartmentId": "ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia",
+      "cloneType": "FULL", "displayName": "__STS0241_2982", "source": "DATABASE",
+      "sourceId": "ocid1.autonomousdatabase.oc1.phx.abyhqljsdhmx7lervdkouzk25zegc4gtx4664ltjedkrkncbrutme3niajja",
+      "dataStorageSizeInTBs": 1, "dbName": "E0241631", "adminPassword": "DBaaS12345_#"}'
+    headers:
+      Content-Length: ['390']
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host content-length content-type x-content-sha256",keyId="ocidv1:tenancy:oc1:phx:1458753575596:aaaaaaaavary4yqe4ljpv5wzp74eflkwpu/ocid1.user.oc1..aaaaaaaama4xixhnuqdci3t4zmmeoh2kfs2q4gz7tx3bs3hihwkpbw4lr64q/8b:3e:78:cd:6a:66:81:8f:c4:14:e4:03:b6:20:d8:5c",signature="XUPiCXPRLu/HrJcIroe22ZHr4tOEqW/btbYLhbFLOeHJluymHNFR48jfuz2eAz6H1FLvWnyP42e5FVFY3uRxHxOLJBaIfK8iQBlQm1wLAPhkLZ71LQLsMsr4xloPOF0+ohNflSeZgBdbakj1LXCu6nnofsDo+HRK9jCNhiNbptdxtkv4UJRiWK3gRp8Tgc5LDhSXNgY7c5UsyppWPaM1u2UY4esvAncCRJTCKv9bUTJ1h5P6OQb8pP8K0G6CZVOK3cMi5Aqdoid9A6Pxi7iVlxpTtwXdKC5UsvEoTFvUYUb9gN+VLir+raNxBlzoFxJOsSf3VLyUC4tYuY1VHqgKDQ==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 27 Jun 2019 23:03:11 GMT']
+      host: [database.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.16]
+      opc-request-id: [E87080F8879842E386CF47FF0CE79C48]
+      opc-retry-token: [610f42cf-9416-404f-8734-47d0d997b357]
+      user-agent: [Oracle-PythonSDK/2.2.16 (python 3.5.3; x86_64-Linux)]
+      x-content-sha256: [XQdnqo4he/Cak0RPrhH+FyrJMbI/tazWnHM9gInbIIk=]
+    method: POST
+    uri: https://database.us-phoenix-1.oraclecloud.com/20160918/autonomousDatabases
+  response:
+    body: {string: "{\n  \"additionalDatabaseStatus\" : null,\n  \"autonomousContainerDatabaseId\"\
+        \ : null,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia\"\
+        ,\n  \"connectionStrings\" : null,\n  \"connectionUrls\" : null,\n  \"cpuCoreCount\"\
+        \ : 1,\n  \"dataStorageSizeInTBs\" : 1,\n  \"dbName\" : \"E0241631\",\n  \"\
+        dbVersion\" : null,\n  \"dbWorkload\" : \"OLTP\",\n  \"definedTags\" : { },\n\
+        \  \"displayName\" : \"__STS0241_2982\",\n  \"freeformTags\" : { },\n  \"\
+        id\" : \"ocid1.autonomousdatabase.oc1.phx.abyhqljs4yuz3z2wuocksjtll5sskei5sfp7ca57fxnduzogwllp5j4azd3a\"\
+        ,\n  \"isAutoScalingEnabled\" : false,\n  \"isDedicated\" : false,\n  \"isPreview\"\
+        \ : false,\n  \"licenseModel\" : \"BRING_YOUR_OWN_LICENSE\",\n  \"lifecycleDetails\"\
+        \ : null,\n  \"lifecycleState\" : \"PROVISIONING\",\n  \"serviceConsoleUrl\"\
+        \ : null,\n  \"sqlWebDeveloperUrl\" : null,\n  \"timeCreated\" : \"2019-06-27T23:03:11.845Z\"\
+        ,\n  \"usedDataStorageSizeInTBs\" : null,\n  \"whitelistedIps\" : [ \"0.0.0.0/0\"\
+        \ ]\n}"}
+    headers:
+      Connection: [keep-alive]
+      Content-Length: ['933']
+      Content-Type: [application/json]
+      Date: ['Thu, 27 Jun 2019 23:03:11 GMT']
+      ETag: [895d0385]
+      X-Content-Type-Options: [nosniff]
+      opc-request-id: [E87080F8879842E386CF47FF0CE79C48/029F59C2A4FB43D7A9A569B3BFFFFECC/C594D39E220A9A8BD44BEFB9D9CF2C72]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"responseJson": "{\"opcRequestId\": \"D58A49BCB31340CCA3B4CE56B149F7F5\",
+      \"opcNextPage\": null, \"autonomousDatabase\": {\"isDedicated\": false, \"autonomousContainerDatabaseId\":
+      null, \"dbVersion\": null, \"lifecycleDetails\": null, \"connectionUrls\": null,
+      \"whitelistedIps\": [\"0.0.0.0/0\"], \"licenseModel\": \"BRING_YOUR_OWN_LICENSE\",
+      \"isAutoScalingEnabled\": false, \"usedDataStorageSizeInTbs\": null, \"connectionStrings\":
+      null, \"dbName\": \"E0241631\", \"definedTags\": {}, \"freeformTags\": {}, \"cpuCoreCount\":
+      1, \"displayName\": \"__STS0241_2982\", \"lifecycleState\": \"PROVISIONING\",
+      \"id\": \"ocid1.autonomousdatabase.oc1.phx.abyhqljs4yuz3z2wuocksjtll5sskei5sfp7ca57fxnduzogwllp5j4azd3a\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia\",
+      \"isPreview\": false, \"timeCreated\": \"2019-06-27T23:03:11.845000+00:00\",
+      \"serviceConsoleUrl\": null, \"dataStorageSizeInTbs\": 1, \"dbWorkload\": \"OLTP\"},
+      \"eTag\": \"895d0385\"}", "requestJson": "{\"createAutonomousDatabaseDetails\":
+      {\"cpuCoreCount\": 1, \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia\",
+      \"cloneType\": \"FULL\", \"displayName\": \"__STS0241_2982\", \"source\": \"DATABASE\",
+      \"sourceId\": \"ocid1.autonomousdatabase.oc1.phx.abyhqljsdhmx7lervdkouzk25zegc4gtx4664ltjedkrkncbrutme3niajja\",
+      \"dataStorageSizeInTBs\": 1, \"dbName\": \"E0241631\", \"adminPassword\": \"DBaaS12345_#\"},
+      \"opcRetryToken\": \"610f42cf-9416-404f-8734-47d0d997b357\"}", "requestClass":
+      "com.oracle.bmc.database.requests.CreateAutonomousDatabaseRequest", "responseClass":
+      "com.oracle.bmc.database.responses.CreateAutonomousDatabaseResponse", "listResponse":
+      false, "containerId": "595ffe0a-098e-4009-afc6-c4ac899e7c08"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['1801']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0241&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Thu, 27 Jun 2019 23:03:12 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"cpuCoreCount": 1, "compartmentId": "ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia",
+      "dbWorkload": "DW", "isAutoScalingEnabled": true, "displayName": "preview__STS0241_6412",
+      "source": "NONE", "dataStorageSizeInTBs": 1, "dbName": "E0241100", "adminPassword":
+      "DBaaS12345_#"}'
+    headers:
+      Content-Length: ['313']
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host content-length content-type x-content-sha256",keyId="ocidv1:tenancy:oc1:phx:1458753575596:aaaaaaaavary4yqe4ljpv5wzp74eflkwpu/ocid1.user.oc1..aaaaaaaama4xixhnuqdci3t4zmmeoh2kfs2q4gz7tx3bs3hihwkpbw4lr64q/8b:3e:78:cd:6a:66:81:8f:c4:14:e4:03:b6:20:d8:5c",signature="Cu4ou4C1+6hgNs/4I0XyTfUiBdThru/wGib9tGTjY8z6xyv+o2znfBkM7UdofldA5d7Wt0vukZqtYOeBnsPenTg5X6wq6yu7QDD7colqMOkjI68GJEHndsG2rzj2RBD2j114f1aykvWcB/E+Rhjeb8oXhtKxxR2QEmNpJm2jYlG4j1wgdTUkndr6jCqYKM60hUch5gvkWZX2U+WgRvqJ/jBRp3Uk8I1nOxI/QtWm/z9ilgc+EJ4U8v5gmldukAToJfQq3Av/rvjUtU+FtGBQev6nSAww5GJj20C3LLbObnmNjT7Z1JMpMmLJ+O0RMif4fCb5th/0Ovjy8Ul8fhu9mw==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Thu, 27 Jun 2019 23:03:28 GMT']
+      host: [database.us-phoenix-1.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.2.16]
+      opc-request-id: [879EB341462F4C569A4F0DC487848934]
+      opc-retry-token: [a2e4c976-5f67-4de7-8c7d-a67dd72d7fc7]
+      user-agent: [Oracle-PythonSDK/2.2.16 (python 3.5.3; x86_64-Linux)]
+      x-content-sha256: [wUk+iY3azuwPdlkfa48RlXqXgsc6FRZZHED5fgRerkI=]
+    method: POST
+    uri: https://database.us-phoenix-1.oraclecloud.com/20160918/autonomousDatabases
+  response:
+    body: {string: "{\n  \"additionalDatabaseStatus\" : null,\n  \"autonomousContainerDatabaseId\"\
+        \ : null,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia\"\
+        ,\n  \"connectionStrings\" : null,\n  \"connectionUrls\" : null,\n  \"cpuCoreCount\"\
+        \ : 1,\n  \"dataStorageSizeInTBs\" : 1,\n  \"dbName\" : \"E0241100\",\n  \"\
+        dbVersion\" : null,\n  \"dbWorkload\" : \"DW\",\n  \"definedTags\" : { },\n\
+        \  \"displayName\" : \"preview__STS0241_6412\",\n  \"freeformTags\" : { },\n\
+        \  \"id\" : \"ocid1.autonomousdatabase.oc1.phx.abyhqljrdvh7avzc72qhmfluig5rf7xlnjqtl5tyi7nqyu56qbzsqs5d36ja\"\
+        ,\n  \"isAutoScalingEnabled\" : true,\n  \"isDedicated\" : false,\n  \"isPreview\"\
+        \ : false,\n  \"licenseModel\" : \"BRING_YOUR_OWN_LICENSE\",\n  \"lifecycleDetails\"\
+        \ : null,\n  \"lifecycleState\" : \"PROVISIONING\",\n  \"serviceConsoleUrl\"\
+        \ : null,\n  \"sqlWebDeveloperUrl\" : null,\n  \"timeCreated\" : \"2019-06-27T23:03:29.004Z\"\
+        ,\n  \"usedDataStorageSizeInTBs\" : null,\n  \"whitelistedIps\" : [ \"0.0.0.0/0\"\
+        \ ]\n}"}
+    headers:
+      Connection: [keep-alive]
+      Content-Length: ['937']
+      Content-Type: [application/json]
+      Date: ['Thu, 27 Jun 2019 23:03:29 GMT']
+      ETag: [673dd2fc]
+      X-Content-Type-Options: [nosniff]
+      opc-request-id: [879EB341462F4C569A4F0DC487848934/D4DEDB10C37D3C31E2FF99C562DCC168/7318EB80F32BC435C0BCF26FE82401EF]
+    status: {code: 200, message: OK}
+- request:
+    body: '{"responseJson": "{\"opcRequestId\": \"CF3E6BF6ABE840EF899361D1B698891C\",
+      \"opcNextPage\": null, \"autonomousDatabase\": {\"isDedicated\": false, \"autonomousContainerDatabaseId\":
+      null, \"dbVersion\": null, \"lifecycleDetails\": null, \"connectionUrls\": null,
+      \"whitelistedIps\": [\"0.0.0.0/0\"], \"licenseModel\": \"BRING_YOUR_OWN_LICENSE\",
+      \"isAutoScalingEnabled\": true, \"usedDataStorageSizeInTbs\": null, \"connectionStrings\":
+      null, \"dbName\": \"E0241100\", \"definedTags\": {}, \"freeformTags\": {}, \"cpuCoreCount\":
+      1, \"displayName\": \"preview__STS0241_6412\", \"lifecycleState\": \"PROVISIONING\",
+      \"id\": \"ocid1.autonomousdatabase.oc1.phx.abyhqljrdvh7avzc72qhmfluig5rf7xlnjqtl5tyi7nqyu56qbzsqs5d36ja\",
+      \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia\",
+      \"isPreview\": false, \"timeCreated\": \"2019-06-27T23:03:29.004000+00:00\",
+      \"serviceConsoleUrl\": null, \"dataStorageSizeInTbs\": 1, \"dbWorkload\": \"DW\"},
+      \"eTag\": \"673dd2fc\"}", "requestJson": "{\"createAutonomousDatabaseDetails\":
+      {\"cpuCoreCount\": 1, \"compartmentId\": \"ocid1.compartment.oc1..aaaaaaaaybnl4otkmah23bx73e4h4t2fzvlrv4jo6elnnuegl5g2sleffhia\",
+      \"dbName\": \"E0241100\", \"isAutoScalingEnabled\": true, \"displayName\": \"preview__STS0241_6412\",
+      \"source\": \"NONE\", \"dataStorageSizeInTBs\": 1, \"dbWorkload\": \"DW\", \"adminPassword\":
+      \"DBaaS12345_#\"}, \"opcRetryToken\": \"a2e4c976-5f67-4de7-8c7d-a67dd72d7fc7\"}",
+      "requestClass": "com.oracle.bmc.database.requests.CreateAutonomousDatabaseRequest",
+      "responseClass": "com.oracle.bmc.database.responses.CreateAutonomousDatabaseResponse",
+      "listResponse": false, "containerId": "21be972a-d541-4ede-b31c-187202dc86af"}'
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['1726']
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: http://localhost:8090/SDKTestingService/response?sessionId=0241&lang=Python
+  response:
+    body: {string: ''}
+    headers:
+      Content-Length: ['0']
+      Content-Type: [text/plain]
+      Date: ['Thu, 27 Jun 2019 23:03:29 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 200, message: OK}
 version: 1

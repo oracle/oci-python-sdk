@@ -32,6 +32,7 @@ Database
     oci.database.models.AutonomousDatabaseConnectionStrings
     oci.database.models.AutonomousDatabaseConnectionUrls
     oci.database.models.AutonomousDatabaseSummary
+    oci.database.models.AutonomousDbPreviewVersionSummary
     oci.database.models.AutonomousExadataInfrastructure
     oci.database.models.AutonomousExadataInfrastructureMaintenanceWindow
     oci.database.models.AutonomousExadataInfrastructureShapeSummary

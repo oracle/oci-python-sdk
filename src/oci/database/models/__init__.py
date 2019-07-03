@@ -17,6 +17,7 @@ from .autonomous_database_backup_summary import AutonomousDatabaseBackupSummary
 from .autonomous_database_connection_strings import AutonomousDatabaseConnectionStrings
 from .autonomous_database_connection_urls import AutonomousDatabaseConnectionUrls
 from .autonomous_database_summary import AutonomousDatabaseSummary
+from .autonomous_db_preview_version_summary import AutonomousDbPreviewVersionSummary
 from .autonomous_exadata_infrastructure import AutonomousExadataInfrastructure
 from .autonomous_exadata_infrastructure_maintenance_window import AutonomousExadataInfrastructureMaintenanceWindow
 from .autonomous_exadata_infrastructure_shape_summary import AutonomousExadataInfrastructureShapeSummary
@@ -109,6 +110,7 @@ database_type_mapping = {
     "AutonomousDatabaseConnectionStrings": AutonomousDatabaseConnectionStrings,
     "AutonomousDatabaseConnectionUrls": AutonomousDatabaseConnectionUrls,
     "AutonomousDatabaseSummary": AutonomousDatabaseSummary,
+    "AutonomousDbPreviewVersionSummary": AutonomousDbPreviewVersionSummary,
     "AutonomousExadataInfrastructure": AutonomousExadataInfrastructure,
     "AutonomousExadataInfrastructureMaintenanceWindow": AutonomousExadataInfrastructureMaintenanceWindow,
     "AutonomousExadataInfrastructureShapeSummary": AutonomousExadataInfrastructureShapeSummary,

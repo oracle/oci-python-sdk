@@ -415,4 +415,20 @@ interactions:
       Date: ['Thu, 18 Apr 2019 23:37:07 GMT']
       Server: [Jetty(9.4.7.v20170914)]
     status: {code: 204, message: No Content}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['0']
+      User-Agent: [python-requests/2.21.0]
+    method: DELETE
+    uri: http://localhost:8090/SDKTestingService/sessions/0593
+  response:
+    body: {string: ''}
+    headers:
+      Date: ['Mon, 10 Jun 2019 21:28:28 GMT']
+      Server: [Jetty(9.4.7.v20170914)]
+    status: {code: 204, message: No Content}
 version: 1
