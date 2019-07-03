@@ -69,6 +69,47 @@ def test_cancel_job(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_change_stack_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('resource_manager', 'ChangeStackCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'ChangeStackCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='ChangeStackCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
+            response = client.change_stack_compartment(
+                stack_id=request.pop(util.camelize('stack_id')),
+                change_stack_compartment_details=request.pop(util.camelize('change_stack_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'resource_manager',
+            'ChangeStackCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_stack_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
 def test_create_job(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'CreateJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -488,6 +529,46 @@ def test_get_stack_tf_config(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_get_work_request(testing_service_client):
+    if not testing_service_client.is_api_enabled('resource_manager', 'GetWorkRequest'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'GetWorkRequest')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='GetWorkRequest')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
+            response = client.get_work_request(
+                work_request_id=request.pop(util.camelize('work_request_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'resource_manager',
+            'GetWorkRequest',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'workRequest',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
 def test_list_jobs(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'ListJobs'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -594,6 +675,183 @@ def test_list_stacks(testing_service_client):
             result,
             service_error,
             'stackSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_list_work_request_errors(testing_service_client):
+    if not testing_service_client.is_api_enabled('resource_manager', 'ListWorkRequestErrors'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'ListWorkRequestErrors')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='ListWorkRequestErrors')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
+            response = client.list_work_request_errors(
+                work_request_id=request.pop(util.camelize('work_request_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_work_request_errors(
+                    work_request_id=request.pop(util.camelize('work_request_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_work_request_errors(
+                        work_request_id=request.pop(util.camelize('work_request_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'resource_manager',
+            'ListWorkRequestErrors',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'workRequestError',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_list_work_request_logs(testing_service_client):
+    if not testing_service_client.is_api_enabled('resource_manager', 'ListWorkRequestLogs'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'ListWorkRequestLogs')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='ListWorkRequestLogs')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
+            response = client.list_work_request_logs(
+                work_request_id=request.pop(util.camelize('work_request_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_work_request_logs(
+                    work_request_id=request.pop(util.camelize('work_request_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_work_request_logs(
+                        work_request_id=request.pop(util.camelize('work_request_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'resource_manager',
+            'ListWorkRequestLogs',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'workRequestLogEntry',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_list_work_requests(testing_service_client):
+    if not testing_service_client.is_api_enabled('resource_manager', 'ListWorkRequests'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'ListWorkRequests')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='ListWorkRequests')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
+            response = client.list_work_requests(
+                compartment_id=request.pop(util.camelize('compartment_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_work_requests(
+                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_work_requests(
+                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'resource_manager',
+            'ListWorkRequests',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'workRequestSummary',
             False,
             True
         )

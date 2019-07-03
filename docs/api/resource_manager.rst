@@ -19,6 +19,7 @@ Resource Manager
     :template: autosummary/model_class.rst
 
     oci.resource_manager.models.ApplyJobPlanResolution
+    oci.resource_manager.models.ChangeStackCompartmentDetails
     oci.resource_manager.models.ConfigSource
     oci.resource_manager.models.CreateConfigSourceDetails
     oci.resource_manager.models.CreateJobDetails
@@ -34,4 +35,9 @@ Resource Manager
     oci.resource_manager.models.UpdateJobDetails
     oci.resource_manager.models.UpdateStackDetails
     oci.resource_manager.models.UpdateZipUploadConfigSourceDetails
+    oci.resource_manager.models.WorkRequest
+    oci.resource_manager.models.WorkRequestError
+    oci.resource_manager.models.WorkRequestLogEntry
+    oci.resource_manager.models.WorkRequestResource
+    oci.resource_manager.models.WorkRequestSummary
     oci.resource_manager.models.ZipUploadConfigSource
