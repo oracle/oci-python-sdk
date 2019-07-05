@@ -13,6 +13,7 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 * Removed preauthenticated URL for object storage to avoid service errors on permission
 * Fixed several bugs
 * Added showoci_to_se.py - convert showoci JSON file to simple JSON format for easier processing.
+* Added OCID for csv extracts
 
 ====================
 19.6.24 - 2019-06-24
