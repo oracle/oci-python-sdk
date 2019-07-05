@@ -21,6 +21,7 @@ API Reference
 * :doc:`Kms Crypto <key_management/client/oci.key_management.KmsCryptoClient>`
 * :doc:`Kms Management <key_management/client/oci.key_management.KmsManagementClient>`
 * :doc:`Kms Vault <key_management/client/oci.key_management.KmsVaultClient>`
+* :doc:`Quotas <limits/client/oci.limits.QuotasClient>`
 * :doc:`Load Balancer <load_balancer/client/oci.load_balancer.LoadBalancerClient>`
 * :doc:`Monitoring <monitoring/client/oci.monitoring.MonitoringClient>`
 * :doc:`Object Storage <object_storage/client/oci.object_storage.ObjectStorageClient>`
@@ -63,6 +64,7 @@ API Reference
     healthchecks
     identity
     key_management
+    limits
     load_balancer
     monitoring
     object_storage
