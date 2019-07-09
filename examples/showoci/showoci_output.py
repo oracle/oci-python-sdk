@@ -1132,15 +1132,18 @@ class ShowOCIOutput(object):
 
                 if 'boot_volume' in instance:
                     for bv in instance['boot_volume']:
-                        print(self.tabs2 + "Boot : " + bv['desc'])
+                        if 'desc' in bv:
+                            print(self.tabs2 + "Boot : " + bv['desc'])
 
                 if 'block_volume' in instance:
                     for bv in instance['block_volume']:
-                        print(self.tabs2 + "Vol  : " + bv['desc'])
+                        if 'desc' in bv:
+                            print(self.tabs2 + "Vol  : " + bv['desc'])
 
                 if 'vnic' in instance:
                     for vnic in instance['vnic']:
-                        print(self.tabs2 + "VNIC : " + vnic['desc'])
+                        if 'desc' in vnic:
+                            print(self.tabs2 + "VNIC : " + vnic['desc'])
 
                 if 'console' in instance:
                     if instance['console']:
@@ -1961,7 +1964,9 @@ class ShowOCICSV(object):
                         'dhcp_options': subnet['dhcp_options'],
                         'route': subnet['route'],
                         'security_list': str(', '.join(x for x in subnet['security_list'])),
-                        'dns': subnet['dns']}
+                        'dns': subnet['dns'],
+                        'vcn_id': vcn['id'],
+                        'subnet_id': subnet['id']}
                 self.csv_network_subnet.append(data)
 
         except Exception as e:
@@ -1986,7 +1991,10 @@ class ShowOCICSV(object):
                             'sec_protocol': "",
                             'is_stateless': "",
                             'sec_rules': "Empty",
-                            'time_created': sl['time_created'][0:16]}
+                            'time_created': sl['time_created'][0:16],
+                            'vcn_id': vcn['id'],
+                            'sec_id': sl['id']
+                            }
                     self.csv_network_security_list.append(data)
 
                 else:
@@ -2000,7 +2008,9 @@ class ShowOCICSV(object):
                                 'sec_protocol': slr['protocol_name'],
                                 'is_stateless': slr['is_stateless'],
                                 'sec_rules': slr['desc'],
-                                'time_created': sl['time_created']
+                                'time_created': sl['time_created'],
+                                'vcn_id': vcn['id'],
+                                'sec_id': sl['id']
                                 }
                         self.csv_network_security_list.append(data)
 
@@ -2022,7 +2032,10 @@ class ShowOCICSV(object):
                         'option_1': "",
                         'option_2': "",
                         'dhcp_compartment': dhcp['compartment'],
-                        'time_created': dhcp['time_created'][0:16]}
+                        'time_created': dhcp['time_created'][0:16],
+                        'vcn_id': vcn['id'],
+                        'dhcp_id': dhcp['id']
+                        }
 
                 seq = 0
                 for opt in dhcp['opt']:
@@ -2054,7 +2067,10 @@ class ShowOCICSV(object):
                             'route_compartment': rt['compartment'],
                             'destination': "",
                             'route': "Empty",
-                            'time_created': rt['time_created'][0:16]}
+                            'time_created': rt['time_created'][0:16],
+                            'vcn_id': vcn['id'],
+                            'route_id': rt['id']
+                            }
                     self.csv_network_routes.append(data)
 
                 else:
@@ -2067,7 +2083,10 @@ class ShowOCICSV(object):
                                 'route_compartment': rt['compartment'],
                                 'destination': rl['destination'],
                                 'route': rl['desc'],
-                                'time_created': rt['time_created'][0:16]}
+                                'time_created': rt['time_created'][0:16],
+                                'vcn_id': vcn['id'],
+                                'route_id': rt['id']
+                                }
                         self.csv_network_routes.append(data)
 
         except Exception as e:
@@ -2171,7 +2190,9 @@ class ShowOCICSV(object):
                                 'domain': dbs['domain'],
                                 'db_nodes': str(', '.join(x['desc'] for x in dbs['db_nodes'])),
                                 'freeform_tags': str(', '.join(key + "=" + dbs['freeform_tags'][key] for key in dbs['freeform_tags'].keys())),
-                                'defined_tags': self.__get_defined_tags(dbs['defined_tags'])
+                                'defined_tags': self.__get_defined_tags(dbs['defined_tags']),
+                                'database_id': db['id'],
+                                'dbsystem_id': dbs['id']
                                 }
 
                         self.csv_database.append(data)
@@ -2210,7 +2231,9 @@ class ShowOCICSV(object):
                         'domain': "",
                         'db_nodes': "",
                         'freeform_tags': str(', '.join(key + "=" + dbs['freeform_tags'][key] for key in dbs['freeform_tags'].keys())),
-                        'defined_tags': self.__get_defined_tags(dbs['defined_tags'])
+                        'defined_tags': self.__get_defined_tags(dbs['defined_tags']),
+                        'database_id': "",
+                        'dbsystem_id': dbs['id']
                         }
 
                 self.csv_database.append(data)
@@ -2272,7 +2295,8 @@ class ShowOCICSV(object):
                         'block_volumes_size_gb': "",
                         'block_volumes_b_policy': "",
                         'freeform_tags': str(', '.join(key + "=" + instance['freeform_tags'][key] for key in instance['freeform_tags'].keys())),
-                        'defined_tags': self.__get_defined_tags(instance['defined_tags'])
+                        'defined_tags': self.__get_defined_tags(instance['defined_tags']),
+                        'instance_id': instance['id']
                         }
 
                 # go over the vnics
@@ -2345,6 +2369,7 @@ class ShowOCICSV(object):
                             'listener_path': "",
                             'listener_rule': "",
                             'listener_host': "",
+                            'loadbalancer_id': lb['id']
                             }
                     self.csv_load_balancer.append(data)
 
@@ -2364,6 +2389,7 @@ class ShowOCICSV(object):
                             'listener_host': str(', '.join(x for x in listener['hostname_names'])),
                             'listener_path': listener['path_route_set_name'],
                             'listener_rule': str(', '.join(x for x in listener['rule_set_names'])),
+                            'loadbalancer_id': lb['id']
                             }
                     self.csv_load_balancer.append(data)
 
@@ -2397,7 +2423,8 @@ class ShowOCICSV(object):
                                 'health_check': str(', '.join(x for x in bs['health_check'])),
                                 'session_persistence': bs['session_persistence'],
                                 'ssl_cert': bs['ssl_cert'],
-                                'backend': backend
+                                'backend': backend,
+                                'loadbalancer_id': lb['id']
                                 }
                         self.csv_load_balancer_bs.append(data)
 

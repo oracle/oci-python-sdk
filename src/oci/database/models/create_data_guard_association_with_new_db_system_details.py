@@ -50,6 +50,14 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             The value to assign to the subnet_id property of this CreateDataGuardAssociationWithNewDbSystemDetails.
         :type subnet_id: str
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :type nsg_ids: list[str]
+
+        :param backup_network_nsg_ids:
+            The value to assign to the backup_network_nsg_ids property of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :type backup_network_nsg_ids: list[str]
+
         :param hostname:
             The value to assign to the hostname property of this CreateDataGuardAssociationWithNewDbSystemDetails.
         :type hostname: str
@@ -63,6 +71,8 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             'display_name': 'str',
             'availability_domain': 'str',
             'subnet_id': 'str',
+            'nsg_ids': 'list[str]',
+            'backup_network_nsg_ids': 'list[str]',
             'hostname': 'str'
         }
 
@@ -74,6 +84,8 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             'display_name': 'displayName',
             'availability_domain': 'availabilityDomain',
             'subnet_id': 'subnetId',
+            'nsg_ids': 'nsgIds',
+            'backup_network_nsg_ids': 'backupNetworkNsgIds',
             'hostname': 'hostname'
         }
 
@@ -84,6 +96,8 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         self._display_name = None
         self._availability_domain = None
         self._subnet_id = None
+        self._nsg_ids = None
+        self._backup_network_nsg_ids = None
         self._hostname = None
         self._creation_type = 'NewDbSystem'
 
@@ -170,6 +184,68 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        The list of Network Security Group `OCIDs`__ associated with this DB system.
+        A maximum of 5 allowed.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The nsg_ids of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        The list of Network Security Group `OCIDs`__ associated with this DB system.
+        A maximum of 5 allowed.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param nsg_ids: The nsg_ids of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
+
+    @property
+    def backup_network_nsg_ids(self):
+        """
+        Gets the backup_network_nsg_ids of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        The list of Network Security Group `OCIDs`__ associated with the backup network of this DB system.
+        Applicable only to Exadata DB systems.
+        A maximum of 5 allowed.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The backup_network_nsg_ids of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :rtype: list[str]
+        """
+        return self._backup_network_nsg_ids
+
+    @backup_network_nsg_ids.setter
+    def backup_network_nsg_ids(self, backup_network_nsg_ids):
+        """
+        Sets the backup_network_nsg_ids of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        The list of Network Security Group `OCIDs`__ associated with the backup network of this DB system.
+        Applicable only to Exadata DB systems.
+        A maximum of 5 allowed.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param backup_network_nsg_ids: The backup_network_nsg_ids of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :type: list[str]
+        """
+        self._backup_network_nsg_ids = backup_network_nsg_ids
 
     @property
     def hostname(self):

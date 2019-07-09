@@ -24,6 +24,9 @@ Core Services
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.core.models.AddNetworkSecurityGroupSecurityRulesDetails
+    oci.core.models.AddSecurityRuleDetails
+    oci.core.models.AddedNetworkSecurityGroupSecurityRules
     oci.core.models.AppCatalogListing
     oci.core.models.AppCatalogListingResourceVersion
     oci.core.models.AppCatalogListingResourceVersionAgreements
@@ -56,7 +59,11 @@ Core Services
     oci.core.models.ChangeInstanceConfigurationCompartmentDetails
     oci.core.models.ChangeInstancePoolCompartmentDetails
     oci.core.models.ChangeNatGatewayCompartmentDetails
+    oci.core.models.ChangeRouteTableCompartmentDetails
+    oci.core.models.ChangeSecurityListCompartmentDetails
     oci.core.models.ChangeServiceGatewayCompartmentDetails
+    oci.core.models.ChangeSubnetCompartmentDetails
+    oci.core.models.ChangeVcnCompartmentDetails
     oci.core.models.ChangeVolumeBackupCompartmentDetails
     oci.core.models.ChangeVolumeCompartmentDetails
     oci.core.models.ChangeVolumeGroupBackupCompartmentDetails
@@ -87,6 +94,7 @@ Core Services
     oci.core.models.CreateInternetGatewayDetails
     oci.core.models.CreateLocalPeeringGatewayDetails
     oci.core.models.CreateNatGatewayDetails
+    oci.core.models.CreateNetworkSecurityGroupDetails
     oci.core.models.CreatePrivateIpDetails
     oci.core.models.CreatePublicIpDetails
     oci.core.models.CreateRemotePeeringConnectionDetails
@@ -178,15 +186,19 @@ Core Services
     oci.core.models.LetterOfAuthority
     oci.core.models.LocalPeeringGateway
     oci.core.models.NatGateway
+    oci.core.models.NetworkSecurityGroup
+    oci.core.models.NetworkSecurityGroupVnic
     oci.core.models.ParavirtualizedVolumeAttachment
     oci.core.models.PeerRegionForRemotePeering
     oci.core.models.PortRange
     oci.core.models.PrivateIp
     oci.core.models.PublicIp
     oci.core.models.RemotePeeringConnection
+    oci.core.models.RemoveNetworkSecurityGroupSecurityRulesDetails
     oci.core.models.RouteRule
     oci.core.models.RouteTable
     oci.core.models.SecurityList
+    oci.core.models.SecurityRule
     oci.core.models.Service
     oci.core.models.ServiceGateway
     oci.core.models.ServiceIdRequestDetails
@@ -220,11 +232,14 @@ Core Services
     oci.core.models.UpdateInternetGatewayDetails
     oci.core.models.UpdateLocalPeeringGatewayDetails
     oci.core.models.UpdateNatGatewayDetails
+    oci.core.models.UpdateNetworkSecurityGroupDetails
+    oci.core.models.UpdateNetworkSecurityGroupSecurityRulesDetails
     oci.core.models.UpdatePrivateIpDetails
     oci.core.models.UpdatePublicIpDetails
     oci.core.models.UpdateRemotePeeringConnectionDetails
     oci.core.models.UpdateRouteTableDetails
     oci.core.models.UpdateSecurityListDetails
+    oci.core.models.UpdateSecurityRuleDetails
     oci.core.models.UpdateServiceGatewayDetails
     oci.core.models.UpdateSubnetDetails
     oci.core.models.UpdateVcnDetails
@@ -235,6 +250,7 @@ Core Services
     oci.core.models.UpdateVolumeGroupBackupDetails
     oci.core.models.UpdateVolumeGroupDetails
     oci.core.models.UpdateVolumeKmsKeyDetails
+    oci.core.models.UpdatedNetworkSecurityGroupSecurityRules
     oci.core.models.Vcn
     oci.core.models.VirtualCircuit
     oci.core.models.VirtualCircuitBandwidthShape

@@ -1222,7 +1222,8 @@ class ShowOCIData(object):
                 for bva in boot_vol_attachement:
                     bvval = {'id': bva['boot_volume_id']}
                     bvval = self.__get_core_block_volume_boot(bva['boot_volume_id'], instance['compartment_name'])
-                    bv.append(bvval)
+                    if 'display_name' in bvval:
+                        bv.append(bvval)
 
                 inst['boot_volume'] = bv
 
@@ -1234,7 +1235,8 @@ class ShowOCIData(object):
                     if bvola['lifecycle_state'] == "ATTACHED":
                         bvval = {'id': bvola['volume_id']}
                         bvval = self.__get_core_block_volume(bvola['volume_id'], instance['compartment_name'])
-                        bvol.append(bvval)
+                        if 'display_name' in bvval:
+                            bvol.append(bvval)
 
                 inst['block_volume'] = bvol
 
@@ -1444,7 +1446,12 @@ class ShowOCIData(object):
                 if len(db_nodes) > 1:
                     nodeidstr = str(nodeid)
 
-                value = {'desc': "Node " + str(nodeidstr) + "  : " + str(db_node['hostname']) + " - " + str(db_node['lifecycle_state']) + " - " + str(db_node['vnic_details']['dbdesc'] + ("" if db_node['fault_domain'] == "None" else " - " + str(db_node['fault_domain']))),
+                vnic_desc = ""
+                if 'vnic_details' in db_node:
+                    if 'dbdesc' in db_node['vnic_details']:
+                        vnic_desc = db_node['vnic_details']['dbdesc']
+
+                value = {'desc': "Node " + str(nodeidstr) + "  : " + str(db_node['hostname']) + " - " + str(db_node['lifecycle_state']) + " - " + str(vnic_desc + ("" if db_node['fault_domain'] == "None" else " - " + str(db_node['fault_domain']))),
                          'software_storage_size_in_gb': db_node['software_storage_size_in_gb'],
                          'lifecycle_state': db_node['lifecycle_state'],
                          'hostname': db_node['hostname'],
@@ -1479,7 +1486,15 @@ class ShowOCIData(object):
                          'time_created': db['time_created'],
                          'defined_tags': db['defined_tags'],
                          'dataguard': self.__get_database_db_dataguard(db['dataguard']),
-                         'freeform_tags': db['freeform_tags']}
+                         'freeform_tags': db['freeform_tags'],
+                         'db_name': db['db_name'],
+                         'pdb_name': pdb_name,
+                         'db_workload': db['db_workload'],
+                         'character_set': db['character_set'],
+                         'db_unique_name': db['db_unique_name'],
+                         'lifecycle_state': db['lifecycle_state'],
+                         'id': db['id']
+                         }
 
                 data.append(value)
             return data
@@ -1620,7 +1635,9 @@ class ShowOCIData(object):
                          'host': dbs['hostname'],
                          'domain': dbs['domain'],
                          'data_subnet': dbs['data_subnet'],
+                         'data_subnet_id': dbs['data_subnet_id'],
                          'backup_subnet': dbs['backup_subnet'],
+                         'backup_subnet_id': dbs['backup_subnet_id'],
                          'scan_dns': dbs['scan_dns_record_id'],
                          'scan_ips': dbs['scan_ips'],
                          'vip_ips': dbs['vip_ips'],
@@ -1975,6 +1992,7 @@ class ShowOCIData(object):
             data['path_route'] = lb['path_route']
             data['hostnames'] = [x['desc'] for x in lb['hostnames']]
             data['compartment_name'] = lb['compartment_name']
+            data['subnet_ids'] = lb['subnet_ids']
 
             # subnets
             datasub = []

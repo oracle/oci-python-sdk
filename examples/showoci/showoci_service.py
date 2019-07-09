@@ -44,6 +44,9 @@ class ShowOCIFlags(object):
     read_ManagedCompartmentForPaaS = True
     read_root_compartment = True
 
+    # is_vcn_exist_for_region
+    is_vcn_exist_for_region = False
+
     # filter flags
     filter_by_region = ""
     filter_by_compartment = ""
@@ -675,17 +678,17 @@ class ShowOCIService(object):
                 self.__load_core_network_main()
 
         # if load compute
-        if self.flags.read_compute:
+        if self.flags.read_compute and self.is_vcn_exist_for_region:
             if self.check_if_service_available(region_name, self.C_COMPUTE):
                 self.__load_core_compute_main()
 
         # database
-        if self.flags.read_database:
+        if self.flags.read_database and self.is_vcn_exist_for_region:
             if self.check_if_service_available(region_name, self.C_DATABASE):
                 self.__load_database_main()
 
         # load balancers
-        if self.flags.read_load_balancer:
+        if self.flags.read_load_balancer and self.is_vcn_exist_for_region:
             if self.check_if_service_available(region_name, self.C_LB):
                 self.__load_load_balancer_main()
 
@@ -695,12 +698,12 @@ class ShowOCIService(object):
                 self.__load_object_storage_main()
 
         # file storage
-        if self.flags.read_file_storage:
+        if self.flags.read_file_storage and self.is_vcn_exist_for_region:
             if self.check_if_service_available(region_name, self.C_FILE_STORAGE):
                 self.__load_file_storage_main()
 
         # containers
-        if self.flags.read_containers:
+        if self.flags.read_containers and self.is_vcn_exist_for_region:
             if self.check_if_service_available(region_name, self.C_CONTAINER):
                 self.__load_container_main()
 
@@ -926,8 +929,7 @@ class ShowOCIService(object):
                         for item in [str(item_var.name) for item_var in users if item_var.id == ugm.user_id]:
                             group_users.append(item)
 
-                    if group_users:
-                        datagroup.append({'id': group.id, 'name': group.name, 'users': ', '.join(x for x in group_users)})
+                    datagroup.append({'id': group.id, 'name': group.name, 'users': ', '.join(x for x in group_users)})
 
                 except oci.exceptions.ServiceError as error:
                     if 'auth' in error.code.lower() or error.code == 'Forbidden':
@@ -1238,18 +1240,7 @@ class ShowOCIService(object):
             self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_VCN)
             self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_SUBNET)
 
-            # reference to network:
-            network = self.data[self.C_NETWORK]
-
-            # append the data for vcns
-            vcns = self.__load_core_network_vcn(virtual_network, compartments)
-            network[self.C_NETWORK_VCN] += vcns
-
-            # append the data for subnets
-            subnets = self.__load_core_network_subnet(virtual_network, compartments, network[self.C_NETWORK_VCN])
-            network[self.C_NETWORK_SUBNET] += subnets
-
-            # if to load all network resources
+            # if to load all network resources initialize the keys
             if self.flags.read_network:
                 # add the key to the network if not exists
                 self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_SGW)
@@ -1267,23 +1258,43 @@ class ShowOCIService(object):
                 self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_DHCP)
                 self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_PRIVATEIP)
 
-                # append the data
-                network[self.C_NETWORK_SGW] += self.__load_core_network_sgw(virtual_network, compartments)
-                network[self.C_NETWORK_NAT] += self.__load_core_network_nat(virtual_network, compartments)
-                network[self.C_NETWORK_DRG] += self.__load_core_network_drg(virtual_network, compartments)
-                network[self.C_NETWORK_DRG_AT] += self.__load_core_network_dra(virtual_network, compartments)
-                network[self.C_NETWORK_CPE] += self.__load_core_network_cpe(virtual_network, compartments)
-                network[self.C_NETWORK_IPS] += self.__load_core_network_ips(virtual_network, compartments)
-                network[self.C_NETWORK_RPC] += self.__load_core_network_rpc(virtual_network, compartments)
-                network[self.C_NETWORK_VC] += self.__load_core_network_vc(virtual_network, compartments)
-                network[self.C_NETWORK_IGW] += self.__load_core_network_igw(virtual_network, compartments, vcns)
-                network[self.C_NETWORK_LPG] += self.__load_core_network_lpg(virtual_network, compartments, vcns)
-                network[self.C_NETWORK_SLIST] += self.__load_core_network_seclst(virtual_network, compartments, vcns)
-                network[self.C_NETWORK_DHCP] += self.__load_core_network_dhcpop(virtual_network, compartments, vcns)
+            # reference to network:
+            network = self.data[self.C_NETWORK]
 
-                routes = self.__load_core_network_routet(virtual_network, compartments, vcns)
-                network[self.C_NETWORK_ROUTE] += routes
-                network[self.C_NETWORK_PRIVATEIP] += self.__load_core_network_privateip(virtual_network, routes)
+            # append the data for vcns
+            vcns = self.__load_core_network_vcn(virtual_network, compartments)
+            network[self.C_NETWORK_VCN] += vcns
+
+            # mark if vcn exist for this regiot
+            self.is_vcn_exist_for_region = (len(vcns) > 0)
+
+            # read network resources only if there are vcns
+            if self.is_vcn_exist_for_region:
+
+                # append the data for subnets
+                subnets = self.__load_core_network_subnet(virtual_network, compartments, network[self.C_NETWORK_VCN])
+                network[self.C_NETWORK_SUBNET] += subnets
+
+                # if to load all network resources
+                if self.flags.read_network:
+
+                    # append the data
+                    network[self.C_NETWORK_SGW] += self.__load_core_network_sgw(virtual_network, compartments)
+                    network[self.C_NETWORK_NAT] += self.__load_core_network_nat(virtual_network, compartments)
+                    network[self.C_NETWORK_DRG] += self.__load_core_network_drg(virtual_network, compartments)
+                    network[self.C_NETWORK_DRG_AT] += self.__load_core_network_dra(virtual_network, compartments)
+                    network[self.C_NETWORK_CPE] += self.__load_core_network_cpe(virtual_network, compartments)
+                    network[self.C_NETWORK_IPS] += self.__load_core_network_ips(virtual_network, compartments)
+                    network[self.C_NETWORK_RPC] += self.__load_core_network_rpc(virtual_network, compartments)
+                    network[self.C_NETWORK_VC] += self.__load_core_network_vc(virtual_network, compartments)
+                    network[self.C_NETWORK_IGW] += self.__load_core_network_igw(virtual_network, compartments, vcns)
+                    network[self.C_NETWORK_LPG] += self.__load_core_network_lpg(virtual_network, compartments, vcns)
+                    network[self.C_NETWORK_SLIST] += self.__load_core_network_seclst(virtual_network, compartments, vcns)
+                    network[self.C_NETWORK_DHCP] += self.__load_core_network_dhcpop(virtual_network, compartments, vcns)
+
+                    routes = self.__load_core_network_routet(virtual_network, compartments, vcns)
+                    network[self.C_NETWORK_ROUTE] += routes
+                    network[self.C_NETWORK_PRIVATEIP] += self.__load_core_network_privateip(virtual_network, routes)
 
             print("")
         except oci.exceptions.RequestException:
@@ -2843,9 +2854,15 @@ class ShowOCIService(object):
                            'compute_display_name': "", 'block_volumes': "", 'secondary_vnics': "",
                            'compartment_id': str(compartment['id']), 'region_name': str(self.config['region'])}
 
-                    # get info on the instance details
-                    # arr = oci.core.models.InstanceConfiguration
-                    arr = compute_manage.get_instance_configuration(config.id).data
+                    arr = []
+                    try:
+                        # get info on the instance details
+                        # arr = oci.core.models.InstanceConfiguration
+                        arr = compute_manage.get_instance_configuration(config.id).data
+
+                    except oci.exceptions.ServiceError as e:
+                        if self.__check_service_error(e.code):
+                            continue
 
                     # instance_detail = oci.core.models.ComputeInstanceDetails
                     if arr.instance_details:
@@ -2891,9 +2908,8 @@ class ShowOCIService(object):
                                                 except oci.exceptions.ServiceError as e:
                                                     if self.__check_service_error(e.code):
                                                         val['compute_source'] = "Boot Volume"
-
-                    data.append(val)
-                    cnt += 1
+                        data.append(val)
+                        cnt += 1
 
             self.__load_print_cnt(cnt, start_time)
             return data
@@ -3093,6 +3109,7 @@ class ShowOCIService(object):
             data['skip_source_dest_check'] = vnic.skip_source_dest_check
             data['is_primary'] = vnic.is_primary
             data['subnet'] = ""
+            data['subnet_id'] = ""
             data['vcn'] = ""
 
             # search the subnet
@@ -3101,6 +3118,7 @@ class ShowOCIService(object):
             if subnet:
                 data['subnet'] = subnet['name'] + " " + subnet['cidr_block']
                 data['vcn'] = subnet['vcn_name'] + " " + subnet['vcn_cidr']
+                data['subnet_id'] = subnet['id']
                 subnet_display = ", Subnet (" + data['subnet'] + "), VCN (" + data['vcn'] + ")"
 
             # check vnic information
@@ -3948,21 +3966,6 @@ class ShowOCIService(object):
                             val['object_lifecycle'] += " , LifeCycle: " + str(l.name) + ", " + str(
                                 l.action) + ", " + str(l.time_amount) + " " + str(l.time_unit)
 
-                    ###############################
-                    # get preauthenticated_requests
-                    ###############################
-                    pre = None
-                    try:
-                        pre = object_storage.list_preauthenticated_requests(namespace_name, str(arr.name)).data
-                    except oci.exceptions.ServiceError as e:
-                        if self.__check_service_error(e.code):
-                            self.__load_print_auth_warning()
-                        else:
-                            raise
-
-                    if pre:
-                        val['preauthenticated_requests'] = str(len(pre))
-
                     data.append(val)
                     cnt += 1
 
@@ -4610,7 +4613,9 @@ class ShowOCIService(object):
                              'domain': str(dbs.domain),
                              'data_storage_percentage': str(dbs.data_storage_percentage),
                              'data_subnet': self.get_network_subnet(str(dbs.subnet_id), True),
+                             'data_subnet_id': str(dbs.subnet_id),
                              'backup_subnet': "" if dbs.backup_subnet_id is None else self.get_network_subnet(str(dbs.backup_subnet_id), True),
+                             'backup_subnet_id': str(dbs.backup_subnet_id),
                              'scan_dns_record_id': "" if dbs.scan_dns_record_id is None else str(dbs.scan_dns_record_id),
                              'listener_port': str(dbs.listener_port),
                              'cluster_name': "" if dbs.cluster_name is None else str(dbs.cluster_name),

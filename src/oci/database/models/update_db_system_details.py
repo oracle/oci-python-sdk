@@ -43,6 +43,14 @@ class UpdateDbSystemDetails(object):
             The value to assign to the defined_tags property of this UpdateDbSystemDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this UpdateDbSystemDetails.
+        :type nsg_ids: list[str]
+
+        :param backup_network_nsg_ids:
+            The value to assign to the backup_network_nsg_ids property of this UpdateDbSystemDetails.
+        :type backup_network_nsg_ids: list[str]
+
         """
         self.swagger_types = {
             'cpu_core_count': 'int',
@@ -50,7 +58,9 @@ class UpdateDbSystemDetails(object):
             'ssh_public_keys': 'list[str]',
             'data_storage_size_in_gbs': 'int',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'nsg_ids': 'list[str]',
+            'backup_network_nsg_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -59,7 +69,9 @@ class UpdateDbSystemDetails(object):
             'ssh_public_keys': 'sshPublicKeys',
             'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'nsg_ids': 'nsgIds',
+            'backup_network_nsg_ids': 'backupNetworkNsgIds'
         }
 
         self._cpu_core_count = None
@@ -68,6 +80,8 @@ class UpdateDbSystemDetails(object):
         self._data_storage_size_in_gbs = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._nsg_ids = None
+        self._backup_network_nsg_ids = None
 
     @property
     def cpu_core_count(self):
@@ -228,6 +242,68 @@ class UpdateDbSystemDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this UpdateDbSystemDetails.
+        The list of Network Security Group `OCIDs`__ associated with this DB system.
+        A maximum of 5 allowed.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The nsg_ids of this UpdateDbSystemDetails.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this UpdateDbSystemDetails.
+        The list of Network Security Group `OCIDs`__ associated with this DB system.
+        A maximum of 5 allowed.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param nsg_ids: The nsg_ids of this UpdateDbSystemDetails.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
+
+    @property
+    def backup_network_nsg_ids(self):
+        """
+        Gets the backup_network_nsg_ids of this UpdateDbSystemDetails.
+        The list of Network Security Group `OCIDs`__ associated with the backup network of this DB system.
+        Applicable only to Exadata DB systems.
+        A maximum of 5 allowed.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The backup_network_nsg_ids of this UpdateDbSystemDetails.
+        :rtype: list[str]
+        """
+        return self._backup_network_nsg_ids
+
+    @backup_network_nsg_ids.setter
+    def backup_network_nsg_ids(self, backup_network_nsg_ids):
+        """
+        Sets the backup_network_nsg_ids of this UpdateDbSystemDetails.
+        The list of Network Security Group `OCIDs`__ associated with the backup network of this DB system.
+        Applicable only to Exadata DB systems.
+        A maximum of 5 allowed.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param backup_network_nsg_ids: The backup_network_nsg_ids of this UpdateDbSystemDetails.
+        :type: list[str]
+        """
+        self._backup_network_nsg_ids = backup_network_nsg_ids
 
     def __repr__(self):
         return formatted_flat_dict(self)

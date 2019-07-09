@@ -89,6 +89,10 @@ class LoadBalancer(object):
             The value to assign to the subnet_ids property of this LoadBalancer.
         :type subnet_ids: list[str]
 
+        :param network_security_group_ids:
+            The value to assign to the network_security_group_ids property of this LoadBalancer.
+        :type network_security_group_ids: list[str]
+
         :param listeners:
             The value to assign to the listeners property of this LoadBalancer.
         :type listeners: dict(str, Listener)
@@ -132,6 +136,7 @@ class LoadBalancer(object):
             'shape_name': 'str',
             'is_private': 'bool',
             'subnet_ids': 'list[str]',
+            'network_security_group_ids': 'list[str]',
             'listeners': 'dict(str, Listener)',
             'hostnames': 'dict(str, Hostname)',
             'certificates': 'dict(str, Certificate)',
@@ -152,6 +157,7 @@ class LoadBalancer(object):
             'shape_name': 'shapeName',
             'is_private': 'isPrivate',
             'subnet_ids': 'subnetIds',
+            'network_security_group_ids': 'networkSecurityGroupIds',
             'listeners': 'listeners',
             'hostnames': 'hostnames',
             'certificates': 'certificates',
@@ -171,6 +177,7 @@ class LoadBalancer(object):
         self._shape_name = None
         self._is_private = None
         self._subnet_ids = None
+        self._network_security_group_ids = None
         self._listeners = None
         self._hostnames = None
         self._certificates = None
@@ -455,6 +462,34 @@ class LoadBalancer(object):
         :type: list[str]
         """
         self._subnet_ids = subnet_ids
+
+    @property
+    def network_security_group_ids(self):
+        """
+        Gets the network_security_group_ids of this LoadBalancer.
+        The array of NSG `OCIDs`__ in use by this Load Balancer.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The network_security_group_ids of this LoadBalancer.
+        :rtype: list[str]
+        """
+        return self._network_security_group_ids
+
+    @network_security_group_ids.setter
+    def network_security_group_ids(self, network_security_group_ids):
+        """
+        Sets the network_security_group_ids of this LoadBalancer.
+        The array of NSG `OCIDs`__ in use by this Load Balancer.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param network_security_group_ids: The network_security_group_ids of this LoadBalancer.
+        :type: list[str]
+        """
+        self._network_security_group_ids = network_security_group_ids
 
     @property
     def listeners(self):

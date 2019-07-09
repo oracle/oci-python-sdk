@@ -19,6 +19,7 @@ Logger names are of the form ``<hierarchy>.<id>`` where the ``<hierarchy>`` is s
 The following code snippet is an example for configuring debug level logging for the oci package:
 
 .. code-block:: python
+
     import oci
     import logging
 

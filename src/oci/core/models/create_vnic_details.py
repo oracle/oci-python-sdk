@@ -42,6 +42,10 @@ class CreateVnicDetails(object):
             The value to assign to the hostname_label property of this CreateVnicDetails.
         :type hostname_label: str
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this CreateVnicDetails.
+        :type nsg_ids: list[str]
+
         :param private_ip:
             The value to assign to the private_ip property of this CreateVnicDetails.
         :type private_ip: str
@@ -61,6 +65,7 @@ class CreateVnicDetails(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'hostname_label': 'str',
+            'nsg_ids': 'list[str]',
             'private_ip': 'str',
             'skip_source_dest_check': 'bool',
             'subnet_id': 'str'
@@ -72,6 +77,7 @@ class CreateVnicDetails(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'hostname_label': 'hostnameLabel',
+            'nsg_ids': 'nsgIds',
             'private_ip': 'privateIp',
             'skip_source_dest_check': 'skipSourceDestCheck',
             'subnet_id': 'subnetId'
@@ -82,6 +88,7 @@ class CreateVnicDetails(object):
         self._display_name = None
         self._freeform_tags = None
         self._hostname_label = None
+        self._nsg_ids = None
         self._private_ip = None
         self._skip_source_dest_check = None
         self._subnet_id = None
@@ -317,6 +324,34 @@ class CreateVnicDetails(object):
         :type: str
         """
         self._hostname_label = hostname_label
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this CreateVnicDetails.
+        A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more
+        information about NSGs, see
+        :class:`NetworkSecurityGroup`.
+
+
+        :return: The nsg_ids of this CreateVnicDetails.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this CreateVnicDetails.
+        A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more
+        information about NSGs, see
+        :class:`NetworkSecurityGroup`.
+
+
+        :param nsg_ids: The nsg_ids of this CreateVnicDetails.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
 
     @property
     def private_ip(self):

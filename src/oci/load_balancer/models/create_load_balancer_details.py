@@ -47,6 +47,10 @@ class CreateLoadBalancerDetails(object):
             The value to assign to the backend_sets property of this CreateLoadBalancerDetails.
         :type backend_sets: dict(str, BackendSetDetails)
 
+        :param network_security_group_ids:
+            The value to assign to the network_security_group_ids property of this CreateLoadBalancerDetails.
+        :type network_security_group_ids: list[str]
+
         :param subnet_ids:
             The value to assign to the subnet_ids property of this CreateLoadBalancerDetails.
         :type subnet_ids: list[str]
@@ -80,6 +84,7 @@ class CreateLoadBalancerDetails(object):
             'listeners': 'dict(str, ListenerDetails)',
             'hostnames': 'dict(str, HostnameDetails)',
             'backend_sets': 'dict(str, BackendSetDetails)',
+            'network_security_group_ids': 'list[str]',
             'subnet_ids': 'list[str]',
             'certificates': 'dict(str, CertificateDetails)',
             'path_route_sets': 'dict(str, PathRouteSetDetails)',
@@ -96,6 +101,7 @@ class CreateLoadBalancerDetails(object):
             'listeners': 'listeners',
             'hostnames': 'hostnames',
             'backend_sets': 'backendSets',
+            'network_security_group_ids': 'networkSecurityGroupIds',
             'subnet_ids': 'subnetIds',
             'certificates': 'certificates',
             'path_route_sets': 'pathRouteSets',
@@ -111,6 +117,7 @@ class CreateLoadBalancerDetails(object):
         self._listeners = None
         self._hostnames = None
         self._backend_sets = None
+        self._network_security_group_ids = None
         self._subnet_ids = None
         self._certificates = None
         self._path_route_sets = None
@@ -317,6 +324,34 @@ class CreateLoadBalancerDetails(object):
         :type: dict(str, BackendSetDetails)
         """
         self._backend_sets = backend_sets
+
+    @property
+    def network_security_group_ids(self):
+        """
+        Gets the network_security_group_ids of this CreateLoadBalancerDetails.
+        The array of NSG `OCIDs`__ to be used by this Load Balancer.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The network_security_group_ids of this CreateLoadBalancerDetails.
+        :rtype: list[str]
+        """
+        return self._network_security_group_ids
+
+    @network_security_group_ids.setter
+    def network_security_group_ids(self, network_security_group_ids):
+        """
+        Sets the network_security_group_ids of this CreateLoadBalancerDetails.
+        The array of NSG `OCIDs`__ to be used by this Load Balancer.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param network_security_group_ids: The network_security_group_ids of this CreateLoadBalancerDetails.
+        :type: list[str]
+        """
+        self._network_security_group_ids = network_security_group_ids
 
     @property
     def subnet_ids(self):
