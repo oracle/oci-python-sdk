@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.2.17 - 2019-07-09
+====================
+
+Added
+-----
+* Support for network security groups in the Load Balancing service
+* Support for network security groups in Core Services
+* Support for network security groups on database systems in the Database service
+* Support for creating autonomous transaction processing and autonomous data warehouse previews in the Database service
+* Support for getting the load balancer attachments of instance pools in the Compute service
+* Support for moving resources across compartments in the Resource Manager service
+* Support for moving VCN resources across compartments in the Networking service
+
+====================
 2.2.16 - 2019-07-02
 ====================
 

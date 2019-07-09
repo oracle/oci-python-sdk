@@ -96,6 +96,10 @@ class Vnic(object):
             The value to assign to the mac_address property of this Vnic.
         :type mac_address: str
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this Vnic.
+        :type nsg_ids: list[str]
+
         :param private_ip:
             The value to assign to the private_ip property of this Vnic.
         :type private_ip: str
@@ -128,6 +132,7 @@ class Vnic(object):
             'is_primary': 'bool',
             'lifecycle_state': 'str',
             'mac_address': 'str',
+            'nsg_ids': 'list[str]',
             'private_ip': 'str',
             'public_ip': 'str',
             'skip_source_dest_check': 'bool',
@@ -146,6 +151,7 @@ class Vnic(object):
             'is_primary': 'isPrimary',
             'lifecycle_state': 'lifecycleState',
             'mac_address': 'macAddress',
+            'nsg_ids': 'nsgIds',
             'private_ip': 'privateIp',
             'public_ip': 'publicIp',
             'skip_source_dest_check': 'skipSourceDestCheck',
@@ -163,6 +169,7 @@ class Vnic(object):
         self._is_primary = None
         self._lifecycle_state = None
         self._mac_address = None
+        self._nsg_ids = None
         self._private_ip = None
         self._public_ip = None
         self._skip_source_dest_check = None
@@ -474,6 +481,34 @@ class Vnic(object):
         :type: str
         """
         self._mac_address = mac_address
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this Vnic.
+        A list of the OCIDs of the network security groups that the VNIC belongs to. For more
+        information about NSGs, see
+        :class:`NetworkSecurityGroup`.
+
+
+        :return: The nsg_ids of this Vnic.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this Vnic.
+        A list of the OCIDs of the network security groups that the VNIC belongs to. For more
+        information about NSGs, see
+        :class:`NetworkSecurityGroup`.
+
+
+        :param nsg_ids: The nsg_ids of this Vnic.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
 
     @property
     def private_ip(self):

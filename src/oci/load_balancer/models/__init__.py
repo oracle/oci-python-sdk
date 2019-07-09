@@ -56,6 +56,7 @@ from .update_health_checker_details import UpdateHealthCheckerDetails
 from .update_hostname_details import UpdateHostnameDetails
 from .update_listener_details import UpdateListenerDetails
 from .update_load_balancer_details import UpdateLoadBalancerDetails
+from .update_network_security_groups_details import UpdateNetworkSecurityGroupsDetails
 from .update_path_route_set_details import UpdatePathRouteSetDetails
 from .update_rule_set_details import UpdateRuleSetDetails
 from .work_request import WorkRequest
@@ -116,6 +117,7 @@ load_balancer_type_mapping = {
     "UpdateHostnameDetails": UpdateHostnameDetails,
     "UpdateListenerDetails": UpdateListenerDetails,
     "UpdateLoadBalancerDetails": UpdateLoadBalancerDetails,
+    "UpdateNetworkSecurityGroupsDetails": UpdateNetworkSecurityGroupsDetails,
     "UpdatePathRouteSetDetails": UpdatePathRouteSetDetails,
     "UpdateRuleSetDetails": UpdateRuleSetDetails,
     "WorkRequest": WorkRequest,

@@ -74,6 +74,14 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
             The value to assign to the backup_subnet_id property of this LaunchDbSystemFromBackupDetails.
         :type backup_subnet_id: str
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this LaunchDbSystemFromBackupDetails.
+        :type nsg_ids: list[str]
+
+        :param backup_network_nsg_ids:
+            The value to assign to the backup_network_nsg_ids property of this LaunchDbSystemFromBackupDetails.
+        :type backup_network_nsg_ids: list[str]
+
         :param shape:
             The value to assign to the shape property of this LaunchDbSystemFromBackupDetails.
         :type shape: str
@@ -158,6 +166,8 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
             'availability_domain': 'str',
             'subnet_id': 'str',
             'backup_subnet_id': 'str',
+            'nsg_ids': 'list[str]',
+            'backup_network_nsg_ids': 'list[str]',
             'shape': 'str',
             'time_zone': 'str',
             'sparse_diskgroup': 'bool',
@@ -185,6 +195,8 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
             'availability_domain': 'availabilityDomain',
             'subnet_id': 'subnetId',
             'backup_subnet_id': 'backupSubnetId',
+            'nsg_ids': 'nsgIds',
+            'backup_network_nsg_ids': 'backupNetworkNsgIds',
             'shape': 'shape',
             'time_zone': 'timeZone',
             'sparse_diskgroup': 'sparseDiskgroup',
@@ -211,6 +223,8 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
         self._availability_domain = None
         self._subnet_id = None
         self._backup_subnet_id = None
+        self._nsg_ids = None
+        self._backup_network_nsg_ids = None
         self._shape = None
         self._time_zone = None
         self._sparse_diskgroup = None
