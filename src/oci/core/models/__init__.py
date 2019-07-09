@@ -35,6 +35,7 @@ from .capture_console_history_details import CaptureConsoleHistoryDetails
 from .change_boot_volume_backup_compartment_details import ChangeBootVolumeBackupCompartmentDetails
 from .change_boot_volume_compartment_details import ChangeBootVolumeCompartmentDetails
 from .change_image_compartment_details import ChangeImageCompartmentDetails
+from .change_instance_compartment_details import ChangeInstanceCompartmentDetails
 from .change_instance_configuration_compartment_details import ChangeInstanceConfigurationCompartmentDetails
 from .change_instance_pool_compartment_details import ChangeInstancePoolCompartmentDetails
 from .change_nat_gateway_compartment_details import ChangeNatGatewayCompartmentDetails
@@ -287,6 +288,7 @@ core_type_mapping = {
     "ChangeBootVolumeBackupCompartmentDetails": ChangeBootVolumeBackupCompartmentDetails,
     "ChangeBootVolumeCompartmentDetails": ChangeBootVolumeCompartmentDetails,
     "ChangeImageCompartmentDetails": ChangeImageCompartmentDetails,
+    "ChangeInstanceCompartmentDetails": ChangeInstanceCompartmentDetails,
     "ChangeInstanceConfigurationCompartmentDetails": ChangeInstanceConfigurationCompartmentDetails,
     "ChangeInstancePoolCompartmentDetails": ChangeInstancePoolCompartmentDetails,
     "ChangeNatGatewayCompartmentDetails": ChangeNatGatewayCompartmentDetails,
