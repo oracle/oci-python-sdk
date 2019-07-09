@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.2.18 - TBD
+====================
+
+Added
+-----
+* TBD
+
+====================
 2.2.17 - 2019-07-09
 ====================
 
