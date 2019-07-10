@@ -192,6 +192,170 @@ def test_bulk_delete_virtual_circuit_public_prefixes(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
+def test_change_cpe_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangeCpeCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ChangeCpeCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangeCpeCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.change_cpe_compartment(
+                cpe_id=request.pop(util.camelize('cpe_id')),
+                change_cpe_compartment_details=request.pop(util.camelize('change_cpe_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangeCpeCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_cpe_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
+def test_change_cross_connect_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangeCrossConnectCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ChangeCrossConnectCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangeCrossConnectCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.change_cross_connect_compartment(
+                cross_connect_id=request.pop(util.camelize('cross_connect_id')),
+                change_cross_connect_compartment_details=request.pop(util.camelize('change_cross_connect_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangeCrossConnectCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_cross_connect_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
+def test_change_cross_connect_group_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangeCrossConnectGroupCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ChangeCrossConnectGroupCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangeCrossConnectGroupCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.change_cross_connect_group_compartment(
+                cross_connect_group_id=request.pop(util.camelize('cross_connect_group_id')),
+                change_cross_connect_group_compartment_details=request.pop(util.camelize('change_cross_connect_group_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangeCrossConnectGroupCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_cross_connect_group_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
+def test_change_ip_sec_connection_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangeIPSecConnectionCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ChangeIPSecConnectionCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangeIPSecConnectionCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.change_ip_sec_connection_compartment(
+                ipsc_id=request.pop(util.camelize('ipsc_id')),
+                change_ip_sec_connection_compartment_details=request.pop(util.camelize('change_ip_sec_connection_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangeIPSecConnectionCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_ip_sec_connection_compartment',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
 def test_change_nat_gateway_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ChangeNatGatewayCompartment'):
@@ -228,6 +392,47 @@ def test_change_nat_gateway_compartment(testing_service_client):
             result,
             service_error,
             'change_nat_gateway_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
+def test_change_remote_peering_connection_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangeRemotePeeringConnectionCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ChangeRemotePeeringConnectionCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangeRemotePeeringConnectionCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.change_remote_peering_connection_compartment(
+                remote_peering_connection_id=request.pop(util.camelize('remote_peering_connection_id')),
+                change_remote_peering_connection_compartment_details=request.pop(util.camelize('change_remote_peering_connection_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangeRemotePeeringConnectionCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_remote_peering_connection_compartment',
             False,
             False
         )
@@ -433,6 +638,47 @@ def test_change_vcn_compartment(testing_service_client):
             result,
             service_error,
             'change_vcn_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
+def test_change_virtual_circuit_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangeVirtualCircuitCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ChangeVirtualCircuitCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangeVirtualCircuitCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.change_virtual_circuit_compartment(
+                virtual_circuit_id=request.pop(util.camelize('virtual_circuit_id')),
+                change_virtual_circuit_compartment_details=request.pop(util.camelize('change_virtual_circuit_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangeVirtualCircuitCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_virtual_circuit_compartment',
             False,
             False
         )
