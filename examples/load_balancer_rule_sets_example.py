@@ -27,6 +27,9 @@ parser.add_argument('--compartment-id',
 parser.add_argument('--subnet-id',
                     help='name of the first AD in the format nnNN:PHX-AD-1',
                     required=True)
+parser.add_argument('--vcn-id',
+                    help='id of a valid VCN within your tenancy',
+                    required=True)
 
 args = parser.parse_args()
 
@@ -89,6 +92,7 @@ def create_load_balancer(load_balancer_client_composite_ops, compartment_id, sub
                         oci.load_balancer.models.ControlAccessUsingHttpMethodsRule(
                             allowed_methods=["PUT", "POST"],
                             status_code=403)
+
                     ]
                 )
             },
@@ -116,6 +120,7 @@ virtual_network_client_composite_ops = oci.core.VirtualNetworkClientCompositeOpe
 
 compartment_id = args.compartment_id
 subnet_id = args.subnet_id
+vcn_id = args.vcn_id
 
 print('\n================================\n')
 print("Attempting to create a load balancer")
@@ -126,6 +131,11 @@ load_balancer_ocid = load_balancer.data.id
 
 print('\n================================\n')
 print('Created load balancer {}'.format(load_balancer.data))
+
+# we can list the listener_rules on the load balancer
+listener_rules = load_balancer_client.list_listener_rules(load_balancer_ocid, "listener1")
+print('\n================================\n')
+print('The listenerRuleSummary for the listener on the current load balancer:\n{}'.format(listener_rules.data))
 
 # We can list the rule sets on the load balancer
 rule_sets = load_balancer_client.list_rule_sets(load_balancer_ocid)
@@ -157,9 +167,36 @@ load_balancer_client_composite_ops.create_rule_set_and_wait_for_state(
     ),
     wait_for_states=[oci.load_balancer.models.WorkRequest.LIFECYCLE_STATE_SUCCEEDED])
 
+print('\n================================\n')
+print('Rule set: Using Rule Sets for Access Control\n{}'.format(rule_set))
+# We can create a rule set on the load balancer with rules specifically geared towards access control.
+# Note that this also returns a work request which will be SUCCEEDED once the rule set has been created.
+load_balancer_client_composite_ops.create_rule_set_and_wait_for_state(
+    load_balancer_ocid,
+    oci.load_balancer.models.CreateRuleSetDetails(
+        # The name of the rule set must be unique across all rule sets on the load balancer
+        name='ruleset3',
+        items=[
+            oci.load_balancer.models.AllowRule(
+                description="Allow traffic from internet clients",
+                conditions=[
+                    oci.load_balancer.models.SourceIpAddressCondition(
+                        attribute_value="129.146.39.248/32"
+                    )
+                ]
+            )
+        ]
+    ),
+    wait_for_states=[oci.load_balancer.models.WorkRequest.LIFECYCLE_STATE_SUCCEEDED]
+)
+
+rule_set_3 = load_balancer_client.get_rule_set(load_balancer_ocid, 'ruleset3').data
+print('Ruleset3 after creation:\n{}'.format(rule_set_3))
+print('\n================================\n')
+
 rule_sets = load_balancer_client.list_rule_sets(load_balancer_ocid)
 print('\n================================\n')
-print('Rule sets in the load balancer after creating another set:\n{}'.format(rule_sets.data))
+print('Rule sets in the load balancer after creating a rule set for access control:\n{}'.format(rule_sets.data))
 
 
 # We can update the rules in a rule set. Note that this is a total replacement, so any routes which you want
