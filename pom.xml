@@ -43,6 +43,7 @@
   </build>
   <modules>
     <module>poms/limits/pom.xml</module>
+    <module>poms/functions/pom.xml</module>
     <module>poms/work_requests/pom.xml</module>
     <module>poms/announcements_service/pom.xml</module>
     <module>poms/resource_manager/pom.xml</module>
