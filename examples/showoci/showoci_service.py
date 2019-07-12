@@ -101,7 +101,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.2.13"
+    oci_compatible_version = "2.2.17"
 
     ##########################################################################
     # Global Constants
@@ -123,6 +123,8 @@ class ShowOCIService(object):
     C_NETWORK_IGW = 'igw'
     C_NETWORK_LPG = 'lpg'
     C_NETWORK_SLIST = 'seclist'
+    C_NETWORK_NSG = 'secgroups'
+    C_NETWORK_NSG_REPTEXT = 'NETWORKSECURITYGR'
     C_NETWORK_ROUTE = 'route'
     C_NETWORK_DHCP = 'dhcp'
     C_NETWORK_SUBNET = 'subnet'
@@ -1239,6 +1241,7 @@ class ShowOCIService(object):
             # add the key to the network if not exists
             self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_VCN)
             self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_SUBNET)
+            self.__initialize_data_key(self.C_NETWORK, self.C_NETWORK_NSG)
 
             # if to load all network resources initialize the keys
             if self.flags.read_network:
@@ -1274,6 +1277,7 @@ class ShowOCIService(object):
                 # append the data for subnets
                 subnets = self.__load_core_network_subnet(virtual_network, compartments, network[self.C_NETWORK_VCN])
                 network[self.C_NETWORK_SUBNET] += subnets
+                network[self.C_NETWORK_NSG] += self.__load_core_network_nsg(virtual_network, compartments)
 
                 # if to load all network resources
                 if self.flags.read_network:
@@ -1731,13 +1735,34 @@ class ShowOCIService(object):
     ##########################################################################
     # get Network vcn security rule
     ##########################################################################
-    def __load_core_network_seclst_rule(self, security_rule, protocol_name):
-        line = ""
+    def __load_core_network_seclst_rule(self, direction, security_rule):
+
+        protocol_name = self.__load_core_network_seclst_protocl_name(str(security_rule.protocol))
+        value = {
+            'is_stateless': str(security_rule.is_stateless),
+            'protocol': str(security_rule.protocol),
+            'protocol_name': protocol_name,
+            'source': "",
+            'src_port_min': "",
+            'src_port_max': "",
+            'destination': "",
+            'dst_port_min': "",
+            'dst_port_max': "",
+            'icmp_code': "",
+            'icmp_type': ""
+        }
+
+        # Process the security rule
+        line = str(direction).ljust(7) + ": "
+
+        # process the source or dest
         if isinstance(security_rule, oci.core.models.EgressSecurityRule):
-            line = "Dst: " + str(security_rule.destination).ljust(18)
+            line += "Dst: " + str(security_rule.destination).ljust(18)
+            value['destination'] = str(security_rule.destination)
 
         if isinstance(security_rule, oci.core.models.IngressSecurityRule):
-            line = "Src: " + str(security_rule.source).ljust(18)
+            line += "Src: " + str(security_rule.source).ljust(18)
+            value['source'] = str(security_rule.source)
 
         # protocol
         line += str(protocol_name).ljust(6)
@@ -1747,25 +1772,72 @@ class ShowOCIService(object):
             line += self.__load_core_network_seclst_rule_port_range("Src", security_rule.tcp_options.source_port_range)
             line += self.__load_core_network_seclst_rule_port_range("Dst", security_rule.tcp_options.destination_port_range)
 
+            # Handle source_port_range
+            if security_rule.tcp_options.source_port_range is None:
+                value['src_port_min'] = "ALL"
+                value['src_port_max'] = "ALL"
+            else:
+                value['src_port_min'] = str(security_rule.tcp_options.source_port_range.min)
+                value['src_port_max'] = str(security_rule.tcp_options.source_port_range.max)
+
+            # Handle destination_port_range
+            if security_rule.tcp_options.destination_port_range is None:
+                value['src_port_min'] = "ALL"
+                value['src_port_max'] = "ALL"
+            else:
+                value['src_port_min'] = str(security_rule.tcp_options.destination_port_range.min)
+                value['src_port_max'] = str(security_rule.tcp_options.destination_port_range.max)
+
         # udp options
         if security_rule.udp_options is not None:
             line += self.__load_core_network_seclst_rule_port_range("Src", security_rule.udp_options.source_port_range)
             line += self.__load_core_network_seclst_rule_port_range("Dst", security_rule.udp_options.destination_port_range)
 
+            # Handle source_port_range
+            if security_rule.udp_options.source_port_range is None:
+                value['src_port_min'] = "ALL"
+                value['src_port_max'] = "ALL"
+            else:
+                value['src_port_min'] = str(security_rule.udp_options.source_port_range.min)
+                value['src_port_max'] = str(security_rule.udp_options.source_port_range.max)
+
+            # Handle destination_port_range
+            if security_rule.udp_options.destination_port_range is None:
+                value['src_port_min'] = "ALL"
+                value['src_port_max'] = "ALL"
+            else:
+                value['src_port_min'] = str(security_rule.udp_options.destination_port_range.min)
+                value['src_port_max'] = str(security_rule.udp_options.destination_port_range.max)
+
         # icmp options
-        if security_rule.icmp_options is not None:
+        if security_rule.icmp_options is None:
+            if protocol_name == "ICMP":
+                value['icmp_code'] = "ALL"
+                value['icmp_type'] = "ALL"
+                line += "(ALL)"
+        else:
             icmp = security_rule.icmp_options
             line += ""
-            if icmp.code is not None:
+            if icmp.code is None:
+                line += "(ALL),"
+                value['icmp_code'] = "ALL"
+            else:
                 line += str(icmp.code) + ","
-            if icmp.type is not None:
+                value['icmp_code'] = str(icmp.code)
+
+            if icmp.type is None:
+                line += "(ALL),"
+                value['icmp_type'] = "ALL"
+            else:
                 line += str(icmp.type)
+                value['icmp_type'] = str(icmp.type)
 
         # Stateless
         if security_rule.is_stateless:
             line += " (Stateless) "
 
-        return line
+        value['desc'] = line
+        return value
 
     ##########################################################################
     # protocol name
@@ -1834,25 +1906,17 @@ class ShowOCIService(object):
                         sec_rules = []
 
                         for sli in sl.ingress_security_rules:
-                            protocol_name = self.__load_core_network_seclst_protocl_name(str(sli.protocol))
-                            sec_rules.append(
-                                {'is_stateless': str(sli.is_stateless),
-                                 'protocol': str(sli.protocol),
-                                 'protocol_name': protocol_name,
-                                 'desc': "Ingres  : " + self.__load_core_network_seclst_rule(sli, protocol_name)})
+                            sec_rules.append(self.__load_core_network_seclst_rule("Ingress", sli))
 
                         for sle in sl.egress_security_rules:
-                            protocol_name = self.__load_core_network_seclst_protocl_name(str(sle.protocol))
-                            sec_rules.append(
-                                {'is_stateless': str(sle.is_stateless),
-                                 'protocol': str(sle.protocol),
-                                 'protocol_name': protocol_name,
-                                 'desc': "Egres   : " + self.__load_core_network_seclst_rule(sle, protocol_name)})
+                            sec_rules.append(self.__load_core_network_seclst_rule("Egres", sle))
 
                         # Add info
                         val = {'id': str(sl.id), 'vcn_id': str(sl.vcn_id), 'name': str(sl.display_name),
-                               'time_created': str(sl.time_created), 'sec_rules': sec_rules,
-                               'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                               'time_created': str(sl.time_created),
+                               'sec_rules': sec_rules,
+                               'compartment_name': str(compartment['name']),
+                               'compartment_id': str(compartment['id']),
                                'defined_tags': [] if sl.defined_tags is None else sl.defined_tags,
                                'freeform_tags': [] if sl.freeform_tags is None else sl.freeform_tags,
                                'region_name': str(self.config['region'])}
@@ -1866,6 +1930,233 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_core_network_seclst", e)
+            return data
+
+    ##########################################################################
+    # Return NSG names strings from NSG OCIds
+    ##########################################################################
+    def __load_core_network_get_nsg_names(self, nsg_ids):
+
+        return_value = ""
+        try:
+
+            # search the nsgs, if cannot find specify the ocids instead of name
+            for nsg in nsg_ids:
+                result = self.search_unique_item(self.C_NETWORK, self.C_NETWORK_NSG, 'id', str(nsg))
+                if result:
+                    if return_value:
+                        return_value += ", "
+                    return_value += result['name']
+                else:
+                    if return_value:
+                        return_value += ", "
+                    return_value += str(nsg)
+
+            # return the value
+            return return_value
+
+        except Exception as e:
+            self.__print_error("__load_core_network_get_nsg_names", e)
+            return return_value
+
+    ##########################################################################
+    # get Network vcn security rule for NSG
+    ##########################################################################
+    def __load_core_network_nsg_secrule(self, security_rule):
+
+        line = ""
+        protocol_name = self.__load_core_network_seclst_protocl_name(str(security_rule.protocol))
+        value = {
+            'id': str(security_rule.id),
+            'description': ("" if security_rule.description is None else str(security_rule.description)),
+            'direction': str(security_rule.direction),
+            'destination': ("" if security_rule.destination is None else str(security_rule.destination)),
+            'destination_name': "",
+            'destination_type': ("" if security_rule.destination_type is None else str(security_rule.destination_type)),
+            'source': ("" if security_rule.source is None else str(security_rule.source)),
+            'source_name': "",
+            'source_type': ("" if security_rule.source_type is None else str(security_rule.source_type)),
+            'is_stateless': ("False" if security_rule.is_stateless is None else str(security_rule.is_stateless)),
+            'is_valid': str(security_rule.is_valid),
+            'protocol': str(security_rule.protocol),
+            'protocol_name': protocol_name,
+            'time_created': str(security_rule.time_created),
+            'src_port_min': "",
+            'src_port_max': "",
+            'dst_port_min': "",
+            'dst_port_max': "",
+            'icmp_code': "",
+            'icmp_type': ""
+        }
+
+        # process the source or dest
+        if str(security_rule.direction) == oci.core.models.SecurityRule.DIRECTION_EGRESS:
+            if security_rule.destination_type == oci.core.models.SecurityRule.DESTINATION_TYPE_NETWORK_SECURITY_GROUP:
+                line = "Egress  : NSG: " + self.C_NETWORK_NSG_REPTEXT + " "
+            else:
+                line = "Egress  : Dst: " + str(security_rule.destination).ljust(17) + " "
+
+        if str(security_rule.direction) == oci.core.models.SecurityRule.DIRECTION_INGRESS:
+            if security_rule.source_type == oci.core.models.SecurityRule.SOURCE_TYPE_NETWORK_SECURITY_GROUP:
+                line += "Ingress : NSG: " + self.C_NETWORK_NSG_REPTEXT + " "
+            else:
+                line += "Ingress : Src: " + str(security_rule.source).ljust(17) + " "
+
+        # protocol
+        line += str(protocol_name).ljust(6)
+
+        # tcp options
+        if security_rule.tcp_options is not None:
+            line += self.__load_core_network_seclst_rule_port_range("Src", security_rule.tcp_options.source_port_range)
+            line += self.__load_core_network_seclst_rule_port_range("Dst", security_rule.tcp_options.destination_port_range)
+
+            # Handle source_port_range
+            if security_rule.tcp_options.source_port_range is None:
+                value['src_port_min'] = "ALL"
+                value['src_port_max'] = "ALL"
+            else:
+                value['src_port_min'] = str(security_rule.tcp_options.source_port_range.min)
+                value['src_port_max'] = str(security_rule.tcp_options.source_port_range.max)
+
+            # Handle destination_port_range
+            if security_rule.tcp_options.destination_port_range is None:
+                value['src_port_min'] = "ALL"
+                value['src_port_max'] = "ALL"
+            else:
+                value['src_port_min'] = str(security_rule.tcp_options.destination_port_range.min)
+                value['src_port_max'] = str(security_rule.tcp_options.destination_port_range.max)
+
+        # udp options
+        if security_rule.udp_options is not None:
+            line += self.__load_core_network_seclst_rule_port_range("Src", security_rule.udp_options.source_port_range)
+            line += self.__load_core_network_seclst_rule_port_range("Dst", security_rule.udp_options.destination_port_range)
+
+            # Handle source_port_range
+            if security_rule.udp_options.source_port_range is None:
+                value['src_port_min'] = "ALL"
+                value['src_port_max'] = "ALL"
+            else:
+                value['src_port_min'] = str(security_rule.udp_options.source_port_range.min)
+                value['src_port_max'] = str(security_rule.udp_options.source_port_range.max)
+
+            # Handle destination_port_range
+            if security_rule.udp_options.destination_port_range is None:
+                value['src_port_min'] = "ALL"
+                value['src_port_max'] = "ALL"
+            else:
+                value['src_port_min'] = str(security_rule.udp_options.destination_port_range.min)
+                value['src_port_max'] = str(security_rule.udp_options.destination_port_range.max)
+
+        # icmp options
+        if security_rule.icmp_options is None:
+            if protocol_name == "ICMP":
+                value['icmp_code'] = "ALL"
+                value['icmp_type'] = "ALL"
+                line += "(ALL)"
+        else:
+            icmp = security_rule.icmp_options
+            line += ""
+            if icmp.code is None:
+                line += "(ALL),"
+                value['icmp_code'] = "ALL"
+            else:
+                line += str(icmp.code) + ","
+                value['icmp_code'] = str(icmp.code)
+
+            if icmp.type is None:
+                line += "(ALL),"
+                value['icmp_type'] = "ALL"
+            else:
+                line += str(icmp.type)
+                value['icmp_type'] = str(icmp.type)
+
+        # Stateless
+        if security_rule.is_stateless:
+            line += " (Stateless) "
+
+        value['desc'] = line
+        return value
+
+    ##########################################################################
+    # data network security groups
+    ##########################################################################
+    def __load_core_network_nsg(self, virtual_network, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+
+            self.__load_print_status("Network Security Groups")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # ngw will throw error if run on Paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                arrs = []
+                try:
+                    arrs = oci.pagination.list_call_get_all_results(
+                        virtual_network.list_network_security_groups,
+                        compartment['id'],
+                        lifecycle_state=oci.core.models.NetworkSecurityGroup.LIFECYCLE_STATE_AVAILABLE
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning("n", False)
+                        continue
+                    raise
+
+                print(".", end="")
+
+                # loop on array
+                # arr = oci.core.models.NetworkSecurityGroup
+                for arr in arrs:
+                    val = {'id': str(arr.id),
+                           'name': str(arr.display_name),
+                           'vcn_id': str(arr.vcn_id),
+                           'time_created': str(arr.time_created),
+                           'compartment_name': str(compartment['name']),
+                           'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                           'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                           'compartment_id': str(compartment['id']),
+                           'region_name': str(self.config['region']),
+                           'sec_rules': []
+                           }
+
+                    # loop on NSG
+                    arrsecs = []
+                    try:
+                        arrsecs = oci.pagination.list_call_get_all_results(
+                            virtual_network.list_network_security_group_security_rules,
+                            arr.id
+                        ).data
+
+                    except oci.exceptions.ServiceError as e:
+                        if self.__check_service_error(e.code):
+                            self.__load_print_auth_warning("p", False)
+                        else:
+                            raise
+
+                    # oci.core.models.SecurityRule
+                    for arrsec in arrsecs:
+                        val['sec_rules'].append(self.__load_core_network_nsg_secrule(arrsec))
+
+                    data.append(val)
+                    cnt += 1
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException:
+            raise
+        except Exception as e:
+            self.__print_error("__load_core_network_nsg", e)
             return data
 
     ##########################################################################
@@ -3090,7 +3381,7 @@ class ShowOCIService(object):
             return data
 
     ##########################################################################
-    # print Core Network Vnic
+    # load Core Network Vnic
     ##########################################################################
 
     def __load_core_compute_vnic(self, virtual_network, vnic_id):
@@ -3110,6 +3401,8 @@ class ShowOCIService(object):
             data['is_primary'] = vnic.is_primary
             data['subnet'] = ""
             data['subnet_id'] = ""
+            data['nsg_ids'] = [x for x in vnic.nsg_ids]
+            data['nsg_names'] = self.__load_core_network_get_nsg_names(vnic.nsg_ids)
             data['vcn'] = ""
 
             # search the subnet
@@ -3650,6 +3943,8 @@ class ShowOCIService(object):
                            'ip_addresses': [(str(ip.ip_address) + " - " + ("Public" if ip.is_public else "Private")) for ip in arr.ip_addresses],
                            'compartment_name': str(compartment['name']),
                            'compartment_id': str(compartment['id']),
+                           'nsg_ids': [],
+                           'nsg_names': "",
                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                            'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
                            'region_name': str(self.config['region']), 'subnet_ids': []}
@@ -3657,6 +3952,11 @@ class ShowOCIService(object):
                     # subnets
                     if arr.subnet_ids:
                         val['subnet_ids'] = [str(a) for a in arr.subnet_ids]
+
+                    # network_security_group_ids
+                    if arr.network_security_group_ids:
+                        val['nsg_ids'] = [str(a) for a in arr.network_security_group_ids]
+                        val['nsg_names'] = self.__load_core_network_get_nsg_names(arr.network_security_group_ids)
 
                     # listeners
                     datalis = []

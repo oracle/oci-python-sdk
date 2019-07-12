@@ -512,6 +512,68 @@ class ShowOCIData(object):
             self.__print_error("__get_core_network_vcn_security_lists", e)
             return data
 
+    ##########################################################################
+    # Print Network vcn security groups
+    ##########################################################################
+
+    def __get_core_network_vcn_security_groups(self, vcn_id):
+        data = []
+        try:
+            nsgs = self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_NSG, 'vcn_id', vcn_id)
+            for nsg in nsgs:
+                value = {
+                    'id': nsg['id'],
+                    'name': nsg['name'],
+                    'compartment': nsg['compartment_name'],
+                    'sec_rules': [],
+                    'time_created': nsg['time_created'],
+                    'defined_tags': nsg['defined_tags'],
+                    'freeform_tags': nsg['freeform_tags']
+                }
+
+                if 'sec_rules' in nsg:
+                    for sec_rule in nsg['sec_rules']:
+                        valsec = sec_rule
+
+                        #########################################################################
+                        # if need to find NSG OCID and replace the DESC String with value
+                        # source
+                        #########################################################################
+                        if valsec['source_type'] == "NETWORK_SECURITY_GROUP":
+                            result = self.service.search_unique_item(self.service.C_NETWORK, self.service.C_NETWORK_NSG, 'id', valsec['source'])
+                            if result:
+                                valsec['source_name'] = result['name']
+                                valsec['desc'] = valsec['desc'].replace(self.service.C_NETWORK_NSG_REPTEXT, result['name'].ljust(17))
+                            else:
+                                # if not found place the OCID instead of name
+                                valsec['source_name'] = "Not Found"
+                                valsec['desc'] = valsec['desc'].replace(self.service.C_NETWORK_NSG_REPTEXT, valsec['source'])
+
+                        #########################################################################
+                        # if need to find NSG OCID and replace the DESC String with value
+                        # Destination
+                        #########################################################################
+                        if valsec['destination_type'] == "NETWORK_SECURITY_GROUP":
+                            result = self.service.search_unique_item(self.service.C_NETWORK, self.service.C_NETWORK_NSG, 'id', valsec['destination'])
+                            if result:
+                                valsec['destination_name'] = result['name']
+                                valsec['desc'] = valsec['desc'].replace(self.service.C_NETWORK_NSG_REPTEXT, result['name'].ljust(17))
+                            else:
+                                # if not found place the OCID instead of name
+                                valsec['destination_name'] = "Not Found"
+                                valsec['desc'] = valsec['desc'].replace(self.service.C_NETWORK_NSG_REPTEXT, valsec['destination'])
+
+                        # add to the value sec rules array
+                        value['sec_rules'].append(valsec)
+
+                # add to data
+                data.append(value)
+            return data
+
+        except Exception as e:
+            self.__print_error("__get_core_network_vcn_security_lists", e)
+            return data
+
     ###########################################################################
     # get Network vcn rouet table
     ##########################################################################
@@ -652,6 +714,7 @@ class ShowOCIData(object):
                        'local_peering': self.__get_core_network_vcn_local_peering(vcn['id']),
                        'subnets': self.__get_core_network_vcn_subnets(vcn['id']),
                        'security_lists': self.__get_core_network_vcn_security_lists(vcn['id']),
+                       'security_groups': self.__get_core_network_vcn_security_groups(vcn['id']),
                        'route_tables': self.__get_core_network_vcn_route_tables(vcn['id']),
                        'dhcp_options': self.__get_core_network_vcn_dhcp_options(vcn['id'])}
 
@@ -1447,14 +1510,24 @@ class ShowOCIData(object):
                     nodeidstr = str(nodeid)
 
                 vnic_desc = ""
+                nsg_names = ""
+                nsg_ids = ""
                 if 'vnic_details' in db_node:
                     if 'dbdesc' in db_node['vnic_details']:
                         vnic_desc = db_node['vnic_details']['dbdesc']
+
+                    if 'nsg_names' in db_node['vnic_details']:
+                        nsg_names = db_node['vnic_details']['nsg_names']
+
+                    if 'nsg_ids' in db_node['vnic_details']:
+                        nsg_ids = db_node['vnic_details']['nsg_ids']
 
                 value = {'desc': "Node " + str(nodeidstr) + "  : " + str(db_node['hostname']) + " - " + str(db_node['lifecycle_state']) + " - " + str(vnic_desc + ("" if db_node['fault_domain'] == "None" else " - " + str(db_node['fault_domain']))),
                          'software_storage_size_in_gb': db_node['software_storage_size_in_gb'],
                          'lifecycle_state': db_node['lifecycle_state'],
                          'hostname': db_node['hostname'],
+                         'nsg_names': nsg_names,
+                         'nsg_ids': nsg_ids,
                          'vnic_details': db_node['vnic_details'],
                          'fault_domain': ("" if db_node['fault_domain'] == "None" else db_node['fault_domain'])
                          }
@@ -1990,6 +2063,8 @@ class ShowOCIData(object):
             data['is_private'] = lb['is_private']
             data['ips'] = lb['ip_addresses']
             data['path_route'] = lb['path_route']
+            data['nsg_ids'] = lb['nsg_ids']
+            data['nsg_names'] = lb['nsg_names']
             data['hostnames'] = [x['desc'] for x in lb['hostnames']]
             data['compartment_name'] = lb['compartment_name']
             data['subnet_ids'] = lb['subnet_ids']

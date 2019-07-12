@@ -61,7 +61,7 @@ import sys
 import argparse
 import datetime
 
-version = "19.7.10"
+version = "19.7.17"
 
 ##########################################################################
 # execute_extract
