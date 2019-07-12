@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SourceVcnIdCondition(RuleCondition):
     """
-    Source VCN OCID based match condition
+    An access control rule condition that requires a match on the specified source VCN OCID.
     """
 
     def __init__(self, **kwargs):
@@ -46,11 +46,15 @@ class SourceVcnIdCondition(RuleCondition):
     def attribute_value(self):
         """
         **[Required]** Gets the attribute_value of this SourceVcnIdCondition.
-        OCID of the customer VCN to which the service gateway embedded VCN ID of incoming packet would be matched against
+        The `OCID`__ of the originating VCN that an incoming packet
+        must match.
 
-        This condition can be used in conjunction with `SourceVcnIpAddressCondition`.
+        You can use this condition in conjunction with `SourceVcnIpAddressCondition`.
 
-        **NOTE:** If this condition is defined on a rule without `SourceVcnIpAddressCondition`, then this condition matches all incoming traffic in the specified customer VCN
+        **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition
+        matches all incoming traffic in the specified VCN.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The attribute_value of this SourceVcnIdCondition.
@@ -62,11 +66,15 @@ class SourceVcnIdCondition(RuleCondition):
     def attribute_value(self, attribute_value):
         """
         Sets the attribute_value of this SourceVcnIdCondition.
-        OCID of the customer VCN to which the service gateway embedded VCN ID of incoming packet would be matched against
+        The `OCID`__ of the originating VCN that an incoming packet
+        must match.
 
-        This condition can be used in conjunction with `SourceVcnIpAddressCondition`.
+        You can use this condition in conjunction with `SourceVcnIpAddressCondition`.
 
-        **NOTE:** If this condition is defined on a rule without `SourceVcnIpAddressCondition`, then this condition matches all incoming traffic in the specified customer VCN
+        **NOTE:** If you define this condition for a rule without a `SourceVcnIpAddressCondition`, this condition
+        matches all incoming traffic in the specified VCN.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param attribute_value: The attribute_value of this SourceVcnIdCondition.

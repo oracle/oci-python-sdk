@@ -2781,7 +2781,13 @@ class LoadBalancerClient(object):
     def list_listener_rules(self, load_balancer_id, listener_name, **kwargs):
         """
         ListListenerRules
-        List set of all rules associated with a listener ordered by execution phase.
+        Lists all of the rules from all of the rule sets associated with the specified listener. The response organizes
+        the rules in the following order:
+
+        *  Access control rules
+        *  Allow method rules
+        *  Request header rules
+        *  Response header rules
 
 
         :param str load_balancer_id: (required)
@@ -2790,7 +2796,7 @@ class LoadBalancerClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str listener_name: (required)
-            The name of the listener.
+            The name of the listener the rules are associated with.
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a

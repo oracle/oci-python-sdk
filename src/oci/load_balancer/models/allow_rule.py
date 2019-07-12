@@ -9,19 +9,17 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AllowRule(Rule):
     """
-    Configuration of an access control rule that permits access to the application
-    resources exposed by a listener based on user specified match conditions.
+    An object that represents the action of configuring an access control rule. Access control rules permit access
+    to application resources based on user-specified match conditions. This rule applies only to HTTP listeners.
 
-    This rule applies to only HTTP listeners.
-
-    Atleast one match condition should be specified in the rule.
-
-    **NOTE:** When user does not specify any access control rules, the implicit default rule is to allow all traffic.
-    **NOTE:** When user adds any access control rules, all the traffic not matching with any rules will be implicitly denied.
-    **NOTE:** User can specify this rule only with the following combinations of RuleCondition types:
-    - [\"SOURCE_IP_ADDRESS\"]
-    - [\"SOURCE_VCN_ID\"]
-    - [\"SOURCE_VCN_ID\", \"SOURCE_VCN_IP_ADDRESS\"]
+    **NOTES:**
+    *  If you do not specify any access control rules, the default rule is to allow all traffic.
+    *  If you add access control rules, the load balancer denies any traffic that does not match the rules.
+    *  Maximum of two match conditions can be specified in a rule.
+    *  You can specify this rule only with the following `RuleCondition` combinations:
+    *  `SOURCE_IP_ADDRESS`
+    *  `SOURCE_VCN_ID`
+    *  `SOURCE_VCN_ID\", \"SOURCE_VCN_IP_ADDRESS`
     """
 
     def __init__(self, **kwargs):
@@ -85,7 +83,9 @@ class AllowRule(Rule):
     def description(self):
         """
         Gets the description of this AllowRule.
-        Brief description of the access control rule.
+        A brief description of the access control rule. Avoid entering confidential information.
+
+        example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
 
 
         :return: The description of this AllowRule.
@@ -97,7 +97,9 @@ class AllowRule(Rule):
     def description(self, description):
         """
         Sets the description of this AllowRule.
-        Brief description of the access control rule.
+        A brief description of the access control rule. Avoid entering confidential information.
+
+        example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
 
 
         :param description: The description of this AllowRule.

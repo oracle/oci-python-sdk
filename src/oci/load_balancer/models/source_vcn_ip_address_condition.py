@@ -9,7 +9,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SourceVcnIpAddressCondition(RuleCondition):
     """
-    Source VCN/Overlay IP address based match condition. Should be used always in conjunction with SourceVcnIdCondition
+    An access control rule condition that requires a match on the specified source VCN and IP address range.
+    This condition must be used only in conjunction with `SourceVcnIdCondition`.
     """
 
     def __init__(self, **kwargs):
@@ -46,11 +47,14 @@ class SourceVcnIpAddressCondition(RuleCondition):
     def attribute_value(self):
         """
         **[Required]** Gets the attribute_value of this SourceVcnIpAddressCondition.
-        IPv4 address range to which the original client IP address (in customer VCN) of incoming packet would be matched against
+        An IPv4 address range that the original client IP address (in the context of the specified VCN) of an
+        incoming packet must match.
 
-        Only classless inter-domain routing (CIDR) format(x.x.x.x/y or x:x::x/y) is accepted
+        The service accepts only classless inter-domain routing (CIDR) format (x.x.x.x/y) strings.
 
-        Specify 0.0.0.0/0 or ::/0 to match all incoming traffic in the customer VCN
+        Specify 0.0.0.0/0 to match all incoming traffic in the customer VCN.
+
+        example: \"10.10.1.0/24\"
 
 
         :return: The attribute_value of this SourceVcnIpAddressCondition.
@@ -62,11 +66,14 @@ class SourceVcnIpAddressCondition(RuleCondition):
     def attribute_value(self, attribute_value):
         """
         Sets the attribute_value of this SourceVcnIpAddressCondition.
-        IPv4 address range to which the original client IP address (in customer VCN) of incoming packet would be matched against
+        An IPv4 address range that the original client IP address (in the context of the specified VCN) of an
+        incoming packet must match.
 
-        Only classless inter-domain routing (CIDR) format(x.x.x.x/y or x:x::x/y) is accepted
+        The service accepts only classless inter-domain routing (CIDR) format (x.x.x.x/y) strings.
 
-        Specify 0.0.0.0/0 or ::/0 to match all incoming traffic in the customer VCN
+        Specify 0.0.0.0/0 to match all incoming traffic in the customer VCN.
+
+        example: \"10.10.1.0/24\"
 
 
         :param attribute_value: The attribute_value of this SourceVcnIpAddressCondition.

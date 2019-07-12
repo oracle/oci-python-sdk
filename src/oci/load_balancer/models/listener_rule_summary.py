@@ -9,7 +9,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ListenerRuleSummary(object):
     """
-    Information about a Rule.
+    The attributes of a rule associated with the specified listener, and the name of the rule set that the rule
+    belongs to.
     """
 
     def __init__(self, **kwargs):
@@ -43,7 +44,7 @@ class ListenerRuleSummary(object):
     def rule(self):
         """
         Gets the rule of this ListenerRuleSummary.
-        Rule object that was applied to a listener.
+        A rule object that applies to the listener.
 
 
         :return: The rule of this ListenerRuleSummary.
@@ -55,7 +56,7 @@ class ListenerRuleSummary(object):
     def rule(self, rule):
         """
         Sets the rule of this ListenerRuleSummary.
-        Rule object that was applied to a listener.
+        A rule object that applies to the listener.
 
 
         :param rule: The rule of this ListenerRuleSummary.
@@ -67,7 +68,7 @@ class ListenerRuleSummary(object):
     def rule_set_name(self):
         """
         Gets the rule_set_name of this ListenerRuleSummary.
-        Name of the ruleset to which rule belongs to
+        The name of the rule set that the rule belongs to.
 
 
         :return: The rule_set_name of this ListenerRuleSummary.
@@ -79,7 +80,7 @@ class ListenerRuleSummary(object):
     def rule_set_name(self, rule_set_name):
         """
         Sets the rule_set_name of this ListenerRuleSummary.
-        Name of the ruleset to which rule belongs to
+        The name of the rule set that the rule belongs to.
 
 
         :param rule_set_name: The rule_set_name of this ListenerRuleSummary.

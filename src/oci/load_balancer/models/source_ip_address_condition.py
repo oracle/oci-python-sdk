@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SourceIpAddressCondition(RuleCondition):
     """
-    Source IP address based match condition
+    An access control rule condition that requires a match on the specified source IP address or address range.
     """
 
     def __init__(self, **kwargs):
@@ -46,11 +46,11 @@ class SourceIpAddressCondition(RuleCondition):
     def attribute_value(self):
         """
         **[Required]** Gets the attribute_value of this SourceIpAddressCondition.
-        IPv4 or IPv6 address range to which the source IP address of incoming packet would be matched against
+        An IPv4 or IPv6 address range that the source IP address of an incoming packet must match.
 
-        Only classless inter-domain routing (CIDR) format(x.x.x.x/y or x:x::x/y) is accepted
+        The service accepts only classless inter-domain routing (CIDR) format (x.x.x.x/y or x:x::x/y) strings.
 
-        Specify 0.0.0.0/0 or ::/0 to match all incoming traffic
+        Specify 0.0.0.0/0 or ::/0 to match all incoming traffic.
 
 
         :return: The attribute_value of this SourceIpAddressCondition.
@@ -62,11 +62,11 @@ class SourceIpAddressCondition(RuleCondition):
     def attribute_value(self, attribute_value):
         """
         Sets the attribute_value of this SourceIpAddressCondition.
-        IPv4 or IPv6 address range to which the source IP address of incoming packet would be matched against
+        An IPv4 or IPv6 address range that the source IP address of an incoming packet must match.
 
-        Only classless inter-domain routing (CIDR) format(x.x.x.x/y or x:x::x/y) is accepted
+        The service accepts only classless inter-domain routing (CIDR) format (x.x.x.x/y or x:x::x/y) strings.
 
-        Specify 0.0.0.0/0 or ::/0 to match all incoming traffic
+        Specify 0.0.0.0/0 or ::/0 to match all incoming traffic.
 
 
         :param attribute_value: The attribute_value of this SourceIpAddressCondition.
