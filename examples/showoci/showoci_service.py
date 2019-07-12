@@ -1753,7 +1753,7 @@ class ShowOCIService(object):
         }
 
         # Process the security rule
-        line = str(direction).ljust(7) + ": "
+        line = str(direction).ljust(7) + " : "
 
         # process the source or dest
         if isinstance(security_rule, oci.core.models.EgressSecurityRule):
@@ -1909,7 +1909,7 @@ class ShowOCIService(object):
                             sec_rules.append(self.__load_core_network_seclst_rule("Ingress", sli))
 
                         for sle in sl.egress_security_rules:
-                            sec_rules.append(self.__load_core_network_seclst_rule("Egres", sle))
+                            sec_rules.append(self.__load_core_network_seclst_rule("Egress", sle))
 
                         # Add info
                         val = {'id': str(sl.id), 'vcn_id': str(sl.vcn_id), 'name': str(sl.display_name),
