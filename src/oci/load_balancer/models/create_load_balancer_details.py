@@ -14,6 +14,14 @@ class CreateLoadBalancerDetails(object):
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
+    #: A constant which can be used with the ip_mode property of a CreateLoadBalancerDetails.
+    #: This constant has a value of "IPV4"
+    IP_MODE_IPV4 = "IPV4"
+
+    #: A constant which can be used with the ip_mode property of a CreateLoadBalancerDetails.
+    #: This constant has a value of "IPV6"
+    IP_MODE_IPV6 = "IPV6"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateLoadBalancerDetails object with values from keyword arguments.
@@ -34,6 +42,11 @@ class CreateLoadBalancerDetails(object):
         :param is_private:
             The value to assign to the is_private property of this CreateLoadBalancerDetails.
         :type is_private: bool
+
+        :param ip_mode:
+            The value to assign to the ip_mode property of this CreateLoadBalancerDetails.
+            Allowed values for this property are: "IPV4", "IPV6"
+        :type ip_mode: str
 
         :param listeners:
             The value to assign to the listeners property of this CreateLoadBalancerDetails.
@@ -81,6 +94,7 @@ class CreateLoadBalancerDetails(object):
             'display_name': 'str',
             'shape_name': 'str',
             'is_private': 'bool',
+            'ip_mode': 'str',
             'listeners': 'dict(str, ListenerDetails)',
             'hostnames': 'dict(str, HostnameDetails)',
             'backend_sets': 'dict(str, BackendSetDetails)',
@@ -98,6 +112,7 @@ class CreateLoadBalancerDetails(object):
             'display_name': 'displayName',
             'shape_name': 'shapeName',
             'is_private': 'isPrivate',
+            'ip_mode': 'ipMode',
             'listeners': 'listeners',
             'hostnames': 'hostnames',
             'backend_sets': 'backendSets',
@@ -114,6 +129,7 @@ class CreateLoadBalancerDetails(object):
         self._display_name = None
         self._shape_name = None
         self._is_private = None
+        self._ip_mode = None
         self._listeners = None
         self._hostnames = None
         self._backend_sets = None
@@ -264,6 +280,50 @@ class CreateLoadBalancerDetails(object):
         :type: bool
         """
         self._is_private = is_private
+
+    @property
+    def ip_mode(self):
+        """
+        Gets the ip_mode of this CreateLoadBalancerDetails.
+        Whether the load balancer has an IPv4 or IPv6 IP address.
+
+        If \"IPV4\", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+
+        If \"IPV6\", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+
+        Example: \"ipMode\":\"IPV6\"
+
+        Allowed values for this property are: "IPV4", "IPV6"
+
+
+        :return: The ip_mode of this CreateLoadBalancerDetails.
+        :rtype: str
+        """
+        return self._ip_mode
+
+    @ip_mode.setter
+    def ip_mode(self, ip_mode):
+        """
+        Sets the ip_mode of this CreateLoadBalancerDetails.
+        Whether the load balancer has an IPv4 or IPv6 IP address.
+
+        If \"IPV4\", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
+
+        If \"IPV6\", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
+
+        Example: \"ipMode\":\"IPV6\"
+
+
+        :param ip_mode: The ip_mode of this CreateLoadBalancerDetails.
+        :type: str
+        """
+        allowed_values = ["IPV4", "IPV6"]
+        if not value_allowed_none_or_none_sentinel(ip_mode, allowed_values):
+            raise ValueError(
+                "Invalid value for `ip_mode`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._ip_mode = ip_mode
 
     @property
     def listeners(self):
