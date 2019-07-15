@@ -841,6 +841,46 @@ def test_create_ip_sec_connection(testing_service_client):
 
 
 # IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_create_ipv6(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'CreateIpv6'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'CreateIpv6')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='CreateIpv6')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.create_ipv6(
+                create_ipv6_details=request.pop(util.camelize('create_ipv6_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'CreateIpv6',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'ipv6',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
 def test_create_local_peering_gateway(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateLocalPeeringGateway'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1635,6 +1675,46 @@ def test_delete_ip_sec_connection(testing_service_client):
             result,
             service_error,
             'delete_ip_sec_connection',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_delete_ipv6(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'DeleteIpv6'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'DeleteIpv6')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='DeleteIpv6')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.delete_ipv6(
+                ipv6_id=request.pop(util.camelize('ipv6_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'DeleteIpv6',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_ipv6',
             True,
             False
         )
@@ -2799,6 +2879,46 @@ def test_get_ip_sec_connection_tunnel_shared_secret(testing_service_client):
             result,
             service_error,
             'iPSecConnectionTunnelSharedSecret',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_get_ipv6(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetIpv6'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'GetIpv6')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetIpv6')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.get_ipv6(
+                ipv6_id=request.pop(util.camelize('ipv6_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetIpv6',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'ipv6',
             False,
             False
         )
@@ -4257,6 +4377,62 @@ def test_list_ip_sec_connections(testing_service_client):
 
 
 # IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_list_ipv6s(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListIpv6s'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ListIpv6s')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListIpv6s')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.list_ipv6s(
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_ipv6s(
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_ipv6s(
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListIpv6s',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'ipv6',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
 def test_list_local_peering_gateways(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListLocalPeeringGateways'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5697,6 +5873,47 @@ def test_update_ip_sec_connection_tunnel_shared_secret(testing_service_client):
             result,
             service_error,
             'iPSecConnectionTunnelSharedSecret',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_update_ipv6(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'UpdateIpv6'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'UpdateIpv6')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateIpv6')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.update_ipv6(
+                ipv6_id=request.pop(util.camelize('ipv6_id')),
+                update_ipv6_details=request.pop(util.camelize('update_ipv6_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'UpdateIpv6',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'ipv6',
             False,
             False
         )

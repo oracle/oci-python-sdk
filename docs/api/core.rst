@@ -93,6 +93,7 @@ Core Services
     oci.core.models.CreateInstancePoolDetails
     oci.core.models.CreateInstancePoolPlacementConfigurationDetails
     oci.core.models.CreateInternetGatewayDetails
+    oci.core.models.CreateIpv6Details
     oci.core.models.CreateLocalPeeringGatewayDetails
     oci.core.models.CreateNatGatewayDetails
     oci.core.models.CreateNetworkSecurityGroupDetails
@@ -181,6 +182,7 @@ Core Services
     oci.core.models.InstanceSourceViaImageDetails
     oci.core.models.InstanceSummary
     oci.core.models.InternetGateway
+    oci.core.models.Ipv6
     oci.core.models.LaunchInstanceAgentConfigDetails
     oci.core.models.LaunchInstanceDetails
     oci.core.models.LaunchOptions
@@ -231,6 +233,7 @@ Core Services
     oci.core.models.UpdateInstancePoolDetails
     oci.core.models.UpdateInstancePoolPlacementConfigurationDetails
     oci.core.models.UpdateInternetGatewayDetails
+    oci.core.models.UpdateIpv6Details
     oci.core.models.UpdateLocalPeeringGatewayDetails
     oci.core.models.UpdateNatGatewayDetails
     oci.core.models.UpdateNetworkSecurityGroupDetails
