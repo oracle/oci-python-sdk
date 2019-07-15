@@ -5,12 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-2.2.18 - TBD
+2.2.18 - 2019-07-16
 ====================
 
 Added
 -----
-* TBD
+* Support for the Functions service
+* Support for the Quotas service
+* Support for moving resources across compartments in the DNS service
+* Support for moving instances across compartments in the Compute service
+* Support for moving keys and vaults across compartments in the Key Management service
+* Support for moving topics and subscriptions across compartments in the Notifications service
+* Support for moving load balancers across compartments in the Load Balancing service
+* Support for specifying permitted REST methods in load balancer rule sets in the Load Balancing service
+* Support for configuring cookie session persistence in backend sets in the Load Balancing service
+* Support for ACL rules in rule sets in the Load Balancing service
+* Support for move compartment tree in the Identity service
+* Support for specifying and returning a KMS key in backup operations in the Block Storage service
+* Support for transit routing in the Networking service
+* Support for authenticating via Resource Principals. An example of how to use resource principals is available on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/resource_principals_example.py>`__. This authentication method is only supported within the Functions service at this time.
 
 ====================
 2.2.17 - 2019-07-09
