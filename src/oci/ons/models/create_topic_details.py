@@ -64,7 +64,7 @@ class CreateTopicDetails(object):
     def name(self):
         """
         **[Required]** Gets the name of this CreateTopicDetails.
-        The name of the topic being created. Avoid entering confidential information.
+        The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
 
 
         :return: The name of this CreateTopicDetails.
@@ -76,7 +76,7 @@ class CreateTopicDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateTopicDetails.
-        The name of the topic being created. Avoid entering confidential information.
+        The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
 
 
         :param name: The name of this CreateTopicDetails.

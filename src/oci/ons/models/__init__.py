@@ -4,6 +4,7 @@
 from __future__ import absolute_import
 
 from .backoff_retry_policy import BackoffRetryPolicy
+from .change_compartment_details import ChangeCompartmentDetails
 from .confirmation_result import ConfirmationResult
 from .create_subscription_details import CreateSubscriptionDetails
 from .create_topic_details import CreateTopicDetails
@@ -20,6 +21,7 @@ from .update_subscription_details import UpdateSubscriptionDetails
 # Maps type names to classes for ons services.
 ons_type_mapping = {
     "BackoffRetryPolicy": BackoffRetryPolicy,
+    "ChangeCompartmentDetails": ChangeCompartmentDetails,
     "ConfirmationResult": ConfirmationResult,
     "CreateSubscriptionDetails": CreateSubscriptionDetails,
     "CreateTopicDetails": CreateTopicDetails,

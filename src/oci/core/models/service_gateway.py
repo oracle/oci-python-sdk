@@ -79,6 +79,10 @@ class ServiceGateway(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param route_table_id:
+            The value to assign to the route_table_id property of this ServiceGateway.
+        :type route_table_id: str
+
         :param services:
             The value to assign to the services property of this ServiceGateway.
         :type services: list[ServiceIdResponseDetails]
@@ -100,6 +104,7 @@ class ServiceGateway(object):
             'freeform_tags': 'dict(str, str)',
             'id': 'str',
             'lifecycle_state': 'str',
+            'route_table_id': 'str',
             'services': 'list[ServiceIdResponseDetails]',
             'time_created': 'datetime',
             'vcn_id': 'str'
@@ -113,6 +118,7 @@ class ServiceGateway(object):
             'freeform_tags': 'freeformTags',
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
+            'route_table_id': 'routeTableId',
             'services': 'services',
             'time_created': 'timeCreated',
             'vcn_id': 'vcnId'
@@ -125,6 +131,7 @@ class ServiceGateway(object):
         self._freeform_tags = None
         self._id = None
         self._lifecycle_state = None
+        self._route_table_id = None
         self._services = None
         self._time_created = None
         self._vcn_id = None
@@ -340,6 +347,38 @@ class ServiceGateway(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def route_table_id(self):
+        """
+        Gets the route_table_id of this ServiceGateway.
+        The OCID of the route table the service gateway is using. For information about why you
+        would associate a route table with a service gateway, see
+        `Transit Routing: Private Access to Oracle Services Network`__.
+
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitroutingoracleservices.htm
+
+
+        :return: The route_table_id of this ServiceGateway.
+        :rtype: str
+        """
+        return self._route_table_id
+
+    @route_table_id.setter
+    def route_table_id(self, route_table_id):
+        """
+        Sets the route_table_id of this ServiceGateway.
+        The OCID of the route table the service gateway is using. For information about why you
+        would associate a route table with a service gateway, see
+        `Transit Routing: Private Access to Oracle Services Network`__.
+
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitroutingoracleservices.htm
+
+
+        :param route_table_id: The route_table_id of this ServiceGateway.
+        :type: str
+        """
+        self._route_table_id = route_table_id
 
     @property
     def services(self):

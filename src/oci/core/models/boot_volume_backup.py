@@ -101,6 +101,10 @@ class BootVolumeBackup(object):
             The value to assign to the image_id property of this BootVolumeBackup.
         :type image_id: str
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this BootVolumeBackup.
+        :type kms_key_id: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this BootVolumeBackup.
             Allowed values for this property are: "CREATING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY", "REQUEST_RECEIVED", 'UNKNOWN_ENUM_VALUE'.
@@ -145,6 +149,7 @@ class BootVolumeBackup(object):
             'freeform_tags': 'dict(str, str)',
             'id': 'str',
             'image_id': 'str',
+            'kms_key_id': 'str',
             'lifecycle_state': 'str',
             'size_in_gbs': 'int',
             'source_type': 'str',
@@ -163,6 +168,7 @@ class BootVolumeBackup(object):
             'freeform_tags': 'freeformTags',
             'id': 'id',
             'image_id': 'imageId',
+            'kms_key_id': 'kmsKeyId',
             'lifecycle_state': 'lifecycleState',
             'size_in_gbs': 'sizeInGBs',
             'source_type': 'sourceType',
@@ -180,6 +186,7 @@ class BootVolumeBackup(object):
         self._freeform_tags = None
         self._id = None
         self._image_id = None
+        self._kms_key_id = None
         self._lifecycle_state = None
         self._size_in_gbs = None
         self._source_type = None
@@ -409,6 +416,42 @@ class BootVolumeBackup(object):
         :type: str
         """
         self._image_id = image_id
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this BootVolumeBackup.
+        The OCID of the KMS key which is the master encryption key for the boot volume backup.
+        For more information about the Key Management service and encryption keys, see
+        `Overview of Key Management`__ and
+        `Using Keys`__.
+
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/usingkeys.htm
+
+
+        :return: The kms_key_id of this BootVolumeBackup.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this BootVolumeBackup.
+        The OCID of the KMS key which is the master encryption key for the boot volume backup.
+        For more information about the Key Management service and encryption keys, see
+        `Overview of Key Management`__ and
+        `Using Keys`__.
+
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/usingkeys.htm
+
+
+        :param kms_key_id: The kms_key_id of this BootVolumeBackup.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
 
     @property
     def lifecycle_state(self):

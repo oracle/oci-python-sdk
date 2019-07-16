@@ -65,6 +65,34 @@ def update_vault(vault_id, vault_name, client):
     return client.update_vault(vault_id, update_vault_details)
 
 
+def change_vault_compartment(vault_id, v_client, target_compartment_id):
+    print("Changing compartment for vault {}".format(vault_id))
+    # Create change_vault_compartment_details object
+
+    change_vault_compartment_details = oci.key_management.models.ChangeVaultCompartmentDetails(
+        compartment_id=target_compartment_id)
+
+    response = v_client.change_vault_compartment(
+        change_vault_compartment_details
+    )
+
+    # Wait for vault to become ACTIVE again
+    target_state = oci.key_management.models.Vault.LIFECYCLE_STATE_ACTIVE.lower()
+
+    try:
+        waiter_result = oci.wait_until(
+            v_client,
+            v_client.get_vault(vault_id),
+            evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() == target_state,
+            waiter_kwargs={}
+        )
+        result_to_return = waiter_result
+
+        return result_to_return
+    except Exception as e:
+        raise oci.exceptions.CompositeOperationError(partial_results=[response], cause=e)
+
+
 def schedule_deletion_vault(vault_id, vc_composite, deletion_time):
     print(" Scheduling Deletion for Vault {}".format(vault_id))
     # Create schedule_vault_deletion_details object that needs to be passed when scheduling vault deletion.
@@ -142,6 +170,32 @@ def schedule_deletion_key(key_mgmt_composite, deletion_time, key_id):
     return response
 
 
+def change_key_compartment(v_management_client, target_compartment_id, key_id):
+    print("Changing compartment for Key {}".format(key_id))
+    # Create change_key_compartment_details object
+    change_key_compartment_details = oci.key_management.models.ChangeKeyCompartmentDetails(
+        compartment_id=target_compartment_id)
+
+    response = v_management_client.change_key_compartment(
+        change_key_compartment_details
+    )
+
+    # Wait for key to become ENABLED again
+    target_state = oci.key_management.models.Key.LIFECYCLE_STATE_ENABLED.lower()
+    try:
+        waiter_result = oci.wait_until(
+            v_management_client,
+            v_management_client.get_key(key_id),
+            evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() == target_state,
+            waiter_kwargs={}
+        )
+        result_to_return = waiter_result
+
+        return result_to_return
+    except Exception as e:
+        raise oci.exceptions.CompositeOperationError(partial_results=[response], cause=e)
+
+
 def cancel_deletion_key(key_mgmt_composite, key_id):
     print(" Canceling key deletion {}.".format(key_id))
 
@@ -207,11 +261,13 @@ vault_client = oci.key_management.KmsVaultClient(config)
 vault_client_composite = oci.key_management.KmsVaultClientCompositeOperations(
     vault_client)
 
-if len(sys.argv) != 2:
+if len(sys.argv) != 3:
     raise RuntimeError(
-        'This example expects an ocid for the compartment in which vault should be created.')
+        'This example expects an ocid for the compartment in which vault should be created '
+        ' and a destination compartment for the resource move examples.')
 
 compartment = sys.argv[1]
+target_compartment = sys.argv[2]
 
 # This will create a vault in the given compartment
 vault = create_vault(compartment, VAULT_NAME, vault_client_composite).data
@@ -220,6 +276,9 @@ print(" Created vault {} with id : {}".format(vault.name, vault.id))
 
 updated_vault = update_vault(v_id, VAULT_UPDATE_NAME, vault_client)
 print(" Updated vault {} with name : {}".format(vault.id, updated_vault.name))
+
+change_vault_compartment(v_id, vault_client, target_compartment)
+print(" Changed vault compartment to {}".format(vault.id))
 
 # Create a vault management client using the endpoint in the vault object.
 vault_management_client = oci.key_management.KmsManagementClient(config,
@@ -254,6 +313,9 @@ disable_key(vault_management_client_composite, k_id)
 
 print(" Enabling key {}.".format(k_id))
 enable_key(vault_management_client_composite, k_id)
+
+print(" Changing key compartment to {}.".format(target_compartment))
+change_key_compartment(vault_management_client, target_compartment, k_id)
 
 print(" Scheduling key deletion {}.".format(k_id))
 schedule_deletion_key(vault_management_client_composite, k_id,

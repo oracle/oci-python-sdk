@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+19.7.17 - 2019-07-17
+====================
+
+* Added support with network security groups for compute, databases and load balancers
+* In order to read security group rules, use permission is required - Allow Group ReadOnlyUsers to use network-security-groups in tenancy
+* seperate security list components to individual fields
+
+====================
 19.7.10 - 2019-07-10
 ====================
 

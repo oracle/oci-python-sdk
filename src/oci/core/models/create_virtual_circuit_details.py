@@ -453,7 +453,7 @@ class CreateVirtualCircuitDetails(object):
         **[Required]** Gets the type of this CreateVirtualCircuitDetails.
         The type of IP addresses used in this virtual circuit. PRIVATE
         means `RFC 1918`__ addresses
-        (10.0.0.0/8, 172.16/12, and 192.168/16). Only PRIVATE is supported.
+        (10.0.0.0/8, 172.16/12, and 192.168/16).
 
         __ https://tools.ietf.org/html/rfc1918
 
@@ -471,7 +471,7 @@ class CreateVirtualCircuitDetails(object):
         Sets the type of this CreateVirtualCircuitDetails.
         The type of IP addresses used in this virtual circuit. PRIVATE
         means `RFC 1918`__ addresses
-        (10.0.0.0/8, 172.16/12, and 192.168/16). Only PRIVATE is supported.
+        (10.0.0.0/8, 172.16/12, and 192.168/16).
 
         __ https://tools.ietf.org/html/rfc1918
 

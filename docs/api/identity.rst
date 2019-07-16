@@ -53,6 +53,7 @@ Identity
     oci.identity.models.MfaTotpDevice
     oci.identity.models.MfaTotpDeviceSummary
     oci.identity.models.MfaTotpToken
+    oci.identity.models.MoveCompartmentDetails
     oci.identity.models.PasswordPolicy
     oci.identity.models.Policy
     oci.identity.models.Region

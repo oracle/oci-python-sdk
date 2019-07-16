@@ -51,6 +51,7 @@ class ShowOCI2SE(object):
     NetworkVcnId = 0
     NetworkSubnetId = 0
     NetworkSecListId = 0
+    NetworkSecGroupId = 0
     NetworkDHCPId = 0
     NetworkRouteId = 0
     DatabaseId = 0
@@ -239,15 +240,22 @@ class ShowOCI2SE(object):
                             'vcn_compartment': vcn['compartment'],
                             'sec_name': sl['name'],
                             'sec_compartment': sl['compartment'],
+                            'time_created': sl['time_created'][0:16],
                             'sec_protocol': "",
-                            'is_stateless': "",
-                            'sec_rules': "Empty",
-                            'time_created': sl['time_created'][0:16]}
+                            'sec_is_stateless': "",
+                            'sec_source': "",
+                            'sec_src_port_min': "",
+                            'sec_src_port_max': "",
+                            'sec_destination': "",
+                            'sec_dst_port_min': "",
+                            'sec_dst_port_max': "",
+                            'sec_icmp_code': "",
+                            'sec_icmp_type': ""}
                     self.outdata.append(data)
 
                 else:
+                    self.NetworkSecListId += 1
                     for slr in sl['sec_rules']:
-                        self.NetworkSecListId += 1
                         data = {'class': 'NetworkSecList' + str(self.NetworkSecListId),
                                 'region_name': region_name,
                                 'vcn_id': vcn['id'],
@@ -256,10 +264,95 @@ class ShowOCI2SE(object):
                                 'vcn_compartment': vcn['compartment'],
                                 'sec_name': sl['name'],
                                 'sec_compartment': sl['compartment'],
+                                'time_created': sl['time_created'][0:16],
                                 'sec_protocol': slr['protocol_name'],
-                                'is_stateless': slr['is_stateless'],
-                                'sec_rules': slr['desc'],
-                                'time_created': sl['time_created']
+                                'sec_is_stateless': slr['is_stateless'],
+                                'sec_source': slr['source'],
+                                'sec_src_port_min': slr['src_port_min'],
+                                'sec_src_port_max': slr['src_port_max'],
+                                'sec_destination': slr['destination'],
+                                'sec_dst_port_min': slr['dst_port_min'],
+                                'sec_dst_port_max': slr['dst_port_max'],
+                                'sec_icmp_code': slr['icmp_code'],
+                                'sec_icmp_type': slr['icmp_type']
+                                }
+                        self.outdata.append(data)
+
+        except Exception as e:
+            self.__print_error("__convert_core_network_vcn_security_lists", e)
+
+    ##########################################################################
+    # Print Network vcn security groups
+    ##########################################################################
+
+    def __convert_core_network_vcn_security_groups(self, region_name, sec_groups, vcn):
+        try:
+            if not sec_groups:
+                return
+
+            for sl in sec_groups:
+                if len(sl['sec_rules']) == 0:
+                    self.NetworkSecGroupId += 1
+                    data = {'class': 'NetworkSecGroup' + str(self.NetworkSecGroupId),
+                            'region_name': region_name,
+                            'vcn_id': vcn['id'],
+                            'vcn_name': vcn['display_name'],
+                            'vcn_cidr': vcn['cidr_block'],
+                            'vcn_compartment': vcn['compartment'],
+                            'sec_id': sl['id'],
+                            'sec_name': sl['name'],
+                            'sec_compartment': sl['compartment'],
+                            'time_created': sl['time_created'][0:16],
+                            'sec_description': "",
+                            'sec_direction': "",
+                            'sec_protocol': "",
+                            'sec_is_stateless': "",
+                            'sec_is_valid': "",
+                            'sec_destination': "",
+                            'sec_destination_name': "",
+                            'sec_destination_type': "",
+                            'sec_source': "",
+                            'sec_source_name': "",
+                            'sec_source_type': "",
+                            'sec_src_port_min': "",
+                            'sec_src_port_max': "",
+                            'sec_dst_port_min': "",
+                            'sec_dst_port_max': "",
+                            'sec_icmp_code': "",
+                            'sec_icmp_type': ""}
+
+                    self.outdata.append(data)
+
+                else:
+                    self.NetworkSecListId += 1
+                    for slr in sl['sec_rules']:
+                        data = {'class': 'NetworkSecGroup' + str(self.NetworkSecListId),
+                                'region_name': region_name,
+                                'vcn_id': vcn['id'],
+                                'vcn_name': vcn['display_name'],
+                                'vcn_cidr': vcn['cidr_block'],
+                                'vcn_compartment': vcn['compartment'],
+                                'sec_id': sl['id'],
+                                'sec_name': sl['name'],
+                                'sec_compartment': sl['compartment'],
+                                'time_created': sl['time_created'],
+                                'sec_description': slr['description'],
+                                'sec_direction': slr['direction'],
+                                'sec_protocol': slr['protocol_name'],
+                                'sec_is_stateless': slr['is_stateless'],
+                                'sec_is_valid': slr['is_valid'],
+                                'sec_destination': slr['destination'],
+                                'sec_destination_name': slr['destination_name'],
+                                'sec_destination_type': slr['destination_type'],
+                                'sec_source': slr['source'],
+                                'sec_source_name': slr['source_name'],
+                                'sec_source_type': slr['source_type'],
+                                'sec_src_port_min': slr['src_port_min'],
+                                'sec_src_port_max': slr['src_port_max'],
+                                'sec_dst_port_min': slr['dst_port_min'],
+                                'sec_dst_port_max': slr['dst_port_max'],
+                                'sec_icmp_code': slr['icmp_code'],
+                                'sec_icmp_type': slr['icmp_type'],
                                 }
                         self.outdata.append(data)
 
@@ -399,6 +492,9 @@ class ShowOCI2SE(object):
                 if 'security_lists' in vcn['data']:
                     self.__convert_core_network_vcn_security_lists(region_name, vcn['data']['security_lists'], vcn)
 
+                if 'security_groups' in vcn['data']:
+                    self.__convert_core_network_vcn_security_groups(region_name, vcn['data']['security_groups'], vcn)
+
                 if 'route_tables' in vcn['data']:
                     self.__convert_core_network_vcn_route_tables(region_name, vcn['data']['route_tables'], vcn)
 
@@ -447,6 +543,7 @@ class ShowOCI2SE(object):
                                 'node_count': len(dbs['db_nodes']),
                                 'database': db['name'],
                                 'version_license_model': dbs['version'],
+                                'domain': dbs['domain'],
                                 'data_subnet': dbs['data_subnet'],
                                 'data_subnet_id': dbs['data_subnet_id'],
                                 'backup_subnet': dbs['backup_subnet'],
@@ -455,8 +552,8 @@ class ShowOCI2SE(object):
                                 'vip_ips': str(', '.join(x for x in dbs['vip_ips'])),
                                 'cluster_name': dbs['cluster_name'],
                                 'time_created': dbs['time_created'][0:16],
-                                'domain': dbs['domain'],
-                                'db_nodes': str(', '.join(x['desc'] for x in dbs['db_nodes']))
+                                'db_nodes': str(', '.join(x['desc'] for x in dbs['db_nodes'])),
+                                'nsg_ids': str(', '.join(x['nsg_ids'] for x in dbs['db_nodes']))
                                 }
                         self.outdata.append(data)
 
@@ -495,7 +592,6 @@ class ShowOCI2SE(object):
                         'vip_ips': "",
                         'cluster_name': "",
                         'time_created': dbs['time_created'],
-                        'domain': "",
                         'db_nodes': ""}
                 self.outdata.append(data)
 
