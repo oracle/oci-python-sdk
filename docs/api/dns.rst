@@ -18,6 +18,8 @@ DNS
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.dns.models.ChangeSteeringPolicyCompartmentDetails
+    oci.dns.models.ChangeZoneCompartmentDetails
     oci.dns.models.CreateSteeringPolicyAttachmentDetails
     oci.dns.models.CreateSteeringPolicyDetails
     oci.dns.models.CreateZoneDetails

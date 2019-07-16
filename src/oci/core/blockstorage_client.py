@@ -89,7 +89,11 @@ class BlockstorageClient(object):
     def change_boot_volume_backup_compartment(self, boot_volume_backup_id, change_boot_volume_backup_compartment_details, **kwargs):
         """
         ChangeBootVolumeBackupCompartment
-        Change the compartment of a boot volume backup
+        Moves a boot volume backup into a different compartment within the same tenancy.
+        For information about moving resources between compartments,
+        see `Moving Resources to a Different Compartment`__.
+
+        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str boot_volume_backup_id: (required)
@@ -166,7 +170,11 @@ class BlockstorageClient(object):
     def change_boot_volume_compartment(self, boot_volume_id, change_boot_volume_compartment_details, **kwargs):
         """
         ChangeBootVolumeCompartment
-        Change the compartment of a boot volume
+        Moves a boot volume into a different compartment within the same tenancy.
+        For information about moving resources between compartments,
+        see `Moving Resources to a Different Compartment`__.
+
+        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str boot_volume_id: (required)
@@ -243,7 +251,11 @@ class BlockstorageClient(object):
     def change_volume_backup_compartment(self, volume_backup_id, change_volume_backup_compartment_details, **kwargs):
         """
         ChangeVolumeBackupCompartment
-        Change the compartment of a volume backup
+        Moves a volume backup into a different compartment within the same tenancy.
+        For information about moving resources between compartments,
+        see `Moving Resources to a Different Compartment`__.
+
+        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str volume_backup_id: (required)
@@ -320,7 +332,11 @@ class BlockstorageClient(object):
     def change_volume_compartment(self, volume_id, change_volume_compartment_details, **kwargs):
         """
         ChangeVolumeCompartment
-        Change the compartment of a volume
+        Moves a volume into a different compartment within the same tenancy.
+        For information about moving resources between compartments,
+        see `Moving Resources to a Different Compartment`__.
+
+        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str volume_id: (required)
@@ -397,7 +413,11 @@ class BlockstorageClient(object):
     def change_volume_group_backup_compartment(self, volume_group_backup_id, change_volume_group_backup_compartment_details, **kwargs):
         """
         ChangeVolumeGroupBackupCompartment
-        Change the compartment of a volume group backup
+        Moves a volume group backup into a different compartment within the same tenancy.
+        For information about moving resources between compartments,
+        see `Moving Resources to a Different Compartment`__.
+
+        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str volume_group_backup_id: (required)
@@ -474,7 +494,11 @@ class BlockstorageClient(object):
     def change_volume_group_compartment(self, volume_group_id, change_volume_group_compartment_details, **kwargs):
         """
         ChangeVolumeGroupCompartment
-        Change the compartment of a volume group
+        Moves a volume group into a different compartment within the same tenancy.
+        For information about moving resources between compartments,
+        see `Moving Resources to a Different Compartment`__.
+
+        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str volume_group_id: (required)

@@ -42,6 +42,10 @@ class Instance(object):
     LAUNCH_MODE_CUSTOM = "CUSTOM"
 
     #: A constant which can be used with the lifecycle_state property of a Instance.
+    #: This constant has a value of "MOVING"
+    LIFECYCLE_STATE_MOVING = "MOVING"
+
+    #: A constant which can be used with the lifecycle_state property of a Instance.
     #: This constant has a value of "PROVISIONING"
     LIFECYCLE_STATE_PROVISIONING = "PROVISIONING"
 
@@ -130,7 +134,7 @@ class Instance(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Instance.
-            Allowed values for this property are: "PROVISIONING", "RUNNING", "STARTING", "STOPPING", "STOPPED", "CREATING_IMAGE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "MOVING", "PROVISIONING", "RUNNING", "STARTING", "STOPPING", "STOPPED", "CREATING_IMAGE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -636,7 +640,7 @@ class Instance(object):
         **[Required]** Gets the lifecycle_state of this Instance.
         The current state of the instance.
 
-        Allowed values for this property are: "PROVISIONING", "RUNNING", "STARTING", "STOPPING", "STOPPED", "CREATING_IMAGE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "MOVING", "PROVISIONING", "RUNNING", "STARTING", "STOPPING", "STOPPED", "CREATING_IMAGE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -655,7 +659,7 @@ class Instance(object):
         :param lifecycle_state: The lifecycle_state of this Instance.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "RUNNING", "STARTING", "STOPPING", "STOPPED", "CREATING_IMAGE", "TERMINATING", "TERMINATED"]
+        allowed_values = ["MOVING", "PROVISIONING", "RUNNING", "STARTING", "STOPPING", "STOPPED", "CREATING_IMAGE", "TERMINATING", "TERMINATED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

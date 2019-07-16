@@ -33,6 +33,10 @@ class Subscription(object):
             The value to assign to the id property of this Subscription.
         :type id: str
 
+        :param topic_id:
+            The value to assign to the topic_id property of this Subscription.
+        :type topic_id: str
+
         :param protocol:
             The value to assign to the protocol property of this Subscription.
         :type protocol: str
@@ -46,6 +50,14 @@ class Subscription(object):
             Allowed values for this property are: "PENDING", "ACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this Subscription.
+        :type compartment_id: str
+
+        :param created_time:
+            The value to assign to the created_time property of this Subscription.
+        :type created_time: int
 
         :param deliver_policy:
             The value to assign to the deliver_policy property of this Subscription.
@@ -66,9 +78,12 @@ class Subscription(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'topic_id': 'str',
             'protocol': 'str',
             'endpoint': 'str',
             'lifecycle_state': 'str',
+            'compartment_id': 'str',
+            'created_time': 'int',
             'deliver_policy': 'str',
             'etag': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -77,9 +92,12 @@ class Subscription(object):
 
         self.attribute_map = {
             'id': 'id',
+            'topic_id': 'topicId',
             'protocol': 'protocol',
             'endpoint': 'endpoint',
             'lifecycle_state': 'lifecycleState',
+            'compartment_id': 'compartmentId',
+            'created_time': 'createdTime',
             'deliver_policy': 'deliverPolicy',
             'etag': 'etag',
             'freeform_tags': 'freeformTags',
@@ -87,9 +105,12 @@ class Subscription(object):
         }
 
         self._id = None
+        self._topic_id = None
         self._protocol = None
         self._endpoint = None
         self._lifecycle_state = None
+        self._compartment_id = None
+        self._created_time = None
         self._deliver_policy = None
         self._etag = None
         self._freeform_tags = None
@@ -124,10 +145,38 @@ class Subscription(object):
         self._id = id
 
     @property
+    def topic_id(self):
+        """
+        **[Required]** Gets the topic_id of this Subscription.
+        The `OCID`__ of the associated topic.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The topic_id of this Subscription.
+        :rtype: str
+        """
+        return self._topic_id
+
+    @topic_id.setter
+    def topic_id(self, topic_id):
+        """
+        Sets the topic_id of this Subscription.
+        The `OCID`__ of the associated topic.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param topic_id: The topic_id of this Subscription.
+        :type: str
+        """
+        self._topic_id = topic_id
+
+    @property
     def protocol(self):
         """
         **[Required]** Gets the protocol of this Subscription.
-        The subscription protocol. Valid values: EMAIL, HTTPS.
+
 
 
         :return: The protocol of this Subscription.
@@ -139,7 +188,7 @@ class Subscription(object):
     def protocol(self, protocol):
         """
         Sets the protocol of this Subscription.
-        The subscription protocol. Valid values: EMAIL, HTTPS.
+
 
 
         :param protocol: The protocol of this Subscription.
@@ -153,7 +202,6 @@ class Subscription(object):
         **[Required]** Gets the endpoint of this Subscription.
         The endpoint of the subscription. Valid values depend on the protocol.
         For EMAIL, only an email address is valid. For HTTPS, only a PagerDuty URL is valid. A URL cannot exceed 512 characters.
-        Avoid entering confidential information.
 
 
         :return: The endpoint of this Subscription.
@@ -167,7 +215,6 @@ class Subscription(object):
         Sets the endpoint of this Subscription.
         The endpoint of the subscription. Valid values depend on the protocol.
         For EMAIL, only an email address is valid. For HTTPS, only a PagerDuty URL is valid. A URL cannot exceed 512 characters.
-        Avoid entering confidential information.
 
 
         :param endpoint: The endpoint of this Subscription.
@@ -179,7 +226,7 @@ class Subscription(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this Subscription.
-        The lifecycle state of the subscription.
+        The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
 
         Allowed values for this property are: "PENDING", "ACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -194,7 +241,7 @@ class Subscription(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Subscription.
-        The lifecycle state of the subscription.
+        The lifecycle state of the subscription. The status of a new subscription is PENDING; when confirmed, the subscription status changes to ACTIVE.
 
 
         :param lifecycle_state: The lifecycle_state of this Subscription.
@@ -204,6 +251,58 @@ class Subscription(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def compartment_id(self):
+        """
+        **[Required]** Gets the compartment_id of this Subscription.
+        The `OCID`__ of the compartment for the subscription.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The compartment_id of this Subscription.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this Subscription.
+        The `OCID`__ of the compartment for the subscription.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param compartment_id: The compartment_id of this Subscription.
+        :type: str
+        """
+        self._compartment_id = compartment_id
+
+    @property
+    def created_time(self):
+        """
+        Gets the created_time of this Subscription.
+        The time when this suscription was created.
+
+
+        :return: The created_time of this Subscription.
+        :rtype: int
+        """
+        return self._created_time
+
+    @created_time.setter
+    def created_time(self, created_time):
+        """
+        Sets the created_time of this Subscription.
+        The time when this suscription was created.
+
+
+        :param created_time: The created_time of this Subscription.
+        :type: int
+        """
+        self._created_time = created_time
 
     @property
     def deliver_policy(self):

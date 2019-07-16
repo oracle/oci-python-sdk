@@ -344,6 +344,26 @@ class ShowOCIOutput(object):
         except Exception as e:
             self.__print_error("__print_core_network_vcn_security_lists", e)
 
+    ##########################################################################
+    # Print Network vcn security groups
+    ##########################################################################
+
+    def __print_core_network_vcn_security_groups(self, sec_groups, vcn_compartment):
+        try:
+            if not sec_groups:
+                return
+            for sl in sec_groups:
+                print("")
+                print(self.tabs + "Sec Group   : " + str(sl['name']) + self.__print_core_network_vcn_compartment(vcn_compartment, sl['compartment']))
+                if len(sl['sec_rules']) == 0:
+                    print(self.tabs + "            : Empty or no Permission.")
+
+                for slr in sl['sec_rules']:
+                    print(self.tabs + self.tabs + slr['desc'])
+
+        except Exception as e:
+            self.__print_error("__print_core_network_vcn_security_groups", e)
+
     ########################################################################
     # Print Network vcn Route Tables
     ##########################################################################
@@ -407,6 +427,9 @@ class ShowOCIOutput(object):
 
                 if 'security_lists' in vcn['data']:
                     self.__print_core_network_vcn_security_lists(vcn['data']['security_lists'], vcn_compartment)
+
+                if 'security_groups' in vcn['data']:
+                    self.__print_core_network_vcn_security_groups(vcn['data']['security_groups'], vcn_compartment)
 
                 if 'route_tables' in vcn['data']:
                     self.__print_core_network_vcn_route_tables(vcn['data']['route_tables'], vcn_compartment)
@@ -600,6 +623,10 @@ class ShowOCIOutput(object):
             if 'subnets' in lb:
                 for subnet in lb['subnets']:
                     print(self.tabs + "Subnet     : " + subnet)
+
+            if 'nsg_names' in lb:
+                if lb['nsg_names']:
+                    print(self.tabs + "SecGrp     : " + lb['nsg_names'])
 
             # ip_addresses
             if 'ips' in lb:
@@ -799,6 +826,9 @@ class ShowOCIOutput(object):
                 # db nodes
                 for db_node in dbs['db_nodes']:
                     print(self.tabs + db_node['desc'])
+                    if 'nsg_names' in db_node:
+                        if db_node['nsg_names']:
+                            print(self.tabs + "        : SecGrp : " + db_node['nsg_names'])
 
                 # db homes
                 for db_home in dbs['db_homes']:
@@ -1144,6 +1174,9 @@ class ShowOCIOutput(object):
                     for vnic in instance['vnic']:
                         if 'desc' in vnic:
                             print(self.tabs2 + "VNIC : " + vnic['desc'])
+                        if 'nsg_names' in vnic['details']:
+                            if vnic['details']['nsg_names']:
+                                print(self.tabs2 + "     : SecGrp: " + vnic['details']['nsg_names'])
 
                 if 'console' in instance:
                     if instance['console']:
@@ -2134,6 +2167,9 @@ class ShowOCICSV(object):
                 if 'security_lists' in vcn['data']:
                     self.__csv_core_network_vcn_security_lists(region_name, vcn['data']['security_lists'], vcn)
 
+                if 'security_groups' in vcn['data']:
+                    self.__csv_core_network_vcn_security_lists(region_name, vcn['data']['security_groups'], vcn)
+
                 if 'route_tables' in vcn['data']:
                     self.__csv_core_network_vcn_route_tables(region_name, vcn['data']['route_tables'], vcn)
 
@@ -2287,6 +2323,7 @@ class ShowOCICSV(object):
                         'local_storage_tb': instance['shape_storage_tb'],
                         'public_ips': str(', '.join(x['details']['public_ip'] for x in instance['vnic'])),
                         'private_ips': str(', '.join(x['details']['private_ip'] for x in instance['vnic'])),
+                        'security_groups': str(', '.join(x['details']['nsg_names'] for x in instance['vnic'])),
                         'time_created': instance['time_created'][0:16],
                         'boot_volume': "",
                         'boot_volume_size_gb': "",

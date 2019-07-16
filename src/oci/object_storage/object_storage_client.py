@@ -2738,13 +2738,20 @@ class ObjectStorageClient(object):
             header_params["opc-meta-" + key] = value
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
-        if (not isinstance(put_object_body, (six.binary_type, six.string_types)) and
-                not hasattr(put_object_body, "read")):
-            raise TypeError('The body must be a string, bytes, or provide a read() method.')
+        # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
+        try:
+            put_object_body
+        except NameError:
+            put_object_body = kwargs.get("put_object_body", missing)
 
-        if hasattr(put_object_body, 'fileno') and hasattr(put_object_body, 'name') and put_object_body.name != '<stdin>':
-            if requests.utils.super_len(put_object_body) == 0:
-                header_params['Content-Length'] = '0'
+        if put_object_body is not missing and put_object_body is not None:
+            if (not isinstance(put_object_body, (six.binary_type, six.string_types)) and
+                    not hasattr(put_object_body, "read")):
+                raise TypeError('The body must be a string, bytes, or provide a read() method.')
+
+            if hasattr(put_object_body, 'fileno') and hasattr(put_object_body, 'name') and put_object_body.name != '<stdin>':
+                if requests.utils.super_len(put_object_body) == 0:
+                    header_params['Content-Length'] = '0'
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -3309,13 +3316,20 @@ class ObjectStorageClient(object):
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
-        if (not isinstance(upload_part_body, (six.binary_type, six.string_types)) and
-                not hasattr(upload_part_body, "read")):
-            raise TypeError('The body must be a string, bytes, or provide a read() method.')
+        # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
+        try:
+            upload_part_body
+        except NameError:
+            upload_part_body = kwargs.get("upload_part_body", missing)
 
-        if hasattr(upload_part_body, 'fileno') and hasattr(upload_part_body, 'name') and upload_part_body.name != '<stdin>':
-            if requests.utils.super_len(upload_part_body) == 0:
-                header_params['Content-Length'] = '0'
+        if upload_part_body is not missing and upload_part_body is not None:
+            if (not isinstance(upload_part_body, (six.binary_type, six.string_types)) and
+                    not hasattr(upload_part_body, "read")):
+                raise TypeError('The body must be a string, bytes, or provide a read() method.')
+
+            if hasattr(upload_part_body, 'fileno') and hasattr(upload_part_body, 'name') and upload_part_body.name != '<stdin>':
+                if requests.utils.super_len(upload_part_body) == 0:
+                    header_params['Content-Length'] = '0'
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):

@@ -17,8 +17,8 @@ missing = Sentinel("Missing")
 
 class NotificationControlPlaneClient(object):
     """
-    Use the Notification API to broadcast messages to distributed components by topic, using a publish-subscribe pattern.
-    For information about managing topics, subscriptions, and messages, see [Notification Overview](/iaas/Content/Notification/Concepts/notificationoverview.htm).
+    Use the Notifications API to broadcast messages to distributed components by topic, using a publish-subscribe pattern.
+    For information about managing topics, subscriptions, and messages, see [Notifications Overview](/iaas/Content/Notification/Concepts/notificationoverview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -75,10 +75,113 @@ class NotificationControlPlaneClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
             'base_path': '/20181201',
+            'service_endpoint_template': 'https://notification.{region}.oraclecloud.com',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("notification_control_plane", config, signer, ons_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
+
+    def change_topic_compartment(self, topic_id, change_topic_compartment_details, **kwargs):
+        """
+        Moves a topic into a different compartment within the same tenancy. For information about moving resources
+        between compartments, see
+        `Moving Resources to a Different Compartment`__.
+
+        Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+
+
+        :param str topic_id: (required)
+            The `OCID`__ of the topic to move.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param ChangeCompartmentDetails change_topic_compartment_details: (required)
+            The configuration details for the move operation.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before that due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str opc_request_id: (optional)
+            The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str if_match: (optional)
+            Used for optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/topics/{topicId}/actions/changeCompartment"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "change_topic_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "topicId": topic_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_topic_compartment_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_topic_compartment_details)
 
     def create_topic(self, create_topic_details, **kwargs):
         """
@@ -93,7 +196,9 @@ class NotificationControlPlaneClient(object):
         All Oracle Cloud Infrastructure resources, including topics, get an Oracle-assigned, unique ID called an
         Oracle Cloud Identifier (OCID). When you create a resource, you can find its OCID in the response. You can also
         retrieve a resource's OCID by using a List API operation on that resource type, or by viewing the resource in the
-        Console. Fore more information, see `Resource Identifiers`__.
+        Console. For more information, see `Resource Identifiers`__.
+
+        Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm
         __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
@@ -172,6 +277,8 @@ class NotificationControlPlaneClient(object):
     def delete_topic(self, topic_id, **kwargs):
         """
         Deletes the specified topic.
+
+        Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
 
 
         :param str topic_id: (required)
@@ -257,6 +364,8 @@ class NotificationControlPlaneClient(object):
         :param str topic_id: (required)
             The `OCID`__ of the topic to retrieve.
 
+            Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
+
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
@@ -328,6 +437,8 @@ class NotificationControlPlaneClient(object):
         """
         Lists topics in the specified compartment.
 
+        Transactions Per Minute (TPM) per-tenancy limit for this operation: 120.
+
 
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
@@ -341,22 +452,24 @@ class NotificationControlPlaneClient(object):
             A filter to only return resources that match the given name exactly.
 
         :param str page: (optional)
-            For list pagination. The value of the opc-next-page response header from the previous \"List\" call. For important details about how pagination works, see `List Pagination`__.
+            For list pagination. The value of the opc-next-page response header from the previous \"List\" call.
+            For important details about how pagination works, see `List Pagination`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call. For important details about how pagination works, see `List Pagination`__.
+            For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call.
+            For important details about how pagination works, see `List Pagination`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
-            The field to sort by. Only one field can be selected for sorting. Default value: TIMECREATED.
+            The field to sort by. Only one field can be selected for sorting.
 
             Allowed values are: "TIMECREATED", "LIFECYCLESTATE"
 
         :param str sort_order: (optional)
-            The sort order to use (ascending or descending). Default value: ASC.
+            The sort order to use (ascending or descending).
 
             Allowed values are: "ASC", "DESC"
 
@@ -463,6 +576,8 @@ class NotificationControlPlaneClient(object):
     def update_topic(self, topic_id, **kwargs):
         """
         Updates the specified topic's configuration.
+
+        Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
 
 
         :param str topic_id: (required)

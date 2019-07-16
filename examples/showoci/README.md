@@ -50,7 +50,8 @@ allow dynamic-group ShowOCIDynamicGroup to read all-resources in tenancy
 Required OCI IAM user with read only privileges
 
 ```
-ALLOW GROUP ReadOnlyUsers to read all-resources IN TENANCY  
+ALLOW GROUP ReadOnlyUsers to read all-resources IN TENANCY
+Allow Group ReadOnlyUsers to use network-security-groups in tenancy /* use required for now to read security group rules */
 ```
 
 For restrictive privileges:
@@ -64,6 +65,8 @@ Allow group ReadOnlyUsers to read nat-gateways   in tenancy
 Allow group ReadOnlyUsers to read public-ips     in tenancy
 Allow group ReadOnlyUsers to read file-family    in tenancy
 Allow group ReadOnlyUsers to read instance-configurations in tenancy
+Allow Group ReadOnlyUsers to read network-security-groups in tenancy
+Allow Group ReadOnlyUsers to use network-security-groups in tenancy /* use required for now to read security group rules */
     
 # Explanation:
     read instances      allows - ListInstances
@@ -261,6 +264,7 @@ Network...
 --> Internet Gateways        <-- +++++ (3) - 4 sec
 --> Local Peer GWs           <-- +++++ (0) - 5 sec
 --> Security Lists           <-- +++++ (61) - 5 sec
+--> Network Security Groups  <-- ............ (2) - 1 sec
 --> DHCP Options             <-- +++++ (8) - 5 sec
 --> Route Tables             <-- +++++ (66) - 6 sec
 --> Routed Private IPs       <--  (0) - 0 sec
@@ -475,6 +479,14 @@ Compartment gse00000000 (root):
         Ingres  : Src: 0.0.0.0/0         TCP  Dst(22)
         Egres   : Dst: 0.0.0.0/0         ALL
 
+    Sec Group   : AdiSecurityGRoup2
+        Ingress : NSG: AdiSecurityGRoup1 ALL   
+
+    Sec Group   : AdiSecurityGRoup1
+        Ingress : Src: 0.0.0.0/0         TCP   Src(ALL) Dst(22) 
+        Ingress : Src: all-iad-services-in-oracle-services-network ALL   
+        Egress  : Dst: 0.0.0.0/0         ALL   
+
     Route Table : Default Route Table for vcn
         Route   : DST:oci-iad-objectstorage --> servicegateway
         Route   : DST:0.0.0.0/0 --> internetgateway
@@ -551,10 +563,12 @@ Compartment gse00000000 (root):
 
 --> VM.Standard2.1 - inst-hari6-Adi-Instance-Pool - RUNNING
         Shape: Ocpus: 1, Memory: 15gb, Local Storage: 0tb
-        AD  : fHBa:US-ASHBURN-AD-3 - FAULT-DOMAIN-3
-        Img : Oracle-Linux-7.5-2018.10.16-0
-        Boot: 47gb - inst-hari6-Adi-Instance-Pool (Boot Volume) 
-        VNIC: 10.1.0.204 (Prv), 129.213.110.160 (Pub) - Primary , Subnet (sub3 10.1.0.192/27), VCN (vcn 10.1.0.0/16)
+        AD   : fHBa:US-ASHBURN-AD-3 - FAULT-DOMAIN-3
+        Img  : Oracle-Linux-7.5-2018.10.16-0
+        Boot : 47gb - inst-hari6-Adi-Instance-Pool (Boot Volume) 
+        VNIC : 10.1.0.204 (Prv), 129.213.110.160 (Pub) - Primary , Subnet (sub3 10.1.0.192/27), VCN (vcn 10.1.0.0/16)
+             : SecGrp: AdiSecurityGRoup2, AdiSecurityGRoup1
+        Console Connection Active
 
 ##############################
 # Compute Inst Configuration #
@@ -701,7 +715,8 @@ Compartment gse00000000 (root):
 --> Name       : cnvlb - 100Mbps - (Private) - ACTIVE
     Status     : OK
     Subnet     : 172.27.131.0/25  EBSNP (Public)
-    IP         : 172.27.131.13 - Private
+    SecGrp     : AdiSecurityGRoup1
+	IP         : 172.27.131.13 - Private
     Listener   : cnvappl - 8010/HTTP
     Listener   : cvnappl1 - 80/HTTP
     Hostname   : cnvapph - cnvapp
@@ -1083,23 +1098,122 @@ Processing...
                                         "name": "Default Security List for vcn",
                                         "compartment": "Adi",
                                         "sec_rules": [
-                                            "Ingres  : Src: 0.0.0.0/0         TCP  Dst(22) ",
-                                            "Ingres  : Src: 0.0.0.0/0         TCP  Dst(443) ",
-                                            "Ingres  : Src: 0.0.0.0/0         TCP  Dst(3389) ",
-                                            "Ingres  : Src: 0.0.0.0/0         TCP  Dst(10000) ",
-                                            "Ingres  : Src: 0.0.0.0/0         TCP  Dst(8888) ",
-                                            "Ingres  : Src: 0.0.0.0/0         ICMP 4,3",
-                                            "Ingres  : Src: 10.1.0.0/24       ICMP 3",
-                                            "Ingres  : Src: 10.1.0.0/25       ALL  ",
-                                            "Ingres  : Src: 10.1.0.0/24       TCP  Dst(1521) ",
-                                            "Ingres  : Src: 10.1.0.0/26       TCP  Dst(8000) ",
-                                            "Ingres  : Src: 10.1.0.0/26       TCP  Dst(22) ",
-                                            "Egres   : Dst: 0.0.0.0/0         ALL  ",
-                                            "Egres   : Dst: 10.1.0.0/26       TCP  Dst(8000) ",
-                                            "Egres   : Dst: 10.1.0.0/26       TCP  Dst(22) "
+                                            {
+                                                "is_stateless": "False",
+                                                "protocol": "6",
+                                                "protocol_name": "TCP",
+                                                "source": "0.0.0.0/0",
+                                                "src_port_min": "22",
+                                                "src_port_max": "22",
+                                                "destination": "",
+                                                "dst_port_min": "",
+                                                "dst_port_max": "",
+                                                "icmp_code": "",
+                                                "icmp_type": "",
+                                                "desc": "Ingress: Src: 0.0.0.0/0         TCP   Src(ALL) Dst(22) "
+                                            },
+                                            {
+                                                "is_stateless": "False",
+                                                "protocol": "1",
+                                                "protocol_name": "ICMP",
+                                                "source": "0.0.0.0/0",
+                                                "src_port_min": "",
+                                                "src_port_max": "",
+                                                "destination": "",
+                                                "dst_port_min": "",
+                                                "dst_port_max": "",
+                                                "icmp_code": "4",
+                                                "icmp_type": "3",
+                                                "desc": "Ingress: Src: 0.0.0.0/0         ICMP  4,3"
+                                            },
+                                            {
+                                                "is_stateless": "False",
+                                                "protocol": "all",
+                                                "protocol_name": "ALL",
+                                                "source": "",
+                                                "src_port_min": "",
+                                                "src_port_max": "",
+                                                "destination": "0.0.0.0/0",
+                                                "dst_port_min": "",
+                                                "dst_port_max": "",
+                                                "icmp_code": "",
+                                                "icmp_type": "",
+                                                "desc": "Egres  : Dst: 0.0.0.0/0         ALL   "
+                                            }
                                         ],
+                                        "time_created": "2019-02-12 18:21:59.642000+00:00",
                                         "defined_tags": {},
                                         "freeform_tags": {}
+                                    },
+                                ],
+                                "security_groups": [
+                                    {
+                                        "id": "ocid1.networksecuritygroup.oc1.iad.aaaaaaaawo4zcfvix4ft3xfv7yo3kiif4tlc2v7b2w6y32ay3svnvjwvnwga",
+                                        "name": "AdiSecurityGRoup2",
+                                        "compartment": "AdiZohar",
+                                        "sec_rules": [
+                                            {
+                                                "id": "834814",
+                                                "description": "Access between NSG",
+                                                "direction": "INGRESS",
+                                                "destination": "",
+                                                "destination_name": "",
+                                                "destination_type": "",
+                                                "source": "ocid1.networksecuritygroup.oc1.iad.aaaaaaaavs2fnryhitdrzysb6lyy6mxmrqjcib7qvckqjufrkf47tgu4bcpa",
+                                                "source_name": "AdiSecurityGRoup1",
+                                                "source_type": "NETWORK_SECURITY_GROUP",
+                                                "is_stateless": "False",
+                                                "is_valid": "True",
+                                                "protocol": "all",
+                                                "protocol_name": "ALL",
+                                                "time_created": "2019-07-11 03:31:49.013000+00:00",
+                                                "src_port_min": "",
+                                                "src_port_max": "",
+                                                "dst_port_min": "",
+                                                "dst_port_max": "",
+                                                "icmp_code": "",
+                                                "icmp_type": "",
+                                                "desc": "Ingress : NSG: AdiSecurityGRoup1 ALL   "
+                                            }
+                                        ],
+                                        "time_created": "2019-07-11 03:31:48.714000+00:00",
+                                        "defined_tags": {},
+                                        "freeform_tags": {}
+                                    },
+                                    {
+                                        "id": "ocid1.networksecuritygroup.oc1.iad.aaaaaaaavs2fnryhitdrzysb6lyy6mxmrqjcib7qvckqjufrkf47tgu4bcpa",
+                                        "name": "AdiSecurityGRoup1",
+                                        "compartment": "AdiZohar",
+                                        "sec_rules": [
+                                            {
+                                                "id": "840091",
+                                                "description": "Allow SSH port from Internet to hosts",
+                                                "direction": "INGRESS",
+                                                "destination": "",
+                                                "destination_name": "",
+                                                "destination_type": "",
+                                                "source": "0.0.0.0/0",
+                                                "source_name": "",
+                                                "source_type": "CIDR_BLOCK",
+                                                "is_stateless": "False",
+                                                "is_valid": "True",
+                                                "protocol": "6",
+                                                "protocol_name": "TCP",
+                                                "time_created": "2019-07-11 03:30:24.964000+00:00",
+                                                "src_port_min": "22",
+                                                "src_port_max": "22",
+                                                "dst_port_min": "",
+                                                "dst_port_max": "",
+                                                "icmp_code": "",
+                                                "icmp_type": "",
+                                                "desc": "Ingress : Src: 0.0.0.0/0         TCP   Src(ALL) Dst(22) "
+                                            }
+                                        ],
+                                        "time_created": "2019-07-11 03:30:24.621000+00:00",
+                                        "defined_tags": {},
+                                        "freeform_tags": {
+                                            "NSGKey": "PrimaryHosts"
+                                        }
                                     }
                                 ],
                                 "route_tables": [

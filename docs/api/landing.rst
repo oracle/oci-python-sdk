@@ -16,11 +16,14 @@ API Reference
 * :doc:`DNS <dns/client/oci.dns.DnsClient>`
 * :doc:`Email <email/client/oci.email.EmailClient>`
 * :doc:`File Storage <file_storage/client/oci.file_storage.FileStorageClient>`
+* :doc:`Functions Invoke <functions/client/oci.functions.FunctionsInvokeClient>`
+* :doc:`Functions Management <functions/client/oci.functions.FunctionsManagementClient>`
 * :doc:`Health Checks <healthchecks/client/oci.healthchecks.HealthChecksClient>`
 * :doc:`Identity <identity/client/oci.identity.IdentityClient>`
 * :doc:`Kms Crypto <key_management/client/oci.key_management.KmsCryptoClient>`
 * :doc:`Kms Management <key_management/client/oci.key_management.KmsManagementClient>`
 * :doc:`Kms Vault <key_management/client/oci.key_management.KmsVaultClient>`
+* :doc:`Quotas <limits/client/oci.limits.QuotasClient>`
 * :doc:`Load Balancer <load_balancer/client/oci.load_balancer.LoadBalancerClient>`
 * :doc:`Monitoring <monitoring/client/oci.monitoring.MonitoringClient>`
 * :doc:`Object Storage <object_storage/client/oci.object_storage.ObjectStorageClient>`
@@ -60,9 +63,11 @@ API Reference
     dns
     email
     file_storage
+    functions
     healthchecks
     identity
     key_management
+    limits
     load_balancer
     monitoring
     object_storage

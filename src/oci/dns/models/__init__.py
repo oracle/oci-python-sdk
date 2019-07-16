@@ -3,6 +3,8 @@
 
 from __future__ import absolute_import
 
+from .change_steering_policy_compartment_details import ChangeSteeringPolicyCompartmentDetails
+from .change_zone_compartment_details import ChangeZoneCompartmentDetails
 from .create_steering_policy_attachment_details import CreateSteeringPolicyAttachmentDetails
 from .create_steering_policy_details import CreateSteeringPolicyDetails
 from .create_zone_details import CreateZoneDetails
@@ -47,6 +49,8 @@ from .zone_summary import ZoneSummary
 
 # Maps type names to classes for dns services.
 dns_type_mapping = {
+    "ChangeSteeringPolicyCompartmentDetails": ChangeSteeringPolicyCompartmentDetails,
+    "ChangeZoneCompartmentDetails": ChangeZoneCompartmentDetails,
     "CreateSteeringPolicyAttachmentDetails": CreateSteeringPolicyAttachmentDetails,
     "CreateSteeringPolicyDetails": CreateSteeringPolicyDetails,
     "CreateZoneDetails": CreateZoneDetails,

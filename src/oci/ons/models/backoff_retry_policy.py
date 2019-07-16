@@ -49,7 +49,7 @@ class BackoffRetryPolicy(object):
     def max_retry_duration(self):
         """
         **[Required]** Gets the max_retry_duration of this BackoffRetryPolicy.
-        The maximum retry duration in milliseconds.
+        The maximum retry duration in milliseconds. Default value is `7200000` (2 hours).
 
 
         :return: The max_retry_duration of this BackoffRetryPolicy.
@@ -61,7 +61,7 @@ class BackoffRetryPolicy(object):
     def max_retry_duration(self, max_retry_duration):
         """
         Sets the max_retry_duration of this BackoffRetryPolicy.
-        The maximum retry duration in milliseconds.
+        The maximum retry duration in milliseconds. Default value is `7200000` (2 hours).
 
 
         :param max_retry_duration: The max_retry_duration of this BackoffRetryPolicy.
@@ -73,7 +73,7 @@ class BackoffRetryPolicy(object):
     def policy_type(self):
         """
         **[Required]** Gets the policy_type of this BackoffRetryPolicy.
-        The type of delivery policy. Default value: EXPONENTIAL.
+        The type of delivery policy.
 
         Allowed values for this property are: "EXPONENTIAL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -88,7 +88,7 @@ class BackoffRetryPolicy(object):
     def policy_type(self, policy_type):
         """
         Sets the policy_type of this BackoffRetryPolicy.
-        The type of delivery policy. Default value: EXPONENTIAL.
+        The type of delivery policy.
 
 
         :param policy_type: The policy_type of this BackoffRetryPolicy.

@@ -38,6 +38,7 @@ from .idp_group_mapping import IdpGroupMapping
 from .mfa_totp_device import MfaTotpDevice
 from .mfa_totp_device_summary import MfaTotpDeviceSummary
 from .mfa_totp_token import MfaTotpToken
+from .move_compartment_details import MoveCompartmentDetails
 from .password_policy import PasswordPolicy
 from .policy import Policy
 from .region import Region
@@ -120,6 +121,7 @@ identity_type_mapping = {
     "MfaTotpDevice": MfaTotpDevice,
     "MfaTotpDeviceSummary": MfaTotpDeviceSummary,
     "MfaTotpToken": MfaTotpToken,
+    "MoveCompartmentDetails": MoveCompartmentDetails,
     "PasswordPolicy": PasswordPolicy,
     "Policy": Policy,
     "Region": Region,

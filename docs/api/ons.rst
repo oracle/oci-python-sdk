@@ -21,6 +21,7 @@ Ons
     :template: autosummary/model_class.rst
 
     oci.ons.models.BackoffRetryPolicy
+    oci.ons.models.ChangeCompartmentDetails
     oci.ons.models.ConfirmationResult
     oci.ons.models.CreateSubscriptionDetails
     oci.ons.models.CreateTopicDetails

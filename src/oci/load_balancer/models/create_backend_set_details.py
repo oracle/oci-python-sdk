@@ -13,6 +13,10 @@ class CreateBackendSetDetails(object):
     For more information on backend set configuration, see
     `Managing Backend Sets`__.
 
+    **Note:** The `sessionPersistenceConfiguration` (application cookie stickiness) and `lbCookieSessionPersistenceConfiguration`
+    (LB cookie stickiness) attributes are mutually exclusive. To avoid returning an error, configure only one of these two
+    attributes per backend set.
+
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
     __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendsets.htm
@@ -47,6 +51,10 @@ class CreateBackendSetDetails(object):
             The value to assign to the session_persistence_configuration property of this CreateBackendSetDetails.
         :type session_persistence_configuration: SessionPersistenceConfigurationDetails
 
+        :param lb_cookie_session_persistence_configuration:
+            The value to assign to the lb_cookie_session_persistence_configuration property of this CreateBackendSetDetails.
+        :type lb_cookie_session_persistence_configuration: LBCookieSessionPersistenceConfigurationDetails
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -54,7 +62,8 @@ class CreateBackendSetDetails(object):
             'backends': 'list[BackendDetails]',
             'health_checker': 'HealthCheckerDetails',
             'ssl_configuration': 'SSLConfigurationDetails',
-            'session_persistence_configuration': 'SessionPersistenceConfigurationDetails'
+            'session_persistence_configuration': 'SessionPersistenceConfigurationDetails',
+            'lb_cookie_session_persistence_configuration': 'LBCookieSessionPersistenceConfigurationDetails'
         }
 
         self.attribute_map = {
@@ -63,7 +72,8 @@ class CreateBackendSetDetails(object):
             'backends': 'backends',
             'health_checker': 'healthChecker',
             'ssl_configuration': 'sslConfiguration',
-            'session_persistence_configuration': 'sessionPersistenceConfiguration'
+            'session_persistence_configuration': 'sessionPersistenceConfiguration',
+            'lb_cookie_session_persistence_configuration': 'lbCookieSessionPersistenceConfiguration'
         }
 
         self._name = None
@@ -72,6 +82,7 @@ class CreateBackendSetDetails(object):
         self._health_checker = None
         self._ssl_configuration = None
         self._session_persistence_configuration = None
+        self._lb_cookie_session_persistence_configuration = None
 
     @property
     def name(self):
@@ -216,6 +227,26 @@ class CreateBackendSetDetails(object):
         :type: SessionPersistenceConfigurationDetails
         """
         self._session_persistence_configuration = session_persistence_configuration
+
+    @property
+    def lb_cookie_session_persistence_configuration(self):
+        """
+        Gets the lb_cookie_session_persistence_configuration of this CreateBackendSetDetails.
+
+        :return: The lb_cookie_session_persistence_configuration of this CreateBackendSetDetails.
+        :rtype: LBCookieSessionPersistenceConfigurationDetails
+        """
+        return self._lb_cookie_session_persistence_configuration
+
+    @lb_cookie_session_persistence_configuration.setter
+    def lb_cookie_session_persistence_configuration(self, lb_cookie_session_persistence_configuration):
+        """
+        Sets the lb_cookie_session_persistence_configuration of this CreateBackendSetDetails.
+
+        :param lb_cookie_session_persistence_configuration: The lb_cookie_session_persistence_configuration of this CreateBackendSetDetails.
+        :type: LBCookieSessionPersistenceConfigurationDetails
+        """
+        self._lb_cookie_session_persistence_configuration = lb_cookie_session_persistence_configuration
 
     def __repr__(self):
         return formatted_flat_dict(self)

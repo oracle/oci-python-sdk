@@ -20,6 +20,7 @@ Load Balancer
 
     oci.load_balancer.models.AddHttpRequestHeaderRule
     oci.load_balancer.models.AddHttpResponseHeaderRule
+    oci.load_balancer.models.AllowRule
     oci.load_balancer.models.Backend
     oci.load_balancer.models.BackendDetails
     oci.load_balancer.models.BackendHealth
@@ -28,7 +29,9 @@ Load Balancer
     oci.load_balancer.models.BackendSetHealth
     oci.load_balancer.models.Certificate
     oci.load_balancer.models.CertificateDetails
+    oci.load_balancer.models.ChangeLoadBalancerCompartmentDetails
     oci.load_balancer.models.ConnectionConfiguration
+    oci.load_balancer.models.ControlAccessUsingHttpMethodsRule
     oci.load_balancer.models.CreateBackendDetails
     oci.load_balancer.models.CreateBackendSetDetails
     oci.load_balancer.models.CreateCertificateDetails
@@ -45,8 +48,10 @@ Load Balancer
     oci.load_balancer.models.Hostname
     oci.load_balancer.models.HostnameDetails
     oci.load_balancer.models.IpAddress
+    oci.load_balancer.models.LBCookieSessionPersistenceConfigurationDetails
     oci.load_balancer.models.Listener
     oci.load_balancer.models.ListenerDetails
+    oci.load_balancer.models.ListenerRuleSummary
     oci.load_balancer.models.LoadBalancer
     oci.load_balancer.models.LoadBalancerHealth
     oci.load_balancer.models.LoadBalancerHealthSummary
@@ -60,11 +65,15 @@ Load Balancer
     oci.load_balancer.models.RemoveHttpRequestHeaderRule
     oci.load_balancer.models.RemoveHttpResponseHeaderRule
     oci.load_balancer.models.Rule
+    oci.load_balancer.models.RuleCondition
     oci.load_balancer.models.RuleSet
     oci.load_balancer.models.RuleSetDetails
     oci.load_balancer.models.SSLConfiguration
     oci.load_balancer.models.SSLConfigurationDetails
     oci.load_balancer.models.SessionPersistenceConfigurationDetails
+    oci.load_balancer.models.SourceIpAddressCondition
+    oci.load_balancer.models.SourceVcnIdCondition
+    oci.load_balancer.models.SourceVcnIpAddressCondition
     oci.load_balancer.models.UpdateBackendDetails
     oci.load_balancer.models.UpdateBackendSetDetails
     oci.load_balancer.models.UpdateHealthCheckerDetails
