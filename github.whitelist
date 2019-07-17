@@ -64,3 +64,4 @@
 ^src/oci/work_requests/.*\.py$
 ^src/oci/limits/.*\.py$
 ^src/oci/functions/.*\.py$
+^src/oci/events/.*\.py$

@@ -42,6 +42,7 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/events/pom.xml</module>
     <module>poms/limits/pom.xml</module>
     <module>poms/functions/pom.xml</module>
     <module>poms/work_requests/pom.xml</module>
