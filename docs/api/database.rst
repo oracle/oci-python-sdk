@@ -25,12 +25,14 @@ Database
     oci.database.models.AutonomousDataWarehouseBackup
     oci.database.models.AutonomousDataWarehouseBackupSummary
     oci.database.models.AutonomousDataWarehouseConnectionStrings
+    oci.database.models.AutonomousDataWarehouseConsoleTokenDetails
     oci.database.models.AutonomousDataWarehouseSummary
     oci.database.models.AutonomousDatabase
     oci.database.models.AutonomousDatabaseBackup
     oci.database.models.AutonomousDatabaseBackupSummary
     oci.database.models.AutonomousDatabaseConnectionStrings
     oci.database.models.AutonomousDatabaseConnectionUrls
+    oci.database.models.AutonomousDatabaseConsoleTokenDetails
     oci.database.models.AutonomousDatabaseSummary
     oci.database.models.AutonomousDbPreviewVersionSummary
     oci.database.models.AutonomousExadataInfrastructure
@@ -39,6 +41,7 @@ Database
     oci.database.models.AutonomousExadataInfrastructureSummary
     oci.database.models.Backup
     oci.database.models.BackupSummary
+    oci.database.models.ChangeCompartmentDetails
     oci.database.models.CompleteExternalBackupJobDetails
     oci.database.models.CreateAutonomousContainerDatabaseDetails
     oci.database.models.CreateAutonomousDataWarehouseBackupDetails

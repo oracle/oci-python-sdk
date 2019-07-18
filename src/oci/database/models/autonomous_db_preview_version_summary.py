@@ -9,11 +9,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDbPreviewVersionSummary(object):
     """
-    The Autonomous Database preview version.
+    The Autonomous Database preview version. Note that preview version software is only available for `serverless deployments`__.
 
-    To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see `Getting Started with Policies`__.
-
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
     """
 
     #: A constant which can be used with the db_workload property of a AutonomousDbPreviewVersionSummary.

@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDbHomeWithDbSystemIdDetails(CreateDbHomeWithDbSystemIdBase):
     """
-    CreateDbHomeWithDbSystemIdDetails model.
+    Note that a valid `dbSystemId` value must be supplied for the `CreateDbHomeWithDbSystemId` API operation to successfully complete.
     """
 
     def __init__(self, **kwargs):

@@ -454,7 +454,9 @@ class AutonomousDatabase(object):
     def is_dedicated(self):
         """
         Gets the is_dedicated of this AutonomousDatabase.
-        True if it is dedicated database.
+        True if the database uses the `dedicated deployment`__ option.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
 
 
         :return: The is_dedicated of this AutonomousDatabase.
@@ -466,7 +468,9 @@ class AutonomousDatabase(object):
     def is_dedicated(self, is_dedicated):
         """
         Sets the is_dedicated of this AutonomousDatabase.
-        True if it is dedicated database.
+        True if the database uses the `dedicated deployment`__ option.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
 
 
         :param is_dedicated: The is_dedicated of this AutonomousDatabase.
@@ -822,7 +826,10 @@ class AutonomousDatabase(object):
     def whitelisted_ips(self):
         """
         Gets the whitelisted_ips of this AutonomousDatabase.
-        The client IP access control list (ACL). Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet.
+        The client IP access control list (ACL). This feature is available for `serverless deployments`__ only.
+        Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
 
         :return: The whitelisted_ips of this AutonomousDatabase.
@@ -834,7 +841,10 @@ class AutonomousDatabase(object):
     def whitelisted_ips(self, whitelisted_ips):
         """
         Sets the whitelisted_ips of this AutonomousDatabase.
-        The client IP access control list (ACL). Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet.
+        The client IP access control list (ACL). This feature is available for `serverless deployments`__ only.
+        Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
 
         :param whitelisted_ips: The whitelisted_ips of this AutonomousDatabase.
@@ -846,7 +856,9 @@ class AutonomousDatabase(object):
     def is_auto_scaling_enabled(self):
         """
         Gets the is_auto_scaling_enabled of this AutonomousDatabase.
-        Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
+        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. Note that auto scaling is available for `serverless deployments`__ only.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
 
         :return: The is_auto_scaling_enabled of this AutonomousDatabase.
@@ -858,7 +870,9 @@ class AutonomousDatabase(object):
     def is_auto_scaling_enabled(self, is_auto_scaling_enabled):
         """
         Sets the is_auto_scaling_enabled of this AutonomousDatabase.
-        Indicates if auto scaling is enabled for the Autonomous Database CPU core count.
+        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. Note that auto scaling is available for `serverless deployments`__ only.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
 
         :param is_auto_scaling_enabled: The is_auto_scaling_enabled of this AutonomousDatabase.
