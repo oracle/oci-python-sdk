@@ -395,7 +395,7 @@ class ComputeManagementClient(object):
         Creates an instance configuration
 
 
-        :param CreateInstanceConfigurationDetails create_instance_configuration: (required)
+        :param CreateInstanceConfigurationBase create_instance_configuration: (required)
             Instance configuration creation details
 
         :param str opc_retry_token: (optional)
