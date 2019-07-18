@@ -10,8 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 class ListMetricsDetails(object):
     """
     The request details for retrieving metric definitions. Specify optional properties to filter the returned results.
-    Use an asterisk (\"\\*\") as a wildcard character, placed anywhere in the string.
-    For example, to search for all metrics with names that begin with \"disk\", specify \"name\" as \"disk\\*\".
+    Use an asterisk (&#42;) as a wildcard character, placed anywhere in the string.
+    For example, to search for all metrics with names that begin with \"disk\", specify \"name\" as \"disk&#42;\".
     If no properties are specified, then all metric definitions within the request scope are returned.
     """
 
@@ -181,8 +181,8 @@ class ListMetricsDetails(object):
         Group metrics by these fields in the response. For example, to list all metric namespaces available
         in a compartment, groupBy the \"namespace\" field.
 
-        Example - group by namespace and resource:
-        `[ \"namespace\", \"resourceId\" ]`
+        Example - group by namespace:
+        `[ \"namespace\" ]`
 
 
         :return: The group_by of this ListMetricsDetails.
@@ -197,8 +197,8 @@ class ListMetricsDetails(object):
         Group metrics by these fields in the response. For example, to list all metric namespaces available
         in a compartment, groupBy the \"namespace\" field.
 
-        Example - group by namespace and resource:
-        `[ \"namespace\", \"resourceId\" ]`
+        Example - group by namespace:
+        `[ \"namespace\" ]`
 
 
         :param group_by: The group_by of this ListMetricsDetails.

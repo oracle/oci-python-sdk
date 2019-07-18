@@ -28,7 +28,48 @@ def vcr_fixture(request):
         yield
 
 
-# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="https://jira.oci.oraclecorp.com/projects/TEL" opsJiraProject="https://jira-sd.mc1.oracleiaas.com/projects/TEL"
+# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="TEL" opsJiraProject="TEL"
+def test_change_alarm_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('monitoring', 'ChangeAlarmCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('monitoring', util.camelize('monitoring'), 'ChangeAlarmCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='monitoring', api_name='ChangeAlarmCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
+            response = client.change_alarm_compartment(
+                alarm_id=request.pop(util.camelize('alarm_id')),
+                change_alarm_compartment_details=request.pop(util.camelize('change_alarm_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'monitoring',
+            'ChangeAlarmCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_alarm_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="TEL" opsJiraProject="TEL"
 def test_create_alarm(testing_service_client):
     if not testing_service_client.is_api_enabled('monitoring', 'CreateAlarm'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -68,7 +109,7 @@ def test_create_alarm(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="https://jira.oci.oraclecorp.com/projects/TEL" opsJiraProject="https://jira-sd.mc1.oracleiaas.com/projects/TEL"
+# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="TEL" opsJiraProject="TEL"
 def test_delete_alarm(testing_service_client):
     if not testing_service_client.is_api_enabled('monitoring', 'DeleteAlarm'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -108,7 +149,7 @@ def test_delete_alarm(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="https://jira.oci.oraclecorp.com/projects/TEL" opsJiraProject="https://jira-sd.mc1.oracleiaas.com/projects/TEL"
+# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="TEL" opsJiraProject="TEL"
 def test_get_alarm(testing_service_client):
     if not testing_service_client.is_api_enabled('monitoring', 'GetAlarm'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -148,7 +189,7 @@ def test_get_alarm(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="https://jira.oci.oraclecorp.com/projects/TEL" opsJiraProject="https://jira-sd.mc1.oracleiaas.com/projects/TEL"
+# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="TEL" opsJiraProject="TEL"
 def test_get_alarm_history(testing_service_client):
     if not testing_service_client.is_api_enabled('monitoring', 'GetAlarmHistory'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -207,7 +248,7 @@ def test_get_alarm_history(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="https://jira.oci.oraclecorp.com/projects/TEL" opsJiraProject="https://jira-sd.mc1.oracleiaas.com/projects/TEL"
+# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="TEL" opsJiraProject="TEL"
 def test_list_alarms(testing_service_client):
     if not testing_service_client.is_api_enabled('monitoring', 'ListAlarms'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -266,7 +307,7 @@ def test_list_alarms(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="https://jira.oci.oraclecorp.com/projects/TEL" opsJiraProject="https://jira-sd.mc1.oracleiaas.com/projects/TEL"
+# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="TEL" opsJiraProject="TEL"
 def test_list_alarms_status(testing_service_client):
     if not testing_service_client.is_api_enabled('monitoring', 'ListAlarmsStatus'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -325,7 +366,7 @@ def test_list_alarms_status(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="https://jira.oci.oraclecorp.com/projects/TEL" opsJiraProject="https://jira-sd.mc1.oracleiaas.com/projects/TEL"
+# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="TEL" opsJiraProject="TEL"
 def test_list_metrics(testing_service_client):
     if not testing_service_client.is_api_enabled('monitoring', 'ListMetrics'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -387,7 +428,7 @@ def test_list_metrics(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="https://jira.oci.oraclecorp.com/projects/TEL" opsJiraProject="https://jira-sd.mc1.oracleiaas.com/projects/TEL"
+# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="TEL" opsJiraProject="TEL"
 def test_post_metric_data(testing_service_client):
     if not testing_service_client.is_api_enabled('monitoring', 'PostMetricData'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -427,7 +468,7 @@ def test_post_metric_data(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="https://jira.oci.oraclecorp.com/projects/TEL" opsJiraProject="https://jira-sd.mc1.oracleiaas.com/projects/TEL"
+# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="TEL" opsJiraProject="TEL"
 def test_remove_alarm_suppression(testing_service_client):
     if not testing_service_client.is_api_enabled('monitoring', 'RemoveAlarmSuppression'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -467,7 +508,7 @@ def test_remove_alarm_suppression(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="https://jira.oci.oraclecorp.com/projects/TEL" opsJiraProject="https://jira-sd.mc1.oracleiaas.com/projects/TEL"
+# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="TEL" opsJiraProject="TEL"
 def test_summarize_metrics_data(testing_service_client):
     if not testing_service_client.is_api_enabled('monitoring', 'SummarizeMetricsData'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -508,7 +549,7 @@ def test_summarize_metrics_data(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="https://jira.oci.oraclecorp.com/projects/TEL" opsJiraProject="https://jira-sd.mc1.oracleiaas.com/projects/TEL"
+# IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="TEL" opsJiraProject="TEL"
 def test_update_alarm(testing_service_client):
     if not testing_service_client.is_api_enabled('monitoring', 'UpdateAlarm'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
