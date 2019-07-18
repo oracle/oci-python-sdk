@@ -202,6 +202,8 @@ class PingMonitor(object):
     def targets(self):
         """
         Gets the targets of this PingMonitor.
+        A list of targets (hostnames or IP addresses) of the probe.
+
 
         :return: The targets of this PingMonitor.
         :rtype: list[str]
@@ -212,6 +214,8 @@ class PingMonitor(object):
     def targets(self, targets):
         """
         Sets the targets of this PingMonitor.
+        A list of targets (hostnames or IP addresses) of the probe.
+
 
         :param targets: The targets of this PingMonitor.
         :type: list[str]
@@ -222,6 +226,8 @@ class PingMonitor(object):
     def vantage_point_names(self):
         """
         Gets the vantage_point_names of this PingMonitor.
+        A list of names of vantage points from which to execute the probe.
+
 
         :return: The vantage_point_names of this PingMonitor.
         :rtype: list[str]
@@ -232,6 +238,8 @@ class PingMonitor(object):
     def vantage_point_names(self, vantage_point_names):
         """
         Sets the vantage_point_names of this PingMonitor.
+        A list of names of vantage points from which to execute the probe.
+
 
         :param vantage_point_names: The vantage_point_names of this PingMonitor.
         :type: list[str]

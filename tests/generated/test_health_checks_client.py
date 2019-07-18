@@ -29,6 +29,88 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="groan-chomskies_us_grp@oracle.com" jiraProject="OHC" opsJiraProject="HC"
+def test_change_http_monitor_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('healthchecks', 'ChangeHttpMonitorCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('healthchecks', util.camelize('health_checks'), 'ChangeHttpMonitorCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='healthchecks', api_name='ChangeHttpMonitorCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
+            response = client.change_http_monitor_compartment(
+                monitor_id=request.pop(util.camelize('monitor_id')),
+                change_http_monitor_compartment_details=request.pop(util.camelize('change_http_monitor_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'healthchecks',
+            'ChangeHttpMonitorCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_http_monitor_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="groan-chomskies_us_grp@oracle.com" jiraProject="OHC" opsJiraProject="HC"
+def test_change_ping_monitor_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('healthchecks', 'ChangePingMonitorCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('healthchecks', util.camelize('health_checks'), 'ChangePingMonitorCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='healthchecks', api_name='ChangePingMonitorCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
+            response = client.change_ping_monitor_compartment(
+                monitor_id=request.pop(util.camelize('monitor_id')),
+                change_ping_monitor_compartment_details=request.pop(util.camelize('change_ping_monitor_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'healthchecks',
+            'ChangePingMonitorCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_ping_monitor_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="groan-chomskies_us_grp@oracle.com" jiraProject="OHC" opsJiraProject="HC"
 def test_create_http_monitor(testing_service_client):
     if not testing_service_client.is_api_enabled('healthchecks', 'CreateHttpMonitor'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
