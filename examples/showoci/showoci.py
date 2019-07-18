@@ -61,7 +61,7 @@ import sys
 import argparse
 import datetime
 
-version = "19.7.17"
+version = "19.7.24"
 
 ##########################################################################
 # execute_extract
@@ -240,6 +240,7 @@ def set_parser_arguments():
     parser.add_argument('-p', default="", dest='proxy', help='Set Proxy (i.e. www-proxy-server.com:80) ')
     parser.add_argument('-rg', default="", dest='region', help='Filter by Region')
     parser.add_argument('-cp', default="", dest='compart', help='Filter by Compartment')
+    parser.add_argument('-cpath', default="", dest='compartpath', help='Filter by Compartment using path , example -cpath "Adi Main / Adi Sub"')
     parser.add_argument('-cf', type=argparse.FileType('r'), dest='config', help="Config File")
     parser.add_argument('-csv', default="", dest='csv', help="Output to CSV files, Input as file header")
     parser.add_argument('-jf', type=argparse.FileType('w'), dest='joutfile', help="Output to file   (JSON format)")
@@ -345,6 +346,9 @@ def set_service_extract_flags(cmd):
 
     if cmd.compart:
         prm.filter_by_compartment = str(cmd.compart)
+
+    if cmd.compartpath:
+        prm.filter_by_compartment_path = str(cmd.compartpath)
 
     if cmd.instance_principals:
         prm.use_instance_principals = True

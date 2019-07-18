@@ -553,7 +553,7 @@ class ShowOCI2SE(object):
                                 'cluster_name': dbs['cluster_name'],
                                 'time_created': dbs['time_created'][0:16],
                                 'db_nodes': str(', '.join(x['desc'] for x in dbs['db_nodes'])),
-                                'nsg_ids': str(', '.join(x['nsg_ids'] for x in dbs['db_nodes']))
+                                'nsg_names': str(', '.join(x['nsg_names'] for x in dbs['db_nodes']))
                                 }
                         self.outdata.append(data)
 
@@ -767,28 +767,20 @@ class ShowOCI2SE(object):
             backendset = load_balance_obj['backendset']
 
             for bs in backendset:
-                # list of backends
-                if 'backends' in bs:
-                    for backend in bs['backends']:
 
-                        self.LoadBalancerBackendsetId += 1
-                        data = {'class': 'LoadBalancerBackendset' + str(self.LoadBalancerBackendsetId),
-                                'region_name': region_name,
-                                'compartment_name': lb['compartment_name'],
-                                'name': lb['display_name'],
-                                'status': lb['status'],
-                                'shape': lb['shape_name'],
-                                'type': ("Private" if lb['is_private'] else "Public"),
-                                'ip_addresses': str(', '.join(x for x in lb['ips'])),
-                                'subnets': str(', '.join(x for x in lb['subnets'])),
-                                'bs_name': bs['backend_set'],
-                                'bs_status': bs['status'],
-                                'health_check': str(', '.join(x for x in bs['health_check'])),
-                                'session_persistence': bs['session_persistence'],
-                                'ssl_cert': bs['ssl_cert'],
-                                'backend': backend
-                                }
-                        self.outdata.append(data)
+                self.LoadBalancerBackendsetId += 1
+                data = {'class': 'LoadBalancerBackendset' + str(self.LoadBalancerBackendsetId),
+                        'region_name': region_name,
+                        'compartment_name': lb['compartment_name'],
+                        'name': lb['display_name'],
+                        'status': lb['status'],
+                        'shape': lb['shape_name'],
+                        'type': ("Private" if lb['is_private'] else "Public"),
+                        'ip_addresses': str(', '.join(x for x in lb['ips'])),
+                        'subnets': str(', '.join(x for x in lb['subnets'])),
+                        'backendset': backendset
+                        }
+                self.outdata.append(data)
 
         except Exception as e:
             self.__print_error("__convert_load_balancer_backendset", e)
