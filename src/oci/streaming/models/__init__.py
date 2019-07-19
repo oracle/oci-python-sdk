@@ -3,6 +3,7 @@
 
 from __future__ import absolute_import
 
+from .change_stream_compartment_details import ChangeStreamCompartmentDetails
 from .create_cursor_details import CreateCursorDetails
 from .create_group_cursor_details import CreateGroupCursorDetails
 from .create_stream_details import CreateStreamDetails
@@ -21,6 +22,7 @@ from .update_stream_details import UpdateStreamDetails
 
 # Maps type names to classes for streaming services.
 streaming_type_mapping = {
+    "ChangeStreamCompartmentDetails": ChangeStreamCompartmentDetails,
     "CreateCursorDetails": CreateCursorDetails,
     "CreateGroupCursorDetails": CreateGroupCursorDetails,
     "CreateStreamDetails": CreateStreamDetails,
