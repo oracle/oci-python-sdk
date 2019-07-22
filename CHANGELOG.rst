@@ -5,12 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-2.2.19 - TBD
+2.2.19 - 2019-07-23
 ====================
 
 Added
 -----
-* TBD
+* Support for moving resources across compartments in the Database service
+* Support for moving resources across compartments in the Health Checks service
+* Support for moving alarms across compartments in the Monitoring service
+* Support for creating instance configurations from running instances in the Compute service
+* Support for setting up budget alerts for cost tracking tags in the Budgets service
 
 ====================
 2.2.18 - 2019-07-16
