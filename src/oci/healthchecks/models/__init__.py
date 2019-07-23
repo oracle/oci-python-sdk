@@ -3,6 +3,8 @@
 
 from __future__ import absolute_import
 
+from .change_http_monitor_compartment_details import ChangeHttpMonitorCompartmentDetails
+from .change_ping_monitor_compartment_details import ChangePingMonitorCompartmentDetails
 from .connection import Connection
 from .create_http_monitor_details import CreateHttpMonitorDetails
 from .create_on_demand_http_probe_details import CreateOnDemandHttpProbeDetails
@@ -26,6 +28,8 @@ from .update_ping_monitor_details import UpdatePingMonitorDetails
 
 # Maps type names to classes for healthchecks services.
 healthchecks_type_mapping = {
+    "ChangeHttpMonitorCompartmentDetails": ChangeHttpMonitorCompartmentDetails,
+    "ChangePingMonitorCompartmentDetails": ChangePingMonitorCompartmentDetails,
     "Connection": Connection,
     "CreateHttpMonitorDetails": CreateHttpMonitorDetails,
     "CreateOnDemandHttpProbeDetails": CreateOnDemandHttpProbeDetails,

@@ -412,9 +412,10 @@ class AlarmSummary(object):
     def destinations(self):
         """
         **[Required]** Gets the destinations of this AlarmSummary.
-        An array of `OCIDs`__ to which the notifications for
-        this alarm will be delivered. An example destination is an OCID for a topic managed by the
-        Oracle Cloud Infrastructure Notification service.
+        A list of destinations to which the notifications for this alarm will be delivered.
+        Each destination is represented by an `OCID`__ related to the supported destination service.
+        For example, a destination using the Notifications service is represented by a topic OCID.
+        Supported destination services: Notifications Service. Limit: One destination per supported destination service.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -428,9 +429,10 @@ class AlarmSummary(object):
     def destinations(self, destinations):
         """
         Sets the destinations of this AlarmSummary.
-        An array of `OCIDs`__ to which the notifications for
-        this alarm will be delivered. An example destination is an OCID for a topic managed by the
-        Oracle Cloud Infrastructure Notification service.
+        A list of destinations to which the notifications for this alarm will be delivered.
+        Each destination is represented by an `OCID`__ related to the supported destination service.
+        For example, a destination using the Notifications service is represented by a topic OCID.
+        Supported destination services: Notifications Service. Limit: One destination per supported destination service.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 

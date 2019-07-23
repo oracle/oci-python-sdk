@@ -10,12 +10,14 @@ from .autonomous_data_warehouse import AutonomousDataWarehouse
 from .autonomous_data_warehouse_backup import AutonomousDataWarehouseBackup
 from .autonomous_data_warehouse_backup_summary import AutonomousDataWarehouseBackupSummary
 from .autonomous_data_warehouse_connection_strings import AutonomousDataWarehouseConnectionStrings
+from .autonomous_data_warehouse_console_token_details import AutonomousDataWarehouseConsoleTokenDetails
 from .autonomous_data_warehouse_summary import AutonomousDataWarehouseSummary
 from .autonomous_database import AutonomousDatabase
 from .autonomous_database_backup import AutonomousDatabaseBackup
 from .autonomous_database_backup_summary import AutonomousDatabaseBackupSummary
 from .autonomous_database_connection_strings import AutonomousDatabaseConnectionStrings
 from .autonomous_database_connection_urls import AutonomousDatabaseConnectionUrls
+from .autonomous_database_console_token_details import AutonomousDatabaseConsoleTokenDetails
 from .autonomous_database_summary import AutonomousDatabaseSummary
 from .autonomous_db_preview_version_summary import AutonomousDbPreviewVersionSummary
 from .autonomous_exadata_infrastructure import AutonomousExadataInfrastructure
@@ -24,6 +26,7 @@ from .autonomous_exadata_infrastructure_shape_summary import AutonomousExadataIn
 from .autonomous_exadata_infrastructure_summary import AutonomousExadataInfrastructureSummary
 from .backup import Backup
 from .backup_summary import BackupSummary
+from .change_compartment_details import ChangeCompartmentDetails
 from .complete_external_backup_job_details import CompleteExternalBackupJobDetails
 from .create_autonomous_container_database_details import CreateAutonomousContainerDatabaseDetails
 from .create_autonomous_data_warehouse_backup_details import CreateAutonomousDataWarehouseBackupDetails
@@ -103,12 +106,14 @@ database_type_mapping = {
     "AutonomousDataWarehouseBackup": AutonomousDataWarehouseBackup,
     "AutonomousDataWarehouseBackupSummary": AutonomousDataWarehouseBackupSummary,
     "AutonomousDataWarehouseConnectionStrings": AutonomousDataWarehouseConnectionStrings,
+    "AutonomousDataWarehouseConsoleTokenDetails": AutonomousDataWarehouseConsoleTokenDetails,
     "AutonomousDataWarehouseSummary": AutonomousDataWarehouseSummary,
     "AutonomousDatabase": AutonomousDatabase,
     "AutonomousDatabaseBackup": AutonomousDatabaseBackup,
     "AutonomousDatabaseBackupSummary": AutonomousDatabaseBackupSummary,
     "AutonomousDatabaseConnectionStrings": AutonomousDatabaseConnectionStrings,
     "AutonomousDatabaseConnectionUrls": AutonomousDatabaseConnectionUrls,
+    "AutonomousDatabaseConsoleTokenDetails": AutonomousDatabaseConsoleTokenDetails,
     "AutonomousDatabaseSummary": AutonomousDatabaseSummary,
     "AutonomousDbPreviewVersionSummary": AutonomousDbPreviewVersionSummary,
     "AutonomousExadataInfrastructure": AutonomousExadataInfrastructure,
@@ -117,6 +122,7 @@ database_type_mapping = {
     "AutonomousExadataInfrastructureSummary": AutonomousExadataInfrastructureSummary,
     "Backup": Backup,
     "BackupSummary": BackupSummary,
+    "ChangeCompartmentDetails": ChangeCompartmentDetails,
     "CompleteExternalBackupJobDetails": CompleteExternalBackupJobDetails,
     "CreateAutonomousContainerDatabaseDetails": CreateAutonomousContainerDatabaseDetails,
     "CreateAutonomousDataWarehouseBackupDetails": CreateAutonomousDataWarehouseBackupDetails,

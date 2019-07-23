@@ -9,6 +9,7 @@ from .alarm_history_collection import AlarmHistoryCollection
 from .alarm_history_entry import AlarmHistoryEntry
 from .alarm_status_summary import AlarmStatusSummary
 from .alarm_summary import AlarmSummary
+from .change_alarm_compartment_details import ChangeAlarmCompartmentDetails
 from .create_alarm_details import CreateAlarmDetails
 from .datapoint import Datapoint
 from .failed_metric_record import FailedMetricRecord
@@ -30,6 +31,7 @@ monitoring_type_mapping = {
     "AlarmHistoryEntry": AlarmHistoryEntry,
     "AlarmStatusSummary": AlarmStatusSummary,
     "AlarmSummary": AlarmSummary,
+    "ChangeAlarmCompartmentDetails": ChangeAlarmCompartmentDetails,
     "CreateAlarmDetails": CreateAlarmDetails,
     "Datapoint": Datapoint,
     "FailedMetricRecord": FailedMetricRecord,

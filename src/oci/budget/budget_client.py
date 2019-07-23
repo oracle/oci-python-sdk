@@ -682,7 +682,16 @@ class BudgetClient(object):
     def list_budgets(self, compartment_id, **kwargs):
         """
         Returns a list of Budgets
-        Gets a list of all Budgets in a compartment.
+        Gets a list of Budgets in a compartment.
+
+        By default, ListBudgets returns budgets of 'COMPARTMENT' target type and the budget records with only ONE target compartment OCID.
+
+        To list ALL budgets, set the targetType query parameter to ALL.
+        Example:
+          'targetType=ALL'
+
+        Additional targetTypes would be available in future releases. Clients should ignore new targetType
+        or upgrade to latest version of client SDK to handle new targetType.
 
 
         :param str compartment_id: (required)
@@ -712,6 +721,14 @@ class BudgetClient(object):
 
             Example: `My new resource`
 
+        :param str target_type: (optional)
+            The type of target to filter by.
+              * ALL - List all budgets
+              * COMPARTMENT - List all budgets with targetType == \"COMPARTMENT\"
+              * TAG - List all budgets with targetType == \"TAG\"
+
+            Allowed values are: "ALL", "COMPARTMENT", "TAG"
+
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
@@ -738,6 +755,7 @@ class BudgetClient(object):
             "sort_by",
             "lifecycle_state",
             "display_name",
+            "target_type",
             "opc_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
@@ -752,6 +770,13 @@ class BudgetClient(object):
                     "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
                 )
 
+        if 'target_type' in kwargs:
+            target_type_allowed_values = ["ALL", "COMPARTMENT", "TAG"]
+            if kwargs['target_type'] not in target_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `target_type`, must be one of {0}".format(target_type_allowed_values)
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "limit": kwargs.get("limit", missing),
@@ -759,7 +784,8 @@ class BudgetClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
-            "displayName": kwargs.get("display_name", missing)
+            "displayName": kwargs.get("display_name", missing),
+            "targetType": kwargs.get("target_type", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
