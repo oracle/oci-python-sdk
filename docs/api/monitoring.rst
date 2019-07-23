@@ -24,6 +24,7 @@ Monitoring
     oci.monitoring.models.AlarmHistoryEntry
     oci.monitoring.models.AlarmStatusSummary
     oci.monitoring.models.AlarmSummary
+    oci.monitoring.models.ChangeAlarmCompartmentDetails
     oci.monitoring.models.CreateAlarmDetails
     oci.monitoring.models.Datapoint
     oci.monitoring.models.FailedMetricRecord

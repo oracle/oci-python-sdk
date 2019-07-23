@@ -16,6 +16,14 @@ class Budget(object):
     #: This constant has a value of "MONTHLY"
     RESET_PERIOD_MONTHLY = "MONTHLY"
 
+    #: A constant which can be used with the target_type property of a Budget.
+    #: This constant has a value of "COMPARTMENT"
+    TARGET_TYPE_COMPARTMENT = "COMPARTMENT"
+
+    #: A constant which can be used with the target_type property of a Budget.
+    #: This constant has a value of "TAG"
+    TARGET_TYPE_TAG = "TAG"
+
     #: A constant which can be used with the lifecycle_state property of a Budget.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -58,6 +66,16 @@ class Budget(object):
             Allowed values for this property are: "MONTHLY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type reset_period: str
+
+        :param target_type:
+            The value to assign to the target_type property of this Budget.
+            Allowed values for this property are: "COMPARTMENT", "TAG", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type target_type: str
+
+        :param targets:
+            The value to assign to the targets property of this Budget.
+        :type targets: list[str]
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Budget.
@@ -110,6 +128,8 @@ class Budget(object):
             'description': 'str',
             'amount': 'float',
             'reset_period': 'str',
+            'target_type': 'str',
+            'targets': 'list[str]',
             'lifecycle_state': 'str',
             'alert_rule_count': 'int',
             'version': 'int',
@@ -130,6 +150,8 @@ class Budget(object):
             'description': 'description',
             'amount': 'amount',
             'reset_period': 'resetPeriod',
+            'target_type': 'targetType',
+            'targets': 'targets',
             'lifecycle_state': 'lifecycleState',
             'alert_rule_count': 'alertRuleCount',
             'version': 'version',
@@ -149,6 +171,8 @@ class Budget(object):
         self._description = None
         self._amount = None
         self._reset_period = None
+        self._target_type = None
+        self._targets = None
         self._lifecycle_state = None
         self._alert_rule_count = None
         self._version = None
@@ -211,8 +235,10 @@ class Budget(object):
     @property
     def target_compartment_id(self):
         """
-        **[Required]** Gets the target_compartment_id of this Budget.
-        The OCID of the compartment on which budget is applied
+        Gets the target_compartment_id of this Budget.
+        This is DEPRECATED. For backwards compatability, the property will be populated when
+        targetType is \"COMPARTMENT\" AND targets contains EXACT ONE target compartment ocid.
+        For all other scenarios, this property will be left empty.
 
 
         :return: The target_compartment_id of this Budget.
@@ -224,7 +250,9 @@ class Budget(object):
     def target_compartment_id(self, target_compartment_id):
         """
         Sets the target_compartment_id of this Budget.
-        The OCID of the compartment on which budget is applied
+        This is DEPRECATED. For backwards compatability, the property will be populated when
+        targetType is \"COMPARTMENT\" AND targets contains EXACT ONE target compartment ocid.
+        For all other scenarios, this property will be left empty.
 
 
         :param target_compartment_id: The target_compartment_id of this Budget.
@@ -333,6 +361,64 @@ class Budget(object):
         if not value_allowed_none_or_none_sentinel(reset_period, allowed_values):
             reset_period = 'UNKNOWN_ENUM_VALUE'
         self._reset_period = reset_period
+
+    @property
+    def target_type(self):
+        """
+        Gets the target_type of this Budget.
+        The type of target on which the budget is applied.
+
+        Allowed values for this property are: "COMPARTMENT", "TAG", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The target_type of this Budget.
+        :rtype: str
+        """
+        return self._target_type
+
+    @target_type.setter
+    def target_type(self, target_type):
+        """
+        Sets the target_type of this Budget.
+        The type of target on which the budget is applied.
+
+
+        :param target_type: The target_type of this Budget.
+        :type: str
+        """
+        allowed_values = ["COMPARTMENT", "TAG"]
+        if not value_allowed_none_or_none_sentinel(target_type, allowed_values):
+            target_type = 'UNKNOWN_ENUM_VALUE'
+        self._target_type = target_type
+
+    @property
+    def targets(self):
+        """
+        Gets the targets of this Budget.
+        The list of targets on which the budget is applied.
+          If targetType is \"COMPARTMENT\", targets contains list of compartment OCIDs.
+          If targetType is \"TAG\", targets contains list of tag identifiers in the form of \"{tagNamespace}.{tagKey}.{tagValue}\".
+
+
+        :return: The targets of this Budget.
+        :rtype: list[str]
+        """
+        return self._targets
+
+    @targets.setter
+    def targets(self, targets):
+        """
+        Sets the targets of this Budget.
+        The list of targets on which the budget is applied.
+          If targetType is \"COMPARTMENT\", targets contains list of compartment OCIDs.
+          If targetType is \"TAG\", targets contains list of tag identifiers in the form of \"{tagNamespace}.{tagKey}.{tagValue}\".
+
+
+        :param targets: The targets of this Budget.
+        :type: list[str]
+        """
+        self._targets = targets
 
     @property
     def lifecycle_state(self):

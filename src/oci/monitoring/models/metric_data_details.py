@@ -135,7 +135,7 @@ class MetricDataDetails(object):
         **[Required]** Gets the name of this MetricDataDetails.
         The name of the metric.
 
-        A valid name value starts with an alphabetical character and includes only alphanumeric characters, dots, underscores, hyphens, and dollar signs.
+        A valid name value starts with an alphabetical character and includes only alphanumeric characters, dots, underscores, hyphens, and dollar signs. The `oci_` prefix is reserved.
         Avoid entering confidential information.
 
         Example: `my_app.success_rate`
@@ -152,7 +152,7 @@ class MetricDataDetails(object):
         Sets the name of this MetricDataDetails.
         The name of the metric.
 
-        A valid name value starts with an alphabetical character and includes only alphanumeric characters, dots, underscores, hyphens, and dollar signs.
+        A valid name value starts with an alphabetical character and includes only alphanumeric characters, dots, underscores, hyphens, and dollar signs. The `oci_` prefix is reserved.
         Avoid entering confidential information.
 
         Example: `my_app.success_rate`
@@ -166,10 +166,11 @@ class MetricDataDetails(object):
     @property
     def dimensions(self):
         """
-        Gets the dimensions of this MetricDataDetails.
+        **[Required]** Gets the dimensions of this MetricDataDetails.
         Qualifiers provided in a metric definition. Available dimensions vary by metric namespace.
-
-        Each dimension takes the form of a key-value pair. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. A valid dimension value includes only Unicode characters.
+        Each dimension takes the form of a key-value pair.
+        A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. The character limit for a dimension key is 256.
+        A valid dimension value includes only Unicode characters. The character limit for a dimension value is 256.
         Empty strings are not allowed for keys or values. Avoid entering confidential information.
 
         Example: `\"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"`
@@ -185,8 +186,9 @@ class MetricDataDetails(object):
         """
         Sets the dimensions of this MetricDataDetails.
         Qualifiers provided in a metric definition. Available dimensions vary by metric namespace.
-
-        Each dimension takes the form of a key-value pair. A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. A valid dimension value includes only Unicode characters.
+        Each dimension takes the form of a key-value pair.
+        A valid dimension key includes only printable ASCII, excluding periods (.) and spaces. The character limit for a dimension key is 256.
+        A valid dimension value includes only Unicode characters. The character limit for a dimension value is 256.
         Empty strings are not allowed for keys or values. Avoid entering confidential information.
 
         Example: `\"resourceId\": \"ocid1.instance.region1.phx.exampleuniqueID\"`
@@ -202,6 +204,7 @@ class MetricDataDetails(object):
         """
         Gets the metadata of this MetricDataDetails.
         Properties describing metrics. These are not part of the unique fields identifying the metric.
+        Each metadata item takes the form of a key-value pair. The character limit for a metadata key is 256. The character limit for a metadata value is 256.
 
         Example: `\"unit\": \"bytes\"`
 
@@ -216,6 +219,7 @@ class MetricDataDetails(object):
         """
         Sets the metadata of this MetricDataDetails.
         Properties describing metrics. These are not part of the unique fields identifying the metric.
+        Each metadata item takes the form of a key-value pair. The character limit for a metadata key is 256. The character limit for a metadata value is 256.
 
         Example: `\"unit\": \"bytes\"`
 

@@ -302,7 +302,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def license_model(self):
         """
         Gets the license_model of this UpdateAutonomousDatabaseDetails.
-        The new Oracle license model that applies to the Oracle Autonomous Transaction Processing database.
+        The new Oracle license model that applies to the Oracle Autonomous Transaction Processing database. Note that when updating an Autonomous Database that uses the `dedicated deployment`__ option, this attribute must be null.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
 
         Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
 
@@ -316,7 +318,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def license_model(self, license_model):
         """
         Sets the license_model of this UpdateAutonomousDatabaseDetails.
-        The new Oracle license model that applies to the Oracle Autonomous Transaction Processing database.
+        The new Oracle license model that applies to the Oracle Autonomous Transaction Processing database. Note that when updating an Autonomous Database that uses the `dedicated deployment`__ option, this attribute must be null.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
 
 
         :param license_model: The license_model of this UpdateAutonomousDatabaseDetails.
@@ -334,7 +338,10 @@ class UpdateAutonomousDatabaseDetails(object):
     def whitelisted_ips(self):
         """
         Gets the whitelisted_ips of this UpdateAutonomousDatabaseDetails.
-        The client IP access control list (ACL). Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet. To delete all the existing white listed IP\u2019s, use an array with a single empty string entry.
+        The client IP access control list (ACL). This feature is available for `serverless deployments`__ only.
+        Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet. To delete all the existing white listed IP\u2019s, use an array with a single empty string entry.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
 
         :return: The whitelisted_ips of this UpdateAutonomousDatabaseDetails.
@@ -346,7 +353,10 @@ class UpdateAutonomousDatabaseDetails(object):
     def whitelisted_ips(self, whitelisted_ips):
         """
         Sets the whitelisted_ips of this UpdateAutonomousDatabaseDetails.
-        The client IP access control list (ACL). Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet. To delete all the existing white listed IP\u2019s, use an array with a single empty string entry.
+        The client IP access control list (ACL). This feature is available for `serverless deployments`__ only.
+        Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet. To delete all the existing white listed IP\u2019s, use an array with a single empty string entry.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
 
         :param whitelisted_ips: The whitelisted_ips of this UpdateAutonomousDatabaseDetails.
@@ -358,7 +368,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_auto_scaling_enabled(self):
         """
         Gets the is_auto_scaling_enabled of this UpdateAutonomousDatabaseDetails.
-        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is false.
+        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is false. Note that auto scaling is available for `serverless deployments`__ only.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
 
         :return: The is_auto_scaling_enabled of this UpdateAutonomousDatabaseDetails.
@@ -370,7 +382,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_auto_scaling_enabled(self, is_auto_scaling_enabled):
         """
         Sets the is_auto_scaling_enabled of this UpdateAutonomousDatabaseDetails.
-        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is false.
+        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is false. Note that auto scaling is available for `serverless deployments`__ only.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
 
         :param is_auto_scaling_enabled: The is_auto_scaling_enabled of this UpdateAutonomousDatabaseDetails.

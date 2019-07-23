@@ -9,9 +9,11 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDatabaseConnectionUrls(object):
     """
-    The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+    The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for `dedicated deployments`__.
 
     Example: `{\"sqlDevWebUrl\": \"https://<hostname>/ords...\", \"apexUrl\", \"https://<hostname>/ords...\"}`
+
+    __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
     """
 
     def __init__(self, **kwargs):

@@ -108,7 +108,7 @@ class Datapoint(object):
         Gets the count of this Datapoint.
         The number of occurrences of the associated value in the set of data.
 
-        Optional. Default is 1.
+        Default is 1. Value must be greater than zero.
 
 
         :return: The count of this Datapoint.
@@ -122,7 +122,7 @@ class Datapoint(object):
         Sets the count of this Datapoint.
         The number of occurrences of the associated value in the set of data.
 
-        Optional. Default is 1.
+        Default is 1. Value must be greater than zero.
 
 
         :param count: The count of this Datapoint.

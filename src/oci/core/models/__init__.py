@@ -67,7 +67,9 @@ from .create_ip_sec_connection_details import CreateIPSecConnectionDetails
 from .create_ip_sec_connection_tunnel_details import CreateIPSecConnectionTunnelDetails
 from .create_ip_sec_tunnel_bgp_session_details import CreateIPSecTunnelBgpSessionDetails
 from .create_image_details import CreateImageDetails
+from .create_instance_configuration_base import CreateInstanceConfigurationBase
 from .create_instance_configuration_details import CreateInstanceConfigurationDetails
+from .create_instance_configuration_from_instance_details import CreateInstanceConfigurationFromInstanceDetails
 from .create_instance_console_connection_details import CreateInstanceConsoleConnectionDetails
 from .create_instance_pool_details import CreateInstancePoolDetails
 from .create_instance_pool_placement_configuration_details import CreateInstancePoolPlacementConfigurationDetails
@@ -320,7 +322,9 @@ core_type_mapping = {
     "CreateIPSecConnectionTunnelDetails": CreateIPSecConnectionTunnelDetails,
     "CreateIPSecTunnelBgpSessionDetails": CreateIPSecTunnelBgpSessionDetails,
     "CreateImageDetails": CreateImageDetails,
+    "CreateInstanceConfigurationBase": CreateInstanceConfigurationBase,
     "CreateInstanceConfigurationDetails": CreateInstanceConfigurationDetails,
+    "CreateInstanceConfigurationFromInstanceDetails": CreateInstanceConfigurationFromInstanceDetails,
     "CreateInstanceConsoleConnectionDetails": CreateInstanceConsoleConnectionDetails,
     "CreateInstancePoolDetails": CreateInstancePoolDetails,
     "CreateInstancePoolPlacementConfigurationDetails": CreateInstancePoolPlacementConfigurationDetails,

@@ -88,7 +88,9 @@ Core Services
     oci.core.models.CreateIPSecConnectionTunnelDetails
     oci.core.models.CreateIPSecTunnelBgpSessionDetails
     oci.core.models.CreateImageDetails
+    oci.core.models.CreateInstanceConfigurationBase
     oci.core.models.CreateInstanceConfigurationDetails
+    oci.core.models.CreateInstanceConfigurationFromInstanceDetails
     oci.core.models.CreateInstanceConsoleConnectionDetails
     oci.core.models.CreateInstancePoolDetails
     oci.core.models.CreateInstancePoolPlacementConfigurationDetails

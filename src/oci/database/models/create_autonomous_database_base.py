@@ -364,7 +364,9 @@ class CreateAutonomousDatabaseBase(object):
     def license_model(self):
         """
         Gets the license_model of this CreateAutonomousDatabaseBase.
-        The Oracle license model that applies to the Oracle Autonomous Database. The default is BRING_YOUR_OWN_LICENSE.
+        The Oracle license model that applies to the Oracle Autonomous Database. The default is BRING_YOUR_OWN_LICENSE. Note that when provisioning an Autonomous Database using the `dedicated deployment`__ option, this attribute must be null.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
 
         Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
 
@@ -378,7 +380,9 @@ class CreateAutonomousDatabaseBase(object):
     def license_model(self, license_model):
         """
         Sets the license_model of this CreateAutonomousDatabaseBase.
-        The Oracle license model that applies to the Oracle Autonomous Database. The default is BRING_YOUR_OWN_LICENSE.
+        The Oracle license model that applies to the Oracle Autonomous Database. The default is BRING_YOUR_OWN_LICENSE. Note that when provisioning an Autonomous Database using the `dedicated deployment`__ option, this attribute must be null.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
 
 
         :param license_model: The license_model of this CreateAutonomousDatabaseBase.
@@ -396,7 +400,9 @@ class CreateAutonomousDatabaseBase(object):
     def is_preview_version_with_service_terms_accepted(self):
         """
         Gets the is_preview_version_with_service_terms_accepted of this CreateAutonomousDatabaseBase.
-        If set to true, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted.
+        If set to true, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for `serverless deployments`__.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
 
         :return: The is_preview_version_with_service_terms_accepted of this CreateAutonomousDatabaseBase.
@@ -408,7 +414,9 @@ class CreateAutonomousDatabaseBase(object):
     def is_preview_version_with_service_terms_accepted(self, is_preview_version_with_service_terms_accepted):
         """
         Sets the is_preview_version_with_service_terms_accepted of this CreateAutonomousDatabaseBase.
-        If set to true, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted.
+        If set to true, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for `serverless deployments`__.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
 
         :param is_preview_version_with_service_terms_accepted: The is_preview_version_with_service_terms_accepted of this CreateAutonomousDatabaseBase.
@@ -420,7 +428,9 @@ class CreateAutonomousDatabaseBase(object):
     def is_auto_scaling_enabled(self):
         """
         Gets the is_auto_scaling_enabled of this CreateAutonomousDatabaseBase.
-        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is false.
+        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is false. Note that auto scaling is available for `serverless deployments`__ only.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
 
         :return: The is_auto_scaling_enabled of this CreateAutonomousDatabaseBase.
@@ -432,7 +442,9 @@ class CreateAutonomousDatabaseBase(object):
     def is_auto_scaling_enabled(self, is_auto_scaling_enabled):
         """
         Sets the is_auto_scaling_enabled of this CreateAutonomousDatabaseBase.
-        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is false.
+        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is false. Note that auto scaling is available for `serverless deployments`__ only.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
 
         :param is_auto_scaling_enabled: The is_auto_scaling_enabled of this CreateAutonomousDatabaseBase.
@@ -444,7 +456,9 @@ class CreateAutonomousDatabaseBase(object):
     def is_dedicated(self):
         """
         Gets the is_dedicated of this CreateAutonomousDatabaseBase.
-        True if it is dedicated database.
+        True if the database uses the `dedicated deployment`__ option.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
 
 
         :return: The is_dedicated of this CreateAutonomousDatabaseBase.
@@ -456,7 +470,9 @@ class CreateAutonomousDatabaseBase(object):
     def is_dedicated(self, is_dedicated):
         """
         Sets the is_dedicated of this CreateAutonomousDatabaseBase.
-        True if it is dedicated database.
+        True if the database uses the `dedicated deployment`__ option.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
 
 
         :param is_dedicated: The is_dedicated of this CreateAutonomousDatabaseBase.

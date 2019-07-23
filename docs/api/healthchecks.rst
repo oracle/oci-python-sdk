@@ -18,6 +18,8 @@ Healthchecks
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.healthchecks.models.ChangeHttpMonitorCompartmentDetails
+    oci.healthchecks.models.ChangePingMonitorCompartmentDetails
     oci.healthchecks.models.Connection
     oci.healthchecks.models.CreateHttpMonitorDetails
     oci.healthchecks.models.CreateOnDemandHttpProbeDetails

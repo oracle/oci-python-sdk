@@ -569,10 +569,10 @@ class DbSystem(object):
     def nsg_ids(self):
         """
         Gets the nsg_ids of this DbSystem.
-        The list of Network Security Group `OCIDs`__ associated with this DB system.
-        A maximum of 5 allowed.
+        A list of the `OCIDs`__ of the network security groups (NSGs) that this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
 
 
         :return: The nsg_ids of this DbSystem.
@@ -584,10 +584,10 @@ class DbSystem(object):
     def nsg_ids(self, nsg_ids):
         """
         Sets the nsg_ids of this DbSystem.
-        The list of Network Security Group `OCIDs`__ associated with this DB system.
-        A maximum of 5 allowed.
+        A list of the `OCIDs`__ of the network security groups (NSGs) that this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
 
 
         :param nsg_ids: The nsg_ids of this DbSystem.
@@ -599,11 +599,10 @@ class DbSystem(object):
     def backup_network_nsg_ids(self):
         """
         Gets the backup_network_nsg_ids of this DbSystem.
-        The list of Network Security Group `OCIDs`__ associated with the backup network of this DB system.
-        Applicable only to Exadata DB systems.
-        A maximum of 5 allowed.
+        A list of the `OCIDs`__ of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__. Applicable only to Exadata DB systems.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
 
 
         :return: The backup_network_nsg_ids of this DbSystem.
@@ -615,11 +614,10 @@ class DbSystem(object):
     def backup_network_nsg_ids(self, backup_network_nsg_ids):
         """
         Sets the backup_network_nsg_ids of this DbSystem.
-        The list of Network Security Group `OCIDs`__ associated with the backup network of this DB system.
-        Applicable only to Exadata DB systems.
-        A maximum of 5 allowed.
+        A list of the `OCIDs`__ of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__. Applicable only to Exadata DB systems.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
 
 
         :param backup_network_nsg_ids: The backup_network_nsg_ids of this DbSystem.
