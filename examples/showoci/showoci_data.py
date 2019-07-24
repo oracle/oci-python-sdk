@@ -1959,30 +1959,13 @@ class ShowOCIData(object):
     ##########################################################################
     # print load balancer backed
     ##########################################################################
-    def __get_load_balancer_backend(self, backend):
-
-        try:
-            b = backend
-            return (b['status'].ljust(4)[0:4] + " - " + b['ip_address'] + ":" + str(b['port']) + " - "
-                    "Backup=" + ("Y" if b['backup'] == "True" else "N") + ", " +
-                    "Drain=" + ("Y" if b['drain'] == "True" else "N") + ", " +
-                    "Offline=" + ("Y" if b['offline'] == "True" else "N") + ", " +
-                    "Weight=" + str(b['weight'])
-                    )
-
-        except Exception as e:
-            self.__print_error("__get_load_balancer_backend", e)
-
-    ##########################################################################
-    # print load balancer backed
-    ##########################################################################
     def __get_load_balancer_bs_healthchecker(self, health_checker, line):
 
         try:
             h = health_checker
             if str(h['protocol']) == "TCP":
                 if line == 1:
-                    return ("interval(ms)=" + str(h['interval_in_millis']) + ", " +
+                    return ("TCP, interval(ms)=" + str(h['interval_in_millis']) + ", " +
                             "Timeout(ms)=" + str(h['timeout_in_millis']) + ", " +
                             "retries=" + str(h['retries']))
                 if line == 2:
@@ -1991,7 +1974,7 @@ class ShowOCIData(object):
             # if HTTP
             if str(h['protocol']) == "HTTP":
                 if line == 1:
-                    return ("interval(ms)=" + str(h['interval_in_millis']) + ", " +
+                    return ("HTTP, interval(ms)=" + str(h['interval_in_millis']) + ", " +
                             "Timeout(ms)=" + str(h['timeout_in_millis']) + ", " +
                             "retries=" + str(h['retries']))
                 if line == 2:
@@ -2004,7 +1987,7 @@ class ShowOCIData(object):
             return ""
 
     ##########################################################################
-    # print load balancer backedset
+    # get load balancer backedset
     ##########################################################################
     def __get_load_balancer_backendset(self, load_balancer_id):
 
@@ -2014,28 +1997,13 @@ class ShowOCIData(object):
             backendsets = self.service.search_multi_items(self.service.C_LB, self.service.C_LB_BACKEND_SETS, 'load_balancer_id', load_balancer_id)
 
             for bs in backendsets:
-                dataval = {}
-
-                # check ssl config
-                ssl_details = ""
-                if bs['ssl_configuration'] != "":
-                    ssl_details = " - Cert: " + str(bs['ssl_configuration'])
-
-                dataval['backend_set'] = str(bs['name']) + " - " + str(bs['policy']) + ssl_details
+                dataval = bs
                 dataval['status'] = bs['status'].ljust(4)[0:4]
-                dataval['session_persistence'] = bs['session_persistence']
-                dataval['ssl_cert'] = bs['ssl_cert']
-
-                # list of backends
-                databck = []
-                for backend in bs['backends']:
-                    databck.append(self.__get_load_balancer_backend(backend))
-
-                dataval['backends'] = databck
 
                 # Health Checker
-                datahealth = [self.__get_load_balancer_bs_healthchecker(bs['health_checker'], 1),
-                              self.__get_load_balancer_bs_healthchecker(bs['health_checker'], 2)]
+                datahealth = bs['health_checker']
+                datahealth['desc1'] = self.__get_load_balancer_bs_healthchecker(bs['health_checker'], 1)
+                datahealth['desc2'] = self.__get_load_balancer_bs_healthchecker(bs['health_checker'], 2)
                 dataval['health_check'] = datahealth
 
                 data.append(dataval)
@@ -2044,7 +2012,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("print_load_balancer_backendset", e)
+            self.__print_error("__get_load_balancer_backendset", e)
             return data
 
     ##########################################################################
