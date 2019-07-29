@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestError(object):
     """
-    An error encountered while executing a work request.
+    An error encountered while executing an operation that is tracked by a work request.
     """
 
     def __init__(self, **kwargs):
@@ -50,7 +50,7 @@ class WorkRequestError(object):
     def code(self):
         """
         **[Required]** Gets the code of this WorkRequestError.
-        A short error code that defines the error, meant for programmatic parsing.
+        A machine-usable code for the error that occured.
 
 
         :return: The code of this WorkRequestError.
@@ -62,7 +62,7 @@ class WorkRequestError(object):
     def code(self, code):
         """
         Sets the code of this WorkRequestError.
-        A short error code that defines the error, meant for programmatic parsing.
+        A machine-usable code for the error that occured.
 
 
         :param code: The code of this WorkRequestError.
@@ -98,7 +98,7 @@ class WorkRequestError(object):
     def timestamp(self):
         """
         **[Required]** Gets the timestamp of this WorkRequestError.
-        The time the error happened.
+        The date and time the error occurred.
 
 
         :return: The timestamp of this WorkRequestError.
@@ -110,7 +110,7 @@ class WorkRequestError(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this WorkRequestError.
-        The time the error happened.
+        The date and time the error occurred.
 
 
         :param timestamp: The timestamp of this WorkRequestError.

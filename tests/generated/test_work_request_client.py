@@ -28,7 +28,7 @@ def vcr_fixture(request):
         yield
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="kewilke_org_ww@oracle.com" jiraProject="BMI" opsJiraProject="COM"
 def test_get_work_request(testing_service_client):
     if not testing_service_client.is_api_enabled('work_requests', 'GetWorkRequest'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -68,7 +68,7 @@ def test_get_work_request(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="kewilke_org_ww@oracle.com" jiraProject="BMI" opsJiraProject="COM"
 def test_list_work_request_errors(testing_service_client):
     if not testing_service_client.is_api_enabled('work_requests', 'ListWorkRequestErrors'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -127,7 +127,7 @@ def test_list_work_request_errors(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="kewilke_org_ww@oracle.com" jiraProject="BMI" opsJiraProject="COM"
 def test_list_work_request_logs(testing_service_client):
     if not testing_service_client.is_api_enabled('work_requests', 'ListWorkRequestLogs'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -186,7 +186,7 @@ def test_list_work_request_logs(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="kewilke_org_ww@oracle.com" jiraProject="BMI" opsJiraProject="COM"
 def test_list_work_requests(testing_service_client):
     if not testing_service_client.is_api_enabled('work_requests', 'ListWorkRequests'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
