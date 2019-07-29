@@ -5,12 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-2.2.20 - TBD
+2.2.20 - 2019-07-30
 ====================
 
 Added
 -----
-* TBD
+* Support for the Mumbai (BOM) region
+* Support for the Events service
+* Support for moving streams across compartments in the Streaming service
+* Support for moving FastConnect resources across compartments in the Networking service
+* Support for moving policies across compartments in the Web Application Acceleration and Security service
+* Support for tagging FastConnect resources in the Networking service
 
 ====================
 2.2.19 - 2019-07-23
