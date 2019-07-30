@@ -65,3 +65,4 @@
 ^src/oci/limits/.*\.py$
 ^src/oci/functions/.*\.py$
 ^src/oci/events/.*\.py$
+^src/oci/dts/.*\.py$
