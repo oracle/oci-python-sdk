@@ -34,16 +34,22 @@ from .bulk_delete_virtual_circuit_public_prefixes_details import BulkDeleteVirtu
 from .capture_console_history_details import CaptureConsoleHistoryDetails
 from .change_boot_volume_backup_compartment_details import ChangeBootVolumeBackupCompartmentDetails
 from .change_boot_volume_compartment_details import ChangeBootVolumeCompartmentDetails
+from .change_cpe_compartment_details import ChangeCpeCompartmentDetails
+from .change_cross_connect_compartment_details import ChangeCrossConnectCompartmentDetails
+from .change_cross_connect_group_compartment_details import ChangeCrossConnectGroupCompartmentDetails
+from .change_ip_sec_connection_compartment_details import ChangeIPSecConnectionCompartmentDetails
 from .change_image_compartment_details import ChangeImageCompartmentDetails
 from .change_instance_compartment_details import ChangeInstanceCompartmentDetails
 from .change_instance_configuration_compartment_details import ChangeInstanceConfigurationCompartmentDetails
 from .change_instance_pool_compartment_details import ChangeInstancePoolCompartmentDetails
 from .change_nat_gateway_compartment_details import ChangeNatGatewayCompartmentDetails
+from .change_remote_peering_connection_compartment_details import ChangeRemotePeeringConnectionCompartmentDetails
 from .change_route_table_compartment_details import ChangeRouteTableCompartmentDetails
 from .change_security_list_compartment_details import ChangeSecurityListCompartmentDetails
 from .change_service_gateway_compartment_details import ChangeServiceGatewayCompartmentDetails
 from .change_subnet_compartment_details import ChangeSubnetCompartmentDetails
 from .change_vcn_compartment_details import ChangeVcnCompartmentDetails
+from .change_virtual_circuit_compartment_details import ChangeVirtualCircuitCompartmentDetails
 from .change_volume_backup_compartment_details import ChangeVolumeBackupCompartmentDetails
 from .change_volume_compartment_details import ChangeVolumeCompartmentDetails
 from .change_volume_group_backup_compartment_details import ChangeVolumeGroupBackupCompartmentDetails
@@ -289,16 +295,22 @@ core_type_mapping = {
     "CaptureConsoleHistoryDetails": CaptureConsoleHistoryDetails,
     "ChangeBootVolumeBackupCompartmentDetails": ChangeBootVolumeBackupCompartmentDetails,
     "ChangeBootVolumeCompartmentDetails": ChangeBootVolumeCompartmentDetails,
+    "ChangeCpeCompartmentDetails": ChangeCpeCompartmentDetails,
+    "ChangeCrossConnectCompartmentDetails": ChangeCrossConnectCompartmentDetails,
+    "ChangeCrossConnectGroupCompartmentDetails": ChangeCrossConnectGroupCompartmentDetails,
+    "ChangeIPSecConnectionCompartmentDetails": ChangeIPSecConnectionCompartmentDetails,
     "ChangeImageCompartmentDetails": ChangeImageCompartmentDetails,
     "ChangeInstanceCompartmentDetails": ChangeInstanceCompartmentDetails,
     "ChangeInstanceConfigurationCompartmentDetails": ChangeInstanceConfigurationCompartmentDetails,
     "ChangeInstancePoolCompartmentDetails": ChangeInstancePoolCompartmentDetails,
     "ChangeNatGatewayCompartmentDetails": ChangeNatGatewayCompartmentDetails,
+    "ChangeRemotePeeringConnectionCompartmentDetails": ChangeRemotePeeringConnectionCompartmentDetails,
     "ChangeRouteTableCompartmentDetails": ChangeRouteTableCompartmentDetails,
     "ChangeSecurityListCompartmentDetails": ChangeSecurityListCompartmentDetails,
     "ChangeServiceGatewayCompartmentDetails": ChangeServiceGatewayCompartmentDetails,
     "ChangeSubnetCompartmentDetails": ChangeSubnetCompartmentDetails,
     "ChangeVcnCompartmentDetails": ChangeVcnCompartmentDetails,
+    "ChangeVirtualCircuitCompartmentDetails": ChangeVirtualCircuitCompartmentDetails,
     "ChangeVolumeBackupCompartmentDetails": ChangeVolumeBackupCompartmentDetails,
     "ChangeVolumeCompartmentDetails": ChangeVolumeCompartmentDetails,
     "ChangeVolumeGroupBackupCompartmentDetails": ChangeVolumeGroupBackupCompartmentDetails,

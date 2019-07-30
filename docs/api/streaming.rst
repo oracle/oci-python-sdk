@@ -20,6 +20,7 @@ Streaming
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.streaming.models.ChangeStreamCompartmentDetails
     oci.streaming.models.CreateCursorDetails
     oci.streaming.models.CreateGroupCursorDetails
     oci.streaming.models.CreateStreamDetails

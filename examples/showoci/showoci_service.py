@@ -50,6 +50,7 @@ class ShowOCIFlags(object):
     # filter flags
     filter_by_region = ""
     filter_by_compartment = ""
+    filter_by_compartment_path = ""
 
     # version, config files and proxy
     proxy = ""
@@ -101,7 +102,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.2.17"
+    oci_compatible_version = "2.2.18"
 
     ##########################################################################
     # Global Constants
@@ -623,7 +624,10 @@ class ShowOCIService(object):
                 print("Filtered by Region      = " + self.flags.filter_by_region)
 
             if self.flags.filter_by_compartment:
-                print("Filtered by Compartment = " + self.flags.filter_by_compartment)
+                print("Filtered by Compartment like " + self.flags.filter_by_compartment)
+
+            if self.flags.filter_by_compartment_path:
+                print("Filtered by Compartment Path = " + self.flags.filter_by_compartment_path)
 
             print("")
 
@@ -870,16 +874,24 @@ class ShowOCIService(object):
             sorted_compartments = sorted(compartments, key=lambda k: k['path'])
 
             # if not filtered by compartment return
-            if not self.flags.filter_by_compartment:
+            if not (self.flags.filter_by_compartment or self.flags.filter_by_compartment_path):
                 self.data[self.C_IDENTITY][self.C_IDENTITY_COMPARTMENTS] = sorted_compartments
                 self.__load_print_cnt(len(compartments), start_time)
                 return
 
-            # if filter by compartment, then reduce list and return new list
             filtered_compart = []
-            for x in sorted_compartments:
-                if self.flags.filter_by_compartment in x['name']:
-                    filtered_compart.append(x)
+
+            # if filter by compartment, then reduce list and return new list
+            if self.flags.filter_by_compartment:
+                for x in sorted_compartments:
+                    if self.flags.filter_by_compartment in x['name']:
+                        filtered_compart.append(x)
+
+            # if filter by path compartment, then reduce list and return new list
+            if self.flags.filter_by_compartment_path:
+                for x in sorted_compartments:
+                    if self.flags.filter_by_compartment_path == x['path']:
+                        filtered_compart.append(x)
 
             # add to data
             self.data[self.C_IDENTITY][self.C_IDENTITY_COMPARTMENTS] = filtered_compart
@@ -4047,7 +4059,9 @@ class ShowOCIService(object):
                 load_balancer_id = lb['id']
                 region_name = lb['region_name']
 
+                ############################
                 # get backend set and status
+                ############################
                 backend_sets = []
                 try:
                     backend_sets = oci.pagination.list_call_get_all_results(
@@ -4068,7 +4082,9 @@ class ShowOCIService(object):
                 # bs = oci.load_balancer.models.BackendSet
                 for bs in backend_sets:
 
+                    ############################
                     # get status
+                    ############################
                     status = ""
                     try:
                         status = load_balancer.get_backend_set_health(load_balancer_id, bs.name).data.status
@@ -4077,15 +4093,24 @@ class ShowOCIService(object):
                             pass
                         raise
 
+                    ############################
                     # check ssl config
+                    ############################
                     ssl_details = ""
                     if bs.ssl_configuration is not None:
                         ssl_details = str(bs.ssl_configuration.certificate_name)
 
                     # copy load balancer info
-                    dataval = {'load_balancer_id': load_balancer_id, 'compartment_name': lb['compartment_name'], 'compartment_id': lb['compartment_id'],
-                               'region_name': lb['region_name'], 'name': str(bs.name), 'policy': str(bs.policy), 'ssl_configuration': ssl_details,
-                               'status': str(status)}
+                    dataval = {'load_balancer_id': load_balancer_id,
+                               'compartment_name': lb['compartment_name'],
+                               'compartment_id': lb['compartment_id'],
+                               'region_name': lb['region_name'],
+                               'name': str(bs.name),
+                               'policy': str(bs.policy),
+                               'ssl_configuration': ssl_details,
+                               'status': str(status),
+                               'desc': str(bs.name) + " - " + str(bs.policy) + (" - cert:" + ssl_details if ssl_details else "")
+                               }
 
                     ############################
                     # list of backends
@@ -4096,38 +4121,81 @@ class ShowOCIService(object):
 
                         # Check Status
                         try:
-                            bh_status = load_balancer.get_backend_health(load_balancer_id, bs.name,
-                                                                         backend.name).data.status
+                            bh_status = load_balancer.get_backend_health(load_balancer_id, bs.name, backend.name).data.status
                         except oci.exceptions.ServiceError as e:
                             if self.__check_service_error(e.code):
                                 pass
                             raise
 
                         # add details
-                        bval = {'name': str(backend.name), 'status': str(bh_status),
-                                'ip_address': str(backend.ip_address), 'port': str(backend.port),
-                                'backup': str(backend.backup), 'drain': str(backend.drain),
-                                'offline': str(backend.offline), 'weight': str(backend.weight)}
+                        bval = {'name': str(backend.name),
+                                'status': str(bh_status),
+                                'ip_address': str(backend.ip_address),
+                                'port': str(backend.port),
+                                'backup': str(backend.backup),
+                                'drain': str(backend.drain),
+                                'offline': str(backend.offline),
+                                'weight': str(backend.weight),
+                                'desc': (str(bh_status).ljust(4)[0:4] + " - " + str(backend.ip_address) + ":" + str(backend.port) + " - Backup=" + ("Y" if backend.backup else "N") + ", " + "Drain=" + ("Y" if backend.drain else "N") + ", " + "Offline=" + ("Y" if backend.offline else "N") + ", " + "Weight=" + str(backend.weight))
+                                }
                         databck.append(bval)
                     dataval['backends'] = databck
 
                     # Health Checker
                     h = bs.health_checker
-                    datahealth = {'protocol': str(h.protocol), 'interval_in_millis': str(h.interval_in_millis),
-                                  'timeout_in_millis': str(h.timeout_in_millis), 'retries': str(h.retries),
-                                  'port': str(h.port), 'return_code': str(h.return_code),
-                                  'response_body_regex': str(h.response_body_regex), 'url_path': str(h.url_path)}
+                    datahealth = {'protocol': str(h.protocol),
+                                  'interval_in_millis': str(h.interval_in_millis),
+                                  'timeout_in_millis': str(h.timeout_in_millis),
+                                  'retries': str(h.retries),
+                                  'port': str(h.port),
+                                  'return_code': str(h.return_code),
+                                  'response_body_regex': str(h.response_body_regex),
+                                  'url_path': str(h.url_path)}
                     dataval['health_checker'] = datahealth
 
                     # session_persistence_configuration
                     dataval['session_persistence'] = ""
                     if bs.session_persistence_configuration is not None:
-                        dataval['session_persistence'] = str(bs.session_persistence_configuration.cookie_name) + ", " + "disable_fallback=" + ("Y" if bs.session_persistence_configuration.disable_fallback else "N")
+                        bss = bs.session_persistence_configuration
+                        vallb = {
+                            'cookie_name': str(bss.cookie_name),
+                            'disable_fallback': str(bss.disable_fallback),
+                            'desc': str(bss.cookie_name) + ", " + "disable_fallback=" + ("Y" if bss.disable_fallback else "N")
+                        }
+                        dataval['session_persistence'] = vallb
 
                     # ssl_configuration
                     dataval['ssl_cert'] = ""
                     if bs.ssl_configuration is not None:
-                        dataval['ssl_cert'] = (str(bs.ssl_configuration.certificate_name) + ", VerifyPeer=" + ("Y" if bs.ssl_configuration.verify_peer_certificate else "N") + ", " + "VerifyDepth=" + str(bs.ssl_configuration.verify_depth))
+                        bss = bs.ssl_configuration
+                        vallb = {
+                            'certificate_name': str(bss.certificate_name),
+                            'verify_peer_certificate': str(bss.verify_peer_certificate),
+                            'verify_depth': str(bss.verify_depth),
+                            'desc': (str(bss.certificate_name) + ", VerifyPeer=" + ("Y" if bss.verify_peer_certificate else "N") + ", " + "VerifyDepth=" + str(bss.verify_depth))
+                        }
+                        dataval['ssl_cert'] = vallb
+
+                    # lb_cookie_session_persistence_configuration
+                    dataval['lb_cookie_session_persistence_configuration'] = ""
+                    if bs.lb_cookie_session_persistence_configuration is not None:
+                        lbc = bs.lb_cookie_session_persistence_configuration
+                        vallb = {
+                            'cookie_name': str(lbc.cookie_name),
+                            'disable_fallback': str(lbc.disable_fallback),
+                            'domain': str(lbc.domain),
+                            'path': str(lbc.path),
+                            'max_age_in_seconds': str(lbc.max_age_in_seconds),
+                            'is_secure': str(lbc.is_secure),
+                            'is_http_only': str(lbc.is_http_only),
+                            'desc': (str(lbc.cookie_name) + ", " + "disable_fallback=" + ("Y" if lbc.disable_fallback else "N") + ", domain=" +
+                                     ("" if str(lbc.domain) == "None" else str(lbc.domain)) +
+                                     ", path=" + ("" if str(lbc.path) == "None" else str(lbc.path)) +
+                                     ", age=" + ("" if str(lbc.max_age_in_seconds) == "None" else str(lbc.max_age_in_seconds)) +
+                                     ", is_secure=" + ("Y" if lbc.is_secure else "N") +
+                                     ", is_http_only=" + ("Y" if lbc.is_http_only else "N"))
+                        }
+                        dataval['lb_cookie_session_persistence_configuration'] = vallb
 
                     # add data
                     data.append(dataval)

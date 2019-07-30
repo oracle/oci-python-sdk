@@ -585,26 +585,32 @@ class ShowOCIOutput(object):
         try:
             for bs in backendset:
                 print("")
-                if 'backend_set' in bs:
-                    print(self.tabs + "backendSet : " + bs['backend_set'])
+                if 'desc' in bs:
+                    print(self.tabs + "backendSet : " + bs['desc'])
                 if 'status' in bs:
                     print(self.tabs + self.tabs + "Status : " + bs['status'])
 
                 # list of backends
                 if 'backends' in bs:
                     for backend in bs['backends']:
-                        print(self.tabs + self.tabs + "Backend: " + backend)
+                        print(self.tabs + self.tabs + "Backend: " + backend['desc'])
+
                 if 'health_check' in bs:
-                    for health in bs['health_check']:
-                        print(self.tabs + self.tabs + "H.Chk  : " + health)
+                    health = bs['health_check']
+                    print(self.tabs + self.tabs + "H.Chk  : " + health['desc1'])
+                    print(self.tabs + self.tabs + "         " + health['desc2'])
 
                 if 'session_persistence' in bs:
                     if bs['session_persistence']:
-                        print(self.tabs + self.tabs + "Cookie : " + bs['session_persistence'])
+                        print(self.tabs + self.tabs + "Cookie : " + bs['session_persistence']['desc'])
+
+                if 'lb_cookie_session_persistence_configuration' in bs:
+                    if bs['lb_cookie_session_persistence_configuration']:
+                        print(self.tabs + self.tabs + "LCookie: " + bs['lb_cookie_session_persistence_configuration']['desc'])
 
                 if 'ssl_cert' in bs:
                     if bs['ssl_cert']:
-                        print(self.tabs + self.tabs + "Cert   : " + bs['ssl_cert'])
+                        print(self.tabs + self.tabs + "Cert   : " + bs['ssl_cert']['desc'])
 
         except Exception as e:
             self.__print_error("__print_load_balancer_backendset", e)
@@ -2447,6 +2453,16 @@ class ShowOCICSV(object):
                 if 'backends' in bs:
                     for backend in bs['backends']:
 
+                        # session_persistence
+                        session_persistence = ""
+                        if 'desc' in bs['session_persistence']:
+                            session_persistence = bs['session_persistence']['desc']
+
+                        # ssl_cert
+                        ssl_cert = ""
+                        if 'desc' in bs['ssl_cert']:
+                            ssl_cert = bs['ssl_cert']['desc']
+
                         data = {'region_name': region_name,
                                 'compartment_name': lb['compartment_name'],
                                 'name': lb['display_name'],
@@ -2455,12 +2471,12 @@ class ShowOCICSV(object):
                                 'type': ("Private" if lb['is_private'] else "Public"),
                                 'ip_addresses': str(', '.join(x for x in lb['ips'])),
                                 'subnets': str(', '.join(x for x in lb['subnets'])),
-                                'bs_name': bs['backend_set'],
+                                'bs_name': bs['desc'],
                                 'bs_status': bs['status'],
-                                'health_check': str(', '.join(x for x in bs['health_check'])),
-                                'session_persistence': bs['session_persistence'],
-                                'ssl_cert': bs['ssl_cert'],
-                                'backend': backend,
+                                'health_check': bs['health_check']['desc1'] + " " + bs['health_check']['desc2'],
+                                'session_persistence': session_persistence,
+                                'ssl_cert': ssl_cert,
+                                'backend': backend['desc'],
                                 'loadbalancer_id': lb['id']
                                 }
                         self.csv_load_balancer_bs.append(data)

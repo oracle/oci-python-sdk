@@ -176,8 +176,9 @@ $ ./showoci.py
 usage: showoci.py [-h] [-a] [-ani] [-an] [-b] [-n] [-i] [-c] [-cn] [-o] [-l]
                   [-d] [-f] [-e] [-m] [-s] [-rm] [-so] [-edge] [-mc] [-nr]
                   [-ip] [-t PROFILE] [-p PROXY] [-rg REGION] [-cp COMPART]
-                  [-cf CONFIG] [-csv CSV] [-jf JOUTFILE] [-js]
-                  [-sjf SJOUTFILE] [-cachef SERVICEFILE] [-caches] [--version]
+                  [-cpath COMPARTPATH] [-cf CONFIG] [-csv CSV] [-jf JOUTFILE]
+                  [-js] [-sjf SJOUTFILE] [-cachef SERVICEFILE] [-caches]
+                  [--version]
 
 optional arguments:
   -h, --help           show this help message and exit
@@ -206,8 +207,9 @@ optional arguments:
   -p PROXY             Set Proxy (i.e. www-proxy-server.com:80)
   -rg REGION           Filter by Region
   -cp COMPART          Filter by Compartment
+  -cpath COMPARTPATH   Filter by Compartment using path , example -cpath "Adi Main / Adi Sub"
   -cf CONFIG           Config File
-  -csv CSV             Output to CSV files, , Input as file header
+  -csv CSV             Output to CSV files, Input as file header
   -jf JOUTFILE         Output to file (JSON format)
   -js                  Output to screen (JSON format)
   -sjf SJOUTFILE       Output to screen (nice format) and JSON File

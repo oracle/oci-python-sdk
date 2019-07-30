@@ -25,6 +25,10 @@ class CreateCrossConnectDetails(object):
             The value to assign to the cross_connect_group_id property of this CreateCrossConnectDetails.
         :type cross_connect_group_id: str
 
+        :param defined_tags:
+            The value to assign to the defined_tags property of this CreateCrossConnectDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param display_name:
             The value to assign to the display_name property of this CreateCrossConnectDetails.
         :type display_name: str
@@ -32,6 +36,10 @@ class CreateCrossConnectDetails(object):
         :param far_cross_connect_or_cross_connect_group_id:
             The value to assign to the far_cross_connect_or_cross_connect_group_id property of this CreateCrossConnectDetails.
         :type far_cross_connect_or_cross_connect_group_id: str
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this CreateCrossConnectDetails.
+        :type freeform_tags: dict(str, str)
 
         :param location_name:
             The value to assign to the location_name property of this CreateCrossConnectDetails.
@@ -53,8 +61,10 @@ class CreateCrossConnectDetails(object):
         self.swagger_types = {
             'compartment_id': 'str',
             'cross_connect_group_id': 'str',
+            'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'far_cross_connect_or_cross_connect_group_id': 'str',
+            'freeform_tags': 'dict(str, str)',
             'location_name': 'str',
             'near_cross_connect_or_cross_connect_group_id': 'str',
             'port_speed_shape_name': 'str',
@@ -64,8 +74,10 @@ class CreateCrossConnectDetails(object):
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'cross_connect_group_id': 'crossConnectGroupId',
+            'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'far_cross_connect_or_cross_connect_group_id': 'farCrossConnectOrCrossConnectGroupId',
+            'freeform_tags': 'freeformTags',
             'location_name': 'locationName',
             'near_cross_connect_or_cross_connect_group_id': 'nearCrossConnectOrCrossConnectGroupId',
             'port_speed_shape_name': 'portSpeedShapeName',
@@ -74,8 +86,10 @@ class CreateCrossConnectDetails(object):
 
         self._compartment_id = None
         self._cross_connect_group_id = None
+        self._defined_tags = None
         self._display_name = None
         self._far_cross_connect_or_cross_connect_group_id = None
+        self._freeform_tags = None
         self._location_name = None
         self._near_cross_connect_or_cross_connect_group_id = None
         self._port_speed_shape_name = None
@@ -128,6 +142,40 @@ class CreateCrossConnectDetails(object):
         :type: str
         """
         self._cross_connect_group_id = cross_connect_group_id
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this CreateCrossConnectDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a
+        namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this CreateCrossConnectDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this CreateCrossConnectDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a
+        namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this CreateCrossConnectDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     @property
     def display_name(self):
@@ -184,6 +232,40 @@ class CreateCrossConnectDetails(object):
         :type: str
         """
         self._far_cross_connect_or_cross_connect_group_id = far_cross_connect_or_cross_connect_group_id
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this CreateCrossConnectDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this CreateCrossConnectDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this CreateCrossConnectDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this CreateCrossConnectDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
 
     @property
     def location_name(self):

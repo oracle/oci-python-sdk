@@ -15,6 +15,7 @@ API Reference
 * :doc:`Database <database/client/oci.database.DatabaseClient>`
 * :doc:`DNS <dns/client/oci.dns.DnsClient>`
 * :doc:`Email <email/client/oci.email.EmailClient>`
+* :doc:`Events <events/client/oci.events.EventsClient>`
 * :doc:`File Storage <file_storage/client/oci.file_storage.FileStorageClient>`
 * :doc:`Functions Invoke <functions/client/oci.functions.FunctionsInvokeClient>`
 * :doc:`Functions Management <functions/client/oci.functions.FunctionsManagementClient>`
@@ -62,6 +63,7 @@ API Reference
     database
     dns
     email
+    events
     file_storage
     functions
     healthchecks

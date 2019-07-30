@@ -55,16 +55,22 @@ Core Services
     oci.core.models.CaptureConsoleHistoryDetails
     oci.core.models.ChangeBootVolumeBackupCompartmentDetails
     oci.core.models.ChangeBootVolumeCompartmentDetails
+    oci.core.models.ChangeCpeCompartmentDetails
+    oci.core.models.ChangeCrossConnectCompartmentDetails
+    oci.core.models.ChangeCrossConnectGroupCompartmentDetails
+    oci.core.models.ChangeIPSecConnectionCompartmentDetails
     oci.core.models.ChangeImageCompartmentDetails
     oci.core.models.ChangeInstanceCompartmentDetails
     oci.core.models.ChangeInstanceConfigurationCompartmentDetails
     oci.core.models.ChangeInstancePoolCompartmentDetails
     oci.core.models.ChangeNatGatewayCompartmentDetails
+    oci.core.models.ChangeRemotePeeringConnectionCompartmentDetails
     oci.core.models.ChangeRouteTableCompartmentDetails
     oci.core.models.ChangeSecurityListCompartmentDetails
     oci.core.models.ChangeServiceGatewayCompartmentDetails
     oci.core.models.ChangeSubnetCompartmentDetails
     oci.core.models.ChangeVcnCompartmentDetails
+    oci.core.models.ChangeVirtualCircuitCompartmentDetails
     oci.core.models.ChangeVolumeBackupCompartmentDetails
     oci.core.models.ChangeVolumeCompartmentDetails
     oci.core.models.ChangeVolumeGroupBackupCompartmentDetails
