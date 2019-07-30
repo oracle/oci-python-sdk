@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+19.7.24 - 2019-07-24
+====================
+
+* Added support for load balancer cookie session persistence (LB cookie stickiness)
+* Added load balancer backendset fields in the json format
+* Added option to search compartment by path with -cpath flag, example -cpath "Adi Main / Adi Sub"
+
+====================
 19.7.17 - 2019-07-17
 ====================
 

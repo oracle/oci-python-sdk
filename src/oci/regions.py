@@ -8,9 +8,13 @@ REGIONS_SHORT_NAMES = {
     'iad': 'us-ashburn-1',
     'fra': 'eu-frankfurt-1',
     'lhr': 'uk-london-1',
-    'yyz': 'ca-toronto-1'
+    'yyz': 'ca-toronto-1',
+    'nrt': 'ap-tokyo-1',
+    'icn': 'ap-seoul-1',
+    'bom': 'ap-mumbai-1'
 }
 REGION_REALMS = {
+    'ap-mumbai-1': 'oc1',
     'ap-seoul-1': 'oc1',
     'ap-tokyo-1': 'oc1',
     'us-phoenix-1': 'oc1',
@@ -32,6 +36,7 @@ REALMS = {
     'oc3': 'oraclegovcloud.com'
 }
 REGIONS = [
+    "ap-mumbai-1",
     "ap-seoul-1",
     "ap-tokyo-1",
     "us-phoenix-1",

@@ -28,6 +28,8 @@ Waas
     oci.waas.models.CertificatePublicKeyInfo
     oci.waas.models.CertificateSubjectName
     oci.waas.models.CertificateSummary
+    oci.waas.models.ChangeCertificateCompartmentDetails
+    oci.waas.models.ChangeWaasPolicyCompartmentDetails
     oci.waas.models.CreateCertificateDetails
     oci.waas.models.CreateWaasPolicyDetails
     oci.waas.models.DeviceFingerprintChallenge

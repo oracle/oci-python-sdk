@@ -9,7 +9,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WafLog(object):
     """
-    A list of Web Application Firewall log entries. Each entry is a JSON object whose fields vary based on log type. Logs record what rules and countermeasures are triggered by requests and are used as a basis to move request handling into block mode.
+    A list of Web Application Firewall log entries. Each entry is a JSON object, including a timestamp property and other fields varying based on log type. Logs record what rules and countermeasures are triggered by requests and are used as a basis to move request handling into block mode. For more information about WAF logs, see `WAF Logs`__.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/waflogs.htm
     """
 
     def __init__(self, **kwargs):
@@ -225,7 +227,7 @@ class WafLog(object):
     def action(self):
         """
         Gets the action of this WafLog.
-        The action taken on the request.
+        The action taken on the request, either `ALLOW`, `DETECT`, or `BLOCK`.
 
 
         :return: The action of this WafLog.
@@ -237,7 +239,7 @@ class WafLog(object):
     def action(self, action):
         """
         Sets the action of this WafLog.
-        The action taken on the request.
+        The action taken on the request, either `ALLOW`, `DETECT`, or `BLOCK`.
 
 
         :param action: The action of this WafLog.
@@ -249,7 +251,8 @@ class WafLog(object):
     def captcha_action(self):
         """
         Gets the captcha_action of this WafLog.
-        The CAPTCHA action taken on the request.
+        The CAPTCHA action taken on the request, `ALLOW` or `BLOCK`. For more information about
+        CAPTCHAs, see `UpdateCaptchas`.
 
 
         :return: The captcha_action of this WafLog.
@@ -261,7 +264,8 @@ class WafLog(object):
     def captcha_action(self, captcha_action):
         """
         Sets the captcha_action of this WafLog.
-        The CAPTCHA action taken on the request.
+        The CAPTCHA action taken on the request, `ALLOW` or `BLOCK`. For more information about
+        CAPTCHAs, see `UpdateCaptchas`.
 
 
         :param captcha_action: The captcha_action of this WafLog.
@@ -369,7 +373,7 @@ class WafLog(object):
     def country_name(self):
         """
         Gets the country_name of this WafLog.
-        The name of the country where the request was made.
+        The name of the country where the request originated.
 
 
         :return: The country_name of this WafLog.
@@ -381,7 +385,7 @@ class WafLog(object):
     def country_name(self, country_name):
         """
         Sets the country_name of this WafLog.
-        The name of the country where the request was made.
+        The name of the country where the request originated.
 
 
         :param country_name: The country_name of this WafLog.
@@ -393,7 +397,7 @@ class WafLog(object):
     def user_agent(self):
         """
         Gets the user_agent of this WafLog.
-        The `User-Agent` header value of the request.
+        The value of the request's `User-Agent` header field.
 
 
         :return: The user_agent of this WafLog.
@@ -405,7 +409,7 @@ class WafLog(object):
     def user_agent(self, user_agent):
         """
         Sets the user_agent of this WafLog.
-        The `User-Agent` header value of the request.
+        The value of the request's `User-Agent` header field.
 
 
         :param user_agent: The user_agent of this WafLog.
@@ -417,7 +421,7 @@ class WafLog(object):
     def domain(self):
         """
         Gets the domain of this WafLog.
-        The domain where the request was sent.
+        The `Host` header data of the request.
 
 
         :return: The domain of this WafLog.
@@ -429,7 +433,7 @@ class WafLog(object):
     def domain(self, domain):
         """
         Sets the domain of this WafLog.
-        The domain where the request was sent.
+        The `Host` header data of the request.
 
 
         :param domain: The domain of this WafLog.
@@ -441,7 +445,9 @@ class WafLog(object):
     def protection_rule_detections(self):
         """
         Gets the protection_rule_detections of this WafLog.
-        A map of protection rule keys to detection message details.
+        A map of protection rule keys to detection message details. Detections are
+        requests that matched the criteria of a protection rule but the rule's
+        action was set to `DETECT`.
 
 
         :return: The protection_rule_detections of this WafLog.
@@ -453,7 +459,9 @@ class WafLog(object):
     def protection_rule_detections(self, protection_rule_detections):
         """
         Sets the protection_rule_detections of this WafLog.
-        A map of protection rule keys to detection message details.
+        A map of protection rule keys to detection message details. Detections are
+        requests that matched the criteria of a protection rule but the rule's
+        action was set to `DETECT`.
 
 
         :param protection_rule_detections: The protection_rule_detections of this WafLog.
@@ -513,7 +521,7 @@ class WafLog(object):
     def http_headers(self):
         """
         Gets the http_headers of this WafLog.
-        The map of header names to values of the request sent to the origin.
+        The map of the request's header names to their respective values.
 
 
         :return: The http_headers of this WafLog.
@@ -525,7 +533,7 @@ class WafLog(object):
     def http_headers(self, http_headers):
         """
         Sets the http_headers of this WafLog.
-        The map of header names to values of the request sent to the origin.
+        The map of the request's header names to their respective values.
 
 
         :param http_headers: The http_headers of this WafLog.
@@ -609,7 +617,9 @@ class WafLog(object):
     def incident_key(self):
         """
         Gets the incident_key of this WafLog.
-        The incident key that matched the request.
+        The incident key of a request. An incident key is generated for
+        each request processed by the Web Application Firewall and is used to
+        idenitfy blocked requests in applicable logs.
 
 
         :return: The incident_key of this WafLog.
@@ -621,7 +631,9 @@ class WafLog(object):
     def incident_key(self, incident_key):
         """
         Sets the incident_key of this WafLog.
-        The incident key that matched the request.
+        The incident key of a request. An incident key is generated for
+        each request processed by the Web Application Firewall and is used to
+        idenitfy blocked requests in applicable logs.
 
 
         :param incident_key: The incident_key of this WafLog.
@@ -633,7 +645,8 @@ class WafLog(object):
     def fingerprint(self):
         """
         Gets the fingerprint of this WafLog.
-        TODO: what is this? MD5 hash of the request? SHA1?
+        The hashed signature of the device's fingerprint. For more information,
+        see `DeviceFingerPrintChallenge`.
 
 
         :return: The fingerprint of this WafLog.
@@ -645,7 +658,8 @@ class WafLog(object):
     def fingerprint(self, fingerprint):
         """
         Sets the fingerprint of this WafLog.
-        TODO: what is this? MD5 hash of the request? SHA1?
+        The hashed signature of the device's fingerprint. For more information,
+        see `DeviceFingerPrintChallenge`.
 
 
         :param fingerprint: The fingerprint of this WafLog.
@@ -681,7 +695,10 @@ class WafLog(object):
     def country_code(self):
         """
         Gets the country_code of this WafLog.
-        The ISO 3166-1 country code of the request.
+        ISO 3166-1 alpha-2 code of the country from which the request originated.
+        For a list of codes, see `ISO's website`__.
+
+        __ https://www.iso.org/obp/ui/#search/code/
 
 
         :return: The country_code of this WafLog.
@@ -693,7 +710,10 @@ class WafLog(object):
     def country_code(self, country_code):
         """
         Sets the country_code of this WafLog.
-        The ISO 3166-1 country code of the request.
+        ISO 3166-1 alpha-2 code of the country from which the request originated.
+        For a list of codes, see `ISO's website`__.
+
+        __ https://www.iso.org/obp/ui/#search/code/
 
 
         :param country_code: The country_code of this WafLog.
@@ -705,7 +725,8 @@ class WafLog(object):
     def request_headers(self):
         """
         Gets the request_headers of this WafLog.
-        A map of header names to values of the original request.
+        A map of header names to values of the request sent to the origin, including any headers
+        appended by the Web Application Firewall.
 
 
         :return: The request_headers of this WafLog.
@@ -717,7 +738,8 @@ class WafLog(object):
     def request_headers(self, request_headers):
         """
         Sets the request_headers of this WafLog.
-        A map of header names to values of the original request.
+        A map of header names to values of the request sent to the origin, including any headers
+        appended by the Web Application Firewall.
 
 
         :param request_headers: The request_headers of this WafLog.
@@ -729,7 +751,8 @@ class WafLog(object):
     def threat_feed_key(self):
         """
         Gets the threat_feed_key of this WafLog.
-        The `ThreatFeed` key that matched the request.
+        The `ThreatFeed` key that matched the request. For more information about
+        threat feeds, see `UpdateThreatFeeds`.
 
 
         :return: The threat_feed_key of this WafLog.
@@ -741,7 +764,8 @@ class WafLog(object):
     def threat_feed_key(self, threat_feed_key):
         """
         Sets the threat_feed_key of this WafLog.
-        The `ThreatFeed` key that matched the request.
+        The `ThreatFeed` key that matched the request. For more information about
+        threat feeds, see `UpdateThreatFeeds`.
 
 
         :param threat_feed_key: The threat_feed_key of this WafLog.
@@ -753,7 +777,8 @@ class WafLog(object):
     def access_rule_key(self):
         """
         Gets the access_rule_key of this WafLog.
-        The `AccessRule` key that matched the request.
+        The `AccessRule` key that matched the request. For more information about
+        access rules, see `UpdateAccessRules`.
 
 
         :return: The access_rule_key of this WafLog.
@@ -765,7 +790,8 @@ class WafLog(object):
     def access_rule_key(self, access_rule_key):
         """
         Sets the access_rule_key of this WafLog.
-        The `AccessRule` key that matched the request.
+        The `AccessRule` key that matched the request. For more information about
+        access rules, see `UpdateAccessRules`.
 
 
         :param access_rule_key: The access_rule_key of this WafLog.
@@ -777,7 +803,8 @@ class WafLog(object):
     def address_rate_limiting_key(self):
         """
         Gets the address_rate_limiting_key of this WafLog.
-        The `AddressRateLimiting` key that matched the request.
+        The `AddressRateLimiting` key that matched the request. For more information
+        about address rate limiting, see `UpdateWafAddressRateLimiting`.
 
 
         :return: The address_rate_limiting_key of this WafLog.
@@ -789,7 +816,8 @@ class WafLog(object):
     def address_rate_limiting_key(self, address_rate_limiting_key):
         """
         Sets the address_rate_limiting_key of this WafLog.
-        The `AddressRateLimiting` key that matched the request.
+        The `AddressRateLimiting` key that matched the request. For more information
+        about address rate limiting, see `UpdateWafAddressRateLimiting`.
 
 
         :param address_rate_limiting_key: The address_rate_limiting_key of this WafLog.
@@ -801,7 +829,7 @@ class WafLog(object):
     def timestamp(self):
         """
         Gets the timestamp of this WafLog.
-        The `Date` header value of the request.
+        The date and time the Web Application Firewall processed the request and logged it.
 
 
         :return: The timestamp of this WafLog.
@@ -813,7 +841,7 @@ class WafLog(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this WafLog.
-        The `Date` header value of the request.
+        The date and time the Web Application Firewall processed the request and logged it.
 
 
         :param timestamp: The timestamp of this WafLog.
@@ -825,7 +853,9 @@ class WafLog(object):
     def log_type(self):
         """
         Gets the log_type of this WafLog.
-        The type of log of the request.
+        The type of log of the request. For more about log types, see `WAF Logs`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/waflogs.htm
 
 
         :return: The log_type of this WafLog.
@@ -837,7 +867,9 @@ class WafLog(object):
     def log_type(self, log_type):
         """
         Sets the log_type of this WafLog.
-        The type of log of the request.
+        The type of log of the request. For more about log types, see `WAF Logs`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/waflogs.htm
 
 
         :param log_type: The log_type of this WafLog.
@@ -873,8 +905,7 @@ class WafLog(object):
     def origin_response_time(self):
         """
         Gets the origin_response_time of this WafLog.
-        The amount of time it took the origin server to respond to the request.
-        TODO: determine unit of time and example
+        The amount of time it took the origin server to respond to the request, in seconds.
 
 
         :return: The origin_response_time of this WafLog.
@@ -886,8 +917,7 @@ class WafLog(object):
     def origin_response_time(self, origin_response_time):
         """
         Sets the origin_response_time of this WafLog.
-        The amount of time it took the origin server to respond to the request.
-        TODO: determine unit of time and example
+        The amount of time it took the origin server to respond to the request, in seconds.
 
 
         :param origin_response_time: The origin_response_time of this WafLog.

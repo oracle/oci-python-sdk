@@ -92,7 +92,7 @@ class WafConfigDetails(object):
     def access_rules(self):
         """
         Gets the access_rules of this WafConfigDetails.
-        The access rules applied to the Web Application Firewall. Used for defining custom access policies with the combination of `ALLOW`, `DETECT`, and `BLOCK` rules, based on different criteria.
+        The access rules applied to the Web Application Firewall. Access rules allow custom content access policies to be defined and `ALLOW`, `DETECT`, or `BLOCK` actions to be taken on a request when specified criteria are met.
 
 
         :return: The access_rules of this WafConfigDetails.
@@ -104,7 +104,7 @@ class WafConfigDetails(object):
     def access_rules(self, access_rules):
         """
         Sets the access_rules of this WafConfigDetails.
-        The access rules applied to the Web Application Firewall. Used for defining custom access policies with the combination of `ALLOW`, `DETECT`, and `BLOCK` rules, based on different criteria.
+        The access rules applied to the Web Application Firewall. Access rules allow custom content access policies to be defined and `ALLOW`, `DETECT`, or `BLOCK` actions to be taken on a request when specified criteria are met.
 
 
         :param access_rules: The access_rules of this WafConfigDetails.
@@ -116,7 +116,7 @@ class WafConfigDetails(object):
     def address_rate_limiting(self):
         """
         Gets the address_rate_limiting of this WafConfigDetails.
-        The IP address rate limiting settings used to limit the number of requests from an address.
+        The settings used to limit the number of requests from an IP address.
 
 
         :return: The address_rate_limiting of this WafConfigDetails.
@@ -128,7 +128,7 @@ class WafConfigDetails(object):
     def address_rate_limiting(self, address_rate_limiting):
         """
         Sets the address_rate_limiting of this WafConfigDetails.
-        The IP address rate limiting settings used to limit the number of requests from an address.
+        The settings used to limit the number of requests from an IP address.
 
 
         :param address_rate_limiting: The address_rate_limiting of this WafConfigDetails.
@@ -140,7 +140,7 @@ class WafConfigDetails(object):
     def captchas(self):
         """
         Gets the captchas of this WafConfigDetails.
-        A list of CAPTCHA challenge settings. These are used to challenge requests with a CAPTCHA to block bots.
+        A list of CAPTCHA challenge settings. CAPTCHAs challenge requests to ensure a human is attempting to reach the specified URL and not a bot.
 
 
         :return: The captchas of this WafConfigDetails.
@@ -152,7 +152,7 @@ class WafConfigDetails(object):
     def captchas(self, captchas):
         """
         Sets the captchas of this WafConfigDetails.
-        A list of CAPTCHA challenge settings. These are used to challenge requests with a CAPTCHA to block bots.
+        A list of CAPTCHA challenge settings. CAPTCHAs challenge requests to ensure a human is attempting to reach the specified URL and not a bot.
 
 
         :param captchas: The captchas of this WafConfigDetails.
@@ -164,7 +164,7 @@ class WafConfigDetails(object):
     def device_fingerprint_challenge(self):
         """
         Gets the device_fingerprint_challenge of this WafConfigDetails.
-        The device fingerprint challenge settings. Used to detect unique devices based on the device fingerprint information collected in order to block bots.
+        The device fingerprint challenge settings. Blocks bots based on unique device fingerprint information.
 
 
         :return: The device_fingerprint_challenge of this WafConfigDetails.
@@ -176,7 +176,7 @@ class WafConfigDetails(object):
     def device_fingerprint_challenge(self, device_fingerprint_challenge):
         """
         Sets the device_fingerprint_challenge of this WafConfigDetails.
-        The device fingerprint challenge settings. Used to detect unique devices based on the device fingerprint information collected in order to block bots.
+        The device fingerprint challenge settings. Blocks bots based on unique device fingerprint information.
 
 
         :param device_fingerprint_challenge: The device_fingerprint_challenge of this WafConfigDetails.
@@ -188,7 +188,7 @@ class WafConfigDetails(object):
     def human_interaction_challenge(self):
         """
         Gets the human_interaction_challenge of this WafConfigDetails.
-        The human interaction challenge settings. Used to look for natural human interactions such as mouse movements, time on site, and page scrolling to identify bots.
+        The human interaction challenge settings. Detects natural human interactions such as mouse movements, time on site, and page scrolling to identify bots.
 
 
         :return: The human_interaction_challenge of this WafConfigDetails.
@@ -200,7 +200,7 @@ class WafConfigDetails(object):
     def human_interaction_challenge(self, human_interaction_challenge):
         """
         Sets the human_interaction_challenge of this WafConfigDetails.
-        The human interaction challenge settings. Used to look for natural human interactions such as mouse movements, time on site, and page scrolling to identify bots.
+        The human interaction challenge settings. Detects natural human interactions such as mouse movements, time on site, and page scrolling to identify bots.
 
 
         :param human_interaction_challenge: The human_interaction_challenge of this WafConfigDetails.
@@ -212,7 +212,7 @@ class WafConfigDetails(object):
     def js_challenge(self):
         """
         Gets the js_challenge of this WafConfigDetails.
-        The JavaScript challenge settings. Used to challenge requests with a JavaScript challenge and take the action if a browser has no JavaScript support in order to block bots.
+        The JavaScript challenge settings. Blocks bots by challenging requests from browsers that have no JavaScript support.
 
 
         :return: The js_challenge of this WafConfigDetails.
@@ -224,7 +224,7 @@ class WafConfigDetails(object):
     def js_challenge(self, js_challenge):
         """
         Sets the js_challenge of this WafConfigDetails.
-        The JavaScript challenge settings. Used to challenge requests with a JavaScript challenge and take the action if a browser has no JavaScript support in order to block bots.
+        The JavaScript challenge settings. Blocks bots by challenging requests from browsers that have no JavaScript support.
 
 
         :param js_challenge: The js_challenge of this WafConfigDetails.
@@ -236,7 +236,7 @@ class WafConfigDetails(object):
     def origin(self):
         """
         Gets the origin of this WafConfigDetails.
-        The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
+        The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but is not required upon updating the configuration.
 
 
         :return: The origin of this WafConfigDetails.
@@ -248,7 +248,7 @@ class WafConfigDetails(object):
     def origin(self, origin):
         """
         Sets the origin of this WafConfigDetails.
-        The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
+        The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but is not required upon updating the configuration.
 
 
         :param origin: The origin of this WafConfigDetails.
@@ -260,7 +260,7 @@ class WafConfigDetails(object):
     def protection_settings(self):
         """
         Gets the protection_settings of this WafConfigDetails.
-        The settings to apply to protection rules.
+        The settings applied to protection rules.
 
 
         :return: The protection_settings of this WafConfigDetails.
@@ -272,7 +272,7 @@ class WafConfigDetails(object):
     def protection_settings(self, protection_settings):
         """
         Sets the protection_settings of this WafConfigDetails.
-        The settings to apply to protection rules.
+        The settings applied to protection rules.
 
 
         :param protection_settings: The protection_settings of this WafConfigDetails.

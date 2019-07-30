@@ -354,7 +354,7 @@ class WaasPolicy(object):
     def origins(self):
         """
         Gets the origins of this WaasPolicy.
-        A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
+        A map of host servers (origins) and their keys for the web application. Origin keys are used to associate origins to specific protection rules. The key should be a user-friendly name for the host. **Examples:** `primary` or `secondary`.
 
 
         :return: The origins of this WaasPolicy.
@@ -366,7 +366,7 @@ class WaasPolicy(object):
     def origins(self, origins):
         """
         Sets the origins of this WaasPolicy.
-        A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
+        A map of host servers (origins) and their keys for the web application. Origin keys are used to associate origins to specific protection rules. The key should be a user-friendly name for the host. **Examples:** `primary` or `secondary`.
 
 
         :param origins: The origins of this WaasPolicy.

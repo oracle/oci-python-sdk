@@ -298,7 +298,11 @@ class ProtectionSettings(object):
     def max_argument_count(self):
         """
         Gets the max_argument_count of this ProtectionSettings.
-        The maximum number of arguments allowed to be passed to your application before an action is taken. If unspecified, defaults to `255`.
+        The maximum number of arguments allowed to be passed to your application before an action is taken. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `255`. This setting only applies if a corresponding protection rule is enabled, such as the \"Number of Arguments Limits\" rule (key: 960335).
+
+        Example: If `maxArgumentCount` to `2` for the Max Number of Arguments protection rule (key: 960335), the following requests would be blocked:
+        `GET /myapp/path?query=one&query=two&query=three`
+        `POST /myapp/path` with Body `{\"argument1\":\"one\",\"argument2\":\"two\",\"argument3\":\"three\"}`
 
 
         :return: The max_argument_count of this ProtectionSettings.
@@ -310,7 +314,11 @@ class ProtectionSettings(object):
     def max_argument_count(self, max_argument_count):
         """
         Sets the max_argument_count of this ProtectionSettings.
-        The maximum number of arguments allowed to be passed to your application before an action is taken. If unspecified, defaults to `255`.
+        The maximum number of arguments allowed to be passed to your application before an action is taken. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `255`. This setting only applies if a corresponding protection rule is enabled, such as the \"Number of Arguments Limits\" rule (key: 960335).
+
+        Example: If `maxArgumentCount` to `2` for the Max Number of Arguments protection rule (key: 960335), the following requests would be blocked:
+        `GET /myapp/path?query=one&query=two&query=three`
+        `POST /myapp/path` with Body `{\"argument1\":\"one\",\"argument2\":\"two\",\"argument3\":\"three\"}`
 
 
         :param max_argument_count: The max_argument_count of this ProtectionSettings.
@@ -322,7 +330,7 @@ class ProtectionSettings(object):
     def max_name_length_per_argument(self):
         """
         Gets the max_name_length_per_argument of this ProtectionSettings.
-        The maximum length allowed for each argument name, in characters. If unspecified, defaults to `400`.
+        The maximum length allowed for each argument name, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `400`. This setting only applies if a corresponding protection rule is enabled, such as the \"Values Limits\" rule (key: 960208).
 
 
         :return: The max_name_length_per_argument of this ProtectionSettings.
@@ -334,7 +342,7 @@ class ProtectionSettings(object):
     def max_name_length_per_argument(self, max_name_length_per_argument):
         """
         Sets the max_name_length_per_argument of this ProtectionSettings.
-        The maximum length allowed for each argument name, in characters. If unspecified, defaults to `400`.
+        The maximum length allowed for each argument name, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `400`. This setting only applies if a corresponding protection rule is enabled, such as the \"Values Limits\" rule (key: 960208).
 
 
         :param max_name_length_per_argument: The max_name_length_per_argument of this ProtectionSettings.
@@ -346,7 +354,7 @@ class ProtectionSettings(object):
     def max_total_name_length_of_arguments(self):
         """
         Gets the max_total_name_length_of_arguments of this ProtectionSettings.
-        The maximum length allowed for the sum of all argument names, in characters. If unspecified, defaults to `64000`.
+        The maximum length allowed for the sum of the argument name and value, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `64000`. This setting only applies if a corresponding protection rule is enabled, such as the \"Total Arguments Limits\" rule (key: 960341).
 
 
         :return: The max_total_name_length_of_arguments of this ProtectionSettings.
@@ -358,7 +366,7 @@ class ProtectionSettings(object):
     def max_total_name_length_of_arguments(self, max_total_name_length_of_arguments):
         """
         Sets the max_total_name_length_of_arguments of this ProtectionSettings.
-        The maximum length allowed for the sum of all argument names, in characters. If unspecified, defaults to `64000`.
+        The maximum length allowed for the sum of the argument name and value, in characters. Arguements are query parameters or body parameters in a PUT or POST request. If unspecified, defaults to `64000`. This setting only applies if a corresponding protection rule is enabled, such as the \"Total Arguments Limits\" rule (key: 960341).
 
 
         :param max_total_name_length_of_arguments: The max_total_name_length_of_arguments of this ProtectionSettings.
@@ -450,7 +458,7 @@ class ProtectionSettings(object):
     def allowed_http_methods(self):
         """
         Gets the allowed_http_methods of this ProtectionSettings.
-        The list of allowed HTTP methods. If unspecified, default to `[OPTIONS, GET, HEAD, POST]`.
+        The list of allowed HTTP methods. If unspecified, default to `[OPTIONS, GET, HEAD, POST]`. This setting only applies if a corresponding protection rule is enabled, such as the \"Restrict HTTP Request Methods\" rule (key: 911100).
 
         Allowed values for items in this list are: "OPTIONS", "GET", "HEAD", "POST", "PUT", "DELETE", "TRACE", "CONNECT", "PATCH", "PROPFIND", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -465,7 +473,7 @@ class ProtectionSettings(object):
     def allowed_http_methods(self, allowed_http_methods):
         """
         Sets the allowed_http_methods of this ProtectionSettings.
-        The list of allowed HTTP methods. If unspecified, default to `[OPTIONS, GET, HEAD, POST]`.
+        The list of allowed HTTP methods. If unspecified, default to `[OPTIONS, GET, HEAD, POST]`. This setting only applies if a corresponding protection rule is enabled, such as the \"Restrict HTTP Request Methods\" rule (key: 911100).
 
 
         :param allowed_http_methods: The allowed_http_methods of this ProtectionSettings.
@@ -480,7 +488,7 @@ class ProtectionSettings(object):
     def media_types(self):
         """
         Gets the media_types of this ProtectionSettings.
-        The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `[`text/html`, `text/plain`, `text/xml`]`.
+        The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `[\"text/html\", \"text/plain\", \"text/xml\"]`.
 
             Supported MIME types include:
 
@@ -513,7 +521,7 @@ class ProtectionSettings(object):
     def media_types(self, media_types):
         """
         Sets the media_types of this ProtectionSettings.
-        The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `[`text/html`, `text/plain`, `text/xml`]`.
+        The list of media types to allow for inspection, if `isResponseInspected` is enabled. Only responses with MIME types in this list will be inspected. If unspecified, defaults to `[\"text/html\", \"text/plain\", \"text/xml\"]`.
 
             Supported MIME types include:
 
