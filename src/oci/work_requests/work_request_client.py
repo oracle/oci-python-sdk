@@ -17,7 +17,12 @@ missing = Sentinel("Missing")
 
 class WorkRequestClient(object):
     """
-    A description of the work requests API
+    Many of the API operations that you use to create and configure Compute resources do not take effect
+    immediately. In these cases, the operation spawns an asynchronous workflow to fulfill the request.
+    Work requests provide visibility into the status of these in-progress, long-running workflows.
+
+    For more information about work requests and the operations that spawn work requests, see
+    [Viewing the State of a Compute Work Request](/iaas/Content/Compute/Tasks/viewingworkrequestcompute.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -82,12 +87,14 @@ class WorkRequestClient(object):
 
     def get_work_request(self, work_request_id, **kwargs):
         """
-        Gets work requests
-        Return the given work request.
+        Gets the details of a work request.
+        Gets the details of a work request.
 
 
         :param str work_request_id: (required)
-            The OCID of the work request.
+            The `OCID`__ of the work request.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -157,17 +164,27 @@ class WorkRequestClient(object):
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
         Lists work request errors
-        Return a (paginated) list of errors for a given work request.
+        Gets the errors for a work request.
 
 
         :param str work_request_id: (required)
-            The OCID of the work request.
+            The `OCID`__ of the work request.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a
+            paginated \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the
+            previous \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -261,17 +278,27 @@ class WorkRequestClient(object):
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
         Lists work request logs
-        Return a (paginated) list of logs for a given work request.
+        Gets the logs for a work request.
 
 
         :param str work_request_id: (required)
-            The OCID of the work request.
+            The `OCID`__ of the work request.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a
+            paginated \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the
+            previous \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -364,21 +391,33 @@ class WorkRequestClient(object):
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
-        Lists work requests
-        Lists the work requests in a given compartment or for a given resource.
+        Lists work requests in a compartment or for a resource.
+        Lists the work requests in a compartment or for a specified resource.
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str resource_id: (optional)
-            The OCID of the resource.
+            The `OCID`__ of the resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+            For list pagination. The maximum number of results per page, or items to return in a
+            paginated \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
+            For list pagination. The value of the `opc-next-page` response header from the
+            previous \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a

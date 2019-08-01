@@ -9,7 +9,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestResource(object):
     """
-    A resource created or operated on by a work request.
+    A resource that is created or operated on by an asynchronous operation that is tracked by
+    a work request.
     """
 
     #: A constant which can be used with the action_type property of a WorkRequestResource.
@@ -79,10 +80,8 @@ class WorkRequestResource(object):
     def action_type(self):
         """
         **[Required]** Gets the action_type of this WorkRequestResource.
-        The way in which this resource is affected by the work tracked in the work request.
-        A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
-        work is complete for that resource at which point it will transition to CREATED, UPDATED,
-        or DELETED, respectively.
+        The way in which this resource was affected by the operation that spawned the work
+        request.
 
         Allowed values for this property are: "CREATED", "UPDATED", "DELETED", "RELATED", "IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -97,10 +96,8 @@ class WorkRequestResource(object):
     def action_type(self, action_type):
         """
         Sets the action_type of this WorkRequestResource.
-        The way in which this resource is affected by the work tracked in the work request.
-        A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
-        work is complete for that resource at which point it will transition to CREATED, UPDATED,
-        or DELETED, respectively.
+        The way in which this resource was affected by the operation that spawned the work
+        request.
 
 
         :param action_type: The action_type of this WorkRequestResource.
@@ -139,7 +136,10 @@ class WorkRequestResource(object):
     def identifier(self):
         """
         **[Required]** Gets the identifier of this WorkRequestResource.
-        An OCID or other unique identifier for the resource.
+        An `OCID`__ or other unique identifier for the
+        resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The identifier of this WorkRequestResource.
@@ -151,7 +151,10 @@ class WorkRequestResource(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this WorkRequestResource.
-        An OCID or other unique identifier for the resource.
+        An `OCID`__ or other unique identifier for the
+        resource.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param identifier: The identifier of this WorkRequestResource.
@@ -163,7 +166,7 @@ class WorkRequestResource(object):
     def entity_uri(self):
         """
         Gets the entity_uri of this WorkRequestResource.
-        The URI path used to access the resource metadata.
+        The URI path that you can use for a GET request to access the resource metadata.
 
 
         :return: The entity_uri of this WorkRequestResource.
@@ -175,7 +178,7 @@ class WorkRequestResource(object):
     def entity_uri(self, entity_uri):
         """
         Sets the entity_uri of this WorkRequestResource.
-        The URI path used to access the resource metadata.
+        The URI path that you can use for a GET request to access the resource metadata.
 
 
         :param entity_uri: The entity_uri of this WorkRequestResource.
