@@ -84,6 +84,18 @@ class Subnet(object):
             The value to assign to the id property of this Subnet.
         :type id: str
 
+        :param ipv6_cidr_block:
+            The value to assign to the ipv6_cidr_block property of this Subnet.
+        :type ipv6_cidr_block: str
+
+        :param ipv6_public_cidr_block:
+            The value to assign to the ipv6_public_cidr_block property of this Subnet.
+        :type ipv6_public_cidr_block: str
+
+        :param ipv6_virtual_router_ip:
+            The value to assign to the ipv6_virtual_router_ip property of this Subnet.
+        :type ipv6_virtual_router_ip: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Subnet.
             Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
@@ -133,6 +145,9 @@ class Subnet(object):
             'dns_label': 'str',
             'freeform_tags': 'dict(str, str)',
             'id': 'str',
+            'ipv6_cidr_block': 'str',
+            'ipv6_public_cidr_block': 'str',
+            'ipv6_virtual_router_ip': 'str',
             'lifecycle_state': 'str',
             'prohibit_public_ip_on_vnic': 'bool',
             'route_table_id': 'str',
@@ -154,6 +169,9 @@ class Subnet(object):
             'dns_label': 'dnsLabel',
             'freeform_tags': 'freeformTags',
             'id': 'id',
+            'ipv6_cidr_block': 'ipv6CidrBlock',
+            'ipv6_public_cidr_block': 'ipv6PublicCidrBlock',
+            'ipv6_virtual_router_ip': 'ipv6VirtualRouterIp',
             'lifecycle_state': 'lifecycleState',
             'prohibit_public_ip_on_vnic': 'prohibitPublicIpOnVnic',
             'route_table_id': 'routeTableId',
@@ -174,6 +192,9 @@ class Subnet(object):
         self._dns_label = None
         self._freeform_tags = None
         self._id = None
+        self._ipv6_cidr_block = None
+        self._ipv6_public_cidr_block = None
+        self._ipv6_virtual_router_ip = None
         self._lifecycle_state = None
         self._prohibit_public_ip_on_vnic = None
         self._route_table_id = None
@@ -459,6 +480,98 @@ class Subnet(object):
         :type: str
         """
         self._id = id
+
+    @property
+    def ipv6_cidr_block(self):
+        """
+        Gets the ipv6_cidr_block of this Subnet.
+        For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's private IP address
+        space. The subnet size is always /64.
+
+        Example: `2001:0db8:0123:1111::/64`
+
+
+        :return: The ipv6_cidr_block of this Subnet.
+        :rtype: str
+        """
+        return self._ipv6_cidr_block
+
+    @ipv6_cidr_block.setter
+    def ipv6_cidr_block(self, ipv6_cidr_block):
+        """
+        Sets the ipv6_cidr_block of this Subnet.
+        For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's private IP address
+        space. The subnet size is always /64.
+
+        Example: `2001:0db8:0123:1111::/64`
+
+
+        :param ipv6_cidr_block: The ipv6_cidr_block of this Subnet.
+        :type: str
+        """
+        self._ipv6_cidr_block = ipv6_cidr_block
+
+    @property
+    def ipv6_public_cidr_block(self):
+        """
+        Gets the ipv6_public_cidr_block of this Subnet.
+        For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's public IP address
+        space. The subnet size is always /64. The left 48 bits are inherited from the
+        `ipv6PublicCidrBlock` of the :class:`Vcn`,
+        and the remaining 16 bits are from the subnet's `ipv6CidrBlock`.
+
+        Example: `2001:0db8:0123:1111::/64`
+
+
+        :return: The ipv6_public_cidr_block of this Subnet.
+        :rtype: str
+        """
+        return self._ipv6_public_cidr_block
+
+    @ipv6_public_cidr_block.setter
+    def ipv6_public_cidr_block(self, ipv6_public_cidr_block):
+        """
+        Sets the ipv6_public_cidr_block of this Subnet.
+        For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's public IP address
+        space. The subnet size is always /64. The left 48 bits are inherited from the
+        `ipv6PublicCidrBlock` of the :class:`Vcn`,
+        and the remaining 16 bits are from the subnet's `ipv6CidrBlock`.
+
+        Example: `2001:0db8:0123:1111::/64`
+
+
+        :param ipv6_public_cidr_block: The ipv6_public_cidr_block of this Subnet.
+        :type: str
+        """
+        self._ipv6_public_cidr_block = ipv6_public_cidr_block
+
+    @property
+    def ipv6_virtual_router_ip(self):
+        """
+        Gets the ipv6_virtual_router_ip of this Subnet.
+        For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.
+
+        Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
+
+
+        :return: The ipv6_virtual_router_ip of this Subnet.
+        :rtype: str
+        """
+        return self._ipv6_virtual_router_ip
+
+    @ipv6_virtual_router_ip.setter
+    def ipv6_virtual_router_ip(self, ipv6_virtual_router_ip):
+        """
+        Sets the ipv6_virtual_router_ip of this Subnet.
+        For an IPv6-enabled subnet, this is the IPv6 address of the virtual router.
+
+        Example: `2001:0db8:0123:1111:89ab:cdef:1234:5678`
+
+
+        :param ipv6_virtual_router_ip: The ipv6_virtual_router_ip of this Subnet.
+        :type: str
+        """
+        self._ipv6_virtual_router_ip = ipv6_virtual_router_ip
 
     @property
     def lifecycle_state(self):

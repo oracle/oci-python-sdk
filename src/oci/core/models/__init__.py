@@ -80,6 +80,7 @@ from .create_instance_console_connection_details import CreateInstanceConsoleCon
 from .create_instance_pool_details import CreateInstancePoolDetails
 from .create_instance_pool_placement_configuration_details import CreateInstancePoolPlacementConfigurationDetails
 from .create_internet_gateway_details import CreateInternetGatewayDetails
+from .create_ipv6_details import CreateIpv6Details
 from .create_local_peering_gateway_details import CreateLocalPeeringGatewayDetails
 from .create_nat_gateway_details import CreateNatGatewayDetails
 from .create_network_security_group_details import CreateNetworkSecurityGroupDetails
@@ -168,6 +169,7 @@ from .instance_source_via_boot_volume_details import InstanceSourceViaBootVolume
 from .instance_source_via_image_details import InstanceSourceViaImageDetails
 from .instance_summary import InstanceSummary
 from .internet_gateway import InternetGateway
+from .ipv6 import Ipv6
 from .launch_instance_agent_config_details import LaunchInstanceAgentConfigDetails
 from .launch_instance_details import LaunchInstanceDetails
 from .launch_options import LaunchOptions
@@ -218,6 +220,7 @@ from .update_instance_details import UpdateInstanceDetails
 from .update_instance_pool_details import UpdateInstancePoolDetails
 from .update_instance_pool_placement_configuration_details import UpdateInstancePoolPlacementConfigurationDetails
 from .update_internet_gateway_details import UpdateInternetGatewayDetails
+from .update_ipv6_details import UpdateIpv6Details
 from .update_local_peering_gateway_details import UpdateLocalPeeringGatewayDetails
 from .update_nat_gateway_details import UpdateNatGatewayDetails
 from .update_network_security_group_details import UpdateNetworkSecurityGroupDetails
@@ -341,6 +344,7 @@ core_type_mapping = {
     "CreateInstancePoolDetails": CreateInstancePoolDetails,
     "CreateInstancePoolPlacementConfigurationDetails": CreateInstancePoolPlacementConfigurationDetails,
     "CreateInternetGatewayDetails": CreateInternetGatewayDetails,
+    "CreateIpv6Details": CreateIpv6Details,
     "CreateLocalPeeringGatewayDetails": CreateLocalPeeringGatewayDetails,
     "CreateNatGatewayDetails": CreateNatGatewayDetails,
     "CreateNetworkSecurityGroupDetails": CreateNetworkSecurityGroupDetails,
@@ -429,6 +433,7 @@ core_type_mapping = {
     "InstanceSourceViaImageDetails": InstanceSourceViaImageDetails,
     "InstanceSummary": InstanceSummary,
     "InternetGateway": InternetGateway,
+    "Ipv6": Ipv6,
     "LaunchInstanceAgentConfigDetails": LaunchInstanceAgentConfigDetails,
     "LaunchInstanceDetails": LaunchInstanceDetails,
     "LaunchOptions": LaunchOptions,
@@ -479,6 +484,7 @@ core_type_mapping = {
     "UpdateInstancePoolDetails": UpdateInstancePoolDetails,
     "UpdateInstancePoolPlacementConfigurationDetails": UpdateInstancePoolPlacementConfigurationDetails,
     "UpdateInternetGatewayDetails": UpdateInternetGatewayDetails,
+    "UpdateIpv6Details": UpdateIpv6Details,
     "UpdateLocalPeeringGatewayDetails": UpdateLocalPeeringGatewayDetails,
     "UpdateNatGatewayDetails": UpdateNatGatewayDetails,
     "UpdateNetworkSecurityGroupDetails": UpdateNetworkSecurityGroupDetails,
