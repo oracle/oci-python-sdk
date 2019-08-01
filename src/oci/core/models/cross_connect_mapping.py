@@ -34,6 +34,10 @@ class CrossConnectMapping(object):
     goes from Oracle to the customer's edge router, then the customer specifies the BGP
     peering information. There's one exception: for a public virtual circuit, Oracle
     specifies the BGP IPv4 addresses.
+
+    Every `CrossConnectMapping` must have BGP IPv4 peering addresses. BGP IPv6 peering
+    addresses are optional. If BGP IPv6 addresses are provided, the customer can
+    exchange IPv6 routes with Oracle.
     """
 
     def __init__(self, **kwargs):
@@ -57,6 +61,14 @@ class CrossConnectMapping(object):
             The value to assign to the oracle_bgp_peering_ip property of this CrossConnectMapping.
         :type oracle_bgp_peering_ip: str
 
+        :param customer_bgp_peering_ipv6:
+            The value to assign to the customer_bgp_peering_ipv6 property of this CrossConnectMapping.
+        :type customer_bgp_peering_ipv6: str
+
+        :param oracle_bgp_peering_ipv6:
+            The value to assign to the oracle_bgp_peering_ipv6 property of this CrossConnectMapping.
+        :type oracle_bgp_peering_ipv6: str
+
         :param vlan:
             The value to assign to the vlan property of this CrossConnectMapping.
         :type vlan: int
@@ -67,6 +79,8 @@ class CrossConnectMapping(object):
             'cross_connect_or_cross_connect_group_id': 'str',
             'customer_bgp_peering_ip': 'str',
             'oracle_bgp_peering_ip': 'str',
+            'customer_bgp_peering_ipv6': 'str',
+            'oracle_bgp_peering_ipv6': 'str',
             'vlan': 'int'
         }
 
@@ -75,6 +89,8 @@ class CrossConnectMapping(object):
             'cross_connect_or_cross_connect_group_id': 'crossConnectOrCrossConnectGroupId',
             'customer_bgp_peering_ip': 'customerBgpPeeringIp',
             'oracle_bgp_peering_ip': 'oracleBgpPeeringIp',
+            'customer_bgp_peering_ipv6': 'customerBgpPeeringIpv6',
+            'oracle_bgp_peering_ipv6': 'oracleBgpPeeringIpv6',
             'vlan': 'vlan'
         }
 
@@ -82,6 +98,8 @@ class CrossConnectMapping(object):
         self._cross_connect_or_cross_connect_group_id = None
         self._customer_bgp_peering_ip = None
         self._oracle_bgp_peering_ip = None
+        self._customer_bgp_peering_ipv6 = None
+        self._oracle_bgp_peering_ipv6 = None
         self._vlan = None
 
     @property
@@ -219,6 +237,84 @@ class CrossConnectMapping(object):
         :type: str
         """
         self._oracle_bgp_peering_ip = oracle_bgp_peering_ip
+
+    @property
+    def customer_bgp_peering_ipv6(self):
+        """
+        Gets the customer_bgp_peering_ipv6 of this CrossConnectMapping.
+        The BGP IPv6 address for the router on the other end of the BGP session from
+        Oracle. Specified by the owner of that router. If the session goes from Oracle
+        to a customer, this is the BGP IPv6 address of the customer's edge router. If the
+        session goes from Oracle to a provider, this is the BGP IPv6 address of the
+        provider's edge router. Only subnet masks from /64 up to /127 are allowed.
+
+        There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
+
+        Example: `2001:db8::1/64`
+
+
+        :return: The customer_bgp_peering_ipv6 of this CrossConnectMapping.
+        :rtype: str
+        """
+        return self._customer_bgp_peering_ipv6
+
+    @customer_bgp_peering_ipv6.setter
+    def customer_bgp_peering_ipv6(self, customer_bgp_peering_ipv6):
+        """
+        Sets the customer_bgp_peering_ipv6 of this CrossConnectMapping.
+        The BGP IPv6 address for the router on the other end of the BGP session from
+        Oracle. Specified by the owner of that router. If the session goes from Oracle
+        to a customer, this is the BGP IPv6 address of the customer's edge router. If the
+        session goes from Oracle to a provider, this is the BGP IPv6 address of the
+        provider's edge router. Only subnet masks from /64 up to /127 are allowed.
+
+        There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
+
+        Example: `2001:db8::1/64`
+
+
+        :param customer_bgp_peering_ipv6: The customer_bgp_peering_ipv6 of this CrossConnectMapping.
+        :type: str
+        """
+        self._customer_bgp_peering_ipv6 = customer_bgp_peering_ipv6
+
+    @property
+    def oracle_bgp_peering_ipv6(self):
+        """
+        Gets the oracle_bgp_peering_ipv6 of this CrossConnectMapping.
+        The IPv6 address for Oracle's end of the BGP session.  Only subnet masks from /64 up to /127 are allowed.
+        If the session goes from Oracle to a customer's edge router,
+        the customer specifies this information. If the session goes from Oracle to
+        a provider's edge router, the provider specifies this.
+
+        There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
+
+        Example: `2001:db8::2/64`
+
+
+        :return: The oracle_bgp_peering_ipv6 of this CrossConnectMapping.
+        :rtype: str
+        """
+        return self._oracle_bgp_peering_ipv6
+
+    @oracle_bgp_peering_ipv6.setter
+    def oracle_bgp_peering_ipv6(self, oracle_bgp_peering_ipv6):
+        """
+        Sets the oracle_bgp_peering_ipv6 of this CrossConnectMapping.
+        The IPv6 address for Oracle's end of the BGP session.  Only subnet masks from /64 up to /127 are allowed.
+        If the session goes from Oracle to a customer's edge router,
+        the customer specifies this information. If the session goes from Oracle to
+        a provider's edge router, the provider specifies this.
+
+        There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
+
+        Example: `2001:db8::2/64`
+
+
+        :param oracle_bgp_peering_ipv6: The oracle_bgp_peering_ipv6 of this CrossConnectMapping.
+        :type: str
+        """
+        self._oracle_bgp_peering_ipv6 = oracle_bgp_peering_ipv6
 
     @property
     def vlan(self):
