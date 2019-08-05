@@ -5,12 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-2.2.21 - TBD
+2.2.21 - 2019-08-06
 ====================
 
 Added
 -----
-* TBD
+* Support for IPv6 load balancers in the Load Balancing service
+* Support for IPv6 on VCN and FastConnect resources in the Networking service
 
 ====================
 2.2.20 - 2019-07-30
