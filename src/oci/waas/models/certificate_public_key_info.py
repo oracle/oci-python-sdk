@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CertificatePublicKeyInfo(object):
     """
-    CertificatePublicKeyInfo model.
+    Information about the public key and the algorithm used by the public key.
     """
 
     def __init__(self, **kwargs):
@@ -50,6 +50,8 @@ class CertificatePublicKeyInfo(object):
     def algorithm(self):
         """
         Gets the algorithm of this CertificatePublicKeyInfo.
+        The algorithm identifier and parameters for the public key.
+
 
         :return: The algorithm of this CertificatePublicKeyInfo.
         :rtype: str
@@ -60,6 +62,8 @@ class CertificatePublicKeyInfo(object):
     def algorithm(self, algorithm):
         """
         Sets the algorithm of this CertificatePublicKeyInfo.
+        The algorithm identifier and parameters for the public key.
+
 
         :param algorithm: The algorithm of this CertificatePublicKeyInfo.
         :type: str
@@ -70,6 +74,8 @@ class CertificatePublicKeyInfo(object):
     def exponent(self):
         """
         Gets the exponent of this CertificatePublicKeyInfo.
+        The private key exponent.
+
 
         :return: The exponent of this CertificatePublicKeyInfo.
         :rtype: int
@@ -80,6 +86,8 @@ class CertificatePublicKeyInfo(object):
     def exponent(self, exponent):
         """
         Sets the exponent of this CertificatePublicKeyInfo.
+        The private key exponent.
+
 
         :param exponent: The exponent of this CertificatePublicKeyInfo.
         :type: int
@@ -90,6 +98,8 @@ class CertificatePublicKeyInfo(object):
     def key_size(self):
         """
         Gets the key_size of this CertificatePublicKeyInfo.
+        The number of bits in a key used by a cryptographic algorithm.
+
 
         :return: The key_size of this CertificatePublicKeyInfo.
         :rtype: int
@@ -100,6 +110,8 @@ class CertificatePublicKeyInfo(object):
     def key_size(self, key_size):
         """
         Sets the key_size of this CertificatePublicKeyInfo.
+        The number of bits in a key used by a cryptographic algorithm.
+
 
         :param key_size: The key_size of this CertificatePublicKeyInfo.
         :type: int

@@ -7,42 +7,42 @@ from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class CertificateSubjectName(object):
+class CertificateIssuerName(object):
     """
-    The entity to be secured by the certificate.
+    The issuer of the certificate.
     """
 
     def __init__(self, **kwargs):
         """
-        Initializes a new CertificateSubjectName object with values from keyword arguments.
+        Initializes a new CertificateIssuerName object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param country:
-            The value to assign to the country property of this CertificateSubjectName.
+            The value to assign to the country property of this CertificateIssuerName.
         :type country: str
 
         :param state_province:
-            The value to assign to the state_province property of this CertificateSubjectName.
+            The value to assign to the state_province property of this CertificateIssuerName.
         :type state_province: str
 
         :param locality:
-            The value to assign to the locality property of this CertificateSubjectName.
+            The value to assign to the locality property of this CertificateIssuerName.
         :type locality: str
 
         :param organization:
-            The value to assign to the organization property of this CertificateSubjectName.
+            The value to assign to the organization property of this CertificateIssuerName.
         :type organization: str
 
         :param organizational_unit:
-            The value to assign to the organizational_unit property of this CertificateSubjectName.
+            The value to assign to the organizational_unit property of this CertificateIssuerName.
         :type organizational_unit: str
 
         :param common_name:
-            The value to assign to the common_name property of this CertificateSubjectName.
+            The value to assign to the common_name property of this CertificateIssuerName.
         :type common_name: str
 
         :param email_address:
-            The value to assign to the email_address property of this CertificateSubjectName.
+            The value to assign to the email_address property of this CertificateIssuerName.
         :type email_address: str
 
         """
@@ -77,13 +77,13 @@ class CertificateSubjectName(object):
     @property
     def country(self):
         """
-        Gets the country of this CertificateSubjectName.
+        Gets the country of this CertificateIssuerName.
         ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see `ISO's website`__.
 
         __ https://www.iso.org/obp/ui/#search/code/
 
 
-        :return: The country of this CertificateSubjectName.
+        :return: The country of this CertificateIssuerName.
         :rtype: str
         """
         return self._country
@@ -91,13 +91,13 @@ class CertificateSubjectName(object):
     @country.setter
     def country(self, country):
         """
-        Sets the country of this CertificateSubjectName.
+        Sets the country of this CertificateIssuerName.
         ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see `ISO's website`__.
 
         __ https://www.iso.org/obp/ui/#search/code/
 
 
-        :param country: The country of this CertificateSubjectName.
+        :param country: The country of this CertificateIssuerName.
         :type: str
         """
         self._country = country
@@ -105,11 +105,11 @@ class CertificateSubjectName(object):
     @property
     def state_province(self):
         """
-        Gets the state_province of this CertificateSubjectName.
+        Gets the state_province of this CertificateIssuerName.
         The province where the organization is located.
 
 
-        :return: The state_province of this CertificateSubjectName.
+        :return: The state_province of this CertificateIssuerName.
         :rtype: str
         """
         return self._state_province
@@ -117,11 +117,11 @@ class CertificateSubjectName(object):
     @state_province.setter
     def state_province(self, state_province):
         """
-        Sets the state_province of this CertificateSubjectName.
+        Sets the state_province of this CertificateIssuerName.
         The province where the organization is located.
 
 
-        :param state_province: The state_province of this CertificateSubjectName.
+        :param state_province: The state_province of this CertificateIssuerName.
         :type: str
         """
         self._state_province = state_province
@@ -129,11 +129,11 @@ class CertificateSubjectName(object):
     @property
     def locality(self):
         """
-        Gets the locality of this CertificateSubjectName.
+        Gets the locality of this CertificateIssuerName.
         The city in which the organization is located.
 
 
-        :return: The locality of this CertificateSubjectName.
+        :return: The locality of this CertificateIssuerName.
         :rtype: str
         """
         return self._locality
@@ -141,11 +141,11 @@ class CertificateSubjectName(object):
     @locality.setter
     def locality(self, locality):
         """
-        Sets the locality of this CertificateSubjectName.
+        Sets the locality of this CertificateIssuerName.
         The city in which the organization is located.
 
 
-        :param locality: The locality of this CertificateSubjectName.
+        :param locality: The locality of this CertificateIssuerName.
         :type: str
         """
         self._locality = locality
@@ -153,11 +153,11 @@ class CertificateSubjectName(object):
     @property
     def organization(self):
         """
-        Gets the organization of this CertificateSubjectName.
+        Gets the organization of this CertificateIssuerName.
         The organization name.
 
 
-        :return: The organization of this CertificateSubjectName.
+        :return: The organization of this CertificateIssuerName.
         :rtype: str
         """
         return self._organization
@@ -165,11 +165,11 @@ class CertificateSubjectName(object):
     @organization.setter
     def organization(self, organization):
         """
-        Sets the organization of this CertificateSubjectName.
+        Sets the organization of this CertificateIssuerName.
         The organization name.
 
 
-        :param organization: The organization of this CertificateSubjectName.
+        :param organization: The organization of this CertificateIssuerName.
         :type: str
         """
         self._organization = organization
@@ -177,11 +177,11 @@ class CertificateSubjectName(object):
     @property
     def organizational_unit(self):
         """
-        Gets the organizational_unit of this CertificateSubjectName.
+        Gets the organizational_unit of this CertificateIssuerName.
         The field to differentiate between divisions within an organization.
 
 
-        :return: The organizational_unit of this CertificateSubjectName.
+        :return: The organizational_unit of this CertificateIssuerName.
         :rtype: str
         """
         return self._organizational_unit
@@ -189,11 +189,11 @@ class CertificateSubjectName(object):
     @organizational_unit.setter
     def organizational_unit(self, organizational_unit):
         """
-        Sets the organizational_unit of this CertificateSubjectName.
+        Sets the organizational_unit of this CertificateIssuerName.
         The field to differentiate between divisions within an organization.
 
 
-        :param organizational_unit: The organizational_unit of this CertificateSubjectName.
+        :param organizational_unit: The organizational_unit of this CertificateIssuerName.
         :type: str
         """
         self._organizational_unit = organizational_unit
@@ -201,11 +201,11 @@ class CertificateSubjectName(object):
     @property
     def common_name(self):
         """
-        Gets the common_name of this CertificateSubjectName.
-        The fully qualified domain name used for DNS lookups of the server.
+        Gets the common_name of this CertificateIssuerName.
+        The Certificate Authority (CA) name.
 
 
-        :return: The common_name of this CertificateSubjectName.
+        :return: The common_name of this CertificateIssuerName.
         :rtype: str
         """
         return self._common_name
@@ -213,11 +213,11 @@ class CertificateSubjectName(object):
     @common_name.setter
     def common_name(self, common_name):
         """
-        Sets the common_name of this CertificateSubjectName.
-        The fully qualified domain name used for DNS lookups of the server.
+        Sets the common_name of this CertificateIssuerName.
+        The Certificate Authority (CA) name.
 
 
-        :param common_name: The common_name of this CertificateSubjectName.
+        :param common_name: The common_name of this CertificateIssuerName.
         :type: str
         """
         self._common_name = common_name
@@ -225,11 +225,11 @@ class CertificateSubjectName(object):
     @property
     def email_address(self):
         """
-        Gets the email_address of this CertificateSubjectName.
+        Gets the email_address of this CertificateIssuerName.
         The email address of the server's administrator.
 
 
-        :return: The email_address of this CertificateSubjectName.
+        :return: The email_address of this CertificateIssuerName.
         :rtype: str
         """
         return self._email_address
@@ -237,11 +237,11 @@ class CertificateSubjectName(object):
     @email_address.setter
     def email_address(self, email_address):
         """
-        Sets the email_address of this CertificateSubjectName.
+        Sets the email_address of this CertificateIssuerName.
         The email address of the server's administrator.
 
 
-        :param email_address: The email_address of this CertificateSubjectName.
+        :param email_address: The email_address of this CertificateIssuerName.
         :type: str
         """
         self._email_address = email_address

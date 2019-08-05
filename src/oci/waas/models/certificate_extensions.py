@@ -50,6 +50,8 @@ class CertificateExtensions(object):
     def name(self):
         """
         Gets the name of this CertificateExtensions.
+        The certificate extension name.
+
 
         :return: The name of this CertificateExtensions.
         :rtype: str
@@ -60,6 +62,8 @@ class CertificateExtensions(object):
     def name(self, name):
         """
         Sets the name of this CertificateExtensions.
+        The certificate extension name.
+
 
         :param name: The name of this CertificateExtensions.
         :type: str
@@ -70,6 +74,8 @@ class CertificateExtensions(object):
     def is_critical(self):
         """
         Gets the is_critical of this CertificateExtensions.
+        The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
+
 
         :return: The is_critical of this CertificateExtensions.
         :rtype: bool
@@ -80,6 +86,8 @@ class CertificateExtensions(object):
     def is_critical(self, is_critical):
         """
         Sets the is_critical of this CertificateExtensions.
+        The critical flag of the extension. Critical extensions must be processed, non-critical extensions can be ignored.
+
 
         :param is_critical: The is_critical of this CertificateExtensions.
         :type: bool
@@ -90,6 +98,8 @@ class CertificateExtensions(object):
     def value(self):
         """
         Gets the value of this CertificateExtensions.
+        The certificate extension value.
+
 
         :return: The value of this CertificateExtensions.
         :rtype: str
@@ -100,6 +110,8 @@ class CertificateExtensions(object):
     def value(self, value):
         """
         Sets the value of this CertificateExtensions.
+        The certificate extension value.
+
 
         :param value: The value of this CertificateExtensions.
         :type: str

@@ -10,6 +10,7 @@ from .block_challenge_settings import BlockChallengeSettings
 from .captcha import Captcha
 from .certificate import Certificate
 from .certificate_extensions import CertificateExtensions
+from .certificate_issuer_name import CertificateIssuerName
 from .certificate_public_key_info import CertificatePublicKeyInfo
 from .certificate_subject_name import CertificateSubjectName
 from .certificate_summary import CertificateSummary
@@ -59,6 +60,7 @@ waas_type_mapping = {
     "Captcha": Captcha,
     "Certificate": Certificate,
     "CertificateExtensions": CertificateExtensions,
+    "CertificateIssuerName": CertificateIssuerName,
     "CertificatePublicKeyInfo": CertificatePublicKeyInfo,
     "CertificateSubjectName": CertificateSubjectName,
     "CertificateSummary": CertificateSummary,
