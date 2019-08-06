@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+19.8.6 - 2019-08-06
+====================
+* Support Mumbai
+
+====================
 19.7.24 - 2019-07-24
 ====================
 
