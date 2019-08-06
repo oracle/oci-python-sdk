@@ -74,6 +74,7 @@ class RouteRule(object):
         A destination IP address range in CIDR notation. Matching packets will
         be routed to the indicated network entity (the target).
 
+        Cannot be an IPv6 CIDR.
 
         Example: `0.0.0.0/0`
 
@@ -93,6 +94,7 @@ class RouteRule(object):
         A destination IP address range in CIDR notation. Matching packets will
         be routed to the indicated network entity (the target).
 
+        Cannot be an IPv6 CIDR.
 
         Example: `0.0.0.0/0`
 
@@ -111,7 +113,9 @@ class RouteRule(object):
 
         Allowed values:
 
-          * IP address range in CIDR notation. For example: `192.168.1.0/24`
+          * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24`
+          or `2001:0db8:0123:45::/56`. If you set this to an IPv6 CIDR, the route rule's target
+          can only be a DRG or internet gateway.
 
           * The `cidrBlock` value for a :class:`Service`, if you're
             setting up a route rule for traffic destined for a particular `Service` through
@@ -132,7 +136,9 @@ class RouteRule(object):
 
         Allowed values:
 
-          * IP address range in CIDR notation. For example: `192.168.1.0/24`
+          * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: `192.168.1.0/24`
+          or `2001:0db8:0123:45::/56`. If you set this to an IPv6 CIDR, the route rule's target
+          can only be a DRG or internet gateway.
 
           * The `cidrBlock` value for a :class:`Service`, if you're
             setting up a route rule for traffic destined for a particular `Service` through

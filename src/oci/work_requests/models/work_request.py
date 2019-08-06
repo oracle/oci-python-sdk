@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequest(object):
     """
-    The status of a work request.
+    An asynchronous work request.
     """
 
     #: A constant which can be used with the status property of a WorkRequest.
@@ -172,7 +172,9 @@ class WorkRequest(object):
     def id(self):
         """
         **[Required]** Gets the id of this WorkRequest.
-        OCID identifying this work request.
+        The `OCID`__ of the work request.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this WorkRequest.
@@ -184,7 +186,9 @@ class WorkRequest(object):
     def id(self, id):
         """
         Sets the id of this WorkRequest.
-        OCID identifying this work request.
+        The `OCID`__ of the work request.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this WorkRequest.
@@ -196,7 +200,10 @@ class WorkRequest(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this WorkRequest.
-        The OCID of the compartment containing this work request.
+        The `OCID`__ of the compartment
+        that contains the work request.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this WorkRequest.
@@ -208,7 +215,10 @@ class WorkRequest(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this WorkRequest.
-        The OCID of the compartment containing this work request.
+        The `OCID`__ of the compartment
+        that contains the work request.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this WorkRequest.
@@ -220,7 +230,7 @@ class WorkRequest(object):
     def resources(self):
         """
         **[Required]** Gets the resources of this WorkRequest.
-        The resources affected by this work request.
+        The resources that are affected by this work request.
 
 
         :return: The resources of this WorkRequest.
@@ -232,7 +242,7 @@ class WorkRequest(object):
     def resources(self, resources):
         """
         Sets the resources of this WorkRequest.
-        The resources affected by this work request.
+        The resources that are affected by this work request.
 
 
         :param resources: The resources of this WorkRequest.
@@ -244,7 +254,7 @@ class WorkRequest(object):
     def percent_complete(self):
         """
         **[Required]** Gets the percent_complete of this WorkRequest.
-        The amount of work done relative to the total amount of work.
+        The percentage complete of the operation tracked by this work request.
 
 
         :return: The percent_complete of this WorkRequest.
@@ -256,7 +266,7 @@ class WorkRequest(object):
     def percent_complete(self, percent_complete):
         """
         Sets the percent_complete of this WorkRequest.
-        The amount of work done relative to the total amount of work.
+        The percentage complete of the operation tracked by this work request.
 
 
         :param percent_complete: The percent_complete of this WorkRequest.
@@ -268,7 +278,7 @@ class WorkRequest(object):
     def time_accepted(self):
         """
         **[Required]** Gets the time_accepted of this WorkRequest.
-        When the work request was created.
+        The date and time the work request was created, in the format defined by RFC3339.
 
 
         :return: The time_accepted of this WorkRequest.
@@ -280,7 +290,7 @@ class WorkRequest(object):
     def time_accepted(self, time_accepted):
         """
         Sets the time_accepted of this WorkRequest.
-        When the work request was created.
+        The date and time the work request was created, in the format defined by RFC3339.
 
 
         :param time_accepted: The time_accepted of this WorkRequest.
@@ -292,7 +302,8 @@ class WorkRequest(object):
     def time_started(self):
         """
         Gets the time_started of this WorkRequest.
-        When the work request transitioned from ACCEPTED to IN_PROGRESS.
+        The date and time the work request transitioned from `ACCEPTED` to `IN_PROGRESS`,
+        in the format defined by RFC3339.
 
 
         :return: The time_started of this WorkRequest.
@@ -304,7 +315,8 @@ class WorkRequest(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this WorkRequest.
-        When the work request transitioned from ACCEPTED to IN_PROGRESS.
+        The date and time the work request transitioned from `ACCEPTED` to `IN_PROGRESS`,
+        in the format defined by RFC3339.
 
 
         :param time_started: The time_started of this WorkRequest.
@@ -316,7 +328,8 @@ class WorkRequest(object):
     def time_finished(self):
         """
         Gets the time_finished of this WorkRequest.
-        When the work request reached a terminal state (FAILED or SUCCEEDED).
+        The date and time the work request reached a terminal state, either `FAILED` or `SUCCEEDED`.
+        Format is defined by RFC3339.
 
 
         :return: The time_finished of this WorkRequest.
@@ -328,7 +341,8 @@ class WorkRequest(object):
     def time_finished(self, time_finished):
         """
         Sets the time_finished of this WorkRequest.
-        When the work request reached a terminal state (FAILED or SUCCEEDED).
+        The date and time the work request reached a terminal state, either `FAILED` or `SUCCEEDED`.
+        Format is defined by RFC3339.
 
 
         :param time_finished: The time_finished of this WorkRequest.

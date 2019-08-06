@@ -248,7 +248,13 @@ class ShowOCIService(object):
         {'region': 'ap-seoul-1', 'service': C_MONITORING},
         {'region': 'ap-seoul-1', 'service': C_COMPUTE_AUTOSCALING},
         {'region': 'ap-seoul-1', 'service': C_STREAMS},
-        {'region': 'ap-seoul-1', 'service': C_NOTIFICATIONS}
+        {'region': 'ap-seoul-1', 'service': C_NOTIFICATIONS},
+        {'region': 'ap-mumbai-1', 'service': C_EMAIL},
+        {'region': 'ap-mumbai-1', 'service': C_EDGE},
+        {'region': 'ap-mumbai-1', 'service': C_MONITORING},
+        {'region': 'ap-mumbai-1', 'service': C_COMPUTE_AUTOSCALING},
+        {'region': 'ap-mumbai-1', 'service': C_STREAMS},
+        {'region': 'ap-mumbai-1', 'service': C_NOTIFICATIONS}
     ]
 
     ##########################################################################

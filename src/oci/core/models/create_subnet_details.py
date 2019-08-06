@@ -49,6 +49,10 @@ class CreateSubnetDetails(object):
             The value to assign to the freeform_tags property of this CreateSubnetDetails.
         :type freeform_tags: dict(str, str)
 
+        :param ipv6_cidr_block:
+            The value to assign to the ipv6_cidr_block property of this CreateSubnetDetails.
+        :type ipv6_cidr_block: str
+
         :param prohibit_public_ip_on_vnic:
             The value to assign to the prohibit_public_ip_on_vnic property of this CreateSubnetDetails.
         :type prohibit_public_ip_on_vnic: bool
@@ -75,6 +79,7 @@ class CreateSubnetDetails(object):
             'display_name': 'str',
             'dns_label': 'str',
             'freeform_tags': 'dict(str, str)',
+            'ipv6_cidr_block': 'str',
             'prohibit_public_ip_on_vnic': 'bool',
             'route_table_id': 'str',
             'security_list_ids': 'list[str]',
@@ -90,6 +95,7 @@ class CreateSubnetDetails(object):
             'display_name': 'displayName',
             'dns_label': 'dnsLabel',
             'freeform_tags': 'freeformTags',
+            'ipv6_cidr_block': 'ipv6CidrBlock',
             'prohibit_public_ip_on_vnic': 'prohibitPublicIpOnVnic',
             'route_table_id': 'routeTableId',
             'security_list_ids': 'securityListIds',
@@ -104,6 +110,7 @@ class CreateSubnetDetails(object):
         self._display_name = None
         self._dns_label = None
         self._freeform_tags = None
+        self._ipv6_cidr_block = None
         self._prohibit_public_ip_on_vnic = None
         self._route_table_id = None
         self._security_list_ids = None
@@ -382,6 +389,46 @@ class CreateSubnetDetails(object):
         self._freeform_tags = freeform_tags
 
     @property
+    def ipv6_cidr_block(self):
+        """
+        Gets the ipv6_cidr_block of this CreateSubnetDetails.
+        Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6.
+        You can't change this subnet characteristic later. All subnets are /64 in size. The subnet
+        portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
+
+        For important details about IPv6 addressing in a VCN, see `IPv6 Addresses`__.
+
+        Example: `2001:0db8:0123:1111::/64`
+
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+
+
+        :return: The ipv6_cidr_block of this CreateSubnetDetails.
+        :rtype: str
+        """
+        return self._ipv6_cidr_block
+
+    @ipv6_cidr_block.setter
+    def ipv6_cidr_block(self, ipv6_cidr_block):
+        """
+        Sets the ipv6_cidr_block of this CreateSubnetDetails.
+        Use this to enable IPv6 addressing for this subnet. The VCN must be enabled for IPv6.
+        You can't change this subnet characteristic later. All subnets are /64 in size. The subnet
+        portion of the IPv6 address is the fourth hextet from the left (1111 in the following example).
+
+        For important details about IPv6 addressing in a VCN, see `IPv6 Addresses`__.
+
+        Example: `2001:0db8:0123:1111::/64`
+
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
+
+
+        :param ipv6_cidr_block: The ipv6_cidr_block of this CreateSubnetDetails.
+        :type: str
+        """
+        self._ipv6_cidr_block = ipv6_cidr_block
+
+    @property
     def prohibit_public_ip_on_vnic(self):
         """
         Gets the prohibit_public_ip_on_vnic of this CreateSubnetDetails.
@@ -394,6 +441,8 @@ class CreateSubnetDetails(object):
         subnet cannot have public IP addresses (that is, it's a private
         subnet).
 
+        For IPv6, if `prohibitPublicIpOnVnic` is set to `true`, internet access is not allowed for any
+        IPv6s assigned to VNICs in the subnet.
 
         Example: `true`
 
@@ -416,6 +465,8 @@ class CreateSubnetDetails(object):
         subnet cannot have public IP addresses (that is, it's a private
         subnet).
 
+        For IPv6, if `prohibitPublicIpOnVnic` is set to `true`, internet access is not allowed for any
+        IPv6s assigned to VNICs in the subnet.
 
         Example: `true`
 
