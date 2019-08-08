@@ -315,6 +315,88 @@ def test_change_cross_connect_group_compartment(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_change_dhcp_options_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangeDhcpOptionsCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ChangeDhcpOptionsCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangeDhcpOptionsCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.change_dhcp_options_compartment(
+                dhcp_id=request.pop(util.camelize('dhcp_id')),
+                change_dhcp_options_compartment_details=request.pop(util.camelize('change_dhcp_options_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangeDhcpOptionsCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_dhcp_options_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_change_internet_gateway_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangeInternetGatewayCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ChangeInternetGatewayCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangeInternetGatewayCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.change_internet_gateway_compartment(
+                ig_id=request.pop(util.camelize('ig_id')),
+                change_internet_gateway_compartment_details=request.pop(util.camelize('change_internet_gateway_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangeInternetGatewayCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_internet_gateway_compartment',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
 def test_change_ip_sec_connection_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ChangeIPSecConnectionCompartment'):
@@ -356,6 +438,47 @@ def test_change_ip_sec_connection_compartment(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_change_local_peering_gateway_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangeLocalPeeringGatewayCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ChangeLocalPeeringGatewayCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangeLocalPeeringGatewayCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.change_local_peering_gateway_compartment(
+                local_peering_gateway_id=request.pop(util.camelize('local_peering_gateway_id')),
+                change_local_peering_gateway_compartment_details=request.pop(util.camelize('change_local_peering_gateway_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangeLocalPeeringGatewayCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_local_peering_gateway_compartment',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
 def test_change_nat_gateway_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ChangeNatGatewayCompartment'):
@@ -392,6 +515,88 @@ def test_change_nat_gateway_compartment(testing_service_client):
             result,
             service_error,
             'change_nat_gateway_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_change_network_security_group_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangeNetworkSecurityGroupCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ChangeNetworkSecurityGroupCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangeNetworkSecurityGroupCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.change_network_security_group_compartment(
+                network_security_group_id=request.pop(util.camelize('network_security_group_id')),
+                change_network_security_group_compartment_details=request.pop(util.camelize('change_network_security_group_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangeNetworkSecurityGroupCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_network_security_group_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_change_public_ip_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangePublicIpCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ChangePublicIpCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangePublicIpCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.change_public_ip_compartment(
+                public_ip_id=request.pop(util.camelize('public_ip_id')),
+                change_public_ip_compartment_details=request.pop(util.camelize('change_public_ip_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangePublicIpCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_public_ip_compartment',
             False,
             False
         )

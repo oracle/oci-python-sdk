@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateInstanceConfigurationDetails(CreateInstanceConfigurationBase):
     """
-    Create an instance configuration from API input.
+    Details for creating an instance configuration by providing a list of configuration settings.
     """
 
     def __init__(self, **kwargs):

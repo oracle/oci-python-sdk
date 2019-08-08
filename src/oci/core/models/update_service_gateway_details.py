@@ -195,9 +195,10 @@ class UpdateServiceGatewayDetails(object):
     def route_table_id(self):
         """
         Gets the route_table_id of this UpdateServiceGatewayDetails.
-        The OCID of the route table the service gateway will use. For information about why you
-        would associate a route table with a service gateway, see
-        `Transit Routing: Private Access to Oracle Services Network`__.
+        The OCID of the route table the service gateway will use.
+
+        For information about why you would associate a route table with a service gateway, see
+        `Transit Routing: Private Access to Oracle Services`__.
 
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitroutingoracleservices.htm
 
@@ -211,9 +212,10 @@ class UpdateServiceGatewayDetails(object):
     def route_table_id(self, route_table_id):
         """
         Sets the route_table_id of this UpdateServiceGatewayDetails.
-        The OCID of the route table the service gateway will use. For information about why you
-        would associate a route table with a service gateway, see
-        `Transit Routing: Private Access to Oracle Services Network`__.
+        The OCID of the route table the service gateway will use.
+
+        For information about why you would associate a route table with a service gateway, see
+        `Transit Routing: Private Access to Oracle Services`__.
 
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitroutingoracleservices.htm
 

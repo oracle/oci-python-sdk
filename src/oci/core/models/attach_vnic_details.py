@@ -82,6 +82,7 @@ class AttachVnicDetails(object):
         """
         Gets the display_name of this AttachVnicDetails.
         A user-friendly name for the attachment. Does not have to be unique, and it cannot be changed.
+        Avoid entering confidential information.
 
 
         :return: The display_name of this AttachVnicDetails.
@@ -94,6 +95,7 @@ class AttachVnicDetails(object):
         """
         Sets the display_name of this AttachVnicDetails.
         A user-friendly name for the attachment. Does not have to be unique, and it cannot be changed.
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this AttachVnicDetails.

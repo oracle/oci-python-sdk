@@ -196,7 +196,7 @@ class CreateLocalPeeringGatewayDetails(object):
         with the LPG.
 
         For information about why you would associate a route table with an LPG, see
-        `Advanced Scenario: Transit Routing`__.
+        `Transit Routing: Access to Multiple VCNs in Same Region`__.
 
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitrouting.htm
 
@@ -217,7 +217,7 @@ class CreateLocalPeeringGatewayDetails(object):
         with the LPG.
 
         For information about why you would associate a route table with an LPG, see
-        `Advanced Scenario: Transit Routing`__.
+        `Transit Routing: Access to Multiple VCNs in Same Region`__.
 
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitrouting.htm
 

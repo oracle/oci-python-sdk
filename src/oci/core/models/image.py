@@ -239,6 +239,7 @@ class Image(object):
         **[Required]** Gets the create_image_allowed of this Image.
         Whether instances launched with this image can be used to create new images.
         For example, you cannot create an image of an Oracle Database instance.
+
         Example: `true`
 
 
@@ -253,6 +254,7 @@ class Image(object):
         Sets the create_image_allowed of this Image.
         Whether instances launched with this image can be used to create new images.
         For example, you cannot create an image of an Oracle Database instance.
+
         Example: `true`
 
 
@@ -301,6 +303,7 @@ class Image(object):
         Gets the display_name of this Image.
         A user-friendly name for the image. It does not have to be unique, and it's changeable.
         Avoid entering confidential information.
+
         You cannot use an Oracle-provided image name as a custom image name.
 
         Example: `My custom Oracle Linux image`
@@ -317,6 +320,7 @@ class Image(object):
         Sets the display_name of this Image.
         A user-friendly name for the image. It does not have to be unique, and it's changeable.
         Avoid entering confidential information.
+
         You cannot use an Oracle-provided image name as a custom image name.
 
         Example: `My custom Oracle Linux image`

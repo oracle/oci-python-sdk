@@ -95,7 +95,7 @@ class CreateImageDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateImageDetails.
-        The OCID of the compartment containing the instance you want to use as the basis for the image.
+        The OCID of the compartment you want the image to be created in.
 
 
         :return: The compartment_id of this CreateImageDetails.
@@ -107,7 +107,7 @@ class CreateImageDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateImageDetails.
-        The OCID of the compartment containing the instance you want to use as the basis for the image.
+        The OCID of the compartment you want the image to be created in.
 
 
         :param compartment_id: The compartment_id of this CreateImageDetails.
