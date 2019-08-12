@@ -5,8 +5,13 @@ from __future__ import absolute_import
 
 from .access_rule import AccessRule
 from .access_rule_criteria import AccessRuleCriteria
+from .address_list import AddressList
+from .address_list_summary import AddressListSummary
 from .address_rate_limiting import AddressRateLimiting
 from .block_challenge_settings import BlockChallengeSettings
+from .caching_rule import CachingRule
+from .caching_rule_criteria import CachingRuleCriteria
+from .caching_rule_summary import CachingRuleSummary
 from .captcha import Captcha
 from .certificate import Certificate
 from .certificate_extensions import CertificateExtensions
@@ -14,10 +19,17 @@ from .certificate_issuer_name import CertificateIssuerName
 from .certificate_public_key_info import CertificatePublicKeyInfo
 from .certificate_subject_name import CertificateSubjectName
 from .certificate_summary import CertificateSummary
+from .change_address_list_compartment_details import ChangeAddressListCompartmentDetails
 from .change_certificate_compartment_details import ChangeCertificateCompartmentDetails
+from .change_custom_protection_rule_compartment_details import ChangeCustomProtectionRuleCompartmentDetails
 from .change_waas_policy_compartment_details import ChangeWaasPolicyCompartmentDetails
+from .create_address_list_details import CreateAddressListDetails
 from .create_certificate_details import CreateCertificateDetails
+from .create_custom_protection_rule_details import CreateCustomProtectionRuleDetails
 from .create_waas_policy_details import CreateWaasPolicyDetails
+from .custom_protection_rule import CustomProtectionRule
+from .custom_protection_rule_setting import CustomProtectionRuleSetting
+from .custom_protection_rule_summary import CustomProtectionRuleSummary
 from .device_fingerprint_challenge import DeviceFingerprintChallenge
 from .edge_subnet import EdgeSubnet
 from .good_bot import GoodBot
@@ -25,17 +37,23 @@ from .header import Header
 from .human_interaction_challenge import HumanInteractionChallenge
 from .js_challenge import JsChallenge
 from .origin import Origin
+from .origin_group import OriginGroup
+from .origin_group_origins import OriginGroupOrigins
 from .policy_config import PolicyConfig
 from .protection_rule import ProtectionRule
 from .protection_rule_action import ProtectionRuleAction
 from .protection_rule_exclusion import ProtectionRuleExclusion
 from .protection_settings import ProtectionSettings
+from .purge_cache import PurgeCache
 from .recommendation import Recommendation
 from .threat_feed import ThreatFeed
 from .threat_feed_action import ThreatFeedAction
+from .update_address_list_details import UpdateAddressListDetails
 from .update_certificate_details import UpdateCertificateDetails
+from .update_custom_protection_rule_details import UpdateCustomProtectionRuleDetails
 from .update_waas_policy_details import UpdateWaasPolicyDetails
 from .waas_policy import WaasPolicy
+from .waas_policy_custom_protection_rule_summary import WaasPolicyCustomProtectionRuleSummary
 from .waas_policy_summary import WaasPolicySummary
 from .waf_blocked_request import WafBlockedRequest
 from .waf_config import WafConfig
@@ -55,8 +73,13 @@ from .work_request_summary import WorkRequestSummary
 waas_type_mapping = {
     "AccessRule": AccessRule,
     "AccessRuleCriteria": AccessRuleCriteria,
+    "AddressList": AddressList,
+    "AddressListSummary": AddressListSummary,
     "AddressRateLimiting": AddressRateLimiting,
     "BlockChallengeSettings": BlockChallengeSettings,
+    "CachingRule": CachingRule,
+    "CachingRuleCriteria": CachingRuleCriteria,
+    "CachingRuleSummary": CachingRuleSummary,
     "Captcha": Captcha,
     "Certificate": Certificate,
     "CertificateExtensions": CertificateExtensions,
@@ -64,10 +87,17 @@ waas_type_mapping = {
     "CertificatePublicKeyInfo": CertificatePublicKeyInfo,
     "CertificateSubjectName": CertificateSubjectName,
     "CertificateSummary": CertificateSummary,
+    "ChangeAddressListCompartmentDetails": ChangeAddressListCompartmentDetails,
     "ChangeCertificateCompartmentDetails": ChangeCertificateCompartmentDetails,
+    "ChangeCustomProtectionRuleCompartmentDetails": ChangeCustomProtectionRuleCompartmentDetails,
     "ChangeWaasPolicyCompartmentDetails": ChangeWaasPolicyCompartmentDetails,
+    "CreateAddressListDetails": CreateAddressListDetails,
     "CreateCertificateDetails": CreateCertificateDetails,
+    "CreateCustomProtectionRuleDetails": CreateCustomProtectionRuleDetails,
     "CreateWaasPolicyDetails": CreateWaasPolicyDetails,
+    "CustomProtectionRule": CustomProtectionRule,
+    "CustomProtectionRuleSetting": CustomProtectionRuleSetting,
+    "CustomProtectionRuleSummary": CustomProtectionRuleSummary,
     "DeviceFingerprintChallenge": DeviceFingerprintChallenge,
     "EdgeSubnet": EdgeSubnet,
     "GoodBot": GoodBot,
@@ -75,17 +105,23 @@ waas_type_mapping = {
     "HumanInteractionChallenge": HumanInteractionChallenge,
     "JsChallenge": JsChallenge,
     "Origin": Origin,
+    "OriginGroup": OriginGroup,
+    "OriginGroupOrigins": OriginGroupOrigins,
     "PolicyConfig": PolicyConfig,
     "ProtectionRule": ProtectionRule,
     "ProtectionRuleAction": ProtectionRuleAction,
     "ProtectionRuleExclusion": ProtectionRuleExclusion,
     "ProtectionSettings": ProtectionSettings,
+    "PurgeCache": PurgeCache,
     "Recommendation": Recommendation,
     "ThreatFeed": ThreatFeed,
     "ThreatFeedAction": ThreatFeedAction,
+    "UpdateAddressListDetails": UpdateAddressListDetails,
     "UpdateCertificateDetails": UpdateCertificateDetails,
+    "UpdateCustomProtectionRuleDetails": UpdateCustomProtectionRuleDetails,
     "UpdateWaasPolicyDetails": UpdateWaasPolicyDetails,
     "WaasPolicy": WaasPolicy,
+    "WaasPolicyCustomProtectionRuleSummary": WaasPolicyCustomProtectionRuleSummary,
     "WaasPolicySummary": WaasPolicySummary,
     "WafBlockedRequest": WafBlockedRequest,
     "WafConfig": WafConfig,

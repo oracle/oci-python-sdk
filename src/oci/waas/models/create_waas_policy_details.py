@@ -39,6 +39,10 @@ class CreateWaasPolicyDetails(object):
             The value to assign to the origins property of this CreateWaasPolicyDetails.
         :type origins: dict(str, Origin)
 
+        :param origin_groups:
+            The value to assign to the origin_groups property of this CreateWaasPolicyDetails.
+        :type origin_groups: dict(str, OriginGroup)
+
         :param policy_config:
             The value to assign to the policy_config property of this CreateWaasPolicyDetails.
         :type policy_config: PolicyConfig
@@ -62,6 +66,7 @@ class CreateWaasPolicyDetails(object):
             'domain': 'str',
             'additional_domains': 'list[str]',
             'origins': 'dict(str, Origin)',
+            'origin_groups': 'dict(str, OriginGroup)',
             'policy_config': 'PolicyConfig',
             'waf_config': 'WafConfigDetails',
             'freeform_tags': 'dict(str, str)',
@@ -74,6 +79,7 @@ class CreateWaasPolicyDetails(object):
             'domain': 'domain',
             'additional_domains': 'additionalDomains',
             'origins': 'origins',
+            'origin_groups': 'originGroups',
             'policy_config': 'policyConfig',
             'waf_config': 'wafConfig',
             'freeform_tags': 'freeformTags',
@@ -85,6 +91,7 @@ class CreateWaasPolicyDetails(object):
         self._domain = None
         self._additional_domains = None
         self._origins = None
+        self._origin_groups = None
         self._policy_config = None
         self._waf_config = None
         self._freeform_tags = None
@@ -213,6 +220,30 @@ class CreateWaasPolicyDetails(object):
         :type: dict(str, Origin)
         """
         self._origins = origins
+
+    @property
+    def origin_groups(self):
+        """
+        Gets the origin_groups of this CreateWaasPolicyDetails.
+        The map of origin groups and their keys used to associate origins to the wafConfig.
+
+
+        :return: The origin_groups of this CreateWaasPolicyDetails.
+        :rtype: dict(str, OriginGroup)
+        """
+        return self._origin_groups
+
+    @origin_groups.setter
+    def origin_groups(self, origin_groups):
+        """
+        Sets the origin_groups of this CreateWaasPolicyDetails.
+        The map of origin groups and their keys used to associate origins to the wafConfig.
+
+
+        :param origin_groups: The origin_groups of this CreateWaasPolicyDetails.
+        :type: dict(str, OriginGroup)
+        """
+        self._origin_groups = origin_groups
 
     @property
     def policy_config(self):

@@ -24,6 +24,14 @@ class AccessRule(object):
     #: This constant has a value of "BLOCK"
     ACTION_BLOCK = "BLOCK"
 
+    #: A constant which can be used with the action property of a AccessRule.
+    #: This constant has a value of "BYPASS"
+    ACTION_BYPASS = "BYPASS"
+
+    #: A constant which can be used with the action property of a AccessRule.
+    #: This constant has a value of "REDIRECT"
+    ACTION_REDIRECT = "REDIRECT"
+
     #: A constant which can be used with the block_action property of a AccessRule.
     #: This constant has a value of "SET_RESPONSE_CODE"
     BLOCK_ACTION_SET_RESPONSE_CODE = "SET_RESPONSE_CODE"
@@ -31,6 +39,30 @@ class AccessRule(object):
     #: A constant which can be used with the block_action property of a AccessRule.
     #: This constant has a value of "SHOW_ERROR_PAGE"
     BLOCK_ACTION_SHOW_ERROR_PAGE = "SHOW_ERROR_PAGE"
+
+    #: A constant which can be used with the bypass_challenges property of a AccessRule.
+    #: This constant has a value of "JS_CHALLENGE"
+    BYPASS_CHALLENGES_JS_CHALLENGE = "JS_CHALLENGE"
+
+    #: A constant which can be used with the bypass_challenges property of a AccessRule.
+    #: This constant has a value of "DEVICE_FINGERPRINT_CHALLENGE"
+    BYPASS_CHALLENGES_DEVICE_FINGERPRINT_CHALLENGE = "DEVICE_FINGERPRINT_CHALLENGE"
+
+    #: A constant which can be used with the bypass_challenges property of a AccessRule.
+    #: This constant has a value of "HUMAN_INTERACTION_CHALLENGE"
+    BYPASS_CHALLENGES_HUMAN_INTERACTION_CHALLENGE = "HUMAN_INTERACTION_CHALLENGE"
+
+    #: A constant which can be used with the bypass_challenges property of a AccessRule.
+    #: This constant has a value of "CAPTCHA"
+    BYPASS_CHALLENGES_CAPTCHA = "CAPTCHA"
+
+    #: A constant which can be used with the redirect_response_code property of a AccessRule.
+    #: This constant has a value of "MOVED_PERMANENTLY"
+    REDIRECT_RESPONSE_CODE_MOVED_PERMANENTLY = "MOVED_PERMANENTLY"
+
+    #: A constant which can be used with the redirect_response_code property of a AccessRule.
+    #: This constant has a value of "FOUND"
+    REDIRECT_RESPONSE_CODE_FOUND = "FOUND"
 
     def __init__(self, **kwargs):
         """
@@ -47,7 +79,7 @@ class AccessRule(object):
 
         :param action:
             The value to assign to the action property of this AccessRule.
-            Allowed values for this property are: "ALLOW", "DETECT", "BLOCK", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ALLOW", "DETECT", "BLOCK", "BYPASS", "REDIRECT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type action: str
 
@@ -73,6 +105,22 @@ class AccessRule(object):
             The value to assign to the block_error_page_description property of this AccessRule.
         :type block_error_page_description: str
 
+        :param bypass_challenges:
+            The value to assign to the bypass_challenges property of this AccessRule.
+            Allowed values for items in this list are: "JS_CHALLENGE", "DEVICE_FINGERPRINT_CHALLENGE", "HUMAN_INTERACTION_CHALLENGE", "CAPTCHA", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type bypass_challenges: list[str]
+
+        :param redirect_url:
+            The value to assign to the redirect_url property of this AccessRule.
+        :type redirect_url: str
+
+        :param redirect_response_code:
+            The value to assign to the redirect_response_code property of this AccessRule.
+            Allowed values for this property are: "MOVED_PERMANENTLY", "FOUND", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type redirect_response_code: str
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -82,7 +130,10 @@ class AccessRule(object):
             'block_response_code': 'int',
             'block_error_page_message': 'str',
             'block_error_page_code': 'str',
-            'block_error_page_description': 'str'
+            'block_error_page_description': 'str',
+            'bypass_challenges': 'list[str]',
+            'redirect_url': 'str',
+            'redirect_response_code': 'str'
         }
 
         self.attribute_map = {
@@ -93,7 +144,10 @@ class AccessRule(object):
             'block_response_code': 'blockResponseCode',
             'block_error_page_message': 'blockErrorPageMessage',
             'block_error_page_code': 'blockErrorPageCode',
-            'block_error_page_description': 'blockErrorPageDescription'
+            'block_error_page_description': 'blockErrorPageDescription',
+            'bypass_challenges': 'bypassChallenges',
+            'redirect_url': 'redirectUrl',
+            'redirect_response_code': 'redirectResponseCode'
         }
 
         self._name = None
@@ -104,6 +158,9 @@ class AccessRule(object):
         self._block_error_page_message = None
         self._block_error_page_code = None
         self._block_error_page_description = None
+        self._bypass_challenges = None
+        self._redirect_url = None
+        self._redirect_response_code = None
 
     @property
     def name(self):
@@ -165,7 +222,13 @@ class AccessRule(object):
 
         - **BLOCK:** Blocks the request by returning specified response code or showing error page.
 
-        Allowed values for this property are: "ALLOW", "DETECT", "BLOCK", 'UNKNOWN_ENUM_VALUE'.
+        - **BYPASS:** Bypasses some or all challenges.
+
+        - **REDIRECT:** Redirects the request to the specified URL.
+
+        Regardless of action, no further rules are processed once the rule is matched.
+
+        Allowed values for this property are: "ALLOW", "DETECT", "BLOCK", "BYPASS", "REDIRECT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -186,11 +249,17 @@ class AccessRule(object):
 
         - **BLOCK:** Blocks the request by returning specified response code or showing error page.
 
+        - **BYPASS:** Bypasses some or all challenges.
+
+        - **REDIRECT:** Redirects the request to the specified URL.
+
+        Regardless of action, no further rules are processed once the rule is matched.
+
 
         :param action: The action of this AccessRule.
         :type: str
         """
-        allowed_values = ["ALLOW", "DETECT", "BLOCK"]
+        allowed_values = ["ALLOW", "DETECT", "BLOCK", "BYPASS", "REDIRECT"]
         if not value_allowed_none_or_none_sentinel(action, allowed_values):
             action = 'UNKNOWN_ENUM_VALUE'
         self._action = action
@@ -320,6 +389,114 @@ class AccessRule(object):
         :type: str
         """
         self._block_error_page_description = block_error_page_description
+
+    @property
+    def bypass_challenges(self):
+        """
+        Gets the bypass_challenges of this AccessRule.
+        The list of challenges to bypass when `action` is set to `BYPASS`. If unspecified or empty, all challenges are bypassed.
+
+        - **JS_CHALLENGE:** Bypasses JavaScript Challenge.
+
+        - **DEVICE_FINGERPRINT_CHALLENGE:** Bypasses Device Fingerprint Challenge.
+
+        - **HUMAN_INTERACTION_CHALLENGE:** Bypasses Human Interaction Challenge.
+
+        - **CAPTCHA:** Bypasses CAPTCHA Challenge.
+
+        Allowed values for items in this list are: "JS_CHALLENGE", "DEVICE_FINGERPRINT_CHALLENGE", "HUMAN_INTERACTION_CHALLENGE", "CAPTCHA", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The bypass_challenges of this AccessRule.
+        :rtype: list[str]
+        """
+        return self._bypass_challenges
+
+    @bypass_challenges.setter
+    def bypass_challenges(self, bypass_challenges):
+        """
+        Sets the bypass_challenges of this AccessRule.
+        The list of challenges to bypass when `action` is set to `BYPASS`. If unspecified or empty, all challenges are bypassed.
+
+        - **JS_CHALLENGE:** Bypasses JavaScript Challenge.
+
+        - **DEVICE_FINGERPRINT_CHALLENGE:** Bypasses Device Fingerprint Challenge.
+
+        - **HUMAN_INTERACTION_CHALLENGE:** Bypasses Human Interaction Challenge.
+
+        - **CAPTCHA:** Bypasses CAPTCHA Challenge.
+
+
+        :param bypass_challenges: The bypass_challenges of this AccessRule.
+        :type: list[str]
+        """
+        allowed_values = ["JS_CHALLENGE", "DEVICE_FINGERPRINT_CHALLENGE", "HUMAN_INTERACTION_CHALLENGE", "CAPTCHA"]
+        if bypass_challenges:
+            bypass_challenges[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in bypass_challenges]
+        self._bypass_challenges = bypass_challenges
+
+    @property
+    def redirect_url(self):
+        """
+        Gets the redirect_url of this AccessRule.
+        The target to which the request should be redirected, represented as a URI reference.
+
+
+        :return: The redirect_url of this AccessRule.
+        :rtype: str
+        """
+        return self._redirect_url
+
+    @redirect_url.setter
+    def redirect_url(self, redirect_url):
+        """
+        Sets the redirect_url of this AccessRule.
+        The target to which the request should be redirected, represented as a URI reference.
+
+
+        :param redirect_url: The redirect_url of this AccessRule.
+        :type: str
+        """
+        self._redirect_url = redirect_url
+
+    @property
+    def redirect_response_code(self):
+        """
+        Gets the redirect_response_code of this AccessRule.
+        The response status code to return when `action` is set to `REDIRECT`.
+
+        - **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
+
+        - **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
+
+        Allowed values for this property are: "MOVED_PERMANENTLY", "FOUND", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The redirect_response_code of this AccessRule.
+        :rtype: str
+        """
+        return self._redirect_response_code
+
+    @redirect_response_code.setter
+    def redirect_response_code(self, redirect_response_code):
+        """
+        Sets the redirect_response_code of this AccessRule.
+        The response status code to return when `action` is set to `REDIRECT`.
+
+        - **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
+
+        - **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
+
+
+        :param redirect_response_code: The redirect_response_code of this AccessRule.
+        :type: str
+        """
+        allowed_values = ["MOVED_PERMANENTLY", "FOUND"]
+        if not value_allowed_none_or_none_sentinel(redirect_response_code, allowed_values):
+            redirect_response_code = 'UNKNOWN_ENUM_VALUE'
+        self._redirect_response_code = redirect_response_code
 
     def __repr__(self):
         return formatted_flat_dict(self)
