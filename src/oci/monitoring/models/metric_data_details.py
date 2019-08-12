@@ -21,6 +21,10 @@ class MetricDataDetails(object):
             The value to assign to the namespace property of this MetricDataDetails.
         :type namespace: str
 
+        :param resource_group:
+            The value to assign to the resource_group property of this MetricDataDetails.
+        :type resource_group: str
+
         :param compartment_id:
             The value to assign to the compartment_id property of this MetricDataDetails.
         :type compartment_id: str
@@ -44,6 +48,7 @@ class MetricDataDetails(object):
         """
         self.swagger_types = {
             'namespace': 'str',
+            'resource_group': 'str',
             'compartment_id': 'str',
             'name': 'str',
             'dimensions': 'dict(str, str)',
@@ -53,6 +58,7 @@ class MetricDataDetails(object):
 
         self.attribute_map = {
             'namespace': 'namespace',
+            'resource_group': 'resourceGroup',
             'compartment_id': 'compartmentId',
             'name': 'name',
             'dimensions': 'dimensions',
@@ -61,6 +67,7 @@ class MetricDataDetails(object):
         }
 
         self._namespace = None
+        self._resource_group = None
         self._compartment_id = None
         self._name = None
         self._dimensions = None
@@ -100,6 +107,38 @@ class MetricDataDetails(object):
         :type: str
         """
         self._namespace = namespace
+
+    @property
+    def resource_group(self):
+        """
+        Gets the resource_group of this MetricDataDetails.
+        Resource group to assign to the metric. A resource group is a custom string that can be used as a filter. Only one resource group can be applied per metric.
+        A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        Avoid entering confidential information.
+
+        Example: `frontend-fleet`
+
+
+        :return: The resource_group of this MetricDataDetails.
+        :rtype: str
+        """
+        return self._resource_group
+
+    @resource_group.setter
+    def resource_group(self, resource_group):
+        """
+        Sets the resource_group of this MetricDataDetails.
+        Resource group to assign to the metric. A resource group is a custom string that can be used as a filter. Only one resource group can be applied per metric.
+        A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        Avoid entering confidential information.
+
+        Example: `frontend-fleet`
+
+
+        :param resource_group: The resource_group of this MetricDataDetails.
+        :type: str
+        """
+        self._resource_group = resource_group
 
     @property
     def compartment_id(self):

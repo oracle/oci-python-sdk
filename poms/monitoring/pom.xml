@@ -141,7 +141,7 @@
       <dependency>
         <groupId>com.oracle.pic.telemetry.api</groupId>
         <artifactId>telemetry-public-api-spec</artifactId>
-        <version>1.0.0-20190709.191207-324</version>
+        <version>1.0.0-20190709.204418-326</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
