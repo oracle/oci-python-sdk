@@ -128,6 +128,20 @@ def test_retry_strategy_builder():
     assert retrying_call.current_calls == 5
 
 
+def test_retry_strategy_none_retry_strategy():
+    retry_strategy = oci.retry.NoneRetryStrategy()
+    retrying_call = MakeRetryingCall(exception_to_throw=oci.exceptions.ServiceError(429, 'NotFound', {}, None), return_sucess_on_call_number=50)
+    with pytest.raises(oci.exceptions.ServiceError) as e:
+        retry_strategy.make_retrying_call(retrying_call.do_call)
+    assert e.value.status == 429
+    assert retrying_call.current_calls == 1
+
+    retrying_call = MakeRetryingCall(exception_to_throw=None, return_sucess_on_call_number=1)
+    result = retry_strategy.make_retrying_call(retrying_call.do_call)
+    assert result
+    assert retrying_call.current_calls == 1
+
+
 def test_retry_strategy_builder_with_total_elapsed_time():
     retry_strategy = oci.retry.RetryStrategyBuilder().add_service_error_check().add_total_elapsed_time(total_elapsed_time_seconds=20).get_retry_strategy()
     retrying_call = MakeRetryingCall(exception_to_throw=oci.exceptions.ServiceError(429, 'NotFound', {}, None), return_sucess_on_call_number=50)
