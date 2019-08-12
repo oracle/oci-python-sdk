@@ -70,6 +70,47 @@ def test_change_stream_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
+def test_create_archiver(testing_service_client):
+    if not testing_service_client.is_api_enabled('streaming', 'CreateArchiver'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('streaming', util.camelize('stream_admin'), 'CreateArchiver')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='streaming', api_name='CreateArchiver')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
+            response = client.create_archiver(
+                stream_id=request.pop(util.camelize('stream_id')),
+                create_archiver_details=request.pop(util.camelize('create_archiver_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'streaming',
+            'CreateArchiver',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'archiver',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
 def test_create_stream(testing_service_client):
     if not testing_service_client.is_api_enabled('streaming', 'CreateStream'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -145,6 +186,46 @@ def test_delete_stream(testing_service_client):
             service_error,
             'delete_stream',
             True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
+def test_get_archiver(testing_service_client):
+    if not testing_service_client.is_api_enabled('streaming', 'GetArchiver'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('streaming', util.camelize('stream_admin'), 'GetArchiver')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='streaming', api_name='GetArchiver')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
+            response = client.get_archiver(
+                stream_id=request.pop(util.camelize('stream_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'streaming',
+            'GetArchiver',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'archiver',
+            False,
             False
         )
 
@@ -245,6 +326,127 @@ def test_list_streams(testing_service_client):
             'streamSummary',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
+def test_start_archiver(testing_service_client):
+    if not testing_service_client.is_api_enabled('streaming', 'StartArchiver'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('streaming', util.camelize('stream_admin'), 'StartArchiver')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='streaming', api_name='StartArchiver')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
+            response = client.start_archiver(
+                stream_id=request.pop(util.camelize('stream_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'streaming',
+            'StartArchiver',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'archiver',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
+def test_stop_archiver(testing_service_client):
+    if not testing_service_client.is_api_enabled('streaming', 'StopArchiver'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('streaming', util.camelize('stream_admin'), 'StopArchiver')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='streaming', api_name='StopArchiver')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
+            response = client.stop_archiver(
+                stream_id=request.pop(util.camelize('stream_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'streaming',
+            'StopArchiver',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'archiver',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
+def test_update_archiver(testing_service_client):
+    if not testing_service_client.is_api_enabled('streaming', 'UpdateArchiver'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('streaming', util.camelize('stream_admin'), 'UpdateArchiver')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='streaming', api_name='UpdateArchiver')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
+            response = client.update_archiver(
+                stream_id=request.pop(util.camelize('stream_id')),
+                update_archiver_details=request.pop(util.camelize('update_archiver_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'streaming',
+            'UpdateArchiver',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'archiver',
+            False,
+            False
         )
 
 

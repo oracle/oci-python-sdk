@@ -3,7 +3,10 @@
 
 from __future__ import absolute_import
 
+from .archiver import Archiver
+from .archiver_error import ArchiverError
 from .change_stream_compartment_details import ChangeStreamCompartmentDetails
+from .create_archiver_details import CreateArchiverDetails
 from .create_cursor_details import CreateCursorDetails
 from .create_group_cursor_details import CreateGroupCursorDetails
 from .create_stream_details import CreateStreamDetails
@@ -17,12 +20,16 @@ from .put_messages_result import PutMessagesResult
 from .put_messages_result_entry import PutMessagesResultEntry
 from .stream import Stream
 from .stream_summary import StreamSummary
+from .update_archiver_details import UpdateArchiverDetails
 from .update_group_details import UpdateGroupDetails
 from .update_stream_details import UpdateStreamDetails
 
 # Maps type names to classes for streaming services.
 streaming_type_mapping = {
+    "Archiver": Archiver,
+    "ArchiverError": ArchiverError,
     "ChangeStreamCompartmentDetails": ChangeStreamCompartmentDetails,
+    "CreateArchiverDetails": CreateArchiverDetails,
     "CreateCursorDetails": CreateCursorDetails,
     "CreateGroupCursorDetails": CreateGroupCursorDetails,
     "CreateStreamDetails": CreateStreamDetails,
@@ -36,6 +43,7 @@ streaming_type_mapping = {
     "PutMessagesResultEntry": PutMessagesResultEntry,
     "Stream": Stream,
     "StreamSummary": StreamSummary,
+    "UpdateArchiverDetails": UpdateArchiverDetails,
     "UpdateGroupDetails": UpdateGroupDetails,
     "UpdateStreamDetails": UpdateStreamDetails
 }
