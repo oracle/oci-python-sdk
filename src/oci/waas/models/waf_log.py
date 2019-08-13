@@ -117,7 +117,7 @@ class WafLog(object):
 
         :param timestamp:
             The value to assign to the timestamp property of this WafLog.
-        :type timestamp: str
+        :type timestamp: datetime
 
         :param log_type:
             The value to assign to the log_type property of this WafLog.
@@ -157,7 +157,7 @@ class WafLog(object):
             'threat_feed_key': 'str',
             'access_rule_key': 'str',
             'address_rate_limiting_key': 'str',
-            'timestamp': 'str',
+            'timestamp': 'datetime',
             'log_type': 'str',
             'origin_address': 'str',
             'origin_response_time': 'str'
@@ -833,7 +833,7 @@ class WafLog(object):
 
 
         :return: The timestamp of this WafLog.
-        :rtype: str
+        :rtype: datetime
         """
         return self._timestamp
 
@@ -845,7 +845,7 @@ class WafLog(object):
 
 
         :param timestamp: The timestamp of this WafLog.
-        :type: str
+        :type: datetime
         """
         self._timestamp = timestamp
 

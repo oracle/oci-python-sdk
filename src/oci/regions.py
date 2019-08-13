@@ -7,6 +7,7 @@ REGIONS_SHORT_NAMES = {
     'phx': 'us-phoenix-1',
     'iad': 'us-ashburn-1',
     'fra': 'eu-frankfurt-1',
+    'zrh': 'eu-zurich-1',
     'lhr': 'uk-london-1',
     'yyz': 'ca-toronto-1',
     'nrt': 'ap-tokyo-1',
@@ -20,6 +21,7 @@ REGION_REALMS = {
     'us-phoenix-1': 'oc1',
     'us-ashburn-1': 'oc1',
     'eu-frankfurt-1': 'oc1',
+    'eu-zurich-1': 'oc1',
     'uk-london-1': 'oc1',
     'ca-toronto-1': 'oc1',
 
@@ -42,6 +44,7 @@ REGIONS = [
     "us-phoenix-1",
     "us-ashburn-1",
     "eu-frankfurt-1",
+    "eu-zurich-1",
     "uk-london-1",
     "ca-toronto-1",
     "us-langley-1",

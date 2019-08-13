@@ -271,7 +271,12 @@ class WaasPolicySummary(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this WaasPolicySummary.
-        A simple key-value pair without any defined schema.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this WaasPolicySummary.
@@ -283,7 +288,12 @@ class WaasPolicySummary(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this WaasPolicySummary.
-        A simple key-value pair without any defined schema.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this WaasPolicySummary.
@@ -295,7 +305,12 @@ class WaasPolicySummary(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this WaasPolicySummary.
-        A key-value pair with a defined schema that restricts the values of tags. These predefined keys are scoped to namespaces.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this WaasPolicySummary.
@@ -307,7 +322,12 @@ class WaasPolicySummary(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this WaasPolicySummary.
-        A key-value pair with a defined schema that restricts the values of tags. These predefined keys are scoped to namespaces.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this WaasPolicySummary.

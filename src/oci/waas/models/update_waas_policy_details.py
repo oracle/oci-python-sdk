@@ -80,7 +80,7 @@ class UpdateWaasPolicyDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateWaasPolicyDetails.
-        A user-friendly name for the WAAS policy. The name is can be changed and does not need to be unique.
+        A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
 
 
         :return: The display_name of this UpdateWaasPolicyDetails.
@@ -92,7 +92,7 @@ class UpdateWaasPolicyDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateWaasPolicyDetails.
-        A user-friendly name for the WAAS policy. The name is can be changed and does not need to be unique.
+        A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
 
 
         :param display_name: The display_name of this UpdateWaasPolicyDetails.
@@ -192,7 +192,12 @@ class UpdateWaasPolicyDetails(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this UpdateWaasPolicyDetails.
-        A simple key-value pair without any defined schema.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this UpdateWaasPolicyDetails.
@@ -204,7 +209,12 @@ class UpdateWaasPolicyDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this UpdateWaasPolicyDetails.
-        A simple key-value pair without any defined schema.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this UpdateWaasPolicyDetails.
@@ -216,7 +226,10 @@ class UpdateWaasPolicyDetails(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this UpdateWaasPolicyDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see `Resource Tags`__.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
@@ -230,7 +243,10 @@ class UpdateWaasPolicyDetails(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this UpdateWaasPolicyDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see `Resource Tags`__.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 

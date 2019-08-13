@@ -1,0 +1,21 @@
+# coding: utf-8
+# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+
+from __future__ import absolute_import
+
+
+from .shipping_vendors_client import ShippingVendorsClient
+from .shipping_vendors_client_composite_operations import ShippingVendorsClientCompositeOperations
+from .transfer_appliance_client import TransferApplianceClient
+from .transfer_appliance_client_composite_operations import TransferApplianceClientCompositeOperations
+from .transfer_appliance_entitlement_client import TransferApplianceEntitlementClient
+from .transfer_appliance_entitlement_client_composite_operations import TransferApplianceEntitlementClientCompositeOperations
+from .transfer_device_client import TransferDeviceClient
+from .transfer_device_client_composite_operations import TransferDeviceClientCompositeOperations
+from .transfer_job_client import TransferJobClient
+from .transfer_job_client_composite_operations import TransferJobClientCompositeOperations
+from .transfer_package_client import TransferPackageClient
+from .transfer_package_client_composite_operations import TransferPackageClientCompositeOperations
+from . import models
+
+__all__ = ["ShippingVendorsClient", "ShippingVendorsClientCompositeOperations", "TransferApplianceClient", "TransferApplianceClientCompositeOperations", "TransferApplianceEntitlementClient", "TransferApplianceEntitlementClientCompositeOperations", "TransferDeviceClient", "TransferDeviceClientCompositeOperations", "TransferJobClient", "TransferJobClientCompositeOperations", "TransferPackageClient", "TransferPackageClientCompositeOperations", "models"]

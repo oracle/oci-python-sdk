@@ -135,6 +135,16 @@ class CreateCertificateDetails(object):
         The data of the SSL certificate.
 
 
+        **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status.
+        If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate
+        key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you
+        are unsure if your certificate requires an intermediate certificate chain, see your certificate
+        provider's documentation.
+
+
+        The example below shows an intermediate certificate appended to a leaf certificate.
+
+
         :return: The certificate_data of this CreateCertificateDetails.
         :rtype: str
         """
@@ -145,6 +155,16 @@ class CreateCertificateDetails(object):
         """
         Sets the certificate_data of this CreateCertificateDetails.
         The data of the SSL certificate.
+
+
+        **Note:** Many SSL certificate providers require an intermediate certificate chain to ensure a trusted status.
+        If your SSL certificate requires an intermediate certificate chain, please append the intermediate certificate
+        key in the `certificateData` field after the leaf certificate issued by the SSL certificate provider. If you
+        are unsure if your certificate requires an intermediate certificate chain, see your certificate
+        provider's documentation.
+
+
+        The example below shows an intermediate certificate appended to a leaf certificate.
 
 
         :param certificate_data: The certificate_data of this CreateCertificateDetails.
@@ -180,7 +200,7 @@ class CreateCertificateDetails(object):
     def is_trust_verification_disabled(self):
         """
         Gets the is_trust_verification_disabled of this CreateCertificateDetails.
-        Set to true if the SSL certificate is self-signed.
+        Set to `true` if the SSL certificate is self-signed.
 
 
         :return: The is_trust_verification_disabled of this CreateCertificateDetails.
@@ -192,7 +212,7 @@ class CreateCertificateDetails(object):
     def is_trust_verification_disabled(self, is_trust_verification_disabled):
         """
         Sets the is_trust_verification_disabled of this CreateCertificateDetails.
-        Set to true if the SSL certificate is self-signed.
+        Set to `true` if the SSL certificate is self-signed.
 
 
         :param is_trust_verification_disabled: The is_trust_verification_disabled of this CreateCertificateDetails.
@@ -204,7 +224,10 @@ class CreateCertificateDetails(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this CreateCertificateDetails.
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see `Resource Tags`__.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
@@ -218,7 +241,10 @@ class CreateCertificateDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this CreateCertificateDetails.
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see `Resource Tags`__.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
@@ -232,7 +258,10 @@ class CreateCertificateDetails(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this CreateCertificateDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see `Resource Tags`__. Example:
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
@@ -246,7 +275,10 @@ class CreateCertificateDetails(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this CreateCertificateDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see `Resource Tags`__. Example:
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 

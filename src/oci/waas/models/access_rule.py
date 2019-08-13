@@ -159,6 +159,12 @@ class AccessRule(object):
         **[Required]** Gets the action of this AccessRule.
         The action to take when the access criteria are met for a rule. If unspecified, defaults to `ALLOW`.
 
+        - **ALLOW:** Takes no action, just logs the request.
+
+        - **DETECT:** Takes no action, but creates an alert for the request.
+
+        - **BLOCK:** Blocks the request by returning specified response code or showing error page.
+
         Allowed values for this property are: "ALLOW", "DETECT", "BLOCK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
@@ -173,6 +179,12 @@ class AccessRule(object):
         """
         Sets the action of this AccessRule.
         The action to take when the access criteria are met for a rule. If unspecified, defaults to `ALLOW`.
+
+        - **ALLOW:** Takes no action, just logs the request.
+
+        - **DETECT:** Takes no action, but creates an alert for the request.
+
+        - **BLOCK:** Blocks the request by returning specified response code or showing error page.
 
 
         :param action: The action of this AccessRule.

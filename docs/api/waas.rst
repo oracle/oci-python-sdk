@@ -25,6 +25,7 @@ Waas
     oci.waas.models.Captcha
     oci.waas.models.Certificate
     oci.waas.models.CertificateExtensions
+    oci.waas.models.CertificateIssuerName
     oci.waas.models.CertificatePublicKeyInfo
     oci.waas.models.CertificateSubjectName
     oci.waas.models.CertificateSummary

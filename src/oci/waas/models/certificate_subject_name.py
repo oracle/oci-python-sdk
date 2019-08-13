@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CertificateSubjectName(object):
     """
-    CertificateSubjectName model.
+    The entity to be secured by the certificate.
     """
 
     def __init__(self, **kwargs):
@@ -78,6 +78,10 @@ class CertificateSubjectName(object):
     def country(self):
         """
         Gets the country of this CertificateSubjectName.
+        ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see `ISO's website`__.
+
+        __ https://www.iso.org/obp/ui/#search/code/
+
 
         :return: The country of this CertificateSubjectName.
         :rtype: str
@@ -88,6 +92,10 @@ class CertificateSubjectName(object):
     def country(self, country):
         """
         Sets the country of this CertificateSubjectName.
+        ISO 3166-1 alpha-2 code of the country where the organization is located. For a list of codes, see `ISO's website`__.
+
+        __ https://www.iso.org/obp/ui/#search/code/
+
 
         :param country: The country of this CertificateSubjectName.
         :type: str
@@ -98,6 +106,8 @@ class CertificateSubjectName(object):
     def state_province(self):
         """
         Gets the state_province of this CertificateSubjectName.
+        The province where the organization is located.
+
 
         :return: The state_province of this CertificateSubjectName.
         :rtype: str
@@ -108,6 +118,8 @@ class CertificateSubjectName(object):
     def state_province(self, state_province):
         """
         Sets the state_province of this CertificateSubjectName.
+        The province where the organization is located.
+
 
         :param state_province: The state_province of this CertificateSubjectName.
         :type: str
@@ -118,6 +130,8 @@ class CertificateSubjectName(object):
     def locality(self):
         """
         Gets the locality of this CertificateSubjectName.
+        The city in which the organization is located.
+
 
         :return: The locality of this CertificateSubjectName.
         :rtype: str
@@ -128,6 +142,8 @@ class CertificateSubjectName(object):
     def locality(self, locality):
         """
         Sets the locality of this CertificateSubjectName.
+        The city in which the organization is located.
+
 
         :param locality: The locality of this CertificateSubjectName.
         :type: str
@@ -138,6 +154,8 @@ class CertificateSubjectName(object):
     def organization(self):
         """
         Gets the organization of this CertificateSubjectName.
+        The organization name.
+
 
         :return: The organization of this CertificateSubjectName.
         :rtype: str
@@ -148,6 +166,8 @@ class CertificateSubjectName(object):
     def organization(self, organization):
         """
         Sets the organization of this CertificateSubjectName.
+        The organization name.
+
 
         :param organization: The organization of this CertificateSubjectName.
         :type: str
@@ -158,6 +178,8 @@ class CertificateSubjectName(object):
     def organizational_unit(self):
         """
         Gets the organizational_unit of this CertificateSubjectName.
+        The field to differentiate between divisions within an organization.
+
 
         :return: The organizational_unit of this CertificateSubjectName.
         :rtype: str
@@ -168,6 +190,8 @@ class CertificateSubjectName(object):
     def organizational_unit(self, organizational_unit):
         """
         Sets the organizational_unit of this CertificateSubjectName.
+        The field to differentiate between divisions within an organization.
+
 
         :param organizational_unit: The organizational_unit of this CertificateSubjectName.
         :type: str
@@ -178,6 +202,8 @@ class CertificateSubjectName(object):
     def common_name(self):
         """
         Gets the common_name of this CertificateSubjectName.
+        The fully qualified domain name used for DNS lookups of the server.
+
 
         :return: The common_name of this CertificateSubjectName.
         :rtype: str
@@ -188,6 +214,8 @@ class CertificateSubjectName(object):
     def common_name(self, common_name):
         """
         Sets the common_name of this CertificateSubjectName.
+        The fully qualified domain name used for DNS lookups of the server.
+
 
         :param common_name: The common_name of this CertificateSubjectName.
         :type: str
@@ -198,6 +226,8 @@ class CertificateSubjectName(object):
     def email_address(self):
         """
         Gets the email_address of this CertificateSubjectName.
+        The email address of the server's administrator.
+
 
         :return: The email_address of this CertificateSubjectName.
         :rtype: str
@@ -208,6 +238,8 @@ class CertificateSubjectName(object):
     def email_address(self, email_address):
         """
         Sets the email_address of this CertificateSubjectName.
+        The email address of the server's administrator.
+
 
         :param email_address: The email_address of this CertificateSubjectName.
         :type: str

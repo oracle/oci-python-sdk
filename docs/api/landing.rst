@@ -14,6 +14,12 @@ API Reference
 * :doc:`Virtual Network <core/client/oci.core.VirtualNetworkClient>`
 * :doc:`Database <database/client/oci.database.DatabaseClient>`
 * :doc:`DNS <dns/client/oci.dns.DnsClient>`
+* :doc:`Shipping Vendors <dts/client/oci.dts.ShippingVendorsClient>`
+* :doc:`Transfer Appliance <dts/client/oci.dts.TransferApplianceClient>`
+* :doc:`Transfer Appliance Entitlement <dts/client/oci.dts.TransferApplianceEntitlementClient>`
+* :doc:`Transfer Device <dts/client/oci.dts.TransferDeviceClient>`
+* :doc:`Transfer Job <dts/client/oci.dts.TransferJobClient>`
+* :doc:`Transfer Package <dts/client/oci.dts.TransferPackageClient>`
 * :doc:`Email <email/client/oci.email.EmailClient>`
 * :doc:`Events <events/client/oci.events.EventsClient>`
 * :doc:`File Storage <file_storage/client/oci.file_storage.FileStorageClient>`
@@ -62,6 +68,7 @@ API Reference
     core
     database
     dns
+    dts
     email
     events
     file_storage

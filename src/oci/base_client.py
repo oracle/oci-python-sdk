@@ -53,6 +53,10 @@ def build_user_agent(extra=""):
     return agent.strip()
 
 
+def utc_now():
+    return " " + str(datetime.utcnow()) + ": "
+
+
 STREAM_RESPONSE_TYPE = 'stream'
 BYTES_RESPONSE_TYPE = 'bytes'
 
@@ -310,7 +314,7 @@ class BaseClient(object):
         return processed_query_params
 
     def request(self, request):
-        self.logger.info("Request: %s %s" % (str(request.method), request.url))
+        self.logger.info(utc_now() + "Request: %s %s" % (str(request.method), request.url))
 
         signer = self.signer
         if not request.enforce_content_headers:
@@ -321,6 +325,7 @@ class BaseClient(object):
             stream = True
 
         try:
+            start = timer()
             response = self.session.request(
                 request.method,
                 request.url,
@@ -330,13 +335,18 @@ class BaseClient(object):
                 data=request.body,
                 stream=stream,
                 timeout=self.timeout)
+            end = timer()
+            if request.header_params[constants.HEADER_REQUEST_ID]:
+                self.logger.debug(utc_now() + 'time elapsed for request {}: {}'.format(request.header_params[constants.HEADER_REQUEST_ID], str(end - start)))
+            if response and hasattr(response, 'elapsed'):
+                self.logger.debug(utc_now() + "time elapsed in response: " + str(response.elapsed))
         except requests.exceptions.ConnectTimeout as e:
             raise exceptions.ConnectTimeout(e)
         except requests.exceptions.RequestException as e:
             raise exceptions.RequestException(e)
 
         response_type = request.response_type
-        self.logger.debug("Response status: %s" % str(response.status_code))
+        self.logger.debug(utc_now() + "Response status: %s" % str(response.status_code))
 
         if not 200 <= response.status_code <= 299:
             self.raise_service_error(request, response)
@@ -352,7 +362,9 @@ class BaseClient(object):
         else:
             deserialized_data = None
 
-        return Response(response.status_code, response.headers, deserialized_data, request)
+        resp = Response(response.status_code, response.headers, deserialized_data, request)
+        self.logger.debug(utc_now() + "Response returned")
+        return resp
 
     # Builds the client info string to be sent with each request.
     def build_request_id(self):
@@ -544,7 +556,7 @@ class BaseClient(object):
             start = timer()
             res = self.__deserialize(response_data, response_type)
             end = timer()
-            self.logger.debug('python SDK time elapsed for deserializing: {}'.format(str(end - start)))
+            self.logger.debug(utc_now() + 'python SDK time elapsed for deserializing: {}'.format(str(end - start)))
             return res
 
     def __deserialize(self, data, cls):

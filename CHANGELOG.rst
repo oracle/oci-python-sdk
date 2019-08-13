@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.3.0 - 2019-08-13
+====================
+
+Added
+-----
+* Support for the Data Transfer service
+* Support for the Zurich (ZRH) region
+
+Breaking
+--------
+* oci.waas.WafLog.timestamp type changed from str to datetime
+* oci.waas.models.Certificate.issuer_name type changed from oci.waas.models.CertificateSubjectName to oci.waas.models.CerticateIssuerName
+* `"PURGE_WAAS_POLICY"` removed as option for oci.waas.models.WorkRequest.operation_type
+* `"PURGE_WAAS_POLICY"` removed as option for oci.waas.models.WorkRequestSummary.operation_type
+
+====================
 2.2.21 - 2019-08-06
 ====================
 
