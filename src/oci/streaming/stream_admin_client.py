@@ -245,6 +245,9 @@ class StreamAdminClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -262,7 +265,8 @@ class StreamAdminClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
@@ -282,7 +286,8 @@ class StreamAdminClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -525,6 +530,9 @@ class StreamAdminClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
 
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -542,7 +550,8 @@ class StreamAdminClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "if_match"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
@@ -562,7 +571,8 @@ class StreamAdminClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
