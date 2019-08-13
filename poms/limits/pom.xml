@@ -140,7 +140,7 @@
       <dependency>
         <groupId>com.oracle.oci.quotas</groupId>
         <artifactId>quotas-control-plane-api-spec</artifactId>
-        <version>0.0.5</version>
+        <version>0.0.10</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
