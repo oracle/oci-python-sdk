@@ -1,0 +1,11 @@
+TransferPackageSummary
+======================
+
+.. currentmodule:: oci.dts.models
+
+.. autoclass:: TransferPackageSummary
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

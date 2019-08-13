@@ -64,7 +64,7 @@ class Certificate(object):
 
         :param issuer_name:
             The value to assign to the issuer_name property of this Certificate.
-        :type issuer_name: CertificateSubjectName
+        :type issuer_name: CertificateIssuerName
 
         :param serial_number:
             The value to assign to the serial_number property of this Certificate.
@@ -119,7 +119,7 @@ class Certificate(object):
             'display_name': 'str',
             'issued_by': 'str',
             'subject_name': 'CertificateSubjectName',
-            'issuer_name': 'CertificateSubjectName',
+            'issuer_name': 'CertificateIssuerName',
             'serial_number': 'str',
             'version': 'int',
             'signature_algorithm': 'str',
@@ -174,7 +174,7 @@ class Certificate(object):
     @property
     def id(self):
         """
-        Gets the id of this Certificate.
+        **[Required]** Gets the id of this Certificate.
         The `OCID`__ of the certificate.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
@@ -202,7 +202,7 @@ class Certificate(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this Certificate.
+        **[Required]** Gets the compartment_id of this Certificate.
         The `OCID`__ of the certificate's compartment.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
@@ -230,7 +230,7 @@ class Certificate(object):
     @property
     def display_name(self):
         """
-        Gets the display_name of this Certificate.
+        **[Required]** Gets the display_name of this Certificate.
         The user-friendly name of the certificate.
 
 
@@ -297,7 +297,7 @@ class Certificate(object):
         Gets the issuer_name of this Certificate.
 
         :return: The issuer_name of this Certificate.
-        :rtype: CertificateSubjectName
+        :rtype: CertificateIssuerName
         """
         return self._issuer_name
 
@@ -307,14 +307,16 @@ class Certificate(object):
         Sets the issuer_name of this Certificate.
 
         :param issuer_name: The issuer_name of this Certificate.
-        :type: CertificateSubjectName
+        :type: CertificateIssuerName
         """
         self._issuer_name = issuer_name
 
     @property
     def serial_number(self):
         """
-        Gets the serial_number of this Certificate.
+        **[Required]** Gets the serial_number of this Certificate.
+        A unique, positive integer assigned by the Certificate Authority (CA). The issuer name and serial number identify a unique certificate.
+
 
         :return: The serial_number of this Certificate.
         :rtype: str
@@ -325,6 +327,8 @@ class Certificate(object):
     def serial_number(self, serial_number):
         """
         Sets the serial_number of this Certificate.
+        A unique, positive integer assigned by the Certificate Authority (CA). The issuer name and serial number identify a unique certificate.
+
 
         :param serial_number: The serial_number of this Certificate.
         :type: str
@@ -334,7 +338,9 @@ class Certificate(object):
     @property
     def version(self):
         """
-        Gets the version of this Certificate.
+        **[Required]** Gets the version of this Certificate.
+        The version of the encoded certificate.
+
 
         :return: The version of this Certificate.
         :rtype: int
@@ -345,6 +351,8 @@ class Certificate(object):
     def version(self, version):
         """
         Sets the version of this Certificate.
+        The version of the encoded certificate.
+
 
         :param version: The version of this Certificate.
         :type: int
@@ -354,7 +362,9 @@ class Certificate(object):
     @property
     def signature_algorithm(self):
         """
-        Gets the signature_algorithm of this Certificate.
+        **[Required]** Gets the signature_algorithm of this Certificate.
+        The identifier for the cryptographic algorithm used by the Certificate Authority (CA) to sign this certificate.
+
 
         :return: The signature_algorithm of this Certificate.
         :rtype: str
@@ -365,6 +375,8 @@ class Certificate(object):
     def signature_algorithm(self, signature_algorithm):
         """
         Sets the signature_algorithm of this Certificate.
+        The identifier for the cryptographic algorithm used by the Certificate Authority (CA) to sign this certificate.
+
 
         :param signature_algorithm: The signature_algorithm of this Certificate.
         :type: str
@@ -374,7 +386,9 @@ class Certificate(object):
     @property
     def time_not_valid_before(self):
         """
-        Gets the time_not_valid_before of this Certificate.
+        **[Required]** Gets the time_not_valid_before of this Certificate.
+        The date and time the certificate will become valid, expressed in RFC 3339 timestamp format.
+
 
         :return: The time_not_valid_before of this Certificate.
         :rtype: datetime
@@ -385,6 +399,8 @@ class Certificate(object):
     def time_not_valid_before(self, time_not_valid_before):
         """
         Sets the time_not_valid_before of this Certificate.
+        The date and time the certificate will become valid, expressed in RFC 3339 timestamp format.
+
 
         :param time_not_valid_before: The time_not_valid_before of this Certificate.
         :type: datetime
@@ -394,7 +410,7 @@ class Certificate(object):
     @property
     def time_not_valid_after(self):
         """
-        Gets the time_not_valid_after of this Certificate.
+        **[Required]** Gets the time_not_valid_after of this Certificate.
         The date and time the certificate will expire, expressed in RFC 3339 timestamp format.
 
 
@@ -439,6 +455,8 @@ class Certificate(object):
     def extensions(self):
         """
         Gets the extensions of this Certificate.
+        Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
+
 
         :return: The extensions of this Certificate.
         :rtype: list[CertificateExtensions]
@@ -449,6 +467,8 @@ class Certificate(object):
     def extensions(self, extensions):
         """
         Sets the extensions of this Certificate.
+        Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
+
 
         :param extensions: The extensions of this Certificate.
         :type: list[CertificateExtensions]
@@ -459,7 +479,12 @@ class Certificate(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this Certificate.
-        A simple key-value pair without any defined schema.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this Certificate.
@@ -471,7 +496,12 @@ class Certificate(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this Certificate.
-        A simple key-value pair without any defined schema.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this Certificate.
@@ -483,7 +513,12 @@ class Certificate(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this Certificate.
-        A key-value pair with a defined schema that restricts the values of tags. These predefined keys are scoped to namespaces.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this Certificate.
@@ -495,7 +530,12 @@ class Certificate(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this Certificate.
-        A key-value pair with a defined schema that restricts the values of tags. These predefined keys are scoped to namespaces.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this Certificate.

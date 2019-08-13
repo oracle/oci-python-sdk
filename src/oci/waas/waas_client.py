@@ -74,6 +74,7 @@ class WaasClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
             'base_path': '/20181116',
+            'service_endpoint_template': 'https://waas.{region}.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("waas", config, signer, waas_type_mapping, **base_client_init_kwargs)
@@ -1594,7 +1595,7 @@ class WaasClient(object):
     def list_access_rules(self, waas_policy_id, **kwargs):
         """
         Returns a list of access rules for the Web Application Firewall.
-        Gets the currently configured access rules for the Web Application Firewall configration of a specified WAAS policy.
+        Gets the currently configured access rules for the Web Application Firewall configuration of a specified WAAS policy.
         The order of the access rules is important. The rules will be checked in the order they are specified and the first matching rule will be used.
 
 
@@ -1817,6 +1818,8 @@ class WaasClient(object):
         :param list[str] lifecycle_state: (optional)
             Filter certificates using a list of lifecycle states.
 
+            Allowed values are: "CREATING", "ACTIVE", "FAILED", "UPDATING", "DELETING", "DELETED"
+
         :param datetime time_created_greater_than_or_equal_to: (optional)
             A filter that matches certificates created on or after the specified date-time.
 
@@ -1869,6 +1872,14 @@ class WaasClient(object):
                 raise ValueError(
                     "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
                 )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "FAILED", "UPDATING", "DELETING", "DELETED"]
+            for lifecycle_state_item in kwargs['lifecycle_state']:
+                if lifecycle_state_item not in lifecycle_state_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    )
 
         query_params = {
             "limit": kwargs.get("limit", missing),
@@ -2460,6 +2471,8 @@ class WaasClient(object):
         :param list[str] lifecycle_state: (optional)
             Filter policies using a list of lifecycle states.
 
+            Allowed values are: "CREATING", "ACTIVE", "FAILED", "UPDATING", "DELETING", "DELETED"
+
         :param datetime time_created_greater_than_or_equal_to: (optional)
             A filter that matches policies created on or after the specified date and time.
 
@@ -2512,6 +2525,14 @@ class WaasClient(object):
                 raise ValueError(
                     "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
                 )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "FAILED", "UPDATING", "DELETING", "DELETED"]
+            for lifecycle_state_item in kwargs['lifecycle_state']:
+                if lifecycle_state_item not in lifecycle_state_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    )
 
         query_params = {
             "compartmentId": compartment_id,

@@ -1,0 +1,11 @@
+TransferApplianceSummary
+========================
+
+.. currentmodule:: oci.dts.models
+
+.. autoclass:: TransferApplianceSummary
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:
