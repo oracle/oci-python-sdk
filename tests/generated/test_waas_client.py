@@ -110,6 +110,47 @@ def test_cancel_work_request(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_waas_dev_us_grp@oracle.com" jiraProject="WAAS" opsJiraProject="WAF"
+def test_change_address_list_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('waas', 'ChangeAddressListCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('waas', util.camelize('waas'), 'ChangeAddressListCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='waas', api_name='ChangeAddressListCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
+            response = client.change_address_list_compartment(
+                address_list_id=request.pop(util.camelize('address_list_id')),
+                change_address_list_compartment_details=request.pop(util.camelize('change_address_list_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'waas',
+            'ChangeAddressListCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_address_list_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_waas_dev_us_grp@oracle.com" jiraProject="WAAS" opsJiraProject="WAF"
 def test_change_certificate_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('waas', 'ChangeCertificateCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -145,6 +186,47 @@ def test_change_certificate_compartment(testing_service_client):
             result,
             service_error,
             'change_certificate_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_waas_dev_us_grp@oracle.com" jiraProject="WAAS" opsJiraProject="WAF"
+def test_change_custom_protection_rule_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('waas', 'ChangeCustomProtectionRuleCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('waas', util.camelize('waas'), 'ChangeCustomProtectionRuleCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='waas', api_name='ChangeCustomProtectionRuleCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
+            response = client.change_custom_protection_rule_compartment(
+                custom_protection_rule_id=request.pop(util.camelize('custom_protection_rule_id')),
+                change_custom_protection_rule_compartment_details=request.pop(util.camelize('change_custom_protection_rule_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'waas',
+            'ChangeCustomProtectionRuleCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_custom_protection_rule_compartment',
             False,
             False
         )
@@ -192,6 +274,46 @@ def test_change_waas_policy_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_waas_dev_us_grp@oracle.com" jiraProject="WAAS" opsJiraProject="WAF"
+def test_create_address_list(testing_service_client):
+    if not testing_service_client.is_api_enabled('waas', 'CreateAddressList'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('waas', util.camelize('waas'), 'CreateAddressList')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='waas', api_name='CreateAddressList')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
+            response = client.create_address_list(
+                create_address_list_details=request.pop(util.camelize('create_address_list_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'waas',
+            'CreateAddressList',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'addressList',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_waas_dev_us_grp@oracle.com" jiraProject="WAAS" opsJiraProject="WAF"
 def test_create_certificate(testing_service_client):
     if not testing_service_client.is_api_enabled('waas', 'CreateCertificate'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -226,6 +348,46 @@ def test_create_certificate(testing_service_client):
             result,
             service_error,
             'certificate',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_waas_dev_us_grp@oracle.com" jiraProject="WAAS" opsJiraProject="WAF"
+def test_create_custom_protection_rule(testing_service_client):
+    if not testing_service_client.is_api_enabled('waas', 'CreateCustomProtectionRule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('waas', util.camelize('waas'), 'CreateCustomProtectionRule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='waas', api_name='CreateCustomProtectionRule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
+            response = client.create_custom_protection_rule(
+                create_custom_protection_rule_details=request.pop(util.camelize('create_custom_protection_rule_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'waas',
+            'CreateCustomProtectionRule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'customProtectionRule',
             False,
             False
         )
@@ -272,6 +434,46 @@ def test_create_waas_policy(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_waas_dev_us_grp@oracle.com" jiraProject="WAAS" opsJiraProject="WAF"
+def test_delete_address_list(testing_service_client):
+    if not testing_service_client.is_api_enabled('waas', 'DeleteAddressList'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('waas', util.camelize('waas'), 'DeleteAddressList')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='waas', api_name='DeleteAddressList')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
+            response = client.delete_address_list(
+                address_list_id=request.pop(util.camelize('address_list_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'waas',
+            'DeleteAddressList',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_address_list',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_waas_dev_us_grp@oracle.com" jiraProject="WAAS" opsJiraProject="WAF"
 def test_delete_certificate(testing_service_client):
     if not testing_service_client.is_api_enabled('waas', 'DeleteCertificate'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -306,6 +508,46 @@ def test_delete_certificate(testing_service_client):
             result,
             service_error,
             'delete_certificate',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_waas_dev_us_grp@oracle.com" jiraProject="WAAS" opsJiraProject="WAF"
+def test_delete_custom_protection_rule(testing_service_client):
+    if not testing_service_client.is_api_enabled('waas', 'DeleteCustomProtectionRule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('waas', util.camelize('waas'), 'DeleteCustomProtectionRule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='waas', api_name='DeleteCustomProtectionRule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
+            response = client.delete_custom_protection_rule(
+                custom_protection_rule_id=request.pop(util.camelize('custom_protection_rule_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'waas',
+            'DeleteCustomProtectionRule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_custom_protection_rule',
             True,
             False
         )
@@ -352,6 +594,46 @@ def test_delete_waas_policy(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_waas_dev_us_grp@oracle.com" jiraProject="WAAS" opsJiraProject="WAF"
+def test_get_address_list(testing_service_client):
+    if not testing_service_client.is_api_enabled('waas', 'GetAddressList'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('waas', util.camelize('waas'), 'GetAddressList')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='waas', api_name='GetAddressList')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
+            response = client.get_address_list(
+                address_list_id=request.pop(util.camelize('address_list_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'waas',
+            'GetAddressList',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'addressList',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_waas_dev_us_grp@oracle.com" jiraProject="WAAS" opsJiraProject="WAF"
 def test_get_certificate(testing_service_client):
     if not testing_service_client.is_api_enabled('waas', 'GetCertificate'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -386,6 +668,46 @@ def test_get_certificate(testing_service_client):
             result,
             service_error,
             'certificate',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_waas_dev_us_grp@oracle.com" jiraProject="WAAS" opsJiraProject="WAF"
+def test_get_custom_protection_rule(testing_service_client):
+    if not testing_service_client.is_api_enabled('waas', 'GetCustomProtectionRule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('waas', util.camelize('waas'), 'GetCustomProtectionRule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='waas', api_name='GetCustomProtectionRule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
+            response = client.get_custom_protection_rule(
+                custom_protection_rule_id=request.pop(util.camelize('custom_protection_rule_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'waas',
+            'GetCustomProtectionRule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'customProtectionRule',
             False,
             False
         )
@@ -852,6 +1174,124 @@ def test_list_access_rules(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_waas_dev_us_grp@oracle.com" jiraProject="WAAS" opsJiraProject="WAF"
+def test_list_address_lists(testing_service_client):
+    if not testing_service_client.is_api_enabled('waas', 'ListAddressLists'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('waas', util.camelize('waas'), 'ListAddressLists')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='waas', api_name='ListAddressLists')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
+            response = client.list_address_lists(
+                compartment_id=request.pop(util.camelize('compartment_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_address_lists(
+                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_address_lists(
+                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'waas',
+            'ListAddressLists',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'addressListSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_waas_dev_us_grp@oracle.com" jiraProject="WAAS" opsJiraProject="WAF"
+def test_list_caching_rules(testing_service_client):
+    if not testing_service_client.is_api_enabled('waas', 'ListCachingRules'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('waas', util.camelize('waas'), 'ListCachingRules')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='waas', api_name='ListCachingRules')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
+            response = client.list_caching_rules(
+                waas_policy_id=request.pop(util.camelize('waas_policy_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_caching_rules(
+                    waas_policy_id=request.pop(util.camelize('waas_policy_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_caching_rules(
+                        waas_policy_id=request.pop(util.camelize('waas_policy_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'waas',
+            'ListCachingRules',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'cachingRuleSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_waas_dev_us_grp@oracle.com" jiraProject="WAAS" opsJiraProject="WAF"
 def test_list_captchas(testing_service_client):
     if not testing_service_client.is_api_enabled('waas', 'ListCaptchas'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -964,6 +1404,65 @@ def test_list_certificates(testing_service_client):
             result,
             service_error,
             'certificateSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_waas_dev_us_grp@oracle.com" jiraProject="WAAS" opsJiraProject="WAF"
+def test_list_custom_protection_rules(testing_service_client):
+    if not testing_service_client.is_api_enabled('waas', 'ListCustomProtectionRules'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('waas', util.camelize('waas'), 'ListCustomProtectionRules')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='waas', api_name='ListCustomProtectionRules')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
+            response = client.list_custom_protection_rules(
+                compartment_id=request.pop(util.camelize('compartment_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_custom_protection_rules(
+                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_custom_protection_rules(
+                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'waas',
+            'ListCustomProtectionRules',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'customProtectionRuleSummary',
             False,
             True
         )
@@ -1315,6 +1814,65 @@ def test_list_waas_policies(testing_service_client):
             result,
             service_error,
             'waasPolicySummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_waas_dev_us_grp@oracle.com" jiraProject="WAAS" opsJiraProject="WAF"
+def test_list_waas_policy_custom_protection_rules(testing_service_client):
+    if not testing_service_client.is_api_enabled('waas', 'ListWaasPolicyCustomProtectionRules'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('waas', util.camelize('waas'), 'ListWaasPolicyCustomProtectionRules')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='waas', api_name='ListWaasPolicyCustomProtectionRules')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
+            response = client.list_waas_policy_custom_protection_rules(
+                waas_policy_id=request.pop(util.camelize('waas_policy_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_waas_policy_custom_protection_rules(
+                    waas_policy_id=request.pop(util.camelize('waas_policy_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_waas_policy_custom_protection_rules(
+                        waas_policy_id=request.pop(util.camelize('waas_policy_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'waas',
+            'ListWaasPolicyCustomProtectionRules',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'waasPolicyCustomProtectionRuleSummary',
             False,
             True
         )
@@ -1678,6 +2236,46 @@ def test_list_work_requests(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_waas_dev_us_grp@oracle.com" jiraProject="WAAS" opsJiraProject="WAF"
+def test_purge_cache(testing_service_client):
+    if not testing_service_client.is_api_enabled('waas', 'PurgeCache'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('waas', util.camelize('waas'), 'PurgeCache')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='waas', api_name='PurgeCache')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
+            response = client.purge_cache(
+                waas_policy_id=request.pop(util.camelize('waas_policy_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'waas',
+            'PurgeCache',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'purge_cache',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_waas_dev_us_grp@oracle.com" jiraProject="WAAS" opsJiraProject="WAF"
 def test_update_access_rules(testing_service_client):
     if not testing_service_client.is_api_enabled('waas', 'UpdateAccessRules'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1713,6 +2311,87 @@ def test_update_access_rules(testing_service_client):
             result,
             service_error,
             'update_access_rules',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_waas_dev_us_grp@oracle.com" jiraProject="WAAS" opsJiraProject="WAF"
+def test_update_address_list(testing_service_client):
+    if not testing_service_client.is_api_enabled('waas', 'UpdateAddressList'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('waas', util.camelize('waas'), 'UpdateAddressList')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='waas', api_name='UpdateAddressList')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
+            response = client.update_address_list(
+                address_list_id=request.pop(util.camelize('address_list_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'waas',
+            'UpdateAddressList',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'addressList',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_waas_dev_us_grp@oracle.com" jiraProject="WAAS" opsJiraProject="WAF"
+def test_update_caching_rules(testing_service_client):
+    if not testing_service_client.is_api_enabled('waas', 'UpdateCachingRules'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('waas', util.camelize('waas'), 'UpdateCachingRules')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='waas', api_name='UpdateCachingRules')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
+            response = client.update_caching_rules(
+                waas_policy_id=request.pop(util.camelize('waas_policy_id')),
+                caching_rules_details=request.pop(util.camelize('caching_rules_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'waas',
+            'UpdateCachingRules',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_caching_rules',
             False,
             False
         )
@@ -1794,6 +2473,47 @@ def test_update_certificate(testing_service_client):
             result,
             service_error,
             'certificate',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_waas_dev_us_grp@oracle.com" jiraProject="WAAS" opsJiraProject="WAF"
+def test_update_custom_protection_rule(testing_service_client):
+    if not testing_service_client.is_api_enabled('waas', 'UpdateCustomProtectionRule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('waas', util.camelize('waas'), 'UpdateCustomProtectionRule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='waas', api_name='UpdateCustomProtectionRule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
+            response = client.update_custom_protection_rule(
+                custom_protection_rule_id=request.pop(util.camelize('custom_protection_rule_id')),
+                update_custom_protection_rule_details=request.pop(util.camelize('update_custom_protection_rule_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'waas',
+            'UpdateCustomProtectionRule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'customProtectionRule',
             False,
             False
         )
@@ -2163,6 +2883,47 @@ def test_update_waas_policy(testing_service_client):
             result,
             service_error,
             'update_waas_policy',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_waas_dev_us_grp@oracle.com" jiraProject="WAAS" opsJiraProject="WAF"
+def test_update_waas_policy_custom_protection_rules(testing_service_client):
+    if not testing_service_client.is_api_enabled('waas', 'UpdateWaasPolicyCustomProtectionRules'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('waas', util.camelize('waas'), 'UpdateWaasPolicyCustomProtectionRules')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='waas', api_name='UpdateWaasPolicyCustomProtectionRules')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.waas.WaasClient(config, service_endpoint=service_endpoint)
+            response = client.update_waas_policy_custom_protection_rules(
+                waas_policy_id=request.pop(util.camelize('waas_policy_id')),
+                update_custom_protection_rules_details=request.pop(util.camelize('update_custom_protection_rules_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'waas',
+            'UpdateWaasPolicyCustomProtectionRules',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_waas_policy_custom_protection_rules',
             False,
             False
         )
