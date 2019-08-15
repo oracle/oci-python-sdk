@@ -20,7 +20,10 @@ Streaming
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.streaming.models.Archiver
+    oci.streaming.models.ArchiverError
     oci.streaming.models.ChangeStreamCompartmentDetails
+    oci.streaming.models.CreateArchiverDetails
     oci.streaming.models.CreateCursorDetails
     oci.streaming.models.CreateGroupCursorDetails
     oci.streaming.models.CreateStreamDetails
@@ -34,5 +37,6 @@ Streaming
     oci.streaming.models.PutMessagesResultEntry
     oci.streaming.models.Stream
     oci.streaming.models.StreamSummary
+    oci.streaming.models.UpdateArchiverDetails
     oci.streaming.models.UpdateGroupDetails
     oci.streaming.models.UpdateStreamDetails
