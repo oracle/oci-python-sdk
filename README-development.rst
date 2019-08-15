@@ -2,6 +2,10 @@
 Development
 ============
 
+The target audience for this README is developers wanting to contribute to the
+SDK.  If you wish to use the SDK with your own programs, please see
+README.rst
+
 Getting Started
 ===============
 Assuming that you have Python and `virtualenv` installed, set up your environment and install the required dependencies like this:

@@ -1,6 +1,10 @@
 Public Python SDK
 ^^^^^^^^^^^^^^^^^
 
+The target audience for this README is members of the DEX/SDK team.  If you are
+planning to contribute to the SDK please see README-development.rst.  If you
+are looking for instructions on using the SDK see README.rst
+
 - Run all tests with ``tox``
 - Run a single test file with ``py.test tests/unit/<test_file>.py``
 - Run a single test with ``py.test tests/unit/<test_file>.py::<test_function_name>``
@@ -119,7 +123,9 @@ Running the tests
 
 Prerequisites::
 
-    - Set the pass phrase for the private key (ask the SDK team for the correct pass phrase)::
+    - Set the pass phrase for the private key (ask another member of SDK team
+      for the correct pass phrase).  Note, this key is only given to members
+      of the SDK team. ::
 
         export PYTHON_TESTS_ADMIN_PASS_PHRASE='<TODO: enter pass phrase>'
 
