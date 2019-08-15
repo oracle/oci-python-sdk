@@ -9,8 +9,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstanceConfiguration(object):
     """
-    An instance configuration is a template that defines the settings to use when creating Compute instances
-    as part of an instance pool. For more information about instance pools and instance configurations, see
+    An instance configuration is a template that defines the settings to use when creating Compute instances.
+    For more information about instance configurations, see
     `Managing Compute Instances`__.
 
     __ https://docs.cloud.oracle.com/Content/Compute/Concepts/instancemanagement.htm
@@ -89,7 +89,10 @@ class InstanceConfiguration(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this InstanceConfiguration.
-        The OCID of the compartment containing the instance configuration.
+        The `OCID`__ of the compartment
+        containing the instance configuration.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this InstanceConfiguration.
@@ -101,7 +104,10 @@ class InstanceConfiguration(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this InstanceConfiguration.
-        The OCID of the compartment containing the instance configuration.
+        The `OCID`__ of the compartment
+        containing the instance configuration.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this InstanceConfiguration.
@@ -147,7 +153,7 @@ class InstanceConfiguration(object):
     def display_name(self):
         """
         Gets the display_name of this InstanceConfiguration.
-        A user-friendly name for the instance configuration
+        A user-friendly name for the instance configuration.
 
 
         :return: The display_name of this InstanceConfiguration.
@@ -159,7 +165,7 @@ class InstanceConfiguration(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this InstanceConfiguration.
-        A user-friendly name for the instance configuration
+        A user-friendly name for the instance configuration.
 
 
         :param display_name: The display_name of this InstanceConfiguration.
@@ -205,7 +211,9 @@ class InstanceConfiguration(object):
     def id(self):
         """
         **[Required]** Gets the id of this InstanceConfiguration.
-        The OCID of the instance configuration
+        The `OCID`__ of the instance configuration.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this InstanceConfiguration.
@@ -217,7 +225,9 @@ class InstanceConfiguration(object):
     def id(self, id):
         """
         Sets the id of this InstanceConfiguration.
-        The OCID of the instance configuration
+        The `OCID`__ of the instance configuration.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this InstanceConfiguration.
@@ -249,8 +259,9 @@ class InstanceConfiguration(object):
     def deferred_fields(self):
         """
         Gets the deferred_fields of this InstanceConfiguration.
-        The required details when using the :func:`launch_instance_configuration` operation.
-        These attributes are optional when using the :func:`create_instance_configuration` operation.
+        Parameters that were not specified when the instance configuration was created, but that
+        are required to launch an instance from the instance configuration. See the
+        :func:`launch_instance_configuration` operation.
 
 
         :return: The deferred_fields of this InstanceConfiguration.
@@ -262,8 +273,9 @@ class InstanceConfiguration(object):
     def deferred_fields(self, deferred_fields):
         """
         Sets the deferred_fields of this InstanceConfiguration.
-        The required details when using the :func:`launch_instance_configuration` operation.
-        These attributes are optional when using the :func:`create_instance_configuration` operation.
+        Parameters that were not specified when the instance configuration was created, but that
+        are required to launch an instance from the instance configuration. See the
+        :func:`launch_instance_configuration` operation.
 
 
         :param deferred_fields: The deferred_fields of this InstanceConfiguration.
@@ -276,6 +288,7 @@ class InstanceConfiguration(object):
         """
         **[Required]** Gets the time_created of this InstanceConfiguration.
         The date and time the instance configuration was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
 
 
@@ -289,6 +302,7 @@ class InstanceConfiguration(object):
         """
         Sets the time_created of this InstanceConfiguration.
         The date and time the instance configuration was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
 
 

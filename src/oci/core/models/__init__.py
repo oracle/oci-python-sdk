@@ -37,12 +37,17 @@ from .change_boot_volume_compartment_details import ChangeBootVolumeCompartmentD
 from .change_cpe_compartment_details import ChangeCpeCompartmentDetails
 from .change_cross_connect_compartment_details import ChangeCrossConnectCompartmentDetails
 from .change_cross_connect_group_compartment_details import ChangeCrossConnectGroupCompartmentDetails
+from .change_dhcp_options_compartment_details import ChangeDhcpOptionsCompartmentDetails
 from .change_ip_sec_connection_compartment_details import ChangeIPSecConnectionCompartmentDetails
 from .change_image_compartment_details import ChangeImageCompartmentDetails
 from .change_instance_compartment_details import ChangeInstanceCompartmentDetails
 from .change_instance_configuration_compartment_details import ChangeInstanceConfigurationCompartmentDetails
 from .change_instance_pool_compartment_details import ChangeInstancePoolCompartmentDetails
+from .change_internet_gateway_compartment_details import ChangeInternetGatewayCompartmentDetails
+from .change_local_peering_gateway_compartment_details import ChangeLocalPeeringGatewayCompartmentDetails
 from .change_nat_gateway_compartment_details import ChangeNatGatewayCompartmentDetails
+from .change_network_security_group_compartment_details import ChangeNetworkSecurityGroupCompartmentDetails
+from .change_public_ip_compartment_details import ChangePublicIpCompartmentDetails
 from .change_remote_peering_connection_compartment_details import ChangeRemotePeeringConnectionCompartmentDetails
 from .change_route_table_compartment_details import ChangeRouteTableCompartmentDetails
 from .change_security_list_compartment_details import ChangeSecurityListCompartmentDetails
@@ -301,12 +306,17 @@ core_type_mapping = {
     "ChangeCpeCompartmentDetails": ChangeCpeCompartmentDetails,
     "ChangeCrossConnectCompartmentDetails": ChangeCrossConnectCompartmentDetails,
     "ChangeCrossConnectGroupCompartmentDetails": ChangeCrossConnectGroupCompartmentDetails,
+    "ChangeDhcpOptionsCompartmentDetails": ChangeDhcpOptionsCompartmentDetails,
     "ChangeIPSecConnectionCompartmentDetails": ChangeIPSecConnectionCompartmentDetails,
     "ChangeImageCompartmentDetails": ChangeImageCompartmentDetails,
     "ChangeInstanceCompartmentDetails": ChangeInstanceCompartmentDetails,
     "ChangeInstanceConfigurationCompartmentDetails": ChangeInstanceConfigurationCompartmentDetails,
     "ChangeInstancePoolCompartmentDetails": ChangeInstancePoolCompartmentDetails,
+    "ChangeInternetGatewayCompartmentDetails": ChangeInternetGatewayCompartmentDetails,
+    "ChangeLocalPeeringGatewayCompartmentDetails": ChangeLocalPeeringGatewayCompartmentDetails,
     "ChangeNatGatewayCompartmentDetails": ChangeNatGatewayCompartmentDetails,
+    "ChangeNetworkSecurityGroupCompartmentDetails": ChangeNetworkSecurityGroupCompartmentDetails,
+    "ChangePublicIpCompartmentDetails": ChangePublicIpCompartmentDetails,
     "ChangeRemotePeeringConnectionCompartmentDetails": ChangeRemotePeeringConnectionCompartmentDetails,
     "ChangeRouteTableCompartmentDetails": ChangeRouteTableCompartmentDetails,
     "ChangeSecurityListCompartmentDetails": ChangeSecurityListCompartmentDetails,

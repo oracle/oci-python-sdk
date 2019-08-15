@@ -91,7 +91,7 @@ class UpdateVolumeGroupDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateVolumeGroupDetails.
-        A user-friendly name for the volume group.
+        A user-friendly name for the volume group. Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateVolumeGroupDetails.
@@ -103,7 +103,7 @@ class UpdateVolumeGroupDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateVolumeGroupDetails.
-        A user-friendly name for the volume group.
+        A user-friendly name for the volume group. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateVolumeGroupDetails.

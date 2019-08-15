@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateInstanceConfigurationBase(object):
     """
-    An instance configuration that can be used to launch
+    Creation details for an instance configuration.
     """
 
     #: A constant which can be used with the source property of a CreateInstanceConfigurationBase.
@@ -94,7 +94,10 @@ class CreateInstanceConfigurationBase(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateInstanceConfigurationBase.
-        The OCID of the compartment containing the instance configuration.
+        The `OCID`__ of the compartment
+        containing the instance configuration.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateInstanceConfigurationBase.
@@ -106,7 +109,10 @@ class CreateInstanceConfigurationBase(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateInstanceConfigurationBase.
-        The OCID of the compartment containing the instance configuration.
+        The `OCID`__ of the compartment
+        containing the instance configuration.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateInstanceConfigurationBase.
@@ -152,7 +158,8 @@ class CreateInstanceConfigurationBase(object):
     def display_name(self):
         """
         Gets the display_name of this CreateInstanceConfigurationBase.
-        A user-friendly name for the instance configuration
+        A user-friendly name for the instance configuration.  Does not have to be unique,
+        and it's changeable. Avoid entering confidential information.
 
 
         :return: The display_name of this CreateInstanceConfigurationBase.
@@ -164,7 +171,8 @@ class CreateInstanceConfigurationBase(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateInstanceConfigurationBase.
-        A user-friendly name for the instance configuration
+        A user-friendly name for the instance configuration.  Does not have to be unique,
+        and it's changeable. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateInstanceConfigurationBase.
@@ -210,9 +218,17 @@ class CreateInstanceConfigurationBase(object):
     def source(self):
         """
         Gets the source of this CreateInstanceConfigurationBase.
-        The source of the instance configuration:
-        NONE for creating a new instance configuration from the API input. INSTANCE for creating a new instance
-        configuration from an existing instance. The default is NONE.
+        The source of the instance configuration. An instance configuration defines the
+        settings to use when creating Compute instances, including details
+        such as the base image, shape, and metadata. You can also specify the associated resources for the
+        instance, such as block volume attachments and network configuration.
+
+        The following values are supported:
+
+        * `NONE`: Creates an instance configuration using the list of settings that you specify.
+
+        * `INSTANCE`: Creates an instance configuration using an existing instance as a template. The
+        instance configuration uses the same settings as the instance.
 
         Allowed values for this property are: "NONE", "INSTANCE"
 
@@ -226,9 +242,17 @@ class CreateInstanceConfigurationBase(object):
     def source(self, source):
         """
         Sets the source of this CreateInstanceConfigurationBase.
-        The source of the instance configuration:
-        NONE for creating a new instance configuration from the API input. INSTANCE for creating a new instance
-        configuration from an existing instance. The default is NONE.
+        The source of the instance configuration. An instance configuration defines the
+        settings to use when creating Compute instances, including details
+        such as the base image, shape, and metadata. You can also specify the associated resources for the
+        instance, such as block volume attachments and network configuration.
+
+        The following values are supported:
+
+        * `NONE`: Creates an instance configuration using the list of settings that you specify.
+
+        * `INSTANCE`: Creates an instance configuration using an existing instance as a template. The
+        instance configuration uses the same settings as the instance.
 
 
         :param source: The source of this CreateInstanceConfigurationBase.
