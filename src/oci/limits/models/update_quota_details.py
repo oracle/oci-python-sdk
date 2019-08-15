@@ -81,7 +81,7 @@ class UpdateQuotaDetails(object):
     def statements(self):
         """
         Gets the statements of this UpdateQuotaDetails.
-        An array of quota statements written in the declarative language.
+        An array of quota statements written in the declarative quota statement language.
 
 
         :return: The statements of this UpdateQuotaDetails.
@@ -93,7 +93,7 @@ class UpdateQuotaDetails(object):
     def statements(self, statements):
         """
         Sets the statements of this UpdateQuotaDetails.
-        An array of quota statements written in the declarative language.
+        An array of quota statements written in the declarative quota statement language.
 
 
         :param statements: The statements of this UpdateQuotaDetails.

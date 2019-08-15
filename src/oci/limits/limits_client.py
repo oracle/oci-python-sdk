@@ -15,7 +15,7 @@ from .models import limits_type_mapping
 missing = Sentinel("Missing")
 
 
-class QuotasClient(object):
+class LimitsClient(object):
     """
     APIs that interact with the resource limits of a specific resource type
     """
@@ -77,171 +77,31 @@ class QuotasClient(object):
             'service_endpoint_template': 'https://limits.{region}.oci.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
-        self.base_client = BaseClient("quotas", config, signer, limits_type_mapping, **base_client_init_kwargs)
+        self.base_client = BaseClient("limits", config, signer, limits_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
 
-    def create_quota(self, create_quota_details, **kwargs):
+    def get_resource_availability(self, service_name, limit_name, compartment_id, **kwargs):
         """
-        Creates quota
-        Creates a new quota with the details supplied.
+        Get the availability and usage within a compartment for a given resource limit.\n
+        For a given compartmentId, resource limit name, and scope, returns the following:
+          - the number of available resources associated with the given limit
+          - the usage in the selected compartment for the given limit
+          Note: not all resource limits support this API. If the value is not available, the API will return 404.
 
 
-        :param CreateQuotaDetails create_quota_details: (required)
-            Request object for creating a new quota.
+        :param str service_name: (required)
+            The service name of the target quota.
 
-        :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-            particular request, please provide the request ID.
+        :param str limit_name: (required)
+            The limit name for which to fetch the data.
 
-        :param str opc_retry_token: (optional)
-            A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
-            has been deleted and purged from the system, then a retry of the original creation request
-            may be rejected).
+        :param str compartment_id: (required)
+            The OCID of the compartment for which data is being fetched.
 
-        :param obj retry_strategy: (optional)
-            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
-
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
-            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
-
-            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
-
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.limits.models.Quota`
-        :rtype: :class:`~oci.response.Response`
-        """
-        resource_path = "/20181025/quotas/"
-        method = "POST"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "retry_strategy",
-            "opc_request_id",
-            "opc_retry_token"
-        ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                "create_quota got unknown kwargs: {!r}".format(extra_kwargs))
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
-        }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
-
-        retry_strategy = self.retry_strategy
-        if kwargs.get('retry_strategy'):
-            retry_strategy = kwargs.get('retry_strategy')
-
-        if retry_strategy:
-            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
-                self.base_client.add_opc_retry_token_if_needed(header_params)
-            return retry_strategy.make_retrying_call(
-                self.base_client.call_api,
-                resource_path=resource_path,
-                method=method,
-                header_params=header_params,
-                body=create_quota_details,
-                response_type="Quota")
-        else:
-            return self.base_client.call_api(
-                resource_path=resource_path,
-                method=method,
-                header_params=header_params,
-                body=create_quota_details,
-                response_type="Quota")
-
-    def delete_quota(self, quota_id, **kwargs):
-        """
-        Deletes quota
-        Deletes the quota corresponding to the given OCID.
-
-
-        :param str quota_id: (required)
-            The OCID of the quota.
-
-        :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-            particular request, please provide the request ID.
-
-        :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-            will be updated or deleted only if the etag you provide matches the resource's current etag value.
-
-        :param obj retry_strategy: (optional)
-            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
-
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
-            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
-
-            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
-
-        :return: A :class:`~oci.response.Response` object with data of type None
-        :rtype: :class:`~oci.response.Response`
-        """
-        resource_path = "/20181025/quotas/{quotaId}"
-        method = "DELETE"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "retry_strategy",
-            "opc_request_id",
-            "if_match"
-        ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                "delete_quota got unknown kwargs: {!r}".format(extra_kwargs))
-
-        path_params = {
-            "quotaId": quota_id
-        }
-
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
-
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing),
-            "if-match": kwargs.get("if_match", missing)
-        }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
-
-        retry_strategy = self.retry_strategy
-        if kwargs.get('retry_strategy'):
-            retry_strategy = kwargs.get('retry_strategy')
-
-        if retry_strategy:
-            return retry_strategy.make_retrying_call(
-                self.base_client.call_api,
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                header_params=header_params)
-        else:
-            return self.base_client.call_api(
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                header_params=header_params)
-
-    def get_quota(self, quota_id, **kwargs):
-        """
-        Gets quota
-        Gets the quota for the OCID specified.
-
-
-        :param str quota_id: (required)
-            The OCID of the quota.
+        :param str availability_domain: (optional)
+            This field is mandatory if the scopeType of the target resource limit is AD.
+            Otherwise, this field should be omitted.
+            If the above requirements are not met, the API will return a 400 - InvalidParameter response.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -255,24 +115,26 @@ class QuotasClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.limits.models.Quota`
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.limits.models.ResourceAvailability`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/20181025/quotas/{quotaId}"
+        resource_path = "/20190729/services/{serviceName}/limits/{limitName}/resourceAvailability"
         method = "GET"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "availability_domain",
             "opc_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "get_quota got unknown kwargs: {!r}".format(extra_kwargs))
+                "get_resource_availability got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
-            "quotaId": quota_id
+            "serviceName": service_name,
+            "limitName": limit_name
         }
 
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
@@ -280,6 +142,12 @@ class QuotasClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "availabilityDomain": kwargs.get("availability_domain", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -298,48 +166,50 @@ class QuotasClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
-                response_type="Quota")
+                response_type="ResourceAvailability")
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
-                response_type="Quota")
+                response_type="ResourceAvailability")
 
-    def list_quotas(self, compartment_id, **kwargs):
+    def list_limit_definitions(self, compartment_id, **kwargs):
         """
-        Lists quotas
-        Lists all quotas on resources from the given compartment
+        Get the list of resource limits for a service.
+        Includes a list of resource limits that are currently supported.
+        If the 'areQuotasSupported' property is true, you can create quota policies on top of this limit at the
+        compartment level.
 
 
         :param str compartment_id: (required)
             The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
 
-        :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous \"List\" call.
-
-        :param int limit: (optional)
-            The maximum number of items to return in a paginated \"List\" call.
+        :param str service_name: (optional)
+            The target service name.
 
         :param str name: (optional)
-            name
+            Optional field, filter for a specific resource limit.
 
-        :param str lifecycle_state: (optional)
-            Filters returned quotas based on whether the given state.
+        :param str sort_by: (optional)
+            The field to sort by.
 
-            Allowed values are: "ACTIVE"
+            Allowed values are: "name", "description"
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' or 'desc'. By default it will be ascending.
 
             Allowed values are: "ASC", "DESC"
 
-        :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Time created is default ordered as descending. Display name is default ordered as ascending.
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
 
-            Allowed values are: "NAME", "TIMECREATED"
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -353,33 +223,33 @@ class QuotasClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
-        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.limits.models.QuotaSummary`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.limits.models.LimitDefinitionSummary`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/20181025/quotas/"
+        resource_path = "/20190729/limitDefinitions"
         method = "GET"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "page",
-            "limit",
+            "service_name",
             "name",
-            "lifecycle_state",
-            "sort_order",
             "sort_by",
+            "sort_order",
+            "limit",
+            "page",
             "opc_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "list_quotas got unknown kwargs: {!r}".format(extra_kwargs))
+                "list_limit_definitions got unknown kwargs: {!r}".format(extra_kwargs))
 
-        if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["ACTIVE"]
-            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["name", "description"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
-                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
                 )
 
         if 'sort_order' in kwargs:
@@ -389,21 +259,14 @@ class QuotasClient(object):
                     "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
                 )
 
-        if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["NAME", "TIMECREATED"]
-            if kwargs['sort_by'] not in sort_by_allowed_values:
-                raise ValueError(
-                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
-                )
-
         query_params = {
             "compartmentId": compartment_id,
-            "page": kwargs.get("page", missing),
-            "limit": kwargs.get("limit", missing),
+            "serviceName": kwargs.get("service_name", missing),
             "name": kwargs.get("name", missing),
-            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
-            "sortBy": kwargs.get("sort_by", missing)
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -425,35 +288,57 @@ class QuotasClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[QuotaSummary]")
+                response_type="list[LimitDefinitionSummary]")
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[QuotaSummary]")
+                response_type="list[LimitDefinitionSummary]")
 
-    def update_quota(self, quota_id, update_quota_details, **kwargs):
+    def list_limit_values(self, compartment_id, service_name, **kwargs):
         """
-        Updates quota
-        Updates the quota corresponding to given OCID with the details supplied.
+        Get the full list of resource limit values for the given service.
+        Includes a full list of resource limits belonging to a given service.
 
 
-        :param str quota_id: (required)
-            The OCID of the quota.
+        :param str compartment_id: (required)
+            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
 
-        :param UpdateQuotaDetails update_quota_details: (required)
-            Request object for updating a quota.
+        :param str service_name: (required)
+            The target service name
+
+        :param str scope_type: (optional)
+            Filter entries by scope type.
+
+            Allowed values are: "GLOBAL", "REGION", "AD"
+
+        :param str availability_domain: (optional)
+            Filter entries by availability domain. This implies that only AD-specific values will be returned.
+
+        :param str name: (optional)
+            Optional field, can be used to see a specific resource limit value.
+
+        :param str sort_by: (optional)
+            The field to sort by. We will be implicitly sorting by availabilityDomain, as a second level field, if available.
+
+            Allowed values are: "name"
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'asc' or 'desc'. By default it will be ascending.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
             particular request, please provide the request ID.
-
-        :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
-            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
-            will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -463,38 +348,67 @@ class QuotasClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.limits.models.Quota`
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.limits.models.LimitValueSummary`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/20181025/quotas/{quotaId}"
-        method = "PUT"
+        resource_path = "/20190729/limitValues"
+        method = "GET"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "opc_request_id",
-            "if_match"
+            "scope_type",
+            "availability_domain",
+            "name",
+            "sort_by",
+            "sort_order",
+            "limit",
+            "page",
+            "opc_request_id"
         ]
         extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
-                "update_quota got unknown kwargs: {!r}".format(extra_kwargs))
+                "list_limit_values got unknown kwargs: {!r}".format(extra_kwargs))
 
-        path_params = {
-            "quotaId": quota_id
+        if 'scope_type' in kwargs:
+            scope_type_allowed_values = ["GLOBAL", "REGION", "AD"]
+            if kwargs['scope_type'] not in scope_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `scope_type`, must be one of {0}".format(scope_type_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["name"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "serviceName": service_name,
+            "scopeType": kwargs.get("scope_type", missing),
+            "availabilityDomain": kwargs.get("availability_domain", missing),
+            "name": kwargs.get("name", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
         }
-
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
-
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing),
-            "if-match": kwargs.get("if_match", missing)
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -507,15 +421,121 @@ class QuotasClient(object):
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
-                path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
-                body=update_quota_details,
-                response_type="Quota")
+                response_type="list[LimitValueSummary]")
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
-                path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
-                body=update_quota_details,
-                response_type="Quota")
+                response_type="list[LimitValueSummary]")
+
+    def list_services(self, compartment_id, **kwargs):
+        """
+        Returns the list of supported services that have resource limits exposed.
+        Returns the list of supported services.
+        This will include the programmatic service name, along with the friendly service name.
+
+
+        :param str compartment_id: (required)
+            The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+
+        :param str sort_by: (optional)
+            The field to sort by.
+
+            Allowed values are: "name", "description"
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'asc' or 'desc'. By default it will be ascending.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.limits.models.ServiceSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/20190729/services"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "sort_by",
+            "sort_order",
+            "limit",
+            "page",
+            "opc_request_id"
+        ]
+        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_services got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["name", "description"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ServiceSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ServiceSummary]")
