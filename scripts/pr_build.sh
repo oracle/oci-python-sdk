@@ -29,8 +29,7 @@ SDK_VERSION=$(tail -1 src/oci/version.py | cut -d '"' -f2)
 echo SDK Version Number $SDK_VERSION
 
 echo Building Docs
-pip install sphinx==1.6.4 --timeout 120
-pip install sphinx_rtd_theme==0.2.5b2
+pip install -r docs/requirements.txt
 
 touch warnings.txt
 make docs

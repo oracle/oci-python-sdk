@@ -3,6 +3,7 @@ import jinja2
 import oci  # noqa: F401
 import os
 import os.path
+import shutil
 import sys
 
 API_DOC_DIRECTORY = 'docs/api'
@@ -127,15 +128,26 @@ def generate_rst(module_name, service_root_header, target_file_name, service_nam
         models.append('oci.{}.models.{}'.format(module_name, model_info[0]))
 
     template = jinja_environment.get_template('service_root.rst.j2')
-    with open(target_file, 'w') as f:
-        f.write(
-            template.render(
-                service_root_header=service_root_header,
-                module_name=module_name,
-                service_client_classes=service_client_classes,
-                models=models
-            )
-        )
+    content = template.render(service_root_header=service_root_header,
+                              module_name=module_name,
+                              service_client_classes=service_client_classes,
+                              models=models)
+    try:
+        with open(target_file, 'r') as f:
+            existing_content = f.read()
+    except Exception:
+        # Don't care about the exception, just set the existing content such that the file will be generated or overwritten.
+        existing_content = None
+    if content != existing_content:
+        # Clean out existing models so no orphans exist after docs are generated
+        path_to_models = os.path.join(API_DOC_DIRECTORY, target_file_name, "models")
+        if os.path.exists(path_to_models):
+            shutil.rmtree(path_to_models)
+        print("  writing {}".format(target_file))
+        with open(target_file, 'w') as f:
+            f.write(content)
+    else:
+        print("  No changes detected")
 
 
 environment = jinja2.Environment(
