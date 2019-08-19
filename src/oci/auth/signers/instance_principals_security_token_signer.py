@@ -56,15 +56,18 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
     LEAF_CERTIFICATE_URL = '{}/identity/cert.pem'.format(METADATA_URL_BASE)
     LEAF_CERTIFICATE_PRIVATE_KEY_URL = '{}/identity/key.pem'.format(METADATA_URL_BASE)
     INTERMEDIATE_CERTIFICATE_URL = '{}/identity/intermediate.pem'.format(METADATA_URL_BASE)
+    METADATA_AUTH_HEADERS = {'Authorization': 'Bearer Oracle'}
 
     def __init__(self, **kwargs):
         self.leaf_certificate_retriever = UrlBasedCertificateRetriever(
             certificate_url=self.LEAF_CERTIFICATE_URL,
             private_key_url=self.LEAF_CERTIFICATE_PRIVATE_KEY_URL,
-            retry_strategy=INSTANCE_METADATA_URL_CERTIFICATE_RETRIEVER_RETRY_STRATEGY)
+            retry_strategy=INSTANCE_METADATA_URL_CERTIFICATE_RETRIEVER_RETRY_STRATEGY,
+            headers=self.METADATA_AUTH_HEADERS)
         self.intermediate_certificate_retriever = UrlBasedCertificateRetriever(
             certificate_url=self.INTERMEDIATE_CERTIFICATE_URL,
-            retry_strategy=INSTANCE_METADATA_URL_CERTIFICATE_RETRIEVER_RETRY_STRATEGY)
+            retry_strategy=INSTANCE_METADATA_URL_CERTIFICATE_RETRIEVER_RETRY_STRATEGY,
+            headers=self.METADATA_AUTH_HEADERS)
         self.session_key_supplier = SessionKeySupplier()
         self.tenancy_id = auth_utils.get_tenancy_id_from_certificate(self.leaf_certificate_retriever.get_certificate_as_certificate())
         self.initialize_and_return_region()
@@ -93,7 +96,7 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
         if hasattr(self, 'region'):
             return self.region
 
-        response = requests.get(self.GET_REGION_URL, timeout=(10, 60))
+        response = requests.get(self.GET_REGION_URL, timeout=(10, 60), headers=self.METADATA_AUTH_HEADERS)
         region_raw = response.text.strip().lower()
 
         # The region can be something like "phx" but internally we expect "us-phoenix-1", "us-ashburn-1" etc.
