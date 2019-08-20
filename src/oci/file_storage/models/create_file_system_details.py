@@ -37,13 +37,18 @@ class CreateFileSystemDetails(object):
             The value to assign to the defined_tags property of this CreateFileSystemDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this CreateFileSystemDetails.
+        :type kms_key_id: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
             'compartment_id': 'str',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'kms_key_id': 'str'
         }
 
         self.attribute_map = {
@@ -51,7 +56,8 @@ class CreateFileSystemDetails(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'kms_key_id': 'kmsKeyId'
         }
 
         self._availability_domain = None
@@ -59,6 +65,7 @@ class CreateFileSystemDetails(object):
         self._display_name = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._kms_key_id = None
 
     @property
     def availability_domain(self):
@@ -207,6 +214,30 @@ class CreateFileSystemDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this CreateFileSystemDetails.
+        The OCID of KMS key used to encrypt the encryption keys associated with this file system.
+
+
+        :return: The kms_key_id of this CreateFileSystemDetails.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this CreateFileSystemDetails.
+        The OCID of KMS key used to encrypt the encryption keys associated with this file system.
+
+
+        :param kms_key_id: The kms_key_id of this CreateFileSystemDetails.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

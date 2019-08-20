@@ -17,7 +17,7 @@ missing = Sentinel("Missing")
 
 class QuotasClient(object):
     """
-    APIs for managing Compartment Resource Quotas.
+    APIs that interact with the resource limits of a specific resource type
     """
 
     def __init__(self, config, **kwargs):
@@ -73,7 +73,7 @@ class QuotasClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
-            'base_path': '/20181025',
+            'base_path': '/',
             'service_endpoint_template': 'https://limits.{region}.oci.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
@@ -111,7 +111,7 @@ class QuotasClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.limits.models.Quota`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/quotas/"
+        resource_path = "/20181025/quotas/"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -184,7 +184,7 @@ class QuotasClient(object):
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/quotas/{quotaId}"
+        resource_path = "/20181025/quotas/{quotaId}"
         method = "DELETE"
 
         # Don't accept unknown kwargs
@@ -258,7 +258,7 @@ class QuotasClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.limits.models.Quota`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/quotas/{quotaId}"
+        resource_path = "/20181025/quotas/{quotaId}"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -332,7 +332,7 @@ class QuotasClient(object):
             Allowed values are: "ACTIVE"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use, either 'asc' or 'desc'. By default it will be ascending.
 
             Allowed values are: "ASC", "DESC"
 
@@ -356,7 +356,7 @@ class QuotasClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.limits.models.QuotaSummary`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/quotas/"
+        resource_path = "/20181025/quotas/"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -466,7 +466,7 @@ class QuotasClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.limits.models.Quota`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/quotas/{quotaId}"
+        resource_path = "/20181025/quotas/{quotaId}"
         method = "PUT"
 
         # Don't accept unknown kwargs

@@ -49,6 +49,18 @@ class WafConfig(object):
             The value to assign to the origin property of this WafConfig.
         :type origin: str
 
+        :param caching_rules:
+            The value to assign to the caching_rules property of this WafConfig.
+        :type caching_rules: list[CachingRule]
+
+        :param custom_protection_rules:
+            The value to assign to the custom_protection_rules property of this WafConfig.
+        :type custom_protection_rules: list[CustomProtectionRuleSetting]
+
+        :param origin_groups:
+            The value to assign to the origin_groups property of this WafConfig.
+        :type origin_groups: list[str]
+
         :param protection_rules:
             The value to assign to the protection_rules property of this WafConfig.
         :type protection_rules: list[ProtectionRule]
@@ -75,6 +87,9 @@ class WafConfig(object):
             'human_interaction_challenge': 'HumanInteractionChallenge',
             'js_challenge': 'JsChallenge',
             'origin': 'str',
+            'caching_rules': 'list[CachingRule]',
+            'custom_protection_rules': 'list[CustomProtectionRuleSetting]',
+            'origin_groups': 'list[str]',
             'protection_rules': 'list[ProtectionRule]',
             'protection_settings': 'ProtectionSettings',
             'threat_feeds': 'list[ThreatFeed]',
@@ -90,6 +105,9 @@ class WafConfig(object):
             'human_interaction_challenge': 'humanInteractionChallenge',
             'js_challenge': 'jsChallenge',
             'origin': 'origin',
+            'caching_rules': 'cachingRules',
+            'custom_protection_rules': 'customProtectionRules',
+            'origin_groups': 'originGroups',
             'protection_rules': 'protectionRules',
             'protection_settings': 'protectionSettings',
             'threat_feeds': 'threatFeeds',
@@ -104,6 +122,9 @@ class WafConfig(object):
         self._human_interaction_challenge = None
         self._js_challenge = None
         self._origin = None
+        self._caching_rules = None
+        self._custom_protection_rules = None
+        self._origin_groups = None
         self._protection_rules = None
         self._protection_settings = None
         self._threat_feeds = None
@@ -300,6 +321,78 @@ class WafConfig(object):
         :type: str
         """
         self._origin = origin
+
+    @property
+    def caching_rules(self):
+        """
+        Gets the caching_rules of this WafConfig.
+        A list of caching rules applied to the web application.
+
+
+        :return: The caching_rules of this WafConfig.
+        :rtype: list[CachingRule]
+        """
+        return self._caching_rules
+
+    @caching_rules.setter
+    def caching_rules(self, caching_rules):
+        """
+        Sets the caching_rules of this WafConfig.
+        A list of caching rules applied to the web application.
+
+
+        :param caching_rules: The caching_rules of this WafConfig.
+        :type: list[CachingRule]
+        """
+        self._caching_rules = caching_rules
+
+    @property
+    def custom_protection_rules(self):
+        """
+        Gets the custom_protection_rules of this WafConfig.
+        A list of the custom protection rule OCIDs and their actions.
+
+
+        :return: The custom_protection_rules of this WafConfig.
+        :rtype: list[CustomProtectionRuleSetting]
+        """
+        return self._custom_protection_rules
+
+    @custom_protection_rules.setter
+    def custom_protection_rules(self, custom_protection_rules):
+        """
+        Sets the custom_protection_rules of this WafConfig.
+        A list of the custom protection rule OCIDs and their actions.
+
+
+        :param custom_protection_rules: The custom_protection_rules of this WafConfig.
+        :type: list[CustomProtectionRuleSetting]
+        """
+        self._custom_protection_rules = custom_protection_rules
+
+    @property
+    def origin_groups(self):
+        """
+        Gets the origin_groups of this WafConfig.
+        The list of origin group references that provide support for additional origin servers. A list of combined unique origin servers from `origin` and `originGroups` will be used.
+
+
+        :return: The origin_groups of this WafConfig.
+        :rtype: list[str]
+        """
+        return self._origin_groups
+
+    @origin_groups.setter
+    def origin_groups(self, origin_groups):
+        """
+        Sets the origin_groups of this WafConfig.
+        The list of origin group references that provide support for additional origin servers. A list of combined unique origin servers from `origin` and `originGroups` will be used.
+
+
+        :param origin_groups: The origin_groups of this WafConfig.
+        :type: list[str]
+        """
+        self._origin_groups = origin_groups
 
     @property
     def protection_rules(self):

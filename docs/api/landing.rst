@@ -30,6 +30,7 @@ API Reference
 * :doc:`Kms Crypto <key_management/client/oci.key_management.KmsCryptoClient>`
 * :doc:`Kms Management <key_management/client/oci.key_management.KmsManagementClient>`
 * :doc:`Kms Vault <key_management/client/oci.key_management.KmsVaultClient>`
+* :doc:`Limits <limits/client/oci.limits.LimitsClient>`
 * :doc:`Quotas <limits/client/oci.limits.QuotasClient>`
 * :doc:`Load Balancer <load_balancer/client/oci.load_balancer.LoadBalancerClient>`
 * :doc:`Monitoring <monitoring/client/oci.monitoring.MonitoringClient>`

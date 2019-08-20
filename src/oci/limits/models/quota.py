@@ -177,7 +177,7 @@ class Quota(object):
     def statements(self):
         """
         **[Required]** Gets the statements of this Quota.
-        An array of one or more quota statements written in the declarative language.
+        An array of one or more quota statements written in the declarative quota statement language.
 
 
         :return: The statements of this Quota.
@@ -189,7 +189,7 @@ class Quota(object):
     def statements(self, statements):
         """
         Sets the statements of this Quota.
-        An array of one or more quota statements written in the declarative language.
+        An array of one or more quota statements written in the declarative quota statement language.
 
 
         :param statements: The statements of this Quota.

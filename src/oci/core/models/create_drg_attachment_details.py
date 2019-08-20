@@ -111,10 +111,13 @@ class CreateDrgAttachmentDetails(object):
         table. The Networking service does NOT automatically associate the attached VCN's default route table
         with the DRG attachment.
 
-        For information about why you would associate a route table with a DRG attachment, see
-        `Advanced Scenario: Transit Routing`__.
+        For information about why you would associate a route table with a DRG attachment, see:
+
+          * `Transit Routing: Access to Multiple VCNs in Same Region`__
+          * `Transit Routing: Private Access to Oracle Services`__
 
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitrouting.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitroutingoracleservices.htm
 
 
         :return: The route_table_id of this CreateDrgAttachmentDetails.
@@ -132,10 +135,13 @@ class CreateDrgAttachmentDetails(object):
         table. The Networking service does NOT automatically associate the attached VCN's default route table
         with the DRG attachment.
 
-        For information about why you would associate a route table with a DRG attachment, see
-        `Advanced Scenario: Transit Routing`__.
+        For information about why you would associate a route table with a DRG attachment, see:
+
+          * `Transit Routing: Access to Multiple VCNs in Same Region`__
+          * `Transit Routing: Private Access to Oracle Services`__
 
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitrouting.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitroutingoracleservices.htm
 
 
         :param route_table_id: The route_table_id of this CreateDrgAttachmentDetails.

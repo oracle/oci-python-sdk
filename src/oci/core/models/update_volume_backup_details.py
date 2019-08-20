@@ -84,7 +84,7 @@ class UpdateVolumeBackupDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateVolumeBackupDetails.
-        A friendly user-specified name for the volume backup.
+        A user-friendly name for the volume backup.
         Avoid entering confidential information.
 
 
@@ -97,7 +97,7 @@ class UpdateVolumeBackupDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateVolumeBackupDetails.
-        A friendly user-specified name for the volume backup.
+        A user-friendly name for the volume backup.
         Avoid entering confidential information.
 
 

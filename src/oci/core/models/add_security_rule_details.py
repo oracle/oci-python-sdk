@@ -141,7 +141,7 @@ class AddSecurityRuleDetails(object):
     def description(self):
         """
         Gets the description of this AddSecurityRuleDetails.
-        An optional description of your choice for the rule.
+        An optional description of your choice for the rule. Avoid entering confidential information.
 
 
         :return: The description of this AddSecurityRuleDetails.
@@ -153,7 +153,7 @@ class AddSecurityRuleDetails(object):
     def description(self, description):
         """
         Sets the description of this AddSecurityRuleDetails.
-        An optional description of your choice for the rule.
+        An optional description of your choice for the rule. Avoid entering confidential information.
 
 
         :param description: The description of this AddSecurityRuleDetails.
@@ -171,6 +171,7 @@ class AddSecurityRuleDetails(object):
         Allowed values:
 
           * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`
+            Note that IPv6 addressing is currently supported only in the Government Cloud.
 
           * The `cidrBlock` value for a :class:`Service`, if you're
             setting up a security rule for traffic destined for a particular `Service` through
@@ -196,6 +197,7 @@ class AddSecurityRuleDetails(object):
         Allowed values:
 
           * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`
+            Note that IPv6 addressing is currently supported only in the Government Cloud.
 
           * The `cidrBlock` value for a :class:`Service`, if you're
             setting up a security rule for traffic destined for a particular `Service` through
@@ -421,6 +423,7 @@ class AddSecurityRuleDetails(object):
         Allowed values:
 
           * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`
+            Note that IPv6 addressing is currently supported only in the Government Cloud.
 
           * The `cidrBlock` value for a :class:`Service`, if you're
             setting up a security rule for traffic coming from a particular `Service` through
@@ -446,6 +449,7 @@ class AddSecurityRuleDetails(object):
         Allowed values:
 
           * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`
+            Note that IPv6 addressing is currently supported only in the Government Cloud.
 
           * The `cidrBlock` value for a :class:`Service`, if you're
             setting up a security rule for traffic coming from a particular `Service` through
@@ -473,7 +477,7 @@ class AddSecurityRuleDetails(object):
             :class:`Service` (the rule is for traffic coming from a
             particular `Service` through a service gateway).
 
-          * `NETWORK_SECURITY_GROUP`: If the rule's `destination` is the OCID of a
+          * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the OCID of a
             :class:`NetworkSecurityGroup`.
 
         Allowed values for this property are: "CIDR_BLOCK", "SERVICE_CIDR_BLOCK", "NETWORK_SECURITY_GROUP"
@@ -496,7 +500,7 @@ class AddSecurityRuleDetails(object):
             :class:`Service` (the rule is for traffic coming from a
             particular `Service` through a service gateway).
 
-          * `NETWORK_SECURITY_GROUP`: If the rule's `destination` is the OCID of a
+          * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the OCID of a
             :class:`NetworkSecurityGroup`.
 
 

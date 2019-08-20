@@ -84,7 +84,7 @@ class UpdateVolumeGroupBackupDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateVolumeGroupBackupDetails.
-        A friendly user-specified name for the volume group backup.
+        A user-friendly name for the volume group backup. Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateVolumeGroupBackupDetails.
@@ -96,7 +96,7 @@ class UpdateVolumeGroupBackupDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateVolumeGroupBackupDetails.
-        A friendly user-specified name for the volume group backup.
+        A user-friendly name for the volume group backup. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateVolumeGroupBackupDetails.

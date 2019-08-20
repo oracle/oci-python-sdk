@@ -220,7 +220,7 @@ class NoneRetryStrategy(object):
 
         :return: the result of calling func_ref
         """
-        func_ref(*func_args, **func_kwargs)
+        return func_ref(*func_args, **func_kwargs)
 
 
 class ExponentialBackoffRetryStrategyBase(object):

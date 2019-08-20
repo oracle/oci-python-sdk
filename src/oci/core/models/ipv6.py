@@ -15,6 +15,8 @@ class Ipv6(object):
     You can create and assign an IPv6 to any VNIC that is in an IPv6-enabled subnet in an
     IPv6-enabled VCN.
 
+    **Note:** IPv6 addressing is currently supported only in the Government Cloud.
+
     For important details about IPv6 addressing in a VCN, see `IPv6 Addresses`__.
 
     __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
