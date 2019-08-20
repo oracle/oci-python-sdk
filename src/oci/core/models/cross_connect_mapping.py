@@ -250,6 +250,8 @@ class CrossConnectMapping(object):
 
         There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
 
+        Note that IPv6 addressing is currently supported only in the Government Cloud.
+
         Example: `2001:db8::1/64`
 
 
@@ -270,6 +272,8 @@ class CrossConnectMapping(object):
 
         There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
 
+        Note that IPv6 addressing is currently supported only in the Government Cloud.
+
         Example: `2001:db8::1/64`
 
 
@@ -289,6 +293,8 @@ class CrossConnectMapping(object):
 
         There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
 
+        Note that IPv6 addressing is currently supported only in the Government Cloud.
+
         Example: `2001:db8::2/64`
 
 
@@ -307,6 +313,8 @@ class CrossConnectMapping(object):
         a provider's edge router, the provider specifies this.
 
         There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
+
+        Note that IPv6 addressing is currently supported only in the Government Cloud.
 
         Example: `2001:db8::2/64`
 

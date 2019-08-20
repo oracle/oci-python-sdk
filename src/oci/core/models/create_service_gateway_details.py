@@ -207,7 +207,7 @@ class CreateServiceGatewayDetails(object):
         with the service gateway.
 
         For information about why you would associate a route table with a service gateway, see
-        `Transit Routing: Private Access to Oracle Services Network`__.
+        `Transit Routing: Private Access to Oracle Services`__.
 
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitroutingoracleservices.htm
 
@@ -228,7 +228,7 @@ class CreateServiceGatewayDetails(object):
         with the service gateway.
 
         For information about why you would associate a route table with a service gateway, see
-        `Transit Routing: Private Access to Oracle Services Network`__.
+        `Transit Routing: Private Access to Oracle Services`__.
 
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitroutingoracleservices.htm
 

@@ -58,12 +58,17 @@ Core Services
     oci.core.models.ChangeCpeCompartmentDetails
     oci.core.models.ChangeCrossConnectCompartmentDetails
     oci.core.models.ChangeCrossConnectGroupCompartmentDetails
+    oci.core.models.ChangeDhcpOptionsCompartmentDetails
     oci.core.models.ChangeIPSecConnectionCompartmentDetails
     oci.core.models.ChangeImageCompartmentDetails
     oci.core.models.ChangeInstanceCompartmentDetails
     oci.core.models.ChangeInstanceConfigurationCompartmentDetails
     oci.core.models.ChangeInstancePoolCompartmentDetails
+    oci.core.models.ChangeInternetGatewayCompartmentDetails
+    oci.core.models.ChangeLocalPeeringGatewayCompartmentDetails
     oci.core.models.ChangeNatGatewayCompartmentDetails
+    oci.core.models.ChangeNetworkSecurityGroupCompartmentDetails
+    oci.core.models.ChangePublicIpCompartmentDetails
     oci.core.models.ChangeRemotePeeringConnectionCompartmentDetails
     oci.core.models.ChangeRouteTableCompartmentDetails
     oci.core.models.ChangeSecurityListCompartmentDetails

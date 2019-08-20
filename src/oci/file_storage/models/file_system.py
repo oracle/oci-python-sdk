@@ -84,6 +84,10 @@ class FileSystem(object):
             The value to assign to the defined_tags property of this FileSystem.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this FileSystem.
+        :type kms_key_id: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -94,7 +98,8 @@ class FileSystem(object):
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'kms_key_id': 'str'
         }
 
         self.attribute_map = {
@@ -106,7 +111,8 @@ class FileSystem(object):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'kms_key_id': 'kmsKeyId'
         }
 
         self._availability_domain = None
@@ -118,6 +124,7 @@ class FileSystem(object):
         self._time_created = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._kms_key_id = None
 
     @property
     def availability_domain(self):
@@ -386,6 +393,30 @@ class FileSystem(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this FileSystem.
+        The OCID of KMS key used to encrypt the encryption keys associated with this file system.
+
+
+        :return: The kms_key_id of this FileSystem.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this FileSystem.
+        The OCID of KMS key used to encrypt the encryption keys associated with this file system.
+
+
+        :param kms_key_id: The kms_key_id of this FileSystem.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

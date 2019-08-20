@@ -197,6 +197,7 @@ class SecurityRule(object):
         Allowed values:
 
           * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`
+            Note that IPv6 addressing is currently supported only in the Government Cloud.
 
           * The `cidrBlock` value for a :class:`Service`, if you're
             setting up a security rule for traffic destined for a particular `Service` through
@@ -222,6 +223,7 @@ class SecurityRule(object):
         Allowed values:
 
           * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`
+            Note that IPv6 addressing is currently supported only in the Government Cloud.
 
           * The `cidrBlock` value for a :class:`Service`, if you're
             setting up a security rule for traffic destined for a particular `Service` through
@@ -501,6 +503,7 @@ class SecurityRule(object):
         Allowed values:
 
           * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`
+            Note that IPv6 addressing is currently supported only in the Government Cloud.
 
           * The `cidrBlock` value for a :class:`Service`, if you're
             setting up a security rule for traffic coming from a particular `Service` through
@@ -526,6 +529,7 @@ class SecurityRule(object):
         Allowed values:
 
           * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`
+            Note that IPv6 addressing is currently supported only in the Government Cloud.
 
           * The `cidrBlock` value for a :class:`Service`, if you're
             setting up a security rule for traffic coming from a particular `Service` through
@@ -553,7 +557,7 @@ class SecurityRule(object):
             :class:`Service` (the rule is for traffic coming from a
             particular `Service` through a service gateway).
 
-          * `NETWORK_SECURITY_GROUP`: If the rule's `destination` is the OCID of a
+          * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the OCID of a
             :class:`NetworkSecurityGroup`.
 
         Allowed values for this property are: "CIDR_BLOCK", "SERVICE_CIDR_BLOCK", "NETWORK_SECURITY_GROUP", 'UNKNOWN_ENUM_VALUE'.
@@ -577,7 +581,7 @@ class SecurityRule(object):
             :class:`Service` (the rule is for traffic coming from a
             particular `Service` through a service gateway).
 
-          * `NETWORK_SECURITY_GROUP`: If the rule's `destination` is the OCID of a
+          * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the OCID of a
             :class:`NetworkSecurityGroup`.
 
 

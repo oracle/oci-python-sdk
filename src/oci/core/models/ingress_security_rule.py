@@ -209,7 +209,8 @@ class IngressSecurityRule(object):
 
         Allowed values:
 
-          * IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`
+          * IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
+            Note that IPv6 addressing is currently supported only in the Government Cloud.
 
           * The `cidrBlock` value for a :class:`Service`, if you're
             setting up a security list rule for traffic coming from a particular `Service` through
@@ -230,7 +231,8 @@ class IngressSecurityRule(object):
 
         Allowed values:
 
-          * IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`
+          * IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`.
+            Note that IPv6 addressing is currently supported only in the Government Cloud.
 
           * The `cidrBlock` value for a :class:`Service`, if you're
             setting up a security list rule for traffic coming from a particular `Service` through

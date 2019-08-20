@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.3.1 - 2019-08-20
+====================
+
+Added
+-----
+* Support for the Limits service
+* Support for archiving to Object Storage in the Streaming service
+* Support for etags on resources in the Streaming service
+* Support for Key Management service (KMS) encryption of file systems in the File Storage service
+* Support for moving public IP, DHCP, local peering gateway, internet gateway, network security group, and DRG attachment resources across compartments in the Networking service
+* Support for multi-origin, basic cache, certificate mapping, and OCI Monitoring service integration in the Web Application Acceleration and Security service
+
+====================
 2.3.0 - 2019-08-13
 ====================
 

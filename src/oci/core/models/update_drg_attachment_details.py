@@ -69,11 +69,15 @@ class UpdateDrgAttachmentDetails(object):
     def route_table_id(self):
         """
         Gets the route_table_id of this UpdateDrgAttachmentDetails.
-        The OCID of the route table the DRG attachment will use. For information about why you
-        would associate a route table with a DRG attachment, see
-        `Advanced Scenario: Transit Routing`__.
+        The OCID of the route table the DRG attachment will use.
+
+        For information about why you would associate a route table with a DRG attachment, see:
+
+          * `Transit Routing: Access to Multiple VCNs in Same Region`__
+          * `Transit Routing: Private Access to Oracle Services`__
 
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitrouting.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitroutingoracleservices.htm
 
 
         :return: The route_table_id of this UpdateDrgAttachmentDetails.
@@ -85,11 +89,15 @@ class UpdateDrgAttachmentDetails(object):
     def route_table_id(self, route_table_id):
         """
         Sets the route_table_id of this UpdateDrgAttachmentDetails.
-        The OCID of the route table the DRG attachment will use. For information about why you
-        would associate a route table with a DRG attachment, see
-        `Advanced Scenario: Transit Routing`__.
+        The OCID of the route table the DRG attachment will use.
+
+        For information about why you would associate a route table with a DRG attachment, see:
+
+          * `Transit Routing: Access to Multiple VCNs in Same Region`__
+          * `Transit Routing: Private Access to Oracle Services`__
 
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitrouting.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Tasks/transitroutingoracleservices.htm
 
 
         :param route_table_id: The route_table_id of this UpdateDrgAttachmentDetails.

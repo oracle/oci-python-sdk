@@ -392,7 +392,8 @@ class ComputeManagementClient(object):
     def create_instance_configuration(self, create_instance_configuration, **kwargs):
         """
         CreateInstanceConfiguration
-        Creates an instance configuration
+        Creates an instance configuration. An instance configuration is a template that defines the
+        settings to use when creating Compute instances.
 
 
         :param CreateInstanceConfigurationBase create_instance_configuration: (required)
@@ -890,7 +891,13 @@ class ComputeManagementClient(object):
     def launch_instance_configuration(self, instance_configuration_id, instance_configuration, **kwargs):
         """
         LaunchInstanceConfiguration
-        Launch an instance from an instance configuration
+        Launches an instance from an instance configuration.
+
+        If the instance configuration does not include all of the parameters that are
+        required to launch an instance, such as the availability domain and subnet ID, you must
+        provide these parameters when you launch an instance from the instance configuration.
+        For more information, see the :class:`InstanceConfiguration`
+        resource.
 
 
         :param str instance_configuration_id: (required)
@@ -974,7 +981,7 @@ class ComputeManagementClient(object):
     def list_instance_configurations(self, compartment_id, **kwargs):
         """
         ListInstanceConfigurations
-        Lists the available instanceConfigurations in the specific compartment.
+        Lists the instance configurations in the specified compartment.
 
 
         :param str compartment_id: (required)
@@ -1794,7 +1801,7 @@ class ComputeManagementClient(object):
     def update_instance_configuration(self, instance_configuration_id, update_instance_configuration_details, **kwargs):
         """
         UpdateInstanceConfiguration
-        Updates the freeFormTags, definedTags, and display name of an instance configuration.
+        Updates the free-form tags, defined tags, and display name of an instance configuration.
 
 
         :param str instance_configuration_id: (required)

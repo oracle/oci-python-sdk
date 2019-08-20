@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateInstanceConfigurationFromInstanceDetails(CreateInstanceConfigurationBase):
     """
-    Create an instance configuration from an existing instance.
+    Details for creating an instance configuration using an existing instance as a template.
     """
 
     def __init__(self, **kwargs):
@@ -74,7 +74,10 @@ class CreateInstanceConfigurationFromInstanceDetails(CreateInstanceConfiguration
     def instance_id(self):
         """
         **[Required]** Gets the instance_id of this CreateInstanceConfigurationFromInstanceDetails.
-        The ID of the instance that will be used to create instance configuration.
+        The `OCID`__ of the instance to use to create the
+        instance configuration.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The instance_id of this CreateInstanceConfigurationFromInstanceDetails.
@@ -86,7 +89,10 @@ class CreateInstanceConfigurationFromInstanceDetails(CreateInstanceConfiguration
     def instance_id(self, instance_id):
         """
         Sets the instance_id of this CreateInstanceConfigurationFromInstanceDetails.
-        The ID of the instance that will be used to create instance configuration.
+        The `OCID`__ of the instance to use to create the
+        instance configuration.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param instance_id: The instance_id of this CreateInstanceConfigurationFromInstanceDetails.

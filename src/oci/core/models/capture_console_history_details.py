@@ -92,6 +92,7 @@ class CaptureConsoleHistoryDetails(object):
         """
         Gets the display_name of this CaptureConsoleHistoryDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :return: The display_name of this CaptureConsoleHistoryDetails.
@@ -104,6 +105,7 @@ class CaptureConsoleHistoryDetails(object):
         """
         Sets the display_name of this CaptureConsoleHistoryDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CaptureConsoleHistoryDetails.

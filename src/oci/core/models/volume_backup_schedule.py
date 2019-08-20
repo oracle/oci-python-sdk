@@ -118,7 +118,7 @@ class VolumeBackupSchedule(object):
     @property
     def offset_seconds(self):
         """
-        **[Required]** Gets the offset_seconds of this VolumeBackupSchedule.
+        Gets the offset_seconds of this VolumeBackupSchedule.
         The number of seconds that the backup time should be shifted from the default interval boundaries specified by the period. Backup time = Frequency start time + Offset.
 
 

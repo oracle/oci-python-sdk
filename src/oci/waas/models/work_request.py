@@ -26,6 +26,22 @@ class WorkRequest(object):
     #: This constant has a value of "DELETE_WAAS_POLICY"
     OPERATION_TYPE_DELETE_WAAS_POLICY = "DELETE_WAAS_POLICY"
 
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "PURGE_WAAS_POLICY_CACHE"
+    OPERATION_TYPE_PURGE_WAAS_POLICY_CACHE = "PURGE_WAAS_POLICY_CACHE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_CUSTOM_PROTECTION_RULE"
+    OPERATION_TYPE_CREATE_CUSTOM_PROTECTION_RULE = "CREATE_CUSTOM_PROTECTION_RULE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_CUSTOM_PROTECTION_RULE"
+    OPERATION_TYPE_UPDATE_CUSTOM_PROTECTION_RULE = "UPDATE_CUSTOM_PROTECTION_RULE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_CUSTOM_PROTECTION_RULE"
+    OPERATION_TYPE_DELETE_CUSTOM_PROTECTION_RULE = "DELETE_CUSTOM_PROTECTION_RULE"
+
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -61,7 +77,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "CREATE_WAAS_POLICY", "UPDATE_WAAS_POLICY", "DELETE_WAAS_POLICY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_WAAS_POLICY", "UPDATE_WAAS_POLICY", "DELETE_WAAS_POLICY", "PURGE_WAAS_POLICY_CACHE", "CREATE_CUSTOM_PROTECTION_RULE", "UPDATE_CUSTOM_PROTECTION_RULE", "DELETE_CUSTOM_PROTECTION_RULE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -178,7 +194,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         A description of the operation requested by the work request.
 
-        Allowed values for this property are: "CREATE_WAAS_POLICY", "UPDATE_WAAS_POLICY", "DELETE_WAAS_POLICY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_WAAS_POLICY", "UPDATE_WAAS_POLICY", "DELETE_WAAS_POLICY", "PURGE_WAAS_POLICY_CACHE", "CREATE_CUSTOM_PROTECTION_RULE", "UPDATE_CUSTOM_PROTECTION_RULE", "DELETE_CUSTOM_PROTECTION_RULE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -197,7 +213,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["CREATE_WAAS_POLICY", "UPDATE_WAAS_POLICY", "DELETE_WAAS_POLICY"]
+        allowed_values = ["CREATE_WAAS_POLICY", "UPDATE_WAAS_POLICY", "DELETE_WAAS_POLICY", "PURGE_WAAS_POLICY_CACHE", "CREATE_CUSTOM_PROTECTION_RULE", "UPDATE_CUSTOM_PROTECTION_RULE", "DELETE_CUSTOM_PROTECTION_RULE"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
