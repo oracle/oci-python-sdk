@@ -1,7 +1,7 @@
 # coding: utf-8
 # Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
-from oci.regions import endpoint_for, REGIONS_SHORT_NAMES, REGIONS, REGION_REALMS
+from oci.regions import endpoint_for, REGIONS_SHORT_NAMES, REGIONS, REGION_REALMS, REALMS
 from oci._vendor import six
 
 
@@ -75,3 +75,4 @@ def test_short_name_to_realm():
 def test_region_to_realm():
     for region in REGIONS:
         assert(region in REGION_REALMS)
+        assert(REGION_REALMS[region] in REALMS)
