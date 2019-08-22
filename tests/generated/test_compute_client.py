@@ -188,6 +188,47 @@ def test_capture_console_history(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="computeSharedOwnershipVmAndBm" email="compute_dev_us_grp@oracle.com" jiraProject="BMI" opsJiraProject="NONE"
+def test_change_dedicated_vm_host_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangeDedicatedVmHostCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'ChangeDedicatedVmHostCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangeDedicatedVmHostCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.change_dedicated_vm_host_compartment(
+                dedicated_vm_host_id=request.pop(util.camelize('dedicated_vm_host_id')),
+                change_dedicated_vm_host_compartment_details=request.pop(util.camelize('change_dedicated_vm_host_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangeDedicatedVmHostCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_dedicated_vm_host_compartment',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="computeImaging" email="imaging_dev_us_grp@oracle.com" jiraProject="COM" opsJiraProject="COM"
 def test_change_image_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ChangeImageCompartment'):
@@ -305,6 +346,46 @@ def test_create_app_catalog_subscription(testing_service_client):
             result,
             service_error,
             'appCatalogSubscription',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_create_dedicated_vm_host(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'CreateDedicatedVmHost'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'CreateDedicatedVmHost')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='CreateDedicatedVmHost')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.create_dedicated_vm_host(
+                create_dedicated_vm_host_details=request.pop(util.camelize('create_dedicated_vm_host_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'CreateDedicatedVmHost',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dedicatedVmHost',
             False,
             False
         )
@@ -467,6 +548,46 @@ def test_delete_console_history(testing_service_client):
             result,
             service_error,
             'delete_console_history',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_delete_dedicated_vm_host(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'DeleteDedicatedVmHost'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'DeleteDedicatedVmHost')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='DeleteDedicatedVmHost')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.delete_dedicated_vm_host(
+                dedicated_vm_host_id=request.pop(util.camelize('dedicated_vm_host_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'DeleteDedicatedVmHost',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_dedicated_vm_host',
             True,
             False
         )
@@ -950,6 +1071,46 @@ def test_get_console_history_content(testing_service_client):
             result,
             service_error,
             'str',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_get_dedicated_vm_host(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetDedicatedVmHost'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'GetDedicatedVmHost')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetDedicatedVmHost')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.get_dedicated_vm_host(
+                dedicated_vm_host_id=request.pop(util.camelize('dedicated_vm_host_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetDedicatedVmHost',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dedicatedVmHost',
             False,
             False
         )
@@ -1571,6 +1732,245 @@ def test_list_console_histories(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_list_dedicated_vm_host_instance_shapes(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListDedicatedVmHostInstanceShapes'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'ListDedicatedVmHostInstanceShapes')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListDedicatedVmHostInstanceShapes')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.list_dedicated_vm_host_instance_shapes(
+                compartment_id=request.pop(util.camelize('compartment_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_dedicated_vm_host_instance_shapes(
+                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_dedicated_vm_host_instance_shapes(
+                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListDedicatedVmHostInstanceShapes',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dedicatedVmHostInstanceShapeSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_list_dedicated_vm_host_instances(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListDedicatedVmHostInstances'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'ListDedicatedVmHostInstances')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListDedicatedVmHostInstances')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.list_dedicated_vm_host_instances(
+                compartment_id=request.pop(util.camelize('compartment_id')),
+                dedicated_vm_host_id=request.pop(util.camelize('dedicated_vm_host_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_dedicated_vm_host_instances(
+                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    dedicated_vm_host_id=request.pop(util.camelize('dedicated_vm_host_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_dedicated_vm_host_instances(
+                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        dedicated_vm_host_id=request.pop(util.camelize('dedicated_vm_host_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListDedicatedVmHostInstances',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dedicatedVmHostInstanceSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_list_dedicated_vm_host_shapes(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListDedicatedVmHostShapes'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'ListDedicatedVmHostShapes')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListDedicatedVmHostShapes')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.list_dedicated_vm_host_shapes(
+                compartment_id=request.pop(util.camelize('compartment_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_dedicated_vm_host_shapes(
+                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_dedicated_vm_host_shapes(
+                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListDedicatedVmHostShapes',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dedicatedVmHostShapeSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_list_dedicated_vm_hosts(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListDedicatedVmHosts'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'ListDedicatedVmHosts')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListDedicatedVmHosts')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.list_dedicated_vm_hosts(
+                compartment_id=request.pop(util.camelize('compartment_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_dedicated_vm_hosts(
+                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_dedicated_vm_hosts(
+                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListDedicatedVmHosts',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dedicatedVmHostSummary',
+            False,
+            True
+        )
+
+
 # IssueRoutingInfo tag="computeImaging" email="imaging_dev_us_grp@oracle.com" jiraProject="COM" opsJiraProject="COM"
 def test_list_images(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListImages'):
@@ -2060,6 +2460,47 @@ def test_update_console_history(testing_service_client):
             result,
             service_error,
             'consoleHistory',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
+def test_update_dedicated_vm_host(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'UpdateDedicatedVmHost'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'UpdateDedicatedVmHost')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateDedicatedVmHost')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.update_dedicated_vm_host(
+                dedicated_vm_host_id=request.pop(util.camelize('dedicated_vm_host_id')),
+                update_dedicated_vm_host_details=request.pop(util.camelize('update_dedicated_vm_host_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'UpdateDedicatedVmHost',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dedicatedVmHost',
             False,
             False
         )

@@ -37,6 +37,7 @@ from .change_boot_volume_compartment_details import ChangeBootVolumeCompartmentD
 from .change_cpe_compartment_details import ChangeCpeCompartmentDetails
 from .change_cross_connect_compartment_details import ChangeCrossConnectCompartmentDetails
 from .change_cross_connect_group_compartment_details import ChangeCrossConnectGroupCompartmentDetails
+from .change_dedicated_vm_host_compartment_details import ChangeDedicatedVmHostCompartmentDetails
 from .change_dhcp_options_compartment_details import ChangeDhcpOptionsCompartmentDetails
 from .change_ip_sec_connection_compartment_details import ChangeIPSecConnectionCompartmentDetails
 from .change_image_compartment_details import ChangeImageCompartmentDetails
@@ -71,6 +72,7 @@ from .create_boot_volume_details import CreateBootVolumeDetails
 from .create_cpe_details import CreateCpeDetails
 from .create_cross_connect_details import CreateCrossConnectDetails
 from .create_cross_connect_group_details import CreateCrossConnectGroupDetails
+from .create_dedicated_vm_host_details import CreateDedicatedVmHostDetails
 from .create_dhcp_details import CreateDhcpDetails
 from .create_drg_attachment_details import CreateDrgAttachmentDetails
 from .create_drg_details import CreateDrgDetails
@@ -111,6 +113,11 @@ from .cross_connect_location import CrossConnectLocation
 from .cross_connect_mapping import CrossConnectMapping
 from .cross_connect_port_speed_shape import CrossConnectPortSpeedShape
 from .cross_connect_status import CrossConnectStatus
+from .dedicated_vm_host import DedicatedVmHost
+from .dedicated_vm_host_instance_shape_summary import DedicatedVmHostInstanceShapeSummary
+from .dedicated_vm_host_instance_summary import DedicatedVmHostInstanceSummary
+from .dedicated_vm_host_shape_summary import DedicatedVmHostShapeSummary
+from .dedicated_vm_host_summary import DedicatedVmHostSummary
 from .delete_virtual_circuit_public_prefix_details import DeleteVirtualCircuitPublicPrefixDetails
 from .detach_load_balancer_details import DetachLoadBalancerDetails
 from .device import Device
@@ -211,6 +218,7 @@ from .update_console_history_details import UpdateConsoleHistoryDetails
 from .update_cpe_details import UpdateCpeDetails
 from .update_cross_connect_details import UpdateCrossConnectDetails
 from .update_cross_connect_group_details import UpdateCrossConnectGroupDetails
+from .update_dedicated_vm_host_details import UpdateDedicatedVmHostDetails
 from .update_dhcp_details import UpdateDhcpDetails
 from .update_drg_attachment_details import UpdateDrgAttachmentDetails
 from .update_drg_details import UpdateDrgDetails
@@ -306,6 +314,7 @@ core_type_mapping = {
     "ChangeCpeCompartmentDetails": ChangeCpeCompartmentDetails,
     "ChangeCrossConnectCompartmentDetails": ChangeCrossConnectCompartmentDetails,
     "ChangeCrossConnectGroupCompartmentDetails": ChangeCrossConnectGroupCompartmentDetails,
+    "ChangeDedicatedVmHostCompartmentDetails": ChangeDedicatedVmHostCompartmentDetails,
     "ChangeDhcpOptionsCompartmentDetails": ChangeDhcpOptionsCompartmentDetails,
     "ChangeIPSecConnectionCompartmentDetails": ChangeIPSecConnectionCompartmentDetails,
     "ChangeImageCompartmentDetails": ChangeImageCompartmentDetails,
@@ -340,6 +349,7 @@ core_type_mapping = {
     "CreateCpeDetails": CreateCpeDetails,
     "CreateCrossConnectDetails": CreateCrossConnectDetails,
     "CreateCrossConnectGroupDetails": CreateCrossConnectGroupDetails,
+    "CreateDedicatedVmHostDetails": CreateDedicatedVmHostDetails,
     "CreateDhcpDetails": CreateDhcpDetails,
     "CreateDrgAttachmentDetails": CreateDrgAttachmentDetails,
     "CreateDrgDetails": CreateDrgDetails,
@@ -380,6 +390,11 @@ core_type_mapping = {
     "CrossConnectMapping": CrossConnectMapping,
     "CrossConnectPortSpeedShape": CrossConnectPortSpeedShape,
     "CrossConnectStatus": CrossConnectStatus,
+    "DedicatedVmHost": DedicatedVmHost,
+    "DedicatedVmHostInstanceShapeSummary": DedicatedVmHostInstanceShapeSummary,
+    "DedicatedVmHostInstanceSummary": DedicatedVmHostInstanceSummary,
+    "DedicatedVmHostShapeSummary": DedicatedVmHostShapeSummary,
+    "DedicatedVmHostSummary": DedicatedVmHostSummary,
     "DeleteVirtualCircuitPublicPrefixDetails": DeleteVirtualCircuitPublicPrefixDetails,
     "DetachLoadBalancerDetails": DetachLoadBalancerDetails,
     "Device": Device,
@@ -480,6 +495,7 @@ core_type_mapping = {
     "UpdateCpeDetails": UpdateCpeDetails,
     "UpdateCrossConnectDetails": UpdateCrossConnectDetails,
     "UpdateCrossConnectGroupDetails": UpdateCrossConnectGroupDetails,
+    "UpdateDedicatedVmHostDetails": UpdateDedicatedVmHostDetails,
     "UpdateDhcpDetails": UpdateDhcpDetails,
     "UpdateDrgAttachmentDetails": UpdateDrgAttachmentDetails,
     "UpdateDrgDetails": UpdateDrgDetails,
