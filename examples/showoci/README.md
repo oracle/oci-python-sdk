@@ -31,6 +31,7 @@ Output can be printer friendly, CSV files or JSON file.
 - oci.ons.NotificationDataPlaneClient
 - oci.healthchecks.HealthChecksClient
 - oci.announcements_service.AnnouncementClient
+- oci.limits.LimitsClient
 
 ** DISCLAIMER – This is not an official Oracle application
 
@@ -174,12 +175,12 @@ Execute
 $ ./showoci.py  
 
 usage: showoci.py [-h] [-a] [-ani] [-an] [-b] [-n] [-i] [-c] [-cn] [-o] [-l]
-                  [-d] [-f] [-e] [-m] [-s] [-rm] [-so] [-edge] [-mc] [-nr]
-                  [-ip] [-t PROFILE] [-p PROXY] [-rg REGION] [-cp COMPART]
-                  [-cpath COMPARTPATH] [-cf CONFIG] [-csv CSV] [-jf JOUTFILE]
-                  [-js] [-sjf SJOUTFILE] [-cachef SERVICEFILE] [-caches]
-                  [--version]
-
+                  [-d] [-f] [-e] [-m] [-s] [-rm] [-so] [-edge] [-lq] [-mc]
+                  [-nr] [-ip] [-t PROFILE] [-p PROXY] [-rg REGION]
+                  [-cp COMPART] [-cpath COMPARTPATH] [-cf CONFIG] [-csv CSV]
+                  [-jf JOUTFILE] [-js] [-sjf SJOUTFILE] [-cachef SERVICEFILE]
+                  [-caches] [--version]
+                  
 optional arguments:
   -h, --help           show this help message and exit
   -a                   Print All Resources
@@ -195,6 +196,7 @@ optional arguments:
   -d                   Print Database
   -f                   Print File Storage
   -e                   Print EMail
+  -lq                  Print Limits and Quotas
   -m                   Print Monitoring and Notifications
   -s                   Print Streams
   -rm                  Print Resource management
@@ -310,6 +312,9 @@ Email Notifications...
 Resource Management...
 --> Stacks                   <-- ............ (0) - 2 sec
 
+Limits and Quotas...
+--> Limits                   <-- . (82) - 19 sec
+--> Quotas                   <-- ... (1) - 4 sec
 
 ############################################################
 #                  Start Processing Data                   #
@@ -448,6 +453,24 @@ Compartment gse00000000 (root):
 --> Suppression List:
     suppression@oracle.com - MANUAL
     noreply@oracle.com - MANUAL
+    
+##############################
+#           Quotas           #
+##############################
+--> quota_compute, (quota_compute), Created: 2019-08-24 00:30
+    set compute quota vm-dense-io1-16-count to 10 in tenancy
+
+##############################
+#         Limits > 0         #
+##############################
+--> auto-scaling        config-count                          = 200        SCOPE=REGION 
+--> block-storage       backup-count                          = 4000       SCOPE=REGION 
+--> block-storage       total-storage-gb                      = 30720      SCOPE=AD     EWTG:US-ASHBURN-AD-1
+--> block-storage       total-storage-gb                      = 30720      SCOPE=AD     EWTG:US-ASHBURN-AD-2
+--> block-storage       total-storage-gb                      = 30720      SCOPE=AD     EWTG:US-ASHBURN-AD-3
+--> block-storage       volume-count                          = 10000      SCOPE=AD     EWTG:US-ASHBURN-AD-1
+--> block-storage       volume-count                          = 10000      SCOPE=AD     EWTG:US-ASHBURN-AD-2
+--> block-storage       volume-count                          = 10000      SCOPE=AD     EWTG:US-ASHBURN-AD-3
 
 ############################################################
 #                   Compartment Network                    #
@@ -845,6 +868,7 @@ Object Storage - Buckets (gb)             -        216
 #                        Summary - Compartment npdb                       #
 ###########################################################################
 Database - Exadata.Half2.184              -          1
+Database - Exadata.Half2.184 - OCPUs      -         44
 Object Storage - Buckets (gb)             -       6152
 
 ###########################################################################
@@ -870,6 +894,7 @@ Compute - Oracle Linux - VM.Standard2.4   -          7
 Compute - Oracle Linux - VM.Standard2.8   -          5
 Compute - Windows - VM.Standard2.2        -         28
 Database - Exadata.Half2.184              -          1
+Database - Exadata.Half2.184 - OCPUs      -         44
 File Storage (gb)                         -       2617
 Load Balancer 100Mbps                     -         10
 Object Storage - BV Backups (gb)          -       4082
