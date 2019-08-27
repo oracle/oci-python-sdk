@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
+=====================
+2.3.2 - 2019-08-27
+====================
+
+Added
+-----
+* Support for the Sao Paulo (GRU) region
+* Support for dedicated virtual machine hosts in the Compute service
+* Support for resource groups in metrics and alarms in the Monitoring service
+
 ====================
 2.3.1 - 2019-08-20
 ====================

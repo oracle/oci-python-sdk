@@ -39,6 +39,10 @@ class UpdateAlarmDetails(object):
             The value to assign to the namespace property of this UpdateAlarmDetails.
         :type namespace: str
 
+        :param resource_group:
+            The value to assign to the resource_group property of this UpdateAlarmDetails.
+        :type resource_group: str
+
         :param query:
             The value to assign to the query property of this UpdateAlarmDetails.
         :type query: str
@@ -90,6 +94,7 @@ class UpdateAlarmDetails(object):
             'metric_compartment_id': 'str',
             'metric_compartment_id_in_subtree': 'bool',
             'namespace': 'str',
+            'resource_group': 'str',
             'query': 'str',
             'resolution': 'str',
             'pending_duration': 'str',
@@ -109,6 +114,7 @@ class UpdateAlarmDetails(object):
             'metric_compartment_id': 'metricCompartmentId',
             'metric_compartment_id_in_subtree': 'metricCompartmentIdInSubtree',
             'namespace': 'namespace',
+            'resource_group': 'resourceGroup',
             'query': 'query',
             'resolution': 'resolution',
             'pending_duration': 'pendingDuration',
@@ -127,6 +133,7 @@ class UpdateAlarmDetails(object):
         self._metric_compartment_id = None
         self._metric_compartment_id_in_subtree = None
         self._namespace = None
+        self._resource_group = None
         self._query = None
         self._resolution = None
         self._pending_duration = None
@@ -294,6 +301,38 @@ class UpdateAlarmDetails(object):
         :type: str
         """
         self._namespace = namespace
+
+    @property
+    def resource_group(self):
+        """
+        Gets the resource_group of this UpdateAlarmDetails.
+        Resource group that you want to use as a filter. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric.
+        A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        Avoid entering confidential information.
+
+        Example: `frontend-fleet`
+
+
+        :return: The resource_group of this UpdateAlarmDetails.
+        :rtype: str
+        """
+        return self._resource_group
+
+    @resource_group.setter
+    def resource_group(self, resource_group):
+        """
+        Sets the resource_group of this UpdateAlarmDetails.
+        Resource group that you want to use as a filter. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric.
+        A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        Avoid entering confidential information.
+
+        Example: `frontend-fleet`
+
+
+        :param resource_group: The resource_group of this UpdateAlarmDetails.
+        :type: str
+        """
+        self._resource_group = resource_group
 
     @property
     def query(self):

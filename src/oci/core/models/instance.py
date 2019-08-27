@@ -90,6 +90,10 @@ class Instance(object):
             The value to assign to the compartment_id property of this Instance.
         :type compartment_id: str
 
+        :param dedicated_vm_host_id:
+            The value to assign to the dedicated_vm_host_id property of this Instance.
+        :type dedicated_vm_host_id: str
+
         :param defined_tags:
             The value to assign to the defined_tags property of this Instance.
         :type defined_tags: dict(str, dict(str, object))
@@ -170,6 +174,7 @@ class Instance(object):
         self.swagger_types = {
             'availability_domain': 'str',
             'compartment_id': 'str',
+            'dedicated_vm_host_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'extended_metadata': 'dict(str, object)',
@@ -193,6 +198,7 @@ class Instance(object):
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
+            'dedicated_vm_host_id': 'dedicatedVmHostId',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'extended_metadata': 'extendedMetadata',
@@ -215,6 +221,7 @@ class Instance(object):
 
         self._availability_domain = None
         self._compartment_id = None
+        self._dedicated_vm_host_id = None
         self._defined_tags = None
         self._display_name = None
         self._extended_metadata = None
@@ -285,6 +292,30 @@ class Instance(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def dedicated_vm_host_id(self):
+        """
+        Gets the dedicated_vm_host_id of this Instance.
+        The OCID of dedicated VM host.
+
+
+        :return: The dedicated_vm_host_id of this Instance.
+        :rtype: str
+        """
+        return self._dedicated_vm_host_id
+
+    @dedicated_vm_host_id.setter
+    def dedicated_vm_host_id(self, dedicated_vm_host_id):
+        """
+        Sets the dedicated_vm_host_id of this Instance.
+        The OCID of dedicated VM host.
+
+
+        :param dedicated_vm_host_id: The dedicated_vm_host_id of this Instance.
+        :type: str
+        """
+        self._dedicated_vm_host_id = dedicated_vm_host_id
 
     @property
     def defined_tags(self):

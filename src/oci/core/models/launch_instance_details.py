@@ -30,6 +30,10 @@ class LaunchInstanceDetails(object):
             The value to assign to the create_vnic_details property of this LaunchInstanceDetails.
         :type create_vnic_details: CreateVnicDetails
 
+        :param dedicated_vm_host_id:
+            The value to assign to the dedicated_vm_host_id property of this LaunchInstanceDetails.
+        :type dedicated_vm_host_id: str
+
         :param defined_tags:
             The value to assign to the defined_tags property of this LaunchInstanceDetails.
         :type defined_tags: dict(str, dict(str, object))
@@ -91,6 +95,7 @@ class LaunchInstanceDetails(object):
             'availability_domain': 'str',
             'compartment_id': 'str',
             'create_vnic_details': 'CreateVnicDetails',
+            'dedicated_vm_host_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'extended_metadata': 'dict(str, object)',
@@ -111,6 +116,7 @@ class LaunchInstanceDetails(object):
             'availability_domain': 'availabilityDomain',
             'compartment_id': 'compartmentId',
             'create_vnic_details': 'createVnicDetails',
+            'dedicated_vm_host_id': 'dedicatedVmHostId',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'extended_metadata': 'extendedMetadata',
@@ -130,6 +136,7 @@ class LaunchInstanceDetails(object):
         self._availability_domain = None
         self._compartment_id = None
         self._create_vnic_details = None
+        self._dedicated_vm_host_id = None
         self._defined_tags = None
         self._display_name = None
         self._extended_metadata = None
@@ -222,6 +229,30 @@ class LaunchInstanceDetails(object):
         :type: CreateVnicDetails
         """
         self._create_vnic_details = create_vnic_details
+
+    @property
+    def dedicated_vm_host_id(self):
+        """
+        Gets the dedicated_vm_host_id of this LaunchInstanceDetails.
+        The OCID of dedicated VM host.
+
+
+        :return: The dedicated_vm_host_id of this LaunchInstanceDetails.
+        :rtype: str
+        """
+        return self._dedicated_vm_host_id
+
+    @dedicated_vm_host_id.setter
+    def dedicated_vm_host_id(self, dedicated_vm_host_id):
+        """
+        Sets the dedicated_vm_host_id of this LaunchInstanceDetails.
+        The OCID of dedicated VM host.
+
+
+        :param dedicated_vm_host_id: The dedicated_vm_host_id of this LaunchInstanceDetails.
+        :type: str
+        """
+        self._dedicated_vm_host_id = dedicated_vm_host_id
 
     @property
     def defined_tags(self):

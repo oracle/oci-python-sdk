@@ -58,6 +58,7 @@ Core Services
     oci.core.models.ChangeCpeCompartmentDetails
     oci.core.models.ChangeCrossConnectCompartmentDetails
     oci.core.models.ChangeCrossConnectGroupCompartmentDetails
+    oci.core.models.ChangeDedicatedVmHostCompartmentDetails
     oci.core.models.ChangeDhcpOptionsCompartmentDetails
     oci.core.models.ChangeIPSecConnectionCompartmentDetails
     oci.core.models.ChangeImageCompartmentDetails
@@ -92,6 +93,7 @@ Core Services
     oci.core.models.CreateCpeDetails
     oci.core.models.CreateCrossConnectDetails
     oci.core.models.CreateCrossConnectGroupDetails
+    oci.core.models.CreateDedicatedVmHostDetails
     oci.core.models.CreateDhcpDetails
     oci.core.models.CreateDrgAttachmentDetails
     oci.core.models.CreateDrgDetails
@@ -132,6 +134,11 @@ Core Services
     oci.core.models.CrossConnectMapping
     oci.core.models.CrossConnectPortSpeedShape
     oci.core.models.CrossConnectStatus
+    oci.core.models.DedicatedVmHost
+    oci.core.models.DedicatedVmHostInstanceShapeSummary
+    oci.core.models.DedicatedVmHostInstanceSummary
+    oci.core.models.DedicatedVmHostShapeSummary
+    oci.core.models.DedicatedVmHostSummary
     oci.core.models.DeleteVirtualCircuitPublicPrefixDetails
     oci.core.models.DetachLoadBalancerDetails
     oci.core.models.Device
@@ -232,6 +239,7 @@ Core Services
     oci.core.models.UpdateCpeDetails
     oci.core.models.UpdateCrossConnectDetails
     oci.core.models.UpdateCrossConnectGroupDetails
+    oci.core.models.UpdateDedicatedVmHostDetails
     oci.core.models.UpdateDhcpDetails
     oci.core.models.UpdateDrgAttachmentDetails
     oci.core.models.UpdateDrgDetails

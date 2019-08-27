@@ -104,6 +104,8 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
 
         self._refresh_lock = threading.Lock()
         self.requests_session = requests.Session()
+        if kwargs.get('headers', None):
+            self.requests_session.headers.update(kwargs.get('headers'))
 
         self.refresh()
 

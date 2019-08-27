@@ -71,6 +71,8 @@ class ShowOCIOutput(object):
                     elif d['type'] == "region":
                         self.__print_region_data(d['region'], d['data'])
                         has_data = True
+                        if 'limits' in d:
+                            self.__print_limits_main(d['limits'])
 
                     else:
                         print("Error Unknown Type in JSON file...")
@@ -1087,6 +1089,52 @@ class ShowOCIOutput(object):
             self.__print_error("__print_edge_services_main", e)
 
     ##########################################################################
+    # Limits
+    ##########################################################################
+    def __print_limits_main(self, limits):
+
+        try:
+            if not limits:
+                return
+
+            self.print_header("Limits > 0", 2)
+
+            for ct in limits:
+                print(
+                    self.taba + str(ct['name'] + " ").ljust(20) +
+                    ct['limit_name'].ljust(37) +
+                    " = " + ct['value'].ljust(10) +
+                    " SCOPE=" + ct['scope_type'].ljust(7) +
+                    ct['availability_domain']
+                )
+
+            print("")
+
+        except Exception as e:
+            self.__print_error("__print_limits_main", e)
+
+    ##########################################################################
+    # Streams
+    ##########################################################################
+    def __print_quotas_main(self, quotas):
+
+        try:
+            if not quotas:
+                return
+
+            self.print_header("Quotas", 2)
+
+            for ct in quotas:
+                print(self.taba + ct['name'] + ", (" + ct['description'] + "), Created: " + ct['time_created'][0:16])
+                for st in ct['statements']:
+                    print(self.tabs + st)
+
+                print("")
+
+        except Exception as e:
+            self.__print_error("__print_quotas_main", e)
+
+    ##########################################################################
     # Container
     ##########################################################################
     def __print_container_main(self, containers):
@@ -1435,6 +1483,8 @@ class ShowOCIOutput(object):
                     self.__print_notifications_main(cdata['notifications'])
                 if 'edge_services' in cdata:
                     self.__print_edge_services_main(cdata['edge_services'])
+                if 'quotas' in cdata:
+                    self.__print_quotas_main(cdata['quotas'])
 
         except Exception as e:
             self.__print_error("__print_region_data", e)
@@ -1563,6 +1613,9 @@ class ShowOCISummary(object):
                 if 'sum_info' in db and 'sum_count' in db:
                     self.summary_global_list.append({'type': db['sum_info'], 'size': float(db['sum_count'])})
 
+                if 'cpu_core_count' in db:
+                    self.summary_global_list.append({'type': "Total OCPUs - Autonomous Database", 'size': float(db['cpu_core_count'])})
+
                 if 'sum_info_storage' in db and 'sum_size_tb' in db:
                     self.summary_global_list.append({'type': db['sum_info_storage'], 'size': float(db['sum_size_tb'])})
 
@@ -1601,6 +1654,17 @@ class ShowOCISummary(object):
                         if dbs['node_count'] is not None and dbs['node_count'] != 'None' and dbs['node_count'] != "":
                             nodes = dbs['node_count']
 
+                    # add ocpus for DB
+                    if 'cpu_core_count' in dbs:
+                        self.summary_global_list.append({'type': 'Total OCPUs - VM/BM Database', 'size': float(dbs['cpu_core_count'])})
+
+                # if Exa add Exadata CPUs
+                else:
+                    if 'cpu_core_count' in dbs:
+                        self.summary_global_list.append({'type': 'Total OCPUs - ExaCS Database', 'size': float(dbs['cpu_core_count'])})
+                        self.summary_global_list.append({'type': dbs['sum_info'] + " OCPUs", 'size': float(dbs['cpu_core_count'])})
+
+                # add db to summary
                 self.summary_global_list.append({'type': dbs['sum_info'], 'size': float(nodes)})
 
                 if dbs['sum_size_gb'] is not None:
@@ -1626,6 +1690,10 @@ class ShowOCISummary(object):
 
             for instance in instances:
                 self.summary_global_list.append({'type': (instance['sum_info'] + " - " + instance['sum_shape']), 'size': float(1)})
+
+                # Add OCPUS for total
+                if 'shape_ocpu' in instance:
+                    self.summary_global_list.append({'type': 'Total OCPUs - Compute', 'size': float(instance['shape_ocpu'])})
 
                 if 'boot_volume' in instance:
                     self.__summary_core_size(instance['boot_volume'])
