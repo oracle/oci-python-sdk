@@ -46,6 +46,7 @@
 # - oci.ons.NotificationDataPlaneClient
 # - oci.healthchecks.HealthChecksClient
 # - oci.announcements_service.AnnouncementClient
+# - oci.limits.LimitsClient
 #
 # Modules Not Yet Covered:
 # - oci.waas.WaasClient
@@ -61,7 +62,7 @@ import sys
 import argparse
 import datetime
 
-version = "19.8.6"
+version = "19.9.3"
 
 ##########################################################################
 # execute_extract
@@ -233,6 +234,7 @@ def set_parser_arguments():
     parser.add_argument('-rm', action='store_true', default=False, dest='orm', help='Print Resource management')
     parser.add_argument('-so', action='store_true', default=False, dest='sumonly', help='Print Summary Only')
     parser.add_argument('-edge', action='store_true', default=False, dest='edge', help='Print Edge Services (Healthcheck)')
+    parser.add_argument('-lq', action='store_true', default=False, dest='limits', help='Print Limits and Quotas')
     parser.add_argument('-mc', action='store_true', default=False, dest='mgdcompart', help='exclude ManagedCompartmentForPaaS')
     parser.add_argument('-nr', action='store_true', default=False, dest='noroot', help='Not include root compartment')
     parser.add_argument('-ip', action='store_true', default=False, dest='instance_principals', help='Use Instance Principals for Authentication')
@@ -259,7 +261,7 @@ def set_parser_arguments():
     if not (result.all or result.allnoiam or result.network or result.identity or
             result.compute or result.object or
             result.load or result.database or result.file or result.email or result.orm or result.container or
-            result.streams or result.budgets or result.monitoring or result.edge or result.announcement):
+            result.streams or result.budgets or result.monitoring or result.edge or result.announcement or result.limits):
 
         parser.print_help()
 
@@ -321,6 +323,9 @@ def set_service_extract_flags(cmd):
 
     if cmd.all or cmd.allnoiam or cmd.budgets:
         prm.read_budgets = True
+
+    if cmd.all or cmd.allnoiam or cmd.limits:
+        prm.read_limits = True
 
     if cmd.all or cmd.allnoiam or cmd.monitoring:
         prm.read_monitoring_notifications = True

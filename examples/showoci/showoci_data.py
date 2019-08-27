@@ -87,12 +87,17 @@ class ShowOCIData(object):
                     if self.service.flags.filter_by_region and self.service.flags.filter_by_region not in region_name:
                         continue
 
+                    limits_data = []
+                    # limits services which regional but not compartment
+                    if self.service.flags.read_limits:
+                        limits_data = self.__get_limits_main(region_name)
+
                     # execute the region
                     value = self.__get_oci_region_data(region_name)
 
                     # if data returns, add to the json
-                    if value:
-                        region_data = ({'type': "region", 'region': region_name, 'data': value})
+                    if value or limits_data:
+                        region_data = ({'type': "region", 'region': region_name, 'data': value, 'limits': limits_data})
                         self.data.append(region_data)
 
             # return the json data
@@ -284,6 +289,14 @@ class ShowOCIData(object):
                     if value is not None:
                         if len(value) > 0:
                             data['edge_services'] = value
+                            has_data = True
+
+                # quotas services
+                if self.service.flags.read_limits:
+                    value = self.__get_quotas_main(region_name, compartment)
+                    if value is not None:
+                        if len(value) > 0:
+                            data['quotas'] = value
                             has_data = True
 
                 # add the data to main Variable
@@ -2307,3 +2320,34 @@ class ShowOCIData(object):
         except Exception as e:
             self.__print_error("__get_load_edge_main", e)
             return []
+
+    ##########################################################################
+    # Limits
+    ##########################################################################
+    def __get_limits_main(self, region_name):
+        try:
+            limits = self.service.search_multi_items(self.service.C_LIMITS, self.service.C_LIMITS_SERVICES, 'region_name', region_name)
+
+            if limits:
+                return limits
+
+            return
+
+        except Exception as e:
+            self.__print_error("__get_limits_main", e)
+            pass
+
+    ##########################################################################
+    # Quotas
+    ##########################################################################
+    def __get_quotas_main(self, region_name, compartment):
+        try:
+            quotas = self.service.search_multi_items(self.service.C_LIMITS, self.service.C_LIMITS_QUOTAS, 'region_name', region_name, 'compartment_id', compartment['id'])
+
+            if quotas:
+                return quotas
+            return
+
+        except Exception as e:
+            self.__print_error("__get_quotas_main", e)
+            pass

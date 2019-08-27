@@ -43,6 +43,7 @@ class ShowOCIFlags(object):
     read_announcement = False
     read_ManagedCompartmentForPaaS = True
     read_root_compartment = True
+    read_limits = False
 
     # is_vcn_exist_for_region
     is_vcn_exist_for_region = False
@@ -84,7 +85,8 @@ class ShowOCIFlags(object):
                 self.read_streams or
                 self.read_budgets or
                 self.read_monitoring_notifications or
-                self.read_edge)
+                self.read_edge or
+                self.read_limits)
 
     ############################################
     # check if to load basic network (vcn+subnets)
@@ -102,7 +104,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.2.18"
+    oci_compatible_version = "2.3.1"
 
     ##########################################################################
     # Global Constants
@@ -225,6 +227,11 @@ class ShowOCIService(object):
     C_ANNOUNCEMENT = "announcement"
     C_ANNOUNCEMENT_ANNOUNCEMENT = "announcements"
 
+    # limits
+    C_LIMITS = "limits"
+    C_LIMITS_SERVICES = "services"
+    C_LIMITS_QUOTAS = "quotas"
+
     # Error flag and reboot migration
     error = 0
     warning = 0
@@ -234,27 +241,7 @@ class ShowOCIService(object):
     # Service not yet available - need to remove on availability
     ##########################################################################
     service_not_available_array = [
-        {'region': 'eu-frankfurt-1', 'service': C_EMAIL},
-        {'region': 'uk-london-1', 'service': C_EMAIL},
-        {'region': 'ca-toronto-1', 'service': C_EMAIL},
-        {'region': 'ap-tokyo-1', 'service': C_EMAIL},
-        {'region': 'ap-tokyo-1', 'service': C_EDGE},
-        {'region': 'ap-tokyo-1', 'service': C_MONITORING},
-        {'region': 'ap-tokyo-1', 'service': C_COMPUTE_AUTOSCALING},
-        {'region': 'ap-tokyo-1', 'service': C_STREAMS},
-        {'region': 'ap-tokyo-1', 'service': C_NOTIFICATIONS},
-        {'region': 'ap-seoul-1', 'service': C_EMAIL},
-        {'region': 'ap-seoul-1', 'service': C_EDGE},
-        {'region': 'ap-seoul-1', 'service': C_MONITORING},
-        {'region': 'ap-seoul-1', 'service': C_COMPUTE_AUTOSCALING},
-        {'region': 'ap-seoul-1', 'service': C_STREAMS},
-        {'region': 'ap-seoul-1', 'service': C_NOTIFICATIONS},
-        {'region': 'ap-mumbai-1', 'service': C_EMAIL},
-        {'region': 'ap-mumbai-1', 'service': C_EDGE},
-        {'region': 'ap-mumbai-1', 'service': C_MONITORING},
-        {'region': 'ap-mumbai-1', 'service': C_COMPUTE_AUTOSCALING},
-        {'region': 'ap-mumbai-1', 'service': C_STREAMS},
-        {'region': 'ap-mumbai-1', 'service': C_NOTIFICATIONS}
+        {'region': 'region_name', 'service': C_EMAIL}
     ]
 
     ##########################################################################
@@ -598,6 +585,17 @@ class ShowOCIService(object):
         return 'auth' in str(code).lower() or 'notfound' in str(code).lower() or code == 'Forbidden' or code == 'TooManyRequests' or code == 'IncorrectState' or code == 'LimitExceeded'
 
     ##########################################################################
+    # check request error if service not exists for region
+    ##########################################################################
+    def __check_request_error(self, e):
+
+        # service not yet available
+        if ('Errno 8' in str(e) and 'NewConnectionError' in str(e)) or 'Max retries exceeded' in str(e) or 'HTTPSConnectionPool' in str(e):
+            print("Service Not Accessible or not yet exist")
+            return True
+        return False
+
+    ##########################################################################
     # check if managed paas compartment
     ##########################################################################
     def __if_managed_paas_compartment(self, name):
@@ -747,6 +745,10 @@ class ShowOCIService(object):
         if self.flags.read_email_distribution:
             if self.check_if_service_available(region_name, self.C_EMAIL):
                 self.__load_email_main()
+
+        # if limits
+        if self.flags.read_limits:
+            self.__load_limits_main()
 
     ##########################################################################
     # Identity Module
@@ -1375,7 +1377,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_network_vcn", e)
@@ -1529,7 +1535,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_network_lpg", e)
@@ -1582,7 +1592,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_network_rpc", e)
@@ -1638,7 +1652,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_network_route", e)
@@ -1731,7 +1749,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_network_dhcpop", e)
@@ -1944,7 +1966,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_network_seclst", e)
@@ -2171,7 +2197,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_network_nsg", e)
@@ -2236,7 +2266,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_network_slist", e)
@@ -2291,7 +2325,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_network_sgw", e)
@@ -2350,7 +2388,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_network_nat", e)
@@ -2401,7 +2443,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_network_dra", e)
@@ -2453,7 +2499,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_network_drg", e)
@@ -2504,7 +2554,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_network_cpe", e)
@@ -2576,7 +2630,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_network_privateip", e)
@@ -2640,7 +2698,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_network_vc", e)
@@ -2718,7 +2780,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_network_ips", e)
@@ -2928,7 +2994,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_compute_instances", e)
@@ -2988,7 +3058,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_compute_images", e)
@@ -3112,7 +3186,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_compute_autoscaling", e)
@@ -3223,7 +3301,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_compute_inst_config", e)
@@ -3286,7 +3368,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_compute_inst_pool", e)
@@ -3342,7 +3428,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_compute_boot_vol_attach", e)
@@ -3392,7 +3482,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_compute_vol_attach", e)
@@ -3450,7 +3544,11 @@ class ShowOCIService(object):
             data['display_name'] += subnet_display
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except oci.exceptions.ServiceError as e:
             if self.__check_service_error(e.code):
@@ -3505,7 +3603,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_compute_vnic_attach", e)
@@ -3526,7 +3628,9 @@ class ShowOCIService(object):
                     backupstr += bp.display_name + " "
             return backupstr
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return ""
             raise
         except oci.exceptions.ServiceError as e:
             if self.__check_service_error(e.code) or e.code == 'InvalidParameter' or e.code == 'TooManyRequests':
@@ -3600,7 +3704,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_block_boot", e)
@@ -3667,7 +3775,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_block_volume", e)
@@ -3729,7 +3841,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_block_volume_group", e)
@@ -3800,7 +3916,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_block_boot_backup", e)
@@ -3862,7 +3982,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_core_block_volume_backup", e)
@@ -4037,7 +4161,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_load_balancers", e)
@@ -4211,7 +4339,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_load_balancer_backendset", e)
@@ -4346,7 +4478,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_object_storage_buckets", e)
@@ -4466,7 +4602,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_resource_management_stacks", e)
@@ -4561,7 +4701,9 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
             raise
         except Exception as e:
             self.__print_error("__load_email_senders", e)
@@ -4615,7 +4757,9 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
             raise
         except Exception as e:
             self.__print_error("__load_email_suppressions", e)
@@ -4660,7 +4804,6 @@ class ShowOCIService(object):
             fs[self.C_FILE_STORAGE_EXPORTS] += self.__load_file_storage_exports(file_storage, compartments)
             fs[self.C_FILE_STORAGE_MOUNTS] += self.__load_file_storage_mount_targets(file_storage, virtual_network,
                                                                                      compartments)
-
             print("")
 
         except oci.exceptions.RequestException:
@@ -4741,7 +4884,9 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
             raise
         except Exception as e:
             self.__print_error("__load_file_storage_filesystems", e)
@@ -4803,7 +4948,9 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
             raise
         except Exception as e:
             self.__print_error("__load_file_storage_mount_targets", e)
@@ -4874,7 +5021,9 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
             raise
         except Exception as e:
             self.__print_error("__load_file_storage_exports", e)
@@ -5055,7 +5204,9 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
             raise
         except Exception as e:
             self.__print_error("__load_database_dbsystems", e)
@@ -5090,7 +5241,9 @@ class ShowOCIService(object):
                 return data
             else:
                 raise
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
             raise
         except Exception as e:
             self.__print_error("__load_database_dbsystems_dbnodes", e)
@@ -5128,7 +5281,9 @@ class ShowOCIService(object):
                 return data
             else:
                 raise
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
             raise
         except Exception as e:
             self.__print_error("__load_database_dbsystems_dbhomess", e)
@@ -5187,7 +5342,9 @@ class ShowOCIService(object):
                 return data
             else:
                 raise
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
             raise
         except Exception as e:
             self.__print_error("__load_database_dbsystems_dbhomes_databases", e)
@@ -5212,7 +5369,9 @@ class ShowOCIService(object):
                 return data
             else:
                 raise
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
             raise
         except Exception as e:
             self.__print_error("__load_database_dbsystems_home_patches", e)
@@ -5238,7 +5397,9 @@ class ShowOCIService(object):
                 return data
             else:
                 raise
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
             raise
         except Exception as e:
             self.__print_error("__load_database_dbsystems_patches", e)
@@ -5271,7 +5432,9 @@ class ShowOCIService(object):
                 return data
             else:
                 raise
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
             raise
         except Exception as e:
             self.__print_error("__load_database_dbsystems_patches", e)
@@ -5326,7 +5489,9 @@ class ShowOCIService(object):
                 return data
             else:
                 raise
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
             raise
         except Exception as e:
             self.__print_error("__load_database_dbsystems_db_dg", e)
@@ -5413,7 +5578,9 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
             raise
         except Exception as e:
             self.__print_error("__load_database_autonomouns", e)
@@ -5455,7 +5622,9 @@ class ShowOCIService(object):
                 return data
             else:
                 raise
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
             raise
         except Exception as e:
             self.__print_error("__load_database_autonomouns_backups", e)
@@ -5555,7 +5724,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_container_node_pools", e)
@@ -5611,7 +5784,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_container_clusters", e)
@@ -5704,7 +5881,10 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_streams_streams", e)
@@ -5809,7 +5989,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_budgets_budgets", e)
@@ -5931,7 +6115,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_monitoring_alarms", e)
@@ -5995,7 +6183,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_notifications_topics", e)
@@ -6060,7 +6252,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_notifications_subscriptions", e)
@@ -6179,7 +6375,9 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
             raise
         except Exception as e:
             self.__print_error("__load_edge_healthchecks_ping", e)
@@ -6259,7 +6457,11 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_edge_healthchecks_http", e)
@@ -6354,8 +6556,194 @@ class ShowOCIService(object):
             self.__load_print_cnt(cnt, start_time)
             return data
 
-        except oci.exceptions.RequestException:
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
             raise
         except Exception as e:
             self.__print_error("__load_announcements", e)
+            return data
+
+    ##########################################################################
+    # __load_limits_main
+    ##########################################################################
+    #
+    # OCI Classes used:
+    #
+    # oci.limits.LimitsClient
+    #
+    ##########################################################################
+    def __load_limits_main(self):
+        try:
+            print("Limits and Quotas...")
+
+            # LimitsClient
+            limits_client = oci.limits.LimitsClient(self.config, signer=self.signer)
+            if self.flags.proxy:
+                limits_client.base_client.session.proxies = {'https': self.flags.proxy}
+
+            # QuotasClient
+            quotas_client = oci.limits.QuotasClient(self.config, signer=self.signer)
+            if self.flags.proxy:
+                quotas_client.base_client.session.proxies = {'https': self.flags.proxy}
+
+            # reference to tenancy
+            tenancy = self.get_tenancy()
+
+            # reference to compartments
+            compartments = self.get_compartment()
+
+            # add the key if not exists
+            self.__initialize_data_key(self.C_LIMITS, self.C_LIMITS_SERVICES)
+            self.__initialize_data_key(self.C_LIMITS, self.C_LIMITS_QUOTAS)
+
+            # reference to limits
+            limits = self.data[self.C_LIMITS]
+
+            # append the data
+            limits[self.C_LIMITS_SERVICES] += self.__load_limits(limits_client, tenancy['id'])
+            limits[self.C_LIMITS_QUOTAS] += self.__load_quotas(quotas_client, compartments)
+            print("")
+
+        except oci.exceptions.RequestException:
+            raise
+        except oci.exceptions.ServiceError:
+            raise
+        except Exception as e:
+            self.__print_error("__load_limits_main", e)
+
+    ##########################################################################
+    # __load_limits
+    ##########################################################################
+    def __load_limits(self, limits_client, tenancy_id):
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("Limits")
+
+            services = []
+            try:
+                services = limits_client.list_services(tenancy_id, sort_by="name").data
+            except oci.exceptions.ServiceError as e:
+                if self.__check_service_error(e.code):
+                    self.__load_print_auth_warning()
+                else:
+                    raise
+
+            print(".", end="")
+
+            if services:
+
+                # oci.limits.models.ServiceSummary
+                for service in services:
+
+                    # get the limits per service
+                    limits = []
+                    try:
+                        limits = limits_client.list_limit_values(tenancy_id, service_name=service.name, sort_by="name").data
+                    except oci.exceptions.ServiceError as e:
+                        if self.__check_service_error(e.code):
+                            self.__load_print_auth_warning()
+                        else:
+                            raise
+
+                    # oci.limits.models.LimitValueSummary
+                    for limit in limits:
+                        val = {
+                            'name': str(service.name),
+                            'description': str(service.description),
+                            'limit_name': str(limit.name),
+                            'availability_domain': ("" if limit.availability_domain is None else str(limit.availability_domain)),
+                            'scope_type': str(limit.scope_type),
+                            'value': str(limit.value),
+                            'region_name': str(self.config['region'])
+                        }
+
+                        # add the data if limits > 0
+                        if limit.value > 0:
+                            cnt += 1
+                            data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_limits", e)
+            return data
+
+    ##########################################################################
+    # __load_quotas
+    ##########################################################################
+    def __load_quotas(self, quotas_client, compartments):
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("Quotas")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                quotas = []
+                try:
+                    quotas = quotas_client.list_quotas(compartment['id'], lifecycle_state=oci.limits.models.QuotaSummary.LIFECYCLE_STATE_ACTIVE, sort_by="NAME").data
+                except oci.exceptions.ServiceError as e:
+                    if 'go to your home region' in str(e):
+                        print("Service can only run at home region, skipping")
+                        return data
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                    else:
+                        raise
+
+                print(".", end="")
+
+                if quotas:
+
+                    # oci.limits.models.QuotaSummary
+                    for arr in quotas:
+
+                        val = {
+                            'id': str(arr.id),
+                            'name': str(arr.name),
+                            'description': str(arr.description),
+                            'statements': [],
+                            'time_created': str(arr.time_created),
+                            'compartment_name': str(compartment['name']),
+                            'compartment_id': str(compartment['id']),
+                            'region_name': str(self.config['region']),
+                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                            'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                        }
+
+                        # read quota statements
+                        try:
+                            quota = quotas_client.get_quota(arr.id).data
+                            if quota:
+                                val['statements'] = quota.statements
+                        except oci.exceptions.ServiceError:
+                            pass
+
+                        # add the data
+                        cnt += 1
+                        data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_quotas", e)
             return data

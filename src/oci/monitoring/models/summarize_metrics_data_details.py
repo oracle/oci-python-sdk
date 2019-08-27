@@ -22,6 +22,10 @@ class SummarizeMetricsDataDetails(object):
             The value to assign to the namespace property of this SummarizeMetricsDataDetails.
         :type namespace: str
 
+        :param resource_group:
+            The value to assign to the resource_group property of this SummarizeMetricsDataDetails.
+        :type resource_group: str
+
         :param query:
             The value to assign to the query property of this SummarizeMetricsDataDetails.
         :type query: str
@@ -41,6 +45,7 @@ class SummarizeMetricsDataDetails(object):
         """
         self.swagger_types = {
             'namespace': 'str',
+            'resource_group': 'str',
             'query': 'str',
             'start_time': 'datetime',
             'end_time': 'datetime',
@@ -49,6 +54,7 @@ class SummarizeMetricsDataDetails(object):
 
         self.attribute_map = {
             'namespace': 'namespace',
+            'resource_group': 'resourceGroup',
             'query': 'query',
             'start_time': 'startTime',
             'end_time': 'endTime',
@@ -56,6 +62,7 @@ class SummarizeMetricsDataDetails(object):
         }
 
         self._namespace = None
+        self._resource_group = None
         self._query = None
         self._start_time = None
         self._end_time = None
@@ -88,6 +95,38 @@ class SummarizeMetricsDataDetails(object):
         :type: str
         """
         self._namespace = namespace
+
+    @property
+    def resource_group(self):
+        """
+        Gets the resource_group of this SummarizeMetricsDataDetails.
+        Resource group that you want to use as a filter. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric.
+        A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        Avoid entering confidential information.
+
+        Example: `frontend-fleet`
+
+
+        :return: The resource_group of this SummarizeMetricsDataDetails.
+        :rtype: str
+        """
+        return self._resource_group
+
+    @resource_group.setter
+    def resource_group(self, resource_group):
+        """
+        Sets the resource_group of this SummarizeMetricsDataDetails.
+        Resource group that you want to use as a filter. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric.
+        A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        Avoid entering confidential information.
+
+        Example: `frontend-fleet`
+
+
+        :param resource_group: The resource_group of this SummarizeMetricsDataDetails.
+        :type: str
+        """
+        self._resource_group = resource_group
 
     @property
     def query(self):
