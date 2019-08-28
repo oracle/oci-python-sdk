@@ -70,6 +70,47 @@ def test_attach_load_balancer(testing_service_client):
 
 
 # IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
+def test_change_cluster_network_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangeClusterNetworkCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'ChangeClusterNetworkCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangeClusterNetworkCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
+            response = client.change_cluster_network_compartment(
+                cluster_network_id=request.pop(util.camelize('cluster_network_id')),
+                change_cluster_network_compartment_details=request.pop(util.camelize('change_cluster_network_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangeClusterNetworkCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_cluster_network_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
 def test_change_instance_configuration_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ChangeInstanceConfigurationCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -146,6 +187,46 @@ def test_change_instance_pool_compartment(testing_service_client):
             result,
             service_error,
             'change_instance_pool_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
+def test_create_cluster_network(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'CreateClusterNetwork'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'CreateClusterNetwork')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='CreateClusterNetwork')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
+            response = client.create_cluster_network(
+                create_cluster_network_details=request.pop(util.camelize('create_cluster_network_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'CreateClusterNetwork',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'clusterNetwork',
             False,
             False
         )
@@ -313,6 +394,46 @@ def test_detach_load_balancer(testing_service_client):
 
 
 # IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
+def test_get_cluster_network(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetClusterNetwork'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'GetClusterNetwork')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetClusterNetwork')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_cluster_network(
+                cluster_network_id=request.pop(util.camelize('cluster_network_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetClusterNetwork',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'clusterNetwork',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
 def test_get_instance_configuration(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetInstanceConfiguration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -471,6 +592,127 @@ def test_launch_instance_configuration(testing_service_client):
             'instance',
             False,
             False
+        )
+
+
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
+def test_list_cluster_network_instances(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListClusterNetworkInstances'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'ListClusterNetworkInstances')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListClusterNetworkInstances')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_cluster_network_instances(
+                compartment_id=request.pop(util.camelize('compartment_id')),
+                cluster_network_id=request.pop(util.camelize('cluster_network_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_cluster_network_instances(
+                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    cluster_network_id=request.pop(util.camelize('cluster_network_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_cluster_network_instances(
+                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        cluster_network_id=request.pop(util.camelize('cluster_network_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListClusterNetworkInstances',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'instanceSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
+def test_list_cluster_networks(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListClusterNetworks'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'ListClusterNetworks')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListClusterNetworks')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_cluster_networks(
+                compartment_id=request.pop(util.camelize('compartment_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_cluster_networks(
+                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_cluster_networks(
+                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListClusterNetworks',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'clusterNetworkSummary',
+            False,
+            True
         )
 
 
@@ -815,6 +1057,46 @@ def test_stop_instance_pool(testing_service_client):
 
 
 # IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
+def test_terminate_cluster_network(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'TerminateClusterNetwork'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'TerminateClusterNetwork')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='TerminateClusterNetwork')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
+            response = client.terminate_cluster_network(
+                cluster_network_id=request.pop(util.camelize('cluster_network_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'TerminateClusterNetwork',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'terminate_cluster_network',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
 def test_terminate_instance_pool(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'TerminateInstancePool'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -850,6 +1132,47 @@ def test_terminate_instance_pool(testing_service_client):
             service_error,
             'terminate_instance_pool',
             True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="computeManagement" email="instance_dev_us_grp@oracle.com" jiraProject="CIM" opsJiraProject="IPA"
+def test_update_cluster_network(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'UpdateClusterNetwork'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute_management'), 'UpdateClusterNetwork')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateClusterNetwork')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeManagementClient(config, service_endpoint=service_endpoint)
+            response = client.update_cluster_network(
+                cluster_network_id=request.pop(util.camelize('cluster_network_id')),
+                update_cluster_network_details=request.pop(util.camelize('update_cluster_network_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'UpdateClusterNetwork',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'clusterNetwork',
+            False,
             False
         )
 
