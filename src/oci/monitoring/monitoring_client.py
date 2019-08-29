@@ -136,7 +136,7 @@ class MonitoringClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_alarm_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -227,7 +227,7 @@ class MonitoringClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_alarm got unknown kwargs: {!r}".format(extra_kwargs))
@@ -307,7 +307,7 @@ class MonitoringClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_alarm got unknown kwargs: {!r}".format(extra_kwargs))
@@ -386,7 +386,7 @@ class MonitoringClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_alarm got unknown kwargs: {!r}".format(extra_kwargs))
@@ -505,7 +505,7 @@ class MonitoringClient(object):
             "timestamp_greater_than_or_equal_to",
             "timestamp_less_than"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_alarm_history got unknown kwargs: {!r}".format(extra_kwargs))
@@ -660,7 +660,7 @@ class MonitoringClient(object):
             "sort_order",
             "compartment_id_in_subtree"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_alarms got unknown kwargs: {!r}".format(extra_kwargs))
@@ -814,7 +814,7 @@ class MonitoringClient(object):
             "sort_by",
             "sort_order"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_alarms_status got unknown kwargs: {!r}".format(extra_kwargs))
@@ -945,7 +945,7 @@ class MonitoringClient(object):
             "limit",
             "compartment_id_in_subtree"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_metrics got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1040,7 +1040,7 @@ class MonitoringClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "post_metric_data got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1117,7 +1117,7 @@ class MonitoringClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "remove_alarm_suppression got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1214,7 +1214,7 @@ class MonitoringClient(object):
             "opc_request_id",
             "compartment_id_in_subtree"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "summarize_metrics_data got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1302,7 +1302,7 @@ class MonitoringClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_alarm got unknown kwargs: {!r}".format(extra_kwargs))

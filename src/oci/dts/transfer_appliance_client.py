@@ -114,7 +114,7 @@ class TransferApplianceClient(object):
             "opc_retry_token",
             "create_transfer_appliance_details"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_transfer_appliance got unknown kwargs: {!r}".format(extra_kwargs))
@@ -189,7 +189,7 @@ class TransferApplianceClient(object):
         method = "POST"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_transfer_appliance_admin_credentials got unknown kwargs: {!r}".format(extra_kwargs))
@@ -259,7 +259,7 @@ class TransferApplianceClient(object):
         method = "DELETE"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_transfer_appliance got unknown kwargs: {!r}".format(extra_kwargs))
@@ -325,7 +325,7 @@ class TransferApplianceClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_transfer_appliance got unknown kwargs: {!r}".format(extra_kwargs))
@@ -393,7 +393,7 @@ class TransferApplianceClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_transfer_appliance_certificate_authority_certificate got unknown kwargs: {!r}".format(extra_kwargs))
@@ -461,7 +461,7 @@ class TransferApplianceClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_transfer_appliance_encryption_passphrase got unknown kwargs: {!r}".format(extra_kwargs))
@@ -535,7 +535,7 @@ class TransferApplianceClient(object):
             "retry_strategy",
             "lifecycle_state"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_transfer_appliances got unknown kwargs: {!r}".format(extra_kwargs))
@@ -627,7 +627,7 @@ class TransferApplianceClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_transfer_appliance got unknown kwargs: {!r}".format(extra_kwargs))

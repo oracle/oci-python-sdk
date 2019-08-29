@@ -122,7 +122,7 @@ class ObjectStorageClient(object):
             "retry_strategy",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "abort_multipart_upload got unknown kwargs: {!r}".format(extra_kwargs))
@@ -202,7 +202,7 @@ class ObjectStorageClient(object):
             "retry_strategy",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "cancel_work_request got unknown kwargs: {!r}".format(extra_kwargs))
@@ -298,7 +298,7 @@ class ObjectStorageClient(object):
             "if_none_match",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "commit_multipart_upload got unknown kwargs: {!r}".format(extra_kwargs))
@@ -389,7 +389,7 @@ class ObjectStorageClient(object):
             "retry_strategy",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "copy_object got unknown kwargs: {!r}".format(extra_kwargs))
@@ -467,7 +467,7 @@ class ObjectStorageClient(object):
             "retry_strategy",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_bucket got unknown kwargs: {!r}".format(extra_kwargs))
@@ -560,7 +560,7 @@ class ObjectStorageClient(object):
             "if_none_match",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_multipart_upload got unknown kwargs: {!r}".format(extra_kwargs))
@@ -645,7 +645,7 @@ class ObjectStorageClient(object):
             "retry_strategy",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_preauthenticated_request got unknown kwargs: {!r}".format(extra_kwargs))
@@ -732,7 +732,7 @@ class ObjectStorageClient(object):
             "if_match",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_bucket got unknown kwargs: {!r}".format(extra_kwargs))
@@ -818,7 +818,7 @@ class ObjectStorageClient(object):
             "if_match",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_object got unknown kwargs: {!r}".format(extra_kwargs))
@@ -901,7 +901,7 @@ class ObjectStorageClient(object):
             "opc_client_request_id",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_object_lifecycle_policy got unknown kwargs: {!r}".format(extra_kwargs))
@@ -982,7 +982,7 @@ class ObjectStorageClient(object):
             "retry_strategy",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_preauthenticated_request got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1078,7 +1078,7 @@ class ObjectStorageClient(object):
             "opc_client_request_id",
             "fields"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_bucket got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1177,7 +1177,7 @@ class ObjectStorageClient(object):
             "opc_client_request_id",
             "compartment_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_namespace got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1253,7 +1253,7 @@ class ObjectStorageClient(object):
             "retry_strategy",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_namespace_metadata got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1352,7 +1352,7 @@ class ObjectStorageClient(object):
             "opc_client_request_id",
             "range"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_object got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1434,7 +1434,7 @@ class ObjectStorageClient(object):
             "retry_strategy",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_object_lifecycle_policy got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1516,7 +1516,7 @@ class ObjectStorageClient(object):
             "retry_strategy",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_preauthenticated_request got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1591,7 +1591,7 @@ class ObjectStorageClient(object):
             "retry_strategy",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1679,7 +1679,7 @@ class ObjectStorageClient(object):
             "if_none_match",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "head_bucket got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1772,7 +1772,7 @@ class ObjectStorageClient(object):
             "if_none_match",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "head_object got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1873,7 +1873,7 @@ class ObjectStorageClient(object):
             "fields",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_buckets got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1983,7 +1983,7 @@ class ObjectStorageClient(object):
             "page",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_multipart_upload_parts got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2079,7 +2079,7 @@ class ObjectStorageClient(object):
             "page",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_multipart_uploads got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2204,7 +2204,7 @@ class ObjectStorageClient(object):
             "fields",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_objects got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2306,7 +2306,7 @@ class ObjectStorageClient(object):
             "page",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_preauthenticated_requests got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2397,7 +2397,7 @@ class ObjectStorageClient(object):
             "limit",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2486,7 +2486,7 @@ class ObjectStorageClient(object):
             "limit",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_work_request_logs got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2575,7 +2575,7 @@ class ObjectStorageClient(object):
             "page",
             "limit"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2704,7 +2704,7 @@ class ObjectStorageClient(object):
             "content_encoding",
             "opc_meta"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "put_object got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2824,7 +2824,7 @@ class ObjectStorageClient(object):
             "if_match",
             "if_none_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "put_object_lifecycle_policy got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2909,7 +2909,7 @@ class ObjectStorageClient(object):
             "retry_strategy",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "rename_object got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2991,7 +2991,7 @@ class ObjectStorageClient(object):
             "retry_strategy",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "restore_objects got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3077,7 +3077,7 @@ class ObjectStorageClient(object):
             "if_match",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_bucket got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3163,7 +3163,7 @@ class ObjectStorageClient(object):
             "retry_strategy",
             "opc_client_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_namespace_metadata got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3282,7 +3282,7 @@ class ObjectStorageClient(object):
             "expect",
             "content_md5"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "upload_part got unknown kwargs: {!r}".format(extra_kwargs))

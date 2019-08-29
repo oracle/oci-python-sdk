@@ -123,7 +123,7 @@ class WaasClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "accept_recommendations got unknown kwargs: {!r}".format(extra_kwargs))
@@ -208,7 +208,7 @@ class WaasClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "cancel_work_request got unknown kwargs: {!r}".format(extra_kwargs))
@@ -296,7 +296,7 @@ class WaasClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_address_list_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -386,7 +386,7 @@ class WaasClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_certificate_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -476,7 +476,7 @@ class WaasClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_custom_protection_rule_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -566,7 +566,7 @@ class WaasClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_waas_policy_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -651,7 +651,7 @@ class WaasClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_address_list got unknown kwargs: {!r}".format(extra_kwargs))
@@ -726,7 +726,7 @@ class WaasClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_certificate got unknown kwargs: {!r}".format(extra_kwargs))
@@ -797,7 +797,7 @@ class WaasClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_custom_protection_rule got unknown kwargs: {!r}".format(extra_kwargs))
@@ -883,7 +883,7 @@ class WaasClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_waas_policy got unknown kwargs: {!r}".format(extra_kwargs))
@@ -958,7 +958,7 @@ class WaasClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_address_list got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1044,7 +1044,7 @@ class WaasClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_certificate got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1130,7 +1130,7 @@ class WaasClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_custom_protection_rule got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1216,7 +1216,7 @@ class WaasClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_waas_policy got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1293,7 +1293,7 @@ class WaasClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_address_list got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1368,7 +1368,7 @@ class WaasClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_certificate got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1443,7 +1443,7 @@ class WaasClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_custom_protection_rule got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1518,7 +1518,7 @@ class WaasClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_device_fingerprint_challenge got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1593,7 +1593,7 @@ class WaasClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_human_interaction_challenge got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1668,7 +1668,7 @@ class WaasClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_js_challenge got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1743,7 +1743,7 @@ class WaasClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_policy_config got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1821,7 +1821,7 @@ class WaasClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_protection_rule got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1897,7 +1897,7 @@ class WaasClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_protection_settings got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1972,7 +1972,7 @@ class WaasClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_waas_policy got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2047,7 +2047,7 @@ class WaasClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_waf_address_rate_limiting got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2122,7 +2122,7 @@ class WaasClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_waf_config got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2197,7 +2197,7 @@ class WaasClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2281,7 +2281,7 @@ class WaasClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_access_rules got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2406,7 +2406,7 @@ class WaasClient(object):
             "time_created_greater_than_or_equal_to",
             "time_created_less_than"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_address_lists got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2516,7 +2516,7 @@ class WaasClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_caching_rules got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2611,7 +2611,7 @@ class WaasClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_captchas got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2736,7 +2736,7 @@ class WaasClient(object):
             "time_created_greater_than_or_equal_to",
             "time_created_less_than"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_certificates got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2879,7 +2879,7 @@ class WaasClient(object):
             "time_created_greater_than_or_equal_to",
             "time_created_less_than"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_custom_protection_rules got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2995,7 +2995,7 @@ class WaasClient(object):
             "sort_by",
             "sort_order"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_edge_subnets got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3092,7 +3092,7 @@ class WaasClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_good_bots got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3194,7 +3194,7 @@ class WaasClient(object):
             "mod_security_rule_id",
             "action"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_protection_rules got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3306,7 +3306,7 @@ class WaasClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_recommendations got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3407,7 +3407,7 @@ class WaasClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_threat_feeds got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3532,7 +3532,7 @@ class WaasClient(object):
             "time_created_greater_than_or_equal_to",
             "time_created_less_than"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_waas_policies got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3651,7 +3651,7 @@ class WaasClient(object):
             "mod_security_rule_id",
             "action"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_waas_policy_custom_protection_rules got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3766,7 +3766,7 @@ class WaasClient(object):
             "page",
             "waf_feature"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_waf_blocked_requests got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3954,7 +3954,7 @@ class WaasClient(object):
             "user_agent",
             "protection_rule_key"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_waf_logs got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4098,7 +4098,7 @@ class WaasClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_waf_requests got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4200,7 +4200,7 @@ class WaasClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_waf_traffic got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4293,7 +4293,7 @@ class WaasClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_whitelists got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4401,7 +4401,7 @@ class WaasClient(object):
             "sort_by",
             "sort_order"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4497,7 +4497,7 @@ class WaasClient(object):
             "if_match",
             "purge_cache"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "purge_cache got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4592,7 +4592,7 @@ class WaasClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_access_rules got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4679,7 +4679,7 @@ class WaasClient(object):
             "if_match",
             "update_address_list_details"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_address_list got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4771,7 +4771,7 @@ class WaasClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_caching_rules got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4868,7 +4868,7 @@ class WaasClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_captchas got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4955,7 +4955,7 @@ class WaasClient(object):
             "if_match",
             "update_certificate_details"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_certificate got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5045,7 +5045,7 @@ class WaasClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_custom_protection_rule got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5142,7 +5142,7 @@ class WaasClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_device_fingerprint_challenge got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5236,7 +5236,7 @@ class WaasClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_good_bots got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5327,7 +5327,7 @@ class WaasClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_human_interaction_challenge got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5420,7 +5420,7 @@ class WaasClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_js_challenge got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5511,7 +5511,7 @@ class WaasClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_policy_config got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5600,7 +5600,7 @@ class WaasClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_protection_rules got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5688,7 +5688,7 @@ class WaasClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_protection_settings got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5774,7 +5774,7 @@ class WaasClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_threat_feeds got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5864,7 +5864,7 @@ class WaasClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_waas_policy got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5956,7 +5956,7 @@ class WaasClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_waas_policy_custom_protection_rules got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6047,7 +6047,7 @@ class WaasClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_waf_address_rate_limiting got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6145,7 +6145,7 @@ class WaasClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_waf_config got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6243,7 +6243,7 @@ class WaasClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_whitelists got unknown kwargs: {!r}".format(extra_kwargs))

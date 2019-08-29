@@ -130,7 +130,7 @@ class ComputeManagementClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "attach_load_balancer got unknown kwargs: {!r}".format(extra_kwargs))
@@ -226,7 +226,7 @@ class ComputeManagementClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_cluster_network_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -336,7 +336,7 @@ class ComputeManagementClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_instance_configuration_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -438,7 +438,7 @@ class ComputeManagementClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_instance_pool_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -519,7 +519,7 @@ class ComputeManagementClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_cluster_network got unknown kwargs: {!r}".format(extra_kwargs))
@@ -589,7 +589,7 @@ class ComputeManagementClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_instance_configuration got unknown kwargs: {!r}".format(extra_kwargs))
@@ -658,7 +658,7 @@ class ComputeManagementClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_instance_pool got unknown kwargs: {!r}".format(extra_kwargs))
@@ -725,7 +725,7 @@ class ComputeManagementClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_instance_configuration got unknown kwargs: {!r}".format(extra_kwargs))
@@ -809,7 +809,7 @@ class ComputeManagementClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "detach_load_balancer got unknown kwargs: {!r}".format(extra_kwargs))
@@ -880,7 +880,7 @@ class ComputeManagementClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_cluster_network got unknown kwargs: {!r}".format(extra_kwargs))
@@ -944,7 +944,7 @@ class ComputeManagementClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_instance_configuration got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1008,7 +1008,7 @@ class ComputeManagementClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_instance_pool got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1075,7 +1075,7 @@ class ComputeManagementClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_instance_pool_load_balancer_attachment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1160,7 +1160,7 @@ class ComputeManagementClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "launch_instance_configuration got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1280,7 +1280,7 @@ class ComputeManagementClient(object):
             "sort_by",
             "sort_order"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_cluster_network_instances got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1423,7 +1423,7 @@ class ComputeManagementClient(object):
             "sort_order",
             "lifecycle_state"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_cluster_networks got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1552,7 +1552,7 @@ class ComputeManagementClient(object):
             "sort_by",
             "sort_order"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_instance_configurations got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1679,7 +1679,7 @@ class ComputeManagementClient(object):
             "sort_by",
             "sort_order"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_instance_pool_instances got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1822,7 +1822,7 @@ class ComputeManagementClient(object):
             "sort_order",
             "lifecycle_state"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_instance_pools got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1926,7 +1926,7 @@ class ComputeManagementClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "reset_instance_pool got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2013,7 +2013,7 @@ class ComputeManagementClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "softreset_instance_pool got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2100,7 +2100,7 @@ class ComputeManagementClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "start_instance_pool got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2187,7 +2187,7 @@ class ComputeManagementClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "stop_instance_pool got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2265,7 +2265,7 @@ class ComputeManagementClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "terminate_cluster_network got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2338,7 +2338,7 @@ class ComputeManagementClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "terminate_instance_pool got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2423,7 +2423,7 @@ class ComputeManagementClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_cluster_network got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2514,7 +2514,7 @@ class ComputeManagementClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_instance_configuration got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2606,7 +2606,7 @@ class ComputeManagementClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_instance_pool got unknown kwargs: {!r}".format(extra_kwargs))

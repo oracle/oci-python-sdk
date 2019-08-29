@@ -110,7 +110,7 @@ class TransferPackageClient(object):
         method = "POST"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "attach_devices_to_transfer_package got unknown kwargs: {!r}".format(extra_kwargs))
@@ -185,7 +185,7 @@ class TransferPackageClient(object):
             "opc_retry_token",
             "create_transfer_package_details"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_transfer_package got unknown kwargs: {!r}".format(extra_kwargs))
@@ -258,7 +258,7 @@ class TransferPackageClient(object):
         method = "DELETE"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_transfer_package got unknown kwargs: {!r}".format(extra_kwargs))
@@ -327,7 +327,7 @@ class TransferPackageClient(object):
         method = "POST"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "detach_devices_from_transfer_package got unknown kwargs: {!r}".format(extra_kwargs))
@@ -395,7 +395,7 @@ class TransferPackageClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_transfer_package got unknown kwargs: {!r}".format(extra_kwargs))
@@ -473,7 +473,7 @@ class TransferPackageClient(object):
             "lifecycle_state",
             "display_name"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_transfer_packages got unknown kwargs: {!r}".format(extra_kwargs))
@@ -566,7 +566,7 @@ class TransferPackageClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_transfer_package got unknown kwargs: {!r}".format(extra_kwargs))

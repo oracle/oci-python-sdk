@@ -127,7 +127,7 @@ class LimitsClient(object):
             "availability_domain",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_resource_availability got unknown kwargs: {!r}".format(extra_kwargs))
@@ -240,7 +240,7 @@ class LimitsClient(object):
             "page",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_limit_definitions got unknown kwargs: {!r}".format(extra_kwargs))
@@ -366,7 +366,7 @@ class LimitsClient(object):
             "page",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_limit_values got unknown kwargs: {!r}".format(extra_kwargs))
@@ -485,7 +485,7 @@ class LimitsClient(object):
             "page",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_services got unknown kwargs: {!r}".format(extra_kwargs))
