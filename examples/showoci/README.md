@@ -463,14 +463,26 @@ Compartment gse00000000 (root):
 ##############################
 #         Limits > 0         #
 ##############################
---> auto-scaling        config-count                          = 200        SCOPE=REGION 
---> block-storage       backup-count                          = 4000       SCOPE=REGION 
---> block-storage       total-storage-gb                      = 30720      SCOPE=AD     EWTG:US-ASHBURN-AD-1
---> block-storage       total-storage-gb                      = 30720      SCOPE=AD     EWTG:US-ASHBURN-AD-2
---> block-storage       total-storage-gb                      = 30720      SCOPE=AD     EWTG:US-ASHBURN-AD-3
---> block-storage       volume-count                          = 10000      SCOPE=AD     EWTG:US-ASHBURN-AD-1
---> block-storage       volume-count                          = 10000      SCOPE=AD     EWTG:US-ASHBURN-AD-2
---> block-storage       volume-count                          = 10000      SCOPE=AD     EWTG:US-ASHBURN-AD-3
+--> auto-scaling        config-count                          = 200        Used =             Available =             SCOPE=REGION
+--> block-storage       backup-count                          = 4000       Used =             Available = 4000        SCOPE=REGION
+--> block-storage       total-storage-gb                      = 30720      Used =             Available =             SCOPE=AD     EWTG:US-ASHBURN-AD-1
+--> block-storage       total-storage-gb                      = 30720      Used =             Available =             SCOPE=AD     EWTG:US-ASHBURN-AD-2
+--> block-storage       total-storage-gb                      = 30720      Used =             Available =             SCOPE=AD     EWTG:US-ASHBURN-AD-3
+--> block-storage       volume-count                          = 10000      Used =             Available = 10000       SCOPE=AD     EWTG:US-ASHBURN-AD-1
+--> block-storage       volume-count                          = 10000      Used =             Available = 10000       SCOPE=AD     EWTG:US-ASHBURN-AD-2
+--> block-storage       volume-count                          = 10000      Used =             Available = 10000       SCOPE=AD     EWTG:US-ASHBURN-AD-3
+--> block-storage       volumes-per-group                     = 32         Used =             Available =             SCOPE=AD     EWTG:US-ASHBURN-AD-1
+--> block-storage       volumes-per-group                     = 32         Used =             Available =             SCOPE=AD     EWTG:US-ASHBURN-AD-2
+--> block-storage       volumes-per-group                     = 32         Used =             Available =             SCOPE=AD     EWTG:US-ASHBURN-AD-3
+--> compartments        compartment-count                     = 50         Used = 3           Available = 47          SCOPE=REGION
+--> compute             custom-image-count                    = 25         Used =             Available = 25          SCOPE=REGION
+--> compute             vm-standard-b1-1                      = 2          Used =             Available = 2           SCOPE=AD     EWTG:US-ASHBURN-AD-1
+--> compute             vm-standard-b1-1                      = 2          Used =             Available = 2           SCOPE=AD     EWTG:US-ASHBURN-AD-2
+--> compute             vm-standard1-1-count                  = 2          Used =             Available = 2           SCOPE=AD     EWTG:US-ASHBURN-AD-3
+--> compute             vm-standard1-2-count                  = 2          Used =             Available = 2           SCOPE=AD     EWTG:US-ASHBURN-AD-1
+--> compute             vm-standard1-2-count                  = 2          Used =             Available = 2           SCOPE=AD     EWTG:US-ASHBURN-AD-2
+--> compute             vm-standard1-2-count                  = 2          Used =             Available = 2           SCOPE=AD     EWTG:US-ASHBURN-AD-3
+...
 
 ############################################################
 #                   Compartment Network                    #

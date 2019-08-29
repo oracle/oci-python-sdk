@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+19.9.4 - 2019-09-04
+====================
+* Added usage and available to the limits
+* Added CSV extract for limits
+* Fix few error handling
+
+====================
 19.9.3 - 2019-09-03
 ====================
 * Support limits and quota with -lq flag

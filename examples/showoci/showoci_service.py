@@ -571,7 +571,9 @@ class ShowOCIService(object):
     def __print_error(self, msg, e):
         classname = type(self).__name__
 
-        if isinstance(e, KeyError):
+        if 'TooManyRequests' in str(e):
+            print(" - TooManyRequests Err in " + msg)
+        elif isinstance(e, KeyError):
             print("\nError in " + classname + ":" + msg + ": KeyError " + str(e.args))
         else:
             print("\nError in " + classname + ":" + msg + ": " + str(e))
@@ -590,7 +592,7 @@ class ShowOCIService(object):
     def __check_request_error(self, e):
 
         # service not yet available
-        if ('Errno 8' in str(e) and 'NewConnectionError' in str(e)) or 'Max retries exceeded' in str(e) or 'HTTPSConnectionPool' in str(e):
+        if ('Errno 8' in str(e) and 'NewConnectionError' in str(e)) or 'Max retries exceeded' in str(e) or 'HTTPSConnectionPool' in str(e) or 'not currently available' in str(e):
             print("Service Not Accessible or not yet exist")
             return True
         return False
@@ -4735,6 +4737,9 @@ class ShowOCIService(object):
                     suppressions = email.list_suppressions(compartment['id']).data
 
                 except oci.exceptions.ServiceError as e:
+                    if self.__check_request_error(e):
+                        return data
+
                     if self.__check_service_error(e.code):
                         self.__load_print_auth_warning()
                         continue
@@ -6630,24 +6635,23 @@ class ShowOCIService(object):
                 services = limits_client.list_services(tenancy_id, sort_by="name").data
             except oci.exceptions.ServiceError as e:
                 if self.__check_service_error(e.code):
-                    self.__load_print_auth_warning()
+                    self.__load_print_auth_warning("a", False)
                 else:
                     raise
-
-            print(".", end="")
 
             if services:
 
                 # oci.limits.models.ServiceSummary
                 for service in services:
+                    print(".", end="")
 
                     # get the limits per service
                     limits = []
                     try:
                         limits = limits_client.list_limit_values(tenancy_id, service_name=service.name, sort_by="name").data
-                    except oci.exceptions.ServiceError as e:
+                    except oci.exceptions.Exception as e:
                         if self.__check_service_error(e.code):
-                            self.__load_print_auth_warning()
+                            self.__load_print_auth_warning("a", False)
                         else:
                             raise
 
@@ -6660,13 +6664,34 @@ class ShowOCIService(object):
                             'availability_domain': ("" if limit.availability_domain is None else str(limit.availability_domain)),
                             'scope_type': str(limit.scope_type),
                             'value': str(limit.value),
+                            'used': "",
+                            'available': "",
                             'region_name': str(self.config['region'])
                         }
 
-                        # add the data if limits > 0
-                        if limit.value > 0:
-                            cnt += 1
-                            data.append(val)
+                        # if not limit, continue, don't calculate limit = 0
+                        if limit.value == 0:
+                            continue
+
+                        # get usage per limit if available
+                        try:
+                            usage = []
+                            if limit.scope_type == "AD":
+                                usage = limits_client.get_resource_availability(service.name, limit.name, tenancy_id, availability_domain=limit.availability_domain).data
+                            else:
+                                usage = limits_client.get_resource_availability(service.name, limit.name, tenancy_id).data
+
+                            # oci.limits.models.ResourceAvailability
+                            if usage.used:
+                                val['used'] = str(usage.used)
+                            if usage.available:
+                                val['available'] = str(usage.available)
+                        except Exception:
+                            pass
+
+                        # add to array
+                        cnt += 1
+                        data.append(val)
 
             self.__load_print_cnt(cnt, start_time)
             return data
@@ -6692,6 +6717,11 @@ class ShowOCIService(object):
 
             # loop on all compartments
             for compartment in compartments:
+
+                # skip Paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
 
                 quotas = []
                 try:
