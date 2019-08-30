@@ -112,6 +112,7 @@
                 <specName>database</specName>
                 <generateInitFile>true</generateInitFile>
                 <endpoint>https://database.{domain}</endpoint>
+                <specUsesWorkRequestService>true</specUsesWorkRequestService>
               </additionalProperties>
               <featureIdConfigFile>${feature-id-file}</featureIdConfigFile>
               <featureIdConfigDir>${feature-id-dir}</featureIdConfigDir>
