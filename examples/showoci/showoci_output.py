@@ -69,9 +69,19 @@ class ShowOCIOutput(object):
                         has_data = True
 
                     elif d['type'] == "region":
-                        self.__print_region_data(d['region'], d['data'])
-                        has_data = True
+
+                        # Check if limits exist
+                        limits_exist = False
                         if 'limits' in d:
+                            if d['limits']:
+                                limits_exist = True
+
+                        if d['data'] or limits_exist:
+                            self.print_header(d['region'], 0)
+                            has_data = True
+
+                        self.__print_region_data(d['region'], d['data'])
+                        if limits_exist:
                             self.__print_limits_main(d['limits'])
 
                     else:
@@ -1454,7 +1464,6 @@ class ShowOCIOutput(object):
         try:
             if not data:
                 return
-            self.print_header(region_name, 0)
 
             for cdata in data:
                 if 'path' in cdata:
