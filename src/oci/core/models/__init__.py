@@ -34,6 +34,7 @@ from .bulk_delete_virtual_circuit_public_prefixes_details import BulkDeleteVirtu
 from .capture_console_history_details import CaptureConsoleHistoryDetails
 from .change_boot_volume_backup_compartment_details import ChangeBootVolumeBackupCompartmentDetails
 from .change_boot_volume_compartment_details import ChangeBootVolumeCompartmentDetails
+from .change_cluster_network_compartment_details import ChangeClusterNetworkCompartmentDetails
 from .change_cpe_compartment_details import ChangeCpeCompartmentDetails
 from .change_cross_connect_compartment_details import ChangeCrossConnectCompartmentDetails
 from .change_cross_connect_group_compartment_details import ChangeCrossConnectGroupCompartmentDetails
@@ -60,6 +61,9 @@ from .change_volume_backup_compartment_details import ChangeVolumeBackupCompartm
 from .change_volume_compartment_details import ChangeVolumeCompartmentDetails
 from .change_volume_group_backup_compartment_details import ChangeVolumeGroupBackupCompartmentDetails
 from .change_volume_group_compartment_details import ChangeVolumeGroupCompartmentDetails
+from .cluster_network import ClusterNetwork
+from .cluster_network_placement_configuration_details import ClusterNetworkPlacementConfigurationDetails
+from .cluster_network_summary import ClusterNetworkSummary
 from .compute_instance_details import ComputeInstanceDetails
 from .connect_local_peering_gateways_details import ConnectLocalPeeringGatewaysDetails
 from .connect_remote_peering_connections_details import ConnectRemotePeeringConnectionsDetails
@@ -69,6 +73,8 @@ from .cpe import Cpe
 from .create_app_catalog_subscription_details import CreateAppCatalogSubscriptionDetails
 from .create_boot_volume_backup_details import CreateBootVolumeBackupDetails
 from .create_boot_volume_details import CreateBootVolumeDetails
+from .create_cluster_network_details import CreateClusterNetworkDetails
+from .create_cluster_network_instance_pool_details import CreateClusterNetworkInstancePoolDetails
 from .create_cpe_details import CreateCpeDetails
 from .create_cross_connect_details import CreateCrossConnectDetails
 from .create_cross_connect_group_details import CreateCrossConnectGroupDetails
@@ -214,6 +220,7 @@ from .udp_options import UdpOptions
 from .update_boot_volume_backup_details import UpdateBootVolumeBackupDetails
 from .update_boot_volume_details import UpdateBootVolumeDetails
 from .update_boot_volume_kms_key_details import UpdateBootVolumeKmsKeyDetails
+from .update_cluster_network_details import UpdateClusterNetworkDetails
 from .update_console_history_details import UpdateConsoleHistoryDetails
 from .update_cpe_details import UpdateCpeDetails
 from .update_cross_connect_details import UpdateCrossConnectDetails
@@ -311,6 +318,7 @@ core_type_mapping = {
     "CaptureConsoleHistoryDetails": CaptureConsoleHistoryDetails,
     "ChangeBootVolumeBackupCompartmentDetails": ChangeBootVolumeBackupCompartmentDetails,
     "ChangeBootVolumeCompartmentDetails": ChangeBootVolumeCompartmentDetails,
+    "ChangeClusterNetworkCompartmentDetails": ChangeClusterNetworkCompartmentDetails,
     "ChangeCpeCompartmentDetails": ChangeCpeCompartmentDetails,
     "ChangeCrossConnectCompartmentDetails": ChangeCrossConnectCompartmentDetails,
     "ChangeCrossConnectGroupCompartmentDetails": ChangeCrossConnectGroupCompartmentDetails,
@@ -337,6 +345,9 @@ core_type_mapping = {
     "ChangeVolumeCompartmentDetails": ChangeVolumeCompartmentDetails,
     "ChangeVolumeGroupBackupCompartmentDetails": ChangeVolumeGroupBackupCompartmentDetails,
     "ChangeVolumeGroupCompartmentDetails": ChangeVolumeGroupCompartmentDetails,
+    "ClusterNetwork": ClusterNetwork,
+    "ClusterNetworkPlacementConfigurationDetails": ClusterNetworkPlacementConfigurationDetails,
+    "ClusterNetworkSummary": ClusterNetworkSummary,
     "ComputeInstanceDetails": ComputeInstanceDetails,
     "ConnectLocalPeeringGatewaysDetails": ConnectLocalPeeringGatewaysDetails,
     "ConnectRemotePeeringConnectionsDetails": ConnectRemotePeeringConnectionsDetails,
@@ -346,6 +357,8 @@ core_type_mapping = {
     "CreateAppCatalogSubscriptionDetails": CreateAppCatalogSubscriptionDetails,
     "CreateBootVolumeBackupDetails": CreateBootVolumeBackupDetails,
     "CreateBootVolumeDetails": CreateBootVolumeDetails,
+    "CreateClusterNetworkDetails": CreateClusterNetworkDetails,
+    "CreateClusterNetworkInstancePoolDetails": CreateClusterNetworkInstancePoolDetails,
     "CreateCpeDetails": CreateCpeDetails,
     "CreateCrossConnectDetails": CreateCrossConnectDetails,
     "CreateCrossConnectGroupDetails": CreateCrossConnectGroupDetails,
@@ -491,6 +504,7 @@ core_type_mapping = {
     "UpdateBootVolumeBackupDetails": UpdateBootVolumeBackupDetails,
     "UpdateBootVolumeDetails": UpdateBootVolumeDetails,
     "UpdateBootVolumeKmsKeyDetails": UpdateBootVolumeKmsKeyDetails,
+    "UpdateClusterNetworkDetails": UpdateClusterNetworkDetails,
     "UpdateConsoleHistoryDetails": UpdateConsoleHistoryDetails,
     "UpdateCpeDetails": UpdateCpeDetails,
     "UpdateCrossConnectDetails": UpdateCrossConnectDetails,

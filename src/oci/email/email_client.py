@@ -124,7 +124,7 @@ class EmailClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_sender_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -198,7 +198,7 @@ class EmailClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_sender got unknown kwargs: {!r}".format(extra_kwargs))
@@ -264,7 +264,7 @@ class EmailClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_suppression got unknown kwargs: {!r}".format(extra_kwargs))
@@ -334,7 +334,7 @@ class EmailClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_sender got unknown kwargs: {!r}".format(extra_kwargs))
@@ -407,7 +407,7 @@ class EmailClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_suppression got unknown kwargs: {!r}".format(extra_kwargs))
@@ -478,7 +478,7 @@ class EmailClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_sender got unknown kwargs: {!r}".format(extra_kwargs))
@@ -552,7 +552,7 @@ class EmailClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_suppression got unknown kwargs: {!r}".format(extra_kwargs))
@@ -666,7 +666,7 @@ class EmailClient(object):
             "sort_by",
             "sort_order"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_senders got unknown kwargs: {!r}".format(extra_kwargs))
@@ -820,7 +820,7 @@ class EmailClient(object):
             "sort_by",
             "sort_order"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_suppressions got unknown kwargs: {!r}".format(extra_kwargs))
@@ -923,7 +923,7 @@ class EmailClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_sender got unknown kwargs: {!r}".format(extra_kwargs))

@@ -132,7 +132,7 @@ class KmsVaultClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "cancel_vault_deletion got unknown kwargs: {!r}".format(extra_kwargs))
@@ -230,7 +230,7 @@ class KmsVaultClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_vault_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -321,7 +321,7 @@ class KmsVaultClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_vault got unknown kwargs: {!r}".format(extra_kwargs))
@@ -389,7 +389,7 @@ class KmsVaultClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_vault got unknown kwargs: {!r}".format(extra_kwargs))
@@ -487,7 +487,7 @@ class KmsVaultClient(object):
             "sort_by",
             "sort_order"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_vaults got unknown kwargs: {!r}".format(extra_kwargs))
@@ -600,7 +600,7 @@ class KmsVaultClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "schedule_vault_deletion got unknown kwargs: {!r}".format(extra_kwargs))
@@ -694,7 +694,7 @@ class KmsVaultClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_vault got unknown kwargs: {!r}".format(extra_kwargs))

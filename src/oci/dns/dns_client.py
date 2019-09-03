@@ -127,7 +127,7 @@ class DnsClient(object):
             "if_match",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_steering_policy_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -219,7 +219,7 @@ class DnsClient(object):
             "if_match",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_zone_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -302,7 +302,7 @@ class DnsClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_steering_policy got unknown kwargs: {!r}".format(extra_kwargs))
@@ -376,7 +376,7 @@ class DnsClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_steering_policy_attachment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -442,7 +442,7 @@ class DnsClient(object):
             "retry_strategy",
             "compartment_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_zone got unknown kwargs: {!r}".format(extra_kwargs))
@@ -528,7 +528,7 @@ class DnsClient(object):
             "if_unmodified_since",
             "compartment_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_domain_records got unknown kwargs: {!r}".format(extra_kwargs))
@@ -629,7 +629,7 @@ class DnsClient(object):
             "if_unmodified_since",
             "compartment_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_rr_set got unknown kwargs: {!r}".format(extra_kwargs))
@@ -724,7 +724,7 @@ class DnsClient(object):
             "if_match",
             "if_unmodified_since"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_steering_policy got unknown kwargs: {!r}".format(extra_kwargs))
@@ -808,7 +808,7 @@ class DnsClient(object):
             "if_match",
             "if_unmodified_since"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_steering_policy_attachment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -896,7 +896,7 @@ class DnsClient(object):
             "if_unmodified_since",
             "compartment_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_zone got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1024,7 +1024,7 @@ class DnsClient(object):
             "sort_order",
             "compartment_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_domain_records got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1158,7 +1158,7 @@ class DnsClient(object):
             "zone_version",
             "compartment_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_rr_set got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1253,7 +1253,7 @@ class DnsClient(object):
             "if_none_match",
             "if_modified_since"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_steering_policy got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1336,7 +1336,7 @@ class DnsClient(object):
             "if_none_match",
             "if_modified_since"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_steering_policy_attachment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1424,7 +1424,7 @@ class DnsClient(object):
             "if_modified_since",
             "compartment_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_zone got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1563,7 +1563,7 @@ class DnsClient(object):
             "sort_order",
             "compartment_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_zone_records got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1724,7 +1724,7 @@ class DnsClient(object):
             "sort_by",
             "sort_order"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_steering_policies got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1886,7 +1886,7 @@ class DnsClient(object):
             "sort_by",
             "sort_order"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_steering_policy_attachments got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2039,7 +2039,7 @@ class DnsClient(object):
             "sort_by",
             "sort_order"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_zones got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2167,7 +2167,7 @@ class DnsClient(object):
             "if_unmodified_since",
             "compartment_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "patch_domain_records got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2275,7 +2275,7 @@ class DnsClient(object):
             "if_unmodified_since",
             "compartment_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "patch_rr_set got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2381,7 +2381,7 @@ class DnsClient(object):
             "if_unmodified_since",
             "compartment_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "patch_zone_records got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2490,7 +2490,7 @@ class DnsClient(object):
             "if_unmodified_since",
             "compartment_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_domain_records got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2598,7 +2598,7 @@ class DnsClient(object):
             "if_unmodified_since",
             "compartment_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_rr_set got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2697,7 +2697,7 @@ class DnsClient(object):
             "if_match",
             "if_unmodified_since"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_steering_policy got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2787,7 +2787,7 @@ class DnsClient(object):
             "if_match",
             "if_unmodified_since"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_steering_policy_attachment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2885,7 +2885,7 @@ class DnsClient(object):
             "if_unmodified_since",
             "compartment_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_zone got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2990,7 +2990,7 @@ class DnsClient(object):
             "if_unmodified_since",
             "compartment_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_zone_records got unknown kwargs: {!r}".format(extra_kwargs))

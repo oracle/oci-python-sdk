@@ -115,7 +115,7 @@ class TransferApplianceEntitlementClient(object):
             "opc_retry_token",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_transfer_appliance_entitlement got unknown kwargs: {!r}".format(extra_kwargs))
@@ -181,7 +181,7 @@ class TransferApplianceEntitlementClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_transfer_appliance_entitlement got unknown kwargs: {!r}".format(extra_kwargs))

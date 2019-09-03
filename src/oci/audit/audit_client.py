@@ -103,7 +103,7 @@ class AuditClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_configuration got unknown kwargs: {!r}".format(extra_kwargs))
@@ -188,7 +188,7 @@ class AuditClient(object):
             "page",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_events got unknown kwargs: {!r}".format(extra_kwargs))
@@ -255,7 +255,7 @@ class AuditClient(object):
         method = "PUT"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_configuration got unknown kwargs: {!r}".format(extra_kwargs))

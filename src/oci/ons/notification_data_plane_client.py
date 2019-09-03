@@ -137,7 +137,7 @@ class NotificationDataPlaneClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_subscription_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -224,7 +224,7 @@ class NotificationDataPlaneClient(object):
             "opc_retry_token",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_subscription got unknown kwargs: {!r}".format(extra_kwargs))
@@ -300,7 +300,7 @@ class NotificationDataPlaneClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_subscription got unknown kwargs: {!r}".format(extra_kwargs))
@@ -382,7 +382,7 @@ class NotificationDataPlaneClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_confirm_subscription got unknown kwargs: {!r}".format(extra_kwargs))
@@ -467,7 +467,7 @@ class NotificationDataPlaneClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_subscription got unknown kwargs: {!r}".format(extra_kwargs))
@@ -550,7 +550,7 @@ class NotificationDataPlaneClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_unsubscription got unknown kwargs: {!r}".format(extra_kwargs))
@@ -653,7 +653,7 @@ class NotificationDataPlaneClient(object):
             "limit",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_subscriptions got unknown kwargs: {!r}".format(extra_kwargs))
@@ -745,7 +745,7 @@ class NotificationDataPlaneClient(object):
             "opc_request_id",
             "message_type"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "publish_message got unknown kwargs: {!r}".format(extra_kwargs))
@@ -825,7 +825,7 @@ class NotificationDataPlaneClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "resend_subscription_confirmation got unknown kwargs: {!r}".format(extra_kwargs))
@@ -911,7 +911,7 @@ class NotificationDataPlaneClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_subscription got unknown kwargs: {!r}".format(extra_kwargs))

@@ -79,6 +79,8 @@ class DatabaseClient(object):
         }
         self.base_client = BaseClient("database", config, signer, database_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
+        self._config = config
+        self._kwargs = kwargs
 
     def change_autonomous_container_database_compartment(self, change_compartment_details, autonomous_container_database_id, **kwargs):
         """
@@ -134,7 +136,7 @@ class DatabaseClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_autonomous_container_database_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -234,7 +236,7 @@ class DatabaseClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_autonomous_database_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -334,7 +336,7 @@ class DatabaseClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_autonomous_exadata_infrastructure_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -434,7 +436,7 @@ class DatabaseClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_db_system_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -530,7 +532,7 @@ class DatabaseClient(object):
             "if_match",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "complete_external_backup_job got unknown kwargs: {!r}".format(extra_kwargs))
@@ -612,7 +614,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_autonomous_container_database got unknown kwargs: {!r}".format(extra_kwargs))
@@ -681,7 +683,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_autonomous_data_warehouse got unknown kwargs: {!r}".format(extra_kwargs))
@@ -750,7 +752,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_autonomous_data_warehouse_backup got unknown kwargs: {!r}".format(extra_kwargs))
@@ -823,7 +825,7 @@ class DatabaseClient(object):
             "opc_retry_token",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_autonomous_database got unknown kwargs: {!r}".format(extra_kwargs))
@@ -897,7 +899,7 @@ class DatabaseClient(object):
             "opc_retry_token",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_autonomous_database_backup got unknown kwargs: {!r}".format(extra_kwargs))
@@ -967,7 +969,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_backup got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1051,7 +1053,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_data_guard_association got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1132,7 +1134,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_db_home got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1205,7 +1207,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_external_backup_job got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1299,7 +1301,7 @@ class DatabaseClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "db_node_action got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1386,7 +1388,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_autonomous_data_warehouse got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1465,7 +1467,7 @@ class DatabaseClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_autonomous_database got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1541,7 +1543,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_backup got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1620,7 +1622,7 @@ class DatabaseClient(object):
             "if_match",
             "perform_final_backup"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_db_home got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1714,7 +1716,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "failover_data_guard_association got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1803,7 +1805,7 @@ class DatabaseClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "generate_autonomous_data_warehouse_wallet got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1894,7 +1896,7 @@ class DatabaseClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "generate_autonomous_database_wallet got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1967,7 +1969,7 @@ class DatabaseClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_autonomous_container_database got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2033,7 +2035,7 @@ class DatabaseClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_autonomous_data_warehouse got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2099,7 +2101,7 @@ class DatabaseClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_autonomous_data_warehouse_backup got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2172,7 +2174,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_autonomous_database got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2247,7 +2249,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_autonomous_database_backup got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2315,7 +2317,7 @@ class DatabaseClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_autonomous_exadata_infrastructure got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2381,7 +2383,7 @@ class DatabaseClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_backup got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2452,7 +2454,7 @@ class DatabaseClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_data_guard_association got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2519,7 +2521,7 @@ class DatabaseClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_database got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2585,7 +2587,7 @@ class DatabaseClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_db_home got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2656,7 +2658,7 @@ class DatabaseClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_db_home_patch got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2728,7 +2730,7 @@ class DatabaseClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_db_home_patch_history_entry got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2795,7 +2797,7 @@ class DatabaseClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_db_node got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2861,7 +2863,7 @@ class DatabaseClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_db_system got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2932,7 +2934,7 @@ class DatabaseClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_db_system_patch got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3004,7 +3006,7 @@ class DatabaseClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_db_system_patch_history_entry got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3078,7 +3080,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_exadata_iorm_config got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3150,7 +3152,7 @@ class DatabaseClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_external_backup_job got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3214,7 +3216,7 @@ class DatabaseClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_maintenance_run got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3289,7 +3291,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "launch_autonomous_exadata_infrastructure got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3365,7 +3367,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "launch_db_system got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3470,7 +3472,7 @@ class DatabaseClient(object):
             "availability_domain",
             "display_name"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_autonomous_container_databases got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3602,7 +3604,7 @@ class DatabaseClient(object):
             "lifecycle_state",
             "display_name"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_autonomous_data_warehouse_backups got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3726,7 +3728,7 @@ class DatabaseClient(object):
             "lifecycle_state",
             "display_name"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_autonomous_data_warehouses got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3860,7 +3862,7 @@ class DatabaseClient(object):
             "display_name",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_autonomous_database_backups got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4002,7 +4004,7 @@ class DatabaseClient(object):
             "display_name",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_autonomous_databases got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4132,7 +4134,7 @@ class DatabaseClient(object):
             "sort_by",
             "sort_order"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_autonomous_db_preview_versions got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4231,7 +4233,7 @@ class DatabaseClient(object):
             "page",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_autonomous_exadata_infrastructure_shapes got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4336,7 +4338,7 @@ class DatabaseClient(object):
             "availability_domain",
             "display_name"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_autonomous_exadata_infrastructures got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4443,7 +4445,7 @@ class DatabaseClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_backups got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4518,7 +4520,7 @@ class DatabaseClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_data_guard_associations got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4630,7 +4632,7 @@ class DatabaseClient(object):
             "lifecycle_state",
             "db_name"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_databases got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4730,7 +4732,7 @@ class DatabaseClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_db_home_patch_history_entries got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4815,7 +4817,7 @@ class DatabaseClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_db_home_patches got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4928,7 +4930,7 @@ class DatabaseClient(object):
             "lifecycle_state",
             "display_name"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_db_homes got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5052,7 +5054,7 @@ class DatabaseClient(object):
             "sort_order",
             "lifecycle_state"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_db_nodes got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5151,7 +5153,7 @@ class DatabaseClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_db_system_patch_history_entries got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5236,7 +5238,7 @@ class DatabaseClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_db_system_patches got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5324,7 +5326,7 @@ class DatabaseClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_db_system_shapes got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5433,7 +5435,7 @@ class DatabaseClient(object):
             "availability_domain",
             "display_name"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_db_systems got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5544,7 +5546,7 @@ class DatabaseClient(object):
             "db_system_shape",
             "db_system_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_db_versions got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5660,7 +5662,7 @@ class DatabaseClient(object):
             "lifecycle_state",
             "availability_domain"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_maintenance_runs got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5782,7 +5784,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "reinstate_data_guard_association got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5866,7 +5868,7 @@ class DatabaseClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "restart_autonomous_container_database got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5947,7 +5949,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "restore_autonomous_data_warehouse got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6029,7 +6031,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "restore_autonomous_database got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6111,7 +6113,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "restore_database got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6190,7 +6192,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "start_autonomous_data_warehouse got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6267,7 +6269,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "start_autonomous_database got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6344,7 +6346,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "stop_autonomous_data_warehouse got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6425,7 +6427,7 @@ class DatabaseClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "stop_autonomous_database got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6514,7 +6516,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "switchover_data_guard_association got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6594,7 +6596,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "terminate_autonomous_container_database got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6669,7 +6671,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "terminate_autonomous_exadata_infrastructure got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6744,7 +6746,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "terminate_db_system got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6822,7 +6824,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_autonomous_container_database got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6904,7 +6906,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_autonomous_data_warehouse got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6990,7 +6992,7 @@ class DatabaseClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_autonomous_database got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7073,7 +7075,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_autonomous_exadata_infrastructure got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7155,7 +7157,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_database got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7237,7 +7239,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_db_home got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7319,7 +7321,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_db_system got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7404,7 +7406,7 @@ class DatabaseClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_exadata_iorm_config got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7485,7 +7487,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_maintenance_run got unknown kwargs: {!r}".format(extra_kwargs))

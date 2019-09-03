@@ -126,7 +126,7 @@ class IdentityClient(object):
             "if_match",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "activate_mfa_totp_device got unknown kwargs: {!r}".format(extra_kwargs))
@@ -212,7 +212,7 @@ class IdentityClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "add_user_to_group got unknown kwargs: {!r}".format(extra_kwargs))
@@ -291,7 +291,7 @@ class IdentityClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_tag_namespace_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -384,7 +384,7 @@ class IdentityClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_auth_token got unknown kwargs: {!r}".format(extra_kwargs))
@@ -486,7 +486,7 @@ class IdentityClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -570,7 +570,7 @@ class IdentityClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_customer_secret_key got unknown kwargs: {!r}".format(extra_kwargs))
@@ -671,7 +671,7 @@ class IdentityClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_dynamic_group got unknown kwargs: {!r}".format(extra_kwargs))
@@ -763,7 +763,7 @@ class IdentityClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_group got unknown kwargs: {!r}".format(extra_kwargs))
@@ -852,7 +852,7 @@ class IdentityClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_identity_provider got unknown kwargs: {!r}".format(extra_kwargs))
@@ -925,7 +925,7 @@ class IdentityClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_idp_group_mapping got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1006,7 +1006,7 @@ class IdentityClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_mfa_totp_device got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1097,7 +1097,7 @@ class IdentityClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_or_reset_ui_password got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1196,7 +1196,7 @@ class IdentityClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_policy got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1268,7 +1268,7 @@ class IdentityClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_region_subscription got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1355,7 +1355,7 @@ class IdentityClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_smtp_credential got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1452,7 +1452,7 @@ class IdentityClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_swift_password got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1547,7 +1547,7 @@ class IdentityClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_tag got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1633,7 +1633,7 @@ class IdentityClient(object):
             "opc_retry_token",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_tag_default got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1721,7 +1721,7 @@ class IdentityClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_tag_namespace got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1828,7 +1828,7 @@ class IdentityClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_user got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1903,7 +1903,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_api_key got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1980,7 +1980,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_auth_token got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2054,7 +2054,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2130,7 +2130,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_customer_secret_key got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2204,7 +2204,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_dynamic_group got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2277,7 +2277,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_group got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2351,7 +2351,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_identity_provider got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2427,7 +2427,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_idp_group_mapping got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2504,7 +2504,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_mfa_totp_device got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2578,7 +2578,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_policy got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2654,7 +2654,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_smtp_credential got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2733,7 +2733,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_swift_password got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2810,7 +2810,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_tag got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2889,7 +2889,7 @@ class IdentityClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_tag_default got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2969,7 +2969,7 @@ class IdentityClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_tag_namespace got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3043,7 +3043,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_user got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3119,7 +3119,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "generate_totp_seed got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3187,7 +3187,7 @@ class IdentityClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_authentication_policy got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3258,7 +3258,7 @@ class IdentityClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3322,7 +3322,7 @@ class IdentityClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_dynamic_group got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3390,7 +3390,7 @@ class IdentityClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_group got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3454,7 +3454,7 @@ class IdentityClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_identity_provider got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3521,7 +3521,7 @@ class IdentityClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_idp_group_mapping got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3589,7 +3589,7 @@ class IdentityClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_mfa_totp_device got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3654,7 +3654,7 @@ class IdentityClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_policy got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3721,7 +3721,7 @@ class IdentityClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_tag got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3786,7 +3786,7 @@ class IdentityClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_tag_default got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3850,7 +3850,7 @@ class IdentityClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_tag_namespace got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3914,7 +3914,7 @@ class IdentityClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_tenancy got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3978,7 +3978,7 @@ class IdentityClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_user got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4042,7 +4042,7 @@ class IdentityClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_user_group_membership got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4107,7 +4107,7 @@ class IdentityClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_user_ui_password_information got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4172,7 +4172,7 @@ class IdentityClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4239,7 +4239,7 @@ class IdentityClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_api_keys got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4304,7 +4304,7 @@ class IdentityClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_auth_tokens got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4374,7 +4374,7 @@ class IdentityClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_availability_domains got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4483,7 +4483,7 @@ class IdentityClient(object):
             "access_level",
             "compartment_id_in_subtree"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_compartments got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4567,7 +4567,7 @@ class IdentityClient(object):
             "page",
             "limit"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_cost_tracking_tags got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4629,7 +4629,7 @@ class IdentityClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_customer_secret_keys got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4708,7 +4708,7 @@ class IdentityClient(object):
             "page",
             "limit"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_dynamic_groups got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4776,7 +4776,7 @@ class IdentityClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_fault_domains got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4851,7 +4851,7 @@ class IdentityClient(object):
             "page",
             "limit"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_groups got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4923,7 +4923,7 @@ class IdentityClient(object):
             "page",
             "limit"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_identity_provider_groups got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5016,7 +5016,7 @@ class IdentityClient(object):
             "page",
             "limit"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_identity_providers got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5089,7 +5089,7 @@ class IdentityClient(object):
             "page",
             "limit"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_idp_group_mappings got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5193,7 +5193,7 @@ class IdentityClient(object):
             "sort_by",
             "sort_order"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_mfa_totp_devices got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5298,7 +5298,7 @@ class IdentityClient(object):
             "page",
             "limit"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_policies got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5359,7 +5359,7 @@ class IdentityClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_region_subscriptions got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5420,7 +5420,7 @@ class IdentityClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_regions got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5473,7 +5473,7 @@ class IdentityClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_smtp_credentials got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5540,7 +5540,7 @@ class IdentityClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_swift_passwords got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5630,7 +5630,7 @@ class IdentityClient(object):
             "tag_definition_id",
             "lifecycle_state"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_tag_defaults got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5723,7 +5723,7 @@ class IdentityClient(object):
             "include_subcompartments",
             "lifecycle_state"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_tag_namespaces got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5810,7 +5810,7 @@ class IdentityClient(object):
             "limit",
             "lifecycle_state"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_tags got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5920,7 +5920,7 @@ class IdentityClient(object):
             "page",
             "limit"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_user_group_memberships got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6006,7 +6006,7 @@ class IdentityClient(object):
             "identity_provider_id",
             "external_identifier"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_users got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6084,7 +6084,7 @@ class IdentityClient(object):
             "limit",
             "resource_identifier"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6171,7 +6171,7 @@ class IdentityClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "move_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6250,7 +6250,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "remove_user_from_group got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6314,7 +6314,7 @@ class IdentityClient(object):
         method = "POST"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "reset_idp_scim_client got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6393,7 +6393,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_auth_token got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6474,7 +6474,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_authentication_policy got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6554,7 +6554,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6637,7 +6637,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_customer_secret_key got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6718,7 +6718,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_dynamic_group got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6798,7 +6798,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_group got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6878,7 +6878,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_identity_provider got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6961,7 +6961,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_idp_group_mapping got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7044,7 +7044,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_policy got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7127,7 +7127,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_smtp_credential got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7213,7 +7213,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_swift_password got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7297,7 +7297,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_tag got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7383,7 +7383,7 @@ class IdentityClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_tag_default got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7465,7 +7465,7 @@ class IdentityClient(object):
         method = "PUT"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_tag_namespace got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7543,7 +7543,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_user got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7623,7 +7623,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_user_capabilities got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7703,7 +7703,7 @@ class IdentityClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_user_state got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7799,7 +7799,7 @@ class IdentityClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "upload_api_key got unknown kwargs: {!r}".format(extra_kwargs))

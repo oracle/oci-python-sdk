@@ -121,7 +121,7 @@ class ComputeClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "attach_boot_volume got unknown kwargs: {!r}".format(extra_kwargs))
@@ -194,7 +194,7 @@ class ComputeClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "attach_vnic got unknown kwargs: {!r}".format(extra_kwargs))
@@ -263,7 +263,7 @@ class ComputeClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "attach_volume got unknown kwargs: {!r}".format(extra_kwargs))
@@ -348,7 +348,7 @@ class ComputeClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "capture_console_history got unknown kwargs: {!r}".format(extra_kwargs))
@@ -431,7 +431,7 @@ class ComputeClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_dedicated_vm_host_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -532,7 +532,7 @@ class ComputeClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_image_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -634,7 +634,7 @@ class ComputeClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_instance_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -715,7 +715,7 @@ class ComputeClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_app_catalog_subscription got unknown kwargs: {!r}".format(extra_kwargs))
@@ -789,7 +789,7 @@ class ComputeClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_dedicated_vm_host got unknown kwargs: {!r}".format(extra_kwargs))
@@ -886,7 +886,7 @@ class ComputeClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_image got unknown kwargs: {!r}".format(extra_kwargs))
@@ -961,7 +961,7 @@ class ComputeClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_instance_console_connection got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1027,7 +1027,7 @@ class ComputeClient(object):
         method = "DELETE"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_app_catalog_subscription got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1095,7 +1095,7 @@ class ComputeClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_console_history got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1169,7 +1169,7 @@ class ComputeClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_dedicated_vm_host got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1244,7 +1244,7 @@ class ComputeClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_image got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1317,7 +1317,7 @@ class ComputeClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_instance_console_connection got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1393,7 +1393,7 @@ class ComputeClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "detach_boot_volume got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1477,7 +1477,7 @@ class ComputeClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "detach_vnic got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1553,7 +1553,7 @@ class ComputeClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "detach_volume got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1653,7 +1653,7 @@ class ComputeClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "export_image got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1724,7 +1724,7 @@ class ComputeClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_app_catalog_listing got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1791,7 +1791,7 @@ class ComputeClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_app_catalog_listing_agreements got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1859,7 +1859,7 @@ class ComputeClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_app_catalog_listing_resource_version got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1924,7 +1924,7 @@ class ComputeClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_boot_volume_attachment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1990,7 +1990,7 @@ class ComputeClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_console_history got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2067,7 +2067,7 @@ class ComputeClient(object):
             "offset",
             "length"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_console_history_content got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2147,7 +2147,7 @@ class ComputeClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_dedicated_vm_host got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2215,7 +2215,7 @@ class ComputeClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_image got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2279,7 +2279,7 @@ class ComputeClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_instance got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2343,7 +2343,7 @@ class ComputeClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_instance_console_connection got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2407,7 +2407,7 @@ class ComputeClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_vnic_attachment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2471,7 +2471,7 @@ class ComputeClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_volume_attachment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2536,7 +2536,7 @@ class ComputeClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_windows_instance_initial_credentials got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2636,7 +2636,7 @@ class ComputeClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "instance_action got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2758,7 +2758,7 @@ class ComputeClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "launch_instance got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2844,7 +2844,7 @@ class ComputeClient(object):
             "page",
             "sort_order"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_app_catalog_listing_resource_versions got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2961,7 +2961,7 @@ class ComputeClient(object):
             "publisher_type",
             "display_name"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_app_catalog_listings got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3079,7 +3079,7 @@ class ComputeClient(object):
             "sort_order",
             "listing_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_app_catalog_subscriptions got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3194,7 +3194,7 @@ class ComputeClient(object):
             "instance_id",
             "boot_volume_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_boot_volume_attachments got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3317,7 +3317,7 @@ class ComputeClient(object):
             "sort_order",
             "lifecycle_state"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_console_histories got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3443,7 +3443,7 @@ class ComputeClient(object):
             "page",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_dedicated_vm_host_instance_shapes got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3565,7 +3565,7 @@ class ComputeClient(object):
             "sort_by",
             "sort_order"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_dedicated_vm_host_instances got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3695,7 +3695,7 @@ class ComputeClient(object):
             "page",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_dedicated_vm_host_shapes got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3831,7 +3831,7 @@ class ComputeClient(object):
             "sort_by",
             "sort_order"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_dedicated_vm_hosts got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3999,7 +3999,7 @@ class ComputeClient(object):
             "sort_order",
             "lifecycle_state"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_images got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4119,7 +4119,7 @@ class ComputeClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_instance_console_connections got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4235,7 +4235,7 @@ class ComputeClient(object):
             "sort_by",
             "sort_order"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_instance_devices got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4388,7 +4388,7 @@ class ComputeClient(object):
             "sort_order",
             "lifecycle_state"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_instances got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4511,7 +4511,7 @@ class ComputeClient(object):
             "page",
             "image_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_shapes got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4613,7 +4613,7 @@ class ComputeClient(object):
             "page",
             "vnic_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_vnic_attachments got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4718,7 +4718,7 @@ class ComputeClient(object):
             "instance_id",
             "volume_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_volume_attachments got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4803,7 +4803,7 @@ class ComputeClient(object):
             "if_match",
             "preserve_boot_volume"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "terminate_instance got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4886,7 +4886,7 @@ class ComputeClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_console_history got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4980,7 +4980,7 @@ class ComputeClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_dedicated_vm_host got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5074,7 +5074,7 @@ class ComputeClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_image got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5171,7 +5171,7 @@ class ComputeClient(object):
             "opc_retry_token",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_instance got unknown kwargs: {!r}".format(extra_kwargs))

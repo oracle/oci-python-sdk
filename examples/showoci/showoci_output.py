@@ -69,9 +69,19 @@ class ShowOCIOutput(object):
                         has_data = True
 
                     elif d['type'] == "region":
-                        self.__print_region_data(d['region'], d['data'])
-                        has_data = True
+
+                        # Check if limits exist
+                        limits_exist = False
                         if 'limits' in d:
+                            if d['limits']:
+                                limits_exist = True
+
+                        if d['data'] or limits_exist:
+                            self.print_header(d['region'], 0)
+                            has_data = True
+
+                        self.__print_region_data(d['region'], d['data'])
+                        if limits_exist:
                             self.__print_limits_main(d['limits'])
 
                     else:
@@ -1104,6 +1114,8 @@ class ShowOCIOutput(object):
                     self.taba + str(ct['name'] + " ").ljust(20) +
                     ct['limit_name'].ljust(37) +
                     " = " + ct['value'].ljust(10) +
+                    " Used = " + ct['used'].ljust(10) + " " +
+                    " Available = " + ct['available'].ljust(10) + " " +
                     " SCOPE=" + ct['scope_type'].ljust(7) +
                     ct['availability_domain']
                 )
@@ -1452,7 +1464,6 @@ class ShowOCIOutput(object):
         try:
             if not data:
                 return
-            self.print_header(region_name, 0)
 
             for cdata in data:
                 if 'path' in cdata:
@@ -1874,6 +1885,7 @@ class ShowOCICSV(object):
     csv_network_dhcp_options = []
     csv_load_balancer = []
     csv_load_balancer_bs = []
+    csv_limits = []
 
     ############################################
     # Init
@@ -1897,6 +1909,9 @@ class ShowOCICSV(object):
                     elif d['type'] == "region":
                         self.__csv_region_data(d['region'], d['data'])
 
+                        if 'limits' in d:
+                            self.__csv_limits_main(d['region'], d['limits'])
+
                     else:
                         continue
 
@@ -1912,6 +1927,7 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("database", self.csv_database)
             self.__export_to_csv_file("load_balancer_listeners", self.csv_load_balancer)
             self.__export_to_csv_file("load_balancer_backendset", self.csv_load_balancer_bs)
+            self.__export_to_csv_file("limits", self.csv_limits)
 
             print("")
         except Exception as e:
@@ -2350,6 +2366,32 @@ class ShowOCICSV(object):
 
         except Exception as e:
             self.__print_error("__csv_database_db_autonomous", e)
+
+    ##########################################################################
+    # Limits
+    ##########################################################################
+    def __csv_limits_main(self, region_name, limits):
+
+        try:
+            if not limits:
+                return
+
+            for lt in limits:
+                data = {'region_name': region_name,
+                        'scope_type': lt['scope_type'],
+                        'availability_domain': lt['availability_domain'],
+                        'name': lt['name'],
+                        'description': lt['description'],
+                        'limit_name': lt['limit_name'],
+                        'value': lt['value'],
+                        'used': lt['used'],
+                        'available': lt['available']
+                        }
+
+                self.csv_limits.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_limits_main", e)
 
     ##########################################################################
     # database

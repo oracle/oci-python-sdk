@@ -137,7 +137,7 @@ class NotificationControlPlaneClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_topic_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -239,7 +239,7 @@ class NotificationControlPlaneClient(object):
             "opc_retry_token",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_topic got unknown kwargs: {!r}".format(extra_kwargs))
@@ -315,7 +315,7 @@ class NotificationControlPlaneClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_topic got unknown kwargs: {!r}".format(extra_kwargs))
@@ -391,7 +391,7 @@ class NotificationControlPlaneClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_topic got unknown kwargs: {!r}".format(extra_kwargs))
@@ -508,7 +508,7 @@ class NotificationControlPlaneClient(object):
             "lifecycle_state",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_topics got unknown kwargs: {!r}".format(extra_kwargs))
@@ -618,7 +618,7 @@ class NotificationControlPlaneClient(object):
             "opc_request_id",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_topic got unknown kwargs: {!r}".format(extra_kwargs))

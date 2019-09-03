@@ -55,6 +55,7 @@ Core Services
     oci.core.models.CaptureConsoleHistoryDetails
     oci.core.models.ChangeBootVolumeBackupCompartmentDetails
     oci.core.models.ChangeBootVolumeCompartmentDetails
+    oci.core.models.ChangeClusterNetworkCompartmentDetails
     oci.core.models.ChangeCpeCompartmentDetails
     oci.core.models.ChangeCrossConnectCompartmentDetails
     oci.core.models.ChangeCrossConnectGroupCompartmentDetails
@@ -81,6 +82,9 @@ Core Services
     oci.core.models.ChangeVolumeCompartmentDetails
     oci.core.models.ChangeVolumeGroupBackupCompartmentDetails
     oci.core.models.ChangeVolumeGroupCompartmentDetails
+    oci.core.models.ClusterNetwork
+    oci.core.models.ClusterNetworkPlacementConfigurationDetails
+    oci.core.models.ClusterNetworkSummary
     oci.core.models.ComputeInstanceDetails
     oci.core.models.ConnectLocalPeeringGatewaysDetails
     oci.core.models.ConnectRemotePeeringConnectionsDetails
@@ -90,6 +94,8 @@ Core Services
     oci.core.models.CreateAppCatalogSubscriptionDetails
     oci.core.models.CreateBootVolumeBackupDetails
     oci.core.models.CreateBootVolumeDetails
+    oci.core.models.CreateClusterNetworkDetails
+    oci.core.models.CreateClusterNetworkInstancePoolDetails
     oci.core.models.CreateCpeDetails
     oci.core.models.CreateCrossConnectDetails
     oci.core.models.CreateCrossConnectGroupDetails
@@ -235,6 +241,7 @@ Core Services
     oci.core.models.UpdateBootVolumeBackupDetails
     oci.core.models.UpdateBootVolumeDetails
     oci.core.models.UpdateBootVolumeKmsKeyDetails
+    oci.core.models.UpdateClusterNetworkDetails
     oci.core.models.UpdateConsoleHistoryDetails
     oci.core.models.UpdateCpeDetails
     oci.core.models.UpdateCrossConnectDetails

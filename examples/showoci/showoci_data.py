@@ -1327,8 +1327,10 @@ class ShowOCIData(object):
                     if vnic['compartment_name'] != compartment['name']:
                         comp_text = " (Compartment=" + vnic['compartment_name'] + ")"
 
-                    val = {'id': vnic['vnic_id'], 'desc': vnic['vnic_details']['display_name'] + str(comp_text), 'details': vnic['vnic_details']}
-                    vnicdata.append(val)
+                    if 'vnic_details' in vnic:
+                        if 'display_name' in vnic['vnic_details']:
+                            val = {'id': vnic['vnic_id'], 'desc': vnic['vnic_details']['display_name'] + str(comp_text), 'details': vnic['vnic_details']}
+                            vnicdata.append(val)
 
                 inst['vnic'] = vnicdata
 
