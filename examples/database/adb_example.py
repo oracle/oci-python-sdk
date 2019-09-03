@@ -127,6 +127,7 @@ def update_adb_licesnse_type(db_client, adb_id):
 
     return adb_response.data.id
 
+
 def create_free_adb(db_client):
     # Create the model and populate the values
     # See: https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/adbcreating.htm
