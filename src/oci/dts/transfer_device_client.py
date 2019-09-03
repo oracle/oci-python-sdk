@@ -113,7 +113,7 @@ class TransferDeviceClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_transfer_device got unknown kwargs: {!r}".format(extra_kwargs))
@@ -186,7 +186,7 @@ class TransferDeviceClient(object):
         method = "DELETE"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_transfer_device got unknown kwargs: {!r}".format(extra_kwargs))
@@ -252,7 +252,7 @@ class TransferDeviceClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_transfer_device got unknown kwargs: {!r}".format(extra_kwargs))
@@ -330,7 +330,7 @@ class TransferDeviceClient(object):
             "lifecycle_state",
             "display_name"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_transfer_devices got unknown kwargs: {!r}".format(extra_kwargs))
@@ -423,7 +423,7 @@ class TransferDeviceClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_transfer_device got unknown kwargs: {!r}".format(extra_kwargs))

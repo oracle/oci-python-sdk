@@ -190,7 +190,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
     def clone_type(self):
         """
         **[Required]** Gets the clone_type of this CreateAutonomousDatabaseCloneDetails.
-        The clone type.
+        The Autonomous Database clone type.
 
         Allowed values for this property are: "FULL", "METADATA"
 
@@ -204,7 +204,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
     def clone_type(self, clone_type):
         """
         Sets the clone_type of this CreateAutonomousDatabaseCloneDetails.
-        The clone type.
+        The Autonomous Database clone type.
 
 
         :param clone_type: The clone_type of this CreateAutonomousDatabaseCloneDetails.

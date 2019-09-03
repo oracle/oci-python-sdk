@@ -128,7 +128,7 @@ class TransferJobClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_transfer_job_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -204,7 +204,7 @@ class TransferJobClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_transfer_job got unknown kwargs: {!r}".format(extra_kwargs))
@@ -262,7 +262,7 @@ class TransferJobClient(object):
         method = "DELETE"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_transfer_job got unknown kwargs: {!r}".format(extra_kwargs))
@@ -324,7 +324,7 @@ class TransferJobClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_transfer_job got unknown kwargs: {!r}".format(extra_kwargs))
@@ -401,7 +401,7 @@ class TransferJobClient(object):
             "lifecycle_state",
             "display_name"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_transfer_jobs got unknown kwargs: {!r}".format(extra_kwargs))
@@ -480,7 +480,7 @@ class TransferJobClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_transfer_job got unknown kwargs: {!r}".format(extra_kwargs))

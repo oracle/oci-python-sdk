@@ -137,7 +137,7 @@ class AutoScalingClient(object):
             "if_match",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_auto_scaling_configuration_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -221,7 +221,7 @@ class AutoScalingClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_auto_scaling_configuration got unknown kwargs: {!r}".format(extra_kwargs))
@@ -299,7 +299,7 @@ class AutoScalingClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_auto_scaling_policy got unknown kwargs: {!r}".format(extra_kwargs))
@@ -384,7 +384,7 @@ class AutoScalingClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_auto_scaling_configuration got unknown kwargs: {!r}".format(extra_kwargs))
@@ -466,7 +466,7 @@ class AutoScalingClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_auto_scaling_policy got unknown kwargs: {!r}".format(extra_kwargs))
@@ -540,7 +540,7 @@ class AutoScalingClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_auto_scaling_configuration got unknown kwargs: {!r}".format(extra_kwargs))
@@ -617,7 +617,7 @@ class AutoScalingClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_auto_scaling_policy got unknown kwargs: {!r}".format(extra_kwargs))
@@ -727,7 +727,7 @@ class AutoScalingClient(object):
             "sort_by",
             "sort_order"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_auto_scaling_configurations got unknown kwargs: {!r}".format(extra_kwargs))
@@ -848,7 +848,7 @@ class AutoScalingClient(object):
             "sort_by",
             "sort_order"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_auto_scaling_policies got unknown kwargs: {!r}".format(extra_kwargs))
@@ -965,7 +965,7 @@ class AutoScalingClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_auto_scaling_configuration got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1065,7 +1065,7 @@ class AutoScalingClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_auto_scaling_policy got unknown kwargs: {!r}".format(extra_kwargs))

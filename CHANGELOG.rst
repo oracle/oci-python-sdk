@@ -4,7 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
-=====================
+====================
+2.3.3 - 2019-09-03
+====================
+
+Added
+-----
+* Support for the Sydney (SYD) region
+* Support for managing cluster networks in the Compute Autoscaling service
+* Support for tracking asynchronous operations via work requests in the Database service
+
+====================
 2.3.2 - 2019-08-27
 ====================
 

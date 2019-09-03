@@ -115,7 +115,7 @@ class VirtualNetworkClient(object):
         method = "POST"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "add_network_security_group_security_rules got unknown kwargs: {!r}".format(extra_kwargs))
@@ -204,7 +204,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "attach_service_id got unknown kwargs: {!r}".format(extra_kwargs))
@@ -278,7 +278,7 @@ class VirtualNetworkClient(object):
         method = "POST"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "bulk_add_virtual_circuit_public_prefixes got unknown kwargs: {!r}".format(extra_kwargs))
@@ -348,7 +348,7 @@ class VirtualNetworkClient(object):
         method = "POST"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "bulk_delete_virtual_circuit_public_prefixes got unknown kwargs: {!r}".format(extra_kwargs))
@@ -435,7 +435,7 @@ class VirtualNetworkClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_cpe_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -527,7 +527,7 @@ class VirtualNetworkClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_cross_connect_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -619,7 +619,7 @@ class VirtualNetworkClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_cross_connect_group_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -711,7 +711,7 @@ class VirtualNetworkClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_dhcp_options_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -803,7 +803,7 @@ class VirtualNetworkClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_internet_gateway_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -895,7 +895,7 @@ class VirtualNetworkClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_ip_sec_connection_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -987,7 +987,7 @@ class VirtualNetworkClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_local_peering_gateway_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1081,7 +1081,7 @@ class VirtualNetworkClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_nat_gateway_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1174,7 +1174,7 @@ class VirtualNetworkClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_network_security_group_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1269,7 +1269,7 @@ class VirtualNetworkClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_public_ip_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1361,7 +1361,7 @@ class VirtualNetworkClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_remote_peering_connection_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1453,7 +1453,7 @@ class VirtualNetworkClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_route_table_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1545,7 +1545,7 @@ class VirtualNetworkClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_security_list_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1639,7 +1639,7 @@ class VirtualNetworkClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_service_gateway_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1731,7 +1731,7 @@ class VirtualNetworkClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_subnet_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1825,7 +1825,7 @@ class VirtualNetworkClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_vcn_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1917,7 +1917,7 @@ class VirtualNetworkClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "change_virtual_circuit_compartment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -1998,7 +1998,7 @@ class VirtualNetworkClient(object):
         method = "POST"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "connect_local_peering_gateways got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2074,7 +2074,7 @@ class VirtualNetworkClient(object):
         method = "POST"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "connect_remote_peering_connections got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2168,7 +2168,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_cpe got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2259,7 +2259,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_cross_connect got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2346,7 +2346,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_cross_connect_group got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2429,7 +2429,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_dhcp_options got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2513,7 +2513,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_drg got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2595,7 +2595,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_drg_attachment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2688,7 +2688,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_internet_gateway got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2790,7 +2790,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_ip_sec_connection got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2864,7 +2864,7 @@ class VirtualNetworkClient(object):
             "opc_request_id",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_ipv6 got unknown kwargs: {!r}".format(extra_kwargs))
@@ -2934,7 +2934,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_local_peering_gateway got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3004,7 +3004,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_nat_gateway got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3073,7 +3073,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_network_security_group got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3146,7 +3146,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_private_ip got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3237,7 +3237,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_public_ip got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3306,7 +3306,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_remote_peering_connection got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3394,7 +3394,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_route_table got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3481,7 +3481,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_security_list got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3561,7 +3561,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_service_gateway got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3669,7 +3669,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_subnet got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3773,7 +3773,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_vcn got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3867,7 +3867,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "opc_retry_token"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "create_virtual_circuit got unknown kwargs: {!r}".format(extra_kwargs))
@@ -3936,7 +3936,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_cpe got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4010,7 +4010,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_cross_connect got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4085,7 +4085,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_cross_connect_group got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4162,7 +4162,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_dhcp_options got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4238,7 +4238,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_drg got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4313,7 +4313,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_drg_attachment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4390,7 +4390,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_internet_gateway got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4470,7 +4470,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_ip_sec_connection got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4551,7 +4551,7 @@ class VirtualNetworkClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_ipv6 got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4628,7 +4628,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_local_peering_gateway got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4707,7 +4707,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_nat_gateway got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4788,7 +4788,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_network_security_group got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4873,7 +4873,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_private_ip got unknown kwargs: {!r}".format(extra_kwargs))
@@ -4960,7 +4960,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_public_ip got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5036,7 +5036,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_remote_peering_connection got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5113,7 +5113,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_route_table got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5190,7 +5190,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_security_list got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5266,7 +5266,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_service_gateway got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5341,7 +5341,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_subnet got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5418,7 +5418,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_vcn got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5495,7 +5495,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "delete_virtual_circuit got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5584,7 +5584,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "detach_service_id got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5652,7 +5652,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_cpe got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5716,7 +5716,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_cross_connect got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5780,7 +5780,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_cross_connect_group got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5844,7 +5844,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_cross_connect_letter_of_authority got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5908,7 +5908,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_cross_connect_status got unknown kwargs: {!r}".format(extra_kwargs))
@@ -5972,7 +5972,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_dhcp_options got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6036,7 +6036,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_drg got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6100,7 +6100,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_drg_attachment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6167,7 +6167,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_fast_connect_provider_service got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6238,7 +6238,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_fast_connect_provider_service_key got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6303,7 +6303,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_internet_gateway got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6369,7 +6369,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_ip_sec_connection got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6436,7 +6436,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_ip_sec_connection_device_config got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6501,7 +6501,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_ip_sec_connection_device_status got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6572,7 +6572,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_ip_sec_connection_tunnel got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6643,7 +6643,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_ip_sec_connection_tunnel_shared_secret got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6721,7 +6721,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_ipv6 got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6787,7 +6787,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_local_peering_gateway got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6853,7 +6853,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_nat_gateway got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6925,7 +6925,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_network_security_group got unknown kwargs: {!r}".format(extra_kwargs))
@@ -6992,7 +6992,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_private_ip got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7066,7 +7066,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_public_ip got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7134,7 +7134,7 @@ class VirtualNetworkClient(object):
         method = "POST"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_public_ip_by_ip_address got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7198,7 +7198,7 @@ class VirtualNetworkClient(object):
         method = "POST"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_public_ip_by_private_ip_id got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7252,7 +7252,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_remote_peering_connection got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7316,7 +7316,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_route_table got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7380,7 +7380,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_security_list got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7446,7 +7446,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_service got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7512,7 +7512,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_service_gateway got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7576,7 +7576,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_subnet got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7642,7 +7642,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_vcn got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7706,7 +7706,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_virtual_circuit got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7773,7 +7773,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "get_vnic got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7837,7 +7837,7 @@ class VirtualNetworkClient(object):
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_allowed_peer_regions_for_remote_peering got unknown kwargs: {!r}".format(extra_kwargs))
@@ -7912,7 +7912,7 @@ class VirtualNetworkClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_cpes got unknown kwargs: {!r}".format(extra_kwargs))
@@ -8026,7 +8026,7 @@ class VirtualNetworkClient(object):
             "sort_order",
             "lifecycle_state"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_cross_connect_groups got unknown kwargs: {!r}".format(extra_kwargs))
@@ -8136,7 +8136,7 @@ class VirtualNetworkClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_cross_connect_locations got unknown kwargs: {!r}".format(extra_kwargs))
@@ -8255,7 +8255,7 @@ class VirtualNetworkClient(object):
             "sort_order",
             "lifecycle_state"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_cross_connects got unknown kwargs: {!r}".format(extra_kwargs))
@@ -8367,7 +8367,7 @@ class VirtualNetworkClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_crossconnect_port_speed_shapes got unknown kwargs: {!r}".format(extra_kwargs))
@@ -8488,7 +8488,7 @@ class VirtualNetworkClient(object):
             "sort_order",
             "lifecycle_state"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_dhcp_options got unknown kwargs: {!r}".format(extra_kwargs))
@@ -8609,7 +8609,7 @@ class VirtualNetworkClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_drg_attachments got unknown kwargs: {!r}".format(extra_kwargs))
@@ -8695,7 +8695,7 @@ class VirtualNetworkClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_drgs got unknown kwargs: {!r}".format(extra_kwargs))
@@ -8787,7 +8787,7 @@ class VirtualNetworkClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_fast_connect_provider_services got unknown kwargs: {!r}".format(extra_kwargs))
@@ -8874,7 +8874,7 @@ class VirtualNetworkClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_fast_connect_provider_virtual_circuit_bandwidth_shapes got unknown kwargs: {!r}".format(extra_kwargs))
@@ -9004,7 +9004,7 @@ class VirtualNetworkClient(object):
             "sort_order",
             "lifecycle_state"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_internet_gateways got unknown kwargs: {!r}".format(extra_kwargs))
@@ -9112,7 +9112,7 @@ class VirtualNetworkClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_ip_sec_connection_tunnels got unknown kwargs: {!r}".format(extra_kwargs))
@@ -9216,7 +9216,7 @@ class VirtualNetworkClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_ip_sec_connections got unknown kwargs: {!r}".format(extra_kwargs))
@@ -9322,7 +9322,7 @@ class VirtualNetworkClient(object):
             "vnic_id",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_ipv6s got unknown kwargs: {!r}".format(extra_kwargs))
@@ -9416,7 +9416,7 @@ class VirtualNetworkClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_local_peering_gateways got unknown kwargs: {!r}".format(extra_kwargs))
@@ -9538,7 +9538,7 @@ class VirtualNetworkClient(object):
             "sort_order",
             "lifecycle_state"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_nat_gateways got unknown kwargs: {!r}".format(extra_kwargs))
@@ -9668,7 +9668,7 @@ class VirtualNetworkClient(object):
             "sort_by",
             "sort_order"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_network_security_group_security_rules got unknown kwargs: {!r}".format(extra_kwargs))
@@ -9800,7 +9800,7 @@ class VirtualNetworkClient(object):
             "sort_by",
             "sort_order"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_network_security_group_vnics got unknown kwargs: {!r}".format(extra_kwargs))
@@ -9947,7 +9947,7 @@ class VirtualNetworkClient(object):
             "sort_order",
             "lifecycle_state"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_network_security_groups got unknown kwargs: {!r}".format(extra_kwargs))
@@ -10077,7 +10077,7 @@ class VirtualNetworkClient(object):
             "subnet_id",
             "vnic_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_private_ips got unknown kwargs: {!r}".format(extra_kwargs))
@@ -10208,7 +10208,7 @@ class VirtualNetworkClient(object):
             "availability_domain",
             "lifetime"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_public_ips got unknown kwargs: {!r}".format(extra_kwargs))
@@ -10313,7 +10313,7 @@ class VirtualNetworkClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_remote_peering_connections got unknown kwargs: {!r}".format(extra_kwargs))
@@ -10435,7 +10435,7 @@ class VirtualNetworkClient(object):
             "sort_order",
             "lifecycle_state"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_route_tables got unknown kwargs: {!r}".format(extra_kwargs))
@@ -10580,7 +10580,7 @@ class VirtualNetworkClient(object):
             "sort_order",
             "lifecycle_state"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_security_lists got unknown kwargs: {!r}".format(extra_kwargs))
@@ -10723,7 +10723,7 @@ class VirtualNetworkClient(object):
             "sort_order",
             "lifecycle_state"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_service_gateways got unknown kwargs: {!r}".format(extra_kwargs))
@@ -10828,7 +10828,7 @@ class VirtualNetworkClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_services got unknown kwargs: {!r}".format(extra_kwargs))
@@ -10946,7 +10946,7 @@ class VirtualNetworkClient(object):
             "sort_order",
             "lifecycle_state"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_subnets got unknown kwargs: {!r}".format(extra_kwargs))
@@ -11086,7 +11086,7 @@ class VirtualNetworkClient(object):
             "sort_order",
             "lifecycle_state"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_vcns got unknown kwargs: {!r}".format(extra_kwargs))
@@ -11195,7 +11195,7 @@ class VirtualNetworkClient(object):
             "limit",
             "page"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_virtual_circuit_bandwidth_shapes got unknown kwargs: {!r}".format(extra_kwargs))
@@ -11267,7 +11267,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "verification_state"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_virtual_circuit_public_prefixes got unknown kwargs: {!r}".format(extra_kwargs))
@@ -11398,7 +11398,7 @@ class VirtualNetworkClient(object):
             "sort_order",
             "lifecycle_state"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_virtual_circuits got unknown kwargs: {!r}".format(extra_kwargs))
@@ -11490,7 +11490,7 @@ class VirtualNetworkClient(object):
         method = "POST"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "remove_network_security_group_security_rules got unknown kwargs: {!r}".format(extra_kwargs))
@@ -11567,7 +11567,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_cpe got unknown kwargs: {!r}".format(extra_kwargs))
@@ -11647,7 +11647,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_cross_connect got unknown kwargs: {!r}".format(extra_kwargs))
@@ -11728,7 +11728,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_cross_connect_group got unknown kwargs: {!r}".format(extra_kwargs))
@@ -11811,7 +11811,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_dhcp_options got unknown kwargs: {!r}".format(extra_kwargs))
@@ -11891,7 +11891,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_drg got unknown kwargs: {!r}".format(extra_kwargs))
@@ -11972,7 +11972,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_drg_attachment got unknown kwargs: {!r}".format(extra_kwargs))
@@ -12056,7 +12056,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_internet_gateway got unknown kwargs: {!r}".format(extra_kwargs))
@@ -12139,7 +12139,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_ip_sec_connection got unknown kwargs: {!r}".format(extra_kwargs))
@@ -12240,7 +12240,7 @@ class VirtualNetworkClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_ip_sec_connection_tunnel got unknown kwargs: {!r}".format(extra_kwargs))
@@ -12329,7 +12329,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_ip_sec_connection_tunnel_shared_secret got unknown kwargs: {!r}".format(extra_kwargs))
@@ -12423,7 +12423,7 @@ class VirtualNetworkClient(object):
             "if_match",
             "opc_request_id"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_ipv6 got unknown kwargs: {!r}".format(extra_kwargs))
@@ -12504,7 +12504,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_local_peering_gateway got unknown kwargs: {!r}".format(extra_kwargs))
@@ -12586,7 +12586,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_nat_gateway got unknown kwargs: {!r}".format(extra_kwargs))
@@ -12682,7 +12682,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_network_security_group got unknown kwargs: {!r}".format(extra_kwargs))
@@ -12756,7 +12756,7 @@ class VirtualNetworkClient(object):
         method = "POST"
 
         expected_kwargs = ["retry_strategy"]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_network_security_group_security_rules got unknown kwargs: {!r}".format(extra_kwargs))
@@ -12843,7 +12843,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_private_ip got unknown kwargs: {!r}".format(extra_kwargs))
@@ -12963,7 +12963,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_public_ip got unknown kwargs: {!r}".format(extra_kwargs))
@@ -13043,7 +13043,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_remote_peering_connection got unknown kwargs: {!r}".format(extra_kwargs))
@@ -13126,7 +13126,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_route_table got unknown kwargs: {!r}".format(extra_kwargs))
@@ -13210,7 +13210,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_security_list got unknown kwargs: {!r}".format(extra_kwargs))
@@ -13293,7 +13293,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_service_gateway got unknown kwargs: {!r}".format(extra_kwargs))
@@ -13373,7 +13373,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_subnet got unknown kwargs: {!r}".format(extra_kwargs))
@@ -13455,7 +13455,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_vcn got unknown kwargs: {!r}".format(extra_kwargs))
@@ -13560,7 +13560,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_virtual_circuit got unknown kwargs: {!r}".format(extra_kwargs))
@@ -13640,7 +13640,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "if_match"
         ]
-        extra_kwargs = [key for key in six.iterkeys(kwargs) if key not in expected_kwargs]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "update_vnic got unknown kwargs: {!r}".format(extra_kwargs))
