@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+19.9.4 - 2019-09-19
+====================
+* Fix instance configuration error when block volumes or vnic exist
+* Added 0.5 seconds sleep for every 10 backendsets call to avoid TooManyRequestErrors if customer has many load balancers
+
+====================
 19.9.4 - 2019-09-04
 ====================
 * Added usage and available to the limits

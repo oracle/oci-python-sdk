@@ -3270,9 +3270,9 @@ class ShowOCIService(object):
                                     val['compute_shape'] = str(launch_details.shape)
                                     val['compute_display_name'] = str(launch_details.display_name)
                                     if instance_detail.block_volumes:
-                                        val['block_volumes'] = len(instance_detail.block_volumes)
+                                        val['block_volumes'] = str(len(instance_detail.block_volumes))
                                     if instance_detail.secondary_vnics:
-                                        val['secondary_vnics'] = len(instance_detail.secondary_vnics)
+                                        val['secondary_vnics'] = str(len(instance_detail.secondary_vnics))
 
                                     # check source details type
                                     if launch_details.source_details:
@@ -4209,7 +4209,10 @@ class ShowOCIService(object):
                     if self.__check_service_error(e.code):
                         self.__load_print_auth_warning()
                         continue
-                    raise
+                    else:
+                        self.__load_print_auth_warning("b", False)
+                        continue
+                        time.sleep(1)
 
                 # print next load balancer
                 print("L", end="")
@@ -4227,7 +4230,10 @@ class ShowOCIService(object):
                     except oci.exceptions.ServiceError as e:
                         if self.__check_service_error(e.code):
                             pass
-                        raise
+                        else:
+                            self.__load_print_auth_warning("s", False)
+                            status = "-"
+                            time.sleep(1)
 
                     ############################
                     # check ssl config
@@ -4261,7 +4267,10 @@ class ShowOCIService(object):
                         except oci.exceptions.ServiceError as e:
                             if self.__check_service_error(e.code):
                                 pass
-                            raise
+                            else:
+                                self.__load_print_auth_warning("h", False)
+                                bh_status = "-"
+                                time.sleep(1)
 
                         # add details
                         bval = {'name': str(backend.name),
@@ -4337,15 +4346,16 @@ class ShowOCIService(object):
                     data.append(dataval)
 
                     cnt += 1
+                    # sleep 2 seconds every 10 checks to avoid too many requests
+                    if cnt % 10 == 0:
+                        time.sleep(0.5)
 
             self.__load_print_cnt(cnt, start_time)
             return data
 
         except oci.exceptions.RequestException as e:
-
             if self.__check_request_error(e):
                 return data
-
             raise
         except Exception as e:
             self.__print_error("__load_load_balancer_backendset", e)
