@@ -13,21 +13,6 @@ Installation
 ~~~~~~~~~~~~
 
 This topic describes how to install, configure, and use the Oracle Cloud Infrastructure Python SDK.
-The Python SDK supports operations for the following services:
-
-* Audit
-* Container Engine for Kubernetes
-* Core Services (Networking, Compute, and Block Volume)
-* Database
-* DNS
-* Email
-* File Storage
-* IAM
-* Load Balancing
-* Object Storage
-* Search
-* Key Management
-
 
 ===============
  Prerequisites
@@ -56,13 +41,13 @@ In addition, all Oracle Cloud Infrastructure SDKs require:
  Downloading and Installing the SDK
 ====================================
 
-You can install the Python SDK through the Python Package Index (PyPI), or alternatively through GitHub. 
+You can install the Python SDK through the Python Package Index (PyPI), or alternatively through GitHub.
 
 Set up a virtual environment
 -----------------------------
 
 Oracle recommends that you run the SDK in a virtual environment with virtualenv. This allows
-you to isolate the dependencies for the SDK and avoids any potential conflicts with other Python packages 
+you to isolate the dependencies for the SDK and avoids any potential conflicts with other Python packages
 which may already be installed (e.g. in your system-wide Python).
 
 With Linux, virtualenv is usually in a separate package from the main Python package.
@@ -134,7 +119,7 @@ If you don't want to use ``requests[security]`` you can update OpenSSL as you no
 
 .. note::
     If you need to configure your environment for FIPS-compliance, see :doc:`fips-libraries`
-    
+
 =================
  Troubleshooting
 =================
