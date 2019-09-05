@@ -158,6 +158,10 @@ class Instance(object):
             The value to assign to the source_details property of this Instance.
         :type source_details: InstanceSourceDetails
 
+        :param system_tags:
+            The value to assign to the system_tags property of this Instance.
+        :type system_tags: dict(str, dict(str, object))
+
         :param time_created:
             The value to assign to the time_created property of this Instance.
         :type time_created: datetime
@@ -190,6 +194,7 @@ class Instance(object):
             'region': 'str',
             'shape': 'str',
             'source_details': 'InstanceSourceDetails',
+            'system_tags': 'dict(str, dict(str, object))',
             'time_created': 'datetime',
             'agent_config': 'InstanceAgentConfig',
             'time_maintenance_reboot_due': 'datetime'
@@ -214,6 +219,7 @@ class Instance(object):
             'region': 'region',
             'shape': 'shape',
             'source_details': 'sourceDetails',
+            'system_tags': 'systemTags',
             'time_created': 'timeCreated',
             'agent_config': 'agentConfig',
             'time_maintenance_reboot_due': 'timeMaintenanceRebootDue'
@@ -237,6 +243,7 @@ class Instance(object):
         self._region = None
         self._shape = None
         self._source_details = None
+        self._system_tags = None
         self._time_created = None
         self._agent_config = None
         self._time_maintenance_reboot_due = None
@@ -804,6 +811,32 @@ class Instance(object):
         :type: InstanceSourceDetails
         """
         self._source_details = source_details
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this Instance.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :return: The system_tags of this Instance.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this Instance.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :param system_tags: The system_tags of this Instance.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def time_created(self):

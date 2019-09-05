@@ -65,6 +65,10 @@ class NodePoolSummary(object):
             The value to assign to the subnet_ids property of this NodePoolSummary.
         :type subnet_ids: list[str]
 
+        :param node_config_details:
+            The value to assign to the node_config_details property of this NodePoolSummary.
+        :type node_config_details: NodePoolNodeConfigDetails
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -78,7 +82,8 @@ class NodePoolSummary(object):
             'initial_node_labels': 'list[KeyValue]',
             'ssh_public_key': 'str',
             'quantity_per_subnet': 'int',
-            'subnet_ids': 'list[str]'
+            'subnet_ids': 'list[str]',
+            'node_config_details': 'NodePoolNodeConfigDetails'
         }
 
         self.attribute_map = {
@@ -93,7 +98,8 @@ class NodePoolSummary(object):
             'initial_node_labels': 'initialNodeLabels',
             'ssh_public_key': 'sshPublicKey',
             'quantity_per_subnet': 'quantityPerSubnet',
-            'subnet_ids': 'subnetIds'
+            'subnet_ids': 'subnetIds',
+            'node_config_details': 'nodeConfigDetails'
         }
 
         self._id = None
@@ -108,6 +114,7 @@ class NodePoolSummary(object):
         self._ssh_public_key = None
         self._quantity_per_subnet = None
         self._subnet_ids = None
+        self._node_config_details = None
 
     @property
     def id(self):
@@ -396,6 +403,30 @@ class NodePoolSummary(object):
         :type: list[str]
         """
         self._subnet_ids = subnet_ids
+
+    @property
+    def node_config_details(self):
+        """
+        Gets the node_config_details of this NodePoolSummary.
+        The configuration of nodes in the node pool.
+
+
+        :return: The node_config_details of this NodePoolSummary.
+        :rtype: NodePoolNodeConfigDetails
+        """
+        return self._node_config_details
+
+    @node_config_details.setter
+    def node_config_details(self, node_config_details):
+        """
+        Sets the node_config_details of this NodePoolSummary.
+        The configuration of nodes in the node pool.
+
+
+        :param node_config_details: The node_config_details of this NodePoolSummary.
+        :type: NodePoolNodeConfigDetails
+        """
+        self._node_config_details = node_config_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

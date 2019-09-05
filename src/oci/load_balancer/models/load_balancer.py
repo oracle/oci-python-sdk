@@ -121,6 +121,10 @@ class LoadBalancer(object):
             The value to assign to the defined_tags property of this LoadBalancer.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this LoadBalancer.
+        :type system_tags: dict(str, dict(str, object))
+
         :param rule_sets:
             The value to assign to the rule_sets property of this LoadBalancer.
         :type rule_sets: dict(str, RuleSet)
@@ -144,6 +148,7 @@ class LoadBalancer(object):
             'path_route_sets': 'dict(str, PathRouteSet)',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'rule_sets': 'dict(str, RuleSet)'
         }
 
@@ -165,6 +170,7 @@ class LoadBalancer(object):
             'path_route_sets': 'pathRouteSets',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'rule_sets': 'ruleSets'
         }
 
@@ -185,6 +191,7 @@ class LoadBalancer(object):
         self._path_route_sets = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._rule_sets = None
 
     @property
@@ -467,7 +474,19 @@ class LoadBalancer(object):
     def network_security_group_ids(self):
         """
         Gets the network_security_group_ids of this LoadBalancer.
-        The array of NSG `OCIDs`__ in use by this Load Balancer.
+        An array of NSG `OCIDs`__ associated with the load
+        balancer.
+
+        During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+
+        The benefits of associating the load balancer with NSGs include:
+
+        *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+
+        *  The network security rules of other resources can reference the NSGs associated with the load balancer
+           to ensure access.
+
+        Example: [\"ocid1.nsg.oc1.phx.unique_ID\"]
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -481,7 +500,19 @@ class LoadBalancer(object):
     def network_security_group_ids(self, network_security_group_ids):
         """
         Sets the network_security_group_ids of this LoadBalancer.
-        The array of NSG `OCIDs`__ in use by this Load Balancer.
+        An array of NSG `OCIDs`__ associated with the load
+        balancer.
+
+        During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+
+        The benefits of associating the load balancer with NSGs include:
+
+        *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+
+        *  The network security rules of other resources can reference the NSGs associated with the load balancer
+           to ensure access.
+
+        Example: [\"ocid1.nsg.oc1.phx.unique_ID\"]
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -658,6 +689,42 @@ class LoadBalancer(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this LoadBalancer.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        System tags can be viewed by users, but can only be created by the system.
+
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The system_tags of this LoadBalancer.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this LoadBalancer.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        System tags can be viewed by users, but can only be created by the system.
+
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param system_tags: The system_tags of this LoadBalancer.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def rule_sets(self):

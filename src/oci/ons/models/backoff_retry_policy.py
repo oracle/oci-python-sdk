@@ -9,7 +9,10 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BackoffRetryPolicy(object):
     """
-    The backoff retry portion of the subscription delivery policy.
+    The backoff retry portion of the subscription delivery policy. For information about retry durations for subscriptions, see
+    `How Notifications Works`__.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/Notification/Concepts/notificationoverview.htm#how
     """
 
     #: A constant which can be used with the policy_type property of a BackoffRetryPolicy.

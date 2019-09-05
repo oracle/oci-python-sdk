@@ -28,7 +28,7 @@ def vcr_fixture(request):
         yield
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
 def test_create_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'CreateCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -68,7 +68,7 @@ def test_create_cluster(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
 def test_create_kubeconfig(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'CreateKubeconfig'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -108,7 +108,7 @@ def test_create_kubeconfig(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
 def test_create_node_pool(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'CreateNodePool'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -148,7 +148,7 @@ def test_create_node_pool(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
 def test_delete_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'DeleteCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -188,7 +188,7 @@ def test_delete_cluster(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
 def test_delete_node_pool(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'DeleteNodePool'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -228,7 +228,7 @@ def test_delete_node_pool(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
 def test_delete_work_request(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'DeleteWorkRequest'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -268,7 +268,7 @@ def test_delete_work_request(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
 def test_get_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'GetCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -308,7 +308,7 @@ def test_get_cluster(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
 def test_get_cluster_options(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'GetClusterOptions'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -348,7 +348,7 @@ def test_get_cluster_options(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
 def test_get_node_pool(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'GetNodePool'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -388,7 +388,7 @@ def test_get_node_pool(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
 def test_get_node_pool_options(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'GetNodePoolOptions'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -428,7 +428,7 @@ def test_get_node_pool_options(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
 def test_get_work_request(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'GetWorkRequest'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -468,7 +468,7 @@ def test_get_work_request(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
 def test_list_clusters(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'ListClusters'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -527,7 +527,7 @@ def test_list_clusters(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
 def test_list_node_pools(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'ListNodePools'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -586,7 +586,7 @@ def test_list_node_pools(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
 def test_list_work_request_errors(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'ListWorkRequestErrors'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -627,7 +627,7 @@ def test_list_work_request_errors(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
 def test_list_work_request_logs(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'ListWorkRequestLogs'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -668,7 +668,7 @@ def test_list_work_request_logs(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
 def test_list_work_requests(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'ListWorkRequests'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -727,7 +727,7 @@ def test_list_work_requests(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
 def test_update_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'UpdateCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -768,7 +768,7 @@ def test_update_cluster(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oke_control_plane_ww_grp@oracle.com" jiraProject="OKE" opsJiraProject="OKE"
 def test_update_node_pool(testing_service_client):
     if not testing_service_client.is_api_enabled('container_engine', 'UpdateNodePool'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

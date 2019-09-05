@@ -389,7 +389,18 @@ class CreateLoadBalancerDetails(object):
     def network_security_group_ids(self):
         """
         Gets the network_security_group_ids of this CreateLoadBalancerDetails.
-        The array of NSG `OCIDs`__ to be used by this Load Balancer.
+        An array of NSG `OCIDs`__ associated with this load balancer.
+
+        During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+
+        The benefits of using NSGs with the load balancer include:
+
+        *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+
+        *  The network security rules of other resources can reference the NSGs associated with the load balancer
+           to ensure access.
+
+        Example: `[\"ocid1.nsg.oc1.phx.unique_ID\"]`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -403,7 +414,18 @@ class CreateLoadBalancerDetails(object):
     def network_security_group_ids(self, network_security_group_ids):
         """
         Sets the network_security_group_ids of this CreateLoadBalancerDetails.
-        The array of NSG `OCIDs`__ to be used by this Load Balancer.
+        An array of NSG `OCIDs`__ associated with this load balancer.
+
+        During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+
+        The benefits of using NSGs with the load balancer include:
+
+        *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+
+        *  The network security rules of other resources can reference the NSGs associated with the load balancer
+           to ensure access.
+
+        Example: `[\"ocid1.nsg.oc1.phx.unique_ID\"]`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

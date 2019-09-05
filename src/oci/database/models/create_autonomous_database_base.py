@@ -69,6 +69,10 @@ class CreateAutonomousDatabaseBase(object):
             The value to assign to the data_storage_size_in_tbs property of this CreateAutonomousDatabaseBase.
         :type data_storage_size_in_tbs: int
 
+        :param is_free_tier:
+            The value to assign to the is_free_tier property of this CreateAutonomousDatabaseBase.
+        :type is_free_tier: bool
+
         :param admin_password:
             The value to assign to the admin_password property of this CreateAutonomousDatabaseBase.
         :type admin_password: str
@@ -118,6 +122,7 @@ class CreateAutonomousDatabaseBase(object):
             'cpu_core_count': 'int',
             'db_workload': 'str',
             'data_storage_size_in_tbs': 'int',
+            'is_free_tier': 'bool',
             'admin_password': 'str',
             'display_name': 'str',
             'license_model': 'str',
@@ -136,6 +141,7 @@ class CreateAutonomousDatabaseBase(object):
             'cpu_core_count': 'cpuCoreCount',
             'db_workload': 'dbWorkload',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
+            'is_free_tier': 'isFreeTier',
             'admin_password': 'adminPassword',
             'display_name': 'displayName',
             'license_model': 'licenseModel',
@@ -153,6 +159,7 @@ class CreateAutonomousDatabaseBase(object):
         self._cpu_core_count = None
         self._db_workload = None
         self._data_storage_size_in_tbs = None
+        self._is_free_tier = None
         self._admin_password = None
         self._display_name = None
         self._license_model = None
@@ -313,6 +320,30 @@ class CreateAutonomousDatabaseBase(object):
         self._data_storage_size_in_tbs = data_storage_size_in_tbs
 
     @property
+    def is_free_tier(self):
+        """
+        Gets the is_free_tier of this CreateAutonomousDatabaseBase.
+        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB memory. For Always Free databases, memory and CPU cannot be scaled.
+
+
+        :return: The is_free_tier of this CreateAutonomousDatabaseBase.
+        :rtype: bool
+        """
+        return self._is_free_tier
+
+    @is_free_tier.setter
+    def is_free_tier(self, is_free_tier):
+        """
+        Sets the is_free_tier of this CreateAutonomousDatabaseBase.
+        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB memory. For Always Free databases, memory and CPU cannot be scaled.
+
+
+        :param is_free_tier: The is_free_tier of this CreateAutonomousDatabaseBase.
+        :type: bool
+        """
+        self._is_free_tier = is_free_tier
+
+    @property
     def admin_password(self):
         """
         **[Required]** Gets the admin_password of this CreateAutonomousDatabaseBase.
@@ -364,7 +395,7 @@ class CreateAutonomousDatabaseBase(object):
     def license_model(self):
         """
         Gets the license_model of this CreateAutonomousDatabaseBase.
-        The Oracle license model that applies to the Oracle Autonomous Database. The default is BRING_YOUR_OWN_LICENSE. Note that when provisioning an Autonomous Database using the `dedicated deployment`__ option, this attribute must be null.
+        The Oracle license model that applies to the Oracle Autonomous Database. The default for Autonomous Database using the `shared deployment] is BRING_YOUR_OWN_LICENSE. Note that when provisioning an Autonomous Database using the [dedicated deployment`__ option, this attribute must be null because the attribute is already set on Autonomous Exadata Infrastructure level.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
 
@@ -380,7 +411,7 @@ class CreateAutonomousDatabaseBase(object):
     def license_model(self, license_model):
         """
         Sets the license_model of this CreateAutonomousDatabaseBase.
-        The Oracle license model that applies to the Oracle Autonomous Database. The default is BRING_YOUR_OWN_LICENSE. Note that when provisioning an Autonomous Database using the `dedicated deployment`__ option, this attribute must be null.
+        The Oracle license model that applies to the Oracle Autonomous Database. The default for Autonomous Database using the `shared deployment] is BRING_YOUR_OWN_LICENSE. Note that when provisioning an Autonomous Database using the [dedicated deployment`__ option, this attribute must be null because the attribute is already set on Autonomous Exadata Infrastructure level.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
 
@@ -549,8 +580,6 @@ class CreateAutonomousDatabaseBase(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
-
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
@@ -565,8 +594,6 @@ class CreateAutonomousDatabaseBase(object):
         Sets the defined_tags of this CreateAutonomousDatabaseBase.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
-
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 

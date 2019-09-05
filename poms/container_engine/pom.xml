@@ -141,7 +141,7 @@
       <dependency>
         <groupId>com.oracle.pic.clusters</groupId>
         <artifactId>clusters-api-spec</artifactId>
-        <version>1.0.12-20190305.195020-13</version>
+        <version>1.1.7</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

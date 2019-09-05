@@ -1129,10 +1129,10 @@ class LoadBalancerClientCompositeOperations(object):
         to enter the given state(s).
 
         :param UpdateNetworkSecurityGroupsDetails update_network_security_groups_details: (required)
-            The details for updating the NSGs of the load balancer.
+            The details for updating the NSGs associated with the specified load balancer.
 
         :param str load_balancer_id: (required)
-            The `OCID`__ of the load balancer on which update the NSGs.
+            The `OCID`__ of the load balancer to update the NSGs for.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

@@ -66,3 +66,4 @@
 ^src/oci/functions/.*\.py$
 ^src/oci/events/.*\.py$
 ^src/oci/dts/.*\.py$
+^src/oci/oce/.*\.py$

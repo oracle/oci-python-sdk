@@ -9,7 +9,10 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class NotificationTopic(object):
     """
-    The properties that define a topic.
+    The properties that define a topic. For general information about topics, see
+    `Notifications Overview`__.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/Notification/Concepts/notificationoverview.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a NotificationTopic.

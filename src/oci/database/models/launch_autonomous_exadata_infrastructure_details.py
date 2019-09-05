@@ -41,6 +41,10 @@ class LaunchAutonomousExadataInfrastructureDetails(object):
             The value to assign to the subnet_id property of this LaunchAutonomousExadataInfrastructureDetails.
         :type subnet_id: str
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this LaunchAutonomousExadataInfrastructureDetails.
+        :type nsg_ids: list[str]
+
         :param shape:
             The value to assign to the shape property of this LaunchAutonomousExadataInfrastructureDetails.
         :type shape: str
@@ -72,6 +76,7 @@ class LaunchAutonomousExadataInfrastructureDetails(object):
             'display_name': 'str',
             'availability_domain': 'str',
             'subnet_id': 'str',
+            'nsg_ids': 'list[str]',
             'shape': 'str',
             'domain': 'str',
             'license_model': 'str',
@@ -85,6 +90,7 @@ class LaunchAutonomousExadataInfrastructureDetails(object):
             'display_name': 'displayName',
             'availability_domain': 'availabilityDomain',
             'subnet_id': 'subnetId',
+            'nsg_ids': 'nsgIds',
             'shape': 'shape',
             'domain': 'domain',
             'license_model': 'licenseModel',
@@ -97,6 +103,7 @@ class LaunchAutonomousExadataInfrastructureDetails(object):
         self._display_name = None
         self._availability_domain = None
         self._subnet_id = None
+        self._nsg_ids = None
         self._shape = None
         self._domain = None
         self._license_model = None
@@ -221,6 +228,36 @@ class LaunchAutonomousExadataInfrastructureDetails(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this LaunchAutonomousExadataInfrastructureDetails.
+        A list of the `OCIDs`__ of the network security groups (NSGs) that this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+
+
+        :return: The nsg_ids of this LaunchAutonomousExadataInfrastructureDetails.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this LaunchAutonomousExadataInfrastructureDetails.
+        A list of the `OCIDs`__ of the network security groups (NSGs) that this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+
+
+        :param nsg_ids: The nsg_ids of this LaunchAutonomousExadataInfrastructureDetails.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
 
     @property
     def shape(self):
@@ -367,8 +404,6 @@ class LaunchAutonomousExadataInfrastructureDetails(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
-
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
@@ -383,8 +418,6 @@ class LaunchAutonomousExadataInfrastructureDetails(object):
         Sets the defined_tags of this LaunchAutonomousExadataInfrastructureDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
-
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 

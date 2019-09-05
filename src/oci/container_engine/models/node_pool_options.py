@@ -74,7 +74,7 @@ class NodePoolOptions(object):
     def images(self):
         """
         Gets the images of this NodePoolOptions.
-        Available Kubernetes versions.
+        Available image names.
 
 
         :return: The images of this NodePoolOptions.
@@ -86,7 +86,7 @@ class NodePoolOptions(object):
     def images(self, images):
         """
         Sets the images of this NodePoolOptions.
-        Available Kubernetes versions.
+        Available image names.
 
 
         :param images: The images of this NodePoolOptions.

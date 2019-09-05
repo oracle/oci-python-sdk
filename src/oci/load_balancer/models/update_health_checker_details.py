@@ -197,7 +197,8 @@ class UpdateHealthCheckerDetails(object):
     def retries(self):
         """
         **[Required]** Gets the retries of this UpdateHealthCheckerDetails.
-        The number of retries to attempt before a backend server is considered \"unhealthy\".
+        The number of retries to attempt before a backend server is considered \"unhealthy\". This number also applies
+        when recovering a server to the \"healthy\" state.
 
         Example: `3`
 
@@ -211,7 +212,8 @@ class UpdateHealthCheckerDetails(object):
     def retries(self, retries):
         """
         Sets the retries of this UpdateHealthCheckerDetails.
-        The number of retries to attempt before a backend server is considered \"unhealthy\".
+        The number of retries to attempt before a backend server is considered \"unhealthy\". This number also applies
+        when recovering a server to the \"healthy\" state.
 
         Example: `3`
 

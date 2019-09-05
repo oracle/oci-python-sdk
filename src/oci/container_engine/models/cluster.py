@@ -61,6 +61,10 @@ class Cluster(object):
             The value to assign to the kubernetes_version property of this Cluster.
         :type kubernetes_version: str
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this Cluster.
+        :type kms_key_id: str
+
         :param options:
             The value to assign to the options property of this Cluster.
         :type options: ClusterCreateOptions
@@ -94,6 +98,7 @@ class Cluster(object):
             'compartment_id': 'str',
             'vcn_id': 'str',
             'kubernetes_version': 'str',
+            'kms_key_id': 'str',
             'options': 'ClusterCreateOptions',
             'metadata': 'ClusterMetadata',
             'lifecycle_state': 'str',
@@ -108,6 +113,7 @@ class Cluster(object):
             'compartment_id': 'compartmentId',
             'vcn_id': 'vcnId',
             'kubernetes_version': 'kubernetesVersion',
+            'kms_key_id': 'kmsKeyId',
             'options': 'options',
             'metadata': 'metadata',
             'lifecycle_state': 'lifecycleState',
@@ -121,6 +127,7 @@ class Cluster(object):
         self._compartment_id = None
         self._vcn_id = None
         self._kubernetes_version = None
+        self._kms_key_id = None
         self._options = None
         self._metadata = None
         self._lifecycle_state = None
@@ -247,6 +254,30 @@ class Cluster(object):
         :type: str
         """
         self._kubernetes_version = kubernetes_version
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this Cluster.
+        The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
+
+
+        :return: The kms_key_id of this Cluster.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this Cluster.
+        The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
+
+
+        :param kms_key_id: The kms_key_id of this Cluster.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
 
     @property
     def options(self):

@@ -115,6 +115,22 @@ class AutonomousDatabase(object):
             The value to assign to the db_name property of this AutonomousDatabase.
         :type db_name: str
 
+        :param is_free_tier:
+            The value to assign to the is_free_tier property of this AutonomousDatabase.
+        :type is_free_tier: bool
+
+        :param system_tags:
+            The value to assign to the system_tags property of this AutonomousDatabase.
+        :type system_tags: dict(str, dict(str, object))
+
+        :param time_reclamation_of_free_autonomous_database:
+            The value to assign to the time_reclamation_of_free_autonomous_database property of this AutonomousDatabase.
+        :type time_reclamation_of_free_autonomous_database: datetime
+
+        :param time_deletion_of_free_autonomous_database:
+            The value to assign to the time_deletion_of_free_autonomous_database property of this AutonomousDatabase.
+        :type time_deletion_of_free_autonomous_database: datetime
+
         :param cpu_core_count:
             The value to assign to the cpu_core_count property of this AutonomousDatabase.
         :type cpu_core_count: int
@@ -198,6 +214,10 @@ class AutonomousDatabase(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'db_name': 'str',
+            'is_free_tier': 'bool',
+            'system_tags': 'dict(str, dict(str, object))',
+            'time_reclamation_of_free_autonomous_database': 'datetime',
+            'time_deletion_of_free_autonomous_database': 'datetime',
             'cpu_core_count': 'int',
             'data_storage_size_in_tbs': 'int',
             'is_dedicated': 'bool',
@@ -224,6 +244,10 @@ class AutonomousDatabase(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'db_name': 'dbName',
+            'is_free_tier': 'isFreeTier',
+            'system_tags': 'systemTags',
+            'time_reclamation_of_free_autonomous_database': 'timeReclamationOfFreeAutonomousDatabase',
+            'time_deletion_of_free_autonomous_database': 'timeDeletionOfFreeAutonomousDatabase',
             'cpu_core_count': 'cpuCoreCount',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
             'is_dedicated': 'isDedicated',
@@ -249,6 +273,10 @@ class AutonomousDatabase(object):
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._db_name = None
+        self._is_free_tier = None
+        self._system_tags = None
+        self._time_reclamation_of_free_autonomous_database = None
+        self._time_deletion_of_free_autonomous_database = None
         self._cpu_core_count = None
         self._data_storage_size_in_tbs = None
         self._is_dedicated = None
@@ -401,6 +429,108 @@ class AutonomousDatabase(object):
         :type: str
         """
         self._db_name = db_name
+
+    @property
+    def is_free_tier(self):
+        """
+        Gets the is_free_tier of this AutonomousDatabase.
+        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB memory. For Always Free databases, memory and CPU cannot be scaled.
+
+
+        :return: The is_free_tier of this AutonomousDatabase.
+        :rtype: bool
+        """
+        return self._is_free_tier
+
+    @is_free_tier.setter
+    def is_free_tier(self, is_free_tier):
+        """
+        Sets the is_free_tier of this AutonomousDatabase.
+        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB memory. For Always Free databases, memory and CPU cannot be scaled.
+
+
+        :param is_free_tier: The is_free_tier of this AutonomousDatabase.
+        :type: bool
+        """
+        self._is_free_tier = is_free_tier
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this AutonomousDatabase.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The system_tags of this AutonomousDatabase.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this AutonomousDatabase.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param system_tags: The system_tags of this AutonomousDatabase.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
+
+    @property
+    def time_reclamation_of_free_autonomous_database(self):
+        """
+        Gets the time_reclamation_of_free_autonomous_database of this AutonomousDatabase.
+        The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
+
+
+        :return: The time_reclamation_of_free_autonomous_database of this AutonomousDatabase.
+        :rtype: datetime
+        """
+        return self._time_reclamation_of_free_autonomous_database
+
+    @time_reclamation_of_free_autonomous_database.setter
+    def time_reclamation_of_free_autonomous_database(self, time_reclamation_of_free_autonomous_database):
+        """
+        Sets the time_reclamation_of_free_autonomous_database of this AutonomousDatabase.
+        The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
+
+
+        :param time_reclamation_of_free_autonomous_database: The time_reclamation_of_free_autonomous_database of this AutonomousDatabase.
+        :type: datetime
+        """
+        self._time_reclamation_of_free_autonomous_database = time_reclamation_of_free_autonomous_database
+
+    @property
+    def time_deletion_of_free_autonomous_database(self):
+        """
+        Gets the time_deletion_of_free_autonomous_database of this AutonomousDatabase.
+        The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
+
+
+        :return: The time_deletion_of_free_autonomous_database of this AutonomousDatabase.
+        :rtype: datetime
+        """
+        return self._time_deletion_of_free_autonomous_database
+
+    @time_deletion_of_free_autonomous_database.setter
+    def time_deletion_of_free_autonomous_database(self, time_deletion_of_free_autonomous_database):
+        """
+        Sets the time_deletion_of_free_autonomous_database of this AutonomousDatabase.
+        The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
+
+
+        :param time_deletion_of_free_autonomous_database: The time_deletion_of_free_autonomous_database of this AutonomousDatabase.
+        :type: datetime
+        """
+        self._time_deletion_of_free_autonomous_database = time_deletion_of_free_autonomous_database
 
     @property
     def cpu_core_count(self):
@@ -626,7 +756,9 @@ class AutonomousDatabase(object):
     def license_model(self):
         """
         Gets the license_model of this AutonomousDatabase.
-        The Oracle license model that applies to the Oracle Autonomous Database. The default is BRING_YOUR_OWN_LICENSE.
+        The Oracle license model that applies to the Oracle Autonomous Database. The default for Autonomous Database using the `shared deployment] is BRING_YOUR_OWN_LICENSE. Note that when provisioning an Autonomous Database using the [dedicated deployment`__ option, this attribute must be null because the attribute is already set on Autonomous Exadata Infrastructure level.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
 
         Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -641,7 +773,9 @@ class AutonomousDatabase(object):
     def license_model(self, license_model):
         """
         Sets the license_model of this AutonomousDatabase.
-        The Oracle license model that applies to the Oracle Autonomous Database. The default is BRING_YOUR_OWN_LICENSE.
+        The Oracle license model that applies to the Oracle Autonomous Database. The default for Autonomous Database using the `shared deployment] is BRING_YOUR_OWN_LICENSE. Note that when provisioning an Autonomous Database using the [dedicated deployment`__ option, this attribute must be null because the attribute is already set on Autonomous Exadata Infrastructure level.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
 
 
         :param license_model: The license_model of this AutonomousDatabase.
@@ -717,8 +851,6 @@ class AutonomousDatabase(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
-
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
@@ -733,8 +865,6 @@ class AutonomousDatabase(object):
         Sets the defined_tags of this AutonomousDatabase.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
-
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 

@@ -73,6 +73,10 @@ class NodePool(object):
             The value to assign to the nodes property of this NodePool.
         :type nodes: list[Node]
 
+        :param node_config_details:
+            The value to assign to the node_config_details property of this NodePool.
+        :type node_config_details: NodePoolNodeConfigDetails
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -88,7 +92,8 @@ class NodePool(object):
             'ssh_public_key': 'str',
             'quantity_per_subnet': 'int',
             'subnet_ids': 'list[str]',
-            'nodes': 'list[Node]'
+            'nodes': 'list[Node]',
+            'node_config_details': 'NodePoolNodeConfigDetails'
         }
 
         self.attribute_map = {
@@ -105,7 +110,8 @@ class NodePool(object):
             'ssh_public_key': 'sshPublicKey',
             'quantity_per_subnet': 'quantityPerSubnet',
             'subnet_ids': 'subnetIds',
-            'nodes': 'nodes'
+            'nodes': 'nodes',
+            'node_config_details': 'nodeConfigDetails'
         }
 
         self._id = None
@@ -122,6 +128,7 @@ class NodePool(object):
         self._quantity_per_subnet = None
         self._subnet_ids = None
         self._nodes = None
+        self._node_config_details = None
 
     @property
     def id(self):
@@ -458,6 +465,30 @@ class NodePool(object):
         :type: list[Node]
         """
         self._nodes = nodes
+
+    @property
+    def node_config_details(self):
+        """
+        Gets the node_config_details of this NodePool.
+        The configuration of nodes in the node pool.
+
+
+        :return: The node_config_details of this NodePool.
+        :rtype: NodePoolNodeConfigDetails
+        """
+        return self._node_config_details
+
+    @node_config_details.setter
+    def node_config_details(self, node_config_details):
+        """
+        Sets the node_config_details of this NodePool.
+        The configuration of nodes in the node pool.
+
+
+        :param node_config_details: The node_config_details of this NodePool.
+        :type: NodePoolNodeConfigDetails
+        """
+        self._node_config_details = node_config_details
 
     def __repr__(self):
         return formatted_flat_dict(self)
