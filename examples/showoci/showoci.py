@@ -62,7 +62,7 @@ import sys
 import argparse
 import datetime
 
-version = "19.9.10"
+version = "19.9.11"
 
 ##########################################################################
 # execute_extract
@@ -92,7 +92,7 @@ def execute_extract():
     ############################################
     output = ShowOCIOutput()
     summary = ShowOCISummary()
-    csv = ShowOCICSV()
+    csv = ShowOCICSV(start_time)
 
     ############################################
     # print showoci config
