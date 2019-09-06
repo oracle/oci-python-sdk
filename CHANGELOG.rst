@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-2.3.4 - TBD
+2.4.0 - TBD
 ====================
 
 Added
