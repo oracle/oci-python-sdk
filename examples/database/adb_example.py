@@ -128,6 +128,32 @@ def update_adb_licesnse_type(db_client, adb_id):
     return adb_response.data.id
 
 
+def create_free_adb(db_client):
+    # Create the model and populate the values
+    # See: https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/adbcreating.htm
+    adb_request = oci.database.models.CreateAutonomousDatabaseDetails()
+
+    adb_request.compartment_id = compartment_id
+    adb_request.cpu_core_count = 1
+    adb_request.data_storage_size_in_tbs = 1
+    adb_request.db_name = "freeadbexample"
+    adb_request.display_name = "PYSDK-ADB-EXAMPLE"
+    adb_request.db_workload = "OLTP"
+    adb_request.license_model = adb_request.LICENSE_MODEL_BRING_YOUR_OWN_LICENSE
+    # For demonstration, we just passed the password here but for Production code you should have a better
+    # way to pass the password like env variable or commandline
+    adb_request.admin_password = "Welcome1!SDK"
+    adb_request.is_free_tier = True
+
+    adb_response = db_client.create_autonomous_database(
+        create_autonomous_database_details=adb_request,
+        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY)
+
+    print("Created Free Autonomous Database {}".format(adb_response.data.id))
+
+    return adb_response.data.id
+
+
 if __name__ == "__main__":
     # Initialize the client
     db_client = oci.database.DatabaseClient(config)
@@ -137,6 +163,8 @@ if __name__ == "__main__":
     adb_id = create_adb(db_client)
     # Create preview
     adb__preview_id = create_adb_preview(db_client)
+    # Create Free ADB
+    free_adb_id = create_free_adb(db_client)
     # sleep 5 mins
     time.sleep(300)
     # Update adb acl with specific adb_id.
@@ -150,3 +178,4 @@ if __name__ == "__main__":
     # Delete adb
     delete_adb(db_client, adb_id)
     delete_adb(db_client, adb__preview_id)
+    delete_adb(db_client, free_adb_id)
