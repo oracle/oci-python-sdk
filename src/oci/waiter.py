@@ -76,7 +76,10 @@ def wait_until(client, response, property=None, state=None, max_interval_seconds
             kwargs['wait_callback'](times_checked, response)
 
         if property:
-            if getattr(response.data, property) == state:
+            if isinstance(state, tuple):
+                if getattr(response.data, property) in state:
+                    return response
+            elif getattr(response.data, property) == state:
                 return response
         elif kwargs.get('evaluate_response'):
             if kwargs.get('evaluate_response')(response):
