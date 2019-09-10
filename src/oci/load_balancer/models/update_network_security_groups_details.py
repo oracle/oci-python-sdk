@@ -9,7 +9,10 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateNetworkSecurityGroupsDetails(object):
     """
-    An object representing an updated list of NSGs that overwrites the existing list of NSGs. In particular, if the load balancer had no prior NSGs configured, these with be the new NSGs to be used by the load balancer. If the load balancer used to have a list of NSGs configured, and this list contains no entries, then the load balancer will contain no NSGs after this call completes.
+    An object representing an updated list of network security groups (NSGs) that overwrites the existing list of NSGs.
+    *  If the load balancer has no NSGs configured, it uses the NSGs in this list.
+    *  If the load balancer has a list of NSGs configured, this list replaces the existing list.
+    *  If the load balancer has a list of NSGs configured and this list is empty, the operation removes all of the load balancer's NSG associations.
     """
 
     def __init__(self, **kwargs):
@@ -36,7 +39,17 @@ class UpdateNetworkSecurityGroupsDetails(object):
     def network_security_group_ids(self):
         """
         Gets the network_security_group_ids of this UpdateNetworkSecurityGroupsDetails.
-        The array of NSG `OCIDs`__ to be used by this Load Balancer.
+        An array of NSG `OCIDs`__ associated with the load
+        balancer.
+
+        During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+
+        The benefits of associating the load balancer with NSGs include:
+
+        *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+
+        *  The network security rules of other resources can reference the NSGs associated with the load balancer
+           to ensure access.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -50,7 +63,17 @@ class UpdateNetworkSecurityGroupsDetails(object):
     def network_security_group_ids(self, network_security_group_ids):
         """
         Sets the network_security_group_ids of this UpdateNetworkSecurityGroupsDetails.
-        The array of NSG `OCIDs`__ to be used by this Load Balancer.
+        An array of NSG `OCIDs`__ associated with the load
+        balancer.
+
+        During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+
+        The benefits of associating the load balancer with NSGs include:
+
+        *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+
+        *  The network security rules of other resources can reference the NSGs associated with the load balancer
+           to ensure access.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

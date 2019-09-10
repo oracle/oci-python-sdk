@@ -33,6 +33,10 @@ class CreateClusterDetails(object):
             The value to assign to the kubernetes_version property of this CreateClusterDetails.
         :type kubernetes_version: str
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this CreateClusterDetails.
+        :type kms_key_id: str
+
         :param options:
             The value to assign to the options property of this CreateClusterDetails.
         :type options: ClusterCreateOptions
@@ -43,6 +47,7 @@ class CreateClusterDetails(object):
             'compartment_id': 'str',
             'vcn_id': 'str',
             'kubernetes_version': 'str',
+            'kms_key_id': 'str',
             'options': 'ClusterCreateOptions'
         }
 
@@ -51,6 +56,7 @@ class CreateClusterDetails(object):
             'compartment_id': 'compartmentId',
             'vcn_id': 'vcnId',
             'kubernetes_version': 'kubernetesVersion',
+            'kms_key_id': 'kmsKeyId',
             'options': 'options'
         }
 
@@ -58,6 +64,7 @@ class CreateClusterDetails(object):
         self._compartment_id = None
         self._vcn_id = None
         self._kubernetes_version = None
+        self._kms_key_id = None
         self._options = None
 
     @property
@@ -155,6 +162,32 @@ class CreateClusterDetails(object):
         :type: str
         """
         self._kubernetes_version = kubernetes_version
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this CreateClusterDetails.
+        The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
+        When used, `kubernetesVersion` must be at least `v1.13.0`.
+
+
+        :return: The kms_key_id of this CreateClusterDetails.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this CreateClusterDetails.
+        The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption.
+        When used, `kubernetesVersion` must be at least `v1.13.0`.
+
+
+        :param kms_key_id: The kms_key_id of this CreateClusterDetails.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
 
     @property
     def options(self):

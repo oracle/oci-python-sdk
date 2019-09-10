@@ -176,7 +176,11 @@ class SubscriptionSummary(object):
     def protocol(self):
         """
         **[Required]** Gets the protocol of this SubscriptionSummary.
-        The protocol used for the subscription. Valid values: EMAIL, HTTPS.
+        The protocol used for the subscription.
+        For information about subscription protocols, see
+        `To create a subscription`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub
 
 
         :return: The protocol of this SubscriptionSummary.
@@ -188,7 +192,11 @@ class SubscriptionSummary(object):
     def protocol(self, protocol):
         """
         Sets the protocol of this SubscriptionSummary.
-        The protocol used for the subscription. Valid values: EMAIL, HTTPS.
+        The protocol used for the subscription.
+        For information about subscription protocols, see
+        `To create a subscription`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub
 
 
         :param protocol: The protocol of this SubscriptionSummary.
@@ -200,8 +208,8 @@ class SubscriptionSummary(object):
     def endpoint(self):
         """
         **[Required]** Gets the endpoint of this SubscriptionSummary.
-        The endpoint of the subscription. Valid values depend on the protocol.
-        For EMAIL, only an email address is valid. For HTTPS, only a PagerDuty URL is valid. A URL cannot exceed 512 characters.
+        A locator that corresponds to the subscription protocol.
+        For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol.
 
 
         :return: The endpoint of this SubscriptionSummary.
@@ -213,8 +221,8 @@ class SubscriptionSummary(object):
     def endpoint(self, endpoint):
         """
         Sets the endpoint of this SubscriptionSummary.
-        The endpoint of the subscription. Valid values depend on the protocol.
-        For EMAIL, only an email address is valid. For HTTPS, only a PagerDuty URL is valid. A URL cannot exceed 512 characters.
+        A locator that corresponds to the subscription protocol.
+        For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol.
 
 
         :param endpoint: The endpoint of this SubscriptionSummary.

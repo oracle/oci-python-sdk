@@ -36,7 +36,6 @@ def create_cluster(ce_client, vcn):
     and other values are just for demonstration purposes.
     """
     success = True
-
     kubernetes_network_config = oci.container_engine.models.KubernetesNetworkConfig(pods_cidr="10.244.0.0/16",
                                                                                     services_cidr="10.96.0.0/16")
 
@@ -146,12 +145,24 @@ def get_kubeconfig(ce_client, cluster_id):
     return
 
 
-def create_node_pool(ce_client, cluster_id, subnets):
+def create_node_pool(ce_client, ads, cluster_id, subnet):
     """
     create_node_pool
 
     Creates a node pool inside of a cluser
     """
+    node_pool_placement_configs_details = []
+    for ad in ads:
+        node_pool_placement_configs_details.append(oci.container_engine.models.NodePoolPlacementConfigDetails(
+            availability_domain=ad,
+            subnet_id=subnet)
+        )
+
+    create_node_pool_node_config_details = oci.container_engine.models.CreateNodePoolNodeConfigDetails(
+        size=len(ads),
+        placement_configs=node_pool_placement_configs_details
+    )
+
     success = True
     node_pool_create_details = oci.container_engine.models.CreateNodePoolDetails(compartment_id=compartment_id,
                                                                                  cluster_id=cluster_id,
@@ -160,8 +171,7 @@ def create_node_pool(ce_client, cluster_id, subnets):
                                                                                  node_image_name="Oracle-Linux-7.4",
                                                                                  node_shape="VM.Standard1.1",
                                                                                  initial_node_labels=[{"nodes": "Example Nodes"}],
-                                                                                 quantity_per_subnet=1,
-                                                                                 subnet_ids=subnets)
+                                                                                 node_config_details=create_node_pool_node_config_details)
 
     ce_composite_ops = oci.container_engine.ContainerEngineClientCompositeOperations(ce_client)
 
@@ -252,7 +262,7 @@ def get_kubernetes_version(ce_client):
 ################
 
 
-def create_vcn(vn_client, ads, number_of_worker_subnets=3, number_of_lb_subnets=2):
+def create_vcn(vn_client, ads, number_of_worker_subnets=1, number_of_lb_subnets=1):
     """
     create_vcn
 
@@ -419,8 +429,7 @@ def create_vcn(vn_client, ads, number_of_worker_subnets=3, number_of_lb_subnets=
         display_name = display_name_template.format(1 + i)
         dns_label = dns_label_template.format(1 + i)
 
-        subnet_details = oci.core.models.CreateSubnetDetails(availability_domain=ads[i],
-                                                             compartment_id=compartment_id,
+        subnet_details = oci.core.models.CreateSubnetDetails(compartment_id=compartment_id,
                                                              cidr_block=cidr_block,
                                                              display_name=display_name,
                                                              dns_label=dns_label,
@@ -441,8 +450,7 @@ def create_vcn(vn_client, ads, number_of_worker_subnets=3, number_of_lb_subnets=
         cidr_block = subnet_template.format(20 + i)
         display_name = display_name_template.format(1 + i)
         dns_label = dns_label_template.format(1 + i)
-        subnet_details = oci.core.models.CreateSubnetDetails(availability_domain=ads[i],
-                                                             compartment_id=compartment_id,
+        subnet_details = oci.core.models.CreateSubnetDetails(compartment_id=compartment_id,
                                                              cidr_block=cidr_block,
                                                              display_name=display_name,
                                                              dns_label=dns_label,
@@ -577,13 +585,14 @@ if __name__ == "__main__":
 
         print_header("Create the Cluster")
         cluster_success, cluster_resources = create_cluster(ce_client, vcn_resources)
-        print("Cluster resourse: {}".format(cluster_resources))
+        print("Cluster resourse: {}".format(cluster_resources)),
 
         if cluster_success:
             print_header('Create a node pool')
             node_pool_success, node_pool_resources = create_node_pool(ce_client,
+                                                                      ads,
                                                                       cluster_resources['cluster'],
-                                                                      vcn_resources['worker_subnets'])
+                                                                      vcn_resources['worker_subnets'][0])
             print("Node pool resources: {}".format(node_pool_resources))
 
         if cluster_success:

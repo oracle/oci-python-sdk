@@ -25,6 +25,10 @@ class UpdateAutonomousExadataInfrastructureDetails(object):
             The value to assign to the maintenance_window_details property of this UpdateAutonomousExadataInfrastructureDetails.
         :type maintenance_window_details: MaintenanceWindow
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this UpdateAutonomousExadataInfrastructureDetails.
+        :type nsg_ids: list[str]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateAutonomousExadataInfrastructureDetails.
         :type freeform_tags: dict(str, str)
@@ -37,6 +41,7 @@ class UpdateAutonomousExadataInfrastructureDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'maintenance_window_details': 'MaintenanceWindow',
+            'nsg_ids': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -44,12 +49,14 @@ class UpdateAutonomousExadataInfrastructureDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'maintenance_window_details': 'maintenanceWindowDetails',
+            'nsg_ids': 'nsgIds',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._display_name = None
         self._maintenance_window_details = None
+        self._nsg_ids = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -98,6 +105,36 @@ class UpdateAutonomousExadataInfrastructureDetails(object):
         self._maintenance_window_details = maintenance_window_details
 
     @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this UpdateAutonomousExadataInfrastructureDetails.
+        A list of the `OCIDs`__ of the network security groups (NSGs) that this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+
+
+        :return: The nsg_ids of this UpdateAutonomousExadataInfrastructureDetails.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this UpdateAutonomousExadataInfrastructureDetails.
+        A list of the `OCIDs`__ of the network security groups (NSGs) that this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+
+
+        :param nsg_ids: The nsg_ids of this UpdateAutonomousExadataInfrastructureDetails.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
+
+    @property
     def freeform_tags(self):
         """
         Gets the freeform_tags of this UpdateAutonomousExadataInfrastructureDetails.
@@ -138,8 +175,6 @@ class UpdateAutonomousExadataInfrastructureDetails(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
-
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
@@ -154,8 +189,6 @@ class UpdateAutonomousExadataInfrastructureDetails(object):
         Sets the defined_tags of this UpdateAutonomousExadataInfrastructureDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
-
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 

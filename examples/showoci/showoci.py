@@ -62,7 +62,7 @@ import sys
 import argparse
 import datetime
 
-version = "19.9.4"
+version = "19.9.11"
 
 ##########################################################################
 # execute_extract
@@ -92,7 +92,7 @@ def execute_extract():
     ############################################
     output = ShowOCIOutput()
     summary = ShowOCISummary()
-    csv = ShowOCICSV()
+    csv = ShowOCICSV(start_time)
 
     ############################################
     # print showoci config
@@ -242,7 +242,7 @@ def set_parser_arguments():
     parser.add_argument('-p', default="", dest='proxy', help='Set Proxy (i.e. www-proxy-server.com:80) ')
     parser.add_argument('-rg', default="", dest='region', help='Filter by Region')
     parser.add_argument('-cp', default="", dest='compart', help='Filter by Compartment')
-    parser.add_argument('-cpath', default="", dest='compartpath', help='Filter by Compartment using path , example -cpath "Adi Main / Adi Sub"')
+    parser.add_argument('-cpath', default="", dest='compartpath', help='Filter by Compartment path ,(i.e. -cpath "Adi / Sub"')
     parser.add_argument('-cf', type=argparse.FileType('r'), dest='config', help="Config File")
     parser.add_argument('-csv', default="", dest='csv', help="Output to CSV files, Input as file header")
     parser.add_argument('-jf', type=argparse.FileType('w'), dest='joutfile', help="Output to file   (JSON format)")

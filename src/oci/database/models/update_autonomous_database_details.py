@@ -39,6 +39,10 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the display_name property of this UpdateAutonomousDatabaseDetails.
         :type display_name: str
 
+        :param is_free_tier:
+            The value to assign to the is_free_tier property of this UpdateAutonomousDatabaseDetails.
+        :type is_free_tier: bool
+
         :param admin_password:
             The value to assign to the admin_password property of this UpdateAutonomousDatabaseDetails.
         :type admin_password: str
@@ -73,6 +77,7 @@ class UpdateAutonomousDatabaseDetails(object):
             'cpu_core_count': 'int',
             'data_storage_size_in_tbs': 'int',
             'display_name': 'str',
+            'is_free_tier': 'bool',
             'admin_password': 'str',
             'db_name': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -86,6 +91,7 @@ class UpdateAutonomousDatabaseDetails(object):
             'cpu_core_count': 'cpuCoreCount',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
             'display_name': 'displayName',
+            'is_free_tier': 'isFreeTier',
             'admin_password': 'adminPassword',
             'db_name': 'dbName',
             'freeform_tags': 'freeformTags',
@@ -98,6 +104,7 @@ class UpdateAutonomousDatabaseDetails(object):
         self._cpu_core_count = None
         self._data_storage_size_in_tbs = None
         self._display_name = None
+        self._is_free_tier = None
         self._admin_password = None
         self._db_name = None
         self._freeform_tags = None
@@ -177,6 +184,30 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def is_free_tier(self):
+        """
+        Gets the is_free_tier of this UpdateAutonomousDatabaseDetails.
+        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB memory. For Always Free databases, memory and CPU cannot be scaled.
+
+
+        :return: The is_free_tier of this UpdateAutonomousDatabaseDetails.
+        :rtype: bool
+        """
+        return self._is_free_tier
+
+    @is_free_tier.setter
+    def is_free_tier(self, is_free_tier):
+        """
+        Sets the is_free_tier of this UpdateAutonomousDatabaseDetails.
+        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB memory. For Always Free databases, memory and CPU cannot be scaled.
+
+
+        :param is_free_tier: The is_free_tier of this UpdateAutonomousDatabaseDetails.
+        :type: bool
+        """
+        self._is_free_tier = is_free_tier
 
     @property
     def admin_password(self):
@@ -271,8 +302,6 @@ class UpdateAutonomousDatabaseDetails(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
-
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
@@ -288,8 +317,6 @@ class UpdateAutonomousDatabaseDetails(object):
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
 
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
-
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
@@ -302,7 +329,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def license_model(self):
         """
         Gets the license_model of this UpdateAutonomousDatabaseDetails.
-        The new Oracle license model that applies to the Oracle Autonomous Transaction Processing database. Note that when updating an Autonomous Database that uses the `dedicated deployment`__ option, this attribute must be null.
+        The Oracle license model that applies to the Oracle Autonomous Database. The default for Autonomous Database using the `shared deployment] is BRING_YOUR_OWN_LICENSE. Note that when provisioning an Autonomous Database using the [dedicated deployment`__ option, this attribute must be null because the attribute is already set on Autonomous Exadata Infrastructure level.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
 
@@ -318,7 +345,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def license_model(self, license_model):
         """
         Sets the license_model of this UpdateAutonomousDatabaseDetails.
-        The new Oracle license model that applies to the Oracle Autonomous Transaction Processing database. Note that when updating an Autonomous Database that uses the `dedicated deployment`__ option, this attribute must be null.
+        The Oracle license model that applies to the Oracle Autonomous Database. The default for Autonomous Database using the `shared deployment] is BRING_YOUR_OWN_LICENSE. Note that when provisioning an Autonomous Database using the [dedicated deployment`__ option, this attribute must be null because the attribute is already set on Autonomous Exadata Infrastructure level.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
 

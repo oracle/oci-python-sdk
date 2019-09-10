@@ -81,7 +81,7 @@ class CreateDbHomeWithDbSystemIdBase(object):
     @property
     def db_system_id(self):
         """
-        Gets the db_system_id of this CreateDbHomeWithDbSystemIdBase.
+        **[Required]** Gets the db_system_id of this CreateDbHomeWithDbSystemIdBase.
         The `OCID`__ of the DB system.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
