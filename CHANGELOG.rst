@@ -10,7 +10,7 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 Added
 -----
-Support for specifying the autoBackupWindow field for scheduling backups in the Database service
+* Support for specifying the autoBackupWindow field for scheduling backups in the Database service
 * Support for network security groups on autonomous Exadata infrastructure in the Database service
 * Support for Kubernetes secrets encryption in customer clusters, regional subnets, and cluster authentication for instance principals in the Container Engine for Kubernetes service
 * Support for the Oracle Content and Experience service
