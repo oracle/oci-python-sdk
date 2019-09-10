@@ -10,6 +10,10 @@ from oci.decorators import init_model_state_from_kwargs
 class ConfirmationResult(object):
     """
     The confirmation details for the specified subscription.
+    For information about confirming subscriptions, see
+    `To confirm a subscription`__.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#confirmSub
     """
 
     def __init__(self, **kwargs):
@@ -123,8 +127,8 @@ class ConfirmationResult(object):
     def endpoint(self):
         """
         **[Required]** Gets the endpoint of this ConfirmationResult.
-        The endpoint of the subscription. Valid values depend on the protocol.
-        For EMAIL, only an email address is valid. For HTTPS, only a PagerDuty URL is valid. A URL cannot exceed 512 characters.
+        A locator that corresponds to the subscription protocol.
+        For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol.
 
 
         :return: The endpoint of this ConfirmationResult.
@@ -136,8 +140,8 @@ class ConfirmationResult(object):
     def endpoint(self, endpoint):
         """
         Sets the endpoint of this ConfirmationResult.
-        The endpoint of the subscription. Valid values depend on the protocol.
-        For EMAIL, only an email address is valid. For HTTPS, only a PagerDuty URL is valid. A URL cannot exceed 512 characters.
+        A locator that corresponds to the subscription protocol.
+        For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol.
 
 
         :param endpoint: The endpoint of this ConfirmationResult.

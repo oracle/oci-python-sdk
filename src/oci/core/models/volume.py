@@ -73,6 +73,10 @@ class Volume(object):
             The value to assign to the freeform_tags property of this Volume.
         :type freeform_tags: dict(str, str)
 
+        :param system_tags:
+            The value to assign to the system_tags property of this Volume.
+        :type system_tags: dict(str, dict(str, object))
+
         :param id:
             The value to assign to the id property of this Volume.
         :type id: str
@@ -118,6 +122,7 @@ class Volume(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
+            'system_tags': 'dict(str, dict(str, object))',
             'id': 'str',
             'is_hydrated': 'bool',
             'kms_key_id': 'str',
@@ -135,6 +140,7 @@ class Volume(object):
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
+            'system_tags': 'systemTags',
             'id': 'id',
             'is_hydrated': 'isHydrated',
             'kms_key_id': 'kmsKeyId',
@@ -151,6 +157,7 @@ class Volume(object):
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
+        self._system_tags = None
         self._id = None
         self._is_hydrated = None
         self._kms_key_id = None
@@ -306,6 +313,32 @@ class Volume(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this Volume.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :return: The system_tags of this Volume.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this Volume.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :param system_tags: The system_tags of this Volume.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def id(self):

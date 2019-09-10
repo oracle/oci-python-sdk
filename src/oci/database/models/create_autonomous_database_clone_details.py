@@ -47,6 +47,10 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
             The value to assign to the data_storage_size_in_tbs property of this CreateAutonomousDatabaseCloneDetails.
         :type data_storage_size_in_tbs: int
 
+        :param is_free_tier:
+            The value to assign to the is_free_tier property of this CreateAutonomousDatabaseCloneDetails.
+        :type is_free_tier: bool
+
         :param admin_password:
             The value to assign to the admin_password property of this CreateAutonomousDatabaseCloneDetails.
         :type admin_password: str
@@ -105,6 +109,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
             'cpu_core_count': 'int',
             'db_workload': 'str',
             'data_storage_size_in_tbs': 'int',
+            'is_free_tier': 'bool',
             'admin_password': 'str',
             'display_name': 'str',
             'license_model': 'str',
@@ -125,6 +130,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
             'cpu_core_count': 'cpuCoreCount',
             'db_workload': 'dbWorkload',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
+            'is_free_tier': 'isFreeTier',
             'admin_password': 'adminPassword',
             'display_name': 'displayName',
             'license_model': 'licenseModel',
@@ -144,6 +150,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
         self._cpu_core_count = None
         self._db_workload = None
         self._data_storage_size_in_tbs = None
+        self._is_free_tier = None
         self._admin_password = None
         self._display_name = None
         self._license_model = None

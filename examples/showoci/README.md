@@ -52,7 +52,6 @@ Required OCI IAM user with read only privileges
 
 ```
 ALLOW GROUP ReadOnlyUsers to read all-resources IN TENANCY
-Allow Group ReadOnlyUsers to use network-security-groups in tenancy /* use required for now to read security group rules */
 ```
 
 For restrictive privileges:

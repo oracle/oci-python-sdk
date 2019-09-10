@@ -258,6 +258,7 @@ class ShowOCIService(object):
         {'shape': 'BM.Standard1.36', 'cpu': 36, 'memory': 256, 'storage': 0},
         {'shape': 'BM.Standard2.52', 'cpu': 52, 'memory': 768, 'storage': 0},
         {'shape': 'BM.StandardE2.64', 'cpu': 64, 'memory': 512, 'storage': 0},
+        {'shape': 'BM.Standard.B1.44', 'cpu': 44, 'memory': 512, 'storage': 0},
         {'shape': 'BM.Standard.E2.64', 'cpu': 64, 'memory': 512, 'storage': 0},
         {'shape': 'Exadata.Full1.336', 'cpu': 336, 'memory': 5760, 'storage': 336},
         {'shape': 'Exadata.Full2.368', 'cpu': 368, 'memory': 5760, 'storage': 424},
@@ -285,6 +286,11 @@ class ShowOCIService(object):
         {'shape': 'VM.Standard1.4', 'cpu': 4, 'memory': 28, 'storage': 0},
         {'shape': 'VM.Standard1.8', 'cpu': 8, 'memory': 56, 'storage': 0},
         {'shape': 'VM.Standard1.16', 'cpu': 16, 'memory': 112, 'storage': 0},
+        {'shape': 'VM.Standard.B1.1', 'cpu': 1, 'memory': 12, 'storage': 0},
+        {'shape': 'VM.Standard.B1.2', 'cpu': 2, 'memory': 24, 'storage': 0},
+        {'shape': 'VM.Standard.B1.4', 'cpu': 4, 'memory': 48, 'storage': 0},
+        {'shape': 'VM.Standard.B1.8', 'cpu': 8, 'memory': 96, 'storage': 0},
+        {'shape': 'VM.Standard.B1.16', 'cpu': 16, 'memory': 192, 'storage': 0},
         {'shape': 'VM.Standard2.1', 'cpu': 1, 'memory': 15, 'storage': 0},
         {'shape': 'VM.Standard2.2', 'cpu': 2, 'memory': 30, 'storage': 0},
         {'shape': 'VM.Standard2.4', 'cpu': 4, 'memory': 60, 'storage': 0},
@@ -607,8 +613,8 @@ class ShowOCIService(object):
     # print count result
     ##########################################################################
     def __load_print_cnt(self, cnt, start_time):
-        elapsed_time = time.time() - start_time
-        print(" (" + str(int(cnt)) + ") - " + str(round(elapsed_time)) + " sec")
+        et = time.time() - start_time
+        print(" ("'{:02d}:{:02d}:{:02d}'.format(round(et // 3600), (round(et % 3600 // 60)), round(et % 60)) + ")")
 
     ##########################################################################
     # print auth warning
@@ -674,8 +680,10 @@ class ShowOCIService(object):
     ##########################################################################
     def __load_oci_region_data(self, region_name):
 
-        # Assign Region to config file
+        # capture region start time
+        region_start_time = time.time()
 
+        # Assign Region to config file
         self.print_header("Region " + region_name, 2)
         self.config['region'] = region_name
         self.signer.region = region_name
@@ -751,6 +759,9 @@ class ShowOCIService(object):
         # if limits
         if self.flags.read_limits:
             self.__load_limits_main()
+
+        et = time.time() - region_start_time
+        print("*** Elapsed Region '" + region_name + "' - " + '{:02d}:{:02d}:{:02d}'.format(round(et // 3600), (round(et % 3600 // 60)), round(et % 60)) + " ***")
 
     ##########################################################################
     # Identity Module
@@ -3270,9 +3281,9 @@ class ShowOCIService(object):
                                     val['compute_shape'] = str(launch_details.shape)
                                     val['compute_display_name'] = str(launch_details.display_name)
                                     if instance_detail.block_volumes:
-                                        val['block_volumes'] = len(instance_detail.block_volumes)
+                                        val['block_volumes'] = str(len(instance_detail.block_volumes))
                                     if instance_detail.secondary_vnics:
-                                        val['secondary_vnics'] = len(instance_detail.secondary_vnics)
+                                        val['secondary_vnics'] = str(len(instance_detail.secondary_vnics))
 
                                     # check source details type
                                     if launch_details.source_details:
@@ -4209,7 +4220,10 @@ class ShowOCIService(object):
                     if self.__check_service_error(e.code):
                         self.__load_print_auth_warning()
                         continue
-                    raise
+                    else:
+                        self.__load_print_auth_warning("b", False)
+                        continue
+                        time.sleep(1)
 
                 # print next load balancer
                 print("L", end="")
@@ -4227,7 +4241,10 @@ class ShowOCIService(object):
                     except oci.exceptions.ServiceError as e:
                         if self.__check_service_error(e.code):
                             pass
-                        raise
+                        else:
+                            self.__load_print_auth_warning("s", False)
+                            status = "-"
+                            time.sleep(1)
 
                     ############################
                     # check ssl config
@@ -4261,7 +4278,10 @@ class ShowOCIService(object):
                         except oci.exceptions.ServiceError as e:
                             if self.__check_service_error(e.code):
                                 pass
-                            raise
+                            else:
+                                self.__load_print_auth_warning("h", False)
+                                bh_status = "-"
+                                time.sleep(1)
 
                         # add details
                         bval = {'name': str(backend.name),
@@ -4337,15 +4357,16 @@ class ShowOCIService(object):
                     data.append(dataval)
 
                     cnt += 1
+                    # sleep 0.5 seconds every 10 checks to avoid too many requests
+                    if cnt % 10 == 0:
+                        time.sleep(0.5)
 
             self.__load_print_cnt(cnt, start_time)
             return data
 
         except oci.exceptions.RequestException as e:
-
             if self.__check_request_error(e):
                 return data
-
             raise
         except Exception as e:
             self.__print_error("__load_load_balancer_backendset", e)

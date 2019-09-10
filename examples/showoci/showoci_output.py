@@ -1886,12 +1886,14 @@ class ShowOCICSV(object):
     csv_load_balancer = []
     csv_load_balancer_bs = []
     csv_limits = []
+    start_time = ""
 
     ############################################
     # Init
+    # accept start time as string
     ############################################
-    def __init__(self):
-        pass
+    def __init__(self, start_time):
+        self.start_time = start_time
 
     ##########################################################################
     # generate_csv
@@ -1957,8 +1959,11 @@ class ShowOCICSV(object):
             # get the file name of the CSV
             file_name = self.csv_file_header + "_" + file_subject + ".csv"
 
+            # add start_date to each dictionary
+            result = [dict(item, extract_date=self.start_time) for item in data]
+
             # generate fields
-            fields = [key for key in data[0].keys()]
+            fields = [key for key in result[0].keys()]
 
             with open(file_name, mode='w', newline='') as csv_file:
                 writer = csv.DictWriter(csv_file, fieldnames=fields)
@@ -1966,7 +1971,7 @@ class ShowOCICSV(object):
                 # write header
                 writer.writeheader()
 
-                for row in data:
+                for row in result:
                     writer.writerow(row)
 
             print("CSV: " + file_subject.ljust(22) + " --> " + file_name)

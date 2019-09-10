@@ -3971,6 +3971,10 @@ class DatabaseClient(object):
 
             Allowed values are: "OLTP", "DW"
 
+        :param bool is_free_tier: (optional)
+            Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources.
+            A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
+
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given. The match is not case sensitive.
 
@@ -4001,6 +4005,7 @@ class DatabaseClient(object):
             "sort_order",
             "lifecycle_state",
             "db_workload",
+            "is_free_tier",
             "display_name",
             "opc_request_id"
         ]
@@ -4046,6 +4051,7 @@ class DatabaseClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "dbWorkload": kwargs.get("db_workload", missing),
+            "isFreeTier": kwargs.get("is_free_tier", missing),
             "displayName": kwargs.get("display_name", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}

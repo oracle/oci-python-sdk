@@ -77,6 +77,10 @@ class VolumeBackup(object):
             The value to assign to the defined_tags property of this VolumeBackup.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this VolumeBackup.
+        :type system_tags: dict(str, dict(str, object))
+
         :param display_name:
             The value to assign to the display_name property of this VolumeBackup.
         :type display_name: str
@@ -151,6 +155,7 @@ class VolumeBackup(object):
         self.swagger_types = {
             'compartment_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'expiration_time': 'datetime',
             'freeform_tags': 'dict(str, str)',
@@ -172,6 +177,7 @@ class VolumeBackup(object):
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
+            'system_tags': 'systemTags',
             'display_name': 'displayName',
             'expiration_time': 'expirationTime',
             'freeform_tags': 'freeformTags',
@@ -192,6 +198,7 @@ class VolumeBackup(object):
 
         self._compartment_id = None
         self._defined_tags = None
+        self._system_tags = None
         self._display_name = None
         self._expiration_time = None
         self._freeform_tags = None
@@ -266,6 +273,32 @@ class VolumeBackup(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this VolumeBackup.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :return: The system_tags of this VolumeBackup.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this VolumeBackup.
+        System tags for this resource. Each key is predefined and scoped to a namespace.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :param system_tags: The system_tags of this VolumeBackup.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     @property
     def display_name(self):

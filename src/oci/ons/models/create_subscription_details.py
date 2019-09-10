@@ -134,7 +134,12 @@ class CreateSubscriptionDetails(object):
     def protocol(self):
         """
         **[Required]** Gets the protocol of this CreateSubscriptionDetails.
-        The protocol to use for delivering messages. Valid values: EMAIL, HTTPS.
+        The protocol used for the subscription.
+
+        For information about subscription protocols, see
+        `To create a subscription`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub
 
 
         :return: The protocol of this CreateSubscriptionDetails.
@@ -146,7 +151,12 @@ class CreateSubscriptionDetails(object):
     def protocol(self, protocol):
         """
         Sets the protocol of this CreateSubscriptionDetails.
-        The protocol to use for delivering messages. Valid values: EMAIL, HTTPS.
+        The protocol used for the subscription.
+
+        For information about subscription protocols, see
+        `To create a subscription`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub
 
 
         :param protocol: The protocol of this CreateSubscriptionDetails.
@@ -158,9 +168,16 @@ class CreateSubscriptionDetails(object):
     def endpoint(self):
         """
         **[Required]** Gets the endpoint of this CreateSubscriptionDetails.
-        The endpoint of the subscription. Valid values depend on the protocol.
-        For EMAIL, only an email address is valid. For HTTPS, only a PagerDuty URL is valid. A URL cannot exceed 512 characters.
+        A locator that corresponds to the subscription protocol.
+        For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol.
+        HTTP-based protocols use URL endpoints that begin with \"http:\" or \"https:\".
+        A URL cannot exceed 512 characters.
         Avoid entering confidential information.
+
+        For protocol-specific endpoint formats and steps to get or create endpoints, see
+        `To create a subscription`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub
 
 
         :return: The endpoint of this CreateSubscriptionDetails.
@@ -172,9 +189,16 @@ class CreateSubscriptionDetails(object):
     def endpoint(self, endpoint):
         """
         Sets the endpoint of this CreateSubscriptionDetails.
-        The endpoint of the subscription. Valid values depend on the protocol.
-        For EMAIL, only an email address is valid. For HTTPS, only a PagerDuty URL is valid. A URL cannot exceed 512 characters.
+        A locator that corresponds to the subscription protocol.
+        For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol.
+        HTTP-based protocols use URL endpoints that begin with \"http:\" or \"https:\".
+        A URL cannot exceed 512 characters.
         Avoid entering confidential information.
+
+        For protocol-specific endpoint formats and steps to get or create endpoints, see
+        `To create a subscription`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub
 
 
         :param endpoint: The endpoint of this CreateSubscriptionDetails.
@@ -186,7 +210,7 @@ class CreateSubscriptionDetails(object):
     def metadata(self):
         """
         Gets the metadata of this CreateSubscriptionDetails.
-        Metadata for the subscription. Avoid entering confidential information.
+        Metadata for the subscription.
 
 
         :return: The metadata of this CreateSubscriptionDetails.
@@ -198,7 +222,7 @@ class CreateSubscriptionDetails(object):
     def metadata(self, metadata):
         """
         Sets the metadata of this CreateSubscriptionDetails.
-        Metadata for the subscription. Avoid entering confidential information.
+        Metadata for the subscription.
 
 
         :param metadata: The metadata of this CreateSubscriptionDetails.

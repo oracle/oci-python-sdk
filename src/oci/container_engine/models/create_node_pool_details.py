@@ -61,6 +61,10 @@ class CreateNodePoolDetails(object):
             The value to assign to the subnet_ids property of this CreateNodePoolDetails.
         :type subnet_ids: list[str]
 
+        :param node_config_details:
+            The value to assign to the node_config_details property of this CreateNodePoolDetails.
+        :type node_config_details: CreateNodePoolNodeConfigDetails
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -73,7 +77,8 @@ class CreateNodePoolDetails(object):
             'initial_node_labels': 'list[KeyValue]',
             'ssh_public_key': 'str',
             'quantity_per_subnet': 'int',
-            'subnet_ids': 'list[str]'
+            'subnet_ids': 'list[str]',
+            'node_config_details': 'CreateNodePoolNodeConfigDetails'
         }
 
         self.attribute_map = {
@@ -87,7 +92,8 @@ class CreateNodePoolDetails(object):
             'initial_node_labels': 'initialNodeLabels',
             'ssh_public_key': 'sshPublicKey',
             'quantity_per_subnet': 'quantityPerSubnet',
-            'subnet_ids': 'subnetIds'
+            'subnet_ids': 'subnetIds',
+            'node_config_details': 'nodeConfigDetails'
         }
 
         self._compartment_id = None
@@ -101,6 +107,7 @@ class CreateNodePoolDetails(object):
         self._ssh_public_key = None
         self._quantity_per_subnet = None
         self._subnet_ids = None
+        self._node_config_details = None
 
     @property
     def compartment_id(self):
@@ -322,7 +329,8 @@ class CreateNodePoolDetails(object):
     def quantity_per_subnet(self):
         """
         Gets the quantity_per_subnet of this CreateNodePoolDetails.
-        The number of nodes to create in each subnet.
+        Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property.
+        When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
 
 
         :return: The quantity_per_subnet of this CreateNodePoolDetails.
@@ -334,7 +342,8 @@ class CreateNodePoolDetails(object):
     def quantity_per_subnet(self, quantity_per_subnet):
         """
         Sets the quantity_per_subnet of this CreateNodePoolDetails.
-        The number of nodes to create in each subnet.
+        Optional, default to 1. The number of nodes to create in each subnet specified in subnetIds property.
+        When used, subnetIds is required. This property is deprecated, use nodeConfigDetails instead.
 
 
         :param quantity_per_subnet: The quantity_per_subnet of this CreateNodePoolDetails.
@@ -345,8 +354,10 @@ class CreateNodePoolDetails(object):
     @property
     def subnet_ids(self):
         """
-        **[Required]** Gets the subnet_ids of this CreateNodePoolDetails.
-        The OCIDs of the subnets in which to place nodes for this node pool.
+        Gets the subnet_ids of this CreateNodePoolDetails.
+        The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet
+        can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the
+        subnetIds or nodeConfigDetails properties must be specified.
 
 
         :return: The subnet_ids of this CreateNodePoolDetails.
@@ -358,13 +369,41 @@ class CreateNodePoolDetails(object):
     def subnet_ids(self, subnet_ids):
         """
         Sets the subnet_ids of this CreateNodePoolDetails.
-        The OCIDs of the subnets in which to place nodes for this node pool.
+        The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet
+        can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the
+        subnetIds or nodeConfigDetails properties must be specified.
 
 
         :param subnet_ids: The subnet_ids of this CreateNodePoolDetails.
         :type: list[str]
         """
         self._subnet_ids = subnet_ids
+
+    @property
+    def node_config_details(self):
+        """
+        Gets the node_config_details of this CreateNodePoolDetails.
+        The configuration of nodes in the node pool. Exactly one of the
+        subnetIds or nodeConfigDetails properties must be specified.
+
+
+        :return: The node_config_details of this CreateNodePoolDetails.
+        :rtype: CreateNodePoolNodeConfigDetails
+        """
+        return self._node_config_details
+
+    @node_config_details.setter
+    def node_config_details(self, node_config_details):
+        """
+        Sets the node_config_details of this CreateNodePoolDetails.
+        The configuration of nodes in the node pool. Exactly one of the
+        subnetIds or nodeConfigDetails properties must be specified.
+
+
+        :param node_config_details: The node_config_details of this CreateNodePoolDetails.
+        :type: CreateNodePoolNodeConfigDetails
+        """
+        self._node_config_details = node_config_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

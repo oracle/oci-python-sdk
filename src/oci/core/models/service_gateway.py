@@ -353,7 +353,6 @@ class ServiceGateway(object):
         """
         Gets the route_table_id of this ServiceGateway.
         The OCID of the route table the service gateway is using.
-
         For information about why you would associate a route table with a service gateway, see
         `Transit Routing: Private Access to Oracle Services`__.
 
@@ -370,7 +369,6 @@ class ServiceGateway(object):
         """
         Sets the route_table_id of this ServiceGateway.
         The OCID of the route table the service gateway is using.
-
         For information about why you would associate a route table with a service gateway, see
         `Transit Routing: Private Access to Oracle Services`__.
 
