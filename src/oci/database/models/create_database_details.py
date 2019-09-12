@@ -31,6 +31,10 @@ class CreateDatabaseDetails(object):
             The value to assign to the db_name property of this CreateDatabaseDetails.
         :type db_name: str
 
+        :param db_unique_name:
+            The value to assign to the db_unique_name property of this CreateDatabaseDetails.
+        :type db_unique_name: str
+
         :param pdb_name:
             The value to assign to the pdb_name property of this CreateDatabaseDetails.
         :type pdb_name: str
@@ -67,6 +71,7 @@ class CreateDatabaseDetails(object):
         """
         self.swagger_types = {
             'db_name': 'str',
+            'db_unique_name': 'str',
             'pdb_name': 'str',
             'admin_password': 'str',
             'character_set': 'str',
@@ -79,6 +84,7 @@ class CreateDatabaseDetails(object):
 
         self.attribute_map = {
             'db_name': 'dbName',
+            'db_unique_name': 'dbUniqueName',
             'pdb_name': 'pdbName',
             'admin_password': 'adminPassword',
             'character_set': 'characterSet',
@@ -90,6 +96,7 @@ class CreateDatabaseDetails(object):
         }
 
         self._db_name = None
+        self._db_unique_name = None
         self._pdb_name = None
         self._admin_password = None
         self._character_set = None
@@ -122,6 +129,30 @@ class CreateDatabaseDetails(object):
         :type: str
         """
         self._db_name = db_name
+
+    @property
+    def db_unique_name(self):
+        """
+        Gets the db_unique_name of this CreateDatabaseDetails.
+        The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+
+
+        :return: The db_unique_name of this CreateDatabaseDetails.
+        :rtype: str
+        """
+        return self._db_unique_name
+
+    @db_unique_name.setter
+    def db_unique_name(self, db_unique_name):
+        """
+        Sets the db_unique_name of this CreateDatabaseDetails.
+        The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+
+
+        :param db_unique_name: The db_unique_name of this CreateDatabaseDetails.
+        :type: str
+        """
+        self._db_unique_name = db_unique_name
 
     @property
     def pdb_name(self):

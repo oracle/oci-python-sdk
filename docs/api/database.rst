@@ -18,6 +18,8 @@ Database
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.database.models.ActivateExadataInfrastructureDetails
+    oci.database.models.AssociatedDatabaseDetails
     oci.database.models.AutonomousContainerDatabase
     oci.database.models.AutonomousContainerDatabaseBackupConfig
     oci.database.models.AutonomousContainerDatabaseSummary
@@ -40,8 +42,13 @@ Database
     oci.database.models.AutonomousExadataInfrastructureShapeSummary
     oci.database.models.AutonomousExadataInfrastructureSummary
     oci.database.models.Backup
+    oci.database.models.BackupDestination
+    oci.database.models.BackupDestinationDetails
+    oci.database.models.BackupDestinationSummary
     oci.database.models.BackupSummary
     oci.database.models.ChangeCompartmentDetails
+    oci.database.models.ChangeExadataInfrastructureCompartmentDetails
+    oci.database.models.ChangeVmClusterCompartmentDetails
     oci.database.models.CompleteExternalBackupJobDetails
     oci.database.models.CreateAutonomousContainerDatabaseDetails
     oci.database.models.CreateAutonomousDataWarehouseBackupDetails
@@ -50,18 +57,25 @@ Database
     oci.database.models.CreateAutonomousDatabaseBase
     oci.database.models.CreateAutonomousDatabaseCloneDetails
     oci.database.models.CreateAutonomousDatabaseDetails
+    oci.database.models.CreateBackupDestinationDetails
     oci.database.models.CreateBackupDetails
     oci.database.models.CreateDataGuardAssociationDetails
     oci.database.models.CreateDataGuardAssociationToExistingDbSystemDetails
     oci.database.models.CreateDataGuardAssociationWithNewDbSystemDetails
     oci.database.models.CreateDatabaseDetails
     oci.database.models.CreateDatabaseFromBackupDetails
+    oci.database.models.CreateDbHomeBase
     oci.database.models.CreateDbHomeDetails
     oci.database.models.CreateDbHomeFromBackupDetails
-    oci.database.models.CreateDbHomeWithDbSystemIdBase
     oci.database.models.CreateDbHomeWithDbSystemIdDetails
     oci.database.models.CreateDbHomeWithDbSystemIdFromBackupDetails
+    oci.database.models.CreateDbHomeWithVmClusterIdDetails
+    oci.database.models.CreateDbHomeWithVmClusterIdFromBackupDetails
+    oci.database.models.CreateExadataInfrastructureDetails
     oci.database.models.CreateExternalBackupJobDetails
+    oci.database.models.CreateNFSBackupDestinationDetails
+    oci.database.models.CreateRecoveryApplianceBackupDestinationDetails
+    oci.database.models.CreateVmClusterDetails
     oci.database.models.DataGuardAssociation
     oci.database.models.DataGuardAssociationSummary
     oci.database.models.Database
@@ -79,12 +93,17 @@ Database
     oci.database.models.DbSystemShapeSummary
     oci.database.models.DbSystemSummary
     oci.database.models.DbVersionSummary
+    oci.database.models.ExadataInfrastructure
+    oci.database.models.ExadataInfrastructureSummary
     oci.database.models.ExadataIormConfig
     oci.database.models.ExadataIormConfigUpdateDetails
     oci.database.models.ExternalBackupJob
     oci.database.models.FailoverDataGuardAssociationDetails
     oci.database.models.GenerateAutonomousDataWarehouseWalletDetails
     oci.database.models.GenerateAutonomousDatabaseWalletDetails
+    oci.database.models.GenerateRecommendedNetworkDetails
+    oci.database.models.GiVersionSummary
+    oci.database.models.InfoForNetworkGenDetails
     oci.database.models.LaunchAutonomousExadataInfrastructureDetails
     oci.database.models.LaunchDbSystemBase
     oci.database.models.LaunchDbSystemDetails
@@ -93,6 +112,7 @@ Database
     oci.database.models.MaintenanceRunSummary
     oci.database.models.MaintenanceWindow
     oci.database.models.Month
+    oci.database.models.NodeDetails
     oci.database.models.Patch
     oci.database.models.PatchDetails
     oci.database.models.PatchHistoryEntry
@@ -102,12 +122,23 @@ Database
     oci.database.models.RestoreAutonomousDataWarehouseDetails
     oci.database.models.RestoreAutonomousDatabaseDetails
     oci.database.models.RestoreDatabaseDetails
+    oci.database.models.ScanDetails
     oci.database.models.SwitchoverDataGuardAssociationDetails
     oci.database.models.UpdateAutonomousContainerDatabaseDetails
     oci.database.models.UpdateAutonomousDataWarehouseDetails
     oci.database.models.UpdateAutonomousDatabaseDetails
     oci.database.models.UpdateAutonomousExadataInfrastructureDetails
+    oci.database.models.UpdateBackupDestinationDetails
     oci.database.models.UpdateDatabaseDetails
     oci.database.models.UpdateDbHomeDetails
     oci.database.models.UpdateDbSystemDetails
+    oci.database.models.UpdateExadataInfrastructureDetails
     oci.database.models.UpdateMaintenanceRunDetails
+    oci.database.models.UpdateVmClusterDetails
+    oci.database.models.UpdateVmClusterNetworkDetails
+    oci.database.models.VmCluster
+    oci.database.models.VmClusterNetwork
+    oci.database.models.VmClusterNetworkDetails
+    oci.database.models.VmClusterNetworkSummary
+    oci.database.models.VmClusterSummary
+    oci.database.models.VmNetworkDetails

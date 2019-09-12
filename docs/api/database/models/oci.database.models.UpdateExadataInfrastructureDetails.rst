@@ -1,9 +1,9 @@
-CreateDbHomeWithDbSystemIdBase
-==============================
+UpdateExadataInfrastructureDetails
+==================================
 
 .. currentmodule:: oci.database.models
 
-.. autoclass:: CreateDbHomeWithDbSystemIdBase
+.. autoclass:: UpdateExadataInfrastructureDetails
     :show-inheritance:
     :special-members: __init__
     :members:

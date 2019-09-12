@@ -1,13 +1,13 @@
 # coding: utf-8
 # Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
-from .create_db_home_with_db_system_id_base import CreateDbHomeWithDbSystemIdBase
+from .create_db_home_base import CreateDbHomeBase
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
 from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class CreateDbHomeWithDbSystemIdFromBackupDetails(CreateDbHomeWithDbSystemIdBase):
+class CreateDbHomeWithDbSystemIdFromBackupDetails(CreateDbHomeBase):
     """
     Note that a valid `dbSystemId` value must be supplied for the `CreateDbHomeWithDbSystemIdFromBackup` API operation to successfully complete.
     """
@@ -18,18 +18,18 @@ class CreateDbHomeWithDbSystemIdFromBackupDetails(CreateDbHomeWithDbSystemIdBase
         of this class is ``DB_BACKUP`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param db_system_id:
-            The value to assign to the db_system_id property of this CreateDbHomeWithDbSystemIdFromBackupDetails.
-        :type db_system_id: str
-
         :param display_name:
             The value to assign to the display_name property of this CreateDbHomeWithDbSystemIdFromBackupDetails.
         :type display_name: str
 
         :param source:
             The value to assign to the source property of this CreateDbHomeWithDbSystemIdFromBackupDetails.
-            Allowed values for this property are: "NONE", "DB_BACKUP"
+            Allowed values for this property are: "NONE", "DB_BACKUP", "VM_CLUSTER_NEW", "VM_CLUSTER_BACKUP"
         :type source: str
+
+        :param db_system_id:
+            The value to assign to the db_system_id property of this CreateDbHomeWithDbSystemIdFromBackupDetails.
+        :type db_system_id: str
 
         :param database:
             The value to assign to the database property of this CreateDbHomeWithDbSystemIdFromBackupDetails.
@@ -37,24 +37,52 @@ class CreateDbHomeWithDbSystemIdFromBackupDetails(CreateDbHomeWithDbSystemIdBase
 
         """
         self.swagger_types = {
-            'db_system_id': 'str',
             'display_name': 'str',
             'source': 'str',
+            'db_system_id': 'str',
             'database': 'CreateDatabaseFromBackupDetails'
         }
 
         self.attribute_map = {
-            'db_system_id': 'dbSystemId',
             'display_name': 'displayName',
             'source': 'source',
+            'db_system_id': 'dbSystemId',
             'database': 'database'
         }
 
-        self._db_system_id = None
         self._display_name = None
         self._source = None
+        self._db_system_id = None
         self._database = None
         self._source = 'DB_BACKUP'
+
+    @property
+    def db_system_id(self):
+        """
+        **[Required]** Gets the db_system_id of this CreateDbHomeWithDbSystemIdFromBackupDetails.
+        The `OCID`__ of the DB system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The db_system_id of this CreateDbHomeWithDbSystemIdFromBackupDetails.
+        :rtype: str
+        """
+        return self._db_system_id
+
+    @db_system_id.setter
+    def db_system_id(self, db_system_id):
+        """
+        Sets the db_system_id of this CreateDbHomeWithDbSystemIdFromBackupDetails.
+        The `OCID`__ of the DB system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param db_system_id: The db_system_id of this CreateDbHomeWithDbSystemIdFromBackupDetails.
+        :type: str
+        """
+        self._db_system_id = db_system_id
 
     @property
     def database(self):

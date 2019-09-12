@@ -7,58 +7,61 @@ from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class CreateDbHomeWithDbSystemIdBase(object):
+class CreateDbHomeBase(object):
     """
     Details for creating a database home.
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
-    #: A constant which can be used with the source property of a CreateDbHomeWithDbSystemIdBase.
+    #: A constant which can be used with the source property of a CreateDbHomeBase.
     #: This constant has a value of "NONE"
     SOURCE_NONE = "NONE"
 
-    #: A constant which can be used with the source property of a CreateDbHomeWithDbSystemIdBase.
+    #: A constant which can be used with the source property of a CreateDbHomeBase.
     #: This constant has a value of "DB_BACKUP"
     SOURCE_DB_BACKUP = "DB_BACKUP"
 
+    #: A constant which can be used with the source property of a CreateDbHomeBase.
+    #: This constant has a value of "VM_CLUSTER_NEW"
+    SOURCE_VM_CLUSTER_NEW = "VM_CLUSTER_NEW"
+
+    #: A constant which can be used with the source property of a CreateDbHomeBase.
+    #: This constant has a value of "VM_CLUSTER_BACKUP"
+    SOURCE_VM_CLUSTER_BACKUP = "VM_CLUSTER_BACKUP"
+
     def __init__(self, **kwargs):
         """
-        Initializes a new CreateDbHomeWithDbSystemIdBase object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
+        Initializes a new CreateDbHomeBase object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.database.models.CreateDbHomeWithDbSystemIdFromBackupDetails`
+        * :class:`~oci.database.models.CreateDbHomeWithVmClusterIdFromBackupDetails`
         * :class:`~oci.database.models.CreateDbHomeWithDbSystemIdDetails`
+        * :class:`~oci.database.models.CreateDbHomeWithVmClusterIdDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param db_system_id:
-            The value to assign to the db_system_id property of this CreateDbHomeWithDbSystemIdBase.
-        :type db_system_id: str
-
         :param display_name:
-            The value to assign to the display_name property of this CreateDbHomeWithDbSystemIdBase.
+            The value to assign to the display_name property of this CreateDbHomeBase.
         :type display_name: str
 
         :param source:
-            The value to assign to the source property of this CreateDbHomeWithDbSystemIdBase.
-            Allowed values for this property are: "NONE", "DB_BACKUP"
+            The value to assign to the source property of this CreateDbHomeBase.
+            Allowed values for this property are: "NONE", "DB_BACKUP", "VM_CLUSTER_NEW", "VM_CLUSTER_BACKUP"
         :type source: str
 
         """
         self.swagger_types = {
-            'db_system_id': 'str',
             'display_name': 'str',
             'source': 'str'
         }
 
         self.attribute_map = {
-            'db_system_id': 'dbSystemId',
             'display_name': 'displayName',
             'source': 'source'
         }
 
-        self._db_system_id = None
         self._display_name = None
         self._source = None
 
@@ -73,47 +76,25 @@ class CreateDbHomeWithDbSystemIdBase(object):
         if type == 'DB_BACKUP':
             return 'CreateDbHomeWithDbSystemIdFromBackupDetails'
 
+        if type == 'VM_CLUSTER_BACKUP':
+            return 'CreateDbHomeWithVmClusterIdFromBackupDetails'
+
         if type == 'NONE':
             return 'CreateDbHomeWithDbSystemIdDetails'
+
+        if type == 'VM_CLUSTER_NEW':
+            return 'CreateDbHomeWithVmClusterIdDetails'
         else:
-            return 'CreateDbHomeWithDbSystemIdBase'
-
-    @property
-    def db_system_id(self):
-        """
-        **[Required]** Gets the db_system_id of this CreateDbHomeWithDbSystemIdBase.
-        The `OCID`__ of the DB system.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-
-        :return: The db_system_id of this CreateDbHomeWithDbSystemIdBase.
-        :rtype: str
-        """
-        return self._db_system_id
-
-    @db_system_id.setter
-    def db_system_id(self, db_system_id):
-        """
-        Sets the db_system_id of this CreateDbHomeWithDbSystemIdBase.
-        The `OCID`__ of the DB system.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-
-        :param db_system_id: The db_system_id of this CreateDbHomeWithDbSystemIdBase.
-        :type: str
-        """
-        self._db_system_id = db_system_id
+            return 'CreateDbHomeBase'
 
     @property
     def display_name(self):
         """
-        Gets the display_name of this CreateDbHomeWithDbSystemIdBase.
+        Gets the display_name of this CreateDbHomeBase.
         The user-provided name of the database home.
 
 
-        :return: The display_name of this CreateDbHomeWithDbSystemIdBase.
+        :return: The display_name of this CreateDbHomeBase.
         :rtype: str
         """
         return self._display_name
@@ -121,11 +102,11 @@ class CreateDbHomeWithDbSystemIdBase(object):
     @display_name.setter
     def display_name(self, display_name):
         """
-        Sets the display_name of this CreateDbHomeWithDbSystemIdBase.
+        Sets the display_name of this CreateDbHomeBase.
         The user-provided name of the database home.
 
 
-        :param display_name: The display_name of this CreateDbHomeWithDbSystemIdBase.
+        :param display_name: The display_name of this CreateDbHomeBase.
         :type: str
         """
         self._display_name = display_name
@@ -133,13 +114,13 @@ class CreateDbHomeWithDbSystemIdBase(object):
     @property
     def source(self):
         """
-        Gets the source of this CreateDbHomeWithDbSystemIdBase.
+        Gets the source of this CreateDbHomeBase.
         The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup.
 
-        Allowed values for this property are: "NONE", "DB_BACKUP"
+        Allowed values for this property are: "NONE", "DB_BACKUP", "VM_CLUSTER_NEW", "VM_CLUSTER_BACKUP"
 
 
-        :return: The source of this CreateDbHomeWithDbSystemIdBase.
+        :return: The source of this CreateDbHomeBase.
         :rtype: str
         """
         return self._source
@@ -147,14 +128,14 @@ class CreateDbHomeWithDbSystemIdBase(object):
     @source.setter
     def source(self, source):
         """
-        Sets the source of this CreateDbHomeWithDbSystemIdBase.
+        Sets the source of this CreateDbHomeBase.
         The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup.
 
 
-        :param source: The source of this CreateDbHomeWithDbSystemIdBase.
+        :param source: The source of this CreateDbHomeBase.
         :type: str
         """
-        allowed_values = ["NONE", "DB_BACKUP"]
+        allowed_values = ["NONE", "DB_BACKUP", "VM_CLUSTER_NEW", "VM_CLUSTER_BACKUP"]
         if not value_allowed_none_or_none_sentinel(source, allowed_values):
             raise ValueError(
                 "Invalid value for `source`, must be None or one of {0}"
