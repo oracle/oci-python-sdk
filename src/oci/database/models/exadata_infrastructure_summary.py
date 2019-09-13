@@ -41,21 +41,12 @@ class ExadataInfrastructureSummary(object):
     LIFECYCLE_STATE_UPDATING = "UPDATING"
 
     #: A constant which can be used with the lifecycle_state property of a ExadataInfrastructureSummary.
-<<<<<<< HEAD
     #: This constant has a value of "DELETING"
     LIFECYCLE_STATE_DELETING = "DELETING"
 
     #: A constant which can be used with the lifecycle_state property of a ExadataInfrastructureSummary.
     #: This constant has a value of "DELETED"
     LIFECYCLE_STATE_DELETED = "DELETED"
-=======
-    #: This constant has a value of "TERMINATING"
-    LIFECYCLE_STATE_TERMINATING = "TERMINATING"
-
-    #: A constant which can be used with the lifecycle_state property of a ExadataInfrastructureSummary.
-    #: This constant has a value of "TERMINATED"
-    LIFECYCLE_STATE_TERMINATED = "TERMINATED"
->>>>>>> Author: DEXREQ Automation <noreply+dexreq@oracle.com>
 
     #: A constant which can be used with the lifecycle_state property of a ExadataInfrastructureSummary.
     #: This constant has a value of "OFFLINE"
@@ -76,11 +67,7 @@ class ExadataInfrastructureSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ExadataInfrastructureSummary.
-<<<<<<< HEAD
             Allowed values for this property are: "CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "OFFLINE", 'UNKNOWN_ENUM_VALUE'.
-=======
-            Allowed values for this property are: "CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "TERMINATING", "TERMINATED", "OFFLINE", 'UNKNOWN_ENUM_VALUE'.
->>>>>>> Author: DEXREQ Automation <noreply+dexreq@oracle.com>
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -289,11 +276,7 @@ class ExadataInfrastructureSummary(object):
         **[Required]** Gets the lifecycle_state of this ExadataInfrastructureSummary.
         The current lifecycle state of the Exadata infrastructure.
 
-<<<<<<< HEAD
         Allowed values for this property are: "CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "OFFLINE", 'UNKNOWN_ENUM_VALUE'.
-=======
-        Allowed values for this property are: "CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "TERMINATING", "TERMINATED", "OFFLINE", 'UNKNOWN_ENUM_VALUE'.
->>>>>>> Author: DEXREQ Automation <noreply+dexreq@oracle.com>
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -312,11 +295,7 @@ class ExadataInfrastructureSummary(object):
         :param lifecycle_state: The lifecycle_state of this ExadataInfrastructureSummary.
         :type: str
         """
-<<<<<<< HEAD
         allowed_values = ["CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "OFFLINE"]
-=======
-        allowed_values = ["CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "TERMINATING", "TERMINATED", "OFFLINE"]
->>>>>>> Author: DEXREQ Automation <noreply+dexreq@oracle.com>
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
