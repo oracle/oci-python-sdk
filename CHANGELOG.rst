@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.5.0 - 2019-09-17
+====================
+
+Added
+-----
+* Support for importing state files in the Resource Manager service
+* Support for Exadata Cloud at Customer in the Database service
+* Support for free tier resources and system tags in the Load Balancing service
+* Support for free tier resources and system tags in the Compute service
+* Support for free tier resources and system tags in the Block Storage service
+* Support for free tier and system tags on autonomous databases in the Database service
+
+Breaking
+--------
+* The availability_domain parameter is now a kwarg for list_db_system_shapes in DatabaseClient
+* The model CreateDbHomeWithDbSystemIdBase was renamed CreateDbHomeBase and the parameter db_system_id was removed
+* The parameter create_db_home_with_db_system_id_details for create_db_home in DatabaseClient changed from CreateDbHomeWithDbSystemIdBase to CreateDbHomeBase
+
+====================
 2.4.0 - 2019-09-10
 ====================
 

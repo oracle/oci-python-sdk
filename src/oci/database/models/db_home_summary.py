@@ -78,6 +78,10 @@ class DbHomeSummary(object):
             The value to assign to the db_system_id property of this DbHomeSummary.
         :type db_system_id: str
 
+        :param vm_cluster_id:
+            The value to assign to the vm_cluster_id property of this DbHomeSummary.
+        :type vm_cluster_id: str
+
         :param db_version:
             The value to assign to the db_version property of this DbHomeSummary.
         :type db_version: str
@@ -94,6 +98,7 @@ class DbHomeSummary(object):
             'last_patch_history_entry_id': 'str',
             'lifecycle_state': 'str',
             'db_system_id': 'str',
+            'vm_cluster_id': 'str',
             'db_version': 'str',
             'time_created': 'datetime'
         }
@@ -105,6 +110,7 @@ class DbHomeSummary(object):
             'last_patch_history_entry_id': 'lastPatchHistoryEntryId',
             'lifecycle_state': 'lifecycleState',
             'db_system_id': 'dbSystemId',
+            'vm_cluster_id': 'vmClusterId',
             'db_version': 'dbVersion',
             'time_created': 'timeCreated'
         }
@@ -115,6 +121,7 @@ class DbHomeSummary(object):
         self._last_patch_history_entry_id = None
         self._lifecycle_state = None
         self._db_system_id = None
+        self._vm_cluster_id = None
         self._db_version = None
         self._time_created = None
 
@@ -283,6 +290,34 @@ class DbHomeSummary(object):
         :type: str
         """
         self._db_system_id = db_system_id
+
+    @property
+    def vm_cluster_id(self):
+        """
+        Gets the vm_cluster_id of this DbHomeSummary.
+        The `OCID`__ of the VM cluster.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The vm_cluster_id of this DbHomeSummary.
+        :rtype: str
+        """
+        return self._vm_cluster_id
+
+    @vm_cluster_id.setter
+    def vm_cluster_id(self, vm_cluster_id):
+        """
+        Sets the vm_cluster_id of this DbHomeSummary.
+        The `OCID`__ of the VM cluster.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param vm_cluster_id: The vm_cluster_id of this DbHomeSummary.
+        :type: str
+        """
+        self._vm_cluster_id = vm_cluster_id
 
     @property
     def db_version(self):

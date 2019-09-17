@@ -28,6 +28,10 @@ class DbSystemShapeSummary(object):
             The value to assign to the name property of this DbSystemShapeSummary.
         :type name: str
 
+        :param shape_family:
+            The value to assign to the shape_family property of this DbSystemShapeSummary.
+        :type shape_family: str
+
         :param shape:
             The value to assign to the shape property of this DbSystemShapeSummary.
         :type shape: str
@@ -55,6 +59,7 @@ class DbSystemShapeSummary(object):
         """
         self.swagger_types = {
             'name': 'str',
+            'shape_family': 'str',
             'shape': 'str',
             'available_core_count': 'int',
             'minimum_core_count': 'int',
@@ -65,6 +70,7 @@ class DbSystemShapeSummary(object):
 
         self.attribute_map = {
             'name': 'name',
+            'shape_family': 'shapeFamily',
             'shape': 'shape',
             'available_core_count': 'availableCoreCount',
             'minimum_core_count': 'minimumCoreCount',
@@ -74,6 +80,7 @@ class DbSystemShapeSummary(object):
         }
 
         self._name = None
+        self._shape_family = None
         self._shape = None
         self._available_core_count = None
         self._minimum_core_count = None
@@ -104,6 +111,30 @@ class DbSystemShapeSummary(object):
         :type: str
         """
         self._name = name
+
+    @property
+    def shape_family(self):
+        """
+        Gets the shape_family of this DbSystemShapeSummary.
+        The family of the shape used for the DB system.
+
+
+        :return: The shape_family of this DbSystemShapeSummary.
+        :rtype: str
+        """
+        return self._shape_family
+
+    @shape_family.setter
+    def shape_family(self, shape_family):
+        """
+        Sets the shape_family of this DbSystemShapeSummary.
+        The family of the shape used for the DB system.
+
+
+        :param shape_family: The shape_family of this DbSystemShapeSummary.
+        :type: str
+        """
+        self._shape_family = shape_family
 
     @property
     def shape(self):

@@ -37,6 +37,10 @@ class JobSummary(object):
             The value to assign to the operation property of this JobSummary.
         :type operation: str
 
+        :param job_operation_details:
+            The value to assign to the job_operation_details property of this JobSummary.
+        :type job_operation_details: JobOperationDetailsSummary
+
         :param apply_job_plan_resolution:
             The value to assign to the apply_job_plan_resolution property of this JobSummary.
         :type apply_job_plan_resolution: ApplyJobPlanResolution
@@ -72,6 +76,7 @@ class JobSummary(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'operation': 'str',
+            'job_operation_details': 'JobOperationDetailsSummary',
             'apply_job_plan_resolution': 'ApplyJobPlanResolution',
             'resolved_plan_job_id': 'str',
             'time_created': 'datetime',
@@ -87,6 +92,7 @@ class JobSummary(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'operation': 'operation',
+            'job_operation_details': 'jobOperationDetails',
             'apply_job_plan_resolution': 'applyJobPlanResolution',
             'resolved_plan_job_id': 'resolvedPlanJobId',
             'time_created': 'timeCreated',
@@ -101,6 +107,7 @@ class JobSummary(object):
         self._compartment_id = None
         self._display_name = None
         self._operation = None
+        self._job_operation_details = None
         self._apply_job_plan_resolution = None
         self._resolved_plan_job_id = None
         self._time_created = None
@@ -230,9 +237,35 @@ class JobSummary(object):
         self._operation = operation
 
     @property
+    def job_operation_details(self):
+        """
+        Gets the job_operation_details of this JobSummary.
+        Job details that are specific to the operation type.
+
+
+        :return: The job_operation_details of this JobSummary.
+        :rtype: JobOperationDetailsSummary
+        """
+        return self._job_operation_details
+
+    @job_operation_details.setter
+    def job_operation_details(self, job_operation_details):
+        """
+        Sets the job_operation_details of this JobSummary.
+        Job details that are specific to the operation type.
+
+
+        :param job_operation_details: The job_operation_details of this JobSummary.
+        :type: JobOperationDetailsSummary
+        """
+        self._job_operation_details = job_operation_details
+
+    @property
     def apply_job_plan_resolution(self):
         """
         Gets the apply_job_plan_resolution of this JobSummary.
+        Deprecated. Use the property `executionPlanStrategy` in `jobOperationDetails` instead.
+
 
         :return: The apply_job_plan_resolution of this JobSummary.
         :rtype: ApplyJobPlanResolution
@@ -243,6 +276,8 @@ class JobSummary(object):
     def apply_job_plan_resolution(self, apply_job_plan_resolution):
         """
         Sets the apply_job_plan_resolution of this JobSummary.
+        Deprecated. Use the property `executionPlanStrategy` in `jobOperationDetails` instead.
+
 
         :param apply_job_plan_resolution: The apply_job_plan_resolution of this JobSummary.
         :type: ApplyJobPlanResolution
@@ -253,7 +288,8 @@ class JobSummary(object):
     def resolved_plan_job_id(self):
         """
         Gets the resolved_plan_job_id of this JobSummary.
-        The plan job OCID that was used (if this was an APPLY job and not auto approved).
+        Deprecated. Use the property `executionPlanJobId` in `jobOperationDetails` instead.
+        The plan job OCID that was used (if this was an apply job and was not auto-approved).
 
 
         :return: The resolved_plan_job_id of this JobSummary.
@@ -265,7 +301,8 @@ class JobSummary(object):
     def resolved_plan_job_id(self, resolved_plan_job_id):
         """
         Sets the resolved_plan_job_id of this JobSummary.
-        The plan job OCID that was used (if this was an APPLY job and not auto approved).
+        Deprecated. Use the property `executionPlanJobId` in `jobOperationDetails` instead.
+        The plan job OCID that was used (if this was an apply job and was not auto-approved).
 
 
         :param resolved_plan_job_id: The resolved_plan_job_id of this JobSummary.
