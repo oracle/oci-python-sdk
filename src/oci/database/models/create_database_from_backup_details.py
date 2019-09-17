@@ -29,6 +29,10 @@ class CreateDatabaseFromBackupDetails(object):
             The value to assign to the admin_password property of this CreateDatabaseFromBackupDetails.
         :type admin_password: str
 
+        :param db_unique_name:
+            The value to assign to the db_unique_name property of this CreateDatabaseFromBackupDetails.
+        :type db_unique_name: str
+
         :param db_name:
             The value to assign to the db_name property of this CreateDatabaseFromBackupDetails.
         :type db_name: str
@@ -38,6 +42,7 @@ class CreateDatabaseFromBackupDetails(object):
             'backup_id': 'str',
             'backup_tde_password': 'str',
             'admin_password': 'str',
+            'db_unique_name': 'str',
             'db_name': 'str'
         }
 
@@ -45,12 +50,14 @@ class CreateDatabaseFromBackupDetails(object):
             'backup_id': 'backupId',
             'backup_tde_password': 'backupTDEPassword',
             'admin_password': 'adminPassword',
+            'db_unique_name': 'dbUniqueName',
             'db_name': 'dbName'
         }
 
         self._backup_id = None
         self._backup_tde_password = None
         self._admin_password = None
+        self._db_unique_name = None
         self._db_name = None
 
     @property
@@ -128,6 +135,30 @@ class CreateDatabaseFromBackupDetails(object):
         :type: str
         """
         self._admin_password = admin_password
+
+    @property
+    def db_unique_name(self):
+        """
+        Gets the db_unique_name of this CreateDatabaseFromBackupDetails.
+        The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+
+
+        :return: The db_unique_name of this CreateDatabaseFromBackupDetails.
+        :rtype: str
+        """
+        return self._db_unique_name
+
+    @db_unique_name.setter
+    def db_unique_name(self, db_unique_name):
+        """
+        Sets the db_unique_name of this CreateDatabaseFromBackupDetails.
+        The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+
+
+        :param db_unique_name: The db_unique_name of this CreateDatabaseFromBackupDetails.
+        :type: str
+        """
+        self._db_unique_name = db_unique_name
 
     @property
     def db_name(self):

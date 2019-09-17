@@ -82,22 +82,29 @@ class DbBackupConfig(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type auto_backup_window: str
 
+        :param backup_destination_details:
+            The value to assign to the backup_destination_details property of this DbBackupConfig.
+        :type backup_destination_details: list[BackupDestinationDetails]
+
         """
         self.swagger_types = {
             'auto_backup_enabled': 'bool',
             'recovery_window_in_days': 'int',
-            'auto_backup_window': 'str'
+            'auto_backup_window': 'str',
+            'backup_destination_details': 'list[BackupDestinationDetails]'
         }
 
         self.attribute_map = {
             'auto_backup_enabled': 'autoBackupEnabled',
             'recovery_window_in_days': 'recoveryWindowInDays',
-            'auto_backup_window': 'autoBackupWindow'
+            'auto_backup_window': 'autoBackupWindow',
+            'backup_destination_details': 'backupDestinationDetails'
         }
 
         self._auto_backup_enabled = None
         self._recovery_window_in_days = None
         self._auto_backup_window = None
+        self._backup_destination_details = None
 
     @property
     def auto_backup_enabled(self):
@@ -184,6 +191,30 @@ class DbBackupConfig(object):
         if not value_allowed_none_or_none_sentinel(auto_backup_window, allowed_values):
             auto_backup_window = 'UNKNOWN_ENUM_VALUE'
         self._auto_backup_window = auto_backup_window
+
+    @property
+    def backup_destination_details(self):
+        """
+        Gets the backup_destination_details of this DbBackupConfig.
+        Backup destination details.
+
+
+        :return: The backup_destination_details of this DbBackupConfig.
+        :rtype: list[BackupDestinationDetails]
+        """
+        return self._backup_destination_details
+
+    @backup_destination_details.setter
+    def backup_destination_details(self, backup_destination_details):
+        """
+        Sets the backup_destination_details of this DbBackupConfig.
+        Backup destination details.
+
+
+        :param backup_destination_details: The backup_destination_details of this DbBackupConfig.
+        :type: list[BackupDestinationDetails]
+        """
+        self._backup_destination_details = backup_destination_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

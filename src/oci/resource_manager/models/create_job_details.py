@@ -29,6 +29,10 @@ class CreateJobDetails(object):
             The value to assign to the operation property of this CreateJobDetails.
         :type operation: str
 
+        :param job_operation_details:
+            The value to assign to the job_operation_details property of this CreateJobDetails.
+        :type job_operation_details: CreateJobOperationDetails
+
         :param apply_job_plan_resolution:
             The value to assign to the apply_job_plan_resolution property of this CreateJobDetails.
         :type apply_job_plan_resolution: ApplyJobPlanResolution
@@ -46,6 +50,7 @@ class CreateJobDetails(object):
             'stack_id': 'str',
             'display_name': 'str',
             'operation': 'str',
+            'job_operation_details': 'CreateJobOperationDetails',
             'apply_job_plan_resolution': 'ApplyJobPlanResolution',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -55,6 +60,7 @@ class CreateJobDetails(object):
             'stack_id': 'stackId',
             'display_name': 'displayName',
             'operation': 'operation',
+            'job_operation_details': 'jobOperationDetails',
             'apply_job_plan_resolution': 'applyJobPlanResolution',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -63,6 +69,7 @@ class CreateJobDetails(object):
         self._stack_id = None
         self._display_name = None
         self._operation = None
+        self._job_operation_details = None
         self._apply_job_plan_resolution = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -118,7 +125,7 @@ class CreateJobDetails(object):
     @property
     def operation(self):
         """
-        **[Required]** Gets the operation of this CreateJobDetails.
+        Gets the operation of this CreateJobDetails.
         Terraform-specific operation to execute.
 
 
@@ -140,9 +147,35 @@ class CreateJobDetails(object):
         self._operation = operation
 
     @property
+    def job_operation_details(self):
+        """
+        Gets the job_operation_details of this CreateJobDetails.
+        Job details that are specific to the operation type.
+
+
+        :return: The job_operation_details of this CreateJobDetails.
+        :rtype: CreateJobOperationDetails
+        """
+        return self._job_operation_details
+
+    @job_operation_details.setter
+    def job_operation_details(self, job_operation_details):
+        """
+        Sets the job_operation_details of this CreateJobDetails.
+        Job details that are specific to the operation type.
+
+
+        :param job_operation_details: The job_operation_details of this CreateJobDetails.
+        :type: CreateJobOperationDetails
+        """
+        self._job_operation_details = job_operation_details
+
+    @property
     def apply_job_plan_resolution(self):
         """
         Gets the apply_job_plan_resolution of this CreateJobDetails.
+        Deprecated. Use the property `executionPlanStrategy` in `jobOperationDetails` instead.
+
 
         :return: The apply_job_plan_resolution of this CreateJobDetails.
         :rtype: ApplyJobPlanResolution
@@ -153,6 +186,8 @@ class CreateJobDetails(object):
     def apply_job_plan_resolution(self, apply_job_plan_resolution):
         """
         Sets the apply_job_plan_resolution of this CreateJobDetails.
+        Deprecated. Use the property `executionPlanStrategy` in `jobOperationDetails` instead.
+
 
         :param apply_job_plan_resolution: The apply_job_plan_resolution of this CreateJobDetails.
         :type: ApplyJobPlanResolution

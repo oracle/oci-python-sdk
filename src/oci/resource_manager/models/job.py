@@ -16,6 +16,8 @@ class Job(object):
     - **Destroy job**. To clean up the infrastructure controlled by the stack, you run a destroy job.
     A destroy job does not delete the stack or associated job resources,
     but instead releases the resources managed by the stack.
+    - **Import_TF_State job**. An import Terraform state job takes a Terraform state file and sets it as the current
+    state of the stack. This is used to migrate local Terraform environments to Resource Manager.
     """
 
     #: A constant which can be used with the operation property of a Job.
@@ -29,6 +31,10 @@ class Job(object):
     #: A constant which can be used with the operation property of a Job.
     #: This constant has a value of "DESTROY"
     OPERATION_DESTROY = "DESTROY"
+
+    #: A constant which can be used with the operation property of a Job.
+    #: This constant has a value of "IMPORT_TF_STATE"
+    OPERATION_IMPORT_TF_STATE = "IMPORT_TF_STATE"
 
     #: A constant which can be used with the lifecycle_state property of a Job.
     #: This constant has a value of "ACCEPTED"
@@ -77,9 +83,13 @@ class Job(object):
 
         :param operation:
             The value to assign to the operation property of this Job.
-            Allowed values for this property are: "PLAN", "APPLY", "DESTROY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PLAN", "APPLY", "DESTROY", "IMPORT_TF_STATE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation: str
+
+        :param job_operation_details:
+            The value to assign to the job_operation_details property of this Job.
+        :type job_operation_details: JobOperationDetails
 
         :param apply_job_plan_resolution:
             The value to assign to the apply_job_plan_resolution property of this Job.
@@ -130,6 +140,7 @@ class Job(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'operation': 'str',
+            'job_operation_details': 'JobOperationDetails',
             'apply_job_plan_resolution': 'ApplyJobPlanResolution',
             'resolved_plan_job_id': 'str',
             'time_created': 'datetime',
@@ -148,6 +159,7 @@ class Job(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'operation': 'operation',
+            'job_operation_details': 'jobOperationDetails',
             'apply_job_plan_resolution': 'applyJobPlanResolution',
             'resolved_plan_job_id': 'resolvedPlanJobId',
             'time_created': 'timeCreated',
@@ -165,6 +177,7 @@ class Job(object):
         self._compartment_id = None
         self._display_name = None
         self._operation = None
+        self._job_operation_details = None
         self._apply_job_plan_resolution = None
         self._resolved_plan_job_id = None
         self._time_created = None
@@ -278,7 +291,7 @@ class Job(object):
         Gets the operation of this Job.
         The type of job executing.
 
-        Allowed values for this property are: "PLAN", "APPLY", "DESTROY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PLAN", "APPLY", "DESTROY", "IMPORT_TF_STATE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -297,15 +310,41 @@ class Job(object):
         :param operation: The operation of this Job.
         :type: str
         """
-        allowed_values = ["PLAN", "APPLY", "DESTROY"]
+        allowed_values = ["PLAN", "APPLY", "DESTROY", "IMPORT_TF_STATE"]
         if not value_allowed_none_or_none_sentinel(operation, allowed_values):
             operation = 'UNKNOWN_ENUM_VALUE'
         self._operation = operation
 
     @property
+    def job_operation_details(self):
+        """
+        Gets the job_operation_details of this Job.
+        Job details that are specific to the operation type.
+
+
+        :return: The job_operation_details of this Job.
+        :rtype: JobOperationDetails
+        """
+        return self._job_operation_details
+
+    @job_operation_details.setter
+    def job_operation_details(self, job_operation_details):
+        """
+        Sets the job_operation_details of this Job.
+        Job details that are specific to the operation type.
+
+
+        :param job_operation_details: The job_operation_details of this Job.
+        :type: JobOperationDetails
+        """
+        self._job_operation_details = job_operation_details
+
+    @property
     def apply_job_plan_resolution(self):
         """
         Gets the apply_job_plan_resolution of this Job.
+        Deprecated. Use the property `executionPlanStrategy` in `jobOperationDetails` instead.
+
 
         :return: The apply_job_plan_resolution of this Job.
         :rtype: ApplyJobPlanResolution
@@ -316,6 +355,8 @@ class Job(object):
     def apply_job_plan_resolution(self, apply_job_plan_resolution):
         """
         Sets the apply_job_plan_resolution of this Job.
+        Deprecated. Use the property `executionPlanStrategy` in `jobOperationDetails` instead.
+
 
         :param apply_job_plan_resolution: The apply_job_plan_resolution of this Job.
         :type: ApplyJobPlanResolution
@@ -326,6 +367,7 @@ class Job(object):
     def resolved_plan_job_id(self):
         """
         Gets the resolved_plan_job_id of this Job.
+        Deprecated. Use the property `executionPlanJobId` in `jobOperationDetails` instead.
         The plan job OCID that was used (if this was an apply job and was not auto-approved).
 
 
@@ -338,6 +380,7 @@ class Job(object):
     def resolved_plan_job_id(self, resolved_plan_job_id):
         """
         Sets the resolved_plan_job_id of this Job.
+        Deprecated. Use the property `executionPlanJobId` in `jobOperationDetails` instead.
         The plan job OCID that was used (if this was an apply job and was not auto-approved).
 
 
