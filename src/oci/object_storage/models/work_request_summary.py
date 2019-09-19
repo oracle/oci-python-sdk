@@ -16,6 +16,10 @@ class WorkRequestSummary(object):
     #: This constant has a value of "COPY_OBJECT"
     OPERATION_TYPE_COPY_OBJECT = "COPY_OBJECT"
 
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "REENCRYPT"
+    OPERATION_TYPE_REENCRYPT = "REENCRYPT"
+
     #: A constant which can be used with the status property of a WorkRequestSummary.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -47,7 +51,7 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "COPY_OBJECT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "COPY_OBJECT", "REENCRYPT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -126,7 +130,7 @@ class WorkRequestSummary(object):
         Gets the operation_type of this WorkRequestSummary.
         The type of work request.
 
-        Allowed values for this property are: "COPY_OBJECT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "COPY_OBJECT", "REENCRYPT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -145,7 +149,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["COPY_OBJECT"]
+        allowed_values = ["COPY_OBJECT", "REENCRYPT"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
@@ -208,10 +212,12 @@ class WorkRequestSummary(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this WorkRequestSummary.
-        The OCID of the compartment that contains the work request. Work requests should be scoped to
-        the same compartment as the resource the work request affects. If the work request affects multiple resources,
-        and those resources are not in the same compartment, it is up to the service team to pick the primary
-        resource whose compartment should be used.
+        The OCID of the compartment that contains the work request. Work requests are scoped to the same compartment
+        as the resource the work request affects.
+
+        If the work request affects multiple resources and those resources are not in the same compartment, the OCID of
+        the primary resource is used. For example, you can copy an object in a bucket in one compartment to a bucket in
+        another compartment. In this case, the OCID of the source compartment is used.
 
 
         :return: The compartment_id of this WorkRequestSummary.
@@ -223,10 +229,12 @@ class WorkRequestSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this WorkRequestSummary.
-        The OCID of the compartment that contains the work request. Work requests should be scoped to
-        the same compartment as the resource the work request affects. If the work request affects multiple resources,
-        and those resources are not in the same compartment, it is up to the service team to pick the primary
-        resource whose compartment should be used.
+        The OCID of the compartment that contains the work request. Work requests are scoped to the same compartment
+        as the resource the work request affects.
+
+        If the work request affects multiple resources and those resources are not in the same compartment, the OCID of
+        the primary resource is used. For example, you can copy an object in a bucket in one compartment to a bucket in
+        another compartment. In this case, the OCID of the source compartment is used.
 
 
         :param compartment_id: The compartment_id of this WorkRequestSummary.
