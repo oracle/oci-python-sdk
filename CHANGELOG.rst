@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.5.1 - 2019-09-24
+====================
+
+Added
+-----
+* Support for selecting the Terraform version to use in the Resource Manager service
+* Support for bucket re-encryption in the Object Storage service
+* Support for enabling / disabling bucket-level events in the Object Storage service
+
+====================
 2.5.0 - 2019-09-17
 ====================
 

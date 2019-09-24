@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 class UpdateNamespaceMetadataDetails(object):
     """
     UpdateNamespaceMetadataDetails is used to update the NamespaceMetadata. To update NamespaceMetadata, a user
-    must have NAMESPACE_UPDATE permission.
+    must have OBJECTSTORAGE_NAMESPACE_UPDATE permission.
     """
 
     def __init__(self, **kwargs):

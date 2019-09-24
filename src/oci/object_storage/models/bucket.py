@@ -86,6 +86,10 @@ class Bucket(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type storage_tier: str
 
+        :param object_events_enabled:
+            The value to assign to the object_events_enabled property of this Bucket.
+        :type object_events_enabled: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Bucket.
         :type freeform_tags: dict(str, str)
@@ -121,6 +125,7 @@ class Bucket(object):
             'etag': 'str',
             'public_access_type': 'str',
             'storage_tier': 'str',
+            'object_events_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'kms_key_id': 'str',
@@ -139,6 +144,7 @@ class Bucket(object):
             'etag': 'etag',
             'public_access_type': 'publicAccessType',
             'storage_tier': 'storageTier',
+            'object_events_enabled': 'objectEventsEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'kms_key_id': 'kmsKeyId',
@@ -156,6 +162,7 @@ class Bucket(object):
         self._etag = None
         self._public_access_type = None
         self._storage_tier = None
+        self._object_events_enabled = None
         self._freeform_tags = None
         self._defined_tags = None
         self._kms_key_id = None
@@ -410,6 +417,32 @@ class Bucket(object):
         if not value_allowed_none_or_none_sentinel(storage_tier, allowed_values):
             storage_tier = 'UNKNOWN_ENUM_VALUE'
         self._storage_tier = storage_tier
+
+    @property
+    def object_events_enabled(self):
+        """
+        Gets the object_events_enabled of this Bucket.
+        A property that determines whether events will be generated for operations on objects in this bucket.
+        This is false by default.
+
+
+        :return: The object_events_enabled of this Bucket.
+        :rtype: bool
+        """
+        return self._object_events_enabled
+
+    @object_events_enabled.setter
+    def object_events_enabled(self, object_events_enabled):
+        """
+        Sets the object_events_enabled of this Bucket.
+        A property that determines whether events will be generated for operations on objects in this bucket.
+        This is false by default.
+
+
+        :param object_events_enabled: The object_events_enabled of this Bucket.
+        :type: bool
+        """
+        self._object_events_enabled = object_events_enabled
 
     @property
     def freeform_tags(self):

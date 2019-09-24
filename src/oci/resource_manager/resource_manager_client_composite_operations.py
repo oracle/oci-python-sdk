@@ -78,6 +78,7 @@ class ResourceManagerClientCompositeOperations(object):
             The stack OCID.
 
         :param ChangeStackCompartmentDetails change_stack_compartment_details: (required)
+            Defines the properties of changeStackCompartment operation.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.resource_manager.models.WorkRequest.status`

@@ -694,8 +694,9 @@ class ObjectStorageClient(object):
         """
         DELETE Bucket
         Deletes a bucket if the bucket is already empty. If the bucket is not empty, use
-        :func:`delete_object` first. You also cannot
-        delete a bucket that has a pre-authenticated request associated with that bucket.
+        :func:`delete_object` first. In addition,
+        you cannot delete a bucket that has a multipart upload in progress or a pre-authenticated
+        request associated with that bucket.
 
 
         :param str namespace_name: (required)
@@ -1220,7 +1221,7 @@ class ObjectStorageClient(object):
         Gets the metadata for the Object Storage namespace, which contains defaultS3CompartmentId and
         defaultSwiftCompartmentId.
 
-        Any user with the NAMESPACE_READ permission will be able to see the current metadata. If you are
+        Any user with the OBJECTSTORAGE_NAMESPACE_READ permission will be able to see the current metadata. If you are
         not authorized, talk to an administrator. If you are an administrator who needs to write policies
         to give users access, see
         `Getting Started with Policies`__.
@@ -2871,6 +2872,90 @@ class ObjectStorageClient(object):
                 body=put_object_lifecycle_policy_details,
                 response_type="ObjectLifecyclePolicy")
 
+    def reencrypt_bucket(self, namespace_name, bucket_name, **kwargs):
+        """
+        Reencrypt Bucket Data Encryption Key
+        Reencrypts the data encryption key of the bucket and objects in the bucket. This is an asynchronous call, the
+        system will start a work request task to reencrypt the data encryption key of the objects and chunks in the bucket.
+        Only the objects created before the time the API call will be reencrypted. The call can take long time depending
+        on how many objects in the bucket and how big the objects are. This API will return a work request id, so the user
+        can use this id to retrieve the status of the work request task.
+
+        A user can update kmsKeyId of the bucket, and then call this API, so the data encryption key of the bucket and
+        objects in the bucket will be reencryped by the new kmsKeyId. Note that the system doesn't maintain what
+        ksmKeyId is used to encrypt the object, the user has to maintain the mapping if they want.
+
+
+        :param str namespace_name: (required)
+            The Object Storage namespace used for the request.
+
+        :param str bucket_name: (required)
+            The name of the bucket. Avoid entering confidential information.
+            Example: `my-new-bucket1`
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/actions/reencrypt"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "reencrypt_bucket got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
     def rename_object(self, namespace_name, bucket_name, rename_object_details, **kwargs):
         """
         Rename Object
@@ -3039,6 +3124,12 @@ class ObjectStorageClient(object):
         POST Bucket
         Performs a partial or full update of a bucket's user-defined metadata.
 
+        Use UpdateBucket to move a bucket from one compartment to another within the same tenancy. Supply the compartmentID
+        of the compartment that you want to move the bucket to. For more information about moving resources between compartments,
+        see `Moving Resources to a Different Compartment`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
+
 
         :param str namespace_name: (required)
             The Object Storage namespace used for the request.
@@ -3131,7 +3222,7 @@ class ObjectStorageClient(object):
 
         You can change the default Swift/Amazon S3 compartmentId designation to a different compartmentId. All
         subsequent bucket creations will use the new default compartment, but no previously created
-        buckets will be modified. A user must have NAMESPACE_UPDATE permission to make changes to the default
+        buckets will be modified. A user must have OBJECTSTORAGE_NAMESPACE_UPDATE permission to make changes to the default
         compartments for Amazon S3 and Swift.
 
 

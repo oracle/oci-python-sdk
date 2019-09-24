@@ -68,6 +68,10 @@ class Stack(object):
             The value to assign to the variables property of this Stack.
         :type variables: dict(str, str)
 
+        :param terraform_version:
+            The value to assign to the terraform_version property of this Stack.
+        :type terraform_version: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Stack.
         :type freeform_tags: dict(str, str)
@@ -86,6 +90,7 @@ class Stack(object):
             'lifecycle_state': 'str',
             'config_source': 'ConfigSource',
             'variables': 'dict(str, str)',
+            'terraform_version': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -99,6 +104,7 @@ class Stack(object):
             'lifecycle_state': 'lifecycleState',
             'config_source': 'configSource',
             'variables': 'variables',
+            'terraform_version': 'terraformVersion',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -111,6 +117,7 @@ class Stack(object):
         self._lifecycle_state = None
         self._config_source = None
         self._variables = None
+        self._terraform_version = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -319,6 +326,30 @@ class Stack(object):
         :type: dict(str, str)
         """
         self._variables = variables
+
+    @property
+    def terraform_version(self):
+        """
+        Gets the terraform_version of this Stack.
+        The Terraform version of the stack.
+
+
+        :return: The terraform_version of this Stack.
+        :rtype: str
+        """
+        return self._terraform_version
+
+    @terraform_version.setter
+    def terraform_version(self, terraform_version):
+        """
+        Sets the terraform_version of this Stack.
+        The Terraform version of the stack.
+
+
+        :param terraform_version: The terraform_version of this Stack.
+        :type: str
+        """
+        self._terraform_version = terraform_version
 
     @property
     def freeform_tags(self):
