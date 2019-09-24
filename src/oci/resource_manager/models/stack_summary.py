@@ -41,6 +41,10 @@ class StackSummary(object):
             The value to assign to the lifecycle_state property of this StackSummary.
         :type lifecycle_state: str
 
+        :param terraform_version:
+            The value to assign to the terraform_version property of this StackSummary.
+        :type terraform_version: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this StackSummary.
         :type freeform_tags: dict(str, str)
@@ -57,6 +61,7 @@ class StackSummary(object):
             'description': 'str',
             'time_created': 'datetime',
             'lifecycle_state': 'str',
+            'terraform_version': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -68,6 +73,7 @@ class StackSummary(object):
             'description': 'description',
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
+            'terraform_version': 'terraformVersion',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -78,6 +84,7 @@ class StackSummary(object):
         self._description = None
         self._time_created = None
         self._lifecycle_state = None
+        self._terraform_version = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -220,6 +227,30 @@ class StackSummary(object):
         :type: str
         """
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def terraform_version(self):
+        """
+        Gets the terraform_version of this StackSummary.
+        The Terraform version of the specified stack.
+
+
+        :return: The terraform_version of this StackSummary.
+        :rtype: str
+        """
+        return self._terraform_version
+
+    @terraform_version.setter
+    def terraform_version(self, terraform_version):
+        """
+        Sets the terraform_version of this StackSummary.
+        The Terraform version of the specified stack.
+
+
+        :param terraform_version: The terraform_version of this StackSummary.
+        :type: str
+        """
+        self._terraform_version = terraform_version
 
     @property
     def freeform_tags(self):

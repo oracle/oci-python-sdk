@@ -188,7 +188,9 @@ class MonitoringClient(object):
         Creates a new alarm in the specified compartment.
         For important limits information, see `Limits on Monitoring`__.
 
-        Transactions Per Second (TPS) per-tenancy limit for this operation: 1.
+        This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+        Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+        or transactions, per second (TPS) for a given tenancy.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits
 
@@ -268,7 +270,9 @@ class MonitoringClient(object):
         Deletes the specified alarm.
         For important limits information, see `Limits on Monitoring`__.
 
-        Transactions Per Second (TPS) per-tenancy limit for this operation: 1.
+        This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+        Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+        or transactions, per second (TPS) for a given tenancy.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits
 
@@ -353,7 +357,9 @@ class MonitoringClient(object):
         Gets the specified alarm.
         For important limits information, see `Limits on Monitoring`__.
 
-        Transactions Per Second (TPS) per-tenancy limit for this operation: 1.
+        This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+        Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+        or transactions, per second (TPS) for a given tenancy.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits
 
@@ -433,7 +439,9 @@ class MonitoringClient(object):
         Get the history of the specified alarm.
         For important limits information, see `Limits on Monitoring`__.
 
-        Transactions Per Second (TPS) per-tenancy limit for this operation: 1.
+        This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+        Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+        or transactions, per second (TPS) for a given tenancy.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits
 
@@ -570,7 +578,9 @@ class MonitoringClient(object):
         Lists the alarms for the specified compartment.
         For important limits information, see `Limits on Monitoring`__.
 
-        Transactions Per Second (TPS) per-tenancy limit for this operation: 1.
+        This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+        Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+        or transactions, per second (TPS) for a given tenancy.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits
 
@@ -730,7 +740,9 @@ class MonitoringClient(object):
         List the status of each alarm in the specified compartment.
         For important limits information, see `Limits on Monitoring`__.
 
-        Transactions Per Second (TPS) per-tenancy limit for this operation: 1.
+        This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+        Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+        or transactions, per second (TPS) for a given tenancy.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits
 
@@ -878,7 +890,7 @@ class MonitoringClient(object):
         For information about metrics, see `Metrics Overview`__.
         For important limits information, see `Limits on Monitoring`__.
 
-        Transactions Per Second (TPS) per-tenancy limit for this operation: 1.
+        Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits
@@ -1078,7 +1090,9 @@ class MonitoringClient(object):
         Removes any existing suppression for the specified alarm.
         For important limits information, see `Limits on Monitoring`__.
 
-        Transactions Per Second (TPS) per-tenancy limit for this operation: 1.
+        This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+        Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+        or transactions, per second (TPS) for a given tenancy.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits
 
@@ -1260,7 +1274,9 @@ class MonitoringClient(object):
         Updates the specified alarm.
         For important limits information, see `Limits on Monitoring`__.
 
-        Transactions Per Second (TPS) per-tenancy limit for this operation: 1.
+        This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+        Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+        or transactions, per second (TPS) for a given tenancy.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits
 

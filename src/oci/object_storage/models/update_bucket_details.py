@@ -54,6 +54,10 @@ class UpdateBucketDetails(object):
             Allowed values for this property are: "NoPublicAccess", "ObjectRead", "ObjectReadWithoutList"
         :type public_access_type: str
 
+        :param object_events_enabled:
+            The value to assign to the object_events_enabled property of this UpdateBucketDetails.
+        :type object_events_enabled: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateBucketDetails.
         :type freeform_tags: dict(str, str)
@@ -73,6 +77,7 @@ class UpdateBucketDetails(object):
             'name': 'str',
             'metadata': 'dict(str, str)',
             'public_access_type': 'str',
+            'object_events_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'kms_key_id': 'str'
@@ -84,6 +89,7 @@ class UpdateBucketDetails(object):
             'name': 'name',
             'metadata': 'metadata',
             'public_access_type': 'publicAccessType',
+            'object_events_enabled': 'objectEventsEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'kms_key_id': 'kmsKeyId'
@@ -94,6 +100,7 @@ class UpdateBucketDetails(object):
         self._name = None
         self._metadata = None
         self._public_access_type = None
+        self._object_events_enabled = None
         self._freeform_tags = None
         self._defined_tags = None
         self._kms_key_id = None
@@ -126,7 +133,7 @@ class UpdateBucketDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this UpdateBucketDetails.
-        The compartmentId for the compartment to which the bucket is targeted to move to.
+        The compartmentId for the compartment to move the bucket to.
 
 
         :return: The compartment_id of this UpdateBucketDetails.
@@ -138,7 +145,7 @@ class UpdateBucketDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this UpdateBucketDetails.
-        The compartmentId for the compartment to which the bucket is targeted to move to.
+        The compartmentId for the compartment to move the bucket to.
 
 
         :param compartment_id: The compartment_id of this UpdateBucketDetails.
@@ -233,6 +240,32 @@ class UpdateBucketDetails(object):
                 .format(allowed_values)
             )
         self._public_access_type = public_access_type
+
+    @property
+    def object_events_enabled(self):
+        """
+        Gets the object_events_enabled of this UpdateBucketDetails.
+        A property that determines whether events will be generated for operations on objects in this bucket.
+        This is false by default.
+
+
+        :return: The object_events_enabled of this UpdateBucketDetails.
+        :rtype: bool
+        """
+        return self._object_events_enabled
+
+    @object_events_enabled.setter
+    def object_events_enabled(self, object_events_enabled):
+        """
+        Sets the object_events_enabled of this UpdateBucketDetails.
+        A property that determines whether events will be generated for operations on objects in this bucket.
+        This is false by default.
+
+
+        :param object_events_enabled: The object_events_enabled of this UpdateBucketDetails.
+        :type: bool
+        """
+        self._object_events_enabled = object_events_enabled
 
     @property
     def freeform_tags(self):

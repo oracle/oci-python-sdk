@@ -31,6 +31,8 @@ from .plan_job_operation_details import PlanJobOperationDetails
 from .plan_job_operation_details_summary import PlanJobOperationDetailsSummary
 from .stack import Stack
 from .stack_summary import StackSummary
+from .terraform_version_collection import TerraformVersionCollection
+from .terraform_version_summary import TerraformVersionSummary
 from .update_config_source_details import UpdateConfigSourceDetails
 from .update_job_details import UpdateJobDetails
 from .update_stack_details import UpdateStackDetails
@@ -72,6 +74,8 @@ resource_manager_type_mapping = {
     "PlanJobOperationDetailsSummary": PlanJobOperationDetailsSummary,
     "Stack": Stack,
     "StackSummary": StackSummary,
+    "TerraformVersionCollection": TerraformVersionCollection,
+    "TerraformVersionSummary": TerraformVersionSummary,
     "UpdateConfigSourceDetails": UpdateConfigSourceDetails,
     "UpdateJobDetails": UpdateJobDetails,
     "UpdateStackDetails": UpdateStackDetails,

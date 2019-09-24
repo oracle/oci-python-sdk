@@ -46,6 +46,8 @@ Resource Manager
     oci.resource_manager.models.PlanJobOperationDetailsSummary
     oci.resource_manager.models.Stack
     oci.resource_manager.models.StackSummary
+    oci.resource_manager.models.TerraformVersionCollection
+    oci.resource_manager.models.TerraformVersionSummary
     oci.resource_manager.models.UpdateConfigSourceDetails
     oci.resource_manager.models.UpdateJobDetails
     oci.resource_manager.models.UpdateStackDetails
