@@ -106,7 +106,6 @@ def test_wait_multiple_states(virtual_network, config):
 
     # This should always be between 1 second and 5 minutes.
     assert total_time < 60 * 5
-    assert total_time > 1
 
 
 def test_invalid_operation(identity, config):
