@@ -18,7 +18,7 @@
     <enabled-groups-dir>${sdk-root-dir}/codegenConfig/enabledGroups</enabled-groups-dir>
     <feature-id-file>${sdk-root-dir}/featureId.yaml</feature-id-file>
     <feature-id-dir>${sdk-root-dir}/codegenConfig/featureIds</feature-id-dir>
-    <fn-api-spec-spec-file>release/functions-api-spec.yaml</fn-api-spec-spec-file>
+    <fn-api-spec-spec-file>source/functions-api-spec.cond.yaml</fn-api-spec-spec-file>
   </properties>
   <dependencies>
     <dependency>
@@ -140,7 +140,7 @@
       <dependency>
         <groupId>com.oracle.pic.functions</groupId>
         <artifactId>fn-api-spec</artifactId>
-        <version>1.0.0</version>
+        <version>1.1.0</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

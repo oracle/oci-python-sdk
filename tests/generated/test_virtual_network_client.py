@@ -357,6 +357,47 @@ def test_change_dhcp_options_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_change_drg_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangeDrgCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ChangeDrgCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangeDrgCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.change_drg_compartment(
+                drg_id=request.pop(util.camelize('drg_id')),
+                change_drg_compartment_details=request.pop(util.camelize('change_drg_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangeDrgCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_drg_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
 def test_change_internet_gateway_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ChangeInternetGatewayCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

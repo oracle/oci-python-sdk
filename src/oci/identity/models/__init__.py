@@ -8,6 +8,7 @@ from .api_key import ApiKey
 from .auth_token import AuthToken
 from .authentication_policy import AuthenticationPolicy
 from .availability_domain import AvailabilityDomain
+from .base_tag_definition_validator import BaseTagDefinitionValidator
 from .change_tag_namespace_compartment_detail import ChangeTagNamespaceCompartmentDetail
 from .compartment import Compartment
 from .create_api_key_details import CreateApiKeyDetails
@@ -29,7 +30,9 @@ from .create_tag_namespace_details import CreateTagNamespaceDetails
 from .create_user_details import CreateUserDetails
 from .customer_secret_key import CustomerSecretKey
 from .customer_secret_key_summary import CustomerSecretKeySummary
+from .default_tag_definition_validator import DefaultTagDefinitionValidator
 from .dynamic_group import DynamicGroup
+from .enum_tag_definition_validator import EnumTagDefinitionValidator
 from .fault_domain import FaultDomain
 from .group import Group
 from .identity_provider import IdentityProvider
@@ -54,6 +57,10 @@ from .tag_default_summary import TagDefaultSummary
 from .tag_namespace import TagNamespace
 from .tag_namespace_summary import TagNamespaceSummary
 from .tag_summary import TagSummary
+from .tagging_work_request import TaggingWorkRequest
+from .tagging_work_request_error_summary import TaggingWorkRequestErrorSummary
+from .tagging_work_request_log_summary import TaggingWorkRequestLogSummary
+from .tagging_work_request_summary import TaggingWorkRequestSummary
 from .tenancy import Tenancy
 from .ui_password import UIPassword
 from .ui_password_information import UIPasswordInformation
@@ -91,6 +98,7 @@ identity_type_mapping = {
     "AuthToken": AuthToken,
     "AuthenticationPolicy": AuthenticationPolicy,
     "AvailabilityDomain": AvailabilityDomain,
+    "BaseTagDefinitionValidator": BaseTagDefinitionValidator,
     "ChangeTagNamespaceCompartmentDetail": ChangeTagNamespaceCompartmentDetail,
     "Compartment": Compartment,
     "CreateApiKeyDetails": CreateApiKeyDetails,
@@ -112,7 +120,9 @@ identity_type_mapping = {
     "CreateUserDetails": CreateUserDetails,
     "CustomerSecretKey": CustomerSecretKey,
     "CustomerSecretKeySummary": CustomerSecretKeySummary,
+    "DefaultTagDefinitionValidator": DefaultTagDefinitionValidator,
     "DynamicGroup": DynamicGroup,
+    "EnumTagDefinitionValidator": EnumTagDefinitionValidator,
     "FaultDomain": FaultDomain,
     "Group": Group,
     "IdentityProvider": IdentityProvider,
@@ -137,6 +147,10 @@ identity_type_mapping = {
     "TagNamespace": TagNamespace,
     "TagNamespaceSummary": TagNamespaceSummary,
     "TagSummary": TagSummary,
+    "TaggingWorkRequest": TaggingWorkRequest,
+    "TaggingWorkRequestErrorSummary": TaggingWorkRequestErrorSummary,
+    "TaggingWorkRequestLogSummary": TaggingWorkRequestLogSummary,
+    "TaggingWorkRequestSummary": TaggingWorkRequestSummary,
     "Tenancy": Tenancy,
     "UIPassword": UIPassword,
     "UIPasswordInformation": UIPasswordInformation,

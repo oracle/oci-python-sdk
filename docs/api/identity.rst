@@ -23,6 +23,7 @@ Identity
     oci.identity.models.AuthToken
     oci.identity.models.AuthenticationPolicy
     oci.identity.models.AvailabilityDomain
+    oci.identity.models.BaseTagDefinitionValidator
     oci.identity.models.ChangeTagNamespaceCompartmentDetail
     oci.identity.models.Compartment
     oci.identity.models.CreateApiKeyDetails
@@ -44,7 +45,9 @@ Identity
     oci.identity.models.CreateUserDetails
     oci.identity.models.CustomerSecretKey
     oci.identity.models.CustomerSecretKeySummary
+    oci.identity.models.DefaultTagDefinitionValidator
     oci.identity.models.DynamicGroup
+    oci.identity.models.EnumTagDefinitionValidator
     oci.identity.models.FaultDomain
     oci.identity.models.Group
     oci.identity.models.IdentityProvider
@@ -69,6 +72,10 @@ Identity
     oci.identity.models.TagNamespace
     oci.identity.models.TagNamespaceSummary
     oci.identity.models.TagSummary
+    oci.identity.models.TaggingWorkRequest
+    oci.identity.models.TaggingWorkRequestErrorSummary
+    oci.identity.models.TaggingWorkRequestLogSummary
+    oci.identity.models.TaggingWorkRequestSummary
     oci.identity.models.Tenancy
     oci.identity.models.UIPassword
     oci.identity.models.UIPasswordInformation

@@ -82,6 +82,9 @@ class RegionSubscription(object):
         - `IAD`
         - `FRA`
         - `LHR`
+        - `YYZ`
+        - `NRT`
+        - `ICN`
 
 
         :return: The region_key of this RegionSubscription.
@@ -100,6 +103,9 @@ class RegionSubscription(object):
         - `IAD`
         - `FRA`
         - `LHR`
+        - `YYZ`
+        - `NRT`
+        - `ICN`
 
 
         :param region_key: The region_key of this RegionSubscription.
@@ -114,10 +120,13 @@ class RegionSubscription(object):
         The region's name.
 
         Allowed values are:
-        - `us-phoenix-1`
-        - `us-ashburn-1`
+        - `ap-seoul-1`
+        - `ap-tokyo-1`
+        - `ca-toronto-1`
         - `eu-frankurt-1`
         - `uk-london-1`
+        - `us-ashburn-1`
+        - `us-phoenix-1`
 
 
         :return: The region_name of this RegionSubscription.
@@ -132,10 +141,13 @@ class RegionSubscription(object):
         The region's name.
 
         Allowed values are:
-        - `us-phoenix-1`
-        - `us-ashburn-1`
+        - `ap-seoul-1`
+        - `ap-tokyo-1`
+        - `ca-toronto-1`
         - `eu-frankurt-1`
         - `uk-london-1`
+        - `us-ashburn-1`
+        - `us-phoenix-1`
 
 
         :param region_name: The region_name of this RegionSubscription.

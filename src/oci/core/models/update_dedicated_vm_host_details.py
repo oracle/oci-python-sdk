@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDedicatedVmHostDetails(object):
     """
-    Update dedicated VM host details.
+    Details for updating the dedicated virtual machine host details.
     """
 
     def __init__(self, **kwargs):

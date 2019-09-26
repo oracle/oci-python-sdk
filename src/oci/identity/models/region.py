@@ -59,6 +59,9 @@ class Region(object):
         - `IAD`
         - `FRA`
         - `LHR`
+        - `YYZ`
+        - `NRT`
+        - `ICN`
 
 
         :return: The key of this Region.
@@ -77,6 +80,9 @@ class Region(object):
         - `IAD`
         - `FRA`
         - `LHR`
+        - `YYZ`
+        - `NRT`
+        - `ICN`
 
 
         :param key: The key of this Region.
@@ -91,10 +97,13 @@ class Region(object):
         The name of the region.
 
         Allowed values are:
-        - `us-phoenix-1`
-        - `us-ashburn-1`
-        - `eu-frankfurt-1`
+        - `ap-seoul-1`
+        - `ap-tokyo-1`
+        - `ca-toronto-1`
+        - `eu-frankurt-1`
         - `uk-london-1`
+        - `us-ashburn-1`
+        - `us-phoenix-1`
 
 
         :return: The name of this Region.
@@ -109,10 +118,13 @@ class Region(object):
         The name of the region.
 
         Allowed values are:
-        - `us-phoenix-1`
-        - `us-ashburn-1`
-        - `eu-frankfurt-1`
+        - `ap-seoul-1`
+        - `ap-tokyo-1`
+        - `ca-toronto-1`
+        - `eu-frankurt-1`
         - `uk-london-1`
+        - `us-ashburn-1`
+        - `us-phoenix-1`
 
 
         :param name: The name of this Region.

@@ -111,6 +111,46 @@ def test_add_user_to_group(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_assemble_effective_tag_set(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity', 'AssembleEffectiveTagSet'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'AssembleEffectiveTagSet')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='AssembleEffectiveTagSet')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
+            response = client.assemble_effective_tag_set(
+                compartment_id=request.pop(util.camelize('compartment_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'AssembleEffectiveTagSet',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'tagDefaultSummary',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_change_tag_namespace_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'ChangeTagNamespaceCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1971,6 +2011,46 @@ def test_get_tag_namespace(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_tagging_work_request(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity', 'GetTaggingWorkRequest'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'GetTaggingWorkRequest')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='GetTaggingWorkRequest')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
+            response = client.get_tagging_work_request(
+                work_request_id=request.pop(util.camelize('work_request_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'GetTaggingWorkRequest',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'taggingWorkRequest',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_get_tenancy(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'GetTenancy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3174,6 +3254,183 @@ def test_list_tag_namespaces(testing_service_client):
             result,
             service_error,
             'tagNamespaceSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_tagging_work_request_errors(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity', 'ListTaggingWorkRequestErrors'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListTaggingWorkRequestErrors')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListTaggingWorkRequestErrors')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
+            response = client.list_tagging_work_request_errors(
+                work_request_id=request.pop(util.camelize('work_request_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_tagging_work_request_errors(
+                    work_request_id=request.pop(util.camelize('work_request_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_tagging_work_request_errors(
+                        work_request_id=request.pop(util.camelize('work_request_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'ListTaggingWorkRequestErrors',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'taggingWorkRequestErrorSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_tagging_work_request_logs(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity', 'ListTaggingWorkRequestLogs'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListTaggingWorkRequestLogs')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListTaggingWorkRequestLogs')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
+            response = client.list_tagging_work_request_logs(
+                work_request_id=request.pop(util.camelize('work_request_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_tagging_work_request_logs(
+                    work_request_id=request.pop(util.camelize('work_request_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_tagging_work_request_logs(
+                        work_request_id=request.pop(util.camelize('work_request_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'ListTaggingWorkRequestLogs',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'taggingWorkRequestLogSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_tagging_work_requests(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity', 'ListTaggingWorkRequests'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListTaggingWorkRequests')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListTaggingWorkRequests')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
+            response = client.list_tagging_work_requests(
+                compartment_id=request.pop(util.camelize('compartment_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_tagging_work_requests(
+                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_tagging_work_requests(
+                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'ListTaggingWorkRequests',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'taggingWorkRequestSummary',
             False,
             True
         )

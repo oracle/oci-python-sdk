@@ -103,7 +103,7 @@ class DnsClientCompositeOperations(object):
         Calls :py:func:`~oci.dns.DnsClient.create_zone` and waits for the :py:class:`~oci.dns.models.Zone` acted upon
         to enter the given state(s).
 
-        :param CreateZoneDetails create_zone_details: (required)
+        :param CreateZoneBaseDetails create_zone_details: (required)
             Details for creating a new zone.
 
         :param list[str] wait_for_states:

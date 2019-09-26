@@ -37,13 +37,18 @@ class CreateTagDetails(object):
             The value to assign to the is_cost_tracking property of this CreateTagDetails.
         :type is_cost_tracking: bool
 
+        :param validator:
+            The value to assign to the validator property of this CreateTagDetails.
+        :type validator: BaseTagDefinitionValidator
+
         """
         self.swagger_types = {
             'name': 'str',
             'description': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'is_cost_tracking': 'bool'
+            'is_cost_tracking': 'bool',
+            'validator': 'BaseTagDefinitionValidator'
         }
 
         self.attribute_map = {
@@ -51,7 +56,8 @@ class CreateTagDetails(object):
             'description': 'description',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'is_cost_tracking': 'isCostTracking'
+            'is_cost_tracking': 'isCostTracking',
+            'validator': 'validator'
         }
 
         self._name = None
@@ -59,12 +65,14 @@ class CreateTagDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._is_cost_tracking = None
+        self._validator = None
 
     @property
     def name(self):
         """
         **[Required]** Gets the name of this CreateTagDetails.
-        The name you assign to the tag during creation. The name must be unique within the tag namespace and cannot be changed.
+        The name you assign to the tag during creation. This is the tag key definition.
+        The name must be unique within the tag namespace and cannot be changed.
 
 
         :return: The name of this CreateTagDetails.
@@ -76,7 +84,8 @@ class CreateTagDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateTagDetails.
-        The name you assign to the tag during creation. The name must be unique within the tag namespace and cannot be changed.
+        The name you assign to the tag during creation. This is the tag key definition.
+        The name must be unique within the tag namespace and cannot be changed.
 
 
         :param name: The name of this CreateTagDetails.
@@ -195,6 +204,38 @@ class CreateTagDetails(object):
         :type: bool
         """
         self._is_cost_tracking = is_cost_tracking
+
+    @property
+    def validator(self):
+        """
+        Gets the validator of this CreateTagDetails.
+        Additional validation rule for values specified for the tag definition.
+
+        If no validator is defined for a tag definition, then any (valid) value will be accepted.
+
+        The default value for `validator` is an empty map (no additional validation).
+
+
+        :return: The validator of this CreateTagDetails.
+        :rtype: BaseTagDefinitionValidator
+        """
+        return self._validator
+
+    @validator.setter
+    def validator(self, validator):
+        """
+        Sets the validator of this CreateTagDetails.
+        Additional validation rule for values specified for the tag definition.
+
+        If no validator is defined for a tag definition, then any (valid) value will be accepted.
+
+        The default value for `validator` is an empty map (no additional validation).
+
+
+        :param validator: The validator of this CreateTagDetails.
+        :type: BaseTagDefinitionValidator
+        """
+        self._validator = validator
 
     def __repr__(self):
         return formatted_flat_dict(self)

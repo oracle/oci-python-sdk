@@ -19,6 +19,9 @@ class DynamicGroup(object):
     in a dynamic group, the membership of an instance certificate to a dynamic group is determined during runtime.
     For more information, see `Managing Dynamic Groups`__.
 
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using
+    the API.
+
     __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingdynamicgroups.htm
     """
 

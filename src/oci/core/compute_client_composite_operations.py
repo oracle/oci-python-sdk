@@ -187,7 +187,7 @@ class ComputeClientCompositeOperations(object):
             The OCID of the dedicated VM host.
 
         :param ChangeDedicatedVmHostCompartmentDetails change_dedicated_vm_host_compartment_details: (required)
-            Request to change the compartment of a given dedicated vm host.
+            The request to move the dedicated virtual machine host to a different compartment.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -225,7 +225,7 @@ class ComputeClientCompositeOperations(object):
             The OCID of the dedicated VM host.
 
         :param ChangeDedicatedVmHostCompartmentDetails change_dedicated_vm_host_compartment_details: (required)
-            Request to change the compartment of a given dedicated vm host.
+            The request to move the dedicated virtual machine host to a different compartment.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.WorkRequest.status`
@@ -342,7 +342,7 @@ class ComputeClientCompositeOperations(object):
         to enter the given state(s).
 
         :param CreateDedicatedVmHostDetails create_dedicated_vm_host_details: (required)
-            The details for creating a new dedicated virtual machine (VM) host.
+            The details for creating a new dedicated virtual machine host.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -377,7 +377,7 @@ class ComputeClientCompositeOperations(object):
         to enter the given state(s).
 
         :param CreateDedicatedVmHostDetails create_dedicated_vm_host_details: (required)
-            The details for creating a new dedicated virtual machine (VM) host.
+            The details for creating a new dedicated virtual machine host.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.DedicatedVmHost.lifecycle_state`

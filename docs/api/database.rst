@@ -90,6 +90,7 @@ Database
     oci.database.models.DbNode
     oci.database.models.DbNodeSummary
     oci.database.models.DbSystem
+    oci.database.models.DbSystemOptions
     oci.database.models.DbSystemShapeSummary
     oci.database.models.DbSystemSummary
     oci.database.models.DbVersionSummary

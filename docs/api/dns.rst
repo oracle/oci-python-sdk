@@ -20,9 +20,12 @@ DNS
 
     oci.dns.models.ChangeSteeringPolicyCompartmentDetails
     oci.dns.models.ChangeZoneCompartmentDetails
+    oci.dns.models.CreateMigratedDynectZoneDetails
     oci.dns.models.CreateSteeringPolicyAttachmentDetails
     oci.dns.models.CreateSteeringPolicyDetails
+    oci.dns.models.CreateZoneBaseDetails
     oci.dns.models.CreateZoneDetails
+    oci.dns.models.DynectMigrationDetails
     oci.dns.models.ExternalMaster
     oci.dns.models.Nameserver
     oci.dns.models.PatchDomainRecordsDetails
