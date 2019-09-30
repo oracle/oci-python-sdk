@@ -107,10 +107,10 @@ python showoci.py
 # Login as opc and install python3 locally  
 sudo yum -y install gcc libffi-devel openssl-devel python-devel sqlite-devel 
 
-# example on python 3.7.2, list of python versions can be found here - https://www.python.org/ftp/python/
-wget https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz  
-tar zxf Python-3.7.2.tgz  
-cd Python-3.7.2
+# example on python 3.7.4, list of python versions can be found here - https://www.python.org/ftp/python/
+wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz
+tar zxf Python-3.7.4.tgz
+cd Python-3.7.4
 ./configure --prefix=$HOME/python --enable-loadable-sqlite-extensions  
 make  
 make install  

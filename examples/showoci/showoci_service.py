@@ -277,6 +277,7 @@ class ShowOCIService(object):
         {'shape': 'VM.DenseIO2.24', 'cpu': 24, 'memory': 320, 'storage': 25.6},
         {'shape': 'VM.DenseIO2.8', 'cpu': 8, 'memory': 120, 'storage': 6.4},
         {'shape': 'VM.GPU2.1', 'cpu': 12, 'memory': 104, 'storage': 0},
+        {'shape': 'VM.Standard.E2.1.Micro', 'cpu': 1, 'memory': 1, 'storage': 0},
         {'shape': 'VM.Standard.E2.1', 'cpu': 1, 'memory': 8, 'storage': 0},
         {'shape': 'VM.Standard.E2.2', 'cpu': 2, 'memory': 16, 'storage': 0},
         {'shape': 'VM.Standard.E2.4', 'cpu': 4, 'memory': 32, 'storage': 0},
@@ -614,7 +615,7 @@ class ShowOCIService(object):
     ##########################################################################
     def __load_print_cnt(self, cnt, start_time):
         et = time.time() - start_time
-        print(" ("'{:02d}:{:02d}:{:02d}'.format(round(et // 3600), (round(et % 3600 // 60)), round(et % 60)) + ")")
+        print("(" + str(cnt) + ") - "'{:02d}:{:02d}:{:02d}'.format(round(et // 3600), (round(et % 3600 // 60)), round(et % 60)))
 
     ##########################################################################
     # print auth warning
