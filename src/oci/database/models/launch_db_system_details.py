@@ -90,6 +90,10 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
             The value to assign to the time_zone property of this LaunchDbSystemDetails.
         :type time_zone: str
 
+        :param db_system_options:
+            The value to assign to the db_system_options property of this LaunchDbSystemDetails.
+        :type db_system_options: DbSystemOptions
+
         :param sparse_diskgroup:
             The value to assign to the sparse_diskgroup property of this LaunchDbSystemDetails.
         :type sparse_diskgroup: bool
@@ -170,6 +174,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
             'backup_network_nsg_ids': 'list[str]',
             'shape': 'str',
             'time_zone': 'str',
+            'db_system_options': 'DbSystemOptions',
             'sparse_diskgroup': 'bool',
             'ssh_public_keys': 'list[str]',
             'hostname': 'str',
@@ -199,6 +204,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
             'backup_network_nsg_ids': 'backupNetworkNsgIds',
             'shape': 'shape',
             'time_zone': 'timeZone',
+            'db_system_options': 'dbSystemOptions',
             'sparse_diskgroup': 'sparseDiskgroup',
             'ssh_public_keys': 'sshPublicKeys',
             'hostname': 'hostname',
@@ -227,6 +233,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
         self._backup_network_nsg_ids = None
         self._shape = None
         self._time_zone = None
+        self._db_system_options = None
         self._sparse_diskgroup = None
         self._ssh_public_keys = None
         self._hostname = None

@@ -9,8 +9,11 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TagNamespace(object):
     """
-    A managed container for defined tags. A tag namespace is unique in a tenancy. A tag namespace can't be deleted.
-    For more information, see `Managing Tags and Tag Namespaces`__.
+    A managed container for defined tags. A tag namespace is unique in a tenancy. For more information,
+    see `Managing Tags and Tag Namespaces`__.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values
+    using the API.
 
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm
     """

@@ -67,6 +67,10 @@ class TagDefault(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param is_required:
+            The value to assign to the is_required property of this TagDefault.
+        :type is_required: bool
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -76,7 +80,8 @@ class TagDefault(object):
             'tag_definition_name': 'str',
             'value': 'str',
             'time_created': 'datetime',
-            'lifecycle_state': 'str'
+            'lifecycle_state': 'str',
+            'is_required': 'bool'
         }
 
         self.attribute_map = {
@@ -87,7 +92,8 @@ class TagDefault(object):
             'tag_definition_name': 'tagDefinitionName',
             'value': 'value',
             'time_created': 'timeCreated',
-            'lifecycle_state': 'lifecycleState'
+            'lifecycle_state': 'lifecycleState',
+            'is_required': 'isRequired'
         }
 
         self._id = None
@@ -98,6 +104,7 @@ class TagDefault(object):
         self._value = None
         self._time_created = None
         self._lifecycle_state = None
+        self._is_required = None
 
     @property
     def id(self):
@@ -302,6 +309,44 @@ class TagDefault(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def is_required(self):
+        """
+        **[Required]** Gets the is_required of this TagDefault.
+        If you specify that a value is required, a value is set during resource creation (either by the
+        user creating the resource or another tag defualt). If no value is set, resource creation is
+        blocked.
+
+        * If the `isRequired` flag is set to \"true\", the value is set during resource creation.
+        * If the `isRequired` flag is set to \"false\", the value you enter is set during resource creation.
+
+        Example: `false`
+
+
+        :return: The is_required of this TagDefault.
+        :rtype: bool
+        """
+        return self._is_required
+
+    @is_required.setter
+    def is_required(self, is_required):
+        """
+        Sets the is_required of this TagDefault.
+        If you specify that a value is required, a value is set during resource creation (either by the
+        user creating the resource or another tag defualt). If no value is set, resource creation is
+        blocked.
+
+        * If the `isRequired` flag is set to \"true\", the value is set during resource creation.
+        * If the `isRequired` flag is set to \"false\", the value you enter is set during resource creation.
+
+        Example: `false`
+
+
+        :param is_required: The is_required of this TagDefault.
+        :type: bool
+        """
+        self._is_required = is_required
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -417,7 +417,7 @@ class DnsClient(object):
         request is `text/dns`.
 
 
-        :param CreateZoneDetails create_zone_details: (required)
+        :param CreateZoneBaseDetails create_zone_details: (required)
             Details for creating a new zone.
 
         :param str compartment_id: (optional)

@@ -36,8 +36,8 @@ class MoveCompartmentDetails(object):
     def target_compartment_id(self):
         """
         **[Required]** Gets the target_compartment_id of this MoveCompartmentDetails.
-        The `OCID`__ of the parent compartment
-        into which the compartment should be moved.
+        The `OCID`__ of the destination compartment
+        into which to move the compartment.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -51,8 +51,8 @@ class MoveCompartmentDetails(object):
     def target_compartment_id(self, target_compartment_id):
         """
         Sets the target_compartment_id of this MoveCompartmentDetails.
-        The `OCID`__ of the parent compartment
-        into which the compartment should be moved.
+        The `OCID`__ of the destination compartment
+        into which to move the compartment.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

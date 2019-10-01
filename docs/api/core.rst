@@ -61,6 +61,7 @@ Core Services
     oci.core.models.ChangeCrossConnectGroupCompartmentDetails
     oci.core.models.ChangeDedicatedVmHostCompartmentDetails
     oci.core.models.ChangeDhcpOptionsCompartmentDetails
+    oci.core.models.ChangeDrgCompartmentDetails
     oci.core.models.ChangeIPSecConnectionCompartmentDetails
     oci.core.models.ChangeImageCompartmentDetails
     oci.core.models.ChangeInstanceCompartmentDetails

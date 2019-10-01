@@ -160,6 +160,9 @@ class Tenancy(object):
         - `PHX`
         - `FRA`
         - `LHR`
+        - `ICN`
+        - `YYZ`
+        - `NRT`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
@@ -181,6 +184,9 @@ class Tenancy(object):
         - `PHX`
         - `FRA`
         - `LHR`
+        - `ICN`
+        - `YYZ`
+        - `NRT`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 

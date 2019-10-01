@@ -43,6 +43,9 @@ class CreateRegionSubscriptionDetails(object):
         - `IAD`
         - `FRA`
         - `LHR`
+        - `YYZ`
+        - `NRT`
+        - `ICN`
 
         Example: `PHX`
 
@@ -63,6 +66,9 @@ class CreateRegionSubscriptionDetails(object):
         - `IAD`
         - `FRA`
         - `LHR`
+        - `YYZ`
+        - `NRT`
+        - `ICN`
 
         Example: `PHX`
 

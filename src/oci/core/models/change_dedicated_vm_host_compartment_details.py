@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeDedicatedVmHostCompartmentDetails(object):
     """
-    Contains details indicating which compartment the resource should move to
+    Specifies the compartment to move the dedicated virtual machine host to.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class ChangeDedicatedVmHostCompartmentDetails(object):
         """
         **[Required]** Gets the compartment_id of this ChangeDedicatedVmHostCompartmentDetails.
         The `OCID`__ of the compartment
-        into which the resource should be moved.
+        to move the dedicated virtual machine host to.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -52,7 +52,7 @@ class ChangeDedicatedVmHostCompartmentDetails(object):
         """
         Sets the compartment_id of this ChangeDedicatedVmHostCompartmentDetails.
         The `OCID`__ of the compartment
-        into which the resource should be moved.
+        to move the dedicated virtual machine host to.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

@@ -13,6 +13,9 @@ class Tag(object):
     you can apply them to resources.
     For more information, see `Managing Tags and Tag Namespaces`__.
 
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values
+    using the API.
+
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm
     """
 
@@ -87,6 +90,10 @@ class Tag(object):
             The value to assign to the is_cost_tracking property of this Tag.
         :type is_cost_tracking: bool
 
+        :param validator:
+            The value to assign to the validator property of this Tag.
+        :type validator: BaseTagDefinitionValidator
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -100,7 +107,8 @@ class Tag(object):
             'is_retired': 'bool',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
-            'is_cost_tracking': 'bool'
+            'is_cost_tracking': 'bool',
+            'validator': 'BaseTagDefinitionValidator'
         }
 
         self.attribute_map = {
@@ -115,7 +123,8 @@ class Tag(object):
             'is_retired': 'isRetired',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
-            'is_cost_tracking': 'isCostTracking'
+            'is_cost_tracking': 'isCostTracking',
+            'validator': 'validator'
         }
 
         self._compartment_id = None
@@ -130,6 +139,7 @@ class Tag(object):
         self._lifecycle_state = None
         self._time_created = None
         self._is_cost_tracking = None
+        self._validator = None
 
     @property
     def compartment_id(self):
@@ -231,7 +241,8 @@ class Tag(object):
     def name(self):
         """
         **[Required]** Gets the name of this Tag.
-        The name of the tag. The name must be unique across all tags in the namespace and can't be changed.
+        The name assigned to the tag during creation. This is the tag key definition.
+        The name must be unique within the tag namespace and cannot be changed.
 
 
         :return: The name of this Tag.
@@ -243,7 +254,8 @@ class Tag(object):
     def name(self, name):
         """
         Sets the name of this Tag.
-        The name of the tag. The name must be unique across all tags in the namespace and can't be changed.
+        The name assigned to the tag during creation. This is the tag key definition.
+        The name must be unique within the tag namespace and cannot be changed.
 
 
         :param name: The name of this Tag.
@@ -373,7 +385,7 @@ class Tag(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this Tag.
-        The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it.
+        The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's `lifecycleState` changes from DELETING to DELETED.
 
         Allowed values for this property are: "ACTIVE", "INACTIVE", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -388,7 +400,7 @@ class Tag(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Tag.
-        The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it.
+        The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's `lifecycleState` changes from DELETING to DELETED.
 
 
         :param lifecycle_state: The lifecycle_state of this Tag.
@@ -448,6 +460,38 @@ class Tag(object):
         :type: bool
         """
         self._is_cost_tracking = is_cost_tracking
+
+    @property
+    def validator(self):
+        """
+        Gets the validator of this Tag.
+        Additional validation rule for values specified for the tag definition.
+
+        If no validator is defined for a tag definition, then any (valid) value will be accepted.
+
+        To clear the validator call the UPDATE operation with DefaultTagDefinitionValidator
+
+
+        :return: The validator of this Tag.
+        :rtype: BaseTagDefinitionValidator
+        """
+        return self._validator
+
+    @validator.setter
+    def validator(self, validator):
+        """
+        Sets the validator of this Tag.
+        Additional validation rule for values specified for the tag definition.
+
+        If no validator is defined for a tag definition, then any (valid) value will be accepted.
+
+        To clear the validator call the UPDATE operation with DefaultTagDefinitionValidator
+
+
+        :param validator: The validator of this Tag.
+        :type: BaseTagDefinitionValidator
+        """
+        self._validator = validator
 
     def __repr__(self):
         return formatted_flat_dict(self)

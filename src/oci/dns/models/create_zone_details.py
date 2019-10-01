@@ -1,13 +1,13 @@
 # coding: utf-8
 # Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
 
-
+from .create_zone_base_details import CreateZoneBaseDetails
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
 from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class CreateZoneDetails(object):
+class CreateZoneDetails(CreateZoneBaseDetails):
     """
     The body for defining a new zone.
 
@@ -24,17 +24,18 @@ class CreateZoneDetails(object):
 
     def __init__(self, **kwargs):
         """
-        Initializes a new CreateZoneDetails object with values from keyword arguments.
+        Initializes a new CreateZoneDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.dns.models.CreateZoneDetails.migration_source` attribute
+        of this class is ``NONE`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param migration_source:
+            The value to assign to the migration_source property of this CreateZoneDetails.
+            Allowed values for this property are: "NONE", "DYNECT"
+        :type migration_source: str
 
         :param name:
             The value to assign to the name property of this CreateZoneDetails.
         :type name: str
-
-        :param zone_type:
-            The value to assign to the zone_type property of this CreateZoneDetails.
-            Allowed values for this property are: "PRIMARY", "SECONDARY"
-        :type zone_type: str
 
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateZoneDetails.
@@ -48,64 +49,49 @@ class CreateZoneDetails(object):
             The value to assign to the defined_tags property of this CreateZoneDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param zone_type:
+            The value to assign to the zone_type property of this CreateZoneDetails.
+            Allowed values for this property are: "PRIMARY", "SECONDARY"
+        :type zone_type: str
+
         :param external_masters:
             The value to assign to the external_masters property of this CreateZoneDetails.
         :type external_masters: list[ExternalMaster]
 
         """
         self.swagger_types = {
+            'migration_source': 'str',
             'name': 'str',
-            'zone_type': 'str',
             'compartment_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'zone_type': 'str',
             'external_masters': 'list[ExternalMaster]'
         }
 
         self.attribute_map = {
+            'migration_source': 'migrationSource',
             'name': 'name',
-            'zone_type': 'zoneType',
             'compartment_id': 'compartmentId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'zone_type': 'zoneType',
             'external_masters': 'externalMasters'
         }
 
+        self._migration_source = None
         self._name = None
-        self._zone_type = None
         self._compartment_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._zone_type = None
         self._external_masters = None
-
-    @property
-    def name(self):
-        """
-        **[Required]** Gets the name of this CreateZoneDetails.
-        The name of the zone.
-
-
-        :return: The name of this CreateZoneDetails.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """
-        Sets the name of this CreateZoneDetails.
-        The name of the zone.
-
-
-        :param name: The name of this CreateZoneDetails.
-        :type: str
-        """
-        self._name = name
+        self._migration_source = 'NONE'
 
     @property
     def zone_type(self):
         """
-        **[Required]** Gets the zone_type of this CreateZoneDetails.
+        Gets the zone_type of this CreateZoneDetails.
         The type of the zone. Must be either `PRIMARY` or `SECONDARY`.
 
         Allowed values for this property are: "PRIMARY", "SECONDARY"
@@ -133,102 +119,6 @@ class CreateZoneDetails(object):
                 .format(allowed_values)
             )
         self._zone_type = zone_type
-
-    @property
-    def compartment_id(self):
-        """
-        **[Required]** Gets the compartment_id of this CreateZoneDetails.
-        The OCID of the compartment containing the zone.
-
-
-        :return: The compartment_id of this CreateZoneDetails.
-        :rtype: str
-        """
-        return self._compartment_id
-
-    @compartment_id.setter
-    def compartment_id(self, compartment_id):
-        """
-        Sets the compartment_id of this CreateZoneDetails.
-        The OCID of the compartment containing the zone.
-
-
-        :param compartment_id: The compartment_id of this CreateZoneDetails.
-        :type: str
-        """
-        self._compartment_id = compartment_id
-
-    @property
-    def freeform_tags(self):
-        """
-        Gets the freeform_tags of this CreateZoneDetails.
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-        For more information, see `Resource Tags`__.
-
-
-        **Example:** `{\"Department\": \"Finance\"}`
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
-
-
-        :return: The freeform_tags of this CreateZoneDetails.
-        :rtype: dict(str, str)
-        """
-        return self._freeform_tags
-
-    @freeform_tags.setter
-    def freeform_tags(self, freeform_tags):
-        """
-        Sets the freeform_tags of this CreateZoneDetails.
-        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-        For more information, see `Resource Tags`__.
-
-
-        **Example:** `{\"Department\": \"Finance\"}`
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
-
-
-        :param freeform_tags: The freeform_tags of this CreateZoneDetails.
-        :type: dict(str, str)
-        """
-        self._freeform_tags = freeform_tags
-
-    @property
-    def defined_tags(self):
-        """
-        Gets the defined_tags of this CreateZoneDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        For more information, see `Resource Tags`__.
-
-
-        **Example:** `{\"Operations\": {\"CostCenter\": \"42\"}}`
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
-
-
-        :return: The defined_tags of this CreateZoneDetails.
-        :rtype: dict(str, dict(str, object))
-        """
-        return self._defined_tags
-
-    @defined_tags.setter
-    def defined_tags(self, defined_tags):
-        """
-        Sets the defined_tags of this CreateZoneDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        For more information, see `Resource Tags`__.
-
-
-        **Example:** `{\"Operations\": {\"CostCenter\": \"42\"}}`
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
-
-
-        :param defined_tags: The defined_tags of this CreateZoneDetails.
-        :type: dict(str, dict(str, object))
-        """
-        self._defined_tags = defined_tags
 
     @property
     def external_masters(self):

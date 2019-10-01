@@ -72,6 +72,10 @@ class LaunchDbSystemBase(object):
             The value to assign to the time_zone property of this LaunchDbSystemBase.
         :type time_zone: str
 
+        :param db_system_options:
+            The value to assign to the db_system_options property of this LaunchDbSystemBase.
+        :type db_system_options: DbSystemOptions
+
         :param sparse_diskgroup:
             The value to assign to the sparse_diskgroup property of this LaunchDbSystemBase.
         :type sparse_diskgroup: bool
@@ -133,6 +137,7 @@ class LaunchDbSystemBase(object):
             'backup_network_nsg_ids': 'list[str]',
             'shape': 'str',
             'time_zone': 'str',
+            'db_system_options': 'DbSystemOptions',
             'sparse_diskgroup': 'bool',
             'ssh_public_keys': 'list[str]',
             'hostname': 'str',
@@ -158,6 +163,7 @@ class LaunchDbSystemBase(object):
             'backup_network_nsg_ids': 'backupNetworkNsgIds',
             'shape': 'shape',
             'time_zone': 'timeZone',
+            'db_system_options': 'dbSystemOptions',
             'sparse_diskgroup': 'sparseDiskgroup',
             'ssh_public_keys': 'sshPublicKeys',
             'hostname': 'hostname',
@@ -182,6 +188,7 @@ class LaunchDbSystemBase(object):
         self._backup_network_nsg_ids = None
         self._shape = None
         self._time_zone = None
+        self._db_system_options = None
         self._sparse_diskgroup = None
         self._ssh_public_keys = None
         self._hostname = None
@@ -538,6 +545,26 @@ class LaunchDbSystemBase(object):
         :type: str
         """
         self._time_zone = time_zone
+
+    @property
+    def db_system_options(self):
+        """
+        Gets the db_system_options of this LaunchDbSystemBase.
+
+        :return: The db_system_options of this LaunchDbSystemBase.
+        :rtype: DbSystemOptions
+        """
+        return self._db_system_options
+
+    @db_system_options.setter
+    def db_system_options(self, db_system_options):
+        """
+        Sets the db_system_options of this LaunchDbSystemBase.
+
+        :param db_system_options: The db_system_options of this LaunchDbSystemBase.
+        :type: DbSystemOptions
+        """
+        self._db_system_options = db_system_options
 
     @property
     def sparse_diskgroup(self):

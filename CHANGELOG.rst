@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.5.2 - 2019-10-01
+====================
+
+Added
+-----
+* Support for required tags in the Identity service
+* Support for work requests on tagging operations in the Identity service
+* Support for enumerated tag values in the Identity service
+* Support for moving dynamic routing gateway resources across compartments in the Networking service
+* Support for migrating zones from Dyn managed DNS to OCI in the DNS service
+* Support for fast provisioning for virtual machine databases in the Database service
+
+====================
 2.5.1 - 2019-09-24
 ====================
 
