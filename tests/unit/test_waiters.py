@@ -57,6 +57,57 @@ def test_basic_wait(virtual_network, config):
     assert total_time < 60 * 5
 
 
+def test_wait_multiple_states(virtual_network, config):
+    """Creates and deletes a VCN, waiting with multiple states after each operation."""
+
+    name = "pythonsdk_waiter_" + tests.util.random_number_string()
+    print('Creating cloud network ' + name)
+
+    start_time = time.time()
+
+    request = oci.core.models.CreateVcnDetails()
+    request.cidr_block = '10.0.0.0/16'
+    request.display_name = name
+    request.compartment_id = config["tenancy"]
+
+    response = virtual_network.create_vcn(request)
+    vcn = response.data
+
+    response = virtual_network.get_vcn(vcn.id)
+    response = oci.wait_until(virtual_network, response, 'lifecycle_state', ('AVAILABLE', 'TERMINATED', 'TERMINATING'))
+
+    assert 'AVAILABLE' == response.data.lifecycle_state
+
+    print('Deleting vcn')
+    response = virtual_network.delete_vcn(vcn.id)
+
+    assert response.status == 204
+
+    get_response = None
+    with pytest.raises(oci.exceptions.ServiceError) as excinfo:
+        get_response = virtual_network.get_vcn(vcn.id)
+        assert 'TERMINATING' == get_response.data.lifecycle_state
+        oci.wait_until(
+            virtual_network,
+            get_response,
+            'lifecycle_state',
+            ('AVAILABLE', 'TERMINATED'),
+            max_wait_seconds=180
+        )
+
+    assert excinfo.value.status == 404
+
+    if get_response is not None:
+        result = oci.wait_until(virtual_network, get_response, 'lifecycle_state', 'TERMINATED', max_wait_seconds=180,
+                                succeed_on_not_found=True)
+        assert result == oci.waiter.WAIT_RESOURCE_NOT_FOUND
+
+    total_time = time.time() - start_time
+
+    # This should always be between 1 second and 5 minutes.
+    assert total_time < 60 * 5
+
+
 def test_invalid_operation(identity, config):
     # Create User
     request = oci.identity.models.CreateUserDetails()

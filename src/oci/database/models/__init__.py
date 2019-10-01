@@ -75,6 +75,7 @@ from .db_iorm_config_update_detail import DbIormConfigUpdateDetail
 from .db_node import DbNode
 from .db_node_summary import DbNodeSummary
 from .db_system import DbSystem
+from .db_system_options import DbSystemOptions
 from .db_system_shape_summary import DbSystemShapeSummary
 from .db_system_summary import DbSystemSummary
 from .db_version_summary import DbVersionSummary
@@ -202,6 +203,7 @@ database_type_mapping = {
     "DbNode": DbNode,
     "DbNodeSummary": DbNodeSummary,
     "DbSystem": DbSystem,
+    "DbSystemOptions": DbSystemOptions,
     "DbSystemShapeSummary": DbSystemShapeSummary,
     "DbSystemSummary": DbSystemSummary,
     "DbVersionSummary": DbVersionSummary,

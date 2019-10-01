@@ -40,6 +40,7 @@ from .change_cross_connect_compartment_details import ChangeCrossConnectCompartm
 from .change_cross_connect_group_compartment_details import ChangeCrossConnectGroupCompartmentDetails
 from .change_dedicated_vm_host_compartment_details import ChangeDedicatedVmHostCompartmentDetails
 from .change_dhcp_options_compartment_details import ChangeDhcpOptionsCompartmentDetails
+from .change_drg_compartment_details import ChangeDrgCompartmentDetails
 from .change_ip_sec_connection_compartment_details import ChangeIPSecConnectionCompartmentDetails
 from .change_image_compartment_details import ChangeImageCompartmentDetails
 from .change_instance_compartment_details import ChangeInstanceCompartmentDetails
@@ -324,6 +325,7 @@ core_type_mapping = {
     "ChangeCrossConnectGroupCompartmentDetails": ChangeCrossConnectGroupCompartmentDetails,
     "ChangeDedicatedVmHostCompartmentDetails": ChangeDedicatedVmHostCompartmentDetails,
     "ChangeDhcpOptionsCompartmentDetails": ChangeDhcpOptionsCompartmentDetails,
+    "ChangeDrgCompartmentDetails": ChangeDrgCompartmentDetails,
     "ChangeIPSecConnectionCompartmentDetails": ChangeIPSecConnectionCompartmentDetails,
     "ChangeImageCompartmentDetails": ChangeImageCompartmentDetails,
     "ChangeInstanceCompartmentDetails": ChangeInstanceCompartmentDetails,

@@ -29,22 +29,29 @@ class CreateTagDefaultDetails(object):
             The value to assign to the value property of this CreateTagDefaultDetails.
         :type value: str
 
+        :param is_required:
+            The value to assign to the is_required property of this CreateTagDefaultDetails.
+        :type is_required: bool
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
             'tag_definition_id': 'str',
-            'value': 'str'
+            'value': 'str',
+            'is_required': 'bool'
         }
 
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'tag_definition_id': 'tagDefinitionId',
-            'value': 'value'
+            'value': 'value',
+            'is_required': 'isRequired'
         }
 
         self._compartment_id = None
         self._tag_definition_id = None
         self._value = None
+        self._is_required = None
 
     @property
     def compartment_id(self):
@@ -117,6 +124,44 @@ class CreateTagDefaultDetails(object):
         :type: str
         """
         self._value = value
+
+    @property
+    def is_required(self):
+        """
+        Gets the is_required of this CreateTagDefaultDetails.
+        If you specify that a value is required, a value is set during resource creation (either by
+        the user creating the resource or another tag defualt). If no value is set, resource
+        creation is blocked.
+
+        * If the `isRequired` flag is set to \"true\", the value is set during resource creation.
+        * If the `isRequired` flag is set to \"false\", the value you enter is set during resource creation.
+
+        Example: `false`
+
+
+        :return: The is_required of this CreateTagDefaultDetails.
+        :rtype: bool
+        """
+        return self._is_required
+
+    @is_required.setter
+    def is_required(self, is_required):
+        """
+        Sets the is_required of this CreateTagDefaultDetails.
+        If you specify that a value is required, a value is set during resource creation (either by
+        the user creating the resource or another tag defualt). If no value is set, resource
+        creation is blocked.
+
+        * If the `isRequired` flag is set to \"true\", the value is set during resource creation.
+        * If the `isRequired` flag is set to \"false\", the value you enter is set during resource creation.
+
+        Example: `false`
+
+
+        :param is_required: The is_required of this CreateTagDefaultDetails.
+        :type: bool
+        """
+        self._is_required = is_required
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -147,7 +147,8 @@ class TagSummary(object):
     def name(self):
         """
         Gets the name of this TagSummary.
-        The name of the tag. The name must be unique across all tags in the tag namespace and can't be changed.
+        The name assigned to the tag during creation. This is the tag key definition.
+        The name must be unique within the tag namespace and cannot be changed.
 
 
         :return: The name of this TagSummary.
@@ -159,7 +160,8 @@ class TagSummary(object):
     def name(self, name):
         """
         Sets the name of this TagSummary.
-        The name of the tag. The name must be unique across all tags in the tag namespace and can't be changed.
+        The name assigned to the tag during creation. This is the tag key definition.
+        The name must be unique within the tag namespace and cannot be changed.
 
 
         :param name: The name of this TagSummary.
@@ -289,7 +291,7 @@ class TagSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this TagSummary.
-        The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it.
+        The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's `lifecycleState` changes from DELETING to DELETED.
 
 
         :return: The lifecycle_state of this TagSummary.
@@ -301,7 +303,7 @@ class TagSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this TagSummary.
-        The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it.
+        The tag's current state. After creating a tag, make sure its `lifecycleState` is ACTIVE before using it. After retiring a tag, make sure its `lifecycleState` is INACTIVE before using it. If you delete a tag, you cannot delete another tag until the deleted tag's `lifecycleState` changes from DELETING to DELETED.
 
 
         :param lifecycle_state: The lifecycle_state of this TagSummary.

@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+19.9.24 - 2019-09-30
+====================
+* Fix few bugs and added free compute shape
+
+====================
 19.9.11 - 2019-09-11
 ====================
 * Fix instance configuration error when block volumes or vnic exist

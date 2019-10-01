@@ -37,13 +37,18 @@ class UpdateTagDetails(object):
             The value to assign to the is_cost_tracking property of this UpdateTagDetails.
         :type is_cost_tracking: bool
 
+        :param validator:
+            The value to assign to the validator property of this UpdateTagDetails.
+        :type validator: BaseTagDefinitionValidator
+
         """
         self.swagger_types = {
             'description': 'str',
             'is_retired': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'is_cost_tracking': 'bool'
+            'is_cost_tracking': 'bool',
+            'validator': 'BaseTagDefinitionValidator'
         }
 
         self.attribute_map = {
@@ -51,7 +56,8 @@ class UpdateTagDetails(object):
             'is_retired': 'isRetired',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'is_cost_tracking': 'isCostTracking'
+            'is_cost_tracking': 'isCostTracking',
+            'validator': 'validator'
         }
 
         self._description = None
@@ -59,6 +65,7 @@ class UpdateTagDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._is_cost_tracking = None
+        self._validator = None
 
     @property
     def description(self):
@@ -201,6 +208,38 @@ class UpdateTagDetails(object):
         :type: bool
         """
         self._is_cost_tracking = is_cost_tracking
+
+    @property
+    def validator(self):
+        """
+        Gets the validator of this UpdateTagDetails.
+        Additional validation rule for values specified for the tag definition.
+
+        If no validator is defined for a tag definition, then any (valid) value will be accepted.
+
+        The default value for `validator` is an empty map (no additional validation).
+
+
+        :return: The validator of this UpdateTagDetails.
+        :rtype: BaseTagDefinitionValidator
+        """
+        return self._validator
+
+    @validator.setter
+    def validator(self, validator):
+        """
+        Sets the validator of this UpdateTagDetails.
+        Additional validation rule for values specified for the tag definition.
+
+        If no validator is defined for a tag definition, then any (valid) value will be accepted.
+
+        The default value for `validator` is an empty map (no additional validation).
+
+
+        :param validator: The validator of this UpdateTagDetails.
+        :type: BaseTagDefinitionValidator
+        """
+        self._validator = validator
 
     def __repr__(self):
         return formatted_flat_dict(self)

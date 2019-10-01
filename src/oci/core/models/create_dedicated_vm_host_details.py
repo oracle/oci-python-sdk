@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDedicatedVmHostDetails(object):
     """
-    The details for creating a new dedicated virtual machine (VM) host.
+    The details for creating a new dedicated virtual machine host.
     """
 
     def __init__(self, **kwargs):
@@ -78,7 +78,7 @@ class CreateDedicatedVmHostDetails(object):
     def availability_domain(self):
         """
         **[Required]** Gets the availability_domain of this CreateDedicatedVmHostDetails.
-        The availability domain of the dedicated VM host.
+        The availability domain of the dedicated virtual machine host.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -92,7 +92,7 @@ class CreateDedicatedVmHostDetails(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this CreateDedicatedVmHostDetails.
-        The availability domain of the dedicated VM host.
+        The availability domain of the dedicated virtual machine host.
 
         Example: `Uocm:PHX-AD-1`
 
@@ -130,8 +130,8 @@ class CreateDedicatedVmHostDetails(object):
     def dedicated_vm_host_shape(self):
         """
         **[Required]** Gets the dedicated_vm_host_shape of this CreateDedicatedVmHostDetails.
-        The shape of the dedicated VM host. The shape determines the number of CPUs and
-        other resources available for VMs.
+        The dedicated virtual machine host shape. The shape determines the number of CPUs and
+        other resources available for VM instances launched on the dedicated virtual machine host.
 
 
         :return: The dedicated_vm_host_shape of this CreateDedicatedVmHostDetails.
@@ -143,8 +143,8 @@ class CreateDedicatedVmHostDetails(object):
     def dedicated_vm_host_shape(self, dedicated_vm_host_shape):
         """
         Sets the dedicated_vm_host_shape of this CreateDedicatedVmHostDetails.
-        The shape of the dedicated VM host. The shape determines the number of CPUs and
-        other resources available for VMs.
+        The dedicated virtual machine host shape. The shape determines the number of CPUs and
+        other resources available for VM instances launched on the dedicated virtual machine host.
 
 
         :param dedicated_vm_host_shape: The dedicated_vm_host_shape of this CreateDedicatedVmHostDetails.
@@ -220,13 +220,18 @@ class CreateDedicatedVmHostDetails(object):
     def fault_domain(self):
         """
         Gets the fault_domain of this CreateDedicatedVmHostDetails.
-        The fault domain for the dedicated VM host's assigned instances. For more information, see Fault Domains.
-        If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated VM host,
-        delete it and create a new dedicated VM host in the preferred fault domain.
+        The fault domain for the dedicated virtual machine host's assigned instances.
+        For more information, see `Fault Domains`__.
+        If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host,
+        delete it and create a new dedicated virtual machine host in the preferred fault domain.
 
-        To get a list of fault domains, use the ListFaultDomains operation in the Identity and Access Management Service API.
+        To get a list of fault domains, use the `ListFaultDomains` operation in
+        the `Identity and Access Management Service API`__.
 
         Example: `FAULT-DOMAIN-1`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault
+        __ https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/
 
 
         :return: The fault_domain of this CreateDedicatedVmHostDetails.
@@ -238,13 +243,18 @@ class CreateDedicatedVmHostDetails(object):
     def fault_domain(self, fault_domain):
         """
         Sets the fault_domain of this CreateDedicatedVmHostDetails.
-        The fault domain for the dedicated VM host's assigned instances. For more information, see Fault Domains.
-        If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated VM host,
-        delete it and create a new dedicated VM host in the preferred fault domain.
+        The fault domain for the dedicated virtual machine host's assigned instances.
+        For more information, see `Fault Domains`__.
+        If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host,
+        delete it and create a new dedicated virtual machine host in the preferred fault domain.
 
-        To get a list of fault domains, use the ListFaultDomains operation in the Identity and Access Management Service API.
+        To get a list of fault domains, use the `ListFaultDomains` operation in
+        the `Identity and Access Management Service API`__.
 
         Example: `FAULT-DOMAIN-1`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault
+        __ https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/
 
 
         :param fault_domain: The fault_domain of this CreateDedicatedVmHostDetails.

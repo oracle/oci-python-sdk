@@ -58,6 +58,7 @@ class ShowOCI2SE(object):
     ComputeId = 0
     LoadBalancerListenerId = 0
     LoadBalancerBackendsetId = 0
+    BucketId = 0
 
     ############################################
     # Init
@@ -127,7 +128,7 @@ class ShowOCI2SE(object):
     def __convert_identity_compartments(self, compartments):
         try:
             for c in compartments:
-                data = {'type': 'Compartment', 'name': c['name'], 'path': c['path']}
+                data = {'class': 'Compartment', 'name': c['name'], 'path': c['path']}
                 self.outdata.append(data)
 
         except Exception as e:
@@ -239,6 +240,7 @@ class ShowOCI2SE(object):
                             'vcn_cidr': vcn['cidr_block'],
                             'vcn_compartment': vcn['compartment'],
                             'sec_name': sl['name'],
+                            'sec_id': sl['id'],
                             'sec_compartment': sl['compartment'],
                             'time_created': sl['time_created'][0:16],
                             'sec_protocol': "",
@@ -263,6 +265,7 @@ class ShowOCI2SE(object):
                                 'vcn_cidr': vcn['cidr_block'],
                                 'vcn_compartment': vcn['compartment'],
                                 'sec_name': sl['name'],
+                                'sec_id': sl['id'],
                                 'sec_compartment': sl['compartment'],
                                 'time_created': sl['time_created'][0:16],
                                 'sec_protocol': slr['protocol_name'],
@@ -425,7 +428,9 @@ class ShowOCI2SE(object):
                                 'vcn_cidr': vcn['cidr_block'],
                                 'vcn_compartment': vcn['compartment'],
                                 'route_name': rt['name'],
+                                'route_ocid': rt['id'],
                                 'route_compartment': rt['compartment'],
+                                'network_entity_id': rl['network_entity_id'],
                                 'destination': rl['destination'],
                                 'route': rl['desc'],
                                 'time_created': rt['time_created'][0:16]}
@@ -450,19 +455,25 @@ class ShowOCI2SE(object):
                     continue
 
                 igw = ""
+                igw_id = ""
                 sgw = ""
+                sgw_id = ""
                 nat = ""
+                nat_id = ""
                 drg = ""
                 lpg = ""
 
                 if 'igw' in vcn['data']:
                     igw = str(', '.join(x['name'] for x in vcn['data']['igw']))
+                    igw_id = str(', '.join(x['id'] for x in vcn['data']['igw']))
 
                 if 'sgw' in vcn['data']:
                     sgw = str(', '.join(x['name'] + " " + x['services'] for x in vcn['data']['sgw']))
+                    sgw_id = str(', '.join(x['id'] for x in vcn['data']['sgw']))
 
                 if 'nat' in vcn['data']:
                     nat = str(', '.join(x['name'] for x in vcn['data']['nat']))
+                    nat_id = str(', '.join(x['id'] for x in vcn['data']['nat']))
 
                 if 'drg_attached' in vcn['data']:
                     drg = str(', '.join(x['name'] for x in vcn['data']['drg_attached']))
@@ -478,8 +489,11 @@ class ShowOCI2SE(object):
                         'vcn_compartment': vcn['compartment'],
                         'vcn_id': vcn['id'],
                         'internet_gateway': igw,
+                        'igw_id': igw_id,
                         'service_gateway': sgw,
+                        'service_gateway_id': sgw_id,
                         'nat': nat,
+                        'nat_id': nat_id,
                         'drg': drg,
                         'local_peering': lpg
                         }
@@ -532,7 +546,7 @@ class ShowOCI2SE(object):
                                 'availability_domain': dbs['availability_domain'],
                                 'compartment_name': dbs['compartment_name'],
                                 'status': dbs['lifecycle_state'],
-                                'type': "DB System",
+                                'type': "DBSystem",
                                 'name': dbs['display_name'],
                                 'shape': dbs['shape'],
                                 'cpu_core_count': dbs['cpu_core_count'],
@@ -540,9 +554,13 @@ class ShowOCI2SE(object):
                                 'shape_ocpus': dbs['shape_ocpu'],
                                 'memory_gb': dbs['shape_memory_gb'],
                                 'local_storage_tb': dbs['shape_storage_tb'],
+                                'license_model': dbs['license_model'],
                                 'node_count': len(dbs['db_nodes']),
                                 'database': db['name'],
-                                'version_license_model': dbs['version'],
+                                'database_version': dbs['database_version'],
+                                'database_edition': dbs['database_edition'],
+                                'database_edition_short': dbs['database_edition_short'],
+                                'host': dbs['host'],
                                 'domain': dbs['domain'],
                                 'data_subnet': dbs['data_subnet'],
                                 'data_subnet_id': dbs['data_subnet_id'],
@@ -573,7 +591,7 @@ class ShowOCI2SE(object):
                         'availability_domain': "",
                         'compartment_name': dbs['compartment_name'],
                         'status': dbs['lifecycle_state'],
-                        'type': "Autonomous " + dbs['db_workload'],
+                        'type': "Autonomous" + dbs['db_workload'],
                         'name': dbs['display_name'], 'shape': "",
                         'cpu_core_count': dbs['cpu_core_count'],
                         'db_storage_gb': str(int(dbs['data_storage_size_in_tbs']) * 1024),
@@ -637,6 +655,7 @@ class ShowOCI2SE(object):
                         'Status': instance['lifecycle_state'],
                         'Type': instance['image_os'],
                         'image': instance['image'],
+                        'image_id': instance['image_id'],
                         'fault_domain': instance['fault_domain'],
                         'primary_vcn': "",
                         'primary_subnet': "",
@@ -701,6 +720,26 @@ class ShowOCI2SE(object):
             self.__print_error("__convert_core_compute_main", e)
 
     ##########################################################################
+    # convert object storage
+    ##########################################################################
+    def __convert_bucket_main(self, region_name, buckets):
+        try:
+            for bucket in buckets:
+                self.BucketId += 1
+                data = {
+                    'class': 'Bucket' + str(self.BucketId),
+                    'name': bucket['name'],
+                    'objects': bucket['objects'],
+                    'size': bucket['sum_size_gb'],
+                    'preauthenticated_requests': bucket['preauthenticated_requests'],
+                    'object_lifecycle': bucket['object_lifecycle']
+                }
+                self.outdata.append(data)
+
+        except Exception as e:
+            self.__print_error("__convert_bucket_main", e)
+
+    ##########################################################################
     # convert load balancer config
     ##########################################################################
     def __convert_load_balancer_details(self, region_name, load_balance_obj):
@@ -716,7 +755,7 @@ class ShowOCI2SE(object):
                     data = {'class': 'LoadBalancerListener' + str(self.LoadBalancerListenerId),
                             'region_name': region_name,
                             'compartment_name': lb['compartment_name'],
-                            'name': lb['display_name'],
+                            'loadBalancer_name': lb['display_name'],
                             'status': lb['status'],
                             'shape': lb['shape_name'],
                             'type': ("Private" if lb['is_private'] else "Public"),
@@ -738,7 +777,7 @@ class ShowOCI2SE(object):
                     data = {'class': 'LoadBalancerListener' + str(self.LoadBalancerListenerId),
                             'region_name': region_name,
                             'compartment_name': lb['compartment_name'],
-                            'name': lb['display_name'],
+                            'loadBalancer_name': lb['display_name'],
                             'status': lb['status'],
                             'shape': lb['shape_name'],
                             'type': ("Private" if lb['is_private'] else "Public"),
@@ -746,7 +785,7 @@ class ShowOCI2SE(object):
                             'subnets': str(', '.join(x for x in lb['subnets'])),
                             'subnet_ids': lb['subnet_ids'],
                             'listener_port': listener['port'],
-                            'listener_def_bs': listener['default_backend_set_name'],
+                            'default_backend_set_name': listener['default_backend_set_name'],
                             'listener_ssl': listener['ssl_configuration'],
                             'listener_host': str(', '.join(x for x in listener['hostname_names'])),
                             'listener_path': listener['path_route_set_name'],
@@ -772,7 +811,7 @@ class ShowOCI2SE(object):
                 data = {'class': 'LoadBalancerBackendset' + str(self.LoadBalancerBackendsetId),
                         'region_name': region_name,
                         'compartment_name': lb['compartment_name'],
-                        'name': lb['display_name'],
+                        'loadBalancer_name': lb['display_name'],
                         'status': lb['status'],
                         'shape': lb['shape_name'],
                         'type': ("Private" if lb['is_private'] else "Public"),
@@ -823,6 +862,8 @@ class ShowOCI2SE(object):
                     self.__convert_database_main(region_name, cdata['database'])
                 if 'load_balancer' in cdata:
                     self.__convert_load_balancer_main(region_name, cdata['load_balancer'])
+                if 'object_storage' in cdata:
+                    self.__convert_bucket_main(region_name, cdata['object_storage'])
 
         except Exception as e:
             self.__print_error("__convert_region_data", e)

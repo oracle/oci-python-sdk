@@ -117,6 +117,10 @@ class DbSystem(object):
             The value to assign to the shape property of this DbSystem.
         :type shape: str
 
+        :param db_system_options:
+            The value to assign to the db_system_options property of this DbSystem.
+        :type db_system_options: DbSystemOptions
+
         :param ssh_public_keys:
             The value to assign to the ssh_public_keys property of this DbSystem.
         :type ssh_public_keys: list[str]
@@ -238,6 +242,7 @@ class DbSystem(object):
             'nsg_ids': 'list[str]',
             'backup_network_nsg_ids': 'list[str]',
             'shape': 'str',
+            'db_system_options': 'DbSystemOptions',
             'ssh_public_keys': 'list[str]',
             'time_zone': 'str',
             'hostname': 'str',
@@ -277,6 +282,7 @@ class DbSystem(object):
             'nsg_ids': 'nsgIds',
             'backup_network_nsg_ids': 'backupNetworkNsgIds',
             'shape': 'shape',
+            'db_system_options': 'dbSystemOptions',
             'ssh_public_keys': 'sshPublicKeys',
             'time_zone': 'timeZone',
             'hostname': 'hostname',
@@ -315,6 +321,7 @@ class DbSystem(object):
         self._nsg_ids = None
         self._backup_network_nsg_ids = None
         self._shape = None
+        self._db_system_options = None
         self._ssh_public_keys = None
         self._time_zone = None
         self._hostname = None
@@ -652,6 +659,26 @@ class DbSystem(object):
         :type: str
         """
         self._shape = shape
+
+    @property
+    def db_system_options(self):
+        """
+        Gets the db_system_options of this DbSystem.
+
+        :return: The db_system_options of this DbSystem.
+        :rtype: DbSystemOptions
+        """
+        return self._db_system_options
+
+    @db_system_options.setter
+    def db_system_options(self, db_system_options):
+        """
+        Sets the db_system_options of this DbSystem.
+
+        :param db_system_options: The db_system_options of this DbSystem.
+        :type: DbSystemOptions
+        """
+        self._db_system_options = db_system_options
 
     @property
     def ssh_public_keys(self):

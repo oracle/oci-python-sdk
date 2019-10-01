@@ -246,6 +246,85 @@ class IdentityClient(object):
                 body=add_user_to_group_details,
                 response_type="UserGroupMembership")
 
+    def assemble_effective_tag_set(self, compartment_id, **kwargs):
+        """
+        AssembleEffectiveTagSet
+        Assembles tag defaults in the specified compartment and any parent compartments to determine
+        the tags to apply. Tag defaults from parent compartments do not override tag defaults
+        referencing the same tag in a compartment lower down the hierarchy. This set of tag defaults
+        includes all tag defaults from the current compartment back to the root compartment.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
+
+        :param str lifecycle_state: (optional)
+            A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+
+            Allowed values are: "ACTIVE"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.TagDefaultSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/tagDefaults/actions/assembleEffectiveTagSet"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "lifecycle_state"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "assemble_effective_tag_set got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["ACTIVE"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "lifecycleState": kwargs.get("lifecycle_state", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[TagDefaultSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[TagDefaultSummary]")
+
     def change_tag_namespace_compartment(self, tag_namespace_id, change_tag_namespace_compartment_detail, **kwargs):
         """
         changes compartment of a tag namespace.
@@ -1514,6 +1593,11 @@ class IdentityClient(object):
         It does not have to be unique, and you can change it with
         :func:`update_tag`.
 
+        If no 'validator' is set on this tag definition, then any (valid) value can be set for this definedTag.
+
+        If a 'validator' is set on this tag definition, then the only valid values that can be set for this
+        definedTag those that pass the additional validation imposed by the set 'validator'.
+
 
         :param str tag_namespace_id: (required)
             The OCID of the tag namespace.
@@ -1597,6 +1681,13 @@ class IdentityClient(object):
         """
         CreateTagDefault
         Creates a new tag default in the specified compartment for the specified tag definition.
+
+        If you specify that a value is required, a value is set during resource creation (either by
+        the user creating the resource or another tag defualt). If no value is set, resource creation
+        is blocked.
+
+        * If the `isRequired` flag is set to \"true\", the value is set during resource creation.
+        * If the `isRequired` flag is set to \"false\", the value you enter is set during resource creation.
 
 
         :param CreateTagDefaultDetails create_tag_default_details: (required)
@@ -1685,11 +1776,6 @@ class IdentityClient(object):
         You must also specify a *description* for the namespace.
         It does not have to be unique, and you can change it with
         :func:`update_tag_namespace`.
-
-        Tag namespaces cannot be deleted, but they can be retired.
-        See `Retiring Key Definitions and Namespace Definitions`__ for more information.
-
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm#Retiring
 
 
         :param CreateTagNamespaceDetails create_tag_namespace_details: (required)
@@ -2777,7 +2863,24 @@ class IdentityClient(object):
     def delete_tag(self, tag_namespace_id, tag_name, **kwargs):
         """
         DeleteTag
-        Deletes the the specified tag definition.
+        Deletes the specified tag definition. This operation triggers a process that removes the
+        tag from all resources in your tenancy.
+
+        These things happen immediately:
+        \u00A0
+          * If the tag was a cost-tracking tag, it no longer counts against your 10 cost-tracking
+          tags limit, whether you first disabled it or not.
+          * If the tag was used with dynamic groups, none of the rules that contain the tag will
+          be evaluated against the tag.
+
+        Once you start the delete operation, the state of the tag changes to DELETING and tag removal
+        from resources begins. This can take up to 48 hours depending on the number of resources that
+        were tagged as well as the regions in which those resources reside. When all tags have been
+        removed, the state changes to DELETED. You cannot restore a deleted tag. Once the deleted tag
+        changes its state to DELETED, you can use the same tag name again.
+
+        To delete a tag, you must first retire it. Use :func:`update_tag`
+        to retire a tag.
 
 
         :param str tag_namespace_id: (required)
@@ -2933,8 +3036,10 @@ class IdentityClient(object):
     def delete_tag_namespace(self, tag_namespace_id, **kwargs):
         """
         DeleteTagNamespace
-        Delete the specified tag namespace. Only an empty tagnamespace can be deleted.
-        If the tag namespace you are trying to delete is not empty, please remove tag definitions from it first.
+        Deletes the specified tag namespace. Only an empty tag namespace can be deleted. To delete
+        a tag namespace, first delete all its tag definitions.
+
+        Use :func:`delete_tag` to delete a tag definition.
 
 
         :param str tag_namespace_id: (required)
@@ -3889,6 +3994,71 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="TagNamespace")
+
+    def get_tagging_work_request(self, work_request_id, **kwargs):
+        """
+        GetTaggingWorkRequest
+        Gets details on a specified work request. The workRequestID is returned in the opc-workrequest-id header
+        for any asynchronous operation in the Identity and Access Management service.
+
+
+        :param str work_request_id: (required)
+            The OCID of the work request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.TaggingWorkRequest`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/taggingWorkRequests/{workRequestId}"
+        method = "GET"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_tagging_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workRequestId": work_request_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="TaggingWorkRequest")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="TaggingWorkRequest")
 
     def get_tenancy(self, tenancy_id, **kwargs):
         """
@@ -5769,6 +5939,249 @@ class IdentityClient(object):
                 header_params=header_params,
                 response_type="list[TagNamespaceSummary]")
 
+    def list_tagging_work_request_errors(self, work_request_id, **kwargs):
+        """
+        ListTaggingWorkRequestErrors
+        Gets the errors for a work request.
+
+
+        :param str work_request_id: (required)
+            The OCID of the work request.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.TaggingWorkRequestErrorSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/taggingWorkRequests/{workRequestId}/errors"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_tagging_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workRequestId": work_request_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[TaggingWorkRequestErrorSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[TaggingWorkRequestErrorSummary]")
+
+    def list_tagging_work_request_logs(self, work_request_id, **kwargs):
+        """
+        ListTaggingWorkRequestLogs
+        Gets the logs for a work request.
+
+
+        :param str work_request_id: (required)
+            The OCID of the work request.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.TaggingWorkRequestLogSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/taggingWorkRequests/{workRequestId}/logs"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_tagging_work_request_logs got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workRequestId": work_request_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[TaggingWorkRequestLogSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[TaggingWorkRequestLogSummary]")
+
+    def list_tagging_work_requests(self, compartment_id, **kwargs):
+        """
+        ListTaggingWorkRequests
+        Lists the tagging work requests in compartment.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+        :param str resource_identifier: (optional)
+            The identifier of the resource the work request affects.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.TaggingWorkRequestSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/taggingWorkRequests/"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "page",
+            "limit",
+            "resource_identifier"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_tagging_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "resourceIdentifier": kwargs.get("resource_identifier", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[TaggingWorkRequestSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[TaggingWorkRequestSummary]")
+
     def list_tags(self, tag_namespace_id, **kwargs):
         """
         ListTags
@@ -6125,7 +6538,16 @@ class IdentityClient(object):
     def move_compartment(self, compartment_id, move_compartment_details, **kwargs):
         """
         Moves a compartment tree to a different parent compartment. When provided,\nIf-Match is checked against ETag values of the resource.\n
-        Move the compartment tree to a different parent compartment.
+        Move the compartment to a different parent compartment in the same tenancy. When you move a
+        compartment, all its contents (subcompartments and resources) are moved with it. Note that
+        the `CompartmentId` that you specify in the path is the compartment that you want to move.
+
+        **IMPORTANT**: After you move a compartment to a new parent compartment, the access policies of
+        the new parent take effect and the policies of the previous parent no longer apply. Ensure that you
+        are aware of the implications for the compartment contents before you move it. For more
+        information, see `Moving a Compartment`__.
+
+        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcompartments.htm#MoveCompartment
 
 
         :param str compartment_id: (required)
@@ -7261,7 +7683,11 @@ class IdentityClient(object):
     def update_tag(self, tag_namespace_id, tag_name, update_tag_details, **kwargs):
         """
         UpdateTag
-        Updates the the specified tag definition. You can update `description`, and `isRetired`.
+        Updates the specified tag definition.
+
+        Setting a 'validator' will enable enforcement of additional validation on values contained in the specified for
+        this definedTag. Any values that were previously set will not be changed, but any new value set for the
+        definedTag must pass validation.
 
 
         :param str tag_namespace_id: (required)
@@ -7345,7 +7771,12 @@ class IdentityClient(object):
     def update_tag_default(self, tag_default_id, update_tag_default_details, **kwargs):
         """
         UpdateTagDefault
-        Updates the specified tag default. You can update the following field: `value`.
+        Updates the specified tag default. If you specify that a value is required, a value is set
+        during resource creation (either by the user creating the resource or another tag defualt).
+        If no value is set, resource creation is blocked.
+
+        * If the `isRequired` flag is set to \"true\", the value is set during resource creation.
+        * If the `isRequired` flag is set to \"false\", the value you enter is set during resource creation.
 
 
         :param str tag_default_id: (required)

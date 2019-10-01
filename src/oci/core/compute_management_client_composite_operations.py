@@ -67,6 +67,41 @@ class ComputeManagementClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def create_cluster_network_and_wait_for_work_request(self, create_cluster_network_details, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.core.ComputeManagementClient.create_cluster_network` and waits for the oci.work_requests.models.WorkRequest
+        to enter the given state(s).
+
+        :param CreateClusterNetworkDetails create_cluster_network_details: (required)
+            Cluster network creation details
+
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.core.ComputeManagementClient.create_cluster_network`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_cluster_network(create_cluster_network_details, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        work_request_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def create_cluster_network_and_wait_for_state(self, create_cluster_network_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.core.ComputeManagementClient.create_cluster_network` and waits for the :py:class:`~oci.core.models.ClusterNetwork` acted upon
@@ -181,6 +216,44 @@ class ComputeManagementClientCompositeOperations(object):
             result_to_return = waiter_result
 
             return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def launch_instance_configuration_and_wait_for_work_request(self, instance_configuration_id, instance_configuration, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.core.ComputeManagementClient.launch_instance_configuration` and waits for the oci.work_requests.models.WorkRequest
+        to enter the given state(s).
+
+        :param str instance_configuration_id: (required)
+            The OCID of the instance configuration.
+
+        :param InstanceConfigurationInstanceDetails instance_configuration: (required)
+            Instance configuration Instance Details
+
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.core.ComputeManagementClient.launch_instance_configuration`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.launch_instance_configuration(instance_configuration_id, instance_configuration, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        work_request_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -336,16 +409,17 @@ class ComputeManagementClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
-    def terminate_cluster_network_and_wait_for_state(self, cluster_network_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+    def terminate_cluster_network_and_wait_for_work_request(self, cluster_network_id, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
-        Calls :py:func:`~oci.core.ComputeManagementClient.terminate_cluster_network` and waits for the :py:class:`~oci.core.models.ClusterNetwork` acted upon
+        Calls :py:func:`~oci.core.ComputeManagementClient.terminate_cluster_network` and waits for the oci.work_requests.models.WorkRequest
         to enter the given state(s).
 
         :param str cluster_network_id: (required)
             The OCID of the cluster network.
 
-        :param list[str] wait_for_states:
-            An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.ClusterNetwork.lifecycle_state`
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
 
         :param dict operation_kwargs:
             A dictionary of keyword arguments to pass to :py:func:`~oci.core.ComputeManagementClient.terminate_cluster_network`
@@ -354,7 +428,40 @@ class ComputeManagementClientCompositeOperations(object):
             A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
-        initial_get_result = self.client.get_cluster_network(cluster_network_id)
+        operation_result = self.client.terminate_cluster_network(cluster_network_id, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        work_request_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def terminate_cluster_network_and_wait_for_state(self, cluster_network_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.core.ComputeManagementClient.terminate_cluster_network` and waits for the :py:class:`~oci.core.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str cluster_network_id: (required)
+            The OCID of the cluster network.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.core.ComputeManagementClient.terminate_cluster_network`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
         operation_result = None
         try:
             operation_result = self.client.terminate_cluster_network(cluster_network_id, **operation_kwargs)
@@ -368,13 +475,13 @@ class ComputeManagementClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                initial_get_result,
-                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
-                succeed_on_not_found=True,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result
