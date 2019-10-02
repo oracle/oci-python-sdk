@@ -7,6 +7,7 @@ mock==2.0.0
 pyOpenSSL==18.0.0
 pytest==4.1.0
 pytest-cov==2.6.1
+attrs==19.1.0
 python-dateutil>=2.5.3,<=2.7.3
 pytz>=2016.10
 sphinx-rtd-theme==0.4.2
