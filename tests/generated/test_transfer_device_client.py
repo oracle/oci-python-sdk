@@ -28,7 +28,7 @@ def vcr_fixture(request):
         yield
 
 
-# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="DTS" opsJiraProject="NONE"
+# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="BDTS" opsJiraProject="DTS"
 def test_create_transfer_device(testing_service_client):
     if not testing_service_client.is_api_enabled('dts', 'CreateTransferDevice'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -69,7 +69,7 @@ def test_create_transfer_device(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="DTS" opsJiraProject="NONE"
+# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="BDTS" opsJiraProject="DTS"
 def test_delete_transfer_device(testing_service_client):
     if not testing_service_client.is_api_enabled('dts', 'DeleteTransferDevice'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -110,7 +110,7 @@ def test_delete_transfer_device(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="DTS" opsJiraProject="NONE"
+# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="BDTS" opsJiraProject="DTS"
 def test_get_transfer_device(testing_service_client):
     if not testing_service_client.is_api_enabled('dts', 'GetTransferDevice'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -151,7 +151,7 @@ def test_get_transfer_device(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="DTS" opsJiraProject="NONE"
+# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="BDTS" opsJiraProject="DTS"
 def test_list_transfer_devices(testing_service_client):
     if not testing_service_client.is_api_enabled('dts', 'ListTransferDevices'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -191,7 +191,7 @@ def test_list_transfer_devices(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="DTS" opsJiraProject="NONE"
+# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="BDTS" opsJiraProject="DTS"
 def test_update_transfer_device(testing_service_client):
     if not testing_service_client.is_api_enabled('dts', 'UpdateTransferDevice'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

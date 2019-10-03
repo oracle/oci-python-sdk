@@ -17,7 +17,7 @@ missing = Sentinel("Missing")
 
 class ShippingVendorsClient(object):
     """
-    A description of the DTS API
+    Data Transfer Service API Specification
     """
 
     def __init__(self, config, **kwargs):

@@ -17,7 +17,7 @@ missing = Sentinel("Missing")
 
 class TransferApplianceEntitlementClient(object):
     """
-    A description of the DTS API
+    Data Transfer Service API Specification
     """
 
     def __init__(self, config, **kwargs):
@@ -83,17 +83,22 @@ class TransferApplianceEntitlementClient(object):
     def create_transfer_appliance_entitlement(self, create_transfer_appliance_entitlement_details, **kwargs):
         """
         Create the Transfer Appliance Entitlement
-        Create the Transfer Appliance Entitlement that allows customers to use Transfer Appliance
+        Create the Entitlement to use a Transfer Appliance. It requires some offline process of review and signatures before request is granted.
 
 
         :param CreateTransferApplianceEntitlementDetails create_transfer_appliance_entitlement_details: (required)
             Creates a Transfer Appliance Entitlement
 
         :param str opc_retry_token: (optional)
-            opc retry token
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
 
         :param str opc_request_id: (optional)
-            opc request id
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+            a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -150,17 +155,25 @@ class TransferApplianceEntitlementClient(object):
                 body=create_transfer_appliance_entitlement_details,
                 response_type="TransferApplianceEntitlement")
 
-    def get_transfer_appliance_entitlement(self, tenant_id, **kwargs):
+    def get_transfer_appliance_entitlement(self, id, **kwargs):
         """
         Describes the Transfer Appliance Entitlement in detail
         Describes the Transfer Appliance Entitlement in detail
 
 
-        :param str tenant_id: (required)
-            Tenant Id
+        :param str id: (required)
+            Id of the Transfer Appliance Entitlement
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
 
         :param str opc_request_id: (optional)
-            opc request id
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+            a particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -173,12 +186,13 @@ class TransferApplianceEntitlementClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dts.models.TransferApplianceEntitlement`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/transferApplianceEntitlement/{tenantId}"
+        resource_path = "/transferApplianceEntitlement/{id}"
         method = "GET"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "opc_retry_token",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -187,7 +201,7 @@ class TransferApplianceEntitlementClient(object):
                 "get_transfer_appliance_entitlement got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
-            "tenantId": tenant_id
+            "id": id
         }
 
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
@@ -195,6 +209,88 @@ class TransferApplianceEntitlementClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="TransferApplianceEntitlement")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="TransferApplianceEntitlement")
+
+    def list_transfer_appliance_entitlement(self, compartment_id, **kwargs):
+        """
+        Lists Transfer Transfer Appliance Entitlement
+        Lists Transfer Transfer Appliance Entitlement
+
+
+        :param str compartment_id: (required)
+            compartment id
+
+        :param str id: (optional)
+            filtering by Transfer Appliance Entitlement id
+
+        :param str display_name: (optional)
+            filtering by displayName
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+            a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.dts.models.TransferApplianceEntitlementSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/transferApplianceEntitlement"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "id",
+            "display_name",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_transfer_appliance_entitlement got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "id": kwargs.get("id", missing),
+            "displayName": kwargs.get("display_name", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -212,13 +308,13 @@ class TransferApplianceEntitlementClient(object):
                 self.base_client.call_api,
                 resource_path=resource_path,
                 method=method,
-                path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
-                response_type="TransferApplianceEntitlement")
+                response_type="list[TransferApplianceEntitlementSummary]")
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
-                path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
-                response_type="TransferApplianceEntitlement")
+                response_type="list[TransferApplianceEntitlementSummary]")

@@ -28,7 +28,7 @@ def vcr_fixture(request):
         yield
 
 
-# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="DTS" opsJiraProject="NONE"
+# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="BDTS" opsJiraProject="DTS"
 def test_create_transfer_appliance_entitlement(testing_service_client):
     if not testing_service_client.is_api_enabled('dts', 'CreateTransferApplianceEntitlement'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -68,7 +68,7 @@ def test_create_transfer_appliance_entitlement(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="DTS" opsJiraProject="NONE"
+# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="BDTS" opsJiraProject="DTS"
 def test_get_transfer_appliance_entitlement(testing_service_client):
     if not testing_service_client.is_api_enabled('dts', 'GetTransferApplianceEntitlement'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -88,7 +88,7 @@ def test_get_transfer_appliance_entitlement(testing_service_client):
             service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
             client = oci.dts.TransferApplianceEntitlementClient(config, service_endpoint=service_endpoint)
             response = client.get_transfer_appliance_entitlement(
-                tenant_id=request.pop(util.camelize('tenant_id')),
+                id=request.pop(util.camelize('id')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -103,6 +103,46 @@ def test_get_transfer_appliance_entitlement(testing_service_client):
             result,
             service_error,
             'transferApplianceEntitlement',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="BDTS" opsJiraProject="DTS"
+def test_list_transfer_appliance_entitlement(testing_service_client):
+    if not testing_service_client.is_api_enabled('dts', 'ListTransferApplianceEntitlement'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dts', util.camelize('transfer_appliance_entitlement'), 'ListTransferApplianceEntitlement')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='dts', api_name='ListTransferApplianceEntitlement')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.dts.TransferApplianceEntitlementClient(config, service_endpoint=service_endpoint)
+            response = client.list_transfer_appliance_entitlement(
+                compartment_id=request.pop(util.camelize('compartment_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dts',
+            'ListTransferApplianceEntitlement',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'transferApplianceEntitlementSummary',
             False,
             False
         )

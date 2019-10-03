@@ -141,7 +141,7 @@
       <dependency>
         <groupId>com.oracle.oci</groupId>
         <artifactId>healthchecks-api-spec</artifactId>
-        <version>1.1.0-20190508.183610-1</version>
+        <version>1.2.0-20190917.134531-2</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

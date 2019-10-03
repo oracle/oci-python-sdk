@@ -33,6 +33,14 @@ class PingMonitorSummary(object):
             The value to assign to the results_url property of this PingMonitorSummary.
         :type results_url: str
 
+        :param home_region:
+            The value to assign to the home_region property of this PingMonitorSummary.
+        :type home_region: str
+
+        :param time_created:
+            The value to assign to the time_created property of this PingMonitorSummary.
+        :type time_created: datetime
+
         :param compartment_id:
             The value to assign to the compartment_id property of this PingMonitorSummary.
         :type compartment_id: str
@@ -67,6 +75,8 @@ class PingMonitorSummary(object):
         self.swagger_types = {
             'id': 'str',
             'results_url': 'str',
+            'home_region': 'str',
+            'time_created': 'datetime',
             'compartment_id': 'str',
             'display_name': 'str',
             'interval_in_seconds': 'int',
@@ -79,6 +89,8 @@ class PingMonitorSummary(object):
         self.attribute_map = {
             'id': 'id',
             'results_url': 'resultsUrl',
+            'home_region': 'homeRegion',
+            'time_created': 'timeCreated',
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'interval_in_seconds': 'intervalInSeconds',
@@ -90,6 +102,8 @@ class PingMonitorSummary(object):
 
         self._id = None
         self._results_url = None
+        self._home_region = None
+        self._time_created = None
         self._compartment_id = None
         self._display_name = None
         self._interval_in_seconds = None
@@ -145,6 +159,54 @@ class PingMonitorSummary(object):
         :type: str
         """
         self._results_url = results_url
+
+    @property
+    def home_region(self):
+        """
+        Gets the home_region of this PingMonitorSummary.
+        The region where updates must be made and where results must be fetched from.
+
+
+        :return: The home_region of this PingMonitorSummary.
+        :rtype: str
+        """
+        return self._home_region
+
+    @home_region.setter
+    def home_region(self, home_region):
+        """
+        Sets the home_region of this PingMonitorSummary.
+        The region where updates must be made and where results must be fetched from.
+
+
+        :param home_region: The home_region of this PingMonitorSummary.
+        :type: str
+        """
+        self._home_region = home_region
+
+    @property
+    def time_created(self):
+        """
+        Gets the time_created of this PingMonitorSummary.
+        The RFC 3339-formatted creation date and time of the probe.
+
+
+        :return: The time_created of this PingMonitorSummary.
+        :rtype: datetime
+        """
+        return self._time_created
+
+    @time_created.setter
+    def time_created(self, time_created):
+        """
+        Sets the time_created of this PingMonitorSummary.
+        The RFC 3339-formatted creation date and time of the probe.
+
+
+        :param time_created: The time_created of this PingMonitorSummary.
+        :type: datetime
+        """
+        self._time_created = time_created
 
     @property
     def compartment_id(self):

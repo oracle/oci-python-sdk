@@ -476,6 +476,46 @@ def test_create_volume_backup(testing_service_client):
 
 
 # IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
+def test_create_volume_backup_policy(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'CreateVolumeBackupPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'CreateVolumeBackupPolicy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='CreateVolumeBackupPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
+            response = client.create_volume_backup_policy(
+                create_volume_backup_policy_details=request.pop(util.camelize('create_volume_backup_policy_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'CreateVolumeBackupPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'volumeBackupPolicy',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
 def test_create_volume_backup_policy_assignment(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateVolumeBackupPolicyAssignment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -790,6 +830,46 @@ def test_delete_volume_backup(testing_service_client):
             result,
             service_error,
             'delete_volume_backup',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
+def test_delete_volume_backup_policy(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'DeleteVolumeBackupPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'DeleteVolumeBackupPolicy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='DeleteVolumeBackupPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
+            response = client.delete_volume_backup_policy(
+                policy_id=request.pop(util.camelize('policy_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'DeleteVolumeBackupPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_volume_backup_policy',
             True,
             False
         )
@@ -2027,6 +2107,47 @@ def test_update_volume_backup(testing_service_client):
             result,
             service_error,
             'volumeBackup',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
+def test_update_volume_backup_policy(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'UpdateVolumeBackupPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'UpdateVolumeBackupPolicy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateVolumeBackupPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
+            response = client.update_volume_backup_policy(
+                policy_id=request.pop(util.camelize('policy_id')),
+                update_volume_backup_policy_details=request.pop(util.camelize('update_volume_backup_policy_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'UpdateVolumeBackupPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'volumeBackupPolicy',
             False,
             False
         )

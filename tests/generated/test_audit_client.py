@@ -28,7 +28,7 @@ def vcr_fixture(request):
         yield
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_events_dev_grp@oracle.com" jiraProject="https://jira.oci.oraclecorp.com/projects/SA" opsJiraProject="https://jira-sd.mc1.oracleiaas.com/projects/SA"
 def test_get_configuration(testing_service_client):
     if not testing_service_client.is_api_enabled('audit', 'GetConfiguration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -68,7 +68,7 @@ def test_get_configuration(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_events_dev_grp@oracle.com" jiraProject="https://jira.oci.oraclecorp.com/projects/SA" opsJiraProject="https://jira-sd.mc1.oracleiaas.com/projects/SA"
 def test_list_events(testing_service_client):
     if not testing_service_client.is_api_enabled('audit', 'ListEvents'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -133,7 +133,7 @@ def test_list_events(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="oci_events_dev_grp@oracle.com" jiraProject="https://jira.oci.oraclecorp.com/projects/SA" opsJiraProject="https://jira-sd.mc1.oracleiaas.com/projects/SA"
 def test_update_configuration(testing_service_client):
     if not testing_service_client.is_api_enabled('audit', 'UpdateConfiguration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

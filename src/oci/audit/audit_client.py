@@ -17,7 +17,10 @@ missing = Sentinel("Missing")
 
 class AuditClient(object):
     """
-    API for the Audit Service. You can use this API for queries, but not bulk-export operations.
+    API for the Audit Service. Use this API for compliance monitoring in your tenancy.
+    For more information, see [Overview of Audit](/iaas/Content/Audit/Concepts/auditoverview.htm).
+
+    **Tip**: This API is good for queries, but not bulk-export operations.
     """
 
     def __init__(self, config, **kwargs):
@@ -73,7 +76,8 @@ class AuditClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
-            'base_path': '/20160918',
+            'base_path': '/20190901',
+            'service_endpoint_template': 'https://audit.{region}.oraclecloud.com',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("audit", config, signer, audit_type_mapping, **base_client_init_kwargs)
@@ -141,32 +145,47 @@ class AuditClient(object):
     def list_events(self, compartment_id, start_time, end_time, **kwargs):
         """
         ListEvents
-        Returns all audit events for the specified compartment that were processed within the specified time range.
+        Returns all the audit events processed for the specified compartment within the specified
+        time range.
 
 
         :param str compartment_id: (required)
-            The OCID of the compartment.
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param datetime start_time: (required)
-            Returns events that were processed at or after this start date and time, expressed in `RFC 3339`__ timestamp format.
-            For example, a start value of `2017-01-15T11:30:00Z` will retrieve a list of all events processed since 30 minutes after the 11th hour of January 15, 2017, in Coordinated Universal Time (UTC).
-            You can specify a value with granularity to the minute. Seconds (and milliseconds, if included) must be set to `0`.
+            Returns events that were processed at or after this start date and time, expressed in
+            `RFC 3339`__ timestamp format.
+
+            For example, a start value of `2017-01-15T11:30:00Z` will retrieve a list of all events processed
+            since 30 minutes after the 11th hour of January 15, 2017, in Coordinated Universal Time (UTC).
+            You can specify a value with granularity to the minute. Seconds (and milliseconds, if included) must
+            be set to `0`.
 
             __ https://tools.ietf.org/html/rfc3339
 
         :param datetime end_time: (required)
-            Returns events that were processed before this end date and time, expressed in `RFC 3339`__ timestamp format. For example, a start value of `2017-01-01T00:00:00Z` and an end value of `2017-01-02T00:00:00Z` will retrieve a list of all events processed on January 1, 2017.
-            Similarly, a start value of `2017-01-01T00:00:00Z` and an end value of `2017-02-01T00:00:00Z` will result in a list of all events processed between January 1, 2017 and January 31, 2017.
-            You can specify a value with granularity to the minute. Seconds (and milliseconds, if included) must be set to `0`.
+            Returns events that were processed before this end date and time, expressed in
+            `RFC 3339`__ timestamp format.
+
+            For example, a start value of `2017-01-01T00:00:00Z` and an end value of `2017-01-02T00:00:00Z`
+            will retrieve a list of all events processed on January 1, 2017. Similarly, a start value of
+            `2017-01-01T00:00:00Z` and an end value of `2017-02-01T00:00:00Z` will result in a list of all
+            events processed between January 1, 2017 and January 31, 2017. You can specify a value with
+            granularity to the minute. Seconds (and milliseconds, if included) must be set to `0`.
 
             __ https://tools.ietf.org/html/rfc3339
 
         :param str page: (optional)
-            The value of the `opc-next-page` response header from the previous list query.
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call.
+            For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request.
-            If you need to contact Oracle about a particular request, please provide the request ID.
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.

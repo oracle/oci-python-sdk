@@ -12,42 +12,38 @@ class TransferApplianceEntitlement(object):
     TransferApplianceEntitlement model.
     """
 
-    #: A constant which can be used with the status property of a TransferApplianceEntitlement.
-    #: This constant has a value of "REQUESTED"
-    STATUS_REQUESTED = "REQUESTED"
+    #: A constant which can be used with the lifecycle_state property of a TransferApplianceEntitlement.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
 
-    #: A constant which can be used with the status property of a TransferApplianceEntitlement.
-    #: This constant has a value of "PENDING_SIGNING"
-    STATUS_PENDING_SIGNING = "PENDING_SIGNING"
+    #: A constant which can be used with the lifecycle_state property of a TransferApplianceEntitlement.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
 
-    #: A constant which can be used with the status property of a TransferApplianceEntitlement.
-    #: This constant has a value of "PENDING_APPROVAL"
-    STATUS_PENDING_APPROVAL = "PENDING_APPROVAL"
+    #: A constant which can be used with the lifecycle_state property of a TransferApplianceEntitlement.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
 
-    #: A constant which can be used with the status property of a TransferApplianceEntitlement.
-    #: This constant has a value of "TERMS_EXPIRED"
-    STATUS_TERMS_EXPIRED = "TERMS_EXPIRED"
-
-    #: A constant which can be used with the status property of a TransferApplianceEntitlement.
-    #: This constant has a value of "APPROVED"
-    STATUS_APPROVED = "APPROVED"
-
-    #: A constant which can be used with the status property of a TransferApplianceEntitlement.
-    #: This constant has a value of "REJECTED"
-    STATUS_REJECTED = "REJECTED"
-
-    #: A constant which can be used with the status property of a TransferApplianceEntitlement.
-    #: This constant has a value of "CANCELLED"
-    STATUS_CANCELLED = "CANCELLED"
+    #: A constant which can be used with the lifecycle_state property of a TransferApplianceEntitlement.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
 
     def __init__(self, **kwargs):
         """
         Initializes a new TransferApplianceEntitlement object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param tenant_id:
-            The value to assign to the tenant_id property of this TransferApplianceEntitlement.
-        :type tenant_id: str
+        :param id:
+            The value to assign to the id property of this TransferApplianceEntitlement.
+        :type id: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this TransferApplianceEntitlement.
+        :type compartment_id: str
+
+        :param display_name:
+            The value to assign to the display_name property of this TransferApplianceEntitlement.
+        :type display_name: str
 
         :param requestor_name:
             The value to assign to the requestor_name property of this TransferApplianceEntitlement.
@@ -57,11 +53,15 @@ class TransferApplianceEntitlement(object):
             The value to assign to the requestor_email property of this TransferApplianceEntitlement.
         :type requestor_email: str
 
-        :param status:
-            The value to assign to the status property of this TransferApplianceEntitlement.
-            Allowed values for this property are: "REQUESTED", "PENDING_SIGNING", "PENDING_APPROVAL", "TERMS_EXPIRED", "APPROVED", "REJECTED", "CANCELLED", 'UNKNOWN_ENUM_VALUE'.
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this TransferApplianceEntitlement.
+            Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
-        :type status: str
+        :type lifecycle_state: str
+
+        :param lifecycle_state_details:
+            The value to assign to the lifecycle_state_details property of this TransferApplianceEntitlement.
+        :type lifecycle_state_details: str
 
         :param creation_time:
             The value to assign to the creation_time property of this TransferApplianceEntitlement.
@@ -71,51 +71,114 @@ class TransferApplianceEntitlement(object):
             The value to assign to the update_time property of this TransferApplianceEntitlement.
         :type update_time: datetime
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this TransferApplianceEntitlement.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this TransferApplianceEntitlement.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
-            'tenant_id': 'str',
+            'id': 'str',
+            'compartment_id': 'str',
+            'display_name': 'str',
             'requestor_name': 'str',
             'requestor_email': 'str',
-            'status': 'str',
+            'lifecycle_state': 'str',
+            'lifecycle_state_details': 'str',
             'creation_time': 'datetime',
-            'update_time': 'datetime'
+            'update_time': 'datetime',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
-            'tenant_id': 'tenantId',
+            'id': 'id',
+            'compartment_id': 'compartmentId',
+            'display_name': 'displayName',
             'requestor_name': 'requestorName',
             'requestor_email': 'requestorEmail',
-            'status': 'status',
+            'lifecycle_state': 'lifecycleState',
+            'lifecycle_state_details': 'lifecycleStateDetails',
             'creation_time': 'creationTime',
-            'update_time': 'updateTime'
+            'update_time': 'updateTime',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
-        self._tenant_id = None
+        self._id = None
+        self._compartment_id = None
+        self._display_name = None
         self._requestor_name = None
         self._requestor_email = None
-        self._status = None
+        self._lifecycle_state = None
+        self._lifecycle_state_details = None
         self._creation_time = None
         self._update_time = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @property
-    def tenant_id(self):
+    def id(self):
         """
-        **[Required]** Gets the tenant_id of this TransferApplianceEntitlement.
+        Gets the id of this TransferApplianceEntitlement.
 
-        :return: The tenant_id of this TransferApplianceEntitlement.
+        :return: The id of this TransferApplianceEntitlement.
         :rtype: str
         """
-        return self._tenant_id
+        return self._id
 
-    @tenant_id.setter
-    def tenant_id(self, tenant_id):
+    @id.setter
+    def id(self, id):
         """
-        Sets the tenant_id of this TransferApplianceEntitlement.
+        Sets the id of this TransferApplianceEntitlement.
 
-        :param tenant_id: The tenant_id of this TransferApplianceEntitlement.
+        :param id: The id of this TransferApplianceEntitlement.
         :type: str
         """
-        self._tenant_id = tenant_id
+        self._id = id
+
+    @property
+    def compartment_id(self):
+        """
+        **[Required]** Gets the compartment_id of this TransferApplianceEntitlement.
+
+        :return: The compartment_id of this TransferApplianceEntitlement.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this TransferApplianceEntitlement.
+
+        :param compartment_id: The compartment_id of this TransferApplianceEntitlement.
+        :type: str
+        """
+        self._compartment_id = compartment_id
+
+    @property
+    def display_name(self):
+        """
+        Gets the display_name of this TransferApplianceEntitlement.
+
+        :return: The display_name of this TransferApplianceEntitlement.
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        """
+        Sets the display_name of this TransferApplianceEntitlement.
+
+        :param display_name: The display_name of this TransferApplianceEntitlement.
+        :type: str
+        """
+        self._display_name = display_name
 
     @property
     def requestor_name(self):
@@ -158,30 +221,54 @@ class TransferApplianceEntitlement(object):
         self._requestor_email = requestor_email
 
     @property
-    def status(self):
+    def lifecycle_state(self):
         """
-        **[Required]** Gets the status of this TransferApplianceEntitlement.
-        Allowed values for this property are: "REQUESTED", "PENDING_SIGNING", "PENDING_APPROVAL", "TERMS_EXPIRED", "APPROVED", "REJECTED", "CANCELLED", 'UNKNOWN_ENUM_VALUE'.
+        **[Required]** Gets the lifecycle_state of this TransferApplianceEntitlement.
+        Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
-        :return: The status of this TransferApplianceEntitlement.
+        :return: The lifecycle_state of this TransferApplianceEntitlement.
         :rtype: str
         """
-        return self._status
+        return self._lifecycle_state
 
-    @status.setter
-    def status(self, status):
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
         """
-        Sets the status of this TransferApplianceEntitlement.
+        Sets the lifecycle_state of this TransferApplianceEntitlement.
 
-        :param status: The status of this TransferApplianceEntitlement.
+        :param lifecycle_state: The lifecycle_state of this TransferApplianceEntitlement.
         :type: str
         """
-        allowed_values = ["REQUESTED", "PENDING_SIGNING", "PENDING_APPROVAL", "TERMS_EXPIRED", "APPROVED", "REJECTED", "CANCELLED"]
-        if not value_allowed_none_or_none_sentinel(status, allowed_values):
-            status = 'UNKNOWN_ENUM_VALUE'
-        self._status = status
+        allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "DELETED"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
+        self._lifecycle_state = lifecycle_state
+
+    @property
+    def lifecycle_state_details(self):
+        """
+        Gets the lifecycle_state_details of this TransferApplianceEntitlement.
+        A property that can contain details on the lifecycle.
+
+
+        :return: The lifecycle_state_details of this TransferApplianceEntitlement.
+        :rtype: str
+        """
+        return self._lifecycle_state_details
+
+    @lifecycle_state_details.setter
+    def lifecycle_state_details(self, lifecycle_state_details):
+        """
+        Sets the lifecycle_state_details of this TransferApplianceEntitlement.
+        A property that can contain details on the lifecycle.
+
+
+        :param lifecycle_state_details: The lifecycle_state_details of this TransferApplianceEntitlement.
+        :type: str
+        """
+        self._lifecycle_state_details = lifecycle_state_details
 
     @property
     def creation_time(self):
@@ -222,6 +309,58 @@ class TransferApplianceEntitlement(object):
         :type: datetime
         """
         self._update_time = update_time
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this TransferApplianceEntitlement.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :return: The freeform_tags of this TransferApplianceEntitlement.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this TransferApplianceEntitlement.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :param freeform_tags: The freeform_tags of this TransferApplianceEntitlement.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this TransferApplianceEntitlement.
+        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+
+
+        :return: The defined_tags of this TransferApplianceEntitlement.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this TransferApplianceEntitlement.
+        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+
+
+        :param defined_tags: The defined_tags of this TransferApplianceEntitlement.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

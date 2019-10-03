@@ -269,6 +269,7 @@ def test_update_topic(testing_service_client):
             client = oci.ons.NotificationControlPlaneClient(config, service_endpoint=service_endpoint)
             response = client.update_topic(
                 topic_id=request.pop(util.camelize('topic_id')),
+                topic_attributes_details=request.pop(util.camelize('topic_attributes_details')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

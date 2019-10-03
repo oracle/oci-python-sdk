@@ -28,7 +28,7 @@ def vcr_fixture(request):
         yield
 
 
-# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="DTS" opsJiraProject="NONE"
+# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="BDTS" opsJiraProject="DTS"
 def test_change_transfer_job_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('dts', 'ChangeTransferJobCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -69,7 +69,7 @@ def test_change_transfer_job_compartment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="DTS" opsJiraProject="NONE"
+# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="BDTS" opsJiraProject="DTS"
 def test_create_transfer_job(testing_service_client):
     if not testing_service_client.is_api_enabled('dts', 'CreateTransferJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -109,7 +109,7 @@ def test_create_transfer_job(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="DTS" opsJiraProject="NONE"
+# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="BDTS" opsJiraProject="DTS"
 def test_delete_transfer_job(testing_service_client):
     if not testing_service_client.is_api_enabled('dts', 'DeleteTransferJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -149,7 +149,7 @@ def test_delete_transfer_job(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="DTS" opsJiraProject="NONE"
+# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="BDTS" opsJiraProject="DTS"
 def test_get_transfer_job(testing_service_client):
     if not testing_service_client.is_api_enabled('dts', 'GetTransferJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -189,7 +189,7 @@ def test_get_transfer_job(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="DTS" opsJiraProject="NONE"
+# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="BDTS" opsJiraProject="DTS"
 def test_list_transfer_jobs(testing_service_client):
     if not testing_service_client.is_api_enabled('dts', 'ListTransferJobs'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -229,7 +229,7 @@ def test_list_transfer_jobs(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="DTS" opsJiraProject="NONE"
+# IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="BDTS" opsJiraProject="DTS"
 def test_update_transfer_job(testing_service_client):
     if not testing_service_client.is_api_enabled('dts', 'UpdateTransferJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

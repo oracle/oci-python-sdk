@@ -18,7 +18,7 @@
     <enabled-groups-dir>${sdk-root-dir}/codegenConfig/enabledGroups</enabled-groups-dir>
     <feature-id-file>${sdk-root-dir}/featureId.yaml</feature-id-file>
     <feature-id-dir>${sdk-root-dir}/codegenConfig/featureIds</feature-id-dir>
-    <hemlock-spec-spec-file>hemlock-api-20160918.yaml</hemlock-spec-spec-file>
+    <hemlock-spec-spec-file>source/hemlock-api-20190901.cond.yaml</hemlock-spec-spec-file>
   </properties>
   <dependencies>
     <dependency>
@@ -141,7 +141,7 @@
       <dependency>
         <groupId>com.oracle.pic.sherlock</groupId>
         <artifactId>hemlock-spec</artifactId>
-        <version>0.1.9</version>
+        <version>0.8.2</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
