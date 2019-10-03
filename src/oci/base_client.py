@@ -7,6 +7,7 @@ import logging
 import platform
 import pytz
 import random
+import os
 import re
 import string
 import uuid
@@ -197,6 +198,11 @@ class BaseClient(object):
 
         if header_params.get(constants.HEADER_REQUEST_ID, missing) is missing:
             header_params[constants.HEADER_REQUEST_ID] = self.build_request_id()
+
+        # This allows for testing with "fake" database resources.
+        opc_host_serial = os.environ.get('OCI_DB_OPC_HOST_SERIAL')
+        if opc_host_serial:
+            header_params['opc-host-serial'] = opc_host_serial
 
         if path_params:
             path_params = self.sanitize_for_serialization(path_params)
