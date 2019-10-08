@@ -21,6 +21,7 @@ from .transfer_appliance import TransferAppliance
 from .transfer_appliance_certificate import TransferApplianceCertificate
 from .transfer_appliance_encryption_passphrase import TransferApplianceEncryptionPassphrase
 from .transfer_appliance_entitlement import TransferApplianceEntitlement
+from .transfer_appliance_entitlement_summary import TransferApplianceEntitlementSummary
 from .transfer_appliance_public_key import TransferAppliancePublicKey
 from .transfer_appliance_summary import TransferApplianceSummary
 from .transfer_device import TransferDevice
@@ -54,6 +55,7 @@ dts_type_mapping = {
     "TransferApplianceCertificate": TransferApplianceCertificate,
     "TransferApplianceEncryptionPassphrase": TransferApplianceEncryptionPassphrase,
     "TransferApplianceEntitlement": TransferApplianceEntitlement,
+    "TransferApplianceEntitlementSummary": TransferApplianceEntitlementSummary,
     "TransferAppliancePublicKey": TransferAppliancePublicKey,
     "TransferApplianceSummary": TransferApplianceSummary,
     "TransferDevice": TransferDevice,

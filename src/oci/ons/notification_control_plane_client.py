@@ -573,7 +573,7 @@ class NotificationControlPlaneClient(object):
                 header_params=header_params,
                 response_type="list[NotificationTopicSummary]")
 
-    def update_topic(self, topic_id, **kwargs):
+    def update_topic(self, topic_id, topic_attributes_details, **kwargs):
         """
         Updates the specified topic's configuration.
 
@@ -585,7 +585,7 @@ class NotificationControlPlaneClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
-        :param TopicAttributesDetails topic_attributes_details: (optional)
+        :param TopicAttributesDetails topic_attributes_details: (required)
             TopicAttributes
 
         :param str opc_request_id: (optional)
@@ -614,7 +614,6 @@ class NotificationControlPlaneClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "topic_attributes_details",
             "opc_request_id",
             "if_match"
         ]
@@ -652,7 +651,7 @@ class NotificationControlPlaneClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=kwargs.get('topic_attributes_details'),
+                body=topic_attributes_details,
                 response_type="NotificationTopic")
         else:
             return self.base_client.call_api(
@@ -660,5 +659,5 @@ class NotificationControlPlaneClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=kwargs.get('topic_attributes_details'),
+                body=topic_attributes_details,
                 response_type="NotificationTopic")

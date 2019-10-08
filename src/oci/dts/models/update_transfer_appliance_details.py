@@ -17,6 +17,10 @@ class UpdateTransferApplianceDetails(object):
     LIFECYCLE_STATE_PREPARING = "PREPARING"
 
     #: A constant which can be used with the lifecycle_state property of a UpdateTransferApplianceDetails.
+    #: This constant has a value of "FINALIZED"
+    LIFECYCLE_STATE_FINALIZED = "FINALIZED"
+
+    #: A constant which can be used with the lifecycle_state property of a UpdateTransferApplianceDetails.
     #: This constant has a value of "DELETED"
     LIFECYCLE_STATE_DELETED = "DELETED"
 
@@ -35,7 +39,7 @@ class UpdateTransferApplianceDetails(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this UpdateTransferApplianceDetails.
-            Allowed values for this property are: "PREPARING", "DELETED", "CUSTOMER_NEVER_RECEIVED", "CANCELLED"
+            Allowed values for this property are: "PREPARING", "FINALIZED", "DELETED", "CUSTOMER_NEVER_RECEIVED", "CANCELLED"
         :type lifecycle_state: str
 
         :param customer_shipping_address:
@@ -60,7 +64,7 @@ class UpdateTransferApplianceDetails(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this UpdateTransferApplianceDetails.
-        Allowed values for this property are: "PREPARING", "DELETED", "CUSTOMER_NEVER_RECEIVED", "CANCELLED"
+        Allowed values for this property are: "PREPARING", "FINALIZED", "DELETED", "CUSTOMER_NEVER_RECEIVED", "CANCELLED"
 
 
         :return: The lifecycle_state of this UpdateTransferApplianceDetails.
@@ -76,7 +80,7 @@ class UpdateTransferApplianceDetails(object):
         :param lifecycle_state: The lifecycle_state of this UpdateTransferApplianceDetails.
         :type: str
         """
-        allowed_values = ["PREPARING", "DELETED", "CUSTOMER_NEVER_RECEIVED", "CANCELLED"]
+        allowed_values = ["PREPARING", "FINALIZED", "DELETED", "CUSTOMER_NEVER_RECEIVED", "CANCELLED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             raise ValueError(
                 "Invalid value for `lifecycle_state`, must be None or one of {0}"

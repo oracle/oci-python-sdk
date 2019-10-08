@@ -111,6 +111,7 @@ from .create_virtual_circuit_public_prefix_details import CreateVirtualCircuitPu
 from .create_vnic_details import CreateVnicDetails
 from .create_volume_backup_details import CreateVolumeBackupDetails
 from .create_volume_backup_policy_assignment_details import CreateVolumeBackupPolicyAssignmentDetails
+from .create_volume_backup_policy_details import CreateVolumeBackupPolicyDetails
 from .create_volume_details import CreateVolumeDetails
 from .create_volume_group_backup_details import CreateVolumeGroupBackupDetails
 from .create_volume_group_details import CreateVolumeGroupDetails
@@ -258,6 +259,7 @@ from .update_vcn_details import UpdateVcnDetails
 from .update_virtual_circuit_details import UpdateVirtualCircuitDetails
 from .update_vnic_details import UpdateVnicDetails
 from .update_volume_backup_details import UpdateVolumeBackupDetails
+from .update_volume_backup_policy_details import UpdateVolumeBackupPolicyDetails
 from .update_volume_details import UpdateVolumeDetails
 from .update_volume_group_backup_details import UpdateVolumeGroupBackupDetails
 from .update_volume_group_details import UpdateVolumeGroupDetails
@@ -396,6 +398,7 @@ core_type_mapping = {
     "CreateVnicDetails": CreateVnicDetails,
     "CreateVolumeBackupDetails": CreateVolumeBackupDetails,
     "CreateVolumeBackupPolicyAssignmentDetails": CreateVolumeBackupPolicyAssignmentDetails,
+    "CreateVolumeBackupPolicyDetails": CreateVolumeBackupPolicyDetails,
     "CreateVolumeDetails": CreateVolumeDetails,
     "CreateVolumeGroupBackupDetails": CreateVolumeGroupBackupDetails,
     "CreateVolumeGroupDetails": CreateVolumeGroupDetails,
@@ -543,6 +546,7 @@ core_type_mapping = {
     "UpdateVirtualCircuitDetails": UpdateVirtualCircuitDetails,
     "UpdateVnicDetails": UpdateVnicDetails,
     "UpdateVolumeBackupDetails": UpdateVolumeBackupDetails,
+    "UpdateVolumeBackupPolicyDetails": UpdateVolumeBackupPolicyDetails,
     "UpdateVolumeDetails": UpdateVolumeDetails,
     "UpdateVolumeGroupBackupDetails": UpdateVolumeGroupBackupDetails,
     "UpdateVolumeGroupDetails": UpdateVolumeGroupDetails,

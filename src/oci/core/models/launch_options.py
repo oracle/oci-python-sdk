@@ -138,7 +138,7 @@ class LaunchOptions(object):
     @property
     def boot_volume_type(self):
         """
-        **[Required]** Gets the boot_volume_type of this LaunchOptions.
+        Gets the boot_volume_type of this LaunchOptions.
         Emulation type for volume.
         * `ISCSI` - ISCSI attached block storage device. This is the default for Boot Volumes and Remote Block
         Storage volumes on Oracle provided images.
@@ -182,7 +182,7 @@ class LaunchOptions(object):
     @property
     def firmware(self):
         """
-        **[Required]** Gets the firmware of this LaunchOptions.
+        Gets the firmware of this LaunchOptions.
         Firmware used to boot VM.  Select the option that matches your operating system.
         * `BIOS` - Boot VM using BIOS style firmware.  This is compatible with both 32 bit and 64 bit operating
         systems that boot using MBR style bootloaders.
@@ -220,7 +220,7 @@ class LaunchOptions(object):
     @property
     def network_type(self):
         """
-        **[Required]** Gets the network_type of this LaunchOptions.
+        Gets the network_type of this LaunchOptions.
         Emulation type for the physical network interface card (NIC).
         * `E1000` - Emulated Gigabit ethernet controller.  Compatible with Linux e1000 network driver.
         * `VFIO` - Direct attached Virtual Function network controller. This is the networking type
@@ -258,7 +258,7 @@ class LaunchOptions(object):
     @property
     def remote_data_volume_type(self):
         """
-        **[Required]** Gets the remote_data_volume_type of this LaunchOptions.
+        Gets the remote_data_volume_type of this LaunchOptions.
         Emulation type for volume.
         * `ISCSI` - ISCSI attached block storage device. This is the default for Boot Volumes and Remote Block
         Storage volumes on Oracle provided images.
