@@ -171,7 +171,7 @@ class TransferJob(object):
     @property
     def compartment_id(self):
         """
-        **[Required]** Gets the compartment_id of this TransferJob.
+        Gets the compartment_id of this TransferJob.
 
         :return: The compartment_id of this TransferJob.
         :rtype: str
@@ -191,7 +191,7 @@ class TransferJob(object):
     @property
     def upload_bucket_name(self):
         """
-        **[Required]** Gets the upload_bucket_name of this TransferJob.
+        Gets the upload_bucket_name of this TransferJob.
 
         :return: The upload_bucket_name of this TransferJob.
         :rtype: str
@@ -211,7 +211,7 @@ class TransferJob(object):
     @property
     def display_name(self):
         """
-        **[Required]** Gets the display_name of this TransferJob.
+        Gets the display_name of this TransferJob.
 
         :return: The display_name of this TransferJob.
         :rtype: str
@@ -271,7 +271,7 @@ class TransferJob(object):
     @property
     def device_type(self):
         """
-        **[Required]** Gets the device_type of this TransferJob.
+        Gets the device_type of this TransferJob.
         Allowed values for this property are: "DISK", "APPLIANCE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 

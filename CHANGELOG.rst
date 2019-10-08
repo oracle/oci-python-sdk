@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.6.0 - 2019-10-08
+====================
+
+Added
+-----
+* Support for the new schema for events in the Audit service
+* Support for entitlements in the Data Transfer service
+* Support for custom scheduled backup policies on volumes in the Block Storage service
+* Support for specifying the network type when launching virtual machine instances in the Compute service
+* Support for Monitoring service integration in the Health Checks service
+
+Breaking
+--------
+* The tenant_id parameter is now id (Id of the Transfer Application Entitlement) for get_transfer_appliance_entitlement in TransferApplianceEntitlementClient
+* The topic_attributes_details parameter is now required for update_topic in NotificationControlPlaneClient
+* The Audit service version was bumped to 20190901, use older version of Python SDK for Audit service version 20160918
+
+====================
 2.5.2 - 2019-10-01
 ====================
 

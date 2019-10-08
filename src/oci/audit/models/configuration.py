@@ -9,7 +9,10 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Configuration(object):
     """
-    Configuration model.
+    The retention period setting, specified in days. For more information, see `Setting Audit
+    Log Retention Period`__.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/Audit/Tasks/settingretentionperiod.htm
     """
 
     def __init__(self, **kwargs):
@@ -36,7 +39,9 @@ class Configuration(object):
     def retention_period_days(self):
         """
         Gets the retention_period_days of this Configuration.
-        The retention period days
+        The retention period setting, specified in days. The minimum is 90, the maximum 365.
+
+        Example: `90`
 
 
         :return: The retention_period_days of this Configuration.
@@ -48,7 +53,9 @@ class Configuration(object):
     def retention_period_days(self, retention_period_days):
         """
         Sets the retention_period_days of this Configuration.
-        The retention period days
+        The retention period setting, specified in days. The minimum is 90, the maximum 365.
+
+        Example: `90`
 
 
         :param retention_period_days: The retention_period_days of this Configuration.

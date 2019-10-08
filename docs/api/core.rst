@@ -132,6 +132,7 @@ Core Services
     oci.core.models.CreateVnicDetails
     oci.core.models.CreateVolumeBackupDetails
     oci.core.models.CreateVolumeBackupPolicyAssignmentDetails
+    oci.core.models.CreateVolumeBackupPolicyDetails
     oci.core.models.CreateVolumeDetails
     oci.core.models.CreateVolumeGroupBackupDetails
     oci.core.models.CreateVolumeGroupDetails
@@ -279,6 +280,7 @@ Core Services
     oci.core.models.UpdateVirtualCircuitDetails
     oci.core.models.UpdateVnicDetails
     oci.core.models.UpdateVolumeBackupDetails
+    oci.core.models.UpdateVolumeBackupPolicyDetails
     oci.core.models.UpdateVolumeDetails
     oci.core.models.UpdateVolumeGroupBackupDetails
     oci.core.models.UpdateVolumeGroupDetails

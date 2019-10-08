@@ -20,4 +20,9 @@ Audit
 
     oci.audit.models.AuditEvent
     oci.audit.models.Configuration
+    oci.audit.models.Data
+    oci.audit.models.Identity
+    oci.audit.models.Request
+    oci.audit.models.Response
+    oci.audit.models.StateChange
     oci.audit.models.UpdateConfigurationDetails

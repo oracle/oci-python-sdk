@@ -66,6 +66,10 @@ class LaunchInstanceDetails(object):
             The value to assign to the ipxe_script property of this LaunchInstanceDetails.
         :type ipxe_script: str
 
+        :param launch_options:
+            The value to assign to the launch_options property of this LaunchInstanceDetails.
+        :type launch_options: LaunchOptions
+
         :param metadata:
             The value to assign to the metadata property of this LaunchInstanceDetails.
         :type metadata: dict(str, str)
@@ -104,6 +108,7 @@ class LaunchInstanceDetails(object):
             'hostname_label': 'str',
             'image_id': 'str',
             'ipxe_script': 'str',
+            'launch_options': 'LaunchOptions',
             'metadata': 'dict(str, str)',
             'agent_config': 'LaunchInstanceAgentConfigDetails',
             'shape': 'str',
@@ -125,6 +130,7 @@ class LaunchInstanceDetails(object):
             'hostname_label': 'hostnameLabel',
             'image_id': 'imageId',
             'ipxe_script': 'ipxeScript',
+            'launch_options': 'launchOptions',
             'metadata': 'metadata',
             'agent_config': 'agentConfig',
             'shape': 'shape',
@@ -145,6 +151,7 @@ class LaunchInstanceDetails(object):
         self._hostname_label = None
         self._image_id = None
         self._ipxe_script = None
+        self._launch_options = None
         self._metadata = None
         self._agent_config = None
         self._shape = None
@@ -557,6 +564,26 @@ class LaunchInstanceDetails(object):
         :type: str
         """
         self._ipxe_script = ipxe_script
+
+    @property
+    def launch_options(self):
+        """
+        Gets the launch_options of this LaunchInstanceDetails.
+
+        :return: The launch_options of this LaunchInstanceDetails.
+        :rtype: LaunchOptions
+        """
+        return self._launch_options
+
+    @launch_options.setter
+    def launch_options(self, launch_options):
+        """
+        Sets the launch_options of this LaunchInstanceDetails.
+
+        :param launch_options: The launch_options of this LaunchInstanceDetails.
+        :type: LaunchOptions
+        """
+        self._launch_options = launch_options
 
     @property
     def metadata(self):

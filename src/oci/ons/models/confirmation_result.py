@@ -200,7 +200,7 @@ class ConfirmationResult(object):
     @property
     def subscription_id(self):
         """
-        Gets the subscription_id of this ConfirmationResult.
+        **[Required]** Gets the subscription_id of this ConfirmationResult.
         The `OCID`__ of the subscription specified in the request.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm

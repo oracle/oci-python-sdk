@@ -363,6 +363,13 @@ class NotificationDataPlaneClient(object):
         :param str protocol: (required)
             The protocol used for the subscription.
 
+            Allowed values:
+              * `CUSTOM_HTTPS`
+              * `EMAIL`
+              * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+              * `PAGERDUTY`
+              * `SLACK`
+
             For information about subscription protocols, see
             `To create a subscription`__.
 
@@ -535,6 +542,13 @@ class NotificationDataPlaneClient(object):
 
         :param str protocol: (required)
             The protocol used for the subscription.
+
+            Allowed values:
+              * `CUSTOM_HTTPS`
+              * `EMAIL`
+              * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+              * `PAGERDUTY`
+              * `SLACK`
 
             For information about subscription protocols, see
             `To create a subscription`__.

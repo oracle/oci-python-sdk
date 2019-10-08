@@ -1031,7 +1031,7 @@ class HealthChecksClient(object):
         :param str sort_by: (optional)
             The field to sort by when listing monitors.
 
-            Allowed values are: "id", "displayName"
+            Allowed values are: "id", "displayName", "timeCreated"
 
         :param str sort_order: (optional)
             Controls the sort order of results.
@@ -1040,6 +1040,9 @@ class HealthChecksClient(object):
 
         :param str display_name: (optional)
             Filters results that exactly match the `displayName` field.
+
+        :param str home_region: (optional)
+            Filters results that match the `homeRegion`.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1063,7 +1066,8 @@ class HealthChecksClient(object):
             "page",
             "sort_by",
             "sort_order",
-            "display_name"
+            "display_name",
+            "home_region"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1071,7 +1075,7 @@ class HealthChecksClient(object):
                 "list_http_monitors got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["id", "displayName"]
+            sort_by_allowed_values = ["id", "displayName", "timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -1090,7 +1094,8 @@ class HealthChecksClient(object):
             "compartmentId": compartment_id,
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
-            "displayName": kwargs.get("display_name", missing)
+            "displayName": kwargs.get("display_name", missing),
+            "homeRegion": kwargs.get("home_region", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -1269,7 +1274,7 @@ class HealthChecksClient(object):
         :param str sort_by: (optional)
             The field to sort by when listing monitors.
 
-            Allowed values are: "id", "displayName"
+            Allowed values are: "id", "displayName", "timeCreated"
 
         :param str sort_order: (optional)
             Controls the sort order of results.
@@ -1278,6 +1283,9 @@ class HealthChecksClient(object):
 
         :param str display_name: (optional)
             Filters results that exactly match the `displayName` field.
+
+        :param str home_region: (optional)
+            Filters results that match the `homeRegion`.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1301,7 +1309,8 @@ class HealthChecksClient(object):
             "page",
             "sort_by",
             "sort_order",
-            "display_name"
+            "display_name",
+            "home_region"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1309,7 +1318,7 @@ class HealthChecksClient(object):
                 "list_ping_monitors got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["id", "displayName"]
+            sort_by_allowed_values = ["id", "displayName", "timeCreated"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -1328,7 +1337,8 @@ class HealthChecksClient(object):
             "compartmentId": compartment_id,
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
-            "displayName": kwargs.get("display_name", missing)
+            "displayName": kwargs.get("display_name", missing),
+            "homeRegion": kwargs.get("home_region", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

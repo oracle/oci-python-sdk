@@ -46,6 +46,7 @@ Dts
     oci.dts.models.TransferApplianceCertificate
     oci.dts.models.TransferApplianceEncryptionPassphrase
     oci.dts.models.TransferApplianceEntitlement
+    oci.dts.models.TransferApplianceEntitlementSummary
     oci.dts.models.TransferAppliancePublicKey
     oci.dts.models.TransferApplianceSummary
     oci.dts.models.TransferDevice
