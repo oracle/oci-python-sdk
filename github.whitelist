@@ -67,3 +67,4 @@
 ^src/oci/events/.*\.py$
 ^src/oci/dts/.*\.py$
 ^src/oci/oce/.*\.py$
+^src/oci/oda/.*\.py$
