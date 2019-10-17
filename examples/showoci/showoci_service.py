@@ -4451,7 +4451,7 @@ class ShowOCIService(object):
                            'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
                            'region_name': str(self.config['region']), 'public_access_type': "", 'storage_tier': "",
                            'approximate_count': "", 'approximate_size': "", 'object_lifecycle': "",
-                           'preauthenticated_requests': "", 'size_gb': ""}
+                           'preauthenticated_requests': "", 'size_gb': "", 'namespace_name': namespace_name}
 
                     ###############################
                     # get more info

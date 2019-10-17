@@ -1962,7 +1962,12 @@ class ShowOCIData(object):
                          'size': bucket['approximate_size'], 'sum_size_gb': bucket['size_gb'],
                          'sum_info': 'Object Storage - Buckets (GB)',
                          'preauthenticated_requests': bucket['preauthenticated_requests'],
-                         'object_lifecycle': bucket['object_lifecycle']}
+                         'object_lifecycle': bucket['object_lifecycle'],
+                         'compartment_id': bucket['compartment_id'],
+                         'compartment_name': bucket['compartment_name'],
+                         'region_name': bucket['region_name'],
+                         'namespace_name': bucket['namespace_name']
+                         }
 
                 value['desc'] = (
                     bucket['name'].ljust(24) + " - " +

@@ -732,7 +732,11 @@ class ShowOCI2SE(object):
                     'objects': bucket['objects'],
                     'size': bucket['sum_size_gb'],
                     'preauthenticated_requests': bucket['preauthenticated_requests'],
-                    'object_lifecycle': bucket['object_lifecycle']
+                    'object_lifecycle': bucket['object_lifecycle'],
+                    'compartment_id': bucket['compartment_id'],
+                    'compartment_name': bucket['compartment_name'],
+                    'region_name': bucket['region_name'],
+                    'namespace_name': bucket['namespace_name'],
                 }
                 self.outdata.append(data)
 
