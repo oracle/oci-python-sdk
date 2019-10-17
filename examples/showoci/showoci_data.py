@@ -1055,9 +1055,9 @@ class ShowOCIData(object):
                     volume_group = " - Group " + bv['volume_group_name']
 
                 value = {
-                    'sum_info': 'Compute - Block Storage (gb)',
+                    'sum_info': 'Compute - Block Storage (GB)',
                     'sum_size_gb': bv['size_in_gbs'],
-                    'desc': (str(bv['size_in_gbs']) + "gb - " + str(bv['display_name']) + " " + bv['backup_policy'] + volume_group + comp_text),
+                    'desc': (str(bv['size_in_gbs']) + "GB - " + str(bv['display_name']) + " " + bv['backup_policy'] + volume_group + comp_text),
                     'backup_policy': "None" if bv['backup_policy'] == "" else bv['backup_policy'],
                     'time_created': bv['time_created'],
                     'display_name': bv['display_name'],
@@ -1091,9 +1091,9 @@ class ShowOCIData(object):
                     volume_group = " - Group " + bv['volume_group_name']
 
                 value = {
-                    'sum_info': 'Compute - Block Storage (gb)',
+                    'sum_info': 'Compute - Block Storage (GB)',
                     'sum_size_gb': bv['size_in_gbs'],
-                    'desc': (str(bv['size_in_gbs']) + "gb - " + str(bv['display_name']) + bv['backup_policy'] + volume_group + comp_text),
+                    'desc': (str(bv['size_in_gbs']) + "GB - " + str(bv['display_name']) + bv['backup_policy'] + volume_group + comp_text),
                     'time_created': bv['time_created'],
                     'backup_policy': "None" if bv['backup_policy'] == "" else bv['backup_policy'],
                     'display_name': bv['display_name'],
@@ -1125,8 +1125,8 @@ class ShowOCIData(object):
 
                 value['desc'] = backup['display_name']
                 value['type'] = backup['type'][0:4] + ", " + backup['source_type'][0:6] + ", " + backup['time_created'][0:16] + " -> " + backup['expiration_time'][0:16]
-                value['size'] = (str(backup['size_in_gbs']).rjust(3) + "gb " + ", Stored " + str(backup['unique_size_in_gbs']).rjust(3) + "gb")
-                value['sum_info'] = 'Object Storage - BV Backups (gb)'
+                value['size'] = (str(backup['size_in_gbs']).rjust(3) + "GB " + ", Stored " + str(backup['unique_size_in_gbs']).rjust(3) + "GB")
+                value['sum_info'] = 'Object Storage - BV Backups (GB)'
                 value['sum_size_gb'] = (str(backup['unique_size_in_gbs']))
                 value[volume_name] = str(backup[volume_name])
                 value['id'] = str(backup[volume_name])
@@ -1170,9 +1170,9 @@ class ShowOCIData(object):
                         volume_group = " - Group " + vol['volume_group_name']
 
                     value = {
-                        'sum_info': 'Compute - Block Storage (gb)',
+                        'sum_info': 'Compute - Block Storage (GB)',
                         'sum_size_gb': vol['size_in_gbs'],
-                        'desc': ((str(vol['size_in_gbs']) + "gb").ljust(7) + " - " + str(vol['display_name']).ljust(20)[0:19] + " - " + vol['availability_domain'] + " - " + vol['time_created'][0:16] + volume_group)
+                        'desc': ((str(vol['size_in_gbs']) + "GB").ljust(7) + " - " + str(vol['display_name']).ljust(20)[0:19] + " - " + vol['availability_domain'] + " - " + vol['time_created'][0:16] + volume_group)
                     }
 
                     data.append(value)
@@ -1211,9 +1211,9 @@ class ShowOCIData(object):
                         volume_group = " - Group " + vol['volume_group_name']
 
                     value = {
-                        'sum_info': 'Compute - Block Storage (gb)',
+                        'sum_info': 'Compute - Block Storage (GB)',
                         'sum_size_gb': vol['size_in_gbs'],
-                        'desc': ((str(vol['size_in_gbs']) + "gb").ljust(7) + " - " + str(vol['display_name']).ljust(26)[0:25] + " - " + vol['availability_domain'] + " - " + vol['time_created'][0:16] + volume_group)
+                        'desc': ((str(vol['size_in_gbs']) + "GB").ljust(7) + " - " + str(vol['display_name']).ljust(26)[0:25] + " - " + vol['availability_domain'] + " - " + vol['time_created'][0:16] + volume_group)
                     }
 
                     data.append(value)
@@ -1244,13 +1244,13 @@ class ShowOCIData(object):
                 for vol_id in vplgrp['volume_ids']:
                     vol = self.service.search_unique_item(self.service.C_BLOCK, self.service.C_BLOCK_VOL, 'id', vol_id)
                     if vol:
-                        value['volumes'].append(vol['display_name'] + " - " + vol['size_in_gbs'] + "gb")
+                        value['volumes'].append(vol['display_name'] + " - " + vol['size_in_gbs'] + "GB")
 
                 # check boot vol
                 for vol_id in vplgrp['volume_ids']:
                     vol = self.service.search_unique_item(self.service.C_BLOCK, self.service.C_BLOCK_BOOT, 'id', vol_id)
                     if vol:
-                        value['volumes'].append(vol['display_name'] + " - " + vol['size_in_gbs'] + "gb")
+                        value['volumes'].append(vol['display_name'] + " - " + vol['size_in_gbs'] + "GB")
 
                 data.append(value)
 
@@ -1356,8 +1356,8 @@ class ShowOCIData(object):
             for image in images:
                 value = {'id': image['id'],
                          'desc': image['display_name'].ljust(24) + " - " + image['operating_system'] + " - " + image[
-                             'size_in_gbs'].rjust(3) + "gb - Base:  " + image['base_image_name'],
-                         'sum_info': 'Object Storage - Images (gb)', 'sum_size_gb': image['size_in_gbs'],
+                             'size_in_gbs'].rjust(3) + "GB - Base:  " + image['base_image_name'],
+                         'sum_info': 'Object Storage - Images (GB)', 'sum_size_gb': image['size_in_gbs'],
                          'time_created': image['time_created'],
                          'defined_tags': image['defined_tags'], 'freeform_tags': image['freeform_tags']}
                 data.append(value)
@@ -1618,14 +1618,14 @@ class ShowOCIData(object):
                 bsize = "None"
                 ssize = ""
                 if backup['database_size_in_gbs']:
-                    bsize = "{0:.1f}".format(round(float(backup['database_size_in_gbs']), 1)) + "gb"
+                    bsize = "{0:.1f}".format(round(float(backup['database_size_in_gbs']), 1)) + "GB"
                     ssize = "{0:.1f}".format(round(float(backup['database_size_in_gbs']), 1))
 
                 data.append(
                     {'name': str(backup['display_name']) + " - " + str(backup['type']) + " - " + str(backup['lifecycle_state']),
                      'time': str(backup['time_started'])[0:16] + " - " + str(backup['time_ended'])[0:16],
                      'size': bsize,
-                     'sum_info': 'Object Storage - DB Backup (gb)',
+                     'sum_info': 'Object Storage - DB Backup (GB)',
                      'sum_size_gb': ssize
                      })
             return data
@@ -1714,7 +1714,7 @@ class ShowOCIData(object):
                          'shape_storage_tb': dbs['shape_storage_tb'],
                          'display_name': dbs['display_name'],
                          'lifecycle_state': dbs['lifecycle_state'],
-                         'sum_info': 'Database ' + dbs['database_edition_short'] + " - " + dbs['shape'] + " - " + dbs['license_model'], 'sum_info_storage': 'Database - Storage (gb)',
+                         'sum_info': 'Database ' + dbs['database_edition_short'] + " - " + dbs['shape'] + " - " + dbs['license_model'], 'sum_info_storage': 'Database - Storage (GB)',
                          'sum_size_gb': dbs['data_storage_size_in_gbs'],
                          'database_edition': dbs['database_edition'],
                          'database_edition_short': dbs['database_edition_short'],
@@ -1732,6 +1732,10 @@ class ShowOCIData(object):
                          'backup_subnet_id': dbs['backup_subnet_id'],
                          'scan_dns': dbs['scan_dns_record_id'],
                          'scan_ips': dbs['scan_ips'],
+                         'data_storage_size_in_gbs': dbs['data_storage_size_in_gbs'],
+                         'reco_storage_size_in_gb': dbs['reco_storage_size_in_gb'],
+                         'sparse_diskgroup': dbs['sparse_diskgroup'],
+                         'storage_management': dbs['storage_management'],
                          'vip_ips': dbs['vip_ips'],
                          'compartment_name': dbs['compartment_name'],
                          'patches': self.__get_database_db_patches(dbs['patches']),
@@ -1744,9 +1748,9 @@ class ShowOCIData(object):
                          'freeform_tags': dbs['freeform_tags']}
 
                 if dbs['data_storage_size_in_gbs']:
-                    value['data'] = str(dbs['data_storage_size_in_gbs']) + "gb - " + str(dbs['data_storage_percentage']) + "%"
+                    value['data'] = str(dbs['data_storage_size_in_gbs']) + "GB - " + str(dbs['data_storage_percentage']) + "%" + (" - " + dbs['storage_management'] if dbs['storage_management'] else "")
                 else:
-                    value['data'] = str(dbs['data_storage_percentage']) + "%"
+                    value['data'] = str(dbs['data_storage_percentage']) + "%" + (" - " + dbs['storage_management'] if dbs['storage_management'] else "")
 
                 data.append(value)
             return data
@@ -1797,7 +1801,7 @@ class ShowOCIData(object):
                          'connection_strings': str(dbs['connection_strings']),
                          'sum_info': "Autonomous Database " + str(dbs['db_workload']) + " (OCPUs) - " + dbs['license_model'],
                          'sum_count': str(dbs['sum_count']),
-                         'sum_info_storage': "Autonomous Database (tb)",
+                         'sum_info_storage': "Autonomous Database (TB)",
                          'sum_size_tb': str(dbs['data_storage_size_in_tbs']), 'backups': self.__get_database_autonomous_backups(dbs['backups']),
                          'whitelisted_ips': dbs['whitelisted_ips'],
                          'is_auto_scaling_enabled': dbs['is_auto_scaling_enabled'],
@@ -1876,7 +1880,7 @@ class ShowOCIData(object):
             if int(max_fs_stat_bytes).bit_length() >= 63:
                 bytes_details = "Size (Unlimited)"
             else:
-                bytes_details = "Size (" + str(round(int(max_fs_stat_bytes) / 1024 / 1024 / 1024)) + "gb)"
+                bytes_details = "Size (" + str(round(int(max_fs_stat_bytes) / 1024 / 1024 / 1024)) + "GB)"
 
             return bytes_details + ", " + file_details
         except Exception as e:
@@ -1927,7 +1931,7 @@ class ShowOCIData(object):
             for fs in file_systems:
                 dataval = {'id': fs['id'],
                            'filesystem': fs['display_name'] + " - " + fs['availability_domain'] + " - " + fs[
-                               'size_gb'] + "gb metered", 'sum_info': 'File Storage (gb)', 'sum_size_gb': fs['size_gb'],
+                               'size_gb'] + "GB metered", 'sum_info': 'File Storage (GB)', 'sum_size_gb': fs['size_gb'],
                            'snapshots': [e['name'] + " - " + e['time_created'][0:16] for e in fs['snapshots']],
                            'exports': self.__get_file_storage_exports(fs['id'])}
                 data.append(dataval)
@@ -1956,14 +1960,14 @@ class ShowOCIData(object):
             for bucket in buckets:
                 value = {'name': bucket['name'], 'objects': bucket['approximate_count'],
                          'size': bucket['approximate_size'], 'sum_size_gb': bucket['size_gb'],
-                         'sum_info': 'Object Storage - Buckets (gb)',
+                         'sum_info': 'Object Storage - Buckets (GB)',
                          'preauthenticated_requests': bucket['preauthenticated_requests'],
                          'object_lifecycle': bucket['object_lifecycle']}
 
                 value['desc'] = (
                     bucket['name'].ljust(24) + " - " +
                     value['objects'] + " Objs , " +
-                    value['size'] + "gb (Approx)" +
+                    value['size'] + "GB (Approx)" +
                     value['object_lifecycle'] +
                     value['preauthenticated_requests']
                 )

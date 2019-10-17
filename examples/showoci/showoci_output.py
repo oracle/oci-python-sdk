@@ -1214,7 +1214,7 @@ class ShowOCIOutput(object):
                     print(self.taba + instance['name'])
 
                 if instance['shape_ocpu'] > 0:
-                    print(self.tabs2 + "Shape: Ocpus: " + str(instance['shape_ocpu']) + ", Memory: " + str(instance['shape_memory_gb']) + "gb, Local Storage: " + str(instance['shape_storage_tb']) + "tb")
+                    print(self.tabs2 + "Shape: Ocpus: " + str(instance['shape_ocpu']) + ", Memory: " + str(instance['shape_memory_gb']) + "GB, Local Storage: " + str(instance['shape_storage_tb']) + "TB")
 
                 if 'availability_domain' in instance and 'fault_domain' in instance:
                     print(self.tabs2 + "AD   : " + instance['availability_domain'] + " - " + instance['fault_domain'])
@@ -1375,7 +1375,7 @@ class ShowOCIOutput(object):
 
             self.print_header("Block Volume Groups", 2)
             for volgrp in volgroups:
-                print(self.taba + volgrp['name'] + " - " + volgrp['size_in_gbs'] + "gb")
+                print(self.taba + volgrp['name'] + " - " + volgrp['size_in_gbs'] + "GB")
                 for vol in volgrp['volumes']:
                     print(self.tabs + self.tabs + " Vol : " + vol)
 

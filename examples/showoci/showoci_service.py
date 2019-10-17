@@ -104,7 +104,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.3.1"
+    oci_compatible_version = "2.5.2"
 
     ##########################################################################
     # Global Constants
@@ -615,7 +615,7 @@ class ShowOCIService(object):
     ##########################################################################
     def __load_print_cnt(self, cnt, start_time):
         et = time.time() - start_time
-        print("(" + str(cnt) + ") - "'{:02d}:{:02d}:{:02d}'.format(round(et // 3600), (round(et % 3600 // 60)), round(et % 60)))
+        print(" (" + str(cnt) + ") - "'{:02d}:{:02d}:{:02d}'.format(round(et // 3600), (round(et % 3600 // 60)), round(et % 60)))
 
     ##########################################################################
     # print auth warning
@@ -5173,6 +5173,9 @@ class ShowOCIService(object):
                              'compartment_name': str(compartment['name']),
                              'compartment_id': str(compartment['id']),
                              'time_created': str(dbs.time_created),
+                             'storage_management': "",
+                             'sparse_diskgroup': str(dbs.sparse_diskgroup),
+                             'reco_storage_size_in_gb': str(dbs.reco_storage_size_in_gb),
                              'region_name': str(self.config['region']),
                              'defined_tags': [] if dbs.defined_tags is None else dbs.defined_tags,
                              'freeform_tags': [] if dbs.freeform_tags is None else dbs.freeform_tags,
@@ -5187,6 +5190,11 @@ class ShowOCIService(object):
                             value['shape_ocpu'] = shape_sizes['cpu']
                             value['shape_memory_gb'] = shape_sizes['memory']
                             value['shape_storage_tb'] = shape_sizes['storage']
+
+                    # storage_management
+                    if dbs.db_system_options:
+                        if dbs.db_system_options.storage_management:
+                            value['storage_management'] = dbs.db_system_options.storage_management
 
                     # license model
                     if dbs.license_model == oci.database.models.DbSystem.LICENSE_MODEL_LICENSE_INCLUDED:
