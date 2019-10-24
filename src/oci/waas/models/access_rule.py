@@ -226,7 +226,7 @@ class AccessRule(object):
 
         - **REDIRECT:** Redirects the request to the specified URL.
 
-        Regardless of action, no further rules are processed once the rule is matched.
+        Regardless of action, no further rules are processed once a rule is matched.
 
         Allowed values for this property are: "ALLOW", "DETECT", "BLOCK", "BYPASS", "REDIRECT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -253,7 +253,7 @@ class AccessRule(object):
 
         - **REDIRECT:** Redirects the request to the specified URL.
 
-        Regardless of action, no further rules are processed once the rule is matched.
+        Regardless of action, no further rules are processed once a rule is matched.
 
 
         :param action: The action of this AccessRule.
@@ -298,7 +298,7 @@ class AccessRule(object):
     def block_response_code(self):
         """
         Gets the block_response_code of this AccessRule.
-        The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the access criteria are met. If unspecified, defaults to `403`.
+        The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the access criteria are met. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
 
 
         :return: The block_response_code of this AccessRule.
@@ -310,7 +310,7 @@ class AccessRule(object):
     def block_response_code(self, block_response_code):
         """
         Sets the block_response_code of this AccessRule.
-        The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the access criteria are met. If unspecified, defaults to `403`.
+        The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the access criteria are met. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
 
 
         :param block_response_code: The block_response_code of this AccessRule.

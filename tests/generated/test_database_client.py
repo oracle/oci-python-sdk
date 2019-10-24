@@ -1727,6 +1727,85 @@ def test_get_autonomous_database_backup(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_autonomous_database_regional_wallet(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'GetAutonomousDatabaseRegionalWallet'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetAutonomousDatabaseRegionalWallet')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetAutonomousDatabaseRegionalWallet')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.get_autonomous_database_regional_wallet(
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetAutonomousDatabaseRegionalWallet',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousDatabaseWallet',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_autonomous_database_wallet(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'GetAutonomousDatabaseWallet'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetAutonomousDatabaseWallet')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetAutonomousDatabaseWallet')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.get_autonomous_database_wallet(
+                autonomous_database_id=request.pop(util.camelize('autonomous_database_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetAutonomousDatabaseWallet',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousDatabaseWallet',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_get_autonomous_exadata_infrastructure(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetAutonomousExadataInfrastructure'):
@@ -4712,6 +4791,87 @@ def test_update_autonomous_database(testing_service_client):
             result,
             service_error,
             'autonomousDatabase',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_update_autonomous_database_regional_wallet(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'UpdateAutonomousDatabaseRegionalWallet'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'UpdateAutonomousDatabaseRegionalWallet')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='UpdateAutonomousDatabaseRegionalWallet')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.update_autonomous_database_regional_wallet(
+                update_autonomous_database_wallet_details=request.pop(util.camelize('update_autonomous_database_wallet_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'UpdateAutonomousDatabaseRegionalWallet',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_autonomous_database_regional_wallet',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_update_autonomous_database_wallet(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'UpdateAutonomousDatabaseWallet'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'UpdateAutonomousDatabaseWallet')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='UpdateAutonomousDatabaseWallet')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.update_autonomous_database_wallet(
+                autonomous_database_id=request.pop(util.camelize('autonomous_database_id')),
+                update_autonomous_database_wallet_details=request.pop(util.camelize('update_autonomous_database_wallet_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'UpdateAutonomousDatabaseWallet',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_autonomous_database_wallet',
             False,
             False
         )

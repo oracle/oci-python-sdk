@@ -36,6 +36,7 @@ Database
     oci.database.models.AutonomousDatabaseConnectionUrls
     oci.database.models.AutonomousDatabaseConsoleTokenDetails
     oci.database.models.AutonomousDatabaseSummary
+    oci.database.models.AutonomousDatabaseWallet
     oci.database.models.AutonomousDbPreviewVersionSummary
     oci.database.models.AutonomousExadataInfrastructure
     oci.database.models.AutonomousExadataInfrastructureMaintenanceWindow
@@ -128,6 +129,7 @@ Database
     oci.database.models.UpdateAutonomousContainerDatabaseDetails
     oci.database.models.UpdateAutonomousDataWarehouseDetails
     oci.database.models.UpdateAutonomousDatabaseDetails
+    oci.database.models.UpdateAutonomousDatabaseWalletDetails
     oci.database.models.UpdateAutonomousExadataInfrastructureDetails
     oci.database.models.UpdateBackupDestinationDetails
     oci.database.models.UpdateDatabaseDetails

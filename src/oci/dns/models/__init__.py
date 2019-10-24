@@ -12,6 +12,7 @@ from .create_zone_base_details import CreateZoneBaseDetails
 from .create_zone_details import CreateZoneDetails
 from .dynect_migration_details import DynectMigrationDetails
 from .external_master import ExternalMaster
+from .migration_replacement import MigrationReplacement
 from .nameserver import Nameserver
 from .patch_domain_records_details import PatchDomainRecordsDetails
 from .patch_rr_set_details import PatchRRSetDetails
@@ -61,6 +62,7 @@ dns_type_mapping = {
     "CreateZoneDetails": CreateZoneDetails,
     "DynectMigrationDetails": DynectMigrationDetails,
     "ExternalMaster": ExternalMaster,
+    "MigrationReplacement": MigrationReplacement,
     "Nameserver": Nameserver,
     "PatchDomainRecordsDetails": PatchDomainRecordsDetails,
     "PatchRRSetDetails": PatchRRSetDetails,

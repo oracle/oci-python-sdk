@@ -6,7 +6,9 @@ Waas
     :nosignatures:
     :template: autosummary/service_client.rst
 
+    oci.waas.RedirectClient
     oci.waas.WaasClient
+    oci.waas.RedirectClientCompositeOperations
     oci.waas.WaasClientCompositeOperations
 
 --------
@@ -37,10 +39,12 @@ Waas
     oci.waas.models.ChangeAddressListCompartmentDetails
     oci.waas.models.ChangeCertificateCompartmentDetails
     oci.waas.models.ChangeCustomProtectionRuleCompartmentDetails
+    oci.waas.models.ChangeHttpRedirectCompartmentDetails
     oci.waas.models.ChangeWaasPolicyCompartmentDetails
     oci.waas.models.CreateAddressListDetails
     oci.waas.models.CreateCertificateDetails
     oci.waas.models.CreateCustomProtectionRuleDetails
+    oci.waas.models.CreateHttpRedirectDetails
     oci.waas.models.CreateWaasPolicyDetails
     oci.waas.models.CustomProtectionRule
     oci.waas.models.CustomProtectionRuleSetting
@@ -49,6 +53,9 @@ Waas
     oci.waas.models.EdgeSubnet
     oci.waas.models.GoodBot
     oci.waas.models.Header
+    oci.waas.models.HttpRedirect
+    oci.waas.models.HttpRedirectSummary
+    oci.waas.models.HttpRedirectTarget
     oci.waas.models.HumanInteractionChallenge
     oci.waas.models.JsChallenge
     oci.waas.models.Origin
@@ -66,6 +73,7 @@ Waas
     oci.waas.models.UpdateAddressListDetails
     oci.waas.models.UpdateCertificateDetails
     oci.waas.models.UpdateCustomProtectionRuleDetails
+    oci.waas.models.UpdateHttpRedirectDetails
     oci.waas.models.UpdateWaasPolicyDetails
     oci.waas.models.WaasPolicy
     oci.waas.models.WaasPolicyCustomProtectionRuleSummary

@@ -21,6 +21,7 @@ from .autonomous_database_connection_strings import AutonomousDatabaseConnection
 from .autonomous_database_connection_urls import AutonomousDatabaseConnectionUrls
 from .autonomous_database_console_token_details import AutonomousDatabaseConsoleTokenDetails
 from .autonomous_database_summary import AutonomousDatabaseSummary
+from .autonomous_database_wallet import AutonomousDatabaseWallet
 from .autonomous_db_preview_version_summary import AutonomousDbPreviewVersionSummary
 from .autonomous_exadata_infrastructure import AutonomousExadataInfrastructure
 from .autonomous_exadata_infrastructure_maintenance_window import AutonomousExadataInfrastructureMaintenanceWindow
@@ -113,6 +114,7 @@ from .switchover_data_guard_association_details import SwitchoverDataGuardAssoci
 from .update_autonomous_container_database_details import UpdateAutonomousContainerDatabaseDetails
 from .update_autonomous_data_warehouse_details import UpdateAutonomousDataWarehouseDetails
 from .update_autonomous_database_details import UpdateAutonomousDatabaseDetails
+from .update_autonomous_database_wallet_details import UpdateAutonomousDatabaseWalletDetails
 from .update_autonomous_exadata_infrastructure_details import UpdateAutonomousExadataInfrastructureDetails
 from .update_backup_destination_details import UpdateBackupDestinationDetails
 from .update_database_details import UpdateDatabaseDetails
@@ -149,6 +151,7 @@ database_type_mapping = {
     "AutonomousDatabaseConnectionUrls": AutonomousDatabaseConnectionUrls,
     "AutonomousDatabaseConsoleTokenDetails": AutonomousDatabaseConsoleTokenDetails,
     "AutonomousDatabaseSummary": AutonomousDatabaseSummary,
+    "AutonomousDatabaseWallet": AutonomousDatabaseWallet,
     "AutonomousDbPreviewVersionSummary": AutonomousDbPreviewVersionSummary,
     "AutonomousExadataInfrastructure": AutonomousExadataInfrastructure,
     "AutonomousExadataInfrastructureMaintenanceWindow": AutonomousExadataInfrastructureMaintenanceWindow,
@@ -241,6 +244,7 @@ database_type_mapping = {
     "UpdateAutonomousContainerDatabaseDetails": UpdateAutonomousContainerDatabaseDetails,
     "UpdateAutonomousDataWarehouseDetails": UpdateAutonomousDataWarehouseDetails,
     "UpdateAutonomousDatabaseDetails": UpdateAutonomousDatabaseDetails,
+    "UpdateAutonomousDatabaseWalletDetails": UpdateAutonomousDatabaseWalletDetails,
     "UpdateAutonomousExadataInfrastructureDetails": UpdateAutonomousExadataInfrastructureDetails,
     "UpdateBackupDestinationDetails": UpdateBackupDestinationDetails,
     "UpdateDatabaseDetails": UpdateDatabaseDetails,

@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CustomProtectionRuleSummary(object):
     """
-    Summary information about a Custom Protection rule.
+    An overview of a custom protection rule.
     """
 
     #: A constant which can be used with the lifecycle_state property of a CustomProtectionRuleSummary.
@@ -111,7 +111,7 @@ class CustomProtectionRuleSummary(object):
     def id(self):
         """
         Gets the id of this CustomProtectionRuleSummary.
-        The `OCID`__ of the Custom Protection rule.
+        The `OCID`__ of the custom protection rule.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -125,7 +125,7 @@ class CustomProtectionRuleSummary(object):
     def id(self, id):
         """
         Sets the id of this CustomProtectionRuleSummary.
-        The `OCID`__ of the Custom Protection rule.
+        The `OCID`__ of the custom protection rule.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -139,7 +139,7 @@ class CustomProtectionRuleSummary(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this CustomProtectionRuleSummary.
-        The `OCID`__ of the Custom Protection rule's compartment.
+        The `OCID`__ of the custom protection rule's compartment.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -153,7 +153,7 @@ class CustomProtectionRuleSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CustomProtectionRuleSummary.
-        The `OCID`__ of the Custom Protection rule's compartment.
+        The `OCID`__ of the custom protection rule's compartment.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -167,7 +167,7 @@ class CustomProtectionRuleSummary(object):
     def display_name(self):
         """
         Gets the display_name of this CustomProtectionRuleSummary.
-        The user-friendly name of the Custom Protection rule.
+        The user-friendly name of the custom protection rule.
 
 
         :return: The display_name of this CustomProtectionRuleSummary.
@@ -179,7 +179,7 @@ class CustomProtectionRuleSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CustomProtectionRuleSummary.
-        The user-friendly name of the Custom Protection rule.
+        The user-friendly name of the custom protection rule.
 
 
         :param display_name: The display_name of this CustomProtectionRuleSummary.
@@ -191,9 +191,7 @@ class CustomProtectionRuleSummary(object):
     def mod_security_rule_ids(self):
         """
         Gets the mod_security_rule_ids of this CustomProtectionRuleSummary.
-        The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see `Mod Security's documentation`__.
-
-        __ https://www.modsecurity.org/CRS/Documentation/index.html
+        The auto-generated ID for the custom protection rule. These IDs are referenced in logs.
 
 
         :return: The mod_security_rule_ids of this CustomProtectionRuleSummary.
@@ -205,9 +203,7 @@ class CustomProtectionRuleSummary(object):
     def mod_security_rule_ids(self, mod_security_rule_ids):
         """
         Sets the mod_security_rule_ids of this CustomProtectionRuleSummary.
-        The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see `Mod Security's documentation`__.
-
-        __ https://www.modsecurity.org/CRS/Documentation/index.html
+        The auto-generated ID for the custom protection rule. These IDs are referenced in logs.
 
 
         :param mod_security_rule_ids: The mod_security_rule_ids of this CustomProtectionRuleSummary.
@@ -219,7 +215,7 @@ class CustomProtectionRuleSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this CustomProtectionRuleSummary.
-        The current lifecycle state of the Custom Protection rule.
+        The current lifecycle state of the custom protection rule.
 
         Allowed values for this property are: "CREATING", "ACTIVE", "FAILED", "UPDATING", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -234,7 +230,7 @@ class CustomProtectionRuleSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this CustomProtectionRuleSummary.
-        The current lifecycle state of the Custom Protection rule.
+        The current lifecycle state of the custom protection rule.
 
 
         :param lifecycle_state: The lifecycle_state of this CustomProtectionRuleSummary.

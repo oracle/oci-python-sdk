@@ -28,6 +28,47 @@ def vcr_fixture(request):
         yield
 
 
+# IssueRoutingInfo tag="computeImaging" email="imaging_dev_us_grp@oracle.com" jiraProject="COM" opsJiraProject="COM"
+def test_add_image_shape_compatibility_entry(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'AddImageShapeCompatibilityEntry'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'AddImageShapeCompatibilityEntry')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='AddImageShapeCompatibilityEntry')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.add_image_shape_compatibility_entry(
+                image_id=request.pop(util.camelize('image_id')),
+                shape_name=request.pop(util.camelize('shape_name')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'AddImageShapeCompatibilityEntry',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'imageShapeCompatibilityEntry',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="computeSharedOwnershipVmAndBm" email="compute_dev_us_grp@oracle.com" jiraProject="BMI" opsJiraProject="NONE"
 def test_attach_boot_volume(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'AttachBootVolume'):
@@ -2381,6 +2422,47 @@ def test_list_volume_attachments(testing_service_client):
             'volumeAttachment',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="computeImaging" email="imaging_dev_us_grp@oracle.com" jiraProject="COM" opsJiraProject="COM"
+def test_remove_image_shape_compatibility_entry(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'RemoveImageShapeCompatibilityEntry'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'RemoveImageShapeCompatibilityEntry')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='RemoveImageShapeCompatibilityEntry')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.remove_image_shape_compatibility_entry(
+                image_id=request.pop(util.camelize('image_id')),
+                shape_name=request.pop(util.camelize('shape_name')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'RemoveImageShapeCompatibilityEntry',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'remove_image_shape_compatibility_entry',
+            True,
+            False
         )
 
 

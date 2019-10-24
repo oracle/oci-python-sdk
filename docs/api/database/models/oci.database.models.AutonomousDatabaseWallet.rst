@@ -1,0 +1,11 @@
+AutonomousDatabaseWallet
+========================
+
+.. currentmodule:: oci.database.models
+
+.. autoclass:: AutonomousDatabaseWallet
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

@@ -29,22 +29,29 @@ class DynectMigrationDetails(object):
             The value to assign to the password property of this DynectMigrationDetails.
         :type password: str
 
+        :param http_redirect_replacements:
+            The value to assign to the http_redirect_replacements property of this DynectMigrationDetails.
+        :type http_redirect_replacements: dict(str, list[MigrationReplacement])
+
         """
         self.swagger_types = {
             'customer_name': 'str',
             'username': 'str',
-            'password': 'str'
+            'password': 'str',
+            'http_redirect_replacements': 'dict(str, list[MigrationReplacement])'
         }
 
         self.attribute_map = {
             'customer_name': 'customerName',
             'username': 'username',
-            'password': 'password'
+            'password': 'password',
+            'http_redirect_replacements': 'httpRedirectReplacements'
         }
 
         self._customer_name = None
         self._username = None
         self._password = None
+        self._http_redirect_replacements = None
 
     @property
     def customer_name(self):
@@ -117,6 +124,30 @@ class DynectMigrationDetails(object):
         :type: str
         """
         self._password = password
+
+    @property
+    def http_redirect_replacements(self):
+        """
+        Gets the http_redirect_replacements of this DynectMigrationDetails.
+        A map of fully-qualified domain names (FQDNs) to an array of `MigrationReplacement` objects.
+
+
+        :return: The http_redirect_replacements of this DynectMigrationDetails.
+        :rtype: dict(str, list[MigrationReplacement])
+        """
+        return self._http_redirect_replacements
+
+    @http_redirect_replacements.setter
+    def http_redirect_replacements(self, http_redirect_replacements):
+        """
+        Sets the http_redirect_replacements of this DynectMigrationDetails.
+        A map of fully-qualified domain names (FQDNs) to an array of `MigrationReplacement` objects.
+
+
+        :param http_redirect_replacements: The http_redirect_replacements of this DynectMigrationDetails.
+        :type: dict(str, list[MigrationReplacement])
+        """
+        self._http_redirect_replacements = http_redirect_replacements
 
     def __repr__(self):
         return formatted_flat_dict(self)

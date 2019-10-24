@@ -70,11 +70,7 @@ class CachingRuleCriteria(object):
 
         - **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the `value` field.
 
-        URL must start with /
-
-        URL can't contain restricted double slashes //
-
-        URL can't contain restricted ' & ? symbols
+        URLs must start with a `/`. URLs can't contain restricted double slashes `//`. URLs can't contain the restricted `'` `&` `?` symbols. Resources to cache can only be specified by a URL, any query parameters are ignored.
 
         Allowed values for this property are: "URL_IS", "URL_STARTS_WITH", "URL_PART_ENDS_WITH", "URL_PART_CONTAINS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -98,11 +94,7 @@ class CachingRuleCriteria(object):
 
         - **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the `value` field.
 
-        URL must start with /
-
-        URL can't contain restricted double slashes //
-
-        URL can't contain restricted ' & ? symbols
+        URLs must start with a `/`. URLs can't contain restricted double slashes `//`. URLs can't contain the restricted `'` `&` `?` symbols. Resources to cache can only be specified by a URL, any query parameters are ignored.
 
 
         :param condition: The condition of this CachingRuleCriteria.
