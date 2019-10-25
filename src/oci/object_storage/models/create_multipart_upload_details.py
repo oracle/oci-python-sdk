@@ -37,14 +37,6 @@ class CreateMultipartUploadDetails(object):
             The value to assign to the content_encoding property of this CreateMultipartUploadDetails.
         :type content_encoding: str
 
-        :param content_disposition:
-            The value to assign to the content_disposition property of this CreateMultipartUploadDetails.
-        :type content_disposition: str
-
-        :param cache_control:
-            The value to assign to the cache_control property of this CreateMultipartUploadDetails.
-        :type cache_control: str
-
         :param metadata:
             The value to assign to the metadata property of this CreateMultipartUploadDetails.
         :type metadata: dict(str, str)
@@ -55,8 +47,6 @@ class CreateMultipartUploadDetails(object):
             'content_type': 'str',
             'content_language': 'str',
             'content_encoding': 'str',
-            'content_disposition': 'str',
-            'cache_control': 'str',
             'metadata': 'dict(str, str)'
         }
 
@@ -65,8 +55,6 @@ class CreateMultipartUploadDetails(object):
             'content_type': 'contentType',
             'content_language': 'contentLanguage',
             'content_encoding': 'contentEncoding',
-            'content_disposition': 'contentDisposition',
-            'cache_control': 'cacheControl',
             'metadata': 'metadata'
         }
 
@@ -74,8 +62,6 @@ class CreateMultipartUploadDetails(object):
         self._content_type = None
         self._content_language = None
         self._content_encoding = None
-        self._content_disposition = None
-        self._cache_control = None
         self._metadata = None
 
     @property
@@ -175,54 +161,6 @@ class CreateMultipartUploadDetails(object):
         :type: str
         """
         self._content_encoding = content_encoding
-
-    @property
-    def content_disposition(self):
-        """
-        Gets the content_disposition of this CreateMultipartUploadDetails.
-        The Content-Disposition header value to be returned in GetObjectReponse.
-
-
-        :return: The content_disposition of this CreateMultipartUploadDetails.
-        :rtype: str
-        """
-        return self._content_disposition
-
-    @content_disposition.setter
-    def content_disposition(self, content_disposition):
-        """
-        Sets the content_disposition of this CreateMultipartUploadDetails.
-        The Content-Disposition header value to be returned in GetObjectReponse.
-
-
-        :param content_disposition: The content_disposition of this CreateMultipartUploadDetails.
-        :type: str
-        """
-        self._content_disposition = content_disposition
-
-    @property
-    def cache_control(self):
-        """
-        Gets the cache_control of this CreateMultipartUploadDetails.
-        The cache-control header value to be returned in GetObjectReponse.
-
-
-        :return: The cache_control of this CreateMultipartUploadDetails.
-        :rtype: str
-        """
-        return self._cache_control
-
-    @cache_control.setter
-    def cache_control(self, cache_control):
-        """
-        Sets the cache_control of this CreateMultipartUploadDetails.
-        The cache-control header value to be returned in GetObjectReponse.
-
-
-        :param cache_control: The cache_control of this CreateMultipartUploadDetails.
-        :type: str
-        """
-        self._cache_control = cache_control
 
     @property
     def metadata(self):

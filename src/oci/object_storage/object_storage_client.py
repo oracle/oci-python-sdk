@@ -2672,12 +2672,6 @@ class ObjectStorageClient(object):
         :param str content_encoding: (optional)
             The content encoding of the object.
 
-        :param str content_disposition: (optional)
-            The Content-Disposition header value to be returned in GetObjectReponse.
-
-        :param str cache_control: (optional)
-            The cache-control header value to be returned in GetObjectReponse.
-
         :param dict(str, str) opc_meta: (optional)
             Optional user-defined metadata key and value.
 
@@ -2709,8 +2703,6 @@ class ObjectStorageClient(object):
             "content_type",
             "content_language",
             "content_encoding",
-            "content_disposition",
-            "cache_control",
             "opc_meta"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2741,8 +2733,6 @@ class ObjectStorageClient(object):
             "Content-Type": kwargs.get("content_type", missing),
             "Content-Language": kwargs.get("content_language", missing),
             "Content-Encoding": kwargs.get("content_encoding", missing),
-            "Content-Disposition": kwargs.get("content_disposition", missing),
-            "Cache-Control": kwargs.get("cache_control", missing),
 
         }
         for key, value in six.iteritems(kwargs.get("opc_meta", {})):
