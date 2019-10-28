@@ -746,8 +746,7 @@ class ShowOCIData(object):
         data = []
         try:
             cpes = self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_CPE, 'region_name', region_name, 'compartment_id', compartment['id'])
-            data = [cpe['name'] for cpe in cpes]
-            return data
+            return cpes
 
         except Exception as e:
             self.__print_error("__get_core_network_cpe", e)
@@ -761,8 +760,7 @@ class ShowOCIData(object):
         data = []
         try:
             drgs = self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_DRG, 'region_name', region_name, 'compartment_id', compartment['id'])
-            data = [drg['name'] for drg in drgs]
-            return data
+            return drgs
 
         except Exception as e:
             self.__print_error("__get_core_network_drg", e)
@@ -855,11 +853,15 @@ class ShowOCIData(object):
                     'peer_id': str(rpc['peer_id']),
                     'name': str(rpc['name']),
                     'drg': drg_name,
+                    'drg_id': rpc['drg_id'],
                     'is_cross_tenancy_peering': str(rpc['is_cross_tenancy_peering']),
                     'peer_region_name': str(rpc['peer_region_name']),
                     'peer_rfc_name': self.__get_core_network_rpc_name(rpc['peer_id']),
                     'peer_tenancy_id': rpc['peer_tenancy_id'],
-                    'peering_status': rpc['peering_status']
+                    'peering_status': rpc['peering_status'],
+                    'compartment_id': rpc['compartment_id'],
+                    'compartment_name': rpc['compartment_name'],
+                    'region_name': rpc['region_name']
                 })
             return data
 
@@ -883,12 +885,17 @@ class ShowOCIData(object):
                     'id': ips['id'],
                     'name': ips['name'],
                     'drg': drg,
+                    'drg_id': ips['drg_id'],
                     'cpe': cpe,
+                    'cpe_id': ips['cpe_id'],
                     'routes': ips['static_routes'],
                     'tunnels': ips['tunnels'],
                     'defined_tags': ips['defined_tags'],
                     'time_created': ips['time_created'],
-                    'freeform_tags': ips['freeform_tags']
+                    'freeform_tags': ips['freeform_tags'],
+                    'compartment_id': ips['compartment_id'],
+                    'compartment_name': ips['compartment_name'],
+                    'region_name': ips['region_name']
                 })
             return data
 
@@ -915,6 +922,7 @@ class ShowOCIData(object):
                     'bgp_session_state': str(vc['bgp_session_state']),
                     'customer_bgp_asn': str(vc['customer_bgp_asn']),
                     'drg': drg,
+                    'drg_id': vc['drg_id'],
                     'lifecycle_state': str(vc['lifecycle_state']),
                     'oracle_bgp_asn': str(vc['oracle_bgp_asn']),
                     'provider_name': str(vc['provider_name']),
@@ -924,7 +932,10 @@ class ShowOCIData(object):
                     'service_type': str(vc['service_type']),
                     'time_created': str(vc['time_created']),
                     'cross_connect_mappings': vc['cross_connect_mappings'],
-                    'type': str(vc['type'])
+                    'type': str(vc['type']),
+                    'compartment_id': vc['compartment_id'],
+                    'compartment_name': vc['compartment_name'],
+                    'region_name': vc['region_name']
                 })
             return data
 
@@ -1850,6 +1861,8 @@ class ShowOCIData(object):
             for mt in mount_targets:
                 val = {'id': mt['id'],
                        'mount': str(mt['display_name']) + ", Subnet: " + self.service.get_network_subnet(mt['subnet_id'], True),
+                       'display_name': str(mt['display_name']),
+                       'subnet_id': str(mt['subnet_id']),
                        'private_ip_ids': mt['private_ip_ids']}
                 data.append(val)
             return data
@@ -1904,6 +1917,8 @@ class ShowOCIData(object):
                 if export['export_set']:
                     exp = export['export_set']
                     dataval['exportset'] = str(exp['display_name']) + ", " + str(exp['availability_domain']) + ", Limits: " + self.__get_file_storage_limits(exp)
+                    dataval['display_name'] = str(exp['display_name'])
+                    dataval['availability_domain'] = str(exp['availability_domain'])
 
                 # Mount Target
                 dataval['mount_target'] = self.__get_file_storage_mount_target(export['export_set_id'])
@@ -1930,9 +1945,16 @@ class ShowOCIData(object):
             # handle file systems
             for fs in file_systems:
                 dataval = {'id': fs['id'],
-                           'filesystem': fs['display_name'] + " - " + fs['availability_domain'] + " - " + fs[
-                               'size_gb'] + "GB metered", 'sum_info': 'File Storage (GB)', 'sum_size_gb': fs['size_gb'],
+                           'filesystem': fs['display_name'] + " - " + fs['availability_domain'] + " - " + fs['size_gb'] + "GB metered",
+                           'display_name': fs['display_name'],
+                           'availability_domain': fs['availability_domain'],
+                           'size_gb': fs['size_gb'],
+                           'sum_info': 'File Storage (GB)',
+                           'sum_size_gb': fs['size_gb'],
                            'snapshots': [e['name'] + " - " + e['time_created'][0:16] for e in fs['snapshots']],
+                           'compartment_name': fs['compartment_name'],
+                           'compartment_id': fs['compartment_id'],
+                           'region_name': region_name,
                            'exports': self.__get_file_storage_exports(fs['id'])}
                 data.append(dataval)
 
@@ -2027,6 +2049,7 @@ class ShowOCIData(object):
             for bs in backendsets:
                 dataval = bs
                 dataval['status'] = bs['status'].ljust(4)[0:4]
+                dataval['status_full'] = bs['status']
 
                 # Health Checker
                 datahealth = bs['health_checker']
@@ -2063,6 +2086,7 @@ class ShowOCIData(object):
             data['nsg_names'] = lb['nsg_names']
             data['hostnames'] = [x['desc'] for x in lb['hostnames']]
             data['compartment_name'] = lb['compartment_name']
+            data['compartment_id'] = lb['compartment_id']
             data['subnet_ids'] = lb['subnet_ids']
 
             # subnets
@@ -2134,8 +2158,14 @@ class ShowOCIData(object):
             for stack in stacks:
                 dataval = {'id': str(stack['id']),
                            'stack_name': str(stack['display_name']) + " - " + str(stack['description']),
+                           'display_name': stack['display_name'],
+                           'description': stack['description'],
+                           'compartment_id': stack['compartment_id'],
+                           'compartment_name': stack['compartment_name'],
+                           'region_name': stack['region_name'],
                            'time_created': stack['time_created'],
-                           'defined_tags': stack['defined_tags'], 'freeform_tags': stack['freeform_tags']}
+                           'defined_tags': stack['defined_tags'],
+                           'freeform_tags': stack['freeform_tags']}
 
                 # query jobs
                 datajob = []
@@ -2184,6 +2214,11 @@ class ShowOCIData(object):
                     data_supp.append(str(suppression['email_address']) + " - " + str(suppression['reason']))
                 data['supp_list'] = data_supp
 
+            # add compartment details
+            data['compartment_name'] = compartment['name']
+            data['compartment_id'] = compartment['id']
+            data['region_name'] = region_name
+
             return data
 
         except Exception as e:
@@ -2205,6 +2240,9 @@ class ShowOCIData(object):
                            'lifecycle_state': container['lifecycle_state'],
                            'kubernetes_version': container['kubernetes_version'],
                            'compartment_name': container['compartment_name'],
+                           'compartment_id': container['compartment_id'],
+                           'region_name': container['region_name'],
+                           'vcn_id': container['vcn_id'],
                            'node_pools': [],
                            'vcn_name': self.__get_core_network_vcn_name(container['vcn_id'])}
 
@@ -2213,7 +2251,7 @@ class ShowOCIData(object):
                     for np in nodes:
                         nval = {'id': np['id'], 'name': np['name'], 'node_image_id': np['node_image_id'], 'node_image_name': np['node_image_name'],
                                 'kubernetes_version': np['kubernetes_version'], 'node_shape': np['node_shape'],
-                                'quantity_per_subnet': np['quantity_per_subnet'], 'compartment_name': np['compartment_name'], 'subnets': []}
+                                'quantity_per_subnet': np['quantity_per_subnet'], 'compartment_name': np['compartment_name'], 'subnets': [], 'subnet_ids': np['subnet_ids']}
 
                         # subnets
                         for sub in np['subnet_ids']:
@@ -2244,7 +2282,10 @@ class ShowOCIData(object):
                            'messages_endpoint': stream['messages_endpoint'],
                            'defined_tags': stream['defined_tags'],
                            'freeform_tags': stream['freeform_tags'],
-                           'compartment_name': stream['compartment_name']}
+                           'compartment_name': stream['compartment_name'],
+                           'compartment_id': stream['compartment_id'],
+                           'region_name': stream['region_name']
+                           }
 
                     data.append(val)
             return data
@@ -2274,7 +2315,10 @@ class ShowOCIData(object):
                            'severity': alarm['severity'],
                            'defined_tags': alarm['defined_tags'],
                            'freeform_tags': alarm['freeform_tags'],
-                           'compartment_name': alarm['compartment_name']}
+                           'compartment_name': alarm['compartment_name'],
+                           'compartment_id': alarm['compartment_id'],
+                           'region_name': alarm['region_name']
+                           }
 
                     # find the topics
                     for dest in alarm['destinations']:
@@ -2308,6 +2352,8 @@ class ShowOCIData(object):
                            'defined_tags': topic['defined_tags'],
                            'freeform_tags': topic['freeform_tags'],
                            'compartment_name': topic['compartment_name'],
+                           'compartment_id': topic['compartment_id'],
+                           'region_name': topic['region_name'],
                            'subscriptions': self.service.search_multi_items(self.service.C_NOTIFICATIONS, self.service.C_NOTIFICATIONS_SUBSCRIPTIONS, 'topic_id', topic['topic_id'])
                            }
 

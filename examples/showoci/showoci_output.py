@@ -465,7 +465,7 @@ class ShowOCIOutput(object):
 
             self.print_header("DRGs", 2)
             for drg in drgs:
-                print(self.taba + "DRG    " + drg)
+                print(self.taba + "DRG    " + drg['name'])
 
         except Exception as e:
             self.__print_error("__print_core_network_vcn", e)
@@ -510,7 +510,7 @@ class ShowOCIOutput(object):
 
             self.print_header("CPEs", 2)
             for cpe in cpes:
-                print(self.taba + "CPE    " + cpe)
+                print(self.taba + "CPE    " + cpe['name'])
 
         except Exception as e:
             self.__print_error("__print_core_network_cpe", e)

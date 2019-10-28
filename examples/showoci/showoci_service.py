@@ -2502,8 +2502,11 @@ class ShowOCIService(object):
                 # arr = oci.core.models.Drg
                 for arr in arrs:
                     if arr.lifecycle_state == oci.core.models.Drg.LIFECYCLE_STATE_AVAILABLE:
-                        val = {'id': str(arr.id), 'name': str(arr.display_name), 'time_created': str(arr.time_created),
-                               'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                        val = {'id': str(arr.id),
+                               'name': str(arr.display_name),
+                               'time_created': str(arr.time_created),
+                               'compartment_name': str(compartment['name']),
+                               'compartment_id': str(compartment['id']),
                                'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                                'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
                                'region_name': str(self.config['region'])}
@@ -2557,11 +2560,15 @@ class ShowOCIService(object):
                 # loop on array
                 # arr = oci.core.models.Cpe
                 for arr in arrs:
-                    val = {'id': str(arr.id), 'name': str(arr.display_name) + " - " + str(arr.ip_address),
-                           'time_created': str(arr.time_created), 'compartment_name': str(compartment['name']),
+                    val = {'id': str(arr.id),
+                           'name': str(arr.display_name) + " - " + str(arr.ip_address),
+                           'time_created': str(arr.time_created),
+                           'compartment_name': str(compartment['name']),
                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                            'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
-                           'compartment_id': str(compartment['id']), 'region_name': str(self.config['region'])}
+                           'compartment_id': str(compartment['id']),
+                           'region_name': str(self.config['region'])
+                           }
                     data.append(val)
                     cnt += 1
 
