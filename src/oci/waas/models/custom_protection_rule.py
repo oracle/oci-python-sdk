@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CustomProtectionRule(object):
     """
-    The details of a Custom Protection rule.
+    The details of a custom protection rule.
     """
 
     #: A constant which can be used with the lifecycle_state property of a CustomProtectionRule.
@@ -125,7 +125,7 @@ class CustomProtectionRule(object):
     def id(self):
         """
         Gets the id of this CustomProtectionRule.
-        The `OCID`__ of the Custom Protecion rule.
+        The `OCID`__ of the custom protection rule.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -139,7 +139,7 @@ class CustomProtectionRule(object):
     def id(self, id):
         """
         Sets the id of this CustomProtectionRule.
-        The `OCID`__ of the Custom Protecion rule.
+        The `OCID`__ of the custom protection rule.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -153,7 +153,7 @@ class CustomProtectionRule(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this CustomProtectionRule.
-        The `OCID`__ of the Custom Protecion rule's compartment.
+        The `OCID`__ of the custom protection rule's compartment.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -167,7 +167,7 @@ class CustomProtectionRule(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CustomProtectionRule.
-        The `OCID`__ of the Custom Protecion rule's compartment.
+        The `OCID`__ of the custom protection rule's compartment.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -181,7 +181,7 @@ class CustomProtectionRule(object):
     def display_name(self):
         """
         Gets the display_name of this CustomProtectionRule.
-        The user-friendly name of the Custom Protecion rule.
+        The user-friendly name of the custom protection rule.
 
 
         :return: The display_name of this CustomProtectionRule.
@@ -193,7 +193,7 @@ class CustomProtectionRule(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CustomProtectionRule.
-        The user-friendly name of the Custom Protecion rule.
+        The user-friendly name of the custom protection rule.
 
 
         :param display_name: The display_name of this CustomProtectionRule.
@@ -205,7 +205,7 @@ class CustomProtectionRule(object):
     def description(self):
         """
         Gets the description of this CustomProtectionRule.
-        The description of the Custom Protection rule.
+        The description of the custom protection rule.
 
 
         :return: The description of this CustomProtectionRule.
@@ -217,7 +217,7 @@ class CustomProtectionRule(object):
     def description(self, description):
         """
         Sets the description of this CustomProtectionRule.
-        The description of the Custom Protection rule.
+        The description of the custom protection rule.
 
 
         :param description: The description of this CustomProtectionRule.
@@ -229,9 +229,7 @@ class CustomProtectionRule(object):
     def mod_security_rule_ids(self):
         """
         Gets the mod_security_rule_ids of this CustomProtectionRule.
-        The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see `Mod Security's documentation`__.
-
-        __ https://www.modsecurity.org/CRS/Documentation/index.html
+        The auto-generated ID for the custom protection rule. These IDs are referenced in logs.
 
 
         :return: The mod_security_rule_ids of this CustomProtectionRule.
@@ -243,9 +241,7 @@ class CustomProtectionRule(object):
     def mod_security_rule_ids(self, mod_security_rule_ids):
         """
         Sets the mod_security_rule_ids of this CustomProtectionRule.
-        The list of the ModSecurity rule IDs that apply to this protection rule. For more information about ModSecurity's open source WAF rules, see `Mod Security's documentation`__.
-
-        __ https://www.modsecurity.org/CRS/Documentation/index.html
+        The auto-generated ID for the custom protection rule. These IDs are referenced in logs.
 
 
         :param mod_security_rule_ids: The mod_security_rule_ids of this CustomProtectionRule.
@@ -257,13 +253,15 @@ class CustomProtectionRule(object):
     def template(self):
         """
         Gets the template of this CustomProtectionRule.
-        The template text of the Custom Protection rule. The syntax is based on ModSecurity Rule Language. Additionaly it needs to include two variables / placeholders which will be replaced during publishing.
+        The template text of the custom protection rule. All custom protection rules are expressed in ModSecurity Rule Language.
 
-        - **{{mode}}** - rule action, defined by user in UI, like `OFF`, `DETECT` or `BLOCK`.
+        Additionally, each rule must include two placeholder variables that are updated by the WAF service upon publication of the rule.
 
-        - **{{id_1}}** - unique rule ID which identifies a `SecRule`, generated by the system. Multiple IDs can be used by increasing the number of the variable for every `SecRule` defined in the template.
+        `id: {{id_1}}` - This field is populated with a unique rule ID generated by the WAF service which identifies a `SecRule`. More than one `SecRule` can be defined in the `template` field of a CreateCustomSecurityRule call. The value of the first `SecRule` must be `id: {{id_1}}` and the `id` field of each subsequent `SecRule` should increase by one, as shown in the example.
 
-        *Example usage:*
+        `ctl:ruleEngine={{mode}}` - The action to be taken when the criteria of the `SecRule` are met, either `OFF`, `DETECT` or `BLOCK`. This field is automatically populated with the corresponding value of the `action` field of the `CustomProtectionRuleSetting` schema when the `WafConfig` is updated.
+
+        *Example:*
           ```
           SecRule REQUEST_COOKIES \"regex matching SQL injection - part 1/2\" \\
                   \"phase:2,                                                 \\
@@ -278,15 +276,19 @@ class CustomProtectionRule(object):
                   ctl:ruleEngine={{mode}},                                  \\
                   deny\"
           ```
-          The example contains two `SecRules` each having distinct regex expression to match
-          `Cookie` header value during second input analysis phase.
-          The disruptive `deny` action takes effect only when `{{mode}}` is set to `BLOCK`.
-          The message is logged either when `{{mode}}` is set to `DETECT` or `BLOCK`.
 
 
-        For more information about ModSecurity's open source WAF rules, see `Mod Security's documentation`__.
+        The example contains two `SecRules` each having distinct regex expression to match the `Cookie` header value during the second input analysis phase.
 
+        For more information about custom protection rules, see `Custom Protection Rules`__.
+
+        For more information about ModSecurity syntax, see `Making Rules: The Basic Syntax`__.
+
+        For more information about ModSecurity's open source WAF rules, see `Mod Security's OWASP Core Rule Set documentation`__.
+
+        __ https://docs.cloud.oracle.com/Content/WAF/tasks/customprotectionrules.htm
         __ https://www.modsecurity.org/CRS/Documentation/making.html
+        __ https://www.modsecurity.org/CRS/Documentation/index.html
 
 
         :return: The template of this CustomProtectionRule.
@@ -298,13 +300,15 @@ class CustomProtectionRule(object):
     def template(self, template):
         """
         Sets the template of this CustomProtectionRule.
-        The template text of the Custom Protection rule. The syntax is based on ModSecurity Rule Language. Additionaly it needs to include two variables / placeholders which will be replaced during publishing.
+        The template text of the custom protection rule. All custom protection rules are expressed in ModSecurity Rule Language.
 
-        - **{{mode}}** - rule action, defined by user in UI, like `OFF`, `DETECT` or `BLOCK`.
+        Additionally, each rule must include two placeholder variables that are updated by the WAF service upon publication of the rule.
 
-        - **{{id_1}}** - unique rule ID which identifies a `SecRule`, generated by the system. Multiple IDs can be used by increasing the number of the variable for every `SecRule` defined in the template.
+        `id: {{id_1}}` - This field is populated with a unique rule ID generated by the WAF service which identifies a `SecRule`. More than one `SecRule` can be defined in the `template` field of a CreateCustomSecurityRule call. The value of the first `SecRule` must be `id: {{id_1}}` and the `id` field of each subsequent `SecRule` should increase by one, as shown in the example.
 
-        *Example usage:*
+        `ctl:ruleEngine={{mode}}` - The action to be taken when the criteria of the `SecRule` are met, either `OFF`, `DETECT` or `BLOCK`. This field is automatically populated with the corresponding value of the `action` field of the `CustomProtectionRuleSetting` schema when the `WafConfig` is updated.
+
+        *Example:*
           ```
           SecRule REQUEST_COOKIES \"regex matching SQL injection - part 1/2\" \\
                   \"phase:2,                                                 \\
@@ -319,15 +323,19 @@ class CustomProtectionRule(object):
                   ctl:ruleEngine={{mode}},                                  \\
                   deny\"
           ```
-          The example contains two `SecRules` each having distinct regex expression to match
-          `Cookie` header value during second input analysis phase.
-          The disruptive `deny` action takes effect only when `{{mode}}` is set to `BLOCK`.
-          The message is logged either when `{{mode}}` is set to `DETECT` or `BLOCK`.
 
 
-        For more information about ModSecurity's open source WAF rules, see `Mod Security's documentation`__.
+        The example contains two `SecRules` each having distinct regex expression to match the `Cookie` header value during the second input analysis phase.
 
+        For more information about custom protection rules, see `Custom Protection Rules`__.
+
+        For more information about ModSecurity syntax, see `Making Rules: The Basic Syntax`__.
+
+        For more information about ModSecurity's open source WAF rules, see `Mod Security's OWASP Core Rule Set documentation`__.
+
+        __ https://docs.cloud.oracle.com/Content/WAF/tasks/customprotectionrules.htm
         __ https://www.modsecurity.org/CRS/Documentation/making.html
+        __ https://www.modsecurity.org/CRS/Documentation/index.html
 
 
         :param template: The template of this CustomProtectionRule.
@@ -339,7 +347,7 @@ class CustomProtectionRule(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this CustomProtectionRule.
-        The current lifecycle state of the Custom Protection rule.
+        The current lifecycle state of the custom protection rule.
 
         Allowed values for this property are: "CREATING", "ACTIVE", "FAILED", "UPDATING", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -354,7 +362,7 @@ class CustomProtectionRule(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this CustomProtectionRule.
-        The current lifecycle state of the Custom Protection rule.
+        The current lifecycle state of the custom protection rule.
 
 
         :param lifecycle_state: The lifecycle_state of this CustomProtectionRule.

@@ -5,7 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
-19.9.24 - 2019-09-30
+19.10.31 - 2019-10-31
+====================
+* Added Storage Management for dbsystem
+* Change output - gb to GB and tb to TB
+* Added compartment_id, compartment_name, region_name to several areas for json
+* Added more functionality to showoci_to_se.py to align with showoci JSON
+
+====================
+19.9.30 - 2019-09-30
 ====================
 * Fix few bugs and added free compute shape
 

@@ -173,6 +173,7 @@ Core Services
     oci.core.models.IScsiVolumeAttachment
     oci.core.models.IcmpOptions
     oci.core.models.Image
+    oci.core.models.ImageShapeCompatibilityEntry
     oci.core.models.ImageSourceDetails
     oci.core.models.ImageSourceViaObjectStorageTupleDetails
     oci.core.models.ImageSourceViaObjectStorageUriDetails

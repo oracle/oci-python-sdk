@@ -152,6 +152,7 @@ from .ip_sec_connection_tunnel_shared_secret import IPSecConnectionTunnelSharedS
 from .i_scsi_volume_attachment import IScsiVolumeAttachment
 from .icmp_options import IcmpOptions
 from .image import Image
+from .image_shape_compatibility_entry import ImageShapeCompatibilityEntry
 from .image_source_details import ImageSourceDetails
 from .image_source_via_object_storage_tuple_details import ImageSourceViaObjectStorageTupleDetails
 from .image_source_via_object_storage_uri_details import ImageSourceViaObjectStorageUriDetails
@@ -439,6 +440,7 @@ core_type_mapping = {
     "IScsiVolumeAttachment": IScsiVolumeAttachment,
     "IcmpOptions": IcmpOptions,
     "Image": Image,
+    "ImageShapeCompatibilityEntry": ImageShapeCompatibilityEntry,
     "ImageSourceDetails": ImageSourceDetails,
     "ImageSourceViaObjectStorageTupleDetails": ImageSourceViaObjectStorageTupleDetails,
     "ImageSourceViaObjectStorageUriDetails": ImageSourceViaObjectStorageUriDetails,

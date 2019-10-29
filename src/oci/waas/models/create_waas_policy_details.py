@@ -225,7 +225,8 @@ class CreateWaasPolicyDetails(object):
     def origin_groups(self):
         """
         Gets the origin_groups of this CreateWaasPolicyDetails.
-        The map of origin groups and their keys used to associate origins to the wafConfig.
+        The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests.
+        To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
 
 
         :return: The origin_groups of this CreateWaasPolicyDetails.
@@ -237,7 +238,8 @@ class CreateWaasPolicyDetails(object):
     def origin_groups(self, origin_groups):
         """
         Sets the origin_groups of this CreateWaasPolicyDetails.
-        The map of origin groups and their keys used to associate origins to the wafConfig.
+        The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests.
+        To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
 
 
         :param origin_groups: The origin_groups of this CreateWaasPolicyDetails.

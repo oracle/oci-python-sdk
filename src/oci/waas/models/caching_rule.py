@@ -136,10 +136,10 @@ class CachingRule(object):
     def action(self):
         """
         **[Required]** Gets the action of this CachingRule.
-        The action to take on matched caching rules.
-        - **CACHE:** Allow to set caching rule, which would be cached.
+        The action to take when the criteria of a caching rule are met.
+        - **CACHE:** Caches requested content when the criteria of the rule are met.
 
-        - **BYPASS_CACHE:** Allow to set caching rule, which would never be cached. e.g. all requests would be passed directly to origin for those file types.
+        - **BYPASS_CACHE:** Allows requests to bypass the cache and be directed to the origin when the criteria of the rule is met.
 
         Allowed values for this property are: "CACHE", "BYPASS_CACHE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -154,10 +154,10 @@ class CachingRule(object):
     def action(self, action):
         """
         Sets the action of this CachingRule.
-        The action to take on matched caching rules.
-        - **CACHE:** Allow to set caching rule, which would be cached.
+        The action to take when the criteria of a caching rule are met.
+        - **CACHE:** Caches requested content when the criteria of the rule are met.
 
-        - **BYPASS_CACHE:** Allow to set caching rule, which would never be cached. e.g. all requests would be passed directly to origin for those file types.
+        - **BYPASS_CACHE:** Allows requests to bypass the cache and be directed to the origin when the criteria of the rule is met.
 
 
         :param action: The action of this CachingRule.
@@ -172,7 +172,8 @@ class CachingRule(object):
     def caching_duration(self):
         """
         Gets the caching_duration of this CachingRule.
-        The caching duration (applies only to `CACHE` action) specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. Max value - 99. Mixing of multiple units is not supported.
+        The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`.
+        Example: `PT1H`
 
 
         :return: The caching_duration of this CachingRule.
@@ -184,7 +185,8 @@ class CachingRule(object):
     def caching_duration(self, caching_duration):
         """
         Sets the caching_duration of this CachingRule.
-        The caching duration (applies only to `CACHE` action) specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. Max value - 99. Mixing of multiple units is not supported.
+        The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`.
+        Example: `PT1H`
 
 
         :param caching_duration: The caching_duration of this CachingRule.
@@ -196,9 +198,8 @@ class CachingRule(object):
     def is_client_caching_enabled(self):
         """
         Gets the is_client_caching_enabled of this CachingRule.
-        Enables or disables the client caching.
-        Browsers use the Cache-Control header value for caching content locally, in the browser.
-        This setting will control the addition of a Cache-Control header to responses. It overrides existing Cache-Control headers.
+        Enables or disables client caching.
+        Browsers use the `Cache-Control` header value for caching content locally in the browser. This setting overrides the addition of a `Cache-Control` header in responses.
 
 
         :return: The is_client_caching_enabled of this CachingRule.
@@ -210,9 +211,8 @@ class CachingRule(object):
     def is_client_caching_enabled(self, is_client_caching_enabled):
         """
         Sets the is_client_caching_enabled of this CachingRule.
-        Enables or disables the client caching.
-        Browsers use the Cache-Control header value for caching content locally, in the browser.
-        This setting will control the addition of a Cache-Control header to responses. It overrides existing Cache-Control headers.
+        Enables or disables client caching.
+        Browsers use the `Cache-Control` header value for caching content locally in the browser. This setting overrides the addition of a `Cache-Control` header in responses.
 
 
         :param is_client_caching_enabled: The is_client_caching_enabled of this CachingRule.
@@ -224,7 +224,8 @@ class CachingRule(object):
     def client_caching_duration(self):
         """
         Gets the client_caching_duration of this CachingRule.
-        The client caching duration (applies only to `CACHE` action) specified in ISO 8601 extended format, in case client caching enabled. It sets Cache-Control header max-age time, i.e. the local browser cache expire time. Supported units: seconds, minutes, hours, days, weeks, months. Max value - 99. Mixing of multiple units is not supported.
+        The duration to cache content in the user's browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`.
+        Example: `PT1H`
 
 
         :return: The client_caching_duration of this CachingRule.
@@ -236,7 +237,8 @@ class CachingRule(object):
     def client_caching_duration(self, client_caching_duration):
         """
         Sets the client_caching_duration of this CachingRule.
-        The client caching duration (applies only to `CACHE` action) specified in ISO 8601 extended format, in case client caching enabled. It sets Cache-Control header max-age time, i.e. the local browser cache expire time. Supported units: seconds, minutes, hours, days, weeks, months. Max value - 99. Mixing of multiple units is not supported.
+        The duration to cache content in the user's browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`.
+        Example: `PT1H`
 
 
         :param client_caching_duration: The client_caching_duration of this CachingRule.

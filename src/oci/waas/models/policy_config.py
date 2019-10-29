@@ -217,7 +217,8 @@ class PolicyConfig(object):
     def tls_protocols(self):
         """
         Gets the tls_protocols of this PolicyConfig.
-        A list of allowed TLS protocols. Only applicable when HTTPS support is enabled. It affects client's connection to the edge nodes. The most secure TLS version will be chosen.
+        A list of allowed TLS protocols. Only applicable when HTTPS support is enabled.
+        The TLS protocol is negotiated while the request is connecting and the most recent protocol supported by both the edge node and client browser will be selected. If no such version exists, the connection will be aborted.
         - **TLS_V1:** corresponds to TLS 1.0 specification.
 
         - **TLS_V1_1:** corresponds to TLS 1.1 specification.
@@ -226,7 +227,7 @@ class PolicyConfig(object):
 
         - **TLS_V1_3:** corresponds to TLS 1.3 specification.
 
-        Enabled TLS protocols must go in a row. For example if TLS_v1_1 and TLS_V1_3 are enabled, TLS_V1_2 must be enabled too.
+        Enabled TLS protocols must go in a row. For example if `TLS_v1_1` and `TLS_V1_3` are enabled, `TLS_V1_2` must be enabled too.
 
         Allowed values for items in this list are: "TLS_V1", "TLS_V1_1", "TLS_V1_2", "TLS_V1_3", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -241,7 +242,8 @@ class PolicyConfig(object):
     def tls_protocols(self, tls_protocols):
         """
         Sets the tls_protocols of this PolicyConfig.
-        A list of allowed TLS protocols. Only applicable when HTTPS support is enabled. It affects client's connection to the edge nodes. The most secure TLS version will be chosen.
+        A list of allowed TLS protocols. Only applicable when HTTPS support is enabled.
+        The TLS protocol is negotiated while the request is connecting and the most recent protocol supported by both the edge node and client browser will be selected. If no such version exists, the connection will be aborted.
         - **TLS_V1:** corresponds to TLS 1.0 specification.
 
         - **TLS_V1_1:** corresponds to TLS 1.1 specification.
@@ -250,7 +252,7 @@ class PolicyConfig(object):
 
         - **TLS_V1_3:** corresponds to TLS 1.3 specification.
 
-        Enabled TLS protocols must go in a row. For example if TLS_v1_1 and TLS_V1_3 are enabled, TLS_V1_2 must be enabled too.
+        Enabled TLS protocols must go in a row. For example if `TLS_v1_1` and `TLS_V1_3` are enabled, `TLS_V1_2` must be enabled too.
 
 
         :param tls_protocols: The tls_protocols of this PolicyConfig.
@@ -265,7 +267,7 @@ class PolicyConfig(object):
     def is_origin_compression_enabled(self):
         """
         Gets the is_origin_compression_enabled of this PolicyConfig.
-        Enable or disable GZIP compression of origin responses. If enabled, the header `Accept-Encoding: gzip` is sent to origin, otherwise - empty `Accept-Encoding:` header is used.
+        Enable or disable GZIP compression of origin responses. If enabled, the header `Accept-Encoding: gzip` is sent to origin, otherwise, the empty `Accept-Encoding:` header is used.
 
 
         :return: The is_origin_compression_enabled of this PolicyConfig.
@@ -277,7 +279,7 @@ class PolicyConfig(object):
     def is_origin_compression_enabled(self, is_origin_compression_enabled):
         """
         Sets the is_origin_compression_enabled of this PolicyConfig.
-        Enable or disable GZIP compression of origin responses. If enabled, the header `Accept-Encoding: gzip` is sent to origin, otherwise - empty `Accept-Encoding:` header is used.
+        Enable or disable GZIP compression of origin responses. If enabled, the header `Accept-Encoding: gzip` is sent to origin, otherwise, the empty `Accept-Encoding:` header is used.
 
 
         :param is_origin_compression_enabled: The is_origin_compression_enabled of this PolicyConfig.
@@ -289,7 +291,7 @@ class PolicyConfig(object):
     def is_behind_cdn(self):
         """
         Gets the is_behind_cdn of this PolicyConfig.
-        Enable or disable the use of CDN. It allows to specify true client IP address if clients do not connect directly to us.
+        Enabling `isBehindCdn` allows for the collection of IP addresses from client requests if the WAF is connected to a CDN.
 
 
         :return: The is_behind_cdn of this PolicyConfig.
@@ -301,7 +303,7 @@ class PolicyConfig(object):
     def is_behind_cdn(self, is_behind_cdn):
         """
         Sets the is_behind_cdn of this PolicyConfig.
-        Enable or disable the use of CDN. It allows to specify true client IP address if clients do not connect directly to us.
+        Enabling `isBehindCdn` allows for the collection of IP addresses from client requests if the WAF is connected to a CDN.
 
 
         :param is_behind_cdn: The is_behind_cdn of this PolicyConfig.
@@ -313,7 +315,13 @@ class PolicyConfig(object):
     def client_address_header(self):
         """
         Gets the client_address_header of this PolicyConfig.
-        The HTTP header used to pass the client IP address from the CDN if `isBehindCdn` is enabled. This feature consumes the header and its value as the true client IP address. It does not create the header. Using trusted chains (for example `X-Client-Ip: 11.1.1.1, 13.3.3.3`), the last IP address in the list will be used as true client IP address. In case of multiple headers with the same name, the first one will be used. If the header is not present it will use the connecting IP address as the true client IP address. It's assumed that CDN sets the correct client IP address and prevents spoofing.
+        Specifies an HTTP header name which is treated as the connecting client's IP address. Applicable only if `isBehindCdn` is enabled.
+
+        The edge node reads this header and its value and sets the client IP address as specified. It does not create the header if the header is not present in the request. If the header is not present, the connecting IP address will be used as the client's true IP address. It uses the last IP address in the header's value as the true IP address.
+
+        Example: `X-Client-Ip: 11.1.1.1, 13.3.3.3`
+
+        In the case of multiple headers with the same name, only the first header will be used. It is assumed that CDN sets the correct client IP address to prevent spoofing.
 
         - **X_FORWARDED_FOR:** Corresponds to `X-Forwarded-For` header name.
 
@@ -338,7 +346,13 @@ class PolicyConfig(object):
     def client_address_header(self, client_address_header):
         """
         Sets the client_address_header of this PolicyConfig.
-        The HTTP header used to pass the client IP address from the CDN if `isBehindCdn` is enabled. This feature consumes the header and its value as the true client IP address. It does not create the header. Using trusted chains (for example `X-Client-Ip: 11.1.1.1, 13.3.3.3`), the last IP address in the list will be used as true client IP address. In case of multiple headers with the same name, the first one will be used. If the header is not present it will use the connecting IP address as the true client IP address. It's assumed that CDN sets the correct client IP address and prevents spoofing.
+        Specifies an HTTP header name which is treated as the connecting client's IP address. Applicable only if `isBehindCdn` is enabled.
+
+        The edge node reads this header and its value and sets the client IP address as specified. It does not create the header if the header is not present in the request. If the header is not present, the connecting IP address will be used as the client's true IP address. It uses the last IP address in the header's value as the true IP address.
+
+        Example: `X-Client-Ip: 11.1.1.1, 13.3.3.3`
+
+        In the case of multiple headers with the same name, only the first header will be used. It is assumed that CDN sets the correct client IP address to prevent spoofing.
 
         - **X_FORWARDED_FOR:** Corresponds to `X-Forwarded-For` header name.
 
@@ -363,7 +377,7 @@ class PolicyConfig(object):
     def is_cache_control_respected(self):
         """
         Gets the is_cache_control_respected of this PolicyConfig.
-        Enable or disable automatic content caching based on the response `cache-control` header. This feature enables the origin to act as a proxy cache. Caching policies are usually defined using `cache-control` header. For example `cache-control: max-age=120` means that the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
+        Enable or disable automatic content caching based on the response `cache-control` header. This feature enables the origin to act as a proxy cache. Caching is usually defined using `cache-control` header. For example `cache-control: max-age=120` means that the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
 
 
         :return: The is_cache_control_respected of this PolicyConfig.
@@ -375,7 +389,7 @@ class PolicyConfig(object):
     def is_cache_control_respected(self, is_cache_control_respected):
         """
         Sets the is_cache_control_respected of this PolicyConfig.
-        Enable or disable automatic content caching based on the response `cache-control` header. This feature enables the origin to act as a proxy cache. Caching policies are usually defined using `cache-control` header. For example `cache-control: max-age=120` means that the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
+        Enable or disable automatic content caching based on the response `cache-control` header. This feature enables the origin to act as a proxy cache. Caching is usually defined using `cache-control` header. For example `cache-control: max-age=120` means that the returned resource is valid for 120 seconds. Caching rules will overwrite this setting.
 
 
         :param is_cache_control_respected: The is_cache_control_respected of this PolicyConfig.
@@ -411,7 +425,7 @@ class PolicyConfig(object):
     def cipher_group(self):
         """
         Gets the cipher_group of this PolicyConfig.
-        The cipher group
+        The set cipher group for the configured TLS protocol. This sets the configuration for the TLS connections between clients and edge nodes only.
         - **DEFAULT:** Cipher group supports TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: `ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA`
 
         Allowed values for this property are: "DEFAULT", 'UNKNOWN_ENUM_VALUE'.
@@ -427,7 +441,7 @@ class PolicyConfig(object):
     def cipher_group(self, cipher_group):
         """
         Sets the cipher_group of this PolicyConfig.
-        The cipher group
+        The set cipher group for the configured TLS protocol. This sets the configuration for the TLS connections between clients and edge nodes only.
         - **DEFAULT:** Cipher group supports TLS 1.0, TLS 1.1, TLS 1.2, TLS 1.3 protocols. It has the following ciphers enabled: `ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:!DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA`
 
 

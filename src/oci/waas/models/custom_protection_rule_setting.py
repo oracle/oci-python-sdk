@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CustomProtectionRuleSetting(object):
     """
-    The OCID and action of a Custom Protection rule.
+    The OCID and action of a custom protection rule.
     """
 
     #: A constant which can be used with the action property of a CustomProtectionRuleSetting.
@@ -53,7 +53,7 @@ class CustomProtectionRuleSetting(object):
     def id(self):
         """
         Gets the id of this CustomProtectionRuleSetting.
-        The `OCID`__ of the Custom Protecion rule.
+        The `OCID`__ of the custom protection rule.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -67,7 +67,7 @@ class CustomProtectionRuleSetting(object):
     def id(self, id):
         """
         Sets the id of this CustomProtectionRuleSetting.
-        The `OCID`__ of the Custom Protecion rule.
+        The `OCID`__ of the custom protection rule.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -81,7 +81,8 @@ class CustomProtectionRuleSetting(object):
     def action(self):
         """
         Gets the action of this CustomProtectionRuleSetting.
-        The action to take when the Custom Protection rule is triggered.
+        The action to take when the custom protection rule is triggered.
+        `DETECT` - Logs the request when the criteria of the custom protection rule are met. `BLOCK` - Blocks the request when the criteria of the custom protection rule are met.
 
         Allowed values for this property are: "DETECT", "BLOCK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -96,7 +97,8 @@ class CustomProtectionRuleSetting(object):
     def action(self, action):
         """
         Sets the action of this CustomProtectionRuleSetting.
-        The action to take when the Custom Protection rule is triggered.
+        The action to take when the custom protection rule is triggered.
+        `DETECT` - Logs the request when the criteria of the custom protection rule are met. `BLOCK` - Blocks the request when the criteria of the custom protection rule are met.
 
 
         :param action: The action of this CustomProtectionRuleSetting.

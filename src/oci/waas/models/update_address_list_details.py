@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateAddressListDetails(object):
     """
-    The data used to update the address list.
+    The data used to update the address list: IP addresses and CIDR notations.
     """
 
     def __init__(self, **kwargs):

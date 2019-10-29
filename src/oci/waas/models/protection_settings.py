@@ -202,7 +202,7 @@ class ProtectionSettings(object):
     def block_response_code(self):
         """
         Gets the block_response_code of this ProtectionSettings.
-        The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
+        The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
 
 
         :return: The block_response_code of this ProtectionSettings.
@@ -214,7 +214,7 @@ class ProtectionSettings(object):
     def block_response_code(self, block_response_code):
         """
         Sets the block_response_code of this ProtectionSettings.
-        The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
+        The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
 
 
         :param block_response_code: The block_response_code of this ProtectionSettings.

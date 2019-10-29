@@ -255,7 +255,11 @@ class WaasClient(object):
     def change_address_list_compartment(self, address_list_id, change_address_list_compartment_details, **kwargs):
         """
         Moves address list into a different compartment.
-        Moves address list into a different compartment. When provided, If-Match is checked against ETag values of the address list.
+        Moves address list into a different compartment. When provided, If-Match
+        is checked against ETag values of the address list. For information about moving
+        resources between compartments, see `Moving Resources to a Different Compartment`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str address_list_id: (required)
@@ -346,6 +350,9 @@ class WaasClient(object):
         """
         Moves certificate into a different compartment.
         Moves certificate into a different compartment. When provided, If-Match is checked against ETag values of the certificate.
+        For information about moving resources between compartments, see `Moving Resources to a Different Compartment`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str certificate_id: (required)
@@ -435,11 +442,13 @@ class WaasClient(object):
     def change_custom_protection_rule_compartment(self, custom_protection_rule_id, change_custom_protection_rule_compartment_details, **kwargs):
         """
         Moves Custom Protection rule into a different compartment.
-        Moves Custom Protection rule into a different compartment. When provided, If-Match is checked against ETag values of the Custom Protection rule.
+        Moves a custom protection rule into a different compartment within the same tenancy. When provided, If-Match is checked against ETag values of the custom protection rule. For information about moving resources between compartments, see `Moving Resources to a Different Compartment`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str custom_protection_rule_id: (required)
-            The `OCID`__ of the Custom Protection rule. This number is generated when the Custom Protection rule is added to the compartment.
+            The `OCID`__ of the custom protection rule. This number is generated when the custom protection rule is added to the compartment.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -526,6 +535,9 @@ class WaasClient(object):
         """
         Moves WAAS policy into a different compartment.
         Moves WAAS policy into a different compartment. When provided, If-Match is checked against ETag values of the WAAS policy.
+        For information about moving resources between compartments, see `Moving Resources to a Different Compartment`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str waas_policy_id: (required)
@@ -615,10 +627,7 @@ class WaasClient(object):
     def create_address_list(self, create_address_list_details, **kwargs):
         """
         Creates an address list.
-        Creates an address list in set compartment and allows it to be used in a WAAS policy.
-        For more information, see `WAF Settings`__.
-
-        __ https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/wafsettings.htm
+        Creates an address list in a set compartment and allows it to be used in a WAAS policy and referenced by access rules. Addresses can be IP addresses and CIDR notations.
 
 
         :param CreateAddressListDetails create_address_list_details: (required)
@@ -763,12 +772,17 @@ class WaasClient(object):
 
     def create_custom_protection_rule(self, create_custom_protection_rule_details, **kwargs):
         """
-        Creates a new Custom Protection rule in the specified compartment.
-        Creates a new Custom Protection rule in the specified compartment.
+        Creates a new custom protection rule in the specified compartment.
+        Creates a new custom protection rule in the specified compartment.
+
+        Custom protection rules allow you to create rules in addition to the rulesets provided by the Web Application Firewall service, including rules from `ModSecurity`__. The syntax for custom rules is based on the ModSecurity syntax. For more information about custom protection rules, see `Custom Protection Rules`__.
+
+        __ https://modsecurity.org/
+        __ https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/customprotectionrules.htm
 
 
         :param CreateCustomProtectionRuleDetails create_custom_protection_rule_details: (required)
-            The details of the Custom Protection rule.
+            The details of the custom protection rule.
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -1095,7 +1109,7 @@ class WaasClient(object):
 
 
         :param str custom_protection_rule_id: (required)
-            The `OCID`__ of the Custom Protection rule. This number is generated when the Custom Protection rule is added to the compartment.
+            The `OCID`__ of the custom protection rule. This number is generated when the custom protection rule is added to the compartment.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -1413,11 +1427,11 @@ class WaasClient(object):
     def get_custom_protection_rule(self, custom_protection_rule_id, **kwargs):
         """
         Returns the details of a Custom Protection rule.
-        Gets the details of a Custom Protection rule.
+        Gets the details of a custom protection rule.
 
 
         :param str custom_protection_rule_id: (required)
-            The `OCID`__ of the Custom Protection rule. This number is generated when the Custom Protection rule is added to the compartment.
+            The `OCID`__ of the custom protection rule. This number is generated when the custom protection rule is added to the compartment.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -2478,7 +2492,7 @@ class WaasClient(object):
         """
         Returns the list of caching rules for the Web Application Firewall.
         Gets the currently configured caching rules for the Web Application Firewall configuration of a specified WAAS policy.
-        The order of the caching rules is important. The rules will be checked in the order they are specified and the first matching rule will be used.
+        The rules are processed in the order they are specified in and the first matching rule will be used when processing a request.
 
 
         :param str waas_policy_id: (required)
@@ -2807,7 +2821,7 @@ class WaasClient(object):
     def list_custom_protection_rules(self, compartment_id, **kwargs):
         """
         Returns the list of Custom Protection rules for the given compartment.
-        Gets a list of Custom Protection rules.
+        Gets a list of custom protection rules for the specified Web Application Firewall.
 
 
         :param str compartment_id: (required)
@@ -2825,7 +2839,7 @@ class WaasClient(object):
             The value of the `opc-next-page` response header from the previous paginated call.
 
         :param str sort_by: (optional)
-            The value by which Custom Protection rules are sorted in a paginated 'List' call. If unspecified, defaults to `timeCreated`.
+            The value by which custom protection rules are sorted in a paginated 'List' call. If unspecified, defaults to `timeCreated`.
 
             Allowed values are: "id", "compartmentId", "displayName", "modSecurityRuleId", "timeCreated"
 
@@ -2835,10 +2849,10 @@ class WaasClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param list[str] id: (optional)
-            Filter Custom Protection rules using a list of Custom Protection rules OCIDs.
+            Filter custom protection rules using a list of custom protection rule OCIDs.
 
         :param list[str] display_name: (optional)
-            Filter Custom Protection rules using a list of display names.
+            Filter custom protection rules using a list of display names.
 
         :param list[str] lifecycle_state: (optional)
             Filter Custom Protection rules using a list of lifecycle states.
@@ -2849,7 +2863,7 @@ class WaasClient(object):
             A filter that matches Custom Protection rules created on or after the specified date-time.
 
         :param datetime time_created_less_than: (optional)
-            A filter that matches Custom Protection rules created before the specified date-time.
+            A filter that matches custom protection rules created before the specified date-time.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -4460,7 +4474,10 @@ class WaasClient(object):
     def purge_cache(self, waas_policy_id, **kwargs):
         """
         Accepts a list of resources to be purged.
-        Accepts a list of resources that will get it's cache purged. If resources property is not passed, then the entire cache for Web Application will be purged.
+        Performs a purge of the cache for each specified resource. If no resources are passed, the cache for the entire Web Application Firewall will be purged.
+        For more information, see `Caching Rules`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/cachingrules.htm#purge
 
 
         :param str waas_policy_id: (required)
@@ -4728,9 +4745,14 @@ class WaasClient(object):
         """
         Updates the list of caching rules for the Web Application Firewall.
         Updates the configuration for each specified caching rule.
-        This operation can update or delete caching rules depending on the structure of the request body.
-        Caching rules can be updated by changing the properties of the caching rule object with the rule's key specified in the key field.
-        Any existing caching rules that are not specified with a key in the list of access rules will be deleted upon update.
+
+        Caching rules WAF policies allow you to selectively cache content on Oracle Cloud Infrastructure's edge servers, such as webpages or certain file types. For more information about caching rules, see `Caching Rules`__.
+
+        This operation can create, delete, update, and/or reorder caching rules depending on the structure of the request body. Caching rules can be updated by changing the properties of the caching rule object with the rule's key specified in the key field. Any existing caching rules that are not specified with a key in the list of access rules will be deleted upon update.
+
+        The order the caching rules are specified in is important. The rules are processed in the order they are specified and the first matching rule will be used when processing a request. Use `ListCachingRules` to view a list of all available caching rules in a compartment.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/cachingrules.htm
 
 
         :param str waas_policy_id: (required)
@@ -5002,17 +5024,17 @@ class WaasClient(object):
 
     def update_custom_protection_rule(self, custom_protection_rule_id, update_custom_protection_rule_details, **kwargs):
         """
-        Updates the details of a Custom Protection rule.
-        Updates the details of a Custom Protection rule. Only the fields specified in the request body will be updated; all other properties will remain unchanged.
+        Updates the details of a custom protection rule.
+        Updates the configuration of a custom protection rule. Only the fields specified in the request body will be updated; all other properties will remain unchanged.
 
 
         :param str custom_protection_rule_id: (required)
-            The `OCID`__ of the Custom Protection rule. This number is generated when the Custom Protection rule is added to the compartment.
+            The `OCID`__ of the custom protection rule. This number is generated when the custom protection rule is added to the compartment.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateCustomProtectionRuleDetails update_custom_protection_rule_details: (required)
-            The details of the Custom Protection rule to update.
+            The details of the custom protection rule to update.
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.

@@ -43,7 +43,7 @@ class OriginGroupOrigins(object):
     def origin(self):
         """
         Gets the origin of this OriginGroupOrigins.
-        The reference string to the origin server.
+        The IP address or CIDR notation of the origin server.
 
 
         :return: The origin of this OriginGroupOrigins.
@@ -55,7 +55,7 @@ class OriginGroupOrigins(object):
     def origin(self, origin):
         """
         Sets the origin of this OriginGroupOrigins.
-        The reference string to the origin server.
+        The IP address or CIDR notation of the origin server.
 
 
         :param origin: The origin of this OriginGroupOrigins.
@@ -67,7 +67,7 @@ class OriginGroupOrigins(object):
     def weight(self):
         """
         Gets the weight of this OriginGroupOrigins.
-        The weight of the origin used in load balancing. The higher the weight, the larger the proportion of client requests the server receives.
+        The weight of the origin used in load balancing. Origins with higher weights will receive larger proportions of client requests.
 
 
         :return: The weight of this OriginGroupOrigins.
@@ -79,7 +79,7 @@ class OriginGroupOrigins(object):
     def weight(self, weight):
         """
         Sets the weight of this OriginGroupOrigins.
-        The weight of the origin used in load balancing. The higher the weight, the larger the proportion of client requests the server receives.
+        The weight of the origin used in load balancing. Origins with higher weights will receive larger proportions of client requests.
 
 
         :param weight: The weight of this OriginGroupOrigins.
