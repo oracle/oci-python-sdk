@@ -43,6 +43,7 @@ API Reference
 * :doc:`Resource Search <resource_search/client/oci.resource_search.ResourceSearchClient>`
 * :doc:`Stream Admin <streaming/client/oci.streaming.StreamAdminClient>`
 * :doc:`Stream <streaming/client/oci.streaming.StreamClient>`
+* :doc:`Redirect <waas/client/oci.waas.RedirectClient>`
 * :doc:`Waas <waas/client/oci.waas.WaasClient>`
 * :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
 

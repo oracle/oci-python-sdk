@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WaasPolicyCustomProtectionRuleSummary(object):
     """
-    Summary information about a Custom Protection rule.
+    The OCID and action of a custom protection rule.
     """
 
     #: A constant which can be used with the action property of a WaasPolicyCustomProtectionRuleSummary.
@@ -67,7 +67,7 @@ class WaasPolicyCustomProtectionRuleSummary(object):
     def id(self):
         """
         Gets the id of this WaasPolicyCustomProtectionRuleSummary.
-        The `OCID`__ of the Custom Protection rule.
+        The `OCID`__ of the custom protection rule.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -81,7 +81,7 @@ class WaasPolicyCustomProtectionRuleSummary(object):
     def id(self, id):
         """
         Sets the id of this WaasPolicyCustomProtectionRuleSummary.
-        The `OCID`__ of the Custom Protection rule.
+        The `OCID`__ of the custom protection rule.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -95,7 +95,7 @@ class WaasPolicyCustomProtectionRuleSummary(object):
     def display_name(self):
         """
         Gets the display_name of this WaasPolicyCustomProtectionRuleSummary.
-        The user-friendly name of the Custom Protection rule.
+        The user-friendly name of the custom protection rule.
 
 
         :return: The display_name of this WaasPolicyCustomProtectionRuleSummary.
@@ -107,7 +107,7 @@ class WaasPolicyCustomProtectionRuleSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this WaasPolicyCustomProtectionRuleSummary.
-        The user-friendly name of the Custom Protection rule.
+        The user-friendly name of the custom protection rule.
 
 
         :param display_name: The display_name of this WaasPolicyCustomProtectionRuleSummary.
@@ -119,7 +119,8 @@ class WaasPolicyCustomProtectionRuleSummary(object):
     def action(self):
         """
         Gets the action of this WaasPolicyCustomProtectionRuleSummary.
-        The action to take when the Custom Protection rule is triggered.
+        The action to take when the custom protection rule is triggered.
+        `DETECT` - Logs the request when the criteria of the custom protection rule are met. `BLOCK` - Blocks the request when the criteria of the custom protection rule are met.
 
         Allowed values for this property are: "DETECT", "BLOCK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -134,7 +135,8 @@ class WaasPolicyCustomProtectionRuleSummary(object):
     def action(self, action):
         """
         Sets the action of this WaasPolicyCustomProtectionRuleSummary.
-        The action to take when the Custom Protection rule is triggered.
+        The action to take when the custom protection rule is triggered.
+        `DETECT` - Logs the request when the criteria of the custom protection rule are met. `BLOCK` - Blocks the request when the criteria of the custom protection rule are met.
 
 
         :param action: The action of this WaasPolicyCustomProtectionRuleSummary.

@@ -22,10 +22,12 @@ from .certificate_summary import CertificateSummary
 from .change_address_list_compartment_details import ChangeAddressListCompartmentDetails
 from .change_certificate_compartment_details import ChangeCertificateCompartmentDetails
 from .change_custom_protection_rule_compartment_details import ChangeCustomProtectionRuleCompartmentDetails
+from .change_http_redirect_compartment_details import ChangeHttpRedirectCompartmentDetails
 from .change_waas_policy_compartment_details import ChangeWaasPolicyCompartmentDetails
 from .create_address_list_details import CreateAddressListDetails
 from .create_certificate_details import CreateCertificateDetails
 from .create_custom_protection_rule_details import CreateCustomProtectionRuleDetails
+from .create_http_redirect_details import CreateHttpRedirectDetails
 from .create_waas_policy_details import CreateWaasPolicyDetails
 from .custom_protection_rule import CustomProtectionRule
 from .custom_protection_rule_setting import CustomProtectionRuleSetting
@@ -34,6 +36,9 @@ from .device_fingerprint_challenge import DeviceFingerprintChallenge
 from .edge_subnet import EdgeSubnet
 from .good_bot import GoodBot
 from .header import Header
+from .http_redirect import HttpRedirect
+from .http_redirect_summary import HttpRedirectSummary
+from .http_redirect_target import HttpRedirectTarget
 from .human_interaction_challenge import HumanInteractionChallenge
 from .js_challenge import JsChallenge
 from .origin import Origin
@@ -51,6 +56,7 @@ from .threat_feed_action import ThreatFeedAction
 from .update_address_list_details import UpdateAddressListDetails
 from .update_certificate_details import UpdateCertificateDetails
 from .update_custom_protection_rule_details import UpdateCustomProtectionRuleDetails
+from .update_http_redirect_details import UpdateHttpRedirectDetails
 from .update_waas_policy_details import UpdateWaasPolicyDetails
 from .waas_policy import WaasPolicy
 from .waas_policy_custom_protection_rule_summary import WaasPolicyCustomProtectionRuleSummary
@@ -90,10 +96,12 @@ waas_type_mapping = {
     "ChangeAddressListCompartmentDetails": ChangeAddressListCompartmentDetails,
     "ChangeCertificateCompartmentDetails": ChangeCertificateCompartmentDetails,
     "ChangeCustomProtectionRuleCompartmentDetails": ChangeCustomProtectionRuleCompartmentDetails,
+    "ChangeHttpRedirectCompartmentDetails": ChangeHttpRedirectCompartmentDetails,
     "ChangeWaasPolicyCompartmentDetails": ChangeWaasPolicyCompartmentDetails,
     "CreateAddressListDetails": CreateAddressListDetails,
     "CreateCertificateDetails": CreateCertificateDetails,
     "CreateCustomProtectionRuleDetails": CreateCustomProtectionRuleDetails,
+    "CreateHttpRedirectDetails": CreateHttpRedirectDetails,
     "CreateWaasPolicyDetails": CreateWaasPolicyDetails,
     "CustomProtectionRule": CustomProtectionRule,
     "CustomProtectionRuleSetting": CustomProtectionRuleSetting,
@@ -102,6 +110,9 @@ waas_type_mapping = {
     "EdgeSubnet": EdgeSubnet,
     "GoodBot": GoodBot,
     "Header": Header,
+    "HttpRedirect": HttpRedirect,
+    "HttpRedirectSummary": HttpRedirectSummary,
+    "HttpRedirectTarget": HttpRedirectTarget,
     "HumanInteractionChallenge": HumanInteractionChallenge,
     "JsChallenge": JsChallenge,
     "Origin": Origin,
@@ -119,6 +130,7 @@ waas_type_mapping = {
     "UpdateAddressListDetails": UpdateAddressListDetails,
     "UpdateCertificateDetails": UpdateCertificateDetails,
     "UpdateCustomProtectionRuleDetails": UpdateCustomProtectionRuleDetails,
+    "UpdateHttpRedirectDetails": UpdateHttpRedirectDetails,
     "UpdateWaasPolicyDetails": UpdateWaasPolicyDetails,
     "WaasPolicy": WaasPolicy,
     "WaasPolicyCustomProtectionRuleSummary": WaasPolicyCustomProtectionRuleSummary,

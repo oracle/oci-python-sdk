@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateAddressListDetails(object):
     """
-    The data used to create a new address list.
+    The data used to create a new address list of IP addresses and CIDR notations.
     """
 
     def __init__(self, **kwargs):

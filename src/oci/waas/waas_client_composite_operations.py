@@ -146,7 +146,7 @@ class WaasClientCompositeOperations(object):
         to enter the given state(s).
 
         :param CreateCustomProtectionRuleDetails create_custom_protection_rule_details: (required)
-            The details of the Custom Protection rule.
+            The details of the custom protection rule.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.waas.models.CustomProtectionRule.lifecycle_state`
@@ -320,7 +320,7 @@ class WaasClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str custom_protection_rule_id: (required)
-            The `OCID`__ of the Custom Protection rule. This number is generated when the Custom Protection rule is added to the compartment.
+            The `OCID`__ of the custom protection rule. This number is generated when the custom protection rule is added to the compartment.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -664,12 +664,12 @@ class WaasClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str custom_protection_rule_id: (required)
-            The `OCID`__ of the Custom Protection rule. This number is generated when the Custom Protection rule is added to the compartment.
+            The `OCID`__ of the custom protection rule. This number is generated when the custom protection rule is added to the compartment.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateCustomProtectionRuleDetails update_custom_protection_rule_details: (required)
-            The details of the Custom Protection rule to update.
+            The details of the custom protection rule to update.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.waas.models.CustomProtectionRule.lifecycle_state`

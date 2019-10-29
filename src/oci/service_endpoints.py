@@ -24,6 +24,7 @@ SERVICE_ENDPOINTS = {
     "notification_control_plane": "https://notifications.{domain}",
     "notification_data_plane": "https://notifications.{domain}",
     "object_storage": "https://objectstorage.{domain}",
+    "redirect": "https://waas.{domain}",
     "resource_manager": "https://resourcemanager.{domain}",
     "resource_search": "https://query.{domain}",
     "stream": "https://streams.{domain}",

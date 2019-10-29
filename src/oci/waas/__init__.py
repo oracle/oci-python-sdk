@@ -4,8 +4,10 @@
 from __future__ import absolute_import
 
 
+from .redirect_client import RedirectClient
+from .redirect_client_composite_operations import RedirectClientCompositeOperations
 from .waas_client import WaasClient
 from .waas_client_composite_operations import WaasClientCompositeOperations
 from . import models
 
-__all__ = ["WaasClient", "WaasClientCompositeOperations", "models"]
+__all__ = ["RedirectClient", "RedirectClientCompositeOperations", "WaasClient", "WaasClientCompositeOperations", "models"]
