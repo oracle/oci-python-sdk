@@ -78,7 +78,9 @@ class CreateJobDetails(object):
     def stack_id(self):
         """
         **[Required]** Gets the stack_id of this CreateJobDetails.
-        OCID of the stack that is associated with the current job.
+        The `OCID`__ of the stack that is associated with the current job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The stack_id of this CreateJobDetails.
@@ -90,7 +92,9 @@ class CreateJobDetails(object):
     def stack_id(self, stack_id):
         """
         Sets the stack_id of this CreateJobDetails.
-        OCID of the stack that is associated with the current job.
+        The `OCID`__ of the stack that is associated with the current job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param stack_id: The stack_id of this CreateJobDetails.
@@ -150,8 +154,6 @@ class CreateJobDetails(object):
     def job_operation_details(self):
         """
         Gets the job_operation_details of this CreateJobDetails.
-        Job details that are specific to the operation type.
-
 
         :return: The job_operation_details of this CreateJobDetails.
         :rtype: CreateJobOperationDetails
@@ -162,8 +164,6 @@ class CreateJobDetails(object):
     def job_operation_details(self, job_operation_details):
         """
         Sets the job_operation_details of this CreateJobDetails.
-        Job details that are specific to the operation type.
-
 
         :param job_operation_details: The job_operation_details of this CreateJobDetails.
         :type: CreateJobOperationDetails
@@ -174,8 +174,6 @@ class CreateJobDetails(object):
     def apply_job_plan_resolution(self):
         """
         Gets the apply_job_plan_resolution of this CreateJobDetails.
-        Deprecated. Use the property `executionPlanStrategy` in `jobOperationDetails` instead.
-
 
         :return: The apply_job_plan_resolution of this CreateJobDetails.
         :rtype: ApplyJobPlanResolution
@@ -186,8 +184,6 @@ class CreateJobDetails(object):
     def apply_job_plan_resolution(self, apply_job_plan_resolution):
         """
         Sets the apply_job_plan_resolution of this CreateJobDetails.
-        Deprecated. Use the property `executionPlanStrategy` in `jobOperationDetails` instead.
-
 
         :param apply_job_plan_resolution: The apply_job_plan_resolution of this CreateJobDetails.
         :type: ApplyJobPlanResolution

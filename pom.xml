@@ -43,6 +43,8 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/integration/pom.xml</module>
+    <module>poms/analytics/pom.xml</module>
     <module>poms/oda/pom.xml</module>
     <module>poms/oce/pom.xml</module>
     <module>poms/dts/pom.xml</module>

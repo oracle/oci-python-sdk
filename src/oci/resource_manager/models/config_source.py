@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConfigSource(object):
     """
-    Location of the zip file that contains the Terraform configuration.
+    Location of the Terraform configuration.
     """
 
     #: A constant which can be used with the config_source_type property of a ConfigSource.
@@ -66,7 +66,8 @@ class ConfigSource(object):
     def config_source_type(self):
         """
         **[Required]** Gets the config_source_type of this ConfigSource.
-        The configuration file type.
+        Specifies the `configSourceType` for uploading the Terraform configuration.
+        Presently, the .zip file type (`ZIP_UPLOAD`) is the only supported `configSourceType`.
 
         Allowed values for this property are: "ZIP_UPLOAD", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -81,7 +82,8 @@ class ConfigSource(object):
     def config_source_type(self, config_source_type):
         """
         Sets the config_source_type of this ConfigSource.
-        The configuration file type.
+        Specifies the `configSourceType` for uploading the Terraform configuration.
+        Presently, the .zip file type (`ZIP_UPLOAD`) is the only supported `configSourceType`.
 
 
         :param config_source_type: The config_source_type of this ConfigSource.

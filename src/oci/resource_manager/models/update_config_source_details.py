@@ -60,7 +60,8 @@ class UpdateConfigSourceDetails(object):
     def config_source_type(self):
         """
         **[Required]** Gets the config_source_type of this UpdateConfigSourceDetails.
-        Terraform configuration file type.
+        Specifies the `configSourceType` for uploading the Terraform configuration.
+        Presently, the .zip file type (`ZIP_UPLOAD`) is the only supported `configSourceType`.
 
 
         :return: The config_source_type of this UpdateConfigSourceDetails.
@@ -72,7 +73,8 @@ class UpdateConfigSourceDetails(object):
     def config_source_type(self, config_source_type):
         """
         Sets the config_source_type of this UpdateConfigSourceDetails.
-        Terraform configuration file type.
+        Specifies the `configSourceType` for uploading the Terraform configuration.
+        Presently, the .zip file type (`ZIP_UPLOAD`) is the only supported `configSourceType`.
 
 
         :param config_source_type: The config_source_type of this UpdateConfigSourceDetails.

@@ -85,7 +85,9 @@ class CreateStackDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateStackDetails.
-        Unique identifier (OCID) of the compartment in which the stack resides.
+        Unique identifier (`OCID`__) of the compartment in which the stack resides.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateStackDetails.
@@ -97,7 +99,9 @@ class CreateStackDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateStackDetails.
-        Unique identifier (OCID) of the compartment in which the stack resides.
+        Unique identifier (`OCID`__) of the compartment in which the stack resides.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateStackDetails.
@@ -207,7 +211,7 @@ class CreateStackDetails(object):
     def terraform_version(self):
         """
         Gets the terraform_version of this CreateStackDetails.
-        The stack's Terraform version
+        The version of Terraform to use with the stack. Example: `0.12.x`
 
 
         :return: The terraform_version of this CreateStackDetails.
@@ -219,7 +223,7 @@ class CreateStackDetails(object):
     def terraform_version(self, terraform_version):
         """
         Sets the terraform_version of this CreateStackDetails.
-        The stack's Terraform version
+        The version of Terraform to use with the stack. Example: `0.12.x`
 
 
         :param terraform_version: The terraform_version of this CreateStackDetails.

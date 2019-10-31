@@ -68,3 +68,5 @@
 ^src/oci/dts/.*\.py$
 ^src/oci/oce/.*\.py$
 ^src/oci/oda/.*\.py$
+^src/oci/analytics/.*\.py$
+^src/oci/integration/.*\.py$
