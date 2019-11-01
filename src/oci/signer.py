@@ -228,3 +228,16 @@ class Signer(AbstractBaseSigner):
         generic_headers = ["date", "(request-target)", "host"]
         body_headers = ["content-length", "content-type", "x-content-sha256"]
         self.create_signers(self.api_key, self.private_key, generic_headers, body_headers)
+
+    @staticmethod
+    def from_config(config):
+        from .config import validate_config
+        validate_config(config)
+        return Signer(
+            config['tenancy'],
+            config['user'],
+            config['fingerprint'],
+            private_key_file_location=config['key_file'],
+            pass_phrase=config.get('pass_phrase'),
+            private_key_content=config.get('key_content')
+        )

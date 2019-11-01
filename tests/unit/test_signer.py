@@ -8,7 +8,7 @@ import pytest
 import os
 import tempfile
 from oci._vendor.requests import Request
-from oci.exceptions import InvalidPrivateKey, MissingPrivateKeyPassphrase
+from oci.exceptions import InvalidConfig, InvalidPrivateKey, MissingPrivateKeyPassphrase
 from oci.signer import load_private_key, load_private_key_from_file, inject_missing_headers, Signer
 from .utils import generate_key, serialize_key, verify_signature
 
@@ -196,3 +196,13 @@ def test_sign_with_patch(signer, public_key, request_body):
     verify_signature(public_key, signed_request.headers, 'patch')
     assert signed_request.headers["x-content-sha256"] == base64_sha256(request_body)
     assert signed_request.headers["content-length"] == str(len(as_bytes(request_body)))
+
+
+def test_signer_created_from_static_method(config):
+    signer = Signer.from_config(config)
+    assert signer.api_key == '{}/{}/{}'.format(config['tenancy'], config['user'], config['fingerprint'])
+
+
+def test_signer_created_from_static_method_with_invalid_config():
+    with pytest.raises(InvalidConfig):
+        Signer.from_config({})
