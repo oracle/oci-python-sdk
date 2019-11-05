@@ -232,7 +232,7 @@ class StackSummary(object):
     def terraform_version(self):
         """
         Gets the terraform_version of this StackSummary.
-        The Terraform version of the specified stack.
+        The version of Terraform specified for the stack. Example: `0.12.x`
 
 
         :return: The terraform_version of this StackSummary.
@@ -244,7 +244,7 @@ class StackSummary(object):
     def terraform_version(self, terraform_version):
         """
         Sets the terraform_version of this StackSummary.
-        The Terraform version of the specified stack.
+        The version of Terraform specified for the stack. Example: `0.12.x`
 
 
         :param terraform_version: The terraform_version of this StackSummary.

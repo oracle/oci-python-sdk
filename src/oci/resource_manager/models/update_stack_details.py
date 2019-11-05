@@ -176,7 +176,7 @@ class UpdateStackDetails(object):
     def terraform_version(self):
         """
         Gets the terraform_version of this UpdateStackDetails.
-        The Terraform version of the stack.
+        The version of Terraform to use with the stack. Example: `0.12.x`
 
 
         :return: The terraform_version of this UpdateStackDetails.
@@ -188,7 +188,7 @@ class UpdateStackDetails(object):
     def terraform_version(self, terraform_version):
         """
         Sets the terraform_version of this UpdateStackDetails.
-        The Terraform version of the stack.
+        The version of Terraform to use with the stack. Example: `0.12.x`
 
 
         :param terraform_version: The terraform_version of this UpdateStackDetails.

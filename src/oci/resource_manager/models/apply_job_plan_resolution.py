@@ -9,8 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ApplyJobPlanResolution(object):
     """
-    Specifies which plan job provides an execution plan for input to the apply or destroy job.
-    You can set only one of the three job properties. For destroy jobs, only `isAutoApproved` is permitted.
+    Deprecated. Use the property `executionPlanStrategy` in `jobOperationDetails` instead.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +50,9 @@ class ApplyJobPlanResolution(object):
     def plan_job_id(self):
         """
         Gets the plan_job_id of this ApplyJobPlanResolution.
-        OCID that specifies the most recently executed plan job.
+        The `OCID`__ that specifies the most recently executed plan job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The plan_job_id of this ApplyJobPlanResolution.
@@ -63,7 +64,9 @@ class ApplyJobPlanResolution(object):
     def plan_job_id(self, plan_job_id):
         """
         Sets the plan_job_id of this ApplyJobPlanResolution.
-        OCID that specifies the most recently executed plan job.
+        The `OCID`__ that specifies the most recently executed plan job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param plan_job_id: The plan_job_id of this ApplyJobPlanResolution.
@@ -75,8 +78,11 @@ class ApplyJobPlanResolution(object):
     def is_use_latest_job_id(self):
         """
         Gets the is_use_latest_job_id of this ApplyJobPlanResolution.
-        Specifies whether to use the OCID of the most recently run plan job.
-        `True` if using the latest job OCID. Must be a plan job that completed successfully.
+        Specifies whether to use the `OCID`__ of the most recently run plan job.
+        `True` if using the latest job `OCID`__. Must be a plan job that completed successfully.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The is_use_latest_job_id of this ApplyJobPlanResolution.
@@ -88,8 +94,11 @@ class ApplyJobPlanResolution(object):
     def is_use_latest_job_id(self, is_use_latest_job_id):
         """
         Sets the is_use_latest_job_id of this ApplyJobPlanResolution.
-        Specifies whether to use the OCID of the most recently run plan job.
-        `True` if using the latest job OCID. Must be a plan job that completed successfully.
+        Specifies whether to use the `OCID`__ of the most recently run plan job.
+        `True` if using the latest job `OCID`__. Must be a plan job that completed successfully.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param is_use_latest_job_id: The is_use_latest_job_id of this ApplyJobPlanResolution.

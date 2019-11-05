@@ -26,6 +26,14 @@ class IPSecConnectionTunnel(object):
     #: This constant has a value of "DOWN_FOR_MAINTENANCE"
     STATUS_DOWN_FOR_MAINTENANCE = "DOWN_FOR_MAINTENANCE"
 
+    #: A constant which can be used with the ike_version property of a IPSecConnectionTunnel.
+    #: This constant has a value of "V1"
+    IKE_VERSION_V1 = "V1"
+
+    #: A constant which can be used with the ike_version property of a IPSecConnectionTunnel.
+    #: This constant has a value of "V2"
+    IKE_VERSION_V2 = "V2"
+
     #: A constant which can be used with the lifecycle_state property of a IPSecConnectionTunnel.
     #: This constant has a value of "PROVISIONING"
     LIFECYCLE_STATE_PROVISIONING = "PROVISIONING"
@@ -77,6 +85,12 @@ class IPSecConnectionTunnel(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
+        :param ike_version:
+            The value to assign to the ike_version property of this IPSecConnectionTunnel.
+            Allowed values for this property are: "V1", "V2", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type ike_version: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this IPSecConnectionTunnel.
             Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
@@ -112,6 +126,7 @@ class IPSecConnectionTunnel(object):
             'vpn_ip': 'str',
             'cpe_ip': 'str',
             'status': 'str',
+            'ike_version': 'str',
             'lifecycle_state': 'str',
             'display_name': 'str',
             'bgp_session_info': 'BgpSessionInfo',
@@ -126,6 +141,7 @@ class IPSecConnectionTunnel(object):
             'vpn_ip': 'vpnIp',
             'cpe_ip': 'cpeIp',
             'status': 'status',
+            'ike_version': 'ikeVersion',
             'lifecycle_state': 'lifecycleState',
             'display_name': 'displayName',
             'bgp_session_info': 'bgpSessionInfo',
@@ -139,6 +155,7 @@ class IPSecConnectionTunnel(object):
         self._vpn_ip = None
         self._cpe_ip = None
         self._status = None
+        self._ike_version = None
         self._lifecycle_state = None
         self._display_name = None
         self._bgp_session_info = None
@@ -287,6 +304,36 @@ class IPSecConnectionTunnel(object):
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status
+
+    @property
+    def ike_version(self):
+        """
+        Gets the ike_version of this IPSecConnectionTunnel.
+        Internet Key Exchange protocol version.
+
+        Allowed values for this property are: "V1", "V2", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The ike_version of this IPSecConnectionTunnel.
+        :rtype: str
+        """
+        return self._ike_version
+
+    @ike_version.setter
+    def ike_version(self, ike_version):
+        """
+        Sets the ike_version of this IPSecConnectionTunnel.
+        Internet Key Exchange protocol version.
+
+
+        :param ike_version: The ike_version of this IPSecConnectionTunnel.
+        :type: str
+        """
+        allowed_values = ["V1", "V2"]
+        if not value_allowed_none_or_none_sentinel(ike_version, allowed_values):
+            ike_version = 'UNKNOWN_ENUM_VALUE'
+        self._ike_version = ike_version
 
     @property
     def lifecycle_state(self):

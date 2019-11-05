@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.6.3 - 2019-11-05
+====================
+
+Added
+-----
+* Support for the Analytics Cloud service
+* Support for the Integration Cloud service
+* Support for IKE versions in IPSec connections in the Virtual Networking service
+* Support for getting a stack's Terraform state in the Resource Manager service
+
+====================
 2.6.2 - 2019-10-29
 ====================
 

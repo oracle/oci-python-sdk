@@ -20,6 +20,14 @@ class UpdateIPSecConnectionTunnelDetails(object):
     #: This constant has a value of "STATIC"
     ROUTING_STATIC = "STATIC"
 
+    #: A constant which can be used with the ike_version property of a UpdateIPSecConnectionTunnelDetails.
+    #: This constant has a value of "V1"
+    IKE_VERSION_V1 = "V1"
+
+    #: A constant which can be used with the ike_version property of a UpdateIPSecConnectionTunnelDetails.
+    #: This constant has a value of "V2"
+    IKE_VERSION_V2 = "V2"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateIPSecConnectionTunnelDetails object with values from keyword arguments.
@@ -34,6 +42,11 @@ class UpdateIPSecConnectionTunnelDetails(object):
             Allowed values for this property are: "BGP", "STATIC"
         :type routing: str
 
+        :param ike_version:
+            The value to assign to the ike_version property of this UpdateIPSecConnectionTunnelDetails.
+            Allowed values for this property are: "V1", "V2"
+        :type ike_version: str
+
         :param bgp_session_config:
             The value to assign to the bgp_session_config property of this UpdateIPSecConnectionTunnelDetails.
         :type bgp_session_config: UpdateIPSecTunnelBgpSessionDetails
@@ -42,17 +55,20 @@ class UpdateIPSecConnectionTunnelDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'routing': 'str',
+            'ike_version': 'str',
             'bgp_session_config': 'UpdateIPSecTunnelBgpSessionDetails'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
             'routing': 'routing',
+            'ike_version': 'ikeVersion',
             'bgp_session_config': 'bgpSessionConfig'
         }
 
         self._display_name = None
         self._routing = None
+        self._ike_version = None
         self._bgp_session_config = None
 
     @property
@@ -112,6 +128,38 @@ class UpdateIPSecConnectionTunnelDetails(object):
                 .format(allowed_values)
             )
         self._routing = routing
+
+    @property
+    def ike_version(self):
+        """
+        Gets the ike_version of this UpdateIPSecConnectionTunnelDetails.
+        Internet Key Exchange protocol version.
+
+        Allowed values for this property are: "V1", "V2"
+
+
+        :return: The ike_version of this UpdateIPSecConnectionTunnelDetails.
+        :rtype: str
+        """
+        return self._ike_version
+
+    @ike_version.setter
+    def ike_version(self, ike_version):
+        """
+        Sets the ike_version of this UpdateIPSecConnectionTunnelDetails.
+        Internet Key Exchange protocol version.
+
+
+        :param ike_version: The ike_version of this UpdateIPSecConnectionTunnelDetails.
+        :type: str
+        """
+        allowed_values = ["V1", "V2"]
+        if not value_allowed_none_or_none_sentinel(ike_version, allowed_values):
+            raise ValueError(
+                "Invalid value for `ike_version`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._ike_version = ike_version
 
     @property
     def bgp_session_config(self):

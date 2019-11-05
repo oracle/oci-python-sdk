@@ -125,7 +125,9 @@ class Stack(object):
     def id(self):
         """
         Gets the id of this Stack.
-        Unique identifier (OCID) for the stack.
+        Unique identifier (`OCID`__) for the stack.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Stack.
@@ -137,7 +139,9 @@ class Stack(object):
     def id(self, id):
         """
         Sets the id of this Stack.
-        Unique identifier (OCID) for the stack.
+        Unique identifier (`OCID`__) for the stack.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Stack.
@@ -149,7 +153,9 @@ class Stack(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this Stack.
-        Unique identifier (OCID) for the compartment where the stack is located.
+        Unique identifier (`OCID`__) for the compartment where the stack is located.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Stack.
@@ -161,7 +167,9 @@ class Stack(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Stack.
-        Unique identifier (OCID) for the compartment where the stack is located.
+        Unique identifier (`OCID`__) for the compartment where the stack is located.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Stack.
@@ -275,9 +283,6 @@ class Stack(object):
     def config_source(self):
         """
         Gets the config_source of this Stack.
-        Specifies the `configSourceType` for uploading the Terraform configuration.
-        Presently, the .zip file type (`ZIP_UPLOAD`) is the only supported `configSourceType`.
-
 
         :return: The config_source of this Stack.
         :rtype: ConfigSource
@@ -288,9 +293,6 @@ class Stack(object):
     def config_source(self, config_source):
         """
         Sets the config_source of this Stack.
-        Specifies the `configSourceType` for uploading the Terraform configuration.
-        Presently, the .zip file type (`ZIP_UPLOAD`) is the only supported `configSourceType`.
-
 
         :param config_source: The config_source of this Stack.
         :type: ConfigSource
@@ -331,7 +333,7 @@ class Stack(object):
     def terraform_version(self):
         """
         Gets the terraform_version of this Stack.
-        The Terraform version of the stack.
+        The version of Terraform specified for the stack. Example: `0.12.x`
 
 
         :return: The terraform_version of this Stack.
@@ -343,7 +345,7 @@ class Stack(object):
     def terraform_version(self, terraform_version):
         """
         Sets the terraform_version of this Stack.
-        The Terraform version of the stack.
+        The version of Terraform specified for the stack. Example: `0.12.x`
 
 
         :param terraform_version: The terraform_version of this Stack.
