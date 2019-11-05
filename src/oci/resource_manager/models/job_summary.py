@@ -120,7 +120,9 @@ class JobSummary(object):
     def id(self):
         """
         Gets the id of this JobSummary.
-        The job's OCID.
+        The `OCID`__ of the job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this JobSummary.
@@ -132,7 +134,9 @@ class JobSummary(object):
     def id(self, id):
         """
         Sets the id of this JobSummary.
-        The job's OCID.
+        The `OCID`__ of the job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this JobSummary.
@@ -144,7 +148,9 @@ class JobSummary(object):
     def stack_id(self):
         """
         Gets the stack_id of this JobSummary.
-        OCID of the stack that is associated with the specified job.
+        The `OCID`__ of the stack that is associated with the specified job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The stack_id of this JobSummary.
@@ -156,7 +162,9 @@ class JobSummary(object):
     def stack_id(self, stack_id):
         """
         Sets the stack_id of this JobSummary.
-        OCID of the stack that is associated with the specified job.
+        The `OCID`__ of the stack that is associated with the specified job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param stack_id: The stack_id of this JobSummary.
@@ -168,7 +176,9 @@ class JobSummary(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this JobSummary.
-        OCID of the compartment where the stack of the associated job resides.
+        The `OCID`__ of the compartment where the stack of the associated job resides.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this JobSummary.
@@ -180,7 +190,9 @@ class JobSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this JobSummary.
-        OCID of the compartment where the stack of the associated job resides.
+        The `OCID`__ of the compartment where the stack of the associated job resides.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this JobSummary.
@@ -240,8 +252,6 @@ class JobSummary(object):
     def job_operation_details(self):
         """
         Gets the job_operation_details of this JobSummary.
-        Job details that are specific to the operation type.
-
 
         :return: The job_operation_details of this JobSummary.
         :rtype: JobOperationDetailsSummary
@@ -252,8 +262,6 @@ class JobSummary(object):
     def job_operation_details(self, job_operation_details):
         """
         Sets the job_operation_details of this JobSummary.
-        Job details that are specific to the operation type.
-
 
         :param job_operation_details: The job_operation_details of this JobSummary.
         :type: JobOperationDetailsSummary
@@ -264,8 +272,6 @@ class JobSummary(object):
     def apply_job_plan_resolution(self):
         """
         Gets the apply_job_plan_resolution of this JobSummary.
-        Deprecated. Use the property `executionPlanStrategy` in `jobOperationDetails` instead.
-
 
         :return: The apply_job_plan_resolution of this JobSummary.
         :rtype: ApplyJobPlanResolution
@@ -276,8 +282,6 @@ class JobSummary(object):
     def apply_job_plan_resolution(self, apply_job_plan_resolution):
         """
         Sets the apply_job_plan_resolution of this JobSummary.
-        Deprecated. Use the property `executionPlanStrategy` in `jobOperationDetails` instead.
-
 
         :param apply_job_plan_resolution: The apply_job_plan_resolution of this JobSummary.
         :type: ApplyJobPlanResolution
@@ -289,7 +293,9 @@ class JobSummary(object):
         """
         Gets the resolved_plan_job_id of this JobSummary.
         Deprecated. Use the property `executionPlanJobId` in `jobOperationDetails` instead.
-        The plan job OCID that was used (if this was an apply job and was not auto-approved).
+        The plan job `OCID`__ that was used (if this was an apply job and was not auto-approved).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The resolved_plan_job_id of this JobSummary.
@@ -302,7 +308,9 @@ class JobSummary(object):
         """
         Sets the resolved_plan_job_id of this JobSummary.
         Deprecated. Use the property `executionPlanJobId` in `jobOperationDetails` instead.
-        The plan job OCID that was used (if this was an apply job and was not auto-approved).
+        The plan job `OCID`__ that was used (if this was an apply job and was not auto-approved).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param resolved_plan_job_id: The resolved_plan_job_id of this JobSummary.

@@ -3,6 +3,7 @@ API Reference
 
 .. rubric:: Service Clients
 
+* :doc:`Analytics <analytics/client/oci.analytics.AnalyticsClient>`
 * :doc:`Announcement <announcements_service/client/oci.announcements_service.AnnouncementClient>`
 * :doc:`Audit <audit/client/oci.audit.AuditClient>`
 * :doc:`Auto Scaling <autoscaling/client/oci.autoscaling.AutoScalingClient>`
@@ -27,6 +28,7 @@ API Reference
 * :doc:`Functions Management <functions/client/oci.functions.FunctionsManagementClient>`
 * :doc:`Health Checks <healthchecks/client/oci.healthchecks.HealthChecksClient>`
 * :doc:`Identity <identity/client/oci.identity.IdentityClient>`
+* :doc:`Integration Instance <integration/client/oci.integration.IntegrationInstanceClient>`
 * :doc:`Kms Crypto <key_management/client/oci.key_management.KmsCryptoClient>`
 * :doc:`Kms Management <key_management/client/oci.key_management.KmsManagementClient>`
 * :doc:`Kms Vault <key_management/client/oci.key_management.KmsVaultClient>`
@@ -64,6 +66,7 @@ API Reference
     :hidden:
     :maxdepth: 5
 
+    analytics
     announcements_service
     audit
     autoscaling
@@ -79,6 +82,7 @@ API Reference
     functions
     healthchecks
     identity
+    integration
     key_management
     limits
     load_balancer

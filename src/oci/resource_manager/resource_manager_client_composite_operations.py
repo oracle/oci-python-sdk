@@ -28,7 +28,9 @@ class ResourceManagerClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str job_id: (required)
-            The job OCID.
+            The `OCID`__ of the job.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.resource_manager.models.Job.lifecycle_state`
@@ -75,7 +77,9 @@ class ResourceManagerClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str stack_id: (required)
-            The stack OCID.
+            The `OCID`__ of the stack.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param ChangeStackCompartmentDetails change_stack_compartment_details: (required)
             Defines the properties of changeStackCompartment operation.
@@ -192,7 +196,9 @@ class ResourceManagerClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str stack_id: (required)
-            The stack OCID.
+            The `OCID`__ of the stack.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.resource_manager.models.Stack.lifecycle_state`
@@ -239,7 +245,9 @@ class ResourceManagerClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str job_id: (required)
-            The job OCID.
+            The `OCID`__ of the job.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param UpdateJobDetails update_job_details: (required)
             Updates properties for the specified job.
@@ -280,7 +288,9 @@ class ResourceManagerClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str stack_id: (required)
-            The stack OCID.
+            The `OCID`__ of the stack.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param UpdateStackDetails update_stack_details: (required)
             Updated information provided for the stack.

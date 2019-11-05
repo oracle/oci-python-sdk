@@ -89,7 +89,9 @@ class ResourceManagerClient(object):
 
 
         :param str job_id: (required)
-            The job OCID.
+            The `OCID`__ of the job.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -168,7 +170,9 @@ class ResourceManagerClient(object):
 
 
         :param str stack_id: (required)
-            The stack OCID.
+            The `OCID`__ of the stack.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param ChangeStackCompartmentDetails change_stack_compartment_details: (required)
             Defines the properties of changeStackCompartment operation.
@@ -336,6 +340,9 @@ class ResourceManagerClient(object):
         Creates a Stack.
         Creates a stack in the specified comparment.
         Specify the compartment using the compartment ID.
+        For more information, see `Create a Stack`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/usingconsole.htm#CreateStack
 
 
         :param CreateStackDetails create_stack_details: (required)
@@ -414,7 +421,9 @@ class ResourceManagerClient(object):
 
 
         :param str stack_id: (required)
-            The stack OCID.
+            The `OCID`__ of the stack.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -493,7 +502,9 @@ class ResourceManagerClient(object):
 
 
         :param str job_id: (required)
-            The job OCID.
+            The `OCID`__ of the job.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -567,7 +578,9 @@ class ResourceManagerClient(object):
 
 
         :param str job_id: (required)
-            The job OCID.
+            The `OCID`__ of the job.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -707,7 +720,9 @@ class ResourceManagerClient(object):
 
 
         :param str job_id: (required)
-            The job OCID.
+            The `OCID`__ of the job.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -782,7 +797,9 @@ class ResourceManagerClient(object):
 
 
         :param str job_id: (required)
-            The job OCID.
+            The `OCID`__ of the job.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -856,7 +873,9 @@ class ResourceManagerClient(object):
 
 
         :param str job_id: (required)
-            The job OCID.
+            The `OCID`__ of the job.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -930,7 +949,9 @@ class ResourceManagerClient(object):
 
 
         :param str stack_id: (required)
-            The stack OCID.
+            The `OCID`__ of the stack.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -1005,7 +1026,9 @@ class ResourceManagerClient(object):
 
 
         :param str stack_id: (required)
-            The stack OCID.
+            The `OCID`__ of the stack.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -1072,6 +1095,82 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="stream")
 
+    def get_stack_tf_state(self, stack_id, **kwargs):
+        """
+        Get Terraform state of the specified stack.
+        Returns the Terraform state for the specified stack.
+
+
+        :param str stack_id: (required)
+            The `OCID`__ of the stack.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type stream
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/stacks/{stackId}/tfState"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_stack_tf_state got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "stackId": stack_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/octet-stream",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="stream")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="stream")
+
     def get_work_request(self, work_request_id, **kwargs):
         """
         Get Work Request
@@ -1079,7 +1178,9 @@ class ResourceManagerClient(object):
 
 
         :param str work_request_id: (required)
-            The OCID of the work request.
+            The `OCID`__ of the work request.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -1151,9 +1252,13 @@ class ResourceManagerClient(object):
         List all jobs related to a stack or compartment. By default, the list is ordered by time created.\nYou can alter the ordering by using `SortByQueryParam` and `SortOrderQueryParam`.\n
         Returns a list of jobs in a stack or compartment, ordered by time created.
 
-        - To list all jobs in a stack, provide the stack OCID.
-        - To list all jobs in a compartment, provide the compartment OCID.
-        - To return a specific job, provide the job OCID.
+        - To list all jobs in a stack, provide the stack `OCID`__.
+        - To list all jobs in a compartment, provide the compartment `OCID`__.
+        - To return a specific job, provide the job `OCID`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str opc_request_id: (optional)
@@ -1161,13 +1266,19 @@ class ResourceManagerClient(object):
             particular request, please provide the request ID.
 
         :param str compartment_id: (optional)
-            The compartment OCID on which to filter.
+            The compartment `OCID`__ on which to filter.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str stack_id: (optional)
-            The stack OCID on which to filter.
+            The stack `OCID`__ on which to filter.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
-            The OCID on which to query for jobs.
+            The `OCID`__ on which to query for jobs.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter that returns all resources that match the specified lifecycle state.
@@ -1317,10 +1428,14 @@ class ResourceManagerClient(object):
             particular request, please provide the request ID.
 
         :param str compartment_id: (optional)
-            The compartment OCID on which to filter.
+            The compartment `OCID`__ on which to filter.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str id: (optional)
-            The OCID on which to query for a stack.
+            The `OCID`__ on which to query for a stack.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str lifecycle_state: (optional)
             A filter that returns only those resources that match the specified
@@ -1455,8 +1570,8 @@ class ResourceManagerClient(object):
 
     def list_terraform_versions(self, **kwargs):
         """
-        Lists supported Terraform versions
-        Returns a list of supported Terraform versions in a compartment.
+        Lists supported Terraform versions.
+        Returns a list of supported Terraform versions for use with stacks.
 
 
         :param str opc_request_id: (optional)
@@ -1464,7 +1579,9 @@ class ResourceManagerClient(object):
             particular request, please provide the request ID.
 
         :param str compartment_id: (optional)
-            The compartment OCID on which to filter.
+            The compartment `OCID`__ on which to filter.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1530,10 +1647,14 @@ class ResourceManagerClient(object):
 
 
         :param str work_request_id: (required)
-            The OCID of the work request.
+            The `OCID`__ of the work request.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
-            The compartment OCID on which to filter.
+            The compartment `OCID`__ on which to filter.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The number of items returned in a paginated `List` call. For information about pagination, see
@@ -1645,10 +1766,14 @@ class ResourceManagerClient(object):
 
 
         :param str work_request_id: (required)
-            The OCID of the work request.
+            The `OCID`__ of the work request.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (optional)
-            The compartment OCID on which to filter.
+            The compartment `OCID`__ on which to filter.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The number of items returned in a paginated `List` call. For information about pagination, see
@@ -1760,10 +1885,14 @@ class ResourceManagerClient(object):
 
 
         :param str compartment_id: (required)
-            The compartment OCID on which to filter.
+            The compartment `OCID`__ on which to filter.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str resource_id: (optional)
-            The OCID of the resource.
+            The `OCID`__ of the resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param int limit: (optional)
             The number of items returned in a paginated `List` call. For information about pagination, see
@@ -1850,7 +1979,9 @@ class ResourceManagerClient(object):
 
 
         :param str job_id: (required)
-            The job OCID.
+            The `OCID`__ of the job.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param UpdateJobDetails update_job_details: (required)
             Updates properties for the specified job.
@@ -1935,10 +2066,17 @@ class ResourceManagerClient(object):
         Updates the specified stack object.
         Use `UpdateStack` when you update your Terraform configuration
         and want your changes to be reflected in the execution plan.
+        For more information, see `Update a Stack`__ and
+        `Edit or Delete a Stack`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/usingconsole.htm#UpdateStack
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/usingconsole.htm#EditStack
 
 
         :param str stack_id: (required)
-            The stack OCID.
+            The `OCID`__ of the stack.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param UpdateStackDetails update_stack_details: (required)
             Updated information provided for the stack.

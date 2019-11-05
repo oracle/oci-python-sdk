@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TerraformVersionSummary(object):
     """
-    Returns a listing of the specified Terraform version
+    A Terraform version supported for use with stacks.
     """
 
     def __init__(self, **kwargs):
@@ -36,7 +36,7 @@ class TerraformVersionSummary(object):
     def name(self):
         """
         Gets the name of this TerraformVersionSummary.
-        The Terraform version.
+        A supported Terraform version. Example: `0.12.x`
 
 
         :return: The name of this TerraformVersionSummary.
@@ -48,7 +48,7 @@ class TerraformVersionSummary(object):
     def name(self, name):
         """
         Sets the name of this TerraformVersionSummary.
-        The Terraform version.
+        A supported Terraform version. Example: `0.12.x`
 
 
         :param name: The name of this TerraformVersionSummary.
