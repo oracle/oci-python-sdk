@@ -45,6 +45,10 @@ class CreateVolumeDetails(object):
             The value to assign to the kms_key_id property of this CreateVolumeDetails.
         :type kms_key_id: str
 
+        :param vpus_per_gb:
+            The value to assign to the vpus_per_gb property of this CreateVolumeDetails.
+        :type vpus_per_gb: int
+
         :param size_in_gbs:
             The value to assign to the size_in_gbs property of this CreateVolumeDetails.
         :type size_in_gbs: int
@@ -70,6 +74,7 @@ class CreateVolumeDetails(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'kms_key_id': 'str',
+            'vpus_per_gb': 'int',
             'size_in_gbs': 'int',
             'size_in_mbs': 'int',
             'source_details': 'VolumeSourceDetails',
@@ -84,6 +89,7 @@ class CreateVolumeDetails(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'kms_key_id': 'kmsKeyId',
+            'vpus_per_gb': 'vpusPerGB',
             'size_in_gbs': 'sizeInGBs',
             'size_in_mbs': 'sizeInMBs',
             'source_details': 'sourceDetails',
@@ -97,6 +103,7 @@ class CreateVolumeDetails(object):
         self._display_name = None
         self._freeform_tags = None
         self._kms_key_id = None
+        self._vpus_per_gb = None
         self._size_in_gbs = None
         self._size_in_mbs = None
         self._source_details = None
@@ -297,6 +304,30 @@ class CreateVolumeDetails(object):
         :type: str
         """
         self._kms_key_id = kms_key_id
+
+    @property
+    def vpus_per_gb(self):
+        """
+        Gets the vpus_per_gb of this CreateVolumeDetails.
+        The number of Volume Performance Units that will be applied to this volume per GB.
+
+
+        :return: The vpus_per_gb of this CreateVolumeDetails.
+        :rtype: int
+        """
+        return self._vpus_per_gb
+
+    @vpus_per_gb.setter
+    def vpus_per_gb(self, vpus_per_gb):
+        """
+        Sets the vpus_per_gb of this CreateVolumeDetails.
+        The number of Volume Performance Units that will be applied to this volume per GB.
+
+
+        :param vpus_per_gb: The vpus_per_gb of this CreateVolumeDetails.
+        :type: int
+        """
+        self._vpus_per_gb = vpus_per_gb
 
     @property
     def size_in_gbs(self):

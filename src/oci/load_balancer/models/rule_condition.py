@@ -24,6 +24,10 @@ class RuleCondition(object):
     #: This constant has a value of "SOURCE_VCN_IP_ADDRESS"
     ATTRIBUTE_NAME_SOURCE_VCN_IP_ADDRESS = "SOURCE_VCN_IP_ADDRESS"
 
+    #: A constant which can be used with the attribute_name property of a RuleCondition.
+    #: This constant has a value of "PATH"
+    ATTRIBUTE_NAME_PATH = "PATH"
+
     def __init__(self, **kwargs):
         """
         Initializes a new RuleCondition object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -31,13 +35,14 @@ class RuleCondition(object):
 
         * :class:`~oci.load_balancer.models.SourceVcnIdCondition`
         * :class:`~oci.load_balancer.models.SourceIpAddressCondition`
+        * :class:`~oci.load_balancer.models.PathMatchCondition`
         * :class:`~oci.load_balancer.models.SourceVcnIpAddressCondition`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param attribute_name:
             The value to assign to the attribute_name property of this RuleCondition.
-            Allowed values for this property are: "SOURCE_IP_ADDRESS", "SOURCE_VCN_ID", "SOURCE_VCN_IP_ADDRESS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SOURCE_IP_ADDRESS", "SOURCE_VCN_ID", "SOURCE_VCN_IP_ADDRESS", "PATH", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type attribute_name: str
 
@@ -66,6 +71,9 @@ class RuleCondition(object):
         if type == 'SOURCE_IP_ADDRESS':
             return 'SourceIpAddressCondition'
 
+        if type == 'PATH':
+            return 'PathMatchCondition'
+
         if type == 'SOURCE_VCN_IP_ADDRESS':
             return 'SourceVcnIpAddressCondition'
         else:
@@ -75,7 +83,7 @@ class RuleCondition(object):
     def attribute_name(self):
         """
         **[Required]** Gets the attribute_name of this RuleCondition.
-        Allowed values for this property are: "SOURCE_IP_ADDRESS", "SOURCE_VCN_ID", "SOURCE_VCN_IP_ADDRESS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SOURCE_IP_ADDRESS", "SOURCE_VCN_ID", "SOURCE_VCN_IP_ADDRESS", "PATH", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -92,7 +100,7 @@ class RuleCondition(object):
         :param attribute_name: The attribute_name of this RuleCondition.
         :type: str
         """
-        allowed_values = ["SOURCE_IP_ADDRESS", "SOURCE_VCN_ID", "SOURCE_VCN_IP_ADDRESS"]
+        allowed_values = ["SOURCE_IP_ADDRESS", "SOURCE_VCN_ID", "SOURCE_VCN_IP_ADDRESS", "PATH"]
         if not value_allowed_none_or_none_sentinel(attribute_name, allowed_values):
             attribute_name = 'UNKNOWN_ENUM_VALUE'
         self._attribute_name = attribute_name

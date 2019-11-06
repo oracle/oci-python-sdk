@@ -29,19 +29,26 @@ class AutonomousDatabaseConnectionUrls(object):
             The value to assign to the apex_url property of this AutonomousDatabaseConnectionUrls.
         :type apex_url: str
 
+        :param machine_learning_user_management_url:
+            The value to assign to the machine_learning_user_management_url property of this AutonomousDatabaseConnectionUrls.
+        :type machine_learning_user_management_url: str
+
         """
         self.swagger_types = {
             'sql_dev_web_url': 'str',
-            'apex_url': 'str'
+            'apex_url': 'str',
+            'machine_learning_user_management_url': 'str'
         }
 
         self.attribute_map = {
             'sql_dev_web_url': 'sqlDevWebUrl',
-            'apex_url': 'apexUrl'
+            'apex_url': 'apexUrl',
+            'machine_learning_user_management_url': 'machineLearningUserManagementUrl'
         }
 
         self._sql_dev_web_url = None
         self._apex_url = None
+        self._machine_learning_user_management_url = None
 
     @property
     def sql_dev_web_url(self):
@@ -90,6 +97,30 @@ class AutonomousDatabaseConnectionUrls(object):
         :type: str
         """
         self._apex_url = apex_url
+
+    @property
+    def machine_learning_user_management_url(self):
+        """
+        Gets the machine_learning_user_management_url of this AutonomousDatabaseConnectionUrls.
+        Oracle Machine Learning User Management URL.
+
+
+        :return: The machine_learning_user_management_url of this AutonomousDatabaseConnectionUrls.
+        :rtype: str
+        """
+        return self._machine_learning_user_management_url
+
+    @machine_learning_user_management_url.setter
+    def machine_learning_user_management_url(self, machine_learning_user_management_url):
+        """
+        Sets the machine_learning_user_management_url of this AutonomousDatabaseConnectionUrls.
+        Oracle Machine Learning User Management URL.
+
+
+        :param machine_learning_user_management_url: The machine_learning_user_management_url of this AutonomousDatabaseConnectionUrls.
+        :type: str
+        """
+        self._machine_learning_user_management_url = machine_learning_user_management_url
 
     def __repr__(self):
         return formatted_flat_dict(self)

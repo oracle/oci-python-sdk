@@ -95,6 +95,10 @@ class Volume(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param vpus_per_gb:
+            The value to assign to the vpus_per_gb property of this Volume.
+        :type vpus_per_gb: int
+
         :param size_in_gbs:
             The value to assign to the size_in_gbs property of this Volume.
         :type size_in_gbs: int
@@ -127,6 +131,7 @@ class Volume(object):
             'is_hydrated': 'bool',
             'kms_key_id': 'str',
             'lifecycle_state': 'str',
+            'vpus_per_gb': 'int',
             'size_in_gbs': 'int',
             'size_in_mbs': 'int',
             'source_details': 'VolumeSourceDetails',
@@ -145,6 +150,7 @@ class Volume(object):
             'is_hydrated': 'isHydrated',
             'kms_key_id': 'kmsKeyId',
             'lifecycle_state': 'lifecycleState',
+            'vpus_per_gb': 'vpusPerGB',
             'size_in_gbs': 'sizeInGBs',
             'size_in_mbs': 'sizeInMBs',
             'source_details': 'sourceDetails',
@@ -162,6 +168,7 @@ class Volume(object):
         self._is_hydrated = None
         self._kms_key_id = None
         self._lifecycle_state = None
+        self._vpus_per_gb = None
         self._size_in_gbs = None
         self._size_in_mbs = None
         self._source_details = None
@@ -441,6 +448,30 @@ class Volume(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def vpus_per_gb(self):
+        """
+        Gets the vpus_per_gb of this Volume.
+        The number of Volume Performance Units that will be applied to this volume per GB.
+
+
+        :return: The vpus_per_gb of this Volume.
+        :rtype: int
+        """
+        return self._vpus_per_gb
+
+    @vpus_per_gb.setter
+    def vpus_per_gb(self, vpus_per_gb):
+        """
+        Sets the vpus_per_gb of this Volume.
+        The number of Volume Performance Units that will be applied to this volume per GB.
+
+
+        :param vpus_per_gb: The vpus_per_gb of this Volume.
+        :type: int
+        """
+        self._vpus_per_gb = vpus_per_gb
 
     @property
     def size_in_gbs(self):

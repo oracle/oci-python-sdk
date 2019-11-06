@@ -49,6 +49,10 @@ class CreateBootVolumeDetails(object):
             The value to assign to the size_in_gbs property of this CreateBootVolumeDetails.
         :type size_in_gbs: int
 
+        :param vpus_per_gb:
+            The value to assign to the vpus_per_gb property of this CreateBootVolumeDetails.
+        :type vpus_per_gb: int
+
         :param source_details:
             The value to assign to the source_details property of this CreateBootVolumeDetails.
         :type source_details: BootVolumeSourceDetails
@@ -63,6 +67,7 @@ class CreateBootVolumeDetails(object):
             'freeform_tags': 'dict(str, str)',
             'kms_key_id': 'str',
             'size_in_gbs': 'int',
+            'vpus_per_gb': 'int',
             'source_details': 'BootVolumeSourceDetails'
         }
 
@@ -75,6 +80,7 @@ class CreateBootVolumeDetails(object):
             'freeform_tags': 'freeformTags',
             'kms_key_id': 'kmsKeyId',
             'size_in_gbs': 'sizeInGBs',
+            'vpus_per_gb': 'vpusPerGB',
             'source_details': 'sourceDetails'
         }
 
@@ -86,6 +92,7 @@ class CreateBootVolumeDetails(object):
         self._freeform_tags = None
         self._kms_key_id = None
         self._size_in_gbs = None
+        self._vpus_per_gb = None
         self._source_details = None
 
     @property
@@ -307,6 +314,30 @@ class CreateBootVolumeDetails(object):
         :type: int
         """
         self._size_in_gbs = size_in_gbs
+
+    @property
+    def vpus_per_gb(self):
+        """
+        Gets the vpus_per_gb of this CreateBootVolumeDetails.
+        The number of Volume Performance Units that will be applied to this boot volume per GB.
+
+
+        :return: The vpus_per_gb of this CreateBootVolumeDetails.
+        :rtype: int
+        """
+        return self._vpus_per_gb
+
+    @vpus_per_gb.setter
+    def vpus_per_gb(self, vpus_per_gb):
+        """
+        Sets the vpus_per_gb of this CreateBootVolumeDetails.
+        The number of Volume Performance Units that will be applied to this boot volume per GB.
+
+
+        :param vpus_per_gb: The vpus_per_gb of this CreateBootVolumeDetails.
+        :type: int
+        """
+        self._vpus_per_gb = vpus_per_gb
 
     @property
     def source_details(self):
