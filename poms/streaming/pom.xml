@@ -112,6 +112,7 @@
                 <specName>streaming</specName>
                 <generateInitFile>true</generateInitFile>
                 <endpoint>https://streams.{domain}</endpoint>
+                <isRegionalClient.stream>false</isRegionalClient.stream>
               </additionalProperties>
               <featureIdConfigFile>${feature-id-file}</featureIdConfigFile>
               <featureIdConfigDir>${feature-id-dir}</featureIdConfigDir>
