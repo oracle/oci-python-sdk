@@ -21,30 +21,30 @@ class NodePoolOptions(object):
             The value to assign to the kubernetes_versions property of this NodePoolOptions.
         :type kubernetes_versions: list[str]
 
-        :param images:
-            The value to assign to the images property of this NodePoolOptions.
-        :type images: list[str]
-
         :param shapes:
             The value to assign to the shapes property of this NodePoolOptions.
         :type shapes: list[str]
 
+        :param images:
+            The value to assign to the images property of this NodePoolOptions.
+        :type images: list[str]
+
         """
         self.swagger_types = {
             'kubernetes_versions': 'list[str]',
-            'images': 'list[str]',
-            'shapes': 'list[str]'
+            'shapes': 'list[str]',
+            'images': 'list[str]'
         }
 
         self.attribute_map = {
             'kubernetes_versions': 'kubernetesVersions',
-            'images': 'images',
-            'shapes': 'shapes'
+            'shapes': 'shapes',
+            'images': 'images'
         }
 
         self._kubernetes_versions = None
-        self._images = None
         self._shapes = None
+        self._images = None
 
     @property
     def kubernetes_versions(self):
@@ -71,30 +71,6 @@ class NodePoolOptions(object):
         self._kubernetes_versions = kubernetes_versions
 
     @property
-    def images(self):
-        """
-        Gets the images of this NodePoolOptions.
-        Available image names.
-
-
-        :return: The images of this NodePoolOptions.
-        :rtype: list[str]
-        """
-        return self._images
-
-    @images.setter
-    def images(self, images):
-        """
-        Sets the images of this NodePoolOptions.
-        Available image names.
-
-
-        :param images: The images of this NodePoolOptions.
-        :type: list[str]
-        """
-        self._images = images
-
-    @property
     def shapes(self):
         """
         Gets the shapes of this NodePoolOptions.
@@ -117,6 +93,30 @@ class NodePoolOptions(object):
         :type: list[str]
         """
         self._shapes = shapes
+
+    @property
+    def images(self):
+        """
+        Gets the images of this NodePoolOptions.
+        Available image names.
+
+
+        :return: The images of this NodePoolOptions.
+        :rtype: list[str]
+        """
+        return self._images
+
+    @images.setter
+    def images(self, images):
+        """
+        Sets the images of this NodePoolOptions.
+        Available image names.
+
+
+        :param images: The images of this NodePoolOptions.
+        :type: list[str]
+        """
+        self._images = images
 
     def __repr__(self):
         return formatted_flat_dict(self)

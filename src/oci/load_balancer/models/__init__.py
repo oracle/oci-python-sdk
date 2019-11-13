@@ -43,10 +43,13 @@ from .load_balancer_health_summary import LoadBalancerHealthSummary
 from .load_balancer_policy import LoadBalancerPolicy
 from .load_balancer_protocol import LoadBalancerProtocol
 from .load_balancer_shape import LoadBalancerShape
+from .path_match_condition import PathMatchCondition
 from .path_match_type import PathMatchType
 from .path_route import PathRoute
 from .path_route_set import PathRouteSet
 from .path_route_set_details import PathRouteSetDetails
+from .redirect_rule import RedirectRule
+from .redirect_uri import RedirectUri
 from .remove_http_request_header_rule import RemoveHttpRequestHeaderRule
 from .remove_http_response_header_rule import RemoveHttpResponseHeaderRule
 from .rule import Rule
@@ -113,10 +116,13 @@ load_balancer_type_mapping = {
     "LoadBalancerPolicy": LoadBalancerPolicy,
     "LoadBalancerProtocol": LoadBalancerProtocol,
     "LoadBalancerShape": LoadBalancerShape,
+    "PathMatchCondition": PathMatchCondition,
     "PathMatchType": PathMatchType,
     "PathRoute": PathRoute,
     "PathRouteSet": PathRouteSet,
     "PathRouteSetDetails": PathRouteSetDetails,
+    "RedirectRule": RedirectRule,
+    "RedirectUri": RedirectUri,
     "RemoveHttpRequestHeaderRule": RemoveHttpRequestHeaderRule,
     "RemoveHttpResponseHeaderRule": RemoveHttpResponseHeaderRule,
     "Rule": Rule,

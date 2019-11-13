@@ -33,25 +33,32 @@ class UpdateBootVolumeDetails(object):
             The value to assign to the size_in_gbs property of this UpdateBootVolumeDetails.
         :type size_in_gbs: int
 
+        :param vpus_per_gb:
+            The value to assign to the vpus_per_gb property of this UpdateBootVolumeDetails.
+        :type vpus_per_gb: int
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
-            'size_in_gbs': 'int'
+            'size_in_gbs': 'int',
+            'vpus_per_gb': 'int'
         }
 
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
-            'size_in_gbs': 'sizeInGBs'
+            'size_in_gbs': 'sizeInGBs',
+            'vpus_per_gb': 'vpusPerGB'
         }
 
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
         self._size_in_gbs = None
+        self._vpus_per_gb = None
 
     @property
     def defined_tags(self):
@@ -170,6 +177,30 @@ class UpdateBootVolumeDetails(object):
         :type: int
         """
         self._size_in_gbs = size_in_gbs
+
+    @property
+    def vpus_per_gb(self):
+        """
+        Gets the vpus_per_gb of this UpdateBootVolumeDetails.
+        The number of Volume Performance Units that will be applied to this boot volume per GB.
+
+
+        :return: The vpus_per_gb of this UpdateBootVolumeDetails.
+        :rtype: int
+        """
+        return self._vpus_per_gb
+
+    @vpus_per_gb.setter
+    def vpus_per_gb(self, vpus_per_gb):
+        """
+        Sets the vpus_per_gb of this UpdateBootVolumeDetails.
+        The number of Volume Performance Units that will be applied to this boot volume per GB.
+
+
+        :param vpus_per_gb: The vpus_per_gb of this UpdateBootVolumeDetails.
+        :type: int
+        """
+        self._vpus_per_gb = vpus_per_gb
 
     def __repr__(self):
         return formatted_flat_dict(self)

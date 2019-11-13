@@ -88,6 +88,26 @@ class AutonomousDatabase(object):
     #: This constant has a value of "DW"
     DB_WORKLOAD_DW = "DW"
 
+    #: A constant which can be used with the data_safe_status property of a AutonomousDatabase.
+    #: This constant has a value of "REGISTERING"
+    DATA_SAFE_STATUS_REGISTERING = "REGISTERING"
+
+    #: A constant which can be used with the data_safe_status property of a AutonomousDatabase.
+    #: This constant has a value of "REGISTERED"
+    DATA_SAFE_STATUS_REGISTERED = "REGISTERED"
+
+    #: A constant which can be used with the data_safe_status property of a AutonomousDatabase.
+    #: This constant has a value of "DEREGISTERING"
+    DATA_SAFE_STATUS_DEREGISTERING = "DEREGISTERING"
+
+    #: A constant which can be used with the data_safe_status property of a AutonomousDatabase.
+    #: This constant has a value of "NOT_REGISTERED"
+    DATA_SAFE_STATUS_NOT_REGISTERED = "NOT_REGISTERED"
+
+    #: A constant which can be used with the data_safe_status property of a AutonomousDatabase.
+    #: This constant has a value of "FAILED"
+    DATA_SAFE_STATUS_FAILED = "FAILED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AutonomousDatabase object with values from keyword arguments.
@@ -207,6 +227,12 @@ class AutonomousDatabase(object):
             The value to assign to the is_auto_scaling_enabled property of this AutonomousDatabase.
         :type is_auto_scaling_enabled: bool
 
+        :param data_safe_status:
+            The value to assign to the data_safe_status property of this AutonomousDatabase.
+            Allowed values for this property are: "REGISTERING", "REGISTERED", "DEREGISTERING", "NOT_REGISTERED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type data_safe_status: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -235,7 +261,8 @@ class AutonomousDatabase(object):
             'is_preview': 'bool',
             'db_workload': 'str',
             'whitelisted_ips': 'list[str]',
-            'is_auto_scaling_enabled': 'bool'
+            'is_auto_scaling_enabled': 'bool',
+            'data_safe_status': 'str'
         }
 
         self.attribute_map = {
@@ -265,7 +292,8 @@ class AutonomousDatabase(object):
             'is_preview': 'isPreview',
             'db_workload': 'dbWorkload',
             'whitelisted_ips': 'whitelistedIps',
-            'is_auto_scaling_enabled': 'isAutoScalingEnabled'
+            'is_auto_scaling_enabled': 'isAutoScalingEnabled',
+            'data_safe_status': 'dataSafeStatus'
         }
 
         self._id = None
@@ -295,6 +323,7 @@ class AutonomousDatabase(object):
         self._db_workload = None
         self._whitelisted_ips = None
         self._is_auto_scaling_enabled = None
+        self._data_safe_status = None
 
     @property
     def id(self):
@@ -1009,6 +1038,36 @@ class AutonomousDatabase(object):
         :type: bool
         """
         self._is_auto_scaling_enabled = is_auto_scaling_enabled
+
+    @property
+    def data_safe_status(self):
+        """
+        Gets the data_safe_status of this AutonomousDatabase.
+        Status of the Data Safe registration for this Autonomous Database.
+
+        Allowed values for this property are: "REGISTERING", "REGISTERED", "DEREGISTERING", "NOT_REGISTERED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The data_safe_status of this AutonomousDatabase.
+        :rtype: str
+        """
+        return self._data_safe_status
+
+    @data_safe_status.setter
+    def data_safe_status(self, data_safe_status):
+        """
+        Sets the data_safe_status of this AutonomousDatabase.
+        Status of the Data Safe registration for this Autonomous Database.
+
+
+        :param data_safe_status: The data_safe_status of this AutonomousDatabase.
+        :type: str
+        """
+        allowed_values = ["REGISTERING", "REGISTERED", "DEREGISTERING", "NOT_REGISTERED", "FAILED"]
+        if not value_allowed_none_or_none_sentinel(data_safe_status, allowed_values):
+            data_safe_status = 'UNKNOWN_ENUM_VALUE'
+        self._data_safe_status = data_safe_status
 
     def __repr__(self):
         return formatted_flat_dict(self)

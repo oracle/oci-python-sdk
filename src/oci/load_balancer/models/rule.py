@@ -44,12 +44,17 @@ class Rule(object):
     #: This constant has a value of "CONTROL_ACCESS_USING_HTTP_METHODS"
     ACTION_CONTROL_ACCESS_USING_HTTP_METHODS = "CONTROL_ACCESS_USING_HTTP_METHODS"
 
+    #: A constant which can be used with the action property of a Rule.
+    #: This constant has a value of "REDIRECT"
+    ACTION_REDIRECT = "REDIRECT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Rule object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.load_balancer.models.AddHttpRequestHeaderRule`
+        * :class:`~oci.load_balancer.models.RedirectRule`
         * :class:`~oci.load_balancer.models.RemoveHttpRequestHeaderRule`
         * :class:`~oci.load_balancer.models.ExtendHttpRequestHeaderValueRule`
         * :class:`~oci.load_balancer.models.RemoveHttpResponseHeaderRule`
@@ -62,7 +67,7 @@ class Rule(object):
 
         :param action:
             The value to assign to the action property of this Rule.
-            Allowed values for this property are: "ADD_HTTP_REQUEST_HEADER", "EXTEND_HTTP_REQUEST_HEADER_VALUE", "REMOVE_HTTP_REQUEST_HEADER", "ADD_HTTP_RESPONSE_HEADER", "EXTEND_HTTP_RESPONSE_HEADER_VALUE", "REMOVE_HTTP_RESPONSE_HEADER", "ALLOW", "CONTROL_ACCESS_USING_HTTP_METHODS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ADD_HTTP_REQUEST_HEADER", "EXTEND_HTTP_REQUEST_HEADER_VALUE", "REMOVE_HTTP_REQUEST_HEADER", "ADD_HTTP_RESPONSE_HEADER", "EXTEND_HTTP_RESPONSE_HEADER_VALUE", "REMOVE_HTTP_RESPONSE_HEADER", "ALLOW", "CONTROL_ACCESS_USING_HTTP_METHODS", "REDIRECT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type action: str
 
@@ -87,6 +92,9 @@ class Rule(object):
 
         if type == 'ADD_HTTP_REQUEST_HEADER':
             return 'AddHttpRequestHeaderRule'
+
+        if type == 'REDIRECT':
+            return 'RedirectRule'
 
         if type == 'REMOVE_HTTP_REQUEST_HEADER':
             return 'RemoveHttpRequestHeaderRule'
@@ -115,7 +123,7 @@ class Rule(object):
     def action(self):
         """
         **[Required]** Gets the action of this Rule.
-        Allowed values for this property are: "ADD_HTTP_REQUEST_HEADER", "EXTEND_HTTP_REQUEST_HEADER_VALUE", "REMOVE_HTTP_REQUEST_HEADER", "ADD_HTTP_RESPONSE_HEADER", "EXTEND_HTTP_RESPONSE_HEADER_VALUE", "REMOVE_HTTP_RESPONSE_HEADER", "ALLOW", "CONTROL_ACCESS_USING_HTTP_METHODS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ADD_HTTP_REQUEST_HEADER", "EXTEND_HTTP_REQUEST_HEADER_VALUE", "REMOVE_HTTP_REQUEST_HEADER", "ADD_HTTP_RESPONSE_HEADER", "EXTEND_HTTP_RESPONSE_HEADER_VALUE", "REMOVE_HTTP_RESPONSE_HEADER", "ALLOW", "CONTROL_ACCESS_USING_HTTP_METHODS", "REDIRECT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -132,7 +140,7 @@ class Rule(object):
         :param action: The action of this Rule.
         :type: str
         """
-        allowed_values = ["ADD_HTTP_REQUEST_HEADER", "EXTEND_HTTP_REQUEST_HEADER_VALUE", "REMOVE_HTTP_REQUEST_HEADER", "ADD_HTTP_RESPONSE_HEADER", "EXTEND_HTTP_RESPONSE_HEADER_VALUE", "REMOVE_HTTP_RESPONSE_HEADER", "ALLOW", "CONTROL_ACCESS_USING_HTTP_METHODS"]
+        allowed_values = ["ADD_HTTP_REQUEST_HEADER", "EXTEND_HTTP_REQUEST_HEADER_VALUE", "REMOVE_HTTP_REQUEST_HEADER", "ADD_HTTP_RESPONSE_HEADER", "EXTEND_HTTP_RESPONSE_HEADER_VALUE", "REMOVE_HTTP_RESPONSE_HEADER", "ALLOW", "CONTROL_ACCESS_USING_HTTP_METHODS", "REDIRECT"]
         if not value_allowed_none_or_none_sentinel(action, allowed_values):
             action = 'UNKNOWN_ENUM_VALUE'
         self._action = action
