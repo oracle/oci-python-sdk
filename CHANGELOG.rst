@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 ====================
+2.6.4 - 2019-11-12
+====================
+
+Added
+-----
+* Support for access to APEX and SQL Dev features on autonomous transaction processing and autonomous data warehouse resources in the Database service
+* Support for registering / deregistering autonomous transaction processing and autonomous data warehouse resources with Data Safe in the Database service
+* Support for redirecting HTTP / HTTPS request URIs to different URIs in the Load Balancing service
+* Support for specifying compartments on options APIs in the Container Engine for Kubernetes service
+* Support for volume performance units on block volumes in the Block Storage service
+
+====================
 2.6.3 - 2019-11-05
 ====================
 

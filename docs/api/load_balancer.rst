@@ -58,10 +58,13 @@ Load Balancer
     oci.load_balancer.models.LoadBalancerPolicy
     oci.load_balancer.models.LoadBalancerProtocol
     oci.load_balancer.models.LoadBalancerShape
+    oci.load_balancer.models.PathMatchCondition
     oci.load_balancer.models.PathMatchType
     oci.load_balancer.models.PathRoute
     oci.load_balancer.models.PathRouteSet
     oci.load_balancer.models.PathRouteSetDetails
+    oci.load_balancer.models.RedirectRule
+    oci.load_balancer.models.RedirectUri
     oci.load_balancer.models.RemoveHttpRequestHeaderRule
     oci.load_balancer.models.RemoveHttpResponseHeaderRule
     oci.load_balancer.models.Rule

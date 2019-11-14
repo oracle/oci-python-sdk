@@ -21,7 +21,7 @@ class SourceVcnIpAddressCondition(RuleCondition):
 
         :param attribute_name:
             The value to assign to the attribute_name property of this SourceVcnIpAddressCondition.
-            Allowed values for this property are: "SOURCE_IP_ADDRESS", "SOURCE_VCN_ID", "SOURCE_VCN_IP_ADDRESS"
+            Allowed values for this property are: "SOURCE_IP_ADDRESS", "SOURCE_VCN_ID", "SOURCE_VCN_IP_ADDRESS", "PATH"
         :type attribute_name: str
 
         :param attribute_value:

@@ -29,6 +29,10 @@ class UpdateVolumeDetails(object):
             The value to assign to the freeform_tags property of this UpdateVolumeDetails.
         :type freeform_tags: dict(str, str)
 
+        :param vpus_per_gb:
+            The value to assign to the vpus_per_gb property of this UpdateVolumeDetails.
+        :type vpus_per_gb: int
+
         :param size_in_gbs:
             The value to assign to the size_in_gbs property of this UpdateVolumeDetails.
         :type size_in_gbs: int
@@ -38,6 +42,7 @@ class UpdateVolumeDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
+            'vpus_per_gb': 'int',
             'size_in_gbs': 'int'
         }
 
@@ -45,12 +50,14 @@ class UpdateVolumeDetails(object):
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
+            'vpus_per_gb': 'vpusPerGB',
             'size_in_gbs': 'sizeInGBs'
         }
 
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
+        self._vpus_per_gb = None
         self._size_in_gbs = None
 
     @property
@@ -146,6 +153,30 @@ class UpdateVolumeDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def vpus_per_gb(self):
+        """
+        Gets the vpus_per_gb of this UpdateVolumeDetails.
+        The number of Volume Performance Units that will be applied to this volume per GB.
+
+
+        :return: The vpus_per_gb of this UpdateVolumeDetails.
+        :rtype: int
+        """
+        return self._vpus_per_gb
+
+    @vpus_per_gb.setter
+    def vpus_per_gb(self, vpus_per_gb):
+        """
+        Sets the vpus_per_gb of this UpdateVolumeDetails.
+        The number of Volume Performance Units that will be applied to this volume per GB.
+
+
+        :param vpus_per_gb: The vpus_per_gb of this UpdateVolumeDetails.
+        :type: int
+        """
+        self._vpus_per_gb = vpus_per_gb
 
     @property
     def size_in_gbs(self):
