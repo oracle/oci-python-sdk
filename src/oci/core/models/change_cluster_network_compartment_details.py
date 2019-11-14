@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeClusterNetworkCompartmentDetails(object):
     """
-    Contains details indicating which compartment the resource should move to
+    The configuration details for the move operation.
     """
 
     def __init__(self, **kwargs):
@@ -39,7 +39,7 @@ class ChangeClusterNetworkCompartmentDetails(object):
         The `OCID`__ of the compartment
         into which the resource should be moved.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ChangeClusterNetworkCompartmentDetails.
@@ -54,7 +54,7 @@ class ChangeClusterNetworkCompartmentDetails(object):
         The `OCID`__ of the compartment
         into which the resource should be moved.
 
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ChangeClusterNetworkCompartmentDetails.

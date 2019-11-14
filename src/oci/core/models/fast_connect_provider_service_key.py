@@ -50,7 +50,7 @@ class FastConnectProviderServiceKey(object):
     @property
     def name(self):
         """
-        Gets the name of this FastConnectProviderServiceKey.
+        **[Required]** Gets the name of this FastConnectProviderServiceKey.
         The service key that the provider gives you when you set up a virtual circuit connection
         from the provider to Oracle Cloud Infrastructure. Use this value as the `providerServiceKeyName`
         query parameter for

@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateClusterNetworkDetails(object):
     """
-    The data to create a cluster network
+    The data to create a cluster network.
     """
 
     def __init__(self, **kwargs):
@@ -71,7 +71,10 @@ class CreateClusterNetworkDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateClusterNetworkDetails.
-        The OCID of the compartment containing the cluster network.
+        The `OCID`__ of the compartment
+        containing the cluster network.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateClusterNetworkDetails.
@@ -83,7 +86,10 @@ class CreateClusterNetworkDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateClusterNetworkDetails.
-        The OCID of the compartment containing the cluster network.
+        The `OCID`__ of the compartment
+        containing the cluster network.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateClusterNetworkDetails.
@@ -129,7 +135,8 @@ class CreateClusterNetworkDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateClusterNetworkDetails.
-        The user-friendly name.  Does not have to be unique.
+        A user-friendly name for the cluster network. Does not have to be unique, and it's
+        changeable. Avoid entering confidential information.
 
 
         :return: The display_name of this CreateClusterNetworkDetails.
@@ -141,7 +148,8 @@ class CreateClusterNetworkDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateClusterNetworkDetails.
-        The user-friendly name.  Does not have to be unique.
+        A user-friendly name for the cluster network. Does not have to be unique, and it's
+        changeable. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateClusterNetworkDetails.
@@ -187,7 +195,9 @@ class CreateClusterNetworkDetails(object):
     def instance_pools(self):
         """
         **[Required]** Gets the instance_pools of this CreateClusterNetworkDetails.
-        the data to create the instance pools in the cluster network.
+        The data to create the instance pools in the cluster network.
+
+        Each cluster network can have one instance pool.
 
 
         :return: The instance_pools of this CreateClusterNetworkDetails.
@@ -199,7 +209,9 @@ class CreateClusterNetworkDetails(object):
     def instance_pools(self, instance_pools):
         """
         Sets the instance_pools of this CreateClusterNetworkDetails.
-        the data to create the instance pools in the cluster network.
+        The data to create the instance pools in the cluster network.
+
+        Each cluster network can have one instance pool.
 
 
         :param instance_pools: The instance_pools of this CreateClusterNetworkDetails.
@@ -211,7 +223,7 @@ class CreateClusterNetworkDetails(object):
     def placement_configuration(self):
         """
         **[Required]** Gets the placement_configuration of this CreateClusterNetworkDetails.
-        the placement data for the intance pools in the cluster network
+        The placement configuration for the instance pools in the cluster network.
 
 
         :return: The placement_configuration of this CreateClusterNetworkDetails.
@@ -223,7 +235,7 @@ class CreateClusterNetworkDetails(object):
     def placement_configuration(self, placement_configuration):
         """
         Sets the placement_configuration of this CreateClusterNetworkDetails.
-        the placement data for the intance pools in the cluster network
+        The placement configuration for the instance pools in the cluster network.
 
 
         :param placement_configuration: The placement_configuration of this CreateClusterNetworkDetails.

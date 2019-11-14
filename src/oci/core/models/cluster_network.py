@@ -9,7 +9,11 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ClusterNetwork(object):
     """
-    Cluster Network
+    A cluster network is a group of high performance computing (HPC) bare metal instances that are connected
+    with an ultra low latency network. For more information about cluster networks, see
+    `Managing Cluster Networks`__.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a ClusterNetwork.
@@ -133,7 +137,9 @@ class ClusterNetwork(object):
     def id(self):
         """
         **[Required]** Gets the id of this ClusterNetwork.
-        The OCID of the cluster network.
+        The `OCID`__ of the cluster network.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ClusterNetwork.
@@ -145,7 +151,9 @@ class ClusterNetwork(object):
     def id(self, id):
         """
         Sets the id of this ClusterNetwork.
-        The OCID of the cluster network.
+        The `OCID`__ of the cluster network.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ClusterNetwork.
@@ -157,7 +165,9 @@ class ClusterNetwork(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ClusterNetwork.
-        The OCID of the compartment containing the cluster netowrk.
+        The `OCID`__ of the compartment containing the cluster netowrk.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ClusterNetwork.
@@ -169,7 +179,9 @@ class ClusterNetwork(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ClusterNetwork.
-        The OCID of the compartment containing the cluster netowrk.
+        The `OCID`__ of the compartment containing the cluster netowrk.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ClusterNetwork.
@@ -215,7 +227,7 @@ class ClusterNetwork(object):
     def display_name(self):
         """
         Gets the display_name of this ClusterNetwork.
-        The user-friendly name.  Does not have to be unique.
+        A user-friendly name. Does not have to be unique, and it's changeable.
 
 
         :return: The display_name of this ClusterNetwork.
@@ -227,7 +239,7 @@ class ClusterNetwork(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ClusterNetwork.
-        The user-friendly name.  Does not have to be unique.
+        A user-friendly name. Does not have to be unique, and it's changeable.
 
 
         :param display_name: The display_name of this ClusterNetwork.
@@ -273,7 +285,9 @@ class ClusterNetwork(object):
     def instance_pools(self):
         """
         Gets the instance_pools of this ClusterNetwork.
-        the instance pools in the cluster network.
+        The instance pools in the cluster network.
+
+        Each cluster network can have one instance pool.
 
 
         :return: The instance_pools of this ClusterNetwork.
@@ -285,7 +299,9 @@ class ClusterNetwork(object):
     def instance_pools(self, instance_pools):
         """
         Sets the instance_pools of this ClusterNetwork.
-        the instance pools in the cluster network.
+        The instance pools in the cluster network.
+
+        Each cluster network can have one instance pool.
 
 
         :param instance_pools: The instance_pools of this ClusterNetwork.
@@ -297,7 +313,7 @@ class ClusterNetwork(object):
     def placement_configuration(self):
         """
         Gets the placement_configuration of this ClusterNetwork.
-        the placement data for the intance pools in the cluster network
+        The placement configuration for the instance pools in the cluster network.
 
 
         :return: The placement_configuration of this ClusterNetwork.
@@ -309,7 +325,7 @@ class ClusterNetwork(object):
     def placement_configuration(self, placement_configuration):
         """
         Sets the placement_configuration of this ClusterNetwork.
-        the placement data for the intance pools in the cluster network
+        The placement configuration for the instance pools in the cluster network.
 
 
         :param placement_configuration: The placement_configuration of this ClusterNetwork.
@@ -352,6 +368,7 @@ class ClusterNetwork(object):
         """
         **[Required]** Gets the time_created of this ClusterNetwork.
         The date and time the resource was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
 
 
@@ -365,6 +382,7 @@ class ClusterNetwork(object):
         """
         Sets the time_created of this ClusterNetwork.
         The date and time the resource was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
 
 
@@ -378,6 +396,7 @@ class ClusterNetwork(object):
         """
         **[Required]** Gets the time_updated of this ClusterNetwork.
         The date and time the resource was updated, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
 
 
@@ -391,6 +410,7 @@ class ClusterNetwork(object):
         """
         Sets the time_updated of this ClusterNetwork.
         The date and time the resource was updated, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
 
 
