@@ -21,6 +21,10 @@ class UpdateInstancePoolPlacementConfigurationDetails(object):
             The value to assign to the availability_domain property of this UpdateInstancePoolPlacementConfigurationDetails.
         :type availability_domain: str
 
+        :param fault_domains:
+            The value to assign to the fault_domains property of this UpdateInstancePoolPlacementConfigurationDetails.
+        :type fault_domains: list[str]
+
         :param primary_subnet_id:
             The value to assign to the primary_subnet_id property of this UpdateInstancePoolPlacementConfigurationDetails.
         :type primary_subnet_id: str
@@ -32,17 +36,20 @@ class UpdateInstancePoolPlacementConfigurationDetails(object):
         """
         self.swagger_types = {
             'availability_domain': 'str',
+            'fault_domains': 'list[str]',
             'primary_subnet_id': 'str',
             'secondary_vnic_subnets': 'list[InstancePoolPlacementSecondaryVnicSubnet]'
         }
 
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
+            'fault_domains': 'faultDomains',
             'primary_subnet_id': 'primarySubnetId',
             'secondary_vnic_subnets': 'secondaryVnicSubnets'
         }
 
         self._availability_domain = None
+        self._fault_domains = None
         self._primary_subnet_id = None
         self._secondary_vnic_subnets = None
 
@@ -71,6 +78,30 @@ class UpdateInstancePoolPlacementConfigurationDetails(object):
         :type: str
         """
         self._availability_domain = availability_domain
+
+    @property
+    def fault_domains(self):
+        """
+        Gets the fault_domains of this UpdateInstancePoolPlacementConfigurationDetails.
+        The fault domains to place instances.
+
+
+        :return: The fault_domains of this UpdateInstancePoolPlacementConfigurationDetails.
+        :rtype: list[str]
+        """
+        return self._fault_domains
+
+    @fault_domains.setter
+    def fault_domains(self, fault_domains):
+        """
+        Sets the fault_domains of this UpdateInstancePoolPlacementConfigurationDetails.
+        The fault domains to place instances.
+
+
+        :param fault_domains: The fault_domains of this UpdateInstancePoolPlacementConfigurationDetails.
+        :type: list[str]
+        """
+        self._fault_domains = fault_domains
 
     @property
     def primary_subnet_id(self):

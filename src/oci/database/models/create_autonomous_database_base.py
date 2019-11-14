@@ -102,6 +102,10 @@ class CreateAutonomousDatabaseBase(object):
             The value to assign to the autonomous_container_database_id property of this CreateAutonomousDatabaseBase.
         :type autonomous_container_database_id: str
 
+        :param whitelisted_ips:
+            The value to assign to the whitelisted_ips property of this CreateAutonomousDatabaseBase.
+        :type whitelisted_ips: list[str]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateAutonomousDatabaseBase.
         :type freeform_tags: dict(str, str)
@@ -130,6 +134,7 @@ class CreateAutonomousDatabaseBase(object):
             'is_auto_scaling_enabled': 'bool',
             'is_dedicated': 'bool',
             'autonomous_container_database_id': 'str',
+            'whitelisted_ips': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'source': 'str'
@@ -149,6 +154,7 @@ class CreateAutonomousDatabaseBase(object):
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
             'is_dedicated': 'isDedicated',
             'autonomous_container_database_id': 'autonomousContainerDatabaseId',
+            'whitelisted_ips': 'whitelistedIps',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'source': 'source'
@@ -167,6 +173,7 @@ class CreateAutonomousDatabaseBase(object):
         self._is_auto_scaling_enabled = None
         self._is_dedicated = None
         self._autonomous_container_database_id = None
+        self._whitelisted_ips = None
         self._freeform_tags = None
         self._defined_tags = None
         self._source = None
@@ -538,6 +545,40 @@ class CreateAutonomousDatabaseBase(object):
         :type: str
         """
         self._autonomous_container_database_id = autonomous_container_database_id
+
+    @property
+    def whitelisted_ips(self):
+        """
+        Gets the whitelisted_ips of this CreateAutonomousDatabaseBase.
+        The client IP access control list (ACL). This feature is available for `serverless deployments`__ only.
+        Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
+        To add the whitelist VCN specific subnet or IP, use a semicoln ';' as a deliminator to add the VCN specific subnets or IPs.
+        Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.aaaaaaaard2hfx2nn3e5xeo6j6o62jga44xjizkw\",\"ocid1.vcn.oc1.sea.aaaaaaaard2hfx2nn3e5xeo6j6o62jga44xjizkw;1.1.1.1\",\"ocid1.vcn.oc1.sea.aaaaaaaard2hfx2nn3e5xeo6j6o62jga44xjizkw;1.1.0.0/16\"]`
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
+
+
+        :return: The whitelisted_ips of this CreateAutonomousDatabaseBase.
+        :rtype: list[str]
+        """
+        return self._whitelisted_ips
+
+    @whitelisted_ips.setter
+    def whitelisted_ips(self, whitelisted_ips):
+        """
+        Sets the whitelisted_ips of this CreateAutonomousDatabaseBase.
+        The client IP access control list (ACL). This feature is available for `serverless deployments`__ only.
+        Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
+        To add the whitelist VCN specific subnet or IP, use a semicoln ';' as a deliminator to add the VCN specific subnets or IPs.
+        Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.aaaaaaaard2hfx2nn3e5xeo6j6o62jga44xjizkw\",\"ocid1.vcn.oc1.sea.aaaaaaaard2hfx2nn3e5xeo6j6o62jga44xjizkw;1.1.1.1\",\"ocid1.vcn.oc1.sea.aaaaaaaard2hfx2nn3e5xeo6j6o62jga44xjizkw;1.1.0.0/16\"]`
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
+
+
+        :param whitelisted_ips: The whitelisted_ips of this CreateAutonomousDatabaseBase.
+        :type: list[str]
+        """
+        self._whitelisted_ips = whitelisted_ips
 
     @property
     def freeform_tags(self):

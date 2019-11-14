@@ -98,7 +98,7 @@ class CreateClusterNetworkInstancePoolDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateClusterNetworkInstancePoolDetails.
-        The user-friendly name.  Does not have to be unique.
+        A user-friendly name. Does not have to be unique. Avoid entering confidential information.
 
 
         :return: The display_name of this CreateClusterNetworkInstancePoolDetails.
@@ -110,7 +110,7 @@ class CreateClusterNetworkInstancePoolDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateClusterNetworkInstancePoolDetails.
-        The user-friendly name.  Does not have to be unique.
+        A user-friendly name. Does not have to be unique. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateClusterNetworkInstancePoolDetails.
@@ -156,7 +156,10 @@ class CreateClusterNetworkInstancePoolDetails(object):
     def instance_configuration_id(self):
         """
         **[Required]** Gets the instance_configuration_id of this CreateClusterNetworkInstancePoolDetails.
-        The OCID of the instance configuration associated to the instance pool.
+        The `OCID`__ of the instance configuration
+        associated with the instance pool.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The instance_configuration_id of this CreateClusterNetworkInstancePoolDetails.
@@ -168,7 +171,10 @@ class CreateClusterNetworkInstancePoolDetails(object):
     def instance_configuration_id(self, instance_configuration_id):
         """
         Sets the instance_configuration_id of this CreateClusterNetworkInstancePoolDetails.
-        The OCID of the instance configuration associated to the instance pool.
+        The `OCID`__ of the instance configuration
+        associated with the instance pool.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param instance_configuration_id: The instance_configuration_id of this CreateClusterNetworkInstancePoolDetails.
@@ -182,6 +188,9 @@ class CreateClusterNetworkInstancePoolDetails(object):
         **[Required]** Gets the size of this CreateClusterNetworkInstancePoolDetails.
         The number of instances that should be in the instance pool.
 
+        If the required number of instances is not available or if some instances fail to launch,
+        the cluster network is not created.
+
 
         :return: The size of this CreateClusterNetworkInstancePoolDetails.
         :rtype: int
@@ -193,6 +202,9 @@ class CreateClusterNetworkInstancePoolDetails(object):
         """
         Sets the size of this CreateClusterNetworkInstancePoolDetails.
         The number of instances that should be in the instance pool.
+
+        If the required number of instances is not available or if some instances fail to launch,
+        the cluster network is not created.
 
 
         :param size: The size of this CreateClusterNetworkInstancePoolDetails.
