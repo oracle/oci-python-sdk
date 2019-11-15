@@ -222,12 +222,14 @@ class ShowOCI2SE(object):
                         'vcn_id': vcn['id'],
                         'vcn_name': vcn['display_name'],
                         'vcn_cidr': vcn['cidr_block'],
-                        'vcn_compartment': vcn['compartment'],
+                        'vcn_compartment': vcn['compartment_name'],
+                        'vcn_compartment_id': vcn['compartment_id'],
                         'subnet_id': subnet['id'],
                         'subnet_name': subnet['name'],
                         'subnet_cidr': subnet['cidr_block'],
                         'availability_domain': subnet['availability_domain'],
-                        'subnet_compartment': subnet['compartment'],
+                        'subnet_compartment': subnet['compartment_name'],
+                        'subnet_compartment_id': subnet['compartment_id'],
                         'public_private': subnet['public_private'],
                         'dhcp_options': subnet['dhcp_options'],
                         'route': subnet['route'],
@@ -254,10 +256,12 @@ class ShowOCI2SE(object):
                             'vcn_id': vcn['id'],
                             'vcn_name': vcn['display_name'],
                             'vcn_cidr': vcn['cidr_block'],
-                            'vcn_compartment': vcn['compartment'],
+                            'vcn_compartment': vcn['compartment_name'],
+                            'vcn_compartment_id': vcn['compartment_id'],
                             'sec_name': sl['name'],
                             'sec_id': sl['id'],
-                            'sec_compartment': sl['compartment'],
+                            'sec_compartment': sl['compartment_name'],
+                            'sec_compartment_id': sl['compartment_id'],
                             'time_created': sl['time_created'][0:16],
                             'sec_protocol': "",
                             'sec_is_stateless': "",
@@ -279,10 +283,12 @@ class ShowOCI2SE(object):
                                 'vcn_id': vcn['id'],
                                 'vcn_name': vcn['display_name'],
                                 'vcn_cidr': vcn['cidr_block'],
-                                'vcn_compartment': vcn['compartment'],
+                                'vcn_compartment': vcn['compartment_name'],
+                                'vcn_compartment_id': vcn['compartment_id'],
                                 'sec_name': sl['name'],
                                 'sec_id': sl['id'],
-                                'sec_compartment': sl['compartment'],
+                                'sec_compartment': sl['compartment_name'],
+                                'sec_compartment_id': sl['compartment_id'],
                                 'time_created': sl['time_created'][0:16],
                                 'sec_protocol': slr['protocol_name'],
                                 'sec_is_stateless': slr['is_stateless'],
@@ -317,10 +323,12 @@ class ShowOCI2SE(object):
                             'vcn_id': vcn['id'],
                             'vcn_name': vcn['display_name'],
                             'vcn_cidr': vcn['cidr_block'],
-                            'vcn_compartment': vcn['compartment'],
+                            'vcn_compartment': vcn['compartment_name'],
+                            'vcn_compartment_id': vcn['compartment_id'],
                             'sec_id': sl['id'],
                             'sec_name': sl['name'],
-                            'sec_compartment': sl['compartment'],
+                            'sec_compartment': sl['compartment_name'],
+                            'sec_compartment_id': sl['compartment_id'],
                             'time_created': sl['time_created'][0:16],
                             'sec_description': "",
                             'sec_direction': "",
@@ -350,10 +358,12 @@ class ShowOCI2SE(object):
                                 'vcn_id': vcn['id'],
                                 'vcn_name': vcn['display_name'],
                                 'vcn_cidr': vcn['cidr_block'],
-                                'vcn_compartment': vcn['compartment'],
+                                'vcn_compartment': vcn['compartment_name'],
+                                'vcn_compartment_id': vcn['compartment_id'],
                                 'sec_id': sl['id'],
                                 'sec_name': sl['name'],
-                                'sec_compartment': sl['compartment'],
+                                'sec_compartment': sl['compartment_name'],
+                                'sec_compartment_id': sl['compartment_id'],
                                 'time_created': sl['time_created'],
                                 'sec_description': slr['description'],
                                 'sec_direction': slr['direction'],
@@ -391,11 +401,13 @@ class ShowOCI2SE(object):
                         'vcn_id': vcn['id'],
                         'vcn_name': vcn['display_name'],
                         'vcn_cidr': vcn['cidr_block'],
-                        'vcn_compartment': vcn['compartment'],
+                        'vcn_compartment': vcn['compartment_name'],
+                        'vcn_compartment_id': vcn['compartment_id'],
                         'dhcp_name': dhcp['name'],
                         'option_1': "",
                         'option_2': "",
-                        'dhcp_compartment': dhcp['compartment'],
+                        'dhcp_compartment': dhcp['compartment_name'],
+                        'dhcp_compartment_id': dhcp['compartment_id'],
                         'time_created': dhcp['time_created'][0:16]}
 
                 seq = 0
@@ -426,9 +438,11 @@ class ShowOCI2SE(object):
                             'vcn_id': vcn['id'],
                             'vcn_name': vcn['display_name'],
                             'vcn_cidr': vcn['cidr_block'],
-                            'vcn_compartment': vcn['compartment'],
+                            'vcn_compartment': vcn['compartment_name'],
+                            'vcn_compartment_id': vcn['compartment_id'],
                             'route_name': rt['name'],
-                            'route_compartment': rt['compartment'],
+                            'route_compartment': rt['compartment_name'],
+                            'route_compartment_id': rt['compartment_id'],
                             'destination': "",
                             'route': "Empty",
                             'time_created': rt['time_created'][0:16]}
@@ -442,10 +456,12 @@ class ShowOCI2SE(object):
                                 'vcn_id': vcn['id'],
                                 'vcn_name': vcn['display_name'],
                                 'vcn_cidr': vcn['cidr_block'],
-                                'vcn_compartment': vcn['compartment'],
+                                'vcn_compartment': vcn['compartment_name'],
+                                'vcn_compartment_id': vcn['compartment_id'],
                                 'route_name': rt['name'],
                                 'route_ocid': rt['id'],
-                                'route_compartment': rt['compartment'],
+                                'route_compartment': rt['compartment_name'],
+                                'route_compartment_id': rt['compartment_id'],
                                 'network_entity_id': rl['network_entity_id'],
                                 'destination': rl['destination'],
                                 'route': rl['desc'],
@@ -467,7 +483,7 @@ class ShowOCI2SE(object):
             for vcn in vcns:
 
                 # don't extract managed compartment
-                if self.__if_managed_paas_compartment(vcn['compartment']):
+                if self.__if_managed_paas_compartment(vcn['compartment_name']):
                     continue
 
                 igw = ""
@@ -495,14 +511,15 @@ class ShowOCI2SE(object):
                     drg = str(', '.join(x['name'] for x in vcn['data']['drg_attached']))
 
                 if 'local_peering' in vcn['data']:
-                    lpg = str(', '.join(x['name'] for x in vcn['data']['local_peering']))
+                    lpg = vcn['data']['local_peering']
 
                 self.NetworkVcnId += 1
                 data = {'class': 'NetworkVcn' + str(self.NetworkVcnId),
                         'region_name': region_name,
                         'vcn_name': vcn['display_name'],
                         'vcn_cidr': vcn['cidr_block'],
-                        'vcn_compartment': vcn['compartment'],
+                        'vcn_compartment': vcn['compartment_name'],
+                        'vcn_compartment_id': vcn['compartment_id'],
                         'vcn_id': vcn['id'],
                         'internet_gateway': igw,
                         'igw_id': igw_id,
@@ -550,7 +567,14 @@ class ShowOCI2SE(object):
                     continue
 
                 self.NetworkCpeId += 1
-                data = {'class': "NetworkCpe" + str(self.NetworkCpeId)}
+                data = {'class': "NetworkCpe" + str(self.NetworkCpeId),
+                        'region_name': region_name,
+                        'display_name': cpe['display_name'],
+                        'ip_address': cpe['ip_address'],
+                        'time_created': cpe['time_created'],
+                        'compartment_name': cpe['compartment_name'],
+                        'compartment_id': cpe['compartment_id']
+                        }
                 data.update(cpe)
 
                 # add details
@@ -699,6 +723,7 @@ class ShowOCI2SE(object):
                                 'region_name': region_name,
                                 'availability_domain': dbs['availability_domain'],
                                 'compartment_name': dbs['compartment_name'],
+                                'compartment_id': dbs['compartment_id'],
                                 'status': dbs['lifecycle_state'],
                                 'type': "DBSystem",
                                 'name': dbs['display_name'],
@@ -744,6 +769,7 @@ class ShowOCI2SE(object):
                         'region_name': region_name,
                         'availability_domain': "",
                         'compartment_name': dbs['compartment_name'],
+                        'compartment_id': dbs['compartment_id'],
                         'status': dbs['lifecycle_state'],
                         'type': "Autonomous" + dbs['db_workload'],
                         'name': dbs['display_name'], 'shape': "",
@@ -805,6 +831,7 @@ class ShowOCI2SE(object):
                         'region_name': region_name,
                         'availability_domain': instance['availability_domain'],
                         'compartment_name': instance['compartment_name'],
+                        'compartment_id': instance['compartment_id'],
                         'server_name': instance['display_name'],
                         'Status': instance['lifecycle_state'],
                         'Type': instance['image_os'],
