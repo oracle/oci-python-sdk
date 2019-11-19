@@ -104,7 +104,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.5.2"
+    oci_compatible_version = "2.6.4"
 
     ##########################################################################
     # Global Constants
@@ -1536,10 +1536,17 @@ class ShowOCIService(object):
                         cidr = "" if lpg.peer_advertised_cidr is None else " - " + str(lpg.peer_advertised_cidr)
 
                         # add lpg info to data
-                        val = {'id': str(lpg.id), 'vcn_id': str(lpg.vcn_id),
+                        val = {'id': str(lpg.id),
+                               'vcn_id': str(lpg.vcn_id),
                                'name': str(lpg.peering_status).ljust(8) + " - " + str(lpg.display_name) + str(cidr),
-                               'time_created': str(lpg.time_created), 'route_table_id': str(lpg.route_table_id),
-                               'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                               'time_created': str(lpg.time_created),
+                               'display_name': str(lpg.display_name),
+                               'peer_advertised_cidr': str(lpg.peer_advertised_cidr),
+                               'is_cross_tenancy_peering': str(lpg.is_cross_tenancy_peering),
+                               'peer_advertised_cidr_details': lpg.peer_advertised_cidr_details,
+                               'route_table_id': str(lpg.route_table_id),
+                               'compartment_name': str(compartment['name']),
+                               'compartment_id': str(compartment['id']),
                                'defined_tags': [] if lpg.defined_tags is None else lpg.defined_tags,
                                'freeform_tags': [] if lpg.freeform_tags is None else lpg.freeform_tags,
                                'region_name': str(self.config['region'])}
@@ -2562,6 +2569,8 @@ class ShowOCIService(object):
                 for arr in arrs:
                     val = {'id': str(arr.id),
                            'name': str(arr.display_name) + " - " + str(arr.ip_address),
+                           'display_name': str(arr.display_name),
+                           'ip_address': str(arr.ip_address),
                            'time_created': str(arr.time_created),
                            'compartment_name': str(compartment['name']),
                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
@@ -3703,8 +3712,12 @@ class ShowOCIService(object):
                     for arr in boot_volumes:
 
                         val = {'id': str(arr.id), 'display_name': str(arr.display_name),
-                               'size_in_gbs': str(arr.size_in_gbs), 'time_created': str(arr.time_created),
-                               'kms_key_id': str(arr.kms_key_id), 'volume_group_id': str(arr.volume_group_id),
+                               'size_in_gbs': str(arr.size_in_gbs),
+                               'time_created': str(arr.time_created),
+                               'kms_key_id': str(arr.kms_key_id),
+                               'vpus_per_gb': str(arr.vpus_per_gb),
+                               'is_hydrated': str(arr.is_hydrated),
+                               'volume_group_id': str(arr.volume_group_id),
                                'volume_group_name': "", 'availability_domain': str(arr.availability_domain),
                                'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
                                'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
@@ -3774,10 +3787,15 @@ class ShowOCIService(object):
                 for arr in arrs:
 
                     val = {'id': str(arr.id), 'display_name': str(arr.display_name),
-                           'size_in_gbs': str(arr.size_in_gbs), 'time_created': str(arr.time_created),
-                           'kms_key_id': str(arr.kms_key_id), 'volume_group_id': str(arr.volume_group_id),
+                           'size_in_gbs': str(arr.size_in_gbs),
+                           'time_created': str(arr.time_created),
+                           'kms_key_id': str(arr.kms_key_id),
+                           'volume_group_id': str(arr.volume_group_id),
                            'volume_group_name': "", 'availability_domain': str(arr.availability_domain),
-                           'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                           'compartment_name': str(compartment['name']),
+                           'compartment_id': str(compartment['id']),
+                           'vpus_per_gb': str(arr.vpus_per_gb),
+                           'is_hydrated': str(arr.is_hydrated),
                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                            'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
                            'region_name': str(self.config['region']),

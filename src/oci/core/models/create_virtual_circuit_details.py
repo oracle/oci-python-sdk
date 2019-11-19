@@ -41,6 +41,10 @@ class CreateVirtualCircuitDetails(object):
             The value to assign to the customer_bgp_asn property of this CreateVirtualCircuitDetails.
         :type customer_bgp_asn: int
 
+        :param customer_asn:
+            The value to assign to the customer_asn property of this CreateVirtualCircuitDetails.
+        :type customer_asn: int
+
         :param defined_tags:
             The value to assign to the defined_tags property of this CreateVirtualCircuitDetails.
         :type defined_tags: dict(str, dict(str, object))
@@ -92,6 +96,7 @@ class CreateVirtualCircuitDetails(object):
             'compartment_id': 'str',
             'cross_connect_mappings': 'list[CrossConnectMapping]',
             'customer_bgp_asn': 'int',
+            'customer_asn': 'int',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -110,6 +115,7 @@ class CreateVirtualCircuitDetails(object):
             'compartment_id': 'compartmentId',
             'cross_connect_mappings': 'crossConnectMappings',
             'customer_bgp_asn': 'customerBgpAsn',
+            'customer_asn': 'customerAsn',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
@@ -127,6 +133,7 @@ class CreateVirtualCircuitDetails(object):
         self._compartment_id = None
         self._cross_connect_mappings = None
         self._customer_bgp_asn = None
+        self._customer_asn = None
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
@@ -225,9 +232,8 @@ class CreateVirtualCircuitDetails(object):
     def customer_bgp_asn(self):
         """
         Gets the customer_bgp_asn of this CreateVirtualCircuitDetails.
-        Your BGP ASN (either public or private). Provide this value only if
-        there's a BGP session that goes from your edge router to Oracle.
-        Otherwise, leave this empty or null.
+        Deprecated. Instead use `customerAsn`.
+        If you specify values for both, the request will be rejected.
 
 
         :return: The customer_bgp_asn of this CreateVirtualCircuitDetails.
@@ -239,15 +245,48 @@ class CreateVirtualCircuitDetails(object):
     def customer_bgp_asn(self, customer_bgp_asn):
         """
         Sets the customer_bgp_asn of this CreateVirtualCircuitDetails.
-        Your BGP ASN (either public or private). Provide this value only if
-        there's a BGP session that goes from your edge router to Oracle.
-        Otherwise, leave this empty or null.
+        Deprecated. Instead use `customerAsn`.
+        If you specify values for both, the request will be rejected.
 
 
         :param customer_bgp_asn: The customer_bgp_asn of this CreateVirtualCircuitDetails.
         :type: int
         """
         self._customer_bgp_asn = customer_bgp_asn
+
+    @property
+    def customer_asn(self):
+        """
+        Gets the customer_asn of this CreateVirtualCircuitDetails.
+        Your BGP ASN (either public or private). Provide this value only if
+        there's a BGP session that goes from your edge router to Oracle.
+        Otherwise, leave this empty or null.
+        Can be a 2-byte or 4-byte ASN. Uses \"asplain\" format.
+
+        Example: `12345` (2-byte) or `1587232876` (4-byte)
+
+
+        :return: The customer_asn of this CreateVirtualCircuitDetails.
+        :rtype: int
+        """
+        return self._customer_asn
+
+    @customer_asn.setter
+    def customer_asn(self, customer_asn):
+        """
+        Sets the customer_asn of this CreateVirtualCircuitDetails.
+        Your BGP ASN (either public or private). Provide this value only if
+        there's a BGP session that goes from your edge router to Oracle.
+        Otherwise, leave this empty or null.
+        Can be a 2-byte or 4-byte ASN. Uses \"asplain\" format.
+
+        Example: `12345` (2-byte) or `1587232876` (4-byte)
+
+
+        :param customer_asn: The customer_asn of this CreateVirtualCircuitDetails.
+        :type: int
+        """
+        self._customer_asn = customer_asn
 
     @property
     def defined_tags(self):

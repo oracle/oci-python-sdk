@@ -184,7 +184,12 @@ class ShowOCIData(object):
                     continue
 
                 print("    Compartment " + compartment['path'] + "...")
-                data = {'compartment': compartment['name'], 'path': compartment['path']}
+                data = {
+                    'compartment_id': compartment['id'],
+                    'compartment_name': compartment['name'],
+                    'compartment': compartment['name'],
+                    'path': compartment['path']
+                }
                 has_data = False
 
                 # run on network module
@@ -321,7 +326,8 @@ class ShowOCIData(object):
             for arr in list_nat_gateways:
                 value = {'id': arr['id'],
                          'name': arr['name'],
-                         'compartment': arr['compartment_name'],
+                         'compartment_name': arr['compartment_name'],
+                         'compartment_id': arr['compartment_id'],
                          'time_created': arr['time_created'],
                          'defined_tags': arr['defined_tags'],
                          'freeform_tags': arr['freeform_tags']}
@@ -342,7 +348,11 @@ class ShowOCIData(object):
         try:
             list_igws = self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_IGW, 'vcn_id', vcn_id)
             for arr in list_igws:
-                value = {'id': arr['id'], 'name': arr['name'], 'compartment': arr['compartment_name'], 'time_created': arr['time_created']}
+                value = {'id': arr['id'],
+                         'name': arr['name'],
+                         'compartment_name': arr['compartment_name'],
+                         'compartment_id': arr['compartment_id'],
+                         'time_created': arr['time_created']}
                 data.append(value)
             return data
 
@@ -361,7 +371,9 @@ class ShowOCIData(object):
             list_service_gateways = self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_SGW, 'vcn_id', vcn_id)
             for arr in list_service_gateways:
                 value = {'id': arr['id'], 'name': arr['name'], 'services': arr['services'],
-                         'compartment': arr['compartment_name'], 'time_created': arr['time_created'], 'defined_tags': arr['defined_tags'], 'freeform_tags': arr['freeform_tags']}
+                         'compartment_name': arr['compartment_name'],
+                         'compartment_id': arr['compartment_id'],
+                         'time_created': arr['time_created'], 'defined_tags': arr['defined_tags'], 'freeform_tags': arr['freeform_tags']}
                 data.append(value)
             return data
 
@@ -414,7 +426,12 @@ class ShowOCIData(object):
             list_drg_attachments = self.service.search_multi_items(self.service.C_NETWORK, self.service.C_NETWORK_DRG_AT, 'vcn_id', vcn_id)
             for da in list_drg_attachments:
                 val = self.__get_core_network_vcn_drg_details(da)
-                value = {'id': da['id'], 'drg_id': da['drg_id'], 'name': val, 'compartment': da['compartment_name'], 'time_created': da['time_created']}
+                value = {'id': da['id'],
+                         'drg_id': da['drg_id'],
+                         'name': val,
+                         'compartment_name': da['compartment_name'],
+                         'compartment_id': da['compartment_id'],
+                         'time_created': da['time_created']}
                 data.append(value)
             return data
 
@@ -434,7 +451,19 @@ class ShowOCIData(object):
                 if lpg['route_table_id'] != "None":
                     routestr = " + Transit Route(" + str(self.__get_core_network_route(lpg['route_table_id'])) + ")"
 
-                value = {'id': lpg['id'], 'name': (lpg['name'] + routestr), 'compartment': lpg['compartment_name'], 'time_created': lpg['time_created']}
+                value = {'id': lpg['id'],
+                         'name': (lpg['name'] + routestr),
+                         'display_name': (lpg['display_name']),
+                         'compartment_id': lpg['compartment_id'],
+                         'compartment_name': lpg['compartment_name'],
+                         'time_created': lpg['time_created'],
+                         'route_table_id': lpg['route_table_id'],
+                         'route_table_name': routestr,
+                         'vcn_id': lpg['vcn_id'],
+                         'peer_advertised_cidr': lpg['peer_advertised_cidr'],
+                         'peer_advertised_cidr_details': lpg['peer_advertised_cidr_details'],
+                         'is_cross_tenancy_peering': lpg['is_cross_tenancy_peering']
+                         }
                 data.append(value)
             return data
 
@@ -484,7 +513,8 @@ class ShowOCIData(object):
                     'availability_domain': subnet['availability_domain'],
                     'public_private': subnet['public_private'],
                     'dns': subnet['dns_label'],
-                    'compartment': subnet['compartment_name'],
+                    'compartment_name': subnet['compartment_name'],
+                    'compartment_id': subnet['compartment_id'],
                     'dhcp_options': dhcp_options,
                     'security_list': sec_lists,
                     'route': route_name,
@@ -512,7 +542,8 @@ class ShowOCIData(object):
                 data.append({
                     'id': sl['id'],
                     'name': sl['name'],
-                    'compartment': sl['compartment_name'],
+                    'compartment_name': sl['compartment_name'],
+                    'compartment_id': sl['compartment_id'],
                     'sec_rules': sl['sec_rules'],
                     'time_created': sl['time_created'],
                     'defined_tags': sl['defined_tags'],
@@ -537,7 +568,8 @@ class ShowOCIData(object):
                 value = {
                     'id': nsg['id'],
                     'name': nsg['name'],
-                    'compartment': nsg['compartment_name'],
+                    'compartment_name': nsg['compartment_name'],
+                    'compartment_id': nsg['compartment_id'],
                     'sec_rules': [],
                     'time_created': nsg['time_created'],
                     'defined_tags': nsg['defined_tags'],
@@ -672,10 +704,18 @@ class ShowOCIData(object):
             for rt in route_tables:
                 route_rules = []
                 for rl in rt['route_rules']:
-                    route_rules.append({'network_entity_id': rl['network_entity_id'], 'destination': rl['destination'], 'desc': self.__get_core_network_vcn_route_rule(rl)})
+                    route_rules.append(
+                        {'network_entity_id': rl['network_entity_id'],
+                         'destination': rl['destination'],
+                         'desc': self.__get_core_network_vcn_route_rule(rl)
+                         })
 
                 # add route
-                val = {'id': rt['id'], 'name': rt['name'], 'compartment': rt['compartment_name'], 'time_created': rt['time_created'],
+                val = {'id': rt['id'],
+                       'name': rt['name'],
+                       'compartment_name': rt['compartment_name'],
+                       'compartment_id': rt['compartment_id'],
+                       'time_created': rt['time_created'],
                        'route_rules': route_rules}
                 data.append(val)
             return data
@@ -697,7 +737,8 @@ class ShowOCIData(object):
                 data.append({
                     'id': dhcp['id'],
                     'name': dhcp['name'],
-                    'compartment': dhcp['compartment_name'],
+                    'compartment_name': dhcp['compartment_name'],
+                    'compartment_id': dhcp['compartment_id'],
                     'time_created': dhcp['time_created'],
                     'opt': dhcp['options']
                 })
@@ -732,7 +773,13 @@ class ShowOCIData(object):
                        'dhcp_options': self.__get_core_network_vcn_dhcp_options(vcn['id'])}
 
                 # assign the data to the vcn
-                vcn_data.append({'id': vcn['id'], 'name': vcn['name'], 'display_name': vcn['display_name'], 'cidr_block': vcn['cidr_block'], 'compartment': str(compartment['name']), 'data': val})
+                vcn_data.append({'id': vcn['id'],
+                                 'name': vcn['name'],
+                                 'display_name': vcn['display_name'],
+                                 'cidr_block': vcn['cidr_block'],
+                                 'compartment_name': str(compartment['name']),
+                                 'compartment_id': str(compartment['id']),
+                                 'data': val})
             return vcn_data
 
         except BaseException as e:
@@ -1068,8 +1115,10 @@ class ShowOCIData(object):
                 value = {
                     'sum_info': 'Compute - Block Storage (GB)',
                     'sum_size_gb': bv['size_in_gbs'],
-                    'desc': (str(bv['size_in_gbs']) + "GB - " + str(bv['display_name']) + " " + bv['backup_policy'] + volume_group + comp_text),
+                    'desc': (str(bv['size_in_gbs']) + "GB - " + str(bv['display_name']) + " (" + bv['vpus_per_gb'] + " vpus) " + bv['backup_policy'] + volume_group + comp_text),
                     'backup_policy': "None" if bv['backup_policy'] == "" else bv['backup_policy'],
+                    'vpus_per_gb': bv['vpus_per_gb'],
+                    'is_hydrated': bv['is_hydrated'],
                     'time_created': bv['time_created'],
                     'display_name': bv['display_name'],
                     'defined_tags': bv['defined_tags'],
@@ -1104,10 +1153,14 @@ class ShowOCIData(object):
                 value = {
                     'sum_info': 'Compute - Block Storage (GB)',
                     'sum_size_gb': bv['size_in_gbs'],
-                    'desc': (str(bv['size_in_gbs']) + "GB - " + str(bv['display_name']) + bv['backup_policy'] + volume_group + comp_text),
+                    'desc': (str(bv['size_in_gbs']) + "GB - " + str(bv['display_name']) + " (" + bv['vpus_per_gb'] + " vpus) " + bv['backup_policy'] + volume_group + comp_text),
                     'time_created': bv['time_created'],
+                    'compartment_name': bv['compartment_name'],
+                    'compartment_id': bv['compartment_id'],
                     'backup_policy': "None" if bv['backup_policy'] == "" else bv['backup_policy'],
                     'display_name': bv['display_name'],
+                    'vpus_per_gb': bv['vpus_per_gb'],
+                    'is_hydrated': bv['is_hydrated'],
                     'size': str(bv['size_in_gbs']),
                     'defined_tags': bv['defined_tags'],
                     'freeform_tags': bv['freeform_tags']
@@ -1297,6 +1350,7 @@ class ShowOCIData(object):
                         'shape_storage_tb': instance['shape_storage_tb'],
                         'display_name': instance['display_name'],
                         'compartment_name': instance['compartment_name'],
+                        'compartment_id': instance['compartment_id'],
                         'lifecycle_state': instance['lifecycle_state'],
                         'console_id': instance['console_id'], 'console': instance['console'],
                         'time_created': instance['time_created'],
@@ -1749,6 +1803,7 @@ class ShowOCIData(object):
                          'storage_management': dbs['storage_management'],
                          'vip_ips': dbs['vip_ips'],
                          'compartment_name': dbs['compartment_name'],
+                         'compartment_id': dbs['compartment_id'],
                          'patches': self.__get_database_db_patches(dbs['patches']),
                          'listener_port': dbs['listener_port'],
                          'db_homes': self.__get_database_db_homes(dbs['db_homes']),
@@ -1807,6 +1862,7 @@ class ShowOCIData(object):
                          'data_storage_size_in_tbs': str(dbs['data_storage_size_in_tbs']),
                          'db_name': str(dbs['db_name']),
                          'compartment_name': str(dbs['compartment_name']),
+                         'compartment_id': str(dbs['compartment_id']),
                          'service_console_url': str(dbs['service_console_url']),
                          'time_created': str(dbs['time_created'])[0:16],
                          'connection_strings': str(dbs['connection_strings']),
@@ -2251,7 +2307,10 @@ class ShowOCIData(object):
                     for np in nodes:
                         nval = {'id': np['id'], 'name': np['name'], 'node_image_id': np['node_image_id'], 'node_image_name': np['node_image_name'],
                                 'kubernetes_version': np['kubernetes_version'], 'node_shape': np['node_shape'],
-                                'quantity_per_subnet': np['quantity_per_subnet'], 'compartment_name': np['compartment_name'], 'subnets': [], 'subnet_ids': np['subnet_ids']}
+                                'quantity_per_subnet': np['quantity_per_subnet'],
+                                'compartment_name': np['compartment_name'],
+                                'compartment_id': np['compartment_id'],
+                                'subnets': [], 'subnet_ids': np['subnet_ids']}
 
                         # subnets
                         for sub in np['subnet_ids']:

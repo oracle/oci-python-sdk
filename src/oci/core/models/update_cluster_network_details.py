@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateClusterNetworkDetails(object):
     """
-    The data to update a cluster network
+    The data to update a cluster network.
     """
 
     def __init__(self, **kwargs):
@@ -84,7 +84,8 @@ class UpdateClusterNetworkDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateClusterNetworkDetails.
-        The user-friendly name.  Does not have to be unique.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid
+        entering confidential information.
 
 
         :return: The display_name of this UpdateClusterNetworkDetails.
@@ -96,7 +97,8 @@ class UpdateClusterNetworkDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateClusterNetworkDetails.
-        The user-friendly name.  Does not have to be unique.
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid
+        entering confidential information.
 
 
         :param display_name: The display_name of this UpdateClusterNetworkDetails.

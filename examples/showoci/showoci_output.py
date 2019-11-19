@@ -309,7 +309,7 @@ class ShowOCIOutput(object):
         try:
             for subnet in subnets:
                 print("")
-                print(self.tabs + "Subnet " + subnet['subnet'] + self.__print_core_network_vcn_compartment(vcn_compartment, subnet['compartment']))
+                print(self.tabs + "Subnet " + subnet['subnet'] + self.__print_core_network_vcn_compartment(vcn_compartment, subnet['compartment_name']))
                 print(self.tabs + self.tabs + "Name    : " + subnet['name'])
                 print(self.tabs + self.tabs + "DNS     : " + subnet['dns'])
                 print(self.tabs + self.tabs + "DHCP    : " + subnet['dhcp_options'])
@@ -328,7 +328,7 @@ class ShowOCIOutput(object):
         try:
             for dhcp in dhcp_options:
                 print("")
-                print(self.tabs + "DHCP Options: " + dhcp['name'] + self.__print_core_network_vcn_compartment(vcn_compartment, dhcp['compartment']))
+                print(self.tabs + "DHCP Options: " + dhcp['name'] + self.__print_core_network_vcn_compartment(vcn_compartment, dhcp['compartment_name']))
 
                 for opt in dhcp['opt']:
                     print(self.tabs + self.tabs + opt)
@@ -346,7 +346,7 @@ class ShowOCIOutput(object):
                 return
             for sl in sec_lists:
                 print("")
-                print(self.tabs + "Sec List    : " + str(sl['name']) + self.__print_core_network_vcn_compartment(vcn_compartment, sl['compartment']))
+                print(self.tabs + "Sec List    : " + str(sl['name']) + self.__print_core_network_vcn_compartment(vcn_compartment, sl['compartment_name']))
                 if len(sl['sec_rules']) == 0:
                     print(self.tabs + "            : Empty.")
 
@@ -366,7 +366,7 @@ class ShowOCIOutput(object):
                 return
             for sl in sec_groups:
                 print("")
-                print(self.tabs + "Sec Group   : " + str(sl['name']) + self.__print_core_network_vcn_compartment(vcn_compartment, sl['compartment']))
+                print(self.tabs + "Sec Group   : " + str(sl['name']) + self.__print_core_network_vcn_compartment(vcn_compartment, sl['compartment_name']))
                 if len(sl['sec_rules']) == 0:
                     print(self.tabs + "            : Empty or no Permission.")
 
@@ -386,7 +386,7 @@ class ShowOCIOutput(object):
                 return
             for rt in route_tables:
                 print("")
-                print(self.tabs + "Route Table : " + rt['name'] + self.__print_core_network_vcn_compartment(vcn_compartment, rt['compartment']))
+                print(self.tabs + "Route Table : " + rt['name'] + self.__print_core_network_vcn_compartment(vcn_compartment, rt['compartment_name']))
                 if 'route_rules' not in rt:
                     print(self.tabs + self.tabs + "Route   : Empty.")
                     return
@@ -412,27 +412,27 @@ class ShowOCIOutput(object):
             self.print_header("VCNs", 2)
             for vcn in vcns:
                 print(self.taba + "VCN    " + vcn['name'])
-                vcn_compartment = vcn['compartment']
+                vcn_compartment = vcn['compartment_name']
 
                 if 'igw' in vcn['data']:
                     for igwloop in vcn['data']['igw']:
-                        print(self.tabs + "Internet GW : " + igwloop['name'] + self.__print_core_network_vcn_compartment(vcn_compartment, igwloop['compartment']))
+                        print(self.tabs + "Internet GW : " + igwloop['name'] + self.__print_core_network_vcn_compartment(vcn_compartment, igwloop['compartment_name']))
 
                 if 'sgw' in vcn['data']:
                     for sgwloop in vcn['data']['sgw']:
-                        print(self.tabs + "Service GW  : " + sgwloop['name'] + " - " + sgwloop['services'] + self.__print_core_network_vcn_compartment(vcn_compartment, sgwloop['compartment']))
+                        print(self.tabs + "Service GW  : " + sgwloop['name'] + " - " + sgwloop['services'] + self.__print_core_network_vcn_compartment(vcn_compartment, sgwloop['compartment_name']))
 
                 if 'nat' in vcn['data']:
                     for natloop in vcn['data']['nat']:
-                        print(self.tabs + "NAT GW      : " + natloop['name'] + self.__print_core_network_vcn_compartment(vcn_compartment, natloop['compartment']))
+                        print(self.tabs + "NAT GW      : " + natloop['name'] + self.__print_core_network_vcn_compartment(vcn_compartment, natloop['compartment_name']))
 
                 if 'drg_attached' in vcn['data']:
                     for drgloop in vcn['data']['drg_attached']:
-                        print(self.tabs + "DRG Attached: " + drgloop['name'] + self.__print_core_network_vcn_compartment(vcn_compartment, drgloop['compartment']))
+                        print(self.tabs + "DRG Attached: " + drgloop['name'] + self.__print_core_network_vcn_compartment(vcn_compartment, drgloop['compartment_name']))
 
                 if 'local_peering' in vcn['data']:
                     for lpeer in vcn['data']['local_peering']:
-                        print(self.tabs + "Local Peer  : " + lpeer['name'] + self.__print_core_network_vcn_compartment(vcn_compartment, lpeer['compartment']))
+                        print(self.tabs + "Local Peer  : " + lpeer['name'] + self.__print_core_network_vcn_compartment(vcn_compartment, lpeer['compartment_name']))
 
                 if 'subnets' in vcn['data']:
                     self.__print_core_network_vcn_subnet(vcn['data']['subnets'], vcn_compartment)
@@ -1623,9 +1623,7 @@ class ShowOCISummary(object):
             for db in dbs:
                 if 'sum_info' in db and 'sum_count' in db:
                     self.summary_global_list.append({'type': db['sum_info'], 'size': float(db['sum_count'])})
-
-                if 'cpu_core_count' in db:
-                    self.summary_global_list.append({'type': "Total OCPUs - Autonomous Database", 'size': float(db['cpu_core_count'])})
+                    self.summary_global_list.append({'type': "Total OCPUs - Autonomous Database", 'size': float(db['sum_count'])})
 
                 if 'sum_info_storage' in db and 'sum_size_tb' in db:
                     self.summary_global_list.append({'type': db['sum_info_storage'], 'size': float(db['sum_size_tb'])})
@@ -2078,7 +2076,7 @@ class ShowOCICSV(object):
                 data = {'region_name': region_name,
                         'vcn_name': vcn['display_name'],
                         'vcn_cidr': vcn['cidr_block'],
-                        'vcn_compartment': vcn['compartment'],
+                        'vcn_compartment': vcn['compartment_name'],
                         'internet_gateway': igw,
                         'service_gateway': sgw,
                         'nat': nat,
@@ -2087,7 +2085,7 @@ class ShowOCICSV(object):
                         'subnet_name': subnet['name'],
                         'subnet_cidr': subnet['cidr_block'],
                         'availability_domain': subnet['availability_domain'],
-                        'subnet_compartment': subnet['compartment'],
+                        'subnet_compartment': subnet['compartment_name'],
                         'public_private': subnet['public_private'],
                         'dhcp_options': subnet['dhcp_options'],
                         'route': subnet['route'],
@@ -2113,9 +2111,9 @@ class ShowOCICSV(object):
                     data = {'region_name': region_name,
                             'vcn_name': vcn['display_name'],
                             'vcn_cidr': vcn['cidr_block'],
-                            'vcn_compartment': vcn['compartment'],
+                            'vcn_compartment': vcn['compartment_name'],
                             'sec_name': sl['name'],
-                            'sec_compartment': sl['compartment'],
+                            'sec_compartment': sl['compartment_name'],
                             'sec_protocol': "",
                             'is_stateless': "",
                             'sec_rules': "Empty",
@@ -2130,9 +2128,9 @@ class ShowOCICSV(object):
                         data = {'region_name': region_name,
                                 'vcn_name': vcn['display_name'],
                                 'vcn_cidr': vcn['cidr_block'],
-                                'vcn_compartment': vcn['compartment'],
+                                'vcn_compartment': vcn['compartment_name'],
                                 'sec_name': sl['name'],
-                                'sec_compartment': sl['compartment'],
+                                'sec_compartment': sl['compartment_name'],
                                 'sec_protocol': slr['protocol_name'],
                                 'is_stateless': slr['is_stateless'],
                                 'sec_rules': slr['desc'],
@@ -2155,11 +2153,11 @@ class ShowOCICSV(object):
                 data = {'region_name': region_name,
                         'vcn_name': vcn['display_name'],
                         'vcn_cidr': vcn['cidr_block'],
-                        'vcn_compartment': vcn['compartment'],
+                        'vcn_compartment': vcn['compartment_name'],
                         'dhcp_name': dhcp['name'],
                         'option_1': "",
                         'option_2': "",
-                        'dhcp_compartment': dhcp['compartment'],
+                        'dhcp_compartment': dhcp['compartment_name'],
                         'time_created': dhcp['time_created'][0:16],
                         'vcn_id': vcn['id'],
                         'dhcp_id': dhcp['id']
@@ -2190,9 +2188,9 @@ class ShowOCICSV(object):
                     data = {'region_name': region_name,
                             'vcn_name': vcn['display_name'],
                             'vcn_cidr': vcn['cidr_block'],
-                            'vcn_compartment': vcn['compartment'],
+                            'vcn_compartment': vcn['compartment_name'],
                             'route_name': rt['name'],
-                            'route_compartment': rt['compartment'],
+                            'route_compartment': rt['compartment_name'],
                             'destination': "",
                             'route': "Empty",
                             'time_created': rt['time_created'][0:16],
@@ -2206,9 +2204,9 @@ class ShowOCICSV(object):
                         data = {'region_name': region_name,
                                 'vcn_name': vcn['display_name'],
                                 'vcn_cidr': vcn['cidr_block'],
-                                'vcn_compartment': vcn['compartment'],
+                                'vcn_compartment': vcn['compartment_name'],
                                 'route_name': rt['name'],
-                                'route_compartment': rt['compartment'],
+                                'route_compartment': rt['compartment_name'],
                                 'destination': rl['destination'],
                                 'route': rl['desc'],
                                 'time_created': rt['time_created'][0:16],
@@ -2232,7 +2230,7 @@ class ShowOCICSV(object):
             for vcn in vcns:
 
                 # don't extract managed compartment
-                if self.__if_managed_paas_compartment(vcn['compartment']):
+                if self.__if_managed_paas_compartment(vcn['compartment_name']):
                     continue
 
                 igw = ""
@@ -2450,6 +2448,7 @@ class ShowOCICSV(object):
                         'boot_volume_size_gb': "",
                         'boot_volume_b_policy': "",
                         'block_volumes': "",
+                        'block_volumes_total_gb': "",
                         'block_volumes_size_gb': "",
                         'block_volumes_b_policy': "",
                         'freeform_tags': str(', '.join(key + "=" + instance['freeform_tags'][key] for key in instance['freeform_tags'].keys())),
@@ -2476,10 +2475,14 @@ class ShowOCICSV(object):
                         data['boot_volume_b_policy'] = bv['backup_policy']
 
                 if 'block_volume' in instance:
+                    data['block_volumes'] = str(', '.join(x['display_name'] for x in instance['block_volume']))
+                    data['block_volumes_size_gb'] = str('+ '.join(x['size'] for x in instance['block_volume']))
+                    data['block_volumes_b_policy'] = str(', '.join(x['backup_policy'] for x in instance['block_volume']))
+
+                    bv_total_size = 0
                     for bv in instance['block_volume']:
-                        data['block_volumes'] = str(', '.join(x['display_name'] for x in instance['block_volume']))
-                        data['block_volumes_size_gb'] = str('+ '.join(x['size'] for x in instance['block_volume']))
-                        data['block_volumes_b_policy'] = str(', '.join(x['backup_policy'] for x in instance['block_volume']))
+                        bv_total_size += int(bv['size'])
+                    data['block_volumes_total_gb'] = str(bv_total_size)
 
                 self.csv_compute.append(data)
 

@@ -51,6 +51,7 @@ class ClusterNetworkPlacementConfigurationDetails(object):
         """
         **[Required]** Gets the availability_domain of this ClusterNetworkPlacementConfigurationDetails.
         The availability domain to place instances.
+
         Example: `Uocm:PHX-AD-1`
 
 
@@ -64,6 +65,7 @@ class ClusterNetworkPlacementConfigurationDetails(object):
         """
         Sets the availability_domain of this ClusterNetworkPlacementConfigurationDetails.
         The availability domain to place instances.
+
         Example: `Uocm:PHX-AD-1`
 
 
@@ -76,7 +78,10 @@ class ClusterNetworkPlacementConfigurationDetails(object):
     def primary_subnet_id(self):
         """
         **[Required]** Gets the primary_subnet_id of this ClusterNetworkPlacementConfigurationDetails.
-        The OCID of the primary subnet to place instances.
+        The `OCID`__ of the primary subnet to place
+        instances.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The primary_subnet_id of this ClusterNetworkPlacementConfigurationDetails.
@@ -88,7 +93,10 @@ class ClusterNetworkPlacementConfigurationDetails(object):
     def primary_subnet_id(self, primary_subnet_id):
         """
         Sets the primary_subnet_id of this ClusterNetworkPlacementConfigurationDetails.
-        The OCID of the primary subnet to place instances.
+        The `OCID`__ of the primary subnet to place
+        instances.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param primary_subnet_id: The primary_subnet_id of this ClusterNetworkPlacementConfigurationDetails.

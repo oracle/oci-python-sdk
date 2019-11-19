@@ -415,7 +415,9 @@ class ComputeManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str cluster_network_id: (required)
-            The OCID of the cluster network.
+            The `OCID`__ of the cluster network.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -497,7 +499,9 @@ class ComputeManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str cluster_network_id: (required)
-            The OCID of the cluster network.
+            The `OCID`__ of the cluster network.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param UpdateClusterNetworkDetails update_cluster_network_details: (required)
             Update cluster network
