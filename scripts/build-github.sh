@@ -11,6 +11,16 @@ echo "Running Github build script"
 ls -la
 
 ls -la .python-sdk-bitbucket
+
+# must disable StrictHostKeyChecking so that we don't get an interactive
+# prompt later asking to confirm the host key
+ls -la ~/.ssh
+cat ~/.ssh/config
+printf "\n\nHost * \n  StrictHostKeyChecking no\n" >> ~/.ssh/config
+cat ~/.ssh/config
+
+git clone https://github.com/oracle/oci-python-sdk.git .python-sdk-github
+
 ls -la .python-sdk-github
 
 echo Creating venv to install sdk locally
