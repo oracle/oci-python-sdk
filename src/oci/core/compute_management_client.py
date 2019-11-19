@@ -180,11 +180,20 @@ class ComputeManagementClient(object):
     def change_cluster_network_compartment(self, cluster_network_id, change_cluster_network_compartment_details, **kwargs):
         """
         ChangeClusterNetworkCompartment
-        Change the compartment of a cluster network.
+        Moves a cluster network into a different compartment within the same tenancy. For
+        information about moving resources between compartments, see
+        `Moving Resources to a Different Compartment`__.
+
+        When you move a cluster network to a different compartment, associated resources such as the instances
+        in the cluster network, boot volumes, and VNICs are not moved.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str cluster_network_id: (required)
-            The OCID of the cluster network.
+            The `OCID`__ of the cluster network.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param ChangeClusterNetworkCompartmentDetails change_cluster_network_compartment_details: (required)
             Request to change the compartment of given cluster network.
@@ -487,7 +496,10 @@ class ComputeManagementClient(object):
     def create_cluster_network(self, create_cluster_network_details, **kwargs):
         """
         CreateClusterNetwork
-        Create a cluster network.
+        Creates a cluster network. For more information about cluster networks, see
+        `Managing Cluster Networks`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingclusternetworks.htm
 
 
         :param CreateClusterNetworkDetails create_cluster_network_details: (required)
@@ -859,11 +871,13 @@ class ComputeManagementClient(object):
     def get_cluster_network(self, cluster_network_id, **kwargs):
         """
         GetClusterNetwork
-        Gets the specified cluster network
+        Gets information about the specified cluster network.
 
 
         :param str cluster_network_id: (required)
-            The OCID of the cluster network.
+            The `OCID`__ of the cluster network.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1209,7 +1223,7 @@ class ComputeManagementClient(object):
     def list_cluster_network_instances(self, compartment_id, cluster_network_id, **kwargs):
         """
         ListClusterNetworkInstances
-        List the instances in the specified cluster network.
+        Lists the instances in the specified cluster network.
 
 
         :param str compartment_id: (required)
@@ -1218,7 +1232,9 @@ class ComputeManagementClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str cluster_network_id: (required)
-            The OCID of the cluster network.
+            The `OCID`__ of the cluster network.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -1395,7 +1411,8 @@ class ComputeManagementClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str lifecycle_state: (optional)
-            A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+            A filter to only return resources that match the given lifecycle
+            state. The state value is case-insensitive.
 
             Allowed values are: "PROVISIONING", "SCALING", "STARTING", "STOPPING", "TERMINATING", "STOPPED", "TERMINATED", "RUNNING"
 
@@ -2235,11 +2252,16 @@ class ComputeManagementClient(object):
     def terminate_cluster_network(self, cluster_network_id, **kwargs):
         """
         TerminateClusterNetwork
-        Terminate the specified cluster network.
+        Terminates the specified cluster network.
+
+        When you delete a cluster network, all of its resources are permanently deleted,
+        including associated instances and instance pools.
 
 
         :param str cluster_network_id: (required)
-            The OCID of the cluster network.
+            The `OCID`__ of the cluster network.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -2381,12 +2403,13 @@ class ComputeManagementClient(object):
     def update_cluster_network(self, cluster_network_id, update_cluster_network_details, **kwargs):
         """
         UpdateClusterNetwork
-        Update the specified cluster network.
-        The OCID of the cluster network remains the same.
+        Updates the specified cluster network. The OCID of the cluster network remains the same.
 
 
         :param str cluster_network_id: (required)
-            The OCID of the cluster network.
+            The `OCID`__ of the cluster network.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param UpdateClusterNetworkDetails update_cluster_network_details: (required)
             Update cluster network

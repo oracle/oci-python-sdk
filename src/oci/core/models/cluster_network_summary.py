@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ClusterNetworkSummary(object):
     """
-    Condensed Cluster Network data when listing cluster networks.
+    Summary information for a cluster network.
     """
 
     #: A constant which can be used with the lifecycle_state property of a ClusterNetworkSummary.
@@ -126,7 +126,9 @@ class ClusterNetworkSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this ClusterNetworkSummary.
-        The OCID of the cluster network.
+        The `OCID`__ of the cluster network.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this ClusterNetworkSummary.
@@ -138,7 +140,9 @@ class ClusterNetworkSummary(object):
     def id(self, id):
         """
         Sets the id of this ClusterNetworkSummary.
-        The OCID of the cluster network.
+        The `OCID`__ of the cluster network.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this ClusterNetworkSummary.
@@ -150,7 +154,10 @@ class ClusterNetworkSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ClusterNetworkSummary.
-        The OCID of the compartment containing the cluster netowrk.
+        The `OCID`__ of the compartment containing the
+        cluster netowrk.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ClusterNetworkSummary.
@@ -162,7 +169,10 @@ class ClusterNetworkSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ClusterNetworkSummary.
-        The OCID of the compartment containing the cluster netowrk.
+        The `OCID`__ of the compartment containing the
+        cluster netowrk.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ClusterNetworkSummary.
@@ -208,7 +218,7 @@ class ClusterNetworkSummary(object):
     def display_name(self):
         """
         Gets the display_name of this ClusterNetworkSummary.
-        The user-friendly name.  Does not have to be unique.
+        A user-friendly name for the cluster network. Does not have to be unique, and it's changeable.
 
 
         :return: The display_name of this ClusterNetworkSummary.
@@ -220,7 +230,7 @@ class ClusterNetworkSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ClusterNetworkSummary.
-        The user-friendly name.  Does not have to be unique.
+        A user-friendly name for the cluster network. Does not have to be unique, and it's changeable.
 
 
         :param display_name: The display_name of this ClusterNetworkSummary.
@@ -321,6 +331,7 @@ class ClusterNetworkSummary(object):
         """
         **[Required]** Gets the time_created of this ClusterNetworkSummary.
         The date and time the resource was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
 
 
@@ -334,6 +345,7 @@ class ClusterNetworkSummary(object):
         """
         Sets the time_created of this ClusterNetworkSummary.
         The date and time the resource was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
 
 
@@ -347,6 +359,7 @@ class ClusterNetworkSummary(object):
         """
         **[Required]** Gets the time_updated of this ClusterNetworkSummary.
         The date and time the resource was updated, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
 
 
@@ -360,6 +373,7 @@ class ClusterNetworkSummary(object):
         """
         Sets the time_updated of this ClusterNetworkSummary.
         The date and time the resource was updated, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
 
 

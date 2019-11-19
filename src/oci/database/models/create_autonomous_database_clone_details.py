@@ -80,6 +80,10 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
             The value to assign to the autonomous_container_database_id property of this CreateAutonomousDatabaseCloneDetails.
         :type autonomous_container_database_id: str
 
+        :param whitelisted_ips:
+            The value to assign to the whitelisted_ips property of this CreateAutonomousDatabaseCloneDetails.
+        :type whitelisted_ips: list[str]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateAutonomousDatabaseCloneDetails.
         :type freeform_tags: dict(str, str)
@@ -117,6 +121,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
             'is_auto_scaling_enabled': 'bool',
             'is_dedicated': 'bool',
             'autonomous_container_database_id': 'str',
+            'whitelisted_ips': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'source': 'str',
@@ -138,6 +143,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
             'is_dedicated': 'isDedicated',
             'autonomous_container_database_id': 'autonomousContainerDatabaseId',
+            'whitelisted_ips': 'whitelistedIps',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'source': 'source',
@@ -158,6 +164,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
         self._is_auto_scaling_enabled = None
         self._is_dedicated = None
         self._autonomous_container_database_id = None
+        self._whitelisted_ips = None
         self._freeform_tags = None
         self._defined_tags = None
         self._source = None

@@ -37,6 +37,10 @@ class UpdateVirtualCircuitDetails(object):
             The value to assign to the customer_bgp_asn property of this UpdateVirtualCircuitDetails.
         :type customer_bgp_asn: int
 
+        :param customer_asn:
+            The value to assign to the customer_asn property of this UpdateVirtualCircuitDetails.
+        :type customer_asn: int
+
         :param defined_tags:
             The value to assign to the defined_tags property of this UpdateVirtualCircuitDetails.
         :type defined_tags: dict(str, dict(str, object))
@@ -71,6 +75,7 @@ class UpdateVirtualCircuitDetails(object):
             'bandwidth_shape_name': 'str',
             'cross_connect_mappings': 'list[CrossConnectMapping]',
             'customer_bgp_asn': 'int',
+            'customer_asn': 'int',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -84,6 +89,7 @@ class UpdateVirtualCircuitDetails(object):
             'bandwidth_shape_name': 'bandwidthShapeName',
             'cross_connect_mappings': 'crossConnectMappings',
             'customer_bgp_asn': 'customerBgpAsn',
+            'customer_asn': 'customerAsn',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
@@ -96,6 +102,7 @@ class UpdateVirtualCircuitDetails(object):
         self._bandwidth_shape_name = None
         self._cross_connect_mappings = None
         self._customer_bgp_asn = None
+        self._customer_asn = None
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
@@ -172,16 +179,8 @@ class UpdateVirtualCircuitDetails(object):
     def customer_bgp_asn(self):
         """
         Gets the customer_bgp_asn of this UpdateVirtualCircuitDetails.
-        The BGP ASN of the network at the other end of the BGP
-        session from Oracle.
-
-        If the BGP session is from the customer's edge router to Oracle, the
-        required value is the customer's ASN, and it can be updated only
-        by the customer.
-
-        If the BGP session is from the provider's edge router to Oracle, the
-        required value is the provider's ASN, and it can be updated only
-        by the provider.
+        Deprecated. Instead use `customerAsn`.
+        If you specify values for both, the request will be rejected.
 
 
         :return: The customer_bgp_asn of this UpdateVirtualCircuitDetails.
@@ -193,6 +192,19 @@ class UpdateVirtualCircuitDetails(object):
     def customer_bgp_asn(self, customer_bgp_asn):
         """
         Sets the customer_bgp_asn of this UpdateVirtualCircuitDetails.
+        Deprecated. Instead use `customerAsn`.
+        If you specify values for both, the request will be rejected.
+
+
+        :param customer_bgp_asn: The customer_bgp_asn of this UpdateVirtualCircuitDetails.
+        :type: int
+        """
+        self._customer_bgp_asn = customer_bgp_asn
+
+    @property
+    def customer_asn(self):
+        """
+        Gets the customer_asn of this UpdateVirtualCircuitDetails.
         The BGP ASN of the network at the other end of the BGP
         session from Oracle.
 
@@ -204,11 +216,36 @@ class UpdateVirtualCircuitDetails(object):
         required value is the provider's ASN, and it can be updated only
         by the provider.
 
+        Can be a 2-byte or 4-byte ASN. Uses \"asplain\" format.
 
-        :param customer_bgp_asn: The customer_bgp_asn of this UpdateVirtualCircuitDetails.
+
+        :return: The customer_asn of this UpdateVirtualCircuitDetails.
+        :rtype: int
+        """
+        return self._customer_asn
+
+    @customer_asn.setter
+    def customer_asn(self, customer_asn):
+        """
+        Sets the customer_asn of this UpdateVirtualCircuitDetails.
+        The BGP ASN of the network at the other end of the BGP
+        session from Oracle.
+
+        If the BGP session is from the customer's edge router to Oracle, the
+        required value is the customer's ASN, and it can be updated only
+        by the customer.
+
+        If the BGP session is from the provider's edge router to Oracle, the
+        required value is the provider's ASN, and it can be updated only
+        by the provider.
+
+        Can be a 2-byte or 4-byte ASN. Uses \"asplain\" format.
+
+
+        :param customer_asn: The customer_asn of this UpdateVirtualCircuitDetails.
         :type: int
         """
-        self._customer_bgp_asn = customer_bgp_asn
+        self._customer_asn = customer_asn
 
     @property
     def defined_tags(self):

@@ -311,7 +311,7 @@ class VolumeGroup(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this VolumeGroup.
+        **[Required]** Gets the lifecycle_state of this VolumeGroup.
         The current state of a volume group.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "TERMINATING", "TERMINATED", "FAULTY", 'UNKNOWN_ENUM_VALUE'.

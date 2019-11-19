@@ -999,7 +999,7 @@ class ComputeClient(object):
         """
         CreateInstanceConsoleConnection
         Creates a new console connection to the specified instance.
-        Once the console connection has been created and is available,
+        After the console connection has been created and is available,
         you connect to the console using SSH.
 
         For more information about console access, see `Accessing the Console`__.

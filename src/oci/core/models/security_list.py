@@ -13,7 +13,6 @@ class SecurityList(object):
     level, but the rules are applied to the ingress and egress traffic for the individual instances
     in the subnet. The rules can be stateful or stateless. For more information, see
     `Security Lists`__.
-
     **Note:** Compare security lists to :class:`NetworkSecurityGroup`s,
     which let you apply a set of security rules to a *specific set of VNICs* instead of an entire
     subnet. Oracle recommends using network security groups instead of security lists, although you

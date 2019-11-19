@@ -3,6 +3,16 @@ Change Log
 All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
+====================
+2.6.5 - 2019-11-19
+====================
+
+Added
+-----
+* Support for four-byte autonomous system numbers (ASNs) on FastConnect resources in the Networking service
+* Support for choosing fault domains when creating instance pools in the Compute service
+* Support for allowing connections from only specific VCNs to autonomous data warehouse and autonomous transaction processing instances in the Database service
+* Support for Streaming Client Non-Regional
 
 ====================
 2.6.4 - 2019-11-12
