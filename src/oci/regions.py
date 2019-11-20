@@ -14,7 +14,8 @@ REGIONS_SHORT_NAMES = {
     'icn': 'ap-seoul-1',
     'bom': 'ap-mumbai-1',
     'gru': 'sa-saopaulo-1',
-    'syd': 'ap-sydney-1'
+    'syd': 'ap-sydney-1',
+    'ltn': 'uk-gov-london-1',
 }
 REGION_REALMS = {
     'ap-mumbai-1': 'oc1',
@@ -34,12 +35,15 @@ REGION_REALMS = {
 
     'us-gov-ashburn-1': 'oc3',
     'us-gov-chicago-1': 'oc3',
-    'us-gov-phoenix-1': 'oc3'
+    'us-gov-phoenix-1': 'oc3',
+
+    'uk-gov-london-1': 'oc4'
 }
 REALMS = {
     'oc1': 'oraclecloud.com',
     'oc2': 'oraclegovcloud.com',
-    'oc3': 'oraclegovcloud.com'
+    'oc3': 'oraclegovcloud.com',
+    'oc4': 'oraclegovcloud.uk'
 }
 REGIONS = [
     "ap-mumbai-1",
@@ -57,7 +61,8 @@ REGIONS = [
     "us-gov-ashburn-1",
     "us-gov-chicago-1",
     "us-gov-phoenix-1",
-    "sa-saopaulo-1"
+    "sa-saopaulo-1",
+    "uk-gov-london-1",
 ]
 SERVICE_ENDPOINTS = service_endpoints.SERVICE_ENDPOINTS
 SERVICE_ENDPOINTS['auth'] = 'https://auth.{domain}'
