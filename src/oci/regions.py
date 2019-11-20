@@ -15,7 +15,7 @@ REGIONS_SHORT_NAMES = {
     'bom': 'ap-mumbai-1',
     'gru': 'sa-saopaulo-1',
     'syd': 'ap-sydney-1',
-    'ltn': 'uk-gov-london-1',
+    'ltn': 'uk-gov-london-1'
 }
 REGION_REALMS = {
     'ap-mumbai-1': 'oc1',
@@ -62,7 +62,7 @@ REGIONS = [
     "us-gov-chicago-1",
     "us-gov-phoenix-1",
     "sa-saopaulo-1",
-    "uk-gov-london-1",
+    "uk-gov-london-1"
 ]
 SERVICE_ENDPOINTS = service_endpoints.SERVICE_ENDPOINTS
 SERVICE_ENDPOINTS['auth'] = 'https://auth.{domain}'
