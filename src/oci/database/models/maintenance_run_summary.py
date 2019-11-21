@@ -32,6 +32,10 @@ class MaintenanceRunSummary(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the lifecycle_state property of a MaintenanceRunSummary.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
     #: A constant which can be used with the target_resource_type property of a MaintenanceRunSummary.
     #: This constant has a value of "AUTONOMOUS_EXADATA_INFRASTRUCTURE"
     TARGET_RESOURCE_TYPE_AUTONOMOUS_EXADATA_INFRASTRUCTURE = "AUTONOMOUS_EXADATA_INFRASTRUCTURE"
@@ -39,6 +43,10 @@ class MaintenanceRunSummary(object):
     #: A constant which can be used with the target_resource_type property of a MaintenanceRunSummary.
     #: This constant has a value of "AUTONOMOUS_CONTAINER_DATABASE"
     TARGET_RESOURCE_TYPE_AUTONOMOUS_CONTAINER_DATABASE = "AUTONOMOUS_CONTAINER_DATABASE"
+
+    #: A constant which can be used with the target_resource_type property of a MaintenanceRunSummary.
+    #: This constant has a value of "EXADATA_DB_SYSTEM"
+    TARGET_RESOURCE_TYPE_EXADATA_DB_SYSTEM = "EXADATA_DB_SYSTEM"
 
     #: A constant which can be used with the maintenance_type property of a MaintenanceRunSummary.
     #: This constant has a value of "PLANNED"
@@ -83,7 +91,7 @@ class MaintenanceRunSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this MaintenanceRunSummary.
-            Allowed values for this property are: "SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -105,7 +113,7 @@ class MaintenanceRunSummary(object):
 
         :param target_resource_type:
             The value to assign to the target_resource_type property of this MaintenanceRunSummary.
-            Allowed values for this property are: "AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type target_resource_type: str
 
@@ -274,7 +282,7 @@ class MaintenanceRunSummary(object):
         **[Required]** Gets the lifecycle_state of this MaintenanceRunSummary.
         The current state of the Maintenance Run.
 
-        Allowed values for this property are: "SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -293,7 +301,7 @@ class MaintenanceRunSummary(object):
         :param lifecycle_state: The lifecycle_state of this MaintenanceRunSummary.
         :type: str
         """
-        allowed_values = ["SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED"]
+        allowed_values = ["SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -400,7 +408,7 @@ class MaintenanceRunSummary(object):
         Gets the target_resource_type of this MaintenanceRunSummary.
         The type of the target resource on which the Maintenance Run occurs.
 
-        Allowed values for this property are: "AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -419,7 +427,7 @@ class MaintenanceRunSummary(object):
         :param target_resource_type: The target_resource_type of this MaintenanceRunSummary.
         :type: str
         """
-        allowed_values = ["AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE"]
+        allowed_values = ["AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM"]
         if not value_allowed_none_or_none_sentinel(target_resource_type, allowed_values):
             target_resource_type = 'UNKNOWN_ENUM_VALUE'
         self._target_resource_type = target_resource_type

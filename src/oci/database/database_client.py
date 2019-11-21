@@ -2696,7 +2696,7 @@ class DatabaseClient(object):
     def deregister_autonomous_database_data_safe(self, autonomous_database_id, **kwargs):
         """
         Asynchronously deregisters Data Safe for this Autonomous Database.
-        Asynchronously deregisters Data Safe for this Autonomous Database.
+        Asynchronously deregisters this Autonomous Database with Data Safe.
 
 
         :param str autonomous_database_id: (required)
@@ -4695,6 +4695,80 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="ExadataInfrastructure")
+
+    def get_exadata_infrastructure_ocpus(self, autonomous_exadata_infrastructure_id, **kwargs):
+        """
+        Gets details of the available and consumed OCPUs for the specified Autonomous Exadata Infrastructure instance.
+
+
+        :param str autonomous_exadata_infrastructure_id: (required)
+            The Autonomous Exadata Infrastructure  `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.OCPUs`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/autonomousExadataInfrastructures/{autonomousExadataInfrastructureId}/ocpus"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_exadata_infrastructure_ocpus got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "autonomousExadataInfrastructureId": autonomous_exadata_infrastructure_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="OCPUs")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="OCPUs")
 
     def get_exadata_iorm_config(self, db_system_id, **kwargs):
         """
@@ -6773,7 +6847,7 @@ class DatabaseClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str db_system_id: (optional)
-            The `OCID`__ of the DB system.
+            The DB system `OCID`__. If provided, filters the results to the set of database versions which are supported for the DB system.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -6908,7 +6982,7 @@ class DatabaseClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str db_system_id: (optional)
-            The `OCID`__ of the DB system.
+            The DB system `OCID`__. If provided, filters the results to the set of database versions which are supported for the DB system.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -7733,7 +7807,7 @@ class DatabaseClient(object):
         :param str target_resource_type: (optional)
             The type of the target resource.
 
-            Allowed values are: "AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE"
+            Allowed values are: "AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM"
 
         :param str maintenance_type: (optional)
             The maintenance type.
@@ -7761,7 +7835,7 @@ class DatabaseClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state exactly.
 
-            Allowed values are: "SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED"
+            Allowed values are: "SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING"
 
         :param str availability_domain: (optional)
             A filter to return only resources that match the given availability domain exactly.
@@ -7799,7 +7873,7 @@ class DatabaseClient(object):
                 "list_maintenance_runs got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'target_resource_type' in kwargs:
-            target_resource_type_allowed_values = ["AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE"]
+            target_resource_type_allowed_values = ["AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM"]
             if kwargs['target_resource_type'] not in target_resource_type_allowed_values:
                 raise ValueError(
                     "Invalid value for `target_resource_type`, must be one of {0}".format(target_resource_type_allowed_values)
@@ -7827,7 +7901,7 @@ class DatabaseClient(object):
                 )
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED"]
+            lifecycle_state_allowed_values = ["SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
@@ -8151,7 +8225,7 @@ class DatabaseClient(object):
     def register_autonomous_database_data_safe(self, autonomous_database_id, **kwargs):
         """
         Asynchronously registers this Autonomous Database with Data Safe.
-        Asynchronously registers Data Safe with this Autonomous Database.
+        Asynchronously registers this Autonomous Database with Data Safe.
 
 
         :param str autonomous_database_id: (required)
@@ -9269,7 +9343,7 @@ class DatabaseClient(object):
     def update_autonomous_container_database(self, autonomous_container_database_id, update_autonomous_container_database_details, **kwargs):
         """
         UpdateAutonomousContainerDatabase
-        Updates the properties of an Autonomous Container Database, such as the CPU core count and storage size.
+        Updates the properties of an Autonomous Container Database, such as the OCPU core count and storage size.
 
 
         :param str autonomous_container_database_id: (required)
@@ -9432,8 +9506,8 @@ class DatabaseClient(object):
 
     def update_autonomous_database(self, autonomous_database_id, update_autonomous_database_details, **kwargs):
         """
-        Updates the specified Autonomous Database with new CPU core count and size.
-        Updates the specified Autonomous Database with a new CPU core count and size.
+        Updates the specified Autonomous Database with new OCPU core count and size.
+        Updates one or more attributes of the specified Autonomous Database. See the UpdateAutonomousDatabaseDetails resource for a full list of attributes that can be updated.
 
 
         :param str autonomous_database_id: (required)

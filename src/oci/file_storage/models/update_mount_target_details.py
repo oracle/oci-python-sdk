@@ -21,6 +21,10 @@ class UpdateMountTargetDetails(object):
             The value to assign to the display_name property of this UpdateMountTargetDetails.
         :type display_name: str
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this UpdateMountTargetDetails.
+        :type nsg_ids: list[str]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateMountTargetDetails.
         :type freeform_tags: dict(str, str)
@@ -32,17 +36,20 @@ class UpdateMountTargetDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'nsg_ids': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
+            'nsg_ids': 'nsgIds',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._display_name = None
+        self._nsg_ids = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -75,6 +82,42 @@ class UpdateMountTargetDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this UpdateMountTargetDetails.
+        A list of Network Security Group `OCIDs`__ associated with this mount target.
+        A maximum of 5 is allowed.
+        Setting this to an empty array after the list is created removes the mount target from all NSGs.
+        For more information about NSGs, see `Security Rules`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+
+
+        :return: The nsg_ids of this UpdateMountTargetDetails.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this UpdateMountTargetDetails.
+        A list of Network Security Group `OCIDs`__ associated with this mount target.
+        A maximum of 5 is allowed.
+        Setting this to an empty array after the list is created removes the mount target from all NSGs.
+        For more information about NSGs, see `Security Rules`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+
+
+        :param nsg_ids: The nsg_ids of this UpdateMountTargetDetails.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
 
     @property
     def freeform_tags(self):

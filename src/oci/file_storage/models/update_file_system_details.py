@@ -153,10 +153,13 @@ class UpdateFileSystemDetails(object):
     def kms_key_id(self):
         """
         Gets the kms_key_id of this UpdateFileSystemDetails.
-        A KMS key OCID that will be associated with the given file system. If it is empty the Update operation will
-        actually remove the KMS key, if there is one, from the given file system. Note that the old KMS key should
-        still be enabled in KMS otherwise all the files in the file system encrypted with the old KMS key will no
-        longer be accessible.
+        The OCID of the Key Management master encryption key to associate with the specified file system. If this value is empty, the Update operation will remove the associated key, if there is one, from the file system. (The file system will continue to be encrypted, but with an encryption key managed by Oracle.)
+
+        If updating to a new Key Management key, the old key must remain enabled so that files previously encrypted continue
+        to be accessible. For more information, see `Overview of Key
+        Management`__.
+
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm
 
 
         :return: The kms_key_id of this UpdateFileSystemDetails.
@@ -168,10 +171,13 @@ class UpdateFileSystemDetails(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this UpdateFileSystemDetails.
-        A KMS key OCID that will be associated with the given file system. If it is empty the Update operation will
-        actually remove the KMS key, if there is one, from the given file system. Note that the old KMS key should
-        still be enabled in KMS otherwise all the files in the file system encrypted with the old KMS key will no
-        longer be accessible.
+        The OCID of the Key Management master encryption key to associate with the specified file system. If this value is empty, the Update operation will remove the associated key, if there is one, from the file system. (The file system will continue to be encrypted, but with an encryption key managed by Oracle.)
+
+        If updating to a new Key Management key, the old key must remain enabled so that files previously encrypted continue
+        to be accessible. For more information, see `Overview of Key
+        Management`__.
+
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm
 
 
         :param kms_key_id: The kms_key_id of this UpdateFileSystemDetails.

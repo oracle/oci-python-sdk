@@ -17,7 +17,7 @@ missing = Sentinel("Missing")
 
 class FileStorageClient(object):
     """
-    The API for the File Storage Service.
+    API for the File Storage service. Use this API to manage file systems, mount targets, and snapshots. For more information, see [Overview of File Storage](/iaas/Content/File/Concepts/filestorageoverview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -349,6 +349,9 @@ class FileStorageClient(object):
         For information about access control and compartments, see
         `Overview of the IAM Service`__.
 
+        For information about Network Security Groups access control, see
+        `Network Security Groups`__.
+
         For information about availability domains, see `Regions and
         Availability Domains`__.
         To get a list of availability domains, use the
@@ -363,6 +366,7 @@ class FileStorageClient(object):
         type or by viewing the resource in the Console.
 
         __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/networksecuritygroups.htm
         __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
@@ -1377,7 +1381,8 @@ class FileStorageClient(object):
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' or 'desc', where 'asc' is
-            ascending and 'desc' is descending.
+            ascending and 'desc' is descending. The default order is 'desc'
+            except for numeric values.
 
             Allowed values are: "ASC", "DESC"
 
@@ -1535,7 +1540,8 @@ class FileStorageClient(object):
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' or 'desc', where 'asc' is
-            ascending and 'desc' is descending.
+            ascending and 'desc' is descending. The default order is 'desc'
+            except for numeric values.
 
             Allowed values are: "ASC", "DESC"
 
@@ -1697,7 +1703,8 @@ class FileStorageClient(object):
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' or 'desc', where 'asc' is
-            ascending and 'desc' is descending.
+            ascending and 'desc' is descending. The default order is 'desc'
+            except for numeric values.
 
             Allowed values are: "ASC", "DESC"
 
@@ -1860,7 +1867,8 @@ class FileStorageClient(object):
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' or 'desc', where 'asc' is
-            ascending and 'desc' is descending.
+            ascending and 'desc' is descending. The default order is 'desc'
+            except for numeric values.
 
             Allowed values are: "ASC", "DESC"
 
@@ -1974,12 +1982,12 @@ class FileStorageClient(object):
         :param int limit: (optional)
             For list pagination. The maximum number of results per page,
             or items to return in a paginated \"List\" call.
-            1 is the minimum, 1000 is the maximum.
+            1 is the minimum, 100 is the maximum.
 
             For important details about how pagination works,
             see `List Pagination`__.
 
-            Example: `500`
+            Example: `100`
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
@@ -2004,7 +2012,8 @@ class FileStorageClient(object):
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' or 'desc', where 'asc' is
-            ascending and 'desc' is descending.
+            ascending and 'desc' is descending. The default order is 'desc'
+            except for numeric values.
 
             Allowed values are: "ASC", "DESC"
 

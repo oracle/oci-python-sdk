@@ -189,7 +189,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_free_tier(self):
         """
         Gets the is_free_tier of this UpdateAutonomousDatabaseDetails.
-        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB memory. For Always Free databases, memory and CPU cannot be scaled.
+        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
 
 
         :return: The is_free_tier of this UpdateAutonomousDatabaseDetails.
@@ -201,7 +201,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_free_tier(self, is_free_tier):
         """
         Sets the is_free_tier of this UpdateAutonomousDatabaseDetails.
-        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB memory. For Always Free databases, memory and CPU cannot be scaled.
+        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
 
 
         :param is_free_tier: The is_free_tier of this UpdateAutonomousDatabaseDetails.
@@ -329,9 +329,11 @@ class UpdateAutonomousDatabaseDetails(object):
     def license_model(self):
         """
         Gets the license_model of this UpdateAutonomousDatabaseDetails.
-        The Oracle license model that applies to the Oracle Autonomous Database. The default for Autonomous Database using the `shared deployment] is BRING_YOUR_OWN_LICENSE. Note that when provisioning an Autonomous Database using the [dedicated deployment`__ option, this attribute must be null because the attribute is already set on Autonomous Exadata Infrastructure level.
+        The Oracle license model that applies to the Oracle Autonomous Database. Note that when provisioning an Autonomous Database using the `dedicated deployment`__ option, this attribute must be null because the attribute is already set at the
+        Autonomous Exadata Infrastructure level. When using the `serverless deployment`__ option, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#DeploymentTypes
 
         Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
 
@@ -345,9 +347,11 @@ class UpdateAutonomousDatabaseDetails(object):
     def license_model(self, license_model):
         """
         Sets the license_model of this UpdateAutonomousDatabaseDetails.
-        The Oracle license model that applies to the Oracle Autonomous Database. The default for Autonomous Database using the `shared deployment] is BRING_YOUR_OWN_LICENSE. Note that when provisioning an Autonomous Database using the [dedicated deployment`__ option, this attribute must be null because the attribute is already set on Autonomous Exadata Infrastructure level.
+        The Oracle license model that applies to the Oracle Autonomous Database. Note that when provisioning an Autonomous Database using the `dedicated deployment`__ option, this attribute must be null because the attribute is already set at the
+        Autonomous Exadata Infrastructure level. When using the `serverless deployment`__ option, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#DeploymentTypes
 
 
         :param license_model: The license_model of this UpdateAutonomousDatabaseDetails.
@@ -399,7 +403,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_auto_scaling_enabled(self):
         """
         Gets the is_auto_scaling_enabled of this UpdateAutonomousDatabaseDetails.
-        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is false. Note that auto scaling is available for `serverless deployments`__ only.
+        Indicates whether to enable or disable auto scaling for the Autonomous Database OCPU core count. Setting to `true` enables auto scaling. Setting to `false` disables auto scaling. The default value is true. Auto scaling is available for `serverless deployments`__ only.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
@@ -413,7 +417,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_auto_scaling_enabled(self, is_auto_scaling_enabled):
         """
         Sets the is_auto_scaling_enabled of this UpdateAutonomousDatabaseDetails.
-        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is false. Note that auto scaling is available for `serverless deployments`__ only.
+        Indicates whether to enable or disable auto scaling for the Autonomous Database OCPU core count. Setting to `true` enables auto scaling. Setting to `false` disables auto scaling. The default value is true. Auto scaling is available for `serverless deployments`__ only.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 

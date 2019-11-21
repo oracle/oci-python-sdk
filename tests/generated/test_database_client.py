@@ -2372,6 +2372,46 @@ def test_get_exadata_infrastructure(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_exadata_infrastructure_ocpus(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'GetExadataInfrastructureOcpus'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetExadataInfrastructureOcpus')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetExadataInfrastructureOcpus')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.get_exadata_infrastructure_ocpus(
+                autonomous_exadata_infrastructure_id=request.pop(util.camelize('autonomous_exadata_infrastructure_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetExadataInfrastructureOcpus',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'oCPUs',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_get_exadata_iorm_config(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetExadataIormConfig'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

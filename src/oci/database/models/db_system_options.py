@@ -46,10 +46,11 @@ class DbSystemOptions(object):
     def storage_management(self):
         """
         Gets the storage_management of this DbSystemOptions.
-        The storage option used in DB system. You can specify either `Automatic Storage Management (ASM)`__ or `Logical Volume Manager (LVM)`__.
+        The storage option used in DB system. For 1-node VM systems, you can specify either `Automatic Storage Management (ASM)`__ or `Logical Volume Manager (LVM)`__. For more information, see `Bare Metal and Virtual Machine DB Systems`__.
 
         __ https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/19&id=OSTMG-GUID-BC612D35-5399-4A35-843E-CF76E3D3CDB5
         __ https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/19&id=ADMIN-GUID-57C50259-9472-4ED0-8818-DB9ABA96EC8E
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm#fastprovisioning
 
         Allowed values for this property are: "ASM", "LVM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -64,10 +65,11 @@ class DbSystemOptions(object):
     def storage_management(self, storage_management):
         """
         Sets the storage_management of this DbSystemOptions.
-        The storage option used in DB system. You can specify either `Automatic Storage Management (ASM)`__ or `Logical Volume Manager (LVM)`__.
+        The storage option used in DB system. For 1-node VM systems, you can specify either `Automatic Storage Management (ASM)`__ or `Logical Volume Manager (LVM)`__. For more information, see `Bare Metal and Virtual Machine DB Systems`__.
 
         __ https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/19&id=OSTMG-GUID-BC612D35-5399-4A35-843E-CF76E3D3CDB5
         __ https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/19&id=ADMIN-GUID-57C50259-9472-4ED0-8818-DB9ABA96EC8E
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm#fastprovisioning
 
 
         :param storage_management: The storage_management of this DbSystemOptions.

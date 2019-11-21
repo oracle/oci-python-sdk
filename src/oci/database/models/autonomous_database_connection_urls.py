@@ -102,7 +102,7 @@ class AutonomousDatabaseConnectionUrls(object):
     def machine_learning_user_management_url(self):
         """
         Gets the machine_learning_user_management_url of this AutonomousDatabaseConnectionUrls.
-        Oracle Machine Learning User Management URL.
+        Oracle Machine Learning user management URL.
 
 
         :return: The machine_learning_user_management_url of this AutonomousDatabaseConnectionUrls.
@@ -114,7 +114,7 @@ class AutonomousDatabaseConnectionUrls(object):
     def machine_learning_user_management_url(self, machine_learning_user_management_url):
         """
         Sets the machine_learning_user_management_url of this AutonomousDatabaseConnectionUrls.
-        Oracle Machine Learning User Management URL.
+        Oracle Machine Learning user management URL.
 
 
         :param machine_learning_user_management_url: The machine_learning_user_management_url of this AutonomousDatabaseConnectionUrls.
