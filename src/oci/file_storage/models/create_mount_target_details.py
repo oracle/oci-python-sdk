@@ -41,6 +41,10 @@ class CreateMountTargetDetails(object):
             The value to assign to the subnet_id property of this CreateMountTargetDetails.
         :type subnet_id: str
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this CreateMountTargetDetails.
+        :type nsg_ids: list[str]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateMountTargetDetails.
         :type freeform_tags: dict(str, str)
@@ -57,6 +61,7 @@ class CreateMountTargetDetails(object):
             'hostname_label': 'str',
             'ip_address': 'str',
             'subnet_id': 'str',
+            'nsg_ids': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -68,6 +73,7 @@ class CreateMountTargetDetails(object):
             'hostname_label': 'hostnameLabel',
             'ip_address': 'ipAddress',
             'subnet_id': 'subnetId',
+            'nsg_ids': 'nsgIds',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -78,6 +84,7 @@ class CreateMountTargetDetails(object):
         self._hostname_label = None
         self._ip_address = None
         self._subnet_id = None
+        self._nsg_ids = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -272,6 +279,42 @@ class CreateMountTargetDetails(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this CreateMountTargetDetails.
+        A list of Network Security Group `OCIDs`__ associated with this mount target.
+        A maximum of 5 is allowed.
+        Setting this to an empty array after the list is created removes the mount target from all NSGs.
+        For more information about NSGs, see `Security Rules`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+
+
+        :return: The nsg_ids of this CreateMountTargetDetails.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this CreateMountTargetDetails.
+        A list of Network Security Group `OCIDs`__ associated with this mount target.
+        A maximum of 5 is allowed.
+        Setting this to an empty array after the list is created removes the mount target from all NSGs.
+        For more information about NSGs, see `Security Rules`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+
+
+        :param nsg_ids: The nsg_ids of this CreateMountTargetDetails.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
 
     @property
     def freeform_tags(self):

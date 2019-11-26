@@ -198,7 +198,7 @@ class CreateAutonomousDatabaseBase(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateAutonomousDatabaseBase.
-        The `OCID`__ of the compartment of the autonomous database.
+        The `OCID`__ of the compartment of the Autonomous Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -212,7 +212,7 @@ class CreateAutonomousDatabaseBase(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateAutonomousDatabaseBase.
-        The `OCID`__ of the compartment of the autonomous database.
+        The `OCID`__ of the compartment of the Autonomous Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -250,7 +250,7 @@ class CreateAutonomousDatabaseBase(object):
     def cpu_core_count(self):
         """
         **[Required]** Gets the cpu_core_count of this CreateAutonomousDatabaseBase.
-        The number of CPU Cores to be made available to the database.
+        The number of OCPU cores to be made available to the database.
 
 
         :return: The cpu_core_count of this CreateAutonomousDatabaseBase.
@@ -262,7 +262,7 @@ class CreateAutonomousDatabaseBase(object):
     def cpu_core_count(self, cpu_core_count):
         """
         Sets the cpu_core_count of this CreateAutonomousDatabaseBase.
-        The number of CPU Cores to be made available to the database.
+        The number of OCPU cores to be made available to the database.
 
 
         :param cpu_core_count: The cpu_core_count of this CreateAutonomousDatabaseBase.
@@ -274,7 +274,7 @@ class CreateAutonomousDatabaseBase(object):
     def db_workload(self):
         """
         Gets the db_workload of this CreateAutonomousDatabaseBase.
-        The autonomous database workload type. OLTP indicates an Autonomous Transaction Processing database and DW indicates an Autonomous Data Warehouse. The default is OLTP.
+        The Autonomous Database workload type. OLTP indicates an Autonomous Transaction Processing database and DW indicates an Autonomous Data Warehouse. The default is OLTP.
 
         Allowed values for this property are: "OLTP", "DW"
 
@@ -288,7 +288,7 @@ class CreateAutonomousDatabaseBase(object):
     def db_workload(self, db_workload):
         """
         Sets the db_workload of this CreateAutonomousDatabaseBase.
-        The autonomous database workload type. OLTP indicates an Autonomous Transaction Processing database and DW indicates an Autonomous Data Warehouse. The default is OLTP.
+        The Autonomous Database workload type. OLTP indicates an Autonomous Transaction Processing database and DW indicates an Autonomous Data Warehouse. The default is OLTP.
 
 
         :param db_workload: The db_workload of this CreateAutonomousDatabaseBase.
@@ -330,7 +330,7 @@ class CreateAutonomousDatabaseBase(object):
     def is_free_tier(self):
         """
         Gets the is_free_tier of this CreateAutonomousDatabaseBase.
-        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB memory. For Always Free databases, memory and CPU cannot be scaled.
+        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
 
 
         :return: The is_free_tier of this CreateAutonomousDatabaseBase.
@@ -342,7 +342,7 @@ class CreateAutonomousDatabaseBase(object):
     def is_free_tier(self, is_free_tier):
         """
         Sets the is_free_tier of this CreateAutonomousDatabaseBase.
-        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB memory. For Always Free databases, memory and CPU cannot be scaled.
+        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
 
 
         :param is_free_tier: The is_free_tier of this CreateAutonomousDatabaseBase.
@@ -402,9 +402,11 @@ class CreateAutonomousDatabaseBase(object):
     def license_model(self):
         """
         Gets the license_model of this CreateAutonomousDatabaseBase.
-        The Oracle license model that applies to the Oracle Autonomous Database. The default for Autonomous Database using the `shared deployment] is BRING_YOUR_OWN_LICENSE. Note that when provisioning an Autonomous Database using the [dedicated deployment`__ option, this attribute must be null because the attribute is already set on Autonomous Exadata Infrastructure level.
+        The Oracle license model that applies to the Oracle Autonomous Database. Note that when provisioning an Autonomous Database using the `dedicated deployment`__ option, this attribute must be null because the attribute is already set at the
+        Autonomous Exadata Infrastructure level. When using the `serverless deployment`__ option, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#DeploymentTypes
 
         Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
 
@@ -418,9 +420,11 @@ class CreateAutonomousDatabaseBase(object):
     def license_model(self, license_model):
         """
         Sets the license_model of this CreateAutonomousDatabaseBase.
-        The Oracle license model that applies to the Oracle Autonomous Database. The default for Autonomous Database using the `shared deployment] is BRING_YOUR_OWN_LICENSE. Note that when provisioning an Autonomous Database using the [dedicated deployment`__ option, this attribute must be null because the attribute is already set on Autonomous Exadata Infrastructure level.
+        The Oracle license model that applies to the Oracle Autonomous Database. Note that when provisioning an Autonomous Database using the `dedicated deployment`__ option, this attribute must be null because the attribute is already set at the
+        Autonomous Exadata Infrastructure level. When using the `serverless deployment`__ option, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#DeploymentTypes
 
 
         :param license_model: The license_model of this CreateAutonomousDatabaseBase.
@@ -438,7 +442,7 @@ class CreateAutonomousDatabaseBase(object):
     def is_preview_version_with_service_terms_accepted(self):
         """
         Gets the is_preview_version_with_service_terms_accepted of this CreateAutonomousDatabaseBase.
-        If set to true, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for `serverless deployments`__.
+        If set to `TRUE`, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for `serverless deployments`__.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
@@ -452,7 +456,7 @@ class CreateAutonomousDatabaseBase(object):
     def is_preview_version_with_service_terms_accepted(self, is_preview_version_with_service_terms_accepted):
         """
         Sets the is_preview_version_with_service_terms_accepted of this CreateAutonomousDatabaseBase.
-        If set to true, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for `serverless deployments`__.
+        If set to `TRUE`, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for `serverless deployments`__.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
@@ -466,7 +470,7 @@ class CreateAutonomousDatabaseBase(object):
     def is_auto_scaling_enabled(self):
         """
         Gets the is_auto_scaling_enabled of this CreateAutonomousDatabaseBase.
-        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is false. Note that auto scaling is available for `serverless deployments`__ only.
+        Indicates if auto scaling is enabled for the Autonomous Database OCPU core count. The default value is `FALSE`. Note that auto scaling is available for `serverless deployments`__ only.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
@@ -480,7 +484,7 @@ class CreateAutonomousDatabaseBase(object):
     def is_auto_scaling_enabled(self, is_auto_scaling_enabled):
         """
         Sets the is_auto_scaling_enabled of this CreateAutonomousDatabaseBase.
-        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. The default value is false. Note that auto scaling is available for `serverless deployments`__ only.
+        Indicates if auto scaling is enabled for the Autonomous Database OCPU core count. The default value is `FALSE`. Note that auto scaling is available for `serverless deployments`__ only.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
@@ -648,7 +652,7 @@ class CreateAutonomousDatabaseBase(object):
     def source(self):
         """
         Gets the source of this CreateAutonomousDatabaseBase.
-        The source of the database: Use NONE for creating a new Autonomous Database. Use DATABASE for creating a new Autonomous Database by cloning an existing Autonomous Database.
+        The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database.
 
         Allowed values for this property are: "NONE", "DATABASE"
 
@@ -662,7 +666,7 @@ class CreateAutonomousDatabaseBase(object):
     def source(self, source):
         """
         Sets the source of this CreateAutonomousDatabaseBase.
-        The source of the database: Use NONE for creating a new Autonomous Database. Use DATABASE for creating a new Autonomous Database by cloning an existing Autonomous Database.
+        The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database.
 
 
         :param source: The source of this CreateAutonomousDatabaseBase.

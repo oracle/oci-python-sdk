@@ -380,7 +380,7 @@ class AutonomousContainerDatabaseSummary(object):
     def time_created(self):
         """
         Gets the time_created of this AutonomousContainerDatabaseSummary.
-        The date and time the Autonomous was created.
+        The date and time the Autonomous Container Database was created.
 
 
         :return: The time_created of this AutonomousContainerDatabaseSummary.
@@ -392,7 +392,7 @@ class AutonomousContainerDatabaseSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this AutonomousContainerDatabaseSummary.
-        The date and time the Autonomous was created.
+        The date and time the Autonomous Container Database was created.
 
 
         :param time_created: The time_created of this AutonomousContainerDatabaseSummary.
@@ -404,7 +404,7 @@ class AutonomousContainerDatabaseSummary(object):
     def patch_model(self):
         """
         **[Required]** Gets the patch_model of this AutonomousContainerDatabaseSummary.
-        Database Patch model preference.
+        Database patch model preference.
 
         Allowed values for this property are: "RELEASE_UPDATES", "RELEASE_UPDATE_REVISIONS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -419,7 +419,7 @@ class AutonomousContainerDatabaseSummary(object):
     def patch_model(self, patch_model):
         """
         Sets the patch_model of this AutonomousContainerDatabaseSummary.
-        Database Patch model preference.
+        Database patch model preference.
 
 
         :param patch_model: The patch_model of this AutonomousContainerDatabaseSummary.

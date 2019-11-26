@@ -56,7 +56,6 @@ from .create_db_home_from_backup_details import CreateDbHomeFromBackupDetails
 from .create_db_home_with_db_system_id_details import CreateDbHomeWithDbSystemIdDetails
 from .create_db_home_with_db_system_id_from_backup_details import CreateDbHomeWithDbSystemIdFromBackupDetails
 from .create_db_home_with_vm_cluster_id_details import CreateDbHomeWithVmClusterIdDetails
-from .create_db_home_with_vm_cluster_id_from_backup_details import CreateDbHomeWithVmClusterIdFromBackupDetails
 from .create_exadata_infrastructure_details import CreateExadataInfrastructureDetails
 from .create_external_backup_job_details import CreateExternalBackupJobDetails
 from .create_nfs_backup_destination_details import CreateNFSBackupDestinationDetails
@@ -100,6 +99,7 @@ from .maintenance_run_summary import MaintenanceRunSummary
 from .maintenance_window import MaintenanceWindow
 from .month import Month
 from .node_details import NodeDetails
+from .ocp_us import OCPUs
 from .patch import Patch
 from .patch_details import PatchDetails
 from .patch_history_entry import PatchHistoryEntry
@@ -130,6 +130,7 @@ from .vm_cluster_network_details import VmClusterNetworkDetails
 from .vm_cluster_network_summary import VmClusterNetworkSummary
 from .vm_cluster_summary import VmClusterSummary
 from .vm_network_details import VmNetworkDetails
+from .workload_type import WorkloadType
 
 # Maps type names to classes for database services.
 database_type_mapping = {
@@ -186,7 +187,6 @@ database_type_mapping = {
     "CreateDbHomeWithDbSystemIdDetails": CreateDbHomeWithDbSystemIdDetails,
     "CreateDbHomeWithDbSystemIdFromBackupDetails": CreateDbHomeWithDbSystemIdFromBackupDetails,
     "CreateDbHomeWithVmClusterIdDetails": CreateDbHomeWithVmClusterIdDetails,
-    "CreateDbHomeWithVmClusterIdFromBackupDetails": CreateDbHomeWithVmClusterIdFromBackupDetails,
     "CreateExadataInfrastructureDetails": CreateExadataInfrastructureDetails,
     "CreateExternalBackupJobDetails": CreateExternalBackupJobDetails,
     "CreateNFSBackupDestinationDetails": CreateNFSBackupDestinationDetails,
@@ -230,6 +230,7 @@ database_type_mapping = {
     "MaintenanceWindow": MaintenanceWindow,
     "Month": Month,
     "NodeDetails": NodeDetails,
+    "OCPUs": OCPUs,
     "Patch": Patch,
     "PatchDetails": PatchDetails,
     "PatchHistoryEntry": PatchHistoryEntry,
@@ -259,5 +260,6 @@ database_type_mapping = {
     "VmClusterNetworkDetails": VmClusterNetworkDetails,
     "VmClusterNetworkSummary": VmClusterNetworkSummary,
     "VmClusterSummary": VmClusterSummary,
-    "VmNetworkDetails": VmNetworkDetails
+    "VmNetworkDetails": VmNetworkDetails,
+    "WorkloadType": WorkloadType
 }

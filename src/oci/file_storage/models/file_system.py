@@ -398,7 +398,7 @@ class FileSystem(object):
     def kms_key_id(self):
         """
         Gets the kms_key_id of this FileSystem.
-        The OCID of KMS key used to encrypt the encryption keys associated with this file system.
+        The OCID of the KMS key which is the master encryption key for the file system.
 
 
         :return: The kms_key_id of this FileSystem.
@@ -410,7 +410,7 @@ class FileSystem(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this FileSystem.
-        The OCID of KMS key used to encrypt the encryption keys associated with this file system.
+        The OCID of the KMS key which is the master encryption key for the file system.
 
 
         :param kms_key_id: The kms_key_id of this FileSystem.

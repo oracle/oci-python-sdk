@@ -1,9 +1,9 @@
-CreateDbHomeWithVmClusterIdFromBackupDetails
-============================================
+OCPUs
+=====
 
 .. currentmodule:: oci.database.models
 
-.. autoclass:: CreateDbHomeWithVmClusterIdFromBackupDetails
+.. autoclass:: OCPUs
     :show-inheritance:
     :special-members: __init__
     :members:

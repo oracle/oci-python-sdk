@@ -235,6 +235,14 @@ class AutonomousDatabaseSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type data_safe_status: str
 
+        :param time_maintenance_begin:
+            The value to assign to the time_maintenance_begin property of this AutonomousDatabaseSummary.
+        :type time_maintenance_begin: datetime
+
+        :param time_maintenance_end:
+            The value to assign to the time_maintenance_end property of this AutonomousDatabaseSummary.
+        :type time_maintenance_end: datetime
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -264,7 +272,9 @@ class AutonomousDatabaseSummary(object):
             'db_workload': 'str',
             'whitelisted_ips': 'list[str]',
             'is_auto_scaling_enabled': 'bool',
-            'data_safe_status': 'str'
+            'data_safe_status': 'str',
+            'time_maintenance_begin': 'datetime',
+            'time_maintenance_end': 'datetime'
         }
 
         self.attribute_map = {
@@ -295,7 +305,9 @@ class AutonomousDatabaseSummary(object):
             'db_workload': 'dbWorkload',
             'whitelisted_ips': 'whitelistedIps',
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
-            'data_safe_status': 'dataSafeStatus'
+            'data_safe_status': 'dataSafeStatus',
+            'time_maintenance_begin': 'timeMaintenanceBegin',
+            'time_maintenance_end': 'timeMaintenanceEnd'
         }
 
         self._id = None
@@ -326,6 +338,8 @@ class AutonomousDatabaseSummary(object):
         self._whitelisted_ips = None
         self._is_auto_scaling_enabled = None
         self._data_safe_status = None
+        self._time_maintenance_begin = None
+        self._time_maintenance_end = None
 
     @property
     def id(self):
@@ -387,7 +401,7 @@ class AutonomousDatabaseSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this AutonomousDatabaseSummary.
-        The current state of the database.
+        The current state of the Autonomous Database.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -402,7 +416,7 @@ class AutonomousDatabaseSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this AutonomousDatabaseSummary.
-        The current state of the database.
+        The current state of the Autonomous Database.
 
 
         :param lifecycle_state: The lifecycle_state of this AutonomousDatabaseSummary.
@@ -465,7 +479,7 @@ class AutonomousDatabaseSummary(object):
     def is_free_tier(self):
         """
         Gets the is_free_tier of this AutonomousDatabaseSummary.
-        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB memory. For Always Free databases, memory and CPU cannot be scaled.
+        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
 
 
         :return: The is_free_tier of this AutonomousDatabaseSummary.
@@ -477,7 +491,7 @@ class AutonomousDatabaseSummary(object):
     def is_free_tier(self, is_free_tier):
         """
         Sets the is_free_tier of this AutonomousDatabaseSummary.
-        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB memory. For Always Free databases, memory and CPU cannot be scaled.
+        Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
 
 
         :param is_free_tier: The is_free_tier of this AutonomousDatabaseSummary.
@@ -567,7 +581,7 @@ class AutonomousDatabaseSummary(object):
     def cpu_core_count(self):
         """
         **[Required]** Gets the cpu_core_count of this AutonomousDatabaseSummary.
-        The number of CPU cores to be made available to the database.
+        The number of OCPU cores to be made available to the database.
 
 
         :return: The cpu_core_count of this AutonomousDatabaseSummary.
@@ -579,7 +593,7 @@ class AutonomousDatabaseSummary(object):
     def cpu_core_count(self, cpu_core_count):
         """
         Sets the cpu_core_count of this AutonomousDatabaseSummary.
-        The number of CPU cores to be made available to the database.
+        The number of OCPU cores to be made available to the database.
 
 
         :param cpu_core_count: The cpu_core_count of this AutonomousDatabaseSummary.
@@ -671,7 +685,7 @@ class AutonomousDatabaseSummary(object):
     def time_created(self):
         """
         Gets the time_created of this AutonomousDatabaseSummary.
-        The date and time the database was created.
+        The date and time the Autonomous Database was created.
 
 
         :return: The time_created of this AutonomousDatabaseSummary.
@@ -683,7 +697,7 @@ class AutonomousDatabaseSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this AutonomousDatabaseSummary.
-        The date and time the database was created.
+        The date and time the Autonomous Database was created.
 
 
         :param time_created: The time_created of this AutonomousDatabaseSummary.
@@ -787,9 +801,11 @@ class AutonomousDatabaseSummary(object):
     def license_model(self):
         """
         Gets the license_model of this AutonomousDatabaseSummary.
-        The Oracle license model that applies to the Oracle Autonomous Database. The default for Autonomous Database using the `shared deployment] is BRING_YOUR_OWN_LICENSE. Note that when provisioning an Autonomous Database using the [dedicated deployment`__ option, this attribute must be null because the attribute is already set on Autonomous Exadata Infrastructure level.
+        The Oracle license model that applies to the Oracle Autonomous Database. Note that when provisioning an Autonomous Database using the `dedicated deployment`__ option, this attribute must be null because the attribute is already set at the
+        Autonomous Exadata Infrastructure level. When using the `serverless deployment`__ option, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#DeploymentTypes
 
         Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -804,9 +820,11 @@ class AutonomousDatabaseSummary(object):
     def license_model(self, license_model):
         """
         Sets the license_model of this AutonomousDatabaseSummary.
-        The Oracle license model that applies to the Oracle Autonomous Database. The default for Autonomous Database using the `shared deployment] is BRING_YOUR_OWN_LICENSE. Note that when provisioning an Autonomous Database using the [dedicated deployment`__ option, this attribute must be null because the attribute is already set on Autonomous Exadata Infrastructure level.
+        The Oracle license model that applies to the Oracle Autonomous Database. Note that when provisioning an Autonomous Database using the `dedicated deployment`__ option, this attribute must be null because the attribute is already set at the
+        Autonomous Exadata Infrastructure level. When using the `serverless deployment`__ option, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#DeploymentTypes
 
 
         :param license_model: The license_model of this AutonomousDatabaseSummary.
@@ -1074,6 +1092,54 @@ class AutonomousDatabaseSummary(object):
         if not value_allowed_none_or_none_sentinel(data_safe_status, allowed_values):
             data_safe_status = 'UNKNOWN_ENUM_VALUE'
         self._data_safe_status = data_safe_status
+
+    @property
+    def time_maintenance_begin(self):
+        """
+        Gets the time_maintenance_begin of this AutonomousDatabaseSummary.
+        The date and time when maintenance will begin.
+
+
+        :return: The time_maintenance_begin of this AutonomousDatabaseSummary.
+        :rtype: datetime
+        """
+        return self._time_maintenance_begin
+
+    @time_maintenance_begin.setter
+    def time_maintenance_begin(self, time_maintenance_begin):
+        """
+        Sets the time_maintenance_begin of this AutonomousDatabaseSummary.
+        The date and time when maintenance will begin.
+
+
+        :param time_maintenance_begin: The time_maintenance_begin of this AutonomousDatabaseSummary.
+        :type: datetime
+        """
+        self._time_maintenance_begin = time_maintenance_begin
+
+    @property
+    def time_maintenance_end(self):
+        """
+        Gets the time_maintenance_end of this AutonomousDatabaseSummary.
+        The date and time when maintenance will end.
+
+
+        :return: The time_maintenance_end of this AutonomousDatabaseSummary.
+        :rtype: datetime
+        """
+        return self._time_maintenance_end
+
+    @time_maintenance_end.setter
+    def time_maintenance_end(self, time_maintenance_end):
+        """
+        Sets the time_maintenance_end of this AutonomousDatabaseSummary.
+        The date and time when maintenance will end.
+
+
+        :param time_maintenance_end: The time_maintenance_end of this AutonomousDatabaseSummary.
+        :type: datetime
+        """
+        self._time_maintenance_end = time_maintenance_end
 
     def __repr__(self):
         return formatted_flat_dict(self)

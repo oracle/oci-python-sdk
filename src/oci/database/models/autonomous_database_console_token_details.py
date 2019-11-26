@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDatabaseConsoleTokenDetails(object):
     """
-    The token that allows the OCI Console to access the Autonomous Transaction Processing Service Console.
+    The token that allows the OCI Console to access the Autonomous Database Service Console.
     """
 
     def __init__(self, **kwargs):

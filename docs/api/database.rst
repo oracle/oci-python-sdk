@@ -71,7 +71,6 @@ Database
     oci.database.models.CreateDbHomeWithDbSystemIdDetails
     oci.database.models.CreateDbHomeWithDbSystemIdFromBackupDetails
     oci.database.models.CreateDbHomeWithVmClusterIdDetails
-    oci.database.models.CreateDbHomeWithVmClusterIdFromBackupDetails
     oci.database.models.CreateExadataInfrastructureDetails
     oci.database.models.CreateExternalBackupJobDetails
     oci.database.models.CreateNFSBackupDestinationDetails
@@ -115,6 +114,7 @@ Database
     oci.database.models.MaintenanceWindow
     oci.database.models.Month
     oci.database.models.NodeDetails
+    oci.database.models.OCPUs
     oci.database.models.Patch
     oci.database.models.PatchDetails
     oci.database.models.PatchHistoryEntry
@@ -145,3 +145,4 @@ Database
     oci.database.models.VmClusterNetworkSummary
     oci.database.models.VmClusterSummary
     oci.database.models.VmNetworkDetails
+    oci.database.models.WorkloadType

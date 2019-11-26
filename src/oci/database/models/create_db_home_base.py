@@ -26,17 +26,12 @@ class CreateDbHomeBase(object):
     #: This constant has a value of "VM_CLUSTER_NEW"
     SOURCE_VM_CLUSTER_NEW = "VM_CLUSTER_NEW"
 
-    #: A constant which can be used with the source property of a CreateDbHomeBase.
-    #: This constant has a value of "VM_CLUSTER_BACKUP"
-    SOURCE_VM_CLUSTER_BACKUP = "VM_CLUSTER_BACKUP"
-
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDbHomeBase object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.database.models.CreateDbHomeWithDbSystemIdFromBackupDetails`
-        * :class:`~oci.database.models.CreateDbHomeWithVmClusterIdFromBackupDetails`
         * :class:`~oci.database.models.CreateDbHomeWithDbSystemIdDetails`
         * :class:`~oci.database.models.CreateDbHomeWithVmClusterIdDetails`
 
@@ -48,7 +43,7 @@ class CreateDbHomeBase(object):
 
         :param source:
             The value to assign to the source property of this CreateDbHomeBase.
-            Allowed values for this property are: "NONE", "DB_BACKUP", "VM_CLUSTER_NEW", "VM_CLUSTER_BACKUP"
+            Allowed values for this property are: "NONE", "DB_BACKUP", "VM_CLUSTER_NEW"
         :type source: str
 
         """
@@ -75,9 +70,6 @@ class CreateDbHomeBase(object):
 
         if type == 'DB_BACKUP':
             return 'CreateDbHomeWithDbSystemIdFromBackupDetails'
-
-        if type == 'VM_CLUSTER_BACKUP':
-            return 'CreateDbHomeWithVmClusterIdFromBackupDetails'
 
         if type == 'NONE':
             return 'CreateDbHomeWithDbSystemIdDetails'
@@ -117,7 +109,7 @@ class CreateDbHomeBase(object):
         Gets the source of this CreateDbHomeBase.
         The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup.
 
-        Allowed values for this property are: "NONE", "DB_BACKUP", "VM_CLUSTER_NEW", "VM_CLUSTER_BACKUP"
+        Allowed values for this property are: "NONE", "DB_BACKUP", "VM_CLUSTER_NEW"
 
 
         :return: The source of this CreateDbHomeBase.
@@ -135,7 +127,7 @@ class CreateDbHomeBase(object):
         :param source: The source of this CreateDbHomeBase.
         :type: str
         """
-        allowed_values = ["NONE", "DB_BACKUP", "VM_CLUSTER_NEW", "VM_CLUSTER_BACKUP"]
+        allowed_values = ["NONE", "DB_BACKUP", "VM_CLUSTER_NEW"]
         if not value_allowed_none_or_none_sentinel(source, allowed_values):
             raise ValueError(
                 "Invalid value for `source`, must be None or one of {0}"
