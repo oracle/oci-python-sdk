@@ -123,7 +123,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
     def service_level_agreement_type(self):
         """
         Gets the service_level_agreement_type of this CreateAutonomousContainerDatabaseDetails.
-        The service level agreement type of the Autonomous Container Database. The default is STANDARD. For a Mission Critical Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
+        The service level agreement type of the Autonomous Container Database. The default is STANDARD. For a mission critical Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
 
         Allowed values for this property are: "STANDARD"
 
@@ -137,7 +137,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
     def service_level_agreement_type(self, service_level_agreement_type):
         """
         Sets the service_level_agreement_type of this CreateAutonomousContainerDatabaseDetails.
-        The service level agreement type of the Autonomous Container Database. The default is STANDARD. For a Mission Critical Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
+        The service level agreement type of the Autonomous Container Database. The default is STANDARD. For a mission critical Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
 
 
         :param service_level_agreement_type: The service_level_agreement_type of this CreateAutonomousContainerDatabaseDetails.
