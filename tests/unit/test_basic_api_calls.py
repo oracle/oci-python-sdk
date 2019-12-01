@@ -41,6 +41,7 @@ def test_limit(identity, config):
     assert response.request_id is not None
 
 
+@pytest.mark.skip(reason="Need to be fixed run with new TC agent.")
 def test_api_call_with_explicit_timeout(config):
     client = oci.identity.IdentityClient(config)
 
