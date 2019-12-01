@@ -46,6 +46,14 @@ def test_pagination_get_all_results(identity, config):
     assert found_test_user
 
 
+def test_pagination_get_all_results_second_style(search_client):
+    all_results_response = oci.pagination.list_call_get_all_results(search_client.search_resources,
+                                                                    oci.resource_search.models.FreeTextSearchDetails(text="test"))
+
+    assert not all_results_response.has_next_page
+    assert len(all_results_response.data) > 0
+
+
 def test_pagination_get_up_to_limit(identity, config):
     # There may not be 70 users, so only check that we get no more than what we ask for
     list_users_response = oci.pagination.list_call_get_up_to_limit(identity.list_users, 70, 10, config["tenancy"])
@@ -55,6 +63,14 @@ def test_pagination_get_up_to_limit(identity, config):
     list_users_response = oci.pagination.list_call_get_up_to_limit(identity.list_users, 1, 1, config["tenancy"])
     assert list_users_response.has_next_page
     assert len(list_users_response.data) == 1
+
+
+def test_pagination_get_up_to_limit_second_style(search_client):
+    all_results_response = oci.pagination.list_call_get_up_to_limit(search_client.search_resources, 200, 10,
+                                                                    oci.resource_search.models.FreeTextSearchDetails(
+                                                                        text="test"))
+    assert all_results_response.has_next_page
+    assert len(all_results_response.data) > 0
 
 
 def test_pagination_get_up_to_limit_none_limit(identity, config):

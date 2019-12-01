@@ -51,7 +51,8 @@ def list_call_get_up_to_limit(list_func_ref, record_limit, page_size, *list_func
             if call_result.data.prefixes:
                 list_objects_prefixes.update(call_result.data.prefixes)
         else:
-            aggregated_results.extend(call_result.data)
+            aggregated_results.extend(call_result.data) if isinstance(call_result.data, list) \
+                else aggregated_results.extend(call_result.data.items)
 
     if is_dns_record_collection:
         final_response = Response(
@@ -152,7 +153,7 @@ def list_call_get_up_to_limit_generator(list_func_ref, record_limit, page_size, 
             elif isinstance(call_result.data, object_storage.models.ListObjects):
                 items_to_yield = call_result.data.objects
             else:
-                items_to_yield = call_result.data
+                items_to_yield = call_result.data if isinstance(call_result.data, list) else call_result.data.items
 
             for item in items_to_yield:
                 yield item
@@ -162,7 +163,7 @@ def list_call_get_up_to_limit_generator(list_func_ref, record_limit, page_size, 
         elif isinstance(call_result.data, object_storage.models.ListObjects):
             remaining_items_to_fetch -= len(call_result.data.objects)
         else:
-            remaining_items_to_fetch -= len(call_result.data)
+            remaining_items_to_fetch -= len(call_result.data) if isinstance(call_result.data, list) else len(call_result.data.items)
 
         if isinstance(call_result.data, object_storage.models.ListObjects):
             if call_result.data.next_start_with is not None:
@@ -212,7 +213,8 @@ def list_call_get_all_results(list_func_ref, *list_func_args, **list_func_kwargs
             if call_result.data.prefixes:
                 list_objects_prefixes.update(call_result.data.prefixes)
         else:
-            aggregated_results.extend(call_result.data)
+            aggregated_results.extend(call_result.data) if isinstance(call_result.data, list) \
+                else aggregated_results.extend(call_result.data.items)
 
     if is_dns_record_collection:
         final_response = Response(
