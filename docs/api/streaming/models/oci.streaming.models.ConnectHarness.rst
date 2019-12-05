@@ -1,0 +1,11 @@
+ConnectHarness
+==============
+
+.. currentmodule:: oci.streaming.models
+
+.. autoclass:: ConnectHarness
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

@@ -9,17 +9,20 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BaseTagDefinitionValidator(object):
     """
-    Validates a definedTag value. Each validator performs validation steps in addition to the standard validation
-    for definedTag values (See `Limits on Tags`__.
+    Validates a definedTag value. Each validator performs validation steps in addition to the standard
+    validation for definedTag values. For more information, see
+    `Limits on Tags`__.
 
-    If a validator is defined after a value has been set for a definedTag, then any UPDATE operation that attempts
-    to change the value must pass the additional validation defined by this rule. Previously set values, that would
-    fail validation, are not updated and it is possible to update other attributes of an OCI resource that contains
-    a non-valid definedTag.
+    If you define a validator after a value has been set for a defined tag, then any updates that
+    attempt to change the value must pass the additional validation defined by the current rule.
+    Previously set values (even those that would fail the current validation) are not updated. You can
+    still update other attributes to resources that contain a non-valid defined tag.
 
-    To clear the validator call the UPDATE operation with DefaultTagDefinitionValidator.
+    To clear the validator call UpdateTag with
+    `DefaultTagDefinitionValidator`__.
 
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm#Limits
+    __ https://docs.cloud.oracle.com/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator
     """
 
     #: A constant which can be used with the validator_type property of a BaseTagDefinitionValidator.
@@ -77,7 +80,7 @@ class BaseTagDefinitionValidator(object):
     def validator_type(self):
         """
         **[Required]** Gets the validator_type of this BaseTagDefinitionValidator.
-        The primitive that any value set for this definedTag must be parseable as.
+        Specifies the type of validation: a static value (no validation) or a list.
 
         Allowed values for this property are: "ENUM", "DEFAULT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -92,7 +95,7 @@ class BaseTagDefinitionValidator(object):
     def validator_type(self, validator_type):
         """
         Sets the validator_type of this BaseTagDefinitionValidator.
-        The primitive that any value set for this definedTag must be parseable as.
+        Specifies the type of validation: a static value (no validation) or a list.
 
 
         :param validator_type: The validator_type of this BaseTagDefinitionValidator.

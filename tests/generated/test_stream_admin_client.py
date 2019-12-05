@@ -29,6 +29,47 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
+def test_change_connect_harness_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('streaming', 'ChangeConnectHarnessCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('streaming', util.camelize('stream_admin'), 'ChangeConnectHarnessCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='streaming', api_name='ChangeConnectHarnessCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
+            response = client.change_connect_harness_compartment(
+                connect_harness_id=request.pop(util.camelize('connect_harness_id')),
+                change_connect_harness_compartment_details=request.pop(util.camelize('change_connect_harness_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'streaming',
+            'ChangeConnectHarnessCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_connect_harness_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
 def test_change_stream_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('streaming', 'ChangeStreamCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -64,6 +105,47 @@ def test_change_stream_compartment(testing_service_client):
             result,
             service_error,
             'change_stream_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
+def test_change_stream_pool_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('streaming', 'ChangeStreamPoolCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('streaming', util.camelize('stream_admin'), 'ChangeStreamPoolCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='streaming', api_name='ChangeStreamPoolCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
+            response = client.change_stream_pool_compartment(
+                stream_pool_id=request.pop(util.camelize('stream_pool_id')),
+                change_stream_pool_compartment_details=request.pop(util.camelize('change_stream_pool_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'streaming',
+            'ChangeStreamPoolCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_stream_pool_compartment',
             False,
             False
         )
@@ -111,6 +193,46 @@ def test_create_archiver(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
+def test_create_connect_harness(testing_service_client):
+    if not testing_service_client.is_api_enabled('streaming', 'CreateConnectHarness'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('streaming', util.camelize('stream_admin'), 'CreateConnectHarness')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='streaming', api_name='CreateConnectHarness')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
+            response = client.create_connect_harness(
+                create_connect_harness_details=request.pop(util.camelize('create_connect_harness_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'streaming',
+            'CreateConnectHarness',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'connectHarness',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
 def test_create_stream(testing_service_client):
     if not testing_service_client.is_api_enabled('streaming', 'CreateStream'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -151,6 +273,86 @@ def test_create_stream(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
+def test_create_stream_pool(testing_service_client):
+    if not testing_service_client.is_api_enabled('streaming', 'CreateStreamPool'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('streaming', util.camelize('stream_admin'), 'CreateStreamPool')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='streaming', api_name='CreateStreamPool')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
+            response = client.create_stream_pool(
+                create_stream_pool_details=request.pop(util.camelize('create_stream_pool_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'streaming',
+            'CreateStreamPool',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'streamPool',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
+def test_delete_connect_harness(testing_service_client):
+    if not testing_service_client.is_api_enabled('streaming', 'DeleteConnectHarness'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('streaming', util.camelize('stream_admin'), 'DeleteConnectHarness')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='streaming', api_name='DeleteConnectHarness')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
+            response = client.delete_connect_harness(
+                connect_harness_id=request.pop(util.camelize('connect_harness_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'streaming',
+            'DeleteConnectHarness',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_connect_harness',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
 def test_delete_stream(testing_service_client):
     if not testing_service_client.is_api_enabled('streaming', 'DeleteStream'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -185,6 +387,46 @@ def test_delete_stream(testing_service_client):
             result,
             service_error,
             'delete_stream',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
+def test_delete_stream_pool(testing_service_client):
+    if not testing_service_client.is_api_enabled('streaming', 'DeleteStreamPool'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('streaming', util.camelize('stream_admin'), 'DeleteStreamPool')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='streaming', api_name='DeleteStreamPool')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
+            response = client.delete_stream_pool(
+                stream_pool_id=request.pop(util.camelize('stream_pool_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'streaming',
+            'DeleteStreamPool',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_stream_pool',
             True,
             False
         )
@@ -231,6 +473,46 @@ def test_get_archiver(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
+def test_get_connect_harness(testing_service_client):
+    if not testing_service_client.is_api_enabled('streaming', 'GetConnectHarness'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('streaming', util.camelize('stream_admin'), 'GetConnectHarness')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='streaming', api_name='GetConnectHarness')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
+            response = client.get_connect_harness(
+                connect_harness_id=request.pop(util.camelize('connect_harness_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'streaming',
+            'GetConnectHarness',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'connectHarness',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
 def test_get_stream(testing_service_client):
     if not testing_service_client.is_api_enabled('streaming', 'GetStream'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -267,6 +549,161 @@ def test_get_stream(testing_service_client):
             'stream',
             False,
             False
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
+def test_get_stream_pool(testing_service_client):
+    if not testing_service_client.is_api_enabled('streaming', 'GetStreamPool'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('streaming', util.camelize('stream_admin'), 'GetStreamPool')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='streaming', api_name='GetStreamPool')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
+            response = client.get_stream_pool(
+                stream_pool_id=request.pop(util.camelize('stream_pool_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'streaming',
+            'GetStreamPool',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'streamPool',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
+def test_list_connect_harnesses(testing_service_client):
+    if not testing_service_client.is_api_enabled('streaming', 'ListConnectHarnesses'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('streaming', util.camelize('stream_admin'), 'ListConnectHarnesses')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='streaming', api_name='ListConnectHarnesses')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
+            response = client.list_connect_harnesses(
+                compartment_id=request.pop(util.camelize('compartment_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_connect_harnesses(
+                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_connect_harnesses(
+                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'streaming',
+            'ListConnectHarnesses',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'connectHarnessSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
+def test_list_stream_pools(testing_service_client):
+    if not testing_service_client.is_api_enabled('streaming', 'ListStreamPools'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('streaming', util.camelize('stream_admin'), 'ListStreamPools')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='streaming', api_name='ListStreamPools')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
+            response = client.list_stream_pools(
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_stream_pools(
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_stream_pools(
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'streaming',
+            'ListStreamPools',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'streamPoolSummary',
+            False,
+            True
         )
 
 
@@ -451,6 +888,47 @@ def test_update_archiver(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
+def test_update_connect_harness(testing_service_client):
+    if not testing_service_client.is_api_enabled('streaming', 'UpdateConnectHarness'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('streaming', util.camelize('stream_admin'), 'UpdateConnectHarness')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='streaming', api_name='UpdateConnectHarness')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
+            response = client.update_connect_harness(
+                connect_harness_id=request.pop(util.camelize('connect_harness_id')),
+                update_connect_harness_details=request.pop(util.camelize('update_connect_harness_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'streaming',
+            'UpdateConnectHarness',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'connectHarness',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
 def test_update_stream(testing_service_client):
     if not testing_service_client.is_api_enabled('streaming', 'UpdateStream'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -486,6 +964,47 @@ def test_update_stream(testing_service_client):
             result,
             service_error,
             'stream',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
+def test_update_stream_pool(testing_service_client):
+    if not testing_service_client.is_api_enabled('streaming', 'UpdateStreamPool'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('streaming', util.camelize('stream_admin'), 'UpdateStreamPool')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='streaming', api_name='UpdateStreamPool')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
+            response = client.update_stream_pool(
+                stream_pool_id=request.pop(util.camelize('stream_pool_id')),
+                update_stream_pool_details=request.pop(util.camelize('update_stream_pool_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'streaming',
+            'UpdateStreamPool',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'streamPool',
             False,
             False
         )

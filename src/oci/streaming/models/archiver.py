@@ -120,7 +120,7 @@ class Archiver(object):
     @property
     def time_created(self):
         """
-        Gets the time_created of this Archiver.
+        **[Required]** Gets the time_created of this Archiver.
         Time when the resource was created.
 
 
@@ -144,7 +144,7 @@ class Archiver(object):
     @property
     def lifecycle_state(self):
         """
-        Gets the lifecycle_state of this Archiver.
+        **[Required]** Gets the lifecycle_state of this Archiver.
         The state of the stream archiver.
 
         Allowed values for this property are: "CREATING", "STOPPED", "STARTING", "RUNNING", "STOPPING", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
@@ -174,7 +174,7 @@ class Archiver(object):
     @property
     def bucket_name(self):
         """
-        Gets the bucket_name of this Archiver.
+        **[Required]** Gets the bucket_name of this Archiver.
         The name of the bucket.
 
 
@@ -301,8 +301,6 @@ class Archiver(object):
     def error(self):
         """
         Gets the error of this Archiver.
-        If an operation failed this property contained the last error occurred.
-
 
         :return: The error of this Archiver.
         :rtype: ArchiverError
@@ -313,8 +311,6 @@ class Archiver(object):
     def error(self, error):
         """
         Sets the error of this Archiver.
-        If an operation failed this property contained the last error occurred.
-
 
         :param error: The error of this Archiver.
         :type: ArchiverError

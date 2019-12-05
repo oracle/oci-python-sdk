@@ -114,6 +114,10 @@ class Bucket(object):
             The value to assign to the approximate_size property of this Bucket.
         :type approximate_size: int
 
+        :param id:
+            The value to assign to the id property of this Bucket.
+        :type id: str
+
         """
         self.swagger_types = {
             'namespace': 'str',
@@ -131,7 +135,8 @@ class Bucket(object):
             'kms_key_id': 'str',
             'object_lifecycle_policy_etag': 'str',
             'approximate_count': 'int',
-            'approximate_size': 'int'
+            'approximate_size': 'int',
+            'id': 'str'
         }
 
         self.attribute_map = {
@@ -150,7 +155,8 @@ class Bucket(object):
             'kms_key_id': 'kmsKeyId',
             'object_lifecycle_policy_etag': 'objectLifecyclePolicyEtag',
             'approximate_count': 'approximateCount',
-            'approximate_size': 'approximateSize'
+            'approximate_size': 'approximateSize',
+            'id': 'id'
         }
 
         self._namespace = None
@@ -169,6 +175,7 @@ class Bucket(object):
         self._object_lifecycle_policy_etag = None
         self._approximate_count = None
         self._approximate_size = None
+        self._id = None
 
     @property
     def namespace(self):
@@ -422,8 +429,11 @@ class Bucket(object):
     def object_events_enabled(self):
         """
         Gets the object_events_enabled of this Bucket.
-        A property that determines whether events will be generated for operations on objects in this bucket.
-        This is false by default.
+        Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is
+        set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information
+        about events, see `Overview of Events`__.
+
+        __ https://docs.cloud.oracle.com/Content/Events/Concepts/eventsoverview.htm
 
 
         :return: The object_events_enabled of this Bucket.
@@ -435,8 +445,11 @@ class Bucket(object):
     def object_events_enabled(self, object_events_enabled):
         """
         Sets the object_events_enabled of this Bucket.
-        A property that determines whether events will be generated for operations on objects in this bucket.
-        This is false by default.
+        Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is
+        set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information
+        about events, see `Overview of Events`__.
+
+        __ https://docs.cloud.oracle.com/Content/Events/Concepts/eventsoverview.htm
 
 
         :param object_events_enabled: The object_events_enabled of this Bucket.
@@ -512,7 +525,8 @@ class Bucket(object):
     def kms_key_id(self):
         """
         Gets the kms_key_id of this Bucket.
-        The OCID of a KMS key id used to call KMS to generate data key or decrypt the encrypted data key.
+        The OCID of a master encryption key used to call the Key Management service to generate a data encryption key
+        or to encrypt or decrypt a data encryption key.
 
 
         :return: The kms_key_id of this Bucket.
@@ -524,7 +538,8 @@ class Bucket(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this Bucket.
-        The OCID of a KMS key id used to call KMS to generate data key or decrypt the encrypted data key.
+        The OCID of a master encryption key used to call the Key Management service to generate a data encryption key
+        or to encrypt or decrypt a data encryption key.
 
 
         :param kms_key_id: The kms_key_id of this Bucket.
@@ -607,6 +622,30 @@ class Bucket(object):
         :type: int
         """
         self._approximate_size = approximate_size
+
+    @property
+    def id(self):
+        """
+        Gets the id of this Bucket.
+        The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket).
+
+
+        :return: The id of this Bucket.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this Bucket.
+        The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket).
+
+
+        :param id: The id of this Bucket.
+        :type: str
+        """
+        self._id = id
 
     def __repr__(self):
         return formatted_flat_dict(self)
