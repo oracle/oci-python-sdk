@@ -41,18 +41,17 @@ def test_limit(identity, config):
     assert response.request_id is not None
 
 
-@pytest.mark.skip(reason="Need to be fixed run with new TC agent.")
 def test_api_call_with_explicit_timeout(config):
     client = oci.identity.IdentityClient(config)
 
     # Test connection timeout
-    client.base_client.timeout = 0.01  # 0.01s timeout on connection and read. Should be too short to connect without timing out
+    client.base_client.timeout = (0.0001, 1)  # 0.1ms timeout on connection and 1s on read. Should be too short to connect without timing out
     with pytest.raises(oci.exceptions.ConnectTimeout):
         client.list_users(config['tenancy'])
         assert False
 
     # Test read timeout
-    client.base_client.timeout = (1, 0.01)  # 1s timeout on connection, 0.01s on read. Should be too short read
+    client.base_client.timeout = (1, 0.0005)  # 1s timeout on connection, 0.5ms on read. Should be too short to read
     with pytest.raises(oci.exceptions.RequestException):
         client.list_users(config['tenancy'])
         assert False
