@@ -142,7 +142,7 @@
       <dependency>
         <groupId>com.oracle.pic.oss</groupId>
         <artifactId>rest-api-spec</artifactId>
-        <version>0.3.371</version>
+        <version>0.3.518</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

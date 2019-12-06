@@ -201,7 +201,7 @@ class ObjectLifecycleRule(object):
     def is_enabled(self):
         """
         **[Required]** Gets the is_enabled of this ObjectLifecycleRule.
-        A boolean that determines whether this rule is currently enabled.
+        A Boolean that determines whether this rule is currently enabled.
 
 
         :return: The is_enabled of this ObjectLifecycleRule.
@@ -213,7 +213,7 @@ class ObjectLifecycleRule(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this ObjectLifecycleRule.
-        A boolean that determines whether this rule is currently enabled.
+        A Boolean that determines whether this rule is currently enabled.
 
 
         :param is_enabled: The is_enabled of this ObjectLifecycleRule.

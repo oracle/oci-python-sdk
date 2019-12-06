@@ -123,6 +123,7 @@ class CreateTagDetails(object):
         Gets the freeform_tags of this CreateTagDetails.
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
         For more information, see `Resource Tags`__.
+
         Example: `{\"Department\": \"Finance\"}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
@@ -139,6 +140,7 @@ class CreateTagDetails(object):
         Sets the freeform_tags of this CreateTagDetails.
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
         For more information, see `Resource Tags`__.
+
         Example: `{\"Department\": \"Finance\"}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
@@ -155,6 +157,7 @@ class CreateTagDetails(object):
         Gets the defined_tags of this CreateTagDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
+
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
@@ -171,6 +174,7 @@ class CreateTagDetails(object):
         Sets the defined_tags of this CreateTagDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
+
         Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
@@ -209,11 +213,18 @@ class CreateTagDetails(object):
     def validator(self):
         """
         Gets the validator of this CreateTagDetails.
-        Additional validation rule for values specified for the tag definition.
+        The tag must have a value type, which is specified with a validator. Tags can use either a
+        static value or a list of possible values. Static values are entered by a user applying the tag
+        to a resource. Lists are created by you and the user must apply a value from the list. Lists
+        are validiated.
 
-        If no validator is defined for a tag definition, then any (valid) value will be accepted.
+        If you use the default validiator (or don't define a validator), the user applying the tag
+        enters a value. No additional validation is performed.
 
-        The default value for `validator` is an empty map (no additional validation).
+        To clear the validator, call UpdateTag with
+        `DefaultTagDefinitionValidator`__.
+
+        __ https://docs.cloud.oracle.com/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator
 
 
         :return: The validator of this CreateTagDetails.
@@ -225,11 +236,18 @@ class CreateTagDetails(object):
     def validator(self, validator):
         """
         Sets the validator of this CreateTagDetails.
-        Additional validation rule for values specified for the tag definition.
+        The tag must have a value type, which is specified with a validator. Tags can use either a
+        static value or a list of possible values. Static values are entered by a user applying the tag
+        to a resource. Lists are created by you and the user must apply a value from the list. Lists
+        are validiated.
 
-        If no validator is defined for a tag definition, then any (valid) value will be accepted.
+        If you use the default validiator (or don't define a validator), the user applying the tag
+        enters a value. No additional validation is performed.
 
-        The default value for `validator` is an empty map (no additional validation).
+        To clear the validator, call UpdateTag with
+        `DefaultTagDefinitionValidator`__.
+
+        __ https://docs.cloud.oracle.com/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator
 
 
         :param validator: The validator of this CreateTagDetails.

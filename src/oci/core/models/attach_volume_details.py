@@ -40,6 +40,10 @@ class AttachVolumeDetails(object):
             The value to assign to the is_read_only property of this AttachVolumeDetails.
         :type is_read_only: bool
 
+        :param is_shareable:
+            The value to assign to the is_shareable property of this AttachVolumeDetails.
+        :type is_shareable: bool
+
         :param type:
             The value to assign to the type property of this AttachVolumeDetails.
         :type type: str
@@ -54,6 +58,7 @@ class AttachVolumeDetails(object):
             'display_name': 'str',
             'instance_id': 'str',
             'is_read_only': 'bool',
+            'is_shareable': 'bool',
             'type': 'str',
             'volume_id': 'str'
         }
@@ -63,6 +68,7 @@ class AttachVolumeDetails(object):
             'display_name': 'displayName',
             'instance_id': 'instanceId',
             'is_read_only': 'isReadOnly',
+            'is_shareable': 'isShareable',
             'type': 'type',
             'volume_id': 'volumeId'
         }
@@ -71,6 +77,7 @@ class AttachVolumeDetails(object):
         self._display_name = None
         self._instance_id = None
         self._is_read_only = None
+        self._is_shareable = None
         self._type = None
         self._volume_id = None
 
@@ -191,6 +198,36 @@ class AttachVolumeDetails(object):
         :type: bool
         """
         self._is_read_only = is_read_only
+
+    @property
+    def is_shareable(self):
+        """
+        Gets the is_shareable of this AttachVolumeDetails.
+        Whether the attachment should be created in shareable mode. If an attachment
+        is created in shareable mode, then other instances can attach the same volume, provided
+        that they also create their attachments in shareable mode. Only certain volume types can
+        be attached in shareable mode. Defaults to false if not specified.
+
+
+        :return: The is_shareable of this AttachVolumeDetails.
+        :rtype: bool
+        """
+        return self._is_shareable
+
+    @is_shareable.setter
+    def is_shareable(self, is_shareable):
+        """
+        Sets the is_shareable of this AttachVolumeDetails.
+        Whether the attachment should be created in shareable mode. If an attachment
+        is created in shareable mode, then other instances can attach the same volume, provided
+        that they also create their attachments in shareable mode. Only certain volume types can
+        be attached in shareable mode. Defaults to false if not specified.
+
+
+        :param is_shareable: The is_shareable of this AttachVolumeDetails.
+        :type: bool
+        """
+        self._is_shareable = is_shareable
 
     @property
     def type(self):

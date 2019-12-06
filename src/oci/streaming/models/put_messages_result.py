@@ -67,7 +67,7 @@ class PutMessagesResult(object):
     @property
     def entries(self):
         """
-        Gets the entries of this PutMessagesResult.
+        **[Required]** Gets the entries of this PutMessagesResult.
         An array of items representing the result of each message.
         The order is guaranteed to be the same as in the `PutMessagesDetails` object.
         If a message was successfully appended to the stream, the entry includes the `offset`, `partition`, and `timestamp`.

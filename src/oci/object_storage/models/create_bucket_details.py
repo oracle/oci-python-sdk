@@ -272,8 +272,11 @@ class CreateBucketDetails(object):
     def object_events_enabled(self):
         """
         Gets the object_events_enabled of this CreateBucketDetails.
-        A property that determines whether events will be generated for operations on objects in this bucket.
-        This is false by default.
+        Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is
+        set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information
+        about events, see `Overview of Events`__.
+
+        __ https://docs.cloud.oracle.com/Content/Events/Concepts/eventsoverview.htm
 
 
         :return: The object_events_enabled of this CreateBucketDetails.
@@ -285,8 +288,11 @@ class CreateBucketDetails(object):
     def object_events_enabled(self, object_events_enabled):
         """
         Sets the object_events_enabled of this CreateBucketDetails.
-        A property that determines whether events will be generated for operations on objects in this bucket.
-        This is false by default.
+        Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is
+        set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information
+        about events, see `Overview of Events`__.
+
+        __ https://docs.cloud.oracle.com/Content/Events/Concepts/eventsoverview.htm
 
 
         :param object_events_enabled: The object_events_enabled of this CreateBucketDetails.
@@ -362,7 +368,8 @@ class CreateBucketDetails(object):
     def kms_key_id(self):
         """
         Gets the kms_key_id of this CreateBucketDetails.
-        The OCID of a KMS key id used to call KMS to generate the data key or decrypt the encrypted data key.
+        The OCID of a master encryption key used to call the Key Management service to generate a data
+        encryption key or to encrypt or decrypt a data encryption key.
 
 
         :return: The kms_key_id of this CreateBucketDetails.
@@ -374,7 +381,8 @@ class CreateBucketDetails(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this CreateBucketDetails.
-        The OCID of a KMS key id used to call KMS to generate the data key or decrypt the encrypted data key.
+        The OCID of a master encryption key used to call the Key Management service to generate a data
+        encryption key or to encrypt or decrypt a data encryption key.
 
 
         :param kms_key_id: The kms_key_id of this CreateBucketDetails.

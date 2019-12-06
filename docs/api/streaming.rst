@@ -22,13 +22,20 @@ Streaming
 
     oci.streaming.models.Archiver
     oci.streaming.models.ArchiverError
+    oci.streaming.models.ChangeConnectHarnessCompartmentDetails
     oci.streaming.models.ChangeStreamCompartmentDetails
+    oci.streaming.models.ChangeStreamPoolCompartmentDetails
+    oci.streaming.models.ConnectHarness
+    oci.streaming.models.ConnectHarnessSummary
     oci.streaming.models.CreateArchiverDetails
+    oci.streaming.models.CreateConnectHarnessDetails
     oci.streaming.models.CreateCursorDetails
     oci.streaming.models.CreateGroupCursorDetails
     oci.streaming.models.CreateStreamDetails
+    oci.streaming.models.CreateStreamPoolDetails
     oci.streaming.models.Cursor
     oci.streaming.models.Group
+    oci.streaming.models.KafkaSettings
     oci.streaming.models.Message
     oci.streaming.models.PartitionReservation
     oci.streaming.models.PutMessagesDetails
@@ -36,7 +43,11 @@ Streaming
     oci.streaming.models.PutMessagesResult
     oci.streaming.models.PutMessagesResultEntry
     oci.streaming.models.Stream
+    oci.streaming.models.StreamPool
+    oci.streaming.models.StreamPoolSummary
     oci.streaming.models.StreamSummary
     oci.streaming.models.UpdateArchiverDetails
+    oci.streaming.models.UpdateConnectHarnessDetails
     oci.streaming.models.UpdateGroupDetails
     oci.streaming.models.UpdateStreamDetails
+    oci.streaming.models.UpdateStreamPoolDetails

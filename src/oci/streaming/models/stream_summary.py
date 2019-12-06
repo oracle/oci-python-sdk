@@ -32,6 +32,10 @@ class StreamSummary(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the lifecycle_state property of a StreamSummary.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new StreamSummary object with values from keyword arguments.
@@ -53,9 +57,13 @@ class StreamSummary(object):
             The value to assign to the compartment_id property of this StreamSummary.
         :type compartment_id: str
 
+        :param stream_pool_id:
+            The value to assign to the stream_pool_id property of this StreamSummary.
+        :type stream_pool_id: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this StreamSummary.
-            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -81,6 +89,7 @@ class StreamSummary(object):
             'id': 'str',
             'partitions': 'int',
             'compartment_id': 'str',
+            'stream_pool_id': 'str',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'messages_endpoint': 'str',
@@ -93,6 +102,7 @@ class StreamSummary(object):
             'id': 'id',
             'partitions': 'partitions',
             'compartment_id': 'compartmentId',
+            'stream_pool_id': 'streamPoolId',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'messages_endpoint': 'messagesEndpoint',
@@ -104,6 +114,7 @@ class StreamSummary(object):
         self._id = None
         self._partitions = None
         self._compartment_id = None
+        self._stream_pool_id = None
         self._lifecycle_state = None
         self._time_created = None
         self._messages_endpoint = None
@@ -211,12 +222,36 @@ class StreamSummary(object):
         self._compartment_id = compartment_id
 
     @property
+    def stream_pool_id(self):
+        """
+        **[Required]** Gets the stream_pool_id of this StreamSummary.
+        The OCID of the stream pool that contains the stream.
+
+
+        :return: The stream_pool_id of this StreamSummary.
+        :rtype: str
+        """
+        return self._stream_pool_id
+
+    @stream_pool_id.setter
+    def stream_pool_id(self, stream_pool_id):
+        """
+        Sets the stream_pool_id of this StreamSummary.
+        The OCID of the stream pool that contains the stream.
+
+
+        :param stream_pool_id: The stream_pool_id of this StreamSummary.
+        :type: str
+        """
+        self._stream_pool_id = stream_pool_id
+
+    @property
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this StreamSummary.
         The current state of the stream.
 
-        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -235,7 +270,7 @@ class StreamSummary(object):
         :param lifecycle_state: The lifecycle_state of this StreamSummary.
         :type: str
         """
-        allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "UPDATING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

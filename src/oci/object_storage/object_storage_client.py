@@ -2171,11 +2171,11 @@ class ObjectStorageClient(object):
 
         :param str fields: (optional)
             Object summary in list of objects includes the 'name' field. This parameter can also include 'size'
-            (object size in bytes), 'md5', and 'timeCreated' (object creation date and time) fields.
+            (object size in bytes), 'etag', 'md5', and 'timeCreated' (object creation date and time) fields.
             Value of this parameter should be a comma-separated, case-insensitive list of those field names.
-            For example 'name,timeCreated,md5'.
+            For example 'name,etag,timeCreated,md5'.
 
-            Allowed values are: "name", "size", "timeCreated", "md5"
+            Allowed values are: "name", "size", "etag", "timeCreated", "md5"
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -2672,6 +2672,12 @@ class ObjectStorageClient(object):
         :param str content_encoding: (optional)
             The content encoding of the object.
 
+        :param str content_disposition: (optional)
+            The Content-Disposition header value to be returned in GetObjectReponse.
+
+        :param str cache_control: (optional)
+            The cache-control header value to be returned in GetObjectReponse.
+
         :param dict(str, str) opc_meta: (optional)
             Optional user-defined metadata key and value.
 
@@ -2703,6 +2709,8 @@ class ObjectStorageClient(object):
             "content_type",
             "content_language",
             "content_encoding",
+            "content_disposition",
+            "cache_control",
             "opc_meta"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2733,6 +2741,8 @@ class ObjectStorageClient(object):
             "Content-Type": kwargs.get("content_type", missing),
             "Content-Language": kwargs.get("content_language", missing),
             "Content-Encoding": kwargs.get("content_encoding", missing),
+            "Content-Disposition": kwargs.get("content_disposition", missing),
+            "Cache-Control": kwargs.get("cache_control", missing),
 
         }
         for key, value in six.iteritems(kwargs.get("opc_meta", {})):
@@ -2874,16 +2884,21 @@ class ObjectStorageClient(object):
 
     def reencrypt_bucket(self, namespace_name, bucket_name, **kwargs):
         """
-        Reencrypt Bucket Data Encryption Key
-        Reencrypts the data encryption key of the bucket and objects in the bucket. This is an asynchronous call, the
-        system will start a work request task to reencrypt the data encryption key of the objects and chunks in the bucket.
-        Only the objects created before the time the API call will be reencrypted. The call can take long time depending
-        on how many objects in the bucket and how big the objects are. This API will return a work request id, so the user
-        can use this id to retrieve the status of the work request task.
+        Re-encrypt Bucket Data Encryption Key
+        Re-encrypts the unique data encryption key that encrypts each object written to the bucket by using the most recent
+        version of the master encryption key assigned to the bucket. (All data encryption keys are encrypted by a master
+        encryption key. Master encryption keys are assigned to buckets and managed by Oracle by default, but you can assign
+        a key that you created and control through the Oracle Cloud Infrastructure Key Management service.) The kmsKeyId property
+        of the bucket determines which master encryption key is assigned to the bucket. If you assigned a different Key Management
+        master encryption key to the bucket, you can call this API to re-encrypt all data encryption keys with the newly
+        assigned key. Similarly, you might want to re-encrypt all data encryption keys if the assigned key has been rotated to
+        a new key version since objects were last added to the bucket. If you call this API and there is no kmsKeyId associated
+        with the bucket, the call will fail.
 
-        A user can update kmsKeyId of the bucket, and then call this API, so the data encryption key of the bucket and
-        objects in the bucket will be reencryped by the new kmsKeyId. Note that the system doesn't maintain what
-        ksmKeyId is used to encrypt the object, the user has to maintain the mapping if they want.
+        Calling this API starts a work request task to re-encrypt the data encryption key of all objects in the bucket. Only
+        objects created before the time of the API call will be re-encrypted. The call can take a long time, depending on how many
+        objects are in the bucket and how big they are. This API returns a work request ID that you can use to retrieve the status
+        of the work request task.
 
 
         :param str namespace_name: (required)

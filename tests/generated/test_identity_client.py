@@ -3714,6 +3714,46 @@ def test_move_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_recover_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity', 'RecoverCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'RecoverCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='RecoverCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
+            response = client.recover_compartment(
+                compartment_id=request.pop(util.camelize('compartment_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'RecoverCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_remove_user_from_group(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'RemoveUserFromGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
