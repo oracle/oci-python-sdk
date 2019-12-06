@@ -12,7 +12,8 @@ from ..constants import MEBIBYTE
 from .buffered_part_reader import BufferedPartReader
 from ... import models
 from ....exceptions import ServiceError, MultipartUploadError
-from oci.exceptions import RequestException
+from oci.exceptions import RequestException, ConnectTimeout
+from oci._vendor.requests.exceptions import Timeout, ConnectionError
 from oci._vendor.six.moves.queue import Queue
 from threading import Semaphore
 from oci._vendor import six
@@ -166,13 +167,32 @@ class MultipartObjectAssembler:
         :return: Boolean
         """
         retryable = False
-        if isinstance(e, RequestException):
+        if isinstance(e, Timeout):
+            retryable = True
+        elif isinstance(e, ConnectionError):
+            retryable = True
+        elif isinstance(e, RequestException):
+            retryable = True
+        elif isinstance(e, ConnectTimeout):
             retryable = True
         elif isinstance(e, ServiceError):
-            if e.status >= 500 or e.status == -1 or (e.status == 409 and e.code == "ConcurrentObjectUpdate"):
+            if e.status >= 500 or e.status == -1 or (e.status == 409 and e.code == "ConcurrentObjectUpdate") or (e.status == 429):
                 retryable = True
 
         return retryable
+
+    def _upload_part_call(self, object_storage_client, **kwargs):
+        with io.open(kwargs["part_file_path"], mode='rb') as file_object:
+            bpr = BufferedPartReader(file_object, kwargs["offset"], kwargs["size"])
+
+            return object_storage_client.upload_part(
+                kwargs["namespace"],
+                kwargs["bucket_name"],
+                kwargs["object_name"],
+                kwargs["upload_id"],
+                kwargs["part_num"],
+                bpr,
+                **kwargs['new_kwargs'])
 
     def add_parts_from_file(self, file_path):
         """
@@ -361,19 +381,39 @@ class MultipartObjectAssembler:
         if part["hash"] is None:
             part["hash"] = self.calculate_md5(part["file_path"], part["offset"], part["size"])
 
+        retry_strategy = None
+        if 'retry_strategy' in kwargs:
+            retry_strategy = kwargs['retry_strategy']
+
         if "opc_md5" not in part:
-            remaining_tries = self.max_retries
-            while remaining_tries > 0:
-                with io.open(part["file_path"], mode='rb') as file_object:
-                    bpr = BufferedPartReader(file_object, part["offset"], part["size"])
+            if retry_strategy:
+                response = retry_strategy.make_retrying_call(
+                    self._upload_part_call,
+                    self.object_storage_client,
+                    namespace=self.manifest["namespace"],
+                    bucket_name=self.manifest["bucketName"],
+                    object_name=self.manifest["objectName"],
+                    upload_id=self.manifest["uploadId"],
+                    part_file_path=part["file_path"],
+                    offset=part["offset"],
+                    size=part["size"],
+                    part_num=part_num,
+                    new_kwargs=new_kwargs
+                )
+            else:
+                remaining_tries = self.max_retries
+                while remaining_tries > 0:
                     try:
-                        response = self.object_storage_client.upload_part(self.manifest["namespace"],
-                                                                          self.manifest["bucketName"],
-                                                                          self.manifest["objectName"],
-                                                                          self.manifest["uploadId"],
-                                                                          part_num,
-                                                                          bpr,
-                                                                          **new_kwargs)
+                        response = self._upload_part_call(self.object_storage_client,
+                                                          namespace=self.manifest["namespace"],
+                                                          bucket_name=self.manifest["bucketName"],
+                                                          object_name=self.manifest["objectName"],
+                                                          upload_id=self.manifest["uploadId"],
+                                                          part_file_path=part["file_path"],
+                                                          offset=part["offset"],
+                                                          size=part["size"],
+                                                          part_num=part_num,
+                                                          new_kwargs=new_kwargs)
                     except Exception as e:
                         if self._is_exception_retryable(e) and remaining_tries > 1:
                             remaining_tries -= 1
@@ -515,10 +555,6 @@ class MultipartObjectAssembler:
         if self.manifest["uploadId"] is None:
             raise RuntimeError('Cannot call commit before initializing an upload using new_upload or resuming an upload using resume.')
 
-        client_request_id = None
-        if 'opc_client_request_id' in kwargs:
-            client_request_id = kwargs['opc_client_request_id']
-
         commit_details = models.CommitMultipartUploadDetails()
 
         # Determine which parts to commit and which parts to exclude.
@@ -536,10 +572,6 @@ class MultipartObjectAssembler:
         commit_details.parts_to_commit = parts_to_commit
         commit_details.parts_to_exclude = parts_to_exclude
 
-        kwargs = {}
-        if client_request_id:
-            kwargs['opc_client_request_id'] = client_request_id
-
         # Commit the multipart upload
         response = self.object_storage_client.commit_multipart_upload(self.manifest["namespace"],
                                                                       self.manifest["bucketName"],
@@ -547,4 +579,5 @@ class MultipartObjectAssembler:
                                                                       self.manifest["uploadId"],
                                                                       commit_details,
                                                                       **kwargs)
+
         return response
