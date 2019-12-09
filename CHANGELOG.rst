@@ -4,12 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.7.1 - TBD
+2.7.1 - 2019-12-10
 ====================
 
 Added
 -----
-* TBD
+* Support for etags on results of the List Objects API in the Object Storage service
+* Support for OCIDs on buckets in the Object Storage service
+* Support for content-disposition and cache-control headers on objects in the Object Storage service
+* Support for recovering deleted compartments in the Identity service
+* Support for sharing volumes across multiple instances in the Block Storage service
+* Support for connect harnesses and stream pools in the Streaming service
+* Support for associating file storage mount targets with network security groups in the File Storage service
+* Support for calling Oracle Cloud Infrastructure services in the uk-gov-london-1 region
+* Add default connection timeout(10s) and read timeout(60s) for Python SDK client
+* Add contents table to client documentation
+* Fix the issue of the second style of pagination
 
 ====================
 2.7.0 - 2019-11-26
