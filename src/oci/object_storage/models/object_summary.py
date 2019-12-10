@@ -37,25 +37,32 @@ class ObjectSummary(object):
             The value to assign to the time_created property of this ObjectSummary.
         :type time_created: datetime
 
+        :param etag:
+            The value to assign to the etag property of this ObjectSummary.
+        :type etag: str
+
         """
         self.swagger_types = {
             'name': 'str',
             'size': 'int',
             'md5': 'str',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'etag': 'str'
         }
 
         self.attribute_map = {
             'name': 'name',
             'size': 'size',
             'md5': 'md5',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'etag': 'etag'
         }
 
         self._name = None
         self._size = None
         self._md5 = None
         self._time_created = None
+        self._etag = None
 
     @property
     def name(self):
@@ -158,6 +165,30 @@ class ObjectSummary(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def etag(self):
+        """
+        Gets the etag of this ObjectSummary.
+        The current entity tag (ETag) for the object.
+
+
+        :return: The etag of this ObjectSummary.
+        :rtype: str
+        """
+        return self._etag
+
+    @etag.setter
+    def etag(self, etag):
+        """
+        Sets the etag of this ObjectSummary.
+        The current entity tag (ETag) for the object.
+
+
+        :param etag: The etag of this ObjectSummary.
+        :type: str
+        """
+        self._etag = etag
 
     def __repr__(self):
         return formatted_flat_dict(self)

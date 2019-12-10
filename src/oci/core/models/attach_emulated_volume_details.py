@@ -34,6 +34,10 @@ class AttachEmulatedVolumeDetails(AttachVolumeDetails):
             The value to assign to the is_read_only property of this AttachEmulatedVolumeDetails.
         :type is_read_only: bool
 
+        :param is_shareable:
+            The value to assign to the is_shareable property of this AttachEmulatedVolumeDetails.
+        :type is_shareable: bool
+
         :param type:
             The value to assign to the type property of this AttachEmulatedVolumeDetails.
         :type type: str
@@ -48,6 +52,7 @@ class AttachEmulatedVolumeDetails(AttachVolumeDetails):
             'display_name': 'str',
             'instance_id': 'str',
             'is_read_only': 'bool',
+            'is_shareable': 'bool',
             'type': 'str',
             'volume_id': 'str'
         }
@@ -57,6 +62,7 @@ class AttachEmulatedVolumeDetails(AttachVolumeDetails):
             'display_name': 'displayName',
             'instance_id': 'instanceId',
             'is_read_only': 'isReadOnly',
+            'is_shareable': 'isShareable',
             'type': 'type',
             'volume_id': 'volumeId'
         }
@@ -65,6 +71,7 @@ class AttachEmulatedVolumeDetails(AttachVolumeDetails):
         self._display_name = None
         self._instance_id = None
         self._is_read_only = None
+        self._is_shareable = None
         self._type = None
         self._volume_id = None
         self._type = 'emulated'

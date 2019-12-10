@@ -49,7 +49,7 @@ class Group(object):
     @property
     def stream_id(self):
         """
-        Gets the stream_id of this Group.
+        **[Required]** Gets the stream_id of this Group.
         The streamId for which the group exists.
 
 
@@ -73,7 +73,7 @@ class Group(object):
     @property
     def group_name(self):
         """
-        Gets the group_name of this Group.
+        **[Required]** Gets the group_name of this Group.
         The name of the consumer group.
 
 

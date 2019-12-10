@@ -153,6 +153,13 @@ def email_client(config):
     return client
 
 
+@pytest.fixture
+def search_client(config):
+    client = oci.resource_search.ResourceSearchClient(config)
+    add_retries_to_service_operations(client)
+    return client
+
+
 def add_retries_to_service_operations(client_obj):
     client_obj.retry_strategy = oci.retry.DEFAULT_RETRY_STRATEGY
 

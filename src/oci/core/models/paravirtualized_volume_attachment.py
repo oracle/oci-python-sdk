@@ -50,6 +50,10 @@ class ParavirtualizedVolumeAttachment(VolumeAttachment):
             The value to assign to the is_read_only property of this ParavirtualizedVolumeAttachment.
         :type is_read_only: bool
 
+        :param is_shareable:
+            The value to assign to the is_shareable property of this ParavirtualizedVolumeAttachment.
+        :type is_shareable: bool
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ParavirtualizedVolumeAttachment.
             Allowed values for this property are: "ATTACHING", "ATTACHED", "DETACHING", "DETACHED"
@@ -77,6 +81,7 @@ class ParavirtualizedVolumeAttachment(VolumeAttachment):
             'id': 'str',
             'instance_id': 'str',
             'is_read_only': 'bool',
+            'is_shareable': 'bool',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'volume_id': 'str',
@@ -92,6 +97,7 @@ class ParavirtualizedVolumeAttachment(VolumeAttachment):
             'id': 'id',
             'instance_id': 'instanceId',
             'is_read_only': 'isReadOnly',
+            'is_shareable': 'isShareable',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'volume_id': 'volumeId',
@@ -106,6 +112,7 @@ class ParavirtualizedVolumeAttachment(VolumeAttachment):
         self._id = None
         self._instance_id = None
         self._is_read_only = None
+        self._is_shareable = None
         self._lifecycle_state = None
         self._time_created = None
         self._volume_id = None
