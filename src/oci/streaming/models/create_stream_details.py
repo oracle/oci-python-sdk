@@ -29,6 +29,10 @@ class CreateStreamDetails(object):
             The value to assign to the compartment_id property of this CreateStreamDetails.
         :type compartment_id: str
 
+        :param stream_pool_id:
+            The value to assign to the stream_pool_id property of this CreateStreamDetails.
+        :type stream_pool_id: str
+
         :param retention_in_hours:
             The value to assign to the retention_in_hours property of this CreateStreamDetails.
         :type retention_in_hours: int
@@ -46,6 +50,7 @@ class CreateStreamDetails(object):
             'name': 'str',
             'partitions': 'int',
             'compartment_id': 'str',
+            'stream_pool_id': 'str',
             'retention_in_hours': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -55,6 +60,7 @@ class CreateStreamDetails(object):
             'name': 'name',
             'partitions': 'partitions',
             'compartment_id': 'compartmentId',
+            'stream_pool_id': 'streamPoolId',
             'retention_in_hours': 'retentionInHours',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -63,6 +69,7 @@ class CreateStreamDetails(object):
         self._name = None
         self._partitions = None
         self._compartment_id = None
+        self._stream_pool_id = None
         self._retention_in_hours = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -122,7 +129,7 @@ class CreateStreamDetails(object):
     @property
     def compartment_id(self):
         """
-        **[Required]** Gets the compartment_id of this CreateStreamDetails.
+        Gets the compartment_id of this CreateStreamDetails.
         The OCID of the compartment that contains the stream.
 
 
@@ -142,6 +149,30 @@ class CreateStreamDetails(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def stream_pool_id(self):
+        """
+        Gets the stream_pool_id of this CreateStreamDetails.
+        The OCID of the stream pool that contains the stream.
+
+
+        :return: The stream_pool_id of this CreateStreamDetails.
+        :rtype: str
+        """
+        return self._stream_pool_id
+
+    @stream_pool_id.setter
+    def stream_pool_id(self, stream_pool_id):
+        """
+        Sets the stream_pool_id of this CreateStreamDetails.
+        The OCID of the stream pool that contains the stream.
+
+
+        :param stream_pool_id: The stream_pool_id of this CreateStreamDetails.
+        :type: str
+        """
+        self._stream_pool_id = stream_pool_id
 
     @property
     def retention_in_hours(self):

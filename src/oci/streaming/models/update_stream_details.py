@@ -17,6 +17,10 @@ class UpdateStreamDetails(object):
         Initializes a new UpdateStreamDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param stream_pool_id:
+            The value to assign to the stream_pool_id property of this UpdateStreamDetails.
+        :type stream_pool_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateStreamDetails.
         :type freeform_tags: dict(str, str)
@@ -27,17 +31,48 @@ class UpdateStreamDetails(object):
 
         """
         self.swagger_types = {
+            'stream_pool_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
+            'stream_pool_id': 'streamPoolId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
+        self._stream_pool_id = None
         self._freeform_tags = None
         self._defined_tags = None
+
+    @property
+    def stream_pool_id(self):
+        """
+        Gets the stream_pool_id of this UpdateStreamDetails.
+        The `OCID`__ of the stream pool where the stream should be moved.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The stream_pool_id of this UpdateStreamDetails.
+        :rtype: str
+        """
+        return self._stream_pool_id
+
+    @stream_pool_id.setter
+    def stream_pool_id(self, stream_pool_id):
+        """
+        Sets the stream_pool_id of this UpdateStreamDetails.
+        The `OCID`__ of the stream pool where the stream should be moved.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param stream_pool_id: The stream_pool_id of this UpdateStreamDetails.
+        :type: str
+        """
+        self._stream_pool_id = stream_pool_id
 
     @property
     def freeform_tags(self):

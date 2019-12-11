@@ -15,10 +15,16 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
     "sphinx.ext.intersphinx",
+    "autodocsumm"
 ]
 
 # Automatically generate stub pages for the .. autosummary:: directive when combined with :toctree:
 autosummary_generate = True
+
+# Add contents table
+autodoc_default_options = {
+    "autosummary": True
+}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

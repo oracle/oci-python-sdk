@@ -86,7 +86,7 @@ class StreamClient(object):
 
 
         :param str stream_id: (required)
-            The OCID of the stream for which the group is committing offsets.
+            The OCID of the stream.
 
         :param str cursor: (required)
             The group-cursor representing the offsets of the group. This cursor is retrieved from the CreateGroupCursor API call.
@@ -170,7 +170,7 @@ class StreamClient(object):
 
 
         :param str stream_id: (required)
-            The OCID of the stream for which the group is committing offsets.
+            The OCID of the stream.
 
         :param str cursor: (required)
             The group-cursor representing the offsets of the group. This cursor is retrieved from the CreateGroupCursor API call.
@@ -258,7 +258,7 @@ class StreamClient(object):
 
 
         :param str stream_id: (required)
-            The OCID of the stream to create a cursor for.
+            The OCID of the stream.
 
         :param CreateCursorDetails create_cursor_details: (required)
             The information used to create the cursor.
@@ -337,7 +337,7 @@ class StreamClient(object):
 
 
         :param str stream_id: (required)
-            The OCID of the stream to create a cursor for.
+            The OCID of the stream.
 
         :param CreateGroupCursorDetails create_group_cursor_details: (required)
             The information used to create the cursor.
@@ -416,7 +416,7 @@ class StreamClient(object):
 
 
         :param str stream_id: (required)
-            The OCID of the stream, on which the group is operating.
+            The OCID of the stream.
 
         :param str group_name: (required)
             The name of the consumer group.
@@ -496,7 +496,7 @@ class StreamClient(object):
 
 
         :param str stream_id: (required)
-            The OCID of the stream to get messages from.
+            The OCID of the stream.
 
         :param str cursor: (required)
             The cursor used to consume the stream.
@@ -589,7 +589,7 @@ class StreamClient(object):
 
 
         :param str stream_id: (required)
-            The OCID of the stream where you want to put messages.
+            The OCID of the stream.
 
         :param PutMessagesDetails put_messages_details: (required)
             Array of messages to put into the stream.
@@ -670,7 +670,7 @@ class StreamClient(object):
 
 
         :param str stream_id: (required)
-            The OCID of the stream, on which the group is operating.
+            The OCID of the stream.
 
         :param str group_name: (required)
             The name of the consumer group.

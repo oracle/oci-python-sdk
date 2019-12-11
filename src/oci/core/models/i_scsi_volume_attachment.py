@@ -50,6 +50,10 @@ class IScsiVolumeAttachment(VolumeAttachment):
             The value to assign to the is_read_only property of this IScsiVolumeAttachment.
         :type is_read_only: bool
 
+        :param is_shareable:
+            The value to assign to the is_shareable property of this IScsiVolumeAttachment.
+        :type is_shareable: bool
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this IScsiVolumeAttachment.
             Allowed values for this property are: "ATTACHING", "ATTACHED", "DETACHING", "DETACHED"
@@ -97,6 +101,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
             'id': 'str',
             'instance_id': 'str',
             'is_read_only': 'bool',
+            'is_shareable': 'bool',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'volume_id': 'str',
@@ -117,6 +122,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
             'id': 'id',
             'instance_id': 'instanceId',
             'is_read_only': 'isReadOnly',
+            'is_shareable': 'isShareable',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'volume_id': 'volumeId',
@@ -136,6 +142,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
         self._id = None
         self._instance_id = None
         self._is_read_only = None
+        self._is_shareable = None
         self._lifecycle_state = None
         self._time_created = None
         self._volume_id = None

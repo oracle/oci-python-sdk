@@ -441,6 +441,7 @@ class User(object):
         Gets the freeform_tags of this User.
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
         For more information, see `Resource Tags`__.
+
         Example: `{\"Department\": \"Finance\"}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
@@ -457,6 +458,7 @@ class User(object):
         Sets the freeform_tags of this User.
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
         For more information, see `Resource Tags`__.
+
         Example: `{\"Department\": \"Finance\"}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm

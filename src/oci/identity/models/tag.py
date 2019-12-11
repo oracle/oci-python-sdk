@@ -293,6 +293,7 @@ class Tag(object):
         Gets the freeform_tags of this Tag.
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
         For more information, see `Resource Tags`__.
+
         Example: `{\"Department\": \"Finance\"}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
@@ -309,6 +310,7 @@ class Tag(object):
         Sets the freeform_tags of this Tag.
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
         For more information, see `Resource Tags`__.
+
         Example: `{\"Department\": \"Finance\"}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
@@ -325,7 +327,8 @@ class Tag(object):
         Gets the defined_tags of this Tag.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}``
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
@@ -341,7 +344,8 @@ class Tag(object):
         Sets the defined_tags of this Tag.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         For more information, see `Resource Tags`__.
-        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}``
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
@@ -416,6 +420,7 @@ class Tag(object):
         """
         **[Required]** Gets the time_created of this Tag.
         Date and time the tag was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
 
 
@@ -429,6 +434,7 @@ class Tag(object):
         """
         Sets the time_created of this Tag.
         Date and time the tag was created, in the format defined by RFC3339.
+
         Example: `2016-08-25T21:10:29.600Z`
 
 
@@ -465,11 +471,18 @@ class Tag(object):
     def validator(self):
         """
         Gets the validator of this Tag.
-        Additional validation rule for values specified for the tag definition.
+        The tag must have a value type, which is specified with a validator. Tags can use either a
+        static value or a list of possible values. Static values are entered by a user applying the tag
+        to a resource. Lists are created by you and the user must apply a value from the list. Lists
+        are validiated.
 
-        If no validator is defined for a tag definition, then any (valid) value will be accepted.
+        If you use the default validiator (or don't define a validator), the user applying the tag
+        enters a value. No additional validation is performed.
 
-        To clear the validator call the UPDATE operation with DefaultTagDefinitionValidator
+        To clear the validator, call UpdateTag with
+        `DefaultTagDefinitionValidator`__.
+
+        __ https://docs.cloud.oracle.com/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator
 
 
         :return: The validator of this Tag.
@@ -481,11 +494,18 @@ class Tag(object):
     def validator(self, validator):
         """
         Sets the validator of this Tag.
-        Additional validation rule for values specified for the tag definition.
+        The tag must have a value type, which is specified with a validator. Tags can use either a
+        static value or a list of possible values. Static values are entered by a user applying the tag
+        to a resource. Lists are created by you and the user must apply a value from the list. Lists
+        are validiated.
 
-        If no validator is defined for a tag definition, then any (valid) value will be accepted.
+        If you use the default validiator (or don't define a validator), the user applying the tag
+        enters a value. No additional validation is performed.
 
-        To clear the validator call the UPDATE operation with DefaultTagDefinitionValidator
+        To clear the validator, call UpdateTag with
+        `DefaultTagDefinitionValidator`__.
+
+        __ https://docs.cloud.oracle.com/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator
 
 
         :param validator: The validator of this Tag.
