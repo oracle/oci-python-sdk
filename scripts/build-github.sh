@@ -14,12 +14,13 @@ ls -la .python-sdk-bitbucket
 
 # must disable StrictHostKeyChecking so that we don't get an interactive
 # prompt later asking to confirm the host key
-ls -la ~/.ssh
-cat ~/.ssh/config
-printf "\n\nHost * \n  StrictHostKeyChecking no\n" >> ~/.ssh/config
-cat ~/.ssh/config
+set +e
+ssh -o StrictHostKeyChecking=no github.com
+ssh -o StrictHostKeyChecking=no git@bitbucket.oci.oraclecorp.com -p 7999
+set -e
 
-git clone https://github.com/oracle/oci-python-sdk.git .python-sdk-github
+# Put in the clone from GitHub
+git clone $GITHUB_CLONE_TARGET .python-sdk-github
 
 ls -la .python-sdk-github
 
