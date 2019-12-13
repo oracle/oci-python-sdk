@@ -43,8 +43,8 @@ class InstancePoolPlacementSecondaryVnicSubnet(object):
     def display_name(self):
         """
         Gets the display_name of this InstancePoolPlacementSecondaryVnicSubnet.
-        The displayName of the vnic. This is also use to match against the Instance Configuration defined
-        secondary vnic.
+        The display name of the VNIC. This is also use to match against the instance configuration defined
+        secondary VNIC.
 
 
         :return: The display_name of this InstancePoolPlacementSecondaryVnicSubnet.
@@ -56,8 +56,8 @@ class InstancePoolPlacementSecondaryVnicSubnet(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this InstancePoolPlacementSecondaryVnicSubnet.
-        The displayName of the vnic. This is also use to match against the Instance Configuration defined
-        secondary vnic.
+        The display name of the VNIC. This is also use to match against the instance configuration defined
+        secondary VNIC.
 
 
         :param display_name: The display_name of this InstancePoolPlacementSecondaryVnicSubnet.
@@ -69,7 +69,9 @@ class InstancePoolPlacementSecondaryVnicSubnet(object):
     def subnet_id(self):
         """
         **[Required]** Gets the subnet_id of this InstancePoolPlacementSecondaryVnicSubnet.
-        The subnet OCID for the secondary vnic
+        The subnet `OCID`__ for the secondary VNIC.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this InstancePoolPlacementSecondaryVnicSubnet.
@@ -81,7 +83,9 @@ class InstancePoolPlacementSecondaryVnicSubnet(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this InstancePoolPlacementSecondaryVnicSubnet.
-        The subnet OCID for the secondary vnic
+        The subnet `OCID`__ for the secondary VNIC.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this InstancePoolPlacementSecondaryVnicSubnet.

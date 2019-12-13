@@ -48,6 +48,10 @@ class VaultSummary(object):
     #: This constant has a value of "VIRTUAL_PRIVATE"
     VAULT_TYPE_VIRTUAL_PRIVATE = "VIRTUAL_PRIVATE"
 
+    #: A constant which can be used with the vault_type property of a VaultSummary.
+    #: This constant has a value of "DEFAULT"
+    VAULT_TYPE_DEFAULT = "DEFAULT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new VaultSummary object with values from keyword arguments.
@@ -93,7 +97,7 @@ class VaultSummary(object):
 
         :param vault_type:
             The value to assign to the vault_type property of this VaultSummary.
-            Allowed values for this property are: "VIRTUAL_PRIVATE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VIRTUAL_PRIVATE", "DEFAULT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type vault_type: str
 
@@ -163,7 +167,13 @@ class VaultSummary(object):
     def crypto_endpoint(self):
         """
         **[Required]** Gets the crypto_endpoint of this VaultSummary.
-        The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations.
+        The service endpoint to perform cryptographic operations against. Cryptographic operations include
+        `Encrypt`__, `Decrypt`__,
+        and `GenerateDataEncryptionKey`__ operations.
+
+        __ https://docs.cloud.oracle.com/api/#/en/key/release/EncryptedData/Encrypt
+        __ https://docs.cloud.oracle.com/api/#/en/key/release/DecryptedData/Decrypt
+        __ https://docs.cloud.oracle.com/api/#/en/key/release/GeneratedKey/GenerateDataEncryptionKey
 
 
         :return: The crypto_endpoint of this VaultSummary.
@@ -175,7 +185,13 @@ class VaultSummary(object):
     def crypto_endpoint(self, crypto_endpoint):
         """
         Sets the crypto_endpoint of this VaultSummary.
-        The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations.
+        The service endpoint to perform cryptographic operations against. Cryptographic operations include
+        `Encrypt`__, `Decrypt`__,
+        and `GenerateDataEncryptionKey`__ operations.
+
+        __ https://docs.cloud.oracle.com/api/#/en/key/release/EncryptedData/Encrypt
+        __ https://docs.cloud.oracle.com/api/#/en/key/release/DecryptedData/Decrypt
+        __ https://docs.cloud.oracle.com/api/#/en/key/release/GeneratedKey/GenerateDataEncryptionKey
 
 
         :param crypto_endpoint: The crypto_endpoint of this VaultSummary.
@@ -187,8 +203,11 @@ class VaultSummary(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this VaultSummary.
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this VaultSummary.
@@ -200,8 +219,11 @@ class VaultSummary(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this VaultSummary.
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this VaultSummary.
@@ -239,9 +261,11 @@ class VaultSummary(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this VaultSummary.
-        Simple key-value pair that is applied without any predefined name, type, or scope.
-        Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this VaultSummary.
@@ -253,9 +277,11 @@ class VaultSummary(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this VaultSummary.
-        Simple key-value pair that is applied without any predefined name, type, or scope.
-        Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this VaultSummary.
@@ -325,7 +351,7 @@ class VaultSummary(object):
     def management_endpoint(self):
         """
         **[Required]** Gets the management_endpoint of this VaultSummary.
-        The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations.
+        The service endpoint to perform management operations against. Management operations include \"Create,\" \"Update,\" \"List,\" \"Get,\" and \"Delete\" operations.
 
 
         :return: The management_endpoint of this VaultSummary.
@@ -337,7 +363,7 @@ class VaultSummary(object):
     def management_endpoint(self, management_endpoint):
         """
         Sets the management_endpoint of this VaultSummary.
-        The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations.
+        The service endpoint to perform management operations against. Management operations include \"Create,\" \"Update,\" \"List,\" \"Get,\" and \"Delete\" operations.
 
 
         :param management_endpoint: The management_endpoint of this VaultSummary.
@@ -381,9 +407,10 @@ class VaultSummary(object):
     def vault_type(self):
         """
         **[Required]** Gets the vault_type of this VaultSummary.
-        The type of vault. Each type of vault stores keys with different degrees of isolation and has different options and pricing.
+        The type of vault. Each type of vault stores keys with different
+        degrees of isolation and has different options and pricing.
 
-        Allowed values for this property are: "VIRTUAL_PRIVATE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VIRTUAL_PRIVATE", "DEFAULT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -396,13 +423,14 @@ class VaultSummary(object):
     def vault_type(self, vault_type):
         """
         Sets the vault_type of this VaultSummary.
-        The type of vault. Each type of vault stores keys with different degrees of isolation and has different options and pricing.
+        The type of vault. Each type of vault stores keys with different
+        degrees of isolation and has different options and pricing.
 
 
         :param vault_type: The vault_type of this VaultSummary.
         :type: str
         """
-        allowed_values = ["VIRTUAL_PRIVATE"]
+        allowed_values = ["VIRTUAL_PRIVATE", "DEFAULT"]
         if not value_allowed_none_or_none_sentinel(vault_type, allowed_values):
             vault_type = 'UNKNOWN_ENUM_VALUE'
         self._vault_type = vault_type

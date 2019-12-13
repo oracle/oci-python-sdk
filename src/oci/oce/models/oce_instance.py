@@ -73,6 +73,10 @@ class OceInstance(object):
             The value to assign to the tenancy_name property of this OceInstance.
         :type tenancy_name: str
 
+        :param identity_stripe:
+            The value to assign to the identity_stripe property of this OceInstance.
+        :type identity_stripe: IdentityStripeDetails
+
         :param object_storage_namespace:
             The value to assign to the object_storage_namespace property of this OceInstance.
         :type object_storage_namespace: str
@@ -121,6 +125,7 @@ class OceInstance(object):
             'tenancy_id': 'str',
             'idcs_tenancy': 'str',
             'tenancy_name': 'str',
+            'identity_stripe': 'IdentityStripeDetails',
             'object_storage_namespace': 'str',
             'admin_email': 'str',
             'time_created': 'datetime',
@@ -141,6 +146,7 @@ class OceInstance(object):
             'tenancy_id': 'tenancyId',
             'idcs_tenancy': 'idcsTenancy',
             'tenancy_name': 'tenancyName',
+            'identity_stripe': 'identityStripe',
             'object_storage_namespace': 'objectStorageNamespace',
             'admin_email': 'adminEmail',
             'time_created': 'timeCreated',
@@ -160,6 +166,7 @@ class OceInstance(object):
         self._tenancy_id = None
         self._idcs_tenancy = None
         self._tenancy_name = None
+        self._identity_stripe = None
         self._object_storage_namespace = None
         self._admin_email = None
         self._time_created = None
@@ -361,6 +368,26 @@ class OceInstance(object):
         :type: str
         """
         self._tenancy_name = tenancy_name
+
+    @property
+    def identity_stripe(self):
+        """
+        Gets the identity_stripe of this OceInstance.
+
+        :return: The identity_stripe of this OceInstance.
+        :rtype: IdentityStripeDetails
+        """
+        return self._identity_stripe
+
+    @identity_stripe.setter
+    def identity_stripe(self, identity_stripe):
+        """
+        Sets the identity_stripe of this OceInstance.
+
+        :param identity_stripe: The identity_stripe of this OceInstance.
+        :type: IdentityStripeDetails
+        """
+        self._identity_stripe = identity_stripe
 
     @property
     def object_storage_namespace(self):

@@ -43,7 +43,7 @@ class CreateVolumeBackupPolicyAssignmentDetails(object):
     def asset_id(self):
         """
         **[Required]** Gets the asset_id of this CreateVolumeBackupPolicyAssignmentDetails.
-        The OCID of the asset (e.g. a volume) to which to assign the policy.
+        The OCID of the volume to assign the policy to.
 
 
         :return: The asset_id of this CreateVolumeBackupPolicyAssignmentDetails.
@@ -55,7 +55,7 @@ class CreateVolumeBackupPolicyAssignmentDetails(object):
     def asset_id(self, asset_id):
         """
         Sets the asset_id of this CreateVolumeBackupPolicyAssignmentDetails.
-        The OCID of the asset (e.g. a volume) to which to assign the policy.
+        The OCID of the volume to assign the policy to.
 
 
         :param asset_id: The asset_id of this CreateVolumeBackupPolicyAssignmentDetails.
@@ -67,7 +67,7 @@ class CreateVolumeBackupPolicyAssignmentDetails(object):
     def policy_id(self):
         """
         **[Required]** Gets the policy_id of this CreateVolumeBackupPolicyAssignmentDetails.
-        The OCID of the volume backup policy to assign to an asset.
+        The OCID of the volume backup policy to assign to the volume.
 
 
         :return: The policy_id of this CreateVolumeBackupPolicyAssignmentDetails.
@@ -79,7 +79,7 @@ class CreateVolumeBackupPolicyAssignmentDetails(object):
     def policy_id(self, policy_id):
         """
         Sets the policy_id of this CreateVolumeBackupPolicyAssignmentDetails.
-        The OCID of the volume backup policy to assign to an asset.
+        The OCID of the volume backup policy to assign to the volume.
 
 
         :param policy_id: The policy_id of this CreateVolumeBackupPolicyAssignmentDetails.

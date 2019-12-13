@@ -32,7 +32,9 @@ class ComputeManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str instance_pool_id: (required)
-            The OCID of the instance pool.
+            The `OCID`__ of the instance pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param AttachLoadBalancerDetails attach_load_balancer_details: (required)
             Load balancer being attached
@@ -184,7 +186,9 @@ class ComputeManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str instance_pool_id: (required)
-            The OCID of the instance pool.
+            The `OCID`__ of the instance pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param DetachLoadBalancerDetails detach_load_balancer_details: (required)
             Load balancer being detached
@@ -263,7 +267,9 @@ class ComputeManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str instance_pool_id: (required)
-            The OCID of the instance pool.
+            The `OCID`__ of the instance pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.InstancePool.lifecycle_state`
@@ -301,7 +307,9 @@ class ComputeManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str instance_pool_id: (required)
-            The OCID of the instance pool.
+            The `OCID`__ of the instance pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.InstancePool.lifecycle_state`
@@ -339,7 +347,9 @@ class ComputeManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str instance_pool_id: (required)
-            The OCID of the instance pool.
+            The `OCID`__ of the instance pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.InstancePool.lifecycle_state`
@@ -377,7 +387,9 @@ class ComputeManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str instance_pool_id: (required)
-            The OCID of the instance pool.
+            The `OCID`__ of the instance pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.InstancePool.lifecycle_state`
@@ -452,7 +464,9 @@ class ComputeManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str instance_pool_id: (required)
-            The OCID of the instance pool.
+            The `OCID`__ of the instance pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.InstancePool.lifecycle_state`
@@ -542,7 +556,9 @@ class ComputeManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str instance_pool_id: (required)
-            The OCID of the instance pool.
+            The `OCID`__ of the instance pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateInstancePoolDetails update_instance_pool_details: (required)
             Update instance pool configuration

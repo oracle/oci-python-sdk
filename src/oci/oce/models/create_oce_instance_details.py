@@ -37,6 +37,10 @@ class CreateOceInstanceDetails(object):
             The value to assign to the idcs_access_token property of this CreateOceInstanceDetails.
         :type idcs_access_token: str
 
+        :param identity_stripe:
+            The value to assign to the identity_stripe property of this CreateOceInstanceDetails.
+        :type identity_stripe: IdentityStripeDetails
+
         :param tenancy_name:
             The value to assign to the tenancy_name property of this CreateOceInstanceDetails.
         :type tenancy_name: str
@@ -64,6 +68,7 @@ class CreateOceInstanceDetails(object):
             'name': 'str',
             'tenancy_id': 'str',
             'idcs_access_token': 'str',
+            'identity_stripe': 'IdentityStripeDetails',
             'tenancy_name': 'str',
             'object_storage_namespace': 'str',
             'admin_email': 'str',
@@ -77,6 +82,7 @@ class CreateOceInstanceDetails(object):
             'name': 'name',
             'tenancy_id': 'tenancyId',
             'idcs_access_token': 'idcsAccessToken',
+            'identity_stripe': 'identityStripe',
             'tenancy_name': 'tenancyName',
             'object_storage_namespace': 'objectStorageNamespace',
             'admin_email': 'adminEmail',
@@ -89,6 +95,7 @@ class CreateOceInstanceDetails(object):
         self._name = None
         self._tenancy_id = None
         self._idcs_access_token = None
+        self._identity_stripe = None
         self._tenancy_name = None
         self._object_storage_namespace = None
         self._admin_email = None
@@ -214,6 +221,26 @@ class CreateOceInstanceDetails(object):
         :type: str
         """
         self._idcs_access_token = idcs_access_token
+
+    @property
+    def identity_stripe(self):
+        """
+        Gets the identity_stripe of this CreateOceInstanceDetails.
+
+        :return: The identity_stripe of this CreateOceInstanceDetails.
+        :rtype: IdentityStripeDetails
+        """
+        return self._identity_stripe
+
+    @identity_stripe.setter
+    def identity_stripe(self, identity_stripe):
+        """
+        Sets the identity_stripe of this CreateOceInstanceDetails.
+
+        :param identity_stripe: The identity_stripe of this CreateOceInstanceDetails.
+        :type: IdentityStripeDetails
+        """
+        self._identity_stripe = identity_stripe
 
     @property
     def tenancy_name(self):

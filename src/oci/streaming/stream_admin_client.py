@@ -1199,7 +1199,7 @@ class StreamAdminClient(object):
         :param str lifecycle_state: (optional)
             A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
 
-            Allowed values are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "UPDATING"
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -1251,7 +1251,7 @@ class StreamAdminClient(object):
                 )
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "UPDATING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
@@ -1296,13 +1296,13 @@ class StreamAdminClient(object):
                 header_params=header_params,
                 response_type="list[ConnectHarnessSummary]")
 
-    def list_stream_pools(self, **kwargs):
+    def list_stream_pools(self, compartment_id, **kwargs):
         """
         List the stream pools for a given compartment ID.
         List the stream pools for a given compartment ID.
 
 
-        :param str compartment_id: (optional)
+        :param str compartment_id: (required)
             The OCID of the compartment.
 
         :param str id: (optional)
@@ -1353,7 +1353,6 @@ class StreamAdminClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "compartment_id",
             "id",
             "name",
             "limit",
@@ -1390,7 +1389,7 @@ class StreamAdminClient(object):
                 )
 
         query_params = {
-            "compartmentId": kwargs.get("compartment_id", missing),
+            "compartmentId": compartment_id,
             "id": kwargs.get("id", missing),
             "name": kwargs.get("name", missing),
             "limit": kwargs.get("limit", missing),
@@ -1428,7 +1427,7 @@ class StreamAdminClient(object):
                 header_params=header_params,
                 response_type="list[StreamPoolSummary]")
 
-    def list_streams(self, compartment_id, **kwargs):
+    def list_streams(self, **kwargs):
         """
         Lists the streams in the given compartment id.
         Lists the streams in the given compartment id.
@@ -1437,11 +1436,11 @@ class StreamAdminClient(object):
         The compartment id and stream pool id cannot be specified at the same time.
 
 
-        :param str compartment_id: (required)
-            The OCID of the compartment.
+        :param str compartment_id: (optional)
+            The OCID of the compartment. Is exclusive with the `streamPoolId` parameter. One of them is required.
 
         :param str stream_pool_id: (optional)
-            The OCID of the stream pool.
+            The OCID of the stream pool. Is exclusive with the `compartmentId` parameter. One of them is required.
 
         :param str id: (optional)
             A filter to return only resources that match the given ID exactly.
@@ -1491,6 +1490,7 @@ class StreamAdminClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "compartment_id",
             "stream_pool_id",
             "id",
             "name",
@@ -1528,7 +1528,7 @@ class StreamAdminClient(object):
                 )
 
         query_params = {
-            "compartmentId": compartment_id,
+            "compartmentId": kwargs.get("compartment_id", missing),
             "streamPoolId": kwargs.get("stream_pool_id", missing),
             "id": kwargs.get("id", missing),
             "name": kwargs.get("name", missing),

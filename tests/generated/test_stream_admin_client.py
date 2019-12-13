@@ -671,6 +671,7 @@ def test_list_stream_pools(testing_service_client):
             service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.list_stream_pools(
+                compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -678,6 +679,7 @@ def test_list_stream_pools(testing_service_client):
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_stream_pools(
+                    compartment_id=request.pop(util.camelize('compartment_id')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -687,6 +689,7 @@ def test_list_stream_pools(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_stream_pools(
+                        compartment_id=request.pop(util.camelize('compartment_id')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -727,7 +730,6 @@ def test_list_streams(testing_service_client):
             service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.list_streams(
-                compartment_id=request.pop(util.camelize('compartment_id')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -735,7 +737,6 @@ def test_list_streams(testing_service_client):
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_streams(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -745,7 +746,6 @@ def test_list_streams(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_streams(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )

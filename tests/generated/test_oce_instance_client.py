@@ -130,7 +130,6 @@ def test_delete_oce_instance(testing_service_client):
             client = oci.oce.OceInstanceClient(config, service_endpoint=service_endpoint)
             response = client.delete_oce_instance(
                 oce_instance_id=request.pop(util.camelize('oce_instance_id')),
-                delete_oce_instance_details=request.pop(util.camelize('delete_oce_instance_details')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

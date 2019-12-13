@@ -83,7 +83,7 @@ class DnsClient(object):
 
     def change_steering_policy_compartment(self, steering_policy_id, change_steering_policy_compartment_details, **kwargs):
         """
-        Moves a steering policy into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+        Moves a steering policy into a different compartment.
 
 
         :param str steering_policy_id: (required)
@@ -107,6 +107,11 @@ class DnsClient(object):
             deleted and purged from the system, then a retry of the original creation
             request may be rejected).
 
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -125,7 +130,8 @@ class DnsClient(object):
         expected_kwargs = [
             "retry_strategy",
             "if_match",
-            "opc_retry_token"
+            "opc_retry_token",
+            "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -146,7 +152,8 @@ class DnsClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "If-Match": kwargs.get("if_match", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -172,9 +179,107 @@ class DnsClient(object):
                 header_params=header_params,
                 body=change_steering_policy_compartment_details)
 
+    def change_tsig_key_compartment(self, tsig_key_id, change_tsig_key_compartment_details, **kwargs):
+        """
+        Moves a TSIG key into a different compartment.
+
+
+        :param str tsig_key_id: (required)
+            The OCID of the target TSIG key.
+
+        :param ChangeTsigKeyCompartmentDetails change_tsig_key_compartment_details: (required)
+            Details for moving a TSIG key into a different compartment.
+
+        :param str if_match: (optional)
+            The `If-Match` header field makes the request method conditional on the
+            existence of at least one current representation of the target resource,
+            when the field-value is `*`, or having a current representation of the
+            target resource that has an entity-tag matching a member of the list of
+            entity-tags provided in the field-value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case
+            of a timeout or server error without risk of executing that same action
+            again. Retry tokens expire after 24 hours, but can be invalidated before
+            then due to conflicting operations (for example, if a resource has been
+            deleted and purged from the system, then a retry of the original creation
+            request may be rejected).
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/tsigKeys/{tsigKeyId}/actions/changeCompartment"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "change_tsig_key_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "tsigKeyId": tsig_key_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "If-Match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_tsig_key_compartment_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_tsig_key_compartment_details)
+
     def change_zone_compartment(self, zone_id, change_zone_compartment_details, **kwargs):
         """
-        Moves a zone into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+        Moves a zone into a different compartment.
         **Note:** All SteeringPolicyAttachment objects associated with this zone will also be moved into the provided compartment.
 
 
@@ -199,6 +304,11 @@ class DnsClient(object):
             deleted and purged from the system, then a retry of the original creation
             request may be rejected).
 
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -217,7 +327,8 @@ class DnsClient(object):
         expected_kwargs = [
             "retry_strategy",
             "if_match",
-            "opc_retry_token"
+            "opc_retry_token",
+            "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -238,7 +349,8 @@ class DnsClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "If-Match": kwargs.get("if_match", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -283,6 +395,11 @@ class DnsClient(object):
             deleted and purged from the system, then a retry of the original creation
             request may be rejected).
 
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -300,7 +417,8 @@ class DnsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "opc_retry_token"
+            "opc_retry_token",
+            "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -310,7 +428,8 @@ class DnsClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -357,6 +476,11 @@ class DnsClient(object):
             deleted and purged from the system, then a retry of the original creation
             request may be rejected).
 
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -374,7 +498,8 @@ class DnsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "opc_retry_token"
+            "opc_retry_token",
+            "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -384,7 +509,8 @@ class DnsClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -410,6 +536,71 @@ class DnsClient(object):
                 body=create_steering_policy_attachment_details,
                 response_type="SteeringPolicyAttachment")
 
+    def create_tsig_key(self, create_tsig_key_details, **kwargs):
+        """
+        Creates a new TSIG key in the specified compartment. There is no
+        `opc-retry-token` header since TSIG key names must be globally unique.
+
+
+        :param CreateTsigKeyDetails create_tsig_key_details: (required)
+            Details for creating a new TSIG key.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dns.models.TsigKey`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/tsigKeys"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_tsig_key got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_tsig_key_details,
+                response_type="TsigKey")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_tsig_key_details,
+                response_type="TsigKey")
+
     def create_zone(self, create_zone_details, **kwargs):
         """
         Creates a new zone in the specified compartment. The `compartmentId`
@@ -419,6 +610,11 @@ class DnsClient(object):
 
         :param CreateZoneBaseDetails create_zone_details: (required)
             Details for creating a new zone.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
 
         :param str compartment_id: (optional)
             The OCID of the compartment the resource belongs to.
@@ -440,6 +636,7 @@ class DnsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "opc_request_id",
             "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -454,8 +651,10 @@ class DnsClient(object):
 
         header_params = {
             "accept": "application/json",
-            "content-type": "application/json"
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -504,6 +703,11 @@ class DnsClient(object):
             field accomplishes the same purpose as If-Match for cases where the user
             agent does not have an entity-tag for the representation.
 
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
         :param str compartment_id: (optional)
             The OCID of the compartment the resource belongs to.
 
@@ -526,6 +730,7 @@ class DnsClient(object):
             "retry_strategy",
             "if_match",
             "if_unmodified_since",
+            "opc_request_id",
             "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -553,7 +758,8 @@ class DnsClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "If-Match": kwargs.get("if_match", missing),
-            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing)
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -605,6 +811,11 @@ class DnsClient(object):
             field accomplishes the same purpose as If-Match for cases where the user
             agent does not have an entity-tag for the representation.
 
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
         :param str compartment_id: (optional)
             The OCID of the compartment the resource belongs to.
 
@@ -627,6 +838,7 @@ class DnsClient(object):
             "retry_strategy",
             "if_match",
             "if_unmodified_since",
+            "opc_request_id",
             "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -655,7 +867,8 @@ class DnsClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "If-Match": kwargs.get("if_match", missing),
-            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing)
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -704,6 +917,11 @@ class DnsClient(object):
             field accomplishes the same purpose as If-Match for cases where the user
             agent does not have an entity-tag for the representation.
 
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -722,7 +940,8 @@ class DnsClient(object):
         expected_kwargs = [
             "retry_strategy",
             "if_match",
-            "if_unmodified_since"
+            "if_unmodified_since",
+            "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -743,7 +962,8 @@ class DnsClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "If-Match": kwargs.get("if_match", missing),
-            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing)
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -788,6 +1008,11 @@ class DnsClient(object):
             field accomplishes the same purpose as If-Match for cases where the user
             agent does not have an entity-tag for the representation.
 
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -806,7 +1031,8 @@ class DnsClient(object):
         expected_kwargs = [
             "retry_strategy",
             "if_match",
-            "if_unmodified_since"
+            "if_unmodified_since",
+            "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -827,7 +1053,98 @@ class DnsClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "If-Match": kwargs.get("if_match", missing),
-            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing)
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
+    def delete_tsig_key(self, tsig_key_id, **kwargs):
+        """
+        Deletes the specified TSIG key.
+
+
+        :param str tsig_key_id: (required)
+            The OCID of the target TSIG key.
+
+        :param str if_match: (optional)
+            The `If-Match` header field makes the request method conditional on the
+            existence of at least one current representation of the target resource,
+            when the field-value is `*`, or having a current representation of the
+            target resource that has an entity-tag matching a member of the list of
+            entity-tags provided in the field-value.
+
+        :param str if_unmodified_since: (optional)
+            The `If-Unmodified-Since` header field makes the request method
+            conditional on the selected representation's last modification date being
+            earlier than or equal to the date provided in the field-value.  This
+            field accomplishes the same purpose as If-Match for cases where the user
+            agent does not have an entity-tag for the representation.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/tsigKeys/{tsigKeyId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "if_unmodified_since",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_tsig_key got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "tsigKeyId": tsig_key_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "If-Match": kwargs.get("if_match", missing),
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -872,6 +1189,11 @@ class DnsClient(object):
             field accomplishes the same purpose as If-Match for cases where the user
             agent does not have an entity-tag for the representation.
 
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
         :param str compartment_id: (optional)
             The OCID of the compartment the resource belongs to.
 
@@ -894,6 +1216,7 @@ class DnsClient(object):
             "retry_strategy",
             "if_match",
             "if_unmodified_since",
+            "opc_request_id",
             "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -920,7 +1243,8 @@ class DnsClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "If-Match": kwargs.get("if_match", missing),
-            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing)
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -969,6 +1293,11 @@ class DnsClient(object):
             recent than the date provided in the field-value.  Transfer of the
             selected representation's data is avoided if that data has not changed.
 
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
         :param int limit: (optional)
             The maximum number of items to return in a page of the collection.
 
@@ -1016,6 +1345,7 @@ class DnsClient(object):
             "retry_strategy",
             "if_none_match",
             "if_modified_since",
+            "opc_request_id",
             "limit",
             "page",
             "zone_version",
@@ -1069,7 +1399,8 @@ class DnsClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "If-None-Match": kwargs.get("if_none_match", missing),
-            "If-Modified-Since": kwargs.get("if_modified_since", missing)
+            "If-Modified-Since": kwargs.get("if_modified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -1122,6 +1453,11 @@ class DnsClient(object):
             recent than the date provided in the field-value.  Transfer of the
             selected representation's data is avoided if that data has not changed.
 
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
         :param int limit: (optional)
             The maximum number of items to return in a page of the collection.
 
@@ -1153,6 +1489,7 @@ class DnsClient(object):
             "retry_strategy",
             "if_none_match",
             "if_modified_since",
+            "opc_request_id",
             "limit",
             "page",
             "zone_version",
@@ -1187,7 +1524,8 @@ class DnsClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "If-None-Match": kwargs.get("if_none_match", missing),
-            "If-Modified-Since": kwargs.get("if_modified_since", missing)
+            "If-Modified-Since": kwargs.get("if_modified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -1233,6 +1571,11 @@ class DnsClient(object):
             recent than the date provided in the field-value.  Transfer of the
             selected representation's data is avoided if that data has not changed.
 
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1251,7 +1594,8 @@ class DnsClient(object):
         expected_kwargs = [
             "retry_strategy",
             "if_none_match",
-            "if_modified_since"
+            "if_modified_since",
+            "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1272,7 +1616,8 @@ class DnsClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "If-None-Match": kwargs.get("if_none_match", missing),
-            "If-Modified-Since": kwargs.get("if_modified_since", missing)
+            "If-Modified-Since": kwargs.get("if_modified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -1316,6 +1661,11 @@ class DnsClient(object):
             recent than the date provided in the field-value.  Transfer of the
             selected representation's data is avoided if that data has not changed.
 
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1334,7 +1684,8 @@ class DnsClient(object):
         expected_kwargs = [
             "retry_strategy",
             "if_none_match",
-            "if_modified_since"
+            "if_modified_since",
+            "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1355,7 +1706,8 @@ class DnsClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "If-None-Match": kwargs.get("if_none_match", missing),
-            "If-Modified-Since": kwargs.get("if_modified_since", missing)
+            "If-Modified-Since": kwargs.get("if_modified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -1379,6 +1731,96 @@ class DnsClient(object):
                 header_params=header_params,
                 response_type="SteeringPolicyAttachment")
 
+    def get_tsig_key(self, tsig_key_id, **kwargs):
+        """
+        Gets information about the specified TSIG key.
+
+
+        :param str tsig_key_id: (required)
+            The OCID of the target TSIG key.
+
+        :param str if_none_match: (optional)
+            The `If-None-Match` header field makes the request method conditional on
+            the absence of any current representation of the target resource, when
+            the field-value is `*`, or having a selected representation with an
+            entity-tag that does not match any of those listed in the field-value.
+
+        :param str if_modified_since: (optional)
+            The `If-Modified-Since` header field makes a GET or HEAD request method
+            conditional on the selected representation's modification date being more
+            recent than the date provided in the field-value.  Transfer of the
+            selected representation's data is avoided if that data has not changed.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dns.models.TsigKey`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/tsigKeys/{tsigKeyId}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_none_match",
+            "if_modified_since",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_tsig_key got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "tsigKeyId": tsig_key_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "If-None-Match": kwargs.get("if_none_match", missing),
+            "If-Modified-Since": kwargs.get("if_modified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="TsigKey")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="TsigKey")
+
     def get_zone(self, zone_name_or_id, **kwargs):
         """
         Gets information about the specified zone, including its creation date,
@@ -1399,6 +1841,11 @@ class DnsClient(object):
             conditional on the selected representation's modification date being more
             recent than the date provided in the field-value.  Transfer of the
             selected representation's data is avoided if that data has not changed.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
 
         :param str compartment_id: (optional)
             The OCID of the compartment the resource belongs to.
@@ -1422,6 +1869,7 @@ class DnsClient(object):
             "retry_strategy",
             "if_none_match",
             "if_modified_since",
+            "opc_request_id",
             "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -1448,7 +1896,8 @@ class DnsClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "If-None-Match": kwargs.get("if_none_match", missing),
-            "If-Modified-Since": kwargs.get("if_modified_since", missing)
+            "If-Modified-Since": kwargs.get("if_modified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -1497,6 +1946,11 @@ class DnsClient(object):
             conditional on the selected representation's modification date being more
             recent than the date provided in the field-value.  Transfer of the
             selected representation's data is avoided if that data has not changed.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
 
         :param int limit: (optional)
             The maximum number of items to return in a page of the collection.
@@ -1553,6 +2007,7 @@ class DnsClient(object):
             "retry_strategy",
             "if_none_match",
             "if_modified_since",
+            "opc_request_id",
             "limit",
             "page",
             "zone_version",
@@ -1609,7 +2064,8 @@ class DnsClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "If-None-Match": kwargs.get("if_none_match", missing),
-            "If-Modified-Since": kwargs.get("if_modified_since", missing)
+            "If-Modified-Since": kwargs.get("if_modified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -1642,6 +2098,11 @@ class DnsClient(object):
 
         :param str compartment_id: (required)
             The OCID of the compartment the resource belongs to.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
 
         :param int limit: (optional)
             The maximum number of items to return in a page of the collection.
@@ -1711,6 +2172,7 @@ class DnsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "opc_request_id",
             "limit",
             "page",
             "id",
@@ -1769,8 +2231,10 @@ class DnsClient(object):
 
         header_params = {
             "accept": "application/json",
-            "content-type": "application/json"
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -1799,6 +2263,11 @@ class DnsClient(object):
 
         :param str compartment_id: (required)
             The OCID of the compartment the resource belongs to.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
 
         :param int limit: (optional)
             The maximum number of items to return in a page of the collection.
@@ -1872,6 +2341,7 @@ class DnsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "opc_request_id",
             "limit",
             "page",
             "id",
@@ -1932,8 +2402,10 @@ class DnsClient(object):
 
         header_params = {
             "accept": "application/json",
-            "content-type": "application/json"
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -1955,6 +2427,137 @@ class DnsClient(object):
                 header_params=header_params,
                 response_type="list[SteeringPolicyAttachmentSummary]")
 
+    def list_tsig_keys(self, compartment_id, **kwargs):
+        """
+        Gets a list of all TSIG keys in the specified compartment.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment the resource belongs to.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a page of the collection.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param str id: (optional)
+            The OCID of a resource.
+
+        :param str name: (optional)
+            The name of a resource.
+
+        :param str lifecycle_state: (optional)
+            The state of a resource.
+
+            Allowed values are: "ACTIVE", "CREATING"
+
+        :param str sort_by: (optional)
+            The field by which to sort TSIG keys. If unspecified, defaults to `timeCreated`.
+
+            Allowed values are: "name", "timeCreated"
+
+        :param str sort_order: (optional)
+            The order to sort the resources.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.dns.models.TsigKeySummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/tsigKeys"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "limit",
+            "page",
+            "id",
+            "name",
+            "lifecycle_state",
+            "sort_by",
+            "sort_order"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_tsig_keys got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["ACTIVE", "CREATING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["name", "timeCreated"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "compartmentId": compartment_id,
+            "id": kwargs.get("id", missing),
+            "name": kwargs.get("name", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[TsigKeySummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[TsigKeySummary]")
+
     def list_zones(self, compartment_id, **kwargs):
         """
         Gets a list of all zones in the specified compartment. The collection
@@ -1963,6 +2566,11 @@ class DnsClient(object):
 
         :param str compartment_id: (required)
             The OCID of the compartment the resource belongs to.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
 
         :param int limit: (optional)
             The maximum number of items to return in a page of the collection.
@@ -2028,6 +2636,7 @@ class DnsClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "opc_request_id",
             "limit",
             "page",
             "name",
@@ -2089,8 +2698,10 @@ class DnsClient(object):
 
         header_params = {
             "accept": "application/json",
-            "content-type": "application/json"
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -2143,6 +2754,11 @@ class DnsClient(object):
             field accomplishes the same purpose as If-Match for cases where the user
             agent does not have an entity-tag for the representation.
 
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
         :param str compartment_id: (optional)
             The OCID of the compartment the resource belongs to.
 
@@ -2165,6 +2781,7 @@ class DnsClient(object):
             "retry_strategy",
             "if_match",
             "if_unmodified_since",
+            "opc_request_id",
             "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2192,7 +2809,8 @@ class DnsClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "If-Match": kwargs.get("if_match", missing),
-            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing)
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -2251,6 +2869,11 @@ class DnsClient(object):
             field accomplishes the same purpose as If-Match for cases where the user
             agent does not have an entity-tag for the representation.
 
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
         :param str compartment_id: (optional)
             The OCID of the compartment the resource belongs to.
 
@@ -2273,6 +2896,7 @@ class DnsClient(object):
             "retry_strategy",
             "if_match",
             "if_unmodified_since",
+            "opc_request_id",
             "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2301,7 +2925,8 @@ class DnsClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "If-Match": kwargs.get("if_match", missing),
-            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing)
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -2357,6 +2982,11 @@ class DnsClient(object):
             field accomplishes the same purpose as If-Match for cases where the user
             agent does not have an entity-tag for the representation.
 
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
         :param str compartment_id: (optional)
             The OCID of the compartment the resource belongs to.
 
@@ -2379,6 +3009,7 @@ class DnsClient(object):
             "retry_strategy",
             "if_match",
             "if_unmodified_since",
+            "opc_request_id",
             "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2405,7 +3036,8 @@ class DnsClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "If-Match": kwargs.get("if_match", missing),
-            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing)
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -2466,6 +3098,11 @@ class DnsClient(object):
             field accomplishes the same purpose as If-Match for cases where the user
             agent does not have an entity-tag for the representation.
 
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
         :param str compartment_id: (optional)
             The OCID of the compartment the resource belongs to.
 
@@ -2488,6 +3125,7 @@ class DnsClient(object):
             "retry_strategy",
             "if_match",
             "if_unmodified_since",
+            "opc_request_id",
             "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2515,7 +3153,8 @@ class DnsClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "If-Match": kwargs.get("if_match", missing),
-            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing)
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -2574,6 +3213,11 @@ class DnsClient(object):
             field accomplishes the same purpose as If-Match for cases where the user
             agent does not have an entity-tag for the representation.
 
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
         :param str compartment_id: (optional)
             The OCID of the compartment the resource belongs to.
 
@@ -2596,6 +3240,7 @@ class DnsClient(object):
             "retry_strategy",
             "if_match",
             "if_unmodified_since",
+            "opc_request_id",
             "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2624,7 +3269,8 @@ class DnsClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "If-Match": kwargs.get("if_match", missing),
-            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing)
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -2677,6 +3323,11 @@ class DnsClient(object):
             field accomplishes the same purpose as If-Match for cases where the user
             agent does not have an entity-tag for the representation.
 
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2695,7 +3346,8 @@ class DnsClient(object):
         expected_kwargs = [
             "retry_strategy",
             "if_match",
-            "if_unmodified_since"
+            "if_unmodified_since",
+            "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2716,7 +3368,8 @@ class DnsClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "If-Match": kwargs.get("if_match", missing),
-            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing)
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -2767,6 +3420,11 @@ class DnsClient(object):
             field accomplishes the same purpose as If-Match for cases where the user
             agent does not have an entity-tag for the representation.
 
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2785,7 +3443,8 @@ class DnsClient(object):
         expected_kwargs = [
             "retry_strategy",
             "if_match",
-            "if_unmodified_since"
+            "if_unmodified_since",
+            "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2806,7 +3465,8 @@ class DnsClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "If-Match": kwargs.get("if_match", missing),
-            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing)
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -2831,6 +3491,103 @@ class DnsClient(object):
                 header_params=header_params,
                 body=update_steering_policy_attachment_details,
                 response_type="SteeringPolicyAttachment")
+
+    def update_tsig_key(self, tsig_key_id, update_tsig_key_details, **kwargs):
+        """
+        Updates the specified TSIG key.
+
+
+        :param str tsig_key_id: (required)
+            The OCID of the target TSIG key.
+
+        :param UpdateTsigKeyDetails update_tsig_key_details: (required)
+            New data for the TSIG key.
+
+        :param str if_match: (optional)
+            The `If-Match` header field makes the request method conditional on the
+            existence of at least one current representation of the target resource,
+            when the field-value is `*`, or having a current representation of the
+            target resource that has an entity-tag matching a member of the list of
+            entity-tags provided in the field-value.
+
+        :param str if_unmodified_since: (optional)
+            The `If-Unmodified-Since` header field makes the request method
+            conditional on the selected representation's last modification date being
+            earlier than or equal to the date provided in the field-value.  This
+            field accomplishes the same purpose as If-Match for cases where the user
+            agent does not have an entity-tag for the representation.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.dns.models.TsigKey`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/tsigKeys/{tsigKeyId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "if_unmodified_since",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_tsig_key got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "tsigKeyId": tsig_key_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "If-Match": kwargs.get("if_match", missing),
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_tsig_key_details,
+                response_type="TsigKey")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_tsig_key_details,
+                response_type="TsigKey")
 
     def update_zone(self, zone_name_or_id, update_zone_details, **kwargs):
         """
@@ -2861,6 +3618,11 @@ class DnsClient(object):
             field accomplishes the same purpose as If-Match for cases where the user
             agent does not have an entity-tag for the representation.
 
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
         :param str compartment_id: (optional)
             The OCID of the compartment the resource belongs to.
 
@@ -2883,6 +3645,7 @@ class DnsClient(object):
             "retry_strategy",
             "if_match",
             "if_unmodified_since",
+            "opc_request_id",
             "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2909,7 +3672,8 @@ class DnsClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "If-Match": kwargs.get("if_match", missing),
-            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing)
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -2966,6 +3730,11 @@ class DnsClient(object):
             field accomplishes the same purpose as If-Match for cases where the user
             agent does not have an entity-tag for the representation.
 
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need
+            to contact Oracle about a particular request, please provide
+            the request ID.
+
         :param str compartment_id: (optional)
             The OCID of the compartment the resource belongs to.
 
@@ -2988,6 +3757,7 @@ class DnsClient(object):
             "retry_strategy",
             "if_match",
             "if_unmodified_since",
+            "opc_request_id",
             "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3014,7 +3784,8 @@ class DnsClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "If-Match": kwargs.get("if_match", missing),
-            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing)
+            "If-Unmodified-Since": kwargs.get("if_unmodified_since", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 

@@ -50,7 +50,7 @@ class GeneratedKey(object):
     def ciphertext(self):
         """
         **[Required]** Gets the ciphertext of this GeneratedKey.
-        The encrypted generated data encryption key.
+        The encrypted data encryption key generated from a master encryption key.
 
 
         :return: The ciphertext of this GeneratedKey.
@@ -62,7 +62,7 @@ class GeneratedKey(object):
     def ciphertext(self, ciphertext):
         """
         Sets the ciphertext of this GeneratedKey.
-        The encrypted generated data encryption key.
+        The encrypted data encryption key generated from a master encryption key.
 
 
         :param ciphertext: The ciphertext of this GeneratedKey.
@@ -74,10 +74,11 @@ class GeneratedKey(object):
     def plaintext(self):
         """
         Gets the plaintext of this GeneratedKey.
-        The plaintext generated data encryption key, a base64-encoded
-        sequence of random bytes, which is included if the
-        GenerateDataEncryptionKey request includes the \"includePlaintextKey\"
-        parameter and sets its value to 'true'.
+        The plaintext data encryption key, a base64-encoded sequence of random bytes, which is
+        included if the `GenerateDataEncryptionKey`__
+        request includes the `includePlaintextKey` parameter and sets its value to \"true\".
+
+        __ https://docs.cloud.oracle.com/api/#/en/key/release/GeneratedKey/GenerateDataEncryptionKey
 
 
         :return: The plaintext of this GeneratedKey.
@@ -89,10 +90,11 @@ class GeneratedKey(object):
     def plaintext(self, plaintext):
         """
         Sets the plaintext of this GeneratedKey.
-        The plaintext generated data encryption key, a base64-encoded
-        sequence of random bytes, which is included if the
-        GenerateDataEncryptionKey request includes the \"includePlaintextKey\"
-        parameter and sets its value to 'true'.
+        The plaintext data encryption key, a base64-encoded sequence of random bytes, which is
+        included if the `GenerateDataEncryptionKey`__
+        request includes the `includePlaintextKey` parameter and sets its value to \"true\".
+
+        __ https://docs.cloud.oracle.com/api/#/en/key/release/GeneratedKey/GenerateDataEncryptionKey
 
 
         :param plaintext: The plaintext of this GeneratedKey.
@@ -104,9 +106,11 @@ class GeneratedKey(object):
     def plaintext_checksum(self):
         """
         Gets the plaintext_checksum of this GeneratedKey.
-        The checksum of the plaintext generated data encryption key, which
-        is included if the GenerateDataEncryptionKey request includes the
-        \"includePlaintextKey parameter and sets its value to 'true'.
+        The checksum of the plaintext data encryption key, which is included if the
+        `GenerateDataEncryptionKey`__
+        request includes the `includePlaintextKey` parameter and sets its value to \"true\".
+
+        __ https://docs.cloud.oracle.com/api/#/en/key/release/GeneratedKey/GenerateDataEncryptionKey
 
 
         :return: The plaintext_checksum of this GeneratedKey.
@@ -118,9 +122,11 @@ class GeneratedKey(object):
     def plaintext_checksum(self, plaintext_checksum):
         """
         Sets the plaintext_checksum of this GeneratedKey.
-        The checksum of the plaintext generated data encryption key, which
-        is included if the GenerateDataEncryptionKey request includes the
-        \"includePlaintextKey parameter and sets its value to 'true'.
+        The checksum of the plaintext data encryption key, which is included if the
+        `GenerateDataEncryptionKey`__
+        request includes the `includePlaintextKey` parameter and sets its value to \"true\".
+
+        __ https://docs.cloud.oracle.com/api/#/en/key/release/GeneratedKey/GenerateDataEncryptionKey
 
 
         :param plaintext_checksum: The plaintext_checksum of this GeneratedKey.

@@ -29,22 +29,29 @@ class NodePoolOptions(object):
             The value to assign to the images property of this NodePoolOptions.
         :type images: list[str]
 
+        :param sources:
+            The value to assign to the sources property of this NodePoolOptions.
+        :type sources: list[NodeSourceOption]
+
         """
         self.swagger_types = {
             'kubernetes_versions': 'list[str]',
             'shapes': 'list[str]',
-            'images': 'list[str]'
+            'images': 'list[str]',
+            'sources': 'list[NodeSourceOption]'
         }
 
         self.attribute_map = {
             'kubernetes_versions': 'kubernetesVersions',
             'shapes': 'shapes',
-            'images': 'images'
+            'images': 'images',
+            'sources': 'sources'
         }
 
         self._kubernetes_versions = None
         self._shapes = None
         self._images = None
+        self._sources = None
 
     @property
     def kubernetes_versions(self):
@@ -98,7 +105,9 @@ class NodePoolOptions(object):
     def images(self):
         """
         Gets the images of this NodePoolOptions.
-        Available image names.
+        Deprecated. See sources.
+        When creating a node pool using the `CreateNodePoolDetails` object, only image names contained in this
+        property can be passed to the `nodeImageName` property.
 
 
         :return: The images of this NodePoolOptions.
@@ -110,13 +119,39 @@ class NodePoolOptions(object):
     def images(self, images):
         """
         Sets the images of this NodePoolOptions.
-        Available image names.
+        Deprecated. See sources.
+        When creating a node pool using the `CreateNodePoolDetails` object, only image names contained in this
+        property can be passed to the `nodeImageName` property.
 
 
         :param images: The images of this NodePoolOptions.
         :type: list[str]
         """
         self._images = images
+
+    @property
+    def sources(self):
+        """
+        Gets the sources of this NodePoolOptions.
+        Available source of the node.
+
+
+        :return: The sources of this NodePoolOptions.
+        :rtype: list[NodeSourceOption]
+        """
+        return self._sources
+
+    @sources.setter
+    def sources(self, sources):
+        """
+        Sets the sources of this NodePoolOptions.
+        Available source of the node.
+
+
+        :param sources: The sources of this NodePoolOptions.
+        :type: list[NodeSourceOption]
+        """
+        self._sources = sources
 
     def __repr__(self):
         return formatted_flat_dict(self)

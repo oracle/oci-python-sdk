@@ -19,10 +19,12 @@ DNS
     :template: autosummary/model_class.rst
 
     oci.dns.models.ChangeSteeringPolicyCompartmentDetails
+    oci.dns.models.ChangeTsigKeyCompartmentDetails
     oci.dns.models.ChangeZoneCompartmentDetails
     oci.dns.models.CreateMigratedDynectZoneDetails
     oci.dns.models.CreateSteeringPolicyAttachmentDetails
     oci.dns.models.CreateSteeringPolicyDetails
+    oci.dns.models.CreateTsigKeyDetails
     oci.dns.models.CreateZoneBaseDetails
     oci.dns.models.CreateZoneDetails
     oci.dns.models.DynectMigrationDetails
@@ -57,10 +59,13 @@ DNS
     oci.dns.models.SteeringPolicyWeightedRule
     oci.dns.models.SteeringPolicyWeightedRuleCase
     oci.dns.models.TSIG
+    oci.dns.models.TsigKey
+    oci.dns.models.TsigKeySummary
     oci.dns.models.UpdateDomainRecordsDetails
     oci.dns.models.UpdateRRSetDetails
     oci.dns.models.UpdateSteeringPolicyAttachmentDetails
     oci.dns.models.UpdateSteeringPolicyDetails
+    oci.dns.models.UpdateTsigKeyDetails
     oci.dns.models.UpdateZoneDetails
     oci.dns.models.UpdateZoneRecordsDetails
     oci.dns.models.Zone

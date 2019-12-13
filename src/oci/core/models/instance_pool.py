@@ -144,7 +144,9 @@ class InstancePool(object):
     def id(self):
         """
         **[Required]** Gets the id of this InstancePool.
-        The OCID of the instance pool.
+        The `OCID`__ of the instance pool.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this InstancePool.
@@ -156,7 +158,9 @@ class InstancePool(object):
     def id(self, id):
         """
         Sets the id of this InstancePool.
-        The OCID of the instance pool.
+        The `OCID`__ of the instance pool.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this InstancePool.
@@ -168,7 +172,10 @@ class InstancePool(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this InstancePool.
-        The OCID of the compartment containing the instance pool.
+        The `OCID`__ of the compartment containing the instance
+        pool.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this InstancePool.
@@ -180,7 +187,10 @@ class InstancePool(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this InstancePool.
-        The OCID of the compartment containing the instance pool.
+        The `OCID`__ of the compartment containing the instance
+        pool.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this InstancePool.
@@ -226,7 +236,7 @@ class InstancePool(object):
     def display_name(self):
         """
         Gets the display_name of this InstancePool.
-        The user-friendly name.  Does not have to be unique.
+        The user-friendly name. Does not have to be unique.
 
 
         :return: The display_name of this InstancePool.
@@ -238,7 +248,7 @@ class InstancePool(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this InstancePool.
-        The user-friendly name.  Does not have to be unique.
+        The user-friendly name. Does not have to be unique.
 
 
         :param display_name: The display_name of this InstancePool.
@@ -284,7 +294,10 @@ class InstancePool(object):
     def instance_configuration_id(self):
         """
         **[Required]** Gets the instance_configuration_id of this InstancePool.
-        The OCID of the instance configuration associated with the instance pool.
+        The `OCID`__ of the instance configuration associated
+        with the instance pool.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The instance_configuration_id of this InstancePool.
@@ -296,7 +309,10 @@ class InstancePool(object):
     def instance_configuration_id(self, instance_configuration_id):
         """
         Sets the instance_configuration_id of this InstancePool.
-        The OCID of the instance configuration associated with the instance pool.
+        The `OCID`__ of the instance configuration associated
+        with the instance pool.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param instance_configuration_id: The instance_configuration_id of this InstancePool.

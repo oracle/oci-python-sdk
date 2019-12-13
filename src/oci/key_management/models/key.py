@@ -152,7 +152,7 @@ class Key(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this Key.
-        The OCID of the compartment that contains this key.
+        The OCID of the compartment that contains this master encryption key.
 
 
         :return: The compartment_id of this Key.
@@ -164,7 +164,7 @@ class Key(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Key.
-        The OCID of the compartment that contains this key.
+        The OCID of the compartment that contains this master encryption key.
 
 
         :param compartment_id: The compartment_id of this Key.
@@ -176,9 +176,9 @@ class Key(object):
     def current_key_version(self):
         """
         **[Required]** Gets the current_key_version of this Key.
-        The OCID of the KeyVersion resource used in cryptographic operations. During key rotation, service might be in a transitional state
-        where this or a newer KeyVersion are used intermittently. The currentKeyVersion field is updated when the service is guaranteed to
-        use the new KeyVersion for all subsequent encryption operations.
+        The OCID of the key version used in cryptographic operations. During key rotation, the service might be
+        in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion`
+        field is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
 
 
         :return: The current_key_version of this Key.
@@ -190,9 +190,9 @@ class Key(object):
     def current_key_version(self, current_key_version):
         """
         Sets the current_key_version of this Key.
-        The OCID of the KeyVersion resource used in cryptographic operations. During key rotation, service might be in a transitional state
-        where this or a newer KeyVersion are used intermittently. The currentKeyVersion field is updated when the service is guaranteed to
-        use the new KeyVersion for all subsequent encryption operations.
+        The OCID of the key version used in cryptographic operations. During key rotation, the service might be
+        in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion`
+        field is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
 
 
         :param current_key_version: The current_key_version of this Key.
@@ -204,8 +204,11 @@ class Key(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this Key.
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this Key.
@@ -217,8 +220,11 @@ class Key(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this Key.
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this Key.
@@ -256,9 +262,11 @@ class Key(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this Key.
-        Simple key-value pair that is applied without any predefined name, type, or scope.
-        Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this Key.
@@ -270,9 +278,11 @@ class Key(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this Key.
-        Simple key-value pair that is applied without any predefined name, type, or scope.
-        Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this Key.
@@ -394,7 +404,7 @@ class Key(object):
     def time_of_deletion(self):
         """
         Gets the time_of_deletion of this Key.
-        An optional property for the deletion time of the key, expressed in `RFC 3339`__ timestamp format.
+        An optional property indicating when to delete the key, expressed in `RFC 3339`__ timestamp format.
         Example: `2019-04-03T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339
@@ -409,7 +419,7 @@ class Key(object):
     def time_of_deletion(self, time_of_deletion):
         """
         Sets the time_of_deletion of this Key.
-        An optional property for the deletion time of the key, expressed in `RFC 3339`__ timestamp format.
+        An optional property indicating when to delete the key, expressed in `RFC 3339`__ timestamp format.
         Example: `2019-04-03T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339

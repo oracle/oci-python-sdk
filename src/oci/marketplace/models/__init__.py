@@ -1,0 +1,61 @@
+# coding: utf-8
+# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+
+from __future__ import absolute_import
+
+from .accepted_agreement import AcceptedAgreement
+from .accepted_agreement_summary import AcceptedAgreementSummary
+from .agreement import Agreement
+from .agreement_summary import AgreementSummary
+from .category_summary import CategorySummary
+from .create_accepted_agreement_details import CreateAcceptedAgreementDetails
+from .documentation_link import DocumentationLink
+from .error_entity import ErrorEntity
+from .image_listing_package import ImageListingPackage
+from .item import Item
+from .link import Link
+from .listing import Listing
+from .listing_package import ListingPackage
+from .listing_package_summary import ListingPackageSummary
+from .listing_summary import ListingSummary
+from .named_link import NamedLink
+from .orchestration_listing_package import OrchestrationListingPackage
+from .orchestration_variable import OrchestrationVariable
+from .pricing_model import PricingModel
+from .publisher import Publisher
+from .publisher_summary import PublisherSummary
+from .region import Region
+from .screenshot import Screenshot
+from .support_contact import SupportContact
+from .update_accepted_agreement_details import UpdateAcceptedAgreementDetails
+from .upload_data import UploadData
+
+# Maps type names to classes for marketplace services.
+marketplace_type_mapping = {
+    "AcceptedAgreement": AcceptedAgreement,
+    "AcceptedAgreementSummary": AcceptedAgreementSummary,
+    "Agreement": Agreement,
+    "AgreementSummary": AgreementSummary,
+    "CategorySummary": CategorySummary,
+    "CreateAcceptedAgreementDetails": CreateAcceptedAgreementDetails,
+    "DocumentationLink": DocumentationLink,
+    "ErrorEntity": ErrorEntity,
+    "ImageListingPackage": ImageListingPackage,
+    "Item": Item,
+    "Link": Link,
+    "Listing": Listing,
+    "ListingPackage": ListingPackage,
+    "ListingPackageSummary": ListingPackageSummary,
+    "ListingSummary": ListingSummary,
+    "NamedLink": NamedLink,
+    "OrchestrationListingPackage": OrchestrationListingPackage,
+    "OrchestrationVariable": OrchestrationVariable,
+    "PricingModel": PricingModel,
+    "Publisher": Publisher,
+    "PublisherSummary": PublisherSummary,
+    "Region": Region,
+    "Screenshot": Screenshot,
+    "SupportContact": SupportContact,
+    "UpdateAcceptedAgreementDetails": UpdateAcceptedAgreementDetails,
+    "UploadData": UploadData
+}

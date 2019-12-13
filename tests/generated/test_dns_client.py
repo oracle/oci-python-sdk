@@ -70,6 +70,47 @@ def test_change_steering_policy_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+def test_change_tsig_key_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('dns', 'ChangeTsigKeyCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'ChangeTsigKeyCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='ChangeTsigKeyCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
+            response = client.change_tsig_key_compartment(
+                tsig_key_id=request.pop(util.camelize('tsig_key_id')),
+                change_tsig_key_compartment_details=request.pop(util.camelize('change_tsig_key_compartment_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'ChangeTsigKeyCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_tsig_key_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
 def test_change_zone_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'ChangeZoneCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -185,6 +226,46 @@ def test_create_steering_policy_attachment(testing_service_client):
             result,
             service_error,
             'steeringPolicyAttachment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+def test_create_tsig_key(testing_service_client):
+    if not testing_service_client.is_api_enabled('dns', 'CreateTsigKey'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'CreateTsigKey')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='CreateTsigKey')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
+            response = client.create_tsig_key(
+                create_tsig_key_details=request.pop(util.camelize('create_tsig_key_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'CreateTsigKey',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'tsigKey',
             False,
             False
         )
@@ -388,6 +469,46 @@ def test_delete_steering_policy_attachment(testing_service_client):
             result,
             service_error,
             'delete_steering_policy_attachment',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+def test_delete_tsig_key(testing_service_client):
+    if not testing_service_client.is_api_enabled('dns', 'DeleteTsigKey'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'DeleteTsigKey')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='DeleteTsigKey')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
+            response = client.delete_tsig_key(
+                tsig_key_id=request.pop(util.camelize('tsig_key_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'DeleteTsigKey',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_tsig_key',
             True,
             False
         )
@@ -641,6 +762,46 @@ def test_get_steering_policy_attachment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+def test_get_tsig_key(testing_service_client):
+    if not testing_service_client.is_api_enabled('dns', 'GetTsigKey'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'GetTsigKey')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='GetTsigKey')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
+            response = client.get_tsig_key(
+                tsig_key_id=request.pop(util.camelize('tsig_key_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'GetTsigKey',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'tsigKey',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
 def test_get_zone(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'GetZone'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -852,6 +1013,65 @@ def test_list_steering_policy_attachments(testing_service_client):
             result,
             service_error,
             'steeringPolicyAttachmentSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+def test_list_tsig_keys(testing_service_client):
+    if not testing_service_client.is_api_enabled('dns', 'ListTsigKeys'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'ListTsigKeys')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='ListTsigKeys')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
+            response = client.list_tsig_keys(
+                compartment_id=request.pop(util.camelize('compartment_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_tsig_keys(
+                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_tsig_keys(
+                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'ListTsigKeys',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'tsigKeySummary',
             False,
             True
         )
@@ -1204,6 +1424,47 @@ def test_update_steering_policy_attachment(testing_service_client):
             result,
             service_error,
             'steeringPolicyAttachment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+def test_update_tsig_key(testing_service_client):
+    if not testing_service_client.is_api_enabled('dns', 'UpdateTsigKey'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('dns', util.camelize('dns'), 'UpdateTsigKey')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='dns', api_name='UpdateTsigKey')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
+            response = client.update_tsig_key(
+                tsig_key_id=request.pop(util.camelize('tsig_key_id')),
+                update_tsig_key_details=request.pop(util.camelize('update_tsig_key_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'dns',
+            'UpdateTsigKey',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'tsigKey',
             False,
             False
         )

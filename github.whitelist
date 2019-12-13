@@ -69,4 +69,4 @@
 ^src/oci/oce/.*\.py$
 ^src/oci/oda/.*\.py$
 ^src/oci/analytics/.*\.py$
-^src/oci/integration/.*\.py$
+^src/oci/integration/.*\.py$\n^src/oci/os_management/.*\.py$\n^src/oci/marketplace/.*\.py$\n^src/oci/apigateway/.*\.py$

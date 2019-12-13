@@ -43,6 +43,9 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/apigateway/pom.xml</module>
+    <module>poms/marketplace/pom.xml</module>
+    <module>poms/os_management/pom.xml</module>
     <module>poms/integration/pom.xml</module>
     <module>poms/analytics/pom.xml</module>
     <module>poms/oda/pom.xml</module>

@@ -119,6 +119,10 @@ class BootVolumeBackup(object):
             The value to assign to the size_in_gbs property of this BootVolumeBackup.
         :type size_in_gbs: int
 
+        :param source_boot_volume_backup_id:
+            The value to assign to the source_boot_volume_backup_id property of this BootVolumeBackup.
+        :type source_boot_volume_backup_id: str
+
         :param source_type:
             The value to assign to the source_type property of this BootVolumeBackup.
             Allowed values for this property are: "MANUAL", "SCHEDULED", 'UNKNOWN_ENUM_VALUE'.
@@ -157,6 +161,7 @@ class BootVolumeBackup(object):
             'kms_key_id': 'str',
             'lifecycle_state': 'str',
             'size_in_gbs': 'int',
+            'source_boot_volume_backup_id': 'str',
             'source_type': 'str',
             'time_created': 'datetime',
             'time_request_received': 'datetime',
@@ -177,6 +182,7 @@ class BootVolumeBackup(object):
             'kms_key_id': 'kmsKeyId',
             'lifecycle_state': 'lifecycleState',
             'size_in_gbs': 'sizeInGBs',
+            'source_boot_volume_backup_id': 'sourceBootVolumeBackupId',
             'source_type': 'sourceType',
             'time_created': 'timeCreated',
             'time_request_received': 'timeRequestReceived',
@@ -196,6 +202,7 @@ class BootVolumeBackup(object):
         self._kms_key_id = None
         self._lifecycle_state = None
         self._size_in_gbs = None
+        self._source_boot_volume_backup_id = None
         self._source_type = None
         self._time_created = None
         self._time_request_received = None
@@ -454,7 +461,7 @@ class BootVolumeBackup(object):
     def kms_key_id(self):
         """
         Gets the kms_key_id of this BootVolumeBackup.
-        The OCID of the KMS key which is the master encryption key for the boot volume backup.
+        The OCID of the Key Management master encryption assigned to the boot volume backup.
         For more information about the Key Management service and encryption keys, see
         `Overview of Key Management`__ and
         `Using Keys`__.
@@ -472,7 +479,7 @@ class BootVolumeBackup(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this BootVolumeBackup.
-        The OCID of the KMS key which is the master encryption key for the boot volume backup.
+        The OCID of the Key Management master encryption assigned to the boot volume backup.
         For more information about the Key Management service and encryption keys, see
         `Overview of Key Management`__ and
         `Using Keys`__.
@@ -539,6 +546,30 @@ class BootVolumeBackup(object):
         :type: int
         """
         self._size_in_gbs = size_in_gbs
+
+    @property
+    def source_boot_volume_backup_id(self):
+        """
+        Gets the source_boot_volume_backup_id of this BootVolumeBackup.
+        The OCID of the source boot volume backup.
+
+
+        :return: The source_boot_volume_backup_id of this BootVolumeBackup.
+        :rtype: str
+        """
+        return self._source_boot_volume_backup_id
+
+    @source_boot_volume_backup_id.setter
+    def source_boot_volume_backup_id(self, source_boot_volume_backup_id):
+        """
+        Sets the source_boot_volume_backup_id of this BootVolumeBackup.
+        The OCID of the source boot volume backup.
+
+
+        :param source_boot_volume_backup_id: The source_boot_volume_backup_id of this BootVolumeBackup.
+        :type: str
+        """
+        self._source_boot_volume_backup_id = source_boot_volume_backup_id
 
     @property
     def source_type(self):

@@ -9,7 +9,12 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VolumeBackupPolicyAssignment(object):
     """
-    Specifies that a particular volume backup policy is assigned to an asset such as a volume.
+    Specifies the volume that the volume backup policy is assigned to.
+
+    For more information about Oracle defined backup policies and custom backup policies,
+    see `Policy-Based Backups`__.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm
     """
 
     def __init__(self, **kwargs):
@@ -57,7 +62,7 @@ class VolumeBackupPolicyAssignment(object):
     def asset_id(self):
         """
         **[Required]** Gets the asset_id of this VolumeBackupPolicyAssignment.
-        The OCID of the asset (e.g. a volume) to which the policy has been assigned.
+        The OCID of the volume the policy has been assigned to.
 
 
         :return: The asset_id of this VolumeBackupPolicyAssignment.
@@ -69,7 +74,7 @@ class VolumeBackupPolicyAssignment(object):
     def asset_id(self, asset_id):
         """
         Sets the asset_id of this VolumeBackupPolicyAssignment.
-        The OCID of the asset (e.g. a volume) to which the policy has been assigned.
+        The OCID of the volume the policy has been assigned to.
 
 
         :param asset_id: The asset_id of this VolumeBackupPolicyAssignment.
@@ -105,7 +110,7 @@ class VolumeBackupPolicyAssignment(object):
     def policy_id(self):
         """
         **[Required]** Gets the policy_id of this VolumeBackupPolicyAssignment.
-        The OCID of the volume backup policy that has been assigned to an asset.
+        The OCID of the volume backup policy that has been assigned to the volume.
 
 
         :return: The policy_id of this VolumeBackupPolicyAssignment.
@@ -117,7 +122,7 @@ class VolumeBackupPolicyAssignment(object):
     def policy_id(self, policy_id):
         """
         Sets the policy_id of this VolumeBackupPolicyAssignment.
-        The OCID of the volume backup policy that has been assigned to an asset.
+        The OCID of the volume backup policy that has been assigned to the volume.
 
 
         :param policy_id: The policy_id of this VolumeBackupPolicyAssignment.
@@ -129,7 +134,7 @@ class VolumeBackupPolicyAssignment(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this VolumeBackupPolicyAssignment.
-        The date and time the volume backup policy assignment was created. Format defined by RFC3339.
+        The date and time the volume backup policy was assigned to the volume. The format is defined by RFC3339.
 
 
         :return: The time_created of this VolumeBackupPolicyAssignment.
@@ -141,7 +146,7 @@ class VolumeBackupPolicyAssignment(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this VolumeBackupPolicyAssignment.
-        The date and time the volume backup policy assignment was created. Format defined by RFC3339.
+        The date and time the volume backup policy was assigned to the volume. The format is defined by RFC3339.
 
 
         :param time_created: The time_created of this VolumeBackupPolicyAssignment.
