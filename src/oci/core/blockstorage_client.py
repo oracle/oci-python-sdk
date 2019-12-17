@@ -572,6 +572,99 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 body=change_volume_group_compartment_details)
 
+    def copy_boot_volume_backup(self, boot_volume_backup_id, copy_boot_volume_backup_details, **kwargs):
+        """
+        CreateBootVolumeBackupCopy
+        Creates a boot volume backup copy in specified region. For general information about volume backups,
+        see `Overview of Boot Volume Backups`__
+
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/bootvolumebackups.htm
+
+
+        :param str boot_volume_backup_id: (required)
+            The OCID of the boot volume backup.
+
+        :param CopyBootVolumeBackupDetails copy_boot_volume_backup_details: (required)
+            Request to create a cross-region copy of given boot volume backup.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.BootVolumeBackup`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/bootVolumeBackups/{bootVolumeBackupId}/actions/copy"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "copy_boot_volume_backup got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "bootVolumeBackupId": boot_volume_backup_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=copy_boot_volume_backup_details,
+                response_type="BootVolumeBackup")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=copy_boot_volume_backup_details,
+                response_type="BootVolumeBackup")
+
     def copy_volume_backup(self, volume_backup_id, copy_volume_backup_details, **kwargs):
         """
         CreateVolumeBackupCopy
@@ -980,7 +1073,12 @@ class BlockstorageClient(object):
     def create_volume_backup_policy(self, create_volume_backup_policy_details, **kwargs):
         """
         CreateVolumeBackupPolicy
-        Creates a new backup policy for the caller.
+        Creates a new user defined backup policy.
+
+        For more information about Oracle defined backup policies and user defined backup policies,
+        see `Policy-Based Backups`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm
 
 
         :param CreateVolumeBackupPolicyDetails create_volume_backup_policy_details: (required)
@@ -1055,13 +1153,13 @@ class BlockstorageClient(object):
     def create_volume_backup_policy_assignment(self, create_volume_backup_policy_assignment_details, **kwargs):
         """
         CreateVolumeBackupPolicyAssignment
-        Assigns a policy to the specified asset, such as a volume. Note that a given asset can
-        only have one policy assigned to it; if this method is called for an asset that previously
-        has a different policy assigned, the prior assignment will be silently deleted.
+        Assigns a volume backup policy to the specified volume. Note that a given volume can
+        only have one backup policy assigned to it. If this operation is used for a volume that already
+        has a different backup policy assigned, the prior backup policy will be silently unassigned.
 
 
         :param CreateVolumeBackupPolicyAssignmentDetails create_volume_backup_policy_assignment_details: (required)
-            Request to assign a specified policy to a particular asset.
+            Request to assign a specified policy to a particular volume.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1411,7 +1509,7 @@ class BlockstorageClient(object):
     def delete_boot_volume_kms_key(self, boot_volume_id, **kwargs):
         """
         DeleteBootVolumeKmsKey
-        Removes the KMS key for the specified boot volume.
+        Removes the specified boot volume's assigned Key Management encryption key.
 
 
         :param str boot_volume_id: (required)
@@ -1635,7 +1733,13 @@ class BlockstorageClient(object):
     def delete_volume_backup_policy(self, policy_id, **kwargs):
         """
         DeleteVolumeBackupPolicy
-        Deletes the specified scheduled backup policy.
+        Deletes a user defined backup policy.
+         For more information about user defined backup policies,
+         see `Policy-Based Backups`__.
+
+         Avoid entering confidential information.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#UserDefinedBackupPolicies
 
 
         :param str policy_id: (required)
@@ -1714,7 +1818,7 @@ class BlockstorageClient(object):
     def delete_volume_backup_policy_assignment(self, policy_assignment_id, **kwargs):
         """
         DeleteVolumeBackupPolicyAssignment
-        Deletes a volume backup policy assignment (i.e. unassigns the policy from an asset).
+        Deletes a volume backup policy assignment.
 
 
         :param str policy_assignment_id: (required)
@@ -1938,7 +2042,7 @@ class BlockstorageClient(object):
     def delete_volume_kms_key(self, volume_id, **kwargs):
         """
         DeleteVolumeKmsKey
-        Removes the KMS key for the specified volume.
+        Removes the specified volume's assigned Key Management encryption key.
 
 
         :param str volume_id: (required)
@@ -2139,7 +2243,7 @@ class BlockstorageClient(object):
     def get_boot_volume_kms_key(self, boot_volume_id, **kwargs):
         """
         GetBootVolumeKmsKey
-        Gets the KMS key ID for the specified boot volume.
+        Gets the Key Management encryption key assigned to the specified boot volume.
 
 
         :param str boot_volume_id: (required)
@@ -2406,9 +2510,9 @@ class BlockstorageClient(object):
     def get_volume_backup_policy_asset_assignment(self, asset_id, **kwargs):
         """
         GetVolumeBackupPolicyAssetAssignment
-        Gets the volume backup policy assignment for the specified asset. Note that the
-        assetId query parameter is required, and that the returned list will contain at most
-        one item (since any given asset can only have one policy assigned to it).
+        Gets the volume backup policy assignment for the specified volume. The
+        `assetId` query parameter is required, and the returned list will contain at most
+        one item, since volume can only have one volume backup policy assigned at a time.
 
 
         :param str asset_id: (required)
@@ -2686,7 +2790,7 @@ class BlockstorageClient(object):
     def get_volume_kms_key(self, volume_id, **kwargs):
         """
         GetVolumeKmsKey
-        Gets the KMS key ID for the specified volume.
+        Gets the Key Management encryption key assigned to the specified volume.
 
 
         :param str volume_id: (required)
@@ -2791,6 +2895,9 @@ class BlockstorageClient(object):
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
 
+        :param str source_boot_volume_backup_id: (optional)
+            A filter to return only resources that originated from the given source boot volume backup.
+
         :param str sort_by: (optional)
             The field to sort by. You can provide one sort order (`sortOrder`). Default order for
             TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
@@ -2835,6 +2942,7 @@ class BlockstorageClient(object):
             "limit",
             "page",
             "display_name",
+            "source_boot_volume_backup_id",
             "sort_by",
             "sort_order",
             "lifecycle_state"
@@ -2871,6 +2979,7 @@ class BlockstorageClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "displayName": kwargs.get("display_name", missing),
+            "sourceBootVolumeBackupId": kwargs.get("source_boot_volume_backup_id", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing)
@@ -3000,7 +3109,12 @@ class BlockstorageClient(object):
     def list_volume_backup_policies(self, **kwargs):
         """
         ListVolumeBackupPolicies
-        Lists all volume backup policies available to the caller.
+        Lists all the volume backup policies available in the specified compartment.
+
+        For more information about Oracle defined backup policies and user defined backup policies,
+        see `Policy-Based Backups`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm
 
 
         :param int limit: (optional)
@@ -3020,8 +3134,8 @@ class BlockstorageClient(object):
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str compartment_id: (optional)
-            The OCID of the compartment to list.
-            If no compartment is specified, list the predefined (Gold, Silver, Bronze) backup policies.
+            The OCID of the compartment.
+            If no compartment is specified, the Oracle defined backup policies are listed.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3827,14 +3941,14 @@ class BlockstorageClient(object):
     def update_boot_volume_kms_key(self, boot_volume_id, update_boot_volume_kms_key_details, **kwargs):
         """
         UpdateBootVolumeKmsKey
-        Updates the KMS key ID for the specified volume.
+        Updates the specified volume with a new Key Management master encryption key.
 
 
         :param str boot_volume_id: (required)
             The OCID of the boot volume.
 
         :param UpdateBootVolumeKmsKeyDetails update_boot_volume_kms_key_details: (required)
-            Updates the KMS key ID for the specified boot volume.
+            Updates the Key Management master encryption key assigned to the specified boot volume.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -4069,8 +4183,13 @@ class BlockstorageClient(object):
     def update_volume_backup_policy(self, policy_id, update_volume_backup_policy_details, **kwargs):
         """
         UpdateVolumeBackupPolicy
-        Updates a volume backup policy.
-        Avoid entering confidential information.
+        Updates a user defined backup policy.
+         For more information about user defined backup policies,
+         see `Policy-Based Backups`__.
+
+         Avoid entering confidential information.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#UserDefinedBackupPolicies
 
 
         :param str policy_id: (required)
@@ -4336,14 +4455,14 @@ class BlockstorageClient(object):
     def update_volume_kms_key(self, volume_id, update_volume_kms_key_details, **kwargs):
         """
         UpdateVolumeKmsKey
-        Updates the KMS key ID for the specified volume.
+        Updates the specified volume with a new Key Management master encryption key.
 
 
         :param str volume_id: (required)
             The OCID of the volume.
 
         :param UpdateVolumeKmsKeyDetails update_volume_kms_key_details: (required)
-            Update the KMS key ID for the specified volume.
+            Updates the Key Management master encryption key assigned to the specified volume.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`

@@ -16,6 +16,10 @@ class KeyShape(object):
     #: This constant has a value of "AES"
     ALGORITHM_AES = "AES"
 
+    #: A constant which can be used with the algorithm property of a KeyShape.
+    #: This constant has a value of "RSA"
+    ALGORITHM_RSA = "RSA"
+
     def __init__(self, **kwargs):
         """
         Initializes a new KeyShape object with values from keyword arguments.
@@ -23,7 +27,7 @@ class KeyShape(object):
 
         :param algorithm:
             The value to assign to the algorithm property of this KeyShape.
-            Allowed values for this property are: "AES", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AES", "RSA", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type algorithm: str
 
@@ -49,9 +53,9 @@ class KeyShape(object):
     def algorithm(self):
         """
         **[Required]** Gets the algorithm of this KeyShape.
-        The algorithm used by a key's KeyVersions to encrypt or decrypt.
+        The algorithm used by a key's key versions to encrypt or decrypt.
 
-        Allowed values for this property are: "AES", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AES", "RSA", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -64,13 +68,13 @@ class KeyShape(object):
     def algorithm(self, algorithm):
         """
         Sets the algorithm of this KeyShape.
-        The algorithm used by a key's KeyVersions to encrypt or decrypt.
+        The algorithm used by a key's key versions to encrypt or decrypt.
 
 
         :param algorithm: The algorithm of this KeyShape.
         :type: str
         """
-        allowed_values = ["AES"]
+        allowed_values = ["AES", "RSA"]
         if not value_allowed_none_or_none_sentinel(algorithm, allowed_values):
             algorithm = 'UNKNOWN_ENUM_VALUE'
         self._algorithm = algorithm

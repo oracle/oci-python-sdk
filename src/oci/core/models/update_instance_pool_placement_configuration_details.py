@@ -58,6 +58,7 @@ class UpdateInstancePoolPlacementConfigurationDetails(object):
         """
         **[Required]** Gets the availability_domain of this UpdateInstancePoolPlacementConfigurationDetails.
         The availability domain to place instances.
+
         Example: `Uocm:PHX-AD-1`
 
 
@@ -71,6 +72,7 @@ class UpdateInstancePoolPlacementConfigurationDetails(object):
         """
         Sets the availability_domain of this UpdateInstancePoolPlacementConfigurationDetails.
         The availability domain to place instances.
+
         Example: `Uocm:PHX-AD-1`
 
 
@@ -85,6 +87,19 @@ class UpdateInstancePoolPlacementConfigurationDetails(object):
         Gets the fault_domains of this UpdateInstancePoolPlacementConfigurationDetails.
         The fault domains to place instances.
 
+        If you don't provide any values, the system makes a best effort to distribute
+        instances across all fault domains based on capacity.
+
+        To distribute the instances evenly across selected fault domains, provide a
+        set of fault domains. For example, you might want instances to be evenly
+        distributed if your applications require high availability.
+
+        To get a list of fault domains, use the
+        :func:`list_fault_domains` operation
+        in the Identity and Access Management Service API.
+
+        Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
+
 
         :return: The fault_domains of this UpdateInstancePoolPlacementConfigurationDetails.
         :rtype: list[str]
@@ -96,6 +111,19 @@ class UpdateInstancePoolPlacementConfigurationDetails(object):
         """
         Sets the fault_domains of this UpdateInstancePoolPlacementConfigurationDetails.
         The fault domains to place instances.
+
+        If you don't provide any values, the system makes a best effort to distribute
+        instances across all fault domains based on capacity.
+
+        To distribute the instances evenly across selected fault domains, provide a
+        set of fault domains. For example, you might want instances to be evenly
+        distributed if your applications require high availability.
+
+        To get a list of fault domains, use the
+        :func:`list_fault_domains` operation
+        in the Identity and Access Management Service API.
+
+        Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
 
 
         :param fault_domains: The fault_domains of this UpdateInstancePoolPlacementConfigurationDetails.

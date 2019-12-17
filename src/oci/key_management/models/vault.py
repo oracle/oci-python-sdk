@@ -48,6 +48,10 @@ class Vault(object):
     #: This constant has a value of "VIRTUAL_PRIVATE"
     VAULT_TYPE_VIRTUAL_PRIVATE = "VIRTUAL_PRIVATE"
 
+    #: A constant which can be used with the vault_type property of a Vault.
+    #: This constant has a value of "DEFAULT"
+    VAULT_TYPE_DEFAULT = "DEFAULT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Vault object with values from keyword arguments.
@@ -97,9 +101,13 @@ class Vault(object):
 
         :param vault_type:
             The value to assign to the vault_type property of this Vault.
-            Allowed values for this property are: "VIRTUAL_PRIVATE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VIRTUAL_PRIVATE", "DEFAULT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type vault_type: str
+
+        :param wrappingkey_id:
+            The value to assign to the wrappingkey_id property of this Vault.
+        :type wrappingkey_id: str
 
         """
         self.swagger_types = {
@@ -113,7 +121,8 @@ class Vault(object):
             'management_endpoint': 'str',
             'time_created': 'datetime',
             'time_of_deletion': 'datetime',
-            'vault_type': 'str'
+            'vault_type': 'str',
+            'wrappingkey_id': 'str'
         }
 
         self.attribute_map = {
@@ -127,7 +136,8 @@ class Vault(object):
             'management_endpoint': 'managementEndpoint',
             'time_created': 'timeCreated',
             'time_of_deletion': 'timeOfDeletion',
-            'vault_type': 'vaultType'
+            'vault_type': 'vaultType',
+            'wrappingkey_id': 'wrappingkeyId'
         }
 
         self._compartment_id = None
@@ -141,6 +151,7 @@ class Vault(object):
         self._time_created = None
         self._time_of_deletion = None
         self._vault_type = None
+        self._wrappingkey_id = None
 
     @property
     def compartment_id(self):
@@ -170,7 +181,13 @@ class Vault(object):
     def crypto_endpoint(self):
         """
         **[Required]** Gets the crypto_endpoint of this Vault.
-        The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations.
+        The service endpoint to perform cryptographic operations against. Cryptographic operations include
+        `Encrypt`__, `Decrypt`__,
+        and `GenerateDataEncryptionKey`__ operations.
+
+        __ https://docs.cloud.oracle.com/api/#/en/key/release/EncryptedData/Encrypt
+        __ https://docs.cloud.oracle.com/api/#/en/key/release/DecryptedData/Decrypt
+        __ https://docs.cloud.oracle.com/api/#/en/key/release/GeneratedKey/GenerateDataEncryptionKey
 
 
         :return: The crypto_endpoint of this Vault.
@@ -182,7 +199,13 @@ class Vault(object):
     def crypto_endpoint(self, crypto_endpoint):
         """
         Sets the crypto_endpoint of this Vault.
-        The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations.
+        The service endpoint to perform cryptographic operations against. Cryptographic operations include
+        `Encrypt`__, `Decrypt`__,
+        and `GenerateDataEncryptionKey`__ operations.
+
+        __ https://docs.cloud.oracle.com/api/#/en/key/release/EncryptedData/Encrypt
+        __ https://docs.cloud.oracle.com/api/#/en/key/release/DecryptedData/Decrypt
+        __ https://docs.cloud.oracle.com/api/#/en/key/release/GeneratedKey/GenerateDataEncryptionKey
 
 
         :param crypto_endpoint: The crypto_endpoint of this Vault.
@@ -194,8 +217,11 @@ class Vault(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this Vault.
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this Vault.
@@ -207,8 +233,11 @@ class Vault(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this Vault.
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this Vault.
@@ -246,9 +275,11 @@ class Vault(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this Vault.
-        Simple key-value pair that is applied without any predefined name, type, or scope.
-        Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this Vault.
@@ -260,9 +291,11 @@ class Vault(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this Vault.
-        Simple key-value pair that is applied without any predefined name, type, or scope.
-        Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this Vault.
@@ -332,7 +365,7 @@ class Vault(object):
     def management_endpoint(self):
         """
         **[Required]** Gets the management_endpoint of this Vault.
-        The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations.
+        The service endpoint to perform management operations against. Management operations include \"Create,\" \"Update,\" \"List,\" \"Get,\" and \"Delete\" operations.
 
 
         :return: The management_endpoint of this Vault.
@@ -344,7 +377,7 @@ class Vault(object):
     def management_endpoint(self, management_endpoint):
         """
         Sets the management_endpoint of this Vault.
-        The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations.
+        The service endpoint to perform management operations against. Management operations include \"Create,\" \"Update,\" \"List,\" \"Get,\" and \"Delete\" operations.
 
 
         :param management_endpoint: The management_endpoint of this Vault.
@@ -388,7 +421,7 @@ class Vault(object):
     def time_of_deletion(self):
         """
         Gets the time_of_deletion of this Vault.
-        An optional property for the deletion time of the vault, expressed in `RFC 3339`__ timestamp format.
+        An optional property to indicate when to delete the vault, expressed in `RFC 3339`__ timestamp format.
         Example: `2018-04-03T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339
@@ -403,7 +436,7 @@ class Vault(object):
     def time_of_deletion(self, time_of_deletion):
         """
         Sets the time_of_deletion of this Vault.
-        An optional property for the deletion time of the vault, expressed in `RFC 3339`__ timestamp format.
+        An optional property to indicate when to delete the vault, expressed in `RFC 3339`__ timestamp format.
         Example: `2018-04-03T21:10:29.600Z`
 
         __ https://tools.ietf.org/html/rfc3339
@@ -418,9 +451,10 @@ class Vault(object):
     def vault_type(self):
         """
         **[Required]** Gets the vault_type of this Vault.
-        The type of vault. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
+        The type of vault. Each type of vault stores the key with different
+        degrees of isolation and has different options and pricing.
 
-        Allowed values for this property are: "VIRTUAL_PRIVATE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VIRTUAL_PRIVATE", "DEFAULT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -433,16 +467,41 @@ class Vault(object):
     def vault_type(self, vault_type):
         """
         Sets the vault_type of this Vault.
-        The type of vault. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
+        The type of vault. Each type of vault stores the key with different
+        degrees of isolation and has different options and pricing.
 
 
         :param vault_type: The vault_type of this Vault.
         :type: str
         """
-        allowed_values = ["VIRTUAL_PRIVATE"]
+        allowed_values = ["VIRTUAL_PRIVATE", "DEFAULT"]
         if not value_allowed_none_or_none_sentinel(vault_type, allowed_values):
             vault_type = 'UNKNOWN_ENUM_VALUE'
         self._vault_type = vault_type
+
+    @property
+    def wrappingkey_id(self):
+        """
+        **[Required]** Gets the wrappingkey_id of this Vault.
+        The OCID of the vault wrapping key.
+
+
+        :return: The wrappingkey_id of this Vault.
+        :rtype: str
+        """
+        return self._wrappingkey_id
+
+    @wrappingkey_id.setter
+    def wrappingkey_id(self, wrappingkey_id):
+        """
+        Sets the wrappingkey_id of this Vault.
+        The OCID of the vault wrapping key.
+
+
+        :param wrappingkey_id: The wrappingkey_id of this Vault.
+        :type: str
+        """
+        self._wrappingkey_id = wrappingkey_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

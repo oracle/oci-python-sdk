@@ -5,6 +5,9 @@ API Reference
 
 * :doc:`Analytics <analytics/client/oci.analytics.AnalyticsClient>`
 * :doc:`Announcement <announcements_service/client/oci.announcements_service.AnnouncementClient>`
+* :doc:`Deployment <apigateway/client/oci.apigateway.DeploymentClient>`
+* :doc:`Gateway <apigateway/client/oci.apigateway.GatewayClient>`
+* :doc:`Work Requests <apigateway/client/oci.apigateway.WorkRequestsClient>`
 * :doc:`Audit <audit/client/oci.audit.AuditClient>`
 * :doc:`Auto Scaling <autoscaling/client/oci.autoscaling.AutoScalingClient>`
 * :doc:`Budget <budget/client/oci.budget.BudgetClient>`
@@ -35,12 +38,14 @@ API Reference
 * :doc:`Limits <limits/client/oci.limits.LimitsClient>`
 * :doc:`Quotas <limits/client/oci.limits.QuotasClient>`
 * :doc:`Load Balancer <load_balancer/client/oci.load_balancer.LoadBalancerClient>`
+* :doc:`Marketplace <marketplace/client/oci.marketplace.MarketplaceClient>`
 * :doc:`Monitoring <monitoring/client/oci.monitoring.MonitoringClient>`
 * :doc:`Object Storage <object_storage/client/oci.object_storage.ObjectStorageClient>`
 * :doc:`Oce Instance <oce/client/oci.oce.OceInstanceClient>`
 * :doc:`Oda <oda/client/oci.oda.OdaClient>`
 * :doc:`Notification Control Plane <ons/client/oci.ons.NotificationControlPlaneClient>`
 * :doc:`Notification Data Plane <ons/client/oci.ons.NotificationDataPlaneClient>`
+* :doc:`Os Management <os_management/client/oci.os_management.OsManagementClient>`
 * :doc:`Resource Manager <resource_manager/client/oci.resource_manager.ResourceManagerClient>`
 * :doc:`Resource Search <resource_search/client/oci.resource_search.ResourceSearchClient>`
 * :doc:`Stream Admin <streaming/client/oci.streaming.StreamAdminClient>`
@@ -68,6 +73,7 @@ API Reference
 
     analytics
     announcements_service
+    apigateway
     audit
     autoscaling
     budget
@@ -86,11 +92,13 @@ API Reference
     key_management
     limits
     load_balancer
+    marketplace
     monitoring
     object_storage
     oce
     oda
     ons
+    os_management
     resource_manager
     resource_search
     streaming

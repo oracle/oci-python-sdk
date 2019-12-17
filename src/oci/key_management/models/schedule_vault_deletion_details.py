@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ScheduleVaultDeletionDetails(object):
     """
-    Details for scheduling vault deletion
+    Details for scheduling vault deletion.
     """
 
     def __init__(self, **kwargs):
@@ -36,9 +36,11 @@ class ScheduleVaultDeletionDetails(object):
     def time_of_deletion(self):
         """
         Gets the time_of_deletion of this ScheduleVaultDeletionDetails.
-        An optional property to indicate the deletion time of the vault, expressed in `RFC 3339`__
-        timestamp format. The specified time must be between 7 and 30 days from the time
-        when the request is received. If this property is missing, it will be set to 30 days from the time of the request by default.
+        An optional property to indicate when to delete the vault, expressed in
+        `RFC 3339`__ timestamp format. The specified
+        time must be between 7 and 30 days from the time when the request is received.
+        If this property is missing, it will be set to 30 days from the time of the request
+        by default.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -52,9 +54,11 @@ class ScheduleVaultDeletionDetails(object):
     def time_of_deletion(self, time_of_deletion):
         """
         Sets the time_of_deletion of this ScheduleVaultDeletionDetails.
-        An optional property to indicate the deletion time of the vault, expressed in `RFC 3339`__
-        timestamp format. The specified time must be between 7 and 30 days from the time
-        when the request is received. If this property is missing, it will be set to 30 days from the time of the request by default.
+        An optional property to indicate when to delete the vault, expressed in
+        `RFC 3339`__ timestamp format. The specified
+        time must be between 7 and 30 days from the time when the request is received.
+        If this property is missing, it will be set to 30 days from the time of the request
+        by default.
 
         __ https://tools.ietf.org/html/rfc3339
 

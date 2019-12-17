@@ -9,7 +9,13 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateVolumeBackupPolicyDetails(object):
     """
-    Contains properties for a scheduled backup policy.
+    Specifies the properties for creating user defined backup policy.
+    For more information about user defined backup policies,
+    see `User Defined Policies`__ in
+    `Policy-Based Backups`__.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#UserDefinedBackupPolicies
+    __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm
     """
 
     def __init__(self, **kwargs):
@@ -64,7 +70,7 @@ class CreateVolumeBackupPolicyDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateVolumeBackupPolicyDetails.
-        The OCID of the compartment that contains the backup policy.
+        The OCID of the compartment.
 
 
         :return: The compartment_id of this CreateVolumeBackupPolicyDetails.
@@ -76,7 +82,7 @@ class CreateVolumeBackupPolicyDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateVolumeBackupPolicyDetails.
-        The OCID of the compartment that contains the backup policy.
+        The OCID of the compartment.
 
 
         :param compartment_id: The compartment_id of this CreateVolumeBackupPolicyDetails.
@@ -114,7 +120,12 @@ class CreateVolumeBackupPolicyDetails(object):
     def schedules(self):
         """
         Gets the schedules of this CreateVolumeBackupPolicyDetails.
-        The collection of schedules that this policy will apply.
+        The collection of schedules for the volume backup policy. See
+        see `Schedules`__ in
+        `Policy-Based Backups`__ for more information.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#schedules
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm
 
 
         :return: The schedules of this CreateVolumeBackupPolicyDetails.
@@ -126,7 +137,12 @@ class CreateVolumeBackupPolicyDetails(object):
     def schedules(self, schedules):
         """
         Sets the schedules of this CreateVolumeBackupPolicyDetails.
-        The collection of schedules that this policy will apply.
+        The collection of schedules for the volume backup policy. See
+        see `Schedules`__ in
+        `Policy-Based Backups`__ for more information.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#schedules
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm
 
 
         :param schedules: The schedules of this CreateVolumeBackupPolicyDetails.

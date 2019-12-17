@@ -9,7 +9,10 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VolumeBackupSchedule(object):
     """
-    Defines a chronological recurrence pattern for creating scheduled backups at a particular periodicity.
+    Defines the backup frequency and retention period for a volume backup policy. For more information,
+    see `Policy-Based Backups`__.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm
     """
 
     #: A constant which can be used with the backup_type property of a VolumeBackupSchedule.
@@ -231,7 +234,7 @@ class VolumeBackupSchedule(object):
     def backup_type(self):
         """
         **[Required]** Gets the backup_type of this VolumeBackupSchedule.
-        The type of backup to create.
+        The type of volume backup to create.
 
         Allowed values for this property are: "FULL", "INCREMENTAL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -246,7 +249,7 @@ class VolumeBackupSchedule(object):
     def backup_type(self, backup_type):
         """
         Sets the backup_type of this VolumeBackupSchedule.
-        The type of backup to create.
+        The type of volume backup to create.
 
 
         :param backup_type: The backup_type of this VolumeBackupSchedule.
@@ -261,7 +264,7 @@ class VolumeBackupSchedule(object):
     def offset_seconds(self):
         """
         Gets the offset_seconds of this VolumeBackupSchedule.
-        The number of seconds that the backup time should be shifted from the default interval boundaries specified by the period. Backup time = Frequency start time + Offset.
+        The number of seconds that the volume backup start time should be shifted from the default interval boundaries specified by the period. The volume backup start time is the frequency start time plus the offset.
 
 
         :return: The offset_seconds of this VolumeBackupSchedule.
@@ -273,7 +276,7 @@ class VolumeBackupSchedule(object):
     def offset_seconds(self, offset_seconds):
         """
         Sets the offset_seconds of this VolumeBackupSchedule.
-        The number of seconds that the backup time should be shifted from the default interval boundaries specified by the period. Backup time = Frequency start time + Offset.
+        The number of seconds that the volume backup start time should be shifted from the default interval boundaries specified by the period. The volume backup start time is the frequency start time plus the offset.
 
 
         :param offset_seconds: The offset_seconds of this VolumeBackupSchedule.
@@ -285,7 +288,7 @@ class VolumeBackupSchedule(object):
     def period(self):
         """
         **[Required]** Gets the period of this VolumeBackupSchedule.
-        How often the backup should occur.
+        The volume backup frequency.
 
         Allowed values for this property are: "ONE_HOUR", "ONE_DAY", "ONE_WEEK", "ONE_MONTH", "ONE_YEAR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -300,7 +303,7 @@ class VolumeBackupSchedule(object):
     def period(self, period):
         """
         Sets the period of this VolumeBackupSchedule.
-        How often the backup should occur.
+        The volume backup frequency.
 
 
         :param period: The period of this VolumeBackupSchedule.
@@ -315,7 +318,21 @@ class VolumeBackupSchedule(object):
     def offset_type(self):
         """
         Gets the offset_type of this VolumeBackupSchedule.
-        Indicates how offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the respones. `hourOfDay` is applicable for periods `ONE_DAY`, `ONE_WEEK`, `ONE_MONTH` and `ONE_YEAR`. `dayOfWeek` is applicable for period `ONE_WEEK`. `dayOfMonth` is applicable for periods `ONE_MONTH` and `ONE_YEAR`. 'month' is applicable for period 'ONE_YEAR'. They will be ignored in the requests for inapplicable periods. If value is `NUMERIC_SECONDS`, then `offsetSeconds` will be used for both requests and responses and the structured fields will be ignored in the requests and users should ignore their values from the respones. For clients using older versions of Apis and not sending `offsetType` in their requests, the behaviour is just like `NUMERIC_SECONDS`.
+        Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
+
+        `hourOfDay` is applicable for periods `ONE_DAY`, `ONE_WEEK`, `ONE_MONTH` and `ONE_YEAR`.
+
+        `dayOfWeek` is applicable for period `ONE_WEEK`.
+
+        `dayOfMonth` is applicable for periods `ONE_MONTH` and `ONE_YEAR`.
+
+        'month' is applicable for period 'ONE_YEAR'.
+
+        They will be ignored in the requests for inapplicable periods.
+
+        If value is `NUMERIC_SECONDS`, then `offsetSeconds` will be used for both requests and responses and the structured fields will be ignored in the requests and users should ignore their values from the responses.
+
+        For clients using older versions of Apis and not sending `offsetType` in their requests, the behaviour is just like `NUMERIC_SECONDS`.
 
         Allowed values for this property are: "STRUCTURED", "NUMERIC_SECONDS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -330,7 +347,21 @@ class VolumeBackupSchedule(object):
     def offset_type(self, offset_type):
         """
         Sets the offset_type of this VolumeBackupSchedule.
-        Indicates how offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the respones. `hourOfDay` is applicable for periods `ONE_DAY`, `ONE_WEEK`, `ONE_MONTH` and `ONE_YEAR`. `dayOfWeek` is applicable for period `ONE_WEEK`. `dayOfMonth` is applicable for periods `ONE_MONTH` and `ONE_YEAR`. 'month' is applicable for period 'ONE_YEAR'. They will be ignored in the requests for inapplicable periods. If value is `NUMERIC_SECONDS`, then `offsetSeconds` will be used for both requests and responses and the structured fields will be ignored in the requests and users should ignore their values from the respones. For clients using older versions of Apis and not sending `offsetType` in their requests, the behaviour is just like `NUMERIC_SECONDS`.
+        Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
+
+        `hourOfDay` is applicable for periods `ONE_DAY`, `ONE_WEEK`, `ONE_MONTH` and `ONE_YEAR`.
+
+        `dayOfWeek` is applicable for period `ONE_WEEK`.
+
+        `dayOfMonth` is applicable for periods `ONE_MONTH` and `ONE_YEAR`.
+
+        'month' is applicable for period 'ONE_YEAR'.
+
+        They will be ignored in the requests for inapplicable periods.
+
+        If value is `NUMERIC_SECONDS`, then `offsetSeconds` will be used for both requests and responses and the structured fields will be ignored in the requests and users should ignore their values from the responses.
+
+        For clients using older versions of Apis and not sending `offsetType` in their requests, the behaviour is just like `NUMERIC_SECONDS`.
 
 
         :param offset_type: The offset_type of this VolumeBackupSchedule.
@@ -345,7 +376,7 @@ class VolumeBackupSchedule(object):
     def hour_of_day(self):
         """
         Gets the hour_of_day of this VolumeBackupSchedule.
-        The hour of the day to schedule the backup
+        The hour of the day to schedule the volume backup.
 
 
         :return: The hour_of_day of this VolumeBackupSchedule.
@@ -357,7 +388,7 @@ class VolumeBackupSchedule(object):
     def hour_of_day(self, hour_of_day):
         """
         Sets the hour_of_day of this VolumeBackupSchedule.
-        The hour of the day to schedule the backup
+        The hour of the day to schedule the volume backup.
 
 
         :param hour_of_day: The hour_of_day of this VolumeBackupSchedule.
@@ -369,7 +400,7 @@ class VolumeBackupSchedule(object):
     def day_of_week(self):
         """
         Gets the day_of_week of this VolumeBackupSchedule.
-        The day of the week to schedule the backup
+        The day of the week to schedule the volume backup.
 
         Allowed values for this property are: "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY", "SUNDAY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -384,7 +415,7 @@ class VolumeBackupSchedule(object):
     def day_of_week(self, day_of_week):
         """
         Sets the day_of_week of this VolumeBackupSchedule.
-        The day of the week to schedule the backup
+        The day of the week to schedule the volume backup.
 
 
         :param day_of_week: The day_of_week of this VolumeBackupSchedule.
@@ -399,7 +430,7 @@ class VolumeBackupSchedule(object):
     def day_of_month(self):
         """
         Gets the day_of_month of this VolumeBackupSchedule.
-        The day of the month to schedule the backup
+        The day of the month to schedule the volume backup.
 
 
         :return: The day_of_month of this VolumeBackupSchedule.
@@ -411,7 +442,7 @@ class VolumeBackupSchedule(object):
     def day_of_month(self, day_of_month):
         """
         Sets the day_of_month of this VolumeBackupSchedule.
-        The day of the month to schedule the backup
+        The day of the month to schedule the volume backup.
 
 
         :param day_of_month: The day_of_month of this VolumeBackupSchedule.
@@ -423,7 +454,7 @@ class VolumeBackupSchedule(object):
     def month(self):
         """
         Gets the month of this VolumeBackupSchedule.
-        The month of the year to schedule the backup
+        The month of the year to schedule the volume backup.
 
         Allowed values for this property are: "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -438,7 +469,7 @@ class VolumeBackupSchedule(object):
     def month(self, month):
         """
         Sets the month of this VolumeBackupSchedule.
-        The month of the year to schedule the backup
+        The month of the year to schedule the volume backup.
 
 
         :param month: The month of this VolumeBackupSchedule.
@@ -453,7 +484,7 @@ class VolumeBackupSchedule(object):
     def retention_seconds(self):
         """
         **[Required]** Gets the retention_seconds of this VolumeBackupSchedule.
-        How long, in seconds, backups created by this schedule should be kept until being automatically deleted.
+        How long, in seconds, to keep the volume backups created by this schedule.
 
 
         :return: The retention_seconds of this VolumeBackupSchedule.
@@ -465,7 +496,7 @@ class VolumeBackupSchedule(object):
     def retention_seconds(self, retention_seconds):
         """
         Sets the retention_seconds of this VolumeBackupSchedule.
-        How long, in seconds, backups created by this schedule should be kept until being automatically deleted.
+        How long, in seconds, to keep the volume backups created by this schedule.
 
 
         :param retention_seconds: The retention_seconds of this VolumeBackupSchedule.

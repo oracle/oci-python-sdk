@@ -101,16 +101,13 @@ class OceInstanceClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
-    def delete_oce_instance_and_wait_for_state(self, oce_instance_id, delete_oce_instance_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+    def delete_oce_instance_and_wait_for_state(self, oce_instance_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.oce.OceInstanceClient.delete_oce_instance` and waits for the :py:class:`~oci.oce.models.WorkRequest`
         to enter the given state(s).
 
         :param str oce_instance_id: (required)
             unique OceInstance identifier
-
-        :param DeleteOceInstanceDetails delete_oce_instance_details: (required)
-            The information about resource to be deleted.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.oce.models.WorkRequest.status`
@@ -124,7 +121,7 @@ class OceInstanceClientCompositeOperations(object):
         """
         operation_result = None
         try:
-            operation_result = self.client.delete_oce_instance(oce_instance_id, delete_oce_instance_details, **operation_kwargs)
+            operation_result = self.client.delete_oce_instance(oce_instance_id, **operation_kwargs)
         except oci.exceptions.ServiceError as e:
             if e.status == 404:
                 return WAIT_RESOURCE_NOT_FOUND

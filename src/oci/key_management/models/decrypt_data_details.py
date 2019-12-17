@@ -57,9 +57,8 @@ class DecryptDataDetails(object):
     def associated_data(self):
         """
         Gets the associated_data of this DecryptDataDetails.
-        Information that can be used to provide an encryption context for the
-        encrypted data. The length of the string representation of the associatedData
-        must be fewer than 4096 characters.
+        Information that can be used to provide an encryption context for the encrypted data.
+        The length of the string representation of the associated data must be fewer than 4096 characters.
 
 
         :return: The associated_data of this DecryptDataDetails.
@@ -71,9 +70,8 @@ class DecryptDataDetails(object):
     def associated_data(self, associated_data):
         """
         Sets the associated_data of this DecryptDataDetails.
-        Information that can be used to provide an encryption context for the
-        encrypted data. The length of the string representation of the associatedData
-        must be fewer than 4096 characters.
+        Information that can be used to provide an encryption context for the encrypted data.
+        The length of the string representation of the associated data must be fewer than 4096 characters.
 
 
         :param associated_data: The associated_data of this DecryptDataDetails.
@@ -133,8 +131,8 @@ class DecryptDataDetails(object):
     def logging_context(self):
         """
         Gets the logging_context of this DecryptDataDetails.
-        Information that can be used to provide context for audit logging. It is a map that contains any addtional
-        data the users may have and will be added to the audit logs (if audit logging is enabled)
+        Information that provides context for audit logging. You can provide this additional
+        data as key-value pairs to include in audit logs when audit logging is enabled.
 
 
         :return: The logging_context of this DecryptDataDetails.
@@ -146,8 +144,8 @@ class DecryptDataDetails(object):
     def logging_context(self, logging_context):
         """
         Sets the logging_context of this DecryptDataDetails.
-        Information that can be used to provide context for audit logging. It is a map that contains any addtional
-        data the users may have and will be added to the audit logs (if audit logging is enabled)
+        Information that provides context for audit logging. You can provide this additional
+        data as key-value pairs to include in audit logs when audit logging is enabled.
 
 
         :param logging_context: The logging_context of this DecryptDataDetails.

@@ -248,7 +248,7 @@ class OceInstanceClient(object):
                 header_params=header_params,
                 body=create_oce_instance_details)
 
-    def delete_oce_instance(self, oce_instance_id, delete_oce_instance_details, **kwargs):
+    def delete_oce_instance(self, oce_instance_id, **kwargs):
         """
         Delete a provisioned OceInstance
         Deletes a OceInstance resource by identifier
@@ -256,9 +256,6 @@ class OceInstanceClient(object):
 
         :param str oce_instance_id: (required)
             unique OceInstance identifier
-
-        :param DeleteOceInstanceDetails delete_oce_instance_details: (required)
-            The information about resource to be deleted.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -323,15 +320,13 @@ class OceInstanceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params,
-                body=delete_oce_instance_details)
+                header_params=header_params)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params,
-                body=delete_oce_instance_details)
+                header_params=header_params)
 
     def get_oce_instance(self, oce_instance_id, **kwargs):
         """

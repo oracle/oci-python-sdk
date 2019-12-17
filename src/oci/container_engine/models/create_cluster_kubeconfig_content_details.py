@@ -43,7 +43,7 @@ class CreateClusterKubeconfigContentDetails(object):
     def token_version(self):
         """
         Gets the token_version of this CreateClusterKubeconfigContentDetails.
-        The version of the kubeconfig token. Supported values 1.0.0 and 2.0.0
+        The version of the kubeconfig token. Supported value 2.0.0
 
 
         :return: The token_version of this CreateClusterKubeconfigContentDetails.
@@ -55,7 +55,7 @@ class CreateClusterKubeconfigContentDetails(object):
     def token_version(self, token_version):
         """
         Sets the token_version of this CreateClusterKubeconfigContentDetails.
-        The version of the kubeconfig token. Supported values 1.0.0 and 2.0.0
+        The version of the kubeconfig token. Supported value 2.0.0
 
 
         :param token_version: The token_version of this CreateClusterKubeconfigContentDetails.
@@ -67,8 +67,7 @@ class CreateClusterKubeconfigContentDetails(object):
     def expiration(self):
         """
         Gets the expiration of this CreateClusterKubeconfigContentDetails.
-        The desired expiration, in seconds, to use for the kubeconfig token.
-        Important Note, expiration field is only honored for token version 1.0.0
+        Deprecated. This field is no longer used.
 
 
         :return: The expiration of this CreateClusterKubeconfigContentDetails.
@@ -80,8 +79,7 @@ class CreateClusterKubeconfigContentDetails(object):
     def expiration(self, expiration):
         """
         Sets the expiration of this CreateClusterKubeconfigContentDetails.
-        The desired expiration, in seconds, to use for the kubeconfig token.
-        Important Note, expiration field is only honored for token version 1.0.0
+        Deprecated. This field is no longer used.
 
 
         :param expiration: The expiration of this CreateClusterKubeconfigContentDetails.

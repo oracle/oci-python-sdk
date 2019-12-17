@@ -182,7 +182,17 @@ class UpdateBootVolumeDetails(object):
     def vpus_per_gb(self):
         """
         Gets the vpus_per_gb of this UpdateBootVolumeDetails.
-        The number of Volume Performance Units that will be applied to this boot volume per GB.
+        The number of volume performance units (VPUs) that will be applied to this volume per GB,
+        representing the Block Volume service's elastic performance options.
+        See `Block Volume Elastic Performance`__ for more information.
+
+        Allowed values:
+
+          * `10`: Represents Balanced option.
+
+          * `20`: Represents Higher Performance option.
+
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeelasticperformance.htm
 
 
         :return: The vpus_per_gb of this UpdateBootVolumeDetails.
@@ -194,7 +204,17 @@ class UpdateBootVolumeDetails(object):
     def vpus_per_gb(self, vpus_per_gb):
         """
         Sets the vpus_per_gb of this UpdateBootVolumeDetails.
-        The number of Volume Performance Units that will be applied to this boot volume per GB.
+        The number of volume performance units (VPUs) that will be applied to this volume per GB,
+        representing the Block Volume service's elastic performance options.
+        See `Block Volume Elastic Performance`__ for more information.
+
+        Allowed values:
+
+          * `10`: Represents Balanced option.
+
+          * `20`: Represents Higher Performance option.
+
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeelasticperformance.htm
 
 
         :param vpus_per_gb: The vpus_per_gb of this UpdateBootVolumeDetails.
