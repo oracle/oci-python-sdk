@@ -41,6 +41,10 @@ class UpdateInstanceDetails(object):
             The value to assign to the extended_metadata property of this UpdateInstanceDetails.
         :type extended_metadata: dict(str, object)
 
+        :param shape:
+            The value to assign to the shape property of this UpdateInstanceDetails.
+        :type shape: str
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
@@ -48,7 +52,8 @@ class UpdateInstanceDetails(object):
             'freeform_tags': 'dict(str, str)',
             'agent_config': 'UpdateInstanceAgentConfigDetails',
             'metadata': 'dict(str, str)',
-            'extended_metadata': 'dict(str, object)'
+            'extended_metadata': 'dict(str, object)',
+            'shape': 'str'
         }
 
         self.attribute_map = {
@@ -57,7 +62,8 @@ class UpdateInstanceDetails(object):
             'freeform_tags': 'freeformTags',
             'agent_config': 'agentConfig',
             'metadata': 'metadata',
-            'extended_metadata': 'extendedMetadata'
+            'extended_metadata': 'extendedMetadata',
+            'shape': 'shape'
         }
 
         self._defined_tags = None
@@ -66,6 +72,7 @@ class UpdateInstanceDetails(object):
         self._agent_config = None
         self._metadata = None
         self._extended_metadata = None
+        self._shape = None
 
     @property
     def defined_tags(self):
@@ -268,6 +275,38 @@ class UpdateInstanceDetails(object):
         :type: dict(str, object)
         """
         self._extended_metadata = extended_metadata
+
+    @property
+    def shape(self):
+        """
+        Gets the shape of this UpdateInstanceDetails.
+        The shape of the instance. The shape determines the number of CPUs and the amount of memory
+        allocated to the instance. You can enumerate all available shapes by calling
+        :func:`list_shapes`.
+
+        Example: `VM.Standard1.1`
+
+
+        :return: The shape of this UpdateInstanceDetails.
+        :rtype: str
+        """
+        return self._shape
+
+    @shape.setter
+    def shape(self, shape):
+        """
+        Sets the shape of this UpdateInstanceDetails.
+        The shape of the instance. The shape determines the number of CPUs and the amount of memory
+        allocated to the instance. You can enumerate all available shapes by calling
+        :func:`list_shapes`.
+
+        Example: `VM.Standard1.1`
+
+
+        :param shape: The shape of this UpdateInstanceDetails.
+        :type: str
+        """
+        self._shape = shape
 
     def __repr__(self):
         return formatted_flat_dict(self)

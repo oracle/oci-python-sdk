@@ -96,7 +96,9 @@ class InstancePoolLoadBalancerAttachment(object):
     def id(self):
         """
         **[Required]** Gets the id of this InstancePoolLoadBalancerAttachment.
-        The OCID of the load balancer attachment.
+        The `OCID`__ of the load balancer attachment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this InstancePoolLoadBalancerAttachment.
@@ -108,7 +110,9 @@ class InstancePoolLoadBalancerAttachment(object):
     def id(self, id):
         """
         Sets the id of this InstancePoolLoadBalancerAttachment.
-        The OCID of the load balancer attachment.
+        The `OCID`__ of the load balancer attachment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this InstancePoolLoadBalancerAttachment.
@@ -120,7 +124,9 @@ class InstancePoolLoadBalancerAttachment(object):
     def instance_pool_id(self):
         """
         **[Required]** Gets the instance_pool_id of this InstancePoolLoadBalancerAttachment.
-        The OCID of the instance pool of the load balancer attachment.
+        The `OCID`__ of the instance pool of the load balancer attachment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The instance_pool_id of this InstancePoolLoadBalancerAttachment.
@@ -132,7 +138,9 @@ class InstancePoolLoadBalancerAttachment(object):
     def instance_pool_id(self, instance_pool_id):
         """
         Sets the instance_pool_id of this InstancePoolLoadBalancerAttachment.
-        The OCID of the instance pool of the load balancer attachment.
+        The `OCID`__ of the instance pool of the load balancer attachment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param instance_pool_id: The instance_pool_id of this InstancePoolLoadBalancerAttachment.
@@ -144,7 +152,9 @@ class InstancePoolLoadBalancerAttachment(object):
     def load_balancer_id(self):
         """
         **[Required]** Gets the load_balancer_id of this InstancePoolLoadBalancerAttachment.
-        The OCID of the load balancer attached to the instance pool.
+        The `OCID`__ of the load balancer attached to the instance pool.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The load_balancer_id of this InstancePoolLoadBalancerAttachment.
@@ -156,7 +166,9 @@ class InstancePoolLoadBalancerAttachment(object):
     def load_balancer_id(self, load_balancer_id):
         """
         Sets the load_balancer_id of this InstancePoolLoadBalancerAttachment.
-        The OCID of the load balancer attached to the instance pool.
+        The `OCID`__ of the load balancer attached to the instance pool.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param load_balancer_id: The load_balancer_id of this InstancePoolLoadBalancerAttachment.

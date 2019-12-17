@@ -9,7 +9,13 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateVolumeBackupPolicyDetails(object):
     """
-    Contains properties for updating a scheduled backup policy.
+    Specifies the properties for a updating a user defined backup policy.
+    For more information about user defined backup policies,
+    see `User Defined Policies`__ in
+    `Policy-Based Backups`__.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#UserDefinedBackupPolicies
+    __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm
     """
 
     def __init__(self, **kwargs):
@@ -83,7 +89,12 @@ class UpdateVolumeBackupPolicyDetails(object):
     def schedules(self):
         """
         Gets the schedules of this UpdateVolumeBackupPolicyDetails.
-        The collection of schedules that this policy will apply.
+        The collection of schedules for the volume backup policy. See
+        see `Schedules`__ in
+        `Policy-Based Backups`__ for more information.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#schedules
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm
 
 
         :return: The schedules of this UpdateVolumeBackupPolicyDetails.
@@ -95,7 +106,12 @@ class UpdateVolumeBackupPolicyDetails(object):
     def schedules(self, schedules):
         """
         Sets the schedules of this UpdateVolumeBackupPolicyDetails.
-        The collection of schedules that this policy will apply.
+        The collection of schedules for the volume backup policy. See
+        see `Schedules`__ in
+        `Policy-Based Backups`__ for more information.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#schedules
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm
 
 
         :param schedules: The schedules of this UpdateVolumeBackupPolicyDetails.

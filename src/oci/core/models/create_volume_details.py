@@ -285,7 +285,8 @@ class CreateVolumeDetails(object):
     def kms_key_id(self):
         """
         Gets the kms_key_id of this CreateVolumeDetails.
-        The OCID of the KMS key to be used as the master encryption key for the volume.
+        The OCID of the Key Management key to assign as the master encryption key
+        for the volume.
 
 
         :return: The kms_key_id of this CreateVolumeDetails.
@@ -297,7 +298,8 @@ class CreateVolumeDetails(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this CreateVolumeDetails.
-        The OCID of the KMS key to be used as the master encryption key for the volume.
+        The OCID of the Key Management key to assign as the master encryption key
+        for the volume.
 
 
         :param kms_key_id: The kms_key_id of this CreateVolumeDetails.
@@ -309,7 +311,19 @@ class CreateVolumeDetails(object):
     def vpus_per_gb(self):
         """
         Gets the vpus_per_gb of this CreateVolumeDetails.
-        The number of Volume Performance Units that will be applied to this volume per GB.
+        The number of volume performance units (VPUs) that will be applied to this volume per GB,
+        representing the Block Volume service's elastic performance options.
+        See `Block Volume Elastic Performance`__ for more information.
+
+        Allowed values:
+
+          * `0`: Represents Lower Cost option.
+
+          * `10`: Represents Balanced option.
+
+          * `20`: Represents Higher Performance option.
+
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeelasticperformance.htm
 
 
         :return: The vpus_per_gb of this CreateVolumeDetails.
@@ -321,7 +335,19 @@ class CreateVolumeDetails(object):
     def vpus_per_gb(self, vpus_per_gb):
         """
         Sets the vpus_per_gb of this CreateVolumeDetails.
-        The number of Volume Performance Units that will be applied to this volume per GB.
+        The number of volume performance units (VPUs) that will be applied to this volume per GB,
+        representing the Block Volume service's elastic performance options.
+        See `Block Volume Elastic Performance`__ for more information.
+
+        Allowed values:
+
+          * `0`: Represents Lower Cost option.
+
+          * `10`: Represents Balanced option.
+
+          * `20`: Represents Higher Performance option.
+
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeelasticperformance.htm
 
 
         :param vpus_per_gb: The vpus_per_gb of this CreateVolumeDetails.

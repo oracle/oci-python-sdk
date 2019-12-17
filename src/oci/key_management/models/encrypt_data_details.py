@@ -58,7 +58,7 @@ class EncryptDataDetails(object):
         """
         Gets the associated_data of this EncryptDataDetails.
         Information that can be used to provide an encryption context for the
-        encrypted data. The length of the string representation of the associatedData
+        encrypted data. The length of the string representation of the associated data
         must be fewer than 4096 characters.
 
 
@@ -72,7 +72,7 @@ class EncryptDataDetails(object):
         """
         Sets the associated_data of this EncryptDataDetails.
         Information that can be used to provide an encryption context for the
-        encrypted data. The length of the string representation of the associatedData
+        encrypted data. The length of the string representation of the associated data
         must be fewer than 4096 characters.
 
 
@@ -109,8 +109,8 @@ class EncryptDataDetails(object):
     def logging_context(self):
         """
         Gets the logging_context of this EncryptDataDetails.
-        Information that can be used to provide context for audit logging. It is a map that contains any addtional
-        data the users may have and will be added to the audit logs (if audit logging is enabled)
+        Information that provides context for audit logging. You can provide this additional
+        data as key-value pairs to include in the audit logs when audit logging is enabled.
 
 
         :return: The logging_context of this EncryptDataDetails.
@@ -122,8 +122,8 @@ class EncryptDataDetails(object):
     def logging_context(self, logging_context):
         """
         Sets the logging_context of this EncryptDataDetails.
-        Information that can be used to provide context for audit logging. It is a map that contains any addtional
-        data the users may have and will be added to the audit logs (if audit logging is enabled)
+        Information that provides context for audit logging. You can provide this additional
+        data as key-value pairs to include in the audit logs when audit logging is enabled.
 
 
         :param logging_context: The logging_context of this EncryptDataDetails.

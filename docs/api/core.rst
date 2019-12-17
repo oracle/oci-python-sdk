@@ -90,6 +90,7 @@ Core Services
     oci.core.models.ConnectLocalPeeringGatewaysDetails
     oci.core.models.ConnectRemotePeeringConnectionsDetails
     oci.core.models.ConsoleHistory
+    oci.core.models.CopyBootVolumeBackupDetails
     oci.core.models.CopyVolumeBackupDetails
     oci.core.models.Cpe
     oci.core.models.CreateAppCatalogSubscriptionDetails

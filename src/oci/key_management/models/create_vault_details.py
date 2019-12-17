@@ -16,6 +16,10 @@ class CreateVaultDetails(object):
     #: This constant has a value of "VIRTUAL_PRIVATE"
     VAULT_TYPE_VIRTUAL_PRIVATE = "VIRTUAL_PRIVATE"
 
+    #: A constant which can be used with the vault_type property of a CreateVaultDetails.
+    #: This constant has a value of "DEFAULT"
+    VAULT_TYPE_DEFAULT = "DEFAULT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateVaultDetails object with values from keyword arguments.
@@ -39,7 +43,7 @@ class CreateVaultDetails(object):
 
         :param vault_type:
             The value to assign to the vault_type property of this CreateVaultDetails.
-            Allowed values for this property are: "VIRTUAL_PRIVATE"
+            Allowed values for this property are: "VIRTUAL_PRIVATE", "DEFAULT"
         :type vault_type: str
 
         """
@@ -93,8 +97,11 @@ class CreateVaultDetails(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this CreateVaultDetails.
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this CreateVaultDetails.
@@ -106,8 +113,11 @@ class CreateVaultDetails(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this CreateVaultDetails.
-        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"foo-value\"}}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this CreateVaultDetails.
@@ -145,9 +155,11 @@ class CreateVaultDetails(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this CreateVaultDetails.
-        Simple key-value pair that is applied without any predefined name, type, or scope.
-        Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this CreateVaultDetails.
@@ -159,9 +171,11 @@ class CreateVaultDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this CreateVaultDetails.
-        Simple key-value pair that is applied without any predefined name, type, or scope.
-        Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this CreateVaultDetails.
@@ -175,7 +189,7 @@ class CreateVaultDetails(object):
         **[Required]** Gets the vault_type of this CreateVaultDetails.
         The type of vault to create. Each type of vault stores the key with different degrees of isolation and has different options and pricing.
 
-        Allowed values for this property are: "VIRTUAL_PRIVATE"
+        Allowed values for this property are: "VIRTUAL_PRIVATE", "DEFAULT"
 
 
         :return: The vault_type of this CreateVaultDetails.
@@ -193,7 +207,7 @@ class CreateVaultDetails(object):
         :param vault_type: The vault_type of this CreateVaultDetails.
         :type: str
         """
-        allowed_values = ["VIRTUAL_PRIVATE"]
+        allowed_values = ["VIRTUAL_PRIVATE", "DEFAULT"]
         if not value_allowed_none_or_none_sentinel(vault_type, allowed_values):
             raise ValueError(
                 "Invalid value for `vault_type`, must be None or one of {0}"

@@ -45,6 +45,10 @@ class NodePoolSummary(object):
             The value to assign to the node_image_name property of this NodePoolSummary.
         :type node_image_name: str
 
+        :param node_source:
+            The value to assign to the node_source property of this NodePoolSummary.
+        :type node_source: NodeSourceOption
+
         :param node_shape:
             The value to assign to the node_shape property of this NodePoolSummary.
         :type node_shape: str
@@ -78,6 +82,7 @@ class NodePoolSummary(object):
             'kubernetes_version': 'str',
             'node_image_id': 'str',
             'node_image_name': 'str',
+            'node_source': 'NodeSourceOption',
             'node_shape': 'str',
             'initial_node_labels': 'list[KeyValue]',
             'ssh_public_key': 'str',
@@ -94,6 +99,7 @@ class NodePoolSummary(object):
             'kubernetes_version': 'kubernetesVersion',
             'node_image_id': 'nodeImageId',
             'node_image_name': 'nodeImageName',
+            'node_source': 'nodeSource',
             'node_shape': 'nodeShape',
             'initial_node_labels': 'initialNodeLabels',
             'ssh_public_key': 'sshPublicKey',
@@ -109,6 +115,7 @@ class NodePoolSummary(object):
         self._kubernetes_version = None
         self._node_image_id = None
         self._node_image_name = None
+        self._node_source = None
         self._node_shape = None
         self._initial_node_labels = None
         self._ssh_public_key = None
@@ -240,7 +247,7 @@ class NodePoolSummary(object):
     def node_image_id(self):
         """
         Gets the node_image_id of this NodePoolSummary.
-        The OCID of the image running on the nodes in the node pool.
+        Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
 
 
         :return: The node_image_id of this NodePoolSummary.
@@ -252,7 +259,7 @@ class NodePoolSummary(object):
     def node_image_id(self, node_image_id):
         """
         Sets the node_image_id of this NodePoolSummary.
-        The OCID of the image running on the nodes in the node pool.
+        Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
 
 
         :param node_image_id: The node_image_id of this NodePoolSummary.
@@ -264,7 +271,7 @@ class NodePoolSummary(object):
     def node_image_name(self):
         """
         Gets the node_image_name of this NodePoolSummary.
-        The name of the image running on the nodes in the node pool.
+        Deprecated. see `nodeSource`. The name of the image running on the nodes in the node pool.
 
 
         :return: The node_image_name of this NodePoolSummary.
@@ -276,13 +283,37 @@ class NodePoolSummary(object):
     def node_image_name(self, node_image_name):
         """
         Sets the node_image_name of this NodePoolSummary.
-        The name of the image running on the nodes in the node pool.
+        Deprecated. see `nodeSource`. The name of the image running on the nodes in the node pool.
 
 
         :param node_image_name: The node_image_name of this NodePoolSummary.
         :type: str
         """
         self._node_image_name = node_image_name
+
+    @property
+    def node_source(self):
+        """
+        Gets the node_source of this NodePoolSummary.
+        Source running on the nodes in the node pool.
+
+
+        :return: The node_source of this NodePoolSummary.
+        :rtype: NodeSourceOption
+        """
+        return self._node_source
+
+    @node_source.setter
+    def node_source(self, node_source):
+        """
+        Sets the node_source of this NodePoolSummary.
+        Source running on the nodes in the node pool.
+
+
+        :param node_source: The node_source of this NodePoolSummary.
+        :type: NodeSourceOption
+        """
+        self._node_source = node_source
 
     @property
     def node_shape(self):

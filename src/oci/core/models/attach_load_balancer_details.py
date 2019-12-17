@@ -57,7 +57,9 @@ class AttachLoadBalancerDetails(object):
     def load_balancer_id(self):
         """
         **[Required]** Gets the load_balancer_id of this AttachLoadBalancerDetails.
-        The OCID of the load balancer to attach to the instance pool.
+        The `OCID`__ of the load balancer to attach to the instance pool.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The load_balancer_id of this AttachLoadBalancerDetails.
@@ -69,7 +71,9 @@ class AttachLoadBalancerDetails(object):
     def load_balancer_id(self, load_balancer_id):
         """
         Sets the load_balancer_id of this AttachLoadBalancerDetails.
-        The OCID of the load balancer to attach to the instance pool.
+        The `OCID`__ of the load balancer to attach to the instance pool.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param load_balancer_id: The load_balancer_id of this AttachLoadBalancerDetails.

@@ -38,6 +38,10 @@ Container Engine
     oci.container_engine.models.NodePoolOptions
     oci.container_engine.models.NodePoolPlacementConfigDetails
     oci.container_engine.models.NodePoolSummary
+    oci.container_engine.models.NodeSourceDetails
+    oci.container_engine.models.NodeSourceOption
+    oci.container_engine.models.NodeSourceViaImageDetails
+    oci.container_engine.models.NodeSourceViaImageOption
     oci.container_engine.models.UpdateClusterDetails
     oci.container_engine.models.UpdateNodePoolDetails
     oci.container_engine.models.UpdateNodePoolNodeConfigDetails

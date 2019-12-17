@@ -58,6 +58,7 @@ class InstancePoolPlacementConfiguration(object):
         """
         **[Required]** Gets the availability_domain of this InstancePoolPlacementConfiguration.
         The availability domain to place instances.
+
         Example: `Uocm:PHX-AD-1`
 
 
@@ -71,6 +72,7 @@ class InstancePoolPlacementConfiguration(object):
         """
         Sets the availability_domain of this InstancePoolPlacementConfiguration.
         The availability domain to place instances.
+
         Example: `Uocm:PHX-AD-1`
 
 
@@ -83,7 +85,9 @@ class InstancePoolPlacementConfiguration(object):
     def primary_subnet_id(self):
         """
         **[Required]** Gets the primary_subnet_id of this InstancePoolPlacementConfiguration.
-        The OCID of the primary subnet to place instances.
+        The `OCID`__ of the primary subnet to place instances.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The primary_subnet_id of this InstancePoolPlacementConfiguration.
@@ -95,7 +99,9 @@ class InstancePoolPlacementConfiguration(object):
     def primary_subnet_id(self, primary_subnet_id):
         """
         Sets the primary_subnet_id of this InstancePoolPlacementConfiguration.
-        The OCID of the primary subnet to place instances.
+        The `OCID`__ of the primary subnet to place instances.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param primary_subnet_id: The primary_subnet_id of this InstancePoolPlacementConfiguration.
@@ -109,6 +115,19 @@ class InstancePoolPlacementConfiguration(object):
         Gets the fault_domains of this InstancePoolPlacementConfiguration.
         The fault domains to place instances.
 
+        If you don't provide any values, the system makes a best effort to distribute
+        instances across all fault domains based on capacity.
+
+        To distribute the instances evenly across selected fault domains, provide a
+        set of fault domains. For example, you might want instances to be evenly
+        distributed if your applications require high availability.
+
+        To get a list of fault domains, use the
+        :func:`list_fault_domains` operation
+        in the Identity and Access Management Service API.
+
+        Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
+
 
         :return: The fault_domains of this InstancePoolPlacementConfiguration.
         :rtype: list[str]
@@ -120,6 +139,19 @@ class InstancePoolPlacementConfiguration(object):
         """
         Sets the fault_domains of this InstancePoolPlacementConfiguration.
         The fault domains to place instances.
+
+        If you don't provide any values, the system makes a best effort to distribute
+        instances across all fault domains based on capacity.
+
+        To distribute the instances evenly across selected fault domains, provide a
+        set of fault domains. For example, you might want instances to be evenly
+        distributed if your applications require high availability.
+
+        To get a list of fault domains, use the
+        :func:`list_fault_domains` operation
+        in the Identity and Access Management Service API.
+
+        Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
 
 
         :param fault_domains: The fault_domains of this InstancePoolPlacementConfiguration.

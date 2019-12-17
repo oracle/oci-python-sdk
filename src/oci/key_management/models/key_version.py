@@ -12,6 +12,54 @@ class KeyVersion(object):
     KeyVersion model.
     """
 
+    #: A constant which can be used with the lifecycle_state property of a KeyVersion.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a KeyVersion.
+    #: This constant has a value of "ENABLING"
+    LIFECYCLE_STATE_ENABLING = "ENABLING"
+
+    #: A constant which can be used with the lifecycle_state property of a KeyVersion.
+    #: This constant has a value of "ENABLED"
+    LIFECYCLE_STATE_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the lifecycle_state property of a KeyVersion.
+    #: This constant has a value of "DISABLING"
+    LIFECYCLE_STATE_DISABLING = "DISABLING"
+
+    #: A constant which can be used with the lifecycle_state property of a KeyVersion.
+    #: This constant has a value of "DISABLED"
+    LIFECYCLE_STATE_DISABLED = "DISABLED"
+
+    #: A constant which can be used with the lifecycle_state property of a KeyVersion.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a KeyVersion.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
+
+    #: A constant which can be used with the lifecycle_state property of a KeyVersion.
+    #: This constant has a value of "PENDING_DELETION"
+    LIFECYCLE_STATE_PENDING_DELETION = "PENDING_DELETION"
+
+    #: A constant which can be used with the lifecycle_state property of a KeyVersion.
+    #: This constant has a value of "SCHEDULING_DELETION"
+    LIFECYCLE_STATE_SCHEDULING_DELETION = "SCHEDULING_DELETION"
+
+    #: A constant which can be used with the lifecycle_state property of a KeyVersion.
+    #: This constant has a value of "CANCELLING_DELETION"
+    LIFECYCLE_STATE_CANCELLING_DELETION = "CANCELLING_DELETION"
+
+    #: A constant which can be used with the origin property of a KeyVersion.
+    #: This constant has a value of "INTERNAL"
+    ORIGIN_INTERNAL = "INTERNAL"
+
+    #: A constant which can be used with the origin property of a KeyVersion.
+    #: This constant has a value of "EXTERNAL"
+    ORIGIN_EXTERNAL = "EXTERNAL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new KeyVersion object with values from keyword arguments.
@@ -29,9 +77,25 @@ class KeyVersion(object):
             The value to assign to the key_id property of this KeyVersion.
         :type key_id: str
 
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this KeyVersion.
+            Allowed values for this property are: "CREATING", "ENABLING", "ENABLED", "DISABLING", "DISABLED", "DELETING", "DELETED", "PENDING_DELETION", "SCHEDULING_DELETION", "CANCELLING_DELETION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
+        :param origin:
+            The value to assign to the origin property of this KeyVersion.
+            Allowed values for this property are: "INTERNAL", "EXTERNAL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type origin: str
+
         :param time_created:
             The value to assign to the time_created property of this KeyVersion.
         :type time_created: datetime
+
+        :param time_of_deletion:
+            The value to assign to the time_of_deletion property of this KeyVersion.
+        :type time_of_deletion: datetime
 
         :param vault_id:
             The value to assign to the vault_id property of this KeyVersion.
@@ -42,7 +106,10 @@ class KeyVersion(object):
             'compartment_id': 'str',
             'id': 'str',
             'key_id': 'str',
+            'lifecycle_state': 'str',
+            'origin': 'str',
             'time_created': 'datetime',
+            'time_of_deletion': 'datetime',
             'vault_id': 'str'
         }
 
@@ -50,14 +117,20 @@ class KeyVersion(object):
             'compartment_id': 'compartmentId',
             'id': 'id',
             'key_id': 'keyId',
+            'lifecycle_state': 'lifecycleState',
+            'origin': 'origin',
             'time_created': 'timeCreated',
+            'time_of_deletion': 'timeOfDeletion',
             'vault_id': 'vaultId'
         }
 
         self._compartment_id = None
         self._id = None
         self._key_id = None
+        self._lifecycle_state = None
+        self._origin = None
         self._time_created = None
+        self._time_of_deletion = None
         self._vault_id = None
 
     @property
@@ -133,6 +206,70 @@ class KeyVersion(object):
         self._key_id = key_id
 
     @property
+    def lifecycle_state(self):
+        """
+        Gets the lifecycle_state of this KeyVersion.
+        The key version's current state.
+
+        Example: `ENABLED`
+
+        Allowed values for this property are: "CREATING", "ENABLING", "ENABLED", "DISABLING", "DISABLED", "DELETING", "DELETED", "PENDING_DELETION", "SCHEDULING_DELETION", "CANCELLING_DELETION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The lifecycle_state of this KeyVersion.
+        :rtype: str
+        """
+        return self._lifecycle_state
+
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
+        """
+        Sets the lifecycle_state of this KeyVersion.
+        The key version's current state.
+
+        Example: `ENABLED`
+
+
+        :param lifecycle_state: The lifecycle_state of this KeyVersion.
+        :type: str
+        """
+        allowed_values = ["CREATING", "ENABLING", "ENABLED", "DISABLING", "DISABLED", "DELETING", "DELETED", "PENDING_DELETION", "SCHEDULING_DELETION", "CANCELLING_DELETION"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
+        self._lifecycle_state = lifecycle_state
+
+    @property
+    def origin(self):
+        """
+        Gets the origin of this KeyVersion.
+        The source of the key material. When this value is INTERNAL, OCI KMS created the key material. When this value is EXTERNAL, the key material was imported
+
+        Allowed values for this property are: "INTERNAL", "EXTERNAL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The origin of this KeyVersion.
+        :rtype: str
+        """
+        return self._origin
+
+    @origin.setter
+    def origin(self, origin):
+        """
+        Sets the origin of this KeyVersion.
+        The source of the key material. When this value is INTERNAL, OCI KMS created the key material. When this value is EXTERNAL, the key material was imported
+
+
+        :param origin: The origin of this KeyVersion.
+        :type: str
+        """
+        allowed_values = ["INTERNAL", "EXTERNAL"]
+        if not value_allowed_none_or_none_sentinel(origin, allowed_values):
+            origin = 'UNKNOWN_ENUM_VALUE'
+        self._origin = origin
+
+    @property
     def time_created(self):
         """
         **[Required]** Gets the time_created of this KeyVersion.
@@ -163,6 +300,36 @@ class KeyVersion(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def time_of_deletion(self):
+        """
+        Gets the time_of_deletion of this KeyVersion.
+        An optional property indicating when to delete the key version, expressed in `RFC 3339`__ timestamp format.
+        Example: `2019-04-03T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_of_deletion of this KeyVersion.
+        :rtype: datetime
+        """
+        return self._time_of_deletion
+
+    @time_of_deletion.setter
+    def time_of_deletion(self, time_of_deletion):
+        """
+        Sets the time_of_deletion of this KeyVersion.
+        An optional property indicating when to delete the key version, expressed in `RFC 3339`__ timestamp format.
+        Example: `2019-04-03T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_of_deletion: The time_of_deletion of this KeyVersion.
+        :type: datetime
+        """
+        self._time_of_deletion = time_of_deletion
 
     @property
     def vault_id(self):

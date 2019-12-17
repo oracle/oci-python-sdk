@@ -20,7 +20,7 @@ Oce
 
     oci.oce.models.ChangeOceInstanceCompartmentDetails
     oci.oce.models.CreateOceInstanceDetails
-    oci.oce.models.DeleteOceInstanceDetails
+    oci.oce.models.IdentityStripeDetails
     oci.oce.models.OceInstance
     oci.oce.models.OceInstanceSummary
     oci.oce.models.UpdateOceInstanceDetails

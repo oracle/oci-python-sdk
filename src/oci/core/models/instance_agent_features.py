@@ -21,16 +21,23 @@ class InstanceAgentFeatures(object):
             The value to assign to the is_monitoring_supported property of this InstanceAgentFeatures.
         :type is_monitoring_supported: bool
 
+        :param is_management_supported:
+            The value to assign to the is_management_supported property of this InstanceAgentFeatures.
+        :type is_management_supported: bool
+
         """
         self.swagger_types = {
-            'is_monitoring_supported': 'bool'
+            'is_monitoring_supported': 'bool',
+            'is_management_supported': 'bool'
         }
 
         self.attribute_map = {
-            'is_monitoring_supported': 'isMonitoringSupported'
+            'is_monitoring_supported': 'isMonitoringSupported',
+            'is_management_supported': 'isManagementSupported'
         }
 
         self._is_monitoring_supported = None
+        self._is_management_supported = None
 
     @property
     def is_monitoring_supported(self):
@@ -55,6 +62,30 @@ class InstanceAgentFeatures(object):
         :type: bool
         """
         self._is_monitoring_supported = is_monitoring_supported
+
+    @property
+    def is_management_supported(self):
+        """
+        Gets the is_management_supported of this InstanceAgentFeatures.
+        Whether the agent running on the instance can run all the available management plugins
+
+
+        :return: The is_management_supported of this InstanceAgentFeatures.
+        :rtype: bool
+        """
+        return self._is_management_supported
+
+    @is_management_supported.setter
+    def is_management_supported(self, is_management_supported):
+        """
+        Sets the is_management_supported of this InstanceAgentFeatures.
+        Whether the agent running on the instance can run all the available management plugins
+
+
+        :param is_management_supported: The is_management_supported of this InstanceAgentFeatures.
+        :type: bool
+        """
+        self._is_management_supported = is_management_supported
 
     def __repr__(self):
         return formatted_flat_dict(self)

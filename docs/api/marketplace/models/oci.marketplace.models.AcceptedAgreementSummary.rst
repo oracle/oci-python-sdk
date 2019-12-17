@@ -1,0 +1,11 @@
+AcceptedAgreementSummary
+========================
+
+.. currentmodule:: oci.marketplace.models
+
+.. autoclass:: AcceptedAgreementSummary
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

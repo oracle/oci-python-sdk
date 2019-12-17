@@ -32,14 +32,19 @@ Key Management
     oci.key_management.models.EncryptedData
     oci.key_management.models.GenerateKeyDetails
     oci.key_management.models.GeneratedKey
+    oci.key_management.models.ImportKeyDetails
+    oci.key_management.models.ImportKeyVersionDetails
     oci.key_management.models.Key
     oci.key_management.models.KeyShape
     oci.key_management.models.KeySummary
     oci.key_management.models.KeyVersion
     oci.key_management.models.KeyVersionSummary
     oci.key_management.models.ScheduleKeyDeletionDetails
+    oci.key_management.models.ScheduleKeyVersionDeletionDetails
     oci.key_management.models.ScheduleVaultDeletionDetails
     oci.key_management.models.UpdateKeyDetails
     oci.key_management.models.UpdateVaultDetails
     oci.key_management.models.Vault
     oci.key_management.models.VaultSummary
+    oci.key_management.models.WrappedImportKey
+    oci.key_management.models.WrappingKey

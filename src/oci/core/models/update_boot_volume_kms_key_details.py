@@ -36,9 +36,9 @@ class UpdateBootVolumeKmsKeyDetails(object):
     def kms_key_id(self):
         """
         Gets the kms_key_id of this UpdateBootVolumeKmsKeyDetails.
-        The OCID of the new KMS key which will be used to protect the specified volume.
-        This key has to be a valid KMS key OCID, and the user must have key delegation policy to allow them to access this key.
-        Even if the new KMS key is the same as the previous KMS key ID, the Block Volume service will use it to regenerate a new volume encryption key.
+        The OCID of the new Key Management key to assign to protect the specified volume.
+        This key has to be a valid Key Management key, and policies must exist to allow the user and the Block Volume service to access this key.
+        If you specify the same OCID as the previous key's OCID, the Block Volume service will use it to regenerate a volume encryption key.
 
 
         :return: The kms_key_id of this UpdateBootVolumeKmsKeyDetails.
@@ -50,9 +50,9 @@ class UpdateBootVolumeKmsKeyDetails(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this UpdateBootVolumeKmsKeyDetails.
-        The OCID of the new KMS key which will be used to protect the specified volume.
-        This key has to be a valid KMS key OCID, and the user must have key delegation policy to allow them to access this key.
-        Even if the new KMS key is the same as the previous KMS key ID, the Block Volume service will use it to regenerate a new volume encryption key.
+        The OCID of the new Key Management key to assign to protect the specified volume.
+        This key has to be a valid Key Management key, and policies must exist to allow the user and the Block Volume service to access this key.
+        If you specify the same OCID as the previous key's OCID, the Block Volume service will use it to regenerate a volume encryption key.
 
 
         :param kms_key_id: The kms_key_id of this UpdateBootVolumeKmsKeyDetails.

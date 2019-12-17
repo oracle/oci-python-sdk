@@ -41,6 +41,10 @@ class CreateNodePoolDetails(object):
             The value to assign to the node_image_name property of this CreateNodePoolDetails.
         :type node_image_name: str
 
+        :param node_source_details:
+            The value to assign to the node_source_details property of this CreateNodePoolDetails.
+        :type node_source_details: NodeSourceDetails
+
         :param node_shape:
             The value to assign to the node_shape property of this CreateNodePoolDetails.
         :type node_shape: str
@@ -73,6 +77,7 @@ class CreateNodePoolDetails(object):
             'kubernetes_version': 'str',
             'node_metadata': 'dict(str, str)',
             'node_image_name': 'str',
+            'node_source_details': 'NodeSourceDetails',
             'node_shape': 'str',
             'initial_node_labels': 'list[KeyValue]',
             'ssh_public_key': 'str',
@@ -88,6 +93,7 @@ class CreateNodePoolDetails(object):
             'kubernetes_version': 'kubernetesVersion',
             'node_metadata': 'nodeMetadata',
             'node_image_name': 'nodeImageName',
+            'node_source_details': 'nodeSourceDetails',
             'node_shape': 'nodeShape',
             'initial_node_labels': 'initialNodeLabels',
             'ssh_public_key': 'sshPublicKey',
@@ -102,6 +108,7 @@ class CreateNodePoolDetails(object):
         self._kubernetes_version = None
         self._node_metadata = None
         self._node_image_name = None
+        self._node_source_details = None
         self._node_shape = None
         self._initial_node_labels = None
         self._ssh_public_key = None
@@ -232,7 +239,9 @@ class CreateNodePoolDetails(object):
     @property
     def node_image_name(self):
         """
-        **[Required]** Gets the node_image_name of this CreateNodePoolDetails.
+        Gets the node_image_name of this CreateNodePoolDetails.
+        Deprecated. Use `nodeSourceDetails` instead.
+        If you specify values for both, this value is ignored.
         The name of the image running on the nodes in the node pool.
 
 
@@ -245,6 +254,8 @@ class CreateNodePoolDetails(object):
     def node_image_name(self, node_image_name):
         """
         Sets the node_image_name of this CreateNodePoolDetails.
+        Deprecated. Use `nodeSourceDetails` instead.
+        If you specify values for both, this value is ignored.
         The name of the image running on the nodes in the node pool.
 
 
@@ -252,6 +263,30 @@ class CreateNodePoolDetails(object):
         :type: str
         """
         self._node_image_name = node_image_name
+
+    @property
+    def node_source_details(self):
+        """
+        Gets the node_source_details of this CreateNodePoolDetails.
+        Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
+
+
+        :return: The node_source_details of this CreateNodePoolDetails.
+        :rtype: NodeSourceDetails
+        """
+        return self._node_source_details
+
+    @node_source_details.setter
+    def node_source_details(self, node_source_details):
+        """
+        Sets the node_source_details of this CreateNodePoolDetails.
+        Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
+
+
+        :param node_source_details: The node_source_details of this CreateNodePoolDetails.
+        :type: NodeSourceDetails
+        """
+        self._node_source_details = node_source_details
 
     @property
     def node_shape(self):

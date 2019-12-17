@@ -72,6 +72,7 @@ class KmsCryptoClient(object):
             'service_endpoint': service_endpoint,
             'timeout': kwargs.get('timeout'),
             'base_path': '/',
+            'service_endpoint_template': 'https://kms.{region}.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("kms_crypto", config, signer, key_management_type_mapping, **base_client_init_kwargs)
@@ -80,7 +81,9 @@ class KmsCryptoClient(object):
     def decrypt(self, decrypt_data_details, **kwargs):
         """
         Decrypt
-        Decrypts data using the given DecryptDataDetails resource.
+        Decrypts data using the given `DecryptDataDetails`__ resource.
+
+        __ https://docs.cloud.oracle.com/api/#/en/key/release/datatypes/DecryptDataDetails
 
 
         :param DecryptDataDetails decrypt_data_details: (required)
@@ -145,9 +148,10 @@ class KmsCryptoClient(object):
     def encrypt(self, encrypt_data_details, **kwargs):
         """
         Encrypt
-        Encrypts data using the given EncryptDataDetails resource.
-        Plaintext included in the example request is a base64-encoded value
-        of a UTF-8 string.
+        Encrypts data using the given `EncryptDataDetails`__ resource.
+        Plaintext included in the example request is a base64-encoded value of a UTF-8 string.
+
+        __ https://docs.cloud.oracle.com/api/#/en/key/release/datatypes/EncryptDataDetails
 
 
         :param EncryptDataDetails encrypt_data_details: (required)

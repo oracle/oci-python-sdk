@@ -77,7 +77,7 @@ class CreateAppCatalogSubscriptionDetails(object):
     @property
     def compartment_id(self):
         """
-        Gets the compartment_id of this CreateAppCatalogSubscriptionDetails.
+        **[Required]** Gets the compartment_id of this CreateAppCatalogSubscriptionDetails.
         The compartmentID for the subscription.
 
 
@@ -101,7 +101,7 @@ class CreateAppCatalogSubscriptionDetails(object):
     @property
     def listing_id(self):
         """
-        Gets the listing_id of this CreateAppCatalogSubscriptionDetails.
+        **[Required]** Gets the listing_id of this CreateAppCatalogSubscriptionDetails.
         The OCID of the listing.
 
 
@@ -125,7 +125,7 @@ class CreateAppCatalogSubscriptionDetails(object):
     @property
     def listing_resource_version(self):
         """
-        Gets the listing_resource_version of this CreateAppCatalogSubscriptionDetails.
+        **[Required]** Gets the listing_resource_version of this CreateAppCatalogSubscriptionDetails.
         Listing resource version.
 
 
@@ -149,7 +149,7 @@ class CreateAppCatalogSubscriptionDetails(object):
     @property
     def oracle_terms_of_use_link(self):
         """
-        Gets the oracle_terms_of_use_link of this CreateAppCatalogSubscriptionDetails.
+        **[Required]** Gets the oracle_terms_of_use_link of this CreateAppCatalogSubscriptionDetails.
         Oracle TOU link
 
 
@@ -197,7 +197,7 @@ class CreateAppCatalogSubscriptionDetails(object):
     @property
     def time_retrieved(self):
         """
-        Gets the time_retrieved of this CreateAppCatalogSubscriptionDetails.
+        **[Required]** Gets the time_retrieved of this CreateAppCatalogSubscriptionDetails.
         Date and time the agreements were retrieved, in RFC3339 format.
         Example: `2018-03-20T12:32:53.532Z`
 
@@ -223,7 +223,7 @@ class CreateAppCatalogSubscriptionDetails(object):
     @property
     def signature(self):
         """
-        Gets the signature of this CreateAppCatalogSubscriptionDetails.
+        **[Required]** Gets the signature of this CreateAppCatalogSubscriptionDetails.
         A generated signature for this listing resource version retrieved the agreements API.
 
 

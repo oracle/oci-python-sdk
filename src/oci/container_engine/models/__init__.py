@@ -23,6 +23,10 @@ from .node_pool_node_config_details import NodePoolNodeConfigDetails
 from .node_pool_options import NodePoolOptions
 from .node_pool_placement_config_details import NodePoolPlacementConfigDetails
 from .node_pool_summary import NodePoolSummary
+from .node_source_details import NodeSourceDetails
+from .node_source_option import NodeSourceOption
+from .node_source_via_image_details import NodeSourceViaImageDetails
+from .node_source_via_image_option import NodeSourceViaImageOption
 from .update_cluster_details import UpdateClusterDetails
 from .update_node_pool_details import UpdateNodePoolDetails
 from .update_node_pool_node_config_details import UpdateNodePoolNodeConfigDetails
@@ -54,6 +58,10 @@ container_engine_type_mapping = {
     "NodePoolOptions": NodePoolOptions,
     "NodePoolPlacementConfigDetails": NodePoolPlacementConfigDetails,
     "NodePoolSummary": NodePoolSummary,
+    "NodeSourceDetails": NodeSourceDetails,
+    "NodeSourceOption": NodeSourceOption,
+    "NodeSourceViaImageDetails": NodeSourceViaImageDetails,
+    "NodeSourceViaImageOption": NodeSourceViaImageOption,
     "UpdateClusterDetails": UpdateClusterDetails,
     "UpdateNodePoolDetails": UpdateNodePoolDetails,
     "UpdateNodePoolNodeConfigDetails": UpdateNodePoolNodeConfigDetails,

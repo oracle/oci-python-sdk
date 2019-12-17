@@ -420,7 +420,7 @@ class VolumeBackup(object):
     def kms_key_id(self):
         """
         Gets the kms_key_id of this VolumeBackup.
-        The OCID of the KMS key which is the master encryption key for the volume backup.
+        The OCID of the Key Management key which is the master encryption key for the volume backup.
         For more information about the Key Management service and encryption keys, see
         `Overview of Key Management`__ and
         `Using Keys`__.
@@ -438,7 +438,7 @@ class VolumeBackup(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this VolumeBackup.
-        The OCID of the KMS key which is the master encryption key for the volume backup.
+        The OCID of the Key Management key which is the master encryption key for the volume backup.
         For more information about the Key Management service and encryption keys, see
         `Overview of Key Management`__ and
         `Using Keys`__.

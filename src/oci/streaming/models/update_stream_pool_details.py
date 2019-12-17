@@ -17,6 +17,10 @@ class UpdateStreamPoolDetails(object):
         Initializes a new UpdateStreamPoolDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param name:
+            The value to assign to the name property of this UpdateStreamPoolDetails.
+        :type name: str
+
         :param kafka_settings:
             The value to assign to the kafka_settings property of this UpdateStreamPoolDetails.
         :type kafka_settings: KafkaSettings
@@ -31,20 +35,43 @@ class UpdateStreamPoolDetails(object):
 
         """
         self.swagger_types = {
+            'name': 'str',
             'kafka_settings': 'KafkaSettings',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
+            'name': 'name',
             'kafka_settings': 'kafkaSettings',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
+        self._name = None
         self._kafka_settings = None
         self._freeform_tags = None
         self._defined_tags = None
+
+    @property
+    def name(self):
+        """
+        Gets the name of this UpdateStreamPoolDetails.
+
+        :return: The name of this UpdateStreamPoolDetails.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """
+        Sets the name of this UpdateStreamPoolDetails.
+
+        :param name: The name of this UpdateStreamPoolDetails.
+        :type: str
+        """
+        self._name = name
 
     @property
     def kafka_settings(self):

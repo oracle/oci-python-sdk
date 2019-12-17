@@ -5,7 +5,7 @@ from __future__ import absolute_import
 
 from .change_oce_instance_compartment_details import ChangeOceInstanceCompartmentDetails
 from .create_oce_instance_details import CreateOceInstanceDetails
-from .delete_oce_instance_details import DeleteOceInstanceDetails
+from .identity_stripe_details import IdentityStripeDetails
 from .oce_instance import OceInstance
 from .oce_instance_summary import OceInstanceSummary
 from .update_oce_instance_details import UpdateOceInstanceDetails
@@ -20,7 +20,7 @@ from .workflow_step import WorkflowStep
 oce_type_mapping = {
     "ChangeOceInstanceCompartmentDetails": ChangeOceInstanceCompartmentDetails,
     "CreateOceInstanceDetails": CreateOceInstanceDetails,
-    "DeleteOceInstanceDetails": DeleteOceInstanceDetails,
+    "IdentityStripeDetails": IdentityStripeDetails,
     "OceInstance": OceInstance,
     "OceInstanceSummary": OceInstanceSummary,
     "UpdateOceInstanceDetails": UpdateOceInstanceDetails,

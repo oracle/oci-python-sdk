@@ -93,7 +93,9 @@ class ComputeManagementClient(object):
 
 
         :param str instance_pool_id: (required)
-            The OCID of the instance pool.
+            The `OCID`__ of the instance pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param AttachLoadBalancerDetails attach_load_balancer_details: (required)
             Load balancer being attached
@@ -405,7 +407,9 @@ class ComputeManagementClient(object):
 
 
         :param str instance_pool_id: (required)
-            The OCID of the instance pool.
+            The `OCID`__ of the instance pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param ChangeInstancePoolCompartmentDetails change_instance_pool_compartment_details: (required)
             Request to change the compartment of given instance pool.
@@ -784,7 +788,9 @@ class ComputeManagementClient(object):
 
 
         :param str instance_pool_id: (required)
-            The OCID of the instance pool.
+            The `OCID`__ of the instance pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param DetachLoadBalancerDetails detach_load_balancer_details: (required)
             Load balancer being detached
@@ -1005,7 +1011,9 @@ class ComputeManagementClient(object):
 
 
         :param str instance_pool_id: (required)
-            The OCID of the instance pool.
+            The `OCID`__ of the instance pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1069,7 +1077,9 @@ class ComputeManagementClient(object):
 
 
         :param str instance_pool_id: (required)
-            The OCID of the instance pool.
+            The `OCID`__ of the instance pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str instance_pool_load_balancer_attachment_id: (required)
             The OCID of the load balancer attachment.
@@ -1634,7 +1644,9 @@ class ComputeManagementClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str instance_pool_id: (required)
-            The OCID of the instance pool.
+            The `OCID`__ of the instance pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -1909,7 +1921,9 @@ class ComputeManagementClient(object):
 
 
         :param str instance_pool_id: (required)
-            The OCID of the instance pool.
+            The `OCID`__ of the instance pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1996,7 +2010,9 @@ class ComputeManagementClient(object):
 
 
         :param str instance_pool_id: (required)
-            The OCID of the instance pool.
+            The `OCID`__ of the instance pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2083,7 +2099,9 @@ class ComputeManagementClient(object):
 
 
         :param str instance_pool_id: (required)
-            The OCID of the instance pool.
+            The `OCID`__ of the instance pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2170,7 +2188,9 @@ class ComputeManagementClient(object):
 
 
         :param str instance_pool_id: (required)
-            The OCID of the instance pool.
+            The `OCID`__ of the instance pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2334,7 +2354,9 @@ class ComputeManagementClient(object):
 
 
         :param str instance_pool_id: (required)
-            The OCID of the instance pool.
+            The `OCID`__ of the instance pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -2588,11 +2610,14 @@ class ComputeManagementClient(object):
         """
         UpdateInstancePool
         Update the specified instance pool.
+
         The OCID of the instance pool remains the same.
 
 
         :param str instance_pool_id: (required)
-            The OCID of the instance pool.
+            The `OCID`__ of the instance pool.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateInstancePoolDetails update_instance_pool_details: (required)
             Update instance pool configuration
