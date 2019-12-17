@@ -33,3 +33,5 @@ tests/temp
 temp
 src/oci/_vendor/bin/
 venv/
+oci-2.7.2/
+oci-python-sdk-env/
