@@ -1,3 +1,4 @@
+# Code generated. DO NOT EDIT.
 # coding: utf-8
 # Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
@@ -17,15 +18,18 @@ def session_agnostic_query_matcher(r1, r2):
 
 @pytest.fixture(autouse=True, scope='function')
 def vcr_fixture(request):
-    # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
-    # instead of 'query' matcher (which ignores sessionId in the url)
-    # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
-    custom_vcr = test_config_container.create_vcr()
-    custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
-
-    cassette_location = os.path.join('generated', 'email_{name}.yml'.format(name=request.function.__name__))
-    with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+    if test_config_container.test_mode == 'mock':
         yield
+    else:
+        # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
+        # instead of 'query' matcher (which ignores sessionId in the url)
+        # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
+        custom_vcr = test_config_container.create_vcr()
+        custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
+
+        cassette_location = os.path.join('generated', 'email_{name}.yml'.format(name=request.function.__name__))
+        with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+            yield
 
 
 # IssueRoutingInfo tag="default" email="email-dev_us_grp@oracle.com" jiraProject="ED" opsJiraProject="ED"
@@ -45,11 +49,11 @@ def test_change_sender_compartment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.change_sender_compartment(
-                sender_id=request.pop(util.camelize('sender_id')),
-                change_sender_compartment_details=request.pop(util.camelize('change_sender_compartment_details')),
+                sender_id=request.pop(util.camelize('senderId')),
+                change_sender_compartment_details=request.pop(util.camelize('ChangeSenderCompartmentDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -86,10 +90,10 @@ def test_create_sender(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.create_sender(
-                create_sender_details=request.pop(util.camelize('create_sender_details')),
+                create_sender_details=request.pop(util.camelize('CreateSenderDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -126,10 +130,10 @@ def test_create_suppression(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.create_suppression(
-                create_suppression_details=request.pop(util.camelize('create_suppression_details')),
+                create_suppression_details=request.pop(util.camelize('CreateSuppressionDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -166,10 +170,10 @@ def test_delete_sender(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.delete_sender(
-                sender_id=request.pop(util.camelize('sender_id')),
+                sender_id=request.pop(util.camelize('senderId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -206,10 +210,10 @@ def test_delete_suppression(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.delete_suppression(
-                suppression_id=request.pop(util.camelize('suppression_id')),
+                suppression_id=request.pop(util.camelize('suppressionId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -246,10 +250,10 @@ def test_get_sender(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.get_sender(
-                sender_id=request.pop(util.camelize('sender_id')),
+                sender_id=request.pop(util.camelize('senderId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -286,10 +290,10 @@ def test_get_suppression(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.get_suppression(
-                suppression_id=request.pop(util.camelize('suppression_id')),
+                suppression_id=request.pop(util.camelize('suppressionId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -317,6 +321,7 @@ def test_list_senders(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('email', util.camelize('email'), 'ListSenders')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='email', api_name='ListSenders')
 
@@ -326,18 +331,18 @@ def test_list_senders(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.list_senders(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_senders(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -347,7 +352,7 @@ def test_list_senders(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_senders(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -376,6 +381,7 @@ def test_list_suppressions(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('email', util.camelize('email'), 'ListSuppressions')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='email', api_name='ListSuppressions')
 
@@ -385,18 +391,18 @@ def test_list_suppressions(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.list_suppressions(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_suppressions(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -406,7 +412,7 @@ def test_list_suppressions(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_suppressions(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -444,11 +450,11 @@ def test_update_sender(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.email.EmailClient(config, service_endpoint=service_endpoint)
             response = client.update_sender(
-                sender_id=request.pop(util.camelize('sender_id')),
-                update_sender_details=request.pop(util.camelize('update_sender_details')),
+                sender_id=request.pop(util.camelize('senderId')),
+                update_sender_details=request.pop(util.camelize('UpdateSenderDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

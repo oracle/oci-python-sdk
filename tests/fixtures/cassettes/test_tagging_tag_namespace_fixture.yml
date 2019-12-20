@@ -2,64 +2,107 @@ interactions:
 - request:
     body: null
     headers:
-      accept: [application/json]
-      accept-encoding: ['gzip, deflate']
-      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
-          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="ion4DRkCE6NiTEBGrgZUsUlLT4L7iCqtIoPMgahFwXRLKXV6Uja71hA3VdSMOo4m0LeTzRZL4XNqvBFXYrFOKtYmMlIj1nWbu0DrYvq/HPdgwJRry3+PDxgE3nlwcjSwq2SGw0BCkdGzkGRXXursk1AgeECiWHjiD5ID4ho/QVmfN4y/eOyLvVezbDOYRYa9xRV5Od5t0juFFIwKymnsjzgUeJ3Wb1wzhN2XcpcQh02fw6QwmBoWrC3i+VoUTaKRjl7C1lL5Pv0YnHeYosCVIf9kV02sJTYo/ERJQNRUqe39Xb4CM63dPtHhHO2wlArh9Eec0z1d3ejIHGQUAh6+NQ==",version="1"']
-      connection: [keep-alive]
-      content-type: [application/json]
-      date: ['Sat, 12 May 2018 02:17:17 GMT']
-      host: [identity.us-phoenix-1.oraclecloud.com]
-      opc-client-info: [Oracle-PythonSDK/1.3.20]
-      opc-request-id: [468091E95C284C96B8FE7455367EFE8B]
-      user-agent: [Oracle-PythonSDK/1.3.20 (python 3.5.1; x86_64-Darwin)]
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - Signature algorithm="rsa-sha256",headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="TL4yQdwA3ZWbe3QK1uOa6YRwDbGQ3fAKOknCAiuuZBEhsbEBd+kqLfzPaCf8LM5tIQKLTdZLt5tRgbiJKwf291UvtV+5545v4HIBcjINkGRe+IDDpA9qQnnsnL6ZSG5GV5RwiPUyi/XZCXtBDRANPA9+rUKXpAj2xacwkxzjZjCy5oTLor/IQjj0GE2mrUJF/4ye8uSY3cAkVHy/wmNucSydPS94jlEoz0N2q9hfilSlU+EoYEtRoK334KHV8u1EhNbBSqhHPbLB0YtjfK6goFF5xe7xw+MUnv8JWDefK2eBKCU3rriNmp3vbPFZmEOAQZ/MlRICZDaOIluxiHM57w==",version="1"
+      connection:
+      - keep-alive
+      content-type:
+      - application/json
+      date:
+      - Mon, 13 Jan 2020 07:56:00 GMT
+      host:
+      - identity.us-phoenix-1.oraclecloud.com
+      opc-client-info:
+      - Oracle-PythonSDK/2.10.0
+      opc-request-id:
+      - 60E56FA8F3344E75A393FAF0E785688B
+      user-agent:
+      - Oracle-PythonSDK/2.10.0 (python 3.5.1; x86_64-Darwin)
     method: GET
     uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq
   response:
-    body: {string: "{\n  \"isRetired\" : true,\n  \"id\" : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
+    body:
+      string: "{\n  \"isRetired\" : true,\n  \"id\" : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
         ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaa235ux54bxmitd4zvnhxyeubszseeoklcpvlegqumemc4x47oku5q\"\
         ,\n  \"name\" : \"tagns_464166\",\n  \"description\" : \"updated tag ns\"\
         ,\n  \"inactiveStatus\" : 2,\n  \"timeCreated\" : \"2018-04-19T21:02:17.106Z\"\
         ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"lifecycleState\"\
-        \ : \"INACTIVE\"\n}"}
+        \ : \"INACTIVE\"\n}"
     headers:
-      Connection: [keep-alive]
-      Content-Length: ['441']
-      Content-Type: [application/json]
-      Date: ['Sat, 12 May 2018 02:18:03 GMT']
-      ETag: [92daf06be9dcc63a8176af62d5894461e8b7425c]
-      opc-request-id: [468091E95C284C96B8FE7455367EFE8B/90985A1CCC976D08A39AB65F970169A1/D028AD11642B20AEF259CD04DBE9A93B]
-    status: {code: 200, message: OK}
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '441'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Jan 2020 07:56:01 GMT
+      ETag:
+      - 4ae24294b6e01d4cb33da3524f8eed280377d5a9
+      X-Content-Type-Options:
+      - nosniff
+      opc-request-id:
+      - 60E56FA8F3344E75A393FAF0E785688B/26C4C5C28E81B2CA809BAB20DA0E545E/538E9181CB6FACA64EF9872A56AC2E4D
+    status:
+      code: 200
+      message: OK
 - request:
     body: '{"isRetired": false}'
     headers:
-      Content-Length: ['20']
-      accept: [application/json]
-      accept-encoding: ['gzip, deflate']
-      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
-          host content-length content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="WzPbWL6cf1JDyPriqjz5nj1AIFjIvKYSoFWlzth581mRTnHaIDYQz1LehBpu+cgdhQvJCMgsQ/260ExGpEQUkTiY43r6uC9jTmeaINXo6RIUefa62ivLOk/de7rQ6axPOfILyBKvoSxiHfGoZ4DxsUmljVCzARqfGDrxbXBcRKeHC3R+LBtMyx1bowbeH3iLDgDIBx/bgcTULlAPnR5kCa9e/9ayVwOEbE1lgJOdVjiJgqybwmVzKS4EmUef+cCN8aep4jJfOqEw1Q/45Rm7bFM3D6unOnBMy5mUGFAwwOHzoCVUgCkxIjInAs4Fkcbg5ebWNt6JidwcHb6udsDXJQ==",version="1"']
-      connection: [keep-alive]
-      content-type: [application/json]
-      date: ['Sat, 12 May 2018 02:17:17 GMT']
-      host: [identity.us-phoenix-1.oraclecloud.com]
-      opc-client-info: [Oracle-PythonSDK/1.3.20]
-      opc-request-id: [9F3FA34785984567A9D5F57E4F57BC43]
-      user-agent: [Oracle-PythonSDK/1.3.20 (python 3.5.1; x86_64-Darwin)]
-      x-content-sha256: [HScz3hJX+d3vF9jo1ovsUEJXJDuTiMSl6Kv0CgoPlAs=]
+      Content-Length:
+      - '20'
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - Signature algorithm="rsa-sha256",headers="date (request-target) host content-length
+        content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="PVAtr17BT6JVXRC5ckcXwH3sBz9GlquEWzIrlp5sTRl//ml0m8aMPATdNxNGywayYsmjSeu63bepv7GVBf08wATE3+GdHXTa78OO4BZVLOTHVQW++wZqB/uP/nsCLEt1jBUKfeoEwrFaERg7BTP1pg3KJ/qwppLHK92k+9NPMw6dRx99dRRdMBfXF3hdrkGN5TPd9wsEAN2ncrEnw1WeMqFzUnhXvXZtL2XY+/j62nSGz6vS6OGlHD4Y2ceTco2URAXYsO5TVpaXzZddXfBq7Qc+ZgJHVizcZtEzimEx7hyqoM7BHwDe75x67u7eEVWluD5phe8R7Z+qYrPIldb1vA==",version="1"
+      connection:
+      - keep-alive
+      content-type:
+      - application/json
+      date:
+      - Mon, 13 Jan 2020 07:56:01 GMT
+      host:
+      - identity.us-phoenix-1.oraclecloud.com
+      opc-client-info:
+      - Oracle-PythonSDK/2.10.0
+      opc-request-id:
+      - 4754D57A48BB43BD93193B5B8847629B
+      user-agent:
+      - Oracle-PythonSDK/2.10.0 (python 3.5.1; x86_64-Darwin)
+      x-content-sha256:
+      - HScz3hJX+d3vF9jo1ovsUEJXJDuTiMSl6Kv0CgoPlAs=
     method: PUT
     uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq
   response:
-    body: {string: "{\n  \"isRetired\" : false,\n  \"id\" : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
+    body:
+      string: "{\n  \"isRetired\" : false,\n  \"id\" : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
         ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaa235ux54bxmitd4zvnhxyeubszseeoklcpvlegqumemc4x47oku5q\"\
         ,\n  \"name\" : \"tagns_464166\",\n  \"description\" : \"updated tag ns\"\
         ,\n  \"timeCreated\" : \"2018-04-19T21:02:17.106Z\",\n  \"freeformTags\" :\
-        \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}"}
+        \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}"
     headers:
-      Connection: [keep-alive]
-      Content-Length: ['416']
-      Content-Type: [application/json]
-      Date: ['Sat, 12 May 2018 02:18:03 GMT']
-      ETag: [cb714bc3cfa157ebf1b1f984aebec14efaa6501f]
-      opc-request-id: [9F3FA34785984567A9D5F57E4F57BC43/3C0D165ECFFAA92594D6FCFFA08C48EF/E7CB34BB0C5C7D27BC0FB788A4E1781F]
-    status: {code: 200, message: OK}
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '416'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Jan 2020 07:56:01 GMT
+      ETag:
+      - f290ef99c6743716a49499e2756719332d52da28
+      X-Content-Type-Options:
+      - nosniff
+      opc-request-id:
+      - 4754D57A48BB43BD93193B5B8847629B/3EAD06663EA8642959101951B17E1601/CFF308BCE418B5C922B70DEF33F472CF
+    status:
+      code: 200
+      message: OK
 version: 1

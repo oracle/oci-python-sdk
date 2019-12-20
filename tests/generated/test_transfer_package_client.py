@@ -1,3 +1,4 @@
+# Code generated. DO NOT EDIT.
 # coding: utf-8
 # Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
@@ -17,15 +18,18 @@ def session_agnostic_query_matcher(r1, r2):
 
 @pytest.fixture(autouse=True, scope='function')
 def vcr_fixture(request):
-    # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
-    # instead of 'query' matcher (which ignores sessionId in the url)
-    # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
-    custom_vcr = test_config_container.create_vcr()
-    custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
-
-    cassette_location = os.path.join('generated', 'dts_{name}.yml'.format(name=request.function.__name__))
-    with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+    if test_config_container.test_mode == 'mock':
         yield
+    else:
+        # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
+        # instead of 'query' matcher (which ignores sessionId in the url)
+        # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
+        custom_vcr = test_config_container.create_vcr()
+        custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
+
+        cassette_location = os.path.join('generated', 'dts_{name}.yml'.format(name=request.function.__name__))
+        with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+            yield
 
 
 # IssueRoutingInfo tag="default" email="data_transfer_platform_dev_ww_grp@oracle.com" jiraProject="BDTS" opsJiraProject="DTS"
@@ -45,12 +49,12 @@ def test_attach_devices_to_transfer_package(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dts.TransferPackageClient(config, service_endpoint=service_endpoint)
             response = client.attach_devices_to_transfer_package(
                 id=request.pop(util.camelize('id')),
-                transfer_package_label=request.pop(util.camelize('transfer_package_label')),
-                attach_devices_details=request.pop(util.camelize('attach_devices_details')),
+                transfer_package_label=request.pop(util.camelize('transferPackageLabel')),
+                attach_devices_details=request.pop(util.camelize('AttachDevicesDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -87,7 +91,7 @@ def test_create_transfer_package(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dts.TransferPackageClient(config, service_endpoint=service_endpoint)
             response = client.create_transfer_package(
                 id=request.pop(util.camelize('id')),
@@ -127,11 +131,11 @@ def test_delete_transfer_package(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dts.TransferPackageClient(config, service_endpoint=service_endpoint)
             response = client.delete_transfer_package(
                 id=request.pop(util.camelize('id')),
-                transfer_package_label=request.pop(util.camelize('transfer_package_label')),
+                transfer_package_label=request.pop(util.camelize('transferPackageLabel')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -168,12 +172,12 @@ def test_detach_devices_from_transfer_package(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dts.TransferPackageClient(config, service_endpoint=service_endpoint)
             response = client.detach_devices_from_transfer_package(
                 id=request.pop(util.camelize('id')),
-                transfer_package_label=request.pop(util.camelize('transfer_package_label')),
-                detach_devices_details=request.pop(util.camelize('detach_devices_details')),
+                transfer_package_label=request.pop(util.camelize('transferPackageLabel')),
+                detach_devices_details=request.pop(util.camelize('DetachDevicesDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -210,11 +214,11 @@ def test_get_transfer_package(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dts.TransferPackageClient(config, service_endpoint=service_endpoint)
             response = client.get_transfer_package(
                 id=request.pop(util.camelize('id')),
-                transfer_package_label=request.pop(util.camelize('transfer_package_label')),
+                transfer_package_label=request.pop(util.camelize('transferPackageLabel')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -251,7 +255,7 @@ def test_list_transfer_packages(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dts.TransferPackageClient(config, service_endpoint=service_endpoint)
             response = client.list_transfer_packages(
                 id=request.pop(util.camelize('id')),
@@ -291,12 +295,12 @@ def test_update_transfer_package(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dts.TransferPackageClient(config, service_endpoint=service_endpoint)
             response = client.update_transfer_package(
                 id=request.pop(util.camelize('id')),
-                transfer_package_label=request.pop(util.camelize('transfer_package_label')),
-                update_transfer_package_details=request.pop(util.camelize('update_transfer_package_details')),
+                transfer_package_label=request.pop(util.camelize('transferPackageLabel')),
+                update_transfer_package_details=request.pop(util.camelize('UpdateTransferPackageDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

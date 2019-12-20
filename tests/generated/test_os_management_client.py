@@ -1,3 +1,4 @@
+# Code generated. DO NOT EDIT.
 # coding: utf-8
 # Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
@@ -17,15 +18,18 @@ def session_agnostic_query_matcher(r1, r2):
 
 @pytest.fixture(autouse=True, scope='function')
 def vcr_fixture(request):
-    # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
-    # instead of 'query' matcher (which ignores sessionId in the url)
-    # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
-    custom_vcr = test_config_container.create_vcr()
-    custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
-
-    cassette_location = os.path.join('generated', 'os_management_{name}.yml'.format(name=request.function.__name__))
-    with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+    if test_config_container.test_mode == 'mock':
         yield
+    else:
+        # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
+        # instead of 'query' matcher (which ignores sessionId in the url)
+        # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
+        custom_vcr = test_config_container.create_vcr()
+        custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
+
+        cassette_location = os.path.join('generated', 'os_management_{name}.yml'.format(name=request.function.__name__))
+        with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+            yield
 
 
 # IssueRoutingInfo tag="default" email="oci_osms_us_grp@oracle.com" jiraProject="OSMS" opsJiraProject="OSMS"
@@ -45,11 +49,11 @@ def test_add_packages_to_software_source(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.add_packages_to_software_source(
-                software_source_id=request.pop(util.camelize('software_source_id')),
-                add_packages_to_software_source_details=request.pop(util.camelize('add_packages_to_software_source_details')),
+                software_source_id=request.pop(util.camelize('softwareSourceId')),
+                add_packages_to_software_source_details=request.pop(util.camelize('AddPackagesToSoftwareSourceDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -86,11 +90,11 @@ def test_attach_child_software_source_to_managed_instance(testing_service_client
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.attach_child_software_source_to_managed_instance(
-                managed_instance_id=request.pop(util.camelize('managed_instance_id')),
-                attach_child_software_source_to_managed_instance_details=request.pop(util.camelize('attach_child_software_source_to_managed_instance_details')),
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                attach_child_software_source_to_managed_instance_details=request.pop(util.camelize('AttachChildSoftwareSourceToManagedInstanceDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -127,11 +131,11 @@ def test_attach_managed_instance_to_managed_instance_group(testing_service_clien
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.attach_managed_instance_to_managed_instance_group(
-                managed_instance_group_id=request.pop(util.camelize('managed_instance_group_id')),
-                managed_instance_id=request.pop(util.camelize('managed_instance_id')),
+                managed_instance_group_id=request.pop(util.camelize('managedInstanceGroupId')),
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -168,11 +172,11 @@ def test_attach_parent_software_source_to_managed_instance(testing_service_clien
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.attach_parent_software_source_to_managed_instance(
-                managed_instance_id=request.pop(util.camelize('managed_instance_id')),
-                attach_parent_software_source_to_managed_instance_details=request.pop(util.camelize('attach_parent_software_source_to_managed_instance_details')),
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                attach_parent_software_source_to_managed_instance_details=request.pop(util.camelize('AttachParentSoftwareSourceToManagedInstanceDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -209,11 +213,11 @@ def test_change_managed_instance_group_compartment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.change_managed_instance_group_compartment(
-                managed_instance_group_id=request.pop(util.camelize('managed_instance_group_id')),
-                change_managed_instance_group_compartment_details=request.pop(util.camelize('change_managed_instance_group_compartment_details')),
+                managed_instance_group_id=request.pop(util.camelize('managedInstanceGroupId')),
+                change_managed_instance_group_compartment_details=request.pop(util.camelize('ChangeManagedInstanceGroupCompartmentDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -250,11 +254,11 @@ def test_change_scheduled_job_compartment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.change_scheduled_job_compartment(
-                scheduled_job_id=request.pop(util.camelize('scheduled_job_id')),
-                change_scheduled_job_compartment_details=request.pop(util.camelize('change_scheduled_job_compartment_details')),
+                scheduled_job_id=request.pop(util.camelize('scheduledJobId')),
+                change_scheduled_job_compartment_details=request.pop(util.camelize('ChangeScheduledJobCompartmentDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -291,11 +295,11 @@ def test_change_software_source_compartment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.change_software_source_compartment(
-                software_source_id=request.pop(util.camelize('software_source_id')),
-                change_software_source_compartment_details=request.pop(util.camelize('change_software_source_compartment_details')),
+                software_source_id=request.pop(util.camelize('softwareSourceId')),
+                change_software_source_compartment_details=request.pop(util.camelize('ChangeSoftwareSourceCompartmentDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -332,10 +336,10 @@ def test_create_managed_instance_group(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_managed_instance_group(
-                create_managed_instance_group_details=request.pop(util.camelize('create_managed_instance_group_details')),
+                create_managed_instance_group_details=request.pop(util.camelize('CreateManagedInstanceGroupDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -372,10 +376,10 @@ def test_create_scheduled_job(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_scheduled_job(
-                create_scheduled_job_details=request.pop(util.camelize('create_scheduled_job_details')),
+                create_scheduled_job_details=request.pop(util.camelize('CreateScheduledJobDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -412,10 +416,10 @@ def test_create_software_source(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_software_source(
-                create_software_source_details=request.pop(util.camelize('create_software_source_details')),
+                create_software_source_details=request.pop(util.camelize('CreateSoftwareSourceDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -452,10 +456,10 @@ def test_delete_managed_instance_group(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.delete_managed_instance_group(
-                managed_instance_group_id=request.pop(util.camelize('managed_instance_group_id')),
+                managed_instance_group_id=request.pop(util.camelize('managedInstanceGroupId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -492,10 +496,10 @@ def test_delete_scheduled_job(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.delete_scheduled_job(
-                scheduled_job_id=request.pop(util.camelize('scheduled_job_id')),
+                scheduled_job_id=request.pop(util.camelize('scheduledJobId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -532,10 +536,10 @@ def test_delete_software_source(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.delete_software_source(
-                software_source_id=request.pop(util.camelize('software_source_id')),
+                software_source_id=request.pop(util.camelize('softwareSourceId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -572,11 +576,11 @@ def test_detach_child_software_source_from_managed_instance(testing_service_clie
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.detach_child_software_source_from_managed_instance(
-                managed_instance_id=request.pop(util.camelize('managed_instance_id')),
-                detach_child_software_source_from_managed_instance_details=request.pop(util.camelize('detach_child_software_source_from_managed_instance_details')),
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                detach_child_software_source_from_managed_instance_details=request.pop(util.camelize('DetachChildSoftwareSourceFromManagedInstanceDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -613,11 +617,11 @@ def test_detach_managed_instance_from_managed_instance_group(testing_service_cli
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.detach_managed_instance_from_managed_instance_group(
-                managed_instance_group_id=request.pop(util.camelize('managed_instance_group_id')),
-                managed_instance_id=request.pop(util.camelize('managed_instance_id')),
+                managed_instance_group_id=request.pop(util.camelize('managedInstanceGroupId')),
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -654,11 +658,11 @@ def test_detach_parent_software_source_from_managed_instance(testing_service_cli
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.detach_parent_software_source_from_managed_instance(
-                managed_instance_id=request.pop(util.camelize('managed_instance_id')),
-                detach_parent_software_source_from_managed_instance_details=request.pop(util.camelize('detach_parent_software_source_from_managed_instance_details')),
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                detach_parent_software_source_from_managed_instance_details=request.pop(util.camelize('DetachParentSoftwareSourceFromManagedInstanceDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -695,10 +699,10 @@ def test_get_erratum(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_erratum(
-                erratum_id=request.pop(util.camelize('erratum_id')),
+                erratum_id=request.pop(util.camelize('erratumId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -735,10 +739,10 @@ def test_get_managed_instance(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_managed_instance(
-                managed_instance_id=request.pop(util.camelize('managed_instance_id')),
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -775,10 +779,10 @@ def test_get_managed_instance_group(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_managed_instance_group(
-                managed_instance_group_id=request.pop(util.camelize('managed_instance_group_id')),
+                managed_instance_group_id=request.pop(util.camelize('managedInstanceGroupId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -815,10 +819,10 @@ def test_get_scheduled_job(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_scheduled_job(
-                scheduled_job_id=request.pop(util.camelize('scheduled_job_id')),
+                scheduled_job_id=request.pop(util.camelize('scheduledJobId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -855,11 +859,11 @@ def test_get_software_package(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_software_package(
-                software_source_id=request.pop(util.camelize('software_source_id')),
-                software_package_name=request.pop(util.camelize('software_package_name')),
+                software_source_id=request.pop(util.camelize('softwareSourceId')),
+                software_package_name=request.pop(util.camelize('softwarePackageName')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -896,10 +900,10 @@ def test_get_software_source(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_software_source(
-                software_source_id=request.pop(util.camelize('software_source_id')),
+                software_source_id=request.pop(util.camelize('softwareSourceId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -936,10 +940,10 @@ def test_get_work_request(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
-                work_request_id=request.pop(util.camelize('work_request_id')),
+                work_request_id=request.pop(util.camelize('workRequestId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -976,10 +980,10 @@ def test_install_all_package_updates_on_managed_instance(testing_service_client)
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.install_all_package_updates_on_managed_instance(
-                managed_instance_id=request.pop(util.camelize('managed_instance_id')),
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1016,11 +1020,11 @@ def test_install_package_on_managed_instance(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.install_package_on_managed_instance(
-                managed_instance_id=request.pop(util.camelize('managed_instance_id')),
-                software_package_name=request.pop(util.camelize('software_package_name')),
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                software_package_name=request.pop(util.camelize('softwarePackageName')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1057,11 +1061,11 @@ def test_install_package_update_on_managed_instance(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.install_package_update_on_managed_instance(
-                managed_instance_id=request.pop(util.camelize('managed_instance_id')),
-                software_package_name=request.pop(util.camelize('software_package_name')),
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                software_package_name=request.pop(util.camelize('softwarePackageName')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1089,6 +1093,7 @@ def test_list_available_packages_for_managed_instance(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'ListAvailablePackagesForManagedInstance')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='os_management', api_name='ListAvailablePackagesForManagedInstance')
 
@@ -1098,18 +1103,18 @@ def test_list_available_packages_for_managed_instance(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_available_packages_for_managed_instance(
-                managed_instance_id=request.pop(util.camelize('managed_instance_id')),
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_available_packages_for_managed_instance(
-                    managed_instance_id=request.pop(util.camelize('managed_instance_id')),
+                    managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1119,7 +1124,7 @@ def test_list_available_packages_for_managed_instance(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_available_packages_for_managed_instance(
-                        managed_instance_id=request.pop(util.camelize('managed_instance_id')),
+                        managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1148,6 +1153,7 @@ def test_list_available_software_sources_for_managed_instance(testing_service_cl
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'ListAvailableSoftwareSourcesForManagedInstance')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='os_management', api_name='ListAvailableSoftwareSourcesForManagedInstance')
 
@@ -1157,18 +1163,18 @@ def test_list_available_software_sources_for_managed_instance(testing_service_cl
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_available_software_sources_for_managed_instance(
-                managed_instance_id=request.pop(util.camelize('managed_instance_id')),
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_available_software_sources_for_managed_instance(
-                    managed_instance_id=request.pop(util.camelize('managed_instance_id')),
+                    managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1178,7 +1184,7 @@ def test_list_available_software_sources_for_managed_instance(testing_service_cl
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_available_software_sources_for_managed_instance(
-                        managed_instance_id=request.pop(util.camelize('managed_instance_id')),
+                        managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1207,6 +1213,7 @@ def test_list_available_updates_for_managed_instance(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'ListAvailableUpdatesForManagedInstance')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='os_management', api_name='ListAvailableUpdatesForManagedInstance')
 
@@ -1216,18 +1223,18 @@ def test_list_available_updates_for_managed_instance(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_available_updates_for_managed_instance(
-                managed_instance_id=request.pop(util.camelize('managed_instance_id')),
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_available_updates_for_managed_instance(
-                    managed_instance_id=request.pop(util.camelize('managed_instance_id')),
+                    managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1237,7 +1244,7 @@ def test_list_available_updates_for_managed_instance(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_available_updates_for_managed_instance(
-                        managed_instance_id=request.pop(util.camelize('managed_instance_id')),
+                        managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1266,6 +1273,7 @@ def test_list_managed_instance_groups(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'ListManagedInstanceGroups')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='os_management', api_name='ListManagedInstanceGroups')
 
@@ -1275,18 +1283,18 @@ def test_list_managed_instance_groups(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_managed_instance_groups(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_managed_instance_groups(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1296,7 +1304,7 @@ def test_list_managed_instance_groups(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_managed_instance_groups(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1325,6 +1333,7 @@ def test_list_managed_instances(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'ListManagedInstances')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='os_management', api_name='ListManagedInstances')
 
@@ -1334,18 +1343,18 @@ def test_list_managed_instances(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_managed_instances(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_managed_instances(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1355,7 +1364,7 @@ def test_list_managed_instances(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_managed_instances(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1384,6 +1393,7 @@ def test_list_packages_installed_on_managed_instance(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'ListPackagesInstalledOnManagedInstance')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='os_management', api_name='ListPackagesInstalledOnManagedInstance')
 
@@ -1393,18 +1403,18 @@ def test_list_packages_installed_on_managed_instance(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_packages_installed_on_managed_instance(
-                managed_instance_id=request.pop(util.camelize('managed_instance_id')),
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_packages_installed_on_managed_instance(
-                    managed_instance_id=request.pop(util.camelize('managed_instance_id')),
+                    managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1414,7 +1424,7 @@ def test_list_packages_installed_on_managed_instance(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_packages_installed_on_managed_instance(
-                        managed_instance_id=request.pop(util.camelize('managed_instance_id')),
+                        managed_instance_id=request.pop(util.camelize('managedInstanceId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1443,6 +1453,7 @@ def test_list_scheduled_jobs(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'ListScheduledJobs')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='os_management', api_name='ListScheduledJobs')
 
@@ -1452,18 +1463,18 @@ def test_list_scheduled_jobs(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_scheduled_jobs(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_scheduled_jobs(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1473,7 +1484,7 @@ def test_list_scheduled_jobs(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_scheduled_jobs(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1502,6 +1513,7 @@ def test_list_software_source_packages(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'ListSoftwareSourcePackages')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='os_management', api_name='ListSoftwareSourcePackages')
 
@@ -1511,18 +1523,18 @@ def test_list_software_source_packages(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_software_source_packages(
-                software_source_id=request.pop(util.camelize('software_source_id')),
+                software_source_id=request.pop(util.camelize('softwareSourceId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_software_source_packages(
-                    software_source_id=request.pop(util.camelize('software_source_id')),
+                    software_source_id=request.pop(util.camelize('softwareSourceId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1532,7 +1544,7 @@ def test_list_software_source_packages(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_software_source_packages(
-                        software_source_id=request.pop(util.camelize('software_source_id')),
+                        software_source_id=request.pop(util.camelize('softwareSourceId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1561,6 +1573,7 @@ def test_list_software_sources(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'ListSoftwareSources')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='os_management', api_name='ListSoftwareSources')
 
@@ -1570,18 +1583,18 @@ def test_list_software_sources(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_software_sources(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_software_sources(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1591,7 +1604,7 @@ def test_list_software_sources(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_software_sources(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1620,6 +1633,7 @@ def test_list_upcoming_scheduled_jobs(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'ListUpcomingScheduledJobs')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='os_management', api_name='ListUpcomingScheduledJobs')
 
@@ -1629,20 +1643,20 @@ def test_list_upcoming_scheduled_jobs(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_upcoming_scheduled_jobs(
-                compartment_id=request.pop(util.camelize('compartment_id')),
-                time_end=request.pop(util.camelize('time_end')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                time_end=request.pop(util.camelize('timeEnd')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_upcoming_scheduled_jobs(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
-                    time_end=request.pop(util.camelize('time_end')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    time_end=request.pop(util.camelize('timeEnd')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1652,8 +1666,8 @@ def test_list_upcoming_scheduled_jobs(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_upcoming_scheduled_jobs(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
-                        time_end=request.pop(util.camelize('time_end')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        time_end=request.pop(util.camelize('timeEnd')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1682,6 +1696,7 @@ def test_list_work_request_errors(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'ListWorkRequestErrors')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='os_management', api_name='ListWorkRequestErrors')
 
@@ -1691,18 +1706,18 @@ def test_list_work_request_errors(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
-                work_request_id=request.pop(util.camelize('work_request_id')),
+                work_request_id=request.pop(util.camelize('workRequestId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_work_request_errors(
-                    work_request_id=request.pop(util.camelize('work_request_id')),
+                    work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1712,7 +1727,7 @@ def test_list_work_request_errors(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_work_request_errors(
-                        work_request_id=request.pop(util.camelize('work_request_id')),
+                        work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1741,6 +1756,7 @@ def test_list_work_request_logs(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'ListWorkRequestLogs')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='os_management', api_name='ListWorkRequestLogs')
 
@@ -1750,18 +1766,18 @@ def test_list_work_request_logs(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
-                work_request_id=request.pop(util.camelize('work_request_id')),
+                work_request_id=request.pop(util.camelize('workRequestId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_work_request_logs(
-                    work_request_id=request.pop(util.camelize('work_request_id')),
+                    work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1771,7 +1787,7 @@ def test_list_work_request_logs(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_work_request_logs(
-                        work_request_id=request.pop(util.camelize('work_request_id')),
+                        work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1800,6 +1816,7 @@ def test_list_work_requests(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'ListWorkRequests')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='os_management', api_name='ListWorkRequests')
 
@@ -1809,18 +1826,18 @@ def test_list_work_requests(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_work_requests(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1830,7 +1847,7 @@ def test_list_work_requests(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_work_requests(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1868,11 +1885,11 @@ def test_remove_package_from_managed_instance(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.remove_package_from_managed_instance(
-                managed_instance_id=request.pop(util.camelize('managed_instance_id')),
-                software_package_name=request.pop(util.camelize('software_package_name')),
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                software_package_name=request.pop(util.camelize('softwarePackageName')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1909,11 +1926,11 @@ def test_remove_packages_from_software_source(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.remove_packages_from_software_source(
-                software_source_id=request.pop(util.camelize('software_source_id')),
-                remove_packages_from_software_source_details=request.pop(util.camelize('remove_packages_from_software_source_details')),
+                software_source_id=request.pop(util.camelize('softwareSourceId')),
+                remove_packages_from_software_source_details=request.pop(util.camelize('RemovePackagesFromSoftwareSourceDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1950,10 +1967,10 @@ def test_run_scheduled_job_now(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.run_scheduled_job_now(
-                scheduled_job_id=request.pop(util.camelize('scheduled_job_id')),
+                scheduled_job_id=request.pop(util.camelize('scheduledJobId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1981,6 +1998,7 @@ def test_search_software_packages(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'SearchSoftwarePackages')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='os_management', api_name='SearchSoftwarePackages')
 
@@ -1990,13 +2008,13 @@ def test_search_software_packages(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.search_software_packages(
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.search_software_packages(
@@ -2046,10 +2064,10 @@ def test_skip_next_scheduled_job_execution(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.skip_next_scheduled_job_execution(
-                scheduled_job_id=request.pop(util.camelize('scheduled_job_id')),
+                scheduled_job_id=request.pop(util.camelize('scheduledJobId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2086,11 +2104,11 @@ def test_update_managed_instance_group(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.update_managed_instance_group(
-                managed_instance_group_id=request.pop(util.camelize('managed_instance_group_id')),
-                update_managed_instance_group_details=request.pop(util.camelize('update_managed_instance_group_details')),
+                managed_instance_group_id=request.pop(util.camelize('managedInstanceGroupId')),
+                update_managed_instance_group_details=request.pop(util.camelize('UpdateManagedInstanceGroupDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2127,11 +2145,11 @@ def test_update_scheduled_job(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.update_scheduled_job(
-                scheduled_job_id=request.pop(util.camelize('scheduled_job_id')),
-                update_scheduled_job_details=request.pop(util.camelize('update_scheduled_job_details')),
+                scheduled_job_id=request.pop(util.camelize('scheduledJobId')),
+                update_scheduled_job_details=request.pop(util.camelize('UpdateScheduledJobDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2168,11 +2186,11 @@ def test_update_software_source(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
             response = client.update_software_source(
-                software_source_id=request.pop(util.camelize('software_source_id')),
-                update_software_source_details=request.pop(util.camelize('update_software_source_details')),
+                software_source_id=request.pop(util.camelize('softwareSourceId')),
+                update_software_source_details=request.pop(util.camelize('UpdateSoftwareSourceDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

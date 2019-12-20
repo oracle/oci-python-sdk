@@ -1,3 +1,4 @@
+# Code generated. DO NOT EDIT.
 # coding: utf-8
 # Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
@@ -17,15 +18,18 @@ def session_agnostic_query_matcher(r1, r2):
 
 @pytest.fixture(autouse=True, scope='function')
 def vcr_fixture(request):
-    # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
-    # instead of 'query' matcher (which ignores sessionId in the url)
-    # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
-    custom_vcr = test_config_container.create_vcr()
-    custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
-
-    cassette_location = os.path.join('generated', 'healthchecks_{name}.yml'.format(name=request.function.__name__))
-    with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+    if test_config_container.test_mode == 'mock':
         yield
+    else:
+        # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
+        # instead of 'query' matcher (which ignores sessionId in the url)
+        # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
+        custom_vcr = test_config_container.create_vcr()
+        custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
+
+        cassette_location = os.path.join('generated', 'healthchecks_{name}.yml'.format(name=request.function.__name__))
+        with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+            yield
 
 
 # IssueRoutingInfo tag="default" email="groan-chomskies_us_grp@oracle.com" jiraProject="OHC" opsJiraProject="HC"
@@ -45,11 +49,11 @@ def test_change_http_monitor_compartment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.change_http_monitor_compartment(
-                monitor_id=request.pop(util.camelize('monitor_id')),
-                change_http_monitor_compartment_details=request.pop(util.camelize('change_http_monitor_compartment_details')),
+                monitor_id=request.pop(util.camelize('monitorId')),
+                change_http_monitor_compartment_details=request.pop(util.camelize('ChangeHttpMonitorCompartmentDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -86,11 +90,11 @@ def test_change_ping_monitor_compartment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.change_ping_monitor_compartment(
-                monitor_id=request.pop(util.camelize('monitor_id')),
-                change_ping_monitor_compartment_details=request.pop(util.camelize('change_ping_monitor_compartment_details')),
+                monitor_id=request.pop(util.camelize('monitorId')),
+                change_ping_monitor_compartment_details=request.pop(util.camelize('ChangePingMonitorCompartmentDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -127,10 +131,10 @@ def test_create_http_monitor(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.create_http_monitor(
-                create_http_monitor_details=request.pop(util.camelize('create_http_monitor_details')),
+                create_http_monitor_details=request.pop(util.camelize('CreateHttpMonitorDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -167,10 +171,10 @@ def test_create_on_demand_http_probe(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.create_on_demand_http_probe(
-                create_on_demand_http_probe_details=request.pop(util.camelize('create_on_demand_http_probe_details')),
+                create_on_demand_http_probe_details=request.pop(util.camelize('CreateOnDemandHttpProbeDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -207,10 +211,10 @@ def test_create_on_demand_ping_probe(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.create_on_demand_ping_probe(
-                create_on_demand_ping_probe_details=request.pop(util.camelize('create_on_demand_ping_probe_details')),
+                create_on_demand_ping_probe_details=request.pop(util.camelize('CreateOnDemandPingProbeDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -247,10 +251,10 @@ def test_create_ping_monitor(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.create_ping_monitor(
-                create_ping_monitor_details=request.pop(util.camelize('create_ping_monitor_details')),
+                create_ping_monitor_details=request.pop(util.camelize('CreatePingMonitorDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -287,10 +291,10 @@ def test_delete_http_monitor(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.delete_http_monitor(
-                monitor_id=request.pop(util.camelize('monitor_id')),
+                monitor_id=request.pop(util.camelize('monitorId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -327,10 +331,10 @@ def test_delete_ping_monitor(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.delete_ping_monitor(
-                monitor_id=request.pop(util.camelize('monitor_id')),
+                monitor_id=request.pop(util.camelize('monitorId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -367,10 +371,10 @@ def test_get_http_monitor(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.get_http_monitor(
-                monitor_id=request.pop(util.camelize('monitor_id')),
+                monitor_id=request.pop(util.camelize('monitorId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -407,10 +411,10 @@ def test_get_ping_monitor(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.get_ping_monitor(
-                monitor_id=request.pop(util.camelize('monitor_id')),
+                monitor_id=request.pop(util.camelize('monitorId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -438,6 +442,7 @@ def test_list_health_checks_vantage_points(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('healthchecks', util.camelize('health_checks'), 'ListHealthChecksVantagePoints')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='healthchecks', api_name='ListHealthChecksVantagePoints')
 
@@ -447,13 +452,13 @@ def test_list_health_checks_vantage_points(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.list_health_checks_vantage_points(
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_health_checks_vantage_points(
@@ -494,6 +499,7 @@ def test_list_http_monitors(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('healthchecks', util.camelize('health_checks'), 'ListHttpMonitors')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='healthchecks', api_name='ListHttpMonitors')
 
@@ -503,18 +509,18 @@ def test_list_http_monitors(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.list_http_monitors(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_http_monitors(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -524,7 +530,7 @@ def test_list_http_monitors(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_http_monitors(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -553,6 +559,7 @@ def test_list_http_probe_results(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('healthchecks', util.camelize('health_checks'), 'ListHttpProbeResults')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='healthchecks', api_name='ListHttpProbeResults')
 
@@ -562,18 +569,18 @@ def test_list_http_probe_results(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.list_http_probe_results(
-                probe_configuration_id=request.pop(util.camelize('probe_configuration_id')),
+                probe_configuration_id=request.pop(util.camelize('probeConfigurationId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_http_probe_results(
-                    probe_configuration_id=request.pop(util.camelize('probe_configuration_id')),
+                    probe_configuration_id=request.pop(util.camelize('probeConfigurationId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -583,7 +590,7 @@ def test_list_http_probe_results(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_http_probe_results(
-                        probe_configuration_id=request.pop(util.camelize('probe_configuration_id')),
+                        probe_configuration_id=request.pop(util.camelize('probeConfigurationId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -612,6 +619,7 @@ def test_list_ping_monitors(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('healthchecks', util.camelize('health_checks'), 'ListPingMonitors')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='healthchecks', api_name='ListPingMonitors')
 
@@ -621,18 +629,18 @@ def test_list_ping_monitors(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.list_ping_monitors(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_ping_monitors(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -642,7 +650,7 @@ def test_list_ping_monitors(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_ping_monitors(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -671,6 +679,7 @@ def test_list_ping_probe_results(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('healthchecks', util.camelize('health_checks'), 'ListPingProbeResults')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='healthchecks', api_name='ListPingProbeResults')
 
@@ -680,18 +689,18 @@ def test_list_ping_probe_results(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.list_ping_probe_results(
-                probe_configuration_id=request.pop(util.camelize('probe_configuration_id')),
+                probe_configuration_id=request.pop(util.camelize('probeConfigurationId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_ping_probe_results(
-                    probe_configuration_id=request.pop(util.camelize('probe_configuration_id')),
+                    probe_configuration_id=request.pop(util.camelize('probeConfigurationId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -701,7 +710,7 @@ def test_list_ping_probe_results(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_ping_probe_results(
-                        probe_configuration_id=request.pop(util.camelize('probe_configuration_id')),
+                        probe_configuration_id=request.pop(util.camelize('probeConfigurationId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -739,11 +748,11 @@ def test_update_http_monitor(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.update_http_monitor(
-                monitor_id=request.pop(util.camelize('monitor_id')),
-                update_http_monitor_details=request.pop(util.camelize('update_http_monitor_details')),
+                monitor_id=request.pop(util.camelize('monitorId')),
+                update_http_monitor_details=request.pop(util.camelize('UpdateHttpMonitorDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -780,11 +789,11 @@ def test_update_ping_monitor(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.healthchecks.HealthChecksClient(config, service_endpoint=service_endpoint)
             response = client.update_ping_monitor(
-                monitor_id=request.pop(util.camelize('monitor_id')),
-                update_ping_monitor_details=request.pop(util.camelize('update_ping_monitor_details')),
+                monitor_id=request.pop(util.camelize('monitorId')),
+                update_ping_monitor_details=request.pop(util.camelize('UpdatePingMonitorDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

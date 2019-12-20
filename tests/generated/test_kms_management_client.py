@@ -1,3 +1,4 @@
+# Code generated. DO NOT EDIT.
 # coding: utf-8
 # Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
@@ -17,15 +18,18 @@ def session_agnostic_query_matcher(r1, r2):
 
 @pytest.fixture(autouse=True, scope='function')
 def vcr_fixture(request):
-    # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
-    # instead of 'query' matcher (which ignores sessionId in the url)
-    # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
-    custom_vcr = test_config_container.create_vcr()
-    custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
-
-    cassette_location = os.path.join('generated', 'key_management_{name}.yml'.format(name=request.function.__name__))
-    with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+    if test_config_container.test_mode == 'mock':
         yield
+    else:
+        # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
+        # instead of 'query' matcher (which ignores sessionId in the url)
+        # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
+        custom_vcr = test_config_container.create_vcr()
+        custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
+
+        cassette_location = os.path.join('generated', 'key_management_{name}.yml'.format(name=request.function.__name__))
+        with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+            yield
 
 
 # IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
@@ -48,7 +52,7 @@ def test_cancel_key_deletion(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "CancelKeyDeletion")
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.cancel_key_deletion(
-                key_id=request.pop(util.camelize('key_id')),
+                key_id=request.pop(util.camelize('keyId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -88,8 +92,8 @@ def test_cancel_key_version_deletion(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "CancelKeyVersionDeletion")
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.cancel_key_version_deletion(
-                key_id=request.pop(util.camelize('key_id')),
-                key_version_id=request.pop(util.camelize('key_version_id')),
+                key_id=request.pop(util.camelize('keyId')),
+                key_version_id=request.pop(util.camelize('keyVersionId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -129,8 +133,8 @@ def test_change_key_compartment(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "ChangeKeyCompartment")
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.change_key_compartment(
-                key_id=request.pop(util.camelize('key_id')),
-                change_key_compartment_details=request.pop(util.camelize('change_key_compartment_details')),
+                key_id=request.pop(util.camelize('keyId')),
+                change_key_compartment_details=request.pop(util.camelize('ChangeKeyCompartmentDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -170,7 +174,7 @@ def test_create_key(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "CreateKey")
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_key(
-                create_key_details=request.pop(util.camelize('create_key_details')),
+                create_key_details=request.pop(util.camelize('CreateKeyDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -210,7 +214,7 @@ def test_create_key_version(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "CreateKeyVersion")
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.create_key_version(
-                key_id=request.pop(util.camelize('key_id')),
+                key_id=request.pop(util.camelize('keyId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -250,7 +254,7 @@ def test_disable_key(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "DisableKey")
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.disable_key(
-                key_id=request.pop(util.camelize('key_id')),
+                key_id=request.pop(util.camelize('keyId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -290,7 +294,7 @@ def test_enable_key(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "EnableKey")
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.enable_key(
-                key_id=request.pop(util.camelize('key_id')),
+                key_id=request.pop(util.camelize('keyId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -330,7 +334,7 @@ def test_get_key(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "GetKey")
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_key(
-                key_id=request.pop(util.camelize('key_id')),
+                key_id=request.pop(util.camelize('keyId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -370,8 +374,8 @@ def test_get_key_version(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "GetKeyVersion")
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.get_key_version(
-                key_id=request.pop(util.camelize('key_id')),
-                key_version_id=request.pop(util.camelize('key_version_id')),
+                key_id=request.pop(util.camelize('keyId')),
+                key_version_id=request.pop(util.camelize('keyVersionId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -450,7 +454,7 @@ def test_import_key(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "ImportKey")
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.import_key(
-                import_key_details=request.pop(util.camelize('import_key_details')),
+                import_key_details=request.pop(util.camelize('ImportKeyDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -490,8 +494,8 @@ def test_import_key_version(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "ImportKeyVersion")
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.import_key_version(
-                key_id=request.pop(util.camelize('key_id')),
-                import_key_version_details=request.pop(util.camelize('import_key_version_details')),
+                key_id=request.pop(util.camelize('keyId')),
+                import_key_version_details=request.pop(util.camelize('ImportKeyVersionDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -519,6 +523,7 @@ def test_list_key_versions(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('key_management', util.camelize('kms_management'), 'ListKeyVersions')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='key_management', api_name='ListKeyVersions')
 
@@ -531,15 +536,15 @@ def test_list_key_versions(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "ListKeyVersions")
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_key_versions(
-                key_id=request.pop(util.camelize('key_id')),
+                key_id=request.pop(util.camelize('keyId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_key_versions(
-                    key_id=request.pop(util.camelize('key_id')),
+                    key_id=request.pop(util.camelize('keyId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -549,7 +554,7 @@ def test_list_key_versions(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_key_versions(
-                        key_id=request.pop(util.camelize('key_id')),
+                        key_id=request.pop(util.camelize('keyId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -578,6 +583,7 @@ def test_list_keys(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('key_management', util.camelize('kms_management'), 'ListKeys')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='key_management', api_name='ListKeys')
 
@@ -590,15 +596,15 @@ def test_list_keys(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "ListKeys")
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.list_keys(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_keys(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -608,7 +614,7 @@ def test_list_keys(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_keys(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -649,8 +655,8 @@ def test_schedule_key_deletion(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "ScheduleKeyDeletion")
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.schedule_key_deletion(
-                key_id=request.pop(util.camelize('key_id')),
-                schedule_key_deletion_details=request.pop(util.camelize('schedule_key_deletion_details')),
+                key_id=request.pop(util.camelize('keyId')),
+                schedule_key_deletion_details=request.pop(util.camelize('ScheduleKeyDeletionDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -690,9 +696,9 @@ def test_schedule_key_version_deletion(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "ScheduleKeyVersionDeletion")
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.schedule_key_version_deletion(
-                key_id=request.pop(util.camelize('key_id')),
-                key_version_id=request.pop(util.camelize('key_version_id')),
-                schedule_key_version_deletion_details=request.pop(util.camelize('schedule_key_version_deletion_details')),
+                key_id=request.pop(util.camelize('keyId')),
+                key_version_id=request.pop(util.camelize('keyVersionId')),
+                schedule_key_version_deletion_details=request.pop(util.camelize('ScheduleKeyVersionDeletionDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -732,8 +738,8 @@ def test_update_key(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "UpdateKey")
             client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
             response = client.update_key(
-                key_id=request.pop(util.camelize('key_id')),
-                update_key_details=request.pop(util.camelize('update_key_details')),
+                key_id=request.pop(util.camelize('keyId')),
+                update_key_details=request.pop(util.camelize('UpdateKeyDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

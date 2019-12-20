@@ -1,3 +1,4 @@
+# Code generated. DO NOT EDIT.
 # coding: utf-8
 # Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
@@ -17,15 +18,18 @@ def session_agnostic_query_matcher(r1, r2):
 
 @pytest.fixture(autouse=True, scope='function')
 def vcr_fixture(request):
-    # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
-    # instead of 'query' matcher (which ignores sessionId in the url)
-    # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
-    custom_vcr = test_config_container.create_vcr()
-    custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
-
-    cassette_location = os.path.join('generated', 'core_{name}.yml'.format(name=request.function.__name__))
-    with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+    if test_config_container.test_mode == 'mock':
         yield
+    else:
+        # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
+        # instead of 'query' matcher (which ignores sessionId in the url)
+        # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
+        custom_vcr = test_config_container.create_vcr()
+        custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
+
+        cassette_location = os.path.join('generated', 'core_{name}.yml'.format(name=request.function.__name__))
+        with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+            yield
 
 
 # IssueRoutingInfo tag="blockStorage" email="sic_block_storage_cp_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BSCP"
@@ -45,11 +49,11 @@ def test_change_boot_volume_backup_compartment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.change_boot_volume_backup_compartment(
-                boot_volume_backup_id=request.pop(util.camelize('boot_volume_backup_id')),
-                change_boot_volume_backup_compartment_details=request.pop(util.camelize('change_boot_volume_backup_compartment_details')),
+                boot_volume_backup_id=request.pop(util.camelize('bootVolumeBackupId')),
+                change_boot_volume_backup_compartment_details=request.pop(util.camelize('ChangeBootVolumeBackupCompartmentDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -86,11 +90,11 @@ def test_change_boot_volume_compartment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.change_boot_volume_compartment(
-                boot_volume_id=request.pop(util.camelize('boot_volume_id')),
-                change_boot_volume_compartment_details=request.pop(util.camelize('change_boot_volume_compartment_details')),
+                boot_volume_id=request.pop(util.camelize('bootVolumeId')),
+                change_boot_volume_compartment_details=request.pop(util.camelize('ChangeBootVolumeCompartmentDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -127,11 +131,11 @@ def test_change_volume_backup_compartment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.change_volume_backup_compartment(
-                volume_backup_id=request.pop(util.camelize('volume_backup_id')),
-                change_volume_backup_compartment_details=request.pop(util.camelize('change_volume_backup_compartment_details')),
+                volume_backup_id=request.pop(util.camelize('volumeBackupId')),
+                change_volume_backup_compartment_details=request.pop(util.camelize('ChangeVolumeBackupCompartmentDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -168,11 +172,11 @@ def test_change_volume_compartment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.change_volume_compartment(
-                volume_id=request.pop(util.camelize('volume_id')),
-                change_volume_compartment_details=request.pop(util.camelize('change_volume_compartment_details')),
+                volume_id=request.pop(util.camelize('volumeId')),
+                change_volume_compartment_details=request.pop(util.camelize('ChangeVolumeCompartmentDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -209,11 +213,11 @@ def test_change_volume_group_backup_compartment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.change_volume_group_backup_compartment(
-                volume_group_backup_id=request.pop(util.camelize('volume_group_backup_id')),
-                change_volume_group_backup_compartment_details=request.pop(util.camelize('change_volume_group_backup_compartment_details')),
+                volume_group_backup_id=request.pop(util.camelize('volumeGroupBackupId')),
+                change_volume_group_backup_compartment_details=request.pop(util.camelize('ChangeVolumeGroupBackupCompartmentDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -250,11 +254,11 @@ def test_change_volume_group_compartment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.change_volume_group_compartment(
-                volume_group_id=request.pop(util.camelize('volume_group_id')),
-                change_volume_group_compartment_details=request.pop(util.camelize('change_volume_group_compartment_details')),
+                volume_group_id=request.pop(util.camelize('volumeGroupId')),
+                change_volume_group_compartment_details=request.pop(util.camelize('ChangeVolumeGroupCompartmentDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -291,11 +295,11 @@ def test_copy_boot_volume_backup(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.copy_boot_volume_backup(
-                boot_volume_backup_id=request.pop(util.camelize('boot_volume_backup_id')),
-                copy_boot_volume_backup_details=request.pop(util.camelize('copy_boot_volume_backup_details')),
+                boot_volume_backup_id=request.pop(util.camelize('bootVolumeBackupId')),
+                copy_boot_volume_backup_details=request.pop(util.camelize('CopyBootVolumeBackupDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -332,11 +336,11 @@ def test_copy_volume_backup(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.copy_volume_backup(
-                volume_backup_id=request.pop(util.camelize('volume_backup_id')),
-                copy_volume_backup_details=request.pop(util.camelize('copy_volume_backup_details')),
+                volume_backup_id=request.pop(util.camelize('volumeBackupId')),
+                copy_volume_backup_details=request.pop(util.camelize('CopyVolumeBackupDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -373,10 +377,10 @@ def test_create_boot_volume(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.create_boot_volume(
-                create_boot_volume_details=request.pop(util.camelize('create_boot_volume_details')),
+                create_boot_volume_details=request.pop(util.camelize('CreateBootVolumeDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -413,10 +417,10 @@ def test_create_boot_volume_backup(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.create_boot_volume_backup(
-                create_boot_volume_backup_details=request.pop(util.camelize('create_boot_volume_backup_details')),
+                create_boot_volume_backup_details=request.pop(util.camelize('CreateBootVolumeBackupDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -453,10 +457,10 @@ def test_create_volume(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.create_volume(
-                create_volume_details=request.pop(util.camelize('create_volume_details')),
+                create_volume_details=request.pop(util.camelize('CreateVolumeDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -493,10 +497,10 @@ def test_create_volume_backup(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.create_volume_backup(
-                create_volume_backup_details=request.pop(util.camelize('create_volume_backup_details')),
+                create_volume_backup_details=request.pop(util.camelize('CreateVolumeBackupDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -533,10 +537,10 @@ def test_create_volume_backup_policy(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.create_volume_backup_policy(
-                create_volume_backup_policy_details=request.pop(util.camelize('create_volume_backup_policy_details')),
+                create_volume_backup_policy_details=request.pop(util.camelize('CreateVolumeBackupPolicyDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -573,10 +577,10 @@ def test_create_volume_backup_policy_assignment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.create_volume_backup_policy_assignment(
-                create_volume_backup_policy_assignment_details=request.pop(util.camelize('create_volume_backup_policy_assignment_details')),
+                create_volume_backup_policy_assignment_details=request.pop(util.camelize('CreateVolumeBackupPolicyAssignmentDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -613,10 +617,10 @@ def test_create_volume_group(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.create_volume_group(
-                create_volume_group_details=request.pop(util.camelize('create_volume_group_details')),
+                create_volume_group_details=request.pop(util.camelize('CreateVolumeGroupDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -653,10 +657,10 @@ def test_create_volume_group_backup(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.create_volume_group_backup(
-                create_volume_group_backup_details=request.pop(util.camelize('create_volume_group_backup_details')),
+                create_volume_group_backup_details=request.pop(util.camelize('CreateVolumeGroupBackupDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -693,10 +697,10 @@ def test_delete_boot_volume(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_boot_volume(
-                boot_volume_id=request.pop(util.camelize('boot_volume_id')),
+                boot_volume_id=request.pop(util.camelize('bootVolumeId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -733,10 +737,10 @@ def test_delete_boot_volume_backup(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_boot_volume_backup(
-                boot_volume_backup_id=request.pop(util.camelize('boot_volume_backup_id')),
+                boot_volume_backup_id=request.pop(util.camelize('bootVolumeBackupId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -773,10 +777,10 @@ def test_delete_boot_volume_kms_key(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_boot_volume_kms_key(
-                boot_volume_id=request.pop(util.camelize('boot_volume_id')),
+                boot_volume_id=request.pop(util.camelize('bootVolumeId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -813,10 +817,10 @@ def test_delete_volume(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_volume(
-                volume_id=request.pop(util.camelize('volume_id')),
+                volume_id=request.pop(util.camelize('volumeId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -853,10 +857,10 @@ def test_delete_volume_backup(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_volume_backup(
-                volume_backup_id=request.pop(util.camelize('volume_backup_id')),
+                volume_backup_id=request.pop(util.camelize('volumeBackupId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -893,10 +897,10 @@ def test_delete_volume_backup_policy(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_volume_backup_policy(
-                policy_id=request.pop(util.camelize('policy_id')),
+                policy_id=request.pop(util.camelize('policyId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -933,10 +937,10 @@ def test_delete_volume_backup_policy_assignment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_volume_backup_policy_assignment(
-                policy_assignment_id=request.pop(util.camelize('policy_assignment_id')),
+                policy_assignment_id=request.pop(util.camelize('policyAssignmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -973,10 +977,10 @@ def test_delete_volume_group(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_volume_group(
-                volume_group_id=request.pop(util.camelize('volume_group_id')),
+                volume_group_id=request.pop(util.camelize('volumeGroupId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1013,10 +1017,10 @@ def test_delete_volume_group_backup(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_volume_group_backup(
-                volume_group_backup_id=request.pop(util.camelize('volume_group_backup_id')),
+                volume_group_backup_id=request.pop(util.camelize('volumeGroupBackupId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1053,10 +1057,10 @@ def test_delete_volume_kms_key(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_volume_kms_key(
-                volume_id=request.pop(util.camelize('volume_id')),
+                volume_id=request.pop(util.camelize('volumeId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1093,10 +1097,10 @@ def test_get_boot_volume(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.get_boot_volume(
-                boot_volume_id=request.pop(util.camelize('boot_volume_id')),
+                boot_volume_id=request.pop(util.camelize('bootVolumeId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1133,10 +1137,10 @@ def test_get_boot_volume_backup(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.get_boot_volume_backup(
-                boot_volume_backup_id=request.pop(util.camelize('boot_volume_backup_id')),
+                boot_volume_backup_id=request.pop(util.camelize('bootVolumeBackupId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1173,10 +1177,10 @@ def test_get_boot_volume_kms_key(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.get_boot_volume_kms_key(
-                boot_volume_id=request.pop(util.camelize('boot_volume_id')),
+                boot_volume_id=request.pop(util.camelize('bootVolumeId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1213,10 +1217,10 @@ def test_get_volume(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.get_volume(
-                volume_id=request.pop(util.camelize('volume_id')),
+                volume_id=request.pop(util.camelize('volumeId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1253,10 +1257,10 @@ def test_get_volume_backup(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.get_volume_backup(
-                volume_backup_id=request.pop(util.camelize('volume_backup_id')),
+                volume_backup_id=request.pop(util.camelize('volumeBackupId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1293,10 +1297,10 @@ def test_get_volume_backup_policy(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.get_volume_backup_policy(
-                policy_id=request.pop(util.camelize('policy_id')),
+                policy_id=request.pop(util.camelize('policyId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1324,6 +1328,7 @@ def test_get_volume_backup_policy_asset_assignment(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'GetVolumeBackupPolicyAssetAssignment')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='GetVolumeBackupPolicyAssetAssignment')
 
@@ -1333,18 +1338,18 @@ def test_get_volume_backup_policy_asset_assignment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.get_volume_backup_policy_asset_assignment(
-                asset_id=request.pop(util.camelize('asset_id')),
+                asset_id=request.pop(util.camelize('assetId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.get_volume_backup_policy_asset_assignment(
-                    asset_id=request.pop(util.camelize('asset_id')),
+                    asset_id=request.pop(util.camelize('assetId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1354,7 +1359,7 @@ def test_get_volume_backup_policy_asset_assignment(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.get_volume_backup_policy_asset_assignment(
-                        asset_id=request.pop(util.camelize('asset_id')),
+                        asset_id=request.pop(util.camelize('assetId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1392,10 +1397,10 @@ def test_get_volume_backup_policy_assignment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.get_volume_backup_policy_assignment(
-                policy_assignment_id=request.pop(util.camelize('policy_assignment_id')),
+                policy_assignment_id=request.pop(util.camelize('policyAssignmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1432,10 +1437,10 @@ def test_get_volume_group(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.get_volume_group(
-                volume_group_id=request.pop(util.camelize('volume_group_id')),
+                volume_group_id=request.pop(util.camelize('volumeGroupId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1472,10 +1477,10 @@ def test_get_volume_group_backup(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.get_volume_group_backup(
-                volume_group_backup_id=request.pop(util.camelize('volume_group_backup_id')),
+                volume_group_backup_id=request.pop(util.camelize('volumeGroupBackupId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1512,10 +1517,10 @@ def test_get_volume_kms_key(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.get_volume_kms_key(
-                volume_id=request.pop(util.camelize('volume_id')),
+                volume_id=request.pop(util.camelize('volumeId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1543,6 +1548,7 @@ def test_list_boot_volume_backups(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'ListBootVolumeBackups')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListBootVolumeBackups')
 
@@ -1552,18 +1558,18 @@ def test_list_boot_volume_backups(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.list_boot_volume_backups(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_boot_volume_backups(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1573,7 +1579,7 @@ def test_list_boot_volume_backups(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_boot_volume_backups(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1602,6 +1608,7 @@ def test_list_boot_volumes(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'ListBootVolumes')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListBootVolumes')
 
@@ -1611,20 +1618,20 @@ def test_list_boot_volumes(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.list_boot_volumes(
-                availability_domain=request.pop(util.camelize('availability_domain')),
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                availability_domain=request.pop(util.camelize('availabilityDomain')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_boot_volumes(
-                    availability_domain=request.pop(util.camelize('availability_domain')),
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    availability_domain=request.pop(util.camelize('availabilityDomain')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1634,8 +1641,8 @@ def test_list_boot_volumes(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_boot_volumes(
-                        availability_domain=request.pop(util.camelize('availability_domain')),
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        availability_domain=request.pop(util.camelize('availabilityDomain')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1664,6 +1671,7 @@ def test_list_volume_backup_policies(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'ListVolumeBackupPolicies')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListVolumeBackupPolicies')
 
@@ -1673,13 +1681,13 @@ def test_list_volume_backup_policies(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.list_volume_backup_policies(
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_volume_backup_policies(
@@ -1720,6 +1728,7 @@ def test_list_volume_backups(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'ListVolumeBackups')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListVolumeBackups')
 
@@ -1729,18 +1738,18 @@ def test_list_volume_backups(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.list_volume_backups(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_volume_backups(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1750,7 +1759,7 @@ def test_list_volume_backups(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_volume_backups(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1779,6 +1788,7 @@ def test_list_volume_group_backups(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'ListVolumeGroupBackups')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListVolumeGroupBackups')
 
@@ -1788,18 +1798,18 @@ def test_list_volume_group_backups(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.list_volume_group_backups(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_volume_group_backups(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1809,7 +1819,7 @@ def test_list_volume_group_backups(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_volume_group_backups(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1838,6 +1848,7 @@ def test_list_volume_groups(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'ListVolumeGroups')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListVolumeGroups')
 
@@ -1847,18 +1858,18 @@ def test_list_volume_groups(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.list_volume_groups(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_volume_groups(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1868,7 +1879,7 @@ def test_list_volume_groups(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_volume_groups(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1897,6 +1908,7 @@ def test_list_volumes(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('core', util.camelize('blockstorage'), 'ListVolumes')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListVolumes')
 
@@ -1906,18 +1918,18 @@ def test_list_volumes(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.list_volumes(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_volumes(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1927,7 +1939,7 @@ def test_list_volumes(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_volumes(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1965,11 +1977,11 @@ def test_update_boot_volume(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.update_boot_volume(
-                boot_volume_id=request.pop(util.camelize('boot_volume_id')),
-                update_boot_volume_details=request.pop(util.camelize('update_boot_volume_details')),
+                boot_volume_id=request.pop(util.camelize('bootVolumeId')),
+                update_boot_volume_details=request.pop(util.camelize('UpdateBootVolumeDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2006,11 +2018,11 @@ def test_update_boot_volume_backup(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.update_boot_volume_backup(
-                boot_volume_backup_id=request.pop(util.camelize('boot_volume_backup_id')),
-                update_boot_volume_backup_details=request.pop(util.camelize('update_boot_volume_backup_details')),
+                boot_volume_backup_id=request.pop(util.camelize('bootVolumeBackupId')),
+                update_boot_volume_backup_details=request.pop(util.camelize('UpdateBootVolumeBackupDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2047,11 +2059,11 @@ def test_update_boot_volume_kms_key(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.update_boot_volume_kms_key(
-                boot_volume_id=request.pop(util.camelize('boot_volume_id')),
-                update_boot_volume_kms_key_details=request.pop(util.camelize('update_boot_volume_kms_key_details')),
+                boot_volume_id=request.pop(util.camelize('bootVolumeId')),
+                update_boot_volume_kms_key_details=request.pop(util.camelize('UpdateBootVolumeKmsKeyDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2088,11 +2100,11 @@ def test_update_volume(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.update_volume(
-                volume_id=request.pop(util.camelize('volume_id')),
-                update_volume_details=request.pop(util.camelize('update_volume_details')),
+                volume_id=request.pop(util.camelize('volumeId')),
+                update_volume_details=request.pop(util.camelize('UpdateVolumeDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2129,11 +2141,11 @@ def test_update_volume_backup(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.update_volume_backup(
-                volume_backup_id=request.pop(util.camelize('volume_backup_id')),
-                update_volume_backup_details=request.pop(util.camelize('update_volume_backup_details')),
+                volume_backup_id=request.pop(util.camelize('volumeBackupId')),
+                update_volume_backup_details=request.pop(util.camelize('UpdateVolumeBackupDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2170,11 +2182,11 @@ def test_update_volume_backup_policy(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.update_volume_backup_policy(
-                policy_id=request.pop(util.camelize('policy_id')),
-                update_volume_backup_policy_details=request.pop(util.camelize('update_volume_backup_policy_details')),
+                policy_id=request.pop(util.camelize('policyId')),
+                update_volume_backup_policy_details=request.pop(util.camelize('UpdateVolumeBackupPolicyDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2211,11 +2223,11 @@ def test_update_volume_group(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.update_volume_group(
-                volume_group_id=request.pop(util.camelize('volume_group_id')),
-                update_volume_group_details=request.pop(util.camelize('update_volume_group_details')),
+                volume_group_id=request.pop(util.camelize('volumeGroupId')),
+                update_volume_group_details=request.pop(util.camelize('UpdateVolumeGroupDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2252,11 +2264,11 @@ def test_update_volume_group_backup(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.update_volume_group_backup(
-                volume_group_backup_id=request.pop(util.camelize('volume_group_backup_id')),
-                update_volume_group_backup_details=request.pop(util.camelize('update_volume_group_backup_details')),
+                volume_group_backup_id=request.pop(util.camelize('volumeGroupBackupId')),
+                update_volume_group_backup_details=request.pop(util.camelize('UpdateVolumeGroupBackupDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2293,11 +2305,11 @@ def test_update_volume_kms_key(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.BlockstorageClient(config, service_endpoint=service_endpoint)
             response = client.update_volume_kms_key(
-                volume_id=request.pop(util.camelize('volume_id')),
-                update_volume_kms_key_details=request.pop(util.camelize('update_volume_kms_key_details')),
+                volume_id=request.pop(util.camelize('volumeId')),
+                update_volume_kms_key_details=request.pop(util.camelize('UpdateVolumeKmsKeyDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

@@ -39,7 +39,7 @@ class ComputeClient(object):
             need to specify a service endpoint.
 
         :param timeout: (optional)
-            The connection and read timeouts for the client. The default is that the client never times out. This keyword argument can be provided
+            The connection and read timeouts for the client. The default values are connection timeout 10 seconds and read timeout 60 seconds. This keyword argument can be provided
             as a single float, in which case the value provided is used for both the read and connection timeouts, or as a tuple of two floats. If
             a tuple is provided then the first value is used as the connection timeout and the second value as the read timeout.
         :type timeout: float or tuple(float, float)
@@ -183,7 +183,7 @@ class ComputeClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.BootVolumeAttachment`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/bootVolumeAttachments/"
+        resource_path = "/bootVolumeAttachments"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -256,7 +256,7 @@ class ComputeClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VnicAttachment`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/vnicAttachments/"
+        resource_path = "/vnicAttachments"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -325,7 +325,7 @@ class ComputeClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VolumeAttachment`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/volumeAttachments/"
+        resource_path = "/volumeAttachments"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -410,7 +410,7 @@ class ComputeClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.ConsoleHistory`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/instanceConsoleHistories/"
+        resource_path = "/instanceConsoleHistories"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -2826,7 +2826,7 @@ class ComputeClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Instance`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/instances/"
+        resource_path = "/instances"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -3259,7 +3259,7 @@ class ComputeClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.BootVolumeAttachment`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/bootVolumeAttachments/"
+        resource_path = "/bootVolumeAttachments"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -3379,7 +3379,7 @@ class ComputeClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.ConsoleHistory`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/instanceConsoleHistories/"
+        resource_path = "/instanceConsoleHistories"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -4450,7 +4450,7 @@ class ComputeClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.Instance`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/instances/"
+        resource_path = "/instances"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -4677,7 +4677,7 @@ class ComputeClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.VnicAttachment`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/vnicAttachments/"
+        resource_path = "/vnicAttachments"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -4782,7 +4782,7 @@ class ComputeClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.VolumeAttachment`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/volumeAttachments/"
+        resource_path = "/volumeAttachments"
         method = "GET"
 
         # Don't accept unknown kwargs

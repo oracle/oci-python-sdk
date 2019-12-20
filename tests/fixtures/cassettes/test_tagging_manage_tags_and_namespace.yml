@@ -2,21 +2,31 @@ interactions:
 - request:
     body: null
     headers:
-      accept: [application/json]
-      accept-encoding: ['gzip, deflate']
-      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
-          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="H/Ax+mWATYR4Qcg4NH6Z8M/kPI+lVPIgUmHREZr/0yIB0fZ7+GZ2bFYkEtZ6gujq89nSCqh83MQu+c99f06Vrkq2t1l0DGYsyNd1CfpnSW1UbrDsdSr4jWXKkeuCzXwT+mEIfFdgSGl4Mp0fpoqClpaeipf2pLMHzQ6ndqf6ERoUmjfjZSYH5/3k2hjTVWfLAcfrL5Aq/Bcx9tPVyQLTecygG956vRG4Ts/0pfCWcDYVh568Wm3fetOJY9fEi3UUgxEFMPHOIbLkqi94sgfZnGlaIe3aO3mmORlwh8DrXzVCABL2/TftaNHcbhnaHAiSah7xEgagBxnk1QuRZMeKew==",version="1"']
-      connection: [keep-alive]
-      content-type: [application/json]
-      date: ['Sat, 12 May 2018 02:17:18 GMT']
-      host: [identity.us-phoenix-1.oraclecloud.com]
-      opc-client-info: [Oracle-PythonSDK/1.3.20]
-      opc-request-id: [C330DE3E39764B3BB5A57709182FD948]
-      user-agent: [Oracle-PythonSDK/1.3.20 (python 3.5.1; x86_64-Darwin)]
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - Signature algorithm="rsa-sha256",headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="j0BP4foRyzmqJmZUy5/Ty73TEkfEOfkys+Zi18iS/vcp2u8UFToVkTRGJWHpHBBiuUcY1EXy3AXU0Yq4vFoIMYmk3mH4oacgV6ll0gWMgmrLRQNqdgW0rCzJUZKqOiiCCth9pg8UkyrmX+RHvDOC/bP9fvO5M+CjxvQrz8KnxJjDN9XoxtBLnEJEXoUYSp75UnG3tvMz4zDrPlDQE2syKbco54RBnSI3C0/X7+sJAqCkA4hoGmSNBwBvsFjZBla2qdM9/YPu68wB88VMOCHnj0Z3WUvI7q6Dl6MR/q8jpYQkTxcxaTdeCAJdLg4wRBYCfvBW/qlRjTaDFR65Aivoyw==",version="1"
+      connection:
+      - keep-alive
+      content-type:
+      - application/json
+      date:
+      - Mon, 13 Jan 2020 07:56:01 GMT
+      host:
+      - identity.us-phoenix-1.oraclecloud.com
+      opc-client-info:
+      - Oracle-PythonSDK/2.10.0
+      opc-request-id:
+      - 1E48D97A9E9E4265A130BA38F6092884
+      user-agent:
+      - Oracle-PythonSDK/2.10.0 (python 3.5.1; x86_64-Darwin)
     method: GET
     uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces?compartmentId=ocid1.compartment.oc1..aaaaaaaa235ux54bxmitd4zvnhxyeubszseeoklcpvlegqumemc4x47oku5q
   response:
-    body: {string: "[ {\n  \"isRetired\" : false,\n  \"id\" : \"ocid1.tagnamespace.oc1..aaaaaaaaxeqkoz5opecm6b4dpzhzveqhf3issjllvhuk2lhhg5u6lhy2vz2a\"\
+    body:
+      string: "[ {\n  \"isRetired\" : false,\n  \"id\" : \"ocid1.tagnamespace.oc1..aaaaaaaaxeqkoz5opecm6b4dpzhzveqhf3issjllvhuk2lhhg5u6lhy2vz2a\"\
         ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaa235ux54bxmitd4zvnhxyeubszseeoklcpvlegqumemc4x47oku5q\"\
         ,\n  \"name\" : \"py_sdk_apply_tags_ns\",\n  \"description\" : \"Namespace\
         \ for Python SDK tags\",\n  \"timeCreated\" : \"2018-04-19T20:16:44.817Z\"\
@@ -25,578 +35,566 @@ interactions:
         ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaa235ux54bxmitd4zvnhxyeubszseeoklcpvlegqumemc4x47oku5q\"\
         ,\n  \"name\" : \"tagns_464166\",\n  \"description\" : \"updated tag ns\"\
         ,\n  \"timeCreated\" : \"2018-04-19T21:02:17.106Z\",\n  \"freeformTags\" :\
-        \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n} ]"}
+        \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n} ]"
     headers:
-      Connection: [keep-alive]
-      Content-Length: ['861']
-      Content-Type: [application/json]
-      Date: ['Sat, 12 May 2018 02:18:04 GMT']
-      opc-limit: ['25']
-      opc-next-page: [AAAAAAAAAAHpVxNWYhtbNI2iztrnT9bj8P4qKCxXHsvt2_g9Q8ACnObyyXc4InkSmYnKAJ6cyrtvA3Bo29VXsldSzXBj141rn-muQApMvDw9qunCa7sCdQaMJCagKTNA83T6yH5m3W8MMvS0WABYNE5zix7Y6ei3MHNpNmJdBbVT5FIriu3IxmSwr_5bTKSiJWmZeXnB8tezKMyeHXH2c7rpu_AtAaL72NZ0inAnWbfMkYRIyWZDjv2PeF95yDEbb-GfNH8oQxt2qOo-KNQ5dzUNK7fcFVevBU7mgfexYz13yrS1sbGcK9L0_BocLYslunO5TKylOJaR8VyDBr1nNgSUQKGE4d4Gdof6Rg5er1zUyT-YXOZlHdNCxpI44MQ5RI2O19PPJGGA-VlFkvZ9Jj8h-AlzMx42wO89b3RwE9UBLHHvKK5JyHv_E9NaXlmNOZkh0lcB5h6uQpqsUWyzHHSVz26M5y44QWK0WsfnZk2C8sfQYVPHFXOnfAlfhF8JaO3E_yLvBvcncNqIECWsHzUzJDyNHMxGTufZnNy1WUeb0Y6Lmoh18FjeKVgMInn6DZsuX2s_tSdsjgJmRd0DVi_U5jryF-YoG9Bs9J2fS6Xu]
-      opc-request-id: [C330DE3E39764B3BB5A57709182FD948/4149818FB0AAA9205C955C9B69041625/2FCCFCE7A3D0F9E8C188A1F88FE78A7A]
-    status: {code: 200, message: OK}
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '861'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Jan 2020 07:56:02 GMT
+      X-Content-Type-Options:
+      - nosniff
+      opc-limit:
+      - '100'
+      opc-request-id:
+      - 1E48D97A9E9E4265A130BA38F6092884/983D8205A4D59AB2ADF710A82A87DB95/382B06921D604275129A4B341E95DE63
+    status:
+      code: 200
+      message: OK
 - request:
     body: null
     headers:
-      accept: [application/json]
-      accept-encoding: ['gzip, deflate']
-      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
-          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="ERLvgKHD6P7qOxuZJpcjtJ27XocyUK7bJQqbdTgD/ewbSSCtq2NmnEvZxDJoOU2d/qJE+vaktl43Vhe2yir+HC3gM6yNabJjb/NRtokkAhCOitRS2qeCj8CWE6H/VR/IW9qVnff7uJs8qV688ZwGYY7ynU9ApMoHsqmPZkHS0WO5dr4MLSFMqP3Msw32wgAJ3iwKmMdgEo5ca/GDrWJeGIt3bzrNVV5n/os62vKNkrUgS1fGyGqPIhhUMa4vmB14pyBtZlKwBFGt4uN29nvvW/yorRurw/VVTAvNUH5EEh/AmDigyflAh5xkioi9weIZ6yH3zQpqJncuXqxByuecAg==",version="1"']
-      connection: [keep-alive]
-      content-type: [application/json]
-      date: ['Sat, 12 May 2018 02:17:18 GMT']
-      host: [identity.us-phoenix-1.oraclecloud.com]
-      opc-client-info: [Oracle-PythonSDK/1.3.20]
-      opc-request-id: [A64B58FDEDF1431E91CB59CD427669AF]
-      user-agent: [Oracle-PythonSDK/1.3.20 (python 3.5.1; x86_64-Darwin)]
-    method: GET
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces?page=AAAAAAAAAAHpVxNWYhtbNI2iztrnT9bj8P4qKCxXHsvt2_g9Q8ACnObyyXc4InkSmYnKAJ6cyrtvA3Bo29VXsldSzXBj141rn-muQApMvDw9qunCa7sCdQaMJCagKTNA83T6yH5m3W8MMvS0WABYNE5zix7Y6ei3MHNpNmJdBbVT5FIriu3IxmSwr_5bTKSiJWmZeXnB8tezKMyeHXH2c7rpu_AtAaL72NZ0inAnWbfMkYRIyWZDjv2PeF95yDEbb-GfNH8oQxt2qOo-KNQ5dzUNK7fcFVevBU7mgfexYz13yrS1sbGcK9L0_BocLYslunO5TKylOJaR8VyDBr1nNgSUQKGE4d4Gdof6Rg5er1zUyT-YXOZlHdNCxpI44MQ5RI2O19PPJGGA-VlFkvZ9Jj8h-AlzMx42wO89b3RwE9UBLHHvKK5JyHv_E9NaXlmNOZkh0lcB5h6uQpqsUWyzHHSVz26M5y44QWK0WsfnZk2C8sfQYVPHFXOnfAlfhF8JaO3E_yLvBvcncNqIECWsHzUzJDyNHMxGTufZnNy1WUeb0Y6Lmoh18FjeKVgMInn6DZsuX2s_tSdsjgJmRd0DVi_U5jryF-YoG9Bs9J2fS6Xu&compartmentId=ocid1.compartment.oc1..aaaaaaaa235ux54bxmitd4zvnhxyeubszseeoklcpvlegqumemc4x47oku5q
-  response:
-    body: {string: '[ ]'}
-    headers:
-      Connection: [keep-alive]
-      Content-Length: ['3']
-      Content-Type: [application/json]
-      Date: ['Sat, 12 May 2018 02:18:04 GMT']
-      opc-limit: ['25']
-      opc-request-id: [A64B58FDEDF1431E91CB59CD427669AF/DC95AFADAFCC4C2CD6630F718D1432E7/337A2C6FFEABC10794ED2E2335B4779A]
-    status: {code: 200, message: OK}
-- request:
-    body: null
-    headers:
-      accept: [application/json]
-      accept-encoding: ['gzip, deflate']
-      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
-          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="WOmoc+8qJ49j0QoLmwsQqdTUH6vvONjv5cKMi54BvQYdpvWWOCcFzuvpOvWGhiL6sPC5aZ9ne294NaHKi022QwXKQ3RfUQATJal1kTx7AYtZCgzgR1ybFvDSs0+KDRxJTXNbg3mZmC8JZlPkqINh0dUFgj7csqVdPrbkbsVv3ygHsAzsRJrjP5p7OFKWVjE+eyrsPzo5AH63Hy4rmw/yG6bcl4Xeoe5cPn0EcL74KVSqRx2WM4+EXQMzQeqKrqx8YuQHavgqJesOtegf5lBIFZuSUMQtM2OirdI1BBRqdoM0sxwG+YyIK4ntSXCatfmF+Cdiz13qtslIHCruXQgAyg==",version="1"']
-      connection: [keep-alive]
-      content-type: [application/json]
-      date: ['Sat, 12 May 2018 02:17:18 GMT']
-      host: [identity.us-phoenix-1.oraclecloud.com]
-      opc-client-info: [Oracle-PythonSDK/1.3.20]
-      opc-request-id: [8D2A3980AFB24DA7A325D14E9354BCE4]
-      user-agent: [Oracle-PythonSDK/1.3.20 (python 3.5.1; x86_64-Darwin)]
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - Signature algorithm="rsa-sha256",headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="rydktcE0BGgBwvnFMdVL7pkUdXYVagYWeEvfb+zPGHAyIqIr8oH0ZSn43j1z5ODQ5sLgUEmR27VrSAxN2Hd91VhHM4yLna6FofkAsmrobJGH53T/gZymwOab0jsxLLN+7XMVB5K7eaoeY4+LuOAhfdv/lX0SwPTmda1b2secs7QThSX/JSjcVnM/rz62TmE/djBakbyyvbpaJWkSrWdqobL6K1Pd6QjH6ol8Z0RmZ9/Gztvbvg+l4/GJ+cnxsRvhmCWfMhn5ew7I1ULimC97PqmQsZ2xw1B6Wo5NSLpGtHXpAjiPOMQiZ6aPWqoNb/6Pkkgoexr2NIU/uJjOzuPtNg==",version="1"
+      connection:
+      - keep-alive
+      content-type:
+      - application/json
+      date:
+      - Mon, 13 Jan 2020 07:56:02 GMT
+      host:
+      - identity.us-phoenix-1.oraclecloud.com
+      opc-client-info:
+      - Oracle-PythonSDK/2.10.0
+      opc-request-id:
+      - F3DF8CA9EDCD46C7992FEB73C1DEB76F
+      user-agent:
+      - Oracle-PythonSDK/2.10.0 (python 3.5.1; x86_64-Darwin)
     method: GET
     uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq
   response:
-    body: {string: "{\n  \"isRetired\" : false,\n  \"id\" : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
+    body:
+      string: "{\n  \"isRetired\" : false,\n  \"id\" : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
         ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaa235ux54bxmitd4zvnhxyeubszseeoklcpvlegqumemc4x47oku5q\"\
         ,\n  \"name\" : \"tagns_464166\",\n  \"description\" : \"updated tag ns\"\
         ,\n  \"timeCreated\" : \"2018-04-19T21:02:17.106Z\",\n  \"freeformTags\" :\
-        \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}"}
+        \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}"
     headers:
-      Connection: [keep-alive]
-      Content-Length: ['416']
-      Content-Type: [application/json]
-      Date: ['Sat, 12 May 2018 02:18:04 GMT']
-      ETag: [cb714bc3cfa157ebf1b1f984aebec14efaa6501f]
-      opc-request-id: [8D2A3980AFB24DA7A325D14E9354BCE4/D38FAD528E6D71C2FEE08D30D9023161/90A6247D1688815F61B13E9B876D7AC9]
-    status: {code: 200, message: OK}
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '416'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Jan 2020 07:56:02 GMT
+      ETag:
+      - f290ef99c6743716a49499e2756719332d52da28
+      X-Content-Type-Options:
+      - nosniff
+      opc-request-id:
+      - F3DF8CA9EDCD46C7992FEB73C1DEB76F/74F7E3D8D6D2DA15B82F32E76D3EEC1A/AAB511DC5C631CECE4757FC79BFACA60
+    status:
+      code: 200
+      message: OK
 - request:
     body: null
     headers:
-      accept: [application/json]
-      accept-encoding: ['gzip, deflate']
-      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
-          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="deHsNfxKjoky4TDwEPO/vtQdCxNODnt2BZu+w2M6q4MP1pFZn2gfBDOGyejFPOvyjqvFJFM48E9cQPF/0+g1EdH7xCIvUNuf/l1ANi8LHgo9AqVRIewhzNS96gBxtlc/rbiEaojhkKZvW4tVAP8qSu/Td5hb3pGaSg4On89PeFUiXDZJJvlI1XJaF9lWrQYTJJwWYilFPmehgoH1mMAfzTvLChkgjLit7pv0fqz0+pUV5/o+k2ItRa4C3Gyltkp78hx2UH3qal82UTJSY1L7urX4Ll2oBEei1h9AzQ6vhTZUWPIaaDGeoBsOmt0te1yv62cdiTpPgzdXp0N9TKpd9A==",version="1"']
-      connection: [keep-alive]
-      content-type: [application/json]
-      date: ['Sat, 12 May 2018 02:17:18 GMT']
-      host: [identity.us-phoenix-1.oraclecloud.com]
-      opc-client-info: [Oracle-PythonSDK/1.3.20]
-      opc-request-id: [CBAD978B39FE437CB4365FD209617A43]
-      user-agent: [Oracle-PythonSDK/1.3.20 (python 3.5.1; x86_64-Darwin)]
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - Signature algorithm="rsa-sha256",headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="drPwYSEUNCmLLZgrd045uZfOM6VOb+MR93RQgv338ztnBl4YKkoI6DWv1bTGyNcBKBJ2ReyTF3FDrzA23C3qIYSi6KWT9DOiZepXrqCAtNm4wwtx0Gxj1fpO3OjUQrRtR98ZnU3iC2/2hStwVqaeZ6X0pEocmRyuUmUphpEGiZDZDbjMZ8pF2pX+NBI8wygUAz9XDwHpoAS4CLnuBDEHJZwsQ0zoVCLihs0NdQJAg1EZ1BOrIZA6YH8hltTVMfvpHohFU64J1dWSKCyQIbfWbuYssIHyKkyPtEA+ft1d1yM6XmvMKPPT2TaLZpvV9cdbYJF3uDcVU8mkaXkgoAlvZQ==",version="1"
+      connection:
+      - keep-alive
+      content-type:
+      - application/json
+      date:
+      - Mon, 13 Jan 2020 07:56:02 GMT
+      host:
+      - identity.us-phoenix-1.oraclecloud.com
+      opc-client-info:
+      - Oracle-PythonSDK/2.10.0
+      opc-request-id:
+      - BA24A130C1D24249AC36AD9656220263
+      user-agent:
+      - Oracle-PythonSDK/2.10.0 (python 3.5.1; x86_64-Darwin)
     method: GET
     uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags/tagone_vcr
   response:
-    body: {string: "{\n  \"isRetired\" : true,\n  \"isCostTracking\" : false,\n  \"\
-        id\" : \"ocid1.tagdefinition.oc1..aaaaaaaanojulrr4fwgypcsz5wi7xspym2y7kh3xbb7hvtewrc4sjkzrrwqa\"\
+    body:
+      string: "{\n  \"isRetired\" : true,\n  \"isCostTracking\" : false,\n  \"tagNamespaceId\"\
+        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
+        ,\n  \"tagNamespaceName\" : \"tagns_464166\",\n  \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaanojulrr4fwgypcsz5wi7xspym2y7kh3xbb7hvtewrc4sjkzrrwqa\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaa235ux54bxmitd4zvnhxyeubszseeoklcpvlegqumemc4x47oku5q\"\
         ,\n  \"name\" : \"tagone_vcr\",\n  \"description\" : \"hello world\",\n  \"\
         inactiveStatus\" : 2,\n  \"timeCreated\" : \"2018-04-20T15:29:14.888Z\",\n\
-        \  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"tagNamespaceId\"\
-        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"lifecycleState\" : \"INACTIVE\"\n}"}
+        \  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"lifecycleState\"\
+        \ : \"INACTIVE\"\n}"
     headers:
-      Connection: [keep-alive]
-      Content-Length: ['467']
-      Content-Type: [application/json]
-      Date: ['Sat, 12 May 2018 02:18:04 GMT']
-      ETag: [94ec08b64f4eb5ea6232880ed8f7294d31435034]
-      opc-request-id: [CBAD978B39FE437CB4365FD209617A43/0D08738F040A505C9459ED7BE561A428/952DA8E313C8783F8E8F88AF0661C0FE]
-    status: {code: 200, message: OK}
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '613'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Jan 2020 07:56:02 GMT
+      ETag:
+      - a8c0a0858a7c90e6411a2d1d89cf962baf0878f1
+      X-Content-Type-Options:
+      - nosniff
+      opc-request-id:
+      - BA24A130C1D24249AC36AD9656220263/894AE8CC3EBE978B65131961D84F1747/58CDF675ED34A5196640F14DFD5C98AB
+    status:
+      code: 200
+      message: OK
 - request:
-    body: '{"description": "reactivated tag", "isRetired": false}'
+    body: '{"isRetired": false, "description": "reactivated tag"}'
     headers:
-      Content-Length: ['54']
-      accept: [application/json]
-      accept-encoding: ['gzip, deflate']
-      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
-          host content-length content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="G887dSP7zaEz7XHMYZ4UDJsi9gLT0zrMWPWl3/8cn9p5ef+NG3wL9CNXIn478AEq2vOa4HIF1VeDxqoWielEvOD2Qq372GjBoNY0T2TWeSw69nIyVMhfBdaSMw14K5+H7ojx6lXPuKVqmr1S5gDDO8vpRaammaUR68eeZhWmJhAVGUz2bvwW5ksFqFHqStJvcqOiYX5Yieu4CnXHzAKK3HCATUxYP9xZkVZ/dk2w8QcSir3Mb66efQih8/g/jKy4/jZu5uleEDiLoORUGWCkKDpNfRvcWGE9ocE7jQpEmH5s9U39HTGZzFLC+AKGd/Wv4sK1ppBoESOtJGW1Rq9BfQ==",version="1"']
-      connection: [keep-alive]
-      content-type: [application/json]
-      date: ['Sat, 12 May 2018 02:17:19 GMT']
-      host: [identity.us-phoenix-1.oraclecloud.com]
-      opc-client-info: [Oracle-PythonSDK/1.3.20]
-      opc-request-id: [7A5F68688943440E8887CAF11E7FB605]
-      user-agent: [Oracle-PythonSDK/1.3.20 (python 3.5.1; x86_64-Darwin)]
-      x-content-sha256: [7nqNwYbKssvppWdK7iqP3DS/YKZDclCc70SNlMu7yrE=]
+      Content-Length:
+      - '54'
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - Signature algorithm="rsa-sha256",headers="date (request-target) host content-length
+        content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="WvFWAWMcrjzRuz5AO3VUP8WOXgJH/RgyiegwcUYWDyPdFxyKjsmo2oYVTL3Lbf7edwQux4JfWchmuMji/PoFU0eHaj++1J205uaVhAHNRclnmdcpf2JqsrgCErLPgavUIiLI8rn+5xfm/x2aqxmaFtTDhuKhTYkPBv+DfowUDb0BeTRkaX/wz2G3JqDYS15+zRLXRVGIq8c745HkcQEm7RXEgVgdUZfA+G2a0UlFFWXrhcyEYX7lg8jsy9klT4x44OT57SyBCTS8AxFVIlxdcowQScU65VeZIzEaT2GaQ/miVd4AjKu8r7zIgH5w7tGEUAm5gowkZq273GjZ+SWdhw==",version="1"
+      connection:
+      - keep-alive
+      content-type:
+      - application/json
+      date:
+      - Mon, 13 Jan 2020 07:56:02 GMT
+      host:
+      - identity.us-phoenix-1.oraclecloud.com
+      opc-client-info:
+      - Oracle-PythonSDK/2.10.0
+      opc-request-id:
+      - 858E268744144BCA8513E10B3996B9CE
+      user-agent:
+      - Oracle-PythonSDK/2.10.0 (python 3.5.1; x86_64-Darwin)
+      x-content-sha256:
+      - G0OUL3RtNh3U2ERxDF/luSQleRvIsfU72e+sr3tD3Wc=
     method: PUT
     uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags/tagone_vcr
   response:
-    body: {string: "{\n  \"isRetired\" : false,\n  \"isCostTracking\" : false,\n \
-        \ \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaanojulrr4fwgypcsz5wi7xspym2y7kh3xbb7hvtewrc4sjkzrrwqa\"\
+    body:
+      string: "{\n  \"isRetired\" : false,\n  \"isCostTracking\" : false,\n  \"tagNamespaceId\"\
+        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
+        ,\n  \"tagNamespaceName\" : \"tagns_464166\",\n  \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaanojulrr4fwgypcsz5wi7xspym2y7kh3xbb7hvtewrc4sjkzrrwqa\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaa235ux54bxmitd4zvnhxyeubszseeoklcpvlegqumemc4x47oku5q\"\
         ,\n  \"name\" : \"tagone_vcr\",\n  \"description\" : \"reactivated tag\",\n\
         \  \"timeCreated\" : \"2018-04-20T15:29:14.888Z\",\n  \"freeformTags\" : {\
-        \ },\n  \"definedTags\" : { },\n  \"tagNamespaceId\" : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"lifecycleState\" : \"ACTIVE\"\n}"}
+        \ },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}"
     headers:
-      Connection: [keep-alive]
-      Content-Length: ['446']
-      Content-Type: [application/json]
-      Date: ['Sat, 12 May 2018 02:18:04 GMT']
-      ETag: [c7b6ec02d6fdf6cb5152d4894194fe66b227f220]
-      opc-request-id: [7A5F68688943440E8887CAF11E7FB605/4630E9260230ED8C00F5CD5777D2F9BA/D507B675D84042A3A366C86ECBDB263C]
-    status: {code: 200, message: OK}
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '592'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Jan 2020 07:56:02 GMT
+      ETag:
+      - eafab732e4647e3a6bdde6592f79bc2da79a0ca7
+      X-Content-Type-Options:
+      - nosniff
+      opc-request-id:
+      - 858E268744144BCA8513E10B3996B9CE/D3F72E7196135268F19B8F7F716BA62E/0F45F2AD4024116843BDA4CF04628DA5
+    status:
+      code: 200
+      message: OK
 - request:
-    body: '{"description": "hello world", "isRetired": true}'
+    body: '{"isRetired": true, "description": "hello world"}'
     headers:
-      Content-Length: ['49']
-      accept: [application/json]
-      accept-encoding: ['gzip, deflate']
-      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
-          host content-length content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="mHP6y3lL7Pwt3YzJjFRfKvWiqYp6JH9aAofW+l6/YoD0KpCsRV29VQ2sWqK7AUQTeJYWYrXGAyvqPdM7pwFTbqoj2F/aQilxHYyvLhivRABUnF1MTpaRDkRVBj+P5OEKQBYONYVD2LfYktBs4znCs47ARlebGcEkpaGSp3yhpJLdNTFYkzN88f7o5i9wexNTARh8hYkgz33K4fw9iWhCN1eYDfVq8gyfNpKNVdlNhe4bNorlFHuaUQwlRE2o31rfvY1xExJGGOETDO0QxigGZpld57YUaeICH2xc6Ueas97Y13zWA5HxTYdJLBu92Ul8PnjqbznwjzxOwFLGOLWM2g==",version="1"']
-      connection: [keep-alive]
-      content-type: [application/json]
-      date: ['Sat, 12 May 2018 02:17:19 GMT']
-      host: [identity.us-phoenix-1.oraclecloud.com]
-      opc-client-info: [Oracle-PythonSDK/1.3.20]
-      opc-request-id: [0B06CF5D46A74E69A74B3B86C1809341]
-      user-agent: [Oracle-PythonSDK/1.3.20 (python 3.5.1; x86_64-Darwin)]
-      x-content-sha256: [9yqKyer3QcWt3kIgKsqThPPyLlwdGYGfLdnNTFvMipA=]
+      Content-Length:
+      - '49'
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - Signature algorithm="rsa-sha256",headers="date (request-target) host content-length
+        content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="eXRvS5yDszw9n+/RFezH7D3d64Fw9UNYfwZj3k+TK1qjt6lpccD4w2ayh1cnXoL49tYe4F7PLXXE/O/VXcY0kOdwSPrEnUPRY8OQlQt+AGuBBVZ9uxC2k5B6O3UfUTYakNSCJLEP4dMfoXZ9U8xVeYnXaD4lpW71SF8/pYcM/5bOKyfcNuXdX3e8jr7KSK9EiiQxZeQx+quicSqXNS0AlRQU6RN9lgsQj+an9exksShnMXvWtZ5vkOD/7/abm0L1S7xigAqrcimUYXDWTlPWoDyKxzp3H42vMKZ2z5O1G4qCFDKi/51He1ndxLgdH1XaJnqabFx1plTUaavDujDiiw==",version="1"
+      connection:
+      - keep-alive
+      content-type:
+      - application/json
+      date:
+      - Mon, 13 Jan 2020 07:56:02 GMT
+      host:
+      - identity.us-phoenix-1.oraclecloud.com
+      opc-client-info:
+      - Oracle-PythonSDK/2.10.0
+      opc-request-id:
+      - 7BBAED4DF8DD4CA3983094B65EA490F3
+      user-agent:
+      - Oracle-PythonSDK/2.10.0 (python 3.5.1; x86_64-Darwin)
+      x-content-sha256:
+      - uE6fp97zHLgNojVns4XHEP6AWH8/wKaUeMQ3fApMhY4=
     method: PUT
     uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags/tagone_vcr
   response:
-    body: {string: "{\n  \"isRetired\" : true,\n  \"isCostTracking\" : false,\n  \"\
-        id\" : \"ocid1.tagdefinition.oc1..aaaaaaaanojulrr4fwgypcsz5wi7xspym2y7kh3xbb7hvtewrc4sjkzrrwqa\"\
+    body:
+      string: "{\n  \"isRetired\" : true,\n  \"isCostTracking\" : false,\n  \"tagNamespaceId\"\
+        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
+        ,\n  \"tagNamespaceName\" : \"tagns_464166\",\n  \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaanojulrr4fwgypcsz5wi7xspym2y7kh3xbb7hvtewrc4sjkzrrwqa\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaa235ux54bxmitd4zvnhxyeubszseeoklcpvlegqumemc4x47oku5q\"\
         ,\n  \"name\" : \"tagone_vcr\",\n  \"description\" : \"hello world\",\n  \"\
         inactiveStatus\" : 2,\n  \"timeCreated\" : \"2018-04-20T15:29:14.888Z\",\n\
-        \  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"tagNamespaceId\"\
-        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"lifecycleState\" : \"INACTIVE\"\n}"}
+        \  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"lifecycleState\"\
+        \ : \"INACTIVE\"\n}"
     headers:
-      Connection: [keep-alive]
-      Content-Length: ['467']
-      Content-Type: [application/json]
-      Date: ['Sat, 12 May 2018 02:18:05 GMT']
-      ETag: [0767eac9606b425f566c5d4e33a6af23beb9f9cc]
-      opc-request-id: [0B06CF5D46A74E69A74B3B86C1809341/7DE98F455A869E2D689064A542C4D968/4BD133FF9AC5EA40C668D2FE07FE56E1]
-    status: {code: 200, message: OK}
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '613'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Jan 2020 07:56:03 GMT
+      ETag:
+      - 2982b0c9d2131e372eb0a5b4d1de5a0af666a867
+      X-Content-Type-Options:
+      - nosniff
+      opc-request-id:
+      - 7BBAED4DF8DD4CA3983094B65EA490F3/B22BD2000624E73B7163EDAFD02AA78C/FC0DDE4C341AFE285E669BAC922F5B98
+    status:
+      code: 200
+      message: OK
 - request:
     body: '{"isRetired": false}'
     headers:
-      Content-Length: ['20']
-      accept: [application/json]
-      accept-encoding: ['gzip, deflate']
-      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
-          host content-length content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="dYPXAeUEteLKmHez0zerisJuyilRzplteE/+mhXck1wSrD3wYD4LUKo3mT3y9mbIyc9wQGASu4M6iWZJ8rwzT5qgzdCxcGFQT9INGF+MmlFsWnBH+PrnUkquVec4VgQkqim/0TOSTUAgNRD2OSz6D2142waRuRCZyyFwEHRWGev0bPZP7hVRbS6pqSLYDWBugAU4xnjwPuJBEqxYIm2WnJwGuZ/b454S7oEv2q84cisj7rIeWEQm1tlvmZUBj5ZPmGIcSd4XZ6BbXIFnlvsDRtt0cp3g7lQpgBEz6QwCXKYQzKh816wmFfhZ8xnw66GzXCGzKTz5UATNoQ+lLVcQ9g==",version="1"']
-      connection: [keep-alive]
-      content-type: [application/json]
-      date: ['Sat, 12 May 2018 02:17:19 GMT']
-      host: [identity.us-phoenix-1.oraclecloud.com]
-      opc-client-info: [Oracle-PythonSDK/1.3.20]
-      opc-request-id: [419EC37BD97E49CDA957611E0B8F776D]
-      user-agent: [Oracle-PythonSDK/1.3.20 (python 3.5.1; x86_64-Darwin)]
-      x-content-sha256: [HScz3hJX+d3vF9jo1ovsUEJXJDuTiMSl6Kv0CgoPlAs=]
+      Content-Length:
+      - '20'
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - Signature algorithm="rsa-sha256",headers="date (request-target) host content-length
+        content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="ZTKoVQCzvq222nQl+9MZiuv3dY4hmRdfyjUWeVSH5Tvs4iBEnriHUO92bqha9azm5cQX5+Q1Y9oLLehcGMTl9Px5JbGUiP3dq7IV30j/H32ha1THva+3Optx2JEP0GT1yOYmvQAyU/KZreVgcxybdPVBIBqBs/XxRyjODIvzcEI1oEFG7u6KoSONE+k20rMKrqGrs2zo23flrDEAjHlftFAvUkAUutrR3Nvcp+S5pCRSTNDNIzCOCMvG/W3dT7OPXUgFiHH1BMqXg8RzfS0uLaeiIcNjrC95TCEFDo/9SqTggaksC+gqAgHufE6UgYn4QHfc+deZoRKrDYISGtD3Mw==",version="1"
+      connection:
+      - keep-alive
+      content-type:
+      - application/json
+      date:
+      - Mon, 13 Jan 2020 07:56:03 GMT
+      host:
+      - identity.us-phoenix-1.oraclecloud.com
+      opc-client-info:
+      - Oracle-PythonSDK/2.10.0
+      opc-request-id:
+      - 8A750AC4B44D47FF9E02916E74891655
+      user-agent:
+      - Oracle-PythonSDK/2.10.0 (python 3.5.1; x86_64-Darwin)
+      x-content-sha256:
+      - HScz3hJX+d3vF9jo1ovsUEJXJDuTiMSl6Kv0CgoPlAs=
     method: PUT
     uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags/tagone_vcr
   response:
-    body: {string: "{\n  \"isRetired\" : false,\n  \"isCostTracking\" : false,\n \
-        \ \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaanojulrr4fwgypcsz5wi7xspym2y7kh3xbb7hvtewrc4sjkzrrwqa\"\
+    body:
+      string: "{\n  \"isRetired\" : false,\n  \"isCostTracking\" : false,\n  \"tagNamespaceId\"\
+        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
+        ,\n  \"tagNamespaceName\" : \"tagns_464166\",\n  \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaanojulrr4fwgypcsz5wi7xspym2y7kh3xbb7hvtewrc4sjkzrrwqa\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaa235ux54bxmitd4zvnhxyeubszseeoklcpvlegqumemc4x47oku5q\"\
         ,\n  \"name\" : \"tagone_vcr\",\n  \"description\" : \"hello world\",\n  \"\
         timeCreated\" : \"2018-04-20T15:29:14.888Z\",\n  \"freeformTags\" : { },\n\
-        \  \"definedTags\" : { },\n  \"tagNamespaceId\" : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"lifecycleState\" : \"ACTIVE\"\n}"}
+        \  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}"
     headers:
-      Connection: [keep-alive]
-      Content-Length: ['442']
-      Content-Type: [application/json]
-      Date: ['Sat, 12 May 2018 02:18:05 GMT']
-      ETag: [6943b5c00dcff806b36794600a931cd51277a7a9]
-      opc-request-id: [419EC37BD97E49CDA957611E0B8F776D/74F38EE077AA87852F521A6C1D41CC59/3B1F6BF5834FE3FEE84DEBF8D0E6C2A6]
-    status: {code: 200, message: OK}
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '588'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Jan 2020 07:56:03 GMT
+      ETag:
+      - c2466c0eb174912c13eee12cb2ff8f3ef7d4651e
+      X-Content-Type-Options:
+      - nosniff
+      opc-request-id:
+      - 8A750AC4B44D47FF9E02916E74891655/56D7C47AA5085F3897433E21EBB7F6AE/3A39229FD20B7AB2F23F2E8D4142C1D6
+    status:
+      code: 200
+      message: OK
 - request:
     body: '{"isRetired": true}'
     headers:
-      Content-Length: ['19']
-      accept: [application/json]
-      accept-encoding: ['gzip, deflate']
-      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
-          host content-length content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="TCuyu0m/TbTmXsDM1PMPpjWe0P7xSnIFxEk7vCv8Nl710YKDBP9HOVdPAZpxEpImH3aucL4xpJijvxTCB52ksV7yr2pvNp8+b2Dhv3J9qesp0n+fRjp5BwbEwNEOzR+RDlJM8eY/WfX6g4m0yOY4RIhsclGmnXZfDW/Oy8c5APUebubFHvTX+gPJWozD3EYotSvtJ92DBdQJ0o/iew8SnOGxE+zB1R5JasNZsNfMOt/aemC7p0Cjb6Ue6jNfHnlgyEfE7pudDcPpVbe8P/m3iLHHAIrwYb4KCNsmHgb/MGAFamynFwHK/Ej3so/fGPnET81A1bYnhM0I8LQJrUlPuw==",version="1"']
-      connection: [keep-alive]
-      content-type: [application/json]
-      date: ['Sat, 12 May 2018 02:17:19 GMT']
-      host: [identity.us-phoenix-1.oraclecloud.com]
-      opc-client-info: [Oracle-PythonSDK/1.3.20]
-      opc-request-id: [17E6BD2EAB72435D8DA42FBCE069BF79]
-      user-agent: [Oracle-PythonSDK/1.3.20 (python 3.5.1; x86_64-Darwin)]
-      x-content-sha256: [YN6OY0B0Kz3MmuVaZemsPt2Q/iP/GDKkJ5uJhD6Do/g=]
+      Content-Length:
+      - '19'
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - Signature algorithm="rsa-sha256",headers="date (request-target) host content-length
+        content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="iyfUSewRjwNFuQrb0H5sGFnG7xqKfbmfoc3iG+sTnOR5FyfiKjmCetjvVRAirt6KhYMjjQDbIMvueNE9O9Kk+ew+74M+zpegBat02g+yk5ksaemkGq9r2pp+msVBtjy1fmqlMIyhySz7+1QXDVpiuv6X+KqRePTO0ptdTCMIvujU4eiVMaejonozRFujQkZs/ExQrD1w68Hq7pf1GXdz5I/QsfNoXUO1s4NmVW6Y2h1h+JdvJPDeBzJ3w2whVpeFBGoUk/MEbrw0pqeFXCOVQ/vrVuMRf99uVSjGZlTBal0+tRJ1cp4PmlakQx/RzAggkYXuAKYrSVHjU9jetjaCSA==",version="1"
+      connection:
+      - keep-alive
+      content-type:
+      - application/json
+      date:
+      - Mon, 13 Jan 2020 07:56:03 GMT
+      host:
+      - identity.us-phoenix-1.oraclecloud.com
+      opc-client-info:
+      - Oracle-PythonSDK/2.10.0
+      opc-request-id:
+      - EE826E70EE6D4833A565F387F5B7F6E2
+      user-agent:
+      - Oracle-PythonSDK/2.10.0 (python 3.5.1; x86_64-Darwin)
+      x-content-sha256:
+      - YN6OY0B0Kz3MmuVaZemsPt2Q/iP/GDKkJ5uJhD6Do/g=
     method: PUT
     uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags/tagone_vcr
   response:
-    body: {string: "{\n  \"isRetired\" : true,\n  \"isCostTracking\" : false,\n  \"\
-        id\" : \"ocid1.tagdefinition.oc1..aaaaaaaanojulrr4fwgypcsz5wi7xspym2y7kh3xbb7hvtewrc4sjkzrrwqa\"\
+    body:
+      string: "{\n  \"isRetired\" : true,\n  \"isCostTracking\" : false,\n  \"tagNamespaceId\"\
+        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
+        ,\n  \"tagNamespaceName\" : \"tagns_464166\",\n  \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaanojulrr4fwgypcsz5wi7xspym2y7kh3xbb7hvtewrc4sjkzrrwqa\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaa235ux54bxmitd4zvnhxyeubszseeoklcpvlegqumemc4x47oku5q\"\
         ,\n  \"name\" : \"tagone_vcr\",\n  \"description\" : \"hello world\",\n  \"\
         inactiveStatus\" : 2,\n  \"timeCreated\" : \"2018-04-20T15:29:14.888Z\",\n\
-        \  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"tagNamespaceId\"\
-        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"lifecycleState\" : \"INACTIVE\"\n}"}
+        \  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"lifecycleState\"\
+        \ : \"INACTIVE\"\n}"
     headers:
-      Connection: [keep-alive]
-      Content-Length: ['467']
-      Content-Type: [application/json]
-      Date: ['Sat, 12 May 2018 02:18:05 GMT']
-      ETag: [45ddfcd4278f94a65f2a71fdf9210141613d965a]
-      opc-request-id: [17E6BD2EAB72435D8DA42FBCE069BF79/2BABE3E3608766BC3D8E68B93FCF30DD/A1CBDCD04B0C6D4F579127C66CA2246B]
-    status: {code: 200, message: OK}
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '613'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Jan 2020 07:56:04 GMT
+      ETag:
+      - 0b7a0cfd1d86bb47d55ed915af911ce32ce70207
+      X-Content-Type-Options:
+      - nosniff
+      opc-request-id:
+      - EE826E70EE6D4833A565F387F5B7F6E2/5604365B57D4E86BBDF143A10760E414/272BDA7B77713F4ED180D0F045496943
+    status:
+      code: 200
+      message: OK
 - request:
     body: null
     headers:
-      accept: [application/json]
-      accept-encoding: ['gzip, deflate']
-      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
-          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="WBtstv9UWHdg5dKp3R0CMW4AGTARkqLApVHM1UaM9RAsM/xfNoG/+vXPSsr7ZZCnKrVyWBEAVwps7wLMVGKDYklMqjH5W0seF6TmPJ9elHEYOQjfBpmmemGPP4y8axirpuIepuPD/WpO8udbnML2R4ZlIVi/SwkxF4+4TJcD1dx/b1RyxP1x+DEzL/UtXtuLEXthThNdUZ+OxRdAuEkGMkmsu7x8axIQHNTacXlP0ErdvPIX+LKt7dQNFPdGN64YPKrxahXvZJG7+LAzfF4PnZPxEOj6NZnUdSzbA+FjRZZWji7LLBO4BuOyrOO39f32FmFlRfmhus02MQWDJtiagQ==",version="1"']
-      connection: [keep-alive]
-      content-type: [application/json]
-      date: ['Sat, 12 May 2018 02:17:20 GMT']
-      host: [identity.us-phoenix-1.oraclecloud.com]
-      opc-client-info: [Oracle-PythonSDK/1.3.20]
-      opc-request-id: [85305645BF6D449993BEB1002A8548AC]
-      user-agent: [Oracle-PythonSDK/1.3.20 (python 3.5.1; x86_64-Darwin)]
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - Signature algorithm="rsa-sha256",headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="gu5XGN6xJM0mYUXSIDCr6Epm+lUgiWcW+3LjHMWfWx4n1jhyz0BE21J/Z8jC7TZaGL83QURky8FsPmsyMbRYCAhqB1NBwlyf/72nSokIavsDA44BgKm7WlBJfzW5TIED1jSDOGVYtvNC/SoeNcnrIaQEdIvbbAB1r8/rtBfnopVGEQHlkPo1APF0mfJ8hwsfeu+2a/sI8WIo2N+vEKDHh4ICPjziFVKMu0V9vh8mEzrwZGhymbitEYzgCd59KQdlmrHWT2N34JQO8eICutcC8T7xeg58ga+ftCXfpb15FCT93lJXk8YmkpiD7Kt+GkNz8w4UXNi1h343pmXlYRsQnw==",version="1"
+      connection:
+      - keep-alive
+      content-type:
+      - application/json
+      date:
+      - Mon, 13 Jan 2020 07:56:04 GMT
+      host:
+      - identity.us-phoenix-1.oraclecloud.com
+      opc-client-info:
+      - Oracle-PythonSDK/2.10.0
+      opc-request-id:
+      - A92ED6C149624AACB37D8C12CFB0F848
+      user-agent:
+      - Oracle-PythonSDK/2.10.0 (python 3.5.1; x86_64-Darwin)
     method: GET
     uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags/tagone_vcr
   response:
-    body: {string: "{\n  \"isRetired\" : true,\n  \"isCostTracking\" : false,\n  \"\
-        id\" : \"ocid1.tagdefinition.oc1..aaaaaaaanojulrr4fwgypcsz5wi7xspym2y7kh3xbb7hvtewrc4sjkzrrwqa\"\
+    body:
+      string: "{\n  \"isRetired\" : true,\n  \"isCostTracking\" : false,\n  \"tagNamespaceId\"\
+        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
+        ,\n  \"tagNamespaceName\" : \"tagns_464166\",\n  \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaanojulrr4fwgypcsz5wi7xspym2y7kh3xbb7hvtewrc4sjkzrrwqa\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaa235ux54bxmitd4zvnhxyeubszseeoklcpvlegqumemc4x47oku5q\"\
         ,\n  \"name\" : \"tagone_vcr\",\n  \"description\" : \"hello world\",\n  \"\
         inactiveStatus\" : 2,\n  \"timeCreated\" : \"2018-04-20T15:29:14.888Z\",\n\
-        \  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"tagNamespaceId\"\
-        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"lifecycleState\" : \"INACTIVE\"\n}"}
+        \  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"lifecycleState\"\
+        \ : \"INACTIVE\"\n}"
     headers:
-      Connection: [keep-alive]
-      Content-Length: ['467']
-      Content-Type: [application/json]
-      Date: ['Sat, 12 May 2018 02:18:05 GMT']
-      ETag: [45ddfcd4278f94a65f2a71fdf9210141613d965a]
-      opc-request-id: [85305645BF6D449993BEB1002A8548AC/A6D86AEC3E398B74F40298E9982BDB2C/B1F9CA45EA259538A372776EC1B7E217]
-    status: {code: 200, message: OK}
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '613'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Jan 2020 07:56:04 GMT
+      ETag:
+      - 0b7a0cfd1d86bb47d55ed915af911ce32ce70207
+      X-Content-Type-Options:
+      - nosniff
+      opc-request-id:
+      - A92ED6C149624AACB37D8C12CFB0F848/FE6B830B26747523C43E700A2AD90C17/89FFDE5BA197B33913E1A010CA8551F1
+    status:
+      code: 200
+      message: OK
 - request:
     body: null
     headers:
-      accept: [application/json]
-      accept-encoding: ['gzip, deflate']
-      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
-          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="S0GKAO9g/FuDKFqnf1QuJSvLrHRlrvWP+Y8fXSFUzWBJtZlPND08wbX7FJUi0t2MXUiSmAtexMRbtwJl6ILHiZDZofSac4bkzV5H+HIDO4ZBrBlp4s3ih1wPQHt6jI27rjuwLSSC5c0AzVgHA31PxUYbMce3LhU0L9cUAv1iVTcUTP/Ns7lrnP28/NSSm+GuIqbHzhjd8TDTRBsdANI/Zc8wAZabEWgU1XIBJYpQEqTGq4WMVbkUXfGKx16gNAQAY3jEc0H02f/pKLSEY8RiDLnD79PaGgai5Z1sxgWiaP3iEdHCbrt00HWcRYQhUTmj8c3TREdgnAow+PjQ5wGC6A==",version="1"']
-      connection: [keep-alive]
-      content-type: [application/json]
-      date: ['Sat, 12 May 2018 02:17:20 GMT']
-      host: [identity.us-phoenix-1.oraclecloud.com]
-      opc-client-info: [Oracle-PythonSDK/1.3.20]
-      opc-request-id: [0773FC1ABE9C43D68B7D721E2ACA1DDD]
-      user-agent: [Oracle-PythonSDK/1.3.20 (python 3.5.1; x86_64-Darwin)]
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - Signature algorithm="rsa-sha256",headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="IEWeo0vZdHz8QOuU93OJKLf5obPx78T15EawdndlYK0+m/AxKGw65mtvzhTwS5oUXUm2Dh20kwzp0ZCnNq9Oov32gY+Nrg/TipOiWmYysoSroWjLKZoajG4ODFAV+X4zyPSvt2mDCy3o6roA3/2uC49yfoo9+fAudfCMqTe3AtTuVrZHelsMOqLxM2A59lY5O6bkK+IM4QzpxxouwvMxhWSsREONfvihNwUeCsCRD0K7J7TVhnoapSBcp/KVFklfWv1cTC5+Qs/FSk+PDs1lloeREoJQsUulffM99LtHVNsflacEWAAPabOmwBcyqhdED8uUK2tQ6uTM66WHRFuhuQ==",version="1"
+      connection:
+      - keep-alive
+      content-type:
+      - application/json
+      date:
+      - Mon, 13 Jan 2020 07:56:04 GMT
+      host:
+      - identity.us-phoenix-1.oraclecloud.com
+      opc-client-info:
+      - Oracle-PythonSDK/2.10.0
+      opc-request-id:
+      - 7F3B9E171D784B71B956955B0776735D
+      user-agent:
+      - Oracle-PythonSDK/2.10.0 (python 3.5.1; x86_64-Darwin)
     method: GET
     uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags/tagtwo_vcr
   response:
-    body: {string: "{\n  \"isRetired\" : true,\n  \"isCostTracking\" : false,\n  \"\
-        id\" : \"ocid1.tagdefinition.oc1..aaaaaaaaswxgfqairyrxrxngz3jawzkcpg7k7ckb4mdinlsumz2zi4vbpkzq\"\
+    body:
+      string: "{\n  \"isRetired\" : true,\n  \"isCostTracking\" : false,\n  \"tagNamespaceId\"\
+        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
+        ,\n  \"tagNamespaceName\" : \"tagns_464166\",\n  \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaaswxgfqairyrxrxngz3jawzkcpg7k7ckb4mdinlsumz2zi4vbpkzq\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaa235ux54bxmitd4zvnhxyeubszseeoklcpvlegqumemc4x47oku5q\"\
         ,\n  \"name\" : \"tagtwo_vcr\",\n  \"description\" : \"reactivated tag\",\n\
         \  \"inactiveStatus\" : 2,\n  \"timeCreated\" : \"2018-04-20T15:29:17.527Z\"\
-        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"tagNamespaceId\"\
-        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"lifecycleState\" : \"INACTIVE\"\n}"}
+        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"lifecycleState\"\
+        \ : \"INACTIVE\"\n}"
     headers:
-      Connection: [keep-alive]
-      Content-Length: ['471']
-      Content-Type: [application/json]
-      Date: ['Sat, 12 May 2018 02:18:05 GMT']
-      ETag: [3c56b86ba9f684b86dcc353eed840d6cfe377eed]
-      opc-request-id: [0773FC1ABE9C43D68B7D721E2ACA1DDD/D12BC1588ABB0322FA0633ECC61C81F1/EA342AE3D38C8F3BCCFCBBF6A803C28F]
-    status: {code: 200, message: OK}
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '617'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Jan 2020 07:56:04 GMT
+      ETag:
+      - 130b6f8022abec30f8874b22c3ad2ce637cca407
+      X-Content-Type-Options:
+      - nosniff
+      opc-request-id:
+      - 7F3B9E171D784B71B956955B0776735D/B95B1FF97063806BDCE5AEAC36D02804/490090F062F5AB756FAB3525FA8C03A5
+    status:
+      code: 200
+      message: OK
 - request:
-    body: '{"description": "reactivated tag", "isRetired": false}'
+    body: '{"isRetired": false, "description": "reactivated tag"}'
     headers:
-      Content-Length: ['54']
-      accept: [application/json]
-      accept-encoding: ['gzip, deflate']
-      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
-          host content-length content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="afVrxh9r9KWNjYAM6IjY2uO3INuFnseDldqmEvqeFNqMeoE6/RjakYsXFM3ZO1fVw/E59d+qpbT7CD4WQfeA3l5GKLxiDRf32+6F0MVUfJ+XqotYLlc7DqoZ26ZOki8+bFuSpiefH0+9u2CvvrlIJXf+27koe6DhCgjfaO+xAtrm5lx69rSE2IAiQ9KdH/y3GKx9J3q+ConaLJjgasH6XzS74Hsc6VjEztd2XjsYHxHEEdT9tKzScoookasmtjyr6H649y7H0uOscVwP2KsQRb9HXHOgG9mvS2rPySYffLQ6votiHIqI8y9IJLt/vmNZ2jeT7x8GGEESAfSMNvWE8Q==",version="1"']
-      connection: [keep-alive]
-      content-type: [application/json]
-      date: ['Sat, 12 May 2018 02:17:20 GMT']
-      host: [identity.us-phoenix-1.oraclecloud.com]
-      opc-client-info: [Oracle-PythonSDK/1.3.20]
-      opc-request-id: [2C1122D44512452B893E4770A6259B12]
-      user-agent: [Oracle-PythonSDK/1.3.20 (python 3.5.1; x86_64-Darwin)]
-      x-content-sha256: [7nqNwYbKssvppWdK7iqP3DS/YKZDclCc70SNlMu7yrE=]
+      Content-Length:
+      - '54'
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - Signature algorithm="rsa-sha256",headers="date (request-target) host content-length
+        content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="sBVsfDzVkgRw2OfcxeW2gTgGQXFmB6stUuuYWWpTV7lFTKLwYJ+kE2dODUjKTpUn5y3P8R39oh2a1rYpTQmomJ8fdLod6lytfugSbRlLtW2usBa2RdDcx/g5sBwyc1bgcqY7F7zVfVX/Yx3YD2zDjCa3N5NZfJRpZgn1vS4BjAgHYZ5fz2o2Vyngldza7GW1msacjKI453Kz2sSCZHziHNWxxHPm+PkEGQEnNYbVg+zjMPa+JYKaqbvM6mRHQSsLg82zZFq4SoAYVKCRbOU6VcdiYrhTXuXPyEJ0QatmZsdOd2yw/o78ohEnEeJyBDi1bfr8RS5GfoK9df+tOlLHew==",version="1"
+      connection:
+      - keep-alive
+      content-type:
+      - application/json
+      date:
+      - Mon, 13 Jan 2020 07:56:04 GMT
+      host:
+      - identity.us-phoenix-1.oraclecloud.com
+      opc-client-info:
+      - Oracle-PythonSDK/2.10.0
+      opc-request-id:
+      - 8FF87A089AFB47E6BE391FF0539B77E4
+      user-agent:
+      - Oracle-PythonSDK/2.10.0 (python 3.5.1; x86_64-Darwin)
+      x-content-sha256:
+      - G0OUL3RtNh3U2ERxDF/luSQleRvIsfU72e+sr3tD3Wc=
     method: PUT
     uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags/tagtwo_vcr
   response:
-    body: {string: "{\n  \"isRetired\" : false,\n  \"isCostTracking\" : false,\n \
-        \ \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaaswxgfqairyrxrxngz3jawzkcpg7k7ckb4mdinlsumz2zi4vbpkzq\"\
+    body:
+      string: "{\n  \"isRetired\" : false,\n  \"isCostTracking\" : false,\n  \"tagNamespaceId\"\
+        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
+        ,\n  \"tagNamespaceName\" : \"tagns_464166\",\n  \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaaswxgfqairyrxrxngz3jawzkcpg7k7ckb4mdinlsumz2zi4vbpkzq\"\
+        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaa235ux54bxmitd4zvnhxyeubszseeoklcpvlegqumemc4x47oku5q\"\
         ,\n  \"name\" : \"tagtwo_vcr\",\n  \"description\" : \"reactivated tag\",\n\
         \  \"timeCreated\" : \"2018-04-20T15:29:17.527Z\",\n  \"freeformTags\" : {\
-        \ },\n  \"definedTags\" : { },\n  \"tagNamespaceId\" : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"lifecycleState\" : \"ACTIVE\"\n}"}
+        \ },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}"
     headers:
-      Connection: [keep-alive]
-      Content-Length: ['446']
-      Content-Type: [application/json]
-      Date: ['Sat, 12 May 2018 02:18:06 GMT']
-      ETag: [15967e4b00de6c46cb65d7ed96ff70a3d2159799]
-      opc-request-id: [2C1122D44512452B893E4770A6259B12/56F1979DA1DA432831A8F7D4F55B4240/B1EDA5BAA315C54DD87528232631E984]
-    status: {code: 200, message: OK}
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '592'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 13 Jan 2020 07:56:05 GMT
+      ETag:
+      - 7e58e7bd41fba91539a8b816fa97f5ca9af05e8e
+      X-Content-Type-Options:
+      - nosniff
+      opc-request-id:
+      - 8FF87A089AFB47E6BE391FF0539B77E4/C284064B7F48BD872524DBCC551266AD/55FAD9EF1130BFC63FAF88B0F1016E62
+    status:
+      code: 200
+      message: OK
 - request:
-    body: '{"description": "updated tag ns", "isRetired": true}'
+    body: '{"isRetired": true, "description": "updated tag ns"}'
     headers:
-      Content-Length: ['52']
-      accept: [application/json]
-      accept-encoding: ['gzip, deflate']
-      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
-          host content-length content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="g3HNvB66D+uZa85f3HWuzp68TJdgOUssRk1kJ1ButeFfvSxBC+xRyRwWQEr/N/TOsvWRxhYGj1I7sS4I8CekIdSU99tZrICxSyTORo3vAtDzLSU1rvMRzGb6DUyE1GI7NT36uMmlVIVZoQw7YfToLX6E6Or+QUQIt9fJ9f2IC3w/aEcbIZ8znXQO3nCtPoT2s8t9cHhhcgfD1g0m6BxUoXTkarj8bkK9sVgR9vqMDLFwiAGmtY4jRpO6UuBfYhwwtpHubT2HrA3lHwoIV1Vmtr9QaLpxvNYvS9xyZ5WroeouOkfDe7idHw/N4MWIELgxTMTMft23ZFNfLp9pGCnufA==",version="1"']
-      connection: [keep-alive]
-      content-type: [application/json]
-      date: ['Sat, 12 May 2018 02:17:20 GMT']
-      host: [identity.us-phoenix-1.oraclecloud.com]
-      opc-client-info: [Oracle-PythonSDK/1.3.20]
-      opc-request-id: [0F40292E4E1F42FCB3544C42F17B4D7D]
-      user-agent: [Oracle-PythonSDK/1.3.20 (python 3.5.1; x86_64-Darwin)]
-      x-content-sha256: [XmvN6PMRTK96GJJt3B2gOeJlRUwAgXfYX0AHll5CAZU=]
+      Content-Length:
+      - '52'
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - Signature algorithm="rsa-sha256",headers="date (request-target) host content-length
+        content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="DvGd1ZX8Z+ruOmXjDm8ewCKYbujPqXFJ2od9gZ/jlwoujE1YuW+1rbaB3fNw89qB05+nfWRFl1K6hAdfUBK16YsgSN8nYgflS4/Z5zeIuanGNWlYU8/svkp1AXDd4/Vkjkw9mZ6V0Jc4zSICuVMfLi7VcxeK91OVR7OfnXyPvD+eXwfr/eNcJe57vY/eCBcrene/2fKltOLrn9c1kF50BiZ3RUbPn4rISDDhNK8/B74wc7YbgGZGE6FlTre1jfTVHRTy7EQvmCLjSVI796TkhqTtCX+OyFpxkJgMQGxer4tpHrRBSA6QokMd4QcvFXtaR2X/ieXycuzACTo64Vv1LQ==",version="1"
+      connection:
+      - keep-alive
+      content-type:
+      - application/json
+      date:
+      - Mon, 13 Jan 2020 07:56:05 GMT
+      host:
+      - identity.us-phoenix-1.oraclecloud.com
+      opc-client-info:
+      - Oracle-PythonSDK/2.10.0
+      opc-request-id:
+      - 18223A55C49F472BA61B74EEE143864C
+      user-agent:
+      - Oracle-PythonSDK/2.10.0 (python 3.5.1; x86_64-Darwin)
+      x-content-sha256:
+      - 7P/KKHfwgbuO12ik8yaEiCoKOHUHvS8JvQ0uWXut23g=
     method: PUT
     uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq
   response:
-    body: {string: "{\n  \"isRetired\" : true,\n  \"id\" : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaa235ux54bxmitd4zvnhxyeubszseeoklcpvlegqumemc4x47oku5q\"\
-        ,\n  \"name\" : \"tagns_464166\",\n  \"description\" : \"updated tag ns\"\
-        ,\n  \"inactiveStatus\" : 2,\n  \"timeCreated\" : \"2018-04-19T21:02:17.106Z\"\
-        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"lifecycleState\"\
-        \ : \"INACTIVE\"\n}"}
+    body:
+      string: ''
     headers:
-      Connection: [keep-alive]
-      Content-Length: ['441']
-      Content-Type: [application/json]
-      Date: ['Sat, 12 May 2018 02:18:07 GMT']
-      ETag: [78cfe56fe610cf73968e63e72b53579d195fc1e9]
-      opc-request-id: [0F40292E4E1F42FCB3544C42F17B4D7D/6BE5D03B52D2DC94A819952318689DBD/7CF06A3B2A7304F5F946CA7D5880D567]
-    status: {code: 200, message: OK}
-- request:
-    body: null
-    headers:
-      accept: [application/json]
-      accept-encoding: ['gzip, deflate']
-      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
-          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="nxyF0EKktxma+CQxk6SVZNEvdqV5HB553N1Giz2o1D+Z4PqIxGHXvz6CipBUNZq53bGaZfikoz8AjmskM0oIb+J/5zGF2t9F9ZUeHif9B8cv736aoEBX+Wrh750Lu1qohV7372RyTayKXtZTbLFS5FByEOoHSvXiCtztn9gPsrRS9FdIWy7gAU3zV2x7CL2dXHCyBY3OGy3dq2IN5/RdHN9z0YOU5kMcCdnd+3j79le8nG5jZH3hHFPaBAJQud80bN6Xt08mYSMSReVOLpZayDKbIJF+vu5hMDdBv0vtzKueBRWGtfI2F6atA5YOiepweDgoli4cLZGnmMqxjjc/pw==",version="1"']
-      connection: [keep-alive]
-      content-type: [application/json]
-      date: ['Sat, 12 May 2018 02:17:21 GMT']
-      host: [identity.us-phoenix-1.oraclecloud.com]
-      opc-client-info: [Oracle-PythonSDK/1.3.20]
-      opc-request-id: [72ECCA17A2844C648B342DB3E6F630F1]
-      user-agent: [Oracle-PythonSDK/1.3.20 (python 3.5.1; x86_64-Darwin)]
-    method: GET
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags
-  response:
-    body: {string: "[ {\n  \"isRetired\" : true,\n  \"isCostTracking\" : false,\n\
-        \  \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaa3fahl6xtqx23vkbo5cwxlivufvf6aypbvz3z4xovmub3ljzgvnwa\"\
-        ,\n  \"name\" : \"tagone_624820\",\n  \"description\" : \"hello world\",\n\
-        \  \"inactiveStatus\" : 2,\n  \"timeCreated\" : \"2018-04-19T21:02:18.605Z\"\
-        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"tagNamespaceId\"\
-        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"lifecycleState\" : \"INACTIVE\"\n}, {\n  \"isRetired\" : true,\n  \"\
-        isCostTracking\" : false,\n  \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaafa3xbard6mnaflvuv4e6k5sjwkrlfcy77lnsef6bk3bnq6ufb37a\"\
-        ,\n  \"name\" : \"tagone_827307\",\n  \"description\" : \"hello world\",\n\
-        \  \"inactiveStatus\" : 2,\n  \"timeCreated\" : \"2018-04-19T21:20:58.380Z\"\
-        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"tagNamespaceId\"\
-        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"lifecycleState\" : \"INACTIVE\"\n}, {\n  \"isRetired\" : true,\n  \"\
-        isCostTracking\" : false,\n  \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaahajobnbpvtnz7n5vcjbxxynprve6yln4kljwue66restfpksdahq\"\
-        ,\n  \"name\" : \"tagone_924424\",\n  \"description\" : \"hello world\",\n\
-        \  \"inactiveStatus\" : 2,\n  \"timeCreated\" : \"2018-04-19T21:05:33.836Z\"\
-        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"tagNamespaceId\"\
-        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"lifecycleState\" : \"INACTIVE\"\n}, {\n  \"isRetired\" : true,\n  \"\
-        isCostTracking\" : false,\n  \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaanojulrr4fwgypcsz5wi7xspym2y7kh3xbb7hvtewrc4sjkzrrwqa\"\
-        ,\n  \"name\" : \"tagone_vcr\",\n  \"description\" : \"hello world\",\n  \"\
-        inactiveStatus\" : 2,\n  \"timeCreated\" : \"2018-04-20T15:29:14.888Z\",\n\
-        \  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"tagNamespaceId\"\
-        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"lifecycleState\" : \"INACTIVE\"\n}, {\n  \"isRetired\" : true,\n  \"\
-        isCostTracking\" : false,\n  \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaaw566nfcmd3ihgri6k3lflnzr3cuqixqyeu6nforedii6ttcd3wpq\"\
-        ,\n  \"name\" : \"tagresone_393323\",\n  \"description\" : \"integ test tag\
-        \ tagresone_393323\",\n  \"inactiveStatus\" : 2,\n  \"timeCreated\" : \"2018-04-19T21:02:21.991Z\"\
-        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"tagNamespaceId\"\
-        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"lifecycleState\" : \"INACTIVE\"\n}, {\n  \"isRetired\" : true,\n  \"\
-        isCostTracking\" : false,\n  \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaalbpsl6446a4yjwe7ey5pgpd5j4eyvdseanon5rd7dncqhzjqec6a\"\
-        ,\n  \"name\" : \"tagresone_932826\",\n  \"description\" : \"integ test tag\
-        \ tagresone_932826\",\n  \"inactiveStatus\" : 2,\n  \"timeCreated\" : \"2018-04-19T21:05:37.954Z\"\
-        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"tagNamespaceId\"\
-        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"lifecycleState\" : \"INACTIVE\"\n}, {\n  \"isRetired\" : true,\n  \"\
-        isCostTracking\" : false,\n  \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaagmqf2lhq57jvmig5ewz556meqjdgdn34quphsgezbcijuajowwda\"\
-        ,\n  \"name\" : \"tagresone_999355\",\n  \"description\" : \"integ test tag\
-        \ tagresone_999355\",\n  \"inactiveStatus\" : 2,\n  \"timeCreated\" : \"2018-04-19T21:21:02.777Z\"\
-        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"tagNamespaceId\"\
-        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"lifecycleState\" : \"INACTIVE\"\n}, {\n  \"isRetired\" : true,\n  \"\
-        isCostTracking\" : false,\n  \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaapentv4scu3mq45fvzzpccwbeftzwsf62yousfbfn2cpwxmnpljpq\"\
-        ,\n  \"name\" : \"tagresone_vcr\",\n  \"description\" : \"reactivated tag\"\
-        ,\n  \"inactiveStatus\" : 2,\n  \"timeCreated\" : \"2018-04-20T15:29:25.165Z\"\
-        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"tagNamespaceId\"\
-        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"lifecycleState\" : \"INACTIVE\"\n}, {\n  \"isRetired\" : true,\n  \"\
-        isCostTracking\" : false,\n  \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaa5noqwhgtoy5dtkirljprovlxfv7intf225gilqi6k5zvzqwdo3eq\"\
-        ,\n  \"name\" : \"tagrestwo_146597\",\n  \"description\" : \"integ test tag\
-        \ tagrestwo_146597\",\n  \"inactiveStatus\" : 2,\n  \"timeCreated\" : \"2018-04-19T21:05:38.326Z\"\
-        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"tagNamespaceId\"\
-        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"lifecycleState\" : \"INACTIVE\"\n}, {\n  \"isRetired\" : true,\n  \"\
-        isCostTracking\" : false,\n  \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaae3cc6xyaknwmximwilzdwde5vgclunqemduoczxywyyxggow7jja\"\
-        ,\n  \"name\" : \"tagrestwo_679726\",\n  \"description\" : \"integ test tag\
-        \ tagrestwo_679726\",\n  \"inactiveStatus\" : 2,\n  \"timeCreated\" : \"2018-04-19T21:02:22.357Z\"\
-        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"tagNamespaceId\"\
-        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"lifecycleState\" : \"INACTIVE\"\n}, {\n  \"isRetired\" : true,\n  \"\
-        isCostTracking\" : false,\n  \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaaufc3ayjer5blto6p3bzofju6urbqabbedxfri647wvrq2jiped3q\"\
-        ,\n  \"name\" : \"tagrestwo_937659\",\n  \"description\" : \"integ test tag\
-        \ tagrestwo_937659\",\n  \"inactiveStatus\" : 2,\n  \"timeCreated\" : \"2018-04-19T21:21:03.113Z\"\
-        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"tagNamespaceId\"\
-        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"lifecycleState\" : \"INACTIVE\"\n}, {\n  \"isRetired\" : true,\n  \"\
-        isCostTracking\" : false,\n  \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaafssntkgs5wo6lyz4pl3exswwn5tad56zrpx3m2dabb55ugy5v3pq\"\
-        ,\n  \"name\" : \"tagrestwo_vcr\",\n  \"description\" : \"reactivated tag\"\
-        ,\n  \"inactiveStatus\" : 2,\n  \"timeCreated\" : \"2018-04-20T15:29:26.211Z\"\
-        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"tagNamespaceId\"\
-        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"lifecycleState\" : \"INACTIVE\"\n}, {\n  \"isRetired\" : true,\n  \"\
-        isCostTracking\" : false,\n  \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaakkgnpkgybfy6yc2pbc5ypnmuxw62y7lcpjwndwi626siptg4usla\"\
-        ,\n  \"name\" : \"tagtwo_371400\",\n  \"description\" : \"integ test tag tagtwo_371400\"\
-        ,\n  \"inactiveStatus\" : 2,\n  \"timeCreated\" : \"2018-04-19T21:05:35.102Z\"\
-        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"tagNamespaceId\"\
-        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"lifecycleState\" : \"INACTIVE\"\n}, {\n  \"isRetired\" : true,\n  \"\
-        isCostTracking\" : false,\n  \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaauwml7t2dlo6shx4wugrupwnatuik2uge3npnih4tmpdy6a6iweeq\"\
-        ,\n  \"name\" : \"tagtwo_497006\",\n  \"description\" : \"integ test tag tagtwo_497006\"\
-        ,\n  \"inactiveStatus\" : 2,\n  \"timeCreated\" : \"2018-04-19T21:02:19.770Z\"\
-        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"tagNamespaceId\"\
-        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"lifecycleState\" : \"INACTIVE\"\n}, {\n  \"isRetired\" : true,\n  \"\
-        isCostTracking\" : false,\n  \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaayvbcvos2elova2fqfunkwtvgoq3wamgfpr7mh7k3h2l4unojj5ia\"\
-        ,\n  \"name\" : \"tagtwo_609097\",\n  \"description\" : \"integ test tag tagtwo_609097\"\
-        ,\n  \"inactiveStatus\" : 2,\n  \"timeCreated\" : \"2018-04-19T21:20:59.702Z\"\
-        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"tagNamespaceId\"\
-        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"lifecycleState\" : \"INACTIVE\"\n}, {\n  \"isRetired\" : true,\n  \"\
-        isCostTracking\" : false,\n  \"id\" : \"ocid1.tagdefinition.oc1..aaaaaaaaswxgfqairyrxrxngz3jawzkcpg7k7ckb4mdinlsumz2zi4vbpkzq\"\
-        ,\n  \"name\" : \"tagtwo_vcr\",\n  \"description\" : \"reactivated tag\",\n\
-        \  \"inactiveStatus\" : 2,\n  \"timeCreated\" : \"2018-04-20T15:29:17.527Z\"\
-        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"tagNamespaceId\"\
-        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"lifecycleState\" : \"INACTIVE\"\n} ]"}
-    headers:
-      Connection: [keep-alive]
-      Content-Length: ['7749']
-      Content-Type: [application/json]
-      Date: ['Sat, 12 May 2018 02:18:07 GMT']
-      opc-limit: ['25']
-      opc-next-page: [AAAAAAAAAAEnruo1IviELqnlhDzN7aH8lkGYc-sTvvPQgHY_Kz2nGPgYxg4FpGzeFgnkDGKKGJ-hUJPFUn_mv-cdGSJmKkGB2fpmfgyw8dOEXhYXnAzw1Wu_ESROKFcnECn729yvOdjlw54Dvgmmq7NXXEloySrdLutfyknYQ3B7vTgqy7uhDLpajh6wYWvQFl6QZPsE9xI0igtuyESY2AdXt879S7Kg9cHX0-OXLA4ENl5Tj7DSOHfjG-CFJbxfyw1SFrBKXDxO4U8Bkk9Sf2HESlu707BAzJZa_2XiXoV-Wlqv_-29QakdoYrAt5yoggjJq44rKF9Ab6WPkMWx6FnLI0AMwnu55rDApserdR9SGNmEx5_o9kh4qONyQ3rqGJ7ACmFII_6JvqbKQoOWfkudggJyRN8yUt8mGtLMESmsmweCMQGHcqd0PsuJhZVMyI1dZSkkddu5nHzxpntejKmG74wquQgRwrGpMQbE7cy26FGDJGYko7DrUxOKtoRlSK1J4Zympiwoa8oXLt3r7QaEoN1xoqQcTe_3IQ5I7rTI3l0wYlJdNtpTpHKNP1nTTVNz_uPIhI86lbOrLra2-QwszKb8jDcaxQDt_VkzfKc760o=]
-      opc-request-id: [72ECCA17A2844C648B342DB3E6F630F1/C3D3413E92525D5A8BA227A66BE3E3C4/CD1F807CF8825855095372CCAB162028]
-    status: {code: 200, message: OK}
-- request:
-    body: null
-    headers:
-      accept: [application/json]
-      accept-encoding: ['gzip, deflate']
-      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
-          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="LrHhpjMGQBp0B+Ydg7Z4OW0IchF+WLyWaLl2mFUiz4NB80+V7iJl13wCfV8qYK9pcMJG68Z4JsjVCWP34rCkr59tKJBOiY+yChA+K5/4CGcuSQcXN8MO4xx0jNFKvUX8c3jp8oKJWJedm6XCNB4uvBxXNSV8ElCdb0OtpA8nlCb6Lp8Cgt6BwvEOBQGP+lrCpRpwCfvnhbVIL8ktL6UVGElve6pOfW7c5CvOhFLufX87Da3GkLWCad0UW6Iq0zxGZGExylMWByjCrjF8RBam2copVpAfbHyiYsDKS54YJ/Qs+xtJ/rmvxMrfZtREweffj2RVyZMm5fHwyG775qskOQ==",version="1"']
-      connection: [keep-alive]
-      content-type: [application/json]
-      date: ['Sat, 12 May 2018 02:17:21 GMT']
-      host: [identity.us-phoenix-1.oraclecloud.com]
-      opc-client-info: [Oracle-PythonSDK/1.3.20]
-      opc-request-id: [E81BA88891414D34A06EF7F5099EB8EA]
-      user-agent: [Oracle-PythonSDK/1.3.20 (python 3.5.1; x86_64-Darwin)]
-    method: GET
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags?page=AAAAAAAAAAEnruo1IviELqnlhDzN7aH8lkGYc-sTvvPQgHY_Kz2nGPgYxg4FpGzeFgnkDGKKGJ-hUJPFUn_mv-cdGSJmKkGB2fpmfgyw8dOEXhYXnAzw1Wu_ESROKFcnECn729yvOdjlw54Dvgmmq7NXXEloySrdLutfyknYQ3B7vTgqy7uhDLpajh6wYWvQFl6QZPsE9xI0igtuyESY2AdXt879S7Kg9cHX0-OXLA4ENl5Tj7DSOHfjG-CFJbxfyw1SFrBKXDxO4U8Bkk9Sf2HESlu707BAzJZa_2XiXoV-Wlqv_-29QakdoYrAt5yoggjJq44rKF9Ab6WPkMWx6FnLI0AMwnu55rDApserdR9SGNmEx5_o9kh4qONyQ3rqGJ7ACmFII_6JvqbKQoOWfkudggJyRN8yUt8mGtLMESmsmweCMQGHcqd0PsuJhZVMyI1dZSkkddu5nHzxpntejKmG74wquQgRwrGpMQbE7cy26FGDJGYko7DrUxOKtoRlSK1J4Zympiwoa8oXLt3r7QaEoN1xoqQcTe_3IQ5I7rTI3l0wYlJdNtpTpHKNP1nTTVNz_uPIhI86lbOrLra2-QwszKb8jDcaxQDt_VkzfKc760o%3D
-  response:
-    body: {string: '[ ]'}
-    headers:
-      Connection: [keep-alive]
-      Content-Length: ['3']
-      Content-Type: [application/json]
-      Date: ['Sat, 12 May 2018 02:18:07 GMT']
-      opc-limit: ['25']
-      opc-request-id: [E81BA88891414D34A06EF7F5099EB8EA/11C0471694C21C58A565DE28C1A1EAB4/7D4D764CDD75CAFD39A5361B386AB5E5]
-    status: {code: 200, message: OK}
-- request:
-    body: null
-    headers:
-      accept: [application/json]
-      accept-encoding: ['gzip, deflate']
-      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
-          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="BZQB8UAj8wsoWXA5wxXu/bPkV5Pljsy19uWef2MPcSb4LOcqnWjjzSnMvlqzfqC6VAiZPWQ1mQXvRDUEv6+vJIDEJQCZPnKSD6wPssRg+e3okMN5eOTLkWlj8yTmXNUBoJ/yoLT7CB+VikGAoAAZzblGSbB9tdcbT/38uSngVWtwjhhjeMPbiCIiElJy+BNOVz8Ar1mwPftiUq42zY+JVToOE40U6ZJqa8NmIXm/v2CtneSWLNbJE4dLapyKPkwLaHcn6SBK7xD765kG2vsFhnfihgAb903YIABFjhAEn91xtc3fsRdsIZwbc+Aaq9jRZIQ/2jal2opIVFzz/pAUFg==",version="1"']
-      connection: [keep-alive]
-      content-type: [application/json]
-      date: ['Sat, 12 May 2018 02:17:22 GMT']
-      host: [identity.us-phoenix-1.oraclecloud.com]
-      opc-client-info: [Oracle-PythonSDK/1.3.20]
-      opc-request-id: [76F505535AC143F4B5F480A282129239]
-      user-agent: [Oracle-PythonSDK/1.3.20 (python 3.5.1; x86_64-Darwin)]
-    method: GET
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags/tagtwo_vcr
-  response:
-    body: {string: "{\n  \"isRetired\" : true,\n  \"isCostTracking\" : false,\n  \"\
-        id\" : \"ocid1.tagdefinition.oc1..aaaaaaaaswxgfqairyrxrxngz3jawzkcpg7k7ckb4mdinlsumz2zi4vbpkzq\"\
-        ,\n  \"name\" : \"tagtwo_vcr\",\n  \"description\" : \"reactivated tag\",\n\
-        \  \"inactiveStatus\" : 2,\n  \"timeCreated\" : \"2018-04-20T15:29:17.527Z\"\
-        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"tagNamespaceId\"\
-        \ : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"lifecycleState\" : \"INACTIVE\"\n}"}
-    headers:
-      Connection: [keep-alive]
-      Content-Length: ['471']
-      Content-Type: [application/json]
-      Date: ['Sat, 12 May 2018 02:18:07 GMT']
-      ETag: [717dcf1699724507b7d693b9797d1f4562ed1aad]
-      opc-request-id: [76F505535AC143F4B5F480A282129239/3431A6F7534AC3F191D80194FA4021E1/AA52BB63226E57A9A756BE595B34448C]
-    status: {code: 200, message: OK}
-- request:
-    body: null
-    headers:
-      accept: [application/json]
-      accept-encoding: ['gzip, deflate']
-      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
-          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="FkrLI7GMOoFbHxJIWL01ysglIVW9O4wvhE0trmADN3UVYh/dWwixbP+SYSXSfgq+K8yejRpzM9YI4Syt0tI4UI/b970Tz46+3n418MNy/2HVp7H1eYT2Lzz26i+VW8N9qNHYWhVxcTClauCJztyHCFhNre4Jii7Md0xmm08tvwZbhxcd4uF/SOoC6V5dk//Jz+880PfqGyHcTiYAyPykpttmmdqgFO/88e4djBqtL3qDrk29g/z6FCBqQt8nozFoDI5W6aXcRS/O1ng+E9vggikx6m02zM4bukzM2vzWUtE1+fovgp+4b5jxQcUaRSnrintVaXa2B+Y7TOVD2YOPdg==",version="1"']
-      connection: [keep-alive]
-      content-type: [application/json]
-      date: ['Sat, 12 May 2018 02:17:22 GMT']
-      host: [identity.us-phoenix-1.oraclecloud.com]
-      opc-client-info: [Oracle-PythonSDK/1.3.20]
-      opc-request-id: [CD45AEE150674DC682296BDAB6EF05D5]
-      user-agent: [Oracle-PythonSDK/1.3.20 (python 3.5.1; x86_64-Darwin)]
-    method: GET
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq
-  response:
-    body: {string: "{\n  \"isRetired\" : true,\n  \"id\" : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaa235ux54bxmitd4zvnhxyeubszseeoklcpvlegqumemc4x47oku5q\"\
-        ,\n  \"name\" : \"tagns_464166\",\n  \"description\" : \"updated tag ns\"\
-        ,\n  \"inactiveStatus\" : 2,\n  \"timeCreated\" : \"2018-04-19T21:02:17.106Z\"\
-        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"lifecycleState\"\
-        \ : \"INACTIVE\"\n}"}
-    headers:
-      Connection: [keep-alive]
-      Content-Length: ['441']
-      Content-Type: [application/json]
-      Date: ['Sat, 12 May 2018 02:18:07 GMT']
-      ETag: [78cfe56fe610cf73968e63e72b53579d195fc1e9]
-      opc-request-id: [CD45AEE150674DC682296BDAB6EF05D5/EB15EFF9FA9E3792FD61F4D432675BB1/B437BF4459C420334A05D69CFE73D3B8]
-    status: {code: 200, message: OK}
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Mon, 13 Jan 2020 07:56:15 GMT
+      X-Content-Type-Options:
+      - nosniff
+      opc-request-id:
+      - 18223A55C49F472BA61B74EEE143864C/6118F1FEF789B1BB7E5CFCCEEA8EA2D3/149FAC3278FACDB31491E0DC7493C56D
+    status:
+      code: 502
+      message: Bad Gateway
 version: 1

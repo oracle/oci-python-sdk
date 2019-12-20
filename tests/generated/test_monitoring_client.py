@@ -1,3 +1,4 @@
+# Code generated. DO NOT EDIT.
 # coding: utf-8
 # Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
@@ -17,15 +18,18 @@ def session_agnostic_query_matcher(r1, r2):
 
 @pytest.fixture(autouse=True, scope='function')
 def vcr_fixture(request):
-    # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
-    # instead of 'query' matcher (which ignores sessionId in the url)
-    # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
-    custom_vcr = test_config_container.create_vcr()
-    custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
-
-    cassette_location = os.path.join('generated', 'monitoring_{name}.yml'.format(name=request.function.__name__))
-    with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+    if test_config_container.test_mode == 'mock':
         yield
+    else:
+        # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
+        # instead of 'query' matcher (which ignores sessionId in the url)
+        # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
+        custom_vcr = test_config_container.create_vcr()
+        custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
+
+        cassette_location = os.path.join('generated', 'monitoring_{name}.yml'.format(name=request.function.__name__))
+        with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+            yield
 
 
 # IssueRoutingInfo tag="default" email="pic_ion_dev_grp@oracle.com" jiraProject="TEL" opsJiraProject="TEL"
@@ -45,11 +49,11 @@ def test_change_alarm_compartment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.change_alarm_compartment(
-                alarm_id=request.pop(util.camelize('alarm_id')),
-                change_alarm_compartment_details=request.pop(util.camelize('change_alarm_compartment_details')),
+                alarm_id=request.pop(util.camelize('alarmId')),
+                change_alarm_compartment_details=request.pop(util.camelize('ChangeAlarmCompartmentDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -86,10 +90,10 @@ def test_create_alarm(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.create_alarm(
-                create_alarm_details=request.pop(util.camelize('create_alarm_details')),
+                create_alarm_details=request.pop(util.camelize('CreateAlarmDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -126,10 +130,10 @@ def test_delete_alarm(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.delete_alarm(
-                alarm_id=request.pop(util.camelize('alarm_id')),
+                alarm_id=request.pop(util.camelize('alarmId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -166,10 +170,10 @@ def test_get_alarm(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.get_alarm(
-                alarm_id=request.pop(util.camelize('alarm_id')),
+                alarm_id=request.pop(util.camelize('alarmId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -197,6 +201,7 @@ def test_get_alarm_history(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('monitoring', util.camelize('monitoring'), 'GetAlarmHistory')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='monitoring', api_name='GetAlarmHistory')
 
@@ -206,18 +211,18 @@ def test_get_alarm_history(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.get_alarm_history(
-                alarm_id=request.pop(util.camelize('alarm_id')),
+                alarm_id=request.pop(util.camelize('alarmId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.get_alarm_history(
-                    alarm_id=request.pop(util.camelize('alarm_id')),
+                    alarm_id=request.pop(util.camelize('alarmId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -227,7 +232,7 @@ def test_get_alarm_history(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.get_alarm_history(
-                        alarm_id=request.pop(util.camelize('alarm_id')),
+                        alarm_id=request.pop(util.camelize('alarmId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -256,6 +261,7 @@ def test_list_alarms(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('monitoring', util.camelize('monitoring'), 'ListAlarms')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='monitoring', api_name='ListAlarms')
 
@@ -265,18 +271,18 @@ def test_list_alarms(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.list_alarms(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_alarms(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -286,7 +292,7 @@ def test_list_alarms(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_alarms(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -315,6 +321,7 @@ def test_list_alarms_status(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('monitoring', util.camelize('monitoring'), 'ListAlarmsStatus')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='monitoring', api_name='ListAlarmsStatus')
 
@@ -324,18 +331,18 @@ def test_list_alarms_status(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.list_alarms_status(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_alarms_status(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -345,7 +352,7 @@ def test_list_alarms_status(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_alarms_status(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -374,6 +381,7 @@ def test_list_metrics(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('monitoring', util.camelize('monitoring'), 'ListMetrics')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='monitoring', api_name='ListMetrics')
 
@@ -383,20 +391,20 @@ def test_list_metrics(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.list_metrics(
-                compartment_id=request.pop(util.camelize('compartment_id')),
-                list_metrics_details=request.pop(util.camelize('list_metrics_details')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                list_metrics_details=request.pop(util.camelize('ListMetricsDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_metrics(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
-                    list_metrics_details=request.pop(util.camelize('list_metrics_details')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    list_metrics_details=request.pop(util.camelize('ListMetricsDetails')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -406,8 +414,8 @@ def test_list_metrics(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_metrics(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
-                        list_metrics_details=request.pop(util.camelize('list_metrics_details')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        list_metrics_details=request.pop(util.camelize('ListMetricsDetails')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -445,10 +453,10 @@ def test_post_metric_data(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.post_metric_data(
-                post_metric_data_details=request.pop(util.camelize('post_metric_data_details')),
+                post_metric_data_details=request.pop(util.camelize('PostMetricDataDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -485,10 +493,10 @@ def test_remove_alarm_suppression(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.remove_alarm_suppression(
-                alarm_id=request.pop(util.camelize('alarm_id')),
+                alarm_id=request.pop(util.camelize('alarmId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -525,11 +533,11 @@ def test_summarize_metrics_data(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.summarize_metrics_data(
-                compartment_id=request.pop(util.camelize('compartment_id')),
-                summarize_metrics_data_details=request.pop(util.camelize('summarize_metrics_data_details')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                summarize_metrics_data_details=request.pop(util.camelize('SummarizeMetricsDataDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -566,11 +574,11 @@ def test_update_alarm(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.monitoring.MonitoringClient(config, service_endpoint=service_endpoint)
             response = client.update_alarm(
-                alarm_id=request.pop(util.camelize('alarm_id')),
-                update_alarm_details=request.pop(util.camelize('update_alarm_details')),
+                alarm_id=request.pop(util.camelize('alarmId')),
+                update_alarm_details=request.pop(util.camelize('UpdateAlarmDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

@@ -12,38 +12,38 @@ interactions:
       - gzip, deflate
       authorization:
       - Signature algorithm="rsa-sha256",headers="date (request-target) host content-length
-        content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="a4HBMHAhituZ1VjNFItphDhZS0sVg5CZ3MlRLeb4ivt4ilpHb1P4DSwJqSMXmZG6b5cYjM61bp7WFnJbv8Ar/EbhN4v+Q+hupvNFnWZcdsp6yeTiDxjMIfgqclM/zamCW4zAKgKNJTXXCYWhJrvoojoO7efLUsjSxpLlz6JpW8ptPcbl0kslFl6QweHTZc99kbCcFepStGbK2ih6BY0Rl+nOOOTIoN/mzBYZRC6dfiBq2M3a6fCS//ZPMRV+chL60XkcqNRPRnKsLKwOyA/Ox6rHZxKfAQguxDLboGFndrTNEupHIYqZ0gVD9vuvX2ruhAKgaTSa3EYRZ7ed8ARvSg==",version="1"
+        content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="JMCgndTr0AmrJF0Bi9rhR+EpeluXfUXOqYG/4NXi98uHWR6J6oRvkO+xz+8aeMPAS7Ky7s2gloVG50192EVhJSa24ve3Nyc5DUVL1IKCwdQIO0x/W3OUFX20iUDNyyQ9wU4R9XuKPAjP8MEIuCxcjkY7/DcLVNbkUwB/BD7XsXt9BSM4vnuklNkfficXQz3VUHzkrI+tUuxg3t9ymVVRBBnY6nqmX0GSQ3sZyaPhmuoaz4NIK8X6cn3s7CddFZD/ZpV91HgOK5jPcCqDHdIULKiRlh1LrMDpUK5RaOvjCkAeYap2w8bjKzjBZ0YOorXPXetMF+B+sUIwa9TkGvlN9w==",version="1"
       connection:
       - keep-alive
       content-type:
       - application/json
       date:
-      - Thu, 01 Aug 2019 19:51:48 GMT
+      - Sun, 12 Jan 2020 15:34:27 GMT
       host:
       - identity.us-phoenix-1.oraclecloud.com
       opc-client-info:
-      - Oracle-PythonSDK/2.2.21+preview.1
+      - Oracle-PythonSDK/2.8.1
       opc-request-id:
-      - DDC9E85C3C964FDE8CA87F56A842F2B4
+      - 3DCA8CB7C25B44AFA8E19E4E8DE502CC
       opc-retry-token:
-      - NNCywrpz3QF2A0CNlbjefhg5GdQDkg
+      - SexD890RUVWO8CCZQvTAa2HEhqS7Sp
       user-agent:
-      - Oracle-PythonSDK/2.2.21+preview.1 (python 3.7.2; x86_64-Darwin)
+      - Oracle-PythonSDK/2.8.1 (python 3.5.1; x86_64-Darwin)
       x-content-sha256:
       - 8w16DxQ96p0cAAj4KPjrCgFdfdydrOazQJMfe38iwxg=
     method: POST
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/users/
+    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/users
   response:
     body:
       string: "{\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n\
         \    \"canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-08-01T19:51:49.349Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaagtgj2owjm46fgvyn3ts7xqm6vihou2oiq6u47fgsol76ahuyoiba\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2020-01-12T15:34:29.867Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaqocadss5iq5naqwyou3lguuafo7wdlurbugea7dmpmdyxi6kkmpq\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"python_temp_user_vcr\",\n  \"description\" : \"Created by\
-        \ python SDK TestUserCrud test.\",\n  \"timeCreated\" : \"2019-08-01T19:51:49.349Z\"\
+        \ python SDK TestUserCrud test.\",\n  \"timeCreated\" : \"2020-01-12T15:34:29.867Z\"\
         ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"lifecycleState\"\
         \ : \"ACTIVE\"\n}"
     headers:
@@ -52,21 +52,21 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '774'
+      - '818'
       Content-Type:
       - application/json
       Date:
-      - Thu, 01 Aug 2019 19:51:49 GMT
+      - Sun, 12 Jan 2020 15:34:30 GMT
       ETag:
-      - 907449022fc99ebe80dddc26a6e6d9b1202c337e
+      - 401ec84dfcfd9b4ea0e111cb7d213c19f538c1cf
       Location:
-      - http://identity.us-phoenix-1.oraclecloud.com/20160918/users/ocid1.user.oc1..aaaaaaaagtgj2owjm46fgvyn3ts7xqm6vihou2oiq6u47fgsol76ahuyoiba
+      - https://identity-control-plane-core.svc.ad1.r2/20160918/users/ocid1.user.oc1..aaaaaaaaqocadss5iq5naqwyou3lguuafo7wdlurbugea7dmpmdyxi6kkmpq
       Pragma:
       - no-cache
       X-Content-Type-Options:
       - nosniff
       opc-request-id:
-      - DDC9E85C3C964FDE8CA87F56A842F2B4/C1D95CE8BD7DE6960790C68D677DDF77/709A25BBDD9BD87B3AC47294BB492510
+      - 3DCA8CB7C25B44AFA8E19E4E8DE502CC/C0F66F8708EB36633B8E33A03C8DD097/9F5E1C67877DB416ABD697E78D838330
     status:
       code: 200
       message: OK
@@ -78,72 +78,41 @@ interactions:
       accept-encoding:
       - gzip, deflate
       authorization:
-      - Signature algorithm="rsa-sha256",headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="Cuqzejye6pOvevV8nJ3eMcQg+gzjgO2WSTZSCiWY1LQQiByssNYdg0dqLmlW0zBPye6pTceWVJA5aEM45d/sOq50s/EX2r0E4+ltwkODL1Lk+P2zhFRPWmmnRpcOxWdK+ZIB/INltSs/i1yRR2SQOX9Hk4+k3jl5+Ew2clPgWYHov5KyHgWFVkS4VpqMXBlF2gu7SHc8ray7S4V7Tl1mLAMJaRDTmQgjGFKlhVPnYSjZAEdlrl3x+E0Lq6g9fT72vomSz/3liHMw+lDRG9ZlUrYyp0wktwwbuxNODIgYfmwzBWefeNYFkFEGl4i9qsEtxVEHycFtSAOJ1+J/grX5sg==",version="1"
+      - Signature algorithm="rsa-sha256",headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="Ti0lEBNmO2OdQwbhL7RiEDJlREydeziv8xo7sk4Lzqp4TbDVEojYzjlZgy2IVYFcW1cuUpWSCP+1SwnlK3hvZpV57ZJWG/g+I5rZLumi8itbv9rLIsNxpG+k3XApXDk7BNY3lsueTV2NXb4G+nQG2lsdGcUmM/w0p6CMhyREi++Kpiaz8Qdk6VXGqUGPF5+cipoiqTH7uW/g9fGqe8dID2ovRzxZn/nwvsX+HlAhcjGDE7EM8evn2xnTnVasOLFL2zh98pcKvPJx4Hvk4Y1CHfQMZmIeFBMxnIZNnELyaZcV1lfnHdgTnUnkf40z+4T9aZqEq0Pa+Hvgv2bBQiiopQ==",version="1"
       connection:
       - keep-alive
       content-type:
       - application/json
       date:
-      - Thu, 01 Aug 2019 19:51:49 GMT
+      - Sun, 12 Jan 2020 15:34:28 GMT
       host:
       - identity.us-phoenix-1.oraclecloud.com
       opc-client-info:
-      - Oracle-PythonSDK/2.2.21+preview.1
+      - Oracle-PythonSDK/2.8.1
       opc-request-id:
-      - F4F6AD7B9A0F4ABF995BF6D8776E0E4B
+      - 163DF6F5ED3D409A860CB423FE1E332C
       user-agent:
-      - Oracle-PythonSDK/2.2.21+preview.1 (python 3.7.2; x86_64-Darwin)
+      - Oracle-PythonSDK/2.8.1 (python 3.5.1; x86_64-Darwin)
     method: GET
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/users/?compartmentId=ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq&limit=500
+    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/users?compartmentId=ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq&limit=500
   response:
     body:
       string: "[ {\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n\
         \    \"canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2018-09-05T17:35:21.294Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa63m3bviigc4tehztp2r6gdvnvr3cq3ybvz4amxliykhz2iahgczq\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2018-09-05T17:35:21.294Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa63m3bviigc4tehztp2r6gdvnvr3cq3ybvz4amxliykhz2iahgczq\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"abhilash.vijayakumara@oracle.com\",\n  \"description\" :\
         \ \"Abhilash\",\n  \"timeCreated\" : \"2018-09-05T17:35:01.650Z\",\n  \"freeformTags\"\
         \ : { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n},\
         \ {\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"\
         canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2018-05-31T22:14:45.994Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa3zwagln3fqpw6mceeoykfzkq7ajw4dh75tztynv3wulentpr6yvq\"\
-        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
-        ,\n  \"name\" : \"acmiles\",\n  \"description\" : \"User account\",\n  \"\
-        timeCreated\" : \"2018-01-17T22:44:41.945Z\",\n  \"freeformTags\" : { },\n\
-        \  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n  \"capabilities\"\
-        \ : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\" : true,\n\
-        \    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\" : true,\n\
-        \    \"canUseCustomerSecretKeys\" : true\n  },\n  \"email\" : \"anusha.vijay@oracle.com\"\
-        ,\n  \"emailVerified\" : true,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\"\
-        \ : null,\n  \"timeModified\" : \"2019-04-26T19:22:07.728Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaajnhmt4ykeldtlhfwqgdncd5khmxqcrahwpqj6w6mh5mth5xi3toq\"\
-        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
-        ,\n  \"name\" : \"anusha.vijay@oracle.com\",\n  \"description\" : \"anusha.vijay@oracle.com\"\
-        ,\n  \"timeCreated\" : \"2019-04-26T19:18:59.159Z\",\n  \"freeformTags\" :\
-        \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
-        \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
-        \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-04-11T18:49:18.372Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaarmhg6qoizjm3kdrayfy6lgp37da2tsmejwkxxk6e53ws6cygtk3a\"\
-        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
-        ,\n  \"name\" : \"art.hall.iii@oracle.com\",\n  \"description\" : \"User account\"\
-        ,\n  \"timeCreated\" : \"2018-04-16T22:32:22.721Z\",\n  \"freeformTags\" :\
-        \ {\n    \"first_name\" : \"Art\",\n    \"last_name\" : \"Hall\"\n  },\n \
-        \ \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n  \"capabilities\"\
-        \ : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\" : true,\n\
-        \    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\" : true,\n\
-        \    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\" : false,\n\
-        \  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n  \"\
-        timeModified\" : \"2018-05-25T14:41:12.897Z\",\n  \"isMfaActivated\" : false,\n\
-        \  \"id\" : \"ocid1.user.oc1..aaaaaaaa6xrg6lsdjhl5gelksi45uokpdtwtarben7z65mrb7uttv5al3oya\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2018-05-25T14:41:12.897Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa6xrg6lsdjhl5gelksi45uokpdtwtarben7z65mrb7uttv5al3oya\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"CLIIntegrationTestAdminUser\",\n  \"description\" : \"Use\
         \ for Python CLI integration tests that require an admin - do not delete.\
@@ -151,10 +120,10 @@ interactions:
         \ : { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n},\
         \ {\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"\
         canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2018-12-07T18:13:48.518Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa2dk2dwg7c6mi3ycos4kcjzqozzakhsvrmnzol3e6lano7mdxuzlq\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2018-12-07T18:13:48.518Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa2dk2dwg7c6mi3ycos4kcjzqozzakhsvrmnzol3e6lano7mdxuzlq\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"CLIIntegrationTestUser\",\n  \"description\" : \"Used for\
         \ the Python CLI integration tests - do not delete. \",\n  \"timeCreated\"\
@@ -162,27 +131,19 @@ interactions:
         \ : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n  \"capabilities\" : {\n\
         \    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\" : true,\n  \
         \  \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\" : true,\n \
-        \   \"canUseCustomerSecretKeys\" : true\n  },\n  \"email\" : \"darshan.d.shetty@oracle.com\"\
-        ,\n  \"emailVerified\" : true,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\"\
-        \ : null,\n  \"timeModified\" : \"2019-05-29T23:04:02.271Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa5z5bv2wjja3fhl47zyq3bppy4xi7s63r2whebvak2zpa3foupeba\"\
-        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
-        ,\n  \"name\" : \"darshan.d.shetty@oracle.com\",\n  \"description\" : \"darshan.d.shetty@oracle.com\"\
-        ,\n  \"timeCreated\" : \"2019-05-29T21:56:44.330Z\",\n  \"freeformTags\" :\
-        \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
-        \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
-        \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
+        \   \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"email\" : \"mathias.ricken@oracle.com\",\n  \"emailVerified\"\
         \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2018-05-14T22:31:04.922Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa4b4bvx7ipcmy5fdzeevuhkbdvwoo5qo6bvukw4ypukonjwur3s7q\"\
+        \  \"timeModified\" : \"2019-10-29T17:41:16.462Z\",\n  \"isMfaActivated\"\
+        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaayrrstwda4ia44qyd5qeuzhdtdqgqej2kwnxezmnpfdjcxaqttagq\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
-        ,\n  \"name\" : \"dayong.fu@oracle.com\",\n  \"description\" : \"User account\"\
-        ,\n  \"timeCreated\" : \"2018-01-17T22:44:49.713Z\",\n  \"freeformTags\" :\
-        \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
-        \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
-        \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
+        ,\n  \"name\" : \"DEXREQ-Artifacts-User\",\n  \"description\" : \"User for\
+        \ uploading and downloading artifacts.\",\n  \"timeCreated\" : \"2019-10-29T17:26:27.569Z\"\
+        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"lifecycleState\"\
+        \ : \"ACTIVE\"\n}, {\n  \"capabilities\" : {\n    \"canUseConsolePassword\"\
+        \ : true,\n    \"canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n\
+        \    \"canUseSmtpCredentials\" : true,\n    \"canUseCustomerSecretKeys\" :\
+        \ true,\n    \"canUseOAuth2ClientCredentials\" : true\n  },\n  \"emailVerified\"\
         \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
         \  \"timeModified\" : \"2018-10-18T22:43:13.060Z\",\n  \"isMfaActivated\"\
         \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaagj6thvyilqeu6qfg6zsqrp4ydjtrxdx67iemsckpqh5ytfbiz2wa\"\
@@ -192,20 +153,20 @@ interactions:
         \ : { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n},\
         \ {\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"\
         canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-05-15T01:39:50.511Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa5547r2k3ndbhxmm26vefb6osbj73apwfeomoxmu42mbqasip5bnq\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-08-19T23:33:02.956Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa5547r2k3ndbhxmm26vefb6osbj73apwfeomoxmu42mbqasip5bnq\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"GOSDK2_Test_Deps_TestUser\",\n  \"description\" : \"GoSDK\
         \ Test User\",\n  \"timeCreated\" : \"2019-04-15T16:26:28.974Z\",\n  \"freeformTags\"\
         \ : { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n},\
         \ {\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"\
         canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-05-15T01:39:47.261Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaalrxyqrm7fall2m6zsuex5xrhx5ljqt22o7a7rwa23kbs4defp33a\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-05-15T01:39:47.261Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaalrxyqrm7fall2m6zsuex5xrhx5ljqt22o7a7rwa23kbs4defp33a\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"gosdktestuser\",\n  \"description\" : \"DO NOT DELETE, user\
         \ for running team city job\",\n  \"timeCreated\" : \"2018-04-12T18:59:45.422Z\"\
@@ -213,49 +174,50 @@ interactions:
         \ : \"ACTIVE\"\n}, {\n  \"capabilities\" : {\n    \"canUseConsolePassword\"\
         \ : true,\n    \"canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n\
         \    \"canUseSmtpCredentials\" : true,\n    \"canUseCustomerSecretKeys\" :\
-        \ true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
-        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-05-21T22:46:09.968Z\"\
-        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaeanofqjhp57imnrchrtiwmwnohpxh3zha2f2ddyznfhh46mak7ra\"\
+        \ true,\n    \"canUseOAuth2ClientCredentials\" : true\n  },\n  \"emailVerified\"\
+        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
+        \  \"timeModified\" : \"2019-12-02T21:09:23.268Z\",\n  \"isMfaActivated\"\
+        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaeanofqjhp57imnrchrtiwmwnohpxh3zha2f2ddyznfhh46mak7ra\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"ImageTestsUser\",\n  \"description\" : \"user for image\
         \ tests\",\n  \"timeCreated\" : \"2019-03-14T19:52:54.632Z\",\n  \"freeformTags\"\
         \ : { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n},\
         \ {\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"\
         canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-07-17T23:11:04.834Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaapcpmfyitxvyungcqg5e4ndqw5ncdtpzqqkt3jpsc7gfh6ilgb65q\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-12-04T18:09:15.555Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaapcpmfyitxvyungcqg5e4ndqw5ncdtpzqqkt3jpsc7gfh6ilgb65q\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"jason.yin@oracle.com\",\n  \"description\" : \"User account\"\
         ,\n  \"timeCreated\" : \"2018-01-18T00:53:28.892Z\",\n  \"freeformTags\" :\
         \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
         \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
         \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-08-01T19:50:55.976Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaggsr4mh6xgiycltihbp3s4ob5kucmces2ey7gqbjc4csgdlrdxfa\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2020-01-11T07:59:00.346Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaggsr4mh6xgiycltihbp3s4ob5kucmces2ey7gqbjc4csgdlrdxfa\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"JavaSDK.TestUser\",\n  \"description\" : \"OK to delete\"\
         ,\n  \"timeCreated\" : \"2019-04-17T00:47:34.630Z\",\n  \"freeformTags\" :\
         \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
         \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
         \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2018-01-17T22:44:54.365Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaab5nk2dk3d4dm467ol6lx2xkdg5ruiw3ji6tcgqptp2auxdebtrea\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2018-01-17T22:44:54.365Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaab5nk2dk3d4dm467ol6lx2xkdg5ruiw3ji6tcgqptp2auxdebtrea\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"joe.levy@oracle.com\",\n  \"description\" : \"User account\"\
         ,\n  \"timeCreated\" : \"2018-01-17T22:44:52.934Z\",\n  \"freeformTags\" :\
         \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
         \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
         \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-02-25T20:10:30.820Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaqh3cbf7a5w6fyhf6b4vevz7jtfjxjqgsil4uptwdx35ibdqlvgra\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-08-19T21:03:08.783Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaqh3cbf7a5w6fyhf6b4vevz7jtfjxjqgsil4uptwdx35ibdqlvgra\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"jyoti.s.saini@oracle.com\",\n  \"description\" : \"Jyoti\
         \ Test Account\",\n  \"timeCreated\" : \"2019-02-25T18:56:46.159Z\",\n  \"\
@@ -264,70 +226,92 @@ interactions:
         \ : \"__STS0476_6855\"\n    }\n  },\n  \"lifecycleState\" : \"ACTIVE\"\n},\
         \ {\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"\
         canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2018-10-09T00:28:24.699Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaz2kdh56kmkw2b3nvtjhcjkllllyay4vlmyjthehoqafqzwn57qra\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2018-10-09T00:28:24.699Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaz2kdh56kmkw2b3nvtjhcjkllllyay4vlmyjthehoqafqzwn57qra\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"kaifeng.zeng@oracle.com\",\n  \"description\" : \"Testing\"\
         ,\n  \"timeCreated\" : \"2018-09-10T17:32:03.572Z\",\n  \"freeformTags\" :\
         \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
         \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
         \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2018-07-23T16:21:03.739Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaajsplnhfeqfzkbeo3qatqdpngt6raeokcnvocturxqebs3nokodha\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2018-07-23T16:21:03.739Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaajsplnhfeqfzkbeo3qatqdpngt6raeokcnvocturxqebs3nokodha\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"mathias.ricken@oracle.com\",\n  \"description\" : \"Mathias\
         \ Ricken\",\n  \"timeCreated\" : \"2018-01-12T22:27:09.954Z\",\n  \"freeformTags\"\
         \ : { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n},\
         \ {\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"\
         canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-04-12T18:22:00.597Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaajmorns43lr5c54vnvqt74gqjqdn4n4npe77vh7d6i4bqcrqvtoda\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-04-12T18:22:00.597Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaajmorns43lr5c54vnvqt74gqjqdn4n4npe77vh7d6i4bqcrqvtoda\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"mike.c.ross@oracle.com\",\n  \"description\" : \"User account\"\
         ,\n  \"timeCreated\" : \"2018-01-17T22:44:54.993Z\",\n  \"freeformTags\" :\
         \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
         \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
         \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2018-08-20T17:24:17.579Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaanq2slmmuu54vxtvxlorpmdku4efuzkkzxcu76ehlhmeqdaqp6uca\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2018-08-20T17:24:17.579Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaanq2slmmuu54vxtvxlorpmdku4efuzkkzxcu76ehlhmeqdaqp6uca\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"nabeel.al.saber@oracle.com\",\n  \"description\" : \"Nabeel\
         \ AlSaber\",\n  \"timeCreated\" : \"2018-08-15T19:30:52.515Z\",\n  \"freeformTags\"\
         \ : { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n},\
         \ {\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"\
         canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"email\" : \"nakshatra.sharma@oracle.com\",\n  \"emailVerified\"\
         \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2018-06-18T23:48:05.218Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaysjl4eql7st62ovdbpt5uxxqfvymjnhvb6uilmtjnk2hoe2jq3eq\"\
+        \  \"timeModified\" : \"2019-12-23T23:24:14.038Z\",\n  \"isMfaActivated\"\
+        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaliqzpe4y67xi4wpy67vbgbahvnfyxyti3mm6tjlhij5ifhrb6wea\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"nakshatra.sharma@oracle.com\",\n  \"description\" : \"nakshatra.sharma@oracle.com\"\
+        ,\n  \"timeCreated\" : \"2019-12-19T22:44:00.109Z\",\n  \"freeformTags\" :\
+        \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
+        \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
+        \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-08-05T20:29:46.532Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaysjl4eql7st62ovdbpt5uxxqfvymjnhvb6uilmtjnk2hoe2jq3eq\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"paul.hummel@oracle.com\",\n  \"description\" : \"User account\"\
         ,\n  \"timeCreated\" : \"2018-05-09T16:02:06.519Z\",\n  \"freeformTags\" :\
         \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
         \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
         \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-08-01T19:51:49.349Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaagtgj2owjm46fgvyn3ts7xqm6vihou2oiq6u47fgsol76ahuyoiba\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-10-01T01:14:54.548Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaax2qfxw73mubt3c3c2ftoh5kgigb5ef5oq2yef7wlmdevgqpcugaa\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"peng.p.liu@oracle.com\",\n  \"description\" : \"User account\"\
+        ,\n  \"timeCreated\" : \"2019-09-27T15:04:23.797Z\",\n  \"freeformTags\" :\
+        \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
+        \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
+        \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2020-01-12T15:34:29.867Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaqocadss5iq5naqwyou3lguuafo7wdlurbugea7dmpmdyxi6kkmpq\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"python_temp_user_vcr\",\n  \"description\" : \"Created by\
-        \ python SDK TestUserCrud test.\",\n  \"timeCreated\" : \"2019-08-01T19:51:49.349Z\"\
+        \ python SDK TestUserCrud test.\",\n  \"timeCreated\" : \"2020-01-12T15:34:29.867Z\"\
         ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"lifecycleState\"\
         \ : \"ACTIVE\"\n}, {\n  \"capabilities\" : {\n    \"canUseConsolePassword\"\
         \ : true,\n    \"canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n\
         \    \"canUseSmtpCredentials\" : true,\n    \"canUseCustomerSecretKeys\" :\
-        \ true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
-        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-05-21T22:47:02.687Z\"\
-        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq\"\
+        \ true,\n    \"canUseOAuth2ClientCredentials\" : true\n  },\n  \"emailVerified\"\
+        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
+        \  \"timeModified\" : \"2019-05-21T22:47:02.687Z\",\n  \"isMfaActivated\"\
+        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"PythonSDKTestAdminUser\",\n  \"description\" : \"Do not\
         \ delete.  This user is used by automated tests\",\n  \"timeCreated\" : \"\
@@ -335,40 +319,20 @@ interactions:
         \ : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n  \"capabilities\" : {\n\
         \    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\" : true,\n  \
         \  \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\" : true,\n \
-        \   \"canUseCustomerSecretKeys\" : true\n  },\n  \"email\" : \"rajesh.d.deshpande@oracle.com\"\
-        ,\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\"\
-        \ : null,\n  \"timeModified\" : \"2019-05-24T18:41:07.388Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa2vo6h7kugljspsu2xu3koehxoz5b6smhh7e2yuuwei4djl6lhc3q\"\
-        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
-        ,\n  \"name\" : \"rajesh.d.deshpande@oracle.com\",\n  \"description\" : \"\
-        User account\",\n  \"timeCreated\" : \"2019-03-07T01:08:37.255Z\",\n  \"freeformTags\"\
-        \ : { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n},\
-        \ {\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"\
-        canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"email\" : \"\
-        ravi.tandon@oracle.com\",\n  \"emailVerified\" : true,\n  \"identityProviderId\"\
-        \ : null,\n  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-05-08T22:06:04.195Z\"\
-        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaqjvvig7fu6zl6hj7czl2erwikxui2t72vf73q624qwbdf5j2hcxa\"\
-        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
-        ,\n  \"name\" : \"RaviTandon\",\n  \"description\" : \"for dex metrics\",\n\
-        \  \"timeCreated\" : \"2019-05-06T23:42:12.771Z\",\n  \"freeformTags\" : {\
-        \ },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
-        \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
-        \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-07-27T09:51:15.889Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaauu5upgizdrnkcnnipadcbvphkhczvssww7jhirqckgn6tf5t47ca\"\
+        \   \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2020-01-03T10:46:59.671Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaauu5upgizdrnkcnnipadcbvphkhczvssww7jhirqckgn6tf5t47ca\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"RubySDK.TestUser\",\n  \"description\" : \"updated\",\n\
         \  \"timeCreated\" : \"2018-05-10T00:33:30.365Z\",\n  \"freeformTags\" : {\
         \ },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
         \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
         \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-05-21T22:47:40.787Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaasq5ewrl4vuypj3ocvulkeok5pxb6iduhrw2d2uiop372e37oep5a\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-05-21T22:47:40.787Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaasq5ewrl4vuypj3ocvulkeok5pxb6iduhrw2d2uiop372e37oep5a\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"RubySDKTestAdminUser\",\n  \"description\" : \"Do not delete.\
         \  This user is used by automated tests\",\n  \"timeCreated\" : \"2018-05-10T00:19:50.169Z\"\
@@ -376,9 +340,10 @@ interactions:
         \ : \"ACTIVE\"\n}, {\n  \"capabilities\" : {\n    \"canUseConsolePassword\"\
         \ : true,\n    \"canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n\
         \    \"canUseSmtpCredentials\" : true,\n    \"canUseCustomerSecretKeys\" :\
-        \ true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
-        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-03-27T17:58:09.136Z\"\
-        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaozbsttaymjqwbs3jp43jd7vwdvrk66ps6socu7etxay6mr5pbm2q\"\
+        \ true,\n    \"canUseOAuth2ClientCredentials\" : true\n  },\n  \"emailVerified\"\
+        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
+        \  \"timeModified\" : \"2019-03-27T17:58:09.136Z\",\n  \"isMfaActivated\"\
+        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaozbsttaymjqwbs3jp43jd7vwdvrk66ps6socu7etxay6mr5pbm2q\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"SDKAdmin\",\n  \"description\" : \"A new administrator test\
         \ account for all SDK testings.\",\n  \"timeCreated\" : \"2019-02-19T19:06:44.707Z\"\
@@ -387,10 +352,10 @@ interactions:
         \ : \"__STS0476_6855\"\n    }\n  },\n  \"lifecycleState\" : \"ACTIVE\"\n},\
         \ {\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"\
         canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-05-21T22:45:33.254Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-09-24T22:20:14.123Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"SDKIntegrationTestAdminUser\",\n  \"description\" : \"Admin\
         \ user for SDK integration tests - DO NOT REMOVE KEYS WITHOUT PINGING TEAM\"\
@@ -398,55 +363,88 @@ interactions:
         \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
         \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
         \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-01-03T17:55:42.571Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaazswuf7sroap2wpwhyww4emp7en5kt63y33stvib4ub5tqniaufuq\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"email\" : \"srikanth.reddy.kumbham@oracle.com\",\n  \"\
+        emailVerified\" : true,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\"\
+        \ : null,\n  \"timeModified\" : \"2019-11-04T22:01:29.258Z\",\n  \"isMfaActivated\"\
+        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaqkocfuuw4ss5scntioei2m3bf4h7e3e7chqg4rbxh2x6htwzv5ba\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"srikanth.reddy.kumbham@oracle.com\",\n  \"description\"\
+        \ : \"CLI User\",\n  \"timeCreated\" : \"2019-11-04T21:33:05.457Z\",\n  \"\
+        freeformTags\" : { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"\
+        ACTIVE\"\n}, {\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n\
+        \    \"canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-01-03T17:55:42.571Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaazswuf7sroap2wpwhyww4emp7en5kt63y33stvib4ub5tqniaufuq\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"sumit.kumar.dey@oracle.com\",\n  \"description\" : \"sumit.kumar.dey@oracle.com\"\
         ,\n  \"timeCreated\" : \"2018-05-22T22:26:52.682Z\",\n  \"freeformTags\" :\
         \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
         \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
         \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"email\" : \"\
-        sun.yan@oracle.com\",\n  \"emailVerified\" : false,\n  \"identityProviderId\"\
-        \ : null,\n  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-04-10T18:46:51.020Z\"\
-        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa6biblbzcy5ka3pevgg34s3repqcoaypo3napphleugiegnxuw4ua\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"email\" : \"sun.yan@oracle.com\",\n  \"emailVerified\"\
+        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
+        \  \"timeModified\" : \"2019-12-23T19:58:09.444Z\",\n  \"isMfaActivated\"\
+        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa6biblbzcy5ka3pevgg34s3repqcoaypo3napphleugiegnxuw4ua\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"sun.yan@oracle.com\",\n  \"description\" : \"sun.yan@oracle.com\"\
         ,\n  \"timeCreated\" : \"2019-04-10T18:40:26.984Z\",\n  \"freeformTags\" :\
         \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
         \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
         \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"email\" : \"\
-        varun.j.jain@oracle.com\",\n  \"emailVerified\" : false,\n  \"identityProviderId\"\
-        \ : null,\n  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-05-31T17:18:29.777Z\"\
-        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaadvtziifdggjh4qdfc3xvmi7nh76dgqu6ufm3bnlc7gqof5tsqs5a\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"email\" : \"varun.j.jain@oracle.com\",\n  \"emailVerified\"\
+        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
+        \  \"timeModified\" : \"2019-05-31T17:18:29.777Z\",\n  \"isMfaActivated\"\
+        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaadvtziifdggjh4qdfc3xvmi7nh76dgqu6ufm3bnlc7gqof5tsqs5a\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"VarunJain\",\n  \"description\" : \"for metrics\",\n  \"\
         timeCreated\" : \"2019-05-30T23:07:30.046Z\",\n  \"freeformTags\" : { },\n\
         \  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n  \"capabilities\"\
         \ : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\" : true,\n\
         \    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\" : true,\n\
-        \    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\" : false,\n\
-        \  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n  \"\
-        timeModified\" : \"2019-07-11T17:19:18.868Z\",\n  \"isMfaActivated\" : false,\n\
-        \  \"id\" : \"ocid1.user.oc1..aaaaaaaangaghxm7h2eyqsq47d6hqsyaoi24qcosqylrfcxnzvarvmug4ctq\"\
+        \    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-07-11T17:19:18.868Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaangaghxm7h2eyqsq47d6hqsyaoi24qcosqylrfcxnzvarvmug4ctq\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"viral.modi@oracle.com\",\n  \"description\" : \"User account\"\
         ,\n  \"timeCreated\" : \"2018-06-08T17:50:34.615Z\",\n  \"freeformTags\" :\
         \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
         \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
         \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2018-12-05T17:48:57.199Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaayomhzal4ytwaegw3wad3e7iqk3lgnqr5xhiymb6tj5eosp3xc5fq\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2020-01-03T00:51:17.139Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaayomhzal4ytwaegw3wad3e7iqk3lgnqr5xhiymb6tj5eosp3xc5fq\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"vishwas.v.bhat@oracle.com\",\n  \"description\" : \"part\
         \ of CLI team\",\n  \"timeCreated\" : \"2018-06-22T01:17:44.791Z\",\n  \"\
         freeformTags\" : { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"\
-        ACTIVE\"\n} ]"
+        ACTIVE\"\n}, {\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n\
+        \    \"canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"email\" : \"vya.bhagwat@oracle.com\",\n  \"emailVerified\"\
+        \ : true,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
+        \  \"timeModified\" : \"2020-01-02T19:14:04.473Z\",\n  \"isMfaActivated\"\
+        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa6vekfdqkjavr3dbhvrbbeiwp5acmg6q35tllic5xwch547nq4uxq\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"vya.bhagwat@oracle.com\",\n  \"description\" : \"vya.bhagwat@oracle.com\"\
+        ,\n  \"timeCreated\" : \"2019-12-19T22:47:27.646Z\",\n  \"freeformTags\" :\
+        \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
+        \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
+        \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2020-01-09T17:03:20.799Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaacavf4stsmcbm7walfp7vh46wlnipojzg4w3sjuomzaqjors44aya\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"vyas.bhagwat@oracle.com\",\n  \"description\" : \"User account\"\
+        ,\n  \"timeCreated\" : \"2020-01-02T19:06:43.154Z\",\n  \"freeformTags\" :\
+        \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n} ]"
     headers:
       Cache-Control:
       - no-cache, no-store, must-revalidate
@@ -455,7 +453,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 01 Aug 2019 19:51:49 GMT
+      - Sun, 12 Jan 2020 15:34:30 GMT
       Pragma:
       - no-cache
       Transfer-Encoding:
@@ -464,10 +462,8 @@ interactions:
       - nosniff
       opc-limit:
       - '100'
-      opc-next-page:
-      - AAAAAAAAAAJleUpyYVdRaU9pSTJNellpTENKbGJtTWlPaUpCTWpVMlIwTk5JaXdpWVd4bklqb2laR2x5SW4wLi56V2cteWczM3BCRFp1Z0hZLmlhQVdkb2FBYk5PMFBNQ3ZRcXhoZW5aWlRsdjhBdnhxWVlNV21JQWFxRjBHSldWMi1FRFI5TkJpWHNkVXN5dXFaYVphSzBxaGpxcnFkZjZScTV2aWhseFZNZE9idkVwVUstZnE1cE5xSEhHYkRocEQtZDJKcHBZX2VrMjU1czhjRjkwMURYQ1Y4VjZEUkEtT3BqQ2FPSGlDNVppZWpWTFk4S0JSWUxxc1k0a0trY2JpelVPZzZaZGFqOFZteFo3Vi1FOXpIZnc5czhmV2hRLWZDRl9vSkdoTzlvNF9UNDJTY2didmh6dUZLLXhCd3RHRW0tVTNZdzNKR3E3NURqYWN2U2hyU1pLSWZFOGRzZlhOTWxkcFFCV1ZNaE1fcUI0d25HV0lpRllsU3RrSnNTTXBTNnc1dmlZTTFiZkZUWFgxeVBzMl9rYUV3d3FUc0M5ZUwyRVNFaXJCdVR3VThTbHprWGRURWg0eko2bS1BYnZGZ1ZMYTFkYlBTR2FBWEhueGk4RWdSeEVxS3d0a1hfZWZZNVQxU0RSeEhjN0NaOVBZTXJEcGlWc3FMSjJlMWhScDU3SkN5MzRBZzFFU1l1dmRfZHgxUWxkRkRtbDBVclJteFdRaFdXbE15VjJPd2RFTUlQNzFOWmt1UXdGY1EyckNUQy1SNXVfUVRqcW9ROFRTU1pYZzQzc0JFMmhKb01DWFRISm9EY3J4T2gzVlJ1bFJxSmhQS2JUQ0E0US5MWHlNck1La0N1VnFyMkhFV3ZSdGJB
       opc-request-id:
-      - F4F6AD7B9A0F4ABF995BF6D8776E0E4B/8530F10A95A5A26BCD2988045B6A4BB5/0F86930FA5F9E9018C0F164A2906A076
+      - 163DF6F5ED3D409A860CB423FE1E332C/0D97769E97CAE2E2703D4908352B7D8C/12917731CC23A2107BC3D39997C32655
     status:
       code: 200
       message: OK
@@ -479,84 +475,34 @@ interactions:
       accept-encoding:
       - gzip, deflate
       authorization:
-      - Signature algorithm="rsa-sha256",headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="ZJS2McMMfYs9IAZAYMisxTWcKkuAniLA03Ft+oIx4wHR0pB0LAY//dSxQ3tA4MaDzwAaiJEGGGBvvvOKQuhbLVFLPXwQcKQWbpgAx4ck3OIs9bSCgxoyVNI4GTLCM0lskV6n6MAGZAPmxtwrRgmUt8Uy07uWfwR8z1E7NXRO3yN7G38/rhOJLa31UVGYpsL3w3Ss2PXraojQ8ZflWdVl8tWgUQ0XTPQlgb519FPibqTdy7EoOkR7lDeL2uEewOf2OREXcVKGIjnva5hQkMQJBH4A1VEglPV8iw5ulV2z5frdxiBEz4LKRNt3QS1GU57jLkI4S9K4pzYCqJNI7dJUpg==",version="1"
+      - Signature algorithm="rsa-sha256",headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="PFqIc+Jo2PCY7AViK1XpOkdzAJOZSK5jHwie27aJsGDTcE2VyPBmNOs0XQN5bB80CS8G6B7d04SaYG+asexFX3Y1hp8oQsu1P6owDif48sqElx2VET3JE7+yRHTItoMUGeCMEwHcASnqz544l94LYcP2OE9g7ldeqTBjc3Tx+5WADzY3KNp/v9ilfNMLpm1n7WSpfviH02fUNt7bI1Ky+7DQP81GQdJ8T8eVYsJgxXU/kraekxw2HnlzRAjNh0Va5tF0ADkgSkcYqlbkTA1CnaM3JGQumlt5cRP2eL3FziTB0ZNJwkTuCpIVXEQBEOimI0IuGYclwwi6Mtu7IQ+zlg==",version="1"
       connection:
       - keep-alive
       content-type:
       - application/json
       date:
-      - Thu, 01 Aug 2019 19:51:49 GMT
+      - Sun, 12 Jan 2020 15:34:28 GMT
       host:
       - identity.us-phoenix-1.oraclecloud.com
       opc-client-info:
-      - Oracle-PythonSDK/2.2.21+preview.1
+      - Oracle-PythonSDK/2.8.1
       opc-request-id:
-      - 272A5C60A8E24148A7D6B39959F26C7A
+      - 408C9A83BBB846EFA16D58C6A48023D0
       user-agent:
-      - Oracle-PythonSDK/2.2.21+preview.1 (python 3.7.2; x86_64-Darwin)
+      - Oracle-PythonSDK/2.8.1 (python 3.5.1; x86_64-Darwin)
     method: GET
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/users/?compartmentId=ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq&page=AAAAAAAAAAJleUpyYVdRaU9pSTJNellpTENKbGJtTWlPaUpCTWpVMlIwTk5JaXdpWVd4bklqb2laR2x5SW4wLi56V2cteWczM3BCRFp1Z0hZLmlhQVdkb2FBYk5PMFBNQ3ZRcXhoZW5aWlRsdjhBdnhxWVlNV21JQWFxRjBHSldWMi1FRFI5TkJpWHNkVXN5dXFaYVphSzBxaGpxcnFkZjZScTV2aWhseFZNZE9idkVwVUstZnE1cE5xSEhHYkRocEQtZDJKcHBZX2VrMjU1czhjRjkwMURYQ1Y4VjZEUkEtT3BqQ2FPSGlDNVppZWpWTFk4S0JSWUxxc1k0a0trY2JpelVPZzZaZGFqOFZteFo3Vi1FOXpIZnc5czhmV2hRLWZDRl9vSkdoTzlvNF9UNDJTY2didmh6dUZLLXhCd3RHRW0tVTNZdzNKR3E3NURqYWN2U2hyU1pLSWZFOGRzZlhOTWxkcFFCV1ZNaE1fcUI0d25HV0lpRllsU3RrSnNTTXBTNnc1dmlZTTFiZkZUWFgxeVBzMl9rYUV3d3FUc0M5ZUwyRVNFaXJCdVR3VThTbHprWGRURWg0eko2bS1BYnZGZ1ZMYTFkYlBTR2FBWEhueGk4RWdSeEVxS3d0a1hfZWZZNVQxU0RSeEhjN0NaOVBZTXJEcGlWc3FMSjJlMWhScDU3SkN5MzRBZzFFU1l1dmRfZHgxUWxkRkRtbDBVclJteFdRaFdXbE15VjJPd2RFTUlQNzFOWmt1UXdGY1EyckNUQy1SNXVfUVRqcW9ROFRTU1pYZzQzc0JFMmhKb01DWFRISm9EY3J4T2gzVlJ1bFJxSmhQS2JUQ0E0US5MWHlNck1La0N1VnFyMkhFV3ZSdGJB&limit=500
-  response:
-    body:
-      string: '[ ]'
-    headers:
-      Cache-Control:
-      - no-cache, no-store, must-revalidate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '3'
-      Content-Type:
-      - application/json
-      Date:
-      - Thu, 01 Aug 2019 19:51:50 GMT
-      Pragma:
-      - no-cache
-      X-Content-Type-Options:
-      - nosniff
-      opc-limit:
-      - '100'
-      opc-request-id:
-      - 272A5C60A8E24148A7D6B39959F26C7A/7ABA5AF8D6C06CBE4A0BAEF821E8ED2E/3E935273211A8BD39CA0A701B4D4863B
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      accept:
-      - application/json
-      accept-encoding:
-      - gzip, deflate
-      authorization:
-      - Signature algorithm="rsa-sha256",headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="i08YXsJsCOYxGirFpTP/5c3ZKyXaJTDAYPIHJc1YmQXNcADW6WeCxaq2pU95h2jCgZVcy6X72Svf5slsi6VIxPkacmiGgYVI49v2g/U9wafW4ZWR0NcYfhqenUb74sIVeN3LORfoR7jw8GVtfacFfCrkDOoDkIbvXMsAeaYc8FxrktD+LyCZpAsLBo46lIvQLErcgzCa2hFbaZ5b6r/4jL7IvzaDIUS+NS/GvRkHMox8WmTHZzLRpPR65RM70KWAnY4bzC+wm7n2Vjyvvyzto9bzAPFbeqMFPY5lfwYC0elZ/OgCJnIq0IcSoU/Z5GDFHHFTjowvOItUlwep0FHGFw==",version="1"
-      connection:
-      - keep-alive
-      content-type:
-      - application/json
-      date:
-      - Thu, 01 Aug 2019 19:51:49 GMT
-      host:
-      - identity.us-phoenix-1.oraclecloud.com
-      opc-client-info:
-      - Oracle-PythonSDK/2.2.21+preview.1
-      opc-request-id:
-      - BA660BAEA7CB4540A4ECC95AAC759DBA
-      user-agent:
-      - Oracle-PythonSDK/2.2.21+preview.1 (python 3.7.2; x86_64-Darwin)
-    method: GET
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/users/ocid1.user.oc1..aaaaaaaagtgj2owjm46fgvyn3ts7xqm6vihou2oiq6u47fgsol76ahuyoiba
+    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/users/ocid1.user.oc1..aaaaaaaaqocadss5iq5naqwyou3lguuafo7wdlurbugea7dmpmdyxi6kkmpq
   response:
     body:
       string: "{\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n\
         \    \"canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-08-01T19:51:49.349Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaagtgj2owjm46fgvyn3ts7xqm6vihou2oiq6u47fgsol76ahuyoiba\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2020-01-12T15:34:29.867Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaqocadss5iq5naqwyou3lguuafo7wdlurbugea7dmpmdyxi6kkmpq\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"python_temp_user_vcr\",\n  \"description\" : \"Created by\
-        \ python SDK TestUserCrud test.\",\n  \"timeCreated\" : \"2019-08-01T19:51:49.349Z\"\
+        \ python SDK TestUserCrud test.\",\n  \"timeCreated\" : \"2020-01-12T15:34:29.867Z\"\
         ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"lifecycleState\"\
         \ : \"ACTIVE\"\n}"
     headers:
@@ -565,19 +511,19 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '774'
+      - '818'
       Content-Type:
       - application/json
       Date:
-      - Thu, 01 Aug 2019 19:51:50 GMT
+      - Sun, 12 Jan 2020 15:34:30 GMT
       ETag:
-      - 907449022fc99ebe80dddc26a6e6d9b1202c337e
+      - 401ec84dfcfd9b4ea0e111cb7d213c19f538c1cf
       Pragma:
       - no-cache
       X-Content-Type-Options:
       - nosniff
       opc-request-id:
-      - BA660BAEA7CB4540A4ECC95AAC759DBA/4641D5A59494E8CABB5E7684172EFCEF/1A9CB2525787E58D1D2CCB2FD1BEAF4B
+      - 408C9A83BBB846EFA16D58C6A48023D0/7516764D0BBD807530ACF129E4A4322E/045FA4908395543A29F2DEC77A538434
     status:
       code: 200
       message: OK
@@ -592,36 +538,36 @@ interactions:
       - gzip, deflate
       authorization:
       - Signature algorithm="rsa-sha256",headers="date (request-target) host content-length
-        content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="UcLWyULUjqJEtrmxDpINgRaAjZcuZW0S3GyGOC9MdOLUGPAkTqgiFcVkFzGplL15Jg8SjHCVAtgs7bV5StdZSB8KQ5l+MBe1368GmQLPDQV1dyHGk6rcTPbECTZWLprXrQKD3SXGw3ubg4aFXov4I/RD3putXPFnoA6Tu66LRxcXcFksOGwfoPbysqESsXIc9PmZenZaL5IaVGeroJMUnrMEBPF/UxUN4YQF62WfmQiHqub0Xb5xwjcPhYoRZoDzhPnvIaSSAGrKzR9e+oqeWp1X9bZdrqYboX5x91EdiR9qT7kYlZFD74zJJQ85jGODvDBWR/0C+wy8svPZLVN47w==",version="1"
+        content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="CDr0hl0xFbT0JRx0kxaqCbbI8jBuRtY4hekvEJUzZBJZFc1Q4Fn+lKTLJOY9jm04UHJRbVCcIMwhFjkFWD8sriC5LyFQEPvMN/gJuzXTRlV6AsEQW50v0NLY4aBObf1BqkyUs4tBZBKRtwo0k8Vvj9fYYPNnqXll1StvFS1bEpRL6ip94MsrCtV6aMUKFx5Z0gDC9mnr+wr/9/GLux6KFpySzTAzxj+QGDPCRalH11res16SY+O3BXUjIBhkHu+ILzGh00v8Nso6BwFhQt/8WJQdhSFl3WSBCIZEVdcl3AbW+eROW+EyyP5cFdm2hyCYr47rqC2ZpSFg6d6ONZiwtQ==",version="1"
       connection:
       - keep-alive
       content-type:
       - application/json
       date:
-      - Thu, 01 Aug 2019 19:51:50 GMT
+      - Sun, 12 Jan 2020 15:34:29 GMT
       host:
       - identity.us-phoenix-1.oraclecloud.com
       opc-client-info:
-      - Oracle-PythonSDK/2.2.21+preview.1
+      - Oracle-PythonSDK/2.8.1
       opc-request-id:
-      - 9E5901CD6B8242C68C6B3DCD8CBB83C3
+      - D287AFB4CCCB455C8F28013E87156630
       user-agent:
-      - Oracle-PythonSDK/2.2.21+preview.1 (python 3.7.2; x86_64-Darwin)
+      - Oracle-PythonSDK/2.8.1 (python 3.5.1; x86_64-Darwin)
       x-content-sha256:
       - /4I54Z6vSK/GFezteI2wx2jcmJ8Zidak3psEaS/duWQ=
     method: PUT
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/users/ocid1.user.oc1..aaaaaaaagtgj2owjm46fgvyn3ts7xqm6vihou2oiq6u47fgsol76ahuyoiba
+    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/users/ocid1.user.oc1..aaaaaaaaqocadss5iq5naqwyou3lguuafo7wdlurbugea7dmpmdyxi6kkmpq
   response:
     body:
       string: "{\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n\
         \    \"canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-08-01T19:51:50.357Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaagtgj2owjm46fgvyn3ts7xqm6vihou2oiq6u47fgsol76ahuyoiba\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2020-01-12T15:34:31.021Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaqocadss5iq5naqwyou3lguuafo7wdlurbugea7dmpmdyxi6kkmpq\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"python_temp_user_vcr\",\n  \"description\" : \"updated user\
-        \ description\",\n  \"timeCreated\" : \"2019-08-01T19:51:49.349Z\",\n  \"\
+        \ description\",\n  \"timeCreated\" : \"2020-01-12T15:34:29.867Z\",\n  \"\
         freeformTags\" : { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"\
         ACTIVE\"\n}"
     headers:
@@ -630,19 +576,19 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '758'
+      - '802'
       Content-Type:
       - application/json
       Date:
-      - Thu, 01 Aug 2019 19:51:50 GMT
+      - Sun, 12 Jan 2020 15:34:31 GMT
       ETag:
-      - 7c4bf10cc9c77b25142c9d188aa0167b912c603d
+      - 7725d75ca5eb23fef0197b915bca9cca2f499432
       Pragma:
       - no-cache
       X-Content-Type-Options:
       - nosniff
       opc-request-id:
-      - 9E5901CD6B8242C68C6B3DCD8CBB83C3/A9CAB9E8A3EA288951F2E86F537B16F4/129F2C8993BE8DBABA0287816F42DCCA
+      - D287AFB4CCCB455C8F28013E87156630/4D99C0262E2700F001A86B10D2C27295/6B69A487776DF14B3FF1C379B126402D
     status:
       code: 200
       message: OK
@@ -654,7 +600,7 @@ interactions:
       accept-encoding:
       - gzip, deflate
       authorization:
-      - Signature algorithm="rsa-sha256",headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="EqZ3b0oWrH6wIYXI7yEFD+2fTniVqiiYQzou05GahzgFVZkJScr0DRpEJPcXoP1ijGf/W4zgrYWDthI5xLN79LSCkJ38RgQcN/CLyFvNB4OIa5DhibT/lWnuYzPULX+r+7KhmcttUj/9PLM8Qa/LgDmreSvl3ZCBUeIQ2GVkz+CCOFtoUirtwbQpvH0K03lZfXuom9yDJJBtC2aOV/ZcdJA1ggVmHlqw5zBY2Bm0QRoelrG3BokzJjfcbM41RqPOYuiSRMwcOnupmVvJ+PmFkDY3AVrzy2CTdNLEzhcXP7+vd1vB5i2hy6h4N4n0lXZhE6RLtoulSC1ctgPiSDpp1g==",version="1"
+      - Signature algorithm="rsa-sha256",headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="AKToO7rDHS+bdp5T6JMf1cnV5Okb41ope485oLA3MaVVC2Tf6ca84jmd56tqdKyNHAZk3eVjMSsfzb+9ucyu+zxLq6VBClQR7AWac/tLYYWnVHflESieXXgohhe6aAiz2GVSXb+nUq/JKUsKm+slxRG0VGtVz7LBGRP1BHPgTzMUMkNlCYCWARIpnw6MUgt+vZmI/7x6yesYjNe3zeLVXE627o9xilwYhXCUzridKrew4w5qC7Z8z14ZdQJfGhy2+KVz0+9I1Q3LYk5P0HEIpuufRvJN0i5rmTaOH2CO4kD1rx/EqlDR4o52gYGTkn11bBdqdZaR+P5ZaDpnt3qGxA==",version="1"
       connection:
       - keep-alive
       content-length:
@@ -662,17 +608,17 @@ interactions:
       content-type:
       - application/json
       date:
-      - Thu, 01 Aug 2019 19:51:50 GMT
+      - Sun, 12 Jan 2020 15:34:29 GMT
       host:
       - identity.us-phoenix-1.oraclecloud.com
       opc-client-info:
-      - Oracle-PythonSDK/2.2.21+preview.1
+      - Oracle-PythonSDK/2.8.1
       opc-request-id:
-      - 7C6D0AB85CD2476DB0BA00BB41CFFBCA
+      - 988EEEE1EEE94B539DE0F5856EBB4D2C
       user-agent:
-      - Oracle-PythonSDK/2.2.21+preview.1 (python 3.7.2; x86_64-Darwin)
+      - Oracle-PythonSDK/2.8.1 (python 3.5.1; x86_64-Darwin)
     method: DELETE
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/users/ocid1.user.oc1..aaaaaaaagtgj2owjm46fgvyn3ts7xqm6vihou2oiq6u47fgsol76ahuyoiba
+    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/users/ocid1.user.oc1..aaaaaaaaqocadss5iq5naqwyou3lguuafo7wdlurbugea7dmpmdyxi6kkmpq
   response:
     body:
       string: ''
@@ -684,13 +630,13 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 01 Aug 2019 19:51:50 GMT
+      - Sun, 12 Jan 2020 15:34:32 GMT
       Pragma:
       - no-cache
       X-Content-Type-Options:
       - nosniff
       opc-request-id:
-      - 7C6D0AB85CD2476DB0BA00BB41CFFBCA/0AFCC67349DA98DC247C3893BDA64834/4C4606633FF0B71655106E1FFAEF957E
+      - 988EEEE1EEE94B539DE0F5856EBB4D2C/30063F2A913FE2C28D45B25831FCCA3E/3147A8E932116096C4EB015103528D1E
     status:
       code: 204
       message: No Content
@@ -702,72 +648,41 @@ interactions:
       accept-encoding:
       - gzip, deflate
       authorization:
-      - Signature algorithm="rsa-sha256",headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="HZwWzYmsA7ZKR+PETyUoSIa1LrkdcauwW80GKpD2T34HkGM36d1JczBM2qH2q0JUwu9mr1KQbJ6VANhTIfYfghm+3yr9UPvxtRPf0nk/O3KC/bVEt+3bVUC3bQ2lSFJvQZAu5ItKME+ld+8gsPoBrHGup8CfbR1/Kb2TXbksfgVTT+GqHLNS9fhiWgCkRdVRlGcPxxXsxFE3+vS5DcsjwtV8hb11GhrDNw40QNzT+e9Jg2kh7Mh3YjecPZ/OYuvK/lCnP5AYnNMtGRmB+tJk2OicXg4Hg/xfPHrqCbQXpTIEUqCXubeZxbXtB0yFAOzbcnjjTuXV6OMQDE10TEa9qA==",version="1"
+      - Signature algorithm="rsa-sha256",headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="ZOWpN89dGQeVuk5UmWgmUIvxY9tVe5WMk+UXm/J7YmZpPkweTF6PUZR+L+xYxcOPM6J44IdOexXqzzzIlXt6Sguk5i3D5hPkint74xFsyrCOR0Rne3EQI3SCWBvGFxXoFZjwFwz7PZ31vW4L3eSCMzzRs/z9xZGNWCgVPvD1aI7vds9/umHkXJ9HCFija2wE1xM+PztcgZRKJPX1tuQT57bm2oClb01tJnhjjGN27/nqnyDlJLOlGQkrQsIq4M6UsV799zK0hByAXce5IvPAGdrAs3ukuSCCfftqFxD9+ddnAZlC4GXinz32qhla+UpXwKoruRAlFuNhJQpLZUMmaw==",version="1"
       connection:
       - keep-alive
       content-type:
       - application/json
       date:
-      - Thu, 01 Aug 2019 19:51:50 GMT
+      - Sun, 12 Jan 2020 15:34:31 GMT
       host:
       - identity.us-phoenix-1.oraclecloud.com
       opc-client-info:
-      - Oracle-PythonSDK/2.2.21+preview.1
+      - Oracle-PythonSDK/2.8.1
       opc-request-id:
-      - FF9FDE974C334563A8E0C6982EF208B6
+      - 5ECDF372163642468219AA9AA92ED2F3
       user-agent:
-      - Oracle-PythonSDK/2.2.21+preview.1 (python 3.7.2; x86_64-Darwin)
+      - Oracle-PythonSDK/2.8.1 (python 3.5.1; x86_64-Darwin)
     method: GET
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/users/?compartmentId=ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq&limit=500
+    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/users?compartmentId=ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq&limit=500
   response:
     body:
       string: "[ {\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n\
         \    \"canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2018-09-05T17:35:21.294Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa63m3bviigc4tehztp2r6gdvnvr3cq3ybvz4amxliykhz2iahgczq\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2018-09-05T17:35:21.294Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa63m3bviigc4tehztp2r6gdvnvr3cq3ybvz4amxliykhz2iahgczq\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"abhilash.vijayakumara@oracle.com\",\n  \"description\" :\
         \ \"Abhilash\",\n  \"timeCreated\" : \"2018-09-05T17:35:01.650Z\",\n  \"freeformTags\"\
         \ : { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n},\
         \ {\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"\
         canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2018-05-31T22:14:45.994Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa3zwagln3fqpw6mceeoykfzkq7ajw4dh75tztynv3wulentpr6yvq\"\
-        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
-        ,\n  \"name\" : \"acmiles\",\n  \"description\" : \"User account\",\n  \"\
-        timeCreated\" : \"2018-01-17T22:44:41.945Z\",\n  \"freeformTags\" : { },\n\
-        \  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n  \"capabilities\"\
-        \ : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\" : true,\n\
-        \    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\" : true,\n\
-        \    \"canUseCustomerSecretKeys\" : true\n  },\n  \"email\" : \"anusha.vijay@oracle.com\"\
-        ,\n  \"emailVerified\" : true,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\"\
-        \ : null,\n  \"timeModified\" : \"2019-04-26T19:22:07.728Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaajnhmt4ykeldtlhfwqgdncd5khmxqcrahwpqj6w6mh5mth5xi3toq\"\
-        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
-        ,\n  \"name\" : \"anusha.vijay@oracle.com\",\n  \"description\" : \"anusha.vijay@oracle.com\"\
-        ,\n  \"timeCreated\" : \"2019-04-26T19:18:59.159Z\",\n  \"freeformTags\" :\
-        \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
-        \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
-        \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-04-11T18:49:18.372Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaarmhg6qoizjm3kdrayfy6lgp37da2tsmejwkxxk6e53ws6cygtk3a\"\
-        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
-        ,\n  \"name\" : \"art.hall.iii@oracle.com\",\n  \"description\" : \"User account\"\
-        ,\n  \"timeCreated\" : \"2018-04-16T22:32:22.721Z\",\n  \"freeformTags\" :\
-        \ {\n    \"first_name\" : \"Art\",\n    \"last_name\" : \"Hall\"\n  },\n \
-        \ \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n  \"capabilities\"\
-        \ : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\" : true,\n\
-        \    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\" : true,\n\
-        \    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\" : false,\n\
-        \  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n  \"\
-        timeModified\" : \"2018-05-25T14:41:12.897Z\",\n  \"isMfaActivated\" : false,\n\
-        \  \"id\" : \"ocid1.user.oc1..aaaaaaaa6xrg6lsdjhl5gelksi45uokpdtwtarben7z65mrb7uttv5al3oya\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2018-05-25T14:41:12.897Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa6xrg6lsdjhl5gelksi45uokpdtwtarben7z65mrb7uttv5al3oya\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"CLIIntegrationTestAdminUser\",\n  \"description\" : \"Use\
         \ for Python CLI integration tests that require an admin - do not delete.\
@@ -775,10 +690,10 @@ interactions:
         \ : { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n},\
         \ {\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"\
         canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2018-12-07T18:13:48.518Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa2dk2dwg7c6mi3ycos4kcjzqozzakhsvrmnzol3e6lano7mdxuzlq\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2018-12-07T18:13:48.518Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa2dk2dwg7c6mi3ycos4kcjzqozzakhsvrmnzol3e6lano7mdxuzlq\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"CLIIntegrationTestUser\",\n  \"description\" : \"Used for\
         \ the Python CLI integration tests - do not delete. \",\n  \"timeCreated\"\
@@ -786,27 +701,19 @@ interactions:
         \ : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n  \"capabilities\" : {\n\
         \    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\" : true,\n  \
         \  \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\" : true,\n \
-        \   \"canUseCustomerSecretKeys\" : true\n  },\n  \"email\" : \"darshan.d.shetty@oracle.com\"\
-        ,\n  \"emailVerified\" : true,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\"\
-        \ : null,\n  \"timeModified\" : \"2019-05-29T23:04:02.271Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa5z5bv2wjja3fhl47zyq3bppy4xi7s63r2whebvak2zpa3foupeba\"\
-        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
-        ,\n  \"name\" : \"darshan.d.shetty@oracle.com\",\n  \"description\" : \"darshan.d.shetty@oracle.com\"\
-        ,\n  \"timeCreated\" : \"2019-05-29T21:56:44.330Z\",\n  \"freeformTags\" :\
-        \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
-        \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
-        \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
+        \   \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"email\" : \"mathias.ricken@oracle.com\",\n  \"emailVerified\"\
         \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2018-05-14T22:31:04.922Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa4b4bvx7ipcmy5fdzeevuhkbdvwoo5qo6bvukw4ypukonjwur3s7q\"\
+        \  \"timeModified\" : \"2019-10-29T17:41:16.462Z\",\n  \"isMfaActivated\"\
+        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaayrrstwda4ia44qyd5qeuzhdtdqgqej2kwnxezmnpfdjcxaqttagq\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
-        ,\n  \"name\" : \"dayong.fu@oracle.com\",\n  \"description\" : \"User account\"\
-        ,\n  \"timeCreated\" : \"2018-01-17T22:44:49.713Z\",\n  \"freeformTags\" :\
-        \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
-        \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
-        \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
+        ,\n  \"name\" : \"DEXREQ-Artifacts-User\",\n  \"description\" : \"User for\
+        \ uploading and downloading artifacts.\",\n  \"timeCreated\" : \"2019-10-29T17:26:27.569Z\"\
+        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"lifecycleState\"\
+        \ : \"ACTIVE\"\n}, {\n  \"capabilities\" : {\n    \"canUseConsolePassword\"\
+        \ : true,\n    \"canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n\
+        \    \"canUseSmtpCredentials\" : true,\n    \"canUseCustomerSecretKeys\" :\
+        \ true,\n    \"canUseOAuth2ClientCredentials\" : true\n  },\n  \"emailVerified\"\
         \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
         \  \"timeModified\" : \"2018-10-18T22:43:13.060Z\",\n  \"isMfaActivated\"\
         \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaagj6thvyilqeu6qfg6zsqrp4ydjtrxdx67iemsckpqh5ytfbiz2wa\"\
@@ -816,20 +723,20 @@ interactions:
         \ : { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n},\
         \ {\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"\
         canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-05-15T01:39:50.511Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa5547r2k3ndbhxmm26vefb6osbj73apwfeomoxmu42mbqasip5bnq\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-08-19T23:33:02.956Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa5547r2k3ndbhxmm26vefb6osbj73apwfeomoxmu42mbqasip5bnq\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"GOSDK2_Test_Deps_TestUser\",\n  \"description\" : \"GoSDK\
         \ Test User\",\n  \"timeCreated\" : \"2019-04-15T16:26:28.974Z\",\n  \"freeformTags\"\
         \ : { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n},\
         \ {\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"\
         canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-05-15T01:39:47.261Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaalrxyqrm7fall2m6zsuex5xrhx5ljqt22o7a7rwa23kbs4defp33a\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-05-15T01:39:47.261Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaalrxyqrm7fall2m6zsuex5xrhx5ljqt22o7a7rwa23kbs4defp33a\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"gosdktestuser\",\n  \"description\" : \"DO NOT DELETE, user\
         \ for running team city job\",\n  \"timeCreated\" : \"2018-04-12T18:59:45.422Z\"\
@@ -837,49 +744,50 @@ interactions:
         \ : \"ACTIVE\"\n}, {\n  \"capabilities\" : {\n    \"canUseConsolePassword\"\
         \ : true,\n    \"canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n\
         \    \"canUseSmtpCredentials\" : true,\n    \"canUseCustomerSecretKeys\" :\
-        \ true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
-        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-05-21T22:46:09.968Z\"\
-        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaeanofqjhp57imnrchrtiwmwnohpxh3zha2f2ddyznfhh46mak7ra\"\
+        \ true,\n    \"canUseOAuth2ClientCredentials\" : true\n  },\n  \"emailVerified\"\
+        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
+        \  \"timeModified\" : \"2019-12-02T21:09:23.268Z\",\n  \"isMfaActivated\"\
+        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaeanofqjhp57imnrchrtiwmwnohpxh3zha2f2ddyznfhh46mak7ra\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"ImageTestsUser\",\n  \"description\" : \"user for image\
         \ tests\",\n  \"timeCreated\" : \"2019-03-14T19:52:54.632Z\",\n  \"freeformTags\"\
         \ : { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n},\
         \ {\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"\
         canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-07-17T23:11:04.834Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaapcpmfyitxvyungcqg5e4ndqw5ncdtpzqqkt3jpsc7gfh6ilgb65q\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-12-04T18:09:15.555Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaapcpmfyitxvyungcqg5e4ndqw5ncdtpzqqkt3jpsc7gfh6ilgb65q\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"jason.yin@oracle.com\",\n  \"description\" : \"User account\"\
         ,\n  \"timeCreated\" : \"2018-01-18T00:53:28.892Z\",\n  \"freeformTags\" :\
         \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
         \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
         \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-08-01T19:50:55.976Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaggsr4mh6xgiycltihbp3s4ob5kucmces2ey7gqbjc4csgdlrdxfa\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2020-01-11T07:59:00.346Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaggsr4mh6xgiycltihbp3s4ob5kucmces2ey7gqbjc4csgdlrdxfa\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"JavaSDK.TestUser\",\n  \"description\" : \"OK to delete\"\
         ,\n  \"timeCreated\" : \"2019-04-17T00:47:34.630Z\",\n  \"freeformTags\" :\
         \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
         \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
         \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2018-01-17T22:44:54.365Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaab5nk2dk3d4dm467ol6lx2xkdg5ruiw3ji6tcgqptp2auxdebtrea\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2018-01-17T22:44:54.365Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaab5nk2dk3d4dm467ol6lx2xkdg5ruiw3ji6tcgqptp2auxdebtrea\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"joe.levy@oracle.com\",\n  \"description\" : \"User account\"\
         ,\n  \"timeCreated\" : \"2018-01-17T22:44:52.934Z\",\n  \"freeformTags\" :\
         \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
         \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
         \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-02-25T20:10:30.820Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaqh3cbf7a5w6fyhf6b4vevz7jtfjxjqgsil4uptwdx35ibdqlvgra\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-08-19T21:03:08.783Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaqh3cbf7a5w6fyhf6b4vevz7jtfjxjqgsil4uptwdx35ibdqlvgra\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"jyoti.s.saini@oracle.com\",\n  \"description\" : \"Jyoti\
         \ Test Account\",\n  \"timeCreated\" : \"2019-02-25T18:56:46.159Z\",\n  \"\
@@ -888,60 +796,81 @@ interactions:
         \ : \"__STS0476_6855\"\n    }\n  },\n  \"lifecycleState\" : \"ACTIVE\"\n},\
         \ {\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"\
         canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2018-10-09T00:28:24.699Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaz2kdh56kmkw2b3nvtjhcjkllllyay4vlmyjthehoqafqzwn57qra\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2018-10-09T00:28:24.699Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaz2kdh56kmkw2b3nvtjhcjkllllyay4vlmyjthehoqafqzwn57qra\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"kaifeng.zeng@oracle.com\",\n  \"description\" : \"Testing\"\
         ,\n  \"timeCreated\" : \"2018-09-10T17:32:03.572Z\",\n  \"freeformTags\" :\
         \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
         \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
         \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2018-07-23T16:21:03.739Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaajsplnhfeqfzkbeo3qatqdpngt6raeokcnvocturxqebs3nokodha\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2018-07-23T16:21:03.739Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaajsplnhfeqfzkbeo3qatqdpngt6raeokcnvocturxqebs3nokodha\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"mathias.ricken@oracle.com\",\n  \"description\" : \"Mathias\
         \ Ricken\",\n  \"timeCreated\" : \"2018-01-12T22:27:09.954Z\",\n  \"freeformTags\"\
         \ : { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n},\
         \ {\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"\
         canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-04-12T18:22:00.597Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaajmorns43lr5c54vnvqt74gqjqdn4n4npe77vh7d6i4bqcrqvtoda\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-04-12T18:22:00.597Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaajmorns43lr5c54vnvqt74gqjqdn4n4npe77vh7d6i4bqcrqvtoda\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"mike.c.ross@oracle.com\",\n  \"description\" : \"User account\"\
         ,\n  \"timeCreated\" : \"2018-01-17T22:44:54.993Z\",\n  \"freeformTags\" :\
         \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
         \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
         \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2018-08-20T17:24:17.579Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaanq2slmmuu54vxtvxlorpmdku4efuzkkzxcu76ehlhmeqdaqp6uca\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2018-08-20T17:24:17.579Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaanq2slmmuu54vxtvxlorpmdku4efuzkkzxcu76ehlhmeqdaqp6uca\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"nabeel.al.saber@oracle.com\",\n  \"description\" : \"Nabeel\
         \ AlSaber\",\n  \"timeCreated\" : \"2018-08-15T19:30:52.515Z\",\n  \"freeformTags\"\
         \ : { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n},\
         \ {\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"\
         canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"email\" : \"nakshatra.sharma@oracle.com\",\n  \"emailVerified\"\
         \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2018-06-18T23:48:05.218Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaysjl4eql7st62ovdbpt5uxxqfvymjnhvb6uilmtjnk2hoe2jq3eq\"\
+        \  \"timeModified\" : \"2019-12-23T23:24:14.038Z\",\n  \"isMfaActivated\"\
+        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaliqzpe4y67xi4wpy67vbgbahvnfyxyti3mm6tjlhij5ifhrb6wea\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"nakshatra.sharma@oracle.com\",\n  \"description\" : \"nakshatra.sharma@oracle.com\"\
+        ,\n  \"timeCreated\" : \"2019-12-19T22:44:00.109Z\",\n  \"freeformTags\" :\
+        \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
+        \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
+        \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-08-05T20:29:46.532Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaysjl4eql7st62ovdbpt5uxxqfvymjnhvb6uilmtjnk2hoe2jq3eq\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"paul.hummel@oracle.com\",\n  \"description\" : \"User account\"\
         ,\n  \"timeCreated\" : \"2018-05-09T16:02:06.519Z\",\n  \"freeformTags\" :\
         \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
         \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
         \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-05-21T22:47:02.687Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-10-01T01:14:54.548Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaax2qfxw73mubt3c3c2ftoh5kgigb5ef5oq2yef7wlmdevgqpcugaa\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"peng.p.liu@oracle.com\",\n  \"description\" : \"User account\"\
+        ,\n  \"timeCreated\" : \"2019-09-27T15:04:23.797Z\",\n  \"freeformTags\" :\
+        \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
+        \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
+        \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-05-21T22:47:02.687Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"PythonSDKTestAdminUser\",\n  \"description\" : \"Do not\
         \ delete.  This user is used by automated tests\",\n  \"timeCreated\" : \"\
@@ -949,40 +878,20 @@ interactions:
         \ : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n  \"capabilities\" : {\n\
         \    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\" : true,\n  \
         \  \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\" : true,\n \
-        \   \"canUseCustomerSecretKeys\" : true\n  },\n  \"email\" : \"rajesh.d.deshpande@oracle.com\"\
-        ,\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\"\
-        \ : null,\n  \"timeModified\" : \"2019-05-24T18:41:07.388Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa2vo6h7kugljspsu2xu3koehxoz5b6smhh7e2yuuwei4djl6lhc3q\"\
-        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
-        ,\n  \"name\" : \"rajesh.d.deshpande@oracle.com\",\n  \"description\" : \"\
-        User account\",\n  \"timeCreated\" : \"2019-03-07T01:08:37.255Z\",\n  \"freeformTags\"\
-        \ : { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n},\
-        \ {\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"\
-        canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"email\" : \"\
-        ravi.tandon@oracle.com\",\n  \"emailVerified\" : true,\n  \"identityProviderId\"\
-        \ : null,\n  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-05-08T22:06:04.195Z\"\
-        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaqjvvig7fu6zl6hj7czl2erwikxui2t72vf73q624qwbdf5j2hcxa\"\
-        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
-        ,\n  \"name\" : \"RaviTandon\",\n  \"description\" : \"for dex metrics\",\n\
-        \  \"timeCreated\" : \"2019-05-06T23:42:12.771Z\",\n  \"freeformTags\" : {\
-        \ },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
-        \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
-        \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-07-27T09:51:15.889Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaauu5upgizdrnkcnnipadcbvphkhczvssww7jhirqckgn6tf5t47ca\"\
+        \   \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2020-01-03T10:46:59.671Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaauu5upgizdrnkcnnipadcbvphkhczvssww7jhirqckgn6tf5t47ca\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"RubySDK.TestUser\",\n  \"description\" : \"updated\",\n\
         \  \"timeCreated\" : \"2018-05-10T00:33:30.365Z\",\n  \"freeformTags\" : {\
         \ },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
         \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
         \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-05-21T22:47:40.787Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaasq5ewrl4vuypj3ocvulkeok5pxb6iduhrw2d2uiop372e37oep5a\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-05-21T22:47:40.787Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaasq5ewrl4vuypj3ocvulkeok5pxb6iduhrw2d2uiop372e37oep5a\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"RubySDKTestAdminUser\",\n  \"description\" : \"Do not delete.\
         \  This user is used by automated tests\",\n  \"timeCreated\" : \"2018-05-10T00:19:50.169Z\"\
@@ -990,9 +899,10 @@ interactions:
         \ : \"ACTIVE\"\n}, {\n  \"capabilities\" : {\n    \"canUseConsolePassword\"\
         \ : true,\n    \"canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n\
         \    \"canUseSmtpCredentials\" : true,\n    \"canUseCustomerSecretKeys\" :\
-        \ true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
-        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-03-27T17:58:09.136Z\"\
-        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaozbsttaymjqwbs3jp43jd7vwdvrk66ps6socu7etxay6mr5pbm2q\"\
+        \ true,\n    \"canUseOAuth2ClientCredentials\" : true\n  },\n  \"emailVerified\"\
+        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
+        \  \"timeModified\" : \"2019-03-27T17:58:09.136Z\",\n  \"isMfaActivated\"\
+        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaozbsttaymjqwbs3jp43jd7vwdvrk66ps6socu7etxay6mr5pbm2q\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"SDKAdmin\",\n  \"description\" : \"A new administrator test\
         \ account for all SDK testings.\",\n  \"timeCreated\" : \"2019-02-19T19:06:44.707Z\"\
@@ -1001,10 +911,10 @@ interactions:
         \ : \"__STS0476_6855\"\n    }\n  },\n  \"lifecycleState\" : \"ACTIVE\"\n},\
         \ {\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"\
         canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-05-21T22:45:33.254Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-09-24T22:20:14.123Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaz3i3ludxpa5x7gyqsidwftngdyzdjtu3wdnsmls4ojedyzxtdqzq\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"SDKIntegrationTestAdminUser\",\n  \"description\" : \"Admin\
         \ user for SDK integration tests - DO NOT REMOVE KEYS WITHOUT PINGING TEAM\"\
@@ -1012,55 +922,88 @@ interactions:
         \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
         \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
         \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2019-01-03T17:55:42.571Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaazswuf7sroap2wpwhyww4emp7en5kt63y33stvib4ub5tqniaufuq\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"email\" : \"srikanth.reddy.kumbham@oracle.com\",\n  \"\
+        emailVerified\" : true,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\"\
+        \ : null,\n  \"timeModified\" : \"2019-11-04T22:01:29.258Z\",\n  \"isMfaActivated\"\
+        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaaqkocfuuw4ss5scntioei2m3bf4h7e3e7chqg4rbxh2x6htwzv5ba\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"srikanth.reddy.kumbham@oracle.com\",\n  \"description\"\
+        \ : \"CLI User\",\n  \"timeCreated\" : \"2019-11-04T21:33:05.457Z\",\n  \"\
+        freeformTags\" : { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"\
+        ACTIVE\"\n}, {\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n\
+        \    \"canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-01-03T17:55:42.571Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaazswuf7sroap2wpwhyww4emp7en5kt63y33stvib4ub5tqniaufuq\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"sumit.kumar.dey@oracle.com\",\n  \"description\" : \"sumit.kumar.dey@oracle.com\"\
         ,\n  \"timeCreated\" : \"2018-05-22T22:26:52.682Z\",\n  \"freeformTags\" :\
         \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
         \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
         \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"email\" : \"\
-        sun.yan@oracle.com\",\n  \"emailVerified\" : false,\n  \"identityProviderId\"\
-        \ : null,\n  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-04-10T18:46:51.020Z\"\
-        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa6biblbzcy5ka3pevgg34s3repqcoaypo3napphleugiegnxuw4ua\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"email\" : \"sun.yan@oracle.com\",\n  \"emailVerified\"\
+        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
+        \  \"timeModified\" : \"2019-12-23T19:58:09.444Z\",\n  \"isMfaActivated\"\
+        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa6biblbzcy5ka3pevgg34s3repqcoaypo3napphleugiegnxuw4ua\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"sun.yan@oracle.com\",\n  \"description\" : \"sun.yan@oracle.com\"\
         ,\n  \"timeCreated\" : \"2019-04-10T18:40:26.984Z\",\n  \"freeformTags\" :\
         \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
         \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
         \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"email\" : \"\
-        varun.j.jain@oracle.com\",\n  \"emailVerified\" : false,\n  \"identityProviderId\"\
-        \ : null,\n  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-05-31T17:18:29.777Z\"\
-        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaadvtziifdggjh4qdfc3xvmi7nh76dgqu6ufm3bnlc7gqof5tsqs5a\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"email\" : \"varun.j.jain@oracle.com\",\n  \"emailVerified\"\
+        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
+        \  \"timeModified\" : \"2019-05-31T17:18:29.777Z\",\n  \"isMfaActivated\"\
+        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaadvtziifdggjh4qdfc3xvmi7nh76dgqu6ufm3bnlc7gqof5tsqs5a\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"VarunJain\",\n  \"description\" : \"for metrics\",\n  \"\
         timeCreated\" : \"2019-05-30T23:07:30.046Z\",\n  \"freeformTags\" : { },\n\
         \  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n  \"capabilities\"\
         \ : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\" : true,\n\
         \    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\" : true,\n\
-        \    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\" : false,\n\
-        \  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n  \"\
-        timeModified\" : \"2019-07-11T17:19:18.868Z\",\n  \"isMfaActivated\" : false,\n\
-        \  \"id\" : \"ocid1.user.oc1..aaaaaaaangaghxm7h2eyqsq47d6hqsyaoi24qcosqylrfcxnzvarvmug4ctq\"\
+        \    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2019-07-11T17:19:18.868Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaangaghxm7h2eyqsq47d6hqsyaoi24qcosqylrfcxnzvarvmug4ctq\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"viral.modi@oracle.com\",\n  \"description\" : \"User account\"\
         ,\n  \"timeCreated\" : \"2018-06-08T17:50:34.615Z\",\n  \"freeformTags\" :\
         \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
         \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
         \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
-        \ : true,\n    \"canUseCustomerSecretKeys\" : true\n  },\n  \"emailVerified\"\
-        \ : false,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
-        \  \"timeModified\" : \"2018-12-05T17:48:57.199Z\",\n  \"isMfaActivated\"\
-        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaayomhzal4ytwaegw3wad3e7iqk3lgnqr5xhiymb6tj5eosp3xc5fq\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2020-01-03T00:51:17.139Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaayomhzal4ytwaegw3wad3e7iqk3lgnqr5xhiymb6tj5eosp3xc5fq\"\
         ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
         ,\n  \"name\" : \"vishwas.v.bhat@oracle.com\",\n  \"description\" : \"part\
         \ of CLI team\",\n  \"timeCreated\" : \"2018-06-22T01:17:44.791Z\",\n  \"\
         freeformTags\" : { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"\
-        ACTIVE\"\n} ]"
+        ACTIVE\"\n}, {\n  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n\
+        \    \"canUseApiKeys\" : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"email\" : \"vya.bhagwat@oracle.com\",\n  \"emailVerified\"\
+        \ : true,\n  \"identityProviderId\" : null,\n  \"externalIdentifier\" : null,\n\
+        \  \"timeModified\" : \"2020-01-02T19:14:04.473Z\",\n  \"isMfaActivated\"\
+        \ : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaa6vekfdqkjavr3dbhvrbbeiwp5acmg6q35tllic5xwch547nq4uxq\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"vya.bhagwat@oracle.com\",\n  \"description\" : \"vya.bhagwat@oracle.com\"\
+        ,\n  \"timeCreated\" : \"2019-12-19T22:47:27.646Z\",\n  \"freeformTags\" :\
+        \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n}, {\n\
+        \  \"capabilities\" : {\n    \"canUseConsolePassword\" : true,\n    \"canUseApiKeys\"\
+        \ : true,\n    \"canUseAuthTokens\" : true,\n    \"canUseSmtpCredentials\"\
+        \ : true,\n    \"canUseCustomerSecretKeys\" : true,\n    \"canUseOAuth2ClientCredentials\"\
+        \ : true\n  },\n  \"emailVerified\" : false,\n  \"identityProviderId\" : null,\n\
+        \  \"externalIdentifier\" : null,\n  \"timeModified\" : \"2020-01-09T17:03:20.799Z\"\
+        ,\n  \"isMfaActivated\" : false,\n  \"id\" : \"ocid1.user.oc1..aaaaaaaacavf4stsmcbm7walfp7vh46wlnipojzg4w3sjuomzaqjors44aya\"\
+        ,\n  \"compartmentId\" : \"ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq\"\
+        ,\n  \"name\" : \"vyas.bhagwat@oracle.com\",\n  \"description\" : \"User account\"\
+        ,\n  \"timeCreated\" : \"2020-01-02T19:06:43.154Z\",\n  \"freeformTags\" :\
+        \ { },\n  \"definedTags\" : { },\n  \"lifecycleState\" : \"ACTIVE\"\n} ]"
     headers:
       Cache-Control:
       - no-cache, no-store, must-revalidate
@@ -1069,7 +1012,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 01 Aug 2019 19:51:51 GMT
+      - Sun, 12 Jan 2020 15:34:32 GMT
       Pragma:
       - no-cache
       Transfer-Encoding:
@@ -1078,60 +1021,8 @@ interactions:
       - nosniff
       opc-limit:
       - '100'
-      opc-next-page:
-      - AAAAAAAAAAJleUpyYVdRaU9pSTJNellpTENKbGJtTWlPaUpCTWpVMlIwTk5JaXdpWVd4bklqb2laR2x5SW4wLi53S1h0b3MtREp6OWpZR1F2LnAxTTFyZGtXOWFuU3JHcjc0WnlHdWRvRFZCTHF6N0JESjh3bjY4T2YzMzB1aGdoS1IyZThRdG5hR1NJb3VMaUNTREl3X0RBR0xXRG1QMGZaeGlPNjNHMm1iY3VuSDg3THc1NVduZ3YyelFNWjhMZFdiWFA3aUppRk5vWnBjNGc0TXJya2kwVDYxc1pMaGkteEphckVjbUxKaUpjZ1ptdG02cENQb1lfNzk0QVhxR0dBV2s4aXhaMVdHUGlzeWZDZS03SEFuN3BhR3ZWdnozcVBsTDdjMnl1el9BSlJXM1pxREp3VUk3Zlh1N2RCUjI2OGdxSjFiN0wwNFlDUUU0T3pvYlhsUjY5bHFleHhoQVFhTHowdnBQdGxFc3NXUEFEWVd1a2lmd1NSYXdkTEhjY3ZXRW51b01tLVdfdHV0eGMxMjg5dXQ4Y2w2dXhsT0ppV3dpdnRjUFRSVDU3X3NiYnQ1bXdZeEl3cmFQd0NCaHB3U2VnNVo3U3NJcU9OQ0t6SVJQajZmU2JOWEZCa0dWMHJGVHZ4M2JEbjBBNEE4c0JicEdZWXp3aFFCX3c5SXlJTVV0NjVNT3BkX0pVYkFsWjl3WFJvdmRaTlNQcmN2dmZ0cHZEamt6dkdCbmNrNnAySExvdVJRRXlicW85NFJRcmg0ZkNYNWtiQTNkeHpaTGF3dEJpX0hVZ2Z2Ykd1SXl1UkxieXV6LTdhbjNhcEZJOXREY0tYdkpPUzdmay43aHlNc1Zmck9sNmtvR1JxaUJsYjlB
       opc-request-id:
-      - FF9FDE974C334563A8E0C6982EF208B6/37F6FDE674F4375ACF83DC8AAD235BB1/0110E5C6F2E6085EE65B6C115FE64D77
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      accept:
-      - application/json
-      accept-encoding:
-      - gzip, deflate
-      authorization:
-      - Signature algorithm="rsa-sha256",headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="Ycf0qRf4lSWXylmGlS3mcWIOKwX3f7R98Z+Dv/G6oF6ys6f1+hDJoYrAlZEVPfzSRxMono9zUId3HFZrJmyckOryaEY7W5Z9chYTkd3NTxDdrm33OtABH/Ldmj4kX+z+82xjs4UwgHpWgt33hxWJP4OCTTXaGZUlS5wCDX+6e8Okp+hhbsdtSZnSr1ypo0mbEv5YzqtHLS+Bvq9cNmZUEhpq86QVccRpsXeJlrAwiCmK8MBy1JVD2Q1iZCUDcvkvBEuwQD7wVZfTnhOzwNzuSzoP+n+p1AbyYhoQU+6nDMlp9i0z4OPTsSCuIFFZIYTW1Dzrp9OcF2siLUWjisvmjA==",version="1"
-      connection:
-      - keep-alive
-      content-type:
-      - application/json
-      date:
-      - Thu, 01 Aug 2019 19:51:50 GMT
-      host:
-      - identity.us-phoenix-1.oraclecloud.com
-      opc-client-info:
-      - Oracle-PythonSDK/2.2.21+preview.1
-      opc-request-id:
-      - 6A3676F362E74A41A4F8CA3DAF536FE5
-      user-agent:
-      - Oracle-PythonSDK/2.2.21+preview.1 (python 3.7.2; x86_64-Darwin)
-    method: GET
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/users/?compartmentId=ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq&page=AAAAAAAAAAJleUpyYVdRaU9pSTJNellpTENKbGJtTWlPaUpCTWpVMlIwTk5JaXdpWVd4bklqb2laR2x5SW4wLi53S1h0b3MtREp6OWpZR1F2LnAxTTFyZGtXOWFuU3JHcjc0WnlHdWRvRFZCTHF6N0JESjh3bjY4T2YzMzB1aGdoS1IyZThRdG5hR1NJb3VMaUNTREl3X0RBR0xXRG1QMGZaeGlPNjNHMm1iY3VuSDg3THc1NVduZ3YyelFNWjhMZFdiWFA3aUppRk5vWnBjNGc0TXJya2kwVDYxc1pMaGkteEphckVjbUxKaUpjZ1ptdG02cENQb1lfNzk0QVhxR0dBV2s4aXhaMVdHUGlzeWZDZS03SEFuN3BhR3ZWdnozcVBsTDdjMnl1el9BSlJXM1pxREp3VUk3Zlh1N2RCUjI2OGdxSjFiN0wwNFlDUUU0T3pvYlhsUjY5bHFleHhoQVFhTHowdnBQdGxFc3NXUEFEWVd1a2lmd1NSYXdkTEhjY3ZXRW51b01tLVdfdHV0eGMxMjg5dXQ4Y2w2dXhsT0ppV3dpdnRjUFRSVDU3X3NiYnQ1bXdZeEl3cmFQd0NCaHB3U2VnNVo3U3NJcU9OQ0t6SVJQajZmU2JOWEZCa0dWMHJGVHZ4M2JEbjBBNEE4c0JicEdZWXp3aFFCX3c5SXlJTVV0NjVNT3BkX0pVYkFsWjl3WFJvdmRaTlNQcmN2dmZ0cHZEamt6dkdCbmNrNnAySExvdVJRRXlicW85NFJRcmg0ZkNYNWtiQTNkeHpaTGF3dEJpX0hVZ2Z2Ykd1SXl1UkxieXV6LTdhbjNhcEZJOXREY0tYdkpPUzdmay43aHlNc1Zmck9sNmtvR1JxaUJsYjlB&limit=500
-  response:
-    body:
-      string: '[ ]'
-    headers:
-      Cache-Control:
-      - no-cache, no-store, must-revalidate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '3'
-      Content-Type:
-      - application/json
-      Date:
-      - Thu, 01 Aug 2019 19:51:51 GMT
-      Pragma:
-      - no-cache
-      X-Content-Type-Options:
-      - nosniff
-      opc-limit:
-      - '100'
-      opc-request-id:
-      - 6A3676F362E74A41A4F8CA3DAF536FE5/DC81C5F2D62DD85C0A3F9A7898B2BC19/CF2979FD4FA71F30CA21AF6A749C043E
+      - 5ECDF372163642468219AA9AA92ED2F3/FCBACF2CD121AF364A2459A659F69BC6/2AFFF781D1C8C78B32D7EDF6A5F12638
     status:
       code: 200
       message: OK

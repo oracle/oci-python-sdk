@@ -1,3 +1,4 @@
+# Code generated. DO NOT EDIT.
 # coding: utf-8
 # Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
@@ -17,15 +18,18 @@ def session_agnostic_query_matcher(r1, r2):
 
 @pytest.fixture(autouse=True, scope='function')
 def vcr_fixture(request):
-    # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
-    # instead of 'query' matcher (which ignores sessionId in the url)
-    # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
-    custom_vcr = test_config_container.create_vcr()
-    custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
-
-    cassette_location = os.path.join('generated', 'streaming_{name}.yml'.format(name=request.function.__name__))
-    with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+    if test_config_container.test_mode == 'mock':
         yield
+    else:
+        # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
+        # instead of 'query' matcher (which ignores sessionId in the url)
+        # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
+        custom_vcr = test_config_container.create_vcr()
+        custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
+
+        cassette_location = os.path.join('generated', 'streaming_{name}.yml'.format(name=request.function.__name__))
+        with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+            yield
 
 
 # IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
@@ -45,11 +49,11 @@ def test_change_connect_harness_compartment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.change_connect_harness_compartment(
-                connect_harness_id=request.pop(util.camelize('connect_harness_id')),
-                change_connect_harness_compartment_details=request.pop(util.camelize('change_connect_harness_compartment_details')),
+                connect_harness_id=request.pop(util.camelize('connectHarnessId')),
+                change_connect_harness_compartment_details=request.pop(util.camelize('ChangeConnectHarnessCompartmentDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -86,11 +90,11 @@ def test_change_stream_compartment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.change_stream_compartment(
-                stream_id=request.pop(util.camelize('stream_id')),
-                change_stream_compartment_details=request.pop(util.camelize('change_stream_compartment_details')),
+                stream_id=request.pop(util.camelize('streamId')),
+                change_stream_compartment_details=request.pop(util.camelize('ChangeStreamCompartmentDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -127,11 +131,11 @@ def test_change_stream_pool_compartment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.change_stream_pool_compartment(
-                stream_pool_id=request.pop(util.camelize('stream_pool_id')),
-                change_stream_pool_compartment_details=request.pop(util.camelize('change_stream_pool_compartment_details')),
+                stream_pool_id=request.pop(util.camelize('streamPoolId')),
+                change_stream_pool_compartment_details=request.pop(util.camelize('ChangeStreamPoolCompartmentDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -168,11 +172,11 @@ def test_create_archiver(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.create_archiver(
-                stream_id=request.pop(util.camelize('stream_id')),
-                create_archiver_details=request.pop(util.camelize('create_archiver_details')),
+                stream_id=request.pop(util.camelize('streamId')),
+                create_archiver_details=request.pop(util.camelize('CreateArchiverDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -209,10 +213,10 @@ def test_create_connect_harness(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.create_connect_harness(
-                create_connect_harness_details=request.pop(util.camelize('create_connect_harness_details')),
+                create_connect_harness_details=request.pop(util.camelize('CreateConnectHarnessDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -249,10 +253,10 @@ def test_create_stream(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.create_stream(
-                create_stream_details=request.pop(util.camelize('create_stream_details')),
+                create_stream_details=request.pop(util.camelize('CreateStreamDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -289,10 +293,10 @@ def test_create_stream_pool(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.create_stream_pool(
-                create_stream_pool_details=request.pop(util.camelize('create_stream_pool_details')),
+                create_stream_pool_details=request.pop(util.camelize('CreateStreamPoolDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -329,10 +333,10 @@ def test_delete_connect_harness(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.delete_connect_harness(
-                connect_harness_id=request.pop(util.camelize('connect_harness_id')),
+                connect_harness_id=request.pop(util.camelize('connectHarnessId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -369,10 +373,10 @@ def test_delete_stream(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.delete_stream(
-                stream_id=request.pop(util.camelize('stream_id')),
+                stream_id=request.pop(util.camelize('streamId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -409,10 +413,10 @@ def test_delete_stream_pool(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.delete_stream_pool(
-                stream_pool_id=request.pop(util.camelize('stream_pool_id')),
+                stream_pool_id=request.pop(util.camelize('streamPoolId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -449,10 +453,10 @@ def test_get_archiver(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.get_archiver(
-                stream_id=request.pop(util.camelize('stream_id')),
+                stream_id=request.pop(util.camelize('streamId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -489,10 +493,10 @@ def test_get_connect_harness(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.get_connect_harness(
-                connect_harness_id=request.pop(util.camelize('connect_harness_id')),
+                connect_harness_id=request.pop(util.camelize('connectHarnessId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -529,10 +533,10 @@ def test_get_stream(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.get_stream(
-                stream_id=request.pop(util.camelize('stream_id')),
+                stream_id=request.pop(util.camelize('streamId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -569,10 +573,10 @@ def test_get_stream_pool(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.get_stream_pool(
-                stream_pool_id=request.pop(util.camelize('stream_pool_id')),
+                stream_pool_id=request.pop(util.camelize('streamPoolId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -600,6 +604,7 @@ def test_list_connect_harnesses(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('streaming', util.camelize('stream_admin'), 'ListConnectHarnesses')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='streaming', api_name='ListConnectHarnesses')
 
@@ -609,18 +614,18 @@ def test_list_connect_harnesses(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.list_connect_harnesses(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_connect_harnesses(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -630,7 +635,7 @@ def test_list_connect_harnesses(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_connect_harnesses(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -659,6 +664,7 @@ def test_list_stream_pools(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('streaming', util.camelize('stream_admin'), 'ListStreamPools')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='streaming', api_name='ListStreamPools')
 
@@ -668,18 +674,18 @@ def test_list_stream_pools(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.list_stream_pools(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_stream_pools(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -689,7 +695,7 @@ def test_list_stream_pools(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_stream_pools(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -718,6 +724,7 @@ def test_list_streams(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('streaming', util.camelize('stream_admin'), 'ListStreams')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='streaming', api_name='ListStreams')
 
@@ -727,13 +734,13 @@ def test_list_streams(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.list_streams(
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_streams(
@@ -783,10 +790,10 @@ def test_start_archiver(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.start_archiver(
-                stream_id=request.pop(util.camelize('stream_id')),
+                stream_id=request.pop(util.camelize('streamId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -823,10 +830,10 @@ def test_stop_archiver(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.stop_archiver(
-                stream_id=request.pop(util.camelize('stream_id')),
+                stream_id=request.pop(util.camelize('streamId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -863,11 +870,11 @@ def test_update_archiver(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.update_archiver(
-                stream_id=request.pop(util.camelize('stream_id')),
-                update_archiver_details=request.pop(util.camelize('update_archiver_details')),
+                stream_id=request.pop(util.camelize('streamId')),
+                update_archiver_details=request.pop(util.camelize('UpdateArchiverDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -904,11 +911,11 @@ def test_update_connect_harness(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.update_connect_harness(
-                connect_harness_id=request.pop(util.camelize('connect_harness_id')),
-                update_connect_harness_details=request.pop(util.camelize('update_connect_harness_details')),
+                connect_harness_id=request.pop(util.camelize('connectHarnessId')),
+                update_connect_harness_details=request.pop(util.camelize('UpdateConnectHarnessDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -945,11 +952,11 @@ def test_update_stream(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.update_stream(
-                stream_id=request.pop(util.camelize('stream_id')),
-                update_stream_details=request.pop(util.camelize('update_stream_details')),
+                stream_id=request.pop(util.camelize('streamId')),
+                update_stream_details=request.pop(util.camelize('UpdateStreamDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -986,11 +993,11 @@ def test_update_stream_pool(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.streaming.StreamAdminClient(config, service_endpoint=service_endpoint)
             response = client.update_stream_pool(
-                stream_pool_id=request.pop(util.camelize('stream_pool_id')),
-                update_stream_pool_details=request.pop(util.camelize('update_stream_pool_details')),
+                stream_pool_id=request.pop(util.camelize('streamPoolId')),
+                update_stream_pool_details=request.pop(util.camelize('UpdateStreamPoolDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

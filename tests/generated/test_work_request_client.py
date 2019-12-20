@@ -1,3 +1,4 @@
+# Code generated. DO NOT EDIT.
 # coding: utf-8
 # Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
@@ -17,15 +18,18 @@ def session_agnostic_query_matcher(r1, r2):
 
 @pytest.fixture(autouse=True, scope='function')
 def vcr_fixture(request):
-    # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
-    # instead of 'query' matcher (which ignores sessionId in the url)
-    # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
-    custom_vcr = test_config_container.create_vcr()
-    custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
-
-    cassette_location = os.path.join('generated', 'work_requests_{name}.yml'.format(name=request.function.__name__))
-    with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+    if test_config_container.test_mode == 'mock':
         yield
+    else:
+        # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
+        # instead of 'query' matcher (which ignores sessionId in the url)
+        # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
+        custom_vcr = test_config_container.create_vcr()
+        custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
+
+        cassette_location = os.path.join('generated', 'work_requests_{name}.yml'.format(name=request.function.__name__))
+        with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+            yield
 
 
 # IssueRoutingInfo tag="default" email="kewilke_org_ww@oracle.com" jiraProject="BMI" opsJiraProject="COM"
@@ -45,10 +49,10 @@ def test_get_work_request(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.work_requests.WorkRequestClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
-                work_request_id=request.pop(util.camelize('work_request_id')),
+                work_request_id=request.pop(util.camelize('workRequestId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -76,6 +80,7 @@ def test_list_work_request_errors(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('work_requests', util.camelize('work_request'), 'ListWorkRequestErrors')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='work_requests', api_name='ListWorkRequestErrors')
 
@@ -85,18 +90,18 @@ def test_list_work_request_errors(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.work_requests.WorkRequestClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
-                work_request_id=request.pop(util.camelize('work_request_id')),
+                work_request_id=request.pop(util.camelize('workRequestId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_work_request_errors(
-                    work_request_id=request.pop(util.camelize('work_request_id')),
+                    work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -106,7 +111,7 @@ def test_list_work_request_errors(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_work_request_errors(
-                        work_request_id=request.pop(util.camelize('work_request_id')),
+                        work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -135,6 +140,7 @@ def test_list_work_request_logs(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('work_requests', util.camelize('work_request'), 'ListWorkRequestLogs')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='work_requests', api_name='ListWorkRequestLogs')
 
@@ -144,18 +150,18 @@ def test_list_work_request_logs(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.work_requests.WorkRequestClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
-                work_request_id=request.pop(util.camelize('work_request_id')),
+                work_request_id=request.pop(util.camelize('workRequestId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_work_request_logs(
-                    work_request_id=request.pop(util.camelize('work_request_id')),
+                    work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -165,7 +171,7 @@ def test_list_work_request_logs(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_work_request_logs(
-                        work_request_id=request.pop(util.camelize('work_request_id')),
+                        work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -194,6 +200,7 @@ def test_list_work_requests(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('work_requests', util.camelize('work_request'), 'ListWorkRequests')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='work_requests', api_name='ListWorkRequests')
 
@@ -203,18 +210,18 @@ def test_list_work_requests(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.work_requests.WorkRequestClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_work_requests(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -224,7 +231,7 @@ def test_list_work_requests(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_work_requests(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )

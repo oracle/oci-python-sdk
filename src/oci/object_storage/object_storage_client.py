@@ -35,7 +35,7 @@ class ObjectStorageClient(object):
             need to specify a service endpoint.
 
         :param timeout: (optional)
-            The connection and read timeouts for the client. The default is that the client never times out. This keyword argument can be provided
+            The connection and read timeouts for the client. The default values are connection timeout 10 seconds and read timeout 60 seconds. This keyword argument can be provided
             as a single float, in which case the value provided is used for both the read and connection timeouts, or as a tuple of two floats. If
             a tuple is provided then the first value is used as the connection timeout and the second value as the read timeout.
         :type timeout: float or tuple(float, float)
@@ -459,7 +459,7 @@ class ObjectStorageClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.object_storage.models.Bucket`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/n/{namespaceName}/b/"
+        resource_path = "/n/{namespaceName}/b"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -637,7 +637,7 @@ class ObjectStorageClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.object_storage.models.PreauthenticatedRequest`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/n/{namespaceName}/b/{bucketName}/p/"
+        resource_path = "/n/{namespaceName}/b/{bucketName}/p"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -724,7 +724,7 @@ class ObjectStorageClient(object):
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/n/{namespaceName}/b/{bucketName}/"
+        resource_path = "/n/{namespaceName}/b/{bucketName}"
         method = "DELETE"
 
         # Don't accept unknown kwargs
@@ -1068,7 +1068,7 @@ class ObjectStorageClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.object_storage.models.Bucket`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/n/{namespaceName}/b/{bucketName}/"
+        resource_path = "/n/{namespaceName}/b/{bucketName}"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -1169,7 +1169,7 @@ class ObjectStorageClient(object):
         :return: A :class:`~oci.response.Response` object with data of type str
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/n/"
+        resource_path = "/n"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -1670,7 +1670,7 @@ class ObjectStorageClient(object):
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/n/{namespaceName}/b/{bucketName}/"
+        resource_path = "/n/{namespaceName}/b/{bucketName}"
         method = "HEAD"
 
         # Don't accept unknown kwargs
@@ -1863,7 +1863,7 @@ class ObjectStorageClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.object_storage.models.BucketSummary`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/n/{namespaceName}/b/"
+        resource_path = "/n/{namespaceName}/b"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -2296,7 +2296,7 @@ class ObjectStorageClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.object_storage.models.PreauthenticatedRequestSummary`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/n/{namespaceName}/b/{bucketName}/p/"
+        resource_path = "/n/{namespaceName}/b/{bucketName}/p"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -2768,6 +2768,9 @@ class ObjectStorageClient(object):
         if kwargs.get('retry_strategy'):
             retry_strategy = kwargs.get('retry_strategy')
 
+        # Disable the retry_strategy to work around data corruption issue temporarily
+        if retry_strategy:
+            retry_strategy = None
         if retry_strategy:
             return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
@@ -3174,7 +3177,7 @@ class ObjectStorageClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.object_storage.models.Bucket`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/n/{namespaceName}/b/{bucketName}/"
+        resource_path = "/n/{namespaceName}/b/{bucketName}"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -3441,6 +3444,9 @@ class ObjectStorageClient(object):
         if kwargs.get('retry_strategy'):
             retry_strategy = kwargs.get('retry_strategy')
 
+        # Disable the retry_strategy to work around data corruption issue temporarily
+        if retry_strategy:
+            retry_strategy = None
         if retry_strategy:
             return retry_strategy.make_retrying_call(
                 self.base_client.call_api,

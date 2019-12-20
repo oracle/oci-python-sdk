@@ -2,59 +2,105 @@ interactions:
 - request:
     body: null
     headers:
-      accept: [application/json]
-      accept-encoding: ['gzip, deflate']
-      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
-          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="GpZSv0AXg9454KTH7MLM+b94DIFCLscAVGW/vPG37NlHjNx5SwjkFQBl76o9Y3cxRjqCb3nXPmwcmRzd4ExGvMlzxrVvkjNUVtRjM8bByDl2lV8EfkaESeAnX99yl+qIhrD2SDADUBWFAZlBeiS8+7Qv6+5DEF8scX4KIcPJIFXCZheKKrsHlTROePSinzxhbVWe9haAyE2VySBuxDuoGLs/MLFs9SNFzgcrEUEZdaXtNat8v4JjDoWvl+I5GPbNJAaptj8Tj5EEWUJPMov4t57C0WOLGZpE09rb1aUGdOIjKx4mjBNs2Pfdl6W3sJEA9BwsisxFVQU6k5vVAHpjxA==",version="1"']
-      connection: [keep-alive]
-      content-type: [application/json]
-      date: ['Wed, 12 Sep 2018 21:52:52 GMT']
-      host: [objectstorage.us-phoenix-1.oraclecloud.com]
-      opc-client-info: [Oracle-PythonSDK/2.0.4]
-      opc-request-id: [BED64DDCB4164B5296CFD89A0DF5F8C1]
-      user-agent: [Oracle-PythonSDK/2.0.4 (python 3.5.1; x86_64-Darwin)]
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - Signature algorithm="rsa-sha256",headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="RdE/9yG7Dh0XX/0+pCnF7yAvUL6EotnAcJAJw1E6q9a0QuaNFv4luWClyTdeZoKrPSavCThqwfIeCme1bNBR7UiNskUpeh6WQlHWY65QHeYMWXDSGV6L7B/PFV7IA8tKDIAAckTAl90Z4MzY90hHD2co/bLOcqeqLiTIZWpta0pQZoGTLYpst+czdcQKUVcpaBU1o6BlCcEDrV8xdKGHLJOkWg+ahn13JZ2IMIoZN3i/lPEVzrk9URBGm64+IJP3/mpOP3ZquuV6kxoR6ZDM8g2nOTaz4lM24vU5lLVmrxdueLc6NZIU+u1mRsGpsqwyafN3JFRw+iFaB1dWwzhGkA==",version="1"
+      connection:
+      - keep-alive
+      content-type:
+      - application/json
+      date:
+      - Sun, 12 Jan 2020 16:32:56 GMT
+      host:
+      - objectstorage.us-phoenix-1.oraclecloud.com
+      opc-client-info:
+      - Oracle-PythonSDK/2.8.1
+      opc-request-id:
+      - 2BAB68BAC8884FBFBDE5B722B9B53A92
+      user-agent:
+      - Oracle-PythonSDK/2.8.1 (python 3.5.1; x86_64-Darwin) example_extra_user_agent_text
     method: GET
-    uri: https://objectstorage.us-phoenix-1.oraclecloud.com/n/
+    uri: https://objectstorage.us-phoenix-1.oraclecloud.com/n
   response:
-    body: {string: '"dex-us-phoenix-1"'}
+    body:
+      string: '"dex-us-phoenix-1"'
     headers:
-      Access-Control-Allow-Credentials: ['true']
-      Access-Control-Allow-Methods: ['POST,PUT,GET,HEAD,DELETE,OPTIONS']
-      Access-Control-Allow-Origin: ['*']
-      Access-Control-Expose-Headers: ['Access-Control-Allow-Credentials,Access-Control-Allow-Methods,Access-Control-Allow-Origin,Content-Length,Content-Type,opc-client-info,opc-request-id']
-      Connection: [keep-alive]
-      Content-Length: ['18']
-      Content-Type: [application/json]
-      Date: ['Wed, 12 Sep 2018 21:52:25 GMT']
-      opc-request-id: [5a6bd22e-f350-00d2-f717-a2e9e41daded]
-    status: {code: 200, message: OK}
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '18'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 12 Jan 2020 16:32:57 GMT
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - POST,PUT,GET,HEAD,DELETE,OPTIONS
+      access-control-allow-origin:
+      - '*'
+      access-control-expose-headers:
+      - access-control-allow-credentials,access-control-allow-methods,access-control-allow-origin,content-length,content-type,opc-client-info,opc-request-id,x-api-id
+      opc-request-id:
+      - phx-1:HiW0FypsIQE839QdWXMMYiL-hsd2anETcwCUC_KFssJC-tOo2Si8piq8PBpkj6Tu
+      x-api-id:
+      - native
+    status:
+      code: 200
+      message: OK
 - request:
     body: null
     headers:
-      accept: [application/json]
-      accept-encoding: ['gzip, deflate']
-      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
-          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/e1:8d:6a:cb:74:ed:25:51:a2:9f:38:a4:71:42:01:c8",signature="P6lUvGuPhXEgw7aMCVlebV605o6ETuxl4k8pNzJzhu70itMXoedTKFY4zlS2k9ejV3Pox+B05hOhnJVPPDgQvSud+sm+LQdb2f0zF0+BFMftYEBYwSQqjAo/4n8D922j8Y0nmg70I2XLIvPgItnTcHcS6tlE/04Woydu8dlQh+nYSZFszPOwv9TBd/YkiYfiOUDYe5u/AAJbyFHYNVuNORUjw0ifu11gd1Lrz9uxz+Olid5SSWKBW0QKjs3NG1QIe8avAysL2f/VT5r3PLxzPViUuw29HZA/3HaJTrqbMvxNeIosgDoKuqWeYUMU2UfFciRnoIGfJzVVsLD1aETBCQ==",version="1"']
-      connection: [keep-alive]
-      content-type: [application/json]
-      date: ['Wed, 12 Sep 2018 21:52:53 GMT']
-      host: [objectstorage.us-phoenix-1.oraclecloud.com]
-      opc-client-info: [Oracle-PythonSDK/2.0.4]
-      opc-request-id: [811428D6B7C14BF79ED46171F99896DC]
-      user-agent: [Oracle-PythonSDK/2.0.4 (python 3.5.1; x86_64-Darwin)]
+      accept:
+      - application/json
+      accept-encoding:
+      - gzip, deflate
+      authorization:
+      - Signature algorithm="rsa-sha256",headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="YxfKrUGBOcZc9OVZOWZV79JV6M0D+9gjlAF5L0EqXpcL9nUOIF8Evz5jsUxlUX6//1Nfe3Ez+h7XDuGkTPHpkhYxCxLjmZVdVBFYDRKiDZXbUFGmcLB719gsAFPbahiscNLJZ6XqwdXytRkDtel2riywd6eNFZvqREUn0zdRMs96JP9dw0FTB04NT/FSnZUSpQfly2bqYNn40IVZtvdozC7i/OMAtO5mTnea0nOLs2pTVDUXOKSUlafnTjJUF5HzU0PiwX9iYl0m8fgZCVZEd3/8LlYm3v7laoFgslcA/XituY8xp09keO5EydSBTYfDbxtf7L9k0w5NtyrBhHcyRA==",version="1"
+      connection:
+      - keep-alive
+      content-type:
+      - application/json
+      date:
+      - Sun, 12 Jan 2020 16:32:57 GMT
+      host:
+      - objectstorage.us-phoenix-1.oraclecloud.com
+      opc-client-info:
+      - Oracle-PythonSDK/2.8.1
+      opc-request-id:
+      - 232F5A467267485DB838DA590CBBC3E1
+      user-agent:
+      - Oracle-PythonSDK/2.8.1 (python 3.5.1; x86_64-Darwin) example_extra_user_agent_text
     method: GET
     uri: https://objectstorage.us-phoenix-1.oraclecloud.com/n/dex-us-phoenix-1/b/ReadOnlyTestBucket5/o
   response:
-    body: {string: '{"objects":[]}'}
+    body:
+      string: '{"objects":[]}'
     headers:
-      Access-Control-Allow-Credentials: ['true']
-      Access-Control-Allow-Methods: ['POST,PUT,GET,HEAD,DELETE,OPTIONS']
-      Access-Control-Allow-Origin: ['*']
-      Access-Control-Expose-Headers: ['Access-Control-Allow-Credentials,Access-Control-Allow-Methods,Access-Control-Allow-Origin,Content-Length,Content-Type,opc-client-info,opc-request-id']
-      Connection: [keep-alive]
-      Content-Length: ['14']
-      Content-Type: [application/json]
-      Date: ['Wed, 12 Sep 2018 21:52:25 GMT']
-      opc-request-id: [b46ecafc-fe79-1790-018d-77cd84f5a707]
-    status: {code: 200, message: OK}
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '14'
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 12 Jan 2020 16:32:57 GMT
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-methods:
+      - POST,PUT,GET,HEAD,DELETE,OPTIONS
+      access-control-allow-origin:
+      - '*'
+      access-control-expose-headers:
+      - access-control-allow-credentials,access-control-allow-methods,access-control-allow-origin,content-length,content-type,opc-client-info,opc-request-id,x-api-id
+      opc-request-id:
+      - phx-1:5fBvLGDQjnqkWbaSGtaXOWQFvEZBxnJrKpJeHi4IW70W5TnH3sZr2XmjsAg6e60o
+      x-api-id:
+      - native
+    status:
+      code: 200
+      message: OK
 version: 1

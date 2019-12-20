@@ -1,3 +1,4 @@
+# Code generated. DO NOT EDIT.
 # coding: utf-8
 # Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
@@ -17,15 +18,18 @@ def session_agnostic_query_matcher(r1, r2):
 
 @pytest.fixture(autouse=True, scope='function')
 def vcr_fixture(request):
-    # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
-    # instead of 'query' matcher (which ignores sessionId in the url)
-    # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
-    custom_vcr = test_config_container.create_vcr()
-    custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
-
-    cassette_location = os.path.join('generated', 'core_{name}.yml'.format(name=request.function.__name__))
-    with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+    if test_config_container.test_mode == 'mock':
         yield
+    else:
+        # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
+        # instead of 'query' matcher (which ignores sessionId in the url)
+        # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
+        custom_vcr = test_config_container.create_vcr()
+        custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
+
+        cassette_location = os.path.join('generated', 'core_{name}.yml'.format(name=request.function.__name__))
+        with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+            yield
 
 
 # IssueRoutingInfo tag="computeImaging" email="imaging_dev_us_grp@oracle.com" jiraProject="COM" opsJiraProject="COM"
@@ -45,11 +49,11 @@ def test_add_image_shape_compatibility_entry(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.add_image_shape_compatibility_entry(
-                image_id=request.pop(util.camelize('image_id')),
-                shape_name=request.pop(util.camelize('shape_name')),
+                image_id=request.pop(util.camelize('imageId')),
+                shape_name=request.pop(util.camelize('shapeName')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -86,10 +90,10 @@ def test_attach_boot_volume(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.attach_boot_volume(
-                attach_boot_volume_details=request.pop(util.camelize('attach_boot_volume_details')),
+                attach_boot_volume_details=request.pop(util.camelize('AttachBootVolumeDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -126,10 +130,10 @@ def test_attach_vnic(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.attach_vnic(
-                attach_vnic_details=request.pop(util.camelize('attach_vnic_details')),
+                attach_vnic_details=request.pop(util.camelize('AttachVnicDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -166,10 +170,10 @@ def test_attach_volume(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.attach_volume(
-                attach_volume_details=request.pop(util.camelize('attach_volume_details')),
+                attach_volume_details=request.pop(util.camelize('AttachVolumeDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -206,10 +210,10 @@ def test_capture_console_history(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.capture_console_history(
-                capture_console_history_details=request.pop(util.camelize('capture_console_history_details')),
+                capture_console_history_details=request.pop(util.camelize('CaptureConsoleHistoryDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -246,11 +250,11 @@ def test_change_dedicated_vm_host_compartment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.change_dedicated_vm_host_compartment(
-                dedicated_vm_host_id=request.pop(util.camelize('dedicated_vm_host_id')),
-                change_dedicated_vm_host_compartment_details=request.pop(util.camelize('change_dedicated_vm_host_compartment_details')),
+                dedicated_vm_host_id=request.pop(util.camelize('dedicatedVmHostId')),
+                change_dedicated_vm_host_compartment_details=request.pop(util.camelize('ChangeDedicatedVmHostCompartmentDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -287,11 +291,11 @@ def test_change_image_compartment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.change_image_compartment(
-                image_id=request.pop(util.camelize('image_id')),
-                change_image_compartment_details=request.pop(util.camelize('change_image_compartment_details')),
+                image_id=request.pop(util.camelize('imageId')),
+                change_image_compartment_details=request.pop(util.camelize('ChangeImageCompartmentDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -328,11 +332,11 @@ def test_change_instance_compartment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.change_instance_compartment(
-                instance_id=request.pop(util.camelize('instance_id')),
-                change_instance_compartment_details=request.pop(util.camelize('change_instance_compartment_details')),
+                instance_id=request.pop(util.camelize('instanceId')),
+                change_instance_compartment_details=request.pop(util.camelize('ChangeInstanceCompartmentDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -369,10 +373,10 @@ def test_create_app_catalog_subscription(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.create_app_catalog_subscription(
-                create_app_catalog_subscription_details=request.pop(util.camelize('create_app_catalog_subscription_details')),
+                create_app_catalog_subscription_details=request.pop(util.camelize('CreateAppCatalogSubscriptionDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -409,10 +413,10 @@ def test_create_dedicated_vm_host(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.create_dedicated_vm_host(
-                create_dedicated_vm_host_details=request.pop(util.camelize('create_dedicated_vm_host_details')),
+                create_dedicated_vm_host_details=request.pop(util.camelize('CreateDedicatedVmHostDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -449,10 +453,10 @@ def test_create_image(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.create_image(
-                create_image_details=request.pop(util.camelize('create_image_details')),
+                create_image_details=request.pop(util.camelize('CreateImageDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -489,10 +493,10 @@ def test_create_instance_console_connection(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.create_instance_console_connection(
-                create_instance_console_connection_details=request.pop(util.camelize('create_instance_console_connection_details')),
+                create_instance_console_connection_details=request.pop(util.camelize('CreateInstanceConsoleConnectionDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -529,12 +533,12 @@ def test_delete_app_catalog_subscription(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.delete_app_catalog_subscription(
-                listing_id=request.pop(util.camelize('listing_id')),
-                compartment_id=request.pop(util.camelize('compartment_id')),
-                resource_version=request.pop(util.camelize('resource_version')),
+                listing_id=request.pop(util.camelize('listingId')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                resource_version=request.pop(util.camelize('resourceVersion')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -571,10 +575,10 @@ def test_delete_console_history(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.delete_console_history(
-                instance_console_history_id=request.pop(util.camelize('instance_console_history_id')),
+                instance_console_history_id=request.pop(util.camelize('instanceConsoleHistoryId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -611,10 +615,10 @@ def test_delete_dedicated_vm_host(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.delete_dedicated_vm_host(
-                dedicated_vm_host_id=request.pop(util.camelize('dedicated_vm_host_id')),
+                dedicated_vm_host_id=request.pop(util.camelize('dedicatedVmHostId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -651,10 +655,10 @@ def test_delete_image(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.delete_image(
-                image_id=request.pop(util.camelize('image_id')),
+                image_id=request.pop(util.camelize('imageId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -691,10 +695,10 @@ def test_delete_instance_console_connection(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.delete_instance_console_connection(
-                instance_console_connection_id=request.pop(util.camelize('instance_console_connection_id')),
+                instance_console_connection_id=request.pop(util.camelize('instanceConsoleConnectionId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -731,10 +735,10 @@ def test_detach_boot_volume(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.detach_boot_volume(
-                boot_volume_attachment_id=request.pop(util.camelize('boot_volume_attachment_id')),
+                boot_volume_attachment_id=request.pop(util.camelize('bootVolumeAttachmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -771,10 +775,10 @@ def test_detach_vnic(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.detach_vnic(
-                vnic_attachment_id=request.pop(util.camelize('vnic_attachment_id')),
+                vnic_attachment_id=request.pop(util.camelize('vnicAttachmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -811,10 +815,10 @@ def test_detach_volume(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.detach_volume(
-                volume_attachment_id=request.pop(util.camelize('volume_attachment_id')),
+                volume_attachment_id=request.pop(util.camelize('volumeAttachmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -851,11 +855,11 @@ def test_export_image(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.export_image(
-                image_id=request.pop(util.camelize('image_id')),
-                export_image_details=request.pop(util.camelize('export_image_details')),
+                image_id=request.pop(util.camelize('imageId')),
+                export_image_details=request.pop(util.camelize('ExportImageDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -892,10 +896,10 @@ def test_get_app_catalog_listing(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_app_catalog_listing(
-                listing_id=request.pop(util.camelize('listing_id')),
+                listing_id=request.pop(util.camelize('listingId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -932,11 +936,11 @@ def test_get_app_catalog_listing_agreements(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_app_catalog_listing_agreements(
-                listing_id=request.pop(util.camelize('listing_id')),
-                resource_version=request.pop(util.camelize('resource_version')),
+                listing_id=request.pop(util.camelize('listingId')),
+                resource_version=request.pop(util.camelize('resourceVersion')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -973,11 +977,11 @@ def test_get_app_catalog_listing_resource_version(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_app_catalog_listing_resource_version(
-                listing_id=request.pop(util.camelize('listing_id')),
-                resource_version=request.pop(util.camelize('resource_version')),
+                listing_id=request.pop(util.camelize('listingId')),
+                resource_version=request.pop(util.camelize('resourceVersion')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1014,10 +1018,10 @@ def test_get_boot_volume_attachment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_boot_volume_attachment(
-                boot_volume_attachment_id=request.pop(util.camelize('boot_volume_attachment_id')),
+                boot_volume_attachment_id=request.pop(util.camelize('bootVolumeAttachmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1054,10 +1058,10 @@ def test_get_console_history(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_console_history(
-                instance_console_history_id=request.pop(util.camelize('instance_console_history_id')),
+                instance_console_history_id=request.pop(util.camelize('instanceConsoleHistoryId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1094,10 +1098,10 @@ def test_get_console_history_content(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_console_history_content(
-                instance_console_history_id=request.pop(util.camelize('instance_console_history_id')),
+                instance_console_history_id=request.pop(util.camelize('instanceConsoleHistoryId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1134,10 +1138,10 @@ def test_get_dedicated_vm_host(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_dedicated_vm_host(
-                dedicated_vm_host_id=request.pop(util.camelize('dedicated_vm_host_id')),
+                dedicated_vm_host_id=request.pop(util.camelize('dedicatedVmHostId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1174,10 +1178,10 @@ def test_get_image(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_image(
-                image_id=request.pop(util.camelize('image_id')),
+                image_id=request.pop(util.camelize('imageId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1214,10 +1218,10 @@ def test_get_instance(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_instance(
-                instance_id=request.pop(util.camelize('instance_id')),
+                instance_id=request.pop(util.camelize('instanceId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1254,10 +1258,10 @@ def test_get_instance_console_connection(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_instance_console_connection(
-                instance_console_connection_id=request.pop(util.camelize('instance_console_connection_id')),
+                instance_console_connection_id=request.pop(util.camelize('instanceConsoleConnectionId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1294,10 +1298,10 @@ def test_get_vnic_attachment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_vnic_attachment(
-                vnic_attachment_id=request.pop(util.camelize('vnic_attachment_id')),
+                vnic_attachment_id=request.pop(util.camelize('vnicAttachmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1334,10 +1338,10 @@ def test_get_volume_attachment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_volume_attachment(
-                volume_attachment_id=request.pop(util.camelize('volume_attachment_id')),
+                volume_attachment_id=request.pop(util.camelize('volumeAttachmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1374,10 +1378,10 @@ def test_get_windows_instance_initial_credentials(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.get_windows_instance_initial_credentials(
-                instance_id=request.pop(util.camelize('instance_id')),
+                instance_id=request.pop(util.camelize('instanceId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1414,10 +1418,10 @@ def test_instance_action(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.instance_action(
-                instance_id=request.pop(util.camelize('instance_id')),
+                instance_id=request.pop(util.camelize('instanceId')),
                 action=request.pop(util.camelize('action')),
                 **(util.camel_to_snake_keys(request))
             )
@@ -1455,10 +1459,10 @@ def test_launch_instance(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.launch_instance(
-                launch_instance_details=request.pop(util.camelize('launch_instance_details')),
+                launch_instance_details=request.pop(util.camelize('LaunchInstanceDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1486,6 +1490,7 @@ def test_list_app_catalog_listing_resource_versions(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('core', util.camelize('compute'), 'ListAppCatalogListingResourceVersions')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListAppCatalogListingResourceVersions')
 
@@ -1495,18 +1500,18 @@ def test_list_app_catalog_listing_resource_versions(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_app_catalog_listing_resource_versions(
-                listing_id=request.pop(util.camelize('listing_id')),
+                listing_id=request.pop(util.camelize('listingId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_app_catalog_listing_resource_versions(
-                    listing_id=request.pop(util.camelize('listing_id')),
+                    listing_id=request.pop(util.camelize('listingId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1516,7 +1521,7 @@ def test_list_app_catalog_listing_resource_versions(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_app_catalog_listing_resource_versions(
-                        listing_id=request.pop(util.camelize('listing_id')),
+                        listing_id=request.pop(util.camelize('listingId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1545,6 +1550,7 @@ def test_list_app_catalog_listings(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('core', util.camelize('compute'), 'ListAppCatalogListings')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListAppCatalogListings')
 
@@ -1554,13 +1560,13 @@ def test_list_app_catalog_listings(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_app_catalog_listings(
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_app_catalog_listings(
@@ -1601,6 +1607,7 @@ def test_list_app_catalog_subscriptions(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('core', util.camelize('compute'), 'ListAppCatalogSubscriptions')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListAppCatalogSubscriptions')
 
@@ -1610,18 +1617,18 @@ def test_list_app_catalog_subscriptions(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_app_catalog_subscriptions(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_app_catalog_subscriptions(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1631,7 +1638,7 @@ def test_list_app_catalog_subscriptions(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_app_catalog_subscriptions(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1660,6 +1667,7 @@ def test_list_boot_volume_attachments(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('core', util.camelize('compute'), 'ListBootVolumeAttachments')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListBootVolumeAttachments')
 
@@ -1669,20 +1677,20 @@ def test_list_boot_volume_attachments(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_boot_volume_attachments(
-                availability_domain=request.pop(util.camelize('availability_domain')),
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                availability_domain=request.pop(util.camelize('availabilityDomain')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_boot_volume_attachments(
-                    availability_domain=request.pop(util.camelize('availability_domain')),
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    availability_domain=request.pop(util.camelize('availabilityDomain')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1692,8 +1700,8 @@ def test_list_boot_volume_attachments(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_boot_volume_attachments(
-                        availability_domain=request.pop(util.camelize('availability_domain')),
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        availability_domain=request.pop(util.camelize('availabilityDomain')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1722,6 +1730,7 @@ def test_list_console_histories(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('core', util.camelize('compute'), 'ListConsoleHistories')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListConsoleHistories')
 
@@ -1731,18 +1740,18 @@ def test_list_console_histories(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_console_histories(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_console_histories(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1752,7 +1761,7 @@ def test_list_console_histories(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_console_histories(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1781,6 +1790,7 @@ def test_list_dedicated_vm_host_instance_shapes(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('core', util.camelize('compute'), 'ListDedicatedVmHostInstanceShapes')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListDedicatedVmHostInstanceShapes')
 
@@ -1790,18 +1800,18 @@ def test_list_dedicated_vm_host_instance_shapes(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_dedicated_vm_host_instance_shapes(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_dedicated_vm_host_instance_shapes(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1811,7 +1821,7 @@ def test_list_dedicated_vm_host_instance_shapes(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_dedicated_vm_host_instance_shapes(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1840,6 +1850,7 @@ def test_list_dedicated_vm_host_instances(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('core', util.camelize('compute'), 'ListDedicatedVmHostInstances')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListDedicatedVmHostInstances')
 
@@ -1849,20 +1860,20 @@ def test_list_dedicated_vm_host_instances(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_dedicated_vm_host_instances(
-                compartment_id=request.pop(util.camelize('compartment_id')),
-                dedicated_vm_host_id=request.pop(util.camelize('dedicated_vm_host_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                dedicated_vm_host_id=request.pop(util.camelize('dedicatedVmHostId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_dedicated_vm_host_instances(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
-                    dedicated_vm_host_id=request.pop(util.camelize('dedicated_vm_host_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    dedicated_vm_host_id=request.pop(util.camelize('dedicatedVmHostId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1872,8 +1883,8 @@ def test_list_dedicated_vm_host_instances(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_dedicated_vm_host_instances(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
-                        dedicated_vm_host_id=request.pop(util.camelize('dedicated_vm_host_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        dedicated_vm_host_id=request.pop(util.camelize('dedicatedVmHostId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1902,6 +1913,7 @@ def test_list_dedicated_vm_host_shapes(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('core', util.camelize('compute'), 'ListDedicatedVmHostShapes')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListDedicatedVmHostShapes')
 
@@ -1911,18 +1923,18 @@ def test_list_dedicated_vm_host_shapes(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_dedicated_vm_host_shapes(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_dedicated_vm_host_shapes(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1932,7 +1944,7 @@ def test_list_dedicated_vm_host_shapes(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_dedicated_vm_host_shapes(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1961,6 +1973,7 @@ def test_list_dedicated_vm_hosts(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('core', util.camelize('compute'), 'ListDedicatedVmHosts')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListDedicatedVmHosts')
 
@@ -1970,18 +1983,18 @@ def test_list_dedicated_vm_hosts(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_dedicated_vm_hosts(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_dedicated_vm_hosts(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1991,7 +2004,7 @@ def test_list_dedicated_vm_hosts(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_dedicated_vm_hosts(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -2020,6 +2033,7 @@ def test_list_images(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('core', util.camelize('compute'), 'ListImages')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListImages')
 
@@ -2029,18 +2043,18 @@ def test_list_images(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_images(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_images(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -2050,7 +2064,7 @@ def test_list_images(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_images(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -2079,6 +2093,7 @@ def test_list_instance_console_connections(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('core', util.camelize('compute'), 'ListInstanceConsoleConnections')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListInstanceConsoleConnections')
 
@@ -2088,18 +2103,18 @@ def test_list_instance_console_connections(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_instance_console_connections(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_instance_console_connections(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -2109,7 +2124,7 @@ def test_list_instance_console_connections(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_instance_console_connections(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -2138,6 +2153,7 @@ def test_list_instance_devices(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('core', util.camelize('compute'), 'ListInstanceDevices')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListInstanceDevices')
 
@@ -2147,18 +2163,18 @@ def test_list_instance_devices(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_instance_devices(
-                instance_id=request.pop(util.camelize('instance_id')),
+                instance_id=request.pop(util.camelize('instanceId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_instance_devices(
-                    instance_id=request.pop(util.camelize('instance_id')),
+                    instance_id=request.pop(util.camelize('instanceId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -2168,7 +2184,7 @@ def test_list_instance_devices(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_instance_devices(
-                        instance_id=request.pop(util.camelize('instance_id')),
+                        instance_id=request.pop(util.camelize('instanceId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -2197,6 +2213,7 @@ def test_list_instances(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('core', util.camelize('compute'), 'ListInstances')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListInstances')
 
@@ -2206,18 +2223,18 @@ def test_list_instances(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_instances(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_instances(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -2227,7 +2244,7 @@ def test_list_instances(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_instances(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -2256,6 +2273,7 @@ def test_list_shapes(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('core', util.camelize('compute'), 'ListShapes')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListShapes')
 
@@ -2265,18 +2283,18 @@ def test_list_shapes(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_shapes(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_shapes(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -2286,7 +2304,7 @@ def test_list_shapes(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_shapes(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -2315,6 +2333,7 @@ def test_list_vnic_attachments(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('core', util.camelize('compute'), 'ListVnicAttachments')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListVnicAttachments')
 
@@ -2324,18 +2343,18 @@ def test_list_vnic_attachments(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_vnic_attachments(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_vnic_attachments(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -2345,7 +2364,7 @@ def test_list_vnic_attachments(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_vnic_attachments(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -2374,6 +2393,7 @@ def test_list_volume_attachments(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('core', util.camelize('compute'), 'ListVolumeAttachments')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='core', api_name='ListVolumeAttachments')
 
@@ -2383,18 +2403,18 @@ def test_list_volume_attachments(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.list_volume_attachments(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_volume_attachments(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -2404,7 +2424,7 @@ def test_list_volume_attachments(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_volume_attachments(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -2442,11 +2462,11 @@ def test_remove_image_shape_compatibility_entry(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.remove_image_shape_compatibility_entry(
-                image_id=request.pop(util.camelize('image_id')),
-                shape_name=request.pop(util.camelize('shape_name')),
+                image_id=request.pop(util.camelize('imageId')),
+                shape_name=request.pop(util.camelize('shapeName')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2483,10 +2503,10 @@ def test_terminate_instance(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.terminate_instance(
-                instance_id=request.pop(util.camelize('instance_id')),
+                instance_id=request.pop(util.camelize('instanceId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2523,11 +2543,11 @@ def test_update_console_history(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.update_console_history(
-                instance_console_history_id=request.pop(util.camelize('instance_console_history_id')),
-                update_console_history_details=request.pop(util.camelize('update_console_history_details')),
+                instance_console_history_id=request.pop(util.camelize('instanceConsoleHistoryId')),
+                update_console_history_details=request.pop(util.camelize('UpdateConsoleHistoryDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2564,11 +2584,11 @@ def test_update_dedicated_vm_host(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.update_dedicated_vm_host(
-                dedicated_vm_host_id=request.pop(util.camelize('dedicated_vm_host_id')),
-                update_dedicated_vm_host_details=request.pop(util.camelize('update_dedicated_vm_host_details')),
+                dedicated_vm_host_id=request.pop(util.camelize('dedicatedVmHostId')),
+                update_dedicated_vm_host_details=request.pop(util.camelize('UpdateDedicatedVmHostDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2605,11 +2625,11 @@ def test_update_image(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.update_image(
-                image_id=request.pop(util.camelize('image_id')),
-                update_image_details=request.pop(util.camelize('update_image_details')),
+                image_id=request.pop(util.camelize('imageId')),
+                update_image_details=request.pop(util.camelize('UpdateImageDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -2646,11 +2666,11 @@ def test_update_instance(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
             response = client.update_instance(
-                instance_id=request.pop(util.camelize('instance_id')),
-                update_instance_details=request.pop(util.camelize('update_instance_details')),
+                instance_id=request.pop(util.camelize('instanceId')),
+                update_instance_details=request.pop(util.camelize('UpdateInstanceDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

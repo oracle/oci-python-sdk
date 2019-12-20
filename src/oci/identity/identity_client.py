@@ -35,7 +35,7 @@ class IdentityClient(object):
             need to specify a service endpoint.
 
         :param timeout: (optional)
-            The connection and read timeouts for the client. The default is that the client never times out. This keyword argument can be provided
+            The connection and read timeouts for the client. The default values are connection timeout 10 seconds and read timeout 60 seconds. This keyword argument can be provided
             as a single float, in which case the value provided is used for both the read and connection timeouts, or as a tuple of two floats. If
             a tuple is provided then the first value is used as the connection timeout and the second value as the read timeout.
         :type timeout: float or tuple(float, float)
@@ -204,7 +204,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.UserGroupMembership`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/userGroupMemberships/"
+        resource_path = "/userGroupMemberships"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -455,7 +455,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.AuthToken`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/users/{userId}/authTokens/"
+        resource_path = "/users/{userId}/authTokens"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -557,7 +557,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.Compartment`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/compartments/"
+        resource_path = "/compartments"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -641,7 +641,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.CustomerSecretKey`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/users/{userId}/customerSecretKeys/"
+        resource_path = "/users/{userId}/customerSecretKeys"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -742,7 +742,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.DynamicGroup`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/dynamicGroups/"
+        resource_path = "/dynamicGroups"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -834,7 +834,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.Group`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/groups/"
+        resource_path = "/groups"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -923,7 +923,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.IdentityProvider`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/identityProviders/"
+        resource_path = "/identityProviders"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -996,7 +996,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.IdpGroupMapping`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/identityProviders/{identityProviderId}/groupMappings/"
+        resource_path = "/identityProviders/{identityProviderId}/groupMappings"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -1267,7 +1267,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.Policy`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/policies/"
+        resource_path = "/policies"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -1426,7 +1426,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.SmtpCredential`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/users/{userId}/smtpCredentials/"
+        resource_path = "/users/{userId}/smtpCredentials"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -1523,7 +1523,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.SwiftPassword`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/users/{userId}/swiftPasswords/"
+        resource_path = "/users/{userId}/swiftPasswords"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -1911,7 +1911,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.User`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/users/"
+        resource_path = "/users"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -4410,7 +4410,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.ApiKey`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/users/{userId}/apiKeys/"
+        resource_path = "/users/{userId}/apiKeys"
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
@@ -4475,7 +4475,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.AuthToken`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/users/{userId}/authTokens/"
+        resource_path = "/users/{userId}/authTokens"
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
@@ -4545,7 +4545,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.AvailabilityDomain`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/availabilityDomains/"
+        resource_path = "/availabilityDomains"
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
@@ -4647,7 +4647,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.Compartment`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/compartments/"
+        resource_path = "/compartments"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -4800,7 +4800,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.CustomerSecretKeySummary`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/users/{userId}/customerSecretKeys/"
+        resource_path = "/users/{userId}/customerSecretKeys"
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
@@ -4874,7 +4874,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.DynamicGroup`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/dynamicGroups/"
+        resource_path = "/dynamicGroups"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -4947,7 +4947,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.FaultDomain`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/faultDomains/"
+        resource_path = "/faultDomains"
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
@@ -5017,7 +5017,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.Group`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/groups/"
+        resource_path = "/groups"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -5089,7 +5089,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.IdentityProviderGroupSummary`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/identityProviders/{identityProviderId}/groups/"
+        resource_path = "/identityProviders/{identityProviderId}/groups"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -5182,7 +5182,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.IdentityProvider`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/identityProviders/"
+        resource_path = "/identityProviders"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -5255,7 +5255,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.IdpGroupMapping`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/identityProviders/{identityProviderId}/groupMappings/"
+        resource_path = "/identityProviders/{identityProviderId}/groupMappings"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -5464,7 +5464,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.Policy`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/policies/"
+        resource_path = "/policies"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -5644,7 +5644,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.SmtpCredentialSummary`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/users/{userId}/smtpCredentials/"
+        resource_path = "/users/{userId}/smtpCredentials"
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
@@ -5711,7 +5711,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.SwiftPassword`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/users/{userId}/swiftPasswords/"
+        resource_path = "/users/{userId}/swiftPasswords"
         method = "GET"
 
         expected_kwargs = ["retry_strategy"]
@@ -6139,7 +6139,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.TaggingWorkRequestSummary`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/taggingWorkRequests/"
+        resource_path = "/taggingWorkRequests"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -6327,7 +6327,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.UserGroupMembership`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/userGroupMemberships/"
+        resource_path = "/userGroupMemberships"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -6413,7 +6413,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.User`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/users/"
+        resource_path = "/users"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -6492,7 +6492,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.WorkRequestSummary`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/workRequests/"
+        resource_path = "/workRequests"
         method = "GET"
 
         # Don't accept unknown kwargs
@@ -6818,7 +6818,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.ScimClientCredentials`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/identityProviders/{identityProviderId}/actions/resetScimClient/"
+        resource_path = "/identityProviders/{identityProviderId}/actions/resetScimClient"
         method = "POST"
 
         expected_kwargs = ["retry_strategy"]
@@ -8137,7 +8137,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.User`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/users/{userId}/capabilities/"
+        resource_path = "/users/{userId}/capabilities"
         method = "PUT"
 
         # Don't accept unknown kwargs
@@ -8217,7 +8217,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.User`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/users/{userId}/state/"
+        resource_path = "/users/{userId}/state"
         method = "PUT"
 
         # Don't accept unknown kwargs
@@ -8313,7 +8313,7 @@ class IdentityClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.ApiKey`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/users/{userId}/apiKeys/"
+        resource_path = "/users/{userId}/apiKeys"
         method = "POST"
 
         # Don't accept unknown kwargs

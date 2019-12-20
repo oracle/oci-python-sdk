@@ -216,7 +216,7 @@ def launch_instance(compute, vcn_and_subnet):
             display_name='VolAttachTypesTestInstance',
             shape='VM.Standard1.1',
             subnet_id=vcn_and_subnet['subnet'].id,
-            image_id=get_image(compute, 'Oracle Linux', '7.5', 'VM.Standard1.1').id
+            image_id=get_image(compute, 'Oracle Linux', '7.7', 'VM.Standard1.1').id
         )
     )
     get_instance_response = test_config_container.do_wait(

@@ -1,3 +1,4 @@
+# Code generated. DO NOT EDIT.
 # coding: utf-8
 # Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
@@ -17,15 +18,18 @@ def session_agnostic_query_matcher(r1, r2):
 
 @pytest.fixture(autouse=True, scope='function')
 def vcr_fixture(request):
-    # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
-    # instead of 'query' matcher (which ignores sessionId in the url)
-    # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
-    custom_vcr = test_config_container.create_vcr()
-    custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
-
-    cassette_location = os.path.join('generated', 'streaming_{name}.yml'.format(name=request.function.__name__))
-    with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+    if test_config_container.test_mode == 'mock':
         yield
+    else:
+        # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
+        # instead of 'query' matcher (which ignores sessionId in the url)
+        # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
+        custom_vcr = test_config_container.create_vcr()
+        custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
+
+        cassette_location = os.path.join('generated', 'streaming_{name}.yml'.format(name=request.function.__name__))
+        with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+            yield
 
 
 # IssueRoutingInfo tag="default" email="opc_streaming_us_grp@oracle.com" jiraProject="STREAMSTR" opsJiraProject="STREAMOSS"
@@ -48,7 +52,7 @@ def test_consumer_commit(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("streaming", "StreamClient", "ConsumerCommit")
             client = oci.streaming.StreamClient(config, service_endpoint=service_endpoint)
             response = client.consumer_commit(
-                stream_id=request.pop(util.camelize('stream_id')),
+                stream_id=request.pop(util.camelize('streamId')),
                 cursor=request.pop(util.camelize('cursor')),
                 **(util.camel_to_snake_keys(request))
             )
@@ -89,7 +93,7 @@ def test_consumer_heartbeat(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("streaming", "StreamClient", "ConsumerHeartbeat")
             client = oci.streaming.StreamClient(config, service_endpoint=service_endpoint)
             response = client.consumer_heartbeat(
-                stream_id=request.pop(util.camelize('stream_id')),
+                stream_id=request.pop(util.camelize('streamId')),
                 cursor=request.pop(util.camelize('cursor')),
                 **(util.camel_to_snake_keys(request))
             )
@@ -130,8 +134,8 @@ def test_create_cursor(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("streaming", "StreamClient", "CreateCursor")
             client = oci.streaming.StreamClient(config, service_endpoint=service_endpoint)
             response = client.create_cursor(
-                stream_id=request.pop(util.camelize('stream_id')),
-                create_cursor_details=request.pop(util.camelize('create_cursor_details')),
+                stream_id=request.pop(util.camelize('streamId')),
+                create_cursor_details=request.pop(util.camelize('CreateCursorDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -171,8 +175,8 @@ def test_create_group_cursor(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("streaming", "StreamClient", "CreateGroupCursor")
             client = oci.streaming.StreamClient(config, service_endpoint=service_endpoint)
             response = client.create_group_cursor(
-                stream_id=request.pop(util.camelize('stream_id')),
-                create_group_cursor_details=request.pop(util.camelize('create_group_cursor_details')),
+                stream_id=request.pop(util.camelize('streamId')),
+                create_group_cursor_details=request.pop(util.camelize('CreateGroupCursorDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -212,8 +216,8 @@ def test_get_group(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("streaming", "StreamClient", "GetGroup")
             client = oci.streaming.StreamClient(config, service_endpoint=service_endpoint)
             response = client.get_group(
-                stream_id=request.pop(util.camelize('stream_id')),
-                group_name=request.pop(util.camelize('group_name')),
+                stream_id=request.pop(util.camelize('streamId')),
+                group_name=request.pop(util.camelize('groupName')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -253,7 +257,7 @@ def test_get_messages(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("streaming", "StreamClient", "GetMessages")
             client = oci.streaming.StreamClient(config, service_endpoint=service_endpoint)
             response = client.get_messages(
-                stream_id=request.pop(util.camelize('stream_id')),
+                stream_id=request.pop(util.camelize('streamId')),
                 cursor=request.pop(util.camelize('cursor')),
                 **(util.camel_to_snake_keys(request))
             )
@@ -294,8 +298,8 @@ def test_put_messages(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("streaming", "StreamClient", "PutMessages")
             client = oci.streaming.StreamClient(config, service_endpoint=service_endpoint)
             response = client.put_messages(
-                stream_id=request.pop(util.camelize('stream_id')),
-                put_messages_details=request.pop(util.camelize('put_messages_details')),
+                stream_id=request.pop(util.camelize('streamId')),
+                put_messages_details=request.pop(util.camelize('PutMessagesDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -335,9 +339,9 @@ def test_update_group(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("streaming", "StreamClient", "UpdateGroup")
             client = oci.streaming.StreamClient(config, service_endpoint=service_endpoint)
             response = client.update_group(
-                stream_id=request.pop(util.camelize('stream_id')),
-                group_name=request.pop(util.camelize('group_name')),
-                update_group_details=request.pop(util.camelize('update_group_details')),
+                stream_id=request.pop(util.camelize('streamId')),
+                group_name=request.pop(util.camelize('groupName')),
+                update_group_details=request.pop(util.camelize('UpdateGroupDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

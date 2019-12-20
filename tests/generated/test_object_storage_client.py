@@ -1,3 +1,4 @@
+# Code generated. DO NOT EDIT.
 # coding: utf-8
 # Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
@@ -17,15 +18,18 @@ def session_agnostic_query_matcher(r1, r2):
 
 @pytest.fixture(autouse=True, scope='function')
 def vcr_fixture(request):
-    # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
-    # instead of 'query' matcher (which ignores sessionId in the url)
-    # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
-    custom_vcr = test_config_container.create_vcr()
-    custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
-
-    cassette_location = os.path.join('generated', 'object_storage_{name}.yml'.format(name=request.function.__name__))
-    with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+    if test_config_container.test_mode == 'mock':
         yield
+    else:
+        # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
+        # instead of 'query' matcher (which ignores sessionId in the url)
+        # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
+        custom_vcr = test_config_container.create_vcr()
+        custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
+
+        cassette_location = os.path.join('generated', 'object_storage_{name}.yml'.format(name=request.function.__name__))
+        with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+            yield
 
 
 # IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
@@ -45,13 +49,13 @@ def test_abort_multipart_upload(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.abort_multipart_upload(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                bucket_name=request.pop(util.camelize('bucket_name')),
-                object_name=request.pop(util.camelize('object_name')),
-                upload_id=request.pop(util.camelize('upload_id')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                object_name=request.pop(util.camelize('objectName')),
+                upload_id=request.pop(util.camelize('uploadId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -88,10 +92,10 @@ def test_cancel_work_request(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.cancel_work_request(
-                work_request_id=request.pop(util.camelize('work_request_id')),
+                work_request_id=request.pop(util.camelize('workRequestId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -128,14 +132,14 @@ def test_commit_multipart_upload(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.commit_multipart_upload(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                bucket_name=request.pop(util.camelize('bucket_name')),
-                object_name=request.pop(util.camelize('object_name')),
-                upload_id=request.pop(util.camelize('upload_id')),
-                commit_multipart_upload_details=request.pop(util.camelize('commit_multipart_upload_details')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                object_name=request.pop(util.camelize('objectName')),
+                upload_id=request.pop(util.camelize('uploadId')),
+                commit_multipart_upload_details=request.pop(util.camelize('CommitMultipartUploadDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -172,12 +176,12 @@ def test_copy_object(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.copy_object(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                bucket_name=request.pop(util.camelize('bucket_name')),
-                copy_object_details=request.pop(util.camelize('copy_object_details')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                copy_object_details=request.pop(util.camelize('CopyObjectDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -214,11 +218,11 @@ def test_create_bucket(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.create_bucket(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                create_bucket_details=request.pop(util.camelize('create_bucket_details')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                create_bucket_details=request.pop(util.camelize('CreateBucketDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -255,12 +259,12 @@ def test_create_multipart_upload(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.create_multipart_upload(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                bucket_name=request.pop(util.camelize('bucket_name')),
-                create_multipart_upload_details=request.pop(util.camelize('create_multipart_upload_details')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                create_multipart_upload_details=request.pop(util.camelize('CreateMultipartUploadDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -297,12 +301,12 @@ def test_create_preauthenticated_request(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.create_preauthenticated_request(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                bucket_name=request.pop(util.camelize('bucket_name')),
-                create_preauthenticated_request_details=request.pop(util.camelize('create_preauthenticated_request_details')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                create_preauthenticated_request_details=request.pop(util.camelize('CreatePreauthenticatedRequestDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -339,11 +343,11 @@ def test_delete_bucket(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_bucket(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                bucket_name=request.pop(util.camelize('bucket_name')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -380,12 +384,12 @@ def test_delete_object(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_object(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                bucket_name=request.pop(util.camelize('bucket_name')),
-                object_name=request.pop(util.camelize('object_name')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                object_name=request.pop(util.camelize('objectName')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -422,11 +426,11 @@ def test_delete_object_lifecycle_policy(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_object_lifecycle_policy(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                bucket_name=request.pop(util.camelize('bucket_name')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -463,12 +467,12 @@ def test_delete_preauthenticated_request(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.delete_preauthenticated_request(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                bucket_name=request.pop(util.camelize('bucket_name')),
-                par_id=request.pop(util.camelize('par_id')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                par_id=request.pop(util.camelize('parId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -505,11 +509,11 @@ def test_get_bucket(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.get_bucket(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                bucket_name=request.pop(util.camelize('bucket_name')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -546,7 +550,7 @@ def test_get_namespace(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.get_namespace(
                 **(util.camel_to_snake_keys(request))
@@ -585,10 +589,10 @@ def test_get_namespace_metadata(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.get_namespace_metadata(
-                namespace_name=request.pop(util.camelize('namespace_name')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -625,12 +629,12 @@ def test_get_object(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.get_object(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                bucket_name=request.pop(util.camelize('bucket_name')),
-                object_name=request.pop(util.camelize('object_name')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                object_name=request.pop(util.camelize('objectName')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -667,11 +671,11 @@ def test_get_object_lifecycle_policy(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.get_object_lifecycle_policy(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                bucket_name=request.pop(util.camelize('bucket_name')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -708,12 +712,12 @@ def test_get_preauthenticated_request(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.get_preauthenticated_request(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                bucket_name=request.pop(util.camelize('bucket_name')),
-                par_id=request.pop(util.camelize('par_id')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                par_id=request.pop(util.camelize('parId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -750,10 +754,10 @@ def test_get_work_request(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.get_work_request(
-                work_request_id=request.pop(util.camelize('work_request_id')),
+                work_request_id=request.pop(util.camelize('workRequestId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -790,11 +794,11 @@ def test_head_bucket(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.head_bucket(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                bucket_name=request.pop(util.camelize('bucket_name')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -831,12 +835,12 @@ def test_head_object(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.head_object(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                bucket_name=request.pop(util.camelize('bucket_name')),
-                object_name=request.pop(util.camelize('object_name')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                object_name=request.pop(util.camelize('objectName')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -864,6 +868,7 @@ def test_list_buckets(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'ListBuckets')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='ListBuckets')
 
@@ -873,20 +878,20 @@ def test_list_buckets(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.list_buckets(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_buckets(
-                    namespace_name=request.pop(util.camelize('namespace_name')),
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    namespace_name=request.pop(util.camelize('namespaceName')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -896,8 +901,8 @@ def test_list_buckets(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_buckets(
-                        namespace_name=request.pop(util.camelize('namespace_name')),
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        namespace_name=request.pop(util.camelize('namespaceName')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -926,6 +931,7 @@ def test_list_multipart_upload_parts(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'ListMultipartUploadParts')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='ListMultipartUploadParts')
 
@@ -935,24 +941,24 @@ def test_list_multipart_upload_parts(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.list_multipart_upload_parts(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                bucket_name=request.pop(util.camelize('bucket_name')),
-                object_name=request.pop(util.camelize('object_name')),
-                upload_id=request.pop(util.camelize('upload_id')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                object_name=request.pop(util.camelize('objectName')),
+                upload_id=request.pop(util.camelize('uploadId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_multipart_upload_parts(
-                    namespace_name=request.pop(util.camelize('namespace_name')),
-                    bucket_name=request.pop(util.camelize('bucket_name')),
-                    object_name=request.pop(util.camelize('object_name')),
-                    upload_id=request.pop(util.camelize('upload_id')),
+                    namespace_name=request.pop(util.camelize('namespaceName')),
+                    bucket_name=request.pop(util.camelize('bucketName')),
+                    object_name=request.pop(util.camelize('objectName')),
+                    upload_id=request.pop(util.camelize('uploadId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -962,10 +968,10 @@ def test_list_multipart_upload_parts(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_multipart_upload_parts(
-                        namespace_name=request.pop(util.camelize('namespace_name')),
-                        bucket_name=request.pop(util.camelize('bucket_name')),
-                        object_name=request.pop(util.camelize('object_name')),
-                        upload_id=request.pop(util.camelize('upload_id')),
+                        namespace_name=request.pop(util.camelize('namespaceName')),
+                        bucket_name=request.pop(util.camelize('bucketName')),
+                        object_name=request.pop(util.camelize('objectName')),
+                        upload_id=request.pop(util.camelize('uploadId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -994,6 +1000,7 @@ def test_list_multipart_uploads(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'ListMultipartUploads')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='ListMultipartUploads')
 
@@ -1003,20 +1010,20 @@ def test_list_multipart_uploads(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.list_multipart_uploads(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                bucket_name=request.pop(util.camelize('bucket_name')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_multipart_uploads(
-                    namespace_name=request.pop(util.camelize('namespace_name')),
-                    bucket_name=request.pop(util.camelize('bucket_name')),
+                    namespace_name=request.pop(util.camelize('namespaceName')),
+                    bucket_name=request.pop(util.camelize('bucketName')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1026,8 +1033,8 @@ def test_list_multipart_uploads(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_multipart_uploads(
-                        namespace_name=request.pop(util.camelize('namespace_name')),
-                        bucket_name=request.pop(util.camelize('bucket_name')),
+                        namespace_name=request.pop(util.camelize('namespaceName')),
+                        bucket_name=request.pop(util.camelize('bucketName')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1065,11 +1072,11 @@ def test_list_objects(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.list_objects(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                bucket_name=request.pop(util.camelize('bucket_name')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1097,6 +1104,7 @@ def test_list_preauthenticated_requests(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'ListPreauthenticatedRequests')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='ListPreauthenticatedRequests')
 
@@ -1106,20 +1114,20 @@ def test_list_preauthenticated_requests(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.list_preauthenticated_requests(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                bucket_name=request.pop(util.camelize('bucket_name')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_preauthenticated_requests(
-                    namespace_name=request.pop(util.camelize('namespace_name')),
-                    bucket_name=request.pop(util.camelize('bucket_name')),
+                    namespace_name=request.pop(util.camelize('namespaceName')),
+                    bucket_name=request.pop(util.camelize('bucketName')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1129,8 +1137,8 @@ def test_list_preauthenticated_requests(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_preauthenticated_requests(
-                        namespace_name=request.pop(util.camelize('namespace_name')),
-                        bucket_name=request.pop(util.camelize('bucket_name')),
+                        namespace_name=request.pop(util.camelize('namespaceName')),
+                        bucket_name=request.pop(util.camelize('bucketName')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1159,6 +1167,7 @@ def test_list_work_request_errors(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'ListWorkRequestErrors')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='ListWorkRequestErrors')
 
@@ -1168,18 +1177,18 @@ def test_list_work_request_errors(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_errors(
-                work_request_id=request.pop(util.camelize('work_request_id')),
+                work_request_id=request.pop(util.camelize('workRequestId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_work_request_errors(
-                    work_request_id=request.pop(util.camelize('work_request_id')),
+                    work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1189,7 +1198,7 @@ def test_list_work_request_errors(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_work_request_errors(
-                        work_request_id=request.pop(util.camelize('work_request_id')),
+                        work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1218,6 +1227,7 @@ def test_list_work_request_logs(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'ListWorkRequestLogs')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='ListWorkRequestLogs')
 
@@ -1227,18 +1237,18 @@ def test_list_work_request_logs(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.list_work_request_logs(
-                work_request_id=request.pop(util.camelize('work_request_id')),
+                work_request_id=request.pop(util.camelize('workRequestId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_work_request_logs(
-                    work_request_id=request.pop(util.camelize('work_request_id')),
+                    work_request_id=request.pop(util.camelize('workRequestId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1248,7 +1258,7 @@ def test_list_work_request_logs(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_work_request_logs(
-                        work_request_id=request.pop(util.camelize('work_request_id')),
+                        work_request_id=request.pop(util.camelize('workRequestId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1277,6 +1287,7 @@ def test_list_work_requests(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'ListWorkRequests')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='ListWorkRequests')
 
@@ -1286,18 +1297,18 @@ def test_list_work_requests(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_work_requests(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1307,7 +1318,7 @@ def test_list_work_requests(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_work_requests(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1345,13 +1356,13 @@ def test_put_object(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.put_object(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                bucket_name=request.pop(util.camelize('bucket_name')),
-                object_name=request.pop(util.camelize('object_name')),
-                put_object_body=request.pop(util.camelize('put_object_body')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                object_name=request.pop(util.camelize('objectName')),
+                put_object_body=request.pop(util.camelize('PutObjectBody')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1388,12 +1399,12 @@ def test_put_object_lifecycle_policy(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.put_object_lifecycle_policy(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                bucket_name=request.pop(util.camelize('bucket_name')),
-                put_object_lifecycle_policy_details=request.pop(util.camelize('put_object_lifecycle_policy_details')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                put_object_lifecycle_policy_details=request.pop(util.camelize('PutObjectLifecyclePolicyDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1430,11 +1441,11 @@ def test_reencrypt_bucket(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.reencrypt_bucket(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                bucket_name=request.pop(util.camelize('bucket_name')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1471,12 +1482,12 @@ def test_rename_object(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.rename_object(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                bucket_name=request.pop(util.camelize('bucket_name')),
-                rename_object_details=request.pop(util.camelize('rename_object_details')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                rename_object_details=request.pop(util.camelize('RenameObjectDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1513,12 +1524,12 @@ def test_restore_objects(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.restore_objects(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                bucket_name=request.pop(util.camelize('bucket_name')),
-                restore_objects_details=request.pop(util.camelize('restore_objects_details')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                restore_objects_details=request.pop(util.camelize('RestoreObjectsDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1555,12 +1566,12 @@ def test_update_bucket(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.update_bucket(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                bucket_name=request.pop(util.camelize('bucket_name')),
-                update_bucket_details=request.pop(util.camelize('update_bucket_details')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                update_bucket_details=request.pop(util.camelize('UpdateBucketDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1597,11 +1608,11 @@ def test_update_namespace_metadata(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.update_namespace_metadata(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                update_namespace_metadata_details=request.pop(util.camelize('update_namespace_metadata_details')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                update_namespace_metadata_details=request.pop(util.camelize('UpdateNamespaceMetadataDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1638,15 +1649,15 @@ def test_upload_part(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
             response = client.upload_part(
-                namespace_name=request.pop(util.camelize('namespace_name')),
-                bucket_name=request.pop(util.camelize('bucket_name')),
-                object_name=request.pop(util.camelize('object_name')),
-                upload_id=request.pop(util.camelize('upload_id')),
-                upload_part_num=request.pop(util.camelize('upload_part_num')),
-                upload_part_body=request.pop(util.camelize('upload_part_body')),
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                object_name=request.pop(util.camelize('objectName')),
+                upload_id=request.pop(util.camelize('uploadId')),
+                upload_part_num=request.pop(util.camelize('uploadPartNum')),
+                upload_part_body=request.pop(util.camelize('UploadPartBody')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

@@ -1,3 +1,4 @@
+# Code generated. DO NOT EDIT.
 # coding: utf-8
 # Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
@@ -17,15 +18,18 @@ def session_agnostic_query_matcher(r1, r2):
 
 @pytest.fixture(autouse=True, scope='function')
 def vcr_fixture(request):
-    # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
-    # instead of 'query' matcher (which ignores sessionId in the url)
-    # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
-    custom_vcr = test_config_container.create_vcr()
-    custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
-
-    cassette_location = os.path.join('generated', 'dns_{name}.yml'.format(name=request.function.__name__))
-    with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+    if test_config_container.test_mode == 'mock':
         yield
+    else:
+        # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
+        # instead of 'query' matcher (which ignores sessionId in the url)
+        # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
+        custom_vcr = test_config_container.create_vcr()
+        custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
+
+        cassette_location = os.path.join('generated', 'dns_{name}.yml'.format(name=request.function.__name__))
+        with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+            yield
 
 
 # IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
@@ -45,11 +49,11 @@ def test_change_steering_policy_compartment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.change_steering_policy_compartment(
-                steering_policy_id=request.pop(util.camelize('steering_policy_id')),
-                change_steering_policy_compartment_details=request.pop(util.camelize('change_steering_policy_compartment_details')),
+                steering_policy_id=request.pop(util.camelize('steeringPolicyId')),
+                change_steering_policy_compartment_details=request.pop(util.camelize('ChangeSteeringPolicyCompartmentDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -86,11 +90,11 @@ def test_change_tsig_key_compartment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.change_tsig_key_compartment(
-                tsig_key_id=request.pop(util.camelize('tsig_key_id')),
-                change_tsig_key_compartment_details=request.pop(util.camelize('change_tsig_key_compartment_details')),
+                tsig_key_id=request.pop(util.camelize('tsigKeyId')),
+                change_tsig_key_compartment_details=request.pop(util.camelize('ChangeTsigKeyCompartmentDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -127,11 +131,11 @@ def test_change_zone_compartment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.change_zone_compartment(
-                zone_id=request.pop(util.camelize('zone_id')),
-                change_zone_compartment_details=request.pop(util.camelize('change_zone_compartment_details')),
+                zone_id=request.pop(util.camelize('zoneId')),
+                change_zone_compartment_details=request.pop(util.camelize('ChangeZoneCompartmentDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -168,10 +172,10 @@ def test_create_steering_policy(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.create_steering_policy(
-                create_steering_policy_details=request.pop(util.camelize('create_steering_policy_details')),
+                create_steering_policy_details=request.pop(util.camelize('CreateSteeringPolicyDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -208,10 +212,10 @@ def test_create_steering_policy_attachment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.create_steering_policy_attachment(
-                create_steering_policy_attachment_details=request.pop(util.camelize('create_steering_policy_attachment_details')),
+                create_steering_policy_attachment_details=request.pop(util.camelize('CreateSteeringPolicyAttachmentDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -248,10 +252,10 @@ def test_create_tsig_key(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.create_tsig_key(
-                create_tsig_key_details=request.pop(util.camelize('create_tsig_key_details')),
+                create_tsig_key_details=request.pop(util.camelize('CreateTsigKeyDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -288,10 +292,10 @@ def test_create_zone(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.create_zone(
-                create_zone_details=request.pop(util.camelize('create_zone_details')),
+                create_zone_details=request.pop(util.camelize('CreateZoneDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -328,10 +332,10 @@ def test_delete_domain_records(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.delete_domain_records(
-                zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
+                zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                 domain=request.pop(util.camelize('domain')),
                 **(util.camel_to_snake_keys(request))
             )
@@ -369,10 +373,10 @@ def test_delete_rr_set(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.delete_rr_set(
-                zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
+                zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                 domain=request.pop(util.camelize('domain')),
                 rtype=request.pop(util.camelize('rtype')),
                 **(util.camel_to_snake_keys(request))
@@ -411,10 +415,10 @@ def test_delete_steering_policy(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.delete_steering_policy(
-                steering_policy_id=request.pop(util.camelize('steering_policy_id')),
+                steering_policy_id=request.pop(util.camelize('steeringPolicyId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -451,10 +455,10 @@ def test_delete_steering_policy_attachment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.delete_steering_policy_attachment(
-                steering_policy_attachment_id=request.pop(util.camelize('steering_policy_attachment_id')),
+                steering_policy_attachment_id=request.pop(util.camelize('steeringPolicyAttachmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -491,10 +495,10 @@ def test_delete_tsig_key(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.delete_tsig_key(
-                tsig_key_id=request.pop(util.camelize('tsig_key_id')),
+                tsig_key_id=request.pop(util.camelize('tsigKeyId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -531,10 +535,10 @@ def test_delete_zone(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.delete_zone(
-                zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
+                zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -562,6 +566,7 @@ def test_get_domain_records(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('dns', util.camelize('dns'), 'GetDomainRecords')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='GetDomainRecords')
 
@@ -571,19 +576,19 @@ def test_get_domain_records(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.get_domain_records(
-                zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
+                zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                 domain=request.pop(util.camelize('domain')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.get_domain_records(
-                    zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
+                    zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                     domain=request.pop(util.camelize('domain')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
@@ -594,7 +599,7 @@ def test_get_domain_records(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.get_domain_records(
-                        zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
+                        zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                         domain=request.pop(util.camelize('domain')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
@@ -624,6 +629,7 @@ def test_get_rr_set(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('dns', util.camelize('dns'), 'GetRRSet')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='GetRRSet')
 
@@ -633,20 +639,20 @@ def test_get_rr_set(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.get_rr_set(
-                zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
+                zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                 domain=request.pop(util.camelize('domain')),
                 rtype=request.pop(util.camelize('rtype')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.get_rr_set(
-                    zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
+                    zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                     domain=request.pop(util.camelize('domain')),
                     rtype=request.pop(util.camelize('rtype')),
                     page=next_page,
@@ -658,7 +664,7 @@ def test_get_rr_set(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.get_rr_set(
-                        zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
+                        zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                         domain=request.pop(util.camelize('domain')),
                         rtype=request.pop(util.camelize('rtype')),
                         page=next_response.headers[prev_page],
@@ -698,10 +704,10 @@ def test_get_steering_policy(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.get_steering_policy(
-                steering_policy_id=request.pop(util.camelize('steering_policy_id')),
+                steering_policy_id=request.pop(util.camelize('steeringPolicyId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -738,10 +744,10 @@ def test_get_steering_policy_attachment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.get_steering_policy_attachment(
-                steering_policy_attachment_id=request.pop(util.camelize('steering_policy_attachment_id')),
+                steering_policy_attachment_id=request.pop(util.camelize('steeringPolicyAttachmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -778,10 +784,10 @@ def test_get_tsig_key(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.get_tsig_key(
-                tsig_key_id=request.pop(util.camelize('tsig_key_id')),
+                tsig_key_id=request.pop(util.camelize('tsigKeyId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -818,10 +824,10 @@ def test_get_zone(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.get_zone(
-                zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
+                zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -849,6 +855,7 @@ def test_get_zone_records(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('dns', util.camelize('dns'), 'GetZoneRecords')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='GetZoneRecords')
 
@@ -858,18 +865,18 @@ def test_get_zone_records(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.get_zone_records(
-                zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
+                zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.get_zone_records(
-                    zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
+                    zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -879,7 +886,7 @@ def test_get_zone_records(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.get_zone_records(
-                        zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
+                        zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -908,6 +915,7 @@ def test_list_steering_policies(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('dns', util.camelize('dns'), 'ListSteeringPolicies')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='ListSteeringPolicies')
 
@@ -917,18 +925,18 @@ def test_list_steering_policies(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.list_steering_policies(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_steering_policies(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -938,7 +946,7 @@ def test_list_steering_policies(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_steering_policies(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -967,6 +975,7 @@ def test_list_steering_policy_attachments(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('dns', util.camelize('dns'), 'ListSteeringPolicyAttachments')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='ListSteeringPolicyAttachments')
 
@@ -976,18 +985,18 @@ def test_list_steering_policy_attachments(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.list_steering_policy_attachments(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_steering_policy_attachments(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -997,7 +1006,7 @@ def test_list_steering_policy_attachments(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_steering_policy_attachments(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1026,6 +1035,7 @@ def test_list_tsig_keys(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('dns', util.camelize('dns'), 'ListTsigKeys')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='ListTsigKeys')
 
@@ -1035,18 +1045,18 @@ def test_list_tsig_keys(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.list_tsig_keys(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_tsig_keys(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1056,7 +1066,7 @@ def test_list_tsig_keys(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_tsig_keys(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1085,6 +1095,7 @@ def test_list_zones(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('dns', util.camelize('dns'), 'ListZones')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='dns', api_name='ListZones')
 
@@ -1094,18 +1105,18 @@ def test_list_zones(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.list_zones(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_zones(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1115,7 +1126,7 @@ def test_list_zones(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_zones(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -1153,12 +1164,12 @@ def test_patch_domain_records(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.patch_domain_records(
-                zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
+                zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                 domain=request.pop(util.camelize('domain')),
-                patch_domain_records_details=request.pop(util.camelize('patch_domain_records_details')),
+                patch_domain_records_details=request.pop(util.camelize('PatchDomainRecordsDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1195,13 +1206,13 @@ def test_patch_rr_set(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.patch_rr_set(
-                zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
+                zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                 domain=request.pop(util.camelize('domain')),
                 rtype=request.pop(util.camelize('rtype')),
-                patch_rr_set_details=request.pop(util.camelize('patch_rr_set_details')),
+                patch_rr_set_details=request.pop(util.camelize('PatchRRSetDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1238,11 +1249,11 @@ def test_patch_zone_records(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.patch_zone_records(
-                zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
-                patch_zone_records_details=request.pop(util.camelize('patch_zone_records_details')),
+                zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
+                patch_zone_records_details=request.pop(util.camelize('PatchZoneRecordsDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1279,12 +1290,12 @@ def test_update_domain_records(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.update_domain_records(
-                zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
+                zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                 domain=request.pop(util.camelize('domain')),
-                update_domain_records_details=request.pop(util.camelize('update_domain_records_details')),
+                update_domain_records_details=request.pop(util.camelize('UpdateDomainRecordsDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1321,13 +1332,13 @@ def test_update_rr_set(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.update_rr_set(
-                zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
+                zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
                 domain=request.pop(util.camelize('domain')),
                 rtype=request.pop(util.camelize('rtype')),
-                update_rr_set_details=request.pop(util.camelize('update_rr_set_details')),
+                update_rr_set_details=request.pop(util.camelize('UpdateRRSetDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1364,11 +1375,11 @@ def test_update_steering_policy(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.update_steering_policy(
-                steering_policy_id=request.pop(util.camelize('steering_policy_id')),
-                update_steering_policy_details=request.pop(util.camelize('update_steering_policy_details')),
+                steering_policy_id=request.pop(util.camelize('steeringPolicyId')),
+                update_steering_policy_details=request.pop(util.camelize('UpdateSteeringPolicyDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1405,11 +1416,11 @@ def test_update_steering_policy_attachment(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.update_steering_policy_attachment(
-                steering_policy_attachment_id=request.pop(util.camelize('steering_policy_attachment_id')),
-                update_steering_policy_attachment_details=request.pop(util.camelize('update_steering_policy_attachment_details')),
+                steering_policy_attachment_id=request.pop(util.camelize('steeringPolicyAttachmentId')),
+                update_steering_policy_attachment_details=request.pop(util.camelize('UpdateSteeringPolicyAttachmentDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1446,11 +1457,11 @@ def test_update_tsig_key(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.update_tsig_key(
-                tsig_key_id=request.pop(util.camelize('tsig_key_id')),
-                update_tsig_key_details=request.pop(util.camelize('update_tsig_key_details')),
+                tsig_key_id=request.pop(util.camelize('tsigKeyId')),
+                update_tsig_key_details=request.pop(util.camelize('UpdateTsigKeyDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1487,11 +1498,11 @@ def test_update_zone(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.update_zone(
-                zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
-                update_zone_details=request.pop(util.camelize('update_zone_details')),
+                zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
+                update_zone_details=request.pop(util.camelize('UpdateZoneDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1528,11 +1539,11 @@ def test_update_zone_records(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.dns.DnsClient(config, service_endpoint=service_endpoint)
             response = client.update_zone_records(
-                zone_name_or_id=request.pop(util.camelize('zone_name_or_id')),
-                update_zone_records_details=request.pop(util.camelize('update_zone_records_details')),
+                zone_name_or_id=request.pop(util.camelize('zoneNameOrId')),
+                update_zone_records_details=request.pop(util.camelize('UpdateZoneRecordsDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

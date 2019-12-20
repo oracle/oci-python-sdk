@@ -1,3 +1,4 @@
+# Code generated. DO NOT EDIT.
 # coding: utf-8
 # Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
@@ -17,15 +18,18 @@ def session_agnostic_query_matcher(r1, r2):
 
 @pytest.fixture(autouse=True, scope='function')
 def vcr_fixture(request):
-    # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
-    # instead of 'query' matcher (which ignores sessionId in the url)
-    # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
-    custom_vcr = test_config_container.create_vcr()
-    custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
-
-    cassette_location = os.path.join('generated', 'marketplace_{name}.yml'.format(name=request.function.__name__))
-    with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+    if test_config_container.test_mode == 'mock':
         yield
+    else:
+        # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
+        # instead of 'query' matcher (which ignores sessionId in the url)
+        # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
+        custom_vcr = test_config_container.create_vcr()
+        custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
+
+        cassette_location = os.path.join('generated', 'marketplace_{name}.yml'.format(name=request.function.__name__))
+        with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+            yield
 
 
 # IssueRoutingInfo tag="default" email="oci_marketplace_seattle_us_grp@oracle.com" jiraProject="MAR" opsJiraProject="CMP"
@@ -45,10 +49,10 @@ def test_create_accepted_agreement(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.create_accepted_agreement(
-                create_accepted_agreement_details=request.pop(util.camelize('create_accepted_agreement_details')),
+                create_accepted_agreement_details=request.pop(util.camelize('CreateAcceptedAgreementDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -85,10 +89,10 @@ def test_delete_accepted_agreement(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.delete_accepted_agreement(
-                accepted_agreement_id=request.pop(util.camelize('accepted_agreement_id')),
+                accepted_agreement_id=request.pop(util.camelize('acceptedAgreementId')),
                 signature=request.pop(util.camelize('signature')),
                 **(util.camel_to_snake_keys(request))
             )
@@ -126,10 +130,10 @@ def test_get_accepted_agreement(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.get_accepted_agreement(
-                accepted_agreement_id=request.pop(util.camelize('accepted_agreement_id')),
+                accepted_agreement_id=request.pop(util.camelize('acceptedAgreementId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -166,12 +170,12 @@ def test_get_agreement(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.get_agreement(
-                listing_id=request.pop(util.camelize('listing_id')),
-                package_version=request.pop(util.camelize('package_version')),
-                agreement_id=request.pop(util.camelize('agreement_id')),
+                listing_id=request.pop(util.camelize('listingId')),
+                package_version=request.pop(util.camelize('packageVersion')),
+                agreement_id=request.pop(util.camelize('agreementId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -208,10 +212,10 @@ def test_get_listing(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.get_listing(
-                listing_id=request.pop(util.camelize('listing_id')),
+                listing_id=request.pop(util.camelize('listingId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -248,11 +252,11 @@ def test_get_package(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.get_package(
-                listing_id=request.pop(util.camelize('listing_id')),
-                package_version=request.pop(util.camelize('package_version')),
+                listing_id=request.pop(util.camelize('listingId')),
+                package_version=request.pop(util.camelize('packageVersion')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -280,6 +284,7 @@ def test_list_accepted_agreements(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('marketplace', util.camelize('marketplace'), 'ListAcceptedAgreements')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='marketplace', api_name='ListAcceptedAgreements')
 
@@ -289,18 +294,18 @@ def test_list_accepted_agreements(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.list_accepted_agreements(
-                compartment_id=request.pop(util.camelize('compartment_id')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_accepted_agreements(
-                    compartment_id=request.pop(util.camelize('compartment_id')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -310,7 +315,7 @@ def test_list_accepted_agreements(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_accepted_agreements(
-                        compartment_id=request.pop(util.camelize('compartment_id')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -339,6 +344,7 @@ def test_list_agreements(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('marketplace', util.camelize('marketplace'), 'ListAgreements')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='marketplace', api_name='ListAgreements')
 
@@ -348,20 +354,20 @@ def test_list_agreements(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.list_agreements(
-                listing_id=request.pop(util.camelize('listing_id')),
-                package_version=request.pop(util.camelize('package_version')),
+                listing_id=request.pop(util.camelize('listingId')),
+                package_version=request.pop(util.camelize('packageVersion')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_agreements(
-                    listing_id=request.pop(util.camelize('listing_id')),
-                    package_version=request.pop(util.camelize('package_version')),
+                    listing_id=request.pop(util.camelize('listingId')),
+                    package_version=request.pop(util.camelize('packageVersion')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -371,8 +377,8 @@ def test_list_agreements(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_agreements(
-                        listing_id=request.pop(util.camelize('listing_id')),
-                        package_version=request.pop(util.camelize('package_version')),
+                        listing_id=request.pop(util.camelize('listingId')),
+                        package_version=request.pop(util.camelize('packageVersion')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -401,6 +407,7 @@ def test_list_categories(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('marketplace', util.camelize('marketplace'), 'ListCategories')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='marketplace', api_name='ListCategories')
 
@@ -410,13 +417,13 @@ def test_list_categories(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.list_categories(
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_categories(
@@ -457,6 +464,7 @@ def test_list_listings(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('marketplace', util.camelize('marketplace'), 'ListListings')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='marketplace', api_name='ListListings')
 
@@ -466,13 +474,13 @@ def test_list_listings(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.list_listings(
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_listings(
@@ -513,6 +521,7 @@ def test_list_packages(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('marketplace', util.camelize('marketplace'), 'ListPackages')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='marketplace', api_name='ListPackages')
 
@@ -522,18 +531,18 @@ def test_list_packages(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.list_packages(
-                listing_id=request.pop(util.camelize('listing_id')),
+                listing_id=request.pop(util.camelize('listingId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_packages(
-                    listing_id=request.pop(util.camelize('listing_id')),
+                    listing_id=request.pop(util.camelize('listingId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -543,7 +552,7 @@ def test_list_packages(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_packages(
-                        listing_id=request.pop(util.camelize('listing_id')),
+                        listing_id=request.pop(util.camelize('listingId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -572,6 +581,7 @@ def test_list_publishers(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('marketplace', util.camelize('marketplace'), 'ListPublishers')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='marketplace', api_name='ListPublishers')
 
@@ -581,13 +591,13 @@ def test_list_publishers(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.list_publishers(
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
-            if response.has_next_page:
+            if not mock_mode and response.has_next_page:
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_publishers(
@@ -637,11 +647,11 @@ def test_update_accepted_agreement(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.update_accepted_agreement(
-                accepted_agreement_id=request.pop(util.camelize('accepted_agreement_id')),
-                update_accepted_agreement_details=request.pop(util.camelize('update_accepted_agreement_details')),
+                accepted_agreement_id=request.pop(util.camelize('acceptedAgreementId')),
+                update_accepted_agreement_details=request.pop(util.camelize('UpdateAcceptedAgreementDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

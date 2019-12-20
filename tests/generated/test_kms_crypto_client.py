@@ -1,3 +1,4 @@
+# Code generated. DO NOT EDIT.
 # coding: utf-8
 # Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
@@ -17,15 +18,18 @@ def session_agnostic_query_matcher(r1, r2):
 
 @pytest.fixture(autouse=True, scope='function')
 def vcr_fixture(request):
-    # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
-    # instead of 'query' matcher (which ignores sessionId in the url)
-    # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
-    custom_vcr = test_config_container.create_vcr()
-    custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
-
-    cassette_location = os.path.join('generated', 'key_management_{name}.yml'.format(name=request.function.__name__))
-    with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+    if test_config_container.test_mode == 'mock':
         yield
+    else:
+        # use the default matching logic (link below) with the exception of 'session_agnostic_query_matcher'
+        # instead of 'query' matcher (which ignores sessionId in the url)
+        # https://vcrpy.readthedocs.io/en/latest/configuration.html#request-matching
+        custom_vcr = test_config_container.create_vcr()
+        custom_vcr.register_matcher('session_agnostic_query_matcher', session_agnostic_query_matcher)
+
+        cassette_location = os.path.join('generated', 'key_management_{name}.yml'.format(name=request.function.__name__))
+        with custom_vcr.use_cassette(cassette_location, match_on=['method', 'scheme', 'host', 'port', 'path', 'session_agnostic_query_matcher']):
+            yield
 
 
 # IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
@@ -48,7 +52,7 @@ def test_decrypt(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("key_management", "KmsCryptoClient", "Decrypt")
             client = oci.key_management.KmsCryptoClient(config, service_endpoint=service_endpoint)
             response = client.decrypt(
-                decrypt_data_details=request.pop(util.camelize('decrypt_data_details')),
+                decrypt_data_details=request.pop(util.camelize('DecryptDataDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -88,7 +92,7 @@ def test_encrypt(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("key_management", "KmsCryptoClient", "Encrypt")
             client = oci.key_management.KmsCryptoClient(config, service_endpoint=service_endpoint)
             response = client.encrypt(
-                encrypt_data_details=request.pop(util.camelize('encrypt_data_details')),
+                encrypt_data_details=request.pop(util.camelize('EncryptDataDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -128,7 +132,7 @@ def test_generate_data_encryption_key(testing_service_client):
             service_endpoint = testing_service_client.get_endpoint("key_management", "KmsCryptoClient", "GenerateDataEncryptionKey")
             client = oci.key_management.KmsCryptoClient(config, service_endpoint=service_endpoint)
             response = client.generate_data_encryption_key(
-                generate_key_details=request.pop(util.camelize('generate_key_details')),
+                generate_key_details=request.pop(util.camelize('GenerateKeyDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

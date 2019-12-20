@@ -64,3 +64,12 @@ def test_deserialize_datetime(identity, config):
     client = oci.BaseClient('identity', config, identity.base_client.signer, {})
     ddt = client._BaseClient__deserialize_datetime('2018-11-30T18:49:58.825Z')
     assert ddt.tzinfo is not None
+
+
+def test_default_timeout(identity, config):
+    client = oci.BaseClient('identity', config, identity.base_client.signer, {})
+    assert client.timeout == (10.0, 60.0)
+    client = oci.BaseClient('identity', config, identity.base_client.signer, {}, timeout=(20, 70))
+    assert client.timeout == (20.0, 70.0)
+    client = oci.BaseClient('identity', config, identity.base_client.signer, {}, timeout=20)
+    assert client.timeout == 20
