@@ -118,6 +118,7 @@ class ShowOCIData(object):
             'config_profile': self.service.flags.config_section,
             'use_instance_principals': self.service.flags.use_instance_principals,
             'version': self.service.flags.showoci_version,
+            'override_tenant_id': self.service.flags.filter_by_tenancy_id,
             'datetime': start_time,
             'cmdline': cmdline,
             'oci_sdk_version': self.service.get_oci_version()
@@ -302,6 +303,14 @@ class ShowOCIData(object):
                     if value is not None:
                         if len(value) > 0:
                             data['quotas'] = value
+                            has_data = True
+
+                # paas native services
+                if self.service.flags.read_paas_native:
+                    value = self.__get_paas_native_main(region_name, compartment)
+                    if value is not None:
+                        if len(value) > 0:
+                            data['paas_services'] = value
                             has_data = True
 
                 # add the data to main Variable
@@ -2470,4 +2479,37 @@ class ShowOCIData(object):
 
         except Exception as e:
             self.__print_error("__get_quotas_main", e)
+            pass
+
+    ##########################################################################
+    # PaaS Native
+    ##########################################################################
+    def __get_paas_native_main(self, region_name, compartment):
+        try:
+            paas_services = {}
+
+            # oic
+            oic = self.service.search_multi_items(self.service.C_PAAS_NATIVE, self.service.C_PAAS_NATIVE_OIC, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if oic:
+                paas_services['oic'] = oic
+
+            # oac
+            oac = self.service.search_multi_items(self.service.C_PAAS_NATIVE, self.service.C_PAAS_NATIVE_OAC, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if oac:
+                paas_services['oac'] = oac
+
+            # oce
+            oce = self.service.search_multi_items(self.service.C_PAAS_NATIVE, self.service.C_PAAS_NATIVE_OCE, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if oce:
+                paas_services['oce'] = oce
+
+            # oda
+            oda = self.service.search_multi_items(self.service.C_PAAS_NATIVE, self.service.C_PAAS_NATIVE_ODA, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if oda:
+                paas_services['oda'] = oda
+
+            return paas_services
+
+        except Exception as e:
+            self.__print_error("__get_paas_native_main", e)
             pass

@@ -15,6 +15,8 @@
 #
 # ShowOCIFlags   - class has the flags for calling the service Classes
 #
+# PaaS Services - OCE and OIC Tested
+#                 ODA and OAC need to be tested
 ##########################################################################
 from __future__ import print_function
 import oci
@@ -44,6 +46,7 @@ class ShowOCIFlags(object):
     read_ManagedCompartmentForPaaS = True
     read_root_compartment = True
     read_limits = False
+    read_paas_native = False
 
     # is_vcn_exist_for_region
     is_vcn_exist_for_region = False
@@ -52,6 +55,7 @@ class ShowOCIFlags(object):
     filter_by_region = ""
     filter_by_compartment = ""
     filter_by_compartment_path = ""
+    filter_by_tenancy_id = ""
 
     # version, config files and proxy
     proxy = ""
@@ -86,6 +90,7 @@ class ShowOCIFlags(object):
                 self.read_budgets or
                 self.read_monitoring_notifications or
                 self.read_edge or
+                self.read_paas_native or
                 self.read_limits)
 
     ############################################
@@ -104,7 +109,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.6.4"
+    oci_compatible_version = "2.8.0"
 
     ##########################################################################
     # Global Constants
@@ -232,6 +237,13 @@ class ShowOCIService(object):
     C_LIMITS_SERVICES = "services"
     C_LIMITS_QUOTAS = "quotas"
 
+    # Native Services
+    C_PAAS_NATIVE = "paas_native"
+    C_PAAS_NATIVE_OIC = "oic"
+    C_PAAS_NATIVE_OAC = "oac"
+    C_PAAS_NATIVE_ODA = "oda"
+    C_PAAS_NATIVE_OCE = "oce"
+
     # Error flag and reboot migration
     error = 0
     warning = 0
@@ -261,11 +273,14 @@ class ShowOCIService(object):
         {'shape': 'BM.Standard.B1.44', 'cpu': 44, 'memory': 512, 'storage': 0},
         {'shape': 'BM.Standard.E2.64', 'cpu': 64, 'memory': 512, 'storage': 0},
         {'shape': 'Exadata.Full1.336', 'cpu': 336, 'memory': 5760, 'storage': 336},
-        {'shape': 'Exadata.Full2.368', 'cpu': 368, 'memory': 5760, 'storage': 424},
         {'shape': 'Exadata.Half1.168', 'cpu': 168, 'memory': 2880, 'storage': 168},
-        {'shape': 'Exadata.Half2.184', 'cpu': 184, 'memory': 2880, 'storage': 212},
         {'shape': 'Exadata.Quarter1.84', 'cpu': 84, 'memory': 1440, 'storage': 84},
+        {'shape': 'Exadata.Full2.368', 'cpu': 368, 'memory': 5760, 'storage': 424},
+        {'shape': 'Exadata.Half2.184', 'cpu': 184, 'memory': 2880, 'storage': 212},
         {'shape': 'Exadata.Quarter2.92', 'cpu': 92, 'memory': 1440, 'storage': 106},
+        {'shape': 'Exadata.Full3.400', 'cpu': 400, 'memory': 5760, 'storage': 479},
+        {'shape': 'Exadata.Half3.200', 'cpu': 200, 'memory': 2880, 'storage': 239},
+        {'shape': 'Exadata.Quarter3.100', 'cpu': 100, 'memory': 1440, 'storage': 119},
         {'shape': 'Exadata.Base.48', 'cpu': 48, 'memory': 720, 'storage': 74.8},
         {'shape': 'VM.CPU3.1', 'cpu': 6, 'memory': 90, 'storage': 0},
         {'shape': 'VM.CPU3.2', 'cpu': 12, 'memory': 180, 'storage': 0},
@@ -390,6 +405,15 @@ class ShowOCIService(object):
     ##########################################################################
     def get_tenancy(self):
         return self.data[self.C_IDENTITY][self.C_IDENTITY_TENANCY]
+
+    ##########################################################################
+    # get tenancy id from file or override
+    ##########################################################################
+    def get_tenancy_id(self):
+        if self.flags.filter_by_tenancy_id:
+            return self.flags.filter_by_tenancy_id
+        else:
+            return self.config["tenancy"]
 
     ##########################################################################
     # return compartment data
@@ -591,7 +615,7 @@ class ShowOCIService(object):
     # check service error to warn instead of error
     ##########################################################################
     def __check_service_error(self, code):
-        return 'auth' in str(code).lower() or 'notfound' in str(code).lower() or code == 'Forbidden' or code == 'TooManyRequests' or code == 'IncorrectState' or code == 'LimitExceeded'
+        return 'max retries exceeded' in str(code).lower() or 'auth' in str(code).lower() or 'notfound' in str(code).lower() or code == 'Forbidden' or code == 'TooManyRequests' or code == 'IncorrectState' or code == 'LimitExceeded'
 
     ##########################################################################
     # check request error if service not exists for region
@@ -761,6 +785,10 @@ class ShowOCIService(object):
         if self.flags.read_limits:
             self.__load_limits_main()
 
+        # email distributions
+        if self.flags.read_paas_native:
+            self.__load_paas_native_main()
+
         et = time.time() - region_start_time
         print("*** Elapsed Region '" + region_name + "' - " + '{:02d}:{:02d}:{:02d}'.format(round(et // 3600), (round(et % 3600 // 60)), round(et % 60)) + " ***")
 
@@ -777,12 +805,17 @@ class ShowOCIService(object):
                 identity.base_client.session.proxies = {'https': self.flags.proxy}
 
             # get tenancy id from the config file
-            tenancy_id = self.config["tenancy"]
+            tenancy_id = self.get_tenancy_id()
             self.data[self.C_IDENTITY] = {}
 
             # loading main components - tenancy and compartments
             self.__load_identity_tenancy(identity, tenancy_id)
-            self.__load_identity_compartments(identity)
+
+            # Load single compartment or all
+            if 'ocid1.compartment' in self.flags.filter_by_compartment:
+                self.__load_identity_single_compartments(identity)
+            else:
+                self.__load_identity_compartments(identity)
 
             # if loading the full identity - load the rest
             if self.flags.read_identity:
@@ -906,7 +939,7 @@ class ShowOCIService(object):
             # if filter by compartment, then reduce list and return new list
             if self.flags.filter_by_compartment:
                 for x in sorted_compartments:
-                    if self.flags.filter_by_compartment in x['name']:
+                    if self.flags.filter_by_compartment in x['name'] or self.flags.filter_by_compartment in x['id']:
                         filtered_compart.append(x)
 
             # if filter by path compartment, then reduce list and return new list
@@ -923,6 +956,39 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             raise Exception("Error in __load_identity_compartments: " + str(e.args))
+
+    ##########################################################################
+    # Load single compartment to support BOAT authentication
+    ##########################################################################
+    def __load_identity_single_compartments(self, identity):
+
+        self.__load_print_status("Compartments")
+        start_time = time.time()
+
+        compartments = []
+        try:
+
+            # read compartments to variable
+            compartment = ""
+            try:
+                compartment = identity.get_compartment(self.flags.filter_by_compartment).data
+            except oci.exceptions.ServiceError as e:
+                if self.__check_service_error(e.code):
+                    self.__load_print_auth_warning()
+                else:
+                    raise
+
+            if compartment:
+                cvalue = {'id': str(compartment.id), 'name': str(compartment.name), 'path': str(compartment.name)}
+                compartments.append(cvalue)
+
+            self.data[self.C_IDENTITY][self.C_IDENTITY_COMPARTMENTS] = compartments
+            self.__load_print_cnt(len(compartments), start_time)
+
+        except oci.exceptions.RequestException:
+            raise
+        except Exception as e:
+            raise Exception("Error in __load_identity_single_compartments: " + str(e.args))
 
     ##########################################################################
     # Get Identity Users
@@ -1217,7 +1283,7 @@ class ShowOCIService(object):
             # get the domains
             availability_domains = []
             try:
-                availability_domains = identity.list_availability_domains(self.config["tenancy"]).data
+                availability_domains = identity.list_availability_domains(self.get_tenancy_id()).data
             except oci.exceptions.ServiceError as e:
                 if self.__check_service_error(e.code):
                     self.__load_print_auth_warning()
@@ -5911,7 +5977,7 @@ class ShowOCIService(object):
                 streams = []
                 try:
                     streams = oci.pagination.list_call_get_all_results(
-                        stream_client.list_streams, compartment['id'],
+                        stream_client.list_streams, compartment_id=compartment['id'],
                         sort_by="NAME",
                         lifecycle_state=oci.streaming.models.StreamSummary.LIFECYCLE_STATE_ACTIVE
                     ).data
@@ -6492,6 +6558,9 @@ class ShowOCIService(object):
                             self.__load_print_auth_warning()
                             continue
                         raise
+                    except oci.exceptions.ConnectTimeout:
+                        self.__load_print_auth_warning()
+                        continue
 
                     val = {'id': str(health.id),
                            'results_url': str(health.results_url),
@@ -6525,6 +6594,362 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_edge_healthchecks_http", e)
+            return data
+
+    ##########################################################################
+    # __load_paas_native_main
+    ##########################################################################
+    #
+    # OCI Classes used:
+    #
+    # oci.integration.IntegrationInstanceClient
+    # oci.analytics.AnalyticsClient
+    # oci.oda.OdaClient
+    # oci.oce.OceInstanceClient
+    # Comment OAC until OAC go live, to avoid timeout
+    ##########################################################################
+    def __load_paas_native_main(self):
+
+        try:
+            print("PaaS Native Services...")
+
+            # clients
+            oic_client = oci.integration.IntegrationInstanceClient(self.config, signer=self.signer, timeout=1)
+            oac_client = oci.analytics.AnalyticsClient(self.config, signer=self.signer, timeout=0.1)
+            oda_client = oci.oda.OdaClient(self.config, signer=self.signer, timeout=1)
+            oce_client = oci.oce.OceInstanceClient(self.config, signer=self.signer, timeout=1)
+
+            if self.flags.proxy:
+                oic_client.base_client.session.proxies = {'https': self.flags.proxy}
+                oac_client.base_client.session.proxies = {'https': self.flags.proxy}
+                oda_client.base_client.session.proxies = {'https': self.flags.proxy}
+                oce_client.base_client.session.proxies = {'https': self.flags.proxy}
+
+            # reference to compartments
+            compartments = self.get_compartment()
+
+            # add the key if not exists
+            self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_OAC)
+            self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_OIC)
+            self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_ODA)
+            self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_OCE)
+
+            # reference to paas
+            paas = self.data[self.C_PAAS_NATIVE]
+
+            # append the data
+            paas[self.C_PAAS_NATIVE_OIC] += self.__load_paas_oic(oic_client, compartments)
+            # paas[self.C_PAAS_NATIVE_OAC] += self.__load_paas_oac(oac_client, compartments)
+            paas[self.C_PAAS_NATIVE_ODA] += self.__load_paas_oda(oda_client, compartments)
+            paas[self.C_PAAS_NATIVE_OCE] += self.__load_paas_oce(oce_client, compartments)
+            print("")
+
+        except oci.exceptions.RequestException:
+            raise
+        except oci.exceptions.ServiceError:
+            raise
+        except Exception as e:
+            self.__print_error("__load_paas_native_main", e)
+
+    ##########################################################################
+    # __load_paas_oic
+    ##########################################################################
+    def __load_paas_oic(self, oic_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("OIC Native")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                oics = []
+                try:
+                    oics = oci.pagination.list_call_get_all_results(
+                        oic_client.list_integration_instances,
+                        compartment['id'],
+                        sort_by="DISPLAYNAME"
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning()
+                    continue
+
+                print(".", end="")
+
+                # oic = oci.integration.models.IntegrationInstanceSummary
+                for oic in oics:
+                    if (oic.lifecycle_state == 'ACTIVE' or oic.lifecycle_state == 'UPDATING'):
+
+                        val = {'id': str(oic.id),
+                               'display_name': str(oic.display_name),
+                               'integration_instance_type': str(oic.integration_instance_type),
+                               'time_created': str(oic.time_created),
+                               'time_updated': str(oic.time_updated),
+                               'lifecycle_state': str(oic.lifecycle_state),
+                               'state_message': str(oic.state_message),
+                               'instance_url': str(oic.instance_url),
+                               'message_packs': str(oic.message_packs),
+                               'is_byol': oic.is_byol,
+                               'sum_info': "PaaS OIC Native - Msg Pack",
+                               'sum_size_gb': str(oic.message_packs),
+                               'compartment_name': str(compartment['name']),
+                               'compartment_id': str(compartment['id']),
+                               'region_name': str(self.config['region'])}
+
+                        # add the data
+                        cnt += 1
+                        data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_paas_oic", e)
+            return data
+
+    ##########################################################################
+    # __load_paas_oac
+    ##########################################################################
+    def __load_paas_oac(self, oac_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("OAC Native")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                oacs = []
+                try:
+                    oacs = oci.pagination.list_call_get_all_results(
+                        oac_client.list_analytics_instances,
+                        compartment['id'],
+                        sort_by="name"
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning()
+                    continue
+
+                print(".", end="")
+
+                # oac = oci.analytics.models.AnalyticsInstanceSummary
+                for oac in oacs:
+                    if (oac.lifecycle_state == 'ACTIVE' or oac.lifecycle_state == 'UPDATING'):
+
+                        val = {'id': str(oac.id),
+                               'name': str(oac.name),
+                               'description': str(oac.description),
+                               'time_created': str(oac.time_created),
+                               'time_updated': str(oac.time_updated),
+                               'lifecycle_state': str(oac.lifecycle_state),
+                               'feature_set': str(oac.feature_set),
+                               'license_type': str(oac.license_type),
+                               'capacity_type': str(oac.capacity.capacity_type),
+                               'capacity_value': str(oac.capacity.capacity_value),
+                               'email_notification': str(oac.email_notification),
+                               'service_url': str(oac.service_url),
+                               'sum_info': "PaaS OAC Native",
+                               'sum_size_gb': str(oac.capacity.capacity_value),
+                               'compartment_name': str(compartment['name']),
+                               'compartment_id': str(compartment['id']),
+                               'region_name': str(self.config['region'])}
+
+                        # add the data
+                        cnt += 1
+                        data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_paas_oac", e)
+            return data
+
+    ##########################################################################
+    # __load_paas_oce
+    ##########################################################################
+    def __load_paas_oce(self, oce_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("OCE Native")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                oces = []
+                try:
+                    oces = oci.pagination.list_call_get_all_results(
+                        oce_client.list_oce_instances,
+                        compartment['id'],
+                        sort_by="displayName"
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning()
+                    continue
+
+                print(".", end="")
+
+                # oce = oci.oce.models.OceInstanceSummary
+                for oce in oces:
+                    if oce.lifecycle_state == 'ACTIVE' or oce.lifecycle_state == 'UPDATING':
+                        val = {'id': str(oce.id),
+                               'guid': str(oce.guid),
+                               'description': str(oce.description),
+                               'name': str(oce.name),
+                               'tenancy_name': str(oce.tenancy_name),
+                               'idcs_tenancy': str(oce.idcs_tenancy),
+                               'object_storage_namespace': str(oce.object_storage_namespace),
+                               'admin_email': str(oce.admin_email),
+                               'time_created': str(oce.time_created),
+                               'time_updated': str(oce.time_updated),
+                               'lifecycle_state': str(oce.lifecycle_state),
+                               'state_message': str(oce.state_message),
+                               'service': oce.service,
+                               'sum_info': "PaaS OCE Native",
+                               'sum_size_gb': str("1"),
+                               'compartment_name': str(compartment['name']),
+                               'compartment_id': str(compartment['id']),
+                               'defined_tags': [] if oce.defined_tags is None else oce.defined_tags,
+                               'freeform_tags': [] if oce.freeform_tags is None else oce.freeform_tags,
+                               'region_name': str(self.config['region'])}
+
+                        # add the data
+                        cnt += 1
+                        data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_paas_oce", e)
+            return data
+
+    ##########################################################################
+    # __load_paas_oda
+    ##########################################################################
+    def __load_paas_oda(self, oda_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("ODA Native")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                odas = []
+                try:
+                    odas = oci.pagination.list_call_get_all_results(
+                        oda_client.list_oda_instances,
+                        compartment['id']
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning()
+                    continue
+
+                print(".", end="")
+
+                # oda = oci.oda.models.OdaInstanceSummary
+                for oda in odas:
+                    if (oda.lifecycle_state == 'ACTIVE' or oda.lifecycle_state == 'UPDATING'):
+                        val = {'id': str(oda.id),
+                               'display_name': str(oda.display_name),
+                               'description': str(oda.description),
+                               'shape_name': str(oda.shape_name),
+                               'time_created': str(oda.time_created),
+                               'time_updated': str(oda.time_updated),
+                               'lifecycle_state': str(oda.lifecycle_state),
+                               'lifecycle_sub_state': str(oda.lifecycle_sub_state),
+                               'state_message': str(oda.state_message),
+                               'sum_info': "PaaS ODA Native " + str(oda.shape_name),
+                               'sum_size_gb': str("1"),
+                               'compartment_name': str(compartment['name']),
+                               'compartment_id': str(compartment['id']),
+                               'defined_tags': [] if oda.defined_tags is None else oda.defined_tags,
+                               'freeform_tags': [] if oda.freeform_tags is None else oda.freeform_tags,
+                               'region_name': str(self.config['region'])}
+
+                        # add the data
+                        cnt += 1
+                        data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_paas_oda", e)
             return data
 
     ##########################################################################
