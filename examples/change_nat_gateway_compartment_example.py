@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
 # This sample will create the VCN where the NAT Gateway will be created, and create the NAT Gateway that
 # will be moved to a new compartment.  Cleanup of NAT gateway and VCN is performed after completion of

@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -51,6 +51,10 @@ class CreateAutonomousContainerDatabaseDetails(object):
             Allowed values for this property are: "RELEASE_UPDATES", "RELEASE_UPDATE_REVISIONS"
         :type patch_model: str
 
+        :param maintenance_window_details:
+            The value to assign to the maintenance_window_details property of this CreateAutonomousContainerDatabaseDetails.
+        :type maintenance_window_details: MaintenanceWindow
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateAutonomousContainerDatabaseDetails.
         :type freeform_tags: dict(str, str)
@@ -70,6 +74,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
             'autonomous_exadata_infrastructure_id': 'str',
             'compartment_id': 'str',
             'patch_model': 'str',
+            'maintenance_window_details': 'MaintenanceWindow',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'backup_config': 'AutonomousContainerDatabaseBackupConfig'
@@ -81,6 +86,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
             'autonomous_exadata_infrastructure_id': 'autonomousExadataInfrastructureId',
             'compartment_id': 'compartmentId',
             'patch_model': 'patchModel',
+            'maintenance_window_details': 'maintenanceWindowDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'backup_config': 'backupConfig'
@@ -91,6 +97,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
         self._autonomous_exadata_infrastructure_id = None
         self._compartment_id = None
         self._patch_model = None
+        self._maintenance_window_details = None
         self._freeform_tags = None
         self._defined_tags = None
         self._backup_config = None
@@ -234,6 +241,26 @@ class CreateAutonomousContainerDatabaseDetails(object):
                 .format(allowed_values)
             )
         self._patch_model = patch_model
+
+    @property
+    def maintenance_window_details(self):
+        """
+        Gets the maintenance_window_details of this CreateAutonomousContainerDatabaseDetails.
+
+        :return: The maintenance_window_details of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: MaintenanceWindow
+        """
+        return self._maintenance_window_details
+
+    @maintenance_window_details.setter
+    def maintenance_window_details(self, maintenance_window_details):
+        """
+        Sets the maintenance_window_details of this CreateAutonomousContainerDatabaseDetails.
+
+        :param maintenance_window_details: The maintenance_window_details of this CreateAutonomousContainerDatabaseDetails.
+        :type: MaintenanceWindow
+        """
+        self._maintenance_window_details = maintenance_window_details
 
     @property
     def freeform_tags(self):

@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -35,6 +35,14 @@ class MaintenanceRun(object):
     #: A constant which can be used with the lifecycle_state property of a MaintenanceRun.
     #: This constant has a value of "UPDATING"
     LIFECYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the lifecycle_state property of a MaintenanceRun.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a MaintenanceRun.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
 
     #: A constant which can be used with the target_resource_type property of a MaintenanceRun.
     #: This constant has a value of "AUTONOMOUS_EXADATA_INFRASTRUCTURE"
@@ -91,7 +99,7 @@ class MaintenanceRun(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this MaintenanceRun.
-            Allowed values for this property are: "SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -282,7 +290,7 @@ class MaintenanceRun(object):
         **[Required]** Gets the lifecycle_state of this MaintenanceRun.
         The current state of the Maintenance Run.
 
-        Allowed values for this property are: "SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -301,7 +309,7 @@ class MaintenanceRun(object):
         :param lifecycle_state: The lifecycle_state of this MaintenanceRun.
         :type: str
         """
-        allowed_values = ["SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING"]
+        allowed_values = ["SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING", "DELETING", "DELETED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

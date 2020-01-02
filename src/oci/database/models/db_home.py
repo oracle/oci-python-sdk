@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -118,7 +118,7 @@ class DbHome(object):
     def id(self):
         """
         **[Required]** Gets the id of this DbHome.
-        The `OCID`__ of the database home.
+        The `OCID`__ of the Database Home.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -132,7 +132,7 @@ class DbHome(object):
     def id(self, id):
         """
         Sets the id of this DbHome.
-        The `OCID`__ of the database home.
+        The `OCID`__ of the Database Home.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -174,7 +174,7 @@ class DbHome(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this DbHome.
-        The user-provided name for the database home. The name does not need to be unique.
+        The user-provided name for the Database Home. The name does not need to be unique.
 
 
         :return: The display_name of this DbHome.
@@ -186,7 +186,7 @@ class DbHome(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this DbHome.
-        The user-provided name for the database home. The name does not need to be unique.
+        The user-provided name for the Database Home. The name does not need to be unique.
 
 
         :param display_name: The display_name of this DbHome.
@@ -226,7 +226,7 @@ class DbHome(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this DbHome.
-        The current state of the database home.
+        The current state of the Database Home.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -241,7 +241,7 @@ class DbHome(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this DbHome.
-        The current state of the database home.
+        The current state of the Database Home.
 
 
         :param lifecycle_state: The lifecycle_state of this DbHome.
@@ -336,7 +336,7 @@ class DbHome(object):
     def time_created(self):
         """
         Gets the time_created of this DbHome.
-        The date and time the database home was created.
+        The date and time the Database Home was created.
 
 
         :return: The time_created of this DbHome.
@@ -348,7 +348,7 @@ class DbHome(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this DbHome.
-        The date and time the database home was created.
+        The date and time the Database Home was created.
 
 
         :param time_created: The time_created of this DbHome.

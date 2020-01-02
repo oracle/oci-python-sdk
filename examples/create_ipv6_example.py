@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
 # This script provides a basic example of how to create an IPv6 VNIC attachment to a provided
 # instance using the Python SDK. NOTE: The provided instance must be within an IPv6-enabled VCN.
