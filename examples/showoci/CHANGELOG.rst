@@ -4,17 +4,26 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
-====================
+=====================
+20.01.14 - 2020-01-14
+=====================
+* Added users extract to CVS (thank you Josh)
+* Fixed route extract when previous route is empty
+* Added Native PaaS - OIC/ODA/OCE with -paas flag (Prepared as well OAC)
+* Added filter by compartment ocid if specified with -cp
+* Added -tenantid to overide it over the profile
+
+=====================
 19.11.19 - 2019-11-19
-====================
+=====================
 * Added total block volume in CSV export per instance
 * Added compartment_id to all JSON resources
 * Changed JSON 'compartment' to 'compartment_name' to be aligned across the application
 * Added VPUs to the block and boot volumes
 
-====================
+=====================
 19.10.31 - 2019-10-31
-====================
+=====================
 * Added Storage Management for dbsystem
 * Change output - gb to GB and tb to TB
 * Added compartment_id, compartment_name, region_name to several areas for json
