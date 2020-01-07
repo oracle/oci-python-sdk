@@ -386,6 +386,9 @@ class MultipartObjectAssembler:
             retry_strategy = kwargs['retry_strategy']
 
         if "opc_md5" not in part:
+            # Disable the retry_strategy to work around data corruption issue temporarily
+            retry_strategy = None
+
             if retry_strategy:
                 response = retry_strategy.make_retrying_call(
                     self._upload_part_call,
@@ -401,7 +404,8 @@ class MultipartObjectAssembler:
                     new_kwargs=new_kwargs
                 )
             else:
-                remaining_tries = self.max_retries
+                # Disable the retry_strategy to work around data corruption issue temporarily
+                remaining_tries = 1
                 while remaining_tries > 0:
                     try:
                         response = self._upload_part_call(self.object_storage_client,
