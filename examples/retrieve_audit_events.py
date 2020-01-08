@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
 #  This script retrieves all audit logs across an Oracle Cloud Infrastructure Tenancy.
 #  for a timespan defined by start_time and end_time.
@@ -10,14 +10,14 @@ import datetime
 import oci
 
 
-def get_regions(identity):
+def get_subscription_regions(identity, tenancy_id):
     '''
     To retrieve the list of all available regions.
     '''
     list_of_regions = []
-    list_regions_response = identity.list_regions()
+    list_regions_response = identity.list_region_subscriptions(tenancy_id)
     for r in list_regions_response.data:
-        list_of_regions.append(r.name)
+        list_of_regions.append(r.region_name)
     return list_of_regions
 
 
@@ -74,7 +74,7 @@ end_time = datetime.datetime.utcnow()
 start_time = end_time + datetime.timedelta(days=-5)
 
 # This array will be used to store the list of available regions.
-regions = get_regions(identity)
+regions = get_subscription_regions(identity, tenancy_id)
 
 # This array will be used to store the list of compartments in the tenancy.
 compartments = get_compartments(identity, tenancy_id)

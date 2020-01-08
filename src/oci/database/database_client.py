@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
 from __future__ import absolute_import
 
@@ -1561,11 +1561,11 @@ class DatabaseClient(object):
     def create_db_home(self, create_db_home_with_db_system_id_details, **kwargs):
         """
         CreateDbHome
-        Creates a new database home in the specified DB system based on the request parameters you provide.
+        Creates a new Database Home in the specified DB system based on the request parameters you provide. Applies only to bare metal and Exadata DB systems.
 
 
         :param CreateDbHomeBase create_db_home_with_db_system_id_details: (required)
-            Request to create a new database home.
+            Request to create a new Database Home.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -2364,11 +2364,11 @@ class DatabaseClient(object):
     def delete_db_home(self, db_home_id, **kwargs):
         """
         DeleteDbHome
-        Deletes a DB Home. The DB Home and its database data are local to the DB system and will be lost when it is deleted. Oracle recommends that you back up any data in the DB system prior to deleting it.
+        Deletes a Database Home. The Database Home and its database data are local to the DB system and are lost when you delete the Database Home. Oracle recommends that you back up any data on the DB system before you delete it.
 
 
         :param str db_home_id: (required)
-            The database home `OCID`__.
+            The Database Home `OCID`__.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -2378,7 +2378,9 @@ class DatabaseClient(object):
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
         :param bool perform_final_backup: (optional)
-            Whether to perform a final backup of the database or not. Default is false. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+            Whether to perform a final backup of the database or not. Default is false.
+
+            If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -4138,11 +4140,11 @@ class DatabaseClient(object):
     def get_db_home(self, db_home_id, **kwargs):
         """
         GetDbHome
-        Gets information about the specified database home.
+        Gets information about the specified Database Home.
 
 
         :param str db_home_id: (required)
-            The database home `OCID`__.
+            The Database Home `OCID`__.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -4208,7 +4210,7 @@ class DatabaseClient(object):
 
 
         :param str db_home_id: (required)
-            The database home `OCID`__.
+            The Database Home `OCID`__.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -4280,7 +4282,7 @@ class DatabaseClient(object):
 
 
         :param str db_home_id: (required)
-            The database home `OCID`__.
+            The Database Home `OCID`__.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -6541,7 +6543,7 @@ class DatabaseClient(object):
     def list_databases(self, compartment_id, db_home_id, **kwargs):
         """
         ListDatabases
-        Gets a list of the databases in the specified database home.
+        Gets a list of the databases in the specified Database Home.
 
 
         :param str compartment_id: (required)
@@ -6550,7 +6552,7 @@ class DatabaseClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str db_home_id: (required)
-            A database home `OCID`__.
+            A Database Home `OCID`__.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -6668,11 +6670,11 @@ class DatabaseClient(object):
     def list_db_home_patch_history_entries(self, db_home_id, **kwargs):
         """
         ListDbHomePatchHistoryEntries
-        Gets history of the actions taken for patches for the specified database home.
+        Gets history of the actions taken for patches for the specified Database Home.
 
 
         :param str db_home_id: (required)
-            The database home `OCID`__.
+            The Database Home `OCID`__.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -6753,11 +6755,11 @@ class DatabaseClient(object):
     def list_db_home_patches(self, db_home_id, **kwargs):
         """
         ListDbHomePatches
-        Lists patches applicable to the requested database home.
+        Lists patches applicable to the requested Database Home.
 
 
         :param str db_home_id: (required)
-            The database home `OCID`__.
+            The Database Home `OCID`__.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -6838,7 +6840,7 @@ class DatabaseClient(object):
     def list_db_homes(self, compartment_id, **kwargs):
         """
         ListDbHomes
-        Gets a list of database homes in the specified DB system and compartment. A database home is a directory where Oracle Database software is installed.
+        Gets a list of Database Homes in the specified DB system and compartment. A Database Home is a directory where Oracle Database software is installed.
 
 
         :param str compartment_id: (required)
@@ -7835,7 +7837,7 @@ class DatabaseClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state exactly.
 
-            Allowed values are: "SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING"
+            Allowed values are: "SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING", "DELETING", "DELETED"
 
         :param str availability_domain: (optional)
             A filter to return only resources that match the given availability domain exactly.
@@ -7901,7 +7903,7 @@ class DatabaseClient(object):
                 )
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING"]
+            lifecycle_state_allowed_values = ["SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING", "DELETING", "DELETED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
@@ -9991,7 +9993,7 @@ class DatabaseClient(object):
 
 
         :param str db_home_id: (required)
-            The database home `OCID`__.
+            The Database Home `OCID`__.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

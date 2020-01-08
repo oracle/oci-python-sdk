@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
 from __future__ import absolute_import
 
@@ -2767,6 +2767,10 @@ class ObjectStorageClient(object):
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
             retry_strategy = kwargs.get('retry_strategy')
+
+        # Disable the retry_strategy to work around data corruption issue temporarily
+        if retry_strategy:
+            retry_strategy = None
 
         if retry_strategy:
             return retry_strategy.make_retrying_call(

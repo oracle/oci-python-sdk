@@ -51,6 +51,25 @@ Since ``config`` is a dict, you can also build it manually and check it with
     from oci.config import validate_config
     validate_config(config)
 
+If you want to use the private key which is not in the key file, key_content can be the backup of key_file:
+
+.. code-block:: python
+
+    import os
+    from myproject import testrunner
+    user_ocid = os.environ["USER_OCID"]
+
+    config = {
+        "user": user_ocid,
+        "key_content": testrunner.key_content,
+        "fingerprint": calc_fingerprint(key_content),
+        "tenancy": testrunner.tenancy,
+        "region": testrunner.region
+    }
+
+    from oci.config import validate_config
+    validate_config(config)
+
 .. seealso::
 
     The `SDK and Tool Configuration`__ page has a full description of the required and supported options.

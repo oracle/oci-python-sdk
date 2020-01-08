@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -11,7 +11,7 @@ class PatchDetails(object):
     """
     The details about what actions to perform and using what patch to the specified target.
     This is part of an update request that is applied to a version field on the target such
-    as DB system, database home, etc.
+    as DB system, Database Home, etc.
     """
 
     #: A constant which can be used with the action property of a PatchDetails.

@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -127,6 +127,10 @@ class AutonomousContainerDatabaseSummary(object):
             The value to assign to the next_maintenance_run_id property of this AutonomousContainerDatabaseSummary.
         :type next_maintenance_run_id: str
 
+        :param maintenance_window:
+            The value to assign to the maintenance_window property of this AutonomousContainerDatabaseSummary.
+        :type maintenance_window: MaintenanceWindow
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this AutonomousContainerDatabaseSummary.
         :type freeform_tags: dict(str, str)
@@ -156,6 +160,7 @@ class AutonomousContainerDatabaseSummary(object):
             'patch_model': 'str',
             'last_maintenance_run_id': 'str',
             'next_maintenance_run_id': 'str',
+            'maintenance_window': 'MaintenanceWindow',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'availability_domain': 'str',
@@ -174,6 +179,7 @@ class AutonomousContainerDatabaseSummary(object):
             'patch_model': 'patchModel',
             'last_maintenance_run_id': 'lastMaintenanceRunId',
             'next_maintenance_run_id': 'nextMaintenanceRunId',
+            'maintenance_window': 'maintenanceWindow',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'availability_domain': 'availabilityDomain',
@@ -191,6 +197,7 @@ class AutonomousContainerDatabaseSummary(object):
         self._patch_model = None
         self._last_maintenance_run_id = None
         self._next_maintenance_run_id = None
+        self._maintenance_window = None
         self._freeform_tags = None
         self._defined_tags = None
         self._availability_domain = None
@@ -485,6 +492,26 @@ class AutonomousContainerDatabaseSummary(object):
         :type: str
         """
         self._next_maintenance_run_id = next_maintenance_run_id
+
+    @property
+    def maintenance_window(self):
+        """
+        Gets the maintenance_window of this AutonomousContainerDatabaseSummary.
+
+        :return: The maintenance_window of this AutonomousContainerDatabaseSummary.
+        :rtype: MaintenanceWindow
+        """
+        return self._maintenance_window
+
+    @maintenance_window.setter
+    def maintenance_window(self, maintenance_window):
+        """
+        Sets the maintenance_window of this AutonomousContainerDatabaseSummary.
+
+        :param maintenance_window: The maintenance_window of this AutonomousContainerDatabaseSummary.
+        :type: MaintenanceWindow
+        """
+        self._maintenance_window = maintenance_window
 
     @property
     def freeform_tags(self):
