@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
 # This script provides a basic example of how to get Object Storage namespace of a tenancy that is not their own. This
 # is useful in cross-tenant Object Storage operations. Object Storage namespace can be retrieved using the

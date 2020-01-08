@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
 import oci  # noqa: F401
 from oci.util import WAIT_RESOURCE_NOT_FOUND  # noqa: F401
@@ -769,7 +769,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param CreateDbHomeBase create_db_home_with_db_system_id_details: (required)
-            Request to create a new database home.
+            Request to create a new Database Home.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.DbHome.lifecycle_state`
@@ -1155,7 +1155,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str db_home_id: (required)
-            The database home `OCID`__.
+            The Database Home `OCID`__.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -2688,7 +2688,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str db_home_id: (required)
-            The database home `OCID`__.
+            The Database Home `OCID`__.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDbHomeFromBackupDetails(object):
     """
-    Details for creating a database home if you are creating a database by restoring from a database backup.
+    Details for creating a Database Home if you are creating a database by restoring from a database backup.
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
@@ -45,7 +45,7 @@ class CreateDbHomeFromBackupDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateDbHomeFromBackupDetails.
-        The user-provided name of the database home.
+        The user-provided name of the Database Home.
 
 
         :return: The display_name of this CreateDbHomeFromBackupDetails.
@@ -57,7 +57,7 @@ class CreateDbHomeFromBackupDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateDbHomeFromBackupDetails.
-        The user-provided name of the database home.
+        The user-provided name of the Database Home.
 
 
         :param display_name: The display_name of this CreateDbHomeFromBackupDetails.

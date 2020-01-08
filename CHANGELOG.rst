@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.9.0 - 2020-01-07
+====================
+
+Added
+-----
+* Support for optionally specifying the corporate proxy field when creating Exadata infrastructure in the Database service
+* Support for maintenance windows, and rescheduling maintenance runs, on autonomous container databases in the Database service
+* Provide example on how to use key_content for python SDK configuration
+
+Breaking
+--------
+* Field `host_name` in `NodeDetails` from database service is changed from optional to required
+
+====================
 2.8.0 - 2019-12-17
 ====================
 

@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -9,9 +9,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DbHomeSummary(object):
     """
-    A directory where Oracle Database software is installed. A bare metal DB system can have multiple database homes
-    and each database home can run a different supported version of Oracle Database. A virtual machine DB system can have only one database home.
-    For more information, see `Bare Metal and Virtual Machine DB Systems`__.
+    A directory where Oracle Database software is installed. A bare metal or Exadata DB system can have multiple Database Homes
+    and each Database Home can run a different supported version of Oracle Database. A virtual machine DB system can have only one Database Home.
+    For more information, see `Bare Metal and Virtual Machine DB Systems`__ and `Exadata DB Systems`__.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an
     administrator. If you're an administrator who needs to write policies to give users access,
@@ -20,6 +20,7 @@ class DbHomeSummary(object):
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
 
     __ https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm
+    __ https://docs.cloud.oracle.com/Content/Database/Concepts/exaoverview.htm
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     """
 
@@ -129,7 +130,7 @@ class DbHomeSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this DbHomeSummary.
-        The `OCID`__ of the database home.
+        The `OCID`__ of the Database Home.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -143,7 +144,7 @@ class DbHomeSummary(object):
     def id(self, id):
         """
         Sets the id of this DbHomeSummary.
-        The `OCID`__ of the database home.
+        The `OCID`__ of the Database Home.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -185,7 +186,7 @@ class DbHomeSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this DbHomeSummary.
-        The user-provided name for the database home. The name does not need to be unique.
+        The user-provided name for the Database Home. The name does not need to be unique.
 
 
         :return: The display_name of this DbHomeSummary.
@@ -197,7 +198,7 @@ class DbHomeSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this DbHomeSummary.
-        The user-provided name for the database home. The name does not need to be unique.
+        The user-provided name for the Database Home. The name does not need to be unique.
 
 
         :param display_name: The display_name of this DbHomeSummary.
@@ -237,7 +238,7 @@ class DbHomeSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this DbHomeSummary.
-        The current state of the database home.
+        The current state of the Database Home.
 
         Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -252,7 +253,7 @@ class DbHomeSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this DbHomeSummary.
-        The current state of the database home.
+        The current state of the Database Home.
 
 
         :param lifecycle_state: The lifecycle_state of this DbHomeSummary.
@@ -347,7 +348,7 @@ class DbHomeSummary(object):
     def time_created(self):
         """
         Gets the time_created of this DbHomeSummary.
-        The date and time the database home was created.
+        The date and time the Database Home was created.
 
 
         :return: The time_created of this DbHomeSummary.
@@ -359,7 +360,7 @@ class DbHomeSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this DbHomeSummary.
-        The date and time the database home was created.
+        The date and time the Database Home was created.
 
 
         :param time_created: The time_created of this DbHomeSummary.

@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDbHomeBase(object):
     """
-    Details for creating a database home.
+    Details for creating a Database Home.
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
@@ -83,7 +83,7 @@ class CreateDbHomeBase(object):
     def display_name(self):
         """
         Gets the display_name of this CreateDbHomeBase.
-        The user-provided name of the database home.
+        The user-provided name of the Database Home.
 
 
         :return: The display_name of this CreateDbHomeBase.
@@ -95,7 +95,7 @@ class CreateDbHomeBase(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateDbHomeBase.
-        The user-provided name of the database home.
+        The user-provided name of the Database Home.
 
 
         :param display_name: The display_name of this CreateDbHomeBase.

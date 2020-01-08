@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -46,11 +46,9 @@ class DbSystemOptions(object):
     def storage_management(self):
         """
         Gets the storage_management of this DbSystemOptions.
-        The storage option used in DB system. For 1-node VM systems, you can specify either `Automatic Storage Management (ASM)`__ or `Logical Volume Manager (LVM)`__. For more information, see `Bare Metal and Virtual Machine DB Systems`__.
-
-        __ https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/19&id=OSTMG-GUID-BC612D35-5399-4A35-843E-CF76E3D3CDB5
-        __ https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/19&id=ADMIN-GUID-57C50259-9472-4ED0-8818-DB9ABA96EC8E
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm#fastprovisioning
+        The storage option used in DB system.
+        ASM - Automatic storage management
+        LVM - Logical Volume management
 
         Allowed values for this property are: "ASM", "LVM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -65,11 +63,9 @@ class DbSystemOptions(object):
     def storage_management(self, storage_management):
         """
         Sets the storage_management of this DbSystemOptions.
-        The storage option used in DB system. For 1-node VM systems, you can specify either `Automatic Storage Management (ASM)`__ or `Logical Volume Manager (LVM)`__. For more information, see `Bare Metal and Virtual Machine DB Systems`__.
-
-        __ https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/19&id=OSTMG-GUID-BC612D35-5399-4A35-843E-CF76E3D3CDB5
-        __ https://www.oracle.com/pls/topic/lookup?ctx=en/database/oracle/oracle-database/19&id=ADMIN-GUID-57C50259-9472-4ED0-8818-DB9ABA96EC8E
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm#fastprovisioning
+        The storage option used in DB system.
+        ASM - Automatic storage management
+        LVM - Logical Volume management
 
 
         :param storage_management: The storage_management of this DbSystemOptions.

@@ -32,6 +32,10 @@ Output can be printer friendly, CSV files or JSON file.
 - oci.healthchecks.HealthChecksClient
 - oci.announcements_service.AnnouncementClient
 - oci.limits.LimitsClient
+- oci.integration.IntegrationInstanceClient
+- oci.analytics.AnalyticsClient
+- oci.oda.OdaClient
+- oci.oce.OceInstanceClient
 
 ** DISCLAIMER – This is not an official Oracle application
 
@@ -66,7 +70,6 @@ Allow group ReadOnlyUsers to read public-ips     in tenancy
 Allow group ReadOnlyUsers to read file-family    in tenancy
 Allow group ReadOnlyUsers to read instance-configurations in tenancy
 Allow Group ReadOnlyUsers to read network-security-groups in tenancy
-Allow Group ReadOnlyUsers to use network-security-groups in tenancy /* use required for now to read security group rules */
     
 # Explanation:
     read instances      allows - ListInstances
@@ -174,12 +177,12 @@ Execute
 $ ./showoci.py  
 
 usage: showoci.py [-h] [-a] [-ani] [-an] [-b] [-n] [-i] [-c] [-cn] [-o] [-l]
-                  [-d] [-f] [-e] [-m] [-s] [-rm] [-so] [-edge] [-lq] [-mc]
-                  [-nr] [-ip] [-t PROFILE] [-p PROXY] [-rg REGION]
-                  [-cp COMPART] [-cpath COMPARTPATH] [-cf CONFIG] [-csv CSV]
-                  [-jf JOUTFILE] [-js] [-sjf SJOUTFILE] [-cachef SERVICEFILE]
-                  [-caches] [--version]
-                  
+                  [-d] [-f] [-e] [-m] [-s] [-rm] [-so] [-paas] [-edge] [-lq]
+                  [-mc] [-nr] [-ip] [-t PROFILE] [-p PROXY] [-rg REGION]
+                  [-cp COMPART] [-tenantid TENANTID] [-cpath COMPARTPATH]
+                  [-cf CONFIG] [-csv CSV] [-jf JOUTFILE] [-js]
+                  [-sjf SJOUTFILE] [-cachef SERVICEFILE] [-caches] [--version]
+
 optional arguments:
   -h, --help           show this help message and exit
   -a                   Print All Resources
@@ -195,20 +198,22 @@ optional arguments:
   -d                   Print Database
   -f                   Print File Storage
   -e                   Print EMail
-  -lq                  Print Limits and Quotas
   -m                   Print Monitoring and Notifications
   -s                   Print Streams
   -rm                  Print Resource management
   -so                  Print Summary Only
+  -paas                Print Oracle Paas Native - OIC OAC ODA
   -edge                Print Edge Services (Healthcheck)
+  -lq                  Print Limits and Quotas
   -mc                  exclude ManagedCompartmentForPaaS
   -nr                  Not include root compartment
   -ip                  Use Instance Principals for Authentication
   -t PROFILE           Config file section to use (tenancy profile)
   -p PROXY             Set Proxy (i.e. www-proxy-server.com:80)
   -rg REGION           Filter by Region
-  -cp COMPART          Filter by Compartment
-  -cpath COMPARTPATH   Filter by Compartment using path , example -cpath "Adi Main / Adi Sub"
+  -cp COMPART          Filter by Compartment Name or OCID
+  -tenantid TENANTID   Override confile file tenancy_id
+  -cpath COMPARTPATH   Filter by Compartment path ,(i.e. -cpath "Adi / Sub"
   -cf CONFIG           Config File
   -csv CSV             Output to CSV files, Input as file header
   -jf JOUTFILE         Output to file (JSON format)
