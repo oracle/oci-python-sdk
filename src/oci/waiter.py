@@ -66,9 +66,6 @@ def wait_until(client, response, property=None, state=None, max_interval_seconds
     if kwargs.get('evaluate_response') and (property):
         raise ValueError('If an evaluate_response function is provided, then the property argument cannot also be provided')
 
-    if property and not hasattr(response.data, property):
-        raise ValueError('Response data does not contain the given property.')
-
     if kwargs.get('fetch_func') is None:
         # if no custom fetch_func is provided, we only support waiting on a GET request
         if response.request.method.lower() != 'get':
@@ -79,6 +76,9 @@ def wait_until(client, response, property=None, state=None, max_interval_seconds
             return retry.DEFAULT_RETRY_STRATEGY.make_retrying_call(client.base_client.request, response.request)
 
         kwargs['fetch_func'] = default_fetch_func
+
+    if property and not hasattr(response.data, property):
+        raise ValueError('Response data does not contain the given property.')
 
     sleep_interval_seconds = 1
     start_time = time.time()
