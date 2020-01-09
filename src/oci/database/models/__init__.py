@@ -48,6 +48,7 @@ from .create_backup_details import CreateBackupDetails
 from .create_data_guard_association_details import CreateDataGuardAssociationDetails
 from .create_data_guard_association_to_existing_db_system_details import CreateDataGuardAssociationToExistingDbSystemDetails
 from .create_data_guard_association_with_new_db_system_details import CreateDataGuardAssociationWithNewDbSystemDetails
+from .create_database_base import CreateDatabaseBase
 from .create_database_details import CreateDatabaseDetails
 from .create_database_from_backup_details import CreateDatabaseFromBackupDetails
 from .create_db_home_base import CreateDbHomeBase
@@ -59,6 +60,7 @@ from .create_db_home_with_vm_cluster_id_details import CreateDbHomeWithVmCluster
 from .create_exadata_infrastructure_details import CreateExadataInfrastructureDetails
 from .create_external_backup_job_details import CreateExternalBackupJobDetails
 from .create_nfs_backup_destination_details import CreateNFSBackupDestinationDetails
+from .create_new_database_details import CreateNewDatabaseDetails
 from .create_recovery_appliance_backup_destination_details import CreateRecoveryApplianceBackupDestinationDetails
 from .create_vm_cluster_details import CreateVmClusterDetails
 from .data_guard_association import DataGuardAssociation
@@ -179,6 +181,7 @@ database_type_mapping = {
     "CreateDataGuardAssociationDetails": CreateDataGuardAssociationDetails,
     "CreateDataGuardAssociationToExistingDbSystemDetails": CreateDataGuardAssociationToExistingDbSystemDetails,
     "CreateDataGuardAssociationWithNewDbSystemDetails": CreateDataGuardAssociationWithNewDbSystemDetails,
+    "CreateDatabaseBase": CreateDatabaseBase,
     "CreateDatabaseDetails": CreateDatabaseDetails,
     "CreateDatabaseFromBackupDetails": CreateDatabaseFromBackupDetails,
     "CreateDbHomeBase": CreateDbHomeBase,
@@ -190,6 +193,7 @@ database_type_mapping = {
     "CreateExadataInfrastructureDetails": CreateExadataInfrastructureDetails,
     "CreateExternalBackupJobDetails": CreateExternalBackupJobDetails,
     "CreateNFSBackupDestinationDetails": CreateNFSBackupDestinationDetails,
+    "CreateNewDatabaseDetails": CreateNewDatabaseDetails,
     "CreateRecoveryApplianceBackupDestinationDetails": CreateRecoveryApplianceBackupDestinationDetails,
     "CreateVmClusterDetails": CreateVmClusterDetails,
     "DataGuardAssociation": DataGuardAssociation,

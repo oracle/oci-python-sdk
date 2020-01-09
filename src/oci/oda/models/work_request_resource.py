@@ -29,6 +29,14 @@ class WorkRequestResource(object):
     RESOURCE_ACTION_RECOVER = "RECOVER"
 
     #: A constant which can be used with the resource_action property of a WorkRequestResource.
+    #: This constant has a value of "STOP"
+    RESOURCE_ACTION_STOP = "STOP"
+
+    #: A constant which can be used with the resource_action property of a WorkRequestResource.
+    #: This constant has a value of "START"
+    RESOURCE_ACTION_START = "START"
+
+    #: A constant which can be used with the resource_action property of a WorkRequestResource.
     #: This constant has a value of "CHANGE_COMPARTMENT"
     RESOURCE_ACTION_CHANGE_COMPARTMENT = "CHANGE_COMPARTMENT"
 
@@ -75,7 +83,7 @@ class WorkRequestResource(object):
 
         :param resource_action:
             The value to assign to the resource_action property of this WorkRequestResource.
-            Allowed values for this property are: "CREATE", "DELETE", "PURGE", "RECOVER", "CHANGE_COMPARTMENT", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE", "DELETE", "PURGE", "RECOVER", "STOP", "START", "CHANGE_COMPARTMENT", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type resource_action: str
 
@@ -133,7 +141,7 @@ class WorkRequestResource(object):
         **[Required]** Gets the resource_action of this WorkRequestResource.
         The action to take against the Digital Assistant instance.
 
-        Allowed values for this property are: "CREATE", "DELETE", "PURGE", "RECOVER", "CHANGE_COMPARTMENT", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE", "DELETE", "PURGE", "RECOVER", "STOP", "START", "CHANGE_COMPARTMENT", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -152,7 +160,7 @@ class WorkRequestResource(object):
         :param resource_action: The resource_action of this WorkRequestResource.
         :type: str
         """
-        allowed_values = ["CREATE", "DELETE", "PURGE", "RECOVER", "CHANGE_COMPARTMENT", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT"]
+        allowed_values = ["CREATE", "DELETE", "PURGE", "RECOVER", "STOP", "START", "CHANGE_COMPARTMENT", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT"]
         if not value_allowed_none_or_none_sentinel(resource_action, allowed_values):
             resource_action = 'UNKNOWN_ENUM_VALUE'
         self._resource_action = resource_action

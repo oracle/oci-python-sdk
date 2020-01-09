@@ -33,6 +33,14 @@ class WorkRequestSummary(object):
     REQUEST_ACTION_RECOVER_ODA_INSTANCE = "RECOVER_ODA_INSTANCE"
 
     #: A constant which can be used with the request_action property of a WorkRequestSummary.
+    #: This constant has a value of "STOP_ODA_INSTANCE"
+    REQUEST_ACTION_STOP_ODA_INSTANCE = "STOP_ODA_INSTANCE"
+
+    #: A constant which can be used with the request_action property of a WorkRequestSummary.
+    #: This constant has a value of "START_ODA_INSTANCE"
+    REQUEST_ACTION_START_ODA_INSTANCE = "START_ODA_INSTANCE"
+
+    #: A constant which can be used with the request_action property of a WorkRequestSummary.
     #: This constant has a value of "CHANGE_ODA_INSTANCE_COMPARTMENT"
     REQUEST_ACTION_CHANGE_ODA_INSTANCE_COMPARTMENT = "CHANGE_ODA_INSTANCE_COMPARTMENT"
 
@@ -95,7 +103,7 @@ class WorkRequestSummary(object):
 
         :param request_action:
             The value to assign to the request_action property of this WorkRequestSummary.
-            Allowed values for this property are: "CREATE_ODA_INSTANCE", "UPGRADE_ODA_INSTANCE", "DELETE_ODA_INSTANCE", "PURGE_ODA_INSTANCE", "RECOVER_ODA_INSTANCE", "CHANGE_ODA_INSTANCE_COMPARTMENT", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", "LOOKUP_ODA_INSTANCES_FOR_CACCT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_ODA_INSTANCE", "UPGRADE_ODA_INSTANCE", "DELETE_ODA_INSTANCE", "PURGE_ODA_INSTANCE", "RECOVER_ODA_INSTANCE", "STOP_ODA_INSTANCE", "START_ODA_INSTANCE", "CHANGE_ODA_INSTANCE_COMPARTMENT", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", "LOOKUP_ODA_INSTANCES_FOR_CACCT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type request_action: str
 
@@ -213,7 +221,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the request_action of this WorkRequestSummary.
         The type of the operation that's associated with the work request.
 
-        Allowed values for this property are: "CREATE_ODA_INSTANCE", "UPGRADE_ODA_INSTANCE", "DELETE_ODA_INSTANCE", "PURGE_ODA_INSTANCE", "RECOVER_ODA_INSTANCE", "CHANGE_ODA_INSTANCE_COMPARTMENT", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", "LOOKUP_ODA_INSTANCES_FOR_CACCT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_ODA_INSTANCE", "UPGRADE_ODA_INSTANCE", "DELETE_ODA_INSTANCE", "PURGE_ODA_INSTANCE", "RECOVER_ODA_INSTANCE", "STOP_ODA_INSTANCE", "START_ODA_INSTANCE", "CHANGE_ODA_INSTANCE_COMPARTMENT", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", "LOOKUP_ODA_INSTANCES_FOR_CACCT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -232,7 +240,7 @@ class WorkRequestSummary(object):
         :param request_action: The request_action of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["CREATE_ODA_INSTANCE", "UPGRADE_ODA_INSTANCE", "DELETE_ODA_INSTANCE", "PURGE_ODA_INSTANCE", "RECOVER_ODA_INSTANCE", "CHANGE_ODA_INSTANCE_COMPARTMENT", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", "LOOKUP_ODA_INSTANCES_FOR_CACCT"]
+        allowed_values = ["CREATE_ODA_INSTANCE", "UPGRADE_ODA_INSTANCE", "DELETE_ODA_INSTANCE", "PURGE_ODA_INSTANCE", "RECOVER_ODA_INSTANCE", "STOP_ODA_INSTANCE", "START_ODA_INSTANCE", "CHANGE_ODA_INSTANCE_COMPARTMENT", "CREATE_ASSOCIATION", "DELETE_ASSOCIATION", "UPDATE_ENTITLEMENTS_FOR_CACCT", "LOOKUP_ODA_INSTANCES_FOR_CACCT"]
         if not value_allowed_none_or_none_sentinel(request_action, allowed_values):
             request_action = 'UNKNOWN_ENUM_VALUE'
         self._request_action = request_action

@@ -118,7 +118,7 @@ class CreateDbHomeWithDbSystemIdDetails(CreateDbHomeBase):
     @property
     def database(self):
         """
-        **[Required]** Gets the database of this CreateDbHomeWithDbSystemIdDetails.
+        Gets the database of this CreateDbHomeWithDbSystemIdDetails.
 
         :return: The database of this CreateDbHomeWithDbSystemIdDetails.
         :rtype: CreateDatabaseDetails
