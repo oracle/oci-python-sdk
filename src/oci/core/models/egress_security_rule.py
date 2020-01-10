@@ -55,6 +55,10 @@ class EgressSecurityRule(object):
             The value to assign to the udp_options property of this EgressSecurityRule.
         :type udp_options: UdpOptions
 
+        :param description:
+            The value to assign to the description property of this EgressSecurityRule.
+        :type description: str
+
         """
         self.swagger_types = {
             'destination': 'str',
@@ -63,7 +67,8 @@ class EgressSecurityRule(object):
             'is_stateless': 'bool',
             'protocol': 'str',
             'tcp_options': 'TcpOptions',
-            'udp_options': 'UdpOptions'
+            'udp_options': 'UdpOptions',
+            'description': 'str'
         }
 
         self.attribute_map = {
@@ -73,7 +78,8 @@ class EgressSecurityRule(object):
             'is_stateless': 'isStateless',
             'protocol': 'protocol',
             'tcp_options': 'tcpOptions',
-            'udp_options': 'udpOptions'
+            'udp_options': 'udpOptions',
+            'description': 'description'
         }
 
         self._destination = None
@@ -83,6 +89,7 @@ class EgressSecurityRule(object):
         self._protocol = None
         self._tcp_options = None
         self._udp_options = None
+        self._description = None
 
     @property
     def destination(self):
@@ -341,6 +348,30 @@ class EgressSecurityRule(object):
         :type: UdpOptions
         """
         self._udp_options = udp_options
+
+    @property
+    def description(self):
+        """
+        Gets the description of this EgressSecurityRule.
+        An optional description of your choice for the rule.
+
+
+        :return: The description of this EgressSecurityRule.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """
+        Sets the description of this EgressSecurityRule.
+        An optional description of your choice for the rule.
+
+
+        :param description: The description of this EgressSecurityRule.
+        :type: str
+        """
+        self._description = description
 
     def __repr__(self):
         return formatted_flat_dict(self)

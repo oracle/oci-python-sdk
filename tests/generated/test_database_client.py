@@ -719,6 +719,46 @@ def test_create_data_guard_association(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_create_database(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'CreateDatabase'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'CreateDatabase')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='CreateDatabase')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.create_database(
+                create_new_database_details=request.pop(util.camelize('create_new_database_details')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'CreateDatabase',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'database',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_create_db_home(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateDbHome'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1115,6 +1155,46 @@ def test_delete_backup_destination(testing_service_client):
             result,
             service_error,
             'delete_backup_destination',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_delete_database(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'DeleteDatabase'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'DeleteDatabase')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='DeleteDatabase')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.delete_database(
+                database_id=request.pop(util.camelize('database_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'DeleteDatabase',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_database',
             True,
             False
         )
@@ -3356,7 +3436,6 @@ def test_list_databases(testing_service_client):
             client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.list_databases(
                 compartment_id=request.pop(util.camelize('compartment_id')),
-                db_home_id=request.pop(util.camelize('db_home_id')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3365,7 +3444,6 @@ def test_list_databases(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_databases(
                     compartment_id=request.pop(util.camelize('compartment_id')),
-                    db_home_id=request.pop(util.camelize('db_home_id')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -3376,7 +3454,6 @@ def test_list_databases(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_databases(
                         compartment_id=request.pop(util.camelize('compartment_id')),
-                        db_home_id=request.pop(util.camelize('db_home_id')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )

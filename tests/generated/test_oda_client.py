@@ -466,6 +466,86 @@ def test_list_work_requests(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="omce_devops_hybrid_us_grp@oracle.com" jiraProject="ODA" opsJiraProject="ODA"
+def test_start_oda_instance(testing_service_client):
+    if not testing_service_client.is_api_enabled('oda', 'StartOdaInstance'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('oda', util.camelize('oda'), 'StartOdaInstance')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='oda', api_name='StartOdaInstance')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.oda.OdaClient(config, service_endpoint=service_endpoint)
+            response = client.start_oda_instance(
+                oda_instance_id=request.pop(util.camelize('oda_instance_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'oda',
+            'StartOdaInstance',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'start_oda_instance',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omce_devops_hybrid_us_grp@oracle.com" jiraProject="ODA" opsJiraProject="ODA"
+def test_stop_oda_instance(testing_service_client):
+    if not testing_service_client.is_api_enabled('oda', 'StopOdaInstance'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('oda', util.camelize('oda'), 'StopOdaInstance')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='oda', api_name='StopOdaInstance')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            client = oci.oda.OdaClient(config, service_endpoint=service_endpoint)
+            response = client.stop_oda_instance(
+                oda_instance_id=request.pop(util.camelize('oda_instance_id')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'oda',
+            'StopOdaInstance',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'stop_oda_instance',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omce_devops_hybrid_us_grp@oracle.com" jiraProject="ODA" opsJiraProject="ODA"
 def test_update_oda_instance(testing_service_client):
     if not testing_service_client.is_api_enabled('oda', 'UpdateOdaInstance'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

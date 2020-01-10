@@ -2768,10 +2768,6 @@ class ObjectStorageClient(object):
         if kwargs.get('retry_strategy'):
             retry_strategy = kwargs.get('retry_strategy')
 
-        # Disable the retry_strategy to work around data corruption issue temporarily
-        if retry_strategy:
-            retry_strategy = None
-
         if retry_strategy:
             return retry_strategy.make_retrying_call(
                 self.base_client.call_api,

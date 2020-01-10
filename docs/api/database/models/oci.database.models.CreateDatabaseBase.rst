@@ -1,0 +1,11 @@
+CreateDatabaseBase
+==================
+
+.. currentmodule:: oci.database.models
+
+.. autoclass:: CreateDatabaseBase
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

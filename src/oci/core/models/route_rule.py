@@ -44,25 +44,32 @@ class RouteRule(object):
             The value to assign to the network_entity_id property of this RouteRule.
         :type network_entity_id: str
 
+        :param description:
+            The value to assign to the description property of this RouteRule.
+        :type description: str
+
         """
         self.swagger_types = {
             'cidr_block': 'str',
             'destination': 'str',
             'destination_type': 'str',
-            'network_entity_id': 'str'
+            'network_entity_id': 'str',
+            'description': 'str'
         }
 
         self.attribute_map = {
             'cidr_block': 'cidrBlock',
             'destination': 'destination',
             'destination_type': 'destinationType',
-            'network_entity_id': 'networkEntityId'
+            'network_entity_id': 'networkEntityId',
+            'description': 'description'
         }
 
         self._cidr_block = None
         self._destination = None
         self._destination_type = None
         self._network_entity_id = None
+        self._description = None
 
     @property
     def cidr_block(self):
@@ -225,6 +232,30 @@ class RouteRule(object):
         :type: str
         """
         self._network_entity_id = network_entity_id
+
+    @property
+    def description(self):
+        """
+        Gets the description of this RouteRule.
+        An optional description of your choice for the rule.
+
+
+        :return: The description of this RouteRule.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """
+        Sets the description of this RouteRule.
+        An optional description of your choice for the rule.
+
+
+        :param description: The description of this RouteRule.
+        :type: str
+        """
+        self._description = description
 
     def __repr__(self):
         return formatted_flat_dict(self)
