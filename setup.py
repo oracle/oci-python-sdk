@@ -31,7 +31,7 @@ with open_relative("README.rst") as f:
 requires = [
     "certifi",
     "configparser>=3.5.0b1",
-    "cryptography>=2.1.4",
+    "cryptography==2.8",
     "pyOpenSSL>=17.5.0",
     "python-dateutil>=2.5.3,<3.0.0",
     "pytz>=2016.10",
