@@ -35,7 +35,7 @@ class QuotasClient(object):
             need to specify a service endpoint.
 
         :param timeout: (optional)
-            The connection and read timeouts for the client. The default is that the client never times out. This keyword argument can be provided
+            The connection and read timeouts for the client. The default values are connection timeout 10 seconds and read timeout 60 seconds. This keyword argument can be provided
             as a single float, in which case the value provided is used for both the read and connection timeouts, or as a tuple of two floats. If
             a tuple is provided then the first value is used as the connection timeout and the second value as the read timeout.
         :type timeout: float or tuple(float, float)
@@ -111,7 +111,7 @@ class QuotasClient(object):
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.limits.models.Quota`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/20181025/quotas/"
+        resource_path = "/20181025/quotas"
         method = "POST"
 
         # Don't accept unknown kwargs
@@ -356,7 +356,7 @@ class QuotasClient(object):
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.limits.models.QuotaSummary`
         :rtype: :class:`~oci.response.Response`
         """
-        resource_path = "/20181025/quotas/"
+        resource_path = "/20181025/quotas"
         method = "GET"
 
         # Don't accept unknown kwargs

@@ -54,6 +54,10 @@ def wait_until(client, response, property=None, state=None, max_interval_seconds
         property of the resource was not in the correct state, or the ``evaluate_response`` function returned False). This function
         should take two arguments - the first argument is the number of times we have checked the resource, and the second argument
         is the result of the most recent check.
+    :param fetch_func: (optional) This function will be called to fetch the updated state from the server.
+        This can be used if the call to check for state needs to be more complex than a single GET request.
+        For example, if the goal is to wait until an item appears in a list, fetch_func can be a function
+        that paginates through a full list on the server.
     :return: The final response, which will contain the property in the specified state.
 
         If the ``succeed_on_not_found`` parameter is set to True and the data was not then ``oci.waiter.WAIT_RESOURCE_NOT_FOUND`` will be returned. This is a :py:class:`~oci.util.Sentinel` which is not truthy and holds an internal name of ``WaitResourceNotFound``.
@@ -62,8 +66,17 @@ def wait_until(client, response, property=None, state=None, max_interval_seconds
     if kwargs.get('evaluate_response') and (property):
         raise ValueError('If an evaluate_response function is provided, then the property argument cannot also be provided')
 
-    if response.request.method.lower() != 'get':
-        raise WaitUntilNotSupported('wait_until is only supported for get operations.')
+    if kwargs.get('fetch_func') is None:
+        # if no custom fetch_func is provided, we only support waiting on a GET request
+        if response.request.method.lower() != 'get':
+            raise WaitUntilNotSupported('wait_until is only supported for get operations.')
+
+        # by default, re-issue response.request
+        def default_fetch_func(response=None):
+            return retry.DEFAULT_RETRY_STRATEGY.make_retrying_call(client.base_client.request, response.request)
+
+        kwargs['fetch_func'] = default_fetch_func
+
     if property and not hasattr(response.data, property):
         raise ValueError('Response data does not contain the given property.')
 
@@ -99,7 +112,7 @@ def wait_until(client, response, property=None, state=None, max_interval_seconds
         sleep_interval_seconds = min(sleep_interval_seconds * 2, max_interval_seconds)
 
         try:
-            response = retry.DEFAULT_RETRY_STRATEGY.make_retrying_call(client.base_client.request, response.request)
+            response = kwargs.get('fetch_func')(response=response)
             times_checked += 1
         except ServiceError as se:
             if se.status == 404:

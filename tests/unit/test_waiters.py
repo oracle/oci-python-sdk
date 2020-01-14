@@ -277,3 +277,32 @@ def test_callback_func(virtual_network, config):
     result = oci.wait_until(virtual_network, get_vcn_response, 'lifecycle_state', 'TERMINATED', max_wait_seconds=180, succeed_on_not_found=True, wait_callback=delete_vcn_callback)
     assert result == oci.waiter.WAIT_RESOURCE_NOT_FOUND
     assert counters['delete'] >= 0
+
+
+def test_fetch_func(virtual_network, config):
+    name = "pythonsdk_waiter_" + tests.util.random_number_string()
+
+    counters = {'wait': 0}
+
+    request = oci.core.models.CreateVcnDetails()
+    request.cidr_block = '10.0.0.0/16'
+    request.display_name = name
+    request.compartment_id = config["tenancy"]
+
+    response = virtual_network.create_vcn(request)
+    vcn = response.data
+    get_vcn_response = virtual_network.get_vcn(vcn.id)
+    get_vcn_response.data.lifecycle_state = 'DUMMY'  # This will force at least one service call
+
+    def fetch_func(response=None):
+        counters['wait'] = counters['wait'] + 1
+        return virtual_network.get_vcn(vcn.id)
+
+    response = oci.wait_until(virtual_network, get_vcn_response, 'lifecycle_state', 'AVAILABLE', fetch_func=fetch_func)
+    assert 'AVAILABLE' == response.data.lifecycle_state
+    assert counters['wait'] > 0
+
+    print('Deleting vcn')
+    response = virtual_network.delete_vcn(vcn.id)
+    result = oci.wait_until(virtual_network, get_vcn_response, 'lifecycle_state', 'TERMINATED', max_wait_seconds=180, succeed_on_not_found=True)
+    assert result == oci.waiter.WAIT_RESOURCE_NOT_FOUND

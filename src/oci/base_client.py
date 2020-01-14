@@ -61,6 +61,10 @@ def utc_now():
 STREAM_RESPONSE_TYPE = 'stream'
 BYTES_RESPONSE_TYPE = 'bytes'
 
+# Default timeout value(second)
+DEFAULT_CONNECTION_TIMEOUT = 10.0
+DEFAULT_READ_TIMEOUT = 60.0
+
 # The keys here correspond to the Swagger collection format values described here: https://swagger.io/docs/specification/2-0/describing-parameters/
 # and the values represent delimiters we'll use between values of the collection when placing those values in the query string.
 #
@@ -124,7 +128,7 @@ class BaseClient(object):
         self.complex_type_mappings = type_mapping
         self.type_mappings = merge_type_mappings(self.primitive_type_map, type_mapping)
         self.session = requests.Session()
-        self.timeout = kwargs.get('timeout')
+        self.timeout = kwargs.get('timeout', (DEFAULT_CONNECTION_TIMEOUT, DEFAULT_READ_TIMEOUT))
         self.user_agent = build_user_agent(get_config_value_or_default(config, "additional_user_agent"))
 
         self.logger = logging.getLogger("{}.{}".format(__name__, id(self)))

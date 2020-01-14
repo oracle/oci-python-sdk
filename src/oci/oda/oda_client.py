@@ -35,7 +35,7 @@ class OdaClient(object):
             need to specify a service endpoint.
 
         :param timeout: (optional)
-            The connection and read timeouts for the client. The default is that the client never times out. This keyword argument can be provided
+            The connection and read timeouts for the client. The default values are connection timeout 10 seconds and read timeout 60 seconds. This keyword argument can be provided
             as a single float, in which case the value provided is used for both the read and connection timeouts, or as a tuple of two floats. If
             a tuple is provided then the first value is used as the connection timeout and the second value as the read timeout.
         :type timeout: float or tuple(float, float)
@@ -1004,6 +1004,195 @@ class OdaClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="list[WorkRequestSummary]")
+
+    def start_oda_instance(self, oda_instance_id, **kwargs):
+        """
+        Starts an inactive Digital Assistant instance.
+        Starts an inactive Digital Assistant instance. Once active, the instance will be accessible and metering
+        of requests will be started again.
+
+
+        :param str oda_instance_id: (required)
+            Unique Digital Assistant instance identifier.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing. This value is included in the opc-request-id response header.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control in a PUT or DELETE call for
+            a Digital Assistant instance, set the `if-match` query parameter
+            to the value of the `ETAG` header from a previous GET or POST
+            response for that instance. The service updates or deletes the
+            instance only if the etag that you provide matches the instance's
+            current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so that you can retry the request if there's
+            a timeout or server error without the risk of executing that same action again.
+
+            Retry tokens expire after 24 hours, but they can become invalid before then if there are
+            conflicting operations. For example, if an instance was deleted and purged from the system,
+            then the service might reject a retry of the original creation request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/odaInstances/{odaInstanceId}/actions/start"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "start_oda_instance got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "odaInstanceId": oda_instance_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
+    def stop_oda_instance(self, oda_instance_id, **kwargs):
+        """
+        Stops an active Digital Assistant instance.
+        Stops an active Digital Assistant instance. Once inactive, the instance will not be accessible and metering
+        of requests will be stopped until the instance is started again. Data associated with the instance
+        is not affected.
+
+
+        :param str oda_instance_id: (required)
+            Unique Digital Assistant instance identifier.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing. This value is included in the opc-request-id response header.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control in a PUT or DELETE call for
+            a Digital Assistant instance, set the `if-match` query parameter
+            to the value of the `ETAG` header from a previous GET or POST
+            response for that instance. The service updates or deletes the
+            instance only if the etag that you provide matches the instance's
+            current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so that you can retry the request if there's
+            a timeout or server error without the risk of executing that same action again.
+
+            Retry tokens expire after 24 hours, but they can become invalid before then if there are
+            conflicting operations. For example, if an instance was deleted and purged from the system,
+            then the service might reject a retry of the original creation request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/odaInstances/{odaInstanceId}/actions/stop"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "stop_oda_instance got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "odaInstanceId": oda_instance_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def update_oda_instance(self, oda_instance_id, update_oda_instance_details, **kwargs):
         """

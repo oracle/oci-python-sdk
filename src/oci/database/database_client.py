@@ -35,7 +35,7 @@ class DatabaseClient(object):
             need to specify a service endpoint.
 
         :param timeout: (optional)
-            The connection and read timeouts for the client. The default is that the client never times out. This keyword argument can be provided
+            The connection and read timeouts for the client. The default values are connection timeout 10 seconds and read timeout 60 seconds. This keyword argument can be provided
             as a single float, in which case the value provided is used for both the read and connection timeouts, or as a tuple of two floats. If
             a tuple is provided then the first value is used as the connection timeout and the second value as the read timeout.
         :type timeout: float or tuple(float, float)
@@ -1558,6 +1558,80 @@ class DatabaseClient(object):
                 body=create_data_guard_association_details,
                 response_type="DataGuardAssociation")
 
+    def create_database(self, create_new_database_details, **kwargs):
+        """
+        CreateDatabase
+        Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies only to Exadata DB systems.
+
+
+        :param CreateDatabaseBase create_new_database_details: (required)
+            Request to create a new database.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Database`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/databases"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_database got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_new_database_details,
+                response_type="Database")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_new_database_details,
+                response_type="Database")
+
     def create_db_home(self, create_db_home_with_db_system_id_details, **kwargs):
         """
         CreateDbHome
@@ -2361,10 +2435,111 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params)
 
+    def delete_database(self, database_id, **kwargs):
+        """
+        DeleteDatabase
+        Deletes the database. Applies only to Exadata DB systems.
+
+        The data in this database is local to the DB system and will be lost when the database is deleted. Oracle recommends that you back up any data in the DB system prior to deleting it. You can use the `performFinalBackup` parameter to have the Exadata DB system database backed up before it is deleted.
+
+
+        :param str database_id: (required)
+            The database `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param bool perform_final_backup: (optional)
+            Whether to perform a final backup of the database or not. Default is false.
+
+            If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+
+            This parameter is used in multiple APIs. Refer to the API description for details on how the operation uses it.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/databases/{databaseId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "perform_final_backup",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_database got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "databaseId": database_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "performFinalBackup": kwargs.get("perform_final_backup", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params)
+
     def delete_db_home(self, db_home_id, **kwargs):
         """
         DeleteDbHome
-        Deletes a Database Home. The Database Home and its database data are local to the DB system and are lost when you delete the Database Home. Oracle recommends that you back up any data on the DB system before you delete it.
+        Deletes a Database Home. Applies only to bare metal and Exadata DB systems.
+
+        The Database Home and its database data are local to the DB system, and on a bare metal DB system, both are lost when you delete the Database Home. Oracle recommends that you back up any data on the DB system before you delete it. You can use the `performFinalBackup` parameter with this operation on bare metal DB systems.
+
+        On an Exadata DB system, the delete request is rejected if the Database Home is not empty. You must terminate all databases in the Database Home before you delete the home. The `performFinalBackup` parameter is not used with this operation on Exadata DB systems.
 
 
         :param str db_home_id: (required)
@@ -2381,6 +2556,8 @@ class DatabaseClient(object):
             Whether to perform a final backup of the database or not. Default is false.
 
             If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+
+            This parameter is used in multiple APIs. Refer to the API description for details on how the operation uses it.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -6540,7 +6717,7 @@ class DatabaseClient(object):
                 header_params=header_params,
                 response_type="list[DataGuardAssociationSummary]")
 
-    def list_databases(self, compartment_id, db_home_id, **kwargs):
+    def list_databases(self, compartment_id, **kwargs):
         """
         ListDatabases
         Gets a list of the databases in the specified Database Home.
@@ -6551,8 +6728,13 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param str db_home_id: (required)
+        :param str db_home_id: (optional)
             A Database Home `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str system_id: (optional)
+            The `OCID`__ of the Exadata DB system that you want to filter the database results by. Applies only to Exadata DB systems.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -6597,6 +6779,8 @@ class DatabaseClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "db_home_id",
+            "system_id",
             "limit",
             "page",
             "sort_by",
@@ -6632,7 +6816,8 @@ class DatabaseClient(object):
 
         query_params = {
             "compartmentId": compartment_id,
-            "dbHomeId": db_home_id,
+            "dbHomeId": kwargs.get("db_home_id", missing),
+            "systemId": kwargs.get("system_id", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortBy": kwargs.get("sort_by", missing),
@@ -6858,6 +7043,11 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
+        :param str backup_id: (optional)
+            The `OCID`__ of the backup. Specify a backupId to list only the DB systems or DB homes that support creating a database using this backup in this compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
         :param int limit: (optional)
             The maximum number of items to return per page.
 
@@ -6901,6 +7091,7 @@ class DatabaseClient(object):
             "retry_strategy",
             "db_system_id",
             "vm_cluster_id",
+            "backup_id",
             "limit",
             "page",
             "sort_by",
@@ -6938,6 +7129,7 @@ class DatabaseClient(object):
             "compartmentId": compartment_id,
             "dbSystemId": kwargs.get("db_system_id", missing),
             "vmClusterId": kwargs.get("vm_cluster_id", missing),
+            "backupId": kwargs.get("backup_id", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortBy": kwargs.get("sort_by", missing),
