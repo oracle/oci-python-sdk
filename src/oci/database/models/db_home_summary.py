@@ -87,6 +87,14 @@ class DbHomeSummary(object):
             The value to assign to the db_version property of this DbHomeSummary.
         :type db_version: str
 
+        :param db_home_location:
+            The value to assign to the db_home_location property of this DbHomeSummary.
+        :type db_home_location: str
+
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this DbHomeSummary.
+        :type lifecycle_details: str
+
         :param time_created:
             The value to assign to the time_created property of this DbHomeSummary.
         :type time_created: datetime
@@ -101,6 +109,8 @@ class DbHomeSummary(object):
             'db_system_id': 'str',
             'vm_cluster_id': 'str',
             'db_version': 'str',
+            'db_home_location': 'str',
+            'lifecycle_details': 'str',
             'time_created': 'datetime'
         }
 
@@ -113,6 +123,8 @@ class DbHomeSummary(object):
             'db_system_id': 'dbSystemId',
             'vm_cluster_id': 'vmClusterId',
             'db_version': 'dbVersion',
+            'db_home_location': 'dbHomeLocation',
+            'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated'
         }
 
@@ -124,6 +136,8 @@ class DbHomeSummary(object):
         self._db_system_id = None
         self._vm_cluster_id = None
         self._db_version = None
+        self._db_home_location = None
+        self._lifecycle_details = None
         self._time_created = None
 
     @property
@@ -343,6 +357,54 @@ class DbHomeSummary(object):
         :type: str
         """
         self._db_version = db_version
+
+    @property
+    def db_home_location(self):
+        """
+        **[Required]** Gets the db_home_location of this DbHomeSummary.
+        The location of the Oracle Database Home.
+
+
+        :return: The db_home_location of this DbHomeSummary.
+        :rtype: str
+        """
+        return self._db_home_location
+
+    @db_home_location.setter
+    def db_home_location(self, db_home_location):
+        """
+        Sets the db_home_location of this DbHomeSummary.
+        The location of the Oracle Database Home.
+
+
+        :param db_home_location: The db_home_location of this DbHomeSummary.
+        :type: str
+        """
+        self._db_home_location = db_home_location
+
+    @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this DbHomeSummary.
+        Additional information about the current lifecycleState.
+
+
+        :return: The lifecycle_details of this DbHomeSummary.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this DbHomeSummary.
+        Additional information about the current lifecycleState.
+
+
+        :param lifecycle_details: The lifecycle_details of this DbHomeSummary.
+        :type: str
+        """
+        self._lifecycle_details = lifecycle_details
 
     @property
     def time_created(self):

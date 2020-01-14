@@ -2,7 +2,7 @@ autodocsumm==0.1.11
 certifi
 configparser==3.5.0
 coverage==4.5.2
-cryptography==2.5
+cryptography==2.8
 flake8==3.6.0
 mock==2.0.0
 pyOpenSSL==18.0.0

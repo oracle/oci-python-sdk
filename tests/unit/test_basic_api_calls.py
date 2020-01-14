@@ -2,7 +2,6 @@
 # Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
 import oci
-import pytest
 
 
 def test_identity_list_users(identity, config):
@@ -39,24 +38,3 @@ def test_limit(identity, config):
     assert type(response.data[0]) is oci.identity.models.User
     assert response.status == 200
     assert response.request_id is not None
-
-
-@pytest.mark.skip(reason="re-enable after fix the issue on py35.")
-def test_api_call_with_explicit_timeout(config):
-    client = oci.identity.IdentityClient(config)
-
-    # Test connection timeout
-    client.base_client.timeout = (0.0001, 1)  # 0.1ms timeout on connection and 1s on read. Should be too short to connect without timing out
-    with pytest.raises(oci.exceptions.ConnectTimeout):
-        client.list_users(config['tenancy'])
-        assert False
-
-    # Test read timeout
-    client.base_client.timeout = (1, 0.0005)  # 1s timeout on connection, 0.5ms on read. Should be too short to read
-    with pytest.raises(oci.exceptions.RequestException):
-        client.list_users(config['tenancy'])
-        assert False
-
-    client.base_client.timeout = 5
-    response = client.list_users(config['tenancy'])
-    assert len(response.data) > 0

@@ -69,6 +69,14 @@ class Database(object):
             The value to assign to the db_home_id property of this Database.
         :type db_home_id: str
 
+        :param db_system_id:
+            The value to assign to the db_system_id property of this Database.
+        :type db_system_id: str
+
+        :param vm_cluster_id:
+            The value to assign to the vm_cluster_id property of this Database.
+        :type vm_cluster_id: str
+
         :param db_name:
             The value to assign to the db_name property of this Database.
         :type db_name: str
@@ -122,6 +130,8 @@ class Database(object):
             'character_set': 'str',
             'ncharacter_set': 'str',
             'db_home_id': 'str',
+            'db_system_id': 'str',
+            'vm_cluster_id': 'str',
             'db_name': 'str',
             'pdb_name': 'str',
             'db_workload': 'str',
@@ -141,6 +151,8 @@ class Database(object):
             'character_set': 'characterSet',
             'ncharacter_set': 'ncharacterSet',
             'db_home_id': 'dbHomeId',
+            'db_system_id': 'dbSystemId',
+            'vm_cluster_id': 'vmClusterId',
             'db_name': 'dbName',
             'pdb_name': 'pdbName',
             'db_workload': 'dbWorkload',
@@ -159,6 +171,8 @@ class Database(object):
         self._character_set = None
         self._ncharacter_set = None
         self._db_home_id = None
+        self._db_system_id = None
+        self._vm_cluster_id = None
         self._db_name = None
         self._pdb_name = None
         self._db_workload = None
@@ -302,6 +316,62 @@ class Database(object):
         :type: str
         """
         self._db_home_id = db_home_id
+
+    @property
+    def db_system_id(self):
+        """
+        Gets the db_system_id of this Database.
+        The `OCID`__ of the DB system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The db_system_id of this Database.
+        :rtype: str
+        """
+        return self._db_system_id
+
+    @db_system_id.setter
+    def db_system_id(self, db_system_id):
+        """
+        Sets the db_system_id of this Database.
+        The `OCID`__ of the DB system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param db_system_id: The db_system_id of this Database.
+        :type: str
+        """
+        self._db_system_id = db_system_id
+
+    @property
+    def vm_cluster_id(self):
+        """
+        Gets the vm_cluster_id of this Database.
+        The `OCID`__ of the VM cluster.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The vm_cluster_id of this Database.
+        :rtype: str
+        """
+        return self._vm_cluster_id
+
+    @vm_cluster_id.setter
+    def vm_cluster_id(self, vm_cluster_id):
+        """
+        Sets the vm_cluster_id of this Database.
+        The `OCID`__ of the VM cluster.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param vm_cluster_id: The vm_cluster_id of this Database.
+        :type: str
+        """
+        self._vm_cluster_id = vm_cluster_id
 
     @property
     def db_name(self):

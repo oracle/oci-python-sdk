@@ -63,6 +63,7 @@ Database
     oci.database.models.CreateDataGuardAssociationDetails
     oci.database.models.CreateDataGuardAssociationToExistingDbSystemDetails
     oci.database.models.CreateDataGuardAssociationWithNewDbSystemDetails
+    oci.database.models.CreateDatabaseBase
     oci.database.models.CreateDatabaseDetails
     oci.database.models.CreateDatabaseFromBackupDetails
     oci.database.models.CreateDbHomeBase
@@ -74,6 +75,7 @@ Database
     oci.database.models.CreateExadataInfrastructureDetails
     oci.database.models.CreateExternalBackupJobDetails
     oci.database.models.CreateNFSBackupDestinationDetails
+    oci.database.models.CreateNewDatabaseDetails
     oci.database.models.CreateRecoveryApplianceBackupDestinationDetails
     oci.database.models.CreateVmClusterDetails
     oci.database.models.DataGuardAssociation
