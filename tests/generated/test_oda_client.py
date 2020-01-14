@@ -490,10 +490,10 @@ def test_start_oda_instance(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.oda.OdaClient(config, service_endpoint=service_endpoint)
             response = client.start_oda_instance(
-                oda_instance_id=request.pop(util.camelize('oda_instance_id')),
+                oda_instance_id=request.pop(util.camelize('odaInstanceId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -530,10 +530,10 @@ def test_stop_oda_instance(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.oda.OdaClient(config, service_endpoint=service_endpoint)
             response = client.stop_oda_instance(
-                oda_instance_id=request.pop(util.camelize('oda_instance_id')),
+                oda_instance_id=request.pop(util.camelize('odaInstanceId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)

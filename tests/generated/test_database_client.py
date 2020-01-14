@@ -739,10 +739,10 @@ def test_create_database(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.create_database(
-                create_new_database_details=request.pop(util.camelize('create_new_database_details')),
+                create_new_database_details=request.pop(util.camelize('CreateNewDatabaseDetails')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1181,10 +1181,10 @@ def test_delete_database(testing_service_client):
         service_error = None
 
         try:
-            service_endpoint = config['service_endpoint'] if 'service_endpoint' in config else None
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.delete_database(
-                database_id=request.pop(util.camelize('database_id')),
+                database_id=request.pop(util.camelize('databaseId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3452,7 +3452,6 @@ def test_list_databases(testing_service_client):
             client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
             response = client.list_databases(
                 compartment_id=request.pop(util.camelize('compartmentId')),
-                db_home_id=request.pop(util.camelize('dbHomeId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -3461,7 +3460,6 @@ def test_list_databases(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_databases(
                     compartment_id=request.pop(util.camelize('compartmentId')),
-                    db_home_id=request.pop(util.camelize('dbHomeId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -3472,7 +3470,6 @@ def test_list_databases(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_databases(
                         compartment_id=request.pop(util.camelize('compartmentId')),
-                        db_home_id=request.pop(util.camelize('dbHomeId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
