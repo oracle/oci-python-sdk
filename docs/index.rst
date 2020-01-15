@@ -6,6 +6,8 @@
             window.location.href = 'https://oracle-bare-metal-cloud-services-python-sdk.readthedocs.io/en/latest/deprecation-notice.html';
         }
     </script>
+.. warning::
+    Potential data corruption with Python SDK on binary upload in versions 2.8.0 and below, for more information please see :ref:`Known Issues<known-issues>` section.
 
 Oracle Cloud Infrastructure Python SDK - |OciSdkVersion|
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -37,6 +39,7 @@ To get started, head over to the :ref:`installation instructions <install>` or s
 :ref:`quickstart <quickstart>` section.
 
 The most recent list of supported services is located on the `Python SDK <https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/pythonsdk.htm#ServicesSupported>`_ page on the Oracle Cloud Infrastructure Documentation site.
+
 
 **Note**: The ``oraclebmc`` package is deprecated and will no longer be maintained starting March 2018. Please check the :ref:`Backward Compatibility <backward-compatibility>` section if you are using ``oraclebmc``.
 
