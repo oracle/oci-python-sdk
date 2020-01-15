@@ -58,6 +58,8 @@ Database
     oci.database.models.CreateAutonomousDatabaseBase
     oci.database.models.CreateAutonomousDatabaseCloneDetails
     oci.database.models.CreateAutonomousDatabaseDetails
+    oci.database.models.CreateAutonomousDatabaseFromBackupDetails
+    oci.database.models.CreateAutonomousDatabaseFromBackupTimestampDetails
     oci.database.models.CreateBackupDestinationDetails
     oci.database.models.CreateBackupDetails
     oci.database.models.CreateDataGuardAssociationDetails

@@ -93,6 +93,10 @@ class AutonomousDatabaseBackup(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param is_restorable:
+            The value to assign to the is_restorable property of this AutonomousDatabaseBackup.
+        :type is_restorable: bool
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -105,7 +109,8 @@ class AutonomousDatabaseBackup(object):
             'time_ended': 'datetime',
             'lifecycle_details': 'str',
             'database_size_in_tbs': 'float',
-            'lifecycle_state': 'str'
+            'lifecycle_state': 'str',
+            'is_restorable': 'bool'
         }
 
         self.attribute_map = {
@@ -119,7 +124,8 @@ class AutonomousDatabaseBackup(object):
             'time_ended': 'timeEnded',
             'lifecycle_details': 'lifecycleDetails',
             'database_size_in_tbs': 'databaseSizeInTBs',
-            'lifecycle_state': 'lifecycleState'
+            'lifecycle_state': 'lifecycleState',
+            'is_restorable': 'isRestorable'
         }
 
         self._id = None
@@ -133,6 +139,7 @@ class AutonomousDatabaseBackup(object):
         self._lifecycle_details = None
         self._database_size_in_tbs = None
         self._lifecycle_state = None
+        self._is_restorable = None
 
     @property
     def id(self):
@@ -421,6 +428,30 @@ class AutonomousDatabaseBackup(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def is_restorable(self):
+        """
+        Gets the is_restorable of this AutonomousDatabaseBackup.
+        Indicates whether the backup can be used to restore the associated Autonomous Database.
+
+
+        :return: The is_restorable of this AutonomousDatabaseBackup.
+        :rtype: bool
+        """
+        return self._is_restorable
+
+    @is_restorable.setter
+    def is_restorable(self, is_restorable):
+        """
+        Sets the is_restorable of this AutonomousDatabaseBackup.
+        Indicates whether the backup can be used to restore the associated Autonomous Database.
+
+
+        :param is_restorable: The is_restorable of this AutonomousDatabaseBackup.
+        :type: bool
+        """
+        self._is_restorable = is_restorable
 
     def __repr__(self):
         return formatted_flat_dict(self)

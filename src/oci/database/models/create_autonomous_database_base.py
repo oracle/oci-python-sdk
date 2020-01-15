@@ -38,12 +38,22 @@ class CreateAutonomousDatabaseBase(object):
     #: This constant has a value of "DATABASE"
     SOURCE_DATABASE = "DATABASE"
 
+    #: A constant which can be used with the source property of a CreateAutonomousDatabaseBase.
+    #: This constant has a value of "BACKUP_FROM_ID"
+    SOURCE_BACKUP_FROM_ID = "BACKUP_FROM_ID"
+
+    #: A constant which can be used with the source property of a CreateAutonomousDatabaseBase.
+    #: This constant has a value of "BACKUP_FROM_TIMESTAMP"
+    SOURCE_BACKUP_FROM_TIMESTAMP = "BACKUP_FROM_TIMESTAMP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateAutonomousDatabaseBase object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.database.models.CreateAutonomousDatabaseCloneDetails`
+        * :class:`~oci.database.models.CreateAutonomousDatabaseFromBackupDetails`
+        * :class:`~oci.database.models.CreateAutonomousDatabaseFromBackupTimestampDetails`
         * :class:`~oci.database.models.CreateAutonomousDatabaseDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -116,7 +126,7 @@ class CreateAutonomousDatabaseBase(object):
 
         :param source:
             The value to assign to the source property of this CreateAutonomousDatabaseBase.
-            Allowed values for this property are: "NONE", "DATABASE"
+            Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP"
         :type source: str
 
         """
@@ -188,6 +198,12 @@ class CreateAutonomousDatabaseBase(object):
 
         if type == 'DATABASE':
             return 'CreateAutonomousDatabaseCloneDetails'
+
+        if type == 'BACKUP_FROM_ID':
+            return 'CreateAutonomousDatabaseFromBackupDetails'
+
+        if type == 'BACKUP_FROM_TIMESTAMP':
+            return 'CreateAutonomousDatabaseFromBackupTimestampDetails'
 
         if type == 'NONE':
             return 'CreateAutonomousDatabaseDetails'
@@ -654,7 +670,12 @@ class CreateAutonomousDatabaseBase(object):
         Gets the source of this CreateAutonomousDatabaseBase.
         The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database.
 
-        Allowed values for this property are: "NONE", "DATABASE"
+        For Autonomous Databases using the `serverless deployment`__, the following cloning options are available: Use `BACKUP_FROM_ID` for creating a new Autonomous Database from a specified backup. Use `BACKUP_FROM_TIMESTAMP` for creating a point-in-time Autonomous Database clone using backups. For more information, see `Cloning an Autonomous Database`__.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
+        __ https://docs.cloud.oracle.com/Content/Database/Tasks/adbcloning.htm
+
+        Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP"
 
 
         :return: The source of this CreateAutonomousDatabaseBase.
@@ -668,11 +689,16 @@ class CreateAutonomousDatabaseBase(object):
         Sets the source of this CreateAutonomousDatabaseBase.
         The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database.
 
+        For Autonomous Databases using the `serverless deployment`__, the following cloning options are available: Use `BACKUP_FROM_ID` for creating a new Autonomous Database from a specified backup. Use `BACKUP_FROM_TIMESTAMP` for creating a point-in-time Autonomous Database clone using backups. For more information, see `Cloning an Autonomous Database`__.
+
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
+        __ https://docs.cloud.oracle.com/Content/Database/Tasks/adbcloning.htm
+
 
         :param source: The source of this CreateAutonomousDatabaseBase.
         :type: str
         """
-        allowed_values = ["NONE", "DATABASE"]
+        allowed_values = ["NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP"]
         if not value_allowed_none_or_none_sentinel(source, allowed_values):
             raise ValueError(
                 "Invalid value for `source`, must be None or one of {0}"

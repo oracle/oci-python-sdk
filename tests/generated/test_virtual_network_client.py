@@ -3058,6 +3058,46 @@ def test_get_drg_attachment(testing_service_client):
 
 
 # IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
+def test_get_drg_redundancy_status(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetDrgRedundancyStatus'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'GetDrgRedundancyStatus')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetDrgRedundancyStatus')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.get_drg_redundancy_status(
+                drg_id=request.pop(util.camelize('drgId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetDrgRedundancyStatus',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'drgRedundancyStatus',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
 def test_get_fast_connect_provider_service(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetFastConnectProviderService'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

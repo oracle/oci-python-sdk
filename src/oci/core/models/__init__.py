@@ -136,6 +136,7 @@ from .dhcp_options import DhcpOptions
 from .dhcp_search_domain_option import DhcpSearchDomainOption
 from .drg import Drg
 from .drg_attachment import DrgAttachment
+from .drg_redundancy_status import DrgRedundancyStatus
 from .egress_security_rule import EgressSecurityRule
 from .emulated_volume_attachment import EmulatedVolumeAttachment
 from .export_image_details import ExportImageDetails
@@ -425,6 +426,7 @@ core_type_mapping = {
     "DhcpSearchDomainOption": DhcpSearchDomainOption,
     "Drg": Drg,
     "DrgAttachment": DrgAttachment,
+    "DrgRedundancyStatus": DrgRedundancyStatus,
     "EgressSecurityRule": EgressSecurityRule,
     "EmulatedVolumeAttachment": EmulatedVolumeAttachment,
     "ExportImageDetails": ExportImageDetails,
