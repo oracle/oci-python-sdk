@@ -19,9 +19,12 @@ def pytest_addoption(parser):
                      default=oci.config.DEFAULT_PROFILE)
     parser.addoption("--vcr-record-mode", action="store", default='once', help="Record mode option for VCRpy library.")
 
+    parser.addoption("--test-mode", action="store", default='service', help="Test mode: service or mock.")
+
 
 def pytest_configure(config):
     test_config_container.vcr_mode = config.getoption("--vcr-record-mode")
+    test_config_container.test_mode = config.getoption("--test-mode")
 
 
 @pytest.fixture(scope="session")
@@ -170,12 +173,18 @@ def testing_service_client():
         from .testing_service_client import TestingServiceClient
         client = TestingServiceClient()
 
-        with test_config_container.create_vcr().use_cassette('generated/create_test_service_session.yml'):
+        if test_config_container.test_mode == 'mock':
             client.create_session()
+        else:
+            with test_config_container.create_vcr().use_cassette('generated/create_test_service_session.yml'):
+                client.create_session()
 
         yield client
 
-        with test_config_container.create_vcr().use_cassette('generated/close_test_service_session.yml'):
+        if test_config_container.test_mode == 'mock':
             client.end_session()
+        else:
+            with test_config_container.create_vcr().use_cassette('generated/close_test_service_session.yml'):
+                client.end_session()
     except ImportError:
         yield None
