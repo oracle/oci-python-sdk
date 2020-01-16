@@ -16,6 +16,10 @@ To ensure we're resolving ``~`` to the home folder correctly, the tests expect ~
 
 If you don't have a key pair setup, see _How to Generate an API Signing Key: https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#How for more details
 
+You should also set up your configuration files as described `here`__
+
+__ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdkconfig.htm
+
 Setting up the development environment
 ======================================
 
@@ -52,7 +56,7 @@ Make sure to set up auto completion for both pyenv and pyenv-virtualenv.
     pyenv virtualenv --always-copy 2.7.12 sdk-2
 
     # Check to see that pyenv recognizes the new virtualenvs
-    # You should  something like this:
+    # You should see something like this:
     #    2.7.12/envs/sdk-2 (created from ~/.pyenv/versions/2.7.12)
     #    3.5.1/envs/sdk-3 (created from ~/.pyenv/versions/3.5.1)
     #    3.6.5/envs/sdk-36 (created from ~/.pyenv/versions/3.6.5)
@@ -87,6 +91,14 @@ To run commands with specifically the py2 or py3 venv, use ``pyenv shell`` as su
 Now any script, such as ``py.test``, will pull from ``sdk-2``, even though
 ``sdk-3`` is listed first in ``.python-version``.
 
+Pyexpat Module Error
+--------------------
+If you see the error ``ModuleNotFoundError: No module named 'pyexpat'``, you may need to reinstall xcode command line tools::
+
+    sudo rm -rf /Library/Developer/CommandLineTools
+    xcode-select --install
+
+
 Dependencies
 ------------
 
@@ -117,6 +129,23 @@ This commit is also important for dealing with older versions of Python: https:/
 
 This confluence page gives more details about vendoring: https://confluence.oci.oraclecorp.com/display/~nvu/Python+SDK+Vendoring
 
+Shared Keys
+-----------
+
+To get the shared keys for running tests, make sure clone the submodules using ``git clone --recurse-submodules`` while cloning this project.
+
+PyCharm Setup
+-------------
+
+* To make running tests easier through PyCharm, you would need to enable Pytest, as mentioned `here <https://www.jetbrains.com/help/pycharm/pytest.html>`_.
+
+* Set up `Python Interpreter <https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html>`_ to use the pyenv environment. Make sure to select "Existing environment" instead of "New environment".
+
+* Check `Run/Debug Configuration <https://www.jetbrains.com/help/pycharm/creating-and-editing-run-debug-configurations.html>`_:
+
+    * Additional Arguments - Depending on the file, you would need to provide additional arguments to run it. For example, to enable recording test traffic, you need to add, ``--vcr-record-mode=once``.
+    * Environment Variables - Depending on the file, you would need environment variables to run it. For example, ``PYTHON_TESTS_ADMIN_PASS_PHRASE`` to set the passphrase.
+    * Working Directory - Make sure this points to the root folder of the Python SDK.
 
 Running the tests
 =================
@@ -155,6 +184,10 @@ it is recommended to run tests with the '-s' option so that stdout
 from the tests is shown. Example run::
 
     py.test --fast -s
+
+**NOTE:** You can copy the contents of ``internal_resources/test_setup.sh`` and other files to your ``~/.bash_profile``, along with exporting the environment variable ``PYTHON_TESTS_ADMIN_PASS_PHRASE``. Don't forget to run::
+
+    source ~/.bash_profile
 
 
 Specifying a config file
@@ -241,6 +274,20 @@ You must also update the following locations in code where we are hardcoded for 
 Running the Code Generator
 ===========================
 
+Check Codegen Version
+---------------------
+
+Make sure the ``<codegen-version>`` in ``pom.xml`` reflects the latest codegen version. If it is different, you need to build the `bmc-sdk-swagger <https://bitbucket.oci.oraclecorp.com/projects/SDK/repos/bmc-sdk-swagger/browse>`_ project.
+
+To build the project, from the parent directory of ``bmc-sdk-swagger``, run::
+
+    mvn clean install
+
+Once it is done, update the ``<codegen_version>`` in ``pom.xml`` and continue with the next steps.
+
+Run Codegen
+-----------
+
 You run the code generator by executing::
 
     mvn clean install
@@ -268,12 +315,12 @@ Note: This will not update src/oci/__init__.py or generate docs.  It will also n
 Always run the full codegen before creating a pull request.
 
 Adding support for new services
-================================
+===============================
 
 Self-Service
 ------------
 
-This is the preferred way to add a service to the Python SDK.
+This is the preferred way to add or update a service in the Python SDK.
 
 `Requesting a preview SDK <https://confluence.oci.oraclecorp.com/display/DEX/Requesting+a+preview+SDK+CLI>`_
 
