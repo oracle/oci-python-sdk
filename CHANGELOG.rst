@@ -3,14 +3,6 @@ Change Log
 All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
-2.10.1 - 2020-01-21
-====================
-
-Added
------
-* Support for getting DRG redundancy status in the Networking service
-* Support for cloning autonomous databases from backups in the Database service
-
 ====================
 2.10.1 - 2020-01-21
 ====================
