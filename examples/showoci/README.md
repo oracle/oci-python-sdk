@@ -176,52 +176,57 @@ Execute
 ```
 $ ./showoci.py  
 
-usage: showoci.py [-h] [-a] [-ani] [-an] [-b] [-n] [-i] [-c] [-cn] [-o] [-l]
-                  [-d] [-f] [-e] [-m] [-s] [-rm] [-so] [-paas] [-edge] [-lq]
-                  [-mc] [-nr] [-ip] [-t PROFILE] [-p PROXY] [-rg REGION]
-                  [-cp COMPART] [-tenantid TENANTID] [-cpath COMPARTPATH]
-                  [-cf CONFIG] [-csv CSV] [-jf JOUTFILE] [-js]
-                  [-sjf SJOUTFILE] [-cachef SERVICEFILE] [-caches] [--version]
+usage: showoci.py [-h] [-a] [-ani] [-an] [-b] [-n] [-i] [-ic] [-c] [-cn] [-o]
+                  [-l] [-d] [-f] [-e] [-m] [-s] [-rm] [-so] [-paas] [-edge]
+                  [-lq] [-mc] [-nr] [-ip] [-t PROFILE] [-p PROXY] [-rg REGION]
+                  [-cp COMPART] [-cpr COMPART_RECURSIVE] [-cpath COMPARTPATH]
+                  [-tenantid TENANTID] [-cf CONFIG] [-csv CSV] [-jf JOUTFILE]
+                  [-js] [-sjf SJOUTFILE] [-cachef SERVICEFILE] [-caches]
+                  [--version]
 
 optional arguments:
-  -h, --help           show this help message and exit
-  -a                   Print All Resources
-  -ani                 Print All Resources but identity
-  -an                  Print Announcements
-  -b                   Print Budgets
-  -n                   Print Network
-  -i                   Print Identity
-  -c                   Print Compute
-  -cn                  Print Containers
-  -o                   Print Object Storage
-  -l                   Print Load Balancer
-  -d                   Print Database
-  -f                   Print File Storage
-  -e                   Print EMail
-  -m                   Print Monitoring and Notifications
-  -s                   Print Streams
-  -rm                  Print Resource management
-  -so                  Print Summary Only
-  -paas                Print Oracle Paas Native - OIC OAC ODA
-  -edge                Print Edge Services (Healthcheck)
-  -lq                  Print Limits and Quotas
-  -mc                  exclude ManagedCompartmentForPaaS
-  -nr                  Not include root compartment
-  -ip                  Use Instance Principals for Authentication
-  -t PROFILE           Config file section to use (tenancy profile)
-  -p PROXY             Set Proxy (i.e. www-proxy-server.com:80)
-  -rg REGION           Filter by Region
-  -cp COMPART          Filter by Compartment Name or OCID
-  -tenantid TENANTID   Override confile file tenancy_id
-  -cpath COMPARTPATH   Filter by Compartment path ,(i.e. -cpath "Adi / Sub"
-  -cf CONFIG           Config File
-  -csv CSV             Output to CSV files, Input as file header
-  -jf JOUTFILE         Output to file (JSON format)
-  -js                  Output to screen (JSON format)
-  -sjf SJOUTFILE       Output to screen (nice format) and JSON File
-  -cachef SERVICEFILE  Output Cache to file (JSON format)
-  -caches              Output Cache to screen (JSON format)
-  --version            show program's version number and exit
+  -h, --help            show this help message and exit
+  -a                    Print All Resources
+  -ani                  Print All Resources but identity
+  -an                   Print Announcements
+  -b                    Print Budgets
+  -n                    Print Network
+  -i                    Print Identity
+  -ic                   Print Identity Compartments only
+  -c                    Print Compute
+  -cn                   Print Containers
+  -o                    Print Object Storage
+  -l                    Print Load Balancer
+  -d                    Print Database
+  -f                    Print File Storage
+  -e                    Print EMail
+  -m                    Print Monitoring and Notifications
+  -s                    Print Streams
+  -rm                   Print Resource management
+  -so                   Print Summary Only
+  -paas                 Print Oracle Paas Native - OIC OAC ODA
+  -edge                 Print Edge Services (Healthcheck)
+  -lq                   Print Limits and Quotas
+  -mc                   exclude ManagedCompartmentForPaaS
+  -nr                   Not include root compartment
+  -ip                   Use Instance Principals for Authentication
+  -t PROFILE            Config file section to use (tenancy profile)
+  -p PROXY              Set Proxy (i.e. www-proxy-server.com:80)
+  -rg REGION            Filter by Region
+  -cp COMPART           Filter by Compartment Name or OCID
+  -cpr COMPART_RECURSIVE
+                        Filter by Compartment Name or OCID include sub
+                        compartments
+  -cpath COMPARTPATH    Filter by Compartment path ,(i.e. -cpath "Adi / Sub"
+  -tenantid TENANTID    Override confile file tenancy_id
+  -cf CONFIG            Config File
+  -csv CSV              Output to CSV files, Input as file header
+  -jf JOUTFILE          Output to file (JSON format)
+  -js                   Output to screen (JSON format)
+  -sjf SJOUTFILE        Output to screen (nice format) and JSON File
+  -cachef SERVICEFILE   Output Cache to file (JSON format)
+  -caches               Output Cache to screen (JSON format)
+  --version             show program's version number and exit
 
 ```
 

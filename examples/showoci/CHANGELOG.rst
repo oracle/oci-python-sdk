@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.01.29 - 2020-01-29
+=====================
+* Fix call to list_databases due to OCI change the parameters requirement
+* Fix bug listing autonomous databases if no VCN exist
+
+=====================
+20.01.15 - 2020-01-15
+=====================
+* Added recursive compartment with -cpr
+* Added -ic to fetch compartments flag if only compartments required
+
+=====================
 20.01.14 - 2020-01-14
 =====================
 * Added users extract to CVS (thank you Josh)
