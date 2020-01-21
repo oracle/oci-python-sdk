@@ -12,6 +12,7 @@ import time
 import vcr
 
 vcr_mode = None
+test_mode = None
 
 
 def using_vcr_with_mock_responses():

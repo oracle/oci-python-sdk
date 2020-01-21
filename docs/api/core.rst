@@ -157,6 +157,7 @@ Core Services
     oci.core.models.DhcpSearchDomainOption
     oci.core.models.Drg
     oci.core.models.DrgAttachment
+    oci.core.models.DrgRedundancyStatus
     oci.core.models.EgressSecurityRule
     oci.core.models.EmulatedVolumeAttachment
     oci.core.models.ExportImageDetails

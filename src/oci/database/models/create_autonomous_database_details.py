@@ -86,7 +86,7 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
 
         :param source:
             The value to assign to the source property of this CreateAutonomousDatabaseDetails.
-            Allowed values for this property are: "NONE", "DATABASE"
+            Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP"
         :type source: str
 
         """
