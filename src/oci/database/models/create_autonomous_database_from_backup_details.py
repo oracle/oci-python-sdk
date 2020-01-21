@@ -7,102 +7,102 @@ from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
+class CreateAutonomousDatabaseFromBackupDetails(CreateAutonomousDatabaseBase):
     """
-    Details to create an Oracle Autonomous Database by cloning an existing Autonomous Database.
+    Details to create an Oracle Autonomous Database by cloning from a backup of an existing Autonomous Database.
     """
 
-    #: A constant which can be used with the clone_type property of a CreateAutonomousDatabaseCloneDetails.
+    #: A constant which can be used with the clone_type property of a CreateAutonomousDatabaseFromBackupDetails.
     #: This constant has a value of "FULL"
     CLONE_TYPE_FULL = "FULL"
 
-    #: A constant which can be used with the clone_type property of a CreateAutonomousDatabaseCloneDetails.
+    #: A constant which can be used with the clone_type property of a CreateAutonomousDatabaseFromBackupDetails.
     #: This constant has a value of "METADATA"
     CLONE_TYPE_METADATA = "METADATA"
 
     def __init__(self, **kwargs):
         """
-        Initializes a new CreateAutonomousDatabaseCloneDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.database.models.CreateAutonomousDatabaseCloneDetails.source` attribute
-        of this class is ``DATABASE`` and it should not be changed.
+        Initializes a new CreateAutonomousDatabaseFromBackupDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.database.models.CreateAutonomousDatabaseFromBackupDetails.source` attribute
+        of this class is ``BACKUP_FROM_ID`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param compartment_id:
-            The value to assign to the compartment_id property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the compartment_id property of this CreateAutonomousDatabaseFromBackupDetails.
         :type compartment_id: str
 
         :param db_name:
-            The value to assign to the db_name property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the db_name property of this CreateAutonomousDatabaseFromBackupDetails.
         :type db_name: str
 
         :param cpu_core_count:
-            The value to assign to the cpu_core_count property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the cpu_core_count property of this CreateAutonomousDatabaseFromBackupDetails.
         :type cpu_core_count: int
 
         :param db_workload:
-            The value to assign to the db_workload property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the db_workload property of this CreateAutonomousDatabaseFromBackupDetails.
             Allowed values for this property are: "OLTP", "DW"
         :type db_workload: str
 
         :param data_storage_size_in_tbs:
-            The value to assign to the data_storage_size_in_tbs property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the data_storage_size_in_tbs property of this CreateAutonomousDatabaseFromBackupDetails.
         :type data_storage_size_in_tbs: int
 
         :param is_free_tier:
-            The value to assign to the is_free_tier property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the is_free_tier property of this CreateAutonomousDatabaseFromBackupDetails.
         :type is_free_tier: bool
 
         :param admin_password:
-            The value to assign to the admin_password property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the admin_password property of this CreateAutonomousDatabaseFromBackupDetails.
         :type admin_password: str
 
         :param display_name:
-            The value to assign to the display_name property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the display_name property of this CreateAutonomousDatabaseFromBackupDetails.
         :type display_name: str
 
         :param license_model:
-            The value to assign to the license_model property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the license_model property of this CreateAutonomousDatabaseFromBackupDetails.
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
         :type license_model: str
 
         :param is_preview_version_with_service_terms_accepted:
-            The value to assign to the is_preview_version_with_service_terms_accepted property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the is_preview_version_with_service_terms_accepted property of this CreateAutonomousDatabaseFromBackupDetails.
         :type is_preview_version_with_service_terms_accepted: bool
 
         :param is_auto_scaling_enabled:
-            The value to assign to the is_auto_scaling_enabled property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the is_auto_scaling_enabled property of this CreateAutonomousDatabaseFromBackupDetails.
         :type is_auto_scaling_enabled: bool
 
         :param is_dedicated:
-            The value to assign to the is_dedicated property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the is_dedicated property of this CreateAutonomousDatabaseFromBackupDetails.
         :type is_dedicated: bool
 
         :param autonomous_container_database_id:
-            The value to assign to the autonomous_container_database_id property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the autonomous_container_database_id property of this CreateAutonomousDatabaseFromBackupDetails.
         :type autonomous_container_database_id: str
 
         :param whitelisted_ips:
-            The value to assign to the whitelisted_ips property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the whitelisted_ips property of this CreateAutonomousDatabaseFromBackupDetails.
         :type whitelisted_ips: list[str]
 
         :param freeform_tags:
-            The value to assign to the freeform_tags property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the freeform_tags property of this CreateAutonomousDatabaseFromBackupDetails.
         :type freeform_tags: dict(str, str)
 
         :param defined_tags:
-            The value to assign to the defined_tags property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the defined_tags property of this CreateAutonomousDatabaseFromBackupDetails.
         :type defined_tags: dict(str, dict(str, object))
 
         :param source:
-            The value to assign to the source property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the source property of this CreateAutonomousDatabaseFromBackupDetails.
             Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP"
         :type source: str
 
-        :param source_id:
-            The value to assign to the source_id property of this CreateAutonomousDatabaseCloneDetails.
-        :type source_id: str
+        :param autonomous_database_backup_id:
+            The value to assign to the autonomous_database_backup_id property of this CreateAutonomousDatabaseFromBackupDetails.
+        :type autonomous_database_backup_id: str
 
         :param clone_type:
-            The value to assign to the clone_type property of this CreateAutonomousDatabaseCloneDetails.
+            The value to assign to the clone_type property of this CreateAutonomousDatabaseFromBackupDetails.
             Allowed values for this property are: "FULL", "METADATA"
         :type clone_type: str
 
@@ -125,7 +125,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'source': 'str',
-            'source_id': 'str',
+            'autonomous_database_backup_id': 'str',
             'clone_type': 'str'
         }
 
@@ -147,7 +147,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'source': 'source',
-            'source_id': 'sourceId',
+            'autonomous_database_backup_id': 'autonomousDatabaseBackupId',
             'clone_type': 'cloneType'
         }
 
@@ -168,48 +168,48 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
         self._freeform_tags = None
         self._defined_tags = None
         self._source = None
-        self._source_id = None
+        self._autonomous_database_backup_id = None
         self._clone_type = None
-        self._source = 'DATABASE'
+        self._source = 'BACKUP_FROM_ID'
 
     @property
-    def source_id(self):
+    def autonomous_database_backup_id(self):
         """
-        **[Required]** Gets the source_id of this CreateAutonomousDatabaseCloneDetails.
-        The `OCID`__ of the source Autonomous Database that you will clone to create a new Autonomous Database.
+        **[Required]** Gets the autonomous_database_backup_id of this CreateAutonomousDatabaseFromBackupDetails.
+        The `OCID`__ of the source Autonomous Database Backup that you will clone to create a new Autonomous Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
-        :return: The source_id of this CreateAutonomousDatabaseCloneDetails.
+        :return: The autonomous_database_backup_id of this CreateAutonomousDatabaseFromBackupDetails.
         :rtype: str
         """
-        return self._source_id
+        return self._autonomous_database_backup_id
 
-    @source_id.setter
-    def source_id(self, source_id):
+    @autonomous_database_backup_id.setter
+    def autonomous_database_backup_id(self, autonomous_database_backup_id):
         """
-        Sets the source_id of this CreateAutonomousDatabaseCloneDetails.
-        The `OCID`__ of the source Autonomous Database that you will clone to create a new Autonomous Database.
+        Sets the autonomous_database_backup_id of this CreateAutonomousDatabaseFromBackupDetails.
+        The `OCID`__ of the source Autonomous Database Backup that you will clone to create a new Autonomous Database.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
-        :param source_id: The source_id of this CreateAutonomousDatabaseCloneDetails.
+        :param autonomous_database_backup_id: The autonomous_database_backup_id of this CreateAutonomousDatabaseFromBackupDetails.
         :type: str
         """
-        self._source_id = source_id
+        self._autonomous_database_backup_id = autonomous_database_backup_id
 
     @property
     def clone_type(self):
         """
-        **[Required]** Gets the clone_type of this CreateAutonomousDatabaseCloneDetails.
+        **[Required]** Gets the clone_type of this CreateAutonomousDatabaseFromBackupDetails.
         The Autonomous Database clone type.
 
         Allowed values for this property are: "FULL", "METADATA"
 
 
-        :return: The clone_type of this CreateAutonomousDatabaseCloneDetails.
+        :return: The clone_type of this CreateAutonomousDatabaseFromBackupDetails.
         :rtype: str
         """
         return self._clone_type
@@ -217,11 +217,11 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
     @clone_type.setter
     def clone_type(self, clone_type):
         """
-        Sets the clone_type of this CreateAutonomousDatabaseCloneDetails.
+        Sets the clone_type of this CreateAutonomousDatabaseFromBackupDetails.
         The Autonomous Database clone type.
 
 
-        :param clone_type: The clone_type of this CreateAutonomousDatabaseCloneDetails.
+        :param clone_type: The clone_type of this CreateAutonomousDatabaseFromBackupDetails.
         :type: str
         """
         allowed_values = ["FULL", "METADATA"]

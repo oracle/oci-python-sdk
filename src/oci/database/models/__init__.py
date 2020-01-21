@@ -43,6 +43,8 @@ from .create_autonomous_database_backup_details import CreateAutonomousDatabaseB
 from .create_autonomous_database_base import CreateAutonomousDatabaseBase
 from .create_autonomous_database_clone_details import CreateAutonomousDatabaseCloneDetails
 from .create_autonomous_database_details import CreateAutonomousDatabaseDetails
+from .create_autonomous_database_from_backup_details import CreateAutonomousDatabaseFromBackupDetails
+from .create_autonomous_database_from_backup_timestamp_details import CreateAutonomousDatabaseFromBackupTimestampDetails
 from .create_backup_destination_details import CreateBackupDestinationDetails
 from .create_backup_details import CreateBackupDetails
 from .create_data_guard_association_details import CreateDataGuardAssociationDetails
@@ -176,6 +178,8 @@ database_type_mapping = {
     "CreateAutonomousDatabaseBase": CreateAutonomousDatabaseBase,
     "CreateAutonomousDatabaseCloneDetails": CreateAutonomousDatabaseCloneDetails,
     "CreateAutonomousDatabaseDetails": CreateAutonomousDatabaseDetails,
+    "CreateAutonomousDatabaseFromBackupDetails": CreateAutonomousDatabaseFromBackupDetails,
+    "CreateAutonomousDatabaseFromBackupTimestampDetails": CreateAutonomousDatabaseFromBackupTimestampDetails,
     "CreateBackupDestinationDetails": CreateBackupDestinationDetails,
     "CreateBackupDetails": CreateBackupDetails,
     "CreateDataGuardAssociationDetails": CreateDataGuardAssociationDetails,

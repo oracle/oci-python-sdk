@@ -146,6 +146,12 @@ class TestingServiceClient:
             "lang": SERVICE_LANGUAGE
         }
 
+        response_types_keep_data_field_name = ['ListObjects',
+                                               'TerraformVersionCollection',
+                                               'MultipleTransferAppliances',
+                                               'MultipleTransferDevices',
+                                               'MultipleTransferPackages']
+
         if not service_error:
             if is_paginated_call:
                 # response_class = 'java.util.List<com.oracle.bmc.{java_package_name}.responses.{api_name}Response>'.format(java_package_name=java_package_name, api_name=api_name)
@@ -155,13 +161,24 @@ class TestingServiceClient:
                 response_json = util.make_dict_keys_camel_case(list_responses)
             else:
                 oci_response = oci_responses[0]
-                if api_name.lower().startswith('list'):
+                response_type = oci_response.request.response_type
+                is_list_api = api_name.lower().startswith('list')
+                if is_list_api or (response_type and response_type.startswith('list[') and response_type.endswith('Summary]')):
+                    # Hack alert for object storage and resource manager!
+                    if response_type and response_type not in response_types_keep_data_field_name:
+                        data_field_name = 'items'
+                # For BatchServiceClient#get_job_log()
+                elif response_type in ['str', 'bytes']:
+                    data_field_name = 'value'
+                # For StreamClient#get_messages(), which is not considered a paginated call (no page param)
+                elif response_type in ['list[Message]', 'list[MetricData]']:
                     data_field_name = 'items'
                 response_dict = self.get_response_dictionary(oci_response, is_delete_operation, data_field_name)
                 response_json = util.make_dict_keys_camel_case(response_dict, ['freeformTags', 'definedTags', 'metadata'])
 
             data['responseJson'] = json.dumps(response_json)
             data['responseClass'] = response_class
+            print('dataToValidate: {}'.format(json.dumps(data, indent=2)))
             response = requests.post(success_url, params=params, data=json.dumps(data))
         else:
             error = {}
@@ -185,17 +202,31 @@ class TestingServiceClient:
     def get_response_dictionary(self, oci_response, is_delete_operation, data_field_name):
         if is_delete_operation:
             oci_response.data = {}
-
+        print('data field name is ' + data_field_name)
         if data_field_name == 'stream':
             # for binary data, decode them first then put into inputStream
-            response_dict = {"inputStream": str(base64.b64encode(oci_response.data.content).decode('utf-8')),
-                             "contentLength": len(oci_response.data.content)}
+            response_dict = {"inputStream": str(base64.b64encode(oci_response.data.content).decode('utf-8'))}
+            if hasattr(oci_response.data, 'content'):
+                response_dict['contentLength'] = len(oci_response.data.content)
+        elif data_field_name == 'value':
+            # for value field (originally str or binary), decode to string
+            try:
+                val = oci_response.data.decode('utf-8')
+            except (UnicodeDecodeError, AttributeError):
+                val = oci_response.data
+            response_dict = oci_util.to_dict({data_field_name: val})
         else:
             response_dict = oci_util.to_dict({data_field_name: oci_response.data})
-
         # response_dict = oci_util.to_dict({data_field_name: oci_response.data})
-        response_dict['opcRequestId'] = self.build_request_id()
-        response_dict['opcNextPage'] = oci_response.next_page
+        response_dict['opcRequestId'] = oci_response.request_id
+        if oci_response.next_page is not None:
+            response_dict['opcNextPage'] = oci_response.next_page
+        if 'opc-prev-page' in oci_response.headers:
+            response_dict['opcPrevPage'] = oci_response.headers['opc-prev-page']
+        if 'opc-previous-page' in oci_response.headers:
+            response_dict['opcPreviousPage'] = oci_response.headers['opc-previous-page']
+        if 'opc-next-cursor' in oci_response.headers:
+            response_dict['opcNextCursor'] = oci_response.headers['opc-next-cursor']
 
         work_request_id = 'opc-work-request-id'
         if work_request_id in oci_response.headers:

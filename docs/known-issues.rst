@@ -28,11 +28,11 @@ If you need to retain the connection timeout while clearing the read timeout, yo
     client.base_client.timeout = (90.0, None)
 
 
-Potential data corruption with Python SDK on binary upload
-==========================================================
+Potential data corruption with Python SDK on binary upload (versions 2.8.0 and below)
+====================================================================================
 
 **Details:** When using the Python SDK to perform binary upload operations you may encounter an issue with data corruption if retries are enabled or if you are using UploadManager.upload_file.
 
-**Workaround:** We are aware of the issue and working on a resolution. For more information about this issue and workarounds, see `Potential data corruption issue for PythonSDK retry on binary data upload <https://github.com/oracle/oci-python-sdk/issues/203/>`_.
+**Impacted Versions:** v2.8.0 and below
 
-**Direct link to this issue:** `Potential data corruption with Python SDK on binary upload <https://preview.oci.oraclecorp.com/iaas/Content/knownissues.htm?bundle=joPythonKnownIssue#pythonDataCorrupt>`_.
+**Direct link to this issue:** `Potential data corruption with Python SDK on binary upload <https://github.com/oracle/oci-python-sdk/issues/203/>`_
