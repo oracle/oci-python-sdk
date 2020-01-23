@@ -201,6 +201,7 @@ def test_list_transfer_jobs(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('dts', util.camelize('transfer_job'), 'ListTransferJobs')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='dts', api_name='ListTransferJobs')
 
@@ -217,6 +218,25 @@ def test_list_transfer_jobs(testing_service_client):
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_transfer_jobs(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_transfer_jobs(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
         except oci_exception.ServiceError as service_exception:
             service_error = service_exception
 
@@ -229,7 +249,7 @@ def test_list_transfer_jobs(testing_service_client):
             service_error,
             'transferJobSummary',
             False,
-            False
+            True
         )
 
 

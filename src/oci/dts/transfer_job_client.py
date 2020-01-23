@@ -185,6 +185,10 @@ class TransferJobClient(object):
 
         :param str opc_retry_token: (optional)
 
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+            a particular request, please provide the request ID.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -202,7 +206,8 @@ class TransferJobClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "opc_retry_token"
+            "opc_retry_token",
+            "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -212,7 +217,8 @@ class TransferJobClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -247,6 +253,10 @@ class TransferJobClient(object):
         :param str id: (required)
             ID of the Transfer Job
 
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+            a particular request, please provide the request ID.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -261,7 +271,11 @@ class TransferJobClient(object):
         resource_path = "/transferJobs/{id}"
         method = "DELETE"
 
-        expected_kwargs = ["retry_strategy"]
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
@@ -279,8 +293,10 @@ class TransferJobClient(object):
 
         header_params = {
             "accept": "application/json",
-            "content-type": "application/json"
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -309,6 +325,10 @@ class TransferJobClient(object):
         :param str id: (required)
             OCID of the Transfer Job
 
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+            a particular request, please provide the request ID.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -323,7 +343,11 @@ class TransferJobClient(object):
         resource_path = "/transferJobs/{id}"
         method = "GET"
 
-        expected_kwargs = ["retry_strategy"]
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
@@ -341,8 +365,10 @@ class TransferJobClient(object):
 
         header_params = {
             "accept": "application/json",
-            "content-type": "application/json"
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -381,6 +407,26 @@ class TransferJobClient(object):
         :param str display_name: (optional)
             filtering by displayName
 
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+            a particular request, please provide the request ID.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -399,7 +445,10 @@ class TransferJobClient(object):
         expected_kwargs = [
             "retry_strategy",
             "lifecycle_state",
-            "display_name"
+            "display_name",
+            "limit",
+            "page",
+            "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -416,14 +465,18 @@ class TransferJobClient(object):
         query_params = {
             "compartmentId": compartment_id,
             "lifecycleState": kwargs.get("lifecycle_state", missing),
-            "displayName": kwargs.get("display_name", missing)
+            "displayName": kwargs.get("display_name", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
-            "content-type": "application/json"
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -461,6 +514,10 @@ class TransferJobClient(object):
             The entity tag to match. Optional, if set, the update will be successful only if the
             object's tag matches the tag specified in the request.
 
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+            a particular request, please provide the request ID.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -478,7 +535,8 @@ class TransferJobClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "if_match"
+            "if_match",
+            "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -498,7 +556,8 @@ class TransferJobClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "if-match": kwargs.get("if_match", missing)
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 

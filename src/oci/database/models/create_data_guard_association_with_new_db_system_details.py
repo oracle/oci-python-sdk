@@ -46,6 +46,10 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             The value to assign to the availability_domain property of this CreateDataGuardAssociationWithNewDbSystemDetails.
         :type availability_domain: str
 
+        :param shape:
+            The value to assign to the shape property of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :type shape: str
+
         :param subnet_id:
             The value to assign to the subnet_id property of this CreateDataGuardAssociationWithNewDbSystemDetails.
         :type subnet_id: str
@@ -70,6 +74,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             'creation_type': 'str',
             'display_name': 'str',
             'availability_domain': 'str',
+            'shape': 'str',
             'subnet_id': 'str',
             'nsg_ids': 'list[str]',
             'backup_network_nsg_ids': 'list[str]',
@@ -83,6 +88,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             'creation_type': 'creationType',
             'display_name': 'displayName',
             'availability_domain': 'availabilityDomain',
+            'shape': 'shape',
             'subnet_id': 'subnetId',
             'nsg_ids': 'nsgIds',
             'backup_network_nsg_ids': 'backupNetworkNsgIds',
@@ -95,6 +101,7 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         self._creation_type = None
         self._display_name = None
         self._availability_domain = None
+        self._shape = None
         self._subnet_id = None
         self._nsg_ids = None
         self._backup_network_nsg_ids = None
@@ -148,6 +155,36 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         :type: str
         """
         self._availability_domain = availability_domain
+
+    @property
+    def shape(self):
+        """
+        Gets the shape of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        The shape of the DB system to launch to set up the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system.
+        Only virtual machine shapes are valid shapes. If you do not supply this parameter, the default shape is the shape of the primary DB system.
+
+        To get a list of all shapes, use the :func:`list_db_system_shapes` operation.
+
+
+        :return: The shape of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :rtype: str
+        """
+        return self._shape
+
+    @shape.setter
+    def shape(self, shape):
+        """
+        Sets the shape of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        The shape of the DB system to launch to set up the Data Guard association. The shape determines the number of CPU cores and the amount of memory available for the DB system.
+        Only virtual machine shapes are valid shapes. If you do not supply this parameter, the default shape is the shape of the primary DB system.
+
+        To get a list of all shapes, use the :func:`list_db_system_shapes` operation.
+
+
+        :param shape: The shape of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :type: str
+        """
+        self._shape = shape
 
     @property
     def subnet_id(self):

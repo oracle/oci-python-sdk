@@ -1,0 +1,11 @@
+DataAssetCollection
+===================
+
+.. currentmodule:: oci.data_catalog.models
+
+.. autoclass:: DataAssetCollection
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:
