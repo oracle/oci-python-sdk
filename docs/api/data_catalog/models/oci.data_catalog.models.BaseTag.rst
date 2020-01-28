@@ -1,0 +1,11 @@
+BaseTag
+=======
+
+.. currentmodule:: oci.data_catalog.models
+
+.. autoclass:: BaseTag
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

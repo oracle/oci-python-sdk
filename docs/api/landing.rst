@@ -8,6 +8,7 @@ API Reference
 * :doc:`Deployment <apigateway/client/oci.apigateway.DeploymentClient>`
 * :doc:`Gateway <apigateway/client/oci.apigateway.GatewayClient>`
 * :doc:`Work Requests <apigateway/client/oci.apigateway.WorkRequestsClient>`
+* :doc:`Application Migration <application_migration/client/oci.application_migration.ApplicationMigrationClient>`
 * :doc:`Audit <audit/client/oci.audit.AuditClient>`
 * :doc:`Auto Scaling <autoscaling/client/oci.autoscaling.AutoScalingClient>`
 * :doc:`Budget <budget/client/oci.budget.BudgetClient>`
@@ -16,8 +17,11 @@ API Reference
 * :doc:`Compute <core/client/oci.core.ComputeClient>`
 * :doc:`Compute Management <core/client/oci.core.ComputeManagementClient>`
 * :doc:`Virtual Network <core/client/oci.core.VirtualNetworkClient>`
+* :doc:`Data Catalog <data_catalog/client/oci.data_catalog.DataCatalogClient>`
+* :doc:`Data Flow <data_flow/client/oci.data_flow.DataFlowClient>`
 * :doc:`Database <database/client/oci.database.DatabaseClient>`
 * :doc:`DNS <dns/client/oci.dns.DnsClient>`
+* :doc:`Appliance Export Job <dts/client/oci.dts.ApplianceExportJobClient>`
 * :doc:`Shipping Vendors <dts/client/oci.dts.ShippingVendorsClient>`
 * :doc:`Transfer Appliance <dts/client/oci.dts.TransferApplianceClient>`
 * :doc:`Transfer Appliance Entitlement <dts/client/oci.dts.TransferApplianceEntitlementClient>`
@@ -74,11 +78,14 @@ API Reference
     analytics
     announcements_service
     apigateway
+    application_migration
     audit
     autoscaling
     budget
     container_engine
     core
+    data_catalog
+    data_flow
     database
     dns
     dts

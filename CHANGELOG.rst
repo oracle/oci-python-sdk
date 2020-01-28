@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.10.2 - 2020-01-28
+====================
+
+Added
+-----
+* Support for the Application Migration service
+* Support for the Data Flow service
+* Support for the Data Catalog service
+* Support for cross-shape Data Guard in the Database service
+* Support for offline data export in the Data Transfer service
+
+====================
 2.10.1 - 2020-01-21
 ====================
 
