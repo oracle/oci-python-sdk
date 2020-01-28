@@ -29,6 +29,7 @@ import time
 class ShowOCIFlags(object):
     # Read Flags
     read_identity = False
+    read_identity_compartments = False
     read_network = False
     read_compute = False
     read_database = False
@@ -54,6 +55,7 @@ class ShowOCIFlags(object):
     # filter flags
     filter_by_region = ""
     filter_by_compartment = ""
+    filter_by_compartment_recursive = ""
     filter_by_compartment_path = ""
     filter_by_tenancy_id = ""
 
@@ -109,7 +111,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.8.0"
+    oci_compatible_version = "2.10.0"
 
     ##########################################################################
     # Global Constants
@@ -666,6 +668,9 @@ class ShowOCIService(object):
             if self.flags.filter_by_compartment_path:
                 print("Filtered by Compartment Path = " + self.flags.filter_by_compartment_path)
 
+            if self.flags.filter_by_compartment_recursive:
+                print("Filtered by Compartment Recursive = " + self.flags.filter_by_compartment_recursive)
+
             print("")
 
             # load identity
@@ -728,7 +733,7 @@ class ShowOCIService(object):
                 self.__load_core_compute_main()
 
         # database
-        if self.flags.read_database and self.is_vcn_exist_for_region:
+        if self.flags.read_database:
             if self.check_if_service_available(region_name, self.C_DATABASE):
                 self.__load_database_main()
 
@@ -929,7 +934,7 @@ class ShowOCIService(object):
             sorted_compartments = sorted(compartments, key=lambda k: k['path'])
 
             # if not filtered by compartment return
-            if not (self.flags.filter_by_compartment or self.flags.filter_by_compartment_path):
+            if not (self.flags.filter_by_compartment or self.flags.filter_by_compartment_path or self.flags.filter_by_compartment_recursive):
                 self.data[self.C_IDENTITY][self.C_IDENTITY_COMPARTMENTS] = sorted_compartments
                 self.__load_print_cnt(len(compartments), start_time)
                 return
@@ -946,6 +951,11 @@ class ShowOCIService(object):
             if self.flags.filter_by_compartment_path:
                 for x in sorted_compartments:
                     if self.flags.filter_by_compartment_path == x['path']:
+                        filtered_compart.append(x)            # if filter by path compartment, then reduce list and return new list
+
+            if self.flags.filter_by_compartment_recursive:
+                for x in sorted_compartments:
+                    if self.flags.filter_by_compartment_recursive in x['path']:
                         filtered_compart.append(x)
 
             # add to data
@@ -5426,7 +5436,7 @@ class ShowOCIService(object):
             dbs = oci.pagination.list_call_get_all_results(
                 database_client.list_databases,
                 compartment['id'],
-                db_home_id,
+                db_home_id=db_home_id,
                 sort_by="DBNAME"
             ).data
 

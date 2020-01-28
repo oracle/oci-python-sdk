@@ -6,12 +6,14 @@ Dts
     :nosignatures:
     :template: autosummary/service_client.rst
 
+    oci.dts.ApplianceExportJobClient
     oci.dts.ShippingVendorsClient
     oci.dts.TransferApplianceClient
     oci.dts.TransferApplianceEntitlementClient
     oci.dts.TransferDeviceClient
     oci.dts.TransferJobClient
     oci.dts.TransferPackageClient
+    oci.dts.ApplianceExportJobClientCompositeOperations
     oci.dts.ShippingVendorsClientCompositeOperations
     oci.dts.TransferApplianceClientCompositeOperations
     oci.dts.TransferApplianceEntitlementClientCompositeOperations
@@ -28,8 +30,12 @@ Dts
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.dts.models.ApplianceExportJob
+    oci.dts.models.ApplianceExportJobSummary
     oci.dts.models.AttachDevicesDetails
+    oci.dts.models.ChangeApplianceExportJobCompartmentDetails
     oci.dts.models.ChangeTransferJobCompartmentDetails
+    oci.dts.models.CreateApplianceExportJobDetails
     oci.dts.models.CreateTransferApplianceDetails
     oci.dts.models.CreateTransferApplianceEntitlementDetails
     oci.dts.models.CreateTransferDeviceDetails
@@ -55,6 +61,7 @@ Dts
     oci.dts.models.TransferJobSummary
     oci.dts.models.TransferPackage
     oci.dts.models.TransferPackageSummary
+    oci.dts.models.UpdateApplianceExportJobDetails
     oci.dts.models.UpdateTransferApplianceDetails
     oci.dts.models.UpdateTransferDeviceDetails
     oci.dts.models.UpdateTransferJobDetails

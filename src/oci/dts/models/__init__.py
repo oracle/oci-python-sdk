@@ -3,8 +3,12 @@
 
 from __future__ import absolute_import
 
+from .appliance_export_job import ApplianceExportJob
+from .appliance_export_job_summary import ApplianceExportJobSummary
 from .attach_devices_details import AttachDevicesDetails
+from .change_appliance_export_job_compartment_details import ChangeApplianceExportJobCompartmentDetails
 from .change_transfer_job_compartment_details import ChangeTransferJobCompartmentDetails
+from .create_appliance_export_job_details import CreateApplianceExportJobDetails
 from .create_transfer_appliance_details import CreateTransferApplianceDetails
 from .create_transfer_appliance_entitlement_details import CreateTransferApplianceEntitlementDetails
 from .create_transfer_device_details import CreateTransferDeviceDetails
@@ -30,6 +34,7 @@ from .transfer_job import TransferJob
 from .transfer_job_summary import TransferJobSummary
 from .transfer_package import TransferPackage
 from .transfer_package_summary import TransferPackageSummary
+from .update_appliance_export_job_details import UpdateApplianceExportJobDetails
 from .update_transfer_appliance_details import UpdateTransferApplianceDetails
 from .update_transfer_device_details import UpdateTransferDeviceDetails
 from .update_transfer_job_details import UpdateTransferJobDetails
@@ -37,8 +42,12 @@ from .update_transfer_package_details import UpdateTransferPackageDetails
 
 # Maps type names to classes for dts services.
 dts_type_mapping = {
+    "ApplianceExportJob": ApplianceExportJob,
+    "ApplianceExportJobSummary": ApplianceExportJobSummary,
     "AttachDevicesDetails": AttachDevicesDetails,
+    "ChangeApplianceExportJobCompartmentDetails": ChangeApplianceExportJobCompartmentDetails,
     "ChangeTransferJobCompartmentDetails": ChangeTransferJobCompartmentDetails,
+    "CreateApplianceExportJobDetails": CreateApplianceExportJobDetails,
     "CreateTransferApplianceDetails": CreateTransferApplianceDetails,
     "CreateTransferApplianceEntitlementDetails": CreateTransferApplianceEntitlementDetails,
     "CreateTransferDeviceDetails": CreateTransferDeviceDetails,
@@ -64,6 +73,7 @@ dts_type_mapping = {
     "TransferJobSummary": TransferJobSummary,
     "TransferPackage": TransferPackage,
     "TransferPackageSummary": TransferPackageSummary,
+    "UpdateApplianceExportJobDetails": UpdateApplianceExportJobDetails,
     "UpdateTransferApplianceDetails": UpdateTransferApplianceDetails,
     "UpdateTransferDeviceDetails": UpdateTransferDeviceDetails,
     "UpdateTransferJobDetails": UpdateTransferJobDetails,
