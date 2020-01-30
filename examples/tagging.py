@@ -87,8 +87,8 @@ virtual_network = oci.core.VirtualNetworkClient(config)
 # documentation to see what these are (https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/api/landing.html)
 num_tries = 0
 while True:
-    # You may get a 404 if you create/reactivate a tag and try and use it straight away. If you have a delay/sleep between
-    # creating the tag and then using it (or alternatively retry the 404) that may resolve the issue.
+    # You may get a 400 if you create/reactivate a tag and try and use it straight away. If you have a delay/sleep between
+    # creating the tag and then using it (or alternatively retry the 400) that may resolve the issue.
     try:
         create_vcn_response = virtual_network.create_vcn(
             oci.core.models.CreateVcnDetails(
@@ -105,13 +105,13 @@ while True:
         print('Created VCN with tags: {}'.format(vcn_after_wait_response.data))
         break
     except oci.exceptions.ServiceError as e:
-        if e.status == 404:
-            print('Retrying on 404: {}'.format(e))
+        if e.status == 400:
+            print('Retrying on 400: {}'.format(e))
             num_tries += 1
             if num_tries >= 3:  # If we can't get it in 3 tries, something else may be going on
                 raise
             else:
-                time.sleep(2)
+                time.sleep(5)
         else:
             raise
 
