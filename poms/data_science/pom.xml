@@ -8,7 +8,8 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.bmc.sdk</groupId>
-  <artifactId>python-sdk-ons-codegen</artifactId>
+  <artifactId>python-sdk-data_science-codegen<!-- artifact_id -->
+  </artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <properties>
     <sdk-root-dir>${project.basedir}/../..</sdk-root-dir>
@@ -18,12 +19,14 @@
     <enabled-groups-dir>${sdk-root-dir}/codegenConfig/enabledGroups</enabled-groups-dir>
     <feature-id-file>${sdk-root-dir}/featureId.yaml</feature-id-file>
     <feature-id-dir>${sdk-root-dir}/codegenConfig/featureIds</feature-id-dir>
-    <ons-gateway-spec-spec-file>source/notification-api.cond.yaml</ons-gateway-spec-spec-file>
+    <!-- Service Spec file goes here -->
+    <odsc-pegasus-control-plane-spec-spec-file>source/api.cond.yaml</odsc-pegasus-control-plane-spec-spec-file>
   </properties>
   <dependencies>
+    <!-- Service dependency goes here -->
     <dependency>
-      <groupId>com.oracle.pic.ons</groupId>
-      <artifactId>ons-gateway-spec</artifactId>
+      <groupId>com.oracle.pic.odsc.pegasus</groupId>
+      <artifactId>odsc-pegasus-control-plane-spec</artifactId>
     </dependency>
   </dependencies>
   <build>
@@ -34,8 +37,9 @@
         <artifactId>dex-get-spec-artifact-plugin</artifactId>
         <version>${oci.get.spec.artifact.plugin.version}</version>
         <executions>
+          <!-- Unpack execution -->
           <execution>
-            <id>unpack-ons-gateway-spec</id>
+            <id>unpack-odsc-pegasus-control-plane-spec</id>
             <phase>initialize</phase>
             <goals>
               <goal>unpack</goal>
@@ -43,11 +47,11 @@
             <configuration>
               <artifactItems>
                 <artifactItem>
-                  <groupId>com.oracle.pic.ons</groupId>
-                  <artifactId>ons-gateway-spec</artifactId>
+                  <groupId>com.oracle.pic.odsc.pegasus</groupId>
+                  <artifactId>odsc-pegasus-control-plane-spec</artifactId>
                   <type>jar</type>
                   <includes>**/*</includes>
-                  <outputDirectory>${spec-temp-dir}/ons-gateway-spec</outputDirectory>
+                  <outputDirectory>${spec-temp-dir}/odsc-pegasus-control-plane-spec</outputDirectory>
                 </artifactItem>
               </artifactItems>
             </configuration>
@@ -59,29 +63,30 @@
         <artifactId>spec-conditionals-preprocessor-plugin</artifactId>
         <version>${preprocessor-version}</version>
         <executions>
+          <!-- Prefer and preprocess executions -->
           <execution>
-            <id>spec-conditionals-prefer-ons-gateway-spec</id>
+            <id>spec-conditionals-prefer-odsc-pegasus-control-plane-spec</id>
             <phase>initialize</phase>
             <goals>
               <goal>prefer</goal>
             </goals>
             <configuration>
               <inputFiles>
-                <inputFile>${spec-temp-dir}/ons-gateway-spec/source/${ons-gateway-spec-spec-file}</inputFile>
-                <inputFile>${spec-temp-dir}/ons-gateway-spec/${ons-gateway-spec-spec-file}</inputFile>
+                <inputFile>${spec-temp-dir}/odsc-pegasus-control-plane-spec/source/${odsc-pegasus-control-plane-spec-spec-file}</inputFile>
+                <inputFile>${spec-temp-dir}/odsc-pegasus-control-plane-spec/${odsc-pegasus-control-plane-spec-spec-file}</inputFile>
               </inputFiles>
-              <outputFile>${preferred-temp-dir}/ons-gateway-spec/${ons-gateway-spec-spec-file}</outputFile>
+              <outputFile>${preferred-temp-dir}/odsc-pegasus-control-plane-spec/${odsc-pegasus-control-plane-spec-spec-file}</outputFile>
             </configuration>
           </execution>
           <execution>
-            <id>spec-conditionals-preprocess-ons-gateway-spec</id>
+            <id>spec-conditionals-preprocess-odsc-pegasus-control-plane-spec</id>
             <phase>initialize</phase>
             <goals>
               <goal>preprocess</goal>
             </goals>
             <configuration>
-              <inputFile>${preferred-temp-dir}/ons-gateway-spec/${ons-gateway-spec-spec-file}</inputFile>
-              <outputFile>${preprocessed-temp-dir}/ons-gateway-spec/${ons-gateway-spec-spec-file}</outputFile>
+              <inputFile>${preferred-temp-dir}/odsc-pegasus-control-plane-spec/${odsc-pegasus-control-plane-spec-spec-file}</inputFile>
+              <outputFile>${preprocessed-temp-dir}/odsc-pegasus-control-plane-spec/${odsc-pegasus-control-plane-spec-spec-file}</outputFile>
               <groupFile>${enabled-groups-file}</groupFile>
               <groupFileCollectionDir>${enabled-groups-dir}</groupFileCollectionDir>
             </configuration>
@@ -96,22 +101,22 @@
           <isTestGenerationEnabled>false</isTestGenerationEnabled>
         </configuration>
         <executions>
+          <!-- Complile execution -->
           <execution>
-            <id>python-public-sdk-ons-gateway-spec</id>
+            <id>python-public-sdk-odsc-pegasus-control-plane-spec</id>
             <phase>compile</phase>
             <goals>
               <goal>generate</goal>
             </goals>
             <configuration>
               <language>${codegen-language}</language>
-              <specPath>${preprocessed-temp-dir}/ons-gateway-spec/${ons-gateway-spec-spec-file}</specPath>
+              <specPath>${preprocessed-temp-dir}/odsc-pegasus-control-plane-spec/${odsc-pegasus-control-plane-spec-spec-file}</specPath>
               <outputDir>src/oci</outputDir>
               <basePackage>OCI</basePackage>
               <specGenerationType>PUBLIC</specGenerationType>
               <additionalProperties>
-                <specName>ons</specName>
+                <specName>data_science</specName>
                 <generateInitFile>true</generateInitFile>
-                <endpoint>https://notification.{domain}</endpoint>
               </additionalProperties>
               <featureIdConfigFile>${feature-id-file}</featureIdConfigFile>
               <featureIdConfigDir>${feature-id-dir}</featureIdConfigDir>
@@ -125,8 +130,9 @@
         <version>3.0.0</version>
         <configuration>
           <filesets>
+            <!-- clean fileset -->
             <fileset>
-              <directory>${sdk-root-dir}/src/oci/ons</directory>
+              <directory>src/oci/data_science</directory>
               <includes>
                 <include>**/*</include>
               </includes>
@@ -134,14 +140,40 @@
           </filesets>
         </configuration>
       </plugin>
+      <!-- Debug information-->
+      <!--
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.1</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <echo>Displaying value of defined properties</echo>
+                                <echo>[sdk-root-dir] ${sdk-root-dir}</echo>
+                                <echo>[preprocessed-temp-dir] ${preprocessed-temp-dir}</echo>
+                                <echo>[spec-temp-dir] ${spec-temp-dir}</echo>
+                                <echo>[preferred-temp-dir] ${preferred-temp-dir}</echo>
+                            </tasks>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            -->
     </plugins>
   </build>
   <dependencyManagement>
     <dependencies>
+      <!-- Spec verison dependency -->
       <dependency>
-        <groupId>com.oracle.pic.ons</groupId>
-        <artifactId>ons-gateway-spec</artifactId>
-        <version>2.0.116</version>
+        <groupId>com.oracle.pic.odsc.pegasus</groupId>
+        <artifactId>odsc-pegasus-control-plane-spec</artifactId>
+        <version>0.1.324</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

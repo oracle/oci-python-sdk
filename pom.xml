@@ -43,6 +43,7 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/data_science/pom.xml</module>
     <module>poms/data_flow/pom.xml</module>
     <module>poms/data_catalog/pom.xml</module>
     <module>poms/application_migration/pom.xml</module>

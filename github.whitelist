@@ -76,3 +76,4 @@
 ^src/oci/application_migration/.*\.py$
 ^src/oci/data_catalog/.*\.py$
 ^src/oci/data_flow/.*\.py$
+\n^src/oci/data_science/.*\.py$
