@@ -1,20 +1,19 @@
+====================
 Request and Response
-~~~~~~~~~~~~~~~~~~~~~
+====================
 
 
-=========
 Request
-=========
-.. module:: oci.request
+-------
+.. automodule:: oci.request
 
 .. autoclass:: Request
     :members:
     :undoc-members:
 
-=========
 Response
-=========
-.. module:: oci.response
+--------
+.. automodule:: oci.response
 
 .. autoclass:: Response
     :members:
