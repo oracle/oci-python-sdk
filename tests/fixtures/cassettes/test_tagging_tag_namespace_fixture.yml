@@ -7,78 +7,22 @@ interactions:
       accept-encoding:
       - gzip, deflate
       authorization:
-      - Signature algorithm="rsa-sha256",headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="TL4yQdwA3ZWbe3QK1uOa6YRwDbGQ3fAKOknCAiuuZBEhsbEBd+kqLfzPaCf8LM5tIQKLTdZLt5tRgbiJKwf291UvtV+5545v4HIBcjINkGRe+IDDpA9qQnnsnL6ZSG5GV5RwiPUyi/XZCXtBDRANPA9+rUKXpAj2xacwkxzjZjCy5oTLor/IQjj0GE2mrUJF/4ye8uSY3cAkVHy/wmNucSydPS94jlEoz0N2q9hfilSlU+EoYEtRoK334KHV8u1EhNbBSqhHPbLB0YtjfK6goFF5xe7xw+MUnv8JWDefK2eBKCU3rriNmp3vbPFZmEOAQZ/MlRICZDaOIluxiHM57w==",version="1"
+      - Signature algorithm="rsa-sha256",headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="JVgeuh4Ov75p5Iaxexg5Fgpu3xxhqRlIsuBqFy+Khqw7Hc8UaJLxz4tXYXIOkFtHeftM2YZxN+Zzh6C17jpOk1nmzJ1ZpINc+QaZsr+p7uH4dGHmi6k2y7WPbMxHlPH90ADicoQNBTzEJVMVqDcXsIu5qBDQf8WteXav08QIcdoRvMA0evFrtUckclN1ik4ycnrdqfVFCTjEznTxbv+5VWMVvcAVmWDpS+vDfQq4UQ613UH7h6YLCiIvMptfkyr1DSY8p2jAxAaq16QPferAW9HaaUB4B7dge2Zah/byyHOZ3omegs+QI6GmfQB2qo9cJtlgAhOTl7HFB253IdXvzA==",version="1"
       connection:
       - keep-alive
       content-type:
       - application/json
       date:
-      - Mon, 13 Jan 2020 07:56:00 GMT
+      - Mon, 03 Feb 2020 14:59:09 GMT
       host:
       - identity.us-phoenix-1.oraclecloud.com
       opc-client-info:
-      - Oracle-PythonSDK/2.10.0
+      - Oracle-PythonSDK/2.10.3
       opc-request-id:
-      - 60E56FA8F3344E75A393FAF0E785688B
+      - 80766C8FE807481FB3E364BF93EB64B6
       user-agent:
-      - Oracle-PythonSDK/2.10.0 (python 3.5.1; x86_64-Darwin)
+      - Oracle-PythonSDK/2.10.3 (python 3.5.1; x86_64-Darwin)
     method: GET
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq
-  response:
-    body:
-      string: "{\n  \"isRetired\" : true,\n  \"id\" : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
-        ,\n  \"compartmentId\" : \"ocid1.compartment.oc1..aaaaaaaa235ux54bxmitd4zvnhxyeubszseeoklcpvlegqumemc4x47oku5q\"\
-        ,\n  \"name\" : \"tagns_464166\",\n  \"description\" : \"updated tag ns\"\
-        ,\n  \"inactiveStatus\" : 2,\n  \"timeCreated\" : \"2018-04-19T21:02:17.106Z\"\
-        ,\n  \"freeformTags\" : { },\n  \"definedTags\" : { },\n  \"lifecycleState\"\
-        \ : \"INACTIVE\"\n}"
-    headers:
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '441'
-      Content-Type:
-      - application/json
-      Date:
-      - Mon, 13 Jan 2020 07:56:01 GMT
-      ETag:
-      - 4ae24294b6e01d4cb33da3524f8eed280377d5a9
-      X-Content-Type-Options:
-      - nosniff
-      opc-request-id:
-      - 60E56FA8F3344E75A393FAF0E785688B/26C4C5C28E81B2CA809BAB20DA0E545E/538E9181CB6FACA64EF9872A56AC2E4D
-    status:
-      code: 200
-      message: OK
-- request:
-    body: '{"isRetired": false}'
-    headers:
-      Content-Length:
-      - '20'
-      accept:
-      - application/json
-      accept-encoding:
-      - gzip, deflate
-      authorization:
-      - Signature algorithm="rsa-sha256",headers="date (request-target) host content-length
-        content-type x-content-sha256",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="PVAtr17BT6JVXRC5ckcXwH3sBz9GlquEWzIrlp5sTRl//ml0m8aMPATdNxNGywayYsmjSeu63bepv7GVBf08wATE3+GdHXTa78OO4BZVLOTHVQW++wZqB/uP/nsCLEt1jBUKfeoEwrFaERg7BTP1pg3KJ/qwppLHK92k+9NPMw6dRx99dRRdMBfXF3hdrkGN5TPd9wsEAN2ncrEnw1WeMqFzUnhXvXZtL2XY+/j62nSGz6vS6OGlHD4Y2ceTco2URAXYsO5TVpaXzZddXfBq7Qc+ZgJHVizcZtEzimEx7hyqoM7BHwDe75x67u7eEVWluD5phe8R7Z+qYrPIldb1vA==",version="1"
-      connection:
-      - keep-alive
-      content-type:
-      - application/json
-      date:
-      - Mon, 13 Jan 2020 07:56:01 GMT
-      host:
-      - identity.us-phoenix-1.oraclecloud.com
-      opc-client-info:
-      - Oracle-PythonSDK/2.10.0
-      opc-request-id:
-      - 4754D57A48BB43BD93193B5B8847629B
-      user-agent:
-      - Oracle-PythonSDK/2.10.0 (python 3.5.1; x86_64-Darwin)
-      x-content-sha256:
-      - HScz3hJX+d3vF9jo1ovsUEJXJDuTiMSl6Kv0CgoPlAs=
-    method: PUT
     uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq
   response:
     body:
@@ -95,13 +39,13 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 13 Jan 2020 07:56:01 GMT
+      - Mon, 03 Feb 2020 14:59:11 GMT
       ETag:
-      - f290ef99c6743716a49499e2756719332d52da28
+      - 53a738db4fbfdd02f1144c0db682957c03b24ee8
       X-Content-Type-Options:
       - nosniff
       opc-request-id:
-      - 4754D57A48BB43BD93193B5B8847629B/3EAD06663EA8642959101951B17E1601/CFF308BCE418B5C922B70DEF33F472CF
+      - 80766C8FE807481FB3E364BF93EB64B6/BA19C047AAF5B0B5417EE1511C7D6E5B/32F88E1E7CA79750B413BDB54D8C65A5
     status:
       code: 200
       message: OK
