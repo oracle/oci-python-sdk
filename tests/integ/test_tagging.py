@@ -84,7 +84,8 @@ def tag_namespace(tagging_identity_client):
 
 # Tags can only be created and not deleted which causes the limit to be exceeded.
 # Skip the test if we are not using recorded responses.
-@pytest.mark.skip(reason="re-enable after the CVR recording merged in")
+@pytest.mark.skipif(not test_config_container.using_vcr_with_mock_responses(),
+                    reason="Only run with recorded responses")
 def test_manage_tags_and_namespace(tagging_identity_client, tag_namespace):
     with test_config_container.create_vcr().use_cassette('test_tagging_manage_tags_and_namespace.yml'):
         # List all namespaces and make sure that our namespace appears
@@ -184,7 +185,8 @@ def test_manage_tags_and_namespace(tagging_identity_client, tag_namespace):
 
 # Tags can only be created and not deleted which causes the limit to be exceeded.
 # Skip the test if we are not using recorded responses.
-@pytest.mark.skip(reason="re-enable after the CVR recording merged in")
+@pytest.mark.skipif(not test_config_container.using_vcr_with_mock_responses(),
+                    reason="Only run with recorded responses")
 def test_tag_resource(tagging_identity_client, tagging_block_storage_client, tag_namespace):
     # Sanity test tagging by applying it to a resource
     with test_config_container.create_vcr().use_cassette('test_tagging_tag_resource.yml'):
