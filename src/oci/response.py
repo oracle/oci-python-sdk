@@ -5,7 +5,19 @@ from .constants import HEADER_NEXT_PAGE, HEADER_REQUEST_ID
 
 
 class Response(object):
-    def __init__(self, status, headers, data, request):
+    def __init__(self,
+                 status,
+                 headers,
+                 data,
+                 request):
+        """
+        :param status: The HTTP status code for the Response
+        :param headers: The HTTP headers for the Response
+        :param data: The response data.  The type of data depends on the request.
+        :param request: The corresponding request for this response.
+        :param next_page: (optional) The value of the `opc-next-page` response header.
+        :param request_id: (optional) The ID of the request that generated this response.
+        """
         self.status = status
         """
         The HTTP status code for the Response
