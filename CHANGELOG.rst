@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.10.3 - 2020-02-04
+====================
+
+Added
+-----
+* Support for the Data Science service
+* Support for calling Oracle Cloud Infrastructure services in the ap-osaka-1 and ap-melbourne-1 regions
+
+====================
 2.10.2 - 2020-01-28
 ====================
 

@@ -15,10 +15,14 @@ REGIONS_SHORT_NAMES = {
     'bom': 'ap-mumbai-1',
     'gru': 'sa-saopaulo-1',
     'syd': 'ap-sydney-1',
-    'ltn': 'uk-gov-london-1'
+    'ltn': 'uk-gov-london-1',
+    'kix': 'ap-osaka-1',
+    'mel': 'ap-melbourne-1'
 }
 REGION_REALMS = {
+    'ap-melbourne-1': 'oc1',
     'ap-mumbai-1': 'oc1',
+    'ap-osaka-1': 'oc1',
     'ap-seoul-1': 'oc1',
     'ap-sydney-1': 'oc1',
     'ap-tokyo-1': 'oc1',
@@ -46,7 +50,9 @@ REALMS = {
     'oc4': 'oraclegovcloud.uk'
 }
 REGIONS = [
+    "ap-melbourne-1",
     "ap-mumbai-1",
+    "ap-osaka-1",
     "ap-seoul-1",
     "ap-sydney-1",
     "ap-tokyo-1",
