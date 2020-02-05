@@ -469,7 +469,7 @@ class ShowOCIOutput(object):
 
             self.print_header("DRGs", 2)
             for drg in drgs:
-                print(self.taba + "DRG    " + drg['name'])
+                print(self.taba + "DRG    " + drg['name'] + ", Redundant: " + drg['redundancy'])
 
         except Exception as e:
             self.__print_error("__print_core_network_vcn", e)
@@ -982,6 +982,48 @@ class ShowOCIOutput(object):
                 print(self.taba + ct['name'] + ", partitions (" + ct['partitions'] + "), Created: " + ct['time_created'][0:16])
                 print(self.tabs + "URL   : " + str(ct['messages_endpoint']))
 
+                print("")
+
+        except Exception as e:
+            self.__print_error("__print_streams_main", e)
+
+    ##########################################################################
+    # Functions
+    ##########################################################################
+    def __print_functions_main(self, functions):
+
+        try:
+            if not functions:
+                return
+
+            self.print_header("Function Applications", 2)
+
+            for ct in functions:
+                print(self.taba + ct['display_name'] + ", Created: " + ct['time_created'][0:16])
+                if ct['subnets']:
+                    for sub in ct['subnets']:
+                        print(self.tabs + self.tabs + "Subnet: " + sub)
+
+                print("")
+
+        except Exception as e:
+            self.__print_error("__print_streams_main", e)
+
+    ##########################################################################
+    # API Gateways
+    ##########################################################################
+    def __print_api_gateways_main(self, apigatways):
+
+        try:
+            if not apigatways:
+                return
+
+            self.print_header("API Gateways", 2)
+
+            for ct in apigatways:
+                print(self.taba + ct['display_name'] + ", " + ct['endpoint_type'] + ", Created: " + ct['time_created'][0:16])
+                print(self.tabs2 + "Host  : " + ct['hostname'])
+                print(self.tabs2 + "Subnet: " + ct['subnet_name'])
                 print("")
 
         except Exception as e:
@@ -1551,6 +1593,10 @@ class ShowOCIOutput(object):
                     self.__print_quotas_main(cdata['quotas'])
                 if 'paas_services' in cdata:
                     self.__print_paas_services_main(cdata['paas_services'])
+                if 'apigateways' in cdata:
+                    self.__print_api_gateways_main(cdata['apigateways'])
+                if 'functions' in cdata:
+                    self.__print_functions_main(cdata['functions'])
 
         except Exception as e:
             self.__print_error("__print_region_data", e)
