@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousDbPreviewVersionSummary(object):
     """
-    The Autonomous Database preview version. Note that preview version software is only available for `serverless deployments`__.
+    The Autonomous Database preview version. Note that preview version software is only available for databases on `shared Exadata infrastructure`__.
 
     __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
     """

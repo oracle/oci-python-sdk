@@ -38,6 +38,7 @@ Database
     oci.database.models.AutonomousDatabaseSummary
     oci.database.models.AutonomousDatabaseWallet
     oci.database.models.AutonomousDbPreviewVersionSummary
+    oci.database.models.AutonomousDbVersionSummary
     oci.database.models.AutonomousExadataInfrastructure
     oci.database.models.AutonomousExadataInfrastructureMaintenanceWindow
     oci.database.models.AutonomousExadataInfrastructureShapeSummary

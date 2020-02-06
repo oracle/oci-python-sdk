@@ -75,7 +75,7 @@ class NotificationDataPlaneClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
             'base_path': '/20181201',
-            'service_endpoint_template': 'https://notification.{region}.oraclecloud.com',
+            'service_endpoint_template': 'https://notification.{region}.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("notification_data_plane", config, signer, ons_type_mapping, **base_client_init_kwargs)
@@ -723,7 +723,13 @@ class NotificationDataPlaneClient(object):
 
     def publish_message(self, topic_id, message_details, **kwargs):
         """
-        Publishes a message to the specified topic. Limits information follows.
+        Publishes a message to the specified topic.
+
+        The topic endpoint is required for this operation.
+        To get the topic endpoint, use :func:`get_topic`
+        and review the `apiEndpoint` value in the response (:class:`NotificationTopic`).
+
+        Limits information follows.
 
         Message size limit per request: 64KB.
 
