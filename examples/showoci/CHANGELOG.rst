@@ -9,6 +9,7 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 =====================
 * Add support for Function Applications (-fun)
 * Add support for API gateways (-api)
+* Fix limits to use pagination to produce all rows
 
 =====================
 20.01.30 - 2020-01-30

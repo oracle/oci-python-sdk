@@ -7368,7 +7368,7 @@ class ShowOCIService(object):
 
             services = []
             try:
-                services = limits_client.list_services(tenancy_id, sort_by="name").data
+                services = oci.pagination.list_call_get_all_results(limits_client.list_services, tenancy_id, sort_by="name").data
             except oci.exceptions.ServiceError as e:
                 if self.__check_service_error(e.code):
                     self.__load_print_auth_warning("a", False)
@@ -7384,7 +7384,7 @@ class ShowOCIService(object):
                     # get the limits per service
                     limits = []
                     try:
-                        limits = limits_client.list_limit_values(tenancy_id, service_name=service.name, sort_by="name").data
+                        limits = oci.pagination.list_call_get_all_results(limits_client.list_limit_values, tenancy_id, service_name=service.name, sort_by="name").data
                     except oci.exceptions.Exception as e:
                         if self.__check_service_error(e.code):
                             self.__load_print_auth_warning("a", False)
