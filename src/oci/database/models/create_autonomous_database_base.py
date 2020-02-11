@@ -124,6 +124,10 @@ class CreateAutonomousDatabaseBase(object):
             The value to assign to the defined_tags property of this CreateAutonomousDatabaseBase.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param db_version:
+            The value to assign to the db_version property of this CreateAutonomousDatabaseBase.
+        :type db_version: str
+
         :param source:
             The value to assign to the source property of this CreateAutonomousDatabaseBase.
             Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP"
@@ -147,6 +151,7 @@ class CreateAutonomousDatabaseBase(object):
             'whitelisted_ips': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'db_version': 'str',
             'source': 'str'
         }
 
@@ -167,6 +172,7 @@ class CreateAutonomousDatabaseBase(object):
             'whitelisted_ips': 'whitelistedIps',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'db_version': 'dbVersion',
             'source': 'source'
         }
 
@@ -186,6 +192,7 @@ class CreateAutonomousDatabaseBase(object):
         self._whitelisted_ips = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._db_version = None
         self._source = None
 
     @staticmethod
@@ -418,11 +425,11 @@ class CreateAutonomousDatabaseBase(object):
     def license_model(self):
         """
         Gets the license_model of this CreateAutonomousDatabaseBase.
-        The Oracle license model that applies to the Oracle Autonomous Database. Note that when provisioning an Autonomous Database using the `dedicated deployment`__ option, this attribute must be null because the attribute is already set at the
-        Autonomous Exadata Infrastructure level. When using the `serverless deployment`__ option, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+        The Oracle license model that applies to the Oracle Autonomous Database. Note that when provisioning an Autonomous Database on `dedicated Exadata infrastructure`__, this attribute must be null because the attribute is already set at the
+        Autonomous Exadata Infrastructure level. When using `shared Exadata infrastructure`__, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#DeploymentTypes
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
         Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
 
@@ -436,11 +443,11 @@ class CreateAutonomousDatabaseBase(object):
     def license_model(self, license_model):
         """
         Sets the license_model of this CreateAutonomousDatabaseBase.
-        The Oracle license model that applies to the Oracle Autonomous Database. Note that when provisioning an Autonomous Database using the `dedicated deployment`__ option, this attribute must be null because the attribute is already set at the
-        Autonomous Exadata Infrastructure level. When using the `serverless deployment`__ option, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+        The Oracle license model that applies to the Oracle Autonomous Database. Note that when provisioning an Autonomous Database on `dedicated Exadata infrastructure`__, this attribute must be null because the attribute is already set at the
+        Autonomous Exadata Infrastructure level. When using `shared Exadata infrastructure`__, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#DeploymentTypes
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
 
         :param license_model: The license_model of this CreateAutonomousDatabaseBase.
@@ -458,7 +465,7 @@ class CreateAutonomousDatabaseBase(object):
     def is_preview_version_with_service_terms_accepted(self):
         """
         Gets the is_preview_version_with_service_terms_accepted of this CreateAutonomousDatabaseBase.
-        If set to `TRUE`, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for `serverless deployments`__.
+        If set to `TRUE`, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for databases on `shared Exadata infrastructure`__.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
@@ -472,7 +479,7 @@ class CreateAutonomousDatabaseBase(object):
     def is_preview_version_with_service_terms_accepted(self, is_preview_version_with_service_terms_accepted):
         """
         Sets the is_preview_version_with_service_terms_accepted of this CreateAutonomousDatabaseBase.
-        If set to `TRUE`, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for `serverless deployments`__.
+        If set to `TRUE`, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for databases on `shared Exadata infrastructure`__.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
@@ -486,7 +493,7 @@ class CreateAutonomousDatabaseBase(object):
     def is_auto_scaling_enabled(self):
         """
         Gets the is_auto_scaling_enabled of this CreateAutonomousDatabaseBase.
-        Indicates if auto scaling is enabled for the Autonomous Database OCPU core count. The default value is `FALSE`. Note that auto scaling is available for `serverless deployments`__ only.
+        Indicates if auto scaling is enabled for the Autonomous Database OCPU core count. The default value is `FALSE`. Note that auto scaling is available for databases on `shared Exadata infrastructure`__ only.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
@@ -500,7 +507,7 @@ class CreateAutonomousDatabaseBase(object):
     def is_auto_scaling_enabled(self, is_auto_scaling_enabled):
         """
         Sets the is_auto_scaling_enabled of this CreateAutonomousDatabaseBase.
-        Indicates if auto scaling is enabled for the Autonomous Database OCPU core count. The default value is `FALSE`. Note that auto scaling is available for `serverless deployments`__ only.
+        Indicates if auto scaling is enabled for the Autonomous Database OCPU core count. The default value is `FALSE`. Note that auto scaling is available for databases on `shared Exadata infrastructure`__ only.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
@@ -514,7 +521,7 @@ class CreateAutonomousDatabaseBase(object):
     def is_dedicated(self):
         """
         Gets the is_dedicated of this CreateAutonomousDatabaseBase.
-        True if the database uses the `dedicated deployment`__ option.
+        True if the database is on `dedicated Exadata infrastructure`__.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
 
@@ -528,7 +535,7 @@ class CreateAutonomousDatabaseBase(object):
     def is_dedicated(self, is_dedicated):
         """
         Sets the is_dedicated of this CreateAutonomousDatabaseBase.
-        True if the database uses the `dedicated deployment`__ option.
+        True if the database is on `dedicated Exadata infrastructure`__.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
 
@@ -570,7 +577,7 @@ class CreateAutonomousDatabaseBase(object):
     def whitelisted_ips(self):
         """
         Gets the whitelisted_ips of this CreateAutonomousDatabaseBase.
-        The client IP access control list (ACL). This feature is available for `serverless deployments`__ only.
+        The client IP access control list (ACL). This feature is available for databases on `shared Exadata infrastructure`__ only.
         Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
         To add the whitelist VCN specific subnet or IP, use a semicoln ';' as a deliminator to add the VCN specific subnets or IPs.
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.aaaaaaaard2hfx2nn3e5xeo6j6o62jga44xjizkw\",\"ocid1.vcn.oc1.sea.aaaaaaaard2hfx2nn3e5xeo6j6o62jga44xjizkw;1.1.1.1\",\"ocid1.vcn.oc1.sea.aaaaaaaard2hfx2nn3e5xeo6j6o62jga44xjizkw;1.1.0.0/16\"]`
@@ -587,7 +594,7 @@ class CreateAutonomousDatabaseBase(object):
     def whitelisted_ips(self, whitelisted_ips):
         """
         Sets the whitelisted_ips of this CreateAutonomousDatabaseBase.
-        The client IP access control list (ACL). This feature is available for `serverless deployments`__ only.
+        The client IP access control list (ACL). This feature is available for databases on `shared Exadata infrastructure`__ only.
         Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
         To add the whitelist VCN specific subnet or IP, use a semicoln ';' as a deliminator to add the VCN specific subnets or IPs.
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.aaaaaaaard2hfx2nn3e5xeo6j6o62jga44xjizkw\",\"ocid1.vcn.oc1.sea.aaaaaaaard2hfx2nn3e5xeo6j6o62jga44xjizkw;1.1.1.1\",\"ocid1.vcn.oc1.sea.aaaaaaaard2hfx2nn3e5xeo6j6o62jga44xjizkw;1.1.0.0/16\"]`
@@ -665,12 +672,36 @@ class CreateAutonomousDatabaseBase(object):
         self._defined_tags = defined_tags
 
     @property
+    def db_version(self):
+        """
+        Gets the db_version of this CreateAutonomousDatabaseBase.
+        A valid Oracle Database version for Autonomous Database.
+
+
+        :return: The db_version of this CreateAutonomousDatabaseBase.
+        :rtype: str
+        """
+        return self._db_version
+
+    @db_version.setter
+    def db_version(self, db_version):
+        """
+        Sets the db_version of this CreateAutonomousDatabaseBase.
+        A valid Oracle Database version for Autonomous Database.
+
+
+        :param db_version: The db_version of this CreateAutonomousDatabaseBase.
+        :type: str
+        """
+        self._db_version = db_version
+
+    @property
     def source(self):
         """
         Gets the source of this CreateAutonomousDatabaseBase.
         The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database.
 
-        For Autonomous Databases using the `serverless deployment`__, the following cloning options are available: Use `BACKUP_FROM_ID` for creating a new Autonomous Database from a specified backup. Use `BACKUP_FROM_TIMESTAMP` for creating a point-in-time Autonomous Database clone using backups. For more information, see `Cloning an Autonomous Database`__.
+        For Autonomous Databases on `shared Exadata infrastructure`__, the following cloning options are available: Use `BACKUP_FROM_ID` for creating a new Autonomous Database from a specified backup. Use `BACKUP_FROM_TIMESTAMP` for creating a point-in-time Autonomous Database clone using backups. For more information, see `Cloning an Autonomous Database`__.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
         __ https://docs.cloud.oracle.com/Content/Database/Tasks/adbcloning.htm
@@ -689,7 +720,7 @@ class CreateAutonomousDatabaseBase(object):
         Sets the source of this CreateAutonomousDatabaseBase.
         The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database.
 
-        For Autonomous Databases using the `serverless deployment`__, the following cloning options are available: Use `BACKUP_FROM_ID` for creating a new Autonomous Database from a specified backup. Use `BACKUP_FROM_TIMESTAMP` for creating a point-in-time Autonomous Database clone using backups. For more information, see `Cloning an Autonomous Database`__.
+        For Autonomous Databases on `shared Exadata infrastructure`__, the following cloning options are available: Use `BACKUP_FROM_ID` for creating a new Autonomous Database from a specified backup. Use `BACKUP_FROM_TIMESTAMP` for creating a point-in-time Autonomous Database clone using backups. For more information, see `Cloning an Autonomous Database`__.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
         __ https://docs.cloud.oracle.com/Content/Database/Tasks/adbcloning.htm

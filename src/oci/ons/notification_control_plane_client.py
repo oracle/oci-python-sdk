@@ -75,7 +75,7 @@ class NotificationControlPlaneClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
             'base_path': '/20181201',
-            'service_endpoint_template': 'https://notification.{region}.oraclecloud.com',
+            'service_endpoint_template': 'https://notification.{region}.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("notification_control_plane", config, signer, ons_type_mapping, **base_client_init_kwargs)

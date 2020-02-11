@@ -21,16 +21,23 @@ class ConnectionConfiguration(object):
             The value to assign to the idle_timeout property of this ConnectionConfiguration.
         :type idle_timeout: int
 
+        :param backend_tcp_proxy_protocol_version:
+            The value to assign to the backend_tcp_proxy_protocol_version property of this ConnectionConfiguration.
+        :type backend_tcp_proxy_protocol_version: int
+
         """
         self.swagger_types = {
-            'idle_timeout': 'int'
+            'idle_timeout': 'int',
+            'backend_tcp_proxy_protocol_version': 'int'
         }
 
         self.attribute_map = {
-            'idle_timeout': 'idleTimeout'
+            'idle_timeout': 'idleTimeout',
+            'backend_tcp_proxy_protocol_version': 'backendTcpProxyProtocolVersion'
         }
 
         self._idle_timeout = None
+        self._backend_tcp_proxy_protocol_version = None
 
     @property
     def idle_timeout(self):
@@ -71,6 +78,34 @@ class ConnectionConfiguration(object):
         :type: int
         """
         self._idle_timeout = idle_timeout
+
+    @property
+    def backend_tcp_proxy_protocol_version(self):
+        """
+        Gets the backend_tcp_proxy_protocol_version of this ConnectionConfiguration.
+        The backend TCP Proxy Protocol version.
+
+        Example: `1`
+
+
+        :return: The backend_tcp_proxy_protocol_version of this ConnectionConfiguration.
+        :rtype: int
+        """
+        return self._backend_tcp_proxy_protocol_version
+
+    @backend_tcp_proxy_protocol_version.setter
+    def backend_tcp_proxy_protocol_version(self, backend_tcp_proxy_protocol_version):
+        """
+        Sets the backend_tcp_proxy_protocol_version of this ConnectionConfiguration.
+        The backend TCP Proxy Protocol version.
+
+        Example: `1`
+
+
+        :param backend_tcp_proxy_protocol_version: The backend_tcp_proxy_protocol_version of this ConnectionConfiguration.
+        :type: int
+        """
+        self._backend_tcp_proxy_protocol_version = backend_tcp_proxy_protocol_version
 
     def __repr__(self):
         return formatted_flat_dict(self)

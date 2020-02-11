@@ -12,7 +12,7 @@ class RedirectRule(Rule):
     An object that represents the action of returning a specified response code and a redirect URI. Each RedirectRule
     object is configured for a particular listener and a designated path.
 
-    The default response code is `302 Moved Temporarily`.
+    The default response code is `302 Found`.
 
     **NOTES:**
     *  This rule applies only to HTTP listeners.
@@ -82,7 +82,7 @@ class RedirectRule(Rule):
         *  307
         *  308
 
-        The default value is `302` (Moved Temporarily).
+        The default value is `302` (Found).
 
         Example: `301`
 
@@ -107,7 +107,7 @@ class RedirectRule(Rule):
         *  307
         *  308
 
-        The default value is `302` (Moved Temporarily).
+        The default value is `302` (Found).
 
         Example: `301`
 
