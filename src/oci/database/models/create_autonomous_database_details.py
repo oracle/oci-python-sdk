@@ -84,6 +84,10 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
             The value to assign to the defined_tags property of this CreateAutonomousDatabaseDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param db_version:
+            The value to assign to the db_version property of this CreateAutonomousDatabaseDetails.
+        :type db_version: str
+
         :param source:
             The value to assign to the source property of this CreateAutonomousDatabaseDetails.
             Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP"
@@ -107,6 +111,7 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
             'whitelisted_ips': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'db_version': 'str',
             'source': 'str'
         }
 
@@ -127,6 +132,7 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
             'whitelisted_ips': 'whitelistedIps',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'db_version': 'dbVersion',
             'source': 'source'
         }
 
@@ -146,6 +152,7 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
         self._whitelisted_ips = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._db_version = None
         self._source = None
         self._source = 'NONE'
 

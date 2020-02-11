@@ -48,6 +48,8 @@ class ShowOCIFlags(object):
     read_root_compartment = True
     read_limits = False
     read_paas_native = False
+    read_function = False
+    read_api = False
 
     # is_vcn_exist_for_region
     is_vcn_exist_for_region = False
@@ -93,7 +95,9 @@ class ShowOCIFlags(object):
                 self.read_monitoring_notifications or
                 self.read_edge or
                 self.read_paas_native or
-                self.read_limits)
+                self.read_limits or
+                self.read_api or
+                self.read_function)
 
     ############################################
     # check if to load basic network (vcn+subnets)
@@ -104,14 +108,16 @@ class ShowOCIFlags(object):
                 self.read_database or
                 self.read_file_storage or
                 self.read_load_balancer or
-                self.read_containers)
+                self.read_containers or
+                self.read_function or
+                self.read_api)
 
 
 ##########################################################################
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.10.0"
+    oci_compatible_version = "2.10.3"
 
     ##########################################################################
     # Global Constants
@@ -245,6 +251,14 @@ class ShowOCIService(object):
     C_PAAS_NATIVE_OAC = "oac"
     C_PAAS_NATIVE_ODA = "oda"
     C_PAAS_NATIVE_OCE = "oce"
+
+    # function
+    C_FUNCTION = "functions"
+    C_FUNCTION_APPLICATIONS = "applications"
+
+    # API gateways
+    C_API = "apis"
+    C_API_GATEWAYS = "gateways"
 
     # Error flag and reboot migration
     error = 0
@@ -790,9 +804,17 @@ class ShowOCIService(object):
         if self.flags.read_limits:
             self.__load_limits_main()
 
-        # email distributions
+        # paas native
         if self.flags.read_paas_native:
             self.__load_paas_native_main()
+
+        # api gateways
+        if self.flags.read_api:
+            self.__load_api_main()
+
+        # functions
+        if self.flags.read_function:
+            self.__load_functions_main()
 
         et = time.time() - region_start_time
         print("*** Elapsed Region '" + region_name + "' - " + '{:02d}:{:02d}:{:02d}'.format(round(et // 3600), (round(et % 3600 // 60)), round(et % 60)) + " ***")
@@ -2588,11 +2610,25 @@ class ShowOCIService(object):
                         val = {'id': str(arr.id),
                                'name': str(arr.display_name),
                                'time_created': str(arr.time_created),
+                               'redundancy': "",
                                'compartment_name': str(compartment['name']),
                                'compartment_id': str(compartment['id']),
                                'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                                'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
-                               'region_name': str(self.config['region'])}
+                               'region_name': str(self.config['region'])
+                               }
+
+                        # get Redundancy
+                        try:
+                            # oci.core.models.DrgRedundancyStatus
+                            redundancy = virtual_network.get_drg_redundancy_status(arr.id).data
+                            if redundancy:
+                                val['redundancy'] = str(redundancy.status)
+                        except oci.exceptions.ServiceError as e:
+                            if self.__check_service_error(e.code):
+                                self.__load_print_auth_warning()
+                                continue
+
                         data.append(val)
                         cnt += 1
 
@@ -6027,6 +6063,216 @@ class ShowOCIService(object):
             return data
 
     ##########################################################################
+    # __load_api_main
+    ##########################################################################
+    #
+    # OCI Classes used:
+    #
+    # class oci.apigateway.GatewayClient(config, **kwargs)
+    #
+    ##########################################################################
+
+    def __load_api_main(self):
+
+        try:
+            print("API Gateways...")
+
+            # GatewayClient
+            api_gw_client = oci.apigateway.GatewayClient(self.config, signer=self.signer, timeout=1)
+            if self.flags.proxy:
+                api_gw_client.base_client.session.proxies = {'https': self.flags.proxy}
+
+            # reference to compartments
+            compartments = self.get_compartment()
+
+            # add the key if not exists
+            self.__initialize_data_key(self.C_API, self.C_API_GATEWAYS)
+
+            # reference to api
+            apic = self.data[self.C_API]
+
+            # append the data
+            apic[self.C_API_GATEWAYS] += self.__load_api_gateways(api_gw_client, compartments)
+            print("")
+
+        except oci.exceptions.RequestException:
+            raise
+        except oci.exceptions.ServiceError:
+            raise
+        except Exception as e:
+            self.__print_error("__load_api_main", e)
+
+    ##########################################################################
+    # __load_api_gateways
+    ##########################################################################
+
+    def __load_api_gateways(self, api_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("API Gateways")
+
+            # loop on all compartments
+            for compartment in compartments:
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                apigs = []
+                try:
+                    apigs = oci.pagination.list_call_get_all_results(
+                        api_client.list_gateways, compartment_id=compartment['id'],
+                        lifecycle_state="ACTIVE"
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_request_error(e):
+                        return data
+
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+
+                print(".", end="")
+
+                # load apis
+                for apig in apigs:
+                    val = {'id': str(apig.id),
+                           'display_name': str(apig.display_name),
+                           'endpoint_type': str(apig.endpoint_type),
+                           'hostname': str(apig.hostname),
+                           'subnet_id': str(apig.subnet_id),
+                           'subnet_name': "",
+                           'time_created': str(apig.time_created),
+                           'time_updated': str(apig.time_updated),
+                           'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                           'defined_tags': [] if apig.defined_tags is None else apig.defined_tags,
+                           'freeform_tags': [] if apig.freeform_tags is None else apig.freeform_tags,
+                           'region_name': str(self.config['region'])}
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+
+            raise
+        except Exception as e:
+            self.__print_error("__load_api_gateways", e)
+            return data
+
+    ##########################################################################
+    # __load_functions
+    ##########################################################################
+    #
+    # OCI Classes used:
+    #
+    # class oci.functions.FunctionsManagementClient(config, **kwargs)
+    #
+    ##########################################################################
+
+    def __load_functions_main(self):
+
+        try:
+            print("Functions...")
+
+            # StreamAdminClient
+            function_client = oci.functions.FunctionsManagementClient(self.config, signer=self.signer, timeout=1)
+            if self.flags.proxy:
+                function_client.base_client.session.proxies = {'https': self.flags.proxy}
+
+            # reference to compartments
+            compartments = self.get_compartment()
+
+            # add the key if not exists
+            self.__initialize_data_key(self.C_FUNCTION, self.C_FUNCTION_APPLICATIONS)
+
+            # reference to function
+            fn = self.data[self.C_FUNCTION]
+
+            # append the data
+            fn[self.C_FUNCTION_APPLICATIONS] += self.__load_functions_applications(function_client, compartments)
+            print("")
+
+        except oci.exceptions.RequestException:
+            raise
+        except oci.exceptions.ServiceError:
+            raise
+        except Exception as e:
+            self.__print_error("__load_functions_main", e)
+
+    ##########################################################################
+    # __load_functions_functions
+    ##########################################################################
+    def __load_functions_applications(self, function_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("Applications")
+
+            # loop on all compartments
+            for compartment in compartments:
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                apps = []
+                try:
+                    apps = oci.pagination.list_call_get_all_results(
+                        function_client.list_applications, compartment_id=compartment['id'],
+                        sort_by="displayName",
+                        lifecycle_state='ACTIVE'
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_request_error(e):
+                        return data
+
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+
+                print(".", end="")
+
+                # fns = oci.functions.models.ApplicationSummary
+                for app in apps:
+                    val = {'id': str(app.id), 'display_name': str(app.display_name),
+                           'subnet_ids': app.subnet_ids, 'time_created': str(app.time_created),
+                           'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                           'defined_tags': [] if app.defined_tags is None else app.defined_tags,
+                           'freeform_tags': [] if app.freeform_tags is None else app.freeform_tags,
+                           'region_name': str(self.config['region'])}
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+
+            raise
+        except Exception as e:
+            self.__print_error("__load_functions_applications", e)
+            return data
+
+    ##########################################################################
     # __load_budget_main
     ##########################################################################
     #
@@ -7122,7 +7368,7 @@ class ShowOCIService(object):
 
             services = []
             try:
-                services = limits_client.list_services(tenancy_id, sort_by="name").data
+                services = oci.pagination.list_call_get_all_results(limits_client.list_services, tenancy_id, sort_by="name").data
             except oci.exceptions.ServiceError as e:
                 if self.__check_service_error(e.code):
                     self.__load_print_auth_warning("a", False)
@@ -7138,7 +7384,7 @@ class ShowOCIService(object):
                     # get the limits per service
                     limits = []
                     try:
-                        limits = limits_client.list_limit_values(tenancy_id, service_name=service.name, sort_by="name").data
+                        limits = oci.pagination.list_call_get_all_results(limits_client.list_limit_values, tenancy_id, service_name=service.name, sort_by="name").data
                     except oci.exceptions.Exception as e:
                         if self.__check_service_error(e.code):
                             self.__load_print_auth_warning("a", False)

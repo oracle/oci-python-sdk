@@ -359,7 +359,7 @@ class NotificationTopicSummary(object):
     def api_endpoint(self):
         """
         **[Required]** Gets the api_endpoint of this NotificationTopicSummary.
-        The endpoint for managing topic subscriptions or publishing messages to the topic.
+        The endpoint for managing subscriptions or publishing messages to the topic.
 
 
         :return: The api_endpoint of this NotificationTopicSummary.
@@ -371,7 +371,7 @@ class NotificationTopicSummary(object):
     def api_endpoint(self, api_endpoint):
         """
         Sets the api_endpoint of this NotificationTopicSummary.
-        The endpoint for managing topic subscriptions or publishing messages to the topic.
+        The endpoint for managing subscriptions or publishing messages to the topic.
 
 
         :param api_endpoint: The api_endpoint of this NotificationTopicSummary.

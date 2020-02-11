@@ -629,7 +629,7 @@ class AutonomousDatabaseSummary(object):
     def is_dedicated(self):
         """
         Gets the is_dedicated of this AutonomousDatabaseSummary.
-        True if the database uses the `dedicated deployment`__ option.
+        True if the database uses `dedicated Exadata infrastructure`__.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
 
@@ -643,7 +643,7 @@ class AutonomousDatabaseSummary(object):
     def is_dedicated(self, is_dedicated):
         """
         Sets the is_dedicated of this AutonomousDatabaseSummary.
-        True if the database uses the `dedicated deployment`__ option.
+        True if the database uses `dedicated Exadata infrastructure`__.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
 
@@ -801,11 +801,11 @@ class AutonomousDatabaseSummary(object):
     def license_model(self):
         """
         Gets the license_model of this AutonomousDatabaseSummary.
-        The Oracle license model that applies to the Oracle Autonomous Database. Note that when provisioning an Autonomous Database using the `dedicated deployment`__ option, this attribute must be null because the attribute is already set at the
-        Autonomous Exadata Infrastructure level. When using the `serverless deployment`__ option, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+        The Oracle license model that applies to the Oracle Autonomous Database. Note that when provisioning an Autonomous Database on `dedicated Exadata infrastructure`__, this attribute must be null because the attribute is already set at the
+        Autonomous Exadata Infrastructure level. When using `shared Exadata infrastructure`__, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#DeploymentTypes
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
         Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -820,11 +820,11 @@ class AutonomousDatabaseSummary(object):
     def license_model(self, license_model):
         """
         Sets the license_model of this AutonomousDatabaseSummary.
-        The Oracle license model that applies to the Oracle Autonomous Database. Note that when provisioning an Autonomous Database using the `dedicated deployment`__ option, this attribute must be null because the attribute is already set at the
-        Autonomous Exadata Infrastructure level. When using the `serverless deployment`__ option, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
+        The Oracle license model that applies to the Oracle Autonomous Database. Note that when provisioning an Autonomous Database on `dedicated Exadata infrastructure`__, this attribute must be null because the attribute is already set at the
+        Autonomous Exadata Infrastructure level. When using `shared Exadata infrastructure`__, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#DeploymentTypes
+        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
 
         :param license_model: The license_model of this AutonomousDatabaseSummary.
@@ -1005,8 +1005,9 @@ class AutonomousDatabaseSummary(object):
     def whitelisted_ips(self):
         """
         Gets the whitelisted_ips of this AutonomousDatabaseSummary.
-        The client IP access control list (ACL). This feature is available for `serverless deployments`__ only.
+        The client IP access control list (ACL). This feature is available for databases on `shared Exadata infrastructure`__ only.
         Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
+
         To add the whitelist VCN specific subnet or IP, use a semicoln ';' as a deliminator to add the VCN specific subnets or IPs.
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.aaaaaaaard2hfx2nn3e5xeo6j6o62jga44xjizkw\",\"ocid1.vcn.oc1.sea.aaaaaaaard2hfx2nn3e5xeo6j6o62jga44xjizkw;1.1.1.1\",\"ocid1.vcn.oc1.sea.aaaaaaaard2hfx2nn3e5xeo6j6o62jga44xjizkw;1.1.0.0/16\"]`
 
@@ -1022,8 +1023,9 @@ class AutonomousDatabaseSummary(object):
     def whitelisted_ips(self, whitelisted_ips):
         """
         Sets the whitelisted_ips of this AutonomousDatabaseSummary.
-        The client IP access control list (ACL). This feature is available for `serverless deployments`__ only.
+        The client IP access control list (ACL). This feature is available for databases on `shared Exadata infrastructure`__ only.
         Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
+
         To add the whitelist VCN specific subnet or IP, use a semicoln ';' as a deliminator to add the VCN specific subnets or IPs.
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.aaaaaaaard2hfx2nn3e5xeo6j6o62jga44xjizkw\",\"ocid1.vcn.oc1.sea.aaaaaaaard2hfx2nn3e5xeo6j6o62jga44xjizkw;1.1.1.1\",\"ocid1.vcn.oc1.sea.aaaaaaaard2hfx2nn3e5xeo6j6o62jga44xjizkw;1.1.0.0/16\"]`
 
@@ -1039,7 +1041,7 @@ class AutonomousDatabaseSummary(object):
     def is_auto_scaling_enabled(self):
         """
         Gets the is_auto_scaling_enabled of this AutonomousDatabaseSummary.
-        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. Note that auto scaling is available for `serverless deployments`__ only.
+        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. Note that auto scaling is available for databases on `shared Exadata infrastructure`__ only.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
@@ -1053,7 +1055,7 @@ class AutonomousDatabaseSummary(object):
     def is_auto_scaling_enabled(self, is_auto_scaling_enabled):
         """
         Sets the is_auto_scaling_enabled of this AutonomousDatabaseSummary.
-        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. Note that auto scaling is available for `serverless deployments`__ only.
+        Indicates if auto scaling is enabled for the Autonomous Database CPU core count. Note that auto scaling is available for databases on `shared Exadata infrastructure`__ only.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 

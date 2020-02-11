@@ -313,6 +313,20 @@ class ShowOCIData(object):
                             data['paas_services'] = value
                             has_data = True
 
+                if self.service.flags.read_function:
+                    value = self.__get_functions_main(region_name, compartment)
+                    if value is not None:
+                        if len(value) > 0:
+                            data['functions'] = value
+                            has_data = True
+
+                if self.service.flags.read_api:
+                    value = self.__get_apigateway_main(region_name, compartment)
+                    if value is not None:
+                        if len(value) > 0:
+                            data['apigateways'] = value
+                            has_data = True
+
                 # add the data to main Variable
                 if has_data:
                     ret_var.append(data)
@@ -831,7 +845,7 @@ class ShowOCIData(object):
             # get DRG name
             drg = self.service.search_unique_item(self.service.C_NETWORK, self.service.C_NETWORK_DRG, 'id', drg_id)
             if drg:
-                return "DRG - " + drg['name']
+                return "DRG - " + drg['name'] + " (" + drg['redundancy'] + ")"
             return ""
 
         except Exception as e:
@@ -2360,6 +2374,62 @@ class ShowOCIData(object):
 
         except Exception as e:
             self.__print_error("__get_streams_main", e)
+            pass
+
+    ##########################################################################
+    # functions
+    ##########################################################################
+    def __get_functions_main(self, region_name, compartment):
+        try:
+            functions = self.service.search_multi_items(self.service.C_FUNCTION, self.service.C_FUNCTION_APPLICATIONS, 'region_name', region_name, 'compartment_id', compartment['id'])
+
+            data = []
+            if functions:
+                for fn in functions:
+                    val = {'id': fn['id'],
+                           'display_name': fn['display_name'],
+                           'subnets': [],
+                           'subnet_ids': fn['subnet_ids'],
+                           'time_created': fn['time_created'],
+                           'defined_tags': fn['defined_tags'],
+                           'freeform_tags': fn['freeform_tags'],
+                           'compartment_name': fn['compartment_name'],
+                           'compartment_id': fn['compartment_id'],
+                           'region_name': fn['region_name']
+                           }
+
+                    # subnets
+                    for sub in fn['subnet_ids']:
+                        val['subnets'].append(self.__get_core_network_subnet_name(sub))
+
+                    data.append(val)
+            return data
+
+        except Exception as e:
+            self.__print_error("__get_functions_main", e)
+            pass
+
+    ##########################################################################
+    # __get_apigateway_main
+    ##########################################################################
+    def __get_apigateway_main(self, region_name, compartment):
+        try:
+            apigs = self.service.search_multi_items(self.service.C_API, self.service.C_API_GATEWAYS, 'region_name', region_name, 'compartment_id', compartment['id'])
+
+            data = []
+            if apigs:
+                for ap in apigs:
+                    val = ap
+
+                    # subnet
+                    if ap['subnet_id']:
+                        val['subnet_name'] = self.__get_core_network_subnet_name(ap['subnet_id'])
+
+                    data.append(val)
+            return data
+
+        except Exception as e:
+            self.__print_error("__get_apigateway_main", e)
             pass
 
     ##########################################################################

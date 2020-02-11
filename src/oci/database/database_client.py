@@ -6029,6 +6029,9 @@ class DatabaseClient(object):
 
             Allowed values are: "OLTP", "DW"
 
+        :param str db_version: (optional)
+            A filter to return only autonomous database resources that match the specified dbVersion.
+
         :param bool is_free_tier: (optional)
             Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources.
             A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
@@ -6063,6 +6066,7 @@ class DatabaseClient(object):
             "sort_order",
             "lifecycle_state",
             "db_workload",
+            "db_version",
             "is_free_tier",
             "display_name",
             "opc_request_id"
@@ -6109,6 +6113,7 @@ class DatabaseClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "dbWorkload": kwargs.get("db_workload", missing),
+            "dbVersion": kwargs.get("db_version", missing),
             "isFreeTier": kwargs.get("is_free_tier", missing),
             "displayName": kwargs.get("display_name", missing)
         }
@@ -6144,7 +6149,8 @@ class DatabaseClient(object):
     def list_autonomous_db_preview_versions(self, compartment_id, **kwargs):
         """
         Gets a list of supported Autonomous Database versions.
-        Gets a list of supported Autonomous Database versions. Note that preview version software is only available for `serverless deployments`__.
+        Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
+        databases with `shared Exadata infrastructure`__.
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
 
@@ -6252,6 +6258,114 @@ class DatabaseClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="list[AutonomousDbPreviewVersionSummary]")
+
+    def list_autonomous_db_versions(self, compartment_id, **kwargs):
+        """
+        Gets a list of supported Autonomous Database versions.
+        Gets a list of supported Autonomous Database versions.
+
+
+        :param str compartment_id: (required)
+            The compartment `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param int limit: (optional)
+            The maximum number of items to return per page.
+
+        :param str page: (optional)
+            The pagination token to continue listing from.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+
+        :param str db_workload: (optional)
+            A filter to return only autonomous database resources that match the specified workload type.
+
+            Allowed values are: "OLTP", "DW"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousDbVersionSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/autonomousDbVersions"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "limit",
+            "page",
+            "opc_request_id",
+            "db_workload",
+            "sort_order"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_autonomous_db_versions got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'db_workload' in kwargs:
+            db_workload_allowed_values = ["OLTP", "DW"]
+            if kwargs['db_workload'] not in db_workload_allowed_values:
+                raise ValueError(
+                    "Invalid value for `db_workload`, must be one of {0}".format(db_workload_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "dbWorkload": kwargs.get("db_workload", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[AutonomousDbVersionSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[AutonomousDbVersionSummary]")
 
     def list_autonomous_exadata_infrastructure_shapes(self, availability_domain, compartment_id, **kwargs):
         """

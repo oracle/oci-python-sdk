@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.02.11 - 2020-02-11
+=====================
+* Add support for Function Applications (-fun)
+* Add support for API gateways (-api)
+* Fix limits to use pagination to produce all rows
+
+=====================
+20.01.30 - 2020-01-30
+=====================
+* Add DRG Redundant status
+
+=====================
 20.01.29 - 2020-01-29
 =====================
 * Fix call to list_databases due to OCI change the parameters requirement
