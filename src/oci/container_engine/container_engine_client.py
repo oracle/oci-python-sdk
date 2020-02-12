@@ -76,7 +76,7 @@ class ContainerEngineClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
             'base_path': '/20180222',
-            'service_endpoint_template': 'https://containerengine.{region}.{secondLevelDomain}',
+            'service_endpoint_template': 'https://containerengine.{region}.oci.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("container_engine", config, signer, container_engine_type_mapping, **base_client_init_kwargs)

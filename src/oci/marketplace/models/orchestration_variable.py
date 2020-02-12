@@ -12,6 +12,14 @@ class OrchestrationVariable(object):
     The model of a variable for an orchestration resource.
     """
 
+    #: A constant which can be used with the data_type property of a OrchestrationVariable.
+    #: This constant has a value of "STRING"
+    DATA_TYPE_STRING = "STRING"
+
+    #: A constant which can be used with the data_type property of a OrchestrationVariable.
+    #: This constant has a value of "INTEGER"
+    DATA_TYPE_INTEGER = "INTEGER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new OrchestrationVariable object with values from keyword arguments.
@@ -29,6 +37,12 @@ class OrchestrationVariable(object):
             The value to assign to the description property of this OrchestrationVariable.
         :type description: str
 
+        :param data_type:
+            The value to assign to the data_type property of this OrchestrationVariable.
+            Allowed values for this property are: "STRING", "INTEGER", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type data_type: str
+
         :param is_mandatory:
             The value to assign to the is_mandatory property of this OrchestrationVariable.
         :type is_mandatory: bool
@@ -42,6 +56,7 @@ class OrchestrationVariable(object):
             'name': 'str',
             'default_value': 'str',
             'description': 'str',
+            'data_type': 'str',
             'is_mandatory': 'bool',
             'hint_message': 'str'
         }
@@ -50,6 +65,7 @@ class OrchestrationVariable(object):
             'name': 'name',
             'default_value': 'defaultValue',
             'description': 'description',
+            'data_type': 'dataType',
             'is_mandatory': 'isMandatory',
             'hint_message': 'hintMessage'
         }
@@ -57,6 +73,7 @@ class OrchestrationVariable(object):
         self._name = None
         self._default_value = None
         self._description = None
+        self._data_type = None
         self._is_mandatory = None
         self._hint_message = None
 
@@ -131,6 +148,36 @@ class OrchestrationVariable(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def data_type(self):
+        """
+        Gets the data_type of this OrchestrationVariable.
+        The data type of the variable.
+
+        Allowed values for this property are: "STRING", "INTEGER", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The data_type of this OrchestrationVariable.
+        :rtype: str
+        """
+        return self._data_type
+
+    @data_type.setter
+    def data_type(self, data_type):
+        """
+        Sets the data_type of this OrchestrationVariable.
+        The data type of the variable.
+
+
+        :param data_type: The data_type of this OrchestrationVariable.
+        :type: str
+        """
+        allowed_values = ["STRING", "INTEGER"]
+        if not value_allowed_none_or_none_sentinel(data_type, allowed_values):
+            data_type = 'UNKNOWN_ENUM_VALUE'
+        self._data_type = data_type
 
     @property
     def is_mandatory(self):

@@ -36,6 +36,10 @@ class NotificationServiceAction(Action):
             Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"
         :type lifecycle_state: str
 
+        :param is_enabled:
+            The value to assign to the is_enabled property of this NotificationServiceAction.
+        :type is_enabled: bool
+
         :param description:
             The value to assign to the description property of this NotificationServiceAction.
         :type description: str
@@ -50,6 +54,7 @@ class NotificationServiceAction(Action):
             'id': 'str',
             'lifecycle_message': 'str',
             'lifecycle_state': 'str',
+            'is_enabled': 'bool',
             'description': 'str',
             'topic_id': 'str'
         }
@@ -59,6 +64,7 @@ class NotificationServiceAction(Action):
             'id': 'id',
             'lifecycle_message': 'lifecycleMessage',
             'lifecycle_state': 'lifecycleState',
+            'is_enabled': 'isEnabled',
             'description': 'description',
             'topic_id': 'topicId'
         }
@@ -67,6 +73,7 @@ class NotificationServiceAction(Action):
         self._id = None
         self._lifecycle_message = None
         self._lifecycle_state = None
+        self._is_enabled = None
         self._description = None
         self._topic_id = None
         self._action_type = 'ONS'
