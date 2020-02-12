@@ -248,7 +248,7 @@ def decrypt_data(key_crypto_client, key_id, encrypted_text):
     decrypt_data_details = oci.key_management.models.DecryptDataDetails(
         key_id=key_id,
         ciphertext=encrypted_text)
-    response = key_crypto_client.encrypt(decrypt_data_details)
+    response = key_crypto_client.decrypt(decrypt_data_details)
     print(" Decrypted text {}.".format(response.plaintext))
     return response.plaintext
 
