@@ -2,59 +2,31 @@ interactions:
 - request:
     body: null
     headers:
-      accept:
-      - application/json
-      accept-encoding:
-      - gzip, deflate
-      authorization:
-      - Signature algorithm="rsa-sha256",headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="IsuhcGBdn9fowOMbULCUMFZpsou7+BRbrgP8E/SZN0DrbOBH6HoLzz38Czk2iDAD+vGKS6VmqwIBkuCpikVXZtQKiVE2bADAG+yOyTjiALZ502+7eX5rWiO59jjv30Gvlbk1LuFpLTDMtxk+1KwZARE21rsitwmjMT/AaiVGLVSCtKb2nva49SXsTgAZX8bJ5Ga0iAGgoji+HeM9e5A31gACYEZHnrrvS4anh6Zlq9Hh1vLMfrOaHlxZDHQqOxJDJiHIE0mNnK6rpMwT+2HSEvGoAU4xvhj+BzjHiOMQf64Yz1RfalvxkZm6eTii7q48vU+7lsDSUIaTgKEOX8m2GA==",version="1"
-      connection:
-      - keep-alive
-      content-type:
-      - application/json
-      date:
-      - Sun, 12 Jan 2020 16:02:29 GMT
-      host:
-      - containerengine.us-phoenix-1.oraclecloud.com
-      opc-client-info:
-      - Oracle-PythonSDK/2.8.1
-      opc-request-id:
-      - F91335EE9C264DDDA7B070322F236E81
-      user-agent:
-      - Oracle-PythonSDK/2.8.1 (python 3.5.1; x86_64-Darwin) example_extra_user_agent_text
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="M3G0ztf6SrnHkSZ2uZ/orZtbvupYinHx7kKmwG9mdrUTR9kfrtycTelKySNzti3O1tBnrjn3XSA2qPa1F4At/K8HxC93A2BRKVDFqJ+ZKkTNAww7qrycyqXsQxv+mOCU2oELzqwXNj441XSfRRg5oXqFBT/agKQ0uunHFWnlB3ircBOAJVBUIF2eUSMub9nJCi62qPFW7hbhRKJk5gFSUh4eM0Lbo7wO2o28az24cZjRzoM1RbC2ABugo5pHNeeE3rhMc7IRA1ehq6Ld09/2Q8T84CRRZoZUrmzrZFciF/qbzqASCRQHIoXAYiYY2hX/meM4ePtwDWck89Ch7w28xQ==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Wed, 12 Feb 2020 23:12:13 GMT']
+      host: [containerengine.us-phoenix-1.oci.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.10.5]
+      opc-request-id: [9A1C9FC79D30408E9F43B3F485F81E2E]
+      user-agent: [Oracle-PythonSDK/2.10.5 (python 3.6.5; x86_64-Darwin)]
     method: GET
-    uri: https://containerengine.us-phoenix-1.oraclecloud.com/20180222/clusters?compartmentId=ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq
+    uri: https://containerengine.us-phoenix-1.oci.oraclecloud.com/20180222/clusters?compartmentId=ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq
   response:
-    body:
-      string: '[]'
+    body: {string: '[]'}
     headers:
-      Access-Control-Allow-Methods:
-      - DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Expose-Headers:
-      - opc-work-request-id, opc-retry-token, opc-request-id
-      Content-Length:
-      - '2'
-      Content-Type:
-      - application/json
-      Date:
-      - Sun, 12 Jan 2020 16:02:30 GMT
-      Opc-Request-Id:
-      - F91335EE9C264DDDA7B070322F236E81/CE0FEEBF1B52435E8ACF74B0D72BD370/EC879820BAE0461C8CBF14F79F423AFB
-      Uri:
-      - /20180222/clusters
-      Vary:
-      - Accept-Encoding
-      X-Rate-Limit-Duration:
-      - '1'
-      X-Rate-Limit-Limit:
-      - '16.70'
-      X-Rate-Limit-Request-Forwarded-For:
-      - 10.0.80.8, 10.237.7.240
-      X-Rate-Limit-Request-Remote-Addr:
-      - 10.237.7.240:45518
-    status:
-      code: 200
-      message: OK
+      Access-Control-Allow-Methods: ['DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT']
+      Access-Control-Allow-Origin: ['*']
+      Access-Control-Expose-Headers: ['opc-work-request-id, opc-retry-token, opc-request-id']
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      Date: ['Wed, 12 Feb 2020 23:12:15 GMT']
+      Opc-Request-Id: [9A1C9FC79D30408E9F43B3F485F81E2E/EFFFEE0FE79FAB4909F6B617E968AC12/D492347DF9E343738E4D47B5AD371384]
+      Uri: [/20180222/clusters]
+      Vary: [Accept-Encoding]
+      X-Content-Type-Options: [nosniff]
+    status: {code: 200, message: OK}
 version: 1

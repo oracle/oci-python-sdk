@@ -2,28 +2,19 @@ interactions:
 - request:
     body: null
     headers:
-      accept:
-      - application/json
-      accept-encoding:
-      - gzip, deflate
-      authorization:
-      - Signature algorithm="rsa-sha256",headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="dd976REM6uxCUsx08k4q0K72HUDVmPH9oqcurMFyMPBj7m1+UwZpSIPigwkCaE2on87AZ089oaENUUUGCSH4tzid3Q0fTswbVdEK1/gY9WYUXANDCQs39NTYymDm8kqAn9IEYEbVXC7m/LReTZCleN9VbDx6wXIVUvKtq4bAm4vEvIRfENrOvx0/UvAByROm/Ema5bHTQDF04/YX86O/cqxwjmgYu5mqXlBQEH/NWvO/16w6NvsayBwxjuNu2IzrMkL+Kml4xFheIhF/OAjakXKxVqyFMIVV47W90J+r44TJS5quBmf++PdFeQ9yjRQgpU4PhWsxOjWDIlTgFp2iEg==",version="1"
-      connection:
-      - keep-alive
-      content-type:
-      - application/json
-      date:
-      - Sun, 12 Jan 2020 16:02:30 GMT
-      host:
-      - containerengine.us-phoenix-1.oraclecloud.com
-      opc-client-info:
-      - Oracle-PythonSDK/2.8.1
-      opc-request-id:
-      - EC01FFDAAB904B5DA6BF12F8919364C9
-      user-agent:
-      - Oracle-PythonSDK/2.8.1 (python 3.5.1; x86_64-Darwin) example_extra_user_agent_text
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="ZT3nQ1hN3uVMcNUlKlRmGHl+2vjB9hSp90NRnhZUUUhFfHfR6Wqo1O51pu7VejuciD1b1ZORI+J6DtAgVt9Oovpp3JqI9Fi95Kflykj9E5p8Y0vP4fAWI+2fIihraJusmgqIj8D+lMQA+3PfrMwim2SbYkNikG6vq16HpPvndwib/q5XbQfrSvSxWtx3hjHKdaxDEmFcFrgviqMteUFBWiii5R3vqEOtz0fKCviIAtRXBkZF7CMFH3QmWKdGQKwnczXuj8xd1Kj961jZnU+VzCYh+VPo4VeWvvXVgGCNu/oxEu0vr6kqyva9CGYZfMHthHORkTzs3JD44/PpxyxDmA==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Wed, 12 Feb 2020 23:12:32 GMT']
+      host: [containerengine.us-phoenix-1.oci.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.10.5]
+      opc-request-id: [E319F6B8A9F14C9AA1956B45A00328C4]
+      user-agent: [Oracle-PythonSDK/2.10.5 (python 3.6.5; x86_64-Darwin)]
     method: GET
-    uri: https://containerengine.us-phoenix-1.oraclecloud.com/20180222/workRequests?compartmentId=ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq
+    uri: https://containerengine.us-phoenix-1.oci.oraclecloud.com/20180222/workRequests?compartmentId=ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq
   response:
     body:
       string: !!binary |
@@ -37,35 +28,16 @@ interactions:
         v7T2/+h/grStrLk/n9fQcYlzSjF32Gz7aDD8cj8Y3w8n++F0Fk9mA/Kje8XuXGreUVUKcTX4yhW3
         x8ukU4ue/wQAAP//uQVHmwYEAAA=
     headers:
-      Access-Control-Allow-Methods:
-      - DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Expose-Headers:
-      - opc-work-request-id, opc-retry-token, opc-request-id
-      Content-Encoding:
-      - gzip
-      Content-Length:
-      - '476'
-      Content-Type:
-      - application/json
-      Date:
-      - Sun, 12 Jan 2020 16:02:31 GMT
-      Opc-Request-Id:
-      - EC01FFDAAB904B5DA6BF12F8919364C9/5BEB37BB3F114DA8B0D4D756E18821FF/615E5ECBBA6849A6824828FC4C8F28DE
-      Uri:
-      - /20180222/workRequests
-      Vary:
-      - Accept-Encoding
-      X-Rate-Limit-Duration:
-      - '1'
-      X-Rate-Limit-Limit:
-      - '16.70'
-      X-Rate-Limit-Request-Forwarded-For:
-      - 10.0.80.8, 10.237.6.224
-      X-Rate-Limit-Request-Remote-Addr:
-      - 10.237.6.224:41094
-    status:
-      code: 200
-      message: OK
+      Access-Control-Allow-Methods: ['DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT']
+      Access-Control-Allow-Origin: ['*']
+      Access-Control-Expose-Headers: ['opc-work-request-id, opc-retry-token, opc-request-id']
+      Content-Encoding: [gzip]
+      Content-Length: ['476']
+      Content-Type: [application/json]
+      Date: ['Wed, 12 Feb 2020 23:12:33 GMT']
+      Opc-Request-Id: [E319F6B8A9F14C9AA1956B45A00328C4/0A25084C499A38DE02B378953B718170/6EC4B56FE2F2466897C328E021639EBB]
+      Uri: [/20180222/workRequests]
+      Vary: [Accept-Encoding]
+      X-Content-Type-Options: [nosniff]
+    status: {code: 200, message: OK}
 version: 1

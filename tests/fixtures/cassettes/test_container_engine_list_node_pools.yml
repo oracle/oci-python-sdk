@@ -2,59 +2,31 @@ interactions:
 - request:
     body: null
     headers:
-      accept:
-      - application/json
-      accept-encoding:
-      - gzip, deflate
-      authorization:
-      - Signature algorithm="rsa-sha256",headers="date (request-target) host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="hJEQCYQ574ycBVjR6g8GehGCurcZ7yA8Ck1TqosmzEu/OWwyaULVYrPsU8R27wPGgCx++C53MGONmJ8aawbReKLtl9LK8zhyURM+EreDmhlAGxCo+VpL/hUd3L1TpMfCauNW2gs5M8Z0ozVXumZzBZDeZVCZ/UGXW6ow0S/0+RAwLtlDCuqZoibDijzKXhkKomk/hNgFz1RAvztiEn/90co/Q5yRruzFAB3EtsiZz68HQT+SWxRp9qYZSnHs25O67oD6ILU8yI/CwMy9bl/36W1nHETgBc+1jJ1cJQhcSZQLN27mACmWJmndWTRBLuh8/YeNKT7bCY5f62AWAt135g==",version="1"
-      connection:
-      - keep-alive
-      content-type:
-      - application/json
-      date:
-      - Sun, 12 Jan 2020 16:02:30 GMT
-      host:
-      - containerengine.us-phoenix-1.oraclecloud.com
-      opc-client-info:
-      - Oracle-PythonSDK/2.8.1
-      opc-request-id:
-      - 5E2605DB98E14A1FBE33F0D022CC201D
-      user-agent:
-      - Oracle-PythonSDK/2.8.1 (python 3.5.1; x86_64-Darwin) example_extra_user_agent_text
+      accept: [application/json]
+      accept-encoding: ['gzip, deflate']
+      authorization: ['Signature algorithm="rsa-sha256",headers="date (request-target)
+          host",keyId="ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq/ocid1.user.oc1..aaaaaaaaiez5uibmpj7ybgiexgudk2h2z4i7nz4rqyp5mpqko4ucqfcbjhqq/5b:c5:18:ba:4e:37:51:b6:29:cb:71:d1:fa:a3:5d:42",signature="CYqLaxQppdwA4lBGf2ds2cqcgno+zWdzC4lfKVMRpo0gtCBLTnCPLYve74HRTzNLAcWTskO8j4la+9J+OBuMJEeF2ddV0JpDZcxpbjbIsFAqWR5KzgwUchIva9WoBlP3GaDSrkkuw3TvNL5sqQTgIvHYw8JNvEXd7D+6nQRgkZyqwRqpNW3BXFtEQcJpINiwM02yNXr4aueDQuf2p+NxE21/Nua2DsyMVqIys4guFYIO2s/mB5SHmIaMZtU+VXuLMwsOOiJQU0GQ67ORxnpTPfKUZb2pTxHJXTUrnqZOHiiwQh4ackcoWd8RuWu22eF58mSrmqpjgvd/OrIHzXe9wA==",version="1"']
+      connection: [keep-alive]
+      content-type: [application/json]
+      date: ['Wed, 12 Feb 2020 23:12:24 GMT']
+      host: [containerengine.us-phoenix-1.oci.oraclecloud.com]
+      opc-client-info: [Oracle-PythonSDK/2.10.5]
+      opc-request-id: [6E5F3226259746F3AA87214D75EE5A3D]
+      user-agent: [Oracle-PythonSDK/2.10.5 (python 3.6.5; x86_64-Darwin)]
     method: GET
-    uri: https://containerengine.us-phoenix-1.oraclecloud.com/20180222/nodePools?compartmentId=ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq
+    uri: https://containerengine.us-phoenix-1.oci.oraclecloud.com/20180222/nodePools?compartmentId=ocid1.tenancy.oc1..aaaaaaaa5nfwo53cezleyy6t73v6rn6knhu3molvptnl3kcq34l5zb7ptiaq
   response:
-    body:
-      string: '[]'
+    body: {string: '[]'}
     headers:
-      Access-Control-Allow-Methods:
-      - DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Expose-Headers:
-      - opc-work-request-id, opc-retry-token, opc-request-id
-      Content-Length:
-      - '2'
-      Content-Type:
-      - application/json
-      Date:
-      - Sun, 12 Jan 2020 16:02:30 GMT
-      Opc-Request-Id:
-      - 5E2605DB98E14A1FBE33F0D022CC201D/BE3D908DDB4F40C4A19A6AC3ABA68DA4/7E76E5AD661B43739ACEFC838F94E737
-      Uri:
-      - /20180222/nodePools
-      Vary:
-      - Accept-Encoding
-      X-Rate-Limit-Duration:
-      - '1'
-      X-Rate-Limit-Limit:
-      - '16.70'
-      X-Rate-Limit-Request-Forwarded-For:
-      - 10.0.80.8, 10.237.7.29
-      X-Rate-Limit-Request-Remote-Addr:
-      - 10.237.7.29:52338
-    status:
-      code: 200
-      message: OK
+      Access-Control-Allow-Methods: ['DELETE, GET, HEAD, OPTIONS, PATCH, POST, PUT']
+      Access-Control-Allow-Origin: ['*']
+      Access-Control-Expose-Headers: ['opc-work-request-id, opc-retry-token, opc-request-id']
+      Content-Length: ['2']
+      Content-Type: [application/json]
+      Date: ['Wed, 12 Feb 2020 23:12:24 GMT']
+      Opc-Request-Id: [6E5F3226259746F3AA87214D75EE5A3D/B5D40E5B3D0E396FA9BDBAA5D010D73B/4DF68F4D5FEA451AAB6E4A9D89B061DF]
+      Uri: [/20180222/nodePools]
+      Vary: [Accept-Encoding]
+      X-Content-Type-Options: [nosniff]
+    status: {code: 200, message: OK}
 version: 1
