@@ -12,6 +12,14 @@ class ListingPackage(object):
     A base object for all types of listing packages.
     """
 
+    #: A constant which can be used with the package_type property of a ListingPackage.
+    #: This constant has a value of "ORCHESTRATION"
+    PACKAGE_TYPE_ORCHESTRATION = "ORCHESTRATION"
+
+    #: A constant which can be used with the package_type property of a ListingPackage.
+    #: This constant has a value of "IMAGE"
+    PACKAGE_TYPE_IMAGE = "IMAGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ListingPackage object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -34,6 +42,12 @@ class ListingPackage(object):
             The value to assign to the version property of this ListingPackage.
         :type version: str
 
+        :param package_type:
+            The value to assign to the package_type property of this ListingPackage.
+            Allowed values for this property are: "ORCHESTRATION", "IMAGE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type package_type: str
+
         :param pricing:
             The value to assign to the pricing property of this ListingPackage.
         :type pricing: PricingModel
@@ -51,6 +65,7 @@ class ListingPackage(object):
             'description': 'str',
             'listing_id': 'str',
             'version': 'str',
+            'package_type': 'str',
             'pricing': 'PricingModel',
             'resource_id': 'str',
             'time_created': 'datetime'
@@ -60,6 +75,7 @@ class ListingPackage(object):
             'description': 'description',
             'listing_id': 'listingId',
             'version': 'version',
+            'package_type': 'packageType',
             'pricing': 'pricing',
             'resource_id': 'resourceId',
             'time_created': 'timeCreated'
@@ -68,6 +84,7 @@ class ListingPackage(object):
         self._description = None
         self._listing_id = None
         self._version = None
+        self._package_type = None
         self._pricing = None
         self._resource_id = None
         self._time_created = None
@@ -159,6 +176,36 @@ class ListingPackage(object):
         :type: str
         """
         self._version = version
+
+    @property
+    def package_type(self):
+        """
+        **[Required]** Gets the package_type of this ListingPackage.
+        The specified package's type.
+
+        Allowed values for this property are: "ORCHESTRATION", "IMAGE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The package_type of this ListingPackage.
+        :rtype: str
+        """
+        return self._package_type
+
+    @package_type.setter
+    def package_type(self, package_type):
+        """
+        Sets the package_type of this ListingPackage.
+        The specified package's type.
+
+
+        :param package_type: The package_type of this ListingPackage.
+        :type: str
+        """
+        allowed_values = ["ORCHESTRATION", "IMAGE"]
+        if not value_allowed_none_or_none_sentinel(package_type, allowed_values):
+            package_type = 'UNKNOWN_ENUM_VALUE'
+        self._package_type = package_type
 
     @property
     def pricing(self):

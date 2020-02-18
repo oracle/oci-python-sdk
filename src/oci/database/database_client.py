@@ -7817,6 +7817,13 @@ class DatabaseClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
+        :param str storage_management: (optional)
+            The storage option used in DB system to list database versions for that storage manager.
+            ASM - Automatic storage management
+            LVM - Logical Volume management
+
+            Allowed values are: "ASM", "LVM"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -7837,19 +7844,28 @@ class DatabaseClient(object):
             "limit",
             "page",
             "db_system_shape",
-            "db_system_id"
+            "db_system_id",
+            "storage_management"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_db_versions got unknown kwargs: {!r}".format(extra_kwargs))
 
+        if 'storage_management' in kwargs:
+            storage_management_allowed_values = ["ASM", "LVM"]
+            if kwargs['storage_management'] not in storage_management_allowed_values:
+                raise ValueError(
+                    "Invalid value for `storage_management`, must be one of {0}".format(storage_management_allowed_values)
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "dbSystemShape": kwargs.get("db_system_shape", missing),
-            "dbSystemId": kwargs.get("db_system_id", missing)
+            "dbSystemId": kwargs.get("db_system_id", missing),
+            "storageManagement": kwargs.get("storage_management", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

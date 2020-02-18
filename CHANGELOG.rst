@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.10.5 - 2020-02-18
+====================
+
+Added
+-----
+* Support for the NoSQL Database service
+* Support for filtering database versions by storage management type in the Database service
+* Support for specifying paid listing types within pricing models in the Marketplace service
+* Support for primary and non-primary instance types in the Content and Experience service
+
+====================
 2.10.4 - 2020-02-11
 ====================
 

@@ -1,0 +1,11 @@
+TableCollection
+===============
+
+.. currentmodule:: oci.nosql.models
+
+.. autoclass:: TableCollection
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

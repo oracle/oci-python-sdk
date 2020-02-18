@@ -30,6 +30,11 @@ class OrchestrationListingPackage(ListingPackage):
             The value to assign to the version property of this OrchestrationListingPackage.
         :type version: str
 
+        :param package_type:
+            The value to assign to the package_type property of this OrchestrationListingPackage.
+            Allowed values for this property are: "ORCHESTRATION", "IMAGE"
+        :type package_type: str
+
         :param pricing:
             The value to assign to the pricing property of this OrchestrationListingPackage.
         :type pricing: PricingModel
@@ -55,6 +60,7 @@ class OrchestrationListingPackage(ListingPackage):
             'description': 'str',
             'listing_id': 'str',
             'version': 'str',
+            'package_type': 'str',
             'pricing': 'PricingModel',
             'resource_id': 'str',
             'time_created': 'datetime',
@@ -66,6 +72,7 @@ class OrchestrationListingPackage(ListingPackage):
             'description': 'description',
             'listing_id': 'listingId',
             'version': 'version',
+            'package_type': 'packageType',
             'pricing': 'pricing',
             'resource_id': 'resourceId',
             'time_created': 'timeCreated',
@@ -76,6 +83,7 @@ class OrchestrationListingPackage(ListingPackage):
         self._description = None
         self._listing_id = None
         self._version = None
+        self._package_type = None
         self._pricing = None
         self._resource_id = None
         self._time_created = None

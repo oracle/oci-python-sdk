@@ -12,6 +12,14 @@ class ListingPackageSummary(object):
     The model for a summary of a package.
     """
 
+    #: A constant which can be used with the package_type property of a ListingPackageSummary.
+    #: This constant has a value of "ORCHESTRATION"
+    PACKAGE_TYPE_ORCHESTRATION = "ORCHESTRATION"
+
+    #: A constant which can be used with the package_type property of a ListingPackageSummary.
+    #: This constant has a value of "IMAGE"
+    PACKAGE_TYPE_IMAGE = "IMAGE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ListingPackageSummary object with values from keyword arguments.
@@ -25,6 +33,12 @@ class ListingPackageSummary(object):
             The value to assign to the package_version property of this ListingPackageSummary.
         :type package_version: str
 
+        :param package_type:
+            The value to assign to the package_type property of this ListingPackageSummary.
+            Allowed values for this property are: "ORCHESTRATION", "IMAGE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type package_type: str
+
         :param resource_id:
             The value to assign to the resource_id property of this ListingPackageSummary.
         :type resource_id: str
@@ -37,6 +51,7 @@ class ListingPackageSummary(object):
         self.swagger_types = {
             'listing_id': 'str',
             'package_version': 'str',
+            'package_type': 'str',
             'resource_id': 'str',
             'time_created': 'datetime'
         }
@@ -44,12 +59,14 @@ class ListingPackageSummary(object):
         self.attribute_map = {
             'listing_id': 'listingId',
             'package_version': 'packageVersion',
+            'package_type': 'packageType',
             'resource_id': 'resourceId',
             'time_created': 'timeCreated'
         }
 
         self._listing_id = None
         self._package_version = None
+        self._package_type = None
         self._resource_id = None
         self._time_created = None
 
@@ -100,6 +117,36 @@ class ListingPackageSummary(object):
         :type: str
         """
         self._package_version = package_version
+
+    @property
+    def package_type(self):
+        """
+        Gets the package_type of this ListingPackageSummary.
+        The specified package's type.
+
+        Allowed values for this property are: "ORCHESTRATION", "IMAGE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The package_type of this ListingPackageSummary.
+        :rtype: str
+        """
+        return self._package_type
+
+    @package_type.setter
+    def package_type(self, package_type):
+        """
+        Sets the package_type of this ListingPackageSummary.
+        The specified package's type.
+
+
+        :param package_type: The package_type of this ListingPackageSummary.
+        :type: str
+        """
+        allowed_values = ["ORCHESTRATION", "IMAGE"]
+        if not value_allowed_none_or_none_sentinel(package_type, allowed_values):
+            package_type = 'UNKNOWN_ENUM_VALUE'
+        self._package_type = package_type
 
     @property
     def resource_id(self):
