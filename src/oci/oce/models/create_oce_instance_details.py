@@ -12,6 +12,14 @@ class CreateOceInstanceDetails(object):
     The information about new OceInstance.
     """
 
+    #: A constant which can be used with the instance_usage_type property of a CreateOceInstanceDetails.
+    #: This constant has a value of "PRIMARY"
+    INSTANCE_USAGE_TYPE_PRIMARY = "PRIMARY"
+
+    #: A constant which can be used with the instance_usage_type property of a CreateOceInstanceDetails.
+    #: This constant has a value of "NONPRIMARY"
+    INSTANCE_USAGE_TYPE_NONPRIMARY = "NONPRIMARY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateOceInstanceDetails object with values from keyword arguments.
@@ -45,6 +53,11 @@ class CreateOceInstanceDetails(object):
             The value to assign to the tenancy_name property of this CreateOceInstanceDetails.
         :type tenancy_name: str
 
+        :param instance_usage_type:
+            The value to assign to the instance_usage_type property of this CreateOceInstanceDetails.
+            Allowed values for this property are: "PRIMARY", "NONPRIMARY"
+        :type instance_usage_type: str
+
         :param object_storage_namespace:
             The value to assign to the object_storage_namespace property of this CreateOceInstanceDetails.
         :type object_storage_namespace: str
@@ -70,6 +83,7 @@ class CreateOceInstanceDetails(object):
             'idcs_access_token': 'str',
             'identity_stripe': 'IdentityStripeDetails',
             'tenancy_name': 'str',
+            'instance_usage_type': 'str',
             'object_storage_namespace': 'str',
             'admin_email': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -84,6 +98,7 @@ class CreateOceInstanceDetails(object):
             'idcs_access_token': 'idcsAccessToken',
             'identity_stripe': 'identityStripe',
             'tenancy_name': 'tenancyName',
+            'instance_usage_type': 'instanceUsageType',
             'object_storage_namespace': 'objectStorageNamespace',
             'admin_email': 'adminEmail',
             'freeform_tags': 'freeformTags',
@@ -97,6 +112,7 @@ class CreateOceInstanceDetails(object):
         self._idcs_access_token = None
         self._identity_stripe = None
         self._tenancy_name = None
+        self._instance_usage_type = None
         self._object_storage_namespace = None
         self._admin_email = None
         self._freeform_tags = None
@@ -265,6 +281,38 @@ class CreateOceInstanceDetails(object):
         :type: str
         """
         self._tenancy_name = tenancy_name
+
+    @property
+    def instance_usage_type(self):
+        """
+        Gets the instance_usage_type of this CreateOceInstanceDetails.
+        Instance type based on its usage
+
+        Allowed values for this property are: "PRIMARY", "NONPRIMARY"
+
+
+        :return: The instance_usage_type of this CreateOceInstanceDetails.
+        :rtype: str
+        """
+        return self._instance_usage_type
+
+    @instance_usage_type.setter
+    def instance_usage_type(self, instance_usage_type):
+        """
+        Sets the instance_usage_type of this CreateOceInstanceDetails.
+        Instance type based on its usage
+
+
+        :param instance_usage_type: The instance_usage_type of this CreateOceInstanceDetails.
+        :type: str
+        """
+        allowed_values = ["PRIMARY", "NONPRIMARY"]
+        if not value_allowed_none_or_none_sentinel(instance_usage_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `instance_usage_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._instance_usage_type = instance_usage_type
 
     @property
     def object_storage_namespace(self):

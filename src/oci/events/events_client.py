@@ -75,7 +75,7 @@ class EventsClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
             'base_path': '/20181201',
-            'service_endpoint_template': 'https://events.{region}.{secondLevelDomain}',
+            'service_endpoint_template': 'https://events.{region}.oci.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("events", config, signer, events_type_mapping, **base_client_init_kwargs)

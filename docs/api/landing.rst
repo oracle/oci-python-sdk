@@ -45,6 +45,7 @@ API Reference
 * :doc:`Load Balancer <load_balancer/client/oci.load_balancer.LoadBalancerClient>`
 * :doc:`Marketplace <marketplace/client/oci.marketplace.MarketplaceClient>`
 * :doc:`Monitoring <monitoring/client/oci.monitoring.MonitoringClient>`
+* :doc:`Nosql <nosql/client/oci.nosql.NosqlClient>`
 * :doc:`Object Storage <object_storage/client/oci.object_storage.ObjectStorageClient>`
 * :doc:`Oce Instance <oce/client/oci.oce.OceInstanceClient>`
 * :doc:`Oda <oda/client/oci.oda.OdaClient>`
@@ -103,6 +104,7 @@ API Reference
     load_balancer
     marketplace
     monitoring
+    nosql
     object_storage
     oce
     oda

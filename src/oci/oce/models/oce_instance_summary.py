@@ -12,6 +12,14 @@ class OceInstanceSummary(object):
     Summary of the OceInstance.
     """
 
+    #: A constant which can be used with the instance_usage_type property of a OceInstanceSummary.
+    #: This constant has a value of "PRIMARY"
+    INSTANCE_USAGE_TYPE_PRIMARY = "PRIMARY"
+
+    #: A constant which can be used with the instance_usage_type property of a OceInstanceSummary.
+    #: This constant has a value of "NONPRIMARY"
+    INSTANCE_USAGE_TYPE_NONPRIMARY = "NONPRIMARY"
+
     #: A constant which can be used with the lifecycle_state property of a OceInstanceSummary.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -73,6 +81,12 @@ class OceInstanceSummary(object):
             The value to assign to the tenancy_name property of this OceInstanceSummary.
         :type tenancy_name: str
 
+        :param instance_usage_type:
+            The value to assign to the instance_usage_type property of this OceInstanceSummary.
+            Allowed values for this property are: "PRIMARY", "NONPRIMARY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type instance_usage_type: str
+
         :param object_storage_namespace:
             The value to assign to the object_storage_namespace property of this OceInstanceSummary.
         :type object_storage_namespace: str
@@ -121,6 +135,7 @@ class OceInstanceSummary(object):
             'tenancy_id': 'str',
             'idcs_tenancy': 'str',
             'tenancy_name': 'str',
+            'instance_usage_type': 'str',
             'object_storage_namespace': 'str',
             'admin_email': 'str',
             'time_created': 'datetime',
@@ -141,6 +156,7 @@ class OceInstanceSummary(object):
             'tenancy_id': 'tenancyId',
             'idcs_tenancy': 'idcsTenancy',
             'tenancy_name': 'tenancyName',
+            'instance_usage_type': 'instanceUsageType',
             'object_storage_namespace': 'objectStorageNamespace',
             'admin_email': 'adminEmail',
             'time_created': 'timeCreated',
@@ -160,6 +176,7 @@ class OceInstanceSummary(object):
         self._tenancy_id = None
         self._idcs_tenancy = None
         self._tenancy_name = None
+        self._instance_usage_type = None
         self._object_storage_namespace = None
         self._admin_email = None
         self._time_created = None
@@ -361,6 +378,36 @@ class OceInstanceSummary(object):
         :type: str
         """
         self._tenancy_name = tenancy_name
+
+    @property
+    def instance_usage_type(self):
+        """
+        Gets the instance_usage_type of this OceInstanceSummary.
+        Instance type based on its usage
+
+        Allowed values for this property are: "PRIMARY", "NONPRIMARY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The instance_usage_type of this OceInstanceSummary.
+        :rtype: str
+        """
+        return self._instance_usage_type
+
+    @instance_usage_type.setter
+    def instance_usage_type(self, instance_usage_type):
+        """
+        Sets the instance_usage_type of this OceInstanceSummary.
+        Instance type based on its usage
+
+
+        :param instance_usage_type: The instance_usage_type of this OceInstanceSummary.
+        :type: str
+        """
+        allowed_values = ["PRIMARY", "NONPRIMARY"]
+        if not value_allowed_none_or_none_sentinel(instance_usage_type, allowed_values):
+            instance_usage_type = 'UNKNOWN_ENUM_VALUE'
+        self._instance_usage_type = instance_usage_type
 
     @property
     def object_storage_namespace(self):
