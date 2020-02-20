@@ -19,6 +19,8 @@ from .create_dynamic_group_details import CreateDynamicGroupDetails
 from .create_group_details import CreateGroupDetails
 from .create_identity_provider_details import CreateIdentityProviderDetails
 from .create_idp_group_mapping_details import CreateIdpGroupMappingDetails
+from .create_network_source_details import CreateNetworkSourceDetails
+from .create_o_auth2_client_credential_details import CreateOAuth2ClientCredentialDetails
 from .create_policy_details import CreatePolicyDetails
 from .create_region_subscription_details import CreateRegionSubscriptionDetails
 from .create_saml2_identity_provider_details import CreateSaml2IdentityProviderDetails
@@ -34,6 +36,7 @@ from .default_tag_definition_validator import DefaultTagDefinitionValidator
 from .dynamic_group import DynamicGroup
 from .enum_tag_definition_validator import EnumTagDefinitionValidator
 from .fault_domain import FaultDomain
+from .fully_qualified_scope import FullyQualifiedScope
 from .group import Group
 from .identity_provider import IdentityProvider
 from .identity_provider_group_summary import IdentityProviderGroupSummary
@@ -42,6 +45,11 @@ from .mfa_totp_device import MfaTotpDevice
 from .mfa_totp_device_summary import MfaTotpDeviceSummary
 from .mfa_totp_token import MfaTotpToken
 from .move_compartment_details import MoveCompartmentDetails
+from .network_sources import NetworkSources
+from .network_sources_summary import NetworkSourcesSummary
+from .network_sources_virtual_source_list import NetworkSourcesVirtualSourceList
+from .o_auth2_client_credential import OAuth2ClientCredential
+from .o_auth2_client_credential_summary import OAuth2ClientCredentialSummary
 from .password_policy import PasswordPolicy
 from .policy import Policy
 from .region import Region
@@ -72,6 +80,8 @@ from .update_dynamic_group_details import UpdateDynamicGroupDetails
 from .update_group_details import UpdateGroupDetails
 from .update_identity_provider_details import UpdateIdentityProviderDetails
 from .update_idp_group_mapping_details import UpdateIdpGroupMappingDetails
+from .update_network_source_details import UpdateNetworkSourceDetails
+from .update_o_auth2_client_credential_details import UpdateOAuth2ClientCredentialDetails
 from .update_policy_details import UpdatePolicyDetails
 from .update_saml2_identity_provider_details import UpdateSaml2IdentityProviderDetails
 from .update_smtp_credential_details import UpdateSmtpCredentialDetails
@@ -109,6 +119,8 @@ identity_type_mapping = {
     "CreateGroupDetails": CreateGroupDetails,
     "CreateIdentityProviderDetails": CreateIdentityProviderDetails,
     "CreateIdpGroupMappingDetails": CreateIdpGroupMappingDetails,
+    "CreateNetworkSourceDetails": CreateNetworkSourceDetails,
+    "CreateOAuth2ClientCredentialDetails": CreateOAuth2ClientCredentialDetails,
     "CreatePolicyDetails": CreatePolicyDetails,
     "CreateRegionSubscriptionDetails": CreateRegionSubscriptionDetails,
     "CreateSaml2IdentityProviderDetails": CreateSaml2IdentityProviderDetails,
@@ -124,6 +136,7 @@ identity_type_mapping = {
     "DynamicGroup": DynamicGroup,
     "EnumTagDefinitionValidator": EnumTagDefinitionValidator,
     "FaultDomain": FaultDomain,
+    "FullyQualifiedScope": FullyQualifiedScope,
     "Group": Group,
     "IdentityProvider": IdentityProvider,
     "IdentityProviderGroupSummary": IdentityProviderGroupSummary,
@@ -132,6 +145,11 @@ identity_type_mapping = {
     "MfaTotpDeviceSummary": MfaTotpDeviceSummary,
     "MfaTotpToken": MfaTotpToken,
     "MoveCompartmentDetails": MoveCompartmentDetails,
+    "NetworkSources": NetworkSources,
+    "NetworkSourcesSummary": NetworkSourcesSummary,
+    "NetworkSourcesVirtualSourceList": NetworkSourcesVirtualSourceList,
+    "OAuth2ClientCredential": OAuth2ClientCredential,
+    "OAuth2ClientCredentialSummary": OAuth2ClientCredentialSummary,
     "PasswordPolicy": PasswordPolicy,
     "Policy": Policy,
     "Region": Region,
@@ -162,6 +180,8 @@ identity_type_mapping = {
     "UpdateGroupDetails": UpdateGroupDetails,
     "UpdateIdentityProviderDetails": UpdateIdentityProviderDetails,
     "UpdateIdpGroupMappingDetails": UpdateIdpGroupMappingDetails,
+    "UpdateNetworkSourceDetails": UpdateNetworkSourceDetails,
+    "UpdateOAuth2ClientCredentialDetails": UpdateOAuth2ClientCredentialDetails,
     "UpdatePolicyDetails": UpdatePolicyDetails,
     "UpdateSaml2IdentityProviderDetails": UpdateSaml2IdentityProviderDetails,
     "UpdateSmtpCredentialDetails": UpdateSmtpCredentialDetails,

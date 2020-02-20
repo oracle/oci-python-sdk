@@ -42,6 +42,10 @@ class Tenancy(object):
             The value to assign to the home_region_key property of this Tenancy.
         :type home_region_key: str
 
+        :param upi_idcs_compatibility_layer_endpoint:
+            The value to assign to the upi_idcs_compatibility_layer_endpoint property of this Tenancy.
+        :type upi_idcs_compatibility_layer_endpoint: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Tenancy.
         :type freeform_tags: dict(str, str)
@@ -56,6 +60,7 @@ class Tenancy(object):
             'name': 'str',
             'description': 'str',
             'home_region_key': 'str',
+            'upi_idcs_compatibility_layer_endpoint': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -65,6 +70,7 @@ class Tenancy(object):
             'name': 'name',
             'description': 'description',
             'home_region_key': 'homeRegionKey',
+            'upi_idcs_compatibility_layer_endpoint': 'upiIdcsCompatibilityLayerEndpoint',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -73,6 +79,7 @@ class Tenancy(object):
         self._name = None
         self._description = None
         self._home_region_key = None
+        self._upi_idcs_compatibility_layer_endpoint = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -195,6 +202,30 @@ class Tenancy(object):
         :type: str
         """
         self._home_region_key = home_region_key
+
+    @property
+    def upi_idcs_compatibility_layer_endpoint(self):
+        """
+        Gets the upi_idcs_compatibility_layer_endpoint of this Tenancy.
+        Url which refers to the UPI IDCS compatibility layer endpoint configured for this Tenant's home region.
+
+
+        :return: The upi_idcs_compatibility_layer_endpoint of this Tenancy.
+        :rtype: str
+        """
+        return self._upi_idcs_compatibility_layer_endpoint
+
+    @upi_idcs_compatibility_layer_endpoint.setter
+    def upi_idcs_compatibility_layer_endpoint(self, upi_idcs_compatibility_layer_endpoint):
+        """
+        Sets the upi_idcs_compatibility_layer_endpoint of this Tenancy.
+        Url which refers to the UPI IDCS compatibility layer endpoint configured for this Tenant's home region.
+
+
+        :param upi_idcs_compatibility_layer_endpoint: The upi_idcs_compatibility_layer_endpoint of this Tenancy.
+        :type: str
+        """
+        self._upi_idcs_compatibility_layer_endpoint = upi_idcs_compatibility_layer_endpoint
 
     @property
     def freeform_tags(self):

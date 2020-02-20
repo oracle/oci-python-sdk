@@ -116,6 +116,18 @@ class CreateAutonomousDatabaseBase(object):
             The value to assign to the whitelisted_ips property of this CreateAutonomousDatabaseBase.
         :type whitelisted_ips: list[str]
 
+        :param subnet_id:
+            The value to assign to the subnet_id property of this CreateAutonomousDatabaseBase.
+        :type subnet_id: str
+
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this CreateAutonomousDatabaseBase.
+        :type nsg_ids: list[str]
+
+        :param private_endpoint_label:
+            The value to assign to the private_endpoint_label property of this CreateAutonomousDatabaseBase.
+        :type private_endpoint_label: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateAutonomousDatabaseBase.
         :type freeform_tags: dict(str, str)
@@ -149,6 +161,9 @@ class CreateAutonomousDatabaseBase(object):
             'is_dedicated': 'bool',
             'autonomous_container_database_id': 'str',
             'whitelisted_ips': 'list[str]',
+            'subnet_id': 'str',
+            'nsg_ids': 'list[str]',
+            'private_endpoint_label': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'db_version': 'str',
@@ -170,6 +185,9 @@ class CreateAutonomousDatabaseBase(object):
             'is_dedicated': 'isDedicated',
             'autonomous_container_database_id': 'autonomousContainerDatabaseId',
             'whitelisted_ips': 'whitelistedIps',
+            'subnet_id': 'subnetId',
+            'nsg_ids': 'nsgIds',
+            'private_endpoint_label': 'privateEndpointLabel',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'db_version': 'dbVersion',
@@ -190,6 +208,9 @@ class CreateAutonomousDatabaseBase(object):
         self._is_dedicated = None
         self._autonomous_container_database_id = None
         self._whitelisted_ips = None
+        self._subnet_id = None
+        self._nsg_ids = None
+        self._private_endpoint_label = None
         self._freeform_tags = None
         self._defined_tags = None
         self._db_version = None
@@ -606,6 +627,106 @@ class CreateAutonomousDatabaseBase(object):
         :type: list[str]
         """
         self._whitelisted_ips = whitelisted_ips
+
+    @property
+    def subnet_id(self):
+        """
+        Gets the subnet_id of this CreateAutonomousDatabaseBase.
+        The `OCID`__ of the subnet the resource is associated with.
+
+        **Subnet Restrictions:**
+        - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
+        - For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
+        - For Autonomous Database, setting this will disable public secure access to the database.
+
+        These subnets are used by the Oracle Clusterware private interconnect on the database instance.
+        Specifying an overlapping subnet will cause the private interconnect to malfunction.
+        This restriction applies to both the client subnet and the backup subnet.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subnet_id of this CreateAutonomousDatabaseBase.
+        :rtype: str
+        """
+        return self._subnet_id
+
+    @subnet_id.setter
+    def subnet_id(self, subnet_id):
+        """
+        Sets the subnet_id of this CreateAutonomousDatabaseBase.
+        The `OCID`__ of the subnet the resource is associated with.
+
+        **Subnet Restrictions:**
+        - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
+        - For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
+        - For Autonomous Database, setting this will disable public secure access to the database.
+
+        These subnets are used by the Oracle Clusterware private interconnect on the database instance.
+        Specifying an overlapping subnet will cause the private interconnect to malfunction.
+        This restriction applies to both the client subnet and the backup subnet.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subnet_id: The subnet_id of this CreateAutonomousDatabaseBase.
+        :type: str
+        """
+        self._subnet_id = subnet_id
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this CreateAutonomousDatabaseBase.
+        A list of the `OCIDs`__ of the network security groups (NSGs) that this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+
+
+        :return: The nsg_ids of this CreateAutonomousDatabaseBase.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this CreateAutonomousDatabaseBase.
+        A list of the `OCIDs`__ of the network security groups (NSGs) that this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+
+
+        :param nsg_ids: The nsg_ids of this CreateAutonomousDatabaseBase.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
+
+    @property
+    def private_endpoint_label(self):
+        """
+        Gets the private_endpoint_label of this CreateAutonomousDatabaseBase.
+        The private endpoint label for the resource.
+
+
+        :return: The private_endpoint_label of this CreateAutonomousDatabaseBase.
+        :rtype: str
+        """
+        return self._private_endpoint_label
+
+    @private_endpoint_label.setter
+    def private_endpoint_label(self, private_endpoint_label):
+        """
+        Sets the private_endpoint_label of this CreateAutonomousDatabaseBase.
+        The private endpoint label for the resource.
+
+
+        :param private_endpoint_label: The private_endpoint_label of this CreateAutonomousDatabaseBase.
+        :type: str
+        """
+        self._private_endpoint_label = private_endpoint_label
 
     @property
     def freeform_tags(self):

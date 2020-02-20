@@ -72,6 +72,10 @@ class AutonomousDatabase(object):
     #: This constant has a value of "MAINTENANCE_IN_PROGRESS"
     LIFECYCLE_STATE_MAINTENANCE_IN_PROGRESS = "MAINTENANCE_IN_PROGRESS"
 
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabase.
+    #: This constant has a value of "RESTARTING"
+    LIFECYCLE_STATE_RESTARTING = "RESTARTING"
+
     #: A constant which can be used with the license_model property of a AutonomousDatabase.
     #: This constant has a value of "LICENSE_INCLUDED"
     LICENSE_MODEL_LICENSE_INCLUDED = "LICENSE_INCLUDED"
@@ -123,7 +127,7 @@ class AutonomousDatabase(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AutonomousDatabase.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -205,6 +209,22 @@ class AutonomousDatabase(object):
             The value to assign to the defined_tags property of this AutonomousDatabase.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param subnet_id:
+            The value to assign to the subnet_id property of this AutonomousDatabase.
+        :type subnet_id: str
+
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this AutonomousDatabase.
+        :type nsg_ids: list[str]
+
+        :param private_endpoint:
+            The value to assign to the private_endpoint property of this AutonomousDatabase.
+        :type private_endpoint: str
+
+        :param private_endpoint_label:
+            The value to assign to the private_endpoint_label property of this AutonomousDatabase.
+        :type private_endpoint_label: str
+
         :param db_version:
             The value to assign to the db_version property of this AutonomousDatabase.
         :type db_version: str
@@ -265,6 +285,10 @@ class AutonomousDatabase(object):
             'used_data_storage_size_in_tbs': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'subnet_id': 'str',
+            'nsg_ids': 'list[str]',
+            'private_endpoint': 'str',
+            'private_endpoint_label': 'str',
             'db_version': 'str',
             'is_preview': 'bool',
             'db_workload': 'str',
@@ -298,6 +322,10 @@ class AutonomousDatabase(object):
             'used_data_storage_size_in_tbs': 'usedDataStorageSizeInTBs',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'subnet_id': 'subnetId',
+            'nsg_ids': 'nsgIds',
+            'private_endpoint': 'privateEndpoint',
+            'private_endpoint_label': 'privateEndpointLabel',
             'db_version': 'dbVersion',
             'is_preview': 'isPreview',
             'db_workload': 'dbWorkload',
@@ -330,6 +358,10 @@ class AutonomousDatabase(object):
         self._used_data_storage_size_in_tbs = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._subnet_id = None
+        self._nsg_ids = None
+        self._private_endpoint = None
+        self._private_endpoint_label = None
         self._db_version = None
         self._is_preview = None
         self._db_workload = None
@@ -401,7 +433,7 @@ class AutonomousDatabase(object):
         **[Required]** Gets the lifecycle_state of this AutonomousDatabase.
         The current state of the Autonomous Database.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -420,7 +452,7 @@ class AutonomousDatabase(object):
         :param lifecycle_state: The lifecycle_state of this AutonomousDatabase.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -920,6 +952,130 @@ class AutonomousDatabase(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def subnet_id(self):
+        """
+        Gets the subnet_id of this AutonomousDatabase.
+        The `OCID`__ of the subnet the resource is associated with.
+
+        **Subnet Restrictions:**
+        - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
+        - For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
+        - For Autonomous Database, setting this will disable public secure access to the database.
+
+        These subnets are used by the Oracle Clusterware private interconnect on the database instance.
+        Specifying an overlapping subnet will cause the private interconnect to malfunction.
+        This restriction applies to both the client subnet and the backup subnet.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subnet_id of this AutonomousDatabase.
+        :rtype: str
+        """
+        return self._subnet_id
+
+    @subnet_id.setter
+    def subnet_id(self, subnet_id):
+        """
+        Sets the subnet_id of this AutonomousDatabase.
+        The `OCID`__ of the subnet the resource is associated with.
+
+        **Subnet Restrictions:**
+        - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
+        - For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
+        - For Autonomous Database, setting this will disable public secure access to the database.
+
+        These subnets are used by the Oracle Clusterware private interconnect on the database instance.
+        Specifying an overlapping subnet will cause the private interconnect to malfunction.
+        This restriction applies to both the client subnet and the backup subnet.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subnet_id: The subnet_id of this AutonomousDatabase.
+        :type: str
+        """
+        self._subnet_id = subnet_id
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this AutonomousDatabase.
+        A list of the `OCIDs`__ of the network security groups (NSGs) that this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+
+
+        :return: The nsg_ids of this AutonomousDatabase.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this AutonomousDatabase.
+        A list of the `OCIDs`__ of the network security groups (NSGs) that this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+
+
+        :param nsg_ids: The nsg_ids of this AutonomousDatabase.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
+
+    @property
+    def private_endpoint(self):
+        """
+        Gets the private_endpoint of this AutonomousDatabase.
+        The private endpoint for the resource.
+
+
+        :return: The private_endpoint of this AutonomousDatabase.
+        :rtype: str
+        """
+        return self._private_endpoint
+
+    @private_endpoint.setter
+    def private_endpoint(self, private_endpoint):
+        """
+        Sets the private_endpoint of this AutonomousDatabase.
+        The private endpoint for the resource.
+
+
+        :param private_endpoint: The private_endpoint of this AutonomousDatabase.
+        :type: str
+        """
+        self._private_endpoint = private_endpoint
+
+    @property
+    def private_endpoint_label(self):
+        """
+        Gets the private_endpoint_label of this AutonomousDatabase.
+        The private endpoint label for the resource.
+
+
+        :return: The private_endpoint_label of this AutonomousDatabase.
+        :rtype: str
+        """
+        return self._private_endpoint_label
+
+    @private_endpoint_label.setter
+    def private_endpoint_label(self, private_endpoint_label):
+        """
+        Sets the private_endpoint_label of this AutonomousDatabase.
+        The private endpoint label for the resource.
+
+
+        :param private_endpoint_label: The private_endpoint_label of this AutonomousDatabase.
+        :type: str
+        """
+        self._private_endpoint_label = private_endpoint_label
 
     @property
     def db_version(self):
