@@ -519,6 +519,87 @@ def test_create_mfa_totp_device(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_create_network_source(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity', 'CreateNetworkSource'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'CreateNetworkSource')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='CreateNetworkSource')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
+            response = client.create_network_source(
+                create_network_source_details=request.pop(util.camelize('CreateNetworkSourceDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'CreateNetworkSource',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'networkSources',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_create_o_auth_client_credential(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity', 'CreateOAuthClientCredential'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'CreateOAuthClientCredential')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='CreateOAuthClientCredential')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
+            response = client.create_o_auth_client_credential(
+                user_id=request.pop(util.camelize('userId')),
+                create_o_auth2_client_credential_details=request.pop(util.camelize('CreateOAuth2ClientCredentialDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'CreateOAuthClientCredential',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'oAuth2ClientCredential',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_create_or_reset_ui_password(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'CreateOrResetUIPassword'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1248,6 +1329,87 @@ def test_delete_mfa_totp_device(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_delete_network_source(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity', 'DeleteNetworkSource'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'DeleteNetworkSource')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='DeleteNetworkSource')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
+            response = client.delete_network_source(
+                network_source_id=request.pop(util.camelize('networkSourceId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'DeleteNetworkSource',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_network_source',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_delete_o_auth_client_credential(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity', 'DeleteOAuthClientCredential'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'DeleteOAuthClientCredential')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='DeleteOAuthClientCredential')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
+            response = client.delete_o_auth_client_credential(
+                user_id=request.pop(util.camelize('userId')),
+                oauth2_client_credential_id=request.pop(util.camelize('oauth2ClientCredentialId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'DeleteOAuthClientCredential',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_o_auth_client_credential',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_delete_policy(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'DeletePolicy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1848,6 +2010,46 @@ def test_get_mfa_totp_device(testing_service_client):
             result,
             service_error,
             'mfaTotpDeviceSummary',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_get_network_source(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity', 'GetNetworkSource'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'GetNetworkSource')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='GetNetworkSource')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
+            response = client.get_network_source(
+                network_source_id=request.pop(util.camelize('networkSourceId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'GetNetworkSource',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'networkSources',
             False,
             False
         )
@@ -2933,6 +3135,126 @@ def test_list_mfa_totp_devices(testing_service_client):
             result,
             service_error,
             'mfaTotpDeviceSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_network_sources(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity', 'ListNetworkSources'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListNetworkSources')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListNetworkSources')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
+            response = client.list_network_sources(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_network_sources(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_network_sources(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'ListNetworkSources',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'networkSourcesSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_o_auth_client_credentials(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity', 'ListOAuthClientCredentials'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListOAuthClientCredentials')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListOAuthClientCredentials')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
+            response = client.list_o_auth_client_credentials(
+                user_id=request.pop(util.camelize('userId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_o_auth_client_credentials(
+                    user_id=request.pop(util.camelize('userId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_o_auth_client_credentials(
+                        user_id=request.pop(util.camelize('userId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'ListOAuthClientCredentials',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'oAuth2ClientCredentialSummary',
             False,
             True
         )
@@ -4181,6 +4503,89 @@ def test_update_idp_group_mapping(testing_service_client):
             result,
             service_error,
             'idpGroupMapping',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_update_network_source(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity', 'UpdateNetworkSource'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'UpdateNetworkSource')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='UpdateNetworkSource')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
+            response = client.update_network_source(
+                network_source_id=request.pop(util.camelize('networkSourceId')),
+                update_network_source_details=request.pop(util.camelize('UpdateNetworkSourceDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'UpdateNetworkSource',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'networkSources',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_update_o_auth_client_credential(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity', 'UpdateOAuthClientCredential'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'UpdateOAuthClientCredential')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='UpdateOAuthClientCredential')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
+            response = client.update_o_auth_client_credential(
+                user_id=request.pop(util.camelize('userId')),
+                oauth2_client_credential_id=request.pop(util.camelize('oauth2ClientCredentialId')),
+                update_o_auth2_client_credential_details=request.pop(util.camelize('UpdateOAuth2ClientCredentialDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'UpdateOAuthClientCredential',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'oAuth2ClientCredential',
             False,
             False
         )

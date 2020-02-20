@@ -4515,6 +4515,46 @@ def test_restart_autonomous_container_database(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_restart_autonomous_database(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'RestartAutonomousDatabase'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'RestartAutonomousDatabase')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='RestartAutonomousDatabase')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.restart_autonomous_database(
+                autonomous_database_id=request.pop(util.camelize('autonomousDatabaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'RestartAutonomousDatabase',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousDatabase',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_restore_autonomous_data_warehouse(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'RestoreAutonomousDataWarehouse'):
