@@ -142,6 +142,7 @@ class CreateSubscriptionDetails(object):
           * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
           * `PAGERDUTY`
           * `SLACK`
+          * `ORACLE_FUNCTIONS`
 
         For information about subscription protocols, see
         `To create a subscription`__.
@@ -166,6 +167,7 @@ class CreateSubscriptionDetails(object):
           * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
           * `PAGERDUTY`
           * `SLACK`
+          * `ORACLE_FUNCTIONS`
 
         For information about subscription protocols, see
         `To create a subscription`__.
