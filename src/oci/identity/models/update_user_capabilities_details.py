@@ -37,13 +37,18 @@ class UpdateUserCapabilitiesDetails(object):
             The value to assign to the can_use_customer_secret_keys property of this UpdateUserCapabilitiesDetails.
         :type can_use_customer_secret_keys: bool
 
+        :param can_use_o_auth2_client_credentials:
+            The value to assign to the can_use_o_auth2_client_credentials property of this UpdateUserCapabilitiesDetails.
+        :type can_use_o_auth2_client_credentials: bool
+
         """
         self.swagger_types = {
             'can_use_console_password': 'bool',
             'can_use_api_keys': 'bool',
             'can_use_auth_tokens': 'bool',
             'can_use_smtp_credentials': 'bool',
-            'can_use_customer_secret_keys': 'bool'
+            'can_use_customer_secret_keys': 'bool',
+            'can_use_o_auth2_client_credentials': 'bool'
         }
 
         self.attribute_map = {
@@ -51,7 +56,8 @@ class UpdateUserCapabilitiesDetails(object):
             'can_use_api_keys': 'canUseApiKeys',
             'can_use_auth_tokens': 'canUseAuthTokens',
             'can_use_smtp_credentials': 'canUseSmtpCredentials',
-            'can_use_customer_secret_keys': 'canUseCustomerSecretKeys'
+            'can_use_customer_secret_keys': 'canUseCustomerSecretKeys',
+            'can_use_o_auth2_client_credentials': 'canUseOAuth2ClientCredentials'
         }
 
         self._can_use_console_password = None
@@ -59,6 +65,7 @@ class UpdateUserCapabilitiesDetails(object):
         self._can_use_auth_tokens = None
         self._can_use_smtp_credentials = None
         self._can_use_customer_secret_keys = None
+        self._can_use_o_auth2_client_credentials = None
 
     @property
     def can_use_console_password(self):
@@ -179,6 +186,30 @@ class UpdateUserCapabilitiesDetails(object):
         :type: bool
         """
         self._can_use_customer_secret_keys = can_use_customer_secret_keys
+
+    @property
+    def can_use_o_auth2_client_credentials(self):
+        """
+        Gets the can_use_o_auth2_client_credentials of this UpdateUserCapabilitiesDetails.
+        Indicates if the user can use OAuth2 credentials and tokens.
+
+
+        :return: The can_use_o_auth2_client_credentials of this UpdateUserCapabilitiesDetails.
+        :rtype: bool
+        """
+        return self._can_use_o_auth2_client_credentials
+
+    @can_use_o_auth2_client_credentials.setter
+    def can_use_o_auth2_client_credentials(self, can_use_o_auth2_client_credentials):
+        """
+        Sets the can_use_o_auth2_client_credentials of this UpdateUserCapabilitiesDetails.
+        Indicates if the user can use OAuth2 credentials and tokens.
+
+
+        :param can_use_o_auth2_client_credentials: The can_use_o_auth2_client_credentials of this UpdateUserCapabilitiesDetails.
+        :type: bool
+        """
+        self._can_use_o_auth2_client_credentials = can_use_o_auth2_client_credentials
 
     def __repr__(self):
         return formatted_flat_dict(self)

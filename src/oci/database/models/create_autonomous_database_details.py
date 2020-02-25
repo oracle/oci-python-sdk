@@ -76,6 +76,18 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
             The value to assign to the whitelisted_ips property of this CreateAutonomousDatabaseDetails.
         :type whitelisted_ips: list[str]
 
+        :param subnet_id:
+            The value to assign to the subnet_id property of this CreateAutonomousDatabaseDetails.
+        :type subnet_id: str
+
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this CreateAutonomousDatabaseDetails.
+        :type nsg_ids: list[str]
+
+        :param private_endpoint_label:
+            The value to assign to the private_endpoint_label property of this CreateAutonomousDatabaseDetails.
+        :type private_endpoint_label: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateAutonomousDatabaseDetails.
         :type freeform_tags: dict(str, str)
@@ -109,6 +121,9 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
             'is_dedicated': 'bool',
             'autonomous_container_database_id': 'str',
             'whitelisted_ips': 'list[str]',
+            'subnet_id': 'str',
+            'nsg_ids': 'list[str]',
+            'private_endpoint_label': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'db_version': 'str',
@@ -130,6 +145,9 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
             'is_dedicated': 'isDedicated',
             'autonomous_container_database_id': 'autonomousContainerDatabaseId',
             'whitelisted_ips': 'whitelistedIps',
+            'subnet_id': 'subnetId',
+            'nsg_ids': 'nsgIds',
+            'private_endpoint_label': 'privateEndpointLabel',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'db_version': 'dbVersion',
@@ -150,6 +168,9 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
         self._is_dedicated = None
         self._autonomous_container_database_id = None
         self._whitelisted_ips = None
+        self._subnet_id = None
+        self._nsg_ids = None
+        self._private_endpoint_label = None
         self._freeform_tags = None
         self._defined_tags = None
         self._db_version = None

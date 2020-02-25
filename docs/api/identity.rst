@@ -34,6 +34,8 @@ Identity
     oci.identity.models.CreateGroupDetails
     oci.identity.models.CreateIdentityProviderDetails
     oci.identity.models.CreateIdpGroupMappingDetails
+    oci.identity.models.CreateNetworkSourceDetails
+    oci.identity.models.CreateOAuth2ClientCredentialDetails
     oci.identity.models.CreatePolicyDetails
     oci.identity.models.CreateRegionSubscriptionDetails
     oci.identity.models.CreateSaml2IdentityProviderDetails
@@ -49,6 +51,7 @@ Identity
     oci.identity.models.DynamicGroup
     oci.identity.models.EnumTagDefinitionValidator
     oci.identity.models.FaultDomain
+    oci.identity.models.FullyQualifiedScope
     oci.identity.models.Group
     oci.identity.models.IdentityProvider
     oci.identity.models.IdentityProviderGroupSummary
@@ -57,6 +60,11 @@ Identity
     oci.identity.models.MfaTotpDeviceSummary
     oci.identity.models.MfaTotpToken
     oci.identity.models.MoveCompartmentDetails
+    oci.identity.models.NetworkSources
+    oci.identity.models.NetworkSourcesSummary
+    oci.identity.models.NetworkSourcesVirtualSourceList
+    oci.identity.models.OAuth2ClientCredential
+    oci.identity.models.OAuth2ClientCredentialSummary
     oci.identity.models.PasswordPolicy
     oci.identity.models.Policy
     oci.identity.models.Region
@@ -87,6 +95,8 @@ Identity
     oci.identity.models.UpdateGroupDetails
     oci.identity.models.UpdateIdentityProviderDetails
     oci.identity.models.UpdateIdpGroupMappingDetails
+    oci.identity.models.UpdateNetworkSourceDetails
+    oci.identity.models.UpdateOAuth2ClientCredentialDetails
     oci.identity.models.UpdatePolicyDetails
     oci.identity.models.UpdateSaml2IdentityProviderDetails
     oci.identity.models.UpdateSmtpCredentialDetails

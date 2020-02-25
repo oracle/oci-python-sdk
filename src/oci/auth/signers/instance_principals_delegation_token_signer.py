@@ -52,5 +52,5 @@ class InstancePrincipalsDelegationTokenSigner(InstancePrincipalsSecurityTokenSig
     # opc-obo-token is added to the request headers
     def do_request_sign(self, request, enforce_content_headers=True):
         request.headers['opc-obo-token'] = self.delegation_token
-        super(InstancePrincipalsDelegationTokenSigner, self).do_request_sign(request)
+        super(InstancePrincipalsDelegationTokenSigner, self).do_request_sign(request, enforce_content_headers)
         return request
