@@ -27,6 +27,7 @@ os.mkdir(os.path.join(dist, zip_folder))
 
 # 1. copy files and docs
 copy("..", "LICENSE.txt")
+copy("..", "THIRD_PARTY_LICENSES.txt")
 copy("..", "CHANGELOG.rst")
 copy("..", "examples")
 copy("..", "dist", "oci-{v}-py2.py3-none-any.whl".format(v=oci.__version__))
