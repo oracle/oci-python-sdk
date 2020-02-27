@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Subnet(object):
     """
-    A logical subdivision of a VCN. Each subnet exists in a single availability domain and
+    A logical subdivision of a VCN. Each subnet
     consists of a contiguous range of IP addresses that do not overlap with
     other subnets in the VCN. Example: 172.16.1.0/24. For more information, see
     `Overview of the Networking Service`__ and
@@ -487,9 +487,11 @@ class Subnet(object):
         Gets the ipv6_cidr_block of this Subnet.
         For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's private IP address
         space. The subnet size is always /64. Note that IPv6 addressing is currently supported only
-        in the Government Cloud.
+        in certain regions. See `IPv6 Addresses`__.
 
         Example: `2001:0db8:0123:1111::/64`
+
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
 
 
         :return: The ipv6_cidr_block of this Subnet.
@@ -503,9 +505,11 @@ class Subnet(object):
         Sets the ipv6_cidr_block of this Subnet.
         For an IPv6-enabled subnet, this is the IPv6 CIDR block for the subnet's private IP address
         space. The subnet size is always /64. Note that IPv6 addressing is currently supported only
-        in the Government Cloud.
+        in certain regions. See `IPv6 Addresses`__.
 
         Example: `2001:0db8:0123:1111::/64`
+
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
 
 
         :param ipv6_cidr_block: The ipv6_cidr_block of this Subnet.

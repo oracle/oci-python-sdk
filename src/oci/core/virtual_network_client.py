@@ -5784,6 +5784,181 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 response_type="Cpe")
 
+    def get_cpe_device_config_content(self, cpe_id, **kwargs):
+        """
+        GetCpeDeviceConfigContent
+        Renders a set of CPE configuration content that can help a network engineer configure the actual
+        CPE device (for example, a hardware router) represented by the specified :class:`Cpe`
+        object.
+
+        The rendered content is specific to the type of CPE device (for example, Cisco ASA). Therefore the
+        :class:`Cpe` must have the CPE's device type specified by the `cpeDeviceShapeId`
+        attribute. The content optionally includes answers that the customer provides (see
+        :func:`update_tunnel_cpe_device_config`),
+        merged with a template of other information specific to the CPE device type.
+
+        The operation returns configuration information for *all* of the
+        :class:`IPSecConnection` objects that use the specified CPE.
+        Here are similar operations:
+
+          * :func:`get_ipsec_cpe_device_config_content`
+          returns CPE configuration content for all tunnels in a single IPSec connection.
+          * :func:`get_tunnel_cpe_device_config_content`
+          returns CPE configuration content for a specific tunnel within an IPSec connection.
+
+
+        :param str cpe_id: (required)
+            The OCID of the CPE.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type stream
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/cpes/{cpeId}/cpeConfigContent"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_cpe_device_config_content got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "cpeId": cpe_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "text/plain; charset&#x3D;utf-8",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="stream")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="stream")
+
+    def get_cpe_device_shape(self, cpe_device_shape_id, **kwargs):
+        """
+        GetCpeDeviceShape
+        Gets the detailed information about the specified CPE device type. This might include a set of questions
+        that are specific to the particular CPE device type. The customer must supply answers to those questions
+        (see :func:`update_tunnel_cpe_device_config`).
+        The service merges the answers with a template of other information for the CPE device type. The following
+        operations return the merged content:
+
+          * :func:`get_cpe_device_config_content`
+          * :func:`get_ipsec_cpe_device_config_content`
+          * :func:`get_tunnel_cpe_device_config_content`
+
+
+        :param str cpe_device_shape_id: (required)
+            The `OCID`__ of the CPE device shape.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.CpeDeviceShapeDetail`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/cpeDeviceShapes/{cpeDeviceShapeId}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_cpe_device_shape got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "cpeDeviceShapeId": cpe_device_shape_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="CpeDeviceShapeDetail")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="CpeDeviceShapeDetail")
+
     def get_cross_connect(self, cross_connect_id, **kwargs):
         """
         GetCrossConnect
@@ -6235,7 +6410,10 @@ class VirtualNetworkClient(object):
     def get_drg_redundancy_status(self, drg_id, **kwargs):
         """
         GetDrgRedundancyStatus
-        Get redundancy status of single DRG object on Oracle side.
+        Gets the redundancy status for the specified DRG. For more information, see
+        `Redundancy Remedies`__.
+
+        __ https://docs.cloud.oracle.com/Content/Network/Troubleshoot/drgredundancy.htm
 
 
         :param str drg_id: (required)
@@ -6849,6 +7027,98 @@ class VirtualNetworkClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="IPSecConnectionTunnelSharedSecret")
+
+    def get_ipsec_cpe_device_config_content(self, ipsc_id, **kwargs):
+        """
+        GetIpsecCpeDeviceConfigContent
+        Renders a set of CPE configuration content for the specified IPSec connection (for all the
+        tunnels in the connection). The content helps a network engineer configure the actual CPE
+        device (for example, a hardware router) that the specified IPSec connection terminates on.
+
+        The rendered content is specific to the type of CPE device (for example, Cisco ASA). Therefore the
+        :class:`Cpe` used by the specified :class:`IPSecConnection`
+        must have the CPE's device type specified by the `cpeDeviceShapeId` attribute. The content
+        optionally includes answers that the customer provides (see
+        :func:`update_tunnel_cpe_device_config`),
+        merged with a template of other information specific to the CPE device type.
+
+        The operation returns configuration information for all tunnels in the single specified
+        :class:`IPSecConnection` object. Here are other similar
+        operations:
+
+          * :func:`get_tunnel_cpe_device_config_content`
+          returns CPE configuration content for a specific tunnel within an IPSec connection.
+          * :func:`get_cpe_device_config_content`
+          returns CPE configuration content for *all* IPSec connections that use a specific CPE.
+
+
+        :param str ipsc_id: (required)
+            The OCID of the IPSec connection.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type stream
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/ipsecConnections/{ipscId}/cpeConfigContent"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_ipsec_cpe_device_config_content got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "ipscId": ipsc_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "text/plain; charset&#x3D;utf-8",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="stream")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="stream")
 
     def get_ipv6(self, ipv6_id, **kwargs):
         """
@@ -7782,6 +8052,187 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 response_type="Subnet")
 
+    def get_tunnel_cpe_device_config(self, ipsc_id, tunnel_id, **kwargs):
+        """
+        GetTunnelCpeDeviceConfig
+        Gets the set of CPE configuration answers for the tunnel, which the customer provided in
+        :func:`update_tunnel_cpe_device_config`.
+        To get the full set of content for the tunnel (any answers merged with the template of other
+        information specific to the CPE device type), use
+        :func:`get_tunnel_cpe_device_config_content`.
+
+
+        :param str ipsc_id: (required)
+            The OCID of the IPSec connection.
+
+        :param str tunnel_id: (required)
+            The `OCID`__ of the tunnel.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.TunnelCpeDeviceConfig`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}/tunnelDeviceConfig"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_tunnel_cpe_device_config got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "ipscId": ipsc_id,
+            "tunnelId": tunnel_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="TunnelCpeDeviceConfig")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="TunnelCpeDeviceConfig")
+
+    def get_tunnel_cpe_device_config_content(self, ipsc_id, tunnel_id, **kwargs):
+        """
+        GetTunnelCpeDeviceConfigContent
+        Renders a set of CPE configuration content for the specified IPSec tunnel. The content helps a
+        network engineer configure the actual CPE device (for example, a hardware router) that the specified
+        IPSec tunnel terminates on.
+
+        The rendered content is specific to the type of CPE device (for example, Cisco ASA). Therefore the
+        :class:`Cpe` used by the specified :class:`IPSecConnection`
+        must have the CPE's device type specified by the `cpeDeviceShapeId` attribute. The content
+        optionally includes answers that the customer provides (see
+        :func:`update_tunnel_cpe_device_config`),
+        merged with a template of other information specific to the CPE device type.
+
+        The operation returns configuration information for only the specified IPSec tunnel.
+        Here are other similar operations:
+
+          * :func:`get_ipsec_cpe_device_config_content`
+          returns CPE configuration content for all tunnels in a single IPSec connection.
+          * :func:`get_cpe_device_config_content`
+          returns CPE configuration content for *all* IPSec connections that use a specific CPE.
+
+
+        :param str ipsc_id: (required)
+            The OCID of the IPSec connection.
+
+        :param str tunnel_id: (required)
+            The `OCID`__ of the tunnel.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type stream
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}/tunnelDeviceConfig/content"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_tunnel_cpe_device_config_content got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "ipscId": ipsc_id,
+            "tunnelId": tunnel_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "text/plain; charset&#x3D;utf-8",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="stream")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="stream")
+
     def get_vcn(self, vcn_id, **kwargs):
         """
         GetVcn
@@ -8030,6 +8481,103 @@ class VirtualNetworkClient(object):
                 method=method,
                 header_params=header_params,
                 response_type="list[PeerRegionForRemotePeering]")
+
+    def list_cpe_device_shapes(self, **kwargs):
+        """
+        ListCpeDeviceShapes
+        Lists the CPE device types that the Networking service provides CPE configuration
+        content for (example: Cisco ASA). The content helps a network engineer configure
+        the actual CPE device represented by a :class:`Cpe` object.
+
+        If you want to generate CPE configuration content for one of the returned CPE device types,
+        ensure that the :class:`Cpe` object's `cpeDeviceShapeId` attribute is set
+        to the CPE device type's OCID (returned by this operation).
+
+        For information about generating CPE configuration content, see these operations:
+
+          * :func:`get_cpe_device_config_content`
+          * :func:`get_ipsec_cpe_device_config_content`
+          * :func:`get_tunnel_cpe_device_config_content`
+
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.CpeDeviceShapeSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/cpeDeviceShapes"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "limit",
+            "page",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_cpe_device_shapes got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[CpeDeviceShapeSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[CpeDeviceShapeSummary]")
 
     def list_cpes(self, compartment_id, **kwargs):
         """
@@ -13582,6 +14130,111 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 body=update_subnet_details,
                 response_type="Subnet")
+
+    def update_tunnel_cpe_device_config(self, ipsc_id, tunnel_id, update_tunnel_cpe_device_config_details, **kwargs):
+        """
+        UpdateTunnelCpeDeviceConfig
+        Creates or updates the set of CPE configuration answers for the specified tunnel.
+        The answers correlate to the questions that are specific to the CPE device type (see the
+        `parameters` attribute of :class:`CpeDeviceShapeDetail`).
+
+
+        :param str ipsc_id: (required)
+            The OCID of the IPSec connection.
+
+        :param str tunnel_id: (required)
+            The `OCID`__ of the tunnel.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param UpdateTunnelCpeDeviceConfigDetails update_tunnel_cpe_device_config_details: (required)
+            Request to input the tunnel's cpe configuration parameters
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.TunnelCpeDeviceConfig`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/ipsecConnections/{ipscId}/tunnels/{tunnelId}/tunnelDeviceConfig"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_tunnel_cpe_device_config got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "ipscId": ipsc_id,
+            "tunnelId": tunnel_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_tunnel_cpe_device_config_details,
+                response_type="TunnelCpeDeviceConfig")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_tunnel_cpe_device_config_details,
+                response_type="TunnelCpeDeviceConfig")
 
     def update_vcn(self, vcn_id, update_vcn_details, **kwargs):
         """

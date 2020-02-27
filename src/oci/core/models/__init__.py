@@ -72,6 +72,11 @@ from .console_history import ConsoleHistory
 from .copy_boot_volume_backup_details import CopyBootVolumeBackupDetails
 from .copy_volume_backup_details import CopyVolumeBackupDetails
 from .cpe import Cpe
+from .cpe_device_config_answer import CpeDeviceConfigAnswer
+from .cpe_device_config_question import CpeDeviceConfigQuestion
+from .cpe_device_info import CpeDeviceInfo
+from .cpe_device_shape_detail import CpeDeviceShapeDetail
+from .cpe_device_shape_summary import CpeDeviceShapeSummary
 from .create_app_catalog_subscription_details import CreateAppCatalogSubscriptionDetails
 from .create_boot_volume_backup_details import CreateBootVolumeBackupDetails
 from .create_boot_volume_details import CreateBootVolumeDetails
@@ -220,6 +225,7 @@ from .shape import Shape
 from .subnet import Subnet
 from .tcp_options import TcpOptions
 from .tunnel_config import TunnelConfig
+from .tunnel_cpe_device_config import TunnelCpeDeviceConfig
 from .tunnel_status import TunnelStatus
 from .udp_options import UdpOptions
 from .update_boot_volume_backup_details import UpdateBootVolumeBackupDetails
@@ -258,6 +264,7 @@ from .update_security_list_details import UpdateSecurityListDetails
 from .update_security_rule_details import UpdateSecurityRuleDetails
 from .update_service_gateway_details import UpdateServiceGatewayDetails
 from .update_subnet_details import UpdateSubnetDetails
+from .update_tunnel_cpe_device_config_details import UpdateTunnelCpeDeviceConfigDetails
 from .update_vcn_details import UpdateVcnDetails
 from .update_virtual_circuit_details import UpdateVirtualCircuitDetails
 from .update_vnic_details import UpdateVnicDetails
@@ -362,6 +369,11 @@ core_type_mapping = {
     "CopyBootVolumeBackupDetails": CopyBootVolumeBackupDetails,
     "CopyVolumeBackupDetails": CopyVolumeBackupDetails,
     "Cpe": Cpe,
+    "CpeDeviceConfigAnswer": CpeDeviceConfigAnswer,
+    "CpeDeviceConfigQuestion": CpeDeviceConfigQuestion,
+    "CpeDeviceInfo": CpeDeviceInfo,
+    "CpeDeviceShapeDetail": CpeDeviceShapeDetail,
+    "CpeDeviceShapeSummary": CpeDeviceShapeSummary,
     "CreateAppCatalogSubscriptionDetails": CreateAppCatalogSubscriptionDetails,
     "CreateBootVolumeBackupDetails": CreateBootVolumeBackupDetails,
     "CreateBootVolumeDetails": CreateBootVolumeDetails,
@@ -510,6 +522,7 @@ core_type_mapping = {
     "Subnet": Subnet,
     "TcpOptions": TcpOptions,
     "TunnelConfig": TunnelConfig,
+    "TunnelCpeDeviceConfig": TunnelCpeDeviceConfig,
     "TunnelStatus": TunnelStatus,
     "UdpOptions": UdpOptions,
     "UpdateBootVolumeBackupDetails": UpdateBootVolumeBackupDetails,
@@ -548,6 +561,7 @@ core_type_mapping = {
     "UpdateSecurityRuleDetails": UpdateSecurityRuleDetails,
     "UpdateServiceGatewayDetails": UpdateServiceGatewayDetails,
     "UpdateSubnetDetails": UpdateSubnetDetails,
+    "UpdateTunnelCpeDeviceConfigDetails": UpdateTunnelCpeDeviceConfigDetails,
     "UpdateVcnDetails": UpdateVcnDetails,
     "UpdateVirtualCircuitDetails": UpdateVirtualCircuitDetails,
     "UpdateVnicDetails": UpdateVnicDetails,

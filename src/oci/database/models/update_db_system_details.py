@@ -43,6 +43,10 @@ class UpdateDbSystemDetails(object):
             The value to assign to the defined_tags property of this UpdateDbSystemDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param shape:
+            The value to assign to the shape property of this UpdateDbSystemDetails.
+        :type shape: str
+
         :param nsg_ids:
             The value to assign to the nsg_ids property of this UpdateDbSystemDetails.
         :type nsg_ids: list[str]
@@ -59,6 +63,7 @@ class UpdateDbSystemDetails(object):
             'data_storage_size_in_gbs': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'shape': 'str',
             'nsg_ids': 'list[str]',
             'backup_network_nsg_ids': 'list[str]'
         }
@@ -70,6 +75,7 @@ class UpdateDbSystemDetails(object):
             'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'shape': 'shape',
             'nsg_ids': 'nsgIds',
             'backup_network_nsg_ids': 'backupNetworkNsgIds'
         }
@@ -80,6 +86,7 @@ class UpdateDbSystemDetails(object):
         self._data_storage_size_in_gbs = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._shape = None
         self._nsg_ids = None
         self._backup_network_nsg_ids = None
 
@@ -238,6 +245,36 @@ class UpdateDbSystemDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def shape(self):
+        """
+        Gets the shape of this UpdateDbSystemDetails.
+        The shape of the DB system. The shape determines resources allocated to the DB system.
+        - For virtual machine shapes, the number of CPU cores and memory
+
+        To get a list of shapes, use the :func:`list_db_system_shapes` operation.
+
+
+        :return: The shape of this UpdateDbSystemDetails.
+        :rtype: str
+        """
+        return self._shape
+
+    @shape.setter
+    def shape(self, shape):
+        """
+        Sets the shape of this UpdateDbSystemDetails.
+        The shape of the DB system. The shape determines resources allocated to the DB system.
+        - For virtual machine shapes, the number of CPU cores and memory
+
+        To get a list of shapes, use the :func:`list_db_system_shapes` operation.
+
+
+        :param shape: The shape of this UpdateDbSystemDetails.
+        :type: str
+        """
+        self._shape = shape
 
     @property
     def nsg_ids(self):

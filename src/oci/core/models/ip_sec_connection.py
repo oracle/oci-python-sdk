@@ -480,11 +480,13 @@ class IPSecConnection(object):
         tunnels to use BGP dynamic routing, you can provide an empty list for the static routes.
 
         The CIDR can be either IPv4 or IPv6. Note that IPv6 addressing is currently supported only
-        in the Government Cloud.
+        in certain regions. See `IPv6 Addresses`__.
 
         Example: `10.0.1.0/24`
 
         Example: `2001:db8::/32`
+
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
 
 
         :return: The static_routes of this IPSecConnection.
@@ -505,11 +507,13 @@ class IPSecConnection(object):
         tunnels to use BGP dynamic routing, you can provide an empty list for the static routes.
 
         The CIDR can be either IPv4 or IPv6. Note that IPv6 addressing is currently supported only
-        in the Government Cloud.
+        in certain regions. See `IPv6 Addresses`__.
 
         Example: `10.0.1.0/24`
 
         Example: `2001:db8::/32`
+
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
 
 
         :param static_routes: The static_routes of this IPSecConnection.

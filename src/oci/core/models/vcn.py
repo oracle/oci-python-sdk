@@ -461,9 +461,12 @@ class Vcn(object):
         The VCN size is always /48. If you don't provide a value when creating the VCN, Oracle
         provides one and uses that *same* CIDR for the `ipv6PublicCidrBlock`. If you do provide a
         value, Oracle provides a *different* CIDR for the `ipv6PublicCidrBlock`. Note that IPv6
-        addressing is currently supported only in the Government Cloud.
+        addressing is currently supported only in certain regions. See
+        `IPv6 Addresses`__.
 
         Example: `2001:0db8:0123::/48`
+
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
 
 
         :return: The ipv6_cidr_block of this Vcn.
@@ -479,9 +482,12 @@ class Vcn(object):
         The VCN size is always /48. If you don't provide a value when creating the VCN, Oracle
         provides one and uses that *same* CIDR for the `ipv6PublicCidrBlock`. If you do provide a
         value, Oracle provides a *different* CIDR for the `ipv6PublicCidrBlock`. Note that IPv6
-        addressing is currently supported only in the Government Cloud.
+        addressing is currently supported only in certain regions. See
+        `IPv6 Addresses`__.
 
         Example: `2001:0db8:0123::/48`
+
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
 
 
         :param ipv6_cidr_block: The ipv6_cidr_block of this Vcn.

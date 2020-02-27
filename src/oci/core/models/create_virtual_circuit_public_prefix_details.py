@@ -37,7 +37,7 @@ class CreateVirtualCircuitPublicPrefixDetails(object):
         """
         **[Required]** Gets the cidr_block of this CreateVirtualCircuitPublicPrefixDetails.
         An individual public IP prefix (CIDR) to add to the public virtual circuit.
-        Must be /31 or less specific.
+        All prefix sizes are allowed.
 
 
         :return: The cidr_block of this CreateVirtualCircuitPublicPrefixDetails.
@@ -50,7 +50,7 @@ class CreateVirtualCircuitPublicPrefixDetails(object):
         """
         Sets the cidr_block of this CreateVirtualCircuitPublicPrefixDetails.
         An individual public IP prefix (CIDR) to add to the public virtual circuit.
-        Must be /31 or less specific.
+        All prefix sizes are allowed.
 
 
         :param cidr_block: The cidr_block of this CreateVirtualCircuitPublicPrefixDetails.

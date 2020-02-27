@@ -250,9 +250,12 @@ class CrossConnectMapping(object):
 
         There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
 
-        Note that IPv6 addressing is currently supported only in the Government Cloud.
+        Note that IPv6 addressing is currently supported only in certain regions. See
+        `IPv6 Addresses`__.
 
         Example: `2001:db8::1/64`
+
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
 
 
         :return: The customer_bgp_peering_ipv6 of this CrossConnectMapping.
@@ -272,9 +275,12 @@ class CrossConnectMapping(object):
 
         There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
 
-        Note that IPv6 addressing is currently supported only in the Government Cloud.
+        Note that IPv6 addressing is currently supported only in certain regions. See
+        `IPv6 Addresses`__.
 
         Example: `2001:db8::1/64`
+
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
 
 
         :param customer_bgp_peering_ipv6: The customer_bgp_peering_ipv6 of this CrossConnectMapping.
@@ -293,9 +299,12 @@ class CrossConnectMapping(object):
 
         There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
 
-        Note that IPv6 addressing is currently supported only in the Government Cloud.
+        Note that IPv6 addressing is currently supported only in certain regions. See
+        `IPv6 Addresses`__.
 
         Example: `2001:db8::2/64`
+
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
 
 
         :return: The oracle_bgp_peering_ipv6 of this CrossConnectMapping.
@@ -314,9 +323,12 @@ class CrossConnectMapping(object):
 
         There's one exception: for a public virtual circuit, Oracle specifies the BGP IPv6 addresses.
 
-        Note that IPv6 addressing is currently supported only in the Government Cloud.
+        Note that IPv6 addressing is currently supported only in certain regions. See
+        `IPv6 Addresses`__.
 
         Example: `2001:db8::2/64`
+
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
 
 
         :param oracle_bgp_peering_ipv6: The oracle_bgp_peering_ipv6 of this CrossConnectMapping.

@@ -2778,6 +2778,86 @@ def test_get_cpe(testing_service_client):
 
 
 # IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
+def test_get_cpe_device_config_content(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetCpeDeviceConfigContent'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'GetCpeDeviceConfigContent')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetCpeDeviceConfigContent')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.get_cpe_device_config_content(
+                cpe_id=request.pop(util.camelize('cpeId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetCpeDeviceConfigContent',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'stream',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
+def test_get_cpe_device_shape(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetCpeDeviceShape'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'GetCpeDeviceShape')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetCpeDeviceShape')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.get_cpe_device_shape(
+                cpe_device_shape_id=request.pop(util.camelize('cpeDeviceShapeId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetCpeDeviceShape',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'cpeDeviceShapeDetail',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
 def test_get_cross_connect(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetCrossConnect'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3420,6 +3500,46 @@ def test_get_ip_sec_connection_tunnel_shared_secret(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
+def test_get_ipsec_cpe_device_config_content(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetIpsecCpeDeviceConfigContent'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'GetIpsecCpeDeviceConfigContent')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetIpsecCpeDeviceConfigContent')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.get_ipsec_cpe_device_config_content(
+                ipsc_id=request.pop(util.camelize('ipscId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetIpsecCpeDeviceConfigContent',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'stream',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
 def test_get_ipv6(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetIpv6'):
@@ -3980,6 +4100,88 @@ def test_get_subnet(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
+def test_get_tunnel_cpe_device_config(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetTunnelCpeDeviceConfig'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'GetTunnelCpeDeviceConfig')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetTunnelCpeDeviceConfig')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.get_tunnel_cpe_device_config(
+                ipsc_id=request.pop(util.camelize('ipscId')),
+                tunnel_id=request.pop(util.camelize('tunnelId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetTunnelCpeDeviceConfig',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'tunnelCpeDeviceConfig',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
+def test_get_tunnel_cpe_device_config_content(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetTunnelCpeDeviceConfigContent'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'GetTunnelCpeDeviceConfigContent')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetTunnelCpeDeviceConfigContent')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.get_tunnel_cpe_device_config_content(
+                ipsc_id=request.pop(util.camelize('ipscId')),
+                tunnel_id=request.pop(util.camelize('tunnelId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetTunnelCpeDeviceConfigContent',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'stream',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
 def test_get_vcn(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetVcn'):
@@ -4136,6 +4338,63 @@ def test_list_allowed_peer_regions_for_remote_peering(testing_service_client):
             'peerRegionForRemotePeering',
             False,
             False
+        )
+
+
+# IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
+def test_list_cpe_device_shapes(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListCpeDeviceShapes'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ListCpeDeviceShapes')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListCpeDeviceShapes')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.list_cpe_device_shapes(
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_cpe_device_shapes(
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_cpe_device_shapes(
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListCpeDeviceShapes',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'cpeDeviceShapeSummary',
+            False,
+            True
         )
 
 
@@ -6931,6 +7190,48 @@ def test_update_subnet(testing_service_client):
             result,
             service_error,
             'subnet',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
+def test_update_tunnel_cpe_device_config(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'UpdateTunnelCpeDeviceConfig'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'UpdateTunnelCpeDeviceConfig')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateTunnelCpeDeviceConfig')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.update_tunnel_cpe_device_config(
+                ipsc_id=request.pop(util.camelize('ipscId')),
+                tunnel_id=request.pop(util.camelize('tunnelId')),
+                update_tunnel_cpe_device_config_details=request.pop(util.camelize('UpdateTunnelCpeDeviceConfigDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'UpdateTunnelCpeDeviceConfig',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'tunnelCpeDeviceConfig',
             False,
             False
         )
