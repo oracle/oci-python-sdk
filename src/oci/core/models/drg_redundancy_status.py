@@ -9,7 +9,10 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DrgRedundancyStatus(object):
     """
-    Redundancy status of the DRG object identified by ID
+    The redundancy status of the DRG. For more information, see
+    `Redundancy Remedies`__.
+
+    __ https://docs.cloud.oracle.com/Content/Network/Troubleshoot/drgredundancy.htm
     """
 
     #: A constant which can be used with the status property of a DrgRedundancyStatus.
@@ -77,7 +80,7 @@ class DrgRedundancyStatus(object):
     def id(self):
         """
         Gets the id of this DrgRedundancyStatus.
-        The DRG's unique identifier.
+        The OCID of the DRG.
 
 
         :return: The id of this DrgRedundancyStatus.
@@ -89,7 +92,7 @@ class DrgRedundancyStatus(object):
     def id(self, id):
         """
         Sets the id of this DrgRedundancyStatus.
-        The DRG's unique identifier.
+        The OCID of the DRG.
 
 
         :param id: The id of this DrgRedundancyStatus.
@@ -101,7 +104,7 @@ class DrgRedundancyStatus(object):
     def status(self):
         """
         Gets the status of this DrgRedundancyStatus.
-        The redudancy status of the DRG specified.
+        The redundancy status of the DRG.
 
         Allowed values for this property are: "NOT_AVAILABLE", "REDUNDANT", "NOT_REDUNDANT_SINGLE_IPSEC", "NOT_REDUNDANT_SINGLE_VIRTUALCIRCUIT", "NOT_REDUNDANT_MULTIPLE_IPSECS", "NOT_REDUNDANT_MULTIPLE_VIRTUALCIRCUITS", "NOT_REDUNDANT_MIX_CONNECTIONS", "NOT_REDUNDANT_NO_CONNECTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -116,7 +119,7 @@ class DrgRedundancyStatus(object):
     def status(self, status):
         """
         Sets the status of this DrgRedundancyStatus.
-        The redudancy status of the DRG specified.
+        The redundancy status of the DRG.
 
 
         :param status: The status of this DrgRedundancyStatus.

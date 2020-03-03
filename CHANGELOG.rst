@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.10.7 - 2020-03-03
+====================
+
+Added
+-----
+* Support for updating the shape of a Database System in the Database service
+* Support for generating CPE configurations for download in the Networking service
+* Support for private IPs and fault domains of cluster nodes in the Container Engine for Kubernetes service
+* Support for calling Oracle Cloud Infrastructure services in the ca-montreal-1 region
+* Fixed missed parameter when invoking request signing for delegation token
+
+====================
 2.10.6 - 2020-02-25
 ====================
 
