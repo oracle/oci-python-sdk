@@ -171,7 +171,8 @@ class AddSecurityRuleDetails(object):
         Allowed values:
 
           * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`
-            Note that IPv6 addressing is currently supported only in the Government Cloud.
+            Note that IPv6 addressing is currently supported only in certain regions. See
+            `IPv6 Addresses`__.
 
           * The `cidrBlock` value for a :class:`Service`, if you're
             setting up a security rule for traffic destined for a particular `Service` through
@@ -180,6 +181,8 @@ class AddSecurityRuleDetails(object):
           * The OCID of a :class:`NetworkSecurityGroup` in the same
             VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
             traffic between VNICs in the same NSG.
+
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
 
 
         :return: The destination of this AddSecurityRuleDetails.
@@ -197,7 +200,8 @@ class AddSecurityRuleDetails(object):
         Allowed values:
 
           * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`
-            Note that IPv6 addressing is currently supported only in the Government Cloud.
+            Note that IPv6 addressing is currently supported only in certain regions. See
+            `IPv6 Addresses`__.
 
           * The `cidrBlock` value for a :class:`Service`, if you're
             setting up a security rule for traffic destined for a particular `Service` through
@@ -206,6 +210,8 @@ class AddSecurityRuleDetails(object):
           * The OCID of a :class:`NetworkSecurityGroup` in the same
             VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
             traffic between VNICs in the same NSG.
+
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
 
 
         :param destination: The destination of this AddSecurityRuleDetails.
@@ -423,7 +429,8 @@ class AddSecurityRuleDetails(object):
         Allowed values:
 
           * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`
-            Note that IPv6 addressing is currently supported only in the Government Cloud.
+            Note that IPv6 addressing is currently supported only in certain regions. See
+            `IPv6 Addresses`__.
 
           * The `cidrBlock` value for a :class:`Service`, if you're
             setting up a security rule for traffic coming from a particular `Service` through
@@ -432,6 +439,8 @@ class AddSecurityRuleDetails(object):
           * The OCID of a :class:`NetworkSecurityGroup` in the same
             VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
             traffic between VNICs in the same NSG.
+
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
 
 
         :return: The source of this AddSecurityRuleDetails.
@@ -449,7 +458,8 @@ class AddSecurityRuleDetails(object):
         Allowed values:
 
           * An IP address range in CIDR notation. For example: `192.168.1.0/24` or `2001:0db8:0123:45::/56`
-            Note that IPv6 addressing is currently supported only in the Government Cloud.
+            Note that IPv6 addressing is currently supported only in certain regions. See
+            `IPv6 Addresses`__.
 
           * The `cidrBlock` value for a :class:`Service`, if you're
             setting up a security rule for traffic coming from a particular `Service` through
@@ -458,6 +468,8 @@ class AddSecurityRuleDetails(object):
           * The OCID of a :class:`NetworkSecurityGroup` in the same
             VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
             traffic between VNICs in the same NSG.
+
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/ipv6.htm
 
 
         :param source: The source of this AddSecurityRuleDetails.

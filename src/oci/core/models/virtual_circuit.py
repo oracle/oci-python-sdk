@@ -867,7 +867,7 @@ class VirtualCircuit(object):
         """
         Gets the public_prefixes of this VirtualCircuit.
         For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to
-        advertise across the connection. Each prefix must be /31 or less specific.
+        advertise across the connection. All prefix sizes are allowed.
 
 
         :return: The public_prefixes of this VirtualCircuit.
@@ -880,7 +880,7 @@ class VirtualCircuit(object):
         """
         Sets the public_prefixes of this VirtualCircuit.
         For a public virtual circuit. The public IP prefixes (CIDRs) the customer wants to
-        advertise across the connection. Each prefix must be /31 or less specific.
+        advertise across the connection. All prefix sizes are allowed.
 
 
         :param public_prefixes: The public_prefixes of this VirtualCircuit.

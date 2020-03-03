@@ -93,6 +93,11 @@ Core Services
     oci.core.models.CopyBootVolumeBackupDetails
     oci.core.models.CopyVolumeBackupDetails
     oci.core.models.Cpe
+    oci.core.models.CpeDeviceConfigAnswer
+    oci.core.models.CpeDeviceConfigQuestion
+    oci.core.models.CpeDeviceInfo
+    oci.core.models.CpeDeviceShapeDetail
+    oci.core.models.CpeDeviceShapeSummary
     oci.core.models.CreateAppCatalogSubscriptionDetails
     oci.core.models.CreateBootVolumeBackupDetails
     oci.core.models.CreateBootVolumeDetails
@@ -241,6 +246,7 @@ Core Services
     oci.core.models.Subnet
     oci.core.models.TcpOptions
     oci.core.models.TunnelConfig
+    oci.core.models.TunnelCpeDeviceConfig
     oci.core.models.TunnelStatus
     oci.core.models.UdpOptions
     oci.core.models.UpdateBootVolumeBackupDetails
@@ -279,6 +285,7 @@ Core Services
     oci.core.models.UpdateSecurityRuleDetails
     oci.core.models.UpdateServiceGatewayDetails
     oci.core.models.UpdateSubnetDetails
+    oci.core.models.UpdateTunnelCpeDeviceConfigDetails
     oci.core.models.UpdateVcnDetails
     oci.core.models.UpdateVirtualCircuitDetails
     oci.core.models.UpdateVnicDetails

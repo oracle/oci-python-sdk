@@ -324,7 +324,7 @@ class VnicAttachment(object):
     def subnet_id(self):
         """
         **[Required]** Gets the subnet_id of this VnicAttachment.
-        The OCID of the VNIC's subnet.
+        The OCID of the subnet to create the VNIC in.
 
 
         :return: The subnet_id of this VnicAttachment.
@@ -336,7 +336,7 @@ class VnicAttachment(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this VnicAttachment.
-        The OCID of the VNIC's subnet.
+        The OCID of the subnet to create the VNIC in.
 
 
         :param subnet_id: The subnet_id of this VnicAttachment.

@@ -65,6 +65,14 @@ class Node(object):
             The value to assign to the node_pool_id property of this Node.
         :type node_pool_id: str
 
+        :param fault_domain:
+            The value to assign to the fault_domain property of this Node.
+        :type fault_domain: str
+
+        :param private_ip:
+            The value to assign to the private_ip property of this Node.
+        :type private_ip: str
+
         :param public_ip:
             The value to assign to the public_ip property of this Node.
         :type public_ip: str
@@ -90,6 +98,8 @@ class Node(object):
             'availability_domain': 'str',
             'subnet_id': 'str',
             'node_pool_id': 'str',
+            'fault_domain': 'str',
+            'private_ip': 'str',
             'public_ip': 'str',
             'node_error': 'NodeError',
             'lifecycle_state': 'str',
@@ -102,6 +112,8 @@ class Node(object):
             'availability_domain': 'availabilityDomain',
             'subnet_id': 'subnetId',
             'node_pool_id': 'nodePoolId',
+            'fault_domain': 'faultDomain',
+            'private_ip': 'privateIp',
             'public_ip': 'publicIp',
             'node_error': 'nodeError',
             'lifecycle_state': 'lifecycleState',
@@ -113,6 +125,8 @@ class Node(object):
         self._availability_domain = None
         self._subnet_id = None
         self._node_pool_id = None
+        self._fault_domain = None
+        self._private_ip = None
         self._public_ip = None
         self._node_error = None
         self._lifecycle_state = None
@@ -237,6 +251,54 @@ class Node(object):
         :type: str
         """
         self._node_pool_id = node_pool_id
+
+    @property
+    def fault_domain(self):
+        """
+        Gets the fault_domain of this Node.
+        The fault domain of this node.
+
+
+        :return: The fault_domain of this Node.
+        :rtype: str
+        """
+        return self._fault_domain
+
+    @fault_domain.setter
+    def fault_domain(self, fault_domain):
+        """
+        Sets the fault_domain of this Node.
+        The fault domain of this node.
+
+
+        :param fault_domain: The fault_domain of this Node.
+        :type: str
+        """
+        self._fault_domain = fault_domain
+
+    @property
+    def private_ip(self):
+        """
+        Gets the private_ip of this Node.
+        The private IP address of this node.
+
+
+        :return: The private_ip of this Node.
+        :rtype: str
+        """
+        return self._private_ip
+
+    @private_ip.setter
+    def private_ip(self, private_ip):
+        """
+        Sets the private_ip of this Node.
+        The private IP address of this node.
+
+
+        :param private_ip: The private_ip of this Node.
+        :type: str
+        """
+        self._private_ip = private_ip
 
     @property
     def public_ip(self):

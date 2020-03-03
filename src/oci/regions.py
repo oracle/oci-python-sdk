@@ -19,7 +19,8 @@ REGIONS_SHORT_NAMES = {
     'kix': 'ap-osaka-1',
     'mel': 'ap-melbourne-1',
     'ams': 'eu-amsterdam-1',
-    'jed': 'me-jeddah-1'
+    'jed': 'me-jeddah-1',
+    'yul': 'ca-montreal-1'
 }
 REGION_REALMS = {
     'ap-melbourne-1': 'oc1',
@@ -37,6 +38,7 @@ REGION_REALMS = {
     'uk-london-1': 'oc1',
     'ca-toronto-1': 'oc1',
     'sa-saopaulo-1': 'oc1',
+    'ca-montreal-1': 'oc1',
 
     'us-langley-1': 'oc2',
     'us-luke-1': 'oc2',
@@ -68,6 +70,7 @@ REGIONS = [
     "me-jeddah-1",
     "uk-london-1",
     "ca-toronto-1",
+    "ca-montreal-1",
     "us-langley-1",
     "us-luke-1",
     "us-gov-ashburn-1",
