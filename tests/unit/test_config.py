@@ -123,7 +123,7 @@ def test_manual_config_doesnt_require_optional_fields():
         'region': HARDCODED_REGION
     }
 
-    # validate that creating client doesn't throw when optional fields are not present in config
+    # validate that creating client doesn't throw error when optional fields are not present in config
     oci.identity.IdentityClient(config)
 
 
