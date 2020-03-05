@@ -424,7 +424,7 @@ class AlertRuleSummary(object):
     def recipients(self):
         """
         **[Required]** Gets the recipients of this AlertRuleSummary.
-        The audience that will received the alert when it triggers.
+        The audience that will receive the alert when it triggers.
 
 
         :return: The recipients of this AlertRuleSummary.
@@ -436,7 +436,7 @@ class AlertRuleSummary(object):
     def recipients(self, recipients):
         """
         Sets the recipients of this AlertRuleSummary.
-        The audience that will received the alert when it triggers.
+        The audience that will receive the alert when it triggers.
 
 
         :param recipients: The recipients of this AlertRuleSummary.

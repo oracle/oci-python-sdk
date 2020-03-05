@@ -582,8 +582,12 @@ class BudgetClient(object):
             The default sort order for timeCreated is DESC.
             The default sort order for displayName is ASC in alphanumeric order.
 
+            Allowed values are: "timeCreated", "displayName"
+
         :param str lifecycle_state: (optional)
             The current state of the resource to filter by.
+
+            Allowed values are: "ACTIVE", "INACTIVE"
 
         :param str display_name: (optional)
             A user-friendly name. Does not have to be unique, and it's changeable.
@@ -638,6 +642,20 @@ class BudgetClient(object):
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["ACTIVE", "INACTIVE"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
                 )
 
         query_params = {
@@ -713,8 +731,12 @@ class BudgetClient(object):
             The default sort order for timeCreated is DESC.
             The default sort order for displayName is ASC in alphanumeric order.
 
+            Allowed values are: "timeCreated", "displayName"
+
         :param str lifecycle_state: (optional)
             The current state of the resource to filter by.
+
+            Allowed values are: "ACTIVE", "INACTIVE"
 
         :param str display_name: (optional)
             A user-friendly name. Does not have to be unique, and it's changeable.
@@ -768,6 +790,20 @@ class BudgetClient(object):
             if kwargs['sort_order'] not in sort_order_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["ACTIVE", "INACTIVE"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
                 )
 
         if 'target_type' in kwargs:
