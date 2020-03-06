@@ -9,7 +9,7 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 Added
 -----
-* TBD
+* Support for Events service integration with alerts in the Budgets service
 
 ====================
 2.10.7 - 2020-03-03
