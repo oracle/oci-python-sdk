@@ -774,7 +774,7 @@ class ShowOCIOutput(object):
 
     def __print_database_db_system_details(self, dbs):
         try:
-            print(self.taba + dbs['name'])
+            print(self.taba + "DBaaS   : " + dbs['name'] + " - " + dbs['version'])
             print(self.tabs + "AD      : " + dbs['availability_domain'])
 
             if 'cpu_core_count' in dbs:
@@ -783,9 +783,6 @@ class ShowOCIOutput(object):
             if 'node_count' in dbs:
                 if dbs['node_count']:
                     print(self.tabs + "Nodes   : " + str(dbs['node_count']))
-
-            if 'version' in dbs:
-                print(self.tabs + "Version : " + dbs['version'])
 
             if 'host' in dbs:
                 print(self.tabs + "Host    : " + dbs['host'])
@@ -882,26 +879,48 @@ class ShowOCIOutput(object):
     def __print_database_db_autonomous(self, dbs):
         try:
             for db in dbs:
-                print(self.taba + db['name'])
+                print(self.taba + "ADB        : " + db['name'])
                 if 'cpu_core_count' in db:
-                    print(self.tabs + "Cores       : " + str(db['cpu_core_count']))
-                if 'data_storage_size_in_tbs' in db:
-                    print(self.tabs + "Size TB     : " + str(db['data_storage_size_in_tbs']))
-                if 'db_name' in db:
-                    print(self.tabs + "DB Name     : " + db['db_name'])
+                    print(self.tabs + "Size       : " + str(db['cpu_core_count']) + " OCPUs, " + str(db['data_storage_size_in_tbs']) + "TB Storage")
                 if 'time_created' in db:
-                    print(self.tabs + "Created     : " + db['time_created'])
+                    print(self.tabs + "Created    : " + db['time_created'])
                 if 'whitelisted_ips' in db:
-                    print(self.tabs + "Allowed IPs : " + db['whitelisted_ips'])
+                    if db['whitelisted_ips']:
+                        print(self.tabs + "Allowed IPs: " + db['whitelisted_ips'])
+                if 'private_endpoint' in db:
+                    if db['private_endpoint'] != 'None':
+                        print(self.tabs + "Private EP : " + db['private_endpoint'] + ", Subnet: " + db['subnet_name'])
+                if 'nsg_names' in db:
+                    for nsg in db['nsg_names']:
+                        print(self.tabs + "           : Network Security Group: " + nsg)
+                if 'data_safe_status' in db:
+                    print(self.tabs + "DataSafe   : " + db['data_safe_status'])
+                if 'time_maintenance_begin' in db:
+                    print(self.tabs + "Maintenance: " + db['time_maintenance_begin'][0:16] + " - " + db['time_maintenance_end'][0:16])
 
                 # print backups
                 if db['backups']:
                     for backup in db['backups']:
-                        print(self.tabs + self.tabs + "      " + backup['name'] + " - " + backup['time'])
+                        print(self.tabs + self.tabs + "         " + backup['name'] + " - " + backup['time'])
                 print("")
 
         except Exception as e:
             self.__print_error("__print_database_db_autonomous", e)
+
+    ##########################################################################
+    # print database nosql
+    ##########################################################################
+
+    def __print_database_nosql(self, dbs):
+        try:
+            for db in dbs:
+                print(self.taba + "Table   : " + db['name'])
+                print(self.tabs + "Created : " + db['time_created'][0:16] + " (" + db['lifecycle_state'] + ")")
+                print(self.tabs + "Limits  : max_read_units: " + str(db['max_read_units']) + ", max_write_units: " + str(db['max_read_units']) + ", max_storage_in_g_bs: " + str(db['max_storage_in_g_bs']))
+                print("")
+
+        except Exception as e:
+            self.__print_error("__print_database_nosql", e)
 
     ##########################################################################
     # database
@@ -921,6 +940,11 @@ class ShowOCIOutput(object):
             if 'autonomous' in list_databases:
                 self.print_header("Autonomous databases", 2)
                 self.__print_database_db_autonomous(list_databases['autonomous'])
+                print("")
+
+            if 'nosql' in list_databases:
+                self.print_header("NOSQL Tables", 2)
+                self.__print_database_nosql(list_databases['nosql'])
                 print("")
 
         except Exception as e:
@@ -1195,6 +1219,7 @@ class ShowOCIOutput(object):
     ##########################################################################
     # PaaS Servics
     ##########################################################################
+
     def __print_paas_services_main(self, paas_services):
 
         try:
@@ -1214,9 +1239,11 @@ class ShowOCIOutput(object):
             if 'oac' in paas_services:
                 self.print_header("OAC Native", 2)
                 for val in paas_services['oac']:
-                    print(self.taba + val['name'] + ", (" + val['feature_set'] + "), Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
+                    print(
+                        self.taba + val['name'] + ", (" + val['feature_set'] + "), Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
                     print(self.tabs + "Desc : " + val['description'])
-                    print(self.tabs + "Email: " + val['email_notification'] + ", License: " + str(val['license_type']) + ", Capacity: " + val['capacity_type'] + ":" + val['capacity_value'])
+                    print(self.tabs + "Email: " + val['email_notification'] + ", License: " + str(val['license_type']) + ", Capacity: " + val[
+                        'capacity_type'] + ":" + val['capacity_value'])
                     print(self.tabs + "URL  : " + val['service_url'])
                 print("")
 
@@ -1231,15 +1258,49 @@ class ShowOCIOutput(object):
                         print(self.tabs + "Pod: " + str(pod['name']) + " (" + str(pod['version']) + ") ")
                 print("")
 
+        except Exception as e:
+            self.__print_error("__print_paas_services_main", e)
+
+    ##########################################################################
+    # Data AI
+    ##########################################################################
+    def __print_data_ai(self, data_ai):
+
+        try:
+            if not data_ai:
+                return
+
+            # Data Catalog
+            if 'data_catalog' in data_ai:
+                self.print_header("Data Catalog", 2)
+                for val in data_ai['data_catalog']:
+                    print(self.taba + val['display_name'] + ", (" + val['number_of_objects'] + " objects), Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
+                print("")
+
+            # Data Science
+            if 'data_science' in data_ai:
+                self.print_header("Data Science", 2)
+                for val in data_ai['data_science']:
+                    print(self.taba + val['display_name'] + ", (" + val['description'] + "), Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
+                print("")
+
+            # Data Flow
+            if 'data_flow' in data_ai:
+                self.print_header("Data Flow", 2)
+                for val in data_ai['data_flow']:
+                    print(self.taba + val['display_name'] + ", (" + val['language'] + "), Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
+                    print(self.tabs + "Owner: " + val['owner_user_name'])
+                print("")
+
             # ODA
-            if 'oda' in paas_services:
+            if 'oda' in data_ai:
                 self.print_header("ODA Native", 2)
-                for val in paas_services['oda']:
+                for val in data_ai['oda']:
                     print(self.taba + val['display_name'] + ", (" + val['shape_name'] + "), Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + " - " + val['lifecycle_sub_state'] + ")")
                 print("")
 
         except Exception as e:
-            self.__print_error("__print_paas_services_main", e)
+            self.__print_error("__print_data_ai", e)
 
     ##########################################################################
     # Container
@@ -1593,6 +1654,8 @@ class ShowOCIOutput(object):
                     self.__print_quotas_main(cdata['quotas'])
                 if 'paas_services' in cdata:
                     self.__print_paas_services_main(cdata['paas_services'])
+                if 'data_ai' in cdata:
+                    self.__print_data_ai(cdata['data_ai'])
                 if 'apigateways' in cdata:
                     self.__print_api_gateways_main(cdata['apigateways'])
                 if 'functions' in cdata:
@@ -1730,15 +1793,36 @@ class ShowOCISummary(object):
                 self.__summary_core_size(paas_services['oac'])
             if 'oce' in paas_services:
                 self.__summary_core_size(paas_services['oce'])
-            if 'oda' in paas_services:
-                self.__summary_core_size(paas_services['oda'])
 
         except Exception as e:
             self.__print_error("__summary_paas_services_main", e)
 
     ##########################################################################
+    # data ai services
+    ##########################################################################
+
+    def __summary_data_ai_main(self, data_ai):
+
+        try:
+            if not data_ai:
+                return
+
+            if 'data_catalog' in data_ai:
+                self.__summary_core_size(data_ai['data_catalog'])
+            if 'data_science' in data_ai:
+                self.__summary_core_size(data_ai['data_science'])
+            if 'data_flow' in data_ai:
+                self.__summary_core_size(data_ai['data_flow'])
+            if 'oda' in data_ai:
+                self.__summary_core_size(data_ai['oda'])
+
+        except Exception as e:
+            self.__print_error("__summary_data_ai_main", e)
+
+    ##########################################################################
     # print database autonumous
     ##########################################################################
+
     def __summary_database_db_autonomous(self, dbs):
 
         try:
@@ -1752,6 +1836,20 @@ class ShowOCISummary(object):
 
         except Exception as e:
             self.__print_error("__summary_database_db_autonomous", e)
+
+    ##########################################################################
+    # print nosql
+    ##########################################################################
+
+    def __summary_database_nosql(self, dbs):
+
+        try:
+            for db in dbs:
+                if 'sum_info' in db:
+                    self.summary_global_list.append({'type': db['sum_info'], 'size': float(db['sum_size_gb'])})
+
+        except Exception as e:
+            self.__print_error("__summary_database_nosql", e)
 
     ##########################################################################
     # Database
@@ -1768,6 +1866,9 @@ class ShowOCISummary(object):
 
             if 'autonomous' in list_databases:
                 self.__summary_database_db_autonomous(list_databases['autonomous'])
+
+            if 'nosql' in list_databases:
+                self.__summary_database_nosql(list_databases['nosql'])
 
         except Exception as e:
             self.__print_error("__summary_database_main", e)
@@ -1965,6 +2066,8 @@ class ShowOCISummary(object):
                     self.__summary_load_balancer_main(cdata['load_balancer'])
                 if 'paas_services' in cdata:
                     self.__summary_paas_services_main(cdata['paas_services'])
+                if 'data_ai' in cdata:
+                    self.__summary_data_ai_main(cdata['data_ai'])
 
                 # print compartment header if data in the global list
                 if 'path' in cdata and self.summary_global_list:

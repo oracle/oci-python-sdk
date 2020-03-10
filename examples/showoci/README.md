@@ -5,6 +5,8 @@ It covers most of OCI components,
 Authentication by User or Compute using instance principals, 
 Output can be printer friendly, CSV files or JSON file.
 
+**Developed by Adi Zohar, 2018-2020**
+
 ![](img/screen_xls.png)
 ![](img/screen_scr1.png)
 ![](img/screen_scr2.png)
@@ -38,6 +40,10 @@ Output can be printer friendly, CSV files or JSON file.
 - oci.oce.OceInstanceClient
 - oci.apigateway.GatewaysClient
 - oci.functions.FunctionsManagementClient
+- oci.data_catalog.DataCatalogClient
+- oci.data_science.DataScienceClient
+- oci.data_flow.DataFlowClient
+- oci.nosql.NosqlClient
 
 ** DISCLAIMER – This is not an official Oracle application
 
@@ -84,56 +90,12 @@ Allow Group ReadOnlyUsers to read network-security-groups in tenancy
 
 ```
 
-## Installation Guide for Python 3 with OCI SDK  
+## Installation of Python 3 incase you don't have Python3 installed:
+Please follow Python Documentation - https://docs.python.org/3/using/index.html
 
-### Installation on Windows  
+## Install oci SDK Packages:
+Please follow Oracle Python SDK Documentation - https://github.com/oracle/oci-python-sdk
 
-```
-Download Python 3 from https://www.python.org/ 
-setup.exe
-pip install oci oci-cli  
-```
-
-### Installation on Mac using Brew
-```
-brew install python3
-pip3 install oci oci-cli 
-```
-
-### Installation on OCI VM with Oracle Cloud Developer Image
-```
-Default is python 2.7 , please run as below:
-python showoci.py
-```
-
-### Installation on OCI VM with Oracle Linux 7  
-
-```
-# Login as opc and install python3 locally  
-sudo yum -y install gcc libffi-devel openssl-devel python-devel sqlite-devel 
-
-# example on python 3.7.4, list of python versions can be found here - https://www.python.org/ftp/python/
-wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz
-tar zxf Python-3.7.4.tgz
-cd Python-3.7.4
-./configure --prefix=$HOME/python --enable-loadable-sqlite-extensions  
-make  
-make install  
-cd $HOME  
-
-# Add python to path  
-echo 'export PATH=$HOME/python/bin:$PATH' >> ~/.bash_profile  
-echo 'export PYTHONPATH=$HOME/python' >> ~/.bash_profile  
-source ~/.bash_profile  
-
-# check
-which python3  
-python3 --version
-
-# install oci and oci-cli  
-pip3 install --upgrade pip  
-pip3 install oci oci-cli  
-```
 ## Setup connectivity using Instance Principals
 
 ```  
@@ -150,24 +112,8 @@ pip3 install oci oci-cli
 2. Create new group : ReadOnlyGroup  
 3. Create new Policy: ReadOnlyGroupPolicy with Statement - ALLOW GROUP ReadOnlyGroup to read all-resources IN TENANCY  
 4. Create new User  : readonly.user -> Add to ReadOnlyGroup group  
-
-# Config OCI  
-# Login as opc
-
-oci setup config  
---> config location - /home/opc/.oci/config  
---> Enter a user OCID - copy from the created user   
---> Enter a tenancy OCID - copy from the oci cloud  
---> Region - choose the main region  
---> Do you want to generate a new RSA key pair? Y  
-
-Copy the /home/opc/.oci/oci_api_key_public.pem and add it to the OCI User under API Key  
-
-# Test it:  
-$ oci os ns get  
-{  
-  "data": "tenant_name_xxx"  
-}  
+5. Config OCI config file - ~/.oci/config
+   Please follow SDK config documentation - https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm 
 ```
 
 ## Copy the Software
@@ -180,11 +126,12 @@ $ ./showoci.py
 
 usage: showoci.py [-h] [-a] [-ani] [-an] [-api] [-b] [-c] [-cn] [-d] [-e]
                   [-edge] [-f] [-fun] [-i] [-ic] [-l] [-lq] [-m] [-n] [-o]
-                  [-paas] [-rm] [-s] [-so] [-mc] [-nr] [-ip] [-t PROFILE]
-                  [-p PROXY] [-rg REGION] [-cp COMPART] [-cpr COMPART_RECUR]
-                  [-cpath COMPARTPATH] [-tenantid TENANTID] [-cf CONFIG]
-                  [-csv CSV] [-jf JOUTFILE] [-js] [-sjf SJOUTFILE]
-                  [-cachef SERVICEFILE] [-caches] [--version]
+                  [-paas] [-dataai] [-rm] [-s] [-so] [-mc] [-nr] [-ip]
+                  [-t PROFILE] [-p PROXY] [-rg REGION] [-cp COMPART]
+                  [-cpr COMPART_RECUR] [-cpath COMPARTPATH]
+                  [-tenantid TENANTID] [-cf CONFIG] [-csv CSV] [-jf JOUTFILE]
+                  [-js] [-sjf SJOUTFILE] [-cachef SERVICEFILE] [-caches]
+                  [--version]
 
 optional arguments:
   -h, --help           show this help message and exit
@@ -207,7 +154,8 @@ optional arguments:
   -m                   Print Monitoring and Notifications
   -n                   Print Network
   -o                   Print Object Storage
-  -paas                Print Oracle Paas Native - OIC OAC ODA
+  -paas                Print PaaS Platform Services - OIC OAC OCE
+  -dataai              Print Data AI - D.Science, D.Catalog, D.Flow, ODA
   -rm                  Print Resource management
   -s                   Print Streams
   -so                  Print Summary Only

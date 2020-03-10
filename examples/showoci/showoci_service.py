@@ -50,6 +50,7 @@ class ShowOCIFlags(object):
     read_paas_native = False
     read_function = False
     read_api = False
+    read_data_ai = False
 
     # is_vcn_exist_for_region
     is_vcn_exist_for_region = False
@@ -97,7 +98,8 @@ class ShowOCIFlags(object):
                 self.read_paas_native or
                 self.read_limits or
                 self.read_api or
-                self.read_function)
+                self.read_function or
+                self.read_data_ai)
 
     ############################################
     # check if to load basic network (vcn+subnets)
@@ -117,7 +119,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.10.3"
+    oci_compatible_version = "2.10.7"
 
     ##########################################################################
     # Global Constants
@@ -208,6 +210,7 @@ class ShowOCIService(object):
     C_DATABASE = "database"
     C_DATABASE_DBSYSTEMS = "dbsystems"
     C_DATABASE_AUTONOMOUS = "autonomous"
+    C_DATABASE_NOSQL = "nosql"
 
     # container
     C_CONTAINER = "container"
@@ -249,7 +252,6 @@ class ShowOCIService(object):
     C_PAAS_NATIVE = "paas_native"
     C_PAAS_NATIVE_OIC = "oic"
     C_PAAS_NATIVE_OAC = "oac"
-    C_PAAS_NATIVE_ODA = "oda"
     C_PAAS_NATIVE_OCE = "oce"
 
     # function
@@ -259,6 +261,13 @@ class ShowOCIService(object):
     # API gateways
     C_API = "apis"
     C_API_GATEWAYS = "gateways"
+
+    # Data and AI
+    C_DATA_AI = "data_ai"
+    C_DATA_AI_SCIENCE = "data_science"
+    C_DATA_AI_CATALOG = "data_catalog"
+    C_DATA_AI_FLOW = "data_flow"
+    C_DATA_AI_ODA = "oda"
 
     # Error flag and reboot migration
     error = 0
@@ -807,6 +816,10 @@ class ShowOCIService(object):
         # paas native
         if self.flags.read_paas_native:
             self.__load_paas_native_main()
+
+        # data and ai
+        if self.flags.read_data_ai:
+            self.__load_data_ai_main()
 
         # api gateways
         if self.flags.read_api:
@@ -2892,7 +2905,8 @@ class ShowOCIService(object):
                         try:
                             tunnels = virtual_network.list_ip_sec_connection_tunnels(arr.id).data
                             for tunnel in tunnels:
-                                tun_val = {'status': str(tunnel.status),
+                                tun_val = {'id': str(tunnel.id),
+                                           'status': str(tunnel.status),
                                            'lifecycle_state': str(tunnel.lifecycle_state),
                                            'status_date': tunnel.time_status_updated.strftime("%Y-%m-%d %H:%M"),
                                            'display_name': str(tunnel.display_name),
@@ -5201,6 +5215,7 @@ class ShowOCIService(object):
     #
     # class oci.database.DatabaseClient(config, **kwargs)
     # class oci.core.VirtualNetworkClient(config, **kwargs)
+    # classoci.nosql.NosqlClient(config, **kwargs)
     #
     ##########################################################################
     def __load_database_main(self):
@@ -5217,12 +5232,17 @@ class ShowOCIService(object):
             if self.flags.proxy:
                 virtual_network.base_client.session.proxies = {'https': self.flags.proxy}
 
+            nosql_client = oci.nosql.NosqlClient(self.config, signer=self.signer)
+            if self.flags.proxy:
+                nosql_client.base_client.session.proxies = {'https': self.flags.proxy}
+
             # reference to compartments
             compartments = self.get_compartment()
 
             # add the key if not exists
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_DBSYSTEMS)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_AUTONOMOUS)
+            self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_NOSQL)
 
             # reference to orm
             db = self.data[self.C_DATABASE]
@@ -5230,6 +5250,7 @@ class ShowOCIService(object):
             # append the data
             db[self.C_DATABASE_DBSYSTEMS] += self.__load_database_dbsystems(database_client, virtual_network, compartments)
             db[self.C_DATABASE_AUTONOMOUS] += self.__load_database_autonomouns(database_client, compartments)
+            db[self.C_DATABASE_NOSQL] += self.__load_database_nosql(nosql_client, compartments)
 
             print("")
 
@@ -5732,7 +5753,16 @@ class ShowOCIService(object):
                              'region_name': str(self.config['region']),
                              'whitelisted_ips': "" if dbs.whitelisted_ips is None else str(', '.join(x for x in dbs.whitelisted_ips)),
                              'db_workload': str(dbs.db_workload),
+                             'db_type': ("ATP" if str(dbs.db_workload) == "OLTP" else "ADWC"),
                              'is_auto_scaling_enabled': dbs.is_auto_scaling_enabled,
+                             'is_dedicated': dbs.is_dedicated,
+                             'subnet_id': str(dbs.subnet_id),
+                             'data_safe_status': str(dbs.data_safe_status),
+                             'time_maintenance_begin': str(dbs.time_maintenance_begin),
+                             'time_maintenance_end': str(dbs.time_maintenance_end),
+                             'nsg_ids': dbs.nsg_ids,
+                             'private_endpoint': str(dbs.private_endpoint),
+                             'private_endpoint_label': str(dbs.private_endpoint_label),
                              'backups': self.__load_database_autonomouns_backups(database_client, dbs.id)}
 
                     # license model
@@ -5756,6 +5786,84 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_database_autonomouns", e)
+            return data
+
+    ##########################################################################
+    # __load_database_nosql
+    ##########################################################################
+    def __load_database_nosql(self, nosql_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+
+            self.__load_print_status("NOSQL Databases")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                print(".", end="")
+
+                list_tables = []
+                try:
+                    list_tables = oci.pagination.list_call_get_all_results(
+                        nosql_client.list_tables,
+                        compartment['id'],
+                        sort_by="name"
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    else:
+                        raise
+
+                # loop on auto
+                # list_tables = oci.nosql.models.TableCollection
+                for tab in list_tables:
+                    value = {}
+                    if tab.lifecycle_state == 'DELETED' or tab.lifecycle_state == 'FAILED':
+                        continue
+
+                    value = {'id': str(tab.id),
+                             'name': str(tab.name),
+                             'time_created': str(tab.time_created),
+                             'time_updated': str(tab.time_updated),
+                             'lifecycle_state': str(tab.lifecycle_state),
+                             'lifecycle_details': str(tab.lifecycle_details),
+                             'sum_info': "NOSQL Database Tables",
+                             'sum_size_gb': str("1"),
+                             'max_read_units': str(tab.table_limits.max_read_units),
+                             'max_write_units': str(tab.table_limits.max_write_units),
+                             'max_storage_in_g_bs': str(tab.table_limits.max_storage_in_g_bs),
+                             'compartment_name': str(compartment['name']),
+                             'compartment_id': str(compartment['id']),
+                             'defined_tags': [] if tab.defined_tags is None else tab.defined_tags,
+                             'freeform_tags': [] if tab.freeform_tags is None else tab.freeform_tags,
+                             'region_name': str(self.config['region'])
+                             }
+
+                    # add the data
+                    cnt += 1
+                    data.append(value)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_database_nosql", e)
             return data
 
     ##########################################################################
@@ -6853,6 +6961,355 @@ class ShowOCIService(object):
             return data
 
     ##########################################################################
+    # __load_data_ai_main
+    ##########################################################################
+    #
+    # OCI Classes used:
+    #
+    # oci.data_catalog.DataCatalogClient
+    # oci.data_science.DataScienceClient
+    # oci.data_flow.DataFlowClient
+    # oci.oda.OdaClient
+    ##########################################################################
+    def __load_data_ai_main(self):
+
+        try:
+            print("Data and AI Services...")
+
+            # clients
+            ds_client = oci.data_science.DataScienceClient(self.config, signer=self.signer, timeout=1)
+            dc_client = oci.data_catalog.DataCatalogClient(self.config, signer=self.signer, timeout=1)
+            df_client = oci.data_flow.DataFlowClient(self.config, signer=self.signer, timeout=1)
+            oda_client = oci.oda.OdaClient(self.config, signer=self.signer, timeout=1)
+
+            if self.flags.proxy:
+                ds_client.base_client.session.proxies = {'https': self.flags.proxy}
+                dc_client.base_client.session.proxies = {'https': self.flags.proxy}
+                df_client.base_client.session.proxies = {'https': self.flags.proxy}
+                oda_client.base_client.session.proxies = {'https': self.flags.proxy}
+
+            # reference to compartments
+            compartments = self.get_compartment()
+
+            # add the key if not exists
+            self.__initialize_data_key(self.C_DATA_AI, self.C_DATA_AI_CATALOG)
+            self.__initialize_data_key(self.C_DATA_AI, self.C_DATA_AI_FLOW)
+            self.__initialize_data_key(self.C_DATA_AI, self.C_DATA_AI_SCIENCE)
+            self.__initialize_data_key(self.C_DATA_AI, self.C_DATA_AI_ODA)
+
+            # reference to data_ai
+            data_ai = self.data[self.C_DATA_AI]
+
+            # append the data
+            data_ai[self.C_DATA_AI_CATALOG] += self.__load_data_ai_catalog(dc_client, compartments)
+            data_ai[self.C_DATA_AI_FLOW] += self.__load_data_ai_flow(df_client, compartments)
+            data_ai[self.C_DATA_AI_SCIENCE] += self.__load_data_ai_science(ds_client, compartments)
+            data_ai[self.C_DATA_AI_ODA] += self.__load_data_ai_oda(oda_client, compartments)
+            print("")
+
+        except oci.exceptions.RequestException:
+            raise
+        except oci.exceptions.ServiceError:
+            raise
+        except Exception as e:
+            self.__print_error("__load_data_ai_main", e)
+
+    ##########################################################################
+    # __load_data_ai_catalog
+    ##########################################################################
+    def __load_data_ai_catalog(self, dc_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("Data Catalog")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                array = []
+                try:
+                    array = oci.pagination.list_call_get_all_results(
+                        dc_client.list_catalogs,
+                        compartment['id'],
+                        sort_by="DISPLAYNAME"
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning()
+                    continue
+
+                print(".", end="")
+
+                # arr = oci.data_catalog.models.CatalogSummary
+                for arr in array:
+                    if (arr.lifecycle_state == 'ACTIVE' or arr.lifecycle_state == 'UPDATING'):
+
+                        val = {'id': str(arr.id),
+                               'display_name': str(arr.display_name),
+                               'time_created': str(arr.time_created),
+                               'time_updated': str(arr.time_updated),
+                               'number_of_objects': str(arr.number_of_objects),
+                               'lifecycle_state': str(arr.lifecycle_state),
+                               'lifecycle_details': str(arr.lifecycle_details),
+                               'sum_info': "Data Catalog",
+                               'sum_size_gb': str("1"),
+                               'compartment_name': str(compartment['name']),
+                               'compartment_id': str(compartment['id']),
+                               'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                               'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                               'region_name': str(self.config['region'])
+                               }
+
+                        # add the data
+                        cnt += 1
+                        data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_data_ai_catalog", e)
+            return data
+
+    ##########################################################################
+    # __load_data_ai_science
+    ##########################################################################
+    def __load_data_ai_science(self, ds_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("Data Science")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                array = []
+                try:
+                    array = oci.pagination.list_call_get_all_results(
+                        ds_client.list_projects,
+                        compartment['id'],
+                        sort_by="displayName"
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning()
+                    continue
+
+                print(".", end="")
+
+                # arr = oci.data_science.models.ProjectSummary
+                for arr in array:
+                    if (arr.lifecycle_state == 'ACTIVE' or arr.lifecycle_state == 'UPDATING'):
+
+                        val = {'id': str(arr.id),
+                               'display_name': str(arr.display_name),
+                               'time_created': str(arr.time_created),
+                               'description': str(arr.description),
+                               'created_by': str(arr.created_by),
+                               'lifecycle_state': str(arr.lifecycle_state),
+                               'sum_info': "Data Science",
+                               'sum_size_gb': str("1"),
+                               'compartment_name': str(compartment['name']),
+                               'compartment_id': str(compartment['id']),
+                               'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                               'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                               'region_name': str(self.config['region'])
+                               }
+
+                        # add the data
+                        cnt += 1
+                        data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_data_ai_science", e)
+            return data
+
+    ##########################################################################
+    # __load_data_ai_flow
+    ##########################################################################
+    def __load_data_ai_flow(self, df_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("Data Flow")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                array = []
+                try:
+                    array = oci.pagination.list_call_get_all_results(
+                        df_client.list_applications,
+                        compartment['id'],
+                        sort_by="displayName"
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning()
+                    continue
+
+                print(".", end="")
+
+                # arr = oci.data_flow.models.ApplicationSummary
+                for arr in array:
+                    if (arr.lifecycle_state == 'ACTIVE' or arr.lifecycle_state == 'UPDATING'):
+
+                        val = {'id': str(arr.id),
+                               'display_name': str(arr.display_name),
+                               'time_created': str(arr.time_created),
+                               'time_updated': str(arr.time_updated),
+                               'language': str(arr.language),
+                               'lifecycle_state': str(arr.lifecycle_state),
+                               'owner_principal_id': str(arr.owner_principal_id),
+                               'owner_user_name': str(arr.owner_user_name),
+                               'sum_info': "Data Flow",
+                               'sum_size_gb': str("1"),
+                               'compartment_name': str(compartment['name']),
+                               'compartment_id': str(compartment['id']),
+                               'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                               'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                               'region_name': str(self.config['region'])
+                               }
+
+                        # add the data
+                        cnt += 1
+                        data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_data_ai_flow", e)
+            return data
+
+    ##########################################################################
+    # __load_data_ai_oda
+    ##########################################################################
+    def __load_data_ai_oda(self, oda_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("Oracle Data Assistant")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                odas = []
+                try:
+                    odas = oci.pagination.list_call_get_all_results(
+                        oda_client.list_oda_instances,
+                        compartment['id']
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning()
+                    continue
+
+                print(".", end="")
+
+                # oda = oci.oda.models.OdaInstanceSummary
+                for oda in odas:
+                    if (oda.lifecycle_state == 'ACTIVE' or oda.lifecycle_state == 'UPDATING'):
+                        val = {'id': str(oda.id),
+                               'display_name': str(oda.display_name),
+                               'description': str(oda.description),
+                               'shape_name': str(oda.shape_name),
+                               'time_created': str(oda.time_created),
+                               'time_updated': str(oda.time_updated),
+                               'lifecycle_state': str(oda.lifecycle_state),
+                               'lifecycle_sub_state': str(oda.lifecycle_sub_state),
+                               'state_message': str(oda.state_message),
+                               'sum_info': "Digital Assistant " + str(oda.shape_name),
+                               'sum_size_gb': str("1"),
+                               'compartment_name': str(compartment['name']),
+                               'compartment_id': str(compartment['id']),
+                               'defined_tags': [] if oda.defined_tags is None else oda.defined_tags,
+                               'freeform_tags': [] if oda.freeform_tags is None else oda.freeform_tags,
+                               'region_name': str(self.config['region'])}
+
+                        # add the data
+                        cnt += 1
+                        data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_data_ai_oda", e)
+            return data
+
+    ##########################################################################
     # __load_paas_native_main
     ##########################################################################
     #
@@ -6860,7 +7317,6 @@ class ShowOCIService(object):
     #
     # oci.integration.IntegrationInstanceClient
     # oci.analytics.AnalyticsClient
-    # oci.oda.OdaClient
     # oci.oce.OceInstanceClient
     # Comment OAC until OAC go live, to avoid timeout
     ##########################################################################
@@ -6872,13 +7328,11 @@ class ShowOCIService(object):
             # clients
             oic_client = oci.integration.IntegrationInstanceClient(self.config, signer=self.signer, timeout=1)
             oac_client = oci.analytics.AnalyticsClient(self.config, signer=self.signer, timeout=0.1)
-            oda_client = oci.oda.OdaClient(self.config, signer=self.signer, timeout=1)
             oce_client = oci.oce.OceInstanceClient(self.config, signer=self.signer, timeout=1)
 
             if self.flags.proxy:
                 oic_client.base_client.session.proxies = {'https': self.flags.proxy}
                 oac_client.base_client.session.proxies = {'https': self.flags.proxy}
-                oda_client.base_client.session.proxies = {'https': self.flags.proxy}
                 oce_client.base_client.session.proxies = {'https': self.flags.proxy}
 
             # reference to compartments
@@ -6887,7 +7341,6 @@ class ShowOCIService(object):
             # add the key if not exists
             self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_OAC)
             self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_OIC)
-            self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_ODA)
             self.__initialize_data_key(self.C_PAAS_NATIVE, self.C_PAAS_NATIVE_OCE)
 
             # reference to paas
@@ -6896,7 +7349,6 @@ class ShowOCIService(object):
             # append the data
             paas[self.C_PAAS_NATIVE_OIC] += self.__load_paas_oic(oic_client, compartments)
             # paas[self.C_PAAS_NATIVE_OAC] += self.__load_paas_oac(oac_client, compartments)
-            paas[self.C_PAAS_NATIVE_ODA] += self.__load_paas_oda(oda_client, compartments)
             paas[self.C_PAAS_NATIVE_OCE] += self.__load_paas_oce(oce_client, compartments)
             print("")
 
@@ -7133,79 +7585,6 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_paas_oce", e)
-            return data
-
-    ##########################################################################
-    # __load_paas_oda
-    ##########################################################################
-    def __load_paas_oda(self, oda_client, compartments):
-
-        data = []
-        cnt = 0
-        start_time = time.time()
-
-        try:
-            self.__load_print_status("ODA Native")
-
-            # loop on all compartments
-            for compartment in compartments:
-
-                # skip managed paas compartment
-                if self.__if_managed_paas_compartment(compartment['name']):
-                    print(".", end="")
-                    continue
-
-                odas = []
-                try:
-                    odas = oci.pagination.list_call_get_all_results(
-                        oda_client.list_oda_instances,
-                        compartment['id']
-                    ).data
-
-                except oci.exceptions.ServiceError as e:
-                    if self.__check_service_error(e.code):
-                        self.__load_print_auth_warning()
-                        continue
-                    raise
-                except oci.exceptions.ConnectTimeout:
-                    self.__load_print_auth_warning()
-                    continue
-
-                print(".", end="")
-
-                # oda = oci.oda.models.OdaInstanceSummary
-                for oda in odas:
-                    if (oda.lifecycle_state == 'ACTIVE' or oda.lifecycle_state == 'UPDATING'):
-                        val = {'id': str(oda.id),
-                               'display_name': str(oda.display_name),
-                               'description': str(oda.description),
-                               'shape_name': str(oda.shape_name),
-                               'time_created': str(oda.time_created),
-                               'time_updated': str(oda.time_updated),
-                               'lifecycle_state': str(oda.lifecycle_state),
-                               'lifecycle_sub_state': str(oda.lifecycle_sub_state),
-                               'state_message': str(oda.state_message),
-                               'sum_info': "PaaS ODA Native " + str(oda.shape_name),
-                               'sum_size_gb': str("1"),
-                               'compartment_name': str(compartment['name']),
-                               'compartment_id': str(compartment['id']),
-                               'defined_tags': [] if oda.defined_tags is None else oda.defined_tags,
-                               'freeform_tags': [] if oda.freeform_tags is None else oda.freeform_tags,
-                               'region_name': str(self.config['region'])}
-
-                        # add the data
-                        cnt += 1
-                        data.append(val)
-
-            self.__load_print_cnt(cnt, start_time)
-            return data
-
-        except oci.exceptions.RequestException as e:
-            if self.__check_request_error(e):
-                return data
-            raise
-        except Exception as e:
-            self.__print_error("__load_paas_oda", e)
             return data
 
     ##########################################################################
