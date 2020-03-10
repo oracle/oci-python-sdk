@@ -228,7 +228,7 @@ class UpdateAlertRuleDetails(object):
     def recipients(self):
         """
         Gets the recipients of this UpdateAlertRuleDetails.
-        The audience that will received the alert when it triggers.
+        The audience that will receive the alert when it triggers. If you need to clear out this value, please pass in an empty string instead of null.
 
 
         :return: The recipients of this UpdateAlertRuleDetails.
@@ -240,7 +240,7 @@ class UpdateAlertRuleDetails(object):
     def recipients(self, recipients):
         """
         Sets the recipients of this UpdateAlertRuleDetails.
-        The audience that will received the alert when it triggers.
+        The audience that will receive the alert when it triggers. If you need to clear out this value, please pass in an empty string instead of null.
 
 
         :param recipients: The recipients of this UpdateAlertRuleDetails.

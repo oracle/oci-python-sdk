@@ -74,7 +74,7 @@ def from_file(file_location=DEFAULT_LOCATION, profile_name=DEFAULT_PROFILE):
 
     parser = configparser.ConfigParser(interpolation=None)
     if not parser.read(expanded_file_location):
-        raise ConfigFileNotFound("Could not find config file at {}".format(expanded_file_location))
+        raise ConfigFileNotFound("Could not find config file at {}, please follow the instructions in the link to setup the config file https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm".format(expanded_file_location))
 
     if profile_name not in parser:
         raise ProfileNotFound("Profile '{}' not found in config file {}".format(profile_name, expanded_file_location))

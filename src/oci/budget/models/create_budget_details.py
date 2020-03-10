@@ -306,7 +306,7 @@ class CreateBudgetDetails(object):
         Gets the targets of this CreateBudgetDetails.
         The list of targets on which the budget is applied.
           If targetType is \"COMPARTMENT\", targets contains list of compartment OCIDs.
-          If targetType is \"TAG\", targets contains list of tag identifiers in the form of \"{tagNamespace}.{tagKey}.{tagValue}\".
+          If targetType is \"TAG\", targets contains list of cost tracking tag identifiers in the form of \"{tagNamespace}.{tagKey}.{tagValue}\".
         Curerntly, the array should contain EXACT ONE item.
 
 
@@ -321,7 +321,7 @@ class CreateBudgetDetails(object):
         Sets the targets of this CreateBudgetDetails.
         The list of targets on which the budget is applied.
           If targetType is \"COMPARTMENT\", targets contains list of compartment OCIDs.
-          If targetType is \"TAG\", targets contains list of tag identifiers in the form of \"{tagNamespace}.{tagKey}.{tagValue}\".
+          If targetType is \"TAG\", targets contains list of cost tracking tag identifiers in the form of \"{tagNamespace}.{tagKey}.{tagValue}\".
         Curerntly, the array should contain EXACT ONE item.
 
 

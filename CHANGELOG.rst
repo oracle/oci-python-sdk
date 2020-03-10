@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.11.0 - 2020-03-10
+====================
+
+Added
+-----
+* Support for Events service integration with alerts in the Budgets service
+
+Breaking
+--------
+* The parameters sort_by and lifecycle_state type from Budget service are changed from str to enum
+
+====================
 2.10.7 - 2020-03-03
 ====================
 

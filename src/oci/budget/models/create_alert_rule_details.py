@@ -251,8 +251,8 @@ class CreateAlertRuleDetails(object):
     @property
     def recipients(self):
         """
-        **[Required]** Gets the recipients of this CreateAlertRuleDetails.
-        The audience that will received the alert when it triggers.
+        Gets the recipients of this CreateAlertRuleDetails.
+        The audience that will receive the alert when it triggers. An empty string is interpreted as null.
 
 
         :return: The recipients of this CreateAlertRuleDetails.
@@ -264,7 +264,7 @@ class CreateAlertRuleDetails(object):
     def recipients(self, recipients):
         """
         Sets the recipients of this CreateAlertRuleDetails.
-        The audience that will received the alert when it triggers.
+        The audience that will receive the alert when it triggers. An empty string is interpreted as null.
 
 
         :param recipients: The recipients of this CreateAlertRuleDetails.
