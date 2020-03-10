@@ -2905,7 +2905,8 @@ class ShowOCIService(object):
                         try:
                             tunnels = virtual_network.list_ip_sec_connection_tunnels(arr.id).data
                             for tunnel in tunnels:
-                                tun_val = {'status': str(tunnel.status),
+                                tun_val = {'id': str(tunnel.id),
+                                           'status': str(tunnel.status),
                                            'lifecycle_state': str(tunnel.lifecycle_state),
                                            'status_date': tunnel.time_status_updated.strftime("%Y-%m-%d %H:%M"),
                                            'display_name': str(tunnel.display_name),

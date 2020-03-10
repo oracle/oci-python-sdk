@@ -12,6 +12,7 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 * Add support for nosql database
 * Add private end point to autonomous database
 * Added items to the display of DB System and Autonomous Database
+* Added tunnel id to the tunnel info json
 
 =====================
 20.02.11 - 2020-02-11
