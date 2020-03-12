@@ -20,7 +20,7 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
     This signer is self-sufficient in that its internals know how to source the required information to request and use
     the token:
 
-    * Using the metadata endpoint for the instance (http://169.254.169.254/opc/v1) we can discover the region the instance is in, its leaf certificate and any intermediate certificates (for requesting the token) and the tenancy (as) that is in the leaf certificate.
+    * Using the metadata endpoint for the instance (http://169.254.169.254/opc/v2) we can discover the region the instance is in, its leaf certificate and any intermediate certificates (for requesting the token) and the tenancy (as) that is in the leaf certificate.
     * The signer leverages X509FederationClient so it can refresh the security token and also get the private key needed to sign requests (via the client's session_key_supplier)
 
     This signer can be used as follows:
@@ -52,7 +52,7 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
         To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
     """
 
-    METADATA_URL_BASE = 'http://169.254.169.254/opc/v1'
+    METADATA_URL_BASE = 'http://169.254.169.254/opc/v2'
     GET_REGION_URL = '{}/instance/region'.format(METADATA_URL_BASE)
     LEAF_CERTIFICATE_URL = '{}/identity/cert.pem'.format(METADATA_URL_BASE)
     LEAF_CERTIFICATE_PRIVATE_KEY_URL = '{}/identity/key.pem'.format(METADATA_URL_BASE)
