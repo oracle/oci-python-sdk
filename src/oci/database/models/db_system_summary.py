@@ -571,7 +571,9 @@ class DbSystemSummary(object):
     def nsg_ids(self):
         """
         Gets the nsg_ids of this DbSystemSummary.
-        A list of the `OCIDs`__ of the network security groups (NSGs) that this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
+        A list of the `OCIDs`__ of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
+        **NsgIds restrictions:**
+        - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
@@ -586,7 +588,9 @@ class DbSystemSummary(object):
     def nsg_ids(self, nsg_ids):
         """
         Sets the nsg_ids of this DbSystemSummary.
-        A list of the `OCIDs`__ of the network security groups (NSGs) that this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
+        A list of the `OCIDs`__ of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
+        **NsgIds restrictions:**
+        - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm

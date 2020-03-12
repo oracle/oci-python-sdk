@@ -54,6 +54,10 @@ class DbNodeSummary(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the maintenance_type property of a DbNodeSummary.
+    #: This constant has a value of "VMDB_REBOOT_MIGRATION"
+    MAINTENANCE_TYPE_VMDB_REBOOT_MIGRATION = "VMDB_REBOOT_MIGRATION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DbNodeSummary object with values from keyword arguments.
@@ -97,6 +101,24 @@ class DbNodeSummary(object):
             The value to assign to the software_storage_size_in_gb property of this DbNodeSummary.
         :type software_storage_size_in_gb: int
 
+        :param maintenance_type:
+            The value to assign to the maintenance_type property of this DbNodeSummary.
+            Allowed values for this property are: "VMDB_REBOOT_MIGRATION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type maintenance_type: str
+
+        :param time_maintenance_window_start:
+            The value to assign to the time_maintenance_window_start property of this DbNodeSummary.
+        :type time_maintenance_window_start: datetime
+
+        :param time_maintenance_window_end:
+            The value to assign to the time_maintenance_window_end property of this DbNodeSummary.
+        :type time_maintenance_window_end: datetime
+
+        :param additional_details:
+            The value to assign to the additional_details property of this DbNodeSummary.
+        :type additional_details: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -107,7 +129,11 @@ class DbNodeSummary(object):
             'hostname': 'str',
             'fault_domain': 'str',
             'time_created': 'datetime',
-            'software_storage_size_in_gb': 'int'
+            'software_storage_size_in_gb': 'int',
+            'maintenance_type': 'str',
+            'time_maintenance_window_start': 'datetime',
+            'time_maintenance_window_end': 'datetime',
+            'additional_details': 'str'
         }
 
         self.attribute_map = {
@@ -119,7 +145,11 @@ class DbNodeSummary(object):
             'hostname': 'hostname',
             'fault_domain': 'faultDomain',
             'time_created': 'timeCreated',
-            'software_storage_size_in_gb': 'softwareStorageSizeInGB'
+            'software_storage_size_in_gb': 'softwareStorageSizeInGB',
+            'maintenance_type': 'maintenanceType',
+            'time_maintenance_window_start': 'timeMaintenanceWindowStart',
+            'time_maintenance_window_end': 'timeMaintenanceWindowEnd',
+            'additional_details': 'additionalDetails'
         }
 
         self._id = None
@@ -131,6 +161,10 @@ class DbNodeSummary(object):
         self._fault_domain = None
         self._time_created = None
         self._software_storage_size_in_gb = None
+        self._maintenance_type = None
+        self._time_maintenance_window_start = None
+        self._time_maintenance_window_end = None
+        self._additional_details = None
 
     @property
     def id(self):
@@ -369,6 +403,108 @@ class DbNodeSummary(object):
         :type: int
         """
         self._software_storage_size_in_gb = software_storage_size_in_gb
+
+    @property
+    def maintenance_type(self):
+        """
+        Gets the maintenance_type of this DbNodeSummary.
+        The type of maintenance of dbNode.
+
+        Allowed values for this property are: "VMDB_REBOOT_MIGRATION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The maintenance_type of this DbNodeSummary.
+        :rtype: str
+        """
+        return self._maintenance_type
+
+    @maintenance_type.setter
+    def maintenance_type(self, maintenance_type):
+        """
+        Sets the maintenance_type of this DbNodeSummary.
+        The type of maintenance of dbNode.
+
+
+        :param maintenance_type: The maintenance_type of this DbNodeSummary.
+        :type: str
+        """
+        allowed_values = ["VMDB_REBOOT_MIGRATION"]
+        if not value_allowed_none_or_none_sentinel(maintenance_type, allowed_values):
+            maintenance_type = 'UNKNOWN_ENUM_VALUE'
+        self._maintenance_type = maintenance_type
+
+    @property
+    def time_maintenance_window_start(self):
+        """
+        Gets the time_maintenance_window_start of this DbNodeSummary.
+        Start date and time of maintenance window.
+
+
+        :return: The time_maintenance_window_start of this DbNodeSummary.
+        :rtype: datetime
+        """
+        return self._time_maintenance_window_start
+
+    @time_maintenance_window_start.setter
+    def time_maintenance_window_start(self, time_maintenance_window_start):
+        """
+        Sets the time_maintenance_window_start of this DbNodeSummary.
+        Start date and time of maintenance window.
+
+
+        :param time_maintenance_window_start: The time_maintenance_window_start of this DbNodeSummary.
+        :type: datetime
+        """
+        self._time_maintenance_window_start = time_maintenance_window_start
+
+    @property
+    def time_maintenance_window_end(self):
+        """
+        Gets the time_maintenance_window_end of this DbNodeSummary.
+        End date and time of maintenance window.
+
+
+        :return: The time_maintenance_window_end of this DbNodeSummary.
+        :rtype: datetime
+        """
+        return self._time_maintenance_window_end
+
+    @time_maintenance_window_end.setter
+    def time_maintenance_window_end(self, time_maintenance_window_end):
+        """
+        Sets the time_maintenance_window_end of this DbNodeSummary.
+        End date and time of maintenance window.
+
+
+        :param time_maintenance_window_end: The time_maintenance_window_end of this DbNodeSummary.
+        :type: datetime
+        """
+        self._time_maintenance_window_end = time_maintenance_window_end
+
+    @property
+    def additional_details(self):
+        """
+        Gets the additional_details of this DbNodeSummary.
+        Additional information like a message to customer about the maintenance.
+
+
+        :return: The additional_details of this DbNodeSummary.
+        :rtype: str
+        """
+        return self._additional_details
+
+    @additional_details.setter
+    def additional_details(self, additional_details):
+        """
+        Sets the additional_details of this DbNodeSummary.
+        Additional information like a message to customer about the maintenance.
+
+
+        :param additional_details: The additional_details of this DbNodeSummary.
+        :type: str
+        """
+        self._additional_details = additional_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

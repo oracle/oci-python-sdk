@@ -617,7 +617,7 @@ class LaunchInstanceDetails(object):
          information about how to take advantage of user data, see the
          `Cloud-Init Documentation`__.
 
-         **Note:** Cloud-Init does not pull this data from the `http://169.254.169.254/opc/v2/instance/metadata/`
+         **Note:** Cloud-Init does not pull this data from the `http://169.254.169.254/opc/v1/instance/metadata/`
          path. When the instance launches and either of these keys are provided, the key values are formatted as
          OpenStack metadata and copied to the following locations, which are recognized by Cloud-Init:
 
@@ -641,9 +641,9 @@ class LaunchInstanceDetails(object):
          To get information about your instance, connect to the instance using SSH and issue any of the
          following GET requests:
 
-             curl http://169.254.169.254/opc/v2/instance/
-             curl http://169.254.169.254/opc/v2/instance/metadata/
-             curl http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+             curl http://169.254.169.254/opc/v1/instance/
+             curl http://169.254.169.254/opc/v1/instance/metadata/
+             curl http://169.254.169.254/opc/v1/instance/metadata/<any-key-name>
 
          You'll get back a response that includes all the instance information; only the metadata information; or
          the metadata information for the specified key name, respectively.
@@ -689,7 +689,7 @@ class LaunchInstanceDetails(object):
          information about how to take advantage of user data, see the
          `Cloud-Init Documentation`__.
 
-         **Note:** Cloud-Init does not pull this data from the `http://169.254.169.254/opc/v2/instance/metadata/`
+         **Note:** Cloud-Init does not pull this data from the `http://169.254.169.254/opc/v1/instance/metadata/`
          path. When the instance launches and either of these keys are provided, the key values are formatted as
          OpenStack metadata and copied to the following locations, which are recognized by Cloud-Init:
 
@@ -713,9 +713,9 @@ class LaunchInstanceDetails(object):
          To get information about your instance, connect to the instance using SSH and issue any of the
          following GET requests:
 
-             curl http://169.254.169.254/opc/v2/instance/
-             curl http://169.254.169.254/opc/v2/instance/metadata/
-             curl http://169.254.169.254/opc/v2/instance/metadata/<any-key-name>
+             curl http://169.254.169.254/opc/v1/instance/
+             curl http://169.254.169.254/opc/v1/instance/metadata/
+             curl http://169.254.169.254/opc/v1/instance/metadata/<any-key-name>
 
          You'll get back a response that includes all the instance information; only the metadata information; or
          the metadata information for the specified key name, respectively.

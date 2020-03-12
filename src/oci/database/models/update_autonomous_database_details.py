@@ -244,9 +244,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def db_name(self):
         """
         Gets the db_name of this UpdateAutonomousDatabaseDetails.
-        New name for this Autonomous Database. It must begin with an alphabetic character and can contain a
-        maximum of eight alphanumeric characters. Special characters are not permitted. This is valid only
-        for dedicated databases.
+        New name for this Autonomous Database.
+        For databases using dedicated Exadata infrastructure, the name must begin with an alphabetic character, and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+        For databases using shared Exadata infrastructure, the name must begin with an alphabetic character, and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
 
 
         :return: The db_name of this UpdateAutonomousDatabaseDetails.
@@ -258,9 +258,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def db_name(self, db_name):
         """
         Sets the db_name of this UpdateAutonomousDatabaseDetails.
-        New name for this Autonomous Database. It must begin with an alphabetic character and can contain a
-        maximum of eight alphanumeric characters. Special characters are not permitted. This is valid only
-        for dedicated databases.
+        New name for this Autonomous Database.
+        For databases using dedicated Exadata infrastructure, the name must begin with an alphabetic character, and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+        For databases using shared Exadata infrastructure, the name must begin with an alphabetic character, and can contain a maximum of 14 alphanumeric characters. Special characters are not permitted. The database name must be unique in the tenancy.
 
 
         :param db_name: The db_name of this UpdateAutonomousDatabaseDetails.
@@ -336,7 +336,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def nsg_ids(self):
         """
         Gets the nsg_ids of this UpdateAutonomousDatabaseDetails.
-        A list of the `OCIDs`__ of the network security groups (NSGs) that this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
+        A list of the `OCIDs`__ of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
+        **NsgIds restrictions:**
+        - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
@@ -351,7 +353,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def nsg_ids(self, nsg_ids):
         """
         Sets the nsg_ids of this UpdateAutonomousDatabaseDetails.
-        A list of the `OCIDs`__ of the network security groups (NSGs) that this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
+        A list of the `OCIDs`__ of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
+        **NsgIds restrictions:**
+        - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm

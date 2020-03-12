@@ -682,6 +682,47 @@ def test_create_backup_destination(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_create_console_connection(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'CreateConsoleConnection'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'CreateConsoleConnection')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='CreateConsoleConnection')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.create_console_connection(
+                create_console_connection_details=request.pop(util.camelize('CreateConsoleConnectionDetails')),
+                db_node_id=request.pop(util.camelize('dbNodeId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'CreateConsoleConnection',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'consoleConnection',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_create_data_guard_association(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateDataGuardAssociation'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1159,6 +1200,47 @@ def test_delete_backup_destination(testing_service_client):
             result,
             service_error,
             'delete_backup_destination',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_delete_console_connection(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'DeleteConsoleConnection'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'DeleteConsoleConnection')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='DeleteConsoleConnection')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.delete_console_connection(
+                db_node_id=request.pop(util.camelize('dbNodeId')),
+                console_connection_id=request.pop(util.camelize('consoleConnectionId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'DeleteConsoleConnection',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_console_connection',
             True,
             False
         )
@@ -2045,6 +2127,47 @@ def test_get_backup_destination(testing_service_client):
             result,
             service_error,
             'backupDestination',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_console_connection(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'GetConsoleConnection'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetConsoleConnection')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetConsoleConnection')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.get_console_connection(
+                db_node_id=request.pop(util.camelize('dbNodeId')),
+                console_connection_id=request.pop(util.camelize('consoleConnectionId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetConsoleConnection',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'consoleConnection',
             False,
             False
         )
@@ -3427,6 +3550,46 @@ def test_list_backups(testing_service_client):
             'backupSummary',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_console_connections(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ListConsoleConnections'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListConsoleConnections')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListConsoleConnections')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.list_console_connections(
+                db_node_id=request.pop(util.camelize('dbNodeId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ListConsoleConnections',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'consoleConnectionSummary',
+            False,
+            False
         )
 
 

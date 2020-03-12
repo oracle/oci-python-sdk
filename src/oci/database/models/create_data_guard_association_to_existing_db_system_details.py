@@ -9,9 +9,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssociationDetails):
     """
-    The configuration details for creating a Data Guard association for a bare metal DB system database. A standby database will be created in the DB system you specify.
+    The configuration details for creating a Data Guard association for a bare metal or Exadata DB system database. For these types of DB system databases, the `creationType` should be `ExistingDbSystem`. A standby database will be created in the DB system you specify.
 
-    To create a Data Guard association for a database in a virtual machine DB system, use the :func:`create_data_guard_association_with_new_db_system_details` subtype.
+    To create a Data Guard association for a database in a virtual machine DB system, use the :func:`create_data_guard_association_with_new_db_system_details` subtype instead.
     """
 
     def __init__(self, **kwargs):
