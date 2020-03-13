@@ -94,7 +94,7 @@ To install from GitHub:
 Before using the SDK, you must set up your config file with the required credentials.
 For instructions, see `SDK and Tool Configuration`_ in the User Guide.
 
-.. _SDK and Tool Configuration: https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdkconfig.htm
+.. _SDK and Tool Configuration: https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm
 
 Verify OpenSSL Version
 ----------------------
@@ -128,7 +128,7 @@ You might encounter issues when installing Python or the SDK, or using the SDK i
 
 Service Errors
 --------------
-Any operation resulting in a service error will cause an exception of type oci.exceptions.ServiceError to be thrown by the SDK. For information about common service errors, see `API Errors <https://docs.us-phoenix-1.oraclecloud.com/Content/API/References/apierrors.htm>`_.
+Any operation resulting in a service error will cause an exception of type oci.exceptions.ServiceError to be thrown by the SDK. For information about common service errors, see `API Errors <https://docs.cloud.oracle.com/Content/API/References/apierrors.htm>`_.
 
 
 pip 10 Installation Errors
@@ -173,11 +173,11 @@ SSL/TLS or Certificate Issues
 When trying to use the SDK, if you get an exception related to SSL/TLS or certificates/certificate validation, see the command for installing requests[security] in `Verify OpenSSL Version`_.
 
 
-.. _Adding Users: https://docs.us-phoenix-1.oraclecloud.com/Content/GSG/Tasks/addingusers.htm
-.. _Common Policies: https://docs.us-phoenix-1.oraclecloud.com/Content/Identity/Concepts/commonpolicies.htm
+.. _Adding Users: https://docs.cloud.oracle.com/Content/GSG/Tasks/addingusers.htm
+.. _Common Policies: https://docs.cloud.oracle.com/Content/Identity/Concepts/commonpolicies.htm
 .. _Cryptography.io: https://cryptography.io/en/latest/
 .. _Cryptography.io Installation: https://cryptography.io/en/latest/installation/
-.. _TLS 1.2: https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdks.htm
+.. _TLS 1.2: https://docs.cloud.oracle.com/Content/API/Concepts/sdks.htm
 .. _PyPI link: https://pypi.python.org/pypi
 .. _OpenSSL: https://www.openssl.org/
 .. _ConfiguringSDK: Configuring the SDK

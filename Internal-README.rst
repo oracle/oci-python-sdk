@@ -14,11 +14,11 @@ Required Test Files
 
 To ensure we're resolving ``~`` to the home folder correctly, the tests expect ~/.ssh/id_rsa.pem to exist.
 
-If you don't have a key pair setup, see _How to Generate an API Signing Key: https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/apisigningkey.htm#How for more details
+If you don't have a key pair setup, see _How to Generate an API Signing Key: https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#How for more details
 
 You should also set up your configuration files as described `here`__
 
-__ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdkconfig.htm
+__ https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm
 
 Setting up the development environment
 ======================================
