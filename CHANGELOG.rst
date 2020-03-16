@@ -13,7 +13,7 @@ Added
 * Support for preview database versions in the Database service
 * Support for node reboot migration maintenance status and maintenance windows in the Database service
 * Support for using instance metadata API v2 for instance principals authentication
-* Upgraded configparser version
+* Upgraded configparser dependency version
 
 Breaking
 --------
