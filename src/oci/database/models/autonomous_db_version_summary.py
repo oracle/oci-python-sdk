@@ -91,7 +91,10 @@ class AutonomousDbVersionSummary(object):
     def db_workload(self):
         """
         Gets the db_workload of this AutonomousDbVersionSummary.
-        The Autonomous Database workload type. OLTP indicates an Autonomous Transaction Processing database and DW indicates an Autonomous Data Warehouse database.
+        The Autonomous Database workload type. The following values are valid:
+
+        - OLTP - indicates an Autonomous Transaction Processing database
+        - DW - indicates an Autonomous Data Warehouse database
 
         Allowed values for this property are: "OLTP", "DW", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -106,7 +109,10 @@ class AutonomousDbVersionSummary(object):
     def db_workload(self, db_workload):
         """
         Sets the db_workload of this AutonomousDbVersionSummary.
-        The Autonomous Database workload type. OLTP indicates an Autonomous Transaction Processing database and DW indicates an Autonomous Data Warehouse database.
+        The Autonomous Database workload type. The following values are valid:
+
+        - OLTP - indicates an Autonomous Transaction Processing database
+        - DW - indicates an Autonomous Data Warehouse database
 
 
         :param db_workload: The db_workload of this AutonomousDbVersionSummary.

@@ -5,7 +5,7 @@ import oci
 
 compartment_id = '<your compartment id here>'
 
-# By default this will hit the auth service in the region returned by http://169.254.169.254/opc/v1/instance/region on the instance.
+# By default this will hit the auth service in the region returned by http://169.254.169.254/opc/v2/instance/region on the instance.
 signer = oci.auth.signers.InstancePrincipalsSecurityTokenSigner()
 
 # In the base case, configuration does not need to be provided as the region and tenancy are obtained from the InstancePrincipalsSecurityTokenSigner

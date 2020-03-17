@@ -40,7 +40,6 @@ Database
     oci.database.models.AutonomousDbPreviewVersionSummary
     oci.database.models.AutonomousDbVersionSummary
     oci.database.models.AutonomousExadataInfrastructure
-    oci.database.models.AutonomousExadataInfrastructureMaintenanceWindow
     oci.database.models.AutonomousExadataInfrastructureShapeSummary
     oci.database.models.AutonomousExadataInfrastructureSummary
     oci.database.models.Backup
@@ -52,6 +51,8 @@ Database
     oci.database.models.ChangeExadataInfrastructureCompartmentDetails
     oci.database.models.ChangeVmClusterCompartmentDetails
     oci.database.models.CompleteExternalBackupJobDetails
+    oci.database.models.ConsoleConnection
+    oci.database.models.ConsoleConnectionSummary
     oci.database.models.CreateAutonomousContainerDatabaseDetails
     oci.database.models.CreateAutonomousDataWarehouseBackupDetails
     oci.database.models.CreateAutonomousDataWarehouseDetails
@@ -63,6 +64,7 @@ Database
     oci.database.models.CreateAutonomousDatabaseFromBackupTimestampDetails
     oci.database.models.CreateBackupDestinationDetails
     oci.database.models.CreateBackupDetails
+    oci.database.models.CreateConsoleConnectionDetails
     oci.database.models.CreateDataGuardAssociationDetails
     oci.database.models.CreateDataGuardAssociationToExistingDbSystemDetails
     oci.database.models.CreateDataGuardAssociationWithNewDbSystemDetails

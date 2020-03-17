@@ -313,6 +313,15 @@ class ShowOCIData(object):
                             data['paas_services'] = value
                             has_data = True
 
+                # data ai
+                if self.service.flags.read_data_ai:
+                    value = self.__get_data_ai_main(region_name, compartment)
+                    if value is not None:
+                        if len(value) > 0:
+                            data['data_ai'] = value
+                            data['data_ai'] = value
+                            has_data = True
+
                 if self.service.flags.read_function:
                     value = self.__get_functions_main(region_name, compartment)
                     if value is not None:
@@ -1877,7 +1886,7 @@ class ShowOCIData(object):
             list_autos = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_AUTONOMOUS, 'region_name', region_name, 'compartment_id', compartment['id'])
 
             for dbs in list_autos:
-                value = {'id': str(dbs['id']), 'name': (str(dbs['display_name']) + " - " + str(dbs['license_model']) + " - " + str(dbs['lifecycle_state']) + " (" + str(dbs['sum_count']) + " OCPUs" + (" AutoScale" if dbs['is_auto_scaling_enabled'] else "") + ") - " + dbs['db_workload']),
+                value = {'id': str(dbs['id']), 'name': str(dbs['db_name']) + " (" + (str(dbs['display_name']) + ") - " + str(dbs['license_model']) + " - " + str(dbs['lifecycle_state']) + " (" + str(dbs['sum_count']) + " OCPUs" + (" AutoScale" if dbs['is_auto_scaling_enabled'] else "") + ") - " + dbs['db_workload'] + " - " + dbs['db_type']),
                          'display_name': dbs['display_name'],
                          'license_model': dbs['license_model'],
                          'lifecycle_state': dbs['lifecycle_state'],
@@ -1896,13 +1905,50 @@ class ShowOCIData(object):
                          'whitelisted_ips': dbs['whitelisted_ips'],
                          'is_auto_scaling_enabled': dbs['is_auto_scaling_enabled'],
                          'db_workload': dbs['db_workload'],
+                         'is_dedicated': dbs['is_dedicated'],
+                         'subnet_id': dbs['subnet_id'],
+                         'subnet_name': "",
+                         'data_safe_status': dbs['data_safe_status'],
+                         'time_maintenance_begin': dbs['time_maintenance_begin'],
+                         'time_maintenance_end': dbs['time_maintenance_end'],
+                         'nsg_ids': dbs['nsg_ids'],
+                         'nsg_names': [],
+                         'private_endpoint': dbs['private_endpoint'],
+                         'private_endpoint_label': dbs['private_endpoint_label'],
                          'defined_tags': dbs['defined_tags'], 'freeform_tags': dbs['freeform_tags']}
+
+                # subnet
+                if dbs['subnet_id'] != 'None':
+                    value['subnet_name'] = self.__get_core_network_subnet_name(dbs['subnet_id'])
+
+                # get the nsg names
+                if dbs['nsg_ids']:
+                    for nsg in dbs['nsg_ids']:
+                        nsg_obj = self.service.search_unique_item(self.service.C_NETWORK, self.service.C_NETWORK_NSG, 'id', nsg)
+                        if nsg_obj:
+                            value['nsg_names'].append(nsg_obj['name'])
 
                 data.append(value)
             return data
 
         except Exception as e:
             self.__print_error("__get_database_autonomous_databases", e)
+            return data
+
+    ##########################################################################
+    # __get_database_nosql
+    ##########################################################################
+    def __get_database_nosql(self, region_name, compartment):
+
+        data = []
+        try:
+            list_tables = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_NOSQL, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if list_tables:
+                data = list_tables
+            return data
+
+        except Exception as e:
+            self.__print_error("__get_database_nosql", e)
             return data
 
     ##########################################################################
@@ -1922,6 +1968,11 @@ class ShowOCIData(object):
             if data:
                 if len(data) > 0:
                     return_data['autonomous'] = data
+
+            data = self.__get_database_nosql(region_name, compartment)
+            if data:
+                if len(data) > 0:
+                    return_data['nosql'] = data
 
             return return_data
 
@@ -2573,13 +2624,41 @@ class ShowOCIData(object):
             if oce:
                 paas_services['oce'] = oce
 
-            # oda
-            oda = self.service.search_multi_items(self.service.C_PAAS_NATIVE, self.service.C_PAAS_NATIVE_ODA, 'region_name', region_name, 'compartment_id', compartment['id'])
-            if oda:
-                paas_services['oda'] = oda
-
             return paas_services
 
         except Exception as e:
             self.__print_error("__get_paas_native_main", e)
+            pass
+
+    ##########################################################################
+    # Data AI
+    ##########################################################################
+    def __get_data_ai_main(self, region_name, compartment):
+        try:
+            data_ai = {}
+
+            # oda
+            oda = self.service.search_multi_items(self.service.C_DATA_AI, self.service.C_DATA_AI_ODA, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if oda:
+                data_ai['oda'] = oda
+
+            # data science
+            ds = self.service.search_multi_items(self.service.C_DATA_AI, self.service.C_DATA_AI_SCIENCE, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if ds:
+                data_ai['data_science'] = ds
+
+            # Data Flow
+            df = self.service.search_multi_items(self.service.C_DATA_AI, self.service.C_DATA_AI_FLOW, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if df:
+                data_ai['data_flow'] = df
+
+            # Data Catalog
+            dc = self.service.search_multi_items(self.service.C_DATA_AI, self.service.C_DATA_AI_CATALOG, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if dc:
+                data_ai['data_catalog'] = dc
+
+            return data_ai
+
+        except Exception as e:
+            self.__print_error("__get_data_ai_main", e)
             pass

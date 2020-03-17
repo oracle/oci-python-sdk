@@ -33,22 +33,29 @@ class DbVersionSummary(object):
             The value to assign to the supports_pdb property of this DbVersionSummary.
         :type supports_pdb: bool
 
+        :param is_preview_db_version:
+            The value to assign to the is_preview_db_version property of this DbVersionSummary.
+        :type is_preview_db_version: bool
+
         """
         self.swagger_types = {
             'version': 'str',
             'is_latest_for_major_version': 'bool',
-            'supports_pdb': 'bool'
+            'supports_pdb': 'bool',
+            'is_preview_db_version': 'bool'
         }
 
         self.attribute_map = {
             'version': 'version',
             'is_latest_for_major_version': 'isLatestForMajorVersion',
-            'supports_pdb': 'supportsPdb'
+            'supports_pdb': 'supportsPdb',
+            'is_preview_db_version': 'isPreviewDbVersion'
         }
 
         self._version = None
         self._is_latest_for_major_version = None
         self._supports_pdb = None
+        self._is_preview_db_version = None
 
     @property
     def version(self):
@@ -121,6 +128,30 @@ class DbVersionSummary(object):
         :type: bool
         """
         self._supports_pdb = supports_pdb
+
+    @property
+    def is_preview_db_version(self):
+        """
+        Gets the is_preview_db_version of this DbVersionSummary.
+        True if this version of the Oracle Database software is the preview version.
+
+
+        :return: The is_preview_db_version of this DbVersionSummary.
+        :rtype: bool
+        """
+        return self._is_preview_db_version
+
+    @is_preview_db_version.setter
+    def is_preview_db_version(self, is_preview_db_version):
+        """
+        Sets the is_preview_db_version of this DbVersionSummary.
+        True if this version of the Oracle Database software is the preview version.
+
+
+        :param is_preview_db_version: The is_preview_db_version of this DbVersionSummary.
+        :type: bool
+        """
+        self._is_preview_db_version = is_preview_db_version
 
     def __repr__(self):
         return formatted_flat_dict(self)

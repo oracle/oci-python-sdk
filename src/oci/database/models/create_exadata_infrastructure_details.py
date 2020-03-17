@@ -382,7 +382,8 @@ class CreateExadataInfrastructureDetails(object):
     def corporate_proxy(self):
         """
         Gets the corporate_proxy of this CreateExadataInfrastructureDetails.
-        The corporate network proxy for access to the control plane network.
+        The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible
+        for enhanced security.
 
 
         :return: The corporate_proxy of this CreateExadataInfrastructureDetails.
@@ -394,7 +395,8 @@ class CreateExadataInfrastructureDetails(object):
     def corporate_proxy(self, corporate_proxy):
         """
         Sets the corporate_proxy of this CreateExadataInfrastructureDetails.
-        The corporate network proxy for access to the control plane network.
+        The corporate network proxy for access to the control plane network. Oracle recommends using an HTTPS proxy when possible
+        for enhanced security.
 
 
         :param corporate_proxy: The corporate_proxy of this CreateExadataInfrastructureDetails.

@@ -1462,6 +1462,94 @@ class DatabaseClient(object):
                 body=create_backup_destination_details,
                 response_type="BackupDestination")
 
+    def create_console_connection(self, create_console_connection_details, db_node_id, **kwargs):
+        """
+        CreateConsoleConnection
+        Creates a new console connection to the specified dbNode.
+        After the console connection has been created and is available,
+        you connect to the console using SSH.
+
+
+        :param CreateConsoleConnectionDetails create_console_connection_details: (required)
+            Request object for creating an CreateConsoleConnection
+
+        :param str db_node_id: (required)
+            The database node `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ConsoleConnection`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/dbNodes/{dbNodeId}/consoleConnections"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_console_connection got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "dbNodeId": db_node_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_console_connection_details,
+                response_type="ConsoleConnection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_console_connection_details,
+                response_type="ConsoleConnection")
+
     def create_data_guard_association(self, database_id, create_data_guard_association_details, **kwargs):
         """
         Creates a Data Guard association.
@@ -2414,6 +2502,85 @@ class DatabaseClient(object):
             "content-type": "application/json",
             "if-match": kwargs.get("if_match", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
+    def delete_console_connection(self, db_node_id, console_connection_id, **kwargs):
+        """
+        DeleteConsoleConnection
+        Deletes the specified Db node console connection.
+
+
+        :param str db_node_id: (required)
+            The database node `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str console_connection_id: (required)
+            The OCID of the console connection.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/dbNodes/{dbNodeId}/consoleConnections/{consoleConnectionId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_console_connection got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "dbNodeId": db_node_id,
+            "consoleConnectionId": console_connection_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -4176,6 +4343,76 @@ class DatabaseClient(object):
                 header_params=header_params,
                 response_type="BackupDestination")
 
+    def get_console_connection(self, db_node_id, console_connection_id, **kwargs):
+        """
+        GetConsoleConnection
+        Gets the specified Db node console connection's information.
+
+
+        :param str db_node_id: (required)
+            The database node `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str console_connection_id: (required)
+            The OCID of the console connection.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ConsoleConnection`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/dbNodes/{dbNodeId}/consoleConnections/{consoleConnectionId}"
+        method = "GET"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_console_connection got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "dbNodeId": db_node_id,
+            "consoleConnectionId": console_connection_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ConsoleConnection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ConsoleConnection")
+
     def get_data_guard_association(self, database_id, data_guard_association_id, **kwargs):
         """
         Gets configuration information for the specified database and Data Guard association.
@@ -5386,14 +5623,17 @@ class DatabaseClient(object):
     def launch_db_system(self, launch_db_system_details, **kwargs):
         """
         LaunchDbSystem
-        Launches a new DB system in the specified compartment and availability domain. The Oracle
+        Creates a new DB system in the specified compartment and availability domain. The Oracle
         Database edition that you specify applies to all the databases on that DB system. The selected edition cannot be changed.
 
         An initial database is created on the DB system based on the request parameters you provide and some default
-        options. For more information,
-        see `Default Options for the Initial Database`__.
+        options. For detailed information about default options, see the following:
 
-        __ https://docs.cloud.oracle.com/Content/Database/Tasks/launchingDB.htm#DefaultOptionsfortheInitialDatabase
+        - `Bare metal and virtual machine DB system default options`__
+        - `Exadata DB system default options`__
+
+        __ https://docs.cloud.oracle.com/Content/Database/Tasks/creatingDBsystem.htm#DefaultOptionsfortheInitialDatabase
+        __ https://docs.cloud.oracle.com/Content/Database/Tasks/exacreatingDBsystem.htm#DefaultOptionsfortheInitialDatabase
 
 
         :param LaunchDbSystemBase launch_db_system_details: (required)
@@ -6746,6 +6986,72 @@ class DatabaseClient(object):
                 header_params=header_params,
                 response_type="list[BackupSummary]")
 
+    def list_console_connections(self, db_node_id, **kwargs):
+        """
+        ListConsoleConnections
+        Lists the console connections for the specified Db node.
+
+
+        :param str db_node_id: (required)
+            The database node `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.ConsoleConnectionSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/dbNodes/{dbNodeId}/consoleConnections"
+        method = "GET"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_console_connections got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "dbNodeId": db_node_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="list[ConsoleConnectionSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="list[ConsoleConnectionSummary]")
+
     def list_data_guard_associations(self, database_id, **kwargs):
         """
         Lists all Data Guard associations for the specified database.
@@ -7818,9 +8124,9 @@ class DatabaseClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str storage_management: (optional)
-            The storage option used in DB system to list database versions for that storage manager.
-            ASM - Automatic storage management
-            LVM - Logical Volume management
+            The DB system storage management option. Used to list database versions available for that storage manager. Valid values are:
+            * ASM - Automatic storage management
+            * LVM - Logical volume management
 
             Allowed values are: "ASM", "LVM"
 
@@ -8792,7 +9098,7 @@ class DatabaseClient(object):
     def restart_autonomous_database(self, autonomous_database_id, **kwargs):
         """
         Restarts the specified Autonomous Database.
-        Restarts the specified Autonomous Database.
+        Restarts the specified Autonomous Database. Restart supported only for databases using dedicated Exadata infrastructure.
 
 
         :param str autonomous_database_id: (required)
