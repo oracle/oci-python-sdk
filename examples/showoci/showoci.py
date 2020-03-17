@@ -53,13 +53,14 @@
 # - oci.oce.OceInstanceClient
 # - oci.apigateway.GatewaysClient
 # - oci.functions.FunctionsManagementClient
+# - oci.data_catalog.DataCatalogClient
+# - oci.data_science.DataScienceClient
+# - oci.data_flow.DataFlowClient
+# - oci.nosql.NosqlClient
 #
 # Modules Not Yet Covered:
 # - oci.waas.WaasClient
 # - oci.dns.DnsClient
-# - oci.data_catalog.DataCatalogClient
-# - oci.data_flow.DataFlowClient
-# - oci.data_science.DataScienceClient
 # - oci.events.EventsClient
 #
 ##########################################################################
@@ -72,7 +73,7 @@ import sys
 import argparse
 import datetime
 
-version = "20.2.11"
+version = "20.3.11"
 
 ##########################################################################
 # execute_extract
@@ -245,7 +246,8 @@ def set_parser_arguments():
     parser.add_argument('-m', action='store_true', default=False, dest='monitoring', help='Print Monitoring and Notifications')
     parser.add_argument('-n', action='store_true', default=False, dest='network', help='Print Network')
     parser.add_argument('-o', action='store_true', default=False, dest='object', help='Print Object Storage')
-    parser.add_argument('-paas', action='store_true', default=False, dest='paas_native', help='Print Oracle Paas Native - OIC OAC ODA')
+    parser.add_argument('-paas', action='store_true', default=False, dest='paas_native', help='Print PaaS Platform Services - OIC OAC OCE')
+    parser.add_argument('-dataai', action='store_true', default=False, dest='data_ai', help='Print Data AI - D.Science, D.Catalog, D.Flow, ODA')
     parser.add_argument('-rm', action='store_true', default=False, dest='orm', help='Print Resource management')
     parser.add_argument('-s', action='store_true', default=False, dest='streams', help='Print Streams')
 
@@ -279,7 +281,7 @@ def set_parser_arguments():
             result.compute or result.object or
             result.load or result.database or result.file or result.email or result.orm or result.container or
             result.streams or result.budgets or result.monitoring or result.edge or result.announcement or result.limits or result.paas_native or
-            result.api or result.function):
+            result.api or result.function or result.data_ai):
 
         parser.print_help()
 
@@ -353,6 +355,9 @@ def set_service_extract_flags(cmd):
 
     if cmd.all or cmd.allnoiam or cmd.paas_native:
         prm.read_paas_native = True
+
+    if cmd.all or cmd.allnoiam or cmd.data_ai:
+        prm.read_data_ai = True
 
     if cmd.all or cmd.allnoiam or cmd.monitoring:
         prm.read_monitoring_notifications = True

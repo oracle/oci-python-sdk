@@ -25,7 +25,6 @@ from .autonomous_database_wallet import AutonomousDatabaseWallet
 from .autonomous_db_preview_version_summary import AutonomousDbPreviewVersionSummary
 from .autonomous_db_version_summary import AutonomousDbVersionSummary
 from .autonomous_exadata_infrastructure import AutonomousExadataInfrastructure
-from .autonomous_exadata_infrastructure_maintenance_window import AutonomousExadataInfrastructureMaintenanceWindow
 from .autonomous_exadata_infrastructure_shape_summary import AutonomousExadataInfrastructureShapeSummary
 from .autonomous_exadata_infrastructure_summary import AutonomousExadataInfrastructureSummary
 from .backup import Backup
@@ -37,6 +36,8 @@ from .change_compartment_details import ChangeCompartmentDetails
 from .change_exadata_infrastructure_compartment_details import ChangeExadataInfrastructureCompartmentDetails
 from .change_vm_cluster_compartment_details import ChangeVmClusterCompartmentDetails
 from .complete_external_backup_job_details import CompleteExternalBackupJobDetails
+from .console_connection import ConsoleConnection
+from .console_connection_summary import ConsoleConnectionSummary
 from .create_autonomous_container_database_details import CreateAutonomousContainerDatabaseDetails
 from .create_autonomous_data_warehouse_backup_details import CreateAutonomousDataWarehouseBackupDetails
 from .create_autonomous_data_warehouse_details import CreateAutonomousDataWarehouseDetails
@@ -48,6 +49,7 @@ from .create_autonomous_database_from_backup_details import CreateAutonomousData
 from .create_autonomous_database_from_backup_timestamp_details import CreateAutonomousDatabaseFromBackupTimestampDetails
 from .create_backup_destination_details import CreateBackupDestinationDetails
 from .create_backup_details import CreateBackupDetails
+from .create_console_connection_details import CreateConsoleConnectionDetails
 from .create_data_guard_association_details import CreateDataGuardAssociationDetails
 from .create_data_guard_association_to_existing_db_system_details import CreateDataGuardAssociationToExistingDbSystemDetails
 from .create_data_guard_association_with_new_db_system_details import CreateDataGuardAssociationWithNewDbSystemDetails
@@ -161,7 +163,6 @@ database_type_mapping = {
     "AutonomousDbPreviewVersionSummary": AutonomousDbPreviewVersionSummary,
     "AutonomousDbVersionSummary": AutonomousDbVersionSummary,
     "AutonomousExadataInfrastructure": AutonomousExadataInfrastructure,
-    "AutonomousExadataInfrastructureMaintenanceWindow": AutonomousExadataInfrastructureMaintenanceWindow,
     "AutonomousExadataInfrastructureShapeSummary": AutonomousExadataInfrastructureShapeSummary,
     "AutonomousExadataInfrastructureSummary": AutonomousExadataInfrastructureSummary,
     "Backup": Backup,
@@ -173,6 +174,8 @@ database_type_mapping = {
     "ChangeExadataInfrastructureCompartmentDetails": ChangeExadataInfrastructureCompartmentDetails,
     "ChangeVmClusterCompartmentDetails": ChangeVmClusterCompartmentDetails,
     "CompleteExternalBackupJobDetails": CompleteExternalBackupJobDetails,
+    "ConsoleConnection": ConsoleConnection,
+    "ConsoleConnectionSummary": ConsoleConnectionSummary,
     "CreateAutonomousContainerDatabaseDetails": CreateAutonomousContainerDatabaseDetails,
     "CreateAutonomousDataWarehouseBackupDetails": CreateAutonomousDataWarehouseBackupDetails,
     "CreateAutonomousDataWarehouseDetails": CreateAutonomousDataWarehouseDetails,
@@ -184,6 +187,7 @@ database_type_mapping = {
     "CreateAutonomousDatabaseFromBackupTimestampDetails": CreateAutonomousDatabaseFromBackupTimestampDetails,
     "CreateBackupDestinationDetails": CreateBackupDestinationDetails,
     "CreateBackupDetails": CreateBackupDetails,
+    "CreateConsoleConnectionDetails": CreateConsoleConnectionDetails,
     "CreateDataGuardAssociationDetails": CreateDataGuardAssociationDetails,
     "CreateDataGuardAssociationToExistingDbSystemDetails": CreateDataGuardAssociationToExistingDbSystemDetails,
     "CreateDataGuardAssociationWithNewDbSystemDetails": CreateDataGuardAssociationWithNewDbSystemDetails,

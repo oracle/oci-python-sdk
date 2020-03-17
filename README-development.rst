@@ -21,7 +21,7 @@ Assuming that you have Python and `virtualenv` installed, set up your environmen
 
 You should also set up your configuration files as described `here`__
 
-__ https://docs.us-phoenix-1.oraclecloud.com/Content/API/Concepts/sdkconfig.htm
+__ https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm
 
 Running Tests
 =============

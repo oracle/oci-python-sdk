@@ -254,7 +254,7 @@ class CreateDataGuardAssociationDetails(object):
     def creation_type(self):
         """
         **[Required]** Gets the creation_type of this CreateDataGuardAssociationDetails.
-        Specifies whether to create the peer database in an existing DB system or in a new DB system. `ExistingDbSystem` is not supported for creating Data Guard associations for virtual machine DB system databases.
+        Specifies whether to create the peer database in an existing DB system or in a new DB system.
 
 
         :return: The creation_type of this CreateDataGuardAssociationDetails.
@@ -266,7 +266,7 @@ class CreateDataGuardAssociationDetails(object):
     def creation_type(self, creation_type):
         """
         Sets the creation_type of this CreateDataGuardAssociationDetails.
-        Specifies whether to create the peer database in an existing DB system or in a new DB system. `ExistingDbSystem` is not supported for creating Data Guard associations for virtual machine DB system databases.
+        Specifies whether to create the peer database in an existing DB system or in a new DB system.
 
 
         :param creation_type: The creation_type of this CreateDataGuardAssociationDetails.

@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.12.0 - 2020-03-17
+====================
+
+Added
+-----
+* Support for serial console connections in the Database service
+* Support for preview database versions in the Database service
+* Support for node reboot migration maintenance status and maintenance windows in the Database service
+* Support for using instance metadata API v2 for instance principals authentication
+* Upgraded configparser dependency version
+
+Breaking
+--------
+* Deleted model autonomous_exadata_infrastructure_maintenance_window.py from the database service
+
+====================
 2.11.0 - 2020-03-10
 ====================
 

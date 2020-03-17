@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.03.11 - 2020-03-11
+=====================
+* Add support for Data Science, Data Flow, Data Catalog using -dataai
+* Moved ODA to -dataai flag
+* Add support for nosql database
+* Add private end point to autonomous database
+* Added items to the display of DB System and Autonomous Database
+* Added tunnel id to the tunnel info json
+
+=====================
 20.02.11 - 2020-02-11
 =====================
 * Add support for Function Applications (-fun)

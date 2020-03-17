@@ -7,6 +7,7 @@ from ..session_key_supplier import SessionKeySupplier
 from ..federation_client import X509FederationClient
 from .. import auth_utils
 from oci._vendor import requests
+from oci._vendor.requests.exceptions import HTTPError
 
 import oci.regions
 
@@ -19,7 +20,7 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
     This signer is self-sufficient in that its internals know how to source the required information to request and use
     the token:
 
-    * Using the metadata endpoint for the instance (http://169.254.169.254/opc/v1) we can discover the region the instance is in, its leaf certificate and any intermediate certificates (for requesting the token) and the tenancy (as) that is in the leaf certificate.
+    * Using the metadata endpoint for the instance (http://169.254.169.254/opc/v2) we can discover the region the instance is in, its leaf certificate and any intermediate certificates (for requesting the token) and the tenancy (as) that is in the leaf certificate.
     * The signer leverages X509FederationClient so it can refresh the security token and also get the private key needed to sign requests (via the client's session_key_supplier)
 
     This signer can be used as follows:
@@ -51,7 +52,7 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
         To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
     """
 
-    METADATA_URL_BASE = 'http://169.254.169.254/opc/v1'
+    METADATA_URL_BASE = 'http://169.254.169.254/opc/v2'
     GET_REGION_URL = '{}/instance/region'.format(METADATA_URL_BASE)
     LEAF_CERTIFICATE_URL = '{}/identity/cert.pem'.format(METADATA_URL_BASE)
     LEAF_CERTIFICATE_PRIVATE_KEY_URL = '{}/identity/key.pem'.format(METADATA_URL_BASE)
@@ -59,11 +60,27 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
     METADATA_AUTH_HEADERS = {'Authorization': 'Bearer Oracle'}
 
     def __init__(self, **kwargs):
-        self.leaf_certificate_retriever = UrlBasedCertificateRetriever(
-            certificate_url=self.LEAF_CERTIFICATE_URL,
-            private_key_url=self.LEAF_CERTIFICATE_PRIVATE_KEY_URL,
-            retry_strategy=INSTANCE_METADATA_URL_CERTIFICATE_RETRIEVER_RETRY_STRATEGY,
-            headers=self.METADATA_AUTH_HEADERS)
+        try:
+            self.leaf_certificate_retriever = UrlBasedCertificateRetriever(
+                certificate_url=self.LEAF_CERTIFICATE_URL,
+                private_key_url=self.LEAF_CERTIFICATE_PRIVATE_KEY_URL,
+                retry_strategy=INSTANCE_METADATA_URL_CERTIFICATE_RETRIEVER_RETRY_STRATEGY,
+                headers=self.METADATA_AUTH_HEADERS)
+        except HTTPError as e:
+            if e.response.status_code == 404:
+                InstancePrincipalsSecurityTokenSigner.METADATA_URL_BASE = 'http://169.254.169.254/opc/v1'
+                InstancePrincipalsSecurityTokenSigner.GET_REGION_URL = '{}/instance/region'.format(InstancePrincipalsSecurityTokenSigner.METADATA_URL_BASE)
+                InstancePrincipalsSecurityTokenSigner.LEAF_CERTIFICATE_URL = '{}/identity/cert.pem'.format(InstancePrincipalsSecurityTokenSigner.METADATA_URL_BASE)
+                InstancePrincipalsSecurityTokenSigner.LEAF_CERTIFICATE_PRIVATE_KEY_URL = '{}/identity/key.pem'.format(InstancePrincipalsSecurityTokenSigner.METADATA_URL_BASE)
+                InstancePrincipalsSecurityTokenSigner.INTERMEDIATE_CERTIFICATE_URL = '{}/identity/intermediate.pem'.format(InstancePrincipalsSecurityTokenSigner.METADATA_URL_BASE)
+                self.leaf_certificate_retriever = UrlBasedCertificateRetriever(
+                    certificate_url=self.LEAF_CERTIFICATE_URL,
+                    private_key_url=self.LEAF_CERTIFICATE_PRIVATE_KEY_URL,
+                    retry_strategy=INSTANCE_METADATA_URL_CERTIFICATE_RETRIEVER_RETRY_STRATEGY,
+                    headers=self.METADATA_AUTH_HEADERS)
+            else:
+                raise e
+
         self.intermediate_certificate_retriever = UrlBasedCertificateRetriever(
             certificate_url=self.INTERMEDIATE_CERTIFICATE_URL,
             retry_strategy=INSTANCE_METADATA_URL_CERTIFICATE_RETRIEVER_RETRY_STRATEGY,
