@@ -250,7 +250,7 @@ class CachingRuleSummary(object):
     def criteria(self):
         """
         **[Required]** Gets the criteria of this CachingRuleSummary.
-        The array of the rule criteria with condition and value.
+        The array of the rule criteria with condition and value. The caching rule would be applied for the requests that matched any of the listed conditions.
 
 
         :return: The criteria of this CachingRuleSummary.
@@ -262,7 +262,7 @@ class CachingRuleSummary(object):
     def criteria(self, criteria):
         """
         Sets the criteria of this CachingRuleSummary.
-        The array of the rule criteria with condition and value.
+        The array of the rule criteria with condition and value. The caching rule would be applied for the requests that matched any of the listed conditions.
 
 
         :param criteria: The criteria of this CachingRuleSummary.

@@ -18,7 +18,7 @@
     <enabled-groups-dir>${sdk-root-dir}/codegenConfig/enabledGroups</enabled-groups-dir>
     <feature-id-file>${sdk-root-dir}/featureId.yaml</feature-id-file>
     <feature-id-dir>${sdk-root-dir}/codegenConfig/featureIds</feature-id-dir>
-    <oci-waas-api-spec-spec-file>oci-waas-api-spec.cond.yaml</oci-waas-api-spec-spec-file>
+    <oci-waas-api-spec-spec-file>source/oci-waas-api-spec.cond.yaml</oci-waas-api-spec-spec-file>
   </properties>
   <dependencies>
     <dependency>
@@ -141,7 +141,7 @@
       <dependency>
         <groupId>com.oracle.oci.waas</groupId>
         <artifactId>oci-waas-api-spec</artifactId>
-        <version>1.1.774</version>
+        <version>1.2.962</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

@@ -66,6 +66,10 @@ class CreateOceInstanceDetails(object):
             The value to assign to the admin_email property of this CreateOceInstanceDetails.
         :type admin_email: str
 
+        :param waf_primary_domain:
+            The value to assign to the waf_primary_domain property of this CreateOceInstanceDetails.
+        :type waf_primary_domain: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateOceInstanceDetails.
         :type freeform_tags: dict(str, str)
@@ -86,6 +90,7 @@ class CreateOceInstanceDetails(object):
             'instance_usage_type': 'str',
             'object_storage_namespace': 'str',
             'admin_email': 'str',
+            'waf_primary_domain': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -101,6 +106,7 @@ class CreateOceInstanceDetails(object):
             'instance_usage_type': 'instanceUsageType',
             'object_storage_namespace': 'objectStorageNamespace',
             'admin_email': 'adminEmail',
+            'waf_primary_domain': 'wafPrimaryDomain',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -115,6 +121,7 @@ class CreateOceInstanceDetails(object):
         self._instance_usage_type = None
         self._object_storage_namespace = None
         self._admin_email = None
+        self._waf_primary_domain = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -361,6 +368,30 @@ class CreateOceInstanceDetails(object):
         :type: str
         """
         self._admin_email = admin_email
+
+    @property
+    def waf_primary_domain(self):
+        """
+        Gets the waf_primary_domain of this CreateOceInstanceDetails.
+        Web Application Firewall(WAF) primary domain
+
+
+        :return: The waf_primary_domain of this CreateOceInstanceDetails.
+        :rtype: str
+        """
+        return self._waf_primary_domain
+
+    @waf_primary_domain.setter
+    def waf_primary_domain(self, waf_primary_domain):
+        """
+        Sets the waf_primary_domain of this CreateOceInstanceDetails.
+        Web Application Firewall(WAF) primary domain
+
+
+        :param waf_primary_domain: The waf_primary_domain of this CreateOceInstanceDetails.
+        :type: str
+        """
+        self._waf_primary_domain = waf_primary_domain
 
     @property
     def freeform_tags(self):

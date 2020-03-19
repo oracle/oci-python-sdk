@@ -7,42 +7,42 @@ from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class CreateNewDatabaseDetails(CreateDatabaseBase):
+class CreateDatabaseFromBackup(CreateDatabaseBase):
     """
-    Details for creating a new database.
+    Details for creating a database by restoring from a database backup.
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
     def __init__(self, **kwargs):
         """
-        Initializes a new CreateNewDatabaseDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.database.models.CreateNewDatabaseDetails.source` attribute
-        of this class is ``NONE`` and it should not be changed.
+        Initializes a new CreateDatabaseFromBackup object with values from keyword arguments. The default value of the :py:attr:`~oci.database.models.CreateDatabaseFromBackup.source` attribute
+        of this class is ``DB_BACKUP`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param db_home_id:
-            The value to assign to the db_home_id property of this CreateNewDatabaseDetails.
+            The value to assign to the db_home_id property of this CreateDatabaseFromBackup.
         :type db_home_id: str
 
         :param db_version:
-            The value to assign to the db_version property of this CreateNewDatabaseDetails.
+            The value to assign to the db_version property of this CreateDatabaseFromBackup.
         :type db_version: str
 
         :param source:
-            The value to assign to the source property of this CreateNewDatabaseDetails.
+            The value to assign to the source property of this CreateDatabaseFromBackup.
             Allowed values for this property are: "NONE", "DB_BACKUP"
         :type source: str
 
         :param database:
-            The value to assign to the database property of this CreateNewDatabaseDetails.
-        :type database: CreateDatabaseDetails
+            The value to assign to the database property of this CreateDatabaseFromBackup.
+        :type database: CreateDatabaseFromBackupDetails
 
         """
         self.swagger_types = {
             'db_home_id': 'str',
             'db_version': 'str',
             'source': 'str',
-            'database': 'CreateDatabaseDetails'
+            'database': 'CreateDatabaseFromBackupDetails'
         }
 
         self.attribute_map = {
@@ -56,25 +56,25 @@ class CreateNewDatabaseDetails(CreateDatabaseBase):
         self._db_version = None
         self._source = None
         self._database = None
-        self._source = 'NONE'
+        self._source = 'DB_BACKUP'
 
     @property
     def database(self):
         """
-        **[Required]** Gets the database of this CreateNewDatabaseDetails.
+        **[Required]** Gets the database of this CreateDatabaseFromBackup.
 
-        :return: The database of this CreateNewDatabaseDetails.
-        :rtype: CreateDatabaseDetails
+        :return: The database of this CreateDatabaseFromBackup.
+        :rtype: CreateDatabaseFromBackupDetails
         """
         return self._database
 
     @database.setter
     def database(self, database):
         """
-        Sets the database of this CreateNewDatabaseDetails.
+        Sets the database of this CreateDatabaseFromBackup.
 
-        :param database: The database of this CreateNewDatabaseDetails.
-        :type: CreateDatabaseDetails
+        :param database: The database of this CreateDatabaseFromBackup.
+        :type: CreateDatabaseFromBackupDetails
         """
         self._database = database
 

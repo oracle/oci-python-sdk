@@ -21,6 +21,10 @@ class UpdateOceInstanceDetails(object):
             The value to assign to the description property of this UpdateOceInstanceDetails.
         :type description: str
 
+        :param waf_primary_domain:
+            The value to assign to the waf_primary_domain property of this UpdateOceInstanceDetails.
+        :type waf_primary_domain: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateOceInstanceDetails.
         :type freeform_tags: dict(str, str)
@@ -32,17 +36,20 @@ class UpdateOceInstanceDetails(object):
         """
         self.swagger_types = {
             'description': 'str',
+            'waf_primary_domain': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
             'description': 'description',
+            'waf_primary_domain': 'wafPrimaryDomain',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._description = None
+        self._waf_primary_domain = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -69,6 +76,30 @@ class UpdateOceInstanceDetails(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def waf_primary_domain(self):
+        """
+        Gets the waf_primary_domain of this UpdateOceInstanceDetails.
+        Web Application Firewall(WAF) primary domain
+
+
+        :return: The waf_primary_domain of this UpdateOceInstanceDetails.
+        :rtype: str
+        """
+        return self._waf_primary_domain
+
+    @waf_primary_domain.setter
+    def waf_primary_domain(self, waf_primary_domain):
+        """
+        Sets the waf_primary_domain of this UpdateOceInstanceDetails.
+        Web Application Firewall(WAF) primary domain
+
+
+        :param waf_primary_domain: The waf_primary_domain of this UpdateOceInstanceDetails.
+        :type: str
+        """
+        self._waf_primary_domain = waf_primary_domain
 
     @property
     def freeform_tags(self):
