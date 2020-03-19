@@ -70,6 +70,7 @@ Database
     oci.database.models.CreateDataGuardAssociationWithNewDbSystemDetails
     oci.database.models.CreateDatabaseBase
     oci.database.models.CreateDatabaseDetails
+    oci.database.models.CreateDatabaseFromBackup
     oci.database.models.CreateDatabaseFromBackupDetails
     oci.database.models.CreateDbHomeBase
     oci.database.models.CreateDbHomeDetails

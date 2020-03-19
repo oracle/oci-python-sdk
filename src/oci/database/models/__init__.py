@@ -55,6 +55,7 @@ from .create_data_guard_association_to_existing_db_system_details import CreateD
 from .create_data_guard_association_with_new_db_system_details import CreateDataGuardAssociationWithNewDbSystemDetails
 from .create_database_base import CreateDatabaseBase
 from .create_database_details import CreateDatabaseDetails
+from .create_database_from_backup import CreateDatabaseFromBackup
 from .create_database_from_backup_details import CreateDatabaseFromBackupDetails
 from .create_db_home_base import CreateDbHomeBase
 from .create_db_home_details import CreateDbHomeDetails
@@ -193,6 +194,7 @@ database_type_mapping = {
     "CreateDataGuardAssociationWithNewDbSystemDetails": CreateDataGuardAssociationWithNewDbSystemDetails,
     "CreateDatabaseBase": CreateDatabaseBase,
     "CreateDatabaseDetails": CreateDatabaseDetails,
+    "CreateDatabaseFromBackup": CreateDatabaseFromBackup,
     "CreateDatabaseFromBackupDetails": CreateDatabaseFromBackupDetails,
     "CreateDbHomeBase": CreateDbHomeBase,
     "CreateDbHomeDetails": CreateDbHomeDetails,

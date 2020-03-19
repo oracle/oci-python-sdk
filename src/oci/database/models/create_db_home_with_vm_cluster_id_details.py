@@ -118,7 +118,7 @@ class CreateDbHomeWithVmClusterIdDetails(CreateDbHomeBase):
     @property
     def database(self):
         """
-        **[Required]** Gets the database of this CreateDbHomeWithVmClusterIdDetails.
+        Gets the database of this CreateDbHomeWithVmClusterIdDetails.
 
         :return: The database of this CreateDbHomeWithVmClusterIdDetails.
         :rtype: CreateDatabaseDetails

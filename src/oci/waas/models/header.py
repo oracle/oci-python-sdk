@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Header(object):
     """
-    An HTTP header name and value. You can configure your origin server to only allow requests that contain the custom header values that you specify.
+    An HTTP header with name and value.
     """
 
     def __init__(self, **kwargs):

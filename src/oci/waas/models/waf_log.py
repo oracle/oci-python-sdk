@@ -9,9 +9,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WafLog(object):
     """
-    A list of Web Application Firewall log entries. Each entry is a JSON object, including a timestamp property and other fields varying based on log type. Logs record what rules and countermeasures are triggered by requests and are used as a basis to move request handling into block mode. For more information about WAF logs, see `WAF Logs`__.
+    A list of Web Application Firewall log entries. Each entry is a JSON object, including a timestamp property and other fields varying based on log type. Logs record what rules and countermeasures are triggered by requests and are used as a basis to move request handling into block mode. For more information about WAF logs, see `Logs`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/waflogs.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/logs.htm
     """
 
     def __init__(self, **kwargs):
@@ -853,9 +853,9 @@ class WafLog(object):
     def log_type(self):
         """
         Gets the log_type of this WafLog.
-        The type of log of the request. For more about log types, see `WAF Logs`__.
+        The type of log of the request. For more about log types, see `Logs`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/waflogs.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/logs.htm
 
 
         :return: The log_type of this WafLog.
@@ -867,9 +867,9 @@ class WafLog(object):
     def log_type(self, log_type):
         """
         Sets the log_type of this WafLog.
-        The type of log of the request. For more about log types, see `WAF Logs`__.
+        The type of log of the request. For more about log types, see `Logs`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/waflogs.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/logs.htm
 
 
         :param log_type: The log_type of this WafLog.

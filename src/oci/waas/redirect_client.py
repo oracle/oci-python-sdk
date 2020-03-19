@@ -415,7 +415,7 @@ class RedirectClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated call. In unspecified, defaults to `10`.
+            The maximum number of items to return in a paginated call. If unspecified, defaults to `10`.
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous paginated call.

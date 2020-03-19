@@ -140,7 +140,7 @@
       <dependency>
         <groupId>com.oracle.cec.provisioning.controlplane</groupId>
         <artifactId>cec-public-spec</artifactId>
-        <version>20.12.9</version>
+        <version>20.13.5</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
