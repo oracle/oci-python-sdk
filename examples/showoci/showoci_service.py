@@ -2917,7 +2917,7 @@ class ShowOCIService(object):
 
                                 if tunnel.bgp_session_info:
                                     bs = tunnel.bgp_session_info
-                                    tun_val['bgp_info'] = "BGP Status ".ljust(12) + " - " + str(bs.bgp_state + ", Cust: " + bs.customer_interface_ip + " (" + bs.customer_bgp_asn + "), Oracle: " + bs.oracle_interface_ip + " (" + bs.oracle_bgp_asn) + ")"
+                                    tun_val['bgp_info'] = "BGP Status ".ljust(12) + " - " + str(bs.bgp_state) + ", Cust: " + str(bs.customer_interface_ip) + " (ASN = " + str(bs.customer_bgp_asn) + "), Oracle: " + str(bs.oracle_interface_ip) + " (ASN = " + str(bs.oracle_bgp_asn) + ")"
 
                                 data_tun.append(tun_val)
                         except Exception:
