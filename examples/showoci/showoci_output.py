@@ -2265,6 +2265,7 @@ class ShowOCICSV(object):
         try:
             for user in users:
                 data = {
+                    'id': user['id'],
                     'user_name': user['name'],
                     'description': user['description'],
                     'is_mfa_activated': user['is_mfa_activated'],
