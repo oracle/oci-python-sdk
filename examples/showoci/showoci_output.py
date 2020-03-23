@@ -1096,20 +1096,35 @@ class ShowOCIOutput(object):
     ##########################################################################
     # Monitoring
     ##########################################################################
-    def __print_monitoring_main(self, alarms):
+    def __print_monitoring_main(self, monitorings):
 
         try:
-            if not alarms:
+            if not monitorings:
                 return
 
-            self.print_header("Monitoring - Alarms", 2)
+            # if alarms
+            if 'alarms' in monitorings:
+                if monitorings['alarms']:
+                    alarms = monitorings['alarms']
+                    self.print_header("Monitoring - Alarms", 2)
 
-            for alarm in alarms:
-                print(self.taba + alarm['display_name'] + " (" + alarm['namespace'] + "), Enabled = " + str(alarm['is_enabled']) + ", Severity = " + alarm['severity'])
-                print(self.tabs + "Query : " + alarm['query'])
-                for dest in alarm['destinations_names']:
-                    print(self.tabs + "Topic : " + dest)
-                print("")
+                    for alarm in alarms:
+                        print(self.taba + alarm['display_name'] + " (" + alarm['namespace'] + "), Enabled = " + str(alarm['is_enabled']) + ", Severity = " + alarm['severity'])
+                        print(self.tabs + "Query : " + alarm['query'])
+                        for dest in alarm['destinations_names']:
+                            print(self.tabs + "Topic : " + dest)
+                        print("")
+
+            # if events
+            if 'events' in monitorings:
+                if monitorings['events']:
+                    events = monitorings['events']
+                    self.print_header("Events", 2)
+
+                    for event in events:
+                        print(self.taba + event['display_name'] + " (" + event['description'] + "), Enabled = " + str(event['is_enabled']))
+                        print(self.tabs + "Condition : " + event['condition'])
+                        print("")
 
         except Exception as e:
             self.__print_error("__print_monitoring_main", e)
@@ -1164,6 +1179,24 @@ class ShowOCIOutput(object):
                         print(self.tabs + "Targets  : " + arr['targets'])
                         print(self.tabs + "VPoints  : " + arr['vantage_point_names'])
                         print("")
+
+            # if dns_zone
+            if 'dns_zone' in edge:
+                self.print_header("DNS Zone", 2)
+
+                for arr in edge['dns_zone']:
+                    print(self.taba + arr['name'] + " (" + arr['zone_type'] + "), Version: " + arr['version'] + ", Serial: " + arr['serial'])
+                    print(self.tabs + "URI : " + arr['self_uri'])
+                    print("")
+
+            # if dns_steering
+            if 'dns_steering' in edge:
+                self.print_header("DNS Steering Policies", 2)
+
+                for arr in edge['dns_steering']:
+                    print(self.taba + arr['display_name'] + " (" + arr['template'] + "), TTL: " + arr['ttl'])
+                    print(self.tabs + "Health Check Id : " + arr['health_check_monitor_id'])
+                    print("")
 
         except Exception as e:
             self.__print_error("__print_edge_services_main", e)

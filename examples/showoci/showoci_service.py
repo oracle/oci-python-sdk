@@ -228,18 +228,21 @@ class ShowOCIService(object):
     # monitoring
     C_MONITORING = "monitoring"
     C_MONITORING_ALARMS = "alarms"
+    C_MONITORING_EVENTS = "events"
 
     # notifications
     C_NOTIFICATIONS = "notifications"
     C_NOTIFICATIONS_TOPICS = "topics"
     C_NOTIFICATIONS_SUBSCRIPTIONS = "subscriptions"
 
-    # edge services
+    # edge services and DNS
     C_EDGE = "edge"
     C_EDGE_HEALTHCHECK_PING = "healthcheck_ping"
     C_EDGE_HEALTHCHECK_HTTP = "healthcheck_http"
+    C_EDGE_DNS_ZONE = 'dns_zone'
+    C_EDGE_DNS_STEERING = 'dns_steering'
 
-    # edge services
+    # Announcement services
     C_ANNOUNCEMENT = "announcement"
     C_ANNOUNCEMENT_ANNOUNCEMENT = "announcements"
 
@@ -1360,7 +1363,7 @@ class ShowOCIService(object):
     #
     # class oci.core.virtual_network_client.virtual_networkClient(config, **kwargs)
     #
-    #    TBD Apis
+    #    Not done APIs:
     #    list_allowed_peer_regions_for_remote_peering(**kwargs)
     #    list_private_ips(**kwargs) - this is performance issue running all subnets
     #    list_public_ips(scope, compartment_id, **kwargs)
@@ -1428,6 +1431,7 @@ class ShowOCIService(object):
                 if self.flags.read_network:
 
                     # append the data
+                    network[self.C_NETWORK_LPG] += self.__load_core_network_lpg(virtual_network, compartments, vcns)
                     network[self.C_NETWORK_SGW] += self.__load_core_network_sgw(virtual_network, compartments)
                     network[self.C_NETWORK_NAT] += self.__load_core_network_nat(virtual_network, compartments)
                     network[self.C_NETWORK_DRG] += self.__load_core_network_drg(virtual_network, compartments)
@@ -1437,7 +1441,6 @@ class ShowOCIService(object):
                     network[self.C_NETWORK_RPC] += self.__load_core_network_rpc(virtual_network, compartments)
                     network[self.C_NETWORK_VC] += self.__load_core_network_vc(virtual_network, compartments)
                     network[self.C_NETWORK_IGW] += self.__load_core_network_igw(virtual_network, compartments, vcns)
-                    network[self.C_NETWORK_LPG] += self.__load_core_network_lpg(virtual_network, compartments, vcns)
                     network[self.C_NETWORK_SLIST] += self.__load_core_network_seclst(virtual_network, compartments, vcns)
                     network[self.C_NETWORK_DHCP] += self.__load_core_network_dhcpop(virtual_network, compartments, vcns)
 
@@ -1475,7 +1478,8 @@ class ShowOCIService(object):
                         virtual_network.list_vcns,
                         compartment['id'],
                         lifecycle_state=oci.core.models.Vcn.LIFECYCLE_STATE_AVAILABLE,
-                        sort_by="DISPLAYNAME"
+                        sort_by="DISPLAYNAME",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                     ).data
 
                 except oci.exceptions.ServiceError as e:
@@ -1572,7 +1576,8 @@ class ShowOCIService(object):
                     try:
                         igws = virtual_network.list_internet_gateways(
                             compartment['id'], vcn['id'],
-                            lifecycle_state=oci.core.models.InternetGateway.LIFECYCLE_STATE_AVAILABLE
+                            lifecycle_state=oci.core.models.InternetGateway.LIFECYCLE_STATE_AVAILABLE,
+                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                         ).data
 
                     except oci.exceptions.ServiceError as e:
@@ -1620,21 +1625,23 @@ class ShowOCIService(object):
             # loop on all vcns - vcn is must parameter
             for vcn in vcns:
                 print("+", end="")
+                warning_printed_for_vcn = False
 
                 # iLoop on all compartments
                 for compartment in compartments:
-
                     local_peering_gateways = []
                     try:
                         local_peering_gateways = virtual_network.list_local_peering_gateways(
                             compartment['id'],
-                            vcn['id']
+                            vcn['id'],
+                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                         ).data
 
                     except oci.exceptions.ServiceError as e:
                         if self.__check_service_error(e.code):
-                            # self.__load_print_auth_warning()
-                            # don't print "a" access due to issue with local peering GW service issue
+                            if not warning_printed_for_vcn:
+                                self.__load_print_auth_warning()
+                                warning_printed_for_vcn = True
                             continue
                         raise
 
@@ -1697,7 +1704,8 @@ class ShowOCIService(object):
                 try:
                     rpcs = oci.pagination.list_call_get_all_results(
                         virtual_network.list_remote_peering_connections,
-                        compartment['id']
+                        compartment['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                     ).data
 
                 except oci.exceptions.ServiceError as e:
@@ -1760,7 +1768,9 @@ class ShowOCIService(object):
                             virtual_network.list_route_tables,
                             compartment['id'],
                             vcn['id'],
-                            lifecycle_state=oci.core.models.RouteTable.LIFECYCLE_STATE_AVAILABLE).data
+                            lifecycle_state=oci.core.models.RouteTable.LIFECYCLE_STATE_AVAILABLE,
+                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                        ).data
 
                     except oci.exceptions.ServiceError as e:
                         if self.__check_service_error(e.code):
@@ -1850,7 +1860,8 @@ class ShowOCIService(object):
                             virtual_network.list_dhcp_options,
                             compartment['id'],
                             vcn['id'],
-                            lifecycle_state=oci.core.models.DhcpOptions.LIFECYCLE_STATE_AVAILABLE).data
+                            lifecycle_state=oci.core.models.DhcpOptions.LIFECYCLE_STATE_AVAILABLE,
+                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
 
                     except oci.exceptions.ServiceError as e:
                         if self.__check_service_error(e.code):
@@ -2062,7 +2073,9 @@ class ShowOCIService(object):
                             compartment['id'],
                             vcn['id'],
                             lifecycle_state=oci.core.models.SecurityList.LIFECYCLE_STATE_AVAILABLE,
-                            sort_by="DISPLAYNAME").data
+                            sort_by="DISPLAYNAME",
+                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                        ).data
 
                     except oci.exceptions.ServiceError as e:
                         if self.__check_service_error(e.code):
@@ -2279,7 +2292,8 @@ class ShowOCIService(object):
                     arrs = oci.pagination.list_call_get_all_results(
                         virtual_network.list_network_security_groups,
                         compartment['id'],
-                        lifecycle_state=oci.core.models.NetworkSecurityGroup.LIFECYCLE_STATE_AVAILABLE
+                        lifecycle_state=oci.core.models.NetworkSecurityGroup.LIFECYCLE_STATE_AVAILABLE,
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                     ).data
 
                 except oci.exceptions.ServiceError as e:
@@ -2366,7 +2380,9 @@ class ShowOCIService(object):
                             compartment['id'],
                             vcn['id'],
                             lifecycle_state=oci.core.models.Subnet.LIFECYCLE_STATE_AVAILABLE,
-                            sort_by="DISPLAYNAME").data
+                            sort_by="DISPLAYNAME",
+                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                        ).data
 
                     except oci.exceptions.ServiceError as e:
                         if self.__check_service_error(e.code):
@@ -2429,7 +2445,8 @@ class ShowOCIService(object):
                     sgws = oci.pagination.list_call_get_all_results(
                         virtual_network.list_service_gateways,
                         compartment['id'],
-                        lifecycle_state=oci.core.models.ServiceGateway.LIFECYCLE_STATE_AVAILABLE
+                        lifecycle_state=oci.core.models.ServiceGateway.LIFECYCLE_STATE_AVAILABLE,
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                     ).data
 
                 except oci.exceptions.ServiceError as e:
@@ -2492,7 +2509,8 @@ class ShowOCIService(object):
                     natgws = oci.pagination.list_call_get_all_results(
                         virtual_network.list_nat_gateways,
                         compartment['id'],
-                        lifecycle_state=oci.core.models.NatGateway.LIFECYCLE_STATE_AVAILABLE
+                        lifecycle_state=oci.core.models.NatGateway.LIFECYCLE_STATE_AVAILABLE,
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                     ).data
 
                 except oci.exceptions.ServiceError as e:
@@ -2605,7 +2623,8 @@ class ShowOCIService(object):
                 try:
                     arrs = oci.pagination.list_call_get_all_results(
                         virtual_network.list_drgs,
-                        compartment['id']
+                        compartment['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                     ).data
 
                 except oci.exceptions.ServiceError as e:
@@ -2678,7 +2697,8 @@ class ShowOCIService(object):
                 try:
                     arrs = oci.pagination.list_call_get_all_results(
                         virtual_network.list_cpes,
-                        compartment['id']
+                        compartment['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                     ).data
 
                 except oci.exceptions.ServiceError as e:
@@ -2814,7 +2834,8 @@ class ShowOCIService(object):
                 try:
                     arrs = oci.pagination.list_call_get_all_results(
                         virtual_network.list_virtual_circuits,
-                        compartment['id']
+                        compartment['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                     ).data
 
                 except oci.exceptions.ServiceError as e:
@@ -2883,7 +2904,8 @@ class ShowOCIService(object):
                 try:
                     arrs = oci.pagination.list_call_get_all_results(
                         virtual_network.list_ip_sec_connections,
-                        compartment['id']
+                        compartment['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                     ).data
 
                 except oci.exceptions.ServiceError as e:
@@ -4220,7 +4242,9 @@ class ShowOCIService(object):
                         load_balancer.list_load_balancers,
                         compartment['id'],
                         sort_by="DISPLAYNAME",
-                        lifecycle_state=oci.load_balancer.models.LoadBalancer.LIFECYCLE_STATE_ACTIVE).data
+                        lifecycle_state=oci.load_balancer.models.LoadBalancer.LIFECYCLE_STATE_ACTIVE,
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
 
                 except oci.exceptions.ServiceError as e:
                     if self.__check_service_error(e.code):
@@ -4365,7 +4389,8 @@ class ShowOCIService(object):
                 try:
                     backend_sets = oci.pagination.list_call_get_all_results(
                         load_balancer.list_backend_sets,
-                        load_balancer_id
+                        load_balancer_id,
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                     ).data
 
                 except oci.exceptions.ServiceError as e:
@@ -4509,9 +4534,6 @@ class ShowOCIService(object):
                     data.append(dataval)
 
                     cnt += 1
-                    # sleep 0.5 seconds every 10 checks to avoid too many requests
-                    if cnt % 10 == 0:
-                        time.sleep(0.5)
 
             self.__load_print_cnt(cnt, start_time)
             return data
@@ -5816,7 +5838,8 @@ class ShowOCIService(object):
                     list_tables = oci.pagination.list_call_get_all_results(
                         nosql_client.list_tables,
                         compartment['id'],
-                        sort_by="name"
+                        sort_by="name",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                     ).data
 
                 except oci.exceptions.ServiceError as e:
@@ -6498,12 +6521,13 @@ class ShowOCIService(object):
     # class oci.monitoring.MonitoringClient(config, **kwargs)
     # class oci.ons.NotificationControlPlaneClient(config, **kwargs)
     # class oci.ons.NotificationDataPlaneClient(config, **kwargs)
+    # class oci.events.EventsClient(config, **kwargs)
     #
     ##########################################################################
     def __load_monitor_notification_main(self):
 
         try:
-            print("Monitoring and Notifications...")
+            print("Monitoring, Notifications and Events...")
 
             # MonitoringClient
             monitor_client = oci.monitoring.MonitoringClient(self.config, signer=self.signer)
@@ -6520,17 +6544,24 @@ class ShowOCIService(object):
             if self.flags.proxy:
                 ons_dp_client.base_client.session.proxies = {'https': self.flags.proxy}
 
+            # oci.events.EventsClient
+            event_client = oci.events.EventsClient(self.config, signer=self.signer)
+            if self.flags.proxy:
+                event_client.base_client.session.proxies = {'https': self.flags.proxy}
+
             # reference to compartments
             compartments = self.get_compartment()
 
             # add the key if not exists
             self.__initialize_data_key(self.C_MONITORING, self.C_MONITORING_ALARMS)
+            self.__initialize_data_key(self.C_MONITORING, self.C_MONITORING_EVENTS)
             self.__initialize_data_key(self.C_NOTIFICATIONS, self.C_NOTIFICATIONS_TOPICS)
             self.__initialize_data_key(self.C_NOTIFICATIONS, self.C_NOTIFICATIONS_SUBSCRIPTIONS)
 
             # append the data for monitoring
             monitor = self.data[self.C_MONITORING]
             monitor[self.C_MONITORING_ALARMS] += self.__load_monitoring_alarms(monitor_client, compartments)
+            monitor[self.C_MONITORING_EVENTS] += self.__load_monitoring_events(event_client, compartments)
 
             # append the data for notifications
             notifications = self.data[self.C_NOTIFICATIONS]
@@ -6544,6 +6575,74 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_monitor_notification_main", e)
+
+    ##########################################################################
+    # __load_monitoring_events
+    ##########################################################################
+    def __load_monitoring_events(self, event_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("Events")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                events = []
+                try:
+                    events = oci.pagination.list_call_get_all_results(
+                        event_client.list_rules,
+                        compartment['id'],
+                        sort_by="DISPLAY_NAME",
+                        lifecycle_state="ACTIVE"
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+
+                print(".", end="")
+
+                # event = oci.events.models.RuleSummary
+                for event in events:
+                    val = {'id': str(event.id),
+                           'display_name': str(event.display_name),
+                           'description': str(event.description),
+                           'condition': str(event.condition),
+                           'is_enabled': str(event.is_enabled),
+                           'time_created': str(event.time_created),
+                           'compartment_name': str(compartment['name']),
+                           'compartment_id': str(compartment['id']),
+                           'defined_tags': [] if event.defined_tags is None else event.defined_tags,
+                           'freeform_tags': [] if event.freeform_tags is None else event.freeform_tags,
+                           'region_name': str(self.config['region'])}
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+
+            if self.__check_request_error(e):
+                return data
+
+            raise
+        except Exception as e:
+            self.__print_error("__load_monitoring_events", e)
+            return data
 
     ##########################################################################
     # __load_monitoring_alarms
@@ -6759,6 +6858,7 @@ class ShowOCIService(object):
     # OCI Classes used:
     #
     # class oci.healthchecks.HealthChecksClient(config, **kwargs)
+    # class oci.dns.DnsClient(config, **kwargs)
     #
     ##########################################################################
     def __load_edge_services_main(self):
@@ -6771,12 +6871,19 @@ class ShowOCIService(object):
             if self.flags.proxy:
                 healthcheck_client.base_client.session.proxies = {'https': self.flags.proxy}
 
+            # Open connectivity to OCI
+            dns = oci.dns.DnsClient(self.config, signer=self.signer)
+            if self.flags.proxy:
+                dns.base_client.session.proxies = {'https': self.flags.proxy}
+
             # reference to compartments
             compartments = self.get_compartment()
 
             # add the key if not exists
             self.__initialize_data_key(self.C_EDGE, self.C_EDGE_HEALTHCHECK_PING)
             self.__initialize_data_key(self.C_EDGE, self.C_EDGE_HEALTHCHECK_HTTP)
+            self.__initialize_data_key(self.C_EDGE, self.C_EDGE_DNS_ZONE)
+            self.__initialize_data_key(self.C_EDGE, self.C_EDGE_DNS_STEERING)
 
             # reference to stream
             edge = self.data[self.C_EDGE]
@@ -6784,6 +6891,8 @@ class ShowOCIService(object):
             # append the data
             edge[self.C_EDGE_HEALTHCHECK_PING] += self.__load_edge_healthchecks_ping(healthcheck_client, compartments)
             edge[self.C_EDGE_HEALTHCHECK_HTTP] += self.__load_edge_healthchecks_http(healthcheck_client, compartments)
+            edge[self.C_EDGE_DNS_ZONE] += self.__load_edge_dns_zone(dns, compartments)
+            edge[self.C_EDGE_DNS_STEERING] += self.__load_edge_dns_steering(dns, compartments)
             print("")
 
         except oci.exceptions.RequestException:
@@ -6958,6 +7067,147 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_edge_healthchecks_http", e)
+            return data
+
+    ##########################################################################
+    # __load_edge_dns_zone
+    ##########################################################################
+    def __load_edge_dns_zone(self, dns_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("DNS Zones")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                array = []
+                try:
+                    array = oci.pagination.list_call_get_all_results(
+                        dns_client.list_zones,
+                        compartment['id'],
+                        lifecycle_state=oci.dns.models.ZoneSummary.LIFECYCLE_STATE_ACTIVE,
+                        sort_by="name"
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning()
+                    continue
+
+                print(".", end="")
+
+                # arr = oci.dns.models.ZoneSummary
+                for arr in array:
+                    val = {'id': str(arr.id),
+                           'name': str(arr.name),
+                           'zone_type': str(arr.zone_type),
+                           'self_uri': str(arr.self_uri),
+                           'time_created': str(arr.time_created),
+                           'version': str(arr.version),
+                           'serial': str(arr.serial),
+                           'compartment_name': str(compartment['name']),
+                           'compartment_id': str(compartment['id']),
+                           'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                           'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                           'region_name': str(self.config['region'])
+                           }
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_edge_dns_zone", e)
+            return data
+
+    ##########################################################################
+    # __load_edge_dns_steering
+    ##########################################################################
+    def __load_edge_dns_steering(self, dns_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("DNS Steering Policies")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                array = []
+                try:
+                    array = oci.pagination.list_call_get_all_results(
+                        dns_client.list_steering_policies,
+                        compartment['id'],
+                        lifecycle_state=oci.dns.models.SteeringPolicySummary.LIFECYCLE_STATE_ACTIVE,
+                        sort_by="displayName"
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning()
+                    continue
+
+                print(".", end="")
+
+                # arr = oci.dns.models.SteeringPolicySummary
+                for arr in array:
+                    val = {'id': str(arr.id),
+                           'display_name': str(arr.display_name),
+                           'ttl': str(arr.ttl),
+                           'health_check_monitor_id': str(arr.health_check_monitor_id),
+                           'template': str(arr.template),
+                           'time_created': str(arr.time_created),
+                           'compartment_name': str(compartment['name']),
+                           'compartment_id': str(compartment['id']),
+                           'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                           'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                           'region_name': str(self.config['region'])
+                           }
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_edge_dns_zone", e)
             return data
 
     ##########################################################################
@@ -7747,7 +7997,11 @@ class ShowOCIService(object):
 
             services = []
             try:
-                services = oci.pagination.list_call_get_all_results(limits_client.list_services, tenancy_id, sort_by="name").data
+                services = oci.pagination.list_call_get_all_results(
+                    limits_client.list_services,
+                    tenancy_id, sort_by="name",
+                    retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                ).data
             except oci.exceptions.ServiceError as e:
                 if self.__check_service_error(e.code):
                     self.__load_print_auth_warning("a", False)
@@ -7840,7 +8094,12 @@ class ShowOCIService(object):
 
                 quotas = []
                 try:
-                    quotas = quotas_client.list_quotas(compartment['id'], lifecycle_state=oci.limits.models.QuotaSummary.LIFECYCLE_STATE_ACTIVE, sort_by="NAME").data
+                    quotas = quotas_client.list_quotas(
+                        compartment['id'],
+                        lifecycle_state=oci.limits.models.QuotaSummary.LIFECYCLE_STATE_ACTIVE,
+                        sort_by="NAME",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
                 except oci.exceptions.ServiceError as e:
                     if 'go to your home region' in str(e):
                         print("Service can only run at home region, skipping")

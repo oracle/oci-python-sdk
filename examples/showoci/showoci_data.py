@@ -2489,25 +2489,19 @@ class ShowOCIData(object):
     def __get_monitoring_main(self, region_name, compartment):
         try:
             alarms = self.service.search_multi_items(self.service.C_MONITORING, self.service.C_MONITORING_ALARMS, 'region_name', region_name, 'compartment_id', compartment['id'])
+            events = self.service.search_multi_items(self.service.C_MONITORING, self.service.C_MONITORING_EVENTS, 'region_name', region_name, 'compartment_id', compartment['id'])
 
-            data = []
+            data = {}
+            # if events add it
+            if events:
+                data['events'] = events
+
+            # if events add it
             if alarms:
+                data['alarms'] = []
                 for alarm in alarms:
-                    val = {'id': alarm['id'],
-                           'display_name': alarm['display_name'],
-                           'metric_compartment_id': alarm['metric_compartment_id'],
-                           'namespace': alarm['namespace'],
-                           'query': alarm['query'],
-                           'is_enabled': alarm['is_enabled'],
-                           'destinations': alarm['destinations'],
-                           'destinations_names': [],
-                           'severity': alarm['severity'],
-                           'defined_tags': alarm['defined_tags'],
-                           'freeform_tags': alarm['freeform_tags'],
-                           'compartment_name': alarm['compartment_name'],
-                           'compartment_id': alarm['compartment_id'],
-                           'region_name': alarm['region_name']
-                           }
+                    val = alarm
+                    val['destinations_names'] = []
 
                     # find the topics
                     for dest in alarm['destinations']:
@@ -2515,7 +2509,7 @@ class ShowOCIData(object):
                         if topic:
                             val['destinations_names'].append(topic['name'] + " - " + topic['description'])
 
-                    data.append(val)
+                    data['alarms'].append(val)
             return data
 
         except Exception as e:
@@ -2561,10 +2555,19 @@ class ShowOCIData(object):
         try:
             healthcheck_http = self.service.search_multi_items(self.service.C_EDGE, self.service.C_EDGE_HEALTHCHECK_HTTP, 'region_name', region_name, 'compartment_id', compartment['id'])
             healthcheck_ping = self.service.search_multi_items(self.service.C_EDGE, self.service.C_EDGE_HEALTHCHECK_PING, 'region_name', region_name, 'compartment_id', compartment['id'])
+            dns_zone = self.service.search_multi_items(self.service.C_EDGE, self.service.C_EDGE_DNS_ZONE, 'region_name', region_name, 'compartment_id', compartment['id'])
+            dns_steering = self.service.search_multi_items(self.service.C_EDGE, self.service.C_EDGE_DNS_STEERING, 'region_name', region_name, 'compartment_id', compartment['id'])
 
             data = {}
             if len(healthcheck_http) > 0 or len(healthcheck_ping) > 0:
                 data['healthcheck'] = {'http': healthcheck_http, 'ping': healthcheck_ping}
+
+            if dns_zone:
+                data['dns_zone'] = dns_zone
+
+            if dns_steering:
+                data['dns_steering'] = dns_steering
+
             return data
 
         except Exception as e:
