@@ -7,6 +7,7 @@
 #    * create cp_source_PYSDK under tenancy
 #    * create cp_target_PYSDK under tenancy
 #    * move cp_source_PYSDK under cp_target_PYSDK
+import time
 
 import oci
 
@@ -35,6 +36,9 @@ create_compartment_response = identity.create_compartment(
 )
 compartment_target_id = create_compartment_response.data.id
 print('Created target compartment: {}'.format(create_compartment_response.data))
+
+# require a few seconds for system to process
+time.sleep(10)
 
 move_compartment_response = identity.move_compartment(
     compartment_source_id,

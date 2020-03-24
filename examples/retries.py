@@ -25,13 +25,14 @@ def do_vcn_interactions_with_retries(virtual_network_client, compartment_id, ret
         retry_strategy=retry_strategy
     )
 
-    vcn = oci.wait_until(
+    vcn_response = oci.wait_until(
         virtual_network_client,
         virtual_network_client.get_vcn(result.data.id),
         'lifecycle_state',
         'AVAILABLE',
         max_wait_seconds=300
-    ).data
+    )
+    vcn = vcn_response.data
     print('Created VCN')
     print('================')
     print(vcn)
@@ -50,7 +51,7 @@ def do_vcn_interactions_with_retries(virtual_network_client, compartment_id, ret
     virtual_network_client.delete_vcn(vcn.id, retry_strategy=retry_strategy)
     oci.wait_until(
         virtual_network_client,
-        virtual_network_client.get_vcn(vcn.id),
+        vcn_response,
         'lifecycle_state',
         'TERMINATED',
         max_wait_seconds=300,

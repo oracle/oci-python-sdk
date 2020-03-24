@@ -17,7 +17,7 @@ compartment_id = config["tenancy"]
 def create_adw(db_client):
     # Create the model and populate the values
     # See: https://docs.cloud.oracle.com/iaas/Content/Database/Tasks/adwcreating.htm
-    adw_request = oci.database.models.CreateAutonomousDataWarehouseDetails()
+    adw_request = oci.database.models.CreateAutonomousDatabaseDetails()
 
     adw_request.compartment_id = compartment_id
     adw_request.cpu_core_count = 1
@@ -27,12 +27,14 @@ def create_adw(db_client):
     adw_request.license_model = adw_request.LICENSE_MODEL_BRING_YOUR_OWN_LICENSE
     # Remeber this is only an example.  Please change the password.
     adw_request.admin_password = "Welcome1!SDK"
+    adw_request.db_workload = "DW"
 
-    adw_response = db_client.create_autonomous_data_warehouse(
-        create_autonomous_data_warehouse_details=adw_request,
+    adw_response = db_client.create_autonomous_database(
+        create_autonomous_database_details=adw_request,
         retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY)
 
     adw_id = adw_response.data.id
+    oci.wait_until(db_client, db_client.get_autonomous_database(adw_id), 'lifecycle_state', 'AVAILABLE')
     print("Created Automated Data Warehouse {}".format(adw_id))
 
     return adw_id
@@ -40,7 +42,9 @@ def create_adw(db_client):
 
 def delete_adw(db_client, adw_id):
     # Delete the autonomous data warehouse
-    response = db_client.delete_autonomous_data_warehouse(adw_id)
+    response = db_client.delete_autonomous_database(adw_id)
+    print("Waiting Automated Data Warehouse to be deleted")
+    oci.wait_until(db_client, db_client.get_autonomous_database(adw_id), 'lifecycle_state', 'TERMINATED')
     print(response.data)
 
 

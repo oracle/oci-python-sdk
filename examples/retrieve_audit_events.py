@@ -25,14 +25,12 @@ def get_compartments(identity, tenancy_id):
     '''
     Retrieve the list of compartments under the tenancy.
     '''
-    compartment_ocids = []
-    #  Store tenancy id as the first compartment
-    compartment_ocids.append(tenancy_id)
     list_compartments_response = oci.pagination.list_call_get_all_results(
         identity.list_compartments,
         compartment_id=tenancy_id).data
-    for c in list_compartments_response:
-        compartment_ocids.append(c.id)
+
+    compartment_ocids = [c.id for c in filter(lambda c: c.lifecycle_state == 'ACTIVE', list_compartments_response)]
+
     return compartment_ocids
 
 

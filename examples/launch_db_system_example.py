@@ -60,16 +60,10 @@ def create_vcn(virtual_network, compartment_id, cidr_block):
 
 
 def delete_vcn(virtual_network, vcn):
-    virtual_network.delete_vcn(vcn.id)
-    oci.wait_until(
-        virtual_network,
-        virtual_network.get_vcn(vcn.id),
-        'lifecycle_state',
-        'TERMINATED',
-        # For a deletion, the record may no longer be available and the waiter may encounter a 404 when trying to retrieve it.
-        # This flag tells the waiter to consider 404s as successful (which is only really valid for delete/terminate since
-        # the record not being there anymore can signify a successful delete/terminate)
-        succeed_on_not_found=True
+    composite_virtual_network = oci.core.VirtualNetworkClientCompositeOperations(virtual_network)
+    composite_virtual_network.delete_vcn_and_wait_for_state(
+        vcn.id,
+        [oci.core.models.Vcn.LIFECYCLE_STATE_TERMINATED]
     )
     print('Deleted VCN: {}'.format(vcn.id))
 
@@ -98,15 +92,11 @@ def create_subnet(virtual_network, vcn, availability_domain):
 
 
 def delete_subnet(virtual_network, subnet):
-    virtual_network.delete_subnet(subnet.id)
-    oci.wait_until(
-        virtual_network,
-        virtual_network.get_subnet(subnet.id),
-        'lifecycle_state',
-        'TERMINATED',
-        succeed_on_not_found=True
+    composite_virtual_network = oci.core.VirtualNetworkClientCompositeOperations(virtual_network)
+    composite_virtual_network.delete_subnet_and_wait_for_state(
+        subnet.id,
+        [oci.core.models.Subnet.LIFECYCLE_STATE_TERMINATED]
     )
-    print('Deleted Subnet: {}'.format(subnet.id))
 
 
 def list_db_system_shapes(database_client, compartment_id):
@@ -114,8 +104,8 @@ def list_db_system_shapes(database_client, compartment_id):
     # in oci.pagination to get all the results without having to manually deal with page tokens
     list_db_shape_results = oci.pagination.list_call_get_all_results(
         database_client.list_db_system_shapes,
-        availability_domain,
-        compartment_id
+        availability_domain=availability_domain,
+        compartment_id=compartment_id
     )
 
     print('\nDB System Shapes')
@@ -128,7 +118,7 @@ def list_db_versions(database_client, compartment_id):
     # all the results without having to manually deal with page tokens
     list_db_version_results = oci.pagination.list_call_get_all_results(
         database_client.list_db_versions,
-        compartment_id
+        compartment_id=compartment_id
     )
 
     print('\nDB Versions')
@@ -139,7 +129,7 @@ def list_db_versions(database_client, compartment_id):
     # the usage of the db_system_shape keword argument
     list_db_version_results = oci.pagination.list_call_get_all_results(
         database_client.list_db_versions,
-        compartment_id,
+        compartment_id=compartment_id,
         db_system_shape=DB_SYSTEM_SHAPE
     )
 
@@ -154,8 +144,8 @@ def list_db_home_and_databases_under_db_system(database_client, compartment_id, 
     # here
     list_db_homes_response = oci.pagination.list_call_get_all_results(
         database_client.list_db_homes,
-        compartment_id,
-        db_system.id
+        compartment_id=compartment_id,
+        db_system_id=db_system.id
     )
     print('\nDB Homes For DB System')
     print('===========================')
@@ -173,8 +163,8 @@ def list_db_home_and_databases_under_db_system(database_client, compartment_id, 
     # operation so we can use the functions in oci.pagination here
     list_databases_response = oci.pagination.list_call_get_all_results(
         database_client.list_databases,
-        compartment_id,
-        db_home.id
+        compartment_id=compartment_id,
+        db_home_id=db_home.id
     )
     print('\nDatabases For DB Home')
     print('===========================')
