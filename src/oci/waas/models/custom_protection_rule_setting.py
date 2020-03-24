@@ -35,19 +35,26 @@ class CustomProtectionRuleSetting(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type action: str
 
+        :param exclusions:
+            The value to assign to the exclusions property of this CustomProtectionRuleSetting.
+        :type exclusions: list[ProtectionRuleExclusion]
+
         """
         self.swagger_types = {
             'id': 'str',
-            'action': 'str'
+            'action': 'str',
+            'exclusions': 'list[ProtectionRuleExclusion]'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'action': 'action'
+            'action': 'action',
+            'exclusions': 'exclusions'
         }
 
         self._id = None
         self._action = None
+        self._exclusions = None
 
     @property
     def id(self):
@@ -108,6 +115,26 @@ class CustomProtectionRuleSetting(object):
         if not value_allowed_none_or_none_sentinel(action, allowed_values):
             action = 'UNKNOWN_ENUM_VALUE'
         self._action = action
+
+    @property
+    def exclusions(self):
+        """
+        Gets the exclusions of this CustomProtectionRuleSetting.
+
+        :return: The exclusions of this CustomProtectionRuleSetting.
+        :rtype: list[ProtectionRuleExclusion]
+        """
+        return self._exclusions
+
+    @exclusions.setter
+    def exclusions(self, exclusions):
+        """
+        Sets the exclusions of this CustomProtectionRuleSetting.
+
+        :param exclusions: The exclusions of this CustomProtectionRuleSetting.
+        :type: list[ProtectionRuleExclusion]
+        """
+        self._exclusions = exclusions
 
     def __repr__(self):
         return formatted_flat_dict(self)

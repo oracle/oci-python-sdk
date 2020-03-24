@@ -128,6 +128,10 @@ class BackupSummary(object):
             The value to assign to the database_size_in_gbs property of this BackupSummary.
         :type database_size_in_gbs: float
 
+        :param shape:
+            The value to assign to the shape property of this BackupSummary.
+        :type shape: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -141,7 +145,8 @@ class BackupSummary(object):
             'availability_domain': 'str',
             'lifecycle_state': 'str',
             'database_edition': 'str',
-            'database_size_in_gbs': 'float'
+            'database_size_in_gbs': 'float',
+            'shape': 'str'
         }
 
         self.attribute_map = {
@@ -156,7 +161,8 @@ class BackupSummary(object):
             'availability_domain': 'availabilityDomain',
             'lifecycle_state': 'lifecycleState',
             'database_edition': 'databaseEdition',
-            'database_size_in_gbs': 'databaseSizeInGBs'
+            'database_size_in_gbs': 'databaseSizeInGBs',
+            'shape': 'shape'
         }
 
         self._id = None
@@ -171,6 +177,7 @@ class BackupSummary(object):
         self._lifecycle_state = None
         self._database_edition = None
         self._database_size_in_gbs = None
+        self._shape = None
 
     @property
     def id(self):
@@ -489,6 +496,30 @@ class BackupSummary(object):
         :type: float
         """
         self._database_size_in_gbs = database_size_in_gbs
+
+    @property
+    def shape(self):
+        """
+        Gets the shape of this BackupSummary.
+        Shape of the backup's source database.
+
+
+        :return: The shape of this BackupSummary.
+        :rtype: str
+        """
+        return self._shape
+
+    @shape.setter
+    def shape(self, shape):
+        """
+        Sets the shape of this BackupSummary.
+        Shape of the backup's source database.
+
+
+        :param shape: The shape of this BackupSummary.
+        :type: str
+        """
+        self._shape = shape
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -99,6 +99,10 @@ class OceInstance(object):
             The value to assign to the admin_email property of this OceInstance.
         :type admin_email: str
 
+        :param waf_primary_domain:
+            The value to assign to the waf_primary_domain property of this OceInstance.
+        :type waf_primary_domain: str
+
         :param time_created:
             The value to assign to the time_created property of this OceInstance.
         :type time_created: datetime
@@ -143,6 +147,7 @@ class OceInstance(object):
             'instance_usage_type': 'str',
             'object_storage_namespace': 'str',
             'admin_email': 'str',
+            'waf_primary_domain': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
@@ -165,6 +170,7 @@ class OceInstance(object):
             'instance_usage_type': 'instanceUsageType',
             'object_storage_namespace': 'objectStorageNamespace',
             'admin_email': 'adminEmail',
+            'waf_primary_domain': 'wafPrimaryDomain',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
@@ -186,6 +192,7 @@ class OceInstance(object):
         self._instance_usage_type = None
         self._object_storage_namespace = None
         self._admin_email = None
+        self._waf_primary_domain = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
@@ -483,6 +490,30 @@ class OceInstance(object):
         :type: str
         """
         self._admin_email = admin_email
+
+    @property
+    def waf_primary_domain(self):
+        """
+        Gets the waf_primary_domain of this OceInstance.
+        Web Application Firewall(WAF) primary domain
+
+
+        :return: The waf_primary_domain of this OceInstance.
+        :rtype: str
+        """
+        return self._waf_primary_domain
+
+    @waf_primary_domain.setter
+    def waf_primary_domain(self, waf_primary_domain):
+        """
+        Sets the waf_primary_domain of this OceInstance.
+        Web Application Firewall(WAF) primary domain
+
+
+        :param waf_primary_domain: The waf_primary_domain of this OceInstance.
+        :type: str
+        """
+        self._waf_primary_domain = waf_primary_domain
 
     @property
     def time_created(self):

@@ -114,7 +114,9 @@ class UpdateHttpRedirectDetails(object):
     def response_code(self):
         """
         Gets the response_code of this UpdateHttpRedirectDetails.
-        The response code returned for the redirect to the client. reference - https://tools.ietf.org/html/rfc7231#section-6.4
+        The response code returned for the redirect to the client. For more information, see `RFC 7231`__.
+
+        __ https://tools.ietf.org/html/rfc7231#section-6.4
 
 
         :return: The response_code of this UpdateHttpRedirectDetails.
@@ -126,7 +128,9 @@ class UpdateHttpRedirectDetails(object):
     def response_code(self, response_code):
         """
         Sets the response_code of this UpdateHttpRedirectDetails.
-        The response code returned for the redirect to the client. reference - https://tools.ietf.org/html/rfc7231#section-6.4
+        The response code returned for the redirect to the client. For more information, see `RFC 7231`__.
+
+        __ https://tools.ietf.org/html/rfc7231#section-6.4
 
 
         :param response_code: The response_code of this UpdateHttpRedirectDetails.

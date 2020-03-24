@@ -259,7 +259,7 @@ def set_parser_arguments():
     parser.add_argument('-p', default="", dest='proxy', help='Set Proxy (i.e. www-proxy-server.com:80) ')
     parser.add_argument('-rg', default="", dest='region', help='Filter by Region')
     parser.add_argument('-cp', default="", dest='compart', help='Filter by Compartment Name or OCID')
-    parser.add_argument('-cpr', default="", dest='compart_recur', help='Filter by Comp Name or OCID Recursive')
+    parser.add_argument('-cpr', default="", dest='compart_recur', help='Filter by Comp Name Recursive')
     parser.add_argument('-cpath', default="", dest='compartpath', help='Filter by Compartment path ,(i.e. -cpath "Adi / Sub"')
     parser.add_argument('-tenantid', default="", dest='tenantid', help='Override confile file tenancy_id')
     parser.add_argument('-cf', type=argparse.FileType('r'), dest='config', help="Config File")

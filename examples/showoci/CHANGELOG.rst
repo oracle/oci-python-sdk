@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.03.24 - 2020-03-24
+=====================
+* Added Identity User to the CSV
+
+=====================
 20.03.11 - 2020-03-11
 =====================
 * Add support for Data Science, Data Flow, Data Catalog using -dataai

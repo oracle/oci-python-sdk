@@ -43,25 +43,32 @@ class WaasPolicyCustomProtectionRuleSummary(object):
             The value to assign to the mod_security_rule_ids property of this WaasPolicyCustomProtectionRuleSummary.
         :type mod_security_rule_ids: list[str]
 
+        :param exclusions:
+            The value to assign to the exclusions property of this WaasPolicyCustomProtectionRuleSummary.
+        :type exclusions: list[ProtectionRuleExclusion]
+
         """
         self.swagger_types = {
             'id': 'str',
             'display_name': 'str',
             'action': 'str',
-            'mod_security_rule_ids': 'list[str]'
+            'mod_security_rule_ids': 'list[str]',
+            'exclusions': 'list[ProtectionRuleExclusion]'
         }
 
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
             'action': 'action',
-            'mod_security_rule_ids': 'modSecurityRuleIds'
+            'mod_security_rule_ids': 'modSecurityRuleIds',
+            'exclusions': 'exclusions'
         }
 
         self._id = None
         self._display_name = None
         self._action = None
         self._mod_security_rule_ids = None
+        self._exclusions = None
 
     @property
     def id(self):
@@ -174,6 +181,26 @@ class WaasPolicyCustomProtectionRuleSummary(object):
         :type: list[str]
         """
         self._mod_security_rule_ids = mod_security_rule_ids
+
+    @property
+    def exclusions(self):
+        """
+        Gets the exclusions of this WaasPolicyCustomProtectionRuleSummary.
+
+        :return: The exclusions of this WaasPolicyCustomProtectionRuleSummary.
+        :rtype: list[ProtectionRuleExclusion]
+        """
+        return self._exclusions
+
+    @exclusions.setter
+    def exclusions(self, exclusions):
+        """
+        Sets the exclusions of this WaasPolicyCustomProtectionRuleSummary.
+
+        :param exclusions: The exclusions of this WaasPolicyCustomProtectionRuleSummary.
+        :type: list[ProtectionRuleExclusion]
+        """
+        self._exclusions = exclusions
 
     def __repr__(self):
         return formatted_flat_dict(self)

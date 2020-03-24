@@ -63,6 +63,10 @@ class HumanInteractionChallenge(object):
             The value to assign to the challenge_settings property of this HumanInteractionChallenge.
         :type challenge_settings: BlockChallengeSettings
 
+        :param is_nat_enabled:
+            The value to assign to the is_nat_enabled property of this HumanInteractionChallenge.
+        :type is_nat_enabled: bool
+
         """
         self.swagger_types = {
             'is_enabled': 'bool',
@@ -73,7 +77,8 @@ class HumanInteractionChallenge(object):
             'interaction_threshold': 'int',
             'recording_period_in_seconds': 'int',
             'set_http_header': 'Header',
-            'challenge_settings': 'BlockChallengeSettings'
+            'challenge_settings': 'BlockChallengeSettings',
+            'is_nat_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -85,7 +90,8 @@ class HumanInteractionChallenge(object):
             'interaction_threshold': 'interactionThreshold',
             'recording_period_in_seconds': 'recordingPeriodInSeconds',
             'set_http_header': 'setHttpHeader',
-            'challenge_settings': 'challengeSettings'
+            'challenge_settings': 'challengeSettings',
+            'is_nat_enabled': 'isNatEnabled'
         }
 
         self._is_enabled = None
@@ -97,6 +103,7 @@ class HumanInteractionChallenge(object):
         self._recording_period_in_seconds = None
         self._set_http_header = None
         self._challenge_settings = None
+        self._is_nat_enabled = None
 
     @property
     def is_enabled(self):
@@ -315,6 +322,30 @@ class HumanInteractionChallenge(object):
         :type: BlockChallengeSettings
         """
         self._challenge_settings = challenge_settings
+
+    @property
+    def is_nat_enabled(self):
+        """
+        Gets the is_nat_enabled of this HumanInteractionChallenge.
+        When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
+
+
+        :return: The is_nat_enabled of this HumanInteractionChallenge.
+        :rtype: bool
+        """
+        return self._is_nat_enabled
+
+    @is_nat_enabled.setter
+    def is_nat_enabled(self, is_nat_enabled):
+        """
+        Sets the is_nat_enabled of this HumanInteractionChallenge.
+        When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
+
+
+        :param is_nat_enabled: The is_nat_enabled of this HumanInteractionChallenge.
+        :type: bool
+        """
+        self._is_nat_enabled = is_nat_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)
