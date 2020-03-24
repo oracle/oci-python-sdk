@@ -2147,6 +2147,7 @@ class ShowOCICSV(object):
             self.__print_header("Processing CSV Files", 0)
             self.__export_to_csv_file("identity_policy", self.csv_identity_policies)
             self.__export_to_csv_file("identity_groups", self.csv_identity_groups)
+            self.__export_to_csv_file("identity_users", self.csv_identity_users)
             self.__export_to_csv_file("compute", self.csv_compute)
             self.__export_to_csv_file("network_subnet", self.csv_network_subnet)
             self.__export_to_csv_file("network_routes", self.csv_network_routes)
@@ -2264,6 +2265,7 @@ class ShowOCICSV(object):
         try:
             for user in users:
                 data = {
+                    'id': user['id'],
                     'user_name': user['name'],
                     'description': user['description'],
                     'is_mfa_activated': user['is_mfa_activated'],

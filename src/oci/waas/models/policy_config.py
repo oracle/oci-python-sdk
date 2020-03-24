@@ -103,6 +103,22 @@ class PolicyConfig(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type cipher_group: str
 
+        :param load_balancing_method:
+            The value to assign to the load_balancing_method property of this PolicyConfig.
+        :type load_balancing_method: LoadBalancingMethod
+
+        :param websocket_path_prefixes:
+            The value to assign to the websocket_path_prefixes property of this PolicyConfig.
+        :type websocket_path_prefixes: list[str]
+
+        :param is_sni_enabled:
+            The value to assign to the is_sni_enabled property of this PolicyConfig.
+        :type is_sni_enabled: bool
+
+        :param health_checks:
+            The value to assign to the health_checks property of this PolicyConfig.
+        :type health_checks: HealthCheck
+
         """
         self.swagger_types = {
             'certificate_id': 'str',
@@ -114,7 +130,11 @@ class PolicyConfig(object):
             'client_address_header': 'str',
             'is_cache_control_respected': 'bool',
             'is_response_buffering_enabled': 'bool',
-            'cipher_group': 'str'
+            'cipher_group': 'str',
+            'load_balancing_method': 'LoadBalancingMethod',
+            'websocket_path_prefixes': 'list[str]',
+            'is_sni_enabled': 'bool',
+            'health_checks': 'HealthCheck'
         }
 
         self.attribute_map = {
@@ -127,7 +147,11 @@ class PolicyConfig(object):
             'client_address_header': 'clientAddressHeader',
             'is_cache_control_respected': 'isCacheControlRespected',
             'is_response_buffering_enabled': 'isResponseBufferingEnabled',
-            'cipher_group': 'cipherGroup'
+            'cipher_group': 'cipherGroup',
+            'load_balancing_method': 'loadBalancingMethod',
+            'websocket_path_prefixes': 'websocketPathPrefixes',
+            'is_sni_enabled': 'isSniEnabled',
+            'health_checks': 'healthChecks'
         }
 
         self._certificate_id = None
@@ -140,6 +164,10 @@ class PolicyConfig(object):
         self._is_cache_control_respected = None
         self._is_response_buffering_enabled = None
         self._cipher_group = None
+        self._load_balancing_method = None
+        self._websocket_path_prefixes = None
+        self._is_sni_enabled = None
+        self._health_checks = None
 
     @property
     def certificate_id(self):
@@ -452,6 +480,98 @@ class PolicyConfig(object):
         if not value_allowed_none_or_none_sentinel(cipher_group, allowed_values):
             cipher_group = 'UNKNOWN_ENUM_VALUE'
         self._cipher_group = cipher_group
+
+    @property
+    def load_balancing_method(self):
+        """
+        Gets the load_balancing_method of this PolicyConfig.
+        An object that represents a load balancing method and its properties.
+
+
+        :return: The load_balancing_method of this PolicyConfig.
+        :rtype: LoadBalancingMethod
+        """
+        return self._load_balancing_method
+
+    @load_balancing_method.setter
+    def load_balancing_method(self, load_balancing_method):
+        """
+        Sets the load_balancing_method of this PolicyConfig.
+        An object that represents a load balancing method and its properties.
+
+
+        :param load_balancing_method: The load_balancing_method of this PolicyConfig.
+        :type: LoadBalancingMethod
+        """
+        self._load_balancing_method = load_balancing_method
+
+    @property
+    def websocket_path_prefixes(self):
+        """
+        Gets the websocket_path_prefixes of this PolicyConfig.
+        ModSecurity is not capable to inspect WebSockets. Therefore paths specified here have WAF disabled if Connection request header from the client has the value Upgrade (case insensitive matching) and Upgrade request header has the value websocket (case insensitive matching). Paths matches if the concatenation of request URL path and query starts with the contents of the one of `websocketPathPrefixes` array value. In All other cases challenges, like JSC, HIC and etc., remain active.
+
+
+        :return: The websocket_path_prefixes of this PolicyConfig.
+        :rtype: list[str]
+        """
+        return self._websocket_path_prefixes
+
+    @websocket_path_prefixes.setter
+    def websocket_path_prefixes(self, websocket_path_prefixes):
+        """
+        Sets the websocket_path_prefixes of this PolicyConfig.
+        ModSecurity is not capable to inspect WebSockets. Therefore paths specified here have WAF disabled if Connection request header from the client has the value Upgrade (case insensitive matching) and Upgrade request header has the value websocket (case insensitive matching). Paths matches if the concatenation of request URL path and query starts with the contents of the one of `websocketPathPrefixes` array value. In All other cases challenges, like JSC, HIC and etc., remain active.
+
+
+        :param websocket_path_prefixes: The websocket_path_prefixes of this PolicyConfig.
+        :type: list[str]
+        """
+        self._websocket_path_prefixes = websocket_path_prefixes
+
+    @property
+    def is_sni_enabled(self):
+        """
+        Gets the is_sni_enabled of this PolicyConfig.
+        SNI stands for Server Name Indication and is an extension of the TLS protocol. It indicates which hostname is being contacted by the browser at the beginning of the 'handshake'-process. This allows a server to connect multiple SSL Certificates to one IP address and port.
+
+
+        :return: The is_sni_enabled of this PolicyConfig.
+        :rtype: bool
+        """
+        return self._is_sni_enabled
+
+    @is_sni_enabled.setter
+    def is_sni_enabled(self, is_sni_enabled):
+        """
+        Sets the is_sni_enabled of this PolicyConfig.
+        SNI stands for Server Name Indication and is an extension of the TLS protocol. It indicates which hostname is being contacted by the browser at the beginning of the 'handshake'-process. This allows a server to connect multiple SSL Certificates to one IP address and port.
+
+
+        :param is_sni_enabled: The is_sni_enabled of this PolicyConfig.
+        :type: bool
+        """
+        self._is_sni_enabled = is_sni_enabled
+
+    @property
+    def health_checks(self):
+        """
+        Gets the health_checks of this PolicyConfig.
+
+        :return: The health_checks of this PolicyConfig.
+        :rtype: HealthCheck
+        """
+        return self._health_checks
+
+    @health_checks.setter
+    def health_checks(self, health_checks):
+        """
+        Sets the health_checks of this PolicyConfig.
+
+        :param health_checks: The health_checks of this PolicyConfig.
+        :type: HealthCheck
+        """
+        self._health_checks = health_checks
 
     def __repr__(self):
         return formatted_flat_dict(self)

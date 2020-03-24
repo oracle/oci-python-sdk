@@ -22,6 +22,7 @@ Waas
 
     oci.waas.models.AccessRule
     oci.waas.models.AccessRuleCriteria
+    oci.waas.models.AddHttpResponseHeaderAction
     oci.waas.models.AddressList
     oci.waas.models.AddressListSummary
     oci.waas.models.AddressRateLimiting
@@ -51,13 +52,18 @@ Waas
     oci.waas.models.CustomProtectionRuleSummary
     oci.waas.models.DeviceFingerprintChallenge
     oci.waas.models.EdgeSubnet
+    oci.waas.models.ExtendHttpResponseHeaderAction
     oci.waas.models.GoodBot
     oci.waas.models.Header
+    oci.waas.models.HeaderManipulationAction
+    oci.waas.models.HealthCheck
     oci.waas.models.HttpRedirect
     oci.waas.models.HttpRedirectSummary
     oci.waas.models.HttpRedirectTarget
     oci.waas.models.HumanInteractionChallenge
+    oci.waas.models.IPHashLoadBalancingMethod
     oci.waas.models.JsChallenge
+    oci.waas.models.LoadBalancingMethod
     oci.waas.models.Origin
     oci.waas.models.OriginGroup
     oci.waas.models.OriginGroupOrigins
@@ -68,6 +74,9 @@ Waas
     oci.waas.models.ProtectionSettings
     oci.waas.models.PurgeCache
     oci.waas.models.Recommendation
+    oci.waas.models.RemoveHttpResponseHeaderAction
+    oci.waas.models.RoundRobinLoadBalancingMethod
+    oci.waas.models.StickyCookieLoadBalancingMethod
     oci.waas.models.ThreatFeed
     oci.waas.models.ThreatFeedAction
     oci.waas.models.UpdateAddressListDetails

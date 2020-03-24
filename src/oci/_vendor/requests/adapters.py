@@ -371,7 +371,9 @@ class HTTPAdapter(BaseAdapter):
         :param request: The :class:`PreparedRequest <PreparedRequest>` to add headers to.
         :param kwargs: The keyword arguments from the call to send().
         """
-        pass
+        # Set the default content type to application/octet-stream if not set
+        if (request.method == "POST" or request.method == "PUT") and "content-type" not in request.headers:
+            request.headers["content-type"] = "application/octet-stream"
 
     def proxy_headers(self, proxy):
         """Returns a dictionary of the headers to add to any request sent

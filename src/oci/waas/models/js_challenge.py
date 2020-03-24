@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class JsChallenge(object):
     """
-    The JavaScript challenge settings. Javascript Challenge is the function to filter abnormal or malicious bots and allow access to real clients.
+    The JavaScript challenge settings. JavaScript Challenge is the function to filter abnormal or malicious bots and allow access to real clients.
     """
 
     #: A constant which can be used with the action property of a JsChallenge.
@@ -51,6 +51,18 @@ class JsChallenge(object):
             The value to assign to the challenge_settings property of this JsChallenge.
         :type challenge_settings: BlockChallengeSettings
 
+        :param are_redirects_challenged:
+            The value to assign to the are_redirects_challenged property of this JsChallenge.
+        :type are_redirects_challenged: bool
+
+        :param criteria:
+            The value to assign to the criteria property of this JsChallenge.
+        :type criteria: list[AccessRuleCriteria]
+
+        :param is_nat_enabled:
+            The value to assign to the is_nat_enabled property of this JsChallenge.
+        :type is_nat_enabled: bool
+
         """
         self.swagger_types = {
             'is_enabled': 'bool',
@@ -58,7 +70,10 @@ class JsChallenge(object):
             'failure_threshold': 'int',
             'action_expiration_in_seconds': 'int',
             'set_http_header': 'Header',
-            'challenge_settings': 'BlockChallengeSettings'
+            'challenge_settings': 'BlockChallengeSettings',
+            'are_redirects_challenged': 'bool',
+            'criteria': 'list[AccessRuleCriteria]',
+            'is_nat_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -67,7 +82,10 @@ class JsChallenge(object):
             'failure_threshold': 'failureThreshold',
             'action_expiration_in_seconds': 'actionExpirationInSeconds',
             'set_http_header': 'setHttpHeader',
-            'challenge_settings': 'challengeSettings'
+            'challenge_settings': 'challengeSettings',
+            'are_redirects_challenged': 'areRedirectsChallenged',
+            'criteria': 'criteria',
+            'is_nat_enabled': 'isNatEnabled'
         }
 
         self._is_enabled = None
@@ -76,6 +94,9 @@ class JsChallenge(object):
         self._action_expiration_in_seconds = None
         self._set_http_header = None
         self._challenge_settings = None
+        self._are_redirects_challenged = None
+        self._criteria = None
+        self._is_nat_enabled = None
 
     @property
     def is_enabled(self):
@@ -222,6 +243,78 @@ class JsChallenge(object):
         :type: BlockChallengeSettings
         """
         self._challenge_settings = challenge_settings
+
+    @property
+    def are_redirects_challenged(self):
+        """
+        Gets the are_redirects_challenged of this JsChallenge.
+        When enabled, redirect responses from the origin will also be challenged. This will change HTTP 301/302 responses from origin to HTTP 200 with an HTML body containing JavaScript page redirection.
+
+
+        :return: The are_redirects_challenged of this JsChallenge.
+        :rtype: bool
+        """
+        return self._are_redirects_challenged
+
+    @are_redirects_challenged.setter
+    def are_redirects_challenged(self, are_redirects_challenged):
+        """
+        Sets the are_redirects_challenged of this JsChallenge.
+        When enabled, redirect responses from the origin will also be challenged. This will change HTTP 301/302 responses from origin to HTTP 200 with an HTML body containing JavaScript page redirection.
+
+
+        :param are_redirects_challenged: The are_redirects_challenged of this JsChallenge.
+        :type: bool
+        """
+        self._are_redirects_challenged = are_redirects_challenged
+
+    @property
+    def criteria(self):
+        """
+        Gets the criteria of this JsChallenge.
+        When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
+
+
+        :return: The criteria of this JsChallenge.
+        :rtype: list[AccessRuleCriteria]
+        """
+        return self._criteria
+
+    @criteria.setter
+    def criteria(self, criteria):
+        """
+        Sets the criteria of this JsChallenge.
+        When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
+
+
+        :param criteria: The criteria of this JsChallenge.
+        :type: list[AccessRuleCriteria]
+        """
+        self._criteria = criteria
+
+    @property
+    def is_nat_enabled(self):
+        """
+        Gets the is_nat_enabled of this JsChallenge.
+        When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
+
+
+        :return: The is_nat_enabled of this JsChallenge.
+        :rtype: bool
+        """
+        return self._is_nat_enabled
+
+    @is_nat_enabled.setter
+    def is_nat_enabled(self, is_nat_enabled):
+        """
+        Sets the is_nat_enabled of this JsChallenge.
+        When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
+
+
+        :param is_nat_enabled: The is_nat_enabled of this JsChallenge.
+        :type: bool
+        """
+        self._is_nat_enabled = is_nat_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

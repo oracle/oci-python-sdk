@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.12.1 - 2020-03-24
+====================
+
+Added
+-----
+* Support for Web Application Acceleration and Security configurations on instances in the Content and Experience service
+* Support for shared database homes on Exadata Cloud at Customer resources in the Database service
+* Support for Exadata database creation from backup in the Database service
+* Support for conditions on JavaScript challenges, new action types on access rules, new policy configuration settings, exclusions on custom protection rules, and IP address lists on IP whitelists in the Web Application Acceleration and Security service
+
+====================
 2.12.0 - 2020-03-17
 ====================
 

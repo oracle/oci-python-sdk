@@ -18,12 +18,17 @@ class CreateDatabaseBase(object):
     #: This constant has a value of "NONE"
     SOURCE_NONE = "NONE"
 
+    #: A constant which can be used with the source property of a CreateDatabaseBase.
+    #: This constant has a value of "DB_BACKUP"
+    SOURCE_DB_BACKUP = "DB_BACKUP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDatabaseBase object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.database.models.CreateNewDatabaseDetails`
+        * :class:`~oci.database.models.CreateDatabaseFromBackup`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -37,7 +42,7 @@ class CreateDatabaseBase(object):
 
         :param source:
             The value to assign to the source property of this CreateDatabaseBase.
-            Allowed values for this property are: "NONE"
+            Allowed values for this property are: "NONE", "DB_BACKUP"
         :type source: str
 
         """
@@ -67,6 +72,9 @@ class CreateDatabaseBase(object):
 
         if type == 'NONE':
             return 'CreateNewDatabaseDetails'
+
+        if type == 'DB_BACKUP':
+            return 'CreateDatabaseFromBackup'
         else:
             return 'CreateDatabaseBase'
 
@@ -128,9 +136,10 @@ class CreateDatabaseBase(object):
         **[Required]** Gets the source of this CreateDatabaseBase.
         The source of the database:
         Use `NONE` for creating a new database.
+        Use `DB_BACKUP` for creating a new database by restoring from a backup.
         The default is `NONE`.
 
-        Allowed values for this property are: "NONE"
+        Allowed values for this property are: "NONE", "DB_BACKUP"
 
 
         :return: The source of this CreateDatabaseBase.
@@ -144,13 +153,14 @@ class CreateDatabaseBase(object):
         Sets the source of this CreateDatabaseBase.
         The source of the database:
         Use `NONE` for creating a new database.
+        Use `DB_BACKUP` for creating a new database by restoring from a backup.
         The default is `NONE`.
 
 
         :param source: The source of this CreateDatabaseBase.
         :type: str
         """
-        allowed_values = ["NONE"]
+        allowed_values = ["NONE", "DB_BACKUP"]
         if not value_allowed_none_or_none_sentinel(source, allowed_values):
             raise ValueError(
                 "Invalid value for `source`, must be None or one of {0}"

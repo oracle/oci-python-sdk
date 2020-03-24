@@ -2269,7 +2269,7 @@ class WaasClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated call. In unspecified, defaults to `10`.
+            The maximum number of items to return in a paginated call. If unspecified, defaults to `10`.
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous paginated call.
@@ -2360,7 +2360,7 @@ class WaasClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated call. In unspecified, defaults to `10`.
+            The maximum number of items to return in a paginated call. If unspecified, defaults to `10`.
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous paginated call.
@@ -2504,7 +2504,7 @@ class WaasClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated call. In unspecified, defaults to `10`.
+            The maximum number of items to return in a paginated call. If unspecified, defaults to `10`.
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous paginated call.
@@ -2599,7 +2599,7 @@ class WaasClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated call. In unspecified, defaults to `10`.
+            The maximum number of items to return in a paginated call. If unspecified, defaults to `10`.
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous paginated call.
@@ -2690,7 +2690,7 @@ class WaasClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated call. In unspecified, defaults to `10`.
+            The maximum number of items to return in a paginated call. If unspecified, defaults to `10`.
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous paginated call.
@@ -2833,7 +2833,7 @@ class WaasClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated call. In unspecified, defaults to `10`.
+            The maximum number of items to return in a paginated call. If unspecified, defaults to `10`.
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous paginated call.
@@ -2971,7 +2971,7 @@ class WaasClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated call. In unspecified, defaults to `10`.
+            The maximum number of items to return in a paginated call. If unspecified, defaults to `10`.
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous paginated call.
@@ -3080,7 +3080,7 @@ class WaasClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated call. In unspecified, defaults to `10`.
+            The maximum number of items to return in a paginated call. If unspecified, defaults to `10`.
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous paginated call.
@@ -3172,7 +3172,7 @@ class WaasClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated call. In unspecified, defaults to `10`.
+            The maximum number of items to return in a paginated call. If unspecified, defaults to `10`.
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous paginated call.
@@ -3293,7 +3293,7 @@ class WaasClient(object):
             Allowed values are: "DETECT", "BLOCK"
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated call. In unspecified, defaults to `10`.
+            The maximum number of items to return in a paginated call. If unspecified, defaults to `10`.
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous paginated call.
@@ -3395,7 +3395,7 @@ class WaasClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated call. In unspecified, defaults to `10`.
+            The maximum number of items to return in a paginated call. If unspecified, defaults to `10`.
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous paginated call.
@@ -3486,7 +3486,7 @@ class WaasClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated call. In unspecified, defaults to `10`.
+            The maximum number of items to return in a paginated call. If unspecified, defaults to `10`.
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous paginated call.
@@ -3629,7 +3629,7 @@ class WaasClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated call. In unspecified, defaults to `10`.
+            The maximum number of items to return in a paginated call. If unspecified, defaults to `10`.
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous paginated call.
@@ -3746,7 +3746,7 @@ class WaasClient(object):
             A filter that limits returned events to those occurring before a date and time, specified in RFC 3339 format.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated call. In unspecified, defaults to `10`.
+            The maximum number of items to return in a paginated call. If unspecified, defaults to `10`.
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous paginated call.
@@ -3858,7 +3858,7 @@ class WaasClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated call. In unspecified, defaults to `20`.
+            The maximum number of items to return in a paginated call. If unspecified, defaults to `20`.
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous paginated call.
@@ -3903,7 +3903,9 @@ class WaasClient(object):
             Filter logs by incident key.
 
         :param list[str] log_type: (optional)
-            Filter by log type.
+            Filter by log type. For more information about WAF logs, see `Logs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/logs.htm
 
             Allowed values are: "ACCESS", "PROTECTION_RULES", "JS_CHALLENGE", "CAPTCHA", "ACCESS_RULES", "THREAT_FEEDS", "HUMAN_INTERACTION_CHALLENGE", "DEVICE_FINGERPRINT_CHALLENGE", "ADDRESS_RATE_LIMITING"
 
@@ -4084,7 +4086,7 @@ class WaasClient(object):
             A filter that limits returned events to those occurring before a date and time, specified in RFC 3339 format.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated call. In unspecified, defaults to `10`.
+            The maximum number of items to return in a paginated call. If unspecified, defaults to `10`.
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous paginated call.
@@ -4186,7 +4188,7 @@ class WaasClient(object):
             A filter that limits returned events to those occurring before a date and time, specified in RFC 3339 format.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated call. In unspecified, defaults to `10`.
+            The maximum number of items to return in a paginated call. If unspecified, defaults to `10`.
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous paginated call.
@@ -4281,7 +4283,7 @@ class WaasClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated call. In unspecified, defaults to `10`.
+            The maximum number of items to return in a paginated call. If unspecified, defaults to `10`.
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous paginated call.
@@ -4377,7 +4379,7 @@ class WaasClient(object):
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param int limit: (optional)
-            The maximum number of items to return in a paginated call. In unspecified, defaults to `10`.
+            The maximum number of items to return in a paginated call. If unspecified, defaults to `10`.
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous paginated call.
@@ -4850,6 +4852,8 @@ class WaasClient(object):
 
         Any existing CAPTCHA challenges that are not specified with a `key` in the list of CAPTCHA challenges will be deleted upon update.
 
+        Query parameters are allowed in CAPTCHA URL.
+
 
         :param str waas_policy_id: (required)
             The `OCID`__ of the WAAS policy.
@@ -5122,7 +5126,7 @@ class WaasClient(object):
 
         The signature is based on a library of attributes detected via JavaScript listeners; the attributes include OS, screen resolution, fonts, UserAgent, IP address, etc. We are constantly making improvements and considering new libraries to include in our DFC build. We can also exclude attributes from the signature as needed.
 
-        DFC collects attributes to generate a hashed signature about a client \u2013 if a fingerprint is not possible, then it will result in a block or alert action. Actions can be enforced across multiple devices if they share they have the same fingerprint.
+        DFC collects attributes to generate a hashed signature about a client - if a fingerprint is not possible, then it will result in a block or alert action. Actions can be enforced across multiple devices if they share they have the same fingerprint.
 
 
         :param str waas_policy_id: (required)
@@ -6216,7 +6220,7 @@ class WaasClient(object):
     def update_whitelists(self, waas_policy_id, whitelists, **kwargs):
         """
         Updates the list of whitelists for the Web Application Firewall.
-        Updates the list of IP addresses that bypass the Web Application Firewall for a WAAS policy. Supports both single IP addresses or subnet masks (CIDR notation).
+        Updates the list of IP addresses that bypass the Web Application Firewall for a WAAS policy. Supports single IP addresses, subnet masks (CIDR notation) and Address Lists.
 
         This operation can create, delete, update, and/or reorder whitelists depending on the structure of the request body.
 

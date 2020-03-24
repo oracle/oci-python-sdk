@@ -32,6 +32,10 @@ class AccessRule(object):
     #: This constant has a value of "REDIRECT"
     ACTION_REDIRECT = "REDIRECT"
 
+    #: A constant which can be used with the action property of a AccessRule.
+    #: This constant has a value of "SHOW_CAPTCHA"
+    ACTION_SHOW_CAPTCHA = "SHOW_CAPTCHA"
+
     #: A constant which can be used with the block_action property of a AccessRule.
     #: This constant has a value of "SET_RESPONSE_CODE"
     BLOCK_ACTION_SET_RESPONSE_CODE = "SET_RESPONSE_CODE"
@@ -79,7 +83,7 @@ class AccessRule(object):
 
         :param action:
             The value to assign to the action property of this AccessRule.
-            Allowed values for this property are: "ALLOW", "DETECT", "BLOCK", "BYPASS", "REDIRECT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ALLOW", "DETECT", "BLOCK", "BYPASS", "REDIRECT", "SHOW_CAPTCHA", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type action: str
 
@@ -121,6 +125,26 @@ class AccessRule(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type redirect_response_code: str
 
+        :param captcha_title:
+            The value to assign to the captcha_title property of this AccessRule.
+        :type captcha_title: str
+
+        :param captcha_header:
+            The value to assign to the captcha_header property of this AccessRule.
+        :type captcha_header: str
+
+        :param captcha_footer:
+            The value to assign to the captcha_footer property of this AccessRule.
+        :type captcha_footer: str
+
+        :param captcha_submit_label:
+            The value to assign to the captcha_submit_label property of this AccessRule.
+        :type captcha_submit_label: str
+
+        :param response_header_manipulation:
+            The value to assign to the response_header_manipulation property of this AccessRule.
+        :type response_header_manipulation: list[HeaderManipulationAction]
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -133,7 +157,12 @@ class AccessRule(object):
             'block_error_page_description': 'str',
             'bypass_challenges': 'list[str]',
             'redirect_url': 'str',
-            'redirect_response_code': 'str'
+            'redirect_response_code': 'str',
+            'captcha_title': 'str',
+            'captcha_header': 'str',
+            'captcha_footer': 'str',
+            'captcha_submit_label': 'str',
+            'response_header_manipulation': 'list[HeaderManipulationAction]'
         }
 
         self.attribute_map = {
@@ -147,7 +176,12 @@ class AccessRule(object):
             'block_error_page_description': 'blockErrorPageDescription',
             'bypass_challenges': 'bypassChallenges',
             'redirect_url': 'redirectUrl',
-            'redirect_response_code': 'redirectResponseCode'
+            'redirect_response_code': 'redirectResponseCode',
+            'captcha_title': 'captchaTitle',
+            'captcha_header': 'captchaHeader',
+            'captcha_footer': 'captchaFooter',
+            'captcha_submit_label': 'captchaSubmitLabel',
+            'response_header_manipulation': 'responseHeaderManipulation'
         }
 
         self._name = None
@@ -161,6 +195,11 @@ class AccessRule(object):
         self._bypass_challenges = None
         self._redirect_url = None
         self._redirect_response_code = None
+        self._captcha_title = None
+        self._captcha_header = None
+        self._captcha_footer = None
+        self._captcha_submit_label = None
+        self._response_header_manipulation = None
 
     @property
     def name(self):
@@ -190,7 +229,7 @@ class AccessRule(object):
     def criteria(self):
         """
         **[Required]** Gets the criteria of this AccessRule.
-        The list of access rule criteria.
+        The list of access rule criteria. The rule would be applied only for the requests that matched all the listed conditions.
 
 
         :return: The criteria of this AccessRule.
@@ -202,7 +241,7 @@ class AccessRule(object):
     def criteria(self, criteria):
         """
         Sets the criteria of this AccessRule.
-        The list of access rule criteria.
+        The list of access rule criteria. The rule would be applied only for the requests that matched all the listed conditions.
 
 
         :param criteria: The criteria of this AccessRule.
@@ -224,11 +263,13 @@ class AccessRule(object):
 
         - **BYPASS:** Bypasses some or all challenges.
 
-        - **REDIRECT:** Redirects the request to the specified URL.
+        - **REDIRECT:** Redirects the request to the specified URL. These fields are required when `REDIRECT` is selected: `redirectUrl`, `redirectResponseCode`.
+
+        - **SHOW_CAPTCHA:** Show a CAPTCHA Challenge page instead of the requested page.
 
         Regardless of action, no further rules are processed once a rule is matched.
 
-        Allowed values for this property are: "ALLOW", "DETECT", "BLOCK", "BYPASS", "REDIRECT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ALLOW", "DETECT", "BLOCK", "BYPASS", "REDIRECT", "SHOW_CAPTCHA", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -251,7 +292,9 @@ class AccessRule(object):
 
         - **BYPASS:** Bypasses some or all challenges.
 
-        - **REDIRECT:** Redirects the request to the specified URL.
+        - **REDIRECT:** Redirects the request to the specified URL. These fields are required when `REDIRECT` is selected: `redirectUrl`, `redirectResponseCode`.
+
+        - **SHOW_CAPTCHA:** Show a CAPTCHA Challenge page instead of the requested page.
 
         Regardless of action, no further rules are processed once a rule is matched.
 
@@ -259,7 +302,7 @@ class AccessRule(object):
         :param action: The action of this AccessRule.
         :type: str
         """
-        allowed_values = ["ALLOW", "DETECT", "BLOCK", "BYPASS", "REDIRECT"]
+        allowed_values = ["ALLOW", "DETECT", "BLOCK", "BYPASS", "REDIRECT", "SHOW_CAPTCHA"]
         if not value_allowed_none_or_none_sentinel(action, allowed_values):
             action = 'UNKNOWN_ENUM_VALUE'
         self._action = action
@@ -440,7 +483,7 @@ class AccessRule(object):
     def redirect_url(self):
         """
         Gets the redirect_url of this AccessRule.
-        The target to which the request should be redirected, represented as a URI reference.
+        The target to which the request should be redirected, represented as a URI reference. Required when `action` is `REDIRECT`.
 
 
         :return: The redirect_url of this AccessRule.
@@ -452,7 +495,7 @@ class AccessRule(object):
     def redirect_url(self, redirect_url):
         """
         Sets the redirect_url of this AccessRule.
-        The target to which the request should be redirected, represented as a URI reference.
+        The target to which the request should be redirected, represented as a URI reference. Required when `action` is `REDIRECT`.
 
 
         :param redirect_url: The redirect_url of this AccessRule.
@@ -497,6 +540,126 @@ class AccessRule(object):
         if not value_allowed_none_or_none_sentinel(redirect_response_code, allowed_values):
             redirect_response_code = 'UNKNOWN_ENUM_VALUE'
         self._redirect_response_code = redirect_response_code
+
+    @property
+    def captcha_title(self):
+        """
+        Gets the captcha_title of this AccessRule.
+        The title used when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
+
+
+        :return: The captcha_title of this AccessRule.
+        :rtype: str
+        """
+        return self._captcha_title
+
+    @captcha_title.setter
+    def captcha_title(self, captcha_title):
+        """
+        Sets the captcha_title of this AccessRule.
+        The title used when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
+
+
+        :param captcha_title: The captcha_title of this AccessRule.
+        :type: str
+        """
+        self._captcha_title = captcha_title
+
+    @property
+    def captcha_header(self):
+        """
+        Gets the captcha_header of this AccessRule.
+        The text to show in the header when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
+
+
+        :return: The captcha_header of this AccessRule.
+        :rtype: str
+        """
+        return self._captcha_header
+
+    @captcha_header.setter
+    def captcha_header(self, captcha_header):
+        """
+        Sets the captcha_header of this AccessRule.
+        The text to show in the header when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
+
+
+        :param captcha_header: The captcha_header of this AccessRule.
+        :type: str
+        """
+        self._captcha_header = captcha_header
+
+    @property
+    def captcha_footer(self):
+        """
+        Gets the captcha_footer of this AccessRule.
+        The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
+
+
+        :return: The captcha_footer of this AccessRule.
+        :rtype: str
+        """
+        return self._captcha_footer
+
+    @captcha_footer.setter
+    def captcha_footer(self, captcha_footer):
+        """
+        Sets the captcha_footer of this AccessRule.
+        The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
+
+
+        :param captcha_footer: The captcha_footer of this AccessRule.
+        :type: str
+        """
+        self._captcha_footer = captcha_footer
+
+    @property
+    def captcha_submit_label(self):
+        """
+        Gets the captcha_submit_label of this AccessRule.
+        The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
+
+
+        :return: The captcha_submit_label of this AccessRule.
+        :rtype: str
+        """
+        return self._captcha_submit_label
+
+    @captcha_submit_label.setter
+    def captcha_submit_label(self, captcha_submit_label):
+        """
+        Sets the captcha_submit_label of this AccessRule.
+        The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
+
+
+        :param captcha_submit_label: The captcha_submit_label of this AccessRule.
+        :type: str
+        """
+        self._captcha_submit_label = captcha_submit_label
+
+    @property
+    def response_header_manipulation(self):
+        """
+        Gets the response_header_manipulation of this AccessRule.
+        An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of `action` value.
+
+
+        :return: The response_header_manipulation of this AccessRule.
+        :rtype: list[HeaderManipulationAction]
+        """
+        return self._response_header_manipulation
+
+    @response_header_manipulation.setter
+    def response_header_manipulation(self, response_header_manipulation):
+        """
+        Sets the response_header_manipulation of this AccessRule.
+        An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of `action` value.
+
+
+        :param response_header_manipulation: The response_header_manipulation of this AccessRule.
+        :type: list[HeaderManipulationAction]
+        """
+        self._response_header_manipulation = response_header_manipulation
 
     def __repr__(self):
         return formatted_flat_dict(self)

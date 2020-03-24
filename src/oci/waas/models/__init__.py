@@ -5,6 +5,7 @@ from __future__ import absolute_import
 
 from .access_rule import AccessRule
 from .access_rule_criteria import AccessRuleCriteria
+from .add_http_response_header_action import AddHttpResponseHeaderAction
 from .address_list import AddressList
 from .address_list_summary import AddressListSummary
 from .address_rate_limiting import AddressRateLimiting
@@ -34,13 +35,18 @@ from .custom_protection_rule_setting import CustomProtectionRuleSetting
 from .custom_protection_rule_summary import CustomProtectionRuleSummary
 from .device_fingerprint_challenge import DeviceFingerprintChallenge
 from .edge_subnet import EdgeSubnet
+from .extend_http_response_header_action import ExtendHttpResponseHeaderAction
 from .good_bot import GoodBot
 from .header import Header
+from .header_manipulation_action import HeaderManipulationAction
+from .health_check import HealthCheck
 from .http_redirect import HttpRedirect
 from .http_redirect_summary import HttpRedirectSummary
 from .http_redirect_target import HttpRedirectTarget
 from .human_interaction_challenge import HumanInteractionChallenge
+from .ip_hash_load_balancing_method import IPHashLoadBalancingMethod
 from .js_challenge import JsChallenge
+from .load_balancing_method import LoadBalancingMethod
 from .origin import Origin
 from .origin_group import OriginGroup
 from .origin_group_origins import OriginGroupOrigins
@@ -51,6 +57,9 @@ from .protection_rule_exclusion import ProtectionRuleExclusion
 from .protection_settings import ProtectionSettings
 from .purge_cache import PurgeCache
 from .recommendation import Recommendation
+from .remove_http_response_header_action import RemoveHttpResponseHeaderAction
+from .round_robin_load_balancing_method import RoundRobinLoadBalancingMethod
+from .sticky_cookie_load_balancing_method import StickyCookieLoadBalancingMethod
 from .threat_feed import ThreatFeed
 from .threat_feed_action import ThreatFeedAction
 from .update_address_list_details import UpdateAddressListDetails
@@ -79,6 +88,7 @@ from .work_request_summary import WorkRequestSummary
 waas_type_mapping = {
     "AccessRule": AccessRule,
     "AccessRuleCriteria": AccessRuleCriteria,
+    "AddHttpResponseHeaderAction": AddHttpResponseHeaderAction,
     "AddressList": AddressList,
     "AddressListSummary": AddressListSummary,
     "AddressRateLimiting": AddressRateLimiting,
@@ -108,13 +118,18 @@ waas_type_mapping = {
     "CustomProtectionRuleSummary": CustomProtectionRuleSummary,
     "DeviceFingerprintChallenge": DeviceFingerprintChallenge,
     "EdgeSubnet": EdgeSubnet,
+    "ExtendHttpResponseHeaderAction": ExtendHttpResponseHeaderAction,
     "GoodBot": GoodBot,
     "Header": Header,
+    "HeaderManipulationAction": HeaderManipulationAction,
+    "HealthCheck": HealthCheck,
     "HttpRedirect": HttpRedirect,
     "HttpRedirectSummary": HttpRedirectSummary,
     "HttpRedirectTarget": HttpRedirectTarget,
     "HumanInteractionChallenge": HumanInteractionChallenge,
+    "IPHashLoadBalancingMethod": IPHashLoadBalancingMethod,
     "JsChallenge": JsChallenge,
+    "LoadBalancingMethod": LoadBalancingMethod,
     "Origin": Origin,
     "OriginGroup": OriginGroup,
     "OriginGroupOrigins": OriginGroupOrigins,
@@ -125,6 +140,9 @@ waas_type_mapping = {
     "ProtectionSettings": ProtectionSettings,
     "PurgeCache": PurgeCache,
     "Recommendation": Recommendation,
+    "RemoveHttpResponseHeaderAction": RemoveHttpResponseHeaderAction,
+    "RoundRobinLoadBalancingMethod": RoundRobinLoadBalancingMethod,
+    "StickyCookieLoadBalancingMethod": StickyCookieLoadBalancingMethod,
     "ThreatFeed": ThreatFeed,
     "ThreatFeedAction": ThreatFeedAction,
     "UpdateAddressListDetails": UpdateAddressListDetails,

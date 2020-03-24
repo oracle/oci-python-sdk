@@ -57,7 +57,7 @@ class UpdateAddressListDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateAddressListDetails.
-        A unique user-friendly name for the address list.
+        A user-friendly name for the address list.
 
 
         :return: The display_name of this UpdateAddressListDetails.
@@ -69,7 +69,7 @@ class UpdateAddressListDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateAddressListDetails.
-        A unique user-friendly name for the address list.
+        A user-friendly name for the address list.
 
 
         :param display_name: The display_name of this UpdateAddressListDetails.

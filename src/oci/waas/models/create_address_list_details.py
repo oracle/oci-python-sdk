@@ -92,7 +92,7 @@ class CreateAddressListDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateAddressListDetails.
-        A unique user-friendly name for the address list.
+        A user-friendly name for the address list.
 
 
         :return: The display_name of this CreateAddressListDetails.
@@ -104,7 +104,7 @@ class CreateAddressListDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateAddressListDetails.
-        A unique user-friendly name for the address list.
+        A user-friendly name for the address list.
 
 
         :param display_name: The display_name of this CreateAddressListDetails.

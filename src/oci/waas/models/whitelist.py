@@ -25,19 +25,26 @@ class Whitelist(object):
             The value to assign to the addresses property of this Whitelist.
         :type addresses: list[str]
 
+        :param address_lists:
+            The value to assign to the address_lists property of this Whitelist.
+        :type address_lists: list[str]
+
         """
         self.swagger_types = {
             'name': 'str',
-            'addresses': 'list[str]'
+            'addresses': 'list[str]',
+            'address_lists': 'list[str]'
         }
 
         self.attribute_map = {
             'name': 'name',
-            'addresses': 'addresses'
+            'addresses': 'addresses',
+            'address_lists': 'addressLists'
         }
 
         self._name = None
         self._addresses = None
+        self._address_lists = None
 
     @property
     def name(self):
@@ -66,7 +73,7 @@ class Whitelist(object):
     @property
     def addresses(self):
         """
-        **[Required]** Gets the addresses of this Whitelist.
+        Gets the addresses of this Whitelist.
         A set of IP addresses or CIDR notations to include in the whitelist.
 
 
@@ -86,6 +93,34 @@ class Whitelist(object):
         :type: list[str]
         """
         self._addresses = addresses
+
+    @property
+    def address_lists(self):
+        """
+        Gets the address_lists of this Whitelist.
+        A list of `OCID`__ of IP address lists to include in the whitelist.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The address_lists of this Whitelist.
+        :rtype: list[str]
+        """
+        return self._address_lists
+
+    @address_lists.setter
+    def address_lists(self, address_lists):
+        """
+        Sets the address_lists of this Whitelist.
+        A list of `OCID`__ of IP address lists to include in the whitelist.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param address_lists: The address_lists of this Whitelist.
+        :type: list[str]
+        """
+        self._address_lists = address_lists
 
     def __repr__(self):
         return formatted_flat_dict(self)
