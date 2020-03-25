@@ -1019,4 +1019,3 @@ class BudgetClient(object):
                 header_params=header_params,
                 body=update_budget_details,
                 response_type="Budget")
-

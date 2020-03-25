@@ -2672,4 +2672,3 @@ class ComputeManagementClient(object):
                 header_params=header_params,
                 body=update_instance_pool_details,
                 response_type="InstancePool")
-

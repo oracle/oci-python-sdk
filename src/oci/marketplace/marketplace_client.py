@@ -1301,4 +1301,3 @@ class MarketplaceClient(object):
                 header_params=header_params,
                 body=update_accepted_agreement_details,
                 response_type="AcceptedAgreement")
-

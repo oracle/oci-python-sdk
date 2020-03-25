@@ -1102,4 +1102,3 @@ class AutoScalingClient(object):
                 header_params=header_params,
                 body=update_auto_scaling_policy_details,
                 response_type="AutoScalingPolicy")
-

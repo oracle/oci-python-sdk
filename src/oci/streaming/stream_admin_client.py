@@ -2037,4 +2037,3 @@ class StreamAdminClient(object):
                 header_params=header_params,
                 body=update_stream_pool_details,
                 response_type="StreamPool")
-

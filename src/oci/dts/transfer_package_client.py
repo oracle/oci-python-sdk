@@ -603,4 +603,3 @@ class TransferPackageClient(object):
                 header_params=header_params,
                 body=update_transfer_package_details,
                 response_type="TransferPackage")
-

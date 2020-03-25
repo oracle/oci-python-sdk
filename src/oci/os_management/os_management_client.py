@@ -4583,4 +4583,3 @@ class OsManagementClient(object):
                 header_params=header_params,
                 body=update_software_source_details,
                 response_type="SoftwareSource")
-

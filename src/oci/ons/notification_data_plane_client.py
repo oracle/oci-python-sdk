@@ -994,4 +994,3 @@ class NotificationDataPlaneClient(object):
                 header_params=header_params,
                 body=update_subscription_details,
                 response_type="UpdateSubscriptionDetails")
-

@@ -193,4 +193,3 @@ class FunctionsInvokeClient(object):
                 header_params=header_params,
                 body=kwargs.get('invoke_function_body'),
                 response_type="stream")
-

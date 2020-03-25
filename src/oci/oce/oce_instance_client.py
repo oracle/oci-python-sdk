@@ -936,4 +936,3 @@ class OceInstanceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_oce_instance_details)
-

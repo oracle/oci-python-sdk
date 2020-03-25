@@ -936,4 +936,3 @@ class IntegrationInstanceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_integration_instance_details)
-

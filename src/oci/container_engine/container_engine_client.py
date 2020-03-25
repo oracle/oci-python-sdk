@@ -1659,4 +1659,3 @@ class ContainerEngineClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_node_pool_details)
-

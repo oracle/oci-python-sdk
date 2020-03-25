@@ -446,4 +446,3 @@ class AnnouncementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=status_details)
-

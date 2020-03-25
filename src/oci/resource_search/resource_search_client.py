@@ -307,4 +307,3 @@ class ResourceSearchClient(object):
                 header_params=header_params,
                 body=search_details,
                 response_type="ResourceSummaryCollection")
-

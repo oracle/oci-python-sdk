@@ -576,4 +576,3 @@ class TransferJobClient(object):
                 header_params=header_params,
                 body=update_transfer_job_details,
                 response_type="TransferJob")
-

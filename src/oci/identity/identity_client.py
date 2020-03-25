@@ -8977,4 +8977,3 @@ class IdentityClient(object):
                 header_params=header_params,
                 body=create_api_key_details,
                 response_type="ApiKey")
-

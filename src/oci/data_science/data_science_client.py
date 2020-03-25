@@ -3169,4 +3169,3 @@ class DataScienceClient(object):
                 header_params=header_params,
                 body=update_project_details,
                 response_type="Project")
-

@@ -11252,4 +11252,3 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="VmClusterNetwork")
-

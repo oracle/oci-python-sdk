@@ -4478,4 +4478,3 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 body=update_volume_kms_key_details,
                 response_type="VolumeKmsKey")
-

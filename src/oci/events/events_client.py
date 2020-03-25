@@ -640,4 +640,3 @@ class EventsClient(object):
                 header_params=header_params,
                 body=update_rule_details,
                 response_type="Rule")
-

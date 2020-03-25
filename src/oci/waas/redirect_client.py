@@ -627,4 +627,3 @@ class RedirectClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_http_redirect_details)
-

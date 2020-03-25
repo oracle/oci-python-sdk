@@ -957,4 +957,3 @@ class EmailClient(object):
                 header_params=header_params,
                 body=update_sender_details,
                 response_type="Sender")
-

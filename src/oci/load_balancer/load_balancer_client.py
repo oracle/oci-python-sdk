@@ -4428,4 +4428,3 @@ class LoadBalancerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_rule_set_details)
-

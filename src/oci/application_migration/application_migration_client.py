@@ -1817,4 +1817,3 @@ class ApplicationMigrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_source_details)
-

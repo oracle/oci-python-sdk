@@ -3812,4 +3812,3 @@ class DnsClient(object):
                 header_params=header_params,
                 body=update_zone_records_details,
                 response_type="RecordCollection")
-

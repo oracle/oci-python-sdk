@@ -615,4 +615,3 @@ class GatewayClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_gateway_details)
-

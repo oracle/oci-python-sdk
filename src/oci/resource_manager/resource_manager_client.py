@@ -2132,4 +2132,3 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 body=update_stack_details,
                 response_type="Stack")
-

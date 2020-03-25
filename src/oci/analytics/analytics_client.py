@@ -1440,4 +1440,3 @@ class AnalyticsClient(object):
                 header_params=header_params,
                 body=update_analytics_instance_details,
                 response_type="AnalyticsInstance")
-

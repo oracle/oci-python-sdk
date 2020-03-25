@@ -305,4 +305,3 @@ class AuditClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_configuration_details)
-

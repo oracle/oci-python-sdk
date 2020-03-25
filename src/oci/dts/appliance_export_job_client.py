@@ -587,4 +587,3 @@ class ApplianceExportJobClient(object):
                 header_params=header_params,
                 body=update_appliance_export_job_details,
                 response_type="ApplianceExportJob")
-

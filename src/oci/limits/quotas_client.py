@@ -514,4 +514,3 @@ class QuotasClient(object):
                 header_params=header_params,
                 body=update_quota_details,
                 response_type="Quota")
-

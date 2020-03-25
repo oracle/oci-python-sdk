@@ -1065,4 +1065,3 @@ class FunctionsManagementClient(object):
                 header_params=header_params,
                 body=update_function_details,
                 response_type="Function")
-

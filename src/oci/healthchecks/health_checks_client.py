@@ -1655,4 +1655,3 @@ class HealthChecksClient(object):
                 header_params=header_params,
                 body=update_ping_monitor_details,
                 response_type="PingMonitor")
-

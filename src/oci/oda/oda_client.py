@@ -1269,4 +1269,3 @@ class OdaClient(object):
                 header_params=header_params,
                 body=update_oda_instance_details,
                 response_type="OdaInstance")
-

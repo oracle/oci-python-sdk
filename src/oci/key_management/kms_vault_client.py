@@ -771,4 +771,3 @@ class KmsVaultClient(object):
                 header_params=header_params,
                 body=update_vault_details,
                 response_type="Vault")
-

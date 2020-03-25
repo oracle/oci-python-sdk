@@ -594,4 +594,3 @@ class WorkRequestsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="WorkRequestCollection")
-

@@ -663,4 +663,3 @@ class TransferApplianceClient(object):
                 header_params=header_params,
                 body=update_transfer_appliance_details,
                 response_type="TransferAppliance")
-

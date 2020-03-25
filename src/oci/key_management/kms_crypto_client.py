@@ -274,4 +274,3 @@ class KmsCryptoClient(object):
                 header_params=header_params,
                 body=generate_key_details,
                 response_type="GeneratedKey")
-

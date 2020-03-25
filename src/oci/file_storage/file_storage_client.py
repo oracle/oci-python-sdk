@@ -2516,4 +2516,3 @@ class FileStorageClient(object):
                 header_params=header_params,
                 body=update_snapshot_details,
                 response_type="Snapshot")
-

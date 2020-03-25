@@ -1355,4 +1355,3 @@ class MonitoringClient(object):
                 header_params=header_params,
                 body=update_alarm_details,
                 response_type="Alarm")
-

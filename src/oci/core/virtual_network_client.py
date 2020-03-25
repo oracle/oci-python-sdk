@@ -14336,4 +14336,3 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 body=update_vnic_details,
                 response_type="Vnic")
-

@@ -315,4 +315,3 @@ class TransferApplianceEntitlementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="list[TransferApplianceEntitlementSummary]")
-

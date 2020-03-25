@@ -462,4 +462,3 @@ class TransferDeviceClient(object):
                 header_params=header_params,
                 body=update_transfer_device_details,
                 response_type="TransferDevice")
-

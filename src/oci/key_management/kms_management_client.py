@@ -1712,4 +1712,3 @@ class KmsManagementClient(object):
                 header_params=header_params,
                 body=update_key_details,
                 response_type="Key")
-

@@ -127,4 +127,3 @@ class ShippingVendorsClient(object):
                 method=method,
                 header_params=header_params,
                 response_type="ShippingVendors")
-

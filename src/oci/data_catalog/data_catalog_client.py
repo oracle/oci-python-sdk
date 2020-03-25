@@ -10965,4 +10965,3 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=validate_connection_details,
                 response_type="ValidateConnectionResult")
-
