@@ -80,7 +80,6 @@ class StreamClient(object):
 
     def consumer_commit(self, stream_id, cursor, **kwargs):
         """
-        Commits processed offsets to consumer group state.
         Provides a mechanism to manually commit offsets, if not using commit-on-get consumer semantics.
         This commits offsets assicated with the provided cursor, extends the timeout on each of the affected partitions, and returns an updated cursor.
 
@@ -165,7 +164,6 @@ class StreamClient(object):
 
     def consumer_heartbeat(self, stream_id, cursor, **kwargs):
         """
-        Extends the reservation timeout on partitions reserved by the provided cursor.
         Allows long-running processes to extend the timeout on partitions reserved by a consumer instance.
 
 
@@ -249,7 +247,6 @@ class StreamClient(object):
 
     def create_cursor(self, stream_id, create_cursor_details, **kwargs):
         """
-        Creates a cursor for the specified stream. A cursor is used to consume a stream.
         Creates a cursor. Cursors are used to consume a stream, starting from a specific point in the partition and going forward from there.
         You can create a cursor based on an offset, a time, the trim horizon, or the most recent message in the stream. As the oldest message
         inside the retention period boundary, using the trim horizon effectively lets you consume all messages in the stream. A cursor based
@@ -332,7 +329,6 @@ class StreamClient(object):
 
     def create_group_cursor(self, stream_id, create_group_cursor_details, **kwargs):
         """
-        Creates a group-cursor for the specified stream. A cursor is used to consume a stream.
         Creates a group-cursor.
 
 
@@ -412,7 +408,6 @@ class StreamClient(object):
     def get_group(self, stream_id, group_name, **kwargs):
         """
         Returns the current state of a consumer group.
-        Returns the current state of a consumer group.
 
 
         :param str stream_id: (required)
@@ -489,7 +484,6 @@ class StreamClient(object):
 
     def get_messages(self, stream_id, cursor, **kwargs):
         """
-        Gets messages from a stream.
         Returns messages from the specified stream using the specified cursor as the starting point for consumption. By default, the number of messages returned is undefined, but the service returns as many as possible.
         To get messages, you must first obtain a cursor using the :func:`create_cursor` operation.
         In the response, retrieve the value of the 'opc-next-cursor' header to pass as a parameter to get the next batch of messages in the stream.
@@ -581,7 +575,6 @@ class StreamClient(object):
 
     def put_messages(self, stream_id, put_messages_details, **kwargs):
         """
-        Puts messages in a stream.
         Emits messages to a stream. There's no limit to the number of messages in a request, but the total size of a message or request must be 1 MiB or less.
         The service calculates the partition ID from the message key and stores messages that share a key on the same partition.
         If a message does not contain a key or if the key is null, the service generates a message key for you.
@@ -665,7 +658,6 @@ class StreamClient(object):
 
     def update_group(self, stream_id, group_name, update_group_details, **kwargs):
         """
-        Forcefully changes the committed location of a group on a stream.
         Forcefully changes the current location of a group as a whole; reseting processing location of all consumers to a particular location in the stream.
 
 
@@ -743,3 +735,4 @@ class StreamClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_group_details)
+

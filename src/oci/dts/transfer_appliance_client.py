@@ -83,7 +83,6 @@ class TransferApplianceClient(object):
     def create_transfer_appliance(self, id, **kwargs):
         """
         Create a new Transfer Appliance
-        Create a new Transfer Appliance
 
 
         :param str id: (required)
@@ -163,7 +162,6 @@ class TransferApplianceClient(object):
     def create_transfer_appliance_admin_credentials(self, id, transfer_appliance_label, admin_public_key, **kwargs):
         """
         Creates an X.509 certificate from a public key
-        Creates an X.509 certificate from a public key
 
 
         :param str id: (required)
@@ -235,7 +233,6 @@ class TransferApplianceClient(object):
     def delete_transfer_appliance(self, id, transfer_appliance_label, **kwargs):
         """
         deletes a transfer Appliance
-        deletes a transfer Appliance
 
 
         :param str id: (required)
@@ -300,7 +297,6 @@ class TransferApplianceClient(object):
 
     def get_transfer_appliance(self, id, transfer_appliance_label, **kwargs):
         """
-        Describes a transfer appliance in detail
         Describes a transfer appliance in detail
 
 
@@ -369,7 +365,6 @@ class TransferApplianceClient(object):
     def get_transfer_appliance_certificate_authority_certificate(self, id, transfer_appliance_label, **kwargs):
         """
         Gets the x.509 certificate for the Transfer Appliance's dedicated Certificate Authority (CA)
-        Gets the x.509 certificate for the Transfer Appliance's dedicated Certificate Authority (CA)
 
 
         :param str id: (required)
@@ -436,7 +431,6 @@ class TransferApplianceClient(object):
 
     def get_transfer_appliance_encryption_passphrase(self, id, transfer_appliance_label, **kwargs):
         """
-        Describes a transfer appliance encryptionPassphrase
         Describes a transfer appliance encryptionPassphrase in detail
 
 
@@ -504,7 +498,6 @@ class TransferApplianceClient(object):
 
     def list_transfer_appliances(self, id, **kwargs):
         """
-        Lists Transfer Appliances associated with a transferJob
         Lists Transfer Appliances associated with a transferJob
 
 
@@ -592,7 +585,6 @@ class TransferApplianceClient(object):
     def update_transfer_appliance(self, id, transfer_appliance_label, update_transfer_appliance_details, **kwargs):
         """
         Updates a Transfer Appliance
-        Updates a Transfer Appliance
 
 
         :param str id: (required)
@@ -671,3 +663,4 @@ class TransferApplianceClient(object):
                 header_params=header_params,
                 body=update_transfer_appliance_details,
                 response_type="TransferAppliance")
+

@@ -83,7 +83,6 @@ class DataCatalogClient(object):
     def change_catalog_compartment(self, change_catalog_compartment_details, catalog_id, **kwargs):
         """
         Moves a resource into a different compartment. When provided, 'If-Match' is checked against 'ETag' values of the resource.
-        Moves a resource into a different compartment. When provided, 'If-Match' is checked against 'ETag' values of the resource.
 
 
         :param ChangeCatalogCompartmentDetails change_catalog_compartment_details: (required)
@@ -167,7 +166,6 @@ class DataCatalogClient(object):
 
     def create_attribute(self, catalog_id, data_asset_key, entity_key, create_attribute_details, **kwargs):
         """
-        Create a new entity attribute.
         Creates a new entity attribute.
 
 
@@ -264,7 +262,6 @@ class DataCatalogClient(object):
 
     def create_attribute_tag(self, catalog_id, data_asset_key, entity_key, attribute_key, create_attribute_tag_details, **kwargs):
         """
-        Create a new entity attribute tag.
         Creates a new entity attribute tag.
 
 
@@ -365,7 +362,6 @@ class DataCatalogClient(object):
 
     def create_catalog(self, create_catalog_details, **kwargs):
         """
-        Creates a new data catalog.
         Creates a new data catalog instance that includes a console and an API URL for managing metadata operations.
         For more information, please see the documentation.
 
@@ -438,7 +434,6 @@ class DataCatalogClient(object):
 
     def create_connection(self, catalog_id, data_asset_key, create_connection_details, **kwargs):
         """
-        Create a new connection.
         Creates a new connection.
 
 
@@ -532,7 +527,6 @@ class DataCatalogClient(object):
     def create_data_asset(self, catalog_id, create_data_asset_details, **kwargs):
         """
         Create a new data asset.
-        Create a new data asset.
 
 
         :param str catalog_id: (required)
@@ -620,7 +614,6 @@ class DataCatalogClient(object):
 
     def create_data_asset_tag(self, catalog_id, data_asset_key, create_data_asset_tag_details, **kwargs):
         """
-        Create a new data asset tag.
         Creates a new data asset tag.
 
 
@@ -713,7 +706,6 @@ class DataCatalogClient(object):
 
     def create_entity(self, catalog_id, data_asset_key, create_entity_details, **kwargs):
         """
-        Create a new data entity.
         Creates a new data entity.
 
 
@@ -806,7 +798,6 @@ class DataCatalogClient(object):
 
     def create_entity_tag(self, catalog_id, data_asset_key, entity_key, create_entity_tag_details, **kwargs):
         """
-        Create a new entity tag.
         Creates a new entity tag.
 
 
@@ -903,7 +894,6 @@ class DataCatalogClient(object):
 
     def create_folder(self, catalog_id, data_asset_key, create_folder_details, **kwargs):
         """
-        Create a new folder.
         Creates a new folder.
 
 
@@ -996,7 +986,6 @@ class DataCatalogClient(object):
 
     def create_folder_tag(self, catalog_id, data_asset_key, folder_key, create_folder_tag_details, **kwargs):
         """
-        Create a new folder tag.
         Creates a new folder tag.
 
 
@@ -1093,7 +1082,6 @@ class DataCatalogClient(object):
 
     def create_glossary(self, catalog_id, create_glossary_details, **kwargs):
         """
-        Create a new glossary.
         Creates a new glossary.
 
 
@@ -1182,7 +1170,6 @@ class DataCatalogClient(object):
 
     def create_job(self, catalog_id, create_job_details, **kwargs):
         """
-        Create a new job.
         Creates a new job.
 
 
@@ -1271,7 +1258,6 @@ class DataCatalogClient(object):
 
     def create_job_definition(self, catalog_id, create_job_definition_details, **kwargs):
         """
-        Create a new job definition.
         Creates a new job definition.
 
 
@@ -1360,7 +1346,6 @@ class DataCatalogClient(object):
 
     def create_job_execution(self, catalog_id, job_key, create_job_execution_details, **kwargs):
         """
-        Create a new job execution.
         Creates a new job execution.
 
 
@@ -1454,7 +1439,6 @@ class DataCatalogClient(object):
     def create_term(self, catalog_id, glossary_key, create_term_details, **kwargs):
         """
         Create a new term within a glossary.
-        Create a new term within a glossary.
 
 
         :param str catalog_id: (required)
@@ -1546,7 +1530,6 @@ class DataCatalogClient(object):
 
     def create_term_relationship(self, catalog_id, glossary_key, term_key, create_term_relationship_details, **kwargs):
         """
-        Create a new term relationship for this term within a glossary.
         Creates a new term relationship for this term within a glossary.
 
 
@@ -1643,7 +1626,6 @@ class DataCatalogClient(object):
 
     def delete_attribute(self, catalog_id, data_asset_key, entity_key, attribute_key, **kwargs):
         """
-        Delete a specific entity attribute.
         Deletes a specific entity attribute.
 
 
@@ -1735,7 +1717,6 @@ class DataCatalogClient(object):
 
     def delete_attribute_tag(self, catalog_id, data_asset_key, entity_key, attribute_key, tag_key, **kwargs):
         """
-        Delete a specific entity attribute tag.
         Deletes a specific entity attribute tag.
 
 
@@ -1831,7 +1812,6 @@ class DataCatalogClient(object):
 
     def delete_catalog(self, catalog_id, **kwargs):
         """
-        Delete a provisioned data catalog.
         Deletes a data catalog resource by identifier.
 
 
@@ -1911,7 +1891,6 @@ class DataCatalogClient(object):
 
     def delete_connection(self, catalog_id, data_asset_key, connection_key, **kwargs):
         """
-        Delete a specific connection of a data asset.
         Deletes a specific connection of a data asset.
 
 
@@ -1999,7 +1978,6 @@ class DataCatalogClient(object):
 
     def delete_data_asset(self, catalog_id, data_asset_key, **kwargs):
         """
-        Delete a specific data asset identified by it's key.
         Deletes a specific data asset identified by it's key.
 
 
@@ -2083,7 +2061,6 @@ class DataCatalogClient(object):
 
     def delete_data_asset_tag(self, catalog_id, data_asset_key, tag_key, **kwargs):
         """
-        Delete a specific data asset tag.
         Deletes a specific data asset tag.
 
 
@@ -2171,7 +2148,6 @@ class DataCatalogClient(object):
 
     def delete_entity(self, catalog_id, data_asset_key, entity_key, **kwargs):
         """
-        Delete a specific data entity.
         Deletes a specific data entity.
 
 
@@ -2259,7 +2235,6 @@ class DataCatalogClient(object):
 
     def delete_entity_tag(self, catalog_id, data_asset_key, entity_key, tag_key, **kwargs):
         """
-        Delete a specific entity tag.
         Deletes a specific entity tag.
 
 
@@ -2351,7 +2326,6 @@ class DataCatalogClient(object):
 
     def delete_folder(self, catalog_id, data_asset_key, folder_key, **kwargs):
         """
-        Delete a specific folder of a data asset identified by it's key.
         Deletes a specific folder of a data asset identified by it's key.
 
 
@@ -2439,7 +2413,6 @@ class DataCatalogClient(object):
 
     def delete_folder_tag(self, catalog_id, data_asset_key, folder_key, tag_key, **kwargs):
         """
-        Delete a specific folder tag.
         Deletes a specific folder tag.
 
 
@@ -2531,7 +2504,6 @@ class DataCatalogClient(object):
 
     def delete_glossary(self, catalog_id, glossary_key, **kwargs):
         """
-        Delete a specific glossary identified by it's key.
         Deletes a specific glossary identified by it's key.
 
 
@@ -2615,7 +2587,6 @@ class DataCatalogClient(object):
 
     def delete_job(self, catalog_id, job_key, **kwargs):
         """
-        Delete a specific job identified by it's key.
         Deletes a specific job identified by it's key.
 
 
@@ -2699,7 +2670,6 @@ class DataCatalogClient(object):
 
     def delete_job_definition(self, catalog_id, job_definition_key, **kwargs):
         """
-        Delete a specific job definition identified by it's key.
         Deletes a specific job definition identified by it's key.
 
 
@@ -2783,7 +2753,6 @@ class DataCatalogClient(object):
 
     def delete_term(self, catalog_id, glossary_key, term_key, **kwargs):
         """
-        Delete a specific glossary term.
         Deletes a specific glossary term.
 
 
@@ -2871,7 +2840,6 @@ class DataCatalogClient(object):
 
     def delete_term_relationship(self, catalog_id, glossary_key, term_key, term_relationship_key, **kwargs):
         """
-        Delete a specific glossary term relationship.
         Deletes a specific glossary term relationship.
 
 
@@ -2963,7 +2931,6 @@ class DataCatalogClient(object):
 
     def expand_tree_for_glossary(self, catalog_id, glossary_key, **kwargs):
         """
-        Glossaries contain nested hierarchies of parent and child terms. Returns an expanded tree of this glossary.
         Returns the fully expanded tree hierarchy of parent and child terms in this glossary.
 
 
@@ -3051,7 +3018,6 @@ class DataCatalogClient(object):
 
     def export_glossary(self, catalog_id, glossary_key, **kwargs):
         """
-        Glossaries can be exported as csv or json formats. Returns the succesfully exported glossary in the format requested.
         Export the glossary and the terms and return the exported glossary as csv or json.
 
 
@@ -3150,7 +3116,6 @@ class DataCatalogClient(object):
 
     def get_attribute(self, catalog_id, data_asset_key, entity_key, attribute_key, **kwargs):
         """
-        Get a specific entity attribute by key.
         Gets a specific entity attribute by key.
 
 
@@ -3256,7 +3221,6 @@ class DataCatalogClient(object):
 
     def get_attribute_tag(self, catalog_id, data_asset_key, entity_key, attribute_key, tag_key, **kwargs):
         """
-        Get a specific entity attribute tag by key.
         Gets a specific entity attribute tag by key.
 
 
@@ -3366,7 +3330,6 @@ class DataCatalogClient(object):
 
     def get_catalog(self, catalog_id, **kwargs):
         """
-        Get data catalog.
         Gets a data catalog by identifier.
 
 
@@ -3439,7 +3402,6 @@ class DataCatalogClient(object):
 
     def get_connection(self, catalog_id, data_asset_key, connection_key, **kwargs):
         """
-        Get a specific data asset connection by key.
         Gets a specific data asset connection by key.
 
 
@@ -3541,7 +3503,6 @@ class DataCatalogClient(object):
 
     def get_data_asset(self, catalog_id, data_asset_key, **kwargs):
         """
-        Get a specific data asset for the given key within a data catalog.
         Gets a specific data asset for the given key within a data catalog.
 
 
@@ -3639,7 +3600,6 @@ class DataCatalogClient(object):
 
     def get_data_asset_tag(self, catalog_id, data_asset_key, tag_key, **kwargs):
         """
-        Get a specific data asset tag by key.
         Gets a specific data asset tag by key.
 
 
@@ -3741,7 +3701,6 @@ class DataCatalogClient(object):
 
     def get_entity(self, catalog_id, data_asset_key, entity_key, **kwargs):
         """
-        Get a specific data entity by key for a data asset.
         Gets a specific data entity by key for a data asset.
 
 
@@ -3843,7 +3802,6 @@ class DataCatalogClient(object):
 
     def get_entity_tag(self, catalog_id, data_asset_key, entity_key, tag_key, **kwargs):
         """
-        Get a specific entity tag by key.
         Gets a specific entity tag by key.
 
 
@@ -3949,7 +3907,6 @@ class DataCatalogClient(object):
 
     def get_folder(self, catalog_id, data_asset_key, folder_key, **kwargs):
         """
-        Get a specific data asset folder by key.
         Gets a specific data asset folder by key.
 
 
@@ -4051,7 +4008,6 @@ class DataCatalogClient(object):
 
     def get_folder_tag(self, catalog_id, data_asset_key, folder_key, tag_key, **kwargs):
         """
-        Get a specific folder tag by key.
         Gets a specific folder tag by key.
 
 
@@ -4157,7 +4113,6 @@ class DataCatalogClient(object):
 
     def get_glossary(self, catalog_id, glossary_key, **kwargs):
         """
-        Get a specific glossary by key within a data catalog.
         Gets a specific glossary by key within a data catalog.
 
 
@@ -4255,7 +4210,6 @@ class DataCatalogClient(object):
 
     def get_job(self, catalog_id, job_key, **kwargs):
         """
-        Get a specific job by key within a data catalog.
         Gets a specific job by key within a data catalog.
 
 
@@ -4353,7 +4307,6 @@ class DataCatalogClient(object):
 
     def get_job_definition(self, catalog_id, job_definition_key, **kwargs):
         """
-        Get a specific job definition by key within a data catalog.
         Gets a specific job definition by key within a data catalog.
 
 
@@ -4451,7 +4404,6 @@ class DataCatalogClient(object):
 
     def get_job_execution(self, catalog_id, job_key, job_execution_key, **kwargs):
         """
-        Get a specific job execution by key.
         Gets a specific job execution by key.
 
 
@@ -4553,7 +4505,6 @@ class DataCatalogClient(object):
 
     def get_job_log(self, catalog_id, job_key, job_execution_key, job_log_key, **kwargs):
         """
-        Get a specific job log by key.
         Gets a specific job log by key.
 
 
@@ -4659,7 +4610,6 @@ class DataCatalogClient(object):
 
     def get_job_metrics(self, catalog_id, job_key, job_execution_key, job_metrics_key, **kwargs):
         """
-        Get a specific job metric by key.
         Gets a specific job metric by key.
 
 
@@ -4765,7 +4715,6 @@ class DataCatalogClient(object):
 
     def get_term(self, catalog_id, glossary_key, term_key, **kwargs):
         """
-        Get a specific glossary term by key.
         Gets a specific glossary term by key.
 
 
@@ -4867,7 +4816,6 @@ class DataCatalogClient(object):
 
     def get_term_relationship(self, catalog_id, glossary_key, term_key, term_relationship_key, **kwargs):
         """
-        Get a specific glossary term relationship by key.
         Gets a specific glossary term relationship by key.
 
 
@@ -4973,7 +4921,6 @@ class DataCatalogClient(object):
 
     def get_type(self, catalog_id, type_key, **kwargs):
         """
-        Get a specific type by key within a data catalog.
         Gets a specific type by key within a data catalog.
 
 
@@ -5071,7 +5018,6 @@ class DataCatalogClient(object):
 
     def get_work_request(self, work_request_id, **kwargs):
         """
-        Get work request status.
         Gets the status of the work request with the given OCID.
 
 
@@ -5144,7 +5090,6 @@ class DataCatalogClient(object):
 
     def import_connection(self, catalog_id, data_asset_key, import_connection_details, **kwargs):
         """
-        Import connections from an Oracle wallet file that contains relevant metadata for creating connections.
         Import new connection for this data asset.
 
 
@@ -5246,7 +5191,6 @@ class DataCatalogClient(object):
 
     def import_glossary(self, catalog_id, glossary_key, import_glossary_details, **kwargs):
         """
-        Glossaries can be imported from csv or json file formats. Returns the succesfully imported glossary.
         Import the glossary and the terms from csv or json files and return the imported glossary resource.
 
 
@@ -5348,7 +5292,6 @@ class DataCatalogClient(object):
 
     def list_attribute_tags(self, catalog_id, data_asset_key, entity_key, attribute_key, **kwargs):
         """
-        Returns a list of all tags for an entity attribute.
         Returns a list of all tags for an entity attribute.
 
 
@@ -5524,7 +5467,6 @@ class DataCatalogClient(object):
 
     def list_attributes(self, catalog_id, data_asset_key, entity_key, **kwargs):
         """
-        Returns a list of all attributes of an data entity.
         Returns a list of all attributes of an data entity.
 
 
@@ -5743,7 +5685,6 @@ class DataCatalogClient(object):
 
     def list_catalogs(self, compartment_id, **kwargs):
         """
-        Lists all the data catalogs in the specified compartment.
         Returns a list of all the data catalogs in the specified compartment.
 
 
@@ -5859,7 +5800,6 @@ class DataCatalogClient(object):
 
     def list_connections(self, catalog_id, data_asset_key, **kwargs):
         """
-        Returns a list of all connections for a data asset.
         Returns a list of all Connections for a data asset.
 
 
@@ -6047,7 +5987,6 @@ class DataCatalogClient(object):
     def list_data_asset_tags(self, catalog_id, data_asset_key, **kwargs):
         """
         Returns a list of all tags for a data asset.
-        Returns a list of all tags for a data asset.
 
 
         :param str catalog_id: (required)
@@ -6214,7 +6153,6 @@ class DataCatalogClient(object):
 
     def list_data_assets(self, catalog_id, **kwargs):
         """
-        Returns a list of data assets within a data catalog.
         Returns a list of data assets within a data catalog.
 
 
@@ -6390,7 +6328,6 @@ class DataCatalogClient(object):
 
     def list_entities(self, catalog_id, data_asset_key, **kwargs):
         """
-        Returns a list of all entities of a data asset.
         Returns a list of all entities of a data asset.
 
 
@@ -6608,7 +6545,6 @@ class DataCatalogClient(object):
     def list_entity_tags(self, catalog_id, data_asset_key, entity_key, **kwargs):
         """
         Returns a list of all tags for a data entity.
-        Returns a list of all tags for a data entity.
 
 
         :param str catalog_id: (required)
@@ -6780,7 +6716,6 @@ class DataCatalogClient(object):
     def list_folder_tags(self, catalog_id, data_asset_key, folder_key, **kwargs):
         """
         Returns a list of all tags for a folder.
-        Returns a list of all tags for a folder.
 
 
         :param str catalog_id: (required)
@@ -6951,7 +6886,6 @@ class DataCatalogClient(object):
 
     def list_folders(self, catalog_id, data_asset_key, **kwargs):
         """
-        Returns a list of all folders for a data asset.
         Returns a list of all folders.
 
 
@@ -7147,7 +7081,6 @@ class DataCatalogClient(object):
     def list_glossaries(self, catalog_id, **kwargs):
         """
         Returns a list of all glossaries within a data catalog.
-        Returns a list of all glossaries within a data catalog.
 
 
         :param str catalog_id: (required)
@@ -7312,7 +7245,6 @@ class DataCatalogClient(object):
 
     def list_job_definitions(self, catalog_id, **kwargs):
         """
-        Returns a list of job definitions within a data catalog.
         Returns a list of job definitions within a data catalog.
 
 
@@ -7503,7 +7435,6 @@ class DataCatalogClient(object):
 
     def list_job_executions(self, catalog_id, job_key, **kwargs):
         """
-        Returns a list of job executions for a job.
         Returns a list of job executions for a job.
 
 
@@ -7730,7 +7661,6 @@ class DataCatalogClient(object):
     def list_job_logs(self, catalog_id, job_key, job_execution_key, **kwargs):
         """
         Returns a list of job logs.
-        Returns a list of job logs.
 
 
         :param str catalog_id: (required)
@@ -7903,7 +7833,6 @@ class DataCatalogClient(object):
 
     def list_job_metrics(self, catalog_id, job_key, job_execution_key, **kwargs):
         """
-        Returns a list of job metrics.
         Returns a list of job metrics.
 
 
@@ -8105,7 +8034,6 @@ class DataCatalogClient(object):
 
     def list_jobs(self, catalog_id, **kwargs):
         """
-        Returns a list of jobs within a data catalog.
         Returns a list of jobs within a data catalog.
 
 
@@ -8326,7 +8254,6 @@ class DataCatalogClient(object):
     def list_tags(self, catalog_id, **kwargs):
         """
         Returns a list of all user created tags in the system.
-        Returns a list of all user created tags in the system.
 
 
         :param str catalog_id: (required)
@@ -8467,7 +8394,6 @@ class DataCatalogClient(object):
 
     def list_term_relationships(self, catalog_id, glossary_key, term_key, **kwargs):
         """
-        Returns a list of all term relationships for a term within a glossary.
         Returns a list of all term relationships within a glossary.
 
 
@@ -8617,7 +8543,6 @@ class DataCatalogClient(object):
 
     def list_terms(self, catalog_id, glossary_key, **kwargs):
         """
-        Returns a list of all terms within a glossary.
         Returns a list of all terms within a glossary.
 
 
@@ -8784,7 +8709,6 @@ class DataCatalogClient(object):
     def list_types(self, catalog_id, **kwargs):
         """
         Returns a list of all types within a data catalog.
-        Returns a list of all types within a data catalog.
 
 
         :param str catalog_id: (required)
@@ -8950,7 +8874,6 @@ class DataCatalogClient(object):
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
-        Lists work request errors.
         Returns a (paginated) list of errors for a given work request.
 
 
@@ -9067,7 +8990,6 @@ class DataCatalogClient(object):
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
-        Lists work request logs.
         Returns a (paginated) list of logs for a given work request.
 
 
@@ -9184,7 +9106,6 @@ class DataCatalogClient(object):
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
-        List work requests.
         Lists the work requests in a compartment.
 
 
@@ -9262,7 +9183,6 @@ class DataCatalogClient(object):
 
     def object_stats(self, catalog_id, **kwargs):
         """
-        Returns stats on objects in the repository.
         Returns stats on objects by type in the repository.
 
 
@@ -9379,7 +9299,6 @@ class DataCatalogClient(object):
 
     def parse_connection(self, catalog_id, data_asset_key, parse_connection_details, **kwargs):
         """
-        Parse connection from a request payload that contains data asset references.
         Parse data asset references through connections from this data asset.
 
 
@@ -9483,7 +9402,6 @@ class DataCatalogClient(object):
 
     def search_criteria(self, catalog_id, **kwargs):
         """
-        Returns a list of search results within a data catalog.
         Returns a list of search results within a data catalog.
 
 
@@ -9628,7 +9546,6 @@ class DataCatalogClient(object):
 
     def test_connection(self, catalog_id, data_asset_key, connection_key, **kwargs):
         """
-        Test the connection credentials to the parent data asset.
         Test the connection by connecting to the data asset using credentials in the metadata.
 
 
@@ -9720,7 +9637,6 @@ class DataCatalogClient(object):
 
     def update_attribute(self, catalog_id, data_asset_key, entity_key, attribute_key, update_attribute_details, **kwargs):
         """
-        Update a specific data asset attribute.
         Updates a specific data asset attribute.
 
 
@@ -9819,7 +9735,6 @@ class DataCatalogClient(object):
 
     def update_catalog(self, catalog_id, update_catalog_details, **kwargs):
         """
-        Update the data catalog identified by the id.
         Updates the data catalog.
 
 
@@ -9906,7 +9821,6 @@ class DataCatalogClient(object):
 
     def update_connection(self, catalog_id, data_asset_key, connection_key, update_connection_details, **kwargs):
         """
-        Update a specific connection of a data asset.
         Updates a specific connection of a data asset.
 
 
@@ -10001,7 +9915,6 @@ class DataCatalogClient(object):
 
     def update_data_asset(self, catalog_id, data_asset_key, update_data_asset_details, **kwargs):
         """
-        Update a specific data asset identified by the given key.
         Updates a specific data asset identified by the given key.
 
 
@@ -10092,7 +10005,6 @@ class DataCatalogClient(object):
 
     def update_entity(self, catalog_id, data_asset_key, entity_key, update_entity_details, **kwargs):
         """
-        Update a specific data entity.
         Updates a specific data entity.
 
 
@@ -10187,7 +10099,6 @@ class DataCatalogClient(object):
 
     def update_folder(self, catalog_id, data_asset_key, folder_key, update_folder_details, **kwargs):
         """
-        Update a specific folder of a data asset.
         Updates a specific folder of a data asset.
 
 
@@ -10282,7 +10193,6 @@ class DataCatalogClient(object):
 
     def update_glossary(self, catalog_id, glossary_key, update_glossary_details, **kwargs):
         """
-        Update a specific glossary identified by the given key.
         Updates a specific glossary identified by the given key.
 
 
@@ -10373,7 +10283,6 @@ class DataCatalogClient(object):
 
     def update_job(self, catalog_id, job_key, update_job_details, **kwargs):
         """
-        Update a specific job identified by the given key.
         Updates a specific job identified by the given key.
 
 
@@ -10465,7 +10374,6 @@ class DataCatalogClient(object):
     def update_job_definition(self, catalog_id, job_definition_key, update_job_definition_details, **kwargs):
         """
         Update a specific job definition identified by the given key.
-        Update a specific job definition identified by the given key.
 
 
         :param str catalog_id: (required)
@@ -10555,7 +10463,6 @@ class DataCatalogClient(object):
 
     def update_term(self, catalog_id, glossary_key, term_key, update_term_details, **kwargs):
         """
-        Update a specific glossary term.
         Updates a specific glossary term.
 
 
@@ -10650,7 +10557,6 @@ class DataCatalogClient(object):
 
     def update_term_relationship(self, catalog_id, glossary_key, term_key, term_relationship_key, update_term_relationship_details, **kwargs):
         """
-        Update a specific glossary term relationship.
         Updates a specific glossary term relationship.
 
 
@@ -10749,7 +10655,6 @@ class DataCatalogClient(object):
 
     def upload_credentials(self, catalog_id, data_asset_key, connection_key, upload_credentials_details, **kwargs):
         """
-        Upload connection credentials file and metadata for this connection for update.
         Upload connection credentails and metadata for this connection.
 
 
@@ -10855,7 +10760,6 @@ class DataCatalogClient(object):
 
     def users(self, catalog_id, **kwargs):
         """
-        Returns active users in the system.
         Returns active users in the system.
 
 
@@ -10972,7 +10876,6 @@ class DataCatalogClient(object):
 
     def validate_connection(self, catalog_id, data_asset_key, validate_connection_details, **kwargs):
         """
-        Validate connection from a request payload that contains connection metadata.
         Validate connection by connecting to the data asset using credentials in metadata.
 
 
@@ -11062,3 +10965,4 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=validate_connection_details,
                 response_type="ValidateConnectionResult")
+

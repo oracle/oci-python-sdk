@@ -83,7 +83,6 @@ class LoadBalancerClient(object):
 
     def change_load_balancer_compartment(self, load_balancer_id, change_load_balancer_compartment_details, **kwargs):
         """
-        ChangeLoadBalancerCompartment
         Moves a load balancer into a different compartment within the same tenancy. For information about moving resources
         between compartments, see `Moving Resources to a Different Compartment`__.
 
@@ -185,7 +184,6 @@ class LoadBalancerClient(object):
 
     def create_backend(self, create_backend_details, load_balancer_id, backend_set_name, **kwargs):
         """
-        CreateBackend
         Adds a backend server to a backend set.
 
 
@@ -281,7 +279,6 @@ class LoadBalancerClient(object):
 
     def create_backend_set(self, create_backend_set_details, load_balancer_id, **kwargs):
         """
-        CreateBackendSet
         Adds a backend set to a load balancer.
 
 
@@ -371,7 +368,6 @@ class LoadBalancerClient(object):
 
     def create_certificate(self, create_certificate_details, load_balancer_id, **kwargs):
         """
-        CreateCertificate
         Creates an asynchronous request to add an SSL certificate bundle.
 
 
@@ -461,7 +457,6 @@ class LoadBalancerClient(object):
 
     def create_hostname(self, create_hostname_details, load_balancer_id, **kwargs):
         """
-        CreateHostname
         Adds a hostname resource to the specified load balancer. For more information, see
         `Managing Request Routing`__.
 
@@ -554,7 +549,6 @@ class LoadBalancerClient(object):
 
     def create_listener(self, create_listener_details, load_balancer_id, **kwargs):
         """
-        CreateListener
         Adds a listener to a load balancer.
 
 
@@ -644,7 +638,6 @@ class LoadBalancerClient(object):
 
     def create_load_balancer(self, create_load_balancer_details, **kwargs):
         """
-        CreateLoadBalancer
         Creates a new load balancer in the specified compartment. For general information about load balancers,
         see `Overview of the Load Balancing Service`__.
 
@@ -748,7 +741,6 @@ class LoadBalancerClient(object):
 
     def create_path_route_set(self, create_path_route_set_details, load_balancer_id, **kwargs):
         """
-        CreatePathRouteSet
         Adds a path route set to a load balancer. For more information, see
         `Managing Request Routing`__.
 
@@ -841,7 +833,6 @@ class LoadBalancerClient(object):
 
     def create_rule_set(self, load_balancer_id, create_rule_set_details, **kwargs):
         """
-        CreateRuleSet
         Creates a new rule set associated with the specified load balancer. For more information, see
         `Managing Rule Sets`__.
 
@@ -923,7 +914,6 @@ class LoadBalancerClient(object):
 
     def delete_backend(self, load_balancer_id, backend_set_name, backend_name, **kwargs):
         """
-        DeleteBackend
         Removes a backend server from a given load balancer and backend set.
 
 
@@ -1009,7 +999,6 @@ class LoadBalancerClient(object):
 
     def delete_backend_set(self, load_balancer_id, backend_set_name, **kwargs):
         """
-        DeleteBackendSet
         Deletes the specified backend set. Note that deleting a backend set removes its backend servers from the load balancer.
 
         Before you can delete a backend set, you must remove it from any active listeners.
@@ -1091,7 +1080,6 @@ class LoadBalancerClient(object):
 
     def delete_certificate(self, load_balancer_id, certificate_name, **kwargs):
         """
-        DeleteCertificate
         Deletes an SSL certificate bundle from a load balancer.
 
 
@@ -1172,7 +1160,6 @@ class LoadBalancerClient(object):
 
     def delete_hostname(self, load_balancer_id, name, **kwargs):
         """
-        DeleteHostname
         Deletes a hostname resource from the specified load balancer.
 
 
@@ -1252,7 +1239,6 @@ class LoadBalancerClient(object):
 
     def delete_listener(self, load_balancer_id, listener_name, **kwargs):
         """
-        DeleteListener
         Deletes a listener from a load balancer.
 
 
@@ -1332,7 +1318,6 @@ class LoadBalancerClient(object):
 
     def delete_load_balancer(self, load_balancer_id, **kwargs):
         """
-        DeleteLoadBalancer
         Stops a load balancer and removes it from service.
 
 
@@ -1406,7 +1391,6 @@ class LoadBalancerClient(object):
 
     def delete_path_route_set(self, load_balancer_id, path_route_set_name, **kwargs):
         """
-        DeletePathRouteSet
         Deletes a path route set from the specified load balancer.
 
         To delete a path route rule from a path route set, use the
@@ -1489,7 +1473,6 @@ class LoadBalancerClient(object):
 
     def delete_rule_set(self, load_balancer_id, rule_set_name, **kwargs):
         """
-        DeleteRuleSet
         Deletes a rule set from the specified load balancer.
 
         To delete a rule from a rule set, use the
@@ -1572,7 +1555,6 @@ class LoadBalancerClient(object):
 
     def get_backend(self, load_balancer_id, backend_set_name, backend_name, **kwargs):
         """
-        GetBackend
         Gets the specified backend server's configuration information.
 
 
@@ -1660,7 +1642,6 @@ class LoadBalancerClient(object):
 
     def get_backend_health(self, load_balancer_id, backend_set_name, backend_name, **kwargs):
         """
-        BackendHealth
         Gets the current health status of the specified backend server.
 
 
@@ -1748,7 +1729,6 @@ class LoadBalancerClient(object):
 
     def get_backend_set(self, load_balancer_id, backend_set_name, **kwargs):
         """
-        GetBackendSet
         Gets the specified backend set's configuration information.
 
 
@@ -1830,7 +1810,6 @@ class LoadBalancerClient(object):
 
     def get_backend_set_health(self, load_balancer_id, backend_set_name, **kwargs):
         """
-        BackendSetHealth
         Gets the health status for the specified backend set.
 
 
@@ -1912,7 +1891,6 @@ class LoadBalancerClient(object):
 
     def get_health_checker(self, load_balancer_id, backend_set_name, **kwargs):
         """
-        GetHealthChecker
         Gets the health check policy information for a given load balancer and backend set.
 
 
@@ -1994,7 +1972,6 @@ class LoadBalancerClient(object):
 
     def get_hostname(self, load_balancer_id, name, **kwargs):
         """
-        GetHostname
         Gets the specified hostname resource's configuration information.
 
 
@@ -2076,7 +2053,6 @@ class LoadBalancerClient(object):
 
     def get_load_balancer(self, load_balancer_id, **kwargs):
         """
-        GetLoadBalancer
         Gets the specified load balancer's configuration information.
 
 
@@ -2152,7 +2128,6 @@ class LoadBalancerClient(object):
 
     def get_load_balancer_health(self, load_balancer_id, **kwargs):
         """
-        LoadBalancerHealth
         Gets the health status for the specified load balancer.
 
 
@@ -2228,7 +2203,6 @@ class LoadBalancerClient(object):
 
     def get_path_route_set(self, load_balancer_id, path_route_set_name, **kwargs):
         """
-        GetPathRouteSet
         Gets the specified path route set's configuration information.
 
 
@@ -2310,7 +2284,6 @@ class LoadBalancerClient(object):
 
     def get_rule_set(self, load_balancer_id, rule_set_name, **kwargs):
         """
-        GetRuleSet
         Gets the specified set of rules.
 
 
@@ -2392,7 +2365,6 @@ class LoadBalancerClient(object):
 
     def get_work_request(self, work_request_id, **kwargs):
         """
-        GetWorkRequest
         Gets the details of a work request.
 
 
@@ -2468,7 +2440,6 @@ class LoadBalancerClient(object):
 
     def list_backend_sets(self, load_balancer_id, **kwargs):
         """
-        ListBackendSets
         Lists all backend sets associated with a given load balancer.
 
 
@@ -2544,7 +2515,6 @@ class LoadBalancerClient(object):
 
     def list_backends(self, load_balancer_id, backend_set_name, **kwargs):
         """
-        ListBackends
         Lists the backend servers for a given load balancer and backend set.
 
 
@@ -2626,7 +2596,6 @@ class LoadBalancerClient(object):
 
     def list_certificates(self, load_balancer_id, **kwargs):
         """
-        ListCertificates
         Lists all SSL certificates bundles associated with a given load balancer.
 
 
@@ -2703,7 +2672,6 @@ class LoadBalancerClient(object):
 
     def list_hostnames(self, load_balancer_id, **kwargs):
         """
-        ListHostnames
         Lists all hostname resources associated with the specified load balancer.
 
 
@@ -2780,7 +2748,6 @@ class LoadBalancerClient(object):
 
     def list_listener_rules(self, load_balancer_id, listener_name, **kwargs):
         """
-        ListListenerRules
         Lists all of the rules from all of the rule sets associated with the specified listener. The response organizes
         the rules in the following order:
 
@@ -2866,7 +2833,6 @@ class LoadBalancerClient(object):
 
     def list_load_balancer_healths(self, compartment_id, **kwargs):
         """
-        ListLoadBalancerHealths
         Lists the summary health statuses for all load balancers in the specified compartment.
 
 
@@ -2957,7 +2923,6 @@ class LoadBalancerClient(object):
 
     def list_load_balancers(self, compartment_id, **kwargs):
         """
-        ListLoadBalancers
         Lists all load balancers in the specified compartment.
 
 
@@ -3107,7 +3072,6 @@ class LoadBalancerClient(object):
 
     def list_path_route_sets(self, load_balancer_id, **kwargs):
         """
-        ListPathRouteSets
         Lists all path route sets associated with the specified load balancer.
 
 
@@ -3184,7 +3148,6 @@ class LoadBalancerClient(object):
 
     def list_policies(self, compartment_id, **kwargs):
         """
-        ListPolicies
         Lists the available load balancer policies.
 
 
@@ -3275,7 +3238,6 @@ class LoadBalancerClient(object):
 
     def list_protocols(self, compartment_id, **kwargs):
         """
-        ListProtocols
         Lists all supported traffic protocols.
 
 
@@ -3366,7 +3328,6 @@ class LoadBalancerClient(object):
 
     def list_rule_sets(self, load_balancer_id, **kwargs):
         """
-        ListRuleSets
         Lists all rule sets associated with the specified load balancer.
 
 
@@ -3442,7 +3403,6 @@ class LoadBalancerClient(object):
 
     def list_shapes(self, compartment_id, **kwargs):
         """
-        ListShapes
         Lists the valid load balancer shapes.
 
 
@@ -3533,7 +3493,6 @@ class LoadBalancerClient(object):
 
     def list_work_requests(self, load_balancer_id, **kwargs):
         """
-        ListWorkRequests
         Lists the work requests for a given load balancer.
 
 
@@ -3635,7 +3594,6 @@ class LoadBalancerClient(object):
 
     def update_backend(self, update_backend_details, load_balancer_id, backend_set_name, backend_name, **kwargs):
         """
-        UpdateBackend
         Updates the configuration of a backend server within the specified backend set.
 
 
@@ -3737,7 +3695,6 @@ class LoadBalancerClient(object):
 
     def update_backend_set(self, update_backend_set_details, load_balancer_id, backend_set_name, **kwargs):
         """
-        UpdateBackendSet
         Updates a backend set.
 
 
@@ -3833,7 +3790,6 @@ class LoadBalancerClient(object):
 
     def update_health_checker(self, health_checker, load_balancer_id, backend_set_name, **kwargs):
         """
-        UpdateHealthChecker
         Updates the health check policy for a given load balancer and backend set.
 
 
@@ -3929,7 +3885,6 @@ class LoadBalancerClient(object):
 
     def update_hostname(self, update_hostname_details, load_balancer_id, name, **kwargs):
         """
-        UpdateHostname
         Overwrites an existing hostname resource on the specified load balancer. Use this operation to change a
         virtual hostname.
 
@@ -4016,7 +3971,6 @@ class LoadBalancerClient(object):
 
     def update_listener(self, update_listener_details, load_balancer_id, listener_name, **kwargs):
         """
-        UpdateListener
         Updates a listener for a given load balancer.
 
 
@@ -4112,7 +4066,6 @@ class LoadBalancerClient(object):
 
     def update_load_balancer(self, update_load_balancer_details, load_balancer_id, **kwargs):
         """
-        UpdateLoadBalancer
         Updates a load balancer's configuration.
 
 
@@ -4202,7 +4155,6 @@ class LoadBalancerClient(object):
 
     def update_network_security_groups(self, update_network_security_groups_details, load_balancer_id, **kwargs):
         """
-        UpdateNetworkSecurityGroups
         Updates the network security groups associated with the specified load balancer.
 
 
@@ -4292,7 +4244,6 @@ class LoadBalancerClient(object):
 
     def update_path_route_set(self, update_path_route_set_details, load_balancer_id, path_route_set_name, **kwargs):
         """
-        UpdatePathRouteSet
         Overwrites an existing path route set on the specified load balancer. Use this operation to add, delete, or alter
         path route rules in a path route set.
 
@@ -4393,7 +4344,6 @@ class LoadBalancerClient(object):
 
     def update_rule_set(self, load_balancer_id, rule_set_name, update_rule_set_details, **kwargs):
         """
-        UpdateRuleSet
         Overwrites an existing set of rules on the specified load balancer. Use this operation to add or alter
         the rules in a rule set.
 
@@ -4478,3 +4428,4 @@ class LoadBalancerClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_rule_set_details)
+

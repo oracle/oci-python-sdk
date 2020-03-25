@@ -84,7 +84,6 @@ class DeploymentClient(object):
 
     def change_deployment_compartment(self, deployment_id, change_deployment_compartment_details, **kwargs):
         """
-        Change the deployment compartment.
         Changes the deployment compartment.
 
 
@@ -180,7 +179,6 @@ class DeploymentClient(object):
 
     def create_deployment(self, create_deployment_details, **kwargs):
         """
-        Creates a new Deployment
         Creates a new deployment.
 
 
@@ -254,7 +252,6 @@ class DeploymentClient(object):
 
     def delete_deployment(self, deployment_id, **kwargs):
         """
-        Delete a provisioned Deployment
         Deletes the deployment with the given identifier.
 
 
@@ -334,7 +331,6 @@ class DeploymentClient(object):
 
     def get_deployment(self, deployment_id, **kwargs):
         """
-        Get Deployment
         Gets a deployment by identifier.
 
 
@@ -407,7 +403,6 @@ class DeploymentClient(object):
 
     def list_deployments(self, compartment_id, **kwargs):
         """
-        Gets a list of all Deployments in a compartment
         Returns a list of deployments.
 
 
@@ -544,7 +539,6 @@ class DeploymentClient(object):
 
     def update_deployment(self, deployment_id, update_deployment_details, **kwargs):
         """
-        Update the Deployment identified by the id
         Updates the deployment with the given identifier.
 
 
@@ -626,3 +620,4 @@ class DeploymentClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_deployment_details)
+

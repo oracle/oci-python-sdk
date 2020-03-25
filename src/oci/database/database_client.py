@@ -84,7 +84,6 @@ class DatabaseClient(object):
 
     def activate_exadata_infrastructure(self, exadata_infrastructure_id, activate_exadata_infrastructure_details, **kwargs):
         """
-        Activate ExadataInfrastructure
         Activates the specified Exadata infrastructure.
 
 
@@ -175,7 +174,6 @@ class DatabaseClient(object):
 
     def change_autonomous_container_database_compartment(self, change_compartment_details, autonomous_container_database_id, **kwargs):
         """
-        ChangeAutonomousContainerDatabaseCompartment
         Move the Autonomous Container Database and its dependent resources to the specified compartment.
         For more information about moving Autonomous Container Databases, see
         `Moving Database Resources to a Different Compartment`__.
@@ -275,7 +273,6 @@ class DatabaseClient(object):
 
     def change_autonomous_database_compartment(self, change_compartment_details, autonomous_database_id, **kwargs):
         """
-        ChangeAutonomousDatabaseCompartment
         Move the Autonomous Database and its dependent resources to the specified compartment.
         For more information about moving Autonomous Databases, see
         `Moving Database Resources to a Different Compartment`__.
@@ -375,7 +372,6 @@ class DatabaseClient(object):
 
     def change_autonomous_exadata_infrastructure_compartment(self, change_compartment_details, autonomous_exadata_infrastructure_id, **kwargs):
         """
-        ChangeAutonomousExadataInfrastructureCompartment
         Move the Autonomous Exadata Infrastructure and its dependent resources to the specified compartment.
         For more information about moving Autonomous Exadata Infrastructures, see
         `Moving Database Resources to a Different Compartment`__.
@@ -475,7 +471,6 @@ class DatabaseClient(object):
 
     def change_backup_destination_compartment(self, change_compartment_details, backup_destination_id, **kwargs):
         """
-        ChangeBackupDestinationCompartment
         Move the backup destination and its dependent resources to the specified compartment.
         For more information about moving backup destinations, see
         `Moving Database Resources to a Different Compartment`__.
@@ -575,7 +570,6 @@ class DatabaseClient(object):
 
     def change_db_system_compartment(self, change_compartment_details, db_system_id, **kwargs):
         """
-        ChangeDbSystemCompartment
         Move the DB system and its dependent resources to the specified compartment.
         For more information about moving DB systems, see
         `Moving Database Resources to a Different Compartment`__.
@@ -675,7 +669,6 @@ class DatabaseClient(object):
 
     def change_exadata_infrastructure_compartment(self, change_exadata_infrastructure_compartment_details, exadata_infrastructure_id, **kwargs):
         """
-        ChangeExadataInfrastructureCompartment
         To move an Exadata infrastructure and its dependent resources to another compartment, use the
         :func:`change_exadata_infrastructure_compartment` operation.
 
@@ -772,7 +765,6 @@ class DatabaseClient(object):
 
     def change_vm_cluster_compartment(self, change_vm_cluster_compartment_details, vm_cluster_id, **kwargs):
         """
-        ChangeVmClusterCompartment
         To move a VM cluster and its dependent resources to another compartment, use the
         :func:`change_vm_cluster_compartment` operation.
 
@@ -869,7 +861,6 @@ class DatabaseClient(object):
 
     def complete_external_backup_job(self, backup_id, complete_external_backup_job_details, **kwargs):
         """
-        CompleteExternalBackupJob
         Changes the status of the standalone backup resource to `ACTIVE` after the backup is created from the on-premises database and placed in Oracle Cloud Infrastructure Object Storage.
 
         **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See `Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud`__ for more information.
@@ -966,7 +957,6 @@ class DatabaseClient(object):
 
     def create_autonomous_container_database(self, create_autonomous_container_database_details, **kwargs):
         """
-        CreateAutonomousContainerDatabase
         Create a new Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
 
 
@@ -1035,7 +1025,6 @@ class DatabaseClient(object):
 
     def create_autonomous_data_warehouse(self, create_autonomous_data_warehouse_details, **kwargs):
         """
-        Creates a new Autonomous Data Warehouse.
         **Deprecated.** To create a new Autonomous Data Warehouse, use the :func:`create_autonomous_database` operation and specify `DW` as the workload type.
 
 
@@ -1104,7 +1093,6 @@ class DatabaseClient(object):
 
     def create_autonomous_data_warehouse_backup(self, create_autonomous_data_warehouse_backup_details, **kwargs):
         """
-        Creates a new Autonomous Data Warehouse backup for the specified database.
         **Deprecated.** To create a new Autonomous Data Warehouse backup for a specified database, use the :func:`create_autonomous_database_backup` operation.
 
 
@@ -1173,7 +1161,6 @@ class DatabaseClient(object):
 
     def create_autonomous_database(self, create_autonomous_database_details, **kwargs):
         """
-        Creates a new Autonomous Database.
         Creates a new Autonomous Database.
 
 
@@ -1247,7 +1234,6 @@ class DatabaseClient(object):
 
     def create_autonomous_database_backup(self, create_autonomous_database_backup_details, **kwargs):
         """
-        Creates a new Autonomous Database backup for the specified database.
         Creates a new Autonomous Database backup for the specified database based on the provided request parameters.
 
 
@@ -1321,7 +1307,6 @@ class DatabaseClient(object):
 
     def create_backup(self, create_backup_details, **kwargs):
         """
-        CreateBackup
         Creates a new backup in the specified database based on the request parameters you provide. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
 
 
@@ -1390,7 +1375,6 @@ class DatabaseClient(object):
 
     def create_backup_destination(self, create_backup_destination_details, **kwargs):
         """
-        CreateBackupDestination
         Creates a backup destination.
 
 
@@ -1464,7 +1448,6 @@ class DatabaseClient(object):
 
     def create_console_connection(self, create_console_connection_details, db_node_id, **kwargs):
         """
-        CreateConsoleConnection
         Creates a new console connection to the specified dbNode.
         After the console connection has been created and is available,
         you connect to the console using SSH.
@@ -1552,7 +1535,6 @@ class DatabaseClient(object):
 
     def create_data_guard_association(self, database_id, create_data_guard_association_details, **kwargs):
         """
-        Creates a Data Guard association.
         Creates a new Data Guard association.  A Data Guard association represents the replication relationship between the
         specified database and a peer database. For more information, see `Using Oracle Data Guard`__.
 
@@ -1648,7 +1630,6 @@ class DatabaseClient(object):
 
     def create_database(self, create_new_database_details, **kwargs):
         """
-        CreateDatabase
         Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies only to Exadata DB systems.
 
 
@@ -1722,7 +1703,6 @@ class DatabaseClient(object):
 
     def create_db_home(self, create_db_home_with_db_system_id_details, **kwargs):
         """
-        CreateDbHome
         Creates a new Database Home in the specified DB system based on the request parameters you provide. Applies only to bare metal and Exadata DB systems.
 
 
@@ -1791,7 +1771,6 @@ class DatabaseClient(object):
 
     def create_exadata_infrastructure(self, create_exadata_infrastructure_details, **kwargs):
         """
-        CreateExadataInfrastructure
         Create Exadata infrastructure.
 
 
@@ -1865,7 +1844,6 @@ class DatabaseClient(object):
 
     def create_external_backup_job(self, create_external_backup_job_details, **kwargs):
         """
-        CreateExternalBackupJob
         Creates a new backup resource and returns the information the caller needs to back up an on-premises Oracle Database to Oracle Cloud Infrastructure.
 
         **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See `Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud`__ for more information.
@@ -1938,7 +1916,6 @@ class DatabaseClient(object):
 
     def create_vm_cluster(self, create_vm_cluster_details, **kwargs):
         """
-        CreateVmCluster
         Creates a VM cluster.
 
 
@@ -2012,7 +1989,6 @@ class DatabaseClient(object):
 
     def create_vm_cluster_network(self, exadata_infrastructure_id, vm_cluster_network_details, **kwargs):
         """
-        CreateVmClusterNetwork
         Creates the VM cluster network.
 
 
@@ -2103,7 +2079,6 @@ class DatabaseClient(object):
 
     def db_node_action(self, db_node_id, action, **kwargs):
         """
-        DbNodeAction
         Performs one of the following power actions on the specified DB node:
         - start - power on
         - stop - power off
@@ -2215,7 +2190,6 @@ class DatabaseClient(object):
 
     def delete_autonomous_data_warehouse(self, autonomous_data_warehouse_id, **kwargs):
         """
-        Deletes the specified Autonomous Data Warehouse.
         **Deprecated.** To delete an Autonomous Data Warehouse, use the :func:`delete_autonomous_database` operation.
 
 
@@ -2290,7 +2264,6 @@ class DatabaseClient(object):
 
     def delete_autonomous_database(self, autonomous_database_id, **kwargs):
         """
-        Deletes the specified Autonomous Database.
         Deletes the specified Autonomous Database.
 
 
@@ -2370,7 +2343,6 @@ class DatabaseClient(object):
 
     def delete_backup(self, backup_id, **kwargs):
         """
-        DeleteBackup
         Deletes a full backup. You cannot delete automatic backups using this API.
 
 
@@ -2445,7 +2417,6 @@ class DatabaseClient(object):
 
     def delete_backup_destination(self, backup_destination_id, **kwargs):
         """
-        DeleteBackupDestination
         Deletes a backup destination.
 
 
@@ -2525,7 +2496,6 @@ class DatabaseClient(object):
 
     def delete_console_connection(self, db_node_id, console_connection_id, **kwargs):
         """
-        DeleteConsoleConnection
         Deletes the specified Db node console connection.
 
 
@@ -2604,7 +2574,6 @@ class DatabaseClient(object):
 
     def delete_database(self, database_id, **kwargs):
         """
-        DeleteDatabase
         Deletes the database. Applies only to Exadata DB systems.
 
         The data in this database is local to the DB system and will be lost when the database is deleted. Oracle recommends that you back up any data in the DB system prior to deleting it. You can use the `performFinalBackup` parameter to have the Exadata DB system database backed up before it is deleted.
@@ -2701,7 +2670,6 @@ class DatabaseClient(object):
 
     def delete_db_home(self, db_home_id, **kwargs):
         """
-        DeleteDbHome
         Deletes a Database Home. Applies only to bare metal and Exadata DB systems.
 
         The Database Home and its database data are local to the DB system, and on a bare metal DB system, both are lost when you delete the Database Home. Oracle recommends that you back up any data on the DB system before you delete it. You can use the `performFinalBackup` parameter with this operation on bare metal DB systems.
@@ -2795,7 +2763,6 @@ class DatabaseClient(object):
 
     def delete_exadata_infrastructure(self, exadata_infrastructure_id, **kwargs):
         """
-        Deletes the specified Exadata infrastructure.
         Deletes the Exadata infrastructure.
 
 
@@ -2876,7 +2843,6 @@ class DatabaseClient(object):
     def delete_vm_cluster(self, vm_cluster_id, **kwargs):
         """
         Deletes the specified VM cluster.
-        Deletes the specified VM cluster.
 
 
         :param str vm_cluster_id: (required)
@@ -2955,7 +2921,6 @@ class DatabaseClient(object):
 
     def delete_vm_cluster_network(self, exadata_infrastructure_id, vm_cluster_network_id, **kwargs):
         """
-        Deletes the specified VM cluster network.
         Deletes the specified VM cluster network.
 
 
@@ -3041,7 +3006,6 @@ class DatabaseClient(object):
 
     def deregister_autonomous_database_data_safe(self, autonomous_database_id, **kwargs):
         """
-        Asynchronously deregisters Data Safe for this Autonomous Database.
         Asynchronously deregisters this Autonomous Database with Data Safe.
 
 
@@ -3114,7 +3078,6 @@ class DatabaseClient(object):
 
     def download_exadata_infrastructure_config_file(self, exadata_infrastructure_id, **kwargs):
         """
-        Downloads the configuration file for the specified Exadata infrastructure.
         Downloads the configuration file for the specified Exadata infrastructure.
 
 
@@ -3200,7 +3163,6 @@ class DatabaseClient(object):
 
     def download_vm_cluster_network_config_file(self, exadata_infrastructure_id, vm_cluster_network_id, **kwargs):
         """
-        Downloads the configuration file for the specified VM Cluster Network.
         Downloads the configuration file for the specified VM Cluster Network.
 
 
@@ -3292,7 +3254,6 @@ class DatabaseClient(object):
 
     def failover_data_guard_association(self, database_id, data_guard_association_id, failover_data_guard_association_details, **kwargs):
         """
-        Performs a failover to transition a standby database into the primary database role.
         Performs a failover to transition the standby database identified by the `databaseId` parameter into the
         specified Data Guard association's primary role after the existing primary database fails or becomes unreachable.
 
@@ -3384,7 +3345,6 @@ class DatabaseClient(object):
 
     def generate_autonomous_data_warehouse_wallet(self, autonomous_data_warehouse_id, generate_autonomous_data_warehouse_wallet_details, **kwargs):
         """
-        Creates and downloads a wallet for the specified Autonomous Data Warehouse.
         **Deprecated.** To create and download a wallet for an Autonomous Data Warehouse, use the :func:`generate_autonomous_database_wallet` operation.
 
 
@@ -3476,7 +3436,6 @@ class DatabaseClient(object):
     def generate_autonomous_database_wallet(self, autonomous_database_id, generate_autonomous_database_wallet_details, **kwargs):
         """
         Creates and downloads a wallet for the specified Autonomous Database.
-        Creates and downloads a wallet for the specified Autonomous Database.
 
 
         :param str autonomous_database_id: (required)
@@ -3567,7 +3526,6 @@ class DatabaseClient(object):
     def generate_recommended_vm_cluster_network(self, exadata_infrastructure_id, generate_recommended_network_details, **kwargs):
         """
         Generates a recommended VM cluster network configuration.
-        Generates a recommended VM cluster network configuration.
 
 
         :param str exadata_infrastructure_id: (required)
@@ -3657,7 +3615,6 @@ class DatabaseClient(object):
 
     def get_autonomous_container_database(self, autonomous_container_database_id, **kwargs):
         """
-        GetAutonomousContainerDatabase
         Gets information about the specified Autonomous Container Database.
 
 
@@ -3723,7 +3680,6 @@ class DatabaseClient(object):
 
     def get_autonomous_data_warehouse(self, autonomous_data_warehouse_id, **kwargs):
         """
-        Gets the details of the specified Autonomous Data Warehouse.
         **Deprecated.** To get the details of an Autonomous Data Warehouse, use the :func:`get_autonomous_database` operation.
 
 
@@ -3789,7 +3745,6 @@ class DatabaseClient(object):
 
     def get_autonomous_data_warehouse_backup(self, autonomous_data_warehouse_backup_id, **kwargs):
         """
-        Gets information about the specified Autonomous Data Warehouse backup.
         **Deprecated.** To get information about a specified Autonomous Data Warehouse backup, use the :func:`get_autonomous_database_backup` operation.
 
 
@@ -3855,7 +3810,6 @@ class DatabaseClient(object):
 
     def get_autonomous_database(self, autonomous_database_id, **kwargs):
         """
-        Gets the details of the specified Autonomous Database.
         Gets the details of the specified Autonomous Database.
 
 
@@ -3931,7 +3885,6 @@ class DatabaseClient(object):
     def get_autonomous_database_backup(self, autonomous_database_backup_id, **kwargs):
         """
         Gets information about the specified Autonomous Database backup.
-        Gets information about the specified Autonomous Database backup.
 
 
         :param str autonomous_database_backup_id: (required)
@@ -4005,7 +3958,6 @@ class DatabaseClient(object):
 
     def get_autonomous_database_regional_wallet(self, **kwargs):
         """
-        Get the regional wallet details for Autonomous Databases.
         Gets the Autonomous Database regional wallet details.
 
 
@@ -4063,7 +4015,6 @@ class DatabaseClient(object):
 
     def get_autonomous_database_wallet(self, autonomous_database_id, **kwargs):
         """
-        Get the wallet for the specified Autonomous Database.
         Gets the wallet details for the specified Autonomous Database.
 
 
@@ -4138,7 +4089,6 @@ class DatabaseClient(object):
 
     def get_autonomous_exadata_infrastructure(self, autonomous_exadata_infrastructure_id, **kwargs):
         """
-        GetAutonomousExadataInfrastructure
         Gets information about the specified Autonomous Exadata Infrastructure.
 
 
@@ -4204,7 +4154,6 @@ class DatabaseClient(object):
 
     def get_backup(self, backup_id, **kwargs):
         """
-        GetBackup
         Gets information about the specified backup.
 
 
@@ -4270,7 +4219,6 @@ class DatabaseClient(object):
 
     def get_backup_destination(self, backup_destination_id, **kwargs):
         """
-        GetBackupDestination
         Gets information about the specified backup destination.
 
 
@@ -4345,7 +4293,6 @@ class DatabaseClient(object):
 
     def get_console_connection(self, db_node_id, console_connection_id, **kwargs):
         """
-        GetConsoleConnection
         Gets the specified Db node console connection's information.
 
 
@@ -4415,7 +4362,6 @@ class DatabaseClient(object):
 
     def get_data_guard_association(self, database_id, data_guard_association_id, **kwargs):
         """
-        Gets configuration information for the specified database and Data Guard association.
         Gets the specified Data Guard association's configuration information.
 
 
@@ -4487,7 +4433,6 @@ class DatabaseClient(object):
 
     def get_database(self, database_id, **kwargs):
         """
-        GetDatabase
         Gets information about a specific database.
 
 
@@ -4553,7 +4498,6 @@ class DatabaseClient(object):
 
     def get_db_home(self, db_home_id, **kwargs):
         """
-        GetDbHome
         Gets information about the specified Database Home.
 
 
@@ -4619,7 +4563,6 @@ class DatabaseClient(object):
 
     def get_db_home_patch(self, db_home_id, patch_id, **kwargs):
         """
-        GetDbHomePatch
         Gets information about a specified patch package.
 
 
@@ -4691,7 +4634,6 @@ class DatabaseClient(object):
 
     def get_db_home_patch_history_entry(self, db_home_id, patch_history_entry_id, **kwargs):
         """
-        GetDbHomePatchHistoryEntry
         Gets the patch history details for the specified patchHistoryEntryId
 
 
@@ -4763,7 +4705,6 @@ class DatabaseClient(object):
 
     def get_db_node(self, db_node_id, **kwargs):
         """
-        GetDbNode
         Gets information about the specified database node.
 
 
@@ -4829,7 +4770,6 @@ class DatabaseClient(object):
 
     def get_db_system(self, db_system_id, **kwargs):
         """
-        GetDbSystem
         Gets information about the specified DB system.
 
 
@@ -4895,7 +4835,6 @@ class DatabaseClient(object):
 
     def get_db_system_patch(self, db_system_id, patch_id, **kwargs):
         """
-        GetDbSystemPatch
         Gets information about a specified patch package.
 
 
@@ -4967,7 +4906,6 @@ class DatabaseClient(object):
 
     def get_db_system_patch_history_entry(self, db_system_id, patch_history_entry_id, **kwargs):
         """
-        GetDbSystemPatchHistoryEntry
         Gets the patch history details for the specified patchHistoryEntryId.
 
 
@@ -5039,7 +4977,6 @@ class DatabaseClient(object):
 
     def get_exadata_infrastructure(self, exadata_infrastructure_id, **kwargs):
         """
-        GetExadataInfrastructure
         Gets information about the specified Exadata infrastructure.
 
 
@@ -5263,7 +5200,6 @@ class DatabaseClient(object):
 
     def get_external_backup_job(self, backup_id, **kwargs):
         """
-        GetExternalBackupJob
         Gets information about the specified external backup job.
 
         **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See `Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud`__ for more information.
@@ -5333,7 +5269,6 @@ class DatabaseClient(object):
 
     def get_maintenance_run(self, maintenance_run_id, **kwargs):
         """
-        GetMaintenanceRun
         Gets information about the specified Maintenance Run.
 
 
@@ -5397,7 +5332,6 @@ class DatabaseClient(object):
 
     def get_vm_cluster(self, vm_cluster_id, **kwargs):
         """
-        GetVmCluster
         Gets information about the specified VM cluster.
 
 
@@ -5472,7 +5406,6 @@ class DatabaseClient(object):
 
     def get_vm_cluster_network(self, exadata_infrastructure_id, vm_cluster_network_id, **kwargs):
         """
-        GetVmClusterNetwork
         Gets information about the specified VM cluster network.
 
 
@@ -5553,7 +5486,6 @@ class DatabaseClient(object):
 
     def launch_autonomous_exadata_infrastructure(self, launch_autonomous_exadata_infrastructure_details, **kwargs):
         """
-        LaunchAutonomousExadataInfrastructure
         Launches a new Autonomous Exadata Infrastructure in the specified compartment and availability domain.
 
 
@@ -5622,7 +5554,6 @@ class DatabaseClient(object):
 
     def launch_db_system(self, launch_db_system_details, **kwargs):
         """
-        LaunchDbSystem
         Creates a new DB system in the specified compartment and availability domain. The Oracle
         Database edition that you specify applies to all the databases on that DB system. The selected edition cannot be changed.
 
@@ -5701,7 +5632,6 @@ class DatabaseClient(object):
 
     def list_autonomous_container_databases(self, compartment_id, **kwargs):
         """
-        ListAutonomousContainerDatabases
         Gets a list of the Autonomous Container Databases in the specified compartment.
 
 
@@ -5836,7 +5766,6 @@ class DatabaseClient(object):
 
     def list_autonomous_data_warehouse_backups(self, **kwargs):
         """
-        Gets a list of Autonomous Data Warehouse backups.
         **Deprecated.** To get a list of Autonomous Data Warehouse backups, use the :func:`list_autonomous_database_backups` operation.
 
 
@@ -5967,7 +5896,6 @@ class DatabaseClient(object):
 
     def list_autonomous_data_warehouses(self, compartment_id, **kwargs):
         """
-        Gets a list of Autonomous Data Warehouses.
         **Deprecated.** To get a list of Autonomous Data Warehouses, use the :func:`list_autonomous_databases` operation and specify `DW` as the workload type.
 
 
@@ -6090,7 +6018,6 @@ class DatabaseClient(object):
 
     def list_autonomous_database_backups(self, **kwargs):
         """
-        Gets a list of Autonomous Database backups.
         Gets a list of Autonomous Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
 
 
@@ -6227,7 +6154,6 @@ class DatabaseClient(object):
 
     def list_autonomous_databases(self, compartment_id, **kwargs):
         """
-        Gets a list of Autonomous Database.
         Gets a list of Autonomous Databases.
 
 
@@ -6388,7 +6314,6 @@ class DatabaseClient(object):
 
     def list_autonomous_db_preview_versions(self, compartment_id, **kwargs):
         """
-        Gets a list of supported Autonomous Database versions.
         Gets a list of supported Autonomous Database versions. Note that preview version software is only available for
         databases with `shared Exadata infrastructure`__.
 
@@ -6502,7 +6427,6 @@ class DatabaseClient(object):
     def list_autonomous_db_versions(self, compartment_id, **kwargs):
         """
         Gets a list of supported Autonomous Database versions.
-        Gets a list of supported Autonomous Database versions.
 
 
         :param str compartment_id: (required)
@@ -6609,7 +6533,6 @@ class DatabaseClient(object):
 
     def list_autonomous_exadata_infrastructure_shapes(self, availability_domain, compartment_id, **kwargs):
         """
-        ListAutonomousExadataInfrastructureShapes
         Gets a list of the shapes that can be used to launch a new Autonomous Exadata Infrastructure DB system. The shape determines resources to allocate to the DB system (CPU cores, memory and storage).
 
 
@@ -6693,7 +6616,6 @@ class DatabaseClient(object):
 
     def list_autonomous_exadata_infrastructures(self, compartment_id, **kwargs):
         """
-        ListAutonomousExadataInfrastructures
         Gets a list of the Autonomous Exadata Infrastructures in the specified compartment.
 
 
@@ -6821,7 +6743,6 @@ class DatabaseClient(object):
 
     def list_backup_destination(self, compartment_id, **kwargs):
         """
-        ListBackupDestination
         Gets a list of backup destinations in the specified compartment.
 
 
@@ -6906,7 +6827,6 @@ class DatabaseClient(object):
 
     def list_backups(self, **kwargs):
         """
-        ListBackups
         Gets a list of backups based on the databaseId or compartmentId specified. Either one of the query parameters must be provided.
 
 
@@ -6988,7 +6908,6 @@ class DatabaseClient(object):
 
     def list_console_connections(self, db_node_id, **kwargs):
         """
-        ListConsoleConnections
         Lists the console connections for the specified Db node.
 
 
@@ -7054,7 +6973,6 @@ class DatabaseClient(object):
 
     def list_data_guard_associations(self, database_id, **kwargs):
         """
-        Lists all Data Guard associations for the specified database.
         Lists all Data Guard associations for the specified database.
 
 
@@ -7139,7 +7057,6 @@ class DatabaseClient(object):
 
     def list_databases(self, compartment_id, **kwargs):
         """
-        ListDatabases
         Gets a list of the databases in the specified Database Home.
 
 
@@ -7274,7 +7191,6 @@ class DatabaseClient(object):
 
     def list_db_home_patch_history_entries(self, db_home_id, **kwargs):
         """
-        ListDbHomePatchHistoryEntries
         Gets history of the actions taken for patches for the specified Database Home.
 
 
@@ -7359,7 +7275,6 @@ class DatabaseClient(object):
 
     def list_db_home_patches(self, db_home_id, **kwargs):
         """
-        ListDbHomePatches
         Lists patches applicable to the requested Database Home.
 
 
@@ -7444,7 +7359,6 @@ class DatabaseClient(object):
 
     def list_db_homes(self, compartment_id, **kwargs):
         """
-        ListDbHomes
         Gets a list of Database Homes in the specified DB system and compartment. A Database Home is a directory where Oracle Database software is installed.
 
 
@@ -7586,7 +7500,6 @@ class DatabaseClient(object):
 
     def list_db_nodes(self, compartment_id, **kwargs):
         """
-        ListDbNodes
         Gets a list of database nodes in the specified DB system and compartment. A database node is a server running database software.
 
 
@@ -7716,7 +7629,6 @@ class DatabaseClient(object):
 
     def list_db_system_patch_history_entries(self, db_system_id, **kwargs):
         """
-        ListDbSystemPatchHistoryEntries
         Gets the history of the patch actions performed on the specified DB system.
 
 
@@ -7801,7 +7713,6 @@ class DatabaseClient(object):
 
     def list_db_system_patches(self, db_system_id, **kwargs):
         """
-        ListDbSystemPatches
         Lists the patches applicable to the requested DB system.
 
 
@@ -7886,7 +7797,6 @@ class DatabaseClient(object):
 
     def list_db_system_shapes(self, compartment_id, **kwargs):
         """
-        ListDbSystemShapes
         Gets a list of the shapes that can be used to launch a new DB system. The shape determines resources to allocate to the DB system - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes.
 
 
@@ -7965,7 +7875,6 @@ class DatabaseClient(object):
 
     def list_db_systems(self, compartment_id, **kwargs):
         """
-        ListDbSystems
         Gets a list of the DB systems in the specified compartment. You can specify a backupId to list only the DB systems that support creating a database using this backup in this compartment.
 
 
@@ -8100,7 +8009,6 @@ class DatabaseClient(object):
 
     def list_db_versions(self, compartment_id, **kwargs):
         """
-        ListDbVersions
         Gets a list of supported Oracle Database versions.
 
 
@@ -8202,7 +8110,6 @@ class DatabaseClient(object):
 
     def list_exadata_infrastructures(self, compartment_id, **kwargs):
         """
-        ListExadataInfrastructures
         Gets a list of the Exadata infrastructure in the specified compartment.
 
 
@@ -8329,7 +8236,6 @@ class DatabaseClient(object):
 
     def list_gi_versions(self, compartment_id, **kwargs):
         """
-        ListGiVersions
         Gets a list of supported GI versions for VM Cluster.
 
 
@@ -8422,7 +8328,6 @@ class DatabaseClient(object):
 
     def list_maintenance_runs(self, compartment_id, **kwargs):
         """
-        ListMaintenanceRuns
         Gets a list of the Maintenance Runs in the specified compartment.
 
 
@@ -8578,7 +8483,6 @@ class DatabaseClient(object):
 
     def list_vm_cluster_networks(self, exadata_infrastructure_id, compartment_id, **kwargs):
         """
-        ListVmClusterNetworks
         Gets a list of the VM cluster networks in the specified compartment.
 
 
@@ -8722,7 +8626,6 @@ class DatabaseClient(object):
 
     def list_vm_clusters(self, compartment_id, **kwargs):
         """
-        ListVmClusters
         Gets a list of the VM clusters in the specified compartment.
 
 
@@ -8855,7 +8758,6 @@ class DatabaseClient(object):
     def register_autonomous_database_data_safe(self, autonomous_database_id, **kwargs):
         """
         Asynchronously registers this Autonomous Database with Data Safe.
-        Asynchronously registers this Autonomous Database with Data Safe.
 
 
         :param str autonomous_database_id: (required)
@@ -8927,7 +8829,6 @@ class DatabaseClient(object):
 
     def reinstate_data_guard_association(self, database_id, data_guard_association_id, reinstate_data_guard_association_details, **kwargs):
         """
-        Reinstates a database to a Data Guard association standby role.
         Reinstates the database identified by the `databaseId` parameter into the standby role in a Data Guard association.
 
 
@@ -9016,7 +8917,6 @@ class DatabaseClient(object):
     def restart_autonomous_container_database(self, autonomous_container_database_id, **kwargs):
         """
         Rolling restarts the specified Autonomous Container Database.
-        Rolling restarts the specified Autonomous Container Database.
 
 
         :param str autonomous_container_database_id: (required)
@@ -9097,7 +8997,6 @@ class DatabaseClient(object):
 
     def restart_autonomous_database(self, autonomous_database_id, **kwargs):
         """
-        Restarts the specified Autonomous Database.
         Restarts the specified Autonomous Database. Restart supported only for databases using dedicated Exadata infrastructure.
 
 
@@ -9174,7 +9073,6 @@ class DatabaseClient(object):
 
     def restore_autonomous_data_warehouse(self, autonomous_data_warehouse_id, restore_autonomous_data_warehouse_details, **kwargs):
         """
-        Restores an Autonomous Data Warehouse based on the provided request parameters.
         **Deprecated.** To restore an Autonomous Data Warehouse, use the :func:`restore_autonomous_database` operation.
 
 
@@ -9257,7 +9155,6 @@ class DatabaseClient(object):
     def restore_autonomous_database(self, autonomous_database_id, restore_autonomous_database_details, **kwargs):
         """
         Restores an Autonomous Database based on the provided request parameters.
-        Restores an Autonomous Database based on the provided request parameters.
 
 
         :param str autonomous_database_id: (required)
@@ -9338,7 +9235,6 @@ class DatabaseClient(object):
 
     def restore_database(self, database_id, restore_database_details, **kwargs):
         """
-        RestoreDatabase
         Restore a Database based on the request parameters you provide.
 
 
@@ -9420,7 +9316,6 @@ class DatabaseClient(object):
 
     def start_autonomous_data_warehouse(self, autonomous_data_warehouse_id, **kwargs):
         """
-        Starts the specified autonomous Data Warehouse.
         **Deprecated.** To start an Autonomous Data Warehouse, use the :func:`start_autonomous_database` operation.
 
 
@@ -9498,7 +9393,6 @@ class DatabaseClient(object):
     def start_autonomous_database(self, autonomous_database_id, **kwargs):
         """
         Starts the specified Autonomous Database.
-        Starts the specified Autonomous Database.
 
 
         :param str autonomous_database_id: (required)
@@ -9574,7 +9468,6 @@ class DatabaseClient(object):
 
     def stop_autonomous_data_warehouse(self, autonomous_data_warehouse_id, **kwargs):
         """
-        Stops the specified Autonomous Data Warehouse.
         **Deprecated.** To stop an Autonomous Data Warehouse, use the :func:`stop_autonomous_database` operation.
 
 
@@ -9651,7 +9544,6 @@ class DatabaseClient(object):
 
     def stop_autonomous_database(self, autonomous_database_id, **kwargs):
         """
-        Stops the specified Autonomous Database.
         Stops the specified Autonomous Database.
 
 
@@ -9733,7 +9625,6 @@ class DatabaseClient(object):
 
     def switchover_data_guard_association(self, database_id, data_guard_association_id, switchover_data_guard_association_details, **kwargs):
         """
-        Performs a switchover to transition the primary database of a Data Guard association into a standby role.
         Performs a switchover to transition the primary database of a Data Guard association into a standby role. The
         standby database associated with the `dataGuardAssociationId` assumes the primary database role.
 
@@ -9824,7 +9715,6 @@ class DatabaseClient(object):
 
     def terminate_autonomous_container_database(self, autonomous_container_database_id, **kwargs):
         """
-        TerminiateAutonomousContainerDatabase
         Terminates an Autonomous Container Database, which permanently deletes the container database and any databases within the container database. The database data is local to the Autonomous Exadata Infrastructure and will be lost when the container database is terminated. Oracle recommends that you back up any data in the Autonomous Container Database prior to terminating it.
 
 
@@ -9899,7 +9789,6 @@ class DatabaseClient(object):
 
     def terminate_autonomous_exadata_infrastructure(self, autonomous_exadata_infrastructure_id, **kwargs):
         """
-        TerminateAutonomousExadataInfrastructure
         Terminates an Autonomous Exadata Infrastructure, which permanently deletes the Exadata Infrastructure and any container databases and databases contained in the Exadata Infrastructure. The database data is local to the Autonomous Exadata Infrastructure and will be lost when the system is terminated. Oracle recommends that you back up any data in the Autonomous Exadata Infrastructure prior to terminating it.
 
 
@@ -9974,7 +9863,6 @@ class DatabaseClient(object):
 
     def terminate_db_system(self, db_system_id, **kwargs):
         """
-        TerminateDbSystem
         Terminates a DB system and permanently deletes it and any databases running on it, and any storage volumes attached to it. The database data is local to the DB system and will be lost when the system is terminated. Oracle recommends that you back up any data in the DB system prior to terminating it.
 
 
@@ -10049,7 +9937,6 @@ class DatabaseClient(object):
 
     def update_autonomous_container_database(self, autonomous_container_database_id, update_autonomous_container_database_details, **kwargs):
         """
-        UpdateAutonomousContainerDatabase
         Updates the properties of an Autonomous Container Database, such as the OCPU core count and storage size.
 
 
@@ -10131,7 +10018,6 @@ class DatabaseClient(object):
 
     def update_autonomous_data_warehouse(self, autonomous_data_warehouse_id, update_autonomous_data_warehouse_details, **kwargs):
         """
-        Updates the specified Autonomous Data Warehouse with new CPU core count and size.
         **Deprecated.** To update the CPU core count and storage size of an Autonomous Data Warehouse, use the :func:`update_autonomous_database` operation.
 
 
@@ -10213,7 +10099,6 @@ class DatabaseClient(object):
 
     def update_autonomous_database(self, autonomous_database_id, update_autonomous_database_details, **kwargs):
         """
-        Updates the specified Autonomous Database with new OCPU core count and size.
         Updates one or more attributes of the specified Autonomous Database. See the UpdateAutonomousDatabaseDetails resource for a full list of attributes that can be updated.
 
 
@@ -10300,7 +10185,6 @@ class DatabaseClient(object):
 
     def update_autonomous_database_regional_wallet(self, update_autonomous_database_wallet_details, **kwargs):
         """
-        Update the regional wallet for Autonomous Database.
         Updates the Autonomous Database regional wallet.
 
 
@@ -10361,7 +10245,6 @@ class DatabaseClient(object):
 
     def update_autonomous_database_wallet(self, autonomous_database_id, update_autonomous_database_wallet_details, **kwargs):
         """
-        Updates the wallet for the specified Autonomous Database.
         Updates the wallet for the specified Autonomous Database.
 
 
@@ -10439,7 +10322,6 @@ class DatabaseClient(object):
 
     def update_autonomous_exadata_infrastructure(self, autonomous_exadata_infrastructure_id, update_autonomous_exadata_infrastructures_details, **kwargs):
         """
-        UpdateAutonomousExadataInfrastructure
         Updates the properties of an Autonomous Exadata Infrastructure, such as the CPU core count.
 
 
@@ -10521,7 +10403,6 @@ class DatabaseClient(object):
 
     def update_backup_destination(self, backup_destination_id, update_backup_destination_details, **kwargs):
         """
-        Updates the specified backup destination.
         If no database is associated with the backup destination:
         - For a RECOVERY_APPLIANCE backup destination, updates the connection string and/or the list of VPC users.
         - For an NFS backup destination, updates the NFS location.
@@ -10611,7 +10492,6 @@ class DatabaseClient(object):
 
     def update_database(self, database_id, update_database_details, **kwargs):
         """
-        UpdateDatabase
         Update a Database based on the request parameters you provide.
 
 
@@ -10693,7 +10573,6 @@ class DatabaseClient(object):
 
     def update_db_home(self, db_home_id, update_db_home_details, **kwargs):
         """
-        UpdateDbHome
         Patches the specified dbHome.
 
 
@@ -10775,7 +10654,6 @@ class DatabaseClient(object):
 
     def update_db_system(self, db_system_id, update_db_system_details, **kwargs):
         """
-        UpdateDbSystem
         Updates the properties of a DB system, such as the CPU core count.
 
 
@@ -10857,7 +10735,6 @@ class DatabaseClient(object):
 
     def update_exadata_infrastructure(self, exadata_infrastructure_id, update_exadata_infrastructure_details, **kwargs):
         """
-        Updates the specified Exadata Infrastructure
         Updates the Exadata infrastructure.
 
 
@@ -11030,7 +10907,6 @@ class DatabaseClient(object):
 
     def update_maintenance_run(self, maintenance_run_id, update_maintenance_run_details, **kwargs):
         """
-        UpdateMaintenanceRun
         Updates the properties of a Maintenance Run, such as the state of a Maintenance Run.
 
 
@@ -11110,7 +10986,6 @@ class DatabaseClient(object):
 
     def update_vm_cluster(self, vm_cluster_id, update_vm_cluster_details, **kwargs):
         """
-        Updates the specified VM cluster.
         Updates the specified VM cluster.
 
 
@@ -11197,7 +11072,6 @@ class DatabaseClient(object):
 
     def update_vm_cluster_network(self, exadata_infrastructure_id, vm_cluster_network_id, update_vm_cluster_network_details, **kwargs):
         """
-        Updates the specified VM cluster network.
         Updates the specified VM cluster network.
 
 
@@ -11291,7 +11165,6 @@ class DatabaseClient(object):
     def validate_vm_cluster_network(self, exadata_infrastructure_id, vm_cluster_network_id, **kwargs):
         """
         Validates the specified VM cluster network.
-        Validates the specified VM cluster network.
 
 
         :param str exadata_infrastructure_id: (required)
@@ -11379,3 +11252,4 @@ class DatabaseClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="VmClusterNetwork")
+

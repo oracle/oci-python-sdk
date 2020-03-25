@@ -82,7 +82,6 @@ class ApplicationMigrationClient(object):
 
     def cancel_work_request(self, work_request_id, **kwargs):
         """
-        Cancel a work request
         Cancels the specified work request
 
 
@@ -161,7 +160,6 @@ class ApplicationMigrationClient(object):
 
     def change_migration_compartment(self, migration_id, change_migration_compartment_details, **kwargs):
         """
-        Moves a Migration into a different compartment. When provided, If-Match is checked against ETag values of the Migration.
         Moves a Migration into a different compartment.
 
 
@@ -256,7 +254,6 @@ class ApplicationMigrationClient(object):
 
     def change_source_compartment(self, source_id, change_source_compartment_details, **kwargs):
         """
-        Moves a Source into a different compartment. When provided, If-Match is checked against ETag values of the Source.
         Moves a Source into a different compartment.
 
 
@@ -351,7 +348,6 @@ class ApplicationMigrationClient(object):
 
     def create_migration(self, create_migration_details, **kwargs):
         """
-        Creates an application migration
         Creates an application migration in the specified compartment.
         Specify the compartment using the compartment ID.
 
@@ -427,7 +423,6 @@ class ApplicationMigrationClient(object):
 
     def create_source(self, create_source_details, **kwargs):
         """
-        Creates a migration source
         Creates a migration source in the specified compartment.
         Specify the compartment using the compartment ID.
 
@@ -503,7 +498,6 @@ class ApplicationMigrationClient(object):
 
     def delete_migration(self, migration_id, **kwargs):
         """
-        Deletes an application migration
         Deletes the specified Application object.
 
 
@@ -582,7 +576,6 @@ class ApplicationMigrationClient(object):
 
     def delete_source(self, source_id, **kwargs):
         """
-        Deletes a source
         Deletes the specified Source object.
 
 
@@ -661,7 +654,6 @@ class ApplicationMigrationClient(object):
 
     def get_migration(self, migration_id, **kwargs):
         """
-        Gets an application migration by ID.
         Gets an application migration using the ID.
 
 
@@ -735,7 +727,6 @@ class ApplicationMigrationClient(object):
 
     def get_source(self, source_id, **kwargs):
         """
-        Gets a migration source by ID.
         Gets a migration source using the source ID.
 
 
@@ -810,7 +801,6 @@ class ApplicationMigrationClient(object):
     def get_work_request(self, work_request_id, **kwargs):
         """
         Gets the details of a work request.
-        Gets the details of a work request.
 
 
         :param str work_request_id: (required)
@@ -883,7 +873,6 @@ class ApplicationMigrationClient(object):
 
     def list_migrations(self, compartment_id, **kwargs):
         """
-        Returns a list of migrations
         Returns a list of migrations in a given compartment.
 
 
@@ -1013,7 +1002,6 @@ class ApplicationMigrationClient(object):
 
     def list_source_applications(self, source_id, compartment_id, **kwargs):
         """
-        Returns a list of applications for a source in a given compartment.
         Returns a list of applications running in the source environment. This list is generated dynamically by interrogating the source and changes as applications are started or stopped in that environment.
 
 
@@ -1148,7 +1136,6 @@ class ApplicationMigrationClient(object):
 
     def list_sources(self, compartment_id, **kwargs):
         """
-        Returns a list of migration sources
         Returns a list of migration sources in a specified compartment.
 
 
@@ -1278,7 +1265,6 @@ class ApplicationMigrationClient(object):
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
-        Lists work request errors
         Gets the errors for a work request.
 
 
@@ -1388,7 +1374,6 @@ class ApplicationMigrationClient(object):
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
-        Lists work request logs
         Gets the logs for a work request.
 
 
@@ -1498,7 +1483,6 @@ class ApplicationMigrationClient(object):
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
-        Lists work requests in a compartment or for a resource.
         Lists the work requests in a compartment or for a specified resource.
 
 
@@ -1588,7 +1572,6 @@ class ApplicationMigrationClient(object):
 
     def migrate_application(self, migration_id, **kwargs):
         """
-        Migrates a PaaS application running in a Source environment to OCI.\n
         Validates target configuration and migrates a PaaS application running in a Source environment into the customers Oracle Cloud Infrastructure tenancy. This an optional action and only required if automatic start of migration was not selected when creating the migration.
 
 
@@ -1660,7 +1643,6 @@ class ApplicationMigrationClient(object):
 
     def update_migration(self, migration_id, update_migration_details, **kwargs):
         """
-        Update the configuration for an application migration.
         Update the configuration for an application migration.
 
 
@@ -1755,7 +1737,6 @@ class ApplicationMigrationClient(object):
 
     def update_source(self, source_id, update_source_details, **kwargs):
         """
-        Update source details
         Update source details.
 
 
@@ -1836,3 +1817,4 @@ class ApplicationMigrationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_source_details)
+

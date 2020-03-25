@@ -82,7 +82,6 @@ class DataScienceClient(object):
 
     def activate_model(self, model_id, **kwargs):
         """
-        ActivateModel
         Activates the model.
 
 
@@ -166,7 +165,6 @@ class DataScienceClient(object):
 
     def activate_notebook_session(self, notebook_session_id, **kwargs):
         """
-        ActivateNotebookSession
         Activates the notebook session.
 
 
@@ -248,7 +246,6 @@ class DataScienceClient(object):
 
     def cancel_work_request(self, work_request_id, **kwargs):
         """
-        CancelWorkRequest
         Cancels a work request that has not started.
 
 
@@ -330,7 +327,6 @@ class DataScienceClient(object):
 
     def change_model_compartment(self, model_id, change_model_compartment_details, **kwargs):
         """
-        ChangeModelCompartment
         Moves a model resource into a different compartment.
 
 
@@ -424,7 +420,6 @@ class DataScienceClient(object):
 
     def change_notebook_session_compartment(self, notebook_session_id, change_notebook_session_compartment_details, **kwargs):
         """
-        ChangeNotebookSessionCompartment
         Moves a notebook session resource into a different compartment.
 
 
@@ -518,7 +513,6 @@ class DataScienceClient(object):
 
     def change_project_compartment(self, project_id, change_project_compartment_details, **kwargs):
         """
-        ChangeProjectCompartment
         Moves a project resource into a different compartment.
 
 
@@ -612,7 +606,6 @@ class DataScienceClient(object):
 
     def create_model(self, create_model_details, **kwargs):
         """
-        CreateModel
         Creates a new model.
 
 
@@ -682,7 +675,6 @@ class DataScienceClient(object):
 
     def create_model_artifact(self, model_id, model_artifact, **kwargs):
         """
-        CreateModelArtifact
         Creates model artifact for specified model.
 
 
@@ -796,7 +788,6 @@ class DataScienceClient(object):
 
     def create_model_provenance(self, model_id, create_model_provenance_details, **kwargs):
         """
-        CreateModelProvenance
         Creates provenance information for the specified model.
 
 
@@ -883,7 +874,6 @@ class DataScienceClient(object):
 
     def create_notebook_session(self, create_notebook_session_details, **kwargs):
         """
-        CreateNotebookSession
         Creates a new notebook session.
 
 
@@ -953,7 +943,6 @@ class DataScienceClient(object):
 
     def create_project(self, create_project_details, **kwargs):
         """
-        CreateProject
         Creates a new project.
 
 
@@ -1023,7 +1012,6 @@ class DataScienceClient(object):
 
     def deactivate_model(self, model_id, **kwargs):
         """
-        DeactivateModel
         Deactivates the model.
 
 
@@ -1107,7 +1095,6 @@ class DataScienceClient(object):
 
     def deactivate_notebook_session(self, notebook_session_id, **kwargs):
         """
-        DeactivateNotebookSession
         Deactivates the notebook session.
 
 
@@ -1189,7 +1176,6 @@ class DataScienceClient(object):
 
     def delete_model(self, model_id, **kwargs):
         """
-        DeleteModel
         Deletes the specified model.
 
 
@@ -1271,7 +1257,6 @@ class DataScienceClient(object):
 
     def delete_notebook_session(self, notebook_session_id, **kwargs):
         """
-        DeleteNotebookSession
         Deletes the specified notebook session. Any unsaved work in this notebook session will be lost.
 
 
@@ -1353,7 +1338,6 @@ class DataScienceClient(object):
 
     def delete_project(self, project_id, **kwargs):
         """
-        DeleteProject
         Deletes the specified project. This operation will fail unless all associated resources (such as notebook sessions or models) are in a DELETED state. You must delete all associated resources before deleting a project.
 
 
@@ -1435,7 +1419,6 @@ class DataScienceClient(object):
 
     def get_model(self, model_id, **kwargs):
         """
-        GetModel
         Gets the specified model's information.
 
 
@@ -1510,7 +1493,6 @@ class DataScienceClient(object):
 
     def get_model_artifact_content(self, model_id, **kwargs):
         """
-        GetModelArtifactContent
         Downloads model artifact content for specified model.
 
 
@@ -1593,7 +1575,6 @@ class DataScienceClient(object):
 
     def get_model_provenance(self, model_id, **kwargs):
         """
-        GetModelProvenance
         Gets provenance information for specified model.
 
 
@@ -1668,7 +1649,6 @@ class DataScienceClient(object):
 
     def get_notebook_session(self, notebook_session_id, **kwargs):
         """
-        GetNotebookSession
         Gets the specified notebook session's information.
 
 
@@ -1743,7 +1723,6 @@ class DataScienceClient(object):
 
     def get_project(self, project_id, **kwargs):
         """
-        GetProject
         Gets the specified project's information.
 
 
@@ -1818,7 +1797,6 @@ class DataScienceClient(object):
 
     def get_work_request(self, work_request_id, **kwargs):
         """
-        GetWorkRequest
         Gets the specified work request's information.
 
 
@@ -1893,7 +1871,6 @@ class DataScienceClient(object):
 
     def head_model_artifact(self, model_id, **kwargs):
         """
-        HeadModelArtifact
         Gets model artifact metadata for specified model.
 
 
@@ -1966,7 +1943,6 @@ class DataScienceClient(object):
 
     def list_models(self, compartment_id, **kwargs):
         """
-        ListModels
         Lists models in the specified compartment.
 
 
@@ -2129,7 +2105,6 @@ class DataScienceClient(object):
 
     def list_notebook_session_shapes(self, compartment_id, **kwargs):
         """
-        ListNotebookSessionShapes
         Lists the valid notebook session shapes.
 
 
@@ -2221,7 +2196,6 @@ class DataScienceClient(object):
 
     def list_notebook_sessions(self, compartment_id, **kwargs):
         """
-        ListNotebookSessions
         Lists notebook sessions in the specified compartment.
 
 
@@ -2385,7 +2359,6 @@ class DataScienceClient(object):
 
     def list_projects(self, compartment_id, **kwargs):
         """
-        ListProjects
         Lists projects in the specified compartment.
 
 
@@ -2542,7 +2515,6 @@ class DataScienceClient(object):
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
-        ListWorkRequestErrors
         Lists work request errors for the specified work request.
 
 
@@ -2617,7 +2589,6 @@ class DataScienceClient(object):
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
-        ListWorkRequestLogs
         Lists work request logs for the specified work request.
 
 
@@ -2692,7 +2663,6 @@ class DataScienceClient(object):
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
-        ListWorkRequests
         Lists work requests in the specified compartment.
 
 
@@ -2847,7 +2817,6 @@ class DataScienceClient(object):
 
     def update_model(self, model_id, update_model_details, **kwargs):
         """
-        UpdateModel
         Updates the properties of a model. You can update the `displayName`, `description`, `freeformTags`, and `definedTags` properties.
 
 
@@ -2936,7 +2905,6 @@ class DataScienceClient(object):
 
     def update_model_provenance(self, model_id, update_model_provenance_details, **kwargs):
         """
-        UpdateModelProvenance
         Updates provenance information for the specified model.
 
 
@@ -3025,7 +2993,6 @@ class DataScienceClient(object):
 
     def update_notebook_session(self, notebook_session_id, update_notebook_session_details, **kwargs):
         """
-        UpdateNotebookSession
         Updates the properties of a notebook session. You can update the `displayName`, `freeformTags`, and `definedTags` properties.
         When the notebook session is in the INACTIVE lifecycle state, you can update `notebookSessionConfigurationDetails` and change `shape`, `subnetId`, and `blockStorageSizeInGBs`.
         Changes to the `notebookSessionConfigurationDetails` will take effect the next time the `ActivateNotebookSession` action is invoked on the notebook session resource.
@@ -3117,7 +3084,6 @@ class DataScienceClient(object):
 
     def update_project(self, project_id, update_project_details, **kwargs):
         """
-        UpdateProject
         Updates the properties of a project. You can update the `displayName`, `description`, `freeformTags`, and `definedTags` properties.
 
 
@@ -3203,3 +3169,4 @@ class DataScienceClient(object):
                 header_params=header_params,
                 body=update_project_details,
                 response_type="Project")
+

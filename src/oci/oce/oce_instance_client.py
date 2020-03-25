@@ -82,7 +82,6 @@ class OceInstanceClient(object):
 
     def change_oce_instance_compartment(self, oce_instance_id, change_oce_instance_compartment_details, **kwargs):
         """
-        Moves a OceInstance into a different compartment. When provided, If-Match is checked against ETag values of the OceInstance.
         Moves a OceInstance into a different compartment
 
 
@@ -178,7 +177,6 @@ class OceInstanceClient(object):
 
     def create_oce_instance(self, create_oce_instance_details, **kwargs):
         """
-        Creates a new OceInstance
         Creates a new OceInstance.
 
 
@@ -250,7 +248,6 @@ class OceInstanceClient(object):
 
     def delete_oce_instance(self, oce_instance_id, **kwargs):
         """
-        Delete a provisioned OceInstance
         Deletes a OceInstance resource by identifier
 
 
@@ -330,7 +327,6 @@ class OceInstanceClient(object):
 
     def get_oce_instance(self, oce_instance_id, **kwargs):
         """
-        Get OceInstance
         Gets a OceInstance by identifier
 
 
@@ -403,7 +399,6 @@ class OceInstanceClient(object):
 
     def get_work_request(self, work_request_id, **kwargs):
         """
-        GET Work Request Status
         Gets the status of the work request with the given ID.
 
 
@@ -476,7 +471,6 @@ class OceInstanceClient(object):
 
     def list_oce_instances(self, compartment_id, **kwargs):
         """
-        Gets a list of all OceInstances in a compartment
         Returns a list of OceInstances.
 
 
@@ -603,7 +597,6 @@ class OceInstanceClient(object):
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
-        Lists work request errors
         Return a (paginated) list of errors for a given work request.
 
 
@@ -692,7 +685,6 @@ class OceInstanceClient(object):
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
-        Lists work request logs
         Return a (paginated) list of logs for a given work request.
 
 
@@ -781,7 +773,6 @@ class OceInstanceClient(object):
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
-        List Work Requests
         Lists the work requests in a compartment.
 
 
@@ -864,7 +855,6 @@ class OceInstanceClient(object):
 
     def update_oce_instance(self, oce_instance_id, update_oce_instance_details, **kwargs):
         """
-        Update the OceInstance identified by the id
         Updates the OceInstance
 
 
@@ -946,3 +936,4 @@ class OceInstanceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_oce_instance_details)
+

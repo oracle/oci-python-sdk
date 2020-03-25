@@ -82,7 +82,6 @@ class OdaClient(object):
 
     def change_oda_instance_compartment(self, oda_instance_id, change_oda_instance_compartment_details, **kwargs):
         """
-        Moves an Digital Assistant instance into a different compartment.
         Moves an Digital Assistant instance into a different compartment. When provided, If-Match is checked against
         ETag values of the resource.
 
@@ -181,7 +180,6 @@ class OdaClient(object):
 
     def create_oda_instance(self, create_oda_instance_details, **kwargs):
         """
-        Create Digital Assistant Instance
         Starts an asynchronous job to create a Digital Assistant instance.
 
         To monitor the status of the job, take the `opc-work-request-id` response
@@ -259,7 +257,6 @@ class OdaClient(object):
 
     def delete_oda_instance(self, oda_instance_id, **kwargs):
         """
-        Delete Digital Assistant Instance
         Starts an asynchronous job to delete the specified Digital Assistant instance.
         To monitor the status of the job, take the `opc-work-request-id` response header value and use it to call `GET /workRequests/{workRequestID}`.
 
@@ -341,7 +338,6 @@ class OdaClient(object):
 
     def get_oda_instance(self, oda_instance_id, **kwargs):
         """
-        Get Digital Assistant Instance
         Gets the specified Digital Assistant instance.
 
 
@@ -414,7 +410,6 @@ class OdaClient(object):
 
     def get_work_request(self, work_request_id, **kwargs):
         """
-        Get Work Request
         Gets information about the work request with the specified ID, including its status.
 
         You can use this operation to monitor the status of jobs that you
@@ -490,7 +485,6 @@ class OdaClient(object):
 
     def list_oda_instances(self, compartment_id, **kwargs):
         """
-        Get Compartment's Digital Assistant Instances
         Returns a page of Digital Assistant instances that belong to the specified
         compartment.
 
@@ -629,7 +623,6 @@ class OdaClient(object):
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
-        List Work Request Errors
         Returns a page of errors for the specified work request.
 
         If the `opc-next-page` header appears in the response, then
@@ -757,7 +750,6 @@ class OdaClient(object):
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
-        List Work Request Log Messages
         Returns a page of of log messages for a given work request.
 
         If the `opc-next-page` header appears in the response, then
@@ -885,7 +877,6 @@ class OdaClient(object):
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
-        List Compartment's Work Requests
         Returns a page of work requests for the specified compartment.
 
         If the `opc-next-page` header appears in the response, then
@@ -1007,7 +998,6 @@ class OdaClient(object):
 
     def start_oda_instance(self, oda_instance_id, **kwargs):
         """
-        Starts an inactive Digital Assistant instance.
         Starts an inactive Digital Assistant instance. Once active, the instance will be accessible and metering
         of requests will be started again.
 
@@ -1101,7 +1091,6 @@ class OdaClient(object):
 
     def stop_oda_instance(self, oda_instance_id, **kwargs):
         """
-        Stops an active Digital Assistant instance.
         Stops an active Digital Assistant instance. Once inactive, the instance will not be accessible and metering
         of requests will be stopped until the instance is started again. Data associated with the instance
         is not affected.
@@ -1196,7 +1185,6 @@ class OdaClient(object):
 
     def update_oda_instance(self, oda_instance_id, update_oda_instance_details, **kwargs):
         """
-        Update Digital Assistant Instance
         Updates the specified Digital Assistant instance with the information in the request body.
 
 
@@ -1281,3 +1269,4 @@ class OdaClient(object):
                 header_params=header_params,
                 body=update_oda_instance_details,
                 response_type="OdaInstance")
+

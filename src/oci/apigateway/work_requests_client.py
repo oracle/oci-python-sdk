@@ -84,7 +84,6 @@ class WorkRequestsClient(object):
 
     def cancel_work_request(self, work_request_id, **kwargs):
         """
-        Cancel the work request
         Cancels the work request.
 
 
@@ -175,7 +174,6 @@ class WorkRequestsClient(object):
 
     def get_work_request(self, work_request_id, **kwargs):
         """
-        Gets work request status
         Gets the status of the work request with the given identifier.
 
 
@@ -248,7 +246,6 @@ class WorkRequestsClient(object):
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
-        Lists work request errors
         Returns a (paginated) list of errors for a given work request.
 
 
@@ -368,7 +365,6 @@ class WorkRequestsClient(object):
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
-        Lists work request logs
         Returns a (paginated) list of logs for a given work request.
 
 
@@ -488,7 +484,6 @@ class WorkRequestsClient(object):
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
-        List work requests
         Lists the work requests in a compartment.
 
 
@@ -599,3 +594,4 @@ class WorkRequestsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="WorkRequestCollection")
+

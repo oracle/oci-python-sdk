@@ -82,7 +82,6 @@ class LimitsClient(object):
 
     def get_resource_availability(self, service_name, limit_name, compartment_id, **kwargs):
         """
-        Get the availability and usage within a compartment for a given resource limit.\n
         For a given compartmentId, resource limit name, and scope, returns the following:
           - the number of available resources associated with the given limit
           - the usage in the selected compartment for the given limit
@@ -180,7 +179,6 @@ class LimitsClient(object):
 
     def list_limit_definitions(self, compartment_id, **kwargs):
         """
-        Get the list of resource limits for a service.
         Includes a list of resource limits that are currently supported.
         If the 'areQuotasSupported' property is true, you can create quota policies on top of this limit at the
         compartment level.
@@ -299,7 +297,6 @@ class LimitsClient(object):
 
     def list_limit_values(self, compartment_id, service_name, **kwargs):
         """
-        Get the full list of resource limit values for the given service.
         Includes a full list of resource limits belonging to a given service.
 
 
@@ -434,7 +431,6 @@ class LimitsClient(object):
 
     def list_services(self, compartment_id, **kwargs):
         """
-        Returns the list of supported services that have resource limits exposed.
         Returns the list of supported services.
         This will include the programmatic service name, along with the friendly service name.
 
@@ -539,3 +535,4 @@ class LimitsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="list[ServiceSummary]")
+

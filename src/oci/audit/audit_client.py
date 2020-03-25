@@ -85,7 +85,6 @@ class AuditClient(object):
 
     def get_configuration(self, compartment_id, **kwargs):
         """
-        GetConfiguration
         Get the configuration
 
 
@@ -144,7 +143,6 @@ class AuditClient(object):
 
     def list_events(self, compartment_id, start_time, end_time, **kwargs):
         """
-        ListEvents
         Returns all the audit events processed for the specified compartment within the specified
         time range.
 
@@ -249,7 +247,6 @@ class AuditClient(object):
 
     def update_configuration(self, compartment_id, update_configuration_details, **kwargs):
         """
-        UpdateConfiguration
         Update the configuration
 
 
@@ -308,3 +305,4 @@ class AuditClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_configuration_details)
+

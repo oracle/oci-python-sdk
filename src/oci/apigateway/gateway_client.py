@@ -84,7 +84,6 @@ class GatewayClient(object):
 
     def change_gateway_compartment(self, gateway_id, change_gateway_compartment_details, **kwargs):
         """
-        Change the gateway compartment.
         Changes the gateway compartment.
 
 
@@ -180,7 +179,6 @@ class GatewayClient(object):
 
     def create_gateway(self, create_gateway_details, **kwargs):
         """
-        Creates a new Gateway
         Creates a new gateway.
 
 
@@ -254,7 +252,6 @@ class GatewayClient(object):
 
     def delete_gateway(self, gateway_id, **kwargs):
         """
-        Delete a provisioned Gateway
         Deletes the gateway with the given identifier.
 
 
@@ -334,7 +331,6 @@ class GatewayClient(object):
 
     def get_gateway(self, gateway_id, **kwargs):
         """
-        Get Gateway
         Gets a gateway by identifier.
 
 
@@ -407,7 +403,6 @@ class GatewayClient(object):
 
     def list_gateways(self, compartment_id, **kwargs):
         """
-        Gets a list of all Gateways in a compartment
         Returns a list of gateways.
 
 
@@ -539,7 +534,6 @@ class GatewayClient(object):
 
     def update_gateway(self, gateway_id, update_gateway_details, **kwargs):
         """
-        Update the Gateway by the identifier
         Updates the gateway with the given identifier.
 
 
@@ -621,3 +615,4 @@ class GatewayClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_gateway_details)
+

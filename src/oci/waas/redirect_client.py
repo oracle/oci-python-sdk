@@ -82,7 +82,6 @@ class RedirectClient(object):
 
     def change_http_redirect_compartment(self, http_redirect_id, change_http_redirect_compartment_details, **kwargs):
         """
-        Moves HTTP Redirect into a different compartment.
         Moves HTTP Redirect into a different compartment. When provided, If-Match is checked against ETag values of the WAAS policy.
 
 
@@ -173,7 +172,6 @@ class RedirectClient(object):
     def create_http_redirect(self, create_http_redirect_details, **kwargs):
         """
         Creates a new HTTP Redirect on the WAF edge.
-        Creates a new HTTP Redirect on the WAF edge.
 
 
         :param CreateHttpRedirectDetails create_http_redirect_details: (required)
@@ -241,7 +239,6 @@ class RedirectClient(object):
 
     def delete_http_redirect(self, http_redirect_id, **kwargs):
         """
-        Deletes a redirect.
         Deletes a redirect.
 
 
@@ -327,7 +324,6 @@ class RedirectClient(object):
 
     def get_http_redirect(self, http_redirect_id, **kwargs):
         """
-        Returns the details of a redirect.
         Gets the details of a HTTP Redirect.
 
 
@@ -402,7 +398,6 @@ class RedirectClient(object):
 
     def list_http_redirects(self, compartment_id, **kwargs):
         """
-        Returns the list of HTTP Redirects for the given compartment ID.
         Gets a list of HTTP Redirects.
 
 
@@ -545,7 +540,6 @@ class RedirectClient(object):
 
     def update_http_redirect(self, http_redirect_id, update_http_redirect_details, **kwargs):
         """
-        Updates the details of a redirect.
         Updates the details of a HTTP Redirect, including target and tags. Only the fields specified in the request body will be updated; all other properties will remain unchanged.
 
 
@@ -633,3 +627,4 @@ class RedirectClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_http_redirect_details)
+

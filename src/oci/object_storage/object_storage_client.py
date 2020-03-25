@@ -82,7 +82,6 @@ class ObjectStorageClient(object):
 
     def abort_multipart_upload(self, namespace_name, bucket_name, object_name, upload_id, **kwargs):
         """
-        Abort Multipart Upload
         Aborts an in-progress multipart upload and deletes all parts that have been uploaded.
 
 
@@ -173,7 +172,6 @@ class ObjectStorageClient(object):
 
     def cancel_work_request(self, work_request_id, **kwargs):
         """
-        Cancel a work request
         Cancels a work request.
 
 
@@ -244,7 +242,6 @@ class ObjectStorageClient(object):
 
     def commit_multipart_upload(self, namespace_name, bucket_name, object_name, upload_id, commit_multipart_upload_details, **kwargs):
         """
-        Commit Multipart Upload
         Commits a multipart upload, which involves checking part numbers and entity tags (ETags) of the parts, to create an aggregate object.
 
 
@@ -353,7 +350,6 @@ class ObjectStorageClient(object):
 
     def copy_object(self, namespace_name, bucket_name, copy_object_details, **kwargs):
         """
-        Creates a copy object request.
         Creates a request to copy an object within a region or to another region.
 
 
@@ -434,7 +430,6 @@ class ObjectStorageClient(object):
 
     def create_bucket(self, namespace_name, create_bucket_details, **kwargs):
         """
-        Create Bucket
         Creates a bucket in the given namespace with a bucket name and optional user-defined metadata. Avoid entering
         confidential information in bucket names.
 
@@ -513,7 +508,6 @@ class ObjectStorageClient(object):
 
     def create_multipart_upload(self, namespace_name, bucket_name, create_multipart_upload_details, **kwargs):
         """
-        Create Multipart Upload
         Starts a new multipart upload to a specific object in the given bucket in the given namespace.
 
 
@@ -609,7 +603,6 @@ class ObjectStorageClient(object):
 
     def create_preauthenticated_request(self, namespace_name, bucket_name, create_preauthenticated_request_details, **kwargs):
         """
-        Create Preauthenticated Request
         Creates a pre-authenticated request specific to the bucket.
 
 
@@ -692,7 +685,6 @@ class ObjectStorageClient(object):
 
     def delete_bucket(self, namespace_name, bucket_name, **kwargs):
         """
-        DELETE Bucket
         Deletes a bucket if the bucket is already empty. If the bucket is not empty, use
         :func:`delete_object` first. In addition,
         you cannot delete a bucket that has a multipart upload in progress or a pre-authenticated
@@ -777,7 +769,6 @@ class ObjectStorageClient(object):
 
     def delete_object(self, namespace_name, bucket_name, object_name, **kwargs):
         """
-        DELETE Object
         Deletes an object.
 
 
@@ -864,7 +855,6 @@ class ObjectStorageClient(object):
 
     def delete_object_lifecycle_policy(self, namespace_name, bucket_name, **kwargs):
         """
-        Delete object lifecycle policy
         Deletes the object lifecycle policy for the bucket.
 
 
@@ -946,7 +936,6 @@ class ObjectStorageClient(object):
 
     def delete_preauthenticated_request(self, namespace_name, bucket_name, par_id, **kwargs):
         """
-        DELETE Preauthenticated Request
         Deletes the pre-authenticated request for the bucket.
 
 
@@ -1027,7 +1016,6 @@ class ObjectStorageClient(object):
 
     def get_bucket(self, namespace_name, bucket_name, **kwargs):
         """
-        GET Bucket
         Gets the current representation of the given bucket in the given Object Storage namespace.
 
 
@@ -1141,7 +1129,6 @@ class ObjectStorageClient(object):
 
     def get_namespace(self, **kwargs):
         """
-        GET Namespace Name
         Each Oracle Cloud Infrastructure tenant is assigned one unique and uneditable Object Storage namespace. The namespace
         is a system-generated string assigned during account creation. For some older tenancies, the namespace string may be
         the tenancy name in all lower-case letters. You cannot edit a namespace.
@@ -1217,7 +1204,6 @@ class ObjectStorageClient(object):
 
     def get_namespace_metadata(self, namespace_name, **kwargs):
         """
-        GET Namespace Metadata
         Gets the metadata for the Object Storage namespace, which contains defaultS3CompartmentId and
         defaultSwiftCompartmentId.
 
@@ -1298,7 +1284,6 @@ class ObjectStorageClient(object):
 
     def get_object(self, namespace_name, bucket_name, object_name, **kwargs):
         """
-        GET Object
         Gets the metadata and body of an object.
 
 
@@ -1402,7 +1387,6 @@ class ObjectStorageClient(object):
 
     def get_object_lifecycle_policy(self, namespace_name, bucket_name, **kwargs):
         """
-        GET object lifecycle policy
         Gets the object lifecycle policy for the bucket.
 
 
@@ -1480,7 +1464,6 @@ class ObjectStorageClient(object):
 
     def get_preauthenticated_request(self, namespace_name, bucket_name, par_id, **kwargs):
         """
-        GET Preauthenticated Request
         Gets the pre-authenticated request for the bucket.
 
 
@@ -1563,7 +1546,6 @@ class ObjectStorageClient(object):
 
     def get_work_request(self, work_request_id, **kwargs):
         """
-        GET Work Request Status
         Gets the status of the work request for the given ID.
 
 
@@ -1636,7 +1618,6 @@ class ObjectStorageClient(object):
 
     def head_bucket(self, namespace_name, bucket_name, **kwargs):
         """
-        HEAD Bucket
         Efficiently checks to see if a bucket exists and gets the current entity tag (ETag) for the bucket.
 
 
@@ -1725,7 +1706,6 @@ class ObjectStorageClient(object):
 
     def head_object(self, namespace_name, bucket_name, object_name, **kwargs):
         """
-        HEAD Object
         Gets the user-defined metadata and entity tag (ETag) for an object.
 
 
@@ -1819,7 +1799,6 @@ class ObjectStorageClient(object):
 
     def list_buckets(self, namespace_name, compartment_id, **kwargs):
         """
-        List Buckets
         Gets a list of all BucketSummary items in a compartment. A BucketSummary contains only summary fields for the bucket
         and does not contain fields like the user-defined metadata.
 
@@ -1936,7 +1915,6 @@ class ObjectStorageClient(object):
 
     def list_multipart_upload_parts(self, namespace_name, bucket_name, object_name, upload_id, **kwargs):
         """
-        List Multipart Upload Parts
         Lists the parts of an in-progress multipart upload.
 
 
@@ -2039,7 +2017,6 @@ class ObjectStorageClient(object):
 
     def list_multipart_uploads(self, namespace_name, bucket_name, **kwargs):
         """
-        List Multipart Uploads
         Lists all of the in-progress multipart uploads for the given bucket in the given Object Storage namespace.
 
 
@@ -2133,7 +2110,6 @@ class ObjectStorageClient(object):
 
     def list_objects(self, namespace_name, bucket_name, **kwargs):
         """
-        List Objects
         Lists the objects in a bucket.
 
         To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
@@ -2262,7 +2238,6 @@ class ObjectStorageClient(object):
 
     def list_preauthenticated_requests(self, namespace_name, bucket_name, **kwargs):
         """
-        List Preauthenticated Requests
         Lists pre-authenticated requests for the bucket.
 
 
@@ -2361,7 +2336,6 @@ class ObjectStorageClient(object):
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
-        List Work Request Errors
         Lists the errors of the work request with the given ID.
 
 
@@ -2450,7 +2424,6 @@ class ObjectStorageClient(object):
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
-        List Work Request Logs
         Lists the logs of the work request with the given ID.
 
 
@@ -2539,7 +2512,6 @@ class ObjectStorageClient(object):
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
-        List Work Requests
         Lists the work requests in a compartment.
 
 
@@ -2617,7 +2589,6 @@ class ObjectStorageClient(object):
 
     def put_object(self, namespace_name, bucket_name, object_name, put_object_body, **kwargs):
         """
-        PUT Object
         Creates a new object or overwrites an existing one. See `Special Instructions for Object Storage
         PUT`__ for request signature requirements.
 
@@ -2791,7 +2762,6 @@ class ObjectStorageClient(object):
 
     def put_object_lifecycle_policy(self, namespace_name, bucket_name, put_object_lifecycle_policy_details, **kwargs):
         """
-        Put object lifecycle policy.
         Creates or replaces the object lifecycle policy for the bucket.
 
 
@@ -2887,7 +2857,6 @@ class ObjectStorageClient(object):
 
     def reencrypt_bucket(self, namespace_name, bucket_name, **kwargs):
         """
-        Re-encrypt Bucket Data Encryption Key
         Re-encrypts the unique data encryption key that encrypts each object written to the bucket by using the most recent
         version of the master encryption key assigned to the bucket. (All data encryption keys are encrypted by a master
         encryption key. Master encryption keys are assigned to buckets and managed by Oracle by default, but you can assign
@@ -2976,7 +2945,6 @@ class ObjectStorageClient(object):
 
     def rename_object(self, namespace_name, bucket_name, rename_object_details, **kwargs):
         """
-        Rename Object
         Rename an object in the given Object Storage namespace.
 
 
@@ -3057,7 +3025,6 @@ class ObjectStorageClient(object):
 
     def restore_objects(self, namespace_name, bucket_name, restore_objects_details, **kwargs):
         """
-        Restore Objects
         Restores one or more objects specified by the objectName parameter.
         By default objects will be restored for 24 hours. Duration can be configured using the hours parameter.
 
@@ -3139,7 +3106,6 @@ class ObjectStorageClient(object):
 
     def update_bucket(self, namespace_name, bucket_name, update_bucket_details, **kwargs):
         """
-        POST Bucket
         Performs a partial or full update of a bucket's user-defined metadata.
 
         Use UpdateBucket to move a bucket from one compartment to another within the same tenancy. Supply the compartmentID
@@ -3234,7 +3200,6 @@ class ObjectStorageClient(object):
 
     def update_namespace_metadata(self, namespace_name, update_namespace_metadata_details, **kwargs):
         """
-        PUT Namespace
         By default, buckets created using the Amazon S3 Compatibility API or the Swift API are created in the root
         compartment of the Oracle Cloud Infrastructure tenancy.
 
@@ -3318,7 +3283,6 @@ class ObjectStorageClient(object):
 
     def upload_part(self, namespace_name, bucket_name, object_name, upload_id, upload_part_num, upload_part_body, **kwargs):
         """
-        Upload Multipart Object Part
         Uploads a single part of a multipart upload.
 
 
@@ -3466,3 +3430,4 @@ class ObjectStorageClient(object):
                 header_params=header_params,
                 body=upload_part_body,
                 enforce_content_headers=False)
+

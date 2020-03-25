@@ -85,7 +85,6 @@ class ContainerEngineClient(object):
     def create_cluster(self, create_cluster_details, **kwargs):
         """
         Create a new cluster.
-        Create a new cluster.
 
 
         :param CreateClusterDetails create_cluster_details: (required)
@@ -154,7 +153,6 @@ class ContainerEngineClient(object):
 
     def create_kubeconfig(self, cluster_id, **kwargs):
         """
-        Create the cluster kubeconfig.
         Create the Kubeconfig YAML for a cluster.
 
 
@@ -235,7 +233,6 @@ class ContainerEngineClient(object):
     def create_node_pool(self, create_node_pool_details, **kwargs):
         """
         Create a new node pool.
-        Create a new node pool.
 
 
         :param CreateNodePoolDetails create_node_pool_details: (required)
@@ -304,7 +301,6 @@ class ContainerEngineClient(object):
 
     def delete_cluster(self, cluster_id, **kwargs):
         """
-        Delete a cluster.
         Delete a cluster.
 
 
@@ -384,7 +380,6 @@ class ContainerEngineClient(object):
     def delete_node_pool(self, node_pool_id, **kwargs):
         """
         Delete a node pool.
-        Delete a node pool.
 
 
         :param str node_pool_id: (required)
@@ -462,7 +457,6 @@ class ContainerEngineClient(object):
 
     def delete_work_request(self, work_request_id, **kwargs):
         """
-        Cancel a work request.
         Cancel a work request that has not started.
 
 
@@ -541,7 +535,6 @@ class ContainerEngineClient(object):
 
     def get_cluster(self, cluster_id, **kwargs):
         """
-        Get cluster details.
         Get the details of a cluster.
 
 
@@ -615,7 +608,6 @@ class ContainerEngineClient(object):
 
     def get_cluster_options(self, cluster_option_id, **kwargs):
         """
-        Get cluster options.
         Get options available for clusters.
 
 
@@ -700,7 +692,6 @@ class ContainerEngineClient(object):
 
     def get_node_pool(self, node_pool_id, **kwargs):
         """
-        Get node pool details.
         Get the details of a node pool.
 
 
@@ -774,7 +765,6 @@ class ContainerEngineClient(object):
 
     def get_node_pool_options(self, node_pool_option_id, **kwargs):
         """
-        Get node pool options.
         Get options available for node pools.
 
 
@@ -859,7 +849,6 @@ class ContainerEngineClient(object):
 
     def get_work_request(self, work_request_id, **kwargs):
         """
-        Get work request details.
         Get the details of a work request.
 
 
@@ -933,7 +922,6 @@ class ContainerEngineClient(object):
 
     def list_clusters(self, compartment_id, **kwargs):
         """
-        List all cluster objects.
         List all the cluster objects in a compartment.
 
 
@@ -1067,7 +1055,6 @@ class ContainerEngineClient(object):
 
     def list_node_pools(self, compartment_id, **kwargs):
         """
-        List all node pools.
         List all the node pools in a compartment, and optionally filter by cluster.
 
 
@@ -1191,7 +1178,6 @@ class ContainerEngineClient(object):
 
     def list_work_request_errors(self, compartment_id, work_request_id, **kwargs):
         """
-        Get work request errors.
         Get the errors of a work request.
 
 
@@ -1275,7 +1261,6 @@ class ContainerEngineClient(object):
 
     def list_work_request_logs(self, compartment_id, work_request_id, **kwargs):
         """
-        Get work request logs.
         Get the logs of a work request.
 
 
@@ -1359,7 +1344,6 @@ class ContainerEngineClient(object):
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
-        List all work requests.
         List all work requests in a compartment.
 
 
@@ -1512,7 +1496,6 @@ class ContainerEngineClient(object):
 
     def update_cluster(self, cluster_id, update_cluster_details, **kwargs):
         """
-        Update cluster details.
         Update the details of a cluster.
 
 
@@ -1596,7 +1579,6 @@ class ContainerEngineClient(object):
 
     def update_node_pool(self, node_pool_id, update_node_pool_details, **kwargs):
         """
-        Update node pool details.
         Update the details of a node pool.
 
 
@@ -1677,3 +1659,4 @@ class ContainerEngineClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_node_pool_details)
+

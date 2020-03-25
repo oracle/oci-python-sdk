@@ -81,7 +81,6 @@ class IdentityClient(object):
 
     def activate_mfa_totp_device(self, user_id, mfa_totp_device_id, mfa_totp_token, **kwargs):
         """
-        ActivateMfaTotpDevice
         Activates the specified MFA TOTP device for the user. Activation requires manual interaction with the Console.
 
 
@@ -176,7 +175,6 @@ class IdentityClient(object):
 
     def add_user_to_group(self, add_user_to_group_details, **kwargs):
         """
-        AddUserToGroup
         Adds the specified user to the specified group and returns a `UserGroupMembership` object with its own OCID.
 
         After you send your request, the new object's `lifecycleState` will temporarily be CREATING. Before using the
@@ -248,7 +246,6 @@ class IdentityClient(object):
 
     def assemble_effective_tag_set(self, compartment_id, **kwargs):
         """
-        AssembleEffectiveTagSet
         Assembles tag defaults in the specified compartment and any parent compartments to determine
         the tags to apply. Tag defaults from parent compartments do not override tag defaults
         referencing the same tag in a compartment lower down the hierarchy. This set of tag defaults
@@ -327,7 +324,6 @@ class IdentityClient(object):
 
     def change_tag_namespace_compartment(self, tag_namespace_id, change_tag_namespace_compartment_detail, **kwargs):
         """
-        changes compartment of a tag namespace.
         Moves the specified tag namespace to the specified compartment within the same tenancy.
 
         To move the tag namespace, you must have the manage tag-namespaces permission on both compartments.
@@ -416,7 +412,6 @@ class IdentityClient(object):
 
     def create_auth_token(self, create_auth_token_details, user_id, **kwargs):
         """
-        CreateAuthToken
         Creates a new auth token for the specified user. For information about what auth tokens are for, see
         `Managing User Credentials`__.
 
@@ -511,7 +506,6 @@ class IdentityClient(object):
 
     def create_compartment(self, create_compartment_details, **kwargs):
         """
-        CreateCompartment
         Creates a new compartment in the specified compartment.
 
         **Important:** Compartments cannot be deleted.
@@ -601,7 +595,6 @@ class IdentityClient(object):
 
     def create_customer_secret_key(self, create_customer_secret_key_details, user_id, **kwargs):
         """
-        CreateCustomerSecretKey
         Creates a new secret key for the specified user. Secret keys are used for authentication with the Object Storage Service's Amazon S3
         compatible API. For information, see
         `Managing User Credentials`__.
@@ -697,7 +690,6 @@ class IdentityClient(object):
 
     def create_dynamic_group(self, create_dynamic_group_details, **kwargs):
         """
-        CreateDynamicGroup
         Creates a new dynamic group in your tenancy.
 
         You must specify your tenancy's OCID as the compartment ID in the request object (remember that the tenancy
@@ -786,7 +778,6 @@ class IdentityClient(object):
 
     def create_group(self, create_group_details, **kwargs):
         """
-        CreateGroup
         Creates a new group in your tenancy.
 
         You must specify your tenancy's OCID as the compartment ID in the request object (remember that the tenancy
@@ -878,7 +869,6 @@ class IdentityClient(object):
 
     def create_identity_provider(self, create_identity_provider_details, **kwargs):
         """
-        CreateIdentityProvider
         Creates a new identity provider in your tenancy. For more information, see
         `Identity Providers and Federation`__.
 
@@ -967,7 +957,6 @@ class IdentityClient(object):
 
     def create_idp_group_mapping(self, create_idp_group_mapping_details, identity_provider_id, **kwargs):
         """
-        CreateIdpGroupMapping
         Creates a single mapping between an IdP group and an IAM Service
         :class:`Group`.
 
@@ -1052,7 +1041,6 @@ class IdentityClient(object):
 
     def create_mfa_totp_device(self, user_id, **kwargs):
         """
-        CreateMfaTotpDevice
         Creates a new MFA TOTP device for the user. A user can have one MFA TOTP device.
 
 
@@ -1131,7 +1119,6 @@ class IdentityClient(object):
 
     def create_network_source(self, create_network_source_details, **kwargs):
         """
-        CreateNetworkSource
         Creates a new network source in your tenancy.
 
         You must specify your tenancy's OCID as the compartment ID in the request object (remember that the tenancy
@@ -1221,7 +1208,6 @@ class IdentityClient(object):
     def create_o_auth_client_credential(self, user_id, create_o_auth2_client_credential_details, **kwargs):
         """
         Creates Oauth token for the user
-        Creates Oauth token for the user
 
 
         :param str user_id: (required)
@@ -1304,7 +1290,6 @@ class IdentityClient(object):
 
     def create_or_reset_ui_password(self, user_id, **kwargs):
         """
-        CreateOrResetUIPassword
         Creates a new Console one-time password for the specified user. For more information about user
         credentials, see `User Credentials`__.
 
@@ -1395,7 +1380,6 @@ class IdentityClient(object):
 
     def create_policy(self, create_policy_details, **kwargs):
         """
-        CreatePolicy
         Creates a new policy in the specified compartment (either the tenancy or another of your compartments).
         If you're new to policies, see `Getting Started with Policies`__.
 
@@ -1484,7 +1468,6 @@ class IdentityClient(object):
 
     def create_region_subscription(self, create_region_subscription_details, tenancy_id, **kwargs):
         """
-        CreateRegionSubscription
         Creates a subscription to a region for a tenancy.
 
 
@@ -1568,7 +1551,6 @@ class IdentityClient(object):
 
     def create_smtp_credential(self, create_smtp_credential_details, user_id, **kwargs):
         """
-        CreateSmtpCredential
         Creates a new SMTP credential for the specified user. An SMTP credential has an SMTP user name and an SMTP password.
         You must specify a *description* for the SMTP credential (although it can be an empty string). It does not
         have to be unique, and you can change it anytime with
@@ -1655,7 +1637,6 @@ class IdentityClient(object):
 
     def create_swift_password(self, create_swift_password_details, user_id, **kwargs):
         """
-        CreateSwiftPassword
         **Deprecated. Use :func:`create_auth_token` instead.**
 
         Creates a new Swift password for the specified user. For information about what Swift passwords are for, see
@@ -1752,7 +1733,6 @@ class IdentityClient(object):
 
     def create_tag(self, tag_namespace_id, create_tag_details, **kwargs):
         """
-        CreateTag
         Creates a new tag in the specified tag namespace.
 
         The tag requires either the OCID or the name of the tag namespace that will contain this
@@ -1857,7 +1837,6 @@ class IdentityClient(object):
 
     def create_tag_default(self, create_tag_default_details, **kwargs):
         """
-        CreateTagDefault
         Creates a new tag default in the specified compartment for the specified tag definition.
 
         If you specify that a value is required, a value is set during resource creation (either by
@@ -1939,7 +1918,6 @@ class IdentityClient(object):
 
     def create_tag_namespace(self, create_tag_namespace_details, **kwargs):
         """
-        CreateTagNamespace
         Creates a new tag namespace in the specified compartment.
 
         You must specify the compartment ID in the request object (remember that the tenancy is simply the root
@@ -2021,7 +1999,6 @@ class IdentityClient(object):
 
     def create_user(self, create_user_details, **kwargs):
         """
-        CreateUser
         Creates a new user in your tenancy. For conceptual information about users, your tenancy, and other
         IAM Service components, see `Overview of the IAM Service`__.
 
@@ -2128,7 +2105,6 @@ class IdentityClient(object):
 
     def delete_api_key(self, user_id, fingerprint, **kwargs):
         """
-        DeleteApiKey
         Deletes the specified API signing key for the specified user.
 
         Every user has permission to use this operation to delete a key for *their own user ID*. An
@@ -2210,7 +2186,6 @@ class IdentityClient(object):
 
     def delete_auth_token(self, user_id, auth_token_id, **kwargs):
         """
-        DeleteAuthToken
         Deletes the specified auth token for the specified user.
 
 
@@ -2287,7 +2262,6 @@ class IdentityClient(object):
 
     def delete_compartment(self, compartment_id, **kwargs):
         """
-        DeleteCompartment
         Deletes the specified compartment. The compartment must be empty.
 
 
@@ -2360,7 +2334,6 @@ class IdentityClient(object):
 
     def delete_customer_secret_key(self, user_id, customer_secret_key_id, **kwargs):
         """
-        DeleteCustomerSecretKey
         Deletes the specified secret key for the specified user.
 
 
@@ -2437,7 +2410,6 @@ class IdentityClient(object):
 
     def delete_dynamic_group(self, dynamic_group_id, **kwargs):
         """
-        DeleteDynamicGroup
         Deletes the specified dynamic group.
 
 
@@ -2510,7 +2482,6 @@ class IdentityClient(object):
 
     def delete_group(self, group_id, **kwargs):
         """
-        DeleteGroup
         Deletes the specified group. The group must be empty.
 
 
@@ -2583,7 +2554,6 @@ class IdentityClient(object):
 
     def delete_identity_provider(self, identity_provider_id, **kwargs):
         """
-        DeleteIdentityProvider
         Deletes the specified identity provider. The identity provider must not have
         any group mappings (see :class:`IdpGroupMapping`).
 
@@ -2657,7 +2627,6 @@ class IdentityClient(object):
 
     def delete_idp_group_mapping(self, identity_provider_id, mapping_id, **kwargs):
         """
-        DeleteIdpGroupMapping
         Deletes the specified group mapping.
 
 
@@ -2734,7 +2703,6 @@ class IdentityClient(object):
 
     def delete_mfa_totp_device(self, user_id, mfa_totp_device_id, **kwargs):
         """
-        DeleteMfaTotpDevice
         Deletes the specified MFA TOTP device for the specified user.
 
 
@@ -2811,7 +2779,6 @@ class IdentityClient(object):
 
     def delete_network_source(self, network_source_id, **kwargs):
         """
-        DeleteNetworkSource
         Deletes the specified network source
 
 
@@ -2884,7 +2851,6 @@ class IdentityClient(object):
 
     def delete_o_auth_client_credential(self, user_id, oauth2_client_credential_id, **kwargs):
         """
-        Delete Oauth token for the user
         Delete Oauth token for the user
 
 
@@ -2961,7 +2927,6 @@ class IdentityClient(object):
 
     def delete_policy(self, policy_id, **kwargs):
         """
-        DeletePolicy
         Deletes the specified policy. The deletion takes effect typically within 10 seconds.
 
 
@@ -3034,7 +2999,6 @@ class IdentityClient(object):
 
     def delete_smtp_credential(self, user_id, smtp_credential_id, **kwargs):
         """
-        DeleteSmtpCredential
         Deletes the specified SMTP credential for the specified user.
 
 
@@ -3111,7 +3075,6 @@ class IdentityClient(object):
 
     def delete_swift_password(self, user_id, swift_password_id, **kwargs):
         """
-        DeleteSwiftPassword
         **Deprecated. Use :func:`delete_auth_token` instead.**
 
         Deletes the specified Swift password for the specified user.
@@ -3190,7 +3153,6 @@ class IdentityClient(object):
 
     def delete_tag(self, tag_namespace_id, tag_name, **kwargs):
         """
-        DeleteTag
         Deletes the specified tag definition. This operation triggers a process that removes the
         tag from all resources in your tenancy.
 
@@ -3284,7 +3246,6 @@ class IdentityClient(object):
 
     def delete_tag_default(self, tag_default_id, **kwargs):
         """
-        DeleteTagDefault
         Deletes the the specified tag default.
 
 
@@ -3363,7 +3324,6 @@ class IdentityClient(object):
 
     def delete_tag_namespace(self, tag_namespace_id, **kwargs):
         """
-        DeleteTagNamespace
         Deletes the specified tag namespace. Only an empty tag namespace can be deleted. To delete
         a tag namespace, first delete all its tag definitions.
 
@@ -3445,7 +3405,6 @@ class IdentityClient(object):
 
     def delete_user(self, user_id, **kwargs):
         """
-        DeleteUser
         Deletes the specified user. The user must not be in any groups.
 
 
@@ -3518,7 +3477,6 @@ class IdentityClient(object):
 
     def generate_totp_seed(self, user_id, mfa_totp_device_id, **kwargs):
         """
-        GenerateTotpSeed
         Generate seed for the MFA TOTP device.
 
 
@@ -3597,7 +3555,6 @@ class IdentityClient(object):
 
     def get_authentication_policy(self, compartment_id, **kwargs):
         """
-        GetAuthenticationPolicy
         Gets the authentication policy for the given tenancy. You must specify your tenant\u2019s OCID as the value for
         the compartment ID (remember that the tenancy is simply the root compartment).
 
@@ -3662,7 +3619,6 @@ class IdentityClient(object):
 
     def get_compartment(self, compartment_id, **kwargs):
         """
-        GetCompartment
         Gets the specified compartment's information.
 
         This operation does not return a list of all the resources inside the compartment. There is no single
@@ -3733,7 +3689,6 @@ class IdentityClient(object):
 
     def get_dynamic_group(self, dynamic_group_id, **kwargs):
         """
-        GetDynamicGroup
         Gets the specified dynamic group's information.
 
 
@@ -3797,7 +3752,6 @@ class IdentityClient(object):
 
     def get_group(self, group_id, **kwargs):
         """
-        GetGroup
         Gets the specified group's information.
 
         This operation does not return a list of all the users in the group. To do that, use
@@ -3865,7 +3819,6 @@ class IdentityClient(object):
 
     def get_identity_provider(self, identity_provider_id, **kwargs):
         """
-        GetIdentityProvider
         Gets the specified identity provider's information.
 
 
@@ -3929,7 +3882,6 @@ class IdentityClient(object):
 
     def get_idp_group_mapping(self, identity_provider_id, mapping_id, **kwargs):
         """
-        GetIdpGroupMapping
         Gets the specified group mapping.
 
 
@@ -3997,7 +3949,6 @@ class IdentityClient(object):
 
     def get_mfa_totp_device(self, user_id, mfa_totp_device_id, **kwargs):
         """
-        GetMfaTotpDevice
         Get the specified MFA TOTP device for the specified user.
 
 
@@ -4065,7 +4016,6 @@ class IdentityClient(object):
 
     def get_network_source(self, network_source_id, **kwargs):
         """
-        GetNetworkSource
         Gets the specified network source's information.
 
 
@@ -4129,7 +4079,6 @@ class IdentityClient(object):
 
     def get_policy(self, policy_id, **kwargs):
         """
-        GetPolicy
         Gets the specified policy's information.
 
 
@@ -4193,7 +4142,6 @@ class IdentityClient(object):
 
     def get_tag(self, tag_namespace_id, tag_name, **kwargs):
         """
-        GetTag
         Gets the specified tag's information.
 
 
@@ -4261,7 +4209,6 @@ class IdentityClient(object):
 
     def get_tag_default(self, tag_default_id, **kwargs):
         """
-        GetTagDefault
         Retrieves the specified tag default.
 
 
@@ -4325,7 +4272,6 @@ class IdentityClient(object):
 
     def get_tag_namespace(self, tag_namespace_id, **kwargs):
         """
-        GetTagNamespace
         Gets the specified tag namespace's information.
 
 
@@ -4389,7 +4335,6 @@ class IdentityClient(object):
 
     def get_tagging_work_request(self, work_request_id, **kwargs):
         """
-        GetTaggingWorkRequest
         Gets details on a specified work request. The workRequestID is returned in the opc-workrequest-id header
         for any asynchronous operation in the Identity and Access Management service.
 
@@ -4454,7 +4399,6 @@ class IdentityClient(object):
 
     def get_tenancy(self, tenancy_id, **kwargs):
         """
-        GetTenancy
         Get the specified tenancy's information.
 
 
@@ -4518,7 +4462,6 @@ class IdentityClient(object):
 
     def get_user(self, user_id, **kwargs):
         """
-        GetUser
         Gets the specified user's information.
 
 
@@ -4582,7 +4525,6 @@ class IdentityClient(object):
 
     def get_user_group_membership(self, user_group_membership_id, **kwargs):
         """
-        GetUserGroupMembership
         Gets the specified UserGroupMembership's information.
 
 
@@ -4646,7 +4588,6 @@ class IdentityClient(object):
 
     def get_user_ui_password_information(self, user_id, **kwargs):
         """
-        GetUserUIPasswordInformation
         Gets the specified user's console password information. The returned object contains the user's OCID,
         but not the password itself. The actual password is returned only when created or reset.
 
@@ -4711,7 +4652,6 @@ class IdentityClient(object):
 
     def get_work_request(self, work_request_id, **kwargs):
         """
-        GetWorkRequest
         Gets details on a specified work request. The workRequestID is returned in the opc-workrequest-id header
         for any asynchronous operation in the Identity and Access Management service.
 
@@ -4776,7 +4716,6 @@ class IdentityClient(object):
 
     def list_api_keys(self, user_id, **kwargs):
         """
-        ListApiKeys
         Lists the API signing keys for the specified user. A user can have a maximum of three keys.
 
         Every user has permission to use this API call for *their own user ID*.  An administrator in your
@@ -4843,7 +4782,6 @@ class IdentityClient(object):
 
     def list_auth_tokens(self, user_id, **kwargs):
         """
-        ListAuthTokens
         Lists the auth tokens for the specified user. The returned object contains the token's OCID, but not
         the token itself. The actual token is returned only upon creation.
 
@@ -4908,7 +4846,6 @@ class IdentityClient(object):
 
     def list_availability_domains(self, compartment_id, **kwargs):
         """
-        ListAvailabilityDomains
         Lists the availability domains in your tenancy. Specify the OCID of either the tenancy or another
         of your compartments as the value for the compartment ID (remember that the tenancy is simply the root compartment).
         See `Where to Get the Tenancy's OCID and User's OCID`__.
@@ -4973,7 +4910,6 @@ class IdentityClient(object):
 
     def list_compartments(self, compartment_id, **kwargs):
         """
-        ListCompartments
         Lists the compartments in a specified compartment. The members of the list
         returned depends on the values set for several parameters.
 
@@ -5093,7 +5029,6 @@ class IdentityClient(object):
 
     def list_cost_tracking_tags(self, compartment_id, **kwargs):
         """
-        ListCostTrackingTags
         Lists all the tags enabled for cost-tracking in the specified tenancy. For information about
         cost-tracking tags, see `Using Cost-tracking Tags`__.
 
@@ -5168,7 +5103,6 @@ class IdentityClient(object):
 
     def list_customer_secret_keys(self, user_id, **kwargs):
         """
-        ListCustomerSecretKeys
         Lists the secret keys for the specified user. The returned object contains the secret key's OCID, but not
         the secret key itself. The actual secret key is returned only upon creation.
 
@@ -5233,7 +5167,6 @@ class IdentityClient(object):
 
     def list_dynamic_groups(self, compartment_id, **kwargs):
         """
-        ListDynamicGroups
         Lists the dynamic groups in your tenancy. You must specify your tenancy's OCID as the value for
         the compartment ID (remember that the tenancy is simply the root compartment).
         See `Where to Get the Tenancy's OCID and User's OCID`__.
@@ -5309,7 +5242,6 @@ class IdentityClient(object):
 
     def list_fault_domains(self, compartment_id, availability_domain, **kwargs):
         """
-        ListFaultDomains
         Lists the Fault Domains in your tenancy. Specify the OCID of either the tenancy or another
         of your compartments as the value for the compartment ID (remember that the tenancy is simply the root compartment).
         See `Where to Get the Tenancy's OCID and User's OCID`__.
@@ -5376,7 +5308,6 @@ class IdentityClient(object):
 
     def list_groups(self, compartment_id, **kwargs):
         """
-        ListGroups
         Lists the groups in your tenancy. You must specify your tenancy's OCID as the value for
         the compartment ID (remember that the tenancy is simply the root compartment).
         See `Where to Get the Tenancy's OCID and User's OCID`__.
@@ -5452,7 +5383,6 @@ class IdentityClient(object):
 
     def list_identity_provider_groups(self, identity_provider_id, **kwargs):
         """
-        Gets the identity provider groups.
         Lists the identity provider groups.
 
 
@@ -5535,7 +5465,6 @@ class IdentityClient(object):
 
     def list_identity_providers(self, protocol, compartment_id, **kwargs):
         """
-        ListIdentityProviders
         Lists all the identity providers in your tenancy. You must specify the identity provider type (e.g., `SAML2` for
         identity providers using the SAML2.0 protocol). You must specify your tenancy's OCID as the value for the
         compartment ID (remember that the tenancy is simply the root compartment).
@@ -5618,7 +5547,6 @@ class IdentityClient(object):
 
     def list_idp_group_mappings(self, identity_provider_id, **kwargs):
         """
-        ListIdpGroupMappings
         Lists the group mappings for the specified identity provider.
 
 
@@ -5701,7 +5629,6 @@ class IdentityClient(object):
 
     def list_mfa_totp_devices(self, user_id, **kwargs):
         """
-        ListMfaTotpDevices
         Lists the MFA TOTP devices for the specified user. The returned object contains the device's OCID, but not
         the seed. The seed is returned only upon creation or when the IAM service regenerates the MFA seed for the device.
 
@@ -5821,7 +5748,6 @@ class IdentityClient(object):
 
     def list_network_sources(self, compartment_id, **kwargs):
         """
-        ListNetworkSources
         Lists the network sources in your tenancy. You must specify your tenancy's OCID as the value for
         the compartment ID (remember that the tenancy is simply the root compartment).
         See `Where to Get the Tenancy's OCID and User's OCID`__.
@@ -5897,7 +5823,6 @@ class IdentityClient(object):
 
     def list_o_auth_client_credentials(self, user_id, **kwargs):
         """
-        List of Oauth tokens for the user
         List of Oauth tokens for the user
 
 
@@ -5994,7 +5919,6 @@ class IdentityClient(object):
 
     def list_policies(self, compartment_id, **kwargs):
         """
-        ListPolicies
         Lists the policies in the specified compartment (either the tenancy or another of your compartments).
         See `Where to Get the Tenancy's OCID and User's OCID`__.
 
@@ -6072,7 +5996,6 @@ class IdentityClient(object):
 
     def list_region_subscriptions(self, tenancy_id, **kwargs):
         """
-        ListRegionSubscriptions
         Lists the region subscriptions for the specified tenancy.
 
 
@@ -6136,7 +6059,6 @@ class IdentityClient(object):
 
     def list_regions(self, **kwargs):
         """
-        ListRegions
         Lists all the regions offered by Oracle Cloud Infrastructure.
 
 
@@ -6185,7 +6107,6 @@ class IdentityClient(object):
 
     def list_smtp_credentials(self, user_id, **kwargs):
         """
-        ListSmtpCredentials
         Lists the SMTP credentials for the specified user. The returned object contains the credential's OCID,
         the SMTP user name but not the SMTP password. The SMTP password is returned only upon creation.
 
@@ -6250,7 +6171,6 @@ class IdentityClient(object):
 
     def list_swift_passwords(self, user_id, **kwargs):
         """
-        ListSwiftPasswords
         **Deprecated. Use :func:`list_auth_tokens` instead.**
 
         Lists the Swift passwords for the specified user. The returned object contains the password's OCID, but not
@@ -6317,7 +6237,6 @@ class IdentityClient(object):
 
     def list_tag_defaults(self, **kwargs):
         """
-        ListTagDefaults
         Lists the tag defaults for tag definitions in the specified compartment.
 
 
@@ -6414,7 +6333,6 @@ class IdentityClient(object):
 
     def list_tag_namespaces(self, compartment_id, **kwargs):
         """
-        ListTagNamespaces
         Lists the tag namespaces in the specified compartment.
 
 
@@ -6506,7 +6424,6 @@ class IdentityClient(object):
 
     def list_tagging_work_request_errors(self, work_request_id, **kwargs):
         """
-        ListTaggingWorkRequestErrors
         Gets the errors for a work request.
 
 
@@ -6589,7 +6506,6 @@ class IdentityClient(object):
 
     def list_tagging_work_request_logs(self, work_request_id, **kwargs):
         """
-        ListTaggingWorkRequestLogs
         Gets the logs for a work request.
 
 
@@ -6672,7 +6588,6 @@ class IdentityClient(object):
 
     def list_tagging_work_requests(self, compartment_id, **kwargs):
         """
-        ListTaggingWorkRequests
         Lists the tagging work requests in compartment.
 
 
@@ -6749,7 +6664,6 @@ class IdentityClient(object):
 
     def list_tags(self, tag_namespace_id, **kwargs):
         """
-        ListTags
         Lists the tag definitions in the specified tag namespace.
 
 
@@ -6846,7 +6760,6 @@ class IdentityClient(object):
 
     def list_user_group_memberships(self, compartment_id, **kwargs):
         """
-        ListUserGroupMemberships
         Lists the `UserGroupMembership` objects in your tenancy. You must specify your tenancy's OCID
         as the value for the compartment ID
         (see `Where to Get the Tenancy's OCID and User's OCID`__).
@@ -6939,7 +6852,6 @@ class IdentityClient(object):
 
     def list_users(self, compartment_id, **kwargs):
         """
-        ListUsers
         Lists the users in your tenancy. You must specify your tenancy's OCID as the value for the
         compartment ID (remember that the tenancy is simply the root compartment).
         See `Where to Get the Tenancy's OCID and User's OCID`__.
@@ -7025,7 +6937,6 @@ class IdentityClient(object):
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
-        ListWorkRequests
         Lists the work requests in compartment.
 
 
@@ -7102,7 +7013,6 @@ class IdentityClient(object):
 
     def move_compartment(self, compartment_id, move_compartment_details, **kwargs):
         """
-        Moves a compartment tree to a different parent compartment. When provided,\nIf-Match is checked against ETag values of the resource.\n
         Move the compartment to a different parent compartment in the same tenancy. When you move a
         compartment, all its contents (subcompartments and resources) are moved with it. Note that
         the `CompartmentId` that you specify in the path is the compartment that you want to move.
@@ -7206,7 +7116,6 @@ class IdentityClient(object):
 
     def recover_compartment(self, compartment_id, **kwargs):
         """
-        RecoverCompartment
         Recover the compartment from DELETED state to ACTIVE state.
 
 
@@ -7287,7 +7196,6 @@ class IdentityClient(object):
 
     def remove_user_from_group(self, user_group_membership_id, **kwargs):
         """
-        RemoveUserFromGroup
         Removes a user from a group by deleting the corresponding `UserGroupMembership`.
 
 
@@ -7360,7 +7268,6 @@ class IdentityClient(object):
 
     def reset_idp_scim_client(self, identity_provider_id, **kwargs):
         """
-        ResetIdpScimClient
         Resets the OAuth2 client credentials for the SCIM client associated with this identity provider.
 
 
@@ -7424,7 +7331,6 @@ class IdentityClient(object):
 
     def update_auth_token(self, user_id, auth_token_id, update_auth_token_details, **kwargs):
         """
-        UpdateAuthToken
         Updates the specified auth token's description.
 
 
@@ -7508,7 +7414,6 @@ class IdentityClient(object):
 
     def update_authentication_policy(self, compartment_id, update_authentication_policy_details, **kwargs):
         """
-        UpdateAuthenticationPolicy
         Updates authentication policy for the specified tenancy
 
 
@@ -7588,7 +7493,6 @@ class IdentityClient(object):
 
     def update_compartment(self, compartment_id, update_compartment_details, **kwargs):
         """
-        UpdateCompartment
         Updates the specified compartment's description or name. You can't update the root compartment.
 
 
@@ -7668,7 +7572,6 @@ class IdentityClient(object):
 
     def update_customer_secret_key(self, user_id, customer_secret_key_id, update_customer_secret_key_details, **kwargs):
         """
-        UpdateCustomerSecretKey
         Updates the specified secret key's description.
 
 
@@ -7752,7 +7655,6 @@ class IdentityClient(object):
 
     def update_dynamic_group(self, dynamic_group_id, update_dynamic_group_details, **kwargs):
         """
-        UpdateDynamicGroup
         Updates the specified dynamic group.
 
 
@@ -7832,7 +7734,6 @@ class IdentityClient(object):
 
     def update_group(self, group_id, update_group_details, **kwargs):
         """
-        UpdateGroup
         Updates the specified group.
 
 
@@ -7912,7 +7813,6 @@ class IdentityClient(object):
 
     def update_identity_provider(self, identity_provider_id, update_identity_provider_details, **kwargs):
         """
-        UpdateIdentityProvider
         Updates the specified identity provider.
 
 
@@ -7992,7 +7892,6 @@ class IdentityClient(object):
 
     def update_idp_group_mapping(self, identity_provider_id, mapping_id, update_idp_group_mapping_details, **kwargs):
         """
-        UpdateIdpGroupMapping
         Updates the specified group mapping.
 
 
@@ -8076,7 +7975,6 @@ class IdentityClient(object):
 
     def update_network_source(self, network_source_id, update_network_source_details, **kwargs):
         """
-        UpdateNetworkSource
         Updates the specified network source.
 
 
@@ -8156,7 +8054,6 @@ class IdentityClient(object):
 
     def update_o_auth_client_credential(self, user_id, oauth2_client_credential_id, update_o_auth2_client_credential_details, **kwargs):
         """
-        Updates Oauth token for the user
         Updates Oauth token for the user
 
 
@@ -8240,7 +8137,6 @@ class IdentityClient(object):
 
     def update_policy(self, policy_id, update_policy_details, **kwargs):
         """
-        UpdatePolicy
         Updates the specified policy. You can update the description or the policy statements themselves.
 
         Policy changes take effect typically within 10 seconds.
@@ -8322,7 +8218,6 @@ class IdentityClient(object):
 
     def update_smtp_credential(self, user_id, smtp_credential_id, update_smtp_credential_details, **kwargs):
         """
-        UpdateSmtpCredential
         Updates the specified SMTP credential's description.
 
 
@@ -8406,7 +8301,6 @@ class IdentityClient(object):
 
     def update_swift_password(self, user_id, swift_password_id, update_swift_password_details, **kwargs):
         """
-        UpdateSwiftPassword
         **Deprecated. Use :func:`update_auth_token` instead.**
 
         Updates the specified Swift password's description.
@@ -8492,7 +8386,6 @@ class IdentityClient(object):
 
     def update_tag(self, tag_namespace_id, tag_name, update_tag_details, **kwargs):
         """
-        UpdateTag
         Updates the specified tag definition.
 
         Setting `validator` determines the value type. Tags can use either a static value or a
@@ -8585,7 +8478,6 @@ class IdentityClient(object):
 
     def update_tag_default(self, tag_default_id, update_tag_default_details, **kwargs):
         """
-        UpdateTagDefault
         Updates the specified tag default. If you specify that a value is required, a value is set
         during resource creation (either by the user creating the resource or another tag defualt).
         If no value is set, resource creation is blocked.
@@ -8676,7 +8568,6 @@ class IdentityClient(object):
 
     def update_tag_namespace(self, tag_namespace_id, update_tag_namespace_details, **kwargs):
         """
-        UpdateTagNamespace
         Updates the the specified tag namespace. You can't update the namespace name.
 
         Updating `isRetired` to 'true' retires the namespace and all the tag definitions in the namespace. Reactivating a
@@ -8755,7 +8646,6 @@ class IdentityClient(object):
 
     def update_user(self, user_id, update_user_details, **kwargs):
         """
-        UpdateUser
         Updates the description of the specified user.
 
 
@@ -8835,7 +8725,6 @@ class IdentityClient(object):
 
     def update_user_capabilities(self, user_id, update_user_capabilities_details, **kwargs):
         """
-        UpdateUserCapabilities
         Updates the capabilities of the specified user.
 
 
@@ -8915,7 +8804,6 @@ class IdentityClient(object):
 
     def update_user_state(self, user_id, update_state_details, **kwargs):
         """
-        UpdateUserState
         Updates the state of the specified user.
 
 
@@ -8995,7 +8883,6 @@ class IdentityClient(object):
 
     def upload_api_key(self, user_id, create_api_key_details, **kwargs):
         """
-        UploadApiKey
         Uploads an API signing key for the specified user.
 
         Every user has permission to use this operation to upload a key for *their own user ID*. An
@@ -9090,3 +8977,4 @@ class IdentityClient(object):
                 header_params=header_params,
                 body=create_api_key_details,
                 response_type="ApiKey")
+

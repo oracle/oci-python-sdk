@@ -83,7 +83,6 @@ class TransferPackageClient(object):
     def attach_devices_to_transfer_package(self, id, transfer_package_label, attach_devices_details, **kwargs):
         """
         Attaches Devices to a Transfer Package
-        Attaches Devices to a Transfer Package
 
 
         :param str id: (required)
@@ -153,7 +152,6 @@ class TransferPackageClient(object):
 
     def create_transfer_package(self, id, **kwargs):
         """
-        Create a new Transfer Package
         Create a new Transfer Package
 
 
@@ -234,7 +232,6 @@ class TransferPackageClient(object):
     def delete_transfer_package(self, id, transfer_package_label, **kwargs):
         """
         deletes a transfer Package
-        deletes a transfer Package
 
 
         :param str id: (required)
@@ -299,7 +296,6 @@ class TransferPackageClient(object):
 
     def detach_devices_from_transfer_package(self, id, transfer_package_label, detach_devices_details, **kwargs):
         """
-        Detaches Devices from a Transfer Package
         Detaches Devices from a Transfer Package
 
 
@@ -370,7 +366,6 @@ class TransferPackageClient(object):
 
     def get_transfer_package(self, id, transfer_package_label, **kwargs):
         """
-        Describes a transfer Package in detail
         Describes a transfer package in detail
 
 
@@ -438,7 +433,6 @@ class TransferPackageClient(object):
 
     def list_transfer_packages(self, id, **kwargs):
         """
-        Lists Transfer Packages associated with a transferJob
         Lists Transfer Packages associated with a transferJob
 
 
@@ -531,7 +525,6 @@ class TransferPackageClient(object):
     def update_transfer_package(self, id, transfer_package_label, update_transfer_package_details, **kwargs):
         """
         Updates a Transfer Package
-        Updates a Transfer Package
 
 
         :param str id: (required)
@@ -610,3 +603,4 @@ class TransferPackageClient(object):
                 header_params=header_params,
                 body=update_transfer_package_details,
                 response_type="TransferPackage")
+

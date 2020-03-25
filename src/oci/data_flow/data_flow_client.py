@@ -82,7 +82,6 @@ class DataFlowClient(object):
 
     def create_application(self, create_application_details, **kwargs):
         """
-        Create an application.
         Creates an application.
 
 
@@ -156,7 +155,6 @@ class DataFlowClient(object):
 
     def create_run(self, create_run_details, **kwargs):
         """
-        Create a run.
         Creates a run for an application.
 
 
@@ -230,7 +228,6 @@ class DataFlowClient(object):
 
     def delete_application(self, application_id, **kwargs):
         """
-        Delete the application.
         Deletes an application using an `applicationId`.
 
 
@@ -309,7 +306,6 @@ class DataFlowClient(object):
 
     def delete_run(self, run_id, **kwargs):
         """
-        Cancels the specified run.
         Cancels the specified run if it has not already completed or was previously cancelled.
         If a run is in progress, the executing job will be killed.
 
@@ -389,7 +385,6 @@ class DataFlowClient(object):
 
     def get_application(self, application_id, **kwargs):
         """
-        Get the application.
         Retrieves an application using an `applicationId`.
 
 
@@ -463,7 +458,6 @@ class DataFlowClient(object):
 
     def get_run(self, run_id, **kwargs):
         """
-        Get the run.
         Retrieves the run for the specified `runId`.
 
 
@@ -537,7 +531,6 @@ class DataFlowClient(object):
 
     def get_run_log(self, run_id, name, **kwargs):
         """
-        Get the gzipped content of the run log.
         Retrieves the content of an run log.
 
 
@@ -615,7 +608,6 @@ class DataFlowClient(object):
 
     def list_applications(self, compartment_id, **kwargs):
         """
-        List the applications.
         Lists all applications in the specified compartment.
 
 
@@ -738,7 +730,6 @@ class DataFlowClient(object):
 
     def list_run_logs(self, run_id, **kwargs):
         """
-        List the run log summaries.
         Retrieves summaries of the run's logs.
 
 
@@ -829,7 +820,6 @@ class DataFlowClient(object):
 
     def list_runs(self, compartment_id, **kwargs):
         """
-        List the runs.
         Lists all runs of an application in the specified compartment.
 
 
@@ -976,7 +966,6 @@ class DataFlowClient(object):
 
     def update_application(self, update_application_details, application_id, **kwargs):
         """
-        Update the application.
         Updates an application using an `applicationId`.
 
 
@@ -1062,7 +1051,6 @@ class DataFlowClient(object):
 
     def update_run(self, update_run_details, run_id, **kwargs):
         """
-        Update the run.
         Updates a run using a `runId`.
 
 
@@ -1145,3 +1133,4 @@ class DataFlowClient(object):
                 header_params=header_params,
                 body=update_run_details,
                 response_type="Run")
+

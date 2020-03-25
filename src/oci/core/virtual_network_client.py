@@ -88,7 +88,6 @@ class VirtualNetworkClient(object):
 
     def add_network_security_group_security_rules(self, network_security_group_id, add_network_security_group_security_rules_details, **kwargs):
         """
-        AddNetworkSecurityGroupSecurityRules
         Adds one or more security rules to the specified network security group.
 
 
@@ -159,7 +158,6 @@ class VirtualNetworkClient(object):
 
     def attach_service_id(self, service_gateway_id, attach_service_details, **kwargs):
         """
-        AttachService
         Adds the specified :class:`Service` to the list of enabled
         `Service` objects for the specified gateway. You must also set up a route rule with the
         `cidrBlock` of the `Service` as the rule's destination and the service gateway as the rule's
@@ -250,7 +248,6 @@ class VirtualNetworkClient(object):
 
     def bulk_add_virtual_circuit_public_prefixes(self, virtual_circuit_id, bulk_add_virtual_circuit_public_prefixes_details, **kwargs):
         """
-        BulkAddVirtualCircuitPublicPrefixes
         Adds one or more customer public IP prefixes to the specified public virtual circuit.
         Use this operation (and not :func:`update_virtual_circuit`)
         to add prefixes to the virtual circuit. Oracle must verify the customer's ownership
@@ -320,7 +317,6 @@ class VirtualNetworkClient(object):
 
     def bulk_delete_virtual_circuit_public_prefixes(self, virtual_circuit_id, bulk_delete_virtual_circuit_public_prefixes_details, **kwargs):
         """
-        BulkDeleteVirtualCircuitPublicPrefixes
         Removes one or more customer public IP prefixes from the specified public virtual circuit.
         Use this operation (and not :func:`update_virtual_circuit`)
         to remove prefixes from the virtual circuit. When the virtual circuit's state switches
@@ -390,7 +386,6 @@ class VirtualNetworkClient(object):
 
     def change_cpe_compartment(self, cpe_id, change_cpe_compartment_details, **kwargs):
         """
-        ChangeCpeCompartment
         Moves a CPE object into a different compartment within the same tenancy. For information
         about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
@@ -482,7 +477,6 @@ class VirtualNetworkClient(object):
 
     def change_cross_connect_compartment(self, cross_connect_id, change_cross_connect_compartment_details, **kwargs):
         """
-        ChangeCrossConnectCompartment
         Moves a cross-connect into a different compartment within the same tenancy. For information
         about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
@@ -574,7 +568,6 @@ class VirtualNetworkClient(object):
 
     def change_cross_connect_group_compartment(self, cross_connect_group_id, change_cross_connect_group_compartment_details, **kwargs):
         """
-        ChangeCrossConnectGroupCompartment
         Moves a cross-connect group into a different compartment within the same tenancy. For information
         about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
@@ -666,7 +659,6 @@ class VirtualNetworkClient(object):
 
     def change_dhcp_options_compartment(self, dhcp_id, change_dhcp_options_compartment_details, **kwargs):
         """
-        ChangeDhcpOptionsCompartment
         Moves a set of DHCP options into a different compartment within the same tenancy. For information
         about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
@@ -758,7 +750,6 @@ class VirtualNetworkClient(object):
 
     def change_drg_compartment(self, drg_id, change_drg_compartment_details, **kwargs):
         """
-        ChangeDrgCompartment
         Moves a DRG into a different compartment within the same tenancy. For information
         about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
@@ -850,7 +841,6 @@ class VirtualNetworkClient(object):
 
     def change_internet_gateway_compartment(self, ig_id, change_internet_gateway_compartment_details, **kwargs):
         """
-        ChangeInternetGatewayCompartment
         Moves an internet gateway into a different compartment within the same tenancy. For information
         about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
@@ -942,7 +932,6 @@ class VirtualNetworkClient(object):
 
     def change_ip_sec_connection_compartment(self, ipsc_id, change_ip_sec_connection_compartment_details, **kwargs):
         """
-        ChangeIPSecConnectionCompartment
         Moves an IPSec connection into a different compartment within the same tenancy. For information
         about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
@@ -1034,7 +1023,6 @@ class VirtualNetworkClient(object):
 
     def change_local_peering_gateway_compartment(self, local_peering_gateway_id, change_local_peering_gateway_compartment_details, **kwargs):
         """
-        ChangeLocalPeeringGatewayCompartment
         Moves a local peering gateway into a different compartment within the same tenancy. For information
         about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
@@ -1126,7 +1114,6 @@ class VirtualNetworkClient(object):
 
     def change_nat_gateway_compartment(self, nat_gateway_id, change_nat_gateway_compartment_details, **kwargs):
         """
-        ChangeNatGatewayCompartment
         Moves a NAT gateway into a different compartment within the same tenancy. For information
         about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
@@ -1220,7 +1207,6 @@ class VirtualNetworkClient(object):
 
     def change_network_security_group_compartment(self, network_security_group_id, change_network_security_group_compartment_details, **kwargs):
         """
-        ChangeNetworkSecurityGroupCompartment
         Moves a network security group into a different compartment within the same tenancy. For
         information about moving resources between compartments, see `Moving Resources to a Different Compartment`__.
 
@@ -1313,7 +1299,6 @@ class VirtualNetworkClient(object):
 
     def change_public_ip_compartment(self, public_ip_id, change_public_ip_compartment_details, **kwargs):
         """
-        ChangePublicIpCompartment
         Moves a public IP into a different compartment within the same tenancy. For information
         about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
@@ -1408,7 +1393,6 @@ class VirtualNetworkClient(object):
 
     def change_remote_peering_connection_compartment(self, remote_peering_connection_id, change_remote_peering_connection_compartment_details, **kwargs):
         """
-        ChangeRemotePeeringConnectionCompartment
         Moves a remote peering connection (RPC) into a different compartment within the same tenancy. For information
         about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
@@ -1500,7 +1484,6 @@ class VirtualNetworkClient(object):
 
     def change_route_table_compartment(self, rt_id, change_route_table_compartment_details, **kwargs):
         """
-        ChangeRouteTableCompartment
         Moves a route table into a different compartment within the same tenancy. For information
         about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
@@ -1592,7 +1575,6 @@ class VirtualNetworkClient(object):
 
     def change_security_list_compartment(self, security_list_id, change_security_list_compartment_details, **kwargs):
         """
-        ChangeSecurityListCompartment
         Moves a security list into a different compartment within the same tenancy. For information
         about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
@@ -1684,7 +1666,6 @@ class VirtualNetworkClient(object):
 
     def change_service_gateway_compartment(self, service_gateway_id, change_service_gateway_compartment_details, **kwargs):
         """
-        ChangeServiceGatewayCompartment
         Moves a service gateway into a different compartment within the same tenancy. For information
         about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
@@ -1778,7 +1759,6 @@ class VirtualNetworkClient(object):
 
     def change_subnet_compartment(self, subnet_id, change_subnet_compartment_details, **kwargs):
         """
-        ChangeSubnetCompartment
         Moves a subnet into a different compartment within the same tenancy. For information
         about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
@@ -1870,7 +1850,6 @@ class VirtualNetworkClient(object):
 
     def change_vcn_compartment(self, vcn_id, change_vcn_compartment_details, **kwargs):
         """
-        ChangeVcnCompartment
         Moves a VCN into a different compartment within the same tenancy. For information
         about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
@@ -1964,7 +1943,6 @@ class VirtualNetworkClient(object):
 
     def change_virtual_circuit_compartment(self, virtual_circuit_id, change_virtual_circuit_compartment_details, **kwargs):
         """
-        ChangeVirtualCircuitCompartment
         Moves a virtual circuit into a different compartment within the same tenancy. For information
         about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
@@ -2056,7 +2034,6 @@ class VirtualNetworkClient(object):
 
     def connect_local_peering_gateways(self, local_peering_gateway_id, connect_local_peering_gateways_details, **kwargs):
         """
-        ConnectLocalPeeringGateways
         Connects this local peering gateway (LPG) to another one in the same region.
 
         This operation must be called by the VCN administrator who is designated as
@@ -2132,7 +2109,6 @@ class VirtualNetworkClient(object):
 
     def connect_remote_peering_connections(self, remote_peering_connection_id, connect_remote_peering_connections_details, **kwargs):
         """
-        ConnectRemotePeeringConnections
         Connects this RPC to another one in a different region.
 
         This operation must be called by the VCN administrator who is designated as
@@ -2208,7 +2184,6 @@ class VirtualNetworkClient(object):
 
     def create_cpe(self, create_cpe_details, **kwargs):
         """
-        CreateCpe
         Creates a new virtual customer-premises equipment (CPE) object in the specified compartment. For
         more information, see `IPSec VPNs`__.
 
@@ -2296,7 +2271,6 @@ class VirtualNetworkClient(object):
 
     def create_cross_connect(self, create_cross_connect_details, **kwargs):
         """
-        CreateCrossConnect
         Creates a new cross-connect. Oracle recommends you create each cross-connect in a
         :class:`CrossConnectGroup` so you can use link aggregation
         with the connection.
@@ -2387,7 +2361,6 @@ class VirtualNetworkClient(object):
 
     def create_cross_connect_group(self, create_cross_connect_group_details, **kwargs):
         """
-        CreateCrossConnectGroup
         Creates a new cross-connect group to use with Oracle Cloud Infrastructure
         FastConnect. For more information, see
         `FastConnect Overview`__.
@@ -2474,7 +2447,6 @@ class VirtualNetworkClient(object):
 
     def create_dhcp_options(self, create_dhcp_details, **kwargs):
         """
-        CreateDhcpOptions
         Creates a new set of DHCP options for the specified VCN. For more information, see
         :class:`DhcpOptions`.
 
@@ -2557,7 +2529,6 @@ class VirtualNetworkClient(object):
 
     def create_drg(self, create_drg_details, **kwargs):
         """
-        CreateDrg
         Creates a new dynamic routing gateway (DRG) in the specified compartment. For more information,
         see `Dynamic Routing Gateways (DRGs)`__.
 
@@ -2641,7 +2612,6 @@ class VirtualNetworkClient(object):
 
     def create_drg_attachment(self, create_drg_attachment_details, **kwargs):
         """
-        CreateDrgAttachment
         Attaches the specified DRG to the specified VCN. A VCN can be attached to only one DRG at a time,
         and vice versa. The response includes a `DrgAttachment` object with its own OCID. For more
         information about DRGs, see
@@ -2723,7 +2693,6 @@ class VirtualNetworkClient(object):
 
     def create_internet_gateway(self, create_internet_gateway_details, **kwargs):
         """
-        CreateInternetGateway
         Creates a new internet gateway for the specified VCN. For more information, see
         `Access to the Internet`__.
 
@@ -2816,7 +2785,6 @@ class VirtualNetworkClient(object):
 
     def create_ip_sec_connection(self, create_ip_sec_connection_details, **kwargs):
         """
-        CreateIPSecConnection
         Creates a new IPSec connection between the specified DRG and CPE. For more information, see
         `IPSec VPNs`__.
 
@@ -2918,7 +2886,6 @@ class VirtualNetworkClient(object):
 
     def create_ipv6(self, create_ipv6_details, **kwargs):
         """
-        CreateIpv6
         Creates an IPv6 for the specified VNIC.
 
 
@@ -2993,7 +2960,6 @@ class VirtualNetworkClient(object):
 
     def create_local_peering_gateway(self, create_local_peering_gateway_details, **kwargs):
         """
-        CreateLocalPeeringGateway
         Creates a new local peering gateway (LPG) for the specified VCN.
 
 
@@ -3062,7 +3028,6 @@ class VirtualNetworkClient(object):
 
     def create_nat_gateway(self, create_nat_gateway_details, **kwargs):
         """
-        CreateNatGateway
         Creates a new NAT gateway for the specified VCN. You must also set up a route rule with the
         NAT gateway as the rule's target. See :class:`RouteTable`.
 
@@ -3132,7 +3097,6 @@ class VirtualNetworkClient(object):
 
     def create_network_security_group(self, create_network_security_group_details, **kwargs):
         """
-        CreateNetworkSecurityGroup
         Creates a new network security group for the specified VCN.
 
 
@@ -3201,7 +3165,6 @@ class VirtualNetworkClient(object):
 
     def create_private_ip(self, create_private_ip_details, **kwargs):
         """
-        CreatePrivateIp
         Creates a secondary private IP for the specified VNIC.
         For more information about secondary private IPs, see
         `IP Addresses`__.
@@ -3274,7 +3237,6 @@ class VirtualNetworkClient(object):
 
     def create_public_ip(self, create_public_ip_details, **kwargs):
         """
-        CreatePublicIp
         Creates a public IP. Use the `lifetime` property to specify whether it's an ephemeral or
         reserved public IP. For information about limits on how many you can create, see
         `Public IP Addresses`__.
@@ -3365,7 +3327,6 @@ class VirtualNetworkClient(object):
 
     def create_remote_peering_connection(self, create_remote_peering_connection_details, **kwargs):
         """
-        CreateRemotePeeringConnection
         Creates a new remote peering connection (RPC) for the specified DRG.
 
 
@@ -3434,7 +3395,6 @@ class VirtualNetworkClient(object):
 
     def create_route_table(self, create_route_table_details, **kwargs):
         """
-        CreateRouteTable
         Creates a new route table for the specified VCN. In the request you must also include at least one route
         rule for the new route table. For information on the number of rules you can have in a route table, see
         `Service Limits`__. For general information about route
@@ -3522,7 +3482,6 @@ class VirtualNetworkClient(object):
 
     def create_security_list(self, create_security_list_details, **kwargs):
         """
-        CreateSecurityList
         Creates a new security list for the specified VCN. For more information
         about security lists, see `Security Lists`__.
         For information on the number of rules you can have in a security list, see
@@ -3609,7 +3568,6 @@ class VirtualNetworkClient(object):
 
     def create_service_gateway(self, create_service_gateway_details, **kwargs):
         """
-        CreateServiceGateway
         Creates a new service gateway in the specified compartment.
 
         For the purposes of access control, you must provide the OCID of the compartment where you want
@@ -3689,7 +3647,6 @@ class VirtualNetworkClient(object):
 
     def create_subnet(self, create_subnet_details, **kwargs):
         """
-        CreateSubnet
         Creates a new subnet in the specified VCN. You can't change the size of the subnet after creation,
         so it's important to think about the size of subnets you need before creating them.
         For more information, see `VCNs and Subnets`__.
@@ -3797,7 +3754,6 @@ class VirtualNetworkClient(object):
 
     def create_vcn(self, create_vcn_details, **kwargs):
         """
-        CreateVcn
         Creates a new virtual cloud network (VCN). For more information, see
         `VCNs and Subnets`__.
 
@@ -3901,7 +3857,6 @@ class VirtualNetworkClient(object):
 
     def create_virtual_circuit(self, create_virtual_circuit_details, **kwargs):
         """
-        CreateVirtualCircuit
         Creates a new virtual circuit to use with Oracle Cloud
         Infrastructure FastConnect. For more information, see
         `FastConnect Overview`__.
@@ -3995,7 +3950,6 @@ class VirtualNetworkClient(object):
 
     def delete_cpe(self, cpe_id, **kwargs):
         """
-        DeleteCpe
         Deletes the specified CPE object. The CPE must not be connected to a DRG. This is an asynchronous
         operation. The CPE's `lifecycleState` will change to TERMINATING temporarily until the CPE is completely
         removed.
@@ -4070,7 +4024,6 @@ class VirtualNetworkClient(object):
 
     def delete_cross_connect(self, cross_connect_id, **kwargs):
         """
-        DeleteCrossConnect
         Deletes the specified cross-connect. It must not be mapped to a
         :class:`VirtualCircuit`.
 
@@ -4144,7 +4097,6 @@ class VirtualNetworkClient(object):
 
     def delete_cross_connect_group(self, cross_connect_group_id, **kwargs):
         """
-        DeleteCrossConnectGroup
         Deletes the specified cross-connect group. It must not contain any
         cross-connects, and it cannot be mapped to a
         :class:`VirtualCircuit`.
@@ -4219,7 +4171,6 @@ class VirtualNetworkClient(object):
 
     def delete_dhcp_options(self, dhcp_id, **kwargs):
         """
-        DeleteDhcpOptions
         Deletes the specified set of DHCP options, but only if it's not associated with a subnet. You can't delete a
         VCN's default set of DHCP options.
 
@@ -4296,7 +4247,6 @@ class VirtualNetworkClient(object):
 
     def delete_drg(self, drg_id, **kwargs):
         """
-        DeleteDrg
         Deletes the specified DRG. The DRG must not be attached to a VCN or be connected to your on-premise
         network. Also, there must not be a route table that lists the DRG as a target. This is an asynchronous
         operation. The DRG's `lifecycleState` will change to TERMINATING temporarily until the DRG is completely
@@ -4372,7 +4322,6 @@ class VirtualNetworkClient(object):
 
     def delete_drg_attachment(self, drg_attachment_id, **kwargs):
         """
-        DeleteDrgAttachment
         Detaches a DRG from a VCN by deleting the corresponding `DrgAttachment`. This is an asynchronous
         operation. The attachment's `lifecycleState` will change to DETACHING temporarily until the attachment
         is completely removed.
@@ -4447,7 +4396,6 @@ class VirtualNetworkClient(object):
 
     def delete_internet_gateway(self, ig_id, **kwargs):
         """
-        DeleteInternetGateway
         Deletes the specified internet gateway. The internet gateway does not have to be disabled, but
         there must not be a route table that lists it as a target.
 
@@ -4524,7 +4472,6 @@ class VirtualNetworkClient(object):
 
     def delete_ip_sec_connection(self, ipsc_id, **kwargs):
         """
-        DeleteIPSecConnection
         Deletes the specified IPSec connection. If your goal is to disable the IPSec VPN between your VCN and
         on-premises network, it's easiest to simply detach the DRG but keep all the IPSec VPN components intact.
         If you were to delete all the components and then later need to create an IPSec VPN again, you would
@@ -4604,7 +4551,6 @@ class VirtualNetworkClient(object):
 
     def delete_ipv6(self, ipv6_id, **kwargs):
         """
-        DeleteIpv6
         Unassigns and deletes the specified IPv6. You must specify the object's OCID.
         The IPv6 address is returned to the subnet's pool of available addresses.
 
@@ -4686,7 +4632,6 @@ class VirtualNetworkClient(object):
 
     def delete_local_peering_gateway(self, local_peering_gateway_id, **kwargs):
         """
-        DeleteLocalPeeringGateway
         Deletes the specified local peering gateway (LPG).
 
         This is an asynchronous operation; the local peering gateway's `lifecycleState` changes to TERMINATING temporarily
@@ -4762,7 +4707,6 @@ class VirtualNetworkClient(object):
 
     def delete_nat_gateway(self, nat_gateway_id, **kwargs):
         """
-        DeleteNatGateway
         Deletes the specified NAT gateway. The NAT gateway does not have to be disabled, but there
         must not be a route rule that lists the NAT gateway as a target.
 
@@ -4841,7 +4785,6 @@ class VirtualNetworkClient(object):
 
     def delete_network_security_group(self, network_security_group_id, **kwargs):
         """
-        DeleteNetworkSecurityGroup
         Deletes the specified network security group. The group must not contain any VNICs.
 
         To get a list of the VNICs in a network security group, use
@@ -4922,7 +4865,6 @@ class VirtualNetworkClient(object):
 
     def delete_private_ip(self, private_ip_id, **kwargs):
         """
-        DeletePrivateIp
         Unassigns and deletes the specified private IP. You must
         specify the object's OCID. The private IP address is returned to
         the subnet's pool of available addresses.
@@ -5007,7 +4949,6 @@ class VirtualNetworkClient(object):
 
     def delete_public_ip(self, public_ip_id, **kwargs):
         """
-        DeletePublicIp
         Unassigns and deletes the specified public IP (either ephemeral or reserved).
         You must specify the object's OCID. The public IP address is returned to the
         Oracle Cloud Infrastructure public IP pool.
@@ -5094,7 +5035,6 @@ class VirtualNetworkClient(object):
 
     def delete_remote_peering_connection(self, remote_peering_connection_id, **kwargs):
         """
-        DeleteRemotePeeringConnection
         Deletes the remote peering connection (RPC).
 
         This is an asynchronous operation; the RPC's `lifecycleState` changes to TERMINATING temporarily
@@ -5170,7 +5110,6 @@ class VirtualNetworkClient(object):
 
     def delete_route_table(self, rt_id, **kwargs):
         """
-        DeleteRouteTable
         Deletes the specified route table, but only if it's not associated with a subnet. You can't delete a
         VCN's default route table.
 
@@ -5247,7 +5186,6 @@ class VirtualNetworkClient(object):
 
     def delete_security_list(self, security_list_id, **kwargs):
         """
-        DeleteSecurityList
         Deletes the specified security list, but only if it's not associated with a subnet. You can't delete
         a VCN's default security list.
 
@@ -5324,7 +5262,6 @@ class VirtualNetworkClient(object):
 
     def delete_service_gateway(self, service_gateway_id, **kwargs):
         """
-        DeleteServiceGateway
         Deletes the specified service gateway. There must not be a route table that lists the service
         gateway as a target.
 
@@ -5400,7 +5337,6 @@ class VirtualNetworkClient(object):
 
     def delete_subnet(self, subnet_id, **kwargs):
         """
-        DeleteSubnet
         Deletes the specified subnet, but only if there are no instances in the subnet. This is an asynchronous
         operation. The subnet's `lifecycleState` will change to TERMINATING temporarily. If there are any
         instances in the subnet, the state will instead change back to AVAILABLE.
@@ -5475,7 +5411,6 @@ class VirtualNetworkClient(object):
 
     def delete_vcn(self, vcn_id, **kwargs):
         """
-        DeleteVcn
         Deletes the specified VCN. The VCN must be empty and have no attached gateways. This is an asynchronous
         operation. The VCN's `lifecycleState` will change to TERMINATING temporarily until the VCN is completely
         removed.
@@ -5552,7 +5487,6 @@ class VirtualNetworkClient(object):
 
     def delete_virtual_circuit(self, virtual_circuit_id, **kwargs):
         """
-        DeleteVirtualCircuit
         Deletes the specified virtual circuit.
 
         **Important:** If you're using FastConnect via a provider,
@@ -5629,7 +5563,6 @@ class VirtualNetworkClient(object):
 
     def detach_service_id(self, service_gateway_id, detach_service_details, **kwargs):
         """
-        DetachService
         Removes the specified :class:`Service` from the list of enabled
         `Service` objects for the specified gateway. You do not need to remove any route
         rules that specify this `Service` object's `cidrBlock` as the destination CIDR. However, consider
@@ -5722,7 +5655,6 @@ class VirtualNetworkClient(object):
 
     def get_cpe(self, cpe_id, **kwargs):
         """
-        GetCpe
         Gets the specified CPE's information.
 
 
@@ -5786,7 +5718,6 @@ class VirtualNetworkClient(object):
 
     def get_cpe_device_config_content(self, cpe_id, **kwargs):
         """
-        GetCpeDeviceConfigContent
         Renders a set of CPE configuration content that can help a network engineer configure the actual
         CPE device (for example, a hardware router) represented by the specified :class:`Cpe`
         object.
@@ -5877,7 +5808,6 @@ class VirtualNetworkClient(object):
 
     def get_cpe_device_shape(self, cpe_device_shape_id, **kwargs):
         """
-        GetCpeDeviceShape
         Gets the detailed information about the specified CPE device type. This might include a set of questions
         that are specific to the particular CPE device type. The customer must supply answers to those questions
         (see :func:`update_tunnel_cpe_device_config`).
@@ -5961,7 +5891,6 @@ class VirtualNetworkClient(object):
 
     def get_cross_connect(self, cross_connect_id, **kwargs):
         """
-        GetCrossConnect
         Gets the specified cross-connect's information.
 
 
@@ -6025,7 +5954,6 @@ class VirtualNetworkClient(object):
 
     def get_cross_connect_group(self, cross_connect_group_id, **kwargs):
         """
-        GetCrossConnectGroups
         Gets the specified cross-connect group's information.
 
 
@@ -6089,7 +6017,6 @@ class VirtualNetworkClient(object):
 
     def get_cross_connect_letter_of_authority(self, cross_connect_id, **kwargs):
         """
-        GetCrossConnectLetterOfAuthority
         Gets the Letter of Authority for the specified cross-connect.
 
 
@@ -6153,7 +6080,6 @@ class VirtualNetworkClient(object):
 
     def get_cross_connect_status(self, cross_connect_id, **kwargs):
         """
-        GetCrossConnectStatus
         Gets the status of the specified cross-connect.
 
 
@@ -6217,7 +6143,6 @@ class VirtualNetworkClient(object):
 
     def get_dhcp_options(self, dhcp_id, **kwargs):
         """
-        GetDhcpOptions
         Gets the specified set of DHCP options.
 
 
@@ -6281,7 +6206,6 @@ class VirtualNetworkClient(object):
 
     def get_drg(self, drg_id, **kwargs):
         """
-        GetDrg
         Gets the specified DRG's information.
 
 
@@ -6345,7 +6269,6 @@ class VirtualNetworkClient(object):
 
     def get_drg_attachment(self, drg_attachment_id, **kwargs):
         """
-        GetDrgAttachment
         Gets the information for the specified `DrgAttachment`.
 
 
@@ -6409,7 +6332,6 @@ class VirtualNetworkClient(object):
 
     def get_drg_redundancy_status(self, drg_id, **kwargs):
         """
-        GetDrgRedundancyStatus
         Gets the redundancy status for the specified DRG. For more information, see
         `Redundancy Remedies`__.
 
@@ -6486,7 +6408,6 @@ class VirtualNetworkClient(object):
 
     def get_fast_connect_provider_service(self, provider_service_id, **kwargs):
         """
-        GetFastConnectProviderService
         Gets the specified provider service.
         For more information, see `FastConnect Overview`__.
 
@@ -6553,7 +6474,6 @@ class VirtualNetworkClient(object):
 
     def get_fast_connect_provider_service_key(self, provider_service_id, provider_service_key_name, **kwargs):
         """
-        GetFastConnectProviderServiceKey
         Gets the specified provider service key's information. Use this operation to validate a
         provider service key. An invalid key returns a 404 error.
 
@@ -6625,7 +6545,6 @@ class VirtualNetworkClient(object):
 
     def get_internet_gateway(self, ig_id, **kwargs):
         """
-        GetInternetGateway
         Gets the specified internet gateway's information.
 
 
@@ -6689,7 +6608,6 @@ class VirtualNetworkClient(object):
 
     def get_ip_sec_connection(self, ipsc_id, **kwargs):
         """
-        GetIPSecConnection
         Gets the specified IPSec connection's basic information, including the static routes for the
         on-premises router. If you want the status of the connection (whether it's up or down), use
         :func:`get_ip_sec_connection_tunnel`.
@@ -6755,7 +6673,6 @@ class VirtualNetworkClient(object):
 
     def get_ip_sec_connection_device_config(self, ipsc_id, **kwargs):
         """
-        GetIPSecConnectionDeviceConfig
         Deprecated. To get tunnel information, instead use:
 
         * :func:`get_ip_sec_connection_tunnel`
@@ -6822,7 +6739,6 @@ class VirtualNetworkClient(object):
 
     def get_ip_sec_connection_device_status(self, ipsc_id, **kwargs):
         """
-        GetIPSecConnectionDeviceStatus
         Deprecated. To get the tunnel status, instead use
         :func:`get_ip_sec_connection_tunnel`.
 
@@ -6887,7 +6803,6 @@ class VirtualNetworkClient(object):
 
     def get_ip_sec_connection_tunnel(self, ipsc_id, tunnel_id, **kwargs):
         """
-        GetIPSecConnectionTunnel
         Gets the specified tunnel's information. The resulting object does not include the tunnel's
         shared secret (pre-shared key). To retrieve that, use
         :func:`get_ip_sec_connection_tunnel_shared_secret`.
@@ -6959,7 +6874,6 @@ class VirtualNetworkClient(object):
 
     def get_ip_sec_connection_tunnel_shared_secret(self, ipsc_id, tunnel_id, **kwargs):
         """
-        GetIPSecConnectionTunnelSharedSecret
         Gets the specified tunnel's shared secret (pre-shared key). To get other information
         about the tunnel, use :func:`get_ip_sec_connection_tunnel`.
 
@@ -7030,7 +6944,6 @@ class VirtualNetworkClient(object):
 
     def get_ipsec_cpe_device_config_content(self, ipsc_id, **kwargs):
         """
-        GetIpsecCpeDeviceConfigContent
         Renders a set of CPE configuration content for the specified IPSec connection (for all the
         tunnels in the connection). The content helps a network engineer configure the actual CPE
         device (for example, a hardware router) that the specified IPSec connection terminates on.
@@ -7122,7 +7035,6 @@ class VirtualNetworkClient(object):
 
     def get_ipv6(self, ipv6_id, **kwargs):
         """
-        GetIpv6
         Gets the specified IPv6. You must specify the object's OCID.
         Alternatively, you can get the object by using
         :func:`list_ipv6s`
@@ -7201,7 +7113,6 @@ class VirtualNetworkClient(object):
 
     def get_local_peering_gateway(self, local_peering_gateway_id, **kwargs):
         """
-        GetLocalPeeringGateway
         Gets the specified local peering gateway's information.
 
 
@@ -7265,7 +7176,6 @@ class VirtualNetworkClient(object):
 
     def get_nat_gateway(self, nat_gateway_id, **kwargs):
         """
-        GetNatGateway
         Gets the specified NAT gateway's information.
 
 
@@ -7331,7 +7241,6 @@ class VirtualNetworkClient(object):
 
     def get_network_security_group(self, network_security_group_id, **kwargs):
         """
-        GetNetworkSecurityGroup
         Gets the specified network security group's information.
 
         To list the VNICs in an NSG, see
@@ -7403,7 +7312,6 @@ class VirtualNetworkClient(object):
 
     def get_private_ip(self, private_ip_id, **kwargs):
         """
-        GetPrivateIp
         Gets the specified private IP. You must specify the object's OCID.
         Alternatively, you can get the object by using
         :func:`list_private_ips`
@@ -7470,7 +7378,6 @@ class VirtualNetworkClient(object):
 
     def get_public_ip(self, public_ip_id, **kwargs):
         """
-        GetPublicIp
         Gets the specified public IP. You must specify the object's OCID.
 
         Alternatively, you can get the object by using :func:`get_public_ip_by_ip_address`
@@ -7544,7 +7451,6 @@ class VirtualNetworkClient(object):
 
     def get_public_ip_by_ip_address(self, get_public_ip_by_ip_address_details, **kwargs):
         """
-        GetPublicIpByIpAddress
         Gets the public IP based on the public IP address (for example, 129.146.2.1).
 
         **Note:** If you're fetching a reserved public IP that is in the process of being
@@ -7602,7 +7508,6 @@ class VirtualNetworkClient(object):
 
     def get_public_ip_by_private_ip_id(self, get_public_ip_by_private_ip_id_details, **kwargs):
         """
-        GetPublicIpByPrivateIpId
         Gets the public IP assigned to the specified private IP. You must specify the OCID
         of the private IP. If no public IP is assigned, a 404 is returned.
 
@@ -7666,7 +7571,6 @@ class VirtualNetworkClient(object):
 
     def get_remote_peering_connection(self, remote_peering_connection_id, **kwargs):
         """
-        GetRemotePeeringConnection
         Get the specified remote peering connection's information.
 
 
@@ -7730,7 +7634,6 @@ class VirtualNetworkClient(object):
 
     def get_route_table(self, rt_id, **kwargs):
         """
-        GetRouteTable
         Gets the specified route table's information.
 
 
@@ -7794,7 +7697,6 @@ class VirtualNetworkClient(object):
 
     def get_security_list(self, security_list_id, **kwargs):
         """
-        GetSecurityList
         Gets the specified security list's information.
 
 
@@ -7858,7 +7760,6 @@ class VirtualNetworkClient(object):
 
     def get_service(self, service_id, **kwargs):
         """
-        GetService
         Gets the specified :class:`Service` object.
 
 
@@ -7924,7 +7825,6 @@ class VirtualNetworkClient(object):
 
     def get_service_gateway(self, service_gateway_id, **kwargs):
         """
-        GetServiceGateway
         Gets the specified service gateway's information.
 
 
@@ -7990,7 +7890,6 @@ class VirtualNetworkClient(object):
 
     def get_subnet(self, subnet_id, **kwargs):
         """
-        GetSubnet
         Gets the specified subnet's information.
 
 
@@ -8054,7 +7953,6 @@ class VirtualNetworkClient(object):
 
     def get_tunnel_cpe_device_config(self, ipsc_id, tunnel_id, **kwargs):
         """
-        GetTunnelCpeDeviceConfig
         Gets the set of CPE configuration answers for the tunnel, which the customer provided in
         :func:`update_tunnel_cpe_device_config`.
         To get the full set of content for the tunnel (any answers merged with the template of other
@@ -8138,7 +8036,6 @@ class VirtualNetworkClient(object):
 
     def get_tunnel_cpe_device_config_content(self, ipsc_id, tunnel_id, **kwargs):
         """
-        GetTunnelCpeDeviceConfigContent
         Renders a set of CPE configuration content for the specified IPSec tunnel. The content helps a
         network engineer configure the actual CPE device (for example, a hardware router) that the specified
         IPSec tunnel terminates on.
@@ -8235,7 +8132,6 @@ class VirtualNetworkClient(object):
 
     def get_vcn(self, vcn_id, **kwargs):
         """
-        GetVcn
         Gets the specified VCN's information.
 
 
@@ -8301,7 +8197,6 @@ class VirtualNetworkClient(object):
 
     def get_virtual_circuit(self, virtual_circuit_id, **kwargs):
         """
-        GetVirtualCircuit
         Gets the specified virtual circuit's information.
 
 
@@ -8365,7 +8260,6 @@ class VirtualNetworkClient(object):
 
     def get_vnic(self, vnic_id, **kwargs):
         """
-        GetVnic
         Gets the information for the specified virtual network interface card (VNIC).
         You can get the VNIC OCID from the
         :func:`list_vnic_attachments`
@@ -8432,7 +8326,6 @@ class VirtualNetworkClient(object):
 
     def list_allowed_peer_regions_for_remote_peering(self, **kwargs):
         """
-        ListAllowedPeerRegionsForRemotePeering
         Lists the regions that support remote VCN peering (which is peering across regions).
         For more information, see `VCN Peering`__.
 
@@ -8484,7 +8377,6 @@ class VirtualNetworkClient(object):
 
     def list_cpe_device_shapes(self, **kwargs):
         """
-        ListCpeDeviceShapes
         Lists the CPE device types that the Networking service provides CPE configuration
         content for (example: Cisco ASA). The content helps a network engineer configure
         the actual CPE device represented by a :class:`Cpe` object.
@@ -8581,7 +8473,6 @@ class VirtualNetworkClient(object):
 
     def list_cpes(self, compartment_id, **kwargs):
         """
-        ListCpes
         Lists the customer-premises equipment objects (CPEs) in the specified compartment.
 
 
@@ -8665,7 +8556,6 @@ class VirtualNetworkClient(object):
 
     def list_cross_connect_groups(self, compartment_id, **kwargs):
         """
-        ListCrossConnectGroups
         Lists the cross-connect groups in the specified compartment.
 
 
@@ -8804,7 +8694,6 @@ class VirtualNetworkClient(object):
 
     def list_cross_connect_locations(self, compartment_id, **kwargs):
         """
-        ListCrossConnectLocations
         Lists the available FastConnect locations for cross-connect installation. You need
         this information so you can specify your desired location when you create a cross-connect.
 
@@ -8889,7 +8778,6 @@ class VirtualNetworkClient(object):
 
     def list_cross_connects(self, compartment_id, **kwargs):
         """
-        ListCrossConnects
         Lists the cross-connects in the specified compartment. You can filter the list
         by specifying the OCID of a cross-connect group.
 
@@ -9034,7 +8922,6 @@ class VirtualNetworkClient(object):
 
     def list_crossconnect_port_speed_shapes(self, compartment_id, **kwargs):
         """
-        ListCrossConnectPortSpeedShapes
         Lists the available port speeds for cross-connects. You need this information
         so you can specify your desired port speed (that is, shape) when you create a
         cross-connect.
@@ -9120,7 +9007,6 @@ class VirtualNetworkClient(object):
 
     def list_dhcp_options(self, compartment_id, vcn_id, **kwargs):
         """
-        ListDhcpOptions
         Lists the sets of DHCP options in the specified VCN and specified compartment.
         The response includes the default set of options that automatically comes with each VCN,
         plus any other sets you've created.
@@ -9267,7 +9153,6 @@ class VirtualNetworkClient(object):
 
     def list_drg_attachments(self, compartment_id, **kwargs):
         """
-        ListDrgAttachments
         Lists the `DrgAttachment` objects for the specified compartment. You can filter the
         results by VCN or DRG.
 
@@ -9364,7 +9249,6 @@ class VirtualNetworkClient(object):
 
     def list_drgs(self, compartment_id, **kwargs):
         """
-        ListDrgs
         Lists the DRGs in the specified compartment.
 
 
@@ -9448,7 +9332,6 @@ class VirtualNetworkClient(object):
 
     def list_fast_connect_provider_services(self, compartment_id, **kwargs):
         """
-        ListFastConnectProviderServices
         Lists the service offerings from supported providers. You need this
         information so you can specify your desired provider and service
         offering when you create a virtual circuit.
@@ -9540,7 +9423,6 @@ class VirtualNetworkClient(object):
 
     def list_fast_connect_provider_virtual_circuit_bandwidth_shapes(self, provider_service_id, **kwargs):
         """
-        ListFastConnectProviderVirtualCircuitBandwidthShapes
         Gets the list of available virtual circuit bandwidth levels for a provider.
         You need this information so you can specify your desired bandwidth level (shape) when you create a virtual circuit.
 
@@ -9638,7 +9520,6 @@ class VirtualNetworkClient(object):
 
     def list_internet_gateways(self, compartment_id, vcn_id, **kwargs):
         """
-        ListInternetGateways
         Lists the internet gateways in the specified VCN and the specified compartment.
 
 
@@ -9783,7 +9664,6 @@ class VirtualNetworkClient(object):
 
     def list_ip_sec_connection_tunnels(self, ipsc_id, **kwargs):
         """
-        ListIPSecConnectionTunnels
         Lists the tunnel information for the specified IPSec connection.
 
 
@@ -9876,7 +9756,6 @@ class VirtualNetworkClient(object):
 
     def list_ip_sec_connections(self, compartment_id, **kwargs):
         """
-        ListIPSecConnections
         Lists the IPSec connections for the specified compartment. You can filter the
         results by DRG or CPE.
 
@@ -9971,7 +9850,6 @@ class VirtualNetworkClient(object):
 
     def list_ipv6s(self, **kwargs):
         """
-        ListIpv6s
         Lists the :class:`Ipv6` objects based
         on one of these filters:
 
@@ -10079,7 +9957,6 @@ class VirtualNetworkClient(object):
 
     def list_local_peering_gateways(self, compartment_id, vcn_id, **kwargs):
         """
-        ListLocalPeeringGateways
         Lists the local peering gateways (LPGs) for the specified VCN and compartment
         (the LPG's compartment).
 
@@ -10170,7 +10047,6 @@ class VirtualNetworkClient(object):
 
     def list_nat_gateways(self, compartment_id, **kwargs):
         """
-        ListNatGateways
         Lists the NAT gateways in the specified compartment. You may optionally specify a VCN OCID
         to filter the results by VCN.
 
@@ -10317,7 +10193,6 @@ class VirtualNetworkClient(object):
 
     def list_network_security_group_security_rules(self, network_security_group_id, **kwargs):
         """
-        ListNetworkSecurityGroupSecurityRules
         Lists the security rules in the specified network security group.
 
 
@@ -10456,7 +10331,6 @@ class VirtualNetworkClient(object):
 
     def list_network_security_group_vnics(self, network_security_group_id, **kwargs):
         """
-        ListNetworkSecurityGroupVnics
         Lists the VNICs in the specified network security group.
 
 
@@ -10580,7 +10454,6 @@ class VirtualNetworkClient(object):
 
     def list_network_security_groups(self, compartment_id, **kwargs):
         """
-        ListNetworkSecurityGroups
         Lists the network security groups in the specified compartment.
 
 
@@ -10726,7 +10599,6 @@ class VirtualNetworkClient(object):
 
     def list_private_ips(self, **kwargs):
         """
-        ListPrivateIps
         Lists the :class:`PrivateIp` objects based
         on one of these filters:
 
@@ -10832,7 +10704,6 @@ class VirtualNetworkClient(object):
 
     def list_public_ips(self, scope, compartment_id, **kwargs):
         """
-        ListPublicIps
         Lists the :class:`PublicIp` objects
         in the specified compartment. You can filter the list by using query parameters.
 
@@ -10977,7 +10848,6 @@ class VirtualNetworkClient(object):
 
     def list_remote_peering_connections(self, compartment_id, **kwargs):
         """
-        ListRemotePeeringConnections
         Lists the remote peering connections (RPCs) for the specified DRG and compartment
         (the RPC's compartment).
 
@@ -11067,7 +10937,6 @@ class VirtualNetworkClient(object):
 
     def list_route_tables(self, compartment_id, vcn_id, **kwargs):
         """
-        ListRouteTables
         Lists the route tables in the specified VCN and specified compartment. The response
         includes the default route table that automatically comes with each VCN, plus any route tables
         you've created.
@@ -11214,7 +11083,6 @@ class VirtualNetworkClient(object):
 
     def list_security_lists(self, compartment_id, vcn_id, **kwargs):
         """
-        ListSecurityLists
         Lists the security lists in the specified VCN and compartment.
 
 
@@ -11359,7 +11227,6 @@ class VirtualNetworkClient(object):
 
     def list_service_gateways(self, compartment_id, **kwargs):
         """
-        ListServiceGateways
         Lists the service gateways in the specified compartment. You may optionally specify a VCN OCID
         to filter the results by VCN.
 
@@ -11501,7 +11368,6 @@ class VirtualNetworkClient(object):
 
     def list_services(self, **kwargs):
         """
-        ListServices
         Lists the available :class:`Service` objects that you can enable for a
         service gateway in this region.
 
@@ -11580,7 +11446,6 @@ class VirtualNetworkClient(object):
 
     def list_subnets(self, compartment_id, vcn_id, **kwargs):
         """
-        ListSubnets
         Lists the subnets in the specified VCN and the specified compartment.
 
 
@@ -11725,7 +11590,6 @@ class VirtualNetworkClient(object):
 
     def list_vcns(self, compartment_id, **kwargs):
         """
-        ListVcns
         Lists the virtual cloud networks (VCNs) in the specified compartment.
 
 
@@ -11864,7 +11728,6 @@ class VirtualNetworkClient(object):
 
     def list_virtual_circuit_bandwidth_shapes(self, compartment_id, **kwargs):
         """
-        ListVirtualCircuitBandwidthShapes
         The deprecated operation lists available bandwidth levels for virtual circuits. For the compartment ID, provide the OCID of your tenancy (the root compartment).
 
 
@@ -11948,7 +11811,6 @@ class VirtualNetworkClient(object):
 
     def list_virtual_circuit_public_prefixes(self, virtual_circuit_id, **kwargs):
         """
-        ListVirtualCircuitPublicPrefixes
         Lists the public IP prefixes and their details for the specified
         public virtual circuit.
 
@@ -12037,7 +11899,6 @@ class VirtualNetworkClient(object):
 
     def list_virtual_circuits(self, compartment_id, **kwargs):
         """
-        ListVirtualCircuits
         Lists the virtual circuits in the specified compartment.
 
 
@@ -12176,7 +12037,6 @@ class VirtualNetworkClient(object):
 
     def remove_network_security_group_security_rules(self, network_security_group_id, remove_network_security_group_security_rules_details, **kwargs):
         """
-        RemoveNetworkSecurityGroupSecurityRules
         Removes one or more security rules from the specified network security group.
 
 
@@ -12246,7 +12106,6 @@ class VirtualNetworkClient(object):
 
     def update_cpe(self, cpe_id, update_cpe_details, **kwargs):
         """
-        UpdateCpe
         Updates the specified CPE's display name or tags.
         Avoid entering confidential information.
 
@@ -12327,7 +12186,6 @@ class VirtualNetworkClient(object):
 
     def update_cross_connect(self, cross_connect_id, update_cross_connect_details, **kwargs):
         """
-        UpdateCrossConnect
         Updates the specified cross-connect.
 
 
@@ -12407,7 +12265,6 @@ class VirtualNetworkClient(object):
 
     def update_cross_connect_group(self, cross_connect_group_id, update_cross_connect_group_details, **kwargs):
         """
-        UpdateCrossConnectGroup
         Updates the specified cross-connect group's display name.
         Avoid entering confidential information.
 
@@ -12488,7 +12345,6 @@ class VirtualNetworkClient(object):
 
     def update_dhcp_options(self, dhcp_id, update_dhcp_details, **kwargs):
         """
-        UpdateDhcpOptions
         Updates the specified set of DHCP options. You can update the display name or the options
         themselves. Avoid entering confidential information.
 
@@ -12571,7 +12427,6 @@ class VirtualNetworkClient(object):
 
     def update_drg(self, drg_id, update_drg_details, **kwargs):
         """
-        UpdateDrg
         Updates the specified DRG's display name or tags. Avoid entering confidential information.
 
 
@@ -12651,7 +12506,6 @@ class VirtualNetworkClient(object):
 
     def update_drg_attachment(self, drg_attachment_id, update_drg_attachment_details, **kwargs):
         """
-        UpdateDrgAttachment
         Updates the display name for the specified `DrgAttachment`.
         Avoid entering confidential information.
 
@@ -12732,7 +12586,6 @@ class VirtualNetworkClient(object):
 
     def update_internet_gateway(self, ig_id, update_internet_gateway_details, **kwargs):
         """
-        UpdateInternetGateway
         Updates the specified internet gateway. You can disable/enable it, or change its display name
         or tags. Avoid entering confidential information.
 
@@ -12816,7 +12669,6 @@ class VirtualNetworkClient(object):
 
     def update_ip_sec_connection(self, ipsc_id, update_ip_sec_connection_details, **kwargs):
         """
-        UpdateIPSecConnection
         Updates the specified IPSec connection.
 
         To update an individual IPSec tunnel's attributes, use
@@ -12899,7 +12751,6 @@ class VirtualNetworkClient(object):
 
     def update_ip_sec_connection_tunnel(self, ipsc_id, tunnel_id, update_ip_sec_connection_tunnel_details, **kwargs):
         """
-        UpdateIPSecConnectionTunnelDetails
         Updates the specified tunnel. This operation lets you change tunnel attributes such as the
         routing type (BGP dynamic routing or static routing). Here are some important notes:
 
@@ -13002,7 +12853,6 @@ class VirtualNetworkClient(object):
 
     def update_ip_sec_connection_tunnel_shared_secret(self, ipsc_id, tunnel_id, update_ip_sec_connection_tunnel_shared_secret_details, **kwargs):
         """
-        UpdateIPSecConnectionTunnelSharedSecret
         Updates the shared secret (pre-shared key) for the specified tunnel.
 
         **Important:** If you change the shared secret, the tunnel will go down while it's reprovisioned.
@@ -13090,7 +12940,6 @@ class VirtualNetworkClient(object):
 
     def update_ipv6(self, ipv6_id, update_ipv6_details, **kwargs):
         """
-        UpdateIpv6
         Updates the specified IPv6. You must specify the object's OCID.
         Use this operation if you want to:
 
@@ -13184,7 +13033,6 @@ class VirtualNetworkClient(object):
 
     def update_local_peering_gateway(self, local_peering_gateway_id, update_local_peering_gateway_details, **kwargs):
         """
-        UpdateLocalPeeringGateway
         Updates the specified local peering gateway (LPG).
 
 
@@ -13264,7 +13112,6 @@ class VirtualNetworkClient(object):
 
     def update_nat_gateway(self, nat_gateway_id, update_nat_gateway_details, **kwargs):
         """
-        UpdateNatGateway
         Updates the specified NAT gateway.
 
 
@@ -13346,7 +13193,6 @@ class VirtualNetworkClient(object):
 
     def update_network_security_group(self, network_security_group_id, update_network_security_group_details, **kwargs):
         """
-        UpdateNetworkSecurityGroup
         Updates the specified network security group.
 
         To add or remove an existing VNIC from the group, use
@@ -13442,7 +13288,6 @@ class VirtualNetworkClient(object):
 
     def update_network_security_group_security_rules(self, network_security_group_id, update_network_security_group_security_rules_details, **kwargs):
         """
-        UpdateNetworkSecurityGroupSecurityRules
         Updates one or more security rules in the specified network security group.
 
 
@@ -13514,7 +13359,6 @@ class VirtualNetworkClient(object):
 
     def update_private_ip(self, private_ip_id, update_private_ip_details, **kwargs):
         """
-        UpdatePrivateIp
         Updates the specified private IP. You must specify the object's OCID.
         Use this operation if you want to:
 
@@ -13603,7 +13447,6 @@ class VirtualNetworkClient(object):
 
     def update_public_ip(self, public_ip_id, update_public_ip_details, **kwargs):
         """
-        UpdatePublicIp
         Updates the specified public IP. You must specify the object's OCID. Use this operation if you want to:
 
         * Assign a reserved public IP in your pool to a private IP.
@@ -13723,7 +13566,6 @@ class VirtualNetworkClient(object):
 
     def update_remote_peering_connection(self, remote_peering_connection_id, update_remote_peering_connection_details, **kwargs):
         """
-        UpdateRemotePeeringConnection
         Updates the specified remote peering connection (RPC).
 
 
@@ -13803,7 +13645,6 @@ class VirtualNetworkClient(object):
 
     def update_route_table(self, rt_id, update_route_table_details, **kwargs):
         """
-        UpdateRouteTable
         Updates the specified route table's display name or route rules.
         Avoid entering confidential information.
 
@@ -13886,7 +13727,6 @@ class VirtualNetworkClient(object):
 
     def update_security_list(self, security_list_id, update_security_list_details, **kwargs):
         """
-        UpdateSecurityList
         Updates the specified security list's display name or rules.
         Avoid entering confidential information.
 
@@ -13970,7 +13810,6 @@ class VirtualNetworkClient(object):
 
     def update_service_gateway(self, service_gateway_id, update_service_gateway_details, **kwargs):
         """
-        UpdateServiceGateway
         Updates the specified service gateway. The information you provide overwrites the existing
         attributes of the gateway.
 
@@ -14053,7 +13892,6 @@ class VirtualNetworkClient(object):
 
     def update_subnet(self, subnet_id, update_subnet_details, **kwargs):
         """
-        UpdateSubnet
         Updates the specified subnet.
 
 
@@ -14133,7 +13971,6 @@ class VirtualNetworkClient(object):
 
     def update_tunnel_cpe_device_config(self, ipsc_id, tunnel_id, update_tunnel_cpe_device_config_details, **kwargs):
         """
-        UpdateTunnelCpeDeviceConfig
         Creates or updates the set of CPE configuration answers for the specified tunnel.
         The answers correlate to the questions that are specific to the CPE device type (see the
         `parameters` attribute of :class:`CpeDeviceShapeDetail`).
@@ -14238,7 +14075,6 @@ class VirtualNetworkClient(object):
 
     def update_vcn(self, vcn_id, update_vcn_details, **kwargs):
         """
-        UpdateVcn
         Updates the specified VCN.
 
 
@@ -14320,7 +14156,6 @@ class VirtualNetworkClient(object):
 
     def update_virtual_circuit(self, virtual_circuit_id, update_virtual_circuit_details, **kwargs):
         """
-        UpdateVirtualCircuit
         Updates the specified virtual circuit. This can be called by
         either the customer who owns the virtual circuit, or the
         provider (when provisioning or de-provisioning the virtual
@@ -14425,7 +14260,6 @@ class VirtualNetworkClient(object):
 
     def update_vnic(self, vnic_id, update_vnic_details, **kwargs):
         """
-        UpdateVnic
         Updates the specified VNIC.
 
 
@@ -14502,3 +14336,4 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 body=update_vnic_details,
                 response_type="Vnic")
+

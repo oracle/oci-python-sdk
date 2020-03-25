@@ -82,7 +82,6 @@ class ResourceManagerClient(object):
 
     def cancel_job(self, job_id, **kwargs):
         """
-        Cancel a Job
         Indicates the intention to cancel the specified job.
         Cancellation of the job is not immediate, and may be delayed,
         or may not happen at all.
@@ -165,7 +164,6 @@ class ResourceManagerClient(object):
 
     def change_stack_compartment(self, stack_id, change_stack_compartment_details, **kwargs):
         """
-        Moves a Stack and it's associated Jobs into a different compartment. When provided, If-Match is checked against ETag values of the Stack.
         Moves a Stack and it's associated Jobs into a different compartment.
 
 
@@ -262,7 +260,6 @@ class ResourceManagerClient(object):
 
     def create_job(self, create_job_details, **kwargs):
         """
-        Create a Job.
         Creates a job.
 
 
@@ -337,7 +334,6 @@ class ResourceManagerClient(object):
 
     def create_stack(self, create_stack_details, **kwargs):
         """
-        Creates a Stack.
         Creates a stack in the specified comparment.
         Specify the compartment using the compartment ID.
         For more information, see `Create a Stack`__.
@@ -416,7 +412,6 @@ class ResourceManagerClient(object):
 
     def delete_stack(self, stack_id, **kwargs):
         """
-        Deletes a stack
         Deletes the specified stack object.
 
 
@@ -497,7 +492,6 @@ class ResourceManagerClient(object):
 
     def get_job(self, job_id, **kwargs):
         """
-        Get details of a specific job.
         Returns the specified job along with the job details.
 
 
@@ -573,7 +567,6 @@ class ResourceManagerClient(object):
 
     def get_job_logs(self, job_id, **kwargs):
         """
-        Gets log entries for a job
         Returns log entries for the specified job in JSON format.
 
 
@@ -714,7 +707,6 @@ class ResourceManagerClient(object):
 
     def get_job_logs_content(self, job_id, **kwargs):
         """
-        Gets the raw logs for a job.
         Returns raw log file for the specified job in text format.
         Returns a maximum of 100,000 log entries.
 
@@ -791,7 +783,6 @@ class ResourceManagerClient(object):
 
     def get_job_tf_config(self, job_id, **kwargs):
         """
-        Get zipped Terraform configuration used for a specific job.
         Returns the Terraform configuration file for the specified job in .zip format.
         Returns an error if no zip file is found.
 
@@ -868,7 +859,6 @@ class ResourceManagerClient(object):
 
     def get_job_tf_state(self, job_id, **kwargs):
         """
-        Get Terraform state output from a specified job.
         Returns the Terraform state for the specified job.
 
 
@@ -944,7 +934,6 @@ class ResourceManagerClient(object):
 
     def get_stack(self, stack_id, **kwargs):
         """
-        Gets a stack by ID.
         Gets a stack using the stack ID.
 
 
@@ -1020,7 +1009,6 @@ class ResourceManagerClient(object):
 
     def get_stack_tf_config(self, stack_id, **kwargs):
         """
-        Gets the stack's zipped Terraform configuration
         Returns the Terraform configuration file in .zip format for the specified stack.
         Returns an error if no zip file is found.
 
@@ -1097,7 +1085,6 @@ class ResourceManagerClient(object):
 
     def get_stack_tf_state(self, stack_id, **kwargs):
         """
-        Get Terraform state of the specified stack.
         Returns the Terraform state for the specified stack.
 
 
@@ -1173,7 +1160,6 @@ class ResourceManagerClient(object):
 
     def get_work_request(self, work_request_id, **kwargs):
         """
-        Get Work Request
         Return the given work request.
 
 
@@ -1249,7 +1235,6 @@ class ResourceManagerClient(object):
 
     def list_jobs(self, **kwargs):
         """
-        List all jobs related to a stack or compartment. By default, the list is ordered by time created.\nYou can alter the ordering by using `SortByQueryParam` and `SortOrderQueryParam`.\n
         Returns a list of jobs in a stack or compartment, ordered by time created.
 
         - To list all jobs in a stack, provide the stack `OCID`__.
@@ -1417,7 +1402,6 @@ class ResourceManagerClient(object):
 
     def list_stacks(self, **kwargs):
         """
-        Returns a stack or list of stacks.
         Returns a list of stacks.
         - If called using the compartment ID, returns all stacks in the specified compartment.
         - If called using the stack ID, returns the specified stack.
@@ -1570,7 +1554,6 @@ class ResourceManagerClient(object):
 
     def list_terraform_versions(self, **kwargs):
         """
-        Lists supported Terraform versions.
         Returns a list of supported Terraform versions for use with stacks.
 
 
@@ -1642,7 +1625,6 @@ class ResourceManagerClient(object):
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
-        Lists work request errors
         Return a (paginated) list of errors for a given work request.
 
 
@@ -1761,7 +1743,6 @@ class ResourceManagerClient(object):
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
-        Lists work request logs
         Return a (paginated) list of logs for a given work request.
 
 
@@ -1880,7 +1861,6 @@ class ResourceManagerClient(object):
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
-        Lists work requests
         Lists the work requests in a given compartment or for a given resource.
 
 
@@ -1974,7 +1954,6 @@ class ResourceManagerClient(object):
 
     def update_job(self, job_id, update_job_details, **kwargs):
         """
-        Update a Job.
         Updates the specified job.
 
 
@@ -2062,7 +2041,6 @@ class ResourceManagerClient(object):
 
     def update_stack(self, stack_id, update_stack_details, **kwargs):
         """
-        Updates a stack
         Updates the specified stack object.
         Use `UpdateStack` when you update your Terraform configuration
         and want your changes to be reflected in the execution plan.
@@ -2154,3 +2132,4 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 body=update_stack_details,
                 response_type="Stack")
+

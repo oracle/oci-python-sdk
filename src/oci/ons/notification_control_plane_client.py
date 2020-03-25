@@ -661,3 +661,4 @@ class NotificationControlPlaneClient(object):
                 header_params=header_params,
                 body=topic_attributes_details,
                 response_type="NotificationTopic")
+

@@ -82,7 +82,6 @@ class AnalyticsClient(object):
 
     def change_analytics_instance_compartment(self, analytics_instance_id, change_compartment_details, **kwargs):
         """
-        Change the compartment of an Analytics instance.
         Change the compartment of an Analytics instance. The operation is long-running
         and creates a new WorkRequest.
 
@@ -178,7 +177,6 @@ class AnalyticsClient(object):
 
     def create_analytics_instance(self, create_analytics_instance_details, **kwargs):
         """
-        Create an Analytics instance.
         Create a new AnalyticsInstance in the specified compartment. The operation is long-running
         and creates a new WorkRequest.
 
@@ -254,7 +252,6 @@ class AnalyticsClient(object):
 
     def delete_analytics_instance(self, analytics_instance_id, **kwargs):
         """
-        Delete an Analytics instance.
         Terminates the specified Analytics instance. The operation is long-running
         and creates a new WorkRequest.
 
@@ -345,7 +342,6 @@ class AnalyticsClient(object):
 
     def delete_work_request(self, work_request_id, **kwargs):
         """
-        Cancel a work request.
         Cancel a work request that has not started yet.
 
 
@@ -424,7 +420,6 @@ class AnalyticsClient(object):
 
     def get_analytics_instance(self, analytics_instance_id, **kwargs):
         """
-        Retrieve Analytics instance metadata.
         Info for a specific Analytics instance.
 
 
@@ -498,7 +493,6 @@ class AnalyticsClient(object):
 
     def get_work_request(self, work_request_id, **kwargs):
         """
-        Get work request details.
         Get the details of a work request.
 
 
@@ -572,7 +566,6 @@ class AnalyticsClient(object):
 
     def list_analytics_instances(self, compartment_id, **kwargs):
         """
-        List Analytics instances.
         List Analytics instances.
 
 
@@ -740,7 +733,6 @@ class AnalyticsClient(object):
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
-        Get work request errors.
         Get the errors of a work request.
 
 
@@ -840,7 +832,6 @@ class AnalyticsClient(object):
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
-        Get work request logs.
         Get the logs of a work request.
 
 
@@ -940,7 +931,6 @@ class AnalyticsClient(object):
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
-        List all work requests.
         List all work requests in a compartment.
 
 
@@ -1091,7 +1081,6 @@ class AnalyticsClient(object):
 
     def scale_analytics_instance(self, analytics_instance_id, scale_analytics_instance_details, **kwargs):
         """
-        Scale an Analytics instance up or down.
         Scale an Analytics instance up or down. The operation is long-running
         and creates a new WorkRequest.
 
@@ -1187,7 +1176,6 @@ class AnalyticsClient(object):
 
     def start_analytics_instance(self, analytics_instance_id, **kwargs):
         """
-        Starts the specified Analytics instance.
         Starts the specified Analytics instance. The operation is long-running
         and creates a new WorkRequest.
 
@@ -1278,7 +1266,6 @@ class AnalyticsClient(object):
 
     def stop_analytics_instance(self, analytics_instance_id, **kwargs):
         """
-        Stop the specified Analytics instance.
         Stop the specified Analytics instance. The operation is long-running
         and creates a new WorkRequest.
 
@@ -1369,7 +1356,6 @@ class AnalyticsClient(object):
 
     def update_analytics_instance(self, analytics_instance_id, update_analytics_instance_details, **kwargs):
         """
-        Update an Analytics instance.
         Updates certain fields of an Analytics instance. Fields that are not provided in the
         request will not be updated.
 
@@ -1454,3 +1440,4 @@ class AnalyticsClient(object):
                 header_params=header_params,
                 body=update_analytics_instance_details,
                 response_type="AnalyticsInstance")
+

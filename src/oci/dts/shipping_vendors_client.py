@@ -83,7 +83,6 @@ class ShippingVendorsClient(object):
     def list_shipping_vendors(self, **kwargs):
         """
         Lists available shipping vendors for Transfer Package delivery
-        Lists available shipping vendors for Transfer Package delivery
 
 
         :param obj retry_strategy: (optional)
@@ -128,3 +127,4 @@ class ShippingVendorsClient(object):
                 method=method,
                 header_params=header_params,
                 response_type="ShippingVendors")
+

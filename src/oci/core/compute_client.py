@@ -88,7 +88,6 @@ class ComputeClient(object):
 
     def add_image_shape_compatibility_entry(self, image_id, shape_name, **kwargs):
         """
-        AddImageShapeCompatibilityEntry
         Adds a shape to the compatible shapes list for the image.
 
 
@@ -158,7 +157,6 @@ class ComputeClient(object):
 
     def attach_boot_volume(self, attach_boot_volume_details, **kwargs):
         """
-        AttachBootVolume
         Attaches the specified boot volume to the specified instance.
 
 
@@ -227,7 +225,6 @@ class ComputeClient(object):
 
     def attach_vnic(self, attach_vnic_details, **kwargs):
         """
-        AttachVnic
         Creates a secondary VNIC and attaches it to the specified instance.
         For more information about secondary VNICs, see
         `Virtual Network Interface Cards (VNICs)`__.
@@ -300,7 +297,6 @@ class ComputeClient(object):
 
     def attach_volume(self, attach_volume_details, **kwargs):
         """
-        AttachVolume
         Attaches the specified storage volume to the specified instance.
 
 
@@ -369,7 +365,6 @@ class ComputeClient(object):
 
     def capture_console_history(self, capture_console_history_details, **kwargs):
         """
-        CaptureConsoleHistory
         Captures the most recent serial console data (up to a megabyte) for the
         specified instance.
 
@@ -454,7 +449,6 @@ class ComputeClient(object):
 
     def change_dedicated_vm_host_compartment(self, dedicated_vm_host_id, change_dedicated_vm_host_compartment_details, **kwargs):
         """
-        ChangeDedicatedVmHostCompartment
         Moves a dedicated virtual machine host from one compartment to another.
 
 
@@ -549,7 +543,6 @@ class ComputeClient(object):
 
     def change_image_compartment(self, image_id, change_image_compartment_details, **kwargs):
         """
-        ChangeImageCompartment
         Moves an image into a different compartment within the same tenancy. For information about moving
         resources between compartments, see
         `Moving Resources to a Different Compartment`__.
@@ -650,7 +643,6 @@ class ComputeClient(object):
 
     def change_instance_compartment(self, instance_id, change_instance_compartment_details, **kwargs):
         """
-        ChangeInstanceCompartment
         Moves an instance into a different compartment within the same tenancy. For information about
         moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
@@ -752,7 +744,6 @@ class ComputeClient(object):
 
     def create_app_catalog_subscription(self, create_app_catalog_subscription_details, **kwargs):
         """
-        CreateAppCatalogSubscription
         Create a subscription for listing resource version for a compartment. It will take some time to propagate to all regions.
 
 
@@ -821,7 +812,6 @@ class ComputeClient(object):
 
     def create_dedicated_vm_host(self, create_dedicated_vm_host_details, **kwargs):
         """
-        CreateDedicatedVmHost
         Creates a new dedicated virtual machine host in the specified compartment and the specified availability domain.
         Dedicated virtual machine hosts enable you to run your Compute virtual machine (VM) instances on dedicated servers
         that are a single tenant and not shared with other customers.
@@ -901,7 +891,6 @@ class ComputeClient(object):
 
     def create_image(self, create_image_details, **kwargs):
         """
-        CreateImage
         Creates a boot disk image for the specified instance or imports an exported image from the Oracle Cloud Infrastructure Object Storage service.
 
         When creating a new image, you must provide the OCID of the instance you want to use as the basis for the image, and
@@ -997,7 +986,6 @@ class ComputeClient(object):
 
     def create_instance_console_connection(self, create_instance_console_connection_details, **kwargs):
         """
-        CreateInstanceConsoleConnection
         Creates a new console connection to the specified instance.
         After the console connection has been created and is available,
         you connect to the console using SSH.
@@ -1072,7 +1060,6 @@ class ComputeClient(object):
 
     def delete_app_catalog_subscription(self, listing_id, compartment_id, resource_version, **kwargs):
         """
-        DeleteAppCatalogSubscription
         Delete a subscription for a listing resource version for a compartment.
 
 
@@ -1139,7 +1126,6 @@ class ComputeClient(object):
 
     def delete_console_history(self, instance_console_history_id, **kwargs):
         """
-        DeleteConsoleHistory
         Deletes the specified console history metadata and the console history data.
 
 
@@ -1212,7 +1198,6 @@ class ComputeClient(object):
 
     def delete_dedicated_vm_host(self, dedicated_vm_host_id, **kwargs):
         """
-        DeleteDedicatedVmHost
         Deletes the specified dedicated virtual machine host.
 
         If any VM instances are assigned to the dedicated virtual machine host,
@@ -1287,7 +1272,6 @@ class ComputeClient(object):
 
     def delete_image(self, image_id, **kwargs):
         """
-        DeleteImage
         Deletes an image.
 
 
@@ -1362,7 +1346,6 @@ class ComputeClient(object):
 
     def delete_instance_console_connection(self, instance_console_connection_id, **kwargs):
         """
-        DeleteInstanceConsoleConnection
         Deletes the specified instance console connection.
 
 
@@ -1435,7 +1418,6 @@ class ComputeClient(object):
 
     def detach_boot_volume(self, boot_volume_attachment_id, **kwargs):
         """
-        DetachBootVolume
         Detaches a boot volume from an instance. You must specify the OCID of the boot volume attachment.
 
         This is an asynchronous operation. The attachment's `lifecycleState` will change to DETACHING temporarily
@@ -1511,7 +1493,6 @@ class ComputeClient(object):
 
     def detach_vnic(self, vnic_attachment_id, **kwargs):
         """
-        DetachVnic
         Detaches and deletes the specified secondary VNIC.
         This operation cannot be used on the instance's primary VNIC.
         When you terminate an instance, all attached VNICs (primary
@@ -1595,7 +1576,6 @@ class ComputeClient(object):
 
     def detach_volume(self, volume_attachment_id, **kwargs):
         """
-        DetachVolume
         Detaches a storage volume from an instance. You must specify the OCID of the volume attachment.
 
         This is an asynchronous operation. The attachment's `lifecycleState` will change to DETACHING temporarily
@@ -1671,7 +1651,6 @@ class ComputeClient(object):
 
     def export_image(self, image_id, export_image_details, **kwargs):
         """
-        ExportImage
         Exports the specified image to the Oracle Cloud Infrastructure Object Storage service. You can use the Object Storage URL,
         or the namespace, bucket name, and object name when specifying the location to export to.
 
@@ -1778,7 +1757,6 @@ class ComputeClient(object):
 
     def get_app_catalog_listing(self, listing_id, **kwargs):
         """
-        GetAppCatalogListing
         Gets the specified listing.
 
 
@@ -1842,7 +1820,6 @@ class ComputeClient(object):
 
     def get_app_catalog_listing_agreements(self, listing_id, resource_version, **kwargs):
         """
-        GetAppCatalogListingAgreements
         Retrieves the agreements for a particular resource version of a listing.
 
 
@@ -1910,7 +1887,6 @@ class ComputeClient(object):
 
     def get_app_catalog_listing_resource_version(self, listing_id, resource_version, **kwargs):
         """
-        GetAppCatalogListingResourceVersion
         Gets the specified listing resource version.
 
 
@@ -1978,7 +1954,6 @@ class ComputeClient(object):
 
     def get_boot_volume_attachment(self, boot_volume_attachment_id, **kwargs):
         """
-        GetBootVolumeAttachment
         Gets information about the specified boot volume attachment.
 
 
@@ -2042,7 +2017,6 @@ class ComputeClient(object):
 
     def get_console_history(self, instance_console_history_id, **kwargs):
         """
-        GetConsoleHistory
         Shows the metadata for the specified console history.
         See :func:`capture_console_history`
         for details about using the console history operations.
@@ -2108,7 +2082,6 @@ class ComputeClient(object):
 
     def get_console_history_content(self, instance_console_history_id, **kwargs):
         """
-        GetConsoleHistoryContent
         Gets the actual console history data (not the metadata).
         See :func:`capture_console_history`
         for details about using the console history operations.
@@ -2193,7 +2166,6 @@ class ComputeClient(object):
 
     def get_dedicated_vm_host(self, dedicated_vm_host_id, **kwargs):
         """
-        GetDedicatedVmHost
         Gets information about the specified dedicated virtual machine host.
 
 
@@ -2267,7 +2239,6 @@ class ComputeClient(object):
 
     def get_image(self, image_id, **kwargs):
         """
-        GetImage
         Gets the specified image.
 
 
@@ -2333,7 +2304,6 @@ class ComputeClient(object):
 
     def get_instance(self, instance_id, **kwargs):
         """
-        GetInstance
         Gets information about the specified instance.
 
 
@@ -2397,7 +2367,6 @@ class ComputeClient(object):
 
     def get_instance_console_connection(self, instance_console_connection_id, **kwargs):
         """
-        GetInstanceConsoleConnection
         Gets the specified instance console connection's information.
 
 
@@ -2461,7 +2430,6 @@ class ComputeClient(object):
 
     def get_vnic_attachment(self, vnic_attachment_id, **kwargs):
         """
-        GetVnicAttachment
         Gets the information for the specified VNIC attachment.
 
 
@@ -2525,7 +2493,6 @@ class ComputeClient(object):
 
     def get_volume_attachment(self, volume_attachment_id, **kwargs):
         """
-        GetVolumeAttachment
         Gets information about the specified volume attachment.
 
 
@@ -2589,7 +2556,6 @@ class ComputeClient(object):
 
     def get_windows_instance_initial_credentials(self, instance_id, **kwargs):
         """
-        GetWindowsInstanceInitialCredentials
         Gets the generated credentials for the instance. Only works for instances that require a password to log in, such as Windows.
         For certain operating systems, users will be forced to change the initial credentials.
 
@@ -2654,7 +2620,6 @@ class ComputeClient(object):
 
     def instance_action(self, instance_id, action, **kwargs):
         """
-        InstanceAction
         Performs one of the following power actions on the specified instance:
 
         - **START** - Powers on the instance.
@@ -2770,7 +2735,6 @@ class ComputeClient(object):
 
     def launch_instance(self, launch_instance_details, **kwargs):
         """
-        LaunchInstance
         Creates a new instance in the specified compartment and the specified availability domain.
         For general information about instances, see
         `Overview of the Compute Service`__.
@@ -2874,7 +2838,6 @@ class ComputeClient(object):
 
     def list_app_catalog_listing_resource_versions(self, listing_id, **kwargs):
         """
-        ListAppCatalogListingResourceVersions
         Gets all resource versions for a particular listing.
 
 
@@ -2982,7 +2945,6 @@ class ComputeClient(object):
 
     def list_app_catalog_listings(self, **kwargs):
         """
-        ListAppCatalogListings
         Lists the published listings.
 
 
@@ -3090,7 +3052,6 @@ class ComputeClient(object):
 
     def list_app_catalog_subscriptions(self, compartment_id, **kwargs):
         """
-        ListAppCatalogSubscriptions
         Lists subscriptions for a compartment.
 
 
@@ -3215,7 +3176,6 @@ class ComputeClient(object):
 
     def list_boot_volume_attachments(self, availability_domain, compartment_id, **kwargs):
         """
-        ListBootVolumeAttachments
         Lists the boot volume attachments in the specified compartment. You can filter the
         list by specifying an instance OCID, boot volume OCID, or both.
 
@@ -3316,7 +3276,6 @@ class ComputeClient(object):
 
     def list_console_histories(self, compartment_id, **kwargs):
         """
-        ListConsoleHistories
         Lists the console history metadata for the specified compartment or instance.
 
 
@@ -3462,7 +3421,6 @@ class ComputeClient(object):
 
     def list_dedicated_vm_host_instance_shapes(self, compartment_id, **kwargs):
         """
-        ListDedicatedVmHostInstanceShapes
         Lists the shapes that can be used to launch a virtual machine instance on a dedicated virtual machine host within the specified compartment.
         You can filter the list by compatibility with a specific dedicated virtual machine host shape.
 
@@ -3566,7 +3524,6 @@ class ComputeClient(object):
 
     def list_dedicated_vm_host_instances(self, compartment_id, dedicated_vm_host_id, **kwargs):
         """
-        ListDedicatedVmHostInstances
         Returns the list of instances on the dedicated virtual machine hosts that match the specified criteria.
 
 
@@ -3715,7 +3672,6 @@ class ComputeClient(object):
 
     def list_dedicated_vm_host_shapes(self, compartment_id, **kwargs):
         """
-        ListDedicatedVmHostShapes
         Lists the shapes that can be used to launch a dedicated virtual machine host within the specified compartment.
 
 
@@ -3818,7 +3774,6 @@ class ComputeClient(object):
 
     def list_dedicated_vm_hosts(self, compartment_id, **kwargs):
         """
-        ListDedicatedVmHosts
         Returns the list of dedicated virtual machine hosts that match the specified criteria in the specified compartment.
 
         You can limit the list by specifying a dedicated virtual machine host display name. The list will include all the identically-named
@@ -3979,7 +3934,6 @@ class ComputeClient(object):
 
     def list_images(self, compartment_id, **kwargs):
         """
-        ListImages
         Lists the available images in the specified compartment, including both
         `Oracle-provided images`__ and
         `custom images`__ that have
@@ -4146,7 +4100,6 @@ class ComputeClient(object):
 
     def list_instance_console_connections(self, compartment_id, **kwargs):
         """
-        ListInstanceConsoleConnections
         Lists the console connections for the specified compartment or instance.
 
         For more information about console access, see `Accessing the Console`__.
@@ -4239,7 +4192,6 @@ class ComputeClient(object):
 
     def list_instance_devices(self, instance_id, **kwargs):
         """
-        ListInstanceDevices
         Gets a list of all the devices for given instance. You can optionally filter results by device availability.
 
 
@@ -4385,7 +4337,6 @@ class ComputeClient(object):
 
     def list_instances(self, compartment_id, **kwargs):
         """
-        ListInstances
         Lists the instances in the specified compartment and the specified availability domain.
         You can filter the results by specifying an instance name (the list will include all the identically-named
         instances in the compartment).
@@ -4533,7 +4484,6 @@ class ComputeClient(object):
 
     def list_shapes(self, compartment_id, **kwargs):
         """
-        ListShapes
         Lists the shapes that can be used to launch an instance within the specified compartment. You can
         filter the list by compatibility with a specific image.
 
@@ -4632,7 +4582,6 @@ class ComputeClient(object):
 
     def list_vnic_attachments(self, compartment_id, **kwargs):
         """
-        ListVnicAttachments
         Lists the VNIC attachments in the specified compartment. A VNIC attachment
         resides in the same compartment as the attached instance. The list can be
         filtered by instance, VNIC, or availability domain.
@@ -4735,7 +4684,6 @@ class ComputeClient(object):
 
     def list_volume_attachments(self, compartment_id, **kwargs):
         """
-        ListVolumeAttachments
         Lists the volume attachments in the specified compartment. You can filter the
         list by specifying an instance OCID, volume OCID, or both.
 
@@ -4840,7 +4788,6 @@ class ComputeClient(object):
 
     def remove_image_shape_compatibility_entry(self, image_id, shape_name, **kwargs):
         """
-        RemoveImageShapeCompatibilityEntry
         Removes a shape from the compatible shapes list for the image.
 
 
@@ -4908,7 +4855,6 @@ class ComputeClient(object):
 
     def terminate_instance(self, instance_id, **kwargs):
         """
-        TerminateInstance
         Terminates the specified instance. Any attached VNICs and volumes are automatically detached
         when the instance terminates.
 
@@ -5000,7 +4946,6 @@ class ComputeClient(object):
 
     def update_console_history(self, instance_console_history_id, update_console_history_details, **kwargs):
         """
-        UpdateConsoleHistory
         Updates the specified console history metadata.
 
 
@@ -5080,7 +5025,6 @@ class ComputeClient(object):
 
     def update_dedicated_vm_host(self, dedicated_vm_host_id, update_dedicated_vm_host_details, **kwargs):
         """
-        UpdateDedicatedVmHost
         Updates the displayName, freeformTags, and definedTags attributes for the specified dedicated virtual machine host.
         If an attribute value is not included, it will not be updated.
 
@@ -5178,7 +5122,6 @@ class ComputeClient(object):
 
     def update_image(self, image_id, update_image_details, **kwargs):
         """
-        UpdateImage
         Updates the display name of the image. Avoid entering confidential information.
 
 
@@ -5271,7 +5214,6 @@ class ComputeClient(object):
 
     def update_instance(self, instance_id, update_instance_details, **kwargs):
         """
-        UpdateInstance
         Updates certain fields on the specified instance. Fields that are not provided in the
         request will not be updated. Avoid entering confidential information.
 
@@ -5365,3 +5307,4 @@ class ComputeClient(object):
                 header_params=header_params,
                 body=update_instance_details,
                 response_type="Instance")
+

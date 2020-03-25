@@ -88,7 +88,6 @@ class BlockstorageClient(object):
 
     def change_boot_volume_backup_compartment(self, boot_volume_backup_id, change_boot_volume_backup_compartment_details, **kwargs):
         """
-        ChangeBootVolumeBackupCompartment
         Moves a boot volume backup into a different compartment within the same tenancy.
         For information about moving resources between compartments,
         see `Moving Resources to a Different Compartment`__.
@@ -169,7 +168,6 @@ class BlockstorageClient(object):
 
     def change_boot_volume_compartment(self, boot_volume_id, change_boot_volume_compartment_details, **kwargs):
         """
-        ChangeBootVolumeCompartment
         Moves a boot volume into a different compartment within the same tenancy.
         For information about moving resources between compartments,
         see `Moving Resources to a Different Compartment`__.
@@ -250,7 +248,6 @@ class BlockstorageClient(object):
 
     def change_volume_backup_compartment(self, volume_backup_id, change_volume_backup_compartment_details, **kwargs):
         """
-        ChangeVolumeBackupCompartment
         Moves a volume backup into a different compartment within the same tenancy.
         For information about moving resources between compartments,
         see `Moving Resources to a Different Compartment`__.
@@ -331,7 +328,6 @@ class BlockstorageClient(object):
 
     def change_volume_compartment(self, volume_id, change_volume_compartment_details, **kwargs):
         """
-        ChangeVolumeCompartment
         Moves a volume into a different compartment within the same tenancy.
         For information about moving resources between compartments,
         see `Moving Resources to a Different Compartment`__.
@@ -412,7 +408,6 @@ class BlockstorageClient(object):
 
     def change_volume_group_backup_compartment(self, volume_group_backup_id, change_volume_group_backup_compartment_details, **kwargs):
         """
-        ChangeVolumeGroupBackupCompartment
         Moves a volume group backup into a different compartment within the same tenancy.
         For information about moving resources between compartments,
         see `Moving Resources to a Different Compartment`__.
@@ -493,7 +488,6 @@ class BlockstorageClient(object):
 
     def change_volume_group_compartment(self, volume_group_id, change_volume_group_compartment_details, **kwargs):
         """
-        ChangeVolumeGroupCompartment
         Moves a volume group into a different compartment within the same tenancy.
         For information about moving resources between compartments,
         see `Moving Resources to a Different Compartment`__.
@@ -574,7 +568,6 @@ class BlockstorageClient(object):
 
     def copy_boot_volume_backup(self, boot_volume_backup_id, copy_boot_volume_backup_details, **kwargs):
         """
-        CreateBootVolumeBackupCopy
         Creates a boot volume backup copy in specified region. For general information about volume backups,
         see `Overview of Boot Volume Backups`__
 
@@ -667,7 +660,6 @@ class BlockstorageClient(object):
 
     def copy_volume_backup(self, volume_backup_id, copy_volume_backup_details, **kwargs):
         """
-        CreateVolumeBackupCopy
         Creates a volume backup copy in specified region. For general information about volume backups,
         see `Overview of Block Volume Service Backups`__
 
@@ -760,7 +752,6 @@ class BlockstorageClient(object):
 
     def create_boot_volume(self, create_boot_volume_details, **kwargs):
         """
-        CreateBootVolume
         Creates a new boot volume in the specified compartment from an existing boot volume or a boot volume backup.
         For general information about boot volumes, see `Boot Volumes`__.
         You may optionally specify a *display name* for the volume, which is simply a friendly name or
@@ -834,7 +825,6 @@ class BlockstorageClient(object):
 
     def create_boot_volume_backup(self, create_boot_volume_backup_details, **kwargs):
         """
-        CreateBootVolumeBackup
         Creates a new boot volume backup of the specified boot volume. For general information about boot volume backups,
         see `Overview of Boot Volume Backups`__
 
@@ -910,7 +900,6 @@ class BlockstorageClient(object):
 
     def create_volume(self, create_volume_details, **kwargs):
         """
-        CreateVolume
         Creates a new volume in the specified compartment. Volumes can be created in sizes ranging from
         50 GB (51200 MB) to 32 TB (33554432 MB), in 1 GB (1024 MB) increments. By default, volumes are 1 TB (1048576 MB).
         For general information about block volumes, see
@@ -996,7 +985,6 @@ class BlockstorageClient(object):
 
     def create_volume_backup(self, create_volume_backup_details, **kwargs):
         """
-        CreateVolumeBackup
         Creates a new backup of the specified volume. For general information about volume backups,
         see `Overview of Block Volume Service Backups`__
 
@@ -1072,7 +1060,6 @@ class BlockstorageClient(object):
 
     def create_volume_backup_policy(self, create_volume_backup_policy_details, **kwargs):
         """
-        CreateVolumeBackupPolicy
         Creates a new user defined backup policy.
 
         For more information about Oracle defined backup policies and user defined backup policies,
@@ -1152,7 +1139,6 @@ class BlockstorageClient(object):
 
     def create_volume_backup_policy_assignment(self, create_volume_backup_policy_assignment_details, **kwargs):
         """
-        CreateVolumeBackupPolicyAssignment
         Assigns a volume backup policy to the specified volume. Note that a given volume can
         only have one backup policy assigned to it. If this operation is used for a volume that already
         has a different backup policy assigned, the prior backup policy will be silently unassigned.
@@ -1208,7 +1194,6 @@ class BlockstorageClient(object):
 
     def create_volume_group(self, create_volume_group_details, **kwargs):
         """
-        CreateVolumeGroup
         Creates a new volume group in the specified compartment.
         A volume group is a collection of volumes and may be created from a list of volumes, cloning an existing
         volume group, or by restoring a volume group backup. A volume group can contain up to 64 volumes.
@@ -1285,7 +1270,6 @@ class BlockstorageClient(object):
 
     def create_volume_group_backup(self, create_volume_group_backup_details, **kwargs):
         """
-        CreateVolumeGroupBackup
         Creates a new backup volume group of the specified volume group.
         For more information, see `Volume Groups`__.
 
@@ -1357,7 +1341,6 @@ class BlockstorageClient(object):
 
     def delete_boot_volume(self, boot_volume_id, **kwargs):
         """
-        DeleteBootVolume
         Deletes the specified boot volume. The volume cannot have an active connection to an instance.
         To disconnect the boot volume from a connected instance, see
         `Disconnecting From a Boot Volume`__.
@@ -1435,7 +1418,6 @@ class BlockstorageClient(object):
 
     def delete_boot_volume_backup(self, boot_volume_backup_id, **kwargs):
         """
-        DeleteBootVolumeBackup
         Deletes a boot volume backup.
 
 
@@ -1508,7 +1490,6 @@ class BlockstorageClient(object):
 
     def delete_boot_volume_kms_key(self, boot_volume_id, **kwargs):
         """
-        DeleteBootVolumeKmsKey
         Removes the specified boot volume's assigned Key Management encryption key.
 
 
@@ -1581,7 +1562,6 @@ class BlockstorageClient(object):
 
     def delete_volume(self, volume_id, **kwargs):
         """
-        DeleteVolume
         Deletes the specified volume. The volume cannot have an active connection to an instance.
         To disconnect the volume from a connected instance, see
         `Disconnecting From a Volume`__.
@@ -1659,7 +1639,6 @@ class BlockstorageClient(object):
 
     def delete_volume_backup(self, volume_backup_id, **kwargs):
         """
-        DeleteVolumeBackup
         Deletes a volume backup.
 
 
@@ -1732,7 +1711,6 @@ class BlockstorageClient(object):
 
     def delete_volume_backup_policy(self, policy_id, **kwargs):
         """
-        DeleteVolumeBackupPolicy
         Deletes a user defined backup policy.
          For more information about user defined backup policies,
          see `Policy-Based Backups`__.
@@ -1817,7 +1795,6 @@ class BlockstorageClient(object):
 
     def delete_volume_backup_policy_assignment(self, policy_assignment_id, **kwargs):
         """
-        DeleteVolumeBackupPolicyAssignment
         Deletes a volume backup policy assignment.
 
 
@@ -1890,7 +1867,6 @@ class BlockstorageClient(object):
 
     def delete_volume_group(self, volume_group_id, **kwargs):
         """
-        DeleteVolumeGroup
         Deletes the specified volume group. Individual volumes are not deleted, only the volume group is deleted.
         For more information, see `Volume Groups`__.
 
@@ -1966,7 +1942,6 @@ class BlockstorageClient(object):
 
     def delete_volume_group_backup(self, volume_group_backup_id, **kwargs):
         """
-        DeleteVolumeGroupBackup
         Deletes a volume group backup. This operation deletes all the backups in the volume group. For more information, see `Volume Groups`__.
 
         __ https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm
@@ -2041,7 +2016,6 @@ class BlockstorageClient(object):
 
     def delete_volume_kms_key(self, volume_id, **kwargs):
         """
-        DeleteVolumeKmsKey
         Removes the specified volume's assigned Key Management encryption key.
 
 
@@ -2114,7 +2088,6 @@ class BlockstorageClient(object):
 
     def get_boot_volume(self, boot_volume_id, **kwargs):
         """
-        GetBootVolume
         Gets information for the specified boot volume.
 
 
@@ -2178,7 +2151,6 @@ class BlockstorageClient(object):
 
     def get_boot_volume_backup(self, boot_volume_backup_id, **kwargs):
         """
-        GetBootVolumeBackup
         Gets information for the specified boot volume backup.
 
 
@@ -2242,7 +2214,6 @@ class BlockstorageClient(object):
 
     def get_boot_volume_kms_key(self, boot_volume_id, **kwargs):
         """
-        GetBootVolumeKmsKey
         Gets the Key Management encryption key assigned to the specified boot volume.
 
 
@@ -2317,7 +2288,6 @@ class BlockstorageClient(object):
 
     def get_volume(self, volume_id, **kwargs):
         """
-        GetVolume
         Gets information for the specified volume.
 
 
@@ -2381,7 +2351,6 @@ class BlockstorageClient(object):
 
     def get_volume_backup(self, volume_backup_id, **kwargs):
         """
-        GetVolumeBackup
         Gets information for the specified volume backup.
 
 
@@ -2445,7 +2414,6 @@ class BlockstorageClient(object):
 
     def get_volume_backup_policy(self, policy_id, **kwargs):
         """
-        GetVolumeBackupPolicy
         Gets information for the specified volume backup policy.
 
 
@@ -2509,7 +2477,6 @@ class BlockstorageClient(object):
 
     def get_volume_backup_policy_asset_assignment(self, asset_id, **kwargs):
         """
-        GetVolumeBackupPolicyAssetAssignment
         Gets the volume backup policy assignment for the specified volume. The
         `assetId` query parameter is required, and the returned list will contain at most
         one item, since volume can only have one volume backup policy assigned at a time.
@@ -2593,7 +2560,6 @@ class BlockstorageClient(object):
 
     def get_volume_backup_policy_assignment(self, policy_assignment_id, **kwargs):
         """
-        GetVolumeBackupPolicyAssignment
         Gets information for the specified volume backup policy assignment.
 
 
@@ -2657,7 +2623,6 @@ class BlockstorageClient(object):
 
     def get_volume_group(self, volume_group_id, **kwargs):
         """
-        GetVolumeGroup
         Gets information for the specified volume group. For more information, see `Volume Groups`__.
 
         __ https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm
@@ -2723,7 +2688,6 @@ class BlockstorageClient(object):
 
     def get_volume_group_backup(self, volume_group_backup_id, **kwargs):
         """
-        GetVolumeGroupBackup
         Gets information for the specified volume group backup. For more information, see `Volume Groups`__.
 
         __ https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm
@@ -2789,7 +2753,6 @@ class BlockstorageClient(object):
 
     def get_volume_kms_key(self, volume_id, **kwargs):
         """
-        GetVolumeKmsKey
         Gets the Key Management encryption key assigned to the specified volume.
 
 
@@ -2864,7 +2827,6 @@ class BlockstorageClient(object):
 
     def list_boot_volume_backups(self, compartment_id, **kwargs):
         """
-        ListBootVolumeBackups
         Lists the boot volume backups in the specified compartment. You can filter the results by boot volume.
 
 
@@ -3013,7 +2975,6 @@ class BlockstorageClient(object):
 
     def list_boot_volumes(self, availability_domain, compartment_id, **kwargs):
         """
-        ListBootVolumes
         Lists the boot volumes in the specified compartment and availability domain.
 
 
@@ -3108,7 +3069,6 @@ class BlockstorageClient(object):
 
     def list_volume_backup_policies(self, **kwargs):
         """
-        ListVolumeBackupPolicies
         Lists all the volume backup policies available in the specified compartment.
 
         For more information about Oracle defined backup policies and user defined backup policies,
@@ -3197,7 +3157,6 @@ class BlockstorageClient(object):
 
     def list_volume_backups(self, compartment_id, **kwargs):
         """
-        ListVolumeBackups
         Lists the volume backups in the specified compartment. You can filter the results by volume.
 
 
@@ -3346,7 +3305,6 @@ class BlockstorageClient(object):
 
     def list_volume_group_backups(self, compartment_id, **kwargs):
         """
-        ListVolumeGroupBackups
         Lists the volume group backups in the specified compartment. You can filter the results by volume group.
         For more information, see `Volume Groups`__.
 
@@ -3479,7 +3437,6 @@ class BlockstorageClient(object):
 
     def list_volume_groups(self, compartment_id, **kwargs):
         """
-        ListVolumeGroups
         Lists the volume groups in the specified compartment and availability domain.
         For more information, see `Volume Groups`__.
 
@@ -3628,7 +3585,6 @@ class BlockstorageClient(object):
 
     def list_volumes(self, compartment_id, **kwargs):
         """
-        ListVolumes
         Lists the volumes in the specified compartment and availability domain.
 
 
@@ -3779,7 +3735,6 @@ class BlockstorageClient(object):
 
     def update_boot_volume(self, boot_volume_id, update_boot_volume_details, **kwargs):
         """
-        UpdateBootVolume
         Updates the specified boot volume's display name, defined tags, and free-form tags.
 
 
@@ -3859,7 +3814,6 @@ class BlockstorageClient(object):
 
     def update_boot_volume_backup(self, boot_volume_backup_id, update_boot_volume_backup_details, **kwargs):
         """
-        UpdateBootVolumeBackup
         Updates the display name for the specified boot volume backup.
         Avoid entering confidential information.
 
@@ -3940,7 +3894,6 @@ class BlockstorageClient(object):
 
     def update_boot_volume_kms_key(self, boot_volume_id, update_boot_volume_kms_key_details, **kwargs):
         """
-        UpdateBootVolumeKmsKey
         Updates the specified volume with a new Key Management master encryption key.
 
 
@@ -4020,7 +3973,6 @@ class BlockstorageClient(object):
 
     def update_volume(self, volume_id, update_volume_details, **kwargs):
         """
-        UpdateVolume
         Updates the specified volume's display name.
         Avoid entering confidential information.
 
@@ -4101,7 +4053,6 @@ class BlockstorageClient(object):
 
     def update_volume_backup(self, volume_backup_id, update_volume_backup_details, **kwargs):
         """
-        UpdateVolumeBackup
         Updates the display name for the specified volume backup.
         Avoid entering confidential information.
 
@@ -4182,7 +4133,6 @@ class BlockstorageClient(object):
 
     def update_volume_backup_policy(self, policy_id, update_volume_backup_policy_details, **kwargs):
         """
-        UpdateVolumeBackupPolicy
         Updates a user defined backup policy.
          For more information about user defined backup policies,
          see `Policy-Based Backups`__.
@@ -4285,7 +4235,6 @@ class BlockstorageClient(object):
 
     def update_volume_group(self, volume_group_id, update_volume_group_details, **kwargs):
         """
-        UpdateVolumeGroup
         Updates the set of volumes in a volume group along with the display name. Use this operation
         to add or remove volumes in a volume group. Specify the full list of volume IDs to include in the
         volume group. If the volume ID is not specified in the call, it will be removed from the volume group.
@@ -4372,7 +4321,6 @@ class BlockstorageClient(object):
 
     def update_volume_group_backup(self, volume_group_backup_id, update_volume_group_backup_details, **kwargs):
         """
-        UpdateVolumeGroupBackup
         Updates the display name for the specified volume group backup. For more information, see `Volume Groups`__.
 
         __ https://docs.cloud.oracle.com/Content/Block/Concepts/volumegroups.htm
@@ -4454,7 +4402,6 @@ class BlockstorageClient(object):
 
     def update_volume_kms_key(self, volume_id, update_volume_kms_key_details, **kwargs):
         """
-        UpdateVolumeKmsKey
         Updates the specified volume with a new Key Management master encryption key.
 
 
@@ -4531,3 +4478,4 @@ class BlockstorageClient(object):
                 header_params=header_params,
                 body=update_volume_kms_key_details,
                 response_type="VolumeKmsKey")
+

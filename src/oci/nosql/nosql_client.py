@@ -86,7 +86,6 @@ class NosqlClient(object):
     def change_table_compartment(self, table_name_or_id, change_table_compartment_details, **kwargs):
         """
         Change a table's compartment.
-        Change a table's compartment.
 
 
         :param str table_name_or_id: (required)
@@ -183,7 +182,6 @@ class NosqlClient(object):
 
     def create_index(self, table_name_or_id, create_index_details, **kwargs):
         """
-        Create a new index.
         Create a new index on the table identified by tableNameOrId.
 
 
@@ -273,7 +271,6 @@ class NosqlClient(object):
     def create_table(self, create_table_details, **kwargs):
         """
         Create a new table.
-        Create a new table.
 
 
         :param CreateTableDetails create_table_details: (required)
@@ -346,7 +343,6 @@ class NosqlClient(object):
 
     def delete_index(self, table_name_or_id, index_name, **kwargs):
         """
-        Delete an index.
         Delete an index from the table identified by tableNameOrId.
 
 
@@ -448,7 +444,6 @@ class NosqlClient(object):
 
     def delete_row(self, table_name_or_id, key, **kwargs):
         """
-        Delete a single row from the table, by primary key.
         Delete a single row from the table, by primary key.
 
 
@@ -560,7 +555,6 @@ class NosqlClient(object):
     def delete_table(self, table_name_or_id, **kwargs):
         """
         Delete a table by tableNameOrId.
-        Delete a table by tableNameOrId.
 
 
         :param str table_name_or_id: (required)
@@ -658,7 +652,6 @@ class NosqlClient(object):
     def delete_work_request(self, work_request_id, **kwargs):
         """
         Cancel a work request operation with the given ID.
-        Cancel a work request operation with the given ID.
 
 
         :param str work_request_id: (required)
@@ -737,7 +730,6 @@ class NosqlClient(object):
 
     def get_index(self, table_name_or_id, index_name, **kwargs):
         """
-        Get information about a single index.
         Get information about a single index.
 
 
@@ -827,7 +819,6 @@ class NosqlClient(object):
 
     def get_row(self, table_name_or_id, key, **kwargs):
         """
-        Get a single row from the table by primary key.
         Get a single row from the table by primary key.
 
 
@@ -938,7 +929,6 @@ class NosqlClient(object):
     def get_table(self, table_name_or_id, **kwargs):
         """
         Get table info by identifier.
-        Get table info by identifier.
 
 
         :param str table_name_or_id: (required)
@@ -1024,7 +1014,6 @@ class NosqlClient(object):
     def get_work_request(self, work_request_id, **kwargs):
         """
         Get the status of the work request with the given ID.
-        Get the status of the work request with the given ID.
 
 
         :param str work_request_id: (required)
@@ -1096,7 +1085,6 @@ class NosqlClient(object):
 
     def list_indexes(self, table_name_or_id, **kwargs):
         """
-        Get a list of indexes on a table.
         Get a list of indexes on a table.
 
 
@@ -1245,7 +1233,6 @@ class NosqlClient(object):
     def list_table_usage(self, table_name_or_id, **kwargs):
         """
         Get table usage info.
-        Get table usage info.
 
 
         :param str table_name_or_id: (required)
@@ -1354,7 +1341,6 @@ class NosqlClient(object):
 
     def list_tables(self, compartment_id, **kwargs):
         """
-        Get a list of tables in a compartment.
         Get a list of tables in a compartment.
 
 
@@ -1484,7 +1470,6 @@ class NosqlClient(object):
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
-        List work request errors
         Return a (paginated) list of errors for a given work request.
 
 
@@ -1575,7 +1560,6 @@ class NosqlClient(object):
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
-        Lists work request logs
         Return a (paginated) list of logs for a given work request.
 
 
@@ -1667,7 +1651,6 @@ class NosqlClient(object):
     def list_work_requests(self, compartment_id, **kwargs):
         """
         List the work requests in a compartment.
-        List the work requests in a compartment.
 
 
         :param str compartment_id: (required)
@@ -1746,7 +1729,6 @@ class NosqlClient(object):
 
     def prepare_statement(self, compartment_id, statement, **kwargs):
         """
-        Prepare a SQL statement for use in a query with variable substitution.\n
         Prepare a SQL statement for use in a query with variable substitution.
 
 
@@ -1818,7 +1800,6 @@ class NosqlClient(object):
 
     def query(self, query_details, **kwargs):
         """
-        Execute a SQL query.
         Execute a SQL query.
 
 
@@ -1900,7 +1881,6 @@ class NosqlClient(object):
     def summarize_statement(self, compartment_id, statement, **kwargs):
         """
         Check the syntax and return a brief summary of a SQL statement.
-        Check the syntax and return a brief summary of a SQL statement.
 
 
         :param str compartment_id: (required)
@@ -1971,7 +1951,6 @@ class NosqlClient(object):
 
     def update_row(self, table_name_or_id, update_row_details, **kwargs):
         """
-        Write a single row into the table.
         Write a single row into the table.
 
 
@@ -2058,7 +2037,6 @@ class NosqlClient(object):
 
     def update_table(self, table_name_or_id, update_table_details, **kwargs):
         """
-        Alter the table identified by tableNameOrId.
         Alter the table identified by tableNameOrId,
         changing schema, limits, or tags
 
@@ -2141,3 +2119,4 @@ class NosqlClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_table_details)
+

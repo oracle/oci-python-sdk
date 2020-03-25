@@ -80,7 +80,6 @@ class KmsManagementClient(object):
 
     def cancel_key_deletion(self, key_id, **kwargs):
         """
-        Cancels the scheduled deletion of a key.
         Cancels the scheduled deletion of the specified key. Canceling
         a scheduled deletion restores the key's lifecycle state to what
         it was before its scheduled deletion.
@@ -183,7 +182,6 @@ class KmsManagementClient(object):
 
     def cancel_key_version_deletion(self, key_id, key_version_id, **kwargs):
         """
-        Cancels the scheduled deletion of a key version.
         Cancels the scheduled deletion of the specified key version. Canceling
         a scheduled deletion restores the key version to its lifecycle state from
         before its scheduled deletion.
@@ -290,7 +288,6 @@ class KmsManagementClient(object):
 
     def change_key_compartment(self, key_id, change_key_compartment_details, **kwargs):
         """
-        Moves a key into a different compartment.
         Moves a key into a different compartment within the same tenancy. For information about
         moving resources between compartments, see `Moving Resources to a Different Compartment`__.
 
@@ -398,7 +395,6 @@ class KmsManagementClient(object):
 
     def create_key(self, create_key_details, **kwargs):
         """
-        Creates a new key.
         Creates a new master encryption key.
 
         As a management operation, this call is subject to a Key Management limit that applies to the total
@@ -480,7 +476,6 @@ class KmsManagementClient(object):
 
     def create_key_version(self, key_id, **kwargs):
         """
-        Creates a new key version resource and rotates the key to use it for encryption.
         Generates a new `KeyVersion`__ resource that provides new cryptographic
         material for a master encryption key. The key must be in an ENABLED state to be rotated.
 
@@ -575,7 +570,6 @@ class KmsManagementClient(object):
 
     def disable_key(self, key_id, **kwargs):
         """
-        Disables a key so it cannot be used for cryptographic operations.
         Disables a master encryption key so it can no longer be used for encryption, decryption, or
         generating new data encryption keys.
 
@@ -677,7 +671,6 @@ class KmsManagementClient(object):
 
     def enable_key(self, key_id, **kwargs):
         """
-        Enables a key so it can be used for cryptographic operations.
         Enables a master encryption key so it can be used for encryption, decryption, or
         generating new data encryption keys.
 
@@ -779,7 +772,6 @@ class KmsManagementClient(object):
 
     def get_key(self, key_id, **kwargs):
         """
-        Gets details about a key.
         Gets information about the specified master encryption key.
 
         As a management operation, this call is subject to a Key Management limit that applies to the total number
@@ -859,7 +851,6 @@ class KmsManagementClient(object):
 
     def get_key_version(self, key_id, key_version_id, **kwargs):
         """
-        Gets details about a key version.
         Gets information about the specified key version.
 
         As a management operation, this call is subject to a Key Management limit that applies to the total number
@@ -943,7 +934,6 @@ class KmsManagementClient(object):
 
     def get_wrapping_key(self, **kwargs):
         """
-        Gets details about the RSA wrapping key. The RSA wrapping key is used to wrap/unwrap the AES key to be imported to KMS. There will be only one RSA wrapping key per vault.
         Returns the RSA wrapping key associated with the vault in the endpoint.
 
 
@@ -1003,7 +993,6 @@ class KmsManagementClient(object):
 
     def import_key(self, import_key_details, **kwargs):
         """
-        Imports the given wrapped/encrypted AES key
         Imports the given wrapped/encrypted AES key.
 
 
@@ -1080,7 +1069,6 @@ class KmsManagementClient(object):
 
     def import_key_version(self, key_id, import_key_version_details, **kwargs):
         """
-        Imports the given key as a new KeyVersion for the specified key and rotates the key to use it for encryption.
         Imports the given key version.
 
 
@@ -1172,7 +1160,6 @@ class KmsManagementClient(object):
 
     def list_key_versions(self, key_id, **kwargs):
         """
-        Lists all key versions for a key.
         Lists all `KeyVersion`__ resources for the specified
         master encryption key.
 
@@ -1302,7 +1289,6 @@ class KmsManagementClient(object):
 
     def list_keys(self, compartment_id, **kwargs):
         """
-        Lists keys in the specified vault and compartment.
         Lists the master encryption keys in the specified vault and compartment.
 
         As a management operation, this call is subject to a Key Management limit that applies to the total number
@@ -1418,7 +1404,6 @@ class KmsManagementClient(object):
 
     def schedule_key_deletion(self, key_id, schedule_key_deletion_details, **kwargs):
         """
-        Schedules the deletion of a key.
         Schedules the deletion of the specified key. This sets the lifecycle state of the key
         to `PENDING_DELETION` and then deletes it after the specified retention period ends.
 
@@ -1525,7 +1510,6 @@ class KmsManagementClient(object):
 
     def schedule_key_version_deletion(self, key_id, key_version_id, schedule_key_version_deletion_details, **kwargs):
         """
-        Schedules the deletion of a key version.
         Schedules the deletion of the specified key version. This sets the lifecycle state of the key version
         to `PENDING_DELETION` and then deletes it after the specified retention period ends.
 
@@ -1636,7 +1620,6 @@ class KmsManagementClient(object):
 
     def update_key(self, key_id, update_key_details, **kwargs):
         """
-        Updates a key's properties.
         Updates the properties of a master encryption key. Specifically, you can update the
         `displayName`, `freeformTags`, and `definedTags` properties. Furthermore,
         the key must in an ENABLED or CREATING state to be updated.
@@ -1729,3 +1712,4 @@ class KmsManagementClient(object):
                 header_params=header_params,
                 body=update_key_details,
                 response_type="Key")
+

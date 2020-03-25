@@ -82,7 +82,6 @@ class StreamAdminClient(object):
 
     def change_connect_harness_compartment(self, connect_harness_id, change_connect_harness_compartment_details, **kwargs):
         """
-        Moves a resource into a different compartment.
         Moves a resource into a different compartment. When provided, If-Match is checked against ETag values of the resource.
 
 
@@ -164,7 +163,6 @@ class StreamAdminClient(object):
 
     def change_stream_compartment(self, stream_id, change_stream_compartment_details, **kwargs):
         """
-        Moves a resource into a different compartment.
         Moves a resource into a different compartment.
         When provided, If-Match is checked against ETag values of the resource.
         The stream will also be moved into the default stream pool in the destination compartment.
@@ -248,7 +246,6 @@ class StreamAdminClient(object):
 
     def change_stream_pool_compartment(self, stream_pool_id, change_stream_pool_compartment_details, **kwargs):
         """
-        Moves a resource into a different compartment.
         Moves a resource into a different compartment. When provided, If-Match is checked against ETag values of the resource.
 
 
@@ -330,7 +327,6 @@ class StreamAdminClient(object):
 
     def create_archiver(self, stream_id, create_archiver_details, **kwargs):
         """
-        Create a new stream archiver for the specified stream.
         Starts the provisioning of a new stream archiver.
         To track the progress of the provisioning, you can periodically call :func:`get_archiver`.
         In the response, the `lifecycleState` parameter of the :class:`Archiver` object tells you its current state.
@@ -418,7 +414,6 @@ class StreamAdminClient(object):
 
     def create_connect_harness(self, create_connect_harness_details, **kwargs):
         """
-        Create a connect harness
         Starts the provisioning of a new connect harness.
         To track the progress of the provisioning, you can periodically call :class:`ConnectHarness` object tells you its current state.
 
@@ -490,7 +485,6 @@ class StreamAdminClient(object):
 
     def create_stream(self, create_stream_details, **kwargs):
         """
-        Creates a stream.
         Starts the provisioning of a new stream.
         The stream will be created in the given compartment id or stream pool id, depending on which parameter is specified.
         Compartment id and stream pool id cannot be specified at the same time.
@@ -558,7 +552,6 @@ class StreamAdminClient(object):
 
     def create_stream_pool(self, create_stream_pool_details, **kwargs):
         """
-        Creates a stream pool.
         Starts the provisioning of a new stream pool.
         To track the progress of the provisioning, you can periodically call GetStreamPool.
         In the response, the `lifecycleState` parameter of the object tells you its current state.
@@ -631,7 +624,6 @@ class StreamAdminClient(object):
 
     def delete_connect_harness(self, connect_harness_id, **kwargs):
         """
-        Deletes a connect harness.
         Deletes a connect harness and its content. Connect harness contents are deleted immediately. The service retains records of the connect harness itself for 90 days after deletion.
         The `lifecycleState` parameter of the `ConnectHarness` object changes to `DELETING` and the connect harness becomes inaccessible for read or write operations.
         To verify that a connect harness has been deleted, make a :func:`get_connect_harness` request. If the call returns the connect harness's
@@ -712,7 +704,6 @@ class StreamAdminClient(object):
 
     def delete_stream(self, stream_id, **kwargs):
         """
-        Deletes a stream.
         Deletes a stream and its content. Stream contents are deleted immediately. The service retains records of the stream itself for 90 days after deletion.
         The `lifecycleState` parameter of the `Stream` object changes to `DELETING` and the stream becomes inaccessible for read or write operations.
         To verify that a stream has been deleted, make a :func:`get_stream` request. If the call returns the stream's
@@ -793,7 +784,6 @@ class StreamAdminClient(object):
 
     def delete_stream_pool(self, stream_pool_id, **kwargs):
         """
-        Deletes a stream pool.
         Deletes a stream pool. All containing streams will also be deleted.
         The default stream pool of a compartment cannot be deleted.
 
@@ -872,7 +862,6 @@ class StreamAdminClient(object):
     def get_archiver(self, stream_id, **kwargs):
         """
         Returns the current state of the stream archiver.
-        Returns the current state of the stream archiver.
 
 
         :param str stream_id: (required)
@@ -945,7 +934,6 @@ class StreamAdminClient(object):
 
     def get_connect_harness(self, connect_harness_id, **kwargs):
         """
-        Gets a connectharness
         Gets detailed information about a connect harness.
 
 
@@ -1019,7 +1007,6 @@ class StreamAdminClient(object):
 
     def get_stream(self, stream_id, **kwargs):
         """
-        Gets a stream
         Gets detailed information about a stream, including the number of partitions.
 
 
@@ -1093,7 +1080,6 @@ class StreamAdminClient(object):
 
     def get_stream_pool(self, stream_pool_id, **kwargs):
         """
-        Gets the stream pool
         Gets detailed information about the stream pool, such as Kafka settings.
 
 
@@ -1167,7 +1153,6 @@ class StreamAdminClient(object):
 
     def list_connect_harnesses(self, compartment_id, **kwargs):
         """
-        Lists the connectharnesses.
         Lists the connectharness.
 
 
@@ -1299,7 +1284,6 @@ class StreamAdminClient(object):
     def list_stream_pools(self, compartment_id, **kwargs):
         """
         List the stream pools for a given compartment ID.
-        List the stream pools for a given compartment ID.
 
 
         :param str compartment_id: (required)
@@ -1429,7 +1413,6 @@ class StreamAdminClient(object):
 
     def list_streams(self, **kwargs):
         """
-        Lists the streams in the given compartment id.
         Lists the streams in the given compartment id.
         If the compartment id is specified, it will list streams in the compartment, regardless of their stream pool.
         If the stream pool id is specified, the action will be scoped to that stream pool.
@@ -1570,7 +1553,6 @@ class StreamAdminClient(object):
     def start_archiver(self, stream_id, **kwargs):
         """
         Start the archiver for the specified stream.
-        Start the archiver for the specified stream.
 
 
         :param str stream_id: (required)
@@ -1648,7 +1630,6 @@ class StreamAdminClient(object):
 
     def stop_archiver(self, stream_id, **kwargs):
         """
-        Stop the archiver for the specified stream.
         Stop the archiver for the specified stream.
 
 
@@ -1810,7 +1791,6 @@ class StreamAdminClient(object):
 
     def update_connect_harness(self, connect_harness_id, update_connect_harness_details, **kwargs):
         """
-        Updates a connect harness.
         Updates the tags applied to the connect harness.
 
 
@@ -1894,7 +1874,6 @@ class StreamAdminClient(object):
 
     def update_stream(self, stream_id, update_stream_details, **kwargs):
         """
-        Updates a stream.
         Updates the stream. Only specified values will be updated.
 
 
@@ -1978,7 +1957,6 @@ class StreamAdminClient(object):
 
     def update_stream_pool(self, stream_pool_id, update_stream_pool_details, **kwargs):
         """
-        Updates the stream pool.
         Updates the specified stream pool.
 
 
@@ -2059,3 +2037,4 @@ class StreamAdminClient(object):
                 header_params=header_params,
                 body=update_stream_pool_details,
                 response_type="StreamPool")
+
