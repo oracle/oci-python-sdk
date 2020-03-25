@@ -57,11 +57,11 @@
 # - oci.data_science.DataScienceClient
 # - oci.data_flow.DataFlowClient
 # - oci.nosql.NosqlClient
+# - oci.dns.DnsClient
+# - oci.events.EventsClient
 #
 # Modules Not Yet Covered:
 # - oci.waas.WaasClient
-# - oci.dns.DnsClient
-# - oci.events.EventsClient
 #
 ##########################################################################
 from __future__ import print_function
@@ -73,7 +73,7 @@ import sys
 import argparse
 import datetime
 
-version = "20.3.11"
+version = "20.3.31"
 
 ##########################################################################
 # execute_extract
@@ -236,14 +236,14 @@ def set_parser_arguments():
     parser.add_argument('-cn', action='store_true', default=False, dest='container', help='Print Containers')
     parser.add_argument('-d', action='store_true', default=False, dest='database', help='Print Database')
     parser.add_argument('-e', action='store_true', default=False, dest='email', help='Print EMail')
-    parser.add_argument('-edge', action='store_true', default=False, dest='edge', help='Print Edge Services (Healthcheck)')
+    parser.add_argument('-edge', action='store_true', default=False, dest='edge', help='Print Edge and DNS Services')
     parser.add_argument('-f', action='store_true', default=False, dest='file', help='Print File Storage')
     parser.add_argument('-fun', action='store_true', default=False, dest='function', help='Print Functions')
     parser.add_argument('-i', action='store_true', default=False, dest='identity', help='Print Identity')
     parser.add_argument('-ic', action='store_true', default=False, dest='identity_compartments', help='Print Identity Compartments only')
     parser.add_argument('-l', action='store_true', default=False, dest='load', help='Print Load Balancer')
     parser.add_argument('-lq', action='store_true', default=False, dest='limits', help='Print Limits and Quotas')
-    parser.add_argument('-m', action='store_true', default=False, dest='monitoring', help='Print Monitoring and Notifications')
+    parser.add_argument('-m', action='store_true', default=False, dest='monitoring', help='Print Monitoring, Notifications and Events')
     parser.add_argument('-n', action='store_true', default=False, dest='network', help='Print Network')
     parser.add_argument('-o', action='store_true', default=False, dest='object', help='Print Object Storage')
     parser.add_argument('-paas', action='store_true', default=False, dest='paas_native', help='Print PaaS Platform Services - OIC OAC OCE')
