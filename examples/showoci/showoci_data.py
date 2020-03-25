@@ -1454,9 +1454,16 @@ class ShowOCIData(object):
                 value = {'id': image['id'],
                          'desc': image['display_name'].ljust(24) + " - " + image['operating_system'] + " - " + image[
                              'size_in_gbs'].rjust(3) + "GB - Base:  " + image['base_image_name'],
-                         'sum_info': 'Object Storage - Images (GB)', 'sum_size_gb': image['size_in_gbs'],
+                         'sum_info': 'Object Storage - Images (GB)',
+                         'sum_size_gb': image['size_in_gbs'],
+                         'sum_count_info': "Compute - Images (Count)",
+                         'sum_count_size': "1",
                          'time_created': image['time_created'],
-                         'defined_tags': image['defined_tags'], 'freeform_tags': image['freeform_tags']}
+                         'defined_tags': image['defined_tags'],
+                         'freeform_tags': image['freeform_tags'],
+                         'compartment_name': image['compartment_name'],
+                         'compartment_id': image['compartment_id']
+                         }
                 data.append(value)
             return data
 

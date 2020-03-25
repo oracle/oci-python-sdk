@@ -1970,18 +1970,18 @@ class ShowOCISummary(object):
             self.__print_error("__summary_core_compute_instances", e)
 
     ##########################################################################
-    # print compute images
+    # sum core sizes
     ##########################################################################
 
-    def __summary_core_size(self, objects):
+    def __summary_core_size(self, objects, sum_info="sum_info", sum_size="sum_size_gb"):
         try:
             if len(objects) == 0:
                 return
 
             for obj in objects:
-                if 'sum_info' in obj and 'sum_size_gb' in obj:
-                    if obj['sum_size_gb'] != '':
-                        self.summary_global_list.append({'type': obj['sum_info'], 'size': float(obj['sum_size_gb'])})
+                if sum_info in obj and sum_size in obj:
+                    if obj[sum_size] != '':
+                        self.summary_global_list.append({'type': obj[sum_info], 'size': float(obj[sum_size])})
 
         except Exception as e:
             self.__print_error("__summary_core_size", e)
@@ -2000,6 +2000,7 @@ class ShowOCISummary(object):
 
             if 'images' in data:
                 self.__summary_core_size(data['images'])
+                self.__summary_core_size(data['images'], "sum_count_info", "sum_count_size")
 
             if 'boot_volume_backup' in data:
                 self.__summary_core_size(data['boot_volume_backup'])
@@ -2018,7 +2019,7 @@ class ShowOCISummary(object):
 
     ##########################################################################
     # Summary Group By
-    # took the function frmo stackoverflow
+    # took the function from stackoverflow
     ##########################################################################
 
     def __summary_group_by(self, key, list_of_dicts):

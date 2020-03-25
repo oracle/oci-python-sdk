@@ -3213,8 +3213,8 @@ class ShowOCIService(object):
                         continue
                     raise
 
-                # filter the array to only cutomer images
-                arrs = [i for i in images if i.base_image_id is not None]
+                # filter the array to only customer images
+                arrs = [i for i in images if i.compartment_id is not None]
                 print(".", end="")
 
                 # loop on array
@@ -3229,7 +3229,8 @@ class ShowOCIService(object):
                            'region_name': str(self.config['region']),
                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
                            'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
-                           'base_image_name': str(compute.get_image(arr.base_image_id).data.display_name)}
+                           'base_image_name': (str(compute.get_image(arr.base_image_id).data.display_name) if arr.base_image_id else "")
+                           }
                     data.append(val)
                     cnt += 1
 

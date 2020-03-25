@@ -11,6 +11,7 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 * Added DNS Steering Policies to the -edge flag
 * Added Events to -m flag
 * Added Retry Strategy to all network and load balancers requests
+* Added Image count to the summary
 
 =====================
 20.03.24 - 2020-03-24
