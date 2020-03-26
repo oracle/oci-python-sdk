@@ -81,7 +81,6 @@ class AnnouncementClient(object):
 
     def get_announcement(self, announcement_id, **kwargs):
         """
-        Gets information about an announcement.
         Gets the details of a specific announcement.
 
 
@@ -155,7 +154,6 @@ class AnnouncementClient(object):
 
     def get_announcement_user_status(self, announcement_id, **kwargs):
         """
-        Gets the read status of an announcement.
         Gets information about whether a specific announcement was acknowledged by a user.
 
 
@@ -229,7 +227,6 @@ class AnnouncementClient(object):
 
     def list_announcements(self, compartment_id, **kwargs):
         """
-        Lists announcements for the tenancy.
         Gets a list of announcements for the current tenancy.
 
 
@@ -371,7 +368,6 @@ class AnnouncementClient(object):
 
     def update_announcement_user_status(self, announcement_id, status_details, **kwargs):
         """
-        Updates the read status of an announcement.
         Updates the status of the specified announcement with regard to whether it has been marked as read.
 
 

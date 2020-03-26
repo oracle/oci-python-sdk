@@ -80,7 +80,6 @@ class KmsCryptoClient(object):
 
     def decrypt(self, decrypt_data_details, **kwargs):
         """
-        Decrypt
         Decrypts data using the given `DecryptDataDetails`__ resource.
 
         __ https://docs.cloud.oracle.com/api/#/en/key/release/datatypes/DecryptDataDetails
@@ -147,7 +146,6 @@ class KmsCryptoClient(object):
 
     def encrypt(self, encrypt_data_details, **kwargs):
         """
-        Encrypt
         Encrypts data using the given `EncryptDataDetails`__ resource.
         Plaintext included in the example request is a base64-encoded value of a UTF-8 string.
 
@@ -215,7 +213,6 @@ class KmsCryptoClient(object):
 
     def generate_data_encryption_key(self, generate_key_details, **kwargs):
         """
-        GenerateDataEncryptionKey
         Generates a key that you can use to encrypt or decrypt data.
 
 

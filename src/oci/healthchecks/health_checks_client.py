@@ -84,7 +84,6 @@ class HealthChecksClient(object):
 
     def change_http_monitor_compartment(self, monitor_id, change_http_monitor_compartment_details, **kwargs):
         """
-        Moves a monitor into a different compartment.
         Moves a monitor into a different compartment. When provided, `If-Match` is checked
         against ETag values of the resource.
 
@@ -182,7 +181,6 @@ class HealthChecksClient(object):
 
     def change_ping_monitor_compartment(self, monitor_id, change_ping_monitor_compartment_details, **kwargs):
         """
-        Moves a monitor into a different compartment.
         Moves a monitor into a different compartment. When provided, `If-Match` is checked
         against ETag values of the resource.
 
@@ -280,7 +278,6 @@ class HealthChecksClient(object):
 
     def create_http_monitor(self, create_http_monitor_details, **kwargs):
         """
-        Creates an HTTP monitor.
         Creates an HTTP monitor. Vantage points will be automatically selected if not specified,
         and probes will be initiated from each vantage point to each of the targets at the frequency
         specified by `intervalInSeconds`.
@@ -358,7 +355,6 @@ class HealthChecksClient(object):
 
     def create_on_demand_http_probe(self, create_on_demand_http_probe_details, **kwargs):
         """
-        Creates an on-demand HTTP probe.
         Creates an on-demand HTTP probe. The location response header contains the URL for
         fetching the probe results.
 
@@ -425,7 +421,6 @@ class HealthChecksClient(object):
 
     def create_on_demand_ping_probe(self, create_on_demand_ping_probe_details, **kwargs):
         """
-        Creates an on-demand Ping probe.
         Creates an on-demand ping probe. The location response header contains the URL for
         fetching probe results.
 
@@ -492,7 +487,6 @@ class HealthChecksClient(object):
 
     def create_ping_monitor(self, create_ping_monitor_details, **kwargs):
         """
-        Creates a Ping monitor.
         Creates a ping monitor. Vantage points will be automatically selected if not specified,
         and probes will be initiated from each vantage point to each of the targets at the frequency
         specified by `intervalInSeconds`.
@@ -570,7 +564,6 @@ class HealthChecksClient(object):
 
     def delete_http_monitor(self, monitor_id, **kwargs):
         """
-        Deletes the HTTP monitor.
         Deletes the HTTP monitor and its configuration. All future probes of this
         monitor are stopped. Results associated with the monitor are not deleted.
 
@@ -651,7 +644,6 @@ class HealthChecksClient(object):
 
     def delete_ping_monitor(self, monitor_id, **kwargs):
         """
-        Deletes the Ping monitor configuration.
         Deletes the ping monitor and its configuration. All future probes of this
         monitor are stopped. Results associated with the monitor are not deleted.
 
@@ -732,7 +724,6 @@ class HealthChecksClient(object):
 
     def get_http_monitor(self, monitor_id, **kwargs):
         """
-        Gets the HTTP monitor configuration.
         Gets the configuration for the specified monitor.
 
 
@@ -814,7 +805,6 @@ class HealthChecksClient(object):
 
     def get_ping_monitor(self, monitor_id, **kwargs):
         """
-        Returns the Ping monitor configuration.
         Gets the configuration for the specified ping monitor.
 
 
@@ -896,7 +886,6 @@ class HealthChecksClient(object):
 
     def list_health_checks_vantage_points(self, **kwargs):
         """
-        Returns information about available vantage points.\n
         Gets information about all vantage points available to the user.
 
 
@@ -1010,7 +999,6 @@ class HealthChecksClient(object):
 
     def list_http_monitors(self, compartment_id, **kwargs):
         """
-        Gets HTTP monitors.
         Gets a list of HTTP monitors.
 
 
@@ -1128,7 +1116,6 @@ class HealthChecksClient(object):
 
     def list_http_probe_results(self, probe_configuration_id, **kwargs):
         """
-        Gets the HTTP probe results for the specified monitor or on-demand probe.
         Gets the HTTP probe results for the specified probe or monitor, where
         the `probeConfigurationId` is the OCID of either a monitor or an
         on-demand probe.
@@ -1250,7 +1237,6 @@ class HealthChecksClient(object):
 
     def list_ping_monitors(self, compartment_id, **kwargs):
         """
-        Returns Ping monitors.
         Gets a list of configured ping monitors.
 
         Results are paginated based on `page` and `limit`.  The `opc-next-page` header provides
@@ -1371,7 +1357,6 @@ class HealthChecksClient(object):
 
     def list_ping_probe_results(self, probe_configuration_id, **kwargs):
         """
-        Returns the Ping probe results for the specified monitor or on-demand probe.
         Returns the results for the specified probe, where the `probeConfigurationId`
         is the OCID of either a monitor or an on-demand probe.
 
@@ -1497,7 +1482,6 @@ class HealthChecksClient(object):
 
     def update_http_monitor(self, monitor_id, update_http_monitor_details, **kwargs):
         """
-        Updates the HTTP monitor configuration.
         Updates the configuration of the specified HTTP monitor. Only the fields
         specified in the request body will be updated; all other configuration
         properties will remain unchanged.
@@ -1586,7 +1570,6 @@ class HealthChecksClient(object):
 
     def update_ping_monitor(self, monitor_id, update_ping_monitor_details, **kwargs):
         """
-        Updates the Ping monitor configuration.
         Updates the configuration of the specified ping monitor. Only the fields
         specified in the request body will be updated; all other configuration properties
         will remain unchanged.

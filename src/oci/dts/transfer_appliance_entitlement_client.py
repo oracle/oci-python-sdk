@@ -82,7 +82,6 @@ class TransferApplianceEntitlementClient(object):
 
     def create_transfer_appliance_entitlement(self, create_transfer_appliance_entitlement_details, **kwargs):
         """
-        Create the Transfer Appliance Entitlement
         Create the Entitlement to use a Transfer Appliance. It requires some offline process of review and signatures before request is granted.
 
 
@@ -157,7 +156,6 @@ class TransferApplianceEntitlementClient(object):
 
     def get_transfer_appliance_entitlement(self, id, **kwargs):
         """
-        Describes the Transfer Appliance Entitlement in detail
         Describes the Transfer Appliance Entitlement in detail
 
 
@@ -242,7 +240,6 @@ class TransferApplianceEntitlementClient(object):
 
     def list_transfer_appliance_entitlement(self, compartment_id, **kwargs):
         """
-        Lists Transfer Transfer Appliance Entitlement
         Lists Transfer Transfer Appliance Entitlement
 
 

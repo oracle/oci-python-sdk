@@ -86,7 +86,6 @@ class EmailClient(object):
 
     def change_sender_compartment(self, sender_id, change_sender_compartment_details, **kwargs):
         """
-        Moves a sender into a different compartment.
         Moves a sender into a different compartment. When provided, If-Match is checked against ETag values of the resource.
 
 
@@ -170,7 +169,6 @@ class EmailClient(object):
     def create_sender(self, create_sender_details, **kwargs):
         """
         Creates a sender for a tenancy in a given compartment.
-        Creates a sender for a tenancy in a given compartment.
 
 
         :param CreateSenderDetails create_sender_details: (required)
@@ -232,7 +230,6 @@ class EmailClient(object):
 
     def create_suppression(self, create_suppression_details, **kwargs):
         """
-        Creates an email suppression for a tenancy.
         Adds recipient email addresses to the suppression list for a tenancy.
         Addresses added to the suppression list via the API are denoted as
         \"MANUAL\" in the `reason` field. *Note:* All email addresses added to the
@@ -298,7 +295,6 @@ class EmailClient(object):
 
     def delete_sender(self, sender_id, **kwargs):
         """
-        Deletes a sender for a tenancy in a given compartment.
         Deletes an approved sender for a tenancy in a given compartment for a
         provided `senderId`.
 
@@ -377,7 +373,6 @@ class EmailClient(object):
 
     def delete_suppression(self, suppression_id, **kwargs):
         """
-        Deletes a suppressed email address.
         Removes a suppressed recipient email address from the suppression list
         for a tenancy in a given compartment for a provided `suppressionId`.
 
@@ -449,7 +444,6 @@ class EmailClient(object):
 
     def get_sender(self, sender_id, **kwargs):
         """
-        Gets an approved sender.
         Gets an approved sender for a given `senderId`.
 
 
@@ -522,7 +516,6 @@ class EmailClient(object):
 
     def get_suppression(self, suppression_id, **kwargs):
         """
-        Get a suppressed email address.
         Gets the details of a suppressed recipient email address for a given
         `suppressionId`. Each suppression is given a unique OCID.
 
@@ -596,7 +589,6 @@ class EmailClient(object):
 
     def list_senders(self, compartment_id, **kwargs):
         """
-        Get a list of approved sender summaries.
         Gets a collection of approved sender email addresses and sender IDs.
 
 
@@ -732,7 +724,6 @@ class EmailClient(object):
 
     def list_suppressions(self, compartment_id, **kwargs):
         """
-        Get a summary of suppressed email addresses.
         Gets a list of suppressed recipient email addresses for a user. The
         `compartmentId` for suppressions must be a tenancy OCID. The returned list
         is sorted by creation time in descending order.
@@ -880,7 +871,6 @@ class EmailClient(object):
 
     def update_sender(self, sender_id, update_sender_details, **kwargs):
         """
-        Updates the tags for a given sender.
         Replaces the set of tags for a sender with the tags provided. If either freeform
         or defined tags are omitted, the tags for that set remain the same. Each set must
         include the full set of tags for the sender, partial updates are not permitted.

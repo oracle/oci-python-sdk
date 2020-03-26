@@ -88,7 +88,6 @@ class ComputeManagementClient(object):
 
     def attach_load_balancer(self, instance_pool_id, attach_load_balancer_details, **kwargs):
         """
-        AttachLoadBalancer
         Attach a load balancer to the instance pool.
 
 
@@ -181,7 +180,6 @@ class ComputeManagementClient(object):
 
     def change_cluster_network_compartment(self, cluster_network_id, change_cluster_network_compartment_details, **kwargs):
         """
-        ChangeClusterNetworkCompartment
         Moves a cluster network into a different compartment within the same tenancy. For
         information about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
@@ -285,7 +283,6 @@ class ComputeManagementClient(object):
 
     def change_instance_configuration_compartment(self, instance_configuration_id, change_instance_configuration_compartment_details, **kwargs):
         """
-        ChangeInstanceConfigurationCompartment
         Moves an instance configuration into a different compartment within the same tenancy.
         For information about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
@@ -395,7 +392,6 @@ class ComputeManagementClient(object):
 
     def change_instance_pool_compartment(self, instance_pool_id, change_instance_pool_compartment_details, **kwargs):
         """
-        ChangeInstancePoolCompartment
         Moves an instance pool into a different compartment within the same tenancy. For
         information about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
@@ -499,7 +495,6 @@ class ComputeManagementClient(object):
 
     def create_cluster_network(self, create_cluster_network_details, **kwargs):
         """
-        CreateClusterNetwork
         Creates a cluster network. For more information about cluster networks, see
         `Managing Cluster Networks`__.
 
@@ -571,7 +566,6 @@ class ComputeManagementClient(object):
 
     def create_instance_configuration(self, create_instance_configuration, **kwargs):
         """
-        CreateInstanceConfiguration
         Creates an instance configuration. An instance configuration is a template that defines the
         settings to use when creating Compute instances.
 
@@ -641,7 +635,6 @@ class ComputeManagementClient(object):
 
     def create_instance_pool(self, create_instance_pool_details, **kwargs):
         """
-        CreateInstancePool
         Create an instance pool.
 
 
@@ -710,7 +703,6 @@ class ComputeManagementClient(object):
 
     def delete_instance_configuration(self, instance_configuration_id, **kwargs):
         """
-        DeleteInstanceConfiguration
         Deletes an instance configuration.
 
 
@@ -783,7 +775,6 @@ class ComputeManagementClient(object):
 
     def detach_load_balancer(self, instance_pool_id, detach_load_balancer_details, **kwargs):
         """
-        DetachLoadBalancer
         Detach a load balancer from the instance pool.
 
 
@@ -876,7 +867,6 @@ class ComputeManagementClient(object):
 
     def get_cluster_network(self, cluster_network_id, **kwargs):
         """
-        GetClusterNetwork
         Gets information about the specified cluster network.
 
 
@@ -942,7 +932,6 @@ class ComputeManagementClient(object):
 
     def get_instance_configuration(self, instance_configuration_id, **kwargs):
         """
-        GetInstanceConfiguration
         Gets the specified instance configuration
 
 
@@ -1006,7 +995,6 @@ class ComputeManagementClient(object):
 
     def get_instance_pool(self, instance_pool_id, **kwargs):
         """
-        GetInstancePool
         Gets the specified instance pool
 
 
@@ -1072,7 +1060,6 @@ class ComputeManagementClient(object):
 
     def get_instance_pool_load_balancer_attachment(self, instance_pool_id, instance_pool_load_balancer_attachment_id, **kwargs):
         """
-        GetLoadBalancerAttachment
         Gets information about a load balancer that is attached to the specified instance pool.
 
 
@@ -1142,7 +1129,6 @@ class ComputeManagementClient(object):
 
     def launch_instance_configuration(self, instance_configuration_id, instance_configuration, **kwargs):
         """
-        LaunchInstanceConfiguration
         Launches an instance from an instance configuration.
 
         If the instance configuration does not include all of the parameters that are
@@ -1232,7 +1218,6 @@ class ComputeManagementClient(object):
 
     def list_cluster_network_instances(self, compartment_id, cluster_network_id, **kwargs):
         """
-        ListClusterNetworkInstances
         Lists the instances in the specified cluster network.
 
 
@@ -1374,7 +1359,6 @@ class ComputeManagementClient(object):
 
     def list_cluster_networks(self, compartment_id, **kwargs):
         """
-        ListClusterNetworks
         Lists the cluster networks in the specified compartment.
 
 
@@ -1514,7 +1498,6 @@ class ComputeManagementClient(object):
 
     def list_instance_configurations(self, compartment_id, **kwargs):
         """
-        ListInstanceConfigurations
         Lists the instance configurations in the specified compartment.
 
 
@@ -1634,7 +1617,6 @@ class ComputeManagementClient(object):
 
     def list_instance_pool_instances(self, compartment_id, instance_pool_id, **kwargs):
         """
-        ListInstancePoolInstances
         List the instances in the specified instance pool.
 
 
@@ -1776,7 +1758,6 @@ class ComputeManagementClient(object):
 
     def list_instance_pools(self, compartment_id, **kwargs):
         """
-        ListInstancePools
         Lists the instance pools in the specified compartment.
 
 
@@ -1915,7 +1896,6 @@ class ComputeManagementClient(object):
 
     def reset_instance_pool(self, instance_pool_id, **kwargs):
         """
-        ResetInstancePool
         Performs the reset (power off and power on) action on the specified instance pool,
         which performs the action on all the instances in the pool.
 
@@ -2004,7 +1984,6 @@ class ComputeManagementClient(object):
 
     def softreset_instance_pool(self, instance_pool_id, **kwargs):
         """
-        SoftresetInstancePool
         Performs the softreset (ACPI shutdown and power on) action on the specified instance pool,
         which performs the action on all the instances in the pool.
 
@@ -2093,7 +2072,6 @@ class ComputeManagementClient(object):
 
     def start_instance_pool(self, instance_pool_id, **kwargs):
         """
-        StartInstancePool
         Performs the start (power on) action on the specified instance pool,
         which performs the action on all the instances in the pool.
 
@@ -2182,7 +2160,6 @@ class ComputeManagementClient(object):
 
     def stop_instance_pool(self, instance_pool_id, **kwargs):
         """
-        StopInstancePool
         Performs the stop (power off) action on the specified instance pool,
         which performs the action on all the instances in the pool.
 
@@ -2271,7 +2248,6 @@ class ComputeManagementClient(object):
 
     def terminate_cluster_network(self, cluster_network_id, **kwargs):
         """
-        TerminateClusterNetwork
         Terminates the specified cluster network.
 
         When you delete a cluster network, all of its resources are permanently deleted,
@@ -2349,7 +2325,6 @@ class ComputeManagementClient(object):
 
     def terminate_instance_pool(self, instance_pool_id, **kwargs):
         """
-        TerminateInstancePool
         Terminate the specified instance pool.
 
 
@@ -2424,7 +2399,6 @@ class ComputeManagementClient(object):
 
     def update_cluster_network(self, cluster_network_id, update_cluster_network_details, **kwargs):
         """
-        UpdateClusterNetwork
         Updates the specified cluster network. The OCID of the cluster network remains the same.
 
 
@@ -2517,7 +2491,6 @@ class ComputeManagementClient(object):
 
     def update_instance_configuration(self, instance_configuration_id, update_instance_configuration_details, **kwargs):
         """
-        UpdateInstanceConfiguration
         Updates the free-form tags, defined tags, and display name of an instance configuration.
 
 
@@ -2608,7 +2581,6 @@ class ComputeManagementClient(object):
 
     def update_instance_pool(self, instance_pool_id, update_instance_pool_details, **kwargs):
         """
-        UpdateInstancePool
         Update the specified instance pool.
 
         The OCID of the instance pool remains the same.

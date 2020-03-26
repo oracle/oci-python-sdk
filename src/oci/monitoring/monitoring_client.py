@@ -184,7 +184,6 @@ class MonitoringClient(object):
 
     def create_alarm(self, create_alarm_details, **kwargs):
         """
-        Creates a new alarm in the specified compartment.\n
         Creates a new alarm in the specified compartment.
         For important limits information, see `Limits on Monitoring`__.
 
@@ -266,7 +265,6 @@ class MonitoringClient(object):
 
     def delete_alarm(self, alarm_id, **kwargs):
         """
-        Deletes an alarm.\n
         Deletes the specified alarm.
         For important limits information, see `Limits on Monitoring`__.
 
@@ -885,7 +883,6 @@ class MonitoringClient(object):
 
     def list_metrics(self, compartment_id, list_metrics_details, **kwargs):
         """
-        List metrics based on matching criteria.
         Returns metric definitions that match the criteria specified in the request. Compartment OCID required.
         For information about metrics, see `Metrics Overview`__.
         For important limits information, see `Limits on Monitoring`__.
@@ -1001,7 +998,6 @@ class MonitoringClient(object):
 
     def post_metric_data(self, post_metric_data_details, **kwargs):
         """
-        Publishes raw metric data points to the Monitoring service. \n
         Publishes raw metric data points to the Monitoring service.
         For more information about publishing metrics, see `Publishing Custom Metrics`__.
         For important limits information, see `Limits on Monitoring`__.
@@ -1086,7 +1082,6 @@ class MonitoringClient(object):
 
     def remove_alarm_suppression(self, alarm_id, **kwargs):
         """
-        Removes any existing suppression for the specified alarm.\n
         Removes any existing suppression for the specified alarm.
         For important limits information, see `Limits on Monitoring`__.
 
@@ -1174,7 +1169,6 @@ class MonitoringClient(object):
 
     def summarize_metrics_data(self, compartment_id, summarize_metrics_data_details, **kwargs):
         """
-        Summarizes and returns metrics data filtered using the provided query expression and compartmentId.
         Returns aggregated data that match the criteria specified in the request. Compartment OCID required.
         For information on metric queries, see `Building Metric Queries`__.
         For important limits information, see `Limits on Monitoring`__.
@@ -1270,7 +1264,6 @@ class MonitoringClient(object):
 
     def update_alarm(self, alarm_id, update_alarm_details, **kwargs):
         """
-        Updates an alarm.\n
         Updates the specified alarm.
         For important limits information, see `Limits on Monitoring`__.
 

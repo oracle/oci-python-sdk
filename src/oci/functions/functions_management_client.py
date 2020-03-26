@@ -82,7 +82,6 @@ class FunctionsManagementClient(object):
 
     def change_application_compartment(self, application_id, change_application_compartment_details, **kwargs):
         """
-        Moves an application into a different compartment. When provided, If-Match is checked against ETag values of the resource.
         Moves an application into a different compartment within the same tenancy.
         For information about moving resources between compartments, see `Moving Resources Between Compartments`__.
 
@@ -171,7 +170,6 @@ class FunctionsManagementClient(object):
 
     def create_application(self, create_application_details, **kwargs):
         """
-        Creates a new application
         Creates a new application.
 
 
@@ -235,7 +233,6 @@ class FunctionsManagementClient(object):
 
     def create_function(self, create_function_details, **kwargs):
         """
-        Creates a new function
         Creates a new function.
 
 
@@ -299,7 +296,6 @@ class FunctionsManagementClient(object):
 
     def delete_application(self, application_id, **kwargs):
         """
-        Deletes an application
         Deletes an application.
 
 
@@ -380,7 +376,6 @@ class FunctionsManagementClient(object):
 
     def delete_function(self, function_id, **kwargs):
         """
-        Deletes a function
         Deletes a function.
 
 
@@ -461,7 +456,6 @@ class FunctionsManagementClient(object):
 
     def get_application(self, application_id, **kwargs):
         """
-        Retrieves an application
         Retrieves an application.
 
 
@@ -537,7 +531,6 @@ class FunctionsManagementClient(object):
 
     def get_function(self, function_id, **kwargs):
         """
-        Retrieves a function
         Retrieves a function.
 
 
@@ -613,7 +606,6 @@ class FunctionsManagementClient(object):
 
     def list_applications(self, compartment_id, **kwargs):
         """
-        Lists applications for a compartment
         Lists applications for a compartment.
 
 
@@ -758,7 +750,6 @@ class FunctionsManagementClient(object):
 
     def list_functions(self, application_id, **kwargs):
         """
-        Lists functions for an application
         Lists functions for an application.
 
 
@@ -904,7 +895,6 @@ class FunctionsManagementClient(object):
     def update_application(self, application_id, update_application_details, **kwargs):
         """
         Modifies an application
-        Modifies an application
 
 
         :param str application_id: (required)
@@ -991,7 +981,6 @@ class FunctionsManagementClient(object):
 
     def update_function(self, function_id, update_function_details, **kwargs):
         """
-        Modifies a function
         Modifies a function
 
 
