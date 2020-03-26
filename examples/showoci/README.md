@@ -124,8 +124,8 @@ Download the showoci*.py from this project
 ## Executing using Cloud Shell:
 ```
 1. Create virtual env of python
-   python -m venv python_showoci
-   source python_showoci/bin/activate
+   python -m venv python_venv
+   source python_venv/bin/activate
 
 2. install oci sdk package
    pip install oci
