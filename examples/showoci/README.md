@@ -44,6 +44,8 @@ Output can be printer friendly, CSV files or JSON file.
 - oci.data_science.DataScienceClient
 - oci.data_flow.DataFlowClient
 - oci.nosql.NosqlClient
+- oci.dns.DnsClient
+- oci.events.EventsClient
 
 ** DISCLAIMER – This is not an official Oracle application
 
@@ -119,6 +121,27 @@ Please follow Oracle Python SDK Documentation - https://github.com/oracle/oci-py
 ## Copy the Software
 Download the showoci*.py from this project  
 
+## Executing using Cloud Shell:
+```
+1. Create virtual env of python
+   python -m venv python_showoci
+   source python_showoci/bin/activate
+
+2. install oci sdk package
+   pip install oci
+
+3. clone the oci sdk repo
+   cd $HOME
+   git init
+   git clone https://github.com/oracle/oci-python-sdk
+
+4. Config OCI config file - ~/.oci/config
+   Please follow SDK config documentation - https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm 
+
+5. run showoci
+   cd $HOME/oci-python-sdk/examples/showoci
+   python showoci.py ...
+```
 Execute  
 
 ```
@@ -144,14 +167,14 @@ optional arguments:
   -cn                  Print Containers
   -d                   Print Database
   -e                   Print EMail
-  -edge                Print Edge Services (Healthcheck)
+  -edge                Print Edge and DNS Services
   -f                   Print File Storage
   -fun                 Print Functions
   -i                   Print Identity
   -ic                  Print Identity Compartments only
   -l                   Print Load Balancer
   -lq                  Print Limits and Quotas
-  -m                   Print Monitoring and Notifications
+  -m                   Print Monitoring, Notifications and Events
   -n                   Print Network
   -o                   Print Object Storage
   -paas                Print PaaS Platform Services - OIC OAC OCE
