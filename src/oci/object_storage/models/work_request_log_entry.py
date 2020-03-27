@@ -68,9 +68,9 @@ class WorkRequestLogEntry(object):
         """
         Gets the timestamp of this WorkRequestLogEntry.
         The date and time the log message was written, as described in
-        `RFC 3339`__, section 14.29.
+        `RFC 3339`__.
 
-        __ https://tools.ietf.org/rfc/rfc3339
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The timestamp of this WorkRequestLogEntry.
@@ -83,9 +83,9 @@ class WorkRequestLogEntry(object):
         """
         Sets the timestamp of this WorkRequestLogEntry.
         The date and time the log message was written, as described in
-        `RFC 3339`__, section 14.29.
+        `RFC 3339`__.
 
-        __ https://tools.ietf.org/rfc/rfc3339
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param timestamp: The timestamp of this WorkRequestLogEntry.

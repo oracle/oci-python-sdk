@@ -159,7 +159,7 @@ class CreatePreauthenticatedRequestDetails(object):
         The expiration date for the pre-authenticated request as per `RFC 3339`__.
         After this date the pre-authenticated request will no longer be valid.
 
-        __ https://tools.ietf.org/rfc/rfc3339
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_expires of this CreatePreauthenticatedRequestDetails.
@@ -174,7 +174,7 @@ class CreatePreauthenticatedRequestDetails(object):
         The expiration date for the pre-authenticated request as per `RFC 3339`__.
         After this date the pre-authenticated request will no longer be valid.
 
-        __ https://tools.ietf.org/rfc/rfc3339
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_expires: The time_expires of this CreatePreauthenticatedRequestDetails.

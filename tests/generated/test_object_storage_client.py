@@ -327,6 +327,90 @@ def test_create_preauthenticated_request(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_create_replication_policy(testing_service_client):
+    if not testing_service_client.is_api_enabled('object_storage', 'CreateReplicationPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'CreateReplicationPolicy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='CreateReplicationPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
+            response = client.create_replication_policy(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                create_replication_policy_details=request.pop(util.camelize('CreateReplicationPolicyDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'object_storage',
+            'CreateReplicationPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'replicationPolicy',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_create_retention_rule(testing_service_client):
+    if not testing_service_client.is_api_enabled('object_storage', 'CreateRetentionRule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'CreateRetentionRule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='CreateRetentionRule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
+            response = client.create_retention_rule(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                create_retention_rule_details=request.pop(util.camelize('CreateRetentionRuleDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'object_storage',
+            'CreateRetentionRule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'retentionRule',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
 def test_delete_bucket(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'DeleteBucket'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -487,6 +571,90 @@ def test_delete_preauthenticated_request(testing_service_client):
             result,
             service_error,
             'delete_preauthenticated_request',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_delete_replication_policy(testing_service_client):
+    if not testing_service_client.is_api_enabled('object_storage', 'DeleteReplicationPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'DeleteReplicationPolicy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='DeleteReplicationPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
+            response = client.delete_replication_policy(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                replication_id=request.pop(util.camelize('replicationId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'object_storage',
+            'DeleteReplicationPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_replication_policy',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_delete_retention_rule(testing_service_client):
+    if not testing_service_client.is_api_enabled('object_storage', 'DeleteRetentionRule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'DeleteRetentionRule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='DeleteRetentionRule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
+            response = client.delete_retention_rule(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                retention_rule_id=request.pop(util.camelize('retentionRuleId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'object_storage',
+            'DeleteRetentionRule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_retention_rule',
             True,
             False
         )
@@ -732,6 +900,90 @@ def test_get_preauthenticated_request(testing_service_client):
             result,
             service_error,
             'preauthenticatedRequestSummary',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_get_replication_policy(testing_service_client):
+    if not testing_service_client.is_api_enabled('object_storage', 'GetReplicationPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'GetReplicationPolicy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='GetReplicationPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
+            response = client.get_replication_policy(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                replication_id=request.pop(util.camelize('replicationId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'object_storage',
+            'GetReplicationPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'replicationPolicy',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_get_retention_rule(testing_service_client):
+    if not testing_service_client.is_api_enabled('object_storage', 'GetRetentionRule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'GetRetentionRule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='GetRetentionRule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
+            response = client.get_retention_rule(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                retention_rule_id=request.pop(util.camelize('retentionRuleId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'object_storage',
+            'GetRetentionRule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'retentionRule',
             False,
             False
         )
@@ -1160,6 +1412,195 @@ def test_list_preauthenticated_requests(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_list_replication_policies(testing_service_client):
+    if not testing_service_client.is_api_enabled('object_storage', 'ListReplicationPolicies'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'ListReplicationPolicies')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='ListReplicationPolicies')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
+            response = client.list_replication_policies(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_replication_policies(
+                    namespace_name=request.pop(util.camelize('namespaceName')),
+                    bucket_name=request.pop(util.camelize('bucketName')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_replication_policies(
+                        namespace_name=request.pop(util.camelize('namespaceName')),
+                        bucket_name=request.pop(util.camelize('bucketName')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'object_storage',
+            'ListReplicationPolicies',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'replicationPolicySummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_list_replication_sources(testing_service_client):
+    if not testing_service_client.is_api_enabled('object_storage', 'ListReplicationSources'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'ListReplicationSources')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='ListReplicationSources')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
+            response = client.list_replication_sources(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_replication_sources(
+                    namespace_name=request.pop(util.camelize('namespaceName')),
+                    bucket_name=request.pop(util.camelize('bucketName')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_replication_sources(
+                        namespace_name=request.pop(util.camelize('namespaceName')),
+                        bucket_name=request.pop(util.camelize('bucketName')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'object_storage',
+            'ListReplicationSources',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'replicationSource',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_list_retention_rules(testing_service_client):
+    if not testing_service_client.is_api_enabled('object_storage', 'ListRetentionRules'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'ListRetentionRules')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='ListRetentionRules')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
+            response = client.list_retention_rules(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_retention_rules(
+                    namespace_name=request.pop(util.camelize('namespaceName')),
+                    bucket_name=request.pop(util.camelize('bucketName')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_retention_rules(
+                        namespace_name=request.pop(util.camelize('namespaceName')),
+                        bucket_name=request.pop(util.camelize('bucketName')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'object_storage',
+            'ListRetentionRules',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'retentionRuleCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
 def test_list_work_request_errors(testing_service_client):
     if not testing_service_client.is_api_enabled('object_storage', 'ListWorkRequestErrors'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1336,6 +1777,47 @@ def test_list_work_requests(testing_service_client):
             'workRequestSummary',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_make_bucket_writable(testing_service_client):
+    if not testing_service_client.is_api_enabled('object_storage', 'MakeBucketWritable'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'MakeBucketWritable')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='MakeBucketWritable')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
+            response = client.make_bucket_writable(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'object_storage',
+            'MakeBucketWritable',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'make_bucket_writable',
+            False,
+            False
         )
 
 
@@ -1627,6 +2109,49 @@ def test_update_namespace_metadata(testing_service_client):
             result,
             service_error,
             'namespaceMetadata',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="opc_casper_us_grp@oracle.com" jiraProject="CASPER" opsJiraProject="IOS"
+def test_update_retention_rule(testing_service_client):
+    if not testing_service_client.is_api_enabled('object_storage', 'UpdateRetentionRule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('object_storage', util.camelize('object_storage'), 'UpdateRetentionRule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='object_storage', api_name='UpdateRetentionRule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.object_storage.ObjectStorageClient(config, service_endpoint=service_endpoint)
+            response = client.update_retention_rule(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                bucket_name=request.pop(util.camelize('bucketName')),
+                retention_rule_id=request.pop(util.camelize('retentionRuleId')),
+                update_retention_rule_details=request.pop(util.camelize('UpdateRetentionRuleDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'object_storage',
+            'UpdateRetentionRule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'retentionRule',
             False,
             False
         )

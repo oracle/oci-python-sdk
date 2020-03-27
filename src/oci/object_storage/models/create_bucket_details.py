@@ -118,7 +118,7 @@ class CreateBucketDetails(object):
     def name(self):
         """
         **[Required]** Gets the name of this CreateBucketDetails.
-        The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, and dashes.
+        The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
         Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information.
         example: Example: my-new-bucket1
 
@@ -132,7 +132,7 @@ class CreateBucketDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateBucketDetails.
-        The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, and dashes.
+        The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
         Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information.
         example: Example: my-new-bucket1
 
@@ -368,8 +368,10 @@ class CreateBucketDetails(object):
     def kms_key_id(self):
         """
         Gets the kms_key_id of this CreateBucketDetails.
-        The OCID of a master encryption key used to call the Key Management service to generate a data
-        encryption key or to encrypt or decrypt a data encryption key.
+        The `OCID`__ of a master encryption key used to call the Key
+        Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The kms_key_id of this CreateBucketDetails.
@@ -381,8 +383,10 @@ class CreateBucketDetails(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this CreateBucketDetails.
-        The OCID of a master encryption key used to call the Key Management service to generate a data
-        encryption key or to encrypt or decrypt a data encryption key.
+        The `OCID`__ of a master encryption key used to call the Key
+        Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param kms_key_id: The kms_key_id of this CreateBucketDetails.

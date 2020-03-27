@@ -18,6 +18,8 @@ missing = Sentinel("Missing")
 class ObjectStorageClient(object):
     """
     Common set of Object Storage and Archive Storage APIs for managing buckets, objects, and related resources.
+    For more information, see [Overview of Object Storage](/Content/Object/Concepts/objectstorageoverview.htm) and
+    [Overview of Archive Storage](/Content/Archive/Concepts/archivestorageoverview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -519,7 +521,7 @@ class ObjectStorageClient(object):
             Example: `my-new-bucket1`
 
         :param CreateMultipartUploadDetails create_multipart_upload_details: (required)
-            Request object for creating a multi-part upload.
+            Request object for creating a multipart upload.
 
         :param str if_match: (optional)
             The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
@@ -682,6 +684,171 @@ class ObjectStorageClient(object):
                 header_params=header_params,
                 body=create_preauthenticated_request_details,
                 response_type="PreauthenticatedRequest")
+
+    def create_replication_policy(self, namespace_name, bucket_name, create_replication_policy_details, **kwargs):
+        """
+        Creates a replication policy for the specified bucket.
+
+
+        :param str namespace_name: (required)
+            The Object Storage namespace used for the request.
+
+        :param str bucket_name: (required)
+            The name of the bucket. Avoid entering confidential information.
+            Example: `my-new-bucket1`
+
+        :param CreateReplicationPolicyDetails create_replication_policy_details: (required)
+            The replication policy.
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.object_storage.models.ReplicationPolicy`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/replicationPolicies"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_replication_policy got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_replication_policy_details,
+                response_type="ReplicationPolicy")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_replication_policy_details,
+                response_type="ReplicationPolicy")
+
+    def create_retention_rule(self, namespace_name, bucket_name, create_retention_rule_details, **kwargs):
+        """
+        Creates a new retention rule in the specified bucket. The new rule will take effect typically within 30 seconds.
+        Note that a maximum of 100 rules are supported on a bucket.
+
+
+        :param str namespace_name: (required)
+            The Object Storage namespace used for the request.
+
+        :param str bucket_name: (required)
+            The name of the bucket. Avoid entering confidential information.
+            Example: `my-new-bucket1`
+
+        :param CreateRetentionRuleDetails create_retention_rule_details: (required)
+            The retention rule to create for the bucket.
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.object_storage.models.RetentionRule`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/retentionRules"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_retention_rule got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_retention_rule_details,
+                response_type="RetentionRule")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_retention_rule_details,
+                response_type="RetentionRule")
 
     def delete_bucket(self, namespace_name, bucket_name, **kwargs):
         """
@@ -1014,6 +1181,170 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 header_params=header_params)
 
+    def delete_replication_policy(self, namespace_name, bucket_name, replication_id, **kwargs):
+        """
+        Deletes the replication policy associated with the source bucket.
+
+
+        :param str namespace_name: (required)
+            The Object Storage namespace used for the request.
+
+        :param str bucket_name: (required)
+            The name of the bucket. Avoid entering confidential information.
+            Example: `my-new-bucket1`
+
+        :param str replication_id: (required)
+            The ID of the replication policy.
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/replicationPolicies/{replicationId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_replication_policy got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name,
+            "replicationId": replication_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
+    def delete_retention_rule(self, namespace_name, bucket_name, retention_rule_id, **kwargs):
+        """
+        Deletes the specified rule. The deletion takes effect typically within 30 seconds.
+
+
+        :param str namespace_name: (required)
+            The Object Storage namespace used for the request.
+
+        :param str bucket_name: (required)
+            The name of the bucket. Avoid entering confidential information.
+            Example: `my-new-bucket1`
+
+        :param str retention_rule_id: (required)
+            The ID of the retention rule.
+
+        :param str if_match: (optional)
+            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            For uploading a part, this is the entity tag of the target part.
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/retentionRules/{retentionRuleId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_retention_rule got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name,
+            "retentionRuleId": retention_rule_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
     def get_bucket(self, namespace_name, bucket_name, **kwargs):
         """
         Gets the current representation of the given bucket in the given Object Storage namespace.
@@ -1142,8 +1473,11 @@ class ObjectStorageClient(object):
             The client request ID for tracing.
 
         :param str compartment_id: (optional)
-            This is an optional field representing the tenancy OCID or the compartment OCID within the tenancy whose Object Storage namespace
-            name has to be retrieved.
+            This is an optional field representing either the tenancy `OCID`__ or the compartment
+            `OCID`__ within the tenancy whose Object Storage namespace is to be retrieved.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1311,10 +1645,10 @@ class ObjectStorageClient(object):
             The client request ID for tracing.
 
         :param str range: (optional)
-            Optional byte range to fetch, as described in `RFC 7233`__, section 2.1.
+            Optional byte range to fetch, as described in `RFC 7233`__.
             Note that only a single range of bytes is supported.
 
-            __ https://tools.ietf.org/rfc/rfc7233
+            __ https://tools.ietf.org/html/rfc7233#section-2.1
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1543,6 +1877,168 @@ class ObjectStorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="PreauthenticatedRequestSummary")
+
+    def get_replication_policy(self, namespace_name, bucket_name, replication_id, **kwargs):
+        """
+        Get the replication policy.
+
+
+        :param str namespace_name: (required)
+            The Object Storage namespace used for the request.
+
+        :param str bucket_name: (required)
+            The name of the bucket. Avoid entering confidential information.
+            Example: `my-new-bucket1`
+
+        :param str replication_id: (required)
+            The ID of the replication policy.
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.object_storage.models.ReplicationPolicy`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/replicationPolicies/{replicationId}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_replication_policy got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name,
+            "replicationId": replication_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ReplicationPolicy")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ReplicationPolicy")
+
+    def get_retention_rule(self, namespace_name, bucket_name, retention_rule_id, **kwargs):
+        """
+        Get the specified retention rule.
+
+
+        :param str namespace_name: (required)
+            The Object Storage namespace used for the request.
+
+        :param str bucket_name: (required)
+            The name of the bucket. Avoid entering confidential information.
+            Example: `my-new-bucket1`
+
+        :param str retention_rule_id: (required)
+            The ID of the retention rule.
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.object_storage.models.RetentionRule`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/retentionRules/{retentionRuleId}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_retention_rule got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name,
+            "retentionRuleId": retention_rule_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="RetentionRule")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="RetentionRule")
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -2334,6 +2830,275 @@ class ObjectStorageClient(object):
                 header_params=header_params,
                 response_type="list[PreauthenticatedRequestSummary]")
 
+    def list_replication_policies(self, namespace_name, bucket_name, **kwargs):
+        """
+        List the replication policies associated with a bucket.
+
+
+        :param str namespace_name: (required)
+            The Object Storage namespace used for the request.
+
+        :param str bucket_name: (required)
+            The name of the bucket. Avoid entering confidential information.
+            Example: `my-new-bucket1`
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str page: (optional)
+            The page at which to start retrieving results.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.object_storage.models.ReplicationPolicySummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/replicationPolicies"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_client_request_id",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_replication_policies got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ReplicationPolicySummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ReplicationPolicySummary]")
+
+    def list_replication_sources(self, namespace_name, bucket_name, **kwargs):
+        """
+        List the replication sources of a destination bucket.
+
+
+        :param str namespace_name: (required)
+            The Object Storage namespace used for the request.
+
+        :param str bucket_name: (required)
+            The name of the bucket. Avoid entering confidential information.
+            Example: `my-new-bucket1`
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str page: (optional)
+            The page at which to start retrieving results.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.object_storage.models.ReplicationSource`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/replicationSources"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_client_request_id",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_replication_sources got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ReplicationSource]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[ReplicationSource]")
+
+    def list_retention_rules(self, namespace_name, bucket_name, **kwargs):
+        """
+        List the retention rules for a bucket. The retention rules are sorted based on creation time,
+        with the most recently created retention rule returned first.
+
+
+        :param str namespace_name: (required)
+            The Object Storage namespace used for the request.
+
+        :param str bucket_name: (required)
+            The name of the bucket. Avoid entering confidential information.
+            Example: `my-new-bucket1`
+
+        :param str page: (optional)
+            The page at which to start retrieving results.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.object_storage.models.RetentionRuleCollection`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/retentionRules"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "page"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_retention_rules got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="RetentionRuleCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="RetentionRuleCollection")
+
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
         Lists the errors of the work request with the given ID.
@@ -2587,10 +3352,91 @@ class ObjectStorageClient(object):
                 header_params=header_params,
                 response_type="list[WorkRequestSummary]")
 
+    def make_bucket_writable(self, namespace_name, bucket_name, **kwargs):
+        """
+        Stops replication to the destination bucket and removes the replication policy. When the replication
+        policy was created, this destination bucket became read-only except for new and changed objects replicated
+        automatically from the source bucket. MakeBucketWritable removes the replication policy. This bucket is no
+        longer the target for replication and is now writable, allowing users to make changes to bucket contents.
+
+
+        :param str namespace_name: (required)
+            The Object Storage namespace used for the request.
+
+        :param str bucket_name: (required)
+            The name of the bucket. Avoid entering confidential information.
+            Example: `my-new-bucket1`
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/actions/makeBucketWritable"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "make_bucket_writable got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
     def put_object(self, namespace_name, bucket_name, object_name, put_object_body, **kwargs):
         """
-        Creates a new object or overwrites an existing one. See `Special Instructions for Object Storage
-        PUT`__ for request signature requirements.
+        Creates a new object or overwrites an existing object with the same name. The maximum object size allowed by
+        PutObject is 50 GiB.
+
+        See `Special Instructions for Object Storage PUT`__
+        for request signature requirements.
 
         __ https://docs.cloud.oracle.com/Content/API/Concepts/signingrequests.htm#ObjectStoragePut
 
@@ -2628,26 +3474,43 @@ class ObjectStorageClient(object):
             100-continue
 
         :param str content_md5: (optional)
-            The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Object Storage performs an integrity check
-            on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
-            If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
+            The optional base-64 header that defines the encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object
+            Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the
+            MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error
+            is returned with the message:
 
             \"The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)\"
 
         :param str content_type: (optional)
-            The content type of the object.  Defaults to 'application/octet-stream' if not overridden during the PutObject call.
+            The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to
+            'application/octet-stream' if not specified in the PutObject call. Specifying values for this header has no effect
+            on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example,
+            you could use this header to identify and perform special operations on text only objects.
 
         :param str content_language: (optional)
-            The content language of the object.
+            The optional Content-Language header that defines the content language of the object to upload. Specifying
+            values for this header has no effect on Object Storage behavior. Programs that read the object determine what
+            to do based on the value provided. For example, you could use this header to identify and differentiate objects
+            based on a particular language.
 
         :param str content_encoding: (optional)
-            The content encoding of the object.
+            The optional Content-Encoding header that defines the content encodings that were applied to the object to
+            upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the
+            object determine what to do based on the value provided. For example, you could use this header to determine
+            what decoding mechanisms need to be applied to obtain the media-type specified by the Content-Type header of
+            the object.
 
         :param str content_disposition: (optional)
-            The Content-Disposition header value to be returned in GetObjectReponse.
+            The optional Content-Disposition header that defines presentational information for the object to be
+            returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object
+            Storage behavior. Programs that read the object determine what to do based on the value provided.
+            For example, you could use this header to let users download objects with custom filenames in a browser.
 
         :param str cache_control: (optional)
-            The cache-control header value to be returned in GetObjectReponse.
+            The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and
+            HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs
+            that read the object determine what to do based on the value provided.
+            For example, you could use this header to identify objects that require caching restrictions.
 
         :param dict(str, str) opc_meta: (optional)
             Optional user-defined metadata key and value.
@@ -3281,6 +4144,98 @@ class ObjectStorageClient(object):
                 body=update_namespace_metadata_details,
                 response_type="NamespaceMetadata")
 
+    def update_retention_rule(self, namespace_name, bucket_name, retention_rule_id, update_retention_rule_details, **kwargs):
+        """
+        Updates the specified retention rule. Rule changes take effect typically within 30 seconds.
+
+
+        :param str namespace_name: (required)
+            The Object Storage namespace used for the request.
+
+        :param str bucket_name: (required)
+            The name of the bucket. Avoid entering confidential information.
+            Example: `my-new-bucket1`
+
+        :param str retention_rule_id: (required)
+            The ID of the retention rule.
+
+        :param UpdateRetentionRuleDetails update_retention_rule_details: (required)
+            Request object for updating the retention rule.
+
+        :param str if_match: (optional)
+            The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
+            For uploading a part, this is the entity tag of the target part.
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.object_storage.models.RetentionRule`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/retentionRules/{retentionRuleId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_retention_rule got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name,
+            "retentionRuleId": retention_rule_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_retention_rule_details,
+                response_type="RetentionRule")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_retention_rule_details,
+                response_type="RetentionRule")
+
     def upload_part(self, namespace_name, bucket_name, object_name, upload_id, upload_part_num, upload_part_body, **kwargs):
         """
         Uploads a single part of a multipart upload.
@@ -3325,9 +4280,10 @@ class ObjectStorageClient(object):
             100-continue
 
         :param str content_md5: (optional)
-            The base-64 encoded MD5 hash of the body. If the Content-MD5 header is present, Object Storage performs an integrity check
-            on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
-            If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
+            The optional base-64 header that defines the encoded MD5 hash of the body. If the optional Content-MD5 header is present, Object
+            Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the
+            MD5 hash supplied in the header. If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error
+            is returned with the message:
 
             \"The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)\"
 

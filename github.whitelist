@@ -78,3 +78,6 @@
 ^src/oci/data_flow/.*\.py$
 ^src/oci/data_science/.*\.py$
 ^src/oci/nosql/.*\.py$
+^src/oci/secrets/.*\.py$
+^src/oci/vault/.*\.py$
+^src/oci/bds/.*\.py$

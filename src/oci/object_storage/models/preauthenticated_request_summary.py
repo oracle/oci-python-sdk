@@ -195,7 +195,7 @@ class PreauthenticatedRequestSummary(object):
         **[Required]** Gets the time_expires of this PreauthenticatedRequestSummary.
         The expiration date for the pre-authenticated request as per `RFC 3339`__. After this date the pre-authenticated request will no longer be valid.
 
-        __ https://tools.ietf.org/rfc/rfc3339
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_expires of this PreauthenticatedRequestSummary.
@@ -209,7 +209,7 @@ class PreauthenticatedRequestSummary(object):
         Sets the time_expires of this PreauthenticatedRequestSummary.
         The expiration date for the pre-authenticated request as per `RFC 3339`__. After this date the pre-authenticated request will no longer be valid.
 
-        __ https://tools.ietf.org/rfc/rfc3339
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_expires: The time_expires of this PreauthenticatedRequestSummary.
@@ -223,7 +223,7 @@ class PreauthenticatedRequestSummary(object):
         **[Required]** Gets the time_created of this PreauthenticatedRequestSummary.
         The date when the pre-authenticated request was created as per `RFC 3339`__.
 
-        __ https://tools.ietf.org/rfc/rfc3339
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_created of this PreauthenticatedRequestSummary.
@@ -237,7 +237,7 @@ class PreauthenticatedRequestSummary(object):
         Sets the time_created of this PreauthenticatedRequestSummary.
         The date when the pre-authenticated request was created as per `RFC 3339`__.
 
-        __ https://tools.ietf.org/rfc/rfc3339
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_created: The time_created of this PreauthenticatedRequestSummary.

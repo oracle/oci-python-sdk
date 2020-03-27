@@ -225,8 +225,6 @@ class ObjectLifecycleRule(object):
     def object_name_filter(self):
         """
         Gets the object_name_filter of this ObjectLifecycleRule.
-        A filter limiting object names that the rule will apply to.
-
 
         :return: The object_name_filter of this ObjectLifecycleRule.
         :rtype: ObjectNameFilter
@@ -237,8 +235,6 @@ class ObjectLifecycleRule(object):
     def object_name_filter(self, object_name_filter):
         """
         Sets the object_name_filter of this ObjectLifecycleRule.
-        A filter limiting object names that the rule will apply to.
-
 
         :param object_name_filter: The object_name_filter of this ObjectLifecycleRule.
         :type: ObjectNameFilter

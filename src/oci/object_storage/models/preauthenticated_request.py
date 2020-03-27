@@ -180,6 +180,7 @@ class PreauthenticatedRequest(object):
         Gets the object_name of this PreauthenticatedRequest.
         The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential
         information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket.
+        Example: test/object1.log
 
 
         :return: The object_name of this PreauthenticatedRequest.
@@ -193,6 +194,7 @@ class PreauthenticatedRequest(object):
         Sets the object_name of this PreauthenticatedRequest.
         The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential
         information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket.
+        Example: test/object1.log
 
 
         :param object_name: The object_name of this PreauthenticatedRequest.
@@ -237,7 +239,7 @@ class PreauthenticatedRequest(object):
         The expiration date for the pre-authenticated request as per `RFC 3339`__. After
         this date the pre-authenticated request will no longer be valid.
 
-        __ https://tools.ietf.org/rfc/rfc3339
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_expires of this PreauthenticatedRequest.
@@ -252,7 +254,7 @@ class PreauthenticatedRequest(object):
         The expiration date for the pre-authenticated request as per `RFC 3339`__. After
         this date the pre-authenticated request will no longer be valid.
 
-        __ https://tools.ietf.org/rfc/rfc3339
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_expires: The time_expires of this PreauthenticatedRequest.
@@ -267,7 +269,7 @@ class PreauthenticatedRequest(object):
         The date when the pre-authenticated request was created as per specification
         `RFC 3339`__.
 
-        __ https://tools.ietf.org/rfc/rfc3339
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_created of this PreauthenticatedRequest.
@@ -282,7 +284,7 @@ class PreauthenticatedRequest(object):
         The date when the pre-authenticated request was created as per specification
         `RFC 3339`__.
 
-        __ https://tools.ietf.org/rfc/rfc3339
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_created: The time_created of this PreauthenticatedRequest.

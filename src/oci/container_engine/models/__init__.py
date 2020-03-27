@@ -4,6 +4,7 @@
 from __future__ import absolute_import
 
 from .add_on_options import AddOnOptions
+from .admission_controller_options import AdmissionControllerOptions
 from .cluster import Cluster
 from .cluster_create_options import ClusterCreateOptions
 from .cluster_endpoints import ClusterEndpoints
@@ -28,6 +29,7 @@ from .node_source_option import NodeSourceOption
 from .node_source_via_image_details import NodeSourceViaImageDetails
 from .node_source_via_image_option import NodeSourceViaImageOption
 from .update_cluster_details import UpdateClusterDetails
+from .update_cluster_options_details import UpdateClusterOptionsDetails
 from .update_node_pool_details import UpdateNodePoolDetails
 from .update_node_pool_node_config_details import UpdateNodePoolNodeConfigDetails
 from .work_request import WorkRequest
@@ -39,6 +41,7 @@ from .work_request_summary import WorkRequestSummary
 # Maps type names to classes for container_engine services.
 container_engine_type_mapping = {
     "AddOnOptions": AddOnOptions,
+    "AdmissionControllerOptions": AdmissionControllerOptions,
     "Cluster": Cluster,
     "ClusterCreateOptions": ClusterCreateOptions,
     "ClusterEndpoints": ClusterEndpoints,
@@ -63,6 +66,7 @@ container_engine_type_mapping = {
     "NodeSourceViaImageDetails": NodeSourceViaImageDetails,
     "NodeSourceViaImageOption": NodeSourceViaImageOption,
     "UpdateClusterDetails": UpdateClusterDetails,
+    "UpdateClusterOptionsDetails": UpdateClusterOptionsDetails,
     "UpdateNodePoolDetails": UpdateNodePoolDetails,
     "UpdateNodePoolNodeConfigDetails": UpdateNodePoolNodeConfigDetails,
     "WorkRequest": WorkRequest,

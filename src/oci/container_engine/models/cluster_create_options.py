@@ -29,22 +29,29 @@ class ClusterCreateOptions(object):
             The value to assign to the add_ons property of this ClusterCreateOptions.
         :type add_ons: AddOnOptions
 
+        :param admission_controller_options:
+            The value to assign to the admission_controller_options property of this ClusterCreateOptions.
+        :type admission_controller_options: AdmissionControllerOptions
+
         """
         self.swagger_types = {
             'service_lb_subnet_ids': 'list[str]',
             'kubernetes_network_config': 'KubernetesNetworkConfig',
-            'add_ons': 'AddOnOptions'
+            'add_ons': 'AddOnOptions',
+            'admission_controller_options': 'AdmissionControllerOptions'
         }
 
         self.attribute_map = {
             'service_lb_subnet_ids': 'serviceLbSubnetIds',
             'kubernetes_network_config': 'kubernetesNetworkConfig',
-            'add_ons': 'addOns'
+            'add_ons': 'addOns',
+            'admission_controller_options': 'admissionControllerOptions'
         }
 
         self._service_lb_subnet_ids = None
         self._kubernetes_network_config = None
         self._add_ons = None
+        self._admission_controller_options = None
 
     @property
     def service_lb_subnet_ids(self):
@@ -117,6 +124,30 @@ class ClusterCreateOptions(object):
         :type: AddOnOptions
         """
         self._add_ons = add_ons
+
+    @property
+    def admission_controller_options(self):
+        """
+        Gets the admission_controller_options of this ClusterCreateOptions.
+        Configurable cluster admission controllers
+
+
+        :return: The admission_controller_options of this ClusterCreateOptions.
+        :rtype: AdmissionControllerOptions
+        """
+        return self._admission_controller_options
+
+    @admission_controller_options.setter
+    def admission_controller_options(self, admission_controller_options):
+        """
+        Sets the admission_controller_options of this ClusterCreateOptions.
+        Configurable cluster admission controllers
+
+
+        :param admission_controller_options: The admission_controller_options of this ClusterCreateOptions.
+        :type: AdmissionControllerOptions
+        """
+        self._admission_controller_options = admission_controller_options
 
     def __repr__(self):
         return formatted_flat_dict(self)
