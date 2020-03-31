@@ -82,7 +82,6 @@ class OsManagementClient(object):
 
     def add_packages_to_software_source(self, software_source_id, add_packages_to_software_source_details, **kwargs):
         """
-        Adds packages to a Software Source
         Adds a given list of Software Packages to a specific Software Source.
 
 
@@ -158,7 +157,6 @@ class OsManagementClient(object):
 
     def attach_child_software_source_to_managed_instance(self, managed_instance_id, attach_child_software_source_to_managed_instance_details, **kwargs):
         """
-        Add a software source to a managed instance
         Adds a child software source to a managed instance. After the software
         source has been added, then packages from that software source can be
         installed on the managed instance.
@@ -247,7 +245,6 @@ class OsManagementClient(object):
 
     def attach_managed_instance_to_managed_instance_group(self, managed_instance_group_id, managed_instance_id, **kwargs):
         """
-        Add a Managed Instance to a Managed Instance Group
         Adds a Managed Instance to a Managed Instance Group. After the Managed
         Instance has been added, then operations can be performed on the Managed
         Instance Group which will then apply to all Managed Instances in the
@@ -342,7 +339,6 @@ class OsManagementClient(object):
 
     def attach_parent_software_source_to_managed_instance(self, managed_instance_id, attach_parent_software_source_to_managed_instance_details, **kwargs):
         """
-        Add a software source to a managed instance
         Adds a parent software source to a managed instance. After the software
         source has been added, then packages from that software source can be
         installed on the managed instance. Software sources that have this
@@ -432,7 +428,6 @@ class OsManagementClient(object):
 
     def change_managed_instance_group_compartment(self, managed_instance_group_id, change_managed_instance_group_compartment_details, **kwargs):
         """
-        Moves a resource into a different compartment
         Moves a resource into a different compartment. When provided, If-Match
         is checked against ETag values of the resource.
 
@@ -529,7 +524,6 @@ class OsManagementClient(object):
 
     def change_scheduled_job_compartment(self, scheduled_job_id, change_scheduled_job_compartment_details, **kwargs):
         """
-        Moves a resource into a different compartment
         Moves a resource into a different compartment. When provided, If-Match
         is checked against ETag values of the resource.
 
@@ -626,7 +620,6 @@ class OsManagementClient(object):
 
     def change_software_source_compartment(self, software_source_id, change_software_source_compartment_details, **kwargs):
         """
-        Moves a resource into a different compartment
         Moves a resource into a different compartment. When provided, If-Match
         is checked against ETag values of the resource.
 
@@ -723,7 +716,6 @@ class OsManagementClient(object):
 
     def create_managed_instance_group(self, create_managed_instance_group_details, **kwargs):
         """
-        Create a Managed Instance Group
         Creates a new Managed Instance Group on the management system.
         This will not contain any managed instances after it is first created,
         and they must be added later.
@@ -799,7 +791,6 @@ class OsManagementClient(object):
 
     def create_scheduled_job(self, create_scheduled_job_details, **kwargs):
         """
-        Create a Scheduled Job
         Creates a new Scheduled Job to perform a specific package operation on
         a set of managed instances or managed instance groups.  Can be created
         as a one-time execution in the future, or as a recurring execution
@@ -876,7 +867,6 @@ class OsManagementClient(object):
 
     def create_software_source(self, create_software_source_details, **kwargs):
         """
-        Create a custom Software Source
         Creates a new custom Software Source on the management system.
         This will not contain any packages after it is first created,
         and they must be added later.
@@ -952,7 +942,6 @@ class OsManagementClient(object):
 
     def delete_managed_instance_group(self, managed_instance_group_id, **kwargs):
         """
-        Delete a Managed Instance Group
         Deletes a Managed Instance Group from the management system
 
 
@@ -1032,7 +1021,6 @@ class OsManagementClient(object):
 
     def delete_scheduled_job(self, scheduled_job_id, **kwargs):
         """
-        Cancel (delete) a Scheduled Job
         Cancels an existing Scheduled Job on the management system
 
 
@@ -1112,7 +1100,6 @@ class OsManagementClient(object):
 
     def delete_software_source(self, software_source_id, **kwargs):
         """
-        Delete a custom Software Source
         Deletes a custom Software Source on the management system
 
 
@@ -1192,7 +1179,6 @@ class OsManagementClient(object):
 
     def detach_child_software_source_from_managed_instance(self, managed_instance_id, detach_child_software_source_from_managed_instance_details, **kwargs):
         """
-        Removes a child software source from a managed instance
         Removes a child software source from a managed instance. Packages will no longer be able to be
         installed from these software sources.
 
@@ -1280,7 +1266,6 @@ class OsManagementClient(object):
 
     def detach_managed_instance_from_managed_instance_group(self, managed_instance_group_id, managed_instance_id, **kwargs):
         """
-        Removes a Managed Instance from a Managed Instance Group
         Removes a Managed Instance from a Managed Instance Group.
 
 
@@ -1372,7 +1357,6 @@ class OsManagementClient(object):
 
     def detach_parent_software_source_from_managed_instance(self, managed_instance_id, detach_parent_software_source_from_managed_instance_details, **kwargs):
         """
-        Removes a parent software source from a managed instance
         Removes a software source from a managed instance. All child software sources will also be removed
         from the managed instance. Packages will no longer be able to be installed from these software sources.
 
@@ -1460,7 +1444,6 @@ class OsManagementClient(object):
 
     def get_erratum(self, erratum_id, **kwargs):
         """
-        Gets an erratum by identifier
         Returns a specific erratum.
 
 
@@ -1533,7 +1516,6 @@ class OsManagementClient(object):
 
     def get_managed_instance(self, managed_instance_id, **kwargs):
         """
-        Gets a Managed Instance by identifier
         Returns a specific Managed Instance.
 
 
@@ -1606,7 +1588,6 @@ class OsManagementClient(object):
 
     def get_managed_instance_group(self, managed_instance_group_id, **kwargs):
         """
-        Gets the details for a Managed Instance Group
         Returns a specific Managed Instance Group.
 
 
@@ -1679,7 +1660,6 @@ class OsManagementClient(object):
 
     def get_scheduled_job(self, scheduled_job_id, **kwargs):
         """
-        Gets a Scheduled Job
         Gets the detailed information for the Scheduled Job with the given ID.
 
 
@@ -1752,7 +1732,6 @@ class OsManagementClient(object):
 
     def get_software_package(self, software_source_id, software_package_name, **kwargs):
         """
-        Gets a Software Package by identifier
         Returns a specific Software Package.
 
 
@@ -1829,7 +1808,6 @@ class OsManagementClient(object):
 
     def get_software_source(self, software_source_id, **kwargs):
         """
-        Gets a Software Source by identifier
         Returns a specific Software Source.
 
 
@@ -1902,7 +1880,6 @@ class OsManagementClient(object):
 
     def get_work_request(self, work_request_id, **kwargs):
         """
-        Get Work Request
         Gets the detailed information for the work request with the given ID.
 
 
@@ -1975,7 +1952,6 @@ class OsManagementClient(object):
 
     def install_all_package_updates_on_managed_instance(self, managed_instance_id, **kwargs):
         """
-        Update all packages on a managed instance
         Install all of the available package updates for the managed instance.
 
 
@@ -2057,7 +2033,6 @@ class OsManagementClient(object):
 
     def install_package_on_managed_instance(self, managed_instance_id, software_package_name, **kwargs):
         """
-        Install a package on a managed instance
         Installs a package on a managed instance.
 
 
@@ -2149,7 +2124,6 @@ class OsManagementClient(object):
 
     def install_package_update_on_managed_instance(self, managed_instance_id, software_package_name, **kwargs):
         """
-        Update a package on a managed instance
         Updates a package on a managed instance.
 
 
@@ -2241,7 +2215,6 @@ class OsManagementClient(object):
 
     def list_available_packages_for_managed_instance(self, managed_instance_id, **kwargs):
         """
-        Gets a list of all packages available for install on the Managed Instance
         Returns a list of packages available for install on the Managed Instance.
 
 
@@ -2370,7 +2343,6 @@ class OsManagementClient(object):
 
     def list_available_software_sources_for_managed_instance(self, managed_instance_id, **kwargs):
         """
-        Gets a list of all software sources available for the Managed Instance. These only include software sources that are not already added to the managed instance, but can be added.
         Returns a list of available software sources for a Managed Instance.
 
 
@@ -2499,7 +2471,6 @@ class OsManagementClient(object):
 
     def list_available_updates_for_managed_instance(self, managed_instance_id, **kwargs):
         """
-        Gets a list of all updates available for the Managed Instance
         Returns a list of available updates for a Managed Instance.
 
 
@@ -2628,7 +2599,6 @@ class OsManagementClient(object):
 
     def list_managed_instance_groups(self, compartment_id, **kwargs):
         """
-        Gets a list of all Managed Instance Groups
         Returns a list of all Managed Instance Groups.
 
 
@@ -2755,7 +2725,6 @@ class OsManagementClient(object):
 
     def list_managed_instances(self, compartment_id, **kwargs):
         """
-        Gets a list of all Managed Instances
         Returns a list of all Managed Instances.
 
 
@@ -2868,7 +2837,6 @@ class OsManagementClient(object):
 
     def list_packages_installed_on_managed_instance(self, managed_instance_id, **kwargs):
         """
-        Gets a list of all packages installed on the Managed Instance
         Returns a list of installed packages on the Managed Instance.
 
 
@@ -2997,7 +2965,6 @@ class OsManagementClient(object):
 
     def list_scheduled_jobs(self, compartment_id, **kwargs):
         """
-        Gets a list of the current Scheduled Jobs
         Returns a list of all of the currently active Scheduled Jobs in the system
 
 
@@ -3148,7 +3115,6 @@ class OsManagementClient(object):
 
     def list_software_source_packages(self, software_source_id, **kwargs):
         """
-        Lists Software Packages
         Lists Software Packages in a Software Source
 
 
@@ -3277,7 +3243,6 @@ class OsManagementClient(object):
 
     def list_software_sources(self, compartment_id, **kwargs):
         """
-        Gets a list of all Software Sources
         Returns a list of all Software Sources.
 
 
@@ -3404,7 +3369,6 @@ class OsManagementClient(object):
 
     def list_upcoming_scheduled_jobs(self, compartment_id, time_end, **kwargs):
         """
-        Gets a list of the upcoming Scheduled Jobs
         Returns a list of all of the Scheduled Jobs whose next execution time is at or before the specified time.
 
 
@@ -3547,7 +3511,6 @@ class OsManagementClient(object):
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
-        List Work Request Errors
         Gets the errors for the work request with the given ID.
 
 
@@ -3664,7 +3627,6 @@ class OsManagementClient(object):
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
-        List Work Request Logs
         Lists the log entries for the work request with the given ID.
 
 
@@ -3781,7 +3743,6 @@ class OsManagementClient(object):
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
-        List Work Requests
         Lists the work requests in a compartment.
 
 
@@ -3899,7 +3860,6 @@ class OsManagementClient(object):
 
     def remove_package_from_managed_instance(self, managed_instance_id, software_package_name, **kwargs):
         """
-        Removes a package from a managed instance
         Removes an installed package from a managed instance.
 
 
@@ -3991,7 +3951,6 @@ class OsManagementClient(object):
 
     def remove_packages_from_software_source(self, software_source_id, remove_packages_from_software_source_details, **kwargs):
         """
-        Removes packages from a Software Source
         Removes a given list of Software Packages from a specific Software Source.
 
 
@@ -4067,7 +4026,6 @@ class OsManagementClient(object):
 
     def run_scheduled_job_now(self, scheduled_job_id, **kwargs):
         """
-        Triggers a Scheduled Job to execute immediately
         This will trigger an already created Scheduled Job to being executing
         immediately instead of waiting for its next regularly scheduled time.
 
@@ -4159,7 +4117,6 @@ class OsManagementClient(object):
 
     def search_software_packages(self, **kwargs):
         """
-        Search Software Packages
         Searches all of the available Software Sources and returns any/all Software Packages matching
         the search criteria.
 
@@ -4280,7 +4237,6 @@ class OsManagementClient(object):
 
     def skip_next_scheduled_job_execution(self, scheduled_job_id, **kwargs):
         """
-        Forces a Scheduled Job to skip its next execution
         This will force an already created Scheduled Job to skip its
         next regularly scheduled execution
 
@@ -4372,7 +4328,6 @@ class OsManagementClient(object):
 
     def update_managed_instance_group(self, managed_instance_group_id, update_managed_instance_group_details, **kwargs):
         """
-        Updates the Managed Instance Group identified by the id
         Updates a specific Managed Instance Group.
 
 
@@ -4459,7 +4414,6 @@ class OsManagementClient(object):
 
     def update_scheduled_job(self, scheduled_job_id, update_scheduled_job_details, **kwargs):
         """
-        Update the Scheduled Job identified by the id
         Updates an existing Scheduled Job on the management system.
 
 
@@ -4546,7 +4500,6 @@ class OsManagementClient(object):
 
     def update_software_source(self, software_source_id, update_software_source_details, **kwargs):
         """
-        Update the custom Software Source identified by the id
         Updates an existing custom Software Source on the management system.
 
 

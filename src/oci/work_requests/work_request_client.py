@@ -88,7 +88,6 @@ class WorkRequestClient(object):
     def get_work_request(self, work_request_id, **kwargs):
         """
         Gets the details of a work request.
-        Gets the details of a work request.
 
 
         :param str work_request_id: (required)
@@ -163,7 +162,6 @@ class WorkRequestClient(object):
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
-        Lists work request errors
         Gets the errors for a work request.
 
 
@@ -277,7 +275,6 @@ class WorkRequestClient(object):
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
-        Lists work request logs
         Gets the logs for a work request.
 
 
@@ -391,7 +388,6 @@ class WorkRequestClient(object):
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
-        Lists work requests in a compartment or for a resource.
         Lists the work requests in a compartment or for a specified resource.
 
 

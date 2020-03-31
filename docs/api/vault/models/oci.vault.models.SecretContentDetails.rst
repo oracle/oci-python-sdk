@@ -1,0 +1,11 @@
+SecretContentDetails
+====================
+
+.. currentmodule:: oci.vault.models
+
+.. autoclass:: SecretContentDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

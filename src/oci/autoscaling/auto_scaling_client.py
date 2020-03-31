@@ -83,7 +83,6 @@ class AutoScalingClient(object):
 
     def change_auto_scaling_configuration_compartment(self, auto_scaling_configuration_id, change_compartment_details, **kwargs):
         """
-        ChangeAutoScalingConfigurationCompartment
         Moves an autoscaling configuration into a different compartment within the same tenancy. For information
         about moving resources between compartments, see
         `Moving Resources to a Different Compartment`__.
@@ -185,7 +184,6 @@ class AutoScalingClient(object):
 
     def create_auto_scaling_configuration(self, create_auto_scaling_configuration_details, **kwargs):
         """
-        CreateAutoScalingConfiguration
         Creates an autoscaling configuration.
 
 
@@ -258,7 +256,6 @@ class AutoScalingClient(object):
 
     def create_auto_scaling_policy(self, auto_scaling_configuration_id, create_auto_scaling_policy_details, **kwargs):
         """
-        CreateAutoScalingPolicy
         Creates an autoscaling policy for the specified autoscaling configuration.
 
 
@@ -348,7 +345,6 @@ class AutoScalingClient(object):
 
     def delete_auto_scaling_configuration(self, auto_scaling_configuration_id, **kwargs):
         """
-        DeleteAutoScalingConfiguration
         Deletes an autoscaling configuration.
 
 
@@ -427,7 +423,6 @@ class AutoScalingClient(object):
 
     def delete_auto_scaling_policy(self, auto_scaling_configuration_id, auto_scaling_policy_id, **kwargs):
         """
-        DeleteAutoScalingPolicy
         Deletes an autoscaling policy for the specified autoscaling configuration.
 
 
@@ -510,7 +505,6 @@ class AutoScalingClient(object):
 
     def get_auto_scaling_configuration(self, auto_scaling_configuration_id, **kwargs):
         """
-        GetAutoScalingConfiguration
         Gets information about the specified autoscaling configuration.
 
 
@@ -584,7 +578,6 @@ class AutoScalingClient(object):
 
     def get_auto_scaling_policy(self, auto_scaling_configuration_id, auto_scaling_policy_id, **kwargs):
         """
-        GetAutoScalingPolicy
         Gets information about the specified autoscaling policy in the specified autoscaling configuration.
 
 
@@ -662,7 +655,6 @@ class AutoScalingClient(object):
 
     def list_auto_scaling_configurations(self, compartment_id, **kwargs):
         """
-        ListAutoScalingConfigurations
         Lists autoscaling configurations in the specifed compartment.
 
 
@@ -785,7 +777,6 @@ class AutoScalingClient(object):
 
     def list_auto_scaling_policies(self, auto_scaling_configuration_id, **kwargs):
         """
-        ListAutoScalingPolicies
         Lists the autoscaling policies in the specified autoscaling configuration.
 
 
@@ -917,7 +908,6 @@ class AutoScalingClient(object):
 
     def update_auto_scaling_configuration(self, auto_scaling_configuration_id, update_auto_scaling_configuration_details, **kwargs):
         """
-        UpdateAutoScalingConfiguration
         Updates certain fields on the specified autoscaling configuration, such as the name, the cooldown period,
         and whether the autoscaling configuration is enabled.
 
@@ -1015,7 +1005,6 @@ class AutoScalingClient(object):
 
     def update_auto_scaling_policy(self, auto_scaling_configuration_id, auto_scaling_policy_id, update_auto_scaling_policy_details, **kwargs):
         """
-        UpdateAutoScalingPolicy
         Updates an autoscaling policy in the specified autoscaling configuration.
 
 

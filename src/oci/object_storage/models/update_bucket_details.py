@@ -157,7 +157,8 @@ class UpdateBucketDetails(object):
     def name(self):
         """
         Gets the name of this UpdateBucketDetails.
-        The name of the bucket. Avoid entering confidential information.
+        The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+        Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information.
         Example: my-new-bucket1
 
 
@@ -170,7 +171,8 @@ class UpdateBucketDetails(object):
     def name(self, name):
         """
         Sets the name of this UpdateBucketDetails.
-        The name of the bucket. Avoid entering confidential information.
+        The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
+        Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information.
         Example: my-new-bucket1
 
 
@@ -341,9 +343,12 @@ class UpdateBucketDetails(object):
     def kms_key_id(self):
         """
         Gets the kms_key_id of this UpdateBucketDetails.
-        The OCID of the Key Management master encryption key to associate with the specified bucket. If this value
-        is empty, the Update operation will remove the associated key, if there is one, from the bucket. (The bucket
-        will continue to be encrypted, but with an encryption key managed by Oracle.)
+        The `OCID`__ of the Key Management master encryption key to associate
+        with the specified bucket. If this value is empty, the Update operation will remove the associated key, if
+        there is one, from the bucket. (The bucket will continue to be encrypted, but with an encryption key managed
+        by Oracle.)
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The kms_key_id of this UpdateBucketDetails.
@@ -355,9 +360,12 @@ class UpdateBucketDetails(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this UpdateBucketDetails.
-        The OCID of the Key Management master encryption key to associate with the specified bucket. If this value
-        is empty, the Update operation will remove the associated key, if there is one, from the bucket. (The bucket
-        will continue to be encrypted, but with an encryption key managed by Oracle.)
+        The `OCID`__ of the Key Management master encryption key to associate
+        with the specified bucket. If this value is empty, the Update operation will remove the associated key, if
+        there is one, from the bucket. (The bucket will continue to be encrypted, but with an encryption key managed
+        by Oracle.)
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param kms_key_id: The kms_key_id of this UpdateBucketDetails.

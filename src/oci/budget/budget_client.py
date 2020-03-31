@@ -82,7 +82,6 @@ class BudgetClient(object):
 
     def create_alert_rule(self, budget_id, create_alert_rule_details, **kwargs):
         """
-        Creates a new Alert Rule
         Creates a new Alert Rule.
 
 
@@ -171,7 +170,6 @@ class BudgetClient(object):
 
     def create_budget(self, create_budget_details, **kwargs):
         """
-        Creates a new Budget
         Creates a new Budget.
 
 
@@ -245,7 +243,6 @@ class BudgetClient(object):
 
     def delete_alert_rule(self, budget_id, alert_rule_id, **kwargs):
         """
-        Delete an Alert Rule
         Deletes a specified Alert Rule resource.
 
 
@@ -329,7 +326,6 @@ class BudgetClient(object):
 
     def delete_budget(self, budget_id, **kwargs):
         """
-        Delete a Budget
         Deletes a specified Budget resource
 
 
@@ -409,7 +405,6 @@ class BudgetClient(object):
 
     def get_alert_rule(self, budget_id, alert_rule_id, **kwargs):
         """
-        Get an Alert Rule for a specified budget
         Gets an Alert Rule for a specified Budget.
 
 
@@ -486,7 +481,6 @@ class BudgetClient(object):
 
     def get_budget(self, budget_id, **kwargs):
         """
-        Returns a Budget
         Gets a Budget by identifier
 
 
@@ -559,7 +553,6 @@ class BudgetClient(object):
 
     def list_alert_rules(self, budget_id, **kwargs):
         """
-        Gets a list of all Alert Rules for a Budget
         Returns a list of Alert Rules for a specified Budget.
 
 
@@ -699,7 +692,6 @@ class BudgetClient(object):
 
     def list_budgets(self, compartment_id, **kwargs):
         """
-        Returns a list of Budgets
         Gets a list of Budgets in a compartment.
 
         By default, ListBudgets returns budgets of 'COMPARTMENT' target type and the budget records with only ONE target compartment OCID.
@@ -854,7 +846,6 @@ class BudgetClient(object):
 
     def update_alert_rule(self, budget_id, alert_rule_id, update_alert_rule_details, **kwargs):
         """
-        Updates an Alert Rule
         Update an Alert Rule for the budget identified by the OCID.
 
 
@@ -945,7 +936,6 @@ class BudgetClient(object):
 
     def update_budget(self, budget_id, update_budget_details, **kwargs):
         """
-        Updates a Budget
         Update a Budget identified by the OCID
 
 

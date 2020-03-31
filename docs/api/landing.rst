@@ -11,6 +11,7 @@ API Reference
 * :doc:`Application Migration <application_migration/client/oci.application_migration.ApplicationMigrationClient>`
 * :doc:`Audit <audit/client/oci.audit.AuditClient>`
 * :doc:`Auto Scaling <autoscaling/client/oci.autoscaling.AutoScalingClient>`
+* :doc:`Bds <bds/client/oci.bds.BdsClient>`
 * :doc:`Budget <budget/client/oci.budget.BudgetClient>`
 * :doc:`Container Engine <container_engine/client/oci.container_engine.ContainerEngineClient>`
 * :doc:`Block Storage <core/client/oci.core.BlockstorageClient>`
@@ -54,8 +55,10 @@ API Reference
 * :doc:`Os Management <os_management/client/oci.os_management.OsManagementClient>`
 * :doc:`Resource Manager <resource_manager/client/oci.resource_manager.ResourceManagerClient>`
 * :doc:`Resource Search <resource_search/client/oci.resource_search.ResourceSearchClient>`
+* :doc:`Secrets <secrets/client/oci.secrets.SecretsClient>`
 * :doc:`Stream Admin <streaming/client/oci.streaming.StreamAdminClient>`
 * :doc:`Stream <streaming/client/oci.streaming.StreamClient>`
+* :doc:`Vaults <vault/client/oci.vault.VaultsClient>`
 * :doc:`Redirect <waas/client/oci.waas.RedirectClient>`
 * :doc:`Waas <waas/client/oci.waas.WaasClient>`
 * :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
@@ -83,6 +86,7 @@ API Reference
     application_migration
     audit
     autoscaling
+    bds
     budget
     container_engine
     core
@@ -112,7 +116,9 @@ API Reference
     os_management
     resource_manager
     resource_search
+    secrets
     streaming
+    vault
     waas
     work_requests
     config

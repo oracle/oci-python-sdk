@@ -173,7 +173,7 @@ def launch_instance_in_nsg(virtual_network_client,
         display_name="NSG Example Instance",
         compartment_id=compartment_id,
         availability_domain=availability_domain,
-        shape='VM.Standard1.1',
+        shape='VM.Standard2.1',
         source_details=oci.core.models.InstanceSourceViaImageDetails(image_id=image_id),
         create_vnic_details=oci.core.models.CreateVnicDetails(
             subnet_id=subnet_id,

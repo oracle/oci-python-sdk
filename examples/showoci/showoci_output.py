@@ -1096,20 +1096,35 @@ class ShowOCIOutput(object):
     ##########################################################################
     # Monitoring
     ##########################################################################
-    def __print_monitoring_main(self, alarms):
+    def __print_monitoring_main(self, monitorings):
 
         try:
-            if not alarms:
+            if not monitorings:
                 return
 
-            self.print_header("Monitoring - Alarms", 2)
+            # if alarms
+            if 'alarms' in monitorings:
+                if monitorings['alarms']:
+                    alarms = monitorings['alarms']
+                    self.print_header("Monitoring - Alarms", 2)
 
-            for alarm in alarms:
-                print(self.taba + alarm['display_name'] + " (" + alarm['namespace'] + "), Enabled = " + str(alarm['is_enabled']) + ", Severity = " + alarm['severity'])
-                print(self.tabs + "Query : " + alarm['query'])
-                for dest in alarm['destinations_names']:
-                    print(self.tabs + "Topic : " + dest)
-                print("")
+                    for alarm in alarms:
+                        print(self.taba + alarm['display_name'] + " (" + alarm['namespace'] + "), Enabled = " + str(alarm['is_enabled']) + ", Severity = " + alarm['severity'])
+                        print(self.tabs + "Query : " + alarm['query'])
+                        for dest in alarm['destinations_names']:
+                            print(self.tabs + "Topic : " + dest)
+                        print("")
+
+            # if events
+            if 'events' in monitorings:
+                if monitorings['events']:
+                    events = monitorings['events']
+                    self.print_header("Events", 2)
+
+                    for event in events:
+                        print(self.taba + event['display_name'] + " (" + event['description'] + "), Enabled = " + str(event['is_enabled']))
+                        print(self.tabs + "Condition : " + event['condition'])
+                        print("")
 
         except Exception as e:
             self.__print_error("__print_monitoring_main", e)
@@ -1164,6 +1179,24 @@ class ShowOCIOutput(object):
                         print(self.tabs + "Targets  : " + arr['targets'])
                         print(self.tabs + "VPoints  : " + arr['vantage_point_names'])
                         print("")
+
+            # if dns_zone
+            if 'dns_zone' in edge:
+                self.print_header("DNS Zone", 2)
+
+                for arr in edge['dns_zone']:
+                    print(self.taba + arr['name'] + " (" + arr['zone_type'] + "), Version: " + arr['version'] + ", Serial: " + arr['serial'])
+                    print(self.tabs + "URI : " + arr['self_uri'])
+                    print("")
+
+            # if dns_steering
+            if 'dns_steering' in edge:
+                self.print_header("DNS Steering Policies", 2)
+
+                for arr in edge['dns_steering']:
+                    print(self.taba + arr['display_name'] + " (" + arr['template'] + "), TTL: " + arr['ttl'])
+                    print(self.tabs + "Health Check Id : " + arr['health_check_monitor_id'])
+                    print("")
 
         except Exception as e:
             self.__print_error("__print_edge_services_main", e)
@@ -1937,18 +1970,18 @@ class ShowOCISummary(object):
             self.__print_error("__summary_core_compute_instances", e)
 
     ##########################################################################
-    # print compute images
+    # sum core sizes
     ##########################################################################
 
-    def __summary_core_size(self, objects):
+    def __summary_core_size(self, objects, sum_info="sum_info", sum_size="sum_size_gb"):
         try:
             if len(objects) == 0:
                 return
 
             for obj in objects:
-                if 'sum_info' in obj and 'sum_size_gb' in obj:
-                    if obj['sum_size_gb'] != '':
-                        self.summary_global_list.append({'type': obj['sum_info'], 'size': float(obj['sum_size_gb'])})
+                if sum_info in obj and sum_size in obj:
+                    if obj[sum_size] != '':
+                        self.summary_global_list.append({'type': obj[sum_info], 'size': float(obj[sum_size])})
 
         except Exception as e:
             self.__print_error("__summary_core_size", e)
@@ -1967,6 +2000,7 @@ class ShowOCISummary(object):
 
             if 'images' in data:
                 self.__summary_core_size(data['images'])
+                self.__summary_core_size(data['images'], "sum_count_info", "sum_count_size")
 
             if 'boot_volume_backup' in data:
                 self.__summary_core_size(data['boot_volume_backup'])
@@ -1985,7 +2019,7 @@ class ShowOCISummary(object):
 
     ##########################################################################
     # Summary Group By
-    # took the function frmo stackoverflow
+    # took the function from stackoverflow
     ##########################################################################
 
     def __summary_group_by(self, key, list_of_dicts):

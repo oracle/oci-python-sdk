@@ -90,37 +90,19 @@ def delete_vcn_and_subnets(virtual_network, vcn_and_subnets):
     subnet_one = vcn_and_subnets['subnets'][0]
     subnet_two = vcn_and_subnets['subnets'][1]
 
-    virtual_network.delete_subnet(subnet_one.id)
-    oci.wait_until(
-        virtual_network,
-        virtual_network.get_subnet(subnet_one.id),
-        'lifecycle_state',
-        'TERMINATED',
-        max_wait_seconds=300,
-        # For a deletion, the record may no longer be available and the waiter may encounter a 404 when trying to retrieve it.
-        # This flag tells the waiter to consider 404s as successful (which is only really valid for delete/terminate since
-        # the record not being there anymore can signify a successful delete/terminate)
-        succeed_on_not_found=True
+    composite_virtual_network = oci.core.VirtualNetworkClientCompositeOperations(virtual_network)
+    composite_virtual_network.delete_subnet_and_wait_for_state(
+        subnet_one.id,
+        [oci.core.models.Subnet.LIFECYCLE_STATE_TERMINATED]
+    )
+    composite_virtual_network.delete_subnet_and_wait_for_state(
+        subnet_two.id,
+        [oci.core.models.Subnet.LIFECYCLE_STATE_TERMINATED]
     )
 
-    virtual_network.delete_subnet(subnet_two.id)
-    oci.wait_until(
-        virtual_network,
-        virtual_network.get_subnet(subnet_two.id),
-        'lifecycle_state',
-        'TERMINATED',
-        max_wait_seconds=300,
-        succeed_on_not_found=True
-    )
-
-    virtual_network.delete_vcn(vcn.id)
-    oci.wait_until(
-        virtual_network,
-        virtual_network.get_vcn(vcn.id),
-        'lifecycle_state',
-        'TERMINATED',
-        max_wait_seconds=300,
-        succeed_on_not_found=True
+    composite_virtual_network.delete_vcn_and_wait_for_state(
+        vcn.id,
+        [oci.core.models.Vcn.LIFECYCLE_STATE_TERMINATED]
     )
 
 

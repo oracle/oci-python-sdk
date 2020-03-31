@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.12.2 - 2020-03-31
+====================
+
+Added
+-----
+* Support for the Secrets Management service
+* Support for the Big Data service
+* Support for updating class name, file URI, language, and spark version of applications in the Data Flow service
+* Support for cross-region replication in the Object Storage service
+* Support for retention rules in the Object Storage service
+* Support for enabling and disabling pod security policy admission controllers in the Container Engine for Kubernetes service
+
+====================
 2.12.1 - 2020-03-24
 ====================
 

@@ -107,13 +107,13 @@ def get_image(compute, compartment_id, operating_system, os_version, target_shap
 
 
 def launch_instance(compute, vcn_and_subnet, kms_key_id):
-    image_id = get_image(compute, vcn_and_subnet['subnet'].compartment_id, 'Oracle Linux', '7.5', 'VM.Standard1.1').id
+    image_id = get_image(compute, vcn_and_subnet['subnet'].compartment_id, 'Oracle Linux', '7.5', 'VM.Standard2.1').id
     result = compute.launch_instance(
         oci.core.models.LaunchInstanceDetails(
             availability_domain=vcn_and_subnet['subnet'].availability_domain,
             compartment_id=vcn_and_subnet['subnet'].compartment_id,
             display_name='VolAttachTypesExampleInstance',
-            shape='VM.Standard1.1',
+            shape='VM.Standard2.1',
             subnet_id=vcn_and_subnet['subnet'].id,
             is_pv_encryption_in_transit_enabled=True,
             source_details=oci.core.models.InstanceSourceViaImageDetails(image_id=image_id, kms_key_id=kms_key_id)

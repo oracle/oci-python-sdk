@@ -83,7 +83,6 @@ class EventsClient(object):
 
     def change_rule_compartment(self, rule_id, change_rule_compartment_details, **kwargs):
         """
-        Moves a rule into a different compartment. When provided, If-Match is checked against ETag values of the resource.
         Moves a rule into a different compartment within the same tenancy. For information about moving
         resources between compartments, see `Moving Resources to a Different Compartment`__.
 
@@ -182,7 +181,6 @@ class EventsClient(object):
 
     def create_rule(self, create_rule_details, **kwargs):
         """
-        Creates a new rule
         Creates a new rule.
 
 
@@ -257,7 +255,6 @@ class EventsClient(object):
 
     def delete_rule(self, rule_id, **kwargs):
         """
-        Deletes a rule
         Deletes a rule.
 
 
@@ -338,7 +335,6 @@ class EventsClient(object):
 
     def get_rule(self, rule_id, **kwargs):
         """
-        Retrieves a rule
         Retrieves a rule.
 
 
@@ -414,7 +410,6 @@ class EventsClient(object):
 
     def list_rules(self, compartment_id, **kwargs):
         """
-        Lists rules for this compartment.
         Lists rules for this compartment.
 
 
@@ -561,7 +556,6 @@ class EventsClient(object):
 
     def update_rule(self, rule_id, update_rule_details, **kwargs):
         """
-        Updates a rule
         Updates a rule.
 
 

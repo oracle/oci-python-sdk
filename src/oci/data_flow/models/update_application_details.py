@@ -12,10 +12,43 @@ class UpdateApplicationDetails(object):
     The update application details.
     """
 
+    #: A constant which can be used with the language property of a UpdateApplicationDetails.
+    #: This constant has a value of "SCALA"
+    LANGUAGE_SCALA = "SCALA"
+
+    #: A constant which can be used with the language property of a UpdateApplicationDetails.
+    #: This constant has a value of "JAVA"
+    LANGUAGE_JAVA = "JAVA"
+
+    #: A constant which can be used with the language property of a UpdateApplicationDetails.
+    #: This constant has a value of "PYTHON"
+    LANGUAGE_PYTHON = "PYTHON"
+
+    #: A constant which can be used with the language property of a UpdateApplicationDetails.
+    #: This constant has a value of "SQL"
+    LANGUAGE_SQL = "SQL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateApplicationDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param class_name:
+            The value to assign to the class_name property of this UpdateApplicationDetails.
+        :type class_name: str
+
+        :param file_uri:
+            The value to assign to the file_uri property of this UpdateApplicationDetails.
+        :type file_uri: str
+
+        :param spark_version:
+            The value to assign to the spark_version property of this UpdateApplicationDetails.
+        :type spark_version: str
+
+        :param language:
+            The value to assign to the language property of this UpdateApplicationDetails.
+            Allowed values for this property are: "SCALA", "JAVA", "PYTHON", "SQL"
+        :type language: str
 
         :param arguments:
             The value to assign to the arguments property of this UpdateApplicationDetails.
@@ -67,6 +100,10 @@ class UpdateApplicationDetails(object):
 
         """
         self.swagger_types = {
+            'class_name': 'str',
+            'file_uri': 'str',
+            'spark_version': 'str',
+            'language': 'str',
             'arguments': 'list[str]',
             'configuration': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -82,6 +119,10 @@ class UpdateApplicationDetails(object):
         }
 
         self.attribute_map = {
+            'class_name': 'className',
+            'file_uri': 'fileUri',
+            'spark_version': 'sparkVersion',
+            'language': 'language',
             'arguments': 'arguments',
             'configuration': 'configuration',
             'defined_tags': 'definedTags',
@@ -96,6 +137,10 @@ class UpdateApplicationDetails(object):
             'warehouse_bucket_uri': 'warehouseBucketUri'
         }
 
+        self._class_name = None
+        self._file_uri = None
+        self._spark_version = None
+        self._language = None
         self._arguments = None
         self._configuration = None
         self._defined_tags = None
@@ -108,6 +153,112 @@ class UpdateApplicationDetails(object):
         self._num_executors = None
         self._parameters = None
         self._warehouse_bucket_uri = None
+
+    @property
+    def class_name(self):
+        """
+        Gets the class_name of this UpdateApplicationDetails.
+        The class for the application.
+
+
+        :return: The class_name of this UpdateApplicationDetails.
+        :rtype: str
+        """
+        return self._class_name
+
+    @class_name.setter
+    def class_name(self, class_name):
+        """
+        Sets the class_name of this UpdateApplicationDetails.
+        The class for the application.
+
+
+        :param class_name: The class_name of this UpdateApplicationDetails.
+        :type: str
+        """
+        self._class_name = class_name
+
+    @property
+    def file_uri(self):
+        """
+        Gets the file_uri of this UpdateApplicationDetails.
+        An Oracle Cloud Infrastructure URI of the file containing the application to execute.
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+
+
+        :return: The file_uri of this UpdateApplicationDetails.
+        :rtype: str
+        """
+        return self._file_uri
+
+    @file_uri.setter
+    def file_uri(self, file_uri):
+        """
+        Sets the file_uri of this UpdateApplicationDetails.
+        An Oracle Cloud Infrastructure URI of the file containing the application to execute.
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+
+
+        :param file_uri: The file_uri of this UpdateApplicationDetails.
+        :type: str
+        """
+        self._file_uri = file_uri
+
+    @property
+    def spark_version(self):
+        """
+        Gets the spark_version of this UpdateApplicationDetails.
+        The Spark version utilized to run the application.
+
+
+        :return: The spark_version of this UpdateApplicationDetails.
+        :rtype: str
+        """
+        return self._spark_version
+
+    @spark_version.setter
+    def spark_version(self, spark_version):
+        """
+        Sets the spark_version of this UpdateApplicationDetails.
+        The Spark version utilized to run the application.
+
+
+        :param spark_version: The spark_version of this UpdateApplicationDetails.
+        :type: str
+        """
+        self._spark_version = spark_version
+
+    @property
+    def language(self):
+        """
+        Gets the language of this UpdateApplicationDetails.
+        The Spark language.
+
+        Allowed values for this property are: "SCALA", "JAVA", "PYTHON", "SQL"
+
+
+        :return: The language of this UpdateApplicationDetails.
+        :rtype: str
+        """
+        return self._language
+
+    @language.setter
+    def language(self, language):
+        """
+        Sets the language of this UpdateApplicationDetails.
+        The Spark language.
+
+
+        :param language: The language of this UpdateApplicationDetails.
+        :type: str
+        """
+        allowed_values = ["SCALA", "JAVA", "PYTHON", "SQL"]
+        if not value_allowed_none_or_none_sentinel(language, allowed_values):
+            raise ValueError(
+                "Invalid value for `language`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._language = language
 
     @property
     def arguments(self):

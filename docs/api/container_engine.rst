@@ -19,6 +19,7 @@ Container Engine
     :template: autosummary/model_class.rst
 
     oci.container_engine.models.AddOnOptions
+    oci.container_engine.models.AdmissionControllerOptions
     oci.container_engine.models.Cluster
     oci.container_engine.models.ClusterCreateOptions
     oci.container_engine.models.ClusterEndpoints
@@ -43,6 +44,7 @@ Container Engine
     oci.container_engine.models.NodeSourceViaImageDetails
     oci.container_engine.models.NodeSourceViaImageOption
     oci.container_engine.models.UpdateClusterDetails
+    oci.container_engine.models.UpdateClusterOptionsDetails
     oci.container_engine.models.UpdateNodePoolDetails
     oci.container_engine.models.UpdateNodePoolNodeConfigDetails
     oci.container_engine.models.WorkRequest

@@ -82,7 +82,6 @@ class ResourceSearchClient(object):
 
     def get_resource_type(self, name, **kwargs):
         """
-        Gets the resource type definition.
         Gets detailed information about a resource type by using the resource type name.
 
 
@@ -156,7 +155,6 @@ class ResourceSearchClient(object):
 
     def list_resource_types(self, **kwargs):
         """
-        Lists the types of resources available for querying.
         Lists all resource types that you can search or query for.
 
 
@@ -231,7 +229,6 @@ class ResourceSearchClient(object):
 
     def search_resources(self, search_details, **kwargs):
         """
-        Finds resources in your cloud network.
         Queries any and all compartments in the tenancy to find resources that match the specified criteria.
         Results include resources that you have permission to view and can span different resource types.
         You can also sort results based on a specified resource attribute.

@@ -44,9 +44,9 @@ class ObjectLifecyclePolicy(object):
         """
         Gets the time_created of this ObjectLifecyclePolicy.
         The date and time the object lifecycle policy was created, as described in
-        `RFC 3339`__, section 14.29.
+        `RFC 3339`__.
 
-        __ https://tools.ietf.org/rfc/rfc3339
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_created of this ObjectLifecyclePolicy.
@@ -59,9 +59,9 @@ class ObjectLifecyclePolicy(object):
         """
         Sets the time_created of this ObjectLifecyclePolicy.
         The date and time the object lifecycle policy was created, as described in
-        `RFC 3339`__, section 14.29.
+        `RFC 3339`__.
 
-        __ https://tools.ietf.org/rfc/rfc3339
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_created: The time_created of this ObjectLifecyclePolicy.
