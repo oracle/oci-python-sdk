@@ -82,7 +82,6 @@ class ApplianceExportJobClient(object):
 
     def change_appliance_export_job_compartment(self, appliance_export_job_id, change_appliance_export_job_compartment_details, **kwargs):
         """
-        Move a job into a different compartment. When provided, if-Match is matched against ETag values of the resource.
         Moves a ApplianceExportJob into a different compartment.
 
 
@@ -176,7 +175,6 @@ class ApplianceExportJobClient(object):
 
     def create_appliance_export_job(self, create_appliance_export_job_details, **kwargs):
         """
-        Creates a new Appliance Export Job
         Creates a new Appliance Export Job that corresponds with customer's logical dataset
 
 
@@ -251,7 +249,6 @@ class ApplianceExportJobClient(object):
 
     def delete_appliance_export_job(self, appliance_export_job_id, **kwargs):
         """
-        deletes a Appliance Export Job
         deletes a Appliance Export Job
 
 
@@ -330,7 +327,6 @@ class ApplianceExportJobClient(object):
     def get_appliance_export_job(self, appliance_export_job_id, **kwargs):
         """
         Describes a Appliance Export Job in detail
-        Describes a Appliance Export Job in detail
 
 
         :param str appliance_export_job_id: (required)
@@ -403,7 +399,6 @@ class ApplianceExportJobClient(object):
 
     def list_appliance_export_jobs(self, compartment_id, **kwargs):
         """
-        Lists Appliance Export Jobs in a given compartment
         Lists Appliance Export Jobs in a given compartment
 
 
@@ -511,7 +506,6 @@ class ApplianceExportJobClient(object):
 
     def update_appliance_export_job(self, appliance_export_job_id, update_appliance_export_job_details, **kwargs):
         """
-        Updates an Appliance Export Job
         Updates a Appliance Export Job that corresponds with customer's logical dataset.
 
 

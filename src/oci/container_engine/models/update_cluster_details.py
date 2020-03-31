@@ -25,19 +25,26 @@ class UpdateClusterDetails(object):
             The value to assign to the kubernetes_version property of this UpdateClusterDetails.
         :type kubernetes_version: str
 
+        :param options:
+            The value to assign to the options property of this UpdateClusterDetails.
+        :type options: UpdateClusterOptionsDetails
+
         """
         self.swagger_types = {
             'name': 'str',
-            'kubernetes_version': 'str'
+            'kubernetes_version': 'str',
+            'options': 'UpdateClusterOptionsDetails'
         }
 
         self.attribute_map = {
             'name': 'name',
-            'kubernetes_version': 'kubernetesVersion'
+            'kubernetes_version': 'kubernetesVersion',
+            'options': 'options'
         }
 
         self._name = None
         self._kubernetes_version = None
+        self._options = None
 
     @property
     def name(self):
@@ -86,6 +93,26 @@ class UpdateClusterDetails(object):
         :type: str
         """
         self._kubernetes_version = kubernetes_version
+
+    @property
+    def options(self):
+        """
+        Gets the options of this UpdateClusterDetails.
+
+        :return: The options of this UpdateClusterDetails.
+        :rtype: UpdateClusterOptionsDetails
+        """
+        return self._options
+
+    @options.setter
+    def options(self, options):
+        """
+        Sets the options of this UpdateClusterDetails.
+
+        :param options: The options of this UpdateClusterDetails.
+        :type: UpdateClusterOptionsDetails
+        """
+        self._options = options
 
     def __repr__(self):
         return formatted_flat_dict(self)

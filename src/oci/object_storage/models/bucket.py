@@ -114,6 +114,14 @@ class Bucket(object):
             The value to assign to the approximate_size property of this Bucket.
         :type approximate_size: int
 
+        :param replication_enabled:
+            The value to assign to the replication_enabled property of this Bucket.
+        :type replication_enabled: bool
+
+        :param is_read_only:
+            The value to assign to the is_read_only property of this Bucket.
+        :type is_read_only: bool
+
         :param id:
             The value to assign to the id property of this Bucket.
         :type id: str
@@ -136,6 +144,8 @@ class Bucket(object):
             'object_lifecycle_policy_etag': 'str',
             'approximate_count': 'int',
             'approximate_size': 'int',
+            'replication_enabled': 'bool',
+            'is_read_only': 'bool',
             'id': 'str'
         }
 
@@ -156,6 +166,8 @@ class Bucket(object):
             'object_lifecycle_policy_etag': 'objectLifecyclePolicyEtag',
             'approximate_count': 'approximateCount',
             'approximate_size': 'approximateSize',
+            'replication_enabled': 'replicationEnabled',
+            'is_read_only': 'isReadOnly',
             'id': 'id'
         }
 
@@ -175,6 +187,8 @@ class Bucket(object):
         self._object_lifecycle_policy_etag = None
         self._approximate_count = None
         self._approximate_size = None
+        self._replication_enabled = None
+        self._is_read_only = None
         self._id = None
 
     @property
@@ -279,7 +293,9 @@ class Bucket(object):
     def created_by(self):
         """
         **[Required]** Gets the created_by of this Bucket.
-        The OCID of the user who created the bucket.
+        The `OCID`__ of the user who created the bucket.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The created_by of this Bucket.
@@ -291,7 +307,9 @@ class Bucket(object):
     def created_by(self, created_by):
         """
         Sets the created_by of this Bucket.
-        The OCID of the user who created the bucket.
+        The `OCID`__ of the user who created the bucket.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param created_by: The created_by of this Bucket.
@@ -303,9 +321,9 @@ class Bucket(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this Bucket.
-        The date and time the bucket was created, as described in `RFC 2616`__, section 14.29.
+        The date and time the bucket was created, as described in `RFC 2616`__.
 
-        __ https://tools.ietf.org/rfc/rfc2616
+        __ https://tools.ietf.org/html/rfc2616#section-14.29
 
 
         :return: The time_created of this Bucket.
@@ -317,9 +335,9 @@ class Bucket(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Bucket.
-        The date and time the bucket was created, as described in `RFC 2616`__, section 14.29.
+        The date and time the bucket was created, as described in `RFC 2616`__.
 
-        __ https://tools.ietf.org/rfc/rfc2616
+        __ https://tools.ietf.org/html/rfc2616#section-14.29
 
 
         :param time_created: The time_created of this Bucket.
@@ -525,8 +543,10 @@ class Bucket(object):
     def kms_key_id(self):
         """
         Gets the kms_key_id of this Bucket.
-        The OCID of a master encryption key used to call the Key Management service to generate a data encryption key
-        or to encrypt or decrypt a data encryption key.
+        The `OCID`__ of a master encryption key used to call the Key Management
+        service to generate a data encryption key or to encrypt or decrypt a data encryption key.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The kms_key_id of this Bucket.
@@ -538,8 +558,10 @@ class Bucket(object):
     def kms_key_id(self, kms_key_id):
         """
         Sets the kms_key_id of this Bucket.
-        The OCID of a master encryption key used to call the Key Management service to generate a data encryption key
-        or to encrypt or decrypt a data encryption key.
+        The `OCID`__ of a master encryption key used to call the Key Management
+        service to generate a data encryption key or to encrypt or decrypt a data encryption key.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param kms_key_id: The kms_key_id of this Bucket.
@@ -624,10 +646,64 @@ class Bucket(object):
         self._approximate_size = approximate_size
 
     @property
+    def replication_enabled(self):
+        """
+        Gets the replication_enabled of this Bucket.
+        Whether or not this bucket is a replication source. By default, `replicationEnabled` is set to `false`. This will
+        be set to 'true' when you create a replication policy for the bucket.
+
+
+        :return: The replication_enabled of this Bucket.
+        :rtype: bool
+        """
+        return self._replication_enabled
+
+    @replication_enabled.setter
+    def replication_enabled(self, replication_enabled):
+        """
+        Sets the replication_enabled of this Bucket.
+        Whether or not this bucket is a replication source. By default, `replicationEnabled` is set to `false`. This will
+        be set to 'true' when you create a replication policy for the bucket.
+
+
+        :param replication_enabled: The replication_enabled of this Bucket.
+        :type: bool
+        """
+        self._replication_enabled = replication_enabled
+
+    @property
+    def is_read_only(self):
+        """
+        Gets the is_read_only of this Bucket.
+        Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will
+        be set to 'true' when this bucket is configured as a destination in a replication policy.
+
+
+        :return: The is_read_only of this Bucket.
+        :rtype: bool
+        """
+        return self._is_read_only
+
+    @is_read_only.setter
+    def is_read_only(self, is_read_only):
+        """
+        Sets the is_read_only of this Bucket.
+        Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will
+        be set to 'true' when this bucket is configured as a destination in a replication policy.
+
+
+        :param is_read_only: The is_read_only of this Bucket.
+        :type: bool
+        """
+        self._is_read_only = is_read_only
+
+    @property
     def id(self):
         """
         Gets the id of this Bucket.
-        The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket).
+        The `OCID`__ of the bucket.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Bucket.
@@ -639,7 +715,9 @@ class Bucket(object):
     def id(self, id):
         """
         Sets the id of this Bucket.
-        The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket).
+        The `OCID`__ of the bucket.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Bucket.

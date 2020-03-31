@@ -82,7 +82,6 @@ class MarketplaceClient(object):
 
     def create_accepted_agreement(self, create_accepted_agreement_details, **kwargs):
         """
-        Accepts a terms of use agreement for a listing.
         Accepts a terms of use agreement for a specific package version of a listing. You must accept all
         terms of use for a package before you can deploy the package.
 
@@ -157,7 +156,6 @@ class MarketplaceClient(object):
 
     def delete_accepted_agreement(self, accepted_agreement_id, signature, **kwargs):
         """
-        Removes an accepted terms of use agreement.
         Removes a previously accepted terms of use agreement from the list of agreements that Marketplace checks
         before initiating a deployment. Listings in the Marketplace that require acceptance of the specified terms
         of use can no longer be deployed, but existing deployments aren't affected.
@@ -248,7 +246,6 @@ class MarketplaceClient(object):
 
     def get_accepted_agreement(self, accepted_agreement_id, **kwargs):
         """
-        Gets the details of a terms of use agreement.
         Gets the details of a specific, previously accepted terms of use agreement.
 
 
@@ -322,7 +319,6 @@ class MarketplaceClient(object):
 
     def get_agreement(self, listing_id, package_version, agreement_id, **kwargs):
         """
-        Gets a terms of use agreement for a package.
         Returns a terms of use agreement for a package with a time-based signature that can be used to
         accept the agreement.
 
@@ -405,7 +401,6 @@ class MarketplaceClient(object):
 
     def get_listing(self, listing_id, **kwargs):
         """
-        Gets the details of a listing.
         Gets detailed information about a listing, including the listing's name, version, description, and
         resources.
 
@@ -480,7 +475,6 @@ class MarketplaceClient(object):
 
     def get_package(self, listing_id, package_version, **kwargs):
         """
-        Get the details of a specific package version.
         Get the details of the specified version of a package, including information needed to launch the package.
 
 
@@ -558,7 +552,6 @@ class MarketplaceClient(object):
 
     def list_accepted_agreements(self, compartment_id, **kwargs):
         """
-        Gets the list of accepted terms of use agreements in the specified compartment.
         Lists the terms of use agreements that have been accepted in the specified compartment.
         You can filter results by specifying query parameters.
 
@@ -688,7 +681,6 @@ class MarketplaceClient(object):
 
     def list_agreements(self, listing_id, package_version, **kwargs):
         """
-        Lists terms of use agreements for a package.
         Returns the terms of use agreements that must be accepted before you can deploy the specified version of a package.
 
 
@@ -782,7 +774,6 @@ class MarketplaceClient(object):
 
     def list_categories(self, **kwargs):
         """
-        Gets a list of listing categories.
         Gets the list of all the categories for listings published to Oracle Cloud Infrastructure Marketplace. Categories apply
         to the software product provided by the listing.
 
@@ -858,7 +849,6 @@ class MarketplaceClient(object):
 
     def list_listings(self, **kwargs):
         """
-        Gets a list of listings.
         Gets a list of listings from Oracle Cloud Infrastructure Marketplace by searching keywords and
         filtering according to listing attributes.
 
@@ -1012,7 +1002,6 @@ class MarketplaceClient(object):
     def list_packages(self, listing_id, **kwargs):
         """
         Gets the list of packages for a listing.
-        Gets the list of packages for a listing.
 
 
         :param str listing_id: (required)
@@ -1141,7 +1130,6 @@ class MarketplaceClient(object):
 
     def list_publishers(self, **kwargs):
         """
-        Gets a list of publishers.
         Gets the list of all the publishers of listings available in Oracle Cloud Infrastructure Marketplace.
 
 
@@ -1221,7 +1209,6 @@ class MarketplaceClient(object):
 
     def update_accepted_agreement(self, accepted_agreement_id, update_accepted_agreement_details, **kwargs):
         """
-        Updates an accepted terms of use agreement.
         Updates the display name or tags associated with a listing's previously accepted terms of use agreement.
 
 

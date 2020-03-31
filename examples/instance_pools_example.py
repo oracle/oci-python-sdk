@@ -57,11 +57,18 @@ def _wait_until_lb_becomes_attached(cim_client, instance_pool_id):
             cim_client,
             cim_client.get_instance_pool(instance_pool_id),
             evaluate_response=(
-                lambda r: r.data.load_balancers[0].lifecycle_state.upper() == "ATTACHED"))
+                lambda r: r.data.load_balancers[0].lifecycle_state.upper() == "ATTACHED"),
+            max_wait_seconds=6000)
         print("Load balancer attached to instance pool")
     except Exception:
         print("LB could not be attached!")
         raise
+
+
+def _delete_tag_defaults(identity_client, compartment_id):
+    tag_default_list = identity_client.list_tag_defaults(compartment_id=compartment_id).data
+    for tag_default in tag_default_list:
+        identity_client.delete_tag_default(tag_default.id)
 
 
 #  === Main ===
@@ -107,6 +114,10 @@ if __name__ == "__main__":
     # create the compute management client
     compute_management_client = ComputeManagementClient(config)
     composite_client = ComputeManagementClientCompositeOperations(compute_management_client)
+
+    identity_client = oci.identity.IdentityClient(config)
+    # disable tag defaults
+    _delete_tag_defaults(identity_client, args.compartment_id)
 
     launch_details = InstanceConfigurationLaunchInstanceDetails(
         compartment_id=args.compartment_id,

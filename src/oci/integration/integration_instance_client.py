@@ -83,7 +83,6 @@ class IntegrationInstanceClient(object):
     def change_integration_instance_compartment(self, integration_instance_id, change_integration_instance_compartment_details, **kwargs):
         """
         Change the compartment for an integration instance
-        Change the compartment for an integration instance
 
 
         :param str integration_instance_id: (required)
@@ -167,7 +166,6 @@ class IntegrationInstanceClient(object):
 
     def create_integration_instance(self, create_integration_instance_details, **kwargs):
         """
-        Creates a new Integration Instance
         Creates a new Integration Instance.
 
 
@@ -240,7 +238,6 @@ class IntegrationInstanceClient(object):
 
     def delete_integration_instance(self, integration_instance_id, **kwargs):
         """
-        Delete a provisioned Integration Instance
         Deletes an Integration Instance resource by identifier.
 
 
@@ -320,7 +317,6 @@ class IntegrationInstanceClient(object):
 
     def get_integration_instance(self, integration_instance_id, **kwargs):
         """
-        Get Integration Instance
         Gets a IntegrationInstance by identifier
 
 
@@ -393,7 +389,6 @@ class IntegrationInstanceClient(object):
 
     def get_work_request(self, work_request_id, **kwargs):
         """
-        Get Work Request Status
         Gets the status of the work request with the given ID.
 
 
@@ -466,7 +461,6 @@ class IntegrationInstanceClient(object):
 
     def list_integration_instances(self, compartment_id, **kwargs):
         """
-        Gets a list of all Integration Instances in a compartment
         Returns a list of Integration Instances.
 
 
@@ -595,7 +589,6 @@ class IntegrationInstanceClient(object):
 
     def list_work_request_errors(self, compartment_id, work_request_id, **kwargs):
         """
-        Get work request errors.
         Get the errors of a work request.
 
 
@@ -688,7 +681,6 @@ class IntegrationInstanceClient(object):
 
     def list_work_request_logs(self, compartment_id, work_request_id, **kwargs):
         """
-        Get work request logs.
         Get the logs of a work request.
 
 
@@ -781,7 +773,6 @@ class IntegrationInstanceClient(object):
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
-        List Work Requests
         Lists the work requests in a compartment.
 
 
@@ -864,7 +855,6 @@ class IntegrationInstanceClient(object):
 
     def update_integration_instance(self, integration_instance_id, update_integration_instance_details, **kwargs):
         """
-        Update the Integration Instance identified by the id
         Updates the Integration Instance.
 
 

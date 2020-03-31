@@ -171,9 +171,9 @@ class MultipartUpload(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this MultipartUpload.
-        The date and time the upload was created, as described in `RFC 2616`__, section 14.29.
+        The date and time the upload was created, as described in `RFC 2616`__.
 
-        __ https://tools.ietf.org/rfc/rfc2616
+        __ https://tools.ietf.org/html/rfc2616#section-14.29
 
 
         :return: The time_created of this MultipartUpload.
@@ -185,9 +185,9 @@ class MultipartUpload(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this MultipartUpload.
-        The date and time the upload was created, as described in `RFC 2616`__, section 14.29.
+        The date and time the upload was created, as described in `RFC 2616`__.
 
-        __ https://tools.ietf.org/rfc/rfc2616
+        __ https://tools.ietf.org/html/rfc2616#section-14.29
 
 
         :param time_created: The time_created of this MultipartUpload.

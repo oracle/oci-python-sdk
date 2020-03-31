@@ -82,7 +82,6 @@ class TransferJobClient(object):
 
     def change_transfer_job_compartment(self, transfer_job_id, change_transfer_job_compartment_details, **kwargs):
         """
-        Move a job into a different compartment. When provided, if-Match is matched against ETag values of the resource.
         Moves a TransferJob into a different compartment.
 
 
@@ -176,7 +175,6 @@ class TransferJobClient(object):
 
     def create_transfer_job(self, create_transfer_job_details, **kwargs):
         """
-        Create a new Transfer Job
         Create a new Transfer Job that corresponds with customer's logical dataset e.g. a DB or a filesystem.
 
 
@@ -246,7 +244,6 @@ class TransferJobClient(object):
 
     def delete_transfer_job(self, id, **kwargs):
         """
-        deletes a transfer job
         deletes a transfer job
 
 
@@ -318,7 +315,6 @@ class TransferJobClient(object):
 
     def get_transfer_job(self, id, **kwargs):
         """
-        Describes a transfer job in detail
         Describes a transfer job in detail
 
 
@@ -392,7 +388,6 @@ class TransferJobClient(object):
 
     def list_transfer_jobs(self, compartment_id, **kwargs):
         """
-        Lists Transfer Jobs in a given compartment
         Lists Transfer Jobs in a given compartment
 
 
@@ -500,7 +495,6 @@ class TransferJobClient(object):
 
     def update_transfer_job(self, id, update_transfer_job_details, **kwargs):
         """
-        Updates a Transfer Job
         Updates a Transfer Job that corresponds with customer's logical dataset e.g. a DB or a filesystem.
 
 

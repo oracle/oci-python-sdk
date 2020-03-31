@@ -66,30 +66,18 @@ def create_vcn_and_subnet(virtual_network, compartment_id, availability_domain):
 
 
 def delete_vcn_and_subnet(virtual_network, vcn_and_subnet):
+    composite_virtual_network = oci.core.VirtualNetworkClientCompositeOperations(virtual_network)
     vcn = vcn_and_subnet['vcn']
     subnet = vcn_and_subnet['subnet']
 
-    virtual_network.delete_subnet(subnet.id)
-    oci.wait_until(
-        virtual_network,
-        virtual_network.get_subnet(subnet.id),
-        'lifecycle_state',
-        'TERMINATED',
-        max_wait_seconds=300,
-        # For a deletion, the record may no longer be available and the waiter may encounter a 404 when trying to retrieve it.
-        # This flag tells the waiter to consider 404s as successful (which is only really valid for delete/terminate since
-        # the record not being there anymore can signify a successful delete/terminate)
-        succeed_on_not_found=True
+    composite_virtual_network.delete_subnet_and_wait_for_state(
+        subnet.id,
+        [oci.core.models.Subnet.LIFECYCLE_STATE_TERMINATED]
     )
 
-    virtual_network.delete_vcn(vcn.id)
-    oci.wait_until(
-        virtual_network,
-        virtual_network.get_vcn(vcn.id),
-        'lifecycle_state',
-        'TERMINATED',
-        max_wait_seconds=300,
-        succeed_on_not_found=True
+    composite_virtual_network.delete_vcn_and_wait_for_state(
+        vcn.id,
+        [oci.core.models.Vcn.LIFECYCLE_STATE_TERMINATED]
     )
 
 
@@ -268,6 +256,5 @@ oci.wait_until(
     succeed_on_not_found=True
 )
 print('Terminated instance - ephemeral public IP also deleted')
-
 delete_vcn_and_subnet(virtual_network, vcn_and_subnet)
 print('Script finished')

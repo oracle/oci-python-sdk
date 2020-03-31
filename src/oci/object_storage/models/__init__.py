@@ -11,6 +11,9 @@ from .copy_object_details import CopyObjectDetails
 from .create_bucket_details import CreateBucketDetails
 from .create_multipart_upload_details import CreateMultipartUploadDetails
 from .create_preauthenticated_request_details import CreatePreauthenticatedRequestDetails
+from .create_replication_policy_details import CreateReplicationPolicyDetails
+from .create_retention_rule_details import CreateRetentionRuleDetails
+from .duration import Duration
 from .list_objects import ListObjects
 from .multipart_upload import MultipartUpload
 from .multipart_upload_part_summary import MultipartUploadPartSummary
@@ -24,9 +27,17 @@ from .preauthenticated_request import PreauthenticatedRequest
 from .preauthenticated_request_summary import PreauthenticatedRequestSummary
 from .put_object_lifecycle_policy_details import PutObjectLifecyclePolicyDetails
 from .rename_object_details import RenameObjectDetails
+from .replication_policy import ReplicationPolicy
+from .replication_policy_summary import ReplicationPolicySummary
+from .replication_source import ReplicationSource
 from .restore_objects_details import RestoreObjectsDetails
+from .retention_rule import RetentionRule
+from .retention_rule_collection import RetentionRuleCollection
+from .retention_rule_details import RetentionRuleDetails
+from .retention_rule_summary import RetentionRuleSummary
 from .update_bucket_details import UpdateBucketDetails
 from .update_namespace_metadata_details import UpdateNamespaceMetadataDetails
+from .update_retention_rule_details import UpdateRetentionRuleDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_log_entry import WorkRequestLogEntry
@@ -43,6 +54,9 @@ object_storage_type_mapping = {
     "CreateBucketDetails": CreateBucketDetails,
     "CreateMultipartUploadDetails": CreateMultipartUploadDetails,
     "CreatePreauthenticatedRequestDetails": CreatePreauthenticatedRequestDetails,
+    "CreateReplicationPolicyDetails": CreateReplicationPolicyDetails,
+    "CreateRetentionRuleDetails": CreateRetentionRuleDetails,
+    "Duration": Duration,
     "ListObjects": ListObjects,
     "MultipartUpload": MultipartUpload,
     "MultipartUploadPartSummary": MultipartUploadPartSummary,
@@ -56,9 +70,17 @@ object_storage_type_mapping = {
     "PreauthenticatedRequestSummary": PreauthenticatedRequestSummary,
     "PutObjectLifecyclePolicyDetails": PutObjectLifecyclePolicyDetails,
     "RenameObjectDetails": RenameObjectDetails,
+    "ReplicationPolicy": ReplicationPolicy,
+    "ReplicationPolicySummary": ReplicationPolicySummary,
+    "ReplicationSource": ReplicationSource,
     "RestoreObjectsDetails": RestoreObjectsDetails,
+    "RetentionRule": RetentionRule,
+    "RetentionRuleCollection": RetentionRuleCollection,
+    "RetentionRuleDetails": RetentionRuleDetails,
+    "RetentionRuleSummary": RetentionRuleSummary,
     "UpdateBucketDetails": UpdateBucketDetails,
     "UpdateNamespaceMetadataDetails": UpdateNamespaceMetadataDetails,
+    "UpdateRetentionRuleDetails": UpdateRetentionRuleDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestLogEntry": WorkRequestLogEntry,

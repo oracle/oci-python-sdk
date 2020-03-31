@@ -71,37 +71,26 @@ def create_vcn_and_subnet(virtual_network, compartment_id, availability_domain):
 def delete_vcn_and_subnet(virtual_network, vcn_and_subnet):
     vcn = vcn_and_subnet['vcn']
     subnet = vcn_and_subnet['subnet']
-
+    composite_virtual_network = oci.core.VirtualNetworkClientCompositeOperations(virtual_network)
     # Sometimes we can't delete the subnet straight after a mount target has been deleted as network resources
     # still need to clear. If we get a conflict, try a few times before bailing out
     attempts = 0
     while attempts < 5:
         try:
-            virtual_network.delete_subnet(subnet.id)
-            oci.wait_until(
-                virtual_network,
-                virtual_network.get_subnet(subnet.id),
-                'lifecycle_state',
-                'TERMINATED',
-                max_wait_seconds=600,
-                succeed_on_not_found=True
+            composite_virtual_network.delete_subnet_and_wait_for_state(
+                subnet.id,
+                [oci.core.models.Subnet.LIFECYCLE_STATE_TERMINATED]
             )
             break
         except oci.exceptions.ServiceError as e:
             attempts += 1
             if e.status == 409 and attempts < 5:
-                time.sleep(5)
+                time.sleep(50)
             else:
                 raise
-
-    virtual_network.delete_vcn(vcn.id)
-    oci.wait_until(
-        virtual_network,
-        virtual_network.get_vcn(vcn.id),
-        'lifecycle_state',
-        'TERMINATED',
-        max_wait_seconds=600,
-        succeed_on_not_found=True
+    composite_virtual_network.delete_vcn_and_wait_for_state(
+        vcn.id,
+        [oci.core.models.Vcn.LIFECYCLE_STATE_TERMINATED]
     )
 
 
@@ -264,14 +253,14 @@ create_response = file_storage_client.create_export(
 # Since listing is a paginated operation, we can use the functionality in oci.pagination
 all_exports_by_file_system = oci.pagination.list_call_get_all_results(
     file_storage_client.list_exports,
-    compartment_id,
+    compartment_id=compartment_id,
     file_system_id=file_system.id
 )
 print('All exports by file system:\n{}'.format(all_exports_by_file_system.data))
 print('=============================\n')
 all_exports_by_export_set = oci.pagination.list_call_get_all_results(
     file_storage_client.list_exports,
-    compartment_id,
+    compartment_id=compartment_id,
     export_set_id=mount_target.export_set_id
 )
 print('All exports by export set:\n{}'.format(all_exports_by_export_set.data))

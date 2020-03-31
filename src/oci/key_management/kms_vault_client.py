@@ -82,7 +82,6 @@ class KmsVaultClient(object):
 
     def cancel_vault_deletion(self, vault_id, **kwargs):
         """
-        Cancels the scheduled deletion of a vault.
         Cancels the scheduled deletion of the specified vault. Canceling a scheduled deletion
         restores the vault and all keys in it to their respective states from before their
         scheduled deletion. All keys that were scheduled for deletion prior to vault
@@ -186,7 +185,6 @@ class KmsVaultClient(object):
 
     def change_vault_compartment(self, vault_id, change_vault_compartment_details, **kwargs):
         """
-        Moves a vault into a different compartment.
         Moves a vault into a different compartment within the same tenancy. For information about
         moving resources between compartments, see `Moving Resources to a Different Compartment`__.
 
@@ -294,7 +292,6 @@ class KmsVaultClient(object):
 
     def create_vault(self, create_vault_details, **kwargs):
         """
-        Creates a new vault.
         Creates a new vault. The type of vault you create determines key placement, pricing, and
         available options. Options include storage isolation, a dedicated service endpoint instead
         of a shared service endpoint for API calls, and either a dedicated hardware security module
@@ -379,7 +376,6 @@ class KmsVaultClient(object):
 
     def get_vault(self, vault_id, **kwargs):
         """
-        Gets details about a vault.
         Gets the specified vault's configuration information.
 
         As a provisioning operation, this call is subject to a Key Management limit that applies to
@@ -459,7 +455,6 @@ class KmsVaultClient(object):
 
     def list_vaults(self, compartment_id, **kwargs):
         """
-        Lists vaults in the compartment.
         Lists the vaults in the specified compartment.
 
         As a provisioning operation, this call is subject to a Key Management limit that applies to
@@ -575,7 +570,6 @@ class KmsVaultClient(object):
 
     def schedule_vault_deletion(self, vault_id, schedule_vault_deletion_details, **kwargs):
         """
-        Schedules the deletion of a vault.
         Schedules the deletion of the specified vault. This sets the lifecycle state of the vault and all keys in it
         that are not already scheduled for deletion to PENDING_DELETION and then deletes them after the
         retention period ends. The lifecycle state and time of deletion for keys already scheduled for deletion won't
@@ -685,7 +679,6 @@ class KmsVaultClient(object):
 
     def update_vault(self, vault_id, update_vault_details, **kwargs):
         """
-        Updates the properties of a vault.
         Updates the properties of a vault. Specifically, you can update the
         `displayName`, `freeformTags`, and `definedTags` properties. Furthermore,
         the vault must be in an ACTIVE or CREATING state to be updated.

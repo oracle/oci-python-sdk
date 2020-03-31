@@ -212,12 +212,14 @@ class WorkRequest(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this WorkRequest.
-        The OCID of the compartment that contains the work request. Work requests are scoped to the same compartment
-        as the resource the work request affects.
+        The `OCID`__ of the compartment that contains the work request. Work
+        requests are scoped to the same compartment as the resource the work request affects.
 
         If the work request affects multiple resources and those resources are not in the same compartment, the OCID of
         the primary resource is used. For example, you can copy an object in a bucket in one compartment to a bucket in
         another compartment. In this case, the OCID of the source compartment is used.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this WorkRequest.
@@ -229,12 +231,14 @@ class WorkRequest(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this WorkRequest.
-        The OCID of the compartment that contains the work request. Work requests are scoped to the same compartment
-        as the resource the work request affects.
+        The `OCID`__ of the compartment that contains the work request. Work
+        requests are scoped to the same compartment as the resource the work request affects.
 
         If the work request affects multiple resources and those resources are not in the same compartment, the OCID of
         the primary resource is used. For example, you can copy an object in a bucket in one compartment to a bucket in
         another compartment. In this case, the OCID of the source compartment is used.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this WorkRequest.
@@ -291,9 +295,9 @@ class WorkRequest(object):
         """
         Gets the time_accepted of this WorkRequest.
         The date and time the work request was created, as described in
-        `RFC 3339`__, section 14.29.
+        `RFC 3339`__.
 
-        __ https://tools.ietf.org/rfc/rfc3339
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_accepted of this WorkRequest.
@@ -306,9 +310,9 @@ class WorkRequest(object):
         """
         Sets the time_accepted of this WorkRequest.
         The date and time the work request was created, as described in
-        `RFC 3339`__, section 14.29.
+        `RFC 3339`__.
 
-        __ https://tools.ietf.org/rfc/rfc3339
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_accepted: The time_accepted of this WorkRequest.
@@ -321,9 +325,9 @@ class WorkRequest(object):
         """
         Gets the time_started of this WorkRequest.
         The date and time the work request was started, as described in
-        `RFC 3339`__, section 14.29.
+        `RFC 3339`__.
 
-        __ https://tools.ietf.org/rfc/rfc3339
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_started of this WorkRequest.
@@ -336,9 +340,9 @@ class WorkRequest(object):
         """
         Sets the time_started of this WorkRequest.
         The date and time the work request was started, as described in
-        `RFC 3339`__, section 14.29.
+        `RFC 3339`__.
 
-        __ https://tools.ietf.org/rfc/rfc3339
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_started: The time_started of this WorkRequest.
@@ -351,9 +355,9 @@ class WorkRequest(object):
         """
         Gets the time_finished of this WorkRequest.
         The date and time the work request was finished, as described in
-        `RFC 3339`__, section 14.29.
+        `RFC 3339`__.
 
-        __ https://tools.ietf.org/rfc/rfc3339
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_finished of this WorkRequest.
@@ -366,9 +370,9 @@ class WorkRequest(object):
         """
         Sets the time_finished of this WorkRequest.
         The date and time the work request was finished, as described in
-        `RFC 3339`__, section 14.29.
+        `RFC 3339`__.
 
-        __ https://tools.ietf.org/rfc/rfc3339
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_finished: The time_finished of this WorkRequest.

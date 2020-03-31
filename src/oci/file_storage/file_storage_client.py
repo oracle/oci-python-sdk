@@ -82,7 +82,6 @@ class FileStorageClient(object):
 
     def change_file_system_compartment(self, file_system_id, change_file_system_compartment_details, **kwargs):
         """
-        ChangeFileSystemCompartment
         Moves a file system and its associated snapshots into a different compartment within the same tenancy. For information about moving resources between compartments, see `Moving Resources to a Different Compartment`__
 
         __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
@@ -170,7 +169,6 @@ class FileStorageClient(object):
 
     def change_mount_target_compartment(self, mount_target_id, change_mount_target_compartment_details, **kwargs):
         """
-        ChangeMountTargetCompartment
         Moves a mount target and its associated export set into a different compartment within the same tenancy. For information about moving resources between compartments, see `Moving Resources to a Different Compartment`__
 
         __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
@@ -258,7 +256,6 @@ class FileStorageClient(object):
 
     def create_export(self, create_export_details, **kwargs):
         """
-        CreateExport
         Creates a new export in the specified export set, path, and
         file system.
 
@@ -334,7 +331,6 @@ class FileStorageClient(object):
 
     def create_file_system(self, create_file_system_details, **kwargs):
         """
-        CreateFileSystem
         Creates a new file system in the specified compartment and
         availability domain. Instances can mount file systems in
         another availability domain, but doing so might increase
@@ -441,7 +437,6 @@ class FileStorageClient(object):
 
     def create_mount_target(self, create_mount_target_details, **kwargs):
         """
-        CreateMountTarget
         Creates a new mount target in the specified compartment and
         subnet. You can associate a file system with a mount
         target only when they exist in the same availability domain. Instances
@@ -550,7 +545,6 @@ class FileStorageClient(object):
 
     def create_snapshot(self, create_snapshot_details, **kwargs):
         """
-        CreateSnapshot
         Creates a new snapshot of the specified file system. You
         can access the snapshot at `.snapshot/<name>`.
 
@@ -626,7 +620,6 @@ class FileStorageClient(object):
 
     def delete_export(self, export_id, **kwargs):
         """
-        DeleteExport
         Deletes the specified export.
 
 
@@ -707,7 +700,6 @@ class FileStorageClient(object):
 
     def delete_file_system(self, file_system_id, **kwargs):
         """
-        DeleteFileSystem
         Deletes the specified file system. Before you delete the file system,
         verify that no remaining export resources still reference it. Deleting a
         file system also deletes all of its snapshots.
@@ -790,7 +782,6 @@ class FileStorageClient(object):
 
     def delete_mount_target(self, mount_target_id, **kwargs):
         """
-        DeleteMountTarget
         Deletes the specified mount target. This operation also deletes the
         mount target's VNICs.
 
@@ -872,7 +863,6 @@ class FileStorageClient(object):
 
     def delete_snapshot(self, snapshot_id, **kwargs):
         """
-        DeleteSnapshot
         Deletes the specified snapshot.
 
 
@@ -953,7 +943,6 @@ class FileStorageClient(object):
 
     def get_export(self, export_id, **kwargs):
         """
-        GetExport
         Gets the specified export's information.
 
 
@@ -1027,7 +1016,6 @@ class FileStorageClient(object):
 
     def get_export_set(self, export_set_id, **kwargs):
         """
-        GetExportSet
         Gets the specified export set's information.
 
 
@@ -1101,7 +1089,6 @@ class FileStorageClient(object):
 
     def get_file_system(self, file_system_id, **kwargs):
         """
-        GetFileSystem
         Gets the specified file system's information.
 
 
@@ -1175,7 +1162,6 @@ class FileStorageClient(object):
 
     def get_mount_target(self, mount_target_id, **kwargs):
         """
-        GetMountTarget
         Gets the specified mount target's information.
 
 
@@ -1249,7 +1235,6 @@ class FileStorageClient(object):
 
     def get_snapshot(self, snapshot_id, **kwargs):
         """
-        GetSnapshot
         Gets the specified snapshot's information.
 
 
@@ -1323,7 +1308,6 @@ class FileStorageClient(object):
 
     def list_export_sets(self, compartment_id, availability_domain, **kwargs):
         """
-        ListExportSets
         Lists the export set resources in the specified compartment.
 
 
@@ -1484,7 +1468,6 @@ class FileStorageClient(object):
 
     def list_exports(self, **kwargs):
         """
-        ListExports
         Lists export resources by compartment, file system, or export
         set. You must specify an export set ID, a file system ID, and
         / or a compartment ID.
@@ -1645,7 +1628,6 @@ class FileStorageClient(object):
 
     def list_file_systems(self, compartment_id, availability_domain, **kwargs):
         """
-        ListFileSystems
         Lists the file system resources in the specified compartment.
 
 
@@ -1806,7 +1788,6 @@ class FileStorageClient(object):
 
     def list_mount_targets(self, compartment_id, availability_domain, **kwargs):
         """
-        ListMountTargets
         Lists the mount target resources in the specified compartment.
 
 
@@ -1972,7 +1953,6 @@ class FileStorageClient(object):
 
     def list_snapshots(self, file_system_id, **kwargs):
         """
-        ListSnapshots
         Lists snapshots of the specified file system.
 
 
@@ -2103,7 +2083,6 @@ class FileStorageClient(object):
 
     def update_export(self, export_id, update_export_details, **kwargs):
         """
-        UpdateExport
         Updates the specified export's information.
 
 
@@ -2191,7 +2170,6 @@ class FileStorageClient(object):
 
     def update_export_set(self, export_set_id, update_export_set_details, **kwargs):
         """
-        UpdateExportSet
         Updates the specified export set's information.
 
 
@@ -2279,7 +2257,6 @@ class FileStorageClient(object):
 
     def update_file_system(self, file_system_id, update_file_system_details, **kwargs):
         """
-        UpdateFileSystem
         Updates the specified file system's information.
         You can use this operation to rename a file system.
 
@@ -2368,7 +2345,6 @@ class FileStorageClient(object):
 
     def update_mount_target(self, mount_target_id, update_mount_target_details, **kwargs):
         """
-        UpdateMountTarget
         Updates the specified mount target's information.
 
 
@@ -2456,7 +2432,6 @@ class FileStorageClient(object):
 
     def update_snapshot(self, snapshot_id, update_snapshot_details, **kwargs):
         """
-        UpdateSnapshot
         Updates the specified snapshot's information.
 
 

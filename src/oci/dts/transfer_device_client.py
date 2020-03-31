@@ -83,7 +83,6 @@ class TransferDeviceClient(object):
     def create_transfer_device(self, id, create_transfer_device_details, **kwargs):
         """
         Create a new Transfer Device
-        Create a new Transfer Device
 
 
         :param str id: (required)
@@ -162,7 +161,6 @@ class TransferDeviceClient(object):
     def delete_transfer_device(self, id, transfer_device_label, **kwargs):
         """
         deletes a transfer Device
-        deletes a transfer Device
 
 
         :param str id: (required)
@@ -227,7 +225,6 @@ class TransferDeviceClient(object):
 
     def get_transfer_device(self, id, transfer_device_label, **kwargs):
         """
-        Describes a transfer Device in detail
         Describes a transfer package in detail
 
 
@@ -295,7 +292,6 @@ class TransferDeviceClient(object):
 
     def list_transfer_devices(self, id, **kwargs):
         """
-        Lists Transfer Devices associated with a transferJob
         Lists Transfer Devices associated with a transferJob
 
 
@@ -387,7 +383,6 @@ class TransferDeviceClient(object):
 
     def update_transfer_device(self, id, transfer_device_label, update_transfer_device_details, **kwargs):
         """
-        Updates a Transfer Device
         Updates a Transfer Device
 
 

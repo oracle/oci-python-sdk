@@ -108,7 +108,10 @@ class CreateMultipartUploadDetails(object):
     def content_type(self):
         """
         Gets the content_type of this CreateMultipartUploadDetails.
-        The content type of the object to upload.
+        The optional Content-Type header that defines the standard MIME type format of the object to upload.
+        Specifying values for this header has no effect on Object Storage behavior. Programs that read the object
+        determine what to do based on the value provided. For example, you could use this header to identify and
+        perform special operations on text only objects.
 
 
         :return: The content_type of this CreateMultipartUploadDetails.
@@ -120,7 +123,10 @@ class CreateMultipartUploadDetails(object):
     def content_type(self, content_type):
         """
         Sets the content_type of this CreateMultipartUploadDetails.
-        The content type of the object to upload.
+        The optional Content-Type header that defines the standard MIME type format of the object to upload.
+        Specifying values for this header has no effect on Object Storage behavior. Programs that read the object
+        determine what to do based on the value provided. For example, you could use this header to identify and
+        perform special operations on text only objects.
 
 
         :param content_type: The content_type of this CreateMultipartUploadDetails.
@@ -132,7 +138,10 @@ class CreateMultipartUploadDetails(object):
     def content_language(self):
         """
         Gets the content_language of this CreateMultipartUploadDetails.
-        The content language of the object to upload.
+        The optional Content-Language header that defines the content language of the object to upload. Specifying
+        values for this header has no effect on Object Storage behavior. Programs that read the object determine what
+        to do based on the value provided. For example, you could use this header to identify and differentiate objects
+        based on a particular language.
 
 
         :return: The content_language of this CreateMultipartUploadDetails.
@@ -144,7 +153,10 @@ class CreateMultipartUploadDetails(object):
     def content_language(self, content_language):
         """
         Sets the content_language of this CreateMultipartUploadDetails.
-        The content language of the object to upload.
+        The optional Content-Language header that defines the content language of the object to upload. Specifying
+        values for this header has no effect on Object Storage behavior. Programs that read the object determine what
+        to do based on the value provided. For example, you could use this header to identify and differentiate objects
+        based on a particular language.
 
 
         :param content_language: The content_language of this CreateMultipartUploadDetails.
@@ -156,7 +168,11 @@ class CreateMultipartUploadDetails(object):
     def content_encoding(self):
         """
         Gets the content_encoding of this CreateMultipartUploadDetails.
-        The content encoding of the object to upload.
+        The optional Content-Encoding header that defines the content encodings that were applied to the object to
+        upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the
+        object determine what to do based on the value provided. For example, you could use this header to determine
+        what decoding mechanisms need to be applied to obtain the media-type specified by the Content-Type header of
+        the object.
 
 
         :return: The content_encoding of this CreateMultipartUploadDetails.
@@ -168,7 +184,11 @@ class CreateMultipartUploadDetails(object):
     def content_encoding(self, content_encoding):
         """
         Sets the content_encoding of this CreateMultipartUploadDetails.
-        The content encoding of the object to upload.
+        The optional Content-Encoding header that defines the content encodings that were applied to the object to
+        upload. Specifying values for this header has no effect on Object Storage behavior. Programs that read the
+        object determine what to do based on the value provided. For example, you could use this header to determine
+        what decoding mechanisms need to be applied to obtain the media-type specified by the Content-Type header of
+        the object.
 
 
         :param content_encoding: The content_encoding of this CreateMultipartUploadDetails.
@@ -180,7 +200,10 @@ class CreateMultipartUploadDetails(object):
     def content_disposition(self):
         """
         Gets the content_disposition of this CreateMultipartUploadDetails.
-        The Content-Disposition header value to be returned in GetObjectReponse.
+        The optional Content-Disposition header that defines presentational information for the object to be
+        returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object
+        Storage behavior. Programs that read the object determine what to do based on the value provided.
+        For example, you could use this header to let users download objects with custom filenames in a browser.
 
 
         :return: The content_disposition of this CreateMultipartUploadDetails.
@@ -192,7 +215,10 @@ class CreateMultipartUploadDetails(object):
     def content_disposition(self, content_disposition):
         """
         Sets the content_disposition of this CreateMultipartUploadDetails.
-        The Content-Disposition header value to be returned in GetObjectReponse.
+        The optional Content-Disposition header that defines presentational information for the object to be
+        returned in GetObject and HeadObject responses. Specifying values for this header has no effect on Object
+        Storage behavior. Programs that read the object determine what to do based on the value provided.
+        For example, you could use this header to let users download objects with custom filenames in a browser.
 
 
         :param content_disposition: The content_disposition of this CreateMultipartUploadDetails.
@@ -204,7 +230,10 @@ class CreateMultipartUploadDetails(object):
     def cache_control(self):
         """
         Gets the cache_control of this CreateMultipartUploadDetails.
-        The cache-control header value to be returned in GetObjectReponse.
+        The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and
+        HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs
+        that read the object determine what to do based on the value provided.
+        For example, you could use this header to identify objects that require caching restrictions.
 
 
         :return: The cache_control of this CreateMultipartUploadDetails.
@@ -216,7 +245,10 @@ class CreateMultipartUploadDetails(object):
     def cache_control(self, cache_control):
         """
         Sets the cache_control of this CreateMultipartUploadDetails.
-        The cache-control header value to be returned in GetObjectReponse.
+        The optional Cache-Control header that defines the caching behavior value to be returned in GetObject and
+        HeadObject responses. Specifying values for this header has no effect on Object Storage behavior. Programs
+        that read the object determine what to do based on the value provided.
+        For example, you could use this header to identify objects that require caching restrictions.
 
 
         :param cache_control: The cache_control of this CreateMultipartUploadDetails.

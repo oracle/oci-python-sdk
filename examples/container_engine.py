@@ -169,7 +169,7 @@ def create_node_pool(ce_client, ads, cluster_id, subnet):
                                                                                  name="PythonSDK_nodepool1",
                                                                                  kubernetes_version=get_kubernetes_version(ce_client),
                                                                                  node_image_name="Oracle-Linux-7.4",
-                                                                                 node_shape="VM.Standard1.1",
+                                                                                 node_shape="VM.Standard2.1",
                                                                                  initial_node_labels=[{"nodes": "Example Nodes"}],
                                                                                  node_config_details=create_node_pool_node_config_details)
 

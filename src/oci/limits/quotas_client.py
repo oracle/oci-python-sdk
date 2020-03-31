@@ -82,7 +82,6 @@ class QuotasClient(object):
 
     def create_quota(self, create_quota_details, **kwargs):
         """
-        Creates quota
         Creates a new quota with the details supplied.
 
 
@@ -157,7 +156,6 @@ class QuotasClient(object):
 
     def delete_quota(self, quota_id, **kwargs):
         """
-        Deletes quota
         Deletes the quota corresponding to the given OCID.
 
 
@@ -236,7 +234,6 @@ class QuotasClient(object):
 
     def get_quota(self, quota_id, **kwargs):
         """
-        Gets quota
         Gets the quota for the OCID specified.
 
 
@@ -310,7 +307,6 @@ class QuotasClient(object):
 
     def list_quotas(self, compartment_id, **kwargs):
         """
-        Lists quotas
         Lists all quotas on resources from the given compartment
 
 
@@ -436,7 +432,6 @@ class QuotasClient(object):
 
     def update_quota(self, quota_id, update_quota_details, **kwargs):
         """
-        Updates quota
         Updates the quota corresponding to given OCID with the details supplied.
 
 

@@ -7,7 +7,7 @@
 #   * Create a VCN, subnet and internet gateway. This will enable the instance to connect to the public internet.
 #     If this is not desired then the internet gateway (and associated route rule) don't need to be created.
 #   * Launch an instance. Certain assumptions are made about launching the instance
-#       - The instance launched will have a shape of VM.Standard1.1
+#       - The instance launched will have a shape of VM.Standard2.1
 #       - The instance launched will use an Oracle Linux 7.5 image
 #
 # Resources created by the script will be removed when the script is done.
@@ -223,7 +223,7 @@ try:
     subnet = create_subnet(virtual_network_client, vcn, availability_domain)
     internet_gateway = create_internet_gateway(virtual_network_client, vcn)
 
-    image = get_image(compute_client, 'Oracle Linux', '7.5', 'VM.Standard1.1')
+    image = get_image(compute_client, 'Oracle Linux', '7.5', 'VM.Standard2.1')
 
     with open(ssh_public_key_path, mode='r') as file:
         ssh_key = file.read()
@@ -257,7 +257,7 @@ try:
         display_name=instance_display_name,
         compartment_id=compartment_id,
         availability_domain=availability_domain,
-        shape='VM.Standard1.1',
+        shape='VM.Standard2.1',
         metadata=instance_metadata,
         extended_metadata=instance_extended_metadata,
         is_pv_encryption_in_transit_enabled=True,

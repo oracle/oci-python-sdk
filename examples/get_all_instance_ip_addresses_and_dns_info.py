@@ -39,7 +39,7 @@ def load_reserved_public_ips_for_all_compartments(virtual_network_client, identi
         identity_client.list_compartments,
         config['tenancy']
     ).data
-    compartment_ids = [c.id for c in compartments]
+    compartment_ids = [c.id for c in filter(lambda c: c.lifecycle_state == 'ACTIVE', compartments)]
     if config['tenancy'] not in compartment_ids:
         compartment_ids.append(config['tenancy'])
 

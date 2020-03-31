@@ -163,7 +163,9 @@ class BucketSummary(object):
     def created_by(self):
         """
         **[Required]** Gets the created_by of this BucketSummary.
-        The OCID of the user who created the bucket.
+        The `OCID`__ of the user who created the bucket.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The created_by of this BucketSummary.
@@ -175,7 +177,9 @@ class BucketSummary(object):
     def created_by(self, created_by):
         """
         Sets the created_by of this BucketSummary.
-        The OCID of the user who created the bucket.
+        The `OCID`__ of the user who created the bucket.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param created_by: The created_by of this BucketSummary.
@@ -187,9 +191,9 @@ class BucketSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this BucketSummary.
-        The date and time the bucket was created, as described in `RFC 2616`__, section 14.29.
+        The date and time the bucket was created, as described in `RFC 2616`__.
 
-        __ https://tools.ietf.org/rfc/rfc2616
+        __ https://tools.ietf.org/html/rfc2616#section-14.29
 
 
         :return: The time_created of this BucketSummary.
@@ -201,9 +205,9 @@ class BucketSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this BucketSummary.
-        The date and time the bucket was created, as described in `RFC 2616`__, section 14.29.
+        The date and time the bucket was created, as described in `RFC 2616`__.
 
-        __ https://tools.ietf.org/rfc/rfc2616
+        __ https://tools.ietf.org/html/rfc2616#section-14.29
 
 
         :param time_created: The time_created of this BucketSummary.

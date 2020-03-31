@@ -86,35 +86,25 @@ def delete_vcn_drg_and_drg_attachment(virtual_network_client, vcn_drg_and_drg_at
     vcn = vcn_drg_and_drg_attachment['vcn']
     drg = vcn_drg_and_drg_attachment['drg']
     drg_attachment = vcn_drg_and_drg_attachment['drg_attachment']
+    composite_virtual_network_client = oci.core.VirtualNetworkClientCompositeOperations(
+        virtual_network_client)
 
     print('Deleting DRG Attachment')
-    virtual_network_client.delete_drg_attachment(drg_attachment.id)
-    oci.wait_until(
-        virtual_network_client,
-        virtual_network_client.get_drg_attachment(drg_attachment.id),
-        'lifecycle_state',
-        'DETACHED',
-        succeed_on_not_found=True
+    composite_virtual_network_client.delete_drg_attachment_and_wait_for_state(
+        drg_attachment.id,
+        oci.core.models.DrgAttachment.LIFECYCLE_STATE_DETACHED
     )
 
     print('Deleting DRG')
-    virtual_network_client.delete_drg(drg.id)
-    oci.wait_until(
-        virtual_network_client,
-        virtual_network_client.get_drg(drg.id),
-        'lifecycle_state',
-        'TERMINATED',
-        succeed_on_not_found=True
+    composite_virtual_network_client.delete_drg_and_wait_for_state(
+        drg.id,
+        oci.core.models.Drg.LIFECYCLE_STATE_TERMINATED
     )
 
     print('Deleting VCN')
-    virtual_network_client.delete_vcn(vcn.id)
-    oci.wait_until(
-        virtual_network_client,
-        virtual_network_client.get_vcn(vcn.id),
-        'lifecycle_state',
-        'TERMINATED',
-        succeed_on_not_found=True
+    composite_virtual_network_client.delete_vcn_and_wait_for_state(
+        vcn.id,
+        oci.core.models.Vcn.LIFECYCLE_STATE_TERMINATED
     )
 
 
