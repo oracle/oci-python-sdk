@@ -64,7 +64,7 @@ if [[ $TEST_ENABLE = "false" ]]; then
   tox -e flake8
 else
   echo "Tests enabled"
-  tox -e flake8,py36 -- \
+  tox -e flake8,py27,py35 -- \
       --vcr-record-mode=none \
       --cov-config .pr_coveragerc \
       --cov=oci \
