@@ -5,7 +5,7 @@ Executing using Cloud Shell:
 .. code-block::
 
     1. Create virtual env of python
-       python -m venv python_venv
+       python3 -m venv python_venv
        source python_venv/bin/activate
 
     2. install oci sdk package

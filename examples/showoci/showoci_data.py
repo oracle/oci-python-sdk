@@ -2652,6 +2652,11 @@ class ShowOCIData(object):
             if oda:
                 data_ai['oda'] = oda
 
+            # bds
+            bds = self.service.search_multi_items(self.service.C_DATA_AI, self.service.C_DATA_AI_BDS, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if bds:
+                data_ai['bds'] = bds
+
             # data science
             ds = self.service.search_multi_items(self.service.C_DATA_AI, self.service.C_DATA_AI_SCIENCE, 'region_name', region_name, 'compartment_id', compartment['id'])
             if ds:

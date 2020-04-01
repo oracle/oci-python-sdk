@@ -1213,15 +1213,12 @@ class ShowOCIOutput(object):
             self.print_header("Limits > 0", 2)
 
             for ct in limits:
-                print(
-                    self.taba + str(ct['name'] + " ").ljust(20) +
-                    ct['limit_name'].ljust(37) +
-                    " = " + ct['value'].ljust(10) +
-                    " Used = " + ct['used'].ljust(10) + " " +
-                    " Available = " + ct['available'].ljust(10) + " " +
-                    " SCOPE=" + ct['scope_type'].ljust(7) +
-                    ct['availability_domain']
-                )
+                limit_name = ct['limit_name'].ljust(37)
+                value = " = " + ct['value'].ljust(10)[0:10]
+                used = (" Used = " + ct['used'].ljust(10)[0:10] + " ") if ct['used'] != "" else str(" ").ljust(19)
+                available = (" Available = " + ct['available'].ljust(10)[0:10] + " ") if ct['available'] != "" else str(" ").ljust(24)
+                scope = " SCOPE=" + ct['scope_type'].ljust(8) + ct['availability_domain']
+                print(self.taba + str(ct['name'] + " ").ljust(20) + limit_name + value + used + available + scope)
 
             print("")
 
@@ -1330,6 +1327,14 @@ class ShowOCIOutput(object):
                 self.print_header("ODA Native", 2)
                 for val in data_ai['oda']:
                     print(self.taba + val['display_name'] + ", (" + val['shape_name'] + "), Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + " - " + val['lifecycle_sub_state'] + ")")
+                print("")
+
+            # BDS
+            if 'bds' in data_ai:
+                self.print_header("Big Data Service", 2)
+                for val in data_ai['bds']:
+                    print(self.taba + val['display_name'] + ", (" + val['cluster_version'] + "), Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'])
+                    print(self.tabs + "Nodes: " + val['number_of_nodes'] + ", is_high_availability: " + val['is_high_availability'] + ", is_secure: " + val['is_secure'] + ", is_cloud_sql_configured: " + val['is_cloud_sql_configured'])
                 print("")
 
         except Exception as e:
@@ -1848,6 +1853,8 @@ class ShowOCISummary(object):
                 self.__summary_core_size(data_ai['data_flow'])
             if 'oda' in data_ai:
                 self.__summary_core_size(data_ai['oda'])
+            if 'bds' in data_ai:
+                self.__summary_core_size(data_ai['bds'])
 
         except Exception as e:
             self.__print_error("__summary_data_ai_main", e)

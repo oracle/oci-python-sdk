@@ -59,10 +59,13 @@
 # - oci.nosql.NosqlClient
 # - oci.dns.DnsClient
 # - oci.events.EventsClient
+# - oci.bds.BdsClient
 #
 # Modules Not Yet Covered:
 # - oci.waas.WaasClient
-#
+# - oci.secrets.SecretsClient
+# - oci.vault.VaultsClient
+# - oci.work_requests.WorkRequestClient
 ##########################################################################
 from __future__ import print_function
 from showoci_data import ShowOCIData
@@ -73,7 +76,7 @@ import sys
 import argparse
 import datetime
 
-version = "20.3.31"
+version = "20.04.07"
 
 ##########################################################################
 # execute_extract
@@ -247,7 +250,7 @@ def set_parser_arguments():
     parser.add_argument('-n', action='store_true', default=False, dest='network', help='Print Network')
     parser.add_argument('-o', action='store_true', default=False, dest='object', help='Print Object Storage')
     parser.add_argument('-paas', action='store_true', default=False, dest='paas_native', help='Print PaaS Platform Services - OIC OAC OCE')
-    parser.add_argument('-dataai', action='store_true', default=False, dest='data_ai', help='Print Data AI - D.Science, D.Catalog, D.Flow, ODA')
+    parser.add_argument('-dataai', action='store_true', default=False, dest='data_ai', help='Print Data AI - D.Science, D.Catalog, D.Flow, ODA and BDS')
     parser.add_argument('-rm', action='store_true', default=False, dest='orm', help='Print Resource management')
     parser.add_argument('-s', action='store_true', default=False, dest='streams', help='Print Streams')
 
