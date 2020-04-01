@@ -1214,12 +1214,13 @@ class ShowOCIOutput(object):
 
             for ct in limits:
                 limit_name = ct['limit_name'].ljust(37)
-                value = " = " + ct['value'].ljust(10)[0:10]
-                used = (" Used = " + ct['used'].ljust(10)[0:10] + " ") if ct['used'] != "" else str(" ").ljust(19)
-                available = (" Available = " + ct['available'].ljust(10)[0:10] + " ") if ct['available'] != "" else str(" ").ljust(24)
+                value = " = " + ct['value'].ljust(16)[0:16]
+                used = (" Used = " + ct['used'].ljust(16)[0:16] + " ") if ct['used'] != "" else str(" ").ljust(25)
+                available = (" Available = " + ct['available'].ljust(16)[0:16] + " ") if ct['available'] != "" else str(" ").ljust(30)
                 scope = " SCOPE=" + ct['scope_type'].ljust(8) + ct['availability_domain']
                 print(self.taba + str(ct['name'] + " ").ljust(20) + limit_name + value + used + available + scope)
 
+            print("* numbers trimmed to 16 digits, if you need full value, please use json output")
             print("")
 
         except Exception as e:
@@ -1744,7 +1745,7 @@ class ShowOCISummary(object):
                     if d['type'] == "region":
                         self.__summary_region_data(d['region'], d['data'])
 
-            self.__summary_print_results(self.summary_global_total, "Summary Total", 0)
+            self.__summary_print_total(self.summary_global_total, "Summary Total", 0)
 
         except Exception as e:
             self.__print_error("print_summary", e)
@@ -2077,6 +2078,26 @@ class ShowOCISummary(object):
                 return return_val
         except Exception as e:
             self.__print_error("__summary_print_results", e)
+
+    ##########################################################################
+    # Print total data
+    ##########################################################################
+    def __summary_print_total(self, data, header, header_size):
+
+        try:
+
+            if len(data) > 0:
+                self.__summary_print_header(header, header_size)
+
+                grouped_data = self.__summary_group_by("type", data)
+                self.summary_global_total = grouped_data
+
+                # sort and print
+                for d in sorted(grouped_data, key=lambda i: i['type']):
+                    print(d['type'].ljust(46)[0:45] + " - " + str(round(d['size'])).rjust(10))
+
+        except Exception as e:
+            self.__print_error("__summary_print_total", e)
 
     ##########################################################################
     # Print summary Identity data
