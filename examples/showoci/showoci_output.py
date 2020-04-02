@@ -103,6 +103,10 @@ class ShowOCIOutput(object):
             self.print_header(data['program'], 1)
             if data['use_instance_principals']:
                 print("Authentication : Instance Principals")
+            elif data['use_delegation_token']:
+                print("Authentication : Instance Principals With Delegation Token")
+                print("Config File    : " + data['config_file'])
+                print("Config Profile : " + data['config_profile'])
             else:
                 print("Authentication : Config File")
                 print("Config File    : " + data['config_file'])
@@ -2162,6 +2166,7 @@ class ShowOCICSV(object):
     # class variables
     ############################################
     csv_file_header = ""
+    csv_identity_compartments = []
     csv_identity_groups = []
     csv_identity_users = []
     csv_identity_policies = []
@@ -2207,9 +2212,10 @@ class ShowOCICSV(object):
 
             # generate CSV files from each file
             self.__print_header("Processing CSV Files", 0)
+            self.__export_to_csv_file("identity_compartments", self.csv_identity_compartments)
+            self.__export_to_csv_file("identity_users", self.csv_identity_users)
             self.__export_to_csv_file("identity_policy", self.csv_identity_policies)
             self.__export_to_csv_file("identity_groups", self.csv_identity_groups)
-            self.__export_to_csv_file("identity_users", self.csv_identity_users)
             self.__export_to_csv_file("compute", self.csv_compute)
             self.__export_to_csv_file("network_subnet", self.csv_network_subnet)
             self.__export_to_csv_file("network_routes", self.csv_network_routes)
@@ -2342,6 +2348,25 @@ class ShowOCICSV(object):
             self.__print_error("__csv_identity_users", e)
 
     ##########################################################################
+    # CSV Identity Compartments
+    ##########################################################################
+
+    def __csv_identity_compartments(self, compartments):
+        try:
+            for compartment in compartments:
+                data = {
+                    'id': compartment['id'],
+                    'name': compartment['name'],
+                    'description': compartment['description'],
+                    'time_created': compartment['time_created'],
+                    'path': compartment['path']
+                }
+                self.csv_identity_compartments.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_identity_compartments", e)
+
+    ##########################################################################
     # csv Identity Policies
     ##########################################################################
     def __csv_identity_policies(self, policies_data):
@@ -2371,6 +2396,9 @@ class ShowOCICSV(object):
     ##########################################################################
     def __csv_identity_main(self, data):
         try:
+            if 'compartments' in data:
+                self.__csv_identity_compartments(data['compartments'])
+
             if 'users' in data:
                 self.__csv_identity_users(data['users'])
 

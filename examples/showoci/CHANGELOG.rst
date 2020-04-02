@@ -10,6 +10,8 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 * Added support for big data service with the -dataai flag
 * Fixed limits printout when usage or available was 0 and remove if no usage or available
 * Fixed security list dest port range values
+* Added CSV Compartment
+* Added delegation token for cloud shell with -dt (thanks to Leo)
 
 =====================
 20.03.31 - 2020-03-31

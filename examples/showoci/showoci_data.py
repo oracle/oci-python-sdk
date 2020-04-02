@@ -117,6 +117,7 @@ class ShowOCIData(object):
             'config_file': self.service.flags.config_file,
             'config_profile': self.service.flags.config_section,
             'use_instance_principals': self.service.flags.use_instance_principals,
+            'use_delegation_token': self.service.flags.use_delegation_token,
             'version': self.service.flags.showoci_version,
             'override_tenant_id': self.service.flags.filter_by_tenancy_id,
             'datetime': start_time,

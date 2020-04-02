@@ -21,6 +21,7 @@
 from __future__ import print_function
 import oci
 import time
+import os
 
 
 ##########################################################################
@@ -68,6 +69,7 @@ class ShowOCIFlags(object):
     config_file = oci.config.DEFAULT_LOCATION
     config_section = oci.config.DEFAULT_PROFILE
     use_instance_principals = False
+    use_delegation_token = False
 
     # flag if to run on compartment
     run_on_compartments = False
@@ -374,6 +376,12 @@ class ShowOCIService(object):
         # if intance pricipals - generate signer from token or config
         if flags.use_instance_principals:
             self.generate_signer_from_instance_principals()
+
+        # if delegation toekn for cloud shell
+        elif flags.use_delegation_token:
+            self.generate_signer_from_delegation_token()
+
+        # else use config file
         else:
             self.generate_signer_from_config(flags.config_file, flags.config_section)
 
@@ -420,6 +428,54 @@ class ShowOCIService(object):
 
         # generate config info from signer
         self.config = {'region': self.signer.region, 'tenancy': self.signer.tenancy_id}
+
+    ##########################################################################
+    # Generate Signer from delegation_token
+    # use host variable to point to the OCI Config file and profile
+    ###########################################################################
+    def generate_signer_from_delegation_token(self):
+
+        # check if env variables OCI_CONFIG_FILE, OCI_CONFIG_PROFILE exist and use them
+        env_config_file = os.environ.get('OCI_CONFIG_FILE')
+        env_config_section = os.environ.get('OCI_CONFIG_PROFILE')
+
+        # check if file exist
+        if env_config_file is not None and env_config_section is not None:
+            if os.path.isfile(env_config_file):
+                self.flags.config_file = env_config_file
+                self.flags.config_section = env_config_section
+
+        try:
+            self.config = oci.config.from_file(self.flags.config_file, self.flags.config_section)
+            delegation_token_location = self.config["delegation_token_file"]
+
+            with open(delegation_token_location, 'r') as delegation_token_file:
+                delegation_token = delegation_token_file.read().strip()
+                # get signer from delegation token
+                self.signer = oci.auth.signers.InstancePrincipalsDelegationTokenSigner(delegation_token=delegation_token)
+
+        except KeyError:
+            print("*********************************************************************")
+            print("* Key Error obtaining delegation_token_file")
+            print("* Config  File = " + self.flags.config_file)
+            print("* Section File = " + self.flags.config_section)
+            print("* Aborting.                                                          *")
+            print("*********************************************************************")
+            print("")
+            raise SystemExit
+
+        except Exception:
+            print("*********************************************************************")
+            print("* Error obtaining instance principals certificate                   *")
+            print("* with delegation token                                             *")
+            print("* Aborting.                                                          *")
+            print("*********************************************************************")
+            print("")
+            raise SystemExit
+
+        # generate config info from signer
+        tenancy_id = self.config["tenancy"]
+        self.config = {'region': self.signer.region, 'tenancy': tenancy_id}
 
     ##########################################################################
     # load_data
@@ -916,6 +972,14 @@ class ShowOCIService(object):
 
         except oci.exceptions.RequestException:
             raise
+        except oci.exceptions.ServiceError as e:
+            print("\n*********************************************************************")
+            print("* Error Authenticating in __load_identity_tenancy:")
+            print("* " + str(e.message))
+            print("* Aborting.                                                          *")
+            print("*********************************************************************")
+            print("")
+            raise SystemExit
         except Exception as e:
             raise Exception("Error in __load_identity_tenancy: " + str(e.args))
 
@@ -960,7 +1024,16 @@ class ShowOCIService(object):
 
                     for c in compartment_list:
                         if c.lifecycle_state == oci.identity.models.Compartment.LIFECYCLE_STATE_ACTIVE:
-                            cvalue = {'id': str(c.id), 'name': str(c.name), 'path': path + str(c.name)}
+                            cvalue = {
+                                'id': str(c.id),
+                                'name': str(c.name),
+                                'description': str(c.description),
+                                'time_created': str(c.time_created),
+                                'is_accessible': str(c.is_accessible),
+                                'path': path + str(c.name),
+                                'defined_tags': [] if c.defined_tags is None else c.defined_tags,
+                                'freeform_tags': [] if c.freeform_tags is None else c.freeform_tags
+                            }
                             compartments.append(cvalue)
                             build_compartments_nested(identity_client, c.id, cvalue['path'])
 
@@ -971,8 +1044,22 @@ class ShowOCIService(object):
             # Add root compartment
             ###################################################
             if self.flags.read_root_compartment:
-                value = {'id': tenancy['id'], 'name': tenancy['name'] + " (root)", 'path': "/ " + tenancy['name'] + " (root)"}
-                compartments.append(value)
+                try:
+                    tenc = identity.get_compartment(tenancy['id']).data
+                    if tenc:
+                        cvalue = {
+                            'id': str(tenc.id),
+                            'name': str(tenc.name),
+                            'description': str(tenc.description),
+                            'time_created': str(tenc.time_created),
+                            'is_accessible': str(tenc.is_accessible),
+                            'path': "/ " + str(tenc.name) + " (root)",
+                            'defined_tags': [] if tenc.defined_tags is None else tenc.defined_tags,
+                            'freeform_tags': [] if tenc.freeform_tags is None else tenc.freeform_tags
+                        }
+                        compartments.append(cvalue)
+                except Exception as error:
+                    raise Exception("Error in add_tenant_compartment: " + str(error.args))
 
             # Build the compartments
             build_compartments_nested(identity, tenancy['id'], "")
