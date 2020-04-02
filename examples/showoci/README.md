@@ -61,7 +61,7 @@ Output can be printer friendly, CSV files or JSON file.
 3. clone the oci sdk repo
    git clone https://github.com/oracle/oci-python-sdk
 
-5. run showoci with delegation token
+4. run showoci with delegation token
    cd oci-python-sdk/examples/showoci
    python showoci.py -dt -ani
 ```
