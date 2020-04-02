@@ -29,6 +29,14 @@ class CreateStreamPoolDetails(object):
             The value to assign to the kafka_settings property of this CreateStreamPoolDetails.
         :type kafka_settings: KafkaSettings
 
+        :param custom_encryption_key_details:
+            The value to assign to the custom_encryption_key_details property of this CreateStreamPoolDetails.
+        :type custom_encryption_key_details: CustomEncryptionKeyDetails
+
+        :param private_endpoint_details:
+            The value to assign to the private_endpoint_details property of this CreateStreamPoolDetails.
+        :type private_endpoint_details: PrivateEndpointDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateStreamPoolDetails.
         :type freeform_tags: dict(str, str)
@@ -42,6 +50,8 @@ class CreateStreamPoolDetails(object):
             'compartment_id': 'str',
             'name': 'str',
             'kafka_settings': 'KafkaSettings',
+            'custom_encryption_key_details': 'CustomEncryptionKeyDetails',
+            'private_endpoint_details': 'PrivateEndpointDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -50,6 +60,8 @@ class CreateStreamPoolDetails(object):
             'compartment_id': 'compartmentId',
             'name': 'name',
             'kafka_settings': 'kafkaSettings',
+            'custom_encryption_key_details': 'customEncryptionKeyDetails',
+            'private_endpoint_details': 'privateEndpointDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -57,6 +69,8 @@ class CreateStreamPoolDetails(object):
         self._compartment_id = None
         self._name = None
         self._kafka_settings = None
+        self._custom_encryption_key_details = None
+        self._private_endpoint_details = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -131,6 +145,46 @@ class CreateStreamPoolDetails(object):
         :type: KafkaSettings
         """
         self._kafka_settings = kafka_settings
+
+    @property
+    def custom_encryption_key_details(self):
+        """
+        Gets the custom_encryption_key_details of this CreateStreamPoolDetails.
+
+        :return: The custom_encryption_key_details of this CreateStreamPoolDetails.
+        :rtype: CustomEncryptionKeyDetails
+        """
+        return self._custom_encryption_key_details
+
+    @custom_encryption_key_details.setter
+    def custom_encryption_key_details(self, custom_encryption_key_details):
+        """
+        Sets the custom_encryption_key_details of this CreateStreamPoolDetails.
+
+        :param custom_encryption_key_details: The custom_encryption_key_details of this CreateStreamPoolDetails.
+        :type: CustomEncryptionKeyDetails
+        """
+        self._custom_encryption_key_details = custom_encryption_key_details
+
+    @property
+    def private_endpoint_details(self):
+        """
+        Gets the private_endpoint_details of this CreateStreamPoolDetails.
+
+        :return: The private_endpoint_details of this CreateStreamPoolDetails.
+        :rtype: PrivateEndpointDetails
+        """
+        return self._private_endpoint_details
+
+    @private_endpoint_details.setter
+    def private_endpoint_details(self, private_endpoint_details):
+        """
+        Sets the private_endpoint_details of this CreateStreamPoolDetails.
+
+        :param private_endpoint_details: The private_endpoint_details of this CreateStreamPoolDetails.
+        :type: PrivateEndpointDetails
+        """
+        self._private_endpoint_details = private_endpoint_details
 
     @property
     def freeform_tags(self):

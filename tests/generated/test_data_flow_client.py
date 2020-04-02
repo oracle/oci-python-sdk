@@ -33,6 +33,88 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="sss_dev_ww_grp@oracle.com" jiraProject="SSS" opsJiraProject="SSS"
+def test_change_application_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_flow', 'ChangeApplicationCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_flow', util.camelize('data_flow'), 'ChangeApplicationCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_flow', api_name='ChangeApplicationCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
+            response = client.change_application_compartment(
+                application_id=request.pop(util.camelize('applicationId')),
+                change_application_compartment_details=request.pop(util.camelize('ChangeApplicationCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_flow',
+            'ChangeApplicationCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_application_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sss_dev_ww_grp@oracle.com" jiraProject="SSS" opsJiraProject="SSS"
+def test_change_run_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_flow', 'ChangeRunCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_flow', util.camelize('data_flow'), 'ChangeRunCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_flow', api_name='ChangeRunCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_flow.DataFlowClient(config, service_endpoint=service_endpoint)
+            response = client.change_run_compartment(
+                run_id=request.pop(util.camelize('runId')),
+                change_run_compartment_details=request.pop(util.camelize('ChangeRunCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_flow',
+            'ChangeRunCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_run_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sss_dev_ww_grp@oracle.com" jiraProject="SSS" opsJiraProject="SSS"
 def test_create_application(testing_service_client):
     if not testing_service_client.is_api_enabled('data_flow', 'CreateApplication'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

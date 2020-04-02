@@ -6,6 +6,8 @@ from __future__ import absolute_import
 from .application import Application
 from .application_parameter import ApplicationParameter
 from .application_summary import ApplicationSummary
+from .change_application_compartment_details import ChangeApplicationCompartmentDetails
+from .change_run_compartment_details import ChangeRunCompartmentDetails
 from .create_application_details import CreateApplicationDetails
 from .create_run_details import CreateRunDetails
 from .run import Run
@@ -19,6 +21,8 @@ data_flow_type_mapping = {
     "Application": Application,
     "ApplicationParameter": ApplicationParameter,
     "ApplicationSummary": ApplicationSummary,
+    "ChangeApplicationCompartmentDetails": ChangeApplicationCompartmentDetails,
+    "ChangeRunCompartmentDetails": ChangeRunCompartmentDetails,
     "CreateApplicationDetails": CreateApplicationDetails,
     "CreateRunDetails": CreateRunDetails,
     "Run": Run,

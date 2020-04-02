@@ -374,6 +374,7 @@ class Stream(object):
         """
         **[Required]** Gets the messages_endpoint of this Stream.
         The endpoint to use when creating the StreamClient to consume or publish messages in the stream.
+        If the associated stream pool is private, the endpoint is also private and can only be accessed from inside the stream pool's associated subnet.
 
 
         :return: The messages_endpoint of this Stream.
@@ -386,6 +387,7 @@ class Stream(object):
         """
         Sets the messages_endpoint of this Stream.
         The endpoint to use when creating the StreamClient to consume or publish messages in the stream.
+        If the associated stream pool is private, the endpoint is also private and can only be accessed from inside the stream pool's associated subnet.
 
 
         :param messages_endpoint: The messages_endpoint of this Stream.

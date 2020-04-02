@@ -362,7 +362,7 @@ class Run(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this Run.
-        The OCID of the compartment that contains this application.
+        The OCID of a compartment.
 
 
         :return: The compartment_id of this Run.
@@ -374,7 +374,7 @@ class Run(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Run.
-        The OCID of the compartment that contains this application.
+        The OCID of a compartment.
 
 
         :param compartment_id: The compartment_id of this Run.
