@@ -6,7 +6,7 @@
 
 from ..exceptions import ServiceError, RequestException, ConnectTimeout
 from oci._vendor.requests.exceptions import Timeout
-from oci._vendor.requests.exceptions import ConnectionError
+from oci._vendor.requests.exceptions import ConnectionError as RequestsConnectionError
 
 
 class RetryCheckerContainer(object):
@@ -117,6 +117,7 @@ class TimeoutConnectionAndServiceErrorRetryChecker(BaseRetryChecker):
 
         - Timeouts from the requests library (we will always retry on these)
         - ConnectionErrors from the requests library (we will always retry on these)
+        - Built-in ConnectionErrors from Python 3
         - Service errors where the status is 500 or above (i.e. a server-side error)
         - Service errors where a status (e.g. 429) and, optionally, the code meet a given criteria
 
@@ -152,7 +153,7 @@ class TimeoutConnectionAndServiceErrorRetryChecker(BaseRetryChecker):
     def should_retry(self, exception=None, response=None, **kwargs):
         if isinstance(exception, Timeout):
             return True
-        elif isinstance(exception, ConnectionError):
+        elif isinstance(exception, RequestsConnectionError):
             return True
         elif isinstance(exception, RequestException):
             return True
@@ -167,5 +168,12 @@ class TimeoutConnectionAndServiceErrorRetryChecker(BaseRetryChecker):
                     return exception.code in codes
             elif self.retry_any_5xx and exception.status >= 500:
                 return True
+        else:
+            # This is inside a try block because ConnectionError exists in Python 3 and not in Python 2
+            try:
+                if isinstance(exception, ConnectionError):
+                    return True
+            except NameError:
+                pass
 
         return False
