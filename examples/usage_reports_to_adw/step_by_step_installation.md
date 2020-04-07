@@ -1,6 +1,6 @@
 # Usage2ADW - Oracle Cloud Infrastructure Usage Reports to Autonomous Database with APEX Reporting
 
-## Step by Step installation on OCI VM and Autonomous Data Warehouse Database
+## Step by Step installation Guide on OCI VM and Autonomous Data Warehouse Database
 usage2adw is a tool which uses the Python SDK to extract the usage reports from your tenant and load it to Oracle Autonomous Database.
 
 Oracle Application Express (APEX) will be used for reporting.  
@@ -308,7 +308,7 @@ Oracle Application Express (APEX) will be used for reporting.
 ![](img/screen_3.png)
 
 
-## 18. Bonus - Schedule crontab job to execute the load daily
+## 18. Bonus - Schedule a crontab job to execute the load daily
 ```
     # Amend the database variables of the file run_daily_usage2adw.sh according to your environment:
     $HOME/oci-python-sdk/examples/usage_reports_to_adw/run_daily_usage2adw.sh
