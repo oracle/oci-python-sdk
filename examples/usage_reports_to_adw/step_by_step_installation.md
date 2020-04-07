@@ -39,7 +39,7 @@ Oracle Application Express (APEX) will be used for reporting.
    OCI -> Menu -> Identity -> Dynamic Groups -> Create Dynamic Group
    --> Name = UsageDownloadGroup 
    --> Desc = Dynamic Group for the Usage Report VM
-   --> Rule 1 = ANY { instance.id = 'ocid1.instance.oc1.iad.anuwcljsafha7xxxxxx' }
+   --> Rule 1 = ANY { instance.id = 'OCID_Of_Step_1_Instance' }
 ```
 ![](img/Image_04.png)
 
@@ -55,6 +55,7 @@ Oracle Application Express (APEX) will be used for reporting.
    --> Statement 2 = endorse dynamic-group UsageDownloadGroup to read objects in tenancy usage-report
    --> Statement 3 = Allow dynamic-group UsageDownloadGroup to inspect compartments in tenancy
    --> Statement 4 = Allow dynamic-group UsageDownloadGroup to inspect tenancies in tenancy
+   * usage-report tenancy id is fixed as the bling tenant id.
 ```
 
 ![](img/Image_05.png)
@@ -312,6 +313,9 @@ Download [usage.demo.apex.zip](apex_demo_app/usage.demo.apex.zip) from github "a
 ```
     # Amend the database variables of the file run_daily_usage2adw.sh according to your environment:
     $HOME/oci-python-sdk/examples/usage_reports_to_adw/run_daily_usage2adw.sh
+
+	# change execution permission
+	chmod +x $HOME/oci-python-sdk/examples/usage_reports_to_adw/run_daily_usage2adw.sh
     
     # add crontab that execute every night
     0 0 * * * timeout 6h /home/opc/oci-python-sdk/examples/usage_reports_to_adw/run_daily_usage2adw.sh > /home/opc/oci-python-sdk/examples/usage_reports_to_adw/run_daily_usage2adw_crontab_run.txt 2>&1
