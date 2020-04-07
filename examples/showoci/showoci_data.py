@@ -121,6 +121,8 @@ class ShowOCIData(object):
             'version': self.service.flags.showoci_version,
             'override_tenant_id': self.service.flags.filter_by_tenancy_id,
             'datetime': start_time,
+            'machine': self.service.flags.machine,
+            'python': self.service.flags.python,
             'cmdline': cmdline,
             'oci_sdk_version': self.service.get_oci_version()
         }
@@ -1907,6 +1909,8 @@ class ShowOCIData(object):
                          'time_created': str(dbs['time_created'])[0:16],
                          'connection_strings': str(dbs['connection_strings']),
                          'sum_info': "Autonomous Database " + str(dbs['db_workload']) + " (OCPUs) - " + dbs['license_model'],
+                         'sum_info_stopped': "Stopped Autonomous Database " + str(dbs['db_workload']) + " (Count) - " + dbs['license_model'],
+                         'sum_info_count': "Autonomous Database " + str(dbs['db_workload']) + " (Count) - " + dbs['license_model'],
                          'sum_count': str(dbs['sum_count']),
                          'sum_info_storage': "Autonomous Database (TB)",
                          'sum_size_tb': str(dbs['data_storage_size_in_tbs']), 'backups': self.__get_database_autonomous_backups(dbs['backups']),

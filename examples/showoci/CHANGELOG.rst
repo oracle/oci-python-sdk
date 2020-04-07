@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.04.13 - 2020-04-13
+=====================
+* Added python version check
+* Removed VCN check for compartment in order to extract other components
+* Added Summary Total for Region
+* Fixed Summary Total to include stopped VMs OCPUs in different category
+
+=====================
 20.04.06 - 2020-04-06
 =====================
 * Added support for big data service with the -dataai flag

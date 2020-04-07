@@ -24,6 +24,10 @@ The file name for each usage report is appended with an automatically incrementi
 
 More information can be found at https://docs.cloud.oracle.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm
 
+## Step by Step Installation Guide
+Please check step by step guide - [step_by_step_installation.md](step_by_step_installation.md)
+
+
 ## OCI SDK Modules Included:
 - oci.identity.IdentityClient            
 - oci.object_storage.ObjectStorageClient 
@@ -48,12 +52,11 @@ Please follow Oracle Python SDK Documentation - https://github.com/oracle/oci-py
 1. Login to your OCI Cloud console
 
 2. Create new Dynamic Group : UsageDownloadGroup  
-   Obtain Compute OCID and add rule - any {ALL {instance.id = 'ocid1.instance.oc1.xxxxxxxxxx'}}
+   Obtain Compute OCID and add rule - ALL {instance.id = 'ocid1.instance.oc1.xxxxxxxxxx'}
 
 3. Create new Policy: UsageDownloadPolicy with Statements:
    define tenancy usage-report as ocid1.tenancy.oc1..aaaaaaaaned4fkpkisbwjlr56u7cj63lf3wffbilvqknstgtvzub7vhqkggq
    endorse dynamic-group UsageDownloadGroup to read objects in tenancy usage-report
-   Allow dynamic-group UsageDownloadGroup to read objects in tenancy
    Allow dynamic-group UsageDownloadGroup to inspect compartments in tenancy
    Allow dynamic-group UsageDownloadGroup to inspect tenancies in tenancy
 ```
@@ -84,7 +87,7 @@ Please follow Oracle Python SDK Documentation - https://github.com/oracle/oci-py
 - Test database connectivity using SQLPLUS - sqlplus duser/dpass@dname
 
 ## Copy the Software
-Download the usage2adw.py from this project
+Download the usage2adw.py from this project or clone the github project
 
 Execute  
 

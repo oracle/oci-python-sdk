@@ -354,7 +354,7 @@ try:
                     row['lineItem/intervalUsageStart'][0:10] + " " + row['lineItem/intervalUsageStart'][11:16],
                     row['lineItem/intervalUsageEnd'][0:10] + " " + row['lineItem/intervalUsageEnd'][11:16],
                     row['product/service'],
-                    row['product/service'],
+                    row['product/resource'],
                     row['product/compartmentId'],
                     row['product/compartmentName'],
                     compartment_path,

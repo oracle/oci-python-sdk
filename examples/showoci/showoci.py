@@ -68,21 +68,33 @@
 # - oci.work_requests.WorkRequestClient
 ##########################################################################
 from __future__ import print_function
-from showoci_data import ShowOCIData
-from showoci_output import ShowOCIOutput, ShowOCISummary, ShowOCICSV
-from showoci_service import ShowOCIFlags
+
 import json
 import sys
 import argparse
 import datetime
 
-version = "20.04.07"
+from showoci_data import ShowOCIData
+from showoci_output import ShowOCIOutput, ShowOCISummary, ShowOCICSV
+from showoci_service import ShowOCIFlags
+
+version = "20.04.13"
+
+##########################################################################
+# check OCI version before import showoci classes
+##########################################################################
+if sys.version_info.major < 3:
+    python_version = str(sys.version_info.major) + "." + str(sys.version_info.minor)
+    print("******************************************************")
+    print("***    Showoci only supports Python 3 or Above     ***")
+    print("***             Current Version = " + python_version.ljust(16) + " ***")
+    print("******************************************************")
+    sys.exit()
+
 
 ##########################################################################
 # execute_extract
 ##########################################################################
-
-
 def execute_extract():
 
     # get parset cmd

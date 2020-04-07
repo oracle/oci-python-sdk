@@ -22,6 +22,7 @@ from __future__ import print_function
 import oci
 import time
 import os
+import platform
 
 
 ##########################################################################
@@ -70,6 +71,10 @@ class ShowOCIFlags(object):
     config_section = oci.config.DEFAULT_PROFILE
     use_instance_principals = False
     use_delegation_token = False
+
+    # pyton and host info
+    machine = platform.node() + " (" + platform.machine() + ")"
+    python = platform.python_version()
 
     # flag if to run on compartment
     run_on_compartments = False
@@ -819,7 +824,7 @@ class ShowOCIService(object):
                 self.__load_core_network_main()
 
         # if load compute
-        if self.flags.read_compute and self.is_vcn_exist_for_region:
+        if self.flags.read_compute:
             if self.check_if_service_available(region_name, self.C_COMPUTE):
                 self.__load_core_compute_main()
 
@@ -829,7 +834,7 @@ class ShowOCIService(object):
                 self.__load_database_main()
 
         # load balancers
-        if self.flags.read_load_balancer and self.is_vcn_exist_for_region:
+        if self.flags.read_load_balancer:
             if self.check_if_service_available(region_name, self.C_LB):
                 self.__load_load_balancer_main()
 
@@ -839,12 +844,12 @@ class ShowOCIService(object):
                 self.__load_object_storage_main()
 
         # file storage
-        if self.flags.read_file_storage and self.is_vcn_exist_for_region:
+        if self.flags.read_file_storage:
             if self.check_if_service_available(region_name, self.C_FILE_STORAGE):
                 self.__load_file_storage_main()
 
         # containers
-        if self.flags.read_containers and self.is_vcn_exist_for_region:
+        if self.flags.read_containers:
             if self.check_if_service_available(region_name, self.C_CONTAINER):
                 self.__load_container_main()
 
