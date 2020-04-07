@@ -68,20 +68,19 @@
 # - oci.work_requests.WorkRequestClient
 ##########################################################################
 from __future__ import print_function
+from showoci_data import ShowOCIData
+from showoci_output import ShowOCIOutput, ShowOCISummary, ShowOCICSV
+from showoci_service import ShowOCIFlags
 
 import json
 import sys
 import argparse
 import datetime
 
-from showoci_data import ShowOCIData
-from showoci_output import ShowOCIOutput, ShowOCISummary, ShowOCICSV
-from showoci_service import ShowOCIFlags
-
 version = "20.04.13"
 
 ##########################################################################
-# check OCI version before import showoci classes
+# check OCI version 
 ##########################################################################
 if sys.version_info.major < 3:
     python_version = str(sys.version_info.major) + "." + str(sys.version_info.minor)
