@@ -25,6 +25,10 @@ class UpdateStreamPoolDetails(object):
             The value to assign to the kafka_settings property of this UpdateStreamPoolDetails.
         :type kafka_settings: KafkaSettings
 
+        :param custom_encryption_key_details:
+            The value to assign to the custom_encryption_key_details property of this UpdateStreamPoolDetails.
+        :type custom_encryption_key_details: CustomEncryptionKeyDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateStreamPoolDetails.
         :type freeform_tags: dict(str, str)
@@ -37,6 +41,7 @@ class UpdateStreamPoolDetails(object):
         self.swagger_types = {
             'name': 'str',
             'kafka_settings': 'KafkaSettings',
+            'custom_encryption_key_details': 'CustomEncryptionKeyDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -44,12 +49,14 @@ class UpdateStreamPoolDetails(object):
         self.attribute_map = {
             'name': 'name',
             'kafka_settings': 'kafkaSettings',
+            'custom_encryption_key_details': 'customEncryptionKeyDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._name = None
         self._kafka_settings = None
+        self._custom_encryption_key_details = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -92,6 +99,26 @@ class UpdateStreamPoolDetails(object):
         :type: KafkaSettings
         """
         self._kafka_settings = kafka_settings
+
+    @property
+    def custom_encryption_key_details(self):
+        """
+        Gets the custom_encryption_key_details of this UpdateStreamPoolDetails.
+
+        :return: The custom_encryption_key_details of this UpdateStreamPoolDetails.
+        :rtype: CustomEncryptionKeyDetails
+        """
+        return self._custom_encryption_key_details
+
+    @custom_encryption_key_details.setter
+    def custom_encryption_key_details(self, custom_encryption_key_details):
+        """
+        Sets the custom_encryption_key_details of this UpdateStreamPoolDetails.
+
+        :param custom_encryption_key_details: The custom_encryption_key_details of this UpdateStreamPoolDetails.
+        :type: CustomEncryptionKeyDetails
+        """
+        self._custom_encryption_key_details = custom_encryption_key_details
 
     @property
     def freeform_tags(self):

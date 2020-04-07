@@ -59,10 +59,13 @@
 # - oci.nosql.NosqlClient
 # - oci.dns.DnsClient
 # - oci.events.EventsClient
+# - oci.bds.BdsClient
 #
 # Modules Not Yet Covered:
 # - oci.waas.WaasClient
-#
+# - oci.secrets.SecretsClient
+# - oci.vault.VaultsClient
+# - oci.work_requests.WorkRequestClient
 ##########################################################################
 from __future__ import print_function
 from showoci_data import ShowOCIData
@@ -73,7 +76,7 @@ import sys
 import argparse
 import datetime
 
-version = "20.3.31"
+version = "20.04.07"
 
 ##########################################################################
 # execute_extract
@@ -247,7 +250,7 @@ def set_parser_arguments():
     parser.add_argument('-n', action='store_true', default=False, dest='network', help='Print Network')
     parser.add_argument('-o', action='store_true', default=False, dest='object', help='Print Object Storage')
     parser.add_argument('-paas', action='store_true', default=False, dest='paas_native', help='Print PaaS Platform Services - OIC OAC OCE')
-    parser.add_argument('-dataai', action='store_true', default=False, dest='data_ai', help='Print Data AI - D.Science, D.Catalog, D.Flow, ODA')
+    parser.add_argument('-dataai', action='store_true', default=False, dest='data_ai', help='Print - D.Science, D.Catalog, D.Flow, ODA and BDS')
     parser.add_argument('-rm', action='store_true', default=False, dest='orm', help='Print Resource management')
     parser.add_argument('-s', action='store_true', default=False, dest='streams', help='Print Streams')
 
@@ -255,6 +258,7 @@ def set_parser_arguments():
     parser.add_argument('-mc', action='store_true', default=False, dest='mgdcompart', help='exclude ManagedCompartmentForPaaS')
     parser.add_argument('-nr', action='store_true', default=False, dest='noroot', help='Not include root compartment')
     parser.add_argument('-ip', action='store_true', default=False, dest='instance_principals', help='Use Instance Principals for Authentication')
+    parser.add_argument('-dt', action='store_true', default=False, dest='delegation_token', help='Use Delegation Token (Cloud shell)')
     parser.add_argument('-t', default="", dest='profile', help='Config file section to use (tenancy profile)')
     parser.add_argument('-p', default="", dest='proxy', help='Set Proxy (i.e. www-proxy-server.com:80) ')
     parser.add_argument('-rg', default="", dest='region', help='Filter by Region')
@@ -262,7 +266,7 @@ def set_parser_arguments():
     parser.add_argument('-cpr', default="", dest='compart_recur', help='Filter by Comp Name Recursive')
     parser.add_argument('-cpath', default="", dest='compartpath', help='Filter by Compartment path ,(i.e. -cpath "Adi / Sub"')
     parser.add_argument('-tenantid', default="", dest='tenantid', help='Override confile file tenancy_id')
-    parser.add_argument('-cf', type=argparse.FileType('r'), dest='config', help="Config File")
+    parser.add_argument('-cf', type=argparse.FileType('r'), dest='config', help="Config File (~/.oci/config)")
     parser.add_argument('-csv', default="", dest='csv', help="Output to CSV files, Input as file header")
     parser.add_argument('-jf', type=argparse.FileType('w'), dest='joutfile', help="Output to file   (JSON format)")
     parser.add_argument('-js', action='store_true', default=False, dest='joutscr', help="Output to screen (JSON format)")
@@ -392,6 +396,9 @@ def set_service_extract_flags(cmd):
 
     if cmd.instance_principals:
         prm.use_instance_principals = True
+
+    if cmd.delegation_token:
+        prm.use_delegation_token = True
 
     if cmd.tenantid:
         prm.filter_by_tenancy_id = cmd.tenantid

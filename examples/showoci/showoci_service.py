@@ -21,6 +21,7 @@
 from __future__ import print_function
 import oci
 import time
+import os
 
 
 ##########################################################################
@@ -68,6 +69,7 @@ class ShowOCIFlags(object):
     config_file = oci.config.DEFAULT_LOCATION
     config_section = oci.config.DEFAULT_PROFILE
     use_instance_principals = False
+    use_delegation_token = False
 
     # flag if to run on compartment
     run_on_compartments = False
@@ -119,7 +121,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.10.7"
+    oci_compatible_version = "2.12.2"
 
     ##########################################################################
     # Global Constants
@@ -271,6 +273,7 @@ class ShowOCIService(object):
     C_DATA_AI_CATALOG = "data_catalog"
     C_DATA_AI_FLOW = "data_flow"
     C_DATA_AI_ODA = "oda"
+    C_DATA_AI_BDS = "bds"
 
     # Error flag and reboot migration
     error = 0
@@ -373,6 +376,12 @@ class ShowOCIService(object):
         # if intance pricipals - generate signer from token or config
         if flags.use_instance_principals:
             self.generate_signer_from_instance_principals()
+
+        # if delegation toekn for cloud shell
+        elif flags.use_delegation_token:
+            self.generate_signer_from_delegation_token()
+
+        # else use config file
         else:
             self.generate_signer_from_config(flags.config_file, flags.config_section)
 
@@ -381,16 +390,24 @@ class ShowOCIService(object):
     ###########################################################################
     def generate_signer_from_config(self, config_file, config_section):
 
-        # create signer from config for authentication
-        self.config = oci.config.from_file(config_file, config_section)
-        self.signer = oci.signer.Signer(
-            tenancy=self.config["tenancy"],
-            user=self.config["user"],
-            fingerprint=self.config["fingerprint"],
-            private_key_file_location=self.config.get("key_file"),
-            pass_phrase=oci.config.get_config_value_or_default(self.config, "pass_phrase"),
-            private_key_content=self.config.get("key_content")
-        )
+        try:
+            # create signer from config for authentication
+            self.config = oci.config.from_file(config_file, config_section)
+            self.signer = oci.signer.Signer(
+                tenancy=self.config["tenancy"],
+                user=self.config["user"],
+                fingerprint=self.config["fingerprint"],
+                private_key_file_location=self.config.get("key_file"),
+                pass_phrase=oci.config.get_config_value_or_default(self.config, "pass_phrase"),
+                private_key_content=self.config.get("key_content")
+            )
+        except oci.exceptions.ProfileNotFound as e:
+            print("*********************************************************************")
+            print("* " + str(e))
+            print("* Aboting.                                                          *")
+            print("*********************************************************************")
+            print("")
+            raise SystemExit
 
     ##########################################################################
     # Generate Signer from instance_principals
@@ -411,6 +428,54 @@ class ShowOCIService(object):
 
         # generate config info from signer
         self.config = {'region': self.signer.region, 'tenancy': self.signer.tenancy_id}
+
+    ##########################################################################
+    # Generate Signer from delegation_token
+    # use host variable to point to the OCI Config file and profile
+    ###########################################################################
+    def generate_signer_from_delegation_token(self):
+
+        # check if env variables OCI_CONFIG_FILE, OCI_CONFIG_PROFILE exist and use them
+        env_config_file = os.environ.get('OCI_CONFIG_FILE')
+        env_config_section = os.environ.get('OCI_CONFIG_PROFILE')
+
+        # check if file exist
+        if env_config_file is not None and env_config_section is not None:
+            if os.path.isfile(env_config_file):
+                self.flags.config_file = env_config_file
+                self.flags.config_section = env_config_section
+
+        try:
+            self.config = oci.config.from_file(self.flags.config_file, self.flags.config_section)
+            delegation_token_location = self.config["delegation_token_file"]
+
+            with open(delegation_token_location, 'r') as delegation_token_file:
+                delegation_token = delegation_token_file.read().strip()
+                # get signer from delegation token
+                self.signer = oci.auth.signers.InstancePrincipalsDelegationTokenSigner(delegation_token=delegation_token)
+
+        except KeyError:
+            print("*********************************************************************")
+            print("* Key Error obtaining delegation_token_file")
+            print("* Config  File = " + self.flags.config_file)
+            print("* Section File = " + self.flags.config_section)
+            print("* Aborting.                                                          *")
+            print("*********************************************************************")
+            print("")
+            raise SystemExit
+
+        except Exception:
+            print("*********************************************************************")
+            print("* Error obtaining instance principals certificate                   *")
+            print("* with delegation token                                             *")
+            print("* Aborting.                                                          *")
+            print("*********************************************************************")
+            print("")
+            raise SystemExit
+
+        # generate config info from signer
+        tenancy_id = self.config["tenancy"]
+        self.config = {'region': self.signer.region, 'tenancy': tenancy_id}
 
     ##########################################################################
     # load_data
@@ -907,6 +972,14 @@ class ShowOCIService(object):
 
         except oci.exceptions.RequestException:
             raise
+        except oci.exceptions.ServiceError as e:
+            print("\n*********************************************************************")
+            print("* Error Authenticating in __load_identity_tenancy:")
+            print("* " + str(e.message))
+            print("* Aborting.                                                          *")
+            print("*********************************************************************")
+            print("")
+            raise SystemExit
         except Exception as e:
             raise Exception("Error in __load_identity_tenancy: " + str(e.args))
 
@@ -951,7 +1024,16 @@ class ShowOCIService(object):
 
                     for c in compartment_list:
                         if c.lifecycle_state == oci.identity.models.Compartment.LIFECYCLE_STATE_ACTIVE:
-                            cvalue = {'id': str(c.id), 'name': str(c.name), 'path': path + str(c.name)}
+                            cvalue = {
+                                'id': str(c.id),
+                                'name': str(c.name),
+                                'description': str(c.description),
+                                'time_created': str(c.time_created),
+                                'is_accessible': str(c.is_accessible),
+                                'path': path + str(c.name),
+                                'defined_tags': [] if c.defined_tags is None else c.defined_tags,
+                                'freeform_tags': [] if c.freeform_tags is None else c.freeform_tags
+                            }
                             compartments.append(cvalue)
                             build_compartments_nested(identity_client, c.id, cvalue['path'])
 
@@ -962,8 +1044,22 @@ class ShowOCIService(object):
             # Add root compartment
             ###################################################
             if self.flags.read_root_compartment:
-                value = {'id': tenancy['id'], 'name': tenancy['name'] + " (root)", 'path': "/ " + tenancy['name'] + " (root)"}
-                compartments.append(value)
+                try:
+                    tenc = identity.get_compartment(tenancy['id']).data
+                    if tenc:
+                        cvalue = {
+                            'id': str(tenc.id),
+                            'name': str(tenc.name),
+                            'description': str(tenc.description),
+                            'time_created': str(tenc.time_created),
+                            'is_accessible': str(tenc.is_accessible),
+                            'path': "/ " + str(tenc.name) + " (root)",
+                            'defined_tags': [] if tenc.defined_tags is None else tenc.defined_tags,
+                            'freeform_tags': [] if tenc.freeform_tags is None else tenc.freeform_tags
+                        }
+                        compartments.append(cvalue)
+                except Exception as error:
+                    raise Exception("Error in add_tenant_compartment: " + str(error.args))
 
             # Build the compartments
             build_compartments_nested(identity, tenancy['id'], "")
@@ -1103,9 +1199,12 @@ class ShowOCIService(object):
 
                 # identity provider
                 identity_provider_name = ""
-                if user.identity_provider_id:
-                    identity_provider_name = next(
-                        item for item in identity_providers if item.id == user.identity_provider_id).name
+                try:
+                    if user.identity_provider_id:
+                        identity_provider_name = next(
+                            item for item in identity_providers if item.id == user.identity_provider_id).name
+                except Exception:
+                    identity_provider_name = 'unknown'
 
                 # add info
                 datauser.append({
@@ -1965,11 +2064,11 @@ class ShowOCIService(object):
 
             # Handle destination_port_range
             if security_rule.tcp_options.destination_port_range is None:
-                value['src_port_min'] = "ALL"
-                value['src_port_max'] = "ALL"
+                value['dst_port_min'] = "ALL"
+                value['dst_port_max'] = "ALL"
             else:
-                value['src_port_min'] = str(security_rule.tcp_options.destination_port_range.min)
-                value['src_port_max'] = str(security_rule.tcp_options.destination_port_range.max)
+                value['dst_port_min'] = str(security_rule.tcp_options.destination_port_range.min)
+                value['dst_port_max'] = str(security_rule.tcp_options.destination_port_range.max)
 
         # udp options
         if security_rule.udp_options is not None:
@@ -1986,11 +2085,11 @@ class ShowOCIService(object):
 
             # Handle destination_port_range
             if security_rule.udp_options.destination_port_range is None:
-                value['src_port_min'] = "ALL"
-                value['src_port_max'] = "ALL"
+                value['dst_port_min'] = "ALL"
+                value['dst_port_max'] = "ALL"
             else:
-                value['src_port_min'] = str(security_rule.udp_options.destination_port_range.min)
-                value['src_port_max'] = str(security_rule.udp_options.destination_port_range.max)
+                value['dst_port_min'] = str(security_rule.udp_options.destination_port_range.min)
+                value['dst_port_max'] = str(security_rule.udp_options.destination_port_range.max)
 
         # icmp options
         if security_rule.icmp_options is None:
@@ -2209,11 +2308,11 @@ class ShowOCIService(object):
 
             # Handle destination_port_range
             if security_rule.tcp_options.destination_port_range is None:
-                value['src_port_min'] = "ALL"
-                value['src_port_max'] = "ALL"
+                value['dst_port_min'] = "ALL"
+                value['dst_port_max'] = "ALL"
             else:
-                value['src_port_min'] = str(security_rule.tcp_options.destination_port_range.min)
-                value['src_port_max'] = str(security_rule.tcp_options.destination_port_range.max)
+                value['dst_port_min'] = str(security_rule.tcp_options.destination_port_range.min)
+                value['dst_port_max'] = str(security_rule.tcp_options.destination_port_range.max)
 
         # udp options
         if security_rule.udp_options is not None:
@@ -2230,11 +2329,11 @@ class ShowOCIService(object):
 
             # Handle destination_port_range
             if security_rule.udp_options.destination_port_range is None:
-                value['src_port_min'] = "ALL"
-                value['src_port_max'] = "ALL"
+                value['dst_port_min'] = "ALL"
+                value['dst_port_max'] = "ALL"
             else:
-                value['src_port_min'] = str(security_rule.udp_options.destination_port_range.min)
-                value['src_port_max'] = str(security_rule.udp_options.destination_port_range.max)
+                value['dst_port_min'] = str(security_rule.udp_options.destination_port_range.min)
+                value['dst_port_max'] = str(security_rule.udp_options.destination_port_range.max)
 
         # icmp options
         if security_rule.icmp_options is None:
@@ -7221,6 +7320,7 @@ class ShowOCIService(object):
     # oci.data_science.DataScienceClient
     # oci.data_flow.DataFlowClient
     # oci.oda.OdaClient
+    # oci.bds.BdsClient
     ##########################################################################
     def __load_data_ai_main(self):
 
@@ -7232,12 +7332,14 @@ class ShowOCIService(object):
             dc_client = oci.data_catalog.DataCatalogClient(self.config, signer=self.signer, timeout=1)
             df_client = oci.data_flow.DataFlowClient(self.config, signer=self.signer, timeout=1)
             oda_client = oci.oda.OdaClient(self.config, signer=self.signer, timeout=1)
+            bds_client = oci.bds.BdsClient(self.config, signer=self.signer, timeout=1)
 
             if self.flags.proxy:
                 ds_client.base_client.session.proxies = {'https': self.flags.proxy}
                 dc_client.base_client.session.proxies = {'https': self.flags.proxy}
                 df_client.base_client.session.proxies = {'https': self.flags.proxy}
                 oda_client.base_client.session.proxies = {'https': self.flags.proxy}
+                bds_client.base_client.session.proxies = {'https': self.flags.proxy}
 
             # reference to compartments
             compartments = self.get_compartment()
@@ -7247,6 +7349,7 @@ class ShowOCIService(object):
             self.__initialize_data_key(self.C_DATA_AI, self.C_DATA_AI_FLOW)
             self.__initialize_data_key(self.C_DATA_AI, self.C_DATA_AI_SCIENCE)
             self.__initialize_data_key(self.C_DATA_AI, self.C_DATA_AI_ODA)
+            self.__initialize_data_key(self.C_DATA_AI, self.C_DATA_AI_BDS)
 
             # reference to data_ai
             data_ai = self.data[self.C_DATA_AI]
@@ -7256,6 +7359,7 @@ class ShowOCIService(object):
             data_ai[self.C_DATA_AI_FLOW] += self.__load_data_ai_flow(df_client, compartments)
             data_ai[self.C_DATA_AI_SCIENCE] += self.__load_data_ai_science(ds_client, compartments)
             data_ai[self.C_DATA_AI_ODA] += self.__load_data_ai_oda(oda_client, compartments)
+            data_ai[self.C_DATA_AI_BDS] += self.__load_data_ai_bds(bds_client, compartments)
             print("")
 
         except oci.exceptions.RequestException:
@@ -7497,7 +7601,7 @@ class ShowOCIService(object):
         start_time = time.time()
 
         try:
-            self.__load_print_status("Oracle Data Assistant")
+            self.__load_print_status("Data Assistant")
 
             # loop on all compartments
             for compartment in compartments:
@@ -7561,6 +7665,80 @@ class ShowOCIService(object):
             return data
 
     ##########################################################################
+    # __load_data_ai_bds
+    ##########################################################################
+    def __load_data_ai_bds(self, bds_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("Big Data Services")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                bdss = []
+                try:
+                    bdss = oci.pagination.list_call_get_all_results(
+                        bds_client.list_bds_instances,
+                        compartment['id']
+                    ).data
+
+                # TBD: don't add warning count until GA on the service
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning("a", False)
+                        continue
+                    raise
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning("a", False)
+                    continue
+
+                print(".", end="")
+
+                # bds = bds.models.BdsInstanceSummary
+                for bds in bdss:
+                    if (bds.lifecycle_state == 'ACTIVE' or bds.lifecycle_state == 'UPDATING' or bds.lifecycle_state == 'RESUMING'):
+                        val = {'id': str(bds.id),
+                               'display_name': str(bds.display_name),
+                               'number_of_nodes': str(bds.number_of_nodes),
+                               'cluster_version': str(bds.cluster_version),
+                               'is_high_availability': str(bds.is_high_availability),
+                               'is_secure': str(bds.is_secure),
+                               'lifecycle_state': str(bds.lifecycle_state),
+                               'is_cloud_sql_configured': str(bds.is_cloud_sql_configured),
+                               'time_created': str(bds.time_created),
+                               'compartment_name': str(compartment['name']),
+                               'compartment_id': str(compartment['id']),
+                               'sum_info': "Big Data Service (Nodes)",
+                               'sum_size_gb': str(bds.number_of_nodes),
+                               'defined_tags': [] if bds.defined_tags is None else bds.defined_tags,
+                               'freeform_tags': [] if bds.freeform_tags is None else bds.freeform_tags,
+                               'region_name': str(self.config['region'])}
+
+                        # add the data
+                        cnt += 1
+                        data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_data_ai_bds", e)
+            return data
+
+    ##########################################################################
     # __load_paas_native_main
     ##########################################################################
     #
@@ -7599,8 +7777,10 @@ class ShowOCIService(object):
 
             # append the data
             paas[self.C_PAAS_NATIVE_OIC] += self.__load_paas_oic(oic_client, compartments)
-            # paas[self.C_PAAS_NATIVE_OAC] += self.__load_paas_oac(oac_client, compartments)
             paas[self.C_PAAS_NATIVE_OCE] += self.__load_paas_oce(oce_client, compartments)
+
+            # TBD: oac native not yet enabled in all regions, disabling for now
+            # paas[self.C_PAAS_NATIVE_OAC] += self.__load_paas_oac(oac_client, compartments)
             print("")
 
         except oci.exceptions.RequestException:
@@ -8052,10 +8232,14 @@ class ShowOCIService(object):
                                 usage = limits_client.get_resource_availability(service.name, limit.name, tenancy_id).data
 
                             # oci.limits.models.ResourceAvailability
-                            if usage.used:
+                            if usage.used is not None:
                                 val['used'] = str(usage.used)
-                            if usage.available:
+                            if usage.available is not None:
                                 val['available'] = str(usage.available)
+                        except oci.exceptions.ServiceError as e:
+                            if e.code == 'NotAuthorizedOrNotFound':
+                                val['used'] = 'NotAuth'
+                                val['available'] = 'NotAuth'
                         except Exception:
                             pass
 

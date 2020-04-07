@@ -17,10 +17,14 @@ from .create_group_cursor_details import CreateGroupCursorDetails
 from .create_stream_details import CreateStreamDetails
 from .create_stream_pool_details import CreateStreamPoolDetails
 from .cursor import Cursor
+from .custom_encryption_key import CustomEncryptionKey
+from .custom_encryption_key_details import CustomEncryptionKeyDetails
 from .group import Group
 from .kafka_settings import KafkaSettings
 from .message import Message
 from .partition_reservation import PartitionReservation
+from .private_endpoint_details import PrivateEndpointDetails
+from .private_endpoint_settings import PrivateEndpointSettings
 from .put_messages_details import PutMessagesDetails
 from .put_messages_details_entry import PutMessagesDetailsEntry
 from .put_messages_result import PutMessagesResult
@@ -51,10 +55,14 @@ streaming_type_mapping = {
     "CreateStreamDetails": CreateStreamDetails,
     "CreateStreamPoolDetails": CreateStreamPoolDetails,
     "Cursor": Cursor,
+    "CustomEncryptionKey": CustomEncryptionKey,
+    "CustomEncryptionKeyDetails": CustomEncryptionKeyDetails,
     "Group": Group,
     "KafkaSettings": KafkaSettings,
     "Message": Message,
     "PartitionReservation": PartitionReservation,
+    "PrivateEndpointDetails": PrivateEndpointDetails,
+    "PrivateEndpointSettings": PrivateEndpointSettings,
     "PutMessagesDetails": PutMessagesDetails,
     "PutMessagesDetailsEntry": PutMessagesDetailsEntry,
     "PutMessagesResult": PutMessagesResult,

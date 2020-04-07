@@ -46,5 +46,6 @@ Key Management
     oci.key_management.models.UpdateVaultDetails
     oci.key_management.models.Vault
     oci.key_management.models.VaultSummary
+    oci.key_management.models.VaultUsage
     oci.key_management.models.WrappedImportKey
     oci.key_management.models.WrappingKey

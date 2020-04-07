@@ -49,6 +49,23 @@ Output can be printer friendly, CSV files or JSON file.
 
 ** DISCLAIMER – This is not an official Oracle application
 
+## Executing using Cloud Shell:
+```
+1. Create virtual env of python
+   python3 -m venv python_venv
+   source python_venv/bin/activate
+
+2. install oci sdk package
+   pip install oci
+
+3. clone the oci sdk repo
+   git clone https://github.com/oracle/oci-python-sdk
+
+4. run showoci with delegation token
+   cd oci-python-sdk/examples/showoci
+   python showoci.py -dt -ani
+```
+
 ## OCI Authentication using Instance Principals 
 
 Create Dynamic Group ShowOCIDynamicGroup:
@@ -121,27 +138,6 @@ Please follow Oracle Python SDK Documentation - https://github.com/oracle/oci-py
 ## Copy the Software
 Download the showoci*.py from this project  
 
-## Executing using Cloud Shell:
-```
-1. Create virtual env of python
-   python -m venv python_venv
-   source python_venv/bin/activate
-
-2. install oci sdk package
-   pip install oci
-
-3. clone the oci sdk repo
-   cd $HOME
-   git init
-   git clone https://github.com/oracle/oci-python-sdk
-
-4. Config OCI config file - ~/.oci/config
-   Please follow SDK config documentation - https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm 
-
-5. run showoci
-   cd $HOME/oci-python-sdk/examples/showoci
-   python showoci.py ...
-```
 Execute  
 
 ```
@@ -178,13 +174,14 @@ optional arguments:
   -n                   Print Network
   -o                   Print Object Storage
   -paas                Print PaaS Platform Services - OIC OAC OCE
-  -dataai              Print Data AI - D.Science, D.Catalog, D.Flow, ODA
+  -dataai              Print D.Science, D.Catalog, D.Flow, ODA or BDS
   -rm                  Print Resource management
   -s                   Print Streams
   -so                  Print Summary Only
   -mc                  exclude ManagedCompartmentForPaaS
   -nr                  Not include root compartment
   -ip                  Use Instance Principals for Authentication
+  -dt                  Use Delegation Token for Authentication
   -t PROFILE           Config file section to use (tenancy profile)
   -p PROXY             Set Proxy (i.e. www-proxy-server.com:80)
   -rg REGION           Filter by Region

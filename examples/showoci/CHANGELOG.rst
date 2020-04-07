@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.04.06 - 2020-04-06
+=====================
+* Added support for big data service with the -dataai flag
+* Fixed limits printout when usage or available was 0 and remove if no usage or available
+* Fixed security list dest port range values
+* Added CSV Compartment
+* Added delegation token for cloud shell with -dt (thanks to Leo)
+
+=====================
 20.03.31 - 2020-03-31
 =====================
 * Added DNS Zones to the -edge flag
@@ -12,6 +21,7 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 * Added Events to -m flag
 * Added Retry Strategy to all network and load balancers requests
 * Added Image count to the summary
+* Handle federation exception in identity
 
 =====================
 20.03.24 - 2020-03-24

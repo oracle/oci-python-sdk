@@ -316,7 +316,7 @@ class Application(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this Application.
-        The OCID of the compartment that contains this application.
+        The OCID of a compartment.
 
 
         :return: The compartment_id of this Application.
@@ -328,7 +328,7 @@ class Application(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Application.
-        The OCID of the compartment that contains this application.
+        The OCID of a compartment.
 
 
         :param compartment_id: The compartment_id of this Application.
