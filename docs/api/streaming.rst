@@ -34,10 +34,14 @@ Streaming
     oci.streaming.models.CreateStreamDetails
     oci.streaming.models.CreateStreamPoolDetails
     oci.streaming.models.Cursor
+    oci.streaming.models.CustomEncryptionKey
+    oci.streaming.models.CustomEncryptionKeyDetails
     oci.streaming.models.Group
     oci.streaming.models.KafkaSettings
     oci.streaming.models.Message
     oci.streaming.models.PartitionReservation
+    oci.streaming.models.PrivateEndpointDetails
+    oci.streaming.models.PrivateEndpointSettings
     oci.streaming.models.PutMessagesDetails
     oci.streaming.models.PutMessagesDetailsEntry
     oci.streaming.models.PutMessagesResult

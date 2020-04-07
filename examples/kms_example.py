@@ -274,7 +274,7 @@ vault = create_vault(compartment, VAULT_NAME, vault_client_composite).data
 v_id = vault.id
 print(" Created vault {} with id : {}".format(vault.name, vault.id))
 
-updated_vault = update_vault(v_id, VAULT_UPDATE_NAME, vault_client)
+updated_vault = update_vault(v_id, VAULT_UPDATE_NAME, vault_client).data
 print(" Updated vault {} with name : {}".format(vault.id, updated_vault.name))
 
 change_vault_compartment(v_id, vault_client, target_compartment)
@@ -301,7 +301,7 @@ print(" Cancelling scheduled deletion for vault {}".format(vault.id))
 cancel_deletion_vault(v_id, vault_client_composite)
 
 # Create key in given compartment
-key = create_key(vault_management_client_composite, KEY_NAME, v_id)
+key = create_key(vault_management_client_composite, KEY_NAME, v_id).data
 k_id = key.id
 print(" Created key {} with id : {}".format(key.name, key.id))
 

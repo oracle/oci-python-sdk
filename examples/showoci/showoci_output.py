@@ -103,6 +103,10 @@ class ShowOCIOutput(object):
             self.print_header(data['program'], 1)
             if data['use_instance_principals']:
                 print("Authentication : Instance Principals")
+            elif data['use_delegation_token']:
+                print("Authentication : Instance Principals With Delegation Token")
+                print("Config File    : " + data['config_file'])
+                print("Config Profile : " + data['config_profile'])
             else:
                 print("Authentication : Config File")
                 print("Config File    : " + data['config_file'])
@@ -1213,16 +1217,14 @@ class ShowOCIOutput(object):
             self.print_header("Limits > 0", 2)
 
             for ct in limits:
-                print(
-                    self.taba + str(ct['name'] + " ").ljust(20) +
-                    ct['limit_name'].ljust(37) +
-                    " = " + ct['value'].ljust(10) +
-                    " Used = " + ct['used'].ljust(10) + " " +
-                    " Available = " + ct['available'].ljust(10) + " " +
-                    " SCOPE=" + ct['scope_type'].ljust(7) +
-                    ct['availability_domain']
-                )
+                limit_name = ct['limit_name'].ljust(37)
+                value = " = " + ct['value'].ljust(16)[0:16]
+                used = (" Used = " + ct['used'].ljust(16)[0:16] + " ") if ct['used'] != "" else str(" ").ljust(25)
+                available = (" Available = " + ct['available'].ljust(16)[0:16] + " ") if ct['available'] != "" else str(" ").ljust(30)
+                scope = " SCOPE=" + ct['scope_type'].ljust(8) + ct['availability_domain']
+                print(self.taba + str(ct['name'] + " ").ljust(20) + limit_name + value + used + available + scope)
 
+            print("* numbers trimmed to 16 digits, if you need full value, please use json output")
             print("")
 
         except Exception as e:
@@ -1330,6 +1332,14 @@ class ShowOCIOutput(object):
                 self.print_header("ODA Native", 2)
                 for val in data_ai['oda']:
                     print(self.taba + val['display_name'] + ", (" + val['shape_name'] + "), Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + " - " + val['lifecycle_sub_state'] + ")")
+                print("")
+
+            # BDS
+            if 'bds' in data_ai:
+                self.print_header("Big Data Service", 2)
+                for val in data_ai['bds']:
+                    print(self.taba + val['display_name'] + ", (" + val['cluster_version'] + "), Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'])
+                    print(self.tabs + "Nodes: " + val['number_of_nodes'] + ", is_high_availability: " + val['is_high_availability'] + ", is_secure: " + val['is_secure'] + ", is_cloud_sql_configured: " + val['is_cloud_sql_configured'])
                 print("")
 
         except Exception as e:
@@ -1739,7 +1749,7 @@ class ShowOCISummary(object):
                     if d['type'] == "region":
                         self.__summary_region_data(d['region'], d['data'])
 
-            self.__summary_print_results(self.summary_global_total, "Summary Total", 0)
+            self.__summary_print_total(self.summary_global_total, "Summary Total", 0)
 
         except Exception as e:
             self.__print_error("print_summary", e)
@@ -1848,6 +1858,8 @@ class ShowOCISummary(object):
                 self.__summary_core_size(data_ai['data_flow'])
             if 'oda' in data_ai:
                 self.__summary_core_size(data_ai['oda'])
+            if 'bds' in data_ai:
+                self.__summary_core_size(data_ai['bds'])
 
         except Exception as e:
             self.__print_error("__summary_data_ai_main", e)
@@ -2072,6 +2084,26 @@ class ShowOCISummary(object):
             self.__print_error("__summary_print_results", e)
 
     ##########################################################################
+    # Print total data
+    ##########################################################################
+    def __summary_print_total(self, data, header, header_size):
+
+        try:
+
+            if len(data) > 0:
+                self.__summary_print_header(header, header_size)
+
+                grouped_data = self.__summary_group_by("type", data)
+                self.summary_global_total = grouped_data
+
+                # sort and print
+                for d in sorted(grouped_data, key=lambda i: i['type']):
+                    print(d['type'].ljust(46)[0:45] + " - " + str(round(d['size'])).rjust(10))
+
+        except Exception as e:
+            self.__print_error("__summary_print_total", e)
+
+    ##########################################################################
     # Print summary Identity data
     ##########################################################################
     def __summary_region_data(self, region_name, data):
@@ -2134,6 +2166,7 @@ class ShowOCICSV(object):
     # class variables
     ############################################
     csv_file_header = ""
+    csv_identity_compartments = []
     csv_identity_groups = []
     csv_identity_users = []
     csv_identity_policies = []
@@ -2179,9 +2212,10 @@ class ShowOCICSV(object):
 
             # generate CSV files from each file
             self.__print_header("Processing CSV Files", 0)
+            self.__export_to_csv_file("identity_compartments", self.csv_identity_compartments)
+            self.__export_to_csv_file("identity_users", self.csv_identity_users)
             self.__export_to_csv_file("identity_policy", self.csv_identity_policies)
             self.__export_to_csv_file("identity_groups", self.csv_identity_groups)
-            self.__export_to_csv_file("identity_users", self.csv_identity_users)
             self.__export_to_csv_file("compute", self.csv_compute)
             self.__export_to_csv_file("network_subnet", self.csv_network_subnet)
             self.__export_to_csv_file("network_routes", self.csv_network_routes)
@@ -2314,6 +2348,25 @@ class ShowOCICSV(object):
             self.__print_error("__csv_identity_users", e)
 
     ##########################################################################
+    # CSV Identity Compartments
+    ##########################################################################
+
+    def __csv_identity_compartments(self, compartments):
+        try:
+            for compartment in compartments:
+                data = {
+                    'id': compartment['id'],
+                    'name': compartment['name'],
+                    'description': compartment['description'],
+                    'time_created': compartment['time_created'],
+                    'path': compartment['path']
+                }
+                self.csv_identity_compartments.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_identity_compartments", e)
+
+    ##########################################################################
     # csv Identity Policies
     ##########################################################################
     def __csv_identity_policies(self, policies_data):
@@ -2343,6 +2396,9 @@ class ShowOCICSV(object):
     ##########################################################################
     def __csv_identity_main(self, data):
         try:
+            if 'compartments' in data:
+                self.__csv_identity_compartments(data['compartments'])
+
             if 'users' in data:
                 self.__csv_identity_users(data['users'])
 

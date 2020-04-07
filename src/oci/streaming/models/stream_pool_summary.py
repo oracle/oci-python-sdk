@@ -63,6 +63,10 @@ class StreamPoolSummary(object):
             The value to assign to the time_created property of this StreamPoolSummary.
         :type time_created: datetime
 
+        :param is_private:
+            The value to assign to the is_private property of this StreamPoolSummary.
+        :type is_private: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this StreamPoolSummary.
         :type freeform_tags: dict(str, str)
@@ -78,6 +82,7 @@ class StreamPoolSummary(object):
             'name': 'str',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
+            'is_private': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -88,6 +93,7 @@ class StreamPoolSummary(object):
             'name': 'name',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
+            'is_private': 'isPrivate',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -97,6 +103,7 @@ class StreamPoolSummary(object):
         self._name = None
         self._lifecycle_state = None
         self._time_created = None
+        self._is_private = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -233,6 +240,32 @@ class StreamPoolSummary(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def is_private(self):
+        """
+        Gets the is_private of this StreamPoolSummary.
+        True if the stream pool is private, false otherwise.
+        The associated endpoint and subnetId of a private stream pool can be retrieved through the :func:`get_stream_pool` API.
+
+
+        :return: The is_private of this StreamPoolSummary.
+        :rtype: bool
+        """
+        return self._is_private
+
+    @is_private.setter
+    def is_private(self, is_private):
+        """
+        Sets the is_private of this StreamPoolSummary.
+        True if the stream pool is private, false otherwise.
+        The associated endpoint and subnetId of a private stream pool can be retrieved through the :func:`get_stream_pool` API.
+
+
+        :param is_private: The is_private of this StreamPoolSummary.
+        :type: bool
+        """
+        self._is_private = is_private
 
     @property
     def freeform_tags(self):

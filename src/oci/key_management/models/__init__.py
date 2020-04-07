@@ -27,6 +27,7 @@ from .update_key_details import UpdateKeyDetails
 from .update_vault_details import UpdateVaultDetails
 from .vault import Vault
 from .vault_summary import VaultSummary
+from .vault_usage import VaultUsage
 from .wrapped_import_key import WrappedImportKey
 from .wrapping_key import WrappingKey
 
@@ -56,6 +57,7 @@ key_management_type_mapping = {
     "UpdateVaultDetails": UpdateVaultDetails,
     "Vault": Vault,
     "VaultSummary": VaultSummary,
+    "VaultUsage": VaultUsage,
     "WrappedImportKey": WrappedImportKey,
     "WrappingKey": WrappingKey
 }

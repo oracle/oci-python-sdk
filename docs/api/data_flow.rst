@@ -21,6 +21,8 @@ Data Flow
     oci.data_flow.models.Application
     oci.data_flow.models.ApplicationParameter
     oci.data_flow.models.ApplicationSummary
+    oci.data_flow.models.ChangeApplicationCompartmentDetails
+    oci.data_flow.models.ChangeRunCompartmentDetails
     oci.data_flow.models.CreateApplicationDetails
     oci.data_flow.models.CreateRunDetails
     oci.data_flow.models.Run
