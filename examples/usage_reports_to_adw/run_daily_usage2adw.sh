@@ -29,42 +29,14 @@ export MIN_DATE=2020-01-01
 export DATE=`date '+%Y%m%d_%H%M'`
 export REPORT_DIR=${APPDIR}/report
 mkdir -p ${REPORT_DIR}
+export OUTPUT_FILE=${REPORT_DIR}/${DATE}.txt
 
-##################################
-# Report Function
-##################################
-run_report()
-{
-    NAME=$1
-    if [ -z "$NAME" ]
-    then
-        exit 1
-    fi
+# execute using instance principles
+echo "Running ... to $OUTPUT_FILE "
 
-    DIR=${REPORT_DIR}/$NAME
-    OUTPUT_FILE=${DIR}/${DATE}_${NAME}.txt
-    mkdir -p $DIR
-    echo "Running $NAME... to $OUTPUT_FILE "
-    python3 $APPDIR/usage2adw.py -t $NAME -du $DATABASE_USER -dp $DATABASE_PASS -dn $DATABASE_NAME -d $MIN_DATE > $OUTPUT_FILE
-    grep -i "Error" $OUTPUT_FILE
+python3 $APPDIR/usage2adw.py -ip -du $DATABASE_USER -dp $DATABASE_PASS -dn $DATABASE_NAME -d $MIN_DATE > $OUTPUT_FILE
 
-    ERROR=""
+grep -i "Error" $OUTPUT_FILE
+echo "Finished at `date`  "
 
-    if (( `grep -i Error $OUTPUT_FILE | wc -l` > 0 ))
-    then
-        ERROR=" with **** Errors ****"
-    fi
-
-    echo "Finish `date` - $NAME $ERROR "
-}
-
-##################################
-# Main
-##################################
-echo "Start running at `date`..."
-
-run_report tenant_name  &
-wait
-
-echo "Completed at `date`.."
 
