@@ -263,9 +263,9 @@ Oracle Application Express (APEX) will be used for reporting.
    
 ## 16. Import APEX application
 
-```
-   # Download the usage.demo.apex.zip from github "apex_demo_app" folder and unzip it
+Download [usage.demo.apex.zip](apex_demo_app/usage.demo.apex.zip) from github "apex_demo_app" folder and unzip it
 
+```
    APEX Top Menu -> App Builder -> Import
    --> Choose File = usage.demo.apex.sql (Download from github apex folder and unzip)
    --> Press Next
