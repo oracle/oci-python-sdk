@@ -1,15 +1,20 @@
 # coding: utf-8
 # Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
+from oci.object_storage.transfer.constants import MEBIBYTE
 from tests.util import get_resource_path, random_number_string, unique_name
 from . import util
 from .. import test_config_container
+import base64
+import filecmp
+import hashlib
 import oci
 import os
 import os.path
 import pytest
 from oci._vendor import requests
 
+LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES = 3
 
 # Static content for get_object tests
 expected_content = "a/b/c/object3"
@@ -72,6 +77,19 @@ def bucket(object_storage, namespace, request):
     delete_objects_in_bucket(object_storage, namespace, bucket_name)
     response = object_storage.delete_bucket(namespace, bucket_name)
     assert response.status == 204
+
+
+@pytest.fixture(scope='function')
+def content_input_file():
+    filename = 'tests/resources/multipart_content_input.txt'
+
+    # generate large file for multipart testing
+    util.create_large_file(filename, LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES)
+
+    yield filename
+
+    if os.path.exists(filename):
+        os.remove(filename)
 
 
 class TestObjectStorage:
@@ -897,3 +915,51 @@ class TestObjectStorage:
         # Delete
         response = object_storage.delete_object(namespace, bucket_name, object_name)
         assert response.status == 204
+
+    def test_upload_manager_multipart_ssec(self, object_storage, bucket, content_input_file):
+        object_name = 'test_object_multipart_ssec'
+        namespace = object_storage.get_namespace().data
+
+        ssec_key_bytes = os.urandom(32)
+        ssec_key_str = base64.b64encode(ssec_key_bytes).decode('utf-8')
+        ssec_key_sha256 = hashlib.sha256(ssec_key_bytes).digest()
+        ssec_key_sha256_str = base64.b64encode(ssec_key_sha256).decode('utf-8')
+
+        # explicitly use part_size < file size to trigger multipart
+        part_size_in_bytes = (LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES - 1) * MEBIBYTE
+        upload_manager = oci.object_storage.UploadManager(object_storage, allow_multipart_uploads=True)
+        response = upload_manager.upload_file(
+            namespace, bucket, object_name, content_input_file, part_size=part_size_in_bytes,
+            opc_sse_customer_algorithm='AES256', opc_sse_customer_key=ssec_key_str,
+            opc_sse_customer_key_sha256=ssec_key_sha256_str)
+        util.validate_response(response)
+
+        # confirm that the object was actually uploaded with multipart
+        assert response.headers['opc-multipart-md5']
+
+        print('Downloading object {} from {} for verification'.format(object_name, bucket))
+        # downloading the object without supplying SSE-C parameters should fail
+        with pytest.raises(oci.exceptions.ServiceError) as excinfo:
+            object_storage.get_object(
+                namespace_name=namespace,
+                bucket_name=bucket,
+                object_name=object_name
+            )
+        assert excinfo.value.status == 400
+        response = object_storage.get_object(
+            namespace_name=namespace,
+            bucket_name=bucket,
+            object_name=object_name,
+            opc_sse_customer_algorithm='AES256',
+            opc_sse_customer_key=ssec_key_str,
+            opc_sse_customer_key_sha256=ssec_key_sha256_str
+        )
+        downloaded_file_path = os.path.join('tests', 'resources', 'downloaded_multipart_ssec_verify.bin')
+        with open(downloaded_file_path, 'wb') as file:
+            for chunk in response.data.raw.stream(MEBIBYTE, decode_content=False):
+                file.write(chunk)
+        print('Object downloaded')
+
+        assert filecmp.cmp(content_input_file, downloaded_file_path, shallow=False)
+
+        os.remove(downloaded_file_path)
