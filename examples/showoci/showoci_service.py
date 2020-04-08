@@ -248,6 +248,7 @@ class ShowOCIService(object):
     C_EDGE_HEALTHCHECK_HTTP = "healthcheck_http"
     C_EDGE_DNS_ZONE = 'dns_zone'
     C_EDGE_DNS_STEERING = 'dns_steering'
+    C_EDGE_WAAS_POLICIES = 'waas_policies'
 
     # Announcement services
     C_ANNOUNCEMENT = "announcement"
@@ -6964,6 +6965,7 @@ class ShowOCIService(object):
     #
     # class oci.healthchecks.HealthChecksClient(config, **kwargs)
     # class oci.dns.DnsClient(config, **kwargs)
+    # class oci.waas.WaasClient(config, **kwargs)
     #
     ##########################################################################
     def __load_edge_services_main(self):
@@ -6981,6 +6983,11 @@ class ShowOCIService(object):
             if self.flags.proxy:
                 dns.base_client.session.proxies = {'https': self.flags.proxy}
 
+            # Open connectivity to OCI - Waas
+            waas = oci.waas.WaasClient(self.config, signer=self.signer)
+            if self.flags.proxy:
+                waas.base_client.session.proxies = {'https': self.flags.proxy}
+
             # reference to compartments
             compartments = self.get_compartment()
 
@@ -6989,6 +6996,7 @@ class ShowOCIService(object):
             self.__initialize_data_key(self.C_EDGE, self.C_EDGE_HEALTHCHECK_HTTP)
             self.__initialize_data_key(self.C_EDGE, self.C_EDGE_DNS_ZONE)
             self.__initialize_data_key(self.C_EDGE, self.C_EDGE_DNS_STEERING)
+            self.__initialize_data_key(self.C_EDGE, self.C_EDGE_WAAS_POLICIES)
 
             # reference to stream
             edge = self.data[self.C_EDGE]
@@ -6998,6 +7006,7 @@ class ShowOCIService(object):
             edge[self.C_EDGE_HEALTHCHECK_HTTP] += self.__load_edge_healthchecks_http(healthcheck_client, compartments)
             edge[self.C_EDGE_DNS_ZONE] += self.__load_edge_dns_zone(dns, compartments)
             edge[self.C_EDGE_DNS_STEERING] += self.__load_edge_dns_steering(dns, compartments)
+            edge[self.C_EDGE_WAAS_POLICIES] += self.__load_edge_waas_policies(waas, compartments)
             print("")
 
         except oci.exceptions.RequestException:
@@ -7313,6 +7322,75 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_edge_dns_zone", e)
+            return data
+
+    ##########################################################################
+    # __load_edge_waas_policies
+    ##########################################################################
+    def __load_edge_waas_policies(self, waas, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("WAAS Policies")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                array = []
+                try:
+                    array = oci.pagination.list_call_get_all_results(
+                        waas.list_waas_policies,
+                        compartment['id'],
+                        sort_by="displayName"
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning()
+                    continue
+
+                print(".", end="")
+
+                # arr = oci.waas.models.WaasPolicySummary
+                for arr in array:
+                    if arr.lifecycle_state != 'ACTIVE':
+                        continue
+                    val = {'id': str(arr.id),
+                           'display_name': str(arr.display_name),
+                           'domain': str(arr.domain),
+                           'time_created': str(arr.time_created),
+                           'compartment_name': str(compartment['name']),
+                           'compartment_id': str(compartment['id']),
+                           'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
+                           'freeform_tags': [] if arr.freeform_tags is None else arr.freeform_tags,
+                           'region_name': str(self.config['region'])
+                           }
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_edge_waas_policies", e)
             return data
 
     ##########################################################################

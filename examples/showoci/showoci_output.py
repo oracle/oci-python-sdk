@@ -1204,6 +1204,15 @@ class ShowOCIOutput(object):
                     print(self.tabs + "Health Check Id : " + arr['health_check_monitor_id'])
                     print("")
 
+            # if waas_policies
+            if 'waas_policies' in edge:
+                self.print_header("WAAS Policies", 2)
+
+                for arr in edge['waas_policies']:
+                    print(self.taba + arr['display_name'])
+                    print(self.tabs + "Domain : " + arr['domain'])
+                    print("")
+
         except Exception as e:
             self.__print_error("__print_edge_services_main", e)
 
@@ -2177,6 +2186,7 @@ class ShowOCICSV(object):
     csv_database = []
     csv_network_subnet = []
     csv_network_security_list = []
+    csv_network_security_group = []
     csv_network_routes = []
     csv_network_dhcp_options = []
     csv_load_balancer = []
@@ -2223,6 +2233,7 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("network_subnet", self.csv_network_subnet)
             self.__export_to_csv_file("network_routes", self.csv_network_routes)
             self.__export_to_csv_file("network_security_list", self.csv_network_security_list)
+            self.__export_to_csv_file("network_security_group", self.csv_network_security_group)
             self.__export_to_csv_file("network_dhcp_options", self.csv_network_dhcp_options)
             self.__export_to_csv_file("database", self.csv_database)
             self.__export_to_csv_file("load_balancer_listeners", self.csv_load_balancer)
@@ -2446,7 +2457,7 @@ class ShowOCICSV(object):
             self.__print_error("__csv_core_network_vcn_subnet", e)
 
     ##########################################################################
-    # Print Network vcn security list
+    # CSV Network vcn security list
     ##########################################################################
     def __csv_core_network_vcn_security_lists(self, region_name, sec_lists, vcn):
         try:
@@ -2489,6 +2500,51 @@ class ShowOCICSV(object):
 
         except Exception as e:
             self.__print_error("__csv_core_network_vcn_security_lists", e)
+
+    ##########################################################################
+    # CSV for  Network vcn security group
+    ##########################################################################
+    def __csv_core_network_vcn_security_groups(self, region_name, nsg, vcn):
+        try:
+            if not nsg:
+                return
+
+            for sl in nsg:
+                if len(sl['sec_rules']) == 0:
+                    data = {'region_name': region_name,
+                            'vcn_name': vcn['display_name'],
+                            'vcn_cidr': vcn['cidr_block'],
+                            'vcn_compartment': vcn['compartment_name'],
+                            'sec_name': sl['name'],
+                            'sec_compartment': sl['compartment_name'],
+                            'sec_protocol': "",
+                            'is_stateless': "",
+                            'sec_rules': "Empty",
+                            'time_created': sl['time_created'],
+                            'vcn_id': vcn['id'],
+                            'sec_id': sl['id']
+                            }
+                    self.csv_network_security_list.append(data)
+
+                else:
+                    for slr in sl['sec_rules']:
+                        data = {'region_name': region_name,
+                                'vcn_name': vcn['display_name'],
+                                'vcn_cidr': vcn['cidr_block'],
+                                'vcn_compartment': vcn['compartment_name'],
+                                'sec_name': sl['name'],
+                                'sec_compartment': sl['compartment_name'],
+                                'sec_protocol': slr['protocol_name'],
+                                'is_stateless': slr['is_stateless'],
+                                'sec_rules': slr['desc'],
+                                'time_created': sl['time_created'],
+                                'vcn_id': vcn['id'],
+                                'sec_id': sl['id']
+                                }
+                        self.csv_network_security_group.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_core_network_vcn_security_groups", e)
 
     ##########################################################################
     # csv DHCP options for DHCP_ID
@@ -2608,7 +2664,7 @@ class ShowOCICSV(object):
                     self.__csv_core_network_vcn_security_lists(region_name, vcn['data']['security_lists'], vcn)
 
                 if 'security_groups' in vcn['data']:
-                    self.__csv_core_network_vcn_security_lists(region_name, vcn['data']['security_groups'], vcn)
+                    self.__csv_core_network_vcn_security_groups(region_name, vcn['data']['security_groups'], vcn)
 
                 if 'route_tables' in vcn['data']:
                     self.__csv_core_network_vcn_route_tables(region_name, vcn['data']['route_tables'], vcn)

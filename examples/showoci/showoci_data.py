@@ -2569,6 +2569,7 @@ class ShowOCIData(object):
             healthcheck_ping = self.service.search_multi_items(self.service.C_EDGE, self.service.C_EDGE_HEALTHCHECK_PING, 'region_name', region_name, 'compartment_id', compartment['id'])
             dns_zone = self.service.search_multi_items(self.service.C_EDGE, self.service.C_EDGE_DNS_ZONE, 'region_name', region_name, 'compartment_id', compartment['id'])
             dns_steering = self.service.search_multi_items(self.service.C_EDGE, self.service.C_EDGE_DNS_STEERING, 'region_name', region_name, 'compartment_id', compartment['id'])
+            waas_policies = self.service.search_multi_items(self.service.C_EDGE, self.service.C_EDGE_WAAS_POLICIES, 'region_name', region_name, 'compartment_id', compartment['id'])
 
             data = {}
             if len(healthcheck_http) > 0 or len(healthcheck_ping) > 0:
@@ -2579,6 +2580,9 @@ class ShowOCIData(object):
 
             if dns_steering:
                 data['dns_steering'] = dns_steering
+
+            if waas_policies:
+                data['waas_policies'] = waas_policies
 
             return data
 

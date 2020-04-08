@@ -60,9 +60,9 @@
 # - oci.dns.DnsClient
 # - oci.events.EventsClient
 # - oci.bds.BdsClient
+# - oci.waas.WaasClient
 #
 # Modules Not Yet Covered:
-# - oci.waas.WaasClient
 # - oci.secrets.SecretsClient
 # - oci.vault.VaultsClient
 # - oci.work_requests.WorkRequestClient
@@ -80,7 +80,7 @@ import datetime
 version = "20.04.13"
 
 ##########################################################################
-# check OCI version 
+# check OCI version
 ##########################################################################
 if sys.version_info.major < 3:
     python_version = str(sys.version_info.major) + "." + str(sys.version_info.minor)
@@ -250,7 +250,7 @@ def set_parser_arguments():
     parser.add_argument('-cn', action='store_true', default=False, dest='container', help='Print Containers')
     parser.add_argument('-d', action='store_true', default=False, dest='database', help='Print Database')
     parser.add_argument('-e', action='store_true', default=False, dest='email', help='Print EMail')
-    parser.add_argument('-edge', action='store_true', default=False, dest='edge', help='Print Edge and DNS Services')
+    parser.add_argument('-edge', action='store_true', default=False, dest='edge', help='Print Edge, DNS Services and WAAS policies')
     parser.add_argument('-f', action='store_true', default=False, dest='file', help='Print File Storage')
     parser.add_argument('-fun', action='store_true', default=False, dest='function', help='Print Functions')
     parser.add_argument('-i', action='store_true', default=False, dest='identity', help='Print Identity')

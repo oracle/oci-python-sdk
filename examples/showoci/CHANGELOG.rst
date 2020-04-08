@@ -11,6 +11,8 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 * Removed VCN check for compartment in order to extract other components
 * Added Summary Total for Region
 * Fixed Summary Total to include stopped VMs OCPUs in different category
+* Added WAAS Policies to the -edge flag
+* Added network security groups to the csv output
 
 =====================
 20.04.06 - 2020-04-06
