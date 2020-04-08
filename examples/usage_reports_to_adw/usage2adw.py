@@ -51,7 +51,7 @@ import os
 import csv
 import cx_Oracle
 
-version = "20.3.10"
+version = "20.4.13"
 usage_report_namespace = "bling"
 work_report_dir = os.curdir + "/work_report_dir"
 
@@ -236,7 +236,8 @@ try:
     compartments = identity_read_compartments(identity, tenancy)
 
 except Exception as e:
-    raise("\nError extracting compartments section - " + str(e))
+    print("\nError extracting compartments section - " + str(e) + "\n")
+    raise SystemExit
 
 ############################################
 # connect to database
@@ -272,11 +273,24 @@ try:
         sql += "    USG_CONSUMED_QUANTITY   NUMBER,"
         sql += "    USG_CONSUMED_UNITS      VARCHAR2(100),"
         sql += "    USG_CONSUMED_MEASURE    VARCHAR2(100),"
-        sql += "    IS_CORRECTION           VARCHAR2(10)"
+        sql += "    IS_CORRECTION           VARCHAR2(10),"
+        sql += "    TAGS_KEYS               VARCHAR2(4000),"
+        sql += "    TAGS_DATA               VARCHAR2(4000)"
         sql += ") COMPRESS"
         cur.execute(sql)
     else:
         print("Table OCI_USAGE Exist")
+
+    # check if TAGS_KEYS and TAGS_DATA columns exist in OCI_USAGE table, if not create
+    sql = "select count(*) from user_tab_columns where table_name = 'OCI_USAGE' and column_name='TAGS_KEYS'"
+    cur.execute(sql)
+    val, = cur.fetchone()
+
+    # if columns not exist, create them
+    if val == 0:
+        print("Columns TAGS_KEYS and TAGS_DATA do not exist in the table OCI_USAGE, adding...")
+        sql = "alter table OCI_USAGE add (TAGS_KEYS VARCHAR2(4000), TAGS_DATA VARCHAR2(4000))"
+        cur.execute(sql)
 
     ###############################
     # fetch max file id processed
@@ -287,8 +301,12 @@ try:
 
     print("Max File Id Processed = " + str(max_file_id))
 
+except cx_Oracle.DatabaseError as e:
+    print("\nError manipulating database - " + str(e) + "\n")
+    raise SystemExit
+
 except Exception as e:
-    raise("\nError manipulating database - " + str(e))
+    raise Exception("\nError manipulating database - " + str(e))
 
 ############################################
 # Download Usage and insert to database
@@ -347,6 +365,21 @@ try:
                     if c['id'] == row['product/compartmentId']:
                         compartment_path = c['path']
 
+                # Handle Tags up to 4000 chars with # seperator
+                tags_keys = ""
+                tags_data = ""
+                for (key, value) in row.items():
+                    if 'tags' in key and len(value) > 0:
+
+                        # remove # and = from the tags keys and value
+                        keyadj = str(key).replace("tags/", "").replace("#", "").replace("=", "")
+                        valueadj = str(value).replace("#", "").replace("=", "")
+
+                        # check if length < 4000 to avoid overflow database column
+                        if len(tags_data) + len(keyadj) + len(valueadj) + 2 < 4000:
+                            tags_keys += ("#" if tags_keys == "" else "") + keyadj + "#"
+                            tags_data += ("#" if tags_data == "" else "") + keyadj + "=" + valueadj + "#"
+
                 # create array for bulk insert
                 row_data = (
                     str(tenancy.name),
@@ -365,7 +398,9 @@ try:
                     row['usage/consumedQuantity'],
                     row['usage/consumedQuantityUnits'],
                     row['usage/consumedQuantityMeasure'],
-                    row['lineItem/isCorrection']
+                    row['lineItem/isCorrection'],
+                    tags_keys,
+                    tags_data
                 )
                 data.append(row_data)
 
@@ -373,11 +408,11 @@ try:
             cursor = cx_Oracle.Cursor(con)
             sql = "INSERT INTO OCI_USAGE (TENANT_NAME , FILE_ID, USAGE_INTERVAL_START, USAGE_INTERVAL_END, PRD_SERVICE, PRD_RESOURCE, "
             sql += "PRD_COMPARTMENT_ID, PRD_COMPARTMENT_NAME, PRD_COMPARTMENT_PATH, PRD_REGION, PRD_AVAILABILITY_DOMAIN, USG_RESOURCE_ID, "
-            sql += "USG_BILLED_QUANTITY, USG_CONSUMED_QUANTITY, USG_CONSUMED_UNITS, USG_CONSUMED_MEASURE, IS_CORRECTION) "
+            sql += "USG_BILLED_QUANTITY, USG_CONSUMED_QUANTITY, USG_CONSUMED_UNITS, USG_CONSUMED_MEASURE, IS_CORRECTION, TAGS_KEYS, TAGS_DATA) "
             sql += "VALUES "
             sql += "( :1, :2, to_date(:3,'YYYY-MM-DD HH24:MI'), to_date(:4,'YYYY-MM-DD HH24:MI'), :5, :6, "
             sql += "  :7, :8, :9, :10, :11, :12, "
-            sql += "  to_number(:13), to_number(:14), :15, :16, :17 ) "
+            sql += "  to_number(:13), to_number(:14), :15, :16, :17 ,:18 ,:19) "
 
             cursor.prepare(sql)
             cursor.executemany(None, data)
@@ -392,6 +427,9 @@ try:
 
     print("Total Objects Processed = " + str(num))
     con.close()
+
+except cx_Oracle.DatabaseError as e:
+    print("\nError manipulating database - " + str(e) + "\n")
 
 except Exception as e:
     print("\nError Download Usage and insert to database - " + str(e))

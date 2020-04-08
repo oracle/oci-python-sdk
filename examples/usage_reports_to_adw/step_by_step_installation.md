@@ -312,11 +312,11 @@ Download [usage.demo.apex.zip](apex_demo_app/usage.demo.apex.zip) from github "a
 ## 18. Bonus - Schedule a crontab job to execute the load daily
 ```
     # Amend the database variables of the file run_daily_usage2adw.sh according to your environment:
-    $HOME/oci-python-sdk/examples/usage_reports_to_adw/run_daily_usage2adw.sh
+    $HOME/oci-python-sdk/examples/usage_reports_to_adw/shell_scripts/run_single_daily_usage2adw.sh
 
 	# change execution permission
-	chmod +x $HOME/oci-python-sdk/examples/usage_reports_to_adw/run_daily_usage2adw.sh
+	chmod +x $HOME/oci-python-sdk/examples/usage_reports_to_adw/shell_scripts/run_single_daily_usage2adw.sh
     
     # add crontab that execute every night
-    0 0 * * * timeout 6h /home/opc/oci-python-sdk/examples/usage_reports_to_adw/run_daily_usage2adw.sh > /home/opc/oci-python-sdk/examples/usage_reports_to_adw/run_daily_usage2adw_crontab_run.txt 2>&1
+    0 0 * * * timeout 6h /home/opc/oci-python-sdk/examples/usage_reports_to_adw/shell_scripts/run_single_daily_usage2adw.sh > /home/opc/oci-python-sdk/examples/usage_reports_to_adw/shell_scripts/run_single_daily_usage2adw_crontab_run.txt 2>&1
 ```
