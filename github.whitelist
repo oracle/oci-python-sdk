@@ -81,3 +81,4 @@
 ^src/oci/secrets/.*\.py$
 ^src/oci/vault/.*\.py$
 ^src/oci/bds/.*\.py$
+^src/oci/encryption/.*\.py$
