@@ -9,7 +9,10 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class StructuredSearchDetails(SearchDetails):
     """
-    A request containing search filters using the structured search query language.
+    A request that uses Search's structured query language to specify filter conditions to apply to search results.
+    For more information about writing queries, see `Search Language Syntax`__.
+
+    __ https://docs.cloud.oracle.com/en-us/iaas/Content/Search/Concepts/querysyntax.htm
     """
 
     def __init__(self, **kwargs):

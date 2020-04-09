@@ -145,7 +145,7 @@ class QueryableFieldDescription(object):
     def is_array(self):
         """
         Gets the is_array of this QueryableFieldDescription.
-        Indicates this field is actually an array of the specified field type.
+        Indicates that this field is actually an array of the specified field type.
 
 
         :return: The is_array of this QueryableFieldDescription.
@@ -157,7 +157,7 @@ class QueryableFieldDescription(object):
     def is_array(self, is_array):
         """
         Sets the is_array of this QueryableFieldDescription.
-        Indicates this field is actually an array of the specified field type.
+        Indicates that this field is actually an array of the specified field type.
 
 
         :param is_array: The is_array of this QueryableFieldDescription.
@@ -169,7 +169,7 @@ class QueryableFieldDescription(object):
     def object_properties(self):
         """
         Gets the object_properties of this QueryableFieldDescription.
-        If the field type is `OBJECT`, then this property will provide all the individual properties on the object that can
+        If the field type is `OBJECT`, then this property will provide all the individual properties of the object that can
         be queried.
 
 
@@ -182,7 +182,7 @@ class QueryableFieldDescription(object):
     def object_properties(self, object_properties):
         """
         Sets the object_properties of this QueryableFieldDescription.
-        If the field type is `OBJECT`, then this property will provide all the individual properties on the object that can
+        If the field type is `OBJECT`, then this property will provide all the individual properties of the object that can
         be queried.
 
 

@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourceSummary(object):
     """
-    A resource that exists in the user's cloud network.
+    A resource that exists in the cloud network that you're querying.
     """
 
     def __init__(self, **kwargs):
@@ -53,9 +53,17 @@ class ResourceSummary(object):
             The value to assign to the defined_tags property of this ResourceSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this ResourceSummary.
+        :type system_tags: dict(str, dict(str, object))
+
         :param search_context:
             The value to assign to the search_context property of this ResourceSummary.
         :type search_context: SearchContext
+
+        :param identity_context:
+            The value to assign to the identity_context property of this ResourceSummary.
+        :type identity_context: dict(str, object)
 
         """
         self.swagger_types = {
@@ -68,7 +76,9 @@ class ResourceSummary(object):
             'lifecycle_state': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'search_context': 'SearchContext'
+            'system_tags': 'dict(str, dict(str, object))',
+            'search_context': 'SearchContext',
+            'identity_context': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -81,7 +91,9 @@ class ResourceSummary(object):
             'lifecycle_state': 'lifecycleState',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'search_context': 'searchContext'
+            'system_tags': 'systemTags',
+            'search_context': 'searchContext',
+            'identity_context': 'identityContext'
         }
 
         self._resource_type = None
@@ -93,7 +105,9 @@ class ResourceSummary(object):
         self._lifecycle_state = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
         self._search_context = None
+        self._identity_context = None
 
     @property
     def resource_type(self):
@@ -171,7 +185,7 @@ class ResourceSummary(object):
     def time_created(self):
         """
         Gets the time_created of this ResourceSummary.
-        The time this resource was created.
+        The time that this resource was created.
 
 
         :return: The time_created of this ResourceSummary.
@@ -183,7 +197,7 @@ class ResourceSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ResourceSummary.
-        The time this resource was created.
+        The time that this resource was created.
 
 
         :param time_created: The time_created of this ResourceSummary.
@@ -219,7 +233,7 @@ class ResourceSummary(object):
     def availability_domain(self):
         """
         Gets the availability_domain of this ResourceSummary.
-        The availability domain this resource is located in, if applicable.
+        The availability domain where this resource exists, if applicable.
 
 
         :return: The availability_domain of this ResourceSummary.
@@ -231,7 +245,7 @@ class ResourceSummary(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this ResourceSummary.
-        The availability domain this resource is located in, if applicable.
+        The availability domain where this resource exists, if applicable.
 
 
         :param availability_domain: The availability_domain of this ResourceSummary.
@@ -267,7 +281,11 @@ class ResourceSummary(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this ResourceSummary.
-        The freeform tags associated with this resource, if any.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ResourceSummary.
@@ -279,7 +297,11 @@ class ResourceSummary(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this ResourceSummary.
-        The freeform tags associated with this resource, if any.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ResourceSummary.
@@ -291,7 +313,11 @@ class ResourceSummary(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this ResourceSummary.
-        The defined tags associated with this resource, if any.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ResourceSummary.
@@ -303,7 +329,11 @@ class ResourceSummary(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this ResourceSummary.
-        The defined tags associated with this resource, if any.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ResourceSummary.
@@ -312,11 +342,41 @@ class ResourceSummary(object):
         self._defined_tags = defined_tags
 
     @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this ResourceSummary.
+        System tags associated with this resource, if any. System tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.
+        For more information, see `Resource Tags`__.
+        Example: `{orcl-cloud: {free-tier-retain: true}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The system_tags of this ResourceSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this ResourceSummary.
+        System tags associated with this resource, if any. System tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.
+        For more information, see `Resource Tags`__.
+        Example: `{orcl-cloud: {free-tier-retain: true}}`
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm
+
+
+        :param system_tags: The system_tags of this ResourceSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
+
+    @property
     def search_context(self):
         """
         Gets the search_context of this ResourceSummary.
-        Contains search context, such as highlighting, for found resources.
-
 
         :return: The search_context of this ResourceSummary.
         :rtype: SearchContext
@@ -327,13 +387,37 @@ class ResourceSummary(object):
     def search_context(self, search_context):
         """
         Sets the search_context of this ResourceSummary.
-        Contains search context, such as highlighting, for found resources.
-
 
         :param search_context: The search_context of this ResourceSummary.
         :type: SearchContext
         """
         self._search_context = search_context
+
+    @property
+    def identity_context(self):
+        """
+        Gets the identity_context of this ResourceSummary.
+        Additional identifiers to use together in a \"Get\" request for a specified resource, only required for resource types
+        that explicitly cannot be retrieved by using a single identifier, such as the resource's OCID.
+
+
+        :return: The identity_context of this ResourceSummary.
+        :rtype: dict(str, object)
+        """
+        return self._identity_context
+
+    @identity_context.setter
+    def identity_context(self, identity_context):
+        """
+        Sets the identity_context of this ResourceSummary.
+        Additional identifiers to use together in a \"Get\" request for a specified resource, only required for resource types
+        that explicitly cannot be retrieved by using a single identifier, such as the resource's OCID.
+
+
+        :param identity_context: The identity_context of this ResourceSummary.
+        :type: dict(str, object)
+        """
+        self._identity_context = identity_context
 
     def __repr__(self):
         return formatted_flat_dict(self)

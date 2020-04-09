@@ -12,6 +12,14 @@ class OceInstance(object):
     Details of OceInstance.
     """
 
+    #: A constant which can be used with the upgrade_schedule property of a OceInstance.
+    #: This constant has a value of "UPGRADE_IMMEDIATELY"
+    UPGRADE_SCHEDULE_UPGRADE_IMMEDIATELY = "UPGRADE_IMMEDIATELY"
+
+    #: A constant which can be used with the upgrade_schedule property of a OceInstance.
+    #: This constant has a value of "DELAYED_UPGRADE"
+    UPGRADE_SCHEDULE_DELAYED_UPGRADE = "DELAYED_UPGRADE"
+
     #: A constant which can be used with the instance_usage_type property of a OceInstance.
     #: This constant has a value of "PRIMARY"
     INSTANCE_USAGE_TYPE_PRIMARY = "PRIMARY"
@@ -19,6 +27,14 @@ class OceInstance(object):
     #: A constant which can be used with the instance_usage_type property of a OceInstance.
     #: This constant has a value of "NONPRIMARY"
     INSTANCE_USAGE_TYPE_NONPRIMARY = "NONPRIMARY"
+
+    #: A constant which can be used with the instance_access_type property of a OceInstance.
+    #: This constant has a value of "PUBLIC"
+    INSTANCE_ACCESS_TYPE_PUBLIC = "PUBLIC"
+
+    #: A constant which can be used with the instance_access_type property of a OceInstance.
+    #: This constant has a value of "PRIVATE"
+    INSTANCE_ACCESS_TYPE_PRIVATE = "PRIVATE"
 
     #: A constant which can be used with the lifecycle_state property of a OceInstance.
     #: This constant has a value of "CREATING"
@@ -81,6 +97,12 @@ class OceInstance(object):
             The value to assign to the tenancy_name property of this OceInstance.
         :type tenancy_name: str
 
+        :param upgrade_schedule:
+            The value to assign to the upgrade_schedule property of this OceInstance.
+            Allowed values for this property are: "UPGRADE_IMMEDIATELY", "DELAYED_UPGRADE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type upgrade_schedule: str
+
         :param identity_stripe:
             The value to assign to the identity_stripe property of this OceInstance.
         :type identity_stripe: IdentityStripeDetails
@@ -102,6 +124,12 @@ class OceInstance(object):
         :param waf_primary_domain:
             The value to assign to the waf_primary_domain property of this OceInstance.
         :type waf_primary_domain: str
+
+        :param instance_access_type:
+            The value to assign to the instance_access_type property of this OceInstance.
+            Allowed values for this property are: "PUBLIC", "PRIVATE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type instance_access_type: str
 
         :param time_created:
             The value to assign to the time_created property of this OceInstance.
@@ -143,11 +171,13 @@ class OceInstance(object):
             'tenancy_id': 'str',
             'idcs_tenancy': 'str',
             'tenancy_name': 'str',
+            'upgrade_schedule': 'str',
             'identity_stripe': 'IdentityStripeDetails',
             'instance_usage_type': 'str',
             'object_storage_namespace': 'str',
             'admin_email': 'str',
             'waf_primary_domain': 'str',
+            'instance_access_type': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
@@ -166,11 +196,13 @@ class OceInstance(object):
             'tenancy_id': 'tenancyId',
             'idcs_tenancy': 'idcsTenancy',
             'tenancy_name': 'tenancyName',
+            'upgrade_schedule': 'upgradeSchedule',
             'identity_stripe': 'identityStripe',
             'instance_usage_type': 'instanceUsageType',
             'object_storage_namespace': 'objectStorageNamespace',
             'admin_email': 'adminEmail',
             'waf_primary_domain': 'wafPrimaryDomain',
+            'instance_access_type': 'instanceAccessType',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
@@ -188,11 +220,13 @@ class OceInstance(object):
         self._tenancy_id = None
         self._idcs_tenancy = None
         self._tenancy_name = None
+        self._upgrade_schedule = None
         self._identity_stripe = None
         self._instance_usage_type = None
         self._object_storage_namespace = None
         self._admin_email = None
         self._waf_primary_domain = None
+        self._instance_access_type = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
@@ -394,6 +428,38 @@ class OceInstance(object):
         self._tenancy_name = tenancy_name
 
     @property
+    def upgrade_schedule(self):
+        """
+        Gets the upgrade_schedule of this OceInstance.
+        Upgrade schedule type representing service to be upgraded immediately whenever latest version is released
+        or delay upgrade of the service to previous released version
+
+        Allowed values for this property are: "UPGRADE_IMMEDIATELY", "DELAYED_UPGRADE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The upgrade_schedule of this OceInstance.
+        :rtype: str
+        """
+        return self._upgrade_schedule
+
+    @upgrade_schedule.setter
+    def upgrade_schedule(self, upgrade_schedule):
+        """
+        Sets the upgrade_schedule of this OceInstance.
+        Upgrade schedule type representing service to be upgraded immediately whenever latest version is released
+        or delay upgrade of the service to previous released version
+
+
+        :param upgrade_schedule: The upgrade_schedule of this OceInstance.
+        :type: str
+        """
+        allowed_values = ["UPGRADE_IMMEDIATELY", "DELAYED_UPGRADE"]
+        if not value_allowed_none_or_none_sentinel(upgrade_schedule, allowed_values):
+            upgrade_schedule = 'UNKNOWN_ENUM_VALUE'
+        self._upgrade_schedule = upgrade_schedule
+
+    @property
     def identity_stripe(self):
         """
         Gets the identity_stripe of this OceInstance.
@@ -514,6 +580,36 @@ class OceInstance(object):
         :type: str
         """
         self._waf_primary_domain = waf_primary_domain
+
+    @property
+    def instance_access_type(self):
+        """
+        Gets the instance_access_type of this OceInstance.
+        Flag indicating whether the instance access is private or public
+
+        Allowed values for this property are: "PUBLIC", "PRIVATE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The instance_access_type of this OceInstance.
+        :rtype: str
+        """
+        return self._instance_access_type
+
+    @instance_access_type.setter
+    def instance_access_type(self, instance_access_type):
+        """
+        Sets the instance_access_type of this OceInstance.
+        Flag indicating whether the instance access is private or public
+
+
+        :param instance_access_type: The instance_access_type of this OceInstance.
+        :type: str
+        """
+        allowed_values = ["PUBLIC", "PRIVATE"]
+        if not value_allowed_none_or_none_sentinel(instance_access_type, allowed_values):
+            instance_access_type = 'UNKNOWN_ENUM_VALUE'
+        self._instance_access_type = instance_access_type
 
     @property
     def time_created(self):
