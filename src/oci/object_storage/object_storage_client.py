@@ -368,48 +368,6 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
-        :param str opc_sse_customer_algorithm: (optional)
-            The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
-            `Using Your Own Keys for Server-Side Encryption`__.
-
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
-
-        :param str opc_sse_customer_key: (optional)
-            The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
-            decrypt the data. For more information, see
-            `Using Your Own Keys for Server-Side Encryption`__.
-
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
-
-        :param str opc_sse_customer_key_sha256: (optional)
-            The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
-            value is used to check the integrity of the encryption key. For more information, see
-            `Using Your Own Keys for Server-Side Encryption`__.
-
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
-
-        :param str opc_source_sse_customer_algorithm: (optional)
-            The optional header that specifies \"AES256\" as the encryption algorithm to use to decrypt the source
-            object. For more information, see
-            `Using Your Own Keys for Server-Side Encryption`__.
-
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
-
-        :param str opc_source_sse_customer_key: (optional)
-            The optional header that specifies the base64-encoded 256-bit encryption key to use to decrypt
-            the source object. For more information, see
-            `Using Your Own Keys for Server-Side Encryption`__.
-
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
-
-        :param str opc_source_sse_customer_key_sha256: (optional)
-            The optional header that specifies the base64-encoded SHA256 hash of the encryption key used to
-            decrypt the source object. This value is used to check the integrity of the encryption key. For
-            more information, see
-            `Using Your Own Keys for Server-Side Encryption`__.
-
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
-
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -427,13 +385,7 @@ class ObjectStorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "opc_client_request_id",
-            "opc_sse_customer_algorithm",
-            "opc_sse_customer_key",
-            "opc_sse_customer_key_sha256",
-            "opc_source_sse_customer_algorithm",
-            "opc_source_sse_customer_key",
-            "opc_source_sse_customer_key_sha256"
+            "opc_client_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -454,13 +406,7 @@ class ObjectStorageClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-client-request-id": kwargs.get("opc_client_request_id", missing),
-            "opc-sse-customer-algorithm": kwargs.get("opc_sse_customer_algorithm", missing),
-            "opc-sse-customer-key": kwargs.get("opc_sse_customer_key", missing),
-            "opc-sse-customer-key-sha256": kwargs.get("opc_sse_customer_key_sha256", missing),
-            "opc-source-sse-customer-algorithm": kwargs.get("opc_source_sse_customer_algorithm", missing),
-            "opc-source-sse-customer-key": kwargs.get("opc_source_sse_customer_key", missing),
-            "opc-source-sse-customer-key-sha256": kwargs.get("opc_source_sse_customer_key_sha256", missing)
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -589,26 +535,6 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
-        :param str opc_sse_customer_algorithm: (optional)
-            The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
-            `Using Your Own Keys for Server-Side Encryption`__.
-
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
-
-        :param str opc_sse_customer_key: (optional)
-            The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
-            decrypt the data. For more information, see
-            `Using Your Own Keys for Server-Side Encryption`__.
-
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
-
-        :param str opc_sse_customer_key_sha256: (optional)
-            The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
-            value is used to check the integrity of the encryption key. For more information, see
-            `Using Your Own Keys for Server-Side Encryption`__.
-
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
-
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -628,10 +554,7 @@ class ObjectStorageClient(object):
             "retry_strategy",
             "if_match",
             "if_none_match",
-            "opc_client_request_id",
-            "opc_sse_customer_algorithm",
-            "opc_sse_customer_key",
-            "opc_sse_customer_key_sha256"
+            "opc_client_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -654,10 +577,7 @@ class ObjectStorageClient(object):
             "content-type": "application/json",
             "if-match": kwargs.get("if_match", missing),
             "if-none-match": kwargs.get("if_none_match", missing),
-            "opc-client-request-id": kwargs.get("opc_client_request_id", missing),
-            "opc-sse-customer-algorithm": kwargs.get("opc_sse_customer_algorithm", missing),
-            "opc-sse-customer-key": kwargs.get("opc_sse_customer_key", missing),
-            "opc-sse-customer-key-sha256": kwargs.get("opc_sse_customer_key_sha256", missing)
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -1730,26 +1650,6 @@ class ObjectStorageClient(object):
 
             __ https://tools.ietf.org/html/rfc7233#section-2.1
 
-        :param str opc_sse_customer_algorithm: (optional)
-            The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
-            `Using Your Own Keys for Server-Side Encryption`__.
-
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
-
-        :param str opc_sse_customer_key: (optional)
-            The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
-            decrypt the data. For more information, see
-            `Using Your Own Keys for Server-Side Encryption`__.
-
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
-
-        :param str opc_sse_customer_key_sha256: (optional)
-            The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
-            value is used to check the integrity of the encryption key. For more information, see
-            `Using Your Own Keys for Server-Side Encryption`__.
-
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
-
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1770,10 +1670,7 @@ class ObjectStorageClient(object):
             "if_match",
             "if_none_match",
             "opc_client_request_id",
-            "range",
-            "opc_sse_customer_algorithm",
-            "opc_sse_customer_key",
-            "opc_sse_customer_key_sha256"
+            "range"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1798,10 +1695,7 @@ class ObjectStorageClient(object):
             "if-match": kwargs.get("if_match", missing),
             "if-none-match": kwargs.get("if_none_match", missing),
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing),
-            "range": kwargs.get("range", missing),
-            "opc-sse-customer-algorithm": kwargs.get("opc_sse_customer_algorithm", missing),
-            "opc-sse-customer-key": kwargs.get("opc_sse_customer_key", missing),
-            "opc-sse-customer-key-sha256": kwargs.get("opc_sse_customer_key_sha256", missing)
+            "range": kwargs.get("range", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -2334,26 +2228,6 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
-        :param str opc_sse_customer_algorithm: (optional)
-            The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
-            `Using Your Own Keys for Server-Side Encryption`__.
-
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
-
-        :param str opc_sse_customer_key: (optional)
-            The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
-            decrypt the data. For more information, see
-            `Using Your Own Keys for Server-Side Encryption`__.
-
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
-
-        :param str opc_sse_customer_key_sha256: (optional)
-            The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
-            value is used to check the integrity of the encryption key. For more information, see
-            `Using Your Own Keys for Server-Side Encryption`__.
-
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
-
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2373,10 +2247,7 @@ class ObjectStorageClient(object):
             "retry_strategy",
             "if_match",
             "if_none_match",
-            "opc_client_request_id",
-            "opc_sse_customer_algorithm",
-            "opc_sse_customer_key",
-            "opc_sse_customer_key_sha256"
+            "opc_client_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2400,10 +2271,7 @@ class ObjectStorageClient(object):
             "content-type": "application/json",
             "if-match": kwargs.get("if_match", missing),
             "if-none-match": kwargs.get("if_none_match", missing),
-            "opc-client-request-id": kwargs.get("opc_client_request_id", missing),
-            "opc-sse-customer-algorithm": kwargs.get("opc_sse_customer_algorithm", missing),
-            "opc-sse-customer-key": kwargs.get("opc_sse_customer_key", missing),
-            "opc-sse-customer-key-sha256": kwargs.get("opc_sse_customer_key_sha256", missing)
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -3644,26 +3512,6 @@ class ObjectStorageClient(object):
             that read the object determine what to do based on the value provided.
             For example, you could use this header to identify objects that require caching restrictions.
 
-        :param str opc_sse_customer_algorithm: (optional)
-            The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
-            `Using Your Own Keys for Server-Side Encryption`__.
-
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
-
-        :param str opc_sse_customer_key: (optional)
-            The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
-            decrypt the data. For more information, see
-            `Using Your Own Keys for Server-Side Encryption`__.
-
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
-
-        :param str opc_sse_customer_key_sha256: (optional)
-            The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
-            value is used to check the integrity of the encryption key. For more information, see
-            `Using Your Own Keys for Server-Side Encryption`__.
-
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
-
         :param dict(str, str) opc_meta: (optional)
             Optional user-defined metadata key and value.
 
@@ -3697,9 +3545,6 @@ class ObjectStorageClient(object):
             "content_encoding",
             "content_disposition",
             "cache_control",
-            "opc_sse_customer_algorithm",
-            "opc_sse_customer_key",
-            "opc_sse_customer_key_sha256",
             "opc_meta"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3732,9 +3577,6 @@ class ObjectStorageClient(object):
             "Content-Encoding": kwargs.get("content_encoding", missing),
             "Content-Disposition": kwargs.get("content_disposition", missing),
             "Cache-Control": kwargs.get("cache_control", missing),
-            "opc-sse-customer-algorithm": kwargs.get("opc_sse_customer_algorithm", missing),
-            "opc-sse-customer-key": kwargs.get("opc_sse_customer_key", missing),
-            "opc-sse-customer-key-sha256": kwargs.get("opc_sse_customer_key_sha256", missing),
 
         }
         for key, value in six.iteritems(kwargs.get("opc_meta", {})):
@@ -4445,26 +4287,6 @@ class ObjectStorageClient(object):
 
             \"The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)\"
 
-        :param str opc_sse_customer_algorithm: (optional)
-            The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
-            `Using Your Own Keys for Server-Side Encryption`__.
-
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
-
-        :param str opc_sse_customer_key: (optional)
-            The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
-            decrypt the data. For more information, see
-            `Using Your Own Keys for Server-Side Encryption`__.
-
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
-
-        :param str opc_sse_customer_key_sha256: (optional)
-            The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
-            value is used to check the integrity of the encryption key. For more information, see
-            `Using Your Own Keys for Server-Side Encryption`__.
-
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
-
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -4487,10 +4309,7 @@ class ObjectStorageClient(object):
             "if_match",
             "if_none_match",
             "expect",
-            "content_md5",
-            "opc_sse_customer_algorithm",
-            "opc_sse_customer_key",
-            "opc_sse_customer_key_sha256"
+            "content_md5"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -4522,10 +4341,7 @@ class ObjectStorageClient(object):
             "if-none-match": kwargs.get("if_none_match", missing),
             "Expect": kwargs.get("expect", missing),
             "Content-Length": kwargs.get("content_length", missing),
-            "Content-MD5": kwargs.get("content_md5", missing),
-            "opc-sse-customer-algorithm": kwargs.get("opc_sse_customer_algorithm", missing),
-            "opc-sse-customer-key": kwargs.get("opc_sse_customer_key", missing),
-            "opc-sse-customer-key-sha256": kwargs.get("opc_sse_customer_key_sha256", missing)
+            "Content-MD5": kwargs.get("content_md5", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
