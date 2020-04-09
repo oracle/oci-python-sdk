@@ -2,7 +2,7 @@
 # Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 
 from oci._vendor.requests.exceptions import Timeout
-from oci._vendor.requests.exceptions import ConnectionError
+from oci._vendor.requests.exceptions import ConnectionError as RequestsConnectionError
 
 import oci
 import oci.retry
@@ -29,10 +29,15 @@ def test_service_error_checker_timeouts():
     assert checker.service_error_retry_config == {-1: [], 429: []}
 
     assert checker.should_retry(exception=Timeout())
-    assert checker.should_retry(exception=ConnectionError())
+    assert checker.should_retry(exception=RequestsConnectionError())
     assert checker.should_retry(exception=oci.exceptions.RequestException())
     assert checker.should_retry(exception=oci.exceptions.ConnectTimeout())
     assert not checker.should_retry(exception=RuntimeError())
+    # This is inside a try block because ConnectionError exists in Python 3 and not in Python 2
+    try:
+        assert checker.should_retry(exception=ConnectionError())
+    except NameError:
+        pass
 
     service_error_429 = oci.exceptions.ServiceError(429, 'TooManyRequests', {}, None)
     service_error_500 = oci.exceptions.ServiceError(500, 'SomeCode', {}, None)
@@ -71,7 +76,12 @@ def test_checker_container():
     ]
     checker_container = oci.retry.retry_checkers.RetryCheckerContainer(checkers=checkers)
 
-    assert not checker_container.should_retry(exception=ConnectionError(), current_attempt=7)  # limit failed, service error passed
+    assert not checker_container.should_retry(exception=RequestsConnectionError(), current_attempt=7)  # limit failed, service error passed
+    # This is inside a try block because ConnectionError exists in Python 3 and not in Python 2
+    try:
+        assert not checker_container.should_retry(exception=ConnectionError(), current_attempt=7)  # limit failed, service error passed
+    except NameError:
+        pass
     assert not checker_container.should_retry(exception=RuntimeError(), current_attempt=3)  # limit passed, service error failed
     assert checker_container.should_retry(exception=oci.exceptions.ServiceError(429, 'TooManyRequests', {}, None), current_attempt=1)  # both checks pass
     assert checker_container.should_retry(exception=oci.exceptions.ServiceError(500, 'InternalServerError', {}, None), current_attempt=3)  # both checks pass
@@ -86,7 +96,12 @@ def test_retry_strategy_builder():
     assert retrying_call.current_calls == 1
 
     retrying_call.reset()
-    retrying_call.exception_to_throw = ConnectionError()
+    retrying_call.exception_to_throw = RequestsConnectionError()
+    # This is inside a try block because ConnectionError exists in Python 3 and not in Python 2
+    try:
+        retrying_call.exception_to_throw = ConnectionError()
+    except NameError:
+        pass
     assert retry_strategy.make_retrying_call(retrying_call.do_call)
     assert retrying_call.current_calls == 3
 
