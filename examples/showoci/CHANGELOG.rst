@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.04.20 - 2020-04-20
+=====================
+* Added Maintanance Window for DB Node
+* Added User Credential and additional skip flag (-isc) (Thanks to J.Hammer for his Contribution)
+* Added security alert flag if security list or security group has 0.0.0.0/0 from ports which not 22,443,3389
+
+=====================
 20.04.13 - 2020-04-13
 =====================
 * Added python version check
