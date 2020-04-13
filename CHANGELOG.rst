@@ -4,12 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.12.4 - TBD
+2.12.4 - 2020-04-14
 ====================
 
 Added
 -----
-* TBD
+* Support for access types on instances in the Content and Experience service
+* Support for identity contexts in the Search service
+* Support for Client Side Encryption: https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/clientsideencryption.htm
+* Support for retries on Python built-in `ConnectionError <https://docs.python.org/3/library/exceptions.html#ConnectionError>`__
 
 ====================
 2.12.3 - 2020-04-07
