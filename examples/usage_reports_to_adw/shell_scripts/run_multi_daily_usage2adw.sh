@@ -1,30 +1,32 @@
-#!/bin/ksh
+#!/bin/bash
 #############################################################################################################################
 # Author - Adi Zohar, Feb 28th 2020
 #
-# Run daily usage load for crontab use
+# Run Multi daily usage load for crontab use
 #
 # Amend variables below and database connectivity
 #
 # Crontab set:
-# 0 0 * * * timeout 6h /home/opc/usage_adw/run_daily_usage2adw.sh > /home/opc/usage_adw/run_daily_usage2adw_crontab_run.txt 2>&1
+# 0 0 * * * timeout 6h /home/opc/oci-python-sdk/examples/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw.sh > /home/opc/oci-python-sdk/examples/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw_crontab_run.txt 2>&1
 #############################################################################################################################
-# Update below variables
-export ORACLE_HOME=$HOME/instantclient_18_3
-export TNS_ADMIN=$ORACLE_HOME/network/admin
-export PYTHONPATH=$HOME/python
-export APPDIR=$HOME/usage2adw
+
+# Env Variables based on yum instant client
+export CLIENT_HOME=/usr/lib/oracle/18.3/client64
+export LD_LIBRARY_PATH=$CLIENT_HOME/lib
+export PATH=$PATH:$CLIENT_HOME/bin
+
+# App dir
+export TNS_ADMIN=$HOME/ADWCUSG
+export APPDIR=$HOME/oci-python-sdk/examples/usage_reports_to_adw
 
 # database info
-export DATABASE_USER=user
-export DATABASE_PASS=password#
-export DATABASE_NAME=adw_low
-export MIN_DATE=2020-02-01
+export DATABASE_USER=usage
+export DATABASE_PASS=PaSsw0rd2#_#
+export DATABASE_NAME=adwcusg_low
+export MIN_DATE=2020-01-01
 
 # Fixed variables
 export DATE=`date '+%Y%m%d_%H%M'`
-export PATH=${PATH}:${ORACLE_HOME}:${PYTHONPATH}/bin
-export LD_LIBRARY_PATH=${ORACLE_HOME}
 export REPORT_DIR=${APPDIR}/report
 mkdir -p ${REPORT_DIR}
 
@@ -61,8 +63,8 @@ run_report()
 ##################################
 echo "Start running at `date`..."
 
-run_report tenant_name  &
+run_report tenant_name_1  &
+run_report tenant_name_2  &
 wait
 
 echo "Completed at `date`.."
-

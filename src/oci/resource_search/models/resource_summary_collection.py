@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourceSummaryCollection(object):
     """
-    Summary representation of resources that matched the search criteria.
+    A summary representation of resources that matched the search criteria.
     """
 
     def __init__(self, **kwargs):
