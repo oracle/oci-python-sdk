@@ -46,6 +46,7 @@ Output can be printer friendly, CSV files or JSON file.
 - oci.nosql.NosqlClient
 - oci.dns.DnsClient
 - oci.events.EventsClient
+- oci.waas.WaasClient
 
 ** DISCLAIMER – This is not an official Oracle application
 
@@ -163,7 +164,7 @@ optional arguments:
   -cn                  Print Containers
   -d                   Print Database
   -e                   Print EMail
-  -edge                Print Edge and DNS Services
+  -edge                Print Edge, DNS Services and WAAS policies
   -f                   Print File Storage
   -fun                 Print Functions
   -i                   Print Identity

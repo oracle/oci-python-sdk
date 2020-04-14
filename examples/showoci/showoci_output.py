@@ -101,27 +101,29 @@ class ShowOCIOutput(object):
     def print_showoci_config(self, data):
         try:
             self.print_header(data['program'], 1)
+            print("Machine         : " + data['machine'])
+            print("Python Version  : " + data['python'])
             if data['use_instance_principals']:
-                print("Authentication : Instance Principals")
+                print("Authentication  : Instance Principals")
             elif data['use_delegation_token']:
-                print("Authentication : Instance Principals With Delegation Token")
-                print("Config File    : " + data['config_file'])
-                print("Config Profile : " + data['config_profile'])
+                print("Authentication  : Instance Principals With Delegation Token")
+                print("Config File     : " + data['config_file'])
+                print("Config Profile  : " + data['config_profile'])
             else:
-                print("Authentication : Config File")
-                print("Config File    : " + data['config_file'])
-                print("Config Profile : " + data['config_profile'])
-            print("Version        : " + data['version'])
-            print("Date/Time      : " + data['datetime'])
-            print("Comand Line    : " + data['cmdline'])
-            print("OCI SDK Ver    : " + data['oci_sdk_version'])
+                print("Authentication  : Config File")
+                print("Config File     : " + data['config_file'])
+                print("Config Profile  : " + data['config_profile'])
+            print("Date/Time       : " + data['datetime'])
+            print("Comand Line     : " + data['cmdline'])
+            print("Showoci Version : " + data['version'])
+            print("OCI SDK Version : " + data['oci_sdk_version'])
             if 'proxy' in data:
-                print("Proxy          : " + data['proxy'])
+                print("Proxy           : " + data['proxy'])
             if 'override_tenant_id' in data:
                 if data['override_tenant_id']:
-                    print("Override id    : " + data['override_tenant_id'])
+                    print("Override id     : " + data['override_tenant_id'])
             if 'joutfile' in data:
-                print("JSON Out       : " + data['joutfile'])
+                print("JSON Out        : " + data['joutfile'])
 
             print("")
 
@@ -1202,6 +1204,15 @@ class ShowOCIOutput(object):
                     print(self.tabs + "Health Check Id : " + arr['health_check_monitor_id'])
                     print("")
 
+            # if waas_policies
+            if 'waas_policies' in edge:
+                self.print_header("WAAS Policies", 2)
+
+                for arr in edge['waas_policies']:
+                    print(self.taba + arr['display_name'])
+                    print(self.tabs + "Domain : " + arr['domain'])
+                    print("")
+
         except Exception as e:
             self.__print_error("__print_edge_services_main", e)
 
@@ -1723,6 +1734,8 @@ class ShowOCISummary(object):
 
     summary_global_list = []
     summary_global_data = []
+    summary_global_region_total = []
+    summary_global_region_json = {}
     summary_global_total = []
 
     ############################################
@@ -1735,7 +1748,7 @@ class ShowOCISummary(object):
     # get summary total
     ##########################################################################
     def get_summary_json(self):
-        return {'data': self.summary_global_data, 'total': self.summary_global_total}
+        return {'data': self.summary_global_data, 'regions_totals': self.summary_global_region_json, 'total': self.summary_global_total}
 
     ##########################################################################
     # print_main
@@ -1749,7 +1762,8 @@ class ShowOCISummary(object):
                     if d['type'] == "region":
                         self.__summary_region_data(d['region'], d['data'])
 
-            self.__summary_print_total(self.summary_global_total, "Summary Total", 0)
+            self.summary_global_total = self.__summary_group_by("type", self.summary_global_total)
+            self.__summary_print_results(self.summary_global_total, "Summary Total", 0)
 
         except Exception as e:
             self.__print_error("print_summary", e)
@@ -1873,8 +1887,12 @@ class ShowOCISummary(object):
         try:
             for db in dbs:
                 if 'sum_info' in db and 'sum_count' in db:
-                    self.summary_global_list.append({'type': db['sum_info'], 'size': float(db['sum_count'])})
                     self.summary_global_list.append({'type': "Total OCPUs - Autonomous Database", 'size': float(db['sum_count'])})
+                    if float(db['sum_count']) == 0:
+                        self.summary_global_list.append({'type': db['sum_info_stopped'], 'size': 1})
+                    else:
+                        self.summary_global_list.append({'type': db['sum_info_count'], 'size': 1})
+                        self.summary_global_list.append({'type': db['sum_info'], 'size': float(db['sum_count'])})
 
                 if 'sum_info_storage' in db and 'sum_size_tb' in db:
                     self.summary_global_list.append({'type': db['sum_info_storage'], 'size': float(db['sum_size_tb'])})
@@ -1926,6 +1944,7 @@ class ShowOCISummary(object):
         try:
             for dbs in list_db_systems:
                 nodes = 1
+                # Db System
                 if 'Exadata' not in dbs['sum_info']:
                     if 'node_count' in dbs:
                         if dbs['node_count'] is not None and dbs['node_count'] != 'None' and dbs['node_count'] != "":
@@ -1933,7 +1952,10 @@ class ShowOCISummary(object):
 
                     # add ocpus for DB
                     if 'cpu_core_count' in dbs:
-                        self.summary_global_list.append({'type': 'Total OCPUs - VM/BM Database', 'size': float(dbs['cpu_core_count'])})
+                        if dbs['lifecycle_state'] == 'STOPPED':
+                            self.summary_global_list.append({'type': 'Total Stopped OCPUs - VM/BM Database', 'size': float(dbs['cpu_core_count'])})
+                        else:
+                            self.summary_global_list.append({'type': 'Total OCPUs - VM/BM Database', 'size': float(dbs['cpu_core_count'])})
 
                 # if Exa add Exadata CPUs
                 else:
@@ -1942,7 +1964,10 @@ class ShowOCISummary(object):
                         self.summary_global_list.append({'type': dbs['sum_info'] + " OCPUs", 'size': float(dbs['cpu_core_count'])})
 
                 # add db to summary
-                self.summary_global_list.append({'type': dbs['sum_info'], 'size': float(nodes)})
+                if dbs['lifecycle_state'] == 'STOPPED':
+                    self.summary_global_list.append({'type': 'Stopped ' + dbs['sum_info'], 'size': float(nodes)})
+                else:
+                    self.summary_global_list.append({'type': dbs['sum_info'], 'size': float(nodes)})
 
                 if dbs['sum_size_gb'] is not None:
                     if dbs['sum_size_gb'] != 'None' and dbs['sum_size_gb'] != "":
@@ -1966,11 +1991,14 @@ class ShowOCISummary(object):
                 return
 
             for instance in instances:
-                self.summary_global_list.append({'type': (instance['sum_info'] + " - " + instance['sum_shape']), 'size': float(1)})
-
-                # Add OCPUS for total
-                if 'shape_ocpu' in instance:
-                    self.summary_global_list.append({'type': 'Total OCPUs - Compute', 'size': float(instance['shape_ocpu'])})
+                if instance['lifecycle_state'] == "STOPPED":
+                    self.summary_global_list.append({'type': ("Stopped " + instance['sum_info'] + " - " + instance['sum_shape']), 'size': float(1)})
+                    if 'shape_ocpu' in instance:
+                        self.summary_global_list.append({'type': 'Total Stopped OCPUs - Compute', 'size': float(instance['shape_ocpu'])})
+                else:
+                    self.summary_global_list.append({'type': (instance['sum_info'] + " - " + instance['sum_shape']), 'size': float(1)})
+                    if 'shape_ocpu' in instance:
+                        self.summary_global_list.append({'type': 'Total OCPUs - Compute', 'size': float(instance['shape_ocpu'])})
 
                 if 'boot_volume' in instance:
                     self.__summary_core_size(instance['boot_volume'])
@@ -2063,45 +2091,17 @@ class ShowOCISummary(object):
     ##########################################################################
     def __summary_print_results(self, data, header, header_size):
 
-        return_val = []
         try:
 
             if len(data) > 0:
                 self.__summary_print_header(header, header_size)
 
-                grouped_data = self.__summary_group_by("type", data)
-
-                # add list to the total
-                self.summary_global_total.extend(grouped_data)
-
                 # sort and print
-                for d in sorted(grouped_data, key=lambda i: i['type']):
-                    print(d['type'].ljust(46)[0:45] + " - " + str(round(d['size'])).rjust(10))
-                    return_val.append({'type': d['type'], 'size': d['size']})
+                for d in sorted(data, key=lambda i: i['type']):
+                    print(d['type'].ljust(65, '.')[0:64] + str(round(d['size'])).rjust(10, '.'))
 
-                return return_val
         except Exception as e:
             self.__print_error("__summary_print_results", e)
-
-    ##########################################################################
-    # Print total data
-    ##########################################################################
-    def __summary_print_total(self, data, header, header_size):
-
-        try:
-
-            if len(data) > 0:
-                self.__summary_print_header(header, header_size)
-
-                grouped_data = self.__summary_group_by("type", data)
-                self.summary_global_total = grouped_data
-
-                # sort and print
-                for d in sorted(grouped_data, key=lambda i: i['type']):
-                    print(d['type'].ljust(46)[0:45] + " - " + str(round(d['size'])).rjust(10))
-
-        except Exception as e:
-            self.__print_error("__summary_print_total", e)
 
     ##########################################################################
     # Print summary Identity data
@@ -2112,6 +2112,7 @@ class ShowOCISummary(object):
             if not data:
                 return
             self.__summary_print_header("Summary - " + region_name, 0)
+            self.summary_global_region_total = []
             region_data_exist = False
 
             # loop on compartments
@@ -2140,14 +2141,25 @@ class ShowOCISummary(object):
                     compartment_header = "Summary - Compartment " + cdata['path']
                     region_data_exist = True
 
-                # print results compartment and return aggregated info
-                return_val = self.__summary_print_results(self.summary_global_list, compartment_header, 3)
+                # aggregate the data
+                self.summary_global_list = self.__summary_group_by("type", self.summary_global_list)
 
-                # add the aggregated summary to global data
-                self.summary_global_data.append({'region': region_name, 'compartment_name': cdata['path'], 'summary': return_val})
+                # print results compartment
+                self.__summary_print_results(self.summary_global_list, compartment_header, 3)
 
-            # if not data , print not found
-            if not region_data_exist:
+                # append data to global and region
+                self.summary_global_total.extend(self.summary_global_list)
+                self.summary_global_region_total.extend(self.summary_global_list)
+
+                # append data to global data
+                self.summary_global_data.append({'region': region_name, 'compartment_name': cdata['path'], 'summary': self.summary_global_list})
+
+            # If region data , aggregate the data, print and add to JSON
+            if region_data_exist:
+                self.summary_global_region_total = self.__summary_group_by("type", self.summary_global_region_total)
+                self.summary_global_region_json[region_name] = self.summary_global_region_total
+                self.__summary_print_results(self.summary_global_region_total, "Summary Region Total - " + region_name, 3)
+            else:
                 print("")
                 print("No Summary data exist in this region")
 
@@ -2174,6 +2186,7 @@ class ShowOCICSV(object):
     csv_database = []
     csv_network_subnet = []
     csv_network_security_list = []
+    csv_network_security_group = []
     csv_network_routes = []
     csv_network_dhcp_options = []
     csv_load_balancer = []
@@ -2220,6 +2233,7 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("network_subnet", self.csv_network_subnet)
             self.__export_to_csv_file("network_routes", self.csv_network_routes)
             self.__export_to_csv_file("network_security_list", self.csv_network_security_list)
+            self.__export_to_csv_file("network_security_group", self.csv_network_security_group)
             self.__export_to_csv_file("network_dhcp_options", self.csv_network_dhcp_options)
             self.__export_to_csv_file("database", self.csv_database)
             self.__export_to_csv_file("load_balancer_listeners", self.csv_load_balancer)
@@ -2443,7 +2457,7 @@ class ShowOCICSV(object):
             self.__print_error("__csv_core_network_vcn_subnet", e)
 
     ##########################################################################
-    # Print Network vcn security list
+    # CSV Network vcn security list
     ##########################################################################
     def __csv_core_network_vcn_security_lists(self, region_name, sec_lists, vcn):
         try:
@@ -2486,6 +2500,51 @@ class ShowOCICSV(object):
 
         except Exception as e:
             self.__print_error("__csv_core_network_vcn_security_lists", e)
+
+    ##########################################################################
+    # CSV for  Network vcn security group
+    ##########################################################################
+    def __csv_core_network_vcn_security_groups(self, region_name, nsg, vcn):
+        try:
+            if not nsg:
+                return
+
+            for sl in nsg:
+                if len(sl['sec_rules']) == 0:
+                    data = {'region_name': region_name,
+                            'vcn_name': vcn['display_name'],
+                            'vcn_cidr': vcn['cidr_block'],
+                            'vcn_compartment': vcn['compartment_name'],
+                            'sec_name': sl['name'],
+                            'sec_compartment': sl['compartment_name'],
+                            'sec_protocol': "",
+                            'is_stateless': "",
+                            'sec_rules': "Empty",
+                            'time_created': sl['time_created'],
+                            'vcn_id': vcn['id'],
+                            'sec_id': sl['id']
+                            }
+                    self.csv_network_security_list.append(data)
+
+                else:
+                    for slr in sl['sec_rules']:
+                        data = {'region_name': region_name,
+                                'vcn_name': vcn['display_name'],
+                                'vcn_cidr': vcn['cidr_block'],
+                                'vcn_compartment': vcn['compartment_name'],
+                                'sec_name': sl['name'],
+                                'sec_compartment': sl['compartment_name'],
+                                'sec_protocol': slr['protocol_name'],
+                                'is_stateless': slr['is_stateless'],
+                                'sec_rules': slr['desc'],
+                                'time_created': sl['time_created'],
+                                'vcn_id': vcn['id'],
+                                'sec_id': sl['id']
+                                }
+                        self.csv_network_security_group.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_core_network_vcn_security_groups", e)
 
     ##########################################################################
     # csv DHCP options for DHCP_ID
@@ -2605,7 +2664,7 @@ class ShowOCICSV(object):
                     self.__csv_core_network_vcn_security_lists(region_name, vcn['data']['security_lists'], vcn)
 
                 if 'security_groups' in vcn['data']:
-                    self.__csv_core_network_vcn_security_lists(region_name, vcn['data']['security_groups'], vcn)
+                    self.__csv_core_network_vcn_security_groups(region_name, vcn['data']['security_groups'], vcn)
 
                 if 'route_tables' in vcn['data']:
                     self.__csv_core_network_vcn_route_tables(region_name, vcn['data']['route_tables'], vcn)

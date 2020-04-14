@@ -9,7 +9,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SearchDetails(object):
     """
-    A base request type containing common criteria for searching for resources.
+    A base request type that contains common criteria for searching for resources.
     """
 
     #: A constant which can be used with the matching_context_type property of a SearchDetails.
@@ -97,7 +97,7 @@ class SearchDetails(object):
     def matching_context_type(self):
         """
         Gets the matching_context_type of this SearchDetails.
-        The type of matching context returned in the response. If you specify `HIGHLIGHTS`, then the service will highlight fragments in its response. (See ResourceSummary.searchContext and SearchContext for more information.) The default setting is `NONE`.
+        The type of matching context returned in the response. If you specify `HIGHLIGHTS`, then the service will highlight fragments in its response. (For more information, see ResourceSummary.searchContext and SearchContext.) The default setting is `NONE`.
 
         Allowed values for this property are: "NONE", "HIGHLIGHTS"
 
@@ -111,7 +111,7 @@ class SearchDetails(object):
     def matching_context_type(self, matching_context_type):
         """
         Sets the matching_context_type of this SearchDetails.
-        The type of matching context returned in the response. If you specify `HIGHLIGHTS`, then the service will highlight fragments in its response. (See ResourceSummary.searchContext and SearchContext for more information.) The default setting is `NONE`.
+        The type of matching context returned in the response. If you specify `HIGHLIGHTS`, then the service will highlight fragments in its response. (For more information, see ResourceSummary.searchContext and SearchContext.) The default setting is `NONE`.
 
 
         :param matching_context_type: The matching_context_type of this SearchDetails.

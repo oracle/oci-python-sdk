@@ -121,6 +121,8 @@ class ShowOCIData(object):
             'version': self.service.flags.showoci_version,
             'override_tenant_id': self.service.flags.filter_by_tenancy_id,
             'datetime': start_time,
+            'machine': self.service.flags.machine,
+            'python': self.service.flags.python,
             'cmdline': cmdline,
             'oci_sdk_version': self.service.get_oci_version()
         }
@@ -1907,6 +1909,8 @@ class ShowOCIData(object):
                          'time_created': str(dbs['time_created'])[0:16],
                          'connection_strings': str(dbs['connection_strings']),
                          'sum_info': "Autonomous Database " + str(dbs['db_workload']) + " (OCPUs) - " + dbs['license_model'],
+                         'sum_info_stopped': "Stopped Autonomous Database " + str(dbs['db_workload']) + " (Count) - " + dbs['license_model'],
+                         'sum_info_count': "Autonomous Database " + str(dbs['db_workload']) + " (Count) - " + dbs['license_model'],
                          'sum_count': str(dbs['sum_count']),
                          'sum_info_storage': "Autonomous Database (TB)",
                          'sum_size_tb': str(dbs['data_storage_size_in_tbs']), 'backups': self.__get_database_autonomous_backups(dbs['backups']),
@@ -2565,6 +2569,7 @@ class ShowOCIData(object):
             healthcheck_ping = self.service.search_multi_items(self.service.C_EDGE, self.service.C_EDGE_HEALTHCHECK_PING, 'region_name', region_name, 'compartment_id', compartment['id'])
             dns_zone = self.service.search_multi_items(self.service.C_EDGE, self.service.C_EDGE_DNS_ZONE, 'region_name', region_name, 'compartment_id', compartment['id'])
             dns_steering = self.service.search_multi_items(self.service.C_EDGE, self.service.C_EDGE_DNS_STEERING, 'region_name', region_name, 'compartment_id', compartment['id'])
+            waas_policies = self.service.search_multi_items(self.service.C_EDGE, self.service.C_EDGE_WAAS_POLICIES, 'region_name', region_name, 'compartment_id', compartment['id'])
 
             data = {}
             if len(healthcheck_http) > 0 or len(healthcheck_ping) > 0:
@@ -2575,6 +2580,9 @@ class ShowOCIData(object):
 
             if dns_steering:
                 data['dns_steering'] = dns_steering
+
+            if waas_policies:
+                data['waas_policies'] = waas_policies
 
             return data
 

@@ -20,6 +20,14 @@ class CreateOceInstanceDetails(object):
     #: This constant has a value of "NONPRIMARY"
     INSTANCE_USAGE_TYPE_NONPRIMARY = "NONPRIMARY"
 
+    #: A constant which can be used with the instance_access_type property of a CreateOceInstanceDetails.
+    #: This constant has a value of "PUBLIC"
+    INSTANCE_ACCESS_TYPE_PUBLIC = "PUBLIC"
+
+    #: A constant which can be used with the instance_access_type property of a CreateOceInstanceDetails.
+    #: This constant has a value of "PRIVATE"
+    INSTANCE_ACCESS_TYPE_PRIVATE = "PRIVATE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateOceInstanceDetails object with values from keyword arguments.
@@ -66,9 +74,18 @@ class CreateOceInstanceDetails(object):
             The value to assign to the admin_email property of this CreateOceInstanceDetails.
         :type admin_email: str
 
+        :param upgrade_schedule:
+            The value to assign to the upgrade_schedule property of this CreateOceInstanceDetails.
+        :type upgrade_schedule: str
+
         :param waf_primary_domain:
             The value to assign to the waf_primary_domain property of this CreateOceInstanceDetails.
         :type waf_primary_domain: str
+
+        :param instance_access_type:
+            The value to assign to the instance_access_type property of this CreateOceInstanceDetails.
+            Allowed values for this property are: "PUBLIC", "PRIVATE"
+        :type instance_access_type: str
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateOceInstanceDetails.
@@ -90,7 +107,9 @@ class CreateOceInstanceDetails(object):
             'instance_usage_type': 'str',
             'object_storage_namespace': 'str',
             'admin_email': 'str',
+            'upgrade_schedule': 'str',
             'waf_primary_domain': 'str',
+            'instance_access_type': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -106,7 +125,9 @@ class CreateOceInstanceDetails(object):
             'instance_usage_type': 'instanceUsageType',
             'object_storage_namespace': 'objectStorageNamespace',
             'admin_email': 'adminEmail',
+            'upgrade_schedule': 'upgradeSchedule',
             'waf_primary_domain': 'wafPrimaryDomain',
+            'instance_access_type': 'instanceAccessType',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -121,7 +142,9 @@ class CreateOceInstanceDetails(object):
         self._instance_usage_type = None
         self._object_storage_namespace = None
         self._admin_email = None
+        self._upgrade_schedule = None
         self._waf_primary_domain = None
+        self._instance_access_type = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -370,6 +393,32 @@ class CreateOceInstanceDetails(object):
         self._admin_email = admin_email
 
     @property
+    def upgrade_schedule(self):
+        """
+        Gets the upgrade_schedule of this CreateOceInstanceDetails.
+        Upgrade schedule type representing service to be upgraded immediately whenever latest version is released
+        or delay upgrade of the service to previous released version
+
+
+        :return: The upgrade_schedule of this CreateOceInstanceDetails.
+        :rtype: str
+        """
+        return self._upgrade_schedule
+
+    @upgrade_schedule.setter
+    def upgrade_schedule(self, upgrade_schedule):
+        """
+        Sets the upgrade_schedule of this CreateOceInstanceDetails.
+        Upgrade schedule type representing service to be upgraded immediately whenever latest version is released
+        or delay upgrade of the service to previous released version
+
+
+        :param upgrade_schedule: The upgrade_schedule of this CreateOceInstanceDetails.
+        :type: str
+        """
+        self._upgrade_schedule = upgrade_schedule
+
+    @property
     def waf_primary_domain(self):
         """
         Gets the waf_primary_domain of this CreateOceInstanceDetails.
@@ -392,6 +441,38 @@ class CreateOceInstanceDetails(object):
         :type: str
         """
         self._waf_primary_domain = waf_primary_domain
+
+    @property
+    def instance_access_type(self):
+        """
+        Gets the instance_access_type of this CreateOceInstanceDetails.
+        Flag indicating whether the instance access is private or public
+
+        Allowed values for this property are: "PUBLIC", "PRIVATE"
+
+
+        :return: The instance_access_type of this CreateOceInstanceDetails.
+        :rtype: str
+        """
+        return self._instance_access_type
+
+    @instance_access_type.setter
+    def instance_access_type(self, instance_access_type):
+        """
+        Sets the instance_access_type of this CreateOceInstanceDetails.
+        Flag indicating whether the instance access is private or public
+
+
+        :param instance_access_type: The instance_access_type of this CreateOceInstanceDetails.
+        :type: str
+        """
+        allowed_values = ["PUBLIC", "PRIVATE"]
+        if not value_allowed_none_or_none_sentinel(instance_access_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `instance_access_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._instance_access_type = instance_access_type
 
     @property
     def freeform_tags(self):
