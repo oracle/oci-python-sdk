@@ -320,3 +320,9 @@ Download [usage.demo.apex.zip](apex_demo_app/usage.demo.apex.zip) from github "a
     # add crontab that execute every night
     0 0 * * * timeout 6h /home/opc/oci-python-sdk/examples/usage_reports_to_adw/shell_scripts/run_single_daily_usage2adw.sh > /home/opc/oci-python-sdk/examples/usage_reports_to_adw/shell_scripts/run_single_daily_usage2adw_crontab_run.txt 2>&1
 ```
+
+## License
+
+Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl
+or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.

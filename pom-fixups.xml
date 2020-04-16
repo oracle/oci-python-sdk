@@ -47,7 +47,7 @@
             <configuration>
               <executable>${basedir}/scripts/fix_doc_links.py</executable>
               <arguments>
-                  <argument>${basedir}</argument>
+                <argument>${basedir}</argument>
               </arguments>
             </configuration>
           </execution>
@@ -94,11 +94,18 @@
               <includes>
                 <include>src/oci/**/*.py</include>
                 <include>tests/**/*.py</include>
-                <include>examples/*.py</include>
+                <include>examples/**/*.py</include>
                 <include>scripts/wercker_validate.py</include>
+                <include>**/*.sh</include>
+                <include>setup.py</include>
+                <include>src/oci/_vendor/__init__.py</include>
               </includes>
               <excludes>
-                <exclude>src/oci/_vendor/**/*.py</exclude>
+                <exclude>src/oci/_vendor/*/**/*.py</exclude>
+                <exclude>src/oci/_vendor/six.py</exclude>
+                <exclude>examples/showoci/**/*</exclude>
+                <exclude>examples/list_ipsec_and_virtual_circuits_in_tenancy/**/*</exclude>
+                <exclude>examples/usage_reports_to_adw/**/*</exclude>
               </excludes>
               <properties>
                 <current.year>${current.year}</current.year>
@@ -202,7 +209,7 @@
           </execution>
           <execution>
             <id>oci-src-vendor-urllib3</id>
-            <phase>intall</phase>
+            <phase>package</phase>
             <goals>
               <goal>format</goal>
             </goals>
