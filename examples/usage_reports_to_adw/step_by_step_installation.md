@@ -1,4 +1,4 @@
-# Usage2ADW - Oracle Cloud Infrastructure Usage Reports to Autonomous Database with APEX Reporting
+# Usage2ADW - Oracle Cloud Infrastructure Usage and Cost Reports to Autonomous Database with APEX Reporting
 
 ## Step by Step installation Guide on OCI VM and Autonomous Data Warehouse Database
 usage2adw is a tool which uses the Python SDK to extract the usage reports from your tenant and load it to Oracle Autonomous Database.

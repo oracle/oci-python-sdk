@@ -5,9 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.04.20 - 2020-04-20
+=====================
+* Added table OCI_USAGE_TAG_KEYS for tags
+* Added table OCI_COST and OCI_COST_TAG_KEYS for cost usage
+* Added support for cost files
+* Added Cost Analysis and Cost Overview to the APEX App
+
+=====================
 20.04.13 - 2020-04-13
 =====================
-* Added support for tags - Added TAGS_KEYS and TAGS_DATA columns to the table OCI_USAGE
+* Added support for tags - TAGS_DATA columns to the table OCI_USAGE
 * Added step by step installation guide for instant principles
 * Added APEX Application to query the data
 
