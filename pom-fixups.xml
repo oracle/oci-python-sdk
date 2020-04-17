@@ -106,6 +106,7 @@
                 <exclude>examples/showoci/**/*</exclude>
                 <exclude>examples/list_ipsec_and_virtual_circuits_in_tenancy/**/*</exclude>
                 <exclude>examples/usage_reports_to_adw/**/*</exclude>
+                <exclude>tests/resources/**/*</exclude>
               </excludes>
               <properties>
                 <current.year>${current.year}</current.year>
