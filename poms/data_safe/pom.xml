@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <groupId>com.oracle.bmc.sdk</groupId>
+    <artifactId>python-sdk</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <relativePath>../../pom.xml</relativePath>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.oracle.bmc.sdk</groupId>
+  <artifactId>python-sdk-data_safe-codegen<!-- artifact_id -->
+  </artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <properties>
+    <sdk-root-dir>${project.basedir}/../..</sdk-root-dir>
+    <preprocessed-temp-dir>${project.build.directory}/preprocessed</preprocessed-temp-dir>
+    <spec-temp-dir>${project.build.directory}/swagger</spec-temp-dir>
+    <preferred-temp-dir>${project.build.directory}/preferred</preferred-temp-dir>
+    <enabled-groups-dir>${sdk-root-dir}/codegenConfig/enabledGroups</enabled-groups-dir>
+    <feature-id-file>${sdk-root-dir}/featureId.yaml</feature-id-file>
+    <feature-id-dir>${sdk-root-dir}/codegenConfig/featureIds</feature-id-dir>
+    <!-- Service Spec file goes here -->
+    <ads-control-plane-spec-spec-file>api.cond.yaml</ads-control-plane-spec-spec-file>
+  </properties>
+  <dependencies>
+    <!-- Service dependency goes here -->
+    <dependency>
+      <groupId>com.oracle.ads.admin.cp</groupId>
+      <artifactId>ads-control-plane-spec</artifactId>
+    </dependency>
+  </dependencies>
+  <build>
+    <directory>${sdk-root-dir}/target</directory>
+    <plugins>
+      <plugin>
+        <groupId>com.oracle.oci.sdk.utilities</groupId>
+        <artifactId>dex-get-spec-artifact-plugin</artifactId>
+        <version>${oci.get.spec.artifact.plugin.version}</version>
+        <executions>
+          <!-- Unpack execution -->
+          <execution>
+            <id>unpack-ads-control-plane-spec</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>com.oracle.ads.admin.cp</groupId>
+                  <artifactId>ads-control-plane-spec</artifactId>
+                  <type>jar</type>
+                  <includes>**/*</includes>
+                  <outputDirectory>${spec-temp-dir}/ads-control-plane-spec</outputDirectory>
+                </artifactItem>
+              </artifactItems>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>com.oracle.oci.sdk.utilities</groupId>
+        <artifactId>spec-conditionals-preprocessor-plugin</artifactId>
+        <version>${preprocessor-version}</version>
+        <executions>
+          <!-- Prefer and preprocess executions -->
+          <execution>
+            <id>spec-conditionals-prefer-ads-control-plane-spec</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>prefer</goal>
+            </goals>
+            <configuration>
+              <inputFiles>
+                <inputFile>${spec-temp-dir}/ads-control-plane-spec/source/${ads-control-plane-spec-spec-file}</inputFile>
+                <inputFile>${spec-temp-dir}/ads-control-plane-spec/${ads-control-plane-spec-spec-file}</inputFile>
+              </inputFiles>
+              <outputFile>${preferred-temp-dir}/ads-control-plane-spec/${ads-control-plane-spec-spec-file}</outputFile>
+            </configuration>
+          </execution>
+          <execution>
+            <id>spec-conditionals-preprocess-ads-control-plane-spec</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>preprocess</goal>
+            </goals>
+            <configuration>
+              <inputFile>${preferred-temp-dir}/ads-control-plane-spec/${ads-control-plane-spec-spec-file}</inputFile>
+              <outputFile>${preprocessed-temp-dir}/ads-control-plane-spec/${ads-control-plane-spec-spec-file}</outputFile>
+              <groupFile>${enabled-groups-file}</groupFile>
+              <groupFileCollectionDir>${enabled-groups-dir}</groupFileCollectionDir>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>com.oracle.bmc.sdk</groupId>
+        <artifactId>bmc-sdk-swagger-maven-plugin</artifactId>
+        <version>${codegen-version}</version>
+        <configuration>
+          <isTestGenerationEnabled>false</isTestGenerationEnabled>
+        </configuration>
+        <executions>
+          <!-- Complile execution -->
+          <execution>
+            <id>python-public-sdk-ads-control-plane-spec</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <configuration>
+              <language>${codegen-language}</language>
+              <specPath>${preprocessed-temp-dir}/ads-control-plane-spec/${ads-control-plane-spec-spec-file}</specPath>
+              <outputDir>src/oci</outputDir>
+              <basePackage>OCI</basePackage>
+              <specGenerationType>PUBLIC</specGenerationType>
+              <additionalProperties>
+                <specName>data_safe</specName>
+                <generateInitFile>true</generateInitFile>
+              </additionalProperties>
+              <featureIdConfigFile>${feature-id-file}</featureIdConfigFile>
+              <featureIdConfigDir>${feature-id-dir}</featureIdConfigDir>
+              <isTestGenerationEnabled>true</isTestGenerationEnabled>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>3.0.0</version>
+        <configuration>
+          <filesets>
+            <!-- clean fileset -->
+            <fileset>
+              <directory>src/oci/data_safe</directory>
+              <includes>
+                <include>**/*</include>
+              </includes>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+      <!-- Debug information-->
+      <!--
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.1</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <echo>Displaying value of defined properties</echo>
+                                <echo>[sdk-root-dir] ${sdk-root-dir}</echo>
+                                <echo>[preprocessed-temp-dir] ${preprocessed-temp-dir}</echo>
+                                <echo>[spec-temp-dir] ${spec-temp-dir}</echo>
+                                <echo>[preferred-temp-dir] ${preferred-temp-dir}</echo>
+                            </tasks>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            -->
+    </plugins>
+  </build>
+  <dependencyManagement>
+    <dependencies>
+      <!-- Spec verison dependency -->
+      <dependency>
+        <groupId>com.oracle.ads.admin.cp</groupId>
+        <artifactId>ads-control-plane-spec</artifactId>
+        <version>200402.00</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>

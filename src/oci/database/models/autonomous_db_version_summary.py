@@ -43,25 +43,32 @@ class AutonomousDbVersionSummary(object):
             The value to assign to the details property of this AutonomousDbVersionSummary.
         :type details: str
 
+        :param is_free_tier_enabled:
+            The value to assign to the is_free_tier_enabled property of this AutonomousDbVersionSummary.
+        :type is_free_tier_enabled: bool
+
         """
         self.swagger_types = {
             'version': 'str',
             'db_workload': 'str',
             'is_dedicated': 'bool',
-            'details': 'str'
+            'details': 'str',
+            'is_free_tier_enabled': 'bool'
         }
 
         self.attribute_map = {
             'version': 'version',
             'db_workload': 'dbWorkload',
             'is_dedicated': 'isDedicated',
-            'details': 'details'
+            'details': 'details',
+            'is_free_tier_enabled': 'isFreeTierEnabled'
         }
 
         self._version = None
         self._db_workload = None
         self._is_dedicated = None
         self._details = None
+        self._is_free_tier_enabled = None
 
     @property
     def version(self):
@@ -174,6 +181,30 @@ class AutonomousDbVersionSummary(object):
         :type: str
         """
         self._details = details
+
+    @property
+    def is_free_tier_enabled(self):
+        """
+        Gets the is_free_tier_enabled of this AutonomousDbVersionSummary.
+        True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
+
+
+        :return: The is_free_tier_enabled of this AutonomousDbVersionSummary.
+        :rtype: bool
+        """
+        return self._is_free_tier_enabled
+
+    @is_free_tier_enabled.setter
+    def is_free_tier_enabled(self, is_free_tier_enabled):
+        """
+        Sets the is_free_tier_enabled of this AutonomousDbVersionSummary.
+        True if this version of the Oracle Database software can be used for Always-Free Autonomous Databases.
+
+
+        :param is_free_tier_enabled: The is_free_tier_enabled of this AutonomousDbVersionSummary.
+        :type: bool
+        """
+        self._is_free_tier_enabled = is_free_tier_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -28,6 +28,14 @@ class UpdateBucketDetails(object):
     #: This constant has a value of "ObjectReadWithoutList"
     PUBLIC_ACCESS_TYPE_OBJECT_READ_WITHOUT_LIST = "ObjectReadWithoutList"
 
+    #: A constant which can be used with the versioning property of a UpdateBucketDetails.
+    #: This constant has a value of "Enabled"
+    VERSIONING_ENABLED = "Enabled"
+
+    #: A constant which can be used with the versioning property of a UpdateBucketDetails.
+    #: This constant has a value of "Suspended"
+    VERSIONING_SUSPENDED = "Suspended"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateBucketDetails object with values from keyword arguments.
@@ -70,6 +78,11 @@ class UpdateBucketDetails(object):
             The value to assign to the kms_key_id property of this UpdateBucketDetails.
         :type kms_key_id: str
 
+        :param versioning:
+            The value to assign to the versioning property of this UpdateBucketDetails.
+            Allowed values for this property are: "Enabled", "Suspended"
+        :type versioning: str
+
         """
         self.swagger_types = {
             'namespace': 'str',
@@ -80,7 +93,8 @@ class UpdateBucketDetails(object):
             'object_events_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'kms_key_id': 'str'
+            'kms_key_id': 'str',
+            'versioning': 'str'
         }
 
         self.attribute_map = {
@@ -92,7 +106,8 @@ class UpdateBucketDetails(object):
             'object_events_enabled': 'objectEventsEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'kms_key_id': 'kmsKeyId'
+            'kms_key_id': 'kmsKeyId',
+            'versioning': 'versioning'
         }
 
         self._namespace = None
@@ -104,6 +119,7 @@ class UpdateBucketDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._kms_key_id = None
+        self._versioning = None
 
     @property
     def namespace(self):
@@ -372,6 +388,42 @@ class UpdateBucketDetails(object):
         :type: str
         """
         self._kms_key_id = kms_key_id
+
+    @property
+    def versioning(self):
+        """
+        Gets the versioning of this UpdateBucketDetails.
+        The versioning status on the bucket. If in state `Enabled`, multiple versions of the same object can be kept in the bucket.
+        When the object is overwritten or deleted, previous versions will still be available. When versioning is `Suspended`, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
+        Versioning cannot be disabled on a bucket once enabled.
+
+        Allowed values for this property are: "Enabled", "Suspended"
+
+
+        :return: The versioning of this UpdateBucketDetails.
+        :rtype: str
+        """
+        return self._versioning
+
+    @versioning.setter
+    def versioning(self, versioning):
+        """
+        Sets the versioning of this UpdateBucketDetails.
+        The versioning status on the bucket. If in state `Enabled`, multiple versions of the same object can be kept in the bucket.
+        When the object is overwritten or deleted, previous versions will still be available. When versioning is `Suspended`, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
+        Versioning cannot be disabled on a bucket once enabled.
+
+
+        :param versioning: The versioning of this UpdateBucketDetails.
+        :type: str
+        """
+        allowed_values = ["Enabled", "Suspended"]
+        if not value_allowed_none_or_none_sentinel(versioning, allowed_values):
+            raise ValueError(
+                "Invalid value for `versioning`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._versioning = versioning
 
     def __repr__(self):
         return formatted_flat_dict(self)

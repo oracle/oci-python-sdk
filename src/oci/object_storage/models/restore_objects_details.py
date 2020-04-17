@@ -25,19 +25,26 @@ class RestoreObjectsDetails(object):
             The value to assign to the hours property of this RestoreObjectsDetails.
         :type hours: int
 
+        :param version_id:
+            The value to assign to the version_id property of this RestoreObjectsDetails.
+        :type version_id: str
+
         """
         self.swagger_types = {
             'object_name': 'str',
-            'hours': 'int'
+            'hours': 'int',
+            'version_id': 'str'
         }
 
         self.attribute_map = {
             'object_name': 'objectName',
-            'hours': 'hours'
+            'hours': 'hours',
+            'version_id': 'versionId'
         }
 
         self._object_name = None
         self._hours = None
+        self._version_id = None
 
     @property
     def object_name(self):
@@ -88,6 +95,30 @@ class RestoreObjectsDetails(object):
         :type: int
         """
         self._hours = hours
+
+    @property
+    def version_id(self):
+        """
+        Gets the version_id of this RestoreObjectsDetails.
+        The versionId of the object to restore. Current object version is used by default.
+
+
+        :return: The version_id of this RestoreObjectsDetails.
+        :rtype: str
+        """
+        return self._version_id
+
+    @version_id.setter
+    def version_id(self, version_id):
+        """
+        Sets the version_id of this RestoreObjectsDetails.
+        The versionId of the object to restore. Current object version is used by default.
+
+
+        :param version_id: The version_id of this RestoreObjectsDetails.
+        :type: str
+        """
+        self._version_id = version_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

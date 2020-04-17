@@ -357,15 +357,14 @@ class CreateVnicDetails(object):
     def private_ip(self):
         """
         Gets the private_ip of this CreateVnicDetails.
-        A private IP address of your choice to assign to the VNIC. Value is ignored
-        if a `vlanId` value is specified. Must be an available IP address within
-        the subnet's CIDR. If you don't specify a value, Oracle automatically assigns
-        a private IP address from the subnet. This is the VNIC's *primary* private IP
-        address. The value appears in the :class:`Vnic` object and
-        also the :class:`PrivateIp` object returned by
+        A private IP address of your choice to assign to the VNIC. Must be an
+        available IP address within the subnet's CIDR. If you don't specify a
+        value, Oracle automatically assigns a private IP address from the subnet.
+        This is the VNIC's *primary* private IP address. The value appears in
+        the :class:`Vnic` object and also the
+        :class:`PrivateIp` object returned by
         :func:`list_private_ips` and
         :func:`get_private_ip`.
-
         Example: `10.0.3.3`
 
 
@@ -378,15 +377,14 @@ class CreateVnicDetails(object):
     def private_ip(self, private_ip):
         """
         Sets the private_ip of this CreateVnicDetails.
-        A private IP address of your choice to assign to the VNIC. Value is ignored
-        if a `vlanId` value is specified. Must be an available IP address within
-        the subnet's CIDR. If you don't specify a value, Oracle automatically assigns
-        a private IP address from the subnet. This is the VNIC's *primary* private IP
-        address. The value appears in the :class:`Vnic` object and
-        also the :class:`PrivateIp` object returned by
+        A private IP address of your choice to assign to the VNIC. Must be an
+        available IP address within the subnet's CIDR. If you don't specify a
+        value, Oracle automatically assigns a private IP address from the subnet.
+        This is the VNIC's *primary* private IP address. The value appears in
+        the :class:`Vnic` object and also the
+        :class:`PrivateIp` object returned by
         :func:`list_private_ips` and
         :func:`get_private_ip`.
-
         Example: `10.0.3.3`
 
 
@@ -440,10 +438,7 @@ class CreateVnicDetails(object):
         The OCID of the subnet to create the VNIC in. When launching an instance,
         use this `subnetId` instead of the deprecated `subnetId` in
         :func:`launch_instance_details`.
-        Alternatively, the `vlanId` can be used instead of a `subnetId`.
-        At least one `subnetId` value is required if this field is populated; if
-        you provide both, the values must match. If both the `vlanId` and `subnetId`
-        fields are provided, the launch will fail.
+        At least one of them is required; if you provide both, the values must match.
 
 
         :return: The subnet_id of this CreateVnicDetails.
@@ -458,10 +453,7 @@ class CreateVnicDetails(object):
         The OCID of the subnet to create the VNIC in. When launching an instance,
         use this `subnetId` instead of the deprecated `subnetId` in
         :func:`launch_instance_details`.
-        Alternatively, the `vlanId` can be used instead of a `subnetId`.
-        At least one `subnetId` value is required if this field is populated; if
-        you provide both, the values must match. If both the `vlanId` and `subnetId`
-        fields are provided, the launch will fail.
+        At least one of them is required; if you provide both, the values must match.
 
 
         :param subnet_id: The subnet_id of this CreateVnicDetails.

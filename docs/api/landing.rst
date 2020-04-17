@@ -13,6 +13,7 @@ API Reference
 * :doc:`Auto Scaling <autoscaling/client/oci.autoscaling.AutoScalingClient>`
 * :doc:`Bds <bds/client/oci.bds.BdsClient>`
 * :doc:`Budget <budget/client/oci.budget.BudgetClient>`
+* :doc:`Incident <cims/client/oci.cims.IncidentClient>`
 * :doc:`Container Engine <container_engine/client/oci.container_engine.ContainerEngineClient>`
 * :doc:`Block Storage <core/client/oci.core.BlockstorageClient>`
 * :doc:`Compute <core/client/oci.core.ComputeClient>`
@@ -20,6 +21,7 @@ API Reference
 * :doc:`Virtual Network <core/client/oci.core.VirtualNetworkClient>`
 * :doc:`Data Catalog <data_catalog/client/oci.data_catalog.DataCatalogClient>`
 * :doc:`Data Flow <data_flow/client/oci.data_flow.DataFlowClient>`
+* :doc:`Data Safe <data_safe/client/oci.data_safe.DataSafeClient>`
 * :doc:`Data Science <data_science/client/oci.data_science.DataScienceClient>`
 * :doc:`Database <database/client/oci.database.DatabaseClient>`
 * :doc:`DNS <dns/client/oci.dns.DnsClient>`
@@ -88,10 +90,12 @@ API Reference
     autoscaling
     bds
     budget
+    cims
     container_engine
     core
     data_catalog
     data_flow
+    data_safe
     data_science
     database
     dns

@@ -43,6 +43,8 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/data_safe/pom.xml</module>
+    <module>poms/cims/pom.xml</module>
     <module>poms/bds/pom.xml</module>
     <module>poms/vault/pom.xml</module>
     <module>poms/secrets/pom.xml</module>

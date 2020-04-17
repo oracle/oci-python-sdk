@@ -17,7 +17,7 @@ missing = Sentinel("Missing")
 
 class DatabaseClient(object):
     """
-    The API for the Database Service.
+    The API for the Database Service. Use this API to manage resources such as databases and DB Systems. For more information, see [Overview of the Database Service](/iaas/Content/Database/Concepts/databaseoverview.htm).
     """
 
     def __init__(self, config, **kwargs):

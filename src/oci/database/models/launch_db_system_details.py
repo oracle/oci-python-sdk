@@ -162,6 +162,10 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
         :type license_model: str
 
+        :param maintenance_window_details:
+            The value to assign to the maintenance_window_details property of this LaunchDbSystemDetails.
+        :type maintenance_window_details: MaintenanceWindow
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -190,7 +194,8 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
             'db_home': 'CreateDbHomeDetails',
             'database_edition': 'str',
             'disk_redundancy': 'str',
-            'license_model': 'str'
+            'license_model': 'str',
+            'maintenance_window_details': 'MaintenanceWindow'
         }
 
         self.attribute_map = {
@@ -220,7 +225,8 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
             'db_home': 'dbHome',
             'database_edition': 'databaseEdition',
             'disk_redundancy': 'diskRedundancy',
-            'license_model': 'licenseModel'
+            'license_model': 'licenseModel',
+            'maintenance_window_details': 'maintenanceWindowDetails'
         }
 
         self._compartment_id = None
@@ -250,6 +256,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
         self._database_edition = None
         self._disk_redundancy = None
         self._license_model = None
+        self._maintenance_window_details = None
         self._source = 'NONE'
 
     @property
@@ -373,6 +380,26 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
                 .format(allowed_values)
             )
         self._license_model = license_model
+
+    @property
+    def maintenance_window_details(self):
+        """
+        Gets the maintenance_window_details of this LaunchDbSystemDetails.
+
+        :return: The maintenance_window_details of this LaunchDbSystemDetails.
+        :rtype: MaintenanceWindow
+        """
+        return self._maintenance_window_details
+
+    @maintenance_window_details.setter
+    def maintenance_window_details(self, maintenance_window_details):
+        """
+        Sets the maintenance_window_details of this LaunchDbSystemDetails.
+
+        :param maintenance_window_details: The maintenance_window_details of this LaunchDbSystemDetails.
+        :type: MaintenanceWindow
+        """
+        self._maintenance_window_details = maintenance_window_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

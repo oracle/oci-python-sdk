@@ -31,6 +31,10 @@ class CreateVolumeBackupPolicyDetails(object):
             The value to assign to the display_name property of this CreateVolumeBackupPolicyDetails.
         :type display_name: str
 
+        :param destination_region:
+            The value to assign to the destination_region property of this CreateVolumeBackupPolicyDetails.
+        :type destination_region: str
+
         :param schedules:
             The value to assign to the schedules property of this CreateVolumeBackupPolicyDetails.
         :type schedules: list[VolumeBackupSchedule]
@@ -47,6 +51,7 @@ class CreateVolumeBackupPolicyDetails(object):
         self.swagger_types = {
             'compartment_id': 'str',
             'display_name': 'str',
+            'destination_region': 'str',
             'schedules': 'list[VolumeBackupSchedule]',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
@@ -55,6 +60,7 @@ class CreateVolumeBackupPolicyDetails(object):
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
+            'destination_region': 'destinationRegion',
             'schedules': 'schedules',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
@@ -62,6 +68,7 @@ class CreateVolumeBackupPolicyDetails(object):
 
         self._compartment_id = None
         self._display_name = None
+        self._destination_region = None
         self._schedules = None
         self._defined_tags = None
         self._freeform_tags = None
@@ -115,6 +122,30 @@ class CreateVolumeBackupPolicyDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def destination_region(self):
+        """
+        Gets the destination_region of this CreateVolumeBackupPolicyDetails.
+        The paired destination region (pre-defined by oracle) for scheduled cross region backup calls. Example: `us-ashburn-1`
+
+
+        :return: The destination_region of this CreateVolumeBackupPolicyDetails.
+        :rtype: str
+        """
+        return self._destination_region
+
+    @destination_region.setter
+    def destination_region(self, destination_region):
+        """
+        Sets the destination_region of this CreateVolumeBackupPolicyDetails.
+        The paired destination region (pre-defined by oracle) for scheduled cross region backup calls. Example: `us-ashburn-1`
+
+
+        :param destination_region: The destination_region of this CreateVolumeBackupPolicyDetails.
+        :type: str
+        """
+        self._destination_region = destination_region
 
     @property
     def schedules(self):

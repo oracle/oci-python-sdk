@@ -41,6 +41,18 @@ class Bucket(object):
     #: This constant has a value of "Archive"
     STORAGE_TIER_ARCHIVE = "Archive"
 
+    #: A constant which can be used with the versioning property of a Bucket.
+    #: This constant has a value of "Enabled"
+    VERSIONING_ENABLED = "Enabled"
+
+    #: A constant which can be used with the versioning property of a Bucket.
+    #: This constant has a value of "Suspended"
+    VERSIONING_SUSPENDED = "Suspended"
+
+    #: A constant which can be used with the versioning property of a Bucket.
+    #: This constant has a value of "Disabled"
+    VERSIONING_DISABLED = "Disabled"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Bucket object with values from keyword arguments.
@@ -126,6 +138,12 @@ class Bucket(object):
             The value to assign to the id property of this Bucket.
         :type id: str
 
+        :param versioning:
+            The value to assign to the versioning property of this Bucket.
+            Allowed values for this property are: "Enabled", "Suspended", "Disabled", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type versioning: str
+
         """
         self.swagger_types = {
             'namespace': 'str',
@@ -146,7 +164,8 @@ class Bucket(object):
             'approximate_size': 'int',
             'replication_enabled': 'bool',
             'is_read_only': 'bool',
-            'id': 'str'
+            'id': 'str',
+            'versioning': 'str'
         }
 
         self.attribute_map = {
@@ -168,7 +187,8 @@ class Bucket(object):
             'approximate_size': 'approximateSize',
             'replication_enabled': 'replicationEnabled',
             'is_read_only': 'isReadOnly',
-            'id': 'id'
+            'id': 'id',
+            'versioning': 'versioning'
         }
 
         self._namespace = None
@@ -190,6 +210,7 @@ class Bucket(object):
         self._replication_enabled = None
         self._is_read_only = None
         self._id = None
+        self._versioning = None
 
     @property
     def namespace(self):
@@ -724,6 +745,38 @@ class Bucket(object):
         :type: str
         """
         self._id = id
+
+    @property
+    def versioning(self):
+        """
+        Gets the versioning of this Bucket.
+        The versioning status on the bucket. A bucket is created with versioning `Disabled` by default.
+        For versioning `Enabled`, objects are protected from overwrites and deletes, by maintaining their version history. When versioning is `Suspended`, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
+
+        Allowed values for this property are: "Enabled", "Suspended", "Disabled", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The versioning of this Bucket.
+        :rtype: str
+        """
+        return self._versioning
+
+    @versioning.setter
+    def versioning(self, versioning):
+        """
+        Sets the versioning of this Bucket.
+        The versioning status on the bucket. A bucket is created with versioning `Disabled` by default.
+        For versioning `Enabled`, objects are protected from overwrites and deletes, by maintaining their version history. When versioning is `Suspended`, the previous versions will still remain but new versions will no longer be created when overwitten or deleted.
+
+
+        :param versioning: The versioning of this Bucket.
+        :type: str
+        """
+        allowed_values = ["Enabled", "Suspended", "Disabled"]
+        if not value_allowed_none_or_none_sentinel(versioning, allowed_values):
+            versioning = 'UNKNOWN_ENUM_VALUE'
+        self._versioning = versioning
 
     def __repr__(self):
         return formatted_flat_dict(self)

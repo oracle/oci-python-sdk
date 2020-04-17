@@ -1,0 +1,11 @@
+ShapeMaxVnicAttachmentOptions
+=============================
+
+.. currentmodule:: oci.core.models
+
+.. autoclass:: ShapeMaxVnicAttachmentOptions
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

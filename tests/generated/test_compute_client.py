@@ -1201,6 +1201,47 @@ def test_get_image(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="computeImaging" email="imaging_dev_us_grp@oracle.com" jiraProject="COM" opsJiraProject="COM"
+def test_get_image_shape_compatibility_entry(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetImageShapeCompatibilityEntry'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'GetImageShapeCompatibilityEntry')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetImageShapeCompatibilityEntry')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.get_image_shape_compatibility_entry(
+                image_id=request.pop(util.camelize('imageId')),
+                shape_name=request.pop(util.camelize('shapeName')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetImageShapeCompatibilityEntry',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'imageShapeCompatibilityEntry',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="computeSharedOwnershipVmAndBm" email="compute_dev_us_grp@oracle.com" jiraProject="BMI" opsJiraProject="NONE"
 def test_get_instance(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetInstance'):
@@ -2020,6 +2061,66 @@ def test_list_dedicated_vm_hosts(testing_service_client):
             result,
             service_error,
             'dedicatedVmHostSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="computeImaging" email="imaging_dev_us_grp@oracle.com" jiraProject="COM" opsJiraProject="COM"
+def test_list_image_shape_compatibility_entries(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListImageShapeCompatibilityEntries'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'ListImageShapeCompatibilityEntries')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListImageShapeCompatibilityEntries')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.list_image_shape_compatibility_entries(
+                image_id=request.pop(util.camelize('imageId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_image_shape_compatibility_entries(
+                    image_id=request.pop(util.camelize('imageId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_image_shape_compatibility_entries(
+                        image_id=request.pop(util.camelize('imageId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListImageShapeCompatibilityEntries',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'imageShapeCompatibilitySummary',
             False,
             True
         )

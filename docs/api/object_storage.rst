@@ -37,6 +37,8 @@ Object Storage
     oci.object_storage.models.ObjectLifecycleRule
     oci.object_storage.models.ObjectNameFilter
     oci.object_storage.models.ObjectSummary
+    oci.object_storage.models.ObjectVersionCollection
+    oci.object_storage.models.ObjectVersionSummary
     oci.object_storage.models.PatternDetails
     oci.object_storage.models.PreauthenticatedRequest
     oci.object_storage.models.PreauthenticatedRequestSummary

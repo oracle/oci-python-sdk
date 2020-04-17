@@ -41,6 +41,14 @@ class InstanceConfigurationCreateVolumeDetails(object):
             The value to assign to the freeform_tags property of this InstanceConfigurationCreateVolumeDetails.
         :type freeform_tags: dict(str, str)
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this InstanceConfigurationCreateVolumeDetails.
+        :type kms_key_id: str
+
+        :param vpus_per_gb:
+            The value to assign to the vpus_per_gb property of this InstanceConfigurationCreateVolumeDetails.
+        :type vpus_per_gb: int
+
         :param size_in_gbs:
             The value to assign to the size_in_gbs property of this InstanceConfigurationCreateVolumeDetails.
         :type size_in_gbs: int
@@ -57,6 +65,8 @@ class InstanceConfigurationCreateVolumeDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
+            'kms_key_id': 'str',
+            'vpus_per_gb': 'int',
             'size_in_gbs': 'int',
             'source_details': 'InstanceConfigurationVolumeSourceDetails'
         }
@@ -68,6 +78,8 @@ class InstanceConfigurationCreateVolumeDetails(object):
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
+            'kms_key_id': 'kmsKeyId',
+            'vpus_per_gb': 'vpusPerGB',
             'size_in_gbs': 'sizeInGBs',
             'source_details': 'sourceDetails'
         }
@@ -78,6 +90,8 @@ class InstanceConfigurationCreateVolumeDetails(object):
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
+        self._kms_key_id = None
+        self._vpus_per_gb = None
         self._size_in_gbs = None
         self._source_details = None
 
@@ -252,6 +266,80 @@ class InstanceConfigurationCreateVolumeDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this InstanceConfigurationCreateVolumeDetails.
+        The OCID of the Key Management key to assign as the master encryption key
+        for the volume.
+
+
+        :return: The kms_key_id of this InstanceConfigurationCreateVolumeDetails.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this InstanceConfigurationCreateVolumeDetails.
+        The OCID of the Key Management key to assign as the master encryption key
+        for the volume.
+
+
+        :param kms_key_id: The kms_key_id of this InstanceConfigurationCreateVolumeDetails.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
+
+    @property
+    def vpus_per_gb(self):
+        """
+        Gets the vpus_per_gb of this InstanceConfigurationCreateVolumeDetails.
+        The number of volume performance units (VPUs) that will be applied to this volume per GB,
+        representing the Block Volume service's elastic performance options.
+        See `Block Volume Elastic Performance`__ for more information.
+
+        Allowed values:
+
+          * `0`: Represents Lower Cost option.
+
+          * `10`: Represents Balanced option.
+
+          * `20`: Represents Higher Performance option.
+
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeelasticperformance.htm
+
+
+        :return: The vpus_per_gb of this InstanceConfigurationCreateVolumeDetails.
+        :rtype: int
+        """
+        return self._vpus_per_gb
+
+    @vpus_per_gb.setter
+    def vpus_per_gb(self, vpus_per_gb):
+        """
+        Sets the vpus_per_gb of this InstanceConfigurationCreateVolumeDetails.
+        The number of volume performance units (VPUs) that will be applied to this volume per GB,
+        representing the Block Volume service's elastic performance options.
+        See `Block Volume Elastic Performance`__ for more information.
+
+        Allowed values:
+
+          * `0`: Represents Lower Cost option.
+
+          * `10`: Represents Balanced option.
+
+          * `20`: Represents Higher Performance option.
+
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeelasticperformance.htm
+
+
+        :param vpus_per_gb: The vpus_per_gb of this InstanceConfigurationCreateVolumeDetails.
+        :type: int
+        """
+        self._vpus_per_gb = vpus_per_gb
 
     @property
     def size_in_gbs(self):

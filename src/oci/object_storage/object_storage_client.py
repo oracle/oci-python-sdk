@@ -368,6 +368,48 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_sse_customer_algorithm: (optional)
+            The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
+            `Using Your Own Keys for Server-Side Encryption`__.
+
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+
+        :param str opc_sse_customer_key: (optional)
+            The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
+            decrypt the data. For more information, see
+            `Using Your Own Keys for Server-Side Encryption`__.
+
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+
+        :param str opc_sse_customer_key_sha256: (optional)
+            The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
+            value is used to check the integrity of the encryption key. For more information, see
+            `Using Your Own Keys for Server-Side Encryption`__.
+
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+
+        :param str opc_source_sse_customer_algorithm: (optional)
+            The optional header that specifies \"AES256\" as the encryption algorithm to use to decrypt the source
+            object. For more information, see
+            `Using Your Own Keys for Server-Side Encryption`__.
+
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+
+        :param str opc_source_sse_customer_key: (optional)
+            The optional header that specifies the base64-encoded 256-bit encryption key to use to decrypt
+            the source object. For more information, see
+            `Using Your Own Keys for Server-Side Encryption`__.
+
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+
+        :param str opc_source_sse_customer_key_sha256: (optional)
+            The optional header that specifies the base64-encoded SHA256 hash of the encryption key used to
+            decrypt the source object. This value is used to check the integrity of the encryption key. For
+            more information, see
+            `Using Your Own Keys for Server-Side Encryption`__.
+
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -385,7 +427,13 @@ class ObjectStorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "opc_client_request_id"
+            "opc_client_request_id",
+            "opc_sse_customer_algorithm",
+            "opc_sse_customer_key",
+            "opc_sse_customer_key_sha256",
+            "opc_source_sse_customer_algorithm",
+            "opc_source_sse_customer_key",
+            "opc_source_sse_customer_key_sha256"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -406,7 +454,13 @@ class ObjectStorageClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing),
+            "opc-sse-customer-algorithm": kwargs.get("opc_sse_customer_algorithm", missing),
+            "opc-sse-customer-key": kwargs.get("opc_sse_customer_key", missing),
+            "opc-sse-customer-key-sha256": kwargs.get("opc_sse_customer_key_sha256", missing),
+            "opc-source-sse-customer-algorithm": kwargs.get("opc_source_sse_customer_algorithm", missing),
+            "opc-source-sse-customer-key": kwargs.get("opc_source_sse_customer_key", missing),
+            "opc-source-sse-customer-key-sha256": kwargs.get("opc_source_sse_customer_key_sha256", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -535,6 +589,26 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
+        :param str opc_sse_customer_algorithm: (optional)
+            The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
+            `Using Your Own Keys for Server-Side Encryption`__.
+
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+
+        :param str opc_sse_customer_key: (optional)
+            The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
+            decrypt the data. For more information, see
+            `Using Your Own Keys for Server-Side Encryption`__.
+
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+
+        :param str opc_sse_customer_key_sha256: (optional)
+            The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
+            value is used to check the integrity of the encryption key. For more information, see
+            `Using Your Own Keys for Server-Side Encryption`__.
+
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -554,7 +628,10 @@ class ObjectStorageClient(object):
             "retry_strategy",
             "if_match",
             "if_none_match",
-            "opc_client_request_id"
+            "opc_client_request_id",
+            "opc_sse_customer_algorithm",
+            "opc_sse_customer_key",
+            "opc_sse_customer_key_sha256"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -577,7 +654,10 @@ class ObjectStorageClient(object):
             "content-type": "application/json",
             "if-match": kwargs.get("if_match", missing),
             "if-none-match": kwargs.get("if_none_match", missing),
-            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing),
+            "opc-sse-customer-algorithm": kwargs.get("opc_sse_customer_algorithm", missing),
+            "opc-sse-customer-key": kwargs.get("opc_sse_customer_key", missing),
+            "opc-sse-customer-key-sha256": kwargs.get("opc_sse_customer_key_sha256", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -957,6 +1037,9 @@ class ObjectStorageClient(object):
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
 
+        :param str version_id: (optional)
+            VersionId used to identify a particular version of the object
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -975,7 +1058,8 @@ class ObjectStorageClient(object):
         expected_kwargs = [
             "retry_strategy",
             "if_match",
-            "opc_client_request_id"
+            "opc_client_request_id",
+            "version_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -993,6 +1077,11 @@ class ObjectStorageClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "versionId": kwargs.get("version_id", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -1012,12 +1101,14 @@ class ObjectStorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params)
 
     def delete_object_lifecycle_policy(self, namespace_name, bucket_name, **kwargs):
@@ -1632,6 +1723,9 @@ class ObjectStorageClient(object):
             The name of the object. Avoid entering confidential information.
             Example: `test/object1.log`
 
+        :param str version_id: (optional)
+            VersionId used to identify a particular version of the object
+
         :param str if_match: (optional)
             The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
             For uploading a part, this is the entity tag of the target part.
@@ -1650,6 +1744,26 @@ class ObjectStorageClient(object):
 
             __ https://tools.ietf.org/html/rfc7233#section-2.1
 
+        :param str opc_sse_customer_algorithm: (optional)
+            The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
+            `Using Your Own Keys for Server-Side Encryption`__.
+
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+
+        :param str opc_sse_customer_key: (optional)
+            The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
+            decrypt the data. For more information, see
+            `Using Your Own Keys for Server-Side Encryption`__.
+
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+
+        :param str opc_sse_customer_key_sha256: (optional)
+            The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
+            value is used to check the integrity of the encryption key. For more information, see
+            `Using Your Own Keys for Server-Side Encryption`__.
+
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1667,10 +1781,14 @@ class ObjectStorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "version_id",
             "if_match",
             "if_none_match",
             "opc_client_request_id",
-            "range"
+            "range",
+            "opc_sse_customer_algorithm",
+            "opc_sse_customer_key",
+            "opc_sse_customer_key_sha256"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1689,13 +1807,21 @@ class ObjectStorageClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        query_params = {
+            "versionId": kwargs.get("version_id", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "if-match": kwargs.get("if_match", missing),
             "if-none-match": kwargs.get("if_none_match", missing),
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing),
-            "range": kwargs.get("range", missing)
+            "range": kwargs.get("range", missing),
+            "opc-sse-customer-algorithm": kwargs.get("opc_sse_customer_algorithm", missing),
+            "opc-sse-customer-key": kwargs.get("opc_sse_customer_key", missing),
+            "opc-sse-customer-key-sha256": kwargs.get("opc_sse_customer_key_sha256", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -1709,6 +1835,7 @@ class ObjectStorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="stream")
         else:
@@ -1716,6 +1843,7 @@ class ObjectStorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="stream")
 
@@ -2216,6 +2344,9 @@ class ObjectStorageClient(object):
             The name of the object. Avoid entering confidential information.
             Example: `test/object1.log`
 
+        :param str version_id: (optional)
+            VersionId used to identify a particular version of the object
+
         :param str if_match: (optional)
             The entity tag (ETag) to match. For creating and committing a multipart upload to an object, this is the entity tag of the target object.
             For uploading a part, this is the entity tag of the target part.
@@ -2227,6 +2358,26 @@ class ObjectStorageClient(object):
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
+
+        :param str opc_sse_customer_algorithm: (optional)
+            The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
+            `Using Your Own Keys for Server-Side Encryption`__.
+
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+
+        :param str opc_sse_customer_key: (optional)
+            The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
+            decrypt the data. For more information, see
+            `Using Your Own Keys for Server-Side Encryption`__.
+
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+
+        :param str opc_sse_customer_key_sha256: (optional)
+            The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
+            value is used to check the integrity of the encryption key. For more information, see
+            `Using Your Own Keys for Server-Side Encryption`__.
+
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2245,9 +2396,13 @@ class ObjectStorageClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "version_id",
             "if_match",
             "if_none_match",
-            "opc_client_request_id"
+            "opc_client_request_id",
+            "opc_sse_customer_algorithm",
+            "opc_sse_customer_key",
+            "opc_sse_customer_key_sha256"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2266,12 +2421,20 @@ class ObjectStorageClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        query_params = {
+            "versionId": kwargs.get("version_id", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
             "if-match": kwargs.get("if_match", missing),
             "if-none-match": kwargs.get("if_none_match", missing),
-            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing),
+            "opc-sse-customer-algorithm": kwargs.get("opc_sse_customer_algorithm", missing),
+            "opc-sse-customer-key": kwargs.get("opc_sse_customer_key", missing),
+            "opc-sse-customer-key-sha256": kwargs.get("opc_sse_customer_key_sha256", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -2285,12 +2448,14 @@ class ObjectStorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params)
 
     def list_buckets(self, namespace_name, compartment_id, **kwargs):
@@ -2604,6 +2769,145 @@ class ObjectStorageClient(object):
                 header_params=header_params,
                 response_type="list[MultipartUpload]")
 
+    def list_object_versions(self, namespace_name, bucket_name, **kwargs):
+        """
+        Lists the object versions in a bucket.
+
+        To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+        talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+        `Getting Started with Policies`__.
+
+        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+
+
+        :param str namespace_name: (required)
+            The Object Storage namespace used for the request.
+
+        :param str bucket_name: (required)
+            The name of the bucket. Avoid entering confidential information.
+            Example: `my-new-bucket1`
+
+        :param str prefix: (optional)
+            The string to use for matching against the start of object names in a list query.
+
+        :param str start: (optional)
+            Object names returned by a list query must be greater or equal to this parameter.
+
+        :param str end: (optional)
+            Object names returned by a list query must be strictly less than this parameter.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str delimiter: (optional)
+            When this parameter is set, only objects whose names do not contain the delimiter character
+            (after an optionally specified prefix) are returned in the objects key of the response body.
+            Scanned objects whose names contain the delimiter have the part of their name up to the first
+            occurrence of the delimiter (including the optional prefix) returned as a set of prefixes.
+            Note that only '/' is a supported delimiter character at this time.
+
+        :param str fields: (optional)
+            Object summary in list of objects includes the 'name' field. This parameter can also include 'size'
+            (object size in bytes), 'etag', 'md5', 'timeCreated' (object creation date and time) and 'timeModified'
+            (object modification date and time).
+            Value of this parameter should be a comma-separated, case-insensitive list of those field names.
+            For example 'name,etag,timeCreated,md5,timeModified'
+
+            Allowed values are: "name", "size", "etag", "timeCreated", "md5", "timeModified"
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str start_after: (optional)
+            Object names returned by a list query must be greater than this parameter.
+
+        :param str page: (optional)
+            The page at which to start retrieving results.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.object_storage.models.ObjectVersionCollection`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/objectversions"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "prefix",
+            "start",
+            "end",
+            "limit",
+            "delimiter",
+            "fields",
+            "opc_client_request_id",
+            "start_after",
+            "page"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_object_versions got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "prefix": kwargs.get("prefix", missing),
+            "start": kwargs.get("start", missing),
+            "end": kwargs.get("end", missing),
+            "limit": kwargs.get("limit", missing),
+            "delimiter": kwargs.get("delimiter", missing),
+            "fields": kwargs.get("fields", missing),
+            "startAfter": kwargs.get("start_after", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ObjectVersionCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ObjectVersionCollection")
+
     def list_objects(self, namespace_name, bucket_name, **kwargs):
         """
         Lists the objects in a bucket.
@@ -2643,14 +2947,18 @@ class ObjectStorageClient(object):
 
         :param str fields: (optional)
             Object summary in list of objects includes the 'name' field. This parameter can also include 'size'
-            (object size in bytes), 'etag', 'md5', and 'timeCreated' (object creation date and time) fields.
+            (object size in bytes), 'etag', 'md5', 'timeCreated' (object creation date and time) and 'timeModified'
+            (object modification date and time).
             Value of this parameter should be a comma-separated, case-insensitive list of those field names.
-            For example 'name,etag,timeCreated,md5'.
+            For example 'name,etag,timeCreated,md5,timeModified'
 
-            Allowed values are: "name", "size", "etag", "timeCreated", "md5"
+            Allowed values are: "name", "size", "etag", "timeCreated", "md5", "timeModified"
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
+
+        :param str start_after: (optional)
+            Object names returned by a list query must be greater than this parameter.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2675,7 +2983,8 @@ class ObjectStorageClient(object):
             "limit",
             "delimiter",
             "fields",
-            "opc_client_request_id"
+            "opc_client_request_id",
+            "start_after"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2699,7 +3008,8 @@ class ObjectStorageClient(object):
             "end": kwargs.get("end", missing),
             "limit": kwargs.get("limit", missing),
             "delimiter": kwargs.get("delimiter", missing),
-            "fields": kwargs.get("fields", missing)
+            "fields": kwargs.get("fields", missing),
+            "startAfter": kwargs.get("start_after", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -3512,6 +3822,26 @@ class ObjectStorageClient(object):
             that read the object determine what to do based on the value provided.
             For example, you could use this header to identify objects that require caching restrictions.
 
+        :param str opc_sse_customer_algorithm: (optional)
+            The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
+            `Using Your Own Keys for Server-Side Encryption`__.
+
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+
+        :param str opc_sse_customer_key: (optional)
+            The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
+            decrypt the data. For more information, see
+            `Using Your Own Keys for Server-Side Encryption`__.
+
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+
+        :param str opc_sse_customer_key_sha256: (optional)
+            The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
+            value is used to check the integrity of the encryption key. For more information, see
+            `Using Your Own Keys for Server-Side Encryption`__.
+
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+
         :param dict(str, str) opc_meta: (optional)
             Optional user-defined metadata key and value.
 
@@ -3545,6 +3875,9 @@ class ObjectStorageClient(object):
             "content_encoding",
             "content_disposition",
             "cache_control",
+            "opc_sse_customer_algorithm",
+            "opc_sse_customer_key",
+            "opc_sse_customer_key_sha256",
             "opc_meta"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3577,6 +3910,9 @@ class ObjectStorageClient(object):
             "Content-Encoding": kwargs.get("content_encoding", missing),
             "Content-Disposition": kwargs.get("content_disposition", missing),
             "Cache-Control": kwargs.get("cache_control", missing),
+            "opc-sse-customer-algorithm": kwargs.get("opc_sse_customer_algorithm", missing),
+            "opc-sse-customer-key": kwargs.get("opc_sse_customer_key", missing),
+            "opc-sse-customer-key-sha256": kwargs.get("opc_sse_customer_key_sha256", missing),
 
         }
         for key, value in six.iteritems(kwargs.get("opc_meta", {})):
@@ -3734,6 +4070,7 @@ class ObjectStorageClient(object):
         objects created before the time of the API call will be re-encrypted. The call can take a long time, depending on how many
         objects are in the bucket and how big they are. This API returns a work request ID that you can use to retrieve the status
         of the work request task.
+        All the versions of objects will be re-encrypted whether versioning is enabled or suspended at the bucket.
 
 
         :param str namespace_name: (required)
@@ -4287,6 +4624,26 @@ class ObjectStorageClient(object):
 
             \"The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)\"
 
+        :param str opc_sse_customer_algorithm: (optional)
+            The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
+            `Using Your Own Keys for Server-Side Encryption`__.
+
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+
+        :param str opc_sse_customer_key: (optional)
+            The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
+            decrypt the data. For more information, see
+            `Using Your Own Keys for Server-Side Encryption`__.
+
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+
+        :param str opc_sse_customer_key_sha256: (optional)
+            The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
+            value is used to check the integrity of the encryption key. For more information, see
+            `Using Your Own Keys for Server-Side Encryption`__.
+
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -4309,7 +4666,10 @@ class ObjectStorageClient(object):
             "if_match",
             "if_none_match",
             "expect",
-            "content_md5"
+            "content_md5",
+            "opc_sse_customer_algorithm",
+            "opc_sse_customer_key",
+            "opc_sse_customer_key_sha256"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -4341,7 +4701,10 @@ class ObjectStorageClient(object):
             "if-none-match": kwargs.get("if_none_match", missing),
             "Expect": kwargs.get("expect", missing),
             "Content-Length": kwargs.get("content_length", missing),
-            "Content-MD5": kwargs.get("content_md5", missing)
+            "Content-MD5": kwargs.get("content_md5", missing),
+            "opc-sse-customer-algorithm": kwargs.get("opc_sse_customer_algorithm", missing),
+            "opc-sse-customer-key": kwargs.get("opc_sse_customer_key", missing),
+            "opc-sse-customer-key-sha256": kwargs.get("opc_sse_customer_key_sha256", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
