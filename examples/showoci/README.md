@@ -169,6 +169,7 @@ optional arguments:
   -fun                 Print Functions
   -i                   Print Identity
   -ic                  Print Identity Compartments only
+  -isc                 Skip Identity User Credential extract
   -l                   Print Load Balancer
   -lq                  Print Limits and Quotas
   -m                   Print Monitoring, Notifications and Events

@@ -1,13 +1,19 @@
-# Usage2ADW - Oracle Cloud Infrastructure Usage Reports to Autonomous Database Tool
+# Usage2ADW - Oracle Cloud Infrastructure Usage and Cost Reports to Autonomous Database Tool
 
 ## Introduction
-usage2adw is a tool which uses the Python SDK to extract the usage reports from your tenant and load it to Oracle Autonomous Database. (DbaaS can be used as well)
+usage2adw is a tool which uses the Python SDK to extract the usage and cost reports from your tenant and load it to Oracle Autonomous Database. (DbaaS can be used as well)
 Authentication to OCI by User or instance principals.
 
 **Developed by Adi Zohar, Feb 2020**
 
 ** DISCLAIMER – This is not an official Oracle application **
 
+## Cost Reports
+![](img/screen_4.png)
+![](img/screen_5.png)
+![](img/screen_6.png)
+
+## Usage Reports
 ![](img/screen_1.png)
 ![](img/screen_2.png)
 ![](img/screen_3.png)
@@ -118,10 +124,10 @@ optional arguments:
 ./usage2adw.py -t temp_tenant -du db_user -dp db_pass# -dn dbname -d 2020-02-15
 
 ##########################################################################################
-#                               Running Usage Load to ADW                                #
+#                          Running Usage and Cost Load to ADW                            #
 ##########################################################################################
-Starts at 2020-02-27 22:26:46
-Command Line : -t temp_tenant -du db_user -dp db_pass# -dn dbname -d 2020-02-15
+Started at 2020-04-16 07:56:50
+Command Line : -t temp_tenant -du db_user -dp db_pass# -dn dbname -d 2020-04-15
 
 Connecting to Identity Service...
 Tenant Name : temp_tenant
@@ -131,15 +137,27 @@ Loading Compartments...
     Total 35 compartments loaded.
 
 Connecting to database adirep_low
-Table OCI_USAGE Exist
-Max File Id Processed = 0001000000150592
+Table OCI_USAGE exist
+Table OCI_USAGE_TAG_KEYS exist
+Table OCI_COST exist
+Table OCI_COST_TAG_KEYS exist
+Max Usage File Id Processed = 0001000000179319
+Max Cost  File Id Processed = 0001000000007463
 
 Connecting to Object Storage Service...
-   Processing file reports/usage-csv/0001000000151118.csv.gz - 3409086, 2020-02-27 20:30
-   Completed  file reports/usage-csv/0001000000151118.csv.gz - 66110 Rows Inserted
-Total Objects Processed = 1
+   Processing file reports/cost-csv/0001000000007464.csv.gz - 123150, 2020-04-16 01:44
+   Completed  file reports/cost-csv/0001000000007464.csv.gz - 1844 Rows Inserted
+   Total 15 Tags Merged.
+   Processing file reports/cost-csv/0001000000008343.csv.gz - 743467, 2020-04-16 11:14
+   Completed  file reports/cost-csv/0001000000008343.csv.gz - 11278 Rows Inserted
+   Total 14 Tags Merged.
+   Processing file reports/usage-csv/0001000000179320.csv.gz - 375930, 2020-04-15 18:27
+   Completed  file reports/usage-csv/0001000000179320.csv.gz - 6455 Rows Inserted
+   Total 13 Tags Merged.
 
-Completed at 2020-02-27 22:26:52
+Total 3 Files Loaded
+
+Completed at 2020-04-16 07:57:24
 ```
 
 ## License

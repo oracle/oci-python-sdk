@@ -44,6 +44,8 @@
 # - ObjectStorageClient.get_object   - Policy OBJECT_READ
 #
 ##########################################################################
+# Tables used - OCI_USAGE, OCI_USAGE_TAGS, OCI_COST, OCI_COST_TAGS
+##########################################################################
 import sys
 import argparse
 import datetime
@@ -53,7 +55,7 @@ import os
 import csv
 import cx_Oracle
 
-version = "20.4.13"
+version = "20.4.20"
 usage_report_namespace = "bling"
 work_report_dir = os.curdir + "/work_report_dir"
 
@@ -203,6 +205,485 @@ def set_parser_arguments():
 
 
 ##########################################################################
+# Check Table Structure for usage
+##########################################################################
+def check_database_table_structure_usage(connection):
+    try:
+        # open cursor
+        cursor = connection.cursor()
+
+        # check if OCI_USAGE table exist, if not create
+        sql = "select count(*) from user_tables where table_name = 'OCI_USAGE'"
+        cursor.execute(sql)
+        val, = cursor.fetchone()
+
+        # if table not exist, create it
+        if val == 0:
+            print("Table OCI_USAGE was not exist, creating")
+            sql = "create table OCI_USAGE ("
+            sql += "    TENANT_NAME             VARCHAR2(100),"
+            sql += "    FILE_ID                 VARCHAR2(30),"
+            sql += "    USAGE_INTERVAL_START    DATE,"
+            sql += "    USAGE_INTERVAL_END      DATE,"
+            sql += "    PRD_SERVICE             VARCHAR2(100),"
+            sql += "    PRD_RESOURCE            VARCHAR2(100),"
+            sql += "    PRD_COMPARTMENT_ID      VARCHAR2(100),"
+            sql += "    PRD_COMPARTMENT_NAME    VARCHAR2(100),"
+            sql += "    PRD_COMPARTMENT_PATH    VARCHAR2(1000),"
+            sql += "    PRD_REGION              VARCHAR2(100),"
+            sql += "    PRD_AVAILABILITY_DOMAIN VARCHAR2(100),"
+            sql += "    USG_RESOURCE_ID         VARCHAR2(1000),"
+            sql += "    USG_BILLED_QUANTITY     NUMBER,"
+            sql += "    USG_CONSUMED_QUANTITY   NUMBER,"
+            sql += "    USG_CONSUMED_UNITS      VARCHAR2(100),"
+            sql += "    USG_CONSUMED_MEASURE    VARCHAR2(100),"
+            sql += "    IS_CORRECTION           VARCHAR2(10),"
+            sql += "    TAGS_DATA               VARCHAR2(4000)"
+            sql += ") COMPRESS"
+            cursor.execute(sql)
+            print("Table OCI_USAGE created")
+        else:
+            print("Table OCI_USAGE exist")
+
+        # check if TAGS_DATA columns exist in OCI_USAGE table, if not create
+        sql = "select count(*) from user_tab_columns where table_name = 'OCI_USAGE' and column_name='TAGS_DATA'"
+        cursor.execute(sql)
+        val, = cursor.fetchone()
+
+        # if columns not exist, create them
+        if val == 0:
+            print("Column TAGS_DATA does not exist in the table OCI_USAGE, adding...")
+            sql = "alter table OCI_USAGE add (TAGS_DATA VARCHAR2(4000))"
+            cursor.execute(sql)
+
+        # check if OCI_USAGE_TAG_KEYS table exist, if not create
+        sql = "select count(*) from user_tables where table_name = 'OCI_USAGE_TAG_KEYS'"
+        cursor.execute(sql)
+        val, = cursor.fetchone()
+
+        # if table not exist, create it
+        if val == 0:
+            print("Table OCI_USAGE_TAG_KEYS was not exist, creating")
+            sql = "CREATE TABLE OCI_USAGE_TAG_KEYS (TENANT_NAME VARCHAR2(100), TAG_KEY VARCHAR2(100), CONSTRAINT OCI_USAGE_TAG_KEYS_PK PRIMARY KEY(TENANT_NAME,TAG_KEY))"
+            cursor.execute(sql)
+            print("Table OCI_USAGE_TAG_KEYS created")
+        else:
+            print("Table OCI_USAGE_TAG_KEYS exist")
+
+        # close cursor
+        cursor.close()
+
+    except cx_Oracle.DatabaseError as e:
+        print("\nError manipulating database at check_database_table_structure_usage() - " + str(e) + "\n")
+        raise SystemExit
+
+    except Exception as e:
+        raise Exception("\nError manipulating database at check_database_table_structure_usage() - " + str(e))
+
+
+##########################################################################
+# Check Table Structure Cost
+##########################################################################
+def check_database_table_structure_cost(connection):
+    try:
+        # open cursor
+        cursor = connection.cursor()
+
+        # check if OCI_COST table exist, if not create
+        sql = "select count(*) from user_tables where table_name = 'OCI_COST'"
+        cursor.execute(sql)
+        val, = cursor.fetchone()
+
+        # if table not exist, create it
+        if val == 0:
+            print("Table OCI_COST was not exist, creating")
+            sql = "create table OCI_COST ("
+            sql += "    TENANT_NAME             VARCHAR2(100),"
+            sql += "    FILE_ID                 VARCHAR2(30),"
+            sql += "    USAGE_INTERVAL_START    DATE,"
+            sql += "    USAGE_INTERVAL_END      DATE,"
+            sql += "    PRD_SERVICE             VARCHAR2(100),"
+            sql += "    PRD_RESOURCE            VARCHAR2(100),"
+            sql += "    PRD_COMPARTMENT_ID      VARCHAR2(100),"
+            sql += "    PRD_COMPARTMENT_NAME    VARCHAR2(100),"
+            sql += "    PRD_COMPARTMENT_PATH    VARCHAR2(1000),"
+            sql += "    PRD_REGION              VARCHAR2(100),"
+            sql += "    PRD_AVAILABILITY_DOMAIN VARCHAR2(100),"
+            sql += "    USG_RESOURCE_ID         VARCHAR2(1000),"
+            sql += "    USG_BILLED_QUANTITY     NUMBER,"
+            sql += "    USG_BILLED_QUANTITY_OVERAGE NUMBER,"
+            sql += "    COST_SUBSCRIPTION_ID    NUMBER,"
+            sql += "    COST_PRODUCT_SKU        VARCHAR2(10),"
+            sql += "    PRD_DESCRIPTION         VARCHAR2(1000),"
+            sql += "    COST_UNIT_PRICE         NUMBER,"
+            sql += "    COST_UNIT_PRICE_OVERAGE NUMBER,"
+            sql += "    COST_MY_COST            NUMBER,"
+            sql += "    COST_MY_COST_OVERAGE    NUMBER,"
+            sql += "    COST_CURRENCY_CODE      VARCHAR2(10),"
+            sql += "    COST_BILLING_UNIT       VARCHAR2(1000),"
+            sql += "    COST_OVERAGE_FLAG       VARCHAR2(10),"
+            sql += "    IS_CORRECTION           VARCHAR2(10),"
+            sql += "    TAGS_DATA               VARCHAR2(4000)"
+            sql += ") COMPRESS"
+            cursor.execute(sql)
+            print("Table OCI_COST created")
+        else:
+            print("Table OCI_COST exist")
+
+        # check if OCI_COST_TAG_KEYS table exist, if not create
+        sql = "select count(*) from user_tables where table_name = 'OCI_COST_TAG_KEYS'"
+        cursor.execute(sql)
+        val, = cursor.fetchone()
+
+        # if table not exist, create it
+        if val == 0:
+            print("Table OCI_COST_TAG_KEYS was not exist, creating")
+            sql = "CREATE TABLE OCI_COST_TAG_KEYS (TENANT_NAME VARCHAR2(100), TAG_KEY VARCHAR2(100), CONSTRAINT OCI_COST_TAG_KEYS_PK PRIMARY KEY(TENANT_NAME,TAG_KEY))"
+            cursor.execute(sql)
+            print("Table OCI_COST_TAG_KEYS created")
+        else:
+            print("Table OCI_COST_TAG_KEYS exist")
+
+        # close cursor
+        cursor.close()
+
+    except cx_Oracle.DatabaseError as e:
+        print("\nError manipulating database at check_database_table_structure_cost() - " + str(e) + "\n")
+        raise SystemExit
+
+    except Exception as e:
+        raise Exception("\nError manipulating database at check_database_table_structure_cost() - " + str(e))
+
+
+#########################################################################
+# Load Cost File
+##########################################################################
+def load_cost_file(connection, object_storage, object_file, max_file_id, cmd):
+    num = 0
+    try:
+        o = object_file
+
+        # keep tag keys per file
+        tags_keys = []
+
+        # get file name
+        filename = o.name.rsplit('/', 1)[-1]
+        file_id = filename[:-7]
+        file_time = str(o.time_created)[0:16]
+
+        # if file already loaded, skip (check if < max_file_id
+        if str(max_file_id) != "None":
+            if file_id <= str(max_file_id):
+                return num
+
+        # if file id enabled, check
+        if cmd.fileid:
+            if file_id != cmd.fileid:
+                return num
+
+        # check file date
+        if cmd.filedate:
+            if file_time <= cmd.filedate:
+                return num
+
+        path_filename = work_report_dir + '/' + filename
+        print("   Processing file " + o.name + " - " + str(o.size) + " bytes, " + file_time)
+
+        # download file
+        object_details = object_storage.get_object(usage_report_namespace, str(tenancy.id), o.name)
+        with open(path_filename, 'wb') as f:
+            for chunk in object_details.data.raw.stream(1024 * 1024, decode_content=False):
+                f.write(chunk)
+
+        # Read file to variable
+        with gzip.open(path_filename, 'rt') as file_in:
+            csv_reader = csv.DictReader(file_in)
+
+            data = []
+            for row in csv_reader:
+
+                # find compartment path
+                compartment_path = ""
+                for c in compartments:
+                    if c['id'] == row['product/compartmentId']:
+                        compartment_path = c['path']
+
+                # Handle Tags up to 4000 chars with # seperator
+                tags_data = ""
+                for (key, value) in row.items():
+                    if 'tags' in key and len(value) > 0:
+
+                        # remove # and = from the tags keys and value
+                        keyadj = str(key).replace("tags/", "").replace("#", "").replace("=", "")
+                        valueadj = str(value).replace("#", "").replace("=", "")
+
+                        # check if length < 4000 to avoid overflow database column
+                        if len(tags_data) + len(keyadj) + len(valueadj) + 2 < 4000:
+                            tags_data += ("#" if tags_data == "" else "") + keyadj + "=" + valueadj + "#"
+
+                        # add tag key to tag_keys array
+                            if keyadj not in tags_keys:
+                                tags_keys.append(keyadj)
+
+                # create array for bulk insert
+                row_data = (
+                    str(tenancy.name),
+                    file_id,
+                    row['lineItem/intervalUsageStart'][0:10] + " " + row['lineItem/intervalUsageStart'][11:16],
+                    row['lineItem/intervalUsageEnd'][0:10] + " " + row['lineItem/intervalUsageEnd'][11:16],
+                    row['product/service'],
+                    row['product/compartmentId'],
+                    row['product/compartmentName'],
+                    compartment_path,
+                    row['product/region'],
+                    row['product/availabilityDomain'],
+                    row['product/resourceId'],
+                    row['usage/billedQuantity'],
+                    row['usage/billedQuantityOverage'],
+                    row['cost/subscriptionId'],
+                    row['cost/productSku'],
+                    row['product/Description'],
+                    row['cost/unitPrice'],
+                    row['cost/unitPriceOverage'],
+                    row['cost/myCost'],
+                    row['cost/myCostOverage'],
+                    row['cost/currencyCode'],
+                    row['cost/billingUnitReadable'],
+                    row['cost/overageFlag'],
+                    row['lineItem/isCorrection'],
+                    tags_data
+                )
+                data.append(row_data)
+
+            # insert bulk to database
+            cursor = cx_Oracle.Cursor(connection)
+            sql = "INSERT INTO OCI_COST ("
+            sql += "TENANT_NAME,"
+            sql += "FILE_ID,"
+            sql += "USAGE_INTERVAL_START, "
+            sql += "USAGE_INTERVAL_END, "
+            sql += "PRD_SERVICE, "
+            # 6
+            sql += "PRD_COMPARTMENT_ID, "
+            sql += "PRD_COMPARTMENT_NAME, "
+            sql += "PRD_COMPARTMENT_PATH, "
+            sql += "PRD_REGION, "
+            sql += "PRD_AVAILABILITY_DOMAIN, "
+            # 11
+            sql += "USG_RESOURCE_ID, "
+            sql += "USG_BILLED_QUANTITY, "
+            sql += "USG_BILLED_QUANTITY_OVERAGE, "
+            sql += "COST_SUBSCRIPTION_ID, "
+            sql += "COST_PRODUCT_SKU, "
+            # 16
+            sql += "PRD_DESCRIPTION, "
+            sql += "COST_UNIT_PRICE, "
+            sql += "COST_UNIT_PRICE_OVERAGE, "
+            sql += "COST_MY_COST, "
+            sql += "COST_MY_COST_OVERAGE, "
+            # 21
+            sql += "COST_CURRENCY_CODE, "
+            sql += "COST_BILLING_UNIT, "
+            sql += "COST_OVERAGE_FLAG,"
+            sql += "IS_CORRECTION, "
+            sql += "TAGS_DATA "
+            sql += ") VALUES ("
+            sql += ":1, :2, to_date(:3,'YYYY-MM-DD HH24:MI'), to_date(:4,'YYYY-MM-DD HH24:MI'), :5,  "
+            sql += ":6, :7, :8, :9, :10, "
+            sql += ":11, to_number(:12), to_number(:13) ,:14, :15, "
+            sql += ":16, to_number(:17), to_number(:18), to_number(:19), to_number(:20), "
+            sql += ":21, :22, :23, :24, :25"
+            sql += ") "
+
+            cursor.prepare(sql)
+            cursor.executemany(None, data)
+            connection.commit()
+            cursor.close()
+            print("   Completed  file " + o.name + " - " + str(len(data)) + " Rows Inserted")
+
+        num += 1
+
+        # remove file
+        os.remove(path_filename)
+
+        #######################################
+        # insert bulk tags to the database
+        #######################################
+        data = []
+        for tag in tags_keys:
+            row_data = (str(tenancy.name), tag, str(tenancy.name), tag)
+            data.append(row_data)
+
+        if data:
+            cursor = cx_Oracle.Cursor(connection)
+            sql = "INSERT INTO OCI_COST_TAG_KEYS (TENANT_NAME , TAG_KEY) "
+            sql += "SELECT :1, :2 FROM DUAL "
+            sql += "WHERE NOT EXISTS (SELECT 1 FROM OCI_COST_TAG_KEYS B WHERE B.TENANT_NAME = :3 AND B.TAG_KEY = :4)"
+
+            cursor.prepare(sql)
+            cursor.executemany(None, data)
+            connection.commit()
+            cursor.close()
+            print("   Total " + str(len(data)) + " Tags Merged.")
+
+        return num
+
+    except cx_Oracle.DatabaseError as e:
+        print("\nload_cost_file() - Error manipulating database - " + str(e) + "\n")
+        raise SystemExit
+
+    except Exception as e:
+        print("\nload_cost_file() - Error Download Usage and insert to database - " + str(e))
+        raise SystemExit
+
+
+#########################################################################
+# Load Usage File
+##########################################################################
+def load_usage_file(connection, object_storage, object_file, max_file_id, cmd):
+    num = 0
+    try:
+        o = object_file
+
+        # keep tag keys per file
+        tags_keys = []
+
+        # get file name
+        filename = o.name.rsplit('/', 1)[-1]
+        file_id = filename[:-7]
+        file_time = str(o.time_created)[0:16]
+
+        # if file already loaded, skip (check if < max_usage_file_id)
+        if str(max_file_id) != "None":
+            if file_id <= str(max_file_id):
+                return num
+
+        # if file id enabled, check
+        if cmd.fileid:
+            if file_id != cmd.file_id:
+                return num
+
+        # check file date
+        if cmd.filedate:
+            if file_time <= cmd.filedate:
+                return num
+
+        path_filename = work_report_dir + '/' + filename
+        print("   Processing file " + o.name + " - " + str(o.size) + " bytes, " + file_time)
+
+        # download file
+        object_details = object_storage.get_object(usage_report_namespace, str(tenancy.id), o.name)
+        with open(path_filename, 'wb') as f:
+            for chunk in object_details.data.raw.stream(1024 * 1024, decode_content=False):
+                f.write(chunk)
+
+        # Read file to variable
+        with gzip.open(path_filename, 'rt') as file_in:
+            csv_reader = csv.DictReader(file_in)
+
+            data = []
+            for row in csv_reader:
+
+                # find compartment path
+                compartment_path = ""
+                for c in compartments:
+                    if c['id'] == row['product/compartmentId']:
+                        compartment_path = c['path']
+
+                # Handle Tags up to 4000 chars with # seperator
+                tags_data = ""
+                for (key, value) in row.items():
+                    if 'tags' in key and len(value) > 0:
+
+                        # remove # and = from the tags keys and value
+                        keyadj = str(key).replace("tags/", "").replace("#", "").replace("=", "")
+                        valueadj = str(value).replace("#", "").replace("=", "")
+
+                        # check if length < 4000 to avoid overflow database column
+                        if len(tags_data) + len(keyadj) + len(valueadj) + 2 < 4000:
+                            tags_data += ("#" if tags_data == "" else "") + keyadj + "=" + valueadj + "#"
+
+                        # add tag key to tag_keys array
+                            if keyadj not in tags_keys:
+                                tags_keys.append(keyadj)
+
+                # create array for bulk insert
+                row_data = (
+                    str(tenancy.name),
+                    file_id,
+                    row['lineItem/intervalUsageStart'][0:10] + " " + row['lineItem/intervalUsageStart'][11:16],
+                    row['lineItem/intervalUsageEnd'][0:10] + " " + row['lineItem/intervalUsageEnd'][11:16],
+                    row['product/service'],
+                    row['product/resource'],
+                    row['product/compartmentId'],
+                    row['product/compartmentName'],
+                    compartment_path,
+                    row['product/region'],
+                    row['product/availabilityDomain'],
+                    row['product/resourceId'],
+                    row['usage/billedQuantity'],
+                    row['usage/consumedQuantity'],
+                    row['usage/consumedQuantityUnits'],
+                    row['usage/consumedQuantityMeasure'],
+                    row['lineItem/isCorrection'],
+                    tags_data
+                )
+                data.append(row_data)
+
+            # insert bulk to database
+            cursor = cx_Oracle.Cursor(connection)
+            sql = "INSERT INTO OCI_USAGE (TENANT_NAME , FILE_ID, USAGE_INTERVAL_START, USAGE_INTERVAL_END, PRD_SERVICE, PRD_RESOURCE, "
+            sql += "PRD_COMPARTMENT_ID, PRD_COMPARTMENT_NAME, PRD_COMPARTMENT_PATH, PRD_REGION, PRD_AVAILABILITY_DOMAIN, USG_RESOURCE_ID, "
+            sql += "USG_BILLED_QUANTITY, USG_CONSUMED_QUANTITY, USG_CONSUMED_UNITS, USG_CONSUMED_MEASURE, IS_CORRECTION, TAGS_DATA "
+            sql += ") VALUES ("
+            sql += ":1, :2, to_date(:3,'YYYY-MM-DD HH24:MI'), to_date(:4,'YYYY-MM-DD HH24:MI'), :5, :6, "
+            sql += ":7, :8, :9, :10, :11, :12, "
+            sql += "to_number(:13), to_number(:14), :15, :16, :17 ,:18 "
+            sql += ") "
+
+            cursor.prepare(sql)
+            cursor.executemany(None, data)
+            connection.commit()
+            cursor.close()
+            print("   Completed  file " + o.name + " - " + str(len(data)) + " Rows Inserted")
+
+        num += 1
+
+        # remove file
+        os.remove(path_filename)
+
+        #######################################
+        # insert bulk tags to the database
+        #######################################
+        data = []
+        for tag in tags_keys:
+            row_data = (str(tenancy.name), tag, str(tenancy.name), tag)
+            data.append(row_data)
+
+        if data:
+            cursor = cx_Oracle.Cursor(connection)
+            sql = "INSERT INTO OCI_USAGE_TAG_KEYS (TENANT_NAME , TAG_KEY) "
+            sql += "SELECT :1, :2 FROM DUAL "
+            sql += "WHERE NOT EXISTS (SELECT 1 FROM OCI_USAGE_TAG_KEYS B WHERE B.TENANT_NAME = :3 AND B.TAG_KEY = :4)"
+
+            cursor.prepare(sql)
+            cursor.executemany(None, data)
+            connection.commit()
+            cursor.close()
+            print("   Total " + str(len(data)) + " Tags Merged.")
+
+        return num
+
+    except cx_Oracle.DatabaseError as e:
+        print("\nload_usage_file() - Error manipulating database - " + str(e) + "\n")
+        raise SystemExit
+
+    except Exception as e:
+        print("\nload_usage_file() - Error Download Usage and insert to database - " + str(e))
+        raise SystemExit
+
+
+##########################################################################
 # Main
 ##########################################################################
 cmd = set_parser_arguments()
@@ -214,7 +695,7 @@ config, signer = create_signer(cmd)
 # Start
 ############################################
 start_time = str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-print_header("Running Usage Load to ADW", 0)
+print_header("Running Usage and Cost Load to ADW", 0)
 print("Starts at " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 print("Command Line : " + ' '.join(x for x in sys.argv[1:]))
 
@@ -244,64 +725,32 @@ except Exception as e:
 ############################################
 # connect to database
 ############################################
-max_file_id = ""
+max_usage_file_id = ""
+max_cost_file_id = ""
 try:
     print("\nConnecting to database " + cmd.dname)
-    con = cx_Oracle.connect(user=cmd.duser, password=cmd.dpass, dsn=cmd.dname)
-    cur = con.cursor()
+    connection = cx_Oracle.connect(user=cmd.duser, password=cmd.dpass, dsn=cmd.dname)
+    cursor = connection.cursor()
 
-    # check if oci_usage table exist, if not create
-    sql = "select count(*) from user_tables where table_name = 'OCI_USAGE'"
-    cur.execute(sql)
-    val, = cur.fetchone()
-
-    # if table not exist, create it
-    if val == 0:
-        print("Table OCI_USAGE was not exist, creating")
-        sql = "create table OCI_USAGE ("
-        sql += "    TENANT_NAME             VARCHAR2(30),"
-        sql += "    FILE_ID                 VARCHAR2(30),"
-        sql += "    USAGE_INTERVAL_START    DATE,"
-        sql += "    USAGE_INTERVAL_END      DATE,"
-        sql += "    PRD_SERVICE             VARCHAR2(100),"
-        sql += "    PRD_RESOURCE            VARCHAR2(100),"
-        sql += "    PRD_COMPARTMENT_ID      VARCHAR2(100),"
-        sql += "    PRD_COMPARTMENT_NAME    VARCHAR2(100),"
-        sql += "    PRD_COMPARTMENT_PATH    VARCHAR2(1000),"
-        sql += "    PRD_REGION              VARCHAR2(100),"
-        sql += "    PRD_AVAILABILITY_DOMAIN VARCHAR2(100),"
-        sql += "    USG_RESOURCE_ID         VARCHAR2(1000),"
-        sql += "    USG_BILLED_QUANTITY     NUMBER,"
-        sql += "    USG_CONSUMED_QUANTITY   NUMBER,"
-        sql += "    USG_CONSUMED_UNITS      VARCHAR2(100),"
-        sql += "    USG_CONSUMED_MEASURE    VARCHAR2(100),"
-        sql += "    IS_CORRECTION           VARCHAR2(10),"
-        sql += "    TAGS_KEYS               VARCHAR2(4000),"
-        sql += "    TAGS_DATA               VARCHAR2(4000)"
-        sql += ") COMPRESS"
-        cur.execute(sql)
-    else:
-        print("Table OCI_USAGE Exist")
-
-    # check if TAGS_KEYS and TAGS_DATA columns exist in OCI_USAGE table, if not create
-    sql = "select count(*) from user_tab_columns where table_name = 'OCI_USAGE' and column_name='TAGS_KEYS'"
-    cur.execute(sql)
-    val, = cur.fetchone()
-
-    # if columns not exist, create them
-    if val == 0:
-        print("Columns TAGS_KEYS and TAGS_DATA do not exist in the table OCI_USAGE, adding...")
-        sql = "alter table OCI_USAGE add (TAGS_KEYS VARCHAR2(4000), TAGS_DATA VARCHAR2(4000))"
-        cur.execute(sql)
+    # Check tables structure
+    check_database_table_structure_usage(connection)
+    check_database_table_structure_cost(connection)
 
     ###############################
     # fetch max file id processed
+    # for usage and cost
     ###############################
     sql = "select max(file_id) as file_id from OCI_USAGE where TENANT_NAME=:tenant_name"
-    cur.execute(sql, {"tenant_name": str(tenancy.name)})
-    max_file_id, = cur.fetchone()
+    cursor.execute(sql, {"tenant_name": str(tenancy.name)})
+    max_usage_file_id, = cursor.fetchone()
 
-    print("Max File Id Processed = " + str(max_file_id))
+    sql = "select max(file_id) as file_id from OCI_COST where TENANT_NAME=:tenant_name"
+    cursor.execute(sql, {"tenant_name": str(tenancy.name)})
+    max_cost_file_id, = cursor.fetchone()
+
+    print("Max Usage File Id Processed = " + str(max_usage_file_id))
+    print("Max Cost  File Id Processed = " + str(max_cost_file_id))
+    cursor.close()
 
 except cx_Oracle.DatabaseError as e:
     print("\nError manipulating database - " + str(e) + "\n")
@@ -311,7 +760,7 @@ except Exception as e:
     raise Exception("\nError manipulating database - " + str(e))
 
 ############################################
-# Download Usage and insert to database
+# Download Usage, cost and insert to database
 ############################################
 try:
     num = 0
@@ -322,113 +771,17 @@ try:
         object_storage.base_client.session.proxies = {'https': cmd.proxy}
 
     objects = object_storage.list_objects(usage_report_namespace, str(tenancy.id), fields="timeCreated,size").data
-    for o in objects.objects:
-        filename = o.name.rsplit('/', 1)[-1]
-        file_id = filename[:-7]
-        file_time = str(o.time_created)[0:16]
+    for object_file in objects.objects:
 
-        # if file already loaded, skip (check if < max_file_id
-        if str(max_file_id) != "None":
-            if file_id <= str(max_file_id):
-                continue
+        # check if cost or usage
+        if 'cost' in object_file.name:
+            num += load_cost_file(connection, object_storage, object_file, max_cost_file_id, cmd)
+        elif 'usage' in object_file.name:
+            num += load_usage_file(connection, object_storage, object_file, max_usage_file_id, cmd)
 
-        # if file id enabled, check
-        if cmd.fileid:
-            if file_id != cmd.fileid:
-                continue
-
-        # check file date
-        if cmd.filedate:
-            if file_time <= cmd.filedate:
-                continue
-
-        path_filename = work_report_dir + '/' + filename
-        path_filename_csv = path_filename[:-3]
-        print("   Processing file " + o.name + " - " + str(o.size) + ", " + file_time)
-
-        # check if file already loaded
-
-        # download file
-        object_details = object_storage.get_object(usage_report_namespace, str(tenancy.id), o.name)
-        with open(path_filename, 'wb') as f:
-            for chunk in object_details.data.raw.stream(1024 * 1024, decode_content=False):
-                f.write(chunk)
-
-        # Read file to variable
-        with gzip.open(path_filename, 'rt') as file_in:
-            csv_reader = csv.DictReader(file_in)
-
-            data = []
-            for row in csv_reader:
-
-                # find compartment path
-                compartment_path = ""
-                for c in compartments:
-                    if c['id'] == row['product/compartmentId']:
-                        compartment_path = c['path']
-
-                # Handle Tags up to 4000 chars with # seperator
-                tags_keys = ""
-                tags_data = ""
-                for (key, value) in row.items():
-                    if 'tags' in key and len(value) > 0:
-
-                        # remove # and = from the tags keys and value
-                        keyadj = str(key).replace("tags/", "").replace("#", "").replace("=", "")
-                        valueadj = str(value).replace("#", "").replace("=", "")
-
-                        # check if length < 4000 to avoid overflow database column
-                        if len(tags_data) + len(keyadj) + len(valueadj) + 2 < 4000:
-                            tags_keys += ("#" if tags_keys == "" else "") + keyadj + "#"
-                            tags_data += ("#" if tags_data == "" else "") + keyadj + "=" + valueadj + "#"
-
-                # create array for bulk insert
-                row_data = (
-                    str(tenancy.name),
-                    file_id,
-                    row['lineItem/intervalUsageStart'][0:10] + " " + row['lineItem/intervalUsageStart'][11:16],
-                    row['lineItem/intervalUsageEnd'][0:10] + " " + row['lineItem/intervalUsageEnd'][11:16],
-                    row['product/service'],
-                    row['product/resource'],
-                    row['product/compartmentId'],
-                    row['product/compartmentName'],
-                    compartment_path,
-                    row['product/region'],
-                    row['product/availabilityDomain'],
-                    row['product/resourceId'],
-                    row['usage/billedQuantity'],
-                    row['usage/consumedQuantity'],
-                    row['usage/consumedQuantityUnits'],
-                    row['usage/consumedQuantityMeasure'],
-                    row['lineItem/isCorrection'],
-                    tags_keys,
-                    tags_data
-                )
-                data.append(row_data)
-
-            # insert bulk to database
-            cursor = cx_Oracle.Cursor(con)
-            sql = "INSERT INTO OCI_USAGE (TENANT_NAME , FILE_ID, USAGE_INTERVAL_START, USAGE_INTERVAL_END, PRD_SERVICE, PRD_RESOURCE, "
-            sql += "PRD_COMPARTMENT_ID, PRD_COMPARTMENT_NAME, PRD_COMPARTMENT_PATH, PRD_REGION, PRD_AVAILABILITY_DOMAIN, USG_RESOURCE_ID, "
-            sql += "USG_BILLED_QUANTITY, USG_CONSUMED_QUANTITY, USG_CONSUMED_UNITS, USG_CONSUMED_MEASURE, IS_CORRECTION, TAGS_KEYS, TAGS_DATA) "
-            sql += "VALUES "
-            sql += "( :1, :2, to_date(:3,'YYYY-MM-DD HH24:MI'), to_date(:4,'YYYY-MM-DD HH24:MI'), :5, :6, "
-            sql += "  :7, :8, :9, :10, :11, :12, "
-            sql += "  to_number(:13), to_number(:14), :15, :16, :17 ,:18 ,:19) "
-
-            cursor.prepare(sql)
-            cursor.executemany(None, data)
-            con.commit()
-            cursor.close()
-            print("   Completed  file " + o.name + " - " + str(len(data)) + " Rows Inserted")
-
-        num += 1
-
-        # remove file
-        os.remove(path_filename)
-
-    print("Total Objects Processed = " + str(num))
-    con.close()
+    # Final printout
+    print("Total " + str(num) + " Files Loaded")
+    connection.close()
 
 except cx_Oracle.DatabaseError as e:
     print("\nError manipulating database - " + str(e) + "\n")

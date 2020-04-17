@@ -79,7 +79,7 @@ import sys
 import argparse
 import datetime
 
-version = "20.04.13"
+version = "20.04.20"
 
 ##########################################################################
 # check OCI version
@@ -211,7 +211,7 @@ def execute_extract():
 
     # if reboot migration
     if data.get_service_reboot_migration() > 0:
-        output.print_header(str(data.get_service_reboot_migration()) + " Reboot Migration Alert for Compute", 0)
+        output.print_header(str(data.get_service_reboot_migration()) + " Reboot Migration Alert for Compute or DB Node", 0)
 
     # print completion
     output.print_header("Completed " + complete_message + " at " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")), 0)
@@ -257,6 +257,7 @@ def set_parser_arguments():
     parser.add_argument('-fun', action='store_true', default=False, dest='function', help='Print Functions')
     parser.add_argument('-i', action='store_true', default=False, dest='identity', help='Print Identity')
     parser.add_argument('-ic', action='store_true', default=False, dest='identity_compartments', help='Print Identity Compartments only')
+    parser.add_argument('-isc', action='store_true', default=False, dest='skip_identity_user_credential', help='Skip Identity User Credential extract')
     parser.add_argument('-l', action='store_true', default=False, dest='load', help='Print Load Balancer')
     parser.add_argument('-lq', action='store_true', default=False, dest='limits', help='Print Limits and Quotas')
     parser.add_argument('-m', action='store_true', default=False, dest='monitoring', help='Print Monitoring, Notifications and Events')
@@ -412,6 +413,9 @@ def set_service_extract_flags(cmd):
 
     if cmd.delegation_token:
         prm.use_delegation_token = True
+
+    if cmd.skip_identity_user_credential:
+        prm.skip_identity_user_credential = True
 
     if cmd.tenantid:
         prm.filter_by_tenancy_id = cmd.tenantid

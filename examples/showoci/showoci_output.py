@@ -169,7 +169,24 @@ class ShowOCIOutput(object):
 
             for user in users:
                 print(self.taba + user['name'])
-                print(self.tabs + "Groups : " + user['groups'])
+                print(self.tabs + "Groups     : " + user['groups'])
+
+                if 'api_keys' in user:
+                    for arr in user['api_keys']:
+                        print(self.tabs + "API Keys   : " + arr['id'][-47:] + " (" + arr['lifecycle_state'] + ")")
+
+                if 'auth_token' in user:
+                    for arr in user['auth_token']:
+                        print(self.tabs + "Auth Token : " + arr['description'] + " (" + arr['lifecycle_state'] + ")")
+
+                if 'secret_keys' in user:
+                    for arr in user['secret_keys']:
+                        print(self.tabs + "Secret Key : " + arr['display_name'] + " (" + arr['lifecycle_state'] + ")")
+
+                if 'smtp_creds' in user:
+                    for arr in user['smtp_creds']:
+                        print(self.tabs + "Secret Key : " + arr['description'] + " (" + arr['lifecycle_state'] + ")")
+
                 print("")
 
         except Exception as e:
@@ -273,7 +290,7 @@ class ShowOCIOutput(object):
                 print(self.taba + tag['tag_namespace_name'] + "." + tag['name'])
                 print(self.tabs + "Desc      :" + tag['description'])
                 print(self.tabs + "Created   :" + tag['time_created'][0:16])
-            print("")
+                print("")
 
         except Exception as e:
             self.__print_error("__print_identity_cost_tracking_tags", e)
@@ -856,6 +873,10 @@ class ShowOCIOutput(object):
                     if 'nsg_names' in db_node:
                         if db_node['nsg_names']:
                             print(self.tabs + "        : SecGrp : " + db_node['nsg_names'])
+
+                    if 'time_maintenance_window_start' in db_node:
+                        if db_node['maintenance_type'] != "None":
+                            print(self.tabs + self.tabs + "     Maintenance: " + db_node['maintenance_type'] + "  " + db_node['time_maintenance_window_start'][0:16] + " - " + db_node['time_maintenance_window_end'][0:16])
 
                 # db homes
                 for db_home in dbs['db_homes']:
@@ -2356,8 +2377,26 @@ class ShowOCICSV(object):
                     'lifecycle_state': user['lifecycle_state'],
                     'identity_provider_name': user['identity_provider_name'],
                     'user_time_created': user['time_created'],
-                    'groups': user['groups']
+                    'groups': user['groups'],
+                    'api_keys': "Not Checked",
+                    'auth_token': "Not Checked",
+                    'secret_key': "Not Checked",
+                    'smtp_cred': "Not Checked"
                 }
+
+                # Check if credential exist
+                if 'api_keys' in user:
+                    data['api_keys'] = str(', '.join(x['id'] + " - " + x['lifecycle_state'] for x in user['api_keys']))
+
+                if 'auth_token' in user:
+                    data['auth_token'] = str(', '.join(x['id'] + " - " + x['description'] for x in user['auth_token']))
+
+                if 'secret_key' in user:
+                    data['secret_key'] = str(', '.join(x['id'] + " - " + x['display_name'] for x in user['secret_key']))
+
+                if 'smtp_cred' in user:
+                    data['smtp_cred'] = str(', '.join(x['id'] + " - " + x['description'] for x in user['smtp_cred']))
+
                 self.csv_identity_users.append(data)
 
         except Exception as e:
@@ -2417,7 +2456,6 @@ class ShowOCICSV(object):
 
             if 'users' in data:
                 self.__csv_identity_users(data['users'])
-
             if 'groups' in data:
                 self.__csv_identity_groups(data['groups'])
 
