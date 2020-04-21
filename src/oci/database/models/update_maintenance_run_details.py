@@ -1,5 +1,6 @@
 # coding: utf-8
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -21,16 +22,23 @@ class UpdateMaintenanceRunDetails(object):
             The value to assign to the is_enabled property of this UpdateMaintenanceRunDetails.
         :type is_enabled: bool
 
+        :param time_scheduled:
+            The value to assign to the time_scheduled property of this UpdateMaintenanceRunDetails.
+        :type time_scheduled: datetime
+
         """
         self.swagger_types = {
-            'is_enabled': 'bool'
+            'is_enabled': 'bool',
+            'time_scheduled': 'datetime'
         }
 
         self.attribute_map = {
-            'is_enabled': 'isEnabled'
+            'is_enabled': 'isEnabled',
+            'time_scheduled': 'timeScheduled'
         }
 
         self._is_enabled = None
+        self._time_scheduled = None
 
     @property
     def is_enabled(self):
@@ -55,6 +63,30 @@ class UpdateMaintenanceRunDetails(object):
         :type: bool
         """
         self._is_enabled = is_enabled
+
+    @property
+    def time_scheduled(self):
+        """
+        Gets the time_scheduled of this UpdateMaintenanceRunDetails.
+        The scheduled date and time of the Maintenance Run to update.
+
+
+        :return: The time_scheduled of this UpdateMaintenanceRunDetails.
+        :rtype: datetime
+        """
+        return self._time_scheduled
+
+    @time_scheduled.setter
+    def time_scheduled(self, time_scheduled):
+        """
+        Sets the time_scheduled of this UpdateMaintenanceRunDetails.
+        The scheduled date and time of the Maintenance Run to update.
+
+
+        :param time_scheduled: The time_scheduled of this UpdateMaintenanceRunDetails.
+        :type: datetime
+        """
+        self._time_scheduled = time_scheduled
 
     def __repr__(self):
         return formatted_flat_dict(self)

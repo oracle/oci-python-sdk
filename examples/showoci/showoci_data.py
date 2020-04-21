@@ -1,5 +1,7 @@
 ##########################################################################
-# Copyright(c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+#
 # showoci_data.py
 #
 # @author: Adi Zohar
@@ -1650,7 +1652,13 @@ class ShowOCIData(object):
                          'hostname': db_node['hostname'],
                          'nsg_names': nsg_names,
                          'nsg_ids': nsg_ids,
+                         'vnic_id': db_node['vnic_id'],
+                         'backup_vnic_id': ("" if db_node['backup_vnic_id'] == "None" else db_node['backup_vnic_id']),
                          'vnic_details': db_node['vnic_details'],
+                         'backup_vnic_details': db_node['backup_vnic_details'],
+                         'maintenance_type': db_node['maintenance_type'],
+                         'time_maintenance_window_start': db_node['time_maintenance_window_start'],
+                         'time_maintenance_window_end': db_node['time_maintenance_window_end'],
                          'fault_domain': ("" if db_node['fault_domain'] == "None" else db_node['fault_domain'])
                          }
 

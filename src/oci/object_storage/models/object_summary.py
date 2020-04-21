@@ -1,5 +1,6 @@
 # coding: utf-8
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -41,13 +42,18 @@ class ObjectSummary(object):
             The value to assign to the etag property of this ObjectSummary.
         :type etag: str
 
+        :param time_modified:
+            The value to assign to the time_modified property of this ObjectSummary.
+        :type time_modified: datetime
+
         """
         self.swagger_types = {
             'name': 'str',
             'size': 'int',
             'md5': 'str',
             'time_created': 'datetime',
-            'etag': 'str'
+            'etag': 'str',
+            'time_modified': 'datetime'
         }
 
         self.attribute_map = {
@@ -55,7 +61,8 @@ class ObjectSummary(object):
             'size': 'size',
             'md5': 'md5',
             'time_created': 'timeCreated',
-            'etag': 'etag'
+            'etag': 'etag',
+            'time_modified': 'timeModified'
         }
 
         self._name = None
@@ -63,6 +70,7 @@ class ObjectSummary(object):
         self._md5 = None
         self._time_created = None
         self._etag = None
+        self._time_modified = None
 
     @property
     def name(self):
@@ -189,6 +197,34 @@ class ObjectSummary(object):
         :type: str
         """
         self._etag = etag
+
+    @property
+    def time_modified(self):
+        """
+        Gets the time_modified of this ObjectSummary.
+        The date and time the object was modified, as described in `RFC 2616`__, section 14.29.
+
+        __ https://tools.ietf.org/rfc/rfc2616
+
+
+        :return: The time_modified of this ObjectSummary.
+        :rtype: datetime
+        """
+        return self._time_modified
+
+    @time_modified.setter
+    def time_modified(self, time_modified):
+        """
+        Sets the time_modified of this ObjectSummary.
+        The date and time the object was modified, as described in `RFC 2616`__, section 14.29.
+
+        __ https://tools.ietf.org/rfc/rfc2616
+
+
+        :param time_modified: The time_modified of this ObjectSummary.
+        :type: datetime
+        """
+        self._time_modified = time_modified
 
     def __repr__(self):
         return formatted_flat_dict(self)

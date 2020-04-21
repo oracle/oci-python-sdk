@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.13.0 - 2020-04-21
+====================
+
+Added
+-----
+* Support for the Data Safe service
+* Support for the Incident Management service
+* Support for showing which database versions support always-free in the Database service
+* Support in instance configurations for flex shapes, dedicated VM hosts, encryption in transit, and KMS keys in the Compute Autoscaling service
+* Support for server-side object encryption using a customer-provided encryption key in the Object Storage service
+* Support for specifying maintenance preferences while launching and updating Exadata Database systems in the Database service
+* Support for flexible-shaped VM instances in the Compute service
+* Support for scheduled cross-region backups in the Block Volume service
+* Support for object versioning in the Object Storage service
+
+Breaking
+--------
+* Deleted models Archiver, CreateArchiverDetails and UpdateArchiverDetails from the streaming service
+
+====================
 2.12.4 - 2020-04-14
 ====================
 

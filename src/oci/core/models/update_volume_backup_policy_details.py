@@ -1,5 +1,6 @@
 # coding: utf-8
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -27,6 +28,10 @@ class UpdateVolumeBackupPolicyDetails(object):
             The value to assign to the display_name property of this UpdateVolumeBackupPolicyDetails.
         :type display_name: str
 
+        :param destination_region:
+            The value to assign to the destination_region property of this UpdateVolumeBackupPolicyDetails.
+        :type destination_region: str
+
         :param schedules:
             The value to assign to the schedules property of this UpdateVolumeBackupPolicyDetails.
         :type schedules: list[VolumeBackupSchedule]
@@ -42,6 +47,7 @@ class UpdateVolumeBackupPolicyDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'destination_region': 'str',
             'schedules': 'list[VolumeBackupSchedule]',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
@@ -49,12 +55,14 @@ class UpdateVolumeBackupPolicyDetails(object):
 
         self.attribute_map = {
             'display_name': 'displayName',
+            'destination_region': 'destinationRegion',
             'schedules': 'schedules',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
 
         self._display_name = None
+        self._destination_region = None
         self._schedules = None
         self._defined_tags = None
         self._freeform_tags = None
@@ -84,6 +92,30 @@ class UpdateVolumeBackupPolicyDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def destination_region(self):
+        """
+        Gets the destination_region of this UpdateVolumeBackupPolicyDetails.
+        The paired destination region (pre-defined by oracle) for scheduled cross region backup calls. Example: `us-ashburn-1`
+
+
+        :return: The destination_region of this UpdateVolumeBackupPolicyDetails.
+        :rtype: str
+        """
+        return self._destination_region
+
+    @destination_region.setter
+    def destination_region(self, destination_region):
+        """
+        Sets the destination_region of this UpdateVolumeBackupPolicyDetails.
+        The paired destination region (pre-defined by oracle) for scheduled cross region backup calls. Example: `us-ashburn-1`
+
+
+        :param destination_region: The destination_region of this UpdateVolumeBackupPolicyDetails.
+        :type: str
+        """
+        self._destination_region = destination_region
 
     @property
     def schedules(self):

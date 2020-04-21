@@ -24,6 +24,7 @@ Core Services
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.core.models.AddImageShapeCompatibilityEntryDetails
     oci.core.models.AddNetworkSecurityGroupSecurityRulesDetails
     oci.core.models.AddSecurityRuleDetails
     oci.core.models.AddedNetworkSecurityGroupSecurityRules
@@ -180,7 +181,9 @@ Core Services
     oci.core.models.IScsiVolumeAttachment
     oci.core.models.IcmpOptions
     oci.core.models.Image
+    oci.core.models.ImageOcpuConstraints
     oci.core.models.ImageShapeCompatibilityEntry
+    oci.core.models.ImageShapeCompatibilitySummary
     oci.core.models.ImageSourceDetails
     oci.core.models.ImageSourceViaObjectStorageTupleDetails
     oci.core.models.ImageSourceViaObjectStorageUriDetails
@@ -199,7 +202,10 @@ Core Services
     oci.core.models.InstanceConfigurationInstanceSourceViaBootVolumeDetails
     oci.core.models.InstanceConfigurationInstanceSourceViaImageDetails
     oci.core.models.InstanceConfigurationIscsiAttachVolumeDetails
+    oci.core.models.InstanceConfigurationLaunchInstanceAgentConfigDetails
     oci.core.models.InstanceConfigurationLaunchInstanceDetails
+    oci.core.models.InstanceConfigurationLaunchInstanceShapeConfigDetails
+    oci.core.models.InstanceConfigurationLaunchOptions
     oci.core.models.InstanceConfigurationParavirtualizedAttachVolumeDetails
     oci.core.models.InstanceConfigurationSummary
     oci.core.models.InstanceConfigurationVolumeSourceDetails
@@ -213,6 +219,7 @@ Core Services
     oci.core.models.InstancePoolPlacementConfiguration
     oci.core.models.InstancePoolPlacementSecondaryVnicSubnet
     oci.core.models.InstancePoolSummary
+    oci.core.models.InstanceShapeConfig
     oci.core.models.InstanceSourceDetails
     oci.core.models.InstanceSourceViaBootVolumeDetails
     oci.core.models.InstanceSourceViaImageDetails
@@ -221,6 +228,7 @@ Core Services
     oci.core.models.Ipv6
     oci.core.models.LaunchInstanceAgentConfigDetails
     oci.core.models.LaunchInstanceDetails
+    oci.core.models.LaunchInstanceShapeConfigDetails
     oci.core.models.LaunchOptions
     oci.core.models.LetterOfAuthority
     oci.core.models.LocalPeeringGateway
@@ -243,6 +251,10 @@ Core Services
     oci.core.models.ServiceIdRequestDetails
     oci.core.models.ServiceIdResponseDetails
     oci.core.models.Shape
+    oci.core.models.ShapeMaxVnicAttachmentOptions
+    oci.core.models.ShapeMemoryOptions
+    oci.core.models.ShapeNetworkingBandwidthOptions
+    oci.core.models.ShapeOcpuOptions
     oci.core.models.Subnet
     oci.core.models.TcpOptions
     oci.core.models.TunnelConfig
@@ -271,6 +283,7 @@ Core Services
     oci.core.models.UpdateInstanceDetails
     oci.core.models.UpdateInstancePoolDetails
     oci.core.models.UpdateInstancePoolPlacementConfigurationDetails
+    oci.core.models.UpdateInstanceShapeConfigDetails
     oci.core.models.UpdateInternetGatewayDetails
     oci.core.models.UpdateIpv6Details
     oci.core.models.UpdateLocalPeeringGatewayDetails

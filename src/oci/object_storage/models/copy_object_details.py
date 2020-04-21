@@ -1,5 +1,6 @@
 # coding: utf-8
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -30,6 +31,10 @@ class CopyObjectDetails(object):
         :param source_object_if_match_e_tag:
             The value to assign to the source_object_if_match_e_tag property of this CopyObjectDetails.
         :type source_object_if_match_e_tag: str
+
+        :param source_version_id:
+            The value to assign to the source_version_id property of this CopyObjectDetails.
+        :type source_version_id: str
 
         :param destination_region:
             The value to assign to the destination_region property of this CopyObjectDetails.
@@ -63,6 +68,7 @@ class CopyObjectDetails(object):
         self.swagger_types = {
             'source_object_name': 'str',
             'source_object_if_match_e_tag': 'str',
+            'source_version_id': 'str',
             'destination_region': 'str',
             'destination_namespace': 'str',
             'destination_bucket': 'str',
@@ -75,6 +81,7 @@ class CopyObjectDetails(object):
         self.attribute_map = {
             'source_object_name': 'sourceObjectName',
             'source_object_if_match_e_tag': 'sourceObjectIfMatchETag',
+            'source_version_id': 'sourceVersionId',
             'destination_region': 'destinationRegion',
             'destination_namespace': 'destinationNamespace',
             'destination_bucket': 'destinationBucket',
@@ -86,6 +93,7 @@ class CopyObjectDetails(object):
 
         self._source_object_name = None
         self._source_object_if_match_e_tag = None
+        self._source_version_id = None
         self._destination_region = None
         self._destination_namespace = None
         self._destination_bucket = None
@@ -143,6 +151,30 @@ class CopyObjectDetails(object):
         :type: str
         """
         self._source_object_if_match_e_tag = source_object_if_match_e_tag
+
+    @property
+    def source_version_id(self):
+        """
+        Gets the source_version_id of this CopyObjectDetails.
+        VersionId of the object to copy. If not provided then current version is copied by default.
+
+
+        :return: The source_version_id of this CopyObjectDetails.
+        :rtype: str
+        """
+        return self._source_version_id
+
+    @source_version_id.setter
+    def source_version_id(self, source_version_id):
+        """
+        Sets the source_version_id of this CopyObjectDetails.
+        VersionId of the object to copy. If not provided then current version is copied by default.
+
+
+        :param source_version_id: The source_version_id of this CopyObjectDetails.
+        :type: str
+        """
+        self._source_version_id = source_version_id
 
     @property
     def destination_region(self):

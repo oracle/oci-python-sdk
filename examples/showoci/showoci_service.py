@@ -1,5 +1,7 @@
 ##########################################################################
-# Copyright(c) 2016, 2019, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+#
 # showoci_service.py
 #
 # @author: Adi Zohar
@@ -53,6 +55,7 @@ class ShowOCIFlags(object):
     read_function = False
     read_api = False
     read_data_ai = False
+    skip_identity_user_credential = False
 
     # is_vcn_exist_for_region
     is_vcn_exist_for_region = False
@@ -1147,7 +1150,8 @@ class ShowOCIService(object):
     def __load_identity_users_groups(self, identity, tenancy_id):
         datauser = []
         datagroup = []
-        self.__load_print_status("Users and Groups")
+
+        self.__load_print_status("Groups")
         start_time = time.time()
 
         try:
@@ -1171,6 +1175,7 @@ class ShowOCIService(object):
             # add groups
             ##########################
             for group in groups:
+                print(".", end="")
                 try:
                     user_group_memberships = oci.pagination.list_call_get_all_results(
                         identity.list_user_group_memberships, tenancy_id, group_id=group.id).data
@@ -1191,13 +1196,17 @@ class ShowOCIService(object):
 
             # load to data
             self.data[self.C_IDENTITY][self.C_IDENTITY_GROUPS] = datagroup
+            self.__load_print_cnt(len(datagroup), start_time)
 
             ##########################
             # add users
             ##########################
+            self.__load_print_status("Users")
+            start_time = time.time()
             for user in users:
 
                 group_users = []
+                print(".", end="")
 
                 # find the group users
                 for ugm in [e['group_id'] for e in members if user.id == e['user_id']]:
@@ -1212,8 +1221,8 @@ class ShowOCIService(object):
                 except Exception:
                     identity_provider_name = 'unknown'
 
-                # add info
-                datauser.append({
+                # user data
+                user_data = {
                     'id': user.id,
                     'name': str(user.name),
                     'description': str(user.description),
@@ -1223,7 +1232,17 @@ class ShowOCIService(object):
                     'identity_provider_id': str(user.identity_provider_id),
                     'identity_provider_name': str(identity_provider_name),
                     'groups': ', '.join(x for x in group_users)
-                })
+                }
+
+                # get the credential for the user
+                if not self.flags.skip_identity_user_credential:
+                    datauserapikey, datauserauthtoken, datausersecretkey, datausersmtpcred = self.__load_identity_user_credentials(identity, user)
+                    user_data['api_keys'] = datauserapikey
+                    user_data['auth_token'] = datauserauthtoken
+                    user_data['secret_key'] = datausersecretkey
+                    user_data['smtp_cred'] = datausersmtpcred
+
+                datauser.append(user_data)
 
             # load to data
             self.data[self.C_IDENTITY][self.C_IDENTITY_USERS] = datauser
@@ -1232,6 +1251,135 @@ class ShowOCIService(object):
 
         except oci.exceptions.RequestException:
             raise
+        except Exception as e:
+            self.__print_error("__load_identity_users_groups", e)
+
+    ########################################################
+    # Contributed by J.Hammer
+    # Add User API Keys, Tokens, Secrets, SMTP Creds
+    ########################################################
+    def __load_identity_user_credentials(self, identity, user):
+
+        datauserapikey = []
+        datauserauthtoken = []
+        datausersecretkey = []
+        datausersmtpcred = []
+
+        try:
+            ##################
+            # API_KEYS
+            ##################
+            try:
+                user_api_keys = oci.pagination.list_call_get_all_results(
+                    identity.list_api_keys,
+                    user.id,
+                    retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                ).data
+
+                # add user api keys
+                if user_api_keys:
+                    for api_key in user_api_keys:
+                        datauserapikey.append({
+                            'id': api_key.key_id,
+                            'inactive_status': str(api_key.inactive_status),
+                            'lifecycle_state': str(api_key.lifecycle_state),
+                            'time_created': str(api_key.time_created)
+                        })
+            except oci.exceptions.ServiceError as e:
+                if self.__check_service_error(e.code):
+                    self.__load_print_auth_warning('c')
+                else:
+                    raise
+
+            ##################
+            # Auth Token
+            ##################
+            try:
+                user_auth_tokens = oci.pagination.list_call_get_all_results(
+                    identity.list_auth_tokens,
+                    user.id,
+                    retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                ).data
+
+                # add user auth tokens
+                if user_auth_tokens:
+                    for token in user_auth_tokens:
+                        datauserauthtoken.append({
+                            'id': token.id,
+                            'description': token.description,
+                            'lifecycle_state': str(token.lifecycle_state),
+                            'inactive_status': str(token.inactive_status),
+                            'time_created': str(token.time_created),
+                            'time_expires': str(token.time_expires),
+                            'token': token.token
+                        })
+
+            except oci.exceptions.ServiceError as e:
+                if self.__check_service_error(e.code):
+                    self.__load_print_auth_warning('c')
+                else:
+                    raise
+
+            ##################
+            # Secrets
+            ##################
+            try:
+                user_secret_keys = oci.pagination.list_call_get_all_results(
+                    identity.list_customer_secret_keys,
+                    user.id,
+                    retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                ).data
+
+                # add user secret keys
+                if user_secret_keys:
+                    for secret in user_secret_keys:
+                        datausersecretkey.append({
+                            'id': secret.id,
+                            'display_name': secret.display_name,
+                            'lifecycle_state': str(secret.lifecycle_state),
+                            'inactive_status': str(secret.inactive_status),
+                            'time_created': str(secret.time_created),
+                            'time_expires': str(secret.time_expires)
+                        })
+
+            except oci.exceptions.ServiceError as e:
+                if self.__check_service_error(e.code):
+                    self.__load_print_auth_warning('c')
+                else:
+                    raise
+
+            ##################
+            # SMTP CRED
+            ##################
+            try:
+                user_smtp_creds = oci.pagination.list_call_get_all_results(
+                    identity.list_smtp_credentials,
+                    user.id,
+                    retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                ).data
+
+                # add user secret keys
+                if user_smtp_creds:
+                    for smtp_creds in user_smtp_creds:
+                        datausersmtpcred.append({
+                            'id': smtp_creds.id,
+                            'description': smtp_creds.description,
+                            'lifecycle_state': str(smtp_creds.lifecycle_state),
+                            'inactive_status': str(smtp_creds.inactive_status),
+                            'time_created': str(smtp_creds.time_created),
+                            'time_expires': str(smtp_creds.time_expires),
+                            'username': smtp_creds.username
+                        })
+
+            except oci.exceptions.ServiceError as e:
+                if self.__check_service_error(e.code):
+                    self.__load_print_auth_warning('c')
+                else:
+                    raise
+
+            # return the data
+            return datauserapikey, datauserauthtoken, datausersecretkey, datausersmtpcred
+
         except Exception as e:
             self.__print_error("__load_identity_users_groups", e)
 
@@ -1247,6 +1395,7 @@ class ShowOCIService(object):
             compartments = self.data[self.C_IDENTITY][self.C_IDENTITY_COMPARTMENTS]
 
             for c in compartments:
+                print(".", end="")
                 if self.__if_managed_paas_compartment(c['name']) and not self.flags.read_ManagedCompartmentForPaaS:
                     continue
 
@@ -1357,6 +1506,7 @@ class ShowOCIService(object):
                     raise
 
             for dg in dynamic_groups:
+                print(".", end="")
                 data.append({
                     'id': str(dg.id),
                     'name': str(dg.name),
@@ -2037,7 +2187,8 @@ class ShowOCIService(object):
             'dst_port_min': "",
             'dst_port_max': "",
             'icmp_code': "",
-            'icmp_type': ""
+            'icmp_type': "",
+            'security_alert': False
         }
 
         # Process the security rule
@@ -2123,6 +2274,11 @@ class ShowOCIService(object):
         # Stateless
         if security_rule.is_stateless:
             line += " (Stateless) "
+
+        # Check security_alert
+        value['security_alert'] = self.__load_core_network_check_security_alert(value)
+        if value['security_alert']:
+            line += " *** Security Alert *** "
 
         value['desc'] = line
         return value
@@ -2280,7 +2436,8 @@ class ShowOCIService(object):
             'dst_port_min': "",
             'dst_port_max': "",
             'icmp_code': "",
-            'icmp_type': ""
+            'icmp_type': "",
+            'security_alert': False
         }
 
         # process the source or dest
@@ -2368,8 +2525,29 @@ class ShowOCIService(object):
         if security_rule.is_stateless:
             line += " (Stateless) "
 
+        # Check security_alert
+        value['security_alert'] = self.__load_core_network_check_security_alert(value)
+        if value['security_alert']:
+            line += " *** Security Alert *** "
+
         value['desc'] = line
         return value
+
+    ##########################################################################
+    # check Security Alert
+    # if source = 0.0.0.0/0 and ports are not 22,443,3389
+    ##########################################################################
+    def __load_core_network_check_security_alert(self, security_row):
+        if (
+                security_row['source'] == "0.0.0.0/0" and
+                security_row['protocol_name'] == "TCP" and
+                not (security_row['dst_port_min'] == "22" and security_row['dst_port_max'] == "22") and
+                not (security_row['dst_port_min'] == "443" and security_row['dst_port_max'] == "443") and
+                not (security_row['dst_port_min'] == "3389" and security_row['dst_port_max'] == "3389")
+        ):
+            return True
+        else:
+            return False
 
     ##########################################################################
     # data network security groups
@@ -5550,8 +5728,17 @@ class ShowOCIService(object):
                      'fault_domain': str(db_node.fault_domain),
                      'lifecycle_state': str(db_node.lifecycle_state),
                      'vnic_id': str(db_node.vnic_id),
+                     'backup_vnic_id': str(db_node.backup_vnic_id),
+                     'maintenance_type': str(db_node.maintenance_type),
+                     'time_maintenance_window_start': str(db_node.time_maintenance_window_start),
+                     'time_maintenance_window_end': str(db_node.time_maintenance_window_end),
                      'vnic_details': self.__load_core_compute_vnic(virtual_network, str(db_node.vnic_id)),
+                     'backup_vnic_details': self.__load_core_compute_vnic(virtual_network, str(db_node.backup_vnic_id)),
                      'software_storage_size_in_gb': str(db_node.software_storage_size_in_gb)})
+
+                # mark reboot migration flag
+                if db_node.maintenance_type is not None:
+                    self.reboot_migration_counter += 1
 
             # add to main data
             return data

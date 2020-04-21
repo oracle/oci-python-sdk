@@ -20,14 +20,11 @@ Streaming
     :nosignatures:
     :template: autosummary/model_class.rst
 
-    oci.streaming.models.Archiver
-    oci.streaming.models.ArchiverError
     oci.streaming.models.ChangeConnectHarnessCompartmentDetails
     oci.streaming.models.ChangeStreamCompartmentDetails
     oci.streaming.models.ChangeStreamPoolCompartmentDetails
     oci.streaming.models.ConnectHarness
     oci.streaming.models.ConnectHarnessSummary
-    oci.streaming.models.CreateArchiverDetails
     oci.streaming.models.CreateConnectHarnessDetails
     oci.streaming.models.CreateCursorDetails
     oci.streaming.models.CreateGroupCursorDetails
@@ -50,7 +47,6 @@ Streaming
     oci.streaming.models.StreamPool
     oci.streaming.models.StreamPoolSummary
     oci.streaming.models.StreamSummary
-    oci.streaming.models.UpdateArchiverDetails
     oci.streaming.models.UpdateConnectHarnessDetails
     oci.streaming.models.UpdateGroupDetails
     oci.streaming.models.UpdateStreamDetails

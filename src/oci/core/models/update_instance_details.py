@@ -1,5 +1,6 @@
 # coding: utf-8
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -45,6 +46,10 @@ class UpdateInstanceDetails(object):
             The value to assign to the shape property of this UpdateInstanceDetails.
         :type shape: str
 
+        :param shape_config:
+            The value to assign to the shape_config property of this UpdateInstanceDetails.
+        :type shape_config: UpdateInstanceShapeConfigDetails
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
@@ -53,7 +58,8 @@ class UpdateInstanceDetails(object):
             'agent_config': 'UpdateInstanceAgentConfigDetails',
             'metadata': 'dict(str, str)',
             'extended_metadata': 'dict(str, object)',
-            'shape': 'str'
+            'shape': 'str',
+            'shape_config': 'UpdateInstanceShapeConfigDetails'
         }
 
         self.attribute_map = {
@@ -63,7 +69,8 @@ class UpdateInstanceDetails(object):
             'agent_config': 'agentConfig',
             'metadata': 'metadata',
             'extended_metadata': 'extendedMetadata',
-            'shape': 'shape'
+            'shape': 'shape',
+            'shape_config': 'shapeConfig'
         }
 
         self._defined_tags = None
@@ -73,6 +80,7 @@ class UpdateInstanceDetails(object):
         self._metadata = None
         self._extended_metadata = None
         self._shape = None
+        self._shape_config = None
 
     @property
     def defined_tags(self):
@@ -333,6 +341,26 @@ class UpdateInstanceDetails(object):
         :type: str
         """
         self._shape = shape
+
+    @property
+    def shape_config(self):
+        """
+        Gets the shape_config of this UpdateInstanceDetails.
+
+        :return: The shape_config of this UpdateInstanceDetails.
+        :rtype: UpdateInstanceShapeConfigDetails
+        """
+        return self._shape_config
+
+    @shape_config.setter
+    def shape_config(self, shape_config):
+        """
+        Sets the shape_config of this UpdateInstanceDetails.
+
+        :param shape_config: The shape_config of this UpdateInstanceDetails.
+        :type: UpdateInstanceShapeConfigDetails
+        """
+        self._shape_config = shape_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

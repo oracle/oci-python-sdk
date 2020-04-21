@@ -1,5 +1,6 @@
 # coding: utf-8
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -35,6 +36,14 @@ class CreateBucketDetails(object):
     #: A constant which can be used with the storage_tier property of a CreateBucketDetails.
     #: This constant has a value of "Archive"
     STORAGE_TIER_ARCHIVE = "Archive"
+
+    #: A constant which can be used with the versioning property of a CreateBucketDetails.
+    #: This constant has a value of "Enabled"
+    VERSIONING_ENABLED = "Enabled"
+
+    #: A constant which can be used with the versioning property of a CreateBucketDetails.
+    #: This constant has a value of "Disabled"
+    VERSIONING_DISABLED = "Disabled"
 
     def __init__(self, **kwargs):
         """
@@ -79,6 +88,11 @@ class CreateBucketDetails(object):
             The value to assign to the kms_key_id property of this CreateBucketDetails.
         :type kms_key_id: str
 
+        :param versioning:
+            The value to assign to the versioning property of this CreateBucketDetails.
+            Allowed values for this property are: "Enabled", "Disabled"
+        :type versioning: str
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -89,7 +103,8 @@ class CreateBucketDetails(object):
             'object_events_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'kms_key_id': 'str'
+            'kms_key_id': 'str',
+            'versioning': 'str'
         }
 
         self.attribute_map = {
@@ -101,7 +116,8 @@ class CreateBucketDetails(object):
             'object_events_enabled': 'objectEventsEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'kms_key_id': 'kmsKeyId'
+            'kms_key_id': 'kmsKeyId',
+            'versioning': 'versioning'
         }
 
         self._name = None
@@ -113,6 +129,7 @@ class CreateBucketDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._kms_key_id = None
+        self._versioning = None
 
     @property
     def name(self):
@@ -393,6 +410,38 @@ class CreateBucketDetails(object):
         :type: str
         """
         self._kms_key_id = kms_key_id
+
+    @property
+    def versioning(self):
+        """
+        Gets the versioning of this CreateBucketDetails.
+        Set the versioning status on the bucket. By default, a bucket is created with versioning `Disabled`. Use this option to enable versioning during bucket creation. Objects in a version enabled bucket are protected from overwrites and deletions. Previous versions of the same object will be available in the bucket.
+
+        Allowed values for this property are: "Enabled", "Disabled"
+
+
+        :return: The versioning of this CreateBucketDetails.
+        :rtype: str
+        """
+        return self._versioning
+
+    @versioning.setter
+    def versioning(self, versioning):
+        """
+        Sets the versioning of this CreateBucketDetails.
+        Set the versioning status on the bucket. By default, a bucket is created with versioning `Disabled`. Use this option to enable versioning during bucket creation. Objects in a version enabled bucket are protected from overwrites and deletions. Previous versions of the same object will be available in the bucket.
+
+
+        :param versioning: The versioning of this CreateBucketDetails.
+        :type: str
+        """
+        allowed_values = ["Enabled", "Disabled"]
+        if not value_allowed_none_or_none_sentinel(versioning, allowed_values):
+            raise ValueError(
+                "Invalid value for `versioning`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._versioning = versioning
 
     def __repr__(self):
         return formatted_flat_dict(self)

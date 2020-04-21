@@ -1,5 +1,6 @@
 # coding: utf-8
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -239,6 +240,18 @@ class DbSystemSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type license_model: str
 
+        :param maintenance_window:
+            The value to assign to the maintenance_window property of this DbSystemSummary.
+        :type maintenance_window: MaintenanceWindow
+
+        :param last_maintenance_run_id:
+            The value to assign to the last_maintenance_run_id property of this DbSystemSummary.
+        :type last_maintenance_run_id: str
+
+        :param next_maintenance_run_id:
+            The value to assign to the next_maintenance_run_id property of this DbSystemSummary.
+        :type next_maintenance_run_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this DbSystemSummary.
         :type freeform_tags: dict(str, str)
@@ -283,6 +296,9 @@ class DbSystemSummary(object):
             'reco_storage_size_in_gb': 'int',
             'node_count': 'int',
             'license_model': 'str',
+            'maintenance_window': 'MaintenanceWindow',
+            'last_maintenance_run_id': 'str',
+            'next_maintenance_run_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -322,6 +338,9 @@ class DbSystemSummary(object):
             'reco_storage_size_in_gb': 'recoStorageSizeInGB',
             'node_count': 'nodeCount',
             'license_model': 'licenseModel',
+            'maintenance_window': 'maintenanceWindow',
+            'last_maintenance_run_id': 'lastMaintenanceRunId',
+            'next_maintenance_run_id': 'nextMaintenanceRunId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -360,6 +379,9 @@ class DbSystemSummary(object):
         self._reco_storage_size_in_gb = None
         self._node_count = None
         self._license_model = None
+        self._maintenance_window = None
+        self._last_maintenance_run_id = None
+        self._next_maintenance_run_id = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -1296,6 +1318,82 @@ class DbSystemSummary(object):
         if not value_allowed_none_or_none_sentinel(license_model, allowed_values):
             license_model = 'UNKNOWN_ENUM_VALUE'
         self._license_model = license_model
+
+    @property
+    def maintenance_window(self):
+        """
+        Gets the maintenance_window of this DbSystemSummary.
+
+        :return: The maintenance_window of this DbSystemSummary.
+        :rtype: MaintenanceWindow
+        """
+        return self._maintenance_window
+
+    @maintenance_window.setter
+    def maintenance_window(self, maintenance_window):
+        """
+        Sets the maintenance_window of this DbSystemSummary.
+
+        :param maintenance_window: The maintenance_window of this DbSystemSummary.
+        :type: MaintenanceWindow
+        """
+        self._maintenance_window = maintenance_window
+
+    @property
+    def last_maintenance_run_id(self):
+        """
+        Gets the last_maintenance_run_id of this DbSystemSummary.
+        The `OCID`__ of the last maintenance run.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The last_maintenance_run_id of this DbSystemSummary.
+        :rtype: str
+        """
+        return self._last_maintenance_run_id
+
+    @last_maintenance_run_id.setter
+    def last_maintenance_run_id(self, last_maintenance_run_id):
+        """
+        Sets the last_maintenance_run_id of this DbSystemSummary.
+        The `OCID`__ of the last maintenance run.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param last_maintenance_run_id: The last_maintenance_run_id of this DbSystemSummary.
+        :type: str
+        """
+        self._last_maintenance_run_id = last_maintenance_run_id
+
+    @property
+    def next_maintenance_run_id(self):
+        """
+        Gets the next_maintenance_run_id of this DbSystemSummary.
+        The `OCID`__ of the next maintenance run.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The next_maintenance_run_id of this DbSystemSummary.
+        :rtype: str
+        """
+        return self._next_maintenance_run_id
+
+    @next_maintenance_run_id.setter
+    def next_maintenance_run_id(self, next_maintenance_run_id):
+        """
+        Sets the next_maintenance_run_id of this DbSystemSummary.
+        The `OCID`__ of the next maintenance run.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param next_maintenance_run_id: The next_maintenance_run_id of this DbSystemSummary.
+        :type: str
+        """
+        self._next_maintenance_run_id = next_maintenance_run_id
 
     @property
     def freeform_tags(self):
