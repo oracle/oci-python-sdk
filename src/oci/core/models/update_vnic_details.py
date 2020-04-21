@@ -1,5 +1,6 @@
 # coding: utf-8
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -222,8 +223,7 @@ class UpdateVnicDetails(object):
         """
         Gets the nsg_ids of this UpdateVnicDetails.
         A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. Setting this as
-        an empty array removes the VNIC from all network security groups. If the VNIC contains an
-        vlanId, the value of this field will be ignored.
+        an empty array removes the VNIC from all network security groups.
 
         For more information about NSGs, see
         :class:`NetworkSecurityGroup`.
@@ -239,8 +239,7 @@ class UpdateVnicDetails(object):
         """
         Sets the nsg_ids of this UpdateVnicDetails.
         A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. Setting this as
-        an empty array removes the VNIC from all network security groups. If the VNIC contains an
-        vlanId, the value of this field will be ignored.
+        an empty array removes the VNIC from all network security groups.
 
         For more information about NSGs, see
         :class:`NetworkSecurityGroup`.
@@ -256,12 +255,10 @@ class UpdateVnicDetails(object):
         """
         Gets the skip_source_dest_check of this UpdateVnicDetails.
         Whether the source/destination check is disabled on the VNIC.
-        Defaults to `false`, which means the check is performed. If the VNIC
-        contains an vlanId, the value of this field will be ignored.
+        Defaults to `false`, which means the check is performed.
 
         For information about why you would skip the source/destination check, see
         `Using a Private IP as a Route Target`__.
-
         Example: `true`
 
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm#privateip
@@ -277,12 +274,10 @@ class UpdateVnicDetails(object):
         """
         Sets the skip_source_dest_check of this UpdateVnicDetails.
         Whether the source/destination check is disabled on the VNIC.
-        Defaults to `false`, which means the check is performed. If the VNIC
-        contains an vlanId, the value of this field will be ignored.
+        Defaults to `false`, which means the check is performed.
 
         For information about why you would skip the source/destination check, see
         `Using a Private IP as a Route Target`__.
-
         Example: `true`
 
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm#privateip

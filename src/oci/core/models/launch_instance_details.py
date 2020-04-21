@@ -1,5 +1,6 @@
 # coding: utf-8
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -82,6 +83,10 @@ class LaunchInstanceDetails(object):
             The value to assign to the shape property of this LaunchInstanceDetails.
         :type shape: str
 
+        :param shape_config:
+            The value to assign to the shape_config property of this LaunchInstanceDetails.
+        :type shape_config: LaunchInstanceShapeConfigDetails
+
         :param source_details:
             The value to assign to the source_details property of this LaunchInstanceDetails.
         :type source_details: InstanceSourceDetails
@@ -112,6 +117,7 @@ class LaunchInstanceDetails(object):
             'metadata': 'dict(str, str)',
             'agent_config': 'LaunchInstanceAgentConfigDetails',
             'shape': 'str',
+            'shape_config': 'LaunchInstanceShapeConfigDetails',
             'source_details': 'InstanceSourceDetails',
             'subnet_id': 'str',
             'is_pv_encryption_in_transit_enabled': 'bool'
@@ -134,6 +140,7 @@ class LaunchInstanceDetails(object):
             'metadata': 'metadata',
             'agent_config': 'agentConfig',
             'shape': 'shape',
+            'shape_config': 'shapeConfig',
             'source_details': 'sourceDetails',
             'subnet_id': 'subnetId',
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled'
@@ -155,6 +162,7 @@ class LaunchInstanceDetails(object):
         self._metadata = None
         self._agent_config = None
         self._shape = None
+        self._shape_config = None
         self._source_details = None
         self._subnet_id = None
         self._is_pv_encryption_in_transit_enabled = None
@@ -778,6 +786,26 @@ class LaunchInstanceDetails(object):
         :type: str
         """
         self._shape = shape
+
+    @property
+    def shape_config(self):
+        """
+        Gets the shape_config of this LaunchInstanceDetails.
+
+        :return: The shape_config of this LaunchInstanceDetails.
+        :rtype: LaunchInstanceShapeConfigDetails
+        """
+        return self._shape_config
+
+    @shape_config.setter
+    def shape_config(self, shape_config):
+        """
+        Sets the shape_config of this LaunchInstanceDetails.
+
+        :param shape_config: The shape_config of this LaunchInstanceDetails.
+        :type: LaunchInstanceShapeConfigDetails
+        """
+        self._shape_config = shape_config
 
     @property
     def source_details(self):

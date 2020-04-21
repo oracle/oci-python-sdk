@@ -1,5 +1,6 @@
 # coding: utf-8
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -154,6 +155,10 @@ class Instance(object):
             The value to assign to the shape property of this Instance.
         :type shape: str
 
+        :param shape_config:
+            The value to assign to the shape_config property of this Instance.
+        :type shape_config: InstanceShapeConfig
+
         :param source_details:
             The value to assign to the source_details property of this Instance.
         :type source_details: InstanceSourceDetails
@@ -193,6 +198,7 @@ class Instance(object):
             'metadata': 'dict(str, str)',
             'region': 'str',
             'shape': 'str',
+            'shape_config': 'InstanceShapeConfig',
             'source_details': 'InstanceSourceDetails',
             'system_tags': 'dict(str, dict(str, object))',
             'time_created': 'datetime',
@@ -218,6 +224,7 @@ class Instance(object):
             'metadata': 'metadata',
             'region': 'region',
             'shape': 'shape',
+            'shape_config': 'shapeConfig',
             'source_details': 'sourceDetails',
             'system_tags': 'systemTags',
             'time_created': 'timeCreated',
@@ -242,6 +249,7 @@ class Instance(object):
         self._metadata = None
         self._region = None
         self._shape = None
+        self._shape_config = None
         self._source_details = None
         self._system_tags = None
         self._time_created = None
@@ -787,6 +795,26 @@ class Instance(object):
         :type: str
         """
         self._shape = shape
+
+    @property
+    def shape_config(self):
+        """
+        Gets the shape_config of this Instance.
+
+        :return: The shape_config of this Instance.
+        :rtype: InstanceShapeConfig
+        """
+        return self._shape_config
+
+    @shape_config.setter
+    def shape_config(self, shape_config):
+        """
+        Sets the shape_config of this Instance.
+
+        :param shape_config: The shape_config of this Instance.
+        :type: InstanceShapeConfig
+        """
+        self._shape_config = shape_config
 
     @property
     def source_details(self):

@@ -1,5 +1,6 @@
 # coding: utf-8
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 import io
 import hashlib
@@ -22,6 +23,11 @@ from oci.fips import is_fips_mode
 READ_BUFFER_SIZE = 8 * 1024
 DEFAULT_PARALLEL_PROCESS_COUNT = 3
 DEFAULT_MAX_RETRIES = 3
+SSEC_PARAM_NAMES = [
+    'opc_sse_customer_algorithm',
+    'opc_sse_customer_key',
+    'opc_sse_customer_key_sha256'
+]
 
 
 class MultipartObjectAssembler:
@@ -78,6 +84,15 @@ class MultipartObjectAssembler:
 
         :param int parallel_process_count (optional):
             The number of worker processes to use in parallel for performing a multipart upload. Default is 3.
+
+        :param str opc_sse_customer_algorithm (optional):
+            The encryption algorithm to use with the customer provided encryption key.
+
+        :param str opc_sse_customer_key (optional):
+            The base64-encoded 256-bit encryption key to use to encrypt the objects uploaded by this MultipartObjectAssembler.
+
+        :param str opc_sse_customer_key_sha256 (optional):
+            The base64-encoded SHA256 hash of the encryption key.
         """
         self.object_storage_client = object_storage_client
 
@@ -120,6 +135,11 @@ class MultipartObjectAssembler:
                          "bucketName": bucket_name,
                          "objectName": object_name,
                          "parts": []}
+        # Copy SSE-C parameters (if any)
+        self.ssec_params = {}
+        for param_name in SSEC_PARAM_NAMES:
+            if param_name in kwargs:
+                self.ssec_params[param_name] = kwargs[param_name]
 
     @staticmethod
     def calculate_md5(file_path, offset, chunk):
@@ -349,6 +369,9 @@ class MultipartObjectAssembler:
         if self.if_none_match:
             kwargs['if_none_match'] = self.if_none_match
 
+        # pass on SSE-C values (if any)
+        kwargs.update(self.ssec_params)
+
         response = self.object_storage_client.create_multipart_upload(self.manifest["namespace"],
                                                                       self.manifest["bucketName"],
                                                                       request,
@@ -372,6 +395,9 @@ class MultipartObjectAssembler:
         new_kwargs = {'content_md5': part["hash"]}
         if 'opc_client_request_id' in kwargs:
             new_kwargs['opc_client_request_id'] = kwargs['opc_client_request_id']
+
+        # supply SSE-C key (if any) information to upload-part
+        new_kwargs.update(self.ssec_params)
 
         # TODO: Calculate the hash without needing to read the file chunk twice.
         # Calculate the hash before uploading.  The hash will be used

@@ -1,8 +1,10 @@
 # coding: utf-8
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 from __future__ import absolute_import
 
+from .add_image_shape_compatibility_entry_details import AddImageShapeCompatibilityEntryDetails
 from .add_network_security_group_security_rules_details import AddNetworkSecurityGroupSecurityRulesDetails
 from .add_security_rule_details import AddSecurityRuleDetails
 from .added_network_security_group_security_rules import AddedNetworkSecurityGroupSecurityRules
@@ -159,7 +161,9 @@ from .ip_sec_connection_tunnel_shared_secret import IPSecConnectionTunnelSharedS
 from .i_scsi_volume_attachment import IScsiVolumeAttachment
 from .icmp_options import IcmpOptions
 from .image import Image
+from .image_ocpu_constraints import ImageOcpuConstraints
 from .image_shape_compatibility_entry import ImageShapeCompatibilityEntry
+from .image_shape_compatibility_summary import ImageShapeCompatibilitySummary
 from .image_source_details import ImageSourceDetails
 from .image_source_via_object_storage_tuple_details import ImageSourceViaObjectStorageTupleDetails
 from .image_source_via_object_storage_uri_details import ImageSourceViaObjectStorageUriDetails
@@ -178,7 +182,10 @@ from .instance_configuration_instance_source_details import InstanceConfiguratio
 from .instance_configuration_instance_source_via_boot_volume_details import InstanceConfigurationInstanceSourceViaBootVolumeDetails
 from .instance_configuration_instance_source_via_image_details import InstanceConfigurationInstanceSourceViaImageDetails
 from .instance_configuration_iscsi_attach_volume_details import InstanceConfigurationIscsiAttachVolumeDetails
+from .instance_configuration_launch_instance_agent_config_details import InstanceConfigurationLaunchInstanceAgentConfigDetails
 from .instance_configuration_launch_instance_details import InstanceConfigurationLaunchInstanceDetails
+from .instance_configuration_launch_instance_shape_config_details import InstanceConfigurationLaunchInstanceShapeConfigDetails
+from .instance_configuration_launch_options import InstanceConfigurationLaunchOptions
 from .instance_configuration_paravirtualized_attach_volume_details import InstanceConfigurationParavirtualizedAttachVolumeDetails
 from .instance_configuration_summary import InstanceConfigurationSummary
 from .instance_configuration_volume_source_details import InstanceConfigurationVolumeSourceDetails
@@ -192,6 +199,7 @@ from .instance_pool_load_balancer_attachment import InstancePoolLoadBalancerAtta
 from .instance_pool_placement_configuration import InstancePoolPlacementConfiguration
 from .instance_pool_placement_secondary_vnic_subnet import InstancePoolPlacementSecondaryVnicSubnet
 from .instance_pool_summary import InstancePoolSummary
+from .instance_shape_config import InstanceShapeConfig
 from .instance_source_details import InstanceSourceDetails
 from .instance_source_via_boot_volume_details import InstanceSourceViaBootVolumeDetails
 from .instance_source_via_image_details import InstanceSourceViaImageDetails
@@ -200,6 +208,7 @@ from .internet_gateway import InternetGateway
 from .ipv6 import Ipv6
 from .launch_instance_agent_config_details import LaunchInstanceAgentConfigDetails
 from .launch_instance_details import LaunchInstanceDetails
+from .launch_instance_shape_config_details import LaunchInstanceShapeConfigDetails
 from .launch_options import LaunchOptions
 from .letter_of_authority import LetterOfAuthority
 from .local_peering_gateway import LocalPeeringGateway
@@ -222,6 +231,10 @@ from .service_gateway import ServiceGateway
 from .service_id_request_details import ServiceIdRequestDetails
 from .service_id_response_details import ServiceIdResponseDetails
 from .shape import Shape
+from .shape_max_vnic_attachment_options import ShapeMaxVnicAttachmentOptions
+from .shape_memory_options import ShapeMemoryOptions
+from .shape_networking_bandwidth_options import ShapeNetworkingBandwidthOptions
+from .shape_ocpu_options import ShapeOcpuOptions
 from .subnet import Subnet
 from .tcp_options import TcpOptions
 from .tunnel_config import TunnelConfig
@@ -250,6 +263,7 @@ from .update_instance_configuration_details import UpdateInstanceConfigurationDe
 from .update_instance_details import UpdateInstanceDetails
 from .update_instance_pool_details import UpdateInstancePoolDetails
 from .update_instance_pool_placement_configuration_details import UpdateInstancePoolPlacementConfigurationDetails
+from .update_instance_shape_config_details import UpdateInstanceShapeConfigDetails
 from .update_internet_gateway_details import UpdateInternetGatewayDetails
 from .update_ipv6_details import UpdateIpv6Details
 from .update_local_peering_gateway_details import UpdateLocalPeeringGatewayDetails
@@ -300,6 +314,7 @@ from .volume_source_from_volume_details import VolumeSourceFromVolumeDetails
 
 # Maps type names to classes for core services.
 core_type_mapping = {
+    "AddImageShapeCompatibilityEntryDetails": AddImageShapeCompatibilityEntryDetails,
     "AddNetworkSecurityGroupSecurityRulesDetails": AddNetworkSecurityGroupSecurityRulesDetails,
     "AddSecurityRuleDetails": AddSecurityRuleDetails,
     "AddedNetworkSecurityGroupSecurityRules": AddedNetworkSecurityGroupSecurityRules,
@@ -456,7 +471,9 @@ core_type_mapping = {
     "IScsiVolumeAttachment": IScsiVolumeAttachment,
     "IcmpOptions": IcmpOptions,
     "Image": Image,
+    "ImageOcpuConstraints": ImageOcpuConstraints,
     "ImageShapeCompatibilityEntry": ImageShapeCompatibilityEntry,
+    "ImageShapeCompatibilitySummary": ImageShapeCompatibilitySummary,
     "ImageSourceDetails": ImageSourceDetails,
     "ImageSourceViaObjectStorageTupleDetails": ImageSourceViaObjectStorageTupleDetails,
     "ImageSourceViaObjectStorageUriDetails": ImageSourceViaObjectStorageUriDetails,
@@ -475,7 +492,10 @@ core_type_mapping = {
     "InstanceConfigurationInstanceSourceViaBootVolumeDetails": InstanceConfigurationInstanceSourceViaBootVolumeDetails,
     "InstanceConfigurationInstanceSourceViaImageDetails": InstanceConfigurationInstanceSourceViaImageDetails,
     "InstanceConfigurationIscsiAttachVolumeDetails": InstanceConfigurationIscsiAttachVolumeDetails,
+    "InstanceConfigurationLaunchInstanceAgentConfigDetails": InstanceConfigurationLaunchInstanceAgentConfigDetails,
     "InstanceConfigurationLaunchInstanceDetails": InstanceConfigurationLaunchInstanceDetails,
+    "InstanceConfigurationLaunchInstanceShapeConfigDetails": InstanceConfigurationLaunchInstanceShapeConfigDetails,
+    "InstanceConfigurationLaunchOptions": InstanceConfigurationLaunchOptions,
     "InstanceConfigurationParavirtualizedAttachVolumeDetails": InstanceConfigurationParavirtualizedAttachVolumeDetails,
     "InstanceConfigurationSummary": InstanceConfigurationSummary,
     "InstanceConfigurationVolumeSourceDetails": InstanceConfigurationVolumeSourceDetails,
@@ -489,6 +509,7 @@ core_type_mapping = {
     "InstancePoolPlacementConfiguration": InstancePoolPlacementConfiguration,
     "InstancePoolPlacementSecondaryVnicSubnet": InstancePoolPlacementSecondaryVnicSubnet,
     "InstancePoolSummary": InstancePoolSummary,
+    "InstanceShapeConfig": InstanceShapeConfig,
     "InstanceSourceDetails": InstanceSourceDetails,
     "InstanceSourceViaBootVolumeDetails": InstanceSourceViaBootVolumeDetails,
     "InstanceSourceViaImageDetails": InstanceSourceViaImageDetails,
@@ -497,6 +518,7 @@ core_type_mapping = {
     "Ipv6": Ipv6,
     "LaunchInstanceAgentConfigDetails": LaunchInstanceAgentConfigDetails,
     "LaunchInstanceDetails": LaunchInstanceDetails,
+    "LaunchInstanceShapeConfigDetails": LaunchInstanceShapeConfigDetails,
     "LaunchOptions": LaunchOptions,
     "LetterOfAuthority": LetterOfAuthority,
     "LocalPeeringGateway": LocalPeeringGateway,
@@ -519,6 +541,10 @@ core_type_mapping = {
     "ServiceIdRequestDetails": ServiceIdRequestDetails,
     "ServiceIdResponseDetails": ServiceIdResponseDetails,
     "Shape": Shape,
+    "ShapeMaxVnicAttachmentOptions": ShapeMaxVnicAttachmentOptions,
+    "ShapeMemoryOptions": ShapeMemoryOptions,
+    "ShapeNetworkingBandwidthOptions": ShapeNetworkingBandwidthOptions,
+    "ShapeOcpuOptions": ShapeOcpuOptions,
     "Subnet": Subnet,
     "TcpOptions": TcpOptions,
     "TunnelConfig": TunnelConfig,
@@ -547,6 +573,7 @@ core_type_mapping = {
     "UpdateInstanceDetails": UpdateInstanceDetails,
     "UpdateInstancePoolDetails": UpdateInstancePoolDetails,
     "UpdateInstancePoolPlacementConfigurationDetails": UpdateInstancePoolPlacementConfigurationDetails,
+    "UpdateInstanceShapeConfigDetails": UpdateInstanceShapeConfigDetails,
     "UpdateInternetGatewayDetails": UpdateInternetGatewayDetails,
     "UpdateIpv6Details": UpdateIpv6Details,
     "UpdateLocalPeeringGatewayDetails": UpdateLocalPeeringGatewayDetails,

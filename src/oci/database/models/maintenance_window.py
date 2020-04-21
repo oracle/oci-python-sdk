@@ -1,5 +1,6 @@
 # coding: utf-8
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -47,13 +48,18 @@ class MaintenanceWindow(object):
             The value to assign to the hours_of_day property of this MaintenanceWindow.
         :type hours_of_day: list[int]
 
+        :param lead_time_in_weeks:
+            The value to assign to the lead_time_in_weeks property of this MaintenanceWindow.
+        :type lead_time_in_weeks: int
+
         """
         self.swagger_types = {
             'preference': 'str',
             'months': 'list[Month]',
             'weeks_of_month': 'list[int]',
             'days_of_week': 'list[DayOfWeek]',
-            'hours_of_day': 'list[int]'
+            'hours_of_day': 'list[int]',
+            'lead_time_in_weeks': 'int'
         }
 
         self.attribute_map = {
@@ -61,7 +67,8 @@ class MaintenanceWindow(object):
             'months': 'months',
             'weeks_of_month': 'weeksOfMonth',
             'days_of_week': 'daysOfWeek',
-            'hours_of_day': 'hoursOfDay'
+            'hours_of_day': 'hoursOfDay',
+            'lead_time_in_weeks': 'leadTimeInWeeks'
         }
 
         self._preference = None
@@ -69,6 +76,7 @@ class MaintenanceWindow(object):
         self._weeks_of_month = None
         self._days_of_week = None
         self._hours_of_day = None
+        self._lead_time_in_weeks = None
 
     @property
     def preference(self):
@@ -201,6 +209,30 @@ class MaintenanceWindow(object):
         :type: list[int]
         """
         self._hours_of_day = hours_of_day
+
+    @property
+    def lead_time_in_weeks(self):
+        """
+        Gets the lead_time_in_weeks of this MaintenanceWindow.
+        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+
+
+        :return: The lead_time_in_weeks of this MaintenanceWindow.
+        :rtype: int
+        """
+        return self._lead_time_in_weeks
+
+    @lead_time_in_weeks.setter
+    def lead_time_in_weeks(self, lead_time_in_weeks):
+        """
+        Sets the lead_time_in_weeks of this MaintenanceWindow.
+        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+
+
+        :param lead_time_in_weeks: The lead_time_in_weeks of this MaintenanceWindow.
+        :type: int
+        """
+        self._lead_time_in_weeks = lead_time_in_weeks
 
     def __repr__(self):
         return formatted_flat_dict(self)

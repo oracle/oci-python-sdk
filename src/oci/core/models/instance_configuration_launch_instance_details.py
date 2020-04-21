@@ -1,5 +1,6 @@
 # coding: utf-8
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -11,6 +12,30 @@ class InstanceConfigurationLaunchInstanceDetails(object):
     """
     See Instance launch details - :class:`LaunchInstanceDetails`
     """
+
+    #: A constant which can be used with the launch_mode property of a InstanceConfigurationLaunchInstanceDetails.
+    #: This constant has a value of "NATIVE"
+    LAUNCH_MODE_NATIVE = "NATIVE"
+
+    #: A constant which can be used with the launch_mode property of a InstanceConfigurationLaunchInstanceDetails.
+    #: This constant has a value of "EMULATED"
+    LAUNCH_MODE_EMULATED = "EMULATED"
+
+    #: A constant which can be used with the launch_mode property of a InstanceConfigurationLaunchInstanceDetails.
+    #: This constant has a value of "PARAVIRTUALIZED"
+    LAUNCH_MODE_PARAVIRTUALIZED = "PARAVIRTUALIZED"
+
+    #: A constant which can be used with the launch_mode property of a InstanceConfigurationLaunchInstanceDetails.
+    #: This constant has a value of "CUSTOM"
+    LAUNCH_MODE_CUSTOM = "CUSTOM"
+
+    #: A constant which can be used with the preferred_maintenance_action property of a InstanceConfigurationLaunchInstanceDetails.
+    #: This constant has a value of "LIVE_MIGRATE"
+    PREFERRED_MAINTENANCE_ACTION_LIVE_MIGRATE = "LIVE_MIGRATE"
+
+    #: A constant which can be used with the preferred_maintenance_action property of a InstanceConfigurationLaunchInstanceDetails.
+    #: This constant has a value of "REBOOT"
+    PREFERRED_MAINTENANCE_ACTION_REBOOT = "REBOOT"
 
     def __init__(self, **kwargs):
         """
@@ -57,6 +82,10 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             The value to assign to the shape property of this InstanceConfigurationLaunchInstanceDetails.
         :type shape: str
 
+        :param shape_config:
+            The value to assign to the shape_config property of this InstanceConfigurationLaunchInstanceDetails.
+        :type shape_config: InstanceConfigurationLaunchInstanceShapeConfigDetails
+
         :param source_details:
             The value to assign to the source_details property of this InstanceConfigurationLaunchInstanceDetails.
         :type source_details: InstanceConfigurationInstanceSourceDetails
@@ -64,6 +93,34 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         :param fault_domain:
             The value to assign to the fault_domain property of this InstanceConfigurationLaunchInstanceDetails.
         :type fault_domain: str
+
+        :param dedicated_vm_host_id:
+            The value to assign to the dedicated_vm_host_id property of this InstanceConfigurationLaunchInstanceDetails.
+        :type dedicated_vm_host_id: str
+
+        :param launch_mode:
+            The value to assign to the launch_mode property of this InstanceConfigurationLaunchInstanceDetails.
+            Allowed values for this property are: "NATIVE", "EMULATED", "PARAVIRTUALIZED", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type launch_mode: str
+
+        :param launch_options:
+            The value to assign to the launch_options property of this InstanceConfigurationLaunchInstanceDetails.
+        :type launch_options: InstanceConfigurationLaunchOptions
+
+        :param agent_config:
+            The value to assign to the agent_config property of this InstanceConfigurationLaunchInstanceDetails.
+        :type agent_config: InstanceConfigurationLaunchInstanceAgentConfigDetails
+
+        :param is_pv_encryption_in_transit_enabled:
+            The value to assign to the is_pv_encryption_in_transit_enabled property of this InstanceConfigurationLaunchInstanceDetails.
+        :type is_pv_encryption_in_transit_enabled: bool
+
+        :param preferred_maintenance_action:
+            The value to assign to the preferred_maintenance_action property of this InstanceConfigurationLaunchInstanceDetails.
+            Allowed values for this property are: "LIVE_MIGRATE", "REBOOT", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type preferred_maintenance_action: str
 
         """
         self.swagger_types = {
@@ -77,8 +134,15 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             'ipxe_script': 'str',
             'metadata': 'dict(str, str)',
             'shape': 'str',
+            'shape_config': 'InstanceConfigurationLaunchInstanceShapeConfigDetails',
             'source_details': 'InstanceConfigurationInstanceSourceDetails',
-            'fault_domain': 'str'
+            'fault_domain': 'str',
+            'dedicated_vm_host_id': 'str',
+            'launch_mode': 'str',
+            'launch_options': 'InstanceConfigurationLaunchOptions',
+            'agent_config': 'InstanceConfigurationLaunchInstanceAgentConfigDetails',
+            'is_pv_encryption_in_transit_enabled': 'bool',
+            'preferred_maintenance_action': 'str'
         }
 
         self.attribute_map = {
@@ -92,8 +156,15 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             'ipxe_script': 'ipxeScript',
             'metadata': 'metadata',
             'shape': 'shape',
+            'shape_config': 'shapeConfig',
             'source_details': 'sourceDetails',
-            'fault_domain': 'faultDomain'
+            'fault_domain': 'faultDomain',
+            'dedicated_vm_host_id': 'dedicatedVmHostId',
+            'launch_mode': 'launchMode',
+            'launch_options': 'launchOptions',
+            'agent_config': 'agentConfig',
+            'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
+            'preferred_maintenance_action': 'preferredMaintenanceAction'
         }
 
         self._availability_domain = None
@@ -106,8 +177,15 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         self._ipxe_script = None
         self._metadata = None
         self._shape = None
+        self._shape_config = None
         self._source_details = None
         self._fault_domain = None
+        self._dedicated_vm_host_id = None
+        self._launch_mode = None
+        self._launch_options = None
+        self._agent_config = None
+        self._is_pv_encryption_in_transit_enabled = None
+        self._preferred_maintenance_action = None
 
     @property
     def availability_domain(self):
@@ -562,6 +640,26 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         self._shape = shape
 
     @property
+    def shape_config(self):
+        """
+        Gets the shape_config of this InstanceConfigurationLaunchInstanceDetails.
+
+        :return: The shape_config of this InstanceConfigurationLaunchInstanceDetails.
+        :rtype: InstanceConfigurationLaunchInstanceShapeConfigDetails
+        """
+        return self._shape_config
+
+    @shape_config.setter
+    def shape_config(self, shape_config):
+        """
+        Sets the shape_config of this InstanceConfigurationLaunchInstanceDetails.
+
+        :param shape_config: The shape_config of this InstanceConfigurationLaunchInstanceDetails.
+        :type: InstanceConfigurationLaunchInstanceShapeConfigDetails
+        """
+        self._shape_config = shape_config
+
+    @property
     def source_details(self):
         """
         Gets the source_details of this InstanceConfigurationLaunchInstanceDetails.
@@ -636,6 +734,166 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         :type: str
         """
         self._fault_domain = fault_domain
+
+    @property
+    def dedicated_vm_host_id(self):
+        """
+        Gets the dedicated_vm_host_id of this InstanceConfigurationLaunchInstanceDetails.
+        The OCID of dedicated VM host.
+
+
+        :return: The dedicated_vm_host_id of this InstanceConfigurationLaunchInstanceDetails.
+        :rtype: str
+        """
+        return self._dedicated_vm_host_id
+
+    @dedicated_vm_host_id.setter
+    def dedicated_vm_host_id(self, dedicated_vm_host_id):
+        """
+        Sets the dedicated_vm_host_id of this InstanceConfigurationLaunchInstanceDetails.
+        The OCID of dedicated VM host.
+
+
+        :param dedicated_vm_host_id: The dedicated_vm_host_id of this InstanceConfigurationLaunchInstanceDetails.
+        :type: str
+        """
+        self._dedicated_vm_host_id = dedicated_vm_host_id
+
+    @property
+    def launch_mode(self):
+        """
+        Gets the launch_mode of this InstanceConfigurationLaunchInstanceDetails.
+        Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for Oracle-provided images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using virtio drivers.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+
+        Allowed values for this property are: "NATIVE", "EMULATED", "PARAVIRTUALIZED", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The launch_mode of this InstanceConfigurationLaunchInstanceDetails.
+        :rtype: str
+        """
+        return self._launch_mode
+
+    @launch_mode.setter
+    def launch_mode(self, launch_mode):
+        """
+        Sets the launch_mode of this InstanceConfigurationLaunchInstanceDetails.
+        Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for Oracle-provided images.
+        * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using virtio drivers.
+        * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+
+
+        :param launch_mode: The launch_mode of this InstanceConfigurationLaunchInstanceDetails.
+        :type: str
+        """
+        allowed_values = ["NATIVE", "EMULATED", "PARAVIRTUALIZED", "CUSTOM"]
+        if not value_allowed_none_or_none_sentinel(launch_mode, allowed_values):
+            launch_mode = 'UNKNOWN_ENUM_VALUE'
+        self._launch_mode = launch_mode
+
+    @property
+    def launch_options(self):
+        """
+        Gets the launch_options of this InstanceConfigurationLaunchInstanceDetails.
+
+        :return: The launch_options of this InstanceConfigurationLaunchInstanceDetails.
+        :rtype: InstanceConfigurationLaunchOptions
+        """
+        return self._launch_options
+
+    @launch_options.setter
+    def launch_options(self, launch_options):
+        """
+        Sets the launch_options of this InstanceConfigurationLaunchInstanceDetails.
+
+        :param launch_options: The launch_options of this InstanceConfigurationLaunchInstanceDetails.
+        :type: InstanceConfigurationLaunchOptions
+        """
+        self._launch_options = launch_options
+
+    @property
+    def agent_config(self):
+        """
+        Gets the agent_config of this InstanceConfigurationLaunchInstanceDetails.
+
+        :return: The agent_config of this InstanceConfigurationLaunchInstanceDetails.
+        :rtype: InstanceConfigurationLaunchInstanceAgentConfigDetails
+        """
+        return self._agent_config
+
+    @agent_config.setter
+    def agent_config(self, agent_config):
+        """
+        Sets the agent_config of this InstanceConfigurationLaunchInstanceDetails.
+
+        :param agent_config: The agent_config of this InstanceConfigurationLaunchInstanceDetails.
+        :type: InstanceConfigurationLaunchInstanceAgentConfigDetails
+        """
+        self._agent_config = agent_config
+
+    @property
+    def is_pv_encryption_in_transit_enabled(self):
+        """
+        Gets the is_pv_encryption_in_transit_enabled of this InstanceConfigurationLaunchInstanceDetails.
+        Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
+
+
+        :return: The is_pv_encryption_in_transit_enabled of this InstanceConfigurationLaunchInstanceDetails.
+        :rtype: bool
+        """
+        return self._is_pv_encryption_in_transit_enabled
+
+    @is_pv_encryption_in_transit_enabled.setter
+    def is_pv_encryption_in_transit_enabled(self, is_pv_encryption_in_transit_enabled):
+        """
+        Sets the is_pv_encryption_in_transit_enabled of this InstanceConfigurationLaunchInstanceDetails.
+        Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
+
+
+        :param is_pv_encryption_in_transit_enabled: The is_pv_encryption_in_transit_enabled of this InstanceConfigurationLaunchInstanceDetails.
+        :type: bool
+        """
+        self._is_pv_encryption_in_transit_enabled = is_pv_encryption_in_transit_enabled
+
+    @property
+    def preferred_maintenance_action(self):
+        """
+        Gets the preferred_maintenance_action of this InstanceConfigurationLaunchInstanceDetails.
+        The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+        * `LIVE_MIGRATE` - Run maintenance using a live migration.
+        * `REBOOT` - Run maintenance using a reboot.
+
+        Allowed values for this property are: "LIVE_MIGRATE", "REBOOT", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The preferred_maintenance_action of this InstanceConfigurationLaunchInstanceDetails.
+        :rtype: str
+        """
+        return self._preferred_maintenance_action
+
+    @preferred_maintenance_action.setter
+    def preferred_maintenance_action(self, preferred_maintenance_action):
+        """
+        Sets the preferred_maintenance_action of this InstanceConfigurationLaunchInstanceDetails.
+        The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+        * `LIVE_MIGRATE` - Run maintenance using a live migration.
+        * `REBOOT` - Run maintenance using a reboot.
+
+
+        :param preferred_maintenance_action: The preferred_maintenance_action of this InstanceConfigurationLaunchInstanceDetails.
+        :type: str
+        """
+        allowed_values = ["LIVE_MIGRATE", "REBOOT"]
+        if not value_allowed_none_or_none_sentinel(preferred_maintenance_action, allowed_values):
+            preferred_maintenance_action = 'UNKNOWN_ENUM_VALUE'
+        self._preferred_maintenance_action = preferred_maintenance_action
 
     def __repr__(self):
         return formatted_flat_dict(self)

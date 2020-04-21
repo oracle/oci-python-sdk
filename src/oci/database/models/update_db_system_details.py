@@ -1,5 +1,6 @@
 # coding: utf-8
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -55,6 +56,10 @@ class UpdateDbSystemDetails(object):
             The value to assign to the backup_network_nsg_ids property of this UpdateDbSystemDetails.
         :type backup_network_nsg_ids: list[str]
 
+        :param maintenance_window_details:
+            The value to assign to the maintenance_window_details property of this UpdateDbSystemDetails.
+        :type maintenance_window_details: MaintenanceWindow
+
         """
         self.swagger_types = {
             'cpu_core_count': 'int',
@@ -65,7 +70,8 @@ class UpdateDbSystemDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'shape': 'str',
             'nsg_ids': 'list[str]',
-            'backup_network_nsg_ids': 'list[str]'
+            'backup_network_nsg_ids': 'list[str]',
+            'maintenance_window_details': 'MaintenanceWindow'
         }
 
         self.attribute_map = {
@@ -77,7 +83,8 @@ class UpdateDbSystemDetails(object):
             'defined_tags': 'definedTags',
             'shape': 'shape',
             'nsg_ids': 'nsgIds',
-            'backup_network_nsg_ids': 'backupNetworkNsgIds'
+            'backup_network_nsg_ids': 'backupNetworkNsgIds',
+            'maintenance_window_details': 'maintenanceWindowDetails'
         }
 
         self._cpu_core_count = None
@@ -89,6 +96,7 @@ class UpdateDbSystemDetails(object):
         self._shape = None
         self._nsg_ids = None
         self._backup_network_nsg_ids = None
+        self._maintenance_window_details = None
 
     @property
     def cpu_core_count(self):
@@ -339,6 +347,26 @@ class UpdateDbSystemDetails(object):
         :type: list[str]
         """
         self._backup_network_nsg_ids = backup_network_nsg_ids
+
+    @property
+    def maintenance_window_details(self):
+        """
+        Gets the maintenance_window_details of this UpdateDbSystemDetails.
+
+        :return: The maintenance_window_details of this UpdateDbSystemDetails.
+        :rtype: MaintenanceWindow
+        """
+        return self._maintenance_window_details
+
+    @maintenance_window_details.setter
+    def maintenance_window_details(self, maintenance_window_details):
+        """
+        Sets the maintenance_window_details of this UpdateDbSystemDetails.
+
+        :param maintenance_window_details: The maintenance_window_details of this UpdateDbSystemDetails.
+        :type: MaintenanceWindow
+        """
+        self._maintenance_window_details = maintenance_window_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

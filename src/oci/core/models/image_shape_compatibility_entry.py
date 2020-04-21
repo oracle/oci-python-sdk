@@ -1,5 +1,6 @@
 # coding: utf-8
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
 from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
@@ -25,19 +26,26 @@ class ImageShapeCompatibilityEntry(object):
             The value to assign to the shape property of this ImageShapeCompatibilityEntry.
         :type shape: str
 
+        :param ocpu_constraints:
+            The value to assign to the ocpu_constraints property of this ImageShapeCompatibilityEntry.
+        :type ocpu_constraints: ImageOcpuConstraints
+
         """
         self.swagger_types = {
             'image_id': 'str',
-            'shape': 'str'
+            'shape': 'str',
+            'ocpu_constraints': 'ImageOcpuConstraints'
         }
 
         self.attribute_map = {
             'image_id': 'imageId',
-            'shape': 'shape'
+            'shape': 'shape',
+            'ocpu_constraints': 'ocpuConstraints'
         }
 
         self._image_id = None
         self._shape = None
+        self._ocpu_constraints = None
 
     @property
     def image_id(self):
@@ -86,6 +94,26 @@ class ImageShapeCompatibilityEntry(object):
         :type: str
         """
         self._shape = shape
+
+    @property
+    def ocpu_constraints(self):
+        """
+        Gets the ocpu_constraints of this ImageShapeCompatibilityEntry.
+
+        :return: The ocpu_constraints of this ImageShapeCompatibilityEntry.
+        :rtype: ImageOcpuConstraints
+        """
+        return self._ocpu_constraints
+
+    @ocpu_constraints.setter
+    def ocpu_constraints(self, ocpu_constraints):
+        """
+        Sets the ocpu_constraints of this ImageShapeCompatibilityEntry.
+
+        :param ocpu_constraints: The ocpu_constraints of this ImageShapeCompatibilityEntry.
+        :type: ImageOcpuConstraints
+        """
+        self._ocpu_constraints = ocpu_constraints
 
     def __repr__(self):
         return formatted_flat_dict(self)
