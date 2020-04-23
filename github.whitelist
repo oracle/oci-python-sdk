@@ -84,3 +84,4 @@
 ^src/oci/encryption/.*\.py$
 ^src/oci/cims/.*\.py$
 ^src/oci/data_safe/.*\.py$
+^src/oci/mysql/.*\.py$

@@ -53,6 +53,18 @@ class WorkRequestSummary(object):
     #: This constant has a value of "CANCELED"
     STATUS_CANCELED = "CANCELED"
 
+    #: A constant which can be used with the os_family property of a WorkRequestSummary.
+    #: This constant has a value of "LINUX"
+    OS_FAMILY_LINUX = "LINUX"
+
+    #: A constant which can be used with the os_family property of a WorkRequestSummary.
+    #: This constant has a value of "WINDOWS"
+    OS_FAMILY_WINDOWS = "WINDOWS"
+
+    #: A constant which can be used with the os_family property of a WorkRequestSummary.
+    #: This constant has a value of "ALL"
+    OS_FAMILY_ALL = "ALL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new WorkRequestSummary object with values from keyword arguments.
@@ -94,6 +106,12 @@ class WorkRequestSummary(object):
             The value to assign to the time_accepted property of this WorkRequestSummary.
         :type time_accepted: datetime
 
+        :param os_family:
+            The value to assign to the os_family property of this WorkRequestSummary.
+            Allowed values for this property are: "LINUX", "WINDOWS", "ALL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type os_family: str
+
         """
         self.swagger_types = {
             'operation_type': 'str',
@@ -103,7 +121,8 @@ class WorkRequestSummary(object):
             'description': 'str',
             'message': 'str',
             'percent_complete': 'float',
-            'time_accepted': 'datetime'
+            'time_accepted': 'datetime',
+            'os_family': 'str'
         }
 
         self.attribute_map = {
@@ -114,7 +133,8 @@ class WorkRequestSummary(object):
             'description': 'description',
             'message': 'message',
             'percent_complete': 'percentComplete',
-            'time_accepted': 'timeAccepted'
+            'time_accepted': 'timeAccepted',
+            'os_family': 'osFamily'
         }
 
         self._operation_type = None
@@ -125,6 +145,7 @@ class WorkRequestSummary(object):
         self._message = None
         self._percent_complete = None
         self._time_accepted = None
+        self._os_family = None
 
     @property
     def operation_type(self):
@@ -341,6 +362,36 @@ class WorkRequestSummary(object):
         :type: datetime
         """
         self._time_accepted = time_accepted
+
+    @property
+    def os_family(self):
+        """
+        Gets the os_family of this WorkRequestSummary.
+        The Operating System type of the managed instance.
+
+        Allowed values for this property are: "LINUX", "WINDOWS", "ALL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The os_family of this WorkRequestSummary.
+        :rtype: str
+        """
+        return self._os_family
+
+    @os_family.setter
+    def os_family(self, os_family):
+        """
+        Sets the os_family of this WorkRequestSummary.
+        The Operating System type of the managed instance.
+
+
+        :param os_family: The os_family of this WorkRequestSummary.
+        :type: str
+        """
+        allowed_values = ["LINUX", "WINDOWS", "ALL"]
+        if not value_allowed_none_or_none_sentinel(os_family, allowed_values):
+            os_family = 'UNKNOWN_ENUM_VALUE'
+        self._os_family = os_family
 
     def __repr__(self):
         return formatted_flat_dict(self)

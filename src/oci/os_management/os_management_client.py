@@ -18,7 +18,8 @@ missing = Sentinel("Missing")
 
 class OsManagementClient(object):
     """
-    OS Management as a Service API definition
+    API for the OS Management service. Use these API operations for working
+    with Managed instances and Managed instance groups.
     """
 
     def __init__(self, config, **kwargs):
@@ -1879,6 +1880,78 @@ class OsManagementClient(object):
                 header_params=header_params,
                 response_type="SoftwareSource")
 
+    def get_windows_update(self, windows_update, **kwargs):
+        """
+        Returns a Windows Update object.
+
+
+        :param str windows_update: (required)
+            The Windows Update
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management.models.WindowsUpdate`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/updates/{windowsUpdate}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_windows_update got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "windowsUpdate": windows_update
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="WindowsUpdate")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="WindowsUpdate")
+
     def get_work_request(self, work_request_id, **kwargs):
         """
         Gets the detailed information for the work request with the given ID.
@@ -1993,6 +2066,87 @@ class OsManagementClient(object):
         if extra_kwargs:
             raise ValueError(
                 "install_all_package_updates_on_managed_instance got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedInstanceId": managed_instance_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
+    def install_all_windows_updates_on_managed_instance(self, managed_instance_id, **kwargs):
+        """
+        Install all of the available Windows updates for the managed instance.
+
+
+        :param str managed_instance_id: (required)
+            OCID for the managed instance
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/managedInstances/{managedInstanceId}/actions/updates/installAll"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "install_all_windows_updates_on_managed_instance got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "managedInstanceId": managed_instance_id
@@ -2214,6 +2368,99 @@ class OsManagementClient(object):
                 query_params=query_params,
                 header_params=header_params)
 
+    def install_windows_update_on_managed_instance(self, managed_instance_id, windows_update_name, **kwargs):
+        """
+        Installs a Windows update on a managed instance.
+
+
+        :param str managed_instance_id: (required)
+            OCID for the managed instance
+
+        :param str windows_update_name: (required)
+            Unique identifier for the Windows update. NOTE - This is not an OCID,
+            but is a unique identifier assigned by Microsoft.
+            Example: `6981d463-cd91-4a26-b7c4-ea4ded9183ed`
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/managedInstances/{managedInstanceId}/actions/updates/install"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "install_windows_update_on_managed_instance got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedInstanceId": managed_instance_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "windowsUpdateName": windows_update_name
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params)
+
     def list_available_packages_for_managed_instance(self, managed_instance_id, **kwargs):
         """
         Returns a list of packages available for install on the Managed Instance.
@@ -2228,7 +2475,7 @@ class OsManagementClient(object):
             Example: `My new resource`
 
         :param str compartment_id: (optional)
-            The ID of the compartment in which to list resources.
+            The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -2356,7 +2603,7 @@ class OsManagementClient(object):
             Example: `My new resource`
 
         :param str compartment_id: (optional)
-            The ID of the compartment in which to list resources.
+            The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -2484,7 +2731,7 @@ class OsManagementClient(object):
             Example: `My new resource`
 
         :param str compartment_id: (optional)
-            The ID of the compartment in which to list resources.
+            The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -2598,6 +2845,148 @@ class OsManagementClient(object):
                 header_params=header_params,
                 response_type="list[AvailableUpdateSummary]")
 
+    def list_available_windows_updates_for_managed_instance(self, managed_instance_id, **kwargs):
+        """
+        Returns a list of available Windows updates for a Managed Instance. This is only applicable to Windows instances.
+
+
+        :param str managed_instance_id: (required)
+            OCID for the managed instance
+
+        :param str display_name: (optional)
+            A user-friendly name. Does not have to be unique, and it's changeable.
+
+            Example: `My new resource`
+
+        :param str compartment_id: (optional)
+            The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'asc' or 'desc'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+
+            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str is_eligible_for_installation: (optional)
+            Indicator of whether the update can be installed using OSMS.
+
+            Allowed values are: "INSTALLABLE", "NOT_INSTALLABLE", "UNKNOWN"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.os_management.models.AvailableWindowsUpdateSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/managedInstances/{managedInstanceId}/updates/available"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "display_name",
+            "compartment_id",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id",
+            "is_eligible_for_installation"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_available_windows_updates_for_managed_instance got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedInstanceId": managed_instance_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'is_eligible_for_installation' in kwargs:
+            is_eligible_for_installation_allowed_values = ["INSTALLABLE", "NOT_INSTALLABLE", "UNKNOWN"]
+            if kwargs['is_eligible_for_installation'] not in is_eligible_for_installation_allowed_values:
+                raise ValueError(
+                    "Invalid value for `is_eligible_for_installation`, must be one of {0}".format(is_eligible_for_installation_allowed_values)
+                )
+
+        query_params = {
+            "displayName": kwargs.get("display_name", missing),
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "isEligibleForInstallation": kwargs.get("is_eligible_for_installation", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[AvailableWindowsUpdateSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[AvailableWindowsUpdateSummary]")
+
     def list_managed_instance_groups(self, compartment_id, **kwargs):
         """
         Returns a list of all Managed Instance Groups.
@@ -2635,6 +3024,11 @@ class OsManagementClient(object):
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
 
+        :param str os_family: (optional)
+            The OS family for which to list resources.
+
+            Allowed values are: "LINUX", "WINDOWS", "ALL"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2658,7 +3052,8 @@ class OsManagementClient(object):
             "sort_order",
             "sort_by",
             "opc_request_id",
-            "lifecycle_state"
+            "lifecycle_state",
+            "os_family"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2686,6 +3081,13 @@ class OsManagementClient(object):
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
                 )
 
+        if 'os_family' in kwargs:
+            os_family_allowed_values = ["LINUX", "WINDOWS", "ALL"]
+            if kwargs['os_family'] not in os_family_allowed_values:
+                raise ValueError(
+                    "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "displayName": kwargs.get("display_name", missing),
@@ -2693,7 +3095,8 @@ class OsManagementClient(object):
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
-            "lifecycleState": kwargs.get("lifecycle_state", missing)
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "osFamily": kwargs.get("os_family", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -2756,6 +3159,11 @@ class OsManagementClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str os_family: (optional)
+            The OS family for which to list resources.
+
+            Allowed values are: "LINUX", "WINDOWS", "ALL"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2778,7 +3186,8 @@ class OsManagementClient(object):
             "page",
             "sort_order",
             "sort_by",
-            "opc_request_id"
+            "opc_request_id",
+            "os_family"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2799,13 +3208,21 @@ class OsManagementClient(object):
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
                 )
 
+        if 'os_family' in kwargs:
+            os_family_allowed_values = ["LINUX", "WINDOWS", "ALL"]
+            if kwargs['os_family'] not in os_family_allowed_values:
+                raise ValueError(
+                    "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "displayName": kwargs.get("display_name", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
-            "sortBy": kwargs.get("sort_by", missing)
+            "sortBy": kwargs.get("sort_by", missing),
+            "osFamily": kwargs.get("os_family", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -2850,7 +3267,7 @@ class OsManagementClient(object):
             Example: `My new resource`
 
         :param str compartment_id: (optional)
-            The ID of the compartment in which to list resources.
+            The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -3012,6 +3429,11 @@ class OsManagementClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str os_family: (optional)
+            The OS family for which to list resources.
+
+            Allowed values are: "LINUX", "WINDOWS", "ALL"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -3038,7 +3460,8 @@ class OsManagementClient(object):
             "sort_order",
             "sort_by",
             "lifecycle_state",
-            "opc_request_id"
+            "opc_request_id",
+            "os_family"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -3073,6 +3496,13 @@ class OsManagementClient(object):
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
                 )
 
+        if 'os_family' in kwargs:
+            os_family_allowed_values = ["LINUX", "WINDOWS", "ALL"]
+            if kwargs['os_family'] not in os_family_allowed_values:
+                raise ValueError(
+                    "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "displayName": kwargs.get("display_name", missing),
@@ -3083,7 +3513,8 @@ class OsManagementClient(object):
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
-            "lifecycleState": kwargs.get("lifecycle_state", missing)
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "osFamily": kwargs.get("os_family", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -3123,7 +3554,7 @@ class OsManagementClient(object):
             The OCID of the software source.
 
         :param str compartment_id: (optional)
-            The ID of the compartment in which to list resources.
+            The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
 
         :param str display_name: (optional)
             A user-friendly name. Does not have to be unique, and it's changeable.
@@ -3416,6 +3847,11 @@ class OsManagementClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str os_family: (optional)
+            The OS family for which to list resources.
+
+            Allowed values are: "LINUX", "WINDOWS", "ALL"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -3441,7 +3877,8 @@ class OsManagementClient(object):
             "tag_name",
             "tag_value",
             "lifecycle_state",
-            "opc_request_id"
+            "opc_request_id",
+            "os_family"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -3469,6 +3906,13 @@ class OsManagementClient(object):
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
                 )
 
+        if 'os_family' in kwargs:
+            os_family_allowed_values = ["LINUX", "WINDOWS", "ALL"]
+            if kwargs['os_family'] not in os_family_allowed_values:
+                raise ValueError(
+                    "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "displayName": kwargs.get("display_name", missing),
@@ -3479,7 +3923,8 @@ class OsManagementClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "tagName": kwargs.get("tag_name", missing),
             "tagValue": kwargs.get("tag_value", missing),
-            "lifecycleState": kwargs.get("lifecycle_state", missing)
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "osFamily": kwargs.get("os_family", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -3509,6 +3954,247 @@ class OsManagementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="list[ScheduledJobSummary]")
+
+    def list_windows_updates(self, **kwargs):
+        """
+        Returns a list of Windows Updates.
+
+
+        :param str compartment_id: (optional)
+            The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
+
+        :param str display_name: (optional)
+            A user-friendly name. Does not have to be unique, and it's changeable.
+
+            Example: `My new resource`
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'asc' or 'desc'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+
+            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.os_management.models.WindowsUpdateSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/updates"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "compartment_id",
+            "display_name",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_windows_updates got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "displayName": kwargs.get("display_name", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[WindowsUpdateSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[WindowsUpdateSummary]")
+
+    def list_windows_updates_installed_on_managed_instance(self, managed_instance_id, **kwargs):
+        """
+        Returns a list of installed Windows updates for a Managed Instance. This is only applicable to Windows instances.
+
+
+        :param str managed_instance_id: (required)
+            OCID for the managed instance
+
+        :param str display_name: (optional)
+            A user-friendly name. Does not have to be unique, and it's changeable.
+
+            Example: `My new resource`
+
+        :param str compartment_id: (optional)
+            The ID of the compartment in which to list resources. This parameter is optional and in some cases may have no effect.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'asc' or 'desc'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+
+            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.os_management.models.InstalledWindowsUpdateSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/managedInstances/{managedInstanceId}/updates/installed"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "display_name",
+            "compartment_id",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_windows_updates_installed_on_managed_instance got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedInstanceId": managed_instance_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "displayName": kwargs.get("display_name", missing),
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[InstalledWindowsUpdateSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[InstalledWindowsUpdateSummary]")
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -3777,6 +4463,11 @@ class OsManagementClient(object):
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
+        :param str os_family: (optional)
+            The OS family for which to list resources.
+
+            Allowed values are: "LINUX", "WINDOWS", "ALL"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -3800,7 +4491,8 @@ class OsManagementClient(object):
             "page",
             "sort_order",
             "sort_by",
-            "opc_request_id"
+            "opc_request_id",
+            "os_family"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -3821,6 +4513,13 @@ class OsManagementClient(object):
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
                 )
 
+        if 'os_family' in kwargs:
+            os_family_allowed_values = ["LINUX", "WINDOWS", "ALL"]
+            if kwargs['os_family'] not in os_family_allowed_values:
+                raise ValueError(
+                    "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "displayName": kwargs.get("display_name", missing),
@@ -3828,7 +4527,8 @@ class OsManagementClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
-            "sortBy": kwargs.get("sort_by", missing)
+            "sortBy": kwargs.get("sort_by", missing),
+            "osFamily": kwargs.get("os_family", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

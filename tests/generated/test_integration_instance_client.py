@@ -481,6 +481,86 @@ def test_list_work_requests(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="&lt;tbd&gt;_ww@oracle.com" jiraProject="&lt;tbc&gt;" opsJiraProject="&lt;tbd&gt;"
+def test_start_integration_instance(testing_service_client):
+    if not testing_service_client.is_api_enabled('integration', 'StartIntegrationInstance'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('integration', util.camelize('integration_instance'), 'StartIntegrationInstance')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='integration', api_name='StartIntegrationInstance')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.integration.IntegrationInstanceClient(config, service_endpoint=service_endpoint)
+            response = client.start_integration_instance(
+                integration_instance_id=request.pop(util.camelize('integrationInstanceId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'integration',
+            'StartIntegrationInstance',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'start_integration_instance',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="&lt;tbd&gt;_ww@oracle.com" jiraProject="&lt;tbc&gt;" opsJiraProject="&lt;tbd&gt;"
+def test_stop_integration_instance(testing_service_client):
+    if not testing_service_client.is_api_enabled('integration', 'StopIntegrationInstance'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('integration', util.camelize('integration_instance'), 'StopIntegrationInstance')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='integration', api_name='StopIntegrationInstance')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.integration.IntegrationInstanceClient(config, service_endpoint=service_endpoint)
+            response = client.stop_integration_instance(
+                integration_instance_id=request.pop(util.camelize('integrationInstanceId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'integration',
+            'StopIntegrationInstance',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'stop_integration_instance',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="&lt;tbd&gt;_ww@oracle.com" jiraProject="&lt;tbc&gt;" opsJiraProject="&lt;tbd&gt;"
 def test_update_integration_instance(testing_service_client):
     if not testing_service_client.is_api_enabled('integration', 'UpdateIntegrationInstance'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

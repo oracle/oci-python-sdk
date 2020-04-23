@@ -925,6 +925,46 @@ def test_get_software_source(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_osms_us_grp@oracle.com" jiraProject="OSMS" opsJiraProject="OSMS"
+def test_get_windows_update(testing_service_client):
+    if not testing_service_client.is_api_enabled('os_management', 'GetWindowsUpdate'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'GetWindowsUpdate')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='os_management', api_name='GetWindowsUpdate')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_windows_update(
+                windows_update=request.pop(util.camelize('windowsUpdate')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'os_management',
+            'GetWindowsUpdate',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'windowsUpdate',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_osms_us_grp@oracle.com" jiraProject="OSMS" opsJiraProject="OSMS"
 def test_get_work_request(testing_service_client):
     if not testing_service_client.is_api_enabled('os_management', 'GetWorkRequest'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -999,6 +1039,46 @@ def test_install_all_package_updates_on_managed_instance(testing_service_client)
             result,
             service_error,
             'install_all_package_updates_on_managed_instance',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_osms_us_grp@oracle.com" jiraProject="OSMS" opsJiraProject="OSMS"
+def test_install_all_windows_updates_on_managed_instance(testing_service_client):
+    if not testing_service_client.is_api_enabled('os_management', 'InstallAllWindowsUpdatesOnManagedInstance'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'InstallAllWindowsUpdatesOnManagedInstance')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='os_management', api_name='InstallAllWindowsUpdatesOnManagedInstance')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.install_all_windows_updates_on_managed_instance(
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'os_management',
+            'InstallAllWindowsUpdatesOnManagedInstance',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'install_all_windows_updates_on_managed_instance',
             False,
             False
         )
@@ -1081,6 +1161,47 @@ def test_install_package_update_on_managed_instance(testing_service_client):
             result,
             service_error,
             'install_package_update_on_managed_instance',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_osms_us_grp@oracle.com" jiraProject="OSMS" opsJiraProject="OSMS"
+def test_install_windows_update_on_managed_instance(testing_service_client):
+    if not testing_service_client.is_api_enabled('os_management', 'InstallWindowsUpdateOnManagedInstance'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'InstallWindowsUpdateOnManagedInstance')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='os_management', api_name='InstallWindowsUpdateOnManagedInstance')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.install_windows_update_on_managed_instance(
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                windows_update_name=request.pop(util.camelize('windowsUpdateName')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'os_management',
+            'InstallWindowsUpdateOnManagedInstance',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'install_windows_update_on_managed_instance',
             False,
             False
         )
@@ -1261,6 +1382,66 @@ def test_list_available_updates_for_managed_instance(testing_service_client):
             result,
             service_error,
             'availableUpdateSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_osms_us_grp@oracle.com" jiraProject="OSMS" opsJiraProject="OSMS"
+def test_list_available_windows_updates_for_managed_instance(testing_service_client):
+    if not testing_service_client.is_api_enabled('os_management', 'ListAvailableWindowsUpdatesForManagedInstance'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'ListAvailableWindowsUpdatesForManagedInstance')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='os_management', api_name='ListAvailableWindowsUpdatesForManagedInstance')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_available_windows_updates_for_managed_instance(
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_available_windows_updates_for_managed_instance(
+                    managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_available_windows_updates_for_managed_instance(
+                        managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'os_management',
+            'ListAvailableWindowsUpdatesForManagedInstance',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'availableWindowsUpdateSummary',
             False,
             True
         )
@@ -1684,6 +1865,123 @@ def test_list_upcoming_scheduled_jobs(testing_service_client):
             result,
             service_error,
             'scheduledJobSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_osms_us_grp@oracle.com" jiraProject="OSMS" opsJiraProject="OSMS"
+def test_list_windows_updates(testing_service_client):
+    if not testing_service_client.is_api_enabled('os_management', 'ListWindowsUpdates'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'ListWindowsUpdates')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='os_management', api_name='ListWindowsUpdates')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_windows_updates(
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_windows_updates(
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_windows_updates(
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'os_management',
+            'ListWindowsUpdates',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'windowsUpdateSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_osms_us_grp@oracle.com" jiraProject="OSMS" opsJiraProject="OSMS"
+def test_list_windows_updates_installed_on_managed_instance(testing_service_client):
+    if not testing_service_client.is_api_enabled('os_management', 'ListWindowsUpdatesInstalledOnManagedInstance'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'ListWindowsUpdatesInstalledOnManagedInstance')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='os_management', api_name='ListWindowsUpdatesInstalledOnManagedInstance')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_windows_updates_installed_on_managed_instance(
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_windows_updates_installed_on_managed_instance(
+                    managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_windows_updates_installed_on_managed_instance(
+                        managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'os_management',
+            'ListWindowsUpdatesInstalledOnManagedInstance',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'installedWindowsUpdateSummary',
             False,
             True
         )

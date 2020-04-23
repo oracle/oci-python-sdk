@@ -43,6 +43,7 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/mysql/pom.xml</module>
     <module>poms/data_safe/pom.xml</module>
     <module>poms/cims/pom.xml</module>
     <module>poms/bds/pom.xml</module>

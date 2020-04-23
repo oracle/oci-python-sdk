@@ -1,9 +1,9 @@
-UpdatablePackageSummary
-=======================
+InstalledWindowsUpdateSummary
+=============================
 
 .. currentmodule:: oci.os_management.models
 
-.. autoclass:: UpdatablePackageSummary
+.. autoclass:: InstalledWindowsUpdateSummary
     :show-inheritance:
     :special-members: __init__
     :members:

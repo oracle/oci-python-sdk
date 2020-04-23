@@ -173,7 +173,7 @@
       <dependency>
         <groupId>com.oracle.oracleintegration.spec</groupId>
         <artifactId>oracle-integration-cp-apiserver-user-spec</artifactId>
-        <version>1.0.4</version>
+        <version>1.0.8</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
