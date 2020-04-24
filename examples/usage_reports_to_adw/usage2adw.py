@@ -55,11 +55,11 @@ import os
 import csv
 import cx_Oracle
 
-version = "20.4.20"
+version = "20.4.27"
 usage_report_namespace = "bling"
 work_report_dir = os.curdir + "/work_report_dir"
 
-# create the work dit if not exist
+# create the work dir if not exist
 if not os.path.exists(work_report_dir):
     os.mkdir(work_report_dir)
 
@@ -77,6 +77,16 @@ def print_header(name, category):
 
 
 ##########################################################################
+# Get Column from Array
+##########################################################################
+def get_column_value_from_array(column, array):
+    if column in array:
+        return array[column]
+    else:
+        return ""
+
+
+##########################################################################
 # Create signer
 ##########################################################################
 def create_signer(cmd):
@@ -84,8 +94,6 @@ def create_signer(cmd):
     # assign default values
     config_file = oci.config.DEFAULT_LOCATION
     config_section = oci.config.DEFAULT_PROFILE
-    signer = None
-    config = None
 
     if cmd.config:
         if cmd.config.name:
@@ -98,6 +106,7 @@ def create_signer(cmd):
         try:
             signer = oci.auth.signers.InstancePrincipalsSecurityTokenSigner()
             config = {'region': signer.region, 'tenancy': signer.tenancy_id}
+            return config, signer
         except Exception:
             print_header("Error obtaining instance principals certificate, aborting", 0)
             raise SystemExit
@@ -111,9 +120,7 @@ def create_signer(cmd):
             pass_phrase=oci.config.get_config_value_or_default(config, "pass_phrase"),
             private_key_content=config.get("key_content")
         )
-
-    # return config and signer
-    return config, signer
+        return config, signer
 
 
 ##########################################################################
@@ -241,9 +248,9 @@ def check_database_table_structure_usage(connection):
             sql += "    TAGS_DATA               VARCHAR2(4000)"
             sql += ") COMPRESS"
             cursor.execute(sql)
-            print("Table OCI_USAGE created")
+            print("   Table OCI_USAGE created")
         else:
-            print("Table OCI_USAGE exist")
+            print("   Table OCI_USAGE exist")
 
         # check if TAGS_DATA columns exist in OCI_USAGE table, if not create
         sql = "select count(*) from user_tab_columns where table_name = 'OCI_USAGE' and column_name='TAGS_DATA'"
@@ -264,11 +271,13 @@ def check_database_table_structure_usage(connection):
         # if table not exist, create it
         if val == 0:
             print("Table OCI_USAGE_TAG_KEYS was not exist, creating")
-            sql = "CREATE TABLE OCI_USAGE_TAG_KEYS (TENANT_NAME VARCHAR2(100), TAG_KEY VARCHAR2(100), CONSTRAINT OCI_USAGE_TAG_KEYS_PK PRIMARY KEY(TENANT_NAME,TAG_KEY))"
+            sql = "CREATE TABLE OCI_USAGE_TAG_KEYS (TENANT_NAME VARCHAR2(100), TAG_KEY VARCHAR2(100), "
+            sql += "CONSTRAINT OCI_USAGE_TAG_KEYS_PK PRIMARY KEY(TENANT_NAME,TAG_KEY)"
+            sql += ")"
             cursor.execute(sql)
-            print("Table OCI_USAGE_TAG_KEYS created")
+            print("   Table OCI_USAGE_TAG_KEYS created")
         else:
-            print("Table OCI_USAGE_TAG_KEYS exist")
+            print("   Table OCI_USAGE_TAG_KEYS exist")
 
         # close cursor
         cursor.close()
@@ -326,9 +335,9 @@ def check_database_table_structure_cost(connection):
             sql += "    TAGS_DATA               VARCHAR2(4000)"
             sql += ") COMPRESS"
             cursor.execute(sql)
-            print("Table OCI_COST created")
+            print("   Table OCI_COST created")
         else:
-            print("Table OCI_COST exist")
+            print("   Table OCI_COST exist")
 
         # check if OCI_COST_TAG_KEYS table exist, if not create
         sql = "select count(*) from user_tables where table_name = 'OCI_COST_TAG_KEYS'"
@@ -338,11 +347,13 @@ def check_database_table_structure_cost(connection):
         # if table not exist, create it
         if val == 0:
             print("Table OCI_COST_TAG_KEYS was not exist, creating")
-            sql = "CREATE TABLE OCI_COST_TAG_KEYS (TENANT_NAME VARCHAR2(100), TAG_KEY VARCHAR2(100), CONSTRAINT OCI_COST_TAG_KEYS_PK PRIMARY KEY(TENANT_NAME,TAG_KEY))"
+            sql = "CREATE TABLE OCI_COST_TAG_KEYS (TENANT_NAME VARCHAR2(100), TAG_KEY VARCHAR2(100), "
+            sql += "CONSTRAINT OCI_COST_TAG_KEYS_PK PRIMARY KEY(TENANT_NAME,TAG_KEY)"
+            sql += ")"
             cursor.execute(sql)
-            print("Table OCI_COST_TAG_KEYS created")
+            print("   Table OCI_COST_TAG_KEYS created")
         else:
-            print("Table OCI_COST_TAG_KEYS exist")
+            print("   Table OCI_COST_TAG_KEYS exist")
 
         # close cursor
         cursor.close()
@@ -358,7 +369,7 @@ def check_database_table_structure_cost(connection):
 #########################################################################
 # Load Cost File
 ##########################################################################
-def load_cost_file(connection, object_storage, object_file, max_file_id, cmd):
+def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, tenancy, compartments):
     num = 0
     try:
         o = object_file
@@ -425,32 +436,55 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd):
                             if keyadj not in tags_keys:
                                 tags_keys.append(keyadj)
 
-                # create array for bulk insert
+                # Assign each column to variable to avoid error if column missing from the file
+                lineItem_intervalUsageStart = get_column_value_from_array('lineItem/intervalUsageStart', row)
+                lineItem_intervalUsageEnd = get_column_value_from_array('lineItem/intervalUsageEnd', row)
+                product_service = get_column_value_from_array('product/service', row)
+                product_compartmentId = get_column_value_from_array('product/compartmentId', row)
+                product_compartmentName = get_column_value_from_array('product/compartmentName', row)
+                product_region = get_column_value_from_array('product/region', row)
+                product_availabilityDomain = get_column_value_from_array('product/availabilityDomain', row)
+                product_resourceId = get_column_value_from_array('product/resourceId', row)
+                usage_billedQuantity = get_column_value_from_array('usage/billedQuantity', row)
+                usage_billedQuantityOverage = get_column_value_from_array('usage/billedQuantityOverage', row)
+                cost_subscriptionId = get_column_value_from_array('cost/subscriptionId', row)
+                cost_productSku = get_column_value_from_array('cost/productSku', row)
+                product_Description = get_column_value_from_array('product/Description', row)
+                cost_unitPrice = get_column_value_from_array('cost/unitPrice', row)
+                cost_unitPriceOverage = get_column_value_from_array('cost/unitPriceOverage', row)
+                cost_myCost = get_column_value_from_array('cost/myCost', row)
+                cost_myCostOverage = get_column_value_from_array('cost/myCostOverage', row)
+                cost_currencyCode = get_column_value_from_array('cost/currencyCode', row)
+                cost_billingUnitReadable = get_column_value_from_array('cost/billingUnitReadable', row)
+                cost_overageFlag = get_column_value_from_array('cost/overageFlag', row)
+                lineItem_isCorrection = get_column_value_from_array('lineItem/isCorrection', row)
+
+                # create array
                 row_data = (
                     str(tenancy.name),
                     file_id,
-                    row['lineItem/intervalUsageStart'][0:10] + " " + row['lineItem/intervalUsageStart'][11:16],
-                    row['lineItem/intervalUsageEnd'][0:10] + " " + row['lineItem/intervalUsageEnd'][11:16],
-                    row['product/service'],
-                    row['product/compartmentId'],
-                    row['product/compartmentName'],
+                    lineItem_intervalUsageStart[0:10] + " " + lineItem_intervalUsageStart[11:16],
+                    lineItem_intervalUsageEnd[0:10] + " " + lineItem_intervalUsageEnd[11:16],
+                    product_service,
+                    product_compartmentId,
+                    product_compartmentName,
                     compartment_path,
-                    row['product/region'],
-                    row['product/availabilityDomain'],
-                    row['product/resourceId'],
-                    row['usage/billedQuantity'],
-                    row['usage/billedQuantityOverage'],
-                    row['cost/subscriptionId'],
-                    row['cost/productSku'],
-                    row['product/Description'],
-                    row['cost/unitPrice'],
-                    row['cost/unitPriceOverage'],
-                    row['cost/myCost'],
-                    row['cost/myCostOverage'],
-                    row['cost/currencyCode'],
-                    row['cost/billingUnitReadable'],
-                    row['cost/overageFlag'],
-                    row['lineItem/isCorrection'],
+                    product_region,
+                    product_availabilityDomain,
+                    product_resourceId,
+                    usage_billedQuantity,
+                    usage_billedQuantityOverage,
+                    cost_subscriptionId,
+                    cost_productSku,
+                    product_Description,
+                    cost_unitPrice,
+                    cost_unitPriceOverage,
+                    cost_myCost,
+                    cost_myCostOverage,
+                    cost_currencyCode,
+                    cost_billingUnitReadable,
+                    cost_overageFlag,
+                    lineItem_isCorrection,
                     tags_data
                 )
                 data.append(row_data)
@@ -540,7 +574,7 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd):
 #########################################################################
 # Load Usage File
 ##########################################################################
-def load_usage_file(connection, object_storage, object_file, max_file_id, cmd):
+def load_usage_file(connection, object_storage, object_file, max_file_id, cmd, tenancy, compartments):
     num = 0
     try:
         o = object_file
@@ -607,25 +641,41 @@ def load_usage_file(connection, object_storage, object_file, max_file_id, cmd):
                             if keyadj not in tags_keys:
                                 tags_keys.append(keyadj)
 
+                # Assign each column to variable to avoid error if column missing from the file
+                lineItem_intervalUsageStart = get_column_value_from_array('lineItem/intervalUsageStart', row)
+                lineItem_intervalUsageEnd = get_column_value_from_array('lineItem/intervalUsageEnd', row)
+                product_service = get_column_value_from_array('product/service', row)
+                product_resource = get_column_value_from_array('product/resource', row)
+                product_compartmentId = get_column_value_from_array('product/compartmentId', row)
+                product_compartmentName = get_column_value_from_array('product/compartmentName', row)
+                product_region = get_column_value_from_array('product/region', row)
+                product_availabilityDomain = get_column_value_from_array('product/availabilityDomain', row)
+                product_resourceId = get_column_value_from_array('product/resourceId', row)
+                usage_billedQuantity = get_column_value_from_array('usage/billedQuantity', row)
+                usage_consumedQuantity = get_column_value_from_array('usage/consumedQuantity', row)
+                usage_consumedQuantityUnits = get_column_value_from_array('usage/consumedQuantityUnits', row)
+                usage_consumedQuantityMeasure = get_column_value_from_array('usage/consumedQuantityMeasure', row)
+                lineItem_isCorrection = get_column_value_from_array('lineItem/isCorrection', row)
+
                 # create array for bulk insert
                 row_data = (
                     str(tenancy.name),
                     file_id,
-                    row['lineItem/intervalUsageStart'][0:10] + " " + row['lineItem/intervalUsageStart'][11:16],
-                    row['lineItem/intervalUsageEnd'][0:10] + " " + row['lineItem/intervalUsageEnd'][11:16],
-                    row['product/service'],
-                    row['product/resource'],
-                    row['product/compartmentId'],
-                    row['product/compartmentName'],
+                    lineItem_intervalUsageStart[0:10] + " " + lineItem_intervalUsageStart[11:16],
+                    lineItem_intervalUsageEnd[0:10] + " " + lineItem_intervalUsageEnd[11:16],
+                    product_service,
+                    product_resource,
+                    product_compartmentId,
+                    product_compartmentName,
                     compartment_path,
-                    row['product/region'],
-                    row['product/availabilityDomain'],
-                    row['product/resourceId'],
-                    row['usage/billedQuantity'],
-                    row['usage/consumedQuantity'],
-                    row['usage/consumedQuantityUnits'],
-                    row['usage/consumedQuantityMeasure'],
-                    row['lineItem/isCorrection'],
+                    product_region,
+                    product_availabilityDomain,
+                    product_resourceId,
+                    usage_billedQuantity,
+                    usage_consumedQuantity,
+                    usage_consumedQuantityUnits,
+                    usage_consumedQuantityMeasure,
+                    lineItem_isCorrection,
                     tags_data
                 )
                 data.append(row_data)
@@ -686,110 +736,130 @@ def load_usage_file(connection, object_storage, object_file, max_file_id, cmd):
 ##########################################################################
 # Main
 ##########################################################################
-cmd = set_parser_arguments()
-if cmd is None:
-    exit()
-config, signer = create_signer(cmd)
+def main_process():
+    cmd = set_parser_arguments()
+    if cmd is None:
+        exit()
+    config, signer = create_signer(cmd)
 
-############################################
-# Start
-############################################
-start_time = str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-print_header("Running Usage and Cost Load to ADW", 0)
-print("Starts at " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
-print("Command Line : " + ' '.join(x for x in sys.argv[1:]))
+    ############################################
+    # Start
+    ############################################
+    print_header("Running Usage Load to ADW", 0)
+    print("Starts at " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+    print("Command Line : " + ' '.join(x for x in sys.argv[1:]))
 
-############################################
-# Identity extract compartments
-############################################
-compartments = []
-tenancy = None
-try:
-    print("\nConnecting to Identity Service...")
-    identity = oci.identity.IdentityClient(config, signer=signer)
-    if cmd.proxy:
-        identity.base_client.session.proxies = {'https': cmd.proxy}
+    ############################################
+    # Identity extract compartments
+    ############################################
+    compartments = []
+    tenancy = None
+    try:
+        print("\nConnecting to Identity Service...")
+        identity = oci.identity.IdentityClient(config, signer=signer)
+        if cmd.proxy:
+            identity.base_client.session.proxies = {'https': cmd.proxy}
 
-    tenancy = identity.get_tenancy(config["tenancy"]).data
-    print("Tenant Name : " + str(tenancy.name))
-    print("Tenant Id   : " + tenancy.id)
-    print("App Version : " + version)
-    print("")
+        tenancy = identity.get_tenancy(config["tenancy"]).data
+        print("   Tenant Name : " + str(tenancy.name))
+        print("   Tenant Id   : " + tenancy.id)
+        print("   App Version : " + version)
+        print("")
 
-    compartments = identity_read_compartments(identity, tenancy)
+        compartments = identity_read_compartments(identity, tenancy)
 
-except Exception as e:
-    print("\nError extracting compartments section - " + str(e) + "\n")
-    raise SystemExit
+    except Exception as e:
+        print("\nError extracting compartments section - " + str(e) + "\n")
+        raise SystemExit
 
-############################################
-# connect to database
-############################################
-max_usage_file_id = ""
-max_cost_file_id = ""
-try:
-    print("\nConnecting to database " + cmd.dname)
-    connection = cx_Oracle.connect(user=cmd.duser, password=cmd.dpass, dsn=cmd.dname)
-    cursor = connection.cursor()
+    ############################################
+    # connect to database
+    ############################################
+    max_usage_file_id = ""
+    max_cost_file_id = ""
+    connection = None
+    try:
+        print("\nConnecting to database " + cmd.dname)
+        connection = cx_Oracle.connect(user=cmd.duser, password=cmd.dpass, dsn=cmd.dname, encoding="UTF-8", nencoding="UTF-8")
+        cursor = connection.cursor()
+        print("   Connected")
 
-    # Check tables structure
-    check_database_table_structure_usage(connection)
-    check_database_table_structure_cost(connection)
+        # Check tables structure
+        print("\nChecking Database Structure...")
+        check_database_table_structure_usage(connection)
+        check_database_table_structure_cost(connection)
 
-    ###############################
-    # fetch max file id processed
-    # for usage and cost
-    ###############################
-    sql = "select max(file_id) as file_id from OCI_USAGE where TENANT_NAME=:tenant_name"
-    cursor.execute(sql, {"tenant_name": str(tenancy.name)})
-    max_usage_file_id, = cursor.fetchone()
+        ###############################
+        # fetch max file id processed
+        # for usage and cost
+        ###############################
+        print("\nChecking Last Loaded File...")
+        sql = "select nvl(max(file_id),'0') as file_id from OCI_USAGE where TENANT_NAME=:tenant_name"
+        cursor.execute(sql, {"tenant_name": str(tenancy.name)})
+        max_usage_file_id, = cursor.fetchone()
 
-    sql = "select max(file_id) as file_id from OCI_COST where TENANT_NAME=:tenant_name"
-    cursor.execute(sql, {"tenant_name": str(tenancy.name)})
-    max_cost_file_id, = cursor.fetchone()
+        sql = "select nvl(max(file_id),'0') as file_id from OCI_COST where TENANT_NAME=:tenant_name"
+        cursor.execute(sql, {"tenant_name": str(tenancy.name)})
+        max_cost_file_id, = cursor.fetchone()
 
-    print("Max Usage File Id Processed = " + str(max_usage_file_id))
-    print("Max Cost  File Id Processed = " + str(max_cost_file_id))
-    cursor.close()
+        print("   Max Usage File Id Processed = " + str(max_usage_file_id))
+        print("   Max Cost  File Id Processed = " + str(max_cost_file_id))
+        cursor.close()
 
-except cx_Oracle.DatabaseError as e:
-    print("\nError manipulating database - " + str(e) + "\n")
-    raise SystemExit
+    except cx_Oracle.DatabaseError as e:
+        print("\nError manipulating database - " + str(e) + "\n")
+        raise SystemExit
 
-except Exception as e:
-    raise Exception("\nError manipulating database - " + str(e))
+    except Exception as e:
+        raise Exception("\nError manipulating database - " + str(e))
 
-############################################
-# Download Usage, cost and insert to database
-############################################
-try:
-    num = 0
-    print("\nConnecting to Object Storage Service...")
+    ############################################
+    # Download Usage, cost and insert to database
+    ############################################
+    try:
+        print("\nConnecting to Object Storage Service...")
 
-    object_storage = oci.object_storage.ObjectStorageClient(config, signer=signer)
-    if cmd.proxy:
-        object_storage.base_client.session.proxies = {'https': cmd.proxy}
+        object_storage = oci.object_storage.ObjectStorageClient(config, signer=signer)
+        if cmd.proxy:
+            object_storage.base_client.session.proxies = {'https': cmd.proxy}
+        print("   Connected")
 
-    objects = object_storage.list_objects(usage_report_namespace, str(tenancy.id), fields="timeCreated,size").data
-    for object_file in objects.objects:
+        #############################
+        # Handle Report Usage
+        #############################
+        print("\nHandling Usage Report...")
+        num = 0
+        objects = object_storage.list_objects(usage_report_namespace, str(tenancy.id), fields="timeCreated,size", limit=999, prefix="reports/usage-csv/", start="reports/usage-csv/" + max_usage_file_id).data
+        for object_file in objects.objects:
+            num += load_usage_file(connection, object_storage, object_file, max_usage_file_id, cmd, tenancy, compartments)
+        print("\n   Total " + str(num) + " Usage Files Loaded")
 
-        # check if cost or usage
-        if 'cost' in object_file.name:
-            num += load_cost_file(connection, object_storage, object_file, max_cost_file_id, cmd)
-        elif 'usage' in object_file.name:
-            num += load_usage_file(connection, object_storage, object_file, max_usage_file_id, cmd)
+        #############################
+        # Handle Cost Usage
+        #############################
+        print("\nHandling Cost Report...")
+        num = 0
+        objects = object_storage.list_objects(usage_report_namespace, str(tenancy.id), fields="timeCreated,size", limit=999, prefix="reports/cost-csv/", start="reports/cost-csv/" + max_cost_file_id).data
+        for object_file in objects.objects:
+            num += load_cost_file(connection, object_storage, object_file, max_cost_file_id, cmd, tenancy, compartments)
+        print("\n   Total " + str(num) + " Cost Files Loaded")
 
-    # Final printout
-    print("Total " + str(num) + " Files Loaded")
-    connection.close()
+        # Close Connection
+        connection.close()
 
-except cx_Oracle.DatabaseError as e:
-    print("\nError manipulating database - " + str(e) + "\n")
+    except cx_Oracle.DatabaseError as e:
+        print("\nError manipulating database - " + str(e) + "\n")
 
-except Exception as e:
-    print("\nError Download Usage and insert to database - " + str(e))
+    except Exception as e:
+        print("\nError Download Usage and insert to database - " + str(e))
 
-############################################
-# print completed
-############################################
-print("\nCompleted at " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+    ############################################
+    # print completed
+    ############################################
+    print("\nCompleted at " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+
+
+##########################################################################
+# Execute Main Process
+##########################################################################
+main_process()
