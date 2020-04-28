@@ -7,7 +7,7 @@ API Reference
 * :doc:`Announcement <announcements_service/client/oci.announcements_service.AnnouncementClient>`
 * :doc:`Deployment <apigateway/client/oci.apigateway.DeploymentClient>`
 * :doc:`Gateway <apigateway/client/oci.apigateway.GatewayClient>`
-* :doc:`Work Requests <apigateway/client/oci.apigateway.WorkRequestsClient>`
+* :doc:`Work Requests <mysql/client/oci.mysql.WorkRequestsClient>`
 * :doc:`Application Migration <application_migration/client/oci.application_migration.ApplicationMigrationClient>`
 * :doc:`Audit <audit/client/oci.audit.AuditClient>`
 * :doc:`Auto Scaling <autoscaling/client/oci.autoscaling.AutoScalingClient>`
@@ -48,6 +48,10 @@ API Reference
 * :doc:`Load Balancer <load_balancer/client/oci.load_balancer.LoadBalancerClient>`
 * :doc:`Marketplace <marketplace/client/oci.marketplace.MarketplaceClient>`
 * :doc:`Monitoring <monitoring/client/oci.monitoring.MonitoringClient>`
+* :doc:`Db Backups <mysql/client/oci.mysql.DbBackupsClient>`
+* :doc:`Db System <mysql/client/oci.mysql.DbSystemClient>`
+* :doc:`Mysqlaas <mysql/client/oci.mysql.MysqlaasClient>`
+* :doc:`Work Requests <mysql/client/oci.mysql.WorkRequestsClient>`
 * :doc:`Nosql <nosql/client/oci.nosql.NosqlClient>`
 * :doc:`Object Storage <object_storage/client/oci.object_storage.ObjectStorageClient>`
 * :doc:`Oce Instance <oce/client/oci.oce.OceInstanceClient>`
@@ -112,6 +116,7 @@ API Reference
     load_balancer
     marketplace
     monitoring
+    mysql
     nosql
     object_storage
     oce

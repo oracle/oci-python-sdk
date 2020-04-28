@@ -26,6 +26,10 @@ from .pricing_model import PricingModel
 from .publisher import Publisher
 from .publisher_summary import PublisherSummary
 from .region import Region
+from .report_collection import ReportCollection
+from .report_summary import ReportSummary
+from .report_type_collection import ReportTypeCollection
+from .report_type_summary import ReportTypeSummary
 from .screenshot import Screenshot
 from .support_contact import SupportContact
 from .update_accepted_agreement_details import UpdateAcceptedAgreementDetails
@@ -55,6 +59,10 @@ marketplace_type_mapping = {
     "Publisher": Publisher,
     "PublisherSummary": PublisherSummary,
     "Region": Region,
+    "ReportCollection": ReportCollection,
+    "ReportSummary": ReportSummary,
+    "ReportTypeCollection": ReportTypeCollection,
+    "ReportTypeSummary": ReportTypeSummary,
     "Screenshot": Screenshot,
     "SupportContact": SupportContact,
     "UpdateAcceptedAgreementDetails": UpdateAcceptedAgreementDetails,

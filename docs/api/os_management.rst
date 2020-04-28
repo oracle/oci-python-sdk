@@ -24,6 +24,7 @@ Os Management
     oci.os_management.models.AttachParentSoftwareSourceToManagedInstanceDetails
     oci.os_management.models.AvailableSoftwareSourceSummary
     oci.os_management.models.AvailableUpdateSummary
+    oci.os_management.models.AvailableWindowsUpdateSummary
     oci.os_management.models.ChangeManagedInstanceGroupCompartmentDetails
     oci.os_management.models.ChangeScheduledJobCompartmentDetails
     oci.os_management.models.ChangeSoftwareSourceCompartmentDetails
@@ -32,17 +33,16 @@ Os Management
     oci.os_management.models.CreateSoftwareSourceDetails
     oci.os_management.models.DetachChildSoftwareSourceFromManagedInstanceDetails
     oci.os_management.models.DetachParentSoftwareSourceFromManagedInstanceDetails
-    oci.os_management.models.ErrataId
     oci.os_management.models.Erratum
     oci.os_management.models.ErratumSummary
     oci.os_management.models.Id
     oci.os_management.models.InstallablePackageSummary
     oci.os_management.models.InstalledPackageSummary
+    oci.os_management.models.InstalledWindowsUpdateSummary
     oci.os_management.models.ManagedInstance
     oci.os_management.models.ManagedInstanceGroup
     oci.os_management.models.ManagedInstanceGroupSummary
     oci.os_management.models.ManagedInstanceSummary
-    oci.os_management.models.ManagedInstanceUpdateDetails
     oci.os_management.models.PackageName
     oci.os_management.models.Recurrence
     oci.os_management.models.RemovePackagesFromSoftwareSourceDetails
@@ -56,10 +56,11 @@ Os Management
     oci.os_management.models.SoftwareSource
     oci.os_management.models.SoftwareSourceId
     oci.os_management.models.SoftwareSourceSummary
-    oci.os_management.models.UpdatablePackageSummary
     oci.os_management.models.UpdateManagedInstanceGroupDetails
     oci.os_management.models.UpdateScheduledJobDetails
     oci.os_management.models.UpdateSoftwareSourceDetails
+    oci.os_management.models.WindowsUpdate
+    oci.os_management.models.WindowsUpdateSummary
     oci.os_management.models.WorkRequest
     oci.os_management.models.WorkRequestError
     oci.os_management.models.WorkRequestLogEntry

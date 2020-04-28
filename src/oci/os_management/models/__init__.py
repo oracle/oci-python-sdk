@@ -10,6 +10,7 @@ from .attach_child_software_source_to_managed_instance_details import AttachChil
 from .attach_parent_software_source_to_managed_instance_details import AttachParentSoftwareSourceToManagedInstanceDetails
 from .available_software_source_summary import AvailableSoftwareSourceSummary
 from .available_update_summary import AvailableUpdateSummary
+from .available_windows_update_summary import AvailableWindowsUpdateSummary
 from .change_managed_instance_group_compartment_details import ChangeManagedInstanceGroupCompartmentDetails
 from .change_scheduled_job_compartment_details import ChangeScheduledJobCompartmentDetails
 from .change_software_source_compartment_details import ChangeSoftwareSourceCompartmentDetails
@@ -18,17 +19,16 @@ from .create_scheduled_job_details import CreateScheduledJobDetails
 from .create_software_source_details import CreateSoftwareSourceDetails
 from .detach_child_software_source_from_managed_instance_details import DetachChildSoftwareSourceFromManagedInstanceDetails
 from .detach_parent_software_source_from_managed_instance_details import DetachParentSoftwareSourceFromManagedInstanceDetails
-from .errata_id import ErrataId
 from .erratum import Erratum
 from .erratum_summary import ErratumSummary
 from .id import Id
 from .installable_package_summary import InstallablePackageSummary
 from .installed_package_summary import InstalledPackageSummary
+from .installed_windows_update_summary import InstalledWindowsUpdateSummary
 from .managed_instance import ManagedInstance
 from .managed_instance_group import ManagedInstanceGroup
 from .managed_instance_group_summary import ManagedInstanceGroupSummary
 from .managed_instance_summary import ManagedInstanceSummary
-from .managed_instance_update_details import ManagedInstanceUpdateDetails
 from .package_name import PackageName
 from .recurrence import Recurrence
 from .remove_packages_from_software_source_details import RemovePackagesFromSoftwareSourceDetails
@@ -42,10 +42,11 @@ from .software_package_summary import SoftwarePackageSummary
 from .software_source import SoftwareSource
 from .software_source_id import SoftwareSourceId
 from .software_source_summary import SoftwareSourceSummary
-from .updatable_package_summary import UpdatablePackageSummary
 from .update_managed_instance_group_details import UpdateManagedInstanceGroupDetails
 from .update_scheduled_job_details import UpdateScheduledJobDetails
 from .update_software_source_details import UpdateSoftwareSourceDetails
+from .windows_update import WindowsUpdate
+from .windows_update_summary import WindowsUpdateSummary
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_log_entry import WorkRequestLogEntry
@@ -60,6 +61,7 @@ os_management_type_mapping = {
     "AttachParentSoftwareSourceToManagedInstanceDetails": AttachParentSoftwareSourceToManagedInstanceDetails,
     "AvailableSoftwareSourceSummary": AvailableSoftwareSourceSummary,
     "AvailableUpdateSummary": AvailableUpdateSummary,
+    "AvailableWindowsUpdateSummary": AvailableWindowsUpdateSummary,
     "ChangeManagedInstanceGroupCompartmentDetails": ChangeManagedInstanceGroupCompartmentDetails,
     "ChangeScheduledJobCompartmentDetails": ChangeScheduledJobCompartmentDetails,
     "ChangeSoftwareSourceCompartmentDetails": ChangeSoftwareSourceCompartmentDetails,
@@ -68,17 +70,16 @@ os_management_type_mapping = {
     "CreateSoftwareSourceDetails": CreateSoftwareSourceDetails,
     "DetachChildSoftwareSourceFromManagedInstanceDetails": DetachChildSoftwareSourceFromManagedInstanceDetails,
     "DetachParentSoftwareSourceFromManagedInstanceDetails": DetachParentSoftwareSourceFromManagedInstanceDetails,
-    "ErrataId": ErrataId,
     "Erratum": Erratum,
     "ErratumSummary": ErratumSummary,
     "Id": Id,
     "InstallablePackageSummary": InstallablePackageSummary,
     "InstalledPackageSummary": InstalledPackageSummary,
+    "InstalledWindowsUpdateSummary": InstalledWindowsUpdateSummary,
     "ManagedInstance": ManagedInstance,
     "ManagedInstanceGroup": ManagedInstanceGroup,
     "ManagedInstanceGroupSummary": ManagedInstanceGroupSummary,
     "ManagedInstanceSummary": ManagedInstanceSummary,
-    "ManagedInstanceUpdateDetails": ManagedInstanceUpdateDetails,
     "PackageName": PackageName,
     "Recurrence": Recurrence,
     "RemovePackagesFromSoftwareSourceDetails": RemovePackagesFromSoftwareSourceDetails,
@@ -92,10 +93,11 @@ os_management_type_mapping = {
     "SoftwareSource": SoftwareSource,
     "SoftwareSourceId": SoftwareSourceId,
     "SoftwareSourceSummary": SoftwareSourceSummary,
-    "UpdatablePackageSummary": UpdatablePackageSummary,
     "UpdateManagedInstanceGroupDetails": UpdateManagedInstanceGroupDetails,
     "UpdateScheduledJobDetails": UpdateScheduledJobDetails,
     "UpdateSoftwareSourceDetails": UpdateSoftwareSourceDetails,
+    "WindowsUpdate": WindowsUpdate,
+    "WindowsUpdateSummary": WindowsUpdateSummary,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestLogEntry": WorkRequestLogEntry,

@@ -40,6 +40,10 @@ Marketplace
     oci.marketplace.models.Publisher
     oci.marketplace.models.PublisherSummary
     oci.marketplace.models.Region
+    oci.marketplace.models.ReportCollection
+    oci.marketplace.models.ReportSummary
+    oci.marketplace.models.ReportTypeCollection
+    oci.marketplace.models.ReportTypeSummary
     oci.marketplace.models.Screenshot
     oci.marketplace.models.SupportContact
     oci.marketplace.models.UpdateAcceptedAgreementDetails

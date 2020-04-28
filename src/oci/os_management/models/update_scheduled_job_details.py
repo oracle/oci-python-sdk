@@ -114,6 +114,10 @@ class UpdateScheduledJobDetails(object):
             The value to assign to the package_names property of this UpdateScheduledJobDetails.
         :type package_names: list[PackageName]
 
+        :param update_names:
+            The value to assign to the update_names property of this UpdateScheduledJobDetails.
+        :type update_names: list[str]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateScheduledJobDetails.
         :type freeform_tags: dict(str, str)
@@ -133,6 +137,7 @@ class UpdateScheduledJobDetails(object):
             'operation_type': 'str',
             'update_type': 'str',
             'package_names': 'list[PackageName]',
+            'update_names': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -147,6 +152,7 @@ class UpdateScheduledJobDetails(object):
             'operation_type': 'operationType',
             'update_type': 'updateType',
             'package_names': 'packageNames',
+            'update_names': 'updateNames',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -160,6 +166,7 @@ class UpdateScheduledJobDetails(object):
         self._operation_type = None
         self._update_type = None
         self._package_names = None
+        self._update_names = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -359,7 +366,7 @@ class UpdateScheduledJobDetails(object):
     def update_type(self):
         """
         Gets the update_type of this UpdateScheduledJobDetails.
-        Type of the update (only if operation type is UPDATE_ALL_PACKAGES)
+        Type of the update (only if operation type is UPDATEALL)
 
         Allowed values for this property are: "SECURITY", "BUGFIX", "ENHANCEMENT", "ALL"
 
@@ -373,7 +380,7 @@ class UpdateScheduledJobDetails(object):
     def update_type(self, update_type):
         """
         Sets the update_type of this UpdateScheduledJobDetails.
-        Type of the update (only if operation type is UPDATE_ALL_PACKAGES)
+        Type of the update (only if operation type is UPDATEALL)
 
 
         :param update_type: The update_type of this UpdateScheduledJobDetails.
@@ -391,7 +398,7 @@ class UpdateScheduledJobDetails(object):
     def package_names(self):
         """
         Gets the package_names of this UpdateScheduledJobDetails.
-        the id of the package (only if operation type is INSTALL/UPDATE/REMOVE_PACKAGE)
+        the id of the package (only if operation type is INSTALL/UPDATE/REMOVE)
 
 
         :return: The package_names of this UpdateScheduledJobDetails.
@@ -403,13 +410,39 @@ class UpdateScheduledJobDetails(object):
     def package_names(self, package_names):
         """
         Sets the package_names of this UpdateScheduledJobDetails.
-        the id of the package (only if operation type is INSTALL/UPDATE/REMOVE_PACKAGE)
+        the id of the package (only if operation type is INSTALL/UPDATE/REMOVE)
 
 
         :param package_names: The package_names of this UpdateScheduledJobDetails.
         :type: list[PackageName]
         """
         self._package_names = package_names
+
+    @property
+    def update_names(self):
+        """
+        Gets the update_names of this UpdateScheduledJobDetails.
+        The unique names of the Windows Updates (only if operation type is INSTALL).
+        This is only applicable when the osFamily is for Windows managed instances.
+
+
+        :return: The update_names of this UpdateScheduledJobDetails.
+        :rtype: list[str]
+        """
+        return self._update_names
+
+    @update_names.setter
+    def update_names(self, update_names):
+        """
+        Sets the update_names of this UpdateScheduledJobDetails.
+        The unique names of the Windows Updates (only if operation type is INSTALL).
+        This is only applicable when the osFamily is for Windows managed instances.
+
+
+        :param update_names: The update_names of this UpdateScheduledJobDetails.
+        :type: list[str]
+        """
+        self._update_names = update_names
 
     @property
     def freeform_tags(self):

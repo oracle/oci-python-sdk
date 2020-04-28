@@ -24,6 +24,10 @@ class UpdateDatabaseDetails(object):
             The value to assign to the db_backup_config property of this UpdateDatabaseDetails.
         :type db_backup_config: DbBackupConfig
 
+        :param db_home_id:
+            The value to assign to the db_home_id property of this UpdateDatabaseDetails.
+        :type db_home_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateDatabaseDetails.
         :type freeform_tags: dict(str, str)
@@ -35,17 +39,20 @@ class UpdateDatabaseDetails(object):
         """
         self.swagger_types = {
             'db_backup_config': 'DbBackupConfig',
+            'db_home_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
             'db_backup_config': 'dbBackupConfig',
+            'db_home_id': 'dbHomeId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._db_backup_config = None
+        self._db_home_id = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -68,6 +75,34 @@ class UpdateDatabaseDetails(object):
         :type: DbBackupConfig
         """
         self._db_backup_config = db_backup_config
+
+    @property
+    def db_home_id(self):
+        """
+        Gets the db_home_id of this UpdateDatabaseDetails.
+        The `OCID`__ of the Database Home.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The db_home_id of this UpdateDatabaseDetails.
+        :rtype: str
+        """
+        return self._db_home_id
+
+    @db_home_id.setter
+    def db_home_id(self, db_home_id):
+        """
+        Sets the db_home_id of this UpdateDatabaseDetails.
+        The `OCID`__ of the Database Home.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param db_home_id: The db_home_id of this UpdateDatabaseDetails.
+        :type: str
+        """
+        self._db_home_id = db_home_id
 
     @property
     def freeform_tags(self):

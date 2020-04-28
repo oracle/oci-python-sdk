@@ -25,6 +25,10 @@ class SoftwarePackageSearchSummary(object):
     #: This constant has a value of "ENHANCEMENT"
     ADVISORY_TYPE_ENHANCEMENT = "ENHANCEMENT"
 
+    #: A constant which can be used with the advisory_type property of a SoftwarePackageSearchSummary.
+    #: This constant has a value of "OTHER"
+    ADVISORY_TYPE_OTHER = "OTHER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new SoftwarePackageSearchSummary object with values from keyword arguments.
@@ -56,7 +60,7 @@ class SoftwarePackageSearchSummary(object):
 
         :param advisory_type:
             The value to assign to the advisory_type property of this SoftwarePackageSearchSummary.
-            Allowed values for this property are: "SECURITY", "BUG", "ENHANCEMENT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SECURITY", "BUG", "ENHANCEMENT", "OTHER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type advisory_type: str
 
@@ -253,7 +257,7 @@ class SoftwarePackageSearchSummary(object):
         Gets the advisory_type of this SoftwarePackageSearchSummary.
         Type of the erratum.
 
-        Allowed values for this property are: "SECURITY", "BUG", "ENHANCEMENT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SECURITY", "BUG", "ENHANCEMENT", "OTHER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -272,7 +276,7 @@ class SoftwarePackageSearchSummary(object):
         :param advisory_type: The advisory_type of this SoftwarePackageSearchSummary.
         :type: str
         """
-        allowed_values = ["SECURITY", "BUG", "ENHANCEMENT"]
+        allowed_values = ["SECURITY", "BUG", "ENHANCEMENT", "OTHER"]
         if not value_allowed_none_or_none_sentinel(advisory_type, allowed_values):
             advisory_type = 'UNKNOWN_ENUM_VALUE'
         self._advisory_type = advisory_type

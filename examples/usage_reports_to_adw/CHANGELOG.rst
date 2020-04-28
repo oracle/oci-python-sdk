@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.04.27 - 2020-04-27
+=====================
+* Added limit, prefix and start to the list_object call
+* Added support for special chars
+* Added Currency Code to the pages
+* Added checks if columns exist in the file to avoid failure
+* Added Support for null overage
+* Align code to use functions properly
+
+=====================
 20.04.20 - 2020-04-20
 =====================
 * Added table OCI_USAGE_TAG_KEYS for tags

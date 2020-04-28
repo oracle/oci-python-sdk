@@ -53,6 +53,18 @@ class WorkRequest(object):
     #: This constant has a value of "CANCELED"
     STATUS_CANCELED = "CANCELED"
 
+    #: A constant which can be used with the os_family property of a WorkRequest.
+    #: This constant has a value of "LINUX"
+    OS_FAMILY_LINUX = "LINUX"
+
+    #: A constant which can be used with the os_family property of a WorkRequest.
+    #: This constant has a value of "WINDOWS"
+    OS_FAMILY_WINDOWS = "WINDOWS"
+
+    #: A constant which can be used with the os_family property of a WorkRequest.
+    #: This constant has a value of "ALL"
+    OS_FAMILY_ALL = "ALL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new WorkRequest object with values from keyword arguments.
@@ -86,6 +98,10 @@ class WorkRequest(object):
             The value to assign to the message property of this WorkRequest.
         :type message: str
 
+        :param managed_instance_id:
+            The value to assign to the managed_instance_id property of this WorkRequest.
+        :type managed_instance_id: Id
+
         :param resources:
             The value to assign to the resources property of this WorkRequest.
         :type resources: list[WorkRequestResource]
@@ -106,6 +122,12 @@ class WorkRequest(object):
             The value to assign to the time_finished property of this WorkRequest.
         :type time_finished: datetime
 
+        :param os_family:
+            The value to assign to the os_family property of this WorkRequest.
+            Allowed values for this property are: "LINUX", "WINDOWS", "ALL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type os_family: str
+
         """
         self.swagger_types = {
             'operation_type': 'str',
@@ -114,11 +136,13 @@ class WorkRequest(object):
             'compartment_id': 'str',
             'description': 'str',
             'message': 'str',
+            'managed_instance_id': 'Id',
             'resources': 'list[WorkRequestResource]',
             'percent_complete': 'float',
             'time_accepted': 'datetime',
             'time_started': 'datetime',
-            'time_finished': 'datetime'
+            'time_finished': 'datetime',
+            'os_family': 'str'
         }
 
         self.attribute_map = {
@@ -128,11 +152,13 @@ class WorkRequest(object):
             'compartment_id': 'compartmentId',
             'description': 'description',
             'message': 'message',
+            'managed_instance_id': 'managedInstanceId',
             'resources': 'resources',
             'percent_complete': 'percentComplete',
             'time_accepted': 'timeAccepted',
             'time_started': 'timeStarted',
-            'time_finished': 'timeFinished'
+            'time_finished': 'timeFinished',
+            'os_family': 'osFamily'
         }
 
         self._operation_type = None
@@ -141,11 +167,13 @@ class WorkRequest(object):
         self._compartment_id = None
         self._description = None
         self._message = None
+        self._managed_instance_id = None
         self._resources = None
         self._percent_complete = None
         self._time_accepted = None
         self._time_started = None
         self._time_finished = None
+        self._os_family = None
 
     @property
     def operation_type(self):
@@ -310,6 +338,26 @@ class WorkRequest(object):
         self._message = message
 
     @property
+    def managed_instance_id(self):
+        """
+        Gets the managed_instance_id of this WorkRequest.
+
+        :return: The managed_instance_id of this WorkRequest.
+        :rtype: Id
+        """
+        return self._managed_instance_id
+
+    @managed_instance_id.setter
+    def managed_instance_id(self, managed_instance_id):
+        """
+        Sets the managed_instance_id of this WorkRequest.
+
+        :param managed_instance_id: The managed_instance_id of this WorkRequest.
+        :type: Id
+        """
+        self._managed_instance_id = managed_instance_id
+
+    @property
     def resources(self):
         """
         **[Required]** Gets the resources of this WorkRequest.
@@ -444,6 +492,36 @@ class WorkRequest(object):
         :type: datetime
         """
         self._time_finished = time_finished
+
+    @property
+    def os_family(self):
+        """
+        Gets the os_family of this WorkRequest.
+        The Operating System type of the managed instance.
+
+        Allowed values for this property are: "LINUX", "WINDOWS", "ALL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The os_family of this WorkRequest.
+        :rtype: str
+        """
+        return self._os_family
+
+    @os_family.setter
+    def os_family(self, os_family):
+        """
+        Sets the os_family of this WorkRequest.
+        The Operating System type of the managed instance.
+
+
+        :param os_family: The os_family of this WorkRequest.
+        :type: str
+        """
+        allowed_values = ["LINUX", "WINDOWS", "ALL"]
+        if not value_allowed_none_or_none_sentinel(os_family, allowed_values):
+            os_family = 'UNKNOWN_ENUM_VALUE'
+        self._os_family = os_family
 
     def __repr__(self):
         return formatted_flat_dict(self)

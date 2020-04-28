@@ -1,0 +1,11 @@
+UpdateDbSystemDetails
+=====================
+
+.. currentmodule:: oci.mysql.models
+
+.. autoclass:: UpdateDbSystemDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:
