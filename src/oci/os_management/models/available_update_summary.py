@@ -25,6 +25,10 @@ class AvailableUpdateSummary(object):
     #: This constant has a value of "ENHANCEMENT"
     UPDATE_TYPE_ENHANCEMENT = "ENHANCEMENT"
 
+    #: A constant which can be used with the update_type property of a AvailableUpdateSummary.
+    #: This constant has a value of "OTHER"
+    UPDATE_TYPE_OTHER = "OTHER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AvailableUpdateSummary object with values from keyword arguments.
@@ -40,7 +44,7 @@ class AvailableUpdateSummary(object):
 
         :param update_type:
             The value to assign to the update_type property of this AvailableUpdateSummary.
-            Allowed values for this property are: "SECURITY", "BUG", "ENHANCEMENT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SECURITY", "BUG", "ENHANCEMENT", "OTHER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type update_type: str
 
@@ -164,7 +168,7 @@ class AvailableUpdateSummary(object):
         Gets the update_type of this AvailableUpdateSummary.
         The purpose of this update.
 
-        Allowed values for this property are: "SECURITY", "BUG", "ENHANCEMENT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SECURITY", "BUG", "ENHANCEMENT", "OTHER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -183,7 +187,7 @@ class AvailableUpdateSummary(object):
         :param update_type: The update_type of this AvailableUpdateSummary.
         :type: str
         """
-        allowed_values = ["SECURITY", "BUG", "ENHANCEMENT"]
+        allowed_values = ["SECURITY", "BUG", "ENHANCEMENT", "OTHER"]
         if not value_allowed_none_or_none_sentinel(update_type, allowed_values):
             update_type = 'UNKNOWN_ENUM_VALUE'
         self._update_type = update_type

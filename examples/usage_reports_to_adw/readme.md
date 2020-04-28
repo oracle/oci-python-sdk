@@ -126,38 +126,51 @@ optional arguments:
 ##########################################################################################
 #                          Running Usage and Cost Load to ADW                            #
 ##########################################################################################
-Started at 2020-04-16 07:56:50
+Starts at 2020-04-21 12:05:45
 Command Line : -t temp_tenant -du db_user -dp db_pass# -dn dbname -d 2020-04-15
 
 Connecting to Identity Service...
-Tenant Name : temp_tenant
-Tenant Id   : ocid1.tenancy.oc1..aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+   Tenant Name : temp_tenant
+   Tenant Id   : ocid1.tenancy.oc1..aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+   App Version : 20.4.27
 
 Loading Compartments...
-    Total 35 compartments loaded.
+    Total 108 compartments loaded.
 
 Connecting to database adirep_low
-Table OCI_USAGE exist
-Table OCI_USAGE_TAG_KEYS exist
-Table OCI_COST exist
-Table OCI_COST_TAG_KEYS exist
-Max Usage File Id Processed = 0001000000179319
-Max Cost  File Id Processed = 0001000000007463
+   Connected
+
+Checking Database Structure...
+   Table OCI_USAGE exist
+   Table OCI_USAGE_TAG_KEYS exist
+   Table OCI_COST exist
+   Table OCI_COST_TAG_KEYS exist
+
+Checking Last Loaded File...
+   Max Usage File Id Processed = 0001000000179319
+   Max Cost  File Id Processed = 0001000000007463
 
 Connecting to Object Storage Service...
+   Connected
+
+Handling Usage Report...
+   Processing file reports/usage-csv/0001000000179320.csv.gz - 375930, 2020-04-15 18:27
+   Completed  file reports/usage-csv/0001000000179320.csv.gz - 6455 Rows Inserted
+   Total 13 Tags Merged.
+
+   Total 1 Usage Files Loaded
+
+Handling Cost Report...
    Processing file reports/cost-csv/0001000000007464.csv.gz - 123150, 2020-04-16 01:44
    Completed  file reports/cost-csv/0001000000007464.csv.gz - 1844 Rows Inserted
    Total 15 Tags Merged.
    Processing file reports/cost-csv/0001000000008343.csv.gz - 743467, 2020-04-16 11:14
    Completed  file reports/cost-csv/0001000000008343.csv.gz - 11278 Rows Inserted
    Total 14 Tags Merged.
-   Processing file reports/usage-csv/0001000000179320.csv.gz - 375930, 2020-04-15 18:27
-   Completed  file reports/usage-csv/0001000000179320.csv.gz - 6455 Rows Inserted
-   Total 13 Tags Merged.
 
-Total 3 Files Loaded
+   Total 2 Cost Files Loaded
 
-Completed at 2020-04-16 07:57:24
+Completed at 2020-04-21 12:05:46
 ```
 
 ## License

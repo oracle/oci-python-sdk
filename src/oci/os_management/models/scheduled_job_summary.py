@@ -61,6 +61,18 @@ class ScheduledJobSummary(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the os_family property of a ScheduledJobSummary.
+    #: This constant has a value of "LINUX"
+    OS_FAMILY_LINUX = "LINUX"
+
+    #: A constant which can be used with the os_family property of a ScheduledJobSummary.
+    #: This constant has a value of "WINDOWS"
+    OS_FAMILY_WINDOWS = "WINDOWS"
+
+    #: A constant which can be used with the os_family property of a ScheduledJobSummary.
+    #: This constant has a value of "ALL"
+    OS_FAMILY_ALL = "ALL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ScheduledJobSummary object with values from keyword arguments.
@@ -120,6 +132,12 @@ class ScheduledJobSummary(object):
             The value to assign to the defined_tags property of this ScheduledJobSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param os_family:
+            The value to assign to the os_family property of this ScheduledJobSummary.
+            Allowed values for this property are: "LINUX", "WINDOWS", "ALL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type os_family: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -133,7 +151,8 @@ class ScheduledJobSummary(object):
             'operation_type': 'str',
             'lifecycle_state': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'os_family': 'str'
         }
 
         self.attribute_map = {
@@ -148,7 +167,8 @@ class ScheduledJobSummary(object):
             'operation_type': 'operationType',
             'lifecycle_state': 'lifecycleState',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'os_family': 'osFamily'
         }
 
         self._id = None
@@ -163,6 +183,7 @@ class ScheduledJobSummary(object):
         self._lifecycle_state = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._os_family = None
 
     @property
     def id(self):
@@ -473,6 +494,36 @@ class ScheduledJobSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def os_family(self):
+        """
+        Gets the os_family of this ScheduledJobSummary.
+        The Operating System type of the managed instance.
+
+        Allowed values for this property are: "LINUX", "WINDOWS", "ALL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The os_family of this ScheduledJobSummary.
+        :rtype: str
+        """
+        return self._os_family
+
+    @os_family.setter
+    def os_family(self, os_family):
+        """
+        Sets the os_family of this ScheduledJobSummary.
+        The Operating System type of the managed instance.
+
+
+        :param os_family: The os_family of this ScheduledJobSummary.
+        :type: str
+        """
+        allowed_values = ["LINUX", "WINDOWS", "ALL"]
+        if not value_allowed_none_or_none_sentinel(os_family, allowed_values):
+            os_family = 'UNKNOWN_ENUM_VALUE'
+        self._os_family = os_family
 
     def __repr__(self):
         return formatted_flat_dict(self)

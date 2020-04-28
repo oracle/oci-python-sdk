@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.14.0 - 2020-04-28
+====================
+
+Added
+-----
+* Support for the MySQL Database service
+* Support for updating the database home of a database in the Database service
+* Support for government regions in the Marketplace service
+* Support for starting and stopping instances in the Integration service
+* Support for installing Windows updates in the OS Management service
+
+Breaking
+--------
+* Deleted models ErrataId, ManagedInstanceUpdateDetails and UpdatablePackageSummary from the os_management service
+
+====================
 2.13.0 - 2020-04-21
 ====================
 

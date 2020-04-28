@@ -1,9 +1,9 @@
-ManagedInstanceUpdateDetails
-============================
+AvailableWindowsUpdateSummary
+=============================
 
 .. currentmodule:: oci.os_management.models
 
-.. autoclass:: ManagedInstanceUpdateDetails
+.. autoclass:: AvailableWindowsUpdateSummary
     :show-inheritance:
     :special-members: __init__
     :members:

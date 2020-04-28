@@ -337,6 +337,9 @@ class MarketplaceClient(object):
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
             please provide the request ID.
 
+        :param str compartment_id: (optional)
+            The unique identifier for the compartment.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -354,7 +357,8 @@ class MarketplaceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -373,6 +377,11 @@ class MarketplaceClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        query_params = {
+            "compartmentId": kwargs.get("compartment_id", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
@@ -390,6 +399,7 @@ class MarketplaceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="Agreement")
         else:
@@ -397,6 +407,7 @@ class MarketplaceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="Agreement")
 
@@ -412,6 +423,9 @@ class MarketplaceClient(object):
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
             please provide the request ID.
+
+        :param str compartment_id: (optional)
+            The unique identifier for the compartment.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -430,7 +444,8 @@ class MarketplaceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -446,6 +461,11 @@ class MarketplaceClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "compartmentId": kwargs.get("compartment_id", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -464,6 +484,7 @@ class MarketplaceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="Listing")
         else:
@@ -471,6 +492,7 @@ class MarketplaceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="Listing")
 
@@ -489,6 +511,9 @@ class MarketplaceClient(object):
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
             please provide the request ID.
 
+        :param str compartment_id: (optional)
+            The unique identifier for the compartment.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -506,7 +531,8 @@ class MarketplaceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -523,6 +549,11 @@ class MarketplaceClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "compartmentId": kwargs.get("compartment_id", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -541,6 +572,7 @@ class MarketplaceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="ListingPackage")
         else:
@@ -548,6 +580,7 @@ class MarketplaceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="ListingPackage")
 
@@ -701,6 +734,9 @@ class MarketplaceClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
+        :param str compartment_id: (optional)
+            The unique identifier for the compartment.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -720,7 +756,8 @@ class MarketplaceClient(object):
             "retry_strategy",
             "opc_request_id",
             "limit",
-            "page"
+            "page",
+            "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -740,7 +777,8 @@ class MarketplaceClient(object):
 
         query_params = {
             "limit": kwargs.get("limit", missing),
-            "page": kwargs.get("page", missing)
+            "page": kwargs.get("page", missing),
+            "compartmentId": kwargs.get("compartment_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -789,6 +827,9 @@ class MarketplaceClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
+        :param str compartment_id: (optional)
+            The unique identifier for the compartment.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -808,7 +849,8 @@ class MarketplaceClient(object):
             "retry_strategy",
             "opc_request_id",
             "limit",
-            "page"
+            "page",
+            "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -817,7 +859,8 @@ class MarketplaceClient(object):
 
         query_params = {
             "limit": kwargs.get("limit", missing),
-            "page": kwargs.get("page", missing)
+            "page": kwargs.get("page", missing),
+            "compartmentId": kwargs.get("compartment_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -901,6 +944,9 @@ class MarketplaceClient(object):
         :param bool is_featured: (optional)
             Indicates whether to show only featured listings. If this is set to `false` or is omitted, then all listings will be returned.
 
+        :param str compartment_id: (optional)
+            The unique identifier for the compartment.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -929,7 +975,8 @@ class MarketplaceClient(object):
             "sort_order",
             "category",
             "pricing",
-            "is_featured"
+            "is_featured",
+            "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -969,7 +1016,8 @@ class MarketplaceClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "category": self.base_client.generate_collection_format_param(kwargs.get("category", missing), 'multi'),
             "pricing": self.base_client.generate_collection_format_param(kwargs.get("pricing", missing), 'multi'),
-            "isFeatured": kwargs.get("is_featured", missing)
+            "isFeatured": kwargs.get("is_featured", missing),
+            "compartmentId": kwargs.get("compartment_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -1036,6 +1084,9 @@ class MarketplaceClient(object):
 
             Allowed values are: "ASC", "DESC"
 
+        :param str compartment_id: (optional)
+            The unique identifier for the compartment.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1059,7 +1110,8 @@ class MarketplaceClient(object):
             "limit",
             "page",
             "sort_by",
-            "sort_order"
+            "sort_order",
+            "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1096,7 +1148,8 @@ class MarketplaceClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortBy": kwargs.get("sort_by", missing),
-            "sortOrder": kwargs.get("sort_order", missing)
+            "sortOrder": kwargs.get("sort_order", missing),
+            "compartmentId": kwargs.get("compartment_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -1147,6 +1200,9 @@ class MarketplaceClient(object):
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
 
+        :param str compartment_id: (optional)
+            The unique identifier for the compartment.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1167,7 +1223,8 @@ class MarketplaceClient(object):
             "publisher_id",
             "opc_request_id",
             "limit",
-            "page"
+            "page",
+            "compartment_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1177,7 +1234,8 @@ class MarketplaceClient(object):
         query_params = {
             "publisherId": kwargs.get("publisher_id", missing),
             "limit": kwargs.get("limit", missing),
-            "page": kwargs.get("page", missing)
+            "page": kwargs.get("page", missing),
+            "compartmentId": kwargs.get("compartment_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -1207,6 +1265,160 @@ class MarketplaceClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="list[PublisherSummary]")
+
+    def list_report_types(self, compartment_id, **kwargs):
+        """
+        List available reports for the compartment
+
+
+        :param str compartment_id: (required)
+            The unique identifier for the compartment.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.marketplace.models.ReportTypeCollection`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/reportTypes"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "page"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_report_types got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ReportTypeCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ReportTypeCollection")
+
+    def list_reports(self, report_type, date, compartment_id, **kwargs):
+        """
+        List reports for the specific report type, date, and for the compartment
+
+
+        :param str report_type: (required)
+            Type of the report.
+
+        :param datetime date: (required)
+            Date in YYYYMMDD format
+
+        :param str compartment_id: (required)
+            The unique identifier for the compartment.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.marketplace.models.ReportCollection`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/reports"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "page"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_reports got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "reportType": report_type,
+            "date": date,
+            "compartmentId": compartment_id,
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ReportCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ReportCollection")
 
     def update_accepted_agreement(self, accepted_agreement_id, update_accepted_agreement_details, **kwargs):
         """

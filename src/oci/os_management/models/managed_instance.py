@@ -29,6 +29,18 @@ class ManagedInstance(object):
     #: This constant has a value of "WARNING"
     STATUS_WARNING = "WARNING"
 
+    #: A constant which can be used with the os_family property of a ManagedInstance.
+    #: This constant has a value of "LINUX"
+    OS_FAMILY_LINUX = "LINUX"
+
+    #: A constant which can be used with the os_family property of a ManagedInstance.
+    #: This constant has a value of "WINDOWS"
+    OS_FAMILY_WINDOWS = "WINDOWS"
+
+    #: A constant which can be used with the os_family property of a ManagedInstance.
+    #: This constant has a value of "ALL"
+    OS_FAMILY_ALL = "ALL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ManagedInstance object with values from keyword arguments.
@@ -92,6 +104,16 @@ class ManagedInstance(object):
             The value to assign to the managed_instance_groups property of this ManagedInstance.
         :type managed_instance_groups: list[Id]
 
+        :param os_family:
+            The value to assign to the os_family property of this ManagedInstance.
+            Allowed values for this property are: "LINUX", "WINDOWS", "ALL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type os_family: str
+
+        :param is_reboot_required:
+            The value to assign to the is_reboot_required property of this ManagedInstance.
+        :type is_reboot_required: bool
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -107,7 +129,9 @@ class ManagedInstance(object):
             'status': 'str',
             'parent_software_source': 'SoftwareSourceId',
             'child_software_sources': 'list[SoftwareSourceId]',
-            'managed_instance_groups': 'list[Id]'
+            'managed_instance_groups': 'list[Id]',
+            'os_family': 'str',
+            'is_reboot_required': 'bool'
         }
 
         self.attribute_map = {
@@ -124,7 +148,9 @@ class ManagedInstance(object):
             'status': 'status',
             'parent_software_source': 'parentSoftwareSource',
             'child_software_sources': 'childSoftwareSources',
-            'managed_instance_groups': 'managedInstanceGroups'
+            'managed_instance_groups': 'managedInstanceGroups',
+            'os_family': 'osFamily',
+            'is_reboot_required': 'isRebootRequired'
         }
 
         self._display_name = None
@@ -141,6 +167,8 @@ class ManagedInstance(object):
         self._parent_software_source = None
         self._child_software_sources = None
         self._managed_instance_groups = None
+        self._os_family = None
+        self._is_reboot_required = None
 
     @property
     def display_name(self):
@@ -485,6 +513,60 @@ class ManagedInstance(object):
         :type: list[Id]
         """
         self._managed_instance_groups = managed_instance_groups
+
+    @property
+    def os_family(self):
+        """
+        Gets the os_family of this ManagedInstance.
+        The Operating System type of the managed instance.
+
+        Allowed values for this property are: "LINUX", "WINDOWS", "ALL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The os_family of this ManagedInstance.
+        :rtype: str
+        """
+        return self._os_family
+
+    @os_family.setter
+    def os_family(self, os_family):
+        """
+        Sets the os_family of this ManagedInstance.
+        The Operating System type of the managed instance.
+
+
+        :param os_family: The os_family of this ManagedInstance.
+        :type: str
+        """
+        allowed_values = ["LINUX", "WINDOWS", "ALL"]
+        if not value_allowed_none_or_none_sentinel(os_family, allowed_values):
+            os_family = 'UNKNOWN_ENUM_VALUE'
+        self._os_family = os_family
+
+    @property
+    def is_reboot_required(self):
+        """
+        Gets the is_reboot_required of this ManagedInstance.
+        Indicates whether a reboot is required to complete installation of updates.
+
+
+        :return: The is_reboot_required of this ManagedInstance.
+        :rtype: bool
+        """
+        return self._is_reboot_required
+
+    @is_reboot_required.setter
+    def is_reboot_required(self, is_reboot_required):
+        """
+        Sets the is_reboot_required of this ManagedInstance.
+        Indicates whether a reboot is required to complete installation of updates.
+
+
+        :param is_reboot_required: The is_reboot_required of this ManagedInstance.
+        :type: bool
+        """
+        self._is_reboot_required = is_reboot_required
 
     def __repr__(self):
         return formatted_flat_dict(self)

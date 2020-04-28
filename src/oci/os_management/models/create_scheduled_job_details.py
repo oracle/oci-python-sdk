@@ -69,6 +69,18 @@ class CreateScheduledJobDetails(object):
     #: This constant has a value of "ALL"
     UPDATE_TYPE_ALL = "ALL"
 
+    #: A constant which can be used with the os_family property of a CreateScheduledJobDetails.
+    #: This constant has a value of "LINUX"
+    OS_FAMILY_LINUX = "LINUX"
+
+    #: A constant which can be used with the os_family property of a CreateScheduledJobDetails.
+    #: This constant has a value of "WINDOWS"
+    OS_FAMILY_WINDOWS = "WINDOWS"
+
+    #: A constant which can be used with the os_family property of a CreateScheduledJobDetails.
+    #: This constant has a value of "ALL"
+    OS_FAMILY_ALL = "ALL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateScheduledJobDetails object with values from keyword arguments.
@@ -134,6 +146,15 @@ class CreateScheduledJobDetails(object):
             The value to assign to the defined_tags property of this CreateScheduledJobDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param update_names:
+            The value to assign to the update_names property of this CreateScheduledJobDetails.
+        :type update_names: list[str]
+
+        :param os_family:
+            The value to assign to the os_family property of this CreateScheduledJobDetails.
+            Allowed values for this property are: "LINUX", "WINDOWS", "ALL"
+        :type os_family: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -149,7 +170,9 @@ class CreateScheduledJobDetails(object):
             'update_type': 'str',
             'package_names': 'list[PackageName]',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'update_names': 'list[str]',
+            'os_family': 'str'
         }
 
         self.attribute_map = {
@@ -166,7 +189,9 @@ class CreateScheduledJobDetails(object):
             'update_type': 'updateType',
             'package_names': 'packageNames',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'update_names': 'updateNames',
+            'os_family': 'osFamily'
         }
 
         self._compartment_id = None
@@ -183,6 +208,8 @@ class CreateScheduledJobDetails(object):
         self._package_names = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._update_names = None
+        self._os_family = None
 
     @property
     def compartment_id(self):
@@ -460,7 +487,7 @@ class CreateScheduledJobDetails(object):
     def update_type(self):
         """
         Gets the update_type of this CreateScheduledJobDetails.
-        Type of the update (only if operation type is UPDATE_ALL_PACKAGES)
+        Type of the update (only if operation type is UPDATEALL)
 
         Allowed values for this property are: "SECURITY", "BUGFIX", "ENHANCEMENT", "ALL"
 
@@ -474,7 +501,7 @@ class CreateScheduledJobDetails(object):
     def update_type(self, update_type):
         """
         Sets the update_type of this CreateScheduledJobDetails.
-        Type of the update (only if operation type is UPDATE_ALL_PACKAGES)
+        Type of the update (only if operation type is UPDATEALL)
 
 
         :param update_type: The update_type of this CreateScheduledJobDetails.
@@ -492,7 +519,7 @@ class CreateScheduledJobDetails(object):
     def package_names(self):
         """
         Gets the package_names of this CreateScheduledJobDetails.
-        the id of the package (only if operation type is INSTALL/UPDATE/REMOVE_PACKAGE)
+        the id of the package (only if operation type is INSTALL/UPDATE/REMOVE)
 
 
         :return: The package_names of this CreateScheduledJobDetails.
@@ -504,7 +531,7 @@ class CreateScheduledJobDetails(object):
     def package_names(self, package_names):
         """
         Sets the package_names of this CreateScheduledJobDetails.
-        the id of the package (only if operation type is INSTALL/UPDATE/REMOVE_PACKAGE)
+        the id of the package (only if operation type is INSTALL/UPDATE/REMOVE)
 
 
         :param package_names: The package_names of this CreateScheduledJobDetails.
@@ -563,6 +590,66 @@ class CreateScheduledJobDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def update_names(self):
+        """
+        Gets the update_names of this CreateScheduledJobDetails.
+        The unique names of the Windows Updates (only if operation type is INSTALL).
+        This is only applicable when the osFamily is for Windows managed instances.
+
+
+        :return: The update_names of this CreateScheduledJobDetails.
+        :rtype: list[str]
+        """
+        return self._update_names
+
+    @update_names.setter
+    def update_names(self, update_names):
+        """
+        Sets the update_names of this CreateScheduledJobDetails.
+        The unique names of the Windows Updates (only if operation type is INSTALL).
+        This is only applicable when the osFamily is for Windows managed instances.
+
+
+        :param update_names: The update_names of this CreateScheduledJobDetails.
+        :type: list[str]
+        """
+        self._update_names = update_names
+
+    @property
+    def os_family(self):
+        """
+        Gets the os_family of this CreateScheduledJobDetails.
+        The Operating System type of the managed instance(s) on which this scheduled job will operate.
+        If not specified, this defaults to Linux.
+
+        Allowed values for this property are: "LINUX", "WINDOWS", "ALL"
+
+
+        :return: The os_family of this CreateScheduledJobDetails.
+        :rtype: str
+        """
+        return self._os_family
+
+    @os_family.setter
+    def os_family(self, os_family):
+        """
+        Sets the os_family of this CreateScheduledJobDetails.
+        The Operating System type of the managed instance(s) on which this scheduled job will operate.
+        If not specified, this defaults to Linux.
+
+
+        :param os_family: The os_family of this CreateScheduledJobDetails.
+        :type: str
+        """
+        allowed_values = ["LINUX", "WINDOWS", "ALL"]
+        if not value_allowed_none_or_none_sentinel(os_family, allowed_values):
+            raise ValueError(
+                "Invalid value for `os_family`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._os_family = os_family
 
     def __repr__(self):
         return formatted_flat_dict(self)

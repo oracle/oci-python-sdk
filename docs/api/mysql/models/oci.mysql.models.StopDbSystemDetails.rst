@@ -1,9 +1,9 @@
-ErrataId
-========
+StopDbSystemDetails
+===================
 
-.. currentmodule:: oci.os_management.models
+.. currentmodule:: oci.mysql.models
 
-.. autoclass:: ErrataId
+.. autoclass:: StopDbSystemDetails
     :show-inheritance:
     :special-members: __init__
     :members:
