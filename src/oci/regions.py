@@ -21,11 +21,13 @@ REGIONS_SHORT_NAMES = {
     'mel': 'ap-melbourne-1',
     'ams': 'eu-amsterdam-1',
     'jed': 'me-jeddah-1',
-    'yul': 'ca-montreal-1'
+    'yul': 'ca-montreal-1',
+    'hyd': 'ap-hyderabad-1'
 }
 REGION_REALMS = {
     'ap-melbourne-1': 'oc1',
     'ap-mumbai-1': 'oc1',
+    'ap-hyderabad-1': 'oc1',
     'ap-osaka-1': 'oc1',
     'ap-seoul-1': 'oc1',
     'ap-sydney-1': 'oc1',
@@ -59,6 +61,7 @@ REALMS = {
 REGIONS = [
     "ap-melbourne-1",
     "ap-mumbai-1",
+    "ap-hyderabad-1",
     "ap-osaka-1",
     "ap-seoul-1",
     "ap-sydney-1",
