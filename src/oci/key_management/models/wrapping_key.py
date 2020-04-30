@@ -18,8 +18,20 @@ class WrappingKey(object):
     LIFECYCLE_STATE_CREATING = "CREATING"
 
     #: A constant which can be used with the lifecycle_state property of a WrappingKey.
+    #: This constant has a value of "ENABLING"
+    LIFECYCLE_STATE_ENABLING = "ENABLING"
+
+    #: A constant which can be used with the lifecycle_state property of a WrappingKey.
     #: This constant has a value of "ENABLED"
     LIFECYCLE_STATE_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the lifecycle_state property of a WrappingKey.
+    #: This constant has a value of "DISABLING"
+    LIFECYCLE_STATE_DISABLING = "DISABLING"
+
+    #: A constant which can be used with the lifecycle_state property of a WrappingKey.
+    #: This constant has a value of "DISABLED"
+    LIFECYCLE_STATE_DISABLED = "DISABLED"
 
     #: A constant which can be used with the lifecycle_state property of a WrappingKey.
     #: This constant has a value of "DELETING"
@@ -28,6 +40,30 @@ class WrappingKey(object):
     #: A constant which can be used with the lifecycle_state property of a WrappingKey.
     #: This constant has a value of "DELETED"
     LIFECYCLE_STATE_DELETED = "DELETED"
+
+    #: A constant which can be used with the lifecycle_state property of a WrappingKey.
+    #: This constant has a value of "PENDING_DELETION"
+    LIFECYCLE_STATE_PENDING_DELETION = "PENDING_DELETION"
+
+    #: A constant which can be used with the lifecycle_state property of a WrappingKey.
+    #: This constant has a value of "SCHEDULING_DELETION"
+    LIFECYCLE_STATE_SCHEDULING_DELETION = "SCHEDULING_DELETION"
+
+    #: A constant which can be used with the lifecycle_state property of a WrappingKey.
+    #: This constant has a value of "CANCELLING_DELETION"
+    LIFECYCLE_STATE_CANCELLING_DELETION = "CANCELLING_DELETION"
+
+    #: A constant which can be used with the lifecycle_state property of a WrappingKey.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the lifecycle_state property of a WrappingKey.
+    #: This constant has a value of "BACKUP_IN_PROGRESS"
+    LIFECYCLE_STATE_BACKUP_IN_PROGRESS = "BACKUP_IN_PROGRESS"
+
+    #: A constant which can be used with the lifecycle_state property of a WrappingKey.
+    #: This constant has a value of "RESTORING"
+    LIFECYCLE_STATE_RESTORING = "RESTORING"
 
     def __init__(self, **kwargs):
         """
@@ -44,7 +80,7 @@ class WrappingKey(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this WrappingKey.
-            Allowed values for this property are: "CREATING", "ENABLED", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "ENABLING", "ENABLED", "DISABLING", "DISABLED", "DELETING", "DELETED", "PENDING_DELETION", "SCHEDULING_DELETION", "CANCELLING_DELETION", "UPDATING", "BACKUP_IN_PROGRESS", "RESTORING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -138,11 +174,11 @@ class WrappingKey(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this WrappingKey.
-        The key's current state.
+        The key's current lifecycle state.
 
         Example: `ENABLED`
 
-        Allowed values for this property are: "CREATING", "ENABLED", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "ENABLING", "ENABLED", "DISABLING", "DISABLED", "DELETING", "DELETED", "PENDING_DELETION", "SCHEDULING_DELETION", "CANCELLING_DELETION", "UPDATING", "BACKUP_IN_PROGRESS", "RESTORING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -155,7 +191,7 @@ class WrappingKey(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this WrappingKey.
-        The key's current state.
+        The key's current lifecycle state.
 
         Example: `ENABLED`
 
@@ -163,7 +199,7 @@ class WrappingKey(object):
         :param lifecycle_state: The lifecycle_state of this WrappingKey.
         :type: str
         """
-        allowed_values = ["CREATING", "ENABLED", "DELETING", "DELETED"]
+        allowed_values = ["CREATING", "ENABLING", "ENABLED", "DISABLING", "DISABLED", "DELETING", "DELETED", "PENDING_DELETION", "SCHEDULING_DELETION", "CANCELLING_DELETION", "UPDATING", "BACKUP_IN_PROGRESS", "RESTORING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

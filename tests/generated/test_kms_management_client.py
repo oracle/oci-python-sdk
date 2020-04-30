@@ -34,6 +34,46 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_backup_key(testing_service_client):
+    if not testing_service_client.is_api_enabled('key_management', 'BackupKey'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_management'), 'BackupKey')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='key_management', api_name='BackupKey')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "BackupKey")
+            client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.backup_key(
+                key_id=request.pop(util.camelize('keyId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'key_management',
+            'BackupKey',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'key',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
 def test_cancel_key_deletion(testing_service_client):
     if not testing_service_client.is_api_enabled('key_management', 'CancelKeyDeletion'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -633,6 +673,85 @@ def test_list_keys(testing_service_client):
             'keySummary',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_restore_key_from_file(testing_service_client):
+    if not testing_service_client.is_api_enabled('key_management', 'RestoreKeyFromFile'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_management'), 'RestoreKeyFromFile')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='key_management', api_name='RestoreKeyFromFile')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "RestoreKeyFromFile")
+            client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.restore_key_from_file(
+                restore_key_from_file_details=request.pop(util.camelize('RestoreKeyFromFileDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'key_management',
+            'RestoreKeyFromFile',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'key',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_restore_key_from_object_store(testing_service_client):
+    if not testing_service_client.is_api_enabled('key_management', 'RestoreKeyFromObjectStore'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_management'), 'RestoreKeyFromObjectStore')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='key_management', api_name='RestoreKeyFromObjectStore')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = testing_service_client.get_endpoint("key_management", "KmsManagementClient", "RestoreKeyFromObjectStore")
+            client = oci.key_management.KmsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.restore_key_from_object_store(
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'key_management',
+            'RestoreKeyFromObjectStore',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'key',
+            False,
+            False
         )
 
 

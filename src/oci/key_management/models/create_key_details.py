@@ -65,7 +65,7 @@ class CreateKeyDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateKeyDetails.
-        The OCID of the compartment that contains this master encryption key.
+        The OCID of the compartment where you want to create the master encryption key.
 
 
         :return: The compartment_id of this CreateKeyDetails.
@@ -77,7 +77,7 @@ class CreateKeyDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateKeyDetails.
-        The OCID of the compartment that contains this master encryption key.
+        The OCID of the compartment where you want to create the master encryption key.
 
 
         :param compartment_id: The compartment_id of this CreateKeyDetails.

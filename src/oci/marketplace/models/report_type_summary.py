@@ -58,7 +58,7 @@ class ReportTypeSummary(object):
     def report_type(self):
         """
         Gets the report_type of this ReportTypeSummary.
-        The type of the report.
+        The type of report.
 
 
         :return: The report_type of this ReportTypeSummary.
@@ -70,7 +70,7 @@ class ReportTypeSummary(object):
     def report_type(self, report_type):
         """
         Sets the report_type of this ReportTypeSummary.
-        The type of the report.
+        The type of report.
 
 
         :param report_type: The report_type of this ReportTypeSummary.

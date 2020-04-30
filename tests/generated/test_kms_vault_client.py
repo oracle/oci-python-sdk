@@ -34,6 +34,46 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_backup_vault(testing_service_client):
+    if not testing_service_client.is_api_enabled('key_management', 'BackupVault'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_vault'), 'BackupVault')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='key_management', api_name='BackupVault')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.key_management.KmsVaultClient(config, service_endpoint=service_endpoint)
+            response = client.backup_vault(
+                vault_id=request.pop(util.camelize('vaultId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'key_management',
+            'BackupVault',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'vault',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
 def test_cancel_vault_deletion(testing_service_client):
     if not testing_service_client.is_api_enabled('key_management', 'CancelVaultDeletion'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -291,6 +331,87 @@ def test_list_vaults(testing_service_client):
             'vaultSummary',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_restore_vault_from_file(testing_service_client):
+    if not testing_service_client.is_api_enabled('key_management', 'RestoreVaultFromFile'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_vault'), 'RestoreVaultFromFile')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='key_management', api_name='RestoreVaultFromFile')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.key_management.KmsVaultClient(config, service_endpoint=service_endpoint)
+            response = client.restore_vault_from_file(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                restore_vault_from_file_details=request.pop(util.camelize('RestoreVaultFromFileDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'key_management',
+            'RestoreVaultFromFile',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'vault',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sparta_kms_us_grp@oracle.com" jiraProject="KMS" opsJiraProject="KMS"
+def test_restore_vault_from_object_store(testing_service_client):
+    if not testing_service_client.is_api_enabled('key_management', 'RestoreVaultFromObjectStore'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('key_management', util.camelize('kms_vault'), 'RestoreVaultFromObjectStore')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='key_management', api_name='RestoreVaultFromObjectStore')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.key_management.KmsVaultClient(config, service_endpoint=service_endpoint)
+            response = client.restore_vault_from_object_store(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'key_management',
+            'RestoreVaultFromObjectStore',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'vault',
+            False,
+            False
         )
 
 

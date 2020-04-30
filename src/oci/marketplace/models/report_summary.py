@@ -58,7 +58,7 @@ class ReportSummary(object):
     def report_type(self):
         """
         **[Required]** Gets the report_type of this ReportSummary.
-        The type of the report.
+        The type of report.
 
 
         :return: The report_type of this ReportSummary.
@@ -70,7 +70,7 @@ class ReportSummary(object):
     def report_type(self, report_type):
         """
         Sets the report_type of this ReportSummary.
-        The type of the report.
+        The type of report.
 
 
         :param report_type: The report_type of this ReportSummary.
@@ -82,7 +82,7 @@ class ReportSummary(object):
     def date(self):
         """
         **[Required]** Gets the date of this ReportSummary.
-        Date of the report.
+        The date of the report.
 
 
         :return: The date of this ReportSummary.
@@ -94,7 +94,7 @@ class ReportSummary(object):
     def date(self, date):
         """
         Sets the date of this ReportSummary.
-        Date of the report.
+        The date of the report.
 
 
         :param date: The date of this ReportSummary.
@@ -106,7 +106,7 @@ class ReportSummary(object):
     def columns(self):
         """
         **[Required]** Gets the columns of this ReportSummary.
-        The columns in the report content.
+        The columns in the report.
 
 
         :return: The columns of this ReportSummary.
@@ -118,7 +118,7 @@ class ReportSummary(object):
     def columns(self, columns):
         """
         Sets the columns of this ReportSummary.
-        The columns in the report content.
+        The columns in the report.
 
 
         :param columns: The columns of this ReportSummary.
@@ -130,7 +130,7 @@ class ReportSummary(object):
     def content(self):
         """
         **[Required]** Gets the content of this ReportSummary.
-        The content of report in CSV string format.
+        The contents of the report in comma-separated values (CSV) file format.
 
 
         :return: The content of this ReportSummary.
@@ -142,7 +142,7 @@ class ReportSummary(object):
     def content(self, content):
         """
         Sets the content of this ReportSummary.
-        The content of report in CSV string format.
+        The contents of the report in comma-separated values (CSV) file format.
 
 
         :param content: The content of this ReportSummary.

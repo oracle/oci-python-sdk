@@ -102,6 +102,10 @@ class KeyVersion(object):
             The value to assign to the vault_id property of this KeyVersion.
         :type vault_id: str
 
+        :param restored_from_key_version_id:
+            The value to assign to the restored_from_key_version_id property of this KeyVersion.
+        :type restored_from_key_version_id: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -111,7 +115,8 @@ class KeyVersion(object):
             'origin': 'str',
             'time_created': 'datetime',
             'time_of_deletion': 'datetime',
-            'vault_id': 'str'
+            'vault_id': 'str',
+            'restored_from_key_version_id': 'str'
         }
 
         self.attribute_map = {
@@ -122,7 +127,8 @@ class KeyVersion(object):
             'origin': 'origin',
             'time_created': 'timeCreated',
             'time_of_deletion': 'timeOfDeletion',
-            'vault_id': 'vaultId'
+            'vault_id': 'vaultId',
+            'restored_from_key_version_id': 'restoredFromKeyVersionId'
         }
 
         self._compartment_id = None
@@ -133,6 +139,7 @@ class KeyVersion(object):
         self._time_created = None
         self._time_of_deletion = None
         self._vault_id = None
+        self._restored_from_key_version_id = None
 
     @property
     def compartment_id(self):
@@ -210,7 +217,7 @@ class KeyVersion(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this KeyVersion.
-        The key version's current state.
+        The key version's current lifecycle state.
 
         Example: `ENABLED`
 
@@ -227,7 +234,7 @@ class KeyVersion(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this KeyVersion.
-        The key version's current state.
+        The key version's current lifecycle state.
 
         Example: `ENABLED`
 
@@ -244,7 +251,9 @@ class KeyVersion(object):
     def origin(self):
         """
         Gets the origin of this KeyVersion.
-        The source of the key material. When this value is INTERNAL, OCI KMS created the key material. When this value is EXTERNAL, the key material was imported
+        The source of the key material. When this value is `INTERNAL`, Key Management
+        created the key material. When this value is `EXTERNAL`, the key material
+        was imported from an external source.
 
         Allowed values for this property are: "INTERNAL", "EXTERNAL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -259,7 +268,9 @@ class KeyVersion(object):
     def origin(self, origin):
         """
         Sets the origin of this KeyVersion.
-        The source of the key material. When this value is INTERNAL, OCI KMS created the key material. When this value is EXTERNAL, the key material was imported
+        The source of the key material. When this value is `INTERNAL`, Key Management
+        created the key material. When this value is `EXTERNAL`, the key material
+        was imported from an external source.
 
 
         :param origin: The origin of this KeyVersion.
@@ -355,6 +366,30 @@ class KeyVersion(object):
         :type: str
         """
         self._vault_id = vault_id
+
+    @property
+    def restored_from_key_version_id(self):
+        """
+        Gets the restored_from_key_version_id of this KeyVersion.
+        The OCID of the key version from which this key version was restored.
+
+
+        :return: The restored_from_key_version_id of this KeyVersion.
+        :rtype: str
+        """
+        return self._restored_from_key_version_id
+
+    @restored_from_key_version_id.setter
+    def restored_from_key_version_id(self, restored_from_key_version_id):
+        """
+        Sets the restored_from_key_version_id of this KeyVersion.
+        The OCID of the key version from which this key version was restored.
+
+
+        :param restored_from_key_version_id: The restored_from_key_version_id of this KeyVersion.
+        :type: str
+        """
+        self._restored_from_key_version_id = restored_from_key_version_id
 
     def __repr__(self):
         return formatted_flat_dict(self)
