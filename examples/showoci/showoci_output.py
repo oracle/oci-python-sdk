@@ -103,6 +103,7 @@ class ShowOCIOutput(object):
     def print_showoci_config(self, data):
         try:
             self.print_header(data['program'], 1)
+            print("Author          : " + data['author'])
             print("Machine         : " + data['machine'])
             print("Python Version  : " + data['python'])
             if data['use_instance_principals']:
@@ -952,6 +953,27 @@ class ShowOCIOutput(object):
             self.__print_error("__print_database_nosql", e)
 
     ##########################################################################
+    # print database mysql
+    ##########################################################################
+
+    def __print_database_mysql(self, dbs):
+        try:
+            for db in dbs:
+                print(self.taba + "MYSQL   : " + db['display_name'] + " - " + db['description'] + " (" + db['mysql_version'] + ") - " + db['shape_name'])
+                print(self.tabs + "AD      : " + db['availability_domain'] + " - " + db['fault_domain'])
+                print(self.tabs + "Created : " + db['time_created'][0:16] + " (" + db['lifecycle_state'] + "), AutoBackup = " + db['backup_is_enabled'])
+                print(self.tabs + "Subnet  : " + db['subnet_name'])
+                print(self.tabs + "Size    : " + db['data_storage_size_in_gbs'] + "gb")
+
+                # Endpoints
+                for ep in db['endpoints']:
+                    print(self.tabs + "endpoint: " + str(ep['ip_address']) + ":" + ep['port'] + ", Modes: " + ep['modes'] + " (" + ep['status'] + ")")
+                print("")
+
+        except Exception as e:
+            self.__print_error("__print_database_mysql", e)
+
+    ##########################################################################
     # database
     ##########################################################################
 
@@ -969,6 +991,11 @@ class ShowOCIOutput(object):
             if 'autonomous' in list_databases:
                 self.print_header("Autonomous databases", 2)
                 self.__print_database_db_autonomous(list_databases['autonomous'])
+                print("")
+
+            if 'mysql' in list_databases:
+                self.print_header("MYSQL databases", 2)
+                self.__print_database_mysql(list_databases['mysql'])
                 print("")
 
             if 'nosql' in list_databases:
@@ -1447,7 +1474,7 @@ class ShowOCIOutput(object):
                     print(self.taba + instance['name'])
 
                 if instance['shape_ocpu'] > 0:
-                    print(self.tabs2 + "Shape: Ocpus: " + str(instance['shape_ocpu']) + ", Memory: " + str(instance['shape_memory_gb']) + "GB, Local Storage: " + str(instance['shape_storage_tb']) + "TB")
+                    print(self.tabs2 + "Shape: Ocpus: " + str(instance['shape_ocpu']) + ", Memory: " + str(instance['shape_memory_gb']) + "GB, Local Storage: " + str(instance['shape_storage_tb']) + "TB, Processor: " + str(instance['shape_processor_description']))
 
                 if 'availability_domain' in instance and 'fault_domain' in instance:
                     print(self.tabs2 + "AD   : " + instance['availability_domain'] + " - " + instance['fault_domain'])
@@ -1924,7 +1951,7 @@ class ShowOCISummary(object):
             self.__print_error("__summary_database_db_autonomous", e)
 
     ##########################################################################
-    # print nosql
+    # print nosql + mysql
     ##########################################################################
 
     def __summary_database_nosql(self, dbs):
@@ -1942,6 +1969,7 @@ class ShowOCISummary(object):
     ##########################################################################
 
     def __summary_database_main(self, list_databases):
+
         try:
 
             if len(list_databases) == 0:
@@ -1955,6 +1983,9 @@ class ShowOCISummary(object):
 
             if 'nosql' in list_databases:
                 self.__summary_database_nosql(list_databases['nosql'])
+
+            if 'mysql' in list_databases:
+                self.__summary_database_mysql(list_databases['mysql'])
 
         except Exception as e:
             self.__print_error("__summary_database_main", e)
@@ -2003,6 +2034,29 @@ class ShowOCISummary(object):
 
         except Exception as e:
             self.__print_error("__summary_database_db_system", e)
+
+    ##########################################################################
+    # Database mysql db system
+    ##########################################################################
+    def __summary_database_mysql(self, mysqls):
+
+        try:
+            for mysql in mysqls:
+
+                self.summary_global_list.append({'type': 'Total OCPUs - Mysql Database', 'size': float(mysql['shape_ocpu'])})
+
+                # add db to summary
+                if mysql['lifecycle_state'] == 'STOPPED':
+                    self.summary_global_list.append({'type': 'Stopped ' + mysql['sum_info'], 'size': 1})
+                else:
+                    self.summary_global_list.append({'type': mysql['sum_info'], 'size': 1})
+
+                if mysql['data_storage_size_in_gbs'] is not None:
+                    if mysql['data_storage_size_in_gbs'] != 'None' and mysql['data_storage_size_in_gbs'] != "":
+                        self.summary_global_list.append({'type': mysql['sum_info_storage'], 'size': float(mysql['data_storage_size_in_gbs'])})
+
+        except Exception as e:
+            self.__print_error("__summary_database_mysql", e)
 
     ##########################################################################
     # print self.__summary_core_compute_shape
@@ -2206,6 +2260,8 @@ class ShowOCICSV(object):
     csv_identity_users = []
     csv_identity_policies = []
     csv_compute = []
+    csv_db_system = []
+    csv_db_autonomous = []
     csv_database = []
     csv_network_subnet = []
     csv_network_security_list = []
@@ -2259,6 +2315,8 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("network_security_group", self.csv_network_security_group)
             self.__export_to_csv_file("network_dhcp_options", self.csv_network_dhcp_options)
             self.__export_to_csv_file("database", self.csv_database)
+            self.__export_to_csv_file("database_db_system", self.csv_db_system)
+            self.__export_to_csv_file("database_autonomous", self.csv_db_autonomous)
             self.__export_to_csv_file("load_balancer_listeners", self.csv_load_balancer)
             self.__export_to_csv_file("load_balancer_backendset", self.csv_load_balancer_bs)
             self.__export_to_csv_file("limits", self.csv_limits)
@@ -2734,10 +2792,41 @@ class ShowOCICSV(object):
         try:
             for dbs in list_db_systems:
 
+                # Db System CSV
+                dbsd = {'region_name': region_name,
+                        'availability_domain': dbs['availability_domain'],
+                        'compartment_name': dbs['compartment_name'],
+                        'status': dbs['lifecycle_state'],
+                        'type': "DB System",
+                        'name': dbs['display_name'],
+                        'shape': dbs['shape'],
+                        'cpu_core_count': dbs['cpu_core_count'],
+                        'db_storage_gb': dbs['sum_size_gb'],
+                        'shape_ocpus': dbs['shape_ocpu'],
+                        'memory_gb': dbs['shape_memory_gb'],
+                        'local_storage_tb': dbs['shape_storage_tb'],
+                        'node_count': len(dbs['db_nodes']),
+                        'version_license_model': dbs['version'],
+                        'data_subnet': dbs['data_subnet'],
+                        'backup_subnet': dbs['backup_subnet'],
+                        'scan_ips': str(', '.join(x for x in dbs['scan_ips'])),
+                        'vip_ips': str(', '.join(x for x in dbs['vip_ips'])),
+                        'cluster_name': dbs['cluster_name'],
+                        'time_created': dbs['time_created'][0:16],
+                        'domain': dbs['domain'],
+                        'db_nodes': str(', '.join(x['desc'] for x in dbs['db_nodes'])),
+                        'freeform_tags': str(', '.join(key + "=" + dbs['freeform_tags'][key] for key in dbs['freeform_tags'].keys())),
+                        'defined_tags': self.__get_defined_tags(dbs['defined_tags']),
+                        'dbsystem_id': dbs['id']
+                        }
+                self.csv_db_system.append(dbsd)
+
+                # Build the database CSV
                 for db_home in dbs['db_homes']:
 
                     for db in db_home['databases']:
 
+                        # Database CSV
                         data = {'region_name': region_name,
                                 'availability_domain': dbs['availability_domain'],
                                 'compartment_name': dbs['compartment_name'],
@@ -2806,8 +2895,40 @@ class ShowOCICSV(object):
                         'database_id': "",
                         'dbsystem_id': dbs['id']
                         }
-
                 self.csv_database.append(data)
+
+                # for autonomous only
+                dadb = {'region_name': region_name,
+                        'compartment_name': dbs['compartment_name'],
+                        'status': dbs['lifecycle_state'],
+                        'type': "Autonomous " + dbs['db_workload'],
+                        'name': dbs['display_name'],
+                        'cpu_core_count': dbs['cpu_core_count'],
+                        'db_storage_tb': dbs['data_storage_size_in_tbs'],
+                        'db_version': dbs['db_version'],
+                        'db_name': dbs['db_name'],
+                        'version_license_model': dbs['license_model'],
+                        'time_created': dbs['time_created'],
+                        'data_safe_status': dbs['data_safe_status'],
+                        'time_maintenance_begin': dbs['time_maintenance_begin'],
+                        'time_maintenance_end': dbs['time_maintenance_end'],
+                        'subnet_id': dbs['subnet_id'] if dbs['subnet_id'] != "None" else "",
+                        'subnet_name': dbs['subnet_name'] if dbs['subnet_name'] != "None" else "",
+                        'private_endpoint': dbs['private_endpoint'] if dbs['private_endpoint'] != "None" else "",
+                        'private_endpoint_label': dbs['private_endpoint_label'] if dbs['private_endpoint_label'] != "None" else "",
+                        'nsg_ids': dbs['nsg_ids'] if dbs['nsg_ids'] != "None" else "",
+                        'nsg_names': str(', '.join(x for x in dbs['nsg_names'])),
+                        'whitelisted_ips': dbs['whitelisted_ips'],
+                        'service_console_url': dbs['service_console_url'],
+                        'connection_strings': dbs['connection_strings'],
+                        'is_auto_scaling_enabled': dbs['is_auto_scaling_enabled'],
+                        'is_dedicated': dbs['is_dedicated'],
+                        'freeform_tags': str(', '.join(key + "=" + dbs['freeform_tags'][key] for key in dbs['freeform_tags'].keys())),
+                        'defined_tags': self.__get_defined_tags(dbs['defined_tags']),
+                        'id': dbs['id']
+                        }
+
+                self.csv_db_autonomous.append(dadb)
 
         except Exception as e:
             self.__print_error("__csv_database_db_autonomous", e)

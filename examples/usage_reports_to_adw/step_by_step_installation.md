@@ -55,7 +55,7 @@ Oracle Application Express (APEX) will be used for reporting.
    --> Statement 2 = endorse dynamic-group UsageDownloadGroup to read objects in tenancy usage-report
    --> Statement 3 = Allow dynamic-group UsageDownloadGroup to inspect compartments in tenancy
    --> Statement 4 = Allow dynamic-group UsageDownloadGroup to inspect tenancies in tenancy
-   * usage-report tenancy id is fixed as the bling tenant id.
+   *** Please don't change the usage report tenant OCID, it is fixed.
 ```
 
 ![](img/Image_05.png)

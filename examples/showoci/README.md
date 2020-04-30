@@ -98,6 +98,7 @@ Allow group ReadOnlyUsers to read public-ips     in tenancy
 Allow group ReadOnlyUsers to read file-family    in tenancy
 Allow group ReadOnlyUsers to read instance-configurations in tenancy
 Allow Group ReadOnlyUsers to read network-security-groups in tenancy
+Allow Group ReadOnlyUsers to read resource-availability in tenancy
     
 # Explanation:
     read instances      allows - ListInstances
@@ -107,6 +108,7 @@ Allow Group ReadOnlyUsers to read network-security-groups in tenancy
     read public-ips     allows - ListPublicIps (not used yet)
     read file-family    allows - ListExports, ListSnapshots
     read instance-configurations allows - GetInstanceConfiguration
+    read resource-availability allows - GetResourceAvailability
 
 ```
 
