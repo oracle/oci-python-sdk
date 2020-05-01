@@ -38,10 +38,11 @@
 # - oci.identity.IdentityClient
 #
 # APIs Used:
-# - IdentityClient.list_compartments - Policy COMPARTMENT_INSPECT
-# - IdentityClient.get_tenancy       - Policy TENANCY_INSPECT
-# - ObjectStorageClient.list_objects - Policy OBJECT_INSPECT
-# - ObjectStorageClient.get_object   - Policy OBJECT_READ
+# - IdentityClient.list_compartments          - Policy COMPARTMENT_INSPECT
+# - IdentityClient.get_tenancy                - Policy TENANCY_INSPECT
+# - IdentityClient.list_region_subscriptions  - Policy TENANCY_INSPECT
+# - ObjectStorageClient.list_objects          - Policy OBJECT_INSPECT
+# - ObjectStorageClient.get_object            - Policy OBJECT_READ
 #
 ##########################################################################
 # Tables used - OCI_USAGE, OCI_USAGE_TAGS, OCI_COST, OCI_COST_TAGS
@@ -55,7 +56,7 @@ import os
 import csv
 import cx_Oracle
 
-version = "20.4.27"
+version = "20.05.04"
 usage_report_namespace = "bling"
 work_report_dir = os.curdir + "/work_report_dir"
 
@@ -226,7 +227,7 @@ def check_database_table_structure_usage(connection):
 
         # if table not exist, create it
         if val == 0:
-            print("Table OCI_USAGE was not exist, creating")
+            print("   Table OCI_USAGE was not exist, creating")
             sql = "create table OCI_USAGE ("
             sql += "    TENANT_NAME             VARCHAR2(100),"
             sql += "    FILE_ID                 VARCHAR2(30),"
@@ -259,7 +260,7 @@ def check_database_table_structure_usage(connection):
 
         # if columns not exist, create them
         if val == 0:
-            print("Column TAGS_DATA does not exist in the table OCI_USAGE, adding...")
+            print("   Column TAGS_DATA does not exist in the table OCI_USAGE, adding...")
             sql = "alter table OCI_USAGE add (TAGS_DATA VARCHAR2(4000))"
             cursor.execute(sql)
 
@@ -270,7 +271,7 @@ def check_database_table_structure_usage(connection):
 
         # if table not exist, create it
         if val == 0:
-            print("Table OCI_USAGE_TAG_KEYS was not exist, creating")
+            print("   Table OCI_USAGE_TAG_KEYS was not exist, creating")
             sql = "CREATE TABLE OCI_USAGE_TAG_KEYS (TENANT_NAME VARCHAR2(100), TAG_KEY VARCHAR2(100), "
             sql += "CONSTRAINT OCI_USAGE_TAG_KEYS_PK PRIMARY KEY(TENANT_NAME,TAG_KEY)"
             sql += ")"
@@ -278,6 +279,30 @@ def check_database_table_structure_usage(connection):
             print("   Table OCI_USAGE_TAG_KEYS created")
         else:
             print("   Table OCI_USAGE_TAG_KEYS exist")
+
+        # check if OCI_USAGE_STATS table exist, if not create
+        sql = "select count(*) from user_tables where table_name = 'OCI_USAGE_STATS'"
+        cursor.execute(sql)
+        val, = cursor.fetchone()
+
+        # if table not exist, create it
+        if val == 0:
+            print("   Table OCI_USAGE_STATS was not exist, creating")
+            sql = "CREATE TABLE OCI_USAGE_STATS ( "
+            sql += "    TENANT_NAME             VARCHAR2(100),"
+            sql += "    FILE_ID                 VARCHAR2(30),"
+            sql += "    USAGE_INTERVAL_START    DATE,"
+            sql += "    NUM_ROWS                NUMBER,"
+            sql += "    UPDATE_DATE             DATE,"
+            sql += "    AGENT_VERSION           VARCHAR2(30),"
+            sql += "    CONSTRAINT OCI_USAGE_STATS_PK PRIMARY KEY (TENANT_NAME,FILE_ID,USAGE_INTERVAL_START)"
+            sql += ")"
+            cursor.execute(sql)
+            print("   Table OCI_USAGE_STATS created")
+
+            update_usage_stats(connection)
+        else:
+            print("   Table OCI_USAGE_STATS exist")
 
         # close cursor
         cursor.close()
@@ -288,6 +313,161 @@ def check_database_table_structure_usage(connection):
 
     except Exception as e:
         raise Exception("\nError manipulating database at check_database_table_structure_usage() - " + str(e))
+
+
+##########################################################################
+# Check Index Structure Usage to be created after the first load
+##########################################################################
+def check_database_index_structure_usage(connection):
+    try:
+        # open cursor
+        cursor = connection.cursor()
+
+        # check if index OCI_USAGE_1IX exist in OCI_USAGE table, if not create
+        sql = "select count(*) from user_indexes where table_name = 'OCI_USAGE' and index_name='OCI_USAGE_1IX'"
+        cursor.execute(sql)
+        val, = cursor.fetchone()
+
+        # if index not exist, create it
+        if val == 0:
+            print("\nChecking Index for OCI_USAGE")
+            print("   Index OCI_USAGE_1IX does not exist for table OCI_USAGE, adding...")
+            sql = "CREATE INDEX OCI_USAGE_1IX ON OCI_USAGE(TENANT_NAME,USAGE_INTERVAL_START)"
+            cursor.execute(sql)
+            print("   Index created.")
+
+        # close cursor
+        cursor.close()
+
+    except cx_Oracle.DatabaseError as e:
+        print("\nError manipulating database at check_database_index_structure_usage() - " + str(e) + "\n")
+        raise SystemExit
+
+    except Exception as e:
+        raise Exception("\nError manipulating database at check_database_index_structure_usage() - " + str(e))
+
+
+##########################################################################
+# Check Index Structure Usage to be created after the first load
+##########################################################################
+def check_database_index_structure_cost(connection):
+    try:
+        # open cursor
+        cursor = connection.cursor()
+
+        # check if index OCI_USAGE_1IX exist in OCI_USAGE table, if not create
+        sql = "select count(*) from user_indexes where table_name = 'OCI_COST' and index_name='OCI_COST_1IX'"
+        cursor.execute(sql)
+        val, = cursor.fetchone()
+
+        # if index not exist, create it
+        if val == 0:
+            print("\nChecking Index for OCI_COST")
+            print("   Index OCI_COST_1IX does not exist for table OCI_COST, adding...")
+            sql = "CREATE INDEX OCI_COST_1IX ON OCI_COST(TENANT_NAME,USAGE_INTERVAL_START)"
+            cursor.execute(sql)
+            print("   Index created.")
+
+        # close cursor
+        cursor.close()
+
+    except cx_Oracle.DatabaseError as e:
+        print("\nError manipulating database at check_database_index_structure_cost() - " + str(e) + "\n")
+        raise SystemExit
+
+    except Exception as e:
+        raise Exception("\nError manipulating database at check_database_index_structure_cost() - " + str(e))
+
+
+##########################################################################
+# update_cost_stats
+##########################################################################
+def update_cost_stats(connection):
+    try:
+        # open cursor
+        cursor = connection.cursor()
+
+        print("\nMerging statistics into OCI_COST_STATS...")
+
+        # run merge to oci_update_stats
+        sql = "merge into OCI_COST_STATS a "
+        sql += "using "
+        sql += "( "
+        sql += "    select  "
+        sql += "        tenant_name, "
+        sql += "        file_id, "
+        sql += "        USAGE_INTERVAL_START, "
+        sql += "        sum(COST_MY_COST) COST_MY_COST, "
+        sql += "        count(*) NUM_ROWS "
+        sql += "    from  "
+        sql += "        oci_cost "
+        sql += "    group by  "
+        sql += "        tenant_name, "
+        sql += "        file_id, "
+        sql += "        USAGE_INTERVAL_START "
+        sql += ") b "
+        sql += "on (a.tenant_name=b.tenant_name and a.file_id=b.file_id and a.USAGE_INTERVAL_START=b.USAGE_INTERVAL_START) "
+        sql += "when matched then update set a.num_rows=b.num_rows, a.COST_MY_COST=b.COST_MY_COST, a.UPDATE_DATE=sysdate, a.AGENT_VERSION=:version "
+        sql += "where a.num_rows <> b.num_rows "
+        sql += "when not matched then insert (TENANT_NAME,FILE_ID,USAGE_INTERVAL_START,NUM_ROWS,COST_MY_COST,UPDATE_DATE,AGENT_VERSION)  "
+        sql += "   values (b.TENANT_NAME,b.FILE_ID,b.USAGE_INTERVAL_START,b.NUM_ROWS,b.COST_MY_COST,sysdate,:version) "
+
+        cursor.execute(sql, {"version": version})
+        connection.commit()
+        print("   Merge Completed, " + str(cursor.rowcount) + " rows merged")
+        cursor.close()
+
+    except cx_Oracle.DatabaseError as e:
+        print("\nError manipulating database at update_cost_stats() - " + str(e) + "\n")
+        raise SystemExit
+
+    except Exception as e:
+        raise Exception("\nError manipulating database at update_cost_stats() - " + str(e))
+
+
+##########################################################################
+# update_usage_stats
+##########################################################################
+def update_usage_stats(connection):
+    try:
+        # open cursor
+        cursor = connection.cursor()
+
+        print("\nMerging statistics into OCI_USAGE_STATS...")
+
+        # run merge to oci_update_stats
+        sql = "merge into OCI_USAGE_STATS a "
+        sql += "using "
+        sql += "( "
+        sql += "    select  "
+        sql += "        tenant_name, "
+        sql += "        file_id, "
+        sql += "        USAGE_INTERVAL_START, "
+        sql += "        count(*) NUM_ROWS "
+        sql += "    from  "
+        sql += "        oci_usage "
+        sql += "    group by  "
+        sql += "        tenant_name, "
+        sql += "        file_id, "
+        sql += "        USAGE_INTERVAL_START "
+        sql += ") b "
+        sql += "on (a.tenant_name=b.tenant_name and a.file_id=b.file_id and a.USAGE_INTERVAL_START=b.USAGE_INTERVAL_START) "
+        sql += "when matched then update set a.num_rows=b.num_rows, a.UPDATE_DATE=sysdate, a.AGENT_VERSION=:version "
+        sql += "where a.num_rows <> b.num_rows "
+        sql += "when not matched then insert (TENANT_NAME,FILE_ID,USAGE_INTERVAL_START,NUM_ROWS,UPDATE_DATE,AGENT_VERSION)  "
+        sql += "   values (b.TENANT_NAME,b.FILE_ID,b.USAGE_INTERVAL_START,b.NUM_ROWS,sysdate,:version) "
+
+        cursor.execute(sql, {"version": version})
+        connection.commit()
+        print("   Merge Completed, " + str(cursor.rowcount) + " rows merged")
+        cursor.close()
+
+    except cx_Oracle.DatabaseError as e:
+        print("\nError manipulating database at update_usage_stats() - " + str(e) + "\n")
+        raise SystemExit
+
+    except Exception as e:
+        raise Exception("\nError manipulating database at update_usage_stats() - " + str(e))
 
 
 ##########################################################################
@@ -305,7 +485,7 @@ def check_database_table_structure_cost(connection):
 
         # if table not exist, create it
         if val == 0:
-            print("Table OCI_COST was not exist, creating")
+            print("   Table OCI_COST was not exist, creating")
             sql = "create table OCI_COST ("
             sql += "    TENANT_NAME             VARCHAR2(100),"
             sql += "    FILE_ID                 VARCHAR2(30),"
@@ -346,7 +526,7 @@ def check_database_table_structure_cost(connection):
 
         # if table not exist, create it
         if val == 0:
-            print("Table OCI_COST_TAG_KEYS was not exist, creating")
+            print("   Table OCI_COST_TAG_KEYS was not exist, creating")
             sql = "CREATE TABLE OCI_COST_TAG_KEYS (TENANT_NAME VARCHAR2(100), TAG_KEY VARCHAR2(100), "
             sql += "CONSTRAINT OCI_COST_TAG_KEYS_PK PRIMARY KEY(TENANT_NAME,TAG_KEY)"
             sql += ")"
@@ -354,6 +534,31 @@ def check_database_table_structure_cost(connection):
             print("   Table OCI_COST_TAG_KEYS created")
         else:
             print("   Table OCI_COST_TAG_KEYS exist")
+
+        # check if OCI_COST_STATS table exist, if not create
+        sql = "select count(*) from user_tables where table_name = 'OCI_COST_STATS'"
+        cursor.execute(sql)
+        val, = cursor.fetchone()
+
+        # if table not exist, create it
+        if val == 0:
+            print("   Table OCI_COST_STATS was not exist, creating")
+            sql = "CREATE TABLE OCI_COST_STATS ( "
+            sql += "    TENANT_NAME             VARCHAR2(100),"
+            sql += "    FILE_ID                 VARCHAR2(30),"
+            sql += "    USAGE_INTERVAL_START    DATE,"
+            sql += "    NUM_ROWS                NUMBER,"
+            sql += "    COST_MY_COST            NUMBER,"
+            sql += "    UPDATE_DATE             DATE,"
+            sql += "    AGENT_VERSION           VARCHAR2(30),"
+            sql += "    CONSTRAINT OCI_COST_STATS_PK PRIMARY KEY (TENANT_NAME,FILE_ID,USAGE_INTERVAL_START)"
+            sql += ")"
+            cursor.execute(sql)
+            print("   Table OCI_COST_STATS created")
+
+            update_cost_stats(connection)
+        else:
+            print("   Table OCI_COST_STATS exist")
 
         # close cursor
         cursor.close()
@@ -761,11 +966,25 @@ def main_process():
             identity.base_client.session.proxies = {'https': cmd.proxy}
 
         tenancy = identity.get_tenancy(config["tenancy"]).data
+        tenancy_home_region = ""
+
+        # find home region full name
+        subscribed_regions = identity.list_region_subscriptions(tenancy.id).data
+        for reg in subscribed_regions:
+            if reg.is_home_region:
+                tenancy_home_region = str(reg.region_name)
+
         print("   Tenant Name : " + str(tenancy.name))
         print("   Tenant Id   : " + tenancy.id)
         print("   App Version : " + version)
+        print("   Home Region : " + tenancy_home_region)
         print("")
 
+        # set signer home region
+        signer.region = tenancy_home_region
+        config['region'] = tenancy_home_region
+
+        # Extract compartments
         compartments = identity_read_compartments(identity, tenancy)
 
     except Exception as e:
@@ -794,11 +1013,11 @@ def main_process():
         # for usage and cost
         ###############################
         print("\nChecking Last Loaded File...")
-        sql = "select nvl(max(file_id),'0') as file_id from OCI_USAGE where TENANT_NAME=:tenant_name"
+        sql = "select nvl(max(file_id),'0') as file_id from OCI_USAGE where to_char(TENANT_NAME)=:tenant_name"
         cursor.execute(sql, {"tenant_name": str(tenancy.name)})
         max_usage_file_id, = cursor.fetchone()
 
-        sql = "select nvl(max(file_id),'0') as file_id from OCI_COST where TENANT_NAME=:tenant_name"
+        sql = "select nvl(max(file_id),'0') as file_id from OCI_COST where to_char(TENANT_NAME)=:tenant_name"
         cursor.execute(sql, {"tenant_name": str(tenancy.name)})
         max_cost_file_id, = cursor.fetchone()
 
@@ -828,21 +1047,31 @@ def main_process():
         # Handle Report Usage
         #############################
         print("\nHandling Usage Report...")
-        num = 0
+        usage_num = 0
         objects = object_storage.list_objects(usage_report_namespace, str(tenancy.id), fields="timeCreated,size", limit=999, prefix="reports/usage-csv/", start="reports/usage-csv/" + max_usage_file_id).data
         for object_file in objects.objects:
-            num += load_usage_file(connection, object_storage, object_file, max_usage_file_id, cmd, tenancy, compartments)
-        print("\n   Total " + str(num) + " Usage Files Loaded")
+            usage_num += load_usage_file(connection, object_storage, object_file, max_usage_file_id, cmd, tenancy, compartments)
+        print("\n   Total " + str(usage_num) + " Usage Files Loaded")
 
         #############################
         # Handle Cost Usage
         #############################
         print("\nHandling Cost Report...")
-        num = 0
+        cost_num = 0
         objects = object_storage.list_objects(usage_report_namespace, str(tenancy.id), fields="timeCreated,size", limit=999, prefix="reports/cost-csv/", start="reports/cost-csv/" + max_cost_file_id).data
         for object_file in objects.objects:
-            num += load_cost_file(connection, object_storage, object_file, max_cost_file_id, cmd, tenancy, compartments)
-        print("\n   Total " + str(num) + " Cost Files Loaded")
+            cost_num += load_cost_file(connection, object_storage, object_file, max_cost_file_id, cmd, tenancy, compartments)
+        print("\n   Total " + str(cost_num) + " Cost Files Loaded")
+
+        # Handle Index structure if not exist
+        check_database_index_structure_usage(connection)
+        check_database_index_structure_cost(connection)
+
+        # Update oci_usage_stats and oci_cost_stats if there were files
+        if usage_num > 0:
+            update_usage_stats(connection)
+        if cost_num > 0:
+            update_cost_stats(connection)
 
         # Close Connection
         connection.close()

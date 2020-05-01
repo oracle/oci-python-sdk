@@ -63,6 +63,7 @@
 # - oci.events.EventsClient
 # - oci.bds.BdsClient
 # - oci.waas.WaasClient
+# - oci.mysql.DbSystemClient
 #
 # Modules Not Yet Covered:
 # - oci.secrets.SecretsClient
@@ -79,7 +80,7 @@ import sys
 import argparse
 import datetime
 
-version = "20.04.20"
+version = "20.05.04"
 
 ##########################################################################
 # check OCI version
