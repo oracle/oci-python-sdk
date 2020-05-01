@@ -110,8 +110,12 @@ logger = logging.getLogger(__name__)
 
 
 def is_region(region_name):
-    if region_name.lower() not in REGIONS:
-        return _check_and_add_region_metadata(region_name)
+    region = region_name.lower()
+
+    if region in REGIONS_SHORT_NAMES:
+        return False
+    if region not in REGIONS:
+        return _check_and_add_region_metadata(region)
     return True
 
 
@@ -119,6 +123,9 @@ def is_region_short_name(region):
     region = region.lower()
     if region in REGIONS_SHORT_NAMES:
         return True
+
+    if region in REGIONS:
+        return False
 
     if _check_and_add_region_metadata(region):
         # Above call will return true if the requested region is now known, after considering additional sources
@@ -180,7 +187,7 @@ def endpoint_for(service, region=None, endpoint=None, service_endpoint_template=
 
     region = region.lower()
     # If unable to find region information from existing maps, check the other sources and add
-    if not is_region(region) or not is_region_short_name(region):
+    if not (region in REGIONS or region in REGIONS_SHORT_NAMES):
         _check_and_add_region_metadata(region)
     return _endpoint_for(service, region, service_endpoint_template)
 
