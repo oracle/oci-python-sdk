@@ -2,7 +2,13 @@
 # Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
+from __future__ import absolute_import
+import os
+import json
+import logging
+
 from . import service_endpoints
+from oci._vendor import six
 
 REGIONS_SHORT_NAMES = {
     'phx': 'us-phoenix-1',
@@ -88,32 +94,182 @@ SERVICE_ENDPOINTS['auth'] = 'https://auth.{domain}'
 
 DOMAIN_FORMAT = "{region}.{secondLevelDomain}"
 
+OCI_REGION_METADATA_ENV_VAR_NAME = "OCI_REGION_METADATA"
+
+REALM_KEY_PROPERTY_NAME = "realmKey"
+REALM_DOMAIN_COMPONENT_PROPERTY_NAME = "realmDomainComponent"
+REGION_KEY_PROPERTY_NAME = "regionKey"
+REGION_IDENTIFIER_PROPERTY_NAME = "regionIdentifier"
+
+REGION_METADATA_KEYS = (REALM_KEY_PROPERTY_NAME,
+                        REALM_DOMAIN_COMPONENT_PROPERTY_NAME,
+                        REGION_KEY_PROPERTY_NAME,
+                        REGION_IDENTIFIER_PROPERTY_NAME)
+
+logger = logging.getLogger(__name__)
+
 
 def is_region(region_name):
-    return region_name.lower() in REGIONS
+    if region_name.lower() not in REGIONS:
+        return _check_and_add_region_metadata(region_name)
+    return True
+
+
+def is_region_short_name(region):
+    region = region.lower()
+    if region in REGIONS_SHORT_NAMES:
+        return True
+
+    if _check_and_add_region_metadata(region):
+        # Above call will return true if the requested region is now known, after considering additional sources
+        # Check is needed if region short code was passed
+        if region in REGIONS_SHORT_NAMES:
+            return True
+
+    return False
+
+
+def get_region_from_short_name(region):
+    region = region.lower()
+    if not is_region_short_name(region):
+        logger.info("Could not find region information in lookups and any other sources")
+        # Return the input string to allow fallback to OC1
+        return region
+    # Return region from lookup
+    return REGIONS_SHORT_NAMES[region]
+
+
+def get_realm_from_region(region):
+    region = region.lower()
+    # If short name is passed, get the long name
+    # get_region_from_short_name also adds metadata from other sources
+    region = get_region_from_short_name(region)
+    if not is_region(region):
+        logger.info("Cannot find region information in lookups and other sources, defaulting to OC1 realm")
+        return "oc1"
+    else:
+        return REGION_REALMS[region]
 
 
 def endpoint_for(service, region=None, endpoint=None, service_endpoint_template=None):
     """Returns the base URl for a service, either in the given region or at the specified endpoint.
 
     If endpoint and region are provided, endpoint is used.
+
+    If the region information is not available in the existing maps, following sources are checked in order:
+    1. Regions Configuration File at ~/.oci/regions-config.json
+    2. Region Metadata Environment variable
+    3. Instance Metadata Service
+
+    The region metadata schema is:
+    {
+        "realmKey" : string,
+        "realmDomainComponent" : string,
+        "regionKey" : string,
+        "regionIdentifier" : string
+    }
+
+    If the region still cannot be resolved, we fall back to OC1 realm
     """
     if not (endpoint or region):
         raise ValueError("Must supply either a region or an endpoint.")
-    elif endpoint:
+
+    if endpoint:
         # endpoint takes priority
         return _format_endpoint(service, endpoint, service_endpoint_template)
-    else:
-        # no endpoint provided
-        region = region.lower()
 
-        # for backwards compatibility, if region already has a '.'
-        # then consider it the full domain and do not append '.oraclecloud.com'
-        if '.' in region:
-            return _format_endpoint(service, region, service_endpoint_template)
-        else:
-            # get endpoint from template
-            return _endpoint(service, region, service_endpoint_template)
+    region = region.lower()
+    # If unable to find region information from existing maps, check the other sources and add
+    if not is_region(region) or not is_region_short_name(region):
+        _check_and_add_region_metadata(region)
+    return _endpoint_for(service, region, service_endpoint_template)
+
+
+def _check_and_add_region_metadata(region):
+    region = region.lower()
+    # Follow the hierarchy of sources
+    if _set_region_metadata_from_cfg_file(region):
+        return True
+    elif _set_region_metadata_from_env_var(region):
+        return True
+    elif _set_region_from_instance_metadata_service(region):
+        return True
+    return False
+
+
+def _set_region_metadata_from_cfg_file(region):
+    return False
+
+
+def _set_region_metadata_from_env_var(region):
+    if os.environ.get(OCI_REGION_METADATA_ENV_VAR_NAME):
+        # Try importing JSONDecodeError for Python 2 and Python 3 compatibility
+        try:
+            from json.decoder import JSONDecodeError
+        except ImportError:
+            JSONDecodeError = ValueError
+        try:
+            region_metadata = json.loads(os.environ.get(OCI_REGION_METADATA_ENV_VAR_NAME))
+        except JSONDecodeError as e:
+            # Unable to parse the env variable
+            logger.debug("Decoding JSON failed because of error: {}".format(e))
+            return False
+
+        if _check_valid_schema(region_metadata):
+            region_metadata = {k: v.lower() for k, v in six.iteritems(region_metadata)}
+            return _add_region_information_to_lookup(region_metadata, region)
+
+    return False
+
+
+def _set_region_from_instance_metadata_service(region):
+    return False
+
+
+def _check_valid_schema(region_metadata):
+    for key in REGION_METADATA_KEYS:
+        if key not in region_metadata:
+            logger.debug("Key {} not found in region metadata".format(key))
+            return False
+        if region_metadata[key] == "":
+            logger.debug("Value for key {} in region metadata is empty".format(key))
+            return False
+    return True
+
+
+def _add_region_information_to_lookup(region_metadata, region):
+    # Check if the region metadata has information about the requested region
+    # Add the region information from region_metadata to the existing lookups
+    if region_metadata[REGION_KEY_PROPERTY_NAME] not in REGIONS_SHORT_NAMES:
+        REGIONS_SHORT_NAMES[region_metadata[REGION_KEY_PROPERTY_NAME]] = region_metadata[REGION_IDENTIFIER_PROPERTY_NAME]
+
+    if region_metadata[REGION_IDENTIFIER_PROPERTY_NAME] not in REGION_REALMS:
+        REGION_REALMS[region_metadata[REGION_IDENTIFIER_PROPERTY_NAME]] = region_metadata[REALM_KEY_PROPERTY_NAME]
+
+    if region_metadata[REALM_KEY_PROPERTY_NAME] not in REALMS:
+        REALMS[region_metadata[REALM_KEY_PROPERTY_NAME]] = region_metadata[REALM_DOMAIN_COMPONENT_PROPERTY_NAME]
+
+    if region_metadata[REGION_IDENTIFIER_PROPERTY_NAME] not in REGIONS:
+        REGIONS.append(region_metadata[REGION_IDENTIFIER_PROPERTY_NAME])
+
+    # Return True if the requested region is now known
+    if region == region_metadata[REGION_IDENTIFIER_PROPERTY_NAME] or region == region_metadata[REGION_KEY_PROPERTY_NAME]:
+        return True
+
+    return False
+
+
+def _endpoint_for(service, region=None, service_endpoint_template=None):
+    # Convert short code to region identifier
+    if region in REGIONS_SHORT_NAMES:
+        region = REGIONS_SHORT_NAMES[region]
+    # for backwards compatibility, if region already has a '.'
+    # then consider it the full domain and do not append '.oraclecloud.com'
+    if '.' in region:
+        return _format_endpoint(service, region, service_endpoint_template)
+    else:
+        # get endpoint from template
+        return _endpoint(service, region, service_endpoint_template)
 
 
 def _endpoint(service, region, service_endpoint_template=None):
