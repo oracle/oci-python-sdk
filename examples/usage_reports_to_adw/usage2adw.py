@@ -330,7 +330,7 @@ def check_database_index_structure_usage(connection):
 
         # if index not exist, create it
         if val == 0:
-            print("Checking Index for OCI_USAGE")
+            print("\nChecking Index for OCI_USAGE")
             print("   Index OCI_USAGE_1IX does not exist for table OCI_USAGE, adding...")
             sql = "CREATE INDEX OCI_USAGE_1IX ON OCI_USAGE(TENANT_NAME,USAGE_INTERVAL_START)"
             cursor.execute(sql)
@@ -345,6 +345,38 @@ def check_database_index_structure_usage(connection):
 
     except Exception as e:
         raise Exception("\nError manipulating database at check_database_index_structure_usage() - " + str(e))
+
+
+##########################################################################
+# Check Index Structure Usage to be created after the first load
+##########################################################################
+def check_database_index_structure_cost(connection):
+    try:
+        # open cursor
+        cursor = connection.cursor()
+
+        # check if index OCI_USAGE_1IX exist in OCI_USAGE table, if not create
+        sql = "select count(*) from user_indexes where table_name = 'OCI_COST' and index_name='OCI_COST_1IX'"
+        cursor.execute(sql)
+        val, = cursor.fetchone()
+
+        # if index not exist, create it
+        if val == 0:
+            print("\nChecking Index for OCI_COST")
+            print("   Index OCI_COST_1IX does not exist for table OCI_COST, adding...")
+            sql = "CREATE INDEX OCI_COST_1IX ON OCI_COST(TENANT_NAME,USAGE_INTERVAL_START)"
+            cursor.execute(sql)
+            print("   Index created.")
+
+        # close cursor
+        cursor.close()
+
+    except cx_Oracle.DatabaseError as e:
+        print("\nError manipulating database at check_database_index_structure_cost() - " + str(e) + "\n")
+        raise SystemExit
+
+    except Exception as e:
+        raise Exception("\nError manipulating database at check_database_index_structure_cost() - " + str(e))
 
 
 ##########################################################################
@@ -1033,6 +1065,7 @@ def main_process():
 
         # Handle Index structure if not exist
         check_database_index_structure_usage(connection)
+        check_database_index_structure_cost(connection)
 
         # Update oci_usage_stats and oci_cost_stats if there were files
         if usage_num > 0:

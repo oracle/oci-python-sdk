@@ -7,8 +7,8 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 =====================
 20.05.04 - 2020-05-04
 =====================
-* Added connectivity to the home region where blink bucket exist
-* Added performance improvements by adding stats tables OCI_USAGE_STATS and OCI_COST_STATS and index OCI_USAGE_1IX,
+* Added connectivity to the home region where bling bucket exist
+* Added performance improvements by adding stats tables OCI_USAGE_STATS and OCI_COST_STATS and indexes OCI_USAGE_1IX, OCI_COST_1IX,
   Please run the load script before importing the APEX app in order to create those tables and index
 
 =====================
