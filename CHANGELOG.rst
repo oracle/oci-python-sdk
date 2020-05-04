@@ -4,13 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.14.1 - TBD
+2.14.1 - 2020-05-05
 ====================
 
 Added
 -----
-* TBD
-
+* Support for updating the license type of database systems in the Database service
+* Support for updating the version of 19c autonomous databases in the Database service
+* Support for backup and restore functionality in the Key Management service
+* Support for reports in the Marketplace service
+* Support for calling Oracle Cloud Infrastructure services in the ap-hyderabad-1 region
 ====================
 2.14.0 - 2020-04-28
 ====================
