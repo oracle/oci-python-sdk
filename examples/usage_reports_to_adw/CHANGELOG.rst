@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.05.04 - 2020-05-04
+=====================
+* Added connectivity to the home region where bling bucket exist
+* Added performance improvements by adding stats tables OCI_USAGE_STATS and OCI_COST_STATS and indexes OCI_USAGE_1IX, OCI_COST_1IX,
+  Please run the load script before importing the APEX app in order to create those tables and index
+
+=====================
 20.04.27 - 2020-04-27
 =====================
 * Added limit, prefix and start to the list_object call

@@ -166,7 +166,9 @@ class MarketplaceClient(object):
             The unique identifier for the accepted terms of use agreement.
 
         :param str signature: (required)
-            A signature generated for the listing package terms of use agreements that can be retrieved with GetAgreement.
+            A signature generated for the listing package terms of use agreements that you can retrieve with a `GetAgreement`__ API call.
+
+            __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/marketplace/latest/Agreement/GetAgreement
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
@@ -416,6 +418,25 @@ class MarketplaceClient(object):
         Gets detailed information about a listing, including the listing's name, version, description, and
         resources.
 
+        If you plan to launch an instance from an image listing, you must first subscribe to the listing. When
+        you launch the instance, you also need to provide the image ID of the listing resource version that you want.
+
+        Subscribing to the listing requires you to first get a signature from the terms of use agreement for the
+        listing resource version. To get the signature, issue a `GetAppCatalogListingAgreements`__ API call.
+        The `AppCatalogListingResourceVersionAgreements`__ object, including
+        its signature, is returned in the response. With the signature for the terms of use agreement for the desired
+        listing resource version, create a subscription by issuing a
+        `CreateAppCatalogSubscription`__ API call.
+
+        To get the image ID to launch an instance, issue a `GetAppCatalogListingResourceVersion`__ API call.
+        Lastly, to launch the instance, use the image ID of the listing resource version to issue a `LaunchInstance`__ API call.
+
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance
+
 
         :param str listing_id: (required)
             The unique identifier for the listing.
@@ -499,6 +520,25 @@ class MarketplaceClient(object):
     def get_package(self, listing_id, package_version, **kwargs):
         """
         Get the details of the specified version of a package, including information needed to launch the package.
+
+        If you plan to launch an instance from an image listing, you must first subscribe to the listing. When
+        you launch the instance, you also need to provide the image ID of the listing resource version that you want.
+
+        Subscribing to the listing requires you to first get a signature from the terms of use agreement for the
+        listing resource version. To get the signature, issue a `GetAppCatalogListingAgreements`__ API call.
+        The `AppCatalogListingResourceVersionAgreements`__ object, including
+        its signature, is returned in the response. With the signature for the terms of use agreement for the desired
+        listing resource version, create a subscription by issuing a
+        `CreateAppCatalogSubscription`__ API call.
+
+        To get the image ID to launch an instance, issue a `GetAppCatalogListingResourceVersion`__ API call.
+        Lastly, to launch the instance, use the image ID of the listing resource version to issue a `LaunchInstance`__ API call.
+
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance
 
 
         :param str listing_id: (required)
@@ -896,6 +936,25 @@ class MarketplaceClient(object):
         Gets a list of listings from Oracle Cloud Infrastructure Marketplace by searching keywords and
         filtering according to listing attributes.
 
+        If you plan to launch an instance from an image listing, you must first subscribe to the listing. When
+        you launch the instance, you also need to provide the image ID of the listing resource version that you want.
+
+        Subscribing to the listing requires you to first get a signature from the terms of use agreement for the
+        listing resource version. To get the signature, issue a `GetAppCatalogListingAgreements`__ API call.
+        The `AppCatalogListingResourceVersionAgreements`__ object, including
+        its signature, is returned in the response. With the signature for the terms of use agreement for the desired
+        listing resource version, create a subscription by issuing a
+        `CreateAppCatalogSubscription`__ API call.
+
+        To get the image ID to launch an instance, issue a `GetAppCatalogListingResourceVersion`__ API call.
+        Lastly, to launch the instance, use the image ID of the listing resource version to issue a `LaunchInstance`__ API call.
+
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance
+
 
         :param list[str] name: (optional)
             The name of the listing.
@@ -1051,6 +1110,25 @@ class MarketplaceClient(object):
     def list_packages(self, listing_id, **kwargs):
         """
         Gets the list of packages for a listing.
+
+        If you plan to launch an instance from an image listing, you must first subscribe to the listing. When
+        you launch the instance, you also need to provide the image ID of the listing resource version that you want.
+
+        Subscribing to the listing requires you to first get a signature from the terms of use agreement for the
+        listing resource version. To get the signature, issue a `GetAppCatalogListingAgreements`__ API call.
+        The `AppCatalogListingResourceVersionAgreements`__ object, including
+        its signature, is returned in the response. With the signature for the terms of use agreement for the desired
+        listing resource version, create a subscription by issuing a
+        `CreateAppCatalogSubscription`__ API call.
+
+        To get the image ID to launch an instance, issue a `GetAppCatalogListingResourceVersion`__ API call.
+        Lastly, to launch the instance, use the image ID of the listing resource version to issue a `LaunchInstance`__ API call.
+
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersionAgreements
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogSubscription/CreateAppCatalogSubscription
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/Instance/LaunchInstance
 
 
         :param str listing_id: (required)
@@ -1268,7 +1346,7 @@ class MarketplaceClient(object):
 
     def list_report_types(self, compartment_id, **kwargs):
         """
-        List available reports for the compartment
+        Lists available types of reports for the compartment.
 
 
         :param str compartment_id: (required)
@@ -1341,14 +1419,14 @@ class MarketplaceClient(object):
 
     def list_reports(self, report_type, date, compartment_id, **kwargs):
         """
-        List reports for the specific report type, date, and for the compartment
+        Lists reports in the compartment that match the specified report type and date.
 
 
         :param str report_type: (required)
-            Type of the report.
+            The type of the report.
 
         :param datetime date: (required)
-            Date in YYYYMMDD format
+            Date, expressed in `YYYYMMDD` format, where `Y` represents the year, `M` represents the month, and `D` represents the day.
 
         :param str compartment_id: (required)
             The unique identifier for the compartment.

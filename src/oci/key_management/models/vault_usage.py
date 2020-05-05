@@ -44,8 +44,6 @@ class VaultUsage(object):
     def key_count(self):
         """
         **[Required]** Gets the key_count of this VaultUsage.
-        The number of keys in this vault, across all compartments, excluding keys in a `DELETED` state.
-
 
         :return: The key_count of this VaultUsage.
         :rtype: int
@@ -56,8 +54,6 @@ class VaultUsage(object):
     def key_count(self, key_count):
         """
         Sets the key_count of this VaultUsage.
-        The number of keys in this vault, across all compartments, excluding keys in a `DELETED` state.
-
 
         :param key_count: The key_count of this VaultUsage.
         :type: int
@@ -68,8 +64,6 @@ class VaultUsage(object):
     def key_version_count(self):
         """
         **[Required]** Gets the key_version_count of this VaultUsage.
-        The number of key versions in this vault, across all compartments, excluding key versions in a `DELETED` state.
-
 
         :return: The key_version_count of this VaultUsage.
         :rtype: int
@@ -80,8 +74,6 @@ class VaultUsage(object):
     def key_version_count(self, key_version_count):
         """
         Sets the key_version_count of this VaultUsage.
-        The number of key versions in this vault, across all compartments, excluding key versions in a `DELETED` state.
-
 
         :param key_version_count: The key_version_count of this VaultUsage.
         :type: int

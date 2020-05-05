@@ -22,6 +22,11 @@ Key Management
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.key_management.models.BackupKeyDetails
+    oci.key_management.models.BackupLocation
+    oci.key_management.models.BackupLocationBucket
+    oci.key_management.models.BackupLocationURI
+    oci.key_management.models.BackupVaultDetails
     oci.key_management.models.ChangeKeyCompartmentDetails
     oci.key_management.models.ChangeVaultCompartmentDetails
     oci.key_management.models.CreateKeyDetails
@@ -39,6 +44,8 @@ Key Management
     oci.key_management.models.KeySummary
     oci.key_management.models.KeyVersion
     oci.key_management.models.KeyVersionSummary
+    oci.key_management.models.RestoreKeyFromObjectStoreDetails
+    oci.key_management.models.RestoreVaultFromObjectStoreDetails
     oci.key_management.models.ScheduleKeyDeletionDetails
     oci.key_management.models.ScheduleKeyVersionDeletionDetails
     oci.key_management.models.ScheduleVaultDeletionDetails

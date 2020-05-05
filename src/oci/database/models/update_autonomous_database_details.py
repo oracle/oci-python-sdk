@@ -77,6 +77,10 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the is_auto_scaling_enabled property of this UpdateAutonomousDatabaseDetails.
         :type is_auto_scaling_enabled: bool
 
+        :param db_version:
+            The value to assign to the db_version property of this UpdateAutonomousDatabaseDetails.
+        :type db_version: str
+
         """
         self.swagger_types = {
             'cpu_core_count': 'int',
@@ -90,7 +94,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'nsg_ids': 'list[str]',
             'license_model': 'str',
             'whitelisted_ips': 'list[str]',
-            'is_auto_scaling_enabled': 'bool'
+            'is_auto_scaling_enabled': 'bool',
+            'db_version': 'str'
         }
 
         self.attribute_map = {
@@ -105,7 +110,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'nsg_ids': 'nsgIds',
             'license_model': 'licenseModel',
             'whitelisted_ips': 'whitelistedIps',
-            'is_auto_scaling_enabled': 'isAutoScalingEnabled'
+            'is_auto_scaling_enabled': 'isAutoScalingEnabled',
+            'db_version': 'dbVersion'
         }
 
         self._cpu_core_count = None
@@ -120,6 +126,7 @@ class UpdateAutonomousDatabaseDetails(object):
         self._license_model = None
         self._whitelisted_ips = None
         self._is_auto_scaling_enabled = None
+        self._db_version = None
 
     @property
     def cpu_core_count(self):
@@ -468,6 +475,30 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: bool
         """
         self._is_auto_scaling_enabled = is_auto_scaling_enabled
+
+    @property
+    def db_version(self):
+        """
+        Gets the db_version of this UpdateAutonomousDatabaseDetails.
+        A valid Oracle Database version for Autonomous Database.
+
+
+        :return: The db_version of this UpdateAutonomousDatabaseDetails.
+        :rtype: str
+        """
+        return self._db_version
+
+    @db_version.setter
+    def db_version(self, db_version):
+        """
+        Sets the db_version of this UpdateAutonomousDatabaseDetails.
+        A valid Oracle Database version for Autonomous Database.
+
+
+        :param db_version: The db_version of this UpdateAutonomousDatabaseDetails.
+        :type: str
+        """
+        self._db_version = db_version
 
     def __repr__(self):
         return formatted_flat_dict(self)

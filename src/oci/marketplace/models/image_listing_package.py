@@ -103,7 +103,9 @@ class ImageListingPackage(ListingPackage):
     def app_catalog_listing_id(self):
         """
         Gets the app_catalog_listing_id of this ImageListingPackage.
-        The id of the AppCatalogListing associated with this ListingPackage.
+        The ID of the listing resource associated with this listing package. For more information, see `AppCatalogListing`__ in the Core Services API.
+
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/
 
 
         :return: The app_catalog_listing_id of this ImageListingPackage.
@@ -115,7 +117,9 @@ class ImageListingPackage(ListingPackage):
     def app_catalog_listing_id(self, app_catalog_listing_id):
         """
         Sets the app_catalog_listing_id of this ImageListingPackage.
-        The id of the AppCatalogListing associated with this ListingPackage.
+        The ID of the listing resource associated with this listing package. For more information, see `AppCatalogListing`__ in the Core Services API.
+
+        __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/latest/AppCatalogListing/
 
 
         :param app_catalog_listing_id: The app_catalog_listing_id of this ImageListingPackage.
@@ -127,7 +131,7 @@ class ImageListingPackage(ListingPackage):
     def app_catalog_listing_resource_version(self):
         """
         Gets the app_catalog_listing_resource_version of this ImageListingPackage.
-        The resource version of the AppCatalogListing associated with this ListingPackage.
+        The resource version of the listing resource associated with this listing package.
 
 
         :return: The app_catalog_listing_resource_version of this ImageListingPackage.
@@ -139,7 +143,7 @@ class ImageListingPackage(ListingPackage):
     def app_catalog_listing_resource_version(self, app_catalog_listing_resource_version):
         """
         Sets the app_catalog_listing_resource_version of this ImageListingPackage.
-        The resource version of the AppCatalogListing associated with this ListingPackage.
+        The resource version of the listing resource associated with this listing package.
 
 
         :param app_catalog_listing_resource_version: The app_catalog_listing_resource_version of this ImageListingPackage.
@@ -151,7 +155,7 @@ class ImageListingPackage(ListingPackage):
     def regions(self):
         """
         Gets the regions of this ImageListingPackage.
-        List of regions in which this ListingPackage is available.
+        The regions where the listing is available.
 
 
         :return: The regions of this ImageListingPackage.
@@ -163,7 +167,7 @@ class ImageListingPackage(ListingPackage):
     def regions(self, regions):
         """
         Sets the regions of this ImageListingPackage.
-        List of regions in which this ListingPackage is available.
+        The regions where the listing is available.
 
 
         :param regions: The regions of this ImageListingPackage.
