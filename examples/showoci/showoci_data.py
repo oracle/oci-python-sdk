@@ -1385,6 +1385,13 @@ class ShowOCIData(object):
                         'shape_ocpu': instance['shape_ocpu'],
                         'shape_memory_gb': instance['shape_memory_gb'],
                         'shape_storage_tb': instance['shape_storage_tb'],
+                        'shape_gpu_description': instance['shape_gpu_description'],
+                        'shape_gpus': instance['shape_gpus'],
+                        'shape_local_disk_description': instance['shape_local_disk_description'],
+                        'shape_local_disks': instance['shape_local_disks'],
+                        'shape_max_vnic_attachments': instance['shape_max_vnic_attachments'],
+                        'shape_networking_bandwidth_in_gbps': instance['shape_networking_bandwidth_in_gbps'],
+                        'shape_processor_description': instance['shape_processor_description'],
                         'display_name': instance['display_name'],
                         'compartment_name': instance['compartment_name'],
                         'compartment_id': instance['compartment_id'],
@@ -1829,7 +1836,8 @@ class ShowOCIData(object):
                          'shape_storage_tb': dbs['shape_storage_tb'],
                          'display_name': dbs['display_name'],
                          'lifecycle_state': dbs['lifecycle_state'],
-                         'sum_info': 'Database ' + dbs['database_edition_short'] + " - " + dbs['shape'] + " - " + dbs['license_model'], 'sum_info_storage': 'Database - Storage (GB)',
+                         'sum_info': 'Database ' + dbs['database_edition_short'] + " - " + dbs['shape'] + " - " + dbs['license_model'],
+                         'sum_info_storage': 'Database - Storage (GB)',
                          'sum_size_gb': dbs['data_storage_size_in_gbs'],
                          'database_edition': dbs['database_edition'],
                          'database_edition_short': dbs['database_edition_short'],
@@ -1926,6 +1934,7 @@ class ShowOCIData(object):
                          'is_auto_scaling_enabled': dbs['is_auto_scaling_enabled'],
                          'db_workload': dbs['db_workload'],
                          'is_dedicated': dbs['is_dedicated'],
+                         'db_version': dbs['db_version'],
                          'subnet_id': dbs['subnet_id'],
                          'subnet_name': "",
                          'data_safe_status': dbs['data_safe_status'],
@@ -1972,6 +1981,28 @@ class ShowOCIData(object):
             return data
 
     ##########################################################################
+    # __get_database_mysql
+    ##########################################################################
+    def __get_database_mysql(self, region_name, compartment):
+
+        data = []
+        try:
+            mysql = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_MYSQL, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if mysql:
+                for dbs in mysql:
+                    # Add subnet
+                    if dbs['subnet_id'] != 'None':
+                        dbs['subnet_name'] = self.__get_core_network_subnet_name(dbs['subnet_id'])
+                    else:
+                        dbs['subnet_name'] = ""
+                    data.append(dbs)
+            return data
+
+        except Exception as e:
+            self.__print_error("__get_database_mysql", e)
+            return data
+
+    ##########################################################################
     # Database
     ##########################################################################
     def __get_database_main(self, region_name, compartment):
@@ -1993,6 +2024,11 @@ class ShowOCIData(object):
             if data:
                 if len(data) > 0:
                     return_data['nosql'] = data
+
+            data = self.__get_database_mysql(region_name, compartment)
+            if data:
+                if len(data) > 0:
+                    return_data['mysql'] = data
 
             return return_data
 

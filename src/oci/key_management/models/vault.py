@@ -45,6 +45,14 @@ class Vault(object):
     #: This constant has a value of "UPDATING"
     LIFECYCLE_STATE_UPDATING = "UPDATING"
 
+    #: A constant which can be used with the lifecycle_state property of a Vault.
+    #: This constant has a value of "BACKUP_IN_PROGRESS"
+    LIFECYCLE_STATE_BACKUP_IN_PROGRESS = "BACKUP_IN_PROGRESS"
+
+    #: A constant which can be used with the lifecycle_state property of a Vault.
+    #: This constant has a value of "RESTORING"
+    LIFECYCLE_STATE_RESTORING = "RESTORING"
+
     #: A constant which can be used with the vault_type property of a Vault.
     #: This constant has a value of "VIRTUAL_PRIVATE"
     VAULT_TYPE_VIRTUAL_PRIVATE = "VIRTUAL_PRIVATE"
@@ -84,7 +92,7 @@ class Vault(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Vault.
-            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "PENDING_DELETION", "SCHEDULING_DELETION", "CANCELLING_DELETION", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "PENDING_DELETION", "SCHEDULING_DELETION", "CANCELLING_DELETION", "UPDATING", "BACKUP_IN_PROGRESS", "RESTORING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -106,6 +114,10 @@ class Vault(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type vault_type: str
 
+        :param restored_from_vault_id:
+            The value to assign to the restored_from_vault_id property of this Vault.
+        :type restored_from_vault_id: str
+
         :param wrappingkey_id:
             The value to assign to the wrappingkey_id property of this Vault.
         :type wrappingkey_id: str
@@ -123,6 +135,7 @@ class Vault(object):
             'time_created': 'datetime',
             'time_of_deletion': 'datetime',
             'vault_type': 'str',
+            'restored_from_vault_id': 'str',
             'wrappingkey_id': 'str'
         }
 
@@ -138,6 +151,7 @@ class Vault(object):
             'time_created': 'timeCreated',
             'time_of_deletion': 'timeOfDeletion',
             'vault_type': 'vaultType',
+            'restored_from_vault_id': 'restoredFromVaultId',
             'wrappingkey_id': 'wrappingkeyId'
         }
 
@@ -152,6 +166,7 @@ class Vault(object):
         self._time_created = None
         self._time_of_deletion = None
         self._vault_type = None
+        self._restored_from_vault_id = None
         self._wrappingkey_id = None
 
     @property
@@ -332,11 +347,11 @@ class Vault(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this Vault.
-        The vault's current state.
+        The vault's current lifecycle state.
 
         Example: `DELETED`
 
-        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "PENDING_DELETION", "SCHEDULING_DELETION", "CANCELLING_DELETION", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "PENDING_DELETION", "SCHEDULING_DELETION", "CANCELLING_DELETION", "UPDATING", "BACKUP_IN_PROGRESS", "RESTORING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -349,7 +364,7 @@ class Vault(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Vault.
-        The vault's current state.
+        The vault's current lifecycle state.
 
         Example: `DELETED`
 
@@ -357,7 +372,7 @@ class Vault(object):
         :param lifecycle_state: The lifecycle_state of this Vault.
         :type: str
         """
-        allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "PENDING_DELETION", "SCHEDULING_DELETION", "CANCELLING_DELETION", "UPDATING"]
+        allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "PENDING_DELETION", "SCHEDULING_DELETION", "CANCELLING_DELETION", "UPDATING", "BACKUP_IN_PROGRESS", "RESTORING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -481,10 +496,38 @@ class Vault(object):
         self._vault_type = vault_type
 
     @property
+    def restored_from_vault_id(self):
+        """
+        Gets the restored_from_vault_id of this Vault.
+        The OCID of the vault from which this vault was restored, if it was restored from a backup file.
+        If you restore a vault to the same region, the vault retains the same OCID that it had when you
+        backed up the vault.
+
+
+        :return: The restored_from_vault_id of this Vault.
+        :rtype: str
+        """
+        return self._restored_from_vault_id
+
+    @restored_from_vault_id.setter
+    def restored_from_vault_id(self, restored_from_vault_id):
+        """
+        Sets the restored_from_vault_id of this Vault.
+        The OCID of the vault from which this vault was restored, if it was restored from a backup file.
+        If you restore a vault to the same region, the vault retains the same OCID that it had when you
+        backed up the vault.
+
+
+        :param restored_from_vault_id: The restored_from_vault_id of this Vault.
+        :type: str
+        """
+        self._restored_from_vault_id = restored_from_vault_id
+
+    @property
     def wrappingkey_id(self):
         """
         **[Required]** Gets the wrappingkey_id of this Vault.
-        The OCID of the vault wrapping key.
+        The OCID of the vault's wrapping key.
 
 
         :return: The wrappingkey_id of this Vault.
@@ -496,7 +539,7 @@ class Vault(object):
     def wrappingkey_id(self, wrappingkey_id):
         """
         Sets the wrappingkey_id of this Vault.
-        The OCID of the vault wrapping key.
+        The OCID of the vault's wrapping key.
 
 
         :param wrappingkey_id: The wrappingkey_id of this Vault.

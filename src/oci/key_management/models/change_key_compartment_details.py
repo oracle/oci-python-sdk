@@ -37,7 +37,7 @@ class ChangeKeyCompartmentDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ChangeKeyCompartmentDetails.
-        The `OCID`__ of the compartment to move the key to.
+        The `OCID`__ of the compartment that you want to move the key to.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -51,7 +51,7 @@ class ChangeKeyCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ChangeKeyCompartmentDetails.
-        The `OCID`__ of the compartment to move the key to.
+        The `OCID`__ of the compartment that you want to move the key to.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

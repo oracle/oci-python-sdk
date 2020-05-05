@@ -210,7 +210,7 @@ class KeyVersionSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this KeyVersionSummary.
-        The key version's current state.
+        The key version's current lifecycle state.
 
         Example: `ENABLED`
 
@@ -227,7 +227,7 @@ class KeyVersionSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this KeyVersionSummary.
-        The key version's current state.
+        The key version's current lifecycle state.
 
         Example: `ENABLED`
 
@@ -244,7 +244,7 @@ class KeyVersionSummary(object):
     def origin(self):
         """
         **[Required]** Gets the origin of this KeyVersionSummary.
-        The source of the key material. When this value is INTERNAL, OCI KMS created the key material. When this value is EXTERNAL, the key material was imported
+        The source of the key material. When this value is INTERNAL, Key Management created the key material. When this value is EXTERNAL, the key material was imported from an external source.
 
         Allowed values for this property are: "INTERNAL", "EXTERNAL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -259,7 +259,7 @@ class KeyVersionSummary(object):
     def origin(self, origin):
         """
         Sets the origin of this KeyVersionSummary.
-        The source of the key material. When this value is INTERNAL, OCI KMS created the key material. When this value is EXTERNAL, the key material was imported
+        The source of the key material. When this value is INTERNAL, Key Management created the key material. When this value is EXTERNAL, the key material was imported from an external source.
 
 
         :param origin: The origin of this KeyVersionSummary.

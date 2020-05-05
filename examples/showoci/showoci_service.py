@@ -17,8 +17,8 @@
 #
 # ShowOCIFlags   - class has the flags for calling the service Classes
 #
-# PaaS Services - OCE and OIC Tested
-#                 ODA and OAC need to be tested
+# PaaS Services - OCE and OIC , ODA Tested
+#                 OAC need to be tested
 ##########################################################################
 from __future__ import print_function
 import oci
@@ -129,7 +129,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.12.2"
+    oci_compatible_version = "2.14.0"
 
     ##########################################################################
     # Global Constants
@@ -221,6 +221,7 @@ class ShowOCIService(object):
     C_DATABASE_DBSYSTEMS = "dbsystems"
     C_DATABASE_AUTONOMOUS = "autonomous"
     C_DATABASE_NOSQL = "nosql"
+    C_DATABASE_MYSQL = "mysql"
 
     # container
     C_CONTAINER = "container"
@@ -318,9 +319,9 @@ class ShowOCIService(object):
         {'shape': 'Exadata.Full2.368', 'cpu': 368, 'memory': 5760, 'storage': 424},
         {'shape': 'Exadata.Half2.184', 'cpu': 184, 'memory': 2880, 'storage': 212},
         {'shape': 'Exadata.Quarter2.92', 'cpu': 92, 'memory': 1440, 'storage': 106},
-        {'shape': 'Exadata.Full3.400', 'cpu': 400, 'memory': 5760, 'storage': 479},
-        {'shape': 'Exadata.Half3.200', 'cpu': 200, 'memory': 2880, 'storage': 239},
-        {'shape': 'Exadata.Quarter3.100', 'cpu': 100, 'memory': 1440, 'storage': 119},
+        {'shape': 'Exadata.Full3.400', 'cpu': 400, 'memory': 5760, 'storage': 598},
+        {'shape': 'Exadata.Half3.200', 'cpu': 200, 'memory': 2880, 'storage': 298},
+        {'shape': 'Exadata.Quarter3.100', 'cpu': 100, 'memory': 1440, 'storage': 149},
         {'shape': 'Exadata.Base.48', 'cpu': 48, 'memory': 720, 'storage': 74.8},
         {'shape': 'VM.CPU3.1', 'cpu': 6, 'memory': 90, 'storage': 0},
         {'shape': 'VM.CPU3.2', 'cpu': 12, 'memory': 180, 'storage': 0},
@@ -3410,15 +3411,28 @@ class ShowOCIService(object):
                            'shape_ocpu': 0,
                            'shape_memory_gb': 0,
                            'shape_storage_tb': 0,
+                           'shape_gpu_description': "",
+                           'shape_gpus': 0,
+                           'shape_local_disk_description': "",
+                           'shape_local_disks': 0,
+                           'shape_max_vnic_attachments': 0,
+                           'shape_networking_bandwidth_in_gbps': 0,
+                           'shape_processor_description': "",
                            'console_vnc_connection_string': "", 'image': "Not Found", 'image_os': "Oracle Linux"}
 
-                    # get shape
-                    if arr.shape:
-                        shape_sizes = self.get_shape_details(str(arr.shape))
-                        if shape_sizes:
-                            val['shape_ocpu'] = shape_sizes['cpu']
-                            val['shape_memory_gb'] = shape_sizes['memory']
-                            val['shape_storage_tb'] = shape_sizes['storage']
+                    # check if vm has shape config
+                    if arr.shape_config:
+                        sc = arr.shape_config
+                        val['shape_storage_tb'] = sc.local_disks_total_size_in_gbs / 1000 if sc.local_disks_total_size_in_gbs else 0
+                        val['shape_ocpu'] = sc.ocpus
+                        val['shape_memory_gb'] = sc.memory_in_gbs
+                        val['shape_gpu_description'] = str(sc.gpu_description)
+                        val['shape_gpus'] = str(sc.gpus)
+                        val['shape_local_disk_description'] = str(sc.local_disk_description)
+                        val['shape_local_disks'] = str(sc.local_disks)
+                        val['shape_max_vnic_attachments'] = sc.max_vnic_attachments
+                        val['shape_networking_bandwidth_in_gbps'] = sc.networking_bandwidth_in_gbps
+                        val['shape_processor_description'] = str(sc.processor_description)
 
                     # if PaaS compartment assign Paas Image
                     if self.__if_managed_paas_compartment(compartment['name']):
@@ -5521,8 +5535,8 @@ class ShowOCIService(object):
     #
     # class oci.database.DatabaseClient(config, **kwargs)
     # class oci.core.VirtualNetworkClient(config, **kwargs)
-    # classoci.nosql.NosqlClient(config, **kwargs)
-    #
+    # class oci.nosql.NosqlClient(config, **kwargs)
+    # class oci.mysql.DbSystemClient
     ##########################################################################
     def __load_database_main(self):
 
@@ -5542,6 +5556,10 @@ class ShowOCIService(object):
             if self.flags.proxy:
                 nosql_client.base_client.session.proxies = {'https': self.flags.proxy}
 
+            mysql_client = oci.mysql.DbSystemClient(self.config, signer=self.signer)
+            if self.flags.proxy:
+                mysql_client.base_client.session.proxies = {'https': self.flags.proxy}
+
             # reference to compartments
             compartments = self.get_compartment()
 
@@ -5549,6 +5567,7 @@ class ShowOCIService(object):
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_DBSYSTEMS)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_AUTONOMOUS)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_NOSQL)
+            self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_MYSQL)
 
             # reference to orm
             db = self.data[self.C_DATABASE]
@@ -5557,6 +5576,7 @@ class ShowOCIService(object):
             db[self.C_DATABASE_DBSYSTEMS] += self.__load_database_dbsystems(database_client, virtual_network, compartments)
             db[self.C_DATABASE_AUTONOMOUS] += self.__load_database_autonomouns(database_client, compartments)
             db[self.C_DATABASE_NOSQL] += self.__load_database_nosql(nosql_client, compartments)
+            db[self.C_DATABASE_MYSQL] += self.__load_database_mysql(mysql_client, compartments)
 
             print("")
 
@@ -6180,6 +6200,125 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_database_nosql", e)
+            return data
+
+    ##########################################################################
+    # __load_database_mysql
+    #   TBD - Backups
+    ##########################################################################
+    def __load_database_mysql(self, mysql_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+
+            self.__load_print_status("MYSQL Databases")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                print(".", end="")
+
+                databases = []
+                try:
+                    databases = oci.pagination.list_call_get_all_results(
+                        mysql_client.list_db_systems,
+                        compartment['id'],
+                        sort_by="displayName",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    else:
+                        raise
+
+                # loop on auto
+                # databases = oci.mysql.models.DbSystemSummary
+                for mysqls in databases:
+                    value = {}
+                    if mysqls.lifecycle_state == 'DELETED' or mysqls.lifecycle_state == 'FAILED':
+                        continue
+
+                    try:
+                        # get the full DBSystem - oci.mysql.models.DbSystem
+                        mysql = mysql_client.get_db_system((mysqls.id)).data
+
+                        value = {'id': str(mysql.id),
+                                 'display_name': str(mysql.display_name),
+                                 'description': str(mysql.description),
+                                 'availability_domain': str(mysql.availability_domain),
+                                 'fault_domain': str(mysql.fault_domain),
+                                 'lifecycle_state': str(mysql.lifecycle_state),
+                                 'mysql_version': str(mysql.mysql_version),
+                                 'endpoints': [],
+                                 'time_created': str(mysql.time_created),
+                                 'time_updated': str(mysql.time_updated),
+                                 'subnet_id': str(mysql.subnet_id),
+                                 'shape_name': str(mysql.shape_name),
+                                 'shape_ocpu': 0,
+                                 'shape_memory_gb': 0,
+                                 'backup_is_enabled': str(mysql.backup_policy.is_enabled) if mysql.backup_policy else "false",
+                                 'configuration_id': str(mysql.configuration_id),
+                                 'data_storage_size_in_gbs': str(mysql.data_storage_size_in_gbs),
+                                 'sum_info': 'Database Mysql - ' + str(mysql.shape_name),
+                                 'sum_info_storage': 'Database - Storage (GB)',
+                                 'sum_size_gb': str(mysql.data_storage_size_in_gbs),
+                                 'compartment_name': str(compartment['name']),
+                                 'compartment_id': str(compartment['id']),
+                                 'defined_tags': [] if mysql.defined_tags is None else mysql.defined_tags,
+                                 'freeform_tags': [] if mysql.freeform_tags is None else mysql.freeform_tags,
+                                 'region_name': str(self.config['region'])
+                                 }
+
+                        # get shape
+                        if mysql.shape_name:
+                            shape_sizes = self.get_shape_details(str(mysql.shape_name))
+                            if shape_sizes:
+                                value['shape_ocpu'] = shape_sizes['cpu']
+                                value['shape_memory_gb'] = shape_sizes['memory']
+
+                        # get endpoints
+                        for ep in mysql.endpoints:
+                            epval = {'hostname': str(ep.hostname),
+                                     'ip_address': str(ep.ip_address),
+                                     'port': str(ep.port),
+                                     'port_x': str(ep.port_x),
+                                     'modes': str(', '.join(x for x in ep.modes)),
+                                     'status': str(ep.status),
+                                     'status_details': str(ep.status_details)
+                                     }
+                            value['endpoints'].append(epval)
+
+                    except oci.exceptions.ServiceError as e:
+                        if self.__check_service_error(e.code):
+                            self.__load_print_auth_warning()
+                            continue
+                        else:
+                            raise
+
+                    # add the data
+                    cnt += 1
+                    data.append(value)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_database_mysql", e)
             return data
 
     ##########################################################################

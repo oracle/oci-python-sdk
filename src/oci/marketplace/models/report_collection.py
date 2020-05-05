@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ReportCollection(object):
     """
-    A collection of reports.
+    A collection of reports that match the parameters of the request.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class ReportCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ReportCollection.
-        Array of reports.
+        An array of reports.
 
 
         :return: The items of this ReportCollection.
@@ -49,7 +49,7 @@ class ReportCollection(object):
     def items(self, items):
         """
         Sets the items of this ReportCollection.
-        Array of reports.
+        An array of reports.
 
 
         :param items: The items of this ReportCollection.

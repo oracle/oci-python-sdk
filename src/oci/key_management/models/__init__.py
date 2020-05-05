@@ -4,6 +4,11 @@
 
 from __future__ import absolute_import
 
+from .backup_key_details import BackupKeyDetails
+from .backup_location import BackupLocation
+from .backup_location_bucket import BackupLocationBucket
+from .backup_location_uri import BackupLocationURI
+from .backup_vault_details import BackupVaultDetails
 from .change_key_compartment_details import ChangeKeyCompartmentDetails
 from .change_vault_compartment_details import ChangeVaultCompartmentDetails
 from .create_key_details import CreateKeyDetails
@@ -21,6 +26,8 @@ from .key_shape import KeyShape
 from .key_summary import KeySummary
 from .key_version import KeyVersion
 from .key_version_summary import KeyVersionSummary
+from .restore_key_from_object_store_details import RestoreKeyFromObjectStoreDetails
+from .restore_vault_from_object_store_details import RestoreVaultFromObjectStoreDetails
 from .schedule_key_deletion_details import ScheduleKeyDeletionDetails
 from .schedule_key_version_deletion_details import ScheduleKeyVersionDeletionDetails
 from .schedule_vault_deletion_details import ScheduleVaultDeletionDetails
@@ -34,6 +41,11 @@ from .wrapping_key import WrappingKey
 
 # Maps type names to classes for key_management services.
 key_management_type_mapping = {
+    "BackupKeyDetails": BackupKeyDetails,
+    "BackupLocation": BackupLocation,
+    "BackupLocationBucket": BackupLocationBucket,
+    "BackupLocationURI": BackupLocationURI,
+    "BackupVaultDetails": BackupVaultDetails,
     "ChangeKeyCompartmentDetails": ChangeKeyCompartmentDetails,
     "ChangeVaultCompartmentDetails": ChangeVaultCompartmentDetails,
     "CreateKeyDetails": CreateKeyDetails,
@@ -51,6 +63,8 @@ key_management_type_mapping = {
     "KeySummary": KeySummary,
     "KeyVersion": KeyVersion,
     "KeyVersionSummary": KeyVersionSummary,
+    "RestoreKeyFromObjectStoreDetails": RestoreKeyFromObjectStoreDetails,
+    "RestoreVaultFromObjectStoreDetails": RestoreVaultFromObjectStoreDetails,
     "ScheduleKeyDeletionDetails": ScheduleKeyDeletionDetails,
     "ScheduleKeyVersionDeletionDetails": ScheduleKeyVersionDeletionDetails,
     "ScheduleVaultDeletionDetails": ScheduleVaultDeletionDetails,

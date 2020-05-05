@@ -8,54 +8,50 @@ from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class ReportTypeCollection(object):
+class RestoreVaultFromObjectStoreDetails(object):
     """
-    A collection of report types.
+    RestoreVaultFromObjectStoreDetails model.
     """
 
     def __init__(self, **kwargs):
         """
-        Initializes a new ReportTypeCollection object with values from keyword arguments.
+        Initializes a new RestoreVaultFromObjectStoreDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param items:
-            The value to assign to the items property of this ReportTypeCollection.
-        :type items: list[ReportTypeSummary]
+        :param backup_location:
+            The value to assign to the backup_location property of this RestoreVaultFromObjectStoreDetails.
+        :type backup_location: BackupLocation
 
         """
         self.swagger_types = {
-            'items': 'list[ReportTypeSummary]'
+            'backup_location': 'BackupLocation'
         }
 
         self.attribute_map = {
-            'items': 'items'
+            'backup_location': 'backupLocation'
         }
 
-        self._items = None
+        self._backup_location = None
 
     @property
-    def items(self):
+    def backup_location(self):
         """
-        **[Required]** Gets the items of this ReportTypeCollection.
-        An array of report types.
+        Gets the backup_location of this RestoreVaultFromObjectStoreDetails.
 
-
-        :return: The items of this ReportTypeCollection.
-        :rtype: list[ReportTypeSummary]
+        :return: The backup_location of this RestoreVaultFromObjectStoreDetails.
+        :rtype: BackupLocation
         """
-        return self._items
+        return self._backup_location
 
-    @items.setter
-    def items(self, items):
+    @backup_location.setter
+    def backup_location(self, backup_location):
         """
-        Sets the items of this ReportTypeCollection.
-        An array of report types.
+        Sets the backup_location of this RestoreVaultFromObjectStoreDetails.
 
-
-        :param items: The items of this ReportTypeCollection.
-        :type: list[ReportTypeSummary]
+        :param backup_location: The backup_location of this RestoreVaultFromObjectStoreDetails.
+        :type: BackupLocation
         """
-        self._items = items
+        self._backup_location = backup_location
 
     def __repr__(self):
         return formatted_flat_dict(self)

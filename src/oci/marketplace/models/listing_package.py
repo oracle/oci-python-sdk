@@ -134,7 +134,7 @@ class ListingPackage(object):
     def listing_id(self):
         """
         **[Required]** Gets the listing_id of this ListingPackage.
-        The id of the listing this package belongs to.
+        The ID of the listing this package belongs to.
 
 
         :return: The listing_id of this ListingPackage.
@@ -146,7 +146,7 @@ class ListingPackage(object):
     def listing_id(self, listing_id):
         """
         Sets the listing_id of this ListingPackage.
-        The id of the listing this package belongs to.
+        The ID of the listing this package belongs to.
 
 
         :param listing_id: The listing_id of this ListingPackage.
@@ -158,7 +158,7 @@ class ListingPackage(object):
     def version(self):
         """
         **[Required]** Gets the version of this ListingPackage.
-        The version of this package.
+        The package version.
 
 
         :return: The version of this ListingPackage.
@@ -170,7 +170,7 @@ class ListingPackage(object):
     def version(self, version):
         """
         Sets the version of this ListingPackage.
-        The version of this package.
+        The package version.
 
 
         :param version: The version of this ListingPackage.

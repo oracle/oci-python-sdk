@@ -66,8 +66,7 @@ run_report()
 ##################################
 echo "Start running at `date`..."
 
-run_report tenant_name_1  &
-run_report tenant_name_2  &
-wait
+run_report tenant_name_1 
+run_report tenant_name_2 
 
 echo "Completed at `date`.."

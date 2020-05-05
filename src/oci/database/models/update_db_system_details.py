@@ -15,6 +15,14 @@ class UpdateDbSystemDetails(object):
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
+    #: A constant which can be used with the license_model property of a UpdateDbSystemDetails.
+    #: This constant has a value of "LICENSE_INCLUDED"
+    LICENSE_MODEL_LICENSE_INCLUDED = "LICENSE_INCLUDED"
+
+    #: A constant which can be used with the license_model property of a UpdateDbSystemDetails.
+    #: This constant has a value of "BRING_YOUR_OWN_LICENSE"
+    LICENSE_MODEL_BRING_YOUR_OWN_LICENSE = "BRING_YOUR_OWN_LICENSE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateDbSystemDetails object with values from keyword arguments.
@@ -56,6 +64,11 @@ class UpdateDbSystemDetails(object):
             The value to assign to the backup_network_nsg_ids property of this UpdateDbSystemDetails.
         :type backup_network_nsg_ids: list[str]
 
+        :param license_model:
+            The value to assign to the license_model property of this UpdateDbSystemDetails.
+            Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
+        :type license_model: str
+
         :param maintenance_window_details:
             The value to assign to the maintenance_window_details property of this UpdateDbSystemDetails.
         :type maintenance_window_details: MaintenanceWindow
@@ -71,6 +84,7 @@ class UpdateDbSystemDetails(object):
             'shape': 'str',
             'nsg_ids': 'list[str]',
             'backup_network_nsg_ids': 'list[str]',
+            'license_model': 'str',
             'maintenance_window_details': 'MaintenanceWindow'
         }
 
@@ -84,6 +98,7 @@ class UpdateDbSystemDetails(object):
             'shape': 'shape',
             'nsg_ids': 'nsgIds',
             'backup_network_nsg_ids': 'backupNetworkNsgIds',
+            'license_model': 'licenseModel',
             'maintenance_window_details': 'maintenanceWindowDetails'
         }
 
@@ -96,6 +111,7 @@ class UpdateDbSystemDetails(object):
         self._shape = None
         self._nsg_ids = None
         self._backup_network_nsg_ids = None
+        self._license_model = None
         self._maintenance_window_details = None
 
     @property
@@ -347,6 +363,38 @@ class UpdateDbSystemDetails(object):
         :type: list[str]
         """
         self._backup_network_nsg_ids = backup_network_nsg_ids
+
+    @property
+    def license_model(self):
+        """
+        Gets the license_model of this UpdateDbSystemDetails.
+        The Oracle Database license model that applies to all databases on the DB system. The default is LICENSE_INCLUDED.
+
+        Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
+
+
+        :return: The license_model of this UpdateDbSystemDetails.
+        :rtype: str
+        """
+        return self._license_model
+
+    @license_model.setter
+    def license_model(self, license_model):
+        """
+        Sets the license_model of this UpdateDbSystemDetails.
+        The Oracle Database license model that applies to all databases on the DB system. The default is LICENSE_INCLUDED.
+
+
+        :param license_model: The license_model of this UpdateDbSystemDetails.
+        :type: str
+        """
+        allowed_values = ["LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"]
+        if not value_allowed_none_or_none_sentinel(license_model, allowed_values):
+            raise ValueError(
+                "Invalid value for `license_model`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._license_model = license_model
 
     @property
     def maintenance_window_details(self):

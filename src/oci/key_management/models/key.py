@@ -57,6 +57,14 @@ class Key(object):
     #: This constant has a value of "UPDATING"
     LIFECYCLE_STATE_UPDATING = "UPDATING"
 
+    #: A constant which can be used with the lifecycle_state property of a Key.
+    #: This constant has a value of "BACKUP_IN_PROGRESS"
+    LIFECYCLE_STATE_BACKUP_IN_PROGRESS = "BACKUP_IN_PROGRESS"
+
+    #: A constant which can be used with the lifecycle_state property of a Key.
+    #: This constant has a value of "RESTORING"
+    LIFECYCLE_STATE_RESTORING = "RESTORING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Key object with values from keyword arguments.
@@ -92,7 +100,7 @@ class Key(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Key.
-            Allowed values for this property are: "CREATING", "ENABLING", "ENABLED", "DISABLING", "DISABLED", "DELETING", "DELETED", "PENDING_DELETION", "SCHEDULING_DELETION", "CANCELLING_DELETION", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "ENABLING", "ENABLED", "DISABLING", "DISABLED", "DELETING", "DELETED", "PENDING_DELETION", "SCHEDULING_DELETION", "CANCELLING_DELETION", "UPDATING", "BACKUP_IN_PROGRESS", "RESTORING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -108,6 +116,10 @@ class Key(object):
             The value to assign to the vault_id property of this Key.
         :type vault_id: str
 
+        :param restored_from_key_id:
+            The value to assign to the restored_from_key_id property of this Key.
+        :type restored_from_key_id: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -120,7 +132,8 @@ class Key(object):
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'time_of_deletion': 'datetime',
-            'vault_id': 'str'
+            'vault_id': 'str',
+            'restored_from_key_id': 'str'
         }
 
         self.attribute_map = {
@@ -134,7 +147,8 @@ class Key(object):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'time_of_deletion': 'timeOfDeletion',
-            'vault_id': 'vaultId'
+            'vault_id': 'vaultId',
+            'restored_from_key_id': 'restoredFromKeyId'
         }
 
         self._compartment_id = None
@@ -148,6 +162,7 @@ class Key(object):
         self._time_created = None
         self._time_of_deletion = None
         self._vault_id = None
+        self._restored_from_key_id = None
 
     @property
     def compartment_id(self):
@@ -179,7 +194,7 @@ class Key(object):
         **[Required]** Gets the current_key_version of this Key.
         The OCID of the key version used in cryptographic operations. During key rotation, the service might be
         in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion`
-        field is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
+        property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
 
 
         :return: The current_key_version of this Key.
@@ -193,7 +208,7 @@ class Key(object):
         Sets the current_key_version of this Key.
         The OCID of the key version used in cryptographic operations. During key rotation, the service might be
         in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion`
-        field is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
+        property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
 
 
         :param current_key_version: The current_key_version of this Key.
@@ -339,11 +354,11 @@ class Key(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this Key.
-        The key's current state.
+        The key's current lifecycle state.
 
         Example: `ENABLED`
 
-        Allowed values for this property are: "CREATING", "ENABLING", "ENABLED", "DISABLING", "DISABLED", "DELETING", "DELETED", "PENDING_DELETION", "SCHEDULING_DELETION", "CANCELLING_DELETION", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "ENABLING", "ENABLED", "DISABLING", "DISABLED", "DELETING", "DELETED", "PENDING_DELETION", "SCHEDULING_DELETION", "CANCELLING_DELETION", "UPDATING", "BACKUP_IN_PROGRESS", "RESTORING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -356,7 +371,7 @@ class Key(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Key.
-        The key's current state.
+        The key's current lifecycle state.
 
         Example: `ENABLED`
 
@@ -364,7 +379,7 @@ class Key(object):
         :param lifecycle_state: The lifecycle_state of this Key.
         :type: str
         """
-        allowed_values = ["CREATING", "ENABLING", "ENABLED", "DISABLING", "DISABLED", "DELETING", "DELETED", "PENDING_DELETION", "SCHEDULING_DELETION", "CANCELLING_DELETION", "UPDATING"]
+        allowed_values = ["CREATING", "ENABLING", "ENABLED", "DISABLING", "DISABLED", "DELETING", "DELETED", "PENDING_DELETION", "SCHEDULING_DELETION", "CANCELLING_DELETION", "UPDATING", "BACKUP_IN_PROGRESS", "RESTORING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -454,6 +469,30 @@ class Key(object):
         :type: str
         """
         self._vault_id = vault_id
+
+    @property
+    def restored_from_key_id(self):
+        """
+        Gets the restored_from_key_id of this Key.
+        The OCID of the key from which this key was restored.
+
+
+        :return: The restored_from_key_id of this Key.
+        :rtype: str
+        """
+        return self._restored_from_key_id
+
+    @restored_from_key_id.setter
+    def restored_from_key_id(self, restored_from_key_id):
+        """
+        Sets the restored_from_key_id of this Key.
+        The OCID of the key from which this key was restored.
+
+
+        :param restored_from_key_id: The restored_from_key_id of this Key.
+        :type: str
+        """
+        self._restored_from_key_id = restored_from_key_id
 
     def __repr__(self):
         return formatted_flat_dict(self)
