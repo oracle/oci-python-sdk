@@ -213,6 +213,18 @@ class StackSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this StackSummary.
+        The current lifecycle state of the stack.
+        For more information about resource states in Resource Manager, see
+        `Key Concepts`__.
+
+        Allowable values:
+        - CREATING
+        - ACTIVE
+        - DELETING
+        - DELETED
+
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts
+
 
         :return: The lifecycle_state of this StackSummary.
         :rtype: str
@@ -223,6 +235,18 @@ class StackSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this StackSummary.
+        The current lifecycle state of the stack.
+        For more information about resource states in Resource Manager, see
+        `Key Concepts`__.
+
+        Allowable values:
+        - CREATING
+        - ACTIVE
+        - DELETING
+        - DELETED
+
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts
+
 
         :param lifecycle_state: The lifecycle_state of this StackSummary.
         :type: str
