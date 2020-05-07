@@ -264,11 +264,11 @@ Oracle Application Express (APEX) will be used for reporting.
    
 ## 16. Import APEX application
 
-Download [usage.demo.apex.zip](apex_demo_app/usage.demo.apex.zip) from github "apex_demo_app" folder and unzip it
+Download [usage.demo.apex.sql](apex_demo_app/usage.demo.apex.sql) from github "apex_demo_app" folder 
 
 ```
    APEX Top Menu -> App Builder -> Import
-   --> Choose File = usage.demo.apex.sql (Download from github apex folder and unzip)
+   --> Choose File = usage.demo.apex.sql (Download from github apex folder)
    --> Press Next
    --> Press Next 
    --> Press Install Application
@@ -319,6 +319,23 @@ Download [usage.demo.apex.zip](apex_demo_app/usage.demo.apex.zip) from github "a
     
     # add crontab that execute every night
     0 0 * * * timeout 6h /home/opc/oci-python-sdk/examples/usage_reports_to_adw/shell_scripts/run_single_daily_usage2adw.sh > /home/opc/oci-python-sdk/examples/usage_reports_to_adw/shell_scripts/run_single_daily_usage2adw_crontab_run.txt 2>&1
+```
+
+## 19. How to upgrade the usage2adw software and "OCI Usage and Cost Report" APEX application
+```
+    # clone the software from github:
+    cd $HOME
+    git clone https://github.com/oracle/oci-python-sdk
+
+    # Execute the python script in order to upgrade the metadata
+    cd oci-python-sdk/examples/usage_reports_to_adw
+    python3 usage2adw.py -ip -du USAGE -dp PaSsw0rd2#_# -dn adwcusg_low
+    
+    # Login to APEX workspace and choose "OCI Usage and Cost Report" Application
+    On the right menu -> Delete this application
+    
+    # Import the new APEX Application
+    Follow section 16 - Import APEX application
 ```
 
 ## License
