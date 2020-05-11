@@ -4,12 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.14.2 - TBD
+2.14.2 - 2020-05-12
 ====================
 
 Added
 -----
-* TBD
+* Support for drift detection in the Resource Manager service
 
 ====================
 2.14.1 - 2020-05-05
