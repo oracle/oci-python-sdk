@@ -12,6 +12,7 @@ Authentication to OCI by User or instance principals.
 ![](img/screen_4.png)
 ![](img/screen_5.png)
 ![](img/screen_6.png)
+![](img/screen_7.png)
 
 ## Usage Reports
 ![](img/screen_1.png)
@@ -37,6 +38,15 @@ Please check step by step guide - [step_by_step_installation.md](step_by_step_in
 ## OCI SDK Modules Included:
 - oci.identity.IdentityClient            
 - oci.object_storage.ObjectStorageClient 
+
+## Database Tables:
+- OCI_USAGE - Raw data of the usage reports
+- OCI_USAGE_STATS - Summary Stats of the Usage Report for quick query if only filtered by tenant and date
+- OCI_USAGE_TAG_KEYS - Tag keys of the usage reports
+- OCI_COST - Raw data of the cost reports
+- OCI_COST_STATS - Summary Stats of the Cost Report for quick query if only filtered by tenant and date
+- OCI_COST_TAG_KEYS - Tag keys of the cost reports
+- OCI_COST_REFERENCE - Reference table of the cost filter keys - SERVICE, REGION, COMPARTMENT, PRODUCT, SUBSCRIPTION
 
 ## OCI APIs Used:
 - IdentityClient.list_compartments - Policy COMPARTMENT_INSPECT

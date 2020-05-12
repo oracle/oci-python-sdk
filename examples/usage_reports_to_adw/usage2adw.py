@@ -45,7 +45,14 @@
 # - ObjectStorageClient.get_object            - Policy OBJECT_READ
 #
 ##########################################################################
-# Tables used - OCI_USAGE, OCI_USAGE_TAGS, OCI_COST, OCI_COST_TAGS
+# Tables used:
+# - OCI_USAGE - Raw data of the usage reports
+# - OCI_USAGE_STATS - Summary Stats of the Usage Report for quick query if only filtered by tenant and date
+# - OCI_USAGE_TAG_KEYS - Tag keys of the usage reports
+# - OCI_COST - Raw data of the cost reports
+# - OCI_COST_STATS - Summary Stats of the Cost Report for quick query if only filtered by tenant and date
+# - OCI_COST_TAG_KEYS - Tag keys of the cost reports
+# - OCI_COST_REFERENCE - Reference table of the cost filter keys - SERVICE, REGION, COMPARTMENT, PRODUCT, SUBSCRIPTION
 ##########################################################################
 import sys
 import argparse
@@ -56,7 +63,7 @@ import os
 import csv
 import cx_Oracle
 
-version = "20.05.04"
+version = "20.05.11"
 usage_report_namespace = "bling"
 work_report_dir = os.curdir + "/work_report_dir"
 
@@ -398,6 +405,8 @@ def update_cost_stats(connection):
         sql += "        file_id, "
         sql += "        USAGE_INTERVAL_START, "
         sql += "        sum(COST_MY_COST) COST_MY_COST, "
+        sql += "        sum(COST_MY_COST_OVERAGE) COST_MY_COST_OVERAGE, "
+        sql += "        min(COST_CURRENCY_CODE) COST_CURRENCY_CODE, "
         sql += "        count(*) NUM_ROWS "
         sql += "    from  "
         sql += "        oci_cost "
@@ -407,10 +416,11 @@ def update_cost_stats(connection):
         sql += "        USAGE_INTERVAL_START "
         sql += ") b "
         sql += "on (a.tenant_name=b.tenant_name and a.file_id=b.file_id and a.USAGE_INTERVAL_START=b.USAGE_INTERVAL_START) "
-        sql += "when matched then update set a.num_rows=b.num_rows, a.COST_MY_COST=b.COST_MY_COST, a.UPDATE_DATE=sysdate, a.AGENT_VERSION=:version "
+        sql += "when matched then update set a.num_rows=b.num_rows, a.COST_MY_COST=b.COST_MY_COST, a.UPDATE_DATE=sysdate, a.AGENT_VERSION=:version,"
+        sql += "    a.COST_MY_COST_OVERAGE=b.COST_MY_COST_OVERAGE, a.COST_CURRENCY_CODE=b.COST_CURRENCY_CODE "
         sql += "where a.num_rows <> b.num_rows "
-        sql += "when not matched then insert (TENANT_NAME,FILE_ID,USAGE_INTERVAL_START,NUM_ROWS,COST_MY_COST,UPDATE_DATE,AGENT_VERSION)  "
-        sql += "   values (b.TENANT_NAME,b.FILE_ID,b.USAGE_INTERVAL_START,b.NUM_ROWS,b.COST_MY_COST,sysdate,:version) "
+        sql += "when not matched then insert (TENANT_NAME,FILE_ID,USAGE_INTERVAL_START,NUM_ROWS,COST_MY_COST,UPDATE_DATE,AGENT_VERSION,COST_MY_COST_OVERAGE,COST_CURRENCY_CODE)  "
+        sql += "   values (b.TENANT_NAME,b.FILE_ID,b.USAGE_INTERVAL_START,b.NUM_ROWS,b.COST_MY_COST,sysdate,:version,b.COST_MY_COST_OVERAGE,b.COST_CURRENCY_CODE) "
 
         cursor.execute(sql, {"version": version})
         connection.commit()
@@ -423,6 +433,57 @@ def update_cost_stats(connection):
 
     except Exception as e:
         raise Exception("\nError manipulating database at update_cost_stats() - " + str(e))
+
+
+##########################################################################
+# update_cost_reference
+##########################################################################
+def update_cost_reference(connection):
+    try:
+        # open cursor
+        cursor = connection.cursor()
+
+        print("\nMerging statistics into OCI_COST_REFERENCE...")
+
+        # run merge to oci_update_stats
+        sql = "merge into OCI_COST_REFERENCE a "
+        sql += "using "
+        sql += "( "
+        sql += "    select TENANT_NAME, REF_TYPE, REF_NAME "
+        sql += "    from "
+        sql += "    ( "
+        sql += "        select distinct TENANT_NAME, 'PRD_SERVICE' as REF_TYPE, PRD_SERVICE as REF_NAME from OCI_COST "
+        sql += "        union all "
+        sql += "        select distinct TENANT_NAME, 'PRD_COMPARTMENT_PATH' as REF_TYPE,  "
+        sql += "            case when prd_compartment_path like '%/%' then substr(prd_compartment_path,1,instr(prd_compartment_path,' /')-1)  "
+        sql += "            else prd_compartment_path end as REF_NAME  "
+        sql += "            from OCI_COST "
+        sql += "        union all "
+        sql += "        select distinct TENANT_NAME, 'PRD_COMPARTMENT_NAME' as REF_TYPE, PRD_COMPARTMENT_NAME as ref_name from OCI_COST "
+        sql += "        union all "
+        sql += "        select distinct TENANT_NAME, 'PRD_REGION' as REF_TYPE, PRD_REGION as ref_name from OCI_COST "
+        sql += "        union all "
+        sql += "        select distinct TENANT_NAME, 'COST_SUBSCRIPTION_ID' as REF_TYPE, to_char(COST_SUBSCRIPTION_ID) as ref_name from OCI_COST "
+        sql += "        union all "
+        sql += "        select distinct TENANT_NAME, 'COST_PRODUCT_SKU' as REF_TYPE, COST_PRODUCT_SKU || ' '||min(PRD_DESCRIPTION) as ref_name from OCI_COST  "
+        sql += "        group by TENANT_NAME, COST_PRODUCT_SKU "
+        sql += "    ) where ref_name is not null "
+        sql += ") b "
+        sql += "on (a.TENANT_NAME=b.TENANT_NAME and a.REF_TYPE=b.REF_TYPE and a.REF_NAME=b.REF_NAME) "
+        sql += "when not matched then insert (TENANT_NAME,REF_TYPE,REF_NAME)  "
+        sql += "values (b.TENANT_NAME,b.REF_TYPE,b.REF_NAME)"
+
+        cursor.execute(sql)
+        connection.commit()
+        print("   Merge Completed, " + str(cursor.rowcount) + " rows merged")
+        cursor.close()
+
+    except cx_Oracle.DatabaseError as e:
+        print("\nError manipulating database at update_cost_reference() - " + str(e) + "\n")
+        raise SystemExit
+
+    except Exception as e:
+        raise Exception("\nError manipulating database at update_cost_reference() - " + str(e))
 
 
 ##########################################################################
@@ -549,6 +610,8 @@ def check_database_table_structure_cost(connection):
             sql += "    USAGE_INTERVAL_START    DATE,"
             sql += "    NUM_ROWS                NUMBER,"
             sql += "    COST_MY_COST            NUMBER,"
+            sql += "    COST_MY_COST_OVERAGE    NUMBER,"
+            sql += "    COST_CURRENCY_CODE      VARCHAR2(30),"
             sql += "    UPDATE_DATE             DATE,"
             sql += "    AGENT_VERSION           VARCHAR2(30),"
             sql += "    CONSTRAINT OCI_COST_STATS_PK PRIMARY KEY (TENANT_NAME,FILE_ID,USAGE_INTERVAL_START)"
@@ -559,6 +622,39 @@ def check_database_table_structure_cost(connection):
             update_cost_stats(connection)
         else:
             print("   Table OCI_COST_STATS exist")
+
+        # check if COST_MY_COST_OVERAGE columns exist in OCI_COST_STATS table, if not create
+        sql = "select count(*) from user_tab_columns where table_name = 'OCI_COST_STATS' and column_name='COST_MY_COST_OVERAGE'"
+        cursor.execute(sql)
+        val, = cursor.fetchone()
+
+        # if columns not exist, create them
+        if val == 0:
+            print("   Column COST_MY_COST_OVERAGE does not exist in the table OCI_COST_STATS, adding...")
+            sql = "alter table OCI_COST_STATS add (COST_MY_COST_OVERAGE NUMBER, COST_CURRENCY_CODE VARCHAR2(10))"
+            cursor.execute(sql)
+            update_cost_stats(connection)
+
+        # check if OCI_COST_REFERENCE table exist, if not create
+        sql = "select count(*) from user_tables where table_name = 'OCI_COST_REFERENCE'"
+        cursor.execute(sql)
+        val, = cursor.fetchone()
+
+        # if table not exist, create it
+        if val == 0:
+            print("   Table OCI_COST_REFERENCE was not exist, creating")
+            sql = "CREATE TABLE OCI_COST_REFERENCE ("
+            sql += "    TENANT_NAME             VARCHAR2(100),"
+            sql += "    REF_TYPE                VARCHAR2(100),"
+            sql += "    REF_NAME                VARCHAR2(1000),"
+            sql += "    CONSTRAINT OCI_REFERENCE_PK PRIMARY KEY (TENANT_NAME,REF_TYPE,REF_NAME) "
+            sql += ") "
+            cursor.execute(sql)
+            print("   Table OCI_COST_REFERENCE created")
+
+            update_cost_reference(connection)
+        else:
+            print("   Table OCI_COST_REFERENCE exist")
 
         # close cursor
         cursor.close()
@@ -663,6 +759,35 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
                 cost_billingUnitReadable = get_column_value_from_array('cost/billingUnitReadable', row)
                 cost_overageFlag = get_column_value_from_array('cost/overageFlag', row)
                 lineItem_isCorrection = get_column_value_from_array('lineItem/isCorrection', row)
+
+                # Fix OCI Data for missing product description
+                if cost_productSku == "B88285" and product_Description == "":
+                    product_Description = "Object Storage Classic"
+                    cost_billingUnitReadable = "Gigabyte Storage Capacity per Month"
+
+                elif cost_productSku == "B88272" and product_Description == "":
+                    product_Description = "Compute Classic - Unassociated Static IP"
+                    cost_billingUnitReadable = "IPs"
+
+                elif cost_productSku == "B88166" and product_Description == "":
+                    product_Description = "Oracle Identity Cloud - Standard"
+                    cost_billingUnitReadable = "Active User per Hour"
+
+                elif cost_productSku == "B88167" and product_Description == "":
+                    product_Description = "Oracle Identity Cloud - Basic"
+                    cost_billingUnitReadable = "Active User per Hour"
+
+                elif cost_productSku == "B88168" and product_Description == "":
+                    product_Description = "Oracle Identity Cloud - Basic - Consumer User"
+                    cost_billingUnitReadable = "Active User per Hour"
+
+                elif cost_productSku == "B88274" and product_Description == "":
+                    product_Description = "Block Storage Classic"
+                    cost_billingUnitReadable = "Gigabyte Storage Capacity per Month"
+
+                elif cost_productSku == "B89164" and product_Description == "":
+                    product_Description = "Oracle Security Monitoring and Compliance Edition"
+                    cost_billingUnitReadable = "100 Entities Per Hour"
 
                 # create array
                 row_data = (
@@ -1072,6 +1197,7 @@ def main_process():
             update_usage_stats(connection)
         if cost_num > 0:
             update_cost_stats(connection)
+            update_cost_reference(connection)
 
         # Close Connection
         connection.close()
