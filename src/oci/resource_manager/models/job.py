@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Job(object):
     """
-    Jobs perform the actions that are defined in your configuration. There are three job types
+    The properties that define a job. Jobs perform the actions that are defined in your configuration.
     - **Plan job**. A plan job takes your Terraform configuration, parses it, and creates an execution plan.
     - **Apply job**. The apply job takes your execution plan, applies it to the associated stack, then executes
     the configuration's instructions.
@@ -450,6 +450,12 @@ class Job(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this Job.
+        Current state of the specified job.
+        For more information about resource states in Resource Manager, see
+        `Key Concepts`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts
+
         Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
@@ -463,6 +469,12 @@ class Job(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Job.
+        Current state of the specified job.
+        For more information about resource states in Resource Manager, see
+        `Key Concepts`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts
+
 
         :param lifecycle_state: The lifecycle_state of this Job.
         :type: str

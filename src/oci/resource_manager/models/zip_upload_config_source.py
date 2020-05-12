@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ZipUploadConfigSource(ConfigSource):
     """
-    File path to the location of the zip file that contains the Terraform configuration.
+    Metadata about the user-provided Terraform configuration.
     """
 
     def __init__(self, **kwargs):

@@ -30,6 +30,18 @@ class Stack(object):
     #: This constant has a value of "DELETED"
     LIFECYCLE_STATE_DELETED = "DELETED"
 
+    #: A constant which can be used with the stack_drift_status property of a Stack.
+    #: This constant has a value of "NOT_CHECKED"
+    STACK_DRIFT_STATUS_NOT_CHECKED = "NOT_CHECKED"
+
+    #: A constant which can be used with the stack_drift_status property of a Stack.
+    #: This constant has a value of "IN_SYNC"
+    STACK_DRIFT_STATUS_IN_SYNC = "IN_SYNC"
+
+    #: A constant which can be used with the stack_drift_status property of a Stack.
+    #: This constant has a value of "DRIFTED"
+    STACK_DRIFT_STATUS_DRIFTED = "DRIFTED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Stack object with values from keyword arguments.
@@ -73,6 +85,16 @@ class Stack(object):
             The value to assign to the terraform_version property of this Stack.
         :type terraform_version: str
 
+        :param stack_drift_status:
+            The value to assign to the stack_drift_status property of this Stack.
+            Allowed values for this property are: "NOT_CHECKED", "IN_SYNC", "DRIFTED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type stack_drift_status: str
+
+        :param time_drift_last_checked:
+            The value to assign to the time_drift_last_checked property of this Stack.
+        :type time_drift_last_checked: datetime
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Stack.
         :type freeform_tags: dict(str, str)
@@ -92,6 +114,8 @@ class Stack(object):
             'config_source': 'ConfigSource',
             'variables': 'dict(str, str)',
             'terraform_version': 'str',
+            'stack_drift_status': 'str',
+            'time_drift_last_checked': 'datetime',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -106,6 +130,8 @@ class Stack(object):
             'config_source': 'configSource',
             'variables': 'variables',
             'terraform_version': 'terraformVersion',
+            'stack_drift_status': 'stackDriftStatus',
+            'time_drift_last_checked': 'timeDriftLastChecked',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -119,6 +145,8 @@ class Stack(object):
         self._config_source = None
         self._variables = None
         self._terraform_version = None
+        self._stack_drift_status = None
+        self._time_drift_last_checked = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -255,6 +283,10 @@ class Stack(object):
         """
         Gets the lifecycle_state of this Stack.
         The current lifecycle state of the stack.
+        For more information about resource states in Resource Manager, see
+        `Key Concepts`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts
 
         Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -270,6 +302,10 @@ class Stack(object):
         """
         Sets the lifecycle_state of this Stack.
         The current lifecycle state of the stack.
+        For more information about resource states in Resource Manager, see
+        `Key Concepts`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts
 
 
         :param lifecycle_state: The lifecycle_state of this Stack.
@@ -353,6 +389,64 @@ class Stack(object):
         :type: str
         """
         self._terraform_version = terraform_version
+
+    @property
+    def stack_drift_status(self):
+        """
+        Gets the stack_drift_status of this Stack.
+        Drift status of the stack.
+        Drift refers to differences between the actual (current) state of the stack and the expected (defined) state of the stack.
+
+        Allowed values for this property are: "NOT_CHECKED", "IN_SYNC", "DRIFTED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The stack_drift_status of this Stack.
+        :rtype: str
+        """
+        return self._stack_drift_status
+
+    @stack_drift_status.setter
+    def stack_drift_status(self, stack_drift_status):
+        """
+        Sets the stack_drift_status of this Stack.
+        Drift status of the stack.
+        Drift refers to differences between the actual (current) state of the stack and the expected (defined) state of the stack.
+
+
+        :param stack_drift_status: The stack_drift_status of this Stack.
+        :type: str
+        """
+        allowed_values = ["NOT_CHECKED", "IN_SYNC", "DRIFTED"]
+        if not value_allowed_none_or_none_sentinel(stack_drift_status, allowed_values):
+            stack_drift_status = 'UNKNOWN_ENUM_VALUE'
+        self._stack_drift_status = stack_drift_status
+
+    @property
+    def time_drift_last_checked(self):
+        """
+        Gets the time_drift_last_checked of this Stack.
+        Date and time when the drift detection was last executed. Format is defined by RFC3339.
+        Example: 2020-01-25T21:10:29.600Z
+
+
+        :return: The time_drift_last_checked of this Stack.
+        :rtype: datetime
+        """
+        return self._time_drift_last_checked
+
+    @time_drift_last_checked.setter
+    def time_drift_last_checked(self, time_drift_last_checked):
+        """
+        Sets the time_drift_last_checked of this Stack.
+        Date and time when the drift detection was last executed. Format is defined by RFC3339.
+        Example: 2020-01-25T21:10:29.600Z
+
+
+        :param time_drift_last_checked: The time_drift_last_checked of this Stack.
+        :type: datetime
+        """
+        self._time_drift_last_checked = time_drift_last_checked
 
     @property
     def freeform_tags(self):

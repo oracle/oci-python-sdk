@@ -17,6 +17,10 @@ class WorkRequest(object):
     #: This constant has a value of "CHANGE_STACK_COMPARTMENT"
     OPERATION_TYPE_CHANGE_STACK_COMPARTMENT = "CHANGE_STACK_COMPARTMENT"
 
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DRIFT_DETECTION"
+    OPERATION_TYPE_DRIFT_DETECTION = "DRIFT_DETECTION"
+
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -40,7 +44,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "CHANGE_STACK_COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CHANGE_STACK_COMPARTMENT", "DRIFT_DETECTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -119,7 +123,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         The asynchronous operation tracked by this work request.
 
-        Allowed values for this property are: "CHANGE_STACK_COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CHANGE_STACK_COMPARTMENT", "DRIFT_DETECTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -138,7 +142,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["CHANGE_STACK_COMPARTMENT"]
+        allowed_values = ["CHANGE_STACK_COMPARTMENT", "DRIFT_DETECTION"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

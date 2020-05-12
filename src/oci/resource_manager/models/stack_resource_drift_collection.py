@@ -8,23 +8,23 @@ from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class TerraformVersionCollection(object):
+class StackResourceDriftCollection(object):
     """
-    The list of Terraform versions supported for use with stacks.
+    Drift status details for resources in the stack.
     """
 
     def __init__(self, **kwargs):
         """
-        Initializes a new TerraformVersionCollection object with values from keyword arguments.
+        Initializes a new StackResourceDriftCollection object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param items:
-            The value to assign to the items property of this TerraformVersionCollection.
-        :type items: list[TerraformVersionSummary]
+            The value to assign to the items property of this StackResourceDriftCollection.
+        :type items: list[StackResourceDriftSummary]
 
         """
         self.swagger_types = {
-            'items': 'list[TerraformVersionSummary]'
+            'items': 'list[StackResourceDriftSummary]'
         }
 
         self.attribute_map = {
@@ -36,24 +36,24 @@ class TerraformVersionCollection(object):
     @property
     def items(self):
         """
-        **[Required]** Gets the items of this TerraformVersionCollection.
-        Collection of supported Terraform versions.
+        Gets the items of this StackResourceDriftCollection.
+        Collection of drift status details for all resources defined in the stack.
 
 
-        :return: The items of this TerraformVersionCollection.
-        :rtype: list[TerraformVersionSummary]
+        :return: The items of this StackResourceDriftCollection.
+        :rtype: list[StackResourceDriftSummary]
         """
         return self._items
 
     @items.setter
     def items(self, items):
         """
-        Sets the items of this TerraformVersionCollection.
-        Collection of supported Terraform versions.
+        Sets the items of this StackResourceDriftCollection.
+        Collection of drift status details for all resources defined in the stack.
 
 
-        :param items: The items of this TerraformVersionCollection.
-        :type: list[TerraformVersionSummary]
+        :param items: The items of this StackResourceDriftCollection.
+        :type: list[StackResourceDriftSummary]
         """
         self._items = items
 

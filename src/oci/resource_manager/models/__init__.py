@@ -31,6 +31,8 @@ from .log_entry import LogEntry
 from .plan_job_operation_details import PlanJobOperationDetails
 from .plan_job_operation_details_summary import PlanJobOperationDetailsSummary
 from .stack import Stack
+from .stack_resource_drift_collection import StackResourceDriftCollection
+from .stack_resource_drift_summary import StackResourceDriftSummary
 from .stack_summary import StackSummary
 from .terraform_version_collection import TerraformVersionCollection
 from .terraform_version_summary import TerraformVersionSummary
@@ -74,6 +76,8 @@ resource_manager_type_mapping = {
     "PlanJobOperationDetails": PlanJobOperationDetails,
     "PlanJobOperationDetailsSummary": PlanJobOperationDetailsSummary,
     "Stack": Stack,
+    "StackResourceDriftCollection": StackResourceDriftCollection,
+    "StackResourceDriftSummary": StackResourceDriftSummary,
     "StackSummary": StackSummary,
     "TerraformVersionCollection": TerraformVersionCollection,
     "TerraformVersionSummary": TerraformVersionSummary,
