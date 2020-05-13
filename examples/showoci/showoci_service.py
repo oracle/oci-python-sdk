@@ -4963,9 +4963,9 @@ class ShowOCIService(object):
                             raise
 
                     if lp:
-                        for l in lp.items:
-                            val['object_lifecycle'] += " , LifeCycle: " + str(l.name) + ", " + str(
-                                l.action) + ", " + str(l.time_amount) + " " + str(l.time_unit)
+                        for lc in lp.items:
+                            val['object_lifecycle'] += " , LifeCycle: " + str(lc.name) + ", " + str(
+                                lc.action) + ", " + str(lc.time_amount) + " " + str(lc.time_unit)
 
                     data.append(val)
                     cnt += 1

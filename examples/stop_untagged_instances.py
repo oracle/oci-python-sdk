@@ -45,12 +45,12 @@ def stop_resource(instance_id, region):
     try:
         if base_compute.get_instance(instance_id).data.lifecycle_state in 'RUNNING':
             try:
-                print('\t\tStopping instance.  Stop response code: {1}'
+                print('\t\tStopping instance {0}.  Stop response code: {1}'
                       .format(instance_id, str(base_compute.instance_action(instance_id, 'STOP').status)))
             except oci.exceptions.ServiceError as e:
                 print('\t\tStopping instance failed. {0}' .format(e))
         else:
-            print('\t\tThe instance was in the incorrect state to stop' .format(instance_id))
+            print('\t\tThe instance {} was in the incorrect state to stop' .format(instance_id))
     except oci.exceptions.ServiceError as e:
         print('\t\tStopping instance failed. {0}'.format(e))
 
@@ -158,7 +158,7 @@ def find_resources_wo_tags(instances_to_stop_list, search_string, tenancy_id):
                         stop_resource(result.identifier, region)
 
                     except oci.exceptions.ServiceError as e:
-                        print('\t\tThe instance ({0}) could not be retrieved. It may be a ghost Search entry.'
+                        print('\t\tThe instance ({0}) could not be retrieved. It may be a ghost Search entry. {1}'
                               .format(result.display_name, e))
 
     # Only find audit events for  those compartments with a stopped instance
