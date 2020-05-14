@@ -2444,16 +2444,13 @@ class ShowOCICSV(object):
 
                 # Check if credential exist
                 if 'api_keys' in user:
-                    data['api_keys'] = str(', '.join(x['id'] + " - " + x['lifecycle_state'] for x in user['api_keys']))
-
+                    data['api_keys'] = str(', '.join(x['id'] + " - " + x['lifecycle_state'] + " - " + x['time_created'] for x in user['api_keys']))
                 if 'auth_token' in user:
-                    data['auth_token'] = str(', '.join(x['id'] + " - " + x['description'] for x in user['auth_token']))
-
+                    data['auth_token'] = str(', '.join(x['id'] + " - " + x['description'] + " - " + x['time_created'] for x in user['auth_token']))
                 if 'secret_key' in user:
-                    data['secret_key'] = str(', '.join(x['id'] + " - " + x['display_name'] for x in user['secret_key']))
-
+                    data['secret_key'] = str(', '.join(x['id'] + " - " + x['display_name'] + " - " + x['time_created'] for x in user['secret_key']))
                 if 'smtp_cred' in user:
-                    data['smtp_cred'] = str(', '.join(x['id'] + " - " + x['description'] for x in user['smtp_cred']))
+                    data['smtp_cred'] = str(', '.join(x['id'] + " - " + x['description'] + " - " + x['time_created'] for x in user['smtp_cred']))
 
                 self.csv_identity_users.append(data)
 

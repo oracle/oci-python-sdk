@@ -5885,7 +5885,10 @@ class ShowOCIService(object):
 
         data = []
         try:
-            dbps = oci.pagination.list_call_get_all_results(database_client.list_db_home_patches, dbhome_id).data
+            dbps = oci.pagination.list_call_get_all_results(
+                database_client.list_db_home_patches,
+                dbhome_id
+            ).data
 
             for dbp in dbps:
                 data.append({'id': dbp.id, 'description': str(dbp.description), 'version': str(dbp.version), 'time_released': str(dbp.time_released),
@@ -5896,6 +5899,10 @@ class ShowOCIService(object):
             if self.__check_service_error(e.code):
                 return data
             else:
+                # Added in order to avoid internal error which happen often here
+                if 'InternalError' in str(e.code):
+                    print('p', end="")
+                    return data
                 raise
         except oci.exceptions.RequestException as e:
             if self.__check_request_error(e):
