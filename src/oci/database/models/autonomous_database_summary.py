@@ -232,6 +232,10 @@ class AutonomousDatabaseSummary(object):
             The value to assign to the private_endpoint_label property of this AutonomousDatabaseSummary.
         :type private_endpoint_label: str
 
+        :param private_endpoint_ip:
+            The value to assign to the private_endpoint_ip property of this AutonomousDatabaseSummary.
+        :type private_endpoint_ip: str
+
         :param db_version:
             The value to assign to the db_version property of this AutonomousDatabaseSummary.
         :type db_version: str
@@ -300,6 +304,7 @@ class AutonomousDatabaseSummary(object):
             'nsg_ids': 'list[str]',
             'private_endpoint': 'str',
             'private_endpoint_label': 'str',
+            'private_endpoint_ip': 'str',
             'db_version': 'str',
             'is_preview': 'bool',
             'db_workload': 'str',
@@ -338,6 +343,7 @@ class AutonomousDatabaseSummary(object):
             'nsg_ids': 'nsgIds',
             'private_endpoint': 'privateEndpoint',
             'private_endpoint_label': 'privateEndpointLabel',
+            'private_endpoint_ip': 'privateEndpointIp',
             'db_version': 'dbVersion',
             'is_preview': 'isPreview',
             'db_workload': 'dbWorkload',
@@ -375,6 +381,7 @@ class AutonomousDatabaseSummary(object):
         self._nsg_ids = None
         self._private_endpoint = None
         self._private_endpoint_label = None
+        self._private_endpoint_ip = None
         self._db_version = None
         self._is_preview = None
         self._db_workload = None
@@ -1094,6 +1101,30 @@ class AutonomousDatabaseSummary(object):
         :type: str
         """
         self._private_endpoint_label = private_endpoint_label
+
+    @property
+    def private_endpoint_ip(self):
+        """
+        Gets the private_endpoint_ip of this AutonomousDatabaseSummary.
+        The private endpoint Ip address for the resource.
+
+
+        :return: The private_endpoint_ip of this AutonomousDatabaseSummary.
+        :rtype: str
+        """
+        return self._private_endpoint_ip
+
+    @private_endpoint_ip.setter
+    def private_endpoint_ip(self, private_endpoint_ip):
+        """
+        Sets the private_endpoint_ip of this AutonomousDatabaseSummary.
+        The private endpoint Ip address for the resource.
+
+
+        :param private_endpoint_ip: The private_endpoint_ip of this AutonomousDatabaseSummary.
+        :type: str
+        """
+        self._private_endpoint_ip = private_endpoint_ip
 
     @property
     def db_version(self):
