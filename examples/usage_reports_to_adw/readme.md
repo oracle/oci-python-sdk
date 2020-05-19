@@ -8,11 +8,21 @@ Authentication to OCI by User or instance principals.
 
 ** DISCLAIMER – This is not an official Oracle application **
 
+## Main Features
+- Usage Current State
+- Usage Over Time
+- Cost Analysis
+- Cost Over Time
+- Rate Card for Used Products
+
 ## Cost Reports
 ![](img/screen_4.png)
 ![](img/screen_5.png)
 ![](img/screen_6.png)
 ![](img/screen_7.png)
+
+## Rate Card
+![](img/screen_8.png)
 
 ## Usage Reports
 ![](img/screen_1.png)
@@ -47,12 +57,16 @@ Please check step by step guide - [step_by_step_installation.md](step_by_step_in
 - OCI_COST_STATS - Summary Stats of the Cost Report for quick query if only filtered by tenant and date
 - OCI_COST_TAG_KEYS - Tag keys of the cost reports
 - OCI_COST_REFERENCE - Reference table of the cost filter keys - SERVICE, REGION, COMPARTMENT, PRODUCT, SUBSCRIPTION
+- OCI_PRICE_LIST - Hold the price list and the cost per product 
 
 ## OCI APIs Used:
 - IdentityClient.list_compartments - Policy COMPARTMENT_INSPECT
 - IdentityClient.get_tenancy       - Policy TENANCY_INSPECT
 - ObjectStorageClient.list_objects - Policy OBJECT_INSPECT
 - ObjectStorageClient.get_object   - Policy OBJECT_READ
+
+## REST API Used:
+- https://itra.oraclecloud.com/itas/.anon/myservices/api/v1/products?partNumber=XX
 
 ## Python 3 OCI SDK
 
@@ -61,6 +75,9 @@ Please follow Python Documentation - https://docs.python.org/3/using/index.html
 
 ### install oci SDK Packages:
 Please follow Oracle Python SDK Documentation - https://github.com/oracle/oci-python-sdk
+
+### install requests package:
+pip install requests or pip3 install requests
 
 ## Setup connectivity using Instance Principals
 

@@ -30,9 +30,17 @@ from .gateway_collection import GatewayCollection
 from .gateway_summary import GatewaySummary
 from .http_backend import HTTPBackend
 from .header_field_specification import HeaderFieldSpecification
+from .json_web_key import JsonWebKey
+from .json_web_token_claim import JsonWebTokenClaim
+from .jwt_authentication_policy import JwtAuthenticationPolicy
 from .oracle_function_backend import OracleFunctionBackend
+from .pem_encoded_public_key import PemEncodedPublicKey
+from .public_key_set import PublicKeySet
 from .rate_limiting_policy import RateLimitingPolicy
+from .remote_json_web_key_set import RemoteJsonWebKeySet
 from .route_authorization_policy import RouteAuthorizationPolicy
+from .static_public_key import StaticPublicKey
+from .static_public_key_set import StaticPublicKeySet
 from .stock_response_backend import StockResponseBackend
 from .update_deployment_details import UpdateDeploymentDetails
 from .update_gateway_details import UpdateGatewayDetails
@@ -73,9 +81,17 @@ apigateway_type_mapping = {
     "GatewaySummary": GatewaySummary,
     "HTTPBackend": HTTPBackend,
     "HeaderFieldSpecification": HeaderFieldSpecification,
+    "JsonWebKey": JsonWebKey,
+    "JsonWebTokenClaim": JsonWebTokenClaim,
+    "JwtAuthenticationPolicy": JwtAuthenticationPolicy,
     "OracleFunctionBackend": OracleFunctionBackend,
+    "PemEncodedPublicKey": PemEncodedPublicKey,
+    "PublicKeySet": PublicKeySet,
     "RateLimitingPolicy": RateLimitingPolicy,
+    "RemoteJsonWebKeySet": RemoteJsonWebKeySet,
     "RouteAuthorizationPolicy": RouteAuthorizationPolicy,
+    "StaticPublicKey": StaticPublicKey,
+    "StaticPublicKeySet": StaticPublicKeySet,
     "StockResponseBackend": StockResponseBackend,
     "UpdateDeploymentDetails": UpdateDeploymentDetails,
     "UpdateGatewayDetails": UpdateGatewayDetails,

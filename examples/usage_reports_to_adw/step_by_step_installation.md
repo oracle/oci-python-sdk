@@ -98,7 +98,7 @@ Oracle Application Express (APEX) will be used for reporting.
 
 ```
    sudo yum install -y python3
-   sudo pip3 install oci oci-cli cx_Oracle
+   sudo pip3 install oci oci-cli cx_Oracle requests
 
    # test instance principle is working using oci-cli
    oci os ns get --auth instance_principal
@@ -264,7 +264,7 @@ Oracle Application Express (APEX) will be used for reporting.
    
 ## 16. Import APEX application
 
-Download [usage.demo.apex.sql](apex_demo_app/usage.demo.apex.sql) from github "apex_demo_app" folder 
+Right Click and Download [usage.demo.apex.sql](https://raw.githubusercontent.com/oracle/oci-python-sdk/master/examples/usage_reports_to_adw/apex_demo_app/usage.demo.apex.sql) from github "apex_demo_app" folder (raw)
 
 ```
    APEX Top Menu -> App Builder -> Import

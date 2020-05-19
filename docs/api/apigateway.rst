@@ -48,9 +48,17 @@ Apigateway
     oci.apigateway.models.GatewaySummary
     oci.apigateway.models.HTTPBackend
     oci.apigateway.models.HeaderFieldSpecification
+    oci.apigateway.models.JsonWebKey
+    oci.apigateway.models.JsonWebTokenClaim
+    oci.apigateway.models.JwtAuthenticationPolicy
     oci.apigateway.models.OracleFunctionBackend
+    oci.apigateway.models.PemEncodedPublicKey
+    oci.apigateway.models.PublicKeySet
     oci.apigateway.models.RateLimitingPolicy
+    oci.apigateway.models.RemoteJsonWebKeySet
     oci.apigateway.models.RouteAuthorizationPolicy
+    oci.apigateway.models.StaticPublicKey
+    oci.apigateway.models.StaticPublicKeySet
     oci.apigateway.models.StockResponseBackend
     oci.apigateway.models.UpdateDeploymentDetails
     oci.apigateway.models.UpdateGatewayDetails
