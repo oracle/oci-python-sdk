@@ -17,11 +17,16 @@ class AuthenticationPolicy(object):
     #: This constant has a value of "CUSTOM_AUTHENTICATION"
     TYPE_CUSTOM_AUTHENTICATION = "CUSTOM_AUTHENTICATION"
 
+    #: A constant which can be used with the type property of a AuthenticationPolicy.
+    #: This constant has a value of "JWT_AUTHENTICATION"
+    TYPE_JWT_AUTHENTICATION = "JWT_AUTHENTICATION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AuthenticationPolicy object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.apigateway.models.JwtAuthenticationPolicy`
         * :class:`~oci.apigateway.models.CustomAuthenticationPolicy`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -32,7 +37,7 @@ class AuthenticationPolicy(object):
 
         :param type:
             The value to assign to the type property of this AuthenticationPolicy.
-            Allowed values for this property are: "CUSTOM_AUTHENTICATION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CUSTOM_AUTHENTICATION", "JWT_AUTHENTICATION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -57,6 +62,9 @@ class AuthenticationPolicy(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['type']
+
+        if type == 'JWT_AUTHENTICATION':
+            return 'JwtAuthenticationPolicy'
 
         if type == 'CUSTOM_AUTHENTICATION':
             return 'CustomAuthenticationPolicy'
@@ -95,7 +103,7 @@ class AuthenticationPolicy(object):
         **[Required]** Gets the type of this AuthenticationPolicy.
         Type of the authentication policy to use.
 
-        Allowed values for this property are: "CUSTOM_AUTHENTICATION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CUSTOM_AUTHENTICATION", "JWT_AUTHENTICATION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -114,7 +122,7 @@ class AuthenticationPolicy(object):
         :param type: The type of this AuthenticationPolicy.
         :type: str
         """
-        allowed_values = ["CUSTOM_AUTHENTICATION"]
+        allowed_values = ["CUSTOM_AUTHENTICATION", "JWT_AUTHENTICATION"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

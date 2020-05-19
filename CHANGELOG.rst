@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.14.3 - 2020-05-19
+====================
+
+Added
+-----
+* Support for returning the private IP of a private endpoint database in the Database service
+* Support for native JWT validation in the API Gateway service
+
+====================
 2.14.2 - 2020-05-12
 ====================
 

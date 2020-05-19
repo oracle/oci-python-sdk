@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.05.18 - 2020-05-18
+=====================
+* Added Rate Card with OCI_PRICE_LIST and using API to obtain info, Thanks to Fabio for the Idea and the API
+* Added discount and public rate to the cost report
+
+=====================
 20.05.11 - 2020-05-11
 =====================
 * Added performance improvements to Cost by adding index OCI_COST_1IX and reference table OCI_COST_REFERENCE

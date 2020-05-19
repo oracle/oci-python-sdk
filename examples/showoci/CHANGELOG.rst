@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.05.18 - 2020-05-18
+=====================
+* Bug Fixed
+
+=====================
 20.05.04 - 2020-05-04
 =====================
 * Added database_db_system and database_autonomous csv files
