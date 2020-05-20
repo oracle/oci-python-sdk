@@ -39,6 +39,7 @@
 ^THIRD_PARTY_LICENSES\.txt$
 ^tox\.ini$
 ^wercker\.yml$
+^NOTICE\.txt$
 
 ^src/oci/announcements_service/.*\.py$
 ^src/oci/autoscaling/.*\.py$
