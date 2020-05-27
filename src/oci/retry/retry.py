@@ -283,7 +283,7 @@ class ExponentialBackoffRetryStrategyBase(object):
 
 class ExponentialBackoffWithFullJitterRetryStrategy(ExponentialBackoffRetryStrategyBase):
     """
-    A retry strategy which does exponential backoff and full jitter. Times used are in milliseconds and
+    A retry strategy which does exponential backoff and full jitter. Times used are in seconds and
     the strategy can be described as:
 
     .. code-block:: none
@@ -301,7 +301,7 @@ class ExponentialBackoffWithFullJitterRetryStrategy(ExponentialBackoffRetryStrat
 
         :param int exponent_growth_factor:
             The exponent part of our backoff. We will raise take this value and raising it to the power
-            of attemps and then multiply this with base_sleep_time_seconds
+            of attempts and then multiply this with base_sleep_time_seconds
 
         :param int max_wait_between_calls_seconds:
             The maximum time we will wait between calls, in seconds
@@ -313,13 +313,14 @@ class ExponentialBackoffWithFullJitterRetryStrategy(ExponentialBackoffRetryStrat
             .__init__(base_sleep_time_seconds, exponent_growth_factor, max_wait_between_calls_seconds, checker_container, **kwargs)
 
     def do_sleep(self, attempt, exception):
-        sleep_time_millis = retry_sleep_utils.get_exponential_backoff_with_full_jitter_sleep_time(self.base_sleep_time_seconds, self.exponent_growth_factor, self.max_wait_between_calls_seconds, attempt)
-        time.sleep(sleep_time_millis / 1000.0)  # time.sleep needs seconds, but can take fractional seconds
+        sleep_time_subseconds = retry_sleep_utils.get_exponential_backoff_with_full_jitter_sleep_time(
+            self.base_sleep_time_seconds, self.exponent_growth_factor, self.max_wait_between_calls_seconds, attempt)
+        time.sleep(sleep_time_subseconds)  # time.sleep needs seconds, but can take fractional seconds
 
 
 class ExponentialBackoffWithEqualJitterRetryStrategy(ExponentialBackoffRetryStrategyBase):
     """
-    A retry strategy which does exponential backoff and equal jitter. Times used are in milliseconds and
+    A retry strategy which does exponential backoff and equal jitter. Times used are in seconds and
     the strategy can be described as:
 
     .. code-block:: none
@@ -356,9 +357,9 @@ class ExponentialBackoffWithEqualJitterRetryStrategy(ExponentialBackoffRetryStra
 
 class ExponentialBackoffWithFullJitterEqualForThrottlesRetryStrategy(ExponentialBackoffRetryStrategyBase):
     """
-    A retry strategy that does exponential backoff and full jitter for most retries, but uses exponential backoff with equal
-    jitter for throttles. This provides a reasonable distribution of retry times for most retryable error cases, but for throttles
-    guarantees some sleep time
+    A retry strategy that does exponential backoff and full jitter for most retries, but uses exponential backoff with
+    equal jitter for throttles. This provides a reasonable distribution of retry times for most retryable error cases,
+    but for throttles guarantees some sleep time
     """
 
     def __init__(self, base_sleep_time_seconds, exponent_growth_factor, max_wait_between_calls_seconds, checker_container, **kwargs):
@@ -384,10 +385,13 @@ class ExponentialBackoffWithFullJitterEqualForThrottlesRetryStrategy(Exponential
     def do_sleep(self, attempt, exception):
         if isinstance(exception, ServiceError):
             if exception.status == 429:
-                sleep_time_seconds = retry_sleep_utils.get_exponential_backoff_with_equal_jitter_sleep_time(self.base_sleep_time_seconds, self.exponent_growth_factor, self.max_wait_between_calls_seconds, attempt)
+                sleep_time_seconds = retry_sleep_utils.get_exponential_backoff_with_equal_jitter_sleep_time(
+                    self.base_sleep_time_seconds, self.exponent_growth_factor, self.max_wait_between_calls_seconds, attempt)
             else:
-                sleep_time_seconds = retry_sleep_utils.get_exponential_backoff_with_full_jitter_sleep_time(self.base_sleep_time_seconds, self.exponent_growth_factor, self.max_wait_between_calls_seconds, attempt)
+                sleep_time_seconds = retry_sleep_utils.get_exponential_backoff_with_full_jitter_sleep_time(
+                    self.base_sleep_time_seconds, self.exponent_growth_factor, self.max_wait_between_calls_seconds, attempt)
         else:
-            sleep_time_seconds = retry_sleep_utils.get_exponential_backoff_with_full_jitter_sleep_time(self.base_sleep_time_seconds, self.exponent_growth_factor, self.max_wait_between_calls_seconds, attempt)
+            sleep_time_seconds = retry_sleep_utils.get_exponential_backoff_with_full_jitter_sleep_time(
+                self.base_sleep_time_seconds, self.exponent_growth_factor, self.max_wait_between_calls_seconds, attempt)
 
         time.sleep(sleep_time_seconds)
