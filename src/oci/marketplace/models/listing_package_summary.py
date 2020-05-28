@@ -40,6 +40,10 @@ class ListingPackageSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type package_type: str
 
+        :param regions:
+            The value to assign to the regions property of this ListingPackageSummary.
+        :type regions: list[Region]
+
         :param resource_id:
             The value to assign to the resource_id property of this ListingPackageSummary.
         :type resource_id: str
@@ -53,6 +57,7 @@ class ListingPackageSummary(object):
             'listing_id': 'str',
             'package_version': 'str',
             'package_type': 'str',
+            'regions': 'list[Region]',
             'resource_id': 'str',
             'time_created': 'datetime'
         }
@@ -61,6 +66,7 @@ class ListingPackageSummary(object):
             'listing_id': 'listingId',
             'package_version': 'packageVersion',
             'package_type': 'packageType',
+            'regions': 'regions',
             'resource_id': 'resourceId',
             'time_created': 'timeCreated'
         }
@@ -68,6 +74,7 @@ class ListingPackageSummary(object):
         self._listing_id = None
         self._package_version = None
         self._package_type = None
+        self._regions = None
         self._resource_id = None
         self._time_created = None
 
@@ -148,6 +155,30 @@ class ListingPackageSummary(object):
         if not value_allowed_none_or_none_sentinel(package_type, allowed_values):
             package_type = 'UNKNOWN_ENUM_VALUE'
         self._package_type = package_type
+
+    @property
+    def regions(self):
+        """
+        Gets the regions of this ListingPackageSummary.
+        The regions where the package is eligible to be deployed.
+
+
+        :return: The regions of this ListingPackageSummary.
+        :rtype: list[Region]
+        """
+        return self._regions
+
+    @regions.setter
+    def regions(self, regions):
+        """
+        Sets the regions of this ListingPackageSummary.
+        The regions where the package is eligible to be deployed.
+
+
+        :param regions: The regions of this ListingPackageSummary.
+        :type: list[Region]
+        """
+        self._regions = regions
 
     @property
     def resource_id(self):

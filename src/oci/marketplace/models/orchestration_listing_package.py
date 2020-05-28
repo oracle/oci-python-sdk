@@ -56,6 +56,10 @@ class OrchestrationListingPackage(ListingPackage):
             The value to assign to the variables property of this OrchestrationListingPackage.
         :type variables: list[OrchestrationVariable]
 
+        :param regions:
+            The value to assign to the regions property of this OrchestrationListingPackage.
+        :type regions: list[Region]
+
         """
         self.swagger_types = {
             'description': 'str',
@@ -66,7 +70,8 @@ class OrchestrationListingPackage(ListingPackage):
             'resource_id': 'str',
             'time_created': 'datetime',
             'resource_link': 'str',
-            'variables': 'list[OrchestrationVariable]'
+            'variables': 'list[OrchestrationVariable]',
+            'regions': 'list[Region]'
         }
 
         self.attribute_map = {
@@ -78,7 +83,8 @@ class OrchestrationListingPackage(ListingPackage):
             'resource_id': 'resourceId',
             'time_created': 'timeCreated',
             'resource_link': 'resourceLink',
-            'variables': 'variables'
+            'variables': 'variables',
+            'regions': 'regions'
         }
 
         self._description = None
@@ -90,6 +96,7 @@ class OrchestrationListingPackage(ListingPackage):
         self._time_created = None
         self._resource_link = None
         self._variables = None
+        self._regions = None
         self._package_type = 'ORCHESTRATION'
 
     @property
@@ -139,6 +146,30 @@ class OrchestrationListingPackage(ListingPackage):
         :type: list[OrchestrationVariable]
         """
         self._variables = variables
+
+    @property
+    def regions(self):
+        """
+        Gets the regions of this OrchestrationListingPackage.
+        List of regions in which this ListingPackage is available.
+
+
+        :return: The regions of this OrchestrationListingPackage.
+        :rtype: list[Region]
+        """
+        return self._regions
+
+    @regions.setter
+    def regions(self, regions):
+        """
+        Sets the regions of this OrchestrationListingPackage.
+        List of regions in which this ListingPackage is available.
+
+
+        :param regions: The regions of this OrchestrationListingPackage.
+        :type: list[Region]
+        """
+        self._regions = regions
 
     def __repr__(self):
         return formatted_flat_dict(self)

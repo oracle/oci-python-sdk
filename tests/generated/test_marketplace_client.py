@@ -94,7 +94,6 @@ def test_delete_accepted_agreement(testing_service_client):
             client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
             response = client.delete_accepted_agreement(
                 accepted_agreement_id=request.pop(util.camelize('acceptedAgreementId')),
-                signature=request.pop(util.camelize('signature')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
