@@ -28,17 +28,17 @@ prompt APPLICATION 100 - OCI Usage and Cost Report
 -- Application Export:
 --   Application:     100
 --   Name:            OCI Usage and Cost Report
---   Date and Time:   15:06 Thursday May 14, 2020
+--   Date and Time:   15:20 Wednesday May 20, 2020
 --   Exported By:     ADIZOHAR
 --   Flashback:       0
 --   Export Type:     Application Export
 --     Pages:                      9
---       Items:                   70
---       Computations:            14
+--       Items:                   77
+--       Computations:            21
 --       Processes:                4
---       Regions:                 55
+--       Regions:                 57
 --       Buttons:                  5
---       Dynamic Actions:         28
+--       Dynamic Actions:         29
 --     Shared Components:
 --       Logic:
 --         App Settings:           1
@@ -105,7 +105,7 @@ wwv_flow_api.create_flow(
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=>nvl(wwv_flow_application_install.get_proxy,'')
 ,p_no_proxy_domains=>nvl(wwv_flow_application_install.get_no_proxy_domains,'')
-,p_flow_version=>'Release 20.05.18'
+,p_flow_version=>'Release 20.06.02'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
@@ -119,7 +119,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'OCI Usage and Cost Report'
 ,p_last_updated_by=>'ADIZOHAR'
-,p_last_upd_yyyymmddhh24miss=>'20200514145916'
+,p_last_upd_yyyymmddhh24miss=>'20200520151207'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>3
 ,p_ui_type_name => null
@@ -15342,7 +15342,7 @@ wwv_flow_api.create_page(
 '#P5_REPORT_SELECTOR { background-color: #F5FBB4; font-weight: bold; font-size: 13px;}'))
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'ADIZOHAR'
-,p_last_upd_yyyymmddhh24miss=>'20200514145916'
+,p_last_upd_yyyymmddhh24miss=>'20200520151207'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(22846551592241693)
@@ -15388,7 +15388,7 @@ wwv_flow_api.create_report_region(
 ,p_name=>'Monthly Report'
 ,p_parent_plug_id=>wwv_flow_api.id(33638842014589649)
 ,p_template=>wwv_flow_api.id(9765042323688020)
-,p_display_sequence=>80
+,p_display_sequence=>90
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
 ,p_display_point=>'BODY'
@@ -15705,7 +15705,7 @@ wwv_flow_api.create_report_region(
 ,p_name=>'Daily Cost Report'
 ,p_parent_plug_id=>wwv_flow_api.id(33638842014589649)
 ,p_template=>wwv_flow_api.id(9765042323688020)
-,p_display_sequence=>100
+,p_display_sequence=>110
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
 ,p_display_point=>'BODY'
@@ -16329,7 +16329,7 @@ wwv_flow_api.create_report_region(
 ,p_name=>'Weekly Report'
 ,p_parent_plug_id=>wwv_flow_api.id(33638842014589649)
 ,p_template=>wwv_flow_api.id(9765042323688020)
-,p_display_sequence=>130
+,p_display_sequence=>140
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
 ,p_display_point=>'BODY'
@@ -17184,7 +17184,7 @@ wwv_flow_api.create_report_region(
 ,p_name=>'Daily Product Unit Report - Single'
 ,p_parent_plug_id=>wwv_flow_api.id(33638842014589649)
 ,p_template=>wwv_flow_api.id(9765042323688020)
-,p_display_sequence=>110
+,p_display_sequence=>120
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
 ,p_display_point=>'BODY'
@@ -17915,7 +17915,7 @@ wwv_flow_api.create_page_plug(
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_escape_on_http_output=>'Y'
 ,p_plug_template=>wwv_flow_api.id(9765042323688020)
-,p_plug_display_sequence=>60
+,p_plug_display_sequence=>70
 ,p_plug_display_point=>'BODY'
 ,p_plug_source_type=>'NATIVE_JET_CHART'
 ,p_plug_query_num_rows=>15
@@ -18067,7 +18067,7 @@ wwv_flow_api.create_page_plug(
 wwv_flow_api.create_jet_chart(
  p_id=>wwv_flow_api.id(15051010405989902)
 ,p_region_id=>wwv_flow_api.id(15050972044989901)
-,p_chart_type=>'line'
+,p_chart_type=>'bar'
 ,p_height=>'500'
 ,p_animation_on_display=>'auto'
 ,p_animation_on_data_change=>'auto'
@@ -18077,9 +18077,8 @@ wwv_flow_api.create_jet_chart(
 ,p_hide_and_show_behavior=>'none'
 ,p_hover_behavior=>'none'
 ,p_stack=>'on'
-,p_stack_label=>'off'
+,p_stack_label=>'on'
 ,p_connect_nulls=>'Y'
-,p_value_position=>'auto'
 ,p_sorting=>'label-asc'
 ,p_fill_multi_series_gaps=>true
 ,p_zoom_and_scroll=>'off'
@@ -18087,24 +18086,9 @@ wwv_flow_api.create_jet_chart(
 ,p_show_series_name=>true
 ,p_show_group_name=>true
 ,p_show_value=>true
-,p_show_label=>true
-,p_show_row=>true
-,p_show_start=>true
-,p_show_end=>true
-,p_show_progress=>true
-,p_show_baseline=>true
 ,p_legend_rendered=>'on'
 ,p_legend_position=>'end'
-,p_overview_rendered=>'off'
-,p_horizontal_grid=>'auto'
-,p_vertical_grid=>'auto'
-,p_gauge_orientation=>'circular'
-,p_gauge_plot_area=>'on'
-,p_show_gauge_value=>true
 );
-end;
-/
-begin
 wwv_flow_api.create_jet_chart_series(
  p_id=>wwv_flow_api.id(15051132224989903)
 ,p_chart_id=>wwv_flow_api.id(15051010405989902)
@@ -18143,17 +18127,14 @@ wwv_flow_api.create_jet_chart_series(
 ,p_series_name_column_name=>'PRD_SERVICE'
 ,p_items_value_column_name=>'COST_USAGE'
 ,p_items_label_column_name=>'PERIOD'
-,p_line_style=>'solid'
-,p_line_type=>'auto'
-,p_marker_rendered=>'auto'
-,p_marker_shape=>'auto'
 ,p_assigned_to_y2=>'off'
 ,p_items_label_rendered=>true
 ,p_items_label_position=>'center'
-,p_items_label_display_as=>'PERCENT'
 ,p_items_label_font_size=>'10'
-,p_threshold_display=>'onIndicator'
 );
+end;
+/
+begin
 wwv_flow_api.create_jet_chart_axis(
  p_id=>wwv_flow_api.id(15051263494989904)
 ,p_chart_id=>wwv_flow_api.id(15051010405989902)
@@ -18208,7 +18189,7 @@ wwv_flow_api.create_page_plug(
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_escape_on_http_output=>'Y'
 ,p_plug_template=>wwv_flow_api.id(9765042323688020)
-,p_plug_display_sequence=>50
+,p_plug_display_sequence=>60
 ,p_plug_display_point=>'BODY'
 ,p_plug_source_type=>'NATIVE_JET_CHART'
 ,p_plug_query_num_rows=>15
@@ -18338,7 +18319,7 @@ wwv_flow_api.create_page_plug(
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_escape_on_http_output=>'Y'
 ,p_plug_template=>wwv_flow_api.id(9765042323688020)
-,p_plug_display_sequence=>70
+,p_plug_display_sequence=>80
 ,p_plug_display_point=>'BODY'
 ,p_plug_source_type=>'NATIVE_JET_CHART'
 ,p_plug_query_num_rows=>15
@@ -18479,7 +18460,7 @@ wwv_flow_api.create_report_region(
 ,p_name=>'Daily Product Unit Report - Total'
 ,p_parent_plug_id=>wwv_flow_api.id(33638842014589649)
 ,p_template=>wwv_flow_api.id(9765042323688020)
-,p_display_sequence=>120
+,p_display_sequence=>130
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
 ,p_display_point=>'BODY'
@@ -19005,9 +18986,6 @@ wwv_flow_api.create_report_columns(
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
-end;
-/
-begin
 wwv_flow_api.create_report_columns(
  p_id=>wwv_flow_api.id(15083179032497506)
 ,p_query_column_id=>31
@@ -19041,7 +19019,7 @@ wwv_flow_api.create_report_region(
 ,p_name=>'Weekly Product Unit Report'
 ,p_parent_plug_id=>wwv_flow_api.id(33638842014589649)
 ,p_template=>wwv_flow_api.id(9765042323688020)
-,p_display_sequence=>140
+,p_display_sequence=>150
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
 ,p_display_point=>'BODY'
@@ -19163,6 +19141,9 @@ wwv_flow_api.create_report_region(
 ,p_sort_null=>'L'
 ,p_plug_query_strip_html=>'N'
 );
+end;
+/
+begin
 wwv_flow_api.create_report_columns(
  p_id=>wwv_flow_api.id(15083882458497513)
 ,p_query_column_id=>1
@@ -19908,7 +19889,7 @@ wwv_flow_api.create_report_region(
 ,p_name=>'Monthly Product Unit Report'
 ,p_parent_plug_id=>wwv_flow_api.id(33638842014589649)
 ,p_template=>wwv_flow_api.id(9765042323688020)
-,p_display_sequence=>90
+,p_display_sequence=>100
 ,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-Report--altRowsDefault:t-Report--rowHighlight'
 ,p_display_point=>'BODY'
@@ -19991,9 +19972,6 @@ wwv_flow_api.create_report_region(
 ,p_sort_null=>'L'
 ,p_plug_query_strip_html=>'N'
 );
-end;
-/
-begin
 wwv_flow_api.create_report_columns(
  p_id=>wwv_flow_api.id(15102928440532017)
 ,p_query_column_id=>1
@@ -20174,6 +20152,121 @@ wwv_flow_api.create_report_columns(
 ,p_report_column_width=>90
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(16359989459490324)
+,p_plug_name=>'Cost By SKU - &P5_PERIOD.'
+,p_parent_plug_id=>wwv_flow_api.id(33638842014589649)
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_escape_on_http_output=>'Y'
+,p_plug_template=>wwv_flow_api.id(9765042323688020)
+,p_plug_display_sequence=>50
+,p_plug_display_point=>'BODY'
+,p_plug_source_type=>'NATIVE_JET_CHART'
+,p_plug_query_num_rows=>15
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+);
+wwv_flow_api.create_jet_chart(
+ p_id=>wwv_flow_api.id(16360042364490325)
+,p_region_id=>wwv_flow_api.id(16359989459490324)
+,p_chart_type=>'bar'
+,p_height=>'500'
+,p_animation_on_display=>'auto'
+,p_animation_on_data_change=>'auto'
+,p_orientation=>'vertical'
+,p_data_cursor=>'auto'
+,p_data_cursor_behavior=>'auto'
+,p_hide_and_show_behavior=>'none'
+,p_hover_behavior=>'none'
+,p_stack=>'on'
+,p_stack_label=>'on'
+,p_connect_nulls=>'Y'
+,p_sorting=>'label-asc'
+,p_fill_multi_series_gaps=>true
+,p_zoom_and_scroll=>'off'
+,p_tooltip_rendered=>'Y'
+,p_show_series_name=>true
+,p_show_group_name=>true
+,p_show_value=>true
+,p_legend_rendered=>'on'
+,p_legend_position=>'end'
+);
+wwv_flow_api.create_jet_chart_series(
+ p_id=>wwv_flow_api.id(16360174750490326)
+,p_chart_id=>wwv_flow_api.id(16360042364490325)
+,p_seq=>10
+,p_name=>'Usage'
+,p_data_source_type=>'SQL'
+,p_data_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select ',
+'    case ',
+'        when :P5_PERIOD=''Daily'' then to_char(USAGE_INTERVAL_START,''YYYY-MM-DD'') ',
+'        when :P5_PERIOD=''Weekly'' then to_char(USAGE_INTERVAL_START,''YYYY-WW'') ',
+'        when :P5_PERIOD=''Monthly'' or :P5_PERIOD is null then to_char(USAGE_INTERVAL_START,''YYYY-MM-MON'')',
+'    end PERIOD,',
+'    COST_PRODUCT_SKU || '' '' || replace(replace(PRD_DESCRIPTION,COST_PRODUCT_SKU||'' - '',''''),''Oracle Cloud Infrastructure'',''OCI'') COST_PRODUCT_SKU,',
+'    sum(COST_MY_COST) as COST_USAGE',
+'from oci_cost',
+'where ',
+'    tenant_name=:P5_TENANT_NAME and',
+'    (:P5_COMPARTMENT_NAME is null or prd_compartment_name = :P5_COMPARTMENT_NAME) and',
+'    (:P5_COMPARTMENT_TOP is null or prd_compartment_path like :P5_COMPARTMENT_TOP ||''%'') and',
+'    (:P5_PRODUCT_SERVICE is null or prd_service = :P5_PRODUCT_SERVICE) and',
+'    (:P5_PRODUCT_REGION is null or prd_region = :P5_PRODUCT_REGION) and',
+'    (:P5_COST_PRODUCT_SKU is null or COST_PRODUCT_SKU = :P5_COST_PRODUCT_SKU) and',
+'    (:P5_TAG_KEY is null or tags_data like ''%#'' || :P5_TAG_KEY || ''=%'') and',
+'    (:P5_TAG_DATA is null or tags_data like ''%#'' || nvl(:P5_TAG_KEY,''%'') || ''=%'' || :P5_TAG_DATA || ''#'') and',
+'    (:P5_PERIOD=''Daily'' and to_char(USAGE_INTERVAL_START,''YYYY-MM'') = :P5_PERIOD_RANGE or :P5_PERIOD in (''Monthly'',''Weekly'') and to_char(USAGE_INTERVAL_START,''YYYY'') = :P5_PERIOD_RANGE) and',
+'    :P5_REPORT_SELECTOR in (''Daily Cost By SKU'',''Weekly Cost By SKU'',''Monthly Cost By SKU'')    ',
+'    group by ',
+'    case ',
+'        when :P5_PERIOD=''Daily'' then to_char(USAGE_INTERVAL_START,''YYYY-MM-DD'') ',
+'        when :P5_PERIOD=''Weekly'' then to_char(USAGE_INTERVAL_START,''YYYY-WW'') ',
+'        when :P5_PERIOD=''Monthly'' or :P5_PERIOD is null then to_char(USAGE_INTERVAL_START,''YYYY-MM-MON'')',
+'    end,',
+'    COST_PRODUCT_SKU || '' '' || replace(replace(PRD_DESCRIPTION,COST_PRODUCT_SKU||'' - '',''''),''Oracle Cloud Infrastructure'',''OCI'')',
+'order by 1,2'))
+,p_series_name_column_name=>'COST_PRODUCT_SKU'
+,p_items_value_column_name=>'COST_USAGE'
+,p_items_label_column_name=>'PERIOD'
+,p_assigned_to_y2=>'off'
+,p_items_label_rendered=>true
+,p_items_label_position=>'center'
+,p_items_label_font_size=>'10'
+);
+end;
+/
+begin
+wwv_flow_api.create_jet_chart_axis(
+ p_id=>wwv_flow_api.id(16360289843490327)
+,p_chart_id=>wwv_flow_api.id(16360042364490325)
+,p_axis=>'y'
+,p_is_rendered=>'on'
+,p_format_type=>'decimal'
+,p_decimal_places=>1
+,p_format_scaling=>'auto'
+,p_scaling=>'linear'
+,p_baseline_scaling=>'zero'
+,p_position=>'auto'
+,p_major_tick_rendered=>'on'
+,p_minor_tick_rendered=>'off'
+,p_tick_label_rendered=>'on'
+);
+wwv_flow_api.create_jet_chart_axis(
+ p_id=>wwv_flow_api.id(16360351214490328)
+,p_chart_id=>wwv_flow_api.id(16360042364490325)
+,p_axis=>'x'
+,p_is_rendered=>'on'
+,p_format_type=>'date-short'
+,p_numeric_pattern=>'DD-MON-YYYY'
+,p_format_scaling=>'auto'
+,p_scaling=>'linear'
+,p_baseline_scaling=>'zero'
+,p_major_tick_rendered=>'on'
+,p_minor_tick_rendered=>'off'
+,p_tick_label_rendered=>'on'
+,p_tick_label_rotation=>'auto'
+,p_tick_label_position=>'outside'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(23961814581267567)
@@ -20859,9 +20952,6 @@ wwv_flow_api.create_page_item(
 ,p_attribute_02=>'VALUE'
 ,p_attribute_04=>'Y'
 );
-end;
-/
-begin
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(12055265653076068)
 ,p_name=>'P5_SUBSCRIPTION'
@@ -20921,6 +21011,8 @@ wwv_flow_api.create_page_item(
 '    union all',
 '    select ''Daily Cost By Service'' report_name from dual where :P5_PERIOD=''Daily''',
 '    union all',
+'    select ''Daily Cost By SKU'' report_name from dual where :P5_PERIOD=''Daily''',
+'    union all',
 '    select ''Daily Cost By Region'' report_name from dual where :P5_PERIOD=''Daily''',
 '    union all',
 '    select ''Daily Cost By Compartment'' report_name from dual where :P5_PERIOD=''Daily''',
@@ -20939,6 +21031,8 @@ wwv_flow_api.create_page_item(
 '    union all',
 '    select ''Weekly Cost By Service'' report_name from dual where :P5_PERIOD=''Weekly''',
 '    union all',
+'    select ''Weekly Cost By SKU'' report_name from dual where :P5_PERIOD=''Weekly''',
+'    union all',
 '    select ''Weekly Cost By Region'' report_name from dual where :P5_PERIOD=''Weekly''',
 '    union all',
 '    select ''Weekly Cost By Compartment'' report_name from dual where :P5_PERIOD=''Weekly''',
@@ -20952,6 +21046,8 @@ wwv_flow_api.create_page_item(
 '    select ''Monthly Cost Over Time'' report_name from dual where :P5_PERIOD=''Monthly''',
 '    union all',
 '    select ''Monthly Cost By Service'' report_name from dual where :P5_PERIOD=''Monthly''',
+'    union all',
+'    select ''Monthly Cost By SKU'' report_name from dual where :P5_PERIOD=''Monthly''',
 '    union all',
 '    select ''Monthly Cost By Region'' report_name from dual where :P5_PERIOD=''Monthly''',
 '    union all',
@@ -20979,6 +21075,9 @@ wwv_flow_api.create_page_item(
 ,p_attribute_01=>'NONE'
 ,p_attribute_02=>'N'
 );
+end;
+/
+begin
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(14186230501270003)
 ,p_name=>'P5_YEARLY'
@@ -21291,9 +21390,39 @@ wwv_flow_api.create_page_da_action(
 ,p_affected_region_id=>wwv_flow_api.id(15050972044989901)
 );
 wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(16360416189490329)
+,p_name=>'ShowCostBySKU'
+,p_event_sequence=>90
+,p_condition_element=>'P5_REPORT_SELECTOR'
+,p_triggering_condition_type=>'IN_LIST'
+,p_triggering_expression=>'Daily Cost By SKU,Weekly Cost By SKU,Monthly Cost By SKU'
+,p_bind_type=>'bind'
+,p_bind_event_type=>'ready'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(16360563041490330)
+,p_event_id=>wwv_flow_api.id(16360416189490329)
+,p_event_result=>'FALSE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'Y'
+,p_action=>'NATIVE_HIDE'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_api.id(16359989459490324)
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(16360614830490331)
+,p_event_id=>wwv_flow_api.id(16360416189490329)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'Y'
+,p_action=>'NATIVE_SHOW'
+,p_affected_elements_type=>'REGION'
+,p_affected_region_id=>wwv_flow_api.id(16359989459490324)
+);
+wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(15052224625989914)
 ,p_name=>'ShowCostByCompartment'
-,p_event_sequence=>90
+,p_event_sequence=>100
 ,p_condition_element=>'P5_REPORT_SELECTOR'
 ,p_triggering_condition_type=>'IN_LIST'
 ,p_triggering_expression=>'Daily Cost By Compartment,Weekly Cost By Compartment,Monthly Cost By Compartment'
@@ -21323,7 +21452,7 @@ wwv_flow_api.create_page_da_action(
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(14186923617270010)
 ,p_name=>'ShowCostByRegion'
-,p_event_sequence=>100
+,p_event_sequence=>110
 ,p_condition_element=>'P5_REPORT_SELECTOR'
 ,p_triggering_condition_type=>'IN_LIST'
 ,p_triggering_expression=>'Daily Cost By Region,Weekly Cost By Region,Monthly Cost By Region'
@@ -21353,7 +21482,7 @@ wwv_flow_api.create_page_da_action(
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(15053003375989922)
 ,p_name=>'ShowCostByTopCompartment'
-,p_event_sequence=>110
+,p_event_sequence=>120
 ,p_condition_element=>'P5_REPORT_SELECTOR'
 ,p_triggering_condition_type=>'IN_LIST'
 ,p_triggering_expression=>'Daily Cost By Top Compartment,Weekly Cost By Top Compartment,Monthly Cost By Top Compartment'
@@ -21383,7 +21512,7 @@ wwv_flow_api.create_page_da_action(
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(13975055917041427)
 ,p_name=>'ShowDailyCostReport'
-,p_event_sequence=>120
+,p_event_sequence=>130
 ,p_condition_element=>'P5_REPORT_SELECTOR'
 ,p_triggering_condition_type=>'EQUALS'
 ,p_triggering_expression=>'Daily Cost Report'
@@ -21413,7 +21542,7 @@ wwv_flow_api.create_page_da_action(
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(13975348835041430)
 ,p_name=>'ShowDailyProductUnitReportSingle'
-,p_event_sequence=>130
+,p_event_sequence=>140
 ,p_condition_element=>'P5_REPORT_SELECTOR'
 ,p_triggering_condition_type=>'EQUALS'
 ,p_triggering_expression=>'Daily Product Unit Report - Single'
@@ -21443,7 +21572,7 @@ wwv_flow_api.create_page_da_action(
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(15083319206497508)
 ,p_name=>'ShowDailyProductUnitReportTotal'
-,p_event_sequence=>140
+,p_event_sequence=>150
 ,p_condition_element=>'P5_REPORT_SELECTOR'
 ,p_triggering_condition_type=>'EQUALS'
 ,p_triggering_expression=>'Daily Product Unit Report - Total'
@@ -21473,7 +21602,7 @@ wwv_flow_api.create_page_da_action(
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(13975688110041433)
 ,p_name=>'ShowWeeklyCostReport'
-,p_event_sequence=>150
+,p_event_sequence=>160
 ,p_condition_element=>'P5_REPORT_SELECTOR'
 ,p_triggering_condition_type=>'EQUALS'
 ,p_triggering_expression=>'Weekly Cost Report'
@@ -21503,7 +21632,7 @@ wwv_flow_api.create_page_da_action(
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(15104375728532031)
 ,p_name=>'ShowWeeklyProductUnitReport'
-,p_event_sequence=>160
+,p_event_sequence=>170
 ,p_condition_element=>'P5_REPORT_SELECTOR'
 ,p_triggering_condition_type=>'EQUALS'
 ,p_triggering_expression=>'Weekly Product Unit Report'
@@ -21533,7 +21662,7 @@ wwv_flow_api.create_page_da_action(
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(15104677803532034)
 ,p_name=>'ShowMonthlyProductUnitReport'
-,p_event_sequence=>170
+,p_event_sequence=>180
 ,p_condition_element=>'P5_REPORT_SELECTOR'
 ,p_triggering_condition_type=>'EQUALS'
 ,p_triggering_expression=>'Monthly Product Unit Report'
@@ -21563,7 +21692,7 @@ wwv_flow_api.create_page_da_action(
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(13975972745041436)
 ,p_name=>'ShowMonthlyCostReport'
-,p_event_sequence=>180
+,p_event_sequence=>190
 ,p_condition_element=>'P5_REPORT_SELECTOR'
 ,p_triggering_condition_type=>'EQUALS'
 ,p_triggering_expression=>'Monthly Cost Report'
@@ -21593,7 +21722,7 @@ wwv_flow_api.create_page_da_action(
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(13976243106041439)
 ,p_name=>'ShowReportGroupOption'
-,p_event_sequence=>190
+,p_event_sequence=>200
 ,p_condition_element=>'P5_REPORT_SELECTOR'
 ,p_triggering_condition_type=>'IN_LIST'
 ,p_triggering_expression=>'Daily Cost Report,Weekly Cost Report,Monthly Cost Report'
@@ -21630,16 +21759,21 @@ wwv_flow_api.create_page(
 ,p_name=>'Data Statistics'
 ,p_step_title=>'Data Statistics'
 ,p_autocomplete_on_off=>'OFF'
+,p_inline_css=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'.a-IRR-table tr td[headers*="rep_col_grey"]',
+'{',
+'    background-color: #efffff;',
+'}'))
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'ADIZOHAR'
-,p_last_upd_yyyymmddhh24miss=>'20200506182015'
+,p_last_upd_yyyymmddhh24miss=>'20200520121531'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(12552815670313326)
 ,p_plug_name=>'Usage Statistics - &P6_USAGE_SIZE.'
 ,p_region_template_options=>'#DEFAULT#:t-Region--accent15:t-Region--scrollBody'
 ,p_plug_template=>wwv_flow_api.id(9765042323688020)
-,p_plug_display_sequence=>30
+,p_plug_display_sequence=>40
 ,p_plug_display_point=>'BODY'
 ,p_query_type=>'SQL'
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -22060,6 +22194,178 @@ wwv_flow_api.create_worksheet_rpt(
 ,p_report_columns=>'TENANT_NAME:MIN_FILE_TIME:MAX_FILE_TIME:MIN_FILE_ID:MAX_FILE_ID:NUM_FILES:NUM_ROWS:AVG_COST_DAY:MAX_COST_DAY:NUM_FULL_DAYS:LAST_LOAD:AGENT_VERSION'
 ,p_sum_columns_on_break=>'NUM_ROWS:NUM_FILES'
 );
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(14188632778270027)
+,p_plug_name=>'Cost Summary Last 7 Days'
+,p_region_template_options=>'#DEFAULT#:t-Region--accent15:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(9765042323688020)
+,p_plug_display_sequence=>30
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_display_point=>'BODY'
+,p_query_type=>'SQL'
+,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select tenant_name, day7, day6, day5, day4, day3, day2, day1, greatest(day1,day2,day3,day4,day5,day6,day7)*365 year',
+'from',
+'(',
+'    select ',
+'        tenant_name,',
+'        sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-7) then COST_MY_COST else 0 end) DAY7,',
+'        sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-6) then COST_MY_COST else 0 end) DAY6,',
+'        sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-5) then COST_MY_COST else 0 end) DAY5,',
+'        sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-4) then COST_MY_COST else 0 end) DAY4,',
+'        sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-3) then COST_MY_COST else 0 end) DAY3,',
+'        sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-2) then COST_MY_COST else 0 end) DAY2,',
+'        sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-1) then COST_MY_COST else 0 end) DAY1,',
+'        sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-4) then COST_MY_COST else 0 end)*365 YEAR3 ',
+'    from oci_cost_stats',
+'    where ',
+'        tenant_name like ''%'' and',
+'        USAGE_INTERVAL_START > trunc(sysdate-8)',
+'    group by tenant_name',
+')',
+'order by 1',
+''))
+,p_plug_source_type=>'NATIVE_IR'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_prn_content_disposition=>'ATTACHMENT'
+,p_prn_document_header=>'APEX'
+,p_prn_units=>'INCHES'
+,p_prn_paper_size=>'LETTER'
+,p_prn_width=>8.5
+,p_prn_height=>11
+,p_prn_orientation=>'HORIZONTAL'
+,p_prn_page_header_font_color=>'#000000'
+,p_prn_page_header_font_family=>'Helvetica'
+,p_prn_page_header_font_weight=>'normal'
+,p_prn_page_header_font_size=>'12'
+,p_prn_page_footer_font_color=>'#000000'
+,p_prn_page_footer_font_family=>'Helvetica'
+,p_prn_page_footer_font_weight=>'normal'
+,p_prn_page_footer_font_size=>'12'
+,p_prn_header_bg_color=>'#9bafde'
+,p_prn_header_font_color=>'#000000'
+,p_prn_header_font_family=>'Helvetica'
+,p_prn_header_font_weight=>'normal'
+,p_prn_header_font_size=>'10'
+,p_prn_body_bg_color=>'#efefef'
+,p_prn_body_font_color=>'#000000'
+,p_prn_body_font_family=>'Helvetica'
+,p_prn_body_font_weight=>'normal'
+,p_prn_body_font_size=>'10'
+,p_prn_border_width=>.5
+,p_prn_page_header_alignment=>'CENTER'
+,p_prn_page_footer_alignment=>'CENTER'
+);
+wwv_flow_api.create_worksheet(
+ p_id=>wwv_flow_api.id(14188875057270029)
+,p_max_row_count=>'1000000'
+,p_show_nulls_as=>'-'
+,p_pagination_type=>'ROWS_X_TO_Y'
+,p_pagination_display_pos=>'BOTTOM_RIGHT'
+,p_show_search_bar=>'N'
+,p_show_detail_link=>'N'
+,p_owner=>'ADIZOHAR'
+,p_internal_uid=>14188875057270029
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(14188947516270030)
+,p_db_column_name=>'TENANT_NAME'
+,p_display_order=>10
+,p_column_identifier=>'A'
+,p_column_label=>'Tenant Name'
+,p_column_type=>'STRING'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(14189055837270031)
+,p_db_column_name=>'DAY7'
+,p_display_order=>20
+,p_column_identifier=>'B'
+,p_column_label=>'&P6_DAY7.'
+,p_column_type=>'NUMBER'
+,p_column_alignment=>'RIGHT'
+,p_format_mask=>'999G999G999G999G990D00'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(14189164915270032)
+,p_db_column_name=>'DAY6'
+,p_display_order=>30
+,p_column_identifier=>'C'
+,p_column_label=>'&P6_DAY6.'
+,p_column_type=>'NUMBER'
+,p_column_alignment=>'RIGHT'
+,p_format_mask=>'999G999G999G999G990D00'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(14189202068270033)
+,p_db_column_name=>'DAY5'
+,p_display_order=>40
+,p_column_identifier=>'D'
+,p_column_label=>'&P6_DAY5.'
+,p_column_type=>'NUMBER'
+,p_column_alignment=>'RIGHT'
+,p_format_mask=>'999G999G999G999G990D00'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(14189318043270034)
+,p_db_column_name=>'DAY4'
+,p_display_order=>50
+,p_column_identifier=>'E'
+,p_column_label=>'&P6_DAY4.'
+,p_column_type=>'NUMBER'
+,p_column_alignment=>'RIGHT'
+,p_format_mask=>'999G999G999G999G990D00'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(14189429637270035)
+,p_db_column_name=>'DAY3'
+,p_display_order=>60
+,p_column_identifier=>'F'
+,p_column_label=>'&P6_DAY3.'
+,p_column_type=>'NUMBER'
+,p_column_alignment=>'RIGHT'
+,p_format_mask=>'999G999G999G999G990D00'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(14189561008270036)
+,p_db_column_name=>'DAY2'
+,p_display_order=>70
+,p_column_identifier=>'G'
+,p_column_label=>'&P6_DAY2.'
+,p_column_type=>'NUMBER'
+,p_column_alignment=>'RIGHT'
+,p_format_mask=>'999G999G999G999G990D00'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(14189618941270037)
+,p_db_column_name=>'DAY1'
+,p_display_order=>80
+,p_column_identifier=>'H'
+,p_column_label=>'&P6_DAY1.'
+,p_column_type=>'NUMBER'
+,p_column_alignment=>'RIGHT'
+,p_format_mask=>'999G999G999G999G990D00'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(16672415759602103)
+,p_db_column_name=>'YEAR'
+,p_display_order=>90
+,p_column_identifier=>'J'
+,p_column_label=>'Year Estimation'
+,p_column_type=>'NUMBER'
+,p_column_alignment=>'RIGHT'
+,p_format_mask=>'999G999G999G999G990'
+,p_static_id=>'rep_col_grey'
+);
+wwv_flow_api.create_worksheet_rpt(
+ p_id=>wwv_flow_api.id(16669557578557119)
+,p_application_user=>'APXWS_DEFAULT'
+,p_report_seq=>10
+,p_report_alias=>'166696'
+,p_status=>'PUBLIC'
+,p_is_default=>'Y'
+,p_report_columns=>'TENANT_NAME:DAY7:DAY6:DAY5:DAY4:DAY3:DAY2:DAY1:YEAR:'
+);
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(12555202081313350)
 ,p_name=>'P6_USAGE_SIZE'
@@ -22081,6 +22387,118 @@ wwv_flow_api.create_page_item(
 ,p_source_type=>'QUERY'
 ,p_display_as=>'NATIVE_HIDDEN'
 ,p_attribute_01=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(14189745953270038)
+,p_name=>'P6_DAY1'
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_api.id(14188632778270027)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_attribute_01=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(14189972710270040)
+,p_name=>'P6_DAY2'
+,p_item_sequence=>20
+,p_item_plug_id=>wwv_flow_api.id(14188632778270027)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_attribute_01=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(14190110518270042)
+,p_name=>'P6_DAY3'
+,p_item_sequence=>30
+,p_item_plug_id=>wwv_flow_api.id(14188632778270027)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_attribute_01=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(14190215017270043)
+,p_name=>'P6_DAY4'
+,p_item_sequence=>40
+,p_item_plug_id=>wwv_flow_api.id(14188632778270027)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_attribute_01=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(14190314422270044)
+,p_name=>'P6_DAY5'
+,p_item_sequence=>50
+,p_item_plug_id=>wwv_flow_api.id(14188632778270027)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_attribute_01=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(14190487872270045)
+,p_name=>'P6_DAY6'
+,p_item_sequence=>60
+,p_item_plug_id=>wwv_flow_api.id(14188632778270027)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_attribute_01=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(14190567586270046)
+,p_name=>'P6_DAY7'
+,p_item_sequence=>70
+,p_item_plug_id=>wwv_flow_api.id(14188632778270027)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_attribute_01=>'Y'
+);
+wwv_flow_api.create_page_computation(
+ p_id=>wwv_flow_api.id(14189861715270039)
+,p_computation_sequence=>10
+,p_computation_item=>'P6_DAY1'
+,p_computation_point=>'BEFORE_BOX_BODY'
+,p_computation_type=>'QUERY'
+,p_computation=>'select to_char(trunc(sysdate-1),''DD-MON-YYYY'') val from dual'
+);
+wwv_flow_api.create_page_computation(
+ p_id=>wwv_flow_api.id(14190030026270041)
+,p_computation_sequence=>20
+,p_computation_item=>'P6_DAY2'
+,p_computation_point=>'BEFORE_BOX_BODY'
+,p_computation_type=>'QUERY'
+,p_computation=>'select to_char(trunc(sysdate-2),''DD-MON-YYYY'') val from dual'
+);
+wwv_flow_api.create_page_computation(
+ p_id=>wwv_flow_api.id(14190665626270047)
+,p_computation_sequence=>30
+,p_computation_item=>'P6_DAY3'
+,p_computation_point=>'BEFORE_BOX_BODY'
+,p_computation_type=>'QUERY'
+,p_computation=>'select to_char(trunc(sysdate-3),''DD-MON-YYYY'') val from dual'
+);
+wwv_flow_api.create_page_computation(
+ p_id=>wwv_flow_api.id(14190773992270048)
+,p_computation_sequence=>40
+,p_computation_item=>'P6_DAY4'
+,p_computation_point=>'BEFORE_BOX_BODY'
+,p_computation_type=>'QUERY'
+,p_computation=>'select to_char(trunc(sysdate-4),''DD-MON-YYYY'') val from dual'
+);
+wwv_flow_api.create_page_computation(
+ p_id=>wwv_flow_api.id(14190860366270049)
+,p_computation_sequence=>50
+,p_computation_item=>'P6_DAY5'
+,p_computation_point=>'BEFORE_BOX_BODY'
+,p_computation_type=>'QUERY'
+,p_computation=>'select to_char(trunc(sysdate-5),''DD-MON-YYYY'') val from dual'
+);
+wwv_flow_api.create_page_computation(
+ p_id=>wwv_flow_api.id(14190996091270050)
+,p_computation_sequence=>60
+,p_computation_item=>'P6_DAY6'
+,p_computation_point=>'BEFORE_BOX_BODY'
+,p_computation_type=>'QUERY'
+,p_computation=>'select to_char(trunc(sysdate-6),''DD-MON-YYYY'') val from dual'
+);
+wwv_flow_api.create_page_computation(
+ p_id=>wwv_flow_api.id(16672287011602101)
+,p_computation_sequence=>70
+,p_computation_item=>'P6_DAY7'
+,p_computation_point=>'BEFORE_BOX_BODY'
+,p_computation_type=>'QUERY'
+,p_computation=>'select to_char(trunc(sysdate-7),''DD-MON-YYYY'') val from dual'
 );
 end;
 /

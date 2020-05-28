@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.06.02 - 2020-06-02
+=====================
+* Added image to the summary if it is custom image (from the marketplace)
+* Added step by step installation guide
+
+=====================
 20.05.18 - 2020-05-18
 =====================
 * Bug Fixed

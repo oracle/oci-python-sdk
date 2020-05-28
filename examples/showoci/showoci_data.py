@@ -1373,9 +1373,19 @@ class ShowOCIData(object):
             instances = self.service.search_multi_items(self.service.C_COMPUTE, self.service.C_COMPUTE_INST, 'region_name', region_name, 'compartment_id', compartment['id'])
 
             for instance in instances:
+
+                # fix the shape image for the summary
+                sum_shape = ""
+                if instance['image'] == "Not Found" or instance['image'] == "Custom" or instance['image_os'] == "Oracle Linux":
+                    sum_shape = instance['image_os'][0:35]
+                elif 'Windows-Server' in instance['image']:
+                    sum_shape = instance['image'][0:19]
+                else:
+                    sum_shape = instance['image'][0:35]
+
                 inst = {'id': instance['id'], 'name': instance['shape'] + " - " + instance['display_name'] + " - " + instance['lifecycle_state'],
                         'sum_info': 'Compute',
-                        'sum_shape': instance['image_os'][0:14] + " - " + instance['shape'],
+                        'sum_shape': instance['shape'].ljust(16, ' ')[0:15] + " - " + sum_shape,
                         'availability_domain': instance['availability_domain'],
                         'fault_domain': instance['fault_domain'],
                         'time_maintenance_reboot_due': str(instance['time_maintenance_reboot_due']),
