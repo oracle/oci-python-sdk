@@ -45,27 +45,32 @@ def wait_until(client, response, property=None, state=None, max_interval_seconds
     :param succeed_on_not_found: (optional) A boolean determining whether or not the waiter should return successfully
         if the data we're waiting on is not found (e.g. a 404 is returned from the service). This defaults to
         False and so a 404 would cause an exception to be thrown by this function. Setting it to True may be useful
-        in scenarios when waiting for a resource to be terminated/deleted since it is possible that the resource would not
-        be returned by the a GET call anymore.
-    :param evaluate_response: (optional) A function which can be used to evaluate the response from the GET operation. This is
-        a single argument function which takes in the response from the GET operation. If this function
-        is supplied, then the 'property' argument cannot be supplied. It is expected that this function return a truthy value
-        to signify that a condition has passed and the wait_until function should return, and a falsey value otherwise.
-    :param wait_callback: (optional) A function which will be called each time that we have to do an initial wait (i.e. because the
-        property of the resource was not in the correct state, or the ``evaluate_response`` function returned False). This function
-        should take two arguments - the first argument is the number of times we have checked the resource, and the second argument
-        is the result of the most recent check.
+        in scenarios when waiting for a resource to be terminated/deleted since it is possible that the resource would
+        not be returned by the a GET call anymore.
+    :param evaluate_response: (optional) A function which can be used to evaluate the response from the GET operation.
+        This is a single argument function which takes in the response from the GET operation. If this function is
+        supplied, then the 'property' argument cannot be supplied. It is expected that this function return a truthy
+        value to signify that a condition has passed and the wait_until function should return, and a falsey value otherwise.
+    :param wait_callback: (optional) A function which will be called each time that we have to do an initial wait (i.e.
+        because the property of the resource was not in the correct state, or the ``evaluate_response`` function returned
+         False). This function should take two arguments - the first argument is the number of times we have checked the
+         resource, and the second argument is the result of the most recent check.
     :param fetch_func: (optional) This function will be called to fetch the updated state from the server.
         This can be used if the call to check for state needs to be more complex than a single GET request.
         For example, if the goal is to wait until an item appears in a list, fetch_func can be a function
         that paginates through a full list on the server.
+
     :return: The final response, which will contain the property in the specified state.
 
-        If the ``succeed_on_not_found`` parameter is set to True and the data was not then ``oci.waiter.WAIT_RESOURCE_NOT_FOUND`` will be returned. This is a :py:class:`~oci.util.Sentinel` which is not truthy and holds an internal name of ``WaitResourceNotFound``.
+        If the ``succeed_on_not_found`` parameter is set to True and the data was not then ``oci.waiter.
+        WAIT_RESOURCE_NOT_FOUND`` will be returned. This is a :py:class:`~oci.util.Sentinel` which is not truthy and
+        holds an internal name of ``WaitResourceNotFound``.
     """
 
     if kwargs.get('evaluate_response') and (property):
-        raise ValueError('If an evaluate_response function is provided, then the property argument cannot also be provided')
+        raise ValueError('Invalid wait_until configuration - can not provide both evaluate_response function and property argument, only one should be specified')
+    elif not (kwargs.get('evaluate_response') or property):
+        raise RuntimeError('Invalid wait_until configuration - neither a property argument, nor an evaluate_response function, have been specified')
 
     if kwargs.get('fetch_func') is None:
         # if no custom fetch_func is provided, we only support waiting on a GET request
@@ -86,20 +91,17 @@ def wait_until(client, response, property=None, state=None, max_interval_seconds
 
     times_checked = 0
     while True:
-        if kwargs.get('wait_callback') and times_checked > 0:
-            kwargs['wait_callback'](times_checked, response)
-
         if property:
             if isinstance(state, tuple):
                 if getattr(response.data, property) in state:
                     return response
             elif getattr(response.data, property) == state:
                 return response
-        elif kwargs.get('evaluate_response'):
-            if kwargs.get('evaluate_response')(response):
-                return response
-        else:
-            raise RuntimeError('Invalid wait_until configuration - neither a property, nor an evaluate_response function, have been specified')
+        elif kwargs.get('evaluate_response')(response):
+            return response
+
+        if kwargs.get('wait_callback') and times_checked > 0:
+            kwargs['wait_callback'](times_checked, response)
 
         elapsed_seconds = (time.time() - start_time)
 
