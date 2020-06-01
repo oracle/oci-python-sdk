@@ -4,12 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.14.4 - TBD
+2.15.0 - 2020-06-02
 ====================
 
 Added
 -----
-* TBD
+* Support for optionally supplying a signature when deleting an agreement in the Marketplace service
+* Support for launching paid listings in non-US regions in the Marketplace service
+* Support for returning the image id of packages in the Marketplace service
+* Support for calling Oracle Cloud Infrastructure services in the ap-chuncheon-1 region
+* Support for authenticating via Resource Principals. An example of how to use resource principals is available on `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/resource_principals_example.py>`__
+
+Fixed
+-----
+* Fixed a bug where `oci.waiter.wait_until()` was not invoking `wait_callback` correctly based on the resource property
+* Fixed a bug in `ExponentialBackoffWithFullJitterRetryStrategy.do_sleep()` where it was assuming time in milliseconds but it should be seconds
+
+Breaking
+--------
+* Field `signature` in `delete_accepted_agreement_id` from Marketplace Service changed from required to optional
 
 ====================
 2.14.3 - 2020-05-19
