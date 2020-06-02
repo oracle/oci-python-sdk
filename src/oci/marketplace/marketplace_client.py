@@ -155,7 +155,7 @@ class MarketplaceClient(object):
                 body=create_accepted_agreement_details,
                 response_type="AcceptedAgreement")
 
-    def delete_accepted_agreement(self, accepted_agreement_id, signature, **kwargs):
+    def delete_accepted_agreement(self, accepted_agreement_id, **kwargs):
         """
         Removes a previously accepted terms of use agreement from the list of agreements that Marketplace checks
         before initiating a deployment. Listings in the Marketplace that require acceptance of the specified terms
@@ -165,10 +165,8 @@ class MarketplaceClient(object):
         :param str accepted_agreement_id: (required)
             The unique identifier for the accepted terms of use agreement.
 
-        :param str signature: (required)
-            A signature generated for the listing package terms of use agreements that you can retrieve with a `GetAgreement`__ API call.
-
-            __ https://docs.cloud.oracle.com/en-us/iaas/api/#/en/marketplace/latest/Agreement/GetAgreement
+        :param str signature: (optional)
+            Deprecated. The signature value is ignored.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
@@ -196,6 +194,7 @@ class MarketplaceClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "signature",
             "opc_request_id",
             "if_match"
         ]
@@ -215,7 +214,7 @@ class MarketplaceClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         query_params = {
-            "signature": signature
+            "signature": kwargs.get("signature", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

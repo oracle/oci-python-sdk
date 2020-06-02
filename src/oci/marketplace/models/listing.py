@@ -745,7 +745,7 @@ class Listing(object):
     def regions(self):
         """
         Gets the regions of this Listing.
-        The regions where the listing is available.
+        The regions where the listing is eligible to be deployed.
 
 
         :return: The regions of this Listing.
@@ -757,7 +757,7 @@ class Listing(object):
     def regions(self, regions):
         """
         Sets the regions of this Listing.
-        The regions where the listing is available.
+        The regions where the listing is eligible to be deployed.
 
 
         :param regions: The regions of this Listing.

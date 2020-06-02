@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.06.02 - 2020-06-02
+=====================
+* Added Summary cost per day to the Data Statistics - if you manage many tenants, it is a great view to see them all
+* Added Cost by SKU to the Cost Over Time - Daily/Weekly and Monthly
+
+=====================
 20.05.18 - 2020-05-18
 =====================
 * Added Rate Card with OCI_PRICE_LIST and using API to obtain info, Thanks to Fabio for the Idea and the API

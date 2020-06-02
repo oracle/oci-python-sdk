@@ -3,6 +3,7 @@
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 import os
+from .resource_principals_federation_signer import ResourcePrincipalsFederationSigner
 from .ephemeral_resource_principals_signer import EphemeralResourcePrincipalSigner
 
 OCI_RESOURCE_PRINCIPAL_VERSION = "OCI_RESOURCE_PRINCIPAL_VERSION"
@@ -10,9 +11,11 @@ OCI_RESOURCE_PRINCIPAL_RPST = "OCI_RESOURCE_PRINCIPAL_RPST"
 OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM = "OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM"
 OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE = "OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM_PASSPHRASE"
 OCI_RESOURCE_PRINCIPAL_REGION = "OCI_RESOURCE_PRINCIPAL_REGION"
+OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT = "OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT"
+OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT = "OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT"
 
 
-def get_resource_principals_signer():
+def get_resource_principals_signer(resource_principal_token_path_provider=None):
     """
     A Resource Principals signer is token based signer.  The flavor of resource
     principals signer required is determined by the configured environment of
@@ -20,6 +23,7 @@ def get_resource_principals_signer():
 
     returns: a resource principals signer
     """
+
     rp_version = os.environ.get(OCI_RESOURCE_PRINCIPAL_VERSION, "UNDEFINED")
     if rp_version == "2.2":
         """
@@ -51,6 +55,22 @@ def get_resource_principals_signer():
                                                 private_key=private_key,
                                                 private_key_passphrase=private_key_passphrase,
                                                 region=region)
+
+    elif rp_version == "1.1":
+        """
+        This signer takes its configuration from the following environement variables
+        - OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT
+            The endpoint for retreiving the Resource Principal Token
+        - OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT
+            The endpoint for retrieving the Resource Principal Session Token
+        """
+        resource_principal_token_endpoint = os.environ.get(OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT)
+        resource_principal_session_token_endpoint = os.environ.get(OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT)
+
+        return ResourcePrincipalsFederationSigner(resource_principal_token_endpoint=resource_principal_token_endpoint,
+                                                  resource_principal_session_token_endpoint=resource_principal_session_token_endpoint,
+                                                  resource_principal_token_path_provider=resource_principal_token_path_provider)
+
     elif rp_version == "UNDEFINED":
         raise EnvironmentError("{} is not defined".format(OCI_RESOURCE_PRINCIPAL_VERSION))
     else:
