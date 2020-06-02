@@ -38,13 +38,17 @@ echo SDK Version Number $SDK_VERSION
 # build wheel to ensure it can be packaged correctly
 echo Building Wheel
 cd .python-sdk-github/
-python setup.py sdist bdist_wheel
+
+# Redirect STDOUT and STDERR to a file to avoid resource unavailable error in TeamCity jobs.
+python setup.py sdist bdist_wheel >> build_output.txt 2>&1
 
 # install github version of the SDK from whl using PyPi production index for dependencies
 # (by default in TC it will use artifactory)
 # pip install pyOpenSSL --upgrade
 # pip install -i https://pypi.python.org/simple --trusted-host pypi.python.org dist/*.whl
-pip install dist/*.whl
+pip install dist/*.whl >> build_output.txt 2>&1
+
+rm build_output.txt
 
 # back out of github repo
 cd ..
