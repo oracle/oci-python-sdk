@@ -8,3 +8,4 @@ from . import federation_client  # noqa: F401
 from . import security_token_container  # noqa: F401
 from . import session_key_supplier  # noqa: F401
 from . import signers  # noqa: F401
+from . import rpt_path_providers  # noqa: F401

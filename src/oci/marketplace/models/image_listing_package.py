@@ -56,6 +56,10 @@ class ImageListingPackage(ListingPackage):
             The value to assign to the app_catalog_listing_resource_version property of this ImageListingPackage.
         :type app_catalog_listing_resource_version: str
 
+        :param image_id:
+            The value to assign to the image_id property of this ImageListingPackage.
+        :type image_id: str
+
         :param regions:
             The value to assign to the regions property of this ImageListingPackage.
         :type regions: list[Region]
@@ -71,6 +75,7 @@ class ImageListingPackage(ListingPackage):
             'time_created': 'datetime',
             'app_catalog_listing_id': 'str',
             'app_catalog_listing_resource_version': 'str',
+            'image_id': 'str',
             'regions': 'list[Region]'
         }
 
@@ -84,6 +89,7 @@ class ImageListingPackage(ListingPackage):
             'time_created': 'timeCreated',
             'app_catalog_listing_id': 'appCatalogListingId',
             'app_catalog_listing_resource_version': 'appCatalogListingResourceVersion',
+            'image_id': 'imageId',
             'regions': 'regions'
         }
 
@@ -96,6 +102,7 @@ class ImageListingPackage(ListingPackage):
         self._time_created = None
         self._app_catalog_listing_id = None
         self._app_catalog_listing_resource_version = None
+        self._image_id = None
         self._regions = None
         self._package_type = 'IMAGE'
 
@@ -152,10 +159,34 @@ class ImageListingPackage(ListingPackage):
         self._app_catalog_listing_resource_version = app_catalog_listing_resource_version
 
     @property
+    def image_id(self):
+        """
+        Gets the image_id of this ImageListingPackage.
+        The id of the image corresponding to the package.
+
+
+        :return: The image_id of this ImageListingPackage.
+        :rtype: str
+        """
+        return self._image_id
+
+    @image_id.setter
+    def image_id(self, image_id):
+        """
+        Sets the image_id of this ImageListingPackage.
+        The id of the image corresponding to the package.
+
+
+        :param image_id: The image_id of this ImageListingPackage.
+        :type: str
+        """
+        self._image_id = image_id
+
+    @property
     def regions(self):
         """
         Gets the regions of this ImageListingPackage.
-        The regions where the listing is available.
+        List of regions in which this ListingPackage is available.
 
 
         :return: The regions of this ImageListingPackage.
@@ -167,7 +198,7 @@ class ImageListingPackage(ListingPackage):
     def regions(self, regions):
         """
         Sets the regions of this ImageListingPackage.
-        The regions where the listing is available.
+        List of regions in which this ListingPackage is available.
 
 
         :param regions: The regions of this ImageListingPackage.

@@ -70,6 +70,10 @@ class ListingSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type pricing_types: list[str]
 
+        :param regions:
+            The value to assign to the regions property of this ListingSummary.
+        :type regions: list[Region]
+
         :param is_featured:
             The value to assign to the is_featured property of this ListingSummary.
         :type is_featured: bool
@@ -91,6 +95,7 @@ class ListingSummary(object):
             'icon': 'UploadData',
             'package_type': 'str',
             'pricing_types': 'list[str]',
+            'regions': 'list[Region]',
             'is_featured': 'bool',
             'categories': 'list[str]',
             'publisher': 'PublisherSummary'
@@ -104,6 +109,7 @@ class ListingSummary(object):
             'icon': 'icon',
             'package_type': 'packageType',
             'pricing_types': 'pricingTypes',
+            'regions': 'regions',
             'is_featured': 'isFeatured',
             'categories': 'categories',
             'publisher': 'publisher'
@@ -116,6 +122,7 @@ class ListingSummary(object):
         self._icon = None
         self._package_type = None
         self._pricing_types = None
+        self._regions = None
         self._is_featured = None
         self._categories = None
         self._publisher = None
@@ -295,6 +302,30 @@ class ListingSummary(object):
         if pricing_types:
             pricing_types[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in pricing_types]
         self._pricing_types = pricing_types
+
+    @property
+    def regions(self):
+        """
+        Gets the regions of this ListingSummary.
+        The regions where the listing is eligible to be deployed.
+
+
+        :return: The regions of this ListingSummary.
+        :rtype: list[Region]
+        """
+        return self._regions
+
+    @regions.setter
+    def regions(self, regions):
+        """
+        Sets the regions of this ListingSummary.
+        The regions where the listing is eligible to be deployed.
+
+
+        :param regions: The regions of this ListingSummary.
+        :type: list[Region]
+        """
+        self._regions = regions
 
     @property
     def is_featured(self):

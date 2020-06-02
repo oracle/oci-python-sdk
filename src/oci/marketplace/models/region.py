@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Region(object):
     """
-    The model for regions supported by a listing.
+    The model for regions supported by a listing and package.
     """
 
     def __init__(self, **kwargs):

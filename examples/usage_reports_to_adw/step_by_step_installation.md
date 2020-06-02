@@ -125,7 +125,7 @@ Oracle Application Express (APEX) will be used for reporting.
 
    # setup oracle home variables
    # Add the below to $HOME/.bashrc:
-   export CLIENT_HOME=/usr/lib/oracle/18.3/client64
+   export CLIENT_HOME=/usr/lib/oracle/19.6/client64
    export LD_LIBRARY_PATH=$CLIENT_HOME/lib
    export PATH=$PATH:$CLIENT_HOME/bin
    export TNS_ADMIN=$HOME/ADWCUSG

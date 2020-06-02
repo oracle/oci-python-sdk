@@ -105,7 +105,7 @@ def test_wait_multiple_states(virtual_network, config):
 
     total_time = time.time() - start_time
 
-    # This should always be between 1 second and 5 minutes.
+    # This should always be under 5 minutes.
     assert total_time < 60 * 5
 
 
@@ -180,7 +180,7 @@ def test_property_and_eval_function_provided(virtual_network):
     with pytest.raises(ValueError) as ve:
         oci.wait_until(virtual_network, oci.Response(200, {}, None, oci.Request('GET', 'https://blah.example.org')), 'unit-test-prop', 'val', evaluate_response=lambda x: isinstance(x, object))
 
-    assert str(ve.value) == 'If an evaluate_response function is provided, then the property argument cannot also be provided'
+    assert str(ve.value) == 'Invalid wait_until configuration - can not provide both evaluate_response function and property argument, only one should be specified'
 
 
 def test_eval_function_lambda(identity, config):
@@ -252,6 +252,47 @@ def test_eval_function_func_ref(identity, config):
 def test_callback_func(virtual_network, config):
     name = "pythonsdk_waiter_" + tests.util.random_number_string()
 
+    counters = {'create': 0, 'delete': 0, 'wait': 0}
+
+    def create_vcn_callback(times_called, response):
+        counters['create'] = times_called
+
+    def delete_vcn_callback(times_called, response):
+        counters['delete'] = times_called
+
+    request = oci.core.models.CreateVcnDetails()
+    request.cidr_block = '10.0.0.0/16'
+    request.display_name = name
+    request.compartment_id = config["tenancy"]
+
+    response = virtual_network.create_vcn(request)
+    vcn = response.data
+    get_vcn_response = virtual_network.get_vcn(vcn.id)
+    get_vcn_response.data.lifecycle_state = 'DUMMY'  # This will force at least one service call
+
+    def fetch_func(response=None, num=2):
+        counters['wait'] = counters['wait'] + 1
+        if counters['wait'] < num:
+            resp = virtual_network.get_vcn(vcn.id)
+            resp.data.lifecycle_state = 'DUMMY'
+            return resp
+        else:
+            return virtual_network.get_vcn(vcn.id)
+
+    response = oci.wait_until(virtual_network, get_vcn_response, 'lifecycle_state', 'AVAILABLE', wait_callback=create_vcn_callback, fetch_func=fetch_func)
+    assert 'AVAILABLE' == response.data.lifecycle_state
+    assert counters['create'] > 0  # make sure call-back function is called here
+
+    print('Deleting vcn')
+    response = virtual_network.delete_vcn(vcn.id)
+    result = oci.wait_until(virtual_network, get_vcn_response, 'lifecycle_state', 'TERMINATED', max_wait_seconds=180, succeed_on_not_found=True, wait_callback=delete_vcn_callback)
+    assert result == oci.waiter.WAIT_RESOURCE_NOT_FOUND
+    assert counters['delete'] >= 0
+
+
+def test_callback_cornercase(virtual_network, config):
+    name = "pythonsdk_waiter_" + tests.util.random_number_string()
+
     counters = {'create': 0, 'delete': 0}
 
     def create_vcn_callback(times_called, response):
@@ -271,7 +312,7 @@ def test_callback_func(virtual_network, config):
     get_vcn_response.data.lifecycle_state = 'DUMMY'  # This will force at least one service call
     response = oci.wait_until(virtual_network, get_vcn_response, 'lifecycle_state', 'AVAILABLE', wait_callback=create_vcn_callback)
     assert 'AVAILABLE' == response.data.lifecycle_state
-    assert counters['create'] > 0
+    assert counters['create'] == 0  # This will make sure invoke wait_callbacK after checking resource property
 
     print('Deleting vcn')
     response = virtual_network.delete_vcn(vcn.id)

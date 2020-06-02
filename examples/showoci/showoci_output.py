@@ -1484,7 +1484,7 @@ class ShowOCIOutput(object):
                         print(self.tabs2 + "MRB  : Maintenance Reboot Due " + instance['time_maintenance_reboot_due'])
 
                 if 'image' in instance:
-                    print(self.tabs2 + "Img  : " + instance['image'])
+                    print(self.tabs2 + "Img  : " + instance['image'] + " (" + instance['image_os'] + ")")
 
                 if 'boot_volume' in instance:
                     for bv in instance['boot_volume']:
