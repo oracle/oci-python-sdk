@@ -26,7 +26,7 @@ Additionally, the following keys are optional::
 
 from __future__ import absolute_import
 import configparser
-import os.path
+import os
 import re
 from oci._vendor import six
 
@@ -63,11 +63,14 @@ CONFIG_FILE_BLACKLISTED_KEYS = {
     "key_content"
 }
 
+CONFIG_FILE_PATH_ENV_VAR_NAME = "OCI_CONFIG_FILE"
+
 
 def from_file(file_location=DEFAULT_LOCATION, profile_name=DEFAULT_PROFILE):
     """Create a config dict from a file.
 
-    :param file_location: Path to the config file.  Defaults to ~/.oci/config and with a fallback to ~/.oraclebmc/config.
+    :param file_location: Path to the config file.  Defaults to ~/.oci/config and with a fallback
+                            to environment variable OCI_CONFIG_FILE, then ~/.oraclebmc/config.
     :param profile_name: The profile to load from the config file.  Defaults to "DEFAULT"
     :return: A config dict that can be used to create clients.
     """
@@ -143,8 +146,19 @@ def _get_config_path_with_fallback(file_location):
     expanded_file_location = os.path.expanduser(file_location)
     expanded_fallback_default_file_location = os.path.expanduser(FALLBACK_DEFAULT_LOCATION)
 
-    # if there is no file in the default location (~/.oci/config), and the fallback file does exist, use the fallback (~/.oraclebmc/config)
-    if file_location == DEFAULT_LOCATION and not os.path.isfile(expanded_file_location) and os.path.isfile(expanded_fallback_default_file_location):
+    if (file_location != DEFAULT_LOCATION) or (file_location == DEFAULT_LOCATION and os.path.isfile(file_location)):
+        return expanded_file_location
+
+    # If file location is not specified and the default file (~/.oci/config) does not exist
+    # then try getting config file path from env var
+    elif os.environ.get(CONFIG_FILE_PATH_ENV_VAR_NAME):
+        expanded_file_location = os.path.expanduser(os.environ.get(CONFIG_FILE_PATH_ENV_VAR_NAME))
+        return expanded_file_location
+
+    # If we cannot determine the path from any other source and the fallback path (~/.oraclebmc/config) exists,
+    # use that path
+    elif os.path.isfile(expanded_fallback_default_file_location):
         expanded_file_location = expanded_fallback_default_file_location
+        return expanded_file_location
 
     return expanded_file_location
