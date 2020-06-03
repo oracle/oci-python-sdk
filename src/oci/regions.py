@@ -127,10 +127,11 @@ REGIONS_CONFIG_FILE_PATH = os.path.join('~', '.oci', 'regions-config.json')
 ExternalSources = Enum('ExternalSources', ['REGIONS_CFG_FILE', 'ENV_VAR', 'IMDS'])
 
 # Dict to track if we have read the ExternalSources
+# Reading from IMDS is opt-in and can be enabled by calling enable_instance_metadata_service()
 _has_been_read_external_sources = {
     ExternalSources.REGIONS_CFG_FILE: False,
     ExternalSources.ENV_VAR: False,
-    ExternalSources.IMDS: False
+    ExternalSources.IMDS: True
 }
 
 logger = logging.getLogger(__name__)
@@ -195,6 +196,8 @@ def endpoint_for(service, region=None, endpoint=None, service_endpoint_template=
     2. Region Metadata Environment variable
     3. Instance Metadata Service
 
+    Lookup from Instance Metadata Service is disabled by default. To enable, call enable_instance_metadata_service()
+
     The region metadata schema is:
     {
         "realmKey" : string,
@@ -228,11 +231,17 @@ def endpoint_for(service, region=None, endpoint=None, service_endpoint_template=
 
 
 def skip_instance_metadata_service():
+    logger.debug("Disabling region metadata lookup from IMDS")
     _set_source_has_been_read(ExternalSources.IMDS)
 
 
-def _set_source_has_been_read(source):
-    _has_been_read_external_sources[source] = True
+def enable_instance_metadata_service():
+    logger.debug("Enabling region metadata lookup from IMDS")
+    _set_source_has_been_read(ExternalSources.IMDS, False)
+
+
+def _set_source_has_been_read(source, value=True):
+    _has_been_read_external_sources[source] = value
 
 
 def _get_source_has_been_read(source):
