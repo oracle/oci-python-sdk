@@ -170,6 +170,7 @@ class ShowOCIService(object):
     C_IDENTITY_REGIONS = 'regions'
     C_IDENTITY_PROVIDERS = 'providers'
     C_IDENTITY_DYNAMIC_GROUPS = 'dynamic_groups'
+    C_IDENTITY_NETWORK_SOURCES = 'network_sources'
     C_IDENTITY_USERS_GROUPS_MEMBERSHIP = 'users_groups_membership'
     C_IDENTITY_COST_TRACKING_TAGS = 'cost_tracking_tags'
 
@@ -937,6 +938,7 @@ class ShowOCIService(object):
 
             # if loading the full identity - load the rest
             if self.flags.read_identity:
+                self.__load_identity_network_sources(identity, tenancy_id)
                 self.__load_identity_users_groups(identity, tenancy_id)
                 self.__load_identity_dynamic_groups(identity, tenancy_id)
                 self.__load_identity_policies(identity)
@@ -1401,7 +1403,7 @@ class ShowOCIService(object):
                     continue
 
                 try:
-                    policies = identity.list_policies(c['id']).data
+                    policies = oci.pagination.list_call_get_all_results(identity.list_policies, c['id']).data
 
                     if policies:
                         datapol = []
@@ -1523,6 +1525,56 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_identity_dynamic_groups", e)
+
+    ##########################################################################
+    # Load Network Sources
+    ##########################################################################
+    def __load_identity_network_sources(self, identity, tenancy_id):
+
+        data = []
+        self.__load_print_status("Network Sources")
+        start_time = time.time()
+
+        try:
+            network_sources = []
+            try:
+                network_sources = oci.pagination.list_call_get_all_results(identity.list_network_sources, tenancy_id).data
+            except oci.exceptions.ServiceError as e:
+                if self.__check_service_error(e.code):
+                    self.__load_print_auth_warning()
+                else:
+                    raise
+
+            # oci.identity.models.NetworkSourcesSummary
+            for ns in network_sources:
+                print(".", end="")
+
+                # compile vcn ip list
+                vcn_list = []
+                for vcn in ns.virtual_source_list:
+                    vcn_list.append({
+                        'vcn_id': vcn.vcn_id,
+                        'ip_ranges': str(', '.join(x for x in vcn.ip_ranges)),
+                    })
+
+                data.append({
+                    'id': str(ns.id),
+                    'name': str(ns.name),
+                    'description': str(ns.description),
+                    'virtual_source_list': vcn_list,
+                    'public_source_list': ns.public_source_list,
+                    'services': ns.services,
+                    'time_created': str(ns.time_created)
+                })
+
+            # add to data
+            self.data[self.C_IDENTITY][self.C_IDENTITY_NETWORK_SOURCES] = data
+            self.__load_print_cnt(len(data), start_time)
+
+        except oci.exceptions.RequestException:
+            raise
+        except Exception as e:
+            self.__print_error("__load_identity_network_sources", e)
 
     ##########################################################################
     # load cost tracking tags

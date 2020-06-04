@@ -1376,10 +1376,12 @@ class ShowOCIData(object):
 
                 # fix the shape image for the summary
                 sum_shape = ""
-                if instance['image'] == "Not Found" or instance['image'] == "Custom" or instance['image_os'] == "Oracle Linux":
+                if instance['image'] == "Not Found" or instance['image'] == "Custom" or "Oracle-Linux" in instance['image']:
                     sum_shape = instance['image_os'][0:35]
                 elif 'Windows-Server' in instance['image']:
                     sum_shape = instance['image'][0:19]
+                elif instance['image_os'] == "PaaS Image":
+                    sum_shape = "PaaS Image - " + instance['display_name'].split("|", 2)[1] if len(instance['display_name'].split("|", 2)) >= 2 else instance['image_os']
                 else:
                     sum_shape = instance['image'][0:35]
 
@@ -1865,6 +1867,7 @@ class ShowOCIData(object):
                          'backup_subnet_id': dbs['backup_subnet_id'],
                          'scan_dns': dbs['scan_dns_record_id'],
                          'scan_ips': dbs['scan_ips'],
+                         'scan_dns_name': dbs['hostname'] + "-scan." + dbs['domain'],
                          'data_storage_size_in_gbs': dbs['data_storage_size_in_gbs'],
                          'reco_storage_size_in_gb': dbs['reco_storage_size_in_gb'],
                          'sparse_diskgroup': dbs['sparse_diskgroup'],
