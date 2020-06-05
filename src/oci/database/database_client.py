@@ -1631,7 +1631,7 @@ class DatabaseClient(object):
 
     def create_database(self, create_new_database_details, **kwargs):
         """
-        Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies only to Exadata DB systems.
+        Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies to Exadata DB systems and Exadata Cloud at Customer.
 
 
         :param CreateDatabaseBase create_new_database_details: (required)
@@ -1704,7 +1704,7 @@ class DatabaseClient(object):
 
     def create_db_home(self, create_db_home_with_db_system_id_details, **kwargs):
         """
-        Creates a new Database Home in the specified DB system based on the request parameters you provide. Applies only to bare metal and Exadata DB systems.
+        Creates a new Database Home in the specified DB system based on the request parameters you provide. Applies to bare metal DB systems, Exadata DB systems, and Exadata Cloud at Customer systems.
 
 
         :param CreateDbHomeBase create_db_home_with_db_system_id_details: (required)
@@ -2671,11 +2671,9 @@ class DatabaseClient(object):
 
     def delete_db_home(self, db_home_id, **kwargs):
         """
-        Deletes a Database Home. Applies only to bare metal and Exadata DB systems.
+        Deletes a Database Home. Applies to bare metal DB systems, Exadata DB systems, and Exadata Cloud at Customer systems.
 
-        The Database Home and its database data are local to the DB system, and on a bare metal DB system, both are lost when you delete the Database Home. Oracle recommends that you back up any data on the DB system before you delete it. You can use the `performFinalBackup` parameter with this operation on bare metal DB systems.
-
-        On an Exadata DB system, the delete request is rejected if the Database Home is not empty. You must terminate all databases in the Database Home before you delete the home. The `performFinalBackup` parameter is not used with this operation on Exadata DB systems.
+        Oracle recommends that you use the `performFinalBackup` parameter to back up any data on a bare metal DB system before you delete a Database Home. On an Exadata Cloud at Customer system or an Exadata DB system, you can delete a Database Home only when there are no databases in it and therefore you cannot use the `performFinalBackup` parameter to back up data.
 
 
         :param str db_home_id: (required)
@@ -5485,6 +5483,148 @@ class DatabaseClient(object):
                 header_params=header_params,
                 response_type="VmClusterNetwork")
 
+    def get_vm_cluster_patch(self, vm_cluster_id, patch_id, **kwargs):
+        """
+        Gets information about a specified patch package.
+
+
+        :param str vm_cluster_id: (required)
+            The VM cluster `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str patch_id: (required)
+            The `OCID`__ of the patch.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Patch`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/vmClusters/{vmClusterId}/patches/{patchId}"
+        method = "GET"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_vm_cluster_patch got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "vmClusterId": vm_cluster_id,
+            "patchId": patch_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Patch")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Patch")
+
+    def get_vm_cluster_patch_history_entry(self, vm_cluster_id, patch_history_entry_id, **kwargs):
+        """
+        Gets the patch history details for the specified patchHistoryEntryId.
+
+
+        :param str vm_cluster_id: (required)
+            The VM cluster `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str patch_history_entry_id: (required)
+            The `OCID`__ of the patch history entry.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.PatchHistoryEntry`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/vmClusters/{vmClusterId}/patchHistoryEntries/{patchHistoryEntryId}"
+        method = "GET"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_vm_cluster_patch_history_entry got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "vmClusterId": vm_cluster_id,
+            "patchHistoryEntryId": patch_history_entry_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="PatchHistoryEntry")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="PatchHistoryEntry")
+
     def launch_autonomous_exadata_infrastructure(self, launch_autonomous_exadata_infrastructure_details, **kwargs):
         """
         Launches a new Autonomous Exadata Infrastructure in the specified compartment and availability domain.
@@ -8141,7 +8281,7 @@ class DatabaseClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given lifecycle state exactly.
 
-            Allowed values are: "CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "OFFLINE"
+            Allowed values are: "CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "DISCONNECTED"
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -8191,7 +8331,7 @@ class DatabaseClient(object):
                 )
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "OFFLINE"]
+            lifecycle_state_allowed_values = ["CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "DISCONNECTED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
@@ -8625,6 +8765,174 @@ class DatabaseClient(object):
                 header_params=header_params,
                 response_type="list[VmClusterNetworkSummary]")
 
+    def list_vm_cluster_patch_history_entries(self, vm_cluster_id, **kwargs):
+        """
+        Gets the history of the patch actions performed on the specified Vm cluster.
+
+
+        :param str vm_cluster_id: (required)
+            The VM cluster `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param int limit: (optional)
+            The maximum number of items to return per page.
+
+        :param str page: (optional)
+            The pagination token to continue listing from.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.PatchHistoryEntrySummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/vmClusters/{vmClusterId}/patchHistoryEntries"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_vm_cluster_patch_history_entries got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "vmClusterId": vm_cluster_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[PatchHistoryEntrySummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[PatchHistoryEntrySummary]")
+
+    def list_vm_cluster_patches(self, vm_cluster_id, **kwargs):
+        """
+        Lists the patches applicable to the requested Vm cluster.
+
+
+        :param str vm_cluster_id: (required)
+            The VM cluster `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param int limit: (optional)
+            The maximum number of items to return per page.
+
+        :param str page: (optional)
+            The pagination token to continue listing from.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.PatchSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/vmClusters/{vmClusterId}/patches"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_vm_cluster_patches got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "vmClusterId": vm_cluster_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[PatchSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[PatchSummary]")
+
     def list_vm_clusters(self, compartment_id, **kwargs):
         """
         Gets a list of the VM clusters in the specified compartment.
@@ -8998,7 +9306,7 @@ class DatabaseClient(object):
 
     def restart_autonomous_database(self, autonomous_database_id, **kwargs):
         """
-        Restarts the specified Autonomous Database. Restart supported only for databases using dedicated Exadata infrastructure.
+        Restarts the specified Autonomous Database.
 
 
         :param str autonomous_database_id: (required)

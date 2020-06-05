@@ -58,6 +58,10 @@ class VmCluster(object):
             The value to assign to the compartment_id property of this VmCluster.
         :type compartment_id: str
 
+        :param last_patch_history_entry_id:
+            The value to assign to the last_patch_history_entry_id property of this VmCluster.
+        :type last_patch_history_entry_id: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this VmCluster.
             Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -100,9 +104,17 @@ class VmCluster(object):
             The value to assign to the cpus_enabled property of this VmCluster.
         :type cpus_enabled: int
 
+        :param memory_size_in_gbs:
+            The value to assign to the memory_size_in_gbs property of this VmCluster.
+        :type memory_size_in_gbs: int
+
+        :param db_node_storage_size_in_gbs:
+            The value to assign to the db_node_storage_size_in_gbs property of this VmCluster.
+        :type db_node_storage_size_in_gbs: int
+
         :param data_storage_size_in_tbs:
             The value to assign to the data_storage_size_in_tbs property of this VmCluster.
-        :type data_storage_size_in_tbs: int
+        :type data_storage_size_in_tbs: float
 
         :param shape:
             The value to assign to the shape property of this VmCluster.
@@ -134,6 +146,7 @@ class VmCluster(object):
         self.swagger_types = {
             'id': 'str',
             'compartment_id': 'str',
+            'last_patch_history_entry_id': 'str',
             'lifecycle_state': 'str',
             'display_name': 'str',
             'time_created': 'datetime',
@@ -144,7 +157,9 @@ class VmCluster(object):
             'is_sparse_diskgroup_enabled': 'bool',
             'vm_cluster_network_id': 'str',
             'cpus_enabled': 'int',
-            'data_storage_size_in_tbs': 'int',
+            'memory_size_in_gbs': 'int',
+            'db_node_storage_size_in_gbs': 'int',
+            'data_storage_size_in_tbs': 'float',
             'shape': 'str',
             'gi_version': 'str',
             'ssh_public_keys': 'list[str]',
@@ -156,6 +171,7 @@ class VmCluster(object):
         self.attribute_map = {
             'id': 'id',
             'compartment_id': 'compartmentId',
+            'last_patch_history_entry_id': 'lastPatchHistoryEntryId',
             'lifecycle_state': 'lifecycleState',
             'display_name': 'displayName',
             'time_created': 'timeCreated',
@@ -166,6 +182,8 @@ class VmCluster(object):
             'is_sparse_diskgroup_enabled': 'isSparseDiskgroupEnabled',
             'vm_cluster_network_id': 'vmClusterNetworkId',
             'cpus_enabled': 'cpusEnabled',
+            'memory_size_in_gbs': 'memorySizeInGBs',
+            'db_node_storage_size_in_gbs': 'dbNodeStorageSizeInGBs',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
             'shape': 'shape',
             'gi_version': 'giVersion',
@@ -177,6 +195,7 @@ class VmCluster(object):
 
         self._id = None
         self._compartment_id = None
+        self._last_patch_history_entry_id = None
         self._lifecycle_state = None
         self._display_name = None
         self._time_created = None
@@ -187,6 +206,8 @@ class VmCluster(object):
         self._is_sparse_diskgroup_enabled = None
         self._vm_cluster_network_id = None
         self._cpus_enabled = None
+        self._memory_size_in_gbs = None
+        self._db_node_storage_size_in_gbs = None
         self._data_storage_size_in_tbs = None
         self._shape = None
         self._gi_version = None
@@ -250,6 +271,34 @@ class VmCluster(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def last_patch_history_entry_id(self):
+        """
+        Gets the last_patch_history_entry_id of this VmCluster.
+        The `OCID`__ of the last patch history. This value is updated as soon as a patch operation starts.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The last_patch_history_entry_id of this VmCluster.
+        :rtype: str
+        """
+        return self._last_patch_history_entry_id
+
+    @last_patch_history_entry_id.setter
+    def last_patch_history_entry_id(self, last_patch_history_entry_id):
+        """
+        Sets the last_patch_history_entry_id of this VmCluster.
+        The `OCID`__ of the last patch history. This value is updated as soon as a patch operation starts.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param last_patch_history_entry_id: The last_patch_history_entry_id of this VmCluster.
+        :type: str
+        """
+        self._last_patch_history_entry_id = last_patch_history_entry_id
 
     @property
     def lifecycle_state(self):
@@ -510,6 +559,54 @@ class VmCluster(object):
         self._cpus_enabled = cpus_enabled
 
     @property
+    def memory_size_in_gbs(self):
+        """
+        Gets the memory_size_in_gbs of this VmCluster.
+        The memory allocated in GBs.
+
+
+        :return: The memory_size_in_gbs of this VmCluster.
+        :rtype: int
+        """
+        return self._memory_size_in_gbs
+
+    @memory_size_in_gbs.setter
+    def memory_size_in_gbs(self, memory_size_in_gbs):
+        """
+        Sets the memory_size_in_gbs of this VmCluster.
+        The memory allocated in GBs.
+
+
+        :param memory_size_in_gbs: The memory_size_in_gbs of this VmCluster.
+        :type: int
+        """
+        self._memory_size_in_gbs = memory_size_in_gbs
+
+    @property
+    def db_node_storage_size_in_gbs(self):
+        """
+        Gets the db_node_storage_size_in_gbs of this VmCluster.
+        The local node storage allocated in GBs.
+
+
+        :return: The db_node_storage_size_in_gbs of this VmCluster.
+        :rtype: int
+        """
+        return self._db_node_storage_size_in_gbs
+
+    @db_node_storage_size_in_gbs.setter
+    def db_node_storage_size_in_gbs(self, db_node_storage_size_in_gbs):
+        """
+        Sets the db_node_storage_size_in_gbs of this VmCluster.
+        The local node storage allocated in GBs.
+
+
+        :param db_node_storage_size_in_gbs: The db_node_storage_size_in_gbs of this VmCluster.
+        :type: int
+        """
+        self._db_node_storage_size_in_gbs = db_node_storage_size_in_gbs
+
+    @property
     def data_storage_size_in_tbs(self):
         """
         Gets the data_storage_size_in_tbs of this VmCluster.
@@ -517,7 +614,7 @@ class VmCluster(object):
 
 
         :return: The data_storage_size_in_tbs of this VmCluster.
-        :rtype: int
+        :rtype: float
         """
         return self._data_storage_size_in_tbs
 
@@ -529,7 +626,7 @@ class VmCluster(object):
 
 
         :param data_storage_size_in_tbs: The data_storage_size_in_tbs of this VmCluster.
-        :type: int
+        :type: float
         """
         self._data_storage_size_in_tbs = data_storage_size_in_tbs
 

@@ -37,18 +37,12 @@ class CreateRegionSubscriptionDetails(object):
     def region_key(self):
         """
         **[Required]** Gets the region_key of this CreateRegionSubscriptionDetails.
-        The regions's key.
-
-        Allowed values are:
-        - `PHX`
-        - `IAD`
-        - `FRA`
-        - `LHR`
-        - `YYZ`
-        - `NRT`
-        - `ICN`
+        The regions's key. See `Regions and Availability Domains`__ for
+        the full list of supported 3-letter region codes.
 
         Example: `PHX`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :return: The region_key of this CreateRegionSubscriptionDetails.
@@ -60,18 +54,12 @@ class CreateRegionSubscriptionDetails(object):
     def region_key(self, region_key):
         """
         Sets the region_key of this CreateRegionSubscriptionDetails.
-        The regions's key.
-
-        Allowed values are:
-        - `PHX`
-        - `IAD`
-        - `FRA`
-        - `LHR`
-        - `YYZ`
-        - `NRT`
-        - `ICN`
+        The regions's key. See `Regions and Availability Domains`__ for
+        the full list of supported 3-letter region codes.
 
         Example: `PHX`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :param region_key: The region_key of this CreateRegionSubscriptionDetails.
