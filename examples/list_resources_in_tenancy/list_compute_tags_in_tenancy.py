@@ -1,34 +1,30 @@
 #!/usr/bin/env python3
 ##########################################################################
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
-# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
-#
-# list_all_virtual_circuits_in_tenancy.py
+# Copyright(c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+# list_compute_tags_in_tenancy.py
 #
 # @author: Adi Zohar
 #
-# Supports Python 2 and 3
+# Supports Python  3
 #
 # coding: utf-8
 ##########################################################################
 # Info:
-#    List all Virtual Circuits in Tenancy including DRG redundancy
+#    List all compute tags in Tenancy
 #
 # Connectivity:
 #    Option 1 - User Authentication
 #       $HOME/.oci/config, please follow - https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm
-#       OCI user part of ListIPsecGroup group with below Policy rules:
-#          Allow group ListIPsecGroup to inspect compartments in tenancy
-#          Allow group ListIPsecGroup to inspect tenancies in tenancy
-#          Allow group ListIPsecGroup to inspect virtual-circuits in tenancy
-#          Allow group ListIPsecGroup to inspect drgs in tenancy
+#       OCI user part of ListComputeTagsGroup group with below Policy rules:
+#          Allow group ListComputeTagsGroup to inspect compartments in tenancy
+#          Allow group ListComputeTagsGroup to inspect tenancies in tenancy
+#          Allow group ListComputeTagsGroup to inspect instances in tenancy
 #
 #    Option 2 - Instance Principle
-#       Compute instance part of DynListIPsecGroup dynamic group with policy rules:
-#          Allow dynamic group DynListIPsecGroup to inspect compartments in tenancy
-#          Allow dynamic group DynListIPsecGroup to inspect tenancies in tenancy
-#          Allow dynamic group DynListIPsecGroup to inspect virtual-circuits in tenancy
-#          Allow dynamic group DynListIPsecGroup to inspect drgs in tenancy
+#       Compute instance part of DynListComputeTagsGroup dynamic group with policy rules:
+#          Allow dynamic group DynListComputeTagsGroup to inspect compartments in tenancy
+#          Allow dynamic group DynListComputeTagsGroup to inspect tenancies in tenancy
+#          Allow dynamic group DynListComputeTagsGroup to inspect instances in tenancy
 #
 ##########################################################################
 # Modules Included:
@@ -38,8 +34,7 @@
 # - IdentityClient.list_compartments         - Policy COMPARTMENT_INSPECT
 # - IdentityClient.get_tenancy               - Policy TENANCY_INSPECT
 # - IdentityClient.list_region_subscriptions - Policy TENANCY_INSPECT
-# - VirtualNetworkClient.list_virtual_circuits      - Policy VIRTUAL_CIRCUIT_READ
-# - VirtualNetworkClient.get_drg_redundancy_status  - Policy DRG_READ
+# - ComputeClient.list_instances             - Policy
 #
 ##########################################################################
 # Application Command line parameters
@@ -144,12 +139,6 @@ def create_signer(config_profile, is_instance_principals, is_delegation_token):
     # config file authentication
     # -----------------------------
     else:
-        # check if file exist
-        if not os.path.isfile(oci.config.DEFAULT_LOCATION):
-            print("*** Config File " + oci.config.DEFAULT_LOCATION + " does not exist, Abort. ***")
-            print("")
-            raise SystemExit
-
         config = oci.config.from_file(
             oci.config.DEFAULT_LOCATION,
             (config_profile if config_profile else oci.config.DEFAULT_PROFILE)
@@ -202,7 +191,8 @@ cmd = parser.parse_args()
 
 # Start print time info
 start_time = str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-print_header("Running List List Virtual Circuits")
+print_header("Running List Compute Tags")
+print("Written By Adi Zohar, June 2020")
 print("Starts at " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 print("Command Line : " + ' '.join(x for x in sys.argv[1:]))
 
@@ -231,7 +221,7 @@ except Exception as e:
 ############################################
 # Loop on all regions
 ############################################
-print("\nLoading Virtual Circuits...")
+print("\nLoading Compute Instances...")
 data = []
 warnings = 0
 for region_name in [str(es.region_name) for es in regions]:
@@ -243,15 +233,17 @@ for region_name in [str(es.region_name) for es in regions]:
     signer.region = region_name
 
     # connect to virtual_network
-    virtual_network = oci.core.VirtualNetworkClient(config, signer=signer)
+    compute_client = oci.core.ComputeClient(config, signer=signer)
     if cmd.proxy:
-        virtual_network.base_client.session.proxies = {'https': cmd.proxy}
+        compute_client.base_client.session.proxies = {'https': cmd.proxy}
 
     ############################################
     # Loop on all compartments
     ############################################
     try:
         for compartment in compartments:
+
+            # skip non active compartments
             if compartment.id != tenancy.id and compartment.lifecycle_state != oci.identity.models.Compartment.LIFECYCLE_STATE_ACTIVE:
                 continue
 
@@ -259,13 +251,14 @@ for region_name in [str(es.region_name) for es in regions]:
             cnt = 0
 
             ############################################
-            # Retrieve virtual circuits
+            # Retrieve instances
             ############################################
-            virtual_circuits = []
+            instances = []
             try:
-                virtual_circuits = oci.pagination.list_call_get_all_results(
-                    virtual_network.list_virtual_circuits,
-                    compartment.id
+                instances = oci.pagination.list_call_get_all_results(
+                    compute_client.list_instances,
+                    compartment.id,
+                    sort_by="DISPLAYNAME"
                 ).data
 
             except oci.exceptions.ServiceError as e:
@@ -275,72 +268,54 @@ for region_name in [str(es.region_name) for es in regions]:
                     continue
                 raise
 
-            # loop on virtual_circuits array
-            # virtual_circuit = oci.core.models.VirtualCircuit
-            for virtual_circuit in virtual_circuits:
-                if (virtual_circuit.lifecycle_state == oci.core.models.VirtualCircuit.LIFECYCLE_STATE_TERMINATED or
-                        virtual_circuit.lifecycle_state == oci.core.models.VirtualCircuit.LIFECYCLE_STATE_TERMINATING):
+            # loop on instances array
+            # instance = oci.core.models.Instance
+            for instance in instances:
+                if (instance.lifecycle_state == oci.core.models.Instance.LIFECYCLE_STATE_TERMINATED or
+                        instance.lifecycle_state == oci.core.models.Instance.LIFECYCLE_STATE_TERMINATING):
                     continue
 
                 ############################################
-                # get the cross connect mapping
+                # get the info
                 ############################################
-                data_cross_connect = []
-                for cc in virtual_circuit.cross_connect_mappings:
-                    data_cross_connect.append({
-                        'customer_bgp_peering_ip': str(cc.customer_bgp_peering_ip),
-                        'oracle_bgp_peering_ip': str(cc.oracle_bgp_peering_ip),
-                        'vlan': str(cc.vlan)
-                    })
 
-                ############################################
-                # Retrieve DRG Redundancy
-                ############################################
-                drg_redundancy = ""
-                try:
-                    # redundancy = oci.core.models.DrgRedundancyStatus
-                    redundancy = virtual_network.get_drg_redundancy_status(virtual_circuit.gateway_id).data
-                    if redundancy:
-                        drg_redundancy = str(redundancy.status)
-                except oci.exceptions.ServiceError as e:
-                    if check_service_error(e.code):
-                        print("DRG-Redun-Err ", end="")
-                    pass
+                shape = {}
+                if instance.shape_config:
+                    sc = instance.shape_config
+                    shape['ocpu'] = sc.ocpus
+                    shape['memory_gb'] = sc.memory_in_gbs
+                    shape['gpu_description'] = str(sc.gpu_description)
+                    shape['gpus'] = str(sc.gpus)
+                    shape['max_vnic_attachments'] = sc.max_vnic_attachments
+                    shape['networking_bandwidth_in_gbps'] = sc.networking_bandwidth_in_gbps
+                    shape['processor_description'] = str(sc.processor_description)
 
-                ############################################
-                # Add the info to the data array
-                ############################################
-                data.append({'id': str(virtual_circuit.id),
-                             'name': str(virtual_circuit.display_name),
-                             'bandwidth_shape_name': str(virtual_circuit.bandwidth_shape_name),
-                             'bgp_management': str(virtual_circuit.bgp_management),
-                             'bgp_session_state': str(virtual_circuit.bgp_session_state),
-                             'customer_bgp_asn': str(virtual_circuit.customer_bgp_asn),
-                             'drg_id': str(virtual_circuit.gateway_id),
-                             'drg_redundancy': drg_redundancy,
-                             'lifecycle_state': str(virtual_circuit.lifecycle_state),
-                             'oracle_bgp_asn': str(virtual_circuit.oracle_bgp_asn),
-                             'provider_name': str(virtual_circuit.provider_name),
-                             'provider_service_name': str(virtual_circuit.provider_service_name),
-                             'provider_state': str(virtual_circuit.provider_state),
-                             'reference_comment': str(virtual_circuit.reference_comment),
-                             'service_type': str(virtual_circuit.service_type),
-                             'cross_connect_mappings': data_cross_connect,
-                             'type': str(virtual_circuit.type),
-                             'time_created': str(virtual_circuit.time_created),
-                             'compartment_name': str(compartment.name),
-                             'compartment_id': str(compartment.id),
-                             'region_name': region_name})
+                value = ({
+                    'region_name': region_name,
+                    'compartment_name': str(compartment.name),
+                    'compartment_id': str(compartment.id),
+                    'id': str(instance.id),
+                    'name': str(instance.display_name),
+                    'availability_domain': str(instance.availability_domain),
+                    'lifecycle_state': str(instance.lifecycle_state),
+                    'time_created': str(instance.time_created),
+                    'shape': str(instance.shape),
+                    'shape_config': shape,
+                    'defined_tags': instance.defined_tags,
+                    'freeform_tags': instance.freeform_tags
+                })
+
+                data.append(value)
                 cnt += 1
 
-            # print circuits for the compartment
+            # print instances for the compartment
             if cnt == 0:
                 print("(-)")
             else:
-                print("(" + str(cnt) + " Circuits)")
+                print("(" + str(cnt) + " Instances)")
 
     except Exception as e:
-        raise RuntimeError("\nError extracting Virtual Circuits - " + str(e))
+        raise RuntimeError("\nError extracting Instances - " + str(e))
 
 ############################################
 # Print Output as JSON
