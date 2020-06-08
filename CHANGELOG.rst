@@ -4,12 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.15.1 - TBD
+2.16.0 - 2020-06-09
 ====================
 
 Added
 -----
-* TBD
+* Support for returning the database version of backups in the Database service
+* Support for patching on Exadata Cloud at Customer resources in the Database service
+* Support for new lifecycle substates on instances in the Digital Assistant service
+* Support for file servers in the Integration service
+* Support for deleting non-empty tag namespaces and bulk deleting tags in the Identity service
+* Support for bulk move and bulk delete of resources by compartment in the Identity service
+
+Breaking
+--------
+* Data type for paramater `data_storage_size_in_tbs` changed from int to float in the Database service
+* Parameter `lifecycle_state` removed state `OFFLINE` and added `DISCONNECTED` in the Database service
 
 ====================
 2.15.0 - 2020-06-02
