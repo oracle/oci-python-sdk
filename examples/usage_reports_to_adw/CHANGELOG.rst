@@ -7,6 +7,11 @@ The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 =====================
 20.06.02 - 2020-06-02
 =====================
+* Added Hourly cost over time
+
+=====================
+20.06.02 - 2020-06-02
+=====================
 * Added Summary cost per day to the Data Statistics - if you manage many tenants, it is a great view to see them all
 * Added Cost by SKU to the Cost Over Time - Daily/Weekly and Monthly
 

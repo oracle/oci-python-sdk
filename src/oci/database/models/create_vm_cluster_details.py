@@ -42,6 +42,18 @@ class CreateVmClusterDetails(object):
             The value to assign to the cpu_core_count property of this CreateVmClusterDetails.
         :type cpu_core_count: int
 
+        :param memory_size_in_gbs:
+            The value to assign to the memory_size_in_gbs property of this CreateVmClusterDetails.
+        :type memory_size_in_gbs: int
+
+        :param db_node_storage_size_in_gbs:
+            The value to assign to the db_node_storage_size_in_gbs property of this CreateVmClusterDetails.
+        :type db_node_storage_size_in_gbs: int
+
+        :param data_storage_size_in_tbs:
+            The value to assign to the data_storage_size_in_tbs property of this CreateVmClusterDetails.
+        :type data_storage_size_in_tbs: float
+
         :param ssh_public_keys:
             The value to assign to the ssh_public_keys property of this CreateVmClusterDetails.
         :type ssh_public_keys: list[str]
@@ -85,6 +97,9 @@ class CreateVmClusterDetails(object):
             'display_name': 'str',
             'exadata_infrastructure_id': 'str',
             'cpu_core_count': 'int',
+            'memory_size_in_gbs': 'int',
+            'db_node_storage_size_in_gbs': 'int',
+            'data_storage_size_in_tbs': 'float',
             'ssh_public_keys': 'list[str]',
             'vm_cluster_network_id': 'str',
             'license_model': 'str',
@@ -101,6 +116,9 @@ class CreateVmClusterDetails(object):
             'display_name': 'displayName',
             'exadata_infrastructure_id': 'exadataInfrastructureId',
             'cpu_core_count': 'cpuCoreCount',
+            'memory_size_in_gbs': 'memorySizeInGBs',
+            'db_node_storage_size_in_gbs': 'dbNodeStorageSizeInGBs',
+            'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
             'ssh_public_keys': 'sshPublicKeys',
             'vm_cluster_network_id': 'vmClusterNetworkId',
             'license_model': 'licenseModel',
@@ -116,6 +134,9 @@ class CreateVmClusterDetails(object):
         self._display_name = None
         self._exadata_infrastructure_id = None
         self._cpu_core_count = None
+        self._memory_size_in_gbs = None
+        self._db_node_storage_size_in_gbs = None
+        self._data_storage_size_in_tbs = None
         self._ssh_public_keys = None
         self._vm_cluster_network_id = None
         self._license_model = None
@@ -229,6 +250,78 @@ class CreateVmClusterDetails(object):
         :type: int
         """
         self._cpu_core_count = cpu_core_count
+
+    @property
+    def memory_size_in_gbs(self):
+        """
+        Gets the memory_size_in_gbs of this CreateVmClusterDetails.
+        The memory to be allocated in GBs.
+
+
+        :return: The memory_size_in_gbs of this CreateVmClusterDetails.
+        :rtype: int
+        """
+        return self._memory_size_in_gbs
+
+    @memory_size_in_gbs.setter
+    def memory_size_in_gbs(self, memory_size_in_gbs):
+        """
+        Sets the memory_size_in_gbs of this CreateVmClusterDetails.
+        The memory to be allocated in GBs.
+
+
+        :param memory_size_in_gbs: The memory_size_in_gbs of this CreateVmClusterDetails.
+        :type: int
+        """
+        self._memory_size_in_gbs = memory_size_in_gbs
+
+    @property
+    def db_node_storage_size_in_gbs(self):
+        """
+        Gets the db_node_storage_size_in_gbs of this CreateVmClusterDetails.
+        The local node storage to be allocated in GBs.
+
+
+        :return: The db_node_storage_size_in_gbs of this CreateVmClusterDetails.
+        :rtype: int
+        """
+        return self._db_node_storage_size_in_gbs
+
+    @db_node_storage_size_in_gbs.setter
+    def db_node_storage_size_in_gbs(self, db_node_storage_size_in_gbs):
+        """
+        Sets the db_node_storage_size_in_gbs of this CreateVmClusterDetails.
+        The local node storage to be allocated in GBs.
+
+
+        :param db_node_storage_size_in_gbs: The db_node_storage_size_in_gbs of this CreateVmClusterDetails.
+        :type: int
+        """
+        self._db_node_storage_size_in_gbs = db_node_storage_size_in_gbs
+
+    @property
+    def data_storage_size_in_tbs(self):
+        """
+        Gets the data_storage_size_in_tbs of this CreateVmClusterDetails.
+        The data disk group size to be allocated in TBs.
+
+
+        :return: The data_storage_size_in_tbs of this CreateVmClusterDetails.
+        :rtype: float
+        """
+        return self._data_storage_size_in_tbs
+
+    @data_storage_size_in_tbs.setter
+    def data_storage_size_in_tbs(self, data_storage_size_in_tbs):
+        """
+        Sets the data_storage_size_in_tbs of this CreateVmClusterDetails.
+        The data disk group size to be allocated in TBs.
+
+
+        :param data_storage_size_in_tbs: The data_storage_size_in_tbs of this CreateVmClusterDetails.
+        :type: float
+        """
+        self._data_storage_size_in_tbs = data_storage_size_in_tbs
 
     @property
     def ssh_public_keys(self):

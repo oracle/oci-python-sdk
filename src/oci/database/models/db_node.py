@@ -403,7 +403,7 @@ class DbNode(object):
     def maintenance_type(self):
         """
         Gets the maintenance_type of this DbNode.
-        The type of maintenance of dbNode.
+        The type of database node maintenance.
 
         Allowed values for this property are: "VMDB_REBOOT_MIGRATION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -418,7 +418,7 @@ class DbNode(object):
     def maintenance_type(self, maintenance_type):
         """
         Sets the maintenance_type of this DbNode.
-        The type of maintenance of dbNode.
+        The type of database node maintenance.
 
 
         :param maintenance_type: The maintenance_type of this DbNode.
@@ -481,7 +481,7 @@ class DbNode(object):
     def additional_details(self):
         """
         Gets the additional_details of this DbNode.
-        Additional information like a message to customer about the maintenance.
+        Additional information about the planned maintenance.
 
 
         :return: The additional_details of this DbNode.
@@ -493,7 +493,7 @@ class DbNode(object):
     def additional_details(self, additional_details):
         """
         Sets the additional_details of this DbNode.
-        Additional information like a message to customer about the maintenance.
+        Additional information about the planned maintenance.
 
 
         :param additional_details: The additional_details of this DbNode.

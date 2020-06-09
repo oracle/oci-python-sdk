@@ -49,6 +49,34 @@ class DbSystemShapeSummary(object):
             The value to assign to the core_count_increment property of this DbSystemShapeSummary.
         :type core_count_increment: int
 
+        :param min_core_count_per_node:
+            The value to assign to the min_core_count_per_node property of this DbSystemShapeSummary.
+        :type min_core_count_per_node: int
+
+        :param available_memory_in_gbs:
+            The value to assign to the available_memory_in_gbs property of this DbSystemShapeSummary.
+        :type available_memory_in_gbs: int
+
+        :param min_memory_per_node_in_g_bs:
+            The value to assign to the min_memory_per_node_in_g_bs property of this DbSystemShapeSummary.
+        :type min_memory_per_node_in_g_bs: int
+
+        :param available_db_node_storage_in_g_bs:
+            The value to assign to the available_db_node_storage_in_g_bs property of this DbSystemShapeSummary.
+        :type available_db_node_storage_in_g_bs: int
+
+        :param min_db_node_storage_per_node_in_g_bs:
+            The value to assign to the min_db_node_storage_per_node_in_g_bs property of this DbSystemShapeSummary.
+        :type min_db_node_storage_per_node_in_g_bs: int
+
+        :param available_data_storage_in_t_bs:
+            The value to assign to the available_data_storage_in_t_bs property of this DbSystemShapeSummary.
+        :type available_data_storage_in_t_bs: int
+
+        :param min_data_storage_in_t_bs:
+            The value to assign to the min_data_storage_in_t_bs property of this DbSystemShapeSummary.
+        :type min_data_storage_in_t_bs: int
+
         :param minimum_node_count:
             The value to assign to the minimum_node_count property of this DbSystemShapeSummary.
         :type minimum_node_count: int
@@ -65,6 +93,13 @@ class DbSystemShapeSummary(object):
             'available_core_count': 'int',
             'minimum_core_count': 'int',
             'core_count_increment': 'int',
+            'min_core_count_per_node': 'int',
+            'available_memory_in_gbs': 'int',
+            'min_memory_per_node_in_g_bs': 'int',
+            'available_db_node_storage_in_g_bs': 'int',
+            'min_db_node_storage_per_node_in_g_bs': 'int',
+            'available_data_storage_in_t_bs': 'int',
+            'min_data_storage_in_t_bs': 'int',
             'minimum_node_count': 'int',
             'maximum_node_count': 'int'
         }
@@ -76,6 +111,13 @@ class DbSystemShapeSummary(object):
             'available_core_count': 'availableCoreCount',
             'minimum_core_count': 'minimumCoreCount',
             'core_count_increment': 'coreCountIncrement',
+            'min_core_count_per_node': 'minCoreCountPerNode',
+            'available_memory_in_gbs': 'availableMemoryInGBs',
+            'min_memory_per_node_in_g_bs': 'minMemoryPerNodeInGBs',
+            'available_db_node_storage_in_g_bs': 'availableDbNodeStorageInGBs',
+            'min_db_node_storage_per_node_in_g_bs': 'minDbNodeStoragePerNodeInGBs',
+            'available_data_storage_in_t_bs': 'availableDataStorageInTBs',
+            'min_data_storage_in_t_bs': 'minDataStorageInTBs',
             'minimum_node_count': 'minimumNodeCount',
             'maximum_node_count': 'maximumNodeCount'
         }
@@ -86,6 +128,13 @@ class DbSystemShapeSummary(object):
         self._available_core_count = None
         self._minimum_core_count = None
         self._core_count_increment = None
+        self._min_core_count_per_node = None
+        self._available_memory_in_gbs = None
+        self._min_memory_per_node_in_g_bs = None
+        self._available_db_node_storage_in_g_bs = None
+        self._min_db_node_storage_per_node_in_g_bs = None
+        self._available_data_storage_in_t_bs = None
+        self._min_data_storage_in_t_bs = None
         self._minimum_node_count = None
         self._maximum_node_count = None
 
@@ -232,6 +281,174 @@ class DbSystemShapeSummary(object):
         :type: int
         """
         self._core_count_increment = core_count_increment
+
+    @property
+    def min_core_count_per_node(self):
+        """
+        Gets the min_core_count_per_node of this DbSystemShapeSummary.
+        The minimum number of CPU cores that can be enabled per node for this shape.
+
+
+        :return: The min_core_count_per_node of this DbSystemShapeSummary.
+        :rtype: int
+        """
+        return self._min_core_count_per_node
+
+    @min_core_count_per_node.setter
+    def min_core_count_per_node(self, min_core_count_per_node):
+        """
+        Sets the min_core_count_per_node of this DbSystemShapeSummary.
+        The minimum number of CPU cores that can be enabled per node for this shape.
+
+
+        :param min_core_count_per_node: The min_core_count_per_node of this DbSystemShapeSummary.
+        :type: int
+        """
+        self._min_core_count_per_node = min_core_count_per_node
+
+    @property
+    def available_memory_in_gbs(self):
+        """
+        Gets the available_memory_in_gbs of this DbSystemShapeSummary.
+        The maximum memory that can be enabled for this shape.
+
+
+        :return: The available_memory_in_gbs of this DbSystemShapeSummary.
+        :rtype: int
+        """
+        return self._available_memory_in_gbs
+
+    @available_memory_in_gbs.setter
+    def available_memory_in_gbs(self, available_memory_in_gbs):
+        """
+        Sets the available_memory_in_gbs of this DbSystemShapeSummary.
+        The maximum memory that can be enabled for this shape.
+
+
+        :param available_memory_in_gbs: The available_memory_in_gbs of this DbSystemShapeSummary.
+        :type: int
+        """
+        self._available_memory_in_gbs = available_memory_in_gbs
+
+    @property
+    def min_memory_per_node_in_g_bs(self):
+        """
+        Gets the min_memory_per_node_in_g_bs of this DbSystemShapeSummary.
+        The minimum memory that need be allocated per node for this shape.
+
+
+        :return: The min_memory_per_node_in_g_bs of this DbSystemShapeSummary.
+        :rtype: int
+        """
+        return self._min_memory_per_node_in_g_bs
+
+    @min_memory_per_node_in_g_bs.setter
+    def min_memory_per_node_in_g_bs(self, min_memory_per_node_in_g_bs):
+        """
+        Sets the min_memory_per_node_in_g_bs of this DbSystemShapeSummary.
+        The minimum memory that need be allocated per node for this shape.
+
+
+        :param min_memory_per_node_in_g_bs: The min_memory_per_node_in_g_bs of this DbSystemShapeSummary.
+        :type: int
+        """
+        self._min_memory_per_node_in_g_bs = min_memory_per_node_in_g_bs
+
+    @property
+    def available_db_node_storage_in_g_bs(self):
+        """
+        Gets the available_db_node_storage_in_g_bs of this DbSystemShapeSummary.
+        The maximum Db Node storage that can be enabled for this shape.
+
+
+        :return: The available_db_node_storage_in_g_bs of this DbSystemShapeSummary.
+        :rtype: int
+        """
+        return self._available_db_node_storage_in_g_bs
+
+    @available_db_node_storage_in_g_bs.setter
+    def available_db_node_storage_in_g_bs(self, available_db_node_storage_in_g_bs):
+        """
+        Sets the available_db_node_storage_in_g_bs of this DbSystemShapeSummary.
+        The maximum Db Node storage that can be enabled for this shape.
+
+
+        :param available_db_node_storage_in_g_bs: The available_db_node_storage_in_g_bs of this DbSystemShapeSummary.
+        :type: int
+        """
+        self._available_db_node_storage_in_g_bs = available_db_node_storage_in_g_bs
+
+    @property
+    def min_db_node_storage_per_node_in_g_bs(self):
+        """
+        Gets the min_db_node_storage_per_node_in_g_bs of this DbSystemShapeSummary.
+        The minimum Db Node storage that need be allocated per node for this shape.
+
+
+        :return: The min_db_node_storage_per_node_in_g_bs of this DbSystemShapeSummary.
+        :rtype: int
+        """
+        return self._min_db_node_storage_per_node_in_g_bs
+
+    @min_db_node_storage_per_node_in_g_bs.setter
+    def min_db_node_storage_per_node_in_g_bs(self, min_db_node_storage_per_node_in_g_bs):
+        """
+        Sets the min_db_node_storage_per_node_in_g_bs of this DbSystemShapeSummary.
+        The minimum Db Node storage that need be allocated per node for this shape.
+
+
+        :param min_db_node_storage_per_node_in_g_bs: The min_db_node_storage_per_node_in_g_bs of this DbSystemShapeSummary.
+        :type: int
+        """
+        self._min_db_node_storage_per_node_in_g_bs = min_db_node_storage_per_node_in_g_bs
+
+    @property
+    def available_data_storage_in_t_bs(self):
+        """
+        Gets the available_data_storage_in_t_bs of this DbSystemShapeSummary.
+        The maximum DATA storage that can be enabled for this shape.
+
+
+        :return: The available_data_storage_in_t_bs of this DbSystemShapeSummary.
+        :rtype: int
+        """
+        return self._available_data_storage_in_t_bs
+
+    @available_data_storage_in_t_bs.setter
+    def available_data_storage_in_t_bs(self, available_data_storage_in_t_bs):
+        """
+        Sets the available_data_storage_in_t_bs of this DbSystemShapeSummary.
+        The maximum DATA storage that can be enabled for this shape.
+
+
+        :param available_data_storage_in_t_bs: The available_data_storage_in_t_bs of this DbSystemShapeSummary.
+        :type: int
+        """
+        self._available_data_storage_in_t_bs = available_data_storage_in_t_bs
+
+    @property
+    def min_data_storage_in_t_bs(self):
+        """
+        Gets the min_data_storage_in_t_bs of this DbSystemShapeSummary.
+        The minimum data storage that need be allocated for this shape.
+
+
+        :return: The min_data_storage_in_t_bs of this DbSystemShapeSummary.
+        :rtype: int
+        """
+        return self._min_data_storage_in_t_bs
+
+    @min_data_storage_in_t_bs.setter
+    def min_data_storage_in_t_bs(self, min_data_storage_in_t_bs):
+        """
+        Sets the min_data_storage_in_t_bs of this DbSystemShapeSummary.
+        The minimum data storage that need be allocated for this shape.
+
+
+        :param min_data_storage_in_t_bs: The min_data_storage_in_t_bs of this DbSystemShapeSummary.
+        :type: int
+        """
+        self._min_data_storage_in_t_bs = min_data_storage_in_t_bs
 
     @property
     def minimum_node_count(self):

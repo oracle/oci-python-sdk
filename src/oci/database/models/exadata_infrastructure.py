@@ -50,8 +50,8 @@ class ExadataInfrastructure(object):
     LIFECYCLE_STATE_DELETED = "DELETED"
 
     #: A constant which can be used with the lifecycle_state property of a ExadataInfrastructure.
-    #: This constant has a value of "OFFLINE"
-    LIFECYCLE_STATE_OFFLINE = "OFFLINE"
+    #: This constant has a value of "DISCONNECTED"
+    LIFECYCLE_STATE_DISCONNECTED = "DISCONNECTED"
 
     def __init__(self, **kwargs):
         """
@@ -68,7 +68,7 @@ class ExadataInfrastructure(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ExadataInfrastructure.
-            Allowed values for this property are: "CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "OFFLINE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "DISCONNECTED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -88,9 +88,33 @@ class ExadataInfrastructure(object):
             The value to assign to the cpus_enabled property of this ExadataInfrastructure.
         :type cpus_enabled: int
 
+        :param max_cpu_count:
+            The value to assign to the max_cpu_count property of this ExadataInfrastructure.
+        :type max_cpu_count: int
+
+        :param memory_size_in_gbs:
+            The value to assign to the memory_size_in_gbs property of this ExadataInfrastructure.
+        :type memory_size_in_gbs: int
+
+        :param max_memory_in_gbs:
+            The value to assign to the max_memory_in_gbs property of this ExadataInfrastructure.
+        :type max_memory_in_gbs: int
+
+        :param db_node_storage_size_in_gbs:
+            The value to assign to the db_node_storage_size_in_gbs property of this ExadataInfrastructure.
+        :type db_node_storage_size_in_gbs: int
+
+        :param max_db_node_storage_in_g_bs:
+            The value to assign to the max_db_node_storage_in_g_bs property of this ExadataInfrastructure.
+        :type max_db_node_storage_in_g_bs: int
+
         :param data_storage_size_in_tbs:
             The value to assign to the data_storage_size_in_tbs property of this ExadataInfrastructure.
-        :type data_storage_size_in_tbs: int
+        :type data_storage_size_in_tbs: float
+
+        :param max_data_storage_in_t_bs:
+            The value to assign to the max_data_storage_in_t_bs property of this ExadataInfrastructure.
+        :type max_data_storage_in_t_bs: float
 
         :param cloud_control_plane_server1:
             The value to assign to the cloud_control_plane_server1 property of this ExadataInfrastructure.
@@ -153,7 +177,13 @@ class ExadataInfrastructure(object):
             'shape': 'str',
             'time_zone': 'str',
             'cpus_enabled': 'int',
-            'data_storage_size_in_tbs': 'int',
+            'max_cpu_count': 'int',
+            'memory_size_in_gbs': 'int',
+            'max_memory_in_gbs': 'int',
+            'db_node_storage_size_in_gbs': 'int',
+            'max_db_node_storage_in_g_bs': 'int',
+            'data_storage_size_in_tbs': 'float',
+            'max_data_storage_in_t_bs': 'float',
             'cloud_control_plane_server1': 'str',
             'cloud_control_plane_server2': 'str',
             'netmask': 'str',
@@ -177,7 +207,13 @@ class ExadataInfrastructure(object):
             'shape': 'shape',
             'time_zone': 'timeZone',
             'cpus_enabled': 'cpusEnabled',
+            'max_cpu_count': 'maxCpuCount',
+            'memory_size_in_gbs': 'memorySizeInGBs',
+            'max_memory_in_gbs': 'maxMemoryInGBs',
+            'db_node_storage_size_in_gbs': 'dbNodeStorageSizeInGBs',
+            'max_db_node_storage_in_g_bs': 'maxDbNodeStorageInGBs',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
+            'max_data_storage_in_t_bs': 'maxDataStorageInTBs',
             'cloud_control_plane_server1': 'cloudControlPlaneServer1',
             'cloud_control_plane_server2': 'cloudControlPlaneServer2',
             'netmask': 'netmask',
@@ -200,7 +236,13 @@ class ExadataInfrastructure(object):
         self._shape = None
         self._time_zone = None
         self._cpus_enabled = None
+        self._max_cpu_count = None
+        self._memory_size_in_gbs = None
+        self._max_memory_in_gbs = None
+        self._db_node_storage_size_in_gbs = None
+        self._max_db_node_storage_in_g_bs = None
         self._data_storage_size_in_tbs = None
+        self._max_data_storage_in_t_bs = None
         self._cloud_control_plane_server1 = None
         self._cloud_control_plane_server2 = None
         self._netmask = None
@@ -277,7 +319,7 @@ class ExadataInfrastructure(object):
         **[Required]** Gets the lifecycle_state of this ExadataInfrastructure.
         The current lifecycle state of the Exadata infrastructure.
 
-        Allowed values for this property are: "CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "OFFLINE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "DISCONNECTED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -296,7 +338,7 @@ class ExadataInfrastructure(object):
         :param lifecycle_state: The lifecycle_state of this ExadataInfrastructure.
         :type: str
         """
-        allowed_values = ["CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "OFFLINE"]
+        allowed_values = ["CREATING", "REQUIRES_ACTIVATION", "ACTIVATING", "ACTIVE", "ACTIVATION_FAILED", "FAILED", "UPDATING", "DELETING", "DELETED", "DISCONNECTED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -402,6 +444,126 @@ class ExadataInfrastructure(object):
         self._cpus_enabled = cpus_enabled
 
     @property
+    def max_cpu_count(self):
+        """
+        Gets the max_cpu_count of this ExadataInfrastructure.
+        The total number of CPU cores available.
+
+
+        :return: The max_cpu_count of this ExadataInfrastructure.
+        :rtype: int
+        """
+        return self._max_cpu_count
+
+    @max_cpu_count.setter
+    def max_cpu_count(self, max_cpu_count):
+        """
+        Sets the max_cpu_count of this ExadataInfrastructure.
+        The total number of CPU cores available.
+
+
+        :param max_cpu_count: The max_cpu_count of this ExadataInfrastructure.
+        :type: int
+        """
+        self._max_cpu_count = max_cpu_count
+
+    @property
+    def memory_size_in_gbs(self):
+        """
+        Gets the memory_size_in_gbs of this ExadataInfrastructure.
+        The memory allocated in GBs.
+
+
+        :return: The memory_size_in_gbs of this ExadataInfrastructure.
+        :rtype: int
+        """
+        return self._memory_size_in_gbs
+
+    @memory_size_in_gbs.setter
+    def memory_size_in_gbs(self, memory_size_in_gbs):
+        """
+        Sets the memory_size_in_gbs of this ExadataInfrastructure.
+        The memory allocated in GBs.
+
+
+        :param memory_size_in_gbs: The memory_size_in_gbs of this ExadataInfrastructure.
+        :type: int
+        """
+        self._memory_size_in_gbs = memory_size_in_gbs
+
+    @property
+    def max_memory_in_gbs(self):
+        """
+        Gets the max_memory_in_gbs of this ExadataInfrastructure.
+        The total memory available in GBs.
+
+
+        :return: The max_memory_in_gbs of this ExadataInfrastructure.
+        :rtype: int
+        """
+        return self._max_memory_in_gbs
+
+    @max_memory_in_gbs.setter
+    def max_memory_in_gbs(self, max_memory_in_gbs):
+        """
+        Sets the max_memory_in_gbs of this ExadataInfrastructure.
+        The total memory available in GBs.
+
+
+        :param max_memory_in_gbs: The max_memory_in_gbs of this ExadataInfrastructure.
+        :type: int
+        """
+        self._max_memory_in_gbs = max_memory_in_gbs
+
+    @property
+    def db_node_storage_size_in_gbs(self):
+        """
+        Gets the db_node_storage_size_in_gbs of this ExadataInfrastructure.
+        The local node storage allocated in GBs.
+
+
+        :return: The db_node_storage_size_in_gbs of this ExadataInfrastructure.
+        :rtype: int
+        """
+        return self._db_node_storage_size_in_gbs
+
+    @db_node_storage_size_in_gbs.setter
+    def db_node_storage_size_in_gbs(self, db_node_storage_size_in_gbs):
+        """
+        Sets the db_node_storage_size_in_gbs of this ExadataInfrastructure.
+        The local node storage allocated in GBs.
+
+
+        :param db_node_storage_size_in_gbs: The db_node_storage_size_in_gbs of this ExadataInfrastructure.
+        :type: int
+        """
+        self._db_node_storage_size_in_gbs = db_node_storage_size_in_gbs
+
+    @property
+    def max_db_node_storage_in_g_bs(self):
+        """
+        Gets the max_db_node_storage_in_g_bs of this ExadataInfrastructure.
+        The total local node storage available in GBs.
+
+
+        :return: The max_db_node_storage_in_g_bs of this ExadataInfrastructure.
+        :rtype: int
+        """
+        return self._max_db_node_storage_in_g_bs
+
+    @max_db_node_storage_in_g_bs.setter
+    def max_db_node_storage_in_g_bs(self, max_db_node_storage_in_g_bs):
+        """
+        Sets the max_db_node_storage_in_g_bs of this ExadataInfrastructure.
+        The total local node storage available in GBs.
+
+
+        :param max_db_node_storage_in_g_bs: The max_db_node_storage_in_g_bs of this ExadataInfrastructure.
+        :type: int
+        """
+        self._max_db_node_storage_in_g_bs = max_db_node_storage_in_g_bs
+
+    @property
     def data_storage_size_in_tbs(self):
         """
         Gets the data_storage_size_in_tbs of this ExadataInfrastructure.
@@ -409,7 +571,7 @@ class ExadataInfrastructure(object):
 
 
         :return: The data_storage_size_in_tbs of this ExadataInfrastructure.
-        :rtype: int
+        :rtype: float
         """
         return self._data_storage_size_in_tbs
 
@@ -421,9 +583,33 @@ class ExadataInfrastructure(object):
 
 
         :param data_storage_size_in_tbs: The data_storage_size_in_tbs of this ExadataInfrastructure.
-        :type: int
+        :type: float
         """
         self._data_storage_size_in_tbs = data_storage_size_in_tbs
+
+    @property
+    def max_data_storage_in_t_bs(self):
+        """
+        Gets the max_data_storage_in_t_bs of this ExadataInfrastructure.
+        The total available DATA disk group size.
+
+
+        :return: The max_data_storage_in_t_bs of this ExadataInfrastructure.
+        :rtype: float
+        """
+        return self._max_data_storage_in_t_bs
+
+    @max_data_storage_in_t_bs.setter
+    def max_data_storage_in_t_bs(self, max_data_storage_in_t_bs):
+        """
+        Sets the max_data_storage_in_t_bs of this ExadataInfrastructure.
+        The total available DATA disk group size.
+
+
+        :param max_data_storage_in_t_bs: The max_data_storage_in_t_bs of this ExadataInfrastructure.
+        :type: float
+        """
+        self._max_data_storage_in_t_bs = max_data_storage_in_t_bs
 
     @property
     def cloud_control_plane_server1(self):

@@ -323,6 +323,381 @@ class IdentityClient(object):
                 header_params=header_params,
                 response_type="list[TagDefaultSummary]")
 
+    def bulk_delete_resources(self, compartment_id, bulk_delete_resources_details, **kwargs):
+        """
+        Bulk delete resources in the compartment. All resources must be in the same compartment.
+        This API can only be invoked from tenancy's home region.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment.
+
+        :param BulkDeleteResourcesDetails bulk_delete_resources_details: (required)
+            Request object for bulk delete resources in a compartment.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/compartments/{compartmentId}/actions/bulkDeleteResources"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "bulk_delete_resources got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "compartmentId": compartment_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=bulk_delete_resources_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=bulk_delete_resources_details)
+
+    def bulk_delete_tags(self, bulk_delete_tags_details, **kwargs):
+        """
+        Deletes the specified tag key definitions. This operation triggers a process that removes the
+        tags from all resources in your tenancy.
+
+        The following actions happen immediately:
+        \u00A0
+          * If the tag is a cost-tracking tag, the tag no longer counts against your
+          10 cost-tracking tags limit, even if you do not disable the tag before running this operation.
+          * If the tag is used with dynamic groups, the rules that contain the tag are no longer
+          evaluated against the tag.
+
+        After you start this operation, the state of the tag changes to DELETING, and tag removal
+        from resources begins. This process can take up to 48 hours depending on the number of resources that
+        are tagged and the regions in which those resources reside.
+
+        When all tags have been removed, the state changes to DELETED. You cannot restore a deleted tag. After the tag state
+        changes to DELETED, you can use the same tag name again.
+
+        After you start this operation, you cannot start either the :func:`delete_tag` or the :func:`cascade_delete_tag_namespace` operation until this process completes.
+
+        In order to delete tags, you must first retire the tags. Use :func:`update_tag`
+        to retire a tag.
+
+
+        :param BulkDeleteTagsDetails bulk_delete_tags_details: (required)
+            Request object for deleting tags in bulk.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/tags/actions/bulkDelete"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "bulk_delete_tags got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=bulk_delete_tags_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=bulk_delete_tags_details)
+
+    def bulk_move_resources(self, compartment_id, bulk_move_resources_details, **kwargs):
+        """
+        Bulk move resources in the compartment. All resources must be in the same compartment.
+        This API can only be invoked from tenancy's home region.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment.
+
+        :param BulkMoveResourcesDetails bulk_move_resources_details: (required)
+            Request object for bulk move resources in the compartment.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/compartments/{compartmentId}/actions/bulkMoveResources"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "bulk_move_resources got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "compartmentId": compartment_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=bulk_move_resources_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=bulk_move_resources_details)
+
+    def cascade_delete_tag_namespace(self, tag_namespace_id, **kwargs):
+        """
+        Deletes the specified tag namespace. This operation triggers a process that removes all of the tags
+        defined in the specified tag namespace from all resources in your tenancy and then deletes the tag namespace.
+
+        After you start the delete operation:
+
+          * New tag key definitions cannot be created under the namespace.
+          * The state of the tag namespace changes to DELETING.
+          * Tag removal from the resources begins.
+
+        This process can take up to 48 hours depending on the number of tag definitions in the namespace, the number of resources
+        that are tagged, and the locations of the regions in which those resources reside.
+
+        After all tags are removed, the state changes to DELETED. You cannot restore a deleted tag namespace. After the deleted tag namespace
+        changes its state to DELETED, you can use the name of the deleted tag namespace again.
+
+        After you start this operation, you cannot start either the :func:`delete_tag` or the :func:`bulk_delete_tags` operation until this process completes.
+
+        To delete a tag namespace, you must first retire it. Use :func:`update_tag_namespace`
+        to retire a tag namespace.
+
+
+        :param str tag_namespace_id: (required)
+            The OCID of the tag namespace.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/tagNamespaces/{tagNamespaceId}/actions/cascadeDelete"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "cascade_delete_tag_namespace got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "tagNamespaceId": tag_namespace_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
     def change_tag_namespace_compartment(self, tag_namespace_id, change_tag_namespace_compartment_detail, **kwargs):
         """
         Moves the specified tag namespace to the specified compartment within the same tenancy.
@@ -1139,8 +1514,12 @@ class IdentityClient(object):
         After you send your request, the new object's `lifecycleState` will temporarily be CREATING. Before using the
         object, first make sure its `lifecycleState` has changed to ACTIVE.
 
+        After your network resource is created, you can use it in policy to restrict access to only requests made from an allowed
+        IP address specified in your network source. For more information, see `Managing Network Sources`__.
+
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policies.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingnetworksources.htm
 
 
         :param CreateNetworkSourceDetails create_network_source_details: (required)
@@ -3164,11 +3543,14 @@ class IdentityClient(object):
           * If the tag was used with dynamic groups, none of the rules that contain the tag will
           be evaluated against the tag.
 
-        Once you start the delete operation, the state of the tag changes to DELETING and tag removal
+        When you start the delete operation, the state of the tag changes to DELETING and tag removal
         from resources begins. This can take up to 48 hours depending on the number of resources that
-        were tagged as well as the regions in which those resources reside. When all tags have been
-        removed, the state changes to DELETED. You cannot restore a deleted tag. Once the deleted tag
+        were tagged as well as the regions in which those resources reside.
+
+        When all tags have been removed, the state changes to DELETED. You cannot restore a deleted tag. Once the deleted tag
         changes its state to DELETED, you can use the same tag name again.
+
+        After you start this operation, you cannot start either the :func:`bulk_delete_tags` or the :func:`cascade_delete_tag_namespace` operation until this process completes.
 
         To delete a tag, you must first retire it. Use :func:`update_tag`
         to retire a tag.
@@ -3325,8 +3707,11 @@ class IdentityClient(object):
 
     def delete_tag_namespace(self, tag_namespace_id, **kwargs):
         """
-        Deletes the specified tag namespace. Only an empty tag namespace can be deleted. To delete
-        a tag namespace, first delete all its tag definitions.
+        Deletes the specified tag namespace. Only an empty tag namespace can be deleted with this operation. To use this operation
+        to delete a tag namespace that contains tag definitions, first delete all of its tag definitions.
+
+        Use :func:`cascade_delete_tag_namespace` to delete a tag namespace along with all of
+        the tag definitions contained within that namespace.
 
         Use :func:`delete_tag` to delete a tag definition.
 
@@ -4908,6 +5293,85 @@ class IdentityClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="list[AvailabilityDomain]")
+
+    def list_bulk_action_resource_types(self, bulk_action_type, **kwargs):
+        """
+        Lists the resource types supported by compartment bulk actions.
+
+
+        :param str bulk_action_type: (required)
+            The type of the bulk action.
+
+            Allowed values are: "BULK_MOVE_RESOURCES", "BULK_DELETE_RESOURCES"
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.BulkActionResourceTypeCollection`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/compartments/bulkActionResourceTypes"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_bulk_action_resource_types got unknown kwargs: {!r}".format(extra_kwargs))
+
+        bulk_action_type_allowed_values = ["BULK_MOVE_RESOURCES", "BULK_DELETE_RESOURCES"]
+        if bulk_action_type not in bulk_action_type_allowed_values:
+            raise ValueError(
+                "Invalid value for `bulk_action_type`, must be one of {0}".format(bulk_action_type_allowed_values)
+            )
+
+        query_params = {
+            "bulkActionType": bulk_action_type,
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="BulkActionResourceTypeCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="BulkActionResourceTypeCollection")
 
     def list_compartments(self, compartment_id, **kwargs):
         """

@@ -10,6 +10,12 @@ from .auth_token import AuthToken
 from .authentication_policy import AuthenticationPolicy
 from .availability_domain import AvailabilityDomain
 from .base_tag_definition_validator import BaseTagDefinitionValidator
+from .bulk_action_resource import BulkActionResource
+from .bulk_action_resource_type import BulkActionResourceType
+from .bulk_action_resource_type_collection import BulkActionResourceTypeCollection
+from .bulk_delete_resources_details import BulkDeleteResourcesDetails
+from .bulk_delete_tags_details import BulkDeleteTagsDetails
+from .bulk_move_resources_details import BulkMoveResourcesDetails
 from .change_tag_namespace_compartment_detail import ChangeTagNamespaceCompartmentDetail
 from .compartment import Compartment
 from .create_api_key_details import CreateApiKeyDetails
@@ -110,6 +116,12 @@ identity_type_mapping = {
     "AuthenticationPolicy": AuthenticationPolicy,
     "AvailabilityDomain": AvailabilityDomain,
     "BaseTagDefinitionValidator": BaseTagDefinitionValidator,
+    "BulkActionResource": BulkActionResource,
+    "BulkActionResourceType": BulkActionResourceType,
+    "BulkActionResourceTypeCollection": BulkActionResourceTypeCollection,
+    "BulkDeleteResourcesDetails": BulkDeleteResourcesDetails,
+    "BulkDeleteTagsDetails": BulkDeleteTagsDetails,
+    "BulkMoveResourcesDetails": BulkMoveResourcesDetails,
     "ChangeTagNamespaceCompartmentDetail": ChangeTagNamespaceCompartmentDetail,
     "Compartment": Compartment,
     "CreateApiKeyDetails": CreateApiKeyDetails,
