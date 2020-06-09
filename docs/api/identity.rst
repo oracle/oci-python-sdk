@@ -24,6 +24,12 @@ Identity
     oci.identity.models.AuthenticationPolicy
     oci.identity.models.AvailabilityDomain
     oci.identity.models.BaseTagDefinitionValidator
+    oci.identity.models.BulkActionResource
+    oci.identity.models.BulkActionResourceType
+    oci.identity.models.BulkActionResourceTypeCollection
+    oci.identity.models.BulkDeleteResourcesDetails
+    oci.identity.models.BulkDeleteTagsDetails
+    oci.identity.models.BulkMoveResourcesDetails
     oci.identity.models.ChangeTagNamespaceCompartmentDetail
     oci.identity.models.Compartment
     oci.identity.models.CreateApiKeyDetails

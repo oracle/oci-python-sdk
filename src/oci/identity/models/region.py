@@ -53,16 +53,12 @@ class Region(object):
     def key(self):
         """
         Gets the key of this Region.
-        The key of the region.
+        The key of the region. See `Regions and Availability Domains`__ for
+        the full list of supported 3-letter region codes.
 
-        Allowed values are:
-        - `PHX`
-        - `IAD`
-        - `FRA`
-        - `LHR`
-        - `YYZ`
-        - `NRT`
-        - `ICN`
+        Example: `PHX`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :return: The key of this Region.
@@ -74,16 +70,12 @@ class Region(object):
     def key(self, key):
         """
         Sets the key of this Region.
-        The key of the region.
+        The key of the region. See `Regions and Availability Domains`__ for
+        the full list of supported 3-letter region codes.
 
-        Allowed values are:
-        - `PHX`
-        - `IAD`
-        - `FRA`
-        - `LHR`
-        - `YYZ`
-        - `NRT`
-        - `ICN`
+        Example: `PHX`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :param key: The key of this Region.
@@ -95,16 +87,12 @@ class Region(object):
     def name(self):
         """
         Gets the name of this Region.
-        The name of the region.
+        The name of the region. See `Regions and Availability Domains`__
+        for the full list of supported region names.
 
-        Allowed values are:
-        - `ap-seoul-1`
-        - `ap-tokyo-1`
-        - `ca-toronto-1`
-        - `eu-frankurt-1`
-        - `uk-london-1`
-        - `us-ashburn-1`
-        - `us-phoenix-1`
+        Example: `us-phoenix-1`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :return: The name of this Region.
@@ -116,16 +104,12 @@ class Region(object):
     def name(self, name):
         """
         Sets the name of this Region.
-        The name of the region.
+        The name of the region. See `Regions and Availability Domains`__
+        for the full list of supported region names.
 
-        Allowed values are:
-        - `ap-seoul-1`
-        - `ap-tokyo-1`
-        - `ca-toronto-1`
-        - `eu-frankurt-1`
-        - `uk-london-1`
-        - `us-ashburn-1`
-        - `us-phoenix-1`
+        Example: `us-phoenix-1`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :param name: The name of this Region.

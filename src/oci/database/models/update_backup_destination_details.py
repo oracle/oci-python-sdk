@@ -11,7 +11,7 @@ from oci.decorators import init_model_state_from_kwargs
 class UpdateBackupDestinationDetails(object):
     """
     For a RECOVERY_APPLIANCE backup destination, used to update the connection string and/or the list of VPC users.
-    For an NFS backup destination, used to update the NFS location.
+    For an NFS backup destination, there are 2 mount types - Self mount used for non-autonomous ExaCC and automated mount used for autonomous on ExaCC.
     """
 
     def __init__(self, **kwargs):

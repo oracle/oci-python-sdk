@@ -15,8 +15,10 @@ Executing using Cloud Shell:
        git clone https://github.com/oracle/oci-python-sdk
 
     4. Execute
-       cd $HOME/oci-python-sdk/examples/list_ipsec_and_virtual_circuits_in_tenancy
+       cd $HOME/oci-python-sdk/examples/list_resources_in_tenancy
        python list_all_ipsec_tunnels_in_tenancy.py -dt
        python list_all_virtual_circuits_in_tenancy.py -dt
+       python list_compute_tags_in_tenancy.py -dt
+       python list_dbsystem_with_maintenance_in_tenancy.py -dt
 
 

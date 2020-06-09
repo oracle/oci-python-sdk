@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.06.09 - 2020-06-09
+=====================
+* Added file storage to the csv file
+* Added network sources
+* Added pagination call for the list_policies (Thank you Shyam)
+* Added more info for the images in the summary
+
+=====================
 20.06.02 - 2020-06-02
 =====================
 * Added image to the summary if it is custom image (from the marketplace)

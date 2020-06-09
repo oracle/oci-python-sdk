@@ -76,16 +76,12 @@ class RegionSubscription(object):
     def region_key(self):
         """
         **[Required]** Gets the region_key of this RegionSubscription.
-        The region's key.
+        The region's key. See `Regions and Availability Domains`__
+        for the full list of supported 3-letter region codes.
 
-        Allowed values are:
-        - `PHX`
-        - `IAD`
-        - `FRA`
-        - `LHR`
-        - `YYZ`
-        - `NRT`
-        - `ICN`
+        Example: `PHX`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :return: The region_key of this RegionSubscription.
@@ -97,16 +93,12 @@ class RegionSubscription(object):
     def region_key(self, region_key):
         """
         Sets the region_key of this RegionSubscription.
-        The region's key.
+        The region's key. See `Regions and Availability Domains`__
+        for the full list of supported 3-letter region codes.
 
-        Allowed values are:
-        - `PHX`
-        - `IAD`
-        - `FRA`
-        - `LHR`
-        - `YYZ`
-        - `NRT`
-        - `ICN`
+        Example: `PHX`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :param region_key: The region_key of this RegionSubscription.
@@ -118,16 +110,12 @@ class RegionSubscription(object):
     def region_name(self):
         """
         **[Required]** Gets the region_name of this RegionSubscription.
-        The region's name.
+        The region's name. See `Regions and Availability Domains`__
+        for the full list of supported region names.
 
-        Allowed values are:
-        - `ap-seoul-1`
-        - `ap-tokyo-1`
-        - `ca-toronto-1`
-        - `eu-frankurt-1`
-        - `uk-london-1`
-        - `us-ashburn-1`
-        - `us-phoenix-1`
+        Example: `us-phoenix-1`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :return: The region_name of this RegionSubscription.
@@ -139,16 +127,12 @@ class RegionSubscription(object):
     def region_name(self, region_name):
         """
         Sets the region_name of this RegionSubscription.
-        The region's name.
+        The region's name. See `Regions and Availability Domains`__
+        for the full list of supported region names.
 
-        Allowed values are:
-        - `ap-seoul-1`
-        - `ap-tokyo-1`
-        - `ca-toronto-1`
-        - `eu-frankurt-1`
-        - `uk-london-1`
-        - `us-ashburn-1`
-        - `us-phoenix-1`
+        Example: `us-phoenix-1`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
 
         :param region_name: The region_name of this RegionSubscription.

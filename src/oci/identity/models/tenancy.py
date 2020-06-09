@@ -160,17 +160,10 @@ class Tenancy(object):
     def home_region_key(self):
         """
         Gets the home_region_key of this Tenancy.
-        The region key for the tenancy's home region. For more information about regions, see
+        The region key for the tenancy's home region. For the full list of supported regions, see
         `Regions and Availability Domains`__.
 
-        Allowed values are:
-        - `IAD`
-        - `PHX`
-        - `FRA`
-        - `LHR`
-        - `ICN`
-        - `YYZ`
-        - `NRT`
+        Example: `PHX`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 
@@ -184,17 +177,10 @@ class Tenancy(object):
     def home_region_key(self, home_region_key):
         """
         Sets the home_region_key of this Tenancy.
-        The region key for the tenancy's home region. For more information about regions, see
+        The region key for the tenancy's home region. For the full list of supported regions, see
         `Regions and Availability Domains`__.
 
-        Allowed values are:
-        - `IAD`
-        - `PHX`
-        - `FRA`
-        - `LHR`
-        - `ICN`
-        - `YYZ`
-        - `NRT`
+        Example: `PHX`
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
 

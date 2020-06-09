@@ -1,34 +1,30 @@
 #!/usr/bin/env python3
 ##########################################################################
-# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
-# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
-#
-# list_all_ipsec_tunnels_in_tenancy.py
+# Copyright(c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
+# list_dbsystem_with_maintenance_in_tenancy.py
 #
 # @author: Adi Zohar
 #
-# Supports Python 2 and 3
+# Supports Python 3
 #
 # coding: utf-8
 ##########################################################################
 # Info:
-#    List all IPSEC tunnels in Tenancy including DRG redundancy
+#    List all dbsystems including maintenance in Tenancy
 #
 # Connectivity:
 #    Option 1 - User Authentication
 #       $HOME/.oci/config, please follow - https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm
-#       OCI user part of ListIPsecGroup group with below Policy rules:
-#          Allow group ListIPsecGroup to inspect compartments in tenancy
-#          Allow group ListIPsecGroup to inspect tenancies in tenancy
-#          Allow group ListIPsecGroup to inspect ipsec-connections in tenancy
-#          Allow group ListIPsecGroup to inspect drgs in tenancy
+#       OCI user part of ListDBSystemGroup group with below Policy rules:
+#          Allow group ListDBSystemGroup to inspect compartments in tenancy
+#          Allow group ListDBSystemGroup to inspect tenancies in tenancy
+#          Allow group ListDBSystemGroup to inspect db-systems in tenancy
 #
 #    Option 2 - Instance Principle
-#       Compute instance part of DynListIPsecGroup dynamic group with policy rules:
-#          Allow dynamic group DynListIPsecGroup to inspect compartments in tenancy
-#          Allow dynamic group DynListIPsecGroup to inspect tenancies in tenancy
-#          Allow dynamic group DynListIPsecGroup to inspect ipsec-connections in tenancy
-#          Allow dynamic group DynListIPsecGroup to inspect drgs in tenancy
+#       Compute instance part of DynListDBSystemGroup dynamic group with policy rules:
+#          Allow dynamic group DynListDBSystemGroup to inspect compartments in tenancy
+#          Allow dynamic group DynListDBSystemGroup to inspect tenancies in tenancy
+#          Allow dynamic group DynListDBSystemGroup to inspect db-systems in tenancy
 #
 ##########################################################################
 # Modules Included:
@@ -38,10 +34,8 @@
 # - IdentityClient.list_compartments         - Policy COMPARTMENT_INSPECT
 # - IdentityClient.get_tenancy               - Policy TENANCY_INSPECT
 # - IdentityClient.list_region_subscriptions - Policy TENANCY_INSPECT
-# - VirtualNetworkClient.list_ip_sec_connections        - Policy IPSEC_CONNECTION_READ
-# - VirtualNetworkClient.list_ip_sec_connection_tunnels - Policy IPSEC_CONNECTION_READ
-# - VirtualNetworkClient.get_drg_redundancy_status      - Policy DRG_READ
-#
+# - DatabaseClient.list_db_systems           - Policy DB_SYSTEM_INSPECT
+# - DatabaseClient.get_maintenance_run       - Policy DB_SYSTEM_INSPECT
 ##########################################################################
 # Application Command line parameters
 #
@@ -145,12 +139,6 @@ def create_signer(config_profile, is_instance_principals, is_delegation_token):
     # config file authentication
     # -----------------------------
     else:
-        # check if file exist
-        if not os.path.isfile(oci.config.DEFAULT_LOCATION):
-            print("*** Config File " + oci.config.DEFAULT_LOCATION + " does not exist, Abort. ***")
-            print("")
-            raise SystemExit
-
         config = oci.config.from_file(
             oci.config.DEFAULT_LOCATION,
             (config_profile if config_profile else oci.config.DEFAULT_PROFILE)
@@ -203,7 +191,8 @@ cmd = parser.parse_args()
 
 # Start print time info
 start_time = str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
-print_header("Running List IPSecTunnels")
+print_header("Running DB Systems Extract")
+print("Written By Adi Zohar, June 2020")
 print("Starts at " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
 print("Command Line : " + ' '.join(x for x in sys.argv[1:]))
 
@@ -230,10 +219,76 @@ except Exception as e:
     raise RuntimeError("\nError extracting compartments section - " + str(e))
 
 
+##########################################################################
+# load_database_maintatance
+##########################################################################
+def load_database_maintatance(database_client, maintenance_run_id, db_system_name):
+    try:
+        if not maintenance_run_id:
+            return {}
+
+        # oci.database.models.MaintenanceRun
+        mt = database_client.get_maintenance_run(maintenance_run_id).data
+        val = {'id': str(mt.id),
+               'display_name': str(mt.display_name),
+               'description': str(mt.description),
+               'lifecycle_state': str(mt.lifecycle_state),
+               'time_scheduled': str(mt.time_scheduled),
+               'time_started': str(mt.time_started),
+               'time_ended': str(mt.time_ended),
+               'target_resource_type': str(mt.target_resource_type),
+               'target_resource_id': str(mt.target_resource_id),
+               'maintenance_type': str(mt.maintenance_type),
+               'maintenance_subtype': str(mt.maintenance_subtype),
+               'maintenance_display': str(mt.display_name) + " ( " + str(mt.maintenance_type) + ", " + str(mt.maintenance_subtype) + ", " + str(mt.lifecycle_state) + " ), Scheduled: " + str(mt.time_scheduled)[0:16] + ((", Execution: " + str(mt.time_started)[0:16] + " - " + str(mt.time_ended)[0:16]) if str(mt.time_started) != 'None' else ""),
+               'maintenance_alert': ""
+               }
+
+        # If maintenance is less than 14 days
+        if mt.time_scheduled:
+            delta = mt.time_scheduled.date() - datetime.date.today()
+            if delta.days <= 14 and delta.days >= 0 and not mt.time_started:
+                val['maintenance_alert'] = "DBSystem Maintenance is in " + str(delta.days).ljust(2, ' ') + " days, on " + str(mt.time_scheduled)[0:16] + " for " + db_system_name
+        return val
+
+    except oci.exceptions.ServiceError:
+        print("m", end="")
+        return ""
+    except oci.exceptions.RequestException:
+        print("m", end="")
+        return ""
+    except Exception as e:
+        raise RuntimeError("\nError extracting database maintenance section - " + str(e))
+
+
+##########################################################################
+# load_database_maintatance_windows
+##########################################################################
+def load_database_maintatance_windows(maintenance_window):
+    try:
+        if not maintenance_window:
+            return {}
+
+        mw = maintenance_window
+        value = {
+            'preference': str(mw.preference),
+            'months': ", ".join([x.name for x in mw.months]) if mw.months else "",
+            'weeks_of_month': ", ".join([str(x) for x in mw.weeks_of_month]) if mw.weeks_of_month else "",
+            'hours_of_day': ", ".join([str(x) for x in mw.hours_of_day]) if mw.hours_of_day else "",
+            'days_of_week': ", ".join([str(x.name) for x in mw.days_of_week]) if mw.days_of_week else "",
+            'lead_time_in_weeks': str(mw.lead_time_in_weeks) if mw.lead_time_in_weeks else "",
+        }
+        value['display'] = str(mw.preference) if str(mw.preference) == "NO_PREFERENCE" else (str(mw.preference) + ": Months: " + value['months'] + ", Weeks: " + value['weeks_of_month'] + ", DOW: " + value['days_of_week'] + ", Hours: " + value['hours_of_day'] + ", Lead Weeks: " + value['lead_time_in_weeks'])
+        return value
+
+    except Exception as e:
+        raise RuntimeError("\nError handling Maintenance Window - " + str(e))
+
+
 ############################################
 # Loop on all regions
 ############################################
-print("\nLoading IPSEC Tunnels...")
+print("\nLoading DBSystems...")
 data = []
 warnings = 0
 for region_name in [str(es.region_name) for es in regions]:
@@ -245,15 +300,17 @@ for region_name in [str(es.region_name) for es in regions]:
     signer.region = region_name
 
     # connect to virtual_network
-    virtual_network = oci.core.VirtualNetworkClient(config, signer=signer)
+    database_client = oci.database.DatabaseClient(config, signer=signer)
     if cmd.proxy:
-        virtual_network.base_client.session.proxies = {'https': cmd.proxy}
+        database_client.base_client.session.proxies = {'https': cmd.proxy}
 
     ############################################
     # Loop on all compartments
     ############################################
     try:
         for compartment in compartments:
+
+            # skip non active compartments
             if compartment.id != tenancy.id and compartment.lifecycle_state != oci.identity.models.Compartment.LIFECYCLE_STATE_ACTIVE:
                 continue
 
@@ -261,13 +318,14 @@ for region_name in [str(es.region_name) for es in regions]:
             cnt = 0
 
             ############################################
-            # Retrieve ip sec connections
+            # Retrieve DBSystems
             ############################################
-            ipsec_connnections = []
+            list_db_systems = []
             try:
-                ipsec_connnections = oci.pagination.list_call_get_all_results(
-                    virtual_network.list_ip_sec_connections,
-                    compartment.id
+                list_db_systems = oci.pagination.list_call_get_all_results(
+                    database_client.list_db_systems,
+                    compartment.id,
+                    sort_by="DISPLAYNAME"
                 ).data
 
             except oci.exceptions.ServiceError as e:
@@ -277,82 +335,82 @@ for region_name in [str(es.region_name) for es in regions]:
                     continue
                 raise
 
-            # loop on array,
-            # ipsec_conn = oci.core.models.IPSecConnection
-            for ipsec_conn in ipsec_connnections:
-                if ipsec_conn.lifecycle_state != oci.core.models.IPSecConnection.LIFECYCLE_STATE_AVAILABLE:
+            # loop on the db systems
+            # dbs = oci.database.models.DbSystemSummary
+            for dbs in list_db_systems:
+                if dbs.lifecycle_state == oci.database.models.DbSystemSummary.LIFECYCLE_STATE_TERMINATED:
                     continue
 
-                ############################################
-                # Retrieve DRG Redundancy
-                ############################################
-                drg_redundancy = ""
-                try:
-                    # redundancy = oci.core.models.DrgRedundancyStatus
-                    redundancy = virtual_network.get_drg_redundancy_status(ipsec_conn.drg_id).data
-                    if redundancy:
-                        drg_redundancy = str(redundancy.status)
-                except oci.exceptions.ServiceError as e:
-                    if check_service_error(e.code):
-                        print("DRG-Redun-Err ", end="")
-                    pass
-
-                ############################################
-                # Get IPSEC connection tunnels
-                ############################################
-                data_tunnel = []
-                try:
-                    tunnels = virtual_network.list_ip_sec_connection_tunnels(ipsec_conn.id).data
-                    # tunnel = oci.core.models.IPSecConnectionTunnel
-                    for tunnel in tunnels:
-
-                        # get bgp tunnel info
-                        tunnel_bgp_info = ""
-                        if tunnel.bgp_session_info:
-                            bs = tunnel.bgp_session_info
-                            tunnel_bgp_info = "BGP Status = " + str(bs.bgp_state) + ", Cust: " + str(bs.customer_interface_ip) + " (ASN = " + str(bs.customer_bgp_asn) + "), Oracle: " + str(bs.oracle_interface_ip) + " (ASN = " + str(bs.oracle_bgp_asn) + ")"
-
-                        # append the data to data_tunnel
-                        data_tunnel.append(
-                            {'id': str(tunnel.id),
-                             'status': str(tunnel.status),
-                             'lifecycle_state': str(tunnel.lifecycle_state),
-                             'status_date': tunnel.time_status_updated.strftime("%Y-%m-%d %H:%M"),
-                             'display_name': str(tunnel.display_name),
-                             'routing': str(tunnel.routing),
-                             'cpe_ip': str(tunnel.cpe_ip),
-                             'vpn_ip': str(tunnel.vpn_ip),
-                             'bgp_info': tunnel_bgp_info}
-                        )
-
-                        cnt += 1
-                except Exception as e:
-                    print("Error (" + str(e) + ") ", end="")
-                    pass
-
-                # Add all data to the data array
-                data.append({
-                    'id': str(ipsec_conn.id),
-                    'name': str(ipsec_conn.display_name),
-                    'drg_id': str(ipsec_conn.drg_id),
-                    'drg_redundancy': drg_redundancy,
-                    'cpe_id': str(ipsec_conn.cpe_id),
-                    'time_created': str(ipsec_conn.time_created),
+                value = {
+                    'region_name': region_name,
                     'compartment_name': str(compartment.name),
                     'compartment_id': str(compartment.id),
-                    'region_name': region_name,
-                    'static_routes': [str(es) for es in ipsec_conn.static_routes],
-                    'tunnels': data_tunnel
-                })
+                    'id': str(dbs.id),
+                    'display_name': str(dbs.display_name),
+                    'shape': str(dbs.shape),
+                    'lifecycle_state': str(dbs.lifecycle_state),
+                    'data_storage_size_in_gbs': "" if dbs.data_storage_size_in_gbs is None else str(dbs.data_storage_size_in_gbs),
+                    'availability_domain': str(dbs.availability_domain),
+                    'cpu_core_count': str(dbs.cpu_core_count),
+                    'node_count': ("" if dbs.node_count is None else str(dbs.node_count)),
+                    'version': str(dbs.version),
+                    'hostname': str(dbs.hostname),
+                    'domain': str(dbs.domain),
+                    'data_storage_percentage': str(dbs.data_storage_percentage),
+                    'data_subnet_id': str(dbs.subnet_id),
+                    'backup_subnet_id': str(dbs.backup_subnet_id),
+                    'scan_dns_record_id': "" if dbs.scan_dns_record_id is None else str(dbs.scan_dns_record_id),
+                    'listener_port': str(dbs.listener_port),
+                    'cluster_name': "" if dbs.cluster_name is None else str(dbs.cluster_name),
+                    'database_edition': str(dbs.database_edition),
+                    'time_created': str(dbs.time_created),
+                    'storage_management': "",
+                    'sparse_diskgroup': str(dbs.sparse_diskgroup),
+                    'reco_storage_size_in_gb': str(dbs.reco_storage_size_in_gb),
+                    'last_maintenance_run': load_database_maintatance(database_client, dbs.last_maintenance_run_id, str(dbs.display_name) + " - " + str(dbs.shape)),
+                    'next_maintenance_run': load_database_maintatance(database_client, dbs.next_maintenance_run_id, str(dbs.display_name) + " - " + str(dbs.shape)),
+                    'maintenance_window': load_database_maintatance_windows(dbs.maintenance_window),
+                    'defined_tags': [] if dbs.defined_tags is None else dbs.defined_tags,
+                    'freeform_tags': [] if dbs.freeform_tags is None else dbs.freeform_tags
+                }
 
-            # print tunnels for the compartment
+                # storage_management
+                if dbs.db_system_options:
+                    if dbs.db_system_options.storage_management:
+                        value['storage_management'] = dbs.db_system_options.storage_management
+
+                # license model
+                if dbs.license_model == oci.database.models.DbSystem.LICENSE_MODEL_LICENSE_INCLUDED:
+                    value['license_model'] = "INCL"
+                elif dbs.license_model == oci.database.models.DbSystem.LICENSE_MODEL_BRING_YOUR_OWN_LICENSE:
+                    value['license_model'] = "BYOL"
+                else:
+                    value['license_model'] = str(dbs.license_model)
+
+                # Edition
+                if dbs.database_edition == oci.database.models.DbSystem.DATABASE_EDITION_ENTERPRISE_EDITION:
+                    value['database_edition_short'] = "EE"
+                elif dbs.database_edition == oci.database.models.DbSystem.DATABASE_EDITION_ENTERPRISE_EDITION_EXTREME_PERFORMANCE:
+                    value['database_edition_short'] = "XP"
+                elif dbs.database_edition == oci.database.models.DbSystem.DATABASE_EDITION_ENTERPRISE_EDITION_HIGH_PERFORMANCE:
+                    value['database_edition_short'] = "HP"
+                elif dbs.database_edition == oci.database.models.DbSystem.DATABASE_EDITION_STANDARD_EDITION:
+                    value['database_edition_short'] = "SE"
+                else:
+                    value['database_edition_short'] = dbs.database_edition
+
+                # add the data
+                cnt += 1
+                data.append(value)
+
+            # print dbsystems for the compartment
             if cnt == 0:
                 print("(-)")
             else:
-                print("(" + str(cnt) + " Tunnels)")
+                print("(" + str(cnt) + " DBSystems)")
 
     except Exception as e:
-        raise RuntimeError("\nError extracting IPSEC tunnels - " + str(e))
+        raise RuntimeError("\nError extracting DBSystems - " + str(e))
 
 ############################################
 # Print Output as JSON

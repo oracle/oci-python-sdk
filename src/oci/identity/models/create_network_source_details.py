@@ -86,7 +86,7 @@ class CreateNetworkSourceDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateNetworkSourceDetails.
-        The OCID of the tenancy containing the network source object.
+        The OCID of the tenancy (root compartment) containing the network source object.
 
 
         :return: The compartment_id of this CreateNetworkSourceDetails.
@@ -98,7 +98,7 @@ class CreateNetworkSourceDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateNetworkSourceDetails.
-        The OCID of the tenancy containing the network source object.
+        The OCID of the tenancy (root compartment) containing the network source object.
 
 
         :param compartment_id: The compartment_id of this CreateNetworkSourceDetails.
@@ -136,7 +136,7 @@ class CreateNetworkSourceDetails(object):
     def public_source_list(self):
         """
         Gets the public_source_list of this CreateNetworkSourceDetails.
-        A list of allowed public IPs and CIDR ranges
+        A list of allowed public IP addresses and CIDR ranges.
 
 
         :return: The public_source_list of this CreateNetworkSourceDetails.
@@ -148,7 +148,7 @@ class CreateNetworkSourceDetails(object):
     def public_source_list(self, public_source_list):
         """
         Sets the public_source_list of this CreateNetworkSourceDetails.
-        A list of allowed public IPs and CIDR ranges
+        A list of allowed public IP addresses and CIDR ranges.
 
 
         :param public_source_list: The public_source_list of this CreateNetworkSourceDetails.
@@ -160,7 +160,8 @@ class CreateNetworkSourceDetails(object):
     def virtual_source_list(self):
         """
         Gets the virtual_source_list of this CreateNetworkSourceDetails.
-        A list of allowed VCN ocid/IP range pairs
+        A list of allowed VCN OCID and IP range pairs.
+        Example:`\"vcnId\": \"ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID\", \"ipRanges\": [ \"129.213.39.0/24\" ]`
 
 
         :return: The virtual_source_list of this CreateNetworkSourceDetails.
@@ -172,7 +173,8 @@ class CreateNetworkSourceDetails(object):
     def virtual_source_list(self, virtual_source_list):
         """
         Sets the virtual_source_list of this CreateNetworkSourceDetails.
-        A list of allowed VCN ocid/IP range pairs
+        A list of allowed VCN OCID and IP range pairs.
+        Example:`\"vcnId\": \"ocid1.vcn.oc1.iad.aaaaaaaaexampleuniqueID\", \"ipRanges\": [ \"129.213.39.0/24\" ]`
 
 
         :param virtual_source_list: The virtual_source_list of this CreateNetworkSourceDetails.
@@ -184,8 +186,9 @@ class CreateNetworkSourceDetails(object):
     def services(self):
         """
         Gets the services of this CreateNetworkSourceDetails.
-        A list of OCIservices allowed to make on behalf of requests which may have different source ips.
-        At this time only the values of all or none are supported.
+        A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses
+        than those listed in the network source.
+        Currently, only `all` and `none` are supported. The default is `all`.
 
 
         :return: The services of this CreateNetworkSourceDetails.
@@ -197,8 +200,9 @@ class CreateNetworkSourceDetails(object):
     def services(self, services):
         """
         Sets the services of this CreateNetworkSourceDetails.
-        A list of OCIservices allowed to make on behalf of requests which may have different source ips.
-        At this time only the values of all or none are supported.
+        A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses
+        than those listed in the network source.
+        Currently, only `all` and `none` are supported. The default is `all`.
 
 
         :param services: The services of this CreateNetworkSourceDetails.

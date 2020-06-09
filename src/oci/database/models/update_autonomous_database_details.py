@@ -60,10 +60,6 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the defined_tags property of this UpdateAutonomousDatabaseDetails.
         :type defined_tags: dict(str, dict(str, object))
 
-        :param nsg_ids:
-            The value to assign to the nsg_ids property of this UpdateAutonomousDatabaseDetails.
-        :type nsg_ids: list[str]
-
         :param license_model:
             The value to assign to the license_model property of this UpdateAutonomousDatabaseDetails.
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
@@ -81,6 +77,10 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the db_version property of this UpdateAutonomousDatabaseDetails.
         :type db_version: str
 
+        :param nsg_ids:
+            The value to assign to the nsg_ids property of this UpdateAutonomousDatabaseDetails.
+        :type nsg_ids: list[str]
+
         """
         self.swagger_types = {
             'cpu_core_count': 'int',
@@ -91,11 +91,11 @@ class UpdateAutonomousDatabaseDetails(object):
             'db_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'nsg_ids': 'list[str]',
             'license_model': 'str',
             'whitelisted_ips': 'list[str]',
             'is_auto_scaling_enabled': 'bool',
-            'db_version': 'str'
+            'db_version': 'str',
+            'nsg_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -107,11 +107,11 @@ class UpdateAutonomousDatabaseDetails(object):
             'db_name': 'dbName',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'nsg_ids': 'nsgIds',
             'license_model': 'licenseModel',
             'whitelisted_ips': 'whitelistedIps',
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
-            'db_version': 'dbVersion'
+            'db_version': 'dbVersion',
+            'nsg_ids': 'nsgIds'
         }
 
         self._cpu_core_count = None
@@ -122,11 +122,11 @@ class UpdateAutonomousDatabaseDetails(object):
         self._db_name = None
         self._freeform_tags = None
         self._defined_tags = None
-        self._nsg_ids = None
         self._license_model = None
         self._whitelisted_ips = None
         self._is_auto_scaling_enabled = None
         self._db_version = None
+        self._nsg_ids = None
 
     @property
     def cpu_core_count(self):
@@ -180,7 +180,8 @@ class UpdateAutonomousDatabaseDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateAutonomousDatabaseDetails.
-        The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        The user-friendly name for the Autonomous Database. The name does not have to be unique. Can only be updated for Autonomous Databases
+        using dedicated Exadata infrastructure.
 
 
         :return: The display_name of this UpdateAutonomousDatabaseDetails.
@@ -192,7 +193,8 @@ class UpdateAutonomousDatabaseDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateAutonomousDatabaseDetails.
-        The user-friendly name for the Autonomous Database. The name does not have to be unique.
+        The user-friendly name for the Autonomous Database. The name does not have to be unique. Can only be updated for Autonomous Databases
+        using dedicated Exadata infrastructure.
 
 
         :param display_name: The display_name of this UpdateAutonomousDatabaseDetails.
@@ -341,40 +343,6 @@ class UpdateAutonomousDatabaseDetails(object):
         self._defined_tags = defined_tags
 
     @property
-    def nsg_ids(self):
-        """
-        Gets the nsg_ids of this UpdateAutonomousDatabaseDetails.
-        A list of the `OCIDs`__ of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
-        **NsgIds restrictions:**
-        - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
-
-
-        :return: The nsg_ids of this UpdateAutonomousDatabaseDetails.
-        :rtype: list[str]
-        """
-        return self._nsg_ids
-
-    @nsg_ids.setter
-    def nsg_ids(self, nsg_ids):
-        """
-        Sets the nsg_ids of this UpdateAutonomousDatabaseDetails.
-        A list of the `OCIDs`__ of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
-        **NsgIds restrictions:**
-        - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
-
-        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
-
-
-        :param nsg_ids: The nsg_ids of this UpdateAutonomousDatabaseDetails.
-        :type: list[str]
-        """
-        self._nsg_ids = nsg_ids
-
-    @property
     def license_model(self):
         """
         Gets the license_model of this UpdateAutonomousDatabaseDetails.
@@ -499,6 +467,40 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: str
         """
         self._db_version = db_version
+
+    @property
+    def nsg_ids(self):
+        """
+        Gets the nsg_ids of this UpdateAutonomousDatabaseDetails.
+        A list of the `OCIDs`__ of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
+        **NsgIds restrictions:**
+        - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+
+
+        :return: The nsg_ids of this UpdateAutonomousDatabaseDetails.
+        :rtype: list[str]
+        """
+        return self._nsg_ids
+
+    @nsg_ids.setter
+    def nsg_ids(self, nsg_ids):
+        """
+        Sets the nsg_ids of this UpdateAutonomousDatabaseDetails.
+        A list of the `OCIDs`__ of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
+        **NsgIds restrictions:**
+        - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
+
+
+        :param nsg_ids: The nsg_ids of this UpdateAutonomousDatabaseDetails.
+        :type: list[str]
+        """
+        self._nsg_ids = nsg_ids
 
     def __repr__(self):
         return formatted_flat_dict(self)

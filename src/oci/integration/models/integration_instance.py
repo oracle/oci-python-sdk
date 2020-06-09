@@ -110,6 +110,10 @@ class IntegrationInstance(object):
             The value to assign to the message_packs property of this IntegrationInstance.
         :type message_packs: int
 
+        :param is_file_server_enabled:
+            The value to assign to the is_file_server_enabled property of this IntegrationInstance.
+        :type is_file_server_enabled: bool
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -124,7 +128,8 @@ class IntegrationInstance(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'is_byol': 'bool',
             'instance_url': 'str',
-            'message_packs': 'int'
+            'message_packs': 'int',
+            'is_file_server_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -140,7 +145,8 @@ class IntegrationInstance(object):
             'defined_tags': 'definedTags',
             'is_byol': 'isByol',
             'instance_url': 'instanceUrl',
-            'message_packs': 'messagePacks'
+            'message_packs': 'messagePacks',
+            'is_file_server_enabled': 'isFileServerEnabled'
         }
 
         self._id = None
@@ -156,6 +162,7 @@ class IntegrationInstance(object):
         self._is_byol = None
         self._instance_url = None
         self._message_packs = None
+        self._is_file_server_enabled = None
 
     @property
     def id(self):
@@ -488,6 +495,30 @@ class IntegrationInstance(object):
         :type: int
         """
         self._message_packs = message_packs
+
+    @property
+    def is_file_server_enabled(self):
+        """
+        Gets the is_file_server_enabled of this IntegrationInstance.
+        The file server is enabled or not.
+
+
+        :return: The is_file_server_enabled of this IntegrationInstance.
+        :rtype: bool
+        """
+        return self._is_file_server_enabled
+
+    @is_file_server_enabled.setter
+    def is_file_server_enabled(self, is_file_server_enabled):
+        """
+        Sets the is_file_server_enabled of this IntegrationInstance.
+        The file server is enabled or not.
+
+
+        :param is_file_server_enabled: The is_file_server_enabled of this IntegrationInstance.
+        :type: bool
+        """
+        self._is_file_server_enabled = is_file_server_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -50,8 +50,32 @@ class OdaInstance(object):
     LIFECYCLE_STATE_FAILED = "FAILED"
 
     #: A constant which can be used with the lifecycle_sub_state property of a OdaInstance.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_SUB_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a OdaInstance.
+    #: This constant has a value of "STARTING"
+    LIFECYCLE_SUB_STATE_STARTING = "STARTING"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a OdaInstance.
+    #: This constant has a value of "STOPPING"
+    LIFECYCLE_SUB_STATE_STOPPING = "STOPPING"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a OdaInstance.
+    #: This constant has a value of "CHANGING_COMPARTMENT"
+    LIFECYCLE_SUB_STATE_CHANGING_COMPARTMENT = "CHANGING_COMPARTMENT"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a OdaInstance.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_SUB_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a OdaInstance.
     #: This constant has a value of "DELETE_PENDING"
     LIFECYCLE_SUB_STATE_DELETE_PENDING = "DELETE_PENDING"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a OdaInstance.
+    #: This constant has a value of "RECOVERING"
+    LIFECYCLE_SUB_STATE_RECOVERING = "RECOVERING"
 
     #: A constant which can be used with the lifecycle_sub_state property of a OdaInstance.
     #: This constant has a value of "PURGING"
@@ -112,7 +136,7 @@ class OdaInstance(object):
 
         :param lifecycle_sub_state:
             The value to assign to the lifecycle_sub_state property of this OdaInstance.
-            Allowed values for this property are: "DELETE_PENDING", "PURGING", "QUEUED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "STARTING", "STOPPING", "CHANGING_COMPARTMENT", "DELETING", "DELETE_PENDING", "RECOVERING", "PURGING", "QUEUED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_sub_state: str
 
@@ -446,7 +470,7 @@ class OdaInstance(object):
         Gets the lifecycle_sub_state of this OdaInstance.
         The current sub-state of the Digital Assistant instance.
 
-        Allowed values for this property are: "DELETE_PENDING", "PURGING", "QUEUED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "STARTING", "STOPPING", "CHANGING_COMPARTMENT", "DELETING", "DELETE_PENDING", "RECOVERING", "PURGING", "QUEUED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -465,7 +489,7 @@ class OdaInstance(object):
         :param lifecycle_sub_state: The lifecycle_sub_state of this OdaInstance.
         :type: str
         """
-        allowed_values = ["DELETE_PENDING", "PURGING", "QUEUED"]
+        allowed_values = ["CREATING", "STARTING", "STOPPING", "CHANGING_COMPARTMENT", "DELETING", "DELETE_PENDING", "RECOVERING", "PURGING", "QUEUED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_sub_state, allowed_values):
             lifecycle_sub_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_sub_state = lifecycle_sub_state
