@@ -34,6 +34,10 @@ class CreateThresholdPolicyDetails(CreateAutoScalingPolicyDetails):
             The value to assign to the policy_type property of this CreateThresholdPolicyDetails.
         :type policy_type: str
 
+        :param is_enabled:
+            The value to assign to the is_enabled property of this CreateThresholdPolicyDetails.
+        :type is_enabled: bool
+
         :param rules:
             The value to assign to the rules property of this CreateThresholdPolicyDetails.
         :type rules: list[CreateConditionDetails]
@@ -43,6 +47,7 @@ class CreateThresholdPolicyDetails(CreateAutoScalingPolicyDetails):
             'capacity': 'Capacity',
             'display_name': 'str',
             'policy_type': 'str',
+            'is_enabled': 'bool',
             'rules': 'list[CreateConditionDetails]'
         }
 
@@ -50,12 +55,14 @@ class CreateThresholdPolicyDetails(CreateAutoScalingPolicyDetails):
             'capacity': 'capacity',
             'display_name': 'displayName',
             'policy_type': 'policyType',
+            'is_enabled': 'isEnabled',
             'rules': 'rules'
         }
 
         self._capacity = None
         self._display_name = None
         self._policy_type = None
+        self._is_enabled = None
         self._rules = None
         self._policy_type = 'threshold'
 

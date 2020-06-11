@@ -141,7 +141,7 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
 
         :param source:
             The value to assign to the source property of this LaunchDbSystemFromBackupDetails.
-            Allowed values for this property are: "NONE", "DB_BACKUP"
+            Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE"
         :type source: str
 
         :param db_home:

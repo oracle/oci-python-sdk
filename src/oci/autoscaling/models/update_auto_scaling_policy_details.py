@@ -19,6 +19,7 @@ class UpdateAutoScalingPolicyDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.autoscaling.models.UpdateThresholdPolicyDetails`
+        * :class:`~oci.autoscaling.models.UpdateScheduledPolicyDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -34,22 +35,29 @@ class UpdateAutoScalingPolicyDetails(object):
             The value to assign to the policy_type property of this UpdateAutoScalingPolicyDetails.
         :type policy_type: str
 
+        :param is_enabled:
+            The value to assign to the is_enabled property of this UpdateAutoScalingPolicyDetails.
+        :type is_enabled: bool
+
         """
         self.swagger_types = {
             'display_name': 'str',
             'capacity': 'Capacity',
-            'policy_type': 'str'
+            'policy_type': 'str',
+            'is_enabled': 'bool'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
             'capacity': 'capacity',
-            'policy_type': 'policyType'
+            'policy_type': 'policyType',
+            'is_enabled': 'isEnabled'
         }
 
         self._display_name = None
         self._capacity = None
         self._policy_type = None
+        self._is_enabled = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -61,6 +69,9 @@ class UpdateAutoScalingPolicyDetails(object):
 
         if type == 'threshold':
             return 'UpdateThresholdPolicyDetails'
+
+        if type == 'scheduled':
+            return 'UpdateScheduledPolicyDetails'
         else:
             return 'UpdateAutoScalingPolicyDetails'
 
@@ -135,6 +146,30 @@ class UpdateAutoScalingPolicyDetails(object):
         :type: str
         """
         self._policy_type = policy_type
+
+    @property
+    def is_enabled(self):
+        """
+        Gets the is_enabled of this UpdateAutoScalingPolicyDetails.
+        Boolean field indicating whether this policy is enabled or not.
+
+
+        :return: The is_enabled of this UpdateAutoScalingPolicyDetails.
+        :rtype: bool
+        """
+        return self._is_enabled
+
+    @is_enabled.setter
+    def is_enabled(self, is_enabled):
+        """
+        Sets the is_enabled of this UpdateAutoScalingPolicyDetails.
+        Boolean field indicating whether this policy is enabled or not.
+
+
+        :param is_enabled: The is_enabled of this UpdateAutoScalingPolicyDetails.
+        :type: bool
+        """
+        self._is_enabled = is_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -23,6 +23,7 @@ class CreateAutoScalingPolicyDetails(object):
         Initializes a new CreateAutoScalingPolicyDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.autoscaling.models.CreateScheduledPolicyDetails`
         * :class:`~oci.autoscaling.models.CreateThresholdPolicyDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -39,22 +40,29 @@ class CreateAutoScalingPolicyDetails(object):
             The value to assign to the policy_type property of this CreateAutoScalingPolicyDetails.
         :type policy_type: str
 
+        :param is_enabled:
+            The value to assign to the is_enabled property of this CreateAutoScalingPolicyDetails.
+        :type is_enabled: bool
+
         """
         self.swagger_types = {
             'capacity': 'Capacity',
             'display_name': 'str',
-            'policy_type': 'str'
+            'policy_type': 'str',
+            'is_enabled': 'bool'
         }
 
         self.attribute_map = {
             'capacity': 'capacity',
             'display_name': 'displayName',
-            'policy_type': 'policyType'
+            'policy_type': 'policyType',
+            'is_enabled': 'isEnabled'
         }
 
         self._capacity = None
         self._display_name = None
         self._policy_type = None
+        self._is_enabled = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -63,6 +71,9 @@ class CreateAutoScalingPolicyDetails(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['policyType']
+
+        if type == 'scheduled':
+            return 'CreateScheduledPolicyDetails'
 
         if type == 'threshold':
             return 'CreateThresholdPolicyDetails'
@@ -140,6 +151,30 @@ class CreateAutoScalingPolicyDetails(object):
         :type: str
         """
         self._policy_type = policy_type
+
+    @property
+    def is_enabled(self):
+        """
+        Gets the is_enabled of this CreateAutoScalingPolicyDetails.
+        Boolean field indicating whether this policy is enabled or not.
+
+
+        :return: The is_enabled of this CreateAutoScalingPolicyDetails.
+        :rtype: bool
+        """
+        return self._is_enabled
+
+    @is_enabled.setter
+    def is_enabled(self, is_enabled):
+        """
+        Sets the is_enabled of this CreateAutoScalingPolicyDetails.
+        Boolean field indicating whether this policy is enabled or not.
+
+
+        :param is_enabled: The is_enabled of this CreateAutoScalingPolicyDetails.
+        :type: bool
+        """
+        self._is_enabled = is_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

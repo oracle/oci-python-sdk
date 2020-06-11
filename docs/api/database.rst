@@ -70,13 +70,16 @@ Database
     oci.database.models.CreateDataGuardAssociationWithNewDbSystemDetails
     oci.database.models.CreateDatabaseBase
     oci.database.models.CreateDatabaseDetails
+    oci.database.models.CreateDatabaseFromAnotherDatabaseDetails
     oci.database.models.CreateDatabaseFromBackup
     oci.database.models.CreateDatabaseFromBackupDetails
     oci.database.models.CreateDbHomeBase
     oci.database.models.CreateDbHomeDetails
     oci.database.models.CreateDbHomeFromBackupDetails
+    oci.database.models.CreateDbHomeFromDatabaseDetails
     oci.database.models.CreateDbHomeWithDbSystemIdDetails
     oci.database.models.CreateDbHomeWithDbSystemIdFromBackupDetails
+    oci.database.models.CreateDbHomeWithDbSystemIdFromDatabaseDetails
     oci.database.models.CreateDbHomeWithVmClusterIdDetails
     oci.database.models.CreateExadataInfrastructureDetails
     oci.database.models.CreateExternalBackupJobDetails
@@ -117,6 +120,7 @@ Database
     oci.database.models.LaunchDbSystemBase
     oci.database.models.LaunchDbSystemDetails
     oci.database.models.LaunchDbSystemFromBackupDetails
+    oci.database.models.LaunchDbSystemFromDatabaseDetails
     oci.database.models.MaintenanceRun
     oci.database.models.MaintenanceRunSummary
     oci.database.models.MaintenanceWindow

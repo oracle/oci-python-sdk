@@ -56,13 +56,16 @@ from .create_data_guard_association_to_existing_db_system_details import CreateD
 from .create_data_guard_association_with_new_db_system_details import CreateDataGuardAssociationWithNewDbSystemDetails
 from .create_database_base import CreateDatabaseBase
 from .create_database_details import CreateDatabaseDetails
+from .create_database_from_another_database_details import CreateDatabaseFromAnotherDatabaseDetails
 from .create_database_from_backup import CreateDatabaseFromBackup
 from .create_database_from_backup_details import CreateDatabaseFromBackupDetails
 from .create_db_home_base import CreateDbHomeBase
 from .create_db_home_details import CreateDbHomeDetails
 from .create_db_home_from_backup_details import CreateDbHomeFromBackupDetails
+from .create_db_home_from_database_details import CreateDbHomeFromDatabaseDetails
 from .create_db_home_with_db_system_id_details import CreateDbHomeWithDbSystemIdDetails
 from .create_db_home_with_db_system_id_from_backup_details import CreateDbHomeWithDbSystemIdFromBackupDetails
+from .create_db_home_with_db_system_id_from_database_details import CreateDbHomeWithDbSystemIdFromDatabaseDetails
 from .create_db_home_with_vm_cluster_id_details import CreateDbHomeWithVmClusterIdDetails
 from .create_exadata_infrastructure_details import CreateExadataInfrastructureDetails
 from .create_external_backup_job_details import CreateExternalBackupJobDetails
@@ -103,6 +106,7 @@ from .launch_autonomous_exadata_infrastructure_details import LaunchAutonomousEx
 from .launch_db_system_base import LaunchDbSystemBase
 from .launch_db_system_details import LaunchDbSystemDetails
 from .launch_db_system_from_backup_details import LaunchDbSystemFromBackupDetails
+from .launch_db_system_from_database_details import LaunchDbSystemFromDatabaseDetails
 from .maintenance_run import MaintenanceRun
 from .maintenance_run_summary import MaintenanceRunSummary
 from .maintenance_window import MaintenanceWindow
@@ -195,13 +199,16 @@ database_type_mapping = {
     "CreateDataGuardAssociationWithNewDbSystemDetails": CreateDataGuardAssociationWithNewDbSystemDetails,
     "CreateDatabaseBase": CreateDatabaseBase,
     "CreateDatabaseDetails": CreateDatabaseDetails,
+    "CreateDatabaseFromAnotherDatabaseDetails": CreateDatabaseFromAnotherDatabaseDetails,
     "CreateDatabaseFromBackup": CreateDatabaseFromBackup,
     "CreateDatabaseFromBackupDetails": CreateDatabaseFromBackupDetails,
     "CreateDbHomeBase": CreateDbHomeBase,
     "CreateDbHomeDetails": CreateDbHomeDetails,
     "CreateDbHomeFromBackupDetails": CreateDbHomeFromBackupDetails,
+    "CreateDbHomeFromDatabaseDetails": CreateDbHomeFromDatabaseDetails,
     "CreateDbHomeWithDbSystemIdDetails": CreateDbHomeWithDbSystemIdDetails,
     "CreateDbHomeWithDbSystemIdFromBackupDetails": CreateDbHomeWithDbSystemIdFromBackupDetails,
+    "CreateDbHomeWithDbSystemIdFromDatabaseDetails": CreateDbHomeWithDbSystemIdFromDatabaseDetails,
     "CreateDbHomeWithVmClusterIdDetails": CreateDbHomeWithVmClusterIdDetails,
     "CreateExadataInfrastructureDetails": CreateExadataInfrastructureDetails,
     "CreateExternalBackupJobDetails": CreateExternalBackupJobDetails,
@@ -242,6 +249,7 @@ database_type_mapping = {
     "LaunchDbSystemBase": LaunchDbSystemBase,
     "LaunchDbSystemDetails": LaunchDbSystemDetails,
     "LaunchDbSystemFromBackupDetails": LaunchDbSystemFromBackupDetails,
+    "LaunchDbSystemFromDatabaseDetails": LaunchDbSystemFromDatabaseDetails,
     "MaintenanceRun": MaintenanceRun,
     "MaintenanceRunSummary": MaintenanceRunSummary,
     "MaintenanceWindow": MaintenanceWindow,

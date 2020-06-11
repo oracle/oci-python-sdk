@@ -1,55 +1,7 @@
-#!/usr/bin/env python3
-##########################################################################
-# Copyright(c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
-# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
-#
-# list_all_ipsec_tunnels_in_tenancy.py
-#
-# @author: Adi Zohar
-#
-# Supports Python 2 and 3
-#
 # coding: utf-8
-##########################################################################
-# Info:
-#    List all IPSEC tunnels in Tenancy including DRG redundancy
-#
-# Connectivity:
-#    Option 1 - User Authentication
-#       $HOME/.oci/config, please follow - https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/sdkconfig.htm
-#       OCI user part of ListIPsecGroup group with below Policy rules:
-#          Allow group ListIPsecGroup to inspect compartments in tenancy
-#          Allow group ListIPsecGroup to inspect tenancies in tenancy
-#          Allow group ListIPsecGroup to inspect ipsec-connections in tenancy
-#          Allow group ListIPsecGroup to inspect drgs in tenancy
-#
-#    Option 2 - Instance Principle
-#       Compute instance part of DynListIPsecGroup dynamic group with policy rules:
-#          Allow dynamic group DynListIPsecGroup to inspect compartments in tenancy
-#          Allow dynamic group DynListIPsecGroup to inspect tenancies in tenancy
-#          Allow dynamic group DynListIPsecGroup to inspect ipsec-connections in tenancy
-#          Allow dynamic group DynListIPsecGroup to inspect drgs in tenancy
-#
-##########################################################################
-# Modules Included:
-# - oci.identity.IdentityClient
-#
-# APIs Used:
-# - IdentityClient.list_compartments         - Policy COMPARTMENT_INSPECT
-# - IdentityClient.get_tenancy               - Policy TENANCY_INSPECT
-# - IdentityClient.list_region_subscriptions - Policy TENANCY_INSPECT
-# - VirtualNetworkClient.list_ip_sec_connections        - Policy IPSEC_CONNECTION_READ
-# - VirtualNetworkClient.list_ip_sec_connection_tunnels - Policy IPSEC_CONNECTION_READ
-# - VirtualNetworkClient.get_drg_redundancy_status      - Policy DRG_READ
-#
-##########################################################################
-# Application Command line parameters
-#
-#   -t config - Config file section to use (tenancy profile)
-#   -p proxy  - Set Proxy (i.e. www-proxy-server.com:80)
-#   -ip       - Use Instance Principals for Authentication
-#   -dt       - Use Instance Principals with delegation token for cloud shell
-##########################################################################
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+
 from __future__ import print_function
 import sys
 import argparse

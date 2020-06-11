@@ -18,8 +18,12 @@ missing = Sentinel("Missing")
 
 class AutoScalingClient(object):
     """
-    APIs for dynamically scaling Compute resources to meet application requirements.
-    For information about the Compute service, see [Overview of the Compute Service](/Content/Compute/Concepts/computeoverview.htm).
+    APIs for dynamically scaling Compute resources to meet application requirements. For more information about
+    autoscaling, see [Autoscaling](/Content/Compute/Tasks/autoscalinginstancepools.htm). For information about the
+    Compute service, see [Overview of the Compute Service](/Content/Compute/Concepts/computeoverview.htm).
+
+    **Note:** Autoscaling is not available in US Government Cloud tenancies. For more information, see
+    [Oracle Cloud Infrastructure US Government Cloud](/Content/General/Concepts/govoverview.htm).
     """
 
     def __init__(self, config, **kwargs):

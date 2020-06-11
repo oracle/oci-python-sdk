@@ -140,7 +140,7 @@
       <dependency>
         <groupId>com.oracle.pic.rhino</groupId>
         <artifactId>dts-api-spec</artifactId>
-        <version>1.0.014</version>
+        <version>1.0.015</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

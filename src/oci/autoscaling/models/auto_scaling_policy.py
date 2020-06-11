@@ -23,6 +23,7 @@ class AutoScalingPolicy(object):
         Initializes a new AutoScalingPolicy object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.autoscaling.models.ScheduledPolicy`
         * :class:`~oci.autoscaling.models.ThresholdPolicy`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -47,13 +48,18 @@ class AutoScalingPolicy(object):
             The value to assign to the time_created property of this AutoScalingPolicy.
         :type time_created: datetime
 
+        :param is_enabled:
+            The value to assign to the is_enabled property of this AutoScalingPolicy.
+        :type is_enabled: bool
+
         """
         self.swagger_types = {
             'capacity': 'Capacity',
             'id': 'str',
             'display_name': 'str',
             'policy_type': 'str',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'is_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -61,7 +67,8 @@ class AutoScalingPolicy(object):
             'id': 'id',
             'display_name': 'displayName',
             'policy_type': 'policyType',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'is_enabled': 'isEnabled'
         }
 
         self._capacity = None
@@ -69,6 +76,7 @@ class AutoScalingPolicy(object):
         self._display_name = None
         self._policy_type = None
         self._time_created = None
+        self._is_enabled = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -77,6 +85,9 @@ class AutoScalingPolicy(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['policyType']
+
+        if type == 'scheduled':
+            return 'ScheduledPolicy'
 
         if type == 'threshold':
             return 'ThresholdPolicy'
@@ -206,6 +217,30 @@ class AutoScalingPolicy(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def is_enabled(self):
+        """
+        Gets the is_enabled of this AutoScalingPolicy.
+        Boolean field indicating whether this policy is enabled or not.
+
+
+        :return: The is_enabled of this AutoScalingPolicy.
+        :rtype: bool
+        """
+        return self._is_enabled
+
+    @is_enabled.setter
+    def is_enabled(self, is_enabled):
+        """
+        Sets the is_enabled of this AutoScalingPolicy.
+        Boolean field indicating whether this policy is enabled or not.
+
+
+        :param is_enabled: The is_enabled of this AutoScalingPolicy.
+        :type: bool
+        """
+        self._is_enabled = is_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

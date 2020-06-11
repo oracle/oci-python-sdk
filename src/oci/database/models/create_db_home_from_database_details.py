@@ -1,0 +1,99 @@
+# coding: utf-8
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+
+
+from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
+from oci.decorators import init_model_state_from_kwargs
+
+
+@init_model_state_from_kwargs
+class CreateDbHomeFromDatabaseDetails(object):
+    """
+    Details for creating a Database Home if you are creating a database by restoring from a database backup.
+
+    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+    """
+
+    def __init__(self, **kwargs):
+        """
+        Initializes a new CreateDbHomeFromDatabaseDetails object with values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param display_name:
+            The value to assign to the display_name property of this CreateDbHomeFromDatabaseDetails.
+        :type display_name: str
+
+        :param database:
+            The value to assign to the database property of this CreateDbHomeFromDatabaseDetails.
+        :type database: CreateDatabaseFromAnotherDatabaseDetails
+
+        """
+        self.swagger_types = {
+            'display_name': 'str',
+            'database': 'CreateDatabaseFromAnotherDatabaseDetails'
+        }
+
+        self.attribute_map = {
+            'display_name': 'displayName',
+            'database': 'database'
+        }
+
+        self._display_name = None
+        self._database = None
+
+    @property
+    def display_name(self):
+        """
+        Gets the display_name of this CreateDbHomeFromDatabaseDetails.
+        The user-provided name of the Database Home.
+
+
+        :return: The display_name of this CreateDbHomeFromDatabaseDetails.
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        """
+        Sets the display_name of this CreateDbHomeFromDatabaseDetails.
+        The user-provided name of the Database Home.
+
+
+        :param display_name: The display_name of this CreateDbHomeFromDatabaseDetails.
+        :type: str
+        """
+        self._display_name = display_name
+
+    @property
+    def database(self):
+        """
+        **[Required]** Gets the database of this CreateDbHomeFromDatabaseDetails.
+
+        :return: The database of this CreateDbHomeFromDatabaseDetails.
+        :rtype: CreateDatabaseFromAnotherDatabaseDetails
+        """
+        return self._database
+
+    @database.setter
+    def database(self, database):
+        """
+        Sets the database of this CreateDbHomeFromDatabaseDetails.
+
+        :param database: The database of this CreateDbHomeFromDatabaseDetails.
+        :type: CreateDatabaseFromAnotherDatabaseDetails
+        """
+        self._database = database
+
+    def __repr__(self):
+        return formatted_flat_dict(self)
+
+    def __eq__(self, other):
+        if other is None:
+            return False
+
+        return self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        return not self == other

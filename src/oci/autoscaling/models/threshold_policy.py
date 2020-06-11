@@ -39,6 +39,10 @@ class ThresholdPolicy(AutoScalingPolicy):
             The value to assign to the time_created property of this ThresholdPolicy.
         :type time_created: datetime
 
+        :param is_enabled:
+            The value to assign to the is_enabled property of this ThresholdPolicy.
+        :type is_enabled: bool
+
         :param rules:
             The value to assign to the rules property of this ThresholdPolicy.
         :type rules: list[Condition]
@@ -50,6 +54,7 @@ class ThresholdPolicy(AutoScalingPolicy):
             'display_name': 'str',
             'policy_type': 'str',
             'time_created': 'datetime',
+            'is_enabled': 'bool',
             'rules': 'list[Condition]'
         }
 
@@ -59,6 +64,7 @@ class ThresholdPolicy(AutoScalingPolicy):
             'display_name': 'displayName',
             'policy_type': 'policyType',
             'time_created': 'timeCreated',
+            'is_enabled': 'isEnabled',
             'rules': 'rules'
         }
 
@@ -67,6 +73,7 @@ class ThresholdPolicy(AutoScalingPolicy):
         self._display_name = None
         self._policy_type = None
         self._time_created = None
+        self._is_enabled = None
         self._rules = None
         self._policy_type = 'threshold'
 
