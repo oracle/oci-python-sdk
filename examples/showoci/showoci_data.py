@@ -156,6 +156,13 @@ class ShowOCIData(object):
         return self.service.reboot_migration_counter
 
     ##########################################################################
+    # get service reboot migration
+    ##########################################################################
+    def get_service_dbsystem_maintenance(self):
+
+        return self.service.dbsystem_maintenance
+
+    ##########################################################################
     # print print error
     ##########################################################################
     def __print_error(self, msg, e):
@@ -1704,7 +1711,7 @@ class ShowOCIData(object):
                 value = {'name': (str(db['db_name']) + " - " + str(db['db_unique_name']) + " - " + pdb_name +
                                   str(db['db_workload']) + " - " +
                                   str(db['character_set']) + " - " + str(db['lifecycle_state']) + backupstr),
-                         'backups': self.__get_database_db_backups(db['backups']),
+                         'backups': self.__get_database_db_backups(db['backups']) if 'backups' in db else [],
                          'time_created': db['time_created'],
                          'defined_tags': db['defined_tags'],
                          'dataguard': self.__get_database_db_dataguard(db['dataguard']),
@@ -1828,7 +1835,7 @@ class ShowOCIData(object):
     #
     # class oci.database.DatabaseClient(config, **kwargs)
     #
-    # Below APIs not yet done (TBD):
+    # Below APIs not done:
     # list_db_home_patch_history_entries
     # list_db_system_patch_history_entries
     # list_data_guard_associations
@@ -1875,14 +1882,18 @@ class ShowOCIData(object):
                          'vip_ips': dbs['vip_ips'],
                          'compartment_name': dbs['compartment_name'],
                          'compartment_id': dbs['compartment_id'],
-                         'patches': self.__get_database_db_patches(dbs['patches']),
-                         'listener_port': dbs['listener_port'],
-                         'db_homes': self.__get_database_db_homes(dbs['db_homes']),
-                         'db_nodes': self.__get_database_db_nodes(dbs['db_nodes']),
                          'cluster_name': dbs['cluster_name'],
                          'time_created': dbs['time_created'],
                          'defined_tags': dbs['defined_tags'],
-                         'freeform_tags': dbs['freeform_tags']}
+                         'freeform_tags': dbs['freeform_tags'],
+                         'listener_port': dbs['listener_port'],
+                         'last_maintenance_run': dbs['last_maintenance_run'],
+                         'next_maintenance_run': dbs['next_maintenance_run'],
+                         'maintenance_window': dbs['maintenance_window'],
+                         'patches': self.__get_database_db_patches(dbs['patches']),
+                         'db_homes': self.__get_database_db_homes(dbs['db_homes']),
+                         'db_nodes': self.__get_database_db_nodes(dbs['db_nodes'])
+                         }
 
                 if dbs['data_storage_size_in_gbs']:
                     value['data'] = str(dbs['data_storage_size_in_gbs']) + "GB - " + str(dbs['data_storage_percentage']) + "%" + (" - " + dbs['storage_management'] if dbs['storage_management'] else "")

@@ -80,7 +80,7 @@ import sys
 import argparse
 import datetime
 
-version = "20.06.09"
+version = "20.06.16"
 
 ##########################################################################
 # check OCI version
@@ -214,6 +214,12 @@ def execute_extract():
     if data.get_service_reboot_migration() > 0:
         output.print_header(str(data.get_service_reboot_migration()) + " Reboot Migration Alert for Compute or DB Node", 0)
 
+    # if dbsystem maintenance
+    if data.get_service_dbsystem_maintenance():
+        output.print_header("DB System Maintenance", 0)
+        for alert in data.get_service_dbsystem_maintenance():
+            print(alert)
+
     # print completion
     output.print_header("Completed " + complete_message + " at " + str(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")), 0)
 
@@ -269,6 +275,7 @@ def set_parser_arguments():
     parser.add_argument('-rm', action='store_true', default=False, dest='orm', help='Print Resource management')
     parser.add_argument('-s', action='store_true', default=False, dest='streams', help='Print Streams')
 
+    parser.add_argument('-nobackups', action='store_true', default=False, dest='skip_backups', help='Do not process backups')
     parser.add_argument('-so', action='store_true', default=False, dest='sumonly', help='Print Summary Only')
     parser.add_argument('-mc', action='store_true', default=False, dest='mgdcompart', help='exclude ManagedCompartmentForPaaS')
     parser.add_argument('-nr', action='store_true', default=False, dest='noroot', help='Not include root compartment')
@@ -389,6 +396,9 @@ def set_service_extract_flags(cmd):
 
     if cmd.noroot:
         prm.read_root_compartment = False
+
+    if cmd.skip_backups:
+        prm.skip_backups = True
 
     if cmd.config:
         if cmd.config.name:
