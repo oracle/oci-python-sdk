@@ -17,7 +17,7 @@
     <inceptionYear>2016</inceptionYear>
     <codegen-version>1.116-SNAPSHOT</codegen-version>
     <codegen-language>oracle-python-sdk</codegen-language>
-    <preprocessor-version>1.0.12</preprocessor-version>
+    <preprocessor-version>1.0.14</preprocessor-version>
     <oci.get.spec.artifact.plugin.version>1.0.12</oci.get.spec.artifact.plugin.version>
   </properties>
   <build>
