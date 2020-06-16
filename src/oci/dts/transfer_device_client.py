@@ -75,7 +75,7 @@ class TransferDeviceClient(object):
             'service_endpoint': kwargs.get('service_endpoint'),
             'timeout': kwargs.get('timeout'),
             'base_path': '/20171001',
-            'service_endpoint_template': 'https://datatransfer.{region}.{secondLevelDomain}',
+            'service_endpoint_template': 'https://datatransfer.{region}.oci.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
         self.base_client = BaseClient("transfer_device", config, signer, dts_type_mapping, **base_client_init_kwargs)

@@ -8,36 +8,36 @@ from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class UpdateThresholdPolicyDetails(UpdateAutoScalingPolicyDetails):
+class UpdateScheduledPolicyDetails(UpdateAutoScalingPolicyDetails):
     """
-    UpdateThresholdPolicyDetails model.
+    UpdateScheduledPolicyDetails model.
     """
 
     def __init__(self, **kwargs):
         """
-        Initializes a new UpdateThresholdPolicyDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.autoscaling.models.UpdateThresholdPolicyDetails.policy_type` attribute
-        of this class is ``threshold`` and it should not be changed.
+        Initializes a new UpdateScheduledPolicyDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.autoscaling.models.UpdateScheduledPolicyDetails.policy_type` attribute
+        of this class is ``scheduled`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param display_name:
-            The value to assign to the display_name property of this UpdateThresholdPolicyDetails.
+            The value to assign to the display_name property of this UpdateScheduledPolicyDetails.
         :type display_name: str
 
         :param capacity:
-            The value to assign to the capacity property of this UpdateThresholdPolicyDetails.
+            The value to assign to the capacity property of this UpdateScheduledPolicyDetails.
         :type capacity: Capacity
 
         :param policy_type:
-            The value to assign to the policy_type property of this UpdateThresholdPolicyDetails.
+            The value to assign to the policy_type property of this UpdateScheduledPolicyDetails.
         :type policy_type: str
 
         :param is_enabled:
-            The value to assign to the is_enabled property of this UpdateThresholdPolicyDetails.
+            The value to assign to the is_enabled property of this UpdateScheduledPolicyDetails.
         :type is_enabled: bool
 
-        :param rules:
-            The value to assign to the rules property of this UpdateThresholdPolicyDetails.
-        :type rules: list[UpdateConditionDetails]
+        :param execution_schedule:
+            The value to assign to the execution_schedule property of this UpdateScheduledPolicyDetails.
+        :type execution_schedule: ExecutionSchedule
 
         """
         self.swagger_types = {
@@ -45,7 +45,7 @@ class UpdateThresholdPolicyDetails(UpdateAutoScalingPolicyDetails):
             'capacity': 'Capacity',
             'policy_type': 'str',
             'is_enabled': 'bool',
-            'rules': 'list[UpdateConditionDetails]'
+            'execution_schedule': 'ExecutionSchedule'
         }
 
         self.attribute_map = {
@@ -53,35 +53,35 @@ class UpdateThresholdPolicyDetails(UpdateAutoScalingPolicyDetails):
             'capacity': 'capacity',
             'policy_type': 'policyType',
             'is_enabled': 'isEnabled',
-            'rules': 'rules'
+            'execution_schedule': 'executionSchedule'
         }
 
         self._display_name = None
         self._capacity = None
         self._policy_type = None
         self._is_enabled = None
-        self._rules = None
-        self._policy_type = 'threshold'
+        self._execution_schedule = None
+        self._policy_type = 'scheduled'
 
     @property
-    def rules(self):
+    def execution_schedule(self):
         """
-        Gets the rules of this UpdateThresholdPolicyDetails.
+        Gets the execution_schedule of this UpdateScheduledPolicyDetails.
 
-        :return: The rules of this UpdateThresholdPolicyDetails.
-        :rtype: list[UpdateConditionDetails]
+        :return: The execution_schedule of this UpdateScheduledPolicyDetails.
+        :rtype: ExecutionSchedule
         """
-        return self._rules
+        return self._execution_schedule
 
-    @rules.setter
-    def rules(self, rules):
+    @execution_schedule.setter
+    def execution_schedule(self, execution_schedule):
         """
-        Sets the rules of this UpdateThresholdPolicyDetails.
+        Sets the execution_schedule of this UpdateScheduledPolicyDetails.
 
-        :param rules: The rules of this UpdateThresholdPolicyDetails.
-        :type: list[UpdateConditionDetails]
+        :param execution_schedule: The execution_schedule of this UpdateScheduledPolicyDetails.
+        :type: ExecutionSchedule
         """
-        self._rules = rules
+        self._execution_schedule = execution_schedule
 
     def __repr__(self):
         return formatted_flat_dict(self)

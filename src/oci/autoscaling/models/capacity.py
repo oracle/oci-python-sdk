@@ -50,7 +50,7 @@ class Capacity(object):
     @property
     def max(self):
         """
-        **[Required]** Gets the max of this Capacity.
+        Gets the max of this Capacity.
         The maximum number of instances the instance pool is allowed to increase to (scale out).
 
 
@@ -74,7 +74,7 @@ class Capacity(object):
     @property
     def min(self):
         """
-        **[Required]** Gets the min of this Capacity.
+        Gets the min of this Capacity.
         The minimum number of instances the instance pool is allowed to decrease to (scale in).
 
 
@@ -98,7 +98,7 @@ class Capacity(object):
     @property
     def initial(self):
         """
-        **[Required]** Gets the initial of this Capacity.
+        Gets the initial of this Capacity.
         The initial number of instances to launch in the instance pool immediately after autoscaling is
         enabled. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this
         initial number to a number that is based on the limits that you set.

@@ -146,14 +146,10 @@ Execute
 ```
 $ ./showoci.py  
 
-usage: showoci.py [-h] [-a] [-ani] [-an] [-api] [-b] [-c] [-cn] [-d] [-e]
-                  [-edge] [-f] [-fun] [-i] [-ic] [-l] [-lq] [-m] [-n] [-o]
-                  [-paas] [-dataai] [-rm] [-s] [-so] [-mc] [-nr] [-ip]
-                  [-t PROFILE] [-p PROXY] [-rg REGION] [-cp COMPART]
-                  [-cpr COMPART_RECUR] [-cpath COMPARTPATH]
-                  [-tenantid TENANTID] [-cf CONFIG] [-csv CSV] [-jf JOUTFILE]
-                  [-js] [-sjf SJOUTFILE] [-cachef SERVICEFILE] [-caches]
-                  [--version]
+usage: showoci.py [-h] [-a] [-ani] [-an] [-api] [-b] [-c] [-cn] [-d] [-e] [-edge] [-f] [-fun] [-i] [-ic] [-isc] [-l] [-lq] [-m] [-n] [-o]
+                  [-paas] [-dataai] [-rm] [-s] [-nobackups] [-so] [-mc] [-nr] [-ip] [-dt] [-t PROFILE] [-p PROXY] [-rg REGION]
+                  [-cp COMPART] [-cpr COMPART_RECUR] [-cpath COMPARTPATH] [-tenantid TENANTID] [-cf CONFIG] [-csv CSV] [-jf JOUTFILE]
+                  [-js] [-sjf SJOUTFILE] [-cachef SERVICEFILE] [-caches] [--version]
 
 optional arguments:
   -h, --help           show this help message and exit
@@ -178,22 +174,23 @@ optional arguments:
   -n                   Print Network
   -o                   Print Object Storage
   -paas                Print PaaS Platform Services - OIC OAC OCE
-  -dataai              Print D.Science, D.Catalog, D.Flow, ODA or BDS
+  -dataai              Print - D.Science, D.Catalog, D.Flow, ODA and BDS
   -rm                  Print Resource management
   -s                   Print Streams
+  -nobackups           Do not process backups
   -so                  Print Summary Only
   -mc                  exclude ManagedCompartmentForPaaS
   -nr                  Not include root compartment
   -ip                  Use Instance Principals for Authentication
-  -dt                  Use Delegation Token for Authentication
+  -dt                  Use Delegation Token (Cloud shell)
   -t PROFILE           Config file section to use (tenancy profile)
   -p PROXY             Set Proxy (i.e. www-proxy-server.com:80)
   -rg REGION           Filter by Region
   -cp COMPART          Filter by Compartment Name or OCID
-  -cpr COMPART_RECUR   Filter by Comp Name or OCID Recursive
+  -cpr COMPART_RECUR   Filter by Comp Name Recursive
   -cpath COMPARTPATH   Filter by Compartment path ,(i.e. -cpath "Adi / Sub"
   -tenantid TENANTID   Override confile file tenancy_id
-  -cf CONFIG           Config File
+  -cf CONFIG           Config File (~/.oci/config)
   -csv CSV             Output to CSV files, Input as file header
   -jf JOUTFILE         Output to file (JSON format)
   -js                  Output to screen (JSON format)

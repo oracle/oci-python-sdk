@@ -8,164 +8,160 @@ from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class LaunchDbSystemDetails(LaunchDbSystemBase):
+class LaunchDbSystemFromDatabaseDetails(LaunchDbSystemBase):
     """
-    Used for creating a new DB system. Does not use backups or an existing database for the creation of the initial database.
+    Used for creating a new DB system from a database, including archived redo log data.
     """
 
-    #: A constant which can be used with the database_edition property of a LaunchDbSystemDetails.
+    #: A constant which can be used with the database_edition property of a LaunchDbSystemFromDatabaseDetails.
     #: This constant has a value of "STANDARD_EDITION"
     DATABASE_EDITION_STANDARD_EDITION = "STANDARD_EDITION"
 
-    #: A constant which can be used with the database_edition property of a LaunchDbSystemDetails.
+    #: A constant which can be used with the database_edition property of a LaunchDbSystemFromDatabaseDetails.
     #: This constant has a value of "ENTERPRISE_EDITION"
     DATABASE_EDITION_ENTERPRISE_EDITION = "ENTERPRISE_EDITION"
 
-    #: A constant which can be used with the database_edition property of a LaunchDbSystemDetails.
+    #: A constant which can be used with the database_edition property of a LaunchDbSystemFromDatabaseDetails.
     #: This constant has a value of "ENTERPRISE_EDITION_HIGH_PERFORMANCE"
     DATABASE_EDITION_ENTERPRISE_EDITION_HIGH_PERFORMANCE = "ENTERPRISE_EDITION_HIGH_PERFORMANCE"
 
-    #: A constant which can be used with the database_edition property of a LaunchDbSystemDetails.
+    #: A constant which can be used with the database_edition property of a LaunchDbSystemFromDatabaseDetails.
     #: This constant has a value of "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
     DATABASE_EDITION_ENTERPRISE_EDITION_EXTREME_PERFORMANCE = "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
 
-    #: A constant which can be used with the disk_redundancy property of a LaunchDbSystemDetails.
+    #: A constant which can be used with the disk_redundancy property of a LaunchDbSystemFromDatabaseDetails.
     #: This constant has a value of "HIGH"
     DISK_REDUNDANCY_HIGH = "HIGH"
 
-    #: A constant which can be used with the disk_redundancy property of a LaunchDbSystemDetails.
+    #: A constant which can be used with the disk_redundancy property of a LaunchDbSystemFromDatabaseDetails.
     #: This constant has a value of "NORMAL"
     DISK_REDUNDANCY_NORMAL = "NORMAL"
 
-    #: A constant which can be used with the license_model property of a LaunchDbSystemDetails.
+    #: A constant which can be used with the license_model property of a LaunchDbSystemFromDatabaseDetails.
     #: This constant has a value of "LICENSE_INCLUDED"
     LICENSE_MODEL_LICENSE_INCLUDED = "LICENSE_INCLUDED"
 
-    #: A constant which can be used with the license_model property of a LaunchDbSystemDetails.
+    #: A constant which can be used with the license_model property of a LaunchDbSystemFromDatabaseDetails.
     #: This constant has a value of "BRING_YOUR_OWN_LICENSE"
     LICENSE_MODEL_BRING_YOUR_OWN_LICENSE = "BRING_YOUR_OWN_LICENSE"
 
     def __init__(self, **kwargs):
         """
-        Initializes a new LaunchDbSystemDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.database.models.LaunchDbSystemDetails.source` attribute
-        of this class is ``NONE`` and it should not be changed.
+        Initializes a new LaunchDbSystemFromDatabaseDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.database.models.LaunchDbSystemFromDatabaseDetails.source` attribute
+        of this class is ``DATABASE`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param compartment_id:
-            The value to assign to the compartment_id property of this LaunchDbSystemDetails.
+            The value to assign to the compartment_id property of this LaunchDbSystemFromDatabaseDetails.
         :type compartment_id: str
 
         :param fault_domains:
-            The value to assign to the fault_domains property of this LaunchDbSystemDetails.
+            The value to assign to the fault_domains property of this LaunchDbSystemFromDatabaseDetails.
         :type fault_domains: list[str]
 
         :param display_name:
-            The value to assign to the display_name property of this LaunchDbSystemDetails.
+            The value to assign to the display_name property of this LaunchDbSystemFromDatabaseDetails.
         :type display_name: str
 
         :param availability_domain:
-            The value to assign to the availability_domain property of this LaunchDbSystemDetails.
+            The value to assign to the availability_domain property of this LaunchDbSystemFromDatabaseDetails.
         :type availability_domain: str
 
         :param subnet_id:
-            The value to assign to the subnet_id property of this LaunchDbSystemDetails.
+            The value to assign to the subnet_id property of this LaunchDbSystemFromDatabaseDetails.
         :type subnet_id: str
 
         :param backup_subnet_id:
-            The value to assign to the backup_subnet_id property of this LaunchDbSystemDetails.
+            The value to assign to the backup_subnet_id property of this LaunchDbSystemFromDatabaseDetails.
         :type backup_subnet_id: str
 
         :param nsg_ids:
-            The value to assign to the nsg_ids property of this LaunchDbSystemDetails.
+            The value to assign to the nsg_ids property of this LaunchDbSystemFromDatabaseDetails.
         :type nsg_ids: list[str]
 
         :param backup_network_nsg_ids:
-            The value to assign to the backup_network_nsg_ids property of this LaunchDbSystemDetails.
+            The value to assign to the backup_network_nsg_ids property of this LaunchDbSystemFromDatabaseDetails.
         :type backup_network_nsg_ids: list[str]
 
         :param shape:
-            The value to assign to the shape property of this LaunchDbSystemDetails.
+            The value to assign to the shape property of this LaunchDbSystemFromDatabaseDetails.
         :type shape: str
 
         :param time_zone:
-            The value to assign to the time_zone property of this LaunchDbSystemDetails.
+            The value to assign to the time_zone property of this LaunchDbSystemFromDatabaseDetails.
         :type time_zone: str
 
         :param db_system_options:
-            The value to assign to the db_system_options property of this LaunchDbSystemDetails.
+            The value to assign to the db_system_options property of this LaunchDbSystemFromDatabaseDetails.
         :type db_system_options: DbSystemOptions
 
         :param sparse_diskgroup:
-            The value to assign to the sparse_diskgroup property of this LaunchDbSystemDetails.
+            The value to assign to the sparse_diskgroup property of this LaunchDbSystemFromDatabaseDetails.
         :type sparse_diskgroup: bool
 
         :param ssh_public_keys:
-            The value to assign to the ssh_public_keys property of this LaunchDbSystemDetails.
+            The value to assign to the ssh_public_keys property of this LaunchDbSystemFromDatabaseDetails.
         :type ssh_public_keys: list[str]
 
         :param hostname:
-            The value to assign to the hostname property of this LaunchDbSystemDetails.
+            The value to assign to the hostname property of this LaunchDbSystemFromDatabaseDetails.
         :type hostname: str
 
         :param domain:
-            The value to assign to the domain property of this LaunchDbSystemDetails.
+            The value to assign to the domain property of this LaunchDbSystemFromDatabaseDetails.
         :type domain: str
 
         :param cpu_core_count:
-            The value to assign to the cpu_core_count property of this LaunchDbSystemDetails.
+            The value to assign to the cpu_core_count property of this LaunchDbSystemFromDatabaseDetails.
         :type cpu_core_count: int
 
         :param cluster_name:
-            The value to assign to the cluster_name property of this LaunchDbSystemDetails.
+            The value to assign to the cluster_name property of this LaunchDbSystemFromDatabaseDetails.
         :type cluster_name: str
 
         :param data_storage_percentage:
-            The value to assign to the data_storage_percentage property of this LaunchDbSystemDetails.
+            The value to assign to the data_storage_percentage property of this LaunchDbSystemFromDatabaseDetails.
         :type data_storage_percentage: int
 
         :param initial_data_storage_size_in_gb:
-            The value to assign to the initial_data_storage_size_in_gb property of this LaunchDbSystemDetails.
+            The value to assign to the initial_data_storage_size_in_gb property of this LaunchDbSystemFromDatabaseDetails.
         :type initial_data_storage_size_in_gb: int
 
         :param node_count:
-            The value to assign to the node_count property of this LaunchDbSystemDetails.
+            The value to assign to the node_count property of this LaunchDbSystemFromDatabaseDetails.
         :type node_count: int
 
         :param freeform_tags:
-            The value to assign to the freeform_tags property of this LaunchDbSystemDetails.
+            The value to assign to the freeform_tags property of this LaunchDbSystemFromDatabaseDetails.
         :type freeform_tags: dict(str, str)
 
         :param defined_tags:
-            The value to assign to the defined_tags property of this LaunchDbSystemDetails.
+            The value to assign to the defined_tags property of this LaunchDbSystemFromDatabaseDetails.
         :type defined_tags: dict(str, dict(str, object))
 
         :param source:
-            The value to assign to the source property of this LaunchDbSystemDetails.
+            The value to assign to the source property of this LaunchDbSystemFromDatabaseDetails.
             Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE"
         :type source: str
 
         :param db_home:
-            The value to assign to the db_home property of this LaunchDbSystemDetails.
-        :type db_home: CreateDbHomeDetails
+            The value to assign to the db_home property of this LaunchDbSystemFromDatabaseDetails.
+        :type db_home: CreateDbHomeFromDatabaseDetails
 
         :param database_edition:
-            The value to assign to the database_edition property of this LaunchDbSystemDetails.
+            The value to assign to the database_edition property of this LaunchDbSystemFromDatabaseDetails.
             Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
         :type database_edition: str
 
         :param disk_redundancy:
-            The value to assign to the disk_redundancy property of this LaunchDbSystemDetails.
+            The value to assign to the disk_redundancy property of this LaunchDbSystemFromDatabaseDetails.
             Allowed values for this property are: "HIGH", "NORMAL"
         :type disk_redundancy: str
 
         :param license_model:
-            The value to assign to the license_model property of this LaunchDbSystemDetails.
+            The value to assign to the license_model property of this LaunchDbSystemFromDatabaseDetails.
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
         :type license_model: str
-
-        :param maintenance_window_details:
-            The value to assign to the maintenance_window_details property of this LaunchDbSystemDetails.
-        :type maintenance_window_details: MaintenanceWindow
 
         """
         self.swagger_types = {
@@ -192,11 +188,10 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'source': 'str',
-            'db_home': 'CreateDbHomeDetails',
+            'db_home': 'CreateDbHomeFromDatabaseDetails',
             'database_edition': 'str',
             'disk_redundancy': 'str',
-            'license_model': 'str',
-            'maintenance_window_details': 'MaintenanceWindow'
+            'license_model': 'str'
         }
 
         self.attribute_map = {
@@ -226,8 +221,7 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
             'db_home': 'dbHome',
             'database_edition': 'databaseEdition',
             'disk_redundancy': 'diskRedundancy',
-            'license_model': 'licenseModel',
-            'maintenance_window_details': 'maintenanceWindowDetails'
+            'license_model': 'licenseModel'
         }
 
         self._compartment_id = None
@@ -257,40 +251,39 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
         self._database_edition = None
         self._disk_redundancy = None
         self._license_model = None
-        self._maintenance_window_details = None
-        self._source = 'NONE'
+        self._source = 'DATABASE'
 
     @property
     def db_home(self):
         """
-        **[Required]** Gets the db_home of this LaunchDbSystemDetails.
+        **[Required]** Gets the db_home of this LaunchDbSystemFromDatabaseDetails.
 
-        :return: The db_home of this LaunchDbSystemDetails.
-        :rtype: CreateDbHomeDetails
+        :return: The db_home of this LaunchDbSystemFromDatabaseDetails.
+        :rtype: CreateDbHomeFromDatabaseDetails
         """
         return self._db_home
 
     @db_home.setter
     def db_home(self, db_home):
         """
-        Sets the db_home of this LaunchDbSystemDetails.
+        Sets the db_home of this LaunchDbSystemFromDatabaseDetails.
 
-        :param db_home: The db_home of this LaunchDbSystemDetails.
-        :type: CreateDbHomeDetails
+        :param db_home: The db_home of this LaunchDbSystemFromDatabaseDetails.
+        :type: CreateDbHomeFromDatabaseDetails
         """
         self._db_home = db_home
 
     @property
     def database_edition(self):
         """
-        **[Required]** Gets the database_edition of this LaunchDbSystemDetails.
+        **[Required]** Gets the database_edition of this LaunchDbSystemFromDatabaseDetails.
         The Oracle Database Edition that applies to all the databases on the DB system.
         Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 
         Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"
 
 
-        :return: The database_edition of this LaunchDbSystemDetails.
+        :return: The database_edition of this LaunchDbSystemFromDatabaseDetails.
         :rtype: str
         """
         return self._database_edition
@@ -298,12 +291,12 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
     @database_edition.setter
     def database_edition(self, database_edition):
         """
-        Sets the database_edition of this LaunchDbSystemDetails.
+        Sets the database_edition of this LaunchDbSystemFromDatabaseDetails.
         The Oracle Database Edition that applies to all the databases on the DB system.
         Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 
 
-        :param database_edition: The database_edition of this LaunchDbSystemDetails.
+        :param database_edition: The database_edition of this LaunchDbSystemFromDatabaseDetails.
         :type: str
         """
         allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION", "ENTERPRISE_EDITION_HIGH_PERFORMANCE", "ENTERPRISE_EDITION_EXTREME_PERFORMANCE"]
@@ -317,15 +310,15 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
     @property
     def disk_redundancy(self):
         """
-        Gets the disk_redundancy of this LaunchDbSystemDetails.
+        Gets the disk_redundancy of this LaunchDbSystemFromDatabaseDetails.
         The type of redundancy configured for the DB system.
-        Normal is 2-way redundancy, recommended for test and development systems.
-        High is 3-way redundancy, recommended for production systems.
+        NORMAL 2-way redundancy, recommended for test and development systems.
+        HIGH is 3-way redundancy, recommended for production systems.
 
         Allowed values for this property are: "HIGH", "NORMAL"
 
 
-        :return: The disk_redundancy of this LaunchDbSystemDetails.
+        :return: The disk_redundancy of this LaunchDbSystemFromDatabaseDetails.
         :rtype: str
         """
         return self._disk_redundancy
@@ -333,13 +326,13 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
     @disk_redundancy.setter
     def disk_redundancy(self, disk_redundancy):
         """
-        Sets the disk_redundancy of this LaunchDbSystemDetails.
+        Sets the disk_redundancy of this LaunchDbSystemFromDatabaseDetails.
         The type of redundancy configured for the DB system.
-        Normal is 2-way redundancy, recommended for test and development systems.
-        High is 3-way redundancy, recommended for production systems.
+        NORMAL 2-way redundancy, recommended for test and development systems.
+        HIGH is 3-way redundancy, recommended for production systems.
 
 
-        :param disk_redundancy: The disk_redundancy of this LaunchDbSystemDetails.
+        :param disk_redundancy: The disk_redundancy of this LaunchDbSystemFromDatabaseDetails.
         :type: str
         """
         allowed_values = ["HIGH", "NORMAL"]
@@ -353,13 +346,13 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
     @property
     def license_model(self):
         """
-        Gets the license_model of this LaunchDbSystemDetails.
+        Gets the license_model of this LaunchDbSystemFromDatabaseDetails.
         The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
 
         Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
 
 
-        :return: The license_model of this LaunchDbSystemDetails.
+        :return: The license_model of this LaunchDbSystemFromDatabaseDetails.
         :rtype: str
         """
         return self._license_model
@@ -367,11 +360,11 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
     @license_model.setter
     def license_model(self, license_model):
         """
-        Sets the license_model of this LaunchDbSystemDetails.
+        Sets the license_model of this LaunchDbSystemFromDatabaseDetails.
         The Oracle license model that applies to all the databases on the DB system. The default is LICENSE_INCLUDED.
 
 
-        :param license_model: The license_model of this LaunchDbSystemDetails.
+        :param license_model: The license_model of this LaunchDbSystemFromDatabaseDetails.
         :type: str
         """
         allowed_values = ["LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"]
@@ -381,26 +374,6 @@ class LaunchDbSystemDetails(LaunchDbSystemBase):
                 .format(allowed_values)
             )
         self._license_model = license_model
-
-    @property
-    def maintenance_window_details(self):
-        """
-        Gets the maintenance_window_details of this LaunchDbSystemDetails.
-
-        :return: The maintenance_window_details of this LaunchDbSystemDetails.
-        :rtype: MaintenanceWindow
-        """
-        return self._maintenance_window_details
-
-    @maintenance_window_details.setter
-    def maintenance_window_details(self, maintenance_window_details):
-        """
-        Sets the maintenance_window_details of this LaunchDbSystemDetails.
-
-        :param maintenance_window_details: The maintenance_window_details of this LaunchDbSystemDetails.
-        :type: MaintenanceWindow
-        """
-        self._maintenance_window_details = maintenance_window_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -222,7 +222,7 @@ class AutoScalingConfigurationSummary(object):
     @property
     def resource(self):
         """
-        Gets the resource of this AutoScalingConfigurationSummary.
+        **[Required]** Gets the resource of this AutoScalingConfigurationSummary.
 
         :return: The resource of this AutoScalingConfigurationSummary.
         :rtype: Resource

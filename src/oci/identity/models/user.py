@@ -82,6 +82,10 @@ class User(object):
             The value to assign to the email property of this User.
         :type email: str
 
+        :param email_verified:
+            The value to assign to the email_verified property of this User.
+        :type email_verified: bool
+
         :param identity_provider_id:
             The value to assign to the identity_provider_id property of this User.
         :type identity_provider_id: str
@@ -127,6 +131,7 @@ class User(object):
             'name': 'str',
             'description': 'str',
             'email': 'str',
+            'email_verified': 'bool',
             'identity_provider_id': 'str',
             'external_identifier': 'str',
             'time_created': 'datetime',
@@ -144,6 +149,7 @@ class User(object):
             'name': 'name',
             'description': 'description',
             'email': 'email',
+            'email_verified': 'emailVerified',
             'identity_provider_id': 'identityProviderId',
             'external_identifier': 'externalIdentifier',
             'time_created': 'timeCreated',
@@ -160,6 +166,7 @@ class User(object):
         self._name = None
         self._description = None
         self._email = None
+        self._email_verified = None
         self._identity_provider_id = None
         self._external_identifier = None
         self._time_created = None
@@ -293,6 +300,30 @@ class User(object):
         :type: str
         """
         self._email = email
+
+    @property
+    def email_verified(self):
+        """
+        Gets the email_verified of this User.
+        Whether the email address has been validated.
+
+
+        :return: The email_verified of this User.
+        :rtype: bool
+        """
+        return self._email_verified
+
+    @email_verified.setter
+    def email_verified(self, email_verified):
+        """
+        Sets the email_verified of this User.
+        Whether the email address has been validated.
+
+
+        :param email_verified: The email_verified of this User.
+        :type: bool
+        """
+        self._email_verified = email_verified
 
     @property
     def identity_provider_id(self):

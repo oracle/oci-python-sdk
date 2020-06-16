@@ -23,6 +23,7 @@
 from __future__ import print_function
 import oci
 import time
+import datetime
 import os
 import platform
 
@@ -56,6 +57,7 @@ class ShowOCIFlags(object):
     read_api = False
     read_data_ai = False
     skip_identity_user_credential = False
+    skip_backups = False
 
     # is_vcn_exist_for_region
     is_vcn_exist_for_region = False
@@ -290,6 +292,7 @@ class ShowOCIService(object):
     error = 0
     warning = 0
     reboot_migration_counter = 0
+    dbsystem_maintenance = []
 
     ##########################################################################
     # Service not yet available - need to remove on availability
@@ -3387,9 +3390,11 @@ class ShowOCIService(object):
 
             block[self.C_BLOCK_VOLGRP] += self.__load_core_block_volume_group(block_storage, compartments)
             block[self.C_BLOCK_BOOT] += self.__load_core_block_boot(block_storage, compartments)
-            block[self.C_BLOCK_BOOTBACK] += self.__load_core_block_boot_backup(block_storage, compartments)
             block[self.C_BLOCK_VOL] += self.__load_core_block_volume(block_storage, compartments)
-            block[self.C_BLOCK_VOLBACK] += self.__load_core_block_volume_backup(block_storage, compartments)
+
+            if not self.flags.skip_backups:
+                block[self.C_BLOCK_BOOTBACK] += self.__load_core_block_boot_backup(block_storage, compartments)
+                block[self.C_BLOCK_VOLBACK] += self.__load_core_block_volume_backup(block_storage, compartments)
             print("")
 
         except oci.exceptions.RequestException:
@@ -5640,8 +5645,75 @@ class ShowOCIService(object):
             self.__print_error("__load_database_main", e)
 
     ##########################################################################
+    # __load_database_maintatance
+    ##########################################################################
+    def __load_database_maintatance(self, database_client, maintenance_run_id, db_system_name):
+        try:
+            if not maintenance_run_id:
+                return {}
+
+            # oci.database.models.MaintenanceRun
+            mt = database_client.get_maintenance_run(maintenance_run_id).data
+            val = {'id': str(mt.id),
+                   'display_name': str(mt.display_name),
+                   'description': str(mt.description),
+                   'lifecycle_state': str(mt.lifecycle_state),
+                   'time_scheduled': str(mt.time_scheduled),
+                   'time_started': str(mt.time_started),
+                   'time_ended': str(mt.time_ended),
+                   'target_resource_type': str(mt.target_resource_type),
+                   'target_resource_id': str(mt.target_resource_id),
+                   'maintenance_type': str(mt.maintenance_type),
+                   'maintenance_subtype': str(mt.maintenance_subtype),
+                   'maintenance_display': str(mt.display_name) + " ( " + str(mt.maintenance_type) + ", " + str(mt.maintenance_subtype) + ", " + str(mt.lifecycle_state) + " ), Scheduled: " + str(mt.time_scheduled)[0:16] + ((", Execution: " + str(mt.time_started)[0:16] + " - " + str(mt.time_ended)[0:16]) if str(mt.time_started) != 'None' else ""),
+                   'maintenance_alert': ""
+                   }
+
+            # If maintenane is less than 14 days
+            if mt.time_scheduled:
+                delta = mt.time_scheduled.date() - datetime.date.today()
+                if delta.days <= 14 and delta.days >= 0 and not mt.time_started:
+                    val['maintenance_alert'] = "DBSystem Maintenance is in " + str(delta.days).ljust(2, ' ') + " days, on " + str(mt.time_scheduled)[0:16] + " for " + db_system_name
+                    self.dbsystem_maintenance.append(val['maintenance_alert'])
+            return val
+
+        except oci.exceptions.ServiceError:
+            print("m", end="")
+            return ""
+        except oci.exceptions.RequestException:
+            print("m", end="")
+            return ""
+        except Exception as e:
+            self.__print_error("__load_database_maintatance", e)
+
+    ##########################################################################
+    # __load_database_maintatance_windows
+    ##########################################################################
+
+    def __load_database_maintatance_windows(self, maintenance_window):
+        try:
+            if not maintenance_window:
+                return {}
+
+            mw = maintenance_window
+            value = {
+                'preference': str(mw.preference),
+                'months': ", ".join([x.name for x in mw.months]) if mw.months else "",
+                'weeks_of_month': ", ".join([str(x) for x in mw.weeks_of_month]) if mw.weeks_of_month else "",
+                'hours_of_day': ", ".join([str(x) for x in mw.hours_of_day]) if mw.hours_of_day else "",
+                'days_of_week': ", ".join([str(x.name) for x in mw.days_of_week]) if mw.days_of_week else "",
+                'lead_time_in_weeks': str(mw.lead_time_in_weeks) if mw.lead_time_in_weeks else "",
+            }
+            value['display'] = str(mw.preference) if str(mw.preference) == "NO_PREFERENCE" else (str(mw.preference) + ": Months: " + value['months'] + ", Weeks: " + value['weeks_of_month'] + ", DOW: " + value['days_of_week'] + ", Hours: " + value['hours_of_day'] + ", Lead Weeks: " + value['lead_time_in_weeks'])
+            return value
+
+        except Exception as e:
+            self.__print_error("__load_database_maintatance_windows", e)
+
+    ##########################################################################
     # __load_database_dbsystems
     ##########################################################################
+
     def __load_database_dbsystems(self, database_client, virtual_network, compartments):
 
         data = []
@@ -5712,6 +5784,9 @@ class ShowOCIService(object):
                              'storage_management': "",
                              'sparse_diskgroup': str(dbs.sparse_diskgroup),
                              'reco_storage_size_in_gb': str(dbs.reco_storage_size_in_gb),
+                             'last_maintenance_run': self.__load_database_maintatance(database_client, dbs.last_maintenance_run_id, str(dbs.display_name) + " - " + str(dbs.shape)),
+                             'next_maintenance_run': self.__load_database_maintatance(database_client, dbs.next_maintenance_run_id, str(dbs.display_name) + " - " + str(dbs.shape)),
+                             'maintenance_window': self.__load_database_maintatance_windows(dbs.maintenance_window),
                              'region_name': str(self.config['region']),
                              'defined_tags': [] if dbs.defined_tags is None else dbs.defined_tags,
                              'freeform_tags': [] if dbs.freeform_tags is None else dbs.freeform_tags,
@@ -5909,7 +5984,9 @@ class ShowOCIService(object):
                     if db.db_backup_config.auto_backup_enabled:
                         value['auto_backup_enabled'] = True
 
-                value['backups'] = self.__load_database_dbsystems_db_backups(database_client, db.id)
+                if not self.flags.skip_backups:
+                    value['backups'] = self.__load_database_dbsystems_db_backups(database_client, db.id)
+
                 value['dataguard'] = self.__load_database_dbsystems_db_dg(database_client, db.id)
                 data.append(value)
 
@@ -6157,7 +6234,12 @@ class ShowOCIService(object):
                              'nsg_ids': dbs.nsg_ids,
                              'private_endpoint': str(dbs.private_endpoint),
                              'private_endpoint_label': str(dbs.private_endpoint_label),
-                             'backups': self.__load_database_autonomouns_backups(database_client, dbs.id)}
+                             'backups': []
+                             }
+
+                    # load bakcups
+                    if not self.flags.skip_backups:
+                        value['backups'] = self.__load_database_autonomouns_backups(database_client, dbs.id)
 
                     # license model
                     if dbs.license_model == oci.database.models.AutonomousDatabaseSummary.LICENSE_MODEL_LICENSE_INCLUDED:
@@ -6296,7 +6378,7 @@ class ShowOCIService(object):
 
                 except oci.exceptions.ServiceError as e:
                     if self.__check_service_error(e.code):
-                        self.__load_print_auth_warning()
+                        self.__load_print_auth_warning("m", False)
                         continue
                     else:
                         raise

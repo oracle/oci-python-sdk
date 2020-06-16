@@ -37,13 +37,16 @@ class ShowOCIOutput(object):
     ##########################################################################
     # Print header centered
     ##########################################################################
-    def print_header(self, name, category):
+    def print_header(self, name, category, topBorder=True, bottomBorder=True, printText=True):
         options = {0: 90, 1: 60, 2: 30, 3: 75}
         chars = int(options[category])
-        print("")
-        print('#' * chars)
-        print("#" + name.center(chars - 2, " ") + "#")
-        print('#' * chars)
+        if topBorder:
+            print("")
+            print('#' * chars)
+        if printText:
+            print("#" + name.center(chars - 2, " ") + "#")
+        if bottomBorder:
+            print('#' * chars)
 
     ##########################################################################
     # print_oci_main
@@ -874,6 +877,22 @@ class ShowOCIOutput(object):
             if 'patches' in dbs:
                 for p in dbs['patches']:
                     print(self.tabs + "Patches : " + p)
+
+            if 'maintenance_window' in dbs:
+                if dbs['maintenance_window']:
+                    print(self.tabs + "Maint   : Window : " + dbs['maintenance_window']['display'])
+
+            if 'last_maintenance_run' in dbs:
+                if dbs['last_maintenance_run']:
+                    print(self.tabs + "Maint   : Last   : " + dbs['last_maintenance_run']['description'])
+                    print(self.tabs + "                 : " + dbs['last_maintenance_run']['maintenance_display'])
+
+            if 'next_maintenance_run' in dbs:
+                if dbs['next_maintenance_run']:
+                    print(self.tabs + "Maint   : Next   : " + dbs['next_maintenance_run']['description'])
+                    print(self.tabs + "                 : " + dbs['next_maintenance_run']['maintenance_display'])
+                    if dbs['next_maintenance_run']['maintenance_alert']:
+                        print(self.tabs + "          Alert  : " + dbs['next_maintenance_run']['maintenance_alert'])
 
             print(self.tabs + "        : " + '-' * 90)
 
@@ -2840,8 +2859,18 @@ class ShowOCICSV(object):
                         'db_nodes': str(', '.join(x['desc'] for x in dbs['db_nodes'])),
                         'freeform_tags': str(', '.join(key + "=" + dbs['freeform_tags'][key] for key in dbs['freeform_tags'].keys())),
                         'defined_tags': self.__get_defined_tags(dbs['defined_tags']),
+                        'maintenance_window': "",
+                        'last_maintenance_run': "",
+                        'next_maintenance_run': "",
                         'dbsystem_id': dbs['id']
                         }
+                if dbs['maintenance_window']:
+                    dbsd['maintenance_window'] = dbs['maintenance_window']['display']
+                if dbs['last_maintenance_run']:
+                    dbsd['last_maintenance_run'] = dbs['last_maintenance_run']['maintenance_display']
+                if dbs['next_maintenance_run']:
+                    dbsd['next_maintenance_run'] = dbs['next_maintenance_run']['maintenance_display']
+
                 self.csv_db_system.append(dbsd)
 
                 # Build the database CSV

@@ -61,6 +61,14 @@ class AutoScalingConfiguration(object):
             The value to assign to the time_created property of this AutoScalingConfiguration.
         :type time_created: datetime
 
+        :param max_resource_count:
+            The value to assign to the max_resource_count property of this AutoScalingConfiguration.
+        :type max_resource_count: int
+
+        :param min_resource_count:
+            The value to assign to the min_resource_count property of this AutoScalingConfiguration.
+        :type min_resource_count: int
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -72,7 +80,9 @@ class AutoScalingConfiguration(object):
             'is_enabled': 'bool',
             'resource': 'Resource',
             'policies': 'list[AutoScalingPolicy]',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'max_resource_count': 'int',
+            'min_resource_count': 'int'
         }
 
         self.attribute_map = {
@@ -85,7 +95,9 @@ class AutoScalingConfiguration(object):
             'is_enabled': 'isEnabled',
             'resource': 'resource',
             'policies': 'policies',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'max_resource_count': 'maxResourceCount',
+            'min_resource_count': 'minResourceCount'
         }
 
         self._compartment_id = None
@@ -98,6 +110,8 @@ class AutoScalingConfiguration(object):
         self._resource = None
         self._policies = None
         self._time_created = None
+        self._max_resource_count = None
+        self._min_resource_count = None
 
     @property
     def compartment_id(self):
@@ -374,6 +388,54 @@ class AutoScalingConfiguration(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def max_resource_count(self):
+        """
+        Gets the max_resource_count of this AutoScalingConfiguration.
+        The maximum number of resources to scale out to.
+
+
+        :return: The max_resource_count of this AutoScalingConfiguration.
+        :rtype: int
+        """
+        return self._max_resource_count
+
+    @max_resource_count.setter
+    def max_resource_count(self, max_resource_count):
+        """
+        Sets the max_resource_count of this AutoScalingConfiguration.
+        The maximum number of resources to scale out to.
+
+
+        :param max_resource_count: The max_resource_count of this AutoScalingConfiguration.
+        :type: int
+        """
+        self._max_resource_count = max_resource_count
+
+    @property
+    def min_resource_count(self):
+        """
+        Gets the min_resource_count of this AutoScalingConfiguration.
+        The minimum number of resources to scale in to.
+
+
+        :return: The min_resource_count of this AutoScalingConfiguration.
+        :rtype: int
+        """
+        return self._min_resource_count
+
+    @min_resource_count.setter
+    def min_resource_count(self, min_resource_count):
+        """
+        Sets the min_resource_count of this AutoScalingConfiguration.
+        The minimum number of resources to scale in to.
+
+
+        :param min_resource_count: The min_resource_count of this AutoScalingConfiguration.
+        :type: int
+        """
+        self._min_resource_count = min_resource_count
 
     def __repr__(self):
         return formatted_flat_dict(self)
