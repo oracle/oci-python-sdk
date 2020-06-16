@@ -8,44 +8,44 @@ from oci.decorators import init_model_state_from_kwargs
 
 
 @init_model_state_from_kwargs
-class ThresholdPolicy(AutoScalingPolicy):
+class ScheduledPolicy(AutoScalingPolicy):
     """
-    An autoscaling policy that defines threshold-based rules for an autoscaling configuration.
+    An autoscaling policy that defines execution schedules for an autoscaling configuration.
     """
 
     def __init__(self, **kwargs):
         """
-        Initializes a new ThresholdPolicy object with values from keyword arguments. The default value of the :py:attr:`~oci.autoscaling.models.ThresholdPolicy.policy_type` attribute
-        of this class is ``threshold`` and it should not be changed.
+        Initializes a new ScheduledPolicy object with values from keyword arguments. The default value of the :py:attr:`~oci.autoscaling.models.ScheduledPolicy.policy_type` attribute
+        of this class is ``scheduled`` and it should not be changed.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param capacity:
-            The value to assign to the capacity property of this ThresholdPolicy.
+            The value to assign to the capacity property of this ScheduledPolicy.
         :type capacity: Capacity
 
         :param id:
-            The value to assign to the id property of this ThresholdPolicy.
+            The value to assign to the id property of this ScheduledPolicy.
         :type id: str
 
         :param display_name:
-            The value to assign to the display_name property of this ThresholdPolicy.
+            The value to assign to the display_name property of this ScheduledPolicy.
         :type display_name: str
 
         :param policy_type:
-            The value to assign to the policy_type property of this ThresholdPolicy.
+            The value to assign to the policy_type property of this ScheduledPolicy.
         :type policy_type: str
 
         :param time_created:
-            The value to assign to the time_created property of this ThresholdPolicy.
+            The value to assign to the time_created property of this ScheduledPolicy.
         :type time_created: datetime
 
         :param is_enabled:
-            The value to assign to the is_enabled property of this ThresholdPolicy.
+            The value to assign to the is_enabled property of this ScheduledPolicy.
         :type is_enabled: bool
 
-        :param rules:
-            The value to assign to the rules property of this ThresholdPolicy.
-        :type rules: list[Condition]
+        :param execution_schedule:
+            The value to assign to the execution_schedule property of this ScheduledPolicy.
+        :type execution_schedule: ExecutionSchedule
 
         """
         self.swagger_types = {
@@ -55,7 +55,7 @@ class ThresholdPolicy(AutoScalingPolicy):
             'policy_type': 'str',
             'time_created': 'datetime',
             'is_enabled': 'bool',
-            'rules': 'list[Condition]'
+            'execution_schedule': 'ExecutionSchedule'
         }
 
         self.attribute_map = {
@@ -65,7 +65,7 @@ class ThresholdPolicy(AutoScalingPolicy):
             'policy_type': 'policyType',
             'time_created': 'timeCreated',
             'is_enabled': 'isEnabled',
-            'rules': 'rules'
+            'execution_schedule': 'executionSchedule'
         }
 
         self._capacity = None
@@ -74,28 +74,28 @@ class ThresholdPolicy(AutoScalingPolicy):
         self._policy_type = None
         self._time_created = None
         self._is_enabled = None
-        self._rules = None
-        self._policy_type = 'threshold'
+        self._execution_schedule = None
+        self._policy_type = 'scheduled'
 
     @property
-    def rules(self):
+    def execution_schedule(self):
         """
-        **[Required]** Gets the rules of this ThresholdPolicy.
+        **[Required]** Gets the execution_schedule of this ScheduledPolicy.
 
-        :return: The rules of this ThresholdPolicy.
-        :rtype: list[Condition]
+        :return: The execution_schedule of this ScheduledPolicy.
+        :rtype: ExecutionSchedule
         """
-        return self._rules
+        return self._execution_schedule
 
-    @rules.setter
-    def rules(self, rules):
+    @execution_schedule.setter
+    def execution_schedule(self, execution_schedule):
         """
-        Sets the rules of this ThresholdPolicy.
+        Sets the execution_schedule of this ScheduledPolicy.
 
-        :param rules: The rules of this ThresholdPolicy.
-        :type: list[Condition]
+        :param execution_schedule: The execution_schedule of this ScheduledPolicy.
+        :type: ExecutionSchedule
         """
-        self._rules = rules
+        self._execution_schedule = execution_schedule
 
     def __repr__(self):
         return formatted_flat_dict(self)

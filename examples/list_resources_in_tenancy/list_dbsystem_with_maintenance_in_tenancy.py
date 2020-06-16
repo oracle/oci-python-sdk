@@ -1,13 +1,12 @@
-#!/usr/bin/env python3
+# coding: utf-8
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 ##########################################################################
-# Copyright(c) 2016, 2020, Oracle and/or its affiliates. All rights reserved.
 # list_dbsystem_with_maintenance_in_tenancy.py
 #
 # @author: Adi Zohar
 #
 # Supports Python 3
-#
-# coding: utf-8
 ##########################################################################
 # Info:
 #    List all dbsystems including maintenance in Tenancy

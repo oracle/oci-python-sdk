@@ -144,6 +144,10 @@ class AutonomousContainerDatabaseSummary(object):
             The value to assign to the availability_domain property of this AutonomousContainerDatabaseSummary.
         :type availability_domain: str
 
+        :param db_version:
+            The value to assign to the db_version property of this AutonomousContainerDatabaseSummary.
+        :type db_version: str
+
         :param backup_config:
             The value to assign to the backup_config property of this AutonomousContainerDatabaseSummary.
         :type backup_config: AutonomousContainerDatabaseBackupConfig
@@ -165,6 +169,7 @@ class AutonomousContainerDatabaseSummary(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'availability_domain': 'str',
+            'db_version': 'str',
             'backup_config': 'AutonomousContainerDatabaseBackupConfig'
         }
 
@@ -184,6 +189,7 @@ class AutonomousContainerDatabaseSummary(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'availability_domain': 'availabilityDomain',
+            'db_version': 'dbVersion',
             'backup_config': 'backupConfig'
         }
 
@@ -202,6 +208,7 @@ class AutonomousContainerDatabaseSummary(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._availability_domain = None
+        self._db_version = None
         self._backup_config = None
 
     @property
@@ -601,6 +608,30 @@ class AutonomousContainerDatabaseSummary(object):
         :type: str
         """
         self._availability_domain = availability_domain
+
+    @property
+    def db_version(self):
+        """
+        Gets the db_version of this AutonomousContainerDatabaseSummary.
+        Oracle Database version of the Autonomous Container Database
+
+
+        :return: The db_version of this AutonomousContainerDatabaseSummary.
+        :rtype: str
+        """
+        return self._db_version
+
+    @db_version.setter
+    def db_version(self, db_version):
+        """
+        Sets the db_version of this AutonomousContainerDatabaseSummary.
+        Oracle Database version of the Autonomous Container Database
+
+
+        :param db_version: The db_version of this AutonomousContainerDatabaseSummary.
+        :type: str
+        """
+        self._db_version = db_version
 
     @property
     def backup_config(self):

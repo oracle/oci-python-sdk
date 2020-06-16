@@ -30,22 +30,29 @@ class AutoScalingPolicySummary(object):
             The value to assign to the policy_type property of this AutoScalingPolicySummary.
         :type policy_type: str
 
+        :param is_enabled:
+            The value to assign to the is_enabled property of this AutoScalingPolicySummary.
+        :type is_enabled: bool
+
         """
         self.swagger_types = {
             'id': 'str',
             'display_name': 'str',
-            'policy_type': 'str'
+            'policy_type': 'str',
+            'is_enabled': 'bool'
         }
 
         self.attribute_map = {
             'id': 'id',
             'display_name': 'displayName',
-            'policy_type': 'policyType'
+            'policy_type': 'policyType',
+            'is_enabled': 'isEnabled'
         }
 
         self._id = None
         self._display_name = None
         self._policy_type = None
+        self._is_enabled = None
 
     @property
     def id(self):
@@ -118,6 +125,30 @@ class AutoScalingPolicySummary(object):
         :type: str
         """
         self._policy_type = policy_type
+
+    @property
+    def is_enabled(self):
+        """
+        Gets the is_enabled of this AutoScalingPolicySummary.
+        Boolean field indicated whether this policy is enabled or not.
+
+
+        :return: The is_enabled of this AutoScalingPolicySummary.
+        :rtype: bool
+        """
+        return self._is_enabled
+
+    @is_enabled.setter
+    def is_enabled(self, is_enabled):
+        """
+        Sets the is_enabled of this AutoScalingPolicySummary.
+        Boolean field indicated whether this policy is enabled or not.
+
+
+        :param is_enabled: The is_enabled of this AutoScalingPolicySummary.
+        :type: bool
+        """
+        self._is_enabled = is_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

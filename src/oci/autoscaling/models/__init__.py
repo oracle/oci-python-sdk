@@ -15,15 +15,20 @@ from .condition import Condition
 from .create_auto_scaling_configuration_details import CreateAutoScalingConfigurationDetails
 from .create_auto_scaling_policy_details import CreateAutoScalingPolicyDetails
 from .create_condition_details import CreateConditionDetails
+from .create_scheduled_policy_details import CreateScheduledPolicyDetails
 from .create_threshold_policy_details import CreateThresholdPolicyDetails
+from .cron_execution_schedule import CronExecutionSchedule
+from .execution_schedule import ExecutionSchedule
 from .instance_pool_resource import InstancePoolResource
 from .metric import Metric
 from .resource import Resource
+from .scheduled_policy import ScheduledPolicy
 from .threshold import Threshold
 from .threshold_policy import ThresholdPolicy
 from .update_auto_scaling_configuration_details import UpdateAutoScalingConfigurationDetails
 from .update_auto_scaling_policy_details import UpdateAutoScalingPolicyDetails
 from .update_condition_details import UpdateConditionDetails
+from .update_scheduled_policy_details import UpdateScheduledPolicyDetails
 from .update_threshold_policy_details import UpdateThresholdPolicyDetails
 
 # Maps type names to classes for autoscaling services.
@@ -39,14 +44,19 @@ autoscaling_type_mapping = {
     "CreateAutoScalingConfigurationDetails": CreateAutoScalingConfigurationDetails,
     "CreateAutoScalingPolicyDetails": CreateAutoScalingPolicyDetails,
     "CreateConditionDetails": CreateConditionDetails,
+    "CreateScheduledPolicyDetails": CreateScheduledPolicyDetails,
     "CreateThresholdPolicyDetails": CreateThresholdPolicyDetails,
+    "CronExecutionSchedule": CronExecutionSchedule,
+    "ExecutionSchedule": ExecutionSchedule,
     "InstancePoolResource": InstancePoolResource,
     "Metric": Metric,
     "Resource": Resource,
+    "ScheduledPolicy": ScheduledPolicy,
     "Threshold": Threshold,
     "ThresholdPolicy": ThresholdPolicy,
     "UpdateAutoScalingConfigurationDetails": UpdateAutoScalingConfigurationDetails,
     "UpdateAutoScalingPolicyDetails": UpdateAutoScalingPolicyDetails,
     "UpdateConditionDetails": UpdateConditionDetails,
+    "UpdateScheduledPolicyDetails": UpdateScheduledPolicyDetails,
     "UpdateThresholdPolicyDetails": UpdateThresholdPolicyDetails
 }
