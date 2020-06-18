@@ -86,3 +86,4 @@
 ^src/oci/cims/.*\.py$
 ^src/oci/data_safe/.*\.py$
 ^src/oci/mysql/.*\.py$
+^src/oci/data_integration/.*\.py$

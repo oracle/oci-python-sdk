@@ -18,20 +18,51 @@ class AutonomousContainerDatabaseBackupConfig(object):
         Initializes a new AutonomousContainerDatabaseBackupConfig object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param backup_destination_details:
+            The value to assign to the backup_destination_details property of this AutonomousContainerDatabaseBackupConfig.
+        :type backup_destination_details: list[BackupDestinationDetails]
+
         :param recovery_window_in_days:
             The value to assign to the recovery_window_in_days property of this AutonomousContainerDatabaseBackupConfig.
         :type recovery_window_in_days: int
 
         """
         self.swagger_types = {
+            'backup_destination_details': 'list[BackupDestinationDetails]',
             'recovery_window_in_days': 'int'
         }
 
         self.attribute_map = {
+            'backup_destination_details': 'backupDestinationDetails',
             'recovery_window_in_days': 'recoveryWindowInDays'
         }
 
+        self._backup_destination_details = None
         self._recovery_window_in_days = None
+
+    @property
+    def backup_destination_details(self):
+        """
+        Gets the backup_destination_details of this AutonomousContainerDatabaseBackupConfig.
+        Backup destination details.
+
+
+        :return: The backup_destination_details of this AutonomousContainerDatabaseBackupConfig.
+        :rtype: list[BackupDestinationDetails]
+        """
+        return self._backup_destination_details
+
+    @backup_destination_details.setter
+    def backup_destination_details(self, backup_destination_details):
+        """
+        Sets the backup_destination_details of this AutonomousContainerDatabaseBackupConfig.
+        Backup destination details.
+
+
+        :param backup_destination_details: The backup_destination_details of this AutonomousContainerDatabaseBackupConfig.
+        :type: list[BackupDestinationDetails]
+        """
+        self._backup_destination_details = backup_destination_details
 
     @property
     def recovery_window_in_days(self):

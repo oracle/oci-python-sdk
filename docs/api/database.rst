@@ -20,6 +20,7 @@ Database
 
     oci.database.models.ActivateExadataInfrastructureDetails
     oci.database.models.AssociatedDatabaseDetails
+    oci.database.models.AutomatedMountDetails
     oci.database.models.AutonomousContainerDatabase
     oci.database.models.AutonomousContainerDatabaseBackupConfig
     oci.database.models.AutonomousContainerDatabaseSummary
@@ -42,11 +43,14 @@ Database
     oci.database.models.AutonomousExadataInfrastructure
     oci.database.models.AutonomousExadataInfrastructureShapeSummary
     oci.database.models.AutonomousExadataInfrastructureSummary
+    oci.database.models.AutonomousVmCluster
+    oci.database.models.AutonomousVmClusterSummary
     oci.database.models.Backup
     oci.database.models.BackupDestination
     oci.database.models.BackupDestinationDetails
     oci.database.models.BackupDestinationSummary
     oci.database.models.BackupSummary
+    oci.database.models.ChangeAutonomousVmClusterCompartmentDetails
     oci.database.models.ChangeCompartmentDetails
     oci.database.models.ChangeExadataInfrastructureCompartmentDetails
     oci.database.models.ChangeVmClusterCompartmentDetails
@@ -62,6 +66,7 @@ Database
     oci.database.models.CreateAutonomousDatabaseDetails
     oci.database.models.CreateAutonomousDatabaseFromBackupDetails
     oci.database.models.CreateAutonomousDatabaseFromBackupTimestampDetails
+    oci.database.models.CreateAutonomousVmClusterDetails
     oci.database.models.CreateBackupDestinationDetails
     oci.database.models.CreateBackupDetails
     oci.database.models.CreateConsoleConnectionDetails
@@ -125,6 +130,7 @@ Database
     oci.database.models.MaintenanceRunSummary
     oci.database.models.MaintenanceWindow
     oci.database.models.Month
+    oci.database.models.MountTypeDetails
     oci.database.models.NodeDetails
     oci.database.models.OCPUs
     oci.database.models.Patch
@@ -137,12 +143,14 @@ Database
     oci.database.models.RestoreAutonomousDatabaseDetails
     oci.database.models.RestoreDatabaseDetails
     oci.database.models.ScanDetails
+    oci.database.models.SelfMountDetails
     oci.database.models.SwitchoverDataGuardAssociationDetails
     oci.database.models.UpdateAutonomousContainerDatabaseDetails
     oci.database.models.UpdateAutonomousDataWarehouseDetails
     oci.database.models.UpdateAutonomousDatabaseDetails
     oci.database.models.UpdateAutonomousDatabaseWalletDetails
     oci.database.models.UpdateAutonomousExadataInfrastructureDetails
+    oci.database.models.UpdateAutonomousVmClusterDetails
     oci.database.models.UpdateBackupDestinationDetails
     oci.database.models.UpdateDatabaseDetails
     oci.database.models.UpdateDbHomeDetails

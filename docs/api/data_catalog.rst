@@ -18,6 +18,7 @@ Data Catalog
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.data_catalog.models.AttachCatalogPrivateEndpointDetails
     oci.data_catalog.models.Attribute
     oci.data_catalog.models.AttributeCollection
     oci.data_catalog.models.AttributeSummary
@@ -29,14 +30,18 @@ Data Catalog
     oci.data_catalog.models.BaseTagSummary
     oci.data_catalog.models.Catalog
     oci.data_catalog.models.CatalogPermissionsSummary
+    oci.data_catalog.models.CatalogPrivateEndpoint
+    oci.data_catalog.models.CatalogPrivateEndpointSummary
     oci.data_catalog.models.CatalogSummary
     oci.data_catalog.models.ChangeCatalogCompartmentDetails
+    oci.data_catalog.models.ChangeCatalogPrivateEndpointCompartmentDetails
     oci.data_catalog.models.Connection
     oci.data_catalog.models.ConnectionAliasSummary
     oci.data_catalog.models.ConnectionCollection
     oci.data_catalog.models.ConnectionSummary
     oci.data_catalog.models.CreateAttributeDetails
     oci.data_catalog.models.CreateCatalogDetails
+    oci.data_catalog.models.CreateCatalogPrivateEndpointDetails
     oci.data_catalog.models.CreateConnectionDetails
     oci.data_catalog.models.CreateDataAssetDetails
     oci.data_catalog.models.CreateEntityDetails
@@ -55,6 +60,7 @@ Data Catalog
     oci.data_catalog.models.DataAssetTag
     oci.data_catalog.models.DataAssetTagCollection
     oci.data_catalog.models.DataAssetTagSummary
+    oci.data_catalog.models.DetachCatalogPrivateEndpointDetails
     oci.data_catalog.models.Entity
     oci.data_catalog.models.EntityCollection
     oci.data_catalog.models.EntitySummary
@@ -110,6 +116,7 @@ Data Catalog
     oci.data_catalog.models.TypeSummary
     oci.data_catalog.models.UpdateAttributeDetails
     oci.data_catalog.models.UpdateCatalogDetails
+    oci.data_catalog.models.UpdateCatalogPrivateEndpointDetails
     oci.data_catalog.models.UpdateConnectionDetails
     oci.data_catalog.models.UpdateDataAssetDetails
     oci.data_catalog.models.UpdateEntityDetails

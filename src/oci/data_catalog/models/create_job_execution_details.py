@@ -13,6 +13,82 @@ class CreateJobExecutionDetails(object):
     Properties for creating a new job execution.
     """
 
+    #: A constant which can be used with the job_type property of a CreateJobExecutionDetails.
+    #: This constant has a value of "HARVEST"
+    JOB_TYPE_HARVEST = "HARVEST"
+
+    #: A constant which can be used with the job_type property of a CreateJobExecutionDetails.
+    #: This constant has a value of "PROFILING"
+    JOB_TYPE_PROFILING = "PROFILING"
+
+    #: A constant which can be used with the job_type property of a CreateJobExecutionDetails.
+    #: This constant has a value of "SAMPLING"
+    JOB_TYPE_SAMPLING = "SAMPLING"
+
+    #: A constant which can be used with the job_type property of a CreateJobExecutionDetails.
+    #: This constant has a value of "PREVIEW"
+    JOB_TYPE_PREVIEW = "PREVIEW"
+
+    #: A constant which can be used with the job_type property of a CreateJobExecutionDetails.
+    #: This constant has a value of "IMPORT"
+    JOB_TYPE_IMPORT = "IMPORT"
+
+    #: A constant which can be used with the job_type property of a CreateJobExecutionDetails.
+    #: This constant has a value of "EXPORT"
+    JOB_TYPE_EXPORT = "EXPORT"
+
+    #: A constant which can be used with the job_type property of a CreateJobExecutionDetails.
+    #: This constant has a value of "INTERNAL"
+    JOB_TYPE_INTERNAL = "INTERNAL"
+
+    #: A constant which can be used with the job_type property of a CreateJobExecutionDetails.
+    #: This constant has a value of "PURGE"
+    JOB_TYPE_PURGE = "PURGE"
+
+    #: A constant which can be used with the job_type property of a CreateJobExecutionDetails.
+    #: This constant has a value of "IMMEDIATE"
+    JOB_TYPE_IMMEDIATE = "IMMEDIATE"
+
+    #: A constant which can be used with the job_type property of a CreateJobExecutionDetails.
+    #: This constant has a value of "SCHEDULED"
+    JOB_TYPE_SCHEDULED = "SCHEDULED"
+
+    #: A constant which can be used with the job_type property of a CreateJobExecutionDetails.
+    #: This constant has a value of "IMMEDIATE_EXECUTION"
+    JOB_TYPE_IMMEDIATE_EXECUTION = "IMMEDIATE_EXECUTION"
+
+    #: A constant which can be used with the job_type property of a CreateJobExecutionDetails.
+    #: This constant has a value of "SCHEDULED_EXECUTION"
+    JOB_TYPE_SCHEDULED_EXECUTION = "SCHEDULED_EXECUTION"
+
+    #: A constant which can be used with the job_type property of a CreateJobExecutionDetails.
+    #: This constant has a value of "SCHEDULED_EXECUTION_INSTANCE"
+    JOB_TYPE_SCHEDULED_EXECUTION_INSTANCE = "SCHEDULED_EXECUTION_INSTANCE"
+
+    #: A constant which can be used with the lifecycle_state property of a CreateJobExecutionDetails.
+    #: This constant has a value of "CREATED"
+    LIFECYCLE_STATE_CREATED = "CREATED"
+
+    #: A constant which can be used with the lifecycle_state property of a CreateJobExecutionDetails.
+    #: This constant has a value of "IN_PROGRESS"
+    LIFECYCLE_STATE_IN_PROGRESS = "IN_PROGRESS"
+
+    #: A constant which can be used with the lifecycle_state property of a CreateJobExecutionDetails.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a CreateJobExecutionDetails.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
+
+    #: A constant which can be used with the lifecycle_state property of a CreateJobExecutionDetails.
+    #: This constant has a value of "SUCCEEDED"
+    LIFECYCLE_STATE_SUCCEEDED = "SUCCEEDED"
+
+    #: A constant which can be used with the lifecycle_state property of a CreateJobExecutionDetails.
+    #: This constant has a value of "CANCELED"
+    LIFECYCLE_STATE_CANCELED = "CANCELED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateJobExecutionDetails object with values from keyword arguments.
@@ -24,6 +100,7 @@ class CreateJobExecutionDetails(object):
 
         :param job_type:
             The value to assign to the job_type property of this CreateJobExecutionDetails.
+            Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"
         :type job_type: str
 
         :param parent_key:
@@ -40,6 +117,7 @@ class CreateJobExecutionDetails(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this CreateJobExecutionDetails.
+            Allowed values for this property are: "CREATED", "IN_PROGRESS", "INACTIVE", "FAILED", "SUCCEEDED", "CANCELED"
         :type lifecycle_state: str
 
         :param error_code:
@@ -154,6 +232,8 @@ class CreateJobExecutionDetails(object):
         Gets the job_type of this CreateJobExecutionDetails.
         Type of the job execution.
 
+        Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"
+
 
         :return: The job_type of this CreateJobExecutionDetails.
         :rtype: str
@@ -170,6 +250,12 @@ class CreateJobExecutionDetails(object):
         :param job_type: The job_type of this CreateJobExecutionDetails.
         :type: str
         """
+        allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"]
+        if not value_allowed_none_or_none_sentinel(job_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `job_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
         self._job_type = job_type
 
     @property
@@ -260,6 +346,8 @@ class CreateJobExecutionDetails(object):
         Gets the lifecycle_state of this CreateJobExecutionDetails.
         Status of the job execution, such as running, paused, or completed.
 
+        Allowed values for this property are: "CREATED", "IN_PROGRESS", "INACTIVE", "FAILED", "SUCCEEDED", "CANCELED"
+
 
         :return: The lifecycle_state of this CreateJobExecutionDetails.
         :rtype: str
@@ -276,6 +364,12 @@ class CreateJobExecutionDetails(object):
         :param lifecycle_state: The lifecycle_state of this CreateJobExecutionDetails.
         :type: str
         """
+        allowed_values = ["CREATED", "IN_PROGRESS", "INACTIVE", "FAILED", "SUCCEEDED", "CANCELED"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+            raise ValueError(
+                "Invalid value for `lifecycle_state`, must be None or one of {0}"
+                .format(allowed_values)
+            )
         self._lifecycle_state = lifecycle_state
 
     @property

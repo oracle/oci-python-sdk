@@ -1,0 +1,380 @@
+# coding: utf-8
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+
+
+from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
+from oci.decorators import init_model_state_from_kwargs
+
+
+@init_model_state_from_kwargs
+class ObjectMetadata(object):
+    """
+    A summary type containing information about the object including its key, name and when/who created/updated it
+    """
+
+    def __init__(self, **kwargs):
+        """
+        Initializes a new ObjectMetadata object with values from keyword arguments.
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param created_by:
+            The value to assign to the created_by property of this ObjectMetadata.
+        :type created_by: str
+
+        :param created_by_name:
+            The value to assign to the created_by_name property of this ObjectMetadata.
+        :type created_by_name: str
+
+        :param updated_by:
+            The value to assign to the updated_by property of this ObjectMetadata.
+        :type updated_by: str
+
+        :param updated_by_name:
+            The value to assign to the updated_by_name property of this ObjectMetadata.
+        :type updated_by_name: str
+
+        :param time_created:
+            The value to assign to the time_created property of this ObjectMetadata.
+        :type time_created: datetime
+
+        :param time_updated:
+            The value to assign to the time_updated property of this ObjectMetadata.
+        :type time_updated: datetime
+
+        :param aggregator_key:
+            The value to assign to the aggregator_key property of this ObjectMetadata.
+        :type aggregator_key: str
+
+        :param identifier_path:
+            The value to assign to the identifier_path property of this ObjectMetadata.
+        :type identifier_path: str
+
+        :param info_fields:
+            The value to assign to the info_fields property of this ObjectMetadata.
+        :type info_fields: dict(str, str)
+
+        :param registry_version:
+            The value to assign to the registry_version property of this ObjectMetadata.
+        :type registry_version: int
+
+        :param labels:
+            The value to assign to the labels property of this ObjectMetadata.
+        :type labels: list[str]
+
+        """
+        self.swagger_types = {
+            'created_by': 'str',
+            'created_by_name': 'str',
+            'updated_by': 'str',
+            'updated_by_name': 'str',
+            'time_created': 'datetime',
+            'time_updated': 'datetime',
+            'aggregator_key': 'str',
+            'identifier_path': 'str',
+            'info_fields': 'dict(str, str)',
+            'registry_version': 'int',
+            'labels': 'list[str]'
+        }
+
+        self.attribute_map = {
+            'created_by': 'createdBy',
+            'created_by_name': 'createdByName',
+            'updated_by': 'updatedBy',
+            'updated_by_name': 'updatedByName',
+            'time_created': 'timeCreated',
+            'time_updated': 'timeUpdated',
+            'aggregator_key': 'aggregatorKey',
+            'identifier_path': 'identifierPath',
+            'info_fields': 'infoFields',
+            'registry_version': 'registryVersion',
+            'labels': 'labels'
+        }
+
+        self._created_by = None
+        self._created_by_name = None
+        self._updated_by = None
+        self._updated_by_name = None
+        self._time_created = None
+        self._time_updated = None
+        self._aggregator_key = None
+        self._identifier_path = None
+        self._info_fields = None
+        self._registry_version = None
+        self._labels = None
+
+    @property
+    def created_by(self):
+        """
+        Gets the created_by of this ObjectMetadata.
+        The user that created the object.
+
+
+        :return: The created_by of this ObjectMetadata.
+        :rtype: str
+        """
+        return self._created_by
+
+    @created_by.setter
+    def created_by(self, created_by):
+        """
+        Sets the created_by of this ObjectMetadata.
+        The user that created the object.
+
+
+        :param created_by: The created_by of this ObjectMetadata.
+        :type: str
+        """
+        self._created_by = created_by
+
+    @property
+    def created_by_name(self):
+        """
+        Gets the created_by_name of this ObjectMetadata.
+        The user that created the object.
+
+
+        :return: The created_by_name of this ObjectMetadata.
+        :rtype: str
+        """
+        return self._created_by_name
+
+    @created_by_name.setter
+    def created_by_name(self, created_by_name):
+        """
+        Sets the created_by_name of this ObjectMetadata.
+        The user that created the object.
+
+
+        :param created_by_name: The created_by_name of this ObjectMetadata.
+        :type: str
+        """
+        self._created_by_name = created_by_name
+
+    @property
+    def updated_by(self):
+        """
+        Gets the updated_by of this ObjectMetadata.
+        The user that updated the object.
+
+
+        :return: The updated_by of this ObjectMetadata.
+        :rtype: str
+        """
+        return self._updated_by
+
+    @updated_by.setter
+    def updated_by(self, updated_by):
+        """
+        Sets the updated_by of this ObjectMetadata.
+        The user that updated the object.
+
+
+        :param updated_by: The updated_by of this ObjectMetadata.
+        :type: str
+        """
+        self._updated_by = updated_by
+
+    @property
+    def updated_by_name(self):
+        """
+        Gets the updated_by_name of this ObjectMetadata.
+        The user that updated the object.
+
+
+        :return: The updated_by_name of this ObjectMetadata.
+        :rtype: str
+        """
+        return self._updated_by_name
+
+    @updated_by_name.setter
+    def updated_by_name(self, updated_by_name):
+        """
+        Sets the updated_by_name of this ObjectMetadata.
+        The user that updated the object.
+
+
+        :param updated_by_name: The updated_by_name of this ObjectMetadata.
+        :type: str
+        """
+        self._updated_by_name = updated_by_name
+
+    @property
+    def time_created(self):
+        """
+        Gets the time_created of this ObjectMetadata.
+        The date and time that the object was created.
+
+
+        :return: The time_created of this ObjectMetadata.
+        :rtype: datetime
+        """
+        return self._time_created
+
+    @time_created.setter
+    def time_created(self, time_created):
+        """
+        Sets the time_created of this ObjectMetadata.
+        The date and time that the object was created.
+
+
+        :param time_created: The time_created of this ObjectMetadata.
+        :type: datetime
+        """
+        self._time_created = time_created
+
+    @property
+    def time_updated(self):
+        """
+        Gets the time_updated of this ObjectMetadata.
+        The date and time that the object was updated.
+
+
+        :return: The time_updated of this ObjectMetadata.
+        :rtype: datetime
+        """
+        return self._time_updated
+
+    @time_updated.setter
+    def time_updated(self, time_updated):
+        """
+        Sets the time_updated of this ObjectMetadata.
+        The date and time that the object was updated.
+
+
+        :param time_updated: The time_updated of this ObjectMetadata.
+        :type: datetime
+        """
+        self._time_updated = time_updated
+
+    @property
+    def aggregator_key(self):
+        """
+        Gets the aggregator_key of this ObjectMetadata.
+        The owning object key for this object.
+
+
+        :return: The aggregator_key of this ObjectMetadata.
+        :rtype: str
+        """
+        return self._aggregator_key
+
+    @aggregator_key.setter
+    def aggregator_key(self, aggregator_key):
+        """
+        Sets the aggregator_key of this ObjectMetadata.
+        The owning object key for this object.
+
+
+        :param aggregator_key: The aggregator_key of this ObjectMetadata.
+        :type: str
+        """
+        self._aggregator_key = aggregator_key
+
+    @property
+    def identifier_path(self):
+        """
+        Gets the identifier_path of this ObjectMetadata.
+        The full path to identify this object.
+
+
+        :return: The identifier_path of this ObjectMetadata.
+        :rtype: str
+        """
+        return self._identifier_path
+
+    @identifier_path.setter
+    def identifier_path(self, identifier_path):
+        """
+        Sets the identifier_path of this ObjectMetadata.
+        The full path to identify this object.
+
+
+        :param identifier_path: The identifier_path of this ObjectMetadata.
+        :type: str
+        """
+        self._identifier_path = identifier_path
+
+    @property
+    def info_fields(self):
+        """
+        Gets the info_fields of this ObjectMetadata.
+        infoFields
+
+
+        :return: The info_fields of this ObjectMetadata.
+        :rtype: dict(str, str)
+        """
+        return self._info_fields
+
+    @info_fields.setter
+    def info_fields(self, info_fields):
+        """
+        Sets the info_fields of this ObjectMetadata.
+        infoFields
+
+
+        :param info_fields: The info_fields of this ObjectMetadata.
+        :type: dict(str, str)
+        """
+        self._info_fields = info_fields
+
+    @property
+    def registry_version(self):
+        """
+        Gets the registry_version of this ObjectMetadata.
+        registryVersion
+
+
+        :return: The registry_version of this ObjectMetadata.
+        :rtype: int
+        """
+        return self._registry_version
+
+    @registry_version.setter
+    def registry_version(self, registry_version):
+        """
+        Sets the registry_version of this ObjectMetadata.
+        registryVersion
+
+
+        :param registry_version: The registry_version of this ObjectMetadata.
+        :type: int
+        """
+        self._registry_version = registry_version
+
+    @property
+    def labels(self):
+        """
+        Gets the labels of this ObjectMetadata.
+        Labels are keywords or tags that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+
+
+        :return: The labels of this ObjectMetadata.
+        :rtype: list[str]
+        """
+        return self._labels
+
+    @labels.setter
+    def labels(self, labels):
+        """
+        Sets the labels of this ObjectMetadata.
+        Labels are keywords or tags that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+
+
+        :param labels: The labels of this ObjectMetadata.
+        :type: list[str]
+        """
+        self._labels = labels
+
+    def __repr__(self):
+        return formatted_flat_dict(self)
+
+    def __eq__(self, other):
+        if other is None:
+            return False
+
+        return self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        return not self == other

@@ -21,6 +21,14 @@ class AutonomousContainerDatabase(object):
     #: This constant has a value of "MISSION_CRITICAL"
     SERVICE_LEVEL_AGREEMENT_TYPE_MISSION_CRITICAL = "MISSION_CRITICAL"
 
+    #: A constant which can be used with the infrastructure_type property of a AutonomousContainerDatabase.
+    #: This constant has a value of "CLOUD"
+    INFRASTRUCTURE_TYPE_CLOUD = "CLOUD"
+
+    #: A constant which can be used with the infrastructure_type property of a AutonomousContainerDatabase.
+    #: This constant has a value of "CLOUD_AT_CUSTOMER"
+    INFRASTRUCTURE_TYPE_CLOUD_AT_CUSTOMER = "CLOUD_AT_CUSTOMER"
+
     #: A constant which can be used with the lifecycle_state property of a AutonomousContainerDatabase.
     #: This constant has a value of "PROVISIONING"
     LIFECYCLE_STATE_PROVISIONING = "PROVISIONING"
@@ -90,6 +98,10 @@ class AutonomousContainerDatabase(object):
             The value to assign to the display_name property of this AutonomousContainerDatabase.
         :type display_name: str
 
+        :param db_unique_name:
+            The value to assign to the db_unique_name property of this AutonomousContainerDatabase.
+        :type db_unique_name: str
+
         :param service_level_agreement_type:
             The value to assign to the service_level_agreement_type property of this AutonomousContainerDatabase.
             Allowed values for this property are: "STANDARD", "MISSION_CRITICAL", 'UNKNOWN_ENUM_VALUE'.
@@ -99,6 +111,16 @@ class AutonomousContainerDatabase(object):
         :param autonomous_exadata_infrastructure_id:
             The value to assign to the autonomous_exadata_infrastructure_id property of this AutonomousContainerDatabase.
         :type autonomous_exadata_infrastructure_id: str
+
+        :param autonomous_vm_cluster_id:
+            The value to assign to the autonomous_vm_cluster_id property of this AutonomousContainerDatabase.
+        :type autonomous_vm_cluster_id: str
+
+        :param infrastructure_type:
+            The value to assign to the infrastructure_type property of this AutonomousContainerDatabase.
+            Allowed values for this property are: "CLOUD", "CLOUD_AT_CUSTOMER", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type infrastructure_type: str
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AutonomousContainerDatabase.
@@ -157,8 +179,11 @@ class AutonomousContainerDatabase(object):
             'id': 'str',
             'compartment_id': 'str',
             'display_name': 'str',
+            'db_unique_name': 'str',
             'service_level_agreement_type': 'str',
             'autonomous_exadata_infrastructure_id': 'str',
+            'autonomous_vm_cluster_id': 'str',
+            'infrastructure_type': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'time_created': 'datetime',
@@ -177,8 +202,11 @@ class AutonomousContainerDatabase(object):
             'id': 'id',
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
+            'db_unique_name': 'dbUniqueName',
             'service_level_agreement_type': 'serviceLevelAgreementType',
             'autonomous_exadata_infrastructure_id': 'autonomousExadataInfrastructureId',
+            'autonomous_vm_cluster_id': 'autonomousVmClusterId',
+            'infrastructure_type': 'infrastructureType',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
@@ -196,8 +224,11 @@ class AutonomousContainerDatabase(object):
         self._id = None
         self._compartment_id = None
         self._display_name = None
+        self._db_unique_name = None
         self._service_level_agreement_type = None
         self._autonomous_exadata_infrastructure_id = None
+        self._autonomous_vm_cluster_id = None
+        self._infrastructure_type = None
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._time_created = None
@@ -284,6 +315,30 @@ class AutonomousContainerDatabase(object):
         self._display_name = display_name
 
     @property
+    def db_unique_name(self):
+        """
+        Gets the db_unique_name of this AutonomousContainerDatabase.
+        The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+
+
+        :return: The db_unique_name of this AutonomousContainerDatabase.
+        :rtype: str
+        """
+        return self._db_unique_name
+
+    @db_unique_name.setter
+    def db_unique_name(self, db_unique_name):
+        """
+        Sets the db_unique_name of this AutonomousContainerDatabase.
+        The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+
+
+        :param db_unique_name: The db_unique_name of this AutonomousContainerDatabase.
+        :type: str
+        """
+        self._db_unique_name = db_unique_name
+
+    @property
     def service_level_agreement_type(self):
         """
         **[Required]** Gets the service_level_agreement_type of this AutonomousContainerDatabase.
@@ -316,7 +371,7 @@ class AutonomousContainerDatabase(object):
     @property
     def autonomous_exadata_infrastructure_id(self):
         """
-        **[Required]** Gets the autonomous_exadata_infrastructure_id of this AutonomousContainerDatabase.
+        Gets the autonomous_exadata_infrastructure_id of this AutonomousContainerDatabase.
         The OCID of the Autonomous Exadata Infrastructure.
 
 
@@ -336,6 +391,60 @@ class AutonomousContainerDatabase(object):
         :type: str
         """
         self._autonomous_exadata_infrastructure_id = autonomous_exadata_infrastructure_id
+
+    @property
+    def autonomous_vm_cluster_id(self):
+        """
+        Gets the autonomous_vm_cluster_id of this AutonomousContainerDatabase.
+        The OCID of the Autonomous VM Cluster.
+
+
+        :return: The autonomous_vm_cluster_id of this AutonomousContainerDatabase.
+        :rtype: str
+        """
+        return self._autonomous_vm_cluster_id
+
+    @autonomous_vm_cluster_id.setter
+    def autonomous_vm_cluster_id(self, autonomous_vm_cluster_id):
+        """
+        Sets the autonomous_vm_cluster_id of this AutonomousContainerDatabase.
+        The OCID of the Autonomous VM Cluster.
+
+
+        :param autonomous_vm_cluster_id: The autonomous_vm_cluster_id of this AutonomousContainerDatabase.
+        :type: str
+        """
+        self._autonomous_vm_cluster_id = autonomous_vm_cluster_id
+
+    @property
+    def infrastructure_type(self):
+        """
+        Gets the infrastructure_type of this AutonomousContainerDatabase.
+        The infrastructure type this resource belongs to.
+
+        Allowed values for this property are: "CLOUD", "CLOUD_AT_CUSTOMER", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The infrastructure_type of this AutonomousContainerDatabase.
+        :rtype: str
+        """
+        return self._infrastructure_type
+
+    @infrastructure_type.setter
+    def infrastructure_type(self, infrastructure_type):
+        """
+        Sets the infrastructure_type of this AutonomousContainerDatabase.
+        The infrastructure type this resource belongs to.
+
+
+        :param infrastructure_type: The infrastructure_type of this AutonomousContainerDatabase.
+        :type: str
+        """
+        allowed_values = ["CLOUD", "CLOUD_AT_CUSTOMER"]
+        if not value_allowed_none_or_none_sentinel(infrastructure_type, allowed_values):
+            infrastructure_type = 'UNKNOWN_ENUM_VALUE'
+        self._infrastructure_type = infrastructure_type
 
     @property
     def lifecycle_state(self):

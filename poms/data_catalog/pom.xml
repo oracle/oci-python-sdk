@@ -173,7 +173,7 @@
       <dependency>
         <groupId>com.oracle.pic.dcat</groupId>
         <artifactId>datacatalog-api-spec</artifactId>
-        <version>1.0.0-2001160234</version>
+        <version>1.1.0-2006110254</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

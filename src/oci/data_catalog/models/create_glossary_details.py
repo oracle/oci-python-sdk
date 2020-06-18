@@ -13,6 +13,22 @@ class CreateGlossaryDetails(object):
     Properties used in glossary create operations.
     """
 
+    #: A constant which can be used with the workflow_status property of a CreateGlossaryDetails.
+    #: This constant has a value of "NEW"
+    WORKFLOW_STATUS_NEW = "NEW"
+
+    #: A constant which can be used with the workflow_status property of a CreateGlossaryDetails.
+    #: This constant has a value of "APPROVED"
+    WORKFLOW_STATUS_APPROVED = "APPROVED"
+
+    #: A constant which can be used with the workflow_status property of a CreateGlossaryDetails.
+    #: This constant has a value of "UNDER_REVIEW"
+    WORKFLOW_STATUS_UNDER_REVIEW = "UNDER_REVIEW"
+
+    #: A constant which can be used with the workflow_status property of a CreateGlossaryDetails.
+    #: This constant has a value of "ESCALATED"
+    WORKFLOW_STATUS_ESCALATED = "ESCALATED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateGlossaryDetails object with values from keyword arguments.
@@ -28,6 +44,7 @@ class CreateGlossaryDetails(object):
 
         :param workflow_status:
             The value to assign to the workflow_status property of this CreateGlossaryDetails.
+            Allowed values for this property are: "NEW", "APPROVED", "UNDER_REVIEW", "ESCALATED"
         :type workflow_status: str
 
         :param owner:
@@ -110,6 +127,8 @@ class CreateGlossaryDetails(object):
         Gets the workflow_status of this CreateGlossaryDetails.
         Status of the approval process workflow for this business glossary.
 
+        Allowed values for this property are: "NEW", "APPROVED", "UNDER_REVIEW", "ESCALATED"
+
 
         :return: The workflow_status of this CreateGlossaryDetails.
         :rtype: str
@@ -126,6 +145,12 @@ class CreateGlossaryDetails(object):
         :param workflow_status: The workflow_status of this CreateGlossaryDetails.
         :type: str
         """
+        allowed_values = ["NEW", "APPROVED", "UNDER_REVIEW", "ESCALATED"]
+        if not value_allowed_none_or_none_sentinel(workflow_status, allowed_values):
+            raise ValueError(
+                "Invalid value for `workflow_status`, must be None or one of {0}"
+                .format(allowed_values)
+            )
         self._workflow_status = workflow_status
 
     @property

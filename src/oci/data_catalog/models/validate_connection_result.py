@@ -13,6 +13,14 @@ class ValidateConnectionResult(object):
     Details regarding the validation of a connection resource.
     """
 
+    #: A constant which can be used with the status property of a ValidateConnectionResult.
+    #: This constant has a value of "SUCCEEDED"
+    STATUS_SUCCEEDED = "SUCCEEDED"
+
+    #: A constant which can be used with the status property of a ValidateConnectionResult.
+    #: This constant has a value of "FAILED"
+    STATUS_FAILED = "FAILED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ValidateConnectionResult object with values from keyword arguments.
@@ -24,6 +32,8 @@ class ValidateConnectionResult(object):
 
         :param status:
             The value to assign to the status property of this ValidateConnectionResult.
+            Allowed values for this property are: "SUCCEEDED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
         """
@@ -70,6 +80,9 @@ class ValidateConnectionResult(object):
         **[Required]** Gets the status of this ValidateConnectionResult.
         The status returned from the connection validation.
 
+        Allowed values for this property are: "SUCCEEDED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
 
         :return: The status of this ValidateConnectionResult.
         :rtype: str
@@ -86,6 +99,9 @@ class ValidateConnectionResult(object):
         :param status: The status of this ValidateConnectionResult.
         :type: str
         """
+        allowed_values = ["SUCCEEDED", "FAILED"]
+        if not value_allowed_none_or_none_sentinel(status, allowed_values):
+            status = 'UNKNOWN_ENUM_VALUE'
         self._status = status
 
     def __repr__(self):

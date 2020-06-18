@@ -198,6 +198,47 @@ def test_change_autonomous_exadata_infrastructure_compartment(testing_service_cl
 
 
 # IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_change_autonomous_vm_cluster_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ChangeAutonomousVmClusterCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ChangeAutonomousVmClusterCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ChangeAutonomousVmClusterCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.change_autonomous_vm_cluster_compartment(
+                change_autonomous_vm_cluster_compartment_details=request.pop(util.camelize('ChangeAutonomousVmClusterCompartmentDetails')),
+                autonomous_vm_cluster_id=request.pop(util.camelize('autonomousVmClusterId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ChangeAutonomousVmClusterCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_autonomous_vm_cluster_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_change_backup_destination_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ChangeBackupDestinationCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -597,6 +638,46 @@ def test_create_autonomous_database_backup(testing_service_client):
             result,
             service_error,
             'autonomousDatabaseBackup',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_create_autonomous_vm_cluster(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'CreateAutonomousVmCluster'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'CreateAutonomousVmCluster')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='CreateAutonomousVmCluster')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.create_autonomous_vm_cluster(
+                create_autonomous_vm_cluster_details=request.pop(util.camelize('CreateAutonomousVmClusterDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'CreateAutonomousVmCluster',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousVmCluster',
             False,
             False
         )
@@ -1121,6 +1202,46 @@ def test_delete_autonomous_database(testing_service_client):
             result,
             service_error,
             'delete_autonomous_database',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_delete_autonomous_vm_cluster(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'DeleteAutonomousVmCluster'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'DeleteAutonomousVmCluster')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='DeleteAutonomousVmCluster')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.delete_autonomous_vm_cluster(
+                autonomous_vm_cluster_id=request.pop(util.camelize('autonomousVmClusterId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'DeleteAutonomousVmCluster',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_autonomous_vm_cluster',
             True,
             False
         )
@@ -2048,6 +2169,46 @@ def test_get_autonomous_exadata_infrastructure(testing_service_client):
             result,
             service_error,
             'autonomousExadataInfrastructure',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_autonomous_vm_cluster(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'GetAutonomousVmCluster'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetAutonomousVmCluster')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetAutonomousVmCluster')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.get_autonomous_vm_cluster(
+                autonomous_vm_cluster_id=request.pop(util.camelize('autonomousVmClusterId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetAutonomousVmCluster',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousVmCluster',
             False,
             False
         )
@@ -3514,6 +3675,66 @@ def test_list_autonomous_exadata_infrastructures(testing_service_client):
             result,
             service_error,
             'autonomousExadataInfrastructureSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_autonomous_vm_clusters(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ListAutonomousVmClusters'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListAutonomousVmClusters')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListAutonomousVmClusters')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.list_autonomous_vm_clusters(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_autonomous_vm_clusters(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_autonomous_vm_clusters(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ListAutonomousVmClusters',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousVmClusterSummary',
             False,
             True
         )
@@ -5606,6 +5827,47 @@ def test_update_autonomous_exadata_infrastructure(testing_service_client):
             result,
             service_error,
             'autonomousExadataInfrastructure',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_update_autonomous_vm_cluster(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'UpdateAutonomousVmCluster'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'UpdateAutonomousVmCluster')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='UpdateAutonomousVmCluster')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.update_autonomous_vm_cluster(
+                autonomous_vm_cluster_id=request.pop(util.camelize('autonomousVmClusterId')),
+                update_autonomous_vm_cluster_details=request.pop(util.camelize('UpdateAutonomousVmClusterDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'UpdateAutonomousVmCluster',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousVmCluster',
             False,
             False
         )

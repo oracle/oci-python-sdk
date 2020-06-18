@@ -14,6 +14,14 @@ class UpdateBackupDestinationDetails(object):
     For an NFS backup destination, there are 2 mount types - Self mount used for non-autonomous ExaCC and automated mount used for autonomous on ExaCC.
     """
 
+    #: A constant which can be used with the nfs_mount_type property of a UpdateBackupDestinationDetails.
+    #: This constant has a value of "SELF_MOUNT"
+    NFS_MOUNT_TYPE_SELF_MOUNT = "SELF_MOUNT"
+
+    #: A constant which can be used with the nfs_mount_type property of a UpdateBackupDestinationDetails.
+    #: This constant has a value of "AUTOMATED_MOUNT"
+    NFS_MOUNT_TYPE_AUTOMATED_MOUNT = "AUTOMATED_MOUNT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateBackupDestinationDetails object with values from keyword arguments.
@@ -31,6 +39,19 @@ class UpdateBackupDestinationDetails(object):
             The value to assign to the local_mount_point_path property of this UpdateBackupDestinationDetails.
         :type local_mount_point_path: str
 
+        :param nfs_mount_type:
+            The value to assign to the nfs_mount_type property of this UpdateBackupDestinationDetails.
+            Allowed values for this property are: "SELF_MOUNT", "AUTOMATED_MOUNT"
+        :type nfs_mount_type: str
+
+        :param nfs_server:
+            The value to assign to the nfs_server property of this UpdateBackupDestinationDetails.
+        :type nfs_server: list[str]
+
+        :param nfs_server_export:
+            The value to assign to the nfs_server_export property of this UpdateBackupDestinationDetails.
+        :type nfs_server_export: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateBackupDestinationDetails.
         :type freeform_tags: dict(str, str)
@@ -44,6 +65,9 @@ class UpdateBackupDestinationDetails(object):
             'vpc_users': 'list[str]',
             'connection_string': 'str',
             'local_mount_point_path': 'str',
+            'nfs_mount_type': 'str',
+            'nfs_server': 'list[str]',
+            'nfs_server_export': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -52,6 +76,9 @@ class UpdateBackupDestinationDetails(object):
             'vpc_users': 'vpcUsers',
             'connection_string': 'connectionString',
             'local_mount_point_path': 'localMountPointPath',
+            'nfs_mount_type': 'nfsMountType',
+            'nfs_server': 'nfsServer',
+            'nfs_server_export': 'nfsServerExport',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -59,6 +86,9 @@ class UpdateBackupDestinationDetails(object):
         self._vpc_users = None
         self._connection_string = None
         self._local_mount_point_path = None
+        self._nfs_mount_type = None
+        self._nfs_server = None
+        self._nfs_server_export = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -133,6 +163,86 @@ class UpdateBackupDestinationDetails(object):
         :type: str
         """
         self._local_mount_point_path = local_mount_point_path
+
+    @property
+    def nfs_mount_type(self):
+        """
+        Gets the nfs_mount_type of this UpdateBackupDestinationDetails.
+        NFS Mount type for backup destination.
+
+        Allowed values for this property are: "SELF_MOUNT", "AUTOMATED_MOUNT"
+
+
+        :return: The nfs_mount_type of this UpdateBackupDestinationDetails.
+        :rtype: str
+        """
+        return self._nfs_mount_type
+
+    @nfs_mount_type.setter
+    def nfs_mount_type(self, nfs_mount_type):
+        """
+        Sets the nfs_mount_type of this UpdateBackupDestinationDetails.
+        NFS Mount type for backup destination.
+
+
+        :param nfs_mount_type: The nfs_mount_type of this UpdateBackupDestinationDetails.
+        :type: str
+        """
+        allowed_values = ["SELF_MOUNT", "AUTOMATED_MOUNT"]
+        if not value_allowed_none_or_none_sentinel(nfs_mount_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `nfs_mount_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._nfs_mount_type = nfs_mount_type
+
+    @property
+    def nfs_server(self):
+        """
+        Gets the nfs_server of this UpdateBackupDestinationDetails.
+        IP addresses for NFS Auto mount.
+
+
+        :return: The nfs_server of this UpdateBackupDestinationDetails.
+        :rtype: list[str]
+        """
+        return self._nfs_server
+
+    @nfs_server.setter
+    def nfs_server(self, nfs_server):
+        """
+        Sets the nfs_server of this UpdateBackupDestinationDetails.
+        IP addresses for NFS Auto mount.
+
+
+        :param nfs_server: The nfs_server of this UpdateBackupDestinationDetails.
+        :type: list[str]
+        """
+        self._nfs_server = nfs_server
+
+    @property
+    def nfs_server_export(self):
+        """
+        Gets the nfs_server_export of this UpdateBackupDestinationDetails.
+        Specifies the directory on which to mount the file system
+
+
+        :return: The nfs_server_export of this UpdateBackupDestinationDetails.
+        :rtype: str
+        """
+        return self._nfs_server_export
+
+    @nfs_server_export.setter
+    def nfs_server_export(self, nfs_server_export):
+        """
+        Sets the nfs_server_export of this UpdateBackupDestinationDetails.
+        Specifies the directory on which to mount the file system
+
+
+        :param nfs_server_export: The nfs_server_export of this UpdateBackupDestinationDetails.
+        :type: str
+        """
+        self._nfs_server_export = nfs_server_export
 
     @property
     def freeform_tags(self):
