@@ -4,12 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.16.2 - TBD
+2.17.0 - 2020-06-23
 ====================
 
 Added
 -----
-* TBD
+* Support for the Data Integration service
+* Support for updating database home IDs on databases in the Database service
+* Support for backing up autonomous databases on Cloud at Customer in the Database service
+* Support for managing autonomous VM clusters on Cloud at Customer in the Database service
+* Support for accessing data assets via private endpoints in the Data Catalog service
+* Support for dependency archive zip files to be specified for use by applications in the Data Flow service
+
+Breaking
+--------
+* Attribute `lifecycle_state` in the Data Catalog service has restricted values to "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"
+* Attribute `workflow_status` in the Data Catalog service has restricted values to "NEW", "APPROVED", "UNDER_REVIEW", "ESCALATED"
+* Attribute `schedule_type` in the Data Catalog service has restricted values to "SCHEDULED", "IMMEDIATE"
+* Attribute `job_type` in the Data Catalog service has restricted values to "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"
+* Attribute `harvest_status` in the Data Catalog service has restricted values to "COMPLETE", "ERROR", "IN_PROGRESS", "DEFERRED"
 
 ====================
 2.16.1 - 2020-06-16
