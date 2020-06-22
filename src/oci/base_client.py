@@ -59,6 +59,13 @@ def utc_now():
     return " " + str(datetime.utcnow()) + ": "
 
 
+def is_http_log_enabled(is_enabled):
+    if is_enabled:
+        six.moves.http_client.HTTPConnection.debuglevel = 1
+    else:
+        six.moves.http_client.HTTPConnection.debuglevel = 0
+
+
 STREAM_RESPONSE_TYPE = 'stream'
 BYTES_RESPONSE_TYPE = 'bytes'
 
@@ -135,10 +142,12 @@ class BaseClient(object):
         self.logger = logging.getLogger("{}.{}".format(__name__, id(self)))
         self.logger.addHandler(logging.NullHandler())
         if get_config_value_or_default(config, "log_requests"):
+            self.logger.disabled = False
             self.logger.setLevel(logging.DEBUG)
-            six.moves.http_client.HTTPConnection.debuglevel = 1
+            is_http_log_enabled(True)
         else:
-            six.moves.http_client.HTTPConnection.debuglevel = 0
+            self.logger.disabled = True
+            is_http_log_enabled(False)
 
         self.skip_deserialization = kwargs.get('skip_deserialization')
 
