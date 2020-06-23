@@ -13,6 +13,38 @@ class BaseTagSummary(object):
     Represents the association of an object to a term.
     """
 
+    #: A constant which can be used with the lifecycle_state property of a BaseTagSummary.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a BaseTagSummary.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a BaseTagSummary.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a BaseTagSummary.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the lifecycle_state property of a BaseTagSummary.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a BaseTagSummary.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
+
+    #: A constant which can be used with the lifecycle_state property of a BaseTagSummary.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
+
+    #: A constant which can be used with the lifecycle_state property of a BaseTagSummary.
+    #: This constant has a value of "MOVING"
+    LIFECYCLE_STATE_MOVING = "MOVING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new BaseTagSummary object with values from keyword arguments.
@@ -52,6 +84,7 @@ class BaseTagSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this BaseTagSummary.
+            Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"
         :type lifecycle_state: str
 
         """
@@ -293,6 +326,8 @@ class BaseTagSummary(object):
         Gets the lifecycle_state of this BaseTagSummary.
         State of the Tag.
 
+        Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"
+
 
         :return: The lifecycle_state of this BaseTagSummary.
         :rtype: str
@@ -309,6 +344,12 @@ class BaseTagSummary(object):
         :param lifecycle_state: The lifecycle_state of this BaseTagSummary.
         :type: str
         """
+        allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+            raise ValueError(
+                "Invalid value for `lifecycle_state`, must be None or one of {0}"
+                .format(allowed_values)
+            )
         self._lifecycle_state = lifecycle_state
 
     def __repr__(self):

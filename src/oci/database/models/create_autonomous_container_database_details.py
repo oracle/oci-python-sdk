@@ -34,6 +34,10 @@ class CreateAutonomousContainerDatabaseDetails(object):
             The value to assign to the display_name property of this CreateAutonomousContainerDatabaseDetails.
         :type display_name: str
 
+        :param db_unique_name:
+            The value to assign to the db_unique_name property of this CreateAutonomousContainerDatabaseDetails.
+        :type db_unique_name: str
+
         :param service_level_agreement_type:
             The value to assign to the service_level_agreement_type property of this CreateAutonomousContainerDatabaseDetails.
             Allowed values for this property are: "STANDARD"
@@ -42,6 +46,10 @@ class CreateAutonomousContainerDatabaseDetails(object):
         :param autonomous_exadata_infrastructure_id:
             The value to assign to the autonomous_exadata_infrastructure_id property of this CreateAutonomousContainerDatabaseDetails.
         :type autonomous_exadata_infrastructure_id: str
+
+        :param autonomous_vm_cluster_id:
+            The value to assign to the autonomous_vm_cluster_id property of this CreateAutonomousContainerDatabaseDetails.
+        :type autonomous_vm_cluster_id: str
 
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateAutonomousContainerDatabaseDetails.
@@ -71,8 +79,10 @@ class CreateAutonomousContainerDatabaseDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'db_unique_name': 'str',
             'service_level_agreement_type': 'str',
             'autonomous_exadata_infrastructure_id': 'str',
+            'autonomous_vm_cluster_id': 'str',
             'compartment_id': 'str',
             'patch_model': 'str',
             'maintenance_window_details': 'MaintenanceWindow',
@@ -83,8 +93,10 @@ class CreateAutonomousContainerDatabaseDetails(object):
 
         self.attribute_map = {
             'display_name': 'displayName',
+            'db_unique_name': 'dbUniqueName',
             'service_level_agreement_type': 'serviceLevelAgreementType',
             'autonomous_exadata_infrastructure_id': 'autonomousExadataInfrastructureId',
+            'autonomous_vm_cluster_id': 'autonomousVmClusterId',
             'compartment_id': 'compartmentId',
             'patch_model': 'patchModel',
             'maintenance_window_details': 'maintenanceWindowDetails',
@@ -94,8 +106,10 @@ class CreateAutonomousContainerDatabaseDetails(object):
         }
 
         self._display_name = None
+        self._db_unique_name = None
         self._service_level_agreement_type = None
         self._autonomous_exadata_infrastructure_id = None
+        self._autonomous_vm_cluster_id = None
         self._compartment_id = None
         self._patch_model = None
         self._maintenance_window_details = None
@@ -126,6 +140,30 @@ class CreateAutonomousContainerDatabaseDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def db_unique_name(self):
+        """
+        Gets the db_unique_name of this CreateAutonomousContainerDatabaseDetails.
+        The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+
+
+        :return: The db_unique_name of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: str
+        """
+        return self._db_unique_name
+
+    @db_unique_name.setter
+    def db_unique_name(self, db_unique_name):
+        """
+        Sets the db_unique_name of this CreateAutonomousContainerDatabaseDetails.
+        The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+
+
+        :param db_unique_name: The db_unique_name of this CreateAutonomousContainerDatabaseDetails.
+        :type: str
+        """
+        self._db_unique_name = db_unique_name
 
     @property
     def service_level_agreement_type(self):
@@ -162,7 +200,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
     @property
     def autonomous_exadata_infrastructure_id(self):
         """
-        **[Required]** Gets the autonomous_exadata_infrastructure_id of this CreateAutonomousContainerDatabaseDetails.
+        Gets the autonomous_exadata_infrastructure_id of this CreateAutonomousContainerDatabaseDetails.
         The OCID of the Autonomous Exadata Infrastructure.
 
 
@@ -182,6 +220,30 @@ class CreateAutonomousContainerDatabaseDetails(object):
         :type: str
         """
         self._autonomous_exadata_infrastructure_id = autonomous_exadata_infrastructure_id
+
+    @property
+    def autonomous_vm_cluster_id(self):
+        """
+        Gets the autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDetails.
+        The OCID of the Autonomous VM Cluster.
+
+
+        :return: The autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: str
+        """
+        return self._autonomous_vm_cluster_id
+
+    @autonomous_vm_cluster_id.setter
+    def autonomous_vm_cluster_id(self, autonomous_vm_cluster_id):
+        """
+        Sets the autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDetails.
+        The OCID of the Autonomous VM Cluster.
+
+
+        :param autonomous_vm_cluster_id: The autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDetails.
+        :type: str
+        """
+        self._autonomous_vm_cluster_id = autonomous_vm_cluster_id
 
     @property
     def compartment_id(self):

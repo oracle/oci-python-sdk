@@ -23,6 +23,14 @@ class CreateDbHomeWithDbSystemIdFromDatabaseDetails(CreateDbHomeBase):
             The value to assign to the display_name property of this CreateDbHomeWithDbSystemIdFromDatabaseDetails.
         :type display_name: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this CreateDbHomeWithDbSystemIdFromDatabaseDetails.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this CreateDbHomeWithDbSystemIdFromDatabaseDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param source:
             The value to assign to the source property of this CreateDbHomeWithDbSystemIdFromDatabaseDetails.
             Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE", "VM_CLUSTER_NEW"
@@ -39,6 +47,8 @@ class CreateDbHomeWithDbSystemIdFromDatabaseDetails(CreateDbHomeBase):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))',
             'source': 'str',
             'db_system_id': 'str',
             'database': 'CreateDatabaseFromAnotherDatabaseDetails'
@@ -46,12 +56,16 @@ class CreateDbHomeWithDbSystemIdFromDatabaseDetails(CreateDbHomeBase):
 
         self.attribute_map = {
             'display_name': 'displayName',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags',
             'source': 'source',
             'db_system_id': 'dbSystemId',
             'database': 'database'
         }
 
         self._display_name = None
+        self._freeform_tags = None
+        self._defined_tags = None
         self._source = None
         self._db_system_id = None
         self._database = None

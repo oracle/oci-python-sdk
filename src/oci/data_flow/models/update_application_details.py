@@ -51,6 +51,10 @@ class UpdateApplicationDetails(object):
             Allowed values for this property are: "SCALA", "JAVA", "PYTHON", "SQL"
         :type language: str
 
+        :param archive_uri:
+            The value to assign to the archive_uri property of this UpdateApplicationDetails.
+        :type archive_uri: str
+
         :param arguments:
             The value to assign to the arguments property of this UpdateApplicationDetails.
         :type arguments: list[str]
@@ -105,6 +109,7 @@ class UpdateApplicationDetails(object):
             'file_uri': 'str',
             'spark_version': 'str',
             'language': 'str',
+            'archive_uri': 'str',
             'arguments': 'list[str]',
             'configuration': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -124,6 +129,7 @@ class UpdateApplicationDetails(object):
             'file_uri': 'fileUri',
             'spark_version': 'sparkVersion',
             'language': 'language',
+            'archive_uri': 'archiveUri',
             'arguments': 'arguments',
             'configuration': 'configuration',
             'defined_tags': 'definedTags',
@@ -142,6 +148,7 @@ class UpdateApplicationDetails(object):
         self._file_uri = None
         self._spark_version = None
         self._language = None
+        self._archive_uri = None
         self._arguments = None
         self._configuration = None
         self._defined_tags = None
@@ -260,6 +267,32 @@ class UpdateApplicationDetails(object):
                 .format(allowed_values)
             )
         self._language = language
+
+    @property
+    def archive_uri(self):
+        """
+        Gets the archive_uri of this UpdateApplicationDetails.
+        An Oracle Cloud Infrastructure URI of an archive (zip) file that may used to support the execution of the application.
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+
+
+        :return: The archive_uri of this UpdateApplicationDetails.
+        :rtype: str
+        """
+        return self._archive_uri
+
+    @archive_uri.setter
+    def archive_uri(self, archive_uri):
+        """
+        Sets the archive_uri of this UpdateApplicationDetails.
+        An Oracle Cloud Infrastructure URI of an archive (zip) file that may used to support the execution of the application.
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+
+
+        :param archive_uri: The archive_uri of this UpdateApplicationDetails.
+        :type: str
+        """
+        self._archive_uri = archive_uri
 
     @property
     def arguments(self):

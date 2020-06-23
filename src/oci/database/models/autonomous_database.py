@@ -81,6 +81,14 @@ class AutonomousDatabase(object):
     #: This constant has a value of "UPGRADING"
     LIFECYCLE_STATE_UPGRADING = "UPGRADING"
 
+    #: A constant which can be used with the infrastructure_type property of a AutonomousDatabase.
+    #: This constant has a value of "CLOUD"
+    INFRASTRUCTURE_TYPE_CLOUD = "CLOUD"
+
+    #: A constant which can be used with the infrastructure_type property of a AutonomousDatabase.
+    #: This constant has a value of "CLOUD_AT_CUSTOMER"
+    INFRASTRUCTURE_TYPE_CLOUD_AT_CUSTOMER = "CLOUD_AT_CUSTOMER"
+
     #: A constant which can be used with the license_model property of a AutonomousDatabase.
     #: This constant has a value of "LICENSE_INCLUDED"
     LICENSE_MODEL_LICENSE_INCLUDED = "LICENSE_INCLUDED"
@@ -167,6 +175,12 @@ class AutonomousDatabase(object):
         :param data_storage_size_in_tbs:
             The value to assign to the data_storage_size_in_tbs property of this AutonomousDatabase.
         :type data_storage_size_in_tbs: int
+
+        :param infrastructure_type:
+            The value to assign to the infrastructure_type property of this AutonomousDatabase.
+            Allowed values for this property are: "CLOUD", "CLOUD_AT_CUSTOMER", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type infrastructure_type: str
 
         :param is_dedicated:
             The value to assign to the is_dedicated property of this AutonomousDatabase.
@@ -287,6 +301,7 @@ class AutonomousDatabase(object):
             'time_deletion_of_free_autonomous_database': 'datetime',
             'cpu_core_count': 'int',
             'data_storage_size_in_tbs': 'int',
+            'infrastructure_type': 'str',
             'is_dedicated': 'bool',
             'autonomous_container_database_id': 'str',
             'time_created': 'datetime',
@@ -326,6 +341,7 @@ class AutonomousDatabase(object):
             'time_deletion_of_free_autonomous_database': 'timeDeletionOfFreeAutonomousDatabase',
             'cpu_core_count': 'cpuCoreCount',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
+            'infrastructure_type': 'infrastructureType',
             'is_dedicated': 'isDedicated',
             'autonomous_container_database_id': 'autonomousContainerDatabaseId',
             'time_created': 'timeCreated',
@@ -364,6 +380,7 @@ class AutonomousDatabase(object):
         self._time_deletion_of_free_autonomous_database = None
         self._cpu_core_count = None
         self._data_storage_size_in_tbs = None
+        self._infrastructure_type = None
         self._is_dedicated = None
         self._autonomous_container_database_id = None
         self._time_created = None
@@ -673,6 +690,36 @@ class AutonomousDatabase(object):
         :type: int
         """
         self._data_storage_size_in_tbs = data_storage_size_in_tbs
+
+    @property
+    def infrastructure_type(self):
+        """
+        Gets the infrastructure_type of this AutonomousDatabase.
+        The infrastructure type this resource belongs to.
+
+        Allowed values for this property are: "CLOUD", "CLOUD_AT_CUSTOMER", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The infrastructure_type of this AutonomousDatabase.
+        :rtype: str
+        """
+        return self._infrastructure_type
+
+    @infrastructure_type.setter
+    def infrastructure_type(self, infrastructure_type):
+        """
+        Sets the infrastructure_type of this AutonomousDatabase.
+        The infrastructure type this resource belongs to.
+
+
+        :param infrastructure_type: The infrastructure_type of this AutonomousDatabase.
+        :type: str
+        """
+        allowed_values = ["CLOUD", "CLOUD_AT_CUSTOMER"]
+        if not value_allowed_none_or_none_sentinel(infrastructure_type, allowed_values):
+            infrastructure_type = 'UNKNOWN_ENUM_VALUE'
+        self._infrastructure_type = infrastructure_type
 
     @property
     def is_dedicated(self):

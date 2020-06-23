@@ -6,6 +6,7 @@ from __future__ import absolute_import
 
 from .activate_exadata_infrastructure_details import ActivateExadataInfrastructureDetails
 from .associated_database_details import AssociatedDatabaseDetails
+from .automated_mount_details import AutomatedMountDetails
 from .autonomous_container_database import AutonomousContainerDatabase
 from .autonomous_container_database_backup_config import AutonomousContainerDatabaseBackupConfig
 from .autonomous_container_database_summary import AutonomousContainerDatabaseSummary
@@ -28,11 +29,14 @@ from .autonomous_db_version_summary import AutonomousDbVersionSummary
 from .autonomous_exadata_infrastructure import AutonomousExadataInfrastructure
 from .autonomous_exadata_infrastructure_shape_summary import AutonomousExadataInfrastructureShapeSummary
 from .autonomous_exadata_infrastructure_summary import AutonomousExadataInfrastructureSummary
+from .autonomous_vm_cluster import AutonomousVmCluster
+from .autonomous_vm_cluster_summary import AutonomousVmClusterSummary
 from .backup import Backup
 from .backup_destination import BackupDestination
 from .backup_destination_details import BackupDestinationDetails
 from .backup_destination_summary import BackupDestinationSummary
 from .backup_summary import BackupSummary
+from .change_autonomous_vm_cluster_compartment_details import ChangeAutonomousVmClusterCompartmentDetails
 from .change_compartment_details import ChangeCompartmentDetails
 from .change_exadata_infrastructure_compartment_details import ChangeExadataInfrastructureCompartmentDetails
 from .change_vm_cluster_compartment_details import ChangeVmClusterCompartmentDetails
@@ -48,6 +52,7 @@ from .create_autonomous_database_clone_details import CreateAutonomousDatabaseCl
 from .create_autonomous_database_details import CreateAutonomousDatabaseDetails
 from .create_autonomous_database_from_backup_details import CreateAutonomousDatabaseFromBackupDetails
 from .create_autonomous_database_from_backup_timestamp_details import CreateAutonomousDatabaseFromBackupTimestampDetails
+from .create_autonomous_vm_cluster_details import CreateAutonomousVmClusterDetails
 from .create_backup_destination_details import CreateBackupDestinationDetails
 from .create_backup_details import CreateBackupDetails
 from .create_console_connection_details import CreateConsoleConnectionDetails
@@ -111,6 +116,7 @@ from .maintenance_run import MaintenanceRun
 from .maintenance_run_summary import MaintenanceRunSummary
 from .maintenance_window import MaintenanceWindow
 from .month import Month
+from .mount_type_details import MountTypeDetails
 from .node_details import NodeDetails
 from .ocp_us import OCPUs
 from .patch import Patch
@@ -123,12 +129,14 @@ from .restore_autonomous_data_warehouse_details import RestoreAutonomousDataWare
 from .restore_autonomous_database_details import RestoreAutonomousDatabaseDetails
 from .restore_database_details import RestoreDatabaseDetails
 from .scan_details import ScanDetails
+from .self_mount_details import SelfMountDetails
 from .switchover_data_guard_association_details import SwitchoverDataGuardAssociationDetails
 from .update_autonomous_container_database_details import UpdateAutonomousContainerDatabaseDetails
 from .update_autonomous_data_warehouse_details import UpdateAutonomousDataWarehouseDetails
 from .update_autonomous_database_details import UpdateAutonomousDatabaseDetails
 from .update_autonomous_database_wallet_details import UpdateAutonomousDatabaseWalletDetails
 from .update_autonomous_exadata_infrastructure_details import UpdateAutonomousExadataInfrastructureDetails
+from .update_autonomous_vm_cluster_details import UpdateAutonomousVmClusterDetails
 from .update_backup_destination_details import UpdateBackupDestinationDetails
 from .update_database_details import UpdateDatabaseDetails
 from .update_db_home_details import UpdateDbHomeDetails
@@ -149,6 +157,7 @@ from .workload_type import WorkloadType
 database_type_mapping = {
     "ActivateExadataInfrastructureDetails": ActivateExadataInfrastructureDetails,
     "AssociatedDatabaseDetails": AssociatedDatabaseDetails,
+    "AutomatedMountDetails": AutomatedMountDetails,
     "AutonomousContainerDatabase": AutonomousContainerDatabase,
     "AutonomousContainerDatabaseBackupConfig": AutonomousContainerDatabaseBackupConfig,
     "AutonomousContainerDatabaseSummary": AutonomousContainerDatabaseSummary,
@@ -171,11 +180,14 @@ database_type_mapping = {
     "AutonomousExadataInfrastructure": AutonomousExadataInfrastructure,
     "AutonomousExadataInfrastructureShapeSummary": AutonomousExadataInfrastructureShapeSummary,
     "AutonomousExadataInfrastructureSummary": AutonomousExadataInfrastructureSummary,
+    "AutonomousVmCluster": AutonomousVmCluster,
+    "AutonomousVmClusterSummary": AutonomousVmClusterSummary,
     "Backup": Backup,
     "BackupDestination": BackupDestination,
     "BackupDestinationDetails": BackupDestinationDetails,
     "BackupDestinationSummary": BackupDestinationSummary,
     "BackupSummary": BackupSummary,
+    "ChangeAutonomousVmClusterCompartmentDetails": ChangeAutonomousVmClusterCompartmentDetails,
     "ChangeCompartmentDetails": ChangeCompartmentDetails,
     "ChangeExadataInfrastructureCompartmentDetails": ChangeExadataInfrastructureCompartmentDetails,
     "ChangeVmClusterCompartmentDetails": ChangeVmClusterCompartmentDetails,
@@ -191,6 +203,7 @@ database_type_mapping = {
     "CreateAutonomousDatabaseDetails": CreateAutonomousDatabaseDetails,
     "CreateAutonomousDatabaseFromBackupDetails": CreateAutonomousDatabaseFromBackupDetails,
     "CreateAutonomousDatabaseFromBackupTimestampDetails": CreateAutonomousDatabaseFromBackupTimestampDetails,
+    "CreateAutonomousVmClusterDetails": CreateAutonomousVmClusterDetails,
     "CreateBackupDestinationDetails": CreateBackupDestinationDetails,
     "CreateBackupDetails": CreateBackupDetails,
     "CreateConsoleConnectionDetails": CreateConsoleConnectionDetails,
@@ -254,6 +267,7 @@ database_type_mapping = {
     "MaintenanceRunSummary": MaintenanceRunSummary,
     "MaintenanceWindow": MaintenanceWindow,
     "Month": Month,
+    "MountTypeDetails": MountTypeDetails,
     "NodeDetails": NodeDetails,
     "OCPUs": OCPUs,
     "Patch": Patch,
@@ -266,12 +280,14 @@ database_type_mapping = {
     "RestoreAutonomousDatabaseDetails": RestoreAutonomousDatabaseDetails,
     "RestoreDatabaseDetails": RestoreDatabaseDetails,
     "ScanDetails": ScanDetails,
+    "SelfMountDetails": SelfMountDetails,
     "SwitchoverDataGuardAssociationDetails": SwitchoverDataGuardAssociationDetails,
     "UpdateAutonomousContainerDatabaseDetails": UpdateAutonomousContainerDatabaseDetails,
     "UpdateAutonomousDataWarehouseDetails": UpdateAutonomousDataWarehouseDetails,
     "UpdateAutonomousDatabaseDetails": UpdateAutonomousDatabaseDetails,
     "UpdateAutonomousDatabaseWalletDetails": UpdateAutonomousDatabaseWalletDetails,
     "UpdateAutonomousExadataInfrastructureDetails": UpdateAutonomousExadataInfrastructureDetails,
+    "UpdateAutonomousVmClusterDetails": UpdateAutonomousVmClusterDetails,
     "UpdateBackupDestinationDetails": UpdateBackupDestinationDetails,
     "UpdateDatabaseDetails": UpdateDatabaseDetails,
     "UpdateDbHomeDetails": UpdateDbHomeDetails,

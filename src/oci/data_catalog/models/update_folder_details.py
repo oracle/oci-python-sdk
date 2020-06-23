@@ -13,6 +13,22 @@ class UpdateFolderDetails(object):
     Properties used in folder update operations.
     """
 
+    #: A constant which can be used with the harvest_status property of a UpdateFolderDetails.
+    #: This constant has a value of "COMPLETE"
+    HARVEST_STATUS_COMPLETE = "COMPLETE"
+
+    #: A constant which can be used with the harvest_status property of a UpdateFolderDetails.
+    #: This constant has a value of "ERROR"
+    HARVEST_STATUS_ERROR = "ERROR"
+
+    #: A constant which can be used with the harvest_status property of a UpdateFolderDetails.
+    #: This constant has a value of "IN_PROGRESS"
+    HARVEST_STATUS_IN_PROGRESS = "IN_PROGRESS"
+
+    #: A constant which can be used with the harvest_status property of a UpdateFolderDetails.
+    #: This constant has a value of "DEFERRED"
+    HARVEST_STATUS_DEFERRED = "DEFERRED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateFolderDetails object with values from keyword arguments.
@@ -40,6 +56,7 @@ class UpdateFolderDetails(object):
 
         :param harvest_status:
             The value to assign to the harvest_status property of this UpdateFolderDetails.
+            Allowed values for this property are: "COMPLETE", "ERROR", "IN_PROGRESS", "DEFERRED"
         :type harvest_status: str
 
         :param last_job_key:
@@ -217,6 +234,8 @@ class UpdateFolderDetails(object):
         Gets the harvest_status of this UpdateFolderDetails.
         Harvest status of the folder.
 
+        Allowed values for this property are: "COMPLETE", "ERROR", "IN_PROGRESS", "DEFERRED"
+
 
         :return: The harvest_status of this UpdateFolderDetails.
         :rtype: str
@@ -233,6 +252,12 @@ class UpdateFolderDetails(object):
         :param harvest_status: The harvest_status of this UpdateFolderDetails.
         :type: str
         """
+        allowed_values = ["COMPLETE", "ERROR", "IN_PROGRESS", "DEFERRED"]
+        if not value_allowed_none_or_none_sentinel(harvest_status, allowed_values):
+            raise ValueError(
+                "Invalid value for `harvest_status`, must be None or one of {0}"
+                .format(allowed_values)
+            )
         self._harvest_status = harvest_status
 
     @property

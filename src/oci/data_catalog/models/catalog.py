@@ -13,6 +13,38 @@ class Catalog(object):
     A data catalog enables you to collect, organize, find, access, understand, enrich, and activate technical, business, and operational metadata.
     """
 
+    #: A constant which can be used with the lifecycle_state property of a Catalog.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a Catalog.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a Catalog.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a Catalog.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the lifecycle_state property of a Catalog.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a Catalog.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
+
+    #: A constant which can be used with the lifecycle_state property of a Catalog.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
+
+    #: A constant which can be used with the lifecycle_state property of a Catalog.
+    #: This constant has a value of "MOVING"
+    LIFECYCLE_STATE_MOVING = "MOVING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Catalog object with values from keyword arguments.
@@ -52,6 +84,8 @@ class Catalog(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Catalog.
+            Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param lifecycle_details:
@@ -66,6 +100,10 @@ class Catalog(object):
             The value to assign to the defined_tags property of this Catalog.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param attached_catalog_private_endpoints:
+            The value to assign to the attached_catalog_private_endpoints property of this Catalog.
+        :type attached_catalog_private_endpoints: list[str]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -79,7 +117,8 @@ class Catalog(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'attached_catalog_private_endpoints': 'list[str]'
         }
 
         self.attribute_map = {
@@ -94,7 +133,8 @@ class Catalog(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'attached_catalog_private_endpoints': 'attachedCatalogPrivateEndpoints'
         }
 
         self._id = None
@@ -109,6 +149,7 @@ class Catalog(object):
         self._lifecycle_details = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._attached_catalog_private_endpoints = None
 
     @property
     def id(self):
@@ -318,6 +359,9 @@ class Catalog(object):
         Gets the lifecycle_state of this Catalog.
         The current state of the data catalog resource.
 
+        Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
 
         :return: The lifecycle_state of this Catalog.
         :rtype: str
@@ -334,6 +378,9 @@ class Catalog(object):
         :param lifecycle_state: The lifecycle_state of this Catalog.
         :type: str
         """
+        allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
     @property
@@ -413,6 +460,30 @@ class Catalog(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def attached_catalog_private_endpoints(self):
+        """
+        Gets the attached_catalog_private_endpoints of this Catalog.
+        The list of private reverse connection endpoints attached to the catalog
+
+
+        :return: The attached_catalog_private_endpoints of this Catalog.
+        :rtype: list[str]
+        """
+        return self._attached_catalog_private_endpoints
+
+    @attached_catalog_private_endpoints.setter
+    def attached_catalog_private_endpoints(self, attached_catalog_private_endpoints):
+        """
+        Sets the attached_catalog_private_endpoints of this Catalog.
+        The list of private reverse connection endpoints attached to the catalog
+
+
+        :param attached_catalog_private_endpoints: The attached_catalog_private_endpoints of this Catalog.
+        :type: list[str]
+        """
+        self._attached_catalog_private_endpoints = attached_catalog_private_endpoints
 
     def __repr__(self):
         return formatted_flat_dict(self)

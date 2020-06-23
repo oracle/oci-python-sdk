@@ -44,6 +44,10 @@ class CreateNFSBackupDestinationDetails(CreateBackupDestinationDetails):
             The value to assign to the local_mount_point_path property of this CreateNFSBackupDestinationDetails.
         :type local_mount_point_path: str
 
+        :param mount_type_details:
+            The value to assign to the mount_type_details property of this CreateNFSBackupDestinationDetails.
+        :type mount_type_details: MountTypeDetails
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -51,7 +55,8 @@ class CreateNFSBackupDestinationDetails(CreateBackupDestinationDetails):
             'type': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'local_mount_point_path': 'str'
+            'local_mount_point_path': 'str',
+            'mount_type_details': 'MountTypeDetails'
         }
 
         self.attribute_map = {
@@ -60,7 +65,8 @@ class CreateNFSBackupDestinationDetails(CreateBackupDestinationDetails):
             'type': 'type',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'local_mount_point_path': 'localMountPointPath'
+            'local_mount_point_path': 'localMountPointPath',
+            'mount_type_details': 'mountTypeDetails'
         }
 
         self._display_name = None
@@ -69,13 +75,15 @@ class CreateNFSBackupDestinationDetails(CreateBackupDestinationDetails):
         self._freeform_tags = None
         self._defined_tags = None
         self._local_mount_point_path = None
+        self._mount_type_details = None
         self._type = 'NFS'
 
     @property
     def local_mount_point_path(self):
         """
-        **[Required]** Gets the local_mount_point_path of this CreateNFSBackupDestinationDetails.
-        The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+        Gets the local_mount_point_path of this CreateNFSBackupDestinationDetails.
+        **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+        This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
 
 
         :return: The local_mount_point_path of this CreateNFSBackupDestinationDetails.
@@ -87,13 +95,34 @@ class CreateNFSBackupDestinationDetails(CreateBackupDestinationDetails):
     def local_mount_point_path(self, local_mount_point_path):
         """
         Sets the local_mount_point_path of this CreateNFSBackupDestinationDetails.
-        The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+        **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+        This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
 
 
         :param local_mount_point_path: The local_mount_point_path of this CreateNFSBackupDestinationDetails.
         :type: str
         """
         self._local_mount_point_path = local_mount_point_path
+
+    @property
+    def mount_type_details(self):
+        """
+        Gets the mount_type_details of this CreateNFSBackupDestinationDetails.
+
+        :return: The mount_type_details of this CreateNFSBackupDestinationDetails.
+        :rtype: MountTypeDetails
+        """
+        return self._mount_type_details
+
+    @mount_type_details.setter
+    def mount_type_details(self, mount_type_details):
+        """
+        Sets the mount_type_details of this CreateNFSBackupDestinationDetails.
+
+        :param mount_type_details: The mount_type_details of this CreateNFSBackupDestinationDetails.
+        :type: MountTypeDetails
+        """
+        self._mount_type_details = mount_type_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

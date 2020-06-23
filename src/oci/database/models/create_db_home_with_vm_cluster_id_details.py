@@ -23,6 +23,14 @@ class CreateDbHomeWithVmClusterIdDetails(CreateDbHomeBase):
             The value to assign to the display_name property of this CreateDbHomeWithVmClusterIdDetails.
         :type display_name: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this CreateDbHomeWithVmClusterIdDetails.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this CreateDbHomeWithVmClusterIdDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param source:
             The value to assign to the source property of this CreateDbHomeWithVmClusterIdDetails.
             Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE", "VM_CLUSTER_NEW"
@@ -43,6 +51,8 @@ class CreateDbHomeWithVmClusterIdDetails(CreateDbHomeBase):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))',
             'source': 'str',
             'vm_cluster_id': 'str',
             'db_version': 'str',
@@ -51,6 +61,8 @@ class CreateDbHomeWithVmClusterIdDetails(CreateDbHomeBase):
 
         self.attribute_map = {
             'display_name': 'displayName',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags',
             'source': 'source',
             'vm_cluster_id': 'vmClusterId',
             'db_version': 'dbVersion',
@@ -58,6 +70,8 @@ class CreateDbHomeWithVmClusterIdDetails(CreateDbHomeBase):
         }
 
         self._display_name = None
+        self._freeform_tags = None
+        self._defined_tags = None
         self._source = None
         self._vm_cluster_id = None
         self._db_version = None

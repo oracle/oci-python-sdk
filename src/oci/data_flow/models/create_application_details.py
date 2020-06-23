@@ -34,6 +34,10 @@ class CreateApplicationDetails(object):
         Initializes a new CreateApplicationDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param archive_uri:
+            The value to assign to the archive_uri property of this CreateApplicationDetails.
+        :type archive_uri: str
+
         :param arguments:
             The value to assign to the arguments property of this CreateApplicationDetails.
         :type arguments: list[str]
@@ -105,6 +109,7 @@ class CreateApplicationDetails(object):
 
         """
         self.swagger_types = {
+            'archive_uri': 'str',
             'arguments': 'list[str]',
             'class_name': 'str',
             'compartment_id': 'str',
@@ -125,6 +130,7 @@ class CreateApplicationDetails(object):
         }
 
         self.attribute_map = {
+            'archive_uri': 'archiveUri',
             'arguments': 'arguments',
             'class_name': 'className',
             'compartment_id': 'compartmentId',
@@ -144,6 +150,7 @@ class CreateApplicationDetails(object):
             'warehouse_bucket_uri': 'warehouseBucketUri'
         }
 
+        self._archive_uri = None
         self._arguments = None
         self._class_name = None
         self._compartment_id = None
@@ -161,6 +168,32 @@ class CreateApplicationDetails(object):
         self._parameters = None
         self._spark_version = None
         self._warehouse_bucket_uri = None
+
+    @property
+    def archive_uri(self):
+        """
+        Gets the archive_uri of this CreateApplicationDetails.
+        An Oracle Cloud Infrastructure URI of an archive (zip) file that may used to support the execution of the application.
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+
+
+        :return: The archive_uri of this CreateApplicationDetails.
+        :rtype: str
+        """
+        return self._archive_uri
+
+    @archive_uri.setter
+    def archive_uri(self, archive_uri):
+        """
+        Sets the archive_uri of this CreateApplicationDetails.
+        An Oracle Cloud Infrastructure URI of an archive (zip) file that may used to support the execution of the application.
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+
+
+        :param archive_uri: The archive_uri of this CreateApplicationDetails.
+        :type: str
+        """
+        self._archive_uri = archive_uri
 
     @property
     def arguments(self):

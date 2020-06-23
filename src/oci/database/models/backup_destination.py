@@ -21,6 +21,14 @@ class BackupDestination(object):
     #: This constant has a value of "RECOVERY_APPLIANCE"
     TYPE_RECOVERY_APPLIANCE = "RECOVERY_APPLIANCE"
 
+    #: A constant which can be used with the nfs_mount_type property of a BackupDestination.
+    #: This constant has a value of "SELF_MOUNT"
+    NFS_MOUNT_TYPE_SELF_MOUNT = "SELF_MOUNT"
+
+    #: A constant which can be used with the nfs_mount_type property of a BackupDestination.
+    #: This constant has a value of "AUTOMATED_MOUNT"
+    NFS_MOUNT_TYPE_AUTOMATED_MOUNT = "AUTOMATED_MOUNT"
+
     #: A constant which can be used with the lifecycle_state property of a BackupDestination.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -72,6 +80,20 @@ class BackupDestination(object):
             The value to assign to the local_mount_point_path property of this BackupDestination.
         :type local_mount_point_path: str
 
+        :param nfs_mount_type:
+            The value to assign to the nfs_mount_type property of this BackupDestination.
+            Allowed values for this property are: "SELF_MOUNT", "AUTOMATED_MOUNT", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type nfs_mount_type: str
+
+        :param nfs_server:
+            The value to assign to the nfs_server property of this BackupDestination.
+        :type nfs_server: list[str]
+
+        :param nfs_server_export:
+            The value to assign to the nfs_server_export property of this BackupDestination.
+        :type nfs_server_export: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this BackupDestination.
             Allowed values for this property are: "ACTIVE", "FAILED", "DELETED", 'UNKNOWN_ENUM_VALUE'.
@@ -104,6 +126,9 @@ class BackupDestination(object):
             'connection_string': 'str',
             'vpc_users': 'list[str]',
             'local_mount_point_path': 'str',
+            'nfs_mount_type': 'str',
+            'nfs_server': 'list[str]',
+            'nfs_server_export': 'str',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'lifecycle_details': 'str',
@@ -120,6 +145,9 @@ class BackupDestination(object):
             'connection_string': 'connectionString',
             'vpc_users': 'vpcUsers',
             'local_mount_point_path': 'localMountPointPath',
+            'nfs_mount_type': 'nfsMountType',
+            'nfs_server': 'nfsServer',
+            'nfs_server_export': 'nfsServerExport',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'lifecycle_details': 'lifecycleDetails',
@@ -135,6 +163,9 @@ class BackupDestination(object):
         self._connection_string = None
         self._vpc_users = None
         self._local_mount_point_path = None
+        self._nfs_mount_type = None
+        self._nfs_server = None
+        self._nfs_server_export = None
         self._lifecycle_state = None
         self._time_created = None
         self._lifecycle_details = None
@@ -346,6 +377,84 @@ class BackupDestination(object):
         :type: str
         """
         self._local_mount_point_path = local_mount_point_path
+
+    @property
+    def nfs_mount_type(self):
+        """
+        Gets the nfs_mount_type of this BackupDestination.
+        NFS Mount type for backup destination.
+
+        Allowed values for this property are: "SELF_MOUNT", "AUTOMATED_MOUNT", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The nfs_mount_type of this BackupDestination.
+        :rtype: str
+        """
+        return self._nfs_mount_type
+
+    @nfs_mount_type.setter
+    def nfs_mount_type(self, nfs_mount_type):
+        """
+        Sets the nfs_mount_type of this BackupDestination.
+        NFS Mount type for backup destination.
+
+
+        :param nfs_mount_type: The nfs_mount_type of this BackupDestination.
+        :type: str
+        """
+        allowed_values = ["SELF_MOUNT", "AUTOMATED_MOUNT"]
+        if not value_allowed_none_or_none_sentinel(nfs_mount_type, allowed_values):
+            nfs_mount_type = 'UNKNOWN_ENUM_VALUE'
+        self._nfs_mount_type = nfs_mount_type
+
+    @property
+    def nfs_server(self):
+        """
+        Gets the nfs_server of this BackupDestination.
+        Host names or IP addresses for NFS Auto mount.
+
+
+        :return: The nfs_server of this BackupDestination.
+        :rtype: list[str]
+        """
+        return self._nfs_server
+
+    @nfs_server.setter
+    def nfs_server(self, nfs_server):
+        """
+        Sets the nfs_server of this BackupDestination.
+        Host names or IP addresses for NFS Auto mount.
+
+
+        :param nfs_server: The nfs_server of this BackupDestination.
+        :type: list[str]
+        """
+        self._nfs_server = nfs_server
+
+    @property
+    def nfs_server_export(self):
+        """
+        Gets the nfs_server_export of this BackupDestination.
+        Specifies the directory on which to mount the file system
+
+
+        :return: The nfs_server_export of this BackupDestination.
+        :rtype: str
+        """
+        return self._nfs_server_export
+
+    @nfs_server_export.setter
+    def nfs_server_export(self, nfs_server_export):
+        """
+        Sets the nfs_server_export of this BackupDestination.
+        Specifies the directory on which to mount the file system
+
+
+        :param nfs_server_export: The nfs_server_export of this BackupDestination.
+        :type: str
+        """
+        self._nfs_server_export = nfs_server_export
 
     @property
     def lifecycle_state(self):

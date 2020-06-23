@@ -15,6 +15,58 @@ class CreateJobDefinitionDetails(object):
     object type, regular expressions, or specific names of objects and a sample size for the data harvested.
     """
 
+    #: A constant which can be used with the job_type property of a CreateJobDefinitionDetails.
+    #: This constant has a value of "HARVEST"
+    JOB_TYPE_HARVEST = "HARVEST"
+
+    #: A constant which can be used with the job_type property of a CreateJobDefinitionDetails.
+    #: This constant has a value of "PROFILING"
+    JOB_TYPE_PROFILING = "PROFILING"
+
+    #: A constant which can be used with the job_type property of a CreateJobDefinitionDetails.
+    #: This constant has a value of "SAMPLING"
+    JOB_TYPE_SAMPLING = "SAMPLING"
+
+    #: A constant which can be used with the job_type property of a CreateJobDefinitionDetails.
+    #: This constant has a value of "PREVIEW"
+    JOB_TYPE_PREVIEW = "PREVIEW"
+
+    #: A constant which can be used with the job_type property of a CreateJobDefinitionDetails.
+    #: This constant has a value of "IMPORT"
+    JOB_TYPE_IMPORT = "IMPORT"
+
+    #: A constant which can be used with the job_type property of a CreateJobDefinitionDetails.
+    #: This constant has a value of "EXPORT"
+    JOB_TYPE_EXPORT = "EXPORT"
+
+    #: A constant which can be used with the job_type property of a CreateJobDefinitionDetails.
+    #: This constant has a value of "INTERNAL"
+    JOB_TYPE_INTERNAL = "INTERNAL"
+
+    #: A constant which can be used with the job_type property of a CreateJobDefinitionDetails.
+    #: This constant has a value of "PURGE"
+    JOB_TYPE_PURGE = "PURGE"
+
+    #: A constant which can be used with the job_type property of a CreateJobDefinitionDetails.
+    #: This constant has a value of "IMMEDIATE"
+    JOB_TYPE_IMMEDIATE = "IMMEDIATE"
+
+    #: A constant which can be used with the job_type property of a CreateJobDefinitionDetails.
+    #: This constant has a value of "SCHEDULED"
+    JOB_TYPE_SCHEDULED = "SCHEDULED"
+
+    #: A constant which can be used with the job_type property of a CreateJobDefinitionDetails.
+    #: This constant has a value of "IMMEDIATE_EXECUTION"
+    JOB_TYPE_IMMEDIATE_EXECUTION = "IMMEDIATE_EXECUTION"
+
+    #: A constant which can be used with the job_type property of a CreateJobDefinitionDetails.
+    #: This constant has a value of "SCHEDULED_EXECUTION"
+    JOB_TYPE_SCHEDULED_EXECUTION = "SCHEDULED_EXECUTION"
+
+    #: A constant which can be used with the job_type property of a CreateJobDefinitionDetails.
+    #: This constant has a value of "SCHEDULED_EXECUTION_INSTANCE"
+    JOB_TYPE_SCHEDULED_EXECUTION_INSTANCE = "SCHEDULED_EXECUTION_INSTANCE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateJobDefinitionDetails object with values from keyword arguments.
@@ -30,6 +82,7 @@ class CreateJobDefinitionDetails(object):
 
         :param job_type:
             The value to assign to the job_type property of this CreateJobDefinitionDetails.
+            Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"
         :type job_type: str
 
         :param is_incremental:
@@ -147,6 +200,8 @@ class CreateJobDefinitionDetails(object):
         **[Required]** Gets the job_type of this CreateJobDefinitionDetails.
         Type of the job definition.
 
+        Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"
+
 
         :return: The job_type of this CreateJobDefinitionDetails.
         :rtype: str
@@ -163,6 +218,12 @@ class CreateJobDefinitionDetails(object):
         :param job_type: The job_type of this CreateJobDefinitionDetails.
         :type: str
         """
+        allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"]
+        if not value_allowed_none_or_none_sentinel(job_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `job_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
         self._job_type = job_type
 
     @property
