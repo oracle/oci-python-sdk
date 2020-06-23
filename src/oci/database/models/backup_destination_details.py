@@ -52,25 +52,32 @@ class BackupDestinationDetails(object):
             The value to assign to the vpc_password property of this BackupDestinationDetails.
         :type vpc_password: str
 
+        :param internet_proxy:
+            The value to assign to the internet_proxy property of this BackupDestinationDetails.
+        :type internet_proxy: str
+
         """
         self.swagger_types = {
             'type': 'str',
             'id': 'str',
             'vpc_user': 'str',
-            'vpc_password': 'str'
+            'vpc_password': 'str',
+            'internet_proxy': 'str'
         }
 
         self.attribute_map = {
             'type': 'type',
             'id': 'id',
             'vpc_user': 'vpcUser',
-            'vpc_password': 'vpcPassword'
+            'vpc_password': 'vpcPassword',
+            'internet_proxy': 'internetProxy'
         }
 
         self._type = None
         self._id = None
         self._vpc_user = None
         self._vpc_password = None
+        self._internet_proxy = None
 
     @property
     def type(self):
@@ -177,6 +184,30 @@ class BackupDestinationDetails(object):
         :type: str
         """
         self._vpc_password = vpc_password
+
+    @property
+    def internet_proxy(self):
+        """
+        Gets the internet_proxy of this BackupDestinationDetails.
+        Proxy URL to connect to object store.
+
+
+        :return: The internet_proxy of this BackupDestinationDetails.
+        :rtype: str
+        """
+        return self._internet_proxy
+
+    @internet_proxy.setter
+    def internet_proxy(self, internet_proxy):
+        """
+        Sets the internet_proxy of this BackupDestinationDetails.
+        Proxy URL to connect to object store.
+
+
+        :param internet_proxy: The internet_proxy of this BackupDestinationDetails.
+        :type: str
+        """
+        self._internet_proxy = internet_proxy
 
     def __repr__(self):
         return formatted_flat_dict(self)

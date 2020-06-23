@@ -13,6 +13,70 @@ class JobSummary(object):
     Details of a job. Jobs are scheduled instances of a job definition.
     """
 
+    #: A constant which can be used with the lifecycle_state property of a JobSummary.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a JobSummary.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a JobSummary.
+    #: This constant has a value of "EXPIRED"
+    LIFECYCLE_STATE_EXPIRED = "EXPIRED"
+
+    #: A constant which can be used with the job_type property of a JobSummary.
+    #: This constant has a value of "HARVEST"
+    JOB_TYPE_HARVEST = "HARVEST"
+
+    #: A constant which can be used with the job_type property of a JobSummary.
+    #: This constant has a value of "PROFILING"
+    JOB_TYPE_PROFILING = "PROFILING"
+
+    #: A constant which can be used with the job_type property of a JobSummary.
+    #: This constant has a value of "SAMPLING"
+    JOB_TYPE_SAMPLING = "SAMPLING"
+
+    #: A constant which can be used with the job_type property of a JobSummary.
+    #: This constant has a value of "PREVIEW"
+    JOB_TYPE_PREVIEW = "PREVIEW"
+
+    #: A constant which can be used with the job_type property of a JobSummary.
+    #: This constant has a value of "IMPORT"
+    JOB_TYPE_IMPORT = "IMPORT"
+
+    #: A constant which can be used with the job_type property of a JobSummary.
+    #: This constant has a value of "EXPORT"
+    JOB_TYPE_EXPORT = "EXPORT"
+
+    #: A constant which can be used with the job_type property of a JobSummary.
+    #: This constant has a value of "INTERNAL"
+    JOB_TYPE_INTERNAL = "INTERNAL"
+
+    #: A constant which can be used with the job_type property of a JobSummary.
+    #: This constant has a value of "PURGE"
+    JOB_TYPE_PURGE = "PURGE"
+
+    #: A constant which can be used with the job_type property of a JobSummary.
+    #: This constant has a value of "IMMEDIATE"
+    JOB_TYPE_IMMEDIATE = "IMMEDIATE"
+
+    #: A constant which can be used with the job_type property of a JobSummary.
+    #: This constant has a value of "SCHEDULED"
+    JOB_TYPE_SCHEDULED = "SCHEDULED"
+
+    #: A constant which can be used with the job_type property of a JobSummary.
+    #: This constant has a value of "IMMEDIATE_EXECUTION"
+    JOB_TYPE_IMMEDIATE_EXECUTION = "IMMEDIATE_EXECUTION"
+
+    #: A constant which can be used with the job_type property of a JobSummary.
+    #: This constant has a value of "SCHEDULED_EXECUTION"
+    JOB_TYPE_SCHEDULED_EXECUTION = "SCHEDULED_EXECUTION"
+
+    #: A constant which can be used with the job_type property of a JobSummary.
+    #: This constant has a value of "SCHEDULED_EXECUTION_INSTANCE"
+    JOB_TYPE_SCHEDULED_EXECUTION_INSTANCE = "SCHEDULED_EXECUTION_INSTANCE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new JobSummary object with values from keyword arguments.
@@ -40,10 +104,14 @@ class JobSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this JobSummary.
+            Allowed values for this property are: "ACTIVE", "INACTIVE", "EXPIRED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param job_type:
             The value to assign to the job_type property of this JobSummary.
+            Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type job_type: str
 
         :param schedule_type:
@@ -280,6 +348,9 @@ class JobSummary(object):
         Gets the lifecycle_state of this JobSummary.
         Lifecycle state of the job, such as running, paused, or completed.
 
+        Allowed values for this property are: "ACTIVE", "INACTIVE", "EXPIRED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
 
         :return: The lifecycle_state of this JobSummary.
         :rtype: str
@@ -296,6 +367,9 @@ class JobSummary(object):
         :param lifecycle_state: The lifecycle_state of this JobSummary.
         :type: str
         """
+        allowed_values = ["ACTIVE", "INACTIVE", "EXPIRED"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
     @property
@@ -303,6 +377,9 @@ class JobSummary(object):
         """
         Gets the job_type of this JobSummary.
         Type of the job.
+
+        Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The job_type of this JobSummary.
@@ -320,6 +397,9 @@ class JobSummary(object):
         :param job_type: The job_type of this JobSummary.
         :type: str
         """
+        allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"]
+        if not value_allowed_none_or_none_sentinel(job_type, allowed_values):
+            job_type = 'UNKNOWN_ENUM_VALUE'
         self._job_type = job_type
 
     @property

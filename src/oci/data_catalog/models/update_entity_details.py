@@ -13,6 +13,22 @@ class UpdateEntityDetails(object):
     Properties used in entity update operations.
     """
 
+    #: A constant which can be used with the harvest_status property of a UpdateEntityDetails.
+    #: This constant has a value of "COMPLETE"
+    HARVEST_STATUS_COMPLETE = "COMPLETE"
+
+    #: A constant which can be used with the harvest_status property of a UpdateEntityDetails.
+    #: This constant has a value of "ERROR"
+    HARVEST_STATUS_ERROR = "ERROR"
+
+    #: A constant which can be used with the harvest_status property of a UpdateEntityDetails.
+    #: This constant has a value of "IN_PROGRESS"
+    HARVEST_STATUS_IN_PROGRESS = "IN_PROGRESS"
+
+    #: A constant which can be used with the harvest_status property of a UpdateEntityDetails.
+    #: This constant has a value of "DEFERRED"
+    HARVEST_STATUS_DEFERRED = "DEFERRED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateEntityDetails object with values from keyword arguments.
@@ -44,6 +60,7 @@ class UpdateEntityDetails(object):
 
         :param harvest_status:
             The value to assign to the harvest_status property of this UpdateEntityDetails.
+            Allowed values for this property are: "COMPLETE", "ERROR", "IN_PROGRESS", "DEFERRED"
         :type harvest_status: str
 
         :param last_job_key:
@@ -244,6 +261,8 @@ class UpdateEntityDetails(object):
         shallow harvesting to allow users to browse the metadata and can on-demand deep harvest on any object
         This requires a harvest status indicator for catalog objects.
 
+        Allowed values for this property are: "COMPLETE", "ERROR", "IN_PROGRESS", "DEFERRED"
+
 
         :return: The harvest_status of this UpdateEntityDetails.
         :rtype: str
@@ -263,6 +282,12 @@ class UpdateEntityDetails(object):
         :param harvest_status: The harvest_status of this UpdateEntityDetails.
         :type: str
         """
+        allowed_values = ["COMPLETE", "ERROR", "IN_PROGRESS", "DEFERRED"]
+        if not value_allowed_none_or_none_sentinel(harvest_status, allowed_values):
+            raise ValueError(
+                "Invalid value for `harvest_status`, must be None or one of {0}"
+                .format(allowed_values)
+            )
         self._harvest_status = harvest_status
 
     @property

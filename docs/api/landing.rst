@@ -21,6 +21,7 @@ API Reference
 * :doc:`Virtual Network <core/client/oci.core.VirtualNetworkClient>`
 * :doc:`Data Catalog <data_catalog/client/oci.data_catalog.DataCatalogClient>`
 * :doc:`Data Flow <data_flow/client/oci.data_flow.DataFlowClient>`
+* :doc:`Data Integration <data_integration/client/oci.data_integration.DataIntegrationClient>`
 * :doc:`Data Safe <data_safe/client/oci.data_safe.DataSafeClient>`
 * :doc:`Data Science <data_science/client/oci.data_science.DataScienceClient>`
 * :doc:`Database <database/client/oci.database.DatabaseClient>`
@@ -99,6 +100,7 @@ API Reference
     core
     data_catalog
     data_flow
+    data_integration
     data_safe
     data_science
     database

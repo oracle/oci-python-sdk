@@ -81,6 +81,101 @@ class DataCatalogClient(object):
         self.base_client = BaseClient("data_catalog", config, signer, data_catalog_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
 
+    def attach_catalog_private_endpoint(self, attach_catalog_private_endpoint_details, catalog_id, **kwargs):
+        """
+        Attaches a private reverse connection endpoint resource to a data catalog resource. When provided, 'If-Match' is checked against 'ETag' values of the resource.
+
+
+        :param AttachCatalogPrivateEndpointDetails attach_catalog_private_endpoint_details: (required)
+            Details for private reverse connection endpoint to be used for attachment.
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogs/{catalogId}/actions/attachCatalogPrivateEndpoint"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "attach_catalog_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=attach_catalog_private_endpoint_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=attach_catalog_private_endpoint_details)
+
     def change_catalog_compartment(self, change_catalog_compartment_details, catalog_id, **kwargs):
         """
         Moves a resource into a different compartment. When provided, 'If-Match' is checked against 'ETag' values of the resource.
@@ -164,6 +259,90 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=change_catalog_compartment_details)
+
+    def change_catalog_private_endpoint_compartment(self, change_catalog_private_endpoint_compartment_details, catalog_private_endpoint_id, **kwargs):
+        """
+        Moves a resource into a different compartment. When provided, 'If-Match' is checked against 'ETag' values of the resource.
+
+
+        :param ChangeCatalogPrivateEndpointCompartmentDetails change_catalog_private_endpoint_compartment_details: (required)
+            Details for the target compartment.
+
+        :param str catalog_private_endpoint_id: (required)
+            Unique private reverse connection identifier.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogPrivateEndpoints/{catalogPrivateEndpointId}/actions/changeCompartment"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "change_catalog_private_endpoint_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogPrivateEndpointId": catalog_private_endpoint_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_catalog_private_endpoint_compartment_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_catalog_private_endpoint_compartment_details)
 
     def create_attribute(self, catalog_id, data_asset_key, entity_key, create_attribute_details, **kwargs):
         """
@@ -432,6 +611,77 @@ class DataCatalogClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_catalog_details)
+
+    def create_catalog_private_endpoint(self, create_catalog_private_endpoint_details, **kwargs):
+        """
+        Create a new private reverse connection endpoint.
+
+
+        :param CreateCatalogPrivateEndpointDetails create_catalog_private_endpoint_details: (required)
+            The information used to create the private reverse connection.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogPrivateEndpoints"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_catalog_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_catalog_private_endpoint_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_catalog_private_endpoint_details)
 
     def create_connection(self, catalog_id, data_asset_key, create_connection_details, **kwargs):
         """
@@ -1890,6 +2140,85 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params)
 
+    def delete_catalog_private_endpoint(self, catalog_private_endpoint_id, **kwargs):
+        """
+        Deletes a private reverse connection endpoint by identifier.
+
+
+        :param str catalog_private_endpoint_id: (required)
+            Unique private reverse connection identifier.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogPrivateEndpoints/{catalogPrivateEndpointId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_catalog_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogPrivateEndpointId": catalog_private_endpoint_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
     def delete_connection(self, catalog_id, data_asset_key, connection_key, **kwargs):
         """
         Deletes a specific connection of a data asset.
@@ -2930,6 +3259,90 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params)
 
+    def detach_catalog_private_endpoint(self, detach_catalog_private_endpoint_details, catalog_id, **kwargs):
+        """
+        Detaches a private reverse connection endpoint resource to a data catalog resource. When provided, 'If-Match' is checked against 'ETag' values of the resource.
+
+
+        :param DetachCatalogPrivateEndpointDetails detach_catalog_private_endpoint_details: (required)
+            Details for private reverse connection endpoint to be used for attachment
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogs/{catalogId}/actions/detachCatalogPrivateEndpoint"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "detach_catalog_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=detach_catalog_private_endpoint_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=detach_catalog_private_endpoint_details)
+
     def expand_tree_for_glossary(self, catalog_id, glossary_key, **kwargs):
         """
         Returns the fully expanded tree hierarchy of parent and child terms in this glossary.
@@ -3400,6 +3813,78 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="Catalog")
+
+    def get_catalog_private_endpoint(self, catalog_private_endpoint_id, **kwargs):
+        """
+        Gets a specific private reverse connection by identifier.
+
+
+        :param str catalog_private_endpoint_id: (required)
+            Unique private reverse connection identifier.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.CatalogPrivateEndpoint`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogPrivateEndpoints/{catalogPrivateEndpointId}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_catalog_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogPrivateEndpointId": catalog_private_endpoint_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="CatalogPrivateEndpoint")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="CatalogPrivateEndpoint")
 
     def get_connection(self, catalog_id, data_asset_key, connection_key, **kwargs):
         """
@@ -5314,6 +5799,8 @@ class DataCatalogClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 
+            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"
+
         :param str term_key: (optional)
             Unique key of the related term.
 
@@ -5400,6 +5887,13 @@ class DataCatalogClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "name", "termKey", "termPath", "termDescription", "lifecycleState", "timeCreated", "uri", "glossaryKey", "attributeKey"]
             for fields_item in kwargs['fields']:
@@ -5485,6 +5979,8 @@ class DataCatalogClient(object):
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+
+            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"
 
         :param datetime time_created: (optional)
             Time that the resource was created. An `RFC3339`__ formatted datetime string.
@@ -5609,6 +6105,13 @@ class DataCatalogClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "displayName", "description", "entityKey", "lifecycleState", "timeCreated", "externalDataType", "externalKey", "length", "isNullable", "uri"]
             for fields_item in kwargs['fields']:
@@ -5684,6 +6187,130 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="AttributeCollection")
 
+    def list_catalog_private_endpoints(self, compartment_id, **kwargs):
+        """
+        Returns a list of all the catalog private endpoints in the specified compartment.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment where you want to list resources.
+
+        :param str display_name: (optional)
+            A filter to return only resources that match the entire display name given. The match is not case sensitive.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str lifecycle_state: (optional)
+            A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+
+            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'asc' or 'desc'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+
+            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_catalog.models.CatalogPrivateEndpointSummary`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogPrivateEndpoints"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "display_name",
+            "limit",
+            "page",
+            "lifecycle_state",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_catalog_private_endpoints got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "displayName": kwargs.get("display_name", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[CatalogPrivateEndpointSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[CatalogPrivateEndpointSummary]")
+
     def list_catalogs(self, compartment_id, **kwargs):
         """
         Returns a list of all the data catalogs in the specified compartment.
@@ -5703,6 +6330,8 @@ class DataCatalogClient(object):
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+
+            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' or 'desc'.
@@ -5746,6 +6375,13 @@ class DataCatalogClient(object):
         if extra_kwargs:
             raise ValueError(
                 "list_catalogs got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
@@ -5815,6 +6451,8 @@ class DataCatalogClient(object):
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+
+            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"
 
         :param datetime time_created: (optional)
             Time that the resource was created. An `RFC3339`__ formatted datetime string.
@@ -5916,6 +6554,13 @@ class DataCatalogClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "displayName", "description", "dataAssetKey", "typeKey", "timeCreated", "externalKey", "lifecycleState", "isDefault", "uri"]
             for fields_item in kwargs['fields']:
@@ -6002,6 +6647,8 @@ class DataCatalogClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 
+            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"
+
         :param str term_key: (optional)
             Unique key of the related term.
 
@@ -6086,6 +6733,13 @@ class DataCatalogClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "name", "termKey", "termPath", "termDescription", "lifecycleState", "timeCreated", "uri", "glossaryKey", "dataAssetKey"]
             for fields_item in kwargs['fields']:
@@ -6165,6 +6819,8 @@ class DataCatalogClient(object):
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+
+            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"
 
         :param datetime time_created: (optional)
             Time that the resource was created. An `RFC3339`__ formatted datetime string.
@@ -6259,6 +6915,13 @@ class DataCatalogClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "displayName", "description", "catalogId", "externalKey", "typeKey", "lifecycleState", "timeCreated", "uri"]
             for fields_item in kwargs['fields']:
@@ -6344,6 +7007,8 @@ class DataCatalogClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 
+            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"
+
         :param datetime time_created: (optional)
             Time that the resource was created. An `RFC3339`__ formatted datetime string.
 
@@ -6385,6 +7050,8 @@ class DataCatalogClient(object):
 
         :param str harvest_status: (optional)
             Harvest status of the harvestable resource as updated by the harvest process.
+
+            Allowed values are: "COMPLETE", "ERROR", "IN_PROGRESS", "DEFERRED"
 
         :param str last_job_key: (optional)
             Key of the last harvest process to update this resource.
@@ -6467,6 +7134,20 @@ class DataCatalogClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'harvest_status' in kwargs:
+            harvest_status_allowed_values = ["COMPLETE", "ERROR", "IN_PROGRESS", "DEFERRED"]
+            if kwargs['harvest_status'] not in harvest_status_allowed_values:
+                raise ValueError(
+                    "Invalid value for `harvest_status`, must be one of {0}".format(harvest_status_allowed_values)
+                )
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "displayName", "description", "dataAssetKey", "timeCreated", "timeUpdated", "updatedById", "lifecycleState", "folderKey", "externalKey", "path", "uri"]
@@ -6563,6 +7244,8 @@ class DataCatalogClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 
+            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"
+
         :param str term_key: (optional)
             Unique key of the related term.
 
@@ -6647,6 +7330,13 @@ class DataCatalogClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "name", "termKey", "termPath", "termDescription", "lifecycleState", "timeCreated", "uri", "glossaryKey", "entityKey"]
@@ -6734,6 +7424,8 @@ class DataCatalogClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 
+            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"
+
         :param str term_key: (optional)
             Unique key of the related term.
 
@@ -6819,6 +7511,13 @@ class DataCatalogClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "name", "termKey", "termPath", "termDescription", "lifecycleState", "timeCreated", "uri", "glossaryKey", "folderKey"]
             for fields_item in kwargs['fields']:
@@ -6902,6 +7601,8 @@ class DataCatalogClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 
+            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"
+
         :param str parent_folder_key: (optional)
             Unique folder key.
 
@@ -6929,6 +7630,8 @@ class DataCatalogClient(object):
 
         :param str harvest_status: (optional)
             Harvest status of the harvestable resource as updated by the harvest process.
+
+            Allowed values are: "COMPLETE", "ERROR", "IN_PROGRESS", "DEFERRED"
 
         :param str last_job_key: (optional)
             Key of the last harvest process to update this resource.
@@ -7007,6 +7710,20 @@ class DataCatalogClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'harvest_status' in kwargs:
+            harvest_status_allowed_values = ["COMPLETE", "ERROR", "IN_PROGRESS", "DEFERRED"]
+            if kwargs['harvest_status'] not in harvest_status_allowed_values:
+                raise ValueError(
+                    "Invalid value for `harvest_status`, must be one of {0}".format(harvest_status_allowed_values)
+                )
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "displayName", "description", "parentFolderKey", "path", "dataAssetKey", "externalKey", "timeExternal", "timeCreated", "lifecycleState", "uri"]
@@ -7093,6 +7810,8 @@ class DataCatalogClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 
+            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"
+
         :param datetime time_created: (optional)
             Time that the resource was created. An `RFC3339`__ formatted datetime string.
 
@@ -7178,6 +7897,13 @@ class DataCatalogClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "displayName", "description", "catalogId", "lifecycleState", "timeCreated", "uri", "workflowStatus"]
             for fields_item in kwargs['fields']:
@@ -7258,8 +7984,12 @@ class DataCatalogClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 
+            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"
+
         :param str job_type: (optional)
             Job type.
+
+            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"
 
         :param bool is_incremental: (optional)
             Whether job definition is an incremental harvest (true) or a full harvest (false).
@@ -7363,6 +8093,20 @@ class DataCatalogClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'job_type' in kwargs:
+            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"]
+            if kwargs['job_type'] not in job_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `job_type`, must be one of {0}".format(job_type_allowed_values)
+                )
+
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "displayName", "description", "catalogId", "jobType", "lifecycleState", "timeCreated", "isSampleDataExtracted", "uri"]
             for fields_item in kwargs['fields']:
@@ -7448,6 +8192,8 @@ class DataCatalogClient(object):
         :param str lifecycle_state: (optional)
             Job execution lifecycle state.
 
+            Allowed values are: "CREATED", "IN_PROGRESS", "INACTIVE", "FAILED", "SUCCEEDED", "CANCELED"
+
         :param datetime time_created: (optional)
             Time that the resource was created. An `RFC3339`__ formatted datetime string.
 
@@ -7466,6 +8212,8 @@ class DataCatalogClient(object):
 
         :param str job_type: (optional)
             Job type.
+
+            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"
 
         :param str sub_type: (optional)
             Sub-type of this job execution.
@@ -7583,6 +8331,20 @@ class DataCatalogClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATED", "IN_PROGRESS", "INACTIVE", "FAILED", "SUCCEEDED", "CANCELED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'job_type' in kwargs:
+            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"]
+            if kwargs['job_type'] not in job_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `job_type`, must be one of {0}".format(job_type_allowed_values)
+                )
+
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "jobKey", "jobType", "parentKey", "scheduleInstanceKey", "lifecycleState", "timeCreated", "timeStarted", "timeEnded", "uri"]
             for fields_item in kwargs['fields']:
@@ -7676,6 +8438,8 @@ class DataCatalogClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 
+            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"
+
         :param str severity: (optional)
             Severity level for this Log.
 
@@ -7765,6 +8529,13 @@ class DataCatalogClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "jobExecutionKey", "severity", "timeCreated", "logMessage", "uri"]
@@ -8047,6 +8818,8 @@ class DataCatalogClient(object):
         :param str lifecycle_state: (optional)
             Job lifecycle state.
 
+            Allowed values are: "ACTIVE", "INACTIVE", "EXPIRED"
+
         :param datetime time_created: (optional)
             Time that the resource was created. An `RFC3339`__ formatted datetime string.
 
@@ -8065,6 +8838,8 @@ class DataCatalogClient(object):
 
         :param str job_type: (optional)
             Job type.
+
+            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"
 
         :param str job_definition_key: (optional)
             Unique job definition key.
@@ -8086,6 +8861,8 @@ class DataCatalogClient(object):
 
         :param str schedule_type: (optional)
             Type of the job schedule.
+
+            Allowed values are: "SCHEDULED", "IMMEDIATE"
 
         :param str connection_key: (optional)
             Unique connection key.
@@ -8177,6 +8954,27 @@ class DataCatalogClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["ACTIVE", "INACTIVE", "EXPIRED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'job_type' in kwargs:
+            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"]
+            if kwargs['job_type'] not in job_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `job_type`, must be one of {0}".format(job_type_allowed_values)
+                )
+
+        if 'schedule_type' in kwargs:
+            schedule_type_allowed_values = ["SCHEDULED", "IMMEDIATE"]
+            if kwargs['schedule_type'] not in schedule_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `schedule_type`, must be one of {0}".format(schedule_type_allowed_values)
+                )
+
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "displayName", "description", "catalogId", "jobDefinitionKey", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "jobType", "scheduleCronExpression", "timeScheduleBegin", "scheduleType", "executionCount", "timeOfLatestExecution", "executions", "uri"]
             for fields_item in kwargs['fields']:
@@ -8266,6 +9064,8 @@ class DataCatalogClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 
+            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"
+
         :param list[str] fields: (optional)
             Specifies the fields to return in a term summary response.
 
@@ -8330,6 +9130,13 @@ class DataCatalogClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "displayName", "description", "glossaryKey", "parentTermKey", "isAllowedToHaveChildTerms", "path", "lifecycleState", "timeCreated", "workflowStatus", "associatedObjectCount", "uri"]
@@ -8413,6 +9220,8 @@ class DataCatalogClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 
+            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"
+
         :param list[str] fields: (optional)
             Specifies the fields to return in a term relationship summary response.
 
@@ -8479,6 +9288,13 @@ class DataCatalogClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "displayName", "description", "relatedTermKey", "relatedTermDisplayName", "parentTermKey", "parentTermDisplayName", "lifecycleState", "timeCreated", "uri"]
@@ -8559,6 +9375,8 @@ class DataCatalogClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 
+            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"
+
         :param str parent_term_key: (optional)
             Unique key of the parent term.
 
@@ -8567,6 +9385,8 @@ class DataCatalogClient(object):
 
         :param str workflow_status: (optional)
             Status of the approval workflow for this business term in the glossary.
+
+            Allowed values are: "NEW", "APPROVED", "UNDER_REVIEW", "ESCALATED"
 
         :param str path: (optional)
             Full path of the resource for resources that support paths.
@@ -8640,6 +9460,20 @@ class DataCatalogClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'workflow_status' in kwargs:
+            workflow_status_allowed_values = ["NEW", "APPROVED", "UNDER_REVIEW", "ESCALATED"]
+            if kwargs['workflow_status'] not in workflow_status_allowed_values:
+                raise ValueError(
+                    "Invalid value for `workflow_status`, must be one of {0}".format(workflow_status_allowed_values)
+                )
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "displayName", "description", "glossaryKey", "parentTermKey", "isAllowedToHaveChildTerms", "path", "lifecycleState", "timeCreated", "workflowStatus", "associatedObjectCount", "uri"]
@@ -8720,6 +9554,8 @@ class DataCatalogClient(object):
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+
+            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"
 
         :param str is_internal: (optional)
             Indicates whether the type is internal, making it unavailable for use by metadata elements.
@@ -8805,6 +9641,13 @@ class DataCatalogClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
 
         if 'fields' in kwargs:
             fields_allowed_values = ["key", "description", "name", "catalogId", "lifecycleState", "typeCategory", "uri"]
@@ -9421,6 +10264,8 @@ class DataCatalogClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 
+            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"
+
         :param str timeout: (optional)
             A search timeout string (for example, timeout=4000ms), bounding the search request to be executed within the
             specified time value and bail with the hits accumulated up to that point when expired.
@@ -9487,6 +10332,13 @@ class DataCatalogClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
@@ -9819,6 +10671,90 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=update_catalog_details,
                 response_type="Catalog")
+
+    def update_catalog_private_endpoint(self, catalog_private_endpoint_id, update_catalog_private_endpoint_details, **kwargs):
+        """
+        Updates the private reverse connection endpoint.
+
+
+        :param str catalog_private_endpoint_id: (required)
+            Unique private reverse connection identifier.
+
+        :param UpdateCatalogPrivateEndpointDetails update_catalog_private_endpoint_details: (required)
+            The information to be updated in private reverse connection
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogPrivateEndpoints/{catalogPrivateEndpointId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_catalog_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogPrivateEndpointId": catalog_private_endpoint_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_catalog_private_endpoint_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_catalog_private_endpoint_details)
 
     def update_connection(self, catalog_id, data_asset_key, connection_key, update_connection_details, **kwargs):
         """

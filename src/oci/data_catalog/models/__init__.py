@@ -4,6 +4,7 @@
 
 from __future__ import absolute_import
 
+from .attach_catalog_private_endpoint_details import AttachCatalogPrivateEndpointDetails
 from .attribute import Attribute
 from .attribute_collection import AttributeCollection
 from .attribute_summary import AttributeSummary
@@ -15,14 +16,18 @@ from .base_tag import BaseTag
 from .base_tag_summary import BaseTagSummary
 from .catalog import Catalog
 from .catalog_permissions_summary import CatalogPermissionsSummary
+from .catalog_private_endpoint import CatalogPrivateEndpoint
+from .catalog_private_endpoint_summary import CatalogPrivateEndpointSummary
 from .catalog_summary import CatalogSummary
 from .change_catalog_compartment_details import ChangeCatalogCompartmentDetails
+from .change_catalog_private_endpoint_compartment_details import ChangeCatalogPrivateEndpointCompartmentDetails
 from .connection import Connection
 from .connection_alias_summary import ConnectionAliasSummary
 from .connection_collection import ConnectionCollection
 from .connection_summary import ConnectionSummary
 from .create_attribute_details import CreateAttributeDetails
 from .create_catalog_details import CreateCatalogDetails
+from .create_catalog_private_endpoint_details import CreateCatalogPrivateEndpointDetails
 from .create_connection_details import CreateConnectionDetails
 from .create_data_asset_details import CreateDataAssetDetails
 from .create_entity_details import CreateEntityDetails
@@ -41,6 +46,7 @@ from .data_asset_summary import DataAssetSummary
 from .data_asset_tag import DataAssetTag
 from .data_asset_tag_collection import DataAssetTagCollection
 from .data_asset_tag_summary import DataAssetTagSummary
+from .detach_catalog_private_endpoint_details import DetachCatalogPrivateEndpointDetails
 from .entity import Entity
 from .entity_collection import EntityCollection
 from .entity_summary import EntitySummary
@@ -96,6 +102,7 @@ from .type_collection import TypeCollection
 from .type_summary import TypeSummary
 from .update_attribute_details import UpdateAttributeDetails
 from .update_catalog_details import UpdateCatalogDetails
+from .update_catalog_private_endpoint_details import UpdateCatalogPrivateEndpointDetails
 from .update_connection_details import UpdateConnectionDetails
 from .update_data_asset_details import UpdateDataAssetDetails
 from .update_entity_details import UpdateEntityDetails
@@ -115,6 +122,7 @@ from .work_request_resource import WorkRequestResource
 
 # Maps type names to classes for data_catalog services.
 data_catalog_type_mapping = {
+    "AttachCatalogPrivateEndpointDetails": AttachCatalogPrivateEndpointDetails,
     "Attribute": Attribute,
     "AttributeCollection": AttributeCollection,
     "AttributeSummary": AttributeSummary,
@@ -126,14 +134,18 @@ data_catalog_type_mapping = {
     "BaseTagSummary": BaseTagSummary,
     "Catalog": Catalog,
     "CatalogPermissionsSummary": CatalogPermissionsSummary,
+    "CatalogPrivateEndpoint": CatalogPrivateEndpoint,
+    "CatalogPrivateEndpointSummary": CatalogPrivateEndpointSummary,
     "CatalogSummary": CatalogSummary,
     "ChangeCatalogCompartmentDetails": ChangeCatalogCompartmentDetails,
+    "ChangeCatalogPrivateEndpointCompartmentDetails": ChangeCatalogPrivateEndpointCompartmentDetails,
     "Connection": Connection,
     "ConnectionAliasSummary": ConnectionAliasSummary,
     "ConnectionCollection": ConnectionCollection,
     "ConnectionSummary": ConnectionSummary,
     "CreateAttributeDetails": CreateAttributeDetails,
     "CreateCatalogDetails": CreateCatalogDetails,
+    "CreateCatalogPrivateEndpointDetails": CreateCatalogPrivateEndpointDetails,
     "CreateConnectionDetails": CreateConnectionDetails,
     "CreateDataAssetDetails": CreateDataAssetDetails,
     "CreateEntityDetails": CreateEntityDetails,
@@ -152,6 +164,7 @@ data_catalog_type_mapping = {
     "DataAssetTag": DataAssetTag,
     "DataAssetTagCollection": DataAssetTagCollection,
     "DataAssetTagSummary": DataAssetTagSummary,
+    "DetachCatalogPrivateEndpointDetails": DetachCatalogPrivateEndpointDetails,
     "Entity": Entity,
     "EntityCollection": EntityCollection,
     "EntitySummary": EntitySummary,
@@ -207,6 +220,7 @@ data_catalog_type_mapping = {
     "TypeSummary": TypeSummary,
     "UpdateAttributeDetails": UpdateAttributeDetails,
     "UpdateCatalogDetails": UpdateCatalogDetails,
+    "UpdateCatalogPrivateEndpointDetails": UpdateCatalogPrivateEndpointDetails,
     "UpdateConnectionDetails": UpdateConnectionDetails,
     "UpdateDataAssetDetails": UpdateDataAssetDetails,
     "UpdateEntityDetails": UpdateEntityDetails,

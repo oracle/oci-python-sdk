@@ -16,6 +16,54 @@ class Folder(object):
     many levels of folders.
     """
 
+    #: A constant which can be used with the lifecycle_state property of a Folder.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a Folder.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a Folder.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a Folder.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the lifecycle_state property of a Folder.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a Folder.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
+
+    #: A constant which can be used with the lifecycle_state property of a Folder.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
+
+    #: A constant which can be used with the lifecycle_state property of a Folder.
+    #: This constant has a value of "MOVING"
+    LIFECYCLE_STATE_MOVING = "MOVING"
+
+    #: A constant which can be used with the harvest_status property of a Folder.
+    #: This constant has a value of "COMPLETE"
+    HARVEST_STATUS_COMPLETE = "COMPLETE"
+
+    #: A constant which can be used with the harvest_status property of a Folder.
+    #: This constant has a value of "ERROR"
+    HARVEST_STATUS_ERROR = "ERROR"
+
+    #: A constant which can be used with the harvest_status property of a Folder.
+    #: This constant has a value of "IN_PROGRESS"
+    HARVEST_STATUS_IN_PROGRESS = "IN_PROGRESS"
+
+    #: A constant which can be used with the harvest_status property of a Folder.
+    #: This constant has a value of "DEFERRED"
+    HARVEST_STATUS_DEFERRED = "DEFERRED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Folder object with values from keyword arguments.
@@ -75,10 +123,14 @@ class Folder(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Folder.
+            Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
         :param harvest_status:
             The value to assign to the harvest_status property of this Folder.
+            Allowed values for this property are: "COMPLETE", "ERROR", "IN_PROGRESS", "DEFERRED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type harvest_status: str
 
         :param last_job_key:
@@ -486,6 +538,9 @@ class Folder(object):
         Gets the lifecycle_state of this Folder.
         The current state of the folder.
 
+        Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
 
         :return: The lifecycle_state of this Folder.
         :rtype: str
@@ -502,6 +557,9 @@ class Folder(object):
         :param lifecycle_state: The lifecycle_state of this Folder.
         :type: str
         """
+        allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
 
     @property
@@ -509,6 +567,9 @@ class Folder(object):
         """
         Gets the harvest_status of this Folder.
         Status of the object as updated by the harvest process.
+
+        Allowed values for this property are: "COMPLETE", "ERROR", "IN_PROGRESS", "DEFERRED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The harvest_status of this Folder.
@@ -526,6 +587,9 @@ class Folder(object):
         :param harvest_status: The harvest_status of this Folder.
         :type: str
         """
+        allowed_values = ["COMPLETE", "ERROR", "IN_PROGRESS", "DEFERRED"]
+        if not value_allowed_none_or_none_sentinel(harvest_status, allowed_values):
+            harvest_status = 'UNKNOWN_ENUM_VALUE'
         self._harvest_status = harvest_status
 
     @property
