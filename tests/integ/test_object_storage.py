@@ -93,6 +93,19 @@ def content_input_file():
         os.remove(filename)
 
 
+@pytest.fixture
+def non_vcr_bucket(object_storage, namespace, request):
+    bucket_name = unique_name(request.node.name, ignore_vcr=True)
+    response = create_bucket(object_storage, namespace, bucket_name)
+    assert response.status == 200
+
+    yield bucket_name
+
+    delete_objects_in_bucket(object_storage, namespace, bucket_name)
+    response = object_storage.delete_bucket(namespace, bucket_name)
+    assert response.status == 204
+
+
 class TestObjectStorage:
 
     def test_get_namespace(self, object_storage):
@@ -917,7 +930,7 @@ class TestObjectStorage:
         response = object_storage.delete_object(namespace, bucket_name, object_name)
         assert response.status == 204
 
-    def test_upload_manager_multipart_ssec(self, object_storage, bucket, content_input_file):
+    def test_upload_manager_multipart_ssec(self, object_storage, non_vcr_bucket, content_input_file):
         object_name = 'test_object_multipart_ssec'
         namespace = object_storage.get_namespace().data
 
@@ -930,7 +943,7 @@ class TestObjectStorage:
         part_size_in_bytes = (LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES - 1) * MEBIBYTE
         upload_manager = oci.object_storage.UploadManager(object_storage, allow_multipart_uploads=True)
         response = upload_manager.upload_file(
-            namespace, bucket, object_name, content_input_file, part_size=part_size_in_bytes,
+            namespace, non_vcr_bucket, object_name, content_input_file, part_size=part_size_in_bytes,
             opc_sse_customer_algorithm='AES256', opc_sse_customer_key=ssec_key_str,
             opc_sse_customer_key_sha256=ssec_key_sha256_str)
         util.validate_response(response)
@@ -938,18 +951,18 @@ class TestObjectStorage:
         # confirm that the object was actually uploaded with multipart
         assert response.headers['opc-multipart-md5']
 
-        print('Downloading object {} from {} for verification'.format(object_name, bucket))
+        print('Downloading object {} from {} for verification'.format(object_name, non_vcr_bucket))
         # downloading the object without supplying SSE-C parameters should fail
         with pytest.raises(oci.exceptions.ServiceError) as excinfo:
             object_storage.get_object(
                 namespace_name=namespace,
-                bucket_name=bucket,
+                bucket_name=non_vcr_bucket,
                 object_name=object_name
             )
         assert excinfo.value.status == 400
         response = object_storage.get_object(
             namespace_name=namespace,
-            bucket_name=bucket,
+            bucket_name=non_vcr_bucket,
             object_name=object_name,
             opc_sse_customer_algorithm='AES256',
             opc_sse_customer_key=ssec_key_str,

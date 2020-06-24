@@ -10,6 +10,10 @@ from .constants import DEFAULT_PART_SIZE, STREAMING_DEFAULT_PART_SIZE
 from .internal.file_read_callback_stream import FileReadCallbackStream
 from ...exceptions import MultipartUploadError
 
+# This timeout value will be used only for upload manager operations, since we're running into SSL issues with
+# sending memoryviews with a timeout.
+MULTIPART_UPLOAD_TIMEOUT = None
+
 
 class UploadManager:
     REQUESTS_POOL_SIZE_FACTOR = 4
@@ -22,6 +26,9 @@ class UploadManager:
 
         An advantage of using multi-part uploads is the ability to retry individual failed parts, as well as being
         able to upload parts in parallel to reduce upload time.
+
+        PLEASE NOTE that the operations are NOT thread-safe, and you should provide the UploadManager class
+        with its own Object Storage client that isn't used elsewhere.
 
         :param ObjectStorageClient object_storage_client:
             A configured object storage client to use for interacting with the Object Storage service.
@@ -41,6 +48,9 @@ class UploadManager:
         self.allow_multipart_uploads = kwargs['allow_multipart_uploads'] if 'allow_multipart_uploads' in kwargs else True
         self.allow_parallel_uploads = kwargs['allow_parallel_uploads'] if 'allow_parallel_uploads' in kwargs else True
         self.parallel_process_count = kwargs['parallel_process_count'] if 'parallel_process_count' in kwargs else None
+
+        # Store the original timeout value
+        self._object_storage_client_timeout = self.object_storage_client.base_client.timeout
 
         UploadManager._add_adapter_to_service_client(self.object_storage_client, self.allow_parallel_uploads, self.parallel_process_count)
 
@@ -100,57 +110,65 @@ class UploadManager:
             (empty stream data) it will contain the :code:`opc-content-md5 header`.
         :rtype: :class:`~oci.response.Response`
         """
-        if 'part_size' not in kwargs:
-            kwargs['part_size'] = STREAMING_DEFAULT_PART_SIZE
-
-        kwargs['allow_parallel_uploads'] = self.allow_parallel_uploads
-        if self.parallel_process_count is not None:
-            kwargs['parallel_process_count'] = self.parallel_process_count
-
-        ma = MultipartObjectAssembler(
-            self.object_storage_client,
-            namespace_name,
-            bucket_name,
-            object_name,
-            **kwargs
-        )
-
-        upload_kwargs = {}
-        if 'progress_callback' in kwargs:
-            upload_kwargs['progress_callback'] = kwargs['progress_callback']
-
-        ma.new_upload()
-
         try:
-            ma.upload_stream(stream_ref, **upload_kwargs)
-        except MultipartUploadError:
-            # Since the stream upload is not resumable, make an effort to clean up after ourselves before
-            # failing out
-            ma.abort()
-            raise
+            # Set the upload manager timeout on object storage client
+            self._set_multipart_upload_timeout()
 
-        # It is possible we did not upload any parts (e.g. if the stream was empty). If we did
-        # upload parts then commit the upload, otherwise abort the upload and put an empty object
-        # into Object Storage to reflect what the customer intended.
-        if len(ma.manifest['parts']) > 0:
-            response = ma.commit()
-        else:
-            ma.abort()
-            copy_kwargs = kwargs.copy()
-            # put_object expects 'opc_meta' not metadata
-            if 'metadata' in copy_kwargs:
-                copy_kwargs['opc_meta'] = copy_kwargs['metadata']
-                copy_kwargs.pop('metadata')
+            if 'part_size' not in kwargs:
+                kwargs['part_size'] = STREAMING_DEFAULT_PART_SIZE
 
-            # These parameters are not valid for just putting the object, so discard them
-            copy_kwargs.pop('progress_callback', None)
-            copy_kwargs.pop('part_size', None)
-            copy_kwargs.pop('allow_parallel_uploads', None)
-            copy_kwargs.pop('parallel_process_count', None)
+            kwargs['allow_parallel_uploads'] = self.allow_parallel_uploads
+            if self.parallel_process_count is not None:
+                kwargs['parallel_process_count'] = self.parallel_process_count
 
-            return self.object_storage_client.put_object(namespace_name, bucket_name, object_name, b'', **copy_kwargs)
+            ma = MultipartObjectAssembler(
+                self.object_storage_client,
+                namespace_name,
+                bucket_name,
+                object_name,
+                **kwargs
+            )
 
-        return response
+            upload_kwargs = {}
+            if 'progress_callback' in kwargs:
+                upload_kwargs['progress_callback'] = kwargs['progress_callback']
+
+            ma.new_upload()
+
+            try:
+                ma.upload_stream(stream_ref, **upload_kwargs)
+            except MultipartUploadError:
+                # Since the stream upload is not resumable, make an effort to clean up after ourselves before
+                # failing out
+                ma.abort()
+                raise
+
+            # It is possible we did not upload any parts (e.g. if the stream was empty). If we did
+            # upload parts then commit the upload, otherwise abort the upload and put an empty object
+            # into Object Storage to reflect what the customer intended.
+            if len(ma.manifest['parts']) > 0:
+                response = ma.commit()
+            else:
+                ma.abort()
+                copy_kwargs = kwargs.copy()
+                # put_object expects 'opc_meta' not metadata
+                if 'metadata' in copy_kwargs:
+                    copy_kwargs['opc_meta'] = copy_kwargs['metadata']
+                    copy_kwargs.pop('metadata')
+
+                # These parameters are not valid for just putting the object, so discard them
+                copy_kwargs.pop('progress_callback', None)
+                copy_kwargs.pop('part_size', None)
+                copy_kwargs.pop('allow_parallel_uploads', None)
+                copy_kwargs.pop('parallel_process_count', None)
+
+                return self.object_storage_client.put_object(namespace_name, bucket_name, object_name, b'', **copy_kwargs)
+
+            return response
+
+        # Reset the object storage client timeout regardless of the result of above operations
+        finally:
+            self._reset_object_storage_client_timeout()
 
     def upload_file(self,
                     namespace_name,
@@ -209,40 +227,47 @@ class UploadManager:
             it will contain the :code:`opc-content-md5 header`.
         :rtype: :class:`~oci.response.Response`
         """
-        part_size = DEFAULT_PART_SIZE
-        if 'part_size' in kwargs:
-            part_size = kwargs['part_size']
-            kwargs.pop('part_size')
+        try:
+            # Set the upload manager timeout on object storage client
+            self._set_multipart_upload_timeout()
 
-        with open(file_path, 'rb') as file_object:
-            file_size = os.fstat(file_object.fileno()).st_size
-            if not self.allow_multipart_uploads or not UploadManager._use_multipart(file_size, part_size=part_size):
-                return self._upload_singlepart(namespace_name, bucket_name, object_name, file_path, **kwargs)
-            else:
-                if 'content_md5' in kwargs:
-                    kwargs.pop('content_md5')
+            part_size = DEFAULT_PART_SIZE
+            if 'part_size' in kwargs:
+                part_size = kwargs['part_size']
+                kwargs.pop('part_size')
 
-                kwargs['part_size'] = part_size
-                kwargs['allow_parallel_uploads'] = self.allow_parallel_uploads
-                if self.parallel_process_count is not None:
-                    kwargs['parallel_process_count'] = self.parallel_process_count
+            with open(file_path, 'rb') as file_object:
+                file_size = os.fstat(file_object.fileno()).st_size
+                if not self.allow_multipart_uploads or not UploadManager._use_multipart(file_size, part_size=part_size):
+                    return self._upload_singlepart(namespace_name, bucket_name, object_name, file_path, **kwargs)
+                else:
+                    if 'content_md5' in kwargs:
+                        kwargs.pop('content_md5')
 
-                ma = MultipartObjectAssembler(self.object_storage_client,
-                                              namespace_name,
-                                              bucket_name,
-                                              object_name,
-                                              **kwargs)
+                    kwargs['part_size'] = part_size
+                    kwargs['allow_parallel_uploads'] = self.allow_parallel_uploads
+                    if self.parallel_process_count is not None:
+                        kwargs['parallel_process_count'] = self.parallel_process_count
 
-                upload_kwargs = {}
-                if 'progress_callback' in kwargs:
-                    upload_kwargs['progress_callback'] = kwargs['progress_callback']
+                    ma = MultipartObjectAssembler(self.object_storage_client,
+                                                  namespace_name,
+                                                  bucket_name,
+                                                  object_name,
+                                                  **kwargs)
 
-                ma.new_upload()
-                ma.add_parts_from_file(file_path)
-                ma.upload(**upload_kwargs)
-                response = ma.commit()
+                    upload_kwargs = {}
+                    if 'progress_callback' in kwargs:
+                        upload_kwargs['progress_callback'] = kwargs['progress_callback']
 
-                return response
+                    ma.new_upload()
+                    ma.add_parts_from_file(file_path)
+                    ma.upload(**upload_kwargs)
+                    response = ma.commit()
+
+                    return response
+        # Reset the object storage client timeout regardless of the result of above operations
+        finally:
+            self._reset_object_storage_client_timeout()
 
     def resume_upload_file(self,
                            namespace_name,
@@ -284,25 +309,32 @@ class UploadManager:
             The response from the multipart commit operation. This will be a :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
         """
-        resume_kwargs = {}
-        if 'progress_callback' in kwargs:
-            resume_kwargs['progress_callback'] = kwargs['progress_callback']
-            kwargs.pop('progress_callback')
+        try:
+            # Set the upload manager timeout on object storage client
+            self._set_multipart_upload_timeout()
 
-        kwargs['allow_parallel_uploads'] = self.allow_parallel_uploads
-        if self.parallel_process_count is not None:
-            kwargs['parallel_process_count'] = self.parallel_process_count
+            resume_kwargs = {}
+            if 'progress_callback' in kwargs:
+                resume_kwargs['progress_callback'] = kwargs['progress_callback']
+                kwargs.pop('progress_callback')
 
-        ma = MultipartObjectAssembler(self.object_storage_client,
-                                      namespace_name,
-                                      bucket_name,
-                                      object_name,
-                                      **kwargs)
-        ma.add_parts_from_file(file_path)
-        ma.resume(upload_id=upload_id, **resume_kwargs)
-        response = ma.commit()
+            kwargs['allow_parallel_uploads'] = self.allow_parallel_uploads
+            if self.parallel_process_count is not None:
+                kwargs['parallel_process_count'] = self.parallel_process_count
 
-        return response
+            ma = MultipartObjectAssembler(self.object_storage_client,
+                                          namespace_name,
+                                          bucket_name,
+                                          object_name,
+                                          **kwargs)
+            ma.add_parts_from_file(file_path)
+            ma.resume(upload_id=upload_id, **resume_kwargs)
+            response = ma.commit()
+
+            return response
+        # Reset the object storage client timeout regardless of the result of above operations
+        finally:
+            self._reset_object_storage_client_timeout()
 
     def _upload_singlepart(self,
                            namespace_name,
@@ -341,6 +373,14 @@ class UploadManager:
                                                                  file_object,
                                                                  **kwargs)
         return response
+
+    # The following two methods are called at the beginning and at the end of every public method for upload manager
+    # This is not the best way to go around the timeout issue, but it is a workaround for now
+    def _set_multipart_upload_timeout(self):
+        self.object_storage_client.base_client.timeout = MULTIPART_UPLOAD_TIMEOUT
+
+    def _reset_object_storage_client_timeout(self):
+        self.object_storage_client.base_client.timeout = self._object_storage_client_timeout
 
     @staticmethod
     def _add_adapter_to_service_client(object_storage_client, allow_parallel_uploads, parallel_process_count):

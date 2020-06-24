@@ -4,6 +4,7 @@
 
 import oci
 import pytest
+from oci.exceptions import ConnectTimeout, RequestException
 
 
 # Note: the identity client is passed here because I'm too lazy to create a new signer
@@ -74,3 +75,20 @@ def test_default_timeout(identity, config):
     assert client.timeout == (20.0, 70.0)
     client = oci.BaseClient('identity', config, identity.base_client.signer, {}, timeout=20)
     assert client.timeout == 20
+
+
+def test_default_timeout_service_client(config):
+    # Test to check if values are propagated from service client to the base client
+
+    # Default case
+    client = oci.identity.IdentityClient(config)
+    assert client.base_client.timeout == (10.0, 60.0)
+
+    # Assert if custom timeout values are propagated to the base client
+    client = oci.identity.IdentityClient(config, timeout=(20, 70))
+    assert client.base_client.timeout == (20, 70)
+
+    # Assert if custom timeout values are propagated all the way to the requests
+    client = oci.identity.IdentityClient(config, timeout=0.0001)
+    with pytest.raises((ConnectTimeout, RequestException), match=r".* timed out.*"):
+        client.list_regions()
