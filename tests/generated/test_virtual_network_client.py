@@ -936,6 +936,47 @@ def test_change_virtual_circuit_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_change_vlan_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangeVlanCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ChangeVlanCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangeVlanCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.change_vlan_compartment(
+                vlan_id=request.pop(util.camelize('vlanId')),
+                change_vlan_compartment_details=request.pop(util.camelize('ChangeVlanCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangeVlanCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_vlan_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
 def test_connect_local_peering_gateways(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ConnectLocalPeeringGateways'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1857,6 +1898,46 @@ def test_create_virtual_circuit(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_create_vlan(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'CreateVlan'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'CreateVlan')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='CreateVlan')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.create_vlan(
+                create_vlan_details=request.pop(util.camelize('CreateVlanDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'CreateVlan',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'vlan',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
 def test_delete_cpe(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DeleteCpe'):
@@ -2692,6 +2773,46 @@ def test_delete_virtual_circuit(testing_service_client):
             result,
             service_error,
             'delete_virtual_circuit',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_delete_vlan(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'DeleteVlan'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'DeleteVlan')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='DeleteVlan')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.delete_vlan(
+                vlan_id=request.pop(util.camelize('vlanId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'DeleteVlan',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_vlan',
             True,
             False
         )
@@ -4258,6 +4379,46 @@ def test_get_virtual_circuit(testing_service_client):
             result,
             service_error,
             'virtualCircuit',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_get_vlan(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetVlan'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'GetVlan')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetVlan')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.get_vlan(
+                vlan_id=request.pop(util.camelize('vlanId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetVlan',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'vlan',
             False,
             False
         )
@@ -6252,6 +6413,69 @@ def test_list_virtual_circuits(testing_service_client):
 
 
 # IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_list_vlans(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListVlans'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ListVlans')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListVlans')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.list_vlans(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                vcn_id=request.pop(util.camelize('vcnId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_vlans(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    vcn_id=request.pop(util.camelize('vcnId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_vlans(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        vcn_id=request.pop(util.camelize('vcnId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListVlans',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'vlan',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
 def test_remove_network_security_group_security_rules(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'RemoveNetworkSecurityGroupSecurityRules'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -7315,6 +7539,47 @@ def test_update_virtual_circuit(testing_service_client):
             result,
             service_error,
             'virtualCircuit',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_update_vlan(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'UpdateVlan'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'UpdateVlan')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateVlan')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.update_vlan(
+                vlan_id=request.pop(util.camelize('vlanId')),
+                update_vlan_details=request.pop(util.camelize('UpdateVlanDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'UpdateVlan',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'vlan',
             False,
             False
         )

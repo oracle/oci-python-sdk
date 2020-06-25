@@ -82,8 +82,10 @@ class AppCatalogListingResourceVersionSummary(object):
     def time_published(self):
         """
         Gets the time_published of this AppCatalogListingResourceVersionSummary.
-        Date and time the listing resource version was published, in RFC3339 format.
+        Date and time the listing resource version was published, in `RFC3339`__ format.
         Example: `2018-03-20T12:32:53.532Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_published of this AppCatalogListingResourceVersionSummary.
@@ -95,8 +97,10 @@ class AppCatalogListingResourceVersionSummary(object):
     def time_published(self, time_published):
         """
         Sets the time_published of this AppCatalogListingResourceVersionSummary.
-        Date and time the listing resource version was published, in RFC3339 format.
+        Date and time the listing resource version was published, in `RFC3339`__ format.
         Example: `2018-03-20T12:32:53.532Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_published: The time_published of this AppCatalogListingResourceVersionSummary.

@@ -43,6 +43,8 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/usage_api/pom.xml</module>
+    <module>poms/ocvp/pom.xml</module>
     <module>poms/data_integration/pom.xml</module>
     <module>poms/mysql/pom.xml</module>
     <module>poms/data_safe/pom.xml</module>

@@ -10,7 +10,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ShapeNetworkingBandwidthOptions(object):
     """
-    The possible configurations for the amount of networking bandwidth available to an instance of this shape. If this field is null, then all instances of this shape have a fixed amount of bandwidth equivalent to `networkingBandwidthInGbps`.
+    For a flexible shape, the amount of networking bandwidth available for instances that use this shape.
+
+    If this field is null, then this shape has a fixed amount of bandwidth equivalent to `networkingBandwidthInGbps`.
     """
 
     def __init__(self, **kwargs):
@@ -99,8 +101,7 @@ class ShapeNetworkingBandwidthOptions(object):
     def default_per_ocpu_in_gbps(self):
         """
         Gets the default_per_ocpu_in_gbps of this ShapeNetworkingBandwidthOptions.
-        The default amount of networking bandwidth, in gigabits per second,
-        per OCPU.
+        The default amount of networking bandwidth per OCPU, in gigabits per second.
 
 
         :return: The default_per_ocpu_in_gbps of this ShapeNetworkingBandwidthOptions.
@@ -112,8 +113,7 @@ class ShapeNetworkingBandwidthOptions(object):
     def default_per_ocpu_in_gbps(self, default_per_ocpu_in_gbps):
         """
         Sets the default_per_ocpu_in_gbps of this ShapeNetworkingBandwidthOptions.
-        The default amount of networking bandwidth, in gigabits per second,
-        per OCPU.
+        The default amount of networking bandwidth per OCPU, in gigabits per second.
 
 
         :param default_per_ocpu_in_gbps: The default_per_ocpu_in_gbps of this ShapeNetworkingBandwidthOptions.

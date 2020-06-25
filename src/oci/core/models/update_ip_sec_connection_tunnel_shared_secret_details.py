@@ -40,8 +40,6 @@ class UpdateIPSecConnectionTunnelSharedSecretDetails(object):
         The shared secret (pre-shared key) to use for the tunnel. Only numbers, letters, and spaces
         are allowed.
 
-        Example: `EXAMPLEToUis6j1cp8GdVQxcmdfMO0yXMLilZTbYCMDGu4V8o`
-
 
         :return: The shared_secret of this UpdateIPSecConnectionTunnelSharedSecretDetails.
         :rtype: str
@@ -54,8 +52,6 @@ class UpdateIPSecConnectionTunnelSharedSecretDetails(object):
         Sets the shared_secret of this UpdateIPSecConnectionTunnelSharedSecretDetails.
         The shared secret (pre-shared key) to use for the tunnel. Only numbers, letters, and spaces
         are allowed.
-
-        Example: `EXAMPLEToUis6j1cp8GdVQxcmdfMO0yXMLilZTbYCMDGu4V8o`
 
 
         :param shared_secret: The shared_secret of this UpdateIPSecConnectionTunnelSharedSecretDetails.

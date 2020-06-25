@@ -870,9 +870,11 @@ class Instance(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this Instance.
-        The date and time the instance was created, in the format defined by RFC3339.
+        The date and time the instance was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_created of this Instance.
@@ -884,9 +886,11 @@ class Instance(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Instance.
-        The date and time the instance was created, in the format defined by RFC3339.
+        The date and time the instance was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_created: The time_created of this Instance.
@@ -918,10 +922,12 @@ class Instance(object):
     def time_maintenance_reboot_due(self):
         """
         Gets the time_maintenance_reboot_due of this Instance.
-        The date and time the instance is expected to be stopped / started,  in the format defined by RFC3339.
+        The date and time the instance is expected to be stopped / started,  in the format defined by `RFC3339`__.
         After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time.
         Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state.
         Example: `2018-05-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_maintenance_reboot_due of this Instance.
@@ -933,10 +939,12 @@ class Instance(object):
     def time_maintenance_reboot_due(self, time_maintenance_reboot_due):
         """
         Sets the time_maintenance_reboot_due of this Instance.
-        The date and time the instance is expected to be stopped / started,  in the format defined by RFC3339.
+        The date and time the instance is expected to be stopped / started,  in the format defined by `RFC3339`__.
         After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time.
         Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state.
         Example: `2018-05-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_maintenance_reboot_due: The time_maintenance_reboot_due of this Instance.

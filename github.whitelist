@@ -87,3 +87,5 @@
 ^src/oci/data_safe/.*\.py$
 ^src/oci/mysql/.*\.py$
 ^src/oci/data_integration/.*\.py$
+^src/oci/ocvp/.*\.py$
+^src/oci/usage_api/.*\.py$

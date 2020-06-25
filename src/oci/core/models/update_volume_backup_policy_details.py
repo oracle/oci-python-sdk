@@ -97,7 +97,11 @@ class UpdateVolumeBackupPolicyDetails(object):
     def destination_region(self):
         """
         Gets the destination_region of this UpdateVolumeBackupPolicyDetails.
-        The paired destination region (pre-defined by oracle) for scheduled cross region backup calls. Example: `us-ashburn-1`
+        The paired destination region for copying scheduled backups to. Example: `us-ashburn-1`.
+        Specify `none` to reset the `destinationRegion` parameter.
+        See `Region Pairs`__ for details about paired regions.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs
 
 
         :return: The destination_region of this UpdateVolumeBackupPolicyDetails.
@@ -109,7 +113,11 @@ class UpdateVolumeBackupPolicyDetails(object):
     def destination_region(self, destination_region):
         """
         Sets the destination_region of this UpdateVolumeBackupPolicyDetails.
-        The paired destination region (pre-defined by oracle) for scheduled cross region backup calls. Example: `us-ashburn-1`
+        The paired destination region for copying scheduled backups to. Example: `us-ashburn-1`.
+        Specify `none` to reset the `destinationRegion` parameter.
+        See `Region Pairs`__ for details about paired regions.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs
 
 
         :param destination_region: The destination_region of this UpdateVolumeBackupPolicyDetails.

@@ -199,8 +199,10 @@ class CreateAppCatalogSubscriptionDetails(object):
     def time_retrieved(self):
         """
         **[Required]** Gets the time_retrieved of this CreateAppCatalogSubscriptionDetails.
-        Date and time the agreements were retrieved, in RFC3339 format.
+        Date and time the agreements were retrieved, in `RFC3339`__ format.
         Example: `2018-03-20T12:32:53.532Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_retrieved of this CreateAppCatalogSubscriptionDetails.
@@ -212,8 +214,10 @@ class CreateAppCatalogSubscriptionDetails(object):
     def time_retrieved(self, time_retrieved):
         """
         Sets the time_retrieved of this CreateAppCatalogSubscriptionDetails.
-        Date and time the agreements were retrieved, in RFC3339 format.
+        Date and time the agreements were retrieved, in `RFC3339`__ format.
         Example: `2018-03-20T12:32:53.532Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_retrieved: The time_retrieved of this CreateAppCatalogSubscriptionDetails.

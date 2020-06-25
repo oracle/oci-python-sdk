@@ -165,7 +165,10 @@ class VolumeBackupPolicy(object):
     def destination_region(self):
         """
         Gets the destination_region of this VolumeBackupPolicy.
-        The paired destination region (pre-defined by oracle) for scheduled cross region backup calls. Example `us-ashburn-1`
+        The paired destination region for copying scheduled backups to. Example `us-ashburn-1`.
+        See `Region Pairs`__ for details about paired regions.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs
 
 
         :return: The destination_region of this VolumeBackupPolicy.
@@ -177,7 +180,10 @@ class VolumeBackupPolicy(object):
     def destination_region(self, destination_region):
         """
         Sets the destination_region of this VolumeBackupPolicy.
-        The paired destination region (pre-defined by oracle) for scheduled cross region backup calls. Example `us-ashburn-1`
+        The paired destination region for copying scheduled backups to. Example `us-ashburn-1`.
+        See `Region Pairs`__ for details about paired regions.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs
 
 
         :param destination_region: The destination_region of this VolumeBackupPolicy.
@@ -189,7 +195,9 @@ class VolumeBackupPolicy(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this VolumeBackupPolicy.
-        The date and time the volume backup policy was created. Format defined by RFC3339.
+        The date and time the volume backup policy was created. Format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_created of this VolumeBackupPolicy.
@@ -201,7 +209,9 @@ class VolumeBackupPolicy(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this VolumeBackupPolicy.
-        The date and time the volume backup policy was created. Format defined by RFC3339.
+        The date and time the volume backup policy was created. Format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_created: The time_created of this VolumeBackupPolicy.

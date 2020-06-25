@@ -254,8 +254,10 @@ class AppCatalogSubscription(object):
     def time_created(self):
         """
         Gets the time_created of this AppCatalogSubscription.
-        Date and time at which the subscription was created, in RFC3339 format.
+        Date and time at which the subscription was created, in `RFC3339`__ format.
         Example: `2018-03-20T12:32:53.532Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_created of this AppCatalogSubscription.
@@ -267,8 +269,10 @@ class AppCatalogSubscription(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this AppCatalogSubscription.
-        Date and time at which the subscription was created, in RFC3339 format.
+        Date and time at which the subscription was created, in `RFC3339`__ format.
         Example: `2018-03-20T12:32:53.532Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_created: The time_created of this AppCatalogSubscription.

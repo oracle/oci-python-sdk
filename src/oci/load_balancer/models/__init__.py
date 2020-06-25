@@ -33,6 +33,7 @@ from .health_checker import HealthChecker
 from .health_checker_details import HealthCheckerDetails
 from .hostname import Hostname
 from .hostname_details import HostnameDetails
+from .http_header_rule import HttpHeaderRule
 from .ip_address import IpAddress
 from .lb_cookie_session_persistence_configuration_details import LBCookieSessionPersistenceConfigurationDetails
 from .listener import Listener
@@ -106,6 +107,7 @@ load_balancer_type_mapping = {
     "HealthCheckerDetails": HealthCheckerDetails,
     "Hostname": Hostname,
     "HostnameDetails": HostnameDetails,
+    "HttpHeaderRule": HttpHeaderRule,
     "IpAddress": IpAddress,
     "LBCookieSessionPersistenceConfigurationDetails": LBCookieSessionPersistenceConfigurationDetails,
     "Listener": Listener,

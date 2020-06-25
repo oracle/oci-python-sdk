@@ -60,6 +60,7 @@ from .change_service_gateway_compartment_details import ChangeServiceGatewayComp
 from .change_subnet_compartment_details import ChangeSubnetCompartmentDetails
 from .change_vcn_compartment_details import ChangeVcnCompartmentDetails
 from .change_virtual_circuit_compartment_details import ChangeVirtualCircuitCompartmentDetails
+from .change_vlan_compartment_details import ChangeVlanCompartmentDetails
 from .change_volume_backup_compartment_details import ChangeVolumeBackupCompartmentDetails
 from .change_volume_compartment_details import ChangeVolumeCompartmentDetails
 from .change_volume_group_backup_compartment_details import ChangeVolumeGroupBackupCompartmentDetails
@@ -116,6 +117,7 @@ from .create_subnet_details import CreateSubnetDetails
 from .create_vcn_details import CreateVcnDetails
 from .create_virtual_circuit_details import CreateVirtualCircuitDetails
 from .create_virtual_circuit_public_prefix_details import CreateVirtualCircuitPublicPrefixDetails
+from .create_vlan_details import CreateVlanDetails
 from .create_vnic_details import CreateVnicDetails
 from .create_volume_backup_details import CreateVolumeBackupDetails
 from .create_volume_backup_policy_assignment_details import CreateVolumeBackupPolicyAssignmentDetails
@@ -281,6 +283,7 @@ from .update_subnet_details import UpdateSubnetDetails
 from .update_tunnel_cpe_device_config_details import UpdateTunnelCpeDeviceConfigDetails
 from .update_vcn_details import UpdateVcnDetails
 from .update_virtual_circuit_details import UpdateVirtualCircuitDetails
+from .update_vlan_details import UpdateVlanDetails
 from .update_vnic_details import UpdateVnicDetails
 from .update_volume_backup_details import UpdateVolumeBackupDetails
 from .update_volume_backup_policy_details import UpdateVolumeBackupPolicyDetails
@@ -293,6 +296,7 @@ from .vcn import Vcn
 from .virtual_circuit import VirtualCircuit
 from .virtual_circuit_bandwidth_shape import VirtualCircuitBandwidthShape
 from .virtual_circuit_public_prefix import VirtualCircuitPublicPrefix
+from .vlan import Vlan
 from .vnic import Vnic
 from .vnic_attachment import VnicAttachment
 from .volume import Volume
@@ -370,6 +374,7 @@ core_type_mapping = {
     "ChangeSubnetCompartmentDetails": ChangeSubnetCompartmentDetails,
     "ChangeVcnCompartmentDetails": ChangeVcnCompartmentDetails,
     "ChangeVirtualCircuitCompartmentDetails": ChangeVirtualCircuitCompartmentDetails,
+    "ChangeVlanCompartmentDetails": ChangeVlanCompartmentDetails,
     "ChangeVolumeBackupCompartmentDetails": ChangeVolumeBackupCompartmentDetails,
     "ChangeVolumeCompartmentDetails": ChangeVolumeCompartmentDetails,
     "ChangeVolumeGroupBackupCompartmentDetails": ChangeVolumeGroupBackupCompartmentDetails,
@@ -426,6 +431,7 @@ core_type_mapping = {
     "CreateVcnDetails": CreateVcnDetails,
     "CreateVirtualCircuitDetails": CreateVirtualCircuitDetails,
     "CreateVirtualCircuitPublicPrefixDetails": CreateVirtualCircuitPublicPrefixDetails,
+    "CreateVlanDetails": CreateVlanDetails,
     "CreateVnicDetails": CreateVnicDetails,
     "CreateVolumeBackupDetails": CreateVolumeBackupDetails,
     "CreateVolumeBackupPolicyAssignmentDetails": CreateVolumeBackupPolicyAssignmentDetails,
@@ -591,6 +597,7 @@ core_type_mapping = {
     "UpdateTunnelCpeDeviceConfigDetails": UpdateTunnelCpeDeviceConfigDetails,
     "UpdateVcnDetails": UpdateVcnDetails,
     "UpdateVirtualCircuitDetails": UpdateVirtualCircuitDetails,
+    "UpdateVlanDetails": UpdateVlanDetails,
     "UpdateVnicDetails": UpdateVnicDetails,
     "UpdateVolumeBackupDetails": UpdateVolumeBackupDetails,
     "UpdateVolumeBackupPolicyDetails": UpdateVolumeBackupPolicyDetails,
@@ -603,6 +610,7 @@ core_type_mapping = {
     "VirtualCircuit": VirtualCircuit,
     "VirtualCircuitBandwidthShape": VirtualCircuitBandwidthShape,
     "VirtualCircuitPublicPrefix": VirtualCircuitPublicPrefix,
+    "Vlan": Vlan,
     "Vnic": Vnic,
     "VnicAttachment": VnicAttachment,
     "Volume": Volume,

@@ -27,6 +27,14 @@ class InstanceConfigurationIscsiAttachVolumeDetails(InstanceConfigurationAttachV
             The value to assign to the is_read_only property of this InstanceConfigurationIscsiAttachVolumeDetails.
         :type is_read_only: bool
 
+        :param device:
+            The value to assign to the device property of this InstanceConfigurationIscsiAttachVolumeDetails.
+        :type device: str
+
+        :param is_shareable:
+            The value to assign to the is_shareable property of this InstanceConfigurationIscsiAttachVolumeDetails.
+        :type is_shareable: bool
+
         :param type:
             The value to assign to the type property of this InstanceConfigurationIscsiAttachVolumeDetails.
         :type type: str
@@ -39,6 +47,8 @@ class InstanceConfigurationIscsiAttachVolumeDetails(InstanceConfigurationAttachV
         self.swagger_types = {
             'display_name': 'str',
             'is_read_only': 'bool',
+            'device': 'str',
+            'is_shareable': 'bool',
             'type': 'str',
             'use_chap': 'bool'
         }
@@ -46,12 +56,16 @@ class InstanceConfigurationIscsiAttachVolumeDetails(InstanceConfigurationAttachV
         self.attribute_map = {
             'display_name': 'displayName',
             'is_read_only': 'isReadOnly',
+            'device': 'device',
+            'is_shareable': 'isShareable',
             'type': 'type',
             'use_chap': 'useChap'
         }
 
         self._display_name = None
         self._is_read_only = None
+        self._device = None
+        self._is_shareable = None
         self._type = None
         self._use_chap = None
         self._type = 'iscsi'

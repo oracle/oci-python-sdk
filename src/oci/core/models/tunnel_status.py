@@ -74,7 +74,7 @@ class TunnelStatus(object):
         **[Required]** Gets the ip_address of this TunnelStatus.
         The IP address of Oracle's VPN headend.
 
-        Example: `129.146.17.50`
+        Example: `203.0.113.50`
 
 
         :return: The ip_address of this TunnelStatus.
@@ -88,7 +88,7 @@ class TunnelStatus(object):
         Sets the ip_address of this TunnelStatus.
         The IP address of Oracle's VPN headend.
 
-        Example: `129.146.17.50`
+        Example: `203.0.113.50`
 
 
         :param ip_address: The ip_address of this TunnelStatus.
@@ -130,9 +130,11 @@ class TunnelStatus(object):
     def time_created(self):
         """
         Gets the time_created of this TunnelStatus.
-        The date and time the IPSec connection was created, in the format defined by RFC3339.
+        The date and time the IPSec connection was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_created of this TunnelStatus.
@@ -144,9 +146,11 @@ class TunnelStatus(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this TunnelStatus.
-        The date and time the IPSec connection was created, in the format defined by RFC3339.
+        The date and time the IPSec connection was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_created: The time_created of this TunnelStatus.
@@ -158,9 +162,11 @@ class TunnelStatus(object):
     def time_state_modified(self):
         """
         Gets the time_state_modified of this TunnelStatus.
-        When the state of the tunnel last changed, in the format defined by RFC3339.
+        When the state of the tunnel last changed, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_state_modified of this TunnelStatus.
@@ -172,9 +178,11 @@ class TunnelStatus(object):
     def time_state_modified(self, time_state_modified):
         """
         Sets the time_state_modified of this TunnelStatus.
-        When the state of the tunnel last changed, in the format defined by RFC3339.
+        When the state of the tunnel last changed, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_state_modified: The time_state_modified of this TunnelStatus.

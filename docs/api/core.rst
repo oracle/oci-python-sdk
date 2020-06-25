@@ -80,6 +80,7 @@ Core Services
     oci.core.models.ChangeSubnetCompartmentDetails
     oci.core.models.ChangeVcnCompartmentDetails
     oci.core.models.ChangeVirtualCircuitCompartmentDetails
+    oci.core.models.ChangeVlanCompartmentDetails
     oci.core.models.ChangeVolumeBackupCompartmentDetails
     oci.core.models.ChangeVolumeCompartmentDetails
     oci.core.models.ChangeVolumeGroupBackupCompartmentDetails
@@ -136,6 +137,7 @@ Core Services
     oci.core.models.CreateVcnDetails
     oci.core.models.CreateVirtualCircuitDetails
     oci.core.models.CreateVirtualCircuitPublicPrefixDetails
+    oci.core.models.CreateVlanDetails
     oci.core.models.CreateVnicDetails
     oci.core.models.CreateVolumeBackupDetails
     oci.core.models.CreateVolumeBackupPolicyAssignmentDetails
@@ -301,6 +303,7 @@ Core Services
     oci.core.models.UpdateTunnelCpeDeviceConfigDetails
     oci.core.models.UpdateVcnDetails
     oci.core.models.UpdateVirtualCircuitDetails
+    oci.core.models.UpdateVlanDetails
     oci.core.models.UpdateVnicDetails
     oci.core.models.UpdateVolumeBackupDetails
     oci.core.models.UpdateVolumeBackupPolicyDetails
@@ -313,6 +316,7 @@ Core Services
     oci.core.models.VirtualCircuit
     oci.core.models.VirtualCircuitBandwidthShape
     oci.core.models.VirtualCircuitPublicPrefix
+    oci.core.models.Vlan
     oci.core.models.Vnic
     oci.core.models.VnicAttachment
     oci.core.models.Volume

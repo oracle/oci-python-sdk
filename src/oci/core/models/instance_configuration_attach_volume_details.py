@@ -31,6 +31,14 @@ class InstanceConfigurationAttachVolumeDetails(object):
             The value to assign to the is_read_only property of this InstanceConfigurationAttachVolumeDetails.
         :type is_read_only: bool
 
+        :param device:
+            The value to assign to the device property of this InstanceConfigurationAttachVolumeDetails.
+        :type device: str
+
+        :param is_shareable:
+            The value to assign to the is_shareable property of this InstanceConfigurationAttachVolumeDetails.
+        :type is_shareable: bool
+
         :param type:
             The value to assign to the type property of this InstanceConfigurationAttachVolumeDetails.
         :type type: str
@@ -39,17 +47,23 @@ class InstanceConfigurationAttachVolumeDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'is_read_only': 'bool',
+            'device': 'str',
+            'is_shareable': 'bool',
             'type': 'str'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
             'is_read_only': 'isReadOnly',
+            'device': 'device',
+            'is_shareable': 'isShareable',
             'type': 'type'
         }
 
         self._display_name = None
         self._is_read_only = None
+        self._device = None
+        self._is_shareable = None
         self._type = None
 
     @staticmethod
@@ -115,6 +129,60 @@ class InstanceConfigurationAttachVolumeDetails(object):
         :type: bool
         """
         self._is_read_only = is_read_only
+
+    @property
+    def device(self):
+        """
+        Gets the device of this InstanceConfigurationAttachVolumeDetails.
+        The device name.
+
+
+        :return: The device of this InstanceConfigurationAttachVolumeDetails.
+        :rtype: str
+        """
+        return self._device
+
+    @device.setter
+    def device(self, device):
+        """
+        Sets the device of this InstanceConfigurationAttachVolumeDetails.
+        The device name.
+
+
+        :param device: The device of this InstanceConfigurationAttachVolumeDetails.
+        :type: str
+        """
+        self._device = device
+
+    @property
+    def is_shareable(self):
+        """
+        Gets the is_shareable of this InstanceConfigurationAttachVolumeDetails.
+        Whether the attachment should be created in shareable mode. If an attachment
+        is created in shareable mode, then other instances can attach the same volume, provided
+        that they also create their attachments in shareable mode. Only certain volume types can
+        be attached in shareable mode. Defaults to false if not specified.
+
+
+        :return: The is_shareable of this InstanceConfigurationAttachVolumeDetails.
+        :rtype: bool
+        """
+        return self._is_shareable
+
+    @is_shareable.setter
+    def is_shareable(self, is_shareable):
+        """
+        Sets the is_shareable of this InstanceConfigurationAttachVolumeDetails.
+        Whether the attachment should be created in shareable mode. If an attachment
+        is created in shareable mode, then other instances can attach the same volume, provided
+        that they also create their attachments in shareable mode. Only certain volume types can
+        be attached in shareable mode. Defaults to false if not specified.
+
+
+        :param is_shareable: The is_shareable of this InstanceConfigurationAttachVolumeDetails.
+        :type: bool
+        """
+        self._is_shareable = is_shareable
 
     @property
     def type(self):

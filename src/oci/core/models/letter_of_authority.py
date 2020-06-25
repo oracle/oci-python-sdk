@@ -216,7 +216,9 @@ class LetterOfAuthority(object):
     def time_expires(self):
         """
         Gets the time_expires of this LetterOfAuthority.
-        The date and time when the Letter of Authority expires, in the format defined by RFC3339.
+        The date and time when the Letter of Authority expires, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_expires of this LetterOfAuthority.
@@ -228,7 +230,9 @@ class LetterOfAuthority(object):
     def time_expires(self, time_expires):
         """
         Sets the time_expires of this LetterOfAuthority.
-        The date and time when the Letter of Authority expires, in the format defined by RFC3339.
+        The date and time when the Letter of Authority expires, in the format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_expires: The time_expires of this LetterOfAuthority.
@@ -240,9 +244,11 @@ class LetterOfAuthority(object):
     def time_issued(self):
         """
         Gets the time_issued of this LetterOfAuthority.
-        The date and time the Letter of Authority was created, in the format defined by RFC3339.
+        The date and time the Letter of Authority was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_issued of this LetterOfAuthority.
@@ -254,9 +260,11 @@ class LetterOfAuthority(object):
     def time_issued(self, time_issued):
         """
         Sets the time_issued of this LetterOfAuthority.
-        The date and time the Letter of Authority was created, in the format defined by RFC3339.
+        The date and time the Letter of Authority was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_issued: The time_issued of this LetterOfAuthority.

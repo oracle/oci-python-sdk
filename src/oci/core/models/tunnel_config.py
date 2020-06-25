@@ -56,7 +56,7 @@ class TunnelConfig(object):
         **[Required]** Gets the ip_address of this TunnelConfig.
         The IP address of Oracle's VPN headend.
 
-        Example: `129.146.17.50`
+        Example: `203.0.113.50 `
 
 
         :return: The ip_address of this TunnelConfig.
@@ -70,7 +70,7 @@ class TunnelConfig(object):
         Sets the ip_address of this TunnelConfig.
         The IP address of Oracle's VPN headend.
 
-        Example: `129.146.17.50`
+        Example: `203.0.113.50 `
 
 
         :param ip_address: The ip_address of this TunnelConfig.
@@ -84,8 +84,6 @@ class TunnelConfig(object):
         **[Required]** Gets the shared_secret of this TunnelConfig.
         The shared secret of the IPSec tunnel.
 
-        Example: `EXAMPLEToUis6j1cp8GdVQxcmdfMO0yXMLilZTbYCMDGu4V8o`
-
 
         :return: The shared_secret of this TunnelConfig.
         :rtype: str
@@ -98,8 +96,6 @@ class TunnelConfig(object):
         Sets the shared_secret of this TunnelConfig.
         The shared secret of the IPSec tunnel.
 
-        Example: `EXAMPLEToUis6j1cp8GdVQxcmdfMO0yXMLilZTbYCMDGu4V8o`
-
 
         :param shared_secret: The shared_secret of this TunnelConfig.
         :type: str
@@ -110,9 +106,11 @@ class TunnelConfig(object):
     def time_created(self):
         """
         Gets the time_created of this TunnelConfig.
-        The date and time the IPSec connection was created, in the format defined by RFC3339.
+        The date and time the IPSec connection was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_created of this TunnelConfig.
@@ -124,9 +122,11 @@ class TunnelConfig(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this TunnelConfig.
-        The date and time the IPSec connection was created, in the format defined by RFC3339.
+        The date and time the IPSec connection was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_created: The time_created of this TunnelConfig.
