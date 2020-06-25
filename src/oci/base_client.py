@@ -247,13 +247,9 @@ class BaseClient(object):
             enforce_content_headers=enforce_content_headers
         )
 
-        if not isinstance(self.signer, signers.InstancePrincipalsSecurityTokenSigner):
-            start = timer()
-            response = self.request(request)
-            end = timer()
-            self.logger.debug('time elapsed for request: {}'.format(str(end - start)))
-            return response
-        else:
+        if isinstance(self.signer, signers.InstancePrincipalsSecurityTokenSigner) or \
+                isinstance(self.signer, signers.ResourcePrincipalsFederationSigner) or \
+                isinstance(self.signer, signers.EphemeralResourcePrincipalSigner):
             call_attempts = 0
             while call_attempts < 2:
                 try:
@@ -264,6 +260,12 @@ class BaseClient(object):
                         self.signer.refresh_security_token()
                     else:
                         raise
+        else:
+            start = timer()
+            response = self.request(request)
+            end = timer()
+            self.logger.debug('time elapsed for request: {}'.format(str(end - start)))
+            return response
 
     def generate_collection_format_param(self, param_value, collection_format_type):
         if param_value is missing:
