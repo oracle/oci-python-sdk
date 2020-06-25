@@ -958,29 +958,55 @@ class ShowOCIService(object):
 
     ##########################################################################
     # Load Tenancy
+    # Password policy contributed by Josh.
     ##########################################################################
 
     def __load_identity_tenancy(self, identity, tenancy_id):
         self.__load_print_status("Tenancy")
         start_time = time.time()
-
         try:
             tenancy = identity.get_tenancy(tenancy_id).data
+
+            # Getting Tenancy Password Policy
+            password_policy = {}
             try:
-                sub_regions = identity.list_region_subscriptions(tenancy.id).data
+                password_policy_data = identity.get_authentication_policy(tenancy.id).data
+                if password_policy_data:
+                    ppd = password_policy_data.password_policy
+                    password_policy = {
+                        'is_lowercase_characters_required': str(ppd.is_lowercase_characters_required),
+                        'is_numeric_characters_required': str(ppd.is_numeric_characters_required),
+                        'is_special_characters_required': str(ppd.is_special_characters_required),
+                        'is_uppercase_characters_required': str(ppd.is_uppercase_characters_required),
+                        'is_username_containment_allowed': str(ppd.is_username_containment_allowed),
+                        'minimum_password_length': str(ppd.minimum_password_length)
+                    }
+
             except oci.exceptions.ServiceError as e:
                 if self.__check_service_error(e.code):
                     self.__load_print_auth_warning()
                 else:
                     raise
 
-            data_subs = [str(es.region_name) for es in sub_regions]
+            # Get sub regions
+            data_subs = []
+            try:
+                sub_regions = identity.list_region_subscriptions(tenancy.id).data
+                data_subs = [str(es.region_name) for es in sub_regions]
+            except oci.exceptions.ServiceError as e:
+                if self.__check_service_error(e.code):
+                    self.__load_print_auth_warning()
+                else:
+                    raise
+
+            # add the data
             data = {
                 'id': tenancy.id,
                 'name': tenancy.name,
                 'home_region_key': tenancy.home_region_key,
                 'subscribe_regions': str(', '.join(x for x in data_subs)),
-                'list_region_subscriptions': data_subs
+                'list_region_subscriptions': data_subs,
+                'password_policy': password_policy
             }
             self.data[self.C_IDENTITY][self.C_IDENTITY_TENANCY] = data
             self.__load_print_cnt(1, start_time)
@@ -3475,7 +3501,17 @@ class ShowOCIService(object):
                            'shape_max_vnic_attachments': 0,
                            'shape_networking_bandwidth_in_gbps': 0,
                            'shape_processor_description': "",
-                           'console_vnc_connection_string': "", 'image': "Not Found", 'image_os': "Oracle Linux"}
+                           'console_vnc_connection_string': "",
+                           'image': "Not Found",
+                           'image_os': "Oracle Linux",
+                           'agent_is_management_disabled ': "",
+                           'agent_is_monitoring_disabled': ""
+                           }
+
+                    # agent_config
+                    if arr.agent_config:
+                        val["agent_is_management_disabled"] = str(arr.agent_config.is_management_disabled)
+                        val["agent_is_monitoring_disabled"] = str(arr.agent_config.is_monitoring_disabled)
 
                     # check if vm has shape config
                     if arr.shape_config:

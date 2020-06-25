@@ -1417,7 +1417,11 @@ class ShowOCIData(object):
                         'lifecycle_state': instance['lifecycle_state'],
                         'console_id': instance['console_id'], 'console': instance['console'],
                         'time_created': instance['time_created'],
-                        'defined_tags': instance['defined_tags'], 'freeform_tags': instance['freeform_tags']}
+                        'agent_is_management_disabled': instance['agent_is_management_disabled'],
+                        'agent_is_monitoring_disabled': instance['agent_is_monitoring_disabled'],
+                        'defined_tags': instance['defined_tags'],
+                        'freeform_tags': instance['freeform_tags']
+                        }
 
                 # boot volumes attachments
                 boot_vol_attachement = self.service.search_multi_items(self.service.C_COMPUTE, self.service.C_COMPUTE_BOOT_VOL_ATTACH, 'instance_id', instance['id'])
