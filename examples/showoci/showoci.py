@@ -69,6 +69,7 @@
 # - oci.secrets.SecretsClient
 # - oci.vault.VaultsClient
 # - oci.work_requests.WorkRequestClient
+# -
 ##########################################################################
 from __future__ import print_function
 from showoci_data import ShowOCIData
@@ -80,7 +81,7 @@ import sys
 import argparse
 import datetime
 
-version = "20.06.16"
+version = "20.06.30"
 
 ##########################################################################
 # check OCI version
