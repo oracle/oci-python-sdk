@@ -20,12 +20,6 @@
     <feature-id-dir>${sdk-root-dir}/codegenConfig/featureIds</feature-id-dir>
     <workrequests-api-spec-spec-file>workrequests-api-spec.cond.yaml</workrequests-api-spec-spec-file>
   </properties>
-  <dependencies>
-    <dependency>
-      <groupId>com.oracle.pic.commons.workrequests</groupId>
-      <artifactId>workrequests-api-spec</artifactId>
-    </dependency>
-  </dependencies>
   <build>
     <directory>${sdk-root-dir}/target</directory>
     <plugins>

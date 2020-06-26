@@ -20,12 +20,6 @@
     <feature-id-dir>${sdk-root-dir}/codegenConfig/featureIds</feature-id-dir>
     <coreservices-api-spec-spec-file>source/coreservices-api-spec-20160918.cond.yaml</coreservices-api-spec-spec-file>
   </properties>
-  <dependencies>
-    <dependency>
-      <groupId>com.oracle.pic.commons</groupId>
-      <artifactId>coreservices-api-spec</artifactId>
-    </dependency>
-  </dependencies>
   <build>
     <directory>${sdk-root-dir}/target</directory>
     <plugins>

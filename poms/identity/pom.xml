@@ -20,12 +20,6 @@
     <feature-id-dir>${sdk-root-dir}/codegenConfig/featureIds</feature-id-dir>
     <identity-control-plane-api-spec-spec-file>source/identity-control-plane-api-spec-20160918.cond.yaml</identity-control-plane-api-spec-spec-file>
   </properties>
-  <dependencies>
-    <dependency>
-      <groupId>com.oracle.pic.identity</groupId>
-      <artifactId>identity-control-plane-api-spec</artifactId>
-    </dependency>
-  </dependencies>
   <build>
     <directory>${sdk-root-dir}/target</directory>
     <plugins>

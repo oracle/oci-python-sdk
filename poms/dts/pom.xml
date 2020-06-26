@@ -20,12 +20,6 @@
     <feature-id-dir>${sdk-root-dir}/codegenConfig/featureIds</feature-id-dir>
     <dts-api-spec-spec-file>datats-customer-control-plane.cond.yaml</dts-api-spec-spec-file>
   </properties>
-  <dependencies>
-    <dependency>
-      <groupId>com.oracle.pic.rhino</groupId>
-      <artifactId>dts-api-spec</artifactId>
-    </dependency>
-  </dependencies>
   <build>
     <directory>${sdk-root-dir}/target</directory>
     <plugins>

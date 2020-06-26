@@ -20,12 +20,6 @@
     <feature-id-dir>${sdk-root-dir}/codegenConfig/featureIds</feature-id-dir>
     <budgets-control-plane-spec-spec-file>budget.api.cond.yaml</budgets-control-plane-spec-spec-file>
   </properties>
-  <dependencies>
-    <dependency>
-      <groupId>com.oracle.oci.usage.budgets</groupId>
-      <artifactId>budgets-control-plane-spec</artifactId>
-    </dependency>
-  </dependencies>
   <build>
     <directory>${sdk-root-dir}/target</directory>
     <plugins>

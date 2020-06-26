@@ -20,12 +20,6 @@
     <feature-id-dir>${sdk-root-dir}/codegenConfig/featureIds</feature-id-dir>
     <quotas-control-plane-api-spec-spec-file>quotas-control-plane-api-spec-20181025.cond.yaml</quotas-control-plane-api-spec-spec-file>
   </properties>
-  <dependencies>
-    <dependency>
-      <groupId>com.oracle.oci.quotas</groupId>
-      <artifactId>quotas-control-plane-api-spec</artifactId>
-    </dependency>
-  </dependencies>
   <build>
     <directory>${sdk-root-dir}/target</directory>
     <plugins>

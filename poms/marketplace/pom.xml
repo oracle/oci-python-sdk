@@ -22,13 +22,6 @@
     <!-- Service Spec file goes here -->
     <marketplace-consumer-service-spec-spec-file>source/consumer-service-api.cond.yaml</marketplace-consumer-service-spec-spec-file>
   </properties>
-  <dependencies>
-    <!-- Service dependency goes here -->
-    <dependency>
-      <groupId>com.oracle.oci.marketplace</groupId>
-      <artifactId>marketplace-consumer-service-spec</artifactId>
-    </dependency>
-  </dependencies>
   <build>
     <directory>${sdk-root-dir}/target</directory>
     <plugins>

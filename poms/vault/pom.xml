@@ -22,13 +22,6 @@
     <!-- Service Spec file goes here -->
     <oci-sms-api-spec-spec-file>source/oci-sms-api-spec.cond.yaml</oci-sms-api-spec-spec-file>
   </properties>
-  <dependencies>
-    <!-- Service dependency goes here -->
-    <dependency>
-      <groupId>com.oracle.pic.ocisms.controlplane</groupId>
-      <artifactId>oci-sms-api-spec</artifactId>
-    </dependency>
-  </dependencies>
   <build>
     <directory>${sdk-root-dir}/target</directory>
     <plugins>

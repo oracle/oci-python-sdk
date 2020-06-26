@@ -22,13 +22,6 @@
     <!-- Service Spec file goes here -->
     <ndcs-control-plane-spec-spec-file>source/api.cond.yaml</ndcs-control-plane-spec-spec-file>
   </properties>
-  <dependencies>
-    <!-- Service dependency goes here -->
-    <dependency>
-      <groupId>oracle.nosql.oci.controlplane</groupId>
-      <artifactId>ndcs-control-plane-spec</artifactId>
-    </dependency>
-  </dependencies>
   <build>
     <directory>${sdk-root-dir}/target</directory>
     <plugins>

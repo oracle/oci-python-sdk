@@ -22,13 +22,6 @@
     <!-- Service Spec file goes here -->
     <odsc-pegasus-control-plane-spec-spec-file>source/api.cond.yaml</odsc-pegasus-control-plane-spec-spec-file>
   </properties>
-  <dependencies>
-    <!-- Service dependency goes here -->
-    <dependency>
-      <groupId>com.oracle.pic.odsc.pegasus</groupId>
-      <artifactId>odsc-pegasus-control-plane-spec</artifactId>
-    </dependency>
-  </dependencies>
   <build>
     <directory>${sdk-root-dir}/target</directory>
     <plugins>

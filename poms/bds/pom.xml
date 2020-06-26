@@ -22,13 +22,6 @@
     <!-- Service Spec file goes here -->
     <bds-cp-spec-spec-file>source/bds-cp.cond.yaml</bds-cp-spec-spec-file>
   </properties>
-  <dependencies>
-    <!-- Service dependency goes here -->
-    <dependency>
-      <groupId>com.oracle.bds</groupId>
-      <artifactId>bds-cp-spec</artifactId>
-    </dependency>
-  </dependencies>
   <build>
     <directory>${sdk-root-dir}/target</directory>
     <plugins>

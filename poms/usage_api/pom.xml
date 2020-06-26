@@ -22,13 +22,6 @@
     <!-- Service Spec file goes here -->
     <usage-api-spec-spec-file>source/usage-api.api.cond.yaml</usage-api-spec-spec-file>
   </properties>
-  <dependencies>
-    <!-- Service dependency goes here -->
-    <dependency>
-      <groupId>com.oracle.pic.metering.usagestore.api</groupId>
-      <artifactId>usage-api-spec</artifactId>
-    </dependency>
-  </dependencies>
   <build>
     <directory>${sdk-root-dir}/target</directory>
     <plugins>

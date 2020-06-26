@@ -20,12 +20,6 @@
     <feature-id-dir>${sdk-root-dir}/codegenConfig/featureIds</feature-id-dir>
     <autoscaling-public-api-spec-spec-file>source/autoscaling-api-spec.cond.yaml</autoscaling-public-api-spec-spec-file>
   </properties>
-  <dependencies>
-    <dependency>
-      <groupId>com.oracle.pic.autoscaling.api</groupId>
-      <artifactId>autoscaling-public-api-spec</artifactId>
-    </dependency>
-  </dependencies>
   <build>
     <directory>${sdk-root-dir}/target</directory>
     <plugins>

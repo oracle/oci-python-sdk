@@ -22,13 +22,6 @@
     <!-- Service Spec file goes here -->
     <vmware-provision-service-spec-spec-file>source/api.cond.yaml</vmware-provision-service-spec-spec-file>
   </properties>
-  <dependencies>
-    <!-- Service dependency goes here -->
-    <dependency>
-      <groupId>com.oracle.pic.vmware.ocvp</groupId>
-      <artifactId>vmware-provision-service-spec</artifactId>
-    </dependency>
-  </dependencies>
   <build>
     <directory>${sdk-root-dir}/target</directory>
     <plugins>

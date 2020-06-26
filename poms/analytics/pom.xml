@@ -22,13 +22,6 @@
     <!-- Service Spec file goes here -->
     <analytics-control-plane-api-spec-spec-file>source/analytics-api-spec.cond.yaml</analytics-control-plane-api-spec-spec-file>
   </properties>
-  <dependencies>
-    <!-- Service dependency goes here -->
-    <dependency>
-      <groupId>com.oracle.pic.analytics</groupId>
-      <artifactId>analytics-control-plane-api-spec</artifactId>
-    </dependency>
-  </dependencies>
   <build>
     <directory>${sdk-root-dir}/target</directory>
     <plugins>

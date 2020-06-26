@@ -22,13 +22,6 @@
     <!-- Service Spec file goes here -->
     <datacatalog-api-spec-spec-file>datacatalog-api-spec.cond.yaml</datacatalog-api-spec-spec-file>
   </properties>
-  <dependencies>
-    <!-- Service dependency goes here -->
-    <dependency>
-      <groupId>com.oracle.pic.dcat</groupId>
-      <artifactId>datacatalog-api-spec</artifactId>
-    </dependency>
-  </dependencies>
   <build>
     <directory>${sdk-root-dir}/target</directory>
     <plugins>

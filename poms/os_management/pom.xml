@@ -22,13 +22,6 @@
     <!-- Service Spec file goes here -->
     <osms-spec-spec-file>source/api.cond.yaml</osms-spec-spec-file>
   </properties>
-  <dependencies>
-    <!-- Service dependency goes here -->
-    <dependency>
-      <groupId>com.oracle.osms.api</groupId>
-      <artifactId>osms-spec</artifactId>
-    </dependency>
-  </dependencies>
   <build>
     <directory>${sdk-root-dir}/target</directory>
     <plugins>

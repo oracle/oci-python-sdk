@@ -22,13 +22,6 @@
     <!-- Service Spec file goes here -->
     <cloud-incident-management-service-spec-spec-file>api.yaml</cloud-incident-management-service-spec-spec-file>
   </properties>
-  <dependencies>
-    <!-- Service dependency goes here -->
-    <dependency>
-      <groupId>com.oracle.custops.cims</groupId>
-      <artifactId>cloud-incident-management-service-spec</artifactId>
-    </dependency>
-  </dependencies>
   <build>
     <directory>${sdk-root-dir}/target</directory>
     <plugins>

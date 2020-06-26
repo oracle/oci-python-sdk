@@ -22,13 +22,6 @@
     <!-- Service Spec file goes here -->
     <ams-spec-spec-file>source/ams-api.cond.yaml</ams-spec-spec-file>
   </properties>
-  <dependencies>
-    <!-- Service dependency goes here -->
-    <dependency>
-      <groupId>com.oracle.pic.migration.application</groupId>
-      <artifactId>ams-spec</artifactId>
-    </dependency>
-  </dependencies>
   <build>
     <directory>${sdk-root-dir}/target</directory>
     <plugins>

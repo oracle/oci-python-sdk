@@ -22,13 +22,6 @@
     <!-- Service Spec file goes here -->
     <mysqlaas-api-spec-spec-file>source/mysqlaas-api-spec.cond.yaml</mysqlaas-api-spec-spec-file>
   </properties>
-  <dependencies>
-    <!-- Service dependency goes here -->
-    <dependency>
-      <groupId>com.oracle.oci.mysql</groupId>
-      <artifactId>mysqlaas-api-spec</artifactId>
-    </dependency>
-  </dependencies>
   <build>
     <directory>${sdk-root-dir}/target</directory>
     <plugins>

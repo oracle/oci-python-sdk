@@ -22,13 +22,6 @@
     <!-- Service Spec file goes here -->
     <digital-assistant-spec-spec-file>source/digital-assistant-api.cond.yaml</digital-assistant-spec-spec-file>
   </properties>
-  <dependencies>
-    <!-- Service dependency goes here -->
-    <dependency>
-      <groupId>com.oracle.pic.oda.cp</groupId>
-      <artifactId>digital-assistant-spec</artifactId>
-    </dependency>
-  </dependencies>
   <build>
     <directory>${sdk-root-dir}/target</directory>
     <plugins>

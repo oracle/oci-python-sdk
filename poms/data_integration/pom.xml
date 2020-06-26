@@ -22,13 +22,6 @@
     <!-- Service Spec file goes here -->
     <dis-sdk-spec-spec-file>source/dis-api.cond.yaml</dis-sdk-spec-spec-file>
   </properties>
-  <dependencies>
-    <!-- Service dependency goes here -->
-    <dependency>
-      <groupId>com.oracle.dis</groupId>
-      <artifactId>dis-sdk-spec</artifactId>
-    </dependency>
-  </dependencies>
   <build>
     <directory>${sdk-root-dir}/target</directory>
     <plugins>

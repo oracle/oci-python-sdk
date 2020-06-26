@@ -22,13 +22,6 @@
     <!-- Service Spec file goes here -->
     <oracle-integration-cp-apiserver-user-spec-spec-file>source/api.cond.yaml</oracle-integration-cp-apiserver-user-spec-spec-file>
   </properties>
-  <dependencies>
-    <!-- Service dependency goes here -->
-    <dependency>
-      <groupId>com.oracle.oracleintegration.spec</groupId>
-      <artifactId>oracle-integration-cp-apiserver-user-spec</artifactId>
-    </dependency>
-  </dependencies>
   <build>
     <directory>${sdk-root-dir}/target</directory>
     <plugins>

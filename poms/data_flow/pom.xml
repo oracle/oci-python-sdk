@@ -22,13 +22,6 @@
     <!-- Service Spec file goes here -->
     <service_api_spec-spec-file>specs/service_api.cond.yaml</service_api_spec-spec-file>
   </properties>
-  <dependencies>
-    <!-- Service dependency goes here -->
-    <dependency>
-      <groupId>oracle.dfcs.server</groupId>
-      <artifactId>service_api_spec</artifactId>
-    </dependency>
-  </dependencies>
   <build>
     <directory>${sdk-root-dir}/target</directory>
     <plugins>

@@ -22,13 +22,6 @@
     <!-- Service Spec file goes here -->
     <public-api-spec-spec-file>source/api.cond.yaml</public-api-spec-spec-file>
   </properties>
-  <dependencies>
-    <!-- Service dependency goes here -->
-    <dependency>
-      <groupId>com.oracle.pic.apigw</groupId>
-      <artifactId>public-api-spec</artifactId>
-    </dependency>
-  </dependencies>
   <build>
     <directory>${sdk-root-dir}/target</directory>
     <plugins>
