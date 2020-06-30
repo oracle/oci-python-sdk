@@ -4023,7 +4023,7 @@ class ComputeClient(object):
 
     def list_image_shape_compatibility_entries(self, image_id, **kwargs):
         """
-        Lists the shape compatibilities for the image.
+        Lists the compatible shapes for the specified image.
 
 
         :param str image_id: (required)

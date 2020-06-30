@@ -1551,6 +1551,9 @@ class ShowOCIOutput(object):
                     if instance['console']:
                         print(self.tabs2 + instance['console'])
 
+                if 'agent_is_management_disabled' in instance:
+                    print(self.tabs2 + "Agent: Is Management Disabled = " + instance['agent_is_management_disabled'] + ", Is Monitoring Disabled = " + instance['agent_is_monitoring_disabled'])
+
                 print("")
 
         except Exception as e:

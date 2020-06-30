@@ -55,7 +55,15 @@ Or programmatically, for example:
         "log_requests": True
     }
 
-Request logging enables debugging information in the Python http module.  This debugging information can be quite verbose and the output will go to standard out.  This http module does not use Python's logging module.
+Request logging enables debugging information in the Python http module.  This debugging information can be quite verbose and the output will go to standard out.  This http module does not use Python’s logging module, but can be enabled separately:
+
+.. code-block:: python
+
+    import oci
+    oci.base_client.is_http_log_enabled(True)
+    oci.base_client.is_http_log_enabled(False)
+
+Note that http module logging is enabled/disabled as Request Logging enabled/disabled:
 
 Once you have request logging in your config, you can create the appropriate logging handler(s) for your use case. For example to log to an output stream such as ``stderr`` you could do:
 
@@ -81,3 +89,30 @@ The oci module has logging at the following levels:
 
 
 The raw response body is not logged.
+
+Disable Logging
+================
+To disable particular client's logging, just need to disable the corresponding logger
+
+.. code-block:: python
+
+    import oci
+    import logging
+    # Disable particular client logging
+    logger = logging.getLogger('oci.base_client.{}'.format(id(client.base_client)))
+    logger.disabled = True
+    # Need to manually disable http logging
+    oci.base_client.is_http_log_enabled(False)
+
+To disable all Python SDK logging
+
+.. code-block:: python
+
+    import oci
+    import logging
+
+    # Disable logging
+    config['log_requests'] = False
+    client = oci.identity.IdentityClient(config)
+
+    # Rest of code ...

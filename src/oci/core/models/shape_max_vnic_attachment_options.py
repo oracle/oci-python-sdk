@@ -10,7 +10,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ShapeMaxVnicAttachmentOptions(object):
     """
-    The possible configurations for the number of VNIC attachments available to an instance of this shape. If this field is null, then all instances of this shape have a fixed maximum number of VNIC attachments equal to `maxVnicAttachments`.
+    For a flexible shape, the number of VNIC attachments that are available for instances that use this shape.
+
+    If this field is null, then this shape has a fixed maximum number of VNIC attachments equal to `maxVnicAttachments`.
     """
 
     def __init__(self, **kwargs):

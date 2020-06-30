@@ -42,6 +42,10 @@ class CreatePrivateIpDetails(object):
             The value to assign to the vnic_id property of this CreatePrivateIpDetails.
         :type vnic_id: str
 
+        :param vlan_id:
+            The value to assign to the vlan_id property of this CreatePrivateIpDetails.
+        :type vlan_id: str
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
@@ -49,7 +53,8 @@ class CreatePrivateIpDetails(object):
             'freeform_tags': 'dict(str, str)',
             'hostname_label': 'str',
             'ip_address': 'str',
-            'vnic_id': 'str'
+            'vnic_id': 'str',
+            'vlan_id': 'str'
         }
 
         self.attribute_map = {
@@ -58,7 +63,8 @@ class CreatePrivateIpDetails(object):
             'freeform_tags': 'freeformTags',
             'hostname_label': 'hostnameLabel',
             'ip_address': 'ipAddress',
-            'vnic_id': 'vnicId'
+            'vnic_id': 'vnicId',
+            'vlan_id': 'vlanId'
         }
 
         self._defined_tags = None
@@ -67,6 +73,7 @@ class CreatePrivateIpDetails(object):
         self._hostname_label = None
         self._ip_address = None
         self._vnic_id = None
+        self._vlan_id = None
 
     @property
     def defined_tags(self):
@@ -249,7 +256,7 @@ class CreatePrivateIpDetails(object):
     @property
     def vnic_id(self):
         """
-        **[Required]** Gets the vnic_id of this CreatePrivateIpDetails.
+        Gets the vnic_id of this CreatePrivateIpDetails.
         The OCID of the VNIC to assign the private IP to. The VNIC and private IP
         must be in the same subnet.
 
@@ -271,6 +278,36 @@ class CreatePrivateIpDetails(object):
         :type: str
         """
         self._vnic_id = vnic_id
+
+    @property
+    def vlan_id(self):
+        """
+        Gets the vlan_id of this CreatePrivateIpDetails.
+        Use this attribute only with the Oracle Cloud VMware Solution.
+
+        The OCID of the VLAN from which the private IP is to be drawn. The IP address,
+        *if supplied*, must be valid for the given VLAN. See :class:`Vlan`.
+
+
+        :return: The vlan_id of this CreatePrivateIpDetails.
+        :rtype: str
+        """
+        return self._vlan_id
+
+    @vlan_id.setter
+    def vlan_id(self, vlan_id):
+        """
+        Sets the vlan_id of this CreatePrivateIpDetails.
+        Use this attribute only with the Oracle Cloud VMware Solution.
+
+        The OCID of the VLAN from which the private IP is to be drawn. The IP address,
+        *if supplied*, must be valid for the given VLAN. See :class:`Vlan`.
+
+
+        :param vlan_id: The vlan_id of this CreatePrivateIpDetails.
+        :type: str
+        """
+        self._vlan_id = vlan_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

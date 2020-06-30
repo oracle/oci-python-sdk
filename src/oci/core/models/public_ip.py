@@ -445,7 +445,7 @@ class PublicIp(object):
         Gets the ip_address of this PublicIp.
         The public IP address of the `publicIp` object.
 
-        Example: `129.146.2.1`
+        Example: `203.0.113.2`
 
 
         :return: The ip_address of this PublicIp.
@@ -459,7 +459,7 @@ class PublicIp(object):
         Sets the ip_address of this PublicIp.
         The public IP address of the `publicIp` object.
 
-        Example: `129.146.2.1`
+        Example: `203.0.113.2`
 
 
         :param ip_address: The ip_address of this PublicIp.
@@ -645,9 +645,11 @@ class PublicIp(object):
     def time_created(self):
         """
         Gets the time_created of this PublicIp.
-        The date and time the public IP was created, in the format defined by RFC3339.
+        The date and time the public IP was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_created of this PublicIp.
@@ -659,9 +661,11 @@ class PublicIp(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this PublicIp.
-        The date and time the public IP was created, in the format defined by RFC3339.
+        The date and time the public IP was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_created: The time_created of this PublicIp.

@@ -576,7 +576,9 @@ class Volume(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this Volume.
-        The date and time the volume was created. Format defined by RFC3339.
+        The date and time the volume was created. Format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_created of this Volume.
@@ -588,7 +590,9 @@ class Volume(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Volume.
-        The date and time the volume was created. Format defined by RFC3339.
+        The date and time the volume was created. Format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_created: The time_created of this Volume.

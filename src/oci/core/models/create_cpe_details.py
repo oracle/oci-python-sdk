@@ -190,7 +190,7 @@ class CreateCpeDetails(object):
         **[Required]** Gets the ip_address of this CreateCpeDetails.
         The public IP address of the on-premises router.
 
-        Example: `143.19.23.16`
+        Example: `203.0.113.2`
 
 
         :return: The ip_address of this CreateCpeDetails.
@@ -204,7 +204,7 @@ class CreateCpeDetails(object):
         Sets the ip_address of this CreateCpeDetails.
         The public IP address of the on-premises router.
 
-        Example: `143.19.23.16`
+        Example: `203.0.113.2`
 
 
         :param ip_address: The ip_address of this CreateCpeDetails.

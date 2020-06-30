@@ -405,7 +405,9 @@ class VolumeGroupBackup(object):
         """
         **[Required]** Gets the time_created of this VolumeGroupBackup.
         The date and time the volume group backup was created. This is the time the actual point-in-time image
-        of the volume group data was taken. Format defined by RFC3339.
+        of the volume group data was taken. Format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_created of this VolumeGroupBackup.
@@ -418,7 +420,9 @@ class VolumeGroupBackup(object):
         """
         Sets the time_created of this VolumeGroupBackup.
         The date and time the volume group backup was created. This is the time the actual point-in-time image
-        of the volume group data was taken. Format defined by RFC3339.
+        of the volume group data was taken. Format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_created: The time_created of this VolumeGroupBackup.
@@ -430,7 +434,9 @@ class VolumeGroupBackup(object):
     def time_request_received(self):
         """
         Gets the time_request_received of this VolumeGroupBackup.
-        The date and time the request to create the volume group backup was received. Format defined by RFC3339.
+        The date and time the request to create the volume group backup was received. Format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_request_received of this VolumeGroupBackup.
@@ -442,7 +448,9 @@ class VolumeGroupBackup(object):
     def time_request_received(self, time_request_received):
         """
         Sets the time_request_received of this VolumeGroupBackup.
-        The date and time the request to create the volume group backup was received. Format defined by RFC3339.
+        The date and time the request to create the volume group backup was received. Format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_request_received: The time_request_received of this VolumeGroupBackup.

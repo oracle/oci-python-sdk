@@ -100,6 +100,10 @@ class DbHomeSummary(object):
             The value to assign to the time_created property of this DbHomeSummary.
         :type time_created: datetime
 
+        :param one_off_patches:
+            The value to assign to the one_off_patches property of this DbHomeSummary.
+        :type one_off_patches: list[str]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this DbHomeSummary.
         :type freeform_tags: dict(str, str)
@@ -121,6 +125,7 @@ class DbHomeSummary(object):
             'db_home_location': 'str',
             'lifecycle_details': 'str',
             'time_created': 'datetime',
+            'one_off_patches': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -137,6 +142,7 @@ class DbHomeSummary(object):
             'db_home_location': 'dbHomeLocation',
             'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
+            'one_off_patches': 'oneOffPatches',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -152,6 +158,7 @@ class DbHomeSummary(object):
         self._db_home_location = None
         self._lifecycle_details = None
         self._time_created = None
+        self._one_off_patches = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -444,6 +451,30 @@ class DbHomeSummary(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def one_off_patches(self):
+        """
+        Gets the one_off_patches of this DbHomeSummary.
+        List of one-off patches for Database Homes.
+
+
+        :return: The one_off_patches of this DbHomeSummary.
+        :rtype: list[str]
+        """
+        return self._one_off_patches
+
+    @one_off_patches.setter
+    def one_off_patches(self, one_off_patches):
+        """
+        Sets the one_off_patches of this DbHomeSummary.
+        List of one-off patches for Database Homes.
+
+
+        :param one_off_patches: The one_off_patches of this DbHomeSummary.
+        :type: list[str]
+        """
+        self._one_off_patches = one_off_patches
 
     @property
     def freeform_tags(self):

@@ -47,6 +47,7 @@ Load Balancer
     oci.load_balancer.models.HealthCheckerDetails
     oci.load_balancer.models.Hostname
     oci.load_balancer.models.HostnameDetails
+    oci.load_balancer.models.HttpHeaderRule
     oci.load_balancer.models.IpAddress
     oci.load_balancer.models.LBCookieSessionPersistenceConfigurationDetails
     oci.load_balancer.models.Listener

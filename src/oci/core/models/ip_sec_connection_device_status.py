@@ -107,9 +107,11 @@ class IPSecConnectionDeviceStatus(object):
     def time_created(self):
         """
         Gets the time_created of this IPSecConnectionDeviceStatus.
-        The date and time the IPSec connection was created, in the format defined by RFC3339.
+        The date and time the IPSec connection was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_created of this IPSecConnectionDeviceStatus.
@@ -121,9 +123,11 @@ class IPSecConnectionDeviceStatus(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this IPSecConnectionDeviceStatus.
-        The date and time the IPSec connection was created, in the format defined by RFC3339.
+        The date and time the IPSec connection was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_created: The time_created of this IPSecConnectionDeviceStatus.

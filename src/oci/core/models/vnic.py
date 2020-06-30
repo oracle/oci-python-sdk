@@ -22,6 +22,12 @@ class Vnic(object):
     information, see :func:`create_private_ip` and
     `IP Addresses`__.
 
+
+    If you are an Oracle Cloud VMware Solution customer, you will have secondary VNICs
+    that reside in a VLAN instead of a subnet. These VNICs have other differences, which
+    are called out in the descriptions of the relevant attributes in the `Vnic` object.
+    Also see :class:`Vlan`.
+
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
@@ -101,6 +107,10 @@ class Vnic(object):
             The value to assign to the nsg_ids property of this Vnic.
         :type nsg_ids: list[str]
 
+        :param vlan_id:
+            The value to assign to the vlan_id property of this Vnic.
+        :type vlan_id: str
+
         :param private_ip:
             The value to assign to the private_ip property of this Vnic.
         :type private_ip: str
@@ -134,6 +144,7 @@ class Vnic(object):
             'lifecycle_state': 'str',
             'mac_address': 'str',
             'nsg_ids': 'list[str]',
+            'vlan_id': 'str',
             'private_ip': 'str',
             'public_ip': 'str',
             'skip_source_dest_check': 'bool',
@@ -153,6 +164,7 @@ class Vnic(object):
             'lifecycle_state': 'lifecycleState',
             'mac_address': 'macAddress',
             'nsg_ids': 'nsgIds',
+            'vlan_id': 'vlanId',
             'private_ip': 'privateIp',
             'public_ip': 'publicIp',
             'skip_source_dest_check': 'skipSourceDestCheck',
@@ -171,6 +183,7 @@ class Vnic(object):
         self._lifecycle_state = None
         self._mac_address = None
         self._nsg_ids = None
+        self._vlan_id = None
         self._private_ip = None
         self._public_ip = None
         self._skip_source_dest_check = None
@@ -461,7 +474,11 @@ class Vnic(object):
         Gets the mac_address of this Vnic.
         The MAC address of the VNIC.
 
-        Example: `00:00:17:B6:4D:DD`
+        If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution,
+        the MAC address is learned. If the VNIC belongs to a subnet, the
+        MAC address is a static, Oracle-provided value.
+
+        Example: `00:00:00:00:00:01`
 
 
         :return: The mac_address of this Vnic.
@@ -475,7 +492,11 @@ class Vnic(object):
         Sets the mac_address of this Vnic.
         The MAC address of the VNIC.
 
-        Example: `00:00:17:B6:4D:DD`
+        If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution,
+        the MAC address is learned. If the VNIC belongs to a subnet, the
+        MAC address is a static, Oracle-provided value.
+
+        Example: `00:00:00:00:00:01`
 
 
         :param mac_address: The mac_address of this Vnic.
@@ -487,8 +508,13 @@ class Vnic(object):
     def nsg_ids(self):
         """
         Gets the nsg_ids of this Vnic.
-        A list of the OCIDs of the network security groups that the VNIC belongs to. For more
-        information about NSGs, see
+        A list of the OCIDs of the network security groups that the VNIC belongs to.
+
+        If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
+        belonging to a subnet), the value of the `nsgIds` attribute is ignored. Instead, the
+        VNIC belongs to the NSGs that are associated with the VLAN itself. See :class:`Vlan`.
+
+        For more information about NSGs, see
         :class:`NetworkSecurityGroup`.
 
 
@@ -501,8 +527,13 @@ class Vnic(object):
     def nsg_ids(self, nsg_ids):
         """
         Sets the nsg_ids of this Vnic.
-        A list of the OCIDs of the network security groups that the VNIC belongs to. For more
-        information about NSGs, see
+        A list of the OCIDs of the network security groups that the VNIC belongs to.
+
+        If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
+        belonging to a subnet), the value of the `nsgIds` attribute is ignored. Instead, the
+        VNIC belongs to the NSGs that are associated with the VLAN itself. See :class:`Vlan`.
+
+        For more information about NSGs, see
         :class:`NetworkSecurityGroup`.
 
 
@@ -510,6 +541,34 @@ class Vnic(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def vlan_id(self):
+        """
+        Gets the vlan_id of this Vnic.
+        If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
+        belonging to a subnet), the `vlanId` is the OCID of the VLAN the VNIC is in. See
+        :class:`Vlan`. If the VNIC is instead in a subnet, `subnetId` has a value.
+
+
+        :return: The vlan_id of this Vnic.
+        :rtype: str
+        """
+        return self._vlan_id
+
+    @vlan_id.setter
+    def vlan_id(self, vlan_id):
+        """
+        Sets the vlan_id of this Vnic.
+        If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
+        belonging to a subnet), the `vlanId` is the OCID of the VLAN the VNIC is in. See
+        :class:`Vlan`. If the VNIC is instead in a subnet, `subnetId` has a value.
+
+
+        :param vlan_id: The vlan_id of this Vnic.
+        :type: str
+        """
+        self._vlan_id = vlan_id
 
     @property
     def private_ip(self):
@@ -574,6 +633,11 @@ class Vnic(object):
         about why you would skip the source/destination check, see
         `Using a Private IP as a Route Target`__.
 
+
+        If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
+        belonging to a subnet), the `skipSourceDestCheck` attribute is `true`.
+        This is because the source/destination check is always disabled for VNICs in a VLAN.
+
         Example: `true`
 
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm#privateip
@@ -593,6 +657,11 @@ class Vnic(object):
         about why you would skip the source/destination check, see
         `Using a Private IP as a Route Target`__.
 
+
+        If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
+        belonging to a subnet), the `skipSourceDestCheck` attribute is `true`.
+        This is because the source/destination check is always disabled for VNICs in a VLAN.
+
         Example: `true`
 
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm#privateip
@@ -606,7 +675,7 @@ class Vnic(object):
     @property
     def subnet_id(self):
         """
-        **[Required]** Gets the subnet_id of this Vnic.
+        Gets the subnet_id of this Vnic.
         The OCID of the subnet the VNIC is in.
 
 
@@ -631,9 +700,11 @@ class Vnic(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this Vnic.
-        The date and time the VNIC was created, in the format defined by RFC3339.
+        The date and time the VNIC was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_created of this Vnic.
@@ -645,9 +716,11 @@ class Vnic(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Vnic.
-        The date and time the VNIC was created, in the format defined by RFC3339.
+        The date and time the VNIC was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_created: The time_created of this Vnic.

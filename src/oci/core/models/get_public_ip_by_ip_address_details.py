@@ -38,7 +38,7 @@ class GetPublicIpByIpAddressDetails(object):
         """
         **[Required]** Gets the ip_address of this GetPublicIpByIpAddressDetails.
         The public IP address.
-        Example: 129.146.2.1
+        Example: 203.0.113.2
 
 
         :return: The ip_address of this GetPublicIpByIpAddressDetails.
@@ -51,7 +51,7 @@ class GetPublicIpByIpAddressDetails(object):
         """
         Sets the ip_address of this GetPublicIpByIpAddressDetails.
         The public IP address.
-        Example: 129.146.2.1
+        Example: 203.0.113.2
 
 
         :param ip_address: The ip_address of this GetPublicIpByIpAddressDetails.

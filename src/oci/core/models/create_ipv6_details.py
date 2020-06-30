@@ -171,7 +171,7 @@ class CreateIpv6Details(object):
         assigns an IPv6 address from the subnet. The subnet is the one that
         contains the VNIC you specify in `vnicId`.
 
-        Example: `2001:0db8:0123:1111:abcd:ef01:2345:6789`
+        Example: `2001:DB8::`
 
 
         :return: The ip_address of this CreateIpv6Details.
@@ -188,7 +188,7 @@ class CreateIpv6Details(object):
         assigns an IPv6 address from the subnet. The subnet is the one that
         contains the VNIC you specify in `vnicId`.
 
-        Example: `2001:0db8:0123:1111:abcd:ef01:2345:6789`
+        Example: `2001:DB8::`
 
 
         :param ip_address: The ip_address of this CreateIpv6Details.

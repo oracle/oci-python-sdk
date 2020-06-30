@@ -74,6 +74,10 @@ class VnicAttachment(object):
             The value to assign to the subnet_id property of this VnicAttachment.
         :type subnet_id: str
 
+        :param vlan_id:
+            The value to assign to the vlan_id property of this VnicAttachment.
+        :type vlan_id: str
+
         :param time_created:
             The value to assign to the time_created property of this VnicAttachment.
         :type time_created: datetime
@@ -96,6 +100,7 @@ class VnicAttachment(object):
             'lifecycle_state': 'str',
             'nic_index': 'int',
             'subnet_id': 'str',
+            'vlan_id': 'str',
             'time_created': 'datetime',
             'vlan_tag': 'int',
             'vnic_id': 'str'
@@ -110,6 +115,7 @@ class VnicAttachment(object):
             'lifecycle_state': 'lifecycleState',
             'nic_index': 'nicIndex',
             'subnet_id': 'subnetId',
+            'vlan_id': 'vlanId',
             'time_created': 'timeCreated',
             'vlan_tag': 'vlanTag',
             'vnic_id': 'vnicId'
@@ -123,6 +129,7 @@ class VnicAttachment(object):
         self._lifecycle_state = None
         self._nic_index = None
         self._subnet_id = None
+        self._vlan_id = None
         self._time_created = None
         self._vlan_tag = None
         self._vnic_id = None
@@ -324,7 +331,7 @@ class VnicAttachment(object):
     @property
     def subnet_id(self):
         """
-        **[Required]** Gets the subnet_id of this VnicAttachment.
+        Gets the subnet_id of this VnicAttachment.
         The OCID of the subnet to create the VNIC in.
 
 
@@ -346,12 +353,46 @@ class VnicAttachment(object):
         self._subnet_id = subnet_id
 
     @property
+    def vlan_id(self):
+        """
+        Gets the vlan_id of this VnicAttachment.
+        The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead
+        of a subnet) is possible only if you are an Oracle Cloud VMware Solution customer.
+        See :class:`Vlan`.
+
+        An error is returned if the instance already has a VNIC attached to it from this VLAN.
+
+
+        :return: The vlan_id of this VnicAttachment.
+        :rtype: str
+        """
+        return self._vlan_id
+
+    @vlan_id.setter
+    def vlan_id(self, vlan_id):
+        """
+        Sets the vlan_id of this VnicAttachment.
+        The OCID of the VLAN to create the VNIC in. Creating the VNIC in a VLAN (instead
+        of a subnet) is possible only if you are an Oracle Cloud VMware Solution customer.
+        See :class:`Vlan`.
+
+        An error is returned if the instance already has a VNIC attached to it from this VLAN.
+
+
+        :param vlan_id: The vlan_id of this VnicAttachment.
+        :type: str
+        """
+        self._vlan_id = vlan_id
+
+    @property
     def time_created(self):
         """
         **[Required]** Gets the time_created of this VnicAttachment.
-        The date and time the VNIC attachment was created, in the format defined by RFC3339.
+        The date and time the VNIC attachment was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_created of this VnicAttachment.
@@ -363,9 +404,11 @@ class VnicAttachment(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this VnicAttachment.
-        The date and time the VNIC attachment was created, in the format defined by RFC3339.
+        The date and time the VNIC attachment was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_created: The time_created of this VnicAttachment.
@@ -379,6 +422,10 @@ class VnicAttachment(object):
         Gets the vlan_tag of this VnicAttachment.
         The Oracle-assigned VLAN tag of the attached VNIC. Available after the
         attachment process is complete.
+
+        However, if the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution,
+        the `vlanTag` value is instead the value of the `vlanTag` attribute for the VLAN.
+        See :class:`Vlan`.
 
         Example: `0`
 
@@ -394,6 +441,10 @@ class VnicAttachment(object):
         Sets the vlan_tag of this VnicAttachment.
         The Oracle-assigned VLAN tag of the attached VNIC. Available after the
         attachment process is complete.
+
+        However, if the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution,
+        the `vlanTag` value is instead the value of the `vlanTag` attribute for the VLAN.
+        See :class:`Vlan`.
 
         Example: `0`
 

@@ -11,9 +11,11 @@ from oci.decorators import init_model_state_from_kwargs
 class Shape(object):
     """
     A compute instance shape that can be used in :func:`launch_instance`.
-    For more information, see `Overview of the Compute Service`__.
+    For more information, see `Overview of the Compute Service`__ and
+    `Compute Shapes`__.
 
     __ https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm
+    __ https://docs.cloud.oracle.com/Content/Compute/References/computeshapes.htm
     """
 
     def __init__(self, **kwargs):
@@ -164,7 +166,7 @@ class Shape(object):
     def processor_description(self):
         """
         Gets the processor_description of this Shape.
-        A short description of the processors available to an instance of this shape.
+        A short description of the shape's processor (CPU).
 
 
         :return: The processor_description of this Shape.
@@ -176,7 +178,7 @@ class Shape(object):
     def processor_description(self, processor_description):
         """
         Sets the processor_description of this Shape.
-        A short description of the processors available to an instance of this shape.
+        A short description of the shape's processor (CPU).
 
 
         :param processor_description: The processor_description of this Shape.
@@ -188,7 +190,7 @@ class Shape(object):
     def ocpus(self):
         """
         Gets the ocpus of this Shape.
-        The default number of OCPUs available to an instance of this shape.
+        The default number of OCPUs available for this shape.
 
 
         :return: The ocpus of this Shape.
@@ -200,7 +202,7 @@ class Shape(object):
     def ocpus(self, ocpus):
         """
         Sets the ocpus of this Shape.
-        The default number of OCPUs available to an instance of this shape.
+        The default number of OCPUs available for this shape.
 
 
         :param ocpus: The ocpus of this Shape.
@@ -212,7 +214,7 @@ class Shape(object):
     def memory_in_gbs(self):
         """
         Gets the memory_in_gbs of this Shape.
-        The default amount of memory, in gigabytes, available to an instance of this shape.
+        The default amount of memory available for this shape, in gigabytes.
 
 
         :return: The memory_in_gbs of this Shape.
@@ -224,7 +226,7 @@ class Shape(object):
     def memory_in_gbs(self, memory_in_gbs):
         """
         Sets the memory_in_gbs of this Shape.
-        The default amount of memory, in gigabytes, available to an instance of this shape.
+        The default amount of memory available for this shape, in gigabytes.
 
 
         :param memory_in_gbs: The memory_in_gbs of this Shape.
@@ -236,7 +238,7 @@ class Shape(object):
     def networking_bandwidth_in_gbps(self):
         """
         Gets the networking_bandwidth_in_gbps of this Shape.
-        The networking bandwidth, in gigabits per second, available to an instance of this shape.
+        The networking bandwidth available for this shape, in gigabits per second.
 
 
         :return: The networking_bandwidth_in_gbps of this Shape.
@@ -248,7 +250,7 @@ class Shape(object):
     def networking_bandwidth_in_gbps(self, networking_bandwidth_in_gbps):
         """
         Sets the networking_bandwidth_in_gbps of this Shape.
-        The networking bandwidth, in gigabits per second, available to an instance of this shape.
+        The networking bandwidth available for this shape, in gigabits per second.
 
 
         :param networking_bandwidth_in_gbps: The networking_bandwidth_in_gbps of this Shape.
@@ -260,7 +262,7 @@ class Shape(object):
     def max_vnic_attachments(self):
         """
         Gets the max_vnic_attachments of this Shape.
-        The maximum number of VNIC attachments available to an instance of this shape.
+        The maximum number of VNIC attachments available for this shape.
 
 
         :return: The max_vnic_attachments of this Shape.
@@ -272,7 +274,7 @@ class Shape(object):
     def max_vnic_attachments(self, max_vnic_attachments):
         """
         Sets the max_vnic_attachments of this Shape.
-        The maximum number of VNIC attachments available to an instance of this shape.
+        The maximum number of VNIC attachments available for this shape.
 
 
         :param max_vnic_attachments: The max_vnic_attachments of this Shape.
@@ -284,7 +286,7 @@ class Shape(object):
     def gpus(self):
         """
         Gets the gpus of this Shape.
-        The number of GPUs available to an instance of this shape.
+        The number of GPUs available for this shape.
 
 
         :return: The gpus of this Shape.
@@ -296,7 +298,7 @@ class Shape(object):
     def gpus(self, gpus):
         """
         Sets the gpus of this Shape.
-        The number of GPUs available to an instance of this shape.
+        The number of GPUs available for this shape.
 
 
         :param gpus: The gpus of this Shape.
@@ -308,8 +310,9 @@ class Shape(object):
     def gpu_description(self):
         """
         Gets the gpu_description of this Shape.
-        A short description of the GPUs available to instances of this shape.
-        This field is `null` if `gpus` is `0`.
+        A short description of the graphics processing unit (GPU) available for this shape.
+
+        If the shape does not have any GPUs, this field is `null`.
 
 
         :return: The gpu_description of this Shape.
@@ -321,8 +324,9 @@ class Shape(object):
     def gpu_description(self, gpu_description):
         """
         Sets the gpu_description of this Shape.
-        A short description of the GPUs available to instances of this shape.
-        This field is `null` if `gpus` is `0`.
+        A short description of the graphics processing unit (GPU) available for this shape.
+
+        If the shape does not have any GPUs, this field is `null`.
 
 
         :param gpu_description: The gpu_description of this Shape.
@@ -334,7 +338,7 @@ class Shape(object):
     def local_disks(self):
         """
         Gets the local_disks of this Shape.
-        The number of local disks available to the instance.
+        The number of local disks available for this shape.
 
 
         :return: The local_disks of this Shape.
@@ -346,7 +350,7 @@ class Shape(object):
     def local_disks(self, local_disks):
         """
         Sets the local_disks of this Shape.
-        The number of local disks available to the instance.
+        The number of local disks available for this shape.
 
 
         :param local_disks: The local_disks of this Shape.
@@ -358,8 +362,9 @@ class Shape(object):
     def local_disks_total_size_in_gbs(self):
         """
         Gets the local_disks_total_size_in_gbs of this Shape.
-        The size of the local disks, aggregated, in gigabytes.
-        This field is `null` if `localDisks` is equal to `0`.
+        The aggregate size of the local disks available for this shape, in gigabytes.
+
+        If the shape does not have any local disks, this field is `null`.
 
 
         :return: The local_disks_total_size_in_gbs of this Shape.
@@ -371,8 +376,9 @@ class Shape(object):
     def local_disks_total_size_in_gbs(self, local_disks_total_size_in_gbs):
         """
         Sets the local_disks_total_size_in_gbs of this Shape.
-        The size of the local disks, aggregated, in gigabytes.
-        This field is `null` if `localDisks` is equal to `0`.
+        The aggregate size of the local disks available for this shape, in gigabytes.
+
+        If the shape does not have any local disks, this field is `null`.
 
 
         :param local_disks_total_size_in_gbs: The local_disks_total_size_in_gbs of this Shape.
@@ -384,8 +390,9 @@ class Shape(object):
     def local_disk_description(self):
         """
         Gets the local_disk_description of this Shape.
-        A short description of the local disks available to instances of this shape.
-        This field is `null` if `localDisks` is equal to `0`.
+        A short description of the local disks available for this shape.
+
+        If the shape does not have any local disks, this field is `null`.
 
 
         :return: The local_disk_description of this Shape.
@@ -397,8 +404,9 @@ class Shape(object):
     def local_disk_description(self, local_disk_description):
         """
         Sets the local_disk_description of this Shape.
-        A short description of the local disks available to instances of this shape.
-        This field is `null` if `localDisks` is equal to `0`.
+        A short description of the local disks available for this shape.
+
+        If the shape does not have any local disks, this field is `null`.
 
 
         :param local_disk_description: The local_disk_description of this Shape.

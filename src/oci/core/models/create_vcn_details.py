@@ -88,7 +88,7 @@ class CreateVcnDetails(object):
         **[Required]** Gets the cidr_block of this CreateVcnDetails.
         The CIDR IP address block of the VCN.
 
-        Example: `172.16.0.0/16`
+        Example: `10.0.0.0/16`
 
 
         :return: The cidr_block of this CreateVcnDetails.
@@ -102,7 +102,7 @@ class CreateVcnDetails(object):
         Sets the cidr_block of this CreateVcnDetails.
         The CIDR IP address block of the VCN.
 
-        Example: `172.16.0.0/16`
+        Example: `10.0.0.0/16`
 
 
         :param cidr_block: The cidr_block of this CreateVcnDetails.

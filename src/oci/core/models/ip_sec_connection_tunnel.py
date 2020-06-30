@@ -226,7 +226,7 @@ class IPSecConnectionTunnel(object):
         Gets the vpn_ip of this IPSecConnectionTunnel.
         The IP address of Oracle's VPN headend.
 
-        Example: `192.0.2.5`
+        Example: `203.0.113.21`
 
 
         :return: The vpn_ip of this IPSecConnectionTunnel.
@@ -240,7 +240,7 @@ class IPSecConnectionTunnel(object):
         Sets the vpn_ip of this IPSecConnectionTunnel.
         The IP address of Oracle's VPN headend.
 
-        Example: `192.0.2.5`
+        Example: `203.0.113.21`
 
 
         :param vpn_ip: The vpn_ip of this IPSecConnectionTunnel.
@@ -254,7 +254,7 @@ class IPSecConnectionTunnel(object):
         Gets the cpe_ip of this IPSecConnectionTunnel.
         The IP address of the CPE's VPN headend.
 
-        Example: `192.0.2.157`
+        Example: `203.0.113.22`
 
 
         :return: The cpe_ip of this IPSecConnectionTunnel.
@@ -268,7 +268,7 @@ class IPSecConnectionTunnel(object):
         Sets the cpe_ip of this IPSecConnectionTunnel.
         The IP address of the CPE's VPN headend.
 
-        Example: `192.0.2.157`
+        Example: `203.0.113.22`
 
 
         :param cpe_ip: The cpe_ip of this IPSecConnectionTunnel.
@@ -450,9 +450,11 @@ class IPSecConnectionTunnel(object):
     def time_created(self):
         """
         Gets the time_created of this IPSecConnectionTunnel.
-        The date and time the IPSec connection tunnel was created, in the format defined by RFC3339.
+        The date and time the IPSec connection tunnel was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_created of this IPSecConnectionTunnel.
@@ -464,9 +466,11 @@ class IPSecConnectionTunnel(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this IPSecConnectionTunnel.
-        The date and time the IPSec connection tunnel was created, in the format defined by RFC3339.
+        The date and time the IPSec connection tunnel was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_created: The time_created of this IPSecConnectionTunnel.
@@ -478,9 +482,11 @@ class IPSecConnectionTunnel(object):
     def time_status_updated(self):
         """
         Gets the time_status_updated of this IPSecConnectionTunnel.
-        When the status of the tunnel last changed, in the format defined by RFC3339.
+        When the status of the tunnel last changed, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_status_updated of this IPSecConnectionTunnel.
@@ -492,9 +498,11 @@ class IPSecConnectionTunnel(object):
     def time_status_updated(self, time_status_updated):
         """
         Sets the time_status_updated of this IPSecConnectionTunnel.
-        When the status of the tunnel last changed, in the format defined by RFC3339.
+        When the status of the tunnel last changed, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_status_updated: The time_status_updated of this IPSecConnectionTunnel.
