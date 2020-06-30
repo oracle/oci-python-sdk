@@ -82,9 +82,11 @@ class NetworkSecurityGroupVnic(object):
         """
         Gets the time_associated of this NetworkSecurityGroupVnic.
         The date and time the VNIC was added to the network security group, in the format
-        defined by RFC3339.
+        defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_associated of this NetworkSecurityGroupVnic.
@@ -97,9 +99,11 @@ class NetworkSecurityGroupVnic(object):
         """
         Sets the time_associated of this NetworkSecurityGroupVnic.
         The date and time the VNIC was added to the network security group, in the format
-        defined by RFC3339.
+        defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_associated: The time_associated of this NetworkSecurityGroupVnic.

@@ -141,13 +141,13 @@ class InstanceConfigurationLaunchOptions(object):
         """
         Gets the boot_volume_type of this InstanceConfigurationLaunchOptions.
         Emulation type for volume.
-        * `ISCSI` - ISCSI attached block storage device. This is the default for Boot Volumes and Remote Block
-        Storage volumes on Oracle provided images.
+        * `ISCSI` - ISCSI attached block storage device.
         * `SCSI` - Emulated SCSI disk.
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage.  This is the default option for Local data
         volumes on Oracle provided images.
-        * `PARAVIRTUALIZED` - Paravirtualized disk.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for Boot Volumes and Remote Block
+        Storage volumes on Oracle provided images.
 
         Allowed values for this property are: "ISCSI", "SCSI", "IDE", "VFIO", "PARAVIRTUALIZED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -163,13 +163,13 @@ class InstanceConfigurationLaunchOptions(object):
         """
         Sets the boot_volume_type of this InstanceConfigurationLaunchOptions.
         Emulation type for volume.
-        * `ISCSI` - ISCSI attached block storage device. This is the default for Boot Volumes and Remote Block
-        Storage volumes on Oracle provided images.
+        * `ISCSI` - ISCSI attached block storage device.
         * `SCSI` - Emulated SCSI disk.
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage.  This is the default option for Local data
         volumes on Oracle provided images.
-        * `PARAVIRTUALIZED` - Paravirtualized disk.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for Boot Volumes and Remote Block
+        Storage volumes on Oracle provided images.
 
 
         :param boot_volume_type: The boot_volume_type of this InstanceConfigurationLaunchOptions.
@@ -261,13 +261,13 @@ class InstanceConfigurationLaunchOptions(object):
         """
         Gets the remote_data_volume_type of this InstanceConfigurationLaunchOptions.
         Emulation type for volume.
-        * `ISCSI` - ISCSI attached block storage device. This is the default for Boot Volumes and Remote Block
-        Storage volumes on Oracle provided images.
+        * `ISCSI` - ISCSI attached block storage device.
         * `SCSI` - Emulated SCSI disk.
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage.  This is the default option for Local data
         volumes on Oracle provided images.
-        * `PARAVIRTUALIZED` - Paravirtualized disk.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for Boot Volumes and Remote Block
+        Storage volumes on Oracle provided images.
 
         Allowed values for this property are: "ISCSI", "SCSI", "IDE", "VFIO", "PARAVIRTUALIZED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -283,13 +283,13 @@ class InstanceConfigurationLaunchOptions(object):
         """
         Sets the remote_data_volume_type of this InstanceConfigurationLaunchOptions.
         Emulation type for volume.
-        * `ISCSI` - ISCSI attached block storage device. This is the default for Boot Volumes and Remote Block
-        Storage volumes on Oracle provided images.
+        * `ISCSI` - ISCSI attached block storage device.
         * `SCSI` - Emulated SCSI disk.
         * `IDE` - Emulated IDE disk.
         * `VFIO` - Direct attached Virtual Function storage.  This is the default option for Local data
         volumes on Oracle provided images.
-        * `PARAVIRTUALIZED` - Paravirtualized disk.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for Boot Volumes and Remote Block
+        Storage volumes on Oracle provided images.
 
 
         :param remote_data_volume_type: The remote_data_volume_type of this InstanceConfigurationLaunchOptions.

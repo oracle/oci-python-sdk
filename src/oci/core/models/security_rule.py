@@ -636,7 +636,9 @@ class SecurityRule(object):
     def time_created(self):
         """
         Gets the time_created of this SecurityRule.
-        The date and time the security rule was created. Format defined by RFC3339.
+        The date and time the security rule was created. Format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_created of this SecurityRule.
@@ -648,7 +650,9 @@ class SecurityRule(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this SecurityRule.
-        The date and time the security rule was created. Format defined by RFC3339.
+        The date and time the security rule was created. Format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_created: The time_created of this SecurityRule.

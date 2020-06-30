@@ -59,6 +59,10 @@ class CreateVnicDetails(object):
             The value to assign to the subnet_id property of this CreateVnicDetails.
         :type subnet_id: str
 
+        :param vlan_id:
+            The value to assign to the vlan_id property of this CreateVnicDetails.
+        :type vlan_id: str
+
         """
         self.swagger_types = {
             'assign_public_ip': 'bool',
@@ -69,7 +73,8 @@ class CreateVnicDetails(object):
             'nsg_ids': 'list[str]',
             'private_ip': 'str',
             'skip_source_dest_check': 'bool',
-            'subnet_id': 'str'
+            'subnet_id': 'str',
+            'vlan_id': 'str'
         }
 
         self.attribute_map = {
@@ -81,7 +86,8 @@ class CreateVnicDetails(object):
             'nsg_ids': 'nsgIds',
             'private_ip': 'privateIp',
             'skip_source_dest_check': 'skipSourceDestCheck',
-            'subnet_id': 'subnetId'
+            'subnet_id': 'subnetId',
+            'vlan_id': 'vlanId'
         }
 
         self._assign_public_ip = None
@@ -93,6 +99,7 @@ class CreateVnicDetails(object):
         self._private_ip = None
         self._skip_source_dest_check = None
         self._subnet_id = None
+        self._vlan_id = None
 
     @property
     def assign_public_ip(self):
@@ -334,6 +341,11 @@ class CreateVnicDetails(object):
         information about NSGs, see
         :class:`NetworkSecurityGroup`.
 
+        If a `vlanId` is specified, the `nsgIds` is ignored. The `vlanId`
+        indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs,
+        all VNICs in the VLAN belong to the NSGs that are associated with the VLAN.
+        See :class:`Vlan`.
+
 
         :return: The nsg_ids of this CreateVnicDetails.
         :rtype: list[str]
@@ -347,6 +359,11 @@ class CreateVnicDetails(object):
         A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more
         information about NSGs, see
         :class:`NetworkSecurityGroup`.
+
+        If a `vlanId` is specified, the `nsgIds` is ignored. The `vlanId`
+        indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs,
+        all VNICs in the VLAN belong to the NSGs that are associated with the VLAN.
+        See :class:`Vlan`.
 
 
         :param nsg_ids: The nsg_ids of this CreateVnicDetails.
@@ -366,6 +383,11 @@ class CreateVnicDetails(object):
         :class:`PrivateIp` object returned by
         :func:`list_private_ips` and
         :func:`get_private_ip`.
+
+
+        If you specify a `vlanId`, the `privateIp` is ignored.
+        See :class:`Vlan`.
+
         Example: `10.0.3.3`
 
 
@@ -386,6 +408,11 @@ class CreateVnicDetails(object):
         :class:`PrivateIp` object returned by
         :func:`list_private_ips` and
         :func:`get_private_ip`.
+
+
+        If you specify a `vlanId`, the `privateIp` is ignored.
+        See :class:`Vlan`.
+
         Example: `10.0.3.3`
 
 
@@ -402,6 +429,11 @@ class CreateVnicDetails(object):
         Defaults to `false`, which means the check is performed. For information
         about why you would skip the source/destination check, see
         `Using a Private IP as a Route Target`__.
+
+
+        If you specify a `vlanId`, the `skipSourceDestCheck` is ignored because the
+        source/destination check is always disabled for VNICs in a VLAN. See
+        :class:`Vlan`.
 
         Example: `true`
 
@@ -422,6 +454,11 @@ class CreateVnicDetails(object):
         about why you would skip the source/destination check, see
         `Using a Private IP as a Route Target`__.
 
+
+        If you specify a `vlanId`, the `skipSourceDestCheck` is ignored because the
+        source/destination check is always disabled for VNICs in a VLAN. See
+        :class:`Vlan`.
+
         Example: `true`
 
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingroutetables.htm#privateip
@@ -435,11 +472,15 @@ class CreateVnicDetails(object):
     @property
     def subnet_id(self):
         """
-        **[Required]** Gets the subnet_id of this CreateVnicDetails.
+        Gets the subnet_id of this CreateVnicDetails.
         The OCID of the subnet to create the VNIC in. When launching an instance,
         use this `subnetId` instead of the deprecated `subnetId` in
         :func:`launch_instance_details`.
         At least one of them is required; if you provide both, the values must match.
+
+        If you are an Oracle Cloud VMware Solution customer and creating a secondary
+        VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`.
+        If you provide both a `vlanId` and `subnetId`, the request fails.
 
 
         :return: The subnet_id of this CreateVnicDetails.
@@ -456,11 +497,49 @@ class CreateVnicDetails(object):
         :func:`launch_instance_details`.
         At least one of them is required; if you provide both, the values must match.
 
+        If you are an Oracle Cloud VMware Solution customer and creating a secondary
+        VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`.
+        If you provide both a `vlanId` and `subnetId`, the request fails.
+
 
         :param subnet_id: The subnet_id of this CreateVnicDetails.
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def vlan_id(self):
+        """
+        Gets the vlan_id of this CreateVnicDetails.
+        Provide this attribute only if you are an Oracle Cloud VMware Solution
+        customer and creating a secondary VNIC in a VLAN. The value is the OCID of the VLAN.
+        See :class:`Vlan`.
+
+        Provide a `vlanId` instead of a `subnetId`. If you provide both a
+        `vlanId` and `subnetId`, the request fails.
+
+
+        :return: The vlan_id of this CreateVnicDetails.
+        :rtype: str
+        """
+        return self._vlan_id
+
+    @vlan_id.setter
+    def vlan_id(self, vlan_id):
+        """
+        Sets the vlan_id of this CreateVnicDetails.
+        Provide this attribute only if you are an Oracle Cloud VMware Solution
+        customer and creating a secondary VNIC in a VLAN. The value is the OCID of the VLAN.
+        See :class:`Vlan`.
+
+        Provide a `vlanId` instead of a `subnetId`. If you provide both a
+        `vlanId` and `subnetId`, the request fails.
+
+
+        :param vlan_id: The vlan_id of this CreateVnicDetails.
+        :type: str
+        """
+        self._vlan_id = vlan_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

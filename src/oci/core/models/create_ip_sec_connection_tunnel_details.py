@@ -178,8 +178,6 @@ class CreateIPSecConnectionTunnelDetails(object):
         Oracle generates a value for you. You can specify your own shared secret later if
         you like with :func:`update_ip_sec_connection_tunnel_shared_secret`.
 
-        Example: `EXAMPLEToUis6j1cp8GdVQxcmdfMO0yXMLilZTbYCMDGu4V8o`
-
 
         :return: The shared_secret of this CreateIPSecConnectionTunnelDetails.
         :rtype: str
@@ -194,8 +192,6 @@ class CreateIPSecConnectionTunnelDetails(object):
         spaces are allowed. If you don't provide a value,
         Oracle generates a value for you. You can specify your own shared secret later if
         you like with :func:`update_ip_sec_connection_tunnel_shared_secret`.
-
-        Example: `EXAMPLEToUis6j1cp8GdVQxcmdfMO0yXMLilZTbYCMDGu4V8o`
 
 
         :param shared_secret: The shared_secret of this CreateIPSecConnectionTunnelDetails.

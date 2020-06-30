@@ -162,8 +162,6 @@ class IScsiVolumeAttachment(VolumeAttachment):
         The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name.
         (Also called the \"CHAP password\".)
 
-        Example: `d6866c0d-298b-48ba-95af-309b4faux45e`
-
 
         :return: The chap_secret of this IScsiVolumeAttachment.
         :rtype: str
@@ -177,8 +175,6 @@ class IScsiVolumeAttachment(VolumeAttachment):
         The Challenge-Handshake-Authentication-Protocol (CHAP) secret valid for the associated CHAP user name.
         (Also called the \"CHAP password\".)
 
-        Example: `d6866c0d-298b-48ba-95af-309b4faux45e`
-
 
         :param chap_secret: The chap_secret of this IScsiVolumeAttachment.
         :type: str
@@ -189,9 +185,11 @@ class IScsiVolumeAttachment(VolumeAttachment):
     def chap_username(self):
         """
         Gets the chap_username of this IScsiVolumeAttachment.
-        The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name.
+        The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name. See `RFC 1994`__ for more on CHAP.
 
-        Example: `ocid1.volume.oc1.phx.abyhqljrgvttnlx73nmrwfaux7kcvzfs3s66izvxf2h4lgvyndsdsnoiwr5q`
+        Example: `ocid1.volume.oc1.phx.<unique_ID>`
+
+        __ https://tools.ietf.org/html/rfc1994
 
 
         :return: The chap_username of this IScsiVolumeAttachment.
@@ -203,9 +201,11 @@ class IScsiVolumeAttachment(VolumeAttachment):
     def chap_username(self, chap_username):
         """
         Sets the chap_username of this IScsiVolumeAttachment.
-        The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name.
+        The volume's system-generated Challenge-Handshake-Authentication-Protocol (CHAP) user name. See `RFC 1994`__ for more on CHAP.
 
-        Example: `ocid1.volume.oc1.phx.abyhqljrgvttnlx73nmrwfaux7kcvzfs3s66izvxf2h4lgvyndsdsnoiwr5q`
+        Example: `ocid1.volume.oc1.phx.<unique_ID>`
+
+        __ https://tools.ietf.org/html/rfc1994
 
 
         :param chap_username: The chap_username of this IScsiVolumeAttachment.
@@ -245,9 +245,11 @@ class IScsiVolumeAttachment(VolumeAttachment):
     def iqn(self):
         """
         **[Required]** Gets the iqn of this IScsiVolumeAttachment.
-        The target volume's iSCSI Qualified Name in the format defined by RFC 3720.
+        The target volume's iSCSI Qualified Name in the format defined by `RFC 3720`__.
 
-        Example: `iqn.2015-12.us.oracle.com:456b0391-17b8-4122-bbf1-f85fc0bb97d9`
+        Example: `iqn.2015-12.us.oracle.com:<CHAP_username>`
+
+        __ https://tools.ietf.org/html/rfc3720#page-32
 
 
         :return: The iqn of this IScsiVolumeAttachment.
@@ -259,9 +261,11 @@ class IScsiVolumeAttachment(VolumeAttachment):
     def iqn(self, iqn):
         """
         Sets the iqn of this IScsiVolumeAttachment.
-        The target volume's iSCSI Qualified Name in the format defined by RFC 3720.
+        The target volume's iSCSI Qualified Name in the format defined by `RFC 3720`__.
 
-        Example: `iqn.2015-12.us.oracle.com:456b0391-17b8-4122-bbf1-f85fc0bb97d9`
+        Example: `iqn.2015-12.us.oracle.com:<CHAP_username>`
+
+        __ https://tools.ietf.org/html/rfc3720#page-32
 
 
         :param iqn: The iqn of this IScsiVolumeAttachment.
@@ -273,7 +277,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
     def port(self):
         """
         **[Required]** Gets the port of this IScsiVolumeAttachment.
-        The volume's iSCSI port.
+        The volume's iSCSI port, usually port 860 or 3260.
 
         Example: `3260`
 
@@ -287,7 +291,7 @@ class IScsiVolumeAttachment(VolumeAttachment):
     def port(self, port):
         """
         Sets the port of this IScsiVolumeAttachment.
-        The volume's iSCSI port.
+        The volume's iSCSI port, usually port 860 or 3260.
 
         Example: `3260`
 

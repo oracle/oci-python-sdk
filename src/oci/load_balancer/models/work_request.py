@@ -51,6 +51,10 @@ class WorkRequest(object):
             The value to assign to the type property of this WorkRequest.
         :type type: str
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this WorkRequest.
+        :type compartment_id: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this WorkRequest.
             Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
@@ -78,6 +82,7 @@ class WorkRequest(object):
             'id': 'str',
             'load_balancer_id': 'str',
             'type': 'str',
+            'compartment_id': 'str',
             'lifecycle_state': 'str',
             'message': 'str',
             'time_accepted': 'datetime',
@@ -89,6 +94,7 @@ class WorkRequest(object):
             'id': 'id',
             'load_balancer_id': 'loadBalancerId',
             'type': 'type',
+            'compartment_id': 'compartmentId',
             'lifecycle_state': 'lifecycleState',
             'message': 'message',
             'time_accepted': 'timeAccepted',
@@ -99,6 +105,7 @@ class WorkRequest(object):
         self._id = None
         self._load_balancer_id = None
         self._type = None
+        self._compartment_id = None
         self._lifecycle_state = None
         self._message = None
         self._time_accepted = None
@@ -190,6 +197,34 @@ class WorkRequest(object):
         :type: str
         """
         self._type = type
+
+    @property
+    def compartment_id(self):
+        """
+        Gets the compartment_id of this WorkRequest.
+        The `OCID`__ of the compartment containing the load balancer.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The compartment_id of this WorkRequest.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this WorkRequest.
+        The `OCID`__ of the compartment containing the load balancer.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param compartment_id: The compartment_id of this WorkRequest.
+        :type: str
+        """
+        self._compartment_id = compartment_id
 
     @property
     def lifecycle_state(self):

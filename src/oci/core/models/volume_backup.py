@@ -332,10 +332,12 @@ class VolumeBackup(object):
         """
         Gets the expiration_time of this VolumeBackup.
         The date and time the volume backup will expire and be automatically deleted.
-        Format defined by RFC3339. This parameter will always be present for backups that
+        Format defined by `RFC3339`__. This parameter will always be present for backups that
         were created automatically by a scheduled-backup policy. For manually created backups,
         it will be absent, signifying that there is no expiration time and the backup will
         last forever until manually deleted.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The expiration_time of this VolumeBackup.
@@ -348,10 +350,12 @@ class VolumeBackup(object):
         """
         Sets the expiration_time of this VolumeBackup.
         The date and time the volume backup will expire and be automatically deleted.
-        Format defined by RFC3339. This parameter will always be present for backups that
+        Format defined by `RFC3339`__. This parameter will always be present for backups that
         were created automatically by a scheduled-backup policy. For manually created backups,
         it will be absent, signifying that there is no expiration time and the backup will
         last forever until manually deleted.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param expiration_time: The expiration_time of this VolumeBackup.
@@ -592,7 +596,9 @@ class VolumeBackup(object):
         """
         **[Required]** Gets the time_created of this VolumeBackup.
         The date and time the volume backup was created. This is the time the actual point-in-time image
-        of the volume data was taken. Format defined by RFC3339.
+        of the volume data was taken. Format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_created of this VolumeBackup.
@@ -605,7 +611,9 @@ class VolumeBackup(object):
         """
         Sets the time_created of this VolumeBackup.
         The date and time the volume backup was created. This is the time the actual point-in-time image
-        of the volume data was taken. Format defined by RFC3339.
+        of the volume data was taken. Format defined by `RFC3339`__.
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_created: The time_created of this VolumeBackup.
@@ -617,7 +625,7 @@ class VolumeBackup(object):
     def time_request_received(self):
         """
         Gets the time_request_received of this VolumeBackup.
-        The date and time the request to create the volume backup was received. Format defined by RFC3339.
+        The date and time the request to create the volume backup was received. Format defined by [RFC3339]https://tools.ietf.org/html/rfc3339.
 
 
         :return: The time_request_received of this VolumeBackup.
@@ -629,7 +637,7 @@ class VolumeBackup(object):
     def time_request_received(self, time_request_received):
         """
         Sets the time_request_received of this VolumeBackup.
-        The date and time the request to create the volume backup was received. Format defined by RFC3339.
+        The date and time the request to create the volume backup was received. Format defined by [RFC3339]https://tools.ietf.org/html/rfc3339.
 
 
         :param time_request_received: The time_request_received of this VolumeBackup.

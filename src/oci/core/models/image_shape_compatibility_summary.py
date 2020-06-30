@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ImageShapeCompatibilitySummary(object):
     """
-    Summary information for an image shape compatibility entry.
+    Summary information for a compatible image and shape.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,9 @@ class ImageShapeCompatibilitySummary(object):
     def image_id(self):
         """
         **[Required]** Gets the image_id of this ImageShapeCompatibilitySummary.
-        The image OCID.
+        The image `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The image_id of this ImageShapeCompatibilitySummary.
@@ -63,7 +65,9 @@ class ImageShapeCompatibilitySummary(object):
     def image_id(self, image_id):
         """
         Sets the image_id of this ImageShapeCompatibilitySummary.
-        The image OCID.
+        The image `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param image_id: The image_id of this ImageShapeCompatibilitySummary.

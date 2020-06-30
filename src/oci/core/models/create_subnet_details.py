@@ -171,7 +171,7 @@ class CreateSubnetDetails(object):
         **[Required]** Gets the cidr_block of this CreateSubnetDetails.
         The CIDR IP address range of the subnet.
 
-        Example: `172.16.1.0/24`
+        Example: `10.0.1.0/24`
 
 
         :return: The cidr_block of this CreateSubnetDetails.
@@ -185,7 +185,7 @@ class CreateSubnetDetails(object):
         Sets the cidr_block of this CreateSubnetDetails.
         The CIDR IP address range of the subnet.
 
-        Example: `172.16.1.0/24`
+        Example: `10.0.1.0/24`
 
 
         :param cidr_block: The cidr_block of this CreateSubnetDetails.

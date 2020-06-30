@@ -56,6 +56,9 @@ API Reference
 * :doc:`Nosql <nosql/client/oci.nosql.NosqlClient>`
 * :doc:`Object Storage <object_storage/client/oci.object_storage.ObjectStorageClient>`
 * :doc:`Oce Instance <oce/client/oci.oce.OceInstanceClient>`
+* :doc:`Esxi Host <ocvp/client/oci.ocvp.EsxiHostClient>`
+* :doc:`Sddc <ocvp/client/oci.ocvp.SddcClient>`
+* :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
 * :doc:`Oda <oda/client/oci.oda.OdaClient>`
 * :doc:`Notification Control Plane <ons/client/oci.ons.NotificationControlPlaneClient>`
 * :doc:`Notification Data Plane <ons/client/oci.ons.NotificationDataPlaneClient>`
@@ -65,6 +68,7 @@ API Reference
 * :doc:`Secrets <secrets/client/oci.secrets.SecretsClient>`
 * :doc:`Stream Admin <streaming/client/oci.streaming.StreamAdminClient>`
 * :doc:`Stream <streaming/client/oci.streaming.StreamClient>`
+* :doc:`Usageapi <usage_api/client/oci.usage_api.UsageapiClient>`
 * :doc:`Vaults <vault/client/oci.vault.VaultsClient>`
 * :doc:`Redirect <waas/client/oci.waas.RedirectClient>`
 * :doc:`Waas <waas/client/oci.waas.WaasClient>`
@@ -122,6 +126,7 @@ API Reference
     nosql
     object_storage
     oce
+    ocvp
     oda
     ons
     os_management
@@ -129,6 +134,7 @@ API Reference
     resource_search
     secrets
     streaming
+    usage_api
     vault
     waas
     work_requests

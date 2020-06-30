@@ -125,7 +125,7 @@ class InstanceShapeConfig(object):
     def memory_in_gbs(self):
         """
         Gets the memory_in_gbs of this InstanceShapeConfig.
-        The total amount of memory, in gigabytes, available to the instance.
+        The total amount of memory available to the instance, in gigabytes.
 
 
         :return: The memory_in_gbs of this InstanceShapeConfig.
@@ -137,7 +137,7 @@ class InstanceShapeConfig(object):
     def memory_in_gbs(self, memory_in_gbs):
         """
         Sets the memory_in_gbs of this InstanceShapeConfig.
-        The total amount of memory, in gigabytes, available to the instance.
+        The total amount of memory available to the instance, in gigabytes.
 
 
         :param memory_in_gbs: The memory_in_gbs of this InstanceShapeConfig.
@@ -149,7 +149,7 @@ class InstanceShapeConfig(object):
     def processor_description(self):
         """
         Gets the processor_description of this InstanceShapeConfig.
-        A short description of the processors available to the instance.
+        A short description of the instance's processor (CPU).
 
 
         :return: The processor_description of this InstanceShapeConfig.
@@ -161,7 +161,7 @@ class InstanceShapeConfig(object):
     def processor_description(self, processor_description):
         """
         Sets the processor_description of this InstanceShapeConfig.
-        A short description of the processors available to the instance.
+        A short description of the instance's processor (CPU).
 
 
         :param processor_description: The processor_description of this InstanceShapeConfig.
@@ -173,7 +173,7 @@ class InstanceShapeConfig(object):
     def networking_bandwidth_in_gbps(self):
         """
         Gets the networking_bandwidth_in_gbps of this InstanceShapeConfig.
-        The networking bandwidth, in gigabits per second, available to the instance.
+        The networking bandwidth available to the instance, in gigabits per second.
 
 
         :return: The networking_bandwidth_in_gbps of this InstanceShapeConfig.
@@ -185,7 +185,7 @@ class InstanceShapeConfig(object):
     def networking_bandwidth_in_gbps(self, networking_bandwidth_in_gbps):
         """
         Sets the networking_bandwidth_in_gbps of this InstanceShapeConfig.
-        The networking bandwidth, in gigabits per second, available to the instance.
+        The networking bandwidth available to the instance, in gigabits per second.
 
 
         :param networking_bandwidth_in_gbps: The networking_bandwidth_in_gbps of this InstanceShapeConfig.
@@ -221,7 +221,7 @@ class InstanceShapeConfig(object):
     def gpus(self):
         """
         Gets the gpus of this InstanceShapeConfig.
-        The number of GPUs available to this instance.
+        The number of GPUs available to the instance.
 
 
         :return: The gpus of this InstanceShapeConfig.
@@ -233,7 +233,7 @@ class InstanceShapeConfig(object):
     def gpus(self, gpus):
         """
         Sets the gpus of this InstanceShapeConfig.
-        The number of GPUs available to this instance.
+        The number of GPUs available to the instance.
 
 
         :param gpus: The gpus of this InstanceShapeConfig.
@@ -245,8 +245,9 @@ class InstanceShapeConfig(object):
     def gpu_description(self):
         """
         Gets the gpu_description of this InstanceShapeConfig.
-        A short description of the GPUs available to this instance.
-        This field is `null` if `gpus` is `0`.
+        A short description of the instance's graphics processing unit (GPU).
+
+        If the instance does not have any GPUs, this field is `null`.
 
 
         :return: The gpu_description of this InstanceShapeConfig.
@@ -258,8 +259,9 @@ class InstanceShapeConfig(object):
     def gpu_description(self, gpu_description):
         """
         Sets the gpu_description of this InstanceShapeConfig.
-        A short description of the GPUs available to this instance.
-        This field is `null` if `gpus` is `0`.
+        A short description of the instance's graphics processing unit (GPU).
+
+        If the instance does not have any GPUs, this field is `null`.
 
 
         :param gpu_description: The gpu_description of this InstanceShapeConfig.
@@ -295,8 +297,9 @@ class InstanceShapeConfig(object):
     def local_disks_total_size_in_gbs(self):
         """
         Gets the local_disks_total_size_in_gbs of this InstanceShapeConfig.
-        The size of the local disks, aggregated, in gigabytes.
-        This field is `null` if `localDisks` is equal to `0`.
+        The aggregate size of all local disks, in gigabytes.
+
+        If the instance does not have any local disks, this field is `null`.
 
 
         :return: The local_disks_total_size_in_gbs of this InstanceShapeConfig.
@@ -308,8 +311,9 @@ class InstanceShapeConfig(object):
     def local_disks_total_size_in_gbs(self, local_disks_total_size_in_gbs):
         """
         Sets the local_disks_total_size_in_gbs of this InstanceShapeConfig.
-        The size of the local disks, aggregated, in gigabytes.
-        This field is `null` if `localDisks` is equal to `0`.
+        The aggregate size of all local disks, in gigabytes.
+
+        If the instance does not have any local disks, this field is `null`.
 
 
         :param local_disks_total_size_in_gbs: The local_disks_total_size_in_gbs of this InstanceShapeConfig.
@@ -322,7 +326,8 @@ class InstanceShapeConfig(object):
         """
         Gets the local_disk_description of this InstanceShapeConfig.
         A short description of the local disks available to this instance.
-        This field is `null` if `localDisks` is equal to `0`.
+
+        If the instance does not have any local disks, this field is `null`.
 
 
         :return: The local_disk_description of this InstanceShapeConfig.
@@ -335,7 +340,8 @@ class InstanceShapeConfig(object):
         """
         Sets the local_disk_description of this InstanceShapeConfig.
         A short description of the local disks available to this instance.
-        This field is `null` if `localDisks` is equal to `0`.
+
+        If the instance does not have any local disks, this field is `null`.
 
 
         :param local_disk_description: The local_disk_description of this InstanceShapeConfig.

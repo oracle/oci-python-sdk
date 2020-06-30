@@ -27,27 +27,72 @@ class InstanceConfigurationParavirtualizedAttachVolumeDetails(InstanceConfigurat
             The value to assign to the is_read_only property of this InstanceConfigurationParavirtualizedAttachVolumeDetails.
         :type is_read_only: bool
 
+        :param device:
+            The value to assign to the device property of this InstanceConfigurationParavirtualizedAttachVolumeDetails.
+        :type device: str
+
+        :param is_shareable:
+            The value to assign to the is_shareable property of this InstanceConfigurationParavirtualizedAttachVolumeDetails.
+        :type is_shareable: bool
+
         :param type:
             The value to assign to the type property of this InstanceConfigurationParavirtualizedAttachVolumeDetails.
         :type type: str
+
+        :param is_pv_encryption_in_transit_enabled:
+            The value to assign to the is_pv_encryption_in_transit_enabled property of this InstanceConfigurationParavirtualizedAttachVolumeDetails.
+        :type is_pv_encryption_in_transit_enabled: bool
 
         """
         self.swagger_types = {
             'display_name': 'str',
             'is_read_only': 'bool',
-            'type': 'str'
+            'device': 'str',
+            'is_shareable': 'bool',
+            'type': 'str',
+            'is_pv_encryption_in_transit_enabled': 'bool'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
             'is_read_only': 'isReadOnly',
-            'type': 'type'
+            'device': 'device',
+            'is_shareable': 'isShareable',
+            'type': 'type',
+            'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled'
         }
 
         self._display_name = None
         self._is_read_only = None
+        self._device = None
+        self._is_shareable = None
         self._type = None
+        self._is_pv_encryption_in_transit_enabled = None
         self._type = 'paravirtualized'
+
+    @property
+    def is_pv_encryption_in_transit_enabled(self):
+        """
+        Gets the is_pv_encryption_in_transit_enabled of this InstanceConfigurationParavirtualizedAttachVolumeDetails.
+        Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
+
+
+        :return: The is_pv_encryption_in_transit_enabled of this InstanceConfigurationParavirtualizedAttachVolumeDetails.
+        :rtype: bool
+        """
+        return self._is_pv_encryption_in_transit_enabled
+
+    @is_pv_encryption_in_transit_enabled.setter
+    def is_pv_encryption_in_transit_enabled(self, is_pv_encryption_in_transit_enabled):
+        """
+        Sets the is_pv_encryption_in_transit_enabled of this InstanceConfigurationParavirtualizedAttachVolumeDetails.
+        Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false.
+
+
+        :param is_pv_encryption_in_transit_enabled: The is_pv_encryption_in_transit_enabled of this InstanceConfigurationParavirtualizedAttachVolumeDetails.
+        :type: bool
+        """
+        self._is_pv_encryption_in_transit_enabled = is_pv_encryption_in_transit_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

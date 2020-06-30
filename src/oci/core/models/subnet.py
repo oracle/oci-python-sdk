@@ -242,7 +242,7 @@ class Subnet(object):
         **[Required]** Gets the cidr_block of this Subnet.
         The subnet's CIDR block.
 
-        Example: `172.16.1.0/24`
+        Example: `10.0.1.0/24`
 
 
         :return: The cidr_block of this Subnet.
@@ -256,7 +256,7 @@ class Subnet(object):
         Sets the cidr_block of this Subnet.
         The subnet's CIDR block.
 
-        Example: `172.16.1.0/24`
+        Example: `10.0.1.0/24`
 
 
         :param cidr_block: The cidr_block of this Subnet.
@@ -750,9 +750,11 @@ class Subnet(object):
     def time_created(self):
         """
         Gets the time_created of this Subnet.
-        The date and time the subnet was created, in the format defined by RFC3339.
+        The date and time the subnet was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :return: The time_created of this Subnet.
@@ -764,9 +766,11 @@ class Subnet(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Subnet.
-        The date and time the subnet was created, in the format defined by RFC3339.
+        The date and time the subnet was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
 
 
         :param time_created: The time_created of this Subnet.
@@ -832,7 +836,7 @@ class Subnet(object):
         **[Required]** Gets the virtual_router_mac of this Subnet.
         The MAC address of the virtual router.
 
-        Example: `00:00:17:B6:4D:DD`
+        Example: `00:00:00:00:00:01`
 
 
         :return: The virtual_router_mac of this Subnet.
@@ -846,7 +850,7 @@ class Subnet(object):
         Sets the virtual_router_mac of this Subnet.
         The MAC address of the virtual router.
 
-        Example: `00:00:17:B6:4D:DD`
+        Example: `00:00:00:00:00:01`
 
 
         :param virtual_router_mac: The virtual_router_mac of this Subnet.
