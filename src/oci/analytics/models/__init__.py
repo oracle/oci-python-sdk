@@ -7,10 +7,15 @@ from __future__ import absolute_import
 from .analytics_instance import AnalyticsInstance
 from .analytics_instance_summary import AnalyticsInstanceSummary
 from .capacity import Capacity
+from .change_analytics_instance_network_endpoint_details import ChangeAnalyticsInstanceNetworkEndpointDetails
 from .change_compartment_details import ChangeCompartmentDetails
 from .create_analytics_instance_details import CreateAnalyticsInstanceDetails
+from .network_endpoint_details import NetworkEndpointDetails
+from .private_endpoint_details import PrivateEndpointDetails
+from .public_endpoint_details import PublicEndpointDetails
 from .scale_analytics_instance_details import ScaleAnalyticsInstanceDetails
 from .update_analytics_instance_details import UpdateAnalyticsInstanceDetails
+from .virtual_cloud_network import VirtualCloudNetwork
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_log import WorkRequestLog
@@ -22,10 +27,15 @@ analytics_type_mapping = {
     "AnalyticsInstance": AnalyticsInstance,
     "AnalyticsInstanceSummary": AnalyticsInstanceSummary,
     "Capacity": Capacity,
+    "ChangeAnalyticsInstanceNetworkEndpointDetails": ChangeAnalyticsInstanceNetworkEndpointDetails,
     "ChangeCompartmentDetails": ChangeCompartmentDetails,
     "CreateAnalyticsInstanceDetails": CreateAnalyticsInstanceDetails,
+    "NetworkEndpointDetails": NetworkEndpointDetails,
+    "PrivateEndpointDetails": PrivateEndpointDetails,
+    "PublicEndpointDetails": PublicEndpointDetails,
     "ScaleAnalyticsInstanceDetails": ScaleAnalyticsInstanceDetails,
     "UpdateAnalyticsInstanceDetails": UpdateAnalyticsInstanceDetails,
+    "VirtualCloudNetwork": VirtualCloudNetwork,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestLog": WorkRequestLog,

@@ -77,6 +77,14 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the db_version property of this UpdateAutonomousDatabaseDetails.
         :type db_version: str
 
+        :param subnet_id:
+            The value to assign to the subnet_id property of this UpdateAutonomousDatabaseDetails.
+        :type subnet_id: str
+
+        :param private_endpoint_label:
+            The value to assign to the private_endpoint_label property of this UpdateAutonomousDatabaseDetails.
+        :type private_endpoint_label: str
+
         :param nsg_ids:
             The value to assign to the nsg_ids property of this UpdateAutonomousDatabaseDetails.
         :type nsg_ids: list[str]
@@ -95,6 +103,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'whitelisted_ips': 'list[str]',
             'is_auto_scaling_enabled': 'bool',
             'db_version': 'str',
+            'subnet_id': 'str',
+            'private_endpoint_label': 'str',
             'nsg_ids': 'list[str]'
         }
 
@@ -111,6 +121,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'whitelisted_ips': 'whitelistedIps',
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
             'db_version': 'dbVersion',
+            'subnet_id': 'subnetId',
+            'private_endpoint_label': 'privateEndpointLabel',
             'nsg_ids': 'nsgIds'
         }
 
@@ -126,6 +138,8 @@ class UpdateAutonomousDatabaseDetails(object):
         self._whitelisted_ips = None
         self._is_auto_scaling_enabled = None
         self._db_version = None
+        self._subnet_id = None
+        self._private_endpoint_label = None
         self._nsg_ids = None
 
     @property
@@ -467,6 +481,76 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: str
         """
         self._db_version = db_version
+
+    @property
+    def subnet_id(self):
+        """
+        Gets the subnet_id of this UpdateAutonomousDatabaseDetails.
+        The `OCID`__ of the subnet the resource is associated with.
+
+        **Subnet Restrictions:**
+        - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
+        - For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
+        - For Autonomous Database, setting this will disable public secure access to the database.
+
+        These subnets are used by the Oracle Clusterware private interconnect on the database instance.
+        Specifying an overlapping subnet will cause the private interconnect to malfunction.
+        This restriction applies to both the client subnet and the backup subnet.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The subnet_id of this UpdateAutonomousDatabaseDetails.
+        :rtype: str
+        """
+        return self._subnet_id
+
+    @subnet_id.setter
+    def subnet_id(self, subnet_id):
+        """
+        Sets the subnet_id of this UpdateAutonomousDatabaseDetails.
+        The `OCID`__ of the subnet the resource is associated with.
+
+        **Subnet Restrictions:**
+        - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
+        - For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
+        - For Autonomous Database, setting this will disable public secure access to the database.
+
+        These subnets are used by the Oracle Clusterware private interconnect on the database instance.
+        Specifying an overlapping subnet will cause the private interconnect to malfunction.
+        This restriction applies to both the client subnet and the backup subnet.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param subnet_id: The subnet_id of this UpdateAutonomousDatabaseDetails.
+        :type: str
+        """
+        self._subnet_id = subnet_id
+
+    @property
+    def private_endpoint_label(self):
+        """
+        Gets the private_endpoint_label of this UpdateAutonomousDatabaseDetails.
+        The private endpoint label for the resource. Setting this to an empty string, after the private endpoint database gets created, will change the same private endpoint database to the public endpoint database.
+
+
+        :return: The private_endpoint_label of this UpdateAutonomousDatabaseDetails.
+        :rtype: str
+        """
+        return self._private_endpoint_label
+
+    @private_endpoint_label.setter
+    def private_endpoint_label(self, private_endpoint_label):
+        """
+        Sets the private_endpoint_label of this UpdateAutonomousDatabaseDetails.
+        The private endpoint label for the resource. Setting this to an empty string, after the private endpoint database gets created, will change the same private endpoint database to the public endpoint database.
+
+
+        :param private_endpoint_label: The private_endpoint_label of this UpdateAutonomousDatabaseDetails.
+        :type: str
+        """
+        self._private_endpoint_label = private_endpoint_label
 
     @property
     def nsg_ids(self):

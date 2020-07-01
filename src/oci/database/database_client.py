@@ -3264,6 +3264,9 @@ class DatabaseClient(object):
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
+        :param DeregisterAutonomousDatabaseDataSafeDetails deregister_autonomous_database_data_safe_details: (optional)
+            Details for deregistering an Autonomous Database with Data Safe.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -3281,7 +3284,8 @@ class DatabaseClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "deregister_autonomous_database_data_safe_details"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -3315,13 +3319,15 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                body=kwargs.get('deregister_autonomous_database_data_safe_details'))
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                body=kwargs.get('deregister_autonomous_database_data_safe_details'))
 
     def download_exadata_infrastructure_config_file(self, exadata_infrastructure_id, **kwargs):
         """
@@ -9565,6 +9571,9 @@ class DatabaseClient(object):
         :param str opc_request_id: (optional)
             Unique identifier for the request.
 
+        :param RegisterAutonomousDatabaseDataSafeDetails register_autonomous_database_data_safe_details: (optional)
+            Request to register an Autonomous Database with Data Safe.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -9582,7 +9591,8 @@ class DatabaseClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "register_autonomous_database_data_safe_details"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -9616,13 +9626,15 @@ class DatabaseClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                body=kwargs.get('register_autonomous_database_data_safe_details'))
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                body=kwargs.get('register_autonomous_database_data_safe_details'))
 
     def reinstate_data_guard_association(self, database_id, data_guard_association_id, reinstate_data_guard_association_details, **kwargs):
         """

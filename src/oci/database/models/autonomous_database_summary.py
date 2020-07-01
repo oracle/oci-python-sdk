@@ -1129,7 +1129,7 @@ class AutonomousDatabaseSummary(object):
     def private_endpoint_label(self):
         """
         Gets the private_endpoint_label of this AutonomousDatabaseSummary.
-        The private endpoint label for the resource.
+        The private endpoint label for the resource. Setting this to an empty string, after the private endpoint database gets created, will change the same private endpoint database to the public endpoint database.
 
 
         :return: The private_endpoint_label of this AutonomousDatabaseSummary.
@@ -1141,7 +1141,7 @@ class AutonomousDatabaseSummary(object):
     def private_endpoint_label(self, private_endpoint_label):
         """
         Sets the private_endpoint_label of this AutonomousDatabaseSummary.
-        The private endpoint label for the resource.
+        The private endpoint label for the resource. Setting this to an empty string, after the private endpoint database gets created, will change the same private endpoint database to the public endpoint database.
 
 
         :param private_endpoint_label: The private_endpoint_label of this AutonomousDatabaseSummary.

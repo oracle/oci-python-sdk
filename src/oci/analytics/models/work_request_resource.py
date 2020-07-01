@@ -38,6 +38,10 @@ class WorkRequestResource(object):
     ACTION_RESULT_SCALED = "SCALED"
 
     #: A constant which can be used with the action_result property of a WorkRequestResource.
+    #: This constant has a value of "NETWORK_ENDPOINT_CHANGED"
+    ACTION_RESULT_NETWORK_ENDPOINT_CHANGED = "NETWORK_ENDPOINT_CHANGED"
+
+    #: A constant which can be used with the action_result property of a WorkRequestResource.
     #: This constant has a value of "NONE"
     ACTION_RESULT_NONE = "NONE"
 
@@ -52,7 +56,7 @@ class WorkRequestResource(object):
 
         :param action_result:
             The value to assign to the action_result property of this WorkRequestResource.
-            Allowed values for this property are: "COMPARTMENT_CHANGED", "CREATED", "DELETED", "STARTED", "STOPPED", "SCALED", "NONE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "COMPARTMENT_CHANGED", "CREATED", "DELETED", "STARTED", "STOPPED", "SCALED", "NETWORK_ENDPOINT_CHANGED", "NONE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type action_result: str
 
@@ -103,7 +107,7 @@ class WorkRequestResource(object):
         **[Required]** Gets the action_result of this WorkRequestResource.
         The way in which this resource was affected by this work request.
 
-        Allowed values for this property are: "COMPARTMENT_CHANGED", "CREATED", "DELETED", "STARTED", "STOPPED", "SCALED", "NONE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "COMPARTMENT_CHANGED", "CREATED", "DELETED", "STARTED", "STOPPED", "SCALED", "NETWORK_ENDPOINT_CHANGED", "NONE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -122,7 +126,7 @@ class WorkRequestResource(object):
         :param action_result: The action_result of this WorkRequestResource.
         :type: str
         """
-        allowed_values = ["COMPARTMENT_CHANGED", "CREATED", "DELETED", "STARTED", "STOPPED", "SCALED", "NONE"]
+        allowed_values = ["COMPARTMENT_CHANGED", "CREATED", "DELETED", "STARTED", "STOPPED", "SCALED", "NETWORK_ENDPOINT_CHANGED", "NONE"]
         if not value_allowed_none_or_none_sentinel(action_result, allowed_values):
             action_result = 'UNKNOWN_ENUM_VALUE'
         self._action_result = action_result

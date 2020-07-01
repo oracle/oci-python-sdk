@@ -110,6 +110,7 @@ Database
     oci.database.models.DbSystemShapeSummary
     oci.database.models.DbSystemSummary
     oci.database.models.DbVersionSummary
+    oci.database.models.DeregisterAutonomousDatabaseDataSafeDetails
     oci.database.models.ExadataInfrastructure
     oci.database.models.ExadataInfrastructureSummary
     oci.database.models.ExadataIormConfig
@@ -138,6 +139,7 @@ Database
     oci.database.models.PatchHistoryEntry
     oci.database.models.PatchHistoryEntrySummary
     oci.database.models.PatchSummary
+    oci.database.models.RegisterAutonomousDatabaseDataSafeDetails
     oci.database.models.ReinstateDataGuardAssociationDetails
     oci.database.models.RestoreAutonomousDataWarehouseDetails
     oci.database.models.RestoreAutonomousDatabaseDetails
