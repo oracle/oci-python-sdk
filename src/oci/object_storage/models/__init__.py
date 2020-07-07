@@ -29,6 +29,7 @@ from .pattern_details import PatternDetails
 from .preauthenticated_request import PreauthenticatedRequest
 from .preauthenticated_request_summary import PreauthenticatedRequestSummary
 from .put_object_lifecycle_policy_details import PutObjectLifecyclePolicyDetails
+from .reencrypt_object_details import ReencryptObjectDetails
 from .rename_object_details import RenameObjectDetails
 from .replication_policy import ReplicationPolicy
 from .replication_policy_summary import ReplicationPolicySummary
@@ -38,6 +39,7 @@ from .retention_rule import RetentionRule
 from .retention_rule_collection import RetentionRuleCollection
 from .retention_rule_details import RetentionRuleDetails
 from .retention_rule_summary import RetentionRuleSummary
+from .sse_customer_key_details import SSECustomerKeyDetails
 from .update_bucket_details import UpdateBucketDetails
 from .update_namespace_metadata_details import UpdateNamespaceMetadataDetails
 from .update_retention_rule_details import UpdateRetentionRuleDetails
@@ -74,6 +76,7 @@ object_storage_type_mapping = {
     "PreauthenticatedRequest": PreauthenticatedRequest,
     "PreauthenticatedRequestSummary": PreauthenticatedRequestSummary,
     "PutObjectLifecyclePolicyDetails": PutObjectLifecyclePolicyDetails,
+    "ReencryptObjectDetails": ReencryptObjectDetails,
     "RenameObjectDetails": RenameObjectDetails,
     "ReplicationPolicy": ReplicationPolicy,
     "ReplicationPolicySummary": ReplicationPolicySummary,
@@ -83,6 +86,7 @@ object_storage_type_mapping = {
     "RetentionRuleCollection": RetentionRuleCollection,
     "RetentionRuleDetails": RetentionRuleDetails,
     "RetentionRuleSummary": RetentionRuleSummary,
+    "SSECustomerKeyDetails": SSECustomerKeyDetails,
     "UpdateBucketDetails": UpdateBucketDetails,
     "UpdateNamespaceMetadataDetails": UpdateNamespaceMetadataDetails,
     "UpdateRetentionRuleDetails": UpdateRetentionRuleDetails,

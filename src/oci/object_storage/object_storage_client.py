@@ -373,35 +373,35 @@ class ObjectStorageClient(object):
             The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_customer_key: (optional)
             The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
             decrypt the data. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_customer_key_sha256: (optional)
             The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
             value is used to check the integrity of the encryption key. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_source_sse_customer_algorithm: (optional)
             The optional header that specifies \"AES256\" as the encryption algorithm to use to decrypt the source
             object. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_source_sse_customer_key: (optional)
             The optional header that specifies the base64-encoded 256-bit encryption key to use to decrypt
             the source object. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_source_sse_customer_key_sha256: (optional)
             The optional header that specifies the base64-encoded SHA256 hash of the encryption key used to
@@ -409,7 +409,7 @@ class ObjectStorageClient(object):
             more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -594,21 +594,21 @@ class ObjectStorageClient(object):
             The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_customer_key: (optional)
             The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
             decrypt the data. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_customer_key_sha256: (optional)
             The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
             value is used to check the integrity of the encryption key. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1749,21 +1749,21 @@ class ObjectStorageClient(object):
             The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_customer_key: (optional)
             The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
             decrypt the data. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_customer_key_sha256: (optional)
             The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
             value is used to check the integrity of the encryption key. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2364,21 +2364,21 @@ class ObjectStorageClient(object):
             The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_customer_key: (optional)
             The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
             decrypt the data. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_customer_key_sha256: (optional)
             The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
             value is used to check the integrity of the encryption key. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3827,21 +3827,21 @@ class ObjectStorageClient(object):
             The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_customer_key: (optional)
             The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
             decrypt the data. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_customer_key_sha256: (optional)
             The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
             value is used to check the integrity of the encryption key. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param dict(str, str) opc_meta: (optional)
             Optional user-defined metadata key and value.
@@ -4143,6 +4143,110 @@ class ObjectStorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params)
+
+    def reencrypt_object(self, namespace_name, bucket_name, object_name, reencrypt_object_details, **kwargs):
+        """
+        Re-encrypts the data encryption keys that encrypt the object and its chunks. By default, when you create a bucket, the Object Storage
+        service manages the master encryption key used to encrypt each object's data encryption keys. The encryption mechanism that you specify for
+        the bucket applies to the objects it contains.
+
+        You can alternatively employ one of these encryption strategies for an object:
+
+        - You can assign a key that you created and control through the Oracle Cloud Infrastructure Vault service.
+
+        - You can encrypt an object using your own encryption key. The key you supply is known as a customer-provided encryption key (SSE-C).
+
+
+        :param str namespace_name: (required)
+            The Object Storage namespace used for the request.
+
+        :param str bucket_name: (required)
+            The name of the bucket. Avoid entering confidential information.
+            Example: `my-new-bucket1`
+
+        :param str object_name: (required)
+            The name of the object. Avoid entering confidential information.
+            Example: `test/object1.log`
+
+        :param ReencryptObjectDetails reencrypt_object_details: (required)
+            Request object for re-encrypting the data encryption key associated with an object.
+
+        :param str version_id: (optional)
+            VersionId used to identify a particular version of the object
+
+        :param str opc_client_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/n/{namespaceName}/b/{bucketName}/actions/reencrypt/{objectName}"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "version_id",
+            "opc_client_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "reencrypt_object got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name,
+            "bucketName": bucket_name,
+            "objectName": object_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "versionId": kwargs.get("version_id", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-client-request-id": kwargs.get("opc_client_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=reencrypt_object_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                body=reencrypt_object_details)
 
     def rename_object(self, namespace_name, bucket_name, rename_object_details, **kwargs):
         """
@@ -4629,21 +4733,21 @@ class ObjectStorageClient(object):
             The optional header that specifies \"AES256\" as the encryption algorithm. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_customer_key: (optional)
             The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
             decrypt the data. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param str opc_sse_customer_key_sha256: (optional)
             The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
             value is used to check the integrity of the encryption key. For more information, see
             `Using Your Own Keys for Server-Side Encryption`__.
 
-            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourecryptionkeys.htm
+            __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.

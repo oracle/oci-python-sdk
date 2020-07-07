@@ -325,8 +325,13 @@ class IdentityClient(object):
 
     def bulk_delete_resources(self, compartment_id, bulk_delete_resources_details, **kwargs):
         """
-        Bulk delete resources in the compartment. All resources must be in the same compartment.
-        This API can only be invoked from tenancy's home region.
+        Deletes multiple resources in the compartment. All resources must be in the same compartment. You must have the appropriate
+        permissions to delete the resources in the request. This API can only be invoked from the tenancy's
+        `home region`__. This operation creates a
+        :class:`WorkRequest`. Use the :func:`get_work_request`
+        API to monitor the status of the bulk action.
+
+        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingregions.htm#Home
 
 
         :param str compartment_id: (required)
@@ -505,8 +510,13 @@ class IdentityClient(object):
 
     def bulk_move_resources(self, compartment_id, bulk_move_resources_details, **kwargs):
         """
-        Bulk move resources in the compartment. All resources must be in the same compartment.
-        This API can only be invoked from tenancy's home region.
+        Moves multiple resources from one compartment to another. All resources must be in the same compartment.
+        This API can only be invoked from the tenancy's `home region`__.
+        To move resources, you must have the appropriate permissions to move the resource in both the source and target
+        compartments. This operation creates a :class:`WorkRequest`.
+        Use the :func:`get_work_request` API to monitor the status of the bulk action.
+
+        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingregions.htm#Home
 
 
         :param str compartment_id: (required)
@@ -5296,11 +5306,19 @@ class IdentityClient(object):
 
     def list_bulk_action_resource_types(self, bulk_action_type, **kwargs):
         """
-        Lists the resource types supported by compartment bulk actions.
+        Lists the resource-types supported by compartment bulk actions. Use this API to help you provide the correct
+        resource-type information to the :func:`bulk_delete_resources`
+        and :func:`bulk_move_resources` operations. The returned list of
+        resource-types provides the appropriate resource-type names to use with the bulk action operations along with
+        the type of identifying information you'll need to provide for each resource-type. Most resource-types just
+        require an `OCID`__ to identify a specific resource, but some resource-types,
+        such as buckets, require you to provide other identifying information.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param str bulk_action_type: (required)
-            The type of the bulk action.
+            The type of bulk action.
 
             Allowed values are: "BULK_MOVE_RESOURCES", "BULK_DELETE_RESOURCES"
 

@@ -104,6 +104,10 @@ class AnalyticsInstanceSummary(object):
             The value to assign to the email_notification property of this AnalyticsInstanceSummary.
         :type email_notification: str
 
+        :param network_endpoint_details:
+            The value to assign to the network_endpoint_details property of this AnalyticsInstanceSummary.
+        :type network_endpoint_details: NetworkEndpointDetails
+
         :param service_url:
             The value to assign to the service_url property of this AnalyticsInstanceSummary.
         :type service_url: str
@@ -127,6 +131,7 @@ class AnalyticsInstanceSummary(object):
             'capacity': 'Capacity',
             'license_type': 'str',
             'email_notification': 'str',
+            'network_endpoint_details': 'NetworkEndpointDetails',
             'service_url': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime'
@@ -142,6 +147,7 @@ class AnalyticsInstanceSummary(object):
             'capacity': 'capacity',
             'license_type': 'licenseType',
             'email_notification': 'emailNotification',
+            'network_endpoint_details': 'networkEndpointDetails',
             'service_url': 'serviceUrl',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
@@ -156,6 +162,7 @@ class AnalyticsInstanceSummary(object):
         self._capacity = None
         self._license_type = None
         self._email_notification = None
+        self._network_endpoint_details = None
         self._service_url = None
         self._time_created = None
         self._time_updated = None
@@ -389,6 +396,26 @@ class AnalyticsInstanceSummary(object):
         :type: str
         """
         self._email_notification = email_notification
+
+    @property
+    def network_endpoint_details(self):
+        """
+        **[Required]** Gets the network_endpoint_details of this AnalyticsInstanceSummary.
+
+        :return: The network_endpoint_details of this AnalyticsInstanceSummary.
+        :rtype: NetworkEndpointDetails
+        """
+        return self._network_endpoint_details
+
+    @network_endpoint_details.setter
+    def network_endpoint_details(self, network_endpoint_details):
+        """
+        Sets the network_endpoint_details of this AnalyticsInstanceSummary.
+
+        :param network_endpoint_details: The network_endpoint_details of this AnalyticsInstanceSummary.
+        :type: NetworkEndpointDetails
+        """
+        self._network_endpoint_details = network_endpoint_details
 
     @property
     def service_url(self):

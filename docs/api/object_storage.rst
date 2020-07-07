@@ -43,6 +43,7 @@ Object Storage
     oci.object_storage.models.PreauthenticatedRequest
     oci.object_storage.models.PreauthenticatedRequestSummary
     oci.object_storage.models.PutObjectLifecyclePolicyDetails
+    oci.object_storage.models.ReencryptObjectDetails
     oci.object_storage.models.RenameObjectDetails
     oci.object_storage.models.ReplicationPolicy
     oci.object_storage.models.ReplicationPolicySummary
@@ -52,6 +53,7 @@ Object Storage
     oci.object_storage.models.RetentionRuleCollection
     oci.object_storage.models.RetentionRuleDetails
     oci.object_storage.models.RetentionRuleSummary
+    oci.object_storage.models.SSECustomerKeyDetails
     oci.object_storage.models.UpdateBucketDetails
     oci.object_storage.models.UpdateNamespaceMetadataDetails
     oci.object_storage.models.UpdateRetentionRuleDetails

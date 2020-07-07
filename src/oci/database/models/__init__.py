@@ -96,6 +96,7 @@ from .db_system_options import DbSystemOptions
 from .db_system_shape_summary import DbSystemShapeSummary
 from .db_system_summary import DbSystemSummary
 from .db_version_summary import DbVersionSummary
+from .deregister_autonomous_database_data_safe_details import DeregisterAutonomousDatabaseDataSafeDetails
 from .exadata_infrastructure import ExadataInfrastructure
 from .exadata_infrastructure_summary import ExadataInfrastructureSummary
 from .exadata_iorm_config import ExadataIormConfig
@@ -124,6 +125,7 @@ from .patch_details import PatchDetails
 from .patch_history_entry import PatchHistoryEntry
 from .patch_history_entry_summary import PatchHistoryEntrySummary
 from .patch_summary import PatchSummary
+from .register_autonomous_database_data_safe_details import RegisterAutonomousDatabaseDataSafeDetails
 from .reinstate_data_guard_association_details import ReinstateDataGuardAssociationDetails
 from .restore_autonomous_data_warehouse_details import RestoreAutonomousDataWarehouseDetails
 from .restore_autonomous_database_details import RestoreAutonomousDatabaseDetails
@@ -247,6 +249,7 @@ database_type_mapping = {
     "DbSystemShapeSummary": DbSystemShapeSummary,
     "DbSystemSummary": DbSystemSummary,
     "DbVersionSummary": DbVersionSummary,
+    "DeregisterAutonomousDatabaseDataSafeDetails": DeregisterAutonomousDatabaseDataSafeDetails,
     "ExadataInfrastructure": ExadataInfrastructure,
     "ExadataInfrastructureSummary": ExadataInfrastructureSummary,
     "ExadataIormConfig": ExadataIormConfig,
@@ -275,6 +278,7 @@ database_type_mapping = {
     "PatchHistoryEntry": PatchHistoryEntry,
     "PatchHistoryEntrySummary": PatchHistoryEntrySummary,
     "PatchSummary": PatchSummary,
+    "RegisterAutonomousDatabaseDataSafeDetails": RegisterAutonomousDatabaseDataSafeDetails,
     "ReinstateDataGuardAssociationDetails": ReinstateDataGuardAssociationDetails,
     "RestoreAutonomousDataWarehouseDetails": RestoreAutonomousDataWarehouseDetails,
     "RestoreAutonomousDatabaseDetails": RestoreAutonomousDatabaseDetails,
