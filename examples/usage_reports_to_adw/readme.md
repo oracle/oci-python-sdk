@@ -127,9 +127,7 @@ Execute
 ```
 $ ./usage2adw.py  
 
-usage: usage2adw.py [-h] [-c CONFIG] [-t PROFILE] [-f FILEID] [-d FILEDATE]
-                    [-p PROXY] [-ip] [-du DUSER] [-dp DPASS] [-dn DNAME]
-                    [--version]
+usage: usage2adw.py [-h] [-c CONFIG] [-t PROFILE] [-f FILEID] [-d FILEDATE] [-p PROXY] [-su] [-sc] [-ip] [-du DUSER] [-dp DPASS] [-dn DNAME] [--version]
 
 optional arguments:
   -h, --help   show this help message and exit
@@ -138,6 +136,8 @@ optional arguments:
   -f FILEID    File Id to load
   -d FILEDATE  Minimum File Date to load (i.e. yyyy-mm-dd)
   -p PROXY     Set Proxy (i.e. www-proxy-server.com:80)
+  -su          Skip Load Usage Files
+  -sc          Skip Load Cost Files
   -ip          Use Instance Principals for Authentication
   -du DUSER    ADB User
   -dp DPASS    ADB Password

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BulkActionResourceTypeCollection(object):
     """
-    Collection of resource types supported by bulk action.
+    Collection of resource-types supported by a compartment bulk action.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class BulkActionResourceTypeCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this BulkActionResourceTypeCollection.
-        Collection of resource types supported by bulk action.
+        Collection of the resource-types supported by a compartment bulk action.
 
 
         :return: The items of this BulkActionResourceTypeCollection.
@@ -49,7 +49,7 @@ class BulkActionResourceTypeCollection(object):
     def items(self, items):
         """
         Sets the items of this BulkActionResourceTypeCollection.
-        Collection of resource types supported by bulk action.
+        Collection of the resource-types supported by a compartment bulk action.
 
 
         :param items: The items of this BulkActionResourceTypeCollection.

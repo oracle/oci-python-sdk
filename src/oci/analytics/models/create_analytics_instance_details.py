@@ -64,6 +64,10 @@ class CreateAnalyticsInstanceDetails(object):
             The value to assign to the email_notification property of this CreateAnalyticsInstanceDetails.
         :type email_notification: str
 
+        :param network_endpoint_details:
+            The value to assign to the network_endpoint_details property of this CreateAnalyticsInstanceDetails.
+        :type network_endpoint_details: NetworkEndpointDetails
+
         :param idcs_access_token:
             The value to assign to the idcs_access_token property of this CreateAnalyticsInstanceDetails.
         :type idcs_access_token: str
@@ -85,6 +89,7 @@ class CreateAnalyticsInstanceDetails(object):
             'capacity': 'Capacity',
             'license_type': 'str',
             'email_notification': 'str',
+            'network_endpoint_details': 'NetworkEndpointDetails',
             'idcs_access_token': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
@@ -98,6 +103,7 @@ class CreateAnalyticsInstanceDetails(object):
             'capacity': 'capacity',
             'license_type': 'licenseType',
             'email_notification': 'emailNotification',
+            'network_endpoint_details': 'networkEndpointDetails',
             'idcs_access_token': 'idcsAccessToken',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
@@ -110,6 +116,7 @@ class CreateAnalyticsInstanceDetails(object):
         self._capacity = None
         self._license_type = None
         self._email_notification = None
+        self._network_endpoint_details = None
         self._idcs_access_token = None
         self._defined_tags = None
         self._freeform_tags = None
@@ -293,6 +300,26 @@ class CreateAnalyticsInstanceDetails(object):
         :type: str
         """
         self._email_notification = email_notification
+
+    @property
+    def network_endpoint_details(self):
+        """
+        Gets the network_endpoint_details of this CreateAnalyticsInstanceDetails.
+
+        :return: The network_endpoint_details of this CreateAnalyticsInstanceDetails.
+        :rtype: NetworkEndpointDetails
+        """
+        return self._network_endpoint_details
+
+    @network_endpoint_details.setter
+    def network_endpoint_details(self, network_endpoint_details):
+        """
+        Sets the network_endpoint_details of this CreateAnalyticsInstanceDetails.
+
+        :param network_endpoint_details: The network_endpoint_details of this CreateAnalyticsInstanceDetails.
+        :type: NetworkEndpointDetails
+        """
+        self._network_endpoint_details = network_endpoint_details
 
     @property
     def idcs_access_token(self):

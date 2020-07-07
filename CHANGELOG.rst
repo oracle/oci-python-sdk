@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.17.2 - 2020-07-07
+====================
+
+Added
+-----
+* Support for registering and deregistering autonomous dedicated databases with Data Safe in the Database service
+* Support for switching between non-private-endpoints and private endpoints on autonomous databases in the Database service
+* Support for returning group names when listing identity provider groups in the Identity service
+* Support for server-side object re-encryption in the Object Storage service
+* Support for private endpoint (ingress) and public endpoint whitelisting in the Analytics Cloud service
+
+====================
 2.17.1 - 2020-06-30
 ====================
 

@@ -30,6 +30,10 @@ class IdentityProviderGroupSummary(object):
             The value to assign to the display_name property of this IdentityProviderGroupSummary.
         :type display_name: str
 
+        :param name:
+            The value to assign to the name property of this IdentityProviderGroupSummary.
+        :type name: str
+
         :param external_identifier:
             The value to assign to the external_identifier property of this IdentityProviderGroupSummary.
         :type external_identifier: str
@@ -47,6 +51,7 @@ class IdentityProviderGroupSummary(object):
             'id': 'str',
             'identity_provider_id': 'str',
             'display_name': 'str',
+            'name': 'str',
             'external_identifier': 'str',
             'time_created': 'datetime',
             'time_modified': 'datetime'
@@ -56,6 +61,7 @@ class IdentityProviderGroupSummary(object):
             'id': 'id',
             'identity_provider_id': 'identityProviderId',
             'display_name': 'displayName',
+            'name': 'name',
             'external_identifier': 'externalIdentifier',
             'time_created': 'timeCreated',
             'time_modified': 'timeModified'
@@ -64,6 +70,7 @@ class IdentityProviderGroupSummary(object):
         self._id = None
         self._identity_provider_id = None
         self._display_name = None
+        self._name = None
         self._external_identifier = None
         self._time_created = None
         self._time_modified = None
@@ -139,6 +146,30 @@ class IdentityProviderGroupSummary(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def name(self):
+        """
+        Gets the name of this IdentityProviderGroupSummary.
+        Display name of the group
+
+
+        :return: The name of this IdentityProviderGroupSummary.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """
+        Sets the name of this IdentityProviderGroupSummary.
+        Display name of the group
+
+
+        :param name: The name of this IdentityProviderGroupSummary.
+        :type: str
+        """
+        self._name = name
 
     @property
     def external_identifier(self):

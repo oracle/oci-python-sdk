@@ -21,10 +21,15 @@ Analytics
     oci.analytics.models.AnalyticsInstance
     oci.analytics.models.AnalyticsInstanceSummary
     oci.analytics.models.Capacity
+    oci.analytics.models.ChangeAnalyticsInstanceNetworkEndpointDetails
     oci.analytics.models.ChangeCompartmentDetails
     oci.analytics.models.CreateAnalyticsInstanceDetails
+    oci.analytics.models.NetworkEndpointDetails
+    oci.analytics.models.PrivateEndpointDetails
+    oci.analytics.models.PublicEndpointDetails
     oci.analytics.models.ScaleAnalyticsInstanceDetails
     oci.analytics.models.UpdateAnalyticsInstanceDetails
+    oci.analytics.models.VirtualCloudNetwork
     oci.analytics.models.WorkRequest
     oci.analytics.models.WorkRequestError
     oci.analytics.models.WorkRequestLog

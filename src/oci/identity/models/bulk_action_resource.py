@@ -51,7 +51,7 @@ class BulkActionResource(object):
     def identifier(self):
         """
         **[Required]** Gets the identifier of this BulkActionResource.
-        The resource identifier.
+        The resource OCID.
 
 
         :return: The identifier of this BulkActionResource.
@@ -63,7 +63,7 @@ class BulkActionResource(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this BulkActionResource.
-        The resource identifier.
+        The resource OCID.
 
 
         :param identifier: The identifier of this BulkActionResource.
@@ -75,7 +75,8 @@ class BulkActionResource(object):
     def entity_type(self):
         """
         **[Required]** Gets the entity_type of this BulkActionResource.
-        The resource type.
+        The resource-type. To get the list of supported resource-types use
+        :func:`list_bulk_action_resource_types`.
 
 
         :return: The entity_type of this BulkActionResource.
@@ -87,7 +88,8 @@ class BulkActionResource(object):
     def entity_type(self, entity_type):
         """
         Sets the entity_type of this BulkActionResource.
-        The resource type.
+        The resource-type. To get the list of supported resource-types use
+        :func:`list_bulk_action_resource_types`.
 
 
         :param entity_type: The entity_type of this BulkActionResource.
@@ -101,11 +103,30 @@ class BulkActionResource(object):
         Gets the metadata of this BulkActionResource.
         Additional information that helps to identity the resource for bulk action.
 
-        DELETE and UPDATE APIs for most resource types only require the resource identifier(ocid).
-        But additional metadata is required for some resource types.
+        The APIs to delete and move most resource types only require the resource identifier (ocid).
+        But some resource-types require additional identifying information.
 
         This information is provided in the resource's public API document. It is also
-        available through the ListBulkActionResourceTypes API.
+        available through the
+        :func:`list_bulk_action_resource_types`.
+
+        **Example**:
+        The APIs to delete or move the `buckets` resource-type require `namespaceName` and `bucketName` to identify the resource, as
+        shown in the APIs, :func:`delete_bucket` and
+        :func:`update_bucket`.
+
+        To add a bucket for bulk actions, specify `namespaceName` and `bucketName` in
+        the metadata property as shown in this example
+
+            {
+              \"identifier\": \"<OCID_of_bucket>\"
+              \"entityType\": \"bucket\",
+              \"metadata\":
+              {
+                \"namespaceName\": \"sampleNamespace\",
+                \"bucketName\": \"sampleBucket\"
+              }
+            }
 
 
         :return: The metadata of this BulkActionResource.
@@ -119,11 +140,30 @@ class BulkActionResource(object):
         Sets the metadata of this BulkActionResource.
         Additional information that helps to identity the resource for bulk action.
 
-        DELETE and UPDATE APIs for most resource types only require the resource identifier(ocid).
-        But additional metadata is required for some resource types.
+        The APIs to delete and move most resource types only require the resource identifier (ocid).
+        But some resource-types require additional identifying information.
 
         This information is provided in the resource's public API document. It is also
-        available through the ListBulkActionResourceTypes API.
+        available through the
+        :func:`list_bulk_action_resource_types`.
+
+        **Example**:
+        The APIs to delete or move the `buckets` resource-type require `namespaceName` and `bucketName` to identify the resource, as
+        shown in the APIs, :func:`delete_bucket` and
+        :func:`update_bucket`.
+
+        To add a bucket for bulk actions, specify `namespaceName` and `bucketName` in
+        the metadata property as shown in this example
+
+            {
+              \"identifier\": \"<OCID_of_bucket>\"
+              \"entityType\": \"bucket\",
+              \"metadata\":
+              {
+                \"namespaceName\": \"sampleNamespace\",
+                \"bucketName\": \"sampleBucket\"
+              }
+            }
 
 
         :param metadata: The metadata of this BulkActionResource.
