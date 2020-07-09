@@ -1690,6 +1690,46 @@ def test_download_vm_cluster_network_config_file(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_fail_over_autonomous_database(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'FailOverAutonomousDatabase'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'FailOverAutonomousDatabase')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='FailOverAutonomousDatabase')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.fail_over_autonomous_database(
+                autonomous_database_id=request.pop(util.camelize('autonomousDatabaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'FailOverAutonomousDatabase',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousDatabase',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_failover_data_guard_association(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'FailoverDataGuardAssociation'):
@@ -5415,6 +5455,46 @@ def test_stop_autonomous_database(testing_service_client):
         testing_service_client.validate_result(
             'database',
             'StopAutonomousDatabase',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousDatabase',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_switchover_autonomous_database(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'SwitchoverAutonomousDatabase'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'SwitchoverAutonomousDatabase')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='SwitchoverAutonomousDatabase')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.switchover_autonomous_database(
+                autonomous_database_id=request.pop(util.camelize('autonomousDatabaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'SwitchoverAutonomousDatabase',
             request_containers[i]['containerId'],
             request_containers[i]['request'],
             result,

@@ -117,6 +117,10 @@ class CreateAutonomousDatabaseBase(object):
             The value to assign to the whitelisted_ips property of this CreateAutonomousDatabaseBase.
         :type whitelisted_ips: list[str]
 
+        :param is_data_guard_enabled:
+            The value to assign to the is_data_guard_enabled property of this CreateAutonomousDatabaseBase.
+        :type is_data_guard_enabled: bool
+
         :param subnet_id:
             The value to assign to the subnet_id property of this CreateAutonomousDatabaseBase.
         :type subnet_id: str
@@ -162,6 +166,7 @@ class CreateAutonomousDatabaseBase(object):
             'is_dedicated': 'bool',
             'autonomous_container_database_id': 'str',
             'whitelisted_ips': 'list[str]',
+            'is_data_guard_enabled': 'bool',
             'subnet_id': 'str',
             'nsg_ids': 'list[str]',
             'private_endpoint_label': 'str',
@@ -186,6 +191,7 @@ class CreateAutonomousDatabaseBase(object):
             'is_dedicated': 'isDedicated',
             'autonomous_container_database_id': 'autonomousContainerDatabaseId',
             'whitelisted_ips': 'whitelistedIps',
+            'is_data_guard_enabled': 'isDataGuardEnabled',
             'subnet_id': 'subnetId',
             'nsg_ids': 'nsgIds',
             'private_endpoint_label': 'privateEndpointLabel',
@@ -209,6 +215,7 @@ class CreateAutonomousDatabaseBase(object):
         self._is_dedicated = None
         self._autonomous_container_database_id = None
         self._whitelisted_ips = None
+        self._is_data_guard_enabled = None
         self._subnet_id = None
         self._nsg_ids = None
         self._private_endpoint_label = None
@@ -634,6 +641,30 @@ class CreateAutonomousDatabaseBase(object):
         :type: list[str]
         """
         self._whitelisted_ips = whitelisted_ips
+
+    @property
+    def is_data_guard_enabled(self):
+        """
+        Gets the is_data_guard_enabled of this CreateAutonomousDatabaseBase.
+        Indicates whether the Autonomous Database has Data Guard enabled.
+
+
+        :return: The is_data_guard_enabled of this CreateAutonomousDatabaseBase.
+        :rtype: bool
+        """
+        return self._is_data_guard_enabled
+
+    @is_data_guard_enabled.setter
+    def is_data_guard_enabled(self, is_data_guard_enabled):
+        """
+        Sets the is_data_guard_enabled of this CreateAutonomousDatabaseBase.
+        Indicates whether the Autonomous Database has Data Guard enabled.
+
+
+        :param is_data_guard_enabled: The is_data_guard_enabled of this CreateAutonomousDatabaseBase.
+        :type: bool
+        """
+        self._is_data_guard_enabled = is_data_guard_enabled
 
     @property
     def subnet_id(self):

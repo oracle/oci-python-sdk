@@ -43,6 +43,7 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/blockchain/pom.xml</module>
     <module>poms/usage_api/pom.xml</module>
     <module>poms/ocvp/pom.xml</module>
     <module>poms/data_integration/pom.xml</module>

@@ -78,7 +78,7 @@ class TestVirtualNetwork:
 
         test_config_container.do_wait(virtual_network, virtual_network.get_security_list(self.sl_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
 
-        result = virtual_network.list_security_lists(util.COMPARTMENT_ID, self.vcn_ocid)
+        result = virtual_network.list_security_lists(util.COMPARTMENT_ID, vcn_id=self.vcn_ocid)
         util.validate_response(result)
 
         result = virtual_network.get_security_list(self.sl_ocid)
@@ -149,7 +149,7 @@ class TestVirtualNetwork:
 
         test_config_container.do_wait(virtual_network, virtual_network.get_subnet(self.subnet_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
 
-        result = virtual_network.list_subnets(util.COMPARTMENT_ID, self.vcn_ocid)
+        result = virtual_network.list_subnets(util.COMPARTMENT_ID, vcn_id=self.vcn_ocid)
         util.validate_response(result)
 
         subnet_name = subnet_name + "_updated"
@@ -178,7 +178,7 @@ class TestVirtualNetwork:
 
         test_config_container.do_wait(virtual_network, virtual_network.get_internet_gateway(self.ig_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
 
-        result = virtual_network.list_internet_gateways(util.COMPARTMENT_ID, self.vcn_ocid)
+        result = virtual_network.list_internet_gateways(util.COMPARTMENT_ID, vcn_id=self.vcn_ocid)
         util.validate_response(result)
 
         ig_name = ig_name + "_updated"
@@ -238,7 +238,7 @@ class TestVirtualNetwork:
         self.dhcp_options_ocid = result.data.id
         test_config_container.do_wait(virtual_network, virtual_network.get_dhcp_options(self.dhcp_options_ocid), 'lifecycle_state', 'AVAILABLE')
 
-        result = virtual_network.list_dhcp_options(util.COMPARTMENT_ID, self.vcn_ocid)
+        result = virtual_network.list_dhcp_options(util.COMPARTMENT_ID, vcn_id=self.vcn_ocid)
         util.validate_response(result)
 
         result = virtual_network.get_dhcp_options(self.dhcp_options_ocid)
@@ -346,7 +346,7 @@ class TestVirtualNetwork:
 
         test_config_container.do_wait(virtual_network, virtual_network.get_ip_sec_connection(self.ipsc_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=600)
 
-        result = virtual_network.list_route_tables(util.COMPARTMENT_ID, self.vcn_ocid)
+        result = virtual_network.list_route_tables(util.COMPARTMENT_ID, vcn_id=self.vcn_ocid)
         util.validate_response(result)
 
         ipsc_name = ipsc_name + "_updated"
@@ -386,7 +386,7 @@ class TestVirtualNetwork:
 
         test_config_container.do_wait(virtual_network, virtual_network.get_route_table(self.rt_ocid), 'lifecycle_state', 'AVAILABLE', max_wait_seconds=300)
 
-        result = virtual_network.list_route_tables(util.COMPARTMENT_ID, self.vcn_ocid)
+        result = virtual_network.list_route_tables(util.COMPARTMENT_ID, vcn_id=self.vcn_ocid)
         util.validate_response(result)
 
         result = virtual_network.get_route_table(self.rt_ocid)

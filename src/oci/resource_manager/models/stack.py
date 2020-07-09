@@ -259,6 +259,8 @@ class Stack(object):
         """
         Gets the time_created of this Stack.
         The date and time at which the stack was created.
+        Format is defined by RFC3339.
+        Example: `2020-01-25T21:10:29.600Z`
 
 
         :return: The time_created of this Stack.
@@ -271,6 +273,8 @@ class Stack(object):
         """
         Sets the time_created of this Stack.
         The date and time at which the stack was created.
+        Format is defined by RFC3339.
+        Example: `2020-01-25T21:10:29.600Z`
 
 
         :param time_created: The time_created of this Stack.
@@ -283,10 +287,10 @@ class Stack(object):
         """
         Gets the lifecycle_state of this Stack.
         The current lifecycle state of the stack.
-        For more information about resource states in Resource Manager, see
+        For more information about stack lifecycle states in Resource Manager, see
         `Key Concepts`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#StackStates
 
         Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -302,10 +306,10 @@ class Stack(object):
         """
         Sets the lifecycle_state of this Stack.
         The current lifecycle state of the stack.
-        For more information about resource states in Resource Manager, see
+        For more information about stack lifecycle states in Resource Manager, see
         `Key Concepts`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#StackStates
 
 
         :param lifecycle_state: The lifecycle_state of this Stack.
@@ -426,8 +430,9 @@ class Stack(object):
     def time_drift_last_checked(self):
         """
         Gets the time_drift_last_checked of this Stack.
-        Date and time when the drift detection was last executed. Format is defined by RFC3339.
-        Example: 2020-01-25T21:10:29.600Z
+        The date and time when the drift detection was last executed.
+        Format is defined by RFC3339.
+        Example: `2020-01-25T21:10:29.600Z`
 
 
         :return: The time_drift_last_checked of this Stack.
@@ -439,8 +444,9 @@ class Stack(object):
     def time_drift_last_checked(self, time_drift_last_checked):
         """
         Sets the time_drift_last_checked of this Stack.
-        Date and time when the drift detection was last executed. Format is defined by RFC3339.
-        Example: 2020-01-25T21:10:29.600Z
+        The date and time when the drift detection was last executed.
+        Format is defined by RFC3339.
+        Example: `2020-01-25T21:10:29.600Z`
 
 
         :param time_drift_last_checked: The time_drift_last_checked of this Stack.

@@ -22,6 +22,7 @@ from .autonomous_database_backup_summary import AutonomousDatabaseBackupSummary
 from .autonomous_database_connection_strings import AutonomousDatabaseConnectionStrings
 from .autonomous_database_connection_urls import AutonomousDatabaseConnectionUrls
 from .autonomous_database_console_token_details import AutonomousDatabaseConsoleTokenDetails
+from .autonomous_database_standby_summary import AutonomousDatabaseStandbySummary
 from .autonomous_database_summary import AutonomousDatabaseSummary
 from .autonomous_database_wallet import AutonomousDatabaseWallet
 from .autonomous_db_preview_version_summary import AutonomousDbPreviewVersionSummary
@@ -175,6 +176,7 @@ database_type_mapping = {
     "AutonomousDatabaseConnectionStrings": AutonomousDatabaseConnectionStrings,
     "AutonomousDatabaseConnectionUrls": AutonomousDatabaseConnectionUrls,
     "AutonomousDatabaseConsoleTokenDetails": AutonomousDatabaseConsoleTokenDetails,
+    "AutonomousDatabaseStandbySummary": AutonomousDatabaseStandbySummary,
     "AutonomousDatabaseSummary": AutonomousDatabaseSummary,
     "AutonomousDatabaseWallet": AutonomousDatabaseWallet,
     "AutonomousDbPreviewVersionSummary": AutonomousDbPreviewVersionSummary,

@@ -4882,7 +4882,6 @@ def test_list_dhcp_options(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_dhcp_options(
                 compartment_id=request.pop(util.camelize('compartmentId')),
-                vcn_id=request.pop(util.camelize('vcnId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -4891,7 +4890,6 @@ def test_list_dhcp_options(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_dhcp_options(
                     compartment_id=request.pop(util.camelize('compartmentId')),
-                    vcn_id=request.pop(util.camelize('vcnId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -4902,7 +4900,6 @@ def test_list_dhcp_options(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_dhcp_options(
                         compartment_id=request.pop(util.camelize('compartmentId')),
-                        vcn_id=request.pop(util.camelize('vcnId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -5185,7 +5182,6 @@ def test_list_internet_gateways(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_internet_gateways(
                 compartment_id=request.pop(util.camelize('compartmentId')),
-                vcn_id=request.pop(util.camelize('vcnId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5194,7 +5190,6 @@ def test_list_internet_gateways(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_internet_gateways(
                     compartment_id=request.pop(util.camelize('compartmentId')),
-                    vcn_id=request.pop(util.camelize('vcnId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -5205,7 +5200,6 @@ def test_list_internet_gateways(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_internet_gateways(
                         compartment_id=request.pop(util.camelize('compartmentId')),
-                        vcn_id=request.pop(util.camelize('vcnId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -5425,7 +5419,6 @@ def test_list_local_peering_gateways(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_local_peering_gateways(
                 compartment_id=request.pop(util.camelize('compartmentId')),
-                vcn_id=request.pop(util.camelize('vcnId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5434,7 +5427,6 @@ def test_list_local_peering_gateways(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_local_peering_gateways(
                     compartment_id=request.pop(util.camelize('compartmentId')),
-                    vcn_id=request.pop(util.camelize('vcnId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -5445,7 +5437,6 @@ def test_list_local_peering_gateways(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_local_peering_gateways(
                         compartment_id=request.pop(util.camelize('compartmentId')),
-                        vcn_id=request.pop(util.camelize('vcnId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -5908,7 +5899,6 @@ def test_list_route_tables(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_route_tables(
                 compartment_id=request.pop(util.camelize('compartmentId')),
-                vcn_id=request.pop(util.camelize('vcnId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5917,7 +5907,6 @@ def test_list_route_tables(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_route_tables(
                     compartment_id=request.pop(util.camelize('compartmentId')),
-                    vcn_id=request.pop(util.camelize('vcnId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -5928,7 +5917,6 @@ def test_list_route_tables(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_route_tables(
                         compartment_id=request.pop(util.camelize('compartmentId')),
-                        vcn_id=request.pop(util.camelize('vcnId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -5971,7 +5959,6 @@ def test_list_security_lists(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_security_lists(
                 compartment_id=request.pop(util.camelize('compartmentId')),
-                vcn_id=request.pop(util.camelize('vcnId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -5980,7 +5967,6 @@ def test_list_security_lists(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_security_lists(
                     compartment_id=request.pop(util.camelize('compartmentId')),
-                    vcn_id=request.pop(util.camelize('vcnId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -5991,7 +5977,6 @@ def test_list_security_lists(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_security_lists(
                         compartment_id=request.pop(util.camelize('compartmentId')),
-                        vcn_id=request.pop(util.camelize('vcnId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -6151,7 +6136,6 @@ def test_list_subnets(testing_service_client):
             client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
             response = client.list_subnets(
                 compartment_id=request.pop(util.camelize('compartmentId')),
-                vcn_id=request.pop(util.camelize('vcnId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -6160,7 +6144,6 @@ def test_list_subnets(testing_service_client):
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_subnets(
                     compartment_id=request.pop(util.camelize('compartmentId')),
-                    vcn_id=request.pop(util.camelize('vcnId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -6171,7 +6154,6 @@ def test_list_subnets(testing_service_client):
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_subnets(
                         compartment_id=request.pop(util.camelize('compartmentId')),
-                        vcn_id=request.pop(util.camelize('vcnId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )

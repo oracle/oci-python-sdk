@@ -7,11 +7,19 @@ from __future__ import absolute_import
 from .apply_job_operation_details import ApplyJobOperationDetails
 from .apply_job_operation_details_summary import ApplyJobOperationDetailsSummary
 from .apply_job_plan_resolution import ApplyJobPlanResolution
+from .change_configuration_source_provider_compartment_details import ChangeConfigurationSourceProviderCompartmentDetails
 from .change_stack_compartment_details import ChangeStackCompartmentDetails
 from .config_source import ConfigSource
+from .config_source_record import ConfigSourceRecord
+from .configuration_source_provider import ConfigurationSourceProvider
+from .configuration_source_provider_collection import ConfigurationSourceProviderCollection
+from .configuration_source_provider_summary import ConfigurationSourceProviderSummary
 from .create_apply_job_operation_details import CreateApplyJobOperationDetails
 from .create_config_source_details import CreateConfigSourceDetails
+from .create_configuration_source_provider_details import CreateConfigurationSourceProviderDetails
 from .create_destroy_job_operation_details import CreateDestroyJobOperationDetails
+from .create_git_config_source_details import CreateGitConfigSourceDetails
+from .create_gitlab_access_token_configuration_source_provider_details import CreateGitlabAccessTokenConfigurationSourceProviderDetails
 from .create_import_tf_state_job_operation_details import CreateImportTfStateJobOperationDetails
 from .create_job_details import CreateJobDetails
 from .create_job_operation_details import CreateJobOperationDetails
@@ -21,6 +29,10 @@ from .create_zip_upload_config_source_details import CreateZipUploadConfigSource
 from .destroy_job_operation_details import DestroyJobOperationDetails
 from .destroy_job_operation_details_summary import DestroyJobOperationDetailsSummary
 from .failure_details import FailureDetails
+from .git_config_source import GitConfigSource
+from .git_config_source_record import GitConfigSourceRecord
+from .gitlab_access_token_configuration_source_provider import GitlabAccessTokenConfigurationSourceProvider
+from .gitlab_access_token_configuration_source_provider_summary import GitlabAccessTokenConfigurationSourceProviderSummary
 from .import_tf_state_job_operation_details import ImportTfStateJobOperationDetails
 from .import_tf_state_job_operation_details_summary import ImportTfStateJobOperationDetailsSummary
 from .job import Job
@@ -37,6 +49,9 @@ from .stack_summary import StackSummary
 from .terraform_version_collection import TerraformVersionCollection
 from .terraform_version_summary import TerraformVersionSummary
 from .update_config_source_details import UpdateConfigSourceDetails
+from .update_configuration_source_provider_details import UpdateConfigurationSourceProviderDetails
+from .update_git_config_source_details import UpdateGitConfigSourceDetails
+from .update_gitlab_access_token_configuration_source_provider_details import UpdateGitlabAccessTokenConfigurationSourceProviderDetails
 from .update_job_details import UpdateJobDetails
 from .update_stack_details import UpdateStackDetails
 from .update_zip_upload_config_source_details import UpdateZipUploadConfigSourceDetails
@@ -46,17 +61,26 @@ from .work_request_log_entry import WorkRequestLogEntry
 from .work_request_resource import WorkRequestResource
 from .work_request_summary import WorkRequestSummary
 from .zip_upload_config_source import ZipUploadConfigSource
+from .zip_upload_config_source_record import ZipUploadConfigSourceRecord
 
 # Maps type names to classes for resource_manager services.
 resource_manager_type_mapping = {
     "ApplyJobOperationDetails": ApplyJobOperationDetails,
     "ApplyJobOperationDetailsSummary": ApplyJobOperationDetailsSummary,
     "ApplyJobPlanResolution": ApplyJobPlanResolution,
+    "ChangeConfigurationSourceProviderCompartmentDetails": ChangeConfigurationSourceProviderCompartmentDetails,
     "ChangeStackCompartmentDetails": ChangeStackCompartmentDetails,
     "ConfigSource": ConfigSource,
+    "ConfigSourceRecord": ConfigSourceRecord,
+    "ConfigurationSourceProvider": ConfigurationSourceProvider,
+    "ConfigurationSourceProviderCollection": ConfigurationSourceProviderCollection,
+    "ConfigurationSourceProviderSummary": ConfigurationSourceProviderSummary,
     "CreateApplyJobOperationDetails": CreateApplyJobOperationDetails,
     "CreateConfigSourceDetails": CreateConfigSourceDetails,
+    "CreateConfigurationSourceProviderDetails": CreateConfigurationSourceProviderDetails,
     "CreateDestroyJobOperationDetails": CreateDestroyJobOperationDetails,
+    "CreateGitConfigSourceDetails": CreateGitConfigSourceDetails,
+    "CreateGitlabAccessTokenConfigurationSourceProviderDetails": CreateGitlabAccessTokenConfigurationSourceProviderDetails,
     "CreateImportTfStateJobOperationDetails": CreateImportTfStateJobOperationDetails,
     "CreateJobDetails": CreateJobDetails,
     "CreateJobOperationDetails": CreateJobOperationDetails,
@@ -66,6 +90,10 @@ resource_manager_type_mapping = {
     "DestroyJobOperationDetails": DestroyJobOperationDetails,
     "DestroyJobOperationDetailsSummary": DestroyJobOperationDetailsSummary,
     "FailureDetails": FailureDetails,
+    "GitConfigSource": GitConfigSource,
+    "GitConfigSourceRecord": GitConfigSourceRecord,
+    "GitlabAccessTokenConfigurationSourceProvider": GitlabAccessTokenConfigurationSourceProvider,
+    "GitlabAccessTokenConfigurationSourceProviderSummary": GitlabAccessTokenConfigurationSourceProviderSummary,
     "ImportTfStateJobOperationDetails": ImportTfStateJobOperationDetails,
     "ImportTfStateJobOperationDetailsSummary": ImportTfStateJobOperationDetailsSummary,
     "Job": Job,
@@ -82,6 +110,9 @@ resource_manager_type_mapping = {
     "TerraformVersionCollection": TerraformVersionCollection,
     "TerraformVersionSummary": TerraformVersionSummary,
     "UpdateConfigSourceDetails": UpdateConfigSourceDetails,
+    "UpdateConfigurationSourceProviderDetails": UpdateConfigurationSourceProviderDetails,
+    "UpdateGitConfigSourceDetails": UpdateGitConfigSourceDetails,
+    "UpdateGitlabAccessTokenConfigurationSourceProviderDetails": UpdateGitlabAccessTokenConfigurationSourceProviderDetails,
     "UpdateJobDetails": UpdateJobDetails,
     "UpdateStackDetails": UpdateStackDetails,
     "UpdateZipUploadConfigSourceDetails": UpdateZipUploadConfigSourceDetails,
@@ -90,5 +121,6 @@ resource_manager_type_mapping = {
     "WorkRequestLogEntry": WorkRequestLogEntry,
     "WorkRequestResource": WorkRequestResource,
     "WorkRequestSummary": WorkRequestSummary,
-    "ZipUploadConfigSource": ZipUploadConfigSource
+    "ZipUploadConfigSource": ZipUploadConfigSource,
+    "ZipUploadConfigSourceRecord": ZipUploadConfigSourceRecord
 }

@@ -74,6 +74,47 @@ def test_cancel_job(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_change_configuration_source_provider_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('resource_manager', 'ChangeConfigurationSourceProviderCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'ChangeConfigurationSourceProviderCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='ChangeConfigurationSourceProviderCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
+            response = client.change_configuration_source_provider_compartment(
+                configuration_source_provider_id=request.pop(util.camelize('configurationSourceProviderId')),
+                change_configuration_source_provider_compartment_details=request.pop(util.camelize('ChangeConfigurationSourceProviderCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'resource_manager',
+            'ChangeConfigurationSourceProviderCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_configuration_source_provider_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
 def test_change_stack_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'ChangeStackCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -109,6 +150,46 @@ def test_change_stack_compartment(testing_service_client):
             result,
             service_error,
             'change_stack_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_create_configuration_source_provider(testing_service_client):
+    if not testing_service_client.is_api_enabled('resource_manager', 'CreateConfigurationSourceProvider'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'CreateConfigurationSourceProvider')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='CreateConfigurationSourceProvider')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
+            response = client.create_configuration_source_provider(
+                create_configuration_source_provider_details=request.pop(util.camelize('CreateConfigurationSourceProviderDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'resource_manager',
+            'CreateConfigurationSourceProvider',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'configurationSourceProvider',
             False,
             False
         )
@@ -195,6 +276,46 @@ def test_create_stack(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_delete_configuration_source_provider(testing_service_client):
+    if not testing_service_client.is_api_enabled('resource_manager', 'DeleteConfigurationSourceProvider'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'DeleteConfigurationSourceProvider')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='DeleteConfigurationSourceProvider')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
+            response = client.delete_configuration_source_provider(
+                configuration_source_provider_id=request.pop(util.camelize('configurationSourceProviderId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'resource_manager',
+            'DeleteConfigurationSourceProvider',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_configuration_source_provider',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
 def test_delete_stack(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'DeleteStack'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -269,6 +390,46 @@ def test_detect_stack_drift(testing_service_client):
             result,
             service_error,
             'detect_stack_drift',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_get_configuration_source_provider(testing_service_client):
+    if not testing_service_client.is_api_enabled('resource_manager', 'GetConfigurationSourceProvider'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'GetConfigurationSourceProvider')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='GetConfigurationSourceProvider')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
+            response = client.get_configuration_source_provider(
+                configuration_source_provider_id=request.pop(util.camelize('configurationSourceProviderId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'resource_manager',
+            'GetConfigurationSourceProvider',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'configurationSourceProvider',
             False,
             False
         )
@@ -651,6 +812,63 @@ def test_get_work_request(testing_service_client):
             'workRequest',
             False,
             False
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_list_configuration_source_providers(testing_service_client):
+    if not testing_service_client.is_api_enabled('resource_manager', 'ListConfigurationSourceProviders'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'ListConfigurationSourceProviders')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='ListConfigurationSourceProviders')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
+            response = client.list_configuration_source_providers(
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_configuration_source_providers(
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_configuration_source_providers(
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'resource_manager',
+            'ListConfigurationSourceProviders',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'configurationSourceProviderCollection',
+            False,
+            True
         )
 
 
@@ -1044,6 +1262,47 @@ def test_list_work_requests(testing_service_client):
             'workRequestSummary',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_update_configuration_source_provider(testing_service_client):
+    if not testing_service_client.is_api_enabled('resource_manager', 'UpdateConfigurationSourceProvider'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'UpdateConfigurationSourceProvider')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='UpdateConfigurationSourceProvider')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
+            response = client.update_configuration_source_provider(
+                configuration_source_provider_id=request.pop(util.camelize('configurationSourceProviderId')),
+                update_configuration_source_provider_details=request.pop(util.camelize('UpdateConfigurationSourceProviderDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'resource_manager',
+            'UpdateConfigurationSourceProvider',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'configurationSourceProvider',
+            False,
+            False
         )
 
 

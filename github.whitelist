@@ -89,3 +89,4 @@
 ^src/oci/data_integration/.*\.py$
 ^src/oci/ocvp/.*\.py$
 ^src/oci/usage_api/.*\.py$
+^src/oci/blockchain/.*\.py$

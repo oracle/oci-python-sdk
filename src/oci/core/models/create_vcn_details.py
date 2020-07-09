@@ -87,7 +87,6 @@ class CreateVcnDetails(object):
         """
         **[Required]** Gets the cidr_block of this CreateVcnDetails.
         The CIDR IP address block of the VCN.
-
         Example: `10.0.0.0/16`
 
 
@@ -101,7 +100,6 @@ class CreateVcnDetails(object):
         """
         Sets the cidr_block of this CreateVcnDetails.
         The CIDR IP address block of the VCN.
-
         Example: `10.0.0.0/16`
 
 

@@ -126,6 +126,9 @@ class CreateVnicDetails(object):
 
         Example: `false`
 
+        If you specify a `vlanId`, the `assignPublicIp` is required to be set to false. See
+        :class:`Vlan`.
+
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingIPaddresses.htm
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm
 
@@ -159,6 +162,9 @@ class CreateVnicDetails(object):
         `Public IP Addresses`__.
 
         Example: `false`
+
+        If you specify a `vlanId`, the `assignPublicIp` is required to be set to false. See
+        :class:`Vlan`.
 
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingIPaddresses.htm
         __ https://docs.cloud.oracle.com/Content/Network/Tasks/managingpublicIPs.htm
@@ -288,6 +294,9 @@ class CreateVnicDetails(object):
 
         Example: `bminstance-1`
 
+        If you specify a `vlanId`, the `hostnameLabel` cannot be specified. vnics on a Vlan
+        can not be assigned a hostname  See :class:`Vlan`.
+
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
@@ -323,6 +332,9 @@ class CreateVnicDetails(object):
 
         Example: `bminstance-1`
 
+        If you specify a `vlanId`, the `hostnameLabel` cannot be specified. vnics on a Vlan
+        can not be assigned a hostname  See :class:`Vlan`.
+
         __ https://tools.ietf.org/html/rfc952
         __ https://tools.ietf.org/html/rfc1123
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/dns.htm
@@ -341,7 +353,7 @@ class CreateVnicDetails(object):
         information about NSGs, see
         :class:`NetworkSecurityGroup`.
 
-        If a `vlanId` is specified, the `nsgIds` is ignored. The `vlanId`
+        If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId`
         indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs,
         all VNICs in the VLAN belong to the NSGs that are associated with the VLAN.
         See :class:`Vlan`.
@@ -360,7 +372,7 @@ class CreateVnicDetails(object):
         information about NSGs, see
         :class:`NetworkSecurityGroup`.
 
-        If a `vlanId` is specified, the `nsgIds` is ignored. The `vlanId`
+        If a `vlanId` is specified, the `nsgIds` cannot be specified. The `vlanId`
         indicates that the VNIC will belong to a VLAN instead of a subnet. With VLANs,
         all VNICs in the VLAN belong to the NSGs that are associated with the VLAN.
         See :class:`Vlan`.
@@ -385,7 +397,7 @@ class CreateVnicDetails(object):
         :func:`get_private_ip`.
 
 
-        If you specify a `vlanId`, the `privateIp` is ignored.
+        If you specify a `vlanId`, the `privateIp` cannot be specified.
         See :class:`Vlan`.
 
         Example: `10.0.3.3`
@@ -410,7 +422,7 @@ class CreateVnicDetails(object):
         :func:`get_private_ip`.
 
 
-        If you specify a `vlanId`, the `privateIp` is ignored.
+        If you specify a `vlanId`, the `privateIp` cannot be specified.
         See :class:`Vlan`.
 
         Example: `10.0.3.3`
@@ -431,7 +443,7 @@ class CreateVnicDetails(object):
         `Using a Private IP as a Route Target`__.
 
 
-        If you specify a `vlanId`, the `skipSourceDestCheck` is ignored because the
+        If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the
         source/destination check is always disabled for VNICs in a VLAN. See
         :class:`Vlan`.
 
@@ -455,7 +467,7 @@ class CreateVnicDetails(object):
         `Using a Private IP as a Route Target`__.
 
 
-        If you specify a `vlanId`, the `skipSourceDestCheck` is ignored because the
+        If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the
         source/destination check is always disabled for VNICs in a VLAN. See
         :class:`Vlan`.
 
