@@ -1043,7 +1043,8 @@ class ShowOCIService(object):
                 all_compartments = oci.pagination.list_call_get_all_results(
                     identity.list_compartments,
                     tenancy['id'],
-                    compartment_id_in_subtree=True
+                    compartment_id_in_subtree=True,
+                    retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                 ).data
 
             except oci.exceptions.ServiceError as e:
@@ -1192,9 +1193,9 @@ class ShowOCIService(object):
             identity_providers = []
 
             try:
-                users = oci.pagination.list_call_get_all_results(identity.list_users, tenancy_id).data
-                groups = oci.pagination.list_call_get_all_results(identity.list_groups, tenancy_id).data
-                identity_providers = identity.list_identity_providers("SAML2", tenancy_id).data
+                users = oci.pagination.list_call_get_all_results(identity.list_users, tenancy_id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+                groups = oci.pagination.list_call_get_all_results(identity.list_groups, tenancy_id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+                identity_providers = identity.list_identity_providers("SAML2", tenancy_id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
             except oci.exceptions.ServiceError as item:
                 if 'auth' in item.code.lower() or item.code == 'Forbidden':
                     self.__load_print_auth_warning()
@@ -1210,7 +1211,7 @@ class ShowOCIService(object):
                 print(".", end="")
                 try:
                     user_group_memberships = oci.pagination.list_call_get_all_results(
-                        identity.list_user_group_memberships, tenancy_id, group_id=group.id).data
+                        identity.list_user_group_memberships, tenancy_id, group_id=group.id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
 
                     group_users = []
                     for ugm in user_group_memberships:
@@ -1432,7 +1433,7 @@ class ShowOCIService(object):
                     continue
 
                 try:
-                    policies = oci.pagination.list_call_get_all_results(identity.list_policies, c['id']).data
+                    policies = oci.pagination.list_call_get_all_results(identity.list_policies, c['id'], retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
 
                     if policies:
                         datapol = []
@@ -1471,13 +1472,13 @@ class ShowOCIService(object):
             groups = self.data[self.C_IDENTITY][self.C_IDENTITY_GROUPS]
 
             try:
-                identity_providers = identity.list_identity_providers("SAML2", tenancy_id).data
+                identity_providers = identity.list_identity_providers("SAML2", tenancy_id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
 
                 for d in identity_providers:
 
                     # get identity providers groups
                     try:
-                        igm = oci.pagination.list_call_get_all_results(identity.list_idp_group_mappings, d.id).data
+                        igm = oci.pagination.list_call_get_all_results(identity.list_idp_group_mappings, d.id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
 
                         # get the group data
                         groupdata = []
@@ -1530,7 +1531,7 @@ class ShowOCIService(object):
         try:
             dynamic_groups = []
             try:
-                dynamic_groups = oci.pagination.list_call_get_all_results(identity.list_dynamic_groups, tenancy_id).data
+                dynamic_groups = oci.pagination.list_call_get_all_results(identity.list_dynamic_groups, tenancy_id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
             except oci.exceptions.ServiceError as e:
                 if self.__check_service_error(e.code):
                     self.__load_print_auth_warning()
@@ -1567,7 +1568,7 @@ class ShowOCIService(object):
         try:
             network_sources = []
             try:
-                network_sources = oci.pagination.list_call_get_all_results(identity.list_network_sources, tenancy_id).data
+                network_sources = oci.pagination.list_call_get_all_results(identity.list_network_sources, tenancy_id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
             except oci.exceptions.ServiceError as e:
                 if self.__check_service_error(e.code):
                     self.__load_print_auth_warning()
@@ -1617,7 +1618,7 @@ class ShowOCIService(object):
         try:
             tags = []
             try:
-                tags = oci.pagination.list_call_get_all_results(identity.list_cost_tracking_tags, tenancy_id).data
+                tags = oci.pagination.list_call_get_all_results(identity.list_cost_tracking_tags, tenancy_id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
             except oci.exceptions.ServiceError as e:
                 if self.__check_service_error(e.code):
                     self.__load_print_auth_warning()

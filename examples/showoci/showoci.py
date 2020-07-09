@@ -81,7 +81,7 @@ import sys
 import argparse
 import datetime
 
-version = "20.06.30"
+version = "20.07.14"
 
 ##########################################################################
 # check OCI version

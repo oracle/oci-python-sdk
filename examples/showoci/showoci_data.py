@@ -2202,7 +2202,9 @@ class ShowOCIData(object):
                          'compartment_id': bucket['compartment_id'],
                          'compartment_name': bucket['compartment_name'],
                          'region_name': bucket['region_name'],
-                         'namespace_name': bucket['namespace_name']
+                         'namespace_name': bucket['namespace_name'],
+                         'public_access_type': bucket['public_access_type'],
+                         'storage_tier': bucket['storage_tier']
                          }
 
                 value['desc'] = (
