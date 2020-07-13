@@ -4,12 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.17.3 - TBD
+2.18.0 - 2020-07-14
 ====================
 
 Added
 -----
-* TBD
+* Support for the Blockchain service
+* Support for failing over an autonomous database that has Data Guard enabled in the Database service
+* Support for switching over an autonomous database that has Data Guard enabled in the Database service
+* Support for git configuration sources in the Resource Manager service
+* Support for optionally specifying a VCN id on list operations of DHCP options, subnets, security lists, route tables, internet gateways, and local peering gateways in the Networking service
+
+Fixed
+-----
+* Fixed a bug where user-set timeout values were not being passed to base client from service client and remained `None`. This has been fixed in all clients except the upload manager and multipart object assembler.
+
+Breaking
+--------
+* Parameter `vcn_id` changed from required to optional in methods `list_dhcp_options`, `list_local_peering_gateways`, `list_route_tables`, `list_security_lists`, `list_subnets` and `list_internet_gateways` in the virtual network client. If the VCN ID is not provided, then the list includes information of all VCNs in the specified compartment.
+* The operations for upload manager and multipart object assembler are NOT thread-safe, and you should provide the class with its own Object Storage client that isn't used elsewhere.
 
 ====================
 2.17.2 - 2020-07-07
