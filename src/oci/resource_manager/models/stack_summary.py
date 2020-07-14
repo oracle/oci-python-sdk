@@ -189,7 +189,9 @@ class StackSummary(object):
     def time_created(self):
         """
         Gets the time_created of this StackSummary.
-        Date and time at which the stack was created.
+        The date and time when the stack was created.
+        Format is defined by RFC3339.
+        Example: `2020-01-25T21:10:29.600Z`
 
 
         :return: The time_created of this StackSummary.
@@ -201,7 +203,9 @@ class StackSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this StackSummary.
-        Date and time at which the stack was created.
+        The date and time when the stack was created.
+        Format is defined by RFC3339.
+        Example: `2020-01-25T21:10:29.600Z`
 
 
         :param time_created: The time_created of this StackSummary.
@@ -214,7 +218,7 @@ class StackSummary(object):
         """
         Gets the lifecycle_state of this StackSummary.
         The current lifecycle state of the stack.
-        For more information about resource states in Resource Manager, see
+        For more information about stack lifecycle states in Resource Manager, see
         `Key Concepts`__.
 
         Allowable values:
@@ -223,7 +227,7 @@ class StackSummary(object):
         - DELETING
         - DELETED
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#StackStates
 
 
         :return: The lifecycle_state of this StackSummary.
@@ -236,7 +240,7 @@ class StackSummary(object):
         """
         Sets the lifecycle_state of this StackSummary.
         The current lifecycle state of the stack.
-        For more information about resource states in Resource Manager, see
+        For more information about stack lifecycle states in Resource Manager, see
         `Key Concepts`__.
 
         Allowable values:
@@ -245,7 +249,7 @@ class StackSummary(object):
         - DELETING
         - DELETED
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#StackStates
 
 
         :param lifecycle_state: The lifecycle_state of this StackSummary.

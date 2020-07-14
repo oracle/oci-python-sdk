@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.07.14 - 2020-07-14
+=====================
+* Added retry policy for identity
+
+=====================
 20.06.30 - 2020-06-30
 =====================
 * Added compute agent information

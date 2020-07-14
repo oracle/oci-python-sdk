@@ -664,6 +664,8 @@ class Instance(object):
     def launch_options(self):
         """
         Gets the launch_options of this Instance.
+        Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
+
 
         :return: The launch_options of this Instance.
         :rtype: LaunchOptions
@@ -674,6 +676,8 @@ class Instance(object):
     def launch_options(self, launch_options):
         """
         Sets the launch_options of this Instance.
+        Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
+
 
         :param launch_options: The launch_options of this Instance.
         :type: LaunchOptions

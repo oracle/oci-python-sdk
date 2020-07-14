@@ -18,6 +18,7 @@ class UpdateConfigSourceDetails(object):
         Initializes a new UpdateConfigSourceDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.resource_manager.models.UpdateGitConfigSourceDetails`
         * :class:`~oci.resource_manager.models.UpdateZipUploadConfigSourceDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -51,6 +52,9 @@ class UpdateConfigSourceDetails(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['configSourceType']
+
+        if type == 'GIT_CONFIG_SOURCE':
+            return 'UpdateGitConfigSourceDetails'
 
         if type == 'ZIP_UPLOAD':
             return 'UpdateZipUploadConfigSourceDetails'

@@ -10,7 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LaunchOptions(object):
     """
-    Options for tuning compatibility and performance of VM shapes.
+    Options for tuning the compatibility and performance of VM shapes. The values that you specify override any
+    default values.
     """
 
     #: A constant which can be used with the boot_volume_type property of a LaunchOptions.
@@ -304,7 +305,8 @@ class LaunchOptions(object):
     def is_pv_encryption_in_transit_enabled(self):
         """
         Gets the is_pv_encryption_in_transit_enabled of this LaunchOptions.
-        Whether to enable in-transit encryption for the boot volume's paravirtualized attachment. The default value is false.
+        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in
+        :func:`launch_instance_details`.
 
 
         :return: The is_pv_encryption_in_transit_enabled of this LaunchOptions.
@@ -316,7 +318,8 @@ class LaunchOptions(object):
     def is_pv_encryption_in_transit_enabled(self, is_pv_encryption_in_transit_enabled):
         """
         Sets the is_pv_encryption_in_transit_enabled of this LaunchOptions.
-        Whether to enable in-transit encryption for the boot volume's paravirtualized attachment. The default value is false.
+        Deprecated. Instead use `isPvEncryptionInTransitEnabled` in
+        :func:`launch_instance_details`.
 
 
         :param is_pv_encryption_in_transit_enabled: The is_pv_encryption_in_transit_enabled of this LaunchOptions.

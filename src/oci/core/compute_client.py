@@ -2856,6 +2856,14 @@ class ComputeClient(object):
         You can later add secondary VNICs to an instance. For more information, see
         `Virtual Network Interface Cards (VNICs)`__.
 
+        To launch an instance from a Marketplace image listing, you must provide the image ID of the
+        listing resource version that you want, but you also must subscribe to the listing before you try
+        to launch the instance. To subscribe to the listing, use the :func:`get_app_catalog_listing_agreements`
+        operation to get the signature for the terms of use agreement for the desired listing resource version.
+        Then, call :func:`create_app_catalog_subscription`
+        with the signature. To get the image ID for the LaunchInstance operation, call
+        :func:`get_app_catalog_listing_resource_version`.
+
         __ https://docs.cloud.oracle.com/Content/Compute/Concepts/computeoverview.htm
         __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
         __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm

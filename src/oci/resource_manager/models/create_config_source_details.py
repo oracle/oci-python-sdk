@@ -19,6 +19,7 @@ class CreateConfigSourceDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.resource_manager.models.CreateZipUploadConfigSourceDetails`
+        * :class:`~oci.resource_manager.models.CreateGitConfigSourceDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -54,6 +55,9 @@ class CreateConfigSourceDetails(object):
 
         if type == 'ZIP_UPLOAD':
             return 'CreateZipUploadConfigSourceDetails'
+
+        if type == 'GIT_CONFIG_SOURCE':
+            return 'CreateGitConfigSourceDetails'
         else:
             return 'CreateConfigSourceDetails'
 

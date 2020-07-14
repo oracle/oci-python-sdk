@@ -10,7 +10,10 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstanceConfigurationLaunchInstanceDetails(object):
     """
-    See Instance launch details - :class:`LaunchInstanceDetails`
+    Instance launch details for creating an instance from an instance configuration. Use the `sourceDetails`
+    parameter to specify whether a boot volume or an image should be used to launch a new instance.
+
+    See :class:`LaunchInstanceDetails` for more information.
     """
 
     #: A constant which can be used with the launch_mode property of a InstanceConfigurationLaunchInstanceDetails.
@@ -783,6 +786,8 @@ class InstanceConfigurationLaunchInstanceDetails(object):
     def launch_options(self):
         """
         Gets the launch_options of this InstanceConfigurationLaunchInstanceDetails.
+        Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
+
 
         :return: The launch_options of this InstanceConfigurationLaunchInstanceDetails.
         :rtype: InstanceConfigurationLaunchOptions
@@ -793,6 +798,8 @@ class InstanceConfigurationLaunchInstanceDetails(object):
     def launch_options(self, launch_options):
         """
         Sets the launch_options of this InstanceConfigurationLaunchInstanceDetails.
+        Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
+
 
         :param launch_options: The launch_options of this InstanceConfigurationLaunchInstanceDetails.
         :type: InstanceConfigurationLaunchOptions

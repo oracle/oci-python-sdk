@@ -343,8 +343,9 @@ class StackResourceDriftSummary(object):
     def time_drift_checked(self):
         """
         Gets the time_drift_checked of this StackResourceDriftSummary.
-        Date and time when the drift detection was executed. Format defined by RFC3339.
-        Example: 2020-01-25T21:10:29.600Z
+        The date and time when the drift detection was executed.
+        Format is defined by RFC3339.
+        Example: `2020-01-25T21:10:29.600Z`
 
 
         :return: The time_drift_checked of this StackResourceDriftSummary.
@@ -356,8 +357,9 @@ class StackResourceDriftSummary(object):
     def time_drift_checked(self, time_drift_checked):
         """
         Sets the time_drift_checked of this StackResourceDriftSummary.
-        Date and time when the drift detection was executed. Format defined by RFC3339.
-        Example: 2020-01-25T21:10:29.600Z
+        The date and time when the drift detection was executed.
+        Format is defined by RFC3339.
+        Example: `2020-01-25T21:10:29.600Z`
 
 
         :param time_drift_checked: The time_drift_checked of this StackResourceDriftSummary.

@@ -28,7 +28,7 @@ prompt APPLICATION 100 - OCI Usage and Cost Report
 -- Application Export:
 --   Application:     100
 --   Name:            OCI Usage and Cost Report
---   Date and Time:   14:08 Monday June 1, 2020
+--   Date and Time:   19:46 Tuesday July 7, 2020
 --   Exported By:     ADIZOHAR
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -105,7 +105,7 @@ wwv_flow_api.create_flow(
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=>nvl(wwv_flow_application_install.get_proxy,'')
 ,p_no_proxy_domains=>nvl(wwv_flow_application_install.get_no_proxy_domains,'')
-,p_flow_version=>'Release 20.06.09'
+,p_flow_version=>'Release 20.07.14'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
@@ -119,7 +119,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'OCI Usage and Cost Report'
 ,p_last_updated_by=>'ADIZOHAR'
-,p_last_upd_yyyymmddhh24miss=>'20200601140841'
+,p_last_upd_yyyymmddhh24miss=>'20200707194554'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>3
 ,p_ui_type_name => null
@@ -12838,7 +12838,7 @@ wwv_flow_api.create_page(
 '#P4_REPORT_SELECTOR { background-color: #F5FBB4; font-weight: bold; font-size: 13px;}'))
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'ADIZOHAR'
-,p_last_upd_yyyymmddhh24miss=>'20200514125539'
+,p_last_upd_yyyymmddhh24miss=>'20200707194444'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(10816553122165737)
@@ -13889,9 +13889,18 @@ wwv_flow_api.create_page_plug(
 '        min(COST_CURRENCY_CODE) CURRENCY,',
 '        case when count(distinct USAGE_INTERVAL_START) > 0 then',
 '            case ',
-'                when min(COST_BILLING_UNIT) like ''%HOURS%'' or min(PRD_DESCRIPTION) like ''%Per Hour%'' then sum(USG_BILLED_QUANTITY)/count(distinct USAGE_INTERVAL_START)',
-'                when min(COST_BILLING_UNIT) like ''%GiB%'' then sum(USG_BILLED_QUANTITY)/count(distinct USAGE_INTERVAL_START)*744',
-'                when min(COST_BILLING_UNIT) like ''%TiB%'' then sum(USG_BILLED_QUANTITY)/count(distinct USAGE_INTERVAL_START)*744',
+'                when min(upper(nvl(COST_BILLING_UNIT,''ZZ''))) like ''%HOUR%'' then sum(USG_BILLED_QUANTITY)/count(distinct USAGE_INTERVAL_START)',
+'                when min(upper(nvl(COST_BILLING_UNIT,''ZZ''))) like ''%GIB%''  then sum(USG_BILLED_QUANTITY)/count(distinct USAGE_INTERVAL_START)*744',
+'                when min(upper(nvl(COST_BILLING_UNIT,''ZZ''))) like ''%TIB%''  then sum(USG_BILLED_QUANTITY)/count(distinct USAGE_INTERVAL_START)*744',
+'                when min(upper(nvl(COST_BILLING_UNIT,''ZZ''))) like ''%GIGA%'' then sum(USG_BILLED_QUANTITY)/count(distinct USAGE_INTERVAL_START)*744',
+'                when min(upper(nvl(COST_BILLING_UNIT,''ZZ''))) like ''%GB%''   then sum(USG_BILLED_QUANTITY)/count(distinct USAGE_INTERVAL_START)*744',
+'                when min(upper(nvl(COST_BILLING_UNIT,''ZZ''))) like ''%TB%''   then sum(USG_BILLED_QUANTITY)/count(distinct USAGE_INTERVAL_START)*744',
+'                when min(upper(PRD_DESCRIPTION))             like ''%HOUR%'' then sum(USG_BILLED_QUANTITY)/count(distinct USAGE_INTERVAL_START)',
+'                when min(upper(PRD_DESCRIPTION))             like ''%GIB%''  then sum(USG_BILLED_QUANTITY)/count(distinct USAGE_INTERVAL_START)*744',
+'                when min(upper(PRD_DESCRIPTION))             like ''%TIB%''  then sum(USG_BILLED_QUANTITY)/count(distinct USAGE_INTERVAL_START)*744',
+'                when min(upper(nvl(COST_BILLING_UNIT,''ZZ''))) like ''%REQUESTS%'' then sum(USG_BILLED_QUANTITY)/count(distinct USAGE_INTERVAL_START)',
+'                when min(upper(nvl(COST_BILLING_UNIT,''ZZ''))) like ''%EMAILS%''   then sum(USG_BILLED_QUANTITY)/count(distinct USAGE_INTERVAL_START)*744',
+'                when min(upper(nvl(COST_BILLING_UNIT,''ZZ''))) like ''%ASSETS%''   then sum(USG_BILLED_QUANTITY)/count(distinct USAGE_INTERVAL_START)*744',
 '                else null',
 '            end',
 '        end SINGLE_QUANTITY,',
@@ -14627,6 +14636,9 @@ wwv_flow_api.create_page_item(
 ,p_attribute_02=>'VALUE'
 ,p_attribute_04=>'Y'
 );
+end;
+/
+begin
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(11704902453773194)
 ,p_name=>'P4_PRODUCT_REGION'
@@ -14682,9 +14694,6 @@ wwv_flow_api.create_page_item(
 ,p_attribute_01=>'NONE'
 ,p_attribute_02=>'N'
 );
-end;
-/
-begin
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(11706169664773195)
 ,p_name=>'P4_TAG_DATA'
@@ -15342,7 +15351,7 @@ wwv_flow_api.create_page(
 '#P5_REPORT_SELECTOR { background-color: #F5FBB4; font-weight: bold; font-size: 13px;}'))
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'ADIZOHAR'
-,p_last_upd_yyyymmddhh24miss=>'20200601140811'
+,p_last_upd_yyyymmddhh24miss=>'20200707193954'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(22846551592241693)
@@ -17230,9 +17239,17 @@ wwv_flow_api.create_report_region(
 '		COST_PRODUCT_SKU || '' '' || replace(replace(PRD_DESCRIPTION,COST_PRODUCT_SKU||'' - '',''''),''Oracle Cloud Infrastructure'',''OCI'') PRODUCT_NAME,',
 '		USAGE_INTERVAL_START,',
 '		case ',
-'			when COST_BILLING_UNIT like ''%HOURS%'' or PRD_DESCRIPTION like ''%Per Hour%'' then USG_BILLED_QUANTITY/24',
-'			when COST_BILLING_UNIT like ''%GiB%'' then USG_BILLED_QUANTITY*31',
-'			when COST_BILLING_UNIT like ''%TiB%'' then USG_BILLED_QUANTITY*31',
+'			when upper(PRD_DESCRIPTION) like ''%HOUR%'' then USG_BILLED_QUANTITY/24',
+'			when upper(COST_BILLING_UNIT) like ''%HOUR%'' then USG_BILLED_QUANTITY/24',
+'			when upper(COST_BILLING_UNIT) like ''%GIB%'' then USG_BILLED_QUANTITY*31',
+'			when upper(COST_BILLING_UNIT) like ''%GB%'' then USG_BILLED_QUANTITY*31',
+'			when upper(COST_BILLING_UNIT) like ''%GIGA%'' then USG_BILLED_QUANTITY*31',
+'			when upper(COST_BILLING_UNIT) like ''%TIB%'' then USG_BILLED_QUANTITY*31',
+'			when upper(PRD_DESCRIPTION) like ''%GiB%'' then USG_BILLED_QUANTITY*31',
+'			when upper(PRD_DESCRIPTION) like ''%GB%'' then USG_BILLED_QUANTITY*31',
+'			when upper(PRD_DESCRIPTION) like ''%GIGA%'' then USG_BILLED_QUANTITY*31',
+'			when upper(PRD_DESCRIPTION) like ''%TIB%'' then USG_BILLED_QUANTITY*31',
+'			when upper(PRD_DESCRIPTION) like ''%TB%'' then USG_BILLED_QUANTITY*31',
 '			else null',
 '		end SINGLE_QUANTITY',
 '	FROM',
@@ -18056,6 +18073,9 @@ wwv_flow_api.create_jet_chart_axis(
 ,p_zoom_order_quarters=>false
 ,p_zoom_order_years=>false
 );
+end;
+/
+begin
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(15050972044989901)
 ,p_plug_name=>'Cost By Service - &P5_PERIOD.'
@@ -18069,9 +18089,6 @@ wwv_flow_api.create_page_plug(
 ,p_plug_query_num_rows=>15
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 );
-end;
-/
-begin
 wwv_flow_api.create_jet_chart(
  p_id=>wwv_flow_api.id(15051010405989902)
 ,p_region_id=>wwv_flow_api.id(15050972044989901)
@@ -18926,6 +18943,9 @@ wwv_flow_api.create_report_columns(
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
+end;
+/
+begin
 wwv_flow_api.create_report_columns(
  p_id=>wwv_flow_api.id(15082638529497501)
 ,p_query_column_id=>26
@@ -18954,9 +18974,6 @@ wwv_flow_api.create_report_columns(
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
-end;
-/
-begin
 wwv_flow_api.create_report_columns(
  p_id=>wwv_flow_api.id(15082822849497503)
 ,p_query_column_id=>28
@@ -19880,6 +19897,9 @@ wwv_flow_api.create_report_columns(
 ,p_derived_column=>'N'
 ,p_include_in_export=>'Y'
 );
+end;
+/
+begin
 wwv_flow_api.create_report_columns(
  p_id=>wwv_flow_api.id(15102752424532015)
 ,p_query_column_id=>53
@@ -19982,9 +20002,6 @@ wwv_flow_api.create_report_region(
 ,p_sort_null=>'L'
 ,p_plug_query_strip_html=>'N'
 );
-end;
-/
-begin
 wwv_flow_api.create_report_columns(
  p_id=>wwv_flow_api.id(15102928440532017)
 ,p_query_column_id=>1

@@ -73,6 +73,10 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the is_auto_scaling_enabled property of this UpdateAutonomousDatabaseDetails.
         :type is_auto_scaling_enabled: bool
 
+        :param is_data_guard_enabled:
+            The value to assign to the is_data_guard_enabled property of this UpdateAutonomousDatabaseDetails.
+        :type is_data_guard_enabled: bool
+
         :param db_version:
             The value to assign to the db_version property of this UpdateAutonomousDatabaseDetails.
         :type db_version: str
@@ -102,6 +106,7 @@ class UpdateAutonomousDatabaseDetails(object):
             'license_model': 'str',
             'whitelisted_ips': 'list[str]',
             'is_auto_scaling_enabled': 'bool',
+            'is_data_guard_enabled': 'bool',
             'db_version': 'str',
             'subnet_id': 'str',
             'private_endpoint_label': 'str',
@@ -120,6 +125,7 @@ class UpdateAutonomousDatabaseDetails(object):
             'license_model': 'licenseModel',
             'whitelisted_ips': 'whitelistedIps',
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
+            'is_data_guard_enabled': 'isDataGuardEnabled',
             'db_version': 'dbVersion',
             'subnet_id': 'subnetId',
             'private_endpoint_label': 'privateEndpointLabel',
@@ -137,6 +143,7 @@ class UpdateAutonomousDatabaseDetails(object):
         self._license_model = None
         self._whitelisted_ips = None
         self._is_auto_scaling_enabled = None
+        self._is_data_guard_enabled = None
         self._db_version = None
         self._subnet_id = None
         self._private_endpoint_label = None
@@ -457,6 +464,30 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: bool
         """
         self._is_auto_scaling_enabled = is_auto_scaling_enabled
+
+    @property
+    def is_data_guard_enabled(self):
+        """
+        Gets the is_data_guard_enabled of this UpdateAutonomousDatabaseDetails.
+        Indicates whether the Autonomous Database has Data Guard enabled.
+
+
+        :return: The is_data_guard_enabled of this UpdateAutonomousDatabaseDetails.
+        :rtype: bool
+        """
+        return self._is_data_guard_enabled
+
+    @is_data_guard_enabled.setter
+    def is_data_guard_enabled(self, is_data_guard_enabled):
+        """
+        Sets the is_data_guard_enabled of this UpdateAutonomousDatabaseDetails.
+        Indicates whether the Autonomous Database has Data Guard enabled.
+
+
+        :param is_data_guard_enabled: The is_data_guard_enabled of this UpdateAutonomousDatabaseDetails.
+        :type: bool
+        """
+        self._is_data_guard_enabled = is_data_guard_enabled
 
     @property
     def db_version(self):

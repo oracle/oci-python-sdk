@@ -169,7 +169,10 @@ class CreateSubnetDetails(object):
     def cidr_block(self):
         """
         **[Required]** Gets the cidr_block of this CreateSubnetDetails.
-        The CIDR IP address range of the subnet.
+        The CIDR IP address range of the subnet. The CIDR must maintain the following rules -
+
+        a. The CIDR block is valid and correctly formatted.
+        b. The new range is within one of the parent VCN ranges.
 
         Example: `10.0.1.0/24`
 
@@ -183,7 +186,10 @@ class CreateSubnetDetails(object):
     def cidr_block(self, cidr_block):
         """
         Sets the cidr_block of this CreateSubnetDetails.
-        The CIDR IP address range of the subnet.
+        The CIDR IP address range of the subnet. The CIDR must maintain the following rules -
+
+        a. The CIDR block is valid and correctly formatted.
+        b. The new range is within one of the parent VCN ranges.
 
         Example: `10.0.1.0/24`
 

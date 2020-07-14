@@ -17,18 +17,23 @@ class ConfigSource(object):
     #: This constant has a value of "ZIP_UPLOAD"
     CONFIG_SOURCE_TYPE_ZIP_UPLOAD = "ZIP_UPLOAD"
 
+    #: A constant which can be used with the config_source_type property of a ConfigSource.
+    #: This constant has a value of "GIT_CONFIG_SOURCE"
+    CONFIG_SOURCE_TYPE_GIT_CONFIG_SOURCE = "GIT_CONFIG_SOURCE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ConfigSource object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.resource_manager.models.GitConfigSource`
         * :class:`~oci.resource_manager.models.ZipUploadConfigSource`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param config_source_type:
             The value to assign to the config_source_type property of this ConfigSource.
-            Allowed values for this property are: "ZIP_UPLOAD", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ZIP_UPLOAD", "GIT_CONFIG_SOURCE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type config_source_type: str
 
@@ -58,6 +63,9 @@ class ConfigSource(object):
         """
         type = object_dictionary['configSourceType']
 
+        if type == 'GIT_CONFIG_SOURCE':
+            return 'GitConfigSource'
+
         if type == 'ZIP_UPLOAD':
             return 'ZipUploadConfigSource'
         else:
@@ -69,7 +77,7 @@ class ConfigSource(object):
         **[Required]** Gets the config_source_type of this ConfigSource.
         The type of configuration source to use for the Terraform configuration.
 
-        Allowed values for this property are: "ZIP_UPLOAD", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ZIP_UPLOAD", "GIT_CONFIG_SOURCE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -88,7 +96,7 @@ class ConfigSource(object):
         :param config_source_type: The config_source_type of this ConfigSource.
         :type: str
         """
-        allowed_values = ["ZIP_UPLOAD"]
+        allowed_values = ["ZIP_UPLOAD", "GIT_CONFIG_SOURCE"]
         if not value_allowed_none_or_none_sentinel(config_source_type, allowed_values):
             config_source_type = 'UNKNOWN_ENUM_VALUE'
         self._config_source_type = config_source_type

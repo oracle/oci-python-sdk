@@ -136,7 +136,10 @@ class BaseClient(object):
         self.complex_type_mappings = type_mapping
         self.type_mappings = merge_type_mappings(self.primitive_type_map, type_mapping)
         self.session = requests.Session()
-        self.timeout = kwargs.get('timeout', (DEFAULT_CONNECTION_TIMEOUT, DEFAULT_READ_TIMEOUT))
+
+        timeout_value_in_kwargs = kwargs.get('timeout')
+        self.timeout = timeout_value_in_kwargs if timeout_value_in_kwargs else (DEFAULT_CONNECTION_TIMEOUT, DEFAULT_READ_TIMEOUT)
+
         self.user_agent = build_user_agent(get_config_value_or_default(config, "additional_user_agent"))
 
         self.logger = logging.getLogger("{}.{}".format(__name__, id(self)))

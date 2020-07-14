@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.07.14 - 2020-07-14
+=====================
+* Support for Cost column changed - OCI amend the column billingUnitReadable to skuUnitDescription
+* Added daily report script with step by step configuration - requires OCI Email setup
+* Fixed bug on Apex related to the column change for Cost Report
+
+=====================
 20.07.07 - 2020-07-07
 =====================
 * Added flags to skip usage or skip cost with -sc and -su

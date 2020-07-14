@@ -324,6 +324,8 @@ class JobSummary(object):
         """
         Gets the time_created of this JobSummary.
         The date and time the job was created.
+        Format is defined by RFC3339.
+        Example: `2020-01-25T21:10:29.600Z`
 
 
         :return: The time_created of this JobSummary.
@@ -336,6 +338,8 @@ class JobSummary(object):
         """
         Sets the time_created of this JobSummary.
         The date and time the job was created.
+        Format is defined by RFC3339.
+        Example: `2020-01-25T21:10:29.600Z`
 
 
         :param time_created: The time_created of this JobSummary.
@@ -348,6 +352,8 @@ class JobSummary(object):
         """
         Gets the time_finished of this JobSummary.
         The date and time the job succeeded or failed.
+        Format is defined by RFC3339.
+        Example: `2020-01-25T21:10:29.600Z`
 
 
         :return: The time_finished of this JobSummary.
@@ -360,6 +366,8 @@ class JobSummary(object):
         """
         Sets the time_finished of this JobSummary.
         The date and time the job succeeded or failed.
+        Format is defined by RFC3339.
+        Example: `2020-01-25T21:10:29.600Z`
 
 
         :param time_finished: The time_finished of this JobSummary.
@@ -372,7 +380,7 @@ class JobSummary(object):
         """
         Gets the lifecycle_state of this JobSummary.
         Current state of the specified job.
-        For more information about resource states in Resource Manager, see
+        For more information about job lifecycle states in Resource Manager, see
         `Key Concepts`__.
 
         Allowable values:
@@ -383,7 +391,7 @@ class JobSummary(object):
         - CANCELING
         - CANCELED
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#JobStates
 
 
         :return: The lifecycle_state of this JobSummary.
@@ -396,7 +404,7 @@ class JobSummary(object):
         """
         Sets the lifecycle_state of this JobSummary.
         Current state of the specified job.
-        For more information about resource states in Resource Manager, see
+        For more information about job lifecycle states in Resource Manager, see
         `Key Concepts`__.
 
         Allowable values:
@@ -407,7 +415,7 @@ class JobSummary(object):
         - CANCELING
         - CANCELED
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#JobStates
 
 
         :param lifecycle_state: The lifecycle_state of this JobSummary.

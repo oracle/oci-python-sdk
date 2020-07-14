@@ -285,7 +285,9 @@ class WorkRequest(object):
     def time_accepted(self):
         """
         **[Required]** Gets the time_accepted of this WorkRequest.
-        When the work request was created.
+        The date and time when the work request was created.
+        Format is defined by RFC3339.
+        Example: `2020-01-25T21:10:29.600Z`
 
 
         :return: The time_accepted of this WorkRequest.
@@ -297,7 +299,9 @@ class WorkRequest(object):
     def time_accepted(self, time_accepted):
         """
         Sets the time_accepted of this WorkRequest.
-        When the work request was created.
+        The date and time when the work request was created.
+        Format is defined by RFC3339.
+        Example: `2020-01-25T21:10:29.600Z`
 
 
         :param time_accepted: The time_accepted of this WorkRequest.
@@ -309,7 +313,9 @@ class WorkRequest(object):
     def time_started(self):
         """
         Gets the time_started of this WorkRequest.
-        When the work request transitioned from ACCEPTED to IN_PROGRESS.
+        The date and time when the work request transitioned from ACCEPTED to IN_PROGRESS.
+        Format is defined by RFC3339.
+        Example: `2020-01-25T21:10:29.600Z`
 
 
         :return: The time_started of this WorkRequest.
@@ -321,7 +327,9 @@ class WorkRequest(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this WorkRequest.
-        When the work request transitioned from ACCEPTED to IN_PROGRESS.
+        The date and time when the work request transitioned from ACCEPTED to IN_PROGRESS.
+        Format is defined by RFC3339.
+        Example: `2020-01-25T21:10:29.600Z`
 
 
         :param time_started: The time_started of this WorkRequest.
@@ -333,7 +341,9 @@ class WorkRequest(object):
     def time_finished(self):
         """
         Gets the time_finished of this WorkRequest.
-        When the work request reached a terminal state (FAILED or SUCCEEDED).
+        The date and time when the work request reached a terminal state (FAILED or SUCCEEDED).
+        Format is defined by RFC3339.
+        Example: `2020-01-25T21:10:29.600Z`
 
 
         :return: The time_finished of this WorkRequest.
@@ -345,7 +355,9 @@ class WorkRequest(object):
     def time_finished(self, time_finished):
         """
         Sets the time_finished of this WorkRequest.
-        When the work request reached a terminal state (FAILED or SUCCEEDED).
+        The date and time when the work request reached a terminal state (FAILED or SUCCEEDED).
+        Format is defined by RFC3339.
+        Example: `2020-01-25T21:10:29.600Z`
 
 
         :param time_finished: The time_finished of this WorkRequest.
