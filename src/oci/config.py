@@ -146,7 +146,7 @@ def _get_config_path_with_fallback(file_location):
     expanded_file_location = os.path.expanduser(file_location)
     expanded_fallback_default_file_location = os.path.expanduser(FALLBACK_DEFAULT_LOCATION)
 
-    if (file_location != DEFAULT_LOCATION) or (file_location == DEFAULT_LOCATION and os.path.isfile(file_location)):
+    if (file_location != DEFAULT_LOCATION) or (file_location == DEFAULT_LOCATION and os.path.isfile(expanded_file_location)):
         return expanded_file_location
 
     # If file location is not specified and the default file (~/.oci/config) does not exist
