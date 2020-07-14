@@ -4,6 +4,8 @@
 usage2adw is a tool which uses the Python SDK to extract the usage and cost reports from your tenant and load it to Oracle Autonomous Database. (DbaaS can be used as well)
 Authentication to OCI by User or instance principals.
 
+It uses APEX for Visualization and generates Daily e-mail report.
+
 **Developed by Adi Zohar, Feb 2020**
 
 ** DISCLAIMER – This is not an official Oracle application **
@@ -29,6 +31,9 @@ Authentication to OCI by User or instance principals.
 ![](img/screen_2.png)
 ![](img/screen_3.png)
 
+## Daily E-Mail Report
+![](img/report_05.png)
+
 ## Usage Reports Overview
 A usage report is a comma-separated value (CSV) file that can be used to get a detailed breakdown of resources in Oracle Cloud Infrastructure for audit or invoice reconciliation.
 
@@ -43,6 +48,9 @@ More information can be found at https://docs.cloud.oracle.com/en-us/iaas/Conten
 
 ## Step by Step Installation Guide
 Please check step by step guide - [step_by_step_installation.md](step_by_step_installation.md)
+
+## Step by Step Daily Report
+Please check step by step daily report guide - [step_by_step_daily_report.md](step_by_step_daily_report.md)
 
 
 ## OCI SDK Modules Included:

@@ -21,11 +21,19 @@ Resource Manager
     oci.resource_manager.models.ApplyJobOperationDetails
     oci.resource_manager.models.ApplyJobOperationDetailsSummary
     oci.resource_manager.models.ApplyJobPlanResolution
+    oci.resource_manager.models.ChangeConfigurationSourceProviderCompartmentDetails
     oci.resource_manager.models.ChangeStackCompartmentDetails
     oci.resource_manager.models.ConfigSource
+    oci.resource_manager.models.ConfigSourceRecord
+    oci.resource_manager.models.ConfigurationSourceProvider
+    oci.resource_manager.models.ConfigurationSourceProviderCollection
+    oci.resource_manager.models.ConfigurationSourceProviderSummary
     oci.resource_manager.models.CreateApplyJobOperationDetails
     oci.resource_manager.models.CreateConfigSourceDetails
+    oci.resource_manager.models.CreateConfigurationSourceProviderDetails
     oci.resource_manager.models.CreateDestroyJobOperationDetails
+    oci.resource_manager.models.CreateGitConfigSourceDetails
+    oci.resource_manager.models.CreateGitlabAccessTokenConfigurationSourceProviderDetails
     oci.resource_manager.models.CreateImportTfStateJobOperationDetails
     oci.resource_manager.models.CreateJobDetails
     oci.resource_manager.models.CreateJobOperationDetails
@@ -35,6 +43,10 @@ Resource Manager
     oci.resource_manager.models.DestroyJobOperationDetails
     oci.resource_manager.models.DestroyJobOperationDetailsSummary
     oci.resource_manager.models.FailureDetails
+    oci.resource_manager.models.GitConfigSource
+    oci.resource_manager.models.GitConfigSourceRecord
+    oci.resource_manager.models.GitlabAccessTokenConfigurationSourceProvider
+    oci.resource_manager.models.GitlabAccessTokenConfigurationSourceProviderSummary
     oci.resource_manager.models.ImportTfStateJobOperationDetails
     oci.resource_manager.models.ImportTfStateJobOperationDetailsSummary
     oci.resource_manager.models.Job
@@ -51,6 +63,9 @@ Resource Manager
     oci.resource_manager.models.TerraformVersionCollection
     oci.resource_manager.models.TerraformVersionSummary
     oci.resource_manager.models.UpdateConfigSourceDetails
+    oci.resource_manager.models.UpdateConfigurationSourceProviderDetails
+    oci.resource_manager.models.UpdateGitConfigSourceDetails
+    oci.resource_manager.models.UpdateGitlabAccessTokenConfigurationSourceProviderDetails
     oci.resource_manager.models.UpdateJobDetails
     oci.resource_manager.models.UpdateStackDetails
     oci.resource_manager.models.UpdateZipUploadConfigSourceDetails
@@ -60,3 +75,4 @@ Resource Manager
     oci.resource_manager.models.WorkRequestResource
     oci.resource_manager.models.WorkRequestSummary
     oci.resource_manager.models.ZipUploadConfigSource
+    oci.resource_manager.models.ZipUploadConfigSourceRecord

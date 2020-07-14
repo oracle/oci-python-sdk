@@ -989,9 +989,14 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
                 cost_myCost = get_column_value_from_array('cost/myCost', row)
                 cost_myCostOverage = get_column_value_from_array('cost/myCostOverage', row)
                 cost_currencyCode = get_column_value_from_array('cost/currencyCode', row)
-                cost_billingUnitReadable = get_column_value_from_array('cost/billingUnitReadable', row)
                 cost_overageFlag = get_column_value_from_array('cost/overageFlag', row)
                 lineItem_isCorrection = get_column_value_from_array('lineItem/isCorrection', row)
+
+                # OCI changed the column billingUnitReadable to skuUnitDescription
+                if 'cost/skuUnitDescription' in row:
+                    cost_billingUnitReadable = get_column_value_from_array('cost/skuUnitDescription', row)
+                else:
+                    cost_billingUnitReadable = get_column_value_from_array('cost/billingUnitReadable', row)
 
                 # Fix OCI Data for missing product description
                 if cost_productSku == "B88285" and product_Description == "":

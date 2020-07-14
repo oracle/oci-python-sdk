@@ -37,6 +37,14 @@ class FailureDetails(object):
     #: This constant has a value of "TERRAFORM_CONFIG_VIRUS_FOUND"
     CODE_TERRAFORM_CONFIG_VIRUS_FOUND = "TERRAFORM_CONFIG_VIRUS_FOUND"
 
+    #: A constant which can be used with the code property of a FailureDetails.
+    #: This constant has a value of "TERRAFORM_GIT_CLONE_FAILURE"
+    CODE_TERRAFORM_GIT_CLONE_FAILURE = "TERRAFORM_GIT_CLONE_FAILURE"
+
+    #: A constant which can be used with the code property of a FailureDetails.
+    #: This constant has a value of "TERRAFORM_GIT_CHECKOUT_FAILURE"
+    CODE_TERRAFORM_GIT_CHECKOUT_FAILURE = "TERRAFORM_GIT_CHECKOUT_FAILURE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new FailureDetails object with values from keyword arguments.
@@ -44,7 +52,7 @@ class FailureDetails(object):
 
         :param code:
             The value to assign to the code property of this FailureDetails.
-            Allowed values for this property are: "INTERNAL_SERVICE_ERROR", "TERRAFORM_EXECUTION_ERROR", "TERRAFORM_CONFIG_UNZIP_FAILED", "INVALID_WORKING_DIRECTORY", "JOB_TIMEOUT", "TERRAFORM_CONFIG_VIRUS_FOUND", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INTERNAL_SERVICE_ERROR", "TERRAFORM_EXECUTION_ERROR", "TERRAFORM_CONFIG_UNZIP_FAILED", "INVALID_WORKING_DIRECTORY", "JOB_TIMEOUT", "TERRAFORM_CONFIG_VIRUS_FOUND", "TERRAFORM_GIT_CLONE_FAILURE", "TERRAFORM_GIT_CHECKOUT_FAILURE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type code: str
 
@@ -72,7 +80,7 @@ class FailureDetails(object):
         **[Required]** Gets the code of this FailureDetails.
         Job failure reason.
 
-        Allowed values for this property are: "INTERNAL_SERVICE_ERROR", "TERRAFORM_EXECUTION_ERROR", "TERRAFORM_CONFIG_UNZIP_FAILED", "INVALID_WORKING_DIRECTORY", "JOB_TIMEOUT", "TERRAFORM_CONFIG_VIRUS_FOUND", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "INTERNAL_SERVICE_ERROR", "TERRAFORM_EXECUTION_ERROR", "TERRAFORM_CONFIG_UNZIP_FAILED", "INVALID_WORKING_DIRECTORY", "JOB_TIMEOUT", "TERRAFORM_CONFIG_VIRUS_FOUND", "TERRAFORM_GIT_CLONE_FAILURE", "TERRAFORM_GIT_CHECKOUT_FAILURE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -91,7 +99,7 @@ class FailureDetails(object):
         :param code: The code of this FailureDetails.
         :type: str
         """
-        allowed_values = ["INTERNAL_SERVICE_ERROR", "TERRAFORM_EXECUTION_ERROR", "TERRAFORM_CONFIG_UNZIP_FAILED", "INVALID_WORKING_DIRECTORY", "JOB_TIMEOUT", "TERRAFORM_CONFIG_VIRUS_FOUND"]
+        allowed_values = ["INTERNAL_SERVICE_ERROR", "TERRAFORM_EXECUTION_ERROR", "TERRAFORM_CONFIG_UNZIP_FAILED", "INVALID_WORKING_DIRECTORY", "JOB_TIMEOUT", "TERRAFORM_CONFIG_VIRUS_FOUND", "TERRAFORM_GIT_CLONE_FAILURE", "TERRAFORM_GIT_CHECKOUT_FAILURE"]
         if not value_allowed_none_or_none_sentinel(code, allowed_values):
             code = 'UNKNOWN_ENUM_VALUE'
         self._code = code

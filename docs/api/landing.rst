@@ -12,6 +12,7 @@ API Reference
 * :doc:`Audit <audit/client/oci.audit.AuditClient>`
 * :doc:`Auto Scaling <autoscaling/client/oci.autoscaling.AutoScalingClient>`
 * :doc:`Bds <bds/client/oci.bds.BdsClient>`
+* :doc:`Blockchain Platform <blockchain/client/oci.blockchain.BlockchainPlatformClient>`
 * :doc:`Budget <budget/client/oci.budget.BudgetClient>`
 * :doc:`Incident <cims/client/oci.cims.IncidentClient>`
 * :doc:`Container Engine <container_engine/client/oci.container_engine.ContainerEngineClient>`
@@ -98,6 +99,7 @@ API Reference
     audit
     autoscaling
     bds
+    blockchain
     budget
     cims
     container_engine

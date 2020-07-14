@@ -126,6 +126,10 @@ class Job(object):
             The value to assign to the variables property of this Job.
         :type variables: dict(str, str)
 
+        :param config_source:
+            The value to assign to the config_source property of this Job.
+        :type config_source: ConfigSourceRecord
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Job.
         :type freeform_tags: dict(str, str)
@@ -150,6 +154,7 @@ class Job(object):
             'failure_details': 'FailureDetails',
             'working_directory': 'str',
             'variables': 'dict(str, str)',
+            'config_source': 'ConfigSourceRecord',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -169,6 +174,7 @@ class Job(object):
             'failure_details': 'failureDetails',
             'working_directory': 'workingDirectory',
             'variables': 'variables',
+            'config_source': 'configSource',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -187,6 +193,7 @@ class Job(object):
         self._failure_details = None
         self._working_directory = None
         self._variables = None
+        self._config_source = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -402,7 +409,9 @@ class Job(object):
     def time_created(self):
         """
         Gets the time_created of this Job.
-        The date and time at which the job was created.
+        The date and time when the job was created.
+        Format is defined by RFC3339.
+        Example: `2020-01-25T21:10:29.600Z`
 
 
         :return: The time_created of this Job.
@@ -414,7 +423,9 @@ class Job(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Job.
-        The date and time at which the job was created.
+        The date and time when the job was created.
+        Format is defined by RFC3339.
+        Example: `2020-01-25T21:10:29.600Z`
 
 
         :param time_created: The time_created of this Job.
@@ -426,7 +437,9 @@ class Job(object):
     def time_finished(self):
         """
         Gets the time_finished of this Job.
-        The date and time at which the job stopped running, irrespective of whether the job ran successfully.
+        The date and time when the job stopped running, irrespective of whether the job ran successfully.
+        Format is defined by RFC3339.
+        Example: `2020-01-25T21:10:29.600Z`
 
 
         :return: The time_finished of this Job.
@@ -438,7 +451,9 @@ class Job(object):
     def time_finished(self, time_finished):
         """
         Sets the time_finished of this Job.
-        The date and time at which the job stopped running, irrespective of whether the job ran successfully.
+        The date and time when the job stopped running, irrespective of whether the job ran successfully.
+        Format is defined by RFC3339.
+        Example: `2020-01-25T21:10:29.600Z`
 
 
         :param time_finished: The time_finished of this Job.
@@ -451,10 +466,10 @@ class Job(object):
         """
         Gets the lifecycle_state of this Job.
         Current state of the specified job.
-        For more information about resource states in Resource Manager, see
+        For more information about job lifecycle states in Resource Manager, see
         `Key Concepts`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#JobStates
 
         Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -470,10 +485,10 @@ class Job(object):
         """
         Sets the lifecycle_state of this Job.
         Current state of the specified job.
-        For more information about resource states in Resource Manager, see
+        For more information about job lifecycle states in Resource Manager, see
         `Key Concepts`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#JobStates
 
 
         :param lifecycle_state: The lifecycle_state of this Job.
@@ -557,6 +572,26 @@ class Job(object):
         :type: dict(str, str)
         """
         self._variables = variables
+
+    @property
+    def config_source(self):
+        """
+        Gets the config_source of this Job.
+
+        :return: The config_source of this Job.
+        :rtype: ConfigSourceRecord
+        """
+        return self._config_source
+
+    @config_source.setter
+    def config_source(self, config_source):
+        """
+        Sets the config_source of this Job.
+
+        :param config_source: The config_source of this Job.
+        :type: ConfigSourceRecord
+        """
+        self._config_source = config_source
 
     @property
     def freeform_tags(self):

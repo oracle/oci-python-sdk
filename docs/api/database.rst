@@ -36,6 +36,7 @@ Database
     oci.database.models.AutonomousDatabaseConnectionStrings
     oci.database.models.AutonomousDatabaseConnectionUrls
     oci.database.models.AutonomousDatabaseConsoleTokenDetails
+    oci.database.models.AutonomousDatabaseStandbySummary
     oci.database.models.AutonomousDatabaseSummary
     oci.database.models.AutonomousDatabaseWallet
     oci.database.models.AutonomousDbPreviewVersionSummary

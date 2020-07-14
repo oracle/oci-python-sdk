@@ -78,6 +78,14 @@ class AutonomousDatabase(object):
     LIFECYCLE_STATE_RESTARTING = "RESTARTING"
 
     #: A constant which can be used with the lifecycle_state property of a AutonomousDatabase.
+    #: This constant has a value of "RECREATING"
+    LIFECYCLE_STATE_RECREATING = "RECREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabase.
+    #: This constant has a value of "ROLE_CHANGE_IN_PROGRESS"
+    LIFECYCLE_STATE_ROLE_CHANGE_IN_PROGRESS = "ROLE_CHANGE_IN_PROGRESS"
+
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabase.
     #: This constant has a value of "UPGRADING"
     LIFECYCLE_STATE_UPGRADING = "UPGRADING"
 
@@ -140,7 +148,7 @@ class AutonomousDatabase(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AutonomousDatabase.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "UPGRADING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -284,6 +292,26 @@ class AutonomousDatabase(object):
             The value to assign to the time_maintenance_end property of this AutonomousDatabase.
         :type time_maintenance_end: datetime
 
+        :param time_of_last_switchover:
+            The value to assign to the time_of_last_switchover property of this AutonomousDatabase.
+        :type time_of_last_switchover: datetime
+
+        :param time_of_last_failover:
+            The value to assign to the time_of_last_failover property of this AutonomousDatabase.
+        :type time_of_last_failover: datetime
+
+        :param is_data_guard_enabled:
+            The value to assign to the is_data_guard_enabled property of this AutonomousDatabase.
+        :type is_data_guard_enabled: bool
+
+        :param failed_data_recovery_in_seconds:
+            The value to assign to the failed_data_recovery_in_seconds property of this AutonomousDatabase.
+        :type failed_data_recovery_in_seconds: int
+
+        :param standby_db:
+            The value to assign to the standby_db property of this AutonomousDatabase.
+        :type standby_db: AutonomousDatabaseStandbySummary
+
         :param available_upgrade_versions:
             The value to assign to the available_upgrade_versions property of this AutonomousDatabase.
         :type available_upgrade_versions: list[str]
@@ -326,6 +354,11 @@ class AutonomousDatabase(object):
             'data_safe_status': 'str',
             'time_maintenance_begin': 'datetime',
             'time_maintenance_end': 'datetime',
+            'time_of_last_switchover': 'datetime',
+            'time_of_last_failover': 'datetime',
+            'is_data_guard_enabled': 'bool',
+            'failed_data_recovery_in_seconds': 'int',
+            'standby_db': 'AutonomousDatabaseStandbySummary',
             'available_upgrade_versions': 'list[str]'
         }
 
@@ -366,6 +399,11 @@ class AutonomousDatabase(object):
             'data_safe_status': 'dataSafeStatus',
             'time_maintenance_begin': 'timeMaintenanceBegin',
             'time_maintenance_end': 'timeMaintenanceEnd',
+            'time_of_last_switchover': 'timeOfLastSwitchover',
+            'time_of_last_failover': 'timeOfLastFailover',
+            'is_data_guard_enabled': 'isDataGuardEnabled',
+            'failed_data_recovery_in_seconds': 'failedDataRecoveryInSeconds',
+            'standby_db': 'standbyDb',
             'available_upgrade_versions': 'availableUpgradeVersions'
         }
 
@@ -405,6 +443,11 @@ class AutonomousDatabase(object):
         self._data_safe_status = None
         self._time_maintenance_begin = None
         self._time_maintenance_end = None
+        self._time_of_last_switchover = None
+        self._time_of_last_failover = None
+        self._is_data_guard_enabled = None
+        self._failed_data_recovery_in_seconds = None
+        self._standby_db = None
         self._available_upgrade_versions = None
 
     @property
@@ -469,7 +512,7 @@ class AutonomousDatabase(object):
         **[Required]** Gets the lifecycle_state of this AutonomousDatabase.
         The current state of the Autonomous Database.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "UPGRADING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -488,7 +531,7 @@ class AutonomousDatabase(object):
         :param lifecycle_state: The lifecycle_state of this AutonomousDatabase.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "UPGRADING"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -1396,6 +1439,122 @@ class AutonomousDatabase(object):
         :type: datetime
         """
         self._time_maintenance_end = time_maintenance_end
+
+    @property
+    def time_of_last_switchover(self):
+        """
+        Gets the time_of_last_switchover of this AutonomousDatabase.
+        The timestamp of the last switchover operation for the Autonomous Database.
+
+
+        :return: The time_of_last_switchover of this AutonomousDatabase.
+        :rtype: datetime
+        """
+        return self._time_of_last_switchover
+
+    @time_of_last_switchover.setter
+    def time_of_last_switchover(self, time_of_last_switchover):
+        """
+        Sets the time_of_last_switchover of this AutonomousDatabase.
+        The timestamp of the last switchover operation for the Autonomous Database.
+
+
+        :param time_of_last_switchover: The time_of_last_switchover of this AutonomousDatabase.
+        :type: datetime
+        """
+        self._time_of_last_switchover = time_of_last_switchover
+
+    @property
+    def time_of_last_failover(self):
+        """
+        Gets the time_of_last_failover of this AutonomousDatabase.
+        The timestamp of the last failover operation.
+
+
+        :return: The time_of_last_failover of this AutonomousDatabase.
+        :rtype: datetime
+        """
+        return self._time_of_last_failover
+
+    @time_of_last_failover.setter
+    def time_of_last_failover(self, time_of_last_failover):
+        """
+        Sets the time_of_last_failover of this AutonomousDatabase.
+        The timestamp of the last failover operation.
+
+
+        :param time_of_last_failover: The time_of_last_failover of this AutonomousDatabase.
+        :type: datetime
+        """
+        self._time_of_last_failover = time_of_last_failover
+
+    @property
+    def is_data_guard_enabled(self):
+        """
+        Gets the is_data_guard_enabled of this AutonomousDatabase.
+        Indicates whether the Autonomous Database has Data Guard enabled.
+
+
+        :return: The is_data_guard_enabled of this AutonomousDatabase.
+        :rtype: bool
+        """
+        return self._is_data_guard_enabled
+
+    @is_data_guard_enabled.setter
+    def is_data_guard_enabled(self, is_data_guard_enabled):
+        """
+        Sets the is_data_guard_enabled of this AutonomousDatabase.
+        Indicates whether the Autonomous Database has Data Guard enabled.
+
+
+        :param is_data_guard_enabled: The is_data_guard_enabled of this AutonomousDatabase.
+        :type: bool
+        """
+        self._is_data_guard_enabled = is_data_guard_enabled
+
+    @property
+    def failed_data_recovery_in_seconds(self):
+        """
+        Gets the failed_data_recovery_in_seconds of this AutonomousDatabase.
+        Indicates the number of seconds of data loss for a Data Guard failover.
+
+
+        :return: The failed_data_recovery_in_seconds of this AutonomousDatabase.
+        :rtype: int
+        """
+        return self._failed_data_recovery_in_seconds
+
+    @failed_data_recovery_in_seconds.setter
+    def failed_data_recovery_in_seconds(self, failed_data_recovery_in_seconds):
+        """
+        Sets the failed_data_recovery_in_seconds of this AutonomousDatabase.
+        Indicates the number of seconds of data loss for a Data Guard failover.
+
+
+        :param failed_data_recovery_in_seconds: The failed_data_recovery_in_seconds of this AutonomousDatabase.
+        :type: int
+        """
+        self._failed_data_recovery_in_seconds = failed_data_recovery_in_seconds
+
+    @property
+    def standby_db(self):
+        """
+        Gets the standby_db of this AutonomousDatabase.
+
+        :return: The standby_db of this AutonomousDatabase.
+        :rtype: AutonomousDatabaseStandbySummary
+        """
+        return self._standby_db
+
+    @standby_db.setter
+    def standby_db(self, standby_db):
+        """
+        Sets the standby_db of this AutonomousDatabase.
+
+        :param standby_db: The standby_db of this AutonomousDatabase.
+        :type: AutonomousDatabaseStandbySummary
+        """
+        self._standby_db = standby_db
 
     @property
     def available_upgrade_versions(self):

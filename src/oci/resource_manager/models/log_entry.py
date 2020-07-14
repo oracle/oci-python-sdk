@@ -150,7 +150,9 @@ class LogEntry(object):
     def timestamp(self):
         """
         Gets the timestamp of this LogEntry.
-        Date and time of the log entry.
+        The date and time of the log entry.
+        Format is defined by RFC3339.
+        Example: `2020-01-25T21:10:29.600Z`
 
 
         :return: The timestamp of this LogEntry.
@@ -162,7 +164,9 @@ class LogEntry(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this LogEntry.
-        Date and time of the log entry.
+        The date and time of the log entry.
+        Format is defined by RFC3339.
+        Example: `2020-01-25T21:10:29.600Z`
 
 
         :param timestamp: The timestamp of this LogEntry.

@@ -249,7 +249,7 @@ class LaunchInstanceDetails(object):
     def dedicated_vm_host_id(self):
         """
         Gets the dedicated_vm_host_id of this LaunchInstanceDetails.
-        The OCID of dedicated VM host.
+        The OCID of the dedicated VM host.
 
 
         :return: The dedicated_vm_host_id of this LaunchInstanceDetails.
@@ -261,7 +261,7 @@ class LaunchInstanceDetails(object):
     def dedicated_vm_host_id(self, dedicated_vm_host_id):
         """
         Sets the dedicated_vm_host_id of this LaunchInstanceDetails.
-        The OCID of dedicated VM host.
+        The OCID of the dedicated VM host.
 
 
         :param dedicated_vm_host_id: The dedicated_vm_host_id of this LaunchInstanceDetails.
@@ -577,6 +577,9 @@ class LaunchInstanceDetails(object):
     def launch_options(self):
         """
         Gets the launch_options of this LaunchInstanceDetails.
+        Options for tuning the compatibility and performance of VM shapes. The values that you specify override any
+        default values.
+
 
         :return: The launch_options of this LaunchInstanceDetails.
         :rtype: LaunchOptions
@@ -587,6 +590,9 @@ class LaunchInstanceDetails(object):
     def launch_options(self, launch_options):
         """
         Sets the launch_options of this LaunchInstanceDetails.
+        Options for tuning the compatibility and performance of VM shapes. The values that you specify override any
+        default values.
+
 
         :param launch_options: The launch_options of this LaunchInstanceDetails.
         :type: LaunchOptions

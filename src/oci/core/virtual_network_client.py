@@ -9335,9 +9335,10 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 response_type="list[CrossConnectPortSpeedShape]")
 
-    def list_dhcp_options(self, compartment_id, vcn_id, **kwargs):
+    def list_dhcp_options(self, compartment_id, **kwargs):
         """
         Lists the sets of DHCP options in the specified VCN and specified compartment.
+        If the VCN ID is not provided, then the list includes the sets of DHCP options from all VCNs in the specified compartment.
         The response includes the default set of options that automatically comes with each VCN,
         plus any other sets you've created.
 
@@ -9347,7 +9348,7 @@ class VirtualNetworkClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param str vcn_id: (required)
+        :param str vcn_id: (optional)
             The `OCID`__ of the VCN.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
@@ -9411,6 +9412,7 @@ class VirtualNetworkClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "vcn_id",
             "limit",
             "page",
             "display_name",
@@ -9446,7 +9448,7 @@ class VirtualNetworkClient(object):
 
         query_params = {
             "compartmentId": compartment_id,
-            "vcnId": vcn_id,
+            "vcnId": kwargs.get("vcn_id", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "displayName": kwargs.get("display_name", missing),
@@ -9848,9 +9850,10 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 response_type="list[VirtualCircuitBandwidthShape]")
 
-    def list_internet_gateways(self, compartment_id, vcn_id, **kwargs):
+    def list_internet_gateways(self, compartment_id, **kwargs):
         """
         Lists the internet gateways in the specified VCN and the specified compartment.
+        If the VCN ID is not provided, then the list includes the internet gateways from all VCNs in the specified compartment.
 
 
         :param str compartment_id: (required)
@@ -9858,7 +9861,7 @@ class VirtualNetworkClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
-        :param str vcn_id: (required)
+        :param str vcn_id: (optional)
             The `OCID`__ of the VCN.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
@@ -9922,6 +9925,7 @@ class VirtualNetworkClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "vcn_id",
             "limit",
             "page",
             "display_name",
@@ -9957,7 +9961,7 @@ class VirtualNetworkClient(object):
 
         query_params = {
             "compartmentId": compartment_id,
-            "vcnId": vcn_id,
+            "vcnId": kwargs.get("vcn_id", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "displayName": kwargs.get("display_name", missing),
@@ -10285,19 +10289,14 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 response_type="list[Ipv6]")
 
-    def list_local_peering_gateways(self, compartment_id, vcn_id, **kwargs):
+    def list_local_peering_gateways(self, compartment_id, **kwargs):
         """
-        Lists the local peering gateways (LPGs) for the specified VCN and compartment
-        (the LPG's compartment).
+        Lists the local peering gateways (LPGs) for the specified VCN and specified compartment.
+        If the VCN ID is not provided, then the list includes the LPGs from all VCNs in the specified compartment.
 
 
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
-
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-        :param str vcn_id: (required)
-            The `OCID`__ of the VCN.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -10317,6 +10316,11 @@ class VirtualNetworkClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
+        :param str vcn_id: (optional)
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -10335,7 +10339,8 @@ class VirtualNetworkClient(object):
         expected_kwargs = [
             "retry_strategy",
             "limit",
-            "page"
+            "page",
+            "vcn_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -10346,7 +10351,7 @@ class VirtualNetworkClient(object):
             "compartmentId": compartment_id,
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
-            "vcnId": vcn_id
+            "vcnId": kwargs.get("vcn_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -11275,20 +11280,16 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 response_type="list[RemotePeeringConnection]")
 
-    def list_route_tables(self, compartment_id, vcn_id, **kwargs):
+    def list_route_tables(self, compartment_id, **kwargs):
         """
-        Lists the route tables in the specified VCN and specified compartment. The response
-        includes the default route table that automatically comes with each VCN, plus any route tables
-        you've created.
+        Lists the route tables in the specified VCN and specified compartment.
+        If the VCN ID is not provided, then the list includes the route tables from all VCNs in the specified compartment.
+        The response includes the default route table that automatically comes with
+        each VCN in the specified compartment, plus any route tables you've created.
 
 
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
-
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-        :param str vcn_id: (required)
-            The `OCID`__ of the VCN.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -11307,6 +11308,11 @@ class VirtualNetworkClient(object):
             `List Pagination`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str vcn_id: (optional)
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -11353,6 +11359,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "limit",
             "page",
+            "vcn_id",
             "display_name",
             "sort_by",
             "sort_order",
@@ -11388,7 +11395,7 @@ class VirtualNetworkClient(object):
             "compartmentId": compartment_id,
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
-            "vcnId": vcn_id,
+            "vcnId": kwargs.get("vcn_id", missing),
             "displayName": kwargs.get("display_name", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
@@ -11421,18 +11428,14 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 response_type="list[RouteTable]")
 
-    def list_security_lists(self, compartment_id, vcn_id, **kwargs):
+    def list_security_lists(self, compartment_id, **kwargs):
         """
         Lists the security lists in the specified VCN and compartment.
+        If the VCN ID is not provided, then the list includes the security lists from all VCNs in the specified compartment.
 
 
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
-
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-        :param str vcn_id: (required)
-            The `OCID`__ of the VCN.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -11451,6 +11454,11 @@ class VirtualNetworkClient(object):
             `List Pagination`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str vcn_id: (optional)
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -11497,6 +11505,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "limit",
             "page",
+            "vcn_id",
             "display_name",
             "sort_by",
             "sort_order",
@@ -11532,7 +11541,7 @@ class VirtualNetworkClient(object):
             "compartmentId": compartment_id,
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
-            "vcnId": vcn_id,
+            "vcnId": kwargs.get("vcn_id", missing),
             "displayName": kwargs.get("display_name", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
@@ -11784,18 +11793,14 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 response_type="list[Service]")
 
-    def list_subnets(self, compartment_id, vcn_id, **kwargs):
+    def list_subnets(self, compartment_id, **kwargs):
         """
         Lists the subnets in the specified VCN and the specified compartment.
+        If the VCN ID is not provided, then the list includes the subnets from all VCNs in the specified compartment.
 
 
         :param str compartment_id: (required)
             The `OCID`__ of the compartment.
-
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-        :param str vcn_id: (required)
-            The `OCID`__ of the VCN.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -11814,6 +11819,11 @@ class VirtualNetworkClient(object):
             `List Pagination`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str vcn_id: (optional)
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
             A filter to return only resources that match the given display name exactly.
@@ -11860,6 +11870,7 @@ class VirtualNetworkClient(object):
             "retry_strategy",
             "limit",
             "page",
+            "vcn_id",
             "display_name",
             "sort_by",
             "sort_order",
@@ -11895,7 +11906,7 @@ class VirtualNetworkClient(object):
             "compartmentId": compartment_id,
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
-            "vcnId": vcn_id,
+            "vcnId": kwargs.get("vcn_id", missing),
             "displayName": kwargs.get("display_name", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
