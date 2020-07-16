@@ -1,0 +1,8 @@
+languages:
+  oracle-python-sdk:
+    properties:
+      - originalName: "storageUsedInTBs"
+        mapping:
+          identifier: "storage_used_in_t_bs"
+        includes:
+          - BlockchainPlatform

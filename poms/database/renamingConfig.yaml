@@ -1,0 +1,37 @@
+languages:
+  oracle-python-sdk:
+    properties:
+      - originalName: "minMemoryPerNodeInGBs"
+        mapping:
+          identifier: "min_memory_per_node_in_g_bs"
+
+      - originalName: "availableDbNodeStorageInGBs"
+        mapping:
+          identifier: "available_db_node_storage_in_g_bs"
+
+      - originalName: "minDbNodeStoragePerNodeInGBs"
+        mapping:
+          identifier: "min_db_node_storage_per_node_in_g_bs"
+
+      - originalName: "availableDataStorageInTBs"
+        mapping:
+          identifier: "available_data_storage_in_t_bs"
+
+      - originalName: "minDataStorageInTBs"
+        mapping:
+          identifier: "min_data_storage_in_t_bs"
+
+        includes:
+          - DbSystemShapeSummary
+
+      - originalName: "maxDbNodeStorageInGBs"
+        mapping:
+          identifier: "max_db_node_storage_in_g_bs"
+
+      - originalName: "maxDataStorageInTBs"
+        mapping:
+          identifier: "max_data_storage_in_t_bs"
+
+        includes:
+          - ExadataInfrastructure
+          - ExadataInfrastructureSummary

@@ -1,0 +1,18 @@
+languages:
+  oracle-python-sdk:
+    properties:
+      - originalName: "maxReadInKBs"
+        mapping:
+          identifier: "max_read_in_k_bs"
+        includes:
+          - QueryDetails
+      - originalName: "maxStorageInGBs"
+        mapping:
+          identifier: "max_storage_in_g_bs"
+        includes:
+          - TableLimits
+      - originalName: "storageInGBs"
+        mapping:
+          identifier: "storage_in_g_bs"
+        includes:
+          - TableUsageSummary

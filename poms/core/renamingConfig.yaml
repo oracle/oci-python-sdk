@@ -1,0 +1,17 @@
+languages:
+  oracle-python-sdk:
+    properties:
+      - originalName: "minInGBs"
+        mapping:
+          identifier: "min_in_g_bs"
+
+      - originalName: "maxInGBs"
+        mapping:
+          identifier: "max_in_g_bs"
+
+      - originalName: "defaultPerOcpuInGBs"
+        mapping:
+          identifier: "default_per_ocpu_in_g_bs"
+
+        includes:
+          - ShapeMemoryOptions

@@ -133,6 +133,13 @@
           </filesets>
         </configuration>
       </plugin>
+      <plugin>
+            <groupId>com.oracle.bmc.sdk</groupId>
+            <artifactId>bmc-sdk-swagger-maven-plugin</artifactId>
+            <configuration>
+              <renamingConfigFile>${project.basedir}/renamingConfig.yaml</renamingConfigFile>
+            </configuration>
+      </plugin>
       <!-- Debug information-->
       <!--
             <plugin>

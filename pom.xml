@@ -15,7 +15,7 @@
     <feature-id-file>${project.basedir}/featureId.yaml</feature-id-file>
     <feature-id-dir>${project.basedir}/codegenConfig/featureIds</feature-id-dir>
     <inceptionYear>2016</inceptionYear>
-    <codegen-version>1.121-SNAPSHOT</codegen-version>
+    <codegen-version>1.123-SNAPSHOT</codegen-version>
     <codegen-language>oracle-python-sdk</codegen-language>
     <preprocessor-version>1.0.16</preprocessor-version>
     <oci.get.spec.artifact.plugin.version>1.0.16</oci.get.spec.artifact.plugin.version>
