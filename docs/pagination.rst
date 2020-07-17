@@ -19,4 +19,4 @@ As a convenience over manually writing pagination code, you can make use of the 
 * Eagerly load all results from a list call up to a given limit
 * Lazily load results (either all results, or up to a given limit) from a list call via a generator. These generators can yield either values/models or the raw response from calling the list operation
 
-For an example on how to use these functions, please check `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/pagination.py>`_.
+For an example on how to use these functions, please check `GitHub <https://github.com/oracle/oci-python-sdk/blob/master/examples/pagination.py>`_. More details about the API is `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/api/pagination.html>`_.

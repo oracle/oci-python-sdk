@@ -6,6 +6,10 @@ These are the current known issues for the Python SDK.
 
 UploadManager generates ssl3_write_pending error when a read timeout is set for the Object Storage client
 =========================================================================================================
+**Update:** With v2.18.0 we handle the object storage client with default timeout values (connect timeout = 10 secs and read timeout = 60 secs), by overwriting the timeout to `None` in the operations.
+
+PLEASE NOTE that the operations are NOT thread-safe, and you should provide the UploadManager class with its own Object Storage client that isn't used elsewhere.
+
 **Details:** UploadManager generates the following error when a read timeout is set for the Object Storage client.
 
 .. code-block:: python
@@ -36,3 +40,8 @@ Potential data corruption with Python SDK on binary upload (versions 2.8.0 and b
 **Impacted Versions:** v2.8.0 and below
 
 **Direct link to this issue:** `Potential data corruption with Python SDK on binary upload <https://github.com/oracle/oci-python-sdk/issues/203/>`_
+
+
+Default timeout not getting set in the clients (versions 2.17.2 and below)
+==========================================================================
+The default timeout values (connect timeout = 10 secs and read timeout = 60 secs) we not getting set in the clients and remained None (infinite timeout). This has been fixed in v2.18.0.

@@ -29,6 +29,7 @@ class UploadManager:
 
         PLEASE NOTE that the operations are NOT thread-safe, and you should provide the UploadManager class
         with its own Object Storage client that isn't used elsewhere.
+        For more information please see `Known Issues <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/known-issues.html>`_
 
         :param ObjectStorageClient object_storage_client:
             A configured object storage client to use for interacting with the Object Storage service.

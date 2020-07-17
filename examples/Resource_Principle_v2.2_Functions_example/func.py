@@ -23,7 +23,7 @@ def list_regions(client):
     return resp.data
 
 
-def handler(ctx, data: io.BytesIO = None):
+def handler(ctx, data: io.BytesIO = None):  # noqa: E999
     rpv2 = oci.auth.signers.get_resource_principals_signer()
     # Print the Resource Principal Security Token
     logging.getLogger().info("resource principle token:", rpv2.get_security_token())
