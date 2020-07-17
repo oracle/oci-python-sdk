@@ -69,7 +69,12 @@
 # - oci.secrets.SecretsClient
 # - oci.vault.VaultsClient
 # - oci.work_requests.WorkRequestClient
-# -
+# - oci.blockchain.BlockchainPlatformClient
+# - oci.data_integration.DataIntegrationClient
+# - oci.data_safe.DataSafeClient
+# - oci.ocvp.EsxiHostClient and oci.ocvp.SddcClient
+# - oci.usage_api.UsageapiClient
+#
 ##########################################################################
 from __future__ import print_function
 from showoci_data import ShowOCIData
@@ -81,7 +86,7 @@ import sys
 import argparse
 import datetime
 
-version = "20.07.14"
+version = "20.07.21"
 
 ##########################################################################
 # check OCI version
