@@ -29,6 +29,14 @@ class OceInstanceSummary(object):
     #: This constant has a value of "PRIVATE"
     INSTANCE_ACCESS_TYPE_PRIVATE = "PRIVATE"
 
+    #: A constant which can be used with the instance_license_type property of a OceInstanceSummary.
+    #: This constant has a value of "NEW"
+    INSTANCE_LICENSE_TYPE_NEW = "NEW"
+
+    #: A constant which can be used with the instance_license_type property of a OceInstanceSummary.
+    #: This constant has a value of "BYOL"
+    INSTANCE_LICENSE_TYPE_BYOL = "BYOL"
+
     #: A constant which can be used with the lifecycle_state property of a OceInstanceSummary.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -118,6 +126,12 @@ class OceInstanceSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type instance_access_type: str
 
+        :param instance_license_type:
+            The value to assign to the instance_license_type property of this OceInstanceSummary.
+            Allowed values for this property are: "NEW", "BYOL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type instance_license_type: str
+
         :param time_created:
             The value to assign to the time_created property of this OceInstanceSummary.
         :type time_created: datetime
@@ -164,6 +178,7 @@ class OceInstanceSummary(object):
             'upgrade_schedule': 'str',
             'waf_primary_domain': 'str',
             'instance_access_type': 'str',
+            'instance_license_type': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
@@ -188,6 +203,7 @@ class OceInstanceSummary(object):
             'upgrade_schedule': 'upgradeSchedule',
             'waf_primary_domain': 'wafPrimaryDomain',
             'instance_access_type': 'instanceAccessType',
+            'instance_license_type': 'instanceLicenseType',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
@@ -211,6 +227,7 @@ class OceInstanceSummary(object):
         self._upgrade_schedule = None
         self._waf_primary_domain = None
         self._instance_access_type = None
+        self._instance_license_type = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
@@ -568,6 +585,36 @@ class OceInstanceSummary(object):
         if not value_allowed_none_or_none_sentinel(instance_access_type, allowed_values):
             instance_access_type = 'UNKNOWN_ENUM_VALUE'
         self._instance_access_type = instance_access_type
+
+    @property
+    def instance_license_type(self):
+        """
+        Gets the instance_license_type of this OceInstanceSummary.
+        Flag indicating whether the instance license is new cloud or bring your own license
+
+        Allowed values for this property are: "NEW", "BYOL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The instance_license_type of this OceInstanceSummary.
+        :rtype: str
+        """
+        return self._instance_license_type
+
+    @instance_license_type.setter
+    def instance_license_type(self, instance_license_type):
+        """
+        Sets the instance_license_type of this OceInstanceSummary.
+        Flag indicating whether the instance license is new cloud or bring your own license
+
+
+        :param instance_license_type: The instance_license_type of this OceInstanceSummary.
+        :type: str
+        """
+        allowed_values = ["NEW", "BYOL"]
+        if not value_allowed_none_or_none_sentinel(instance_license_type, allowed_values):
+            instance_license_type = 'UNKNOWN_ENUM_VALUE'
+        self._instance_license_type = instance_license_type
 
     @property
     def time_created(self):
