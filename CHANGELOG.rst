@@ -4,12 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.18.1 - TBD
+2.18.1 - 2020-07-21
 ====================
 
 Added
 -----
-* TBD
+* Support for license types on instances in the Content and Experience service
+
+Fixed
+-----
+* Fixed a bug for Resource Principal authentication where RPST token was not getting refreshed correctly.
 
 ====================
 2.18.0 - 2020-07-14
