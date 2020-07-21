@@ -69,7 +69,7 @@ import cx_Oracle
 import requests
 
 
-version = "20.07.07"
+version = "20.07.21"
 usage_report_namespace = "bling"
 work_report_dir = os.curdir + "/work_report_dir"
 
@@ -1380,15 +1380,23 @@ def main_process():
         check_database_table_structure_price_list(connection, tenancy.name)
 
         ###############################
+        # enable hints
+        ###############################
+        sql = "ALTER SESSION SET OPTIMIZER_IGNORE_HINTS=FALSE"
+        cursor.execute(sql)
+        sql = "ALTER SESSION SET OPTIMIZER_IGNORE_PARALLEL_HINTS=FALSE"
+        cursor.execute(sql)
+
+        ###############################
         # fetch max file id processed
         # for usage and cost
         ###############################
         print("\nChecking Last Loaded File...")
-        sql = "select nvl(max(file_id),'0') as file_id from OCI_USAGE where to_char(TENANT_NAME)=:tenant_name"
+        sql = "select /*+ full(a) parallel(a,4) */ nvl(max(file_id),'0') as file_id from OCI_USAGE a where TENANT_NAME=:tenant_name"
         cursor.execute(sql, {"tenant_name": str(tenancy.name)})
         max_usage_file_id, = cursor.fetchone()
 
-        sql = "select nvl(max(file_id),'0') as file_id from OCI_COST where to_char(TENANT_NAME)=:tenant_name"
+        sql = "select /*+ full(a) parallel(a,4) */ nvl(max(file_id),'0') as file_id from OCI_COST a where TENANT_NAME=:tenant_name"
         cursor.execute(sql, {"tenant_name": str(tenancy.name)})
         max_cost_file_id, = cursor.fetchone()
 
