@@ -50,6 +50,7 @@ class MultipartObjectAssembler:
 
         PLEASE NOTE that the operations are NOT thread-safe, and you should provide the MultipartObjectAssembler class
         with its own Object Storage client that isn't used elsewhere.
+        For more information please see `Known Issues <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/known-issues.html>`_
 
         :param ObjectStorageClient object_storage_client:
             A configured Object Storage client.

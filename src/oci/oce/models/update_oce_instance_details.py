@@ -13,6 +13,14 @@ class UpdateOceInstanceDetails(object):
     The information to be updated.
     """
 
+    #: A constant which can be used with the instance_license_type property of a UpdateOceInstanceDetails.
+    #: This constant has a value of "NEW"
+    INSTANCE_LICENSE_TYPE_NEW = "NEW"
+
+    #: A constant which can be used with the instance_license_type property of a UpdateOceInstanceDetails.
+    #: This constant has a value of "BYOL"
+    INSTANCE_LICENSE_TYPE_BYOL = "BYOL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateOceInstanceDetails object with values from keyword arguments.
@@ -26,6 +34,11 @@ class UpdateOceInstanceDetails(object):
             The value to assign to the waf_primary_domain property of this UpdateOceInstanceDetails.
         :type waf_primary_domain: str
 
+        :param instance_license_type:
+            The value to assign to the instance_license_type property of this UpdateOceInstanceDetails.
+            Allowed values for this property are: "NEW", "BYOL"
+        :type instance_license_type: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateOceInstanceDetails.
         :type freeform_tags: dict(str, str)
@@ -38,6 +51,7 @@ class UpdateOceInstanceDetails(object):
         self.swagger_types = {
             'description': 'str',
             'waf_primary_domain': 'str',
+            'instance_license_type': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -45,12 +59,14 @@ class UpdateOceInstanceDetails(object):
         self.attribute_map = {
             'description': 'description',
             'waf_primary_domain': 'wafPrimaryDomain',
+            'instance_license_type': 'instanceLicenseType',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._description = None
         self._waf_primary_domain = None
+        self._instance_license_type = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -101,6 +117,38 @@ class UpdateOceInstanceDetails(object):
         :type: str
         """
         self._waf_primary_domain = waf_primary_domain
+
+    @property
+    def instance_license_type(self):
+        """
+        Gets the instance_license_type of this UpdateOceInstanceDetails.
+        Flag indicating whether the instance license is new cloud or bring your own license
+
+        Allowed values for this property are: "NEW", "BYOL"
+
+
+        :return: The instance_license_type of this UpdateOceInstanceDetails.
+        :rtype: str
+        """
+        return self._instance_license_type
+
+    @instance_license_type.setter
+    def instance_license_type(self, instance_license_type):
+        """
+        Sets the instance_license_type of this UpdateOceInstanceDetails.
+        Flag indicating whether the instance license is new cloud or bring your own license
+
+
+        :param instance_license_type: The instance_license_type of this UpdateOceInstanceDetails.
+        :type: str
+        """
+        allowed_values = ["NEW", "BYOL"]
+        if not value_allowed_none_or_none_sentinel(instance_license_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `instance_license_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._instance_license_type = instance_license_type
 
     @property
     def freeform_tags(self):

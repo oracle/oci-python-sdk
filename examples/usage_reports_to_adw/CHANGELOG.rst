@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.07.21 - 2020-07-21
+=====================
+* Added Full + Parallel scan when retrieving max cost and usage file
+
+=====================
 20.07.14 - 2020-07-14
 =====================
 * Support for Cost column changed - OCI amend the column billingUnitReadable to skuUnitDescription

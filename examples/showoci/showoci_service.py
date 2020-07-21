@@ -131,7 +131,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.14.0"
+    oci_compatible_version = "2.18.0"
 
     ##########################################################################
     # Global Constants
@@ -1769,7 +1769,7 @@ class ShowOCIService(object):
                 if self.flags.read_network:
 
                     # append the data
-                    network[self.C_NETWORK_LPG] += self.__load_core_network_lpg(virtual_network, compartments, vcns)
+                    network[self.C_NETWORK_LPG] += self.__load_core_network_lpg(virtual_network, compartments)
                     network[self.C_NETWORK_SGW] += self.__load_core_network_sgw(virtual_network, compartments)
                     network[self.C_NETWORK_NAT] += self.__load_core_network_nat(virtual_network, compartments)
                     network[self.C_NETWORK_DRG] += self.__load_core_network_drg(virtual_network, compartments)
@@ -1778,11 +1778,11 @@ class ShowOCIService(object):
                     network[self.C_NETWORK_IPS] += self.__load_core_network_ips(virtual_network, compartments)
                     network[self.C_NETWORK_RPC] += self.__load_core_network_rpc(virtual_network, compartments)
                     network[self.C_NETWORK_VC] += self.__load_core_network_vc(virtual_network, compartments)
-                    network[self.C_NETWORK_IGW] += self.__load_core_network_igw(virtual_network, compartments, vcns)
-                    network[self.C_NETWORK_SLIST] += self.__load_core_network_seclst(virtual_network, compartments, vcns)
-                    network[self.C_NETWORK_DHCP] += self.__load_core_network_dhcpop(virtual_network, compartments, vcns)
+                    network[self.C_NETWORK_IGW] += self.__load_core_network_igw(virtual_network, compartments)
+                    network[self.C_NETWORK_SLIST] += self.__load_core_network_seclst(virtual_network, compartments)
+                    network[self.C_NETWORK_DHCP] += self.__load_core_network_dhcpop(virtual_network, compartments)
 
-                    routes = self.__load_core_network_routet(virtual_network, compartments, vcns)
+                    routes = self.__load_core_network_routet(virtual_network, compartments)
                     network[self.C_NETWORK_ROUTE] += routes
                     network[self.C_NETWORK_PRIVATEIP] += self.__load_core_network_privateip(virtual_network, routes)
 
@@ -1862,7 +1862,7 @@ class ShowOCIService(object):
     # first, if igw found, return it - only one igw can be assigned to vcn
     # if not, scan all compartments
     ##########################################################################
-    def __load_core_network_igw(self, virtual_network, compartments, vcns):
+    def __load_core_network_igw(self, virtual_network, compartments):
 
         cnt = 0
         data = []
@@ -1872,71 +1872,34 @@ class ShowOCIService(object):
 
             self.__load_print_status("Internet Gateways")
 
-            # loop on all vcns - vcn is must parameter
-            for vcn in vcns:
-                print("+", end="")
-                foundIgw = False
-                warning_printed_for_vcn = False
+            for compartment in compartments:
+                print(".", end="")
 
-                # check if igw in the vcn compartment
                 igws = []
                 try:
                     igws = virtual_network.list_internet_gateways(
-                        vcn['compartment_id'], vcn['id'],
-                        lifecycle_state=oci.core.models.InternetGateway.LIFECYCLE_STATE_AVAILABLE
+                        compartment['id'],
+                        lifecycle_state=oci.core.models.InternetGateway.LIFECYCLE_STATE_AVAILABLE,
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                     ).data
 
                 except oci.exceptions.ServiceError as e:
                     if self.__check_service_error(e.code):
-                        if not warning_printed_for_vcn:
-                            self.__load_print_auth_warning()
-                            warning_printed_for_vcn = True
-                    else:
-                        raise
+                        self.__load_print_auth_warning()
+                    raise
 
-                # igw = oci.core.models.InternetGateway()
                 for igw in igws:
-                    val = {'id': str(igw.id), 'vcn_id': str(igw.vcn_id), 'name': str(igw.display_name),
-                           'time_created': str(igw.time_created), 'compartment_name': vcn['compartment_name'],
-                           'compartment_id': vcn['compartment_id'], 'region_name': str(self.config['region'])}
+                    val = {'id': str(igw.id),
+                           'vcn_id': str(igw.vcn_id),
+                           'name': str(igw.display_name),
+                           'time_created': str(igw.time_created),
+                           'compartment_name': str(compartment['name']),
+                           'compartment_id': str(compartment['id']),
+                           'region_name': str(self.config['region'])
+                           }
+
                     data.append(val)
-                    foundIgw = True
                     cnt += 1
-
-                # if found continue to next vcn and skip scanning all compartments
-                if foundIgw:
-                    continue
-
-                # if not found before - loop on all compartments
-                for compartment in compartments:
-
-                    igws = []
-                    try:
-                        igws = virtual_network.list_internet_gateways(
-                            compartment['id'], vcn['id'],
-                            lifecycle_state=oci.core.models.InternetGateway.LIFECYCLE_STATE_AVAILABLE,
-                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
-                        ).data
-
-                    except oci.exceptions.ServiceError as e:
-                        if self.__check_service_error(e.code):
-                            if not warning_printed_for_vcn:
-                                self.__load_print_auth_warning()
-                                warning_printed_for_vcn = True
-                            continue
-                        raise
-
-                    for igw in igws:
-                        val = {'id': str(igw.id), 'vcn_id': str(igw.vcn_id), 'name': str(igw.display_name),
-                               'time_created': str(igw.time_created), 'compartment_name': str(compartment['name']),
-                               'compartment_id': str(compartment['id']), 'region_name': str(self.config['region'])}
-                        data.append(val)
-                        foundIgw = True
-                        cnt += 1
-
-                    # if found in this compartments, continue to next vcn
-                    if foundIgw:
-                        break
 
             self.__load_print_cnt(cnt, start_time)
             return data
@@ -1950,7 +1913,7 @@ class ShowOCIService(object):
     ##########################################################################
     # data network lpg
     ##########################################################################
-    def __load_core_network_lpg(self, virtual_network, compartments, vcns):
+    def __load_core_network_lpg(self, virtual_network, compartments):
 
         data = []
         cnt = 0
@@ -1960,54 +1923,47 @@ class ShowOCIService(object):
 
             self.__load_print_status("Local Peer GWs")
 
-            # loop on all vcns - vcn is must parameter
-            for vcn in vcns:
-                print("+", end="")
-                warning_printed_for_vcn = False
+            # Loop on all compartments
+            for compartment in compartments:
+                print(".", end="")
 
-                # iLoop on all compartments
-                for compartment in compartments:
-                    local_peering_gateways = []
-                    try:
-                        local_peering_gateways = virtual_network.list_local_peering_gateways(
-                            compartment['id'],
-                            vcn['id'],
-                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
-                        ).data
+                local_peering_gateways = []
+                try:
+                    local_peering_gateways = virtual_network.list_local_peering_gateways(
+                        compartment['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
 
-                    except oci.exceptions.ServiceError as e:
-                        if self.__check_service_error(e.code):
-                            if not warning_printed_for_vcn:
-                                self.__load_print_auth_warning()
-                                warning_printed_for_vcn = True
-                            continue
-                        raise
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                    raise
 
-                    # lpg = oci.core.models.LocalPeeringGateway()
-                    for lpg in local_peering_gateways:
-                        if lpg.lifecycle_state != oci.core.models.LocalPeeringGateway.LIFECYCLE_STATE_AVAILABLE:
-                            continue
+                # lpg = oci.core.models.LocalPeeringGateway()
+                for lpg in local_peering_gateways:
+                    if lpg.lifecycle_state != oci.core.models.LocalPeeringGateway.LIFECYCLE_STATE_AVAILABLE:
+                        continue
 
-                        # get the cidr block of the peering
-                        cidr = "" if lpg.peer_advertised_cidr is None else " - " + str(lpg.peer_advertised_cidr)
+                    # get the cidr block of the peering
+                    cidr = "" if lpg.peer_advertised_cidr is None else " - " + str(lpg.peer_advertised_cidr)
 
-                        # add lpg info to data
-                        val = {'id': str(lpg.id),
-                               'vcn_id': str(lpg.vcn_id),
-                               'name': str(lpg.peering_status).ljust(8) + " - " + str(lpg.display_name) + str(cidr),
-                               'time_created': str(lpg.time_created),
-                               'display_name': str(lpg.display_name),
-                               'peer_advertised_cidr': str(lpg.peer_advertised_cidr),
-                               'is_cross_tenancy_peering': str(lpg.is_cross_tenancy_peering),
-                               'peer_advertised_cidr_details': lpg.peer_advertised_cidr_details,
-                               'route_table_id': str(lpg.route_table_id),
-                               'compartment_name': str(compartment['name']),
-                               'compartment_id': str(compartment['id']),
-                               'defined_tags': [] if lpg.defined_tags is None else lpg.defined_tags,
-                               'freeform_tags': [] if lpg.freeform_tags is None else lpg.freeform_tags,
-                               'region_name': str(self.config['region'])}
-                        data.append(val)
-                        cnt += 1
+                    # add lpg info to data
+                    val = {'id': str(lpg.id),
+                           'vcn_id': str(lpg.vcn_id),
+                           'name': str(lpg.peering_status).ljust(8) + " - " + str(lpg.display_name) + str(cidr),
+                           'time_created': str(lpg.time_created),
+                           'display_name': str(lpg.display_name),
+                           'peer_advertised_cidr': str(lpg.peer_advertised_cidr),
+                           'is_cross_tenancy_peering': str(lpg.is_cross_tenancy_peering),
+                           'peer_advertised_cidr_details': lpg.peer_advertised_cidr_details,
+                           'route_table_id': str(lpg.route_table_id),
+                           'compartment_name': str(compartment['name']),
+                           'compartment_id': str(compartment['id']),
+                           'defined_tags': [] if lpg.defined_tags is None else lpg.defined_tags,
+                           'freeform_tags': [] if lpg.freeform_tags is None else lpg.freeform_tags,
+                           'region_name': str(self.config['region'])}
+                    data.append(val)
+                    cnt += 1
 
             self.__load_print_cnt(cnt, start_time)
             return data
@@ -2083,7 +2039,7 @@ class ShowOCIService(object):
     ##########################################################################
     # data network read route
     ##########################################################################
-    def __load_core_network_routet(self, virtual_network, compartments, vcns):
+    def __load_core_network_routet(self, virtual_network, compartments):
 
         data = []
         cnt = 0
@@ -2093,41 +2049,37 @@ class ShowOCIService(object):
 
             self.__load_print_status("Route Tables")
 
-            # loop on all vcns - vcn is must parameter
-            for vcn in vcns:
-                print("+", end="")
+            # Loop on all compartments
+            for compartment in compartments:
+                print(".", end="")
 
-                # iLoop on all compartments
-                for compartment in compartments:
+                route_tables = []
+                try:
+                    route_tables = oci.pagination.list_call_get_all_results(
+                        virtual_network.list_route_tables,
+                        compartment['id'],
+                        lifecycle_state=oci.core.models.RouteTable.LIFECYCLE_STATE_AVAILABLE,
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
 
-                    route_tables = []
-                    try:
-                        route_tables = oci.pagination.list_call_get_all_results(
-                            virtual_network.list_route_tables,
-                            compartment['id'],
-                            vcn['id'],
-                            lifecycle_state=oci.core.models.RouteTable.LIFECYCLE_STATE_AVAILABLE,
-                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
-                        ).data
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
 
-                    except oci.exceptions.ServiceError as e:
-                        if self.__check_service_error(e.code):
-                            self.__load_print_auth_warning()
-                            continue
-                        raise
-
-                    # loop on the routes
-                    # rt = oci.core.models.RouteTable()
-                    for rt in route_tables:
-                        val = {'id': str(rt.id), 'vcn_id': str(rt.vcn_id), 'name': str(rt.display_name),
-                               'time_created': str(rt.time_created),
-                               'route_rules': [{'destination': str(es.destination), 'network_entity_id': str(es.network_entity_id)} for es in rt.route_rules],
-                               'compartment_name': str(compartment['name']),
-                               'defined_tags': [] if rt.defined_tags is None else rt.defined_tags,
-                               'freeform_tags': [] if rt.freeform_tags is None else rt.freeform_tags,
-                               'compartment_id': str(compartment['id']), 'region_name': str(self.config['region'])}
-                        data.append(val)
-                        cnt += 1
+                # loop on the routes
+                # rt = oci.core.models.RouteTable()
+                for rt in route_tables:
+                    val = {'id': str(rt.id), 'vcn_id': str(rt.vcn_id), 'name': str(rt.display_name),
+                           'time_created': str(rt.time_created),
+                           'route_rules': [{'destination': str(es.destination), 'network_entity_id': str(es.network_entity_id)} for es in rt.route_rules],
+                           'compartment_name': str(compartment['name']),
+                           'defined_tags': [] if rt.defined_tags is None else rt.defined_tags,
+                           'freeform_tags': [] if rt.freeform_tags is None else rt.freeform_tags,
+                           'compartment_id': str(compartment['id']), 'region_name': str(self.config['region'])}
+                    data.append(val)
+                    cnt += 1
 
             self.__load_print_cnt(cnt, start_time)
             return data
@@ -2175,7 +2127,7 @@ class ShowOCIService(object):
     ##########################################################################
     # data network read dhcp options
     ##########################################################################
-    def __load_core_network_dhcpop(self, virtual_network, compartments, vcns):
+    def __load_core_network_dhcpop(self, virtual_network, compartments):
 
         data = []
         cnt = 0
@@ -2185,47 +2137,43 @@ class ShowOCIService(object):
 
             self.__load_print_status("DHCP Options")
 
-            # loop on all vcns - vcn is must parameter
-            for vcn in vcns:
-                print("+", end="")
+            # Loop on all compartments
+            for compartment in compartments:
+                print(".", end="")
 
-                # iLoop on all compartments
-                for compartment in compartments:
+                dhcp_options = []
+                try:
+                    dhcp_options = oci.pagination.list_call_get_all_results(
+                        virtual_network.list_dhcp_options,
+                        compartment['id'],
+                        lifecycle_state=oci.core.models.DhcpOptions.LIFECYCLE_STATE_AVAILABLE,
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
 
-                    dhcp_options = []
-                    try:
-                        dhcp_options = oci.pagination.list_call_get_all_results(
-                            virtual_network.list_dhcp_options,
-                            compartment['id'],
-                            vcn['id'],
-                            lifecycle_state=oci.core.models.DhcpOptions.LIFECYCLE_STATE_AVAILABLE,
-                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
 
-                    except oci.exceptions.ServiceError as e:
-                        if self.__check_service_error(e.code):
-                            self.__load_print_auth_warning()
-                            continue
-                        raise
+                # loop on the routes
+                # dhcp = oci.core.models.DhcpOptions()
+                for dhcp in dhcp_options:
 
-                    # loop on the routes
-                    # dhcp = oci.core.models.DhcpOptions()
-                    for dhcp in dhcp_options:
+                    # Analyzing DHCP Option
+                    dhcp_opt = []
+                    if dhcp.options is not None:
+                        for opt in dhcp.options:
+                            dhcp_opt.append(self.__load_core_network_dhcpop_opt(opt))
 
-                        # Analyzing DHCP Option
-                        dhcp_opt = []
-                        if dhcp.options is not None:
-                            for opt in dhcp.options:
-                                dhcp_opt.append(self.__load_core_network_dhcpop_opt(opt))
-
-                        # add route info to data
-                        val = {'id': str(dhcp.id), 'vcn_id': str(dhcp.vcn_id), 'name': str(dhcp.display_name),
-                               'time_created': str(dhcp.time_created), 'options': dhcp_opt,
-                               'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
-                               'defined_tags': [] if dhcp.defined_tags is None else dhcp.defined_tags,
-                               'freeform_tags': [] if dhcp.freeform_tags is None else dhcp.freeform_tags,
-                               'region_name': str(self.config['region'])}
-                        data.append(val)
-                        cnt += 1
+                    # add route info to data
+                    val = {'id': str(dhcp.id), 'vcn_id': str(dhcp.vcn_id), 'name': str(dhcp.display_name),
+                           'time_created': str(dhcp.time_created), 'options': dhcp_opt,
+                           'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                           'defined_tags': [] if dhcp.defined_tags is None else dhcp.defined_tags,
+                           'freeform_tags': [] if dhcp.freeform_tags is None else dhcp.freeform_tags,
+                           'region_name': str(self.config['region'])}
+                    data.append(val)
+                    cnt += 1
 
             self.__load_print_cnt(cnt, start_time)
             return data
@@ -2393,7 +2341,7 @@ class ShowOCIService(object):
     ##########################################################################
     # data network read security list
     ##########################################################################
-    def __load_core_network_seclst(self, virtual_network, compartments, vcns):
+    def __load_core_network_seclst(self, virtual_network, compartments):
 
         data = []
         cnt = 0
@@ -2403,54 +2351,50 @@ class ShowOCIService(object):
 
             self.__load_print_status("Security Lists")
 
-            # loop on all vcns - vcn is must parameter
-            for vcn in vcns:
-                print("+", end="")
+            # Loop on all compartments
+            for compartment in compartments:
+                print(".", end="")
 
-                # iLoop on all compartments
-                for compartment in compartments:
+                sec_lists = []
+                try:
+                    sec_lists = oci.pagination.list_call_get_all_results(
+                        virtual_network.list_security_lists,
+                        compartment['id'],
+                        lifecycle_state=oci.core.models.SecurityList.LIFECYCLE_STATE_AVAILABLE,
+                        sort_by="DISPLAYNAME",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
 
-                    sec_lists = []
-                    try:
-                        sec_lists = oci.pagination.list_call_get_all_results(
-                            virtual_network.list_security_lists,
-                            compartment['id'],
-                            vcn['id'],
-                            lifecycle_state=oci.core.models.SecurityList.LIFECYCLE_STATE_AVAILABLE,
-                            sort_by="DISPLAYNAME",
-                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
-                        ).data
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
 
-                    except oci.exceptions.ServiceError as e:
-                        if self.__check_service_error(e.code):
-                            self.__load_print_auth_warning()
-                            continue
-                        raise
+                # loop on the sec lists
+                # sl = oci.core.models.SecurityList
+                for sl in sec_lists:
 
-                    # loop on the sec lists
-                    # sl = oci.core.models.SecurityList
-                    for sl in sec_lists:
+                    # Sec Rules analyzer
+                    sec_rules = []
 
-                        # Sec Rules analyzer
-                        sec_rules = []
+                    for sli in sl.ingress_security_rules:
+                        sec_rules.append(self.__load_core_network_seclst_rule("Ingress", sli))
 
-                        for sli in sl.ingress_security_rules:
-                            sec_rules.append(self.__load_core_network_seclst_rule("Ingress", sli))
+                    for sle in sl.egress_security_rules:
+                        sec_rules.append(self.__load_core_network_seclst_rule("Egress", sle))
 
-                        for sle in sl.egress_security_rules:
-                            sec_rules.append(self.__load_core_network_seclst_rule("Egress", sle))
-
-                        # Add info
-                        val = {'id': str(sl.id), 'vcn_id': str(sl.vcn_id), 'name': str(sl.display_name),
-                               'time_created': str(sl.time_created),
-                               'sec_rules': sec_rules,
-                               'compartment_name': str(compartment['name']),
-                               'compartment_id': str(compartment['id']),
-                               'defined_tags': [] if sl.defined_tags is None else sl.defined_tags,
-                               'freeform_tags': [] if sl.freeform_tags is None else sl.freeform_tags,
-                               'region_name': str(self.config['region'])}
-                        data.append(val)
-                        cnt += 1
+                    # Add info
+                    val = {'id': str(sl.id), 'vcn_id': str(sl.vcn_id), 'name': str(sl.display_name),
+                           'time_created': str(sl.time_created),
+                           'sec_rules': sec_rules,
+                           'compartment_name': str(compartment['name']),
+                           'compartment_id': str(compartment['id']),
+                           'defined_tags': [] if sl.defined_tags is None else sl.defined_tags,
+                           'freeform_tags': [] if sl.freeform_tags is None else sl.freeform_tags,
+                           'region_name': str(self.config['region'])}
+                    data.append(val)
+                    cnt += 1
 
             self.__load_print_cnt(cnt, start_time)
             return data
@@ -2732,50 +2676,58 @@ class ShowOCIService(object):
 
             self.__load_print_status("Subnets")
 
-            # loop on all vcns - vcn is must parameter
-            for vcn in vcns:
-                print("+", end="")
+            # Loop on all compartments
+            for compartment in compartments:
+                print(".", end="")
 
-                # iLoop on all compartments
-                for compartment in compartments:
+                subnets = []
+                try:
+                    subnets = oci.pagination.list_call_get_all_results(
+                        virtual_network.list_subnets,
+                        compartment['id'],
+                        lifecycle_state=oci.core.models.Subnet.LIFECYCLE_STATE_AVAILABLE,
+                        sort_by="DISPLAYNAME",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
 
-                    subnets = []
-                    try:
-                        subnets = oci.pagination.list_call_get_all_results(
-                            virtual_network.list_subnets,
-                            compartment['id'],
-                            vcn['id'],
-                            lifecycle_state=oci.core.models.Subnet.LIFECYCLE_STATE_AVAILABLE,
-                            sort_by="DISPLAYNAME",
-                            retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
-                        ).data
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
 
-                    except oci.exceptions.ServiceError as e:
-                        if self.__check_service_error(e.code):
-                            self.__load_print_auth_warning()
-                            continue
-                        raise
+                # loop on the subnet
+                # subnet = oci.core.models.Subnet.
+                for subnet in subnets:
+                    availability_domain = (str(subnet.availability_domain) if str(subnet.availability_domain) != "None" else "Regional")
 
-                    # loop on the subnet
-                    # subnet = oci.core.models.Subnet.
-                    for subnet in subnets:
-                        availability_domain = (str(subnet.availability_domain) if str(subnet.availability_domain) != "None" else "Regional")
-                        val = {'id': str(subnet.id), 'vcn_id': str(subnet.vcn_id), 'vcn_name': vcn['display_name'], 'vcn_cidr': vcn['cidr_block'],
-                               'name': str(subnet.display_name),
-                               'cidr_block': str(subnet.cidr_block),
-                               'subnet': (str(subnet.cidr_block) + "  " + availability_domain + (" (Private) " if subnet.prohibit_public_ip_on_vnic else " (Public)")),
-                               'availability_domain': availability_domain,
-                               'public_private': ("Private" if subnet.prohibit_public_ip_on_vnic else "Public"),
-                               'time_created': str(subnet.time_created),
-                               'security_list_ids': [str(es) for es in subnet.security_list_ids],
-                               'dhcp_options_id': str(subnet.dhcp_options_id),
-                               'route_table_id': str(subnet.route_table_id), 'dns_label': str(subnet.dns_label),
-                               'defined_tags': [] if subnet.defined_tags is None else subnet.defined_tags,
-                               'freeform_tags': [] if subnet.freeform_tags is None else subnet.freeform_tags,
-                               'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
-                               'region_name': str(self.config['region'])}
-                        data.append(val)
-                        cnt += 1
+                    val = {'id': str(subnet.id),
+                           'vcn_id': str(subnet.vcn_id),
+                           'vcn_name': "",
+                           'vcn_cidr': "",
+                           'name': str(subnet.display_name),
+                           'cidr_block': str(subnet.cidr_block),
+                           'subnet': (str(subnet.cidr_block) + "  " + availability_domain + (" (Private) " if subnet.prohibit_public_ip_on_vnic else " (Public)")),
+                           'availability_domain': availability_domain,
+                           'public_private': ("Private" if subnet.prohibit_public_ip_on_vnic else "Public"),
+                           'time_created': str(subnet.time_created),
+                           'security_list_ids': [str(es) for es in subnet.security_list_ids],
+                           'dhcp_options_id': str(subnet.dhcp_options_id),
+                           'route_table_id': str(subnet.route_table_id), 'dns_label': str(subnet.dns_label),
+                           'defined_tags': [] if subnet.defined_tags is None else subnet.defined_tags,
+                           'freeform_tags': [] if subnet.freeform_tags is None else subnet.freeform_tags,
+                           'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
+                           'region_name': str(self.config['region'])
+                           }
+
+                    # find vcn
+                    for vcn in vcns:
+                        if str(subnet.vcn_id) == vcn['id']:
+                            val['vcn_name'] = vcn['display_name']
+                            val['vcn_cidr'] = vcn['cidr_block']
+
+                    data.append(val)
+                    cnt += 1
 
             self.__load_print_cnt(cnt, start_time)
             return data
@@ -6152,7 +6104,7 @@ class ShowOCIService(object):
 
             # dg = oci.database.models.DataGuardAssociationSummary
             for dg in dgs:
-                if dg.lifecycle_state == oci.database.models.DataGuardAssociationSummary.LIFECYCLE_STATE_TERMINATED or dg.lifecycle_state == oci.database.models.DataGuardAssociationSummary.LIFECYCLE_STATE_FAILED:
+                if not dg.peer_database_id or dg.lifecycle_state == oci.database.models.DataGuardAssociationSummary.LIFECYCLE_STATE_TERMINATED or dg.lifecycle_state == oci.database.models.DataGuardAssociationSummary.LIFECYCLE_STATE_FAILED:
                     continue
 
                 val = ({'id': str(dg.id),
@@ -6175,9 +6127,9 @@ class ShowOCIService(object):
                     dbsystem = database_client.get_db_system(dg.peer_db_system_id).data
                     if database and dbsystem:
                         val['db_name'] = str(dbsystem.display_name) + ":" + str(database.db_unique_name)
-                except oci.exceptions.ServiceError as e:
-                    if not self.__check_service_error(e.code):
-                        raise
+                except Exception:
+                    # incase error use ocid
+                    val['db_name'] = str(dg.peer_db_system_id)
 
                 # add the data
                 data.append(val)

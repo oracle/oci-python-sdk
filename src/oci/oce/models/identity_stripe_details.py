@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class IdentityStripeDetails(object):
     """
-    Identity Stripe
+    Details of the identity stripe used for OceInstance
     """
 
     def __init__(self, **kwargs):
