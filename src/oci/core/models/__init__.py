@@ -24,6 +24,7 @@ from .attach_service_determined_volume_details import AttachServiceDeterminedVol
 from .attach_vnic_details import AttachVnicDetails
 from .attach_volume_details import AttachVolumeDetails
 from .bgp_session_info import BgpSessionInfo
+from .boolean_image_capability_schema_descriptor import BooleanImageCapabilitySchemaDescriptor
 from .boot_volume import BootVolume
 from .boot_volume_attachment import BootVolumeAttachment
 from .boot_volume_backup import BootVolumeBackup
@@ -37,6 +38,7 @@ from .capture_console_history_details import CaptureConsoleHistoryDetails
 from .change_boot_volume_backup_compartment_details import ChangeBootVolumeBackupCompartmentDetails
 from .change_boot_volume_compartment_details import ChangeBootVolumeCompartmentDetails
 from .change_cluster_network_compartment_details import ChangeClusterNetworkCompartmentDetails
+from .change_compute_image_capability_schema_compartment_details import ChangeComputeImageCapabilitySchemaCompartmentDetails
 from .change_cpe_compartment_details import ChangeCpeCompartmentDetails
 from .change_cross_connect_compartment_details import ChangeCrossConnectCompartmentDetails
 from .change_cross_connect_group_compartment_details import ChangeCrossConnectGroupCompartmentDetails
@@ -68,6 +70,12 @@ from .change_volume_group_compartment_details import ChangeVolumeGroupCompartmen
 from .cluster_network import ClusterNetwork
 from .cluster_network_placement_configuration_details import ClusterNetworkPlacementConfigurationDetails
 from .cluster_network_summary import ClusterNetworkSummary
+from .compute_global_image_capability_schema import ComputeGlobalImageCapabilitySchema
+from .compute_global_image_capability_schema_summary import ComputeGlobalImageCapabilitySchemaSummary
+from .compute_global_image_capability_schema_version import ComputeGlobalImageCapabilitySchemaVersion
+from .compute_global_image_capability_schema_version_summary import ComputeGlobalImageCapabilitySchemaVersionSummary
+from .compute_image_capability_schema import ComputeImageCapabilitySchema
+from .compute_image_capability_schema_summary import ComputeImageCapabilitySchemaSummary
 from .compute_instance_details import ComputeInstanceDetails
 from .connect_local_peering_gateways_details import ConnectLocalPeeringGatewaysDetails
 from .connect_remote_peering_connections_details import ConnectRemotePeeringConnectionsDetails
@@ -85,6 +93,7 @@ from .create_boot_volume_backup_details import CreateBootVolumeBackupDetails
 from .create_boot_volume_details import CreateBootVolumeDetails
 from .create_cluster_network_details import CreateClusterNetworkDetails
 from .create_cluster_network_instance_pool_details import CreateClusterNetworkInstancePoolDetails
+from .create_compute_image_capability_schema_details import CreateComputeImageCapabilitySchemaDetails
 from .create_cpe_details import CreateCpeDetails
 from .create_cross_connect_details import CreateCrossConnectDetails
 from .create_cross_connect_group_details import CreateCrossConnectGroupDetails
@@ -148,6 +157,8 @@ from .drg_attachment import DrgAttachment
 from .drg_redundancy_status import DrgRedundancyStatus
 from .egress_security_rule import EgressSecurityRule
 from .emulated_volume_attachment import EmulatedVolumeAttachment
+from .enum_integer_image_capability_descriptor import EnumIntegerImageCapabilityDescriptor
+from .enum_string_image_capability_schema_descriptor import EnumStringImageCapabilitySchemaDescriptor
 from .export_image_details import ExportImageDetails
 from .export_image_via_object_storage_tuple_details import ExportImageViaObjectStorageTupleDetails
 from .export_image_via_object_storage_uri_details import ExportImageViaObjectStorageUriDetails
@@ -163,6 +174,7 @@ from .ip_sec_connection_tunnel_shared_secret import IPSecConnectionTunnelSharedS
 from .i_scsi_volume_attachment import IScsiVolumeAttachment
 from .icmp_options import IcmpOptions
 from .image import Image
+from .image_capability_schema_descriptor import ImageCapabilitySchemaDescriptor
 from .image_ocpu_constraints import ImageOcpuConstraints
 from .image_shape_compatibility_entry import ImageShapeCompatibilityEntry
 from .image_shape_compatibility_summary import ImageShapeCompatibilitySummary
@@ -247,6 +259,7 @@ from .update_boot_volume_backup_details import UpdateBootVolumeBackupDetails
 from .update_boot_volume_details import UpdateBootVolumeDetails
 from .update_boot_volume_kms_key_details import UpdateBootVolumeKmsKeyDetails
 from .update_cluster_network_details import UpdateClusterNetworkDetails
+from .update_compute_image_capability_schema_details import UpdateComputeImageCapabilitySchemaDetails
 from .update_console_history_details import UpdateConsoleHistoryDetails
 from .update_cpe_details import UpdateCpeDetails
 from .update_cross_connect_details import UpdateCrossConnectDetails
@@ -268,6 +281,7 @@ from .update_instance_pool_placement_configuration_details import UpdateInstance
 from .update_instance_shape_config_details import UpdateInstanceShapeConfigDetails
 from .update_internet_gateway_details import UpdateInternetGatewayDetails
 from .update_ipv6_details import UpdateIpv6Details
+from .update_launch_options import UpdateLaunchOptions
 from .update_local_peering_gateway_details import UpdateLocalPeeringGatewayDetails
 from .update_nat_gateway_details import UpdateNatGatewayDetails
 from .update_network_security_group_details import UpdateNetworkSecurityGroupDetails
@@ -338,6 +352,7 @@ core_type_mapping = {
     "AttachVnicDetails": AttachVnicDetails,
     "AttachVolumeDetails": AttachVolumeDetails,
     "BgpSessionInfo": BgpSessionInfo,
+    "BooleanImageCapabilitySchemaDescriptor": BooleanImageCapabilitySchemaDescriptor,
     "BootVolume": BootVolume,
     "BootVolumeAttachment": BootVolumeAttachment,
     "BootVolumeBackup": BootVolumeBackup,
@@ -351,6 +366,7 @@ core_type_mapping = {
     "ChangeBootVolumeBackupCompartmentDetails": ChangeBootVolumeBackupCompartmentDetails,
     "ChangeBootVolumeCompartmentDetails": ChangeBootVolumeCompartmentDetails,
     "ChangeClusterNetworkCompartmentDetails": ChangeClusterNetworkCompartmentDetails,
+    "ChangeComputeImageCapabilitySchemaCompartmentDetails": ChangeComputeImageCapabilitySchemaCompartmentDetails,
     "ChangeCpeCompartmentDetails": ChangeCpeCompartmentDetails,
     "ChangeCrossConnectCompartmentDetails": ChangeCrossConnectCompartmentDetails,
     "ChangeCrossConnectGroupCompartmentDetails": ChangeCrossConnectGroupCompartmentDetails,
@@ -382,6 +398,12 @@ core_type_mapping = {
     "ClusterNetwork": ClusterNetwork,
     "ClusterNetworkPlacementConfigurationDetails": ClusterNetworkPlacementConfigurationDetails,
     "ClusterNetworkSummary": ClusterNetworkSummary,
+    "ComputeGlobalImageCapabilitySchema": ComputeGlobalImageCapabilitySchema,
+    "ComputeGlobalImageCapabilitySchemaSummary": ComputeGlobalImageCapabilitySchemaSummary,
+    "ComputeGlobalImageCapabilitySchemaVersion": ComputeGlobalImageCapabilitySchemaVersion,
+    "ComputeGlobalImageCapabilitySchemaVersionSummary": ComputeGlobalImageCapabilitySchemaVersionSummary,
+    "ComputeImageCapabilitySchema": ComputeImageCapabilitySchema,
+    "ComputeImageCapabilitySchemaSummary": ComputeImageCapabilitySchemaSummary,
     "ComputeInstanceDetails": ComputeInstanceDetails,
     "ConnectLocalPeeringGatewaysDetails": ConnectLocalPeeringGatewaysDetails,
     "ConnectRemotePeeringConnectionsDetails": ConnectRemotePeeringConnectionsDetails,
@@ -399,6 +421,7 @@ core_type_mapping = {
     "CreateBootVolumeDetails": CreateBootVolumeDetails,
     "CreateClusterNetworkDetails": CreateClusterNetworkDetails,
     "CreateClusterNetworkInstancePoolDetails": CreateClusterNetworkInstancePoolDetails,
+    "CreateComputeImageCapabilitySchemaDetails": CreateComputeImageCapabilitySchemaDetails,
     "CreateCpeDetails": CreateCpeDetails,
     "CreateCrossConnectDetails": CreateCrossConnectDetails,
     "CreateCrossConnectGroupDetails": CreateCrossConnectGroupDetails,
@@ -462,6 +485,8 @@ core_type_mapping = {
     "DrgRedundancyStatus": DrgRedundancyStatus,
     "EgressSecurityRule": EgressSecurityRule,
     "EmulatedVolumeAttachment": EmulatedVolumeAttachment,
+    "EnumIntegerImageCapabilityDescriptor": EnumIntegerImageCapabilityDescriptor,
+    "EnumStringImageCapabilitySchemaDescriptor": EnumStringImageCapabilitySchemaDescriptor,
     "ExportImageDetails": ExportImageDetails,
     "ExportImageViaObjectStorageTupleDetails": ExportImageViaObjectStorageTupleDetails,
     "ExportImageViaObjectStorageUriDetails": ExportImageViaObjectStorageUriDetails,
@@ -477,6 +502,7 @@ core_type_mapping = {
     "IScsiVolumeAttachment": IScsiVolumeAttachment,
     "IcmpOptions": IcmpOptions,
     "Image": Image,
+    "ImageCapabilitySchemaDescriptor": ImageCapabilitySchemaDescriptor,
     "ImageOcpuConstraints": ImageOcpuConstraints,
     "ImageShapeCompatibilityEntry": ImageShapeCompatibilityEntry,
     "ImageShapeCompatibilitySummary": ImageShapeCompatibilitySummary,
@@ -561,6 +587,7 @@ core_type_mapping = {
     "UpdateBootVolumeDetails": UpdateBootVolumeDetails,
     "UpdateBootVolumeKmsKeyDetails": UpdateBootVolumeKmsKeyDetails,
     "UpdateClusterNetworkDetails": UpdateClusterNetworkDetails,
+    "UpdateComputeImageCapabilitySchemaDetails": UpdateComputeImageCapabilitySchemaDetails,
     "UpdateConsoleHistoryDetails": UpdateConsoleHistoryDetails,
     "UpdateCpeDetails": UpdateCpeDetails,
     "UpdateCrossConnectDetails": UpdateCrossConnectDetails,
@@ -582,6 +609,7 @@ core_type_mapping = {
     "UpdateInstanceShapeConfigDetails": UpdateInstanceShapeConfigDetails,
     "UpdateInternetGatewayDetails": UpdateInternetGatewayDetails,
     "UpdateIpv6Details": UpdateIpv6Details,
+    "UpdateLaunchOptions": UpdateLaunchOptions,
     "UpdateLocalPeeringGatewayDetails": UpdateLocalPeeringGatewayDetails,
     "UpdateNatGatewayDetails": UpdateNatGatewayDetails,
     "UpdateNetworkSecurityGroupDetails": UpdateNetworkSecurityGroupDetails,

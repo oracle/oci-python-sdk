@@ -66,6 +66,10 @@ class CreateVolumeDetails(object):
             The value to assign to the volume_backup_id property of this CreateVolumeDetails.
         :type volume_backup_id: str
 
+        :param is_auto_tune_enabled:
+            The value to assign to the is_auto_tune_enabled property of this CreateVolumeDetails.
+        :type is_auto_tune_enabled: bool
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -79,7 +83,8 @@ class CreateVolumeDetails(object):
             'size_in_gbs': 'int',
             'size_in_mbs': 'int',
             'source_details': 'VolumeSourceDetails',
-            'volume_backup_id': 'str'
+            'volume_backup_id': 'str',
+            'is_auto_tune_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -94,7 +99,8 @@ class CreateVolumeDetails(object):
             'size_in_gbs': 'sizeInGBs',
             'size_in_mbs': 'sizeInMBs',
             'source_details': 'sourceDetails',
-            'volume_backup_id': 'volumeBackupId'
+            'volume_backup_id': 'volumeBackupId',
+            'is_auto_tune_enabled': 'isAutoTuneEnabled'
         }
 
         self._availability_domain = None
@@ -109,6 +115,7 @@ class CreateVolumeDetails(object):
         self._size_in_mbs = None
         self._source_details = None
         self._volume_backup_id = None
+        self._is_auto_tune_enabled = None
 
     @property
     def availability_domain(self):
@@ -461,6 +468,30 @@ class CreateVolumeDetails(object):
         :type: str
         """
         self._volume_backup_id = volume_backup_id
+
+    @property
+    def is_auto_tune_enabled(self):
+        """
+        Gets the is_auto_tune_enabled of this CreateVolumeDetails.
+        Specifies whether the auto-tune performance is enabled for this volume.
+
+
+        :return: The is_auto_tune_enabled of this CreateVolumeDetails.
+        :rtype: bool
+        """
+        return self._is_auto_tune_enabled
+
+    @is_auto_tune_enabled.setter
+    def is_auto_tune_enabled(self, is_auto_tune_enabled):
+        """
+        Sets the is_auto_tune_enabled of this CreateVolumeDetails.
+        Specifies whether the auto-tune performance is enabled for this volume.
+
+
+        :param is_auto_tune_enabled: The is_auto_tune_enabled of this CreateVolumeDetails.
+        :type: bool
+        """
+        self._is_auto_tune_enabled = is_auto_tune_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

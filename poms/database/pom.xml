@@ -130,11 +130,11 @@
         </configuration>
       </plugin>
       <plugin>
-            <groupId>com.oracle.bmc.sdk</groupId>
-            <artifactId>bmc-sdk-swagger-maven-plugin</artifactId>
-            <configuration>
-              <renamingConfigFile>${project.basedir}/renamingConfig.yaml</renamingConfigFile>
-            </configuration>
+        <groupId>com.oracle.bmc.sdk</groupId>
+        <artifactId>bmc-sdk-swagger-maven-plugin</artifactId>
+        <configuration>
+          <renamingConfigFile>${project.basedir}/renamingConfig.yaml</renamingConfigFile>
+        </configuration>
       </plugin>
     </plugins>
   </build>
@@ -143,7 +143,7 @@
       <dependency>
         <groupId>com.oracle.pic.dbaas</groupId>
         <artifactId>dbaas-api-spec</artifactId>
-        <version>0.1.471</version>
+        <version>0.1.478</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

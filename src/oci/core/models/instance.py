@@ -400,9 +400,11 @@ class Instance(object):
     def extended_metadata(self):
         """
         Gets the extended_metadata of this Instance.
-        Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the 'metadata' object.
+        Additional metadata key/value pairs that you provide. They serve the same purpose and functionality
+        as fields in the `metadata` object.
 
-        They are distinguished from 'metadata' fields in that these can be nested JSON objects (whereas 'metadata' fields are string/string maps only).
+        They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata`
+        fields are string/string maps only).
 
 
         :return: The extended_metadata of this Instance.
@@ -414,9 +416,11 @@ class Instance(object):
     def extended_metadata(self, extended_metadata):
         """
         Sets the extended_metadata of this Instance.
-        Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the 'metadata' object.
+        Additional metadata key/value pairs that you provide. They serve the same purpose and functionality
+        as fields in the `metadata` object.
 
-        They are distinguished from 'metadata' fields in that these can be nested JSON objects (whereas 'metadata' fields are string/string maps only).
+        They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata`
+        fields are string/string maps only).
 
 
         :param extended_metadata: The extended_metadata of this Instance.
@@ -436,8 +440,7 @@ class Instance(object):
         A hardware failure or Compute hardware maintenance that affects one fault domain does not affect
         instances in other fault domains.
 
-        If you do not specify the fault domain, the system selects one for you. To change the fault
-        domain for an instance, terminate it and launch a new instance in the preferred fault domain.
+        If you do not specify the fault domain, the system selects one for you.
 
         Example: `FAULT-DOMAIN-1`
 
@@ -459,8 +462,7 @@ class Instance(object):
         A hardware failure or Compute hardware maintenance that affects one fault domain does not affect
         instances in other fault domains.
 
-        If you do not specify the fault domain, the system selects one for you. To change the fault
-        domain for an instance, terminate it and launch a new instance in the preferred fault domain.
+        If you do not specify the fault domain, the system selects one for you.
 
         Example: `FAULT-DOMAIN-1`
 
@@ -629,7 +631,7 @@ class Instance(object):
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
         * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for Oracle-provided images.
         * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
-        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using virtio drivers.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
 
         Allowed values for this property are: "NATIVE", "EMULATED", "PARAVIRTUALIZED", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
@@ -648,7 +650,7 @@ class Instance(object):
         Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
         * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for Oracle-provided images.
         * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
-        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using virtio drivers.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
 
 

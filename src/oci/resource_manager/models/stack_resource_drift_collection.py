@@ -36,7 +36,7 @@ class StackResourceDriftCollection(object):
     @property
     def items(self):
         """
-        Gets the items of this StackResourceDriftCollection.
+        **[Required]** Gets the items of this StackResourceDriftCollection.
         Collection of drift status details for all resources defined in the stack.
 
 
