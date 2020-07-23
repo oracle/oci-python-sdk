@@ -141,14 +141,14 @@ class InstanceConfigurationLaunchOptions(object):
     def boot_volume_type(self):
         """
         Gets the boot_volume_type of this InstanceConfigurationLaunchOptions.
-        Emulation type for volume.
+        Emulation type for the boot volume.
         * `ISCSI` - ISCSI attached block storage device.
         * `SCSI` - Emulated SCSI disk.
         * `IDE` - Emulated IDE disk.
-        * `VFIO` - Direct attached Virtual Function storage.  This is the default option for Local data
+        * `VFIO` - Direct attached Virtual Function storage.  This is the default option for local data
         volumes on Oracle provided images.
-        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for Boot Volumes and Remote Block
-        Storage volumes on Oracle provided images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block
+        storage volumes on Oracle-provided images.
 
         Allowed values for this property are: "ISCSI", "SCSI", "IDE", "VFIO", "PARAVIRTUALIZED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -163,14 +163,14 @@ class InstanceConfigurationLaunchOptions(object):
     def boot_volume_type(self, boot_volume_type):
         """
         Sets the boot_volume_type of this InstanceConfigurationLaunchOptions.
-        Emulation type for volume.
+        Emulation type for the boot volume.
         * `ISCSI` - ISCSI attached block storage device.
         * `SCSI` - Emulated SCSI disk.
         * `IDE` - Emulated IDE disk.
-        * `VFIO` - Direct attached Virtual Function storage.  This is the default option for Local data
+        * `VFIO` - Direct attached Virtual Function storage.  This is the default option for local data
         volumes on Oracle provided images.
-        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for Boot Volumes and Remote Block
-        Storage volumes on Oracle provided images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block
+        storage volumes on Oracle-provided images.
 
 
         :param boot_volume_type: The boot_volume_type of this InstanceConfigurationLaunchOptions.
@@ -189,7 +189,7 @@ class InstanceConfigurationLaunchOptions(object):
         * `BIOS` - Boot VM using BIOS style firmware.  This is compatible with both 32 bit and 64 bit operating
         systems that boot using MBR style bootloaders.
         * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems.  This is the
-        default for Oracle provided images.
+        default for Oracle-provided images.
 
         Allowed values for this property are: "BIOS", "UEFI_64", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -208,7 +208,7 @@ class InstanceConfigurationLaunchOptions(object):
         * `BIOS` - Boot VM using BIOS style firmware.  This is compatible with both 32 bit and 64 bit operating
         systems that boot using MBR style bootloaders.
         * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems.  This is the
-        default for Oracle provided images.
+        default for Oracle-provided images.
 
 
         :param firmware: The firmware of this InstanceConfigurationLaunchOptions.
@@ -227,7 +227,7 @@ class InstanceConfigurationLaunchOptions(object):
         * `E1000` - Emulated Gigabit ethernet controller.  Compatible with Linux e1000 network driver.
         * `VFIO` - Direct attached Virtual Function network controller. This is the networking type
         when you launch an instance using hardware-assisted (SR-IOV) networking.
-        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using virtio drivers.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
 
         Allowed values for this property are: "E1000", "VFIO", "PARAVIRTUALIZED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -246,7 +246,7 @@ class InstanceConfigurationLaunchOptions(object):
         * `E1000` - Emulated Gigabit ethernet controller.  Compatible with Linux e1000 network driver.
         * `VFIO` - Direct attached Virtual Function network controller. This is the networking type
         when you launch an instance using hardware-assisted (SR-IOV) networking.
-        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using virtio drivers.
+        * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
 
 
         :param network_type: The network_type of this InstanceConfigurationLaunchOptions.
@@ -265,10 +265,10 @@ class InstanceConfigurationLaunchOptions(object):
         * `ISCSI` - ISCSI attached block storage device.
         * `SCSI` - Emulated SCSI disk.
         * `IDE` - Emulated IDE disk.
-        * `VFIO` - Direct attached Virtual Function storage.  This is the default option for Local data
+        * `VFIO` - Direct attached Virtual Function storage.  This is the default option for local data
         volumes on Oracle provided images.
-        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for Boot Volumes and Remote Block
-        Storage volumes on Oracle provided images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block
+        storage volumes on Oracle-provided images.
 
         Allowed values for this property are: "ISCSI", "SCSI", "IDE", "VFIO", "PARAVIRTUALIZED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -287,10 +287,10 @@ class InstanceConfigurationLaunchOptions(object):
         * `ISCSI` - ISCSI attached block storage device.
         * `SCSI` - Emulated SCSI disk.
         * `IDE` - Emulated IDE disk.
-        * `VFIO` - Direct attached Virtual Function storage.  This is the default option for Local data
+        * `VFIO` - Direct attached Virtual Function storage.  This is the default option for local data
         volumes on Oracle provided images.
-        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for Boot Volumes and Remote Block
-        Storage volumes on Oracle provided images.
+        * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block
+        storage volumes on Oracle-provided images.
 
 
         :param remote_data_volume_type: The remote_data_volume_type of this InstanceConfigurationLaunchOptions.

@@ -234,6 +234,47 @@ def test_capture_console_history(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="computeImaging" email="imaging_dev_us_grp@oracle.com" jiraProject="COM" opsJiraProject="COM"
+def test_change_compute_image_capability_schema_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangeComputeImageCapabilitySchemaCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'ChangeComputeImageCapabilitySchemaCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangeComputeImageCapabilitySchemaCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.change_compute_image_capability_schema_compartment(
+                compute_image_capability_schema_id=request.pop(util.camelize('computeImageCapabilitySchemaId')),
+                change_compute_image_capability_schema_compartment_details=request.pop(util.camelize('ChangeComputeImageCapabilitySchemaCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangeComputeImageCapabilitySchemaCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_compute_image_capability_schema_compartment',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="computeSharedOwnershipVmAndBm" email="compute_dev_us_grp@oracle.com" jiraProject="BMI" opsJiraProject="NONE"
 def test_change_dedicated_vm_host_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ChangeDedicatedVmHostCompartment'):
@@ -397,6 +438,46 @@ def test_create_app_catalog_subscription(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="computeImaging" email="imaging_dev_us_grp@oracle.com" jiraProject="COM" opsJiraProject="COM"
+def test_create_compute_image_capability_schema(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'CreateComputeImageCapabilitySchema'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'CreateComputeImageCapabilitySchema')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='CreateComputeImageCapabilitySchema')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.create_compute_image_capability_schema(
+                create_compute_image_capability_schema_details=request.pop(util.camelize('CreateComputeImageCapabilitySchemaDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'CreateComputeImageCapabilitySchema',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'computeImageCapabilitySchema',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="default" email="sic_block_storage_us_grp@oracle.com" jiraProject="BLOCK" opsJiraProject="BS"
 def test_create_dedicated_vm_host(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateDedicatedVmHost'):
@@ -554,6 +635,46 @@ def test_delete_app_catalog_subscription(testing_service_client):
             result,
             service_error,
             'delete_app_catalog_subscription',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="computeImaging" email="imaging_dev_us_grp@oracle.com" jiraProject="COM" opsJiraProject="COM"
+def test_delete_compute_image_capability_schema(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'DeleteComputeImageCapabilitySchema'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'DeleteComputeImageCapabilitySchema')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='DeleteComputeImageCapabilitySchema')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.delete_compute_image_capability_schema(
+                compute_image_capability_schema_id=request.pop(util.camelize('computeImageCapabilitySchemaId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'DeleteComputeImageCapabilitySchema',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_compute_image_capability_schema',
             True,
             False
         )
@@ -1037,6 +1158,127 @@ def test_get_boot_volume_attachment(testing_service_client):
             result,
             service_error,
             'bootVolumeAttachment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="computeImaging" email="imaging_dev_us_grp@oracle.com" jiraProject="COM" opsJiraProject="COM"
+def test_get_compute_global_image_capability_schema(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetComputeGlobalImageCapabilitySchema'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'GetComputeGlobalImageCapabilitySchema')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetComputeGlobalImageCapabilitySchema')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.get_compute_global_image_capability_schema(
+                compute_global_image_capability_schema_id=request.pop(util.camelize('computeGlobalImageCapabilitySchemaId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetComputeGlobalImageCapabilitySchema',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'computeGlobalImageCapabilitySchema',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="computeImaging" email="imaging_dev_us_grp@oracle.com" jiraProject="COM" opsJiraProject="COM"
+def test_get_compute_global_image_capability_schema_version(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetComputeGlobalImageCapabilitySchemaVersion'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'GetComputeGlobalImageCapabilitySchemaVersion')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetComputeGlobalImageCapabilitySchemaVersion')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.get_compute_global_image_capability_schema_version(
+                compute_global_image_capability_schema_id=request.pop(util.camelize('computeGlobalImageCapabilitySchemaId')),
+                compute_global_image_capability_schema_version_name=request.pop(util.camelize('computeGlobalImageCapabilitySchemaVersionName')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetComputeGlobalImageCapabilitySchemaVersion',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'computeGlobalImageCapabilitySchemaVersion',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="computeImaging" email="imaging_dev_us_grp@oracle.com" jiraProject="COM" opsJiraProject="COM"
+def test_get_compute_image_capability_schema(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetComputeImageCapabilitySchema'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'GetComputeImageCapabilitySchema')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetComputeImageCapabilitySchema')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.get_compute_image_capability_schema(
+                compute_image_capability_schema_id=request.pop(util.camelize('computeImageCapabilitySchemaId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetComputeImageCapabilitySchema',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'computeImageCapabilitySchema',
             False,
             False
         )
@@ -1759,6 +2001,180 @@ def test_list_boot_volume_attachments(testing_service_client):
             result,
             service_error,
             'bootVolumeAttachment',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="computeImaging" email="imaging_dev_us_grp@oracle.com" jiraProject="COM" opsJiraProject="COM"
+def test_list_compute_global_image_capability_schema_versions(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListComputeGlobalImageCapabilitySchemaVersions'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'ListComputeGlobalImageCapabilitySchemaVersions')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListComputeGlobalImageCapabilitySchemaVersions')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.list_compute_global_image_capability_schema_versions(
+                compute_global_image_capability_schema_id=request.pop(util.camelize('computeGlobalImageCapabilitySchemaId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_compute_global_image_capability_schema_versions(
+                    compute_global_image_capability_schema_id=request.pop(util.camelize('computeGlobalImageCapabilitySchemaId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_compute_global_image_capability_schema_versions(
+                        compute_global_image_capability_schema_id=request.pop(util.camelize('computeGlobalImageCapabilitySchemaId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListComputeGlobalImageCapabilitySchemaVersions',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'computeGlobalImageCapabilitySchemaVersionSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="computeImaging" email="imaging_dev_us_grp@oracle.com" jiraProject="COM" opsJiraProject="COM"
+def test_list_compute_global_image_capability_schemas(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListComputeGlobalImageCapabilitySchemas'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'ListComputeGlobalImageCapabilitySchemas')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListComputeGlobalImageCapabilitySchemas')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.list_compute_global_image_capability_schemas(
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_compute_global_image_capability_schemas(
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_compute_global_image_capability_schemas(
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListComputeGlobalImageCapabilitySchemas',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'computeGlobalImageCapabilitySchemaSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="computeImaging" email="imaging_dev_us_grp@oracle.com" jiraProject="COM" opsJiraProject="COM"
+def test_list_compute_image_capability_schemas(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListComputeImageCapabilitySchemas'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'ListComputeImageCapabilitySchemas')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListComputeImageCapabilitySchemas')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.list_compute_image_capability_schemas(
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_compute_image_capability_schemas(
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_compute_image_capability_schemas(
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListComputeImageCapabilitySchemas',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'computeImageCapabilitySchemaSummary',
             False,
             True
         )
@@ -2624,6 +3040,47 @@ def test_terminate_instance(testing_service_client):
             service_error,
             'terminate_instance',
             True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="computeImaging" email="imaging_dev_us_grp@oracle.com" jiraProject="COM" opsJiraProject="COM"
+def test_update_compute_image_capability_schema(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'UpdateComputeImageCapabilitySchema'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('compute'), 'UpdateComputeImageCapabilitySchema')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateComputeImageCapabilitySchema')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.ComputeClient(config, service_endpoint=service_endpoint)
+            response = client.update_compute_image_capability_schema(
+                compute_image_capability_schema_id=request.pop(util.camelize('computeImageCapabilitySchemaId')),
+                update_compute_image_capability_schema_details=request.pop(util.camelize('UpdateComputeImageCapabilitySchemaDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'UpdateComputeImageCapabilitySchema',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'computeImageCapabilitySchema',
+            False,
             False
         )
 

@@ -123,6 +123,14 @@ class BootVolume(object):
             The value to assign to the kms_key_id property of this BootVolume.
         :type kms_key_id: str
 
+        :param is_auto_tune_enabled:
+            The value to assign to the is_auto_tune_enabled property of this BootVolume.
+        :type is_auto_tune_enabled: bool
+
+        :param auto_tuned_vpus_per_gb:
+            The value to assign to the auto_tuned_vpus_per_gb property of this BootVolume.
+        :type auto_tuned_vpus_per_gb: int
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -141,7 +149,9 @@ class BootVolume(object):
             'source_details': 'BootVolumeSourceDetails',
             'time_created': 'datetime',
             'volume_group_id': 'str',
-            'kms_key_id': 'str'
+            'kms_key_id': 'str',
+            'is_auto_tune_enabled': 'bool',
+            'auto_tuned_vpus_per_gb': 'int'
         }
 
         self.attribute_map = {
@@ -161,7 +171,9 @@ class BootVolume(object):
             'source_details': 'sourceDetails',
             'time_created': 'timeCreated',
             'volume_group_id': 'volumeGroupId',
-            'kms_key_id': 'kmsKeyId'
+            'kms_key_id': 'kmsKeyId',
+            'is_auto_tune_enabled': 'isAutoTuneEnabled',
+            'auto_tuned_vpus_per_gb': 'autoTunedVpusPerGB'
         }
 
         self._availability_domain = None
@@ -181,6 +193,8 @@ class BootVolume(object):
         self._time_created = None
         self._volume_group_id = None
         self._kms_key_id = None
+        self._is_auto_tune_enabled = None
+        self._auto_tuned_vpus_per_gb = None
 
     @property
     def availability_domain(self):
@@ -653,6 +667,54 @@ class BootVolume(object):
         :type: str
         """
         self._kms_key_id = kms_key_id
+
+    @property
+    def is_auto_tune_enabled(self):
+        """
+        Gets the is_auto_tune_enabled of this BootVolume.
+        Specifies whether the auto-tune performance is enabled for this boot volume.
+
+
+        :return: The is_auto_tune_enabled of this BootVolume.
+        :rtype: bool
+        """
+        return self._is_auto_tune_enabled
+
+    @is_auto_tune_enabled.setter
+    def is_auto_tune_enabled(self, is_auto_tune_enabled):
+        """
+        Sets the is_auto_tune_enabled of this BootVolume.
+        Specifies whether the auto-tune performance is enabled for this boot volume.
+
+
+        :param is_auto_tune_enabled: The is_auto_tune_enabled of this BootVolume.
+        :type: bool
+        """
+        self._is_auto_tune_enabled = is_auto_tune_enabled
+
+    @property
+    def auto_tuned_vpus_per_gb(self):
+        """
+        Gets the auto_tuned_vpus_per_gb of this BootVolume.
+        The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
+
+
+        :return: The auto_tuned_vpus_per_gb of this BootVolume.
+        :rtype: int
+        """
+        return self._auto_tuned_vpus_per_gb
+
+    @auto_tuned_vpus_per_gb.setter
+    def auto_tuned_vpus_per_gb(self, auto_tuned_vpus_per_gb):
+        """
+        Sets the auto_tuned_vpus_per_gb of this BootVolume.
+        The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
+
+
+        :param auto_tuned_vpus_per_gb: The auto_tuned_vpus_per_gb of this BootVolume.
+        :type: int
+        """
+        self._auto_tuned_vpus_per_gb = auto_tuned_vpus_per_gb
 
     def __repr__(self):
         return formatted_flat_dict(self)

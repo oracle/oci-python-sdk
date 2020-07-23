@@ -38,13 +38,18 @@ class UpdateBootVolumeDetails(object):
             The value to assign to the vpus_per_gb property of this UpdateBootVolumeDetails.
         :type vpus_per_gb: int
 
+        :param is_auto_tune_enabled:
+            The value to assign to the is_auto_tune_enabled property of this UpdateBootVolumeDetails.
+        :type is_auto_tune_enabled: bool
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'size_in_gbs': 'int',
-            'vpus_per_gb': 'int'
+            'vpus_per_gb': 'int',
+            'is_auto_tune_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -52,7 +57,8 @@ class UpdateBootVolumeDetails(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'size_in_gbs': 'sizeInGBs',
-            'vpus_per_gb': 'vpusPerGB'
+            'vpus_per_gb': 'vpusPerGB',
+            'is_auto_tune_enabled': 'isAutoTuneEnabled'
         }
 
         self._defined_tags = None
@@ -60,6 +66,7 @@ class UpdateBootVolumeDetails(object):
         self._freeform_tags = None
         self._size_in_gbs = None
         self._vpus_per_gb = None
+        self._is_auto_tune_enabled = None
 
     @property
     def defined_tags(self):
@@ -222,6 +229,30 @@ class UpdateBootVolumeDetails(object):
         :type: int
         """
         self._vpus_per_gb = vpus_per_gb
+
+    @property
+    def is_auto_tune_enabled(self):
+        """
+        Gets the is_auto_tune_enabled of this UpdateBootVolumeDetails.
+        Specifies whether the auto-tune performance is enabled for this boot volume.
+
+
+        :return: The is_auto_tune_enabled of this UpdateBootVolumeDetails.
+        :rtype: bool
+        """
+        return self._is_auto_tune_enabled
+
+    @is_auto_tune_enabled.setter
+    def is_auto_tune_enabled(self, is_auto_tune_enabled):
+        """
+        Sets the is_auto_tune_enabled of this UpdateBootVolumeDetails.
+        Specifies whether the auto-tune performance is enabled for this boot volume.
+
+
+        :param is_auto_tune_enabled: The is_auto_tune_enabled of this UpdateBootVolumeDetails.
+        :type: bool
+        """
+        self._is_auto_tune_enabled = is_auto_tune_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

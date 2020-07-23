@@ -62,10 +62,6 @@ class GitlabAccessTokenConfigurationSourceProvider(ConfigurationSourceProvider):
             The value to assign to the api_endpoint property of this GitlabAccessTokenConfigurationSourceProvider.
         :type api_endpoint: str
 
-        :param access_token:
-            The value to assign to the access_token property of this GitlabAccessTokenConfigurationSourceProvider.
-        :type access_token: str
-
         """
         self.swagger_types = {
             'id': 'str',
@@ -77,8 +73,7 @@ class GitlabAccessTokenConfigurationSourceProvider(ConfigurationSourceProvider):
             'config_source_provider_type': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'api_endpoint': 'str',
-            'access_token': 'str'
+            'api_endpoint': 'str'
         }
 
         self.attribute_map = {
@@ -91,8 +86,7 @@ class GitlabAccessTokenConfigurationSourceProvider(ConfigurationSourceProvider):
             'config_source_provider_type': 'configSourceProviderType',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'api_endpoint': 'apiEndpoint',
-            'access_token': 'accessToken'
+            'api_endpoint': 'apiEndpoint'
         }
 
         self._id = None
@@ -105,7 +99,6 @@ class GitlabAccessTokenConfigurationSourceProvider(ConfigurationSourceProvider):
         self._freeform_tags = None
         self._defined_tags = None
         self._api_endpoint = None
-        self._access_token = None
         self._config_source_provider_type = 'GITLAB_ACCESS_TOKEN'
 
     @property
@@ -113,7 +106,7 @@ class GitlabAccessTokenConfigurationSourceProvider(ConfigurationSourceProvider):
         """
         Gets the api_endpoint of this GitlabAccessTokenConfigurationSourceProvider.
         The Git service API endpoint.
-        Example: `https://gitlab.com/api/v3/`
+        Example: `https://gitlab.com/api/v4/`
 
 
         :return: The api_endpoint of this GitlabAccessTokenConfigurationSourceProvider.
@@ -126,37 +119,13 @@ class GitlabAccessTokenConfigurationSourceProvider(ConfigurationSourceProvider):
         """
         Sets the api_endpoint of this GitlabAccessTokenConfigurationSourceProvider.
         The Git service API endpoint.
-        Example: `https://gitlab.com/api/v3/`
+        Example: `https://gitlab.com/api/v4/`
 
 
         :param api_endpoint: The api_endpoint of this GitlabAccessTokenConfigurationSourceProvider.
         :type: str
         """
         self._api_endpoint = api_endpoint
-
-    @property
-    def access_token(self):
-        """
-        Gets the access_token of this GitlabAccessTokenConfigurationSourceProvider.
-        The personal access token configured on the Git repository.
-
-
-        :return: The access_token of this GitlabAccessTokenConfigurationSourceProvider.
-        :rtype: str
-        """
-        return self._access_token
-
-    @access_token.setter
-    def access_token(self, access_token):
-        """
-        Sets the access_token of this GitlabAccessTokenConfigurationSourceProvider.
-        The personal access token configured on the Git repository.
-
-
-        :param access_token: The access_token of this GitlabAccessTokenConfigurationSourceProvider.
-        :type: str
-        """
-        self._access_token = access_token
 
     def __repr__(self):
         return formatted_flat_dict(self)

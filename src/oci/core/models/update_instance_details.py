@@ -50,6 +50,14 @@ class UpdateInstanceDetails(object):
             The value to assign to the shape_config property of this UpdateInstanceDetails.
         :type shape_config: UpdateInstanceShapeConfigDetails
 
+        :param fault_domain:
+            The value to assign to the fault_domain property of this UpdateInstanceDetails.
+        :type fault_domain: str
+
+        :param launch_options:
+            The value to assign to the launch_options property of this UpdateInstanceDetails.
+        :type launch_options: UpdateLaunchOptions
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
@@ -59,7 +67,9 @@ class UpdateInstanceDetails(object):
             'metadata': 'dict(str, str)',
             'extended_metadata': 'dict(str, object)',
             'shape': 'str',
-            'shape_config': 'UpdateInstanceShapeConfigDetails'
+            'shape_config': 'UpdateInstanceShapeConfigDetails',
+            'fault_domain': 'str',
+            'launch_options': 'UpdateLaunchOptions'
         }
 
         self.attribute_map = {
@@ -70,7 +80,9 @@ class UpdateInstanceDetails(object):
             'metadata': 'metadata',
             'extended_metadata': 'extendedMetadata',
             'shape': 'shape',
-            'shape_config': 'shapeConfig'
+            'shape_config': 'shapeConfig',
+            'fault_domain': 'faultDomain',
+            'launch_options': 'launchOptions'
         }
 
         self._defined_tags = None
@@ -81,6 +93,8 @@ class UpdateInstanceDetails(object):
         self._extended_metadata = None
         self._shape = None
         self._shape_config = None
+        self._fault_domain = None
+        self._launch_options = None
 
     @property
     def defined_tags(self):
@@ -209,13 +223,16 @@ class UpdateInstanceDetails(object):
         """
         Gets the metadata of this UpdateInstanceDetails.
         Custom metadata key/value string pairs that you provide. Any set of key/value pairs
-        provided here will completely replace the current set of key/value pairs in the 'metadata'
+        provided here will completely replace the current set of key/value pairs in the `metadata`
         field on the instance.
 
-        Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance
-        has launched. Any request which updates, removes, or adds either of these fields will be
-        rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that
+        The \"user_data\" field and the \"ssh_authorized_keys\" field cannot be changed after an instance
+        has launched. Any request that updates, removes, or adds either of these fields will be
+        rejected. You must provide the same values for \"user_data\" and \"ssh_authorized_keys\" that
         already exist on the instance.
+
+        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of
+        32,000 bytes.
 
 
         :return: The metadata of this UpdateInstanceDetails.
@@ -228,13 +245,16 @@ class UpdateInstanceDetails(object):
         """
         Sets the metadata of this UpdateInstanceDetails.
         Custom metadata key/value string pairs that you provide. Any set of key/value pairs
-        provided here will completely replace the current set of key/value pairs in the 'metadata'
+        provided here will completely replace the current set of key/value pairs in the `metadata`
         field on the instance.
 
-        Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance
-        has launched. Any request which updates, removes, or adds either of these fields will be
-        rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that
+        The \"user_data\" field and the \"ssh_authorized_keys\" field cannot be changed after an instance
+        has launched. Any request that updates, removes, or adds either of these fields will be
+        rejected. You must provide the same values for \"user_data\" and \"ssh_authorized_keys\" that
         already exist on the instance.
+
+        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of
+        32,000 bytes.
 
 
         :param metadata: The metadata of this UpdateInstanceDetails.
@@ -247,15 +267,18 @@ class UpdateInstanceDetails(object):
         """
         Gets the extended_metadata of this UpdateInstanceDetails.
         Additional metadata key/value pairs that you provide. They serve the same purpose and
-        functionality as fields in the 'metadata' object.
+        functionality as fields in the `metadata` object.
 
-        They are distinguished from 'metadata' fields in that these can be nested JSON objects
-        (whereas 'metadata' fields are string/string maps only).
+        They are distinguished from `metadata` fields in that these can be nested JSON objects
+        (whereas `metadata` fields are string/string maps only).
 
-        Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance
-        has launched. Any request which updates, removes, or adds either of these fields will be
-        rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that
+        The \"user_data\" field and the \"ssh_authorized_keys\" field cannot be changed after an instance
+        has launched. Any request that updates, removes, or adds either of these fields will be
+        rejected. You must provide the same values for \"user_data\" and \"ssh_authorized_keys\" that
         already exist on the instance.
+
+        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of
+        32,000 bytes.
 
 
         :return: The extended_metadata of this UpdateInstanceDetails.
@@ -268,15 +291,18 @@ class UpdateInstanceDetails(object):
         """
         Sets the extended_metadata of this UpdateInstanceDetails.
         Additional metadata key/value pairs that you provide. They serve the same purpose and
-        functionality as fields in the 'metadata' object.
+        functionality as fields in the `metadata` object.
 
-        They are distinguished from 'metadata' fields in that these can be nested JSON objects
-        (whereas 'metadata' fields are string/string maps only).
+        They are distinguished from `metadata` fields in that these can be nested JSON objects
+        (whereas `metadata` fields are string/string maps only).
 
-        Both the 'user_data' and 'ssh_authorized_keys' fields cannot be changed after an instance
-        has launched. Any request which updates, removes, or adds either of these fields will be
-        rejected. You must provide the same values for 'user_data' and 'ssh_authorized_keys' that
+        The \"user_data\" field and the \"ssh_authorized_keys\" field cannot be changed after an instance
+        has launched. Any request that updates, removes, or adds either of these fields will be
+        rejected. You must provide the same values for \"user_data\" and \"ssh_authorized_keys\" that
         already exist on the instance.
+
+        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of
+        32,000 bytes.
 
 
         :param extended_metadata: The extended_metadata of this UpdateInstanceDetails.
@@ -291,7 +317,7 @@ class UpdateInstanceDetails(object):
         The shape of the instance. The shape determines the number of CPUs and the amount of memory
         allocated to the instance. For more information about how to change shapes, and a list of
         shapes that are supported, see
-        `Changing the Shape of an Instance`__.
+        `Editing an Instance`__.
 
         For details about the CPUs, memory, and other properties of each shape, see
         `Compute Shapes`__.
@@ -320,7 +346,7 @@ class UpdateInstanceDetails(object):
         The shape of the instance. The shape determines the number of CPUs and the amount of memory
         allocated to the instance. For more information about how to change shapes, and a list of
         shapes that are supported, see
-        `Changing the Shape of an Instance`__.
+        `Editing an Instance`__.
 
         For details about the CPUs, memory, and other properties of each shape, see
         `Compute Shapes`__.
@@ -361,6 +387,74 @@ class UpdateInstanceDetails(object):
         :type: UpdateInstanceShapeConfigDetails
         """
         self._shape_config = shape_config
+
+    @property
+    def fault_domain(self):
+        """
+        Gets the fault_domain of this UpdateInstanceDetails.
+        A fault domain is a grouping of hardware and infrastructure within an availability domain.
+        Each availability domain contains three fault domains. Fault domains let you distribute your
+        instances so that they are not on the same physical hardware within a single availability domain.
+        A hardware failure or Compute hardware maintenance that affects one fault domain does not affect
+        instances in other fault domains.
+
+        To get a list of fault domains, use the
+        :func:`list_fault_domains` operation in the
+        Identity and Access Management Service API.
+
+        Example: `FAULT-DOMAIN-1`
+
+
+        :return: The fault_domain of this UpdateInstanceDetails.
+        :rtype: str
+        """
+        return self._fault_domain
+
+    @fault_domain.setter
+    def fault_domain(self, fault_domain):
+        """
+        Sets the fault_domain of this UpdateInstanceDetails.
+        A fault domain is a grouping of hardware and infrastructure within an availability domain.
+        Each availability domain contains three fault domains. Fault domains let you distribute your
+        instances so that they are not on the same physical hardware within a single availability domain.
+        A hardware failure or Compute hardware maintenance that affects one fault domain does not affect
+        instances in other fault domains.
+
+        To get a list of fault domains, use the
+        :func:`list_fault_domains` operation in the
+        Identity and Access Management Service API.
+
+        Example: `FAULT-DOMAIN-1`
+
+
+        :param fault_domain: The fault_domain of this UpdateInstanceDetails.
+        :type: str
+        """
+        self._fault_domain = fault_domain
+
+    @property
+    def launch_options(self):
+        """
+        Gets the launch_options of this UpdateInstanceDetails.
+        Options for tuning the compatibility and performance of VM shapes.
+
+
+        :return: The launch_options of this UpdateInstanceDetails.
+        :rtype: UpdateLaunchOptions
+        """
+        return self._launch_options
+
+    @launch_options.setter
+    def launch_options(self, launch_options):
+        """
+        Sets the launch_options of this UpdateInstanceDetails.
+        Options for tuning the compatibility and performance of VM shapes.
+
+
+        :param launch_options: The launch_options of this UpdateInstanceDetails.
+        :type: UpdateLaunchOptions
+        """
+        self._launch_options = launch_options
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -337,9 +337,14 @@ class LaunchInstanceDetails(object):
     def extended_metadata(self):
         """
         Gets the extended_metadata of this LaunchInstanceDetails.
-        Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the 'metadata' object.
+        Additional metadata key/value pairs that you provide. They serve the same purpose and
+        functionality as fields in the `metadata` object.
 
-        They are distinguished from 'metadata' fields in that these can be nested JSON objects (whereas 'metadata' fields are string/string maps only).
+        They are distinguished from `metadata` fields in that these can be nested JSON objects
+        (whereas `metadata` fields are string/string maps only).
+
+        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of
+        32,000 bytes.
 
 
         :return: The extended_metadata of this LaunchInstanceDetails.
@@ -351,9 +356,14 @@ class LaunchInstanceDetails(object):
     def extended_metadata(self, extended_metadata):
         """
         Sets the extended_metadata of this LaunchInstanceDetails.
-        Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the 'metadata' object.
+        Additional metadata key/value pairs that you provide. They serve the same purpose and
+        functionality as fields in the `metadata` object.
 
-        They are distinguished from 'metadata' fields in that these can be nested JSON objects (whereas 'metadata' fields are string/string maps only).
+        They are distinguished from `metadata` fields in that these can be nested JSON objects
+        (whereas `metadata` fields are string/string maps only).
+
+        The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of
+        32,000 bytes.
 
 
         :param extended_metadata: The extended_metadata of this LaunchInstanceDetails.
@@ -371,8 +381,8 @@ class LaunchInstanceDetails(object):
         A hardware failure or Compute hardware maintenance that affects one fault domain does not affect
         instances in other fault domains.
 
-        If you do not specify the fault domain, the system selects one for you. To change the fault
-        domain for an instance, terminate it and launch a new instance in the preferred fault domain.
+        If you do not specify the fault domain, the system selects one for you.
+
 
         To get a list of fault domains, use the
         :func:`list_fault_domains` operation in the
@@ -396,8 +406,8 @@ class LaunchInstanceDetails(object):
         A hardware failure or Compute hardware maintenance that affects one fault domain does not affect
         instances in other fault domains.
 
-        If you do not specify the fault domain, the system selects one for you. To change the fault
-        domain for an instance, terminate it and launch a new instance in the preferred fault domain.
+        If you do not specify the fault domain, the system selects one for you.
+
 
         To get a list of fault domains, use the
         :func:`list_fault_domains` operation in the
@@ -650,6 +660,8 @@ class LaunchInstanceDetails(object):
          You'll get back a response that includes all the instance information; only the metadata information; or
          the metadata information for the specified key name, respectively.
 
+         The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+
         __ https://cloudinit.readthedocs.org/en/latest/
         __ http://cloudinit.readthedocs.org/en/latest/topics/format.html
 
@@ -709,6 +721,8 @@ class LaunchInstanceDetails(object):
 
          You'll get back a response that includes all the instance information; only the metadata information; or
          the metadata information for the specified key name, respectively.
+
+         The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
 
         __ https://cloudinit.readthedocs.org/en/latest/
         __ http://cloudinit.readthedocs.org/en/latest/topics/format.html
