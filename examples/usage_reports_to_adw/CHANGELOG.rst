@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.07.28 - 2020-07-28
+=====================
+* Added sleep 0.5 to the public API call to avoid too many requests error
+* Change Public Rate API to use one value only after OCI change costs
+
+=====================
 20.07.21 - 2020-07-21
 =====================
 * Added Full + Parallel scan when retrieving max cost and usage file
