@@ -104,7 +104,7 @@ class GitlabAccessTokenConfigurationSourceProviderSummary(ConfigurationSourcePro
         """
         Gets the api_endpoint of this GitlabAccessTokenConfigurationSourceProviderSummary.
         The Git service API endpoint.
-        Example: `https://gitlab.com/api/v3/`
+        Example: `https://gitlab.com/api/v4/`
 
 
         :return: The api_endpoint of this GitlabAccessTokenConfigurationSourceProviderSummary.
@@ -117,7 +117,7 @@ class GitlabAccessTokenConfigurationSourceProviderSummary(ConfigurationSourcePro
         """
         Sets the api_endpoint of this GitlabAccessTokenConfigurationSourceProviderSummary.
         The Git service API endpoint.
-        Example: `https://gitlab.com/api/v3/`
+        Example: `https://gitlab.com/api/v4/`
 
 
         :param api_endpoint: The api_endpoint of this GitlabAccessTokenConfigurationSourceProviderSummary.

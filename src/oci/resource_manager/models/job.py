@@ -523,7 +523,8 @@ class Job(object):
     def working_directory(self):
         """
         Gets the working_directory of this Job.
-        The file path to the directory within the configuration from which the job runs.
+        File path to the directory from which Terraform runs.
+        If not specified, the root directory is used.
 
 
         :return: The working_directory of this Job.
@@ -535,7 +536,8 @@ class Job(object):
     def working_directory(self, working_directory):
         """
         Sets the working_directory of this Job.
-        The file path to the directory within the configuration from which the job runs.
+        File path to the directory from which Terraform runs.
+        If not specified, the root directory is used.
 
 
         :param working_directory: The working_directory of this Job.
@@ -548,7 +550,7 @@ class Job(object):
         """
         Gets the variables of this Job.
         Terraform variables associated with this resource.
-        Maximum number of variables supported is 100.
+        Maximum number of variables supported is 250.
         The maximum size of each variable, including both name and value, is 4096 bytes.
         Example: `{\"CompartmentId\": \"compartment-id-value\"}`
 
@@ -563,7 +565,7 @@ class Job(object):
         """
         Sets the variables of this Job.
         Terraform variables associated with this resource.
-        Maximum number of variables supported is 100.
+        Maximum number of variables supported is 250.
         The maximum size of each variable, including both name and value, is 4096 bytes.
         Example: `{\"CompartmentId\": \"compartment-id-value\"}`
 

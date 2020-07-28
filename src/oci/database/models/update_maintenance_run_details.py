@@ -26,19 +26,26 @@ class UpdateMaintenanceRunDetails(object):
             The value to assign to the time_scheduled property of this UpdateMaintenanceRunDetails.
         :type time_scheduled: datetime
 
+        :param is_patch_now_enabled:
+            The value to assign to the is_patch_now_enabled property of this UpdateMaintenanceRunDetails.
+        :type is_patch_now_enabled: bool
+
         """
         self.swagger_types = {
             'is_enabled': 'bool',
-            'time_scheduled': 'datetime'
+            'time_scheduled': 'datetime',
+            'is_patch_now_enabled': 'bool'
         }
 
         self.attribute_map = {
             'is_enabled': 'isEnabled',
-            'time_scheduled': 'timeScheduled'
+            'time_scheduled': 'timeScheduled',
+            'is_patch_now_enabled': 'isPatchNowEnabled'
         }
 
         self._is_enabled = None
         self._time_scheduled = None
+        self._is_patch_now_enabled = None
 
     @property
     def is_enabled(self):
@@ -87,6 +94,30 @@ class UpdateMaintenanceRunDetails(object):
         :type: datetime
         """
         self._time_scheduled = time_scheduled
+
+    @property
+    def is_patch_now_enabled(self):
+        """
+        Gets the is_patch_now_enabled of this UpdateMaintenanceRunDetails.
+        If set to `TRUE`, starts patching immediately.
+
+
+        :return: The is_patch_now_enabled of this UpdateMaintenanceRunDetails.
+        :rtype: bool
+        """
+        return self._is_patch_now_enabled
+
+    @is_patch_now_enabled.setter
+    def is_patch_now_enabled(self, is_patch_now_enabled):
+        """
+        Sets the is_patch_now_enabled of this UpdateMaintenanceRunDetails.
+        If set to `TRUE`, starts patching immediately.
+
+
+        :param is_patch_now_enabled: The is_patch_now_enabled of this UpdateMaintenanceRunDetails.
+        :type: bool
+        """
+        self._is_patch_now_enabled = is_patch_now_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -970,6 +970,8 @@ class ShowOCIOutput(object):
                     print(self.tabs + "DataSafe   : " + db['data_safe_status'])
                 if 'time_maintenance_begin' in db:
                     print(self.tabs + "Maintenance: " + db['time_maintenance_begin'][0:16] + " - " + db['time_maintenance_end'][0:16])
+                if db['is_data_guard_enabled']:
+                    print(self.tabs + "Data Guard : Lag In Second: " + db['standby_lag_time_in_seconds'] + ", lifecycle: " + db['standby_lifecycle_state'] + ",  Last Switch: " + db['time_of_last_switchover'][0:16] + ",  Last Failover: " + db['time_of_last_switchover'][0:16])
 
                 # print backups
                 if db['backups']:

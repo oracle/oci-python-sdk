@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.19.0 - 2020-07-28
+====================
+
+Added
+-----
+* Support for calling Oracle Cloud Infrastructure services in the us-sanjose-1 region
+* Support for updating the fault domain and launch options of VM instances in the Compute service
+* Support for image capability schemas and schema versions in the Compute service
+* Support for 'Patch Now' maintenance runs for autonomous Exadata infrastructure and autonomous container database resources in the Database service
+* Support for automatic performance and cost tuning on volumes in the Block Storage service
+
+Breaking
+--------
+* Removed the accessToken field from the GitlabAccessTokenConfigurationSourceProvider model in the Resource Manager service
+
+====================
 2.18.1 - 2020-07-21
 ====================
 

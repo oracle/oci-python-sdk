@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateStackDetails(object):
     """
-    Properties provided for creating a stack.
+    The configuration details for creating a stack.
     """
 
     def __init__(self, **kwargs):
@@ -183,7 +183,7 @@ class CreateStackDetails(object):
         """
         Gets the variables of this CreateStackDetails.
         Terraform variables associated with this resource.
-        Maximum number of variables supported is 100.
+        Maximum number of variables supported is 250.
         The maximum size of each variable, including both name and value, is 4096 bytes.
         Example: `{\"CompartmentId\": \"compartment-id-value\"}`
 
@@ -198,7 +198,7 @@ class CreateStackDetails(object):
         """
         Sets the variables of this CreateStackDetails.
         Terraform variables associated with this resource.
-        Maximum number of variables supported is 100.
+        Maximum number of variables supported is 250.
         The maximum size of each variable, including both name and value, is 4096 bytes.
         Example: `{\"CompartmentId\": \"compartment-id-value\"}`
 

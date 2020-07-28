@@ -44,6 +44,7 @@ Core Services
     oci.core.models.AttachVnicDetails
     oci.core.models.AttachVolumeDetails
     oci.core.models.BgpSessionInfo
+    oci.core.models.BooleanImageCapabilitySchemaDescriptor
     oci.core.models.BootVolume
     oci.core.models.BootVolumeAttachment
     oci.core.models.BootVolumeBackup
@@ -57,6 +58,7 @@ Core Services
     oci.core.models.ChangeBootVolumeBackupCompartmentDetails
     oci.core.models.ChangeBootVolumeCompartmentDetails
     oci.core.models.ChangeClusterNetworkCompartmentDetails
+    oci.core.models.ChangeComputeImageCapabilitySchemaCompartmentDetails
     oci.core.models.ChangeCpeCompartmentDetails
     oci.core.models.ChangeCrossConnectCompartmentDetails
     oci.core.models.ChangeCrossConnectGroupCompartmentDetails
@@ -88,6 +90,12 @@ Core Services
     oci.core.models.ClusterNetwork
     oci.core.models.ClusterNetworkPlacementConfigurationDetails
     oci.core.models.ClusterNetworkSummary
+    oci.core.models.ComputeGlobalImageCapabilitySchema
+    oci.core.models.ComputeGlobalImageCapabilitySchemaSummary
+    oci.core.models.ComputeGlobalImageCapabilitySchemaVersion
+    oci.core.models.ComputeGlobalImageCapabilitySchemaVersionSummary
+    oci.core.models.ComputeImageCapabilitySchema
+    oci.core.models.ComputeImageCapabilitySchemaSummary
     oci.core.models.ComputeInstanceDetails
     oci.core.models.ConnectLocalPeeringGatewaysDetails
     oci.core.models.ConnectRemotePeeringConnectionsDetails
@@ -105,6 +113,7 @@ Core Services
     oci.core.models.CreateBootVolumeDetails
     oci.core.models.CreateClusterNetworkDetails
     oci.core.models.CreateClusterNetworkInstancePoolDetails
+    oci.core.models.CreateComputeImageCapabilitySchemaDetails
     oci.core.models.CreateCpeDetails
     oci.core.models.CreateCrossConnectDetails
     oci.core.models.CreateCrossConnectGroupDetails
@@ -168,6 +177,8 @@ Core Services
     oci.core.models.DrgRedundancyStatus
     oci.core.models.EgressSecurityRule
     oci.core.models.EmulatedVolumeAttachment
+    oci.core.models.EnumIntegerImageCapabilityDescriptor
+    oci.core.models.EnumStringImageCapabilitySchemaDescriptor
     oci.core.models.ExportImageDetails
     oci.core.models.ExportImageViaObjectStorageTupleDetails
     oci.core.models.ExportImageViaObjectStorageUriDetails
@@ -183,6 +194,7 @@ Core Services
     oci.core.models.IScsiVolumeAttachment
     oci.core.models.IcmpOptions
     oci.core.models.Image
+    oci.core.models.ImageCapabilitySchemaDescriptor
     oci.core.models.ImageOcpuConstraints
     oci.core.models.ImageShapeCompatibilityEntry
     oci.core.models.ImageShapeCompatibilitySummary
@@ -267,6 +279,7 @@ Core Services
     oci.core.models.UpdateBootVolumeDetails
     oci.core.models.UpdateBootVolumeKmsKeyDetails
     oci.core.models.UpdateClusterNetworkDetails
+    oci.core.models.UpdateComputeImageCapabilitySchemaDetails
     oci.core.models.UpdateConsoleHistoryDetails
     oci.core.models.UpdateCpeDetails
     oci.core.models.UpdateCrossConnectDetails
@@ -288,6 +301,7 @@ Core Services
     oci.core.models.UpdateInstanceShapeConfigDetails
     oci.core.models.UpdateInternetGatewayDetails
     oci.core.models.UpdateIpv6Details
+    oci.core.models.UpdateLaunchOptions
     oci.core.models.UpdateLocalPeeringGatewayDetails
     oci.core.models.UpdateNatGatewayDetails
     oci.core.models.UpdateNetworkSecurityGroupDetails

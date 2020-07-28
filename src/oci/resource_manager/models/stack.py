@@ -345,7 +345,7 @@ class Stack(object):
         """
         Gets the variables of this Stack.
         Terraform variables associated with this resource.
-        Maximum number of variables supported is 100.
+        Maximum number of variables supported is 250.
         The maximum size of each variable, including both name and value, is 4096 bytes.
         Example: `{\"CompartmentId\": \"compartment-id-value\"}`
 
@@ -360,7 +360,7 @@ class Stack(object):
         """
         Sets the variables of this Stack.
         Terraform variables associated with this resource.
-        Maximum number of variables supported is 100.
+        Maximum number of variables supported is 250.
         The maximum size of each variable, including both name and value, is 4096 bytes.
         Example: `{\"CompartmentId\": \"compartment-id-value\"}`
 

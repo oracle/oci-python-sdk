@@ -18,6 +18,7 @@ from oci._vendor.urllib3.util.retry import Retry
 REGIONS_SHORT_NAMES = {
     'phx': 'us-phoenix-1',
     'iad': 'us-ashburn-1',
+    'sjc': 'us-sanjose-1',
     'fra': 'eu-frankfurt-1',
     'zrh': 'eu-zurich-1',
     'lhr': 'uk-london-1',
@@ -47,6 +48,7 @@ REGION_REALMS = {
     'ap-chuncheon-1': 'oc1',
     'us-phoenix-1': 'oc1',
     'us-ashburn-1': 'oc1',
+    'us-sanjose-1': 'oc1',
     'eu-amsterdam-1': 'oc1',
     'eu-frankfurt-1': 'oc1',
     'eu-zurich-1': 'oc1',
@@ -82,6 +84,7 @@ REGIONS = [
     "ap-chuncheon-1",
     "us-phoenix-1",
     "us-ashburn-1",
+    "us-sanjose-1",
     "eu-amsterdam-1",
     "eu-frankfurt-1",
     "eu-zurich-1",
