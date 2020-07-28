@@ -90,7 +90,7 @@ class CreateGitlabAccessTokenConfigurationSourceProviderDetails(CreateConfigurat
         """
         **[Required]** Gets the api_endpoint of this CreateGitlabAccessTokenConfigurationSourceProviderDetails.
         The Git service API endpoint.
-        Example: `https://gitlab.com/api/v3/`
+        Example: `https://gitlab.com/api/v4/`
 
 
         :return: The api_endpoint of this CreateGitlabAccessTokenConfigurationSourceProviderDetails.
@@ -103,7 +103,7 @@ class CreateGitlabAccessTokenConfigurationSourceProviderDetails(CreateConfigurat
         """
         Sets the api_endpoint of this CreateGitlabAccessTokenConfigurationSourceProviderDetails.
         The Git service API endpoint.
-        Example: `https://gitlab.com/api/v3/`
+        Example: `https://gitlab.com/api/v4/`
 
 
         :param api_endpoint: The api_endpoint of this CreateGitlabAccessTokenConfigurationSourceProviderDetails.

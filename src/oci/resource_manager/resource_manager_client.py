@@ -517,7 +517,8 @@ class ResourceManagerClient(object):
     def create_stack(self, create_stack_details, **kwargs):
         """
         Creates a stack in the specified compartment.
-        Specify the compartment using the compartment ID.
+        You can create a stack from a Terraform configuration file.
+        The Terraform configuration file can be directly uploaded or referenced from a source code control system.
         For more information, see
         `To create a stack`__.
 

@@ -203,7 +203,7 @@ class InstanceSummary(object):
     def fault_domain(self):
         """
         Gets the fault_domain of this InstanceSummary.
-        The name of the Fault Domain the instance is running in.
+        The fault domain the instance is running in.
 
 
         :return: The fault_domain of this InstanceSummary.
@@ -215,7 +215,7 @@ class InstanceSummary(object):
     def fault_domain(self, fault_domain):
         """
         Sets the fault_domain of this InstanceSummary.
-        The name of the Fault Domain the instance is running in.
+        The fault domain the instance is running in.
 
 
         :param fault_domain: The fault_domain of this InstanceSummary.

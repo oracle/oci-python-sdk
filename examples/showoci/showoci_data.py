@@ -1940,7 +1940,9 @@ class ShowOCIData(object):
             list_autos = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_AUTONOMOUS, 'region_name', region_name, 'compartment_id', compartment['id'])
 
             for dbs in list_autos:
-                value = {'id': str(dbs['id']), 'name': str(dbs['db_name']) + " (" + (str(dbs['display_name']) + ") - " + str(dbs['license_model']) + " - " + str(dbs['lifecycle_state']) + " (" + str(dbs['sum_count']) + " OCPUs" + (" AutoScale" if dbs['is_auto_scaling_enabled'] else "") + ") - " + dbs['db_workload'] + " - " + dbs['db_type']),
+                freemsg = ",  FreeTier" if dbs['is_free_tier'] else ""
+                value = {'id': str(dbs['id']),
+                         'name': str(dbs['db_name']) + " (" + (str(dbs['display_name']) + ") - " + str(dbs['license_model']) + " - " + str(dbs['lifecycle_state']) + " (" + str(dbs['sum_count']) + " OCPUs" + (" AutoScale" if dbs['is_auto_scaling_enabled'] else "") + ") - " + dbs['db_workload'] + " - " + dbs['db_type'] + freemsg),
                          'display_name': dbs['display_name'],
                          'license_model': dbs['license_model'],
                          'lifecycle_state': dbs['lifecycle_state'],
@@ -1972,7 +1974,23 @@ class ShowOCIData(object):
                          'nsg_names': [],
                          'private_endpoint': dbs['private_endpoint'],
                          'private_endpoint_label': dbs['private_endpoint_label'],
-                         'defined_tags': dbs['defined_tags'], 'freeform_tags': dbs['freeform_tags']}
+                         'defined_tags': dbs['defined_tags'],
+                         'freeform_tags': dbs['freeform_tags'],
+                         'is_free_tier': dbs['is_free_tier'],
+                         'is_preview': dbs['is_preview'],
+                         'infrastructure_type': dbs['infrastructure_type'],
+                         'time_deletion_of_free_autonomous_database': dbs['time_deletion_of_free_autonomous_database'],
+                         'time_reclamation_of_free_autonomous_database': dbs['time_reclamation_of_free_autonomous_database'],
+                         'system_tags': dbs['system_tags'],
+                         'time_of_last_switchover': dbs['time_of_last_switchover'],
+                         'time_of_last_failover': dbs['time_of_last_failover'],
+                         'failed_data_recovery_in_seconds': dbs['failed_data_recovery_in_seconds'],
+                         'available_upgrade_versions': dbs['available_upgrade_versions'],
+                         'standby_lag_time_in_seconds': dbs['standby_lag_time_in_seconds'],
+                         'standby_lifecycle_state': dbs['standby_lifecycle_state'],
+                         'autonomous_container_database_id': dbs['autonomous_container_database_id'],
+                         'is_data_guard_enabled': dbs['is_data_guard_enabled']
+                         }
 
                 # subnet
                 if dbs['subnet_id'] != 'None':
