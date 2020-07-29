@@ -2,6 +2,7 @@
 # Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
+import os
 import oci
 
 import pytest
@@ -130,3 +131,30 @@ def test_manual_config_doesnt_require_optional_fields():
 
 def test_config_get_value_or_default():
     assert oci.config.get_config_value_or_default({}, "additional_user_agent") == oci.config.DEFAULT_CONFIG["additional_user_agent"]
+
+
+def test_region_from_env_var():
+    # Config without region
+    config = {
+        'tenancy': HARDCODED_TENANCY,
+        'user': HARDCODED_USER,
+        'fingerprint': HARDCODED_FINGERPRINT,
+        'key_file': HARDCODED_KEYFILE_NO_PASSPHRASE
+    }
+
+    # Without the env var, the SDK should raise an error
+    with pytest.raises(oci.exceptions.InvalidConfig) as excinfo:
+        # Client init calls oci.config.validate_config internally
+        oci.identity.IdentityClient(config)
+
+    assert excinfo.value.errors == {
+        "region": "missing"
+    }
+
+    # Set env var
+    os.environ[oci.config.REGION_ENV_VAR_NAME] = 'us-phoenix-1'
+    # Client init should not fail now
+    oci.identity.IdentityClient(config)
+
+    # Cleanup
+    del os.environ[oci.config.REGION_ENV_VAR_NAME]

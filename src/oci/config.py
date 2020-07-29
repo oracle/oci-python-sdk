@@ -28,6 +28,7 @@ from __future__ import absolute_import
 import configparser
 import os
 import re
+import logging
 from oci._vendor import six
 
 from .exceptions import ConfigFileNotFound, ProfileNotFound, InvalidConfig
@@ -64,6 +65,10 @@ CONFIG_FILE_BLACKLISTED_KEYS = {
 }
 
 CONFIG_FILE_PATH_ENV_VAR_NAME = "OCI_CONFIG_FILE"
+REGION_ENV_VAR_NAME = "OCI_REGION"
+REGION_KEY_NAME = "region"
+
+logger = logging.getLogger(__name__)
 
 
 def from_file(file_location=DEFAULT_LOCATION, profile_name=DEFAULT_PROFILE):
@@ -107,7 +112,18 @@ def validate_config(config, **kwargs):
     for required_key in REQUIRED:
         fallback_key = REQUIRED_FALLBACKS.get(required_key)
         if required_key not in config and fallback_key not in config:
-            errors[required_key] = "missing"
+            # If region is not provided, check the env variable
+            if required_key == REGION_KEY_NAME:
+                logger.debug("Region not found in config, checking environment variable {}".format(REGION_ENV_VAR_NAME))
+                region_from_env_var = os.environ.get(REGION_ENV_VAR_NAME)
+                if region_from_env_var:
+                    # If present, inject the region in config
+                    logger.debug("Setting region from environment variable {}".format(REGION_ENV_VAR_NAME))
+                    config[REGION_KEY_NAME] = region_from_env_var
+                else:
+                    errors[required_key] = "missing"
+            else:
+                errors[required_key] = "missing"
 
     for key, pattern in six.iteritems(PATTERNS):
         if key in errors:
@@ -152,6 +168,9 @@ def _get_config_path_with_fallback(file_location):
     # If file location is not specified and the default file (~/.oci/config) does not exist
     # then try getting config file path from env var
     elif os.environ.get(CONFIG_FILE_PATH_ENV_VAR_NAME):
+        logger.debug(
+            "No file location specified and default file does not exist. Getting path info from the environment variable {}".format(
+                CONFIG_FILE_PATH_ENV_VAR_NAME))
         expanded_file_location = os.path.expanduser(os.environ.get(CONFIG_FILE_PATH_ENV_VAR_NAME))
         return expanded_file_location
 
