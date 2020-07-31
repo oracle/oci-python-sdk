@@ -24,6 +24,8 @@ Bds
     oci.bds.models.BdsInstance
     oci.bds.models.BdsInstanceSummary
     oci.bds.models.ChangeBdsInstanceCompartmentDetails
+    oci.bds.models.ChangeShapeDetails
+    oci.bds.models.ChangeShapeNodes
     oci.bds.models.CloudSqlDetails
     oci.bds.models.ClusterDetails
     oci.bds.models.CreateBdsInstanceDetails
@@ -33,6 +35,7 @@ Bds
     oci.bds.models.NetworkConfig
     oci.bds.models.Node
     oci.bds.models.RemoveCloudSqlDetails
+    oci.bds.models.RestartNodeDetails
     oci.bds.models.UpdateBdsInstanceDetails
     oci.bds.models.VolumeAttachmentDetail
     oci.bds.models.WorkRequest

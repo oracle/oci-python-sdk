@@ -490,7 +490,7 @@ class RunSummary(object):
     def opc_request_id(self):
         """
         Gets the opc_request_id of this RunSummary.
-        Unique Oracle-assigned identifier for the request.
+        Unique Oracle assigned identifier for the request.
         If you need to contact Oracle about a particular request, please provide the request ID.
 
 
@@ -503,7 +503,7 @@ class RunSummary(object):
     def opc_request_id(self, opc_request_id):
         """
         Sets the opc_request_id of this RunSummary.
-        Unique Oracle-assigned identifier for the request.
+        Unique Oracle assigned identifier for the request.
         If you need to contact Oracle about a particular request, please provide the request ID.
 
 

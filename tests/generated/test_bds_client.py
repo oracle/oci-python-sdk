@@ -198,6 +198,47 @@ def test_change_bds_instance_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_change_shape(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'ChangeShape'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'ChangeShape')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='ChangeShape')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.change_shape(
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                change_shape_details=request.pop(util.camelize('ChangeShapeDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'ChangeShape',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_shape',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
 def test_create_bds_instance(testing_service_client):
     if not testing_service_client.is_api_enabled('bds', 'CreateBdsInstance'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -633,6 +674,47 @@ def test_remove_cloud_sql(testing_service_client):
             result,
             service_error,
             'remove_cloud_sql',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_restart_node(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'RestartNode'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'RestartNode')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='RestartNode')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.restart_node(
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                restart_node_details=request.pop(util.camelize('RestartNodeDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'RestartNode',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'restart_node',
             False,
             False
         )

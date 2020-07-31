@@ -10,6 +10,8 @@ from .add_worker_nodes_details import AddWorkerNodesDetails
 from .bds_instance import BdsInstance
 from .bds_instance_summary import BdsInstanceSummary
 from .change_bds_instance_compartment_details import ChangeBdsInstanceCompartmentDetails
+from .change_shape_details import ChangeShapeDetails
+from .change_shape_nodes import ChangeShapeNodes
 from .cloud_sql_details import CloudSqlDetails
 from .cluster_details import ClusterDetails
 from .create_bds_instance_details import CreateBdsInstanceDetails
@@ -19,6 +21,7 @@ from .kerberos_details import KerberosDetails
 from .network_config import NetworkConfig
 from .node import Node
 from .remove_cloud_sql_details import RemoveCloudSqlDetails
+from .restart_node_details import RestartNodeDetails
 from .update_bds_instance_details import UpdateBdsInstanceDetails
 from .volume_attachment_detail import VolumeAttachmentDetail
 from .work_request import WorkRequest
@@ -34,6 +37,8 @@ bds_type_mapping = {
     "BdsInstance": BdsInstance,
     "BdsInstanceSummary": BdsInstanceSummary,
     "ChangeBdsInstanceCompartmentDetails": ChangeBdsInstanceCompartmentDetails,
+    "ChangeShapeDetails": ChangeShapeDetails,
+    "ChangeShapeNodes": ChangeShapeNodes,
     "CloudSqlDetails": CloudSqlDetails,
     "ClusterDetails": ClusterDetails,
     "CreateBdsInstanceDetails": CreateBdsInstanceDetails,
@@ -43,6 +48,7 @@ bds_type_mapping = {
     "NetworkConfig": NetworkConfig,
     "Node": Node,
     "RemoveCloudSqlDetails": RemoveCloudSqlDetails,
+    "RestartNodeDetails": RestartNodeDetails,
     "UpdateBdsInstanceDetails": UpdateBdsInstanceDetails,
     "VolumeAttachmentDetail": VolumeAttachmentDetail,
     "WorkRequest": WorkRequest,

@@ -226,6 +226,7 @@ class StackSummary(object):
         - ACTIVE
         - DELETING
         - DELETED
+        - FAILED
 
         __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#StackStates
 
@@ -248,6 +249,7 @@ class StackSummary(object):
         - ACTIVE
         - DELETING
         - DELETED
+        - FAILED
 
         __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#StackStates
 

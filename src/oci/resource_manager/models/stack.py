@@ -30,6 +30,10 @@ class Stack(object):
     #: This constant has a value of "DELETED"
     LIFECYCLE_STATE_DELETED = "DELETED"
 
+    #: A constant which can be used with the lifecycle_state property of a Stack.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
+
     #: A constant which can be used with the stack_drift_status property of a Stack.
     #: This constant has a value of "NOT_CHECKED"
     STACK_DRIFT_STATUS_NOT_CHECKED = "NOT_CHECKED"
@@ -69,7 +73,7 @@ class Stack(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Stack.
-            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -292,7 +296,7 @@ class Stack(object):
 
         __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#StackStates
 
-        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -315,7 +319,7 @@ class Stack(object):
         :param lifecycle_state: The lifecycle_state of this Stack.
         :type: str
         """
-        allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED"]
+        allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

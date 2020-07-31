@@ -930,6 +930,45 @@ def test_list_jobs(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_list_resource_discovery_services(testing_service_client):
+    if not testing_service_client.is_api_enabled('resource_manager', 'ListResourceDiscoveryServices'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'ListResourceDiscoveryServices')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='ListResourceDiscoveryServices')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
+            response = client.list_resource_discovery_services(
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'resource_manager',
+            'ListResourceDiscoveryServices',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'resourceDiscoveryServiceCollection',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
 def test_list_stack_resource_drift_details(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'ListStackResourceDriftDetails'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

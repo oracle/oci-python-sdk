@@ -99,6 +99,10 @@ class CreateApplicationDetails(object):
             The value to assign to the parameters property of this CreateApplicationDetails.
         :type parameters: list[ApplicationParameter]
 
+        :param private_endpoint_id:
+            The value to assign to the private_endpoint_id property of this CreateApplicationDetails.
+        :type private_endpoint_id: str
+
         :param spark_version:
             The value to assign to the spark_version property of this CreateApplicationDetails.
         :type spark_version: str
@@ -125,6 +129,7 @@ class CreateApplicationDetails(object):
             'logs_bucket_uri': 'str',
             'num_executors': 'int',
             'parameters': 'list[ApplicationParameter]',
+            'private_endpoint_id': 'str',
             'spark_version': 'str',
             'warehouse_bucket_uri': 'str'
         }
@@ -146,6 +151,7 @@ class CreateApplicationDetails(object):
             'logs_bucket_uri': 'logsBucketUri',
             'num_executors': 'numExecutors',
             'parameters': 'parameters',
+            'private_endpoint_id': 'privateEndpointId',
             'spark_version': 'sparkVersion',
             'warehouse_bucket_uri': 'warehouseBucketUri'
         }
@@ -166,6 +172,7 @@ class CreateApplicationDetails(object):
         self._logs_bucket_uri = None
         self._num_executors = None
         self._parameters = None
+        self._private_endpoint_id = None
         self._spark_version = None
         self._warehouse_bucket_uri = None
 
@@ -173,8 +180,8 @@ class CreateApplicationDetails(object):
     def archive_uri(self):
         """
         Gets the archive_uri of this CreateApplicationDetails.
-        An Oracle Cloud Infrastructure URI of an archive (zip) file that may used to support the execution of the application.
-        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+        An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application.
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :return: The archive_uri of this CreateApplicationDetails.
@@ -186,8 +193,8 @@ class CreateApplicationDetails(object):
     def archive_uri(self, archive_uri):
         """
         Sets the archive_uri of this CreateApplicationDetails.
-        An Oracle Cloud Infrastructure URI of an archive (zip) file that may used to support the execution of the application.
-        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+        An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application.
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :param archive_uri: The archive_uri of this CreateApplicationDetails.
@@ -286,7 +293,7 @@ class CreateApplicationDetails(object):
         """
         Gets the configuration of this CreateApplicationDetails.
         The Spark configuration passed to the running process.
-        See https://spark.apache.org/docs/latest/configuration.html#available-properties
+        See https://spark.apache.org/docs/latest/configuration.html#available-properties.
         Example: { \"spark.app.name\" : \"My App Name\", \"spark.shuffle.io.maxRetries\" : \"4\" }
         Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is
         not allowed to be overwritten will cause a 400 status to be returned.
@@ -302,7 +309,7 @@ class CreateApplicationDetails(object):
         """
         Sets the configuration of this CreateApplicationDetails.
         The Spark configuration passed to the running process.
-        See https://spark.apache.org/docs/latest/configuration.html#available-properties
+        See https://spark.apache.org/docs/latest/configuration.html#available-properties.
         Example: { \"spark.app.name\" : \"My App Name\", \"spark.shuffle.io.maxRetries\" : \"4\" }
         Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is
         not allowed to be overwritten will cause a 400 status to be returned.
@@ -444,7 +451,7 @@ class CreateApplicationDetails(object):
         """
         **[Required]** Gets the file_uri of this CreateApplicationDetails.
         An Oracle Cloud Infrastructure URI of the file containing the application to execute.
-        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :return: The file_uri of this CreateApplicationDetails.
@@ -457,7 +464,7 @@ class CreateApplicationDetails(object):
         """
         Sets the file_uri of this CreateApplicationDetails.
         An Oracle Cloud Infrastructure URI of the file containing the application to execute.
-        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :param file_uri: The file_uri of this CreateApplicationDetails.
@@ -534,7 +541,7 @@ class CreateApplicationDetails(object):
         """
         Gets the logs_bucket_uri of this CreateApplicationDetails.
         An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
-        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :return: The logs_bucket_uri of this CreateApplicationDetails.
@@ -547,7 +554,7 @@ class CreateApplicationDetails(object):
         """
         Sets the logs_bucket_uri of this CreateApplicationDetails.
         An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
-        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :param logs_bucket_uri: The logs_bucket_uri of this CreateApplicationDetails.
@@ -610,6 +617,30 @@ class CreateApplicationDetails(object):
         self._parameters = parameters
 
     @property
+    def private_endpoint_id(self):
+        """
+        Gets the private_endpoint_id of this CreateApplicationDetails.
+        The OCID of a private endpoint.
+
+
+        :return: The private_endpoint_id of this CreateApplicationDetails.
+        :rtype: str
+        """
+        return self._private_endpoint_id
+
+    @private_endpoint_id.setter
+    def private_endpoint_id(self, private_endpoint_id):
+        """
+        Sets the private_endpoint_id of this CreateApplicationDetails.
+        The OCID of a private endpoint.
+
+
+        :param private_endpoint_id: The private_endpoint_id of this CreateApplicationDetails.
+        :type: str
+        """
+        self._private_endpoint_id = private_endpoint_id
+
+    @property
     def spark_version(self):
         """
         **[Required]** Gets the spark_version of this CreateApplicationDetails.
@@ -639,7 +670,7 @@ class CreateApplicationDetails(object):
         Gets the warehouse_bucket_uri of this CreateApplicationDetails.
         An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory
         for BATCH SQL runs.
-        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :return: The warehouse_bucket_uri of this CreateApplicationDetails.
@@ -653,7 +684,7 @@ class CreateApplicationDetails(object):
         Sets the warehouse_bucket_uri of this CreateApplicationDetails.
         An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory
         for BATCH SQL runs.
-        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :param warehouse_bucket_uri: The warehouse_bucket_uri of this CreateApplicationDetails.

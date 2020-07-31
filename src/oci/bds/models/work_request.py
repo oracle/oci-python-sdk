@@ -45,6 +45,18 @@ class WorkRequest(object):
     #: This constant has a value of "CHANGE_COMPARTMENT_FOR_BDS"
     OPERATION_TYPE_CHANGE_COMPARTMENT_FOR_BDS = "CHANGE_COMPARTMENT_FOR_BDS"
 
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CHANGE_SHAPE"
+    OPERATION_TYPE_CHANGE_SHAPE = "CHANGE_SHAPE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_INFRA"
+    OPERATION_TYPE_UPDATE_INFRA = "UPDATE_INFRA"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "RESTART_NODE"
+    OPERATION_TYPE_RESTART_NODE = "RESTART_NODE"
+
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -84,7 +96,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "CREATE_BDS", "UPDATE_BDS", "DELETE_BDS", "ADD_BLOCK_STORAGE", "ADD_WORKER_NODES", "ADD_CLOUD_SQL", "REMOVE_CLOUD_SQL", "CHANGE_COMPARTMENT_FOR_BDS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_BDS", "UPDATE_BDS", "DELETE_BDS", "ADD_BLOCK_STORAGE", "ADD_WORKER_NODES", "ADD_CLOUD_SQL", "REMOVE_CLOUD_SQL", "CHANGE_COMPARTMENT_FOR_BDS", "CHANGE_SHAPE", "UPDATE_INFRA", "RESTART_NODE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -209,7 +221,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         Type of the work request
 
-        Allowed values for this property are: "CREATE_BDS", "UPDATE_BDS", "DELETE_BDS", "ADD_BLOCK_STORAGE", "ADD_WORKER_NODES", "ADD_CLOUD_SQL", "REMOVE_CLOUD_SQL", "CHANGE_COMPARTMENT_FOR_BDS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_BDS", "UPDATE_BDS", "DELETE_BDS", "ADD_BLOCK_STORAGE", "ADD_WORKER_NODES", "ADD_CLOUD_SQL", "REMOVE_CLOUD_SQL", "CHANGE_COMPARTMENT_FOR_BDS", "CHANGE_SHAPE", "UPDATE_INFRA", "RESTART_NODE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -228,7 +240,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["CREATE_BDS", "UPDATE_BDS", "DELETE_BDS", "ADD_BLOCK_STORAGE", "ADD_WORKER_NODES", "ADD_CLOUD_SQL", "REMOVE_CLOUD_SQL", "CHANGE_COMPARTMENT_FOR_BDS"]
+        allowed_values = ["CREATE_BDS", "UPDATE_BDS", "DELETE_BDS", "ADD_BLOCK_STORAGE", "ADD_WORKER_NODES", "ADD_CLOUD_SQL", "REMOVE_CLOUD_SQL", "CHANGE_COMPARTMENT_FOR_BDS", "CHANGE_SHAPE", "UPDATE_INFRA", "RESTART_NODE"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
