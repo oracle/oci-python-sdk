@@ -4,12 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.19.1 - TBD
+2.20.0 - 2020-08-04
 ====================
 
 Added
 -----
-* TBD
+* Support for calling Oracle Cloud Infrastructure services in the uk-gov-cardiff-1 region
+* Support for creating and managing private endpoints in the Data Flow service
+* Support for changing instance shapes and restarting nodes in the Big Data service
+* Support for additional versions (for example CSQL) in the Big Data service
+* Support for creating stacks from compartments in the Resource Manager service
+
+Breaking
+--------
+* Param `life_cycle_details` renamed to `lifecycle_details` in models `BlockchainPlatformByHostname` and `BlockchainPlatformSummary` in the Blockchain service
 
 ====================
 2.19.0 - 2020-07-28
