@@ -58,9 +58,9 @@ class BlockchainPlatformSummary(object):
             The value to assign to the lifecycle_state property of this BlockchainPlatformSummary.
         :type lifecycle_state: str
 
-        :param life_cycle_details:
-            The value to assign to the life_cycle_details property of this BlockchainPlatformSummary.
-        :type life_cycle_details: str
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this BlockchainPlatformSummary.
+        :type lifecycle_details: str
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this BlockchainPlatformSummary.
@@ -82,7 +82,7 @@ class BlockchainPlatformSummary(object):
             'compute_shape': 'str',
             'service_endpoint': 'str',
             'lifecycle_state': 'str',
-            'life_cycle_details': 'str',
+            'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -98,7 +98,7 @@ class BlockchainPlatformSummary(object):
             'compute_shape': 'computeShape',
             'service_endpoint': 'serviceEndpoint',
             'lifecycle_state': 'lifecycleState',
-            'life_cycle_details': 'lifeCycleDetails',
+            'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -113,7 +113,7 @@ class BlockchainPlatformSummary(object):
         self._compute_shape = None
         self._service_endpoint = None
         self._lifecycle_state = None
-        self._life_cycle_details = None
+        self._lifecycle_details = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -358,28 +358,28 @@ class BlockchainPlatformSummary(object):
         self._lifecycle_state = lifecycle_state
 
     @property
-    def life_cycle_details(self):
+    def lifecycle_details(self):
         """
-        Gets the life_cycle_details of this BlockchainPlatformSummary.
+        Gets the lifecycle_details of this BlockchainPlatformSummary.
         An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 
 
-        :return: The life_cycle_details of this BlockchainPlatformSummary.
+        :return: The lifecycle_details of this BlockchainPlatformSummary.
         :rtype: str
         """
-        return self._life_cycle_details
+        return self._lifecycle_details
 
-    @life_cycle_details.setter
-    def life_cycle_details(self, life_cycle_details):
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
         """
-        Sets the life_cycle_details of this BlockchainPlatformSummary.
+        Sets the lifecycle_details of this BlockchainPlatformSummary.
         An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 
 
-        :param life_cycle_details: The life_cycle_details of this BlockchainPlatformSummary.
+        :param lifecycle_details: The lifecycle_details of this BlockchainPlatformSummary.
         :type: str
         """
-        self._life_cycle_details = life_cycle_details
+        self._lifecycle_details = lifecycle_details
 
     @property
     def freeform_tags(self):

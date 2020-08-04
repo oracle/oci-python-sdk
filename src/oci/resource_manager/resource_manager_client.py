@@ -519,6 +519,7 @@ class ResourceManagerClient(object):
         Creates a stack in the specified compartment.
         You can create a stack from a Terraform configuration file.
         The Terraform configuration file can be directly uploaded or referenced from a source code control system.
+        You can also create a stack from an existing compartment.
         For more information, see
         `To create a stack`__.
 
@@ -1965,6 +1966,79 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="list[JobSummary]")
 
+    def list_resource_discovery_services(self, **kwargs):
+        """
+        Returns a list of supported services for Resource Discovery. For reference on service names, see the `Terraform provider documentation`__.
+
+        __ https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services
+
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str compartment_id: (optional)
+            A filter to return only resources that exist in the compartment, identified by `OCID`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.resource_manager.models.ResourceDiscoveryServiceCollection`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/resourceDiscoveryServices"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "compartment_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_resource_discovery_services got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "compartmentId": kwargs.get("compartment_id", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ResourceDiscoveryServiceCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ResourceDiscoveryServiceCollection")
+
     def list_stack_resource_drift_details(self, stack_id, **kwargs):
         """
         Lists drift status details for each resource defined in the specified stack.
@@ -2106,10 +2180,11 @@ class ResourceManagerClient(object):
             - ACTIVE
             - DELETING
             - DELETED
+            - FAILED
 
             __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#StackStates
 
-            Allowed values are: "CREATING", "ACTIVE", "DELETING", "DELETED"
+            Allowed values are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param str display_name: (optional)
             A filter to return only resources that match the specified display name.
@@ -2171,7 +2246,7 @@ class ResourceManagerClient(object):
                 "list_stacks got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED"]
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)

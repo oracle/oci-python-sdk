@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ApplicationSummary(object):
     """
-    A data flow application object used in bulk listings.
+    A Data Flow application object used in bulk listings.
     """
 
     #: A constant which can be used with the language property of a ApplicationSummary.

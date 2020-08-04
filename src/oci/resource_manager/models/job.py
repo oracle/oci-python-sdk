@@ -525,6 +525,7 @@ class Job(object):
         Gets the working_directory of this Job.
         File path to the directory from which Terraform runs.
         If not specified, the root directory is used.
+        This parameter is ignored for the `configSourceType` value of `COMPARTMENT_CONFIG_SOURCE`.
 
 
         :return: The working_directory of this Job.
@@ -538,6 +539,7 @@ class Job(object):
         Sets the working_directory of this Job.
         File path to the directory from which Terraform runs.
         If not specified, the root directory is used.
+        This parameter is ignored for the `configSourceType` value of `COMPARTMENT_CONFIG_SOURCE`.
 
 
         :param working_directory: The working_directory of this Job.

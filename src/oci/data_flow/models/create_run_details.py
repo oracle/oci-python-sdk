@@ -223,7 +223,7 @@ class CreateRunDetails(object):
         """
         Gets the configuration of this CreateRunDetails.
         The Spark configuration passed to the running process.
-        See https://spark.apache.org/docs/latest/configuration.html#available-properties
+        See https://spark.apache.org/docs/latest/configuration.html#available-properties.
         Example: { \"spark.app.name\" : \"My App Name\", \"spark.shuffle.io.maxRetries\" : \"4\" }
         Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is
         not allowed to be overwritten will cause a 400 status to be returned.
@@ -239,7 +239,7 @@ class CreateRunDetails(object):
         """
         Sets the configuration of this CreateRunDetails.
         The Spark configuration passed to the running process.
-        See https://spark.apache.org/docs/latest/configuration.html#available-properties
+        See https://spark.apache.org/docs/latest/configuration.html#available-properties.
         Example: { \"spark.app.name\" : \"My App Name\", \"spark.shuffle.io.maxRetries\" : \"4\" }
         Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is
         not allowed to be overwritten will cause a 400 status to be returned.
@@ -389,7 +389,7 @@ class CreateRunDetails(object):
         """
         Gets the logs_bucket_uri of this CreateRunDetails.
         An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
-        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :return: The logs_bucket_uri of this CreateRunDetails.
@@ -402,7 +402,7 @@ class CreateRunDetails(object):
         """
         Sets the logs_bucket_uri of this CreateRunDetails.
         An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
-        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :param logs_bucket_uri: The logs_bucket_uri of this CreateRunDetails.
@@ -470,7 +470,7 @@ class CreateRunDetails(object):
         Gets the warehouse_bucket_uri of this CreateRunDetails.
         An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory
         for BATCH SQL runs.
-        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :return: The warehouse_bucket_uri of this CreateRunDetails.
@@ -484,7 +484,7 @@ class CreateRunDetails(object):
         Sets the warehouse_bucket_uri of this CreateRunDetails.
         An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory
         for BATCH SQL runs.
-        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :param warehouse_bucket_uri: The warehouse_bucket_uri of this CreateRunDetails.

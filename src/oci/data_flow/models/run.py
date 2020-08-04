@@ -158,6 +158,26 @@ class Run(object):
             The value to assign to the parameters property of this Run.
         :type parameters: list[ApplicationParameter]
 
+        :param private_endpoint_dns_zones:
+            The value to assign to the private_endpoint_dns_zones property of this Run.
+        :type private_endpoint_dns_zones: list[str]
+
+        :param private_endpoint_max_host_count:
+            The value to assign to the private_endpoint_max_host_count property of this Run.
+        :type private_endpoint_max_host_count: int
+
+        :param private_endpoint_nsg_ids:
+            The value to assign to the private_endpoint_nsg_ids property of this Run.
+        :type private_endpoint_nsg_ids: list[str]
+
+        :param private_endpoint_id:
+            The value to assign to the private_endpoint_id property of this Run.
+        :type private_endpoint_id: str
+
+        :param private_endpoint_subnet_id:
+            The value to assign to the private_endpoint_subnet_id property of this Run.
+        :type private_endpoint_subnet_id: str
+
         :param run_duration_in_milliseconds:
             The value to assign to the run_duration_in_milliseconds property of this Run.
         :type run_duration_in_milliseconds: int
@@ -208,6 +228,11 @@ class Run(object):
             'owner_principal_id': 'str',
             'owner_user_name': 'str',
             'parameters': 'list[ApplicationParameter]',
+            'private_endpoint_dns_zones': 'list[str]',
+            'private_endpoint_max_host_count': 'int',
+            'private_endpoint_nsg_ids': 'list[str]',
+            'private_endpoint_id': 'str',
+            'private_endpoint_subnet_id': 'str',
             'run_duration_in_milliseconds': 'int',
             'spark_version': 'str',
             'time_created': 'datetime',
@@ -241,6 +266,11 @@ class Run(object):
             'owner_principal_id': 'ownerPrincipalId',
             'owner_user_name': 'ownerUserName',
             'parameters': 'parameters',
+            'private_endpoint_dns_zones': 'privateEndpointDnsZones',
+            'private_endpoint_max_host_count': 'privateEndpointMaxHostCount',
+            'private_endpoint_nsg_ids': 'privateEndpointNsgIds',
+            'private_endpoint_id': 'privateEndpointId',
+            'private_endpoint_subnet_id': 'privateEndpointSubnetId',
             'run_duration_in_milliseconds': 'runDurationInMilliseconds',
             'spark_version': 'sparkVersion',
             'time_created': 'timeCreated',
@@ -273,6 +303,11 @@ class Run(object):
         self._owner_principal_id = None
         self._owner_user_name = None
         self._parameters = None
+        self._private_endpoint_dns_zones = None
+        self._private_endpoint_max_host_count = None
+        self._private_endpoint_nsg_ids = None
+        self._private_endpoint_id = None
+        self._private_endpoint_subnet_id = None
         self._run_duration_in_milliseconds = None
         self._spark_version = None
         self._time_created = None
@@ -284,8 +319,8 @@ class Run(object):
     def archive_uri(self):
         """
         Gets the archive_uri of this Run.
-        An Oracle Cloud Infrastructure URI of an archive (zip) file that may used to support the execution of the application.
-        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+        An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application.
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :return: The archive_uri of this Run.
@@ -297,8 +332,8 @@ class Run(object):
     def archive_uri(self, archive_uri):
         """
         Sets the archive_uri of this Run.
-        An Oracle Cloud Infrastructure URI of an archive (zip) file that may used to support the execution of the application.
-        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+        An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application.
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :param archive_uri: The archive_uri of this Run.
@@ -421,7 +456,7 @@ class Run(object):
         """
         Gets the configuration of this Run.
         The Spark configuration passed to the running process.
-        See https://spark.apache.org/docs/latest/configuration.html#available-properties
+        See https://spark.apache.org/docs/latest/configuration.html#available-properties.
         Example: { \"spark.app.name\" : \"My App Name\", \"spark.shuffle.io.maxRetries\" : \"4\" }
         Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is
         not allowed to be overwritten will cause a 400 status to be returned.
@@ -437,7 +472,7 @@ class Run(object):
         """
         Sets the configuration of this Run.
         The Spark configuration passed to the running process.
-        See https://spark.apache.org/docs/latest/configuration.html#available-properties
+        See https://spark.apache.org/docs/latest/configuration.html#available-properties.
         Example: { \"spark.app.name\" : \"My App Name\", \"spark.shuffle.io.maxRetries\" : \"4\" }
         Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is
         not allowed to be overwritten will cause a 400 status to be returned.
@@ -603,7 +638,7 @@ class Run(object):
         """
         **[Required]** Gets the file_uri of this Run.
         An Oracle Cloud Infrastructure URI of the file containing the application to execute.
-        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :return: The file_uri of this Run.
@@ -616,7 +651,7 @@ class Run(object):
         """
         Sets the file_uri of this Run.
         An Oracle Cloud Infrastructure URI of the file containing the application to execute.
-        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :param file_uri: The file_uri of this Run.
@@ -769,7 +804,7 @@ class Run(object):
         """
         Gets the logs_bucket_uri of this Run.
         An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
-        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :return: The logs_bucket_uri of this Run.
@@ -782,7 +817,7 @@ class Run(object):
         """
         Sets the logs_bucket_uri of this Run.
         An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
-        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :param logs_bucket_uri: The logs_bucket_uri of this Run.
@@ -818,7 +853,7 @@ class Run(object):
     def opc_request_id(self):
         """
         Gets the opc_request_id of this Run.
-        Unique Oracle-assigned identifier for the request.
+        Unique Oracle assigned identifier for the request.
         If you need to contact Oracle about a particular request, please provide the request ID.
 
 
@@ -831,7 +866,7 @@ class Run(object):
     def opc_request_id(self, opc_request_id):
         """
         Sets the opc_request_id of this Run.
-        Unique Oracle-assigned identifier for the request.
+        Unique Oracle assigned identifier for the request.
         If you need to contact Oracle about a particular request, please provide the request ID.
 
 
@@ -919,6 +954,134 @@ class Run(object):
         :type: list[ApplicationParameter]
         """
         self._parameters = parameters
+
+    @property
+    def private_endpoint_dns_zones(self):
+        """
+        Gets the private_endpoint_dns_zones of this Run.
+        An array of DNS zone names.
+        Example: `[ \"app.examplecorp.com\", \"app.examplecorp2.com\" ]`
+
+
+        :return: The private_endpoint_dns_zones of this Run.
+        :rtype: list[str]
+        """
+        return self._private_endpoint_dns_zones
+
+    @private_endpoint_dns_zones.setter
+    def private_endpoint_dns_zones(self, private_endpoint_dns_zones):
+        """
+        Sets the private_endpoint_dns_zones of this Run.
+        An array of DNS zone names.
+        Example: `[ \"app.examplecorp.com\", \"app.examplecorp2.com\" ]`
+
+
+        :param private_endpoint_dns_zones: The private_endpoint_dns_zones of this Run.
+        :type: list[str]
+        """
+        self._private_endpoint_dns_zones = private_endpoint_dns_zones
+
+    @property
+    def private_endpoint_max_host_count(self):
+        """
+        Gets the private_endpoint_max_host_count of this Run.
+        The maximum number of hosts to be accessed through the private endpoint. This value is used
+        to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a
+        multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up
+        to 512.
+
+
+        :return: The private_endpoint_max_host_count of this Run.
+        :rtype: int
+        """
+        return self._private_endpoint_max_host_count
+
+    @private_endpoint_max_host_count.setter
+    def private_endpoint_max_host_count(self, private_endpoint_max_host_count):
+        """
+        Sets the private_endpoint_max_host_count of this Run.
+        The maximum number of hosts to be accessed through the private endpoint. This value is used
+        to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a
+        multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up
+        to 512.
+
+
+        :param private_endpoint_max_host_count: The private_endpoint_max_host_count of this Run.
+        :type: int
+        """
+        self._private_endpoint_max_host_count = private_endpoint_max_host_count
+
+    @property
+    def private_endpoint_nsg_ids(self):
+        """
+        Gets the private_endpoint_nsg_ids of this Run.
+        An array of network security group OCIDs.
+
+
+        :return: The private_endpoint_nsg_ids of this Run.
+        :rtype: list[str]
+        """
+        return self._private_endpoint_nsg_ids
+
+    @private_endpoint_nsg_ids.setter
+    def private_endpoint_nsg_ids(self, private_endpoint_nsg_ids):
+        """
+        Sets the private_endpoint_nsg_ids of this Run.
+        An array of network security group OCIDs.
+
+
+        :param private_endpoint_nsg_ids: The private_endpoint_nsg_ids of this Run.
+        :type: list[str]
+        """
+        self._private_endpoint_nsg_ids = private_endpoint_nsg_ids
+
+    @property
+    def private_endpoint_id(self):
+        """
+        Gets the private_endpoint_id of this Run.
+        The OCID of a private endpoint.
+
+
+        :return: The private_endpoint_id of this Run.
+        :rtype: str
+        """
+        return self._private_endpoint_id
+
+    @private_endpoint_id.setter
+    def private_endpoint_id(self, private_endpoint_id):
+        """
+        Sets the private_endpoint_id of this Run.
+        The OCID of a private endpoint.
+
+
+        :param private_endpoint_id: The private_endpoint_id of this Run.
+        :type: str
+        """
+        self._private_endpoint_id = private_endpoint_id
+
+    @property
+    def private_endpoint_subnet_id(self):
+        """
+        Gets the private_endpoint_subnet_id of this Run.
+        The OCID of a subnet.
+
+
+        :return: The private_endpoint_subnet_id of this Run.
+        :rtype: str
+        """
+        return self._private_endpoint_subnet_id
+
+    @private_endpoint_subnet_id.setter
+    def private_endpoint_subnet_id(self, private_endpoint_subnet_id):
+        """
+        Sets the private_endpoint_subnet_id of this Run.
+        The OCID of a subnet.
+
+
+        :param private_endpoint_subnet_id: The private_endpoint_subnet_id of this Run.
+        :type: str
+        """
+        self._private_endpoint_subnet_id = private_endpoint_subnet_id
 
     @property
     def run_duration_in_milliseconds(self):
@@ -1058,7 +1221,7 @@ class Run(object):
         Gets the warehouse_bucket_uri of this Run.
         An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory
         for BATCH SQL runs.
-        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :return: The warehouse_bucket_uri of this Run.
@@ -1072,7 +1235,7 @@ class Run(object):
         Sets the warehouse_bucket_uri of this Run.
         An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory
         for BATCH SQL runs.
-        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat
+        See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 
 
         :param warehouse_bucket_uri: The warehouse_bucket_uri of this Run.
