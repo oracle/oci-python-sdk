@@ -35,7 +35,8 @@ REGIONS_SHORT_NAMES = {
     'jed': 'me-jeddah-1',
     'yul': 'ca-montreal-1',
     'hyd': 'ap-hyderabad-1',
-    'yny': 'ap-chuncheon-1'
+    'yny': 'ap-chuncheon-1',
+    'brs': 'uk-gov-cardiff-1'
 }
 REGION_REALMS = {
     'ap-melbourne-1': 'oc1',
@@ -65,7 +66,8 @@ REGION_REALMS = {
     'us-gov-chicago-1': 'oc3',
     'us-gov-phoenix-1': 'oc3',
 
-    'uk-gov-london-1': 'oc4'
+    'uk-gov-london-1': 'oc4',
+    'uk-gov-cardiff-1': 'oc4'
 }
 REALMS = {
     'oc1': 'oraclecloud.com',
@@ -90,6 +92,7 @@ REGIONS = [
     "eu-zurich-1",
     "me-jeddah-1",
     "uk-london-1",
+    "uk-gov-cardiff-1",
     "ca-toronto-1",
     "ca-montreal-1",
     "us-langley-1",

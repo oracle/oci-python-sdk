@@ -20,6 +20,7 @@ class CreateConfigSourceDetails(object):
 
         * :class:`~oci.resource_manager.models.CreateZipUploadConfigSourceDetails`
         * :class:`~oci.resource_manager.models.CreateGitConfigSourceDetails`
+        * :class:`~oci.resource_manager.models.CreateCompartmentConfigSourceDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -58,6 +59,9 @@ class CreateConfigSourceDetails(object):
 
         if type == 'GIT_CONFIG_SOURCE':
             return 'CreateGitConfigSourceDetails'
+
+        if type == 'COMPARTMENT_CONFIG_SOURCE':
+            return 'CreateCompartmentConfigSourceDetails'
         else:
             return 'CreateConfigSourceDetails'
 
@@ -91,6 +95,7 @@ class CreateConfigSourceDetails(object):
         Gets the working_directory of this CreateConfigSourceDetails.
         File path to the directory from which Terraform runs.
         If not specified, the root directory is used.
+        This parameter is ignored for the `configSourceType` value of `COMPARTMENT_CONFIG_SOURCE`.
 
 
         :return: The working_directory of this CreateConfigSourceDetails.
@@ -104,6 +109,7 @@ class CreateConfigSourceDetails(object):
         Sets the working_directory of this CreateConfigSourceDetails.
         File path to the directory from which Terraform runs.
         If not specified, the root directory is used.
+        This parameter is ignored for the `configSourceType` value of `COMPARTMENT_CONFIG_SOURCE`.
 
 
         :param working_directory: The working_directory of this CreateConfigSourceDetails.

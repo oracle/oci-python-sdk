@@ -23,12 +23,14 @@ Resource Manager
     oci.resource_manager.models.ApplyJobPlanResolution
     oci.resource_manager.models.ChangeConfigurationSourceProviderCompartmentDetails
     oci.resource_manager.models.ChangeStackCompartmentDetails
+    oci.resource_manager.models.CompartmentConfigSource
     oci.resource_manager.models.ConfigSource
     oci.resource_manager.models.ConfigSourceRecord
     oci.resource_manager.models.ConfigurationSourceProvider
     oci.resource_manager.models.ConfigurationSourceProviderCollection
     oci.resource_manager.models.ConfigurationSourceProviderSummary
     oci.resource_manager.models.CreateApplyJobOperationDetails
+    oci.resource_manager.models.CreateCompartmentConfigSourceDetails
     oci.resource_manager.models.CreateConfigSourceDetails
     oci.resource_manager.models.CreateConfigurationSourceProviderDetails
     oci.resource_manager.models.CreateDestroyJobOperationDetails
@@ -56,6 +58,8 @@ Resource Manager
     oci.resource_manager.models.LogEntry
     oci.resource_manager.models.PlanJobOperationDetails
     oci.resource_manager.models.PlanJobOperationDetailsSummary
+    oci.resource_manager.models.ResourceDiscoveryServiceCollection
+    oci.resource_manager.models.ResourceDiscoveryServiceSummary
     oci.resource_manager.models.Stack
     oci.resource_manager.models.StackResourceDriftCollection
     oci.resource_manager.models.StackResourceDriftSummary

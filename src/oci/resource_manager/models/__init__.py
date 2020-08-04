@@ -9,12 +9,14 @@ from .apply_job_operation_details_summary import ApplyJobOperationDetailsSummary
 from .apply_job_plan_resolution import ApplyJobPlanResolution
 from .change_configuration_source_provider_compartment_details import ChangeConfigurationSourceProviderCompartmentDetails
 from .change_stack_compartment_details import ChangeStackCompartmentDetails
+from .compartment_config_source import CompartmentConfigSource
 from .config_source import ConfigSource
 from .config_source_record import ConfigSourceRecord
 from .configuration_source_provider import ConfigurationSourceProvider
 from .configuration_source_provider_collection import ConfigurationSourceProviderCollection
 from .configuration_source_provider_summary import ConfigurationSourceProviderSummary
 from .create_apply_job_operation_details import CreateApplyJobOperationDetails
+from .create_compartment_config_source_details import CreateCompartmentConfigSourceDetails
 from .create_config_source_details import CreateConfigSourceDetails
 from .create_configuration_source_provider_details import CreateConfigurationSourceProviderDetails
 from .create_destroy_job_operation_details import CreateDestroyJobOperationDetails
@@ -42,6 +44,8 @@ from .job_summary import JobSummary
 from .log_entry import LogEntry
 from .plan_job_operation_details import PlanJobOperationDetails
 from .plan_job_operation_details_summary import PlanJobOperationDetailsSummary
+from .resource_discovery_service_collection import ResourceDiscoveryServiceCollection
+from .resource_discovery_service_summary import ResourceDiscoveryServiceSummary
 from .stack import Stack
 from .stack_resource_drift_collection import StackResourceDriftCollection
 from .stack_resource_drift_summary import StackResourceDriftSummary
@@ -70,12 +74,14 @@ resource_manager_type_mapping = {
     "ApplyJobPlanResolution": ApplyJobPlanResolution,
     "ChangeConfigurationSourceProviderCompartmentDetails": ChangeConfigurationSourceProviderCompartmentDetails,
     "ChangeStackCompartmentDetails": ChangeStackCompartmentDetails,
+    "CompartmentConfigSource": CompartmentConfigSource,
     "ConfigSource": ConfigSource,
     "ConfigSourceRecord": ConfigSourceRecord,
     "ConfigurationSourceProvider": ConfigurationSourceProvider,
     "ConfigurationSourceProviderCollection": ConfigurationSourceProviderCollection,
     "ConfigurationSourceProviderSummary": ConfigurationSourceProviderSummary,
     "CreateApplyJobOperationDetails": CreateApplyJobOperationDetails,
+    "CreateCompartmentConfigSourceDetails": CreateCompartmentConfigSourceDetails,
     "CreateConfigSourceDetails": CreateConfigSourceDetails,
     "CreateConfigurationSourceProviderDetails": CreateConfigurationSourceProviderDetails,
     "CreateDestroyJobOperationDetails": CreateDestroyJobOperationDetails,
@@ -103,6 +109,8 @@ resource_manager_type_mapping = {
     "LogEntry": LogEntry,
     "PlanJobOperationDetails": PlanJobOperationDetails,
     "PlanJobOperationDetailsSummary": PlanJobOperationDetailsSummary,
+    "ResourceDiscoveryServiceCollection": ResourceDiscoveryServiceCollection,
+    "ResourceDiscoveryServiceSummary": ResourceDiscoveryServiceSummary,
     "Stack": Stack,
     "StackResourceDriftCollection": StackResourceDriftCollection,
     "StackResourceDriftSummary": StackResourceDriftSummary,

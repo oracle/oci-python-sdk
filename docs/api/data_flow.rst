@@ -22,11 +22,25 @@ Data Flow
     oci.data_flow.models.ApplicationParameter
     oci.data_flow.models.ApplicationSummary
     oci.data_flow.models.ChangeApplicationCompartmentDetails
+    oci.data_flow.models.ChangePrivateEndpointCompartmentDetails
     oci.data_flow.models.ChangeRunCompartmentDetails
     oci.data_flow.models.CreateApplicationDetails
+    oci.data_flow.models.CreatePrivateEndpointDetails
     oci.data_flow.models.CreateRunDetails
+    oci.data_flow.models.PrivateEndpoint
+    oci.data_flow.models.PrivateEndpointCollection
+    oci.data_flow.models.PrivateEndpointSummary
     oci.data_flow.models.Run
     oci.data_flow.models.RunLogSummary
     oci.data_flow.models.RunSummary
     oci.data_flow.models.UpdateApplicationDetails
+    oci.data_flow.models.UpdatePrivateEndpointDetails
     oci.data_flow.models.UpdateRunDetails
+    oci.data_flow.models.WorkRequest
+    oci.data_flow.models.WorkRequestCollection
+    oci.data_flow.models.WorkRequestError
+    oci.data_flow.models.WorkRequestErrorCollection
+    oci.data_flow.models.WorkRequestLog
+    oci.data_flow.models.WorkRequestLogCollection
+    oci.data_flow.models.WorkRequestResource
+    oci.data_flow.models.WorkRequestSummary

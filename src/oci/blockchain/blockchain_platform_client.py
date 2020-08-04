@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class BlockchainPlatformClient(object):
     """
-    Blockchain Platform Plane API
+    Blockchain Platform Control Plane API
     """
 
     def __init__(self, config, **kwargs):

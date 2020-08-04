@@ -26,6 +26,26 @@ class ClusterDetails(object):
             The value to assign to the bdm_version property of this ClusterDetails.
         :type bdm_version: str
 
+        :param bds_version:
+            The value to assign to the bds_version property of this ClusterDetails.
+        :type bds_version: str
+
+        :param os_version:
+            The value to assign to the os_version property of this ClusterDetails.
+        :type os_version: str
+
+        :param db_version:
+            The value to assign to the db_version property of this ClusterDetails.
+        :type db_version: str
+
+        :param bd_cell_version:
+            The value to assign to the bd_cell_version property of this ClusterDetails.
+        :type bd_cell_version: str
+
+        :param csql_cell_version:
+            The value to assign to the csql_cell_version property of this ClusterDetails.
+        :type csql_cell_version: str
+
         :param time_created:
             The value to assign to the time_created property of this ClusterDetails.
         :type time_created: datetime
@@ -50,6 +70,11 @@ class ClusterDetails(object):
         self.swagger_types = {
             'bda_version': 'str',
             'bdm_version': 'str',
+            'bds_version': 'str',
+            'os_version': 'str',
+            'db_version': 'str',
+            'bd_cell_version': 'str',
+            'csql_cell_version': 'str',
             'time_created': 'datetime',
             'time_refreshed': 'datetime',
             'cloudera_manager_url': 'str',
@@ -60,6 +85,11 @@ class ClusterDetails(object):
         self.attribute_map = {
             'bda_version': 'bdaVersion',
             'bdm_version': 'bdmVersion',
+            'bds_version': 'bdsVersion',
+            'os_version': 'osVersion',
+            'db_version': 'dbVersion',
+            'bd_cell_version': 'bdCellVersion',
+            'csql_cell_version': 'csqlCellVersion',
             'time_created': 'timeCreated',
             'time_refreshed': 'timeRefreshed',
             'cloudera_manager_url': 'clouderaManagerUrl',
@@ -69,6 +99,11 @@ class ClusterDetails(object):
 
         self._bda_version = None
         self._bdm_version = None
+        self._bds_version = None
+        self._os_version = None
+        self._db_version = None
+        self._bd_cell_version = None
+        self._csql_cell_version = None
         self._time_created = None
         self._time_refreshed = None
         self._cloudera_manager_url = None
@@ -103,7 +138,7 @@ class ClusterDetails(object):
     def bdm_version(self):
         """
         Gets the bdm_version of this ClusterDetails.
-        BDM version installed in the cluster
+        Big Data Manager version installed in the cluster
 
 
         :return: The bdm_version of this ClusterDetails.
@@ -115,13 +150,133 @@ class ClusterDetails(object):
     def bdm_version(self, bdm_version):
         """
         Sets the bdm_version of this ClusterDetails.
-        BDM version installed in the cluster
+        Big Data Manager version installed in the cluster
 
 
         :param bdm_version: The bdm_version of this ClusterDetails.
         :type: str
         """
         self._bdm_version = bdm_version
+
+    @property
+    def bds_version(self):
+        """
+        Gets the bds_version of this ClusterDetails.
+        Big Data Service version installed in the cluster
+
+
+        :return: The bds_version of this ClusterDetails.
+        :rtype: str
+        """
+        return self._bds_version
+
+    @bds_version.setter
+    def bds_version(self, bds_version):
+        """
+        Sets the bds_version of this ClusterDetails.
+        Big Data Service version installed in the cluster
+
+
+        :param bds_version: The bds_version of this ClusterDetails.
+        :type: str
+        """
+        self._bds_version = bds_version
+
+    @property
+    def os_version(self):
+        """
+        Gets the os_version of this ClusterDetails.
+        Oracle Linux version installed in the cluster
+
+
+        :return: The os_version of this ClusterDetails.
+        :rtype: str
+        """
+        return self._os_version
+
+    @os_version.setter
+    def os_version(self, os_version):
+        """
+        Sets the os_version of this ClusterDetails.
+        Oracle Linux version installed in the cluster
+
+
+        :param os_version: The os_version of this ClusterDetails.
+        :type: str
+        """
+        self._os_version = os_version
+
+    @property
+    def db_version(self):
+        """
+        Gets the db_version of this ClusterDetails.
+        Query Server Database version
+
+
+        :return: The db_version of this ClusterDetails.
+        :rtype: str
+        """
+        return self._db_version
+
+    @db_version.setter
+    def db_version(self, db_version):
+        """
+        Sets the db_version of this ClusterDetails.
+        Query Server Database version
+
+
+        :param db_version: The db_version of this ClusterDetails.
+        :type: str
+        """
+        self._db_version = db_version
+
+    @property
+    def bd_cell_version(self):
+        """
+        Gets the bd_cell_version of this ClusterDetails.
+        Cloud SQL cell version
+
+
+        :return: The bd_cell_version of this ClusterDetails.
+        :rtype: str
+        """
+        return self._bd_cell_version
+
+    @bd_cell_version.setter
+    def bd_cell_version(self, bd_cell_version):
+        """
+        Sets the bd_cell_version of this ClusterDetails.
+        Cloud SQL cell version
+
+
+        :param bd_cell_version: The bd_cell_version of this ClusterDetails.
+        :type: str
+        """
+        self._bd_cell_version = bd_cell_version
+
+    @property
+    def csql_cell_version(self):
+        """
+        Gets the csql_cell_version of this ClusterDetails.
+        Big Data SQL version
+
+
+        :return: The csql_cell_version of this ClusterDetails.
+        :rtype: str
+        """
+        return self._csql_cell_version
+
+    @csql_cell_version.setter
+    def csql_cell_version(self, csql_cell_version):
+        """
+        Sets the csql_cell_version of this ClusterDetails.
+        Big Data SQL version
+
+
+        :param csql_cell_version: The csql_cell_version of this ClusterDetails.
+        :type: str
+        """
+        self._csql_cell_version = csql_cell_version
 
     @property
     def time_created(self):

@@ -26,6 +26,10 @@ class BdsInstance(object):
     LIFECYCLE_STATE_UPDATING = "UPDATING"
 
     #: A constant which can be used with the lifecycle_state property of a BdsInstance.
+    #: This constant has a value of "UPDATING_INFRA"
+    LIFECYCLE_STATE_UPDATING_INFRA = "UPDATING_INFRA"
+
+    #: A constant which can be used with the lifecycle_state property of a BdsInstance.
     #: This constant has a value of "SUSPENDING"
     LIFECYCLE_STATE_SUSPENDING = "SUSPENDING"
 
@@ -76,7 +80,7 @@ class BdsInstance(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this BdsInstance.
-            Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "SUSPENDING", "SUSPENDED", "RESUMING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "UPDATING_INFRA", "SUSPENDING", "SUSPENDED", "RESUMING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -278,7 +282,7 @@ class BdsInstance(object):
         **[Required]** Gets the lifecycle_state of this BdsInstance.
         The state of the BDS instance
 
-        Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "SUSPENDING", "SUSPENDED", "RESUMING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "UPDATING_INFRA", "SUSPENDING", "SUSPENDED", "RESUMING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -297,7 +301,7 @@ class BdsInstance(object):
         :param lifecycle_state: The lifecycle_state of this BdsInstance.
         :type: str
         """
-        allowed_values = ["CREATING", "ACTIVE", "UPDATING", "SUSPENDING", "SUSPENDED", "RESUMING", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "ACTIVE", "UPDATING", "UPDATING_INFRA", "SUSPENDING", "SUSPENDED", "RESUMING", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
