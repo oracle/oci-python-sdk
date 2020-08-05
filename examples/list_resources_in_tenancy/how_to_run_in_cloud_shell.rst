@@ -20,5 +20,6 @@ Executing using Cloud Shell:
        python list_all_virtual_circuits_in_tenancy.py -dt
        python list_compute_tags_in_tenancy.py -dt
        python list_dbsystem_with_maintenance_in_tenancy.py -dt
+       python list_bv_backups_in_tenancy.py -dt
 
 
