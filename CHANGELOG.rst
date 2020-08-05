@@ -27,6 +27,10 @@ Breaking
 --------
 * Param `life_cycle_details` renamed to `lifecycle_details` in models `BlockchainPlatformByHostname` and `BlockchainPlatformSummary` in the Blockchain service
 
+Changed
+-------
+* Restricted `pyOpenSSL` dependency to versions between 17.5.0 and 19.1.0, both inclusive. See `#255 <https://github.com/oracle/oci-python-sdk/issues/255>`_ for details.
+
 ====================
 2.19.0 - 2020-07-28
 ====================
