@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Classifier(object):
     """
-    Incident Classifier details
+    Details about the incident classifier object.
     """
 
     #: A constant which can be used with the scope property of a Classifier.
@@ -111,7 +111,7 @@ class Classifier(object):
     def id(self):
         """
         Gets the id of this Classifier.
-        Unique ID that identifies a classifier
+        Unique identifier of the classifier.
 
 
         :return: The id of this Classifier.
@@ -123,7 +123,7 @@ class Classifier(object):
     def id(self, id):
         """
         Sets the id of this Classifier.
-        Unique ID that identifies a classifier
+        Unique identifier of the classifier.
 
 
         :param id: The id of this Classifier.
@@ -135,7 +135,7 @@ class Classifier(object):
     def name(self):
         """
         Gets the name of this Classifier.
-        Name of classifier. eg: LIMIT Increase
+        The display name of the classifier.
 
 
         :return: The name of this Classifier.
@@ -147,7 +147,7 @@ class Classifier(object):
     def name(self, name):
         """
         Sets the name of this Classifier.
-        Name of classifier. eg: LIMIT Increase
+        The display name of the classifier.
 
 
         :param name: The name of this Classifier.
@@ -159,7 +159,7 @@ class Classifier(object):
     def label(self):
         """
         Gets the label of this Classifier.
-        Label of classifier
+        The label associated with the classifier.
 
 
         :return: The label of this Classifier.
@@ -171,7 +171,7 @@ class Classifier(object):
     def label(self, label):
         """
         Sets the label of this Classifier.
-        Label of classifier
+        The label associated with the classifier.
 
 
         :param label: The label of this Classifier.
@@ -183,7 +183,7 @@ class Classifier(object):
     def description(self):
         """
         Gets the description of this Classifier.
-        Description of classifier
+        The description of the classifier.
 
 
         :return: The description of this Classifier.
@@ -195,7 +195,7 @@ class Classifier(object):
     def description(self, description):
         """
         Sets the description of this Classifier.
-        Description of classifier
+        The description of the classifier.
 
 
         :param description: The description of this Classifier.
@@ -207,7 +207,7 @@ class Classifier(object):
     def issue_type_list(self):
         """
         Gets the issue_type_list of this Classifier.
-        List of Issues
+        The list of issues.
 
 
         :return: The issue_type_list of this Classifier.
@@ -219,7 +219,7 @@ class Classifier(object):
     def issue_type_list(self, issue_type_list):
         """
         Sets the issue_type_list of this Classifier.
-        List of Issues
+        The list of issues.
 
 
         :param issue_type_list: The issue_type_list of this Classifier.
@@ -231,7 +231,7 @@ class Classifier(object):
     def scope(self):
         """
         Gets the scope of this Classifier.
-        Scope of Service category/resource
+        The scope of the service category or resource.
 
         Allowed values for this property are: "AD", "REGION", "TENANCY", "NONE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -246,7 +246,7 @@ class Classifier(object):
     def scope(self, scope):
         """
         Sets the scope of this Classifier.
-        Scope of Service category/resource
+        The scope of the service category or resource.
 
 
         :param scope: The scope of this Classifier.
@@ -261,7 +261,7 @@ class Classifier(object):
     def unit(self):
         """
         Gets the unit of this Classifier.
-        Unit to measure Service category/ resource
+        The unit to use to measure the service category or resource.
 
         Allowed values for this property are: "COUNT", "GB", "NONE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -276,7 +276,7 @@ class Classifier(object):
     def unit(self, unit):
         """
         Sets the unit of this Classifier.
-        Unit to measure Service category/ resource
+        The unit to use to measure the service category or resource.
 
 
         :param unit: The unit of this Classifier.

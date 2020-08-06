@@ -15,6 +15,18 @@ class UpdateAutonomousDatabaseDetails(object):
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
+    #: A constant which can be used with the db_workload property of a UpdateAutonomousDatabaseDetails.
+    #: This constant has a value of "OLTP"
+    DB_WORKLOAD_OLTP = "OLTP"
+
+    #: A constant which can be used with the db_workload property of a UpdateAutonomousDatabaseDetails.
+    #: This constant has a value of "DW"
+    DB_WORKLOAD_DW = "DW"
+
+    #: A constant which can be used with the db_workload property of a UpdateAutonomousDatabaseDetails.
+    #: This constant has a value of "AJD"
+    DB_WORKLOAD_AJD = "AJD"
+
     #: A constant which can be used with the license_model property of a UpdateAutonomousDatabaseDetails.
     #: This constant has a value of "LICENSE_INCLUDED"
     LICENSE_MODEL_LICENSE_INCLUDED = "LICENSE_INCLUDED"
@@ -60,6 +72,11 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the defined_tags property of this UpdateAutonomousDatabaseDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param db_workload:
+            The value to assign to the db_workload property of this UpdateAutonomousDatabaseDetails.
+            Allowed values for this property are: "OLTP", "DW", "AJD"
+        :type db_workload: str
+
         :param license_model:
             The value to assign to the license_model property of this UpdateAutonomousDatabaseDetails.
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
@@ -103,6 +120,7 @@ class UpdateAutonomousDatabaseDetails(object):
             'db_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'db_workload': 'str',
             'license_model': 'str',
             'whitelisted_ips': 'list[str]',
             'is_auto_scaling_enabled': 'bool',
@@ -122,6 +140,7 @@ class UpdateAutonomousDatabaseDetails(object):
             'db_name': 'dbName',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'db_workload': 'dbWorkload',
             'license_model': 'licenseModel',
             'whitelisted_ips': 'whitelistedIps',
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
@@ -140,6 +159,7 @@ class UpdateAutonomousDatabaseDetails(object):
         self._db_name = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._db_workload = None
         self._license_model = None
         self._whitelisted_ips = None
         self._is_auto_scaling_enabled = None
@@ -362,6 +382,46 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def db_workload(self):
+        """
+        Gets the db_workload of this UpdateAutonomousDatabaseDetails.
+        The Autonomous Database workload type. The following values are valid:
+
+        - OLTP - indicates an Autonomous Transaction Processing database
+        - DW - indicates an Autonomous Data Warehouse database
+        - AJD - indicates an Autonomous JSON Database
+
+        Allowed values for this property are: "OLTP", "DW", "AJD"
+
+
+        :return: The db_workload of this UpdateAutonomousDatabaseDetails.
+        :rtype: str
+        """
+        return self._db_workload
+
+    @db_workload.setter
+    def db_workload(self, db_workload):
+        """
+        Sets the db_workload of this UpdateAutonomousDatabaseDetails.
+        The Autonomous Database workload type. The following values are valid:
+
+        - OLTP - indicates an Autonomous Transaction Processing database
+        - DW - indicates an Autonomous Data Warehouse database
+        - AJD - indicates an Autonomous JSON Database
+
+
+        :param db_workload: The db_workload of this UpdateAutonomousDatabaseDetails.
+        :type: str
+        """
+        allowed_values = ["OLTP", "DW", "AJD"]
+        if not value_allowed_none_or_none_sentinel(db_workload, allowed_values):
+            raise ValueError(
+                "Invalid value for `db_workload`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._db_workload = db_workload
 
     @property
     def license_model(self):

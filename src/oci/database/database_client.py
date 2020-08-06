@@ -6780,7 +6780,7 @@ class DatabaseClient(object):
         :param str db_workload: (optional)
             A filter to return only autonomous database resources that match the specified workload type.
 
-            Allowed values are: "OLTP", "DW"
+            Allowed values are: "OLTP", "DW", "AJD"
 
         :param str db_version: (optional)
             A filter to return only autonomous database resources that match the specified dbVersion.
@@ -6863,7 +6863,7 @@ class DatabaseClient(object):
                 )
 
         if 'db_workload' in kwargs:
-            db_workload_allowed_values = ["OLTP", "DW"]
+            db_workload_allowed_values = ["OLTP", "DW", "AJD"]
             if kwargs['db_workload'] not in db_workload_allowed_values:
                 raise ValueError(
                     "Invalid value for `db_workload`, must be one of {0}".format(db_workload_allowed_values)
@@ -7047,7 +7047,7 @@ class DatabaseClient(object):
         :param str db_workload: (optional)
             A filter to return only autonomous database resources that match the specified workload type.
 
-            Allowed values are: "OLTP", "DW"
+            Allowed values are: "OLTP", "DW", "AJD"
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`).
@@ -7083,7 +7083,7 @@ class DatabaseClient(object):
                 "list_autonomous_db_versions got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'db_workload' in kwargs:
-            db_workload_allowed_values = ["OLTP", "DW"]
+            db_workload_allowed_values = ["OLTP", "DW", "AJD"]
             if kwargs['db_workload'] not in db_workload_allowed_values:
                 raise ValueError(
                     "Invalid value for `db_workload`, must be one of {0}".format(db_workload_allowed_values)

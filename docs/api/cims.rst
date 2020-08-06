@@ -7,7 +7,9 @@ Cims
     :template: autosummary/service_client.rst
 
     oci.cims.IncidentClient
+    oci.cims.UserClient
     oci.cims.IncidentClientCompositeOperations
+    oci.cims.UserClientCompositeOperations
 
 --------
  Models
@@ -23,6 +25,7 @@ Cims
     oci.cims.models.Classifier
     oci.cims.models.Contact
     oci.cims.models.ContactList
+    oci.cims.models.ContextualData
     oci.cims.models.CreateCategoryDetails
     oci.cims.models.CreateIncident
     oci.cims.models.CreateIssueTypeDetails
@@ -32,6 +35,7 @@ Cims
     oci.cims.models.CreateSubCategoryDetails
     oci.cims.models.CreateTechSupportItemDetails
     oci.cims.models.CreateTicketDetails
+    oci.cims.models.CreateUserDetails
     oci.cims.models.Incident
     oci.cims.models.IncidentResourceType
     oci.cims.models.IncidentSummary
@@ -51,4 +55,5 @@ Cims
     oci.cims.models.UpdateItemDetails
     oci.cims.models.UpdateResourceDetails
     oci.cims.models.UpdateTicketDetails
+    oci.cims.models.User
     oci.cims.models.ValidationResponse

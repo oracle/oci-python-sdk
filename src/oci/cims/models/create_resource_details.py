@@ -10,7 +10,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateResourceDetails(object):
     """
-    Details of Ticket Item
+    Details about the resource that the support ticket relates to.
+
+    **Caution:** Avoid using any confidential information when you supply string values using the API.
     """
 
     #: A constant which can be used with the region property of a CreateResourceDetails.
@@ -58,14 +60,6 @@ class CreateResourceDetails(object):
     REGION_NRT = "NRT"
 
     #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "US_LANGLEY_1"
-    REGION_US_LANGLEY_1 = "US_LANGLEY_1"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "US_LUKE_1"
-    REGION_US_LUKE_1 = "US_LUKE_1"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
     #: This constant has a value of "ICN"
     REGION_ICN = "ICN"
 
@@ -76,18 +70,6 @@ class CreateResourceDetails(object):
     #: A constant which can be used with the region property of a CreateResourceDetails.
     #: This constant has a value of "GRU"
     REGION_GRU = "GRU"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "US_GOV_ASHBURN_1"
-    REGION_US_GOV_ASHBURN_1 = "US_GOV_ASHBURN_1"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "US_GOV_PHOENIX_1"
-    REGION_US_GOV_PHOENIX_1 = "US_GOV_PHOENIX_1"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "US_GOV_CHICAGO_1"
-    REGION_US_GOV_CHICAGO_1 = "US_GOV_CHICAGO_1"
 
     #: A constant which can be used with the region property of a CreateResourceDetails.
     #: This constant has a value of "SYD"
@@ -124,10 +106,6 @@ class CreateResourceDetails(object):
     #: A constant which can be used with the region property of a CreateResourceDetails.
     #: This constant has a value of "YNY"
     REGION_YNY = "YNY"
-
-    #: A constant which can be used with the region property of a CreateResourceDetails.
-    #: This constant has a value of "TIW"
-    REGION_TIW = "TIW"
 
     #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
     #: This constant has a value of "DEV_1"
@@ -234,14 +212,6 @@ class CreateResourceDetails(object):
     AVAILABILITY_DOMAIN_SA_SAOPAULO_1_AD_1 = "SA_SAOPAULO_1_AD_1"
 
     #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "US_LUKE_1_AD_1"
-    AVAILABILITY_DOMAIN_US_LUKE_1_AD_1 = "US_LUKE_1_AD_1"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "US_LANGLEY_1_AD_1"
-    AVAILABILITY_DOMAIN_US_LANGLEY_1_AD_1 = "US_LANGLEY_1_AD_1"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
     #: This constant has a value of "ME_JEDDAH_1_AD_1"
     AVAILABILITY_DOMAIN_ME_JEDDAH_1_AD_1 = "ME_JEDDAH_1_AD_1"
 
@@ -278,10 +248,6 @@ class CreateResourceDetails(object):
     AVAILABILITY_DOMAIN_AP_CHUNCHEON_1_AD_1 = "AP_CHUNCHEON_1_AD_1"
 
     #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
-    #: This constant has a value of "US_TACOMA_1_AD_1"
-    AVAILABILITY_DOMAIN_US_TACOMA_1_AD_1 = "US_TACOMA_1_AD_1"
-
-    #: A constant which can be used with the availability_domain property of a CreateResourceDetails.
     #: This constant has a value of "NO_AD"
     AVAILABILITY_DOMAIN_NO_AD = "NO_AD"
 
@@ -296,12 +262,12 @@ class CreateResourceDetails(object):
 
         :param region:
             The value to assign to the region property of this CreateResourceDetails.
-            Allowed values for this property are: "DEV", "SEA", "INTEG_NEXT", "INTEG_STABLE", "PHX", "IAD", "FRA", "EU_FRANKFURT_1", "LHR", "YYZ", "NRT", "US_LANGLEY_1", "US_LUKE_1", "ICN", "BOM", "GRU", "US_GOV_ASHBURN_1", "US_GOV_PHOENIX_1", "US_GOV_CHICAGO_1", "SYD", "ZRH", "JED", "AMS", "KIX", "MEL", "YUL", "HYD", "YNY", "TIW"
+            Allowed values for this property are: "DEV", "SEA", "INTEG_NEXT", "INTEG_STABLE", "PHX", "IAD", "FRA", "EU_FRANKFURT_1", "LHR", "YYZ", "NRT", "ICN", "BOM", "GRU", "SYD", "ZRH", "JED", "AMS", "KIX", "MEL", "YUL", "HYD", "YNY"
         :type region: str
 
         :param availability_domain:
             The value to assign to the availability_domain property of this CreateResourceDetails.
-            Allowed values for this property are: "DEV_1", "DEV_2", "DEV_3", "INTEG_NEXT_1", "INTEG_STABLE_1", "SEA_AD_1", "SEA_AD_2", "SEA_AD_3", "PHX_AD_1", "PHX_AD_2", "PHX_AD_3", "US_ASHBURN_AD_1", "US_ASHBURN_AD_2", "US_ASHBURN_AD_3", "US_ASHBURN_AD_4", "EU_FRANKFURT_1_AD_1", "EU_FRANKFURT_1_AD_2", "EU_FRANKFURT_1_AD_3", "UK_LONDON_1_AD_1", "UK_LONDON_1_AD_2", "UK_LONDON_1_AD_3", "CA_TORONTO_1_AD_1", "AP_TOKYO_1_AD_1", "AP_SEOUL_1_AD_1", "AP_MUMBAI_1_AD_1", "SA_SAOPAULO_1_AD_1", "US_LUKE_1_AD_1", "US_LANGLEY_1_AD_1", "ME_JEDDAH_1_AD_1", "AP_OSAKA_1_AD_1", "AP_SYDNEY_1_AD_1", "EU_ZURICH_1_AD_1", "EU_AMSTERDAM_1_AD_1", "AP_MELBOURNE_1_AD_1", "CA_MONTREAL_1_AD_1", "AP_HYDERABAD_1_AD_1", "AP_CHUNCHEON_1_AD_1", "US_TACOMA_1_AD_1", "NO_AD"
+            Allowed values for this property are: "DEV_1", "DEV_2", "DEV_3", "INTEG_NEXT_1", "INTEG_STABLE_1", "SEA_AD_1", "SEA_AD_2", "SEA_AD_3", "PHX_AD_1", "PHX_AD_2", "PHX_AD_3", "US_ASHBURN_AD_1", "US_ASHBURN_AD_2", "US_ASHBURN_AD_3", "US_ASHBURN_AD_4", "EU_FRANKFURT_1_AD_1", "EU_FRANKFURT_1_AD_2", "EU_FRANKFURT_1_AD_3", "UK_LONDON_1_AD_1", "UK_LONDON_1_AD_2", "UK_LONDON_1_AD_3", "CA_TORONTO_1_AD_1", "AP_TOKYO_1_AD_1", "AP_SEOUL_1_AD_1", "AP_MUMBAI_1_AD_1", "SA_SAOPAULO_1_AD_1", "ME_JEDDAH_1_AD_1", "AP_OSAKA_1_AD_1", "AP_SYDNEY_1_AD_1", "EU_ZURICH_1_AD_1", "EU_AMSTERDAM_1_AD_1", "AP_MELBOURNE_1_AD_1", "CA_MONTREAL_1_AD_1", "AP_HYDERABAD_1_AD_1", "AP_CHUNCHEON_1_AD_1", "NO_AD"
         :type availability_domain: str
 
         """
@@ -345,9 +311,9 @@ class CreateResourceDetails(object):
     def region(self):
         """
         Gets the region of this CreateResourceDetails.
-        List of OCI regions
+        The list of available Oracle Cloud Infrastructure regions.
 
-        Allowed values for this property are: "DEV", "SEA", "INTEG_NEXT", "INTEG_STABLE", "PHX", "IAD", "FRA", "EU_FRANKFURT_1", "LHR", "YYZ", "NRT", "US_LANGLEY_1", "US_LUKE_1", "ICN", "BOM", "GRU", "US_GOV_ASHBURN_1", "US_GOV_PHOENIX_1", "US_GOV_CHICAGO_1", "SYD", "ZRH", "JED", "AMS", "KIX", "MEL", "YUL", "HYD", "YNY", "TIW"
+        Allowed values for this property are: "DEV", "SEA", "INTEG_NEXT", "INTEG_STABLE", "PHX", "IAD", "FRA", "EU_FRANKFURT_1", "LHR", "YYZ", "NRT", "ICN", "BOM", "GRU", "SYD", "ZRH", "JED", "AMS", "KIX", "MEL", "YUL", "HYD", "YNY"
 
 
         :return: The region of this CreateResourceDetails.
@@ -359,13 +325,13 @@ class CreateResourceDetails(object):
     def region(self, region):
         """
         Sets the region of this CreateResourceDetails.
-        List of OCI regions
+        The list of available Oracle Cloud Infrastructure regions.
 
 
         :param region: The region of this CreateResourceDetails.
         :type: str
         """
-        allowed_values = ["DEV", "SEA", "INTEG_NEXT", "INTEG_STABLE", "PHX", "IAD", "FRA", "EU_FRANKFURT_1", "LHR", "YYZ", "NRT", "US_LANGLEY_1", "US_LUKE_1", "ICN", "BOM", "GRU", "US_GOV_ASHBURN_1", "US_GOV_PHOENIX_1", "US_GOV_CHICAGO_1", "SYD", "ZRH", "JED", "AMS", "KIX", "MEL", "YUL", "HYD", "YNY", "TIW"]
+        allowed_values = ["DEV", "SEA", "INTEG_NEXT", "INTEG_STABLE", "PHX", "IAD", "FRA", "EU_FRANKFURT_1", "LHR", "YYZ", "NRT", "ICN", "BOM", "GRU", "SYD", "ZRH", "JED", "AMS", "KIX", "MEL", "YUL", "HYD", "YNY"]
         if not value_allowed_none_or_none_sentinel(region, allowed_values):
             raise ValueError(
                 "Invalid value for `region`, must be None or one of {0}"
@@ -377,9 +343,9 @@ class CreateResourceDetails(object):
     def availability_domain(self):
         """
         Gets the availability_domain of this CreateResourceDetails.
-        List of OCI ADs
+        The list of available Oracle Cloud Infrastructure availability domains.
 
-        Allowed values for this property are: "DEV_1", "DEV_2", "DEV_3", "INTEG_NEXT_1", "INTEG_STABLE_1", "SEA_AD_1", "SEA_AD_2", "SEA_AD_3", "PHX_AD_1", "PHX_AD_2", "PHX_AD_3", "US_ASHBURN_AD_1", "US_ASHBURN_AD_2", "US_ASHBURN_AD_3", "US_ASHBURN_AD_4", "EU_FRANKFURT_1_AD_1", "EU_FRANKFURT_1_AD_2", "EU_FRANKFURT_1_AD_3", "UK_LONDON_1_AD_1", "UK_LONDON_1_AD_2", "UK_LONDON_1_AD_3", "CA_TORONTO_1_AD_1", "AP_TOKYO_1_AD_1", "AP_SEOUL_1_AD_1", "AP_MUMBAI_1_AD_1", "SA_SAOPAULO_1_AD_1", "US_LUKE_1_AD_1", "US_LANGLEY_1_AD_1", "ME_JEDDAH_1_AD_1", "AP_OSAKA_1_AD_1", "AP_SYDNEY_1_AD_1", "EU_ZURICH_1_AD_1", "EU_AMSTERDAM_1_AD_1", "AP_MELBOURNE_1_AD_1", "CA_MONTREAL_1_AD_1", "AP_HYDERABAD_1_AD_1", "AP_CHUNCHEON_1_AD_1", "US_TACOMA_1_AD_1", "NO_AD"
+        Allowed values for this property are: "DEV_1", "DEV_2", "DEV_3", "INTEG_NEXT_1", "INTEG_STABLE_1", "SEA_AD_1", "SEA_AD_2", "SEA_AD_3", "PHX_AD_1", "PHX_AD_2", "PHX_AD_3", "US_ASHBURN_AD_1", "US_ASHBURN_AD_2", "US_ASHBURN_AD_3", "US_ASHBURN_AD_4", "EU_FRANKFURT_1_AD_1", "EU_FRANKFURT_1_AD_2", "EU_FRANKFURT_1_AD_3", "UK_LONDON_1_AD_1", "UK_LONDON_1_AD_2", "UK_LONDON_1_AD_3", "CA_TORONTO_1_AD_1", "AP_TOKYO_1_AD_1", "AP_SEOUL_1_AD_1", "AP_MUMBAI_1_AD_1", "SA_SAOPAULO_1_AD_1", "ME_JEDDAH_1_AD_1", "AP_OSAKA_1_AD_1", "AP_SYDNEY_1_AD_1", "EU_ZURICH_1_AD_1", "EU_AMSTERDAM_1_AD_1", "AP_MELBOURNE_1_AD_1", "CA_MONTREAL_1_AD_1", "AP_HYDERABAD_1_AD_1", "AP_CHUNCHEON_1_AD_1", "NO_AD"
 
 
         :return: The availability_domain of this CreateResourceDetails.
@@ -391,13 +357,13 @@ class CreateResourceDetails(object):
     def availability_domain(self, availability_domain):
         """
         Sets the availability_domain of this CreateResourceDetails.
-        List of OCI ADs
+        The list of available Oracle Cloud Infrastructure availability domains.
 
 
         :param availability_domain: The availability_domain of this CreateResourceDetails.
         :type: str
         """
-        allowed_values = ["DEV_1", "DEV_2", "DEV_3", "INTEG_NEXT_1", "INTEG_STABLE_1", "SEA_AD_1", "SEA_AD_2", "SEA_AD_3", "PHX_AD_1", "PHX_AD_2", "PHX_AD_3", "US_ASHBURN_AD_1", "US_ASHBURN_AD_2", "US_ASHBURN_AD_3", "US_ASHBURN_AD_4", "EU_FRANKFURT_1_AD_1", "EU_FRANKFURT_1_AD_2", "EU_FRANKFURT_1_AD_3", "UK_LONDON_1_AD_1", "UK_LONDON_1_AD_2", "UK_LONDON_1_AD_3", "CA_TORONTO_1_AD_1", "AP_TOKYO_1_AD_1", "AP_SEOUL_1_AD_1", "AP_MUMBAI_1_AD_1", "SA_SAOPAULO_1_AD_1", "US_LUKE_1_AD_1", "US_LANGLEY_1_AD_1", "ME_JEDDAH_1_AD_1", "AP_OSAKA_1_AD_1", "AP_SYDNEY_1_AD_1", "EU_ZURICH_1_AD_1", "EU_AMSTERDAM_1_AD_1", "AP_MELBOURNE_1_AD_1", "CA_MONTREAL_1_AD_1", "AP_HYDERABAD_1_AD_1", "AP_CHUNCHEON_1_AD_1", "US_TACOMA_1_AD_1", "NO_AD"]
+        allowed_values = ["DEV_1", "DEV_2", "DEV_3", "INTEG_NEXT_1", "INTEG_STABLE_1", "SEA_AD_1", "SEA_AD_2", "SEA_AD_3", "PHX_AD_1", "PHX_AD_2", "PHX_AD_3", "US_ASHBURN_AD_1", "US_ASHBURN_AD_2", "US_ASHBURN_AD_3", "US_ASHBURN_AD_4", "EU_FRANKFURT_1_AD_1", "EU_FRANKFURT_1_AD_2", "EU_FRANKFURT_1_AD_3", "UK_LONDON_1_AD_1", "UK_LONDON_1_AD_2", "UK_LONDON_1_AD_3", "CA_TORONTO_1_AD_1", "AP_TOKYO_1_AD_1", "AP_SEOUL_1_AD_1", "AP_MUMBAI_1_AD_1", "SA_SAOPAULO_1_AD_1", "ME_JEDDAH_1_AD_1", "AP_OSAKA_1_AD_1", "AP_SYDNEY_1_AD_1", "EU_ZURICH_1_AD_1", "EU_AMSTERDAM_1_AD_1", "AP_MELBOURNE_1_AD_1", "CA_MONTREAL_1_AD_1", "AP_HYDERABAD_1_AD_1", "AP_CHUNCHEON_1_AD_1", "NO_AD"]
         if not value_allowed_none_or_none_sentinel(availability_domain, allowed_values):
             raise ValueError(
                 "Invalid value for `availability_domain`, must be None or one of {0}"

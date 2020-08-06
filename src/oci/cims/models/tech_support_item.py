@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TechSupportItem(Item):
     """
-    Details of TechSupport Item
+    Details about the TechSupportItem object.
     """
 
     def __init__(self, **kwargs):

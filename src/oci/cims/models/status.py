@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Status(object):
     """
-    Details of Ticket Status
+    Details about the status of the support ticket.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class Status(object):
     def code(self):
         """
         **[Required]** Gets the code of this Status.
-        Unique code
+        The code unique to this ticket status.
 
 
         :return: The code of this Status.
@@ -56,7 +56,7 @@ class Status(object):
     def code(self, code):
         """
         Sets the code of this Status.
-        Unique code
+        The code unique to this ticket status.
 
 
         :param code: The code of this Status.
@@ -68,7 +68,7 @@ class Status(object):
     def message(self):
         """
         **[Required]** Gets the message of this Status.
-        Status message
+        The status message for this ticket.
 
 
         :return: The message of this Status.
@@ -80,7 +80,7 @@ class Status(object):
     def message(self, message):
         """
         Sets the message of this Status.
-        Status message
+        The status message for this ticket.
 
 
         :param message: The message of this Status.

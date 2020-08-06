@@ -83,20 +83,20 @@ class IncidentClient(object):
 
     def create_incident(self, create_incident_details, ocid, **kwargs):
         """
-        This API enables the customer to Create an Incident
+        Enables the customer to create an support ticket.
 
 
         :param CreateIncident create_incident_details: (required)
             Incident information
 
         :param str ocid: (required)
-            User OCID for IDCS users that have a shadow in OCI
-
-        :param str opc_retry_token: (optional)
-            Retry token
+            User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
 
         :param str opc_request_id: (optional)
-            Unique Header for request id
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str homeregion: (optional)
+            The region of the tenancy.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -115,8 +115,8 @@ class IncidentClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "opc_retry_token",
-            "opc_request_id"
+            "opc_request_id",
+            "homeregion"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -126,9 +126,9 @@ class IncidentClient(object):
         header_params = {
             "accept": "application/json",
             "content-type": "application/json",
-            "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "ocid": ocid
+            "ocid": ocid,
+            "homeregion": kwargs.get("homeregion", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -137,8 +137,6 @@ class IncidentClient(object):
             retry_strategy = kwargs.get('retry_strategy')
 
         if retry_strategy:
-            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
-                self.base_client.add_opc_retry_token_if_needed(header_params)
             return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -156,20 +154,26 @@ class IncidentClient(object):
 
     def get_incident(self, incident_key, csi, ocid, **kwargs):
         """
-        This API fetches the details of a requested Incident
+        Gets the details of the support ticket.
 
 
         :param str incident_key: (required)
-            Unique ID that identifies an incident
+            Unique identifier for the support ticket.
 
         :param str csi: (required)
-            Customer Support Identifier of the support account
+            The Customer Support Identifier associated with the support account.
 
         :param str ocid: (required)
-            User OCID for IDCS users that have a shadow in OCI
+            User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
 
         :param str opc_request_id: (optional)
-            Unique Header for request id
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str homeregion: (optional)
+            The region of the tenancy.
+
+        :param str problem_type: (optional)
+            The kind of support request.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -188,7 +192,9 @@ class IncidentClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "homeregion",
+            "problem_type"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -210,7 +216,9 @@ class IncidentClient(object):
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "csi": csi,
-            "ocid": ocid
+            "ocid": ocid,
+            "homeregion": kwargs.get("homeregion", missing),
+            "problem-type": kwargs.get("problem_type", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -236,17 +244,20 @@ class IncidentClient(object):
 
     def get_status(self, source, ocid, **kwargs):
         """
-        GetStatus of the Service
+        Gets the status of the service.
 
 
         :param str source: (required)
-            Source is a downstream system. Eg: JIRA or MOS or any other source in future.
+            The system that generated the support ticket, such as My Oracle Support.
 
         :param str ocid: (required)
-            User OCID for IDCS users that have a shadow in OCI
+            User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
 
         :param str opc_request_id: (optional)
-            Unique Header for request id
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str homeregion: (optional)
+            The region of the tenancy.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -265,7 +276,8 @@ class IncidentClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "homeregion"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -286,7 +298,8 @@ class IncidentClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "ocid": ocid
+            "ocid": ocid,
+            "homeregion": kwargs.get("homeregion", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -312,42 +325,49 @@ class IncidentClient(object):
 
     def list_incident_resource_types(self, problem_type, compartment_id, csi, ocid, **kwargs):
         """
-        This API returns the list of all possible product that OCI supports, while creating an incident
+        During support ticket creation, returns the list of all possible products that Oracle Cloud Infrastructure supports.
 
 
         :param str problem_type: (required)
-            Problem Type of Taxonomy - tech/limit
+            The kind of support request.
 
         :param str compartment_id: (required)
-            Tenancy Ocid
+            The OCID of the tenancy.
 
         :param str csi: (required)
-            Customer Support Identifier of the support account
+            The Customer Support Identifier associated with the support account.
 
         :param str ocid: (required)
-            User OCID for IDCS users that have a shadow in OCI
+            User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
 
         :param str opc_request_id: (optional)
-            Unique Header for request id
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param int limit: (optional)
-            Limit query for number of returned results
+            For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call. For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            Pagination for Incident list
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
-            The key to sort the returned items by
+            The key to use to sort the returned items.
 
             Allowed values are: "dateUpdated", "severity"
 
         :param str sort_order: (optional)
-            The order in which to sort the results
+            The order to sort the results in.
 
             Allowed values are: "ASC", "DESC"
 
         :param str name: (optional)
-            Name of Incident Type. eg: Limit Increase
+            The user-friendly name of the incident type.
+
+        :param str homeregion: (optional)
+            The region of the tenancy.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -371,7 +391,8 @@ class IncidentClient(object):
             "page",
             "sort_by",
             "sort_order",
-            "name"
+            "name",
+            "homeregion"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -408,7 +429,8 @@ class IncidentClient(object):
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "csi": csi,
-            "ocid": ocid
+            "ocid": ocid,
+            "homeregion": kwargs.get("homeregion", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -434,41 +456,51 @@ class IncidentClient(object):
 
     def list_incidents(self, csi, compartment_id, ocid, **kwargs):
         """
-        This API returns the list of incidents raised by the tenant
+        Returns the list of support tickets raised by the tenancy.
 
 
         :param str csi: (required)
-            Customer Support Identifier of the support account
+            The Customer Support Identifier associated with the support account.
 
         :param str compartment_id: (required)
-            Tenancy Ocid
+            The OCID of the tenancy.
 
         :param str ocid: (required)
-            User OCID for IDCS users that have a shadow in OCI
+            User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
 
         :param int limit: (optional)
-            Limit query for number of returned results
+            For list pagination. The maximum number of results per page, or items to return in a paginated \"List\" call. For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
-            The key to sort the returned items by
+            The key to use to sort the returned items.
 
             Allowed values are: "dateUpdated", "severity"
 
         :param str sort_order: (optional)
-            The order in which to sort the results
+            The order to sort the results in.
 
             Allowed values are: "ASC", "DESC"
 
         :param str lifecycle_state: (optional)
-            The order in which to sort the results
+            The current state of the ticket.
 
             Allowed values are: "ACTIVE", "CLOSED"
 
         :param str page: (optional)
-            Pagination for Incident list
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\" call. For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str opc_request_id: (optional)
-            Unique Header for request id
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str homeregion: (optional)
+            The region of the tenancy.
+
+        :param str problem_type: (optional)
+            The kind of support request.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -492,7 +524,9 @@ class IncidentClient(object):
             "sort_order",
             "lifecycle_state",
             "page",
-            "opc_request_id"
+            "opc_request_id",
+            "homeregion",
+            "problem_type"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -526,7 +560,8 @@ class IncidentClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
-            "page": kwargs.get("page", missing)
+            "page": kwargs.get("page", missing),
+            "problemType": kwargs.get("problem_type", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -535,7 +570,8 @@ class IncidentClient(object):
             "content-type": "application/json",
             "csi": csi,
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "ocid": ocid
+            "ocid": ocid,
+            "homeregion": kwargs.get("homeregion", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -561,29 +597,29 @@ class IncidentClient(object):
 
     def update_incident(self, incident_key, csi, update_incident_details, ocid, **kwargs):
         """
-        This API updates an existing incident
+        Updates the specified support ticket's information.
 
 
         :param str incident_key: (required)
-            Unique ID that identifies an incident
+            Unique identifier for the support ticket.
 
         :param str csi: (required)
-            Customer Support Identifier of the support account
+            The Customer Support Identifier associated with the support account.
 
         :param UpdateIncident update_incident_details: (required)
-            Details of Resource to be updated
+            Details about the support ticket being updated.
 
         :param str ocid: (required)
-            User OCID for IDCS users that have a shadow in OCI
-
-        :param str opc_retry_token: (optional)
-            Retry token
+            User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
 
         :param str opc_request_id: (optional)
-            Unique Header for request id
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param str if_match: (optional)
-            if-match check
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str homeregion: (optional)
+            The region of the tenancy.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -602,9 +638,9 @@ class IncidentClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "opc_retry_token",
             "opc_request_id",
-            "if_match"
+            "if_match",
+            "homeregion"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -625,10 +661,10 @@ class IncidentClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "csi": csi,
-            "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "if-match": kwargs.get("if_match", missing),
-            "ocid": ocid
+            "ocid": ocid,
+            "homeregion": kwargs.get("homeregion", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -637,8 +673,6 @@ class IncidentClient(object):
             retry_strategy = kwargs.get('retry_strategy')
 
         if retry_strategy:
-            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
-                self.base_client.add_opc_retry_token_if_needed(header_params)
             return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,
@@ -658,23 +692,23 @@ class IncidentClient(object):
 
     def validate_user(self, csi, ocid, **kwargs):
         """
-        ValidateUser
+        Checks whether the requested user is valid.
 
 
         :param str csi: (required)
-            Customer support identifier of the support account
+            The Customer Support Identifier number for the support account.
 
         :param str ocid: (required)
-            User OCID for IDCS users that have a shadow in OCI
-
-        :param str opc_retry_token: (optional)
-            Retry-token header
+            User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
 
         :param str opc_request_id: (optional)
-            Unique request id
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param str problem_type: (optional)
-            Problem Type of Taxonomy - tech/limit
+            The kind of support request.
+
+        :param str homeregion: (optional)
+            The region of the tenancy.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -693,9 +727,9 @@ class IncidentClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "opc_retry_token",
             "opc_request_id",
-            "problem_type"
+            "problem_type",
+            "homeregion"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -711,9 +745,9 @@ class IncidentClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "csi": csi,
-            "opc-retry-token": kwargs.get("opc_retry_token", missing),
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "ocid": ocid
+            "ocid": ocid,
+            "homeregion": kwargs.get("homeregion", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -722,8 +756,6 @@ class IncidentClient(object):
             retry_strategy = kwargs.get('retry_strategy')
 
         if retry_strategy:
-            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
-                self.base_client.add_opc_retry_token_if_needed(header_params)
             return retry_strategy.make_retrying_call(
                 self.base_client.call_api,
                 resource_path=resource_path,

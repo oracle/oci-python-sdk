@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Incident(object):
     """
-    Details of Incident
+    Details of about the incident object.
     """
 
     #: A constant which can be used with the problem_type property of a Incident.
@@ -104,7 +104,7 @@ class Incident(object):
     def key(self):
         """
         **[Required]** Gets the key of this Incident.
-        Unique ID that identifies an Incident
+        Unique identifier for the support ticket.
 
 
         :return: The key of this Incident.
@@ -116,7 +116,7 @@ class Incident(object):
     def key(self, key):
         """
         Sets the key of this Incident.
-        Unique ID that identifies an Incident
+        Unique identifier for the support ticket.
 
 
         :param key: The key of this Incident.
@@ -128,7 +128,7 @@ class Incident(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this Incident.
-        Tenancy Ocid
+        The OCID of the tenancy.
 
 
         :return: The compartment_id of this Incident.
@@ -140,7 +140,7 @@ class Incident(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Incident.
-        Tenancy Ocid
+        The OCID of the tenancy.
 
 
         :param compartment_id: The compartment_id of this Incident.
@@ -232,7 +232,7 @@ class Incident(object):
     def problem_type(self):
         """
         Gets the problem_type of this Incident.
-        States type of incident. eg: LIMIT, TECH
+        The kind of support ticket, such as a technical support request.
 
         Allowed values for this property are: "LIMIT", "LEGACY_LIMIT", "TECH", "ACCOUNT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -247,7 +247,7 @@ class Incident(object):
     def problem_type(self, problem_type):
         """
         Sets the problem_type of this Incident.
-        States type of incident. eg: LIMIT, TECH
+        The kind of support ticket, such as a technical support request.
 
 
         :param problem_type: The problem_type of this Incident.
@@ -262,7 +262,7 @@ class Incident(object):
     def referrer(self):
         """
         Gets the referrer of this Incident.
-        Referrer of the incident., its usually the URL for where the customer logged the incident
+        The incident referrer. This value is often the URL that the customer used when creating the support ticket.
 
 
         :return: The referrer of this Incident.
@@ -274,7 +274,7 @@ class Incident(object):
     def referrer(self, referrer):
         """
         Sets the referrer of this Incident.
-        Referrer of the incident., its usually the URL for where the customer logged the incident
+        The incident referrer. This value is often the URL that the customer used when creating the support ticket.
 
 
         :param referrer: The referrer of this Incident.

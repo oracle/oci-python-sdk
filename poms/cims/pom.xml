@@ -20,7 +20,7 @@
     <feature-id-file>${sdk-root-dir}/featureId.yaml</feature-id-file>
     <feature-id-dir>${sdk-root-dir}/codegenConfig/featureIds</feature-id-dir>
     <!-- Service Spec file goes here -->
-    <cloud-incident-management-service-spec-spec-file>api.yaml</cloud-incident-management-service-spec-spec-file>
+    <cloud-incident-management-service-spec-spec-file>api.cond.yaml</cloud-incident-management-service-spec-spec-file>
   </properties>
   <build>
     <directory>${sdk-root-dir}/target</directory>
@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.custops.cims</groupId>
         <artifactId>cloud-incident-management-service-spec</artifactId>
-        <version>2.0.72</version>
+        <version>2.0.241</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

@@ -130,6 +130,10 @@ class Entity(object):
             The value to assign to the folder_key property of this Entity.
         :type folder_key: str
 
+        :param folder_name:
+            The value to assign to the folder_name property of this Entity.
+        :type folder_name: str
+
         :param path:
             The value to assign to the path property of this Entity.
         :type path: str
@@ -173,6 +177,7 @@ class Entity(object):
             'is_partition': 'bool',
             'data_asset_key': 'str',
             'folder_key': 'str',
+            'folder_name': 'str',
             'path': 'str',
             'harvest_status': 'str',
             'last_job_key': 'str',
@@ -197,6 +202,7 @@ class Entity(object):
             'is_partition': 'isPartition',
             'data_asset_key': 'dataAssetKey',
             'folder_key': 'folderKey',
+            'folder_name': 'folderName',
             'path': 'path',
             'harvest_status': 'harvestStatus',
             'last_job_key': 'lastJobKey',
@@ -220,6 +226,7 @@ class Entity(object):
         self._is_partition = None
         self._data_asset_key = None
         self._folder_key = None
+        self._folder_name = None
         self._path = None
         self._harvest_status = None
         self._last_job_key = None
@@ -610,6 +617,30 @@ class Entity(object):
         :type: str
         """
         self._folder_key = folder_key
+
+    @property
+    def folder_name(self):
+        """
+        Gets the folder_name of this Entity.
+        Name of the associated folder. This name is harvested from the source data asset when the parent folder for the entiy is harvested.
+
+
+        :return: The folder_name of this Entity.
+        :rtype: str
+        """
+        return self._folder_name
+
+    @folder_name.setter
+    def folder_name(self, folder_name):
+        """
+        Sets the folder_name of this Entity.
+        Name of the associated folder. This name is harvested from the source data asset when the parent folder for the entiy is harvested.
+
+
+        :param folder_name: The folder_name of this Entity.
+        :type: str
+        """
+        self._folder_name = folder_name
 
     @property
     def path(self):

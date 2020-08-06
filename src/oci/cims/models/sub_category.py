@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SubCategory(object):
     """
-    Details of Sub Category of the incident
+    Details about the subcategory associated with the support ticket.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class SubCategory(object):
     def sub_category_key(self):
         """
         Gets the sub_category_key of this SubCategory.
-        Unique ID that identifies a Sub Category
+        Unique identifier for the subcategory.
 
 
         :return: The sub_category_key of this SubCategory.
@@ -56,7 +56,7 @@ class SubCategory(object):
     def sub_category_key(self, sub_category_key):
         """
         Sets the sub_category_key of this SubCategory.
-        Unique ID that identifies a Sub Category
+        Unique identifier for the subcategory.
 
 
         :param sub_category_key: The sub_category_key of this SubCategory.
@@ -68,7 +68,7 @@ class SubCategory(object):
     def name(self):
         """
         Gets the name of this SubCategory.
-        Name of sub category. eg: Backup Count, Custom Image Count
+        The name of the subcategory. For example, `Backup Count` or `Custom Image Count`.
 
 
         :return: The name of this SubCategory.
@@ -80,7 +80,7 @@ class SubCategory(object):
     def name(self, name):
         """
         Sets the name of this SubCategory.
-        Name of sub category. eg: Backup Count, Custom Image Count
+        The name of the subcategory. For example, `Backup Count` or `Custom Image Count`.
 
 
         :param name: The name of this SubCategory.

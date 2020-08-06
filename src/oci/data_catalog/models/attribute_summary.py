@@ -96,6 +96,34 @@ class AttributeSummary(object):
             The value to assign to the external_data_type property of this AttributeSummary.
         :type external_data_type: str
 
+        :param min_collection_count:
+            The value to assign to the min_collection_count property of this AttributeSummary.
+        :type min_collection_count: int
+
+        :param max_collection_count:
+            The value to assign to the max_collection_count property of this AttributeSummary.
+        :type max_collection_count: int
+
+        :param datatype_entity_key:
+            The value to assign to the datatype_entity_key property of this AttributeSummary.
+        :type datatype_entity_key: str
+
+        :param external_datatype_entity_key:
+            The value to assign to the external_datatype_entity_key property of this AttributeSummary.
+        :type external_datatype_entity_key: str
+
+        :param parent_attribute_key:
+            The value to assign to the parent_attribute_key property of this AttributeSummary.
+        :type parent_attribute_key: str
+
+        :param external_parent_attribute_key:
+            The value to assign to the external_parent_attribute_key property of this AttributeSummary.
+        :type external_parent_attribute_key: str
+
+        :param path:
+            The value to assign to the path property of this AttributeSummary.
+        :type path: str
+
         """
         self.swagger_types = {
             'key': 'str',
@@ -108,7 +136,14 @@ class AttributeSummary(object):
             'uri': 'str',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
-            'external_data_type': 'str'
+            'external_data_type': 'str',
+            'min_collection_count': 'int',
+            'max_collection_count': 'int',
+            'datatype_entity_key': 'str',
+            'external_datatype_entity_key': 'str',
+            'parent_attribute_key': 'str',
+            'external_parent_attribute_key': 'str',
+            'path': 'str'
         }
 
         self.attribute_map = {
@@ -122,7 +157,14 @@ class AttributeSummary(object):
             'uri': 'uri',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
-            'external_data_type': 'externalDataType'
+            'external_data_type': 'externalDataType',
+            'min_collection_count': 'minCollectionCount',
+            'max_collection_count': 'maxCollectionCount',
+            'datatype_entity_key': 'datatypeEntityKey',
+            'external_datatype_entity_key': 'externalDatatypeEntityKey',
+            'parent_attribute_key': 'parentAttributeKey',
+            'external_parent_attribute_key': 'externalParentAttributeKey',
+            'path': 'path'
         }
 
         self._key = None
@@ -136,6 +178,13 @@ class AttributeSummary(object):
         self._lifecycle_state = None
         self._time_created = None
         self._external_data_type = None
+        self._min_collection_count = None
+        self._max_collection_count = None
+        self._datatype_entity_key = None
+        self._external_datatype_entity_key = None
+        self._parent_attribute_key = None
+        self._external_parent_attribute_key = None
+        self._path = None
 
     @property
     def key(self):
@@ -414,6 +463,178 @@ class AttributeSummary(object):
         :type: str
         """
         self._external_data_type = external_data_type
+
+    @property
+    def min_collection_count(self):
+        """
+        Gets the min_collection_count of this AttributeSummary.
+        The minimum count for the number of instances of a given type stored in this collection type attribute,applicable if this attribute is a complex type.
+
+
+        :return: The min_collection_count of this AttributeSummary.
+        :rtype: int
+        """
+        return self._min_collection_count
+
+    @min_collection_count.setter
+    def min_collection_count(self, min_collection_count):
+        """
+        Sets the min_collection_count of this AttributeSummary.
+        The minimum count for the number of instances of a given type stored in this collection type attribute,applicable if this attribute is a complex type.
+
+
+        :param min_collection_count: The min_collection_count of this AttributeSummary.
+        :type: int
+        """
+        self._min_collection_count = min_collection_count
+
+    @property
+    def max_collection_count(self):
+        """
+        Gets the max_collection_count of this AttributeSummary.
+        The maximum count for the number of instances of a given type stored in this collection type attribute,applicable if this attribute is a complex type.
+        For type specifications in systems that specify only \"capacity\" without upper or lower bound , this property can also be used to just mean \"capacity\".
+        Some examples are Varray size in Oracle , Occurs Clause in Cobol , capacity in XmlSchemaObjectCollection , maxOccurs in  Xml , maxItems in Json
+
+
+        :return: The max_collection_count of this AttributeSummary.
+        :rtype: int
+        """
+        return self._max_collection_count
+
+    @max_collection_count.setter
+    def max_collection_count(self, max_collection_count):
+        """
+        Sets the max_collection_count of this AttributeSummary.
+        The maximum count for the number of instances of a given type stored in this collection type attribute,applicable if this attribute is a complex type.
+        For type specifications in systems that specify only \"capacity\" without upper or lower bound , this property can also be used to just mean \"capacity\".
+        Some examples are Varray size in Oracle , Occurs Clause in Cobol , capacity in XmlSchemaObjectCollection , maxOccurs in  Xml , maxItems in Json
+
+
+        :param max_collection_count: The max_collection_count of this AttributeSummary.
+        :type: int
+        """
+        self._max_collection_count = max_collection_count
+
+    @property
+    def datatype_entity_key(self):
+        """
+        Gets the datatype_entity_key of this AttributeSummary.
+        Entity key that represents the datatype of this attribute , applicable if this attribute is a complex type.
+
+
+        :return: The datatype_entity_key of this AttributeSummary.
+        :rtype: str
+        """
+        return self._datatype_entity_key
+
+    @datatype_entity_key.setter
+    def datatype_entity_key(self, datatype_entity_key):
+        """
+        Sets the datatype_entity_key of this AttributeSummary.
+        Entity key that represents the datatype of this attribute , applicable if this attribute is a complex type.
+
+
+        :param datatype_entity_key: The datatype_entity_key of this AttributeSummary.
+        :type: str
+        """
+        self._datatype_entity_key = datatype_entity_key
+
+    @property
+    def external_datatype_entity_key(self):
+        """
+        Gets the external_datatype_entity_key of this AttributeSummary.
+        External entity key that represents the datatype of this attribute , applicable if this attribute is a complex type.
+
+
+        :return: The external_datatype_entity_key of this AttributeSummary.
+        :rtype: str
+        """
+        return self._external_datatype_entity_key
+
+    @external_datatype_entity_key.setter
+    def external_datatype_entity_key(self, external_datatype_entity_key):
+        """
+        Sets the external_datatype_entity_key of this AttributeSummary.
+        External entity key that represents the datatype of this attribute , applicable if this attribute is a complex type.
+
+
+        :param external_datatype_entity_key: The external_datatype_entity_key of this AttributeSummary.
+        :type: str
+        """
+        self._external_datatype_entity_key = external_datatype_entity_key
+
+    @property
+    def parent_attribute_key(self):
+        """
+        Gets the parent_attribute_key of this AttributeSummary.
+        Attribute key that represents the parent attribute of this attribute , applicable if the parent attribute is of complex datatype.
+
+
+        :return: The parent_attribute_key of this AttributeSummary.
+        :rtype: str
+        """
+        return self._parent_attribute_key
+
+    @parent_attribute_key.setter
+    def parent_attribute_key(self, parent_attribute_key):
+        """
+        Sets the parent_attribute_key of this AttributeSummary.
+        Attribute key that represents the parent attribute of this attribute , applicable if the parent attribute is of complex datatype.
+
+
+        :param parent_attribute_key: The parent_attribute_key of this AttributeSummary.
+        :type: str
+        """
+        self._parent_attribute_key = parent_attribute_key
+
+    @property
+    def external_parent_attribute_key(self):
+        """
+        Gets the external_parent_attribute_key of this AttributeSummary.
+        External attribute key that represents the parent attribute  of this attribute , applicable if the parent attribute is of complex type.
+
+
+        :return: The external_parent_attribute_key of this AttributeSummary.
+        :rtype: str
+        """
+        return self._external_parent_attribute_key
+
+    @external_parent_attribute_key.setter
+    def external_parent_attribute_key(self, external_parent_attribute_key):
+        """
+        Sets the external_parent_attribute_key of this AttributeSummary.
+        External attribute key that represents the parent attribute  of this attribute , applicable if the parent attribute is of complex type.
+
+
+        :param external_parent_attribute_key: The external_parent_attribute_key of this AttributeSummary.
+        :type: str
+        """
+        self._external_parent_attribute_key = external_parent_attribute_key
+
+    @property
+    def path(self):
+        """
+        Gets the path of this AttributeSummary.
+        Full path of the attribute.
+
+
+        :return: The path of this AttributeSummary.
+        :rtype: str
+        """
+        return self._path
+
+    @path.setter
+    def path(self, path):
+        """
+        Sets the path of this AttributeSummary.
+        Full path of the attribute.
+
+
+        :param path: The path of this AttributeSummary.
+        :type: str
+        """
+        self._path = path
 
     def __repr__(self):
         return formatted_flat_dict(self)

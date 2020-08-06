@@ -58,6 +58,22 @@ class UpdateAttributeDetails(object):
             The value to assign to the time_external property of this UpdateAttributeDetails.
         :type time_external: datetime
 
+        :param min_collection_count:
+            The value to assign to the min_collection_count property of this UpdateAttributeDetails.
+        :type min_collection_count: int
+
+        :param max_collection_count:
+            The value to assign to the max_collection_count property of this UpdateAttributeDetails.
+        :type max_collection_count: int
+
+        :param external_datatype_entity_key:
+            The value to assign to the external_datatype_entity_key property of this UpdateAttributeDetails.
+        :type external_datatype_entity_key: str
+
+        :param external_parent_attribute_key:
+            The value to assign to the external_parent_attribute_key property of this UpdateAttributeDetails.
+        :type external_parent_attribute_key: str
+
         :param properties:
             The value to assign to the properties property of this UpdateAttributeDetails.
         :type properties: dict(str, dict(str, str))
@@ -74,6 +90,10 @@ class UpdateAttributeDetails(object):
             'precision': 'int',
             'scale': 'int',
             'time_external': 'datetime',
+            'min_collection_count': 'int',
+            'max_collection_count': 'int',
+            'external_datatype_entity_key': 'str',
+            'external_parent_attribute_key': 'str',
             'properties': 'dict(str, dict(str, str))'
         }
 
@@ -88,6 +108,10 @@ class UpdateAttributeDetails(object):
             'precision': 'precision',
             'scale': 'scale',
             'time_external': 'timeExternal',
+            'min_collection_count': 'minCollectionCount',
+            'max_collection_count': 'maxCollectionCount',
+            'external_datatype_entity_key': 'externalDatatypeEntityKey',
+            'external_parent_attribute_key': 'externalParentAttributeKey',
             'properties': 'properties'
         }
 
@@ -101,6 +125,10 @@ class UpdateAttributeDetails(object):
         self._precision = None
         self._scale = None
         self._time_external = None
+        self._min_collection_count = None
+        self._max_collection_count = None
+        self._external_datatype_entity_key = None
+        self._external_parent_attribute_key = None
         self._properties = None
 
     @property
@@ -344,6 +372,106 @@ class UpdateAttributeDetails(object):
         :type: datetime
         """
         self._time_external = time_external
+
+    @property
+    def min_collection_count(self):
+        """
+        Gets the min_collection_count of this UpdateAttributeDetails.
+        The minimum count for the number of instances of a given type stored in this collection type attribute,applicable if this attribute is a complex type.
+
+
+        :return: The min_collection_count of this UpdateAttributeDetails.
+        :rtype: int
+        """
+        return self._min_collection_count
+
+    @min_collection_count.setter
+    def min_collection_count(self, min_collection_count):
+        """
+        Sets the min_collection_count of this UpdateAttributeDetails.
+        The minimum count for the number of instances of a given type stored in this collection type attribute,applicable if this attribute is a complex type.
+
+
+        :param min_collection_count: The min_collection_count of this UpdateAttributeDetails.
+        :type: int
+        """
+        self._min_collection_count = min_collection_count
+
+    @property
+    def max_collection_count(self):
+        """
+        Gets the max_collection_count of this UpdateAttributeDetails.
+        The maximum count for the number of instances of a given type stored in this collection type attribute,applicable if this attribute is a complex type.
+        For type specifications in systems that specify only \"capacity\" without upper or lower bound , this property can also be used to just mean \"capacity\".
+        Some examples are Varray size in Oracle , Occurs Clause in Cobol , capacity in XmlSchemaObjectCollection , maxOccurs in  Xml , maxItems in Json
+
+
+        :return: The max_collection_count of this UpdateAttributeDetails.
+        :rtype: int
+        """
+        return self._max_collection_count
+
+    @max_collection_count.setter
+    def max_collection_count(self, max_collection_count):
+        """
+        Sets the max_collection_count of this UpdateAttributeDetails.
+        The maximum count for the number of instances of a given type stored in this collection type attribute,applicable if this attribute is a complex type.
+        For type specifications in systems that specify only \"capacity\" without upper or lower bound , this property can also be used to just mean \"capacity\".
+        Some examples are Varray size in Oracle , Occurs Clause in Cobol , capacity in XmlSchemaObjectCollection , maxOccurs in  Xml , maxItems in Json
+
+
+        :param max_collection_count: The max_collection_count of this UpdateAttributeDetails.
+        :type: int
+        """
+        self._max_collection_count = max_collection_count
+
+    @property
+    def external_datatype_entity_key(self):
+        """
+        Gets the external_datatype_entity_key of this UpdateAttributeDetails.
+        External entity key that represents the datatype of this attribute , applicable if this attribute is a complex type.
+
+
+        :return: The external_datatype_entity_key of this UpdateAttributeDetails.
+        :rtype: str
+        """
+        return self._external_datatype_entity_key
+
+    @external_datatype_entity_key.setter
+    def external_datatype_entity_key(self, external_datatype_entity_key):
+        """
+        Sets the external_datatype_entity_key of this UpdateAttributeDetails.
+        External entity key that represents the datatype of this attribute , applicable if this attribute is a complex type.
+
+
+        :param external_datatype_entity_key: The external_datatype_entity_key of this UpdateAttributeDetails.
+        :type: str
+        """
+        self._external_datatype_entity_key = external_datatype_entity_key
+
+    @property
+    def external_parent_attribute_key(self):
+        """
+        Gets the external_parent_attribute_key of this UpdateAttributeDetails.
+        External attribute key that represents the parent attribute  of this attribute , applicable if the parent attribute is of complex type.
+
+
+        :return: The external_parent_attribute_key of this UpdateAttributeDetails.
+        :rtype: str
+        """
+        return self._external_parent_attribute_key
+
+    @external_parent_attribute_key.setter
+    def external_parent_attribute_key(self, external_parent_attribute_key):
+        """
+        Sets the external_parent_attribute_key of this UpdateAttributeDetails.
+        External attribute key that represents the parent attribute  of this attribute , applicable if the parent attribute is of complex type.
+
+
+        :param external_parent_attribute_key: The external_parent_attribute_key of this UpdateAttributeDetails.
+        :type: str
+        """
+        self._external_parent_attribute_key = external_parent_attribute_key
 
     @property
     def properties(self):

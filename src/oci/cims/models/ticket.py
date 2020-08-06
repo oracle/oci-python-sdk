@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Ticket(object):
     """
-    Details of Ticket created
+    Details about the ticket created.
     """
 
     #: A constant which can be used with the severity property of a Ticket.
@@ -135,7 +135,7 @@ class Ticket(object):
     def ticket_number(self):
         """
         Gets the ticket_number of this Ticket.
-        Unique ID that identifies a Ticket
+        Unique identifier for the ticket.
 
 
         :return: The ticket_number of this Ticket.
@@ -147,7 +147,7 @@ class Ticket(object):
     def ticket_number(self, ticket_number):
         """
         Sets the ticket_number of this Ticket.
-        Unique ID that identifies a Ticket
+        Unique identifier for the ticket.
 
 
         :param ticket_number: The ticket_number of this Ticket.
@@ -159,7 +159,7 @@ class Ticket(object):
     def severity(self):
         """
         **[Required]** Gets the severity of this Ticket.
-        Severity of the ticket. eg: HIGH, MEDIUM
+        The severity assigned to the ticket.
 
         Allowed values for this property are: "HIGHEST", "HIGH", "MEDIUM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -174,7 +174,7 @@ class Ticket(object):
     def severity(self, severity):
         """
         Sets the severity of this Ticket.
-        Severity of the ticket. eg: HIGH, MEDIUM
+        The severity assigned to the ticket.
 
 
         :param severity: The severity of this Ticket.
@@ -189,7 +189,7 @@ class Ticket(object):
     def resource_list(self):
         """
         Gets the resource_list of this Ticket.
-        List of resources
+        The list of resources associated with the ticket.
 
 
         :return: The resource_list of this Ticket.
@@ -201,7 +201,7 @@ class Ticket(object):
     def resource_list(self, resource_list):
         """
         Sets the resource_list of this Ticket.
-        List of resources
+        The list of resources associated with the ticket.
 
 
         :param resource_list: The resource_list of this Ticket.
@@ -213,7 +213,7 @@ class Ticket(object):
     def title(self):
         """
         **[Required]** Gets the title of this Ticket.
-        Title of ticket
+        The title of the ticket.
 
 
         :return: The title of this Ticket.
@@ -225,7 +225,7 @@ class Ticket(object):
     def title(self, title):
         """
         Sets the title of this Ticket.
-        Title of ticket
+        The title of the ticket.
 
 
         :param title: The title of this Ticket.
@@ -237,7 +237,7 @@ class Ticket(object):
     def description(self):
         """
         **[Required]** Gets the description of this Ticket.
-        Details of ticket
+        The description of the issue addressed in the ticket.
 
 
         :return: The description of this Ticket.
@@ -249,7 +249,7 @@ class Ticket(object):
     def description(self, description):
         """
         Sets the description of this Ticket.
-        Details of ticket
+        The description of the issue addressed in the ticket.
 
 
         :param description: The description of this Ticket.
@@ -261,7 +261,7 @@ class Ticket(object):
     def time_created(self):
         """
         Gets the time_created of this Ticket.
-        Epoch time of ticket creation
+        The time when the ticket was created, in milliseconds since epoch time.
 
 
         :return: The time_created of this Ticket.
@@ -273,7 +273,7 @@ class Ticket(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Ticket.
-        Epoch time of ticket creation
+        The time when the ticket was created, in milliseconds since epoch time.
 
 
         :param time_created: The time_created of this Ticket.
@@ -285,7 +285,7 @@ class Ticket(object):
     def time_updated(self):
         """
         Gets the time_updated of this Ticket.
-        Epoch time of ticket updated
+        The time when the ticket was updated, in milliseconds since epoch time.
 
 
         :return: The time_updated of this Ticket.
@@ -297,7 +297,7 @@ class Ticket(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this Ticket.
-        Epoch time of ticket updated
+        The time when the ticket was updated, in milliseconds since epoch time.
 
 
         :param time_updated: The time_updated of this Ticket.
@@ -309,7 +309,7 @@ class Ticket(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this Ticket.
-        Describes the lifecycles of a ticket
+        The current state of the ticket.
 
         Allowed values for this property are: "ACTIVE", "CLOSED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -324,7 +324,7 @@ class Ticket(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Ticket.
-        Describes the lifecycles of a ticket
+        The current state of the ticket.
 
 
         :param lifecycle_state: The lifecycle_state of this Ticket.
@@ -339,7 +339,7 @@ class Ticket(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this Ticket.
-        Describes the lifecycle details of a ticket
+        Additional information about the current `lifecycleState`.
 
         Allowed values for this property are: "PENDING_WITH_ORACLE", "PENDING_WITH_CUSTOMER", "CLOSE_REQUESTED", "CLOSED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -354,7 +354,7 @@ class Ticket(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this Ticket.
-        Describes the lifecycle details of a ticket
+        Additional information about the current `lifecycleState`.
 
 
         :param lifecycle_details: The lifecycle_details of this Ticket.

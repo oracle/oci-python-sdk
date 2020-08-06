@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class IncidentSummary(object):
     """
-    Details of Incident
+    Details about the support ticket.
     """
 
     #: A constant which can be used with the problem_type property of a IncidentSummary.
@@ -97,7 +97,7 @@ class IncidentSummary(object):
     def key(self):
         """
         **[Required]** Gets the key of this IncidentSummary.
-        Unique ID that identifies an Incident
+        Unique identifier of the incident.
 
 
         :return: The key of this IncidentSummary.
@@ -109,7 +109,7 @@ class IncidentSummary(object):
     def key(self, key):
         """
         Sets the key of this IncidentSummary.
-        Unique ID that identifies an Incident
+        Unique identifier of the incident.
 
 
         :param key: The key of this IncidentSummary.
@@ -121,7 +121,7 @@ class IncidentSummary(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this IncidentSummary.
-        Tenancy Ocid
+        The OCID of the tenancy.
 
 
         :return: The compartment_id of this IncidentSummary.
@@ -133,7 +133,7 @@ class IncidentSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this IncidentSummary.
-        Tenancy Ocid
+        The OCID of the tenancy.
 
 
         :param compartment_id: The compartment_id of this IncidentSummary.
@@ -225,7 +225,7 @@ class IncidentSummary(object):
     def problem_type(self):
         """
         **[Required]** Gets the problem_type of this IncidentSummary.
-        States type of incident. eg: LIMIT, TECH
+        The kind of support ticket, such as a technical support request.
 
         Allowed values for this property are: "LIMIT", "LEGACY_LIMIT", "TECH", "ACCOUNT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -240,7 +240,7 @@ class IncidentSummary(object):
     def problem_type(self, problem_type):
         """
         Sets the problem_type of this IncidentSummary.
-        States type of incident. eg: LIMIT, TECH
+        The kind of support ticket, such as a technical support request.
 
 
         :param problem_type: The problem_type of this IncidentSummary.

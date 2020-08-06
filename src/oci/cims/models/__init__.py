@@ -9,6 +9,7 @@ from .category import Category
 from .classifier import Classifier
 from .contact import Contact
 from .contact_list import ContactList
+from .contextual_data import ContextualData
 from .create_category_details import CreateCategoryDetails
 from .create_incident import CreateIncident
 from .create_issue_type_details import CreateIssueTypeDetails
@@ -18,6 +19,7 @@ from .create_resource_details import CreateResourceDetails
 from .create_sub_category_details import CreateSubCategoryDetails
 from .create_tech_support_item_details import CreateTechSupportItemDetails
 from .create_ticket_details import CreateTicketDetails
+from .create_user_details import CreateUserDetails
 from .incident import Incident
 from .incident_resource_type import IncidentResourceType
 from .incident_summary import IncidentSummary
@@ -37,6 +39,7 @@ from .update_incident import UpdateIncident
 from .update_item_details import UpdateItemDetails
 from .update_resource_details import UpdateResourceDetails
 from .update_ticket_details import UpdateTicketDetails
+from .user import User
 from .validation_response import ValidationResponse
 
 # Maps type names to classes for cims services.
@@ -46,6 +49,7 @@ cims_type_mapping = {
     "Classifier": Classifier,
     "Contact": Contact,
     "ContactList": ContactList,
+    "ContextualData": ContextualData,
     "CreateCategoryDetails": CreateCategoryDetails,
     "CreateIncident": CreateIncident,
     "CreateIssueTypeDetails": CreateIssueTypeDetails,
@@ -55,6 +59,7 @@ cims_type_mapping = {
     "CreateSubCategoryDetails": CreateSubCategoryDetails,
     "CreateTechSupportItemDetails": CreateTechSupportItemDetails,
     "CreateTicketDetails": CreateTicketDetails,
+    "CreateUserDetails": CreateUserDetails,
     "Incident": Incident,
     "IncidentResourceType": IncidentResourceType,
     "IncidentSummary": IncidentSummary,
@@ -74,5 +79,6 @@ cims_type_mapping = {
     "UpdateItemDetails": UpdateItemDetails,
     "UpdateResourceDetails": UpdateResourceDetails,
     "UpdateTicketDetails": UpdateTicketDetails,
+    "User": User,
     "ValidationResponse": ValidationResponse
 }

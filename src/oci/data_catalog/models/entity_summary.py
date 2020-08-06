@@ -72,6 +72,10 @@ class EntitySummary(object):
             The value to assign to the folder_key property of this EntitySummary.
         :type folder_key: str
 
+        :param folder_name:
+            The value to assign to the folder_name property of this EntitySummary.
+        :type folder_name: str
+
         :param external_key:
             The value to assign to the external_key property of this EntitySummary.
         :type external_key: str
@@ -109,6 +113,7 @@ class EntitySummary(object):
             'description': 'str',
             'data_asset_key': 'str',
             'folder_key': 'str',
+            'folder_name': 'str',
             'external_key': 'str',
             'path': 'str',
             'time_created': 'datetime',
@@ -124,6 +129,7 @@ class EntitySummary(object):
             'description': 'description',
             'data_asset_key': 'dataAssetKey',
             'folder_key': 'folderKey',
+            'folder_name': 'folderName',
             'external_key': 'externalKey',
             'path': 'path',
             'time_created': 'timeCreated',
@@ -138,6 +144,7 @@ class EntitySummary(object):
         self._description = None
         self._data_asset_key = None
         self._folder_key = None
+        self._folder_name = None
         self._external_key = None
         self._path = None
         self._time_created = None
@@ -267,6 +274,30 @@ class EntitySummary(object):
         :type: str
         """
         self._folder_key = folder_key
+
+    @property
+    def folder_name(self):
+        """
+        Gets the folder_name of this EntitySummary.
+        Name of the associated folder. This name is harvested from the source data asset when the parent folder for the entiy is harvested.
+
+
+        :return: The folder_name of this EntitySummary.
+        :rtype: str
+        """
+        return self._folder_name
+
+    @folder_name.setter
+    def folder_name(self, folder_name):
+        """
+        Sets the folder_name of this EntitySummary.
+        Name of the associated folder. This name is harvested from the source data asset when the parent folder for the entiy is harvested.
+
+
+        :param folder_name: The folder_name of this EntitySummary.
+        :type: str
+        """
+        self._folder_name = folder_name
 
     @property
     def external_key(self):

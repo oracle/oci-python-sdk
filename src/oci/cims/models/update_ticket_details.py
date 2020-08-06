@@ -10,7 +10,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateTicketDetails(object):
     """
-    Details of Ticket updated
+    Details about the ticket updated.
+
+    **Caution:** Avoid using any confidential information when you supply string values using the API.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +39,7 @@ class UpdateTicketDetails(object):
     def resource(self):
         """
         **[Required]** Gets the resource of this UpdateTicketDetails.
-        List of resources
+        The list of resources.
 
 
         :return: The resource of this UpdateTicketDetails.
@@ -49,7 +51,7 @@ class UpdateTicketDetails(object):
     def resource(self, resource):
         """
         Sets the resource of this UpdateTicketDetails.
-        List of resources
+        The list of resources.
 
 
         :param resource: The resource of this UpdateTicketDetails.

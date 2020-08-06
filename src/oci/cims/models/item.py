@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Item(object):
     """
-    Details of Item
+    Details about the item object.
     """
 
     def __init__(self, **kwargs):
@@ -97,7 +97,7 @@ class Item(object):
     def item_key(self):
         """
         **[Required]** Gets the item_key of this Item.
-        Unique ID that identifies an Item
+        Unique identifier for the item.
 
 
         :return: The item_key of this Item.
@@ -109,7 +109,7 @@ class Item(object):
     def item_key(self, item_key):
         """
         Sets the item_key of this Item.
-        Unique ID that identifies an Item
+        Unique identifier for the item.
 
 
         :param item_key: The item_key of this Item.
@@ -121,7 +121,7 @@ class Item(object):
     def name(self):
         """
         Gets the name of this Item.
-        Name of item
+        The display name of the item.
 
 
         :return: The name of this Item.
@@ -133,7 +133,7 @@ class Item(object):
     def name(self, name):
         """
         Sets the name of this Item.
-        Name of item
+        The display name of the item.
 
 
         :param name: The name of this Item.
@@ -145,7 +145,7 @@ class Item(object):
     def type(self):
         """
         Gets the type of this Item.
-        Type of item. eg: ActivityItem, LimitItem
+        The type of the support request.
 
 
         :return: The type of this Item.
@@ -157,7 +157,7 @@ class Item(object):
     def type(self, type):
         """
         Sets the type of this Item.
-        Type of item. eg: ActivityItem, LimitItem
+        The type of the support request.
 
 
         :param type: The type of this Item.

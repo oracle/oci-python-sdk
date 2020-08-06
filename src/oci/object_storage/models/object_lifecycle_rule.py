@@ -34,6 +34,10 @@ class ObjectLifecycleRule(object):
             The value to assign to the name property of this ObjectLifecycleRule.
         :type name: str
 
+        :param target:
+            The value to assign to the target property of this ObjectLifecycleRule.
+        :type target: str
+
         :param action:
             The value to assign to the action property of this ObjectLifecycleRule.
         :type action: str
@@ -59,6 +63,7 @@ class ObjectLifecycleRule(object):
         """
         self.swagger_types = {
             'name': 'str',
+            'target': 'str',
             'action': 'str',
             'time_amount': 'int',
             'time_unit': 'str',
@@ -68,6 +73,7 @@ class ObjectLifecycleRule(object):
 
         self.attribute_map = {
             'name': 'name',
+            'target': 'target',
             'action': 'action',
             'time_amount': 'timeAmount',
             'time_unit': 'timeUnit',
@@ -76,6 +82,7 @@ class ObjectLifecycleRule(object):
         }
 
         self._name = None
+        self._target = None
         self._action = None
         self._time_amount = None
         self._time_unit = None
@@ -107,12 +114,37 @@ class ObjectLifecycleRule(object):
         self._name = name
 
     @property
+    def target(self):
+        """
+        Gets the target of this ObjectLifecycleRule.
+
+
+
+        :return: The target of this ObjectLifecycleRule.
+        :rtype: str
+        """
+        return self._target
+
+    @target.setter
+    def target(self, target):
+        """
+        Sets the target of this ObjectLifecycleRule.
+
+
+
+        :param target: The target of this ObjectLifecycleRule.
+        :type: str
+        """
+        self._target = target
+
+    @property
     def action(self):
         """
         **[Required]** Gets the action of this ObjectLifecycleRule.
         The action of the object lifecycle policy rule. Rules using the action 'ARCHIVE' move objects into the
         `Archive Storage tier`__. Rules using the action
-        'DELETE' permanently delete objects from buckets. 'ARCHIVE' and 'DELETE' are the only two supported
+        'DELETE' permanently delete objects from buckets. Rules using 'ABORT' abort the uncommitted multipart-uploads
+        and permanently delete their parts from buckets. 'ARCHIVE', 'DELETE' and 'ABORT' are the only three supported
         actions at this time.
 
         __ https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm
@@ -129,7 +161,8 @@ class ObjectLifecycleRule(object):
         Sets the action of this ObjectLifecycleRule.
         The action of the object lifecycle policy rule. Rules using the action 'ARCHIVE' move objects into the
         `Archive Storage tier`__. Rules using the action
-        'DELETE' permanently delete objects from buckets. 'ARCHIVE' and 'DELETE' are the only two supported
+        'DELETE' permanently delete objects from buckets. Rules using 'ABORT' abort the uncommitted multipart-uploads
+        and permanently delete their parts from buckets. 'ARCHIVE', 'DELETE' and 'ABORT' are the only three supported
         actions at this time.
 
         __ https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm
