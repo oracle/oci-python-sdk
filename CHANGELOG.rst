@@ -4,12 +4,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.20.1 - TBD
+2.21.0 - 2020-08-11
 ====================
 
 Added
 -----
-* TBD
+* Support for autonomous json databases in the Database service
+* Support for cleaning up uncommitted multipart uploads in the Object Storage service
+* Support for additional list API filters in the Data Catalog service
+
+Breaking
+--------
+* Some unusable region enums were removed from the Support Management service
+* Parameter `opc_retry_token` was removed from the Support Management service
 
 ====================
 2.20.0 - 2020-08-04
