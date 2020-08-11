@@ -40,6 +40,14 @@ class JobDefinition(object):
     JOB_TYPE_EXPORT = "EXPORT"
 
     #: A constant which can be used with the job_type property of a JobDefinition.
+    #: This constant has a value of "IMPORT_GLOSSARY"
+    JOB_TYPE_IMPORT_GLOSSARY = "IMPORT_GLOSSARY"
+
+    #: A constant which can be used with the job_type property of a JobDefinition.
+    #: This constant has a value of "EXPORT_GLOSSARY"
+    JOB_TYPE_EXPORT_GLOSSARY = "EXPORT_GLOSSARY"
+
+    #: A constant which can be used with the job_type property of a JobDefinition.
     #: This constant has a value of "INTERNAL"
     JOB_TYPE_INTERNAL = "INTERNAL"
 
@@ -99,6 +107,38 @@ class JobDefinition(object):
     #: This constant has a value of "MOVING"
     LIFECYCLE_STATE_MOVING = "MOVING"
 
+    #: A constant which can be used with the job_execution_state property of a JobDefinition.
+    #: This constant has a value of "CREATED"
+    JOB_EXECUTION_STATE_CREATED = "CREATED"
+
+    #: A constant which can be used with the job_execution_state property of a JobDefinition.
+    #: This constant has a value of "IN_PROGRESS"
+    JOB_EXECUTION_STATE_IN_PROGRESS = "IN_PROGRESS"
+
+    #: A constant which can be used with the job_execution_state property of a JobDefinition.
+    #: This constant has a value of "INACTIVE"
+    JOB_EXECUTION_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the job_execution_state property of a JobDefinition.
+    #: This constant has a value of "FAILED"
+    JOB_EXECUTION_STATE_FAILED = "FAILED"
+
+    #: A constant which can be used with the job_execution_state property of a JobDefinition.
+    #: This constant has a value of "SUCCEEDED"
+    JOB_EXECUTION_STATE_SUCCEEDED = "SUCCEEDED"
+
+    #: A constant which can be used with the job_execution_state property of a JobDefinition.
+    #: This constant has a value of "CANCELED"
+    JOB_EXECUTION_STATE_CANCELED = "CANCELED"
+
+    #: A constant which can be used with the schedule_type property of a JobDefinition.
+    #: This constant has a value of "SCHEDULED"
+    SCHEDULE_TYPE_SCHEDULED = "SCHEDULED"
+
+    #: A constant which can be used with the schedule_type property of a JobDefinition.
+    #: This constant has a value of "IMMEDIATE"
+    SCHEDULE_TYPE_IMMEDIATE = "IMMEDIATE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new JobDefinition object with values from keyword arguments.
@@ -118,7 +158,7 @@ class JobDefinition(object):
 
         :param job_type:
             The value to assign to the job_type property of this JobDefinition.
-            Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type job_type: str
 
@@ -176,6 +216,26 @@ class JobDefinition(object):
             The value to assign to the sample_data_size_in_mbs property of this JobDefinition.
         :type sample_data_size_in_mbs: int
 
+        :param time_latest_execution_started:
+            The value to assign to the time_latest_execution_started property of this JobDefinition.
+        :type time_latest_execution_started: datetime
+
+        :param time_latest_execution_ended:
+            The value to assign to the time_latest_execution_ended property of this JobDefinition.
+        :type time_latest_execution_ended: datetime
+
+        :param job_execution_state:
+            The value to assign to the job_execution_state property of this JobDefinition.
+            Allowed values for this property are: "CREATED", "IN_PROGRESS", "INACTIVE", "FAILED", "SUCCEEDED", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type job_execution_state: str
+
+        :param schedule_type:
+            The value to assign to the schedule_type property of this JobDefinition.
+            Allowed values for this property are: "SCHEDULED", "IMMEDIATE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type schedule_type: str
+
         :param properties:
             The value to assign to the properties property of this JobDefinition.
         :type properties: dict(str, dict(str, str))
@@ -199,6 +259,10 @@ class JobDefinition(object):
             'uri': 'str',
             'is_sample_data_extracted': 'bool',
             'sample_data_size_in_mbs': 'int',
+            'time_latest_execution_started': 'datetime',
+            'time_latest_execution_ended': 'datetime',
+            'job_execution_state': 'str',
+            'schedule_type': 'str',
             'properties': 'dict(str, dict(str, str))'
         }
 
@@ -220,6 +284,10 @@ class JobDefinition(object):
             'uri': 'uri',
             'is_sample_data_extracted': 'isSampleDataExtracted',
             'sample_data_size_in_mbs': 'sampleDataSizeInMBs',
+            'time_latest_execution_started': 'timeLatestExecutionStarted',
+            'time_latest_execution_ended': 'timeLatestExecutionEnded',
+            'job_execution_state': 'jobExecutionState',
+            'schedule_type': 'scheduleType',
             'properties': 'properties'
         }
 
@@ -240,6 +308,10 @@ class JobDefinition(object):
         self._uri = None
         self._is_sample_data_extracted = None
         self._sample_data_size_in_mbs = None
+        self._time_latest_execution_started = None
+        self._time_latest_execution_ended = None
+        self._job_execution_state = None
+        self._schedule_type = None
         self._properties = None
 
     @property
@@ -322,7 +394,7 @@ class JobDefinition(object):
         Gets the job_type of this JobDefinition.
         Type of the job definition.
 
-        Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -341,7 +413,7 @@ class JobDefinition(object):
         :param job_type: The job_type of this JobDefinition.
         :type: str
         """
-        allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"]
+        allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"]
         if not value_allowed_none_or_none_sentinel(job_type, allowed_values):
             job_type = 'UNKNOWN_ENUM_VALUE'
         self._job_type = job_type
@@ -675,6 +747,124 @@ class JobDefinition(object):
         :type: int
         """
         self._sample_data_size_in_mbs = sample_data_size_in_mbs
+
+    @property
+    def time_latest_execution_started(self):
+        """
+        Gets the time_latest_execution_started of this JobDefinition.
+        Time that the latest job execution started. An `RFC3339`__ formatted datetime string.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_latest_execution_started of this JobDefinition.
+        :rtype: datetime
+        """
+        return self._time_latest_execution_started
+
+    @time_latest_execution_started.setter
+    def time_latest_execution_started(self, time_latest_execution_started):
+        """
+        Sets the time_latest_execution_started of this JobDefinition.
+        Time that the latest job execution started. An `RFC3339`__ formatted datetime string.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_latest_execution_started: The time_latest_execution_started of this JobDefinition.
+        :type: datetime
+        """
+        self._time_latest_execution_started = time_latest_execution_started
+
+    @property
+    def time_latest_execution_ended(self):
+        """
+        Gets the time_latest_execution_ended of this JobDefinition.
+        Time that the latest job execution ended or null if it hasn't yet completed.
+        An `RFC3339`__ formatted datetime string.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_latest_execution_ended of this JobDefinition.
+        :rtype: datetime
+        """
+        return self._time_latest_execution_ended
+
+    @time_latest_execution_ended.setter
+    def time_latest_execution_ended(self, time_latest_execution_ended):
+        """
+        Sets the time_latest_execution_ended of this JobDefinition.
+        Time that the latest job execution ended or null if it hasn't yet completed.
+        An `RFC3339`__ formatted datetime string.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_latest_execution_ended: The time_latest_execution_ended of this JobDefinition.
+        :type: datetime
+        """
+        self._time_latest_execution_ended = time_latest_execution_ended
+
+    @property
+    def job_execution_state(self):
+        """
+        Gets the job_execution_state of this JobDefinition.
+        Status of the latest job execution, such as running, paused, or completed.
+
+        Allowed values for this property are: "CREATED", "IN_PROGRESS", "INACTIVE", "FAILED", "SUCCEEDED", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The job_execution_state of this JobDefinition.
+        :rtype: str
+        """
+        return self._job_execution_state
+
+    @job_execution_state.setter
+    def job_execution_state(self, job_execution_state):
+        """
+        Sets the job_execution_state of this JobDefinition.
+        Status of the latest job execution, such as running, paused, or completed.
+
+
+        :param job_execution_state: The job_execution_state of this JobDefinition.
+        :type: str
+        """
+        allowed_values = ["CREATED", "IN_PROGRESS", "INACTIVE", "FAILED", "SUCCEEDED", "CANCELED"]
+        if not value_allowed_none_or_none_sentinel(job_execution_state, allowed_values):
+            job_execution_state = 'UNKNOWN_ENUM_VALUE'
+        self._job_execution_state = job_execution_state
+
+    @property
+    def schedule_type(self):
+        """
+        Gets the schedule_type of this JobDefinition.
+        Type of job schedule for the latest job executed.
+
+        Allowed values for this property are: "SCHEDULED", "IMMEDIATE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The schedule_type of this JobDefinition.
+        :rtype: str
+        """
+        return self._schedule_type
+
+    @schedule_type.setter
+    def schedule_type(self, schedule_type):
+        """
+        Sets the schedule_type of this JobDefinition.
+        Type of job schedule for the latest job executed.
+
+
+        :param schedule_type: The schedule_type of this JobDefinition.
+        :type: str
+        """
+        allowed_values = ["SCHEDULED", "IMMEDIATE"]
+        if not value_allowed_none_or_none_sentinel(schedule_type, allowed_values):
+            schedule_type = 'UNKNOWN_ENUM_VALUE'
+        self._schedule_type = schedule_type
 
     @property
     def properties(self):

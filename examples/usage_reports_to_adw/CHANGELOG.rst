@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.08.04 - 2020-08-04
+=====================
+* Aligned to APEX Version 20.1
+* Aligned to one cost instead of Paygo/Monthly
+* Added monthly consumption in the Data Statistics tab
+
+=====================
 20.07.28 - 2020-07-28
 =====================
 * Added sleep 0.5 to the public API call to avoid too many requests error

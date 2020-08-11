@@ -18,20 +18,51 @@ class TypeCollection(object):
         Initializes a new TypeCollection object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param count:
+            The value to assign to the count property of this TypeCollection.
+        :type count: int
+
         :param items:
             The value to assign to the items property of this TypeCollection.
         :type items: list[TypeSummary]
 
         """
         self.swagger_types = {
+            'count': 'int',
             'items': 'list[TypeSummary]'
         }
 
         self.attribute_map = {
+            'count': 'count',
             'items': 'items'
         }
 
+        self._count = None
         self._items = None
+
+    @property
+    def count(self):
+        """
+        Gets the count of this TypeCollection.
+        Total number of items returned.
+
+
+        :return: The count of this TypeCollection.
+        :rtype: int
+        """
+        return self._count
+
+    @count.setter
+    def count(self, count):
+        """
+        Sets the count of this TypeCollection.
+        Total number of items returned.
+
+
+        :param count: The count of this TypeCollection.
+        :type: int
+        """
+        self._count = count
 
     @property
     def items(self):

@@ -18,20 +18,51 @@ class JobDefinitionCollection(object):
         Initializes a new JobDefinitionCollection object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param count:
+            The value to assign to the count property of this JobDefinitionCollection.
+        :type count: int
+
         :param items:
             The value to assign to the items property of this JobDefinitionCollection.
         :type items: list[JobDefinitionSummary]
 
         """
         self.swagger_types = {
+            'count': 'int',
             'items': 'list[JobDefinitionSummary]'
         }
 
         self.attribute_map = {
+            'count': 'count',
             'items': 'items'
         }
 
+        self._count = None
         self._items = None
+
+    @property
+    def count(self):
+        """
+        Gets the count of this JobDefinitionCollection.
+        Total number of items returned.
+
+
+        :return: The count of this JobDefinitionCollection.
+        :rtype: int
+        """
+        return self._count
+
+    @count.setter
+    def count(self, count):
+        """
+        Sets the count of this JobDefinitionCollection.
+        Total number of items returned.
+
+
+        :param count: The count of this JobDefinitionCollection.
+        :type: int
+        """
+        self._count = count
 
     @property
     def items(self):

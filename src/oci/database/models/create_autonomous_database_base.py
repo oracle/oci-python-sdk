@@ -23,6 +23,10 @@ class CreateAutonomousDatabaseBase(object):
     #: This constant has a value of "DW"
     DB_WORKLOAD_DW = "DW"
 
+    #: A constant which can be used with the db_workload property of a CreateAutonomousDatabaseBase.
+    #: This constant has a value of "AJD"
+    DB_WORKLOAD_AJD = "AJD"
+
     #: A constant which can be used with the license_model property of a CreateAutonomousDatabaseBase.
     #: This constant has a value of "LICENSE_INCLUDED"
     LICENSE_MODEL_LICENSE_INCLUDED = "LICENSE_INCLUDED"
@@ -73,7 +77,7 @@ class CreateAutonomousDatabaseBase(object):
 
         :param db_workload:
             The value to assign to the db_workload property of this CreateAutonomousDatabaseBase.
-            Allowed values for this property are: "OLTP", "DW"
+            Allowed values for this property are: "OLTP", "DW", "AJD"
         :type db_workload: str
 
         :param data_storage_size_in_tbs:
@@ -330,8 +334,9 @@ class CreateAutonomousDatabaseBase(object):
 
         - OLTP - indicates an Autonomous Transaction Processing database
         - DW - indicates an Autonomous Data Warehouse database
+        - AJD - indicates an Autonomous JSON Database
 
-        Allowed values for this property are: "OLTP", "DW"
+        Allowed values for this property are: "OLTP", "DW", "AJD"
 
 
         :return: The db_workload of this CreateAutonomousDatabaseBase.
@@ -347,12 +352,13 @@ class CreateAutonomousDatabaseBase(object):
 
         - OLTP - indicates an Autonomous Transaction Processing database
         - DW - indicates an Autonomous Data Warehouse database
+        - AJD - indicates an Autonomous JSON Database
 
 
         :param db_workload: The db_workload of this CreateAutonomousDatabaseBase.
         :type: str
         """
-        allowed_values = ["OLTP", "DW"]
+        allowed_values = ["OLTP", "DW", "AJD"]
         if not value_allowed_none_or_none_sentinel(db_workload, allowed_values):
             raise ValueError(
                 "Invalid value for `db_workload`, must be None or one of {0}"

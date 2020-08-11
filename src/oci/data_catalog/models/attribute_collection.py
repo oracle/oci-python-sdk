@@ -18,20 +18,51 @@ class AttributeCollection(object):
         Initializes a new AttributeCollection object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param count:
+            The value to assign to the count property of this AttributeCollection.
+        :type count: int
+
         :param items:
             The value to assign to the items property of this AttributeCollection.
         :type items: list[AttributeSummary]
 
         """
         self.swagger_types = {
+            'count': 'int',
             'items': 'list[AttributeSummary]'
         }
 
         self.attribute_map = {
+            'count': 'count',
             'items': 'items'
         }
 
+        self._count = None
         self._items = None
+
+    @property
+    def count(self):
+        """
+        Gets the count of this AttributeCollection.
+        Total number of items returned.
+
+
+        :return: The count of this AttributeCollection.
+        :rtype: int
+        """
+        return self._count
+
+    @count.setter
+    def count(self, count):
+        """
+        Sets the count of this AttributeCollection.
+        Total number of items returned.
+
+
+        :param count: The count of this AttributeCollection.
+        :type: int
+        """
+        self._count = count
 
     @property
     def items(self):

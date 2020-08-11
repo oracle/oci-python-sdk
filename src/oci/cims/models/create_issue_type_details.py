@@ -10,7 +10,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateIssueTypeDetails(object):
     """
-    Details Issue Type of the incident
+    Details for creating the issue type of the support ticket.
+
+    **Caution:** Avoid using any confidential information when you supply string values using the API.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +39,7 @@ class CreateIssueTypeDetails(object):
     def issue_type_key(self):
         """
         Gets the issue_type_key of this CreateIssueTypeDetails.
-        Unique ID that identifies an Issue Type
+        Unique identifier for the issue type.
 
 
         :return: The issue_type_key of this CreateIssueTypeDetails.
@@ -49,7 +51,7 @@ class CreateIssueTypeDetails(object):
     def issue_type_key(self, issue_type_key):
         """
         Sets the issue_type_key of this CreateIssueTypeDetails.
-        Unique ID that identifies an Issue Type
+        Unique identifier for the issue type.
 
 
         :param issue_type_key: The issue_type_key of this CreateIssueTypeDetails.

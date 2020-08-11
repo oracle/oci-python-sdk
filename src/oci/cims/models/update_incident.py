@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateIncident(object):
     """
-    Details of Resource Item to be updated
+    Details about the support ticket being updated.
     """
 
     def __init__(self, **kwargs):

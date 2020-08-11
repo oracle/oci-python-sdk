@@ -3746,9 +3746,13 @@ class ObjectStorageClient(object):
         Creates a new object or overwrites an existing object with the same name. The maximum object size allowed by
         PutObject is 50 GiB.
 
+        See `Object Names`__
+        for object naming requirements.
+
         See `Special Instructions for Object Storage PUT`__
         for request signature requirements.
 
+        __ https://docs.cloud.oracle.com/Content/Object/Tasks/managingobjects.htm#namerequirements
         __ https://docs.cloud.oracle.com/Content/API/Concepts/signingrequests.htm#ObjectStoragePut
 
 
@@ -4251,6 +4255,11 @@ class ObjectStorageClient(object):
     def rename_object(self, namespace_name, bucket_name, rename_object_details, **kwargs):
         """
         Rename an object in the given Object Storage namespace.
+
+        See `Object Names`__
+        for object naming requirements.
+
+        __ https://docs.cloud.oracle.com/Content/Object/Tasks/managingobjects.htm#namerequirements
 
 
         :param str namespace_name: (required)

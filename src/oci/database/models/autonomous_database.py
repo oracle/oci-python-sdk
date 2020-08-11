@@ -113,6 +113,10 @@ class AutonomousDatabase(object):
     #: This constant has a value of "DW"
     DB_WORKLOAD_DW = "DW"
 
+    #: A constant which can be used with the db_workload property of a AutonomousDatabase.
+    #: This constant has a value of "AJD"
+    DB_WORKLOAD_AJD = "AJD"
+
     #: A constant which can be used with the data_safe_status property of a AutonomousDatabase.
     #: This constant has a value of "REGISTERING"
     DATA_SAFE_STATUS_REGISTERING = "REGISTERING"
@@ -266,7 +270,7 @@ class AutonomousDatabase(object):
 
         :param db_workload:
             The value to assign to the db_workload property of this AutonomousDatabase.
-            Allowed values for this property are: "OLTP", "DW", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OLTP", "DW", "AJD", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type db_workload: str
 
@@ -1270,8 +1274,9 @@ class AutonomousDatabase(object):
 
         - OLTP - indicates an Autonomous Transaction Processing database
         - DW - indicates an Autonomous Data Warehouse database
+        - AJD - indicates an Autonomous JSON Database
 
-        Allowed values for this property are: "OLTP", "DW", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OLTP", "DW", "AJD", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -1288,12 +1293,13 @@ class AutonomousDatabase(object):
 
         - OLTP - indicates an Autonomous Transaction Processing database
         - DW - indicates an Autonomous Data Warehouse database
+        - AJD - indicates an Autonomous JSON Database
 
 
         :param db_workload: The db_workload of this AutonomousDatabase.
         :type: str
         """
-        allowed_values = ["OLTP", "DW"]
+        allowed_values = ["OLTP", "DW", "AJD"]
         if not value_allowed_none_or_none_sentinel(db_workload, allowed_values):
             db_workload = 'UNKNOWN_ENUM_VALUE'
         self._db_workload = db_workload
