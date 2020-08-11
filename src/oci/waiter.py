@@ -24,7 +24,7 @@ def wait_until(client, response, property=None, state=None, max_interval_seconds
 
     The wait will poll at an increasing interval up to 'max_interval_seconds'
     for a maximum total time of 'max_wait_seconds'. If the maximum time
-    is exceeded, then it will raise a MaximumWaitTimeExceededError.
+    is exceeded, then it will raise a MaximumWaitTimeExceeded error.
 
     On successful completion the final Response object will be returned. The
     original Response object will not be altered.
