@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LimitItem(Item):
     """
-    Details of Limit Item
+    Reserved for future use.
     """
 
     #: A constant which can be used with the limit_status property of a LimitItem.
@@ -116,7 +116,7 @@ class LimitItem(Item):
     def current_limit(self):
         """
         Gets the current_limit of this LimitItem.
-        Current available limit of the resource
+        The currently available limit of the resource.
 
 
         :return: The current_limit of this LimitItem.
@@ -128,7 +128,7 @@ class LimitItem(Item):
     def current_limit(self, current_limit):
         """
         Sets the current_limit of this LimitItem.
-        Current available limit of the resource
+        The currently available limit of the resource.
 
 
         :param current_limit: The current_limit of this LimitItem.
@@ -140,7 +140,7 @@ class LimitItem(Item):
     def current_usage(self):
         """
         Gets the current_usage of this LimitItem.
-        Current used limit of the resource
+        The current usage of the resource.
 
 
         :return: The current_usage of this LimitItem.
@@ -152,7 +152,7 @@ class LimitItem(Item):
     def current_usage(self, current_usage):
         """
         Sets the current_usage of this LimitItem.
-        Current used limit of the resource
+        The current usage of the resource.
 
 
         :param current_usage: The current_usage of this LimitItem.
@@ -164,7 +164,7 @@ class LimitItem(Item):
     def requested_limit(self):
         """
         Gets the requested_limit of this LimitItem.
-        Requested limit for the resource
+        The requested limit for the resource.
 
 
         :return: The requested_limit of this LimitItem.
@@ -176,7 +176,7 @@ class LimitItem(Item):
     def requested_limit(self, requested_limit):
         """
         Sets the requested_limit of this LimitItem.
-        Requested limit for the resource
+        The requested limit for the resource.
 
 
         :param requested_limit: The requested_limit of this LimitItem.
@@ -188,7 +188,7 @@ class LimitItem(Item):
     def limit_status(self):
         """
         Gets the limit_status of this LimitItem.
-        Status of the Limit
+        The status of the request.
 
         Allowed values for this property are: "APPROVED", "PARTIALLY_APPROVED", "NOT_APPROVED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -203,7 +203,7 @@ class LimitItem(Item):
     def limit_status(self, limit_status):
         """
         Sets the limit_status of this LimitItem.
-        Status of the Limit
+        The status of the request.
 
 
         :param limit_status: The limit_status of this LimitItem.

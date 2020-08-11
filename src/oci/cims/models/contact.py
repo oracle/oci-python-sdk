@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Contact(object):
     """
-    Contact Details of the Customer
+    Contact details for the customer.
     """
 
     #: A constant which can be used with the contact_type property of a Contact.
@@ -80,7 +80,7 @@ class Contact(object):
     def contact_name(self):
         """
         Gets the contact_name of this Contact.
-        Contact person name
+        The name of the contact person.
 
 
         :return: The contact_name of this Contact.
@@ -92,7 +92,7 @@ class Contact(object):
     def contact_name(self, contact_name):
         """
         Sets the contact_name of this Contact.
-        Contact person name
+        The name of the contact person.
 
 
         :param contact_name: The contact_name of this Contact.
@@ -104,7 +104,7 @@ class Contact(object):
     def contact_email(self):
         """
         Gets the contact_email of this Contact.
-        Contact person email
+        The email of the contact person.
 
 
         :return: The contact_email of this Contact.
@@ -116,7 +116,7 @@ class Contact(object):
     def contact_email(self, contact_email):
         """
         Sets the contact_email of this Contact.
-        Contact person email
+        The email of the contact person.
 
 
         :param contact_email: The contact_email of this Contact.
@@ -128,7 +128,7 @@ class Contact(object):
     def contact_phone(self):
         """
         Gets the contact_phone of this Contact.
-        Contact person phone number
+        The phone number of the contact person.
 
 
         :return: The contact_phone of this Contact.
@@ -140,7 +140,7 @@ class Contact(object):
     def contact_phone(self, contact_phone):
         """
         Sets the contact_phone of this Contact.
-        Contact person phone number
+        The phone number of the contact person.
 
 
         :param contact_phone: The contact_phone of this Contact.
@@ -152,7 +152,7 @@ class Contact(object):
     def contact_type(self):
         """
         Gets the contact_type of this Contact.
-        ContactType enum. eg: MANAGER, PRIMARY
+        The type of contact, such as primary or alternate.
 
         Allowed values for this property are: "PRIMARY", "ALTERNATE", "SECONDARY", "ADMIN", "MANAGER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -167,7 +167,7 @@ class Contact(object):
     def contact_type(self, contact_type):
         """
         Sets the contact_type of this Contact.
-        ContactType enum. eg: MANAGER, PRIMARY
+        The type of contact, such as primary or alternate.
 
 
         :param contact_type: The contact_type of this Contact.

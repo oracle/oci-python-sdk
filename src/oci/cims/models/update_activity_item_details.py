@@ -10,7 +10,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateActivityItemDetails(UpdateItemDetails):
     """
-    Details of Activity Item
+    Details for udpating the support ticket activity.
+
+    **Caution:** Avoid using any confidential information when you supply string values using the API.
     """
 
     #: A constant which can be used with the activity_type property of a UpdateActivityItemDetails.
@@ -70,7 +72,7 @@ class UpdateActivityItemDetails(UpdateItemDetails):
     def comments(self):
         """
         Gets the comments of this UpdateActivityItemDetails.
-        Comments to update as part of Activity
+        Comments updated at the time that the activity occurs.
 
 
         :return: The comments of this UpdateActivityItemDetails.
@@ -82,7 +84,7 @@ class UpdateActivityItemDetails(UpdateItemDetails):
     def comments(self, comments):
         """
         Sets the comments of this UpdateActivityItemDetails.
-        Comments to update as part of Activity
+        Comments updated at the time that the activity occurs.
 
 
         :param comments: The comments of this UpdateActivityItemDetails.
@@ -94,7 +96,7 @@ class UpdateActivityItemDetails(UpdateItemDetails):
     def activity_type(self):
         """
         Gets the activity_type of this UpdateActivityItemDetails.
-        Type of activity. eg: NOTES, UPDATE
+        The type of activity occurring.
 
         Allowed values for this property are: "NOTES", "PROBLEM_DESCRIPTION", "UPDATE", "CLOSE"
 
@@ -108,7 +110,7 @@ class UpdateActivityItemDetails(UpdateItemDetails):
     def activity_type(self, activity_type):
         """
         Sets the activity_type of this UpdateActivityItemDetails.
-        Type of activity. eg: NOTES, UPDATE
+        The type of activity occurring.
 
 
         :param activity_type: The activity_type of this UpdateActivityItemDetails.

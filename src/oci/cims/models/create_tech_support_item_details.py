@@ -10,7 +10,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateTechSupportItemDetails(CreateItemDetails):
     """
-    Details of TechSupport Item
+    Details about the issue that the technical support request relates to.
+
+    **Caution:** Avoid using any confidential information when you supply string values using the API.
     """
 
     def __init__(self, **kwargs):

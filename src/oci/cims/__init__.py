@@ -7,6 +7,8 @@ from __future__ import absolute_import
 
 from .incident_client import IncidentClient
 from .incident_client_composite_operations import IncidentClientCompositeOperations
+from .user_client import UserClient
+from .user_client_composite_operations import UserClientCompositeOperations
 from . import models
 
-__all__ = ["IncidentClient", "IncidentClientCompositeOperations", "models"]
+__all__ = ["IncidentClient", "IncidentClientCompositeOperations", "UserClient", "UserClientCompositeOperations", "models"]

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateLimitItemDetails(CreateItemDetails):
     """
-    Details of Limit Item
+    Reserved for future use.
     """
 
     #: A constant which can be used with the limit_status property of a CreateLimitItemDetails.
@@ -108,7 +108,7 @@ class CreateLimitItemDetails(CreateItemDetails):
     def current_limit(self):
         """
         Gets the current_limit of this CreateLimitItemDetails.
-        Current available limit of the resource
+        The limit of the resource currently available.
 
 
         :return: The current_limit of this CreateLimitItemDetails.
@@ -120,7 +120,7 @@ class CreateLimitItemDetails(CreateItemDetails):
     def current_limit(self, current_limit):
         """
         Sets the current_limit of this CreateLimitItemDetails.
-        Current available limit of the resource
+        The limit of the resource currently available.
 
 
         :param current_limit: The current_limit of this CreateLimitItemDetails.
@@ -132,7 +132,7 @@ class CreateLimitItemDetails(CreateItemDetails):
     def current_usage(self):
         """
         Gets the current_usage of this CreateLimitItemDetails.
-        Current used limit of the resource
+        The current usage of the resource.
 
 
         :return: The current_usage of this CreateLimitItemDetails.
@@ -144,7 +144,7 @@ class CreateLimitItemDetails(CreateItemDetails):
     def current_usage(self, current_usage):
         """
         Sets the current_usage of this CreateLimitItemDetails.
-        Current used limit of the resource
+        The current usage of the resource.
 
 
         :param current_usage: The current_usage of this CreateLimitItemDetails.
@@ -156,7 +156,7 @@ class CreateLimitItemDetails(CreateItemDetails):
     def requested_limit(self):
         """
         Gets the requested_limit of this CreateLimitItemDetails.
-        Requested limit for the resource
+        Reserved for future use.
 
 
         :return: The requested_limit of this CreateLimitItemDetails.
@@ -168,7 +168,7 @@ class CreateLimitItemDetails(CreateItemDetails):
     def requested_limit(self, requested_limit):
         """
         Sets the requested_limit of this CreateLimitItemDetails.
-        Requested limit for the resource
+        Reserved for future use.
 
 
         :param requested_limit: The requested_limit of this CreateLimitItemDetails.
@@ -180,7 +180,7 @@ class CreateLimitItemDetails(CreateItemDetails):
     def limit_status(self):
         """
         Gets the limit_status of this CreateLimitItemDetails.
-        Status of the Limit
+        The current status of the request.
 
         Allowed values for this property are: "APPROVED", "PARTIALLY_APPROVED", "NOT_APPROVED"
 
@@ -194,7 +194,7 @@ class CreateLimitItemDetails(CreateItemDetails):
     def limit_status(self, limit_status):
         """
         Sets the limit_status of this CreateLimitItemDetails.
-        Status of the Limit
+        The current status of the request.
 
 
         :param limit_status: The limit_status of this CreateLimitItemDetails.

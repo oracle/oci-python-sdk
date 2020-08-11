@@ -74,6 +74,10 @@ class TermRelationship(object):
             The value to assign to the related_term_description property of this TermRelationship.
         :type related_term_description: str
 
+        :param related_term_path:
+            The value to assign to the related_term_path property of this TermRelationship.
+        :type related_term_path: str
+
         :param uri:
             The value to assign to the uri property of this TermRelationship.
         :type uri: str
@@ -89,6 +93,10 @@ class TermRelationship(object):
         :param parent_term_description:
             The value to assign to the parent_term_description property of this TermRelationship.
         :type parent_term_description: str
+
+        :param parent_term_path:
+            The value to assign to the parent_term_path property of this TermRelationship.
+        :type parent_term_path: str
 
         :param time_created:
             The value to assign to the time_created property of this TermRelationship.
@@ -108,10 +116,12 @@ class TermRelationship(object):
             'related_term_key': 'str',
             'related_term_display_name': 'str',
             'related_term_description': 'str',
+            'related_term_path': 'str',
             'uri': 'str',
             'parent_term_key': 'str',
             'parent_term_display_name': 'str',
             'parent_term_description': 'str',
+            'parent_term_path': 'str',
             'time_created': 'datetime',
             'lifecycle_state': 'str'
         }
@@ -123,10 +133,12 @@ class TermRelationship(object):
             'related_term_key': 'relatedTermKey',
             'related_term_display_name': 'relatedTermDisplayName',
             'related_term_description': 'relatedTermDescription',
+            'related_term_path': 'relatedTermPath',
             'uri': 'uri',
             'parent_term_key': 'parentTermKey',
             'parent_term_display_name': 'parentTermDisplayName',
             'parent_term_description': 'parentTermDescription',
+            'parent_term_path': 'parentTermPath',
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState'
         }
@@ -137,10 +149,12 @@ class TermRelationship(object):
         self._related_term_key = None
         self._related_term_display_name = None
         self._related_term_description = None
+        self._related_term_path = None
         self._uri = None
         self._parent_term_key = None
         self._parent_term_display_name = None
         self._parent_term_description = None
+        self._parent_term_path = None
         self._time_created = None
         self._lifecycle_state = None
 
@@ -291,6 +305,30 @@ class TermRelationship(object):
         self._related_term_description = related_term_description
 
     @property
+    def related_term_path(self):
+        """
+        Gets the related_term_path of this TermRelationship.
+        Full path of the related term.
+
+
+        :return: The related_term_path of this TermRelationship.
+        :rtype: str
+        """
+        return self._related_term_path
+
+    @related_term_path.setter
+    def related_term_path(self, related_term_path):
+        """
+        Sets the related_term_path of this TermRelationship.
+        Full path of the related term.
+
+
+        :param related_term_path: The related_term_path of this TermRelationship.
+        :type: str
+        """
+        self._related_term_path = related_term_path
+
+    @property
     def uri(self):
         """
         Gets the uri of this TermRelationship.
@@ -385,6 +423,30 @@ class TermRelationship(object):
         :type: str
         """
         self._parent_term_description = parent_term_description
+
+    @property
+    def parent_term_path(self):
+        """
+        Gets the parent_term_path of this TermRelationship.
+        Full path of the parent term.
+
+
+        :return: The parent_term_path of this TermRelationship.
+        :rtype: str
+        """
+        return self._parent_term_path
+
+    @parent_term_path.setter
+    def parent_term_path(self, parent_term_path):
+        """
+        Sets the parent_term_path of this TermRelationship.
+        Full path of the parent term.
+
+
+        :param parent_term_path: The parent_term_path of this TermRelationship.
+        :type: str
+        """
+        self._parent_term_path = parent_term_path
 
     @property
     def time_created(self):

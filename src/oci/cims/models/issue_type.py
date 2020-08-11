@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class IssueType(object):
     """
-    Details Issue Type of the incident
+    Details about the issue type associated with the support ticket.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class IssueType(object):
     def issue_type_key(self):
         """
         Gets the issue_type_key of this IssueType.
-        Unique ID that identifies an Issue Type
+        Unique identifier for the issue type.
 
 
         :return: The issue_type_key of this IssueType.
@@ -56,7 +56,7 @@ class IssueType(object):
     def issue_type_key(self, issue_type_key):
         """
         Sets the issue_type_key of this IssueType.
-        Unique ID that identifies an Issue Type
+        Unique identifier for the issue type.
 
 
         :param issue_type_key: The issue_type_key of this IssueType.
@@ -68,7 +68,7 @@ class IssueType(object):
     def label(self):
         """
         Gets the label of this IssueType.
-        Label of issue type. eg: Instance Performance
+        The label for the issue type. For example, `Instance Performance`.
 
 
         :return: The label of this IssueType.
@@ -80,7 +80,7 @@ class IssueType(object):
     def label(self, label):
         """
         Sets the label of this IssueType.
-        Label of issue type. eg: Instance Performance
+        The label for the issue type. For example, `Instance Performance`.
 
 
         :param label: The label of this IssueType.

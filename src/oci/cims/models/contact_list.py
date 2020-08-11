@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ContactList(object):
     """
-    List of contacts
+    The list of contacts for the ticket.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class ContactList(object):
     def contact_list(self):
         """
         **[Required]** Gets the contact_list of this ContactList.
-        List of contacts
+        The list of contacts.
 
 
         :return: The contact_list of this ContactList.
@@ -49,7 +49,7 @@ class ContactList(object):
     def contact_list(self, contact_list):
         """
         Sets the contact_list of this ContactList.
-        List of contacts
+        The list of contacts.
 
 
         :param contact_list: The contact_list of this ContactList.

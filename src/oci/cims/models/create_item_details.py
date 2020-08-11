@@ -10,7 +10,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateItemDetails(object):
     """
-    Details of Item
+    Details gathered during item creation.
+
+    **Caution:** Avoid using any confidential information when you supply string values using the API.
     """
 
     def __init__(self, **kwargs):
@@ -86,7 +88,7 @@ class CreateItemDetails(object):
     def type(self):
         """
         Gets the type of this CreateItemDetails.
-        Type of item. eg: CreateTechSupportItemDetails, CreateLimitItemDetails
+        The type of the item.
 
 
         :return: The type of this CreateItemDetails.
@@ -98,7 +100,7 @@ class CreateItemDetails(object):
     def type(self, type):
         """
         Sets the type of this CreateItemDetails.
-        Type of item. eg: CreateTechSupportItemDetails, CreateLimitItemDetails
+        The type of the item.
 
 
         :param type: The type of this CreateItemDetails.
@@ -170,7 +172,7 @@ class CreateItemDetails(object):
     def name(self):
         """
         Gets the name of this CreateItemDetails.
-        Name of the item
+        The display name of the item.
 
 
         :return: The name of this CreateItemDetails.
@@ -182,7 +184,7 @@ class CreateItemDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateItemDetails.
-        Name of the item
+        The display name of the item.
 
 
         :param name: The name of this CreateItemDetails.

@@ -10,7 +10,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateTicketDetails(object):
     """
-    Details of Ticket created
+    Details relevant to the support ticket.
+
+    **Caution:** Avoid using any confidential information when you supply string values using the API.
     """
 
     #: A constant which can be used with the severity property of a CreateTicketDetails.
@@ -47,31 +49,38 @@ class CreateTicketDetails(object):
             The value to assign to the description property of this CreateTicketDetails.
         :type description: str
 
+        :param contextual_data:
+            The value to assign to the contextual_data property of this CreateTicketDetails.
+        :type contextual_data: ContextualData
+
         """
         self.swagger_types = {
             'severity': 'str',
             'resource_list': 'list[CreateResourceDetails]',
             'title': 'str',
-            'description': 'str'
+            'description': 'str',
+            'contextual_data': 'ContextualData'
         }
 
         self.attribute_map = {
             'severity': 'severity',
             'resource_list': 'resourceList',
             'title': 'title',
-            'description': 'description'
+            'description': 'description',
+            'contextual_data': 'contextualData'
         }
 
         self._severity = None
         self._resource_list = None
         self._title = None
         self._description = None
+        self._contextual_data = None
 
     @property
     def severity(self):
         """
         **[Required]** Gets the severity of this CreateTicketDetails.
-        Severity of the ticket. eg: HIGH, MEDIUM
+        The severity of the support ticket.
 
         Allowed values for this property are: "HIGHEST", "HIGH", "MEDIUM"
 
@@ -85,7 +94,7 @@ class CreateTicketDetails(object):
     def severity(self, severity):
         """
         Sets the severity of this CreateTicketDetails.
-        Severity of the ticket. eg: HIGH, MEDIUM
+        The severity of the support ticket.
 
 
         :param severity: The severity of this CreateTicketDetails.
@@ -103,7 +112,7 @@ class CreateTicketDetails(object):
     def resource_list(self):
         """
         Gets the resource_list of this CreateTicketDetails.
-        List of resources
+        The list of resources.
 
 
         :return: The resource_list of this CreateTicketDetails.
@@ -115,7 +124,7 @@ class CreateTicketDetails(object):
     def resource_list(self, resource_list):
         """
         Sets the resource_list of this CreateTicketDetails.
-        List of resources
+        The list of resources.
 
 
         :param resource_list: The resource_list of this CreateTicketDetails.
@@ -127,7 +136,7 @@ class CreateTicketDetails(object):
     def title(self):
         """
         **[Required]** Gets the title of this CreateTicketDetails.
-        Title of ticket
+        The title of the support ticket.
 
 
         :return: The title of this CreateTicketDetails.
@@ -139,7 +148,7 @@ class CreateTicketDetails(object):
     def title(self, title):
         """
         Sets the title of this CreateTicketDetails.
-        Title of ticket
+        The title of the support ticket.
 
 
         :param title: The title of this CreateTicketDetails.
@@ -151,7 +160,7 @@ class CreateTicketDetails(object):
     def description(self):
         """
         **[Required]** Gets the description of this CreateTicketDetails.
-        Details of ticket
+        The description of the support ticket.
 
 
         :return: The description of this CreateTicketDetails.
@@ -163,13 +172,37 @@ class CreateTicketDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateTicketDetails.
-        Details of ticket
+        The description of the support ticket.
 
 
         :param description: The description of this CreateTicketDetails.
         :type: str
         """
         self._description = description
+
+    @property
+    def contextual_data(self):
+        """
+        Gets the contextual_data of this CreateTicketDetails.
+        The context from where the ticket is getting created.
+
+
+        :return: The contextual_data of this CreateTicketDetails.
+        :rtype: ContextualData
+        """
+        return self._contextual_data
+
+    @contextual_data.setter
+    def contextual_data(self, contextual_data):
+        """
+        Sets the contextual_data of this CreateTicketDetails.
+        The context from where the ticket is getting created.
+
+
+        :param contextual_data: The contextual_data of this CreateTicketDetails.
+        :type: ContextualData
+        """
+        self._contextual_data = contextual_data
 
     def __repr__(self):
         return formatted_flat_dict(self)

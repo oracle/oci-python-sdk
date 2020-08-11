@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ValidationResponse(object):
     """
-    Validation Response
+    The validation response returned when checking whether the requested user is valid.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class ValidationResponse(object):
     def is_valid_user(self):
         """
         Gets the is_valid_user of this ValidationResponse.
-        Boolean value to check whether requested user is valid or not
+        Boolean value that indicates whether the requested user is valid.
 
 
         :return: The is_valid_user of this ValidationResponse.
@@ -49,7 +49,7 @@ class ValidationResponse(object):
     def is_valid_user(self, is_valid_user):
         """
         Sets the is_valid_user of this ValidationResponse.
-        Boolean value to check whether requested user is valid or not
+        Boolean value that indicates whether the requested user is valid.
 
 
         :param is_valid_user: The is_valid_user of this ValidationResponse.

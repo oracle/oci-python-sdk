@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class IncidentType(object):
     """
-    Details of incident type
+    Details about the incident type object.
     """
 
     def __init__(self, **kwargs):
@@ -65,7 +65,7 @@ class IncidentType(object):
     def id(self):
         """
         Gets the id of this IncidentType.
-        Unique ID that identifies an Incident Type
+        Unique identifier for the incident type.
 
 
         :return: The id of this IncidentType.
@@ -77,7 +77,7 @@ class IncidentType(object):
     def id(self, id):
         """
         Sets the id of this IncidentType.
-        Unique ID that identifies an Incident Type
+        Unique identifier for the incident type.
 
 
         :param id: The id of this IncidentType.
@@ -89,7 +89,7 @@ class IncidentType(object):
     def name(self):
         """
         Gets the name of this IncidentType.
-        Name of Incident type
+        The name of the incident type.
 
 
         :return: The name of this IncidentType.
@@ -101,7 +101,7 @@ class IncidentType(object):
     def name(self, name):
         """
         Sets the name of this IncidentType.
-        Name of Incident type
+        The name of the incident type.
 
 
         :param name: The name of this IncidentType.
@@ -113,7 +113,7 @@ class IncidentType(object):
     def label(self):
         """
         Gets the label of this IncidentType.
-        Label associated with Incident Type
+        The label associated with the incident type.
 
 
         :return: The label of this IncidentType.
@@ -125,7 +125,7 @@ class IncidentType(object):
     def label(self, label):
         """
         Sets the label of this IncidentType.
-        Label associated with Incident Type
+        The label associated with the incident type.
 
 
         :param label: The label of this IncidentType.
@@ -137,7 +137,7 @@ class IncidentType(object):
     def description(self):
         """
         Gets the description of this IncidentType.
-        Details of Incident Type
+        The description of the incident type.
 
 
         :return: The description of this IncidentType.
@@ -149,7 +149,7 @@ class IncidentType(object):
     def description(self, description):
         """
         Sets the description of this IncidentType.
-        Details of Incident Type
+        The description of the incident type.
 
 
         :param description: The description of this IncidentType.
@@ -161,7 +161,7 @@ class IncidentType(object):
     def classifier_list(self):
         """
         Gets the classifier_list of this IncidentType.
-        List of classifiers
+        The list of classifiers.
 
 
         :return: The classifier_list of this IncidentType.
@@ -173,7 +173,7 @@ class IncidentType(object):
     def classifier_list(self, classifier_list):
         """
         Sets the classifier_list of this IncidentType.
-        List of classifiers
+        The list of classifiers.
 
 
         :param classifier_list: The classifier_list of this IncidentType.

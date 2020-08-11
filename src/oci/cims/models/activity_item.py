@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ActivityItem(Item):
     """
-    Details of Activity Item
+    Details about the ActivityItem object.
     """
 
     #: A constant which can be used with the activity_type property of a ActivityItem.
@@ -137,7 +137,7 @@ class ActivityItem(Item):
     def comments(self):
         """
         Gets the comments of this ActivityItem.
-        Comments to update as part of Activity
+        Comments added with the activity on the support ticket.
 
 
         :return: The comments of this ActivityItem.
@@ -149,7 +149,7 @@ class ActivityItem(Item):
     def comments(self, comments):
         """
         Sets the comments of this ActivityItem.
-        Comments to update as part of Activity
+        Comments added with the activity on the support ticket.
 
 
         :param comments: The comments of this ActivityItem.
@@ -161,7 +161,7 @@ class ActivityItem(Item):
     def time_created(self):
         """
         Gets the time_created of this ActivityItem.
-        Epoch time when activity was created
+        The time when the activity was created, in milliseconds since epoch time.
 
 
         :return: The time_created of this ActivityItem.
@@ -173,7 +173,7 @@ class ActivityItem(Item):
     def time_created(self, time_created):
         """
         Sets the time_created of this ActivityItem.
-        Epoch time when activity was created
+        The time when the activity was created, in milliseconds since epoch time.
 
 
         :param time_created: The time_created of this ActivityItem.
@@ -185,7 +185,7 @@ class ActivityItem(Item):
     def time_updated(self):
         """
         Gets the time_updated of this ActivityItem.
-        Epoch time when activity was updated
+        The time when the activity was updated, in milliseconds since epoch time.
 
 
         :return: The time_updated of this ActivityItem.
@@ -197,7 +197,7 @@ class ActivityItem(Item):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this ActivityItem.
-        Epoch time when activity was updated
+        The time when the activity was updated, in milliseconds since epoch time.
 
 
         :param time_updated: The time_updated of this ActivityItem.
@@ -209,7 +209,7 @@ class ActivityItem(Item):
     def activity_type(self):
         """
         Gets the activity_type of this ActivityItem.
-        Type of activity. eg: NOTES, UPDATE
+        The type of activity occuring on the support ticket.
 
         Allowed values for this property are: "NOTES", "PROBLEM_DESCRIPTION", "UPDATE", "CLOSE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -224,7 +224,7 @@ class ActivityItem(Item):
     def activity_type(self, activity_type):
         """
         Sets the activity_type of this ActivityItem.
-        Type of activity. eg: NOTES, UPDATE
+        The type of activity occuring on the support ticket.
 
 
         :param activity_type: The activity_type of this ActivityItem.
@@ -239,7 +239,7 @@ class ActivityItem(Item):
     def activity_author(self):
         """
         Gets the activity_author of this ActivityItem.
-        Person who updates the activity
+        The person who updates the activity on the support ticket.
 
         Allowed values for this property are: "CUSTOMER", "ORACLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -254,7 +254,7 @@ class ActivityItem(Item):
     def activity_author(self, activity_author):
         """
         Sets the activity_author of this ActivityItem.
-        Person who updates the activity
+        The person who updates the activity on the support ticket.
 
 
         :param activity_author: The activity_author of this ActivityItem.

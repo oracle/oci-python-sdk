@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TenancyInformation(object):
     """
-    Details of Customer Tenant
+    Details about the customer's tenancy.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class TenancyInformation(object):
     def customer_support_key(self):
         """
         **[Required]** Gets the customer_support_key of this TenancyInformation.
-        Tenant customer support identifier
+        The Customer Support Identifier number associated with the tenancy.
 
 
         :return: The customer_support_key of this TenancyInformation.
@@ -56,7 +56,7 @@ class TenancyInformation(object):
     def customer_support_key(self, customer_support_key):
         """
         Sets the customer_support_key of this TenancyInformation.
-        Tenant customer support identifier
+        The Customer Support Identifier number associated with the tenancy.
 
 
         :param customer_support_key: The customer_support_key of this TenancyInformation.
@@ -68,7 +68,7 @@ class TenancyInformation(object):
     def tenancy_id(self):
         """
         **[Required]** Gets the tenancy_id of this TenancyInformation.
-        Tenant OCID
+        The OCID of the tenancy.
 
 
         :return: The tenancy_id of this TenancyInformation.
@@ -80,7 +80,7 @@ class TenancyInformation(object):
     def tenancy_id(self, tenancy_id):
         """
         Sets the tenancy_id of this TenancyInformation.
-        Tenant OCID
+        The OCID of the tenancy.
 
 
         :param tenancy_id: The tenancy_id of this TenancyInformation.

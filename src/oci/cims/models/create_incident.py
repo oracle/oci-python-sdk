@@ -10,7 +10,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateIncident(object):
     """
-    Details of Incident
+    Details gathered during the creation of the support ticket.
+
+    **Caution:** Avoid using any confidential information when you supply string values using the API.
     """
 
     #: A constant which can be used with the problem_type property of a CreateIncident.
@@ -89,7 +91,7 @@ class CreateIncident(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateIncident.
-        Tenancy Ocid
+        The OCID of the tenancy.
 
 
         :return: The compartment_id of this CreateIncident.
@@ -101,7 +103,7 @@ class CreateIncident(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateIncident.
-        Tenancy Ocid
+        The OCID of the tenancy.
 
 
         :param compartment_id: The compartment_id of this CreateIncident.
@@ -133,7 +135,7 @@ class CreateIncident(object):
     def csi(self):
         """
         Gets the csi of this CreateIncident.
-        Customer Support Identifier of the support account
+        The Customer Support Identifier number for the support account.
 
 
         :return: The csi of this CreateIncident.
@@ -145,7 +147,7 @@ class CreateIncident(object):
     def csi(self, csi):
         """
         Sets the csi of this CreateIncident.
-        Customer Support Identifier of the support account
+        The Customer Support Identifier number for the support account.
 
 
         :param csi: The csi of this CreateIncident.
@@ -157,7 +159,7 @@ class CreateIncident(object):
     def problem_type(self):
         """
         **[Required]** Gets the problem_type of this CreateIncident.
-        States type of incident. eg: LIMIT, TECH
+        The kind of support ticket, such as a technical issue request.
 
         Allowed values for this property are: "LIMIT", "LEGACY_LIMIT", "TECH", "ACCOUNT"
 
@@ -171,7 +173,7 @@ class CreateIncident(object):
     def problem_type(self, problem_type):
         """
         Sets the problem_type of this CreateIncident.
-        States type of incident. eg: LIMIT, TECH
+        The kind of support ticket, such as a technical issue request.
 
 
         :param problem_type: The problem_type of this CreateIncident.
@@ -189,7 +191,7 @@ class CreateIncident(object):
     def contacts(self):
         """
         Gets the contacts of this CreateIncident.
-        List of contacts
+        The list of contacts.
 
 
         :return: The contacts of this CreateIncident.
@@ -201,7 +203,7 @@ class CreateIncident(object):
     def contacts(self, contacts):
         """
         Sets the contacts of this CreateIncident.
-        List of contacts
+        The list of contacts.
 
 
         :param contacts: The contacts of this CreateIncident.
@@ -213,7 +215,7 @@ class CreateIncident(object):
     def referrer(self):
         """
         Gets the referrer of this CreateIncident.
-        Referrer of the incident., its usually the URL for where the customer logged the incident
+        The incident referrer. This value is often the URL that the customer used when creating the support ticket.
 
 
         :return: The referrer of this CreateIncident.
@@ -225,7 +227,7 @@ class CreateIncident(object):
     def referrer(self, referrer):
         """
         Sets the referrer of this CreateIncident.
-        Referrer of the incident., its usually the URL for where the customer logged the incident
+        The incident referrer. This value is often the URL that the customer used when creating the support ticket.
 
 
         :param referrer: The referrer of this CreateIncident.

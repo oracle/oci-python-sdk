@@ -33,7 +33,7 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
 
         :param db_workload:
             The value to assign to the db_workload property of this CreateAutonomousDatabaseDetails.
-            Allowed values for this property are: "OLTP", "DW"
+            Allowed values for this property are: "OLTP", "DW", "AJD"
         :type db_workload: str
 
         :param data_storage_size_in_tbs:

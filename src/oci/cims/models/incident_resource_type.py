@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class IncidentResourceType(object):
     """
-    Details of incident type
+    Details about the resource associated with the support request.
     """
 
     def __init__(self, **kwargs):
@@ -65,7 +65,7 @@ class IncidentResourceType(object):
     def resource_type_key(self):
         """
         Gets the resource_type_key of this IncidentResourceType.
-        Unique ID that identifies an Incident Type
+        Unique identifier of the resource.
 
 
         :return: The resource_type_key of this IncidentResourceType.
@@ -77,7 +77,7 @@ class IncidentResourceType(object):
     def resource_type_key(self, resource_type_key):
         """
         Sets the resource_type_key of this IncidentResourceType.
-        Unique ID that identifies an Incident Type
+        Unique identifier of the resource.
 
 
         :param resource_type_key: The resource_type_key of this IncidentResourceType.
@@ -89,7 +89,7 @@ class IncidentResourceType(object):
     def name(self):
         """
         Gets the name of this IncidentResourceType.
-        Name of Incident type
+        The display name of the resource.
 
 
         :return: The name of this IncidentResourceType.
@@ -101,7 +101,7 @@ class IncidentResourceType(object):
     def name(self, name):
         """
         Sets the name of this IncidentResourceType.
-        Name of Incident type
+        The display name of the resource.
 
 
         :param name: The name of this IncidentResourceType.
@@ -113,7 +113,7 @@ class IncidentResourceType(object):
     def label(self):
         """
         **[Required]** Gets the label of this IncidentResourceType.
-        Label associated with Incident Type
+        The label associated with the resource.
 
 
         :return: The label of this IncidentResourceType.
@@ -125,7 +125,7 @@ class IncidentResourceType(object):
     def label(self, label):
         """
         Sets the label of this IncidentResourceType.
-        Label associated with Incident Type
+        The label associated with the resource.
 
 
         :param label: The label of this IncidentResourceType.
@@ -137,7 +137,7 @@ class IncidentResourceType(object):
     def description(self):
         """
         Gets the description of this IncidentResourceType.
-        Details of Incident Type
+        The description of the resource.
 
 
         :return: The description of this IncidentResourceType.
@@ -149,7 +149,7 @@ class IncidentResourceType(object):
     def description(self, description):
         """
         Sets the description of this IncidentResourceType.
-        Details of Incident Type
+        The description of the resource.
 
 
         :param description: The description of this IncidentResourceType.
@@ -161,7 +161,7 @@ class IncidentResourceType(object):
     def service_category_list(self):
         """
         Gets the service_category_list of this IncidentResourceType.
-        Service Category List
+        The service category list.
 
 
         :return: The service_category_list of this IncidentResourceType.
@@ -173,7 +173,7 @@ class IncidentResourceType(object):
     def service_category_list(self, service_category_list):
         """
         Sets the service_category_list of this IncidentResourceType.
-        Service Category List
+        The service category list.
 
 
         :param service_category_list: The service_category_list of this IncidentResourceType.

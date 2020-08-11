@@ -50,6 +50,14 @@ class Job(object):
     JOB_TYPE_EXPORT = "EXPORT"
 
     #: A constant which can be used with the job_type property of a Job.
+    #: This constant has a value of "IMPORT_GLOSSARY"
+    JOB_TYPE_IMPORT_GLOSSARY = "IMPORT_GLOSSARY"
+
+    #: A constant which can be used with the job_type property of a Job.
+    #: This constant has a value of "EXPORT_GLOSSARY"
+    JOB_TYPE_EXPORT_GLOSSARY = "EXPORT_GLOSSARY"
+
+    #: A constant which can be used with the job_type property of a Job.
     #: This constant has a value of "INTERNAL"
     JOB_TYPE_INTERNAL = "INTERNAL"
 
@@ -122,7 +130,7 @@ class Job(object):
 
         :param job_type:
             The value to assign to the job_type property of this Job.
-            Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type job_type: str
 
@@ -172,6 +180,18 @@ class Job(object):
             The value to assign to the updated_by_id property of this Job.
         :type updated_by_id: str
 
+        :param job_definition_name:
+            The value to assign to the job_definition_name property of this Job.
+        :type job_definition_name: str
+
+        :param error_code:
+            The value to assign to the error_code property of this Job.
+        :type error_code: str
+
+        :param error_message:
+            The value to assign to the error_message property of this Job.
+        :type error_message: str
+
         :param uri:
             The value to assign to the uri property of this Job.
         :type uri: str
@@ -197,6 +217,9 @@ class Job(object):
             'time_of_latest_execution': 'datetime',
             'created_by_id': 'str',
             'updated_by_id': 'str',
+            'job_definition_name': 'str',
+            'error_code': 'str',
+            'error_message': 'str',
             'uri': 'str'
         }
 
@@ -220,6 +243,9 @@ class Job(object):
             'time_of_latest_execution': 'timeOfLatestExecution',
             'created_by_id': 'createdById',
             'updated_by_id': 'updatedById',
+            'job_definition_name': 'jobDefinitionName',
+            'error_code': 'errorCode',
+            'error_message': 'errorMessage',
             'uri': 'uri'
         }
 
@@ -242,6 +268,9 @@ class Job(object):
         self._time_of_latest_execution = None
         self._created_by_id = None
         self._updated_by_id = None
+        self._job_definition_name = None
+        self._error_code = None
+        self._error_message = None
         self._uri = None
 
     @property
@@ -436,7 +465,7 @@ class Job(object):
         Gets the job_type of this Job.
         Type of the job.
 
-        Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -455,7 +484,7 @@ class Job(object):
         :param job_type: The job_type of this Job.
         :type: str
         """
-        allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"]
+        allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"]
         if not value_allowed_none_or_none_sentinel(job_type, allowed_values):
             job_type = 'UNKNOWN_ENUM_VALUE'
         self._job_type = job_type
@@ -749,6 +778,78 @@ class Job(object):
         :type: str
         """
         self._updated_by_id = updated_by_id
+
+    @property
+    def job_definition_name(self):
+        """
+        Gets the job_definition_name of this Job.
+        The display name of the job definition resource that defined the scope of this job.
+
+
+        :return: The job_definition_name of this Job.
+        :rtype: str
+        """
+        return self._job_definition_name
+
+    @job_definition_name.setter
+    def job_definition_name(self, job_definition_name):
+        """
+        Sets the job_definition_name of this Job.
+        The display name of the job definition resource that defined the scope of this job.
+
+
+        :param job_definition_name: The job_definition_name of this Job.
+        :type: str
+        """
+        self._job_definition_name = job_definition_name
+
+    @property
+    def error_code(self):
+        """
+        Gets the error_code of this Job.
+        Error code returned from the latest job execution for this job. Useful when the latest Job execution is in FAILED state.
+
+
+        :return: The error_code of this Job.
+        :rtype: str
+        """
+        return self._error_code
+
+    @error_code.setter
+    def error_code(self, error_code):
+        """
+        Sets the error_code of this Job.
+        Error code returned from the latest job execution for this job. Useful when the latest Job execution is in FAILED state.
+
+
+        :param error_code: The error_code of this Job.
+        :type: str
+        """
+        self._error_code = error_code
+
+    @property
+    def error_message(self):
+        """
+        Gets the error_message of this Job.
+        Error message returned from the latest job execution for this job. Useful when the latest Job Execution is in a FAILED state.
+
+
+        :return: The error_message of this Job.
+        :rtype: str
+        """
+        return self._error_message
+
+    @error_message.setter
+    def error_message(self, error_message):
+        """
+        Sets the error_message of this Job.
+        Error message returned from the latest job execution for this job. Useful when the latest Job Execution is in a FAILED state.
+
+
+        :param error_message: The error_message of this Job.
+        :type: str
+        """
+        self._error_message = error_message
 
     @property
     def uri(self):

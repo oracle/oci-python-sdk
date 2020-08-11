@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.21.0 - 2020-08-11
+====================
+
+Added
+-----
+* Support for autonomous json databases in the Database service
+* Support for cleaning up uncommitted multipart uploads in the Object Storage service
+* Support for additional list API filters in the Data Catalog service
+
+Breaking
+--------
+* Some unusable region enums were removed from the Support Management service
+* Parameter `opc_retry_token` was removed from the Support Management service
+
+====================
 2.20.0 - 2020-08-04
 ====================
 
@@ -18,6 +33,10 @@ Added
 Breaking
 --------
 * Param `life_cycle_details` renamed to `lifecycle_details` in models `BlockchainPlatformByHostname` and `BlockchainPlatformSummary` in the Blockchain service
+
+Changed
+-------
+* Restricted `pyOpenSSL` dependency to versions between 17.5.0 and 19.1.0, both inclusive. See `#255 <https://github.com/oracle/oci-python-sdk/issues/255>`_ for details.
 
 ====================
 2.19.0 - 2020-07-28

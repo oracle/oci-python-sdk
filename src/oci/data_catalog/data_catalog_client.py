@@ -3497,7 +3497,7 @@ class DataCatalogClient(object):
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
-            "accept": "application/json",
+            "accept": "application/json, text/csv",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
@@ -3548,7 +3548,7 @@ class DataCatalogClient(object):
         :param list[str] fields: (optional)
             Specifies the fields to return in an entity attribute response.
 
-            Allowed values are: "key", "displayName", "description", "entityKey", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "externalDataType", "externalKey", "isIncrementalData", "isNullable", "length", "position", "precision", "scale", "timeExternal", "uri", "properties"
+            Allowed values are: "key", "displayName", "description", "entityKey", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "externalDataType", "externalKey", "isIncrementalData", "isNullable", "length", "position", "precision", "scale", "timeExternal", "uri", "properties", "path", "minCollectionCount", "maxCollectionCount", "datatypeEntityKey", "externalDatatypeEntityKey", "parentAttributeKey", "externalParentAttributeKey"
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -3592,7 +3592,7 @@ class DataCatalogClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         if 'fields' in kwargs:
-            fields_allowed_values = ["key", "displayName", "description", "entityKey", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "externalDataType", "externalKey", "isIncrementalData", "isNullable", "length", "position", "precision", "scale", "timeExternal", "uri", "properties"]
+            fields_allowed_values = ["key", "displayName", "description", "entityKey", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "externalDataType", "externalKey", "isIncrementalData", "isNullable", "length", "position", "precision", "scale", "timeExternal", "uri", "properties", "path", "minCollectionCount", "maxCollectionCount", "datatypeEntityKey", "externalDatatypeEntityKey", "parentAttributeKey", "externalParentAttributeKey"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
@@ -4202,7 +4202,7 @@ class DataCatalogClient(object):
         :param list[str] fields: (optional)
             Specifies the fields to return in an entity response.
 
-            Allowed values are: "key", "displayName", "description", "dataAssetKey", "timeCreated", "timeUpdated", "createdById", "updatedById", "lifecycleState", "externalKey", "timeExternal", "timeStatusUpdated", "isLogical", "isPartition", "folderKey", "typeKey", "path", "harvestStatus", "lastJobKey", "uri", "properties"
+            Allowed values are: "key", "displayName", "description", "dataAssetKey", "timeCreated", "timeUpdated", "createdById", "updatedById", "lifecycleState", "externalKey", "timeExternal", "timeStatusUpdated", "isLogical", "isPartition", "folderKey", "folderName", "typeKey", "path", "harvestStatus", "lastJobKey", "uri", "properties"
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -4245,7 +4245,7 @@ class DataCatalogClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         if 'fields' in kwargs:
-            fields_allowed_values = ["key", "displayName", "description", "dataAssetKey", "timeCreated", "timeUpdated", "createdById", "updatedById", "lifecycleState", "externalKey", "timeExternal", "timeStatusUpdated", "isLogical", "isPartition", "folderKey", "typeKey", "path", "harvestStatus", "lastJobKey", "uri", "properties"]
+            fields_allowed_values = ["key", "displayName", "description", "dataAssetKey", "timeCreated", "timeUpdated", "createdById", "updatedById", "lifecycleState", "externalKey", "timeExternal", "timeStatusUpdated", "isLogical", "isPartition", "folderKey", "folderName", "typeKey", "path", "harvestStatus", "lastJobKey", "uri", "properties"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
@@ -4708,7 +4708,7 @@ class DataCatalogClient(object):
         :param list[str] fields: (optional)
             Specifies the fields to return in a job response.
 
-            Allowed values are: "key", "displayName", "description", "catalogId", "lifecycleState", "timeCreated", "timeUpdated", "jobType", "scheduleCronExpression", "timeScheduleBegin", "timeScheduleEnd", "scheduleType", "connectionKey", "jobDefinitionKey", "internalVersion", "executionCount", "timeOfLatestExecution", "executions", "createdById", "updatedById", "uri"
+            Allowed values are: "key", "displayName", "description", "catalogId", "lifecycleState", "timeCreated", "timeUpdated", "jobType", "scheduleCronExpression", "timeScheduleBegin", "timeScheduleEnd", "scheduleType", "connectionKey", "jobDefinitionKey", "internalVersion", "executionCount", "timeOfLatestExecution", "executions", "createdById", "updatedById", "uri", "jobDefinitionName", "errorCode", "errorMessage"
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -4750,7 +4750,7 @@ class DataCatalogClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         if 'fields' in kwargs:
-            fields_allowed_values = ["key", "displayName", "description", "catalogId", "lifecycleState", "timeCreated", "timeUpdated", "jobType", "scheduleCronExpression", "timeScheduleBegin", "timeScheduleEnd", "scheduleType", "connectionKey", "jobDefinitionKey", "internalVersion", "executionCount", "timeOfLatestExecution", "executions", "createdById", "updatedById", "uri"]
+            fields_allowed_values = ["key", "displayName", "description", "catalogId", "lifecycleState", "timeCreated", "timeUpdated", "jobType", "scheduleCronExpression", "timeScheduleBegin", "timeScheduleEnd", "scheduleType", "connectionKey", "jobDefinitionKey", "internalVersion", "executionCount", "timeOfLatestExecution", "executions", "createdById", "updatedById", "uri", "jobDefinitionName", "errorCode", "errorMessage"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
@@ -4805,7 +4805,7 @@ class DataCatalogClient(object):
         :param list[str] fields: (optional)
             Specifies the fields to return in a job definition response.
 
-            Allowed values are: "key", "displayName", "description", "catalogId", "jobType", "isIncremental", "dataAssetKey", "connectionKey", "internalVersion", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "uri", "isSampleDataExtracted", "sampleDataSizeInMBs", "properties"
+            Allowed values are: "key", "displayName", "description", "catalogId", "jobType", "isIncremental", "dataAssetKey", "connectionKey", "internalVersion", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "uri", "isSampleDataExtracted", "sampleDataSizeInMBs", "timeLatestExecutionStarted", "timeLatestExecutionEnded", "jobExecutionState", "scheduleType", "properties"
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -4847,7 +4847,7 @@ class DataCatalogClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         if 'fields' in kwargs:
-            fields_allowed_values = ["key", "displayName", "description", "catalogId", "jobType", "isIncremental", "dataAssetKey", "connectionKey", "internalVersion", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "uri", "isSampleDataExtracted", "sampleDataSizeInMBs", "properties"]
+            fields_allowed_values = ["key", "displayName", "description", "catalogId", "jobType", "isIncremental", "dataAssetKey", "connectionKey", "internalVersion", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "uri", "isSampleDataExtracted", "sampleDataSizeInMBs", "timeLatestExecutionStarted", "timeLatestExecutionEnded", "jobExecutionState", "scheduleType", "properties"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
@@ -5977,6 +5977,11 @@ class DataCatalogClient(object):
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given. The match is not case sensitive.
 
+        :param str display_name_contains: (optional)
+            A filter to return only resources that match display name pattern given. The match is not case sensitive.
+            For Example : /folders?displayNameContains=Cu.*
+            The above would match all folders with display name that starts with \"Cu\".
+
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 
@@ -6028,7 +6033,7 @@ class DataCatalogClient(object):
         :param list[str] fields: (optional)
             Specifies the fields to return in an entity attribute summary response.
 
-            Allowed values are: "key", "displayName", "description", "entityKey", "lifecycleState", "timeCreated", "externalDataType", "externalKey", "length", "isNullable", "uri"
+            Allowed values are: "key", "displayName", "description", "entityKey", "lifecycleState", "timeCreated", "externalDataType", "externalKey", "length", "isNullable", "uri", "path", "minCollectionCount", "maxCollectionCount", "datatypeEntityKey", "externalDatatypeEntityKey", "parentAttributeKey", "externalParentAttributeKey"
 
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
@@ -6067,6 +6072,7 @@ class DataCatalogClient(object):
         expected_kwargs = [
             "retry_strategy",
             "display_name",
+            "display_name_contains",
             "lifecycle_state",
             "time_created",
             "time_updated",
@@ -6113,7 +6119,7 @@ class DataCatalogClient(object):
                 )
 
         if 'fields' in kwargs:
-            fields_allowed_values = ["key", "displayName", "description", "entityKey", "lifecycleState", "timeCreated", "externalDataType", "externalKey", "length", "isNullable", "uri"]
+            fields_allowed_values = ["key", "displayName", "description", "entityKey", "lifecycleState", "timeCreated", "externalDataType", "externalKey", "length", "isNullable", "uri", "path", "minCollectionCount", "maxCollectionCount", "datatypeEntityKey", "externalDatatypeEntityKey", "parentAttributeKey", "externalParentAttributeKey"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
@@ -6136,6 +6142,7 @@ class DataCatalogClient(object):
 
         query_params = {
             "displayName": kwargs.get("display_name", missing),
+            "displayNameContains": kwargs.get("display_name_contains", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "timeCreated": kwargs.get("time_created", missing),
             "timeUpdated": kwargs.get("time_updated", missing),
@@ -6449,6 +6456,11 @@ class DataCatalogClient(object):
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given. The match is not case sensitive.
 
+        :param str display_name_contains: (optional)
+            A filter to return only resources that match display name pattern given. The match is not case sensitive.
+            For Example : /folders?displayNameContains=Cu.*
+            The above would match all folders with display name that starts with \"Cu\".
+
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 
@@ -6523,6 +6535,7 @@ class DataCatalogClient(object):
         expected_kwargs = [
             "retry_strategy",
             "display_name",
+            "display_name_contains",
             "lifecycle_state",
             "time_created",
             "time_updated",
@@ -6585,6 +6598,7 @@ class DataCatalogClient(object):
 
         query_params = {
             "displayName": kwargs.get("display_name", missing),
+            "displayNameContains": kwargs.get("display_name_contains", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "timeCreated": kwargs.get("time_created", missing),
             "timeUpdated": kwargs.get("time_updated", missing),
@@ -6817,6 +6831,11 @@ class DataCatalogClient(object):
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given. The match is not case sensitive.
 
+        :param str display_name_contains: (optional)
+            A filter to return only resources that match display name pattern given. The match is not case sensitive.
+            For Example : /folders?displayNameContains=Cu.*
+            The above would match all folders with display name that starts with \"Cu\".
+
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 
@@ -6886,6 +6905,7 @@ class DataCatalogClient(object):
         expected_kwargs = [
             "retry_strategy",
             "display_name",
+            "display_name_contains",
             "lifecycle_state",
             "time_created",
             "time_updated",
@@ -6946,6 +6966,7 @@ class DataCatalogClient(object):
 
         query_params = {
             "displayName": kwargs.get("display_name", missing),
+            "displayNameContains": kwargs.get("display_name_contains", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "timeCreated": kwargs.get("time_created", missing),
             "timeUpdated": kwargs.get("time_updated", missing),
@@ -7004,6 +7025,11 @@ class DataCatalogClient(object):
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given. The match is not case sensitive.
 
+        :param str display_name_contains: (optional)
+            A filter to return only resources that match display name pattern given. The match is not case sensitive.
+            For Example : /folders?displayNameContains=Cu.*
+            The above would match all folders with display name that starts with \"Cu\".
+
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 
@@ -7059,7 +7085,7 @@ class DataCatalogClient(object):
         :param list[str] fields: (optional)
             Specifies the fields to return in an entity summary response.
 
-            Allowed values are: "key", "displayName", "description", "dataAssetKey", "timeCreated", "timeUpdated", "updatedById", "lifecycleState", "folderKey", "externalKey", "path", "uri"
+            Allowed values are: "key", "displayName", "description", "dataAssetKey", "timeCreated", "timeUpdated", "updatedById", "lifecycleState", "folderKey", "folderName", "externalKey", "path", "uri"
 
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
@@ -7098,6 +7124,7 @@ class DataCatalogClient(object):
         expected_kwargs = [
             "retry_strategy",
             "display_name",
+            "display_name_contains",
             "lifecycle_state",
             "time_created",
             "time_updated",
@@ -7150,7 +7177,7 @@ class DataCatalogClient(object):
                 )
 
         if 'fields' in kwargs:
-            fields_allowed_values = ["key", "displayName", "description", "dataAssetKey", "timeCreated", "timeUpdated", "updatedById", "lifecycleState", "folderKey", "externalKey", "path", "uri"]
+            fields_allowed_values = ["key", "displayName", "description", "dataAssetKey", "timeCreated", "timeUpdated", "updatedById", "lifecycleState", "folderKey", "folderName", "externalKey", "path", "uri"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
@@ -7173,6 +7200,7 @@ class DataCatalogClient(object):
 
         query_params = {
             "displayName": kwargs.get("display_name", missing),
+            "displayNameContains": kwargs.get("display_name_contains", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "timeCreated": kwargs.get("time_created", missing),
             "timeUpdated": kwargs.get("time_updated", missing),
@@ -7598,6 +7626,11 @@ class DataCatalogClient(object):
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given. The match is not case sensitive.
 
+        :param str display_name_contains: (optional)
+            A filter to return only resources that match display name pattern given. The match is not case sensitive.
+            For Example : /folders?displayNameContains=Cu.*
+            The above would match all folders with display name that starts with \"Cu\".
+
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 
@@ -7678,6 +7711,7 @@ class DataCatalogClient(object):
         expected_kwargs = [
             "retry_strategy",
             "display_name",
+            "display_name_contains",
             "lifecycle_state",
             "parent_folder_key",
             "path",
@@ -7749,6 +7783,7 @@ class DataCatalogClient(object):
 
         query_params = {
             "displayName": kwargs.get("display_name", missing),
+            "displayNameContains": kwargs.get("display_name_contains", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "parentFolderKey": kwargs.get("parent_folder_key", missing),
             "path": kwargs.get("path", missing),
@@ -7806,6 +7841,11 @@ class DataCatalogClient(object):
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given. The match is not case sensitive.
+
+        :param str display_name_contains: (optional)
+            A filter to return only resources that match display name pattern given. The match is not case sensitive.
+            For Example : /folders?displayNameContains=Cu.*
+            The above would match all folders with display name that starts with \"Cu\".
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
@@ -7870,6 +7910,7 @@ class DataCatalogClient(object):
         expected_kwargs = [
             "retry_strategy",
             "display_name",
+            "display_name_contains",
             "lifecycle_state",
             "time_created",
             "time_updated",
@@ -7928,6 +7969,7 @@ class DataCatalogClient(object):
 
         query_params = {
             "displayName": kwargs.get("display_name", missing),
+            "displayNameContains": kwargs.get("display_name_contains", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "timeCreated": kwargs.get("time_created", missing),
             "timeUpdated": kwargs.get("time_updated", missing),
@@ -7981,6 +8023,16 @@ class DataCatalogClient(object):
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given. The match is not case sensitive.
 
+        :param str display_name_contains: (optional)
+            A filter to return only resources that match display name pattern given. The match is not case sensitive.
+            For Example : /folders?displayNameContains=Cu.*
+            The above would match all folders with display name that starts with \"Cu\".
+
+        :param str job_execution_state: (optional)
+            Job execution state.
+
+            Allowed values are: "CREATED", "IN_PROGRESS", "INACTIVE", "FAILED", "SUCCEEDED", "CANCELED"
+
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 
@@ -7989,7 +8041,7 @@ class DataCatalogClient(object):
         :param str job_type: (optional)
             Job type.
 
-            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"
+            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"
 
         :param bool is_incremental: (optional)
             Whether job definition is an incremental harvest (true) or a full harvest (false).
@@ -8022,12 +8074,12 @@ class DataCatalogClient(object):
         :param list[str] fields: (optional)
             Specifies the fields to return in a job definition summary response.
 
-            Allowed values are: "key", "displayName", "description", "catalogId", "jobType", "lifecycleState", "timeCreated", "isSampleDataExtracted", "uri"
+            Allowed values are: "key", "displayName", "description", "catalogId", "jobType", "connectionKey", "lifecycleState", "timeCreated", "isSampleDataExtracted", "uri", "timeLatestExecutionStarted", "timeLatestExecutionEnded", "jobExecutionState", "scheduleType"
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+            The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. Default order for TIMELATESTEXECUTIONSTARTED is descending. If no value is specified TIMECREATED is default.
 
-            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+            Allowed values are: "TIMECREATED", "DISPLAYNAME", "TIMELATESTEXECUTIONSTARTED"
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' or 'desc'.
@@ -8061,6 +8113,8 @@ class DataCatalogClient(object):
         expected_kwargs = [
             "retry_strategy",
             "display_name",
+            "display_name_contains",
+            "job_execution_state",
             "lifecycle_state",
             "job_type",
             "is_incremental",
@@ -8093,6 +8147,13 @@ class DataCatalogClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'job_execution_state' in kwargs:
+            job_execution_state_allowed_values = ["CREATED", "IN_PROGRESS", "INACTIVE", "FAILED", "SUCCEEDED", "CANCELED"]
+            if kwargs['job_execution_state'] not in job_execution_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `job_execution_state`, must be one of {0}".format(job_execution_state_allowed_values)
+                )
+
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
@@ -8101,14 +8162,14 @@ class DataCatalogClient(object):
                 )
 
         if 'job_type' in kwargs:
-            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"]
+            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"]
             if kwargs['job_type'] not in job_type_allowed_values:
                 raise ValueError(
                     "Invalid value for `job_type`, must be one of {0}".format(job_type_allowed_values)
                 )
 
         if 'fields' in kwargs:
-            fields_allowed_values = ["key", "displayName", "description", "catalogId", "jobType", "lifecycleState", "timeCreated", "isSampleDataExtracted", "uri"]
+            fields_allowed_values = ["key", "displayName", "description", "catalogId", "jobType", "connectionKey", "lifecycleState", "timeCreated", "isSampleDataExtracted", "uri", "timeLatestExecutionStarted", "timeLatestExecutionEnded", "jobExecutionState", "scheduleType"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
@@ -8116,7 +8177,7 @@ class DataCatalogClient(object):
                     )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME", "TIMELATESTEXECUTIONSTARTED"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -8131,6 +8192,8 @@ class DataCatalogClient(object):
 
         query_params = {
             "displayName": kwargs.get("display_name", missing),
+            "displayNameContains": kwargs.get("display_name_contains", missing),
+            "jobExecutionState": kwargs.get("job_execution_state", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "jobType": kwargs.get("job_type", missing),
             "isIncremental": kwargs.get("is_incremental", missing),
@@ -8213,7 +8276,7 @@ class DataCatalogClient(object):
         :param str job_type: (optional)
             Job type.
 
-            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"
+            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"
 
         :param str sub_type: (optional)
             Sub-type of this job execution.
@@ -8339,7 +8402,7 @@ class DataCatalogClient(object):
                 )
 
         if 'job_type' in kwargs:
-            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"]
+            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"]
             if kwargs['job_type'] not in job_type_allowed_values:
                 raise ValueError(
                     "Invalid value for `job_type`, must be one of {0}".format(job_type_allowed_values)
@@ -8620,6 +8683,11 @@ class DataCatalogClient(object):
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given. The match is not case sensitive.
 
+        :param str display_name_contains: (optional)
+            A filter to return only resources that match display name pattern given. The match is not case sensitive.
+            For Example : /folders?displayNameContains=Cu.*
+            The above would match all folders with display name that starts with \"Cu\".
+
         :param str category: (optional)
             Category of this metric.
 
@@ -8699,6 +8767,7 @@ class DataCatalogClient(object):
         expected_kwargs = [
             "retry_strategy",
             "display_name",
+            "display_name_contains",
             "category",
             "sub_category",
             "unit",
@@ -8757,6 +8826,7 @@ class DataCatalogClient(object):
 
         query_params = {
             "displayName": kwargs.get("display_name", missing),
+            "displayNameContains": kwargs.get("display_name_contains", missing),
             "category": kwargs.get("category", missing),
             "subCategory": kwargs.get("sub_category", missing),
             "unit": kwargs.get("unit", missing),
@@ -8815,6 +8885,11 @@ class DataCatalogClient(object):
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given. The match is not case sensitive.
 
+        :param str display_name_contains: (optional)
+            A filter to return only resources that match display name pattern given. The match is not case sensitive.
+            For Example : /folders?displayNameContains=Cu.*
+            The above would match all folders with display name that starts with \"Cu\".
+
         :param str lifecycle_state: (optional)
             Job lifecycle state.
 
@@ -8839,7 +8914,7 @@ class DataCatalogClient(object):
         :param str job_type: (optional)
             Job type.
 
-            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"
+            Allowed values are: "HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"
 
         :param str job_definition_key: (optional)
             Unique job definition key.
@@ -8870,7 +8945,7 @@ class DataCatalogClient(object):
         :param list[str] fields: (optional)
             Specifies the fields to return in a job summary response.
 
-            Allowed values are: "key", "displayName", "description", "catalogId", "jobDefinitionKey", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "jobType", "scheduleCronExpression", "timeScheduleBegin", "scheduleType", "executionCount", "timeOfLatestExecution", "executions", "uri"
+            Allowed values are: "key", "displayName", "description", "catalogId", "jobDefinitionKey", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "jobType", "scheduleCronExpression", "timeScheduleBegin", "scheduleType", "executionCount", "timeOfLatestExecution", "executions", "uri", "jobDefinitionName", "errorCode", "errorMessage"
 
         :param int execution_count: (optional)
             The total number of executions for this job schedule.
@@ -8918,6 +8993,7 @@ class DataCatalogClient(object):
         expected_kwargs = [
             "retry_strategy",
             "display_name",
+            "display_name_contains",
             "lifecycle_state",
             "time_created",
             "time_updated",
@@ -8962,7 +9038,7 @@ class DataCatalogClient(object):
                 )
 
         if 'job_type' in kwargs:
-            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"]
+            job_type_allowed_values = ["HARVEST", "PROFILING", "SAMPLING", "PREVIEW", "IMPORT", "EXPORT", "IMPORT_GLOSSARY", "EXPORT_GLOSSARY", "INTERNAL", "PURGE", "IMMEDIATE", "SCHEDULED", "IMMEDIATE_EXECUTION", "SCHEDULED_EXECUTION", "SCHEDULED_EXECUTION_INSTANCE"]
             if kwargs['job_type'] not in job_type_allowed_values:
                 raise ValueError(
                     "Invalid value for `job_type`, must be one of {0}".format(job_type_allowed_values)
@@ -8976,7 +9052,7 @@ class DataCatalogClient(object):
                 )
 
         if 'fields' in kwargs:
-            fields_allowed_values = ["key", "displayName", "description", "catalogId", "jobDefinitionKey", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "jobType", "scheduleCronExpression", "timeScheduleBegin", "scheduleType", "executionCount", "timeOfLatestExecution", "executions", "uri"]
+            fields_allowed_values = ["key", "displayName", "description", "catalogId", "jobDefinitionKey", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "jobType", "scheduleCronExpression", "timeScheduleBegin", "scheduleType", "executionCount", "timeOfLatestExecution", "executions", "uri", "jobDefinitionName", "errorCode", "errorMessage"]
             for fields_item in kwargs['fields']:
                 if fields_item not in fields_allowed_values:
                     raise ValueError(
@@ -8999,6 +9075,7 @@ class DataCatalogClient(object):
 
         query_params = {
             "displayName": kwargs.get("display_name", missing),
+            "displayNameContains": kwargs.get("display_name_contains", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "timeCreated": kwargs.get("time_created", missing),
             "timeUpdated": kwargs.get("time_updated", missing),
@@ -9061,6 +9138,11 @@ class DataCatalogClient(object):
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given. The match is not case sensitive.
 
+        :param str display_name_contains: (optional)
+            A filter to return only resources that match display name pattern given. The match is not case sensitive.
+            For Example : /folders?displayNameContains=Cu.*
+            The above would match all folders with display name that starts with \"Cu\".
+
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 
@@ -9108,6 +9190,7 @@ class DataCatalogClient(object):
         expected_kwargs = [
             "retry_strategy",
             "display_name",
+            "display_name_contains",
             "lifecycle_state",
             "fields",
             "sort_by",
@@ -9162,6 +9245,7 @@ class DataCatalogClient(object):
 
         query_params = {
             "displayName": kwargs.get("display_name", missing),
+            "displayNameContains": kwargs.get("display_name_contains", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
             "sortBy": kwargs.get("sort_by", missing),
@@ -9217,6 +9301,11 @@ class DataCatalogClient(object):
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given. The match is not case sensitive.
 
+        :param str display_name_contains: (optional)
+            A filter to return only resources that match display name pattern given. The match is not case sensitive.
+            For Example : /folders?displayNameContains=Cu.*
+            The above would match all folders with display name that starts with \"Cu\".
+
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 
@@ -9264,6 +9353,7 @@ class DataCatalogClient(object):
         expected_kwargs = [
             "retry_strategy",
             "display_name",
+            "display_name_contains",
             "lifecycle_state",
             "fields",
             "sort_by",
@@ -9320,6 +9410,7 @@ class DataCatalogClient(object):
 
         query_params = {
             "displayName": kwargs.get("display_name", missing),
+            "displayNameContains": kwargs.get("display_name_contains", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
             "sortBy": kwargs.get("sort_by", missing),
@@ -9371,6 +9462,11 @@ class DataCatalogClient(object):
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given. The match is not case sensitive.
+
+        :param str display_name_contains: (optional)
+            A filter to return only resources that match display name pattern given. The match is not case sensitive.
+            For Example : /folders?displayNameContains=Cu.*
+            The above would match all folders with display name that starts with \"Cu\".
 
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
@@ -9433,6 +9529,7 @@ class DataCatalogClient(object):
         expected_kwargs = [
             "retry_strategy",
             "display_name",
+            "display_name_contains",
             "lifecycle_state",
             "parent_term_key",
             "is_allowed_to_have_child_terms",
@@ -9499,6 +9596,7 @@ class DataCatalogClient(object):
 
         query_params = {
             "displayName": kwargs.get("display_name", missing),
+            "displayNameContains": kwargs.get("display_name_contains", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "parentTermKey": kwargs.get("parent_term_key", missing),
             "isAllowedToHaveChildTerms": kwargs.get("is_allowed_to_have_child_terms", missing),
