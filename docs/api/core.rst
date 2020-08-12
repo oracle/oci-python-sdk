@@ -205,9 +205,11 @@ Core Services
     oci.core.models.Instance
     oci.core.models.InstanceAgentConfig
     oci.core.models.InstanceAgentFeatures
+    oci.core.models.InstanceAvailabilityConfig
     oci.core.models.InstanceConfiguration
     oci.core.models.InstanceConfigurationAttachVnicDetails
     oci.core.models.InstanceConfigurationAttachVolumeDetails
+    oci.core.models.InstanceConfigurationAvailabilityConfig
     oci.core.models.InstanceConfigurationBlockVolumeDetails
     oci.core.models.InstanceConfigurationCreateVnicDetails
     oci.core.models.InstanceConfigurationCreateVolumeDetails
@@ -241,6 +243,7 @@ Core Services
     oci.core.models.InternetGateway
     oci.core.models.Ipv6
     oci.core.models.LaunchInstanceAgentConfigDetails
+    oci.core.models.LaunchInstanceAvailabilityConfigDetails
     oci.core.models.LaunchInstanceDetails
     oci.core.models.LaunchInstanceShapeConfigDetails
     oci.core.models.LaunchOptions
@@ -294,6 +297,7 @@ Core Services
     oci.core.models.UpdateIPSecTunnelBgpSessionDetails
     oci.core.models.UpdateImageDetails
     oci.core.models.UpdateInstanceAgentConfigDetails
+    oci.core.models.UpdateInstanceAvailabilityConfigDetails
     oci.core.models.UpdateInstanceConfigurationDetails
     oci.core.models.UpdateInstanceDetails
     oci.core.models.UpdateInstancePoolDetails

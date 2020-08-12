@@ -58,6 +58,10 @@ class UpdateInstanceDetails(object):
             The value to assign to the launch_options property of this UpdateInstanceDetails.
         :type launch_options: UpdateLaunchOptions
 
+        :param availability_config:
+            The value to assign to the availability_config property of this UpdateInstanceDetails.
+        :type availability_config: UpdateInstanceAvailabilityConfigDetails
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
@@ -69,7 +73,8 @@ class UpdateInstanceDetails(object):
             'shape': 'str',
             'shape_config': 'UpdateInstanceShapeConfigDetails',
             'fault_domain': 'str',
-            'launch_options': 'UpdateLaunchOptions'
+            'launch_options': 'UpdateLaunchOptions',
+            'availability_config': 'UpdateInstanceAvailabilityConfigDetails'
         }
 
         self.attribute_map = {
@@ -82,7 +87,8 @@ class UpdateInstanceDetails(object):
             'shape': 'shape',
             'shape_config': 'shapeConfig',
             'fault_domain': 'faultDomain',
-            'launch_options': 'launchOptions'
+            'launch_options': 'launchOptions',
+            'availability_config': 'availabilityConfig'
         }
 
         self._defined_tags = None
@@ -95,6 +101,7 @@ class UpdateInstanceDetails(object):
         self._shape_config = None
         self._fault_domain = None
         self._launch_options = None
+        self._availability_config = None
 
     @property
     def defined_tags(self):
@@ -455,6 +462,26 @@ class UpdateInstanceDetails(object):
         :type: UpdateLaunchOptions
         """
         self._launch_options = launch_options
+
+    @property
+    def availability_config(self):
+        """
+        Gets the availability_config of this UpdateInstanceDetails.
+
+        :return: The availability_config of this UpdateInstanceDetails.
+        :rtype: UpdateInstanceAvailabilityConfigDetails
+        """
+        return self._availability_config
+
+    @availability_config.setter
+    def availability_config(self, availability_config):
+        """
+        Sets the availability_config of this UpdateInstanceDetails.
+
+        :param availability_config: The availability_config of this UpdateInstanceDetails.
+        :type: UpdateInstanceAvailabilityConfigDetails
+        """
+        self._availability_config = availability_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

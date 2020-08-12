@@ -28,7 +28,8 @@ class NodeSourceDetails(object):
 
         :param source_type:
             The value to assign to the source_type property of this NodeSourceDetails.
-            Allowed values for this property are: "IMAGE"
+            Allowed values for this property are: "IMAGE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type source_type: str
 
         """
@@ -62,7 +63,8 @@ class NodeSourceDetails(object):
         The source type for the node.
         Use `IMAGE` when specifying an OCID of an image.
 
-        Allowed values for this property are: "IMAGE"
+        Allowed values for this property are: "IMAGE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The source_type of this NodeSourceDetails.
@@ -83,10 +85,7 @@ class NodeSourceDetails(object):
         """
         allowed_values = ["IMAGE"]
         if not value_allowed_none_or_none_sentinel(source_type, allowed_values):
-            raise ValueError(
-                "Invalid value for `source_type`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            source_type = 'UNKNOWN_ENUM_VALUE'
         self._source_type = source_type
 
     def __repr__(self):

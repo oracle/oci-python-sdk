@@ -45,6 +45,7 @@ class CreateDataGuardAssociationDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.database.models.CreateDataGuardAssociationWithNewDbSystemDetails`
+        * :class:`~oci.database.models.CreateDataGuardAssociationToExistingVmClusterDetails`
         * :class:`~oci.database.models.CreateDataGuardAssociationToExistingDbSystemDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -97,6 +98,9 @@ class CreateDataGuardAssociationDetails(object):
 
         if type == 'NewDbSystem':
             return 'CreateDataGuardAssociationWithNewDbSystemDetails'
+
+        if type == 'ExistingVmCluster':
+            return 'CreateDataGuardAssociationToExistingVmClusterDetails'
 
         if type == 'ExistingDbSystem':
             return 'CreateDataGuardAssociationToExistingDbSystemDetails'

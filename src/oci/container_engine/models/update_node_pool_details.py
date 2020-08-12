@@ -42,6 +42,22 @@ class UpdateNodePoolDetails(object):
             The value to assign to the node_config_details property of this UpdateNodePoolDetails.
         :type node_config_details: UpdateNodePoolNodeConfigDetails
 
+        :param node_metadata:
+            The value to assign to the node_metadata property of this UpdateNodePoolDetails.
+        :type node_metadata: dict(str, str)
+
+        :param node_source_details:
+            The value to assign to the node_source_details property of this UpdateNodePoolDetails.
+        :type node_source_details: NodeSourceDetails
+
+        :param ssh_public_key:
+            The value to assign to the ssh_public_key property of this UpdateNodePoolDetails.
+        :type ssh_public_key: str
+
+        :param node_shape:
+            The value to assign to the node_shape property of this UpdateNodePoolDetails.
+        :type node_shape: str
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -49,7 +65,11 @@ class UpdateNodePoolDetails(object):
             'initial_node_labels': 'list[KeyValue]',
             'quantity_per_subnet': 'int',
             'subnet_ids': 'list[str]',
-            'node_config_details': 'UpdateNodePoolNodeConfigDetails'
+            'node_config_details': 'UpdateNodePoolNodeConfigDetails',
+            'node_metadata': 'dict(str, str)',
+            'node_source_details': 'NodeSourceDetails',
+            'ssh_public_key': 'str',
+            'node_shape': 'str'
         }
 
         self.attribute_map = {
@@ -58,7 +78,11 @@ class UpdateNodePoolDetails(object):
             'initial_node_labels': 'initialNodeLabels',
             'quantity_per_subnet': 'quantityPerSubnet',
             'subnet_ids': 'subnetIds',
-            'node_config_details': 'nodeConfigDetails'
+            'node_config_details': 'nodeConfigDetails',
+            'node_metadata': 'nodeMetadata',
+            'node_source_details': 'nodeSourceDetails',
+            'ssh_public_key': 'sshPublicKey',
+            'node_shape': 'nodeShape'
         }
 
         self._name = None
@@ -67,6 +91,10 @@ class UpdateNodePoolDetails(object):
         self._quantity_per_subnet = None
         self._subnet_ids = None
         self._node_config_details = None
+        self._node_metadata = None
+        self._node_source_details = None
+        self._ssh_public_key = None
+        self._node_shape = None
 
     @property
     def name(self):
@@ -229,6 +257,102 @@ class UpdateNodePoolDetails(object):
         :type: UpdateNodePoolNodeConfigDetails
         """
         self._node_config_details = node_config_details
+
+    @property
+    def node_metadata(self):
+        """
+        Gets the node_metadata of this UpdateNodePoolDetails.
+        A list of key/value pairs to add to each underlying OCI instance in the node pool on launch.
+
+
+        :return: The node_metadata of this UpdateNodePoolDetails.
+        :rtype: dict(str, str)
+        """
+        return self._node_metadata
+
+    @node_metadata.setter
+    def node_metadata(self, node_metadata):
+        """
+        Sets the node_metadata of this UpdateNodePoolDetails.
+        A list of key/value pairs to add to each underlying OCI instance in the node pool on launch.
+
+
+        :param node_metadata: The node_metadata of this UpdateNodePoolDetails.
+        :type: dict(str, str)
+        """
+        self._node_metadata = node_metadata
+
+    @property
+    def node_source_details(self):
+        """
+        Gets the node_source_details of this UpdateNodePoolDetails.
+        Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
+
+
+        :return: The node_source_details of this UpdateNodePoolDetails.
+        :rtype: NodeSourceDetails
+        """
+        return self._node_source_details
+
+    @node_source_details.setter
+    def node_source_details(self, node_source_details):
+        """
+        Sets the node_source_details of this UpdateNodePoolDetails.
+        Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
+
+
+        :param node_source_details: The node_source_details of this UpdateNodePoolDetails.
+        :type: NodeSourceDetails
+        """
+        self._node_source_details = node_source_details
+
+    @property
+    def ssh_public_key(self):
+        """
+        Gets the ssh_public_key of this UpdateNodePoolDetails.
+        The SSH public key to add to each node in the node pool on launch.
+
+
+        :return: The ssh_public_key of this UpdateNodePoolDetails.
+        :rtype: str
+        """
+        return self._ssh_public_key
+
+    @ssh_public_key.setter
+    def ssh_public_key(self, ssh_public_key):
+        """
+        Sets the ssh_public_key of this UpdateNodePoolDetails.
+        The SSH public key to add to each node in the node pool on launch.
+
+
+        :param ssh_public_key: The ssh_public_key of this UpdateNodePoolDetails.
+        :type: str
+        """
+        self._ssh_public_key = ssh_public_key
+
+    @property
+    def node_shape(self):
+        """
+        Gets the node_shape of this UpdateNodePoolDetails.
+        The name of the node shape of the nodes in the node pool used on launch.
+
+
+        :return: The node_shape of this UpdateNodePoolDetails.
+        :rtype: str
+        """
+        return self._node_shape
+
+    @node_shape.setter
+    def node_shape(self, node_shape):
+        """
+        Sets the node_shape of this UpdateNodePoolDetails.
+        The name of the node shape of the nodes in the node pool used on launch.
+
+
+        :param node_shape: The node_shape of this UpdateNodePoolDetails.
+        :type: str
+        """
+        self._node_shape = node_shape
 
     def __repr__(self):
         return formatted_flat_dict(self)

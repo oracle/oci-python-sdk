@@ -59,6 +59,7 @@ from .create_backup_details import CreateBackupDetails
 from .create_console_connection_details import CreateConsoleConnectionDetails
 from .create_data_guard_association_details import CreateDataGuardAssociationDetails
 from .create_data_guard_association_to_existing_db_system_details import CreateDataGuardAssociationToExistingDbSystemDetails
+from .create_data_guard_association_to_existing_vm_cluster_details import CreateDataGuardAssociationToExistingVmClusterDetails
 from .create_data_guard_association_with_new_db_system_details import CreateDataGuardAssociationWithNewDbSystemDetails
 from .create_database_base import CreateDatabaseBase
 from .create_database_details import CreateDatabaseDetails
@@ -213,6 +214,7 @@ database_type_mapping = {
     "CreateConsoleConnectionDetails": CreateConsoleConnectionDetails,
     "CreateDataGuardAssociationDetails": CreateDataGuardAssociationDetails,
     "CreateDataGuardAssociationToExistingDbSystemDetails": CreateDataGuardAssociationToExistingDbSystemDetails,
+    "CreateDataGuardAssociationToExistingVmClusterDetails": CreateDataGuardAssociationToExistingVmClusterDetails,
     "CreateDataGuardAssociationWithNewDbSystemDetails": CreateDataGuardAssociationWithNewDbSystemDetails,
     "CreateDatabaseBase": CreateDatabaseBase,
     "CreateDatabaseDetails": CreateDatabaseDetails,

@@ -71,6 +71,10 @@ class LaunchInstanceDetails(object):
             The value to assign to the launch_options property of this LaunchInstanceDetails.
         :type launch_options: LaunchOptions
 
+        :param availability_config:
+            The value to assign to the availability_config property of this LaunchInstanceDetails.
+        :type availability_config: LaunchInstanceAvailabilityConfigDetails
+
         :param metadata:
             The value to assign to the metadata property of this LaunchInstanceDetails.
         :type metadata: dict(str, str)
@@ -114,6 +118,7 @@ class LaunchInstanceDetails(object):
             'image_id': 'str',
             'ipxe_script': 'str',
             'launch_options': 'LaunchOptions',
+            'availability_config': 'LaunchInstanceAvailabilityConfigDetails',
             'metadata': 'dict(str, str)',
             'agent_config': 'LaunchInstanceAgentConfigDetails',
             'shape': 'str',
@@ -137,6 +142,7 @@ class LaunchInstanceDetails(object):
             'image_id': 'imageId',
             'ipxe_script': 'ipxeScript',
             'launch_options': 'launchOptions',
+            'availability_config': 'availabilityConfig',
             'metadata': 'metadata',
             'agent_config': 'agentConfig',
             'shape': 'shape',
@@ -159,6 +165,7 @@ class LaunchInstanceDetails(object):
         self._image_id = None
         self._ipxe_script = None
         self._launch_options = None
+        self._availability_config = None
         self._metadata = None
         self._agent_config = None
         self._shape = None
@@ -608,6 +615,26 @@ class LaunchInstanceDetails(object):
         :type: LaunchOptions
         """
         self._launch_options = launch_options
+
+    @property
+    def availability_config(self):
+        """
+        Gets the availability_config of this LaunchInstanceDetails.
+
+        :return: The availability_config of this LaunchInstanceDetails.
+        :rtype: LaunchInstanceAvailabilityConfigDetails
+        """
+        return self._availability_config
+
+    @availability_config.setter
+    def availability_config(self, availability_config):
+        """
+        Sets the availability_config of this LaunchInstanceDetails.
+
+        :param availability_config: The availability_config of this LaunchInstanceDetails.
+        :type: LaunchInstanceAvailabilityConfigDetails
+        """
+        self._availability_config = availability_config
 
     @property
     def metadata(self):

@@ -50,6 +50,10 @@ class NodePoolSummary(object):
             The value to assign to the node_source property of this NodePoolSummary.
         :type node_source: NodeSourceOption
 
+        :param node_source_details:
+            The value to assign to the node_source_details property of this NodePoolSummary.
+        :type node_source_details: NodeSourceDetails
+
         :param node_shape:
             The value to assign to the node_shape property of this NodePoolSummary.
         :type node_shape: str
@@ -84,6 +88,7 @@ class NodePoolSummary(object):
             'node_image_id': 'str',
             'node_image_name': 'str',
             'node_source': 'NodeSourceOption',
+            'node_source_details': 'NodeSourceDetails',
             'node_shape': 'str',
             'initial_node_labels': 'list[KeyValue]',
             'ssh_public_key': 'str',
@@ -101,6 +106,7 @@ class NodePoolSummary(object):
             'node_image_id': 'nodeImageId',
             'node_image_name': 'nodeImageName',
             'node_source': 'nodeSource',
+            'node_source_details': 'nodeSourceDetails',
             'node_shape': 'nodeShape',
             'initial_node_labels': 'initialNodeLabels',
             'ssh_public_key': 'sshPublicKey',
@@ -117,6 +123,7 @@ class NodePoolSummary(object):
         self._node_image_id = None
         self._node_image_name = None
         self._node_source = None
+        self._node_source_details = None
         self._node_shape = None
         self._initial_node_labels = None
         self._ssh_public_key = None
@@ -296,7 +303,7 @@ class NodePoolSummary(object):
     def node_source(self):
         """
         Gets the node_source of this NodePoolSummary.
-        Source running on the nodes in the node pool.
+        Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
 
 
         :return: The node_source of this NodePoolSummary.
@@ -308,13 +315,37 @@ class NodePoolSummary(object):
     def node_source(self, node_source):
         """
         Sets the node_source of this NodePoolSummary.
-        Source running on the nodes in the node pool.
+        Deprecated. see `nodeSourceDetails`. Source running on the nodes in the node pool.
 
 
         :param node_source: The node_source of this NodePoolSummary.
         :type: NodeSourceOption
         """
         self._node_source = node_source
+
+    @property
+    def node_source_details(self):
+        """
+        Gets the node_source_details of this NodePoolSummary.
+        Source running on the nodes in the node pool.
+
+
+        :return: The node_source_details of this NodePoolSummary.
+        :rtype: NodeSourceDetails
+        """
+        return self._node_source_details
+
+    @node_source_details.setter
+    def node_source_details(self, node_source_details):
+        """
+        Sets the node_source_details of this NodePoolSummary.
+        Source running on the nodes in the node pool.
+
+
+        :param node_source_details: The node_source_details of this NodePoolSummary.
+        :type: NodeSourceDetails
+        """
+        self._node_source_details = node_source_details
 
     @property
     def node_shape(self):
@@ -368,7 +399,7 @@ class NodePoolSummary(object):
     def ssh_public_key(self):
         """
         Gets the ssh_public_key of this NodePoolSummary.
-        The SSH public key on each node in the node pool.
+        The SSH public key on each node in the node pool on launch.
 
 
         :return: The ssh_public_key of this NodePoolSummary.
@@ -380,7 +411,7 @@ class NodePoolSummary(object):
     def ssh_public_key(self, ssh_public_key):
         """
         Sets the ssh_public_key of this NodePoolSummary.
-        The SSH public key on each node in the node pool.
+        The SSH public key on each node in the node pool on launch.
 
 
         :param ssh_public_key: The ssh_public_key of this NodePoolSummary.

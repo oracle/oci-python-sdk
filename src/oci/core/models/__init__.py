@@ -185,9 +185,11 @@ from .ingress_security_rule import IngressSecurityRule
 from .instance import Instance
 from .instance_agent_config import InstanceAgentConfig
 from .instance_agent_features import InstanceAgentFeatures
+from .instance_availability_config import InstanceAvailabilityConfig
 from .instance_configuration import InstanceConfiguration
 from .instance_configuration_attach_vnic_details import InstanceConfigurationAttachVnicDetails
 from .instance_configuration_attach_volume_details import InstanceConfigurationAttachVolumeDetails
+from .instance_configuration_availability_config import InstanceConfigurationAvailabilityConfig
 from .instance_configuration_block_volume_details import InstanceConfigurationBlockVolumeDetails
 from .instance_configuration_create_vnic_details import InstanceConfigurationCreateVnicDetails
 from .instance_configuration_create_volume_details import InstanceConfigurationCreateVolumeDetails
@@ -221,6 +223,7 @@ from .instance_summary import InstanceSummary
 from .internet_gateway import InternetGateway
 from .ipv6 import Ipv6
 from .launch_instance_agent_config_details import LaunchInstanceAgentConfigDetails
+from .launch_instance_availability_config_details import LaunchInstanceAvailabilityConfigDetails
 from .launch_instance_details import LaunchInstanceDetails
 from .launch_instance_shape_config_details import LaunchInstanceShapeConfigDetails
 from .launch_options import LaunchOptions
@@ -274,6 +277,7 @@ from .update_ip_sec_connection_tunnel_shared_secret_details import UpdateIPSecCo
 from .update_ip_sec_tunnel_bgp_session_details import UpdateIPSecTunnelBgpSessionDetails
 from .update_image_details import UpdateImageDetails
 from .update_instance_agent_config_details import UpdateInstanceAgentConfigDetails
+from .update_instance_availability_config_details import UpdateInstanceAvailabilityConfigDetails
 from .update_instance_configuration_details import UpdateInstanceConfigurationDetails
 from .update_instance_details import UpdateInstanceDetails
 from .update_instance_pool_details import UpdateInstancePoolDetails
@@ -513,9 +517,11 @@ core_type_mapping = {
     "Instance": Instance,
     "InstanceAgentConfig": InstanceAgentConfig,
     "InstanceAgentFeatures": InstanceAgentFeatures,
+    "InstanceAvailabilityConfig": InstanceAvailabilityConfig,
     "InstanceConfiguration": InstanceConfiguration,
     "InstanceConfigurationAttachVnicDetails": InstanceConfigurationAttachVnicDetails,
     "InstanceConfigurationAttachVolumeDetails": InstanceConfigurationAttachVolumeDetails,
+    "InstanceConfigurationAvailabilityConfig": InstanceConfigurationAvailabilityConfig,
     "InstanceConfigurationBlockVolumeDetails": InstanceConfigurationBlockVolumeDetails,
     "InstanceConfigurationCreateVnicDetails": InstanceConfigurationCreateVnicDetails,
     "InstanceConfigurationCreateVolumeDetails": InstanceConfigurationCreateVolumeDetails,
@@ -549,6 +555,7 @@ core_type_mapping = {
     "InternetGateway": InternetGateway,
     "Ipv6": Ipv6,
     "LaunchInstanceAgentConfigDetails": LaunchInstanceAgentConfigDetails,
+    "LaunchInstanceAvailabilityConfigDetails": LaunchInstanceAvailabilityConfigDetails,
     "LaunchInstanceDetails": LaunchInstanceDetails,
     "LaunchInstanceShapeConfigDetails": LaunchInstanceShapeConfigDetails,
     "LaunchOptions": LaunchOptions,
@@ -602,6 +609,7 @@ core_type_mapping = {
     "UpdateIPSecTunnelBgpSessionDetails": UpdateIPSecTunnelBgpSessionDetails,
     "UpdateImageDetails": UpdateImageDetails,
     "UpdateInstanceAgentConfigDetails": UpdateInstanceAgentConfigDetails,
+    "UpdateInstanceAvailabilityConfigDetails": UpdateInstanceAvailabilityConfigDetails,
     "UpdateInstanceConfigurationDetails": UpdateInstanceConfigurationDetails,
     "UpdateInstanceDetails": UpdateInstanceDetails,
     "UpdateInstancePoolDetails": UpdateInstancePoolDetails,
