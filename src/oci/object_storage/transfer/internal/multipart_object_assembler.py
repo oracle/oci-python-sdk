@@ -48,8 +48,9 @@ class MultipartObjectAssembler:
 
         An assembler can be used to begin a new upload, or resume a previous one.
 
-        PLEASE NOTE that the operations are NOT thread-safe, and you should provide the MultipartObjectAssembler class
-        with its own Object Storage client that isn't used elsewhere.
+        PLEASE NOTE that the timeout for the object storage client is overwritten to `None` for all operations which
+        call object storage. For this reason, the operations are NOT thread-safe, and you should provide the
+        MultipartObjectAssembler class with its own Object Storage client that isn't used elsewhere.
         For more information please see `Known Issues <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/known-issues.html>`_
 
         :param ObjectStorageClient object_storage_client:

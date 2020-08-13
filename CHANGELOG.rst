@@ -93,7 +93,7 @@ Fixed
 Breaking
 --------
 * Parameter `vcn_id` changed from required to optional in methods `list_dhcp_options`, `list_local_peering_gateways`, `list_route_tables`, `list_security_lists`, `list_subnets` and `list_internet_gateways` in the virtual network client. If the VCN ID is not provided, then the list includes information of all VCNs in the specified compartment.
-* The operations for upload manager and multipart object assembler are NOT thread-safe, and you should provide the class with its own Object Storage client that isn't used elsewhere.
+* For upload manager and multipart object assembler, the timeout for the object storage client is overwritten to `None` for all operations which call object storage. For this reason, the operations are NOT thread-safe, and you should provide the class with its own Object Storage client that isn't used elsewhere.
 
 ====================
 2.17.2 - 2020-07-07
