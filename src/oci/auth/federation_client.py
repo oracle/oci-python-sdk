@@ -140,7 +140,7 @@ class X509FederationClient(object):
             'publicKey': auth_utils.sanitize_certificate_string(self.session_key_supplier.get_key_pair()['public'].public_bytes(Encoding.PEM, PublicFormat.SubjectPublicKeyInfo))
         }
         # purpose would be something like SERVICE_PRINCIPAL
-        if self.purpose != None:
+        if self.purpose is not None:
             request_payload['purpose'] = self.purpose
 
         if self.intermediate_certificate_retrievers:
