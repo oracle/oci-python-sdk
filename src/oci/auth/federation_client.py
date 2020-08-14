@@ -84,7 +84,7 @@ class X509FederationClient(object):
         self.session_key_supplier = kwargs['session_key_supplier']
         self.leaf_certificate_retriever = kwargs['leaf_certificate_retriever']
 
-        # purpose would be something like SERVICE_PRINCIPAL
+        # The default (instance principal) purpose is None
         self.purpose = None
         if 'purpose' in kwargs and kwargs['purpose'] is not None:
             self.purpose = kwargs['purpose']
@@ -120,7 +120,7 @@ class X509FederationClient(object):
         try:
             self.session_key_supplier.refresh()
             self.leaf_certificate_retriever.refresh()
-            # purpose would be something like SERVICE_PRINCIPAL
+            # for the default (instance principal) purpose, verify tenancy id matches
             if self.purpose is None:
                 updated_tenancy_id = auth_utils.get_tenancy_id_from_certificate(self.leaf_certificate_retriever.get_certificate_as_certificate())
                 if updated_tenancy_id != self.tenancy_id:
@@ -139,7 +139,7 @@ class X509FederationClient(object):
             'certificate': auth_utils.sanitize_certificate_string(self.leaf_certificate_retriever.get_certificate_raw()),
             'publicKey': auth_utils.sanitize_certificate_string(self.session_key_supplier.get_key_pair()['public'].public_bytes(Encoding.PEM, PublicFormat.SubjectPublicKeyInfo))
         }
-        # purpose would be something like SERVICE_PRINCIPAL
+        # The default (instance principal) purpose is None
         if self.purpose is not None:
             request_payload['purpose'] = self.purpose
 
