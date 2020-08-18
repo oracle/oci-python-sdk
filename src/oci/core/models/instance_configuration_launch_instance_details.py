@@ -125,6 +125,10 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type preferred_maintenance_action: str
 
+        :param availability_config:
+            The value to assign to the availability_config property of this InstanceConfigurationLaunchInstanceDetails.
+        :type availability_config: InstanceConfigurationAvailabilityConfig
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -145,7 +149,8 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             'launch_options': 'InstanceConfigurationLaunchOptions',
             'agent_config': 'InstanceConfigurationLaunchInstanceAgentConfigDetails',
             'is_pv_encryption_in_transit_enabled': 'bool',
-            'preferred_maintenance_action': 'str'
+            'preferred_maintenance_action': 'str',
+            'availability_config': 'InstanceConfigurationAvailabilityConfig'
         }
 
         self.attribute_map = {
@@ -167,7 +172,8 @@ class InstanceConfigurationLaunchInstanceDetails(object):
             'launch_options': 'launchOptions',
             'agent_config': 'agentConfig',
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
-            'preferred_maintenance_action': 'preferredMaintenanceAction'
+            'preferred_maintenance_action': 'preferredMaintenanceAction',
+            'availability_config': 'availabilityConfig'
         }
 
         self._availability_domain = None
@@ -189,6 +195,7 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         self._agent_config = None
         self._is_pv_encryption_in_transit_enabled = None
         self._preferred_maintenance_action = None
+        self._availability_config = None
 
     @property
     def availability_domain(self):
@@ -897,6 +904,26 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         if not value_allowed_none_or_none_sentinel(preferred_maintenance_action, allowed_values):
             preferred_maintenance_action = 'UNKNOWN_ENUM_VALUE'
         self._preferred_maintenance_action = preferred_maintenance_action
+
+    @property
+    def availability_config(self):
+        """
+        Gets the availability_config of this InstanceConfigurationLaunchInstanceDetails.
+
+        :return: The availability_config of this InstanceConfigurationLaunchInstanceDetails.
+        :rtype: InstanceConfigurationAvailabilityConfig
+        """
+        return self._availability_config
+
+    @availability_config.setter
+    def availability_config(self, availability_config):
+        """
+        Sets the availability_config of this InstanceConfigurationLaunchInstanceDetails.
+
+        :param availability_config: The availability_config of this InstanceConfigurationLaunchInstanceDetails.
+        :type: InstanceConfigurationAvailabilityConfig
+        """
+        self._availability_config = availability_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

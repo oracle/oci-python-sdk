@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.21.1 - 2020-08-18
+====================
+
+Added
+-----
+* Support for custom boot volume size and other node pool updates in the Container Engine for Kubernetes service
+* Support for Data Guard on Exadata Cloud at Customer VM clusters in the Database service
+* Support for stopping VM instances after scheduled maintenance or hypervisor reboots in the Compute service
+* Support for creating and managing private endpoints in the Data Flow service
+
+====================
 2.21.0 - 2020-08-11
 ====================
 
@@ -85,7 +96,7 @@ Fixed
 Breaking
 --------
 * Parameter `vcn_id` changed from required to optional in methods `list_dhcp_options`, `list_local_peering_gateways`, `list_route_tables`, `list_security_lists`, `list_subnets` and `list_internet_gateways` in the virtual network client. If the VCN ID is not provided, then the list includes information of all VCNs in the specified compartment.
-* The operations for upload manager and multipart object assembler are NOT thread-safe, and you should provide the class with its own Object Storage client that isn't used elsewhere.
+* For upload manager and multipart object assembler, the timeout for the object storage client is overwritten to `None` for all operations which call object storage. For this reason, the operations are NOT thread-safe, and you should provide the class with its own Object Storage client that isn't used elsewhere.
 
 ====================
 2.17.2 - 2020-07-07

@@ -137,6 +137,10 @@ class Instance(object):
             The value to assign to the launch_options property of this Instance.
         :type launch_options: LaunchOptions
 
+        :param availability_config:
+            The value to assign to the availability_config property of this Instance.
+        :type availability_config: InstanceAvailabilityConfig
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Instance.
             Allowed values for this property are: "MOVING", "PROVISIONING", "RUNNING", "STARTING", "STOPPING", "STOPPED", "CREATING_IMAGE", "TERMINATING", "TERMINATED", 'UNKNOWN_ENUM_VALUE'.
@@ -194,6 +198,7 @@ class Instance(object):
             'ipxe_script': 'str',
             'launch_mode': 'str',
             'launch_options': 'LaunchOptions',
+            'availability_config': 'InstanceAvailabilityConfig',
             'lifecycle_state': 'str',
             'metadata': 'dict(str, str)',
             'region': 'str',
@@ -220,6 +225,7 @@ class Instance(object):
             'ipxe_script': 'ipxeScript',
             'launch_mode': 'launchMode',
             'launch_options': 'launchOptions',
+            'availability_config': 'availabilityConfig',
             'lifecycle_state': 'lifecycleState',
             'metadata': 'metadata',
             'region': 'region',
@@ -245,6 +251,7 @@ class Instance(object):
         self._ipxe_script = None
         self._launch_mode = None
         self._launch_options = None
+        self._availability_config = None
         self._lifecycle_state = None
         self._metadata = None
         self._region = None
@@ -685,6 +692,26 @@ class Instance(object):
         :type: LaunchOptions
         """
         self._launch_options = launch_options
+
+    @property
+    def availability_config(self):
+        """
+        Gets the availability_config of this Instance.
+
+        :return: The availability_config of this Instance.
+        :rtype: InstanceAvailabilityConfig
+        """
+        return self._availability_config
+
+    @availability_config.setter
+    def availability_config(self, availability_config):
+        """
+        Sets the availability_config of this Instance.
+
+        :param availability_config: The availability_config of this Instance.
+        :type: InstanceAvailabilityConfig
+        """
+        self._availability_config = availability_config
 
     @property
     def lifecycle_state(self):
