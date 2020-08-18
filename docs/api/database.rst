@@ -73,6 +73,7 @@ Database
     oci.database.models.CreateConsoleConnectionDetails
     oci.database.models.CreateDataGuardAssociationDetails
     oci.database.models.CreateDataGuardAssociationToExistingDbSystemDetails
+    oci.database.models.CreateDataGuardAssociationToExistingVmClusterDetails
     oci.database.models.CreateDataGuardAssociationWithNewDbSystemDetails
     oci.database.models.CreateDatabaseBase
     oci.database.models.CreateDatabaseDetails

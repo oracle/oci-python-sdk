@@ -217,7 +217,7 @@ class CreateNodePoolDetails(object):
     def node_metadata(self):
         """
         Gets the node_metadata of this CreateNodePoolDetails.
-        A list of key/value pairs to add to each underlying OCI instance in the node pool.
+        A list of key/value pairs to add to each underlying OCI instance in the node pool on launch.
 
 
         :return: The node_metadata of this CreateNodePoolDetails.
@@ -229,7 +229,7 @@ class CreateNodePoolDetails(object):
     def node_metadata(self, node_metadata):
         """
         Sets the node_metadata of this CreateNodePoolDetails.
-        A list of key/value pairs to add to each underlying OCI instance in the node pool.
+        A list of key/value pairs to add to each underlying OCI instance in the node pool on launch.
 
 
         :param node_metadata: The node_metadata of this CreateNodePoolDetails.
@@ -341,7 +341,7 @@ class CreateNodePoolDetails(object):
     def ssh_public_key(self):
         """
         Gets the ssh_public_key of this CreateNodePoolDetails.
-        The SSH public key to add to each node in the node pool.
+        The SSH public key on each node in the node pool on launch.
 
 
         :return: The ssh_public_key of this CreateNodePoolDetails.
@@ -353,7 +353,7 @@ class CreateNodePoolDetails(object):
     def ssh_public_key(self, ssh_public_key):
         """
         Sets the ssh_public_key of this CreateNodePoolDetails.
-        The SSH public key to add to each node in the node pool.
+        The SSH public key on each node in the node pool on launch.
 
 
         :param ssh_public_key: The ssh_public_key of this CreateNodePoolDetails.

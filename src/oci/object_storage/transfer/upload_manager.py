@@ -27,8 +27,9 @@ class UploadManager:
         An advantage of using multi-part uploads is the ability to retry individual failed parts, as well as being
         able to upload parts in parallel to reduce upload time.
 
-        PLEASE NOTE that the operations are NOT thread-safe, and you should provide the UploadManager class
-        with its own Object Storage client that isn't used elsewhere.
+        PLEASE NOTE that the timeout for the object storage client is overwritten to `None` for all operations which
+        call object storage. For this reason, the operations are NOT thread-safe, and you should provide the
+        UploadManager class with its own Object Storage client that isn't used elsewhere.
         For more information please see `Known Issues <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/known-issues.html>`_
 
         :param ObjectStorageClient object_storage_client:
@@ -343,39 +344,48 @@ class UploadManager:
                            object_name,
                            file_path,
                            **kwargs):
-        # put_object expects 'opc_meta' not metadata
-        if 'metadata' in kwargs:
-            kwargs['opc_meta'] = kwargs['metadata']
-            kwargs.pop('metadata')
 
-        # remove unrecognized kwargs for put_object
-        progress_callback = None
-        if 'progress_callback' in kwargs:
-            progress_callback = kwargs['progress_callback']
-            kwargs.pop('progress_callback')
+        try:
+            # Set the upload manager timeout on object storage client
+            self._set_multipart_upload_timeout()
 
-        with open(file_path, 'rb') as file_object:
-            # progress_callback is not supported for files of zero bytes
-            # FileReadCallbackStream will not be handled properly by requests in this case
-            file_size = os.fstat(file_object.fileno()).st_size
-            if file_size != 0 and progress_callback:
-                wrapped_file = FileReadCallbackStream(file_object,
-                                                      lambda bytes_read: progress_callback(bytes_read))
+            # put_object expects 'opc_meta' not metadata
+            if 'metadata' in kwargs:
+                kwargs['opc_meta'] = kwargs['metadata']
+                kwargs.pop('metadata')
 
-                response = self.object_storage_client.put_object(namespace_name,
-                                                                 bucket_name,
-                                                                 object_name,
-                                                                 wrapped_file,
-                                                                 **kwargs)
-            else:
-                response = self.object_storage_client.put_object(namespace_name,
-                                                                 bucket_name,
-                                                                 object_name,
-                                                                 file_object,
-                                                                 **kwargs)
-        return response
+            # remove unrecognized kwargs for put_object
+            progress_callback = None
+            if 'progress_callback' in kwargs:
+                progress_callback = kwargs['progress_callback']
+                kwargs.pop('progress_callback')
 
-    # The following two methods are called at the beginning and at the end of every public method for upload manager
+            with open(file_path, 'rb') as file_object:
+                # progress_callback is not supported for files of zero bytes
+                # FileReadCallbackStream will not be handled properly by requests in this case
+                file_size = os.fstat(file_object.fileno()).st_size
+                if file_size != 0 and progress_callback:
+                    wrapped_file = FileReadCallbackStream(file_object,
+                                                          lambda bytes_read: progress_callback(bytes_read))
+
+                    response = self.object_storage_client.put_object(namespace_name,
+                                                                     bucket_name,
+                                                                     object_name,
+                                                                     wrapped_file,
+                                                                     **kwargs)
+                else:
+                    response = self.object_storage_client.put_object(namespace_name,
+                                                                     bucket_name,
+                                                                     object_name,
+                                                                     file_object,
+                                                                     **kwargs)
+            return response
+
+        # Reset the object storage client timeout regardless of the result of above operations
+        finally:
+            self._reset_object_storage_client_timeout()
+
+    # The following two methods are called at the beginning and at the end of every method for upload manager
     # This is not the best way to go around the timeout issue, but it is a workaround for now
     def _set_multipart_upload_timeout(self):
         self.object_storage_client.base_client.timeout = MULTIPART_UPLOAD_TIMEOUT

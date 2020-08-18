@@ -28,19 +28,26 @@ class NodeSourceViaImageDetails(NodeSourceDetails):
             The value to assign to the image_id property of this NodeSourceViaImageDetails.
         :type image_id: str
 
+        :param boot_volume_size_in_gbs:
+            The value to assign to the boot_volume_size_in_gbs property of this NodeSourceViaImageDetails.
+        :type boot_volume_size_in_gbs: int
+
         """
         self.swagger_types = {
             'source_type': 'str',
-            'image_id': 'str'
+            'image_id': 'str',
+            'boot_volume_size_in_gbs': 'int'
         }
 
         self.attribute_map = {
             'source_type': 'sourceType',
-            'image_id': 'imageId'
+            'image_id': 'imageId',
+            'boot_volume_size_in_gbs': 'bootVolumeSizeInGBs'
         }
 
         self._source_type = None
         self._image_id = None
+        self._boot_volume_size_in_gbs = None
         self._source_type = 'IMAGE'
 
     @property
@@ -66,6 +73,34 @@ class NodeSourceViaImageDetails(NodeSourceDetails):
         :type: str
         """
         self._image_id = image_id
+
+    @property
+    def boot_volume_size_in_gbs(self):
+        """
+        Gets the boot_volume_size_in_gbs of this NodeSourceViaImageDetails.
+        The size of the boot volume in GBs. Minimum value is 50 GB. See `here`__ for max custom boot volume sizing and OS-specific requirements.
+
+        __ https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm
+
+
+        :return: The boot_volume_size_in_gbs of this NodeSourceViaImageDetails.
+        :rtype: int
+        """
+        return self._boot_volume_size_in_gbs
+
+    @boot_volume_size_in_gbs.setter
+    def boot_volume_size_in_gbs(self, boot_volume_size_in_gbs):
+        """
+        Sets the boot_volume_size_in_gbs of this NodeSourceViaImageDetails.
+        The size of the boot volume in GBs. Minimum value is 50 GB. See `here`__ for max custom boot volume sizing and OS-specific requirements.
+
+        __ https://docs.cloud.oracle.com/en-us/iaas/Content/Block/Concepts/bootvolumes.htm
+
+
+        :param boot_volume_size_in_gbs: The boot_volume_size_in_gbs of this NodeSourceViaImageDetails.
+        :type: int
+        """
+        self._boot_volume_size_in_gbs = boot_volume_size_in_gbs
 
     def __repr__(self):
         return formatted_flat_dict(self)
