@@ -1165,7 +1165,16 @@ class ShowOCIService(object):
                     raise
 
             if compartment:
-                cvalue = {'id': str(compartment.id), 'name': str(compartment.name), 'path': str(compartment.name)}
+                cvalue = {
+                    'id': str(compartment.id),
+                    'name': str(compartment.name),
+                    'description': str(compartment.description),
+                    'time_created': str(compartment.time_created),
+                    'is_accessible': str(compartment.is_accessible),
+                    'path': str(compartment.name),
+                    'defined_tags': [] if compartment.defined_tags is None else compartment.defined_tags,
+                    'freeform_tags': [] if compartment.freeform_tags is None else compartment.freeform_tags
+                }
                 compartments.append(cvalue)
 
             self.data[self.C_IDENTITY][self.C_IDENTITY_COMPARTMENTS] = compartments
@@ -8401,7 +8410,7 @@ class ShowOCIService(object):
                                'instance_url': str(oic.instance_url),
                                'message_packs': str(oic.message_packs),
                                'is_byol': oic.is_byol,
-                               'sum_info': "PaaS OIC Native - Msg Pack",
+                               'sum_info': "PaaS OIC Native " + ("BYOL" if oic.is_byol else "INCL") + " - Msg Pack",
                                'sum_size_gb': str(oic.message_packs),
                                'compartment_name': str(compartment['name']),
                                'compartment_id': str(compartment['id']),

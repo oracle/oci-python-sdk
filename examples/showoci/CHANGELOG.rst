@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
+
+=====================
+20.08.25 - 2020-08-25
+=====================
+* Fixed bug searching compartment by OCID
+* Fixed OIC information when printout
+
 =====================
 20.07.28 - 2020-07-28
 =====================
