@@ -4,6 +4,7 @@
 
 import oci
 import pytest
+from oci._vendor import six
 from oci.exceptions import ConnectTimeout, RequestException
 
 
@@ -92,3 +93,24 @@ def test_default_timeout_service_client(config):
     client = oci.identity.IdentityClient(config, timeout=0.0001)
     with pytest.raises((ConnectTimeout, RequestException), match=r".* timed out.*"):
         client.list_regions()
+
+
+def test_sanitize_headers_for_requests(config):
+
+    dummy_headers = {
+        "content-type": 10,
+        "Content-Type": 20.0,
+        "string": "string-value",
+        "bool": True,
+        "array": [1, 2, 3],
+        "NoneHeader": None
+    }
+    dummy_headers = oci.base_client._sanitize_headers_for_requests(dummy_headers)
+
+    assert isinstance(dummy_headers["content-type"], str)
+    assert isinstance(dummy_headers["Content-Type"], str)
+    assert isinstance(dummy_headers["string"], str)
+    assert isinstance(dummy_headers["bool"], str)
+    assert isinstance(dummy_headers["array"], list)
+    assert isinstance(dummy_headers["array"][0], six.integer_types)
+    assert isinstance(dummy_headers["NoneHeader"], type(None))
