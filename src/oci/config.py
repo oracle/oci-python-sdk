@@ -33,6 +33,7 @@ from oci._vendor import six
 
 from .exceptions import ConfigFileNotFound, ProfileNotFound, InvalidConfig
 from .auth import signers
+from .util import AUTHENTICATION_TYPE_FIELD_NAME, get_authentication_type_from_config, DELEGATION_TOKEN_FILE_FIELD_NAME, DELEGATION_TOKEN_WITH_INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE
 
 __all__ = ["DEFAULT_CONFIG", "from_file", "validate_config"]
 
@@ -71,6 +72,25 @@ REGION_KEY_NAME = "region"
 logger = logging.getLogger(__name__)
 
 
+def _validate_delegation_token_with_instance_principal(config):
+    # At this point we know we have the required fields for this authentication type, so we won't check that again
+    delegation_token_file_path = config.get(DELEGATION_TOKEN_FILE_FIELD_NAME)
+    if delegation_token_file_path is None:
+        raise InvalidConfig('ERROR: Please specify the location of the delegation_token_file in the config.')
+
+    expanded_delegation_token_file_path = os.path.expanduser(delegation_token_file_path)
+
+    if not os.path.isfile(expanded_delegation_token_file_path):
+        raise InvalidConfig("Delegation token file not found at {}".format(expanded_delegation_token_file_path))
+
+
+# Map the validator function for each type
+# This can easily be extended to support other auth types
+AUTH_TYPE_TO_VALIDATION_FUNCTION_MAP = {
+    DELEGATION_TOKEN_WITH_INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE: _validate_delegation_token_with_instance_principal
+}
+
+
 def from_file(file_location=DEFAULT_LOCATION, profile_name=DEFAULT_PROFILE):
     """Create a config dict from a file.
 
@@ -106,6 +126,12 @@ def validate_config(config, **kwargs):
         # in the config
         if isinstance(kwargs['signer'], signers.InstancePrincipalsSecurityTokenSigner) or isinstance(kwargs['signer'], signers.SecurityTokenSigner):
             return
+
+    if AUTHENTICATION_TYPE_FIELD_NAME in config:
+        auth_type = get_authentication_type_from_config(config)
+        validator_function = AUTH_TYPE_TO_VALIDATION_FUNCTION_MAP.get(auth_type)
+        validator_function(config)
+        return
 
     """Raises ValueError if required fields are missing or malformed."""
     errors = {}
@@ -163,6 +189,7 @@ def _get_config_path_with_fallback(file_location):
     expanded_fallback_default_file_location = os.path.expanduser(FALLBACK_DEFAULT_LOCATION)
 
     if (file_location != DEFAULT_LOCATION) or (file_location == DEFAULT_LOCATION and os.path.isfile(expanded_file_location)):
+        logger.debug("Config file found at {}".format(file_location))
         return expanded_file_location
 
     # If file location is not specified and the default file (~/.oci/config) does not exist
@@ -180,4 +207,5 @@ def _get_config_path_with_fallback(file_location):
         expanded_file_location = expanded_fallback_default_file_location
         return expanded_file_location
 
+    logger.debug("Config file found at {}".format(expanded_file_location))
     return expanded_file_location

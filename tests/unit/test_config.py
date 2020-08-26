@@ -158,3 +158,20 @@ def test_region_from_env_var():
 
     # Cleanup
     del os.environ[oci.config.REGION_ENV_VAR_NAME]
+
+
+def test_delegation_token_config():
+    config = oci.config.from_file(file_location=get_resource_path('config'), profile_name="DELEGATION_TOKEN")
+    # validate_config should not throw
+    oci.config.validate_config(config)
+
+    # Test invalid value for authentication_type
+    config = oci.config.from_file(file_location=get_resource_path('config'), profile_name="INVALID_AUTHENTICATION_TYPE")
+    with pytest.raises(oci.exceptions.InvalidConfig) as excinfo:
+        oci.config.validate_config(config)
+    assert excinfo.value.errors == "The authentication type invalid_authentication_type is not supported"
+
+    # Test error for non-existing file
+    config = oci.config.from_file(file_location=get_resource_path('config'), profile_name="INVALID_DELEGATION_TOKEN_FILE")
+    with pytest.raises(oci.exceptions.InvalidConfig):
+        oci.config.validate_config(config)

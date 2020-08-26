@@ -45,3 +45,18 @@ foo = bar
 
 [KEY_CONTENT]
 key_content = some_invalid_key_content
+
+[DELEGATION_TOKEN]
+tenancy=ocid1.tenancy.oc1..aaaaaaaacqp432hpa5oc2kvxm4kpwbkodfru4okbw2obkcdob5zuegi4rwxq
+authentication_type=instance_principal
+delegation_token_file=tests/resources/delegation_token
+
+[INVALID_AUTHENTICATION_TYPE]
+tenancy=ocid1.tenancy.oc1..aaaaaaaacqp432hpa5oc2kvxm4kpwbkodfru4okbw2obkcdob5zuegi4rwxq
+authentication_type=invalid_authentication_type
+delegation_token_file=tests/resources/delegation_token
+
+[INVALID_DELEGATION_TOKEN_FILE]
+tenancy=ocid1.tenancy.oc1..aaaaaaaacqp432hpa5oc2kvxm4kpwbkodfru4okbw2obkcdob5zuegi4rwxq
+authentication_type=instance_principal
+delegation_token_file=file/does/not/exist
