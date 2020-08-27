@@ -102,6 +102,10 @@ class LoadBalancer(object):
             The value to assign to the hostnames property of this LoadBalancer.
         :type hostnames: dict(str, Hostname)
 
+        :param ssl_cipher_suites:
+            The value to assign to the ssl_cipher_suites property of this LoadBalancer.
+        :type ssl_cipher_suites: dict(str, SSLCipherSuite)
+
         :param certificates:
             The value to assign to the certificates property of this LoadBalancer.
         :type certificates: dict(str, Certificate)
@@ -144,6 +148,7 @@ class LoadBalancer(object):
             'network_security_group_ids': 'list[str]',
             'listeners': 'dict(str, Listener)',
             'hostnames': 'dict(str, Hostname)',
+            'ssl_cipher_suites': 'dict(str, SSLCipherSuite)',
             'certificates': 'dict(str, Certificate)',
             'backend_sets': 'dict(str, BackendSet)',
             'path_route_sets': 'dict(str, PathRouteSet)',
@@ -166,6 +171,7 @@ class LoadBalancer(object):
             'network_security_group_ids': 'networkSecurityGroupIds',
             'listeners': 'listeners',
             'hostnames': 'hostnames',
+            'ssl_cipher_suites': 'sslCipherSuites',
             'certificates': 'certificates',
             'backend_sets': 'backendSets',
             'path_route_sets': 'pathRouteSets',
@@ -187,6 +193,7 @@ class LoadBalancer(object):
         self._network_security_group_ids = None
         self._listeners = None
         self._hostnames = None
+        self._ssl_cipher_suites = None
         self._certificates = None
         self._backend_sets = None
         self._path_route_sets = None
@@ -562,6 +569,26 @@ class LoadBalancer(object):
         :type: dict(str, Hostname)
         """
         self._hostnames = hostnames
+
+    @property
+    def ssl_cipher_suites(self):
+        """
+        Gets the ssl_cipher_suites of this LoadBalancer.
+
+        :return: The ssl_cipher_suites of this LoadBalancer.
+        :rtype: dict(str, SSLCipherSuite)
+        """
+        return self._ssl_cipher_suites
+
+    @ssl_cipher_suites.setter
+    def ssl_cipher_suites(self, ssl_cipher_suites):
+        """
+        Sets the ssl_cipher_suites of this LoadBalancer.
+
+        :param ssl_cipher_suites: The ssl_cipher_suites of this LoadBalancer.
+        :type: dict(str, SSLCipherSuite)
+        """
+        self._ssl_cipher_suites = ssl_cipher_suites
 
     @property
     def certificates(self):

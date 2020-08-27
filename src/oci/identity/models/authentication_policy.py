@@ -26,26 +26,31 @@ class AuthenticationPolicy(object):
             The value to assign to the compartment_id property of this AuthenticationPolicy.
         :type compartment_id: str
 
+        :param network_policy:
+            The value to assign to the network_policy property of this AuthenticationPolicy.
+        :type network_policy: NetworkPolicy
+
         """
         self.swagger_types = {
             'password_policy': 'PasswordPolicy',
-            'compartment_id': 'str'
+            'compartment_id': 'str',
+            'network_policy': 'NetworkPolicy'
         }
 
         self.attribute_map = {
             'password_policy': 'passwordPolicy',
-            'compartment_id': 'compartmentId'
+            'compartment_id': 'compartmentId',
+            'network_policy': 'networkPolicy'
         }
 
         self._password_policy = None
         self._compartment_id = None
+        self._network_policy = None
 
     @property
     def password_policy(self):
         """
         Gets the password_policy of this AuthenticationPolicy.
-        Password policy.
-
 
         :return: The password_policy of this AuthenticationPolicy.
         :rtype: PasswordPolicy
@@ -56,8 +61,6 @@ class AuthenticationPolicy(object):
     def password_policy(self, password_policy):
         """
         Sets the password_policy of this AuthenticationPolicy.
-        Password policy.
-
 
         :param password_policy: The password_policy of this AuthenticationPolicy.
         :type: PasswordPolicy
@@ -87,6 +90,26 @@ class AuthenticationPolicy(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def network_policy(self):
+        """
+        Gets the network_policy of this AuthenticationPolicy.
+
+        :return: The network_policy of this AuthenticationPolicy.
+        :rtype: NetworkPolicy
+        """
+        return self._network_policy
+
+    @network_policy.setter
+    def network_policy(self, network_policy):
+        """
+        Sets the network_policy of this AuthenticationPolicy.
+
+        :param network_policy: The network_policy of this AuthenticationPolicy.
+        :type: NetworkPolicy
+        """
+        self._network_policy = network_policy
 
     def __repr__(self):
         return formatted_flat_dict(self)

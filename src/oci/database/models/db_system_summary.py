@@ -75,6 +75,10 @@ class DbSystemSummary(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the lifecycle_state property of a DbSystemSummary.
+    #: This constant has a value of "MAINTENANCE_IN_PROGRESS"
+    LIFECYCLE_STATE_MAINTENANCE_IN_PROGRESS = "MAINTENANCE_IN_PROGRESS"
+
     #: A constant which can be used with the disk_redundancy property of a DbSystemSummary.
     #: This constant has a value of "HIGH"
     DISK_REDUNDANCY_HIGH = "HIGH"
@@ -188,7 +192,7 @@ class DbSystemSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DbSystemSummary.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MAINTENANCE_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -260,6 +264,14 @@ class DbSystemSummary(object):
             The value to assign to the defined_tags property of this DbSystemSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param source_db_system_id:
+            The value to assign to the source_db_system_id property of this DbSystemSummary.
+        :type source_db_system_id: str
+
+        :param point_in_time_data_disk_clone_timestamp:
+            The value to assign to the point_in_time_data_disk_clone_timestamp property of this DbSystemSummary.
+        :type point_in_time_data_disk_clone_timestamp: datetime
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -300,7 +312,9 @@ class DbSystemSummary(object):
             'last_maintenance_run_id': 'str',
             'next_maintenance_run_id': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'source_db_system_id': 'str',
+            'point_in_time_data_disk_clone_timestamp': 'datetime'
         }
 
         self.attribute_map = {
@@ -342,7 +356,9 @@ class DbSystemSummary(object):
             'last_maintenance_run_id': 'lastMaintenanceRunId',
             'next_maintenance_run_id': 'nextMaintenanceRunId',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'source_db_system_id': 'sourceDbSystemId',
+            'point_in_time_data_disk_clone_timestamp': 'pointInTimeDataDiskCloneTimestamp'
         }
 
         self._id = None
@@ -384,6 +400,8 @@ class DbSystemSummary(object):
         self._next_maintenance_run_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._source_db_system_id = None
+        self._point_in_time_data_disk_clone_timestamp = None
 
     @property
     def id(self):
@@ -987,7 +1005,7 @@ class DbSystemSummary(object):
         **[Required]** Gets the lifecycle_state of this DbSystemSummary.
         The current state of the DB system.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MAINTENANCE_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -1006,7 +1024,7 @@ class DbSystemSummary(object):
         :param lifecycle_state: The lifecycle_state of this DbSystemSummary.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MAINTENANCE_IN_PROGRESS"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -1458,6 +1476,62 @@ class DbSystemSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def source_db_system_id(self):
+        """
+        Gets the source_db_system_id of this DbSystemSummary.
+        The `OCID`__ of the DB system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The source_db_system_id of this DbSystemSummary.
+        :rtype: str
+        """
+        return self._source_db_system_id
+
+    @source_db_system_id.setter
+    def source_db_system_id(self, source_db_system_id):
+        """
+        Sets the source_db_system_id of this DbSystemSummary.
+        The `OCID`__ of the DB system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param source_db_system_id: The source_db_system_id of this DbSystemSummary.
+        :type: str
+        """
+        self._source_db_system_id = source_db_system_id
+
+    @property
+    def point_in_time_data_disk_clone_timestamp(self):
+        """
+        Gets the point_in_time_data_disk_clone_timestamp of this DbSystemSummary.
+        The point in time for a cloned database system when the data disks were cloned from the source database system, as described in `RFC 3339`__.
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :return: The point_in_time_data_disk_clone_timestamp of this DbSystemSummary.
+        :rtype: datetime
+        """
+        return self._point_in_time_data_disk_clone_timestamp
+
+    @point_in_time_data_disk_clone_timestamp.setter
+    def point_in_time_data_disk_clone_timestamp(self, point_in_time_data_disk_clone_timestamp):
+        """
+        Sets the point_in_time_data_disk_clone_timestamp of this DbSystemSummary.
+        The point in time for a cloned database system when the data disks were cloned from the source database system, as described in `RFC 3339`__.
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :param point_in_time_data_disk_clone_timestamp: The point_in_time_data_disk_clone_timestamp of this DbSystemSummary.
+        :type: datetime
+        """
+        self._point_in_time_data_disk_clone_timestamp = point_in_time_data_disk_clone_timestamp
 
     def __repr__(self):
         return formatted_flat_dict(self)

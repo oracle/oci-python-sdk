@@ -403,6 +403,47 @@ def test_create_rule_set(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
+def test_create_ssl_cipher_suite(testing_service_client):
+    if not testing_service_client.is_api_enabled('load_balancer', 'CreateSSLCipherSuite'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('load_balancer', util.camelize('load_balancer'), 'CreateSSLCipherSuite')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='load_balancer', api_name='CreateSSLCipherSuite')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
+            response = client.create_ssl_cipher_suite(
+                create_ssl_cipher_suite_details=request.pop(util.camelize('CreateSSLCipherSuiteDetails')),
+                load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'load_balancer',
+            'CreateSSLCipherSuite',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'create_ssl_cipher_suite',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_delete_backend(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'DeleteBackend'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -725,6 +766,47 @@ def test_delete_rule_set(testing_service_client):
             result,
             service_error,
             'delete_rule_set',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
+def test_delete_ssl_cipher_suite(testing_service_client):
+    if not testing_service_client.is_api_enabled('load_balancer', 'DeleteSSLCipherSuite'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('load_balancer', util.camelize('load_balancer'), 'DeleteSSLCipherSuite')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='load_balancer', api_name='DeleteSSLCipherSuite')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
+            response = client.delete_ssl_cipher_suite(
+                load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                name=request.pop(util.camelize('name')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'load_balancer',
+            'DeleteSSLCipherSuite',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_ssl_cipher_suite',
             True,
             False
         )
@@ -1135,6 +1217,47 @@ def test_get_rule_set(testing_service_client):
             result,
             service_error,
             'ruleSet',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
+def test_get_ssl_cipher_suite(testing_service_client):
+    if not testing_service_client.is_api_enabled('load_balancer', 'GetSSLCipherSuite'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('load_balancer', util.camelize('load_balancer'), 'GetSSLCipherSuite')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='load_balancer', api_name='GetSSLCipherSuite')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
+            response = client.get_ssl_cipher_suite(
+                load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                name=request.pop(util.camelize('name')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'load_balancer',
+            'GetSSLCipherSuite',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'sSLCipherSuite',
             False,
             False
         )
@@ -1763,6 +1886,46 @@ def test_list_shapes(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
+def test_list_ssl_cipher_suites(testing_service_client):
+    if not testing_service_client.is_api_enabled('load_balancer', 'ListSSLCipherSuites'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('load_balancer', util.camelize('load_balancer'), 'ListSSLCipherSuites')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='load_balancer', api_name='ListSSLCipherSuites')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
+            response = client.list_ssl_cipher_suites(
+                load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'load_balancer',
+            'ListSSLCipherSuites',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'sSLCipherSuite',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
 def test_list_work_requests(testing_service_client):
     if not testing_service_client.is_api_enabled('load_balancer', 'ListWorkRequests'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2194,6 +2357,48 @@ def test_update_rule_set(testing_service_client):
             result,
             service_error,
             'update_rule_set',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_lbaas_dev_us_grp@oracle.com" jiraProject="LBCP" opsJiraProject="LBCP"
+def test_update_ssl_cipher_suite(testing_service_client):
+    if not testing_service_client.is_api_enabled('load_balancer', 'UpdateSSLCipherSuite'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('load_balancer', util.camelize('load_balancer'), 'UpdateSSLCipherSuite')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='load_balancer', api_name='UpdateSSLCipherSuite')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.load_balancer.LoadBalancerClient(config, service_endpoint=service_endpoint)
+            response = client.update_ssl_cipher_suite(
+                update_ssl_cipher_suite_details=request.pop(util.camelize('UpdateSSLCipherSuiteDetails')),
+                load_balancer_id=request.pop(util.camelize('loadBalancerId')),
+                name=request.pop(util.camelize('name')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'load_balancer',
+            'UpdateSSLCipherSuite',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_ssl_cipher_suite',
             False,
             False
         )

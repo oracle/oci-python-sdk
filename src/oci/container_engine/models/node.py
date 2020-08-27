@@ -54,6 +54,10 @@ class Node(object):
             The value to assign to the name property of this Node.
         :type name: str
 
+        :param kubernetes_version:
+            The value to assign to the kubernetes_version property of this Node.
+        :type kubernetes_version: str
+
         :param availability_domain:
             The value to assign to the availability_domain property of this Node.
         :type availability_domain: str
@@ -96,6 +100,7 @@ class Node(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'kubernetes_version': 'str',
             'availability_domain': 'str',
             'subnet_id': 'str',
             'node_pool_id': 'str',
@@ -110,6 +115,7 @@ class Node(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'kubernetes_version': 'kubernetesVersion',
             'availability_domain': 'availabilityDomain',
             'subnet_id': 'subnetId',
             'node_pool_id': 'nodePoolId',
@@ -123,6 +129,7 @@ class Node(object):
 
         self._id = None
         self._name = None
+        self._kubernetes_version = None
         self._availability_domain = None
         self._subnet_id = None
         self._node_pool_id = None
@@ -180,6 +187,30 @@ class Node(object):
         :type: str
         """
         self._name = name
+
+    @property
+    def kubernetes_version(self):
+        """
+        Gets the kubernetes_version of this Node.
+        The version of Kubernetes this node is running.
+
+
+        :return: The kubernetes_version of this Node.
+        :rtype: str
+        """
+        return self._kubernetes_version
+
+    @kubernetes_version.setter
+    def kubernetes_version(self, kubernetes_version):
+        """
+        Sets the kubernetes_version of this Node.
+        The version of Kubernetes this node is running.
+
+
+        :param kubernetes_version: The kubernetes_version of this Node.
+        :type: str
+        """
+        self._kubernetes_version = kubernetes_version
 
     @property
     def availability_domain(self):

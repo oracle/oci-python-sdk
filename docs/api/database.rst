@@ -36,6 +36,7 @@ Database
     oci.database.models.AutonomousDatabaseConnectionStrings
     oci.database.models.AutonomousDatabaseConnectionUrls
     oci.database.models.AutonomousDatabaseConsoleTokenDetails
+    oci.database.models.AutonomousDatabaseManualRefreshDetails
     oci.database.models.AutonomousDatabaseStandbySummary
     oci.database.models.AutonomousDatabaseSummary
     oci.database.models.AutonomousDatabaseWallet
@@ -80,10 +81,12 @@ Database
     oci.database.models.CreateDatabaseFromAnotherDatabaseDetails
     oci.database.models.CreateDatabaseFromBackup
     oci.database.models.CreateDatabaseFromBackupDetails
+    oci.database.models.CreateDatabaseFromDbSystemDetails
     oci.database.models.CreateDbHomeBase
     oci.database.models.CreateDbHomeDetails
     oci.database.models.CreateDbHomeFromBackupDetails
     oci.database.models.CreateDbHomeFromDatabaseDetails
+    oci.database.models.CreateDbHomeFromDbSystemDetails
     oci.database.models.CreateDbHomeWithDbSystemIdDetails
     oci.database.models.CreateDbHomeWithDbSystemIdFromBackupDetails
     oci.database.models.CreateDbHomeWithDbSystemIdFromDatabaseDetails
@@ -93,6 +96,7 @@ Database
     oci.database.models.CreateNFSBackupDestinationDetails
     oci.database.models.CreateNewDatabaseDetails
     oci.database.models.CreateRecoveryApplianceBackupDestinationDetails
+    oci.database.models.CreateRefreshableAutonomousDatabaseCloneDetails
     oci.database.models.CreateVmClusterDetails
     oci.database.models.DataGuardAssociation
     oci.database.models.DataGuardAssociationSummary
@@ -129,6 +133,7 @@ Database
     oci.database.models.LaunchDbSystemDetails
     oci.database.models.LaunchDbSystemFromBackupDetails
     oci.database.models.LaunchDbSystemFromDatabaseDetails
+    oci.database.models.LaunchDbSystemFromDbSystemDetails
     oci.database.models.MaintenanceRun
     oci.database.models.MaintenanceRunSummary
     oci.database.models.MaintenanceWindow

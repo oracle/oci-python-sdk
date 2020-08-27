@@ -73,6 +73,10 @@ class CreateLoadBalancerDetails(object):
             The value to assign to the certificates property of this CreateLoadBalancerDetails.
         :type certificates: dict(str, CertificateDetails)
 
+        :param ssl_cipher_suites:
+            The value to assign to the ssl_cipher_suites property of this CreateLoadBalancerDetails.
+        :type ssl_cipher_suites: dict(str, SSLCipherSuiteDetails)
+
         :param path_route_sets:
             The value to assign to the path_route_sets property of this CreateLoadBalancerDetails.
         :type path_route_sets: dict(str, PathRouteSetDetails)
@@ -102,6 +106,7 @@ class CreateLoadBalancerDetails(object):
             'network_security_group_ids': 'list[str]',
             'subnet_ids': 'list[str]',
             'certificates': 'dict(str, CertificateDetails)',
+            'ssl_cipher_suites': 'dict(str, SSLCipherSuiteDetails)',
             'path_route_sets': 'dict(str, PathRouteSetDetails)',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -120,6 +125,7 @@ class CreateLoadBalancerDetails(object):
             'network_security_group_ids': 'networkSecurityGroupIds',
             'subnet_ids': 'subnetIds',
             'certificates': 'certificates',
+            'ssl_cipher_suites': 'sslCipherSuites',
             'path_route_sets': 'pathRouteSets',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -137,6 +143,7 @@ class CreateLoadBalancerDetails(object):
         self._network_security_group_ids = None
         self._subnet_ids = None
         self._certificates = None
+        self._ssl_cipher_suites = None
         self._path_route_sets = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -483,6 +490,26 @@ class CreateLoadBalancerDetails(object):
         :type: dict(str, CertificateDetails)
         """
         self._certificates = certificates
+
+    @property
+    def ssl_cipher_suites(self):
+        """
+        Gets the ssl_cipher_suites of this CreateLoadBalancerDetails.
+
+        :return: The ssl_cipher_suites of this CreateLoadBalancerDetails.
+        :rtype: dict(str, SSLCipherSuiteDetails)
+        """
+        return self._ssl_cipher_suites
+
+    @ssl_cipher_suites.setter
+    def ssl_cipher_suites(self, ssl_cipher_suites):
+        """
+        Sets the ssl_cipher_suites of this CreateLoadBalancerDetails.
+
+        :param ssl_cipher_suites: The ssl_cipher_suites of this CreateLoadBalancerDetails.
+        :type: dict(str, SSLCipherSuiteDetails)
+        """
+        self._ssl_cipher_suites = ssl_cipher_suites
 
     @property
     def path_route_sets(self):

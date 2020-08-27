@@ -27,12 +27,17 @@ class LaunchDbSystemBase(object):
     #: This constant has a value of "DATABASE"
     SOURCE_DATABASE = "DATABASE"
 
+    #: A constant which can be used with the source property of a LaunchDbSystemBase.
+    #: This constant has a value of "DB_SYSTEM"
+    SOURCE_DB_SYSTEM = "DB_SYSTEM"
+
     def __init__(self, **kwargs):
         """
         Initializes a new LaunchDbSystemBase object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.database.models.LaunchDbSystemDetails`
+        * :class:`~oci.database.models.LaunchDbSystemFromDbSystemDetails`
         * :class:`~oci.database.models.LaunchDbSystemFromDatabaseDetails`
         * :class:`~oci.database.models.LaunchDbSystemFromBackupDetails`
 
@@ -128,8 +133,12 @@ class LaunchDbSystemBase(object):
 
         :param source:
             The value to assign to the source property of this LaunchDbSystemBase.
-            Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE"
+            Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE", "DB_SYSTEM"
         :type source: str
+
+        :param private_ip:
+            The value to assign to the private_ip property of this LaunchDbSystemBase.
+        :type private_ip: str
 
         """
         self.swagger_types = {
@@ -155,7 +164,8 @@ class LaunchDbSystemBase(object):
             'node_count': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'source': 'str'
+            'source': 'str',
+            'private_ip': 'str'
         }
 
         self.attribute_map = {
@@ -181,7 +191,8 @@ class LaunchDbSystemBase(object):
             'node_count': 'nodeCount',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'source': 'source'
+            'source': 'source',
+            'private_ip': 'privateIp'
         }
 
         self._compartment_id = None
@@ -207,6 +218,7 @@ class LaunchDbSystemBase(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._source = None
+        self._private_ip = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -218,6 +230,9 @@ class LaunchDbSystemBase(object):
 
         if type == 'NONE':
             return 'LaunchDbSystemDetails'
+
+        if type == 'DB_SYSTEM':
+            return 'LaunchDbSystemFromDbSystemDetails'
 
         if type == 'DATABASE':
             return 'LaunchDbSystemFromDatabaseDetails'
@@ -917,7 +932,7 @@ class LaunchDbSystemBase(object):
         Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATABASE` for creating
         a new database from an existing database, including archive redo log data. The default is `NONE`.
 
-        Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE"
+        Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE", "DB_SYSTEM"
 
 
         :return: The source of this LaunchDbSystemBase.
@@ -937,13 +952,39 @@ class LaunchDbSystemBase(object):
         :param source: The source of this LaunchDbSystemBase.
         :type: str
         """
-        allowed_values = ["NONE", "DB_BACKUP", "DATABASE"]
+        allowed_values = ["NONE", "DB_BACKUP", "DATABASE", "DB_SYSTEM"]
         if not value_allowed_none_or_none_sentinel(source, allowed_values):
             raise ValueError(
                 "Invalid value for `source`, must be None or one of {0}"
                 .format(allowed_values)
             )
         self._source = source
+
+    @property
+    def private_ip(self):
+        """
+        Gets the private_ip of this LaunchDbSystemBase.
+        A private IP address of your choice. Must be an available IP address within the subnet's CIDR.
+        If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
+
+
+        :return: The private_ip of this LaunchDbSystemBase.
+        :rtype: str
+        """
+        return self._private_ip
+
+    @private_ip.setter
+    def private_ip(self, private_ip):
+        """
+        Sets the private_ip of this LaunchDbSystemBase.
+        A private IP address of your choice. Must be an available IP address within the subnet's CIDR.
+        If you don't specify a value, Oracle automatically assigns a private IP address from the subnet.
+
+
+        :param private_ip: The private_ip of this LaunchDbSystemBase.
+        :type: str
+        """
+        self._private_ip = private_ip
 
     def __repr__(self):
         return formatted_flat_dict(self)
