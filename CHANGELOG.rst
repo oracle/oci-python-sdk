@@ -4,12 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.21.2 - TBD
+2.21.1 - 2020-08-18
 ====================
 
 Added
 -----
-* TBD
+* Support for custom boot volume size and other node pool updates in the Container Engine for Kubernetes service
+* Support for Data Guard on Exadata Cloud at Customer VM clusters in the Database service
+* Support for stopping VM instances after scheduled maintenance or hypervisor reboots in the Compute service
+* Support for creating and managing private endpoints in the Data Flow service
 
 ====================
 2.21.1 - 2020-08-18
