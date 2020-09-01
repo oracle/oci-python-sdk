@@ -102,7 +102,8 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
             leaf_certificate_retriever=self.leaf_certificate_retriever,
             intermediate_certificate_retrievers=[self.intermediate_certificate_retriever],
             cert_bundle_verify=kwargs.get('federation_client_cert_bundle_verify', None),
-            retry_strategy=kwargs.get('federation_client_retry_strategy', None)
+            retry_strategy=kwargs.get('federation_client_retry_strategy', None),
+            purpose=kwargs.get('purpose', None)
         )
         if 'generic_headers' in kwargs:
             generic_headers = kwargs['generic_headers']

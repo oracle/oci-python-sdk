@@ -16,6 +16,7 @@ from .create_cluster_details import CreateClusterDetails
 from .create_cluster_kubeconfig_content_details import CreateClusterKubeconfigContentDetails
 from .create_node_pool_details import CreateNodePoolDetails
 from .create_node_pool_node_config_details import CreateNodePoolNodeConfigDetails
+from .create_node_shape_config_details import CreateNodeShapeConfigDetails
 from .key_value import KeyValue
 from .kubernetes_network_config import KubernetesNetworkConfig
 from .node import Node
@@ -25,6 +26,7 @@ from .node_pool_node_config_details import NodePoolNodeConfigDetails
 from .node_pool_options import NodePoolOptions
 from .node_pool_placement_config_details import NodePoolPlacementConfigDetails
 from .node_pool_summary import NodePoolSummary
+from .node_shape_config import NodeShapeConfig
 from .node_source_details import NodeSourceDetails
 from .node_source_option import NodeSourceOption
 from .node_source_via_image_details import NodeSourceViaImageDetails
@@ -33,6 +35,7 @@ from .update_cluster_details import UpdateClusterDetails
 from .update_cluster_options_details import UpdateClusterOptionsDetails
 from .update_node_pool_details import UpdateNodePoolDetails
 from .update_node_pool_node_config_details import UpdateNodePoolNodeConfigDetails
+from .update_node_shape_config_details import UpdateNodeShapeConfigDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_log_entry import WorkRequestLogEntry
@@ -53,6 +56,7 @@ container_engine_type_mapping = {
     "CreateClusterKubeconfigContentDetails": CreateClusterKubeconfigContentDetails,
     "CreateNodePoolDetails": CreateNodePoolDetails,
     "CreateNodePoolNodeConfigDetails": CreateNodePoolNodeConfigDetails,
+    "CreateNodeShapeConfigDetails": CreateNodeShapeConfigDetails,
     "KeyValue": KeyValue,
     "KubernetesNetworkConfig": KubernetesNetworkConfig,
     "Node": Node,
@@ -62,6 +66,7 @@ container_engine_type_mapping = {
     "NodePoolOptions": NodePoolOptions,
     "NodePoolPlacementConfigDetails": NodePoolPlacementConfigDetails,
     "NodePoolSummary": NodePoolSummary,
+    "NodeShapeConfig": NodeShapeConfig,
     "NodeSourceDetails": NodeSourceDetails,
     "NodeSourceOption": NodeSourceOption,
     "NodeSourceViaImageDetails": NodeSourceViaImageDetails,
@@ -70,6 +75,7 @@ container_engine_type_mapping = {
     "UpdateClusterOptionsDetails": UpdateClusterOptionsDetails,
     "UpdateNodePoolDetails": UpdateNodePoolDetails,
     "UpdateNodePoolNodeConfigDetails": UpdateNodePoolNodeConfigDetails,
+    "UpdateNodeShapeConfigDetails": UpdateNodeShapeConfigDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestLogEntry": WorkRequestLogEntry,

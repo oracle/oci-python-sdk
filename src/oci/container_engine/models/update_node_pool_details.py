@@ -58,6 +58,10 @@ class UpdateNodePoolDetails(object):
             The value to assign to the node_shape property of this UpdateNodePoolDetails.
         :type node_shape: str
 
+        :param node_shape_config:
+            The value to assign to the node_shape_config property of this UpdateNodePoolDetails.
+        :type node_shape_config: UpdateNodeShapeConfigDetails
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -69,7 +73,8 @@ class UpdateNodePoolDetails(object):
             'node_metadata': 'dict(str, str)',
             'node_source_details': 'NodeSourceDetails',
             'ssh_public_key': 'str',
-            'node_shape': 'str'
+            'node_shape': 'str',
+            'node_shape_config': 'UpdateNodeShapeConfigDetails'
         }
 
         self.attribute_map = {
@@ -82,7 +87,8 @@ class UpdateNodePoolDetails(object):
             'node_metadata': 'nodeMetadata',
             'node_source_details': 'nodeSourceDetails',
             'ssh_public_key': 'sshPublicKey',
-            'node_shape': 'nodeShape'
+            'node_shape': 'nodeShape',
+            'node_shape_config': 'nodeShapeConfig'
         }
 
         self._name = None
@@ -95,6 +101,7 @@ class UpdateNodePoolDetails(object):
         self._node_source_details = None
         self._ssh_public_key = None
         self._node_shape = None
+        self._node_shape_config = None
 
     @property
     def name(self):
@@ -353,6 +360,30 @@ class UpdateNodePoolDetails(object):
         :type: str
         """
         self._node_shape = node_shape
+
+    @property
+    def node_shape_config(self):
+        """
+        Gets the node_shape_config of this UpdateNodePoolDetails.
+        Specify the configuration of the shape to launch nodes in the node pool.
+
+
+        :return: The node_shape_config of this UpdateNodePoolDetails.
+        :rtype: UpdateNodeShapeConfigDetails
+        """
+        return self._node_shape_config
+
+    @node_shape_config.setter
+    def node_shape_config(self, node_shape_config):
+        """
+        Sets the node_shape_config of this UpdateNodePoolDetails.
+        Specify the configuration of the shape to launch nodes in the node pool.
+
+
+        :param node_shape_config: The node_shape_config of this UpdateNodePoolDetails.
+        :type: UpdateNodeShapeConfigDetails
+        """
+        self._node_shape_config = node_shape_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

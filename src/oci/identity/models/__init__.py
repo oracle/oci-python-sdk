@@ -52,6 +52,7 @@ from .mfa_totp_device import MfaTotpDevice
 from .mfa_totp_device_summary import MfaTotpDeviceSummary
 from .mfa_totp_token import MfaTotpToken
 from .move_compartment_details import MoveCompartmentDetails
+from .network_policy import NetworkPolicy
 from .network_sources import NetworkSources
 from .network_sources_summary import NetworkSourcesSummary
 from .network_sources_virtual_source_list import NetworkSourcesVirtualSourceList
@@ -158,6 +159,7 @@ identity_type_mapping = {
     "MfaTotpDeviceSummary": MfaTotpDeviceSummary,
     "MfaTotpToken": MfaTotpToken,
     "MoveCompartmentDetails": MoveCompartmentDetails,
+    "NetworkPolicy": NetworkPolicy,
     "NetworkSources": NetworkSources,
     "NetworkSourcesSummary": NetworkSourcesSummary,
     "NetworkSourcesVirtualSourceList": NetworkSourcesVirtualSourceList,

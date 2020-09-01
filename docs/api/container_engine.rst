@@ -30,6 +30,7 @@ Container Engine
     oci.container_engine.models.CreateClusterKubeconfigContentDetails
     oci.container_engine.models.CreateNodePoolDetails
     oci.container_engine.models.CreateNodePoolNodeConfigDetails
+    oci.container_engine.models.CreateNodeShapeConfigDetails
     oci.container_engine.models.KeyValue
     oci.container_engine.models.KubernetesNetworkConfig
     oci.container_engine.models.Node
@@ -39,6 +40,7 @@ Container Engine
     oci.container_engine.models.NodePoolOptions
     oci.container_engine.models.NodePoolPlacementConfigDetails
     oci.container_engine.models.NodePoolSummary
+    oci.container_engine.models.NodeShapeConfig
     oci.container_engine.models.NodeSourceDetails
     oci.container_engine.models.NodeSourceOption
     oci.container_engine.models.NodeSourceViaImageDetails
@@ -47,6 +49,7 @@ Container Engine
     oci.container_engine.models.UpdateClusterOptionsDetails
     oci.container_engine.models.UpdateNodePoolDetails
     oci.container_engine.models.UpdateNodePoolNodeConfigDetails
+    oci.container_engine.models.UpdateNodeShapeConfigDetails
     oci.container_engine.models.WorkRequest
     oci.container_engine.models.WorkRequestError
     oci.container_engine.models.WorkRequestLogEntry

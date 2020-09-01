@@ -1372,9 +1372,9 @@ class ShowOCIOutput(object):
                 self.print_header("OIC Native", 2)
                 for val in paas_services['oic']:
                     print(self.taba + val['display_name'] + ", (" + val['integration_instance_type'] + "), Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
-                    print(self.tabs + "Pack : " + val['message_packs'] + ", BYOL: " + str(val['is_byol']))
+                    print(self.tabs + "Pack : " + val['message_packs'] + ", " + ("BYOL License" if val['is_byol'] else "License Included"))
                     print(self.tabs + "URL  : " + val['instance_url'])
-                print("")
+                    print("")
 
             # OAC
             if 'oac' in paas_services:
@@ -1386,7 +1386,7 @@ class ShowOCIOutput(object):
                     print(self.tabs + "Email: " + val['email_notification'] + ", License: " + str(val['license_type']) + ", Capacity: " + val[
                         'capacity_type'] + ":" + val['capacity_value'])
                     print(self.tabs + "URL  : " + val['service_url'])
-                print("")
+                    print("")
 
             # OCE
             if 'oce' in paas_services:
@@ -1397,7 +1397,7 @@ class ShowOCIOutput(object):
                     if 'pod' in val['service']:
                         pod = val['service']['pod']
                         print(self.tabs + "Pod: " + str(pod['name']) + " (" + str(pod['version']) + ") ")
-                print("")
+                    print("")
 
         except Exception as e:
             self.__print_error("__print_paas_services_main", e)

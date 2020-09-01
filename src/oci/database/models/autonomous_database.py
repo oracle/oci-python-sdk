@@ -137,6 +137,30 @@ class AutonomousDatabase(object):
     #: This constant has a value of "FAILED"
     DATA_SAFE_STATUS_FAILED = "FAILED"
 
+    #: A constant which can be used with the open_mode property of a AutonomousDatabase.
+    #: This constant has a value of "READ_ONLY"
+    OPEN_MODE_READ_ONLY = "READ_ONLY"
+
+    #: A constant which can be used with the open_mode property of a AutonomousDatabase.
+    #: This constant has a value of "READ_WRITE"
+    OPEN_MODE_READ_WRITE = "READ_WRITE"
+
+    #: A constant which can be used with the refreshable_status property of a AutonomousDatabase.
+    #: This constant has a value of "REFRESHING"
+    REFRESHABLE_STATUS_REFRESHING = "REFRESHING"
+
+    #: A constant which can be used with the refreshable_status property of a AutonomousDatabase.
+    #: This constant has a value of "NOT_REFRESHING"
+    REFRESHABLE_STATUS_NOT_REFRESHING = "NOT_REFRESHING"
+
+    #: A constant which can be used with the refreshable_mode property of a AutonomousDatabase.
+    #: This constant has a value of "AUTOMATIC"
+    REFRESHABLE_MODE_AUTOMATIC = "AUTOMATIC"
+
+    #: A constant which can be used with the refreshable_mode property of a AutonomousDatabase.
+    #: This constant has a value of "MANUAL"
+    REFRESHABLE_MODE_MANUAL = "MANUAL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AutonomousDatabase object with values from keyword arguments.
@@ -296,6 +320,44 @@ class AutonomousDatabase(object):
             The value to assign to the time_maintenance_end property of this AutonomousDatabase.
         :type time_maintenance_end: datetime
 
+        :param is_refreshable_clone:
+            The value to assign to the is_refreshable_clone property of this AutonomousDatabase.
+        :type is_refreshable_clone: bool
+
+        :param time_of_last_refresh:
+            The value to assign to the time_of_last_refresh property of this AutonomousDatabase.
+        :type time_of_last_refresh: datetime
+
+        :param time_of_last_refresh_point:
+            The value to assign to the time_of_last_refresh_point property of this AutonomousDatabase.
+        :type time_of_last_refresh_point: datetime
+
+        :param time_of_next_refresh:
+            The value to assign to the time_of_next_refresh property of this AutonomousDatabase.
+        :type time_of_next_refresh: datetime
+
+        :param open_mode:
+            The value to assign to the open_mode property of this AutonomousDatabase.
+            Allowed values for this property are: "READ_ONLY", "READ_WRITE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type open_mode: str
+
+        :param refreshable_status:
+            The value to assign to the refreshable_status property of this AutonomousDatabase.
+            Allowed values for this property are: "REFRESHING", "NOT_REFRESHING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type refreshable_status: str
+
+        :param refreshable_mode:
+            The value to assign to the refreshable_mode property of this AutonomousDatabase.
+            Allowed values for this property are: "AUTOMATIC", "MANUAL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type refreshable_mode: str
+
+        :param source_id:
+            The value to assign to the source_id property of this AutonomousDatabase.
+        :type source_id: str
+
         :param time_of_last_switchover:
             The value to assign to the time_of_last_switchover property of this AutonomousDatabase.
         :type time_of_last_switchover: datetime
@@ -358,6 +420,14 @@ class AutonomousDatabase(object):
             'data_safe_status': 'str',
             'time_maintenance_begin': 'datetime',
             'time_maintenance_end': 'datetime',
+            'is_refreshable_clone': 'bool',
+            'time_of_last_refresh': 'datetime',
+            'time_of_last_refresh_point': 'datetime',
+            'time_of_next_refresh': 'datetime',
+            'open_mode': 'str',
+            'refreshable_status': 'str',
+            'refreshable_mode': 'str',
+            'source_id': 'str',
             'time_of_last_switchover': 'datetime',
             'time_of_last_failover': 'datetime',
             'is_data_guard_enabled': 'bool',
@@ -403,6 +473,14 @@ class AutonomousDatabase(object):
             'data_safe_status': 'dataSafeStatus',
             'time_maintenance_begin': 'timeMaintenanceBegin',
             'time_maintenance_end': 'timeMaintenanceEnd',
+            'is_refreshable_clone': 'isRefreshableClone',
+            'time_of_last_refresh': 'timeOfLastRefresh',
+            'time_of_last_refresh_point': 'timeOfLastRefreshPoint',
+            'time_of_next_refresh': 'timeOfNextRefresh',
+            'open_mode': 'openMode',
+            'refreshable_status': 'refreshableStatus',
+            'refreshable_mode': 'refreshableMode',
+            'source_id': 'sourceId',
             'time_of_last_switchover': 'timeOfLastSwitchover',
             'time_of_last_failover': 'timeOfLastFailover',
             'is_data_guard_enabled': 'isDataGuardEnabled',
@@ -447,6 +525,14 @@ class AutonomousDatabase(object):
         self._data_safe_status = None
         self._time_maintenance_begin = None
         self._time_maintenance_end = None
+        self._is_refreshable_clone = None
+        self._time_of_last_refresh = None
+        self._time_of_last_refresh_point = None
+        self._time_of_next_refresh = None
+        self._open_mode = None
+        self._refreshable_status = None
+        self._refreshable_mode = None
+        self._source_id = None
         self._time_of_last_switchover = None
         self._time_of_last_failover = None
         self._is_data_guard_enabled = None
@@ -1445,6 +1531,220 @@ class AutonomousDatabase(object):
         :type: datetime
         """
         self._time_maintenance_end = time_maintenance_end
+
+    @property
+    def is_refreshable_clone(self):
+        """
+        Gets the is_refreshable_clone of this AutonomousDatabase.
+        Indicates whether the Autonomous Database is a refreshable clone.
+
+
+        :return: The is_refreshable_clone of this AutonomousDatabase.
+        :rtype: bool
+        """
+        return self._is_refreshable_clone
+
+    @is_refreshable_clone.setter
+    def is_refreshable_clone(self, is_refreshable_clone):
+        """
+        Sets the is_refreshable_clone of this AutonomousDatabase.
+        Indicates whether the Autonomous Database is a refreshable clone.
+
+
+        :param is_refreshable_clone: The is_refreshable_clone of this AutonomousDatabase.
+        :type: bool
+        """
+        self._is_refreshable_clone = is_refreshable_clone
+
+    @property
+    def time_of_last_refresh(self):
+        """
+        Gets the time_of_last_refresh of this AutonomousDatabase.
+        The date and time when last refresh happened.
+
+
+        :return: The time_of_last_refresh of this AutonomousDatabase.
+        :rtype: datetime
+        """
+        return self._time_of_last_refresh
+
+    @time_of_last_refresh.setter
+    def time_of_last_refresh(self, time_of_last_refresh):
+        """
+        Sets the time_of_last_refresh of this AutonomousDatabase.
+        The date and time when last refresh happened.
+
+
+        :param time_of_last_refresh: The time_of_last_refresh of this AutonomousDatabase.
+        :type: datetime
+        """
+        self._time_of_last_refresh = time_of_last_refresh
+
+    @property
+    def time_of_last_refresh_point(self):
+        """
+        Gets the time_of_last_refresh_point of this AutonomousDatabase.
+        The refresh point timestamp (UTC). The refresh point is the time to which the database was most recently refreshed. Data created after the refresh point is not included in the refresh.
+
+
+        :return: The time_of_last_refresh_point of this AutonomousDatabase.
+        :rtype: datetime
+        """
+        return self._time_of_last_refresh_point
+
+    @time_of_last_refresh_point.setter
+    def time_of_last_refresh_point(self, time_of_last_refresh_point):
+        """
+        Sets the time_of_last_refresh_point of this AutonomousDatabase.
+        The refresh point timestamp (UTC). The refresh point is the time to which the database was most recently refreshed. Data created after the refresh point is not included in the refresh.
+
+
+        :param time_of_last_refresh_point: The time_of_last_refresh_point of this AutonomousDatabase.
+        :type: datetime
+        """
+        self._time_of_last_refresh_point = time_of_last_refresh_point
+
+    @property
+    def time_of_next_refresh(self):
+        """
+        Gets the time_of_next_refresh of this AutonomousDatabase.
+        The date and time of next refresh.
+
+
+        :return: The time_of_next_refresh of this AutonomousDatabase.
+        :rtype: datetime
+        """
+        return self._time_of_next_refresh
+
+    @time_of_next_refresh.setter
+    def time_of_next_refresh(self, time_of_next_refresh):
+        """
+        Sets the time_of_next_refresh of this AutonomousDatabase.
+        The date and time of next refresh.
+
+
+        :param time_of_next_refresh: The time_of_next_refresh of this AutonomousDatabase.
+        :type: datetime
+        """
+        self._time_of_next_refresh = time_of_next_refresh
+
+    @property
+    def open_mode(self):
+        """
+        Gets the open_mode of this AutonomousDatabase.
+        The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+
+        Allowed values for this property are: "READ_ONLY", "READ_WRITE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The open_mode of this AutonomousDatabase.
+        :rtype: str
+        """
+        return self._open_mode
+
+    @open_mode.setter
+    def open_mode(self, open_mode):
+        """
+        Sets the open_mode of this AutonomousDatabase.
+        The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+
+
+        :param open_mode: The open_mode of this AutonomousDatabase.
+        :type: str
+        """
+        allowed_values = ["READ_ONLY", "READ_WRITE"]
+        if not value_allowed_none_or_none_sentinel(open_mode, allowed_values):
+            open_mode = 'UNKNOWN_ENUM_VALUE'
+        self._open_mode = open_mode
+
+    @property
+    def refreshable_status(self):
+        """
+        Gets the refreshable_status of this AutonomousDatabase.
+        The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
+
+        Allowed values for this property are: "REFRESHING", "NOT_REFRESHING", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The refreshable_status of this AutonomousDatabase.
+        :rtype: str
+        """
+        return self._refreshable_status
+
+    @refreshable_status.setter
+    def refreshable_status(self, refreshable_status):
+        """
+        Sets the refreshable_status of this AutonomousDatabase.
+        The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
+
+
+        :param refreshable_status: The refreshable_status of this AutonomousDatabase.
+        :type: str
+        """
+        allowed_values = ["REFRESHING", "NOT_REFRESHING"]
+        if not value_allowed_none_or_none_sentinel(refreshable_status, allowed_values):
+            refreshable_status = 'UNKNOWN_ENUM_VALUE'
+        self._refreshable_status = refreshable_status
+
+    @property
+    def refreshable_mode(self):
+        """
+        Gets the refreshable_mode of this AutonomousDatabase.
+        The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+
+        Allowed values for this property are: "AUTOMATIC", "MANUAL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The refreshable_mode of this AutonomousDatabase.
+        :rtype: str
+        """
+        return self._refreshable_mode
+
+    @refreshable_mode.setter
+    def refreshable_mode(self, refreshable_mode):
+        """
+        Sets the refreshable_mode of this AutonomousDatabase.
+        The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+
+
+        :param refreshable_mode: The refreshable_mode of this AutonomousDatabase.
+        :type: str
+        """
+        allowed_values = ["AUTOMATIC", "MANUAL"]
+        if not value_allowed_none_or_none_sentinel(refreshable_mode, allowed_values):
+            refreshable_mode = 'UNKNOWN_ENUM_VALUE'
+        self._refreshable_mode = refreshable_mode
+
+    @property
+    def source_id(self):
+        """
+        Gets the source_id of this AutonomousDatabase.
+        The `OCID`__ of the source Autonomous Database that was cloned to create the current Autonomous Database.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The source_id of this AutonomousDatabase.
+        :rtype: str
+        """
+        return self._source_id
+
+    @source_id.setter
+    def source_id(self, source_id):
+        """
+        Sets the source_id of this AutonomousDatabase.
+        The `OCID`__ of the source Autonomous Database that was cloned to create the current Autonomous Database.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param source_id: The source_id of this AutonomousDatabase.
+        :type: str
+        """
+        self._source_id = source_id
 
     @property
     def time_of_last_switchover(self):

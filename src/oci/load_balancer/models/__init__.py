@@ -26,6 +26,7 @@ from .create_listener_details import CreateListenerDetails
 from .create_load_balancer_details import CreateLoadBalancerDetails
 from .create_path_route_set_details import CreatePathRouteSetDetails
 from .create_rule_set_details import CreateRuleSetDetails
+from .create_ssl_cipher_suite_details import CreateSSLCipherSuiteDetails
 from .extend_http_request_header_value_rule import ExtendHttpRequestHeaderValueRule
 from .extend_http_response_header_value_rule import ExtendHttpResponseHeaderValueRule
 from .health_check_result import HealthCheckResult
@@ -58,6 +59,8 @@ from .rule import Rule
 from .rule_condition import RuleCondition
 from .rule_set import RuleSet
 from .rule_set_details import RuleSetDetails
+from .ssl_cipher_suite import SSLCipherSuite
+from .ssl_cipher_suite_details import SSLCipherSuiteDetails
 from .ssl_configuration import SSLConfiguration
 from .ssl_configuration_details import SSLConfigurationDetails
 from .session_persistence_configuration_details import SessionPersistenceConfigurationDetails
@@ -73,6 +76,7 @@ from .update_load_balancer_details import UpdateLoadBalancerDetails
 from .update_network_security_groups_details import UpdateNetworkSecurityGroupsDetails
 from .update_path_route_set_details import UpdatePathRouteSetDetails
 from .update_rule_set_details import UpdateRuleSetDetails
+from .update_ssl_cipher_suite_details import UpdateSSLCipherSuiteDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 
@@ -100,6 +104,7 @@ load_balancer_type_mapping = {
     "CreateLoadBalancerDetails": CreateLoadBalancerDetails,
     "CreatePathRouteSetDetails": CreatePathRouteSetDetails,
     "CreateRuleSetDetails": CreateRuleSetDetails,
+    "CreateSSLCipherSuiteDetails": CreateSSLCipherSuiteDetails,
     "ExtendHttpRequestHeaderValueRule": ExtendHttpRequestHeaderValueRule,
     "ExtendHttpResponseHeaderValueRule": ExtendHttpResponseHeaderValueRule,
     "HealthCheckResult": HealthCheckResult,
@@ -132,6 +137,8 @@ load_balancer_type_mapping = {
     "RuleCondition": RuleCondition,
     "RuleSet": RuleSet,
     "RuleSetDetails": RuleSetDetails,
+    "SSLCipherSuite": SSLCipherSuite,
+    "SSLCipherSuiteDetails": SSLCipherSuiteDetails,
     "SSLConfiguration": SSLConfiguration,
     "SSLConfigurationDetails": SSLConfigurationDetails,
     "SessionPersistenceConfigurationDetails": SessionPersistenceConfigurationDetails,
@@ -147,6 +154,7 @@ load_balancer_type_mapping = {
     "UpdateNetworkSecurityGroupsDetails": UpdateNetworkSecurityGroupsDetails,
     "UpdatePathRouteSetDetails": UpdatePathRouteSetDetails,
     "UpdateRuleSetDetails": UpdateRuleSetDetails,
+    "UpdateSSLCipherSuiteDetails": UpdateSSLCipherSuiteDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError
 }

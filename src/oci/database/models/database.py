@@ -128,6 +128,10 @@ class Database(object):
             The value to assign to the connection_strings property of this Database.
         :type connection_strings: DatabaseConnectionStrings
 
+        :param source_database_point_in_time_recovery_timestamp:
+            The value to assign to the source_database_point_in_time_recovery_timestamp property of this Database.
+        :type source_database_point_in_time_recovery_timestamp: datetime
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -148,7 +152,8 @@ class Database(object):
             'db_backup_config': 'DbBackupConfig',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'connection_strings': 'DatabaseConnectionStrings'
+            'connection_strings': 'DatabaseConnectionStrings',
+            'source_database_point_in_time_recovery_timestamp': 'datetime'
         }
 
         self.attribute_map = {
@@ -170,7 +175,8 @@ class Database(object):
             'db_backup_config': 'dbBackupConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'connection_strings': 'connectionStrings'
+            'connection_strings': 'connectionStrings',
+            'source_database_point_in_time_recovery_timestamp': 'sourceDatabasePointInTimeRecoveryTimestamp'
         }
 
         self._id = None
@@ -192,6 +198,7 @@ class Database(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._connection_strings = None
+        self._source_database_point_in_time_recovery_timestamp = None
 
     @property
     def id(self):
@@ -686,6 +693,34 @@ class Database(object):
         :type: DatabaseConnectionStrings
         """
         self._connection_strings = connection_strings
+
+    @property
+    def source_database_point_in_time_recovery_timestamp(self):
+        """
+        Gets the source_database_point_in_time_recovery_timestamp of this Database.
+        Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in `RFC 3339`__
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :return: The source_database_point_in_time_recovery_timestamp of this Database.
+        :rtype: datetime
+        """
+        return self._source_database_point_in_time_recovery_timestamp
+
+    @source_database_point_in_time_recovery_timestamp.setter
+    def source_database_point_in_time_recovery_timestamp(self, source_database_point_in_time_recovery_timestamp):
+        """
+        Sets the source_database_point_in_time_recovery_timestamp of this Database.
+        Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in `RFC 3339`__
+
+        __ https://tools.ietf.org/rfc/rfc3339
+
+
+        :param source_database_point_in_time_recovery_timestamp: The source_database_point_in_time_recovery_timestamp of this Database.
+        :type: datetime
+        """
+        self._source_database_point_in_time_recovery_timestamp = source_database_point_in_time_recovery_timestamp
 
     def __repr__(self):
         return formatted_flat_dict(self)

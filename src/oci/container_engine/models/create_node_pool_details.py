@@ -50,6 +50,10 @@ class CreateNodePoolDetails(object):
             The value to assign to the node_shape property of this CreateNodePoolDetails.
         :type node_shape: str
 
+        :param node_shape_config:
+            The value to assign to the node_shape_config property of this CreateNodePoolDetails.
+        :type node_shape_config: CreateNodeShapeConfigDetails
+
         :param initial_node_labels:
             The value to assign to the initial_node_labels property of this CreateNodePoolDetails.
         :type initial_node_labels: list[KeyValue]
@@ -80,6 +84,7 @@ class CreateNodePoolDetails(object):
             'node_image_name': 'str',
             'node_source_details': 'NodeSourceDetails',
             'node_shape': 'str',
+            'node_shape_config': 'CreateNodeShapeConfigDetails',
             'initial_node_labels': 'list[KeyValue]',
             'ssh_public_key': 'str',
             'quantity_per_subnet': 'int',
@@ -96,6 +101,7 @@ class CreateNodePoolDetails(object):
             'node_image_name': 'nodeImageName',
             'node_source_details': 'nodeSourceDetails',
             'node_shape': 'nodeShape',
+            'node_shape_config': 'nodeShapeConfig',
             'initial_node_labels': 'initialNodeLabels',
             'ssh_public_key': 'sshPublicKey',
             'quantity_per_subnet': 'quantityPerSubnet',
@@ -111,6 +117,7 @@ class CreateNodePoolDetails(object):
         self._node_image_name = None
         self._node_source_details = None
         self._node_shape = None
+        self._node_shape_config = None
         self._initial_node_labels = None
         self._ssh_public_key = None
         self._quantity_per_subnet = None
@@ -312,6 +319,30 @@ class CreateNodePoolDetails(object):
         :type: str
         """
         self._node_shape = node_shape
+
+    @property
+    def node_shape_config(self):
+        """
+        Gets the node_shape_config of this CreateNodePoolDetails.
+        Specify the configuration of the shape to launch nodes in the node pool.
+
+
+        :return: The node_shape_config of this CreateNodePoolDetails.
+        :rtype: CreateNodeShapeConfigDetails
+        """
+        return self._node_shape_config
+
+    @node_shape_config.setter
+    def node_shape_config(self, node_shape_config):
+        """
+        Sets the node_shape_config of this CreateNodePoolDetails.
+        Specify the configuration of the shape to launch nodes in the node pool.
+
+
+        :param node_shape_config: The node_shape_config of this CreateNodePoolDetails.
+        :type: CreateNodeShapeConfigDetails
+        """
+        self._node_shape_config = node_shape_config
 
     @property
     def initial_node_labels(self):
