@@ -35,6 +35,14 @@ class UpdateAutonomousDatabaseDetails(object):
     #: This constant has a value of "BRING_YOUR_OWN_LICENSE"
     LICENSE_MODEL_BRING_YOUR_OWN_LICENSE = "BRING_YOUR_OWN_LICENSE"
 
+    #: A constant which can be used with the refreshable_mode property of a UpdateAutonomousDatabaseDetails.
+    #: This constant has a value of "AUTOMATIC"
+    REFRESHABLE_MODE_AUTOMATIC = "AUTOMATIC"
+
+    #: A constant which can be used with the refreshable_mode property of a UpdateAutonomousDatabaseDetails.
+    #: This constant has a value of "MANUAL"
+    REFRESHABLE_MODE_MANUAL = "MANUAL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateAutonomousDatabaseDetails object with values from keyword arguments.
@@ -90,6 +98,15 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the is_auto_scaling_enabled property of this UpdateAutonomousDatabaseDetails.
         :type is_auto_scaling_enabled: bool
 
+        :param is_refreshable_clone:
+            The value to assign to the is_refreshable_clone property of this UpdateAutonomousDatabaseDetails.
+        :type is_refreshable_clone: bool
+
+        :param refreshable_mode:
+            The value to assign to the refreshable_mode property of this UpdateAutonomousDatabaseDetails.
+            Allowed values for this property are: "AUTOMATIC", "MANUAL"
+        :type refreshable_mode: str
+
         :param is_data_guard_enabled:
             The value to assign to the is_data_guard_enabled property of this UpdateAutonomousDatabaseDetails.
         :type is_data_guard_enabled: bool
@@ -124,6 +141,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'license_model': 'str',
             'whitelisted_ips': 'list[str]',
             'is_auto_scaling_enabled': 'bool',
+            'is_refreshable_clone': 'bool',
+            'refreshable_mode': 'str',
             'is_data_guard_enabled': 'bool',
             'db_version': 'str',
             'subnet_id': 'str',
@@ -144,6 +163,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'license_model': 'licenseModel',
             'whitelisted_ips': 'whitelistedIps',
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
+            'is_refreshable_clone': 'isRefreshableClone',
+            'refreshable_mode': 'refreshableMode',
             'is_data_guard_enabled': 'isDataGuardEnabled',
             'db_version': 'dbVersion',
             'subnet_id': 'subnetId',
@@ -163,6 +184,8 @@ class UpdateAutonomousDatabaseDetails(object):
         self._license_model = None
         self._whitelisted_ips = None
         self._is_auto_scaling_enabled = None
+        self._is_refreshable_clone = None
+        self._refreshable_mode = None
         self._is_data_guard_enabled = None
         self._db_version = None
         self._subnet_id = None
@@ -524,6 +547,62 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: bool
         """
         self._is_auto_scaling_enabled = is_auto_scaling_enabled
+
+    @property
+    def is_refreshable_clone(self):
+        """
+        Gets the is_refreshable_clone of this UpdateAutonomousDatabaseDetails.
+        Indicates whether the Autonomous Database is a refreshable clone.
+
+
+        :return: The is_refreshable_clone of this UpdateAutonomousDatabaseDetails.
+        :rtype: bool
+        """
+        return self._is_refreshable_clone
+
+    @is_refreshable_clone.setter
+    def is_refreshable_clone(self, is_refreshable_clone):
+        """
+        Sets the is_refreshable_clone of this UpdateAutonomousDatabaseDetails.
+        Indicates whether the Autonomous Database is a refreshable clone.
+
+
+        :param is_refreshable_clone: The is_refreshable_clone of this UpdateAutonomousDatabaseDetails.
+        :type: bool
+        """
+        self._is_refreshable_clone = is_refreshable_clone
+
+    @property
+    def refreshable_mode(self):
+        """
+        Gets the refreshable_mode of this UpdateAutonomousDatabaseDetails.
+        The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+
+        Allowed values for this property are: "AUTOMATIC", "MANUAL"
+
+
+        :return: The refreshable_mode of this UpdateAutonomousDatabaseDetails.
+        :rtype: str
+        """
+        return self._refreshable_mode
+
+    @refreshable_mode.setter
+    def refreshable_mode(self, refreshable_mode):
+        """
+        Sets the refreshable_mode of this UpdateAutonomousDatabaseDetails.
+        The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
+
+
+        :param refreshable_mode: The refreshable_mode of this UpdateAutonomousDatabaseDetails.
+        :type: str
+        """
+        allowed_values = ["AUTOMATIC", "MANUAL"]
+        if not value_allowed_none_or_none_sentinel(refreshable_mode, allowed_values):
+            raise ValueError(
+                "Invalid value for `refreshable_mode`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._refreshable_mode = refreshable_mode
 
     @property
     def is_data_guard_enabled(self):

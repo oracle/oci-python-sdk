@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MaintenanceRun(object):
     """
-    Details of a Maintenance Run.
+    Details of a maintenance run.
     """
 
     #: A constant which can be used with the lifecycle_state property of a MaintenanceRun.
@@ -193,7 +193,7 @@ class MaintenanceRun(object):
     def id(self):
         """
         **[Required]** Gets the id of this MaintenanceRun.
-        The OCID of the Maintenance Run.
+        The OCID of the maintenance run.
 
 
         :return: The id of this MaintenanceRun.
@@ -205,7 +205,7 @@ class MaintenanceRun(object):
     def id(self, id):
         """
         Sets the id of this MaintenanceRun.
-        The OCID of the Maintenance Run.
+        The OCID of the maintenance run.
 
 
         :param id: The id of this MaintenanceRun.
@@ -241,7 +241,7 @@ class MaintenanceRun(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this MaintenanceRun.
-        The user-friendly name for the Maintenance Run.
+        The user-friendly name for the maintenance run.
 
 
         :return: The display_name of this MaintenanceRun.
@@ -253,7 +253,7 @@ class MaintenanceRun(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this MaintenanceRun.
-        The user-friendly name for the Maintenance Run.
+        The user-friendly name for the maintenance run.
 
 
         :param display_name: The display_name of this MaintenanceRun.
@@ -265,7 +265,7 @@ class MaintenanceRun(object):
     def description(self):
         """
         Gets the description of this MaintenanceRun.
-        The text describing this Maintenance Run.
+        Description of the maintenance run.
 
 
         :return: The description of this MaintenanceRun.
@@ -277,7 +277,7 @@ class MaintenanceRun(object):
     def description(self, description):
         """
         Sets the description of this MaintenanceRun.
-        The text describing this Maintenance Run.
+        Description of the maintenance run.
 
 
         :param description: The description of this MaintenanceRun.
@@ -289,7 +289,7 @@ class MaintenanceRun(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this MaintenanceRun.
-        The current state of the Maintenance Run.
+        The current state of the maintenance run.
 
         Allowed values for this property are: "SCHEDULED", "IN_PROGRESS", "SUCCEEDED", "SKIPPED", "FAILED", "UPDATING", "DELETING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -304,7 +304,7 @@ class MaintenanceRun(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this MaintenanceRun.
-        The current state of the Maintenance Run.
+        The current state of the maintenance run.
 
 
         :param lifecycle_state: The lifecycle_state of this MaintenanceRun.
@@ -343,7 +343,7 @@ class MaintenanceRun(object):
     def time_scheduled(self):
         """
         **[Required]** Gets the time_scheduled of this MaintenanceRun.
-        The date and time the Maintenance Run is scheduled for.
+        The date and time the maintenance run is scheduled to occur.
 
 
         :return: The time_scheduled of this MaintenanceRun.
@@ -355,7 +355,7 @@ class MaintenanceRun(object):
     def time_scheduled(self, time_scheduled):
         """
         Sets the time_scheduled of this MaintenanceRun.
-        The date and time the Maintenance Run is scheduled for.
+        The date and time the maintenance run is scheduled to occur.
 
 
         :param time_scheduled: The time_scheduled of this MaintenanceRun.
@@ -367,7 +367,7 @@ class MaintenanceRun(object):
     def time_started(self):
         """
         Gets the time_started of this MaintenanceRun.
-        The date and time the Maintenance Run starts.
+        The date and time the maintenance run starts.
 
 
         :return: The time_started of this MaintenanceRun.
@@ -379,7 +379,7 @@ class MaintenanceRun(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this MaintenanceRun.
-        The date and time the Maintenance Run starts.
+        The date and time the maintenance run starts.
 
 
         :param time_started: The time_started of this MaintenanceRun.
@@ -391,7 +391,7 @@ class MaintenanceRun(object):
     def time_ended(self):
         """
         Gets the time_ended of this MaintenanceRun.
-        The date and time the Maintenance Run was completed.
+        The date and time the maintenance run was completed.
 
 
         :return: The time_ended of this MaintenanceRun.
@@ -403,7 +403,7 @@ class MaintenanceRun(object):
     def time_ended(self, time_ended):
         """
         Sets the time_ended of this MaintenanceRun.
-        The date and time the Maintenance Run was completed.
+        The date and time the maintenance run was completed.
 
 
         :param time_ended: The time_ended of this MaintenanceRun.
@@ -415,7 +415,7 @@ class MaintenanceRun(object):
     def target_resource_type(self):
         """
         Gets the target_resource_type of this MaintenanceRun.
-        The type of the target resource on which the Maintenance Run occurs.
+        The type of the target resource on which the maintenance run occurs.
 
         Allowed values for this property are: "AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -430,7 +430,7 @@ class MaintenanceRun(object):
     def target_resource_type(self, target_resource_type):
         """
         Sets the target_resource_type of this MaintenanceRun.
-        The type of the target resource on which the Maintenance Run occurs.
+        The type of the target resource on which the maintenance run occurs.
 
 
         :param target_resource_type: The target_resource_type of this MaintenanceRun.
@@ -445,7 +445,7 @@ class MaintenanceRun(object):
     def target_resource_id(self):
         """
         Gets the target_resource_id of this MaintenanceRun.
-        The ID of the target resource on which the Maintenance Run occurs.
+        The ID of the target resource on which the maintenance run occurs.
 
 
         :return: The target_resource_id of this MaintenanceRun.
@@ -457,7 +457,7 @@ class MaintenanceRun(object):
     def target_resource_id(self, target_resource_id):
         """
         Sets the target_resource_id of this MaintenanceRun.
-        The ID of the target resource on which the Maintenance Run occurs.
+        The ID of the target resource on which the maintenance run occurs.
 
 
         :param target_resource_id: The target_resource_id of this MaintenanceRun.

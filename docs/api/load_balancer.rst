@@ -40,6 +40,7 @@ Load Balancer
     oci.load_balancer.models.CreateLoadBalancerDetails
     oci.load_balancer.models.CreatePathRouteSetDetails
     oci.load_balancer.models.CreateRuleSetDetails
+    oci.load_balancer.models.CreateSSLCipherSuiteDetails
     oci.load_balancer.models.ExtendHttpRequestHeaderValueRule
     oci.load_balancer.models.ExtendHttpResponseHeaderValueRule
     oci.load_balancer.models.HealthCheckResult
@@ -72,6 +73,8 @@ Load Balancer
     oci.load_balancer.models.RuleCondition
     oci.load_balancer.models.RuleSet
     oci.load_balancer.models.RuleSetDetails
+    oci.load_balancer.models.SSLCipherSuite
+    oci.load_balancer.models.SSLCipherSuiteDetails
     oci.load_balancer.models.SSLConfiguration
     oci.load_balancer.models.SSLConfigurationDetails
     oci.load_balancer.models.SessionPersistenceConfigurationDetails
@@ -87,5 +90,6 @@ Load Balancer
     oci.load_balancer.models.UpdateNetworkSecurityGroupsDetails
     oci.load_balancer.models.UpdatePathRouteSetDetails
     oci.load_balancer.models.UpdateRuleSetDetails
+    oci.load_balancer.models.UpdateSSLCipherSuiteDetails
     oci.load_balancer.models.WorkRequest
     oci.load_balancer.models.WorkRequestError

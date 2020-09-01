@@ -51,12 +51,17 @@ class CreateAutonomousDatabaseBase(object):
     #: This constant has a value of "BACKUP_FROM_TIMESTAMP"
     SOURCE_BACKUP_FROM_TIMESTAMP = "BACKUP_FROM_TIMESTAMP"
 
+    #: A constant which can be used with the source property of a CreateAutonomousDatabaseBase.
+    #: This constant has a value of "CLONE_TO_REFRESHABLE"
+    SOURCE_CLONE_TO_REFRESHABLE = "CLONE_TO_REFRESHABLE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateAutonomousDatabaseBase object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.database.models.CreateAutonomousDatabaseCloneDetails`
+        * :class:`~oci.database.models.CreateRefreshableAutonomousDatabaseCloneDetails`
         * :class:`~oci.database.models.CreateAutonomousDatabaseFromBackupDetails`
         * :class:`~oci.database.models.CreateAutonomousDatabaseFromBackupTimestampDetails`
         * :class:`~oci.database.models.CreateAutonomousDatabaseDetails`
@@ -151,7 +156,7 @@ class CreateAutonomousDatabaseBase(object):
 
         :param source:
             The value to assign to the source property of this CreateAutonomousDatabaseBase.
-            Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP"
+            Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "CLONE_TO_REFRESHABLE"
         :type source: str
 
         """
@@ -238,6 +243,9 @@ class CreateAutonomousDatabaseBase(object):
 
         if type == 'DATABASE':
             return 'CreateAutonomousDatabaseCloneDetails'
+
+        if type == 'CLONE_TO_REFRESHABLE':
+            return 'CreateRefreshableAutonomousDatabaseCloneDetails'
 
         if type == 'BACKUP_FROM_ID':
             return 'CreateAutonomousDatabaseFromBackupDetails'
@@ -417,7 +425,7 @@ class CreateAutonomousDatabaseBase(object):
     @property
     def admin_password(self):
         """
-        **[Required]** Gets the admin_password of this CreateAutonomousDatabaseBase.
+        Gets the admin_password of this CreateAutonomousDatabaseBase.
         The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (\") or the username \"admin\", regardless of casing.
 
 
@@ -875,7 +883,7 @@ class CreateAutonomousDatabaseBase(object):
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
         __ https://docs.cloud.oracle.com/Content/Database/Tasks/adbcloning.htm
 
-        Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP"
+        Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "CLONE_TO_REFRESHABLE"
 
 
         :return: The source of this CreateAutonomousDatabaseBase.
@@ -898,7 +906,7 @@ class CreateAutonomousDatabaseBase(object):
         :param source: The source of this CreateAutonomousDatabaseBase.
         :type: str
         """
-        allowed_values = ["NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP"]
+        allowed_values = ["NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "CLONE_TO_REFRESHABLE"]
         if not value_allowed_none_or_none_sentinel(source, allowed_values):
             raise ValueError(
                 "Invalid value for `source`, must be None or one of {0}"

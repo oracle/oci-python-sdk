@@ -46,6 +46,10 @@ class NodePoolSummary(object):
             The value to assign to the node_image_name property of this NodePoolSummary.
         :type node_image_name: str
 
+        :param node_shape_config:
+            The value to assign to the node_shape_config property of this NodePoolSummary.
+        :type node_shape_config: NodeShapeConfig
+
         :param node_source:
             The value to assign to the node_source property of this NodePoolSummary.
         :type node_source: NodeSourceOption
@@ -87,6 +91,7 @@ class NodePoolSummary(object):
             'kubernetes_version': 'str',
             'node_image_id': 'str',
             'node_image_name': 'str',
+            'node_shape_config': 'NodeShapeConfig',
             'node_source': 'NodeSourceOption',
             'node_source_details': 'NodeSourceDetails',
             'node_shape': 'str',
@@ -105,6 +110,7 @@ class NodePoolSummary(object):
             'kubernetes_version': 'kubernetesVersion',
             'node_image_id': 'nodeImageId',
             'node_image_name': 'nodeImageName',
+            'node_shape_config': 'nodeShapeConfig',
             'node_source': 'nodeSource',
             'node_source_details': 'nodeSourceDetails',
             'node_shape': 'nodeShape',
@@ -122,6 +128,7 @@ class NodePoolSummary(object):
         self._kubernetes_version = None
         self._node_image_id = None
         self._node_image_name = None
+        self._node_shape_config = None
         self._node_source = None
         self._node_source_details = None
         self._node_shape = None
@@ -298,6 +305,30 @@ class NodePoolSummary(object):
         :type: str
         """
         self._node_image_name = node_image_name
+
+    @property
+    def node_shape_config(self):
+        """
+        Gets the node_shape_config of this NodePoolSummary.
+        The shape configuration of the nodes.
+
+
+        :return: The node_shape_config of this NodePoolSummary.
+        :rtype: NodeShapeConfig
+        """
+        return self._node_shape_config
+
+    @node_shape_config.setter
+    def node_shape_config(self, node_shape_config):
+        """
+        Sets the node_shape_config of this NodePoolSummary.
+        The shape configuration of the nodes.
+
+
+        :param node_shape_config: The node_shape_config of this NodePoolSummary.
+        :type: NodeShapeConfig
+        """
+        self._node_shape_config = node_shape_config
 
     @property
     def node_source(self):

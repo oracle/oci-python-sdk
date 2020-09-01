@@ -472,19 +472,6 @@ class Tag(object):
     def validator(self):
         """
         Gets the validator of this Tag.
-        The tag must have a value type, which is specified with a validator. Tags can use either a
-        static value or a list of possible values. Static values are entered by a user applying the tag
-        to a resource. Lists are created by you and the user must apply a value from the list. Lists
-        are validiated.
-
-        If you use the default validiator (or don't define a validator), the user applying the tag
-        enters a value. No additional validation is performed.
-
-        To clear the validator, call UpdateTag with
-        `DefaultTagDefinitionValidator`__.
-
-        __ https://docs.cloud.oracle.com/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator
-
 
         :return: The validator of this Tag.
         :rtype: BaseTagDefinitionValidator
@@ -495,19 +482,6 @@ class Tag(object):
     def validator(self, validator):
         """
         Sets the validator of this Tag.
-        The tag must have a value type, which is specified with a validator. Tags can use either a
-        static value or a list of possible values. Static values are entered by a user applying the tag
-        to a resource. Lists are created by you and the user must apply a value from the list. Lists
-        are validiated.
-
-        If you use the default validiator (or don't define a validator), the user applying the tag
-        enters a value. No additional validation is performed.
-
-        To clear the validator, call UpdateTag with
-        `DefaultTagDefinitionValidator`__.
-
-        __ https://docs.cloud.oracle.com/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator
-
 
         :param validator: The validator of this Tag.
         :type: BaseTagDefinitionValidator

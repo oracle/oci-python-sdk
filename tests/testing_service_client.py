@@ -8,6 +8,7 @@ import requests
 import uuid
 import oci.util as oci_util
 from . import util
+from datetime import datetime
 
 SERVICE_HOSTNAME = 'localhost'
 SERVICE_PORT = '8090'
@@ -158,8 +159,14 @@ class TestingServiceClient:
                 # response_class = 'java.util.List<com.oracle.bmc.{java_package_name}.responses.{api_name}Response>'.format(java_package_name=java_package_name, api_name=api_name)
                 list_responses = []
                 for oci_response in oci_responses:
-                    list_responses.append(self.get_response_dictionary(oci_response, is_delete_operation, 'items'))
-                response_json = util.make_dict_keys_camel_case(list_responses)
+                    # This is for specs that do not adhere to the API guidelines that explicitly model a schema that
+                    # contains a list within the schema.  Example: AnnouncementClient#list_announcements()
+                    if oci_response.request.response_type.startswith('list['):
+                        data_field_name = 'items'
+                    else:
+                        data_field_name = util.camelize(oci_response.request.response_type, False)
+                    list_responses.append(self.get_response_dictionary(oci_response, is_delete_operation, data_field_name))
+                response_json = util.make_dict_keys_camel_case(list_responses, ['freeformTags', 'definedTags', 'systemTags'])
             else:
                 oci_response = oci_responses[0]
                 response_type = oci_response.request.response_type
@@ -175,7 +182,7 @@ class TestingServiceClient:
                 elif response_type in ['list[Message]', 'list[MetricData]']:
                     data_field_name = 'items'
                 response_dict = self.get_response_dictionary(oci_response, is_delete_operation, data_field_name)
-                response_json = util.make_dict_keys_camel_case(response_dict, ['freeformTags', 'definedTags', 'metadata'])
+                response_json = util.make_dict_keys_camel_case(response_dict, ['freeformTags', 'definedTags', 'systemTags'])
 
             data['responseJson'] = json.dumps(response_json)
             data['responseClass'] = response_class
@@ -235,6 +242,43 @@ class TestingServiceClient:
 
         if 'etag' in oci_response.headers:
             response_dict['eTag'] = oci_response.headers['etag']
+
+        # For Analytics API
+        if 'location' in oci_response.headers:
+            response_dict['location'] = oci_response.headers['location']
+
+        # For work requests and/or throttled responses
+        if 'retry-after' in oci_response.headers:
+            time_value = oci_response.headers['retry-after']
+            if '.' in time_value:
+                response_dict['retryAfter'] = float(time_value)
+            else:
+                response_dict['retryAfter'] = int(time_value)
+
+        # For ComputeClient#get_console_history_content
+        if 'opc-bytes-remaining' in oci_response.headers:
+            response_dict['opcBytesRemaining'] = int(oci_response.headers['opc-bytes-remaining'])
+
+        # For DataScienceClient
+        if 'last-modified' in oci_response.headers:
+            # Example format: 'Fri, 6 Mar 2065 12:06:55 GMT'
+            native_datetime = datetime.strptime(oci_response.headers['last-modified'], "%a, %d %b %Y %H:%M:%S %Z")
+            response_dict['lastModified'] = native_datetime.strftime("%Y-%m-%dT%H:%M:%S.000Z")
+        if 'content-disposition' in oci_response.headers:
+            response_dict['contentDisposition'] = oci_response.headers['content-disposition']
+
+        # For DnsClient
+        if 'opc-total-items' in oci_response.headers:
+            response_dict['opcTotalItems'] = int(oci_response.headers['opc-total-items'])
+        # Hack to always add a notModified field for 304 response code support
+        response_dict['notModified'] = False
+
+        # For ObjectStorageClient
+        if 'opc-client-request-id' in oci_response.headers:
+            response_dict['opcClientRequestId'] = oci_response.headers['opc-client-request-id']
+        if 'opc-multipart-md5' in oci_response.headers:
+            response_dict['opcMultipartMd5'] = oci_response.headers['opc-multipart-md5']
+
         return response_dict
 
     def create_session(self):

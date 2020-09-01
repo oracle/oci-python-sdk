@@ -537,8 +537,6 @@ class User(object):
     def capabilities(self):
         """
         Gets the capabilities of this User.
-        Properties indicating how the user is allowed to authenticate.
-
 
         :return: The capabilities of this User.
         :rtype: UserCapabilities
@@ -549,8 +547,6 @@ class User(object):
     def capabilities(self, capabilities):
         """
         Sets the capabilities of this User.
-        Properties indicating how the user is allowed to authenticate.
-
 
         :param capabilities: The capabilities of this User.
         :type: UserCapabilities

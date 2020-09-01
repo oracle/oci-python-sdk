@@ -141,8 +141,12 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
 
         :param source:
             The value to assign to the source property of this LaunchDbSystemFromBackupDetails.
-            Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE"
+            Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE", "DB_SYSTEM"
         :type source: str
+
+        :param private_ip:
+            The value to assign to the private_ip property of this LaunchDbSystemFromBackupDetails.
+        :type private_ip: str
 
         :param db_home:
             The value to assign to the db_home property of this LaunchDbSystemFromBackupDetails.
@@ -188,6 +192,7 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'source': 'str',
+            'private_ip': 'str',
             'db_home': 'CreateDbHomeFromBackupDetails',
             'database_edition': 'str',
             'disk_redundancy': 'str',
@@ -218,6 +223,7 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'source': 'source',
+            'private_ip': 'privateIp',
             'db_home': 'dbHome',
             'database_edition': 'databaseEdition',
             'disk_redundancy': 'diskRedundancy',
@@ -247,6 +253,7 @@ class LaunchDbSystemFromBackupDetails(LaunchDbSystemBase):
         self._freeform_tags = None
         self._defined_tags = None
         self._source = None
+        self._private_ip = None
         self._db_home = None
         self._database_edition = None
         self._disk_redundancy = None

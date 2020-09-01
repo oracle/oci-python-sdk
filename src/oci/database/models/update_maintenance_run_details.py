@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateMaintenanceRunDetails(object):
     """
-    Describes the modification parameters for the Maintenance Run.
+    Describes the modification parameters for the maintenance run.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class UpdateMaintenanceRunDetails(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this UpdateMaintenanceRunDetails.
-        If set to false, skips the Maintenance Run.
+        If `FALSE`, skips the maintenance run.
 
 
         :return: The is_enabled of this UpdateMaintenanceRunDetails.
@@ -63,7 +63,7 @@ class UpdateMaintenanceRunDetails(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this UpdateMaintenanceRunDetails.
-        If set to false, skips the Maintenance Run.
+        If `FALSE`, skips the maintenance run.
 
 
         :param is_enabled: The is_enabled of this UpdateMaintenanceRunDetails.
@@ -75,7 +75,7 @@ class UpdateMaintenanceRunDetails(object):
     def time_scheduled(self):
         """
         Gets the time_scheduled of this UpdateMaintenanceRunDetails.
-        The scheduled date and time of the Maintenance Run to update.
+        The scheduled date and time of the maintenance run to update.
 
 
         :return: The time_scheduled of this UpdateMaintenanceRunDetails.
@@ -87,7 +87,7 @@ class UpdateMaintenanceRunDetails(object):
     def time_scheduled(self, time_scheduled):
         """
         Sets the time_scheduled of this UpdateMaintenanceRunDetails.
-        The scheduled date and time of the Maintenance Run to update.
+        The scheduled date and time of the maintenance run to update.
 
 
         :param time_scheduled: The time_scheduled of this UpdateMaintenanceRunDetails.

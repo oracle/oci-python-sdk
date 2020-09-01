@@ -84,6 +84,11 @@ class X509FederationClient(object):
         self.session_key_supplier = kwargs['session_key_supplier']
         self.leaf_certificate_retriever = kwargs['leaf_certificate_retriever']
 
+        # The default (instance principal) purpose is None
+        self.purpose = None
+        if 'purpose' in kwargs and kwargs['purpose'] is not None:
+            self.purpose = kwargs['purpose']
+
         if 'intermediate_certificate_retrievers' in kwargs and kwargs['intermediate_certificate_retrievers']:
             self.intermediate_certificate_retrievers = kwargs['intermediate_certificate_retrievers']
         else:
@@ -115,10 +120,11 @@ class X509FederationClient(object):
         try:
             self.session_key_supplier.refresh()
             self.leaf_certificate_retriever.refresh()
-
-            updated_tenancy_id = auth_utils.get_tenancy_id_from_certificate(self.leaf_certificate_retriever.get_certificate_as_certificate())
-            if updated_tenancy_id != self.tenancy_id:
-                raise RuntimeError('Unexpected update of tenancy OCID in the leaf certificate. Previous tenancy: {}, Updated: {}'.format(self.tenancy_id, updated_tenancy_id))
+            # for the default (instance principal) purpose, verify tenancy id matches
+            if self.purpose is None:
+                updated_tenancy_id = auth_utils.get_tenancy_id_from_certificate(self.leaf_certificate_retriever.get_certificate_as_certificate())
+                if updated_tenancy_id != self.tenancy_id:
+                    raise RuntimeError('Unexpected update of tenancy OCID in the leaf certificate. Previous tenancy: {}, Updated: {}'.format(self.tenancy_id, updated_tenancy_id))
 
             for retriever in self.intermediate_certificate_retrievers:
                 retriever.refresh()
@@ -133,6 +139,9 @@ class X509FederationClient(object):
             'certificate': auth_utils.sanitize_certificate_string(self.leaf_certificate_retriever.get_certificate_raw()),
             'publicKey': auth_utils.sanitize_certificate_string(self.session_key_supplier.get_key_pair()['public'].public_bytes(Encoding.PEM, PublicFormat.SubjectPublicKeyInfo))
         }
+        # The default (instance principal) purpose is None
+        if self.purpose is not None:
+            request_payload['purpose'] = self.purpose
 
         if self.intermediate_certificate_retrievers:
             retrieved_certs = []

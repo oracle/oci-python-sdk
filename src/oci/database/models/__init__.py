@@ -22,6 +22,7 @@ from .autonomous_database_backup_summary import AutonomousDatabaseBackupSummary
 from .autonomous_database_connection_strings import AutonomousDatabaseConnectionStrings
 from .autonomous_database_connection_urls import AutonomousDatabaseConnectionUrls
 from .autonomous_database_console_token_details import AutonomousDatabaseConsoleTokenDetails
+from .autonomous_database_manual_refresh_details import AutonomousDatabaseManualRefreshDetails
 from .autonomous_database_standby_summary import AutonomousDatabaseStandbySummary
 from .autonomous_database_summary import AutonomousDatabaseSummary
 from .autonomous_database_wallet import AutonomousDatabaseWallet
@@ -66,10 +67,12 @@ from .create_database_details import CreateDatabaseDetails
 from .create_database_from_another_database_details import CreateDatabaseFromAnotherDatabaseDetails
 from .create_database_from_backup import CreateDatabaseFromBackup
 from .create_database_from_backup_details import CreateDatabaseFromBackupDetails
+from .create_database_from_db_system_details import CreateDatabaseFromDbSystemDetails
 from .create_db_home_base import CreateDbHomeBase
 from .create_db_home_details import CreateDbHomeDetails
 from .create_db_home_from_backup_details import CreateDbHomeFromBackupDetails
 from .create_db_home_from_database_details import CreateDbHomeFromDatabaseDetails
+from .create_db_home_from_db_system_details import CreateDbHomeFromDbSystemDetails
 from .create_db_home_with_db_system_id_details import CreateDbHomeWithDbSystemIdDetails
 from .create_db_home_with_db_system_id_from_backup_details import CreateDbHomeWithDbSystemIdFromBackupDetails
 from .create_db_home_with_db_system_id_from_database_details import CreateDbHomeWithDbSystemIdFromDatabaseDetails
@@ -79,6 +82,7 @@ from .create_external_backup_job_details import CreateExternalBackupJobDetails
 from .create_nfs_backup_destination_details import CreateNFSBackupDestinationDetails
 from .create_new_database_details import CreateNewDatabaseDetails
 from .create_recovery_appliance_backup_destination_details import CreateRecoveryApplianceBackupDestinationDetails
+from .create_refreshable_autonomous_database_clone_details import CreateRefreshableAutonomousDatabaseCloneDetails
 from .create_vm_cluster_details import CreateVmClusterDetails
 from .data_guard_association import DataGuardAssociation
 from .data_guard_association_summary import DataGuardAssociationSummary
@@ -115,6 +119,7 @@ from .launch_db_system_base import LaunchDbSystemBase
 from .launch_db_system_details import LaunchDbSystemDetails
 from .launch_db_system_from_backup_details import LaunchDbSystemFromBackupDetails
 from .launch_db_system_from_database_details import LaunchDbSystemFromDatabaseDetails
+from .launch_db_system_from_db_system_details import LaunchDbSystemFromDbSystemDetails
 from .maintenance_run import MaintenanceRun
 from .maintenance_run_summary import MaintenanceRunSummary
 from .maintenance_window import MaintenanceWindow
@@ -177,6 +182,7 @@ database_type_mapping = {
     "AutonomousDatabaseConnectionStrings": AutonomousDatabaseConnectionStrings,
     "AutonomousDatabaseConnectionUrls": AutonomousDatabaseConnectionUrls,
     "AutonomousDatabaseConsoleTokenDetails": AutonomousDatabaseConsoleTokenDetails,
+    "AutonomousDatabaseManualRefreshDetails": AutonomousDatabaseManualRefreshDetails,
     "AutonomousDatabaseStandbySummary": AutonomousDatabaseStandbySummary,
     "AutonomousDatabaseSummary": AutonomousDatabaseSummary,
     "AutonomousDatabaseWallet": AutonomousDatabaseWallet,
@@ -221,10 +227,12 @@ database_type_mapping = {
     "CreateDatabaseFromAnotherDatabaseDetails": CreateDatabaseFromAnotherDatabaseDetails,
     "CreateDatabaseFromBackup": CreateDatabaseFromBackup,
     "CreateDatabaseFromBackupDetails": CreateDatabaseFromBackupDetails,
+    "CreateDatabaseFromDbSystemDetails": CreateDatabaseFromDbSystemDetails,
     "CreateDbHomeBase": CreateDbHomeBase,
     "CreateDbHomeDetails": CreateDbHomeDetails,
     "CreateDbHomeFromBackupDetails": CreateDbHomeFromBackupDetails,
     "CreateDbHomeFromDatabaseDetails": CreateDbHomeFromDatabaseDetails,
+    "CreateDbHomeFromDbSystemDetails": CreateDbHomeFromDbSystemDetails,
     "CreateDbHomeWithDbSystemIdDetails": CreateDbHomeWithDbSystemIdDetails,
     "CreateDbHomeWithDbSystemIdFromBackupDetails": CreateDbHomeWithDbSystemIdFromBackupDetails,
     "CreateDbHomeWithDbSystemIdFromDatabaseDetails": CreateDbHomeWithDbSystemIdFromDatabaseDetails,
@@ -234,6 +242,7 @@ database_type_mapping = {
     "CreateNFSBackupDestinationDetails": CreateNFSBackupDestinationDetails,
     "CreateNewDatabaseDetails": CreateNewDatabaseDetails,
     "CreateRecoveryApplianceBackupDestinationDetails": CreateRecoveryApplianceBackupDestinationDetails,
+    "CreateRefreshableAutonomousDatabaseCloneDetails": CreateRefreshableAutonomousDatabaseCloneDetails,
     "CreateVmClusterDetails": CreateVmClusterDetails,
     "DataGuardAssociation": DataGuardAssociation,
     "DataGuardAssociationSummary": DataGuardAssociationSummary,
@@ -270,6 +279,7 @@ database_type_mapping = {
     "LaunchDbSystemDetails": LaunchDbSystemDetails,
     "LaunchDbSystemFromBackupDetails": LaunchDbSystemFromBackupDetails,
     "LaunchDbSystemFromDatabaseDetails": LaunchDbSystemFromDatabaseDetails,
+    "LaunchDbSystemFromDbSystemDetails": LaunchDbSystemFromDbSystemDetails,
     "MaintenanceRun": MaintenanceRun,
     "MaintenanceRunSummary": MaintenanceRunSummary,
     "MaintenanceWindow": MaintenanceWindow,

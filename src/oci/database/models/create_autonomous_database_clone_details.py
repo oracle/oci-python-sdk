@@ -115,7 +115,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
 
         :param source:
             The value to assign to the source property of this CreateAutonomousDatabaseCloneDetails.
-            Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP"
+            Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "CLONE_TO_REFRESHABLE"
         :type source: str
 
         :param source_id:

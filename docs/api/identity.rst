@@ -66,6 +66,7 @@ Identity
     oci.identity.models.MfaTotpDeviceSummary
     oci.identity.models.MfaTotpToken
     oci.identity.models.MoveCompartmentDetails
+    oci.identity.models.NetworkPolicy
     oci.identity.models.NetworkSources
     oci.identity.models.NetworkSourcesSummary
     oci.identity.models.NetworkSourcesVirtualSourceList

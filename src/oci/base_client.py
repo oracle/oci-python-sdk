@@ -66,6 +66,16 @@ def is_http_log_enabled(is_enabled):
         six.moves.http_client.HTTPConnection.debuglevel = 0
 
 
+def _sanitize_headers_for_requests(headers):
+    # Requests does not accept int or float values headers
+    # Convert int, float and bool to string
+    # Bools are automatically handled with this as bool is a subclass of int
+    for header_name, header_value in six.iteritems(headers):
+        if isinstance(header_value, six.integer_types) or isinstance(header_value, float):
+            headers[header_name] = str(header_value)
+    return headers
+
+
 STREAM_RESPONSE_TYPE = 'stream'
 BYTES_RESPONSE_TYPE = 'bytes'
 
@@ -204,11 +214,8 @@ class BaseClient(object):
 
         header_params = header_params or {}
 
-        # ObjectStorage PutObject and UploadPart require Content-Length as
-        # int, but requests requires it as a string.  All the headers
-        # have been prepared for serialization at this point
-        if header_params.get('Content-Length', missing) is not missing:
-            header_params['Content-Length'] = str(header_params['Content-Length'])
+        # All the headers have been prepared for serialization at this point
+        header_params = _sanitize_headers_for_requests(header_params)
 
         header_params[constants.HEADER_CLIENT_INFO] = USER_INFO
         header_params[constants.HEADER_USER_AGENT] = self.user_agent
