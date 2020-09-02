@@ -43,6 +43,13 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/management_agent/pom.xml</module>
+    <module>poms/loggingsearch/pom.xml</module>
+    <module>poms/sch/pom.xml</module>
+    <module>poms/management_dashboard/pom.xml</module>
+    <module>poms/log_analytics/pom.xml</module>
+    <module>poms/logging/pom.xml</module>
+    <module>poms/loggingingestion/pom.xml</module>
     <module>poms/blockchain/pom.xml</module>
     <module>poms/usage_api/pom.xml</module>
     <module>poms/ocvp/pom.xml</module>

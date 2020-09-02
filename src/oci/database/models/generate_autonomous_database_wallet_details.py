@@ -53,7 +53,13 @@ class GenerateAutonomousDatabaseWalletDetails(object):
     def generate_type(self):
         """
         Gets the generate_type of this GenerateAutonomousDatabaseWalletDetails.
-        The type of wallet to generate. `SINGLE` is used to generate a wallet for a single database. `ALL` is used to generate wallet for all databases in the region.
+        The type of wallet to generate.
+
+        **Shared Exadata infrastructure usage:**
+        * `SINGLE` - used to generate a wallet for a single database
+        * `ALL` - used to generate wallet for all databases in the region
+
+        **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
 
         Allowed values for this property are: "ALL", "SINGLE"
 
@@ -67,7 +73,13 @@ class GenerateAutonomousDatabaseWalletDetails(object):
     def generate_type(self, generate_type):
         """
         Sets the generate_type of this GenerateAutonomousDatabaseWalletDetails.
-        The type of wallet to generate. `SINGLE` is used to generate a wallet for a single database. `ALL` is used to generate wallet for all databases in the region.
+        The type of wallet to generate.
+
+        **Shared Exadata infrastructure usage:**
+        * `SINGLE` - used to generate a wallet for a single database
+        * `ALL` - used to generate wallet for all databases in the region
+
+        **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
 
 
         :param generate_type: The generate_type of this GenerateAutonomousDatabaseWalletDetails.

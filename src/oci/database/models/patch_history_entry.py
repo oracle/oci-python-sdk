@@ -269,7 +269,7 @@ class PatchHistoryEntry(object):
     def time_ended(self):
         """
         Gets the time_ended of this PatchHistoryEntry.
-        The date and time when the patch action completed.
+        The date and time when the patch action completed
 
 
         :return: The time_ended of this PatchHistoryEntry.
@@ -281,7 +281,7 @@ class PatchHistoryEntry(object):
     def time_ended(self, time_ended):
         """
         Sets the time_ended of this PatchHistoryEntry.
-        The date and time when the patch action completed.
+        The date and time when the patch action completed
 
 
         :param time_ended: The time_ended of this PatchHistoryEntry.

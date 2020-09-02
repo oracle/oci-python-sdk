@@ -1,0 +1,11 @@
+SourceDetails
+=============
+
+.. currentmodule:: oci.sch.models
+
+.. autoclass:: SourceDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

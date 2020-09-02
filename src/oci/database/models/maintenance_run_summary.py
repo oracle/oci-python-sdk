@@ -136,6 +136,10 @@ class MaintenanceRunSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type maintenance_type: str
 
+        :param patch_id:
+            The value to assign to the patch_id property of this MaintenanceRunSummary.
+        :type patch_id: str
+
         :param maintenance_subtype:
             The value to assign to the maintenance_subtype property of this MaintenanceRunSummary.
             Allowed values for this property are: "QUARTERLY", "HARDWARE", "CRITICAL", 'UNKNOWN_ENUM_VALUE'.
@@ -156,6 +160,7 @@ class MaintenanceRunSummary(object):
             'target_resource_type': 'str',
             'target_resource_id': 'str',
             'maintenance_type': 'str',
+            'patch_id': 'str',
             'maintenance_subtype': 'str'
         }
 
@@ -172,6 +177,7 @@ class MaintenanceRunSummary(object):
             'target_resource_type': 'targetResourceType',
             'target_resource_id': 'targetResourceId',
             'maintenance_type': 'maintenanceType',
+            'patch_id': 'patchId',
             'maintenance_subtype': 'maintenanceSubtype'
         }
 
@@ -187,6 +193,7 @@ class MaintenanceRunSummary(object):
         self._target_resource_type = None
         self._target_resource_id = None
         self._maintenance_type = None
+        self._patch_id = None
         self._maintenance_subtype = None
 
     @property
@@ -494,6 +501,34 @@ class MaintenanceRunSummary(object):
         if not value_allowed_none_or_none_sentinel(maintenance_type, allowed_values):
             maintenance_type = 'UNKNOWN_ENUM_VALUE'
         self._maintenance_type = maintenance_type
+
+    @property
+    def patch_id(self):
+        """
+        Gets the patch_id of this MaintenanceRunSummary.
+        The `OCID`__ of the patch to be applied in the maintenance run.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The patch_id of this MaintenanceRunSummary.
+        :rtype: str
+        """
+        return self._patch_id
+
+    @patch_id.setter
+    def patch_id(self, patch_id):
+        """
+        Sets the patch_id of this MaintenanceRunSummary.
+        The `OCID`__ of the patch to be applied in the maintenance run.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param patch_id: The patch_id of this MaintenanceRunSummary.
+        :type: str
+        """
+        self._patch_id = patch_id
 
     @property
     def maintenance_subtype(self):

@@ -90,3 +90,10 @@
 ^src/oci/ocvp/.*\.py$
 ^src/oci/usage_api/.*\.py$
 ^src/oci/blockchain/.*\.py$
+^src/oci/loggingingestion/.*\.py$
+^src/oci/logging/.*\.py$
+^src/oci/log_analytics/.*\.py$
+^src/oci/management_dashboard/.*\.py$
+^src/oci/sch/.*\.py$
+^src/oci/loggingsearch/.*\.py$
+^src/oci/management_agent/.*\.py$

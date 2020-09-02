@@ -321,6 +321,47 @@ def test_change_backup_destination_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_change_database_software_image_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ChangeDatabaseSoftwareImageCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ChangeDatabaseSoftwareImageCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ChangeDatabaseSoftwareImageCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.change_database_software_image_compartment(
+                change_compartment_details=request.pop(util.camelize('ChangeCompartmentDetails')),
+                database_software_image_id=request.pop(util.camelize('databaseSoftwareImageId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ChangeDatabaseSoftwareImageCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_database_software_image_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_change_db_system_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ChangeDbSystemCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -927,6 +968,46 @@ def test_create_database(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_create_database_software_image(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'CreateDatabaseSoftwareImage'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'CreateDatabaseSoftwareImage')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='CreateDatabaseSoftwareImage')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.create_database_software_image(
+                create_database_software_image_details=request.pop(util.camelize('CreateDatabaseSoftwareImageDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'CreateDatabaseSoftwareImage',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'databaseSoftwareImage',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_create_db_home(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateDbHome'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1444,6 +1525,46 @@ def test_delete_database(testing_service_client):
             result,
             service_error,
             'delete_database',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_delete_database_software_image(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'DeleteDatabaseSoftwareImage'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'DeleteDatabaseSoftwareImage')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='DeleteDatabaseSoftwareImage')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.delete_database_software_image(
+                database_software_image_id=request.pop(util.camelize('databaseSoftwareImageId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'DeleteDatabaseSoftwareImage',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_database_software_image',
             True,
             False
         )
@@ -2255,6 +2376,46 @@ def test_get_autonomous_exadata_infrastructure(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_autonomous_patch(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'GetAutonomousPatch'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetAutonomousPatch')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetAutonomousPatch')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.get_autonomous_patch(
+                autonomous_patch_id=request.pop(util.camelize('autonomousPatchId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetAutonomousPatch',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousPatch',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_get_autonomous_vm_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetAutonomousVmCluster'):
@@ -2492,6 +2653,46 @@ def test_get_database(testing_service_client):
             result,
             service_error,
             'database',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_database_software_image(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'GetDatabaseSoftwareImage'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetDatabaseSoftwareImage')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetDatabaseSoftwareImage')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.get_database_software_image(
+                database_software_image_id=request.pop(util.camelize('databaseSoftwareImageId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetDatabaseSoftwareImage',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'databaseSoftwareImage',
             False,
             False
         )
@@ -4042,6 +4243,69 @@ def test_list_console_connections(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_container_database_patches(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ListContainerDatabasePatches'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListContainerDatabasePatches')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListContainerDatabasePatches')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.list_container_database_patches(
+                autonomous_container_database_id=request.pop(util.camelize('autonomousContainerDatabaseId')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_container_database_patches(
+                    autonomous_container_database_id=request.pop(util.camelize('autonomousContainerDatabaseId')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_container_database_patches(
+                        autonomous_container_database_id=request.pop(util.camelize('autonomousContainerDatabaseId')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ListContainerDatabasePatches',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousPatchSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_list_data_guard_associations(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDataGuardAssociations'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4096,6 +4360,66 @@ def test_list_data_guard_associations(testing_service_client):
             result,
             service_error,
             'dataGuardAssociationSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_database_software_images(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ListDatabaseSoftwareImages'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListDatabaseSoftwareImages')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListDatabaseSoftwareImages')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.list_database_software_images(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_database_software_images(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_database_software_images(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ListDatabaseSoftwareImages',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'databaseSoftwareImageSummary',
             False,
             True
         )
@@ -6134,6 +6458,47 @@ def test_update_database(testing_service_client):
             result,
             service_error,
             'database',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_update_database_software_image(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'UpdateDatabaseSoftwareImage'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'UpdateDatabaseSoftwareImage')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='UpdateDatabaseSoftwareImage')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.update_database_software_image(
+                database_software_image_id=request.pop(util.camelize('databaseSoftwareImageId')),
+                update_database_software_image_details=request.pop(util.camelize('UpdateDatabaseSoftwareImageDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'UpdateDatabaseSoftwareImage',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'databaseSoftwareImage',
             False,
             False
         )

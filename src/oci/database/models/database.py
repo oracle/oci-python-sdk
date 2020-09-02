@@ -132,6 +132,10 @@ class Database(object):
             The value to assign to the source_database_point_in_time_recovery_timestamp property of this Database.
         :type source_database_point_in_time_recovery_timestamp: datetime
 
+        :param database_software_image_id:
+            The value to assign to the database_software_image_id property of this Database.
+        :type database_software_image_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -153,7 +157,8 @@ class Database(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'connection_strings': 'DatabaseConnectionStrings',
-            'source_database_point_in_time_recovery_timestamp': 'datetime'
+            'source_database_point_in_time_recovery_timestamp': 'datetime',
+            'database_software_image_id': 'str'
         }
 
         self.attribute_map = {
@@ -176,7 +181,8 @@ class Database(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'connection_strings': 'connectionStrings',
-            'source_database_point_in_time_recovery_timestamp': 'sourceDatabasePointInTimeRecoveryTimestamp'
+            'source_database_point_in_time_recovery_timestamp': 'sourceDatabasePointInTimeRecoveryTimestamp',
+            'database_software_image_id': 'databaseSoftwareImageId'
         }
 
         self._id = None
@@ -199,6 +205,7 @@ class Database(object):
         self._defined_tags = None
         self._connection_strings = None
         self._source_database_point_in_time_recovery_timestamp = None
+        self._database_software_image_id = None
 
     @property
     def id(self):
@@ -721,6 +728,34 @@ class Database(object):
         :type: datetime
         """
         self._source_database_point_in_time_recovery_timestamp = source_database_point_in_time_recovery_timestamp
+
+    @property
+    def database_software_image_id(self):
+        """
+        Gets the database_software_image_id of this Database.
+        The database software image `OCID`__
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The database_software_image_id of this Database.
+        :rtype: str
+        """
+        return self._database_software_image_id
+
+    @database_software_image_id.setter
+    def database_software_image_id(self, database_software_image_id):
+        """
+        Sets the database_software_image_id of this Database.
+        The database software image `OCID`__
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param database_software_image_id: The database_software_image_id of this Database.
+        :type: str
+        """
+        self._database_software_image_id = database_software_image_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

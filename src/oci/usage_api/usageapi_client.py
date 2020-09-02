@@ -11,7 +11,7 @@ from oci import retry  # noqa: F401
 from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
-from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
+from oci.util import Sentinel
 from .models import usage_api_type_mapping
 missing = Sentinel("Missing")
 
@@ -60,10 +60,6 @@ class UsageapiClient(object):
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
             signer = kwargs['signer']
-
-        elif AUTHENTICATION_TYPE_FIELD_NAME in config:
-            signer = get_signer_from_authentication_type(config)
-
         else:
             signer = Signer(
                 tenancy=config["tenancy"],

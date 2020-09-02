@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExecutionLogPolicy(object):
     """
-    Configures the pushing of execution logs to OCI Public Logging.
+    Configures the logging policies for the execution logs of an API Deployment.
     """
 
     #: A constant which can be used with the log_level property of a ExecutionLogPolicy.
@@ -58,7 +58,15 @@ class ExecutionLogPolicy(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this ExecutionLogPolicy.
-        Enables pushing of execution logs to OCI Public Logging.
+        Enables pushing of execution logs to the legacy OCI Object Storage log archival bucket.
+
+        Oracle recommends using the OCI Logging service to enable, retrieve, and query execution logs
+        for an API Deployment. If there is an active log object for the API Deployment and its
+        category is set to 'execution' in OCI Logging service, the logs will not be uploaded to the legacy
+        OCI Object Storage log archival bucket.
+
+        Please note that the functionality to push to the legacy OCI Object Storage log
+        archival bucket has been deprecated and will be removed in the future.
 
 
         :return: The is_enabled of this ExecutionLogPolicy.
@@ -70,7 +78,15 @@ class ExecutionLogPolicy(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this ExecutionLogPolicy.
-        Enables pushing of execution logs to OCI Public Logging.
+        Enables pushing of execution logs to the legacy OCI Object Storage log archival bucket.
+
+        Oracle recommends using the OCI Logging service to enable, retrieve, and query execution logs
+        for an API Deployment. If there is an active log object for the API Deployment and its
+        category is set to 'execution' in OCI Logging service, the logs will not be uploaded to the legacy
+        OCI Object Storage log archival bucket.
+
+        Please note that the functionality to push to the legacy OCI Object Storage log
+        archival bucket has been deprecated and will be removed in the future.
 
 
         :param is_enabled: The is_enabled of this ExecutionLogPolicy.
@@ -82,8 +98,8 @@ class ExecutionLogPolicy(object):
     def log_level(self):
         """
         Gets the log_level of this ExecutionLogPolicy.
-        Specifies the logging level, which affects the log entries pushed to
-        OCI Public Logging if `isEnabled` is set to True.
+        Specifies the log level used to control logging output of execution logs.
+        Enabling logging at a given level also enables logging at all higher levels.
 
         Allowed values for this property are: "INFO", "WARN", "ERROR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -98,8 +114,8 @@ class ExecutionLogPolicy(object):
     def log_level(self, log_level):
         """
         Sets the log_level of this ExecutionLogPolicy.
-        Specifies the logging level, which affects the log entries pushed to
-        OCI Public Logging if `isEnabled` is set to True.
+        Specifies the log level used to control logging output of execution logs.
+        Enabling logging at a given level also enables logging at all higher levels.
 
 
         :param log_level: The log_level of this ExecutionLogPolicy.

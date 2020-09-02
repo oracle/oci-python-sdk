@@ -13,6 +13,7 @@ from .api_specification_request_policies import ApiSpecificationRequestPolicies
 from .api_specification_route import ApiSpecificationRoute
 from .api_specification_route_backend import ApiSpecificationRouteBackend
 from .api_specification_route_request_policies import ApiSpecificationRouteRequestPolicies
+from .api_specification_route_response_policies import ApiSpecificationRouteResponsePolicies
 from .authentication_only_route_authorization_policy import AuthenticationOnlyRouteAuthorizationPolicy
 from .authentication_policy import AuthenticationPolicy
 from .change_deployment_compartment_details import ChangeDeploymentCompartmentDetails
@@ -25,20 +26,34 @@ from .deployment import Deployment
 from .deployment_collection import DeploymentCollection
 from .deployment_summary import DeploymentSummary
 from .execution_log_policy import ExecutionLogPolicy
+from .filter_header_policy import FilterHeaderPolicy
+from .filter_header_policy_item import FilterHeaderPolicyItem
+from .filter_query_parameter_policy import FilterQueryParameterPolicy
+from .filter_query_parameter_policy_item import FilterQueryParameterPolicyItem
 from .gateway import Gateway
 from .gateway_collection import GatewayCollection
 from .gateway_summary import GatewaySummary
 from .http_backend import HTTPBackend
 from .header_field_specification import HeaderFieldSpecification
+from .header_transformation_policy import HeaderTransformationPolicy
 from .json_web_key import JsonWebKey
 from .json_web_token_claim import JsonWebTokenClaim
 from .jwt_authentication_policy import JwtAuthenticationPolicy
 from .oracle_function_backend import OracleFunctionBackend
 from .pem_encoded_public_key import PemEncodedPublicKey
 from .public_key_set import PublicKeySet
+from .query_parameter_transformation_policy import QueryParameterTransformationPolicy
 from .rate_limiting_policy import RateLimitingPolicy
 from .remote_json_web_key_set import RemoteJsonWebKeySet
+from .rename_header_policy import RenameHeaderPolicy
+from .rename_header_policy_item import RenameHeaderPolicyItem
+from .rename_query_parameter_policy import RenameQueryParameterPolicy
+from .rename_query_parameter_policy_item import RenameQueryParameterPolicyItem
 from .route_authorization_policy import RouteAuthorizationPolicy
+from .set_header_policy import SetHeaderPolicy
+from .set_header_policy_item import SetHeaderPolicyItem
+from .set_query_parameter_policy import SetQueryParameterPolicy
+from .set_query_parameter_policy_item import SetQueryParameterPolicyItem
 from .static_public_key import StaticPublicKey
 from .static_public_key_set import StaticPublicKeySet
 from .stock_response_backend import StockResponseBackend
@@ -64,6 +79,7 @@ apigateway_type_mapping = {
     "ApiSpecificationRoute": ApiSpecificationRoute,
     "ApiSpecificationRouteBackend": ApiSpecificationRouteBackend,
     "ApiSpecificationRouteRequestPolicies": ApiSpecificationRouteRequestPolicies,
+    "ApiSpecificationRouteResponsePolicies": ApiSpecificationRouteResponsePolicies,
     "AuthenticationOnlyRouteAuthorizationPolicy": AuthenticationOnlyRouteAuthorizationPolicy,
     "AuthenticationPolicy": AuthenticationPolicy,
     "ChangeDeploymentCompartmentDetails": ChangeDeploymentCompartmentDetails,
@@ -76,20 +92,34 @@ apigateway_type_mapping = {
     "DeploymentCollection": DeploymentCollection,
     "DeploymentSummary": DeploymentSummary,
     "ExecutionLogPolicy": ExecutionLogPolicy,
+    "FilterHeaderPolicy": FilterHeaderPolicy,
+    "FilterHeaderPolicyItem": FilterHeaderPolicyItem,
+    "FilterQueryParameterPolicy": FilterQueryParameterPolicy,
+    "FilterQueryParameterPolicyItem": FilterQueryParameterPolicyItem,
     "Gateway": Gateway,
     "GatewayCollection": GatewayCollection,
     "GatewaySummary": GatewaySummary,
     "HTTPBackend": HTTPBackend,
     "HeaderFieldSpecification": HeaderFieldSpecification,
+    "HeaderTransformationPolicy": HeaderTransformationPolicy,
     "JsonWebKey": JsonWebKey,
     "JsonWebTokenClaim": JsonWebTokenClaim,
     "JwtAuthenticationPolicy": JwtAuthenticationPolicy,
     "OracleFunctionBackend": OracleFunctionBackend,
     "PemEncodedPublicKey": PemEncodedPublicKey,
     "PublicKeySet": PublicKeySet,
+    "QueryParameterTransformationPolicy": QueryParameterTransformationPolicy,
     "RateLimitingPolicy": RateLimitingPolicy,
     "RemoteJsonWebKeySet": RemoteJsonWebKeySet,
+    "RenameHeaderPolicy": RenameHeaderPolicy,
+    "RenameHeaderPolicyItem": RenameHeaderPolicyItem,
+    "RenameQueryParameterPolicy": RenameQueryParameterPolicy,
+    "RenameQueryParameterPolicyItem": RenameQueryParameterPolicyItem,
     "RouteAuthorizationPolicy": RouteAuthorizationPolicy,
+    "SetHeaderPolicy": SetHeaderPolicy,
+    "SetHeaderPolicyItem": SetHeaderPolicyItem,
+    "SetQueryParameterPolicy": SetQueryParameterPolicy,
+    "SetQueryParameterPolicyItem": SetQueryParameterPolicyItem,
     "StaticPublicKey": StaticPublicKey,
     "StaticPublicKeySet": StaticPublicKeySet,
     "StockResponseBackend": StockResponseBackend,

@@ -11,7 +11,7 @@ from oci import retry  # noqa: F401
 from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
-from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
+from oci.util import Sentinel
 from .models import resource_search_type_mapping
 missing = Sentinel("Missing")
 
@@ -60,10 +60,6 @@ class ResourceSearchClient(object):
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
             signer = kwargs['signer']
-
-        elif AUTHENTICATION_TYPE_FIELD_NAME in config:
-            signer = get_signer_from_authentication_type(config)
-
         else:
             signer = Signer(
                 tenancy=config["tenancy"],
@@ -234,7 +230,7 @@ class ResourceSearchClient(object):
 
     def search_resources(self, search_details, **kwargs):
         """
-        Queries any and all compartments in the tenancy to find resources that match the specified criteria.
+        Queries any and all compartments in the specified tenancy to find resources that match the specified criteria.
         Results include resources that you have permission to view and can span different resource types.
         You can also sort results based on a specified resource attribute.
 
@@ -247,6 +243,9 @@ class ResourceSearchClient(object):
 
         :param str page: (optional)
             The page at which to start retrieving results.
+
+        :param str tenant_id: (optional)
+            The tenancy ID, which can be used to specify a different tenancy (for cross-tenancy authorization) when searching for resources in a different tenancy.
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
@@ -271,6 +270,7 @@ class ResourceSearchClient(object):
             "retry_strategy",
             "limit",
             "page",
+            "tenant_id",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -280,7 +280,8 @@ class ResourceSearchClient(object):
 
         query_params = {
             "limit": kwargs.get("limit", missing),
-            "page": kwargs.get("page", missing)
+            "page": kwargs.get("page", missing),
+            "tenantId": kwargs.get("tenant_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
