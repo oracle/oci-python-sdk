@@ -137,7 +137,7 @@ def validate_config(config, **kwargs):
     errors = {}
     for required_key in REQUIRED:
         fallback_key = REQUIRED_FALLBACKS.get(required_key)
-        if required_key not in config and fallback_key not in config:
+        if (required_key not in config or config[required_key] is None) and (fallback_key not in config or config[fallback_key] is None):
             # If region is not provided, check the env variable
             if required_key == REGION_KEY_NAME:
                 logger.debug("Region not found in config, checking environment variable {}".format(REGION_ENV_VAR_NAME))
