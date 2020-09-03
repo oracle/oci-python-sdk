@@ -4,12 +4,26 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.21.3 - TBD
+2.21.3 - 2020-09-08
 ====================
 
 Added
 -----
-* TBD
+* Support for Logging Service
+* Support for Logging Analytics Service
+* Support for Logging Search Service
+* Support for Logging Ingestion Service
+* Support for Management Agent Cloud Service
+* Support for Management Dashboard Service
+* Support for Service Connector Hub service
+* Support for Policy based Request/Response transformation in the API Gateway Service
+* Support for sending diagnostic interrupt to a VM instance in the Compute Service
+* Support for custom Database Software Images in the Database Service
+* Support for getting and listing container database patches for Autonomous Container Database resources in the Database Service
+* Support for updating patch id on maintenance run for Autonomous Container Database resources in the Database Service
+* Support for searching Oracle Cloud resources across tenancies in the Search Service
+* Documentation update for Logging Policies in the API Gateway service
+* Support for Python SDK in Cloud Shell
 
 ====================
 2.21.1 - 2020-08-18
