@@ -26,19 +26,33 @@ class ApiSpecificationRouteRequestPolicies(object):
             The value to assign to the cors property of this ApiSpecificationRouteRequestPolicies.
         :type cors: CorsPolicy
 
+        :param header_transformations:
+            The value to assign to the header_transformations property of this ApiSpecificationRouteRequestPolicies.
+        :type header_transformations: HeaderTransformationPolicy
+
+        :param query_parameter_transformations:
+            The value to assign to the query_parameter_transformations property of this ApiSpecificationRouteRequestPolicies.
+        :type query_parameter_transformations: QueryParameterTransformationPolicy
+
         """
         self.swagger_types = {
             'authorization': 'RouteAuthorizationPolicy',
-            'cors': 'CorsPolicy'
+            'cors': 'CorsPolicy',
+            'header_transformations': 'HeaderTransformationPolicy',
+            'query_parameter_transformations': 'QueryParameterTransformationPolicy'
         }
 
         self.attribute_map = {
             'authorization': 'authorization',
-            'cors': 'cors'
+            'cors': 'cors',
+            'header_transformations': 'headerTransformations',
+            'query_parameter_transformations': 'queryParameterTransformations'
         }
 
         self._authorization = None
         self._cors = None
+        self._header_transformations = None
+        self._query_parameter_transformations = None
 
     @property
     def authorization(self):
@@ -79,6 +93,46 @@ class ApiSpecificationRouteRequestPolicies(object):
         :type: CorsPolicy
         """
         self._cors = cors
+
+    @property
+    def header_transformations(self):
+        """
+        Gets the header_transformations of this ApiSpecificationRouteRequestPolicies.
+
+        :return: The header_transformations of this ApiSpecificationRouteRequestPolicies.
+        :rtype: HeaderTransformationPolicy
+        """
+        return self._header_transformations
+
+    @header_transformations.setter
+    def header_transformations(self, header_transformations):
+        """
+        Sets the header_transformations of this ApiSpecificationRouteRequestPolicies.
+
+        :param header_transformations: The header_transformations of this ApiSpecificationRouteRequestPolicies.
+        :type: HeaderTransformationPolicy
+        """
+        self._header_transformations = header_transformations
+
+    @property
+    def query_parameter_transformations(self):
+        """
+        Gets the query_parameter_transformations of this ApiSpecificationRouteRequestPolicies.
+
+        :return: The query_parameter_transformations of this ApiSpecificationRouteRequestPolicies.
+        :rtype: QueryParameterTransformationPolicy
+        """
+        return self._query_parameter_transformations
+
+    @query_parameter_transformations.setter
+    def query_parameter_transformations(self, query_parameter_transformations):
+        """
+        Sets the query_parameter_transformations of this ApiSpecificationRouteRequestPolicies.
+
+        :param query_parameter_transformations: The query_parameter_transformations of this ApiSpecificationRouteRequestPolicies.
+        :type: QueryParameterTransformationPolicy
+        """
+        self._query_parameter_transformations = query_parameter_transformations
 
     def __repr__(self):
         return formatted_flat_dict(self)

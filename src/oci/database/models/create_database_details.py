@@ -36,6 +36,10 @@ class CreateDatabaseDetails(object):
             The value to assign to the db_unique_name property of this CreateDatabaseDetails.
         :type db_unique_name: str
 
+        :param database_software_image_id:
+            The value to assign to the database_software_image_id property of this CreateDatabaseDetails.
+        :type database_software_image_id: str
+
         :param pdb_name:
             The value to assign to the pdb_name property of this CreateDatabaseDetails.
         :type pdb_name: str
@@ -73,6 +77,7 @@ class CreateDatabaseDetails(object):
         self.swagger_types = {
             'db_name': 'str',
             'db_unique_name': 'str',
+            'database_software_image_id': 'str',
             'pdb_name': 'str',
             'admin_password': 'str',
             'character_set': 'str',
@@ -86,6 +91,7 @@ class CreateDatabaseDetails(object):
         self.attribute_map = {
             'db_name': 'dbName',
             'db_unique_name': 'dbUniqueName',
+            'database_software_image_id': 'databaseSoftwareImageId',
             'pdb_name': 'pdbName',
             'admin_password': 'adminPassword',
             'character_set': 'characterSet',
@@ -98,6 +104,7 @@ class CreateDatabaseDetails(object):
 
         self._db_name = None
         self._db_unique_name = None
+        self._database_software_image_id = None
         self._pdb_name = None
         self._admin_password = None
         self._character_set = None
@@ -154,6 +161,34 @@ class CreateDatabaseDetails(object):
         :type: str
         """
         self._db_unique_name = db_unique_name
+
+    @property
+    def database_software_image_id(self):
+        """
+        Gets the database_software_image_id of this CreateDatabaseDetails.
+        The database software image `OCID`__
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The database_software_image_id of this CreateDatabaseDetails.
+        :rtype: str
+        """
+        return self._database_software_image_id
+
+    @database_software_image_id.setter
+    def database_software_image_id(self, database_software_image_id):
+        """
+        Sets the database_software_image_id of this CreateDatabaseDetails.
+        The database software image `OCID`__
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param database_software_image_id: The database_software_image_id of this CreateDatabaseDetails.
+        :type: str
+        """
+        self._database_software_image_id = database_software_image_id
 
     @property
     def pdb_name(self):

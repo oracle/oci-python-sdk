@@ -852,7 +852,7 @@ class ComputeClientCompositeOperations(object):
         :param str action: (required)
             The action to perform on the instance.
 
-            Allowed values are: "STOP", "START", "SOFTRESET", "RESET", "SOFTSTOP"
+            Allowed values are: "STOP", "START", "SOFTRESET", "RESET", "SOFTSTOP", "SENDDIAGNOSTICINTERRUPT"
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.Instance.lifecycle_state`

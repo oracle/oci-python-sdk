@@ -31,6 +31,8 @@ from .autonomous_db_version_summary import AutonomousDbVersionSummary
 from .autonomous_exadata_infrastructure import AutonomousExadataInfrastructure
 from .autonomous_exadata_infrastructure_shape_summary import AutonomousExadataInfrastructureShapeSummary
 from .autonomous_exadata_infrastructure_summary import AutonomousExadataInfrastructureSummary
+from .autonomous_patch import AutonomousPatch
+from .autonomous_patch_summary import AutonomousPatchSummary
 from .autonomous_vm_cluster import AutonomousVmCluster
 from .autonomous_vm_cluster_summary import AutonomousVmClusterSummary
 from .backup import Backup
@@ -68,6 +70,7 @@ from .create_database_from_another_database_details import CreateDatabaseFromAno
 from .create_database_from_backup import CreateDatabaseFromBackup
 from .create_database_from_backup_details import CreateDatabaseFromBackupDetails
 from .create_database_from_db_system_details import CreateDatabaseFromDbSystemDetails
+from .create_database_software_image_details import CreateDatabaseSoftwareImageDetails
 from .create_db_home_base import CreateDbHomeBase
 from .create_db_home_details import CreateDbHomeDetails
 from .create_db_home_from_backup_details import CreateDbHomeFromBackupDetails
@@ -88,6 +91,8 @@ from .data_guard_association import DataGuardAssociation
 from .data_guard_association_summary import DataGuardAssociationSummary
 from .database import Database
 from .database_connection_strings import DatabaseConnectionStrings
+from .database_software_image import DatabaseSoftwareImage
+from .database_software_image_summary import DatabaseSoftwareImageSummary
 from .database_summary import DatabaseSummary
 from .day_of_week import DayOfWeek
 from .db_backup_config import DbBackupConfig
@@ -148,6 +153,7 @@ from .update_autonomous_exadata_infrastructure_details import UpdateAutonomousEx
 from .update_autonomous_vm_cluster_details import UpdateAutonomousVmClusterDetails
 from .update_backup_destination_details import UpdateBackupDestinationDetails
 from .update_database_details import UpdateDatabaseDetails
+from .update_database_software_image_details import UpdateDatabaseSoftwareImageDetails
 from .update_db_home_details import UpdateDbHomeDetails
 from .update_db_system_details import UpdateDbSystemDetails
 from .update_exadata_infrastructure_details import UpdateExadataInfrastructureDetails
@@ -191,6 +197,8 @@ database_type_mapping = {
     "AutonomousExadataInfrastructure": AutonomousExadataInfrastructure,
     "AutonomousExadataInfrastructureShapeSummary": AutonomousExadataInfrastructureShapeSummary,
     "AutonomousExadataInfrastructureSummary": AutonomousExadataInfrastructureSummary,
+    "AutonomousPatch": AutonomousPatch,
+    "AutonomousPatchSummary": AutonomousPatchSummary,
     "AutonomousVmCluster": AutonomousVmCluster,
     "AutonomousVmClusterSummary": AutonomousVmClusterSummary,
     "Backup": Backup,
@@ -228,6 +236,7 @@ database_type_mapping = {
     "CreateDatabaseFromBackup": CreateDatabaseFromBackup,
     "CreateDatabaseFromBackupDetails": CreateDatabaseFromBackupDetails,
     "CreateDatabaseFromDbSystemDetails": CreateDatabaseFromDbSystemDetails,
+    "CreateDatabaseSoftwareImageDetails": CreateDatabaseSoftwareImageDetails,
     "CreateDbHomeBase": CreateDbHomeBase,
     "CreateDbHomeDetails": CreateDbHomeDetails,
     "CreateDbHomeFromBackupDetails": CreateDbHomeFromBackupDetails,
@@ -248,6 +257,8 @@ database_type_mapping = {
     "DataGuardAssociationSummary": DataGuardAssociationSummary,
     "Database": Database,
     "DatabaseConnectionStrings": DatabaseConnectionStrings,
+    "DatabaseSoftwareImage": DatabaseSoftwareImage,
+    "DatabaseSoftwareImageSummary": DatabaseSoftwareImageSummary,
     "DatabaseSummary": DatabaseSummary,
     "DayOfWeek": DayOfWeek,
     "DbBackupConfig": DbBackupConfig,
@@ -308,6 +319,7 @@ database_type_mapping = {
     "UpdateAutonomousVmClusterDetails": UpdateAutonomousVmClusterDetails,
     "UpdateBackupDestinationDetails": UpdateBackupDestinationDetails,
     "UpdateDatabaseDetails": UpdateDatabaseDetails,
+    "UpdateDatabaseSoftwareImageDetails": UpdateDatabaseSoftwareImageDetails,
     "UpdateDbHomeDetails": UpdateDbHomeDetails,
     "UpdateDbSystemDetails": UpdateDbSystemDetails,
     "UpdateExadataInfrastructureDetails": UpdateExadataInfrastructureDetails,

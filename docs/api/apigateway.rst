@@ -31,6 +31,7 @@ Apigateway
     oci.apigateway.models.ApiSpecificationRoute
     oci.apigateway.models.ApiSpecificationRouteBackend
     oci.apigateway.models.ApiSpecificationRouteRequestPolicies
+    oci.apigateway.models.ApiSpecificationRouteResponsePolicies
     oci.apigateway.models.AuthenticationOnlyRouteAuthorizationPolicy
     oci.apigateway.models.AuthenticationPolicy
     oci.apigateway.models.ChangeDeploymentCompartmentDetails
@@ -43,20 +44,34 @@ Apigateway
     oci.apigateway.models.DeploymentCollection
     oci.apigateway.models.DeploymentSummary
     oci.apigateway.models.ExecutionLogPolicy
+    oci.apigateway.models.FilterHeaderPolicy
+    oci.apigateway.models.FilterHeaderPolicyItem
+    oci.apigateway.models.FilterQueryParameterPolicy
+    oci.apigateway.models.FilterQueryParameterPolicyItem
     oci.apigateway.models.Gateway
     oci.apigateway.models.GatewayCollection
     oci.apigateway.models.GatewaySummary
     oci.apigateway.models.HTTPBackend
     oci.apigateway.models.HeaderFieldSpecification
+    oci.apigateway.models.HeaderTransformationPolicy
     oci.apigateway.models.JsonWebKey
     oci.apigateway.models.JsonWebTokenClaim
     oci.apigateway.models.JwtAuthenticationPolicy
     oci.apigateway.models.OracleFunctionBackend
     oci.apigateway.models.PemEncodedPublicKey
     oci.apigateway.models.PublicKeySet
+    oci.apigateway.models.QueryParameterTransformationPolicy
     oci.apigateway.models.RateLimitingPolicy
     oci.apigateway.models.RemoteJsonWebKeySet
+    oci.apigateway.models.RenameHeaderPolicy
+    oci.apigateway.models.RenameHeaderPolicyItem
+    oci.apigateway.models.RenameQueryParameterPolicy
+    oci.apigateway.models.RenameQueryParameterPolicyItem
     oci.apigateway.models.RouteAuthorizationPolicy
+    oci.apigateway.models.SetHeaderPolicy
+    oci.apigateway.models.SetHeaderPolicyItem
+    oci.apigateway.models.SetQueryParameterPolicy
+    oci.apigateway.models.SetQueryParameterPolicyItem
     oci.apigateway.models.StaticPublicKey
     oci.apigateway.models.StaticPublicKeySet
     oci.apigateway.models.StockResponseBackend

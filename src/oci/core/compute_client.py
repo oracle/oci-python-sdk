@@ -11,7 +11,7 @@ from oci import retry  # noqa: F401
 from oci.base_client import BaseClient
 from oci.config import get_config_value_or_default, validate_config
 from oci.signer import Signer
-from oci.util import Sentinel
+from oci.util import Sentinel, get_signer_from_authentication_type, AUTHENTICATION_TYPE_FIELD_NAME
 from .models import core_type_mapping
 missing = Sentinel("Missing")
 
@@ -64,6 +64,10 @@ class ComputeClient(object):
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
             signer = kwargs['signer']
+
+        elif AUTHENTICATION_TYPE_FIELD_NAME in config:
+            signer = get_signer_from_authentication_type(config)
+
         else:
             signer = Signer(
                 tenancy=config["tenancy"],
@@ -3185,7 +3189,7 @@ class ComputeClient(object):
         :param str action: (required)
             The action to perform on the instance.
 
-            Allowed values are: "STOP", "START", "SOFTRESET", "RESET", "SOFTSTOP"
+            Allowed values are: "STOP", "START", "SOFTRESET", "RESET", "SOFTSTOP", "SENDDIAGNOSTICINTERRUPT"
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or

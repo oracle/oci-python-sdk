@@ -112,6 +112,10 @@ class DbHomeSummary(object):
             The value to assign to the defined_tags property of this DbHomeSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param database_software_image_id:
+            The value to assign to the database_software_image_id property of this DbHomeSummary.
+        :type database_software_image_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -127,7 +131,8 @@ class DbHomeSummary(object):
             'time_created': 'datetime',
             'one_off_patches': 'list[str]',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'database_software_image_id': 'str'
         }
 
         self.attribute_map = {
@@ -144,7 +149,8 @@ class DbHomeSummary(object):
             'time_created': 'timeCreated',
             'one_off_patches': 'oneOffPatches',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'database_software_image_id': 'databaseSoftwareImageId'
         }
 
         self._id = None
@@ -161,6 +167,7 @@ class DbHomeSummary(object):
         self._one_off_patches = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._database_software_image_id = None
 
     @property
     def id(self):
@@ -539,6 +546,34 @@ class DbHomeSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def database_software_image_id(self):
+        """
+        Gets the database_software_image_id of this DbHomeSummary.
+        The database software image `OCID`__
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The database_software_image_id of this DbHomeSummary.
+        :rtype: str
+        """
+        return self._database_software_image_id
+
+    @database_software_image_id.setter
+    def database_software_image_id(self, database_software_image_id):
+        """
+        Sets the database_software_image_id of this DbHomeSummary.
+        The database software image `OCID`__
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param database_software_image_id: The database_software_image_id of this DbHomeSummary.
+        :type: str
+        """
+        self._database_software_image_id = database_software_image_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -241,7 +241,10 @@ class Gateway(object):
     def endpoint_type(self):
         """
         **[Required]** Gets the endpoint_type of this Gateway.
-        Gateway endpoint type.
+        Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be
+        accessible on a private IP address on the subnet.
+
+        Example: `PUBLIC` or `PRIVATE`
 
         Allowed values for this property are: "PUBLIC", "PRIVATE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -256,7 +259,10 @@ class Gateway(object):
     def endpoint_type(self, endpoint_type):
         """
         Sets the endpoint_type of this Gateway.
-        Gateway endpoint type.
+        Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be
+        accessible on a private IP address on the subnet.
+
+        Example: `PUBLIC` or `PRIVATE`
 
 
         :param endpoint_type: The endpoint_type of this Gateway.

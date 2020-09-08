@@ -542,9 +542,7 @@ class CreateAutonomousDatabaseBase(object):
     def is_auto_scaling_enabled(self):
         """
         Gets the is_auto_scaling_enabled of this CreateAutonomousDatabaseBase.
-        Indicates if auto scaling is enabled for the Autonomous Database OCPU core count. The default value is `FALSE`. Note that auto scaling is available for databases on `shared Exadata infrastructure`__ only.
-
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
+        Indicates if auto scaling is enabled for the Autonomous Database OCPU core count. The default value is `FALSE`.
 
 
         :return: The is_auto_scaling_enabled of this CreateAutonomousDatabaseBase.
@@ -556,9 +554,7 @@ class CreateAutonomousDatabaseBase(object):
     def is_auto_scaling_enabled(self, is_auto_scaling_enabled):
         """
         Sets the is_auto_scaling_enabled of this CreateAutonomousDatabaseBase.
-        Indicates if auto scaling is enabled for the Autonomous Database OCPU core count. The default value is `FALSE`. Note that auto scaling is available for databases on `shared Exadata infrastructure`__ only.
-
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
+        Indicates if auto scaling is enabled for the Autonomous Database OCPU core count. The default value is `FALSE`.
 
 
         :param is_auto_scaling_enabled: The is_auto_scaling_enabled of this CreateAutonomousDatabaseBase.
@@ -628,7 +624,9 @@ class CreateAutonomousDatabaseBase(object):
         Gets the whitelisted_ips of this CreateAutonomousDatabaseBase.
         The client IP access control list (ACL). This feature is available for databases on `shared Exadata infrastructure`__ only.
         Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
+
         To add the whitelist VCN specific subnet or IP, use a semicoln ';' as a deliminator to add the VCN specific subnets or IPs.
+        For update operation, if you wish to delete all the existing whitelisted IP\u2019s, use an array with a single empty string entry.
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.aaaaaaaard2hfx2nn3e5xeo6j6o62jga44xjizkw\",\"ocid1.vcn.oc1.sea.aaaaaaaard2hfx2nn3e5xeo6j6o62jga44xjizkw;1.1.1.1\",\"ocid1.vcn.oc1.sea.aaaaaaaard2hfx2nn3e5xeo6j6o62jga44xjizkw;1.1.0.0/16\"]`
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
@@ -645,7 +643,9 @@ class CreateAutonomousDatabaseBase(object):
         Sets the whitelisted_ips of this CreateAutonomousDatabaseBase.
         The client IP access control list (ACL). This feature is available for databases on `shared Exadata infrastructure`__ only.
         Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. This is an array of CIDR (Classless Inter-Domain Routing) notations for a subnet or VCN OCID.
+
         To add the whitelist VCN specific subnet or IP, use a semicoln ';' as a deliminator to add the VCN specific subnets or IPs.
+        For update operation, if you wish to delete all the existing whitelisted IP\u2019s, use an array with a single empty string entry.
         Example: `[\"1.1.1.1\",\"1.1.1.0/24\",\"ocid1.vcn.oc1.sea.aaaaaaaard2hfx2nn3e5xeo6j6o62jga44xjizkw\",\"ocid1.vcn.oc1.sea.aaaaaaaard2hfx2nn3e5xeo6j6o62jga44xjizkw;1.1.1.1\",\"ocid1.vcn.oc1.sea.aaaaaaaard2hfx2nn3e5xeo6j6o62jga44xjizkw;1.1.0.0/16\"]`
 
         __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI

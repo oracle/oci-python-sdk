@@ -32,6 +32,10 @@ class PatchDetails(object):
             The value to assign to the patch_id property of this PatchDetails.
         :type patch_id: str
 
+        :param database_software_image_id:
+            The value to assign to the database_software_image_id property of this PatchDetails.
+        :type database_software_image_id: str
+
         :param action:
             The value to assign to the action property of this PatchDetails.
             Allowed values for this property are: "APPLY", "PRECHECK"
@@ -40,15 +44,18 @@ class PatchDetails(object):
         """
         self.swagger_types = {
             'patch_id': 'str',
+            'database_software_image_id': 'str',
             'action': 'str'
         }
 
         self.attribute_map = {
             'patch_id': 'patchId',
+            'database_software_image_id': 'databaseSoftwareImageId',
             'action': 'action'
         }
 
         self._patch_id = None
+        self._database_software_image_id = None
         self._action = None
 
     @property
@@ -78,6 +85,34 @@ class PatchDetails(object):
         :type: str
         """
         self._patch_id = patch_id
+
+    @property
+    def database_software_image_id(self):
+        """
+        Gets the database_software_image_id of this PatchDetails.
+        The `OCID`__ of the database software image.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The database_software_image_id of this PatchDetails.
+        :rtype: str
+        """
+        return self._database_software_image_id
+
+    @database_software_image_id.setter
+    def database_software_image_id(self, database_software_image_id):
+        """
+        Sets the database_software_image_id of this PatchDetails.
+        The `OCID`__ of the database software image.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param database_software_image_id: The database_software_image_id of this PatchDetails.
+        :type: str
+        """
+        self._database_software_image_id = database_software_image_id
 
     @property
     def action(self):
