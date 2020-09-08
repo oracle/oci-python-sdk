@@ -132,7 +132,10 @@ class CreateGatewayDetails(object):
     def endpoint_type(self):
         """
         **[Required]** Gets the endpoint_type of this CreateGatewayDetails.
-        Gateway endpoint type.
+        Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be
+        accessible on a private IP address on the subnet.
+
+        Example: `PUBLIC` or `PRIVATE`
 
 
         :return: The endpoint_type of this CreateGatewayDetails.
@@ -144,7 +147,10 @@ class CreateGatewayDetails(object):
     def endpoint_type(self, endpoint_type):
         """
         Sets the endpoint_type of this CreateGatewayDetails.
-        Gateway endpoint type.
+        Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be
+        accessible on a private IP address on the subnet.
+
+        Example: `PUBLIC` or `PRIVATE`
 
 
         :param endpoint_type: The endpoint_type of this CreateGatewayDetails.

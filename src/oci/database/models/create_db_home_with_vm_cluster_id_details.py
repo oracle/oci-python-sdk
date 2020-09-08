@@ -23,6 +23,10 @@ class CreateDbHomeWithVmClusterIdDetails(CreateDbHomeBase):
             The value to assign to the display_name property of this CreateDbHomeWithVmClusterIdDetails.
         :type display_name: str
 
+        :param database_software_image_id:
+            The value to assign to the database_software_image_id property of this CreateDbHomeWithVmClusterIdDetails.
+        :type database_software_image_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateDbHomeWithVmClusterIdDetails.
         :type freeform_tags: dict(str, str)
@@ -51,6 +55,7 @@ class CreateDbHomeWithVmClusterIdDetails(CreateDbHomeBase):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'database_software_image_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'source': 'str',
@@ -61,6 +66,7 @@ class CreateDbHomeWithVmClusterIdDetails(CreateDbHomeBase):
 
         self.attribute_map = {
             'display_name': 'displayName',
+            'database_software_image_id': 'databaseSoftwareImageId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'source': 'source',
@@ -70,6 +76,7 @@ class CreateDbHomeWithVmClusterIdDetails(CreateDbHomeBase):
         }
 
         self._display_name = None
+        self._database_software_image_id = None
         self._freeform_tags = None
         self._defined_tags = None
         self._source = None

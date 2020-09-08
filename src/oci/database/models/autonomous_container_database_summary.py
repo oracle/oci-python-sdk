@@ -142,6 +142,10 @@ class AutonomousContainerDatabaseSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type patch_model: str
 
+        :param patch_id:
+            The value to assign to the patch_id property of this AutonomousContainerDatabaseSummary.
+        :type patch_id: str
+
         :param last_maintenance_run_id:
             The value to assign to the last_maintenance_run_id property of this AutonomousContainerDatabaseSummary.
         :type last_maintenance_run_id: str
@@ -188,6 +192,7 @@ class AutonomousContainerDatabaseSummary(object):
             'lifecycle_details': 'str',
             'time_created': 'datetime',
             'patch_model': 'str',
+            'patch_id': 'str',
             'last_maintenance_run_id': 'str',
             'next_maintenance_run_id': 'str',
             'maintenance_window': 'MaintenanceWindow',
@@ -211,6 +216,7 @@ class AutonomousContainerDatabaseSummary(object):
             'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
             'patch_model': 'patchModel',
+            'patch_id': 'patchId',
             'last_maintenance_run_id': 'lastMaintenanceRunId',
             'next_maintenance_run_id': 'nextMaintenanceRunId',
             'maintenance_window': 'maintenanceWindow',
@@ -233,6 +239,7 @@ class AutonomousContainerDatabaseSummary(object):
         self._lifecycle_details = None
         self._time_created = None
         self._patch_model = None
+        self._patch_id = None
         self._last_maintenance_run_id = None
         self._next_maintenance_run_id = None
         self._maintenance_window = None
@@ -553,6 +560,34 @@ class AutonomousContainerDatabaseSummary(object):
         if not value_allowed_none_or_none_sentinel(patch_model, allowed_values):
             patch_model = 'UNKNOWN_ENUM_VALUE'
         self._patch_model = patch_model
+
+    @property
+    def patch_id(self):
+        """
+        Gets the patch_id of this AutonomousContainerDatabaseSummary.
+        The `OCID`__ of the last patch applied on the system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The patch_id of this AutonomousContainerDatabaseSummary.
+        :rtype: str
+        """
+        return self._patch_id
+
+    @patch_id.setter
+    def patch_id(self, patch_id):
+        """
+        Sets the patch_id of this AutonomousContainerDatabaseSummary.
+        The `OCID`__ of the last patch applied on the system.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param patch_id: The patch_id of this AutonomousContainerDatabaseSummary.
+        :type: str
+        """
+        self._patch_id = patch_id
 
     @property
     def last_maintenance_run_id(self):

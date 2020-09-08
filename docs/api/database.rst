@@ -45,6 +45,8 @@ Database
     oci.database.models.AutonomousExadataInfrastructure
     oci.database.models.AutonomousExadataInfrastructureShapeSummary
     oci.database.models.AutonomousExadataInfrastructureSummary
+    oci.database.models.AutonomousPatch
+    oci.database.models.AutonomousPatchSummary
     oci.database.models.AutonomousVmCluster
     oci.database.models.AutonomousVmClusterSummary
     oci.database.models.Backup
@@ -82,6 +84,7 @@ Database
     oci.database.models.CreateDatabaseFromBackup
     oci.database.models.CreateDatabaseFromBackupDetails
     oci.database.models.CreateDatabaseFromDbSystemDetails
+    oci.database.models.CreateDatabaseSoftwareImageDetails
     oci.database.models.CreateDbHomeBase
     oci.database.models.CreateDbHomeDetails
     oci.database.models.CreateDbHomeFromBackupDetails
@@ -102,6 +105,8 @@ Database
     oci.database.models.DataGuardAssociationSummary
     oci.database.models.Database
     oci.database.models.DatabaseConnectionStrings
+    oci.database.models.DatabaseSoftwareImage
+    oci.database.models.DatabaseSoftwareImageSummary
     oci.database.models.DatabaseSummary
     oci.database.models.DayOfWeek
     oci.database.models.DbBackupConfig
@@ -162,6 +167,7 @@ Database
     oci.database.models.UpdateAutonomousVmClusterDetails
     oci.database.models.UpdateBackupDestinationDetails
     oci.database.models.UpdateDatabaseDetails
+    oci.database.models.UpdateDatabaseSoftwareImageDetails
     oci.database.models.UpdateDbHomeDetails
     oci.database.models.UpdateDbSystemDetails
     oci.database.models.UpdateExadataInfrastructureDetails

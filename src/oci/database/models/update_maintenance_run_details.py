@@ -30,22 +30,29 @@ class UpdateMaintenanceRunDetails(object):
             The value to assign to the is_patch_now_enabled property of this UpdateMaintenanceRunDetails.
         :type is_patch_now_enabled: bool
 
+        :param patch_id:
+            The value to assign to the patch_id property of this UpdateMaintenanceRunDetails.
+        :type patch_id: str
+
         """
         self.swagger_types = {
             'is_enabled': 'bool',
             'time_scheduled': 'datetime',
-            'is_patch_now_enabled': 'bool'
+            'is_patch_now_enabled': 'bool',
+            'patch_id': 'str'
         }
 
         self.attribute_map = {
             'is_enabled': 'isEnabled',
             'time_scheduled': 'timeScheduled',
-            'is_patch_now_enabled': 'isPatchNowEnabled'
+            'is_patch_now_enabled': 'isPatchNowEnabled',
+            'patch_id': 'patchId'
         }
 
         self._is_enabled = None
         self._time_scheduled = None
         self._is_patch_now_enabled = None
+        self._patch_id = None
 
     @property
     def is_enabled(self):
@@ -118,6 +125,34 @@ class UpdateMaintenanceRunDetails(object):
         :type: bool
         """
         self._is_patch_now_enabled = is_patch_now_enabled
+
+    @property
+    def patch_id(self):
+        """
+        Gets the patch_id of this UpdateMaintenanceRunDetails.
+        The `OCID`__ of the patch to be applied in the maintenance run.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The patch_id of this UpdateMaintenanceRunDetails.
+        :rtype: str
+        """
+        return self._patch_id
+
+    @patch_id.setter
+    def patch_id(self, patch_id):
+        """
+        Sets the patch_id of this UpdateMaintenanceRunDetails.
+        The `OCID`__ of the patch to be applied in the maintenance run.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param patch_id: The patch_id of this UpdateMaintenanceRunDetails.
+        :type: str
+        """
+        self._patch_id = patch_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

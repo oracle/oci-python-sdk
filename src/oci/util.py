@@ -8,6 +8,14 @@ import json
 import os.path
 import pytz
 from oci._vendor import six
+import os
+from oci.exceptions import InvalidConfig
+
+INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE_VALUE_NAME = 'instance_principal'
+DELEGATION_TOKEN_WITH_INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE = 'delegation_token_with_instance_principal'
+DELEGATION_TOKEN_FILE_FIELD_NAME = 'delegation_token_file'
+AUTHENTICATION_TYPE_FIELD_NAME = 'authentication_type'
+
 try:
     # PY3+
     import collections.abc as abc
@@ -133,3 +141,57 @@ class Sentinel(object):
 NONE_SENTINEL = Sentinel(name='None', truthy=False)
 
 WAIT_RESOURCE_NOT_FOUND = Sentinel(name='WaitResourceNotFound', truthy=False)
+
+
+def _get_signer_from_delegation_token_instance_principal(config):
+    # Import the signer inside the function to avoid circular imports during initialization
+    from oci.auth.signers import InstancePrincipalsDelegationTokenSigner
+
+    signer_kwargs = {}
+
+    delegation_token_file_path = config.get(DELEGATION_TOKEN_FILE_FIELD_NAME)
+
+    if delegation_token_file_path is None:
+        raise InvalidConfig('ERROR: {} was not provided.'.format(DELEGATION_TOKEN_FILE_FIELD_NAME))
+
+    expanded_delegation_token_file_path = os.path.expanduser(delegation_token_file_path)
+    if not os.path.isfile(expanded_delegation_token_file_path):
+        raise InvalidConfig('ERROR: delegation token file not found at {}'.format(expanded_delegation_token_file_path))
+
+    with open(expanded_delegation_token_file_path, mode="r") as f:
+        delegation_token = f.read().strip()
+    if delegation_token is None:
+        raise InvalidConfig('ERROR: delegation_token was not provided.')
+    signer_kwargs['delegation_token'] = delegation_token
+    # Return signer with delegation token
+    return InstancePrincipalsDelegationTokenSigner(**signer_kwargs)
+
+
+# This map can be easily extended to accommodate support for more auth types through the config file
+AUTH_TYPE_TO_SIGNER_FUNCTION_MAP = {
+    DELEGATION_TOKEN_WITH_INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE: _get_signer_from_delegation_token_instance_principal
+}
+
+
+def get_signer_from_authentication_type(config):
+    # This is currently made for allowing SDK to run seamlessly on cloud shell
+    auth_type = get_authentication_type_from_config(config)
+
+    # Get the signer function from map
+    signer_function = AUTH_TYPE_TO_SIGNER_FUNCTION_MAP.get(auth_type)
+    return signer_function(config)
+
+
+def get_authentication_type_from_config(config):
+    auth_type = config.get(AUTHENTICATION_TYPE_FIELD_NAME)
+    if auth_type is None:
+        raise ValueError("{} not provided".format(AUTHENTICATION_TYPE_FIELD_NAME))
+
+    # Currently the SDK supports only the cloud shell use case, this can be extended for other auth types
+    if auth_type == INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE_VALUE_NAME:
+        if DELEGATION_TOKEN_FILE_FIELD_NAME in config:
+            return DELEGATION_TOKEN_WITH_INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE
+        else:
+            raise InvalidConfig("The authentication type {} requires config values for the keys {}".format(DELEGATION_TOKEN_WITH_INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE, DELEGATION_TOKEN_FILE_FIELD_NAME))
+    else:
+        raise InvalidConfig("The authentication type {} is not supported".format(auth_type))

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AccessLogPolicy(object):
     """
-    Configures the pushing of access logs to OCI Public Logging.
+    Configures the logging policies for the access logs of an API Deployment.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,15 @@ class AccessLogPolicy(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this AccessLogPolicy.
-        Enables pushing of access logs to OCI Public Logging.
+        Enables pushing of access logs to the legacy OCI Object Storage log archival bucket.
+
+        Oracle recommends using the OCI Logging service to enable, retrieve, and query access logs
+        for an API Deployment. If there is an active log object for the API Deployment and its
+        category is set to 'access' in OCI Logging service, the logs will not be uploaded to the
+        legacy OCI Object Storage log archival bucket.
+
+        Please note that the functionality to push to the legacy OCI Object Storage log
+        archival bucket has been deprecated and will be removed in the future.
 
 
         :return: The is_enabled of this AccessLogPolicy.
@@ -49,7 +57,15 @@ class AccessLogPolicy(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this AccessLogPolicy.
-        Enables pushing of access logs to OCI Public Logging.
+        Enables pushing of access logs to the legacy OCI Object Storage log archival bucket.
+
+        Oracle recommends using the OCI Logging service to enable, retrieve, and query access logs
+        for an API Deployment. If there is an active log object for the API Deployment and its
+        category is set to 'access' in OCI Logging service, the logs will not be uploaded to the
+        legacy OCI Object Storage log archival bucket.
+
+        Please note that the functionality to push to the legacy OCI Object Storage log
+        archival bucket has been deprecated and will be removed in the future.
 
 
         :param is_enabled: The is_enabled of this AccessLogPolicy.

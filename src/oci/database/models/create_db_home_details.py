@@ -28,6 +28,10 @@ class CreateDbHomeDetails(object):
             The value to assign to the db_version property of this CreateDbHomeDetails.
         :type db_version: str
 
+        :param database_software_image_id:
+            The value to assign to the database_software_image_id property of this CreateDbHomeDetails.
+        :type database_software_image_id: str
+
         :param database:
             The value to assign to the database property of this CreateDbHomeDetails.
         :type database: CreateDatabaseDetails
@@ -44,6 +48,7 @@ class CreateDbHomeDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'db_version': 'str',
+            'database_software_image_id': 'str',
             'database': 'CreateDatabaseDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -52,6 +57,7 @@ class CreateDbHomeDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'db_version': 'dbVersion',
+            'database_software_image_id': 'databaseSoftwareImageId',
             'database': 'database',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -59,6 +65,7 @@ class CreateDbHomeDetails(object):
 
         self._display_name = None
         self._db_version = None
+        self._database_software_image_id = None
         self._database = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -110,6 +117,34 @@ class CreateDbHomeDetails(object):
         :type: str
         """
         self._db_version = db_version
+
+    @property
+    def database_software_image_id(self):
+        """
+        Gets the database_software_image_id of this CreateDbHomeDetails.
+        The database software image `OCID`__
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The database_software_image_id of this CreateDbHomeDetails.
+        :rtype: str
+        """
+        return self._database_software_image_id
+
+    @database_software_image_id.setter
+    def database_software_image_id(self, database_software_image_id):
+        """
+        Sets the database_software_image_id of this CreateDbHomeDetails.
+        The database software image `OCID`__
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param database_software_image_id: The database_software_image_id of this CreateDbHomeDetails.
+        :type: str
+        """
+        self._database_software_image_id = database_software_image_id
 
     @property
     def database(self):

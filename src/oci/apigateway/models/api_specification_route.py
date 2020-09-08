@@ -64,6 +64,10 @@ class ApiSpecificationRoute(object):
             The value to assign to the request_policies property of this ApiSpecificationRoute.
         :type request_policies: ApiSpecificationRouteRequestPolicies
 
+        :param response_policies:
+            The value to assign to the response_policies property of this ApiSpecificationRoute.
+        :type response_policies: ApiSpecificationRouteResponsePolicies
+
         :param logging_policies:
             The value to assign to the logging_policies property of this ApiSpecificationRoute.
         :type logging_policies: ApiSpecificationLoggingPolicies
@@ -77,6 +81,7 @@ class ApiSpecificationRoute(object):
             'path': 'str',
             'methods': 'list[str]',
             'request_policies': 'ApiSpecificationRouteRequestPolicies',
+            'response_policies': 'ApiSpecificationRouteResponsePolicies',
             'logging_policies': 'ApiSpecificationLoggingPolicies',
             'backend': 'ApiSpecificationRouteBackend'
         }
@@ -85,6 +90,7 @@ class ApiSpecificationRoute(object):
             'path': 'path',
             'methods': 'methods',
             'request_policies': 'requestPolicies',
+            'response_policies': 'responsePolicies',
             'logging_policies': 'loggingPolicies',
             'backend': 'backend'
         }
@@ -92,6 +98,7 @@ class ApiSpecificationRoute(object):
         self._path = None
         self._methods = None
         self._request_policies = None
+        self._response_policies = None
         self._logging_policies = None
         self._backend = None
 
@@ -170,6 +177,26 @@ class ApiSpecificationRoute(object):
         :type: ApiSpecificationRouteRequestPolicies
         """
         self._request_policies = request_policies
+
+    @property
+    def response_policies(self):
+        """
+        Gets the response_policies of this ApiSpecificationRoute.
+
+        :return: The response_policies of this ApiSpecificationRoute.
+        :rtype: ApiSpecificationRouteResponsePolicies
+        """
+        return self._response_policies
+
+    @response_policies.setter
+    def response_policies(self, response_policies):
+        """
+        Sets the response_policies of this ApiSpecificationRoute.
+
+        :param response_policies: The response_policies of this ApiSpecificationRoute.
+        :type: ApiSpecificationRouteResponsePolicies
+        """
+        self._response_policies = response_policies
 
     @property
     def logging_policies(self):

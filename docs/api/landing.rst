@@ -49,6 +49,12 @@ API Reference
 * :doc:`Limits <limits/client/oci.limits.LimitsClient>`
 * :doc:`Quotas <limits/client/oci.limits.QuotasClient>`
 * :doc:`Load Balancer <load_balancer/client/oci.load_balancer.LoadBalancerClient>`
+* :doc:`Log Analytics <log_analytics/client/oci.log_analytics.LogAnalyticsClient>`
+* :doc:`Logging Management <logging/client/oci.logging.LoggingManagementClient>`
+* :doc:`Logging <loggingingestion/client/oci.loggingingestion.LoggingClient>`
+* :doc:`Log Search <loggingsearch/client/oci.loggingsearch.LogSearchClient>`
+* :doc:`Management Agent <management_agent/client/oci.management_agent.ManagementAgentClient>`
+* :doc:`Dashx Apis <management_dashboard/client/oci.management_dashboard.DashxApisClient>`
 * :doc:`Marketplace <marketplace/client/oci.marketplace.MarketplaceClient>`
 * :doc:`Monitoring <monitoring/client/oci.monitoring.MonitoringClient>`
 * :doc:`Db Backups <mysql/client/oci.mysql.DbBackupsClient>`
@@ -67,6 +73,7 @@ API Reference
 * :doc:`Os Management <os_management/client/oci.os_management.OsManagementClient>`
 * :doc:`Resource Manager <resource_manager/client/oci.resource_manager.ResourceManagerClient>`
 * :doc:`Resource Search <resource_search/client/oci.resource_search.ResourceSearchClient>`
+* :doc:`Service Connector <sch/client/oci.sch.ServiceConnectorClient>`
 * :doc:`Secrets <secrets/client/oci.secrets.SecretsClient>`
 * :doc:`Stream Admin <streaming/client/oci.streaming.StreamAdminClient>`
 * :doc:`Stream <streaming/client/oci.streaming.StreamClient>`
@@ -123,6 +130,12 @@ API Reference
     key_management
     limits
     load_balancer
+    log_analytics
+    logging
+    loggingingestion
+    loggingsearch
+    management_agent
+    management_dashboard
     marketplace
     monitoring
     mysql
@@ -135,6 +148,7 @@ API Reference
     os_management
     resource_manager
     resource_search
+    sch
     secrets
     streaming
     usage_api

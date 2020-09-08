@@ -1,0 +1,11 @@
+AgentUpload
+===========
+
+.. currentmodule:: oci.log_analytics.models
+
+.. autoclass:: AgentUpload
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:
