@@ -43,6 +43,7 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/cloud_guard/pom.xml</module>
     <module>poms/management_agent/pom.xml</module>
     <module>poms/loggingsearch/pom.xml</module>
     <module>poms/sch/pom.xml</module>
