@@ -21,6 +21,18 @@ class CreateIntegrationInstanceDetails(object):
     #: This constant has a value of "ENTERPRISE"
     INTEGRATION_INSTANCE_TYPE_ENTERPRISE = "ENTERPRISE"
 
+    #: A constant which can be used with the consumption_model property of a CreateIntegrationInstanceDetails.
+    #: This constant has a value of "UCM"
+    CONSUMPTION_MODEL_UCM = "UCM"
+
+    #: A constant which can be used with the consumption_model property of a CreateIntegrationInstanceDetails.
+    #: This constant has a value of "GOV"
+    CONSUMPTION_MODEL_GOV = "GOV"
+
+    #: A constant which can be used with the consumption_model property of a CreateIntegrationInstanceDetails.
+    #: This constant has a value of "OIC4SAAS"
+    CONSUMPTION_MODEL_OIC4_SAAS = "OIC4SAAS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateIntegrationInstanceDetails object with values from keyword arguments.
@@ -59,6 +71,11 @@ class CreateIntegrationInstanceDetails(object):
             The value to assign to the message_packs property of this CreateIntegrationInstanceDetails.
         :type message_packs: int
 
+        :param consumption_model:
+            The value to assign to the consumption_model property of this CreateIntegrationInstanceDetails.
+            Allowed values for this property are: "UCM", "GOV", "OIC4SAAS"
+        :type consumption_model: str
+
         :param is_file_server_enabled:
             The value to assign to the is_file_server_enabled property of this CreateIntegrationInstanceDetails.
         :type is_file_server_enabled: bool
@@ -73,6 +90,7 @@ class CreateIntegrationInstanceDetails(object):
             'is_byol': 'bool',
             'idcs_at': 'str',
             'message_packs': 'int',
+            'consumption_model': 'str',
             'is_file_server_enabled': 'bool'
         }
 
@@ -85,6 +103,7 @@ class CreateIntegrationInstanceDetails(object):
             'is_byol': 'isByol',
             'idcs_at': 'idcsAt',
             'message_packs': 'messagePacks',
+            'consumption_model': 'consumptionModel',
             'is_file_server_enabled': 'isFileServerEnabled'
         }
 
@@ -96,6 +115,7 @@ class CreateIntegrationInstanceDetails(object):
         self._is_byol = None
         self._idcs_at = None
         self._message_packs = None
+        self._consumption_model = None
         self._is_file_server_enabled = None
 
     @property
@@ -305,6 +325,38 @@ class CreateIntegrationInstanceDetails(object):
         :type: int
         """
         self._message_packs = message_packs
+
+    @property
+    def consumption_model(self):
+        """
+        Gets the consumption_model of this CreateIntegrationInstanceDetails.
+        Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
+
+        Allowed values for this property are: "UCM", "GOV", "OIC4SAAS"
+
+
+        :return: The consumption_model of this CreateIntegrationInstanceDetails.
+        :rtype: str
+        """
+        return self._consumption_model
+
+    @consumption_model.setter
+    def consumption_model(self, consumption_model):
+        """
+        Sets the consumption_model of this CreateIntegrationInstanceDetails.
+        Optional parameter specifying which entitlement to use for billing purposes. Only required if the account possesses more than one entitlement.
+
+
+        :param consumption_model: The consumption_model of this CreateIntegrationInstanceDetails.
+        :type: str
+        """
+        allowed_values = ["UCM", "GOV", "OIC4SAAS"]
+        if not value_allowed_none_or_none_sentinel(consumption_model, allowed_values):
+            raise ValueError(
+                "Invalid value for `consumption_model`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._consumption_model = consumption_model
 
     @property
     def is_file_server_enabled(self):

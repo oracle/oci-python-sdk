@@ -1220,6 +1220,49 @@ class LoadBalancerClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def update_load_balancer_shape_and_wait_for_state(self, load_balancer_id, update_load_balancer_shape_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.load_balancer.LoadBalancerClient.update_load_balancer_shape` and waits for the :py:class:`~oci.load_balancer.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str load_balancer_id: (required)
+            The `OCID`__ of the load balancer whose shape will be updated.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param UpdateLoadBalancerShapeDetails update_load_balancer_shape_details: (required)
+            The details for updating a load balancer's shape. This contains the new, desired shape.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.load_balancer.models.WorkRequest.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.load_balancer.LoadBalancerClient.update_load_balancer_shape`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_load_balancer_shape(load_balancer_id, update_load_balancer_shape_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def update_network_security_groups_and_wait_for_state(self, update_network_security_groups_details, load_balancer_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.load_balancer.LoadBalancerClient.update_network_security_groups` and waits for the :py:class:`~oci.load_balancer.models.WorkRequest`

@@ -49,6 +49,18 @@ class IntegrationInstance(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the consumption_model property of a IntegrationInstance.
+    #: This constant has a value of "UCM"
+    CONSUMPTION_MODEL_UCM = "UCM"
+
+    #: A constant which can be used with the consumption_model property of a IntegrationInstance.
+    #: This constant has a value of "GOV"
+    CONSUMPTION_MODEL_GOV = "GOV"
+
+    #: A constant which can be used with the consumption_model property of a IntegrationInstance.
+    #: This constant has a value of "OIC4SAAS"
+    CONSUMPTION_MODEL_OIC4_SAAS = "OIC4SAAS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new IntegrationInstance object with values from keyword arguments.
@@ -114,6 +126,12 @@ class IntegrationInstance(object):
             The value to assign to the is_file_server_enabled property of this IntegrationInstance.
         :type is_file_server_enabled: bool
 
+        :param consumption_model:
+            The value to assign to the consumption_model property of this IntegrationInstance.
+            Allowed values for this property are: "UCM", "GOV", "OIC4SAAS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type consumption_model: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -129,7 +147,8 @@ class IntegrationInstance(object):
             'is_byol': 'bool',
             'instance_url': 'str',
             'message_packs': 'int',
-            'is_file_server_enabled': 'bool'
+            'is_file_server_enabled': 'bool',
+            'consumption_model': 'str'
         }
 
         self.attribute_map = {
@@ -146,7 +165,8 @@ class IntegrationInstance(object):
             'is_byol': 'isByol',
             'instance_url': 'instanceUrl',
             'message_packs': 'messagePacks',
-            'is_file_server_enabled': 'isFileServerEnabled'
+            'is_file_server_enabled': 'isFileServerEnabled',
+            'consumption_model': 'consumptionModel'
         }
 
         self._id = None
@@ -163,6 +183,7 @@ class IntegrationInstance(object):
         self._instance_url = None
         self._message_packs = None
         self._is_file_server_enabled = None
+        self._consumption_model = None
 
     @property
     def id(self):
@@ -519,6 +540,36 @@ class IntegrationInstance(object):
         :type: bool
         """
         self._is_file_server_enabled = is_file_server_enabled
+
+    @property
+    def consumption_model(self):
+        """
+        Gets the consumption_model of this IntegrationInstance.
+        The entitlement used for billing purposes.
+
+        Allowed values for this property are: "UCM", "GOV", "OIC4SAAS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The consumption_model of this IntegrationInstance.
+        :rtype: str
+        """
+        return self._consumption_model
+
+    @consumption_model.setter
+    def consumption_model(self, consumption_model):
+        """
+        Sets the consumption_model of this IntegrationInstance.
+        The entitlement used for billing purposes.
+
+
+        :param consumption_model: The consumption_model of this IntegrationInstance.
+        :type: str
+        """
+        allowed_values = ["UCM", "GOV", "OIC4SAAS"]
+        if not value_allowed_none_or_none_sentinel(consumption_model, allowed_values):
+            consumption_model = 'UNKNOWN_ENUM_VALUE'
+        self._consumption_model = consumption_model
 
     def __repr__(self):
         return formatted_flat_dict(self)
