@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.21.4 - 2020-09-15
+====================
+
+Added
+-----
+* Support for the Cloud Guard service
+* Support for specifying desired consumption models when creating instances in the Integration service
+* Support for dynamic shapes in the Load Balancing service
+
+====================
 2.21.3 - 2020-09-08
 ====================
 

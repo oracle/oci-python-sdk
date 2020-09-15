@@ -16,6 +16,7 @@ API Reference
 * :doc:`Budget <budget/client/oci.budget.BudgetClient>`
 * :doc:`Incident <cims/client/oci.cims.IncidentClient>`
 * :doc:`User <cims/client/oci.cims.UserClient>`
+* :doc:`Cloud Guard <cloud_guard/client/oci.cloud_guard.CloudGuardClient>`
 * :doc:`Container Engine <container_engine/client/oci.container_engine.ContainerEngineClient>`
 * :doc:`Block Storage <core/client/oci.core.BlockstorageClient>`
 * :doc:`Compute <core/client/oci.core.ComputeClient>`
@@ -110,6 +111,7 @@ API Reference
     blockchain
     budget
     cims
+    cloud_guard
     container_engine
     core
     data_catalog
