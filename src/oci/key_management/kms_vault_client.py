@@ -18,7 +18,8 @@ missing = Sentinel("Missing")
 
 class KmsVaultClient(object):
     """
-    API for managing and performing operations with keys and vaults.
+    API for managing and performing operations with keys and vaults. (For the API for managing secrets, see the Vault Service
+    Secret Management API. For the API for retrieving secrets, see the Vault Service Secret Retrieval API.)
     """
 
     def __init__(self, config, **kwargs):

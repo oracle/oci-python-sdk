@@ -180,9 +180,9 @@ class VaultSummary(object):
         `Encrypt`__, `Decrypt`__,
         and `GenerateDataEncryptionKey`__ operations.
 
-        __ https://docs.cloud.oracle.com/api/#/en/key/release/EncryptedData/Encrypt
-        __ https://docs.cloud.oracle.com/api/#/en/key/release/DecryptedData/Decrypt
-        __ https://docs.cloud.oracle.com/api/#/en/key/release/GeneratedKey/GenerateDataEncryptionKey
+        __ https://docs.cloud.oracle.com/api/#/en/key/latest/EncryptedData/Encrypt
+        __ https://docs.cloud.oracle.com/api/#/en/key/latest/DecryptedData/Decrypt
+        __ https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey
 
 
         :return: The crypto_endpoint of this VaultSummary.
@@ -198,9 +198,9 @@ class VaultSummary(object):
         `Encrypt`__, `Decrypt`__,
         and `GenerateDataEncryptionKey`__ operations.
 
-        __ https://docs.cloud.oracle.com/api/#/en/key/release/EncryptedData/Encrypt
-        __ https://docs.cloud.oracle.com/api/#/en/key/release/DecryptedData/Decrypt
-        __ https://docs.cloud.oracle.com/api/#/en/key/release/GeneratedKey/GenerateDataEncryptionKey
+        __ https://docs.cloud.oracle.com/api/#/en/key/latest/EncryptedData/Encrypt
+        __ https://docs.cloud.oracle.com/api/#/en/key/latest/DecryptedData/Decrypt
+        __ https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey
 
 
         :param crypto_endpoint: The crypto_endpoint of this VaultSummary.

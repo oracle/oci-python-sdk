@@ -13,6 +13,14 @@ class Key(object):
     Key model.
     """
 
+    #: A constant which can be used with the protection_mode property of a Key.
+    #: This constant has a value of "HSM"
+    PROTECTION_MODE_HSM = "HSM"
+
+    #: A constant which can be used with the protection_mode property of a Key.
+    #: This constant has a value of "SOFTWARE"
+    PROTECTION_MODE_SOFTWARE = "SOFTWARE"
+
     #: A constant which can be used with the lifecycle_state property of a Key.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -98,6 +106,12 @@ class Key(object):
             The value to assign to the key_shape property of this Key.
         :type key_shape: KeyShape
 
+        :param protection_mode:
+            The value to assign to the protection_mode property of this Key.
+            Allowed values for this property are: "HSM", "SOFTWARE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type protection_mode: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Key.
             Allowed values for this property are: "CREATING", "ENABLING", "ENABLED", "DISABLING", "DISABLED", "DELETING", "DELETED", "PENDING_DELETION", "SCHEDULING_DELETION", "CANCELLING_DELETION", "UPDATING", "BACKUP_IN_PROGRESS", "RESTORING", 'UNKNOWN_ENUM_VALUE'.
@@ -129,6 +143,7 @@ class Key(object):
             'freeform_tags': 'dict(str, str)',
             'id': 'str',
             'key_shape': 'KeyShape',
+            'protection_mode': 'str',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'time_of_deletion': 'datetime',
@@ -144,6 +159,7 @@ class Key(object):
             'freeform_tags': 'freeformTags',
             'id': 'id',
             'key_shape': 'keyShape',
+            'protection_mode': 'protectionMode',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'time_of_deletion': 'timeOfDeletion',
@@ -158,6 +174,7 @@ class Key(object):
         self._freeform_tags = None
         self._id = None
         self._key_shape = None
+        self._protection_mode = None
         self._lifecycle_state = None
         self._time_created = None
         self._time_of_deletion = None
@@ -349,6 +366,44 @@ class Key(object):
         :type: KeyShape
         """
         self._key_shape = key_shape
+
+    @property
+    def protection_mode(self):
+        """
+        Gets the protection_mode of this Key.
+        The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
+        A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
+        the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists
+        on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,
+        a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+
+        Allowed values for this property are: "HSM", "SOFTWARE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The protection_mode of this Key.
+        :rtype: str
+        """
+        return self._protection_mode
+
+    @protection_mode.setter
+    def protection_mode(self, protection_mode):
+        """
+        Sets the protection_mode of this Key.
+        The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
+        A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
+        the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists
+        on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,
+        a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+
+
+        :param protection_mode: The protection_mode of this Key.
+        :type: str
+        """
+        allowed_values = ["HSM", "SOFTWARE"]
+        if not value_allowed_none_or_none_sentinel(protection_mode, allowed_values):
+            protection_mode = 'UNKNOWN_ENUM_VALUE'
+        self._protection_mode = protection_mode
 
     @property
     def lifecycle_state(self):

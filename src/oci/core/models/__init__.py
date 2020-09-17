@@ -175,6 +175,7 @@ from .i_scsi_volume_attachment import IScsiVolumeAttachment
 from .icmp_options import IcmpOptions
 from .image import Image
 from .image_capability_schema_descriptor import ImageCapabilitySchemaDescriptor
+from .image_memory_constraints import ImageMemoryConstraints
 from .image_ocpu_constraints import ImageOcpuConstraints
 from .image_shape_compatibility_entry import ImageShapeCompatibilityEntry
 from .image_shape_compatibility_summary import ImageShapeCompatibilitySummary
@@ -507,6 +508,7 @@ core_type_mapping = {
     "IcmpOptions": IcmpOptions,
     "Image": Image,
     "ImageCapabilitySchemaDescriptor": ImageCapabilitySchemaDescriptor,
+    "ImageMemoryConstraints": ImageMemoryConstraints,
     "ImageOcpuConstraints": ImageOcpuConstraints,
     "ImageShapeCompatibilityEntry": ImageShapeCompatibilityEntry,
     "ImageShapeCompatibilitySummary": ImageShapeCompatibilitySummary,

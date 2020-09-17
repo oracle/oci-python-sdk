@@ -208,7 +208,7 @@ class WrappingKey(object):
     def public_key(self):
         """
         **[Required]** Gets the public_key of this WrappingKey.
-        The public key in PEM format to encrypt the key material before importing it with ImportKey/ImportKeyVersion.
+        The public key, in PEM format, to use to wrap the key material before importing it.
 
 
         :return: The public_key of this WrappingKey.
@@ -220,7 +220,7 @@ class WrappingKey(object):
     def public_key(self, public_key):
         """
         Sets the public_key of this WrappingKey.
-        The public key in PEM format to encrypt the key material before importing it with ImportKey/ImportKeyVersion.
+        The public key, in PEM format, to use to wrap the key material before importing it.
 
 
         :param public_key: The public_key of this WrappingKey.
