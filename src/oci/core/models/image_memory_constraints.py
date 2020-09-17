@@ -18,75 +18,75 @@ class ImageMemoryConstraints(object):
         Initializes a new ImageMemoryConstraints object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param min_in_g_bs:
-            The value to assign to the min_in_g_bs property of this ImageMemoryConstraints.
-        :type min_in_g_bs: int
+        :param min_in_gbs:
+            The value to assign to the min_in_gbs property of this ImageMemoryConstraints.
+        :type min_in_gbs: int
 
-        :param max_in_g_bs:
-            The value to assign to the max_in_g_bs property of this ImageMemoryConstraints.
-        :type max_in_g_bs: int
+        :param max_in_gbs:
+            The value to assign to the max_in_gbs property of this ImageMemoryConstraints.
+        :type max_in_gbs: int
 
         """
         self.swagger_types = {
-            'min_in_g_bs': 'int',
-            'max_in_g_bs': 'int'
+            'min_in_gbs': 'int',
+            'max_in_gbs': 'int'
         }
 
         self.attribute_map = {
-            'min_in_g_bs': 'minInGBs',
-            'max_in_g_bs': 'maxInGBs'
+            'min_in_gbs': 'minInGBs',
+            'max_in_gbs': 'maxInGBs'
         }
 
-        self._min_in_g_bs = None
-        self._max_in_g_bs = None
+        self._min_in_gbs = None
+        self._max_in_gbs = None
 
     @property
-    def min_in_g_bs(self):
+    def min_in_gbs(self):
         """
-        Gets the min_in_g_bs of this ImageMemoryConstraints.
+        Gets the min_in_gbs of this ImageMemoryConstraints.
         The minimum amount of memory supported for this image and shape, in gigabytes.
 
 
-        :return: The min_in_g_bs of this ImageMemoryConstraints.
+        :return: The min_in_gbs of this ImageMemoryConstraints.
         :rtype: int
         """
-        return self._min_in_g_bs
+        return self._min_in_gbs
 
-    @min_in_g_bs.setter
-    def min_in_g_bs(self, min_in_g_bs):
+    @min_in_gbs.setter
+    def min_in_gbs(self, min_in_gbs):
         """
-        Sets the min_in_g_bs of this ImageMemoryConstraints.
+        Sets the min_in_gbs of this ImageMemoryConstraints.
         The minimum amount of memory supported for this image and shape, in gigabytes.
 
 
-        :param min_in_g_bs: The min_in_g_bs of this ImageMemoryConstraints.
+        :param min_in_gbs: The min_in_gbs of this ImageMemoryConstraints.
         :type: int
         """
-        self._min_in_g_bs = min_in_g_bs
+        self._min_in_gbs = min_in_gbs
 
     @property
-    def max_in_g_bs(self):
+    def max_in_gbs(self):
         """
-        Gets the max_in_g_bs of this ImageMemoryConstraints.
+        Gets the max_in_gbs of this ImageMemoryConstraints.
         The maximum amount of memory supported for this image and shape, in gigabytes.
 
 
-        :return: The max_in_g_bs of this ImageMemoryConstraints.
+        :return: The max_in_gbs of this ImageMemoryConstraints.
         :rtype: int
         """
-        return self._max_in_g_bs
+        return self._max_in_gbs
 
-    @max_in_g_bs.setter
-    def max_in_g_bs(self, max_in_g_bs):
+    @max_in_gbs.setter
+    def max_in_gbs(self, max_in_gbs):
         """
-        Sets the max_in_g_bs of this ImageMemoryConstraints.
+        Sets the max_in_gbs of this ImageMemoryConstraints.
         The maximum amount of memory supported for this image and shape, in gigabytes.
 
 
-        :param max_in_g_bs: The max_in_g_bs of this ImageMemoryConstraints.
+        :param max_in_gbs: The max_in_gbs of this ImageMemoryConstraints.
         :type: int
         """
-        self._max_in_g_bs = max_in_g_bs
+        self._max_in_gbs = max_in_gbs
 
     def __repr__(self):
         return formatted_flat_dict(self)
