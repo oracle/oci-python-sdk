@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
+=====================
+20.09.22 - 20.09.22
+=====================
+* Added Cloud Guard using -sec flag
+* Added Logging using -sec flag
+
+=====================
+20.09.01 - 20.09.01
+=====================
+* Fixed Mysql error while mysql deployed to several regions
 
 =====================
 20.08.25 - 2020-08-25
