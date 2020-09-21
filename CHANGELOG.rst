@@ -4,12 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.21.5 - TBD
+2.21.5 - 2020-09-22
 ====================
 
 Added
 -----
-* TBD
+* Support for software keys in the Key Management service
+* Support for customer contacts on Exadata Cloud at Customer in the Database service
+* Support for updating open modes and permission levels of autonomous databases in the Database service
+* Support for flexible memory on VM instances in the Compute and Compute Management services
 
 ====================
 2.21.4 - 2020-09-15
