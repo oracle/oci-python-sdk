@@ -47,6 +47,8 @@ Output can be printer friendly, CSV files or JSON file.
 - oci.dns.DnsClient
 - oci.events.EventsClient
 - oci.waas.WaasClient
+- oci.cloud_guard.CloudGuardClient
+- oci.logging.LoggingManagementClient
 
 ** DISCLAIMER – This is not an official Oracle application
 
@@ -146,10 +148,9 @@ Execute
 ```
 $ ./showoci.py  
 
-usage: showoci.py [-h] [-a] [-ani] [-an] [-api] [-b] [-c] [-cn] [-d] [-e] [-edge] [-f] [-fun] [-i] [-ic] [-isc] [-l] [-lq] [-m] [-n] [-o]
-                  [-paas] [-dataai] [-rm] [-s] [-nobackups] [-so] [-mc] [-nr] [-ip] [-dt] [-t PROFILE] [-p PROXY] [-rg REGION]
-                  [-cp COMPART] [-cpr COMPART_RECUR] [-cpath COMPARTPATH] [-tenantid TENANTID] [-cf CONFIG] [-csv CSV] [-jf JOUTFILE]
-                  [-js] [-sjf SJOUTFILE] [-cachef SERVICEFILE] [-caches] [--version]
+usage: showoci.py [-h] [-a] [-ani] [-an] [-api] [-b] [-c] [-cn] [-d] [-e] [-edge] [-f] [-fun] [-i] [-ic] [-isc] [-l] [-lq] [-m] [-n] [-o] [-paas] [-dataai] [-rm] [-s] [-sec]
+                  [-nobackups] [-so] [-mc] [-nr] [-ip] [-dt] [-t PROFILE] [-p PROXY] [-rg REGION] [-cp COMPART] [-cpr COMPART_RECUR] [-cpath COMPARTPATH] [-tenantid TENANTID]
+                  [-cf CONFIG] [-csv CSV] [-jf JOUTFILE] [-js] [-sjf SJOUTFILE] [-cachef SERVICEFILE] [-caches] [--version]
 
 optional arguments:
   -h, --help           show this help message and exit
@@ -177,6 +178,7 @@ optional arguments:
   -dataai              Print - D.Science, D.Catalog, D.Flow, ODA and BDS
   -rm                  Print Resource management
   -s                   Print Streams
+  -sec                 Print Security and Logging
   -nobackups           Do not process backups
   -so                  Print Summary Only
   -mc                  exclude ManagedCompartmentForPaaS
