@@ -35,6 +35,8 @@ Key Management
     oci.key_management.models.DecryptedData
     oci.key_management.models.EncryptDataDetails
     oci.key_management.models.EncryptedData
+    oci.key_management.models.ExportKeyDetails
+    oci.key_management.models.ExportedKeyData
     oci.key_management.models.GenerateKeyDetails
     oci.key_management.models.GeneratedKey
     oci.key_management.models.ImportKeyDetails

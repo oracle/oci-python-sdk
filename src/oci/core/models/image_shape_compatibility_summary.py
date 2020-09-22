@@ -26,6 +26,10 @@ class ImageShapeCompatibilitySummary(object):
             The value to assign to the shape property of this ImageShapeCompatibilitySummary.
         :type shape: str
 
+        :param memory_constraints:
+            The value to assign to the memory_constraints property of this ImageShapeCompatibilitySummary.
+        :type memory_constraints: ImageMemoryConstraints
+
         :param ocpu_constraints:
             The value to assign to the ocpu_constraints property of this ImageShapeCompatibilitySummary.
         :type ocpu_constraints: ImageOcpuConstraints
@@ -34,17 +38,20 @@ class ImageShapeCompatibilitySummary(object):
         self.swagger_types = {
             'image_id': 'str',
             'shape': 'str',
+            'memory_constraints': 'ImageMemoryConstraints',
             'ocpu_constraints': 'ImageOcpuConstraints'
         }
 
         self.attribute_map = {
             'image_id': 'imageId',
             'shape': 'shape',
+            'memory_constraints': 'memoryConstraints',
             'ocpu_constraints': 'ocpuConstraints'
         }
 
         self._image_id = None
         self._shape = None
+        self._memory_constraints = None
         self._ocpu_constraints = None
 
     @property
@@ -98,6 +105,26 @@ class ImageShapeCompatibilitySummary(object):
         :type: str
         """
         self._shape = shape
+
+    @property
+    def memory_constraints(self):
+        """
+        Gets the memory_constraints of this ImageShapeCompatibilitySummary.
+
+        :return: The memory_constraints of this ImageShapeCompatibilitySummary.
+        :rtype: ImageMemoryConstraints
+        """
+        return self._memory_constraints
+
+    @memory_constraints.setter
+    def memory_constraints(self, memory_constraints):
+        """
+        Sets the memory_constraints of this ImageShapeCompatibilitySummary.
+
+        :param memory_constraints: The memory_constraints of this ImageShapeCompatibilitySummary.
+        :type: ImageMemoryConstraints
+        """
+        self._memory_constraints = memory_constraints
 
     @property
     def ocpu_constraints(self):

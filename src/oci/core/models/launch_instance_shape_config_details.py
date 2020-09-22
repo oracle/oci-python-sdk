@@ -34,16 +34,23 @@ class LaunchInstanceShapeConfigDetails(object):
             The value to assign to the ocpus property of this LaunchInstanceShapeConfigDetails.
         :type ocpus: float
 
+        :param memory_in_gbs:
+            The value to assign to the memory_in_gbs property of this LaunchInstanceShapeConfigDetails.
+        :type memory_in_gbs: float
+
         """
         self.swagger_types = {
-            'ocpus': 'float'
+            'ocpus': 'float',
+            'memory_in_gbs': 'float'
         }
 
         self.attribute_map = {
-            'ocpus': 'ocpus'
+            'ocpus': 'ocpus',
+            'memory_in_gbs': 'memoryInGBs'
         }
 
         self._ocpus = None
+        self._memory_in_gbs = None
 
     @property
     def ocpus(self):
@@ -68,6 +75,30 @@ class LaunchInstanceShapeConfigDetails(object):
         :type: float
         """
         self._ocpus = ocpus
+
+    @property
+    def memory_in_gbs(self):
+        """
+        Gets the memory_in_gbs of this LaunchInstanceShapeConfigDetails.
+        The total amount of memory available to the instance, in gigabytes.
+
+
+        :return: The memory_in_gbs of this LaunchInstanceShapeConfigDetails.
+        :rtype: float
+        """
+        return self._memory_in_gbs
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, memory_in_gbs):
+        """
+        Sets the memory_in_gbs of this LaunchInstanceShapeConfigDetails.
+        The total amount of memory available to the instance, in gigabytes.
+
+
+        :param memory_in_gbs: The memory_in_gbs of this LaunchInstanceShapeConfigDetails.
+        :type: float
+        """
+        self._memory_in_gbs = memory_in_gbs
 
     def __repr__(self):
         return formatted_flat_dict(self)

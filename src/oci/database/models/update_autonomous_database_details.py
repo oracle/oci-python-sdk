@@ -43,6 +43,22 @@ class UpdateAutonomousDatabaseDetails(object):
     #: This constant has a value of "MANUAL"
     REFRESHABLE_MODE_MANUAL = "MANUAL"
 
+    #: A constant which can be used with the open_mode property of a UpdateAutonomousDatabaseDetails.
+    #: This constant has a value of "READ_ONLY"
+    OPEN_MODE_READ_ONLY = "READ_ONLY"
+
+    #: A constant which can be used with the open_mode property of a UpdateAutonomousDatabaseDetails.
+    #: This constant has a value of "READ_WRITE"
+    OPEN_MODE_READ_WRITE = "READ_WRITE"
+
+    #: A constant which can be used with the permission_level property of a UpdateAutonomousDatabaseDetails.
+    #: This constant has a value of "RESTRICTED"
+    PERMISSION_LEVEL_RESTRICTED = "RESTRICTED"
+
+    #: A constant which can be used with the permission_level property of a UpdateAutonomousDatabaseDetails.
+    #: This constant has a value of "UNRESTRICTED"
+    PERMISSION_LEVEL_UNRESTRICTED = "UNRESTRICTED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateAutonomousDatabaseDetails object with values from keyword arguments.
@@ -115,6 +131,16 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the db_version property of this UpdateAutonomousDatabaseDetails.
         :type db_version: str
 
+        :param open_mode:
+            The value to assign to the open_mode property of this UpdateAutonomousDatabaseDetails.
+            Allowed values for this property are: "READ_ONLY", "READ_WRITE"
+        :type open_mode: str
+
+        :param permission_level:
+            The value to assign to the permission_level property of this UpdateAutonomousDatabaseDetails.
+            Allowed values for this property are: "RESTRICTED", "UNRESTRICTED"
+        :type permission_level: str
+
         :param subnet_id:
             The value to assign to the subnet_id property of this UpdateAutonomousDatabaseDetails.
         :type subnet_id: str
@@ -145,6 +171,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'refreshable_mode': 'str',
             'is_data_guard_enabled': 'bool',
             'db_version': 'str',
+            'open_mode': 'str',
+            'permission_level': 'str',
             'subnet_id': 'str',
             'private_endpoint_label': 'str',
             'nsg_ids': 'list[str]'
@@ -167,6 +195,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'refreshable_mode': 'refreshableMode',
             'is_data_guard_enabled': 'isDataGuardEnabled',
             'db_version': 'dbVersion',
+            'open_mode': 'openMode',
+            'permission_level': 'permissionLevel',
             'subnet_id': 'subnetId',
             'private_endpoint_label': 'privateEndpointLabel',
             'nsg_ids': 'nsgIds'
@@ -188,6 +218,8 @@ class UpdateAutonomousDatabaseDetails(object):
         self._refreshable_mode = None
         self._is_data_guard_enabled = None
         self._db_version = None
+        self._open_mode = None
+        self._permission_level = None
         self._subnet_id = None
         self._private_endpoint_label = None
         self._nsg_ids = None
@@ -655,6 +687,70 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: str
         """
         self._db_version = db_version
+
+    @property
+    def open_mode(self):
+        """
+        Gets the open_mode of this UpdateAutonomousDatabaseDetails.
+        The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+
+        Allowed values for this property are: "READ_ONLY", "READ_WRITE"
+
+
+        :return: The open_mode of this UpdateAutonomousDatabaseDetails.
+        :rtype: str
+        """
+        return self._open_mode
+
+    @open_mode.setter
+    def open_mode(self, open_mode):
+        """
+        Sets the open_mode of this UpdateAutonomousDatabaseDetails.
+        The `DATABASE OPEN` mode. You can open the database in `READ_ONLY` or `READ_WRITE` mode.
+
+
+        :param open_mode: The open_mode of this UpdateAutonomousDatabaseDetails.
+        :type: str
+        """
+        allowed_values = ["READ_ONLY", "READ_WRITE"]
+        if not value_allowed_none_or_none_sentinel(open_mode, allowed_values):
+            raise ValueError(
+                "Invalid value for `open_mode`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._open_mode = open_mode
+
+    @property
+    def permission_level(self):
+        """
+        Gets the permission_level of this UpdateAutonomousDatabaseDetails.
+        The Autonomous Database permission level. Restricted mode allows access only to admin users.
+
+        Allowed values for this property are: "RESTRICTED", "UNRESTRICTED"
+
+
+        :return: The permission_level of this UpdateAutonomousDatabaseDetails.
+        :rtype: str
+        """
+        return self._permission_level
+
+    @permission_level.setter
+    def permission_level(self, permission_level):
+        """
+        Sets the permission_level of this UpdateAutonomousDatabaseDetails.
+        The Autonomous Database permission level. Restricted mode allows access only to admin users.
+
+
+        :param permission_level: The permission_level of this UpdateAutonomousDatabaseDetails.
+        :type: str
+        """
+        allowed_values = ["RESTRICTED", "UNRESTRICTED"]
+        if not value_allowed_none_or_none_sentinel(permission_level, allowed_values):
+            raise ValueError(
+                "Invalid value for `permission_level`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._permission_level = permission_level
 
     @property
     def subnet_id(self):

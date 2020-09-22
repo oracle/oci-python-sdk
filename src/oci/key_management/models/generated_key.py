@@ -79,7 +79,7 @@ class GeneratedKey(object):
         included if the `GenerateDataEncryptionKey`__
         request includes the `includePlaintextKey` parameter and sets its value to \"true\".
 
-        __ https://docs.cloud.oracle.com/api/#/en/key/release/GeneratedKey/GenerateDataEncryptionKey
+        __ https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey
 
 
         :return: The plaintext of this GeneratedKey.
@@ -95,7 +95,7 @@ class GeneratedKey(object):
         included if the `GenerateDataEncryptionKey`__
         request includes the `includePlaintextKey` parameter and sets its value to \"true\".
 
-        __ https://docs.cloud.oracle.com/api/#/en/key/release/GeneratedKey/GenerateDataEncryptionKey
+        __ https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey
 
 
         :param plaintext: The plaintext of this GeneratedKey.
@@ -111,7 +111,7 @@ class GeneratedKey(object):
         `GenerateDataEncryptionKey`__
         request includes the `includePlaintextKey` parameter and sets its value to \"true\".
 
-        __ https://docs.cloud.oracle.com/api/#/en/key/release/GeneratedKey/GenerateDataEncryptionKey
+        __ https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey
 
 
         :return: The plaintext_checksum of this GeneratedKey.
@@ -127,7 +127,7 @@ class GeneratedKey(object):
         `GenerateDataEncryptionKey`__
         request includes the `includePlaintextKey` parameter and sets its value to \"true\".
 
-        __ https://docs.cloud.oracle.com/api/#/en/key/release/GeneratedKey/GenerateDataEncryptionKey
+        __ https://docs.cloud.oracle.com/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey
 
 
         :param plaintext_checksum: The plaintext_checksum of this GeneratedKey.

@@ -161,6 +161,14 @@ class AutonomousDatabase(object):
     #: This constant has a value of "MANUAL"
     REFRESHABLE_MODE_MANUAL = "MANUAL"
 
+    #: A constant which can be used with the permission_level property of a AutonomousDatabase.
+    #: This constant has a value of "RESTRICTED"
+    PERMISSION_LEVEL_RESTRICTED = "RESTRICTED"
+
+    #: A constant which can be used with the permission_level property of a AutonomousDatabase.
+    #: This constant has a value of "UNRESTRICTED"
+    PERMISSION_LEVEL_UNRESTRICTED = "UNRESTRICTED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AutonomousDatabase object with values from keyword arguments.
@@ -358,6 +366,12 @@ class AutonomousDatabase(object):
             The value to assign to the source_id property of this AutonomousDatabase.
         :type source_id: str
 
+        :param permission_level:
+            The value to assign to the permission_level property of this AutonomousDatabase.
+            Allowed values for this property are: "RESTRICTED", "UNRESTRICTED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type permission_level: str
+
         :param time_of_last_switchover:
             The value to assign to the time_of_last_switchover property of this AutonomousDatabase.
         :type time_of_last_switchover: datetime
@@ -428,6 +442,7 @@ class AutonomousDatabase(object):
             'refreshable_status': 'str',
             'refreshable_mode': 'str',
             'source_id': 'str',
+            'permission_level': 'str',
             'time_of_last_switchover': 'datetime',
             'time_of_last_failover': 'datetime',
             'is_data_guard_enabled': 'bool',
@@ -481,6 +496,7 @@ class AutonomousDatabase(object):
             'refreshable_status': 'refreshableStatus',
             'refreshable_mode': 'refreshableMode',
             'source_id': 'sourceId',
+            'permission_level': 'permissionLevel',
             'time_of_last_switchover': 'timeOfLastSwitchover',
             'time_of_last_failover': 'timeOfLastFailover',
             'is_data_guard_enabled': 'isDataGuardEnabled',
@@ -533,6 +549,7 @@ class AutonomousDatabase(object):
         self._refreshable_status = None
         self._refreshable_mode = None
         self._source_id = None
+        self._permission_level = None
         self._time_of_last_switchover = None
         self._time_of_last_failover = None
         self._is_data_guard_enabled = None
@@ -1743,6 +1760,36 @@ class AutonomousDatabase(object):
         :type: str
         """
         self._source_id = source_id
+
+    @property
+    def permission_level(self):
+        """
+        Gets the permission_level of this AutonomousDatabase.
+        The Autonomous Database permission level. Restricted mode allows access only to admin users.
+
+        Allowed values for this property are: "RESTRICTED", "UNRESTRICTED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The permission_level of this AutonomousDatabase.
+        :rtype: str
+        """
+        return self._permission_level
+
+    @permission_level.setter
+    def permission_level(self, permission_level):
+        """
+        Sets the permission_level of this AutonomousDatabase.
+        The Autonomous Database permission level. Restricted mode allows access only to admin users.
+
+
+        :param permission_level: The permission_level of this AutonomousDatabase.
+        :type: str
+        """
+        allowed_values = ["RESTRICTED", "UNRESTRICTED"]
+        if not value_allowed_none_or_none_sentinel(permission_level, allowed_values):
+            permission_level = 'UNKNOWN_ENUM_VALUE'
+        self._permission_level = permission_level
 
     @property
     def time_of_last_switchover(self):
