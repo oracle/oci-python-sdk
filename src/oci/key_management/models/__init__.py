@@ -17,6 +17,8 @@ from .decrypt_data_details import DecryptDataDetails
 from .decrypted_data import DecryptedData
 from .encrypt_data_details import EncryptDataDetails
 from .encrypted_data import EncryptedData
+from .export_key_details import ExportKeyDetails
+from .exported_key_data import ExportedKeyData
 from .generate_key_details import GenerateKeyDetails
 from .generated_key import GeneratedKey
 from .import_key_details import ImportKeyDetails
@@ -54,6 +56,8 @@ key_management_type_mapping = {
     "DecryptedData": DecryptedData,
     "EncryptDataDetails": EncryptDataDetails,
     "EncryptedData": EncryptedData,
+    "ExportKeyDetails": ExportKeyDetails,
+    "ExportedKeyData": ExportedKeyData,
     "GenerateKeyDetails": GenerateKeyDetails,
     "GeneratedKey": GeneratedKey,
     "ImportKeyDetails": ImportKeyDetails,

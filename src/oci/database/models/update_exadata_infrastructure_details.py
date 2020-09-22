@@ -46,6 +46,10 @@ class UpdateExadataInfrastructureDetails(object):
             The value to assign to the corporate_proxy property of this UpdateExadataInfrastructureDetails.
         :type corporate_proxy: str
 
+        :param contacts:
+            The value to assign to the contacts property of this UpdateExadataInfrastructureDetails.
+        :type contacts: list[ExadataInfrastructureContact]
+
         :param dns_server:
             The value to assign to the dns_server property of this UpdateExadataInfrastructureDetails.
         :type dns_server: list[str]
@@ -75,6 +79,7 @@ class UpdateExadataInfrastructureDetails(object):
             'admin_network_cidr': 'str',
             'infini_band_network_cidr': 'str',
             'corporate_proxy': 'str',
+            'contacts': 'list[ExadataInfrastructureContact]',
             'dns_server': 'list[str]',
             'ntp_server': 'list[str]',
             'time_zone': 'str',
@@ -90,6 +95,7 @@ class UpdateExadataInfrastructureDetails(object):
             'admin_network_cidr': 'adminNetworkCIDR',
             'infini_band_network_cidr': 'infiniBandNetworkCIDR',
             'corporate_proxy': 'corporateProxy',
+            'contacts': 'contacts',
             'dns_server': 'dnsServer',
             'ntp_server': 'ntpServer',
             'time_zone': 'timeZone',
@@ -104,6 +110,7 @@ class UpdateExadataInfrastructureDetails(object):
         self._admin_network_cidr = None
         self._infini_band_network_cidr = None
         self._corporate_proxy = None
+        self._contacts = None
         self._dns_server = None
         self._ntp_server = None
         self._time_zone = None
@@ -277,6 +284,30 @@ class UpdateExadataInfrastructureDetails(object):
         :type: str
         """
         self._corporate_proxy = corporate_proxy
+
+    @property
+    def contacts(self):
+        """
+        Gets the contacts of this UpdateExadataInfrastructureDetails.
+        The list of contacts for the Exadata Infrastructure.
+
+
+        :return: The contacts of this UpdateExadataInfrastructureDetails.
+        :rtype: list[ExadataInfrastructureContact]
+        """
+        return self._contacts
+
+    @contacts.setter
+    def contacts(self, contacts):
+        """
+        Sets the contacts of this UpdateExadataInfrastructureDetails.
+        The list of contacts for the Exadata Infrastructure.
+
+
+        :param contacts: The contacts of this UpdateExadataInfrastructureDetails.
+        :type: list[ExadataInfrastructureContact]
+        """
+        self._contacts = contacts
 
     @property
     def dns_server(self):

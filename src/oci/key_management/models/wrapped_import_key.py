@@ -49,7 +49,7 @@ class WrappedImportKey(object):
     def key_material(self):
         """
         **[Required]** Gets the key_material of this WrappedImportKey.
-        The wrapped/encrypted key material to import. It is encrypted using RSA wrapped key and Base64 encoded.
+        The key material to import, wrapped by the vault's public RSA wrapping key and base64-encoded.
 
 
         :return: The key_material of this WrappedImportKey.
@@ -61,7 +61,7 @@ class WrappedImportKey(object):
     def key_material(self, key_material):
         """
         Sets the key_material of this WrappedImportKey.
-        The wrapped/encrypted key material to import. It is encrypted using RSA wrapped key and Base64 encoded.
+        The key material to import, wrapped by the vault's public RSA wrapping key and base64-encoded.
 
 
         :param key_material: The key_material of this WrappedImportKey.
@@ -73,7 +73,7 @@ class WrappedImportKey(object):
     def wrapping_algorithm(self):
         """
         **[Required]** Gets the wrapping_algorithm of this WrappedImportKey.
-        The wrapping mechanism to be used during key import
+        The wrapping mechanism to use during key import.
 
         Allowed values for this property are: "RSA_OAEP_SHA256"
 
@@ -87,7 +87,7 @@ class WrappedImportKey(object):
     def wrapping_algorithm(self, wrapping_algorithm):
         """
         Sets the wrapping_algorithm of this WrappedImportKey.
-        The wrapping mechanism to be used during key import
+        The wrapping mechanism to use during key import.
 
 
         :param wrapping_algorithm: The wrapping_algorithm of this WrappedImportKey.

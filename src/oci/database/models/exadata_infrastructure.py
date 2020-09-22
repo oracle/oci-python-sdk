@@ -160,6 +160,14 @@ class ExadataInfrastructure(object):
             The value to assign to the lifecycle_details property of this ExadataInfrastructure.
         :type lifecycle_details: str
 
+        :param csi_number:
+            The value to assign to the csi_number property of this ExadataInfrastructure.
+        :type csi_number: str
+
+        :param contacts:
+            The value to assign to the contacts property of this ExadataInfrastructure.
+        :type contacts: list[ExadataInfrastructureContact]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ExadataInfrastructure.
         :type freeform_tags: dict(str, str)
@@ -195,6 +203,8 @@ class ExadataInfrastructure(object):
             'ntp_server': 'list[str]',
             'time_created': 'datetime',
             'lifecycle_details': 'str',
+            'csi_number': 'str',
+            'contacts': 'list[ExadataInfrastructureContact]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -225,6 +235,8 @@ class ExadataInfrastructure(object):
             'ntp_server': 'ntpServer',
             'time_created': 'timeCreated',
             'lifecycle_details': 'lifecycleDetails',
+            'csi_number': 'csiNumber',
+            'contacts': 'contacts',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -254,6 +266,8 @@ class ExadataInfrastructure(object):
         self._ntp_server = None
         self._time_created = None
         self._lifecycle_details = None
+        self._csi_number = None
+        self._contacts = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -874,6 +888,54 @@ class ExadataInfrastructure(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def csi_number(self):
+        """
+        Gets the csi_number of this ExadataInfrastructure.
+        The CSI Number of the Exadata Infrastructure.
+
+
+        :return: The csi_number of this ExadataInfrastructure.
+        :rtype: str
+        """
+        return self._csi_number
+
+    @csi_number.setter
+    def csi_number(self, csi_number):
+        """
+        Sets the csi_number of this ExadataInfrastructure.
+        The CSI Number of the Exadata Infrastructure.
+
+
+        :param csi_number: The csi_number of this ExadataInfrastructure.
+        :type: str
+        """
+        self._csi_number = csi_number
+
+    @property
+    def contacts(self):
+        """
+        Gets the contacts of this ExadataInfrastructure.
+        The list of contacts for the Exadata Infrastructure.
+
+
+        :return: The contacts of this ExadataInfrastructure.
+        :rtype: list[ExadataInfrastructureContact]
+        """
+        return self._contacts
+
+    @contacts.setter
+    def contacts(self, contacts):
+        """
+        Sets the contacts of this ExadataInfrastructure.
+        The list of contacts for the Exadata Infrastructure.
+
+
+        :param contacts: The contacts of this ExadataInfrastructure.
+        :type: list[ExadataInfrastructureContact]
+        """
+        self._contacts = contacts
 
     @property
     def freeform_tags(self):

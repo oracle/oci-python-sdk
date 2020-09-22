@@ -109,6 +109,7 @@ from .db_system_summary import DbSystemSummary
 from .db_version_summary import DbVersionSummary
 from .deregister_autonomous_database_data_safe_details import DeregisterAutonomousDatabaseDataSafeDetails
 from .exadata_infrastructure import ExadataInfrastructure
+from .exadata_infrastructure_contact import ExadataInfrastructureContact
 from .exadata_infrastructure_summary import ExadataInfrastructureSummary
 from .exadata_iorm_config import ExadataIormConfig
 from .exadata_iorm_config_update_details import ExadataIormConfigUpdateDetails
@@ -275,6 +276,7 @@ database_type_mapping = {
     "DbVersionSummary": DbVersionSummary,
     "DeregisterAutonomousDatabaseDataSafeDetails": DeregisterAutonomousDatabaseDataSafeDetails,
     "ExadataInfrastructure": ExadataInfrastructure,
+    "ExadataInfrastructureContact": ExadataInfrastructureContact,
     "ExadataInfrastructureSummary": ExadataInfrastructureSummary,
     "ExadataIormConfig": ExadataIormConfig,
     "ExadataIormConfigUpdateDetails": ExadataIormConfigUpdateDetails,

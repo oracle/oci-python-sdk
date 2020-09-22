@@ -18,7 +18,8 @@ missing = Sentinel("Missing")
 
 class KmsCryptoClient(object):
     """
-    API for managing and performing operations with keys and vaults.
+    API for managing and performing operations with keys and vaults. (For the API for managing secrets, see the Vault Service
+    Secret Management API. For the API for retrieving secrets, see the Vault Service Secret Retrieval API.)
     """
 
     def __init__(self, config, service_endpoint, **kwargs):
@@ -87,7 +88,7 @@ class KmsCryptoClient(object):
         """
         Decrypts data using the given `DecryptDataDetails`__ resource.
 
-        __ https://docs.cloud.oracle.com/api/#/en/key/release/datatypes/DecryptDataDetails
+        __ https://docs.cloud.oracle.com/api/#/en/key/latest/datatypes/DecryptDataDetails
 
 
         :param DecryptDataDetails decrypt_data_details: (required)
@@ -154,7 +155,7 @@ class KmsCryptoClient(object):
         Encrypts data using the given `EncryptDataDetails`__ resource.
         Plaintext included in the example request is a base64-encoded value of a UTF-8 string.
 
-        __ https://docs.cloud.oracle.com/api/#/en/key/release/datatypes/EncryptDataDetails
+        __ https://docs.cloud.oracle.com/api/#/en/key/latest/datatypes/EncryptDataDetails
 
 
         :param EncryptDataDetails encrypt_data_details: (required)
@@ -215,6 +216,61 @@ class KmsCryptoClient(object):
                 header_params=header_params,
                 body=encrypt_data_details,
                 response_type="EncryptedData")
+
+    def export_key(self, export_key_details, **kwargs):
+        """
+        Exports a specific version of a master encryption key according to the details of the request. For their protection,
+        keys that you create and store on a hardware security module (HSM) can never leave the HSM. You can only export keys
+        stored on the server. For export, the key version is encrypted by an RSA public key that you provide.
+
+
+        :param ExportKeyDetails export_key_details: (required)
+            ExportKeyDetails
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.key_management.models.ExportedKeyData`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/20180608/exportKey"
+        method = "POST"
+
+        expected_kwargs = ["retry_strategy"]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "export_key got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json"
+        }
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=export_key_details,
+                response_type="ExportedKeyData")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=export_key_details,
+                response_type="ExportedKeyData")
 
     def generate_data_encryption_key(self, generate_key_details, **kwargs):
         """

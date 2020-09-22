@@ -32,22 +32,36 @@ class ShapeMemoryOptions(object):
             The value to assign to the default_per_ocpu_in_g_bs property of this ShapeMemoryOptions.
         :type default_per_ocpu_in_g_bs: float
 
+        :param min_per_ocpu_in_gbs:
+            The value to assign to the min_per_ocpu_in_gbs property of this ShapeMemoryOptions.
+        :type min_per_ocpu_in_gbs: float
+
+        :param max_per_ocpu_in_gbs:
+            The value to assign to the max_per_ocpu_in_gbs property of this ShapeMemoryOptions.
+        :type max_per_ocpu_in_gbs: float
+
         """
         self.swagger_types = {
             'min_in_g_bs': 'float',
             'max_in_g_bs': 'float',
-            'default_per_ocpu_in_g_bs': 'float'
+            'default_per_ocpu_in_g_bs': 'float',
+            'min_per_ocpu_in_gbs': 'float',
+            'max_per_ocpu_in_gbs': 'float'
         }
 
         self.attribute_map = {
             'min_in_g_bs': 'minInGBs',
             'max_in_g_bs': 'maxInGBs',
-            'default_per_ocpu_in_g_bs': 'defaultPerOcpuInGBs'
+            'default_per_ocpu_in_g_bs': 'defaultPerOcpuInGBs',
+            'min_per_ocpu_in_gbs': 'minPerOcpuInGBs',
+            'max_per_ocpu_in_gbs': 'maxPerOcpuInGBs'
         }
 
         self._min_in_g_bs = None
         self._max_in_g_bs = None
         self._default_per_ocpu_in_g_bs = None
+        self._min_per_ocpu_in_gbs = None
+        self._max_per_ocpu_in_gbs = None
 
     @property
     def min_in_g_bs(self):
@@ -120,6 +134,54 @@ class ShapeMemoryOptions(object):
         :type: float
         """
         self._default_per_ocpu_in_g_bs = default_per_ocpu_in_g_bs
+
+    @property
+    def min_per_ocpu_in_gbs(self):
+        """
+        Gets the min_per_ocpu_in_gbs of this ShapeMemoryOptions.
+        The minimum amount of memory per OCPU available for this shape, in gigabytes.
+
+
+        :return: The min_per_ocpu_in_gbs of this ShapeMemoryOptions.
+        :rtype: float
+        """
+        return self._min_per_ocpu_in_gbs
+
+    @min_per_ocpu_in_gbs.setter
+    def min_per_ocpu_in_gbs(self, min_per_ocpu_in_gbs):
+        """
+        Sets the min_per_ocpu_in_gbs of this ShapeMemoryOptions.
+        The minimum amount of memory per OCPU available for this shape, in gigabytes.
+
+
+        :param min_per_ocpu_in_gbs: The min_per_ocpu_in_gbs of this ShapeMemoryOptions.
+        :type: float
+        """
+        self._min_per_ocpu_in_gbs = min_per_ocpu_in_gbs
+
+    @property
+    def max_per_ocpu_in_gbs(self):
+        """
+        Gets the max_per_ocpu_in_gbs of this ShapeMemoryOptions.
+        The maximum amount of memory per OCPU available for this shape, in gigabytes.
+
+
+        :return: The max_per_ocpu_in_gbs of this ShapeMemoryOptions.
+        :rtype: float
+        """
+        return self._max_per_ocpu_in_gbs
+
+    @max_per_ocpu_in_gbs.setter
+    def max_per_ocpu_in_gbs(self, max_per_ocpu_in_gbs):
+        """
+        Sets the max_per_ocpu_in_gbs of this ShapeMemoryOptions.
+        The maximum amount of memory per OCPU available for this shape, in gigabytes.
+
+
+        :param max_per_ocpu_in_gbs: The max_per_ocpu_in_gbs of this ShapeMemoryOptions.
+        :type: float
+        """
+        self._max_per_ocpu_in_gbs = max_per_ocpu_in_gbs
 
     def __repr__(self):
         return formatted_flat_dict(self)

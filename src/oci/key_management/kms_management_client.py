@@ -18,7 +18,8 @@ missing = Sentinel("Missing")
 
 class KmsManagementClient(object):
     """
-    API for managing and performing operations with keys and vaults.
+    API for managing and performing operations with keys and vaults. (For the API for managing secrets, see the Vault Service
+    Secret Management API. For the API for retrieving secrets, see the Vault Service Secret Retrieval API.)
     """
 
     def __init__(self, config, service_endpoint, **kwargs):
@@ -591,7 +592,7 @@ class KmsManagementClient(object):
         otherwise valid request when the total rate of management write operations exceeds 10 requests per second
         for a given tenancy.
 
-        __ https://docs.cloud.oracle.com/api/#/en/key/release/KeyVersion/
+        __ https://docs.cloud.oracle.com/api/#/en/key/latest/KeyVersion/
 
 
         :param str key_id: (required)
@@ -1282,7 +1283,7 @@ class KmsManagementClient(object):
         otherwise valid request when the total rate of management read operations exceeds 10 requests per second
         for a given tenancy.
 
-        __ https://docs.cloud.oracle.com/api/#/en/key/release/KeyVersion/
+        __ https://docs.cloud.oracle.com/api/#/en/key/latest/KeyVersion/
 
 
         :param str key_id: (required)
@@ -1438,6 +1439,15 @@ class KmsManagementClient(object):
 
             Allowed values are: "ASC", "DESC"
 
+        :param str protection_mode: (optional)
+            A key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A
+            protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are
+            performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's
+            RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of
+            `SOFTWARE` are performed on the server.
+
+            Allowed values are: "HSM", "SOFTWARE"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1459,7 +1469,8 @@ class KmsManagementClient(object):
             "page",
             "opc_request_id",
             "sort_by",
-            "sort_order"
+            "sort_order",
+            "protection_mode"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1480,12 +1491,20 @@ class KmsManagementClient(object):
                     "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
                 )
 
+        if 'protection_mode' in kwargs:
+            protection_mode_allowed_values = ["HSM", "SOFTWARE"]
+            if kwargs['protection_mode'] not in protection_mode_allowed_values:
+                raise ValueError(
+                    "Invalid value for `protection_mode`, must be one of {0}".format(protection_mode_allowed_values)
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortBy": kwargs.get("sort_by", missing),
-            "sortOrder": kwargs.get("sort_order", missing)
+            "sortOrder": kwargs.get("sort_order", missing),
+            "protectionMode": kwargs.get("protection_mode", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

@@ -65,6 +65,14 @@ class KeySummary(object):
     #: This constant has a value of "RESTORING"
     LIFECYCLE_STATE_RESTORING = "RESTORING"
 
+    #: A constant which can be used with the protection_mode property of a KeySummary.
+    #: This constant has a value of "HSM"
+    PROTECTION_MODE_HSM = "HSM"
+
+    #: A constant which can be used with the protection_mode property of a KeySummary.
+    #: This constant has a value of "SOFTWARE"
+    PROTECTION_MODE_SOFTWARE = "SOFTWARE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new KeySummary object with values from keyword arguments.
@@ -104,6 +112,12 @@ class KeySummary(object):
             The value to assign to the vault_id property of this KeySummary.
         :type vault_id: str
 
+        :param protection_mode:
+            The value to assign to the protection_mode property of this KeySummary.
+            Allowed values for this property are: "HSM", "SOFTWARE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type protection_mode: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -113,7 +127,8 @@ class KeySummary(object):
             'id': 'str',
             'lifecycle_state': 'str',
             'time_created': 'datetime',
-            'vault_id': 'str'
+            'vault_id': 'str',
+            'protection_mode': 'str'
         }
 
         self.attribute_map = {
@@ -124,7 +139,8 @@ class KeySummary(object):
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
-            'vault_id': 'vaultId'
+            'vault_id': 'vaultId',
+            'protection_mode': 'protectionMode'
         }
 
         self._compartment_id = None
@@ -135,6 +151,7 @@ class KeySummary(object):
         self._lifecycle_state = None
         self._time_created = None
         self._vault_id = None
+        self._protection_mode = None
 
     @property
     def compartment_id(self):
@@ -363,6 +380,44 @@ class KeySummary(object):
         :type: str
         """
         self._vault_id = vault_id
+
+    @property
+    def protection_mode(self):
+        """
+        Gets the protection_mode of this KeySummary.
+        The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
+        A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
+        the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists
+        on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,
+        a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+
+        Allowed values for this property are: "HSM", "SOFTWARE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The protection_mode of this KeySummary.
+        :rtype: str
+        """
+        return self._protection_mode
+
+    @protection_mode.setter
+    def protection_mode(self, protection_mode):
+        """
+        Sets the protection_mode of this KeySummary.
+        The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
+        A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
+        the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists
+        on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,
+        a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+
+
+        :param protection_mode: The protection_mode of this KeySummary.
+        :type: str
+        """
+        allowed_values = ["HSM", "SOFTWARE"]
+        if not value_allowed_none_or_none_sentinel(protection_mode, allowed_values):
+            protection_mode = 'UNKNOWN_ENUM_VALUE'
+        self._protection_mode = protection_mode
 
     def __repr__(self):
         return formatted_flat_dict(self)

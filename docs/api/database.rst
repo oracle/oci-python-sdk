@@ -123,6 +123,7 @@ Database
     oci.database.models.DbVersionSummary
     oci.database.models.DeregisterAutonomousDatabaseDataSafeDetails
     oci.database.models.ExadataInfrastructure
+    oci.database.models.ExadataInfrastructureContact
     oci.database.models.ExadataInfrastructureSummary
     oci.database.models.ExadataIormConfig
     oci.database.models.ExadataIormConfigUpdateDetails

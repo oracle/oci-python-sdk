@@ -13,6 +13,14 @@ class ImportKeyDetails(object):
     ImportKeyDetails model.
     """
 
+    #: A constant which can be used with the protection_mode property of a ImportKeyDetails.
+    #: This constant has a value of "HSM"
+    PROTECTION_MODE_HSM = "HSM"
+
+    #: A constant which can be used with the protection_mode property of a ImportKeyDetails.
+    #: This constant has a value of "SOFTWARE"
+    PROTECTION_MODE_SOFTWARE = "SOFTWARE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ImportKeyDetails object with values from keyword arguments.
@@ -42,6 +50,11 @@ class ImportKeyDetails(object):
             The value to assign to the wrapped_import_key property of this ImportKeyDetails.
         :type wrapped_import_key: WrappedImportKey
 
+        :param protection_mode:
+            The value to assign to the protection_mode property of this ImportKeyDetails.
+            Allowed values for this property are: "HSM", "SOFTWARE"
+        :type protection_mode: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -49,7 +62,8 @@ class ImportKeyDetails(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'key_shape': 'KeyShape',
-            'wrapped_import_key': 'WrappedImportKey'
+            'wrapped_import_key': 'WrappedImportKey',
+            'protection_mode': 'str'
         }
 
         self.attribute_map = {
@@ -58,7 +72,8 @@ class ImportKeyDetails(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'key_shape': 'keyShape',
-            'wrapped_import_key': 'wrappedImportKey'
+            'wrapped_import_key': 'wrappedImportKey',
+            'protection_mode': 'protectionMode'
         }
 
         self._compartment_id = None
@@ -67,6 +82,7 @@ class ImportKeyDetails(object):
         self._freeform_tags = None
         self._key_shape = None
         self._wrapped_import_key = None
+        self._protection_mode = None
 
     @property
     def compartment_id(self):
@@ -211,6 +227,46 @@ class ImportKeyDetails(object):
         :type: WrappedImportKey
         """
         self._wrapped_import_key = wrapped_import_key
+
+    @property
+    def protection_mode(self):
+        """
+        Gets the protection_mode of this ImportKeyDetails.
+        The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
+        A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
+        the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists
+        on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,
+        a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+
+        Allowed values for this property are: "HSM", "SOFTWARE"
+
+
+        :return: The protection_mode of this ImportKeyDetails.
+        :rtype: str
+        """
+        return self._protection_mode
+
+    @protection_mode.setter
+    def protection_mode(self, protection_mode):
+        """
+        Sets the protection_mode of this ImportKeyDetails.
+        The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed.
+        A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside
+        the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists
+        on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default,
+        a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported.
+
+
+        :param protection_mode: The protection_mode of this ImportKeyDetails.
+        :type: str
+        """
+        allowed_values = ["HSM", "SOFTWARE"]
+        if not value_allowed_none_or_none_sentinel(protection_mode, allowed_values):
+            raise ValueError(
+                "Invalid value for `protection_mode`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._protection_mode = protection_mode
 
     def __repr__(self):
         return formatted_flat_dict(self)

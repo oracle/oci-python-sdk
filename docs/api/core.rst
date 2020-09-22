@@ -195,6 +195,7 @@ Core Services
     oci.core.models.IcmpOptions
     oci.core.models.Image
     oci.core.models.ImageCapabilitySchemaDescriptor
+    oci.core.models.ImageMemoryConstraints
     oci.core.models.ImageOcpuConstraints
     oci.core.models.ImageShapeCompatibilityEntry
     oci.core.models.ImageShapeCompatibilitySummary

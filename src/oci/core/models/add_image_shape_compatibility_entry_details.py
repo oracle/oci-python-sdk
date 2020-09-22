@@ -18,20 +18,47 @@ class AddImageShapeCompatibilityEntryDetails(object):
         Initializes a new AddImageShapeCompatibilityEntryDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param memory_constraints:
+            The value to assign to the memory_constraints property of this AddImageShapeCompatibilityEntryDetails.
+        :type memory_constraints: ImageMemoryConstraints
+
         :param ocpu_constraints:
             The value to assign to the ocpu_constraints property of this AddImageShapeCompatibilityEntryDetails.
         :type ocpu_constraints: ImageOcpuConstraints
 
         """
         self.swagger_types = {
+            'memory_constraints': 'ImageMemoryConstraints',
             'ocpu_constraints': 'ImageOcpuConstraints'
         }
 
         self.attribute_map = {
+            'memory_constraints': 'memoryConstraints',
             'ocpu_constraints': 'ocpuConstraints'
         }
 
+        self._memory_constraints = None
         self._ocpu_constraints = None
+
+    @property
+    def memory_constraints(self):
+        """
+        Gets the memory_constraints of this AddImageShapeCompatibilityEntryDetails.
+
+        :return: The memory_constraints of this AddImageShapeCompatibilityEntryDetails.
+        :rtype: ImageMemoryConstraints
+        """
+        return self._memory_constraints
+
+    @memory_constraints.setter
+    def memory_constraints(self, memory_constraints):
+        """
+        Sets the memory_constraints of this AddImageShapeCompatibilityEntryDetails.
+
+        :param memory_constraints: The memory_constraints of this AddImageShapeCompatibilityEntryDetails.
+        :type: ImageMemoryConstraints
+        """
+        self._memory_constraints = memory_constraints
 
     @property
     def ocpu_constraints(self):
