@@ -42,6 +42,10 @@ class CreateNatGatewayDetails(object):
             The value to assign to the vcn_id property of this CreateNatGatewayDetails.
         :type vcn_id: str
 
+        :param public_ip_id:
+            The value to assign to the public_ip_id property of this CreateNatGatewayDetails.
+        :type public_ip_id: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -49,7 +53,8 @@ class CreateNatGatewayDetails(object):
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'block_traffic': 'bool',
-            'vcn_id': 'str'
+            'vcn_id': 'str',
+            'public_ip_id': 'str'
         }
 
         self.attribute_map = {
@@ -58,7 +63,8 @@ class CreateNatGatewayDetails(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'block_traffic': 'blockTraffic',
-            'vcn_id': 'vcnId'
+            'vcn_id': 'vcnId',
+            'public_ip_id': 'publicIpId'
         }
 
         self._compartment_id = None
@@ -67,6 +73,7 @@ class CreateNatGatewayDetails(object):
         self._freeform_tags = None
         self._block_traffic = None
         self._vcn_id = None
+        self._public_ip_id = None
 
     @property
     def compartment_id(self):
@@ -247,6 +254,34 @@ class CreateNatGatewayDetails(object):
         :type: str
         """
         self._vcn_id = vcn_id
+
+    @property
+    def public_ip_id(self):
+        """
+        Gets the public_ip_id of this CreateNatGatewayDetails.
+        The `OCID`__ of the Public IP associated with the NAT gateway.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The public_ip_id of this CreateNatGatewayDetails.
+        :rtype: str
+        """
+        return self._public_ip_id
+
+    @public_ip_id.setter
+    def public_ip_id(self, public_ip_id):
+        """
+        Sets the public_ip_id of this CreateNatGatewayDetails.
+        The `OCID`__ of the Public IP associated with the NAT gateway.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param public_ip_id: The public_ip_id of this CreateNatGatewayDetails.
+        :type: str
+        """
+        self._public_ip_id = public_ip_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

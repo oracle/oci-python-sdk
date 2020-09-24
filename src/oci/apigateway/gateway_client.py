@@ -414,6 +414,9 @@ class GatewayClient(object):
         :param str compartment_id: (required)
             The ocid of the compartment in which to list resources.
 
+        :param str certificate_id: (optional)
+            Filter gateways by the certificate ocid.
+
         :param str display_name: (optional)
             A user-friendly name. Does not have to be unique, and it's changeable.
 
@@ -465,6 +468,7 @@ class GatewayClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "certificate_id",
             "display_name",
             "lifecycle_state",
             "limit",
@@ -501,6 +505,7 @@ class GatewayClient(object):
 
         query_params = {
             "compartmentId": compartment_id,
+            "certificateId": kwargs.get("certificate_id", missing),
             "displayName": kwargs.get("display_name", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "limit": kwargs.get("limit", missing),

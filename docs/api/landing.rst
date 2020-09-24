@@ -5,6 +5,7 @@ API Reference
 
 * :doc:`Analytics <analytics/client/oci.analytics.AnalyticsClient>`
 * :doc:`Announcement <announcements_service/client/oci.announcements_service.AnnouncementClient>`
+* :doc:`Api Gateway <apigateway/client/oci.apigateway.ApiGatewayClient>`
 * :doc:`Deployment <apigateway/client/oci.apigateway.DeploymentClient>`
 * :doc:`Gateway <apigateway/client/oci.apigateway.GatewayClient>`
 * :doc:`Work Requests <mysql/client/oci.mysql.WorkRequestsClient>`

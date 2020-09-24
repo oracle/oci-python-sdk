@@ -1769,6 +1769,24 @@ class ObjectStorageClient(object):
 
             __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
+        :param str http_response_content_disposition: (optional)
+            This value will be used in Content-Disposition header of the response.
+
+        :param str http_response_cache_control: (optional)
+            This value will be used in Cache-Control header of the response.
+
+        :param str http_response_content_type: (optional)
+            This value will be used in Content-Type header of the response.
+
+        :param str http_response_content_language: (optional)
+            This value will be used in Content-Language header of the response.
+
+        :param str http_response_content_encoding: (optional)
+            This value will be used in Content-Encoding header of the response
+
+        :param str http_response_expires: (optional)
+            This value will be used in Expires header of the response
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1793,7 +1811,13 @@ class ObjectStorageClient(object):
             "range",
             "opc_sse_customer_algorithm",
             "opc_sse_customer_key",
-            "opc_sse_customer_key_sha256"
+            "opc_sse_customer_key_sha256",
+            "http_response_content_disposition",
+            "http_response_cache_control",
+            "http_response_content_type",
+            "http_response_content_language",
+            "http_response_content_encoding",
+            "http_response_expires"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1813,7 +1837,13 @@ class ObjectStorageClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         query_params = {
-            "versionId": kwargs.get("version_id", missing)
+            "versionId": kwargs.get("version_id", missing),
+            "httpResponseContentDisposition": kwargs.get("http_response_content_disposition", missing),
+            "httpResponseCacheControl": kwargs.get("http_response_cache_control", missing),
+            "httpResponseContentType": kwargs.get("http_response_content_type", missing),
+            "httpResponseContentLanguage": kwargs.get("http_response_content_language", missing),
+            "httpResponseContentEncoding": kwargs.get("http_response_content_encoding", missing),
+            "httpResponseExpires": kwargs.get("http_response_expires", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

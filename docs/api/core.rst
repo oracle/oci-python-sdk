@@ -26,6 +26,7 @@ Core Services
 
     oci.core.models.AddImageShapeCompatibilityEntryDetails
     oci.core.models.AddNetworkSecurityGroupSecurityRulesDetails
+    oci.core.models.AddPublicIpPoolCapacityDetails
     oci.core.models.AddSecurityRuleDetails
     oci.core.models.AddedNetworkSecurityGroupSecurityRules
     oci.core.models.AppCatalogListing
@@ -54,9 +55,15 @@ Core Services
     oci.core.models.BootVolumeSourceFromBootVolumeDetails
     oci.core.models.BulkAddVirtualCircuitPublicPrefixesDetails
     oci.core.models.BulkDeleteVirtualCircuitPublicPrefixesDetails
+    oci.core.models.ByoipAllocatedRangeCollection
+    oci.core.models.ByoipAllocatedRangeSummary
+    oci.core.models.ByoipRange
+    oci.core.models.ByoipRangeCollection
+    oci.core.models.ByoipRangeSummary
     oci.core.models.CaptureConsoleHistoryDetails
     oci.core.models.ChangeBootVolumeBackupCompartmentDetails
     oci.core.models.ChangeBootVolumeCompartmentDetails
+    oci.core.models.ChangeByoipRangeCompartmentDetails
     oci.core.models.ChangeClusterNetworkCompartmentDetails
     oci.core.models.ChangeComputeImageCapabilitySchemaCompartmentDetails
     oci.core.models.ChangeCpeCompartmentDetails
@@ -75,6 +82,7 @@ Core Services
     oci.core.models.ChangeNatGatewayCompartmentDetails
     oci.core.models.ChangeNetworkSecurityGroupCompartmentDetails
     oci.core.models.ChangePublicIpCompartmentDetails
+    oci.core.models.ChangePublicIpPoolCompartmentDetails
     oci.core.models.ChangeRemotePeeringConnectionCompartmentDetails
     oci.core.models.ChangeRouteTableCompartmentDetails
     oci.core.models.ChangeSecurityListCompartmentDetails
@@ -111,6 +119,7 @@ Core Services
     oci.core.models.CreateAppCatalogSubscriptionDetails
     oci.core.models.CreateBootVolumeBackupDetails
     oci.core.models.CreateBootVolumeDetails
+    oci.core.models.CreateByoipRangeDetails
     oci.core.models.CreateClusterNetworkDetails
     oci.core.models.CreateClusterNetworkInstancePoolDetails
     oci.core.models.CreateComputeImageCapabilitySchemaDetails
@@ -138,6 +147,7 @@ Core Services
     oci.core.models.CreateNetworkSecurityGroupDetails
     oci.core.models.CreatePrivateIpDetails
     oci.core.models.CreatePublicIpDetails
+    oci.core.models.CreatePublicIpPoolDetails
     oci.core.models.CreateRemotePeeringConnectionDetails
     oci.core.models.CreateRouteTableDetails
     oci.core.models.CreateSecurityListDetails
@@ -258,8 +268,12 @@ Core Services
     oci.core.models.PortRange
     oci.core.models.PrivateIp
     oci.core.models.PublicIp
+    oci.core.models.PublicIpPool
+    oci.core.models.PublicIpPoolCollection
+    oci.core.models.PublicIpPoolSummary
     oci.core.models.RemotePeeringConnection
     oci.core.models.RemoveNetworkSecurityGroupSecurityRulesDetails
+    oci.core.models.RemovePublicIpPoolCapacityDetails
     oci.core.models.RouteRule
     oci.core.models.RouteTable
     oci.core.models.SecurityList
@@ -282,6 +296,7 @@ Core Services
     oci.core.models.UpdateBootVolumeBackupDetails
     oci.core.models.UpdateBootVolumeDetails
     oci.core.models.UpdateBootVolumeKmsKeyDetails
+    oci.core.models.UpdateByoipRangeDetails
     oci.core.models.UpdateClusterNetworkDetails
     oci.core.models.UpdateComputeImageCapabilitySchemaDetails
     oci.core.models.UpdateConsoleHistoryDetails
@@ -300,6 +315,7 @@ Core Services
     oci.core.models.UpdateInstanceAgentConfigDetails
     oci.core.models.UpdateInstanceAvailabilityConfigDetails
     oci.core.models.UpdateInstanceConfigurationDetails
+    oci.core.models.UpdateInstanceConsoleConnectionDetails
     oci.core.models.UpdateInstanceDetails
     oci.core.models.UpdateInstancePoolDetails
     oci.core.models.UpdateInstancePoolPlacementConfigurationDetails
@@ -313,6 +329,7 @@ Core Services
     oci.core.models.UpdateNetworkSecurityGroupSecurityRulesDetails
     oci.core.models.UpdatePrivateIpDetails
     oci.core.models.UpdatePublicIpDetails
+    oci.core.models.UpdatePublicIpPoolDetails
     oci.core.models.UpdateRemotePeeringConnectionDetails
     oci.core.models.UpdateRouteTableDetails
     oci.core.models.UpdateSecurityListDetails

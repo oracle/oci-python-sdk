@@ -22,6 +22,10 @@ class UpdateGatewayDetails(object):
             The value to assign to the display_name property of this UpdateGatewayDetails.
         :type display_name: str
 
+        :param certificate_id:
+            The value to assign to the certificate_id property of this UpdateGatewayDetails.
+        :type certificate_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateGatewayDetails.
         :type freeform_tags: dict(str, str)
@@ -33,17 +37,20 @@ class UpdateGatewayDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'certificate_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
+            'certificate_id': 'certificateId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._display_name = None
+        self._certificate_id = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -76,6 +83,34 @@ class UpdateGatewayDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def certificate_id(self):
+        """
+        Gets the certificate_id of this UpdateGatewayDetails.
+        The `OCID`__ of the resource.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The certificate_id of this UpdateGatewayDetails.
+        :rtype: str
+        """
+        return self._certificate_id
+
+    @certificate_id.setter
+    def certificate_id(self, certificate_id):
+        """
+        Sets the certificate_id of this UpdateGatewayDetails.
+        The `OCID`__ of the resource.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param certificate_id: The certificate_id of this UpdateGatewayDetails.
+        :type: str
+        """
+        self._certificate_id = certificate_id
 
     @property
     def freeform_tags(self):

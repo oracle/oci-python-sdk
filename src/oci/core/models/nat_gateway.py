@@ -91,6 +91,10 @@ class NatGateway(object):
             The value to assign to the vcn_id property of this NatGateway.
         :type vcn_id: str
 
+        :param public_ip_id:
+            The value to assign to the public_ip_id property of this NatGateway.
+        :type public_ip_id: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -102,7 +106,8 @@ class NatGateway(object):
             'lifecycle_state': 'str',
             'nat_ip': 'str',
             'time_created': 'datetime',
-            'vcn_id': 'str'
+            'vcn_id': 'str',
+            'public_ip_id': 'str'
         }
 
         self.attribute_map = {
@@ -115,7 +120,8 @@ class NatGateway(object):
             'lifecycle_state': 'lifecycleState',
             'nat_ip': 'natIp',
             'time_created': 'timeCreated',
-            'vcn_id': 'vcnId'
+            'vcn_id': 'vcnId',
+            'public_ip_id': 'publicIpId'
         }
 
         self._compartment_id = None
@@ -128,6 +134,7 @@ class NatGateway(object):
         self._nat_ip = None
         self._time_created = None
         self._vcn_id = None
+        self._public_ip_id = None
 
     @property
     def compartment_id(self):
@@ -424,6 +431,34 @@ class NatGateway(object):
         :type: str
         """
         self._vcn_id = vcn_id
+
+    @property
+    def public_ip_id(self):
+        """
+        Gets the public_ip_id of this NatGateway.
+        The `OCID`__ of the Public IP associated with the NAT gateway.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The public_ip_id of this NatGateway.
+        :rtype: str
+        """
+        return self._public_ip_id
+
+    @public_ip_id.setter
+    def public_ip_id(self, public_ip_id):
+        """
+        Sets the public_ip_id of this NatGateway.
+        The `OCID`__ of the Public IP associated with the NAT gateway.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param public_ip_id: The public_ip_id of this NatGateway.
+        :type: str
+        """
+        self._public_ip_id = public_ip_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateVolumeBackupPolicyDetails(object):
     """
-    Specifies the properties for a updating a user defined backup policy.
+    Specifies the properties for updating a user defined backup policy.
     For more information about user defined backup policies,
     see `User Defined Policies`__ in
     `Policy-Based Backups`__.

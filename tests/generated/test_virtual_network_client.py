@@ -74,6 +74,87 @@ def test_add_network_security_group_security_rules(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="vcnip" email="vcn_ip_mgmt_grp@oracle.com" jiraProject="VCNIP" opsJiraProject="VCNIP"
+def test_add_public_ip_pool_capacity(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'AddPublicIpPoolCapacity'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'AddPublicIpPoolCapacity')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='AddPublicIpPoolCapacity')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.add_public_ip_pool_capacity(
+                public_ip_pool_id=request.pop(util.camelize('publicIpPoolId')),
+                add_public_ip_pool_capacity_details=request.pop(util.camelize('AddPublicIpPoolCapacityDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'AddPublicIpPoolCapacity',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'publicIpPool',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="vcnip" email="vcn_ip_mgmt_grp@oracle.com" jiraProject="VCNIP" opsJiraProject="VCNIP"
+def test_advertise_byoip_range(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'AdvertiseByoipRange'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'AdvertiseByoipRange')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='AdvertiseByoipRange')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.advertise_byoip_range(
+                byoip_range_id=request.pop(util.camelize('byoipRangeId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'AdvertiseByoipRange',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'advertise_byoip_range',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="serviceGateway" email="oci_sgw_ops_us_grp@oracle.com" jiraProject="SG" opsJiraProject="SGW"
 def test_attach_service_id(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'AttachServiceId'):
@@ -192,6 +273,47 @@ def test_bulk_delete_virtual_circuit_public_prefixes(testing_service_client):
             result,
             service_error,
             'bulk_delete_virtual_circuit_public_prefixes',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="vcnip" email="vcn_ip_mgmt_grp@oracle.com" jiraProject="VCNIP" opsJiraProject="VCNIP"
+def test_change_byoip_range_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangeByoipRangeCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ChangeByoipRangeCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangeByoipRangeCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.change_byoip_range_compartment(
+                byoip_range_id=request.pop(util.camelize('byoipRangeId')),
+                change_byoip_range_compartment_details=request.pop(util.camelize('ChangeByoipRangeCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangeByoipRangeCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_byoip_range_compartment',
             False,
             False
         )
@@ -648,6 +770,47 @@ def test_change_public_ip_compartment(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="vcnip" email="vcn_ip_mgmt_grp@oracle.com" jiraProject="VCNIP" opsJiraProject="VCNIP"
+def test_change_public_ip_pool_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ChangePublicIpPoolCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ChangePublicIpPoolCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ChangePublicIpPoolCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.change_public_ip_pool_compartment(
+                public_ip_pool_id=request.pop(util.camelize('publicIpPoolId')),
+                change_public_ip_pool_compartment_details=request.pop(util.camelize('ChangePublicIpPoolCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ChangePublicIpPoolCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_public_ip_pool_compartment',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
 def test_change_remote_peering_connection_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ChangeRemotePeeringConnectionCompartment'):
@@ -1053,6 +1216,46 @@ def test_connect_remote_peering_connections(testing_service_client):
             result,
             service_error,
             'connect_remote_peering_connections',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="vcnip" email="vcn_ip_mgmt_grp@oracle.com" jiraProject="VCNIP" opsJiraProject="VCNIP"
+def test_create_byoip_range(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'CreateByoipRange'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'CreateByoipRange')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='CreateByoipRange')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.create_byoip_range(
+                create_byoip_range_details=request.pop(util.camelize('CreateByoipRangeDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'CreateByoipRange',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'byoipRange',
             False,
             False
         )
@@ -1618,6 +1821,46 @@ def test_create_public_ip(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="vcnip" email="vcn_ip_mgmt_grp@oracle.com" jiraProject="VCNIP" opsJiraProject="VCNIP"
+def test_create_public_ip_pool(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'CreatePublicIpPool'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'CreatePublicIpPool')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='CreatePublicIpPool')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.create_public_ip_pool(
+                create_public_ip_pool_details=request.pop(util.camelize('CreatePublicIpPoolDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'CreatePublicIpPool',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'publicIpPool',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
 def test_create_remote_peering_connection(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateRemotePeeringConnection'):
@@ -1934,6 +2177,46 @@ def test_create_vlan(testing_service_client):
             service_error,
             'vlan',
             False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="vcnip" email="vcn_ip_mgmt_grp@oracle.com" jiraProject="VCNIP" opsJiraProject="VCNIP"
+def test_delete_byoip_range(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'DeleteByoipRange'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'DeleteByoipRange')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='DeleteByoipRange')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.delete_byoip_range(
+                byoip_range_id=request.pop(util.camelize('byoipRangeId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'DeleteByoipRange',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_byoip_range',
+            True,
             False
         )
 
@@ -2498,6 +2781,46 @@ def test_delete_public_ip(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="vcnip" email="vcn_ip_mgmt_grp@oracle.com" jiraProject="VCNIP" opsJiraProject="VCNIP"
+def test_delete_public_ip_pool(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'DeletePublicIpPool'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'DeletePublicIpPool')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='DeletePublicIpPool')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.delete_public_ip_pool(
+                public_ip_pool_id=request.pop(util.camelize('publicIpPoolId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'DeletePublicIpPool',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_public_ip_pool',
+            True,
+            False
+        )
+
+
 # IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
 def test_delete_remote_peering_connection(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DeleteRemotePeeringConnection'):
@@ -2854,6 +3177,46 @@ def test_detach_service_id(testing_service_client):
             result,
             service_error,
             'serviceGateway',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="vcnip" email="vcn_ip_mgmt_grp@oracle.com" jiraProject="VCNIP" opsJiraProject="VCNIP"
+def test_get_byoip_range(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetByoipRange'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'GetByoipRange')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetByoipRange')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.get_byoip_range(
+                byoip_range_id=request.pop(util.camelize('byoipRangeId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetByoipRange',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'byoipRange',
             False,
             False
         )
@@ -3982,6 +4345,46 @@ def test_get_public_ip_by_private_ip_id(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="vcnip" email="vcn_ip_mgmt_grp@oracle.com" jiraProject="VCNIP" opsJiraProject="VCNIP"
+def test_get_public_ip_pool(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetPublicIpPool'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'GetPublicIpPool')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetPublicIpPool')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.get_public_ip_pool(
+                public_ip_pool_id=request.pop(util.camelize('publicIpPoolId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetPublicIpPool',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'publicIpPool',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
 def test_get_remote_peering_connection(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetRemotePeeringConnection'):
@@ -4500,6 +4903,126 @@ def test_list_allowed_peer_regions_for_remote_peering(testing_service_client):
             'peerRegionForRemotePeering',
             False,
             False
+        )
+
+
+# IssueRoutingInfo tag="vcnip" email="vcn_ip_mgmt_grp@oracle.com" jiraProject="VCNIP" opsJiraProject="VCNIP"
+def test_list_byoip_allocated_ranges(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListByoipAllocatedRanges'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ListByoipAllocatedRanges')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListByoipAllocatedRanges')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.list_byoip_allocated_ranges(
+                byoip_range_id=request.pop(util.camelize('byoipRangeId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_byoip_allocated_ranges(
+                    byoip_range_id=request.pop(util.camelize('byoipRangeId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_byoip_allocated_ranges(
+                        byoip_range_id=request.pop(util.camelize('byoipRangeId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListByoipAllocatedRanges',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'byoipAllocatedRangeCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="vcnip" email="vcn_ip_mgmt_grp@oracle.com" jiraProject="VCNIP" opsJiraProject="VCNIP"
+def test_list_byoip_ranges(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListByoipRanges'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ListByoipRanges')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListByoipRanges')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.list_byoip_ranges(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_byoip_ranges(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_byoip_ranges(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListByoipRanges',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'byoipRangeCollection',
+            False,
+            True
         )
 
 
@@ -5754,6 +6277,66 @@ def test_list_private_ips(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="vcnip" email="vcn_ip_mgmt_grp@oracle.com" jiraProject="VCNIP" opsJiraProject="VCNIP"
+def test_list_public_ip_pools(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListPublicIpPools'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ListPublicIpPools')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListPublicIpPools')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.list_public_ip_pools(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_public_ip_pools(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_public_ip_pools(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListPublicIpPools',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'publicIpPoolCollection',
+            False,
+            True
+        )
+
+
 # IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
 def test_list_public_ips(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListPublicIps'):
@@ -6498,6 +7081,88 @@ def test_remove_network_security_group_security_rules(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="vcnip" email="vcn_ip_mgmt_grp@oracle.com" jiraProject="VCNIP" opsJiraProject="VCNIP"
+def test_remove_public_ip_pool_capacity(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'RemovePublicIpPoolCapacity'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'RemovePublicIpPoolCapacity')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='RemovePublicIpPoolCapacity')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.remove_public_ip_pool_capacity(
+                public_ip_pool_id=request.pop(util.camelize('publicIpPoolId')),
+                remove_public_ip_pool_capacity_details=request.pop(util.camelize('RemovePublicIpPoolCapacityDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'RemovePublicIpPoolCapacity',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'publicIpPool',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="vcnip" email="vcn_ip_mgmt_grp@oracle.com" jiraProject="VCNIP" opsJiraProject="VCNIP"
+def test_update_byoip_range(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'UpdateByoipRange'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'UpdateByoipRange')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdateByoipRange')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.update_byoip_range(
+                byoip_range_id=request.pop(util.camelize('byoipRangeId')),
+                update_byoip_range_details=request.pop(util.camelize('UpdateByoipRangeDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'UpdateByoipRange',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'byoipRange',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
 def test_update_cpe(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'UpdateCpe'):
@@ -7197,6 +7862,47 @@ def test_update_public_ip(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="vcnip" email="vcn_ip_mgmt_grp@oracle.com" jiraProject="VCNIP" opsJiraProject="VCNIP"
+def test_update_public_ip_pool(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'UpdatePublicIpPool'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'UpdatePublicIpPool')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='UpdatePublicIpPool')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.update_public_ip_pool(
+                public_ip_pool_id=request.pop(util.camelize('publicIpPoolId')),
+                update_public_ip_pool_details=request.pop(util.camelize('UpdatePublicIpPoolDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'UpdatePublicIpPool',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'publicIpPool',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
 def test_update_remote_peering_connection(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'UpdateRemotePeeringConnection'):
@@ -7603,6 +8309,86 @@ def test_update_vnic(testing_service_client):
             result,
             service_error,
             'vnic',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="vcnip" email="vcn_ip_mgmt_grp@oracle.com" jiraProject="VCNIP" opsJiraProject="VCNIP"
+def test_validate_byoip_range(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ValidateByoipRange'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ValidateByoipRange')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ValidateByoipRange')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.validate_byoip_range(
+                byoip_range_id=request.pop(util.camelize('byoipRangeId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ValidateByoipRange',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'validate_byoip_range',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="vcnip" email="vcn_ip_mgmt_grp@oracle.com" jiraProject="VCNIP" opsJiraProject="VCNIP"
+def test_withdraw_byoip_range(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'WithdrawByoipRange'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'WithdrawByoipRange')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='WithdrawByoipRange')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.withdraw_byoip_range(
+                byoip_range_id=request.pop(util.camelize('byoipRangeId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'WithdrawByoipRange',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'withdraw_byoip_range',
             False,
             False
         )
