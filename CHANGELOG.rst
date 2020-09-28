@@ -4,12 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.21.6 - TBD
+2.21.6 - 2020-09-29
 ====================
 
 Added
 -----
-* TBD
+* Support for specifying custom content dispositions when downloading objects in the Object Storage service
+* Support for the “bring your own IP address” feature in the Virtual Networking service
+* Support for updating the tags of instance console connections in the Compute service
+* Support for custom SSL certificates on gateways in the API Gateway service
 
 ====================
 2.21.5 - 2020-09-22
