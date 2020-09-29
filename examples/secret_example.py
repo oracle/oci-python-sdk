@@ -214,7 +214,7 @@ vault = create_vault(compartment_id, VAULT_NAME, kms_vault_client_composite).dat
 vault_id = vault.id
 print(" Created vault {} with id : {}".format(VAULT_NAME, vault_id))
 
-# Vault Management cline tto create a key
+# Vault Management client to create a key
 vault_management_client = oci.key_management.KmsManagementClient(config,
                                                                  service_endpoint=vault.management_endpoint)
 vault_management_client_composite = oci.key_management.KmsManagementClientCompositeOperations(
