@@ -34,6 +34,10 @@ class CreateGatewayDetails(object):
             The value to assign to the subnet_id property of this CreateGatewayDetails.
         :type subnet_id: str
 
+        :param certificate_id:
+            The value to assign to the certificate_id property of this CreateGatewayDetails.
+        :type certificate_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateGatewayDetails.
         :type freeform_tags: dict(str, str)
@@ -48,6 +52,7 @@ class CreateGatewayDetails(object):
             'compartment_id': 'str',
             'endpoint_type': 'str',
             'subnet_id': 'str',
+            'certificate_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -57,6 +62,7 @@ class CreateGatewayDetails(object):
             'compartment_id': 'compartmentId',
             'endpoint_type': 'endpointType',
             'subnet_id': 'subnetId',
+            'certificate_id': 'certificateId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -65,6 +71,7 @@ class CreateGatewayDetails(object):
         self._compartment_id = None
         self._endpoint_type = None
         self._subnet_id = None
+        self._certificate_id = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -187,6 +194,34 @@ class CreateGatewayDetails(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def certificate_id(self):
+        """
+        Gets the certificate_id of this CreateGatewayDetails.
+        The `OCID`__ of the resource.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The certificate_id of this CreateGatewayDetails.
+        :rtype: str
+        """
+        return self._certificate_id
+
+    @certificate_id.setter
+    def certificate_id(self, certificate_id):
+        """
+        Sets the certificate_id of this CreateGatewayDetails.
+        The `OCID`__ of the resource.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param certificate_id: The certificate_id of this CreateGatewayDetails.
+        :type: str
+        """
+        self._certificate_id = certificate_id
 
     @property
     def freeform_tags(self):

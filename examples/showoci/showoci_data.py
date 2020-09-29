@@ -325,6 +325,14 @@ class ShowOCIData(object):
                             data['paas_services'] = value
                             has_data = True
 
+                # security and logging services
+                if self.service.flags.read_security:
+                    value = self.__get_security_main(region_name, compartment)
+                    if value is not None:
+                        if len(value) > 0:
+                            data['security'] = value
+                            has_data = True
+
                 # data ai
                 if self.service.flags.read_data_ai:
                     value = self.__get_data_ai_main(region_name, compartment)
@@ -2739,6 +2747,30 @@ class ShowOCIData(object):
 
         except Exception as e:
             self.__print_error("__get_paas_native_main", e)
+            pass
+
+    ##########################################################################
+    # Security and Logging
+    ##########################################################################
+
+    def __get_security_main(self, region_name, compartment):
+        try:
+            security_services = {}
+
+            # cloud guard
+            cg = self.service.search_multi_items(self.service.C_SECURITY, self.service.C_SECURITY_CLOUD_GUARD, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if cg:
+                security_services['cloud_guard'] = cg
+
+            # logging
+            log = self.service.search_multi_items(self.service.C_SECURITY, self.service.C_SECURITY_LOGGING, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if log:
+                security_services['logging'] = log
+
+            return security_services
+
+        except Exception as e:
+            self.__print_error("__get_security_main", e)
             pass
 
     ##########################################################################

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ImageMemoryConstraints(object):
     """
-    OCPU options for an image and shape.
+    For a flexible image and shape, the amount of memory supported for instances that use this image.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class ImageMemoryConstraints(object):
     def min_in_gbs(self):
         """
         Gets the min_in_gbs of this ImageMemoryConstraints.
-        The minimum amount of memory supported for this image and shape, in gigabytes.
+        The minimum amount of memory, in gigabytes.
 
 
         :return: The min_in_gbs of this ImageMemoryConstraints.
@@ -56,7 +56,7 @@ class ImageMemoryConstraints(object):
     def min_in_gbs(self, min_in_gbs):
         """
         Sets the min_in_gbs of this ImageMemoryConstraints.
-        The minimum amount of memory supported for this image and shape, in gigabytes.
+        The minimum amount of memory, in gigabytes.
 
 
         :param min_in_gbs: The min_in_gbs of this ImageMemoryConstraints.
@@ -68,7 +68,7 @@ class ImageMemoryConstraints(object):
     def max_in_gbs(self):
         """
         Gets the max_in_gbs of this ImageMemoryConstraints.
-        The maximum amount of memory supported for this image and shape, in gigabytes.
+        The maximum amount of memory, in gigabytes.
 
 
         :return: The max_in_gbs of this ImageMemoryConstraints.
@@ -80,7 +80,7 @@ class ImageMemoryConstraints(object):
     def max_in_gbs(self, max_in_gbs):
         """
         Sets the max_in_gbs of this ImageMemoryConstraints.
-        The maximum amount of memory supported for this image and shape, in gigabytes.
+        The maximum amount of memory, in gigabytes.
 
 
         :param max_in_gbs: The max_in_gbs of this ImageMemoryConstraints.

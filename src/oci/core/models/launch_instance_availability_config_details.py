@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LaunchInstanceAvailabilityConfigDetails(object):
     """
-    Options for customers to define the general policy of how compute service perform maintenance on VM instances.
+    Options for defining the availability of a VM instance after a maintenance event that impacts the underlying hardware.
     """
 
     #: A constant which can be used with the recovery_action property of a LaunchInstanceAvailabilityConfigDetails.
@@ -46,10 +46,10 @@ class LaunchInstanceAvailabilityConfigDetails(object):
     def recovery_action(self):
         """
         Gets the recovery_action of this LaunchInstanceAvailabilityConfigDetails.
-        Actions customers can specify that would be applied to their instances after scheduled or unexpected host maintenance.
-        * `RESTORE_INSTANCE` - This would be the default action if recoveryAction is not set. VM instances
-        will be restored to the power state it was in before maintenance.
-        * `STOP_INSTANCE` - This action allow customers to have their VM instances be stopped after maintenance.
+        The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+        * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event.
+        If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+        * `STOP_INSTANCE` - The instance is recovered in the stopped state.
 
         Allowed values for this property are: "RESTORE_INSTANCE", "STOP_INSTANCE"
 
@@ -63,10 +63,10 @@ class LaunchInstanceAvailabilityConfigDetails(object):
     def recovery_action(self, recovery_action):
         """
         Sets the recovery_action of this LaunchInstanceAvailabilityConfigDetails.
-        Actions customers can specify that would be applied to their instances after scheduled or unexpected host maintenance.
-        * `RESTORE_INSTANCE` - This would be the default action if recoveryAction is not set. VM instances
-        will be restored to the power state it was in before maintenance.
-        * `STOP_INSTANCE` - This action allow customers to have their VM instances be stopped after maintenance.
+        The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+        * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event.
+        If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+        * `STOP_INSTANCE` - The instance is recovered in the stopped state.
 
 
         :param recovery_action: The recovery_action of this LaunchInstanceAvailabilityConfigDetails.

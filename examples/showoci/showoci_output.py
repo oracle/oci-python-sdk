@@ -1403,6 +1403,41 @@ class ShowOCIOutput(object):
             self.__print_error("__print_paas_services_main", e)
 
     ##########################################################################
+    # Security
+    ##########################################################################
+    def __print_security_main(self, security):
+
+        try:
+            if not security:
+                return
+
+            # cloud guard
+            if 'cloud_guard' in security:
+                self.print_header("Cloud Guard", 2)
+                for val in security['cloud_guard']:
+                    print(self.taba + val['display_name'] + ", (Target = " + val['target_resource_type'] + "), Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + "), Total Recipes : " + val['recipe_count'])
+                    print("")
+
+            # Logging
+            if 'logging' in security:
+                self.print_header("Logging Groups", 2)
+                for val in security['logging']:
+                    print(self.taba + val['display_name'] + ", (" + val['description'] + "), Created: " + val['time_created'][0:16])
+                    for log in val['logs']:
+                        print(self.taba + self.tabs + "Log: " + log['display_name'] +
+                              ", Enabled = " + log['is_enabled'] +
+                              ", " + log['source_service'] +
+                              " (" + log['source_sourcetype'] + ")" +
+                              ", Category = " + log['source_category'] +
+                              ", Resource: " + str(log['source_resource'] + "..").split(".")[1] +
+                              ", State: " + log['lifecycle_state'] +
+                              ", Created: " + log['time_created'][0:16])
+                    print("")
+
+        except Exception as e:
+            self.__print_error("__print_security_main", e)
+
+    ##########################################################################
     # Data AI
     ##########################################################################
     def __print_data_ai(self, data_ai):
@@ -1806,6 +1841,8 @@ class ShowOCIOutput(object):
                     self.__print_quotas_main(cdata['quotas'])
                 if 'paas_services' in cdata:
                     self.__print_paas_services_main(cdata['paas_services'])
+                if 'security' in cdata:
+                    self.__print_security_main(cdata['security'])
                 if 'data_ai' in cdata:
                     self.__print_data_ai(cdata['data_ai'])
                 if 'apigateways' in cdata:
@@ -1951,6 +1988,23 @@ class ShowOCISummary(object):
 
         except Exception as e:
             self.__print_error("__summary_paas_services_main", e)
+
+    ##########################################################################
+    # security
+    ##########################################################################
+    def __summary_security(self, security):
+
+        try:
+            if not security:
+                return
+
+            if 'cloud_guard' in security:
+                self.__summary_core_size(security['cloud_guard'])
+            if 'logging' in security:
+                self.__summary_core_size(security['logging'])
+
+        except Exception as e:
+            self.__print_error("__summary_security", e)
 
     ##########################################################################
     # data ai services
@@ -2258,6 +2312,8 @@ class ShowOCISummary(object):
                     self.__summary_load_balancer_main(cdata['load_balancer'])
                 if 'paas_services' in cdata:
                     self.__summary_paas_services_main(cdata['paas_services'])
+                if 'security' in cdata:
+                    self.__summary_security(cdata['security'])
                 if 'data_ai' in cdata:
                     self.__summary_data_ai_main(cdata['data_ai'])
 

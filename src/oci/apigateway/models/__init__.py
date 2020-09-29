@@ -16,9 +16,14 @@ from .api_specification_route_request_policies import ApiSpecificationRouteReque
 from .api_specification_route_response_policies import ApiSpecificationRouteResponsePolicies
 from .authentication_only_route_authorization_policy import AuthenticationOnlyRouteAuthorizationPolicy
 from .authentication_policy import AuthenticationPolicy
+from .certificate import Certificate
+from .certificate_collection import CertificateCollection
+from .certificate_summary import CertificateSummary
+from .change_certificate_compartment_details import ChangeCertificateCompartmentDetails
 from .change_deployment_compartment_details import ChangeDeploymentCompartmentDetails
 from .change_gateway_compartment_details import ChangeGatewayCompartmentDetails
 from .cors_policy import CorsPolicy
+from .create_certificate_details import CreateCertificateDetails
 from .create_deployment_details import CreateDeploymentDetails
 from .create_gateway_details import CreateGatewayDetails
 from .custom_authentication_policy import CustomAuthenticationPolicy
@@ -36,6 +41,7 @@ from .gateway_summary import GatewaySummary
 from .http_backend import HTTPBackend
 from .header_field_specification import HeaderFieldSpecification
 from .header_transformation_policy import HeaderTransformationPolicy
+from .ip_address import IpAddress
 from .json_web_key import JsonWebKey
 from .json_web_token_claim import JsonWebTokenClaim
 from .jwt_authentication_policy import JwtAuthenticationPolicy
@@ -57,6 +63,7 @@ from .set_query_parameter_policy_item import SetQueryParameterPolicyItem
 from .static_public_key import StaticPublicKey
 from .static_public_key_set import StaticPublicKeySet
 from .stock_response_backend import StockResponseBackend
+from .update_certificate_details import UpdateCertificateDetails
 from .update_deployment_details import UpdateDeploymentDetails
 from .update_gateway_details import UpdateGatewayDetails
 from .work_request import WorkRequest
@@ -82,9 +89,14 @@ apigateway_type_mapping = {
     "ApiSpecificationRouteResponsePolicies": ApiSpecificationRouteResponsePolicies,
     "AuthenticationOnlyRouteAuthorizationPolicy": AuthenticationOnlyRouteAuthorizationPolicy,
     "AuthenticationPolicy": AuthenticationPolicy,
+    "Certificate": Certificate,
+    "CertificateCollection": CertificateCollection,
+    "CertificateSummary": CertificateSummary,
+    "ChangeCertificateCompartmentDetails": ChangeCertificateCompartmentDetails,
     "ChangeDeploymentCompartmentDetails": ChangeDeploymentCompartmentDetails,
     "ChangeGatewayCompartmentDetails": ChangeGatewayCompartmentDetails,
     "CorsPolicy": CorsPolicy,
+    "CreateCertificateDetails": CreateCertificateDetails,
     "CreateDeploymentDetails": CreateDeploymentDetails,
     "CreateGatewayDetails": CreateGatewayDetails,
     "CustomAuthenticationPolicy": CustomAuthenticationPolicy,
@@ -102,6 +114,7 @@ apigateway_type_mapping = {
     "HTTPBackend": HTTPBackend,
     "HeaderFieldSpecification": HeaderFieldSpecification,
     "HeaderTransformationPolicy": HeaderTransformationPolicy,
+    "IpAddress": IpAddress,
     "JsonWebKey": JsonWebKey,
     "JsonWebTokenClaim": JsonWebTokenClaim,
     "JwtAuthenticationPolicy": JwtAuthenticationPolicy,
@@ -123,6 +136,7 @@ apigateway_type_mapping = {
     "StaticPublicKey": StaticPublicKey,
     "StaticPublicKeySet": StaticPublicKeySet,
     "StockResponseBackend": StockResponseBackend,
+    "UpdateCertificateDetails": UpdateCertificateDetails,
     "UpdateDeploymentDetails": UpdateDeploymentDetails,
     "UpdateGatewayDetails": UpdateGatewayDetails,
     "WorkRequest": WorkRequest,

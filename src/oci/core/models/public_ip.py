@@ -151,6 +151,10 @@ class PublicIp(object):
             The value to assign to the time_created property of this PublicIp.
         :type time_created: datetime
 
+        :param public_ip_pool_id:
+            The value to assign to the public_ip_pool_id property of this PublicIp.
+        :type public_ip_pool_id: str
+
         """
         self.swagger_types = {
             'assigned_entity_id': 'str',
@@ -166,7 +170,8 @@ class PublicIp(object):
             'lifetime': 'str',
             'private_ip_id': 'str',
             'scope': 'str',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'public_ip_pool_id': 'str'
         }
 
         self.attribute_map = {
@@ -183,7 +188,8 @@ class PublicIp(object):
             'lifetime': 'lifetime',
             'private_ip_id': 'privateIpId',
             'scope': 'scope',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'public_ip_pool_id': 'publicIpPoolId'
         }
 
         self._assigned_entity_id = None
@@ -200,6 +206,7 @@ class PublicIp(object):
         self._private_ip_id = None
         self._scope = None
         self._time_created = None
+        self._public_ip_pool_id = None
 
     @property
     def assigned_entity_id(self):
@@ -672,6 +679,30 @@ class PublicIp(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def public_ip_pool_id(self):
+        """
+        Gets the public_ip_pool_id of this PublicIp.
+        OCID of the pool object created by the current tenancy
+
+
+        :return: The public_ip_pool_id of this PublicIp.
+        :rtype: str
+        """
+        return self._public_ip_pool_id
+
+    @public_ip_pool_id.setter
+    def public_ip_pool_id(self, public_ip_pool_id):
+        """
+        Sets the public_ip_pool_id of this PublicIp.
+        OCID of the pool object created by the current tenancy
+
+
+        :param public_ip_pool_id: The public_ip_pool_id of this PublicIp.
+        :type: str
+        """
+        self._public_ip_pool_id = public_ip_pool_id
 
     def __repr__(self):
         return formatted_flat_dict(self)
