@@ -64,6 +64,8 @@
 # - oci.bds.BdsClient
 # - oci.waas.WaasClient
 # - oci.mysql.DbSystemClient
+# - oci.cloud_guard.CloudGuardClient
+# - oci.logging.LoggingManagementClient
 #
 # Modules Not Yet Covered:
 # - oci.secrets.SecretsClient
@@ -74,7 +76,10 @@
 # - oci.data_safe.DataSafeClient
 # - oci.ocvp.EsxiHostClient and oci.ocvp.SddcClient
 # - oci.usage_api.UsageapiClient
-#
+# - oci.sch.ServiceConnectorClient
+# - oci.os_management.OsManagementClient
+# - oci.log_analytics.LogAnalyticsClient
+
 ##########################################################################
 from __future__ import print_function
 from showoci_data import ShowOCIData
@@ -86,7 +91,7 @@ import sys
 import argparse
 import datetime
 
-version = "20.08.25"
+version = "20.09.22"
 
 ##########################################################################
 # check OCI version
@@ -280,6 +285,7 @@ def set_parser_arguments():
     parser.add_argument('-dataai', action='store_true', default=False, dest='data_ai', help='Print - D.Science, D.Catalog, D.Flow, ODA and BDS')
     parser.add_argument('-rm', action='store_true', default=False, dest='orm', help='Print Resource management')
     parser.add_argument('-s', action='store_true', default=False, dest='streams', help='Print Streams')
+    parser.add_argument('-sec', action='store_true', default=False, dest='security', help='Print Security and Logging')
 
     parser.add_argument('-nobackups', action='store_true', default=False, dest='skip_backups', help='Do not process backups')
     parser.add_argument('-so', action='store_true', default=False, dest='sumonly', help='Print Summary Only')
@@ -313,7 +319,7 @@ def set_parser_arguments():
             result.compute or result.object or
             result.load or result.database or result.file or result.email or result.orm or result.container or
             result.streams or result.budgets or result.monitoring or result.edge or result.announcement or result.limits or result.paas_native or
-            result.api or result.function or result.data_ai):
+            result.api or result.function or result.data_ai or result.security):
 
         parser.print_help()
 
@@ -399,6 +405,9 @@ def set_service_extract_flags(cmd):
 
     if cmd.all or cmd.allnoiam or cmd.edge:
         prm.read_edge = True
+
+    if cmd.all or cmd.allnoiam or cmd.security:
+        prm.read_security = True
 
     if cmd.noroot:
         prm.read_root_compartment = False

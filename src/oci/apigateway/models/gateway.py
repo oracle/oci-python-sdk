@@ -97,6 +97,14 @@ class Gateway(object):
             The value to assign to the hostname property of this Gateway.
         :type hostname: str
 
+        :param certificate_id:
+            The value to assign to the certificate_id property of this Gateway.
+        :type certificate_id: str
+
+        :param ip_addresses:
+            The value to assign to the ip_addresses property of this Gateway.
+        :type ip_addresses: list[IpAddress]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Gateway.
         :type freeform_tags: dict(str, str)
@@ -117,6 +125,8 @@ class Gateway(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'hostname': 'str',
+            'certificate_id': 'str',
+            'ip_addresses': 'list[IpAddress]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -132,6 +142,8 @@ class Gateway(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'hostname': 'hostname',
+            'certificate_id': 'certificateId',
+            'ip_addresses': 'ipAddresses',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -146,6 +158,8 @@ class Gateway(object):
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._hostname = None
+        self._certificate_id = None
+        self._ip_addresses = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -432,6 +446,58 @@ class Gateway(object):
         :type: str
         """
         self._hostname = hostname
+
+    @property
+    def certificate_id(self):
+        """
+        Gets the certificate_id of this Gateway.
+        The `OCID`__ of the resource.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The certificate_id of this Gateway.
+        :rtype: str
+        """
+        return self._certificate_id
+
+    @certificate_id.setter
+    def certificate_id(self, certificate_id):
+        """
+        Sets the certificate_id of this Gateway.
+        The `OCID`__ of the resource.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param certificate_id: The certificate_id of this Gateway.
+        :type: str
+        """
+        self._certificate_id = certificate_id
+
+    @property
+    def ip_addresses(self):
+        """
+        Gets the ip_addresses of this Gateway.
+        An array of IP addresses associated with the gateway.
+
+
+        :return: The ip_addresses of this Gateway.
+        :rtype: list[IpAddress]
+        """
+        return self._ip_addresses
+
+    @ip_addresses.setter
+    def ip_addresses(self, ip_addresses):
+        """
+        Sets the ip_addresses of this Gateway.
+        An array of IP addresses associated with the gateway.
+
+
+        :param ip_addresses: The ip_addresses of this Gateway.
+        :type: list[IpAddress]
+        """
+        self._ip_addresses = ip_addresses
 
     @property
     def freeform_tags(self):

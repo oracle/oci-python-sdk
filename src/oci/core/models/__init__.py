@@ -6,6 +6,7 @@ from __future__ import absolute_import
 
 from .add_image_shape_compatibility_entry_details import AddImageShapeCompatibilityEntryDetails
 from .add_network_security_group_security_rules_details import AddNetworkSecurityGroupSecurityRulesDetails
+from .add_public_ip_pool_capacity_details import AddPublicIpPoolCapacityDetails
 from .add_security_rule_details import AddSecurityRuleDetails
 from .added_network_security_group_security_rules import AddedNetworkSecurityGroupSecurityRules
 from .app_catalog_listing import AppCatalogListing
@@ -34,9 +35,15 @@ from .boot_volume_source_from_boot_volume_backup_details import BootVolumeSource
 from .boot_volume_source_from_boot_volume_details import BootVolumeSourceFromBootVolumeDetails
 from .bulk_add_virtual_circuit_public_prefixes_details import BulkAddVirtualCircuitPublicPrefixesDetails
 from .bulk_delete_virtual_circuit_public_prefixes_details import BulkDeleteVirtualCircuitPublicPrefixesDetails
+from .byoip_allocated_range_collection import ByoipAllocatedRangeCollection
+from .byoip_allocated_range_summary import ByoipAllocatedRangeSummary
+from .byoip_range import ByoipRange
+from .byoip_range_collection import ByoipRangeCollection
+from .byoip_range_summary import ByoipRangeSummary
 from .capture_console_history_details import CaptureConsoleHistoryDetails
 from .change_boot_volume_backup_compartment_details import ChangeBootVolumeBackupCompartmentDetails
 from .change_boot_volume_compartment_details import ChangeBootVolumeCompartmentDetails
+from .change_byoip_range_compartment_details import ChangeByoipRangeCompartmentDetails
 from .change_cluster_network_compartment_details import ChangeClusterNetworkCompartmentDetails
 from .change_compute_image_capability_schema_compartment_details import ChangeComputeImageCapabilitySchemaCompartmentDetails
 from .change_cpe_compartment_details import ChangeCpeCompartmentDetails
@@ -55,6 +62,7 @@ from .change_local_peering_gateway_compartment_details import ChangeLocalPeering
 from .change_nat_gateway_compartment_details import ChangeNatGatewayCompartmentDetails
 from .change_network_security_group_compartment_details import ChangeNetworkSecurityGroupCompartmentDetails
 from .change_public_ip_compartment_details import ChangePublicIpCompartmentDetails
+from .change_public_ip_pool_compartment_details import ChangePublicIpPoolCompartmentDetails
 from .change_remote_peering_connection_compartment_details import ChangeRemotePeeringConnectionCompartmentDetails
 from .change_route_table_compartment_details import ChangeRouteTableCompartmentDetails
 from .change_security_list_compartment_details import ChangeSecurityListCompartmentDetails
@@ -91,6 +99,7 @@ from .cpe_device_shape_summary import CpeDeviceShapeSummary
 from .create_app_catalog_subscription_details import CreateAppCatalogSubscriptionDetails
 from .create_boot_volume_backup_details import CreateBootVolumeBackupDetails
 from .create_boot_volume_details import CreateBootVolumeDetails
+from .create_byoip_range_details import CreateByoipRangeDetails
 from .create_cluster_network_details import CreateClusterNetworkDetails
 from .create_cluster_network_instance_pool_details import CreateClusterNetworkInstancePoolDetails
 from .create_compute_image_capability_schema_details import CreateComputeImageCapabilitySchemaDetails
@@ -118,6 +127,7 @@ from .create_nat_gateway_details import CreateNatGatewayDetails
 from .create_network_security_group_details import CreateNetworkSecurityGroupDetails
 from .create_private_ip_details import CreatePrivateIpDetails
 from .create_public_ip_details import CreatePublicIpDetails
+from .create_public_ip_pool_details import CreatePublicIpPoolDetails
 from .create_remote_peering_connection_details import CreateRemotePeeringConnectionDetails
 from .create_route_table_details import CreateRouteTableDetails
 from .create_security_list_details import CreateSecurityListDetails
@@ -238,8 +248,12 @@ from .peer_region_for_remote_peering import PeerRegionForRemotePeering
 from .port_range import PortRange
 from .private_ip import PrivateIp
 from .public_ip import PublicIp
+from .public_ip_pool import PublicIpPool
+from .public_ip_pool_collection import PublicIpPoolCollection
+from .public_ip_pool_summary import PublicIpPoolSummary
 from .remote_peering_connection import RemotePeeringConnection
 from .remove_network_security_group_security_rules_details import RemoveNetworkSecurityGroupSecurityRulesDetails
+from .remove_public_ip_pool_capacity_details import RemovePublicIpPoolCapacityDetails
 from .route_rule import RouteRule
 from .route_table import RouteTable
 from .security_list import SecurityList
@@ -262,6 +276,7 @@ from .udp_options import UdpOptions
 from .update_boot_volume_backup_details import UpdateBootVolumeBackupDetails
 from .update_boot_volume_details import UpdateBootVolumeDetails
 from .update_boot_volume_kms_key_details import UpdateBootVolumeKmsKeyDetails
+from .update_byoip_range_details import UpdateByoipRangeDetails
 from .update_cluster_network_details import UpdateClusterNetworkDetails
 from .update_compute_image_capability_schema_details import UpdateComputeImageCapabilitySchemaDetails
 from .update_console_history_details import UpdateConsoleHistoryDetails
@@ -280,6 +295,7 @@ from .update_image_details import UpdateImageDetails
 from .update_instance_agent_config_details import UpdateInstanceAgentConfigDetails
 from .update_instance_availability_config_details import UpdateInstanceAvailabilityConfigDetails
 from .update_instance_configuration_details import UpdateInstanceConfigurationDetails
+from .update_instance_console_connection_details import UpdateInstanceConsoleConnectionDetails
 from .update_instance_details import UpdateInstanceDetails
 from .update_instance_pool_details import UpdateInstancePoolDetails
 from .update_instance_pool_placement_configuration_details import UpdateInstancePoolPlacementConfigurationDetails
@@ -293,6 +309,7 @@ from .update_network_security_group_details import UpdateNetworkSecurityGroupDet
 from .update_network_security_group_security_rules_details import UpdateNetworkSecurityGroupSecurityRulesDetails
 from .update_private_ip_details import UpdatePrivateIpDetails
 from .update_public_ip_details import UpdatePublicIpDetails
+from .update_public_ip_pool_details import UpdatePublicIpPoolDetails
 from .update_remote_peering_connection_details import UpdateRemotePeeringConnectionDetails
 from .update_route_table_details import UpdateRouteTableDetails
 from .update_security_list_details import UpdateSecurityListDetails
@@ -339,6 +356,7 @@ from .volume_source_from_volume_details import VolumeSourceFromVolumeDetails
 core_type_mapping = {
     "AddImageShapeCompatibilityEntryDetails": AddImageShapeCompatibilityEntryDetails,
     "AddNetworkSecurityGroupSecurityRulesDetails": AddNetworkSecurityGroupSecurityRulesDetails,
+    "AddPublicIpPoolCapacityDetails": AddPublicIpPoolCapacityDetails,
     "AddSecurityRuleDetails": AddSecurityRuleDetails,
     "AddedNetworkSecurityGroupSecurityRules": AddedNetworkSecurityGroupSecurityRules,
     "AppCatalogListing": AppCatalogListing,
@@ -367,9 +385,15 @@ core_type_mapping = {
     "BootVolumeSourceFromBootVolumeDetails": BootVolumeSourceFromBootVolumeDetails,
     "BulkAddVirtualCircuitPublicPrefixesDetails": BulkAddVirtualCircuitPublicPrefixesDetails,
     "BulkDeleteVirtualCircuitPublicPrefixesDetails": BulkDeleteVirtualCircuitPublicPrefixesDetails,
+    "ByoipAllocatedRangeCollection": ByoipAllocatedRangeCollection,
+    "ByoipAllocatedRangeSummary": ByoipAllocatedRangeSummary,
+    "ByoipRange": ByoipRange,
+    "ByoipRangeCollection": ByoipRangeCollection,
+    "ByoipRangeSummary": ByoipRangeSummary,
     "CaptureConsoleHistoryDetails": CaptureConsoleHistoryDetails,
     "ChangeBootVolumeBackupCompartmentDetails": ChangeBootVolumeBackupCompartmentDetails,
     "ChangeBootVolumeCompartmentDetails": ChangeBootVolumeCompartmentDetails,
+    "ChangeByoipRangeCompartmentDetails": ChangeByoipRangeCompartmentDetails,
     "ChangeClusterNetworkCompartmentDetails": ChangeClusterNetworkCompartmentDetails,
     "ChangeComputeImageCapabilitySchemaCompartmentDetails": ChangeComputeImageCapabilitySchemaCompartmentDetails,
     "ChangeCpeCompartmentDetails": ChangeCpeCompartmentDetails,
@@ -388,6 +412,7 @@ core_type_mapping = {
     "ChangeNatGatewayCompartmentDetails": ChangeNatGatewayCompartmentDetails,
     "ChangeNetworkSecurityGroupCompartmentDetails": ChangeNetworkSecurityGroupCompartmentDetails,
     "ChangePublicIpCompartmentDetails": ChangePublicIpCompartmentDetails,
+    "ChangePublicIpPoolCompartmentDetails": ChangePublicIpPoolCompartmentDetails,
     "ChangeRemotePeeringConnectionCompartmentDetails": ChangeRemotePeeringConnectionCompartmentDetails,
     "ChangeRouteTableCompartmentDetails": ChangeRouteTableCompartmentDetails,
     "ChangeSecurityListCompartmentDetails": ChangeSecurityListCompartmentDetails,
@@ -424,6 +449,7 @@ core_type_mapping = {
     "CreateAppCatalogSubscriptionDetails": CreateAppCatalogSubscriptionDetails,
     "CreateBootVolumeBackupDetails": CreateBootVolumeBackupDetails,
     "CreateBootVolumeDetails": CreateBootVolumeDetails,
+    "CreateByoipRangeDetails": CreateByoipRangeDetails,
     "CreateClusterNetworkDetails": CreateClusterNetworkDetails,
     "CreateClusterNetworkInstancePoolDetails": CreateClusterNetworkInstancePoolDetails,
     "CreateComputeImageCapabilitySchemaDetails": CreateComputeImageCapabilitySchemaDetails,
@@ -451,6 +477,7 @@ core_type_mapping = {
     "CreateNetworkSecurityGroupDetails": CreateNetworkSecurityGroupDetails,
     "CreatePrivateIpDetails": CreatePrivateIpDetails,
     "CreatePublicIpDetails": CreatePublicIpDetails,
+    "CreatePublicIpPoolDetails": CreatePublicIpPoolDetails,
     "CreateRemotePeeringConnectionDetails": CreateRemotePeeringConnectionDetails,
     "CreateRouteTableDetails": CreateRouteTableDetails,
     "CreateSecurityListDetails": CreateSecurityListDetails,
@@ -571,8 +598,12 @@ core_type_mapping = {
     "PortRange": PortRange,
     "PrivateIp": PrivateIp,
     "PublicIp": PublicIp,
+    "PublicIpPool": PublicIpPool,
+    "PublicIpPoolCollection": PublicIpPoolCollection,
+    "PublicIpPoolSummary": PublicIpPoolSummary,
     "RemotePeeringConnection": RemotePeeringConnection,
     "RemoveNetworkSecurityGroupSecurityRulesDetails": RemoveNetworkSecurityGroupSecurityRulesDetails,
+    "RemovePublicIpPoolCapacityDetails": RemovePublicIpPoolCapacityDetails,
     "RouteRule": RouteRule,
     "RouteTable": RouteTable,
     "SecurityList": SecurityList,
@@ -595,6 +626,7 @@ core_type_mapping = {
     "UpdateBootVolumeBackupDetails": UpdateBootVolumeBackupDetails,
     "UpdateBootVolumeDetails": UpdateBootVolumeDetails,
     "UpdateBootVolumeKmsKeyDetails": UpdateBootVolumeKmsKeyDetails,
+    "UpdateByoipRangeDetails": UpdateByoipRangeDetails,
     "UpdateClusterNetworkDetails": UpdateClusterNetworkDetails,
     "UpdateComputeImageCapabilitySchemaDetails": UpdateComputeImageCapabilitySchemaDetails,
     "UpdateConsoleHistoryDetails": UpdateConsoleHistoryDetails,
@@ -613,6 +645,7 @@ core_type_mapping = {
     "UpdateInstanceAgentConfigDetails": UpdateInstanceAgentConfigDetails,
     "UpdateInstanceAvailabilityConfigDetails": UpdateInstanceAvailabilityConfigDetails,
     "UpdateInstanceConfigurationDetails": UpdateInstanceConfigurationDetails,
+    "UpdateInstanceConsoleConnectionDetails": UpdateInstanceConsoleConnectionDetails,
     "UpdateInstanceDetails": UpdateInstanceDetails,
     "UpdateInstancePoolDetails": UpdateInstancePoolDetails,
     "UpdateInstancePoolPlacementConfigurationDetails": UpdateInstancePoolPlacementConfigurationDetails,
@@ -626,6 +659,7 @@ core_type_mapping = {
     "UpdateNetworkSecurityGroupSecurityRulesDetails": UpdateNetworkSecurityGroupSecurityRulesDetails,
     "UpdatePrivateIpDetails": UpdatePrivateIpDetails,
     "UpdatePublicIpDetails": UpdatePublicIpDetails,
+    "UpdatePublicIpPoolDetails": UpdatePublicIpPoolDetails,
     "UpdateRemotePeeringConnectionDetails": UpdateRemotePeeringConnectionDetails,
     "UpdateRouteTableDetails": UpdateRouteTableDetails,
     "UpdateSecurityListDetails": UpdateSecurityListDetails,

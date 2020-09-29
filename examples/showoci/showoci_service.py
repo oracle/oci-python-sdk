@@ -48,6 +48,7 @@ class ShowOCIFlags(object):
     read_budgets = False
     read_monitoring_notifications = False
     read_edge = False
+    read_security = False
     read_announcement = False
     read_ManagedCompartmentForPaaS = True
     read_root_compartment = True
@@ -111,7 +112,8 @@ class ShowOCIFlags(object):
                 self.read_limits or
                 self.read_api or
                 self.read_function or
-                self.read_data_ai)
+                self.read_data_ai or
+                self.read_security)
 
     ############################################
     # check if to load basic network (vcn+subnets)
@@ -131,7 +133,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.18.0"
+    oci_compatible_version = "2.21.4"
 
     ##########################################################################
     # Global Constants
@@ -287,6 +289,11 @@ class ShowOCIService(object):
     C_DATA_AI_FLOW = "data_flow"
     C_DATA_AI_ODA = "oda"
     C_DATA_AI_BDS = "bds"
+
+    # Security and Logging
+    C_SECURITY = "security"
+    C_SECURITY_CLOUD_GUARD = "cloud_guard"
+    C_SECURITY_LOGGING = "logging"
 
     # Error flag and reboot migration
     error = 0
@@ -910,6 +917,10 @@ class ShowOCIService(object):
         # functions
         if self.flags.read_function:
             self.__load_functions_main()
+
+        # Security and Logging
+        if self.flags.read_security:
+            self.__load_security_main()
 
         et = time.time() - region_start_time
         print("*** Elapsed Region '" + region_name + "' - " + '{:02d}:{:02d}:{:02d}'.format(round(et // 3600), (round(et % 3600 // 60)), round(et % 60)) + " ***")
@@ -6389,16 +6400,17 @@ class ShowOCIService(object):
                     databases = oci.pagination.list_call_get_all_results(
                         mysql_client.list_db_systems,
                         compartment['id'],
-                        sort_by="displayName",
-                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                        sort_by="displayName"
                     ).data
 
+                # mysql throw service error often, ignoring incase it does
                 except oci.exceptions.ServiceError as e:
                     if self.__check_service_error(e.code):
                         self.__load_print_auth_warning("m", False)
                         continue
                     else:
-                        raise
+                        print("e - " + str(e))
+                        return data
 
                 # loop on auto
                 # databases = oci.mysql.models.DbSystemSummary
@@ -8902,4 +8914,262 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_quotas", e)
+            return data
+
+    ##########################################################################
+    # __load_security_main
+    ##########################################################################
+    #
+    # OCI Classes used:
+    #
+    # oci.cloud_guard.CloudGuardClient(config, **kwargs)
+    # oci.logging.LoggingManagementClient(config, **kwargs)
+    ##########################################################################
+    def __load_security_main(self):
+
+        try:
+            print("Security and Logging Services...")
+
+            # clients
+            cg_client = oci.cloud_guard.CloudGuardClient(self.config, signer=self.signer, timeout=1)
+            log_client = oci.logging.LoggingManagementClient(self.config, signer=self.signer, timeout=1)
+
+            if self.flags.proxy:
+                cg_client.base_client.session.proxies = {'https': self.flags.proxy}
+                log_client.base_client.session.proxies = {'https': self.flags.proxy}
+
+            # reference to compartments
+            compartments = self.get_compartment()
+
+            # add the key if not exists
+            self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_CLOUD_GUARD)
+            self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_LOGGING)
+
+            # reference to paas
+            sec = self.data[self.C_SECURITY]
+
+            # append the data
+            sec[self.C_SECURITY_CLOUD_GUARD] += self.__load_security_cloud_guard(cg_client, compartments)
+            sec[self.C_SECURITY_LOGGING] += self.__load_security_log_groups(log_client, compartments)
+
+            print("")
+
+        except oci.exceptions.RequestException:
+            raise
+        except oci.exceptions.ServiceError:
+            raise
+        except Exception as e:
+            self.__print_error("__load_security_main", e)
+
+    ##########################################################################
+    # __load_security_cloud_guard
+    ##########################################################################
+    def __load_security_cloud_guard(self, cg_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("Cloud Guard")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                array = []
+                try:
+                    array = oci.pagination.list_call_get_all_results(
+                        cg_client.list_targets,
+                        compartment['id'],
+                        sort_by="displayName"
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning()
+                    continue
+
+                print(".", end="")
+
+                # item = oci.cloud_guard.models.TargetSummary
+                for item in array:
+                    if (item.lifecycle_state == 'ACTIVE' or item.lifecycle_state == 'UPDATING'):
+
+                        val = {'id': str(item.id),
+                               'display_name': str(item.display_name),
+                               'target_resource_type': str(item.target_resource_type),
+                               'target_resource_id': str(item.target_resource_id),
+                               'recipe_count': str(item.recipe_count),
+                               'time_created': str(item.time_created),
+                               'time_updated': str(item.time_updated),
+                               'lifecycle_state': str(item.lifecycle_state),
+                               'lifecyle_details': str(item.lifecyle_details),
+                               'sum_info': "Cloud Guard",
+                               'sum_size_gb': str(1),
+                               'system_tags': [] if item.system_tags is None else item.system_tags,
+                               'defined_tags': [] if item.defined_tags is None else item.defined_tags,
+                               'freeform_tags': [] if item.freeform_tags is None else item.freeform_tags,
+                               'compartment_name': str(compartment['name']),
+                               'compartment_id': str(compartment['id']),
+                               'region_name': str(self.config['region'])}
+
+                        # add the data
+                        cnt += 1
+                        data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_security_cloud_guard", e)
+            return data
+
+    ##########################################################################
+    # __load_security_log_groups
+    ##########################################################################
+    def __load_security_log_groups(self, log_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("Logging Groups")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                array = []
+                try:
+                    array = oci.pagination.list_call_get_all_results(
+                        log_client.list_log_groups,
+                        compartment['id'],
+                        sort_by="displayName"
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning()
+                    continue
+
+                print(".", end="")
+
+                # item = oci.logging.models.LogGroupSummary
+                for item in array:
+                    val = {
+                        'id': str(item.id),
+                        'display_name': str(item.display_name),
+                        'description': str(item.description),
+                        'time_created': str(item.time_created),
+                        'time_last_modified': str(item.time_last_modified),
+                        'sum_info': "Log Groups",
+                        'sum_size_gb': str(1),
+                        'logs': [],
+                        'defined_tags': [] if item.defined_tags is None else item.defined_tags,
+                        'freeform_tags': [] if item.freeform_tags is None else item.freeform_tags,
+                        'compartment_name': str(compartment['name']),
+                        'compartment_id': str(compartment['id']),
+                        'region_name': str(self.config['region'])
+                    }
+
+                    ######################
+                    # obtain logs info
+                    ######################
+                    logs = []
+                    try:
+                        logs = oci.pagination.list_call_get_all_results(
+                            log_client.list_logs,
+                            item.id,
+                            sort_by="displayName"
+                        ).data
+
+                    except oci.exceptions.ServiceError as e:
+                        if self.__check_service_error(e.code):
+                            self.__load_print_auth_warning()
+                            continue
+                        raise
+                    except oci.exceptions.ConnectTimeout:
+                        self.__load_print_auth_warning()
+                        continue
+
+                    # log_item = oci.logging.models.LogSummary
+                    for log_item in logs:
+                        log_val = {
+                            'id': str(log_item.id),
+                            'display_name': str(log_item.display_name),
+                            'is_enabled': str(log_item.is_enabled),
+                            'source_service': "",
+                            'source_category': "",
+                            'source_sourcetype': "",
+                            'source_resource': "",
+                            'source_parameters': {},
+                            'lifecycle_state': str(log_item.lifecycle_state),
+                            'log_type': str(log_item.log_type),
+                            'defined_tags': [] if item.defined_tags is None else item.defined_tags,
+                            'freeform_tags': [] if item.freeform_tags is None else item.freeform_tags,
+                            'time_created': str(log_item.time_created),
+                            'retention_duration': str(log_item.retention_duration),
+                            'time_last_modified': str(log_item.time_last_modified),
+                            'compartment_name': str(compartment['name']),
+                            'compartment_id': str(compartment['id']),
+                            'region_name': str(self.config['region'])
+                        }
+
+                        # source and archive configuration
+                        try:
+                            # oci.logging.models.Archiving
+                            archiving = log_item.configuration.archiving
+                            log_val['archiving'] = str(archiving.is_enabled)
+
+                            # oci.logging.models.Source
+                            source = log_item.configuration.source
+                            log_val['source_sourcetype'] = str(source.source_type)
+
+                            # oci.logging.models.OciService
+                            if source.source_type == 'OCISERVICE':
+                                log_val['source_service'] = str(source.service)
+                                log_val['source_category'] = str(source.category)
+                                log_val['source_resource'] = str(source.resource)
+                                log_val['source_parameters'] = source.parameters
+
+                        except Exception:
+                            continue
+
+                        val["logs"].append(log_val)
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_security_log_groups", e)
             return data

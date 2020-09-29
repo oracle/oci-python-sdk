@@ -909,6 +909,8 @@ class InstanceConfigurationLaunchInstanceDetails(object):
     def availability_config(self):
         """
         Gets the availability_config of this InstanceConfigurationLaunchInstanceDetails.
+        Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
+
 
         :return: The availability_config of this InstanceConfigurationLaunchInstanceDetails.
         :rtype: InstanceConfigurationAvailabilityConfig
@@ -919,6 +921,8 @@ class InstanceConfigurationLaunchInstanceDetails(object):
     def availability_config(self, availability_config):
         """
         Sets the availability_config of this InstanceConfigurationLaunchInstanceDetails.
+        Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
+
 
         :param availability_config: The availability_config of this InstanceConfigurationLaunchInstanceDetails.
         :type: InstanceConfigurationAvailabilityConfig

@@ -5,6 +5,8 @@
 from __future__ import absolute_import
 
 
+from .api_gateway_client import ApiGatewayClient
+from .api_gateway_client_composite_operations import ApiGatewayClientCompositeOperations
 from .deployment_client import DeploymentClient
 from .deployment_client_composite_operations import DeploymentClientCompositeOperations
 from .gateway_client import GatewayClient
@@ -13,4 +15,4 @@ from .work_requests_client import WorkRequestsClient
 from .work_requests_client_composite_operations import WorkRequestsClientCompositeOperations
 from . import models
 
-__all__ = ["DeploymentClient", "DeploymentClientCompositeOperations", "GatewayClient", "GatewayClientCompositeOperations", "WorkRequestsClient", "WorkRequestsClientCompositeOperations", "models"]
+__all__ = ["ApiGatewayClient", "ApiGatewayClientCompositeOperations", "DeploymentClient", "DeploymentClientCompositeOperations", "GatewayClient", "GatewayClientCompositeOperations", "WorkRequestsClient", "WorkRequestsClientCompositeOperations", "models"]

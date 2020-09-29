@@ -6,9 +6,11 @@ Apigateway
     :nosignatures:
     :template: autosummary/service_client.rst
 
+    oci.apigateway.ApiGatewayClient
     oci.apigateway.DeploymentClient
     oci.apigateway.GatewayClient
     oci.apigateway.WorkRequestsClient
+    oci.apigateway.ApiGatewayClientCompositeOperations
     oci.apigateway.DeploymentClientCompositeOperations
     oci.apigateway.GatewayClientCompositeOperations
     oci.apigateway.WorkRequestsClientCompositeOperations
@@ -34,9 +36,14 @@ Apigateway
     oci.apigateway.models.ApiSpecificationRouteResponsePolicies
     oci.apigateway.models.AuthenticationOnlyRouteAuthorizationPolicy
     oci.apigateway.models.AuthenticationPolicy
+    oci.apigateway.models.Certificate
+    oci.apigateway.models.CertificateCollection
+    oci.apigateway.models.CertificateSummary
+    oci.apigateway.models.ChangeCertificateCompartmentDetails
     oci.apigateway.models.ChangeDeploymentCompartmentDetails
     oci.apigateway.models.ChangeGatewayCompartmentDetails
     oci.apigateway.models.CorsPolicy
+    oci.apigateway.models.CreateCertificateDetails
     oci.apigateway.models.CreateDeploymentDetails
     oci.apigateway.models.CreateGatewayDetails
     oci.apigateway.models.CustomAuthenticationPolicy
@@ -54,6 +61,7 @@ Apigateway
     oci.apigateway.models.HTTPBackend
     oci.apigateway.models.HeaderFieldSpecification
     oci.apigateway.models.HeaderTransformationPolicy
+    oci.apigateway.models.IpAddress
     oci.apigateway.models.JsonWebKey
     oci.apigateway.models.JsonWebTokenClaim
     oci.apigateway.models.JwtAuthenticationPolicy
@@ -75,6 +83,7 @@ Apigateway
     oci.apigateway.models.StaticPublicKey
     oci.apigateway.models.StaticPublicKeySet
     oci.apigateway.models.StockResponseBackend
+    oci.apigateway.models.UpdateCertificateDetails
     oci.apigateway.models.UpdateDeploymentDetails
     oci.apigateway.models.UpdateGatewayDetails
     oci.apigateway.models.WorkRequest
