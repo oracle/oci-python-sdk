@@ -514,12 +514,13 @@ class IdentityClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        wait_for_namespace_id = operation_result.data.tag_namespace_id
+        wait_for_tag_name = operation_result.data.name
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_tag(wait_for_resource_id),
+                self.client.get_tag(wait_for_namespace_id, wait_for_tag_name),
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -1465,12 +1466,13 @@ class IdentityClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
-        wait_for_resource_id = operation_result.data.id
+        wait_for_namespace_id = operation_result.data.tag_namespace_id
+        wait_for_tag_name = operation_result.data.name
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                self.client.get_tag(wait_for_resource_id),
+                self.client.get_tag(wait_for_namespace_id, wait_for_tag_name),
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
