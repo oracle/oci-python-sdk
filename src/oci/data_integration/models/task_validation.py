@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TaskValidation(object):
     """
-    The information about task validation
+    The information about task validation.
     """
 
     def __init__(self, **kwargs):
@@ -135,7 +135,7 @@ class TaskValidation(object):
     def total_message_count(self):
         """
         Gets the total_message_count of this TaskValidation.
-        Total number of validation messages
+        Total number of validation messages.
 
 
         :return: The total_message_count of this TaskValidation.
@@ -147,7 +147,7 @@ class TaskValidation(object):
     def total_message_count(self, total_message_count):
         """
         Sets the total_message_count of this TaskValidation.
-        Total number of validation messages
+        Total number of validation messages.
 
 
         :param total_message_count: The total_message_count of this TaskValidation.
@@ -159,7 +159,7 @@ class TaskValidation(object):
     def error_message_count(self):
         """
         Gets the error_message_count of this TaskValidation.
-        Total number of validation error messages
+        Total number of validation error messages.
 
 
         :return: The error_message_count of this TaskValidation.
@@ -171,7 +171,7 @@ class TaskValidation(object):
     def error_message_count(self, error_message_count):
         """
         Sets the error_message_count of this TaskValidation.
-        Total number of validation error messages
+        Total number of validation error messages.
 
 
         :param error_message_count: The error_message_count of this TaskValidation.
@@ -183,7 +183,7 @@ class TaskValidation(object):
     def warn_message_count(self):
         """
         Gets the warn_message_count of this TaskValidation.
-        Total number of validation warning messages
+        Total number of validation warning messages.
 
 
         :return: The warn_message_count of this TaskValidation.
@@ -195,7 +195,7 @@ class TaskValidation(object):
     def warn_message_count(self, warn_message_count):
         """
         Sets the warn_message_count of this TaskValidation.
-        Total number of validation warning messages
+        Total number of validation warning messages.
 
 
         :param warn_message_count: The warn_message_count of this TaskValidation.
@@ -207,7 +207,7 @@ class TaskValidation(object):
     def info_message_count(self):
         """
         Gets the info_message_count of this TaskValidation.
-        Total number of validation information messages
+        Total number of validation information messages.
 
 
         :return: The info_message_count of this TaskValidation.
@@ -219,7 +219,7 @@ class TaskValidation(object):
     def info_message_count(self, info_message_count):
         """
         Sets the info_message_count of this TaskValidation.
-        Total number of validation information messages
+        Total number of validation information messages.
 
 
         :param info_message_count: The info_message_count of this TaskValidation.
@@ -231,7 +231,7 @@ class TaskValidation(object):
     def validation_messages(self):
         """
         Gets the validation_messages of this TaskValidation.
-        Detailed information of the DataFlow object validation.
+        Detailed information of the data flow object validation.
 
 
         :return: The validation_messages of this TaskValidation.
@@ -243,7 +243,7 @@ class TaskValidation(object):
     def validation_messages(self, validation_messages):
         """
         Sets the validation_messages of this TaskValidation.
-        Detailed information of the DataFlow object validation.
+        Detailed information of the data flow object validation.
 
 
         :param validation_messages: The validation_messages of this TaskValidation.
@@ -255,7 +255,7 @@ class TaskValidation(object):
     def key(self):
         """
         Gets the key of this TaskValidation.
-        Objects will use a 36 character key as unique ID. It is system generated and cannot be edited by user
+        Objects use a 36 character key as unique ID. It is system generated and cannot be modified.
 
 
         :return: The key of this TaskValidation.
@@ -267,7 +267,7 @@ class TaskValidation(object):
     def key(self, key):
         """
         Sets the key of this TaskValidation.
-        Objects will use a 36 character key as unique ID. It is system generated and cannot be edited by user
+        Objects use a 36 character key as unique ID. It is system generated and cannot be modified.
 
 
         :param key: The key of this TaskValidation.
@@ -347,7 +347,7 @@ class TaskValidation(object):
     def name(self):
         """
         Gets the name of this TaskValidation.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this TaskValidation.
@@ -359,7 +359,7 @@ class TaskValidation(object):
     def name(self, name):
         """
         Sets the name of this TaskValidation.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this TaskValidation.
@@ -443,7 +443,7 @@ class TaskValidation(object):
     def identifier(self):
         """
         Gets the identifier of this TaskValidation.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this TaskValidation.
@@ -455,7 +455,7 @@ class TaskValidation(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this TaskValidation.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this TaskValidation.

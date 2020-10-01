@@ -320,6 +320,88 @@ def test_change_backup_destination_compartment(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_change_cloud_exadata_infrastructure_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ChangeCloudExadataInfrastructureCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ChangeCloudExadataInfrastructureCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ChangeCloudExadataInfrastructureCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.change_cloud_exadata_infrastructure_compartment(
+                change_cloud_exadata_infrastructure_compartment_details=request.pop(util.camelize('ChangeCloudExadataInfrastructureCompartmentDetails')),
+                cloud_exadata_infrastructure_id=request.pop(util.camelize('cloudExadataInfrastructureId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ChangeCloudExadataInfrastructureCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_cloud_exadata_infrastructure_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_change_cloud_vm_cluster_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ChangeCloudVmClusterCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ChangeCloudVmClusterCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ChangeCloudVmClusterCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.change_cloud_vm_cluster_compartment(
+                change_cloud_vm_cluster_compartment_details=request.pop(util.camelize('ChangeCloudVmClusterCompartmentDetails')),
+                cloud_vm_cluster_id=request.pop(util.camelize('cloudVmClusterId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ChangeCloudVmClusterCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_cloud_vm_cluster_compartment',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_change_database_software_image_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ChangeDatabaseSoftwareImageCompartment'):
@@ -840,6 +922,86 @@ def test_create_backup_destination(testing_service_client):
             result,
             service_error,
             'backupDestination',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_create_cloud_exadata_infrastructure(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'CreateCloudExadataInfrastructure'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'CreateCloudExadataInfrastructure')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='CreateCloudExadataInfrastructure')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.create_cloud_exadata_infrastructure(
+                create_cloud_exadata_infrastructure_details=request.pop(util.camelize('CreateCloudExadataInfrastructureDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'CreateCloudExadataInfrastructure',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'cloudExadataInfrastructure',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_create_cloud_vm_cluster(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'CreateCloudVmCluster'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'CreateCloudVmCluster')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='CreateCloudVmCluster')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.create_cloud_vm_cluster(
+                create_cloud_vm_cluster_details=request.pop(util.camelize('CreateCloudVmClusterDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'CreateCloudVmCluster',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'cloudVmCluster',
             False,
             False
         )
@@ -1444,6 +1606,86 @@ def test_delete_backup_destination(testing_service_client):
             result,
             service_error,
             'delete_backup_destination',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_delete_cloud_exadata_infrastructure(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'DeleteCloudExadataInfrastructure'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'DeleteCloudExadataInfrastructure')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='DeleteCloudExadataInfrastructure')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.delete_cloud_exadata_infrastructure(
+                cloud_exadata_infrastructure_id=request.pop(util.camelize('cloudExadataInfrastructureId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'DeleteCloudExadataInfrastructure',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_cloud_exadata_infrastructure',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_delete_cloud_vm_cluster(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'DeleteCloudVmCluster'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'DeleteCloudVmCluster')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='DeleteCloudVmCluster')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.delete_cloud_vm_cluster(
+                cloud_vm_cluster_id=request.pop(util.camelize('cloudVmClusterId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'DeleteCloudVmCluster',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_cloud_vm_cluster',
             True,
             False
         )
@@ -2531,6 +2773,208 @@ def test_get_backup_destination(testing_service_client):
             result,
             service_error,
             'backupDestination',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_cloud_exadata_infrastructure(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'GetCloudExadataInfrastructure'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetCloudExadataInfrastructure')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetCloudExadataInfrastructure')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.get_cloud_exadata_infrastructure(
+                cloud_exadata_infrastructure_id=request.pop(util.camelize('cloudExadataInfrastructureId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetCloudExadataInfrastructure',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'cloudExadataInfrastructure',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_cloud_vm_cluster(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'GetCloudVmCluster'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetCloudVmCluster')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetCloudVmCluster')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.get_cloud_vm_cluster(
+                cloud_vm_cluster_id=request.pop(util.camelize('cloudVmClusterId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetCloudVmCluster',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'cloudVmCluster',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_cloud_vm_cluster_iorm_config(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'GetCloudVmClusterIormConfig'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetCloudVmClusterIormConfig')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetCloudVmClusterIormConfig')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.get_cloud_vm_cluster_iorm_config(
+                cloud_vm_cluster_id=request.pop(util.camelize('cloudVmClusterId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetCloudVmClusterIormConfig',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'exadataIormConfig',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_cloud_vm_cluster_update(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'GetCloudVmClusterUpdate'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetCloudVmClusterUpdate')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetCloudVmClusterUpdate')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.get_cloud_vm_cluster_update(
+                cloud_vm_cluster_id=request.pop(util.camelize('cloudVmClusterId')),
+                update_id=request.pop(util.camelize('updateId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetCloudVmClusterUpdate',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_cloud_vm_cluster_update_history_entry(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'GetCloudVmClusterUpdateHistoryEntry'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetCloudVmClusterUpdateHistoryEntry')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetCloudVmClusterUpdateHistoryEntry')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.get_cloud_vm_cluster_update_history_entry(
+                cloud_vm_cluster_id=request.pop(util.camelize('cloudVmClusterId')),
+                update_history_entry_id=request.pop(util.camelize('updateHistoryEntryId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetCloudVmClusterUpdateHistoryEntry',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'updateHistoryEntry',
             False,
             False
         )
@@ -4202,6 +4646,246 @@ def test_list_backups(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_cloud_exadata_infrastructures(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ListCloudExadataInfrastructures'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListCloudExadataInfrastructures')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListCloudExadataInfrastructures')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.list_cloud_exadata_infrastructures(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_cloud_exadata_infrastructures(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_cloud_exadata_infrastructures(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ListCloudExadataInfrastructures',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'cloudExadataInfrastructureSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_cloud_vm_cluster_update_history_entries(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ListCloudVmClusterUpdateHistoryEntries'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListCloudVmClusterUpdateHistoryEntries')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListCloudVmClusterUpdateHistoryEntries')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.list_cloud_vm_cluster_update_history_entries(
+                cloud_vm_cluster_id=request.pop(util.camelize('cloudVmClusterId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_cloud_vm_cluster_update_history_entries(
+                    cloud_vm_cluster_id=request.pop(util.camelize('cloudVmClusterId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_cloud_vm_cluster_update_history_entries(
+                        cloud_vm_cluster_id=request.pop(util.camelize('cloudVmClusterId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ListCloudVmClusterUpdateHistoryEntries',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'updateHistoryEntrySummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_cloud_vm_cluster_updates(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ListCloudVmClusterUpdates'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListCloudVmClusterUpdates')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListCloudVmClusterUpdates')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.list_cloud_vm_cluster_updates(
+                cloud_vm_cluster_id=request.pop(util.camelize('cloudVmClusterId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_cloud_vm_cluster_updates(
+                    cloud_vm_cluster_id=request.pop(util.camelize('cloudVmClusterId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_cloud_vm_cluster_updates(
+                        cloud_vm_cluster_id=request.pop(util.camelize('cloudVmClusterId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ListCloudVmClusterUpdates',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'updateSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_cloud_vm_clusters(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ListCloudVmClusters'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListCloudVmClusters')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListCloudVmClusters')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.list_cloud_vm_clusters(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_cloud_vm_clusters(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_cloud_vm_clusters(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ListCloudVmClusters',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'cloudVmClusterSummary',
+            False,
+            True
+        )
+
+
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_list_console_connections(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListConsoleConnections'):
@@ -5448,6 +6132,46 @@ def test_list_vm_clusters(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_migrate_exadata_db_system_resource_model(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'MigrateExadataDbSystemResourceModel'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'MigrateExadataDbSystemResourceModel')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='MigrateExadataDbSystemResourceModel')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.migrate_exadata_db_system_resource_model(
+                db_system_id=request.pop(util.camelize('dbSystemId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'MigrateExadataDbSystemResourceModel',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'exadataDbSystemMigration',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_register_autonomous_database_data_safe(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'RegisterAutonomousDatabaseDataSafe'):
@@ -5728,6 +6452,86 @@ def test_restore_database(testing_service_client):
             result,
             service_error,
             'database',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_rotate_autonomous_container_database_encryption_key(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'RotateAutonomousContainerDatabaseEncryptionKey'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'RotateAutonomousContainerDatabaseEncryptionKey')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='RotateAutonomousContainerDatabaseEncryptionKey')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.rotate_autonomous_container_database_encryption_key(
+                autonomous_container_database_id=request.pop(util.camelize('autonomousContainerDatabaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'RotateAutonomousContainerDatabaseEncryptionKey',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousContainerDatabase',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_rotate_autonomous_database_encryption_key(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'RotateAutonomousDatabaseEncryptionKey'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'RotateAutonomousDatabaseEncryptionKey')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='RotateAutonomousDatabaseEncryptionKey')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.rotate_autonomous_database_encryption_key(
+                autonomous_database_id=request.pop(util.camelize('autonomousDatabaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'RotateAutonomousDatabaseEncryptionKey',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousDatabase',
             False,
             False
         )
@@ -6417,6 +7221,129 @@ def test_update_backup_destination(testing_service_client):
             result,
             service_error,
             'backupDestination',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_update_cloud_exadata_infrastructure(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'UpdateCloudExadataInfrastructure'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'UpdateCloudExadataInfrastructure')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='UpdateCloudExadataInfrastructure')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.update_cloud_exadata_infrastructure(
+                cloud_exadata_infrastructure_id=request.pop(util.camelize('cloudExadataInfrastructureId')),
+                update_cloud_exadata_infrastructure_details=request.pop(util.camelize('UpdateCloudExadataInfrastructureDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'UpdateCloudExadataInfrastructure',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'cloudExadataInfrastructure',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="ExaCS" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_update_cloud_vm_cluster(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'UpdateCloudVmCluster'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'UpdateCloudVmCluster')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='UpdateCloudVmCluster')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.update_cloud_vm_cluster(
+                cloud_vm_cluster_id=request.pop(util.camelize('cloudVmClusterId')),
+                update_cloud_vm_cluster_details=request.pop(util.camelize('UpdateCloudVmClusterDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'UpdateCloudVmCluster',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'cloudVmCluster',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_update_cloud_vm_cluster_iorm_config(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'UpdateCloudVmClusterIormConfig'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'UpdateCloudVmClusterIormConfig')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='UpdateCloudVmClusterIormConfig')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.update_cloud_vm_cluster_iorm_config(
+                cloud_vm_cluster_id=request.pop(util.camelize('cloudVmClusterId')),
+                cloud_vm_cluster_iorm_config_update_details=request.pop(util.camelize('CloudVmClusterIormConfigUpdateDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'UpdateCloudVmClusterIormConfig',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'exadataIormConfig',
             False,
             False
         )

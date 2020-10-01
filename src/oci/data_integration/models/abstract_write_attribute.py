@@ -25,6 +25,18 @@ class AbstractWriteAttribute(object):
     #: This constant has a value of "ORACLEADWCWRITEATTRIBUTE"
     MODEL_TYPE_ORACLEADWCWRITEATTRIBUTE = "ORACLEADWCWRITEATTRIBUTE"
 
+    #: A constant which can be used with the model_type property of a AbstractWriteAttribute.
+    #: This constant has a value of "ORACLE_WRITE_ATTRIBUTE"
+    MODEL_TYPE_ORACLE_WRITE_ATTRIBUTE = "ORACLE_WRITE_ATTRIBUTE"
+
+    #: A constant which can be used with the model_type property of a AbstractWriteAttribute.
+    #: This constant has a value of "ORACLE_ATP_WRITE_ATTRIBUTE"
+    MODEL_TYPE_ORACLE_ATP_WRITE_ATTRIBUTE = "ORACLE_ATP_WRITE_ATTRIBUTE"
+
+    #: A constant which can be used with the model_type property of a AbstractWriteAttribute.
+    #: This constant has a value of "ORACLE_ADWC_WRITE_ATTRIBUTE"
+    MODEL_TYPE_ORACLE_ADWC_WRITE_ATTRIBUTE = "ORACLE_ADWC_WRITE_ATTRIBUTE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AbstractWriteAttribute object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -38,7 +50,7 @@ class AbstractWriteAttribute(object):
 
         :param model_type:
             The value to assign to the model_type property of this AbstractWriteAttribute.
-            Allowed values for this property are: "ORACLEWRITEATTRIBUTE", "ORACLEATPWRITEATTRIBUTE", "ORACLEADWCWRITEATTRIBUTE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLEWRITEATTRIBUTE", "ORACLEATPWRITEATTRIBUTE", "ORACLEADWCWRITEATTRIBUTE", "ORACLE_WRITE_ATTRIBUTE", "ORACLE_ATP_WRITE_ATTRIBUTE", "ORACLE_ADWC_WRITE_ATTRIBUTE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -78,7 +90,7 @@ class AbstractWriteAttribute(object):
         **[Required]** Gets the model_type of this AbstractWriteAttribute.
         The type of the abstract write attribute.
 
-        Allowed values for this property are: "ORACLEWRITEATTRIBUTE", "ORACLEATPWRITEATTRIBUTE", "ORACLEADWCWRITEATTRIBUTE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLEWRITEATTRIBUTE", "ORACLEATPWRITEATTRIBUTE", "ORACLEADWCWRITEATTRIBUTE", "ORACLE_WRITE_ATTRIBUTE", "ORACLE_ATP_WRITE_ATTRIBUTE", "ORACLE_ADWC_WRITE_ATTRIBUTE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -97,7 +109,7 @@ class AbstractWriteAttribute(object):
         :param model_type: The model_type of this AbstractWriteAttribute.
         :type: str
         """
-        allowed_values = ["ORACLEWRITEATTRIBUTE", "ORACLEATPWRITEATTRIBUTE", "ORACLEADWCWRITEATTRIBUTE"]
+        allowed_values = ["ORACLEWRITEATTRIBUTE", "ORACLEATPWRITEATTRIBUTE", "ORACLEADWCWRITEATTRIBUTE", "ORACLE_WRITE_ATTRIBUTE", "ORACLE_ATP_WRITE_ATTRIBUTE", "ORACLE_ADWC_WRITE_ATTRIBUTE"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type

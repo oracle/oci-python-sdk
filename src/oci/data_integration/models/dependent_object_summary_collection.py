@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DependentObjectSummaryCollection(object):
     """
-    List of DependentObject summaries
+    A list of dependent object summaries.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class DependentObjectSummaryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this DependentObjectSummaryCollection.
-        The array of DependentObject summaries
+        An array of dependent object summaries.
 
 
         :return: The items of this DependentObjectSummaryCollection.
@@ -49,7 +49,7 @@ class DependentObjectSummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this DependentObjectSummaryCollection.
-        The array of DependentObject summaries
+        An array of dependent object summaries.
 
 
         :param items: The items of this DependentObjectSummaryCollection.

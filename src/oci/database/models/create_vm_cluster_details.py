@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateVmClusterDetails(object):
     """
-    Details for the create VM cluster operation.
+    Details for the create Exadata Cloud@Customer VM cluster operation.
     """
 
     #: A constant which can be used with the license_model property of a CreateVmClusterDetails.

@@ -103,7 +103,7 @@ class ForeignKey(Key):
     def key(self):
         """
         Gets the key of this ForeignKey.
-        The key of the object.
+        The object key.
 
 
         :return: The key of this ForeignKey.
@@ -115,7 +115,7 @@ class ForeignKey(Key):
     def key(self, key):
         """
         Sets the key of this ForeignKey.
-        The key of the object.
+        The object key.
 
 
         :param key: The key of this ForeignKey.
@@ -127,7 +127,7 @@ class ForeignKey(Key):
     def model_version(self):
         """
         Gets the model_version of this ForeignKey.
-        The model version of an object.
+        The object's model version.
 
 
         :return: The model_version of this ForeignKey.
@@ -139,7 +139,7 @@ class ForeignKey(Key):
     def model_version(self, model_version):
         """
         Sets the model_version of this ForeignKey.
-        The model version of an object.
+        The object's model version.
 
 
         :param model_version: The model_version of this ForeignKey.
@@ -171,7 +171,7 @@ class ForeignKey(Key):
     def name(self):
         """
         Gets the name of this ForeignKey.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this ForeignKey.
@@ -183,7 +183,7 @@ class ForeignKey(Key):
     def name(self, name):
         """
         Sets the name of this ForeignKey.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this ForeignKey.
@@ -195,7 +195,7 @@ class ForeignKey(Key):
     def attribute_refs(self):
         """
         Gets the attribute_refs of this ForeignKey.
-        attributeRefs
+        An array of attribute references.
 
 
         :return: The attribute_refs of this ForeignKey.
@@ -207,7 +207,7 @@ class ForeignKey(Key):
     def attribute_refs(self, attribute_refs):
         """
         Sets the attribute_refs of this ForeignKey.
-        attributeRefs
+        An array of attribute references.
 
 
         :param attribute_refs: The attribute_refs of this ForeignKey.
@@ -219,7 +219,7 @@ class ForeignKey(Key):
     def update_rule(self):
         """
         Gets the update_rule of this ForeignKey.
-        updateRule
+        The update rule.
 
 
         :return: The update_rule of this ForeignKey.
@@ -231,7 +231,7 @@ class ForeignKey(Key):
     def update_rule(self, update_rule):
         """
         Sets the update_rule of this ForeignKey.
-        updateRule
+        The update rule.
 
 
         :param update_rule: The update_rule of this ForeignKey.
@@ -243,7 +243,7 @@ class ForeignKey(Key):
     def delete_rule(self):
         """
         Gets the delete_rule of this ForeignKey.
-        deleteRule
+        The delete rule.
 
 
         :return: The delete_rule of this ForeignKey.
@@ -255,7 +255,7 @@ class ForeignKey(Key):
     def delete_rule(self, delete_rule):
         """
         Sets the delete_rule of this ForeignKey.
-        deleteRule
+        The delete rule.
 
 
         :param delete_rule: The delete_rule of this ForeignKey.

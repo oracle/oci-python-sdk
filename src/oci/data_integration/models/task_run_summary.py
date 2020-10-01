@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TaskRunSummary(object):
     """
-    The information about TaskRun.
+    The information about a task run.
     """
 
     #: A constant which can be used with the status property of a TaskRunSummary.
@@ -189,7 +189,7 @@ class TaskRunSummary(object):
     def key(self):
         """
         Gets the key of this TaskRunSummary.
-        The key of the object.
+        The object key.
 
 
         :return: The key of this TaskRunSummary.
@@ -201,7 +201,7 @@ class TaskRunSummary(object):
     def key(self, key):
         """
         Sets the key of this TaskRunSummary.
-        The key of the object.
+        The object key.
 
 
         :param key: The key of this TaskRunSummary.
@@ -213,7 +213,7 @@ class TaskRunSummary(object):
     def model_type(self):
         """
         Gets the model_type of this TaskRunSummary.
-        The type of the object.
+        The object type.
 
 
         :return: The model_type of this TaskRunSummary.
@@ -225,7 +225,7 @@ class TaskRunSummary(object):
     def model_type(self, model_type):
         """
         Sets the model_type of this TaskRunSummary.
-        The type of the object.
+        The object type.
 
 
         :param model_type: The model_type of this TaskRunSummary.
@@ -237,7 +237,7 @@ class TaskRunSummary(object):
     def model_version(self):
         """
         Gets the model_version of this TaskRunSummary.
-        The model version of an object.
+        The object's model version.
 
 
         :return: The model_version of this TaskRunSummary.
@@ -249,7 +249,7 @@ class TaskRunSummary(object):
     def model_version(self, model_version):
         """
         Sets the model_version of this TaskRunSummary.
-        The model version of an object.
+        The object's model version.
 
 
         :param model_version: The model_version of this TaskRunSummary.
@@ -281,7 +281,7 @@ class TaskRunSummary(object):
     def name(self):
         """
         Gets the name of this TaskRunSummary.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this TaskRunSummary.
@@ -293,7 +293,7 @@ class TaskRunSummary(object):
     def name(self, name):
         """
         Sets the name of this TaskRunSummary.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this TaskRunSummary.
@@ -383,7 +383,7 @@ class TaskRunSummary(object):
     def start_time_millis(self):
         """
         Gets the start_time_millis of this TaskRunSummary.
-        startTimeMillis
+        The task run start time.
 
 
         :return: The start_time_millis of this TaskRunSummary.
@@ -395,7 +395,7 @@ class TaskRunSummary(object):
     def start_time_millis(self, start_time_millis):
         """
         Sets the start_time_millis of this TaskRunSummary.
-        startTimeMillis
+        The task run start time.
 
 
         :param start_time_millis: The start_time_millis of this TaskRunSummary.
@@ -407,7 +407,7 @@ class TaskRunSummary(object):
     def end_time_millis(self):
         """
         Gets the end_time_millis of this TaskRunSummary.
-        endTimeMillis
+        The task run end time.
 
 
         :return: The end_time_millis of this TaskRunSummary.
@@ -419,7 +419,7 @@ class TaskRunSummary(object):
     def end_time_millis(self, end_time_millis):
         """
         Sets the end_time_millis of this TaskRunSummary.
-        endTimeMillis
+        The task run end time.
 
 
         :param end_time_millis: The end_time_millis of this TaskRunSummary.
@@ -431,7 +431,7 @@ class TaskRunSummary(object):
     def last_updated(self):
         """
         Gets the last_updated of this TaskRunSummary.
-        lastUpdated
+        The date and time the task run was last updated.
 
 
         :return: The last_updated of this TaskRunSummary.
@@ -443,7 +443,7 @@ class TaskRunSummary(object):
     def last_updated(self, last_updated):
         """
         Sets the last_updated of this TaskRunSummary.
-        lastUpdated
+        The date and time the task run was last updated.
 
 
         :param last_updated: The last_updated of this TaskRunSummary.
@@ -557,7 +557,7 @@ class TaskRunSummary(object):
     def identifier(self):
         """
         Gets the identifier of this TaskRunSummary.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this TaskRunSummary.
@@ -569,7 +569,7 @@ class TaskRunSummary(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this TaskRunSummary.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this TaskRunSummary.

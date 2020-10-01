@@ -38,6 +38,10 @@ class Schema(object):
             The value to assign to the name property of this Schema.
         :type name: str
 
+        :param resource_name:
+            The value to assign to the resource_name property of this Schema.
+        :type resource_name: str
+
         :param description:
             The value to assign to the description property of this Schema.
         :type description: str
@@ -77,6 +81,7 @@ class Schema(object):
             'model_version': 'str',
             'parent_ref': 'ParentReference',
             'name': 'str',
+            'resource_name': 'str',
             'description': 'str',
             'object_version': 'int',
             'external_key': 'str',
@@ -93,6 +98,7 @@ class Schema(object):
             'model_version': 'modelVersion',
             'parent_ref': 'parentRef',
             'name': 'name',
+            'resource_name': 'resourceName',
             'description': 'description',
             'object_version': 'objectVersion',
             'external_key': 'externalKey',
@@ -108,6 +114,7 @@ class Schema(object):
         self._model_version = None
         self._parent_ref = None
         self._name = None
+        self._resource_name = None
         self._description = None
         self._object_version = None
         self._external_key = None
@@ -121,7 +128,7 @@ class Schema(object):
     def key(self):
         """
         Gets the key of this Schema.
-        The key of the object.
+        The object key.
 
 
         :return: The key of this Schema.
@@ -133,7 +140,7 @@ class Schema(object):
     def key(self, key):
         """
         Sets the key of this Schema.
-        The key of the object.
+        The object key.
 
 
         :param key: The key of this Schema.
@@ -145,7 +152,7 @@ class Schema(object):
     def model_type(self):
         """
         Gets the model_type of this Schema.
-        The type of the object.
+        The object's type.
 
 
         :return: The model_type of this Schema.
@@ -157,7 +164,7 @@ class Schema(object):
     def model_type(self, model_type):
         """
         Sets the model_type of this Schema.
-        The type of the object.
+        The object's type.
 
 
         :param model_type: The model_type of this Schema.
@@ -169,7 +176,7 @@ class Schema(object):
     def model_version(self):
         """
         Gets the model_version of this Schema.
-        The model version of an object.
+        The object's model version.
 
 
         :return: The model_version of this Schema.
@@ -181,7 +188,7 @@ class Schema(object):
     def model_version(self, model_version):
         """
         Sets the model_version of this Schema.
-        The model version of an object.
+        The object's model version.
 
 
         :param model_version: The model_version of this Schema.
@@ -213,7 +220,7 @@ class Schema(object):
     def name(self):
         """
         Gets the name of this Schema.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this Schema.
@@ -225,7 +232,7 @@ class Schema(object):
     def name(self, name):
         """
         Sets the name of this Schema.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this Schema.
@@ -234,10 +241,34 @@ class Schema(object):
         self._name = name
 
     @property
+    def resource_name(self):
+        """
+        Gets the resource_name of this Schema.
+        A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
+
+
+        :return: The resource_name of this Schema.
+        :rtype: str
+        """
+        return self._resource_name
+
+    @resource_name.setter
+    def resource_name(self, resource_name):
+        """
+        Sets the resource_name of this Schema.
+        A resource name can have letters, numbers, and special characters. The value is editable and is restricted to 4000 characters.
+
+
+        :param resource_name: The resource_name of this Schema.
+        :type: str
+        """
+        self._resource_name = resource_name
+
+    @property
     def description(self):
         """
         Gets the description of this Schema.
-        Detailed description for the object.
+        User-defined description for the schema.
 
 
         :return: The description of this Schema.
@@ -249,7 +280,7 @@ class Schema(object):
     def description(self, description):
         """
         Sets the description of this Schema.
-        Detailed description for the object.
+        User-defined description for the schema.
 
 
         :param description: The description of this Schema.
@@ -309,7 +340,7 @@ class Schema(object):
     def is_has_containers(self):
         """
         Gets the is_has_containers of this Schema.
-        hasContainers
+        Specifies whether the schema has containers.
 
 
         :return: The is_has_containers of this Schema.
@@ -321,7 +352,7 @@ class Schema(object):
     def is_has_containers(self, is_has_containers):
         """
         Sets the is_has_containers of this Schema.
-        hasContainers
+        Specifies whether the schema has containers.
 
 
         :param is_has_containers: The is_has_containers of this Schema.
@@ -333,7 +364,7 @@ class Schema(object):
     def default_connection(self):
         """
         Gets the default_connection of this Schema.
-        Connection key which is the default.
+        The default connection key.
 
 
         :return: The default_connection of this Schema.
@@ -345,7 +376,7 @@ class Schema(object):
     def default_connection(self, default_connection):
         """
         Sets the default_connection of this Schema.
-        Connection key which is the default.
+        The default connection key.
 
 
         :param default_connection: The default_connection of this Schema.
@@ -381,7 +412,7 @@ class Schema(object):
     def identifier(self):
         """
         Gets the identifier of this Schema.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this Schema.
@@ -393,7 +424,7 @@ class Schema(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this Schema.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this Schema.

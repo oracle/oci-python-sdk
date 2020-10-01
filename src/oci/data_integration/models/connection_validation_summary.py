@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConnectionValidationSummary(object):
     """
-    The information about connection validation
+    The information about connection validation.
     """
 
     def __init__(self, **kwargs):
@@ -127,7 +127,7 @@ class ConnectionValidationSummary(object):
     def key(self):
         """
         Gets the key of this ConnectionValidationSummary.
-        Objects will use a 36 character key as unique ID. It is system generated and cannot be edited by user
+        Objects will use a 36 character key as unique ID. It is system generated and cannot be modified.
 
 
         :return: The key of this ConnectionValidationSummary.
@@ -139,7 +139,7 @@ class ConnectionValidationSummary(object):
     def key(self, key):
         """
         Sets the key of this ConnectionValidationSummary.
-        Objects will use a 36 character key as unique ID. It is system generated and cannot be edited by user
+        Objects will use a 36 character key as unique ID. It is system generated and cannot be modified.
 
 
         :param key: The key of this ConnectionValidationSummary.
@@ -219,7 +219,7 @@ class ConnectionValidationSummary(object):
     def name(self):
         """
         Gets the name of this ConnectionValidationSummary.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this ConnectionValidationSummary.
@@ -231,7 +231,7 @@ class ConnectionValidationSummary(object):
     def name(self, name):
         """
         Sets the name of this ConnectionValidationSummary.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this ConnectionValidationSummary.
@@ -315,7 +315,7 @@ class ConnectionValidationSummary(object):
     def identifier(self):
         """
         Gets the identifier of this ConnectionValidationSummary.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this ConnectionValidationSummary.
@@ -327,7 +327,7 @@ class ConnectionValidationSummary(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this ConnectionValidationSummary.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this ConnectionValidationSummary.

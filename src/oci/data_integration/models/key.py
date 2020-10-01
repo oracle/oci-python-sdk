@@ -71,7 +71,7 @@ class Key(object):
     def model_type(self):
         """
         **[Required]** Gets the model_type of this Key.
-        The type of the key.
+        The key type.
 
         Allowed values for this property are: "FOREIGN_KEY", "PRIMARY_KEY", "UNIQUE_KEY"
 
@@ -85,7 +85,7 @@ class Key(object):
     def model_type(self, model_type):
         """
         Sets the model_type of this Key.
-        The type of the key.
+        The key type.
 
 
         :param model_type: The model_type of this Key.

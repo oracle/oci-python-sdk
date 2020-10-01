@@ -37,7 +37,7 @@ class PublishedObjectSummaryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this PublishedObjectSummaryCollection.
-        The array of PublishedObject summaries
+        The array of published object summaries.
 
 
         :return: The items of this PublishedObjectSummaryCollection.
@@ -49,7 +49,7 @@ class PublishedObjectSummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this PublishedObjectSummaryCollection.
-        The array of PublishedObject summaries
+        The array of published object summaries.
 
 
         :param items: The items of this PublishedObjectSummaryCollection.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VmClusterNetworkDetails(object):
     """
-    Details for a VM cluster network.
+    Details for an Exadata Cloud@Customer VM cluster network.
     """
 
     def __init__(self, **kwargs):
@@ -114,7 +114,7 @@ class VmClusterNetworkDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this VmClusterNetworkDetails.
-        The user-friendly name for the VM cluster network. The name does not need to be unique.
+        The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
 
 
         :return: The display_name of this VmClusterNetworkDetails.
@@ -126,7 +126,7 @@ class VmClusterNetworkDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this VmClusterNetworkDetails.
-        The user-friendly name for the VM cluster network. The name does not need to be unique.
+        The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
 
 
         :param display_name: The display_name of this VmClusterNetworkDetails.

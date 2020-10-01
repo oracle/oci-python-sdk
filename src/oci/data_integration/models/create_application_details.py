@@ -51,6 +51,10 @@ class CreateApplicationDetails(object):
             The value to assign to the identifier property of this CreateApplicationDetails.
         :type identifier: str
 
+        :param source_application_info:
+            The value to assign to the source_application_info property of this CreateApplicationDetails.
+        :type source_application_info: CreateSourceApplicationInfo
+
         :param registry_metadata:
             The value to assign to the registry_metadata property of this CreateApplicationDetails.
         :type registry_metadata: RegistryMetadata
@@ -64,6 +68,7 @@ class CreateApplicationDetails(object):
             'description': 'str',
             'object_status': 'int',
             'identifier': 'str',
+            'source_application_info': 'CreateSourceApplicationInfo',
             'registry_metadata': 'RegistryMetadata'
         }
 
@@ -75,6 +80,7 @@ class CreateApplicationDetails(object):
             'description': 'description',
             'object_status': 'objectStatus',
             'identifier': 'identifier',
+            'source_application_info': 'sourceApplicationInfo',
             'registry_metadata': 'registryMetadata'
         }
 
@@ -85,6 +91,7 @@ class CreateApplicationDetails(object):
         self._description = None
         self._object_status = None
         self._identifier = None
+        self._source_application_info = None
         self._registry_metadata = None
 
     @property
@@ -115,7 +122,7 @@ class CreateApplicationDetails(object):
     def model_version(self):
         """
         Gets the model_version of this CreateApplicationDetails.
-        The model version of an object.
+        The object's model version.
 
 
         :return: The model_version of this CreateApplicationDetails.
@@ -127,7 +134,7 @@ class CreateApplicationDetails(object):
     def model_version(self, model_version):
         """
         Sets the model_version of this CreateApplicationDetails.
-        The model version of an object.
+        The object's model version.
 
 
         :param model_version: The model_version of this CreateApplicationDetails.
@@ -171,7 +178,7 @@ class CreateApplicationDetails(object):
     def name(self):
         """
         **[Required]** Gets the name of this CreateApplicationDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this CreateApplicationDetails.
@@ -183,7 +190,7 @@ class CreateApplicationDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateApplicationDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this CreateApplicationDetails.
@@ -243,7 +250,7 @@ class CreateApplicationDetails(object):
     def identifier(self):
         """
         **[Required]** Gets the identifier of this CreateApplicationDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this CreateApplicationDetails.
@@ -255,13 +262,33 @@ class CreateApplicationDetails(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this CreateApplicationDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this CreateApplicationDetails.
         :type: str
         """
         self._identifier = identifier
+
+    @property
+    def source_application_info(self):
+        """
+        Gets the source_application_info of this CreateApplicationDetails.
+
+        :return: The source_application_info of this CreateApplicationDetails.
+        :rtype: CreateSourceApplicationInfo
+        """
+        return self._source_application_info
+
+    @source_application_info.setter
+    def source_application_info(self, source_application_info):
+        """
+        Sets the source_application_info of this CreateApplicationDetails.
+
+        :param source_application_info: The source_application_info of this CreateApplicationDetails.
+        :type: CreateSourceApplicationInfo
+        """
+        self._source_application_info = source_application_info
 
     @property
     def registry_metadata(self):

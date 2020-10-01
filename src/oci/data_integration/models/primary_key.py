@@ -72,7 +72,7 @@ class PrimaryKey(object):
     def key(self):
         """
         Gets the key of this PrimaryKey.
-        The key of the object.
+        The object key.
 
 
         :return: The key of this PrimaryKey.
@@ -84,7 +84,7 @@ class PrimaryKey(object):
     def key(self, key):
         """
         Sets the key of this PrimaryKey.
-        The key of the object.
+        The object key.
 
 
         :param key: The key of this PrimaryKey.
@@ -96,7 +96,7 @@ class PrimaryKey(object):
     def model_version(self):
         """
         Gets the model_version of this PrimaryKey.
-        The model version of an object.
+        The object's model version.
 
 
         :return: The model_version of this PrimaryKey.
@@ -108,7 +108,7 @@ class PrimaryKey(object):
     def model_version(self, model_version):
         """
         Sets the model_version of this PrimaryKey.
-        The model version of an object.
+        The object's model version.
 
 
         :param model_version: The model_version of this PrimaryKey.
@@ -140,7 +140,7 @@ class PrimaryKey(object):
     def name(self):
         """
         Gets the name of this PrimaryKey.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this PrimaryKey.
@@ -152,7 +152,7 @@ class PrimaryKey(object):
     def name(self, name):
         """
         Sets the name of this PrimaryKey.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this PrimaryKey.
@@ -164,7 +164,7 @@ class PrimaryKey(object):
     def attribute_refs(self):
         """
         Gets the attribute_refs of this PrimaryKey.
-        attributeRefs
+        An array of attribute references.
 
 
         :return: The attribute_refs of this PrimaryKey.
@@ -176,7 +176,7 @@ class PrimaryKey(object):
     def attribute_refs(self, attribute_refs):
         """
         Sets the attribute_refs of this PrimaryKey.
-        attributeRefs
+        An array of attribute references.
 
 
         :param attribute_refs: The attribute_refs of this PrimaryKey.

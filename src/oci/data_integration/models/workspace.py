@@ -273,7 +273,7 @@ class Workspace(object):
     def is_private_network_enabled(self):
         """
         Gets the is_private_network_enabled of this Workspace.
-        Whether the private network connection is enabled or disabled.
+        Specifies whether the private network connection is enabled or disabled.
 
 
         :return: The is_private_network_enabled of this Workspace.
@@ -285,7 +285,7 @@ class Workspace(object):
     def is_private_network_enabled(self, is_private_network_enabled):
         """
         Sets the is_private_network_enabled of this Workspace.
-        Whether the private network connection is enabled or disabled.
+        Specifies whether the private network connection is enabled or disabled.
 
 
         :param is_private_network_enabled: The is_private_network_enabled of this Workspace.
@@ -533,7 +533,7 @@ class Workspace(object):
     def state_message(self):
         """
         Gets the state_message of this Workspace.
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
 
 
         :return: The state_message of this Workspace.
@@ -545,7 +545,7 @@ class Workspace(object):
     def state_message(self, state_message):
         """
         Sets the state_message of this Workspace.
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
 
 
         :param state_message: The state_message of this Workspace.
@@ -557,7 +557,7 @@ class Workspace(object):
     def id(self):
         """
         **[Required]** Gets the id of this Workspace.
-        Unique identifier that is immutable on creation
+        A system-generated and immutable identifier assigned to the workspace upon creation.
 
 
         :return: The id of this Workspace.
@@ -569,7 +569,7 @@ class Workspace(object):
     def id(self, id):
         """
         Sets the id of this Workspace.
-        Unique identifier that is immutable on creation
+        A system-generated and immutable identifier assigned to the workspace upon creation.
 
 
         :param id: The id of this Workspace.

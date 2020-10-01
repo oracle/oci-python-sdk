@@ -84,6 +84,10 @@ class DbSystemShapeSummary(object):
             The value to assign to the maximum_node_count property of this DbSystemShapeSummary.
         :type maximum_node_count: int
 
+        :param available_core_count_per_node:
+            The value to assign to the available_core_count_per_node property of this DbSystemShapeSummary.
+        :type available_core_count_per_node: int
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -100,7 +104,8 @@ class DbSystemShapeSummary(object):
             'available_data_storage_in_t_bs': 'int',
             'min_data_storage_in_t_bs': 'int',
             'minimum_node_count': 'int',
-            'maximum_node_count': 'int'
+            'maximum_node_count': 'int',
+            'available_core_count_per_node': 'int'
         }
 
         self.attribute_map = {
@@ -118,7 +123,8 @@ class DbSystemShapeSummary(object):
             'available_data_storage_in_t_bs': 'availableDataStorageInTBs',
             'min_data_storage_in_t_bs': 'minDataStorageInTBs',
             'minimum_node_count': 'minimumNodeCount',
-            'maximum_node_count': 'maximumNodeCount'
+            'maximum_node_count': 'maximumNodeCount',
+            'available_core_count_per_node': 'availableCoreCountPerNode'
         }
 
         self._name = None
@@ -136,6 +142,7 @@ class DbSystemShapeSummary(object):
         self._min_data_storage_in_t_bs = None
         self._minimum_node_count = None
         self._maximum_node_count = None
+        self._available_core_count_per_node = None
 
     @property
     def name(self):
@@ -496,6 +503,30 @@ class DbSystemShapeSummary(object):
         :type: int
         """
         self._maximum_node_count = maximum_node_count
+
+    @property
+    def available_core_count_per_node(self):
+        """
+        Gets the available_core_count_per_node of this DbSystemShapeSummary.
+        The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape. Does not apply to X6, X7, and X8 fixed-shape systems.
+
+
+        :return: The available_core_count_per_node of this DbSystemShapeSummary.
+        :rtype: int
+        """
+        return self._available_core_count_per_node
+
+    @available_core_count_per_node.setter
+    def available_core_count_per_node(self, available_core_count_per_node):
+        """
+        Sets the available_core_count_per_node of this DbSystemShapeSummary.
+        The maximum number of CPU cores per database node that can be enabled for this shape. Only applicable to the flex Exadata shape. Does not apply to X6, X7, and X8 fixed-shape systems.
+
+
+        :param available_core_count_per_node: The available_core_count_per_node of this DbSystemShapeSummary.
+        :type: int
+        """
+        self._available_core_count_per_node = available_core_count_per_node
 
     def __repr__(self):
         return formatted_flat_dict(self)

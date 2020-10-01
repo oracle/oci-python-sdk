@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataAssetSummaryFromAdwc(DataAssetSummary):
     """
-    The Oracle data asset details.
+    Summary details for the Autonomous Data Warehouse data asset type.
     """
 
     def __init__(self, **kwargs):
@@ -21,7 +21,7 @@ class DataAssetSummaryFromAdwc(DataAssetSummary):
 
         :param model_type:
             The value to assign to the model_type property of this DataAssetSummaryFromAdwc.
-            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET"
+            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET"
         :type model_type: str
 
         :param key:
@@ -152,7 +152,7 @@ class DataAssetSummaryFromAdwc(DataAssetSummary):
     def service_name(self):
         """
         Gets the service_name of this DataAssetSummaryFromAdwc.
-        The service name for the data asset.
+        The Autonomous Data Warehouse instance service name.
 
 
         :return: The service_name of this DataAssetSummaryFromAdwc.
@@ -164,7 +164,7 @@ class DataAssetSummaryFromAdwc(DataAssetSummary):
     def service_name(self, service_name):
         """
         Sets the service_name of this DataAssetSummaryFromAdwc.
-        The service name for the data asset.
+        The Autonomous Data Warehouse instance service name.
 
 
         :param service_name: The service_name of this DataAssetSummaryFromAdwc.
@@ -200,7 +200,7 @@ class DataAssetSummaryFromAdwc(DataAssetSummary):
     def driver_class(self):
         """
         Gets the driver_class of this DataAssetSummaryFromAdwc.
-        The driver class for the data asset.
+        The Autonomous Data Warehouse driver class.
 
 
         :return: The driver_class of this DataAssetSummaryFromAdwc.
@@ -212,7 +212,7 @@ class DataAssetSummaryFromAdwc(DataAssetSummary):
     def driver_class(self, driver_class):
         """
         Sets the driver_class of this DataAssetSummaryFromAdwc.
-        The driver class for the data asset.
+        The Autonomous Data Warehouse driver class.
 
 
         :param driver_class: The driver_class of this DataAssetSummaryFromAdwc.

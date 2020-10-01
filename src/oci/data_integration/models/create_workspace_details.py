@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateWorkspaceDetails(object):
     """
-    The information about new Workspace.
+    The information needed to create a new workspace.
     """
 
     def __init__(self, **kwargs):
@@ -256,7 +256,7 @@ class CreateWorkspaceDetails(object):
     def description(self):
         """
         Gets the description of this CreateWorkspaceDetails.
-        A detailed description for the workspace.
+        A user defined description for the workspace.
 
 
         :return: The description of this CreateWorkspaceDetails.
@@ -268,7 +268,7 @@ class CreateWorkspaceDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateWorkspaceDetails.
-        A detailed description for the workspace.
+        A user defined description for the workspace.
 
 
         :param description: The description of this CreateWorkspaceDetails.
@@ -328,7 +328,7 @@ class CreateWorkspaceDetails(object):
     def is_private_network_enabled(self):
         """
         Gets the is_private_network_enabled of this CreateWorkspaceDetails.
-        Whether the private network connection is enabled or disabled.
+        Specifies whether the private network connection is enabled or disabled.
 
 
         :return: The is_private_network_enabled of this CreateWorkspaceDetails.
@@ -340,7 +340,7 @@ class CreateWorkspaceDetails(object):
     def is_private_network_enabled(self, is_private_network_enabled):
         """
         Sets the is_private_network_enabled of this CreateWorkspaceDetails.
-        Whether the private network connection is enabled or disabled.
+        Specifies whether the private network connection is enabled or disabled.
 
 
         :param is_private_network_enabled: The is_private_network_enabled of this CreateWorkspaceDetails.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Connection(object):
     """
-    The connection object.
+    The connection for a data asset.
     """
 
     #: A constant which can be used with the model_type property of a Connection.
@@ -29,6 +29,14 @@ class Connection(object):
     #: This constant has a value of "ORACLEDB_CONNECTION"
     MODEL_TYPE_ORACLEDB_CONNECTION = "ORACLEDB_CONNECTION"
 
+    #: A constant which can be used with the model_type property of a Connection.
+    #: This constant has a value of "MYSQL_CONNECTION"
+    MODEL_TYPE_MYSQL_CONNECTION = "MYSQL_CONNECTION"
+
+    #: A constant which can be used with the model_type property of a Connection.
+    #: This constant has a value of "GENERIC_JDBC_CONNECTION"
+    MODEL_TYPE_GENERIC_JDBC_CONNECTION = "GENERIC_JDBC_CONNECTION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Connection object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -38,12 +46,14 @@ class Connection(object):
         * :class:`~oci.data_integration.models.ConnectionFromAdwc`
         * :class:`~oci.data_integration.models.ConnectionFromAtp`
         * :class:`~oci.data_integration.models.ConnectionFromOracle`
+        * :class:`~oci.data_integration.models.ConnectionFromMySQL`
+        * :class:`~oci.data_integration.models.ConnectionFromJdbc`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this Connection.
-            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -168,6 +178,12 @@ class Connection(object):
 
         if type == 'ORACLEDB_CONNECTION':
             return 'ConnectionFromOracle'
+
+        if type == 'MYSQL_CONNECTION':
+            return 'ConnectionFromMySQL'
+
+        if type == 'GENERIC_JDBC_CONNECTION':
+            return 'ConnectionFromJdbc'
         else:
             return 'Connection'
 
@@ -177,7 +193,7 @@ class Connection(object):
         **[Required]** Gets the model_type of this Connection.
         The type of the connection.
 
-        Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -196,7 +212,7 @@ class Connection(object):
         :param model_type: The model_type of this Connection.
         :type: str
         """
-        allowed_values = ["ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION"]
+        allowed_values = ["ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type
@@ -273,7 +289,7 @@ class Connection(object):
     def name(self):
         """
         Gets the name of this Connection.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this Connection.
@@ -285,7 +301,7 @@ class Connection(object):
     def name(self, name):
         """
         Sets the name of this Connection.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this Connection.
@@ -297,7 +313,7 @@ class Connection(object):
     def description(self):
         """
         Gets the description of this Connection.
-        Detailed description for the object.
+        User-defined description for the connection.
 
 
         :return: The description of this Connection.
@@ -309,7 +325,7 @@ class Connection(object):
     def description(self, description):
         """
         Sets the description of this Connection.
-        Detailed description for the object.
+        User-defined description for the connection.
 
 
         :param description: The description of this Connection.
@@ -369,7 +385,7 @@ class Connection(object):
     def identifier(self):
         """
         Gets the identifier of this Connection.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this Connection.
@@ -381,7 +397,7 @@ class Connection(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this Connection.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this Connection.
@@ -481,7 +497,7 @@ class Connection(object):
     def key_map(self):
         """
         Gets the key_map of this Connection.
-        A map, if provided key is replaced with generated key, this structure provides mapping between user provided key and generated key
+        A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 
 
         :return: The key_map of this Connection.
@@ -493,7 +509,7 @@ class Connection(object):
     def key_map(self, key_map):
         """
         Sets the key_map of this Connection.
-        A map, if provided key is replaced with generated key, this structure provides mapping between user provided key and generated key
+        A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 
 
         :param key_map: The key_map of this Connection.

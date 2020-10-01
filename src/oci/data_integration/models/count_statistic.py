@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CountStatistic(object):
     """
-    A count statistics
+    A count statistics.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class CountStatistic(object):
     def object_type_count_list(self):
         """
         **[Required]** Gets the object_type_count_list of this CountStatistic.
-        The array of statistics
+        The array of statistics.
 
 
         :return: The object_type_count_list of this CountStatistic.
@@ -49,7 +49,7 @@ class CountStatistic(object):
     def object_type_count_list(self, object_type_count_list):
         """
         Sets the object_type_count_list of this CountStatistic.
-        The array of statistics
+        The array of statistics.
 
 
         :param object_type_count_list: The object_type_count_list of this CountStatistic.

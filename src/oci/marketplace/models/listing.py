@@ -745,7 +745,7 @@ class Listing(object):
     def regions(self):
         """
         Gets the regions of this Listing.
-        The regions where the listing is eligible to be deployed.
+        The regions where you can deploy the listing. (Some listings have restrictions that limit their deployment to United States regions only.)
 
 
         :return: The regions of this Listing.
@@ -757,7 +757,7 @@ class Listing(object):
     def regions(self, regions):
         """
         Sets the regions of this Listing.
-        The regions where the listing is eligible to be deployed.
+        The regions where you can deploy the listing. (Some listings have restrictions that limit their deployment to United States regions only.)
 
 
         :param regions: The regions of this Listing.

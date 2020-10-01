@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TaskRunSummaryCollection(object):
     """
-    List of taskRun summaries
+    A list of task run summaries.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class TaskRunSummaryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this TaskRunSummaryCollection.
-        The array of taskRun summaries
+        The array of task run summaries.
 
 
         :return: The items of this TaskRunSummaryCollection.
@@ -49,7 +49,7 @@ class TaskRunSummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this TaskRunSummaryCollection.
-        The array of taskRun summaries
+        The array of task run summaries.
 
 
         :param items: The items of this TaskRunSummaryCollection.

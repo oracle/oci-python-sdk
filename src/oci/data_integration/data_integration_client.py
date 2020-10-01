@@ -87,20 +87,19 @@ class DataIntegrationClient(object):
 
     def change_compartment(self, workspace_id, change_compartment_details, **kwargs):
         """
-        The workspace will be moved to the desired compartment.
+        Moves a workspace to a specified compartment.
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param ChangeCompartmentDetails change_compartment_details: (required)
-            The details of change compartment action.
+            The information needed to move a workspace to a specified compartment.
 
         :param str if_match: (optional)
-            Update and Delete operations should accept an optional If-Match header,
-            in which clients can send a previously-received ETag. When If-Match is
-            provided and its value does not exactly match the ETag of the resource
-            on the server, the request should fail with HTTP response status code 412
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -108,7 +107,7 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param str opc_retry_token: (optional)
-            Caller may provide \"retry tokens\" allowing them to retry an operation
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -183,7 +182,7 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param CreateApplicationDetails create_application_details: (required)
             The details needed to create an application.
@@ -194,7 +193,7 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param str opc_retry_token: (optional)
-            Caller may provide \"retry tokens\" allowing them to retry an operation
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -269,10 +268,10 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param CreateConnectionDetails create_connection_details: (required)
-            Request body parameter for connection details
+            The information needed to create a connection.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -280,7 +279,7 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param str opc_retry_token: (optional)
-            Caller may provide \"retry tokens\" allowing them to retry an operation
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -355,10 +354,10 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param CreateConnectionValidationDetails create_connection_validation_details: (required)
-            Connection info
+            The information needed to validate a connection.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -366,7 +365,7 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param str opc_retry_token: (optional)
-            Caller may provide \"retry tokens\" allowing them to retry an operation
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -441,10 +440,10 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param CreateDataAssetDetails create_data_asset_details: (required)
-            Request body parameter for data asset details
+            The information needed to create a data asset.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -452,7 +451,7 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param str opc_retry_token: (optional)
-            Caller may provide \"retry tokens\" allowing them to retry an operation
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -527,13 +526,13 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param CreateDataFlowDetails create_data_flow_details: (required)
             The details needed to create a new data flow.
 
         :param str opc_retry_token: (optional)
-            Caller may provide \"retry tokens\" allowing them to retry an operation
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -609,14 +608,14 @@ class DataIntegrationClient(object):
 
     def create_data_flow_validation(self, workspace_id, create_data_flow_validation_details, **kwargs):
         """
-        The endpoint accepts the DataFlow object definition in the request payload and creates a DataFlow object validation.
+        Accepts the data flow definition in the request payload and creates a data flow validation.
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param CreateDataFlowValidationDetails create_data_flow_validation_details: (required)
-            Details for the new DataFlow object.
+            The information needed to create the data flow validation for the data flow object.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -624,7 +623,7 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param str opc_retry_token: (optional)
-            Caller may provide \"retry tokens\" allowing them to retry an operation
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -695,20 +694,20 @@ class DataIntegrationClient(object):
 
     def create_entity_shape(self, workspace_id, connection_key, schema_resource_name, create_entity_shape_details, **kwargs):
         """
-        Retrieves the data entity shape from the end data system. The input can specify the data entity to get the shape for. For databases, this can be retrieved from the database data dictionary. For files, some hints as to the file properties can also be supplied in the input.
+        Creates the data entity shape using the shape from the data asset.
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str connection_key: (required)
-            The connection key
+            The connection key.
 
         :param str schema_resource_name: (required)
-            Schema resource name used for retrieving schemas
+            The schema resource name used for retrieving schemas.
 
         :param CreateEntityShapeDetails create_entity_shape_details: (required)
-            The details of the data entity to use to infer the data entity shape.
+            The details needed to create the data entity shape.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -716,13 +715,12 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param str opc_retry_token: (optional)
-            Caller may provide \"retry tokens\" allowing them to retry an operation
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
 
         :param str if_match: (optional)
-            Update and Delete operations should accept an optional If-Match header,
-            in which clients can send a previously-received ETag. When If-Match is
-            provided and its value does not exactly match the ETag of the resource
-            on the server, the request should fail with HTTP response status code 412
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -795,6 +793,186 @@ class DataIntegrationClient(object):
                 body=create_entity_shape_details,
                 response_type="EntityShape")
 
+    def create_external_publication(self, workspace_id, task_key, create_external_publication_details, **kwargs):
+        """
+        Publish a DataFlow in a OCI DataFlow application.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str task_key: (required)
+            The task key.
+
+        :param CreateExternalPublicationDetails create_external_publication_details: (required)
+            Details needed to publish a task to OCI DataFlow application.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.ExternalPublication`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublications"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_external_publication got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "taskKey": task_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_external_publication_details,
+                response_type="ExternalPublication")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_external_publication_details,
+                response_type="ExternalPublication")
+
+    def create_external_publication_validation(self, workspace_id, task_key, create_external_publication_validation_details, **kwargs):
+        """
+        Validates a specific task.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str task_key: (required)
+            The task key.
+
+        :param CreateExternalPublicationValidationDetails create_external_publication_validation_details: (required)
+            The information needed to create a task validation.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.ExternalPublicationValidation`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublicationValidations"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_external_publication_validation got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "taskKey": task_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_external_publication_validation_details,
+                response_type="ExternalPublicationValidation")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_external_publication_validation_details,
+                response_type="ExternalPublicationValidation")
+
     def create_folder(self, workspace_id, create_folder_details, **kwargs):
         """
         Creates a folder in a project or in another folder, limited to two levels of folders. |
@@ -802,13 +980,13 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param CreateFolderDetails create_folder_details: (required)
             The details needed to create a folder.
 
         :param str opc_retry_token: (optional)
-            Caller may provide \"retry tokens\" allowing them to retry an operation
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -888,10 +1066,10 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str application_key: (required)
-            DIS application key
+            The application key.
 
         :param CreatePatchDetails create_patch_details: (required)
             Detailed needed to create a patch in an application.
@@ -902,7 +1080,7 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param str opc_retry_token: (optional)
-            Caller may provide \"retry tokens\" allowing them to retry an operation
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -978,13 +1156,13 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param CreateProjectDetails create_project_details: (required)
             The details needed to create a project in a workspace.
 
         :param str opc_retry_token: (optional)
-            Caller may provide \"retry tokens\" allowing them to retry an operation
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -1064,13 +1242,13 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param CreateTaskDetails create_task_details: (required)
             The details needed to create a new task.
 
         :param str opc_retry_token: (optional)
-            Caller may provide \"retry tokens\" allowing them to retry an operation
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -1146,20 +1324,20 @@ class DataIntegrationClient(object):
 
     def create_task_run(self, workspace_id, application_key, create_task_run_details, **kwargs):
         """
-        Creates a data integration task or task run. The task can be based on a dataflow design or a task.
+        Creates a data integration task run for the specified task.
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str application_key: (required)
-            DIS application key
+            The application key.
 
         :param CreateTaskRunDetails create_task_run_details: (required)
             The details needed to create a task run.
 
         :param str opc_retry_token: (optional)
-            Caller may provide \"retry tokens\" allowing them to retry an operation
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -1240,10 +1418,10 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param CreateTaskValidationDetails create_task_validation_details: (required)
-            Task info
+            The information needed to create a task validation.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -1251,7 +1429,7 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param str opc_retry_token: (optional)
-            Caller may provide \"retry tokens\" allowing them to retry an operation
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1322,14 +1500,14 @@ class DataIntegrationClient(object):
 
     def create_workspace(self, create_workspace_details, **kwargs):
         """
-        Creates a new Data Integration Workspace ready for performing data integration.
+        Creates a new Data Integration workspace ready for performing data integration tasks.
 
 
         :param CreateWorkspaceDetails create_workspace_details: (required)
-            Details for the new Data Integration Workspace.
+            The information needed to create a new Data Integration workspace.
 
         :param str opc_retry_token: (optional)
-            Caller may provide \"retry tokens\" allowing them to retry an operation
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -1395,16 +1573,15 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str application_key: (required)
-            DIS application key
+            The application key.
 
         :param str if_match: (optional)
-            Update and Delete operations should accept an optional If-Match header,
-            in which clients can send a previously-received ETag. When If-Match is
-            provided and its value does not exactly match the ETag of the resource
-            on the server, the request should fail with HTTP response status code 412
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -1479,16 +1656,15 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str connection_key: (required)
-            The connection key
+            The connection key.
 
         :param str if_match: (optional)
-            Update and Delete operations should accept an optional If-Match header,
-            in which clients can send a previously-received ETag. When If-Match is
-            provided and its value does not exactly match the ETag of the resource
-            on the server, the request should fail with HTTP response status code 412
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -1559,20 +1735,19 @@ class DataIntegrationClient(object):
 
     def delete_connection_validation(self, workspace_id, connection_validation_key, **kwargs):
         """
-        Successfully accepted the delete request. The connection validation will be deleted.
+        Deletes a connection validation.
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str connection_validation_key: (required)
-            key of the connection validation.
+            The key of the connection validation.
 
         :param str if_match: (optional)
-            Update and Delete operations should accept an optional If-Match header,
-            in which clients can send a previously-received ETag. When If-Match is
-            provided and its value does not exactly match the ETag of the resource
-            on the server, the request should fail with HTTP response status code 412
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -1647,16 +1822,15 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str data_asset_key: (required)
-            Data asset key.
+            The data asset key.
 
         :param str if_match: (optional)
-            Update and Delete operations should accept an optional If-Match header,
-            in which clients can send a previously-received ETag. When If-Match is
-            provided and its value does not exactly match the ETag of the resource
-            on the server, the request should fail with HTTP response status code 412
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -1731,16 +1905,15 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str data_flow_key: (required)
-            DIS DataFlow key
+            The data flow key.
 
         :param str if_match: (optional)
-            Update and Delete operations should accept an optional If-Match header,
-            in which clients can send a previously-received ETag. When If-Match is
-            provided and its value does not exactly match the ETag of the resource
-            on the server, the request should fail with HTTP response status code 412
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -1815,16 +1988,15 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str data_flow_validation_key: (required)
-            key of the dataflow validation.
+            The key of the dataflow validation.
 
         :param str if_match: (optional)
-            Update and Delete operations should accept an optional If-Match header,
-            in which clients can send a previously-received ETag. When If-Match is
-            provided and its value does not exactly match the ETag of the resource
-            on the server, the request should fail with HTTP response status code 412
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -1893,22 +2065,195 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params)
 
+    def delete_external_publication(self, workspace_id, task_key, external_publications_key, **kwargs):
+        """
+        Removes a published object using the specified identifier.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str task_key: (required)
+            The task key.
+
+        :param str external_publications_key: (required)
+            The external published object key.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublications/{externalPublicationsKey}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_external_publication got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "taskKey": task_key,
+            "externalPublicationsKey": external_publications_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
+    def delete_external_publication_validation(self, workspace_id, task_key, external_publication_validation_key, **kwargs):
+        """
+        Removes a task validation using the specified identifier.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str task_key: (required)
+            The task key.
+
+        :param str external_publication_validation_key: (required)
+            The external published object key.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublicationValidations/{externalPublicationValidationKey}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_external_publication_validation got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "taskKey": task_key,
+            "externalPublicationValidationKey": external_publication_validation_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
     def delete_folder(self, workspace_id, folder_key, **kwargs):
         """
         Removes a folder from a project using the specified identifier.
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str folder_key: (required)
-            DIS Folder key
+            The folder key.
 
         :param str if_match: (optional)
-            Update and Delete operations should accept an optional If-Match header,
-            in which clients can send a previously-received ETag. When If-Match is
-            provided and its value does not exactly match the ETag of the resource
-            on the server, the request should fail with HTTP response status code 412
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -1983,19 +2328,18 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str application_key: (required)
-            DIS application key
+            The application key.
 
         :param str patch_key: (required)
-            DIS patch key
+            The patch key.
 
         :param str if_match: (optional)
-            Update and Delete operations should accept an optional If-Match header,
-            in which clients can send a previously-received ETag. When If-Match is
-            provided and its value does not exactly match the ETag of the resource
-            on the server, the request should fail with HTTP response status code 412
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -2071,16 +2415,15 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str project_key: (required)
-            DIS Project key
+            The project key.
 
         :param str if_match: (optional)
-            Update and Delete operations should accept an optional If-Match header,
-            in which clients can send a previously-received ETag. When If-Match is
-            provided and its value does not exactly match the ETag of the resource
-            on the server, the request should fail with HTTP response status code 412
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -2155,16 +2498,15 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str task_key: (required)
-            DIS Task key
+            The task key.
 
         :param str if_match: (optional)
-            Update and Delete operations should accept an optional If-Match header,
-            in which clients can send a previously-received ETag. When If-Match is
-            provided and its value does not exactly match the ETag of the resource
-            on the server, the request should fail with HTTP response status code 412
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -2239,19 +2581,18 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str application_key: (required)
-            DIS application key
+            The application key.
 
         :param str task_run_key: (required)
-            DIS taskRun key
+            The task run key.
 
         :param str if_match: (optional)
-            Update and Delete operations should accept an optional If-Match header,
-            in which clients can send a previously-received ETag. When If-Match is
-            provided and its value does not exactly match the ETag of the resource
-            on the server, the request should fail with HTTP response status code 412
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -2327,16 +2668,15 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str task_validation_key: (required)
-            key of the task validation.
+            The task validation key.
 
         :param str if_match: (optional)
-            Update and Delete operations should accept an optional If-Match header,
-            in which clients can send a previously-received ETag. When If-Match is
-            provided and its value does not exactly match the ETag of the resource
-            on the server, the request should fail with HTTP response status code 412
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -2407,23 +2747,22 @@ class DataIntegrationClient(object):
 
     def delete_workspace(self, workspace_id, **kwargs):
         """
-        Deletes a Data Integration Workspace resource by identifier
+        Deletes a Data Integration workspace resource using the specified identifier.
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param int quiesce_timeout: (optional)
-            This parameter allows users to set the timeout for DIS to gracefully close down any running jobs before stopping the workspace.
+            Used to set the timeout for Data Integration to gracefully close down any running jobs before stopping the workspace.
 
         :param bool is_force_operation: (optional)
-            This parameter allows users to force close down the workspace.
+            Used to force close down the workspace.
 
         :param str if_match: (optional)
-            Update and Delete operations should accept an optional If-Match header,
-            in which clients can send a previously-received ETag. When If-Match is
-            provided and its value does not exactly match the ETag of the resource
-            on the server, the request should fail with HTTP response status code 412
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -2507,10 +2846,10 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str application_key: (required)
-            DIS application key
+            The application key.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -2585,10 +2924,10 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str connection_key: (required)
-            The connection key
+            The connection key.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -2663,10 +3002,10 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str connection_validation_key: (required)
-            key of the connection validation.
+            The key of the connection validation.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -2742,7 +3081,7 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str count_statistic_key: (required)
             A unique key of the container object, such as workspace, project, and so on, to count statistics for. The statistics is fetched for the given key.
@@ -2820,10 +3159,10 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str data_asset_key: (required)
-            Data asset key.
+            The data asset key.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -2898,16 +3237,16 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str connection_key: (required)
-            The connection key
+            The connection key.
 
         :param str schema_resource_name: (required)
-            Schema resource name used for retrieving schemas
+            The schema resource name used for retrieving schemas.
 
         :param str data_entity_key: (required)
-            Name of the data entity
+            The key of the data entity.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -2984,10 +3323,10 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str data_flow_key: (required)
-            DIS DataFlow key
+            The data flow key.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -3062,10 +3401,10 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str data_flow_validation_key: (required)
-            key of the dataflow validation.
+            The key of the dataflow validation.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -3140,13 +3479,13 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str application_key: (required)
-            DIS application key
+            The application key.
 
         :param str dependent_object_key: (required)
-            DIS dependent object key
+            The dependent object key.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -3216,16 +3555,180 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 response_type="DependentObject")
 
+    def get_external_publication(self, workspace_id, task_key, external_publications_key, **kwargs):
+        """
+        Retrieves a publshed object in an task using the specified identifier.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str task_key: (required)
+            The task key.
+
+        :param str external_publications_key: (required)
+            The external published object key.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.ExternalPublication`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublications/{externalPublicationsKey}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_external_publication got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "taskKey": task_key,
+            "externalPublicationsKey": external_publications_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ExternalPublication")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ExternalPublication")
+
+    def get_external_publication_validation(self, workspace_id, task_key, external_publication_validation_key, **kwargs):
+        """
+        Retrieves an external publication validation using the specified identifier.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str task_key: (required)
+            The task key.
+
+        :param str external_publication_validation_key: (required)
+            The external published object key.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.ExternalPublicationValidation`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublicationValidations/{externalPublicationValidationKey}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_external_publication_validation got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "taskKey": task_key,
+            "externalPublicationValidationKey": external_publication_validation_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ExternalPublicationValidation")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ExternalPublicationValidation")
+
     def get_folder(self, workspace_id, folder_key, **kwargs):
         """
         Retrieves a folder using the specified identifier.
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str folder_key: (required)
-            DIS Folder key
+            The folder key.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -3300,13 +3803,13 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str application_key: (required)
-            DIS application key
+            The application key.
 
         :param str patch_key: (required)
-            DIS patch key
+            The patch key.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -3382,10 +3885,10 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str project_key: (required)
-            DIS Project key
+            The project key.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -3460,13 +3963,13 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str application_key: (required)
-            DIS application key
+            The application key.
 
         :param str published_object_key: (required)
-            DIS published object key
+            The published object key.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -3474,7 +3977,7 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param str expand_references: (optional)
-            This is used to expand references of the object. If value is true, then all referenced objects will be expanded. If value is false, then shallow objects will be returned in place of references. Default is false. <br><br><B>Examples:-</B><br> <ul> <li><B>?expandReferences=true</B> returns all objects of type data loader task</li> </ul>
+            Used to expand references of the object. If value is true, then all referenced objects are expanded. If value is false, then shallow objects are returned in place of references. Default is false. <br><br><B>Example:</B><br> <ul> <li><B>?expandReferences=true</B> returns all objects of type data loader task</li> </ul>
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -3547,19 +4050,101 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 response_type="PublishedObject")
 
+    def get_reference(self, workspace_id, application_key, reference_key, **kwargs):
+        """
+        Retrieves a reference in an application.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str application_key: (required)
+            The application key.
+
+        :param str reference_key: (required)
+            The reference key.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Reference`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/references/{referenceKey}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_reference got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "applicationKey": application_key,
+            "referenceKey": reference_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Reference")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Reference")
+
     def get_schema(self, workspace_id, connection_key, schema_resource_name, **kwargs):
         """
         Retrieves a schema that can be accessed using the specified connection.
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str connection_key: (required)
-            The connection key
+            The connection key.
 
         :param str schema_resource_name: (required)
-            Schema resource name used for retrieving schemas
+            The schema resource name used for retrieving schemas.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -3635,10 +4220,10 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str task_key: (required)
-            DIS Task key
+            The task key.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -3713,13 +4298,13 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str application_key: (required)
-            DIS application key
+            The application key.
 
         :param str task_run_key: (required)
-            DIS taskRun key
+            The task run key.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -3795,10 +4380,10 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str task_validation_key: (required)
-            key of the task validation.
+            The task validation key.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -3869,11 +4454,11 @@ class DataIntegrationClient(object):
 
     def get_work_request(self, work_request_id, **kwargs):
         """
-        Gets the status of the work request with the given ID.
+        Retrieves the status of the work request with the given ID.
 
 
         :param str work_request_id: (required)
-            The ID of the asynchronous request.
+            The ID of the asynchronous work request to retrieve.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -3943,11 +4528,11 @@ class DataIntegrationClient(object):
 
     def get_workspace(self, workspace_id, **kwargs):
         """
-        Gets a Data Integration Workspace by identifier
+        Retrieves a Data Integration workspace using the specified identifier.
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -4021,30 +4606,34 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str name: (optional)
-            This filter parameter can be used to filter by the name of the object.
+            Used to filter by the name of the object.
 
         :param list[str] identifier: (optional)
-            This filter parameter can be used to filter by the identifier of the published object.
+            Used to filter by the identifier of the published object.
 
         :param list[str] fields: (optional)
-            This parameter allows users to specify which fields to get for an object.
+            Specifies the fields to get for an object.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
-            This parameter is used to control the sort order.  Supported values are `ASC` (ascending) and `DESC` (descending).
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
 
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            This parameter allows users to specify a sort field.  Supported sort fields are `name`, `identifier`, `timeCreated`, and `timeUpdated`.  Default sort order is the descending order of `timeCreated` (most recently created objects at the top).  Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
             Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
 
@@ -4154,33 +4743,37 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str key: (optional)
-            This filter parameter can be used to filter by the key of the object.
+            Used to filter by the key of the object.
 
         :param str name: (optional)
-            This filter parameter can be used to filter by the name of the object.
+            Used to filter by the name of the object.
 
         :param str identifier: (optional)
-            This filter parameter can be used to filter by the identifier of the object.
+            Used to filter by the identifier of the object.
 
         :param list[str] fields: (optional)
-            This parameter allows users to specify which fields to get for an object.
+            Specifies the fields to get for an object.
 
         :param str page: (optional)
-            This parameter will control pagination.  Values for the parameter should come from the `opc-next-page` or `opc-prev-page` header in previous response.
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            This parameter allows users to set the maximum number of items to return per page.  The value must be between 1 and 100 (inclusive).  Default value is 100.
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
-            This parameter allows users to specify a sort field.  Supported sort fields are `name`, `identifier`, `timeCreated`, and `timeUpdated`.  Default sort order is the descending order of `timeCreated` (most recently created objects at the top).  Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
             Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
 
         :param str sort_order: (optional)
-            This parameter is used to control the sort order.  Supported values are `ASC` (ascending) and `DESC` (descending).
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
 
             Allowed values are: "ASC", "DESC"
 
@@ -4292,33 +4885,37 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str data_asset_key: (required)
-            This filter parameter can be used to filter by the data asset key of the object.
+            Used to filter by the data asset key of the object.
 
         :param str name: (optional)
-            This filter parameter can be used to filter by the name of the object.
+            Used to filter by the name of the object.
 
         :param str page: (optional)
-            This parameter will control pagination.  Values for the parameter should come from the `opc-next-page` or `opc-prev-page` header in previous response.
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            This parameter allows users to set the maximum number of items to return per page.  The value must be between 1 and 100 (inclusive).  Default value is 100.
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param list[str] fields: (optional)
-            This parameter allows users to specify which fields to get for an object.
+            Specifies the fields to get for an object.
 
         :param str type: (optional)
             Type of the object to filter the results with.
 
         :param str sort_by: (optional)
-            This parameter allows users to specify a sort field.  Supported sort fields are `name`, `identifier`, `timeCreated`, and `timeUpdated`.  Default sort order is the descending order of `timeCreated` (most recently created objects at the top).  Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
             Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
 
         :param str sort_order: (optional)
-            This parameter is used to control the sort order.  Supported values are `ASC` (ascending) and `DESC` (descending).
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
 
             Allowed values are: "ASC", "DESC"
 
@@ -4425,36 +5022,40 @@ class DataIntegrationClient(object):
 
     def list_data_assets(self, workspace_id, **kwargs):
         """
-        This endpoint can be used to list all data asset summaries
+        Retrieves a list of all data asset summaries.
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str page: (optional)
-            This parameter will control pagination.  Values for the parameter should come from the `opc-next-page` or `opc-prev-page` header in previous response.
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            This parameter allows users to set the maximum number of items to return per page.  The value must be between 1 and 100 (inclusive).  Default value is 100.
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param list[str] fields: (optional)
-            This parameter allows users to specify which fields to get for an object.
+            Specifies the fields to get for an object.
 
         :param str type: (optional)
             Type of the object to filter the results with.
 
         :param str sort_by: (optional)
-            This parameter allows users to specify a sort field.  Supported sort fields are `name`, `identifier`, `timeCreated`, and `timeUpdated`.  Default sort order is the descending order of `timeCreated` (most recently created objects at the top).  Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
             Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
 
         :param str sort_order: (optional)
-            This parameter is used to control the sort order.  Supported values are `ASC` (ascending) and `DESC` (descending).
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
 
             Allowed values are: "ASC", "DESC"
 
         :param str name: (optional)
-            This filter parameter can be used to filter by the name of the object.
+            Used to filter by the name of the object.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -4558,41 +5159,44 @@ class DataIntegrationClient(object):
 
     def list_data_entities(self, workspace_id, connection_key, schema_resource_name, **kwargs):
         """
-        Retrieves a list of summaries of data entities present in the schema identified by schema name. |
-        A live query is run on the data asset identified via the connection specified.
+        Lists a summary of data entities from the data asset using the specified connection.
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str connection_key: (required)
-            The connection key
+            The connection key.
 
         :param str schema_resource_name: (required)
-            Schema resource name used for retrieving schemas
+            The schema resource name used for retrieving schemas.
 
         :param str name: (optional)
-            This filter parameter can be used to filter by the name of the object.
+            Used to filter by the name of the object.
 
         :param str page: (optional)
-            This parameter will control pagination.  Values for the parameter should come from the `opc-next-page` or `opc-prev-page` header in previous response.
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str type: (optional)
             Type of the object to filter the results with.
 
         :param int limit: (optional)
-            This parameter allows users to set the maximum number of items to return per page.  The value must be between 1 and 100 (inclusive).  Default value is 100.
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param list[str] fields: (optional)
-            This parameter allows users to specify which fields to get for an object.
+            Specifies the fields to get for an object.
 
         :param str sort_by: (optional)
-            This parameter allows users to specify a sort field.  Supported sort fields are `name`, `identifier`, `timeCreated`, and `timeUpdated`.  Default sort order is the descending order of `timeCreated` (most recently created objects at the top).  Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
             Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
 
         :param str sort_order: (optional)
-            This parameter is used to control the sort order.  Supported values are `ASC` (ascending) and `DESC` (descending).
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
 
             Allowed values are: "ASC", "DESC"
 
@@ -4700,37 +5304,41 @@ class DataIntegrationClient(object):
 
     def list_data_flow_validations(self, workspace_id, **kwargs):
         """
-        Retrieves a list of data flow validations within the specified workspace
+        Retrieves a list of data flow validations within the specified workspace.
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str key: (optional)
-            This filter parameter can be used to filter by the key of the object.
+            Used to filter by the key of the object.
 
         :param str name: (optional)
-            This filter parameter can be used to filter by the name of the object.
+            Used to filter by the name of the object.
 
         :param str identifier: (optional)
-            This filter parameter can be used to filter by the identifier of the object.
+            Used to filter by the identifier of the object.
 
         :param list[str] fields: (optional)
-            This parameter allows users to specify which fields to get for an object.
+            Specifies the fields to get for an object.
 
         :param str page: (optional)
-            This parameter will control pagination.  Values for the parameter should come from the `opc-next-page` or `opc-prev-page` header in previous response.
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            This parameter allows users to set the maximum number of items to return per page.  The value must be between 1 and 100 (inclusive).  Default value is 100.
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
-            This parameter allows users to specify a sort field.  Supported sort fields are `name`, `identifier`, `timeCreated`, and `timeUpdated`.  Default sort order is the descending order of `timeCreated` (most recently created objects at the top).  Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
             Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
 
         :param str sort_order: (optional)
-            This parameter is used to control the sort order.  Supported values are `ASC` (ascending) and `DESC` (descending).
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
 
             Allowed values are: "ASC", "DESC"
 
@@ -4842,7 +5450,7 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -4850,30 +5458,34 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param str folder_id: (optional)
-            Unique key of the folder
+            Unique key of the folder.
 
         :param list[str] fields: (optional)
-            This parameter allows users to specify which fields to get for an object.
+            Specifies the fields to get for an object.
 
         :param str name: (optional)
-            This filter parameter can be used to filter by the name of the object.
+            Used to filter by the name of the object.
 
         :param list[str] identifier: (optional)
-            This filter parameter can be used to filter by the identifier of the object.
+            Used to filter by the identifier of the object.
 
         :param int limit: (optional)
-            This parameter allows users to set the maximum number of items to return per page.  The value must be between 1 and 100 (inclusive).  Default value is 100.
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            This parameter will control pagination.  Values for the parameter should come from the `opc-next-page` or `opc-prev-page` header in previous response.
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
-            This parameter is used to control the sort order.  Supported values are `ASC` (ascending) and `DESC` (descending).
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
 
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            This parameter allows users to specify a sort field.  Supported sort fields are `name`, `identifier`, `timeCreated`, and `timeUpdated`.  Default sort order is the descending order of `timeCreated` (most recently created objects at the top).  Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
             Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
 
@@ -4980,43 +5592,47 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str application_key: (required)
-            DIS application key
+            The application key.
 
         :param list[str] fields: (optional)
-            This parameter allows users to specify which fields to get for an object.
+            Specifies the fields to get for an object.
 
         :param str name: (optional)
-            This filter parameter can be used to filter by the name of the object.
+            Used to filter by the name of the object.
 
         :param list[str] identifier: (optional)
-            This filter parameter can be used to filter by the identifier of the published object.
+            Used to filter by the identifier of the published object.
 
         :param list[str] type: (optional)
-            This filter parameter can be used to filter by the object type of the object.
-            This parameter can be suffixed with an optional filter operator InSubtree.
-            For DIS APIs we will filter based on type Task.
+            Used to filter by the object type of the object.
+            It can be suffixed with an optional filter operator InSubtree.
+            For Data Integration APIs, a filter based on type Task is used.
 
         :param str type_in_subtree: (optional)
-            This is used in association with type parameter. If value is true,
+            Used in association with type parameter. If value is true,
             then type all sub types of the given type parameter is considered.
             If value is false, then sub types are not considered. Default is false.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
-            This parameter is used to control the sort order.  Supported values are `ASC` (ascending) and `DESC` (descending).
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
 
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            This parameter allows users to specify a sort field.  Supported sort fields are `name`, `identifier`, `timeCreated`, and `timeUpdated`.  Default sort order is the descending order of `timeCreated` (most recently created objects at the top).  Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
             Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
 
@@ -5125,13 +5741,290 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 response_type="DependentObjectSummaryCollection")
 
+    def list_external_publication_validations(self, workspace_id, task_key, **kwargs):
+        """
+        Retrieves a lists of external publication validations in a workspace and provides options to filter the list.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str task_key: (required)
+            The task key.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param list[str] fields: (optional)
+            Specifies the fields to get for an object.
+
+        :param str name: (optional)
+            Used to filter by the name of the object.
+
+        :param list[str] identifier: (optional)
+            Used to filter by the identifier of the object.
+
+        :param str page: (optional)
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param int limit: (optional)
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.ExternalPublicationValidationSummaryCollection`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublicationValidations"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "fields",
+            "name",
+            "identifier",
+            "page",
+            "limit",
+            "sort_order",
+            "sort_by"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_external_publication_validations got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "taskKey": task_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
+            "name": kwargs.get("name", missing),
+            "identifier": self.base_client.generate_collection_format_param(kwargs.get("identifier", missing), 'multi'),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ExternalPublicationValidationSummaryCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ExternalPublicationValidationSummaryCollection")
+
+    def list_external_publications(self, workspace_id, task_key, **kwargs):
+        """
+        Retrieves a list of external publications in an application and provides options to filter the list.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str task_key: (required)
+            The task key.
+
+        :param list[str] fields: (optional)
+            Specifies the fields to get for an object.
+
+        :param str name: (optional)
+            Used to filter by the name of the object.
+
+        :param int limit: (optional)
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.ExternalPublicationSummaryCollection`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublications"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "fields",
+            "name",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_external_publications got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "taskKey": task_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
+            "name": kwargs.get("name", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ExternalPublicationSummaryCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ExternalPublicationSummaryCollection")
+
     def list_folders(self, workspace_id, **kwargs):
         """
         Retrieves a list of folders in a project and provides options to filter the list.
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -5139,30 +6032,34 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param str aggregator_key: (optional)
-            This filter parameter can be used to filter by the project or the folder object.
+            Used to filter by the project or the folder object.
 
         :param list[str] fields: (optional)
-            This parameter allows users to specify which fields to get for an object.
+            Specifies the fields to get for an object.
 
         :param str name: (optional)
-            This filter parameter can be used to filter by the name of the object.
+            Used to filter by the name of the object.
 
         :param list[str] identifier: (optional)
-            This filter parameter can be used to filter by the identifier of the object.
+            Used to filter by the identifier of the object.
 
         :param str page: (optional)
-            This parameter will control pagination.  Values for the parameter should come from the `opc-next-page` or `opc-prev-page` header in previous response.
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            This parameter allows users to set the maximum number of items to return per page.  The value must be between 1 and 100 (inclusive).  Default value is 100.
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
-            This parameter is used to control the sort order.  Supported values are `ASC` (ascending) and `DESC` (descending).
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
 
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            This parameter allows users to specify a sort field.  Supported sort fields are `name`, `identifier`, `timeCreated`, and `timeUpdated`.  Default sort order is the descending order of `timeCreated` (most recently created objects at the top).  Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
             Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
 
@@ -5263,39 +6160,184 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 response_type="FolderSummaryCollection")
 
-    def list_patches(self, workspace_id, application_key, **kwargs):
+    def list_patch_changes(self, workspace_id, application_key, **kwargs):
         """
         Retrieves a list of patches in an application and provides options to filter the list.
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str application_key: (required)
-            DIS application key
+            The application key.
 
         :param str name: (optional)
-            This filter parameter can be used to filter by the name of the object.
+            Used to filter by the name of the object.
 
-        :param list[str] identifier: (optional)
-            This filter parameter can be used to filter by the identifier of the published object.
+        :param str since_patch: (optional)
+            Specifies the patch key to query from.
 
-        :param list[str] fields: (optional)
-            This parameter allows users to specify which fields to get for an object.
+        :param str to_patch: (optional)
+            Specifies the patch key to query to.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
-            This parameter is used to control the sort order.  Supported values are `ASC` (ascending) and `DESC` (descending).
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
 
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            This parameter allows users to specify a sort field.  Supported sort fields are `name`, `identifier`, `timeCreated`, and `timeUpdated`.  Default sort order is the descending order of `timeCreated` (most recently created objects at the top).  Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.PatchChangeSummaryCollection`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/patchChanges"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "name",
+            "since_patch",
+            "to_patch",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_patch_changes got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "applicationKey": application_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "name": kwargs.get("name", missing),
+            "sincePatch": kwargs.get("since_patch", missing),
+            "toPatch": kwargs.get("to_patch", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="PatchChangeSummaryCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="PatchChangeSummaryCollection")
+
+    def list_patches(self, workspace_id, application_key, **kwargs):
+        """
+        Retrieves a list of patches in an application and provides options to filter the list. For listing changes based on a period and logical objects changed, see ListPatchChanges API.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str application_key: (required)
+            The application key.
+
+        :param str name: (optional)
+            Used to filter by the name of the object.
+
+        :param list[str] identifier: (optional)
+            Used to filter by the identifier of the published object.
+
+        :param list[str] fields: (optional)
+            Specifies the fields to get for an object.
+
+        :param int limit: (optional)
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
             Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
 
@@ -5406,7 +6448,7 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -5414,27 +6456,31 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param list[str] fields: (optional)
-            This parameter allows users to specify which fields to get for an object.
+            Specifies the fields to get for an object.
 
         :param str name: (optional)
-            This filter parameter can be used to filter by the name of the object.
+            Used to filter by the name of the object.
 
         :param list[str] identifier: (optional)
-            This filter parameter can be used to filter by the identifier of the object.
+            Used to filter by the identifier of the object.
 
         :param str page: (optional)
-            This parameter will control pagination.  Values for the parameter should come from the `opc-next-page` or `opc-prev-page` header in previous response.
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            This parameter allows users to set the maximum number of items to return per page.  The value must be between 1 and 100 (inclusive).  Default value is 100.
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
-            This parameter is used to control the sort order.  Supported values are `ASC` (ascending) and `DESC` (descending).
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
 
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            This parameter allows users to specify a sort field.  Supported sort fields are `name`, `identifier`, `timeCreated`, and `timeUpdated`.  Default sort order is the descending order of `timeCreated` (most recently created objects at the top).  Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
             Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
 
@@ -5539,43 +6585,47 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str application_key: (required)
-            DIS application key
+            The application key.
 
         :param list[str] fields: (optional)
-            This parameter allows users to specify which fields to get for an object.
+            Specifies the fields to get for an object.
 
         :param str name: (optional)
-            This filter parameter can be used to filter by the name of the object.
+            Used to filter by the name of the object.
 
         :param list[str] identifier: (optional)
-            This filter parameter can be used to filter by the identifier of the published object.
+            Used to filter by the identifier of the published object.
 
         :param list[str] type: (optional)
-            This filter parameter can be used to filter by the object type of the object.
-            This parameter can be suffixed with an optional filter operator InSubtree.
-            For DIS APIs we will filter based on type Task.
+            Used to filter by the object type of the object.
+            It can be suffixed with an optional filter operator InSubtree.
+            For Data Integration APIs, a filter based on type Task is used.
 
         :param str type_in_subtree: (optional)
-            This is used in association with type parameter. If value is true,
+            Used in association with type parameter. If value is true,
             then type all sub types of the given type parameter is considered.
             If value is false, then sub types are not considered. Default is false.
 
         :param int limit: (optional)
-            The maximum number of items to return.
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
-            This parameter is used to control the sort order.  Supported values are `ASC` (ascending) and `DESC` (descending).
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
 
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            This parameter allows users to specify a sort field.  Supported sort fields are `name`, `identifier`, `timeCreated`, and `timeUpdated`.  Default sort order is the descending order of `timeCreated` (most recently created objects at the top).  Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
             Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
 
@@ -5684,41 +6734,176 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 response_type="PublishedObjectSummaryCollection")
 
+    def list_references(self, workspace_id, application_key, **kwargs):
+        """
+        Retrieves a list of references in an application. Reference objects are created when dataflows and tasks use objects, such as data assets and connections.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str application_key: (required)
+            The application key.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param int limit: (optional)
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str name: (optional)
+            Used to filter by the name of the object.
+
+        :param str sort_order: (optional)
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.ReferenceSummaryCollection`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/references"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "limit",
+            "page",
+            "name",
+            "sort_order",
+            "sort_by"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_references got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "applicationKey": application_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "name": kwargs.get("name", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ReferenceSummaryCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ReferenceSummaryCollection")
+
     def list_schemas(self, workspace_id, connection_key, schema_resource_name, **kwargs):
         """
         Retrieves a list of all the schemas that can be accessed using the specified connection.
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str connection_key: (required)
-            The connection key
+            The connection key.
 
         :param str schema_resource_name: (required)
-            Schema resource name used for retrieving schemas
+            Schema resource name used for retrieving schemas.
 
         :param str page: (optional)
-            This parameter will control pagination.  Values for the parameter should come from the `opc-next-page` or `opc-prev-page` header in previous response.
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            This parameter allows users to set the maximum number of items to return per page.  The value must be between 1 and 100 (inclusive).  Default value is 100.
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param list[str] fields: (optional)
-            This parameter allows users to specify which fields to get for an object.
+            Specifies the fields to get for an object.
 
         :param str sort_by: (optional)
-            This parameter allows users to specify a sort field.  Supported sort fields are `name`, `identifier`, `timeCreated`, and `timeUpdated`.  Default sort order is the descending order of `timeCreated` (most recently created objects at the top).  Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
             Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
 
         :param str sort_order: (optional)
-            This parameter is used to control the sort order.  Supported values are `ASC` (ascending) and `DESC` (descending).
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
 
             Allowed values are: "ASC", "DESC"
 
         :param str name: (optional)
-            This filter parameter can be used to filter by the name of the object.
+            Used to filter by the name of the object.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -5822,17 +7007,17 @@ class DataIntegrationClient(object):
 
     def list_task_run_logs(self, workspace_id, application_key, task_run_key, **kwargs):
         """
-        Get log entries for task runs using its key
+        Gets log entries for task runs using its key.
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str application_key: (required)
-            DIS application key
+            The application key.
 
         :param str task_run_key: (required)
-            DIS taskRun key
+            The task run key.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -5840,18 +7025,22 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param str page: (optional)
-            This parameter will control pagination.  Values for the parameter should come from the `opc-next-page` or `opc-prev-page` header in previous response.
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            This parameter allows users to set the maximum number of items to return per page.  The value must be between 1 and 100 (inclusive).  Default value is 100.
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
-            This parameter is used to control the sort order.  Supported values are `ASC` (ascending) and `DESC` (descending).
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
 
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            This parameter allows users to specify a sort field.  Supported sort fields are `name`, `identifier`, `timeCreated`, and `timeUpdated`.  Default sort order is the descending order of `timeCreated` (most recently created objects at the top).  Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
             Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
 
@@ -5952,10 +7141,10 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str application_key: (required)
-            DIS application key
+            The application key.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -5963,27 +7152,31 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param list[str] fields: (optional)
-            This parameter allows users to specify which fields to get for an object.
+            Specifies the fields to get for an object.
 
         :param str name: (optional)
-            This filter parameter can be used to filter by the name of the object.
+            Used to filter by the name of the object.
 
         :param list[str] identifier: (optional)
-            This filter parameter can be used to filter by the identifier of the object.
+            Used to filter by the identifier of the object.
 
         :param str page: (optional)
-            This parameter will control pagination.  Values for the parameter should come from the `opc-next-page` or `opc-prev-page` header in previous response.
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            This parameter allows users to set the maximum number of items to return per page.  The value must be between 1 and 100 (inclusive).  Default value is 100.
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
-            This parameter is used to control the sort order.  Supported values are `ASC` (ascending) and `DESC` (descending).
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
 
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            This parameter allows users to specify a sort field.  Supported sort fields are `name`, `identifier`, `timeCreated`, and `timeUpdated`.  Default sort order is the descending order of `timeCreated` (most recently created objects at the top).  Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
             Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
 
@@ -6089,33 +7282,37 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str key: (optional)
-            This filter parameter can be used to filter by the key of the object.
+            Used to filter by the key of the object.
 
         :param str name: (optional)
-            This filter parameter can be used to filter by the name of the object.
+            Used to filter by the name of the object.
 
         :param str identifier: (optional)
-            This filter parameter can be used to filter by the identifier of the object.
+            Used to filter by the identifier of the object.
 
         :param list[str] fields: (optional)
-            This parameter allows users to specify which fields to get for an object.
+            Specifies the fields to get for an object.
 
         :param str page: (optional)
-            This parameter will control pagination.  Values for the parameter should come from the `opc-next-page` or `opc-prev-page` header in previous response.
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            This parameter allows users to set the maximum number of items to return per page.  The value must be between 1 and 100 (inclusive).  Default value is 100.
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_by: (optional)
-            This parameter allows users to specify a sort field.  Supported sort fields are `name`, `identifier`, `timeCreated`, and `timeUpdated`.  Default sort order is the descending order of `timeCreated` (most recently created objects at the top).  Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
             Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
 
         :param str sort_order: (optional)
-            This parameter is used to control the sort order.  Supported values are `ASC` (ascending) and `DESC` (descending).
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
 
             Allowed values are: "ASC", "DESC"
 
@@ -6227,7 +7424,7 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -6235,36 +7432,40 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param str folder_id: (optional)
-            Unique key of the folder
+            Unique key of the folder.
 
         :param list[str] fields: (optional)
-            This parameter allows users to specify which fields to get for an object.
+            Specifies the fields to get for an object.
 
         :param str name: (optional)
-            This filter parameter can be used to filter by the name of the object.
+            Used to filter by the name of the object.
 
         :param list[str] key: (optional)
-            This filter parameter can be used to filter by the key of the object.
+            Used to filter by the key of the object.
 
         :param list[str] identifier: (optional)
-            This filter parameter can be used to filter by the identifier of the object.
+            Used to filter by the identifier of the object.
 
         :param list[str] type: (optional)
-            This filter parameter can be used to filter by the object type of the object. This parameter can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:-</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
+            Used to filter by the object type of the object. It can be suffixed with an optional filter operator InSubtree. If this operator is not specified, then exact match is considered. <br><br><B>Examples:</B><br> <ul> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=false</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK</B> returns all objects of type data loader task</li> <li><B>?type=DATA_LOADER_TASK&typeInSubtree=true</B> returns all objects of type data loader task</li> </ul>
 
         :param int limit: (optional)
-            This parameter allows users to set the maximum number of items to return per page.  The value must be between 1 and 100 (inclusive).  Default value is 100.
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            This parameter will control pagination.  Values for the parameter should come from the `opc-next-page` or `opc-prev-page` header in previous response.
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
-            This parameter is used to control the sort order.  Supported values are `ASC` (ascending) and `DESC` (descending).
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
 
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            This parameter allows users to specify a sort field.  Supported sort fields are `name`, `identifier`, `timeCreated`, and `timeUpdated`.  Default sort order is the descending order of `timeCreated` (most recently created objects at the top).  Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
             Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
 
@@ -6371,11 +7572,11 @@ class DataIntegrationClient(object):
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
-        Return a (paginated) list of errors for a given work request.
+        Retrieves a paginated list of errors for a given work request.
 
 
         :param str work_request_id: (required)
-            The ID of the asynchronous request.
+            The ID of the asynchronous work request to retrieve.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -6383,18 +7584,22 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param str page: (optional)
-            This parameter will control pagination.  Values for the parameter should come from the `opc-next-page` or `opc-prev-page` header in previous response.
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            This parameter allows users to set the maximum number of items to return per page.  The value must be between 1 and 100 (inclusive).  Default value is 100.
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
-            This parameter is used to control the sort order.  Supported values are `ASC` (ascending) and `DESC` (descending).
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
 
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            This parameter allows users to specify a sort field.  Supported sort fields are `name`, `identifier`, `timeCreated`, and `timeUpdated`.  Default sort order is the descending order of `timeCreated` (most recently created objects at the top).  Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
             Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
 
@@ -6489,11 +7694,11 @@ class DataIntegrationClient(object):
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
-        Return a (paginated) list of logs for a given work request.
+        Retrieves a paginated list of logs for a given work request.
 
 
         :param str work_request_id: (required)
-            The ID of the asynchronous request.
+            The ID of the asynchronous work request to retrieve.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -6501,18 +7706,22 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param str page: (optional)
-            This parameter will control pagination.  Values for the parameter should come from the `opc-next-page` or `opc-prev-page` header in previous response.
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            This parameter allows users to set the maximum number of items to return per page.  The value must be between 1 and 100 (inclusive).  Default value is 100.
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
-            This parameter is used to control the sort order.  Supported values are `ASC` (ascending) and `DESC` (descending).
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
 
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            This parameter allows users to specify a sort field.  Supported sort fields are `name`, `identifier`, `timeCreated`, and `timeUpdated`.  Default sort order is the descending order of `timeCreated` (most recently created objects at the top).  Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
             Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
 
@@ -6611,7 +7820,7 @@ class DataIntegrationClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment containing the resources you want to list.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -6619,23 +7828,27 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param str work_request_status: (optional)
-            Work Request status.
+            The work request status.
 
             Allowed values are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"
 
         :param str page: (optional)
-            This parameter will control pagination.  Values for the parameter should come from the `opc-next-page` or `opc-prev-page` header in previous response.
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param int limit: (optional)
-            This parameter allows users to set the maximum number of items to return per page.  The value must be between 1 and 100 (inclusive).  Default value is 100.
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
-            This parameter is used to control the sort order.  Supported values are `ASC` (ascending) and `DESC` (descending).
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
 
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            This parameter allows users to specify a sort field.  Supported sort fields are `name`, `identifier`, `timeCreated`, and `timeUpdated`.  Default sort order is the descending order of `timeCreated` (most recently created objects at the top).  Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
             Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
 
@@ -6728,33 +7941,37 @@ class DataIntegrationClient(object):
 
     def list_workspaces(self, compartment_id, **kwargs):
         """
-        Returns a list of Data Integration Workspaces.
+        Retrieves a list of Data Integration workspaces.
 
 
         :param str compartment_id: (required)
-            The ID of the compartment in which to list resources.
+            The OCID of the compartment containing the resources you want to list.
 
         :param str name: (optional)
-            This filter parameter can be used to filter by the name of the object.
+            Used to filter by the name of the object.
 
         :param int limit: (optional)
-            This parameter allows users to set the maximum number of items to return per page.  The value must be between 1 and 100 (inclusive).  Default value is 100.
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
-            This parameter will control pagination.  Values for the parameter should come from the `opc-next-page` or `opc-prev-page` header in previous response.
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str lifecycle_state: (optional)
-            Lifecycle state of the resource.
+            The lifecycle state of a resource. When specified, the operation only returns resources that match the given lifecycle state. When not specified, all lifecycle states are processed as a match.
 
             Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "STARTING", "STOPPING", "STOPPED"
 
         :param str sort_order: (optional)
-            This parameter is used to control the sort order.  Supported values are `ASC` (ascending) and `DESC` (descending).
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
 
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            This parameter allows users to specify a sort field.  Supported sort fields are `name`, `identifier`, `timeCreated`, and `timeUpdated`.  Default sort order is the descending order of `timeCreated` (most recently created objects at the top).  Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
 
             Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
 
@@ -6854,17 +8071,16 @@ class DataIntegrationClient(object):
 
     def start_workspace(self, workspace_id, **kwargs):
         """
-        The workspace will be started.
+        Starts a workspace.
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str if_match: (optional)
-            Update and Delete operations should accept an optional If-Match header,
-            in which clients can send a previously-received ETag. When If-Match is
-            provided and its value does not exactly match the ETag of the resource
-            on the server, the request should fail with HTTP response status code 412
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -6872,7 +8088,7 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param str opc_retry_token: (optional)
-            Caller may provide \"retry tokens\" allowing them to retry an operation
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -6941,23 +8157,22 @@ class DataIntegrationClient(object):
 
     def stop_workspace(self, workspace_id, **kwargs):
         """
-        The workspace will be stopped.
+        Stops a workspace.
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param int quiesce_timeout: (optional)
-            This parameter allows users to set the timeout for DIS to gracefully close down any running jobs before stopping the workspace.
+            Used to set the timeout for Data Integration to gracefully close down any running jobs before stopping the workspace.
 
         :param bool is_force_operation: (optional)
-            This parameter allows users to force close down the workspace.
+            Used to force close down the workspace.
 
         :param str if_match: (optional)
-            Update and Delete operations should accept an optional If-Match header,
-            in which clients can send a previously-received ETag. When If-Match is
-            provided and its value does not exactly match the ETag of the resource
-            on the server, the request should fail with HTTP response status code 412
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -6965,7 +8180,7 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param str opc_retry_token: (optional)
-            Caller may provide \"retry tokens\" allowing them to retry an operation
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7048,19 +8263,18 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str application_key: (required)
-            DIS application key
+            The application key.
 
         :param UpdateApplicationDetails update_application_details: (required)
             The details needed to update an application.
 
         :param str if_match: (optional)
-            Update and Delete operations should accept an optional If-Match header,
-            in which clients can send a previously-received ETag. When If-Match is
-            provided and its value does not exactly match the ETag of the resource
-            on the server, the request should fail with HTTP response status code 412
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -7139,13 +8353,13 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str connection_key: (required)
-            The connection key
+            The connection key.
 
         :param UpdateConnectionDetails update_connection_details: (required)
-            Request body parameter for connection details
+            The information needed to update a connection.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -7153,10 +8367,9 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param str if_match: (optional)
-            Update and Delete operations should accept an optional If-Match header,
-            in which clients can send a previously-received ETag. When If-Match is
-            provided and its value does not exactly match the ETag of the resource
-            on the server, the request should fail with HTTP response status code 412
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7230,13 +8443,13 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str data_asset_key: (required)
-            Data asset key.
+            The data asset key.
 
         :param UpdateDataAssetDetails update_data_asset_details: (required)
-            Request body parameter for data asset details
+            The information needed to update a data asset.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If
@@ -7244,10 +8457,9 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param str if_match: (optional)
-            Update and Delete operations should accept an optional If-Match header,
-            in which clients can send a previously-received ETag. When If-Match is
-            provided and its value does not exactly match the ETag of the resource
-            on the server, the request should fail with HTTP response status code 412
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7321,10 +8533,10 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str data_flow_key: (required)
-            DIS DataFlow key
+            The data flow key.
 
         :param UpdateDataFlowDetails update_data_flow_details: (required)
             The details needed to updated a data flow.
@@ -7335,10 +8547,9 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param str if_match: (optional)
-            Update and Delete operations should accept an optional If-Match header,
-            in which clients can send a previously-received ETag. When If-Match is
-            provided and its value does not exactly match the ETag of the resource
-            on the server, the request should fail with HTTP response status code 412
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7406,16 +8617,110 @@ class DataIntegrationClient(object):
                 body=update_data_flow_details,
                 response_type="DataFlow")
 
+    def update_external_publication(self, workspace_id, task_key, external_publications_key, update_external_publication_details, **kwargs):
+        """
+        Updates the external publication object.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str task_key: (required)
+            The task key.
+
+        :param str external_publications_key: (required)
+            The external published object key.
+
+        :param UpdateExternalPublicationDetails update_external_publication_details: (required)
+            The information to be updated.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.ExternalPublication`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/workspaces/{workspaceId}/tasks/{taskKey}/externalPublications/{externalPublicationsKey}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_external_publication got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "taskKey": task_key,
+            "externalPublicationsKey": external_publications_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_external_publication_details,
+                response_type="ExternalPublication")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_external_publication_details,
+                response_type="ExternalPublication")
+
     def update_folder(self, workspace_id, folder_key, update_folder_details, **kwargs):
         """
         Updates a specific folder.
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str folder_key: (required)
-            DIS Folder key
+            The folder key.
 
         :param UpdateFolderDetails update_folder_details: (required)
             The details needed to update a folder.
@@ -7426,10 +8731,9 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param str if_match: (optional)
-            Update and Delete operations should accept an optional If-Match header,
-            in which clients can send a previously-received ETag. When If-Match is
-            provided and its value does not exactly match the ETag of the resource
-            on the server, the request should fail with HTTP response status code 412
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7503,10 +8807,10 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str project_key: (required)
-            DIS Project key
+            The project key.
 
         :param UpdateProjectDetails update_project_details: (required)
             The details needed to update a project.
@@ -7517,10 +8821,9 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param str if_match: (optional)
-            Update and Delete operations should accept an optional If-Match header,
-            in which clients can send a previously-received ETag. When If-Match is
-            provided and its value does not exactly match the ETag of the resource
-            on the server, the request should fail with HTTP response status code 412
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7588,16 +8891,117 @@ class DataIntegrationClient(object):
                 body=update_project_details,
                 response_type="Project")
 
+    def update_reference(self, workspace_id, application_key, reference_key, update_reference_details, **kwargs):
+        """
+        Updates the application references. For example, to map a data asset to a different target object.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str application_key: (required)
+            The application key.
+
+        :param str reference_key: (required)
+            The reference key.
+
+        :param UpdateReferenceDetails update_reference_details: (required)
+            The details needed to update the references.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.Reference`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/workspaces/{workspaceId}/applications/{applicationKey}/references/{referenceKey}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_reference got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "applicationKey": application_key,
+            "referenceKey": reference_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_reference_details,
+                response_type="Reference")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_reference_details,
+                response_type="Reference")
+
     def update_task(self, workspace_id, task_key, update_task_details, **kwargs):
         """
         Updates a specific task. For example, you can update the task description or move the task to a different folder by changing the `aggregatorKey` to a different folder in the registry.
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str task_key: (required)
-            DIS Task key
+            The task key.
 
         :param UpdateTaskDetails update_task_details: (required)
             The details needed to update a task.
@@ -7608,10 +9012,9 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param str if_match: (optional)
-            Update and Delete operations should accept an optional If-Match header,
-            in which clients can send a previously-received ETag. When If-Match is
-            provided and its value does not exactly match the ETag of the resource
-            on the server, the request should fail with HTTP response status code 412
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7685,13 +9088,13 @@ class DataIntegrationClient(object):
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param str application_key: (required)
-            DIS application key
+            The application key.
 
         :param str task_run_key: (required)
-            DIS taskRun key
+            The task run key.
 
         :param UpdateTaskRunDetails update_task_run_details: (required)
             The details needed to update the status of a task run.
@@ -7702,10 +9105,9 @@ class DataIntegrationClient(object):
             please provide the request ID.
 
         :param str if_match: (optional)
-            Update and Delete operations should accept an optional If-Match header,
-            in which clients can send a previously-received ETag. When If-Match is
-            provided and its value does not exactly match the ETag of the resource
-            on the server, the request should fail with HTTP response status code 412
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -7776,20 +9178,19 @@ class DataIntegrationClient(object):
 
     def update_workspace(self, workspace_id, update_workspace_details, **kwargs):
         """
-        Updates the Data Integration Workspace
+        Updates the specified Data Integration workspace.
 
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param UpdateWorkspaceDetails update_workspace_details: (required)
-            The information to be updated.
+            The information needed to update the workspace.
 
         :param str if_match: (optional)
-            Update and Delete operations should accept an optional If-Match header,
-            in which clients can send a previously-received ETag. When If-Match is
-            provided and its value does not exactly match the ETag of the resource
-            on the server, the request should fail with HTTP response status code 412
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If

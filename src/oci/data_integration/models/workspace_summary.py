@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkspaceSummary(object):
     """
-    Summary of a Workspace.
+    Summary details of a workspace.
     """
 
     #: A constant which can be used with the lifecycle_state property of a WorkspaceSummary.
@@ -142,7 +142,7 @@ class WorkspaceSummary(object):
     def id(self):
         """
         Gets the id of this WorkspaceSummary.
-        Unique identifier that is immutable.
+        A system-generated and immutable identifier assigned to the workspace upon creation.
 
 
         :return: The id of this WorkspaceSummary.
@@ -154,7 +154,7 @@ class WorkspaceSummary(object):
     def id(self, id):
         """
         Sets the id of this WorkspaceSummary.
-        Unique identifier that is immutable.
+        A system-generated and immutable identifier assigned to the workspace upon creation.
 
 
         :param id: The id of this WorkspaceSummary.
@@ -166,7 +166,7 @@ class WorkspaceSummary(object):
     def description(self):
         """
         Gets the description of this WorkspaceSummary.
-        A detailed description of the workspace.
+        A user defined description for the workspace.
 
 
         :return: The description of this WorkspaceSummary.
@@ -178,7 +178,7 @@ class WorkspaceSummary(object):
     def description(self, description):
         """
         Sets the description of this WorkspaceSummary.
-        A detailed description of the workspace.
+        A user defined description for the workspace.
 
 
         :param description: The description of this WorkspaceSummary.

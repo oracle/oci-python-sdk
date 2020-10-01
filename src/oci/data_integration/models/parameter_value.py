@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ParameterValue(object):
     """
-    A parameter value.
+    User defined value for a parameter.
     """
 
     def __init__(self, **kwargs):
@@ -68,7 +68,7 @@ class ParameterValue(object):
     def root_object_value(self):
         """
         Gets the root_object_value of this ParameterValue.
-        This can be any object such as a file entity, or a schema or a table.
+        This can be any object such as a file entity, a schema, or a table.
 
 
         :return: The root_object_value of this ParameterValue.
@@ -80,7 +80,7 @@ class ParameterValue(object):
     def root_object_value(self, root_object_value):
         """
         Sets the root_object_value of this ParameterValue.
-        This can be any object such as a file entity, or a schema or a table.
+        This can be any object such as a file entity, a schema, or a table.
 
 
         :param root_object_value: The root_object_value of this ParameterValue.

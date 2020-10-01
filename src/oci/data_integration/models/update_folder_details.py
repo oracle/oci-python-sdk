@@ -179,7 +179,7 @@ class UpdateFolderDetails(object):
     def name(self):
         """
         Gets the name of this UpdateFolderDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this UpdateFolderDetails.
@@ -191,7 +191,7 @@ class UpdateFolderDetails(object):
     def name(self, name):
         """
         Sets the name of this UpdateFolderDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this UpdateFolderDetails.
@@ -203,7 +203,7 @@ class UpdateFolderDetails(object):
     def description(self):
         """
         Gets the description of this UpdateFolderDetails.
-        Detailed description for the object.
+        A user defined description for the folder.
 
 
         :return: The description of this UpdateFolderDetails.
@@ -215,7 +215,7 @@ class UpdateFolderDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateFolderDetails.
-        Detailed description for the object.
+        A user defined description for the folder.
 
 
         :param description: The description of this UpdateFolderDetails.
@@ -227,7 +227,7 @@ class UpdateFolderDetails(object):
     def category_name(self):
         """
         Gets the category_name of this UpdateFolderDetails.
-        categoryName
+        The category name.
 
 
         :return: The category_name of this UpdateFolderDetails.
@@ -239,7 +239,7 @@ class UpdateFolderDetails(object):
     def category_name(self, category_name):
         """
         Sets the category_name of this UpdateFolderDetails.
-        categoryName
+        The category name.
 
 
         :param category_name: The category_name of this UpdateFolderDetails.
@@ -275,7 +275,7 @@ class UpdateFolderDetails(object):
     def identifier(self):
         """
         Gets the identifier of this UpdateFolderDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this UpdateFolderDetails.
@@ -287,7 +287,7 @@ class UpdateFolderDetails(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this UpdateFolderDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this UpdateFolderDetails.

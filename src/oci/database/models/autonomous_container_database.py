@@ -122,6 +122,14 @@ class AutonomousContainerDatabase(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type infrastructure_type: str
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this AutonomousContainerDatabase.
+        :type kms_key_id: str
+
+        :param vault_id:
+            The value to assign to the vault_id property of this AutonomousContainerDatabase.
+        :type vault_id: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AutonomousContainerDatabase.
             Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "BACKUP_IN_PROGRESS", "RESTORING", "RESTORE_FAILED", "RESTARTING", "MAINTENANCE_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
@@ -188,6 +196,8 @@ class AutonomousContainerDatabase(object):
             'autonomous_exadata_infrastructure_id': 'str',
             'autonomous_vm_cluster_id': 'str',
             'infrastructure_type': 'str',
+            'kms_key_id': 'str',
+            'vault_id': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'time_created': 'datetime',
@@ -212,6 +222,8 @@ class AutonomousContainerDatabase(object):
             'autonomous_exadata_infrastructure_id': 'autonomousExadataInfrastructureId',
             'autonomous_vm_cluster_id': 'autonomousVmClusterId',
             'infrastructure_type': 'infrastructureType',
+            'kms_key_id': 'kmsKeyId',
+            'vault_id': 'vaultId',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
@@ -235,6 +247,8 @@ class AutonomousContainerDatabase(object):
         self._autonomous_exadata_infrastructure_id = None
         self._autonomous_vm_cluster_id = None
         self._infrastructure_type = None
+        self._kms_key_id = None
+        self._vault_id = None
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._time_created = None
@@ -452,6 +466,60 @@ class AutonomousContainerDatabase(object):
         if not value_allowed_none_or_none_sentinel(infrastructure_type, allowed_values):
             infrastructure_type = 'UNKNOWN_ENUM_VALUE'
         self._infrastructure_type = infrastructure_type
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this AutonomousContainerDatabase.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :return: The kms_key_id of this AutonomousContainerDatabase.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this AutonomousContainerDatabase.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :param kms_key_id: The kms_key_id of this AutonomousContainerDatabase.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
+
+    @property
+    def vault_id(self):
+        """
+        Gets the vault_id of this AutonomousContainerDatabase.
+        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+
+
+        :return: The vault_id of this AutonomousContainerDatabase.
+        :rtype: str
+        """
+        return self._vault_id
+
+    @vault_id.setter
+    def vault_id(self, vault_id):
+        """
+        Sets the vault_id of this AutonomousContainerDatabase.
+        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+
+
+        :param vault_id: The vault_id of this AutonomousContainerDatabase.
+        :type: str
+        """
+        self._vault_id = vault_id
 
     @property
     def lifecycle_state(self):
@@ -757,7 +825,7 @@ class AutonomousContainerDatabase(object):
     def db_version(self):
         """
         Gets the db_version of this AutonomousContainerDatabase.
-        Oracle Database version of the Autonomous Container Database
+        Oracle Database version of the Autonomous Container Database.
 
 
         :return: The db_version of this AutonomousContainerDatabase.
@@ -769,7 +837,7 @@ class AutonomousContainerDatabase(object):
     def db_version(self, db_version):
         """
         Sets the db_version of this AutonomousContainerDatabase.
-        Oracle Database version of the Autonomous Container Database
+        Oracle Database version of the Autonomous Container Database.
 
 
         :param db_version: The db_version of this AutonomousContainerDatabase.

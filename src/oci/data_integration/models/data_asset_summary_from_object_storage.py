@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataAssetSummaryFromObjectStorage(DataAssetSummary):
     """
-    The Oracle data asset details.
+    Summary details for the Oracle Object storage data asset type.
     """
 
     def __init__(self, **kwargs):
@@ -21,7 +21,7 @@ class DataAssetSummaryFromObjectStorage(DataAssetSummary):
 
         :param model_type:
             The value to assign to the model_type property of this DataAssetSummaryFromObjectStorage.
-            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET"
+            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET"
         :type model_type: str
 
         :param key:
@@ -152,7 +152,7 @@ class DataAssetSummaryFromObjectStorage(DataAssetSummary):
     def url(self):
         """
         Gets the url of this DataAssetSummaryFromObjectStorage.
-        url
+        The Oracle Object storage URL.
 
 
         :return: The url of this DataAssetSummaryFromObjectStorage.
@@ -164,7 +164,7 @@ class DataAssetSummaryFromObjectStorage(DataAssetSummary):
     def url(self, url):
         """
         Sets the url of this DataAssetSummaryFromObjectStorage.
-        url
+        The Oracle Object storage URL.
 
 
         :param url: The url of this DataAssetSummaryFromObjectStorage.
@@ -200,7 +200,7 @@ class DataAssetSummaryFromObjectStorage(DataAssetSummary):
     def namespace(self):
         """
         Gets the namespace of this DataAssetSummaryFromObjectStorage.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        The namespace for the specified Oracle Object storage resource. You can find the namespace under Object Storage Settings in the Console.
 
 
         :return: The namespace of this DataAssetSummaryFromObjectStorage.
@@ -212,7 +212,7 @@ class DataAssetSummaryFromObjectStorage(DataAssetSummary):
     def namespace(self, namespace):
         """
         Sets the namespace of this DataAssetSummaryFromObjectStorage.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        The namespace for the specified Oracle Object storage resource. You can find the namespace under Object Storage Settings in the Console.
 
 
         :param namespace: The namespace of this DataAssetSummaryFromObjectStorage.

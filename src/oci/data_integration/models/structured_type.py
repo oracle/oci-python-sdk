@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class StructuredType(object):
     """
-    A StructuredType object represents a data type that exists in a physical data asset object such as a table column, but is more complex, for example an Oracle database OBJECT type.   It can be composed of multiple DataType objects.
+    A `StructuredType` object represents a data type that exists in a physical data asset object such as a table column, but is more complex. For example, an Oracle database `OBJECT` type. It can be composed of multiple `DataType` objects.
     """
 
     #: A constant which can be used with the dt_type property of a StructuredType.
@@ -87,7 +87,7 @@ class StructuredType(object):
     def dt_type(self):
         """
         Gets the dt_type of this StructuredType.
-        dtType
+        The data type.
 
         Allowed values for this property are: "PRIMITIVE", "STRUCTURED"
 
@@ -101,7 +101,7 @@ class StructuredType(object):
     def dt_type(self, dt_type):
         """
         Sets the dt_type of this StructuredType.
-        dtType
+        The data type.
 
 
         :param dt_type: The dt_type of this StructuredType.
@@ -119,7 +119,7 @@ class StructuredType(object):
     def type_system_name(self):
         """
         Gets the type_system_name of this StructuredType.
-        typeSystemName
+        The data type system name.
 
 
         :return: The type_system_name of this StructuredType.
@@ -131,7 +131,7 @@ class StructuredType(object):
     def type_system_name(self, type_system_name):
         """
         Sets the type_system_name of this StructuredType.
-        typeSystemName
+        The data type system name.
 
 
         :param type_system_name: The type_system_name of this StructuredType.

@@ -37,7 +37,7 @@ class DataEntitySummaryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this DataEntitySummaryCollection.
-        The array of DataEntity summaries
+        The array of data entity summaries.
 
 
         :return: The items of this DataEntitySummaryCollection.
@@ -49,7 +49,7 @@ class DataEntitySummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this DataEntitySummaryCollection.
-        The array of DataEntity summaries
+        The array of data entity summaries.
 
 
         :param items: The items of this DataEntitySummaryCollection.

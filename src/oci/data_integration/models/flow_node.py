@@ -206,7 +206,7 @@ class FlowNode(object):
     def name(self):
         """
         Gets the name of this FlowNode.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this FlowNode.
@@ -218,7 +218,7 @@ class FlowNode(object):
     def name(self, name):
         """
         Sets the name of this FlowNode.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this FlowNode.
@@ -254,7 +254,7 @@ class FlowNode(object):
     def input_links(self):
         """
         Gets the input_links of this FlowNode.
-        inputLinks
+        An array of input links.
 
 
         :return: The input_links of this FlowNode.
@@ -266,7 +266,7 @@ class FlowNode(object):
     def input_links(self, input_links):
         """
         Sets the input_links of this FlowNode.
-        inputLinks
+        An array of input links.
 
 
         :param input_links: The input_links of this FlowNode.
@@ -278,7 +278,7 @@ class FlowNode(object):
     def output_links(self):
         """
         Gets the output_links of this FlowNode.
-        outputLinks
+        An array of output links.
 
 
         :return: The output_links of this FlowNode.
@@ -290,7 +290,7 @@ class FlowNode(object):
     def output_links(self, output_links):
         """
         Sets the output_links of this FlowNode.
-        outputLinks
+        An array of output links.
 
 
         :param output_links: The output_links of this FlowNode.

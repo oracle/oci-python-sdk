@@ -151,7 +151,7 @@ class OrchestrationListingPackage(ListingPackage):
     def regions(self):
         """
         Gets the regions of this OrchestrationListingPackage.
-        List of regions in which this ListingPackage is available.
+        The regions where you can deploy this listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
 
 
         :return: The regions of this OrchestrationListingPackage.
@@ -163,7 +163,7 @@ class OrchestrationListingPackage(ListingPackage):
     def regions(self, regions):
         """
         Sets the regions of this OrchestrationListingPackage.
-        List of regions in which this ListingPackage is available.
+        The regions where you can deploy this listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
 
 
         :param regions: The regions of this OrchestrationListingPackage.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ProjectDetails(object):
     """
-    The details including name, description for the project, which is a container of folders, tasks and dataflows.
+    The details including name and description for the project, which is a container of folders, tasks, and dataflows.
     """
 
     def __init__(self, **kwargs):
@@ -172,7 +172,7 @@ class ProjectDetails(object):
     def name(self):
         """
         Gets the name of this ProjectDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this ProjectDetails.
@@ -184,7 +184,7 @@ class ProjectDetails(object):
     def name(self, name):
         """
         Sets the name of this ProjectDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this ProjectDetails.
@@ -196,7 +196,7 @@ class ProjectDetails(object):
     def description(self):
         """
         Gets the description of this ProjectDetails.
-        Detailed description for the object.
+        A user defined description for the project.
 
 
         :return: The description of this ProjectDetails.
@@ -208,7 +208,7 @@ class ProjectDetails(object):
     def description(self, description):
         """
         Sets the description of this ProjectDetails.
-        Detailed description for the object.
+        A user defined description for the project.
 
 
         :param description: The description of this ProjectDetails.
@@ -244,7 +244,7 @@ class ProjectDetails(object):
     def identifier(self):
         """
         Gets the identifier of this ProjectDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this ProjectDetails.
@@ -256,7 +256,7 @@ class ProjectDetails(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this ProjectDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this ProjectDetails.

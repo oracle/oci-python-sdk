@@ -29,21 +29,31 @@ class ConnectionSummary(object):
     #: This constant has a value of "ORACLEDB_CONNECTION"
     MODEL_TYPE_ORACLEDB_CONNECTION = "ORACLEDB_CONNECTION"
 
+    #: A constant which can be used with the model_type property of a ConnectionSummary.
+    #: This constant has a value of "MYSQL_CONNECTION"
+    MODEL_TYPE_MYSQL_CONNECTION = "MYSQL_CONNECTION"
+
+    #: A constant which can be used with the model_type property of a ConnectionSummary.
+    #: This constant has a value of "GENERIC_JDBC_CONNECTION"
+    MODEL_TYPE_GENERIC_JDBC_CONNECTION = "GENERIC_JDBC_CONNECTION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ConnectionSummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.data_integration.models.ConnectionSummaryFromJdbc`
         * :class:`~oci.data_integration.models.ConnectionSummaryFromAtp`
         * :class:`~oci.data_integration.models.ConnectionSummaryFromOracle`
         * :class:`~oci.data_integration.models.ConnectionSummaryFromAdwc`
+        * :class:`~oci.data_integration.models.ConnectionSummaryFromMySQL`
         * :class:`~oci.data_integration.models.ConnectionSummaryFromObjectStorage`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this ConnectionSummary.
-            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -157,6 +167,9 @@ class ConnectionSummary(object):
         """
         type = object_dictionary['modelType']
 
+        if type == 'GENERIC_JDBC_CONNECTION':
+            return 'ConnectionSummaryFromJdbc'
+
         if type == 'ORACLE_ATP_CONNECTION':
             return 'ConnectionSummaryFromAtp'
 
@@ -165,6 +178,9 @@ class ConnectionSummary(object):
 
         if type == 'ORACLE_ADWC_CONNECTION':
             return 'ConnectionSummaryFromAdwc'
+
+        if type == 'MYSQL_CONNECTION':
+            return 'ConnectionSummaryFromMySQL'
 
         if type == 'ORACLE_OBJECT_STORAGE_CONNECTION':
             return 'ConnectionSummaryFromObjectStorage'
@@ -177,7 +193,7 @@ class ConnectionSummary(object):
         **[Required]** Gets the model_type of this ConnectionSummary.
         The type of the connection.
 
-        Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -196,7 +212,7 @@ class ConnectionSummary(object):
         :param model_type: The model_type of this ConnectionSummary.
         :type: str
         """
-        allowed_values = ["ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION"]
+        allowed_values = ["ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type
@@ -273,7 +289,7 @@ class ConnectionSummary(object):
     def name(self):
         """
         Gets the name of this ConnectionSummary.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this ConnectionSummary.
@@ -285,7 +301,7 @@ class ConnectionSummary(object):
     def name(self, name):
         """
         Sets the name of this ConnectionSummary.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this ConnectionSummary.
@@ -297,7 +313,7 @@ class ConnectionSummary(object):
     def description(self):
         """
         Gets the description of this ConnectionSummary.
-        Detailed description for the object.
+        User-defined description for the connection.
 
 
         :return: The description of this ConnectionSummary.
@@ -309,7 +325,7 @@ class ConnectionSummary(object):
     def description(self, description):
         """
         Sets the description of this ConnectionSummary.
-        Detailed description for the object.
+        User-defined description for the connection.
 
 
         :param description: The description of this ConnectionSummary.
@@ -369,7 +385,7 @@ class ConnectionSummary(object):
     def identifier(self):
         """
         Gets the identifier of this ConnectionSummary.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this ConnectionSummary.
@@ -381,7 +397,7 @@ class ConnectionSummary(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this ConnectionSummary.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this ConnectionSummary.
@@ -481,7 +497,7 @@ class ConnectionSummary(object):
     def key_map(self):
         """
         Gets the key_map of this ConnectionSummary.
-        A map, if provided key is replaced with generated key, this structure provides mapping between user provided key and generated key
+        A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 
 
         :return: The key_map of this ConnectionSummary.
@@ -493,7 +509,7 @@ class ConnectionSummary(object):
     def key_map(self, key_map):
         """
         Sets the key_map of this ConnectionSummary.
-        A map, if provided key is replaced with generated key, this structure provides mapping between user provided key and generated key
+        A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 
 
         :param key_map: The key_map of this ConnectionSummary.

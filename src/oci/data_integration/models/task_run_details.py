@@ -189,7 +189,7 @@ class TaskRunDetails(object):
     def key(self):
         """
         Gets the key of this TaskRunDetails.
-        The key of the object.
+        The object key.
 
 
         :return: The key of this TaskRunDetails.
@@ -201,7 +201,7 @@ class TaskRunDetails(object):
     def key(self, key):
         """
         Sets the key of this TaskRunDetails.
-        The key of the object.
+        The object key.
 
 
         :param key: The key of this TaskRunDetails.
@@ -213,7 +213,7 @@ class TaskRunDetails(object):
     def model_type(self):
         """
         Gets the model_type of this TaskRunDetails.
-        The type of the object.
+        The object type.
 
 
         :return: The model_type of this TaskRunDetails.
@@ -225,7 +225,7 @@ class TaskRunDetails(object):
     def model_type(self, model_type):
         """
         Sets the model_type of this TaskRunDetails.
-        The type of the object.
+        The object type.
 
 
         :param model_type: The model_type of this TaskRunDetails.
@@ -237,7 +237,7 @@ class TaskRunDetails(object):
     def model_version(self):
         """
         Gets the model_version of this TaskRunDetails.
-        The model version of an object.
+        The object's model version.
 
 
         :return: The model_version of this TaskRunDetails.
@@ -249,7 +249,7 @@ class TaskRunDetails(object):
     def model_version(self, model_version):
         """
         Sets the model_version of this TaskRunDetails.
-        The model version of an object.
+        The object's model version.
 
 
         :param model_version: The model_version of this TaskRunDetails.
@@ -281,7 +281,7 @@ class TaskRunDetails(object):
     def name(self):
         """
         Gets the name of this TaskRunDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this TaskRunDetails.
@@ -293,7 +293,7 @@ class TaskRunDetails(object):
     def name(self, name):
         """
         Sets the name of this TaskRunDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this TaskRunDetails.
@@ -383,7 +383,7 @@ class TaskRunDetails(object):
     def start_time_millis(self):
         """
         Gets the start_time_millis of this TaskRunDetails.
-        startTimeMillis
+        The task run start time.
 
 
         :return: The start_time_millis of this TaskRunDetails.
@@ -395,7 +395,7 @@ class TaskRunDetails(object):
     def start_time_millis(self, start_time_millis):
         """
         Sets the start_time_millis of this TaskRunDetails.
-        startTimeMillis
+        The task run start time.
 
 
         :param start_time_millis: The start_time_millis of this TaskRunDetails.
@@ -407,7 +407,7 @@ class TaskRunDetails(object):
     def end_time_millis(self):
         """
         Gets the end_time_millis of this TaskRunDetails.
-        endTimeMillis
+        The task run end time.
 
 
         :return: The end_time_millis of this TaskRunDetails.
@@ -419,7 +419,7 @@ class TaskRunDetails(object):
     def end_time_millis(self, end_time_millis):
         """
         Sets the end_time_millis of this TaskRunDetails.
-        endTimeMillis
+        The task run end time.
 
 
         :param end_time_millis: The end_time_millis of this TaskRunDetails.
@@ -431,7 +431,7 @@ class TaskRunDetails(object):
     def last_updated(self):
         """
         Gets the last_updated of this TaskRunDetails.
-        lastUpdated
+        The date and time the task run was last updated.
 
 
         :return: The last_updated of this TaskRunDetails.
@@ -443,7 +443,7 @@ class TaskRunDetails(object):
     def last_updated(self, last_updated):
         """
         Sets the last_updated of this TaskRunDetails.
-        lastUpdated
+        The date and time the task run was last updated.
 
 
         :param last_updated: The last_updated of this TaskRunDetails.
@@ -557,7 +557,7 @@ class TaskRunDetails(object):
     def identifier(self):
         """
         Gets the identifier of this TaskRunDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this TaskRunDetails.
@@ -569,7 +569,7 @@ class TaskRunDetails(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this TaskRunDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this TaskRunDetails.

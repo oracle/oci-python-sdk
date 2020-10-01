@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CompositeType(BaseType):
     """
-    A CompositeType represents a type that is composed of a list of sub-types, for example an \"Address\" type.   The sub-types can be simple DataType or other CompositeType objects. Thus in general a CompositeType may represent an arbitrarily deep hierarchy of types.
+    A `CompositeType` represents a type that is composed of a list of sub-types, for example an `Address` type.   The sub-types can be simple `DataType` or other `CompositeType` objects. Typically, a `CompositeType` may represent an arbitrarily deep hierarchy of types.
     """
 
     def __init__(self, **kwargs):
@@ -123,7 +123,7 @@ class CompositeType(BaseType):
     def elements(self):
         """
         Gets the elements of this CompositeType.
-        elements
+        An array of elements.
 
 
         :return: The elements of this CompositeType.
@@ -135,7 +135,7 @@ class CompositeType(BaseType):
     def elements(self, elements):
         """
         Sets the elements of this CompositeType.
-        elements
+        An array of elements.
 
 
         :param elements: The elements of this CompositeType.

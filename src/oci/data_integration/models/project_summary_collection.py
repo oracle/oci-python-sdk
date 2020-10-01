@@ -37,7 +37,7 @@ class ProjectSummaryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ProjectSummaryCollection.
-        The array of Project summaries
+        The array of project summaries.
 
 
         :return: The items of this ProjectSummaryCollection.
@@ -49,7 +49,7 @@ class ProjectSummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this ProjectSummaryCollection.
-        The array of Project summaries
+        The array of project summaries.
 
 
         :param items: The items of this ProjectSummaryCollection.

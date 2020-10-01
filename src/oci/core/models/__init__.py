@@ -205,6 +205,7 @@ from .instance_configuration_block_volume_details import InstanceConfigurationBl
 from .instance_configuration_create_vnic_details import InstanceConfigurationCreateVnicDetails
 from .instance_configuration_create_volume_details import InstanceConfigurationCreateVolumeDetails
 from .instance_configuration_instance_details import InstanceConfigurationInstanceDetails
+from .instance_configuration_instance_options import InstanceConfigurationInstanceOptions
 from .instance_configuration_instance_source_details import InstanceConfigurationInstanceSourceDetails
 from .instance_configuration_instance_source_via_boot_volume_details import InstanceConfigurationInstanceSourceViaBootVolumeDetails
 from .instance_configuration_instance_source_via_image_details import InstanceConfigurationInstanceSourceViaImageDetails
@@ -220,6 +221,7 @@ from .instance_configuration_volume_source_from_volume_backup_details import Ins
 from .instance_configuration_volume_source_from_volume_details import InstanceConfigurationVolumeSourceFromVolumeDetails
 from .instance_console_connection import InstanceConsoleConnection
 from .instance_credentials import InstanceCredentials
+from .instance_options import InstanceOptions
 from .instance_pool import InstancePool
 from .instance_pool_instance_load_balancer_backend import InstancePoolInstanceLoadBalancerBackend
 from .instance_pool_load_balancer_attachment import InstancePoolLoadBalancerAttachment
@@ -555,6 +557,7 @@ core_type_mapping = {
     "InstanceConfigurationCreateVnicDetails": InstanceConfigurationCreateVnicDetails,
     "InstanceConfigurationCreateVolumeDetails": InstanceConfigurationCreateVolumeDetails,
     "InstanceConfigurationInstanceDetails": InstanceConfigurationInstanceDetails,
+    "InstanceConfigurationInstanceOptions": InstanceConfigurationInstanceOptions,
     "InstanceConfigurationInstanceSourceDetails": InstanceConfigurationInstanceSourceDetails,
     "InstanceConfigurationInstanceSourceViaBootVolumeDetails": InstanceConfigurationInstanceSourceViaBootVolumeDetails,
     "InstanceConfigurationInstanceSourceViaImageDetails": InstanceConfigurationInstanceSourceViaImageDetails,
@@ -570,6 +573,7 @@ core_type_mapping = {
     "InstanceConfigurationVolumeSourceFromVolumeDetails": InstanceConfigurationVolumeSourceFromVolumeDetails,
     "InstanceConsoleConnection": InstanceConsoleConnection,
     "InstanceCredentials": InstanceCredentials,
+    "InstanceOptions": InstanceOptions,
     "InstancePool": InstancePool,
     "InstancePoolInstanceLoadBalancerBackend": InstancePoolInstanceLoadBalancerBackend,
     "InstancePoolLoadBalancerAttachment": InstancePoolLoadBalancerAttachment,

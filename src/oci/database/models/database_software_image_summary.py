@@ -44,6 +44,14 @@ class DatabaseSoftwareImageSummary(object):
     LIFECYCLE_STATE_FAILED = "FAILED"
 
     #: A constant which can be used with the lifecycle_state property of a DatabaseSoftwareImageSummary.
+    #: This constant has a value of "TERMINATING"
+    LIFECYCLE_STATE_TERMINATING = "TERMINATING"
+
+    #: A constant which can be used with the lifecycle_state property of a DatabaseSoftwareImageSummary.
+    #: This constant has a value of "TERMINATED"
+    LIFECYCLE_STATE_TERMINATED = "TERMINATED"
+
+    #: A constant which can be used with the lifecycle_state property of a DatabaseSoftwareImageSummary.
     #: This constant has a value of "UPDATING"
     LIFECYCLE_STATE_UPDATING = "UPDATING"
 
@@ -86,7 +94,7 @@ class DatabaseSoftwareImageSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DatabaseSoftwareImageSummary.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "DELETING", "DELETED", "FAILED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "DELETING", "DELETED", "FAILED", "TERMINATING", "TERMINATED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -304,7 +312,7 @@ class DatabaseSoftwareImageSummary(object):
         **[Required]** Gets the lifecycle_state of this DatabaseSoftwareImageSummary.
         The current state of the database software image.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "DELETING", "DELETED", "FAILED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "DELETING", "DELETED", "FAILED", "TERMINATING", "TERMINATED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -323,7 +331,7 @@ class DatabaseSoftwareImageSummary(object):
         :param lifecycle_state: The lifecycle_state of this DatabaseSoftwareImageSummary.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "DELETING", "DELETED", "FAILED", "UPDATING"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "DELETING", "DELETED", "FAILED", "TERMINATING", "TERMINATED", "UPDATING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

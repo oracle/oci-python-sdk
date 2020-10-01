@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeCompartmentDetails(object):
     """
-    The information about change compartment action.
+    The information needed to change the workspace compartment.
     """
 
     def __init__(self, **kwargs):

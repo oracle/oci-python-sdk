@@ -757,6 +757,46 @@ def test_list_reports(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_marketplace_seattle_us_grp@oracle.com" jiraProject="MAR" opsJiraProject="CMP"
+def test_list_taxes(testing_service_client):
+    if not testing_service_client.is_api_enabled('marketplace', 'ListTaxes'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('marketplace', util.camelize('marketplace'), 'ListTaxes')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='marketplace', api_name='ListTaxes')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.marketplace.MarketplaceClient(config, service_endpoint=service_endpoint)
+            response = client.list_taxes(
+                listing_id=request.pop(util.camelize('listingId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'marketplace',
+            'ListTaxes',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'taxSummary',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_marketplace_seattle_us_grp@oracle.com" jiraProject="MAR" opsJiraProject="CMP"
 def test_update_accepted_agreement(testing_service_client):
     if not testing_service_client.is_api_enabled('marketplace', 'UpdateAcceptedAgreement'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

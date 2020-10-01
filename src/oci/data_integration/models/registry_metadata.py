@@ -34,25 +34,32 @@ class RegistryMetadata(object):
             The value to assign to the key property of this RegistryMetadata.
         :type key: str
 
+        :param is_favorite:
+            The value to assign to the is_favorite property of this RegistryMetadata.
+        :type is_favorite: bool
+
         """
         self.swagger_types = {
             'aggregator_key': 'str',
             'labels': 'list[str]',
             'registry_version': 'int',
-            'key': 'str'
+            'key': 'str',
+            'is_favorite': 'bool'
         }
 
         self.attribute_map = {
             'aggregator_key': 'aggregatorKey',
             'labels': 'labels',
             'registry_version': 'registryVersion',
-            'key': 'key'
+            'key': 'key',
+            'is_favorite': 'isFavorite'
         }
 
         self._aggregator_key = None
         self._labels = None
         self._registry_version = None
         self._key = None
+        self._is_favorite = None
 
     @property
     def aggregator_key(self):
@@ -106,7 +113,7 @@ class RegistryMetadata(object):
     def registry_version(self):
         """
         Gets the registry_version of this RegistryMetadata.
-        Registry version.
+        The registry version.
 
 
         :return: The registry_version of this RegistryMetadata.
@@ -118,7 +125,7 @@ class RegistryMetadata(object):
     def registry_version(self, registry_version):
         """
         Sets the registry_version of this RegistryMetadata.
-        Registry version.
+        The registry version.
 
 
         :param registry_version: The registry_version of this RegistryMetadata.
@@ -149,6 +156,30 @@ class RegistryMetadata(object):
         :type: str
         """
         self._key = key
+
+    @property
+    def is_favorite(self):
+        """
+        Gets the is_favorite of this RegistryMetadata.
+        Specifies whether this object is a favorite or not.
+
+
+        :return: The is_favorite of this RegistryMetadata.
+        :rtype: bool
+        """
+        return self._is_favorite
+
+    @is_favorite.setter
+    def is_favorite(self, is_favorite):
+        """
+        Sets the is_favorite of this RegistryMetadata.
+        Specifies whether this object is a favorite or not.
+
+
+        :param is_favorite: The is_favorite of this RegistryMetadata.
+        :type: bool
+        """
+        self._is_favorite = is_favorite
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExadataInfrastructureSummary(object):
     """
-    Details of the Exadata infrastructure.
+    Details of the Exadata Cloud@Customer infrastructure.
     """
 
     #: A constant which can be used with the lifecycle_state property of a ExadataInfrastructureSummary.
@@ -361,7 +361,7 @@ class ExadataInfrastructureSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this ExadataInfrastructureSummary.
-        The user-friendly name for the Exadata infrastructure. The name does not need to be unique.
+        The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
 
 
         :return: The display_name of this ExadataInfrastructureSummary.
@@ -373,7 +373,7 @@ class ExadataInfrastructureSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ExadataInfrastructureSummary.
-        The user-friendly name for the Exadata infrastructure. The name does not need to be unique.
+        The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
 
 
         :param display_name: The display_name of this ExadataInfrastructureSummary.
@@ -893,7 +893,7 @@ class ExadataInfrastructureSummary(object):
     def csi_number(self):
         """
         Gets the csi_number of this ExadataInfrastructureSummary.
-        The CSI Number of the Exadata Infrastructure.
+        The CSI Number of the Exadata infrastructure.
 
 
         :return: The csi_number of this ExadataInfrastructureSummary.
@@ -905,7 +905,7 @@ class ExadataInfrastructureSummary(object):
     def csi_number(self, csi_number):
         """
         Sets the csi_number of this ExadataInfrastructureSummary.
-        The CSI Number of the Exadata Infrastructure.
+        The CSI Number of the Exadata infrastructure.
 
 
         :param csi_number: The csi_number of this ExadataInfrastructureSummary.
@@ -917,7 +917,7 @@ class ExadataInfrastructureSummary(object):
     def contacts(self):
         """
         Gets the contacts of this ExadataInfrastructureSummary.
-        The list of contacts for the Exadata Infrastructure.
+        The list of contacts for the Exadata infrastructure.
 
 
         :return: The contacts of this ExadataInfrastructureSummary.
@@ -929,7 +929,7 @@ class ExadataInfrastructureSummary(object):
     def contacts(self, contacts):
         """
         Sets the contacts of this ExadataInfrastructureSummary.
-        The list of contacts for the Exadata Infrastructure.
+        The list of contacts for the Exadata infrastructure.
 
 
         :param contacts: The contacts of this ExadataInfrastructureSummary.

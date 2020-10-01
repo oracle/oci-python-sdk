@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConnectionFromAtpDetails(ConnectionDetails):
     """
-    The ATP connection details.
+    The connection details for an Autonomous Transaction Processing data asset.
     """
 
     def __init__(self, **kwargs):
@@ -21,7 +21,7 @@ class ConnectionFromAtpDetails(ConnectionDetails):
 
         :param model_type:
             The value to assign to the model_type property of this ConnectionFromAtpDetails.
-            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION"
+            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION"
         :type model_type: str
 
         :param key:

@@ -17,6 +17,10 @@ class AbstractReadAttribute(object):
     #: This constant has a value of "ORACLEREADATTRIBUTE"
     MODEL_TYPE_ORACLEREADATTRIBUTE = "ORACLEREADATTRIBUTE"
 
+    #: A constant which can be used with the model_type property of a AbstractReadAttribute.
+    #: This constant has a value of "ORACLE_READ_ATTRIBUTE"
+    MODEL_TYPE_ORACLE_READ_ATTRIBUTE = "ORACLE_READ_ATTRIBUTE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AbstractReadAttribute object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -28,7 +32,7 @@ class AbstractReadAttribute(object):
 
         :param model_type:
             The value to assign to the model_type property of this AbstractReadAttribute.
-            Allowed values for this property are: "ORACLEREADATTRIBUTE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLEREADATTRIBUTE", "ORACLE_READ_ATTRIBUTE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -62,7 +66,7 @@ class AbstractReadAttribute(object):
         **[Required]** Gets the model_type of this AbstractReadAttribute.
         The type of the abstract read attribute.
 
-        Allowed values for this property are: "ORACLEREADATTRIBUTE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLEREADATTRIBUTE", "ORACLE_READ_ATTRIBUTE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -81,7 +85,7 @@ class AbstractReadAttribute(object):
         :param model_type: The model_type of this AbstractReadAttribute.
         :type: str
         """
-        allowed_values = ["ORACLEREADATTRIBUTE"]
+        allowed_values = ["ORACLEREADATTRIBUTE", "ORACLE_READ_ATTRIBUTE"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BaseType(object):
     """
-    Base type for the type system
+    Base type for the type system.
     """
 
     #: A constant which can be used with the model_type property of a BaseType.
@@ -240,7 +240,7 @@ class BaseType(object):
     def name(self):
         """
         Gets the name of this BaseType.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this BaseType.
@@ -252,7 +252,7 @@ class BaseType(object):
     def name(self, name):
         """
         Sets the name of this BaseType.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this BaseType.
@@ -288,7 +288,7 @@ class BaseType(object):
     def description(self):
         """
         Gets the description of this BaseType.
-        Detailed description for the object.
+        A user defined description for the object.
 
 
         :return: The description of this BaseType.
@@ -300,7 +300,7 @@ class BaseType(object):
     def description(self, description):
         """
         Sets the description of this BaseType.
-        Detailed description for the object.
+        A user defined description for the object.
 
 
         :param description: The description of this BaseType.

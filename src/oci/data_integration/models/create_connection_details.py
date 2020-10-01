@@ -29,11 +29,21 @@ class CreateConnectionDetails(object):
     #: This constant has a value of "ORACLEDB_CONNECTION"
     MODEL_TYPE_ORACLEDB_CONNECTION = "ORACLEDB_CONNECTION"
 
+    #: A constant which can be used with the model_type property of a CreateConnectionDetails.
+    #: This constant has a value of "MYSQL_CONNECTION"
+    MODEL_TYPE_MYSQL_CONNECTION = "MYSQL_CONNECTION"
+
+    #: A constant which can be used with the model_type property of a CreateConnectionDetails.
+    #: This constant has a value of "GENERIC_JDBC_CONNECTION"
+    MODEL_TYPE_GENERIC_JDBC_CONNECTION = "GENERIC_JDBC_CONNECTION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateConnectionDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.data_integration.models.CreateConnectionFromMySQL`
+        * :class:`~oci.data_integration.models.CreateConnectionFromJdbc`
         * :class:`~oci.data_integration.models.CreateConnectionFromAtp`
         * :class:`~oci.data_integration.models.CreateConnectionFromAdwc`
         * :class:`~oci.data_integration.models.CreateConnectionFromOracle`
@@ -43,7 +53,7 @@ class CreateConnectionDetails(object):
 
         :param model_type:
             The value to assign to the model_type property of this CreateConnectionDetails.
-            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION"
+            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION"
         :type model_type: str
 
         :param key:
@@ -128,6 +138,12 @@ class CreateConnectionDetails(object):
         """
         type = object_dictionary['modelType']
 
+        if type == 'MYSQL_CONNECTION':
+            return 'CreateConnectionFromMySQL'
+
+        if type == 'GENERIC_JDBC_CONNECTION':
+            return 'CreateConnectionFromJdbc'
+
         if type == 'ORACLE_ATP_CONNECTION':
             return 'CreateConnectionFromAtp'
 
@@ -148,7 +164,7 @@ class CreateConnectionDetails(object):
         Gets the model_type of this CreateConnectionDetails.
         The type of the connection.
 
-        Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION"
+        Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION"
 
 
         :return: The model_type of this CreateConnectionDetails.
@@ -166,7 +182,7 @@ class CreateConnectionDetails(object):
         :param model_type: The model_type of this CreateConnectionDetails.
         :type: str
         """
-        allowed_values = ["ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION"]
+        allowed_values = ["ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             raise ValueError(
                 "Invalid value for `model_type`, must be None or one of {0}"
@@ -246,7 +262,7 @@ class CreateConnectionDetails(object):
     def name(self):
         """
         **[Required]** Gets the name of this CreateConnectionDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this CreateConnectionDetails.
@@ -258,7 +274,7 @@ class CreateConnectionDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateConnectionDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this CreateConnectionDetails.
@@ -270,7 +286,7 @@ class CreateConnectionDetails(object):
     def description(self):
         """
         Gets the description of this CreateConnectionDetails.
-        Detailed description for the object.
+        User-defined description for the connection.
 
 
         :return: The description of this CreateConnectionDetails.
@@ -282,7 +298,7 @@ class CreateConnectionDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateConnectionDetails.
-        Detailed description for the object.
+        User-defined description for the connection.
 
 
         :param description: The description of this CreateConnectionDetails.
@@ -318,7 +334,7 @@ class CreateConnectionDetails(object):
     def identifier(self):
         """
         **[Required]** Gets the identifier of this CreateConnectionDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this CreateConnectionDetails.
@@ -330,7 +346,7 @@ class CreateConnectionDetails(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this CreateConnectionDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this CreateConnectionDetails.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateConnectionFromAdwc(CreateConnectionDetails):
     """
-    The ADWC connection details object.
+    The details to create an Autonomous Data Warehouse data asset connection.
     """
 
     def __init__(self, **kwargs):
@@ -21,7 +21,7 @@ class CreateConnectionFromAdwc(CreateConnectionDetails):
 
         :param model_type:
             The value to assign to the model_type property of this CreateConnectionFromAdwc.
-            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION"
+            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION"
         :type model_type: str
 
         :param key:

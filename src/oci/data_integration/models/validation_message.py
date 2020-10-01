@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ValidationMessage(object):
     """
-    The level, message key and validation message.
+    The level, message key, and validation message.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class ValidationMessage(object):
     def level(self):
         """
         Gets the level of this ValidationMessage.
-        Total number of validation messages
+        The total number of validation messages.
 
 
         :return: The level of this ValidationMessage.
@@ -63,7 +63,7 @@ class ValidationMessage(object):
     def level(self, level):
         """
         Sets the level of this ValidationMessage.
-        Total number of validation messages
+        The total number of validation messages.
 
 
         :param level: The level of this ValidationMessage.
@@ -75,7 +75,7 @@ class ValidationMessage(object):
     def message_key(self):
         """
         Gets the message_key of this ValidationMessage.
-        The key.
+        The validation message key.
 
 
         :return: The message_key of this ValidationMessage.
@@ -87,7 +87,7 @@ class ValidationMessage(object):
     def message_key(self, message_key):
         """
         Sets the message_key of this ValidationMessage.
-        The key.
+        The validation message key.
 
 
         :param message_key: The message_key of this ValidationMessage.
@@ -99,7 +99,7 @@ class ValidationMessage(object):
     def validation_message(self):
         """
         Gets the validation_message of this ValidationMessage.
-        The message itself.
+        The validation message.
 
 
         :return: The validation_message of this ValidationMessage.
@@ -111,7 +111,7 @@ class ValidationMessage(object):
     def validation_message(self, validation_message):
         """
         Sets the validation_message of this ValidationMessage.
-        The message itself.
+        The validation message.
 
 
         :param validation_message: The validation_message of this ValidationMessage.

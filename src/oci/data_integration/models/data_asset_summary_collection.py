@@ -37,7 +37,7 @@ class DataAssetSummaryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this DataAssetSummaryCollection.
-        The array of DataAsset summaries
+        The array of data asset summaries.
 
 
         :return: The items of this DataAssetSummaryCollection.
@@ -49,7 +49,7 @@ class DataAssetSummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this DataAssetSummaryCollection.
-        The array of DataAsset summaries
+        The array of data asset summaries.
 
 
         :param items: The items of this DataAssetSummaryCollection.

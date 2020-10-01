@@ -165,7 +165,7 @@ class RuleTypeConfig(DynamicTypeHandler):
     def scope(self):
         """
         Gets the scope of this RuleTypeConfig.
-        Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a TypedObject or a full TypedObject definition.
+        Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a `TypedObject` or a full `TypedObject` definition.
 
 
         :return: The scope of this RuleTypeConfig.
@@ -177,7 +177,7 @@ class RuleTypeConfig(DynamicTypeHandler):
     def scope(self, scope):
         """
         Sets the scope of this RuleTypeConfig.
-        Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a TypedObject or a full TypedObject definition.
+        Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a `TypedObject` or a full `TypedObject` definition.
 
 
         :param scope: The scope of this RuleTypeConfig.
@@ -189,7 +189,7 @@ class RuleTypeConfig(DynamicTypeHandler):
     def is_order_by_rule(self):
         """
         Gets the is_order_by_rule of this RuleTypeConfig.
-        orderByRule
+        Specifies whether it is ordered by rule.
 
 
         :return: The is_order_by_rule of this RuleTypeConfig.
@@ -201,7 +201,7 @@ class RuleTypeConfig(DynamicTypeHandler):
     def is_order_by_rule(self, is_order_by_rule):
         """
         Sets the is_order_by_rule of this RuleTypeConfig.
-        orderByRule
+        Specifies whether it is ordered by rule.
 
 
         :param is_order_by_rule: The is_order_by_rule of this RuleTypeConfig.
@@ -213,7 +213,7 @@ class RuleTypeConfig(DynamicTypeHandler):
     def projection_rules(self):
         """
         Gets the projection_rules of this RuleTypeConfig.
-        projectionRules
+        The projection rules.
 
 
         :return: The projection_rules of this RuleTypeConfig.
@@ -225,7 +225,7 @@ class RuleTypeConfig(DynamicTypeHandler):
     def projection_rules(self, projection_rules):
         """
         Sets the projection_rules of this RuleTypeConfig.
-        projectionRules
+        The projection rules.
 
 
         :param projection_rules: The projection_rules of this RuleTypeConfig.

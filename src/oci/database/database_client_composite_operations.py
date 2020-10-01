@@ -279,7 +279,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param ChangeCompartmentDetails change_compartment_details: (required)
-            Request to move Autonomous Exadata Infrastructure to a different compartment
+            Request to move an Autonomous Exadata Infrastructure resource to a different compartment.
 
         :param str autonomous_exadata_infrastructure_id: (required)
             The Autonomous Exadata Infrastructure  `OCID`__.
@@ -359,7 +359,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param ChangeCompartmentDetails change_compartment_details: (required)
-            Request to move backup destination to a different compartment
+            Request to move backup destination to a different compartment.
 
         :param str backup_destination_id: (required)
             The `OCID`__ of the backup destination.
@@ -378,6 +378,86 @@ class DatabaseClientCompositeOperations(object):
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
         operation_result = self.client.change_backup_destination_compartment(change_compartment_details, backup_destination_id, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        work_request_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def change_cloud_exadata_infrastructure_compartment_and_wait_for_work_request(self, change_cloud_exadata_infrastructure_compartment_details, cloud_exadata_infrastructure_id, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.change_cloud_exadata_infrastructure_compartment` and waits for the oci.work_requests.models.WorkRequest
+        to enter the given state(s).
+
+        :param ChangeCloudExadataInfrastructureCompartmentDetails change_cloud_exadata_infrastructure_compartment_details: (required)
+            Request to move cloud Exadata infrastructure resource to a different compartment.
+
+        :param str cloud_exadata_infrastructure_id: (required)
+            The cloud Exadata infrastructure `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.change_cloud_exadata_infrastructure_compartment`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.change_cloud_exadata_infrastructure_compartment(change_cloud_exadata_infrastructure_compartment_details, cloud_exadata_infrastructure_id, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        work_request_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def change_cloud_vm_cluster_compartment_and_wait_for_work_request(self, change_cloud_vm_cluster_compartment_details, cloud_vm_cluster_id, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.change_cloud_vm_cluster_compartment` and waits for the oci.work_requests.models.WorkRequest
+        to enter the given state(s).
+
+        :param ChangeCloudVmClusterCompartmentDetails change_cloud_vm_cluster_compartment_details: (required)
+            Request to move cloud VM cluster to a different compartment
+
+        :param str cloud_vm_cluster_id: (required)
+            The cloud VM cluster `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.change_cloud_vm_cluster_compartment`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.change_cloud_vm_cluster_compartment(change_cloud_vm_cluster_compartment_details, cloud_vm_cluster_id, **operation_kwargs)
         work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
         lowered_work_request_states = [w.lower() for w in work_request_states]
         work_request_id = operation_result.headers['opc-work-request-id']
@@ -439,7 +519,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param ChangeCompartmentDetails change_compartment_details: (required)
-            Request to move Db System to a different compartment
+            Request to move the DB system to a different compartment.
 
         :param str db_system_id: (required)
             The DB system `OCID`__.
@@ -519,7 +599,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param ChangeVmClusterCompartmentDetails change_vm_cluster_compartment_details: (required)
-            Request to move VM cluster to a different compartment
+            Request to move the Exadata Cloud@Customer VM cluster to a different compartment.
 
         :param str vm_cluster_id: (required)
             The VM cluster `OCID`__.
@@ -1072,6 +1152,152 @@ class DatabaseClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def create_cloud_exadata_infrastructure_and_wait_for_work_request(self, create_cloud_exadata_infrastructure_details, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.create_cloud_exadata_infrastructure` and waits for the oci.work_requests.models.WorkRequest
+        to enter the given state(s).
+
+        :param CreateCloudExadataInfrastructureDetails create_cloud_exadata_infrastructure_details: (required)
+            Request to create cloud Exadata infrastructure.
+
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.create_cloud_exadata_infrastructure`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_cloud_exadata_infrastructure(create_cloud_exadata_infrastructure_details, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        work_request_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def create_cloud_exadata_infrastructure_and_wait_for_state(self, create_cloud_exadata_infrastructure_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.create_cloud_exadata_infrastructure` and waits for the :py:class:`~oci.database.models.CloudExadataInfrastructure` acted upon
+        to enter the given state(s).
+
+        :param CreateCloudExadataInfrastructureDetails create_cloud_exadata_infrastructure_details: (required)
+            Request to create cloud Exadata infrastructure.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.CloudExadataInfrastructure.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.create_cloud_exadata_infrastructure`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_cloud_exadata_infrastructure(create_cloud_exadata_infrastructure_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_cloud_exadata_infrastructure(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def create_cloud_vm_cluster_and_wait_for_work_request(self, create_cloud_vm_cluster_details, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.create_cloud_vm_cluster` and waits for the oci.work_requests.models.WorkRequest
+        to enter the given state(s).
+
+        :param CreateCloudVmClusterDetails create_cloud_vm_cluster_details: (required)
+            Request to create a cloud VM cluster.
+
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.create_cloud_vm_cluster`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_cloud_vm_cluster(create_cloud_vm_cluster_details, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        work_request_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def create_cloud_vm_cluster_and_wait_for_state(self, create_cloud_vm_cluster_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.create_cloud_vm_cluster` and waits for the :py:class:`~oci.database.models.CloudVmCluster` acted upon
+        to enter the given state(s).
+
+        :param CreateCloudVmClusterDetails create_cloud_vm_cluster_details: (required)
+            Request to create a cloud VM cluster.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.CloudVmCluster.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.create_cloud_vm_cluster`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_cloud_vm_cluster(create_cloud_vm_cluster_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_cloud_vm_cluster(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def create_console_connection_and_wait_for_state(self, create_console_connection_details, db_node_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.database.DatabaseClient.create_console_connection` and waits for the :py:class:`~oci.database.models.ConsoleConnection` acted upon
@@ -1423,7 +1649,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param CreateExadataInfrastructureDetails create_exadata_infrastructure_details: (required)
-            Request to create Exadata infrastructure.
+            Request to create Exadata Cloud@Customer infrastructure.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1458,7 +1684,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param CreateExadataInfrastructureDetails create_exadata_infrastructure_details: (required)
-            Request to create Exadata infrastructure.
+            Request to create Exadata Cloud@Customer infrastructure.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.ExadataInfrastructure.lifecycle_state`
@@ -1531,7 +1757,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param CreateVmClusterDetails create_vm_cluster_details: (required)
-            Request to create a VM cluster.
+            Request to create an Exadata Cloud@Customer VM cluster.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1566,7 +1792,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param CreateVmClusterDetails create_vm_cluster_details: (required)
-            Request to create a VM cluster.
+            Request to create an Exadata Cloud@Customer VM cluster.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.VmCluster.lifecycle_state`
@@ -1609,7 +1835,7 @@ class DatabaseClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param VmClusterNetworkDetails vm_cluster_network_details: (required)
-            Request to create the VM cluster network.
+            Request to create the Cloud@Customer VM cluster network.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1649,7 +1875,7 @@ class DatabaseClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param VmClusterNetworkDetails vm_cluster_network_details: (required)
-            Request to create the VM cluster network.
+            Request to create the Cloud@Customer VM cluster network.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.VmClusterNetwork.lifecycle_state`
@@ -1974,6 +2200,80 @@ class DatabaseClientCompositeOperations(object):
             result_to_return = waiter_result
 
             return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def delete_cloud_exadata_infrastructure_and_wait_for_work_request(self, cloud_exadata_infrastructure_id, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.delete_cloud_exadata_infrastructure` and waits for the oci.work_requests.models.WorkRequest
+        to enter the given state(s).
+
+        :param str cloud_exadata_infrastructure_id: (required)
+            The cloud Exadata infrastructure `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.delete_cloud_exadata_infrastructure`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.delete_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        work_request_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def delete_cloud_vm_cluster_and_wait_for_work_request(self, cloud_vm_cluster_id, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.delete_cloud_vm_cluster` and waits for the oci.work_requests.models.WorkRequest
+        to enter the given state(s).
+
+        :param str cloud_vm_cluster_id: (required)
+            The cloud VM cluster `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.delete_cloud_vm_cluster`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.delete_cloud_vm_cluster(cloud_vm_cluster_id, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        work_request_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -2417,7 +2717,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param LaunchAutonomousExadataInfrastructureDetails launch_autonomous_exadata_infrastructure_details: (required)
-            Request to launch a Autonomous Exadata Infrastructure.
+            Request to create an Autonomous Exadata Infrastructure resource.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -2452,7 +2752,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param LaunchAutonomousExadataInfrastructureDetails launch_autonomous_exadata_infrastructure_details: (required)
-            Request to launch a Autonomous Exadata Infrastructure.
+            Request to create an Autonomous Exadata Infrastructure resource.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousExadataInfrastructure.lifecycle_state`
@@ -2554,6 +2854,43 @@ class DatabaseClientCompositeOperations(object):
             result_to_return = waiter_result
 
             return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def migrate_exadata_db_system_resource_model_and_wait_for_work_request(self, db_system_id, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.migrate_exadata_db_system_resource_model` and waits for the oci.work_requests.models.WorkRequest
+        to enter the given state(s).
+
+        :param str db_system_id: (required)
+            The DB system `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.migrate_exadata_db_system_resource_model`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.migrate_exadata_db_system_resource_model(db_system_id, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        work_request_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
@@ -3041,6 +3378,160 @@ class DatabaseClientCompositeOperations(object):
             waiter_result = oci.wait_until(
                 self.client,
                 self.client.get_database(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def rotate_autonomous_container_database_encryption_key_and_wait_for_work_request(self, autonomous_container_database_id, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.rotate_autonomous_container_database_encryption_key` and waits for the oci.work_requests.models.WorkRequest
+        to enter the given state(s).
+
+        :param str autonomous_container_database_id: (required)
+            The Autonomous Container Database `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.rotate_autonomous_container_database_encryption_key`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.rotate_autonomous_container_database_encryption_key(autonomous_container_database_id, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        work_request_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def rotate_autonomous_container_database_encryption_key_and_wait_for_state(self, autonomous_container_database_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.rotate_autonomous_container_database_encryption_key` and waits for the :py:class:`~oci.database.models.AutonomousContainerDatabase` acted upon
+        to enter the given state(s).
+
+        :param str autonomous_container_database_id: (required)
+            The Autonomous Container Database `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousContainerDatabase.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.rotate_autonomous_container_database_encryption_key`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.rotate_autonomous_container_database_encryption_key(autonomous_container_database_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_autonomous_container_database(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def rotate_autonomous_database_encryption_key_and_wait_for_work_request(self, autonomous_database_id, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.rotate_autonomous_database_encryption_key` and waits for the oci.work_requests.models.WorkRequest
+        to enter the given state(s).
+
+        :param str autonomous_database_id: (required)
+            The database `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.rotate_autonomous_database_encryption_key`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.rotate_autonomous_database_encryption_key(autonomous_database_id, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        work_request_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def rotate_autonomous_database_encryption_key_and_wait_for_state(self, autonomous_database_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.rotate_autonomous_database_encryption_key` and waits for the :py:class:`~oci.database.models.AutonomousDatabase` acted upon
+        to enter the given state(s).
+
+        :param str autonomous_database_id: (required)
+            The database `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousDatabase.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.rotate_autonomous_database_encryption_key`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.rotate_autonomous_database_encryption_key(autonomous_database_id, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_autonomous_database(wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -4059,6 +4550,212 @@ class DatabaseClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def update_cloud_exadata_infrastructure_and_wait_for_work_request(self, cloud_exadata_infrastructure_id, update_cloud_exadata_infrastructure_details, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.update_cloud_exadata_infrastructure` and waits for the oci.work_requests.models.WorkRequest
+        to enter the given state(s).
+
+        :param str cloud_exadata_infrastructure_id: (required)
+            The cloud Exadata infrastructure `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param UpdateCloudExadataInfrastructureDetails update_cloud_exadata_infrastructure_details: (required)
+            Request to update the properties of an cloud Exadata infrastructure resource.
+
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.update_cloud_exadata_infrastructure`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id, update_cloud_exadata_infrastructure_details, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        work_request_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_cloud_exadata_infrastructure_and_wait_for_state(self, cloud_exadata_infrastructure_id, update_cloud_exadata_infrastructure_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.update_cloud_exadata_infrastructure` and waits for the :py:class:`~oci.database.models.CloudExadataInfrastructure` acted upon
+        to enter the given state(s).
+
+        :param str cloud_exadata_infrastructure_id: (required)
+            The cloud Exadata infrastructure `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param UpdateCloudExadataInfrastructureDetails update_cloud_exadata_infrastructure_details: (required)
+            Request to update the properties of an cloud Exadata infrastructure resource.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.CloudExadataInfrastructure.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.update_cloud_exadata_infrastructure`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id, update_cloud_exadata_infrastructure_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_cloud_exadata_infrastructure(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_cloud_vm_cluster_and_wait_for_work_request(self, cloud_vm_cluster_id, update_cloud_vm_cluster_details, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.update_cloud_vm_cluster` and waits for the oci.work_requests.models.WorkRequest
+        to enter the given state(s).
+
+        :param str cloud_vm_cluster_id: (required)
+            The cloud VM cluster `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param UpdateCloudVmClusterDetails update_cloud_vm_cluster_details: (required)
+            Request to update the attributes of a cloud VM cluster.
+
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.update_cloud_vm_cluster`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_cloud_vm_cluster(cloud_vm_cluster_id, update_cloud_vm_cluster_details, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        work_request_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_cloud_vm_cluster_and_wait_for_state(self, cloud_vm_cluster_id, update_cloud_vm_cluster_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.update_cloud_vm_cluster` and waits for the :py:class:`~oci.database.models.CloudVmCluster` acted upon
+        to enter the given state(s).
+
+        :param str cloud_vm_cluster_id: (required)
+            The cloud VM cluster `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param UpdateCloudVmClusterDetails update_cloud_vm_cluster_details: (required)
+            Request to update the attributes of a cloud VM cluster.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.CloudVmCluster.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.update_cloud_vm_cluster`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_cloud_vm_cluster(cloud_vm_cluster_id, update_cloud_vm_cluster_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_cloud_vm_cluster(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_cloud_vm_cluster_iorm_config_and_wait_for_work_request(self, cloud_vm_cluster_id, cloud_vm_cluster_iorm_config_update_details, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.database.DatabaseClient.update_cloud_vm_cluster_iorm_config` and waits for the oci.work_requests.models.WorkRequest
+        to enter the given state(s).
+
+        :param str cloud_vm_cluster_id: (required)
+            The cloud VM cluster `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param ExadataIormConfigUpdateDetails cloud_vm_cluster_iorm_config_update_details: (required)
+            Request to perform database update.
+
+        :param list[str] work_request_states: (optional)
+            An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
+            Default values are termination states: [STATUS_SUCCEEDED, STATUS_FAILED, STATUS_CANCELED]
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.database.DatabaseClient.update_cloud_vm_cluster_iorm_config`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_cloud_vm_cluster_iorm_config(cloud_vm_cluster_id, cloud_vm_cluster_iorm_config_update_details, **operation_kwargs)
+        work_request_states = work_request_states if work_request_states else oci.waiter._WORK_REQUEST_TERMINATION_STATES
+        lowered_work_request_states = [w.lower() for w in work_request_states]
+        work_request_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self._work_request_client,
+                self._work_request_client.get_work_request(work_request_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_work_request_states,
+                **waiter_kwargs
+            )
+            return waiter_result
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def update_database_and_wait_for_work_request(self, database_id, update_database_details, work_request_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.database.DatabaseClient.update_database` and waits for the oci.work_requests.models.WorkRequest
@@ -4196,7 +4893,7 @@ class DatabaseClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateDbHomeDetails update_db_home_details: (required)
-            Request to update the properties of a DB Home.
+            Request to update the properties of a Database Home.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -4236,7 +4933,7 @@ class DatabaseClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateDbHomeDetails update_db_home_details: (required)
-            Request to update the properties of a DB Home.
+            Request to update the properties of a Database Home.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.DbHome.lifecycle_state`
@@ -4362,7 +5059,7 @@ class DatabaseClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateExadataInfrastructureDetails update_exadata_infrastructure_details: (required)
-            Request to update the properties of an Exadata infrastructure
+            Request to update the properties of an Exadata Cloud@Customer infrastructure.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -4402,7 +5099,7 @@ class DatabaseClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param UpdateExadataInfrastructureDetails update_exadata_infrastructure_details: (required)
-            Request to update the properties of an Exadata infrastructure
+            Request to update the properties of an Exadata Cloud@Customer infrastructure.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.ExadataInfrastructure.lifecycle_state`

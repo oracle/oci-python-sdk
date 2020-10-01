@@ -29,13 +29,23 @@ class DataAssetSummary(object):
     #: This constant has a value of "ORACLE_ADWC_DATA_ASSET"
     MODEL_TYPE_ORACLE_ADWC_DATA_ASSET = "ORACLE_ADWC_DATA_ASSET"
 
+    #: A constant which can be used with the model_type property of a DataAssetSummary.
+    #: This constant has a value of "MYSQL_DATA_ASSET"
+    MODEL_TYPE_MYSQL_DATA_ASSET = "MYSQL_DATA_ASSET"
+
+    #: A constant which can be used with the model_type property of a DataAssetSummary.
+    #: This constant has a value of "GENERIC_JDBC_DATA_ASSET"
+    MODEL_TYPE_GENERIC_JDBC_DATA_ASSET = "GENERIC_JDBC_DATA_ASSET"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DataAssetSummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.data_integration.models.DataAssetSummaryFromMySQL`
         * :class:`~oci.data_integration.models.DataAssetSummaryFromAtp`
         * :class:`~oci.data_integration.models.DataAssetSummaryFromAdwc`
+        * :class:`~oci.data_integration.models.DataAssetSummaryFromJdbc`
         * :class:`~oci.data_integration.models.DataAssetSummaryFromObjectStorage`
         * :class:`~oci.data_integration.models.DataAssetSummaryFromOracle`
 
@@ -43,7 +53,7 @@ class DataAssetSummary(object):
 
         :param model_type:
             The value to assign to the model_type property of this DataAssetSummary.
-            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -150,11 +160,17 @@ class DataAssetSummary(object):
         """
         type = object_dictionary['modelType']
 
+        if type == 'MYSQL_DATA_ASSET':
+            return 'DataAssetSummaryFromMySQL'
+
         if type == 'ORACLE_ATP_DATA_ASSET':
             return 'DataAssetSummaryFromAtp'
 
         if type == 'ORACLE_ADWC_DATA_ASSET':
             return 'DataAssetSummaryFromAdwc'
+
+        if type == 'GENERIC_JDBC_DATA_ASSET':
+            return 'DataAssetSummaryFromJdbc'
 
         if type == 'ORACLE_OBJECT_STORAGE_DATA_ASSET':
             return 'DataAssetSummaryFromObjectStorage'
@@ -170,7 +186,7 @@ class DataAssetSummary(object):
         Gets the model_type of this DataAssetSummary.
         The type of the data asset.
 
-        Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -189,7 +205,7 @@ class DataAssetSummary(object):
         :param model_type: The model_type of this DataAssetSummary.
         :type: str
         """
-        allowed_values = ["ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET"]
+        allowed_values = ["ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type
@@ -246,7 +262,7 @@ class DataAssetSummary(object):
     def name(self):
         """
         Gets the name of this DataAssetSummary.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this DataAssetSummary.
@@ -258,7 +274,7 @@ class DataAssetSummary(object):
     def name(self, name):
         """
         Sets the name of this DataAssetSummary.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this DataAssetSummary.
@@ -270,7 +286,7 @@ class DataAssetSummary(object):
     def description(self):
         """
         Gets the description of this DataAssetSummary.
-        Detailed description for the object.
+        The user-defined description of the data asset.
 
 
         :return: The description of this DataAssetSummary.
@@ -282,7 +298,7 @@ class DataAssetSummary(object):
     def description(self, description):
         """
         Sets the description of this DataAssetSummary.
-        Detailed description for the object.
+        The user-defined description of the data asset.
 
 
         :param description: The description of this DataAssetSummary.
@@ -318,7 +334,7 @@ class DataAssetSummary(object):
     def identifier(self):
         """
         Gets the identifier of this DataAssetSummary.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this DataAssetSummary.
@@ -330,7 +346,7 @@ class DataAssetSummary(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this DataAssetSummary.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this DataAssetSummary.
@@ -342,7 +358,7 @@ class DataAssetSummary(object):
     def external_key(self):
         """
         Gets the external_key of this DataAssetSummary.
-        The external key for the object
+        The external key for the object.
 
 
         :return: The external_key of this DataAssetSummary.
@@ -354,7 +370,7 @@ class DataAssetSummary(object):
     def external_key(self, external_key):
         """
         Sets the external_key of this DataAssetSummary.
-        The external key for the object
+        The external key for the object.
 
 
         :param external_key: The external_key of this DataAssetSummary.
@@ -366,7 +382,7 @@ class DataAssetSummary(object):
     def asset_properties(self):
         """
         Gets the asset_properties of this DataAssetSummary.
-        assetProperties
+        Additional properties for the data asset.
 
 
         :return: The asset_properties of this DataAssetSummary.
@@ -378,7 +394,7 @@ class DataAssetSummary(object):
     def asset_properties(self, asset_properties):
         """
         Sets the asset_properties of this DataAssetSummary.
-        assetProperties
+        Additional properties for the data asset.
 
 
         :param asset_properties: The asset_properties of this DataAssetSummary.

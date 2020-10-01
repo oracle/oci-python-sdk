@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class NameListRule(ProjectionRule):
     """
-    The name list rule which defines how fields are projected. For example this may be all fields begining with STR.
+    The name list rule which defines how fields are projected. For example, this may be all fields begining with STR.
     """
 
     #: A constant which can be used with the matching_strategy property of a NameListRule.
@@ -163,7 +163,7 @@ class NameListRule(ProjectionRule):
     def is_skip_remaining_rules_on_match(self):
         """
         Gets the is_skip_remaining_rules_on_match of this NameListRule.
-        skipRemainingRulesOnMatch
+        Specifies whether to skip remaining rules when a match is found.
 
 
         :return: The is_skip_remaining_rules_on_match of this NameListRule.
@@ -175,7 +175,7 @@ class NameListRule(ProjectionRule):
     def is_skip_remaining_rules_on_match(self, is_skip_remaining_rules_on_match):
         """
         Sets the is_skip_remaining_rules_on_match of this NameListRule.
-        skipRemainingRulesOnMatch
+        Specifies whether to skip remaining rules when a match is found.
 
 
         :param is_skip_remaining_rules_on_match: The is_skip_remaining_rules_on_match of this NameListRule.
@@ -187,7 +187,7 @@ class NameListRule(ProjectionRule):
     def scope(self):
         """
         Gets the scope of this NameListRule.
-        Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a TypedObject or a full TypedObject definition.
+        Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a `TypedObject`, or a full `TypedObject` definition.
 
 
         :return: The scope of this NameListRule.
@@ -199,7 +199,7 @@ class NameListRule(ProjectionRule):
     def scope(self, scope):
         """
         Sets the scope of this NameListRule.
-        Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a TypedObject or a full TypedObject definition.
+        Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a `TypedObject`, or a full `TypedObject` definition.
 
 
         :param scope: The scope of this NameListRule.
@@ -211,7 +211,7 @@ class NameListRule(ProjectionRule):
     def is_cascade(self):
         """
         Gets the is_cascade of this NameListRule.
-        cascade
+        Specifies whether to cascade or not.
 
 
         :return: The is_cascade of this NameListRule.
@@ -223,7 +223,7 @@ class NameListRule(ProjectionRule):
     def is_cascade(self, is_cascade):
         """
         Sets the is_cascade of this NameListRule.
-        cascade
+        Specifies whether to cascade or not.
 
 
         :param is_cascade: The is_cascade of this NameListRule.
@@ -235,7 +235,7 @@ class NameListRule(ProjectionRule):
     def matching_strategy(self):
         """
         Gets the matching_strategy of this NameListRule.
-        matchingStrategy
+        The pattern matching strategy.
 
         Allowed values for this property are: "NAME_OR_TAGS", "TAGS_ONLY", "NAME_ONLY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -250,7 +250,7 @@ class NameListRule(ProjectionRule):
     def matching_strategy(self, matching_strategy):
         """
         Sets the matching_strategy of this NameListRule.
-        matchingStrategy
+        The pattern matching strategy.
 
 
         :param matching_strategy: The matching_strategy of this NameListRule.
@@ -265,7 +265,7 @@ class NameListRule(ProjectionRule):
     def is_case_sensitive(self):
         """
         Gets the is_case_sensitive of this NameListRule.
-        caseSensitive
+        Specifies if the rule is case sensitive.
 
 
         :return: The is_case_sensitive of this NameListRule.
@@ -277,7 +277,7 @@ class NameListRule(ProjectionRule):
     def is_case_sensitive(self, is_case_sensitive):
         """
         Sets the is_case_sensitive of this NameListRule.
-        caseSensitive
+        Specifies if the rule is case sensitive.
 
 
         :param is_case_sensitive: The is_case_sensitive of this NameListRule.
@@ -289,7 +289,7 @@ class NameListRule(ProjectionRule):
     def rule_type(self):
         """
         Gets the rule_type of this NameListRule.
-        ruleType
+        The rule type.
 
         Allowed values for this property are: "INCLUDE", "EXCLUDE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -304,7 +304,7 @@ class NameListRule(ProjectionRule):
     def rule_type(self, rule_type):
         """
         Sets the rule_type of this NameListRule.
-        ruleType
+        The rule type.
 
 
         :param rule_type: The rule_type of this NameListRule.
@@ -319,7 +319,7 @@ class NameListRule(ProjectionRule):
     def names(self):
         """
         Gets the names of this NameListRule.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The names of this NameListRule.
@@ -331,7 +331,7 @@ class NameListRule(ProjectionRule):
     def names(self, names):
         """
         Sets the names of this NameListRule.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param names: The names of this NameListRule.

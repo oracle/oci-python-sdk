@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CountStatisticSummary(object):
     """
-    Detail of object.
+    Details of the count statistic summary object.
     """
 
     #: A constant which can be used with the object_type property of a CountStatisticSummary.
@@ -74,7 +74,7 @@ class CountStatisticSummary(object):
     def object_type(self):
         """
         Gets the object_type of this CountStatisticSummary.
-        the type of object for the object count statistic.
+        The type of object for the count statistic object.
 
         Allowed values for this property are: "PROJECT", "FOLDER", "DATA_FLOW", "DATA_ASSET", "CONNECTION", "TASK", "APPLICATION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -89,7 +89,7 @@ class CountStatisticSummary(object):
     def object_type(self, object_type):
         """
         Sets the object_type of this CountStatisticSummary.
-        the type of object for the object count statistic.
+        The type of object for the count statistic object.
 
 
         :param object_type: The object_type of this CountStatisticSummary.
@@ -104,7 +104,7 @@ class CountStatisticSummary(object):
     def object_count(self):
         """
         Gets the object_count of this CountStatisticSummary.
-        the value for the object count statistic.
+        The value for the count statistic object.
 
 
         :return: The object_count of this CountStatisticSummary.
@@ -116,7 +116,7 @@ class CountStatisticSummary(object):
     def object_count(self, object_count):
         """
         Sets the object_count of this CountStatisticSummary.
-        the value for the object count statistic.
+        The value for the count statistic object.
 
 
         :param object_count: The object_count of this CountStatisticSummary.
