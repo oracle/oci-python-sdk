@@ -21,7 +21,7 @@ class OracleAdwcWriteAttribute(AbstractWriteAttribute):
 
         :param model_type:
             The value to assign to the model_type property of this OracleAdwcWriteAttribute.
-            Allowed values for this property are: "ORACLEWRITEATTRIBUTE", "ORACLEATPWRITEATTRIBUTE", "ORACLEADWCWRITEATTRIBUTE"
+            Allowed values for this property are: "ORACLEWRITEATTRIBUTE", "ORACLEATPWRITEATTRIBUTE", "ORACLEADWCWRITEATTRIBUTE", "ORACLE_WRITE_ATTRIBUTE", "ORACLE_ATP_WRITE_ATTRIBUTE", "ORACLE_ADWC_WRITE_ATTRIBUTE"
         :type model_type: str
 
         :param bucket_name:

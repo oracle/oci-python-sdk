@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataType(BaseType):
     """
-    A DataType object is a simple primitive type that describes the type of a single atomic unit of data.  For example, INT, VARCHAR, NUMBER, etc.
+    A `DataType` object is a simple primitive type that describes the type of a single atomic unit of data.  For example, `INT`, `VARCHAR`, `NUMBER`, and so on.
     """
 
     #: A constant which can be used with the dt_type property of a DataType.
@@ -114,7 +114,7 @@ class DataType(BaseType):
     def dt_type(self):
         """
         Gets the dt_type of this DataType.
-        dtType
+        The data type.
 
         Allowed values for this property are: "PRIMITIVE", "STRUCTURED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -129,7 +129,7 @@ class DataType(BaseType):
     def dt_type(self, dt_type):
         """
         Sets the dt_type of this DataType.
-        dtType
+        The data type.
 
 
         :param dt_type: The dt_type of this DataType.
@@ -144,7 +144,7 @@ class DataType(BaseType):
     def type_system_name(self):
         """
         Gets the type_system_name of this DataType.
-        typeSystemName
+        The data type system name.
 
 
         :return: The type_system_name of this DataType.
@@ -156,7 +156,7 @@ class DataType(BaseType):
     def type_system_name(self, type_system_name):
         """
         Sets the type_system_name of this DataType.
-        typeSystemName
+        The data type system name.
 
 
         :param type_system_name: The type_system_name of this DataType.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OracleReadAttribute(AbstractReadAttribute):
     """
-    The Oracle read attribute
+    The Oracle read attribute.
     """
 
     def __init__(self, **kwargs):
@@ -21,7 +21,7 @@ class OracleReadAttribute(AbstractReadAttribute):
 
         :param model_type:
             The value to assign to the model_type property of this OracleReadAttribute.
-            Allowed values for this property are: "ORACLEREADATTRIBUTE"
+            Allowed values for this property are: "ORACLEREADATTRIBUTE", "ORACLE_READ_ATTRIBUTE"
         :type model_type: str
 
         :param fetch_size:

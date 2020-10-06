@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TypeLibrary(object):
     """
-    The DIS type library container type.
+    The Data Integration type library container type.
     """
 
     def __init__(self, **kwargs):
@@ -192,7 +192,7 @@ class TypeLibrary(object):
     def name(self):
         """
         Gets the name of this TypeLibrary.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this TypeLibrary.
@@ -204,7 +204,7 @@ class TypeLibrary(object):
     def name(self, name):
         """
         Sets the name of this TypeLibrary.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this TypeLibrary.
@@ -216,7 +216,7 @@ class TypeLibrary(object):
     def description(self):
         """
         Gets the description of this TypeLibrary.
-        Detailed description for the object.
+        A user defined description for the object.
 
 
         :return: The description of this TypeLibrary.
@@ -228,7 +228,7 @@ class TypeLibrary(object):
     def description(self, description):
         """
         Sets the description of this TypeLibrary.
-        Detailed description for the object.
+        A user defined description for the object.
 
 
         :param description: The description of this TypeLibrary.
@@ -312,7 +312,7 @@ class TypeLibrary(object):
     def identifier(self):
         """
         Gets the identifier of this TypeLibrary.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this TypeLibrary.
@@ -324,7 +324,7 @@ class TypeLibrary(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this TypeLibrary.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this TypeLibrary.

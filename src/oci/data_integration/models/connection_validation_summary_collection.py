@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConnectionValidationSummaryCollection(object):
     """
-    List of connection validation summaries
+    A list of connection validation summaries.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class ConnectionValidationSummaryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ConnectionValidationSummaryCollection.
-        The array of validation summaries
+        An array of connection validation summaries.
 
 
         :return: The items of this ConnectionValidationSummaryCollection.
@@ -49,7 +49,7 @@ class ConnectionValidationSummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this ConnectionValidationSummaryCollection.
-        The array of validation summaries
+        An array of connection validation summaries.
 
 
         :param items: The items of this ConnectionValidationSummaryCollection.

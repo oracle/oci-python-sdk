@@ -75,7 +75,7 @@ class TypedNamePatternRule(ProjectionRule):
 
         :param types:
             The value to assign to the types property of this TypedNamePatternRule.
-        :type types: list[BaseType]
+        :type types: list[object]
 
         :param is_skip_remaining_rules_on_match:
             The value to assign to the is_skip_remaining_rules_on_match property of this TypedNamePatternRule.
@@ -105,6 +105,10 @@ class TypedNamePatternRule(ProjectionRule):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type rule_type: str
 
+        :param pattern:
+            The value to assign to the pattern property of this TypedNamePatternRule.
+        :type pattern: str
+
         :param names:
             The value to assign to the names property of this TypedNamePatternRule.
         :type names: list[str]
@@ -119,13 +123,14 @@ class TypedNamePatternRule(ProjectionRule):
             'config_values': 'ConfigValues',
             'object_status': 'int',
             'description': 'str',
-            'types': 'list[BaseType]',
+            'types': 'list[object]',
             'is_skip_remaining_rules_on_match': 'bool',
             'scope': 'object',
             'is_cascade': 'bool',
             'matching_strategy': 'str',
             'is_case_sensitive': 'bool',
             'rule_type': 'str',
+            'pattern': 'str',
             'names': 'list[str]'
         }
 
@@ -145,6 +150,7 @@ class TypedNamePatternRule(ProjectionRule):
             'matching_strategy': 'matchingStrategy',
             'is_case_sensitive': 'isCaseSensitive',
             'rule_type': 'ruleType',
+            'pattern': 'pattern',
             'names': 'names'
         }
 
@@ -163,6 +169,7 @@ class TypedNamePatternRule(ProjectionRule):
         self._matching_strategy = None
         self._is_case_sensitive = None
         self._rule_type = None
+        self._pattern = None
         self._names = None
         self._model_type = 'TYPED_NAME_PATTERN_RULE'
 
@@ -170,11 +177,11 @@ class TypedNamePatternRule(ProjectionRule):
     def types(self):
         """
         Gets the types of this TypedNamePatternRule.
-        types
+        An array of types.
 
 
         :return: The types of this TypedNamePatternRule.
-        :rtype: list[BaseType]
+        :rtype: list[object]
         """
         return self._types
 
@@ -182,11 +189,11 @@ class TypedNamePatternRule(ProjectionRule):
     def types(self, types):
         """
         Sets the types of this TypedNamePatternRule.
-        types
+        An array of types.
 
 
         :param types: The types of this TypedNamePatternRule.
-        :type: list[BaseType]
+        :type: list[object]
         """
         self._types = types
 
@@ -194,7 +201,7 @@ class TypedNamePatternRule(ProjectionRule):
     def is_skip_remaining_rules_on_match(self):
         """
         Gets the is_skip_remaining_rules_on_match of this TypedNamePatternRule.
-        skipRemainingRulesOnMatch
+        Specifies whether to skip remaining rules when a match is found.
 
 
         :return: The is_skip_remaining_rules_on_match of this TypedNamePatternRule.
@@ -206,7 +213,7 @@ class TypedNamePatternRule(ProjectionRule):
     def is_skip_remaining_rules_on_match(self, is_skip_remaining_rules_on_match):
         """
         Sets the is_skip_remaining_rules_on_match of this TypedNamePatternRule.
-        skipRemainingRulesOnMatch
+        Specifies whether to skip remaining rules when a match is found.
 
 
         :param is_skip_remaining_rules_on_match: The is_skip_remaining_rules_on_match of this TypedNamePatternRule.
@@ -218,7 +225,7 @@ class TypedNamePatternRule(ProjectionRule):
     def scope(self):
         """
         Gets the scope of this TypedNamePatternRule.
-        Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a TypedObject or a full TypedObject definition.
+        Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a `TypedObject`, or a full `TypedObject` definition.
 
 
         :return: The scope of this TypedNamePatternRule.
@@ -230,7 +237,7 @@ class TypedNamePatternRule(ProjectionRule):
     def scope(self, scope):
         """
         Sets the scope of this TypedNamePatternRule.
-        Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a TypedObject or a full TypedObject definition.
+        Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a `TypedObject`, or a full `TypedObject` definition.
 
 
         :param scope: The scope of this TypedNamePatternRule.
@@ -242,7 +249,7 @@ class TypedNamePatternRule(ProjectionRule):
     def is_cascade(self):
         """
         Gets the is_cascade of this TypedNamePatternRule.
-        cascade
+        Specifies whether to cascade or not.
 
 
         :return: The is_cascade of this TypedNamePatternRule.
@@ -254,7 +261,7 @@ class TypedNamePatternRule(ProjectionRule):
     def is_cascade(self, is_cascade):
         """
         Sets the is_cascade of this TypedNamePatternRule.
-        cascade
+        Specifies whether to cascade or not.
 
 
         :param is_cascade: The is_cascade of this TypedNamePatternRule.
@@ -266,7 +273,7 @@ class TypedNamePatternRule(ProjectionRule):
     def matching_strategy(self):
         """
         Gets the matching_strategy of this TypedNamePatternRule.
-        matchingStrategy
+        The pattern matching strategy.
 
         Allowed values for this property are: "NAME_OR_TAGS", "TAGS_ONLY", "NAME_ONLY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -281,7 +288,7 @@ class TypedNamePatternRule(ProjectionRule):
     def matching_strategy(self, matching_strategy):
         """
         Sets the matching_strategy of this TypedNamePatternRule.
-        matchingStrategy
+        The pattern matching strategy.
 
 
         :param matching_strategy: The matching_strategy of this TypedNamePatternRule.
@@ -296,7 +303,7 @@ class TypedNamePatternRule(ProjectionRule):
     def is_case_sensitive(self):
         """
         Gets the is_case_sensitive of this TypedNamePatternRule.
-        caseSensitive
+        Specifies if the rule is case sensitive.
 
 
         :return: The is_case_sensitive of this TypedNamePatternRule.
@@ -308,7 +315,7 @@ class TypedNamePatternRule(ProjectionRule):
     def is_case_sensitive(self, is_case_sensitive):
         """
         Sets the is_case_sensitive of this TypedNamePatternRule.
-        caseSensitive
+        Specifies if the rule is case sensitive.
 
 
         :param is_case_sensitive: The is_case_sensitive of this TypedNamePatternRule.
@@ -320,7 +327,7 @@ class TypedNamePatternRule(ProjectionRule):
     def rule_type(self):
         """
         Gets the rule_type of this TypedNamePatternRule.
-        ruleType
+        The rule type.
 
         Allowed values for this property are: "INCLUDE", "EXCLUDE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -335,7 +342,7 @@ class TypedNamePatternRule(ProjectionRule):
     def rule_type(self, rule_type):
         """
         Sets the rule_type of this TypedNamePatternRule.
-        ruleType
+        The rule type.
 
 
         :param rule_type: The rule_type of this TypedNamePatternRule.
@@ -347,10 +354,34 @@ class TypedNamePatternRule(ProjectionRule):
         self._rule_type = rule_type
 
     @property
+    def pattern(self):
+        """
+        Gets the pattern of this TypedNamePatternRule.
+        The rule pattern.
+
+
+        :return: The pattern of this TypedNamePatternRule.
+        :rtype: str
+        """
+        return self._pattern
+
+    @pattern.setter
+    def pattern(self, pattern):
+        """
+        Sets the pattern of this TypedNamePatternRule.
+        The rule pattern.
+
+
+        :param pattern: The pattern of this TypedNamePatternRule.
+        :type: str
+        """
+        self._pattern = pattern
+
+    @property
     def names(self):
         """
         Gets the names of this TypedNamePatternRule.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The names of this TypedNamePatternRule.
@@ -362,7 +393,7 @@ class TypedNamePatternRule(ProjectionRule):
     def names(self, names):
         """
         Sets the names of this TypedNamePatternRule.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param names: The names of this TypedNamePatternRule.

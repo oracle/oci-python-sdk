@@ -110,7 +110,7 @@ class DirectNamedFieldMap(FieldMap):
     def key(self):
         """
         Gets the key of this DirectNamedFieldMap.
-        The key of the object.
+        The object key.
 
 
         :return: The key of this DirectNamedFieldMap.
@@ -122,7 +122,7 @@ class DirectNamedFieldMap(FieldMap):
     def key(self, key):
         """
         Sets the key of this DirectNamedFieldMap.
-        The key of the object.
+        The object key.
 
 
         :param key: The key of this DirectNamedFieldMap.
@@ -134,7 +134,7 @@ class DirectNamedFieldMap(FieldMap):
     def model_version(self):
         """
         Gets the model_version of this DirectNamedFieldMap.
-        The model version of an object.
+        The object's model version.
 
 
         :return: The model_version of this DirectNamedFieldMap.
@@ -146,7 +146,7 @@ class DirectNamedFieldMap(FieldMap):
     def model_version(self, model_version):
         """
         Sets the model_version of this DirectNamedFieldMap.
-        The model version of an object.
+        The object's model version.
 
 
         :param model_version: The model_version of this DirectNamedFieldMap.

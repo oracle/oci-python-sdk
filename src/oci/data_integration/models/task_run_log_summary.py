@@ -37,7 +37,7 @@ class TaskRunLogSummary(object):
     def message(self):
         """
         Gets the message of this TaskRunLogSummary.
-        Human-readable log message.
+        A user-friendly log message.
 
 
         :return: The message of this TaskRunLogSummary.
@@ -49,7 +49,7 @@ class TaskRunLogSummary(object):
     def message(self, message):
         """
         Sets the message of this TaskRunLogSummary.
-        Human-readable log message.
+        A user-friendly log message.
 
 
         :param message: The message of this TaskRunLogSummary.

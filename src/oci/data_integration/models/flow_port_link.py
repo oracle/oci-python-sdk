@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class FlowPortLink(object):
     """
-    The details of the flow port links.
+    Details about the link between two data flow operators.
     """
 
     #: A constant which can be used with the model_type property of a FlowPortLink.

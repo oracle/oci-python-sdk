@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ParentReference(object):
     """
-    A reference to the object's parent
+    A reference to the object's parent.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class ParentReference(object):
     def parent(self):
         """
         Gets the parent of this ParentReference.
-        Key of the parent object
+        Key of the parent object.
 
 
         :return: The parent of this ParentReference.
@@ -49,7 +49,7 @@ class ParentReference(object):
     def parent(self, parent):
         """
         Sets the parent of this ParentReference.
-        Key of the parent object
+        Key of the parent object.
 
 
         :param parent: The parent of this ParentReference.

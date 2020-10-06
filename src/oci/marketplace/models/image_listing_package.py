@@ -162,7 +162,7 @@ class ImageListingPackage(ListingPackage):
     def image_id(self):
         """
         Gets the image_id of this ImageListingPackage.
-        The id of the image corresponding to the package.
+        The ID of the image corresponding to the package.
 
 
         :return: The image_id of this ImageListingPackage.
@@ -174,7 +174,7 @@ class ImageListingPackage(ListingPackage):
     def image_id(self, image_id):
         """
         Sets the image_id of this ImageListingPackage.
-        The id of the image corresponding to the package.
+        The ID of the image corresponding to the package.
 
 
         :param image_id: The image_id of this ImageListingPackage.
@@ -186,7 +186,7 @@ class ImageListingPackage(ListingPackage):
     def regions(self):
         """
         Gets the regions of this ImageListingPackage.
-        List of regions in which this ListingPackage is available.
+        The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
 
 
         :return: The regions of this ImageListingPackage.
@@ -198,7 +198,7 @@ class ImageListingPackage(ListingPackage):
     def regions(self, regions):
         """
         Sets the regions of this ImageListingPackage.
-        List of regions in which this ListingPackage is available.
+        The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
 
 
         :param regions: The regions of this ImageListingPackage.

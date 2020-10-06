@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataFlowValidationSummaryCollection(object):
     """
-    List of dataflow validation summaries
+    A list of data flow validation summaries.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class DataFlowValidationSummaryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this DataFlowValidationSummaryCollection.
-        The array of validation summaries
+        The array of validation summaries.
 
 
         :return: The items of this DataFlowValidationSummaryCollection.
@@ -49,7 +49,7 @@ class DataFlowValidationSummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this DataFlowValidationSummaryCollection.
-        The array of validation summaries
+        The array of validation summaries.
 
 
         :param items: The items of this DataFlowValidationSummaryCollection.

@@ -191,7 +191,7 @@ class DataEntityFromFileEntityDetails(DataEntityDetails):
     def key(self):
         """
         Gets the key of this DataEntityFromFileEntityDetails.
-        The key of the object.
+        The object key.
 
 
         :return: The key of this DataEntityFromFileEntityDetails.
@@ -203,7 +203,7 @@ class DataEntityFromFileEntityDetails(DataEntityDetails):
     def key(self, key):
         """
         Sets the key of this DataEntityFromFileEntityDetails.
-        The key of the object.
+        The object key.
 
 
         :param key: The key of this DataEntityFromFileEntityDetails.
@@ -215,7 +215,7 @@ class DataEntityFromFileEntityDetails(DataEntityDetails):
     def model_version(self):
         """
         Gets the model_version of this DataEntityFromFileEntityDetails.
-        The model version of an object.
+        The object's model version.
 
 
         :return: The model_version of this DataEntityFromFileEntityDetails.
@@ -227,7 +227,7 @@ class DataEntityFromFileEntityDetails(DataEntityDetails):
     def model_version(self, model_version):
         """
         Sets the model_version of this DataEntityFromFileEntityDetails.
-        The model version of an object.
+        The object's model version.
 
 
         :param model_version: The model_version of this DataEntityFromFileEntityDetails.
@@ -259,7 +259,7 @@ class DataEntityFromFileEntityDetails(DataEntityDetails):
     def name(self):
         """
         Gets the name of this DataEntityFromFileEntityDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this DataEntityFromFileEntityDetails.
@@ -271,7 +271,7 @@ class DataEntityFromFileEntityDetails(DataEntityDetails):
     def name(self, name):
         """
         Sets the name of this DataEntityFromFileEntityDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this DataEntityFromFileEntityDetails.
@@ -591,7 +591,7 @@ class DataEntityFromFileEntityDetails(DataEntityDetails):
     def identifier(self):
         """
         Gets the identifier of this DataEntityFromFileEntityDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this DataEntityFromFileEntityDetails.
@@ -603,7 +603,7 @@ class DataEntityFromFileEntityDetails(DataEntityDetails):
     def identifier(self, identifier):
         """
         Sets the identifier of this DataEntityFromFileEntityDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this DataEntityFromFileEntityDetails.

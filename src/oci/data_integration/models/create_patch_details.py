@@ -18,6 +18,10 @@ class CreatePatchDetails(object):
     PATCH_TYPE_PUBLISH = "PUBLISH"
 
     #: A constant which can be used with the patch_type property of a CreatePatchDetails.
+    #: This constant has a value of "REFRESH"
+    PATCH_TYPE_REFRESH = "REFRESH"
+
+    #: A constant which can be used with the patch_type property of a CreatePatchDetails.
     #: This constant has a value of "UNPUBLISH"
     PATCH_TYPE_UNPUBLISH = "UNPUBLISH"
 
@@ -52,7 +56,7 @@ class CreatePatchDetails(object):
 
         :param patch_type:
             The value to assign to the patch_type property of this CreatePatchDetails.
-            Allowed values for this property are: "PUBLISH", "UNPUBLISH"
+            Allowed values for this property are: "PUBLISH", "REFRESH", "UNPUBLISH"
         :type patch_type: str
 
         :param object_keys:
@@ -102,7 +106,7 @@ class CreatePatchDetails(object):
     def key(self):
         """
         Gets the key of this CreatePatchDetails.
-        The key of the object.
+        The object's key.
 
 
         :return: The key of this CreatePatchDetails.
@@ -114,7 +118,7 @@ class CreatePatchDetails(object):
     def key(self, key):
         """
         Sets the key of this CreatePatchDetails.
-        The key of the object.
+        The object's key.
 
 
         :param key: The key of this CreatePatchDetails.
@@ -126,7 +130,7 @@ class CreatePatchDetails(object):
     def model_version(self):
         """
         Gets the model_version of this CreatePatchDetails.
-        The model version of an object.
+        The object's model version.
 
 
         :return: The model_version of this CreatePatchDetails.
@@ -138,7 +142,7 @@ class CreatePatchDetails(object):
     def model_version(self, model_version):
         """
         Sets the model_version of this CreatePatchDetails.
-        The model version of an object.
+        The object's model version.
 
 
         :param model_version: The model_version of this CreatePatchDetails.
@@ -150,7 +154,7 @@ class CreatePatchDetails(object):
     def name(self):
         """
         **[Required]** Gets the name of this CreatePatchDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this CreatePatchDetails.
@@ -162,7 +166,7 @@ class CreatePatchDetails(object):
     def name(self, name):
         """
         Sets the name of this CreatePatchDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this CreatePatchDetails.
@@ -222,7 +226,7 @@ class CreatePatchDetails(object):
     def identifier(self):
         """
         **[Required]** Gets the identifier of this CreatePatchDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this CreatePatchDetails.
@@ -234,7 +238,7 @@ class CreatePatchDetails(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this CreatePatchDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this CreatePatchDetails.
@@ -248,7 +252,7 @@ class CreatePatchDetails(object):
         **[Required]** Gets the patch_type of this CreatePatchDetails.
         The type of the patch applied or being applied on the application.
 
-        Allowed values for this property are: "PUBLISH", "UNPUBLISH"
+        Allowed values for this property are: "PUBLISH", "REFRESH", "UNPUBLISH"
 
 
         :return: The patch_type of this CreatePatchDetails.
@@ -266,7 +270,7 @@ class CreatePatchDetails(object):
         :param patch_type: The patch_type of this CreatePatchDetails.
         :type: str
         """
-        allowed_values = ["PUBLISH", "UNPUBLISH"]
+        allowed_values = ["PUBLISH", "REFRESH", "UNPUBLISH"]
         if not value_allowed_none_or_none_sentinel(patch_type, allowed_values):
             raise ValueError(
                 "Invalid value for `patch_type`, must be None or one of {0}"

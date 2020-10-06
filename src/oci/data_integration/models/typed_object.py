@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TypedObject(object):
     """
-    The TypedObject class is a base class for any model object that has a type.
+    The `TypedObject` class is a base class for any model object that has a type.
     """
 
     #: A constant which can be used with the model_type property of a TypedObject.
@@ -32,6 +32,10 @@ class TypedObject(object):
     #: A constant which can be used with the model_type property of a TypedObject.
     #: This constant has a value of "DERIVED_FIELD"
     MODEL_TYPE_DERIVED_FIELD = "DERIVED_FIELD"
+
+    #: A constant which can be used with the model_type property of a TypedObject.
+    #: This constant has a value of "MACRO_FIELD"
+    MODEL_TYPE_MACRO_FIELD = "MACRO_FIELD"
 
     #: A constant which can be used with the model_type property of a TypedObject.
     #: This constant has a value of "OUTPUT_FIELD"
@@ -73,6 +77,7 @@ class TypedObject(object):
         * :class:`~oci.data_integration.models.ShapeField`
         * :class:`~oci.data_integration.models.Parameter`
         * :class:`~oci.data_integration.models.OutputField`
+        * :class:`~oci.data_integration.models.MacroField`
         * :class:`~oci.data_integration.models.DerivedField`
         * :class:`~oci.data_integration.models.FlowPort`
 
@@ -80,8 +85,7 @@ class TypedObject(object):
 
         :param model_type:
             The value to assign to the model_type property of this TypedObject.
-            Allowed values for this property are: "SHAPE", "INPUT_PORT", "SHAPE_FIELD", "INPUT_FIELD", "DERIVED_FIELD", "OUTPUT_FIELD", "DYNAMIC_PROXY_FIELD", "OUTPUT_PORT", "DYNAMIC_INPUT_FIELD", "PROXY_FIELD", "PARAMETER", 'UNKNOWN_ENUM_VALUE'.
-            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SHAPE", "INPUT_PORT", "SHAPE_FIELD", "INPUT_FIELD", "DERIVED_FIELD", "MACRO_FIELD", "OUTPUT_FIELD", "DYNAMIC_PROXY_FIELD", "OUTPUT_PORT", "DYNAMIC_INPUT_FIELD", "PROXY_FIELD", "PARAMETER"
         :type model_type: str
 
         :param key:
@@ -185,6 +189,9 @@ class TypedObject(object):
         if type == 'OUTPUT_FIELD':
             return 'OutputField'
 
+        if type == 'MACRO_FIELD':
+            return 'MacroField'
+
         if type == 'DERIVED_FIELD':
             return 'DerivedField'
 
@@ -199,8 +206,7 @@ class TypedObject(object):
         **[Required]** Gets the model_type of this TypedObject.
         The type of the types object.
 
-        Allowed values for this property are: "SHAPE", "INPUT_PORT", "SHAPE_FIELD", "INPUT_FIELD", "DERIVED_FIELD", "OUTPUT_FIELD", "DYNAMIC_PROXY_FIELD", "OUTPUT_PORT", "DYNAMIC_INPUT_FIELD", "PROXY_FIELD", "PARAMETER", 'UNKNOWN_ENUM_VALUE'.
-        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SHAPE", "INPUT_PORT", "SHAPE_FIELD", "INPUT_FIELD", "DERIVED_FIELD", "MACRO_FIELD", "OUTPUT_FIELD", "DYNAMIC_PROXY_FIELD", "OUTPUT_PORT", "DYNAMIC_INPUT_FIELD", "PROXY_FIELD", "PARAMETER"
 
 
         :return: The model_type of this TypedObject.
@@ -218,9 +224,12 @@ class TypedObject(object):
         :param model_type: The model_type of this TypedObject.
         :type: str
         """
-        allowed_values = ["SHAPE", "INPUT_PORT", "SHAPE_FIELD", "INPUT_FIELD", "DERIVED_FIELD", "OUTPUT_FIELD", "DYNAMIC_PROXY_FIELD", "OUTPUT_PORT", "DYNAMIC_INPUT_FIELD", "PROXY_FIELD", "PARAMETER"]
+        allowed_values = ["SHAPE", "INPUT_PORT", "SHAPE_FIELD", "INPUT_FIELD", "DERIVED_FIELD", "MACRO_FIELD", "OUTPUT_FIELD", "DYNAMIC_PROXY_FIELD", "OUTPUT_PORT", "DYNAMIC_INPUT_FIELD", "PROXY_FIELD", "PARAMETER"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
-            model_type = 'UNKNOWN_ENUM_VALUE'
+            raise ValueError(
+                "Invalid value for `model_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
         self._model_type = model_type
 
     @property
@@ -339,7 +348,7 @@ class TypedObject(object):
     def name(self):
         """
         Gets the name of this TypedObject.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this TypedObject.
@@ -351,7 +360,7 @@ class TypedObject(object):
     def name(self, name):
         """
         Sets the name of this TypedObject.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this TypedObject.

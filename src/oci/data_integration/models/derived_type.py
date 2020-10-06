@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DerivedType(BaseType):
     """
-    A DerivedType object represents a more complex type that is derived from a set of simple types, for example an Address or SSN data type;
+    A `DerivedType` object represents a more complex type that is derived from a set of simple types, for example an `Address` or `SSN` data type.
     """
 
     def __init__(self, **kwargs):

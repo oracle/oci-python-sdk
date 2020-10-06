@@ -115,7 +115,7 @@ class UpdateTaskRunDetails(object):
     def status(self):
         """
         Gets the status of this UpdateTaskRunDetails.
-        status
+        The status of the object.
 
         Allowed values for this property are: "TERMINATING"
 
@@ -129,7 +129,7 @@ class UpdateTaskRunDetails(object):
     def status(self, status):
         """
         Sets the status of this UpdateTaskRunDetails.
-        status
+        The status of the object.
 
 
         :param status: The status of this UpdateTaskRunDetails.
@@ -195,7 +195,7 @@ class UpdateTaskRunDetails(object):
     def name(self):
         """
         Gets the name of this UpdateTaskRunDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this UpdateTaskRunDetails.
@@ -207,7 +207,7 @@ class UpdateTaskRunDetails(object):
     def name(self, name):
         """
         Sets the name of this UpdateTaskRunDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this UpdateTaskRunDetails.

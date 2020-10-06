@@ -29,10 +29,10 @@ class DataIntegrationClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param ChangeCompartmentDetails change_compartment_details: (required)
-            The details of change compartment action.
+            The information needed to move a workspace to a specified compartment.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_integration.models.WorkRequest.status`
@@ -70,7 +70,7 @@ class DataIntegrationClientCompositeOperations(object):
         to enter the given state(s).
 
         :param CreateWorkspaceDetails create_workspace_details: (required)
-            Details for the new Data Integration Workspace.
+            The information needed to create a new Data Integration workspace.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_integration.models.WorkRequest.status`
@@ -108,7 +108,7 @@ class DataIntegrationClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_integration.models.WorkRequest.status`
@@ -154,7 +154,7 @@ class DataIntegrationClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_integration.models.WorkRequest.status`
@@ -192,7 +192,7 @@ class DataIntegrationClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_integration.models.WorkRequest.status`
@@ -230,10 +230,10 @@ class DataIntegrationClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str workspace_id: (required)
-            DIS workspace id
+            The workspace ID.
 
         :param UpdateWorkspaceDetails update_workspace_details: (required)
-            The information to be updated.
+            The information needed to update the workspace.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_integration.models.WorkRequest.status`

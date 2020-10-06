@@ -37,7 +37,7 @@ class ConnectionSummaryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ConnectionSummaryCollection.
-        The array of Connection summaries
+        The array of connection summaries.
 
 
         :return: The items of this ConnectionSummaryCollection.
@@ -49,7 +49,7 @@ class ConnectionSummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this ConnectionSummaryCollection.
-        The array of Connection summaries
+        The array of connection summaries.
 
 
         :param items: The items of this ConnectionSummaryCollection.

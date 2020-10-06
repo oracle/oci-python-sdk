@@ -29,6 +29,14 @@ class UpdateDataAssetDetails(object):
     #: This constant has a value of "ORACLE_ADWC_DATA_ASSET"
     MODEL_TYPE_ORACLE_ADWC_DATA_ASSET = "ORACLE_ADWC_DATA_ASSET"
 
+    #: A constant which can be used with the model_type property of a UpdateDataAssetDetails.
+    #: This constant has a value of "MYSQL_DATA_ASSET"
+    MODEL_TYPE_MYSQL_DATA_ASSET = "MYSQL_DATA_ASSET"
+
+    #: A constant which can be used with the model_type property of a UpdateDataAssetDetails.
+    #: This constant has a value of "GENERIC_JDBC_DATA_ASSET"
+    MODEL_TYPE_GENERIC_JDBC_DATA_ASSET = "GENERIC_JDBC_DATA_ASSET"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateDataAssetDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -36,14 +44,16 @@ class UpdateDataAssetDetails(object):
 
         * :class:`~oci.data_integration.models.UpdateDataAssetFromAtp`
         * :class:`~oci.data_integration.models.UpdateDataAssetFromAdwc`
+        * :class:`~oci.data_integration.models.UpdateDataAssetFromJdbc`
         * :class:`~oci.data_integration.models.UpdateDataAssetFromObjectStorage`
+        * :class:`~oci.data_integration.models.UpdateDataAssetFromMySQL`
         * :class:`~oci.data_integration.models.UpdateDataAssetFromOracle`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this UpdateDataAssetDetails.
-            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET"
+            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET"
         :type model_type: str
 
         :param key:
@@ -141,8 +151,14 @@ class UpdateDataAssetDetails(object):
         if type == 'ORACLE_ADWC_DATA_ASSET':
             return 'UpdateDataAssetFromAdwc'
 
+        if type == 'GENERIC_JDBC_DATA_ASSET':
+            return 'UpdateDataAssetFromJdbc'
+
         if type == 'ORACLE_OBJECT_STORAGE_DATA_ASSET':
             return 'UpdateDataAssetFromObjectStorage'
+
+        if type == 'MYSQL_DATA_ASSET':
+            return 'UpdateDataAssetFromMySQL'
 
         if type == 'ORACLE_DATA_ASSET':
             return 'UpdateDataAssetFromOracle'
@@ -155,7 +171,7 @@ class UpdateDataAssetDetails(object):
         **[Required]** Gets the model_type of this UpdateDataAssetDetails.
         The type of the data asset.
 
-        Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET"
+        Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET"
 
 
         :return: The model_type of this UpdateDataAssetDetails.
@@ -173,7 +189,7 @@ class UpdateDataAssetDetails(object):
         :param model_type: The model_type of this UpdateDataAssetDetails.
         :type: str
         """
-        allowed_values = ["ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET"]
+        allowed_values = ["ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             raise ValueError(
                 "Invalid value for `model_type`, must be None or one of {0}"
@@ -233,7 +249,7 @@ class UpdateDataAssetDetails(object):
     def name(self):
         """
         Gets the name of this UpdateDataAssetDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this UpdateDataAssetDetails.
@@ -245,7 +261,7 @@ class UpdateDataAssetDetails(object):
     def name(self, name):
         """
         Sets the name of this UpdateDataAssetDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this UpdateDataAssetDetails.
@@ -257,7 +273,7 @@ class UpdateDataAssetDetails(object):
     def description(self):
         """
         Gets the description of this UpdateDataAssetDetails.
-        Detailed description for the object.
+        The user-defined description of the data asset.
 
 
         :return: The description of this UpdateDataAssetDetails.
@@ -269,7 +285,7 @@ class UpdateDataAssetDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateDataAssetDetails.
-        Detailed description for the object.
+        The user-defined description of the data asset.
 
 
         :param description: The description of this UpdateDataAssetDetails.
@@ -329,7 +345,7 @@ class UpdateDataAssetDetails(object):
     def identifier(self):
         """
         Gets the identifier of this UpdateDataAssetDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this UpdateDataAssetDetails.
@@ -341,7 +357,7 @@ class UpdateDataAssetDetails(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this UpdateDataAssetDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this UpdateDataAssetDetails.
@@ -353,7 +369,7 @@ class UpdateDataAssetDetails(object):
     def external_key(self):
         """
         Gets the external_key of this UpdateDataAssetDetails.
-        The external key for the object
+        The external key for the object.
 
 
         :return: The external_key of this UpdateDataAssetDetails.
@@ -365,7 +381,7 @@ class UpdateDataAssetDetails(object):
     def external_key(self, external_key):
         """
         Sets the external_key of this UpdateDataAssetDetails.
-        The external key for the object
+        The external key for the object.
 
 
         :param external_key: The external_key of this UpdateDataAssetDetails.
@@ -377,7 +393,7 @@ class UpdateDataAssetDetails(object):
     def asset_properties(self):
         """
         Gets the asset_properties of this UpdateDataAssetDetails.
-        assetProperties
+        Additional properties for the data asset.
 
 
         :return: The asset_properties of this UpdateDataAssetDetails.
@@ -389,7 +405,7 @@ class UpdateDataAssetDetails(object):
     def asset_properties(self, asset_properties):
         """
         Sets the asset_properties of this UpdateDataAssetDetails.
-        assetProperties
+        Additional properties for the data asset.
 
 
         :param asset_properties: The asset_properties of this UpdateDataAssetDetails.

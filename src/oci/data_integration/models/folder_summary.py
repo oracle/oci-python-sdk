@@ -186,7 +186,7 @@ class FolderSummary(object):
     def name(self):
         """
         Gets the name of this FolderSummary.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this FolderSummary.
@@ -198,7 +198,7 @@ class FolderSummary(object):
     def name(self, name):
         """
         Sets the name of this FolderSummary.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this FolderSummary.
@@ -210,7 +210,7 @@ class FolderSummary(object):
     def description(self):
         """
         Gets the description of this FolderSummary.
-        Detailed description for the object.
+        A user defined description for the folder.
 
 
         :return: The description of this FolderSummary.
@@ -222,7 +222,7 @@ class FolderSummary(object):
     def description(self, description):
         """
         Sets the description of this FolderSummary.
-        Detailed description for the object.
+        A user defined description for the folder.
 
 
         :param description: The description of this FolderSummary.
@@ -234,7 +234,7 @@ class FolderSummary(object):
     def category_name(self):
         """
         Gets the category_name of this FolderSummary.
-        categoryName
+        The category name.
 
 
         :return: The category_name of this FolderSummary.
@@ -246,7 +246,7 @@ class FolderSummary(object):
     def category_name(self, category_name):
         """
         Sets the category_name of this FolderSummary.
-        categoryName
+        The category name.
 
 
         :param category_name: The category_name of this FolderSummary.
@@ -282,7 +282,7 @@ class FolderSummary(object):
     def identifier(self):
         """
         Gets the identifier of this FolderSummary.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this FolderSummary.
@@ -294,7 +294,7 @@ class FolderSummary(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this FolderSummary.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this FolderSummary.
@@ -370,7 +370,7 @@ class FolderSummary(object):
     def key_map(self):
         """
         Gets the key_map of this FolderSummary.
-        A map, if provided key is replaced with generated key, this structure provides mapping between user provided key and generated key
+        A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 
 
         :return: The key_map of this FolderSummary.
@@ -382,7 +382,7 @@ class FolderSummary(object):
     def key_map(self, key_map):
         """
         Sets the key_map of this FolderSummary.
-        A map, if provided key is replaced with generated key, this structure provides mapping between user provided key and generated key
+        A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 
 
         :param key_map: The key_map of this FolderSummary.

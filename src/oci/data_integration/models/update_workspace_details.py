@@ -118,7 +118,7 @@ class UpdateWorkspaceDetails(object):
     def description(self):
         """
         Gets the description of this UpdateWorkspaceDetails.
-        A detailed description for the workspace.
+        A user defined description for the workspace.
 
 
         :return: The description of this UpdateWorkspaceDetails.
@@ -130,7 +130,7 @@ class UpdateWorkspaceDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateWorkspaceDetails.
-        A detailed description for the workspace.
+        A user defined description for the workspace.
 
 
         :param description: The description of this UpdateWorkspaceDetails.

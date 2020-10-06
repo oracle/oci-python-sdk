@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TypeListRule(ProjectionRule):
     """
-    The type list rule which defines how fields are projected.
+    The type list rule that defines how fields are projected.
     """
 
     #: A constant which can be used with the matching_strategy property of a TypeListRule.
@@ -103,7 +103,7 @@ class TypeListRule(ProjectionRule):
 
         :param types:
             The value to assign to the types property of this TypeListRule.
-        :type types: list[BaseType]
+        :type types: list[object]
 
         """
         self.swagger_types = {
@@ -121,7 +121,7 @@ class TypeListRule(ProjectionRule):
             'matching_strategy': 'str',
             'is_case_sensitive': 'bool',
             'rule_type': 'str',
-            'types': 'list[BaseType]'
+            'types': 'list[object]'
         }
 
         self.attribute_map = {
@@ -163,7 +163,7 @@ class TypeListRule(ProjectionRule):
     def is_skip_remaining_rules_on_match(self):
         """
         Gets the is_skip_remaining_rules_on_match of this TypeListRule.
-        skipRemainingRulesOnMatch
+        Specifies whether to skip remaining rules when a match is found.
 
 
         :return: The is_skip_remaining_rules_on_match of this TypeListRule.
@@ -175,7 +175,7 @@ class TypeListRule(ProjectionRule):
     def is_skip_remaining_rules_on_match(self, is_skip_remaining_rules_on_match):
         """
         Sets the is_skip_remaining_rules_on_match of this TypeListRule.
-        skipRemainingRulesOnMatch
+        Specifies whether to skip remaining rules when a match is found.
 
 
         :param is_skip_remaining_rules_on_match: The is_skip_remaining_rules_on_match of this TypeListRule.
@@ -187,7 +187,7 @@ class TypeListRule(ProjectionRule):
     def scope(self):
         """
         Gets the scope of this TypeListRule.
-        Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a TypedObject or a full TypedObject definition.
+        Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a `TypedObject`, or a full `TypedObject` definition.
 
 
         :return: The scope of this TypeListRule.
@@ -199,7 +199,7 @@ class TypeListRule(ProjectionRule):
     def scope(self, scope):
         """
         Sets the scope of this TypeListRule.
-        Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a TypedObject or a full TypedObject definition.
+        Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a `TypedObject`, or a full `TypedObject` definition.
 
 
         :param scope: The scope of this TypeListRule.
@@ -211,7 +211,7 @@ class TypeListRule(ProjectionRule):
     def is_cascade(self):
         """
         Gets the is_cascade of this TypeListRule.
-        cascade
+        Specifies whether to cascade or not.
 
 
         :return: The is_cascade of this TypeListRule.
@@ -223,7 +223,7 @@ class TypeListRule(ProjectionRule):
     def is_cascade(self, is_cascade):
         """
         Sets the is_cascade of this TypeListRule.
-        cascade
+        Specifies whether to cascade or not.
 
 
         :param is_cascade: The is_cascade of this TypeListRule.
@@ -235,7 +235,7 @@ class TypeListRule(ProjectionRule):
     def matching_strategy(self):
         """
         Gets the matching_strategy of this TypeListRule.
-        matchingStrategy
+        The pattern matching strategy.
 
         Allowed values for this property are: "NAME_OR_TAGS", "TAGS_ONLY", "NAME_ONLY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -250,7 +250,7 @@ class TypeListRule(ProjectionRule):
     def matching_strategy(self, matching_strategy):
         """
         Sets the matching_strategy of this TypeListRule.
-        matchingStrategy
+        The pattern matching strategy.
 
 
         :param matching_strategy: The matching_strategy of this TypeListRule.
@@ -265,7 +265,7 @@ class TypeListRule(ProjectionRule):
     def is_case_sensitive(self):
         """
         Gets the is_case_sensitive of this TypeListRule.
-        caseSensitive
+        Specifies if the rule is case sensitive.
 
 
         :return: The is_case_sensitive of this TypeListRule.
@@ -277,7 +277,7 @@ class TypeListRule(ProjectionRule):
     def is_case_sensitive(self, is_case_sensitive):
         """
         Sets the is_case_sensitive of this TypeListRule.
-        caseSensitive
+        Specifies if the rule is case sensitive.
 
 
         :param is_case_sensitive: The is_case_sensitive of this TypeListRule.
@@ -289,7 +289,7 @@ class TypeListRule(ProjectionRule):
     def rule_type(self):
         """
         Gets the rule_type of this TypeListRule.
-        ruleType
+        The rule type.
 
         Allowed values for this property are: "INCLUDE", "EXCLUDE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -304,7 +304,7 @@ class TypeListRule(ProjectionRule):
     def rule_type(self, rule_type):
         """
         Sets the rule_type of this TypeListRule.
-        ruleType
+        The rule type.
 
 
         :param rule_type: The rule_type of this TypeListRule.
@@ -319,11 +319,11 @@ class TypeListRule(ProjectionRule):
     def types(self):
         """
         Gets the types of this TypeListRule.
-        types
+        An arry of types.
 
 
         :return: The types of this TypeListRule.
-        :rtype: list[BaseType]
+        :rtype: list[object]
         """
         return self._types
 
@@ -331,11 +331,11 @@ class TypeListRule(ProjectionRule):
     def types(self, types):
         """
         Sets the types of this TypeListRule.
-        types
+        An arry of types.
 
 
         :param types: The types of this TypeListRule.
-        :type: list[BaseType]
+        :type: list[object]
         """
         self._types = types
 

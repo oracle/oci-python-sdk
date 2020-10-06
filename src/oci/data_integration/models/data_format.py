@@ -33,6 +33,10 @@ class DataFormat(object):
     #: This constant has a value of "PARQUET"
     TYPE_PARQUET = "PARQUET"
 
+    #: A constant which can be used with the type property of a DataFormat.
+    #: This constant has a value of "AVRO"
+    TYPE_AVRO = "AVRO"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DataFormat object with values from keyword arguments.
@@ -44,7 +48,7 @@ class DataFormat(object):
 
         :param type:
             The value to assign to the type property of this DataFormat.
-            Allowed values for this property are: "XML", "JSON", "CSV", "ORC", "PARQUET", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "XML", "JSON", "CSV", "ORC", "PARQUET", "AVRO", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -88,7 +92,7 @@ class DataFormat(object):
         Gets the type of this DataFormat.
         type
 
-        Allowed values for this property are: "XML", "JSON", "CSV", "ORC", "PARQUET", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "XML", "JSON", "CSV", "ORC", "PARQUET", "AVRO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -107,7 +111,7 @@ class DataFormat(object):
         :param type: The type of this DataFormat.
         :type: str
         """
-        allowed_values = ["XML", "JSON", "CSV", "ORC", "PARQUET"]
+        allowed_values = ["XML", "JSON", "CSV", "ORC", "PARQUET", "AVRO"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

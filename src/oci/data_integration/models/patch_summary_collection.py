@@ -37,7 +37,7 @@ class PatchSummaryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this PatchSummaryCollection.
-        The array of patch summaries
+        The array of patch summaries.
 
 
         :return: The items of this PatchSummaryCollection.
@@ -49,7 +49,7 @@ class PatchSummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this PatchSummaryCollection.
-        The array of patch summaries
+        The array of patch summaries.
 
 
         :param items: The items of this PatchSummaryCollection.

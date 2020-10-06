@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataAsset(object):
     """
-    The data asset type.
+    Represents a data source in the Data Integration service.
     """
 
     #: A constant which can be used with the model_type property of a DataAsset.
@@ -29,21 +29,31 @@ class DataAsset(object):
     #: This constant has a value of "ORACLE_ADWC_DATA_ASSET"
     MODEL_TYPE_ORACLE_ADWC_DATA_ASSET = "ORACLE_ADWC_DATA_ASSET"
 
+    #: A constant which can be used with the model_type property of a DataAsset.
+    #: This constant has a value of "MYSQL_DATA_ASSET"
+    MODEL_TYPE_MYSQL_DATA_ASSET = "MYSQL_DATA_ASSET"
+
+    #: A constant which can be used with the model_type property of a DataAsset.
+    #: This constant has a value of "GENERIC_JDBC_DATA_ASSET"
+    MODEL_TYPE_GENERIC_JDBC_DATA_ASSET = "GENERIC_JDBC_DATA_ASSET"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DataAsset object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.data_integration.models.DataAssetFromJdbc`
         * :class:`~oci.data_integration.models.DataAssetFromOracleDetails`
         * :class:`~oci.data_integration.models.DataAssetFromAdwcDetails`
         * :class:`~oci.data_integration.models.DataAssetFromObjectStorageDetails`
         * :class:`~oci.data_integration.models.DataAssetFromAtpDetails`
+        * :class:`~oci.data_integration.models.DataAssetFromMySQL`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this DataAsset.
-            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -157,6 +167,9 @@ class DataAsset(object):
         """
         type = object_dictionary['modelType']
 
+        if type == 'GENERIC_JDBC_DATA_ASSET':
+            return 'DataAssetFromJdbc'
+
         if type == 'ORACLE_DATA_ASSET':
             return 'DataAssetFromOracleDetails'
 
@@ -168,6 +181,9 @@ class DataAsset(object):
 
         if type == 'ORACLE_ATP_DATA_ASSET':
             return 'DataAssetFromAtpDetails'
+
+        if type == 'MYSQL_DATA_ASSET':
+            return 'DataAssetFromMySQL'
         else:
             return 'DataAsset'
 
@@ -177,7 +193,7 @@ class DataAsset(object):
         Gets the model_type of this DataAsset.
         The type of the data asset.
 
-        Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -196,7 +212,7 @@ class DataAsset(object):
         :param model_type: The model_type of this DataAsset.
         :type: str
         """
-        allowed_values = ["ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET"]
+        allowed_values = ["ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type
@@ -253,7 +269,7 @@ class DataAsset(object):
     def name(self):
         """
         Gets the name of this DataAsset.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this DataAsset.
@@ -265,7 +281,7 @@ class DataAsset(object):
     def name(self, name):
         """
         Sets the name of this DataAsset.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this DataAsset.
@@ -277,7 +293,7 @@ class DataAsset(object):
     def description(self):
         """
         Gets the description of this DataAsset.
-        Detailed description for the object.
+        User-defined description of the data asset.
 
 
         :return: The description of this DataAsset.
@@ -289,7 +305,7 @@ class DataAsset(object):
     def description(self, description):
         """
         Sets the description of this DataAsset.
-        Detailed description for the object.
+        User-defined description of the data asset.
 
 
         :param description: The description of this DataAsset.
@@ -325,7 +341,7 @@ class DataAsset(object):
     def identifier(self):
         """
         Gets the identifier of this DataAsset.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this DataAsset.
@@ -337,7 +353,7 @@ class DataAsset(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this DataAsset.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this DataAsset.
@@ -349,7 +365,7 @@ class DataAsset(object):
     def external_key(self):
         """
         Gets the external_key of this DataAsset.
-        The external key for the object
+        The external key for the object.
 
 
         :return: The external_key of this DataAsset.
@@ -361,7 +377,7 @@ class DataAsset(object):
     def external_key(self, external_key):
         """
         Sets the external_key of this DataAsset.
-        The external key for the object
+        The external key for the object.
 
 
         :param external_key: The external_key of this DataAsset.
@@ -373,7 +389,7 @@ class DataAsset(object):
     def asset_properties(self):
         """
         Gets the asset_properties of this DataAsset.
-        assetProperties
+        Additional properties for the data asset.
 
 
         :return: The asset_properties of this DataAsset.
@@ -385,7 +401,7 @@ class DataAsset(object):
     def asset_properties(self, asset_properties):
         """
         Sets the asset_properties of this DataAsset.
-        assetProperties
+        Additional properties for the data asset.
 
 
         :param asset_properties: The asset_properties of this DataAsset.
@@ -481,7 +497,7 @@ class DataAsset(object):
     def key_map(self):
         """
         Gets the key_map of this DataAsset.
-        A map, if provided key is replaced with generated key, this structure provides mapping between user provided key and generated key
+        A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 
 
         :return: The key_map of this DataAsset.
@@ -493,7 +509,7 @@ class DataAsset(object):
     def key_map(self, key_map):
         """
         Sets the key_map of this DataAsset.
-        A map, if provided key is replaced with generated key, this structure provides mapping between user provided key and generated key
+        A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 
 
         :param key_map: The key_map of this DataAsset.

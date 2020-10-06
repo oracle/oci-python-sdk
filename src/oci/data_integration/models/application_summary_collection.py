@@ -37,7 +37,7 @@ class ApplicationSummaryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ApplicationSummaryCollection.
-        The array of Application summaries
+        The array of application summaries.
 
 
         :return: The items of this ApplicationSummaryCollection.
@@ -49,7 +49,7 @@ class ApplicationSummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this ApplicationSummaryCollection.
-        The array of Application summaries
+        The array of application summaries.
 
 
         :param items: The items of this ApplicationSummaryCollection.

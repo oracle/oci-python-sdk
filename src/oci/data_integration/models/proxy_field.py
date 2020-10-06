@@ -21,7 +21,7 @@ class ProxyField(TypedObject):
 
         :param model_type:
             The value to assign to the model_type property of this ProxyField.
-            Allowed values for this property are: "SHAPE", "INPUT_PORT", "SHAPE_FIELD", "INPUT_FIELD", "DERIVED_FIELD", "OUTPUT_FIELD", "DYNAMIC_PROXY_FIELD", "OUTPUT_PORT", "DYNAMIC_INPUT_FIELD", "PROXY_FIELD", "PARAMETER"
+            Allowed values for this property are: "SHAPE", "INPUT_PORT", "SHAPE_FIELD", "INPUT_FIELD", "DERIVED_FIELD", "MACRO_FIELD", "OUTPUT_FIELD", "DYNAMIC_PROXY_FIELD", "OUTPUT_PORT", "DYNAMIC_INPUT_FIELD", "PROXY_FIELD", "PARAMETER"
         :type model_type: str
 
         :param key:
@@ -110,7 +110,7 @@ class ProxyField(TypedObject):
     def scope(self):
         """
         Gets the scope of this ProxyField.
-        Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a TypedObject or a full TypedObject definition.
+        Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a `TypedObject`, or a full `TypedObject` definition.
 
 
         :return: The scope of this ProxyField.
@@ -122,7 +122,7 @@ class ProxyField(TypedObject):
     def scope(self, scope):
         """
         Sets the scope of this ProxyField.
-        Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a TypedObject or a full TypedObject definition.
+        Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a `TypedObject`, or a full `TypedObject` definition.
 
 
         :param scope: The scope of this ProxyField.
@@ -154,7 +154,7 @@ class ProxyField(TypedObject):
     def labels(self):
         """
         Gets the labels of this ProxyField.
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 
 
         :return: The labels of this ProxyField.
@@ -166,7 +166,7 @@ class ProxyField(TypedObject):
     def labels(self, labels):
         """
         Sets the labels of this ProxyField.
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 
 
         :param labels: The labels of this ProxyField.

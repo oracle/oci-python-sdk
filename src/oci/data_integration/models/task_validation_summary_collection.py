@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TaskValidationSummaryCollection(object):
     """
-    List of task validation summaries
+    A list of task validation summaries.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class TaskValidationSummaryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this TaskValidationSummaryCollection.
-        The array of validation summaries
+        An array of validation summaries.
 
 
         :return: The items of this TaskValidationSummaryCollection.
@@ -49,7 +49,7 @@ class TaskValidationSummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this TaskValidationSummaryCollection.
-        The array of validation summaries
+        An array of validation summaries.
 
 
         :param items: The items of this TaskValidationSummaryCollection.

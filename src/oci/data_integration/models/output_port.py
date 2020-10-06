@@ -33,7 +33,7 @@ class OutputPort(TypedObject):
 
         :param model_type:
             The value to assign to the model_type property of this OutputPort.
-            Allowed values for this property are: "SHAPE", "INPUT_PORT", "SHAPE_FIELD", "INPUT_FIELD", "DERIVED_FIELD", "OUTPUT_FIELD", "DYNAMIC_PROXY_FIELD", "OUTPUT_PORT", "DYNAMIC_INPUT_FIELD", "PROXY_FIELD", "PARAMETER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SHAPE", "INPUT_PORT", "SHAPE_FIELD", "INPUT_FIELD", "DERIVED_FIELD", "MACRO_FIELD", "OUTPUT_FIELD", "DYNAMIC_PROXY_FIELD", "OUTPUT_PORT", "DYNAMIC_INPUT_FIELD", "PROXY_FIELD", "PARAMETER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -118,7 +118,7 @@ class OutputPort(TypedObject):
     def port_type(self):
         """
         Gets the port_type of this OutputPort.
-        The port details for the data asset.Type
+        The port details for the data asset.Type.
 
         Allowed values for this property are: "DATA", "CONTROL", "MODEL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -133,7 +133,7 @@ class OutputPort(TypedObject):
     def port_type(self, port_type):
         """
         Sets the port_type of this OutputPort.
-        The port details for the data asset.Type
+        The port details for the data asset.Type.
 
 
         :param port_type: The port_type of this OutputPort.
@@ -148,7 +148,7 @@ class OutputPort(TypedObject):
     def fields(self):
         """
         Gets the fields of this OutputPort.
-        fields
+        An array of fields.
 
 
         :return: The fields of this OutputPort.
@@ -160,7 +160,7 @@ class OutputPort(TypedObject):
     def fields(self, fields):
         """
         Sets the fields of this OutputPort.
-        fields
+        An array of fields.
 
 
         :param fields: The fields of this OutputPort.

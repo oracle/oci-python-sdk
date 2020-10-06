@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateVmClusterDetails(object):
     """
-    Details for updating the VM cluster.
+    Details for updating the Exadata Cloud@Customer VM cluster.
     """
 
     #: A constant which can be used with the license_model property of a UpdateVmClusterDetails.

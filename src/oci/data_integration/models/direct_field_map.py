@@ -96,7 +96,7 @@ class DirectFieldMap(FieldMap):
     def key(self):
         """
         Gets the key of this DirectFieldMap.
-        The key of the object.
+        The object key.
 
 
         :return: The key of this DirectFieldMap.
@@ -108,7 +108,7 @@ class DirectFieldMap(FieldMap):
     def key(self, key):
         """
         Sets the key of this DirectFieldMap.
-        The key of the object.
+        The object key.
 
 
         :param key: The key of this DirectFieldMap.
@@ -120,7 +120,7 @@ class DirectFieldMap(FieldMap):
     def model_version(self):
         """
         Gets the model_version of this DirectFieldMap.
-        The model version of an object.
+        The object's model version.
 
 
         :return: The model_version of this DirectFieldMap.
@@ -132,7 +132,7 @@ class DirectFieldMap(FieldMap):
     def model_version(self, model_version):
         """
         Sets the model_version of this DirectFieldMap.
-        The model version of an object.
+        The object's model version.
 
 
         :param model_version: The model_version of this DirectFieldMap.
@@ -184,7 +184,7 @@ class DirectFieldMap(FieldMap):
     def source_typed_object(self):
         """
         Gets the source_typed_object of this DirectFieldMap.
-        Reference to a typed object
+        Reference to a typed object.
 
 
         :return: The source_typed_object of this DirectFieldMap.
@@ -196,7 +196,7 @@ class DirectFieldMap(FieldMap):
     def source_typed_object(self, source_typed_object):
         """
         Sets the source_typed_object of this DirectFieldMap.
-        Reference to a typed object
+        Reference to a typed object.
 
 
         :param source_typed_object: The source_typed_object of this DirectFieldMap.
@@ -208,7 +208,7 @@ class DirectFieldMap(FieldMap):
     def target_typed_object(self):
         """
         Gets the target_typed_object of this DirectFieldMap.
-        Reference to a typed object
+        Reference to a typed object.
 
 
         :return: The target_typed_object of this DirectFieldMap.
@@ -220,7 +220,7 @@ class DirectFieldMap(FieldMap):
     def target_typed_object(self, target_typed_object):
         """
         Sets the target_typed_object of this DirectFieldMap.
-        Reference to a typed object
+        Reference to a typed object.
 
 
         :param target_typed_object: The target_typed_object of this DirectFieldMap.

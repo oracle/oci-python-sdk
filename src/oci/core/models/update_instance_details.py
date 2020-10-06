@@ -50,6 +50,10 @@ class UpdateInstanceDetails(object):
             The value to assign to the shape_config property of this UpdateInstanceDetails.
         :type shape_config: UpdateInstanceShapeConfigDetails
 
+        :param instance_options:
+            The value to assign to the instance_options property of this UpdateInstanceDetails.
+        :type instance_options: InstanceOptions
+
         :param fault_domain:
             The value to assign to the fault_domain property of this UpdateInstanceDetails.
         :type fault_domain: str
@@ -72,6 +76,7 @@ class UpdateInstanceDetails(object):
             'extended_metadata': 'dict(str, object)',
             'shape': 'str',
             'shape_config': 'UpdateInstanceShapeConfigDetails',
+            'instance_options': 'InstanceOptions',
             'fault_domain': 'str',
             'launch_options': 'UpdateLaunchOptions',
             'availability_config': 'UpdateInstanceAvailabilityConfigDetails'
@@ -86,6 +91,7 @@ class UpdateInstanceDetails(object):
             'extended_metadata': 'extendedMetadata',
             'shape': 'shape',
             'shape_config': 'shapeConfig',
+            'instance_options': 'instanceOptions',
             'fault_domain': 'faultDomain',
             'launch_options': 'launchOptions',
             'availability_config': 'availabilityConfig'
@@ -99,6 +105,7 @@ class UpdateInstanceDetails(object):
         self._extended_metadata = None
         self._shape = None
         self._shape_config = None
+        self._instance_options = None
         self._fault_domain = None
         self._launch_options = None
         self._availability_config = None
@@ -394,6 +401,26 @@ class UpdateInstanceDetails(object):
         :type: UpdateInstanceShapeConfigDetails
         """
         self._shape_config = shape_config
+
+    @property
+    def instance_options(self):
+        """
+        Gets the instance_options of this UpdateInstanceDetails.
+
+        :return: The instance_options of this UpdateInstanceDetails.
+        :rtype: InstanceOptions
+        """
+        return self._instance_options
+
+    @instance_options.setter
+    def instance_options(self, instance_options):
+        """
+        Sets the instance_options of this UpdateInstanceDetails.
+
+        :param instance_options: The instance_options of this UpdateInstanceDetails.
+        :type: InstanceOptions
+        """
+        self._instance_options = instance_options
 
     @property
     def fault_domain(self):

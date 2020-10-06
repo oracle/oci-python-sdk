@@ -44,7 +44,7 @@ class ConnectionProperty(object):
     def name(self):
         """
         Gets the name of this ConnectionProperty.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this ConnectionProperty.
@@ -56,7 +56,7 @@ class ConnectionProperty(object):
     def name(self, name):
         """
         Sets the name of this ConnectionProperty.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this ConnectionProperty.
@@ -68,7 +68,7 @@ class ConnectionProperty(object):
     def value(self):
         """
         Gets the value of this ConnectionProperty.
-        value
+        The value for the connection name property.
 
 
         :return: The value of this ConnectionProperty.
@@ -80,7 +80,7 @@ class ConnectionProperty(object):
     def value(self, value):
         """
         Sets the value of this ConnectionProperty.
-        value
+        The value for the connection name property.
 
 
         :param value: The value of this ConnectionProperty.

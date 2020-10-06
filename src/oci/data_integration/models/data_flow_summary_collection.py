@@ -37,7 +37,7 @@ class DataFlowSummaryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this DataFlowSummaryCollection.
-        The array of DataFlow summaries
+        The array of data flow summaries.
 
 
         :return: The items of this DataFlowSummaryCollection.
@@ -49,7 +49,7 @@ class DataFlowSummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this DataFlowSummaryCollection.
-        The array of DataFlow summaries
+        The array of data flow summaries.
 
 
         :param items: The items of this DataFlowSummaryCollection.

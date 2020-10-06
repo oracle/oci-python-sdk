@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ProjectionRule(object):
     """
-    Base type for how fields are projected, there are many different mechanisms for doing this such as by a name patter, datatype etc. See the modelType property for the types.
+    Base type for how fields are projected. There are many different mechanisms for doing this such as by a name pattern, datatype and so on. See the `modelType` property for the types.
     """
 
     #: A constant which can be used with the model_type property of a ProjectionRule.
@@ -307,7 +307,7 @@ class ProjectionRule(object):
     def description(self):
         """
         Gets the description of this ProjectionRule.
-        Detailed description for the object.
+        A user defined description for the object.
 
 
         :return: The description of this ProjectionRule.
@@ -319,7 +319,7 @@ class ProjectionRule(object):
     def description(self, description):
         """
         Sets the description of this ProjectionRule.
-        Detailed description for the object.
+        A user defined description for the object.
 
 
         :param description: The description of this ProjectionRule.

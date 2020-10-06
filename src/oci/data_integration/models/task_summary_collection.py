@@ -37,7 +37,7 @@ class TaskSummaryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this TaskSummaryCollection.
-        The array of Task summaries.
+        The array of task summaries.
 
 
         :return: The items of this TaskSummaryCollection.
@@ -49,7 +49,7 @@ class TaskSummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this TaskSummaryCollection.
-        The array of Task summaries.
+        The array of task summaries.
 
 
         :param items: The items of this TaskSummaryCollection.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateExadataInfrastructureDetails(object):
     """
-    Updates the Exadata infrastructure.
+    Updates the Exadata Cloud@Customer infrastructure.
     """
 
     def __init__(self, **kwargs):
@@ -289,7 +289,7 @@ class UpdateExadataInfrastructureDetails(object):
     def contacts(self):
         """
         Gets the contacts of this UpdateExadataInfrastructureDetails.
-        The list of contacts for the Exadata Infrastructure.
+        The list of contacts for the Exadata infrastructure.
 
 
         :return: The contacts of this UpdateExadataInfrastructureDetails.
@@ -301,7 +301,7 @@ class UpdateExadataInfrastructureDetails(object):
     def contacts(self, contacts):
         """
         Sets the contacts of this UpdateExadataInfrastructureDetails.
-        The list of contacts for the Exadata Infrastructure.
+        The list of contacts for the Exadata infrastructure.
 
 
         :param contacts: The contacts of this UpdateExadataInfrastructureDetails.

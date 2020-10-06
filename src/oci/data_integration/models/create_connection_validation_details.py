@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateConnectionValidationDetails(object):
     """
-    Connection validation definition
+    The properties used in create connection validation operations.
     """
 
     def __init__(self, **kwargs):

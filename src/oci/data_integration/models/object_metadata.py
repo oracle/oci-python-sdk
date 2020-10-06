@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ObjectMetadata(object):
     """
-    A summary type containing information about the object including its key, name and when/who created/updated it
+    A summary type containing information about the object including its key, name and when/who created/updated it.
     """
 
     def __init__(self, **kwargs):
@@ -62,6 +62,10 @@ class ObjectMetadata(object):
             The value to assign to the labels property of this ObjectMetadata.
         :type labels: list[str]
 
+        :param is_favorite:
+            The value to assign to the is_favorite property of this ObjectMetadata.
+        :type is_favorite: bool
+
         """
         self.swagger_types = {
             'created_by': 'str',
@@ -74,7 +78,8 @@ class ObjectMetadata(object):
             'identifier_path': 'str',
             'info_fields': 'dict(str, str)',
             'registry_version': 'int',
-            'labels': 'list[str]'
+            'labels': 'list[str]',
+            'is_favorite': 'bool'
         }
 
         self.attribute_map = {
@@ -88,7 +93,8 @@ class ObjectMetadata(object):
             'identifier_path': 'identifierPath',
             'info_fields': 'infoFields',
             'registry_version': 'registryVersion',
-            'labels': 'labels'
+            'labels': 'labels',
+            'is_favorite': 'isFavorite'
         }
 
         self._created_by = None
@@ -102,6 +108,7 @@ class ObjectMetadata(object):
         self._info_fields = None
         self._registry_version = None
         self._labels = None
+        self._is_favorite = None
 
     @property
     def created_by(self):
@@ -299,7 +306,7 @@ class ObjectMetadata(object):
     def info_fields(self):
         """
         Gets the info_fields of this ObjectMetadata.
-        infoFields
+        Information property fields.
 
 
         :return: The info_fields of this ObjectMetadata.
@@ -311,7 +318,7 @@ class ObjectMetadata(object):
     def info_fields(self, info_fields):
         """
         Sets the info_fields of this ObjectMetadata.
-        infoFields
+        Information property fields.
 
 
         :param info_fields: The info_fields of this ObjectMetadata.
@@ -323,7 +330,7 @@ class ObjectMetadata(object):
     def registry_version(self):
         """
         Gets the registry_version of this ObjectMetadata.
-        registryVersion
+        The registry version of the object.
 
 
         :return: The registry_version of this ObjectMetadata.
@@ -335,7 +342,7 @@ class ObjectMetadata(object):
     def registry_version(self, registry_version):
         """
         Sets the registry_version of this ObjectMetadata.
-        registryVersion
+        The registry version of the object.
 
 
         :param registry_version: The registry_version of this ObjectMetadata.
@@ -347,7 +354,7 @@ class ObjectMetadata(object):
     def labels(self):
         """
         Gets the labels of this ObjectMetadata.
-        Labels are keywords or tags that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 
 
         :return: The labels of this ObjectMetadata.
@@ -359,13 +366,37 @@ class ObjectMetadata(object):
     def labels(self, labels):
         """
         Sets the labels of this ObjectMetadata.
-        Labels are keywords or tags that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 
 
         :param labels: The labels of this ObjectMetadata.
         :type: list[str]
         """
         self._labels = labels
+
+    @property
+    def is_favorite(self):
+        """
+        Gets the is_favorite of this ObjectMetadata.
+        Specifies whether this object is a favorite or not.
+
+
+        :return: The is_favorite of this ObjectMetadata.
+        :rtype: bool
+        """
+        return self._is_favorite
+
+    @is_favorite.setter
+    def is_favorite(self, is_favorite):
+        """
+        Sets the is_favorite of this ObjectMetadata.
+        Specifies whether this object is a favorite or not.
+
+
+        :param is_favorite: The is_favorite of this ObjectMetadata.
+        :type: bool
+        """
+        self._is_favorite = is_favorite
 
     def __repr__(self):
         return formatted_flat_dict(self)

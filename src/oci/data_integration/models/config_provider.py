@@ -44,7 +44,7 @@ class ConfigProvider(object):
     def bindings(self):
         """
         Gets the bindings of this ConfigProvider.
-        bindings
+        The configuration provider bindings.
 
 
         :return: The bindings of this ConfigProvider.
@@ -56,7 +56,7 @@ class ConfigProvider(object):
     def bindings(self, bindings):
         """
         Sets the bindings of this ConfigProvider.
-        bindings
+        The configuration provider bindings.
 
 
         :param bindings: The bindings of this ConfigProvider.
@@ -68,7 +68,7 @@ class ConfigProvider(object):
     def child_providers(self):
         """
         Gets the child_providers of this ConfigProvider.
-        childProviders
+        The child providers.
 
 
         :return: The child_providers of this ConfigProvider.
@@ -80,7 +80,7 @@ class ConfigProvider(object):
     def child_providers(self, child_providers):
         """
         Sets the child_providers of this ConfigProvider.
-        childProviders
+        The child providers.
 
 
         :param child_providers: The child_providers of this ConfigProvider.

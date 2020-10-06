@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DbIormConfigUpdateDetail(object):
     """
-    IORM Config setting request for this database
+    Details of the IORM configuration settings update request.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class DbIormConfigUpdateDetail(object):
     def db_name(self):
         """
         Gets the db_name of this DbIormConfigUpdateDetail.
-        Database Name. For updating default DbPlan, pass in dbName as `default`
+        The database name. For the default `DbPlan`, the `dbName` is `default`.
 
 
         :return: The db_name of this DbIormConfigUpdateDetail.
@@ -56,7 +56,7 @@ class DbIormConfigUpdateDetail(object):
     def db_name(self, db_name):
         """
         Sets the db_name of this DbIormConfigUpdateDetail.
-        Database Name. For updating default DbPlan, pass in dbName as `default`
+        The database name. For the default `DbPlan`, the `dbName` is `default`.
 
 
         :param db_name: The db_name of this DbIormConfigUpdateDetail.
@@ -68,7 +68,7 @@ class DbIormConfigUpdateDetail(object):
     def share(self):
         """
         Gets the share of this DbIormConfigUpdateDetail.
-        Relative priority of a database
+        The relative priority of this database.
 
 
         :return: The share of this DbIormConfigUpdateDetail.
@@ -80,7 +80,7 @@ class DbIormConfigUpdateDetail(object):
     def share(self, share):
         """
         Sets the share of this DbIormConfigUpdateDetail.
-        Relative priority of a database
+        The relative priority of this database.
 
 
         :param share: The share of this DbIormConfigUpdateDetail.
