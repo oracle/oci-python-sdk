@@ -206,7 +206,7 @@ class TypeSystem(object):
     def name(self):
         """
         Gets the name of this TypeSystem.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this TypeSystem.
@@ -218,7 +218,7 @@ class TypeSystem(object):
     def name(self, name):
         """
         Sets the name of this TypeSystem.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this TypeSystem.
@@ -230,7 +230,7 @@ class TypeSystem(object):
     def description(self):
         """
         Gets the description of this TypeSystem.
-        Detailed description for the object.
+        A user defined description for the object.
 
 
         :return: The description of this TypeSystem.
@@ -242,7 +242,7 @@ class TypeSystem(object):
     def description(self, description):
         """
         Sets the description of this TypeSystem.
-        Detailed description for the object.
+        A user defined description for the object.
 
 
         :param description: The description of this TypeSystem.
@@ -278,7 +278,7 @@ class TypeSystem(object):
     def type_mapping_to(self):
         """
         Gets the type_mapping_to of this TypeSystem.
-        typeMappingTo
+        The type system to map to.
 
 
         :return: The type_mapping_to of this TypeSystem.
@@ -290,7 +290,7 @@ class TypeSystem(object):
     def type_mapping_to(self, type_mapping_to):
         """
         Sets the type_mapping_to of this TypeSystem.
-        typeMappingTo
+        The type system to map to.
 
 
         :param type_mapping_to: The type_mapping_to of this TypeSystem.
@@ -302,7 +302,7 @@ class TypeSystem(object):
     def type_mapping_from(self):
         """
         Gets the type_mapping_from of this TypeSystem.
-        typeMappingFrom
+        The type system to map from.
 
 
         :return: The type_mapping_from of this TypeSystem.
@@ -314,7 +314,7 @@ class TypeSystem(object):
     def type_mapping_from(self, type_mapping_from):
         """
         Sets the type_mapping_from of this TypeSystem.
-        typeMappingFrom
+        The type system to map from.
 
 
         :param type_mapping_from: The type_mapping_from of this TypeSystem.
@@ -350,7 +350,7 @@ class TypeSystem(object):
     def identifier(self):
         """
         Gets the identifier of this TypeSystem.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this TypeSystem.
@@ -362,7 +362,7 @@ class TypeSystem(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this TypeSystem.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this TypeSystem.
@@ -374,7 +374,7 @@ class TypeSystem(object):
     def types(self):
         """
         Gets the types of this TypeSystem.
-        types
+        An array of types.
 
 
         :return: The types of this TypeSystem.
@@ -386,7 +386,7 @@ class TypeSystem(object):
     def types(self, types):
         """
         Sets the types of this TypeSystem.
-        types
+        An array of types.
 
 
         :param types: The types of this TypeSystem.

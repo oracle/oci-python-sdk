@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.22.0 - 2020-10-06
+====================
+
+Added
+-----
+* Support for calling Oracle Cloud Infrastructure services in the me-dubai-1 region
+* Support for rotating keys on autonomous container databases and autonomous databases in the Database service
+* Support for cloud Exadata infrastructure and cloud VM clusters in the Database service
+* Support for controlling the display of tax banners in the Marketplace service
+* Support for application references, patch changes, generic JDBC and MySQL data asset types, and publishing tasks to OCI Dataflow in the Data Integration service
+* Support for disabling the legacy Instance Metadata endpoints v1 in the Compute service
+* Support for instance configurations specifying instance options in the Compute Management service
+
+Breaking
+--------
+* The attribute `model_type` in `TypedObject` model now raises `ValueError` when provided with an invalid value. Please see the `documentation <https://docs.cloud.oracle.com/en-us/iaas/tools/python/2.21.6/api/data_integration/models/oci.data_integration.models.TypedObject.html#oci.data_integration.models.TypedObject.model_type>`_ for a list of allowed values.
+
+====================
 2.21.6 - 2020-09-29
 ====================
 

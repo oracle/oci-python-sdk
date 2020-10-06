@@ -178,7 +178,7 @@ class PublishedObject(object):
     def model_version(self):
         """
         Gets the model_version of this PublishedObject.
-        The model version of an object.
+        The object's model version.
 
 
         :return: The model_version of this PublishedObject.
@@ -190,7 +190,7 @@ class PublishedObject(object):
     def model_version(self, model_version):
         """
         Sets the model_version of this PublishedObject.
-        The model version of an object.
+        The object's model version.
 
 
         :param model_version: The model_version of this PublishedObject.
@@ -222,7 +222,7 @@ class PublishedObject(object):
     def name(self):
         """
         Gets the name of this PublishedObject.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this PublishedObject.
@@ -234,7 +234,7 @@ class PublishedObject(object):
     def name(self, name):
         """
         Sets the name of this PublishedObject.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this PublishedObject.
@@ -318,7 +318,7 @@ class PublishedObject(object):
     def identifier(self):
         """
         Gets the identifier of this PublishedObject.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this PublishedObject.
@@ -330,7 +330,7 @@ class PublishedObject(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this PublishedObject.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this PublishedObject.

@@ -18,6 +18,10 @@ class Patch(object):
     PATCH_TYPE_PUBLISH = "PUBLISH"
 
     #: A constant which can be used with the patch_type property of a Patch.
+    #: This constant has a value of "REFRESH"
+    PATCH_TYPE_REFRESH = "REFRESH"
+
+    #: A constant which can be used with the patch_type property of a Patch.
     #: This constant has a value of "UNPUBLISH"
     PATCH_TYPE_UNPUBLISH = "UNPUBLISH"
 
@@ -88,7 +92,7 @@ class Patch(object):
 
         :param patch_type:
             The value to assign to the patch_type property of this Patch.
-            Allowed values for this property are: "PUBLISH", "UNPUBLISH", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PUBLISH", "REFRESH", "UNPUBLISH", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type patch_type: str
 
@@ -184,7 +188,7 @@ class Patch(object):
     def key(self):
         """
         Gets the key of this Patch.
-        The key of the object.
+        The object key.
 
 
         :return: The key of this Patch.
@@ -196,7 +200,7 @@ class Patch(object):
     def key(self, key):
         """
         Sets the key of this Patch.
-        The key of the object.
+        The object key.
 
 
         :param key: The key of this Patch.
@@ -208,7 +212,7 @@ class Patch(object):
     def model_type(self):
         """
         Gets the model_type of this Patch.
-        The type of the object.
+        The object type.
 
 
         :return: The model_type of this Patch.
@@ -220,7 +224,7 @@ class Patch(object):
     def model_type(self, model_type):
         """
         Sets the model_type of this Patch.
-        The type of the object.
+        The object type.
 
 
         :param model_type: The model_type of this Patch.
@@ -232,7 +236,7 @@ class Patch(object):
     def model_version(self):
         """
         Gets the model_version of this Patch.
-        The model version of an object.
+        The object's model version.
 
 
         :return: The model_version of this Patch.
@@ -244,7 +248,7 @@ class Patch(object):
     def model_version(self, model_version):
         """
         Sets the model_version of this Patch.
-        The model version of an object.
+        The object's model version.
 
 
         :param model_version: The model_version of this Patch.
@@ -256,7 +260,7 @@ class Patch(object):
     def name(self):
         """
         Gets the name of this Patch.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this Patch.
@@ -268,7 +272,7 @@ class Patch(object):
     def name(self, name):
         """
         Sets the name of this Patch.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this Patch.
@@ -352,7 +356,7 @@ class Patch(object):
     def identifier(self):
         """
         Gets the identifier of this Patch.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this Patch.
@@ -364,7 +368,7 @@ class Patch(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this Patch.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this Patch.
@@ -454,7 +458,7 @@ class Patch(object):
         Gets the patch_type of this Patch.
         The type of the patch applied or being applied on the application.
 
-        Allowed values for this property are: "PUBLISH", "UNPUBLISH", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PUBLISH", "REFRESH", "UNPUBLISH", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -473,7 +477,7 @@ class Patch(object):
         :param patch_type: The patch_type of this Patch.
         :type: str
         """
-        allowed_values = ["PUBLISH", "UNPUBLISH"]
+        allowed_values = ["PUBLISH", "REFRESH", "UNPUBLISH"]
         if not value_allowed_none_or_none_sentinel(patch_type, allowed_values):
             patch_type = 'UNKNOWN_ENUM_VALUE'
         self._patch_type = patch_type
@@ -536,7 +540,7 @@ class Patch(object):
     def patch_object_metadata(self):
         """
         Gets the patch_object_metadata of this Patch.
-        List of objects that are published / unpublished in this patch.
+        List of objects that are published or unpublished in this patch.
 
 
         :return: The patch_object_metadata of this Patch.
@@ -548,7 +552,7 @@ class Patch(object):
     def patch_object_metadata(self, patch_object_metadata):
         """
         Sets the patch_object_metadata of this Patch.
-        List of objects that are published / unpublished in this patch.
+        List of objects that are published or unpublished in this patch.
 
 
         :param patch_object_metadata: The patch_object_metadata of this Patch.
@@ -600,7 +604,7 @@ class Patch(object):
     def key_map(self):
         """
         Gets the key_map of this Patch.
-        A map, if provided key is replaced with generated key, this structure provides mapping between user provided key and generated key
+        A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 
 
         :return: The key_map of this Patch.
@@ -612,7 +616,7 @@ class Patch(object):
     def key_map(self, key_map):
         """
         Sets the key_map of this Patch.
-        A map, if provided key is replaced with generated key, this structure provides mapping between user provided key and generated key
+        A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 
 
         :param key_map: The key_map of this Patch.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InputLink(FlowPortLink):
     """
-    The information about input links.
+    Details about the incoming data to an operator in a data flow design.
     """
 
     def __init__(self, **kwargs):
@@ -97,7 +97,7 @@ class InputLink(FlowPortLink):
     def from_link(self):
         """
         Gets the from_link of this InputLink.
-        From link reference.
+        The from link reference.
 
 
         :return: The from_link of this InputLink.
@@ -109,7 +109,7 @@ class InputLink(FlowPortLink):
     def from_link(self, from_link):
         """
         Sets the from_link of this InputLink.
-        From link reference.
+        The from link reference.
 
 
         :param from_link: The from_link of this InputLink.

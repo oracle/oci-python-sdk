@@ -225,6 +225,7 @@ Core Services
     oci.core.models.InstanceConfigurationCreateVnicDetails
     oci.core.models.InstanceConfigurationCreateVolumeDetails
     oci.core.models.InstanceConfigurationInstanceDetails
+    oci.core.models.InstanceConfigurationInstanceOptions
     oci.core.models.InstanceConfigurationInstanceSourceDetails
     oci.core.models.InstanceConfigurationInstanceSourceViaBootVolumeDetails
     oci.core.models.InstanceConfigurationInstanceSourceViaImageDetails
@@ -240,6 +241,7 @@ Core Services
     oci.core.models.InstanceConfigurationVolumeSourceFromVolumeDetails
     oci.core.models.InstanceConsoleConnection
     oci.core.models.InstanceCredentials
+    oci.core.models.InstanceOptions
     oci.core.models.InstancePool
     oci.core.models.InstancePoolInstanceLoadBalancerBackend
     oci.core.models.InstancePoolLoadBalancerAttachment

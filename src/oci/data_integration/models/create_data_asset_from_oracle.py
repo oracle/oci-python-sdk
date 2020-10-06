@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDataAssetFromOracle(CreateDataAssetDetails):
     """
-    The Oracle data asset details.
+    Details for the Oracle Database data asset type.
     """
 
     def __init__(self, **kwargs):
@@ -21,7 +21,7 @@ class CreateDataAssetFromOracle(CreateDataAssetDetails):
 
         :param model_type:
             The value to assign to the model_type property of this CreateDataAssetFromOracle.
-            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET"
+            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET"
         :type model_type: str
 
         :param key:
@@ -152,7 +152,7 @@ class CreateDataAssetFromOracle(CreateDataAssetDetails):
     def host(self):
         """
         Gets the host of this CreateDataAssetFromOracle.
-        The host details for the data asset.
+        The Oracle Database hostname.
 
 
         :return: The host of this CreateDataAssetFromOracle.
@@ -164,7 +164,7 @@ class CreateDataAssetFromOracle(CreateDataAssetDetails):
     def host(self, host):
         """
         Sets the host of this CreateDataAssetFromOracle.
-        The host details for the data asset.
+        The Oracle Database hostname.
 
 
         :param host: The host of this CreateDataAssetFromOracle.
@@ -176,7 +176,7 @@ class CreateDataAssetFromOracle(CreateDataAssetDetails):
     def port(self):
         """
         Gets the port of this CreateDataAssetFromOracle.
-        The port details for the data asset.
+        The Oracle Database port.
 
 
         :return: The port of this CreateDataAssetFromOracle.
@@ -188,7 +188,7 @@ class CreateDataAssetFromOracle(CreateDataAssetDetails):
     def port(self, port):
         """
         Sets the port of this CreateDataAssetFromOracle.
-        The port details for the data asset.
+        The Oracle Database port.
 
 
         :param port: The port of this CreateDataAssetFromOracle.
@@ -224,7 +224,7 @@ class CreateDataAssetFromOracle(CreateDataAssetDetails):
     def driver_class(self):
         """
         Gets the driver_class of this CreateDataAssetFromOracle.
-        The driver class for the data asset.
+        The Oracle Database driver class.
 
 
         :return: The driver_class of this CreateDataAssetFromOracle.
@@ -236,7 +236,7 @@ class CreateDataAssetFromOracle(CreateDataAssetDetails):
     def driver_class(self, driver_class):
         """
         Sets the driver_class of this CreateDataAssetFromOracle.
-        The driver class for the data asset.
+        The Oracle Database driver class.
 
 
         :param driver_class: The driver_class of this CreateDataAssetFromOracle.
@@ -248,7 +248,7 @@ class CreateDataAssetFromOracle(CreateDataAssetDetails):
     def sid(self):
         """
         Gets the sid of this CreateDataAssetFromOracle.
-        sid
+        The Oracle Database SID.
 
 
         :return: The sid of this CreateDataAssetFromOracle.
@@ -260,7 +260,7 @@ class CreateDataAssetFromOracle(CreateDataAssetDetails):
     def sid(self, sid):
         """
         Sets the sid of this CreateDataAssetFromOracle.
-        sid
+        The Oracle Database SID.
 
 
         :param sid: The sid of this CreateDataAssetFromOracle.

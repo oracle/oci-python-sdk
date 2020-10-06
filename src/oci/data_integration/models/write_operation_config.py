@@ -75,6 +75,10 @@ class WriteOperationConfig(AbstractDataOperationConfig):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type write_mode: str
 
+        :param merge_key:
+            The value to assign to the merge_key property of this WriteOperationConfig.
+        :type merge_key: UniqueKey
+
         :param object_status:
             The value to assign to the object_status property of this WriteOperationConfig.
         :type object_status: int
@@ -90,6 +94,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
             'partition_config': 'PartitionConfig',
             'write_attribute': 'AbstractWriteAttribute',
             'write_mode': 'str',
+            'merge_key': 'UniqueKey',
             'object_status': 'int'
         }
 
@@ -103,6 +108,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
             'partition_config': 'partitionConfig',
             'write_attribute': 'writeAttribute',
             'write_mode': 'writeMode',
+            'merge_key': 'mergeKey',
             'object_status': 'objectStatus'
         }
 
@@ -115,6 +121,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
         self._partition_config = None
         self._write_attribute = None
         self._write_mode = None
+        self._merge_key = None
         self._object_status = None
         self._model_type = 'WRITE_OPERATION_CONFIG'
 
@@ -122,7 +129,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
     def key(self):
         """
         Gets the key of this WriteOperationConfig.
-        The key of the object.
+        The object key.
 
 
         :return: The key of this WriteOperationConfig.
@@ -134,7 +141,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
     def key(self, key):
         """
         Sets the key of this WriteOperationConfig.
-        The key of the object.
+        The object key.
 
 
         :param key: The key of this WriteOperationConfig.
@@ -146,7 +153,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
     def model_version(self):
         """
         Gets the model_version of this WriteOperationConfig.
-        The model version of an object.
+        The object's model version.
 
 
         :return: The model_version of this WriteOperationConfig.
@@ -158,7 +165,7 @@ class WriteOperationConfig(AbstractDataOperationConfig):
     def model_version(self, model_version):
         """
         Sets the model_version of this WriteOperationConfig.
-        The model version of an object.
+        The object's model version.
 
 
         :param model_version: The model_version of this WriteOperationConfig.
@@ -299,6 +306,26 @@ class WriteOperationConfig(AbstractDataOperationConfig):
         if not value_allowed_none_or_none_sentinel(write_mode, allowed_values):
             write_mode = 'UNKNOWN_ENUM_VALUE'
         self._write_mode = write_mode
+
+    @property
+    def merge_key(self):
+        """
+        Gets the merge_key of this WriteOperationConfig.
+
+        :return: The merge_key of this WriteOperationConfig.
+        :rtype: UniqueKey
+        """
+        return self._merge_key
+
+    @merge_key.setter
+    def merge_key(self, merge_key):
+        """
+        Sets the merge_key of this WriteOperationConfig.
+
+        :param merge_key: The merge_key of this WriteOperationConfig.
+        :type: UniqueKey
+        """
+        self._merge_key = merge_key
 
     @property
     def object_status(self):

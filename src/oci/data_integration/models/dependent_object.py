@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DependentObject(object):
     """
-    A DependentObject object.
+    The information about a dependent object.
     """
 
     def __init__(self, **kwargs):
@@ -66,6 +66,14 @@ class DependentObject(object):
             The value to assign to the published_object_metadata property of this DependentObject.
         :type published_object_metadata: dict(str, PatchObjectMetadata)
 
+        :param source_application_info:
+            The value to assign to the source_application_info property of this DependentObject.
+        :type source_application_info: SourceApplicationInfo
+
+        :param time_patched:
+            The value to assign to the time_patched property of this DependentObject.
+        :type time_patched: datetime
+
         :param metadata:
             The value to assign to the metadata property of this DependentObject.
         :type metadata: ObjectMetadata
@@ -88,6 +96,8 @@ class DependentObject(object):
             'object_version': 'int',
             'dependent_object_metadata': 'list[PatchObjectMetadata]',
             'published_object_metadata': 'dict(str, PatchObjectMetadata)',
+            'source_application_info': 'SourceApplicationInfo',
+            'time_patched': 'datetime',
             'metadata': 'ObjectMetadata',
             'key_map': 'dict(str, str)'
         }
@@ -105,6 +115,8 @@ class DependentObject(object):
             'object_version': 'objectVersion',
             'dependent_object_metadata': 'dependentObjectMetadata',
             'published_object_metadata': 'publishedObjectMetadata',
+            'source_application_info': 'sourceApplicationInfo',
+            'time_patched': 'timePatched',
             'metadata': 'metadata',
             'key_map': 'keyMap'
         }
@@ -121,6 +133,8 @@ class DependentObject(object):
         self._object_version = None
         self._dependent_object_metadata = None
         self._published_object_metadata = None
+        self._source_application_info = None
+        self._time_patched = None
         self._metadata = None
         self._key_map = None
 
@@ -152,7 +166,7 @@ class DependentObject(object):
     def model_type(self):
         """
         Gets the model_type of this DependentObject.
-        The type of the object.
+        The object type.
 
 
         :return: The model_type of this DependentObject.
@@ -164,7 +178,7 @@ class DependentObject(object):
     def model_type(self, model_type):
         """
         Sets the model_type of this DependentObject.
-        The type of the object.
+        The object type.
 
 
         :param model_type: The model_type of this DependentObject.
@@ -176,7 +190,7 @@ class DependentObject(object):
     def model_version(self):
         """
         Gets the model_version of this DependentObject.
-        The model version of an object.
+        The object's model version.
 
 
         :return: The model_version of this DependentObject.
@@ -188,7 +202,7 @@ class DependentObject(object):
     def model_version(self, model_version):
         """
         Sets the model_version of this DependentObject.
-        The model version of an object.
+        The object's model version.
 
 
         :param model_version: The model_version of this DependentObject.
@@ -200,7 +214,7 @@ class DependentObject(object):
     def name(self):
         """
         Gets the name of this DependentObject.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this DependentObject.
@@ -212,7 +226,7 @@ class DependentObject(object):
     def name(self, name):
         """
         Sets the name of this DependentObject.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this DependentObject.
@@ -248,7 +262,7 @@ class DependentObject(object):
     def application_version(self):
         """
         Gets the application_version of this DependentObject.
-        version
+        The application's version.
 
 
         :return: The application_version of this DependentObject.
@@ -260,7 +274,7 @@ class DependentObject(object):
     def application_version(self, application_version):
         """
         Sets the application_version of this DependentObject.
-        version
+        The application's version.
 
 
         :param application_version: The application_version of this DependentObject.
@@ -296,7 +310,7 @@ class DependentObject(object):
     def identifier(self):
         """
         Gets the identifier of this DependentObject.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this DependentObject.
@@ -308,7 +322,7 @@ class DependentObject(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this DependentObject.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this DependentObject.
@@ -364,7 +378,7 @@ class DependentObject(object):
     def dependent_object_metadata(self):
         """
         Gets the dependent_object_metadata of this DependentObject.
-        List of dependent objects in this patch.
+        A list of dependent objects in this patch.
 
 
         :return: The dependent_object_metadata of this DependentObject.
@@ -376,7 +390,7 @@ class DependentObject(object):
     def dependent_object_metadata(self, dependent_object_metadata):
         """
         Sets the dependent_object_metadata of this DependentObject.
-        List of dependent objects in this patch.
+        A list of dependent objects in this patch.
 
 
         :param dependent_object_metadata: The dependent_object_metadata of this DependentObject.
@@ -388,7 +402,7 @@ class DependentObject(object):
     def published_object_metadata(self):
         """
         Gets the published_object_metadata of this DependentObject.
-        List of objects that are published / unpublished in this patch.
+        A list of objects that are published or unpublished in this patch.
 
 
         :return: The published_object_metadata of this DependentObject.
@@ -400,13 +414,57 @@ class DependentObject(object):
     def published_object_metadata(self, published_object_metadata):
         """
         Sets the published_object_metadata of this DependentObject.
-        List of objects that are published / unpublished in this patch.
+        A list of objects that are published or unpublished in this patch.
 
 
         :param published_object_metadata: The published_object_metadata of this DependentObject.
         :type: dict(str, PatchObjectMetadata)
         """
         self._published_object_metadata = published_object_metadata
+
+    @property
+    def source_application_info(self):
+        """
+        Gets the source_application_info of this DependentObject.
+
+        :return: The source_application_info of this DependentObject.
+        :rtype: SourceApplicationInfo
+        """
+        return self._source_application_info
+
+    @source_application_info.setter
+    def source_application_info(self, source_application_info):
+        """
+        Sets the source_application_info of this DependentObject.
+
+        :param source_application_info: The source_application_info of this DependentObject.
+        :type: SourceApplicationInfo
+        """
+        self._source_application_info = source_application_info
+
+    @property
+    def time_patched(self):
+        """
+        Gets the time_patched of this DependentObject.
+        The date and time the application was patched, in the timestamp format defined by RFC3339.
+
+
+        :return: The time_patched of this DependentObject.
+        :rtype: datetime
+        """
+        return self._time_patched
+
+    @time_patched.setter
+    def time_patched(self, time_patched):
+        """
+        Sets the time_patched of this DependentObject.
+        The date and time the application was patched, in the timestamp format defined by RFC3339.
+
+
+        :param time_patched: The time_patched of this DependentObject.
+        :type: datetime
+        """
+        self._time_patched = time_patched
 
     @property
     def metadata(self):
@@ -432,7 +490,7 @@ class DependentObject(object):
     def key_map(self):
         """
         Gets the key_map of this DependentObject.
-        A map, if provided key is replaced with generated key, this structure provides mapping between user provided key and generated key
+        A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 
 
         :return: The key_map of this DependentObject.
@@ -444,7 +502,7 @@ class DependentObject(object):
     def key_map(self, key_map):
         """
         Sets the key_map of this DependentObject.
-        A map, if provided key is replaced with generated key, this structure provides mapping between user provided key and generated key
+        A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 
 
         :param key_map: The key_map of this DependentObject.

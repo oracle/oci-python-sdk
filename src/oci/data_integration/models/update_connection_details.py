@@ -29,21 +29,31 @@ class UpdateConnectionDetails(object):
     #: This constant has a value of "ORACLEDB_CONNECTION"
     MODEL_TYPE_ORACLEDB_CONNECTION = "ORACLEDB_CONNECTION"
 
+    #: A constant which can be used with the model_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "MYSQL_CONNECTION"
+    MODEL_TYPE_MYSQL_CONNECTION = "MYSQL_CONNECTION"
+
+    #: A constant which can be used with the model_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "GENERIC_JDBC_CONNECTION"
+    MODEL_TYPE_GENERIC_JDBC_CONNECTION = "GENERIC_JDBC_CONNECTION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateConnectionDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.data_integration.models.UpdateConnectionFromJdbc`
         * :class:`~oci.data_integration.models.UpdateConnectionFromObjectStorage`
         * :class:`~oci.data_integration.models.UpdateConnectionFromAtp`
         * :class:`~oci.data_integration.models.UpdateConnectionFromOracle`
         * :class:`~oci.data_integration.models.UpdateConnectionFromAdwc`
+        * :class:`~oci.data_integration.models.UpdateConnectionFromMySQL`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this UpdateConnectionDetails.
-            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION"
+            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION"
         :type model_type: str
 
         :param key:
@@ -135,6 +145,9 @@ class UpdateConnectionDetails(object):
         """
         type = object_dictionary['modelType']
 
+        if type == 'GENERIC_JDBC_CONNECTION':
+            return 'UpdateConnectionFromJdbc'
+
         if type == 'ORACLE_OBJECT_STORAGE_CONNECTION':
             return 'UpdateConnectionFromObjectStorage'
 
@@ -146,6 +159,9 @@ class UpdateConnectionDetails(object):
 
         if type == 'ORACLE_ADWC_CONNECTION':
             return 'UpdateConnectionFromAdwc'
+
+        if type == 'MYSQL_CONNECTION':
+            return 'UpdateConnectionFromMySQL'
         else:
             return 'UpdateConnectionDetails'
 
@@ -155,7 +171,7 @@ class UpdateConnectionDetails(object):
         **[Required]** Gets the model_type of this UpdateConnectionDetails.
         The type of the connection.
 
-        Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION"
+        Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION"
 
 
         :return: The model_type of this UpdateConnectionDetails.
@@ -173,7 +189,7 @@ class UpdateConnectionDetails(object):
         :param model_type: The model_type of this UpdateConnectionDetails.
         :type: str
         """
-        allowed_values = ["ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION"]
+        allowed_values = ["ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             raise ValueError(
                 "Invalid value for `model_type`, must be None or one of {0}"
@@ -253,7 +269,7 @@ class UpdateConnectionDetails(object):
     def name(self):
         """
         Gets the name of this UpdateConnectionDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this UpdateConnectionDetails.
@@ -265,7 +281,7 @@ class UpdateConnectionDetails(object):
     def name(self, name):
         """
         Sets the name of this UpdateConnectionDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this UpdateConnectionDetails.
@@ -277,7 +293,7 @@ class UpdateConnectionDetails(object):
     def description(self):
         """
         Gets the description of this UpdateConnectionDetails.
-        Detailed description for the object.
+        User-defined description for the connection.
 
 
         :return: The description of this UpdateConnectionDetails.
@@ -289,7 +305,7 @@ class UpdateConnectionDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateConnectionDetails.
-        Detailed description for the object.
+        User-defined description for the connection.
 
 
         :param description: The description of this UpdateConnectionDetails.
@@ -349,7 +365,7 @@ class UpdateConnectionDetails(object):
     def identifier(self):
         """
         Gets the identifier of this UpdateConnectionDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this UpdateConnectionDetails.
@@ -361,7 +377,7 @@ class UpdateConnectionDetails(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this UpdateConnectionDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this UpdateConnectionDetails.

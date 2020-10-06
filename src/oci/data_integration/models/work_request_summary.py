@@ -197,7 +197,7 @@ class WorkRequestSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this WorkRequestSummary.
-        The id of the work request.
+        The ID of the work request.
 
 
         :return: The id of this WorkRequestSummary.
@@ -209,7 +209,7 @@ class WorkRequestSummary(object):
     def id(self, id):
         """
         Sets the id of this WorkRequestSummary.
-        The id of the work request.
+        The ID of the work request.
 
 
         :param id: The id of this WorkRequestSummary.
@@ -221,7 +221,7 @@ class WorkRequestSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this WorkRequestSummary.
-        The ocid of the compartment that contains this work request. Work requests should be scoped to
+        The OCID of the compartment that contains this work request. Work requests should be scoped to
         the same compartment as the resource the work request affects. If the work request affects multiple resources that are not in the same compartment, then the system picks a primary
         resource whose compartment should be used.
 
@@ -235,7 +235,7 @@ class WorkRequestSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this WorkRequestSummary.
-        The ocid of the compartment that contains this work request. Work requests should be scoped to
+        The OCID of the compartment that contains this work request. Work requests should be scoped to
         the same compartment as the resource the work request affects. If the work request affects multiple resources that are not in the same compartment, then the system picks a primary
         resource whose compartment should be used.
 

@@ -46,5 +46,6 @@ Marketplace
     oci.marketplace.models.ReportTypeSummary
     oci.marketplace.models.Screenshot
     oci.marketplace.models.SupportContact
+    oci.marketplace.models.TaxSummary
     oci.marketplace.models.UpdateAcceptedAgreementDetails
     oci.marketplace.models.UploadData

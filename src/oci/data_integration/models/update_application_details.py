@@ -131,7 +131,7 @@ class UpdateApplicationDetails(object):
     def model_type(self):
         """
         **[Required]** Gets the model_type of this UpdateApplicationDetails.
-        The type of the object.
+        The object type.
 
 
         :return: The model_type of this UpdateApplicationDetails.
@@ -143,7 +143,7 @@ class UpdateApplicationDetails(object):
     def model_type(self, model_type):
         """
         Sets the model_type of this UpdateApplicationDetails.
-        The type of the object.
+        The object type.
 
 
         :param model_type: The model_type of this UpdateApplicationDetails.
@@ -155,7 +155,7 @@ class UpdateApplicationDetails(object):
     def model_version(self):
         """
         Gets the model_version of this UpdateApplicationDetails.
-        The model version of an object.
+        The object's model version.
 
 
         :return: The model_version of this UpdateApplicationDetails.
@@ -167,7 +167,7 @@ class UpdateApplicationDetails(object):
     def model_version(self, model_version):
         """
         Sets the model_version of this UpdateApplicationDetails.
-        The model version of an object.
+        The object's model version.
 
 
         :param model_version: The model_version of this UpdateApplicationDetails.
@@ -179,7 +179,7 @@ class UpdateApplicationDetails(object):
     def name(self):
         """
         Gets the name of this UpdateApplicationDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this UpdateApplicationDetails.
@@ -191,7 +191,7 @@ class UpdateApplicationDetails(object):
     def name(self, name):
         """
         Sets the name of this UpdateApplicationDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this UpdateApplicationDetails.
@@ -275,7 +275,7 @@ class UpdateApplicationDetails(object):
     def identifier(self):
         """
         Gets the identifier of this UpdateApplicationDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this UpdateApplicationDetails.
@@ -287,7 +287,7 @@ class UpdateApplicationDetails(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this UpdateApplicationDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this UpdateApplicationDetails.

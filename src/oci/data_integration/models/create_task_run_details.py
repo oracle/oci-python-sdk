@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateTaskRunDetails(object):
     """
-    Properties used in task run create operations.
+    The properties used in task run create operations.
     """
 
     def __init__(self, **kwargs):
@@ -158,7 +158,7 @@ class CreateTaskRunDetails(object):
     def name(self):
         """
         Gets the name of this CreateTaskRunDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this CreateTaskRunDetails.
@@ -170,7 +170,7 @@ class CreateTaskRunDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateTaskRunDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this CreateTaskRunDetails.
@@ -226,7 +226,7 @@ class CreateTaskRunDetails(object):
     def identifier(self):
         """
         Gets the identifier of this CreateTaskRunDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this CreateTaskRunDetails.
@@ -238,7 +238,7 @@ class CreateTaskRunDetails(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this CreateTaskRunDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this CreateTaskRunDetails.

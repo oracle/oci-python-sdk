@@ -29,11 +29,21 @@ class CreateDataAssetDetails(object):
     #: This constant has a value of "ORACLE_ADWC_DATA_ASSET"
     MODEL_TYPE_ORACLE_ADWC_DATA_ASSET = "ORACLE_ADWC_DATA_ASSET"
 
+    #: A constant which can be used with the model_type property of a CreateDataAssetDetails.
+    #: This constant has a value of "MYSQL_DATA_ASSET"
+    MODEL_TYPE_MYSQL_DATA_ASSET = "MYSQL_DATA_ASSET"
+
+    #: A constant which can be used with the model_type property of a CreateDataAssetDetails.
+    #: This constant has a value of "GENERIC_JDBC_DATA_ASSET"
+    MODEL_TYPE_GENERIC_JDBC_DATA_ASSET = "GENERIC_JDBC_DATA_ASSET"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDataAssetDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.data_integration.models.CreateDataAssetFromJdbc`
+        * :class:`~oci.data_integration.models.CreateDataAssetFromMySQL`
         * :class:`~oci.data_integration.models.CreateDataAssetFromOracle`
         * :class:`~oci.data_integration.models.CreateDataAssetFromAdwc`
         * :class:`~oci.data_integration.models.CreateDataAssetFromAtp`
@@ -43,7 +53,7 @@ class CreateDataAssetDetails(object):
 
         :param model_type:
             The value to assign to the model_type property of this CreateDataAssetDetails.
-            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET"
+            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET"
         :type model_type: str
 
         :param key:
@@ -128,6 +138,12 @@ class CreateDataAssetDetails(object):
         """
         type = object_dictionary['modelType']
 
+        if type == 'GENERIC_JDBC_DATA_ASSET':
+            return 'CreateDataAssetFromJdbc'
+
+        if type == 'MYSQL_DATA_ASSET':
+            return 'CreateDataAssetFromMySQL'
+
         if type == 'ORACLE_DATA_ASSET':
             return 'CreateDataAssetFromOracle'
 
@@ -148,7 +164,7 @@ class CreateDataAssetDetails(object):
         **[Required]** Gets the model_type of this CreateDataAssetDetails.
         The type of the data asset.
 
-        Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET"
+        Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET"
 
 
         :return: The model_type of this CreateDataAssetDetails.
@@ -166,7 +182,7 @@ class CreateDataAssetDetails(object):
         :param model_type: The model_type of this CreateDataAssetDetails.
         :type: str
         """
-        allowed_values = ["ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET"]
+        allowed_values = ["ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             raise ValueError(
                 "Invalid value for `model_type`, must be None or one of {0}"
@@ -226,7 +242,7 @@ class CreateDataAssetDetails(object):
     def name(self):
         """
         **[Required]** Gets the name of this CreateDataAssetDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this CreateDataAssetDetails.
@@ -238,7 +254,7 @@ class CreateDataAssetDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateDataAssetDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this CreateDataAssetDetails.
@@ -250,7 +266,7 @@ class CreateDataAssetDetails(object):
     def description(self):
         """
         Gets the description of this CreateDataAssetDetails.
-        Detailed description for the object.
+        User-defined description of the data asset.
 
 
         :return: The description of this CreateDataAssetDetails.
@@ -262,7 +278,7 @@ class CreateDataAssetDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateDataAssetDetails.
-        Detailed description for the object.
+        User-defined description of the data asset.
 
 
         :param description: The description of this CreateDataAssetDetails.
@@ -298,7 +314,7 @@ class CreateDataAssetDetails(object):
     def identifier(self):
         """
         **[Required]** Gets the identifier of this CreateDataAssetDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this CreateDataAssetDetails.
@@ -310,7 +326,7 @@ class CreateDataAssetDetails(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this CreateDataAssetDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this CreateDataAssetDetails.
@@ -322,7 +338,7 @@ class CreateDataAssetDetails(object):
     def external_key(self):
         """
         Gets the external_key of this CreateDataAssetDetails.
-        The external key for the object
+        The external key for the object.
 
 
         :return: The external_key of this CreateDataAssetDetails.
@@ -334,7 +350,7 @@ class CreateDataAssetDetails(object):
     def external_key(self, external_key):
         """
         Sets the external_key of this CreateDataAssetDetails.
-        The external key for the object
+        The external key for the object.
 
 
         :param external_key: The external_key of this CreateDataAssetDetails.
@@ -346,7 +362,7 @@ class CreateDataAssetDetails(object):
     def asset_properties(self):
         """
         Gets the asset_properties of this CreateDataAssetDetails.
-        assetProperties
+        Additional properties for the data asset.
 
 
         :return: The asset_properties of this CreateDataAssetDetails.
@@ -358,7 +374,7 @@ class CreateDataAssetDetails(object):
     def asset_properties(self, asset_properties):
         """
         Sets the asset_properties of this CreateDataAssetDetails.
-        assetProperties
+        Additional properties for the data asset.
 
 
         :param asset_properties: The asset_properties of this CreateDataAssetDetails.

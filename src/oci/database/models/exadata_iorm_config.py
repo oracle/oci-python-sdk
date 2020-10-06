@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExadataIormConfig(object):
     """
-    Response details which has IORM Settings for this Exadata System
+    The IORM settings of the Exadata DB system.
     """
 
     #: A constant which can be used with the lifecycle_state property of a ExadataIormConfig.
@@ -102,7 +102,7 @@ class ExadataIormConfig(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this ExadataIormConfig.
-        The current config state of IORM settings for this Exadata System.
+        The current state of IORM configuration for the Exadata DB system.
 
         Allowed values for this property are: "BOOTSTRAPPING", "ENABLED", "DISABLED", "UPDATING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -117,7 +117,7 @@ class ExadataIormConfig(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ExadataIormConfig.
-        The current config state of IORM settings for this Exadata System.
+        The current state of IORM configuration for the Exadata DB system.
 
 
         :param lifecycle_state: The lifecycle_state of this ExadataIormConfig.
@@ -132,7 +132,7 @@ class ExadataIormConfig(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this ExadataIormConfig.
-        Additional information about the current lifecycleState.
+        Additional information about the current `lifecycleState`.
 
 
         :return: The lifecycle_details of this ExadataIormConfig.
@@ -144,7 +144,7 @@ class ExadataIormConfig(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this ExadataIormConfig.
-        Additional information about the current lifecycleState.
+        Additional information about the current `lifecycleState`.
 
 
         :param lifecycle_details: The lifecycle_details of this ExadataIormConfig.
@@ -156,8 +156,8 @@ class ExadataIormConfig(object):
     def objective(self):
         """
         Gets the objective of this ExadataIormConfig.
-        Value for the IORM objective
-        Default is \"Auto\"
+        The current value for the IORM objective.
+        The default is `AUTO`.
 
         Allowed values for this property are: "LOW_LATENCY", "HIGH_THROUGHPUT", "BALANCED", "AUTO", "BASIC", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -172,8 +172,8 @@ class ExadataIormConfig(object):
     def objective(self, objective):
         """
         Sets the objective of this ExadataIormConfig.
-        Value for the IORM objective
-        Default is \"Auto\"
+        The current value for the IORM objective.
+        The default is `AUTO`.
 
 
         :param objective: The objective of this ExadataIormConfig.
@@ -188,8 +188,8 @@ class ExadataIormConfig(object):
     def db_plans(self):
         """
         Gets the db_plans of this ExadataIormConfig.
-        Array of IORM Setting for all the database in
-        this Exadata DB System
+        An array of IORM settings for all the database in
+        the Exadata DB system.
 
 
         :return: The db_plans of this ExadataIormConfig.
@@ -201,8 +201,8 @@ class ExadataIormConfig(object):
     def db_plans(self, db_plans):
         """
         Sets the db_plans of this ExadataIormConfig.
-        Array of IORM Setting for all the database in
-        this Exadata DB System
+        An array of IORM settings for all the database in
+        the Exadata DB system.
 
 
         :param db_plans: The db_plans of this ExadataIormConfig.

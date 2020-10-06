@@ -37,7 +37,7 @@ class FolderSummaryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this FolderSummaryCollection.
-        The array of Folder summaries
+        The array of folder summaries.
 
 
         :return: The items of this FolderSummaryCollection.
@@ -49,7 +49,7 @@ class FolderSummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this FolderSummaryCollection.
-        The array of Folder summaries
+        The array of folder summaries.
 
 
         :param items: The items of this FolderSummaryCollection.

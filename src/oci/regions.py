@@ -37,7 +37,8 @@ REGIONS_SHORT_NAMES = {
     'hyd': 'ap-hyderabad-1',
     'yny': 'ap-chuncheon-1',
     'brs': 'uk-gov-cardiff-1',
-    'nja': 'ap-chiyoda-1'
+    'nja': 'ap-chiyoda-1',
+    'dxb': 'me-dubai-1'
 }
 REGION_REALMS = {
     'ap-melbourne-1': 'oc1',
@@ -54,6 +55,7 @@ REGION_REALMS = {
     'eu-amsterdam-1': 'oc1',
     'eu-frankfurt-1': 'oc1',
     'eu-zurich-1': 'oc1',
+    'me-dubai-1': 'oc1',
     'me-jeddah-1': 'oc1',
     'uk-london-1': 'oc1',
     'ca-toronto-1': 'oc1',
@@ -95,6 +97,7 @@ REGIONS = [
     "eu-amsterdam-1",
     "eu-frankfurt-1",
     "eu-zurich-1",
+    "me-dubai-1",
     "me-jeddah-1",
     "uk-london-1",
     "uk-gov-cardiff-1",

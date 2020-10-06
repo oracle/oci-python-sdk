@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VmNetworkDetails(object):
     """
-    Details of the client or backup networks in a VM cluster network.
+    Details of the client or backup networks in an Exadata Cloud@Customer VM cluster network.
     """
 
     #: A constant which can be used with the network_type property of a VmNetworkDetails.

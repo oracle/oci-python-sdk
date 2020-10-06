@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConnectionFromObjectStorageDetails(ConnectionDetails):
     """
-    The Object Storage connection details.
+    The connection summary details for an Oracle Object Storage data asset.
     """
 
     def __init__(self, **kwargs):
@@ -21,7 +21,7 @@ class ConnectionFromObjectStorageDetails(ConnectionDetails):
 
         :param model_type:
             The value to assign to the model_type property of this ConnectionFromObjectStorageDetails.
-            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION"
+            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION"
         :type model_type: str
 
         :param key:
@@ -152,7 +152,7 @@ class ConnectionFromObjectStorageDetails(ConnectionDetails):
     def credential_file_content(self):
         """
         Gets the credential_file_content of this ConnectionFromObjectStorageDetails.
-        The credential file content from a wallet for the data asset.
+        The credential file content from an Oracle Object Storage wallet.
 
 
         :return: The credential_file_content of this ConnectionFromObjectStorageDetails.
@@ -164,7 +164,7 @@ class ConnectionFromObjectStorageDetails(ConnectionDetails):
     def credential_file_content(self, credential_file_content):
         """
         Sets the credential_file_content of this ConnectionFromObjectStorageDetails.
-        The credential file content from a wallet for the data asset.
+        The credential file content from an Oracle Object Storage wallet.
 
 
         :param credential_file_content: The credential_file_content of this ConnectionFromObjectStorageDetails.
@@ -200,7 +200,7 @@ class ConnectionFromObjectStorageDetails(ConnectionDetails):
     def finger_print(self):
         """
         Gets the finger_print of this ConnectionFromObjectStorageDetails.
-        The fingeprint for the user.
+        The fingerprint for the user.
 
 
         :return: The finger_print of this ConnectionFromObjectStorageDetails.
@@ -212,7 +212,7 @@ class ConnectionFromObjectStorageDetails(ConnectionDetails):
     def finger_print(self, finger_print):
         """
         Sets the finger_print of this ConnectionFromObjectStorageDetails.
-        The fingeprint for the user.
+        The fingerprint for the user.
 
 
         :param finger_print: The finger_print of this ConnectionFromObjectStorageDetails.
@@ -224,7 +224,7 @@ class ConnectionFromObjectStorageDetails(ConnectionDetails):
     def pass_phrase(self):
         """
         Gets the pass_phrase of this ConnectionFromObjectStorageDetails.
-        The pass phrase for the connection.
+        The passphrase for the connection.
 
 
         :return: The pass_phrase of this ConnectionFromObjectStorageDetails.
@@ -236,7 +236,7 @@ class ConnectionFromObjectStorageDetails(ConnectionDetails):
     def pass_phrase(self, pass_phrase):
         """
         Sets the pass_phrase of this ConnectionFromObjectStorageDetails.
-        The pass phrase for the connection.
+        The passphrase for the connection.
 
 
         :param pass_phrase: The pass_phrase of this ConnectionFromObjectStorageDetails.

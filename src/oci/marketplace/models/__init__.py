@@ -32,6 +32,7 @@ from .report_type_collection import ReportTypeCollection
 from .report_type_summary import ReportTypeSummary
 from .screenshot import Screenshot
 from .support_contact import SupportContact
+from .tax_summary import TaxSummary
 from .update_accepted_agreement_details import UpdateAcceptedAgreementDetails
 from .upload_data import UploadData
 
@@ -65,6 +66,7 @@ marketplace_type_mapping = {
     "ReportTypeSummary": ReportTypeSummary,
     "Screenshot": Screenshot,
     "SupportContact": SupportContact,
+    "TaxSummary": TaxSummary,
     "UpdateAcceptedAgreementDetails": UpdateAcceptedAgreementDetails,
     "UploadData": UploadData
 }

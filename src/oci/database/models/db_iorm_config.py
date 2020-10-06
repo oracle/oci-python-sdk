@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DbIormConfig(object):
     """
-    IORM Config setting response for this database
+    The IORM configuration settings for the database.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class DbIormConfig(object):
     def db_name(self):
         """
         Gets the db_name of this DbIormConfig.
-        Database Name. For default DbPlan, the dbName will always be `default`
+        The database name. For the default `DbPlan`, the `dbName` is `default`.
 
 
         :return: The db_name of this DbIormConfig.
@@ -63,7 +63,7 @@ class DbIormConfig(object):
     def db_name(self, db_name):
         """
         Sets the db_name of this DbIormConfig.
-        Database Name. For default DbPlan, the dbName will always be `default`
+        The database name. For the default `DbPlan`, the `dbName` is `default`.
 
 
         :param db_name: The db_name of this DbIormConfig.
@@ -75,7 +75,7 @@ class DbIormConfig(object):
     def share(self):
         """
         Gets the share of this DbIormConfig.
-        Relative priority of a database
+        The relative priority of this database.
 
 
         :return: The share of this DbIormConfig.
@@ -87,7 +87,7 @@ class DbIormConfig(object):
     def share(self, share):
         """
         Sets the share of this DbIormConfig.
-        Relative priority of a database
+        The relative priority of this database.
 
 
         :param share: The share of this DbIormConfig.
@@ -99,7 +99,7 @@ class DbIormConfig(object):
     def flash_cache_limit(self):
         """
         Gets the flash_cache_limit of this DbIormConfig.
-        Flash Cache limit, internally configured based on shares
+        The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
 
 
         :return: The flash_cache_limit of this DbIormConfig.
@@ -111,7 +111,7 @@ class DbIormConfig(object):
     def flash_cache_limit(self, flash_cache_limit):
         """
         Sets the flash_cache_limit of this DbIormConfig.
-        Flash Cache limit, internally configured based on shares
+        The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
 
 
         :param flash_cache_limit: The flash_cache_limit of this DbIormConfig.

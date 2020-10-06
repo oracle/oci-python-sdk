@@ -44,7 +44,7 @@ class UIProperties(object):
     def coordinate_x(self):
         """
         Gets the coordinate_x of this UIProperties.
-        coordinateX
+        The X coordinate of the object.
 
 
         :return: The coordinate_x of this UIProperties.
@@ -56,7 +56,7 @@ class UIProperties(object):
     def coordinate_x(self, coordinate_x):
         """
         Sets the coordinate_x of this UIProperties.
-        coordinateX
+        The X coordinate of the object.
 
 
         :param coordinate_x: The coordinate_x of this UIProperties.
@@ -68,7 +68,7 @@ class UIProperties(object):
     def coordinate_y(self):
         """
         Gets the coordinate_y of this UIProperties.
-        coordinateY
+        The Y coordinate of the object.
 
 
         :return: The coordinate_y of this UIProperties.
@@ -80,7 +80,7 @@ class UIProperties(object):
     def coordinate_y(self, coordinate_y):
         """
         Sets the coordinate_y of this UIProperties.
-        coordinateY
+        The Y coordinate of the object.
 
 
         :param coordinate_y: The coordinate_y of this UIProperties.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OutputLink(FlowPortLink):
     """
-    The information about output links.
+    Details about the outgoing data of an operator in a data flow design.
     """
 
     def __init__(self, **kwargs):

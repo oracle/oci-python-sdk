@@ -82,7 +82,7 @@ class ListingPackageSummary(object):
     def listing_id(self):
         """
         Gets the listing_id of this ListingPackageSummary.
-        The id of the listing the specified package belongs to.
+        The ID of the listing that the specified package belongs to.
 
 
         :return: The listing_id of this ListingPackageSummary.
@@ -94,7 +94,7 @@ class ListingPackageSummary(object):
     def listing_id(self, listing_id):
         """
         Sets the listing_id of this ListingPackageSummary.
-        The id of the listing the specified package belongs to.
+        The ID of the listing that the specified package belongs to.
 
 
         :param listing_id: The listing_id of this ListingPackageSummary.
@@ -160,7 +160,7 @@ class ListingPackageSummary(object):
     def regions(self):
         """
         Gets the regions of this ListingPackageSummary.
-        The regions where the package is eligible to be deployed.
+        The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
 
 
         :return: The regions of this ListingPackageSummary.
@@ -172,7 +172,7 @@ class ListingPackageSummary(object):
     def regions(self, regions):
         """
         Sets the regions of this ListingPackageSummary.
-        The regions where the package is eligible to be deployed.
+        The regions where you can deploy the listing package. (Some packages have restrictions that limit their deployment to United States regions only.)
 
 
         :param regions: The regions of this ListingPackageSummary.

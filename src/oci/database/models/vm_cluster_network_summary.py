@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VmClusterNetworkSummary(object):
     """
-    Details of the VM cluster network.
+    Details of the Exadata Cloud@Customer VM cluster network.
     """
 
     #: A constant which can be used with the lifecycle_state property of a VmClusterNetworkSummary.

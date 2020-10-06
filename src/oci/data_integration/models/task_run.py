@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TaskRun(object):
     """
-    The information about TaskRun.
+    The information about a task run.
     """
 
     #: A constant which can be used with the status property of a TaskRun.
@@ -309,7 +309,7 @@ class TaskRun(object):
     def name(self):
         """
         Gets the name of this TaskRun.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this TaskRun.
@@ -321,7 +321,7 @@ class TaskRun(object):
     def name(self, name):
         """
         Sets the name of this TaskRun.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this TaskRun.
@@ -401,7 +401,7 @@ class TaskRun(object):
     def status(self):
         """
         Gets the status of this TaskRun.
-        status
+        The status of the task run.
 
         Allowed values for this property are: "NOT_STARTED", "QUEUED", "RUNNING", "TERMINATING", "TERMINATED", "SUCCESS", "ERROR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -416,7 +416,7 @@ class TaskRun(object):
     def status(self, status):
         """
         Sets the status of this TaskRun.
-        status
+        The status of the task run.
 
 
         :param status: The status of this TaskRun.
@@ -431,7 +431,7 @@ class TaskRun(object):
     def start_time_millis(self):
         """
         Gets the start_time_millis of this TaskRun.
-        startTimeMillis
+        The start time.
 
 
         :return: The start_time_millis of this TaskRun.
@@ -443,7 +443,7 @@ class TaskRun(object):
     def start_time_millis(self, start_time_millis):
         """
         Sets the start_time_millis of this TaskRun.
-        startTimeMillis
+        The start time.
 
 
         :param start_time_millis: The start_time_millis of this TaskRun.
@@ -455,7 +455,7 @@ class TaskRun(object):
     def end_time_millis(self):
         """
         Gets the end_time_millis of this TaskRun.
-        endTimeMillis
+        The end time.
 
 
         :return: The end_time_millis of this TaskRun.
@@ -467,7 +467,7 @@ class TaskRun(object):
     def end_time_millis(self, end_time_millis):
         """
         Sets the end_time_millis of this TaskRun.
-        endTimeMillis
+        The end time.
 
 
         :param end_time_millis: The end_time_millis of this TaskRun.
@@ -479,7 +479,7 @@ class TaskRun(object):
     def last_updated(self):
         """
         Gets the last_updated of this TaskRun.
-        lastUpdated
+        The date and time the object was last updated.
 
 
         :return: The last_updated of this TaskRun.
@@ -491,7 +491,7 @@ class TaskRun(object):
     def last_updated(self, last_updated):
         """
         Sets the last_updated of this TaskRun.
-        lastUpdated
+        The date and time the object was last updated.
 
 
         :param last_updated: The last_updated of this TaskRun.
@@ -503,7 +503,7 @@ class TaskRun(object):
     def records_written(self):
         """
         Gets the records_written of this TaskRun.
-        Number of records processed in task run.
+        The number of records processed in the task run.
 
 
         :return: The records_written of this TaskRun.
@@ -515,7 +515,7 @@ class TaskRun(object):
     def records_written(self, records_written):
         """
         Sets the records_written of this TaskRun.
-        Number of records processed in task run.
+        The number of records processed in the task run.
 
 
         :param records_written: The records_written of this TaskRun.
@@ -527,7 +527,7 @@ class TaskRun(object):
     def bytes_processed(self):
         """
         Gets the bytes_processed of this TaskRun.
-        Number of bytes processed in task run.
+        The number of bytes processed in the task run.
 
 
         :return: The bytes_processed of this TaskRun.
@@ -539,7 +539,7 @@ class TaskRun(object):
     def bytes_processed(self, bytes_processed):
         """
         Sets the bytes_processed of this TaskRun.
-        Number of bytes processed in task run.
+        The number of bytes processed in the task run.
 
 
         :param bytes_processed: The bytes_processed of this TaskRun.
@@ -551,7 +551,7 @@ class TaskRun(object):
     def error_message(self):
         """
         Gets the error_message of this TaskRun.
-        Error message if status is ERROR
+        Contains an error message if status is `ERROR`.
 
 
         :return: The error_message of this TaskRun.
@@ -563,7 +563,7 @@ class TaskRun(object):
     def error_message(self, error_message):
         """
         Sets the error_message of this TaskRun.
-        Error message if status is ERROR
+        Contains an error message if status is `ERROR`.
 
 
         :param error_message: The error_message of this TaskRun.
@@ -575,7 +575,7 @@ class TaskRun(object):
     def opc_request_id(self):
         """
         Gets the opc_request_id of this TaskRun.
-        Opc request id of execution of task run
+        The OPC request ID of execution of the task run.
 
 
         :return: The opc_request_id of this TaskRun.
@@ -587,7 +587,7 @@ class TaskRun(object):
     def opc_request_id(self, opc_request_id):
         """
         Sets the opc_request_id of this TaskRun.
-        Opc request id of execution of task run
+        The OPC request ID of execution of the task run.
 
 
         :param opc_request_id: The opc_request_id of this TaskRun.
@@ -623,7 +623,7 @@ class TaskRun(object):
     def task_type(self):
         """
         Gets the task_type of this TaskRun.
-        The type of the task for the run.
+        The type of task run.
 
         Allowed values for this property are: "INTEGRATION_TASK", "DATA_LOADER_TASK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -638,7 +638,7 @@ class TaskRun(object):
     def task_type(self, task_type):
         """
         Sets the task_type of this TaskRun.
-        The type of the task for the run.
+        The type of task run.
 
 
         :param task_type: The task_type of this TaskRun.
@@ -653,7 +653,7 @@ class TaskRun(object):
     def identifier(self):
         """
         Gets the identifier of this TaskRun.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this TaskRun.
@@ -665,7 +665,7 @@ class TaskRun(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this TaskRun.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this TaskRun.
@@ -697,7 +697,7 @@ class TaskRun(object):
     def key_map(self):
         """
         Gets the key_map of this TaskRun.
-        A map, if provided key is replaced with generated key, this structure provides mapping between user provided key and generated key
+        A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 
 
         :return: The key_map of this TaskRun.
@@ -709,7 +709,7 @@ class TaskRun(object):
     def key_map(self, key_map):
         """
         Sets the key_map of this TaskRun.
-        A map, if provided key is replaced with generated key, this structure provides mapping between user provided key and generated key
+        A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 
 
         :param key_map: The key_map of this TaskRun.

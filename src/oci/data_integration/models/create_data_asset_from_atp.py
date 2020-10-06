@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDataAssetFromAtp(CreateDataAssetDetails):
     """
-    The ATP data asset details.
+    Details for the Autonomous Transaction Processing data asset type.
     """
 
     def __init__(self, **kwargs):
@@ -21,7 +21,7 @@ class CreateDataAssetFromAtp(CreateDataAssetDetails):
 
         :param model_type:
             The value to assign to the model_type property of this CreateDataAssetFromAtp.
-            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET"
+            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET"
         :type model_type: str
 
         :param key:
@@ -131,7 +131,7 @@ class CreateDataAssetFromAtp(CreateDataAssetDetails):
     def service_name(self):
         """
         Gets the service_name of this CreateDataAssetFromAtp.
-        The service name for the data asset.
+        The Autonomous Transaction Processing instance service name.
 
 
         :return: The service_name of this CreateDataAssetFromAtp.
@@ -143,7 +143,7 @@ class CreateDataAssetFromAtp(CreateDataAssetDetails):
     def service_name(self, service_name):
         """
         Sets the service_name of this CreateDataAssetFromAtp.
-        The service name for the data asset.
+        The Autonomous Transaction Processing instance service name.
 
 
         :param service_name: The service_name of this CreateDataAssetFromAtp.
@@ -155,7 +155,7 @@ class CreateDataAssetFromAtp(CreateDataAssetDetails):
     def driver_class(self):
         """
         Gets the driver_class of this CreateDataAssetFromAtp.
-        The driver class for the data asset.
+        The Autonomous Transaction Processing driver class.
 
 
         :return: The driver_class of this CreateDataAssetFromAtp.
@@ -167,7 +167,7 @@ class CreateDataAssetFromAtp(CreateDataAssetDetails):
     def driver_class(self, driver_class):
         """
         Sets the driver_class of this CreateDataAssetFromAtp.
-        The driver class for the data asset.
+        The Autonomous Transaction Processing driver class.
 
 
         :param driver_class: The driver_class of this CreateDataAssetFromAtp.
@@ -179,7 +179,7 @@ class CreateDataAssetFromAtp(CreateDataAssetDetails):
     def credential_file_content(self):
         """
         Gets the credential_file_content of this CreateDataAssetFromAtp.
-        The credential file content from a wallet for the data asset.
+        The credential file content from an Autonomous Transaction Processing wallet.
 
 
         :return: The credential_file_content of this CreateDataAssetFromAtp.
@@ -191,7 +191,7 @@ class CreateDataAssetFromAtp(CreateDataAssetDetails):
     def credential_file_content(self, credential_file_content):
         """
         Sets the credential_file_content of this CreateDataAssetFromAtp.
-        The credential file content from a wallet for the data asset.
+        The credential file content from an Autonomous Transaction Processing wallet.
 
 
         :param credential_file_content: The credential_file_content of this CreateDataAssetFromAtp.

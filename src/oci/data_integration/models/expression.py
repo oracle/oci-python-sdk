@@ -79,7 +79,7 @@ class Expression(object):
     def key(self):
         """
         Gets the key of this Expression.
-        The key of the object.
+        The object key.
 
 
         :return: The key of this Expression.
@@ -91,7 +91,7 @@ class Expression(object):
     def key(self, key):
         """
         Sets the key of this Expression.
-        The key of the object.
+        The object key.
 
 
         :param key: The key of this Expression.
@@ -103,7 +103,7 @@ class Expression(object):
     def model_type(self):
         """
         Gets the model_type of this Expression.
-        The type of the object.
+        The object type.
 
 
         :return: The model_type of this Expression.
@@ -115,7 +115,7 @@ class Expression(object):
     def model_type(self, model_type):
         """
         Sets the model_type of this Expression.
-        The type of the object.
+        The object type.
 
 
         :param model_type: The model_type of this Expression.
@@ -127,7 +127,7 @@ class Expression(object):
     def model_version(self):
         """
         Gets the model_version of this Expression.
-        The model version of an object.
+        The object's model version.
 
 
         :return: The model_version of this Expression.
@@ -139,7 +139,7 @@ class Expression(object):
     def model_version(self, model_version):
         """
         Sets the model_version of this Expression.
-        The model version of an object.
+        The object's model version.
 
 
         :param model_version: The model_version of this Expression.

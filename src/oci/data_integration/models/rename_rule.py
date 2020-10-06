@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RenameRule(ProjectionRule):
     """
-    The rename rule can rename fields from one to another.
+    Lets you rename an attribute.
     """
 
     def __init__(self, **kwargs):
@@ -110,7 +110,7 @@ class RenameRule(ProjectionRule):
     def is_skip_remaining_rules_on_match(self):
         """
         Gets the is_skip_remaining_rules_on_match of this RenameRule.
-        skipRemainingRulesOnMatch
+        Specifies whether to skip remaining rules when a match is found.
 
 
         :return: The is_skip_remaining_rules_on_match of this RenameRule.
@@ -122,7 +122,7 @@ class RenameRule(ProjectionRule):
     def is_skip_remaining_rules_on_match(self, is_skip_remaining_rules_on_match):
         """
         Sets the is_skip_remaining_rules_on_match of this RenameRule.
-        skipRemainingRulesOnMatch
+        Specifies whether to skip remaining rules when a match is found.
 
 
         :param is_skip_remaining_rules_on_match: The is_skip_remaining_rules_on_match of this RenameRule.
@@ -134,7 +134,7 @@ class RenameRule(ProjectionRule):
     def from_name(self):
         """
         Gets the from_name of this RenameRule.
-        fromName
+        The attribute name that needs to be renamed.
 
 
         :return: The from_name of this RenameRule.
@@ -146,7 +146,7 @@ class RenameRule(ProjectionRule):
     def from_name(self, from_name):
         """
         Sets the from_name of this RenameRule.
-        fromName
+        The attribute name that needs to be renamed.
 
 
         :param from_name: The from_name of this RenameRule.
@@ -158,7 +158,7 @@ class RenameRule(ProjectionRule):
     def to_name(self):
         """
         Gets the to_name of this RenameRule.
-        toName
+        The new attribute name.
 
 
         :return: The to_name of this RenameRule.
@@ -170,7 +170,7 @@ class RenameRule(ProjectionRule):
     def to_name(self, to_name):
         """
         Sets the to_name of this RenameRule.
-        toName
+        The new attribute name.
 
 
         :param to_name: The to_name of this RenameRule.

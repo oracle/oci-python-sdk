@@ -14,8 +14,11 @@ from .application import Application
 from .application_details import ApplicationDetails
 from .application_summary import ApplicationSummary
 from .application_summary_collection import ApplicationSummaryCollection
+from .avro_format_attribute import AvroFormatAttribute
 from .base_type import BaseType
 from .change_compartment_details import ChangeCompartmentDetails
+from .child_reference import ChildReference
+from .child_reference_detail import ChildReferenceDetail
 from .composite_field_map import CompositeFieldMap
 from .composite_type import CompositeType
 from .conditional_input_link import ConditionalInputLink
@@ -24,6 +27,7 @@ from .config_parameter_definition import ConfigParameterDefinition
 from .config_parameter_value import ConfigParameterValue
 from .config_provider import ConfigProvider
 from .config_values import ConfigValues
+from .configuration_details import ConfigurationDetails
 from .configured_type import ConfiguredType
 from .connection import Connection
 from .connection_details import ConnectionDetails
@@ -31,6 +35,10 @@ from .connection_from_adwc import ConnectionFromAdwc
 from .connection_from_adwc_details import ConnectionFromAdwcDetails
 from .connection_from_atp import ConnectionFromAtp
 from .connection_from_atp_details import ConnectionFromAtpDetails
+from .connection_from_jdbc import ConnectionFromJdbc
+from .connection_from_jdbc_details import ConnectionFromJdbcDetails
+from .connection_from_my_sql import ConnectionFromMySQL
+from .connection_from_my_sql_details import ConnectionFromMySQLDetails
 from .connection_from_object_storage import ConnectionFromObjectStorage
 from .connection_from_object_storage_details import ConnectionFromObjectStorageDetails
 from .connection_from_oracle import ConnectionFromOracle
@@ -40,6 +48,8 @@ from .connection_summary import ConnectionSummary
 from .connection_summary_collection import ConnectionSummaryCollection
 from .connection_summary_from_adwc import ConnectionSummaryFromAdwc
 from .connection_summary_from_atp import ConnectionSummaryFromAtp
+from .connection_summary_from_jdbc import ConnectionSummaryFromJdbc
+from .connection_summary_from_my_sql import ConnectionSummaryFromMySQL
 from .connection_summary_from_object_storage import ConnectionSummaryFromObjectStorage
 from .connection_summary_from_oracle import ConnectionSummaryFromOracle
 from .connection_validation import ConnectionValidation
@@ -52,21 +62,28 @@ from .create_config_provider import CreateConfigProvider
 from .create_connection_details import CreateConnectionDetails
 from .create_connection_from_adwc import CreateConnectionFromAdwc
 from .create_connection_from_atp import CreateConnectionFromAtp
+from .create_connection_from_jdbc import CreateConnectionFromJdbc
+from .create_connection_from_my_sql import CreateConnectionFromMySQL
 from .create_connection_from_object_storage import CreateConnectionFromObjectStorage
 from .create_connection_from_oracle import CreateConnectionFromOracle
 from .create_connection_validation_details import CreateConnectionValidationDetails
 from .create_data_asset_details import CreateDataAssetDetails
 from .create_data_asset_from_adwc import CreateDataAssetFromAdwc
 from .create_data_asset_from_atp import CreateDataAssetFromAtp
+from .create_data_asset_from_jdbc import CreateDataAssetFromJdbc
+from .create_data_asset_from_my_sql import CreateDataAssetFromMySQL
 from .create_data_asset_from_object_storage import CreateDataAssetFromObjectStorage
 from .create_data_asset_from_oracle import CreateDataAssetFromOracle
 from .create_data_flow_details import CreateDataFlowDetails
 from .create_data_flow_validation_details import CreateDataFlowValidationDetails
 from .create_entity_shape_details import CreateEntityShapeDetails
 from .create_entity_shape_from_file import CreateEntityShapeFromFile
+from .create_external_publication_details import CreateExternalPublicationDetails
+from .create_external_publication_validation_details import CreateExternalPublicationValidationDetails
 from .create_folder_details import CreateFolderDetails
 from .create_patch_details import CreatePatchDetails
 from .create_project_details import CreateProjectDetails
+from .create_source_application_info import CreateSourceApplicationInfo
 from .create_task_details import CreateTaskDetails
 from .create_task_from_data_loader_task import CreateTaskFromDataLoaderTask
 from .create_task_from_integration_task import CreateTaskFromIntegrationTask
@@ -79,12 +96,16 @@ from .csv_format_attribute import CsvFormatAttribute
 from .data_asset import DataAsset
 from .data_asset_from_adwc_details import DataAssetFromAdwcDetails
 from .data_asset_from_atp_details import DataAssetFromAtpDetails
+from .data_asset_from_jdbc import DataAssetFromJdbc
+from .data_asset_from_my_sql import DataAssetFromMySQL
 from .data_asset_from_object_storage_details import DataAssetFromObjectStorageDetails
 from .data_asset_from_oracle_details import DataAssetFromOracleDetails
 from .data_asset_summary import DataAssetSummary
 from .data_asset_summary_collection import DataAssetSummaryCollection
 from .data_asset_summary_from_adwc import DataAssetSummaryFromAdwc
 from .data_asset_summary_from_atp import DataAssetSummaryFromAtp
+from .data_asset_summary_from_jdbc import DataAssetSummaryFromJdbc
+from .data_asset_summary_from_my_sql import DataAssetSummaryFromMySQL
 from .data_asset_summary_from_object_storage import DataAssetSummaryFromObjectStorage
 from .data_asset_summary_from_oracle import DataAssetSummaryFromOracle
 from .data_entity import DataEntity
@@ -116,14 +137,22 @@ from .derived_field import DerivedField
 from .derived_type import DerivedType
 from .direct_field_map import DirectFieldMap
 from .direct_named_field_map import DirectNamedFieldMap
+from .distinct import Distinct
 from .dynamic_input_field import DynamicInputField
 from .dynamic_proxy_field import DynamicProxyField
 from .dynamic_type import DynamicType
 from .dynamic_type_handler import DynamicTypeHandler
+from .enriched_entity import EnrichedEntity
 from .entity_shape import EntityShape
 from .entity_shape_from_file import EntityShapeFromFile
 from .error_details import ErrorDetails
 from .expression import Expression
+from .external_publication import ExternalPublication
+from .external_publication_summary import ExternalPublicationSummary
+from .external_publication_summary_collection import ExternalPublicationSummaryCollection
+from .external_publication_validation import ExternalPublicationValidation
+from .external_publication_validation_summary import ExternalPublicationValidationSummary
+from .external_publication_validation_summary_collection import ExternalPublicationValidationSummaryCollection
 from .field_map import FieldMap
 from .filter import Filter
 from .filter_push import FilterPush
@@ -146,6 +175,7 @@ from .key import Key
 from .key_attribute import KeyAttribute
 from .key_range import KeyRange
 from .key_range_partition_config import KeyRangePartitionConfig
+from .macro_field import MacroField
 from .message import Message
 from .name_list_rule import NameListRule
 from .name_pattern_rule import NamePatternRule
@@ -153,9 +183,13 @@ from .native_shape_field import NativeShapeField
 from .object_metadata import ObjectMetadata
 from .operator import Operator
 from .oracle_adwc_write_attribute import OracleAdwcWriteAttribute
+from .oracle_adwc_write_attributes import OracleAdwcWriteAttributes
 from .oracle_atp_write_attribute import OracleAtpWriteAttribute
+from .oracle_atp_write_attributes import OracleAtpWriteAttributes
 from .oracle_read_attribute import OracleReadAttribute
+from .oracle_read_attributes import OracleReadAttributes
 from .oracle_write_attribute import OracleWriteAttribute
+from .oracle_write_attributes import OracleWriteAttributes
 from .output_field import OutputField
 from .output_link import OutputLink
 from .output_port import OutputPort
@@ -164,6 +198,8 @@ from .parameter_value import ParameterValue
 from .parent_reference import ParentReference
 from .partition_config import PartitionConfig
 from .patch import Patch
+from .patch_change_summary import PatchChangeSummary
+from .patch_change_summary_collection import PatchChangeSummaryCollection
 from .patch_object_metadata import PatchObjectMetadata
 from .patch_summary import PatchSummary
 from .patch_summary_collection import PatchSummaryCollection
@@ -185,8 +221,13 @@ from .published_object_summary_from_integration_task import PublishedObjectSumma
 from .push_down_operation import PushDownOperation
 from .query import Query
 from .read_operation_config import ReadOperationConfig
+from .reference import Reference
+from .reference_summary import ReferenceSummary
+from .reference_summary_collection import ReferenceSummaryCollection
+from .reference_used_by import ReferenceUsedBy
 from .registry_metadata import RegistryMetadata
 from .rename_rule import RenameRule
+from .resource_configuration import ResourceConfiguration
 from .root_object import RootObject
 from .rule_based_field_map import RuleBasedFieldMap
 from .rule_type_config import RuleTypeConfig
@@ -198,7 +239,11 @@ from .shape import Shape
 from .shape_field import ShapeField
 from .sort import Sort
 from .sort_clause import SortClause
+from .sort_key import SortKey
+from .sort_key_rule import SortKeyRule
+from .sort_oper import SortOper
 from .source import Source
+from .source_application_info import SourceApplicationInfo
 from .structured_type import StructuredType
 from .target import Target
 from .task import Task
@@ -227,16 +272,22 @@ from .update_application_details import UpdateApplicationDetails
 from .update_connection_details import UpdateConnectionDetails
 from .update_connection_from_adwc import UpdateConnectionFromAdwc
 from .update_connection_from_atp import UpdateConnectionFromAtp
+from .update_connection_from_jdbc import UpdateConnectionFromJdbc
+from .update_connection_from_my_sql import UpdateConnectionFromMySQL
 from .update_connection_from_object_storage import UpdateConnectionFromObjectStorage
 from .update_connection_from_oracle import UpdateConnectionFromOracle
 from .update_data_asset_details import UpdateDataAssetDetails
 from .update_data_asset_from_adwc import UpdateDataAssetFromAdwc
 from .update_data_asset_from_atp import UpdateDataAssetFromAtp
+from .update_data_asset_from_jdbc import UpdateDataAssetFromJdbc
+from .update_data_asset_from_my_sql import UpdateDataAssetFromMySQL
 from .update_data_asset_from_object_storage import UpdateDataAssetFromObjectStorage
 from .update_data_asset_from_oracle import UpdateDataAssetFromOracle
 from .update_data_flow_details import UpdateDataFlowDetails
+from .update_external_publication_details import UpdateExternalPublicationDetails
 from .update_folder_details import UpdateFolderDetails
 from .update_project_details import UpdateProjectDetails
+from .update_reference_details import UpdateReferenceDetails
 from .update_task_details import UpdateTaskDetails
 from .update_task_from_data_loader_task import UpdateTaskFromDataLoaderTask
 from .update_task_from_integration_task import UpdateTaskFromIntegrationTask
@@ -264,8 +315,11 @@ data_integration_type_mapping = {
     "ApplicationDetails": ApplicationDetails,
     "ApplicationSummary": ApplicationSummary,
     "ApplicationSummaryCollection": ApplicationSummaryCollection,
+    "AvroFormatAttribute": AvroFormatAttribute,
     "BaseType": BaseType,
     "ChangeCompartmentDetails": ChangeCompartmentDetails,
+    "ChildReference": ChildReference,
+    "ChildReferenceDetail": ChildReferenceDetail,
     "CompositeFieldMap": CompositeFieldMap,
     "CompositeType": CompositeType,
     "ConditionalInputLink": ConditionalInputLink,
@@ -274,6 +328,7 @@ data_integration_type_mapping = {
     "ConfigParameterValue": ConfigParameterValue,
     "ConfigProvider": ConfigProvider,
     "ConfigValues": ConfigValues,
+    "ConfigurationDetails": ConfigurationDetails,
     "ConfiguredType": ConfiguredType,
     "Connection": Connection,
     "ConnectionDetails": ConnectionDetails,
@@ -281,6 +336,10 @@ data_integration_type_mapping = {
     "ConnectionFromAdwcDetails": ConnectionFromAdwcDetails,
     "ConnectionFromAtp": ConnectionFromAtp,
     "ConnectionFromAtpDetails": ConnectionFromAtpDetails,
+    "ConnectionFromJdbc": ConnectionFromJdbc,
+    "ConnectionFromJdbcDetails": ConnectionFromJdbcDetails,
+    "ConnectionFromMySQL": ConnectionFromMySQL,
+    "ConnectionFromMySQLDetails": ConnectionFromMySQLDetails,
     "ConnectionFromObjectStorage": ConnectionFromObjectStorage,
     "ConnectionFromObjectStorageDetails": ConnectionFromObjectStorageDetails,
     "ConnectionFromOracle": ConnectionFromOracle,
@@ -290,6 +349,8 @@ data_integration_type_mapping = {
     "ConnectionSummaryCollection": ConnectionSummaryCollection,
     "ConnectionSummaryFromAdwc": ConnectionSummaryFromAdwc,
     "ConnectionSummaryFromAtp": ConnectionSummaryFromAtp,
+    "ConnectionSummaryFromJdbc": ConnectionSummaryFromJdbc,
+    "ConnectionSummaryFromMySQL": ConnectionSummaryFromMySQL,
     "ConnectionSummaryFromObjectStorage": ConnectionSummaryFromObjectStorage,
     "ConnectionSummaryFromOracle": ConnectionSummaryFromOracle,
     "ConnectionValidation": ConnectionValidation,
@@ -302,21 +363,28 @@ data_integration_type_mapping = {
     "CreateConnectionDetails": CreateConnectionDetails,
     "CreateConnectionFromAdwc": CreateConnectionFromAdwc,
     "CreateConnectionFromAtp": CreateConnectionFromAtp,
+    "CreateConnectionFromJdbc": CreateConnectionFromJdbc,
+    "CreateConnectionFromMySQL": CreateConnectionFromMySQL,
     "CreateConnectionFromObjectStorage": CreateConnectionFromObjectStorage,
     "CreateConnectionFromOracle": CreateConnectionFromOracle,
     "CreateConnectionValidationDetails": CreateConnectionValidationDetails,
     "CreateDataAssetDetails": CreateDataAssetDetails,
     "CreateDataAssetFromAdwc": CreateDataAssetFromAdwc,
     "CreateDataAssetFromAtp": CreateDataAssetFromAtp,
+    "CreateDataAssetFromJdbc": CreateDataAssetFromJdbc,
+    "CreateDataAssetFromMySQL": CreateDataAssetFromMySQL,
     "CreateDataAssetFromObjectStorage": CreateDataAssetFromObjectStorage,
     "CreateDataAssetFromOracle": CreateDataAssetFromOracle,
     "CreateDataFlowDetails": CreateDataFlowDetails,
     "CreateDataFlowValidationDetails": CreateDataFlowValidationDetails,
     "CreateEntityShapeDetails": CreateEntityShapeDetails,
     "CreateEntityShapeFromFile": CreateEntityShapeFromFile,
+    "CreateExternalPublicationDetails": CreateExternalPublicationDetails,
+    "CreateExternalPublicationValidationDetails": CreateExternalPublicationValidationDetails,
     "CreateFolderDetails": CreateFolderDetails,
     "CreatePatchDetails": CreatePatchDetails,
     "CreateProjectDetails": CreateProjectDetails,
+    "CreateSourceApplicationInfo": CreateSourceApplicationInfo,
     "CreateTaskDetails": CreateTaskDetails,
     "CreateTaskFromDataLoaderTask": CreateTaskFromDataLoaderTask,
     "CreateTaskFromIntegrationTask": CreateTaskFromIntegrationTask,
@@ -329,12 +397,16 @@ data_integration_type_mapping = {
     "DataAsset": DataAsset,
     "DataAssetFromAdwcDetails": DataAssetFromAdwcDetails,
     "DataAssetFromAtpDetails": DataAssetFromAtpDetails,
+    "DataAssetFromJdbc": DataAssetFromJdbc,
+    "DataAssetFromMySQL": DataAssetFromMySQL,
     "DataAssetFromObjectStorageDetails": DataAssetFromObjectStorageDetails,
     "DataAssetFromOracleDetails": DataAssetFromOracleDetails,
     "DataAssetSummary": DataAssetSummary,
     "DataAssetSummaryCollection": DataAssetSummaryCollection,
     "DataAssetSummaryFromAdwc": DataAssetSummaryFromAdwc,
     "DataAssetSummaryFromAtp": DataAssetSummaryFromAtp,
+    "DataAssetSummaryFromJdbc": DataAssetSummaryFromJdbc,
+    "DataAssetSummaryFromMySQL": DataAssetSummaryFromMySQL,
     "DataAssetSummaryFromObjectStorage": DataAssetSummaryFromObjectStorage,
     "DataAssetSummaryFromOracle": DataAssetSummaryFromOracle,
     "DataEntity": DataEntity,
@@ -366,14 +438,22 @@ data_integration_type_mapping = {
     "DerivedType": DerivedType,
     "DirectFieldMap": DirectFieldMap,
     "DirectNamedFieldMap": DirectNamedFieldMap,
+    "Distinct": Distinct,
     "DynamicInputField": DynamicInputField,
     "DynamicProxyField": DynamicProxyField,
     "DynamicType": DynamicType,
     "DynamicTypeHandler": DynamicTypeHandler,
+    "EnrichedEntity": EnrichedEntity,
     "EntityShape": EntityShape,
     "EntityShapeFromFile": EntityShapeFromFile,
     "ErrorDetails": ErrorDetails,
     "Expression": Expression,
+    "ExternalPublication": ExternalPublication,
+    "ExternalPublicationSummary": ExternalPublicationSummary,
+    "ExternalPublicationSummaryCollection": ExternalPublicationSummaryCollection,
+    "ExternalPublicationValidation": ExternalPublicationValidation,
+    "ExternalPublicationValidationSummary": ExternalPublicationValidationSummary,
+    "ExternalPublicationValidationSummaryCollection": ExternalPublicationValidationSummaryCollection,
     "FieldMap": FieldMap,
     "Filter": Filter,
     "FilterPush": FilterPush,
@@ -396,6 +476,7 @@ data_integration_type_mapping = {
     "KeyAttribute": KeyAttribute,
     "KeyRange": KeyRange,
     "KeyRangePartitionConfig": KeyRangePartitionConfig,
+    "MacroField": MacroField,
     "Message": Message,
     "NameListRule": NameListRule,
     "NamePatternRule": NamePatternRule,
@@ -403,9 +484,13 @@ data_integration_type_mapping = {
     "ObjectMetadata": ObjectMetadata,
     "Operator": Operator,
     "OracleAdwcWriteAttribute": OracleAdwcWriteAttribute,
+    "OracleAdwcWriteAttributes": OracleAdwcWriteAttributes,
     "OracleAtpWriteAttribute": OracleAtpWriteAttribute,
+    "OracleAtpWriteAttributes": OracleAtpWriteAttributes,
     "OracleReadAttribute": OracleReadAttribute,
+    "OracleReadAttributes": OracleReadAttributes,
     "OracleWriteAttribute": OracleWriteAttribute,
+    "OracleWriteAttributes": OracleWriteAttributes,
     "OutputField": OutputField,
     "OutputLink": OutputLink,
     "OutputPort": OutputPort,
@@ -414,6 +499,8 @@ data_integration_type_mapping = {
     "ParentReference": ParentReference,
     "PartitionConfig": PartitionConfig,
     "Patch": Patch,
+    "PatchChangeSummary": PatchChangeSummary,
+    "PatchChangeSummaryCollection": PatchChangeSummaryCollection,
     "PatchObjectMetadata": PatchObjectMetadata,
     "PatchSummary": PatchSummary,
     "PatchSummaryCollection": PatchSummaryCollection,
@@ -435,8 +522,13 @@ data_integration_type_mapping = {
     "PushDownOperation": PushDownOperation,
     "Query": Query,
     "ReadOperationConfig": ReadOperationConfig,
+    "Reference": Reference,
+    "ReferenceSummary": ReferenceSummary,
+    "ReferenceSummaryCollection": ReferenceSummaryCollection,
+    "ReferenceUsedBy": ReferenceUsedBy,
     "RegistryMetadata": RegistryMetadata,
     "RenameRule": RenameRule,
+    "ResourceConfiguration": ResourceConfiguration,
     "RootObject": RootObject,
     "RuleBasedFieldMap": RuleBasedFieldMap,
     "RuleTypeConfig": RuleTypeConfig,
@@ -448,7 +540,11 @@ data_integration_type_mapping = {
     "ShapeField": ShapeField,
     "Sort": Sort,
     "SortClause": SortClause,
+    "SortKey": SortKey,
+    "SortKeyRule": SortKeyRule,
+    "SortOper": SortOper,
     "Source": Source,
+    "SourceApplicationInfo": SourceApplicationInfo,
     "StructuredType": StructuredType,
     "Target": Target,
     "Task": Task,
@@ -477,16 +573,22 @@ data_integration_type_mapping = {
     "UpdateConnectionDetails": UpdateConnectionDetails,
     "UpdateConnectionFromAdwc": UpdateConnectionFromAdwc,
     "UpdateConnectionFromAtp": UpdateConnectionFromAtp,
+    "UpdateConnectionFromJdbc": UpdateConnectionFromJdbc,
+    "UpdateConnectionFromMySQL": UpdateConnectionFromMySQL,
     "UpdateConnectionFromObjectStorage": UpdateConnectionFromObjectStorage,
     "UpdateConnectionFromOracle": UpdateConnectionFromOracle,
     "UpdateDataAssetDetails": UpdateDataAssetDetails,
     "UpdateDataAssetFromAdwc": UpdateDataAssetFromAdwc,
     "UpdateDataAssetFromAtp": UpdateDataAssetFromAtp,
+    "UpdateDataAssetFromJdbc": UpdateDataAssetFromJdbc,
+    "UpdateDataAssetFromMySQL": UpdateDataAssetFromMySQL,
     "UpdateDataAssetFromObjectStorage": UpdateDataAssetFromObjectStorage,
     "UpdateDataAssetFromOracle": UpdateDataAssetFromOracle,
     "UpdateDataFlowDetails": UpdateDataFlowDetails,
+    "UpdateExternalPublicationDetails": UpdateExternalPublicationDetails,
     "UpdateFolderDetails": UpdateFolderDetails,
     "UpdateProjectDetails": UpdateProjectDetails,
+    "UpdateReferenceDetails": UpdateReferenceDetails,
     "UpdateTaskDetails": UpdateTaskDetails,
     "UpdateTaskFromDataLoaderTask": UpdateTaskFromDataLoaderTask,
     "UpdateTaskFromIntegrationTask": UpdateTaskFromIntegrationTask,

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDataAssetFromAtp(UpdateDataAssetDetails):
     """
-    The Oracle data asset details.
+    Details for the Autonomous Transaction Processing data asset type.
     """
 
     def __init__(self, **kwargs):
@@ -21,7 +21,7 @@ class UpdateDataAssetFromAtp(UpdateDataAssetDetails):
 
         :param model_type:
             The value to assign to the model_type property of this UpdateDataAssetFromAtp.
-            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET"
+            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET"
         :type model_type: str
 
         :param key:
@@ -138,7 +138,7 @@ class UpdateDataAssetFromAtp(UpdateDataAssetDetails):
     def service_name(self):
         """
         Gets the service_name of this UpdateDataAssetFromAtp.
-        The service name for the data asset.
+        The Autonomous Transaction Processing instance service name.
 
 
         :return: The service_name of this UpdateDataAssetFromAtp.
@@ -150,7 +150,7 @@ class UpdateDataAssetFromAtp(UpdateDataAssetDetails):
     def service_name(self, service_name):
         """
         Sets the service_name of this UpdateDataAssetFromAtp.
-        The service name for the data asset.
+        The Autonomous Transaction Processing instance service name.
 
 
         :param service_name: The service_name of this UpdateDataAssetFromAtp.
@@ -162,7 +162,7 @@ class UpdateDataAssetFromAtp(UpdateDataAssetDetails):
     def driver_class(self):
         """
         Gets the driver_class of this UpdateDataAssetFromAtp.
-        The driver class for the data asset.
+        The Autonomous Transaction Processing driver class
 
 
         :return: The driver_class of this UpdateDataAssetFromAtp.
@@ -174,7 +174,7 @@ class UpdateDataAssetFromAtp(UpdateDataAssetDetails):
     def driver_class(self, driver_class):
         """
         Sets the driver_class of this UpdateDataAssetFromAtp.
-        The driver class for the data asset.
+        The Autonomous Transaction Processing driver class
 
 
         :param driver_class: The driver_class of this UpdateDataAssetFromAtp.
@@ -186,7 +186,7 @@ class UpdateDataAssetFromAtp(UpdateDataAssetDetails):
     def credential_file_content(self):
         """
         Gets the credential_file_content of this UpdateDataAssetFromAtp.
-        The credential file content from a wallet for the data asset.
+        The credential file content from an Autonomous Transaction Processing wallet.
 
 
         :return: The credential_file_content of this UpdateDataAssetFromAtp.
@@ -198,7 +198,7 @@ class UpdateDataAssetFromAtp(UpdateDataAssetDetails):
     def credential_file_content(self, credential_file_content):
         """
         Sets the credential_file_content of this UpdateDataAssetFromAtp.
-        The credential file content from a wallet for the data asset.
+        The credential file content from an Autonomous Transaction Processing wallet.
 
 
         :param credential_file_content: The credential_file_content of this UpdateDataAssetFromAtp.

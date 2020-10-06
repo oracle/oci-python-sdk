@@ -21,7 +21,7 @@ class DerivedField(TypedObject):
 
         :param model_type:
             The value to assign to the model_type property of this DerivedField.
-            Allowed values for this property are: "SHAPE", "INPUT_PORT", "SHAPE_FIELD", "INPUT_FIELD", "DERIVED_FIELD", "OUTPUT_FIELD", "DYNAMIC_PROXY_FIELD", "OUTPUT_PORT", "DYNAMIC_INPUT_FIELD", "PROXY_FIELD", "PARAMETER"
+            Allowed values for this property are: "SHAPE", "INPUT_PORT", "SHAPE_FIELD", "INPUT_FIELD", "DERIVED_FIELD", "MACRO_FIELD", "OUTPUT_FIELD", "DYNAMIC_PROXY_FIELD", "OUTPUT_PORT", "DYNAMIC_INPUT_FIELD", "PROXY_FIELD", "PARAMETER"
         :type model_type: str
 
         :param key:
@@ -154,7 +154,7 @@ class DerivedField(TypedObject):
     def labels(self):
         """
         Gets the labels of this DerivedField.
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 
 
         :return: The labels of this DerivedField.
@@ -166,7 +166,7 @@ class DerivedField(TypedObject):
     def labels(self, labels):
         """
         Sets the labels of this DerivedField.
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
 
 
         :param labels: The labels of this DerivedField.

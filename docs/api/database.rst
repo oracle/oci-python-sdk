@@ -55,9 +55,15 @@ Database
     oci.database.models.BackupDestinationSummary
     oci.database.models.BackupSummary
     oci.database.models.ChangeAutonomousVmClusterCompartmentDetails
+    oci.database.models.ChangeCloudExadataInfrastructureCompartmentDetails
+    oci.database.models.ChangeCloudVmClusterCompartmentDetails
     oci.database.models.ChangeCompartmentDetails
     oci.database.models.ChangeExadataInfrastructureCompartmentDetails
     oci.database.models.ChangeVmClusterCompartmentDetails
+    oci.database.models.CloudExadataInfrastructure
+    oci.database.models.CloudExadataInfrastructureSummary
+    oci.database.models.CloudVmCluster
+    oci.database.models.CloudVmClusterSummary
     oci.database.models.CompleteExternalBackupJobDetails
     oci.database.models.ConsoleConnection
     oci.database.models.ConsoleConnectionSummary
@@ -73,6 +79,8 @@ Database
     oci.database.models.CreateAutonomousVmClusterDetails
     oci.database.models.CreateBackupDestinationDetails
     oci.database.models.CreateBackupDetails
+    oci.database.models.CreateCloudExadataInfrastructureDetails
+    oci.database.models.CreateCloudVmClusterDetails
     oci.database.models.CreateConsoleConnectionDetails
     oci.database.models.CreateDataGuardAssociationDetails
     oci.database.models.CreateDataGuardAssociationToExistingDbSystemDetails
@@ -94,6 +102,7 @@ Database
     oci.database.models.CreateDbHomeWithDbSystemIdFromBackupDetails
     oci.database.models.CreateDbHomeWithDbSystemIdFromDatabaseDetails
     oci.database.models.CreateDbHomeWithVmClusterIdDetails
+    oci.database.models.CreateDbHomeWithVmClusterIdFromBackupDetails
     oci.database.models.CreateExadataInfrastructureDetails
     oci.database.models.CreateExternalBackupJobDetails
     oci.database.models.CreateNFSBackupDestinationDetails
@@ -122,6 +131,8 @@ Database
     oci.database.models.DbSystemSummary
     oci.database.models.DbVersionSummary
     oci.database.models.DeregisterAutonomousDatabaseDataSafeDetails
+    oci.database.models.ExadataDbSystemMigration
+    oci.database.models.ExadataDbSystemMigrationSummary
     oci.database.models.ExadataInfrastructure
     oci.database.models.ExadataInfrastructureContact
     oci.database.models.ExadataInfrastructureSummary
@@ -160,6 +171,7 @@ Database
     oci.database.models.ScanDetails
     oci.database.models.SelfMountDetails
     oci.database.models.SwitchoverDataGuardAssociationDetails
+    oci.database.models.Update
     oci.database.models.UpdateAutonomousContainerDatabaseDetails
     oci.database.models.UpdateAutonomousDataWarehouseDetails
     oci.database.models.UpdateAutonomousDatabaseDetails
@@ -167,12 +179,18 @@ Database
     oci.database.models.UpdateAutonomousExadataInfrastructureDetails
     oci.database.models.UpdateAutonomousVmClusterDetails
     oci.database.models.UpdateBackupDestinationDetails
+    oci.database.models.UpdateCloudExadataInfrastructureDetails
+    oci.database.models.UpdateCloudVmClusterDetails
     oci.database.models.UpdateDatabaseDetails
     oci.database.models.UpdateDatabaseSoftwareImageDetails
     oci.database.models.UpdateDbHomeDetails
     oci.database.models.UpdateDbSystemDetails
+    oci.database.models.UpdateDetails
     oci.database.models.UpdateExadataInfrastructureDetails
+    oci.database.models.UpdateHistoryEntry
+    oci.database.models.UpdateHistoryEntrySummary
     oci.database.models.UpdateMaintenanceRunDetails
+    oci.database.models.UpdateSummary
     oci.database.models.UpdateVmClusterDetails
     oci.database.models.UpdateVmClusterNetworkDetails
     oci.database.models.VmCluster

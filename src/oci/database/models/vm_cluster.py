@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class VmCluster(object):
     """
-    Details of the VM cluster.
+    Details of the Exadata Cloud@Customer VM cluster.
     """
 
     #: A constant which can be used with the lifecycle_state property of a VmCluster.
@@ -334,7 +334,7 @@ class VmCluster(object):
     def display_name(self):
         """
         Gets the display_name of this VmCluster.
-        The user-friendly name for the VM cluster. The name does not need to be unique.
+        The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
 
 
         :return: The display_name of this VmCluster.
@@ -346,7 +346,7 @@ class VmCluster(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this VmCluster.
-        The user-friendly name for the VM cluster. The name does not need to be unique.
+        The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
 
 
         :param display_name: The display_name of this VmCluster.

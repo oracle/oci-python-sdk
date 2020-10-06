@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataAssetFromOracleDetails(DataAsset):
     """
-    The Oracle data asset details.
+    Details for the Oracle Database data asset type.
     """
 
     def __init__(self, **kwargs):
@@ -21,7 +21,7 @@ class DataAssetFromOracleDetails(DataAsset):
 
         :param model_type:
             The value to assign to the model_type property of this DataAssetFromOracleDetails.
-            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET"
+            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET"
         :type model_type: str
 
         :param key:
@@ -180,7 +180,7 @@ class DataAssetFromOracleDetails(DataAsset):
     def host(self):
         """
         Gets the host of this DataAssetFromOracleDetails.
-        The host details for the data asset.
+        The Oracle Database hostname.
 
 
         :return: The host of this DataAssetFromOracleDetails.
@@ -192,7 +192,7 @@ class DataAssetFromOracleDetails(DataAsset):
     def host(self, host):
         """
         Sets the host of this DataAssetFromOracleDetails.
-        The host details for the data asset.
+        The Oracle Database hostname.
 
 
         :param host: The host of this DataAssetFromOracleDetails.
@@ -204,7 +204,7 @@ class DataAssetFromOracleDetails(DataAsset):
     def port(self):
         """
         Gets the port of this DataAssetFromOracleDetails.
-        The port details for the data asset.
+        The Oracle Database port.
 
 
         :return: The port of this DataAssetFromOracleDetails.
@@ -216,7 +216,7 @@ class DataAssetFromOracleDetails(DataAsset):
     def port(self, port):
         """
         Sets the port of this DataAssetFromOracleDetails.
-        The port details for the data asset.
+        The Oracle Database port.
 
 
         :param port: The port of this DataAssetFromOracleDetails.
@@ -228,7 +228,7 @@ class DataAssetFromOracleDetails(DataAsset):
     def service_name(self):
         """
         Gets the service_name of this DataAssetFromOracleDetails.
-        The service name for the data asset.
+        The Oracle Database service name.
 
 
         :return: The service_name of this DataAssetFromOracleDetails.
@@ -240,7 +240,7 @@ class DataAssetFromOracleDetails(DataAsset):
     def service_name(self, service_name):
         """
         Sets the service_name of this DataAssetFromOracleDetails.
-        The service name for the data asset.
+        The Oracle Database service name.
 
 
         :param service_name: The service_name of this DataAssetFromOracleDetails.
@@ -252,7 +252,7 @@ class DataAssetFromOracleDetails(DataAsset):
     def driver_class(self):
         """
         Gets the driver_class of this DataAssetFromOracleDetails.
-        The driver class for the data asset.
+        The Oracle Database driver class.
 
 
         :return: The driver_class of this DataAssetFromOracleDetails.
@@ -264,7 +264,7 @@ class DataAssetFromOracleDetails(DataAsset):
     def driver_class(self, driver_class):
         """
         Sets the driver_class of this DataAssetFromOracleDetails.
-        The driver class for the data asset.
+        The Oracle Database driver class.
 
 
         :param driver_class: The driver_class of this DataAssetFromOracleDetails.
@@ -276,7 +276,7 @@ class DataAssetFromOracleDetails(DataAsset):
     def sid(self):
         """
         Gets the sid of this DataAssetFromOracleDetails.
-        sid
+        The Oracle Database SID.
 
 
         :return: The sid of this DataAssetFromOracleDetails.
@@ -288,7 +288,7 @@ class DataAssetFromOracleDetails(DataAsset):
     def sid(self, sid):
         """
         Sets the sid of this DataAssetFromOracleDetails.
-        sid
+        The Oracle Database SID.
 
 
         :param sid: The sid of this DataAssetFromOracleDetails.

@@ -95,7 +95,7 @@ class Message(object):
     def code(self):
         """
         **[Required]** Gets the code of this Message.
-        The message code
+        The message code.
 
 
         :return: The code of this Message.
@@ -107,7 +107,7 @@ class Message(object):
     def code(self, code):
         """
         Sets the code of this Message.
-        The message code
+        The message code.
 
 
         :param code: The code of this Message.
@@ -119,7 +119,7 @@ class Message(object):
     def message(self):
         """
         **[Required]** Gets the message of this Message.
-        The message text
+        The message text.
 
 
         :return: The message of this Message.
@@ -131,7 +131,7 @@ class Message(object):
     def message(self, message):
         """
         Sets the message of this Message.
-        The message text
+        The message text.
 
 
         :param message: The message of this Message.

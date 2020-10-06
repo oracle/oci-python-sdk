@@ -71,6 +71,10 @@ class LaunchInstanceDetails(object):
             The value to assign to the launch_options property of this LaunchInstanceDetails.
         :type launch_options: LaunchOptions
 
+        :param instance_options:
+            The value to assign to the instance_options property of this LaunchInstanceDetails.
+        :type instance_options: InstanceOptions
+
         :param availability_config:
             The value to assign to the availability_config property of this LaunchInstanceDetails.
         :type availability_config: LaunchInstanceAvailabilityConfigDetails
@@ -118,6 +122,7 @@ class LaunchInstanceDetails(object):
             'image_id': 'str',
             'ipxe_script': 'str',
             'launch_options': 'LaunchOptions',
+            'instance_options': 'InstanceOptions',
             'availability_config': 'LaunchInstanceAvailabilityConfigDetails',
             'metadata': 'dict(str, str)',
             'agent_config': 'LaunchInstanceAgentConfigDetails',
@@ -142,6 +147,7 @@ class LaunchInstanceDetails(object):
             'image_id': 'imageId',
             'ipxe_script': 'ipxeScript',
             'launch_options': 'launchOptions',
+            'instance_options': 'instanceOptions',
             'availability_config': 'availabilityConfig',
             'metadata': 'metadata',
             'agent_config': 'agentConfig',
@@ -165,6 +171,7 @@ class LaunchInstanceDetails(object):
         self._image_id = None
         self._ipxe_script = None
         self._launch_options = None
+        self._instance_options = None
         self._availability_config = None
         self._metadata = None
         self._agent_config = None
@@ -615,6 +622,26 @@ class LaunchInstanceDetails(object):
         :type: LaunchOptions
         """
         self._launch_options = launch_options
+
+    @property
+    def instance_options(self):
+        """
+        Gets the instance_options of this LaunchInstanceDetails.
+
+        :return: The instance_options of this LaunchInstanceDetails.
+        :rtype: InstanceOptions
+        """
+        return self._instance_options
+
+    @instance_options.setter
+    def instance_options(self, instance_options):
+        """
+        Sets the instance_options of this LaunchInstanceDetails.
+
+        :param instance_options: The instance_options of this LaunchInstanceDetails.
+        :type: InstanceOptions
+        """
+        self._instance_options = instance_options
 
     @property
     def availability_config(self):

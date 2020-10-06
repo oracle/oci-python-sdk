@@ -96,7 +96,7 @@ class JavaType(BaseType):
     def java_type_name(self):
         """
         Gets the java_type_name of this JavaType.
-        javaTypeName
+        The java type name.
 
 
         :return: The java_type_name of this JavaType.
@@ -108,7 +108,7 @@ class JavaType(BaseType):
     def java_type_name(self, java_type_name):
         """
         Sets the java_type_name of this JavaType.
-        javaTypeName
+        The java type name.
 
 
         :param java_type_name: The java_type_name of this JavaType.

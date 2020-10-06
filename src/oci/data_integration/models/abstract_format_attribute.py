@@ -21,11 +21,16 @@ class AbstractFormatAttribute(object):
     #: This constant has a value of "CSV_FORMAT"
     MODEL_TYPE_CSV_FORMAT = "CSV_FORMAT"
 
+    #: A constant which can be used with the model_type property of a AbstractFormatAttribute.
+    #: This constant has a value of "AVRO_FORMAT"
+    MODEL_TYPE_AVRO_FORMAT = "AVRO_FORMAT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AbstractFormatAttribute object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.data_integration.models.AvroFormatAttribute`
         * :class:`~oci.data_integration.models.JsonFormatAttribute`
         * :class:`~oci.data_integration.models.CsvFormatAttribute`
 
@@ -33,7 +38,7 @@ class AbstractFormatAttribute(object):
 
         :param model_type:
             The value to assign to the model_type property of this AbstractFormatAttribute.
-            Allowed values for this property are: "JSON_FORMAT", "CSV_FORMAT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "JSON_FORMAT", "CSV_FORMAT", "AVRO_FORMAT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -56,6 +61,9 @@ class AbstractFormatAttribute(object):
         """
         type = object_dictionary['modelType']
 
+        if type == 'AVRO_FORMAT':
+            return 'AvroFormatAttribute'
+
         if type == 'JSON_FORMAT':
             return 'JsonFormatAttribute'
 
@@ -70,7 +78,7 @@ class AbstractFormatAttribute(object):
         **[Required]** Gets the model_type of this AbstractFormatAttribute.
         The type of the format attribute.
 
-        Allowed values for this property are: "JSON_FORMAT", "CSV_FORMAT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "JSON_FORMAT", "CSV_FORMAT", "AVRO_FORMAT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -89,7 +97,7 @@ class AbstractFormatAttribute(object):
         :param model_type: The model_type of this AbstractFormatAttribute.
         :type: str
         """
-        allowed_values = ["JSON_FORMAT", "CSV_FORMAT"]
+        allowed_values = ["JSON_FORMAT", "CSV_FORMAT", "AVRO_FORMAT"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type

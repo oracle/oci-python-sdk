@@ -21,7 +21,7 @@ class JsonFormatAttribute(AbstractFormatAttribute):
 
         :param model_type:
             The value to assign to the model_type property of this JsonFormatAttribute.
-            Allowed values for this property are: "JSON_FORMAT", "CSV_FORMAT"
+            Allowed values for this property are: "JSON_FORMAT", "CSV_FORMAT", "AVRO_FORMAT"
         :type model_type: str
 
         :param encoding:

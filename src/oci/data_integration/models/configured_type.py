@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConfiguredType(BaseType):
     """
-    A ConfiguraedType represents a type that has built-in configuration to the type itself. An example is a SSN type whose basic type is VARCHAR, but the type itself also has a built-in configuration like length=10
+    A `ConfiguredType` represents a type that has built-in configuration to the type itself. An example is a `SSN` type whose basic type is `VARCHAR`, but the type itself also has a built-in configuration like length=10.
     """
 
     def __init__(self, **kwargs):
@@ -50,7 +50,7 @@ class ConfiguredType(BaseType):
 
         :param wrapped_type:
             The value to assign to the wrapped_type property of this ConfiguredType.
-        :type wrapped_type: BaseType
+        :type wrapped_type: object
 
         :param config_values:
             The value to assign to the config_values property of this ConfiguredType.
@@ -69,7 +69,7 @@ class ConfiguredType(BaseType):
             'name': 'str',
             'object_status': 'int',
             'description': 'str',
-            'wrapped_type': 'BaseType',
+            'wrapped_type': 'object',
             'config_values': 'ConfigValues',
             'config_definition': 'ConfigDefinition'
         }
@@ -103,9 +103,11 @@ class ConfiguredType(BaseType):
     def wrapped_type(self):
         """
         Gets the wrapped_type of this ConfiguredType.
+        A wrapped type, may be a string or a BaseType.
+
 
         :return: The wrapped_type of this ConfiguredType.
-        :rtype: BaseType
+        :rtype: object
         """
         return self._wrapped_type
 
@@ -113,9 +115,11 @@ class ConfiguredType(BaseType):
     def wrapped_type(self, wrapped_type):
         """
         Sets the wrapped_type of this ConfiguredType.
+        A wrapped type, may be a string or a BaseType.
+
 
         :param wrapped_type: The wrapped_type of this ConfiguredType.
-        :type: BaseType
+        :type: object
         """
         self._wrapped_type = wrapped_type
 

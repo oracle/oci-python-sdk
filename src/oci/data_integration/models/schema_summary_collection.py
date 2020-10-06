@@ -37,7 +37,7 @@ class SchemaSummaryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this SchemaSummaryCollection.
-        The array of Schema summaries
+        The array of schema summaries.
 
 
         :return: The items of this SchemaSummaryCollection.
@@ -49,7 +49,7 @@ class SchemaSummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this SchemaSummaryCollection.
-        The array of Schema summaries
+        The array of schema summaries.
 
 
         :param items: The items of this SchemaSummaryCollection.

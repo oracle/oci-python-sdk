@@ -37,7 +37,7 @@ class CreateDbHomeWithDbSystemIdDetails(CreateDbHomeBase):
 
         :param source:
             The value to assign to the source property of this CreateDbHomeWithDbSystemIdDetails.
-            Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE", "VM_CLUSTER_NEW"
+            Allowed values for this property are: "NONE", "DB_BACKUP", "DATABASE", "VM_CLUSTER_BACKUP", "VM_CLUSTER_NEW"
         :type source: str
 
         :param db_system_id:

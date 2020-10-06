@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Parameter(TypedObject):
     """
-    Parameters are created and assigned values that can be deferred to execution/runtime.
+    Parameters are created and assigned values that can be configured for each integration task.
     """
 
     #: A constant which can be used with the output_aggregation_type property of a Parameter.
@@ -37,7 +37,7 @@ class Parameter(TypedObject):
 
         :param model_type:
             The value to assign to the model_type property of this Parameter.
-            Allowed values for this property are: "SHAPE", "INPUT_PORT", "SHAPE_FIELD", "INPUT_FIELD", "DERIVED_FIELD", "OUTPUT_FIELD", "DYNAMIC_PROXY_FIELD", "OUTPUT_PORT", "DYNAMIC_INPUT_FIELD", "PROXY_FIELD", "PARAMETER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SHAPE", "INPUT_PORT", "SHAPE_FIELD", "INPUT_FIELD", "DERIVED_FIELD", "MACRO_FIELD", "OUTPUT_FIELD", "DYNAMIC_PROXY_FIELD", "OUTPUT_PORT", "DYNAMIC_INPUT_FIELD", "PROXY_FIELD", "PARAMETER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -225,7 +225,7 @@ class Parameter(TypedObject):
     def is_input(self):
         """
         Gets the is_input of this Parameter.
-        Whether the parameter is input value.
+        Specifies whether the parameter is input value.
 
 
         :return: The is_input of this Parameter.
@@ -237,7 +237,7 @@ class Parameter(TypedObject):
     def is_input(self, is_input):
         """
         Sets the is_input of this Parameter.
-        Whether the parameter is input value.
+        Specifies whether the parameter is input value.
 
 
         :param is_input: The is_input of this Parameter.
@@ -249,7 +249,7 @@ class Parameter(TypedObject):
     def is_output(self):
         """
         Gets the is_output of this Parameter.
-        Whether the parameter is output value.
+        Specifies whether the parameter is output value.
 
 
         :return: The is_output of this Parameter.
@@ -261,7 +261,7 @@ class Parameter(TypedObject):
     def is_output(self, is_output):
         """
         Sets the is_output of this Parameter.
-        Whether the parameter is output value.
+        Specifies whether the parameter is output value.
 
 
         :param is_output: The is_output of this Parameter.
@@ -273,7 +273,7 @@ class Parameter(TypedObject):
     def output_aggregation_type(self):
         """
         Gets the output_aggregation_type of this Parameter.
-        The output aggregation type
+        The output aggregation type.
 
         Allowed values for this property are: "MIN", "MAX", "COUNT", "SUM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -288,7 +288,7 @@ class Parameter(TypedObject):
     def output_aggregation_type(self, output_aggregation_type):
         """
         Sets the output_aggregation_type of this Parameter.
-        The output aggregation type
+        The output aggregation type.
 
 
         :param output_aggregation_type: The output_aggregation_type of this Parameter.
@@ -303,7 +303,7 @@ class Parameter(TypedObject):
     def type_name(self):
         """
         Gets the type_name of this Parameter.
-        The name of the object type.
+        The type of value the parameter was created for.
 
 
         :return: The type_name of this Parameter.
@@ -315,7 +315,7 @@ class Parameter(TypedObject):
     def type_name(self, type_name):
         """
         Sets the type_name of this Parameter.
-        The name of the object type.
+        The type of value the parameter was created for.
 
 
         :param type_name: The type_name of this Parameter.

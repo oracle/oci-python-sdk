@@ -76,6 +76,18 @@ class CreateAutonomousContainerDatabaseDetails(object):
             The value to assign to the backup_config property of this CreateAutonomousContainerDatabaseDetails.
         :type backup_config: AutonomousContainerDatabaseBackupConfig
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this CreateAutonomousContainerDatabaseDetails.
+        :type kms_key_id: str
+
+        :param kms_key_version_id:
+            The value to assign to the kms_key_version_id property of this CreateAutonomousContainerDatabaseDetails.
+        :type kms_key_version_id: str
+
+        :param vault_id:
+            The value to assign to the vault_id property of this CreateAutonomousContainerDatabaseDetails.
+        :type vault_id: str
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -88,7 +100,10 @@ class CreateAutonomousContainerDatabaseDetails(object):
             'maintenance_window_details': 'MaintenanceWindow',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'backup_config': 'AutonomousContainerDatabaseBackupConfig'
+            'backup_config': 'AutonomousContainerDatabaseBackupConfig',
+            'kms_key_id': 'str',
+            'kms_key_version_id': 'str',
+            'vault_id': 'str'
         }
 
         self.attribute_map = {
@@ -102,7 +117,10 @@ class CreateAutonomousContainerDatabaseDetails(object):
             'maintenance_window_details': 'maintenanceWindowDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'backup_config': 'backupConfig'
+            'backup_config': 'backupConfig',
+            'kms_key_id': 'kmsKeyId',
+            'kms_key_version_id': 'kmsKeyVersionId',
+            'vault_id': 'vaultId'
         }
 
         self._display_name = None
@@ -116,6 +134,9 @@ class CreateAutonomousContainerDatabaseDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._backup_config = None
+        self._kms_key_id = None
+        self._kms_key_version_id = None
+        self._vault_id = None
 
     @property
     def display_name(self):
@@ -408,6 +429,84 @@ class CreateAutonomousContainerDatabaseDetails(object):
         :type: AutonomousContainerDatabaseBackupConfig
         """
         self._backup_config = backup_config
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this CreateAutonomousContainerDatabaseDetails.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :return: The kms_key_id of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this CreateAutonomousContainerDatabaseDetails.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :param kms_key_id: The kms_key_id of this CreateAutonomousContainerDatabaseDetails.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
+
+    @property
+    def kms_key_version_id(self):
+        """
+        Gets the kms_key_version_id of this CreateAutonomousContainerDatabaseDetails.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+
+
+        :return: The kms_key_version_id of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: str
+        """
+        return self._kms_key_version_id
+
+    @kms_key_version_id.setter
+    def kms_key_version_id(self, kms_key_version_id):
+        """
+        Sets the kms_key_version_id of this CreateAutonomousContainerDatabaseDetails.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+
+
+        :param kms_key_version_id: The kms_key_version_id of this CreateAutonomousContainerDatabaseDetails.
+        :type: str
+        """
+        self._kms_key_version_id = kms_key_version_id
+
+    @property
+    def vault_id(self):
+        """
+        Gets the vault_id of this CreateAutonomousContainerDatabaseDetails.
+        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+
+
+        :return: The vault_id of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: str
+        """
+        return self._vault_id
+
+    @vault_id.setter
+    def vault_id(self, vault_id):
+        """
+        Sets the vault_id of this CreateAutonomousContainerDatabaseDetails.
+        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+
+
+        :param vault_id: The vault_id of this CreateAutonomousContainerDatabaseDetails.
+        :type: str
+        """
+        self._vault_id = vault_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

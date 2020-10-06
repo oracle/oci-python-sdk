@@ -37,6 +37,14 @@ class Operator(object):
     #: This constant has a value of "TARGET_OPERATOR"
     MODEL_TYPE_TARGET_OPERATOR = "TARGET_OPERATOR"
 
+    #: A constant which can be used with the model_type property of a Operator.
+    #: This constant has a value of "DISTINCT_OPERATOR"
+    MODEL_TYPE_DISTINCT_OPERATOR = "DISTINCT_OPERATOR"
+
+    #: A constant which can be used with the model_type property of a Operator.
+    #: This constant has a value of "SORT_OPERATOR"
+    MODEL_TYPE_SORT_OPERATOR = "SORT_OPERATOR"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Operator object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -44,8 +52,10 @@ class Operator(object):
 
         * :class:`~oci.data_integration.models.Target`
         * :class:`~oci.data_integration.models.Joiner`
+        * :class:`~oci.data_integration.models.Distinct`
         * :class:`~oci.data_integration.models.Filter`
         * :class:`~oci.data_integration.models.Aggregator`
+        * :class:`~oci.data_integration.models.SortOper`
         * :class:`~oci.data_integration.models.Projection`
         * :class:`~oci.data_integration.models.Source`
 
@@ -53,7 +63,7 @@ class Operator(object):
 
         :param model_type:
             The value to assign to the model_type property of this Operator.
-            Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -166,11 +176,17 @@ class Operator(object):
         if type == 'JOINER_OPERATOR':
             return 'Joiner'
 
+        if type == 'DISTINCT_OPERATOR':
+            return 'Distinct'
+
         if type == 'FILTER_OPERATOR':
             return 'Filter'
 
         if type == 'AGGREGATOR_OPERATOR':
             return 'Aggregator'
+
+        if type == 'SORT_OPERATOR':
+            return 'SortOper'
 
         if type == 'PROJECTION_OPERATOR':
             return 'Projection'
@@ -186,7 +202,7 @@ class Operator(object):
         **[Required]** Gets the model_type of this Operator.
         The model type of the operator.
 
-        Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -205,7 +221,7 @@ class Operator(object):
         :param model_type: The model_type of this Operator.
         :type: str
         """
-        allowed_values = ["SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR"]
+        allowed_values = ["SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type
@@ -282,7 +298,7 @@ class Operator(object):
     def name(self):
         """
         Gets the name of this Operator.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this Operator.
@@ -294,7 +310,7 @@ class Operator(object):
     def name(self, name):
         """
         Sets the name of this Operator.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this Operator.
@@ -306,7 +322,7 @@ class Operator(object):
     def description(self):
         """
         Gets the description of this Operator.
-        Detailed description for the object.
+        Details about the operator.
 
 
         :return: The description of this Operator.
@@ -318,7 +334,7 @@ class Operator(object):
     def description(self, description):
         """
         Sets the description of this Operator.
-        Detailed description for the object.
+        Details about the operator.
 
 
         :param description: The description of this Operator.
@@ -426,7 +442,7 @@ class Operator(object):
     def identifier(self):
         """
         Gets the identifier of this Operator.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this Operator.
@@ -438,7 +454,7 @@ class Operator(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this Operator.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this Operator.
@@ -450,7 +466,7 @@ class Operator(object):
     def parameters(self):
         """
         Gets the parameters of this Operator.
-        An array of parameters.
+        An array of parameters used in the data flow.
 
 
         :return: The parameters of this Operator.
@@ -462,7 +478,7 @@ class Operator(object):
     def parameters(self, parameters):
         """
         Sets the parameters of this Operator.
-        An array of parameters.
+        An array of parameters used in the data flow.
 
 
         :param parameters: The parameters of this Operator.

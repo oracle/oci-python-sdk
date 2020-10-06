@@ -137,6 +137,10 @@ class Instance(object):
             The value to assign to the launch_options property of this Instance.
         :type launch_options: LaunchOptions
 
+        :param instance_options:
+            The value to assign to the instance_options property of this Instance.
+        :type instance_options: InstanceOptions
+
         :param availability_config:
             The value to assign to the availability_config property of this Instance.
         :type availability_config: InstanceAvailabilityConfig
@@ -198,6 +202,7 @@ class Instance(object):
             'ipxe_script': 'str',
             'launch_mode': 'str',
             'launch_options': 'LaunchOptions',
+            'instance_options': 'InstanceOptions',
             'availability_config': 'InstanceAvailabilityConfig',
             'lifecycle_state': 'str',
             'metadata': 'dict(str, str)',
@@ -225,6 +230,7 @@ class Instance(object):
             'ipxe_script': 'ipxeScript',
             'launch_mode': 'launchMode',
             'launch_options': 'launchOptions',
+            'instance_options': 'instanceOptions',
             'availability_config': 'availabilityConfig',
             'lifecycle_state': 'lifecycleState',
             'metadata': 'metadata',
@@ -251,6 +257,7 @@ class Instance(object):
         self._ipxe_script = None
         self._launch_mode = None
         self._launch_options = None
+        self._instance_options = None
         self._availability_config = None
         self._lifecycle_state = None
         self._metadata = None
@@ -692,6 +699,26 @@ class Instance(object):
         :type: LaunchOptions
         """
         self._launch_options = launch_options
+
+    @property
+    def instance_options(self):
+        """
+        Gets the instance_options of this Instance.
+
+        :return: The instance_options of this Instance.
+        :rtype: InstanceOptions
+        """
+        return self._instance_options
+
+    @instance_options.setter
+    def instance_options(self, instance_options):
+        """
+        Sets the instance_options of this Instance.
+
+        :param instance_options: The instance_options of this Instance.
+        :type: InstanceOptions
+        """
+        self._instance_options = instance_options
 
     @property
     def availability_config(self):

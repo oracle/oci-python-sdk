@@ -28,8 +28,11 @@ Data Integration
     oci.data_integration.models.ApplicationDetails
     oci.data_integration.models.ApplicationSummary
     oci.data_integration.models.ApplicationSummaryCollection
+    oci.data_integration.models.AvroFormatAttribute
     oci.data_integration.models.BaseType
     oci.data_integration.models.ChangeCompartmentDetails
+    oci.data_integration.models.ChildReference
+    oci.data_integration.models.ChildReferenceDetail
     oci.data_integration.models.CompositeFieldMap
     oci.data_integration.models.CompositeType
     oci.data_integration.models.ConditionalInputLink
@@ -38,6 +41,7 @@ Data Integration
     oci.data_integration.models.ConfigParameterValue
     oci.data_integration.models.ConfigProvider
     oci.data_integration.models.ConfigValues
+    oci.data_integration.models.ConfigurationDetails
     oci.data_integration.models.ConfiguredType
     oci.data_integration.models.Connection
     oci.data_integration.models.ConnectionDetails
@@ -45,6 +49,10 @@ Data Integration
     oci.data_integration.models.ConnectionFromAdwcDetails
     oci.data_integration.models.ConnectionFromAtp
     oci.data_integration.models.ConnectionFromAtpDetails
+    oci.data_integration.models.ConnectionFromJdbc
+    oci.data_integration.models.ConnectionFromJdbcDetails
+    oci.data_integration.models.ConnectionFromMySQL
+    oci.data_integration.models.ConnectionFromMySQLDetails
     oci.data_integration.models.ConnectionFromObjectStorage
     oci.data_integration.models.ConnectionFromObjectStorageDetails
     oci.data_integration.models.ConnectionFromOracle
@@ -54,6 +62,8 @@ Data Integration
     oci.data_integration.models.ConnectionSummaryCollection
     oci.data_integration.models.ConnectionSummaryFromAdwc
     oci.data_integration.models.ConnectionSummaryFromAtp
+    oci.data_integration.models.ConnectionSummaryFromJdbc
+    oci.data_integration.models.ConnectionSummaryFromMySQL
     oci.data_integration.models.ConnectionSummaryFromObjectStorage
     oci.data_integration.models.ConnectionSummaryFromOracle
     oci.data_integration.models.ConnectionValidation
@@ -66,21 +76,28 @@ Data Integration
     oci.data_integration.models.CreateConnectionDetails
     oci.data_integration.models.CreateConnectionFromAdwc
     oci.data_integration.models.CreateConnectionFromAtp
+    oci.data_integration.models.CreateConnectionFromJdbc
+    oci.data_integration.models.CreateConnectionFromMySQL
     oci.data_integration.models.CreateConnectionFromObjectStorage
     oci.data_integration.models.CreateConnectionFromOracle
     oci.data_integration.models.CreateConnectionValidationDetails
     oci.data_integration.models.CreateDataAssetDetails
     oci.data_integration.models.CreateDataAssetFromAdwc
     oci.data_integration.models.CreateDataAssetFromAtp
+    oci.data_integration.models.CreateDataAssetFromJdbc
+    oci.data_integration.models.CreateDataAssetFromMySQL
     oci.data_integration.models.CreateDataAssetFromObjectStorage
     oci.data_integration.models.CreateDataAssetFromOracle
     oci.data_integration.models.CreateDataFlowDetails
     oci.data_integration.models.CreateDataFlowValidationDetails
     oci.data_integration.models.CreateEntityShapeDetails
     oci.data_integration.models.CreateEntityShapeFromFile
+    oci.data_integration.models.CreateExternalPublicationDetails
+    oci.data_integration.models.CreateExternalPublicationValidationDetails
     oci.data_integration.models.CreateFolderDetails
     oci.data_integration.models.CreatePatchDetails
     oci.data_integration.models.CreateProjectDetails
+    oci.data_integration.models.CreateSourceApplicationInfo
     oci.data_integration.models.CreateTaskDetails
     oci.data_integration.models.CreateTaskFromDataLoaderTask
     oci.data_integration.models.CreateTaskFromIntegrationTask
@@ -93,12 +110,16 @@ Data Integration
     oci.data_integration.models.DataAsset
     oci.data_integration.models.DataAssetFromAdwcDetails
     oci.data_integration.models.DataAssetFromAtpDetails
+    oci.data_integration.models.DataAssetFromJdbc
+    oci.data_integration.models.DataAssetFromMySQL
     oci.data_integration.models.DataAssetFromObjectStorageDetails
     oci.data_integration.models.DataAssetFromOracleDetails
     oci.data_integration.models.DataAssetSummary
     oci.data_integration.models.DataAssetSummaryCollection
     oci.data_integration.models.DataAssetSummaryFromAdwc
     oci.data_integration.models.DataAssetSummaryFromAtp
+    oci.data_integration.models.DataAssetSummaryFromJdbc
+    oci.data_integration.models.DataAssetSummaryFromMySQL
     oci.data_integration.models.DataAssetSummaryFromObjectStorage
     oci.data_integration.models.DataAssetSummaryFromOracle
     oci.data_integration.models.DataEntity
@@ -130,14 +151,22 @@ Data Integration
     oci.data_integration.models.DerivedType
     oci.data_integration.models.DirectFieldMap
     oci.data_integration.models.DirectNamedFieldMap
+    oci.data_integration.models.Distinct
     oci.data_integration.models.DynamicInputField
     oci.data_integration.models.DynamicProxyField
     oci.data_integration.models.DynamicType
     oci.data_integration.models.DynamicTypeHandler
+    oci.data_integration.models.EnrichedEntity
     oci.data_integration.models.EntityShape
     oci.data_integration.models.EntityShapeFromFile
     oci.data_integration.models.ErrorDetails
     oci.data_integration.models.Expression
+    oci.data_integration.models.ExternalPublication
+    oci.data_integration.models.ExternalPublicationSummary
+    oci.data_integration.models.ExternalPublicationSummaryCollection
+    oci.data_integration.models.ExternalPublicationValidation
+    oci.data_integration.models.ExternalPublicationValidationSummary
+    oci.data_integration.models.ExternalPublicationValidationSummaryCollection
     oci.data_integration.models.FieldMap
     oci.data_integration.models.Filter
     oci.data_integration.models.FilterPush
@@ -160,6 +189,7 @@ Data Integration
     oci.data_integration.models.KeyAttribute
     oci.data_integration.models.KeyRange
     oci.data_integration.models.KeyRangePartitionConfig
+    oci.data_integration.models.MacroField
     oci.data_integration.models.Message
     oci.data_integration.models.NameListRule
     oci.data_integration.models.NamePatternRule
@@ -167,9 +197,13 @@ Data Integration
     oci.data_integration.models.ObjectMetadata
     oci.data_integration.models.Operator
     oci.data_integration.models.OracleAdwcWriteAttribute
+    oci.data_integration.models.OracleAdwcWriteAttributes
     oci.data_integration.models.OracleAtpWriteAttribute
+    oci.data_integration.models.OracleAtpWriteAttributes
     oci.data_integration.models.OracleReadAttribute
+    oci.data_integration.models.OracleReadAttributes
     oci.data_integration.models.OracleWriteAttribute
+    oci.data_integration.models.OracleWriteAttributes
     oci.data_integration.models.OutputField
     oci.data_integration.models.OutputLink
     oci.data_integration.models.OutputPort
@@ -178,6 +212,8 @@ Data Integration
     oci.data_integration.models.ParentReference
     oci.data_integration.models.PartitionConfig
     oci.data_integration.models.Patch
+    oci.data_integration.models.PatchChangeSummary
+    oci.data_integration.models.PatchChangeSummaryCollection
     oci.data_integration.models.PatchObjectMetadata
     oci.data_integration.models.PatchSummary
     oci.data_integration.models.PatchSummaryCollection
@@ -199,8 +235,13 @@ Data Integration
     oci.data_integration.models.PushDownOperation
     oci.data_integration.models.Query
     oci.data_integration.models.ReadOperationConfig
+    oci.data_integration.models.Reference
+    oci.data_integration.models.ReferenceSummary
+    oci.data_integration.models.ReferenceSummaryCollection
+    oci.data_integration.models.ReferenceUsedBy
     oci.data_integration.models.RegistryMetadata
     oci.data_integration.models.RenameRule
+    oci.data_integration.models.ResourceConfiguration
     oci.data_integration.models.RootObject
     oci.data_integration.models.RuleBasedFieldMap
     oci.data_integration.models.RuleTypeConfig
@@ -212,7 +253,11 @@ Data Integration
     oci.data_integration.models.ShapeField
     oci.data_integration.models.Sort
     oci.data_integration.models.SortClause
+    oci.data_integration.models.SortKey
+    oci.data_integration.models.SortKeyRule
+    oci.data_integration.models.SortOper
     oci.data_integration.models.Source
+    oci.data_integration.models.SourceApplicationInfo
     oci.data_integration.models.StructuredType
     oci.data_integration.models.Target
     oci.data_integration.models.Task
@@ -241,16 +286,22 @@ Data Integration
     oci.data_integration.models.UpdateConnectionDetails
     oci.data_integration.models.UpdateConnectionFromAdwc
     oci.data_integration.models.UpdateConnectionFromAtp
+    oci.data_integration.models.UpdateConnectionFromJdbc
+    oci.data_integration.models.UpdateConnectionFromMySQL
     oci.data_integration.models.UpdateConnectionFromObjectStorage
     oci.data_integration.models.UpdateConnectionFromOracle
     oci.data_integration.models.UpdateDataAssetDetails
     oci.data_integration.models.UpdateDataAssetFromAdwc
     oci.data_integration.models.UpdateDataAssetFromAtp
+    oci.data_integration.models.UpdateDataAssetFromJdbc
+    oci.data_integration.models.UpdateDataAssetFromMySQL
     oci.data_integration.models.UpdateDataAssetFromObjectStorage
     oci.data_integration.models.UpdateDataAssetFromOracle
     oci.data_integration.models.UpdateDataFlowDetails
+    oci.data_integration.models.UpdateExternalPublicationDetails
     oci.data_integration.models.UpdateFolderDetails
     oci.data_integration.models.UpdateProjectDetails
+    oci.data_integration.models.UpdateReferenceDetails
     oci.data_integration.models.UpdateTaskDetails
     oci.data_integration.models.UpdateTaskFromDataLoaderTask
     oci.data_integration.models.UpdateTaskFromIntegrationTask

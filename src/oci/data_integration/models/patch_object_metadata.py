@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PatchObjectMetadata(object):
     """
-    A summary type containing information about the object including its key, name and when/who created/updated it
+    A summary type containing information about the object including its key, name and when/who created/updated it.
     """
 
     #: A constant which can be used with the type property of a PatchObjectMetadata.
@@ -127,7 +127,7 @@ class PatchObjectMetadata(object):
     def name(self):
         """
         Gets the name of this PatchObjectMetadata.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this PatchObjectMetadata.
@@ -139,7 +139,7 @@ class PatchObjectMetadata(object):
     def name(self, name):
         """
         Sets the name of this PatchObjectMetadata.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this PatchObjectMetadata.
@@ -151,7 +151,7 @@ class PatchObjectMetadata(object):
     def name_path(self):
         """
         Gets the name_path of this PatchObjectMetadata.
-        The fully qualified path of the published object which would include its project and folder.
+        The fully qualified path of the published object, which would include its project and folder.
 
 
         :return: The name_path of this PatchObjectMetadata.
@@ -163,7 +163,7 @@ class PatchObjectMetadata(object):
     def name_path(self, name_path):
         """
         Sets the name_path of this PatchObjectMetadata.
-        The fully qualified path of the published object which would include its project and folder.
+        The fully qualified path of the published object, which would include its project and folder.
 
 
         :param name_path: The name_path of this PatchObjectMetadata.
@@ -229,7 +229,7 @@ class PatchObjectMetadata(object):
     def identifier(self):
         """
         Gets the identifier of this PatchObjectMetadata.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this PatchObjectMetadata.
@@ -241,7 +241,7 @@ class PatchObjectMetadata(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this PatchObjectMetadata.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this PatchObjectMetadata.
@@ -253,7 +253,7 @@ class PatchObjectMetadata(object):
     def action(self):
         """
         Gets the action of this PatchObjectMetadata.
-        The patch action, if object was created, updated or deleted.
+        The patch action indicating if object was created, updated, or deleted.
 
         Allowed values for this property are: "CREATED", "DELETED", "UPDATED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -268,7 +268,7 @@ class PatchObjectMetadata(object):
     def action(self, action):
         """
         Sets the action of this PatchObjectMetadata.
-        The patch action, if object was created, updated or deleted.
+        The patch action indicating if object was created, updated, or deleted.
 
 
         :param action: The action of this PatchObjectMetadata.

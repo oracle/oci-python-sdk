@@ -197,7 +197,7 @@ class CreateTaskValidationDetails(object):
     def key(self):
         """
         Gets the key of this CreateTaskValidationDetails.
-        Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in the create operation.
 
 
         :return: The key of this CreateTaskValidationDetails.
@@ -209,7 +209,7 @@ class CreateTaskValidationDetails(object):
     def key(self, key):
         """
         Sets the key of this CreateTaskValidationDetails.
-        Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+        Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in the create operation.
 
 
         :param key: The key of this CreateTaskValidationDetails.
@@ -265,7 +265,7 @@ class CreateTaskValidationDetails(object):
     def name(self):
         """
         Gets the name of this CreateTaskValidationDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :return: The name of this CreateTaskValidationDetails.
@@ -277,7 +277,7 @@ class CreateTaskValidationDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateTaskValidationDetails.
-        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value can be edited by the user and it is restricted to 1000 characters
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 
 
         :param name: The name of this CreateTaskValidationDetails.
@@ -361,7 +361,7 @@ class CreateTaskValidationDetails(object):
     def identifier(self):
         """
         Gets the identifier of this CreateTaskValidationDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :return: The identifier of this CreateTaskValidationDetails.
@@ -373,7 +373,7 @@ class CreateTaskValidationDetails(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this CreateTaskValidationDetails.
-        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be edited by the user.
+        Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 
 
         :param identifier: The identifier of this CreateTaskValidationDetails.
