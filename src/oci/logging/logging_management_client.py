@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class LoggingManagementClient(object):
     """
-    loggingManagementControlplane API specification
+    Use the Logging Management API to create, read, list, update, and delete log groups, log objects, and agent configurations.
     """
 
     def __init__(self, config, **kwargs):
@@ -87,7 +87,7 @@ class LoggingManagementClient(object):
 
     def change_log_group_compartment(self, log_group_id, change_log_group_compartment_details, **kwargs):
         """
-        Moves a log group into a different compartment within the same tenancy.  When provided, If-Match is checked against ETag values of the resource.
+        Moves a log group into a different compartment within the same tenancy.  When provided, the If-Match is checked against the resource ETag values.
         For information about moving resources between compartments, see `Moving Resources Between Compartments`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
@@ -175,7 +175,7 @@ class LoggingManagementClient(object):
 
     def change_log_log_group(self, log_group_id, log_id, change_log_log_group_details, **kwargs):
         """
-        Moves a log into a different log group within the same tenancy.  When provided, If-Match is checked against ETag values of the resource.
+        Moves a log into a different log group within the same tenancy.  When provided, the If-Match is checked against the ETag values of the resource.
 
 
         :param str log_group_id: (required)
@@ -274,11 +274,11 @@ class LoggingManagementClient(object):
             OCID of the logSavedSearch
 
         :param ChangeLogSavedSearchCompartmentDetails change_log_saved_search_compartment_details: (required)
-            Contains details indicating which compartment the resource should move to
+            Contains details indicating which compartment the resource should move to.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case
-            of a timeout or server error without risk of executing that same action
+            of a timeout or server error, without risk of executing that same action
             again. Retry tokens expire after 24 hours, but can be invalidated
             before then due to conflicting operations (e.g., if a resource has been
             deleted and purged from the system, then a retry of the original
@@ -364,21 +364,21 @@ class LoggingManagementClient(object):
 
     def change_unified_agent_configuration_compartment(self, unified_agent_configuration_id, change_unified_agent_configuration_compartment_details, **kwargs):
         """
-        Moves unified agent configuration into a different compartment within the same tenancy.  When provided, If-Match is checked against ETag values of the resource.
+        Moves the unified agent configuration into a different compartment within the same tenancy.  When provided, the If-Match is checked against the ETag values of the resource.
         For information about moving resources between compartments, see `Moving Resources Between Compartments`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes
 
 
         :param str unified_agent_configuration_id: (required)
-            The OCID of the unified agent configuration.
+            The OCID of the Unified Agent configuration.
 
         :param ChangeUnifiedAgentConfigurationCompartmentDetails change_unified_agent_configuration_compartment_details: (required)
-            Request to change the compartment of a given resource
+            Request to change the compartment of a given resource.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case
-            of a timeout or server error without risk of executing that same action
+            of a timeout or server error, without risk of executing that same action
             again. Retry tokens expire after 24 hours, but can be invalidated
             before then due to conflicting operations (e.g., if a resource has been
             deleted and purged from the system, then a retry of the original
@@ -464,19 +464,19 @@ class LoggingManagementClient(object):
 
     def create_log(self, log_group_id, create_log_details, **kwargs):
         """
-        Creates a log within specified log group. This call fails if log group is already created
-        with same displayName or (service, resource, category) triplet.
+        Creates a log within the specified log group. This call fails if a log group has already been created
+        with the same displayName or (service, resource, category) triplet.
 
 
         :param str log_group_id: (required)
             OCID of a log group to work with.
 
         :param CreateLogDetails create_log_details: (required)
-            Log object config details.
+            Log object configuration details.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case
-            of a timeout or server error without risk of executing that same action
+            of a timeout or server error, without risk of executing that same action
             again. Retry tokens expire after 24 hours, but can be invalidated
             before then due to conflicting operations (e.g., if a resource has been
             deleted and purged from the system, then a retry of the original
@@ -553,8 +553,8 @@ class LoggingManagementClient(object):
 
     def create_log_group(self, create_log_group_details, **kwargs):
         """
-        Create new log group with unique display name. This call fails
-        if log group is already created with same displayName in the compartment.
+        Create a new log group with a unique display name. This call fails
+        if the log group is already created with the same displayName in the compartment.
 
 
         :param CreateLogGroupDetails create_log_group_details: (required)
@@ -562,7 +562,7 @@ class LoggingManagementClient(object):
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case
-            of a timeout or server error without risk of executing that same action
+            of a timeout or server error, without risk of executing that same action
             again. Retry tokens expire after 24 hours, but can be invalidated
             before then due to conflicting operations (e.g., if a resource has been
             deleted and purged from the system, then a retry of the original
@@ -635,7 +635,7 @@ class LoggingManagementClient(object):
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case
-            of a timeout or server error without risk of executing that same action
+            of a timeout or server error, without risk of executing that same action
             again. Retry tokens expire after 24 hours, but can be invalidated
             before then due to conflicting operations (e.g., if a resource has been
             deleted and purged from the system, then a retry of the original
@@ -702,11 +702,11 @@ class LoggingManagementClient(object):
 
     def create_unified_agent_configuration(self, create_unified_agent_configuration_details, **kwargs):
         """
-        Create unified agent config registration
+        Create unified agent configuration registration.
 
 
         :param CreateUnifiedAgentConfigurationDetails create_unified_agent_configuration_details: (required)
-            Unified Agent configuration creation object.
+            Unified agent configuration creation object.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -714,7 +714,7 @@ class LoggingManagementClient(object):
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case
-            of a timeout or server error without risk of executing that same action
+            of a timeout or server error, without risk of executing that same action
             again. Retry tokens expire after 24 hours, but can be invalidated
             before then due to conflicting operations (e.g., if a resource has been
             deleted and purged from the system, then a retry of the original
@@ -1019,11 +1019,11 @@ class LoggingManagementClient(object):
 
     def delete_unified_agent_configuration(self, unified_agent_configuration_id, **kwargs):
         """
-        Delete unified agent configuration
+        Delete unified agent configuration.
 
 
         :param str unified_agent_configuration_id: (required)
-            The OCID of the unified agent configuration.
+            The OCID of the Unified Agent configuration.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -1103,7 +1103,7 @@ class LoggingManagementClient(object):
 
 
         :param str work_request_id: (required)
-            The ID of the asynchronous request.
+            The asynchronous request ID.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a
@@ -1179,7 +1179,7 @@ class LoggingManagementClient(object):
 
     def get_log(self, log_group_id, log_id, **kwargs):
         """
-        Gets the log object config for log object OCID.
+        Gets the log object configuration for the log object OCID.
 
 
         :param str log_group_id: (required)
@@ -1333,7 +1333,7 @@ class LoggingManagementClient(object):
 
 
         :param str compartment_id: (required)
-            Compartment OCID to list resources in. Please see compartmentIdInSubtree
+            Compartment OCID to list resources in. See compartmentIdInSubtree
                  for nested compartments traversal.
 
         :param str log_included_search_id: (required)
@@ -1486,11 +1486,11 @@ class LoggingManagementClient(object):
 
     def get_unified_agent_configuration(self, unified_agent_configuration_id, **kwargs):
         """
-        Get unified agent configuration for an id
+        Get the unified agent configuration for an ID.
 
 
         :param str unified_agent_configuration_id: (required)
-            The OCID of the unified agent configuration.
+            The OCID of the Unified Agent configuration.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -1563,7 +1563,7 @@ class LoggingManagementClient(object):
 
 
         :param str work_request_id: (required)
-            The ID of the asynchronous request.
+            The asynchronous request ID.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -1636,7 +1636,7 @@ class LoggingManagementClient(object):
 
 
         :param str compartment_id: (required)
-            Compartment OCID to list resources in. Please see compartmentIdInSubtree
+            Compartment OCID to list resources in. See compartmentIdInSubtree
                  for nested compartments traversal.
 
         :param bool is_compartment_id_in_subtree: (optional)
@@ -1661,7 +1661,7 @@ class LoggingManagementClient(object):
             Allowed values are: "timeCreated", "displayName"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'
+            The sort order to use, whether 'asc' or 'desc'.
 
             Allowed values are: "ASC", "DESC"
 
@@ -1757,7 +1757,7 @@ class LoggingManagementClient(object):
 
 
         :param str compartment_id: (required)
-            Compartment OCID to list resources in. Please see compartmentIdInSubtree
+            Compartment OCID to list resources in. See compartmentIdInSubtree
                  for nested compartments traversal.
 
         :param str log_included_search_id: (optional)
@@ -1782,7 +1782,7 @@ class LoggingManagementClient(object):
             Allowed values are: "timeCreated", "displayName"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'
+            The sort order to use, whether 'asc' or 'desc'.
 
             Allowed values are: "ASC", "DESC"
 
@@ -1878,7 +1878,7 @@ class LoggingManagementClient(object):
 
 
         :param str compartment_id: (required)
-            Compartment OCID to list resources in. Please see compartmentIdInSubtree
+            Compartment OCID to list resources in. See compartmentIdInSubtree
                  for nested compartments traversal.
 
         :param str log_saved_search_id: (optional)
@@ -1903,7 +1903,7 @@ class LoggingManagementClient(object):
             Allowed values are: "timeCreated", "displayName"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'
+            The sort order to use, whether 'asc' or 'desc'.
 
             Allowed values are: "ASC", "DESC"
 
@@ -2002,15 +2002,15 @@ class LoggingManagementClient(object):
             OCID of a log group to work with.
 
         :param str log_type: (optional)
-            The logType that the log object is for, custom or service.
+            The logType that the log object is for, whether custom or service.
 
             Allowed values are: "CUSTOM", "SERVICE"
 
         :param str source_service: (optional)
-            Service created the log object
+            Service that created the log object.
 
         :param str source_resource: (optional)
-            Log object resource
+            Log object resource.
 
         :param str display_name: (optional)
             Resource name
@@ -2036,7 +2036,7 @@ class LoggingManagementClient(object):
             Allowed values are: "timeCreated", "displayName"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'
+            The sort order to use, whether 'asc' or 'desc'.
 
             Allowed values are: "ASC", "DESC"
 
@@ -2159,7 +2159,7 @@ class LoggingManagementClient(object):
 
     def list_services(self, **kwargs):
         """
-        Lists all services supporting logging.
+        Lists all services that support logging.
 
 
         :param str opc_request_id: (optional)
@@ -2217,11 +2217,11 @@ class LoggingManagementClient(object):
 
     def list_unified_agent_configurations(self, compartment_id, **kwargs):
         """
-        Lists all unified agent configurations in the specified compartment
+        Lists all unified agent configurations in the specified compartment.
 
 
         :param str compartment_id: (required)
-            Compartment OCID to list resources in. Please see compartmentIdInSubtree
+            Compartment OCID to list resources in. See compartmentIdInSubtree
                  for nested compartments traversal.
 
         :param str log_id: (optional)
@@ -2257,7 +2257,7 @@ class LoggingManagementClient(object):
             Allowed values are: "timeCreated", "displayName"
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'
+            The sort order to use, whether 'asc' or 'desc'.
 
             Allowed values are: "ASC", "DESC"
 
@@ -2366,7 +2366,7 @@ class LoggingManagementClient(object):
 
 
         :param str work_request_id: (required)
-            The ID of the asynchronous request.
+            The asynchronous request ID.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -2458,7 +2458,7 @@ class LoggingManagementClient(object):
 
 
         :param str work_request_id: (required)
-            The ID of the asynchronous request.
+            The asynchronous request ID.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -2550,7 +2550,7 @@ class LoggingManagementClient(object):
 
 
         :param str compartment_id: (required)
-            Compartment OCID to list resources in. Please see compartmentIdInSubtree
+            Compartment OCID to list resources in. See compartmentIdInSubtree
                  for nested compartments traversal.
 
         :param str status: (optional)
@@ -2577,7 +2577,7 @@ class LoggingManagementClient(object):
             The maximum number of items to return in a paginated \"List\" call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'
+            The sort order to use, whether 'asc' or 'desc'.
 
             Allowed values are: "ASC", "DESC"
 
@@ -2677,8 +2677,8 @@ class LoggingManagementClient(object):
 
     def update_log(self, log_group_id, log_id, update_log_details, **kwargs):
         """
-        Updates existing log object with the associated config. This call
-              fails if log object does not exist.
+        Updates the existing log object with the associated configuration. This call
+              fails if the log object does not exist.
 
 
         :param str log_group_id: (required)
@@ -2767,8 +2767,8 @@ class LoggingManagementClient(object):
 
     def update_log_group(self, log_group_id, update_log_group_details, **kwargs):
         """
-        Updates existing log group with the associated config. This call
-              fails if log group does not exist.
+        Updates the existing log group with the associated configuration. This call
+              fails if the log group does not exist.
 
 
         :param str log_group_id: (required)
@@ -2941,11 +2941,11 @@ class LoggingManagementClient(object):
     def update_unified_agent_configuration(self, unified_agent_configuration_id, update_unified_agent_configuration_details, **kwargs):
         """
         Update an existing unified agent configuration. This call
-              fails if log group does not exist.
+              fails if the log group does not exist.
 
 
         :param str unified_agent_configuration_id: (required)
-            The OCID of the unified agent configuration.
+            The OCID of the Unified Agent configuration.
 
         :param UpdateUnifiedAgentConfigurationDetails update_unified_agent_configuration_details: (required)
             Unified agent configuration to update. Empty group associations list doesn't modify the list, null value for group association clears all the previous associations.

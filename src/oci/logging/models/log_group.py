@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LogGroup(object):
     """
-    Represents a LogGroup object
+    Represents a LogGroup object.
     """
 
     #: A constant which can be used with the lifecycle_state property of a LogGroup.
@@ -167,7 +167,7 @@ class LogGroup(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this LogGroup.
-        The display name of a user-friendly name. It has to be unique within enclosing resource,
+        The user-friendly display name. This must be unique within the enclosing resource,
         and it's changeable. Avoid entering confidential information.
 
 
@@ -180,7 +180,7 @@ class LogGroup(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this LogGroup.
-        The display name of a user-friendly name. It has to be unique within enclosing resource,
+        The user-friendly display name. This must be unique within the enclosing resource,
         and it's changeable. Avoid entering confidential information.
 
 
@@ -217,7 +217,7 @@ class LogGroup(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this LogGroup.
-        The state of the log group object.
+        The log group object state.
 
         Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "INACTIVE", "DELETING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -232,7 +232,7 @@ class LogGroup(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this LogGroup.
-        The state of the log group object.
+        The log group object state.
 
 
         :param lifecycle_state: The lifecycle_state of this LogGroup.

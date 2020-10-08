@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UnifiedAgentNoneParser(UnifiedAgentParser):
     """
-    this parser signifies a non parser and puts entire log line in a message_key.
+    This parser signifies a non-parser, and puts the entire log line in a message_key.
     """
 
     def __init__(self, **kwargs):

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UnifiedAgentMultilineParser(UnifiedAgentParser):
     """
-    multiline parser
+    Multiline parser.
     """
 
     def __init__(self, **kwargs):

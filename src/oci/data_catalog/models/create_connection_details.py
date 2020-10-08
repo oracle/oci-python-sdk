@@ -30,6 +30,10 @@ class CreateConnectionDetails(object):
             The value to assign to the type_key property of this CreateConnectionDetails.
         :type type_key: str
 
+        :param custom_property_members:
+            The value to assign to the custom_property_members property of this CreateConnectionDetails.
+        :type custom_property_members: list[CustomPropertySetUsage]
+
         :param properties:
             The value to assign to the properties property of this CreateConnectionDetails.
         :type properties: dict(str, dict(str, str))
@@ -47,6 +51,7 @@ class CreateConnectionDetails(object):
             'description': 'str',
             'display_name': 'str',
             'type_key': 'str',
+            'custom_property_members': 'list[CustomPropertySetUsage]',
             'properties': 'dict(str, dict(str, str))',
             'enc_properties': 'dict(str, dict(str, str))',
             'is_default': 'bool'
@@ -56,6 +61,7 @@ class CreateConnectionDetails(object):
             'description': 'description',
             'display_name': 'displayName',
             'type_key': 'typeKey',
+            'custom_property_members': 'customPropertyMembers',
             'properties': 'properties',
             'enc_properties': 'encProperties',
             'is_default': 'isDefault'
@@ -64,6 +70,7 @@ class CreateConnectionDetails(object):
         self._description = None
         self._display_name = None
         self._type_key = None
+        self._custom_property_members = None
         self._properties = None
         self._enc_properties = None
         self._is_default = None
@@ -141,6 +148,30 @@ class CreateConnectionDetails(object):
         :type: str
         """
         self._type_key = type_key
+
+    @property
+    def custom_property_members(self):
+        """
+        Gets the custom_property_members of this CreateConnectionDetails.
+        The list of customized properties along with the values for this object
+
+
+        :return: The custom_property_members of this CreateConnectionDetails.
+        :rtype: list[CustomPropertySetUsage]
+        """
+        return self._custom_property_members
+
+    @custom_property_members.setter
+    def custom_property_members(self, custom_property_members):
+        """
+        Sets the custom_property_members of this CreateConnectionDetails.
+        The list of customized properties along with the values for this object
+
+
+        :param custom_property_members: The custom_property_members of this CreateConnectionDetails.
+        :type: list[CustomPropertySetUsage]
+        """
+        self._custom_property_members = custom_property_members
 
     @property
     def properties(self):

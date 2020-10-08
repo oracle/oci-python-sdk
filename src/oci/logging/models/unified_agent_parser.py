@@ -205,7 +205,7 @@ class UnifiedAgentParser(object):
     def parser_type(self):
         """
         **[Required]** Gets the parser_type of this UnifiedAgentParser.
-        type of fluent parser.
+        Type of fluent parser.
 
         Allowed values for this property are: "AUDITD", "JSON", "TSV", "CSV", "NONE", "SYSLOG", "APACHE2", "APACHE_ERROR", "MSGPACK", "REGEXP", "MULTILINE", "GROK", "MULTILINE_GROK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -220,7 +220,7 @@ class UnifiedAgentParser(object):
     def parser_type(self, parser_type):
         """
         Sets the parser_type of this UnifiedAgentParser.
-        type of fluent parser.
+        Type of fluent parser.
 
 
         :param parser_type: The parser_type of this UnifiedAgentParser.
@@ -235,7 +235,7 @@ class UnifiedAgentParser(object):
     def field_time_key(self):
         """
         Gets the field_time_key of this UnifiedAgentParser.
-        Specify time field for event time. If the event doesn't have this field, current time is used.
+        Specify time field for the event time. If the event doesn't have this field, the current time is used.
 
 
         :return: The field_time_key of this UnifiedAgentParser.
@@ -247,7 +247,7 @@ class UnifiedAgentParser(object):
     def field_time_key(self, field_time_key):
         """
         Sets the field_time_key of this UnifiedAgentParser.
-        Specify time field for event time. If the event doesn't have this field, current time is used.
+        Specify time field for the event time. If the event doesn't have this field, the current time is used.
 
 
         :param field_time_key: The field_time_key of this UnifiedAgentParser.
@@ -259,7 +259,7 @@ class UnifiedAgentParser(object):
     def types(self):
         """
         Gets the types of this UnifiedAgentParser.
-        Specify types for converting field into other type.
+        Specify types for converting a field into another type.
 
 
         :return: The types of this UnifiedAgentParser.
@@ -271,7 +271,7 @@ class UnifiedAgentParser(object):
     def types(self, types):
         """
         Sets the types of this UnifiedAgentParser.
-        Specify types for converting field into other type.
+        Specify types for converting a field into another type.
 
 
         :param types: The types of this UnifiedAgentParser.
@@ -283,7 +283,7 @@ class UnifiedAgentParser(object):
     def null_value_pattern(self):
         """
         Gets the null_value_pattern of this UnifiedAgentParser.
-        Specify null value pattern
+        Specify the null value pattern.
 
 
         :return: The null_value_pattern of this UnifiedAgentParser.
@@ -295,7 +295,7 @@ class UnifiedAgentParser(object):
     def null_value_pattern(self, null_value_pattern):
         """
         Sets the null_value_pattern of this UnifiedAgentParser.
-        Specify null value pattern
+        Specify the null value pattern.
 
 
         :param null_value_pattern: The null_value_pattern of this UnifiedAgentParser.
@@ -307,7 +307,7 @@ class UnifiedAgentParser(object):
     def is_null_empty_string(self):
         """
         Gets the is_null_empty_string of this UnifiedAgentParser.
-        If true, empty string field is replaced with nil
+        If true, an empty string field is replaced with nil.
 
 
         :return: The is_null_empty_string of this UnifiedAgentParser.
@@ -319,7 +319,7 @@ class UnifiedAgentParser(object):
     def is_null_empty_string(self, is_null_empty_string):
         """
         Sets the is_null_empty_string of this UnifiedAgentParser.
-        If true, empty string field is replaced with nil
+        If true, an empty string field is replaced with nil.
 
 
         :param is_null_empty_string: The is_null_empty_string of this UnifiedAgentParser.
@@ -331,7 +331,7 @@ class UnifiedAgentParser(object):
     def is_estimate_current_event(self):
         """
         Gets the is_estimate_current_event of this UnifiedAgentParser.
-        If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified
+        If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
 
 
         :return: The is_estimate_current_event of this UnifiedAgentParser.
@@ -343,7 +343,7 @@ class UnifiedAgentParser(object):
     def is_estimate_current_event(self, is_estimate_current_event):
         """
         Sets the is_estimate_current_event of this UnifiedAgentParser.
-        If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified
+        If true, use Fluent::EventTime.now(current time) as a timestamp when time_key is specified.
 
 
         :param is_estimate_current_event: The is_estimate_current_event of this UnifiedAgentParser.
@@ -379,7 +379,7 @@ class UnifiedAgentParser(object):
     def timeout_in_milliseconds(self):
         """
         Gets the timeout_in_milliseconds of this UnifiedAgentParser.
-        Specify timeout for parse processing. This is mainly for detecting wrong regexp pattern.
+        Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
 
 
         :return: The timeout_in_milliseconds of this UnifiedAgentParser.
@@ -391,7 +391,7 @@ class UnifiedAgentParser(object):
     def timeout_in_milliseconds(self, timeout_in_milliseconds):
         """
         Sets the timeout_in_milliseconds of this UnifiedAgentParser.
-        Specify timeout for parse processing. This is mainly for detecting wrong regexp pattern.
+        Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
 
 
         :param timeout_in_milliseconds: The timeout_in_milliseconds of this UnifiedAgentParser.

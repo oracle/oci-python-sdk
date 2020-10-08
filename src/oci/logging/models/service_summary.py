@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ServiceSummary(object):
     """
-    Summary of Services that are integrated with public logging
+    Summary of services that are integrated with public logging.
     """
 
     def __init__(self, **kwargs):
@@ -103,7 +103,7 @@ class ServiceSummary(object):
     def namespace(self):
         """
         Gets the namespace of this ServiceSummary.
-        Apollo project namespace if any.
+        Apollo project namespace, if any.
 
 
         :return: The namespace of this ServiceSummary.
@@ -115,7 +115,7 @@ class ServiceSummary(object):
     def namespace(self, namespace):
         """
         Sets the namespace of this ServiceSummary.
-        Apollo project namespace if any.
+        Apollo project namespace, if any.
 
 
         :param namespace: The namespace of this ServiceSummary.
@@ -127,7 +127,7 @@ class ServiceSummary(object):
     def service_principal_name(self):
         """
         **[Required]** Gets the service_principal_name of this ServiceSummary.
-        Service id as set in Service Principal.
+        Service ID as set in Service Principal.
 
 
         :return: The service_principal_name of this ServiceSummary.
@@ -139,7 +139,7 @@ class ServiceSummary(object):
     def service_principal_name(self, service_principal_name):
         """
         Sets the service_principal_name of this ServiceSummary.
-        Service id as set in Service Principal.
+        Service ID as set in Service Principal.
 
 
         :param service_principal_name: The service_principal_name of this ServiceSummary.
@@ -175,7 +175,7 @@ class ServiceSummary(object):
     def name(self):
         """
         **[Required]** Gets the name of this ServiceSummary.
-        User friendly service name.
+        User-friendly service name.
 
 
         :return: The name of this ServiceSummary.
@@ -187,7 +187,7 @@ class ServiceSummary(object):
     def name(self, name):
         """
         Sets the name of this ServiceSummary.
-        User friendly service name.
+        User-friendly service name.
 
 
         :param name: The name of this ServiceSummary.
@@ -199,7 +199,7 @@ class ServiceSummary(object):
     def id(self):
         """
         Gets the id of this ServiceSummary.
-        Service id.
+        Service ID.
 
 
         :return: The id of this ServiceSummary.
@@ -211,7 +211,7 @@ class ServiceSummary(object):
     def id(self, id):
         """
         Sets the id of this ServiceSummary.
-        Service id.
+        Service ID.
 
 
         :param id: The id of this ServiceSummary.
@@ -223,7 +223,7 @@ class ServiceSummary(object):
     def resource_types(self):
         """
         **[Required]** Gets the resource_types of this ServiceSummary.
-        Type of Resource that a Service provides.
+        Type of resource that a service provides.
 
 
         :return: The resource_types of this ServiceSummary.
@@ -235,7 +235,7 @@ class ServiceSummary(object):
     def resource_types(self, resource_types):
         """
         Sets the resource_types of this ServiceSummary.
-        Type of Resource that a Service provides.
+        Type of resource that a service provides.
 
 
         :param resource_types: The resource_types of this ServiceSummary.

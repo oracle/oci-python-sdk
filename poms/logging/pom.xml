@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.hydra.controlplane</groupId>
         <artifactId>hydra-controlplane-api-spec</artifactId>
-        <version>0.0.890</version>
+        <version>0.0.954</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

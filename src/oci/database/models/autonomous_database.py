@@ -169,6 +169,18 @@ class AutonomousDatabase(object):
     #: This constant has a value of "UNRESTRICTED"
     PERMISSION_LEVEL_UNRESTRICTED = "UNRESTRICTED"
 
+    #: A constant which can be used with the role property of a AutonomousDatabase.
+    #: This constant has a value of "PRIMARY"
+    ROLE_PRIMARY = "PRIMARY"
+
+    #: A constant which can be used with the role property of a AutonomousDatabase.
+    #: This constant has a value of "STANDBY"
+    ROLE_STANDBY = "STANDBY"
+
+    #: A constant which can be used with the role property of a AutonomousDatabase.
+    #: This constant has a value of "DISABLED_STANDBY"
+    ROLE_DISABLED_STANDBY = "DISABLED_STANDBY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AutonomousDatabase object with values from keyword arguments.
@@ -392,6 +404,12 @@ class AutonomousDatabase(object):
             The value to assign to the standby_db property of this AutonomousDatabase.
         :type standby_db: AutonomousDatabaseStandbySummary
 
+        :param role:
+            The value to assign to the role property of this AutonomousDatabase.
+            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type role: str
+
         :param available_upgrade_versions:
             The value to assign to the available_upgrade_versions property of this AutonomousDatabase.
         :type available_upgrade_versions: list[str]
@@ -448,6 +466,7 @@ class AutonomousDatabase(object):
             'is_data_guard_enabled': 'bool',
             'failed_data_recovery_in_seconds': 'int',
             'standby_db': 'AutonomousDatabaseStandbySummary',
+            'role': 'str',
             'available_upgrade_versions': 'list[str]'
         }
 
@@ -502,6 +521,7 @@ class AutonomousDatabase(object):
             'is_data_guard_enabled': 'isDataGuardEnabled',
             'failed_data_recovery_in_seconds': 'failedDataRecoveryInSeconds',
             'standby_db': 'standbyDb',
+            'role': 'role',
             'available_upgrade_versions': 'availableUpgradeVersions'
         }
 
@@ -555,6 +575,7 @@ class AutonomousDatabase(object):
         self._is_data_guard_enabled = None
         self._failed_data_recovery_in_seconds = None
         self._standby_db = None
+        self._role = None
         self._available_upgrade_versions = None
 
     @property
@@ -1906,6 +1927,36 @@ class AutonomousDatabase(object):
         :type: AutonomousDatabaseStandbySummary
         """
         self._standby_db = standby_db
+
+    @property
+    def role(self):
+        """
+        Gets the role of this AutonomousDatabase.
+        The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+
+        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The role of this AutonomousDatabase.
+        :rtype: str
+        """
+        return self._role
+
+    @role.setter
+    def role(self, role):
+        """
+        Sets the role of this AutonomousDatabase.
+        The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+
+
+        :param role: The role of this AutonomousDatabase.
+        :type: str
+        """
+        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY"]
+        if not value_allowed_none_or_none_sentinel(role, allowed_values):
+            role = 'UNKNOWN_ENUM_VALUE'
+        self._role = role
 
     @property
     def available_upgrade_versions(self):

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UnifiedAgentLoggingDestination(object):
     """
-    logging destination object.
+    Logging destination object.
     """
 
     def __init__(self, **kwargs):

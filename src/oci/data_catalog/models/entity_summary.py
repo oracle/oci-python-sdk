@@ -80,6 +80,14 @@ class EntitySummary(object):
             The value to assign to the external_key property of this EntitySummary.
         :type external_key: str
 
+        :param pattern_key:
+            The value to assign to the pattern_key property of this EntitySummary.
+        :type pattern_key: str
+
+        :param realized_expression:
+            The value to assign to the realized_expression property of this EntitySummary.
+        :type realized_expression: str
+
         :param path:
             The value to assign to the path property of this EntitySummary.
         :type path: str
@@ -115,6 +123,8 @@ class EntitySummary(object):
             'folder_key': 'str',
             'folder_name': 'str',
             'external_key': 'str',
+            'pattern_key': 'str',
+            'realized_expression': 'str',
             'path': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
@@ -131,6 +141,8 @@ class EntitySummary(object):
             'folder_key': 'folderKey',
             'folder_name': 'folderName',
             'external_key': 'externalKey',
+            'pattern_key': 'patternKey',
+            'realized_expression': 'realizedExpression',
             'path': 'path',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
@@ -146,6 +158,8 @@ class EntitySummary(object):
         self._folder_key = None
         self._folder_name = None
         self._external_key = None
+        self._pattern_key = None
+        self._realized_expression = None
         self._path = None
         self._time_created = None
         self._time_updated = None
@@ -322,6 +336,54 @@ class EntitySummary(object):
         :type: str
         """
         self._external_key = external_key
+
+    @property
+    def pattern_key(self):
+        """
+        Gets the pattern_key of this EntitySummary.
+        Key of the associated pattern if this is a logical entity.
+
+
+        :return: The pattern_key of this EntitySummary.
+        :rtype: str
+        """
+        return self._pattern_key
+
+    @pattern_key.setter
+    def pattern_key(self, pattern_key):
+        """
+        Sets the pattern_key of this EntitySummary.
+        Key of the associated pattern if this is a logical entity.
+
+
+        :param pattern_key: The pattern_key of this EntitySummary.
+        :type: str
+        """
+        self._pattern_key = pattern_key
+
+    @property
+    def realized_expression(self):
+        """
+        Gets the realized_expression of this EntitySummary.
+        The expression realized after resolving qualifiers . Used in deriving this logical entity
+
+
+        :return: The realized_expression of this EntitySummary.
+        :rtype: str
+        """
+        return self._realized_expression
+
+    @realized_expression.setter
+    def realized_expression(self, realized_expression):
+        """
+        Sets the realized_expression of this EntitySummary.
+        The expression realized after resolving qualifiers . Used in deriving this logical entity
+
+
+        :param realized_expression: The realized_expression of this EntitySummary.
+        :type: str
+        """
+        self._realized_expression = realized_expression
 
     @property
     def path(self):

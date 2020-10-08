@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UnifiedAgentWindowsEventSource(UnifiedAgentLoggingSource):
     """
-    windows events log source object.
+    Windows events log source object.
     """
 
     def __init__(self, **kwargs):

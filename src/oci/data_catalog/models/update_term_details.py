@@ -55,13 +55,18 @@ class UpdateTermDetails(object):
             Allowed values for this property are: "NEW", "APPROVED", "UNDER_REVIEW", "ESCALATED"
         :type workflow_status: str
 
+        :param custom_property_members:
+            The value to assign to the custom_property_members property of this UpdateTermDetails.
+        :type custom_property_members: list[CustomPropertySetUsage]
+
         """
         self.swagger_types = {
             'display_name': 'str',
             'description': 'str',
             'parent_term_key': 'str',
             'owner': 'str',
-            'workflow_status': 'str'
+            'workflow_status': 'str',
+            'custom_property_members': 'list[CustomPropertySetUsage]'
         }
 
         self.attribute_map = {
@@ -69,7 +74,8 @@ class UpdateTermDetails(object):
             'description': 'description',
             'parent_term_key': 'parentTermKey',
             'owner': 'owner',
-            'workflow_status': 'workflowStatus'
+            'workflow_status': 'workflowStatus',
+            'custom_property_members': 'customPropertyMembers'
         }
 
         self._display_name = None
@@ -77,6 +83,7 @@ class UpdateTermDetails(object):
         self._parent_term_key = None
         self._owner = None
         self._workflow_status = None
+        self._custom_property_members = None
 
     @property
     def display_name(self):
@@ -207,6 +214,30 @@ class UpdateTermDetails(object):
                 .format(allowed_values)
             )
         self._workflow_status = workflow_status
+
+    @property
+    def custom_property_members(self):
+        """
+        Gets the custom_property_members of this UpdateTermDetails.
+        The list of customized properties along with the values for this object
+
+
+        :return: The custom_property_members of this UpdateTermDetails.
+        :rtype: list[CustomPropertySetUsage]
+        """
+        return self._custom_property_members
+
+    @custom_property_members.setter
+    def custom_property_members(self, custom_property_members):
+        """
+        Sets the custom_property_members of this UpdateTermDetails.
+        The list of customized properties along with the values for this object
+
+
+        :param custom_property_members: The custom_property_members of this UpdateTermDetails.
+        :type: list[CustomPropertySetUsage]
+        """
+        self._custom_property_members = custom_property_members
 
     def __repr__(self):
         return formatted_flat_dict(self)

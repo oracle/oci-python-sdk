@@ -43,6 +43,7 @@ Data Catalog
     oci.data_catalog.models.CreateCatalogDetails
     oci.data_catalog.models.CreateCatalogPrivateEndpointDetails
     oci.data_catalog.models.CreateConnectionDetails
+    oci.data_catalog.models.CreateCustomPropertyDetails
     oci.data_catalog.models.CreateDataAssetDetails
     oci.data_catalog.models.CreateEntityDetails
     oci.data_catalog.models.CreateFolderDetails
@@ -50,9 +51,17 @@ Data Catalog
     oci.data_catalog.models.CreateJobDefinitionDetails
     oci.data_catalog.models.CreateJobDetails
     oci.data_catalog.models.CreateJobExecutionDetails
+    oci.data_catalog.models.CreateNamespaceDetails
+    oci.data_catalog.models.CreatePatternDetails
     oci.data_catalog.models.CreateTagDetails
     oci.data_catalog.models.CreateTermDetails
     oci.data_catalog.models.CreateTermRelationshipDetails
+    oci.data_catalog.models.CustomProperty
+    oci.data_catalog.models.CustomPropertyCollection
+    oci.data_catalog.models.CustomPropertyGetUsage
+    oci.data_catalog.models.CustomPropertySetUsage
+    oci.data_catalog.models.CustomPropertySummary
+    oci.data_catalog.models.CustomPropertyTypeUsage
     oci.data_catalog.models.DataAsset
     oci.data_catalog.models.DataAssetCollection
     oci.data_catalog.models.DataAssetPermissionsSummary
@@ -60,6 +69,8 @@ Data Catalog
     oci.data_catalog.models.DataAssetTag
     oci.data_catalog.models.DataAssetTagCollection
     oci.data_catalog.models.DataAssetTagSummary
+    oci.data_catalog.models.DataSelectorPatternDetails
+    oci.data_catalog.models.DerivedLogicalEntities
     oci.data_catalog.models.DetachCatalogPrivateEndpointDetails
     oci.data_catalog.models.Entity
     oci.data_catalog.models.EntityCollection
@@ -67,6 +78,12 @@ Data Catalog
     oci.data_catalog.models.EntityTag
     oci.data_catalog.models.EntityTagCollection
     oci.data_catalog.models.EntityTagSummary
+    oci.data_catalog.models.FacetedSearchAggregation
+    oci.data_catalog.models.FacetedSearchCustomProperty
+    oci.data_catalog.models.FacetedSearchDateFilterRequest
+    oci.data_catalog.models.FacetedSearchFilterRequest
+    oci.data_catalog.models.FacetedSearchSortRequest
+    oci.data_catalog.models.FacetedSearchStringFilterRequest
     oci.data_catalog.models.Folder
     oci.data_catalog.models.FolderCollection
     oci.data_catalog.models.FolderSummary
@@ -97,7 +114,13 @@ Data Catalog
     oci.data_catalog.models.JobMetricCollection
     oci.data_catalog.models.JobMetricSummary
     oci.data_catalog.models.JobSummary
+    oci.data_catalog.models.Namespace
+    oci.data_catalog.models.NamespaceCollection
+    oci.data_catalog.models.NamespaceSummary
     oci.data_catalog.models.ParseConnectionDetails
+    oci.data_catalog.models.Pattern
+    oci.data_catalog.models.PatternCollection
+    oci.data_catalog.models.PatternSummary
     oci.data_catalog.models.PropertyDefinition
     oci.data_catalog.models.SearchCriteria
     oci.data_catalog.models.SearchResult
@@ -113,22 +136,28 @@ Data Catalog
     oci.data_catalog.models.TermSummary
     oci.data_catalog.models.Type
     oci.data_catalog.models.TypeCollection
+    oci.data_catalog.models.TypeCustomPropertyDetails
     oci.data_catalog.models.TypeSummary
     oci.data_catalog.models.UpdateAttributeDetails
     oci.data_catalog.models.UpdateCatalogDetails
     oci.data_catalog.models.UpdateCatalogPrivateEndpointDetails
     oci.data_catalog.models.UpdateConnectionDetails
+    oci.data_catalog.models.UpdateCustomPropertyDetails
     oci.data_catalog.models.UpdateDataAssetDetails
     oci.data_catalog.models.UpdateEntityDetails
     oci.data_catalog.models.UpdateFolderDetails
     oci.data_catalog.models.UpdateGlossaryDetails
     oci.data_catalog.models.UpdateJobDefinitionDetails
     oci.data_catalog.models.UpdateJobDetails
+    oci.data_catalog.models.UpdateNamespaceDetails
+    oci.data_catalog.models.UpdatePatternDetails
     oci.data_catalog.models.UpdateTermDetails
     oci.data_catalog.models.UpdateTermRelationshipDetails
     oci.data_catalog.models.UploadCredentialsDetails
     oci.data_catalog.models.ValidateConnectionDetails
     oci.data_catalog.models.ValidateConnectionResult
+    oci.data_catalog.models.ValidatePatternDetails
+    oci.data_catalog.models.ValidatePatternResult
     oci.data_catalog.models.WorkRequest
     oci.data_catalog.models.WorkRequestError
     oci.data_catalog.models.WorkRequestLog

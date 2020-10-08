@@ -150,6 +150,10 @@ class MaintenanceRun(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type maintenance_subtype: str
 
+        :param peer_maintenance_run_id:
+            The value to assign to the peer_maintenance_run_id property of this MaintenanceRun.
+        :type peer_maintenance_run_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -165,7 +169,8 @@ class MaintenanceRun(object):
             'target_resource_id': 'str',
             'maintenance_type': 'str',
             'patch_id': 'str',
-            'maintenance_subtype': 'str'
+            'maintenance_subtype': 'str',
+            'peer_maintenance_run_id': 'str'
         }
 
         self.attribute_map = {
@@ -182,7 +187,8 @@ class MaintenanceRun(object):
             'target_resource_id': 'targetResourceId',
             'maintenance_type': 'maintenanceType',
             'patch_id': 'patchId',
-            'maintenance_subtype': 'maintenanceSubtype'
+            'maintenance_subtype': 'maintenanceSubtype',
+            'peer_maintenance_run_id': 'peerMaintenanceRunId'
         }
 
         self._id = None
@@ -199,6 +205,7 @@ class MaintenanceRun(object):
         self._maintenance_type = None
         self._patch_id = None
         self._maintenance_subtype = None
+        self._peer_maintenance_run_id = None
 
     @property
     def id(self):
@@ -563,6 +570,34 @@ class MaintenanceRun(object):
         if not value_allowed_none_or_none_sentinel(maintenance_subtype, allowed_values):
             maintenance_subtype = 'UNKNOWN_ENUM_VALUE'
         self._maintenance_subtype = maintenance_subtype
+
+    @property
+    def peer_maintenance_run_id(self):
+        """
+        Gets the peer_maintenance_run_id of this MaintenanceRun.
+        The `OCID`__ of the maintenance run for the Autonomous Data Guard association's peer container database.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The peer_maintenance_run_id of this MaintenanceRun.
+        :rtype: str
+        """
+        return self._peer_maintenance_run_id
+
+    @peer_maintenance_run_id.setter
+    def peer_maintenance_run_id(self, peer_maintenance_run_id):
+        """
+        Sets the peer_maintenance_run_id of this MaintenanceRun.
+        The `OCID`__ of the maintenance run for the Autonomous Data Guard association's peer container database.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param peer_maintenance_run_id: The peer_maintenance_run_id of this MaintenanceRun.
+        :type: str
+        """
+        self._peer_maintenance_run_id = peer_maintenance_run_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

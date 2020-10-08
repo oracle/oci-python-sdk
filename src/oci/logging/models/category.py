@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Category(object):
     """
-    categories for resources.
+    Categories for resources.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class Category(object):
     def name(self):
         """
         Gets the name of this Category.
-        Category name
+        Category name.
 
 
         :return: The name of this Category.
@@ -63,7 +63,7 @@ class Category(object):
     def name(self, name):
         """
         Sets the name of this Category.
-        Category name
+        Category name.
 
 
         :param name: The name of this Category.
@@ -75,7 +75,7 @@ class Category(object):
     def display_name(self):
         """
         Gets the display_name of this Category.
-        Category display name
+        Category display name.
 
 
         :return: The display_name of this Category.
@@ -87,7 +87,7 @@ class Category(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Category.
-        Category display name
+        Category display name.
 
 
         :param display_name: The display_name of this Category.
@@ -99,7 +99,7 @@ class Category(object):
     def parameters(self):
         """
         Gets the parameters of this Category.
-        Parameters category supports.
+        Parameters the category supports.
 
 
         :return: The parameters of this Category.
@@ -111,7 +111,7 @@ class Category(object):
     def parameters(self, parameters):
         """
         Sets the parameters of this Category.
-        Parameters category supports.
+        Parameters the category supports.
 
 
         :param parameters: The parameters of this Category.

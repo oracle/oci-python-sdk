@@ -34,6 +34,47 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="oci_apigw_ww_grp@oracle.com" jiraProject="APIGW" opsJiraProject="APIGW"
+def test_change_api_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('apigateway', 'ChangeApiCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('apigateway', util.camelize('api_gateway'), 'ChangeApiCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='apigateway', api_name='ChangeApiCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.apigateway.ApiGatewayClient(config, service_endpoint=service_endpoint)
+            response = client.change_api_compartment(
+                api_id=request.pop(util.camelize('apiId')),
+                change_api_compartment_details=request.pop(util.camelize('ChangeApiCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'apigateway',
+            'ChangeApiCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_api_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_apigw_ww_grp@oracle.com" jiraProject="APIGW" opsJiraProject="APIGW"
 def test_change_certificate_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('apigateway', 'ChangeCertificateCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -69,6 +110,46 @@ def test_change_certificate_compartment(testing_service_client):
             result,
             service_error,
             'change_certificate_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_apigw_ww_grp@oracle.com" jiraProject="APIGW" opsJiraProject="APIGW"
+def test_create_api(testing_service_client):
+    if not testing_service_client.is_api_enabled('apigateway', 'CreateApi'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('apigateway', util.camelize('api_gateway'), 'CreateApi')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='apigateway', api_name='CreateApi')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.apigateway.ApiGatewayClient(config, service_endpoint=service_endpoint)
+            response = client.create_api(
+                create_api_details=request.pop(util.camelize('CreateApiDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'apigateway',
+            'CreateApi',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'api',
             False,
             False
         )
@@ -115,6 +196,46 @@ def test_create_certificate(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_apigw_ww_grp@oracle.com" jiraProject="APIGW" opsJiraProject="APIGW"
+def test_delete_api(testing_service_client):
+    if not testing_service_client.is_api_enabled('apigateway', 'DeleteApi'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('apigateway', util.camelize('api_gateway'), 'DeleteApi')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='apigateway', api_name='DeleteApi')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.apigateway.ApiGatewayClient(config, service_endpoint=service_endpoint)
+            response = client.delete_api(
+                api_id=request.pop(util.camelize('apiId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'apigateway',
+            'DeleteApi',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_api',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_apigw_ww_grp@oracle.com" jiraProject="APIGW" opsJiraProject="APIGW"
 def test_delete_certificate(testing_service_client):
     if not testing_service_client.is_api_enabled('apigateway', 'DeleteCertificate'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -150,6 +271,166 @@ def test_delete_certificate(testing_service_client):
             service_error,
             'delete_certificate',
             True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_apigw_ww_grp@oracle.com" jiraProject="APIGW" opsJiraProject="APIGW"
+def test_get_api(testing_service_client):
+    if not testing_service_client.is_api_enabled('apigateway', 'GetApi'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('apigateway', util.camelize('api_gateway'), 'GetApi')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='apigateway', api_name='GetApi')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.apigateway.ApiGatewayClient(config, service_endpoint=service_endpoint)
+            response = client.get_api(
+                api_id=request.pop(util.camelize('apiId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'apigateway',
+            'GetApi',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'api',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_apigw_ww_grp@oracle.com" jiraProject="APIGW" opsJiraProject="APIGW"
+def test_get_api_content(testing_service_client):
+    if not testing_service_client.is_api_enabled('apigateway', 'GetApiContent'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('apigateway', util.camelize('api_gateway'), 'GetApiContent')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='apigateway', api_name='GetApiContent')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.apigateway.ApiGatewayClient(config, service_endpoint=service_endpoint)
+            response = client.get_api_content(
+                api_id=request.pop(util.camelize('apiId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'apigateway',
+            'GetApiContent',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'stream',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_apigw_ww_grp@oracle.com" jiraProject="APIGW" opsJiraProject="APIGW"
+def test_get_api_deployment_specification(testing_service_client):
+    if not testing_service_client.is_api_enabled('apigateway', 'GetApiDeploymentSpecification'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('apigateway', util.camelize('api_gateway'), 'GetApiDeploymentSpecification')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='apigateway', api_name='GetApiDeploymentSpecification')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.apigateway.ApiGatewayClient(config, service_endpoint=service_endpoint)
+            response = client.get_api_deployment_specification(
+                api_id=request.pop(util.camelize('apiId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'apigateway',
+            'GetApiDeploymentSpecification',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'apiSpecification',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_apigw_ww_grp@oracle.com" jiraProject="APIGW" opsJiraProject="APIGW"
+def test_get_api_validations(testing_service_client):
+    if not testing_service_client.is_api_enabled('apigateway', 'GetApiValidations'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('apigateway', util.camelize('api_gateway'), 'GetApiValidations')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='apigateway', api_name='GetApiValidations')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.apigateway.ApiGatewayClient(config, service_endpoint=service_endpoint)
+            response = client.get_api_validations(
+                api_id=request.pop(util.camelize('apiId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'apigateway',
+            'GetApiValidations',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'apiValidations',
+            False,
             False
         )
 
@@ -191,6 +472,66 @@ def test_get_certificate(testing_service_client):
             'certificate',
             False,
             False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_apigw_ww_grp@oracle.com" jiraProject="APIGW" opsJiraProject="APIGW"
+def test_list_apis(testing_service_client):
+    if not testing_service_client.is_api_enabled('apigateway', 'ListApis'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('apigateway', util.camelize('api_gateway'), 'ListApis')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='apigateway', api_name='ListApis')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.apigateway.ApiGatewayClient(config, service_endpoint=service_endpoint)
+            response = client.list_apis(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_apis(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_apis(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'apigateway',
+            'ListApis',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'apiCollection',
+            False,
+            True
         )
 
 
@@ -251,6 +592,47 @@ def test_list_certificates(testing_service_client):
             'certificateCollection',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_apigw_ww_grp@oracle.com" jiraProject="APIGW" opsJiraProject="APIGW"
+def test_update_api(testing_service_client):
+    if not testing_service_client.is_api_enabled('apigateway', 'UpdateApi'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('apigateway', util.camelize('api_gateway'), 'UpdateApi')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='apigateway', api_name='UpdateApi')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.apigateway.ApiGatewayClient(config, service_endpoint=service_endpoint)
+            response = client.update_api(
+                api_id=request.pop(util.camelize('apiId')),
+                update_api_details=request.pop(util.camelize('UpdateApiDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'apigateway',
+            'UpdateApi',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_api',
+            False,
+            False
         )
 
 

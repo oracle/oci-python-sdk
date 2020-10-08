@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateLogDetails(object):
     """
-    Update Log Object properties
+    Update log object properties.
     """
 
     def __init__(self, **kwargs):
@@ -72,7 +72,7 @@ class UpdateLogDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateLogDetails.
-        The display name of a user-friendly name. It has to be unique within enclosing resource,
+        The user-friendly display name. This must be unique within the enclosing resource,
         and it's changeable. Avoid entering confidential information.
 
 
@@ -85,7 +85,7 @@ class UpdateLogDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateLogDetails.
-        The display name of a user-friendly name. It has to be unique within enclosing resource,
+        The user-friendly display name. This must be unique within the enclosing resource,
         and it's changeable. Avoid entering confidential information.
 
 
@@ -188,7 +188,7 @@ class UpdateLogDetails(object):
     def retention_duration(self):
         """
         Gets the retention_duration of this UpdateLogDetails.
-        Log retention duration in days.
+        Log retention duration in 30-day increments (30, 60, 90 and so on).
 
 
         :return: The retention_duration of this UpdateLogDetails.
@@ -200,7 +200,7 @@ class UpdateLogDetails(object):
     def retention_duration(self, retention_duration):
         """
         Sets the retention_duration of this UpdateLogDetails.
-        Log retention duration in days.
+        Log retention duration in 30-day increments (30, 60, 90 and so on).
 
 
         :param retention_duration: The retention_duration of this UpdateLogDetails.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UnifiedAgentConfigurationSummary(object):
     """
-    Unified Agent configuration summary object returned by list API.
+    Unified Agent configuration summary object returned by the list API.
     """
 
     #: A constant which can be used with the lifecycle_state property of a UnifiedAgentConfigurationSummary.
@@ -204,7 +204,7 @@ class UnifiedAgentConfigurationSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this UnifiedAgentConfigurationSummary.
-        The display name of a user-friendly name. It has to be unique within enclosing resource,
+        The user-friendly display name. This must be unique within the enclosing resource,
         and it's changeable. Avoid entering confidential information.
 
 
@@ -217,7 +217,7 @@ class UnifiedAgentConfigurationSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UnifiedAgentConfigurationSummary.
-        The display name of a user-friendly name. It has to be unique within enclosing resource,
+        The user-friendly display name. This must be unique within the enclosing resource,
         and it's changeable. Avoid entering confidential information.
 
 
@@ -368,7 +368,7 @@ class UnifiedAgentConfigurationSummary(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this UnifiedAgentConfigurationSummary.
-        The state of an pipeline.
+        The pipeline state.
 
         Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "INACTIVE", "DELETING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -383,7 +383,7 @@ class UnifiedAgentConfigurationSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this UnifiedAgentConfigurationSummary.
-        The state of an pipeline.
+        The pipeline state.
 
 
         :param lifecycle_state: The lifecycle_state of this UnifiedAgentConfigurationSummary.
@@ -422,7 +422,7 @@ class UnifiedAgentConfigurationSummary(object):
     def configuration_type(self):
         """
         **[Required]** Gets the configuration_type of this UnifiedAgentConfigurationSummary.
-        Type of unified agent service configuration.
+        Type of Unified Agent service configuration.
 
         Allowed values for this property are: "LOGGING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -437,7 +437,7 @@ class UnifiedAgentConfigurationSummary(object):
     def configuration_type(self, configuration_type):
         """
         Sets the configuration_type of this UnifiedAgentConfigurationSummary.
-        Type of unified agent service configuration.
+        Type of Unified Agent service configuration.
 
 
         :param configuration_type: The configuration_type of this UnifiedAgentConfigurationSummary.
