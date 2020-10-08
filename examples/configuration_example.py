@@ -27,7 +27,10 @@ config_with_key_file = {
 oci.config.validate_config(config_with_key_file)
 
 # If you want to use the private key which is not in the key file, key_content can be the backup of key_file.
-key_content = '-----BEGIN RSA PRIVATE KEY----- ### the content of your private key###-----END RSA PRIVATE KEY-----'
+pem_prefix = '-----BEGIN RSA PRIVATE KEY-----\n'
+pem_suffix = '\n-----END RSA PRIVATE KEY-----'
+key = "aaaaabbbbbbbcccccc..."    # The content of your private key
+key_content = '{}{}{}'.format(pem_prefix, key, pem_suffix)
 
 config_with_key_content = {
     "user": 'ocid1.user.oc1..aaaaaaaa65abcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmn',
