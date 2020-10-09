@@ -157,6 +157,10 @@ class Attribute(object):
             The value to assign to the path property of this Attribute.
         :type path: str
 
+        :param custom_property_members:
+            The value to assign to the custom_property_members property of this Attribute.
+        :type custom_property_members: list[CustomPropertyGetUsage]
+
         :param properties:
             The value to assign to the properties property of this Attribute.
         :type properties: dict(str, dict(str, str))
@@ -189,6 +193,7 @@ class Attribute(object):
             'time_external': 'datetime',
             'uri': 'str',
             'path': 'str',
+            'custom_property_members': 'list[CustomPropertyGetUsage]',
             'properties': 'dict(str, dict(str, str))'
         }
 
@@ -219,6 +224,7 @@ class Attribute(object):
             'time_external': 'timeExternal',
             'uri': 'uri',
             'path': 'path',
+            'custom_property_members': 'customPropertyMembers',
             'properties': 'properties'
         }
 
@@ -248,6 +254,7 @@ class Attribute(object):
         self._time_external = None
         self._uri = None
         self._path = None
+        self._custom_property_members = None
         self._properties = None
 
     @property
@@ -901,6 +908,30 @@ class Attribute(object):
         :type: str
         """
         self._path = path
+
+    @property
+    def custom_property_members(self):
+        """
+        Gets the custom_property_members of this Attribute.
+        The list of customized properties along with the values for this object
+
+
+        :return: The custom_property_members of this Attribute.
+        :rtype: list[CustomPropertyGetUsage]
+        """
+        return self._custom_property_members
+
+    @custom_property_members.setter
+    def custom_property_members(self, custom_property_members):
+        """
+        Sets the custom_property_members of this Attribute.
+        The list of customized properties along with the values for this object
+
+
+        :param custom_property_members: The custom_property_members of this Attribute.
+        :type: list[CustomPropertyGetUsage]
+        """
+        self._custom_property_members = custom_property_members
 
     @property
     def properties(self):

@@ -26,6 +26,10 @@ class UpdateConnectionDetails(object):
             The value to assign to the display_name property of this UpdateConnectionDetails.
         :type display_name: str
 
+        :param custom_property_members:
+            The value to assign to the custom_property_members property of this UpdateConnectionDetails.
+        :type custom_property_members: list[CustomPropertySetUsage]
+
         :param properties:
             The value to assign to the properties property of this UpdateConnectionDetails.
         :type properties: dict(str, dict(str, str))
@@ -42,6 +46,7 @@ class UpdateConnectionDetails(object):
         self.swagger_types = {
             'description': 'str',
             'display_name': 'str',
+            'custom_property_members': 'list[CustomPropertySetUsage]',
             'properties': 'dict(str, dict(str, str))',
             'enc_properties': 'dict(str, dict(str, str))',
             'is_default': 'bool'
@@ -50,6 +55,7 @@ class UpdateConnectionDetails(object):
         self.attribute_map = {
             'description': 'description',
             'display_name': 'displayName',
+            'custom_property_members': 'customPropertyMembers',
             'properties': 'properties',
             'enc_properties': 'encProperties',
             'is_default': 'isDefault'
@@ -57,6 +63,7 @@ class UpdateConnectionDetails(object):
 
         self._description = None
         self._display_name = None
+        self._custom_property_members = None
         self._properties = None
         self._enc_properties = None
         self._is_default = None
@@ -110,6 +117,30 @@ class UpdateConnectionDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def custom_property_members(self):
+        """
+        Gets the custom_property_members of this UpdateConnectionDetails.
+        The list of customized properties along with the values for this object
+
+
+        :return: The custom_property_members of this UpdateConnectionDetails.
+        :rtype: list[CustomPropertySetUsage]
+        """
+        return self._custom_property_members
+
+    @custom_property_members.setter
+    def custom_property_members(self, custom_property_members):
+        """
+        Sets the custom_property_members of this UpdateConnectionDetails.
+        The list of customized properties along with the values for this object
+
+
+        :param custom_property_members: The custom_property_members of this UpdateConnectionDetails.
+        :type: list[CustomPropertySetUsage]
+        """
+        self._custom_property_members = custom_property_members
 
     @property
     def properties(self):

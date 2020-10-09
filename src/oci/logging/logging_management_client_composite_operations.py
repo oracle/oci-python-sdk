@@ -114,10 +114,10 @@ class LoggingManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str unified_agent_configuration_id: (required)
-            The OCID of the unified agent configuration.
+            The OCID of the Unified Agent configuration.
 
         :param ChangeUnifiedAgentConfigurationCompartmentDetails change_unified_agent_configuration_compartment_details: (required)
-            Request to change the compartment of a given resource
+            Request to change the compartment of a given resource.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.logging.models.WorkRequest.status`
@@ -158,7 +158,7 @@ class LoggingManagementClientCompositeOperations(object):
             OCID of a log group to work with.
 
         :param CreateLogDetails create_log_details: (required)
-            Log object config details.
+            Log object configuration details.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.logging.models.WorkRequest.status`
@@ -228,13 +228,51 @@ class LoggingManagementClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def create_log_saved_search_and_wait_for_state(self, create_log_saved_search_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.logging.LoggingManagementClient.create_log_saved_search` and waits for the :py:class:`~oci.logging.models.LogSavedSearch` acted upon
+        to enter the given state(s).
+
+        :param CreateLogSavedSearchDetails create_log_saved_search_details: (required)
+            Specification of the Saved Search to create
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.logging.models.LogSavedSearch.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.logging.LoggingManagementClient.create_log_saved_search`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_log_saved_search(create_log_saved_search_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_log_saved_search(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def create_unified_agent_configuration_and_wait_for_state(self, create_unified_agent_configuration_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.logging.LoggingManagementClient.create_unified_agent_configuration` and waits for the :py:class:`~oci.logging.models.WorkRequest`
         to enter the given state(s).
 
         :param CreateUnifiedAgentConfigurationDetails create_unified_agent_configuration_details: (required)
-            Unified Agent configuration creation object.
+            Unified agent configuration creation object.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.logging.models.WorkRequest.status`
@@ -361,13 +399,60 @@ class LoggingManagementClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def delete_log_saved_search_and_wait_for_state(self, log_saved_search_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.logging.LoggingManagementClient.delete_log_saved_search` and waits for the :py:class:`~oci.logging.models.LogSavedSearch` acted upon
+        to enter the given state(s).
+
+        :param str log_saved_search_id: (required)
+            OCID of the logSavedSearch
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.logging.models.LogSavedSearch.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.logging.LoggingManagementClient.delete_log_saved_search`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        initial_get_result = self.client.get_log_saved_search(log_saved_search_id)
+        operation_result = None
+        try:
+            operation_result = self.client.delete_log_saved_search(log_saved_search_id, **operation_kwargs)
+        except oci.exceptions.ServiceError as e:
+            if e.status == 404:
+                return WAIT_RESOURCE_NOT_FOUND
+            else:
+                raise e
+
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                initial_get_result,
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                succeed_on_not_found=True,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def delete_unified_agent_configuration_and_wait_for_state(self, unified_agent_configuration_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.logging.LoggingManagementClient.delete_unified_agent_configuration` and waits for the :py:class:`~oci.logging.models.WorkRequest`
         to enter the given state(s).
 
         :param str unified_agent_configuration_id: (required)
-            The OCID of the unified agent configuration.
+            The OCID of the Unified Agent configuration.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.logging.models.WorkRequest.status`
@@ -413,7 +498,7 @@ class LoggingManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str work_request_id: (required)
-            The ID of the asynchronous request.
+            The asynchronous request ID.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.logging.models.WorkRequest.status`
@@ -538,13 +623,54 @@ class LoggingManagementClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def update_log_saved_search_and_wait_for_state(self, log_saved_search_id, update_log_saved_search_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.logging.LoggingManagementClient.update_log_saved_search` and waits for the :py:class:`~oci.logging.models.LogSavedSearch` acted upon
+        to enter the given state(s).
+
+        :param str log_saved_search_id: (required)
+            OCID of the logSavedSearch
+
+        :param UpdateLogSavedSearchDetails update_log_saved_search_details: (required)
+            Updates to the saved search.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.logging.models.LogSavedSearch.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.logging.LoggingManagementClient.update_log_saved_search`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_log_saved_search(log_saved_search_id, update_log_saved_search_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_log_saved_search(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def update_unified_agent_configuration_and_wait_for_state(self, unified_agent_configuration_id, update_unified_agent_configuration_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.logging.LoggingManagementClient.update_unified_agent_configuration` and waits for the :py:class:`~oci.logging.models.WorkRequest`
         to enter the given state(s).
 
         :param str unified_agent_configuration_id: (required)
-            The OCID of the unified agent configuration.
+            The OCID of the Unified Agent configuration.
 
         :param UpdateUnifiedAgentConfigurationDetails update_unified_agent_configuration_details: (required)
             Unified agent configuration to update. Empty group associations list doesn't modify the list, null value for group association clears all the previous associations.

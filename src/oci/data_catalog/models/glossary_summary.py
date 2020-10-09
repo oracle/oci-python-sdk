@@ -109,6 +109,22 @@ class GlossarySummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param import_job_definition_key:
+            The value to assign to the import_job_definition_key property of this GlossarySummary.
+        :type import_job_definition_key: str
+
+        :param import_job_key:
+            The value to assign to the import_job_key property of this GlossarySummary.
+        :type import_job_key: str
+
+        :param latest_import_job_execution_key:
+            The value to assign to the latest_import_job_execution_key property of this GlossarySummary.
+        :type latest_import_job_execution_key: str
+
+        :param latest_import_job_execution_status:
+            The value to assign to the latest_import_job_execution_status property of this GlossarySummary.
+        :type latest_import_job_execution_status: str
+
         """
         self.swagger_types = {
             'key': 'str',
@@ -118,7 +134,11 @@ class GlossarySummary(object):
             'description': 'str',
             'uri': 'str',
             'workflow_status': 'str',
-            'lifecycle_state': 'str'
+            'lifecycle_state': 'str',
+            'import_job_definition_key': 'str',
+            'import_job_key': 'str',
+            'latest_import_job_execution_key': 'str',
+            'latest_import_job_execution_status': 'str'
         }
 
         self.attribute_map = {
@@ -129,7 +149,11 @@ class GlossarySummary(object):
             'description': 'description',
             'uri': 'uri',
             'workflow_status': 'workflowStatus',
-            'lifecycle_state': 'lifecycleState'
+            'lifecycle_state': 'lifecycleState',
+            'import_job_definition_key': 'importJobDefinitionKey',
+            'import_job_key': 'importJobKey',
+            'latest_import_job_execution_key': 'latestImportJobExecutionKey',
+            'latest_import_job_execution_status': 'latestImportJobExecutionStatus'
         }
 
         self._key = None
@@ -140,6 +164,10 @@ class GlossarySummary(object):
         self._uri = None
         self._workflow_status = None
         self._lifecycle_state = None
+        self._import_job_definition_key = None
+        self._import_job_key = None
+        self._latest_import_job_execution_key = None
+        self._latest_import_job_execution_status = None
 
     @property
     def key(self):
@@ -352,6 +380,104 @@ class GlossarySummary(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def import_job_definition_key(self):
+        """
+        Gets the import_job_definition_key of this GlossarySummary.
+        The unique key of the job definition resource that was used in the Glossary import.
+
+
+        :return: The import_job_definition_key of this GlossarySummary.
+        :rtype: str
+        """
+        return self._import_job_definition_key
+
+    @import_job_definition_key.setter
+    def import_job_definition_key(self, import_job_definition_key):
+        """
+        Sets the import_job_definition_key of this GlossarySummary.
+        The unique key of the job definition resource that was used in the Glossary import.
+
+
+        :param import_job_definition_key: The import_job_definition_key of this GlossarySummary.
+        :type: str
+        """
+        self._import_job_definition_key = import_job_definition_key
+
+    @property
+    def import_job_key(self):
+        """
+        Gets the import_job_key of this GlossarySummary.
+        The unique key of the job policy for Glossary import.
+
+
+        :return: The import_job_key of this GlossarySummary.
+        :rtype: str
+        """
+        return self._import_job_key
+
+    @import_job_key.setter
+    def import_job_key(self, import_job_key):
+        """
+        Sets the import_job_key of this GlossarySummary.
+        The unique key of the job policy for Glossary import.
+
+
+        :param import_job_key: The import_job_key of this GlossarySummary.
+        :type: str
+        """
+        self._import_job_key = import_job_key
+
+    @property
+    def latest_import_job_execution_key(self):
+        """
+        Gets the latest_import_job_execution_key of this GlossarySummary.
+        The unique key of the parent job execution for which the log resource was created.
+
+
+        :return: The latest_import_job_execution_key of this GlossarySummary.
+        :rtype: str
+        """
+        return self._latest_import_job_execution_key
+
+    @latest_import_job_execution_key.setter
+    def latest_import_job_execution_key(self, latest_import_job_execution_key):
+        """
+        Sets the latest_import_job_execution_key of this GlossarySummary.
+        The unique key of the parent job execution for which the log resource was created.
+
+
+        :param latest_import_job_execution_key: The latest_import_job_execution_key of this GlossarySummary.
+        :type: str
+        """
+        self._latest_import_job_execution_key = latest_import_job_execution_key
+
+    @property
+    def latest_import_job_execution_status(self):
+        """
+        Gets the latest_import_job_execution_status of this GlossarySummary.
+        Status of the latest glossary import job execution, such as running, paused, or completed.
+        This may include additional information like time import started , import file size and % of completion
+
+
+        :return: The latest_import_job_execution_status of this GlossarySummary.
+        :rtype: str
+        """
+        return self._latest_import_job_execution_status
+
+    @latest_import_job_execution_status.setter
+    def latest_import_job_execution_status(self, latest_import_job_execution_status):
+        """
+        Sets the latest_import_job_execution_status of this GlossarySummary.
+        Status of the latest glossary import job execution, such as running, paused, or completed.
+        This may include additional information like time import started , import file size and % of completion
+
+
+        :param latest_import_job_execution_status: The latest_import_job_execution_status of this GlossarySummary.
+        :type: str
+        """
+        self._latest_import_job_execution_status = latest_import_job_execution_status
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -34,6 +34,90 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_add_data_selector_patterns(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'AddDataSelectorPatterns'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'AddDataSelectorPatterns')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='AddDataSelectorPatterns')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.add_data_selector_patterns(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                data_asset_key=request.pop(util.camelize('dataAssetKey')),
+                data_selector_pattern_details=request.pop(util.camelize('DataSelectorPatternDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'AddDataSelectorPatterns',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dataAsset',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_associate_custom_property(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'AssociateCustomProperty'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'AssociateCustomProperty')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='AssociateCustomProperty')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.associate_custom_property(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                type_key=request.pop(util.camelize('typeKey')),
+                associate_custom_property_details=request.pop(util.camelize('AssociateCustomPropertyDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'AssociateCustomProperty',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'type',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
 def test_attach_catalog_private_endpoint(testing_service_client):
     if not testing_service_client.is_api_enabled('data_catalog', 'AttachCatalogPrivateEndpoint'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -360,6 +444,48 @@ def test_create_connection(testing_service_client):
             result,
             service_error,
             'connection',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_create_custom_property(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'CreateCustomProperty'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'CreateCustomProperty')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='CreateCustomProperty')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.create_custom_property(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                namespace_id=request.pop(util.camelize('namespaceId')),
+                create_custom_property_details=request.pop(util.camelize('CreateCustomPropertyDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'CreateCustomProperty',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'customProperty',
             False,
             False
         )
@@ -784,6 +910,88 @@ def test_create_job_execution(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_create_namespace(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'CreateNamespace'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'CreateNamespace')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='CreateNamespace')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.create_namespace(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                create_namespace_details=request.pop(util.camelize('CreateNamespaceDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'CreateNamespace',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'namespace',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_create_pattern(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'CreatePattern'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'CreatePattern')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='CreatePattern')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.create_pattern(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                create_pattern_details=request.pop(util.camelize('CreatePatternDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'CreatePattern',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pattern',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
 def test_create_term(testing_service_client):
     if not testing_service_client.is_api_enabled('data_catalog', 'CreateTerm'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1072,6 +1280,48 @@ def test_delete_connection(testing_service_client):
             result,
             service_error,
             'delete_connection',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_delete_custom_property(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'DeleteCustomProperty'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'DeleteCustomProperty')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='DeleteCustomProperty')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.delete_custom_property(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                namespace_id=request.pop(util.camelize('namespaceId')),
+                custom_property_key=request.pop(util.camelize('customPropertyKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'DeleteCustomProperty',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_custom_property',
             True,
             False
         )
@@ -1454,6 +1704,88 @@ def test_delete_job_definition(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_delete_namespace(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'DeleteNamespace'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'DeleteNamespace')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='DeleteNamespace')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.delete_namespace(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                namespace_id=request.pop(util.camelize('namespaceId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'DeleteNamespace',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_namespace',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_delete_pattern(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'DeletePattern'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'DeletePattern')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='DeletePattern')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.delete_pattern(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                pattern_key=request.pop(util.camelize('patternKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'DeletePattern',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_pattern',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
 def test_delete_term(testing_service_client):
     if not testing_service_client.is_api_enabled('data_catalog', 'DeleteTerm'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1574,6 +1906,48 @@ def test_detach_catalog_private_endpoint(testing_service_client):
             result,
             service_error,
             'detach_catalog_private_endpoint',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_disassociate_custom_property(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'DisassociateCustomProperty'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'DisassociateCustomProperty')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='DisassociateCustomProperty')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.disassociate_custom_property(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                type_key=request.pop(util.camelize('typeKey')),
+                disassociate_custom_property_details=request.pop(util.camelize('DisassociateCustomPropertyDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'DisassociateCustomProperty',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'type',
             False,
             False
         )
@@ -1865,6 +2239,48 @@ def test_get_connection(testing_service_client):
             result,
             service_error,
             'connection',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_get_custom_property(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'GetCustomProperty'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'GetCustomProperty')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='GetCustomProperty')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.get_custom_property(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                namespace_id=request.pop(util.camelize('namespaceId')),
+                custom_property_key=request.pop(util.camelize('customPropertyKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'GetCustomProperty',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'customProperty',
             False,
             False
         )
@@ -2375,6 +2791,88 @@ def test_get_job_metrics(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_get_namespace(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'GetNamespace'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'GetNamespace')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='GetNamespace')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.get_namespace(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                namespace_id=request.pop(util.camelize('namespaceId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'GetNamespace',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'namespace',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_get_pattern(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'GetPattern'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'GetPattern')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='GetPattern')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.get_pattern(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                pattern_key=request.pop(util.camelize('patternKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'GetPattern',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pattern',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
 def test_get_term(testing_service_client):
     if not testing_service_client.is_api_enabled('data_catalog', 'GetTerm'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2619,6 +3117,48 @@ def test_import_glossary(testing_service_client):
             result,
             service_error,
             'import_glossary',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_list_aggregated_physical_entities(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'ListAggregatedPhysicalEntities'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'ListAggregatedPhysicalEntities')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='ListAggregatedPhysicalEntities')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.list_aggregated_physical_entities(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                data_asset_key=request.pop(util.camelize('dataAssetKey')),
+                entity_key=request.pop(util.camelize('entityKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'ListAggregatedPhysicalEntities',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'entityCollection',
             False,
             False
         )
@@ -2943,6 +3483,69 @@ def test_list_connections(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_list_custom_properties(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'ListCustomProperties'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'ListCustomProperties')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='ListCustomProperties')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.list_custom_properties(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                namespace_id=request.pop(util.camelize('namespaceId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_custom_properties(
+                    catalog_id=request.pop(util.camelize('catalogId')),
+                    namespace_id=request.pop(util.camelize('namespaceId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_custom_properties(
+                        catalog_id=request.pop(util.camelize('catalogId')),
+                        namespace_id=request.pop(util.camelize('namespaceId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'ListCustomProperties',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'customPropertyCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
 def test_list_data_asset_tags(testing_service_client):
     if not testing_service_client.is_api_enabled('data_catalog', 'ListDataAssetTags'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3062,6 +3665,47 @@ def test_list_data_assets(testing_service_client):
             'dataAssetCollection',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_list_derived_logical_entities(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'ListDerivedLogicalEntities'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'ListDerivedLogicalEntities')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='ListDerivedLogicalEntities')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.list_derived_logical_entities(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                pattern_key=request.pop(util.camelize('patternKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'ListDerivedLogicalEntities',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'entityCollection',
+            False,
+            False
         )
 
 
@@ -3699,6 +4343,126 @@ def test_list_jobs(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_list_namespaces(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'ListNamespaces'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'ListNamespaces')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='ListNamespaces')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.list_namespaces(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_namespaces(
+                    catalog_id=request.pop(util.camelize('catalogId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_namespaces(
+                        catalog_id=request.pop(util.camelize('catalogId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'ListNamespaces',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'namespaceCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_list_patterns(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'ListPatterns'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'ListPatterns')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='ListPatterns')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.list_patterns(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_patterns(
+                    catalog_id=request.pop(util.camelize('catalogId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_patterns(
+                        catalog_id=request.pop(util.camelize('catalogId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'ListPatterns',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'patternCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
 def test_list_tags(testing_service_client):
     if not testing_service_client.is_api_enabled('data_catalog', 'ListTags'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4230,6 +4994,48 @@ def test_parse_connection(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_remove_data_selector_patterns(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'RemoveDataSelectorPatterns'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'RemoveDataSelectorPatterns')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='RemoveDataSelectorPatterns')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.remove_data_selector_patterns(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                data_asset_key=request.pop(util.camelize('dataAssetKey')),
+                data_selector_pattern_details=request.pop(util.camelize('DataSelectorPatternDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'RemoveDataSelectorPatterns',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dataAsset',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
 def test_search_criteria(testing_service_client):
     if not testing_service_client.is_api_enabled('data_catalog', 'SearchCriteria'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4501,6 +5307,49 @@ def test_update_connection(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_update_custom_property(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'UpdateCustomProperty'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'UpdateCustomProperty')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='UpdateCustomProperty')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.update_custom_property(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                namespace_id=request.pop(util.camelize('namespaceId')),
+                custom_property_key=request.pop(util.camelize('customPropertyKey')),
+                update_custom_property_details=request.pop(util.camelize('UpdateCustomPropertyDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'UpdateCustomProperty',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'customProperty',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
 def test_update_data_asset(testing_service_client):
     if not testing_service_client.is_api_enabled('data_catalog', 'UpdateDataAsset'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4755,6 +5604,90 @@ def test_update_job_definition(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_update_namespace(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'UpdateNamespace'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'UpdateNamespace')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='UpdateNamespace')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.update_namespace(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                namespace_id=request.pop(util.camelize('namespaceId')),
+                update_namespace_details=request.pop(util.camelize('UpdateNamespaceDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'UpdateNamespace',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'namespace',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_update_pattern(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'UpdatePattern'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'UpdatePattern')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='UpdatePattern')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.update_pattern(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                pattern_key=request.pop(util.camelize('patternKey')),
+                update_pattern_details=request.pop(util.camelize('UpdatePatternDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'UpdatePattern',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pattern',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
 def test_update_term(testing_service_client):
     if not testing_service_client.is_api_enabled('data_catalog', 'UpdateTerm'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4981,6 +5914,48 @@ def test_validate_connection(testing_service_client):
             result,
             service_error,
             'validateConnectionResult',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datacatalog_ww_grp@oracle.com" jiraProject="DCAT" opsJiraProject="ADCS"
+def test_validate_pattern(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_catalog', 'ValidatePattern'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_catalog', util.camelize('data_catalog'), 'ValidatePattern')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_catalog', api_name='ValidatePattern')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_catalog.DataCatalogClient(config, service_endpoint=service_endpoint)
+            response = client.validate_pattern(
+                catalog_id=request.pop(util.camelize('catalogId')),
+                pattern_key=request.pop(util.camelize('patternKey')),
+                validate_pattern_details=request.pop(util.camelize('ValidatePatternDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_catalog',
+            'ValidatePattern',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'validatePatternResult',
             False,
             False
         )

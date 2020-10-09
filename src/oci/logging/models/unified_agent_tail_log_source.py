@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UnifiedAgentTailLogSource(UnifiedAgentLoggingSource):
     """
-    tail log source object.
+    Tail log source object.
     """
 
     def __init__(self, **kwargs):

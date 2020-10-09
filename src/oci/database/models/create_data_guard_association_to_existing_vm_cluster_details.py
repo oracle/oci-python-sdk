@@ -41,13 +41,18 @@ class CreateDataGuardAssociationToExistingVmClusterDetails(CreateDataGuardAssoci
             The value to assign to the peer_vm_cluster_id property of this CreateDataGuardAssociationToExistingVmClusterDetails.
         :type peer_vm_cluster_id: str
 
+        :param peer_db_home_id:
+            The value to assign to the peer_db_home_id property of this CreateDataGuardAssociationToExistingVmClusterDetails.
+        :type peer_db_home_id: str
+
         """
         self.swagger_types = {
             'database_admin_password': 'str',
             'protection_mode': 'str',
             'transport_type': 'str',
             'creation_type': 'str',
-            'peer_vm_cluster_id': 'str'
+            'peer_vm_cluster_id': 'str',
+            'peer_db_home_id': 'str'
         }
 
         self.attribute_map = {
@@ -55,7 +60,8 @@ class CreateDataGuardAssociationToExistingVmClusterDetails(CreateDataGuardAssoci
             'protection_mode': 'protectionMode',
             'transport_type': 'transportType',
             'creation_type': 'creationType',
-            'peer_vm_cluster_id': 'peerVmClusterId'
+            'peer_vm_cluster_id': 'peerVmClusterId',
+            'peer_db_home_id': 'peerDbHomeId'
         }
 
         self._database_admin_password = None
@@ -63,6 +69,7 @@ class CreateDataGuardAssociationToExistingVmClusterDetails(CreateDataGuardAssoci
         self._transport_type = None
         self._creation_type = None
         self._peer_vm_cluster_id = None
+        self._peer_db_home_id = None
         self._creation_type = 'ExistingVmCluster'
 
     @property
@@ -94,6 +101,36 @@ class CreateDataGuardAssociationToExistingVmClusterDetails(CreateDataGuardAssoci
         :type: str
         """
         self._peer_vm_cluster_id = peer_vm_cluster_id
+
+    @property
+    def peer_db_home_id(self):
+        """
+        Gets the peer_db_home_id of this CreateDataGuardAssociationToExistingVmClusterDetails.
+        The `OCID`__ of the DB home in which to create the standby database.
+        You must supply this value to create standby database with an existing DB home
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The peer_db_home_id of this CreateDataGuardAssociationToExistingVmClusterDetails.
+        :rtype: str
+        """
+        return self._peer_db_home_id
+
+    @peer_db_home_id.setter
+    def peer_db_home_id(self, peer_db_home_id):
+        """
+        Sets the peer_db_home_id of this CreateDataGuardAssociationToExistingVmClusterDetails.
+        The `OCID`__ of the DB home in which to create the standby database.
+        You must supply this value to create standby database with an existing DB home
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param peer_db_home_id: The peer_db_home_id of this CreateDataGuardAssociationToExistingVmClusterDetails.
+        :type: str
+        """
+        self._peer_db_home_id = peer_db_home_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

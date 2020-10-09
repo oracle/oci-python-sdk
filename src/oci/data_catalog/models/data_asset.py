@@ -102,6 +102,14 @@ class DataAsset(object):
             The value to assign to the uri property of this DataAsset.
         :type uri: str
 
+        :param custom_property_members:
+            The value to assign to the custom_property_members property of this DataAsset.
+        :type custom_property_members: list[CustomPropertyGetUsage]
+
+        :param data_selector_patterns:
+            The value to assign to the data_selector_patterns property of this DataAsset.
+        :type data_selector_patterns: list[PatternSummary]
+
         :param properties:
             The value to assign to the properties property of this DataAsset.
         :type properties: dict(str, dict(str, str))
@@ -120,6 +128,8 @@ class DataAsset(object):
             'created_by_id': 'str',
             'updated_by_id': 'str',
             'uri': 'str',
+            'custom_property_members': 'list[CustomPropertyGetUsage]',
+            'data_selector_patterns': 'list[PatternSummary]',
             'properties': 'dict(str, dict(str, str))'
         }
 
@@ -136,6 +146,8 @@ class DataAsset(object):
             'created_by_id': 'createdById',
             'updated_by_id': 'updatedById',
             'uri': 'uri',
+            'custom_property_members': 'customPropertyMembers',
+            'data_selector_patterns': 'dataSelectorPatterns',
             'properties': 'properties'
         }
 
@@ -151,6 +163,8 @@ class DataAsset(object):
         self._created_by_id = None
         self._updated_by_id = None
         self._uri = None
+        self._custom_property_members = None
+        self._data_selector_patterns = None
         self._properties = None
 
     @property
@@ -458,6 +472,54 @@ class DataAsset(object):
         :type: str
         """
         self._uri = uri
+
+    @property
+    def custom_property_members(self):
+        """
+        Gets the custom_property_members of this DataAsset.
+        The list of customized properties along with the values for this object
+
+
+        :return: The custom_property_members of this DataAsset.
+        :rtype: list[CustomPropertyGetUsage]
+        """
+        return self._custom_property_members
+
+    @custom_property_members.setter
+    def custom_property_members(self, custom_property_members):
+        """
+        Sets the custom_property_members of this DataAsset.
+        The list of customized properties along with the values for this object
+
+
+        :param custom_property_members: The custom_property_members of this DataAsset.
+        :type: list[CustomPropertyGetUsage]
+        """
+        self._custom_property_members = custom_property_members
+
+    @property
+    def data_selector_patterns(self):
+        """
+        Gets the data_selector_patterns of this DataAsset.
+        The list of data selector patterns used in the harvest for this data asset to derive logical entities.
+
+
+        :return: The data_selector_patterns of this DataAsset.
+        :rtype: list[PatternSummary]
+        """
+        return self._data_selector_patterns
+
+    @data_selector_patterns.setter
+    def data_selector_patterns(self, data_selector_patterns):
+        """
+        Sets the data_selector_patterns of this DataAsset.
+        The list of data selector patterns used in the harvest for this data asset to derive logical entities.
+
+
+        :param data_selector_patterns: The data_selector_patterns of this DataAsset.
+        :type: list[PatternSummary]
+        """
+        self._data_selector_patterns = data_selector_patterns
 
     @property
     def properties(self):

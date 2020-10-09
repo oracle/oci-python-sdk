@@ -38,6 +38,10 @@ class Update(object):
     AVAILABLE_ACTIONS_PRECHECK = "PRECHECK"
 
     #: A constant which can be used with the update_type property of a Update.
+    #: This constant has a value of "GI_UPGRADE"
+    UPDATE_TYPE_GI_UPGRADE = "GI_UPGRADE"
+
+    #: A constant which can be used with the update_type property of a Update.
     #: This constant has a value of "GI_PATCH"
     UPDATE_TYPE_GI_PATCH = "GI_PATCH"
 
@@ -84,7 +88,7 @@ class Update(object):
 
         :param update_type:
             The value to assign to the update_type property of this Update.
-            Allowed values for this property are: "GI_PATCH", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GI_UPGRADE", "GI_PATCH", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type update_type: str
 
@@ -259,7 +263,7 @@ class Update(object):
         **[Required]** Gets the update_type of this Update.
         The type of cloud VM cluster maintenance update.
 
-        Allowed values for this property are: "GI_PATCH", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "GI_UPGRADE", "GI_PATCH", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -278,7 +282,7 @@ class Update(object):
         :param update_type: The update_type of this Update.
         :type: str
         """
-        allowed_values = ["GI_PATCH"]
+        allowed_values = ["GI_UPGRADE", "GI_PATCH"]
         if not value_allowed_none_or_none_sentinel(update_type, allowed_values):
             update_type = 'UNKNOWN_ENUM_VALUE'
         self._update_type = update_type

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeLogLogGroupDetails(object):
     """
-    Contains details indicating which log group the log should move to
+    Contains details indicating which log group the log should move to.
     """
 
     def __init__(self, **kwargs):

@@ -13,6 +13,30 @@ class LogSavedSearch(object):
     A log saved search that can be used to save and share a given search result.
     """
 
+    #: A constant which can be used with the lifecycle_state property of a LogSavedSearch.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a LogSavedSearch.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a LogSavedSearch.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the lifecycle_state property of a LogSavedSearch.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a LogSavedSearch.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a LogSavedSearch.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new LogSavedSearch object with values from keyword arguments.
@@ -46,10 +70,6 @@ class LogSavedSearch(object):
             The value to assign to the query property of this LogSavedSearch.
         :type query: str
 
-        :param is_quick_start:
-            The value to assign to the is_quick_start property of this LogSavedSearch.
-        :type is_quick_start: bool
-
         :param defined_tags:
             The value to assign to the defined_tags property of this LogSavedSearch.
         :type defined_tags: dict(str, dict(str, object))
@@ -57,6 +77,12 @@ class LogSavedSearch(object):
         :param freeform_tags:
             The value to assign to the freeform_tags property of this LogSavedSearch.
         :type freeform_tags: dict(str, str)
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this LogSavedSearch.
+            Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "INACTIVE", "DELETING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
 
         """
         self.swagger_types = {
@@ -67,9 +93,9 @@ class LogSavedSearch(object):
             'time_last_modified': 'datetime',
             'description': 'str',
             'query': 'str',
-            'is_quick_start': 'bool',
             'defined_tags': 'dict(str, dict(str, object))',
-            'freeform_tags': 'dict(str, str)'
+            'freeform_tags': 'dict(str, str)',
+            'lifecycle_state': 'str'
         }
 
         self.attribute_map = {
@@ -80,9 +106,9 @@ class LogSavedSearch(object):
             'time_last_modified': 'timeLastModified',
             'description': 'description',
             'query': 'query',
-            'is_quick_start': 'isQuickStart',
             'defined_tags': 'definedTags',
-            'freeform_tags': 'freeformTags'
+            'freeform_tags': 'freeformTags',
+            'lifecycle_state': 'lifecycleState'
         }
 
         self._id = None
@@ -92,9 +118,9 @@ class LogSavedSearch(object):
         self._time_last_modified = None
         self._description = None
         self._query = None
-        self._is_quick_start = None
         self._defined_tags = None
         self._freeform_tags = None
+        self._lifecycle_state = None
 
     @property
     def id(self):
@@ -148,7 +174,7 @@ class LogSavedSearch(object):
     def name(self):
         """
         **[Required]** Gets the name of this LogSavedSearch.
-        The display name of a user-friendly name. It has to be unique within enclosing resource,
+        The user-friendly display name. This must be unique within the enclosing resource,
         and it's changeable. Avoid entering confidential information.
 
 
@@ -161,7 +187,7 @@ class LogSavedSearch(object):
     def name(self, name):
         """
         Sets the name of this LogSavedSearch.
-        The display name of a user-friendly name. It has to be unique within enclosing resource,
+        The user-friendly display name. This must be unique within the enclosing resource,
         and it's changeable. Avoid entering confidential information.
 
 
@@ -267,30 +293,6 @@ class LogSavedSearch(object):
         self._query = query
 
     @property
-    def is_quick_start(self):
-        """
-        **[Required]** Gets the is_quick_start of this LogSavedSearch.
-        True if the LogSavedSearch should be show as quickstart in the UI
-
-
-        :return: The is_quick_start of this LogSavedSearch.
-        :rtype: bool
-        """
-        return self._is_quick_start
-
-    @is_quick_start.setter
-    def is_quick_start(self, is_quick_start):
-        """
-        Sets the is_quick_start of this LogSavedSearch.
-        True if the LogSavedSearch should be show as quickstart in the UI
-
-
-        :param is_quick_start: The is_quick_start of this LogSavedSearch.
-        :type: bool
-        """
-        self._is_quick_start = is_quick_start
-
-    @property
     def defined_tags(self):
         """
         Gets the defined_tags of this LogSavedSearch.
@@ -355,6 +357,36 @@ class LogSavedSearch(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def lifecycle_state(self):
+        """
+        Gets the lifecycle_state of this LogSavedSearch.
+        The state of the LogSavedSearch
+
+        Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "INACTIVE", "DELETING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The lifecycle_state of this LogSavedSearch.
+        :rtype: str
+        """
+        return self._lifecycle_state
+
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
+        """
+        Sets the lifecycle_state of this LogSavedSearch.
+        The state of the LogSavedSearch
+
+
+        :param lifecycle_state: The lifecycle_state of this LogSavedSearch.
+        :type: str
+        """
+        allowed_values = ["CREATING", "ACTIVE", "UPDATING", "INACTIVE", "DELETING", "FAILED"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
+        self._lifecycle_state = lifecycle_state
 
     def __repr__(self):
         return formatted_flat_dict(self)

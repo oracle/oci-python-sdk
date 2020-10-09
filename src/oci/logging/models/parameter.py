@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Parameter(object):
     """
-    Parameters that a category of resource supports.
+    Parameters that a resource category supports.
     """
 
     #: A constant which can be used with the type property of a Parameter.
@@ -119,7 +119,7 @@ class Parameter(object):
     def pattern(self):
         """
         Gets the pattern of this Parameter.
-        Java regex pattern to validate parameter value.
+        Java regex pattern to validate a parameter value.
 
 
         :return: The pattern of this Parameter.
@@ -131,7 +131,7 @@ class Parameter(object):
     def pattern(self, pattern):
         """
         Sets the pattern of this Parameter.
-        Java regex pattern to validate parameter value.
+        Java regex pattern to validate a parameter value.
 
 
         :param pattern: The pattern of this Parameter.

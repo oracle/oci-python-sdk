@@ -51,25 +51,32 @@ class CreateGlossaryDetails(object):
             The value to assign to the owner property of this CreateGlossaryDetails.
         :type owner: str
 
+        :param custom_property_members:
+            The value to assign to the custom_property_members property of this CreateGlossaryDetails.
+        :type custom_property_members: list[CustomPropertySetUsage]
+
         """
         self.swagger_types = {
             'display_name': 'str',
             'description': 'str',
             'workflow_status': 'str',
-            'owner': 'str'
+            'owner': 'str',
+            'custom_property_members': 'list[CustomPropertySetUsage]'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
             'workflow_status': 'workflowStatus',
-            'owner': 'owner'
+            'owner': 'owner',
+            'custom_property_members': 'customPropertyMembers'
         }
 
         self._display_name = None
         self._description = None
         self._workflow_status = None
         self._owner = None
+        self._custom_property_members = None
 
     @property
     def display_name(self):
@@ -176,6 +183,30 @@ class CreateGlossaryDetails(object):
         :type: str
         """
         self._owner = owner
+
+    @property
+    def custom_property_members(self):
+        """
+        Gets the custom_property_members of this CreateGlossaryDetails.
+        The list of customized properties along with the values for this object
+
+
+        :return: The custom_property_members of this CreateGlossaryDetails.
+        :rtype: list[CustomPropertySetUsage]
+        """
+        return self._custom_property_members
+
+    @custom_property_members.setter
+    def custom_property_members(self, custom_property_members):
+        """
+        Sets the custom_property_members of this CreateGlossaryDetails.
+        The list of customized properties along with the values for this object
+
+
+        :param custom_property_members: The custom_property_members of this CreateGlossaryDetails.
+        :type: list[CustomPropertySetUsage]
+        """
+        self._custom_property_members = custom_property_members
 
     def __repr__(self):
         return formatted_flat_dict(self)

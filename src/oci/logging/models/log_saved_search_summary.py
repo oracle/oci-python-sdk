@@ -14,12 +14,28 @@ class LogSavedSearchSummary(object):
     """
 
     #: A constant which can be used with the lifecycle_state property of a LogSavedSearchSummary.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a LogSavedSearchSummary.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
 
     #: A constant which can be used with the lifecycle_state property of a LogSavedSearchSummary.
-    #: This constant has a value of "DELETED"
-    LIFECYCLE_STATE_DELETED = "DELETED"
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the lifecycle_state property of a LogSavedSearchSummary.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a LogSavedSearchSummary.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a LogSavedSearchSummary.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
 
     def __init__(self, **kwargs):
         """
@@ -42,17 +58,29 @@ class LogSavedSearchSummary(object):
             The value to assign to the time_created property of this LogSavedSearchSummary.
         :type time_created: datetime
 
-        :param is_quick_start:
-            The value to assign to the is_quick_start property of this LogSavedSearchSummary.
-        :type is_quick_start: bool
-
         :param time_last_modified:
             The value to assign to the time_last_modified property of this LogSavedSearchSummary.
         :type time_last_modified: datetime
 
+        :param description:
+            The value to assign to the description property of this LogSavedSearchSummary.
+        :type description: str
+
+        :param query:
+            The value to assign to the query property of this LogSavedSearchSummary.
+        :type query: str
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this LogSavedSearchSummary.
+        :type defined_tags: dict(str, dict(str, object))
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this LogSavedSearchSummary.
+        :type freeform_tags: dict(str, str)
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this LogSavedSearchSummary.
-            Allowed values for this property are: "ACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "INACTIVE", "DELETING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -62,8 +90,11 @@ class LogSavedSearchSummary(object):
             'compartment_id': 'str',
             'name': 'str',
             'time_created': 'datetime',
-            'is_quick_start': 'bool',
             'time_last_modified': 'datetime',
+            'description': 'str',
+            'query': 'str',
+            'defined_tags': 'dict(str, dict(str, object))',
+            'freeform_tags': 'dict(str, str)',
             'lifecycle_state': 'str'
         }
 
@@ -72,8 +103,11 @@ class LogSavedSearchSummary(object):
             'compartment_id': 'compartmentId',
             'name': 'name',
             'time_created': 'timeCreated',
-            'is_quick_start': 'isQuickStart',
             'time_last_modified': 'timeLastModified',
+            'description': 'description',
+            'query': 'query',
+            'defined_tags': 'definedTags',
+            'freeform_tags': 'freeformTags',
             'lifecycle_state': 'lifecycleState'
         }
 
@@ -81,8 +115,11 @@ class LogSavedSearchSummary(object):
         self._compartment_id = None
         self._name = None
         self._time_created = None
-        self._is_quick_start = None
         self._time_last_modified = None
+        self._description = None
+        self._query = None
+        self._defined_tags = None
+        self._freeform_tags = None
         self._lifecycle_state = None
 
     @property
@@ -137,7 +174,7 @@ class LogSavedSearchSummary(object):
     def name(self):
         """
         **[Required]** Gets the name of this LogSavedSearchSummary.
-        The display name of a user-friendly name. It has to be unique within enclosing resource,
+        The user-friendly display name. This must be unique within the enclosing resource,
         and it's changeable. Avoid entering confidential information.
 
 
@@ -150,7 +187,7 @@ class LogSavedSearchSummary(object):
     def name(self, name):
         """
         Sets the name of this LogSavedSearchSummary.
-        The display name of a user-friendly name. It has to be unique within enclosing resource,
+        The user-friendly display name. This must be unique within the enclosing resource,
         and it's changeable. Avoid entering confidential information.
 
 
@@ -184,30 +221,6 @@ class LogSavedSearchSummary(object):
         self._time_created = time_created
 
     @property
-    def is_quick_start(self):
-        """
-        **[Required]** Gets the is_quick_start of this LogSavedSearchSummary.
-        True if the LogSavedSearch should be show as quickstart in the UI
-
-
-        :return: The is_quick_start of this LogSavedSearchSummary.
-        :rtype: bool
-        """
-        return self._is_quick_start
-
-    @is_quick_start.setter
-    def is_quick_start(self, is_quick_start):
-        """
-        Sets the is_quick_start of this LogSavedSearchSummary.
-        True if the LogSavedSearch should be show as quickstart in the UI
-
-
-        :param is_quick_start: The is_quick_start of this LogSavedSearchSummary.
-        :type: bool
-        """
-        self._is_quick_start = is_quick_start
-
-    @property
     def time_last_modified(self):
         """
         Gets the time_last_modified of this LogSavedSearchSummary.
@@ -232,12 +245,126 @@ class LogSavedSearchSummary(object):
         self._time_last_modified = time_last_modified
 
     @property
+    def description(self):
+        """
+        Gets the description of this LogSavedSearchSummary.
+        Description for this resource.
+
+
+        :return: The description of this LogSavedSearchSummary.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """
+        Sets the description of this LogSavedSearchSummary.
+        Description for this resource.
+
+
+        :param description: The description of this LogSavedSearchSummary.
+        :type: str
+        """
+        self._description = description
+
+    @property
+    def query(self):
+        """
+        Gets the query of this LogSavedSearchSummary.
+        The search query that is saved.
+
+
+        :return: The query of this LogSavedSearchSummary.
+        :rtype: str
+        """
+        return self._query
+
+    @query.setter
+    def query(self, query):
+        """
+        Sets the query of this LogSavedSearchSummary.
+        The search query that is saved.
+
+
+        :param query: The query of this LogSavedSearchSummary.
+        :type: str
+        """
+        self._query = query
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this LogSavedSearchSummary.
+        Defined tags for this resource. Each key is predefined and scoped to a
+        namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this LogSavedSearchSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this LogSavedSearchSummary.
+        Defined tags for this resource. Each key is predefined and scoped to a
+        namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this LogSavedSearchSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this LogSavedSearchSummary.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this LogSavedSearchSummary.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this LogSavedSearchSummary.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this LogSavedSearchSummary.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this LogSavedSearchSummary.
         The state of the LogSavedSearch
 
-        Allowed values for this property are: "ACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "INACTIVE", "DELETING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -256,7 +383,7 @@ class LogSavedSearchSummary(object):
         :param lifecycle_state: The lifecycle_state of this LogSavedSearchSummary.
         :type: str
         """
-        allowed_values = ["ACTIVE", "DELETED"]
+        allowed_values = ["CREATING", "ACTIVE", "UPDATING", "INACTIVE", "DELETING", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

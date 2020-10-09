@@ -39,6 +39,10 @@ class UpdateAutonomousContainerDatabaseDetails(object):
             The value to assign to the maintenance_window_details property of this UpdateAutonomousContainerDatabaseDetails.
         :type maintenance_window_details: MaintenanceWindow
 
+        :param standby_maintenance_buffer_in_days:
+            The value to assign to the standby_maintenance_buffer_in_days property of this UpdateAutonomousContainerDatabaseDetails.
+        :type standby_maintenance_buffer_in_days: int
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateAutonomousContainerDatabaseDetails.
         :type freeform_tags: dict(str, str)
@@ -56,6 +60,7 @@ class UpdateAutonomousContainerDatabaseDetails(object):
             'display_name': 'str',
             'patch_model': 'str',
             'maintenance_window_details': 'MaintenanceWindow',
+            'standby_maintenance_buffer_in_days': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'backup_config': 'AutonomousContainerDatabaseBackupConfig'
@@ -65,6 +70,7 @@ class UpdateAutonomousContainerDatabaseDetails(object):
             'display_name': 'displayName',
             'patch_model': 'patchModel',
             'maintenance_window_details': 'maintenanceWindowDetails',
+            'standby_maintenance_buffer_in_days': 'standbyMaintenanceBufferInDays',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'backup_config': 'backupConfig'
@@ -73,6 +79,7 @@ class UpdateAutonomousContainerDatabaseDetails(object):
         self._display_name = None
         self._patch_model = None
         self._maintenance_window_details = None
+        self._standby_maintenance_buffer_in_days = None
         self._freeform_tags = None
         self._defined_tags = None
         self._backup_config = None
@@ -152,6 +159,32 @@ class UpdateAutonomousContainerDatabaseDetails(object):
         :type: MaintenanceWindow
         """
         self._maintenance_window_details = maintenance_window_details
+
+    @property
+    def standby_maintenance_buffer_in_days(self):
+        """
+        Gets the standby_maintenance_buffer_in_days of this UpdateAutonomousContainerDatabaseDetails.
+        The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+        This value represents the number of days before the primary database maintenance schedule.
+
+
+        :return: The standby_maintenance_buffer_in_days of this UpdateAutonomousContainerDatabaseDetails.
+        :rtype: int
+        """
+        return self._standby_maintenance_buffer_in_days
+
+    @standby_maintenance_buffer_in_days.setter
+    def standby_maintenance_buffer_in_days(self, standby_maintenance_buffer_in_days):
+        """
+        Sets the standby_maintenance_buffer_in_days of this UpdateAutonomousContainerDatabaseDetails.
+        The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+        This value represents the number of days before the primary database maintenance schedule.
+
+
+        :param standby_maintenance_buffer_in_days: The standby_maintenance_buffer_in_days of this UpdateAutonomousContainerDatabaseDetails.
+        :type: int
+        """
+        self._standby_maintenance_buffer_in_days = standby_maintenance_buffer_in_days
 
     @property
     def freeform_tags(self):

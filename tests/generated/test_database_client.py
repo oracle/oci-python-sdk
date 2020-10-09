@@ -2134,6 +2134,47 @@ def test_fail_over_autonomous_database(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_failover_autonomous_container_database_dataguard_association(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'FailoverAutonomousContainerDatabaseDataguardAssociation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'FailoverAutonomousContainerDatabaseDataguardAssociation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='FailoverAutonomousContainerDatabaseDataguardAssociation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.failover_autonomous_container_database_dataguard_association(
+                autonomous_container_database_id=request.pop(util.camelize('autonomousContainerDatabaseId')),
+                autonomous_container_database_dataguard_association_id=request.pop(util.camelize('autonomousContainerDatabaseDataguardAssociationId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'FailoverAutonomousContainerDatabaseDataguardAssociation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousContainerDatabaseDataguardAssociation',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_failover_data_guard_association(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'FailoverDataGuardAssociation'):
@@ -2339,6 +2380,47 @@ def test_get_autonomous_container_database(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_autonomous_container_database_dataguard_association(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'GetAutonomousContainerDatabaseDataguardAssociation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetAutonomousContainerDatabaseDataguardAssociation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetAutonomousContainerDatabaseDataguardAssociation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.get_autonomous_container_database_dataguard_association(
+                autonomous_container_database_id=request.pop(util.camelize('autonomousContainerDatabaseId')),
+                autonomous_container_database_dataguard_association_id=request.pop(util.camelize('autonomousContainerDatabaseDataguardAssociationId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetAutonomousContainerDatabaseDataguardAssociation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousContainerDatabaseDataguardAssociation',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_get_autonomous_data_warehouse(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'GetAutonomousDataWarehouse'):
@@ -2494,6 +2576,47 @@ def test_get_autonomous_database_backup(testing_service_client):
             result,
             service_error,
             'autonomousDatabaseBackup',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_autonomous_database_dataguard_association(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'GetAutonomousDatabaseDataguardAssociation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetAutonomousDatabaseDataguardAssociation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetAutonomousDatabaseDataguardAssociation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.get_autonomous_database_dataguard_association(
+                autonomous_database_id=request.pop(util.camelize('autonomousDatabaseId')),
+                autonomous_database_dataguard_association_id=request.pop(util.camelize('autonomousDatabaseDataguardAssociationId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetAutonomousDatabaseDataguardAssociation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousDatabaseDataguardAssociation',
             False,
             False
         )
@@ -3870,6 +3993,66 @@ def test_launch_db_system(testing_service_client):
 
 
 # IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_autonomous_container_database_dataguard_associations(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ListAutonomousContainerDatabaseDataguardAssociations'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListAutonomousContainerDatabaseDataguardAssociations')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListAutonomousContainerDatabaseDataguardAssociations')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.list_autonomous_container_database_dataguard_associations(
+                autonomous_container_database_id=request.pop(util.camelize('autonomousContainerDatabaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_autonomous_container_database_dataguard_associations(
+                    autonomous_container_database_id=request.pop(util.camelize('autonomousContainerDatabaseId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_autonomous_container_database_dataguard_associations(
+                        autonomous_container_database_id=request.pop(util.camelize('autonomousContainerDatabaseId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ListAutonomousContainerDatabaseDataguardAssociations',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousContainerDatabaseDataguardAssociation',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_list_autonomous_container_databases(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListAutonomousContainerDatabases'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4161,6 +4344,66 @@ def test_list_autonomous_database_clones(testing_service_client):
             result,
             service_error,
             'autonomousDatabaseSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_autonomous_database_dataguard_associations(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ListAutonomousDatabaseDataguardAssociations'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListAutonomousDatabaseDataguardAssociations')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListAutonomousDatabaseDataguardAssociations')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.list_autonomous_database_dataguard_associations(
+                autonomous_database_id=request.pop(util.camelize('autonomousDatabaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_autonomous_database_dataguard_associations(
+                    autonomous_database_id=request.pop(util.camelize('autonomousDatabaseId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_autonomous_database_dataguard_associations(
+                        autonomous_database_id=request.pop(util.camelize('autonomousDatabaseId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ListAutonomousDatabaseDataguardAssociations',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousDatabaseDataguardAssociation',
             False,
             True
         )
@@ -6212,6 +6455,47 @@ def test_register_autonomous_database_data_safe(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_reinstate_autonomous_container_database_dataguard_association(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ReinstateAutonomousContainerDatabaseDataguardAssociation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ReinstateAutonomousContainerDatabaseDataguardAssociation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ReinstateAutonomousContainerDatabaseDataguardAssociation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.reinstate_autonomous_container_database_dataguard_association(
+                autonomous_container_database_id=request.pop(util.camelize('autonomousContainerDatabaseId')),
+                autonomous_container_database_dataguard_association_id=request.pop(util.camelize('autonomousContainerDatabaseDataguardAssociationId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ReinstateAutonomousContainerDatabaseDataguardAssociation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousContainerDatabaseDataguardAssociation',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_reinstate_data_guard_association(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ReinstateDataGuardAssociation'):
@@ -6692,6 +6976,47 @@ def test_stop_autonomous_database(testing_service_client):
             result,
             service_error,
             'autonomousDatabase',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_switchover_autonomous_container_database_dataguard_association(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'SwitchoverAutonomousContainerDatabaseDataguardAssociation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'SwitchoverAutonomousContainerDatabaseDataguardAssociation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='SwitchoverAutonomousContainerDatabaseDataguardAssociation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.switchover_autonomous_container_database_dataguard_association(
+                autonomous_container_database_id=request.pop(util.camelize('autonomousContainerDatabaseId')),
+                autonomous_container_database_dataguard_association_id=request.pop(util.camelize('autonomousContainerDatabaseDataguardAssociationId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'SwitchoverAutonomousContainerDatabaseDataguardAssociation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousContainerDatabaseDataguardAssociation',
             False,
             False
         )

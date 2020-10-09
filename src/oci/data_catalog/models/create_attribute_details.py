@@ -74,6 +74,10 @@ class CreateAttributeDetails(object):
             The value to assign to the external_parent_attribute_key property of this CreateAttributeDetails.
         :type external_parent_attribute_key: str
 
+        :param custom_property_members:
+            The value to assign to the custom_property_members property of this CreateAttributeDetails.
+        :type custom_property_members: list[CustomPropertySetUsage]
+
         :param properties:
             The value to assign to the properties property of this CreateAttributeDetails.
         :type properties: dict(str, dict(str, str))
@@ -94,6 +98,7 @@ class CreateAttributeDetails(object):
             'max_collection_count': 'int',
             'external_datatype_entity_key': 'str',
             'external_parent_attribute_key': 'str',
+            'custom_property_members': 'list[CustomPropertySetUsage]',
             'properties': 'dict(str, dict(str, str))'
         }
 
@@ -112,6 +117,7 @@ class CreateAttributeDetails(object):
             'max_collection_count': 'maxCollectionCount',
             'external_datatype_entity_key': 'externalDatatypeEntityKey',
             'external_parent_attribute_key': 'externalParentAttributeKey',
+            'custom_property_members': 'customPropertyMembers',
             'properties': 'properties'
         }
 
@@ -129,6 +135,7 @@ class CreateAttributeDetails(object):
         self._max_collection_count = None
         self._external_datatype_entity_key = None
         self._external_parent_attribute_key = None
+        self._custom_property_members = None
         self._properties = None
 
     @property
@@ -472,6 +479,30 @@ class CreateAttributeDetails(object):
         :type: str
         """
         self._external_parent_attribute_key = external_parent_attribute_key
+
+    @property
+    def custom_property_members(self):
+        """
+        Gets the custom_property_members of this CreateAttributeDetails.
+        The list of customized properties along with the values for this object
+
+
+        :return: The custom_property_members of this CreateAttributeDetails.
+        :rtype: list[CustomPropertySetUsage]
+        """
+        return self._custom_property_members
+
+    @custom_property_members.setter
+    def custom_property_members(self, custom_property_members):
+        """
+        Sets the custom_property_members of this CreateAttributeDetails.
+        The list of customized properties along with the values for this object
+
+
+        :param custom_property_members: The custom_property_members of this CreateAttributeDetails.
+        :type: list[CustomPropertySetUsage]
+        """
+        self._custom_property_members = custom_property_members
 
     @property
     def properties(self):

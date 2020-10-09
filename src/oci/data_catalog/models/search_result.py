@@ -124,6 +124,14 @@ class SearchResult(object):
             The value to assign to the path property of this SearchResult.
         :type path: str
 
+        :param expression:
+            The value to assign to the expression property of this SearchResult.
+        :type expression: str
+
+        :param custom_properties:
+            The value to assign to the custom_properties property of this SearchResult.
+        :type custom_properties: list[FacetedSearchCustomProperty]
+
         """
         self.swagger_types = {
             'key': 'str',
@@ -151,7 +159,9 @@ class SearchResult(object):
             'parent_term_name': 'str',
             'created_by_id': 'str',
             'updated_by_id': 'str',
-            'path': 'str'
+            'path': 'str',
+            'expression': 'str',
+            'custom_properties': 'list[FacetedSearchCustomProperty]'
         }
 
         self.attribute_map = {
@@ -180,7 +190,9 @@ class SearchResult(object):
             'parent_term_name': 'parentTermName',
             'created_by_id': 'createdById',
             'updated_by_id': 'updatedById',
-            'path': 'path'
+            'path': 'path',
+            'expression': 'expression',
+            'custom_properties': 'customProperties'
         }
 
         self._key = None
@@ -209,6 +221,8 @@ class SearchResult(object):
         self._created_by_id = None
         self._updated_by_id = None
         self._path = None
+        self._expression = None
+        self._custom_properties = None
 
     @property
     def key(self):
@@ -845,6 +859,54 @@ class SearchResult(object):
         :type: str
         """
         self._path = path
+
+    @property
+    def expression(self):
+        """
+        Gets the expression of this SearchResult.
+        Expression for logical entities against which names of dataObjects will be matched.
+
+
+        :return: The expression of this SearchResult.
+        :rtype: str
+        """
+        return self._expression
+
+    @expression.setter
+    def expression(self, expression):
+        """
+        Sets the expression of this SearchResult.
+        Expression for logical entities against which names of dataObjects will be matched.
+
+
+        :param expression: The expression of this SearchResult.
+        :type: str
+        """
+        self._expression = expression
+
+    @property
+    def custom_properties(self):
+        """
+        Gets the custom_properties of this SearchResult.
+        Custom properties defined by users.
+
+
+        :return: The custom_properties of this SearchResult.
+        :rtype: list[FacetedSearchCustomProperty]
+        """
+        return self._custom_properties
+
+    @custom_properties.setter
+    def custom_properties(self, custom_properties):
+        """
+        Sets the custom_properties of this SearchResult.
+        Custom properties defined by users.
+
+
+        :param custom_properties: The custom_properties of this SearchResult.
+        :type: list[FacetedSearchCustomProperty]
+        """
+        self._custom_properties = custom_properties
 
     def __repr__(self):
         return formatted_flat_dict(self)
