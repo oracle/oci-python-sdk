@@ -8,7 +8,8 @@
 #   * get possible parameters for querying usage/cost
 #   * get cost
 #   * get cost with filter
-#
+#   * get cost with group by compartmentPath
+# see more api detail at https://docs.cloud.oracle.com/en-us/iaas/Content/Billing/Concepts/costanalysisoverview.htm#cost_analysis_using_the_api
 
 import oci.usage_api.models
 from oci.usage_api.models import RequestSummarizedUsagesDetails, Filter, Dimension
