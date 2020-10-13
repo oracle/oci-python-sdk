@@ -1,9 +1,7 @@
 # coding: utf-8
 # Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
-# This script provides a basic example of how to you can create a budget and an alert rule on the budget.
 # It then shows how to perform updates, reads, and deletes. It will:
-#
 #   * Create a usage api client
 #   * get possible parameters for querying usage/cost
 #   * get cost
@@ -16,7 +14,7 @@ from oci.usage_api.models import RequestSummarizedUsagesDetails, Filter, Dimensi
 from datetime import datetime
 
 # Default config file and profile
-config = oci.config.from_file(file_location="~/Downloads/clitest.conf")
+config = oci.config.from_file()
 usage_api_client = oci.usage_api.UsageapiClient(config)
 
 tenant_id = config['tenancy']
