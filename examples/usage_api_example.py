@@ -65,7 +65,7 @@ usage_request = RequestSummarizedUsagesDetails(tenant_id=tenant_id,
                                                time_usage_ended=datetime(2020, 9, 10, 0, 0, 0, 0),
                                                granularity='DAILY',
                                                query_type='COST',
-                                               compartment_depth = 3,
+                                               compartment_depth=3,
                                                group_by=['compartmentPath'])
 usage_response = usage_api_client.request_summarized_usages(usage_request)
 print("group by compartmentPath")
