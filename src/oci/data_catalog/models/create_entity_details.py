@@ -58,6 +58,14 @@ class CreateEntityDetails(object):
             The value to assign to the folder_key property of this CreateEntityDetails.
         :type folder_key: str
 
+        :param pattern_key:
+            The value to assign to the pattern_key property of this CreateEntityDetails.
+        :type pattern_key: str
+
+        :param realized_expression:
+            The value to assign to the realized_expression property of this CreateEntityDetails.
+        :type realized_expression: str
+
         :param harvest_status:
             The value to assign to the harvest_status property of this CreateEntityDetails.
             Allowed values for this property are: "COMPLETE", "ERROR", "IN_PROGRESS", "DEFERRED"
@@ -66,6 +74,10 @@ class CreateEntityDetails(object):
         :param last_job_key:
             The value to assign to the last_job_key property of this CreateEntityDetails.
         :type last_job_key: str
+
+        :param custom_property_members:
+            The value to assign to the custom_property_members property of this CreateEntityDetails.
+        :type custom_property_members: list[CustomPropertySetUsage]
 
         :param properties:
             The value to assign to the properties property of this CreateEntityDetails.
@@ -79,8 +91,11 @@ class CreateEntityDetails(object):
             'is_logical': 'bool',
             'is_partition': 'bool',
             'folder_key': 'str',
+            'pattern_key': 'str',
+            'realized_expression': 'str',
             'harvest_status': 'str',
             'last_job_key': 'str',
+            'custom_property_members': 'list[CustomPropertySetUsage]',
             'properties': 'dict(str, dict(str, str))'
         }
 
@@ -91,8 +106,11 @@ class CreateEntityDetails(object):
             'is_logical': 'isLogical',
             'is_partition': 'isPartition',
             'folder_key': 'folderKey',
+            'pattern_key': 'patternKey',
+            'realized_expression': 'realizedExpression',
             'harvest_status': 'harvestStatus',
             'last_job_key': 'lastJobKey',
+            'custom_property_members': 'customPropertyMembers',
             'properties': 'properties'
         }
 
@@ -102,8 +120,11 @@ class CreateEntityDetails(object):
         self._is_logical = None
         self._is_partition = None
         self._folder_key = None
+        self._pattern_key = None
+        self._realized_expression = None
         self._harvest_status = None
         self._last_job_key = None
+        self._custom_property_members = None
         self._properties = None
 
     @property
@@ -253,6 +274,54 @@ class CreateEntityDetails(object):
         self._folder_key = folder_key
 
     @property
+    def pattern_key(self):
+        """
+        Gets the pattern_key of this CreateEntityDetails.
+        Key of the associated pattern if this is a logical entity.
+
+
+        :return: The pattern_key of this CreateEntityDetails.
+        :rtype: str
+        """
+        return self._pattern_key
+
+    @pattern_key.setter
+    def pattern_key(self, pattern_key):
+        """
+        Sets the pattern_key of this CreateEntityDetails.
+        Key of the associated pattern if this is a logical entity.
+
+
+        :param pattern_key: The pattern_key of this CreateEntityDetails.
+        :type: str
+        """
+        self._pattern_key = pattern_key
+
+    @property
+    def realized_expression(self):
+        """
+        Gets the realized_expression of this CreateEntityDetails.
+        The expression realized after resolving qualifiers . Used in deriving this logical entity
+
+
+        :return: The realized_expression of this CreateEntityDetails.
+        :rtype: str
+        """
+        return self._realized_expression
+
+    @realized_expression.setter
+    def realized_expression(self, realized_expression):
+        """
+        Sets the realized_expression of this CreateEntityDetails.
+        The expression realized after resolving qualifiers . Used in deriving this logical entity
+
+
+        :param realized_expression: The realized_expression of this CreateEntityDetails.
+        :type: str
+        """
+        self._realized_expression = realized_expression
+
+    @property
     def harvest_status(self):
         """
         Gets the harvest_status of this CreateEntityDetails.
@@ -313,6 +382,30 @@ class CreateEntityDetails(object):
         :type: str
         """
         self._last_job_key = last_job_key
+
+    @property
+    def custom_property_members(self):
+        """
+        Gets the custom_property_members of this CreateEntityDetails.
+        The list of customized properties along with the values for this object
+
+
+        :return: The custom_property_members of this CreateEntityDetails.
+        :rtype: list[CustomPropertySetUsage]
+        """
+        return self._custom_property_members
+
+    @custom_property_members.setter
+    def custom_property_members(self, custom_property_members):
+        """
+        Sets the custom_property_members of this CreateEntityDetails.
+        The list of customized properties along with the values for this object
+
+
+        :param custom_property_members: The custom_property_members of this CreateEntityDetails.
+        :type: list[CustomPropertySetUsage]
+        """
+        self._custom_property_members = custom_property_members
 
     @property
     def properties(self):

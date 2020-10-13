@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Log(object):
     """
-    Represents a Log object
+    Represents a log object.
     """
 
     #: A constant which can be used with the log_type property of a Log.
@@ -236,7 +236,7 @@ class Log(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this Log.
-        The display name of a user-friendly name. It has to be unique within enclosing resource,
+        The user-friendly display name. This must be unique within the enclosing resource,
         and it's changeable. Avoid entering confidential information.
 
 
@@ -249,7 +249,7 @@ class Log(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Log.
-        The display name of a user-friendly name. It has to be unique within enclosing resource,
+        The user-friendly display name. This must be unique within the enclosing resource,
         and it's changeable. Avoid entering confidential information.
 
 
@@ -262,7 +262,7 @@ class Log(object):
     def log_type(self):
         """
         **[Required]** Gets the log_type of this Log.
-        The logType that the log object is for, custom or service.
+        The logType that the log object is for, whether custom or service.
 
         Allowed values for this property are: "CUSTOM", "SERVICE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -277,7 +277,7 @@ class Log(object):
     def log_type(self, log_type):
         """
         Sets the log_type of this Log.
-        The logType that the log object is for, custom or service.
+        The logType that the log object is for, whether custom or service.
 
 
         :param log_type: The log_type of this Log.
@@ -402,7 +402,7 @@ class Log(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this Log.
-        The state of an pipeline.
+        The pipeline state.
 
         Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "INACTIVE", "DELETING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -417,7 +417,7 @@ class Log(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Log.
-        The state of an pipeline.
+        The pipeline state.
 
 
         :param lifecycle_state: The lifecycle_state of this Log.
@@ -480,7 +480,7 @@ class Log(object):
     def retention_duration(self):
         """
         Gets the retention_duration of this Log.
-        Log retention duration in days.
+        Log retention duration in 30-day increments (30, 60, 90 and so on).
 
 
         :return: The retention_duration of this Log.
@@ -492,7 +492,7 @@ class Log(object):
     def retention_duration(self, retention_duration):
         """
         Sets the retention_duration of this Log.
-        Log retention duration in days.
+        Log retention duration in 30-day increments (30, 60, 90 and so on).
 
 
         :param retention_duration: The retention_duration of this Log.

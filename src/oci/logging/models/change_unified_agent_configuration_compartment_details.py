@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeUnifiedAgentConfigurationCompartmentDetails(object):
     """
-    Contains details indicating which compartment the resource should move to
+    Contains details indicating which compartment the resource should move to.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class ChangeUnifiedAgentConfigurationCompartmentDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this ChangeUnifiedAgentConfigurationCompartmentDetails.
-        The ocid the compartment into which the resource should be moved.
+        The OCID the compartment into which the resource should be moved.
 
 
         :return: The compartment_id of this ChangeUnifiedAgentConfigurationCompartmentDetails.
@@ -49,7 +49,7 @@ class ChangeUnifiedAgentConfigurationCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ChangeUnifiedAgentConfigurationCompartmentDetails.
-        The ocid the compartment into which the resource should be moved.
+        The OCID the compartment into which the resource should be moved.
 
 
         :param compartment_id: The compartment_id of this ChangeUnifiedAgentConfigurationCompartmentDetails.

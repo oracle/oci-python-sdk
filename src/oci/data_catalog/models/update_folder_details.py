@@ -46,6 +46,10 @@ class UpdateFolderDetails(object):
             The value to assign to the parent_folder_key property of this UpdateFolderDetails.
         :type parent_folder_key: str
 
+        :param custom_property_members:
+            The value to assign to the custom_property_members property of this UpdateFolderDetails.
+        :type custom_property_members: list[CustomPropertySetUsage]
+
         :param properties:
             The value to assign to the properties property of this UpdateFolderDetails.
         :type properties: dict(str, dict(str, str))
@@ -68,6 +72,7 @@ class UpdateFolderDetails(object):
             'display_name': 'str',
             'description': 'str',
             'parent_folder_key': 'str',
+            'custom_property_members': 'list[CustomPropertySetUsage]',
             'properties': 'dict(str, dict(str, str))',
             'time_external': 'datetime',
             'harvest_status': 'str',
@@ -78,6 +83,7 @@ class UpdateFolderDetails(object):
             'display_name': 'displayName',
             'description': 'description',
             'parent_folder_key': 'parentFolderKey',
+            'custom_property_members': 'customPropertyMembers',
             'properties': 'properties',
             'time_external': 'timeExternal',
             'harvest_status': 'harvestStatus',
@@ -87,6 +93,7 @@ class UpdateFolderDetails(object):
         self._display_name = None
         self._description = None
         self._parent_folder_key = None
+        self._custom_property_members = None
         self._properties = None
         self._time_external = None
         self._harvest_status = None
@@ -165,6 +172,30 @@ class UpdateFolderDetails(object):
         :type: str
         """
         self._parent_folder_key = parent_folder_key
+
+    @property
+    def custom_property_members(self):
+        """
+        Gets the custom_property_members of this UpdateFolderDetails.
+        The list of customized properties along with the values for this object
+
+
+        :return: The custom_property_members of this UpdateFolderDetails.
+        :rtype: list[CustomPropertySetUsage]
+        """
+        return self._custom_property_members
+
+    @custom_property_members.setter
+    def custom_property_members(self, custom_property_members):
+        """
+        Sets the custom_property_members of this UpdateFolderDetails.
+        The list of customized properties along with the values for this object
+
+
+        :param custom_property_members: The custom_property_members of this UpdateFolderDetails.
+        :type: list[CustomPropertySetUsage]
+        """
+        self._custom_property_members = custom_property_members
 
     @property
     def properties(self):

@@ -106,6 +106,14 @@ class Entity(object):
             The value to assign to the external_key property of this Entity.
         :type external_key: str
 
+        :param pattern_key:
+            The value to assign to the pattern_key property of this Entity.
+        :type pattern_key: str
+
+        :param realized_expression:
+            The value to assign to the realized_expression property of this Entity.
+        :type realized_expression: str
+
         :param time_external:
             The value to assign to the time_external property of this Entity.
         :type time_external: datetime
@@ -156,6 +164,10 @@ class Entity(object):
             The value to assign to the uri property of this Entity.
         :type uri: str
 
+        :param custom_property_members:
+            The value to assign to the custom_property_members property of this Entity.
+        :type custom_property_members: list[CustomPropertyGetUsage]
+
         :param properties:
             The value to assign to the properties property of this Entity.
         :type properties: dict(str, dict(str, str))
@@ -171,6 +183,8 @@ class Entity(object):
             'updated_by_id': 'str',
             'lifecycle_state': 'str',
             'external_key': 'str',
+            'pattern_key': 'str',
+            'realized_expression': 'str',
             'time_external': 'datetime',
             'time_status_updated': 'datetime',
             'is_logical': 'bool',
@@ -183,6 +197,7 @@ class Entity(object):
             'last_job_key': 'str',
             'type_key': 'str',
             'uri': 'str',
+            'custom_property_members': 'list[CustomPropertyGetUsage]',
             'properties': 'dict(str, dict(str, str))'
         }
 
@@ -196,6 +211,8 @@ class Entity(object):
             'updated_by_id': 'updatedById',
             'lifecycle_state': 'lifecycleState',
             'external_key': 'externalKey',
+            'pattern_key': 'patternKey',
+            'realized_expression': 'realizedExpression',
             'time_external': 'timeExternal',
             'time_status_updated': 'timeStatusUpdated',
             'is_logical': 'isLogical',
@@ -208,6 +225,7 @@ class Entity(object):
             'last_job_key': 'lastJobKey',
             'type_key': 'typeKey',
             'uri': 'uri',
+            'custom_property_members': 'customPropertyMembers',
             'properties': 'properties'
         }
 
@@ -220,6 +238,8 @@ class Entity(object):
         self._updated_by_id = None
         self._lifecycle_state = None
         self._external_key = None
+        self._pattern_key = None
+        self._realized_expression = None
         self._time_external = None
         self._time_status_updated = None
         self._is_logical = None
@@ -232,6 +252,7 @@ class Entity(object):
         self._last_job_key = None
         self._type_key = None
         self._uri = None
+        self._custom_property_members = None
         self._properties = None
 
     @property
@@ -467,6 +488,54 @@ class Entity(object):
         :type: str
         """
         self._external_key = external_key
+
+    @property
+    def pattern_key(self):
+        """
+        Gets the pattern_key of this Entity.
+        Key of the associated pattern if this is a logical entity.
+
+
+        :return: The pattern_key of this Entity.
+        :rtype: str
+        """
+        return self._pattern_key
+
+    @pattern_key.setter
+    def pattern_key(self, pattern_key):
+        """
+        Sets the pattern_key of this Entity.
+        Key of the associated pattern if this is a logical entity.
+
+
+        :param pattern_key: The pattern_key of this Entity.
+        :type: str
+        """
+        self._pattern_key = pattern_key
+
+    @property
+    def realized_expression(self):
+        """
+        Gets the realized_expression of this Entity.
+        The expression realized after resolving qualifiers . Used in deriving this logical entity
+
+
+        :return: The realized_expression of this Entity.
+        :rtype: str
+        """
+        return self._realized_expression
+
+    @realized_expression.setter
+    def realized_expression(self, realized_expression):
+        """
+        Sets the realized_expression of this Entity.
+        The expression realized after resolving qualifiers . Used in deriving this logical entity
+
+
+        :param realized_expression: The realized_expression of this Entity.
+        :type: str
+        """
+        self._realized_expression = realized_expression
 
     @property
     def time_external(self):
@@ -767,6 +836,30 @@ class Entity(object):
         :type: str
         """
         self._uri = uri
+
+    @property
+    def custom_property_members(self):
+        """
+        Gets the custom_property_members of this Entity.
+        The list of customized properties along with the values for this object
+
+
+        :return: The custom_property_members of this Entity.
+        :rtype: list[CustomPropertyGetUsage]
+        """
+        return self._custom_property_members
+
+    @custom_property_members.setter
+    def custom_property_members(self, custom_property_members):
+        """
+        Sets the custom_property_members of this Entity.
+        The list of customized properties along with the values for this object
+
+
+        :param custom_property_members: The custom_property_members of this Entity.
+        :type: list[CustomPropertyGetUsage]
+        """
+        self._custom_property_members = custom_property_members
 
     @property
     def properties(self):

@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.23.0 - 2020-10-13
+====================
+
+Added
+-----
+* Support for API definitions in the API Gateway service
+* Support for pattern-based logical entities, namespace-bound custom properties, and faceted search in the Data Catalog service
+* Support for autonomous Data Guard on autonomous infrastructure in the Database service
+* Support for creating a Data Guard association on an existing standby database home in the Database service
+* Support for upgrading cloud VM cluster grid infrastructure in the Database service
+
+Breaking
+--------
+* Attribute `is_quick_start` in models `CreateLogSavedSearchDetails`, `LogSavedSearchSummary` and `LogSavedSearch` is removed from the Logging Management service
+* Lifecycle State `DELETED` is removed from the Logging Management service
+
+====================
 2.22.0 - 2020-10-06
 ====================
 

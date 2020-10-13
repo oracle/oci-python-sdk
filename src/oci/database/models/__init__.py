@@ -9,6 +9,7 @@ from .associated_database_details import AssociatedDatabaseDetails
 from .automated_mount_details import AutomatedMountDetails
 from .autonomous_container_database import AutonomousContainerDatabase
 from .autonomous_container_database_backup_config import AutonomousContainerDatabaseBackupConfig
+from .autonomous_container_database_dataguard_association import AutonomousContainerDatabaseDataguardAssociation
 from .autonomous_container_database_summary import AutonomousContainerDatabaseSummary
 from .autonomous_data_warehouse import AutonomousDataWarehouse
 from .autonomous_data_warehouse_backup import AutonomousDataWarehouseBackup
@@ -22,6 +23,7 @@ from .autonomous_database_backup_summary import AutonomousDatabaseBackupSummary
 from .autonomous_database_connection_strings import AutonomousDatabaseConnectionStrings
 from .autonomous_database_connection_urls import AutonomousDatabaseConnectionUrls
 from .autonomous_database_console_token_details import AutonomousDatabaseConsoleTokenDetails
+from .autonomous_database_dataguard_association import AutonomousDatabaseDataguardAssociation
 from .autonomous_database_manual_refresh_details import AutonomousDatabaseManualRefreshDetails
 from .autonomous_database_standby_summary import AutonomousDatabaseStandbySummary
 from .autonomous_database_summary import AutonomousDatabaseSummary
@@ -194,6 +196,7 @@ database_type_mapping = {
     "AutomatedMountDetails": AutomatedMountDetails,
     "AutonomousContainerDatabase": AutonomousContainerDatabase,
     "AutonomousContainerDatabaseBackupConfig": AutonomousContainerDatabaseBackupConfig,
+    "AutonomousContainerDatabaseDataguardAssociation": AutonomousContainerDatabaseDataguardAssociation,
     "AutonomousContainerDatabaseSummary": AutonomousContainerDatabaseSummary,
     "AutonomousDataWarehouse": AutonomousDataWarehouse,
     "AutonomousDataWarehouseBackup": AutonomousDataWarehouseBackup,
@@ -207,6 +210,7 @@ database_type_mapping = {
     "AutonomousDatabaseConnectionStrings": AutonomousDatabaseConnectionStrings,
     "AutonomousDatabaseConnectionUrls": AutonomousDatabaseConnectionUrls,
     "AutonomousDatabaseConsoleTokenDetails": AutonomousDatabaseConsoleTokenDetails,
+    "AutonomousDatabaseDataguardAssociation": AutonomousDatabaseDataguardAssociation,
     "AutonomousDatabaseManualRefreshDetails": AutonomousDatabaseManualRefreshDetails,
     "AutonomousDatabaseStandbySummary": AutonomousDatabaseStandbySummary,
     "AutonomousDatabaseSummary": AutonomousDatabaseSummary,

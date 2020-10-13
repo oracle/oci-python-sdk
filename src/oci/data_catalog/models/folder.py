@@ -93,6 +93,10 @@ class Folder(object):
             The value to assign to the data_asset_key property of this Folder.
         :type data_asset_key: str
 
+        :param custom_property_members:
+            The value to assign to the custom_property_members property of this Folder.
+        :type custom_property_members: list[CustomPropertyGetUsage]
+
         :param properties:
             The value to assign to the properties property of this Folder.
         :type properties: dict(str, dict(str, str))
@@ -149,6 +153,7 @@ class Folder(object):
             'parent_folder_key': 'str',
             'path': 'str',
             'data_asset_key': 'str',
+            'custom_property_members': 'list[CustomPropertyGetUsage]',
             'properties': 'dict(str, dict(str, str))',
             'external_key': 'str',
             'time_created': 'datetime',
@@ -169,6 +174,7 @@ class Folder(object):
             'parent_folder_key': 'parentFolderKey',
             'path': 'path',
             'data_asset_key': 'dataAssetKey',
+            'custom_property_members': 'customPropertyMembers',
             'properties': 'properties',
             'external_key': 'externalKey',
             'time_created': 'timeCreated',
@@ -188,6 +194,7 @@ class Folder(object):
         self._parent_folder_key = None
         self._path = None
         self._data_asset_key = None
+        self._custom_property_members = None
         self._properties = None
         self._external_key = None
         self._time_created = None
@@ -345,6 +352,30 @@ class Folder(object):
         :type: str
         """
         self._data_asset_key = data_asset_key
+
+    @property
+    def custom_property_members(self):
+        """
+        Gets the custom_property_members of this Folder.
+        The list of customized properties along with the values for this object
+
+
+        :return: The custom_property_members of this Folder.
+        :rtype: list[CustomPropertyGetUsage]
+        """
+        return self._custom_property_members
+
+    @custom_property_members.setter
+    def custom_property_members(self, custom_property_members):
+        """
+        Sets the custom_property_members of this Folder.
+        The list of customized properties along with the values for this object
+
+
+        :param custom_property_members: The custom_property_members of this Folder.
+        :type: list[CustomPropertyGetUsage]
+        """
+        self._custom_property_members = custom_property_members
 
     @property
     def properties(self):

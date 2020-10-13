@@ -60,7 +60,7 @@ class Source(object):
     def source_type(self):
         """
         **[Required]** Gets the source_type of this Source.
-        The source of the log.
+        The log source.
         * **OCISERVICE:** Oracle Service.
 
         Allowed values for this property are: "OCISERVICE", 'UNKNOWN_ENUM_VALUE'.
@@ -76,7 +76,7 @@ class Source(object):
     def source_type(self, source_type):
         """
         Sets the source_type of this Source.
-        The source of the log.
+        The log source.
         * **OCISERVICE:** Oracle Service.
 
 

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UnifiedAgentConfigurationCollection(object):
     """
-    Results of a UnifiedAgentConfiguration search. Contains UnifiedAgentConfigurationSummary items
+    Results of a UnifiedAgentConfiguration search. Contains UnifiedAgentConfigurationSummary items.
     """
 
     def __init__(self, **kwargs):

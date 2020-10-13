@@ -7,6 +7,8 @@ from __future__ import absolute_import
 from .access_log_policy import AccessLogPolicy
 from .anonymous_route_authorization_policy import AnonymousRouteAuthorizationPolicy
 from .any_of_route_authorization_policy import AnyOfRouteAuthorizationPolicy
+from .api import Api
+from .api_collection import ApiCollection
 from .api_specification import ApiSpecification
 from .api_specification_logging_policies import ApiSpecificationLoggingPolicies
 from .api_specification_request_policies import ApiSpecificationRequestPolicies
@@ -14,15 +16,22 @@ from .api_specification_route import ApiSpecificationRoute
 from .api_specification_route_backend import ApiSpecificationRouteBackend
 from .api_specification_route_request_policies import ApiSpecificationRouteRequestPolicies
 from .api_specification_route_response_policies import ApiSpecificationRouteResponsePolicies
+from .api_summary import ApiSummary
+from .api_validation_detail import ApiValidationDetail
+from .api_validation_details import ApiValidationDetails
+from .api_validation_result import ApiValidationResult
+from .api_validations import ApiValidations
 from .authentication_only_route_authorization_policy import AuthenticationOnlyRouteAuthorizationPolicy
 from .authentication_policy import AuthenticationPolicy
 from .certificate import Certificate
 from .certificate_collection import CertificateCollection
 from .certificate_summary import CertificateSummary
+from .change_api_compartment_details import ChangeApiCompartmentDetails
 from .change_certificate_compartment_details import ChangeCertificateCompartmentDetails
 from .change_deployment_compartment_details import ChangeDeploymentCompartmentDetails
 from .change_gateway_compartment_details import ChangeGatewayCompartmentDetails
 from .cors_policy import CorsPolicy
+from .create_api_details import CreateApiDetails
 from .create_certificate_details import CreateCertificateDetails
 from .create_deployment_details import CreateDeploymentDetails
 from .create_gateway_details import CreateGatewayDetails
@@ -63,6 +72,7 @@ from .set_query_parameter_policy_item import SetQueryParameterPolicyItem
 from .static_public_key import StaticPublicKey
 from .static_public_key_set import StaticPublicKeySet
 from .stock_response_backend import StockResponseBackend
+from .update_api_details import UpdateApiDetails
 from .update_certificate_details import UpdateCertificateDetails
 from .update_deployment_details import UpdateDeploymentDetails
 from .update_gateway_details import UpdateGatewayDetails
@@ -80,6 +90,8 @@ apigateway_type_mapping = {
     "AccessLogPolicy": AccessLogPolicy,
     "AnonymousRouteAuthorizationPolicy": AnonymousRouteAuthorizationPolicy,
     "AnyOfRouteAuthorizationPolicy": AnyOfRouteAuthorizationPolicy,
+    "Api": Api,
+    "ApiCollection": ApiCollection,
     "ApiSpecification": ApiSpecification,
     "ApiSpecificationLoggingPolicies": ApiSpecificationLoggingPolicies,
     "ApiSpecificationRequestPolicies": ApiSpecificationRequestPolicies,
@@ -87,15 +99,22 @@ apigateway_type_mapping = {
     "ApiSpecificationRouteBackend": ApiSpecificationRouteBackend,
     "ApiSpecificationRouteRequestPolicies": ApiSpecificationRouteRequestPolicies,
     "ApiSpecificationRouteResponsePolicies": ApiSpecificationRouteResponsePolicies,
+    "ApiSummary": ApiSummary,
+    "ApiValidationDetail": ApiValidationDetail,
+    "ApiValidationDetails": ApiValidationDetails,
+    "ApiValidationResult": ApiValidationResult,
+    "ApiValidations": ApiValidations,
     "AuthenticationOnlyRouteAuthorizationPolicy": AuthenticationOnlyRouteAuthorizationPolicy,
     "AuthenticationPolicy": AuthenticationPolicy,
     "Certificate": Certificate,
     "CertificateCollection": CertificateCollection,
     "CertificateSummary": CertificateSummary,
+    "ChangeApiCompartmentDetails": ChangeApiCompartmentDetails,
     "ChangeCertificateCompartmentDetails": ChangeCertificateCompartmentDetails,
     "ChangeDeploymentCompartmentDetails": ChangeDeploymentCompartmentDetails,
     "ChangeGatewayCompartmentDetails": ChangeGatewayCompartmentDetails,
     "CorsPolicy": CorsPolicy,
+    "CreateApiDetails": CreateApiDetails,
     "CreateCertificateDetails": CreateCertificateDetails,
     "CreateDeploymentDetails": CreateDeploymentDetails,
     "CreateGatewayDetails": CreateGatewayDetails,
@@ -136,6 +155,7 @@ apigateway_type_mapping = {
     "StaticPublicKey": StaticPublicKey,
     "StaticPublicKeySet": StaticPublicKeySet,
     "StockResponseBackend": StockResponseBackend,
+    "UpdateApiDetails": UpdateApiDetails,
     "UpdateCertificateDetails": UpdateCertificateDetails,
     "UpdateDeploymentDetails": UpdateDeploymentDetails,
     "UpdateGatewayDetails": UpdateGatewayDetails,

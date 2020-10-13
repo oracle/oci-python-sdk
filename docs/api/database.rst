@@ -23,6 +23,7 @@ Database
     oci.database.models.AutomatedMountDetails
     oci.database.models.AutonomousContainerDatabase
     oci.database.models.AutonomousContainerDatabaseBackupConfig
+    oci.database.models.AutonomousContainerDatabaseDataguardAssociation
     oci.database.models.AutonomousContainerDatabaseSummary
     oci.database.models.AutonomousDataWarehouse
     oci.database.models.AutonomousDataWarehouseBackup
@@ -36,6 +37,7 @@ Database
     oci.database.models.AutonomousDatabaseConnectionStrings
     oci.database.models.AutonomousDatabaseConnectionUrls
     oci.database.models.AutonomousDatabaseConsoleTokenDetails
+    oci.database.models.AutonomousDatabaseDataguardAssociation
     oci.database.models.AutonomousDatabaseManualRefreshDetails
     oci.database.models.AutonomousDatabaseStandbySummary
     oci.database.models.AutonomousDatabaseSummary

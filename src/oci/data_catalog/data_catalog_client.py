@@ -85,6 +85,208 @@ class DataCatalogClient(object):
         self.base_client = BaseClient("data_catalog", config, signer, data_catalog_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
 
+    def add_data_selector_patterns(self, catalog_id, data_asset_key, data_selector_pattern_details, **kwargs):
+        """
+        Add data selector pattern to the data asset.
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str data_asset_key: (required)
+            Unique data asset key.
+
+        :param DataSelectorPatternDetails data_selector_pattern_details: (required)
+            The information used to add the patterns for deriving logical entities.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.DataAsset`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/actions/addDataSelectorPatterns"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "add_data_selector_patterns got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id,
+            "dataAssetKey": data_asset_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=data_selector_pattern_details,
+                response_type="DataAsset")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=data_selector_pattern_details,
+                response_type="DataAsset")
+
+    def associate_custom_property(self, catalog_id, type_key, associate_custom_property_details, **kwargs):
+        """
+        Associate the custom property for the given type
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str type_key: (required)
+            Unique type key.
+
+        :param TypeCustomPropertyDetails associate_custom_property_details: (required)
+            The information used to associate the custom property for the type.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Type`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogs/{catalogId}/types/{typeKey}/actions/associateCustomProperties"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "associate_custom_property got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id,
+            "typeKey": type_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=associate_custom_property_details,
+                response_type="Type")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=associate_custom_property_details,
+                response_type="Type")
+
     def attach_catalog_private_endpoint(self, attach_catalog_private_endpoint_details, catalog_id, **kwargs):
         """
         Attaches a private reverse connection endpoint resource to a data catalog resource. When provided, 'If-Match' is checked against 'ETag' values of the resource.
@@ -778,6 +980,98 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=create_connection_details,
                 response_type="Connection")
+
+    def create_custom_property(self, catalog_id, namespace_id, create_custom_property_details, **kwargs):
+        """
+        Create a new Custom Property
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str namespace_id: (required)
+            Unique namespace identifier.
+
+        :param CreateCustomPropertyDetails create_custom_property_details: (required)
+            The information used to create the Custom Property.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.CustomProperty`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}/customProperties"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_custom_property got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id,
+            "namespaceId": namespace_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_custom_property_details,
+                response_type="CustomProperty")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_custom_property_details,
+                response_type="CustomProperty")
 
     def create_data_asset(self, catalog_id, create_data_asset_details, **kwargs):
         """
@@ -1691,6 +1985,182 @@ class DataCatalogClient(object):
                 body=create_job_execution_details,
                 response_type="JobExecution")
 
+    def create_namespace(self, catalog_id, create_namespace_details, **kwargs):
+        """
+        Create a new Namespace to be used by a custom property
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param CreateNamespaceDetails create_namespace_details: (required)
+            The information used to create the Namespace.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Namespace`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogs/{catalogId}/namespaces"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_namespace got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_namespace_details,
+                response_type="Namespace")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_namespace_details,
+                response_type="Namespace")
+
+    def create_pattern(self, catalog_id, create_pattern_details, **kwargs):
+        """
+        Create a new pattern.
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param CreatePatternDetails create_pattern_details: (required)
+            The information used to create the pattern.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Pattern`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogs/{catalogId}/patterns"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_pattern got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_pattern_details,
+                response_type="Pattern")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_pattern_details,
+                response_type="Pattern")
+
     def create_term(self, catalog_id, glossary_key, create_term_details, **kwargs):
         """
         Create a new term within a glossary.
@@ -2276,6 +2746,93 @@ class DataCatalogClient(object):
             "catalogId": catalog_id,
             "dataAssetKey": data_asset_key,
             "connectionKey": connection_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
+    def delete_custom_property(self, catalog_id, namespace_id, custom_property_key, **kwargs):
+        """
+        Deletes a specific custom property identified by it's key.
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str namespace_id: (required)
+            Unique namespace identifier.
+
+        :param str custom_property_key: (required)
+            Unique Custom Property key
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}/customProperties/{customPropertyKey}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_custom_property got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id,
+            "namespaceId": namespace_id,
+            "customPropertyKey": custom_property_key
         }
 
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
@@ -3085,6 +3642,172 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params)
 
+    def delete_namespace(self, catalog_id, namespace_id, **kwargs):
+        """
+        Deletes a specific Namespace identified by it's key.
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str namespace_id: (required)
+            Unique namespace identifier.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_namespace got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id,
+            "namespaceId": namespace_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
+    def delete_pattern(self, catalog_id, pattern_key, **kwargs):
+        """
+        Deletes a specific pattern identified by it's key.
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str pattern_key: (required)
+            Unique pattern key.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogs/{catalogId}/patterns/{patternKey}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_pattern got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id,
+            "patternKey": pattern_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
     def delete_term(self, catalog_id, glossary_key, term_key, **kwargs):
         """
         Deletes a specific glossary term.
@@ -3346,6 +4069,107 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=detach_catalog_private_endpoint_details)
+
+    def disassociate_custom_property(self, catalog_id, type_key, disassociate_custom_property_details, **kwargs):
+        """
+        Remove the custom property for the given type
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str type_key: (required)
+            Unique type key.
+
+        :param TypeCustomPropertyDetails disassociate_custom_property_details: (required)
+            The information used to remove the custom properties.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Type`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogs/{catalogId}/types/{typeKey}/actions/disassociateCustomProperties"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "disassociate_custom_property got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id,
+            "typeKey": type_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=disassociate_custom_property_details,
+                response_type="Type")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=disassociate_custom_property_details,
+                response_type="Type")
 
     def expand_tree_for_glossary(self, catalog_id, glossary_key, **kwargs):
         """
@@ -3990,6 +4814,107 @@ class DataCatalogClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="Connection")
+
+    def get_custom_property(self, catalog_id, namespace_id, custom_property_key, **kwargs):
+        """
+        Gets a specific custom property for the given key within a data catalog.
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str namespace_id: (required)
+            Unique namespace identifier.
+
+        :param str custom_property_key: (required)
+            Unique Custom Property key
+
+        :param list[str] fields: (optional)
+            Specifies the fields to return in a custom property response.
+
+            Allowed values are: "key", "displayName", "description", "dataType", "namespaceName", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "properties"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.CustomProperty`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}/customProperties/{customPropertyKey}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "fields",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_custom_property got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id,
+            "namespaceId": namespace_id,
+            "customPropertyKey": custom_property_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'fields' in kwargs:
+            fields_allowed_values = ["key", "displayName", "description", "dataType", "namespaceName", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "properties"]
+            for fields_item in kwargs['fields']:
+                if fields_item not in fields_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                    )
+
+        query_params = {
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="CustomProperty")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="CustomProperty")
 
     def get_data_asset(self, catalog_id, data_asset_key, **kwargs):
         """
@@ -5203,6 +6128,200 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="JobMetric")
 
+    def get_namespace(self, catalog_id, namespace_id, **kwargs):
+        """
+        Gets a specific namespace for the given key within a data catalog.
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str namespace_id: (required)
+            Unique namespace identifier.
+
+        :param list[str] fields: (optional)
+            Specifies the fields to return in a namespace response.
+
+            Allowed values are: "key", "displayName", "description", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "properties"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Namespace`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "fields",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_namespace got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id,
+            "namespaceId": namespace_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'fields' in kwargs:
+            fields_allowed_values = ["key", "displayName", "description", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "properties"]
+            for fields_item in kwargs['fields']:
+                if fields_item not in fields_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                    )
+
+        query_params = {
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="Namespace")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="Namespace")
+
+    def get_pattern(self, catalog_id, pattern_key, **kwargs):
+        """
+        Gets a specific pattern for the given key within a data catalog.
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str pattern_key: (required)
+            Unique pattern key.
+
+        :param list[str] fields: (optional)
+            Specifies the fields to return in a pattern response.
+
+            Allowed values are: "key", "displayName", "description", "catalogId", "expression", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "properties"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Pattern`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogs/{catalogId}/patterns/{patternKey}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "fields",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_pattern got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id,
+            "patternKey": pattern_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'fields' in kwargs:
+            fields_allowed_values = ["key", "displayName", "description", "catalogId", "expression", "lifecycleState", "timeCreated", "timeUpdated", "createdById", "updatedById", "properties"]
+            for fields_item in kwargs['fields']:
+                if fields_item not in fields_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                    )
+
+        query_params = {
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="Pattern")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="Pattern")
+
     def get_term(self, catalog_id, glossary_key, term_key, **kwargs):
         """
         Gets a specific glossary term by key.
@@ -5779,6 +6898,107 @@ class DataCatalogClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=import_glossary_details)
+
+    def list_aggregated_physical_entities(self, catalog_id, data_asset_key, entity_key, **kwargs):
+        """
+        List the physical entities aggregated by this logical entity.
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str data_asset_key: (required)
+            Unique data asset key.
+
+        :param str entity_key: (required)
+            Unique entity key.
+
+        :param list[str] fields: (optional)
+            Specifies the fields to return in an entity response.
+
+            Allowed values are: "key", "displayName", "description", "dataAssetKey", "timeCreated", "timeUpdated", "createdById", "updatedById", "lifecycleState", "externalKey", "timeExternal", "timeStatusUpdated", "isLogical", "isPartition", "folderKey", "folderName", "typeKey", "path", "harvestStatus", "lastJobKey", "uri", "properties"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.EntityCollection`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/actions/listAggregatedPhysicalEntities"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "fields",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_aggregated_physical_entities got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id,
+            "dataAssetKey": data_asset_key,
+            "entityKey": entity_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'fields' in kwargs:
+            fields_allowed_values = ["key", "displayName", "description", "dataAssetKey", "timeCreated", "timeUpdated", "createdById", "updatedById", "lifecycleState", "externalKey", "timeExternal", "timeStatusUpdated", "isLogical", "isPartition", "folderKey", "folderName", "typeKey", "path", "harvestStatus", "lastJobKey", "uri", "properties"]
+            for fields_item in kwargs['fields']:
+                if fields_item not in fields_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                    )
+
+        query_params = {
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="EntityCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="EntityCollection")
 
     def list_attribute_tags(self, catalog_id, data_asset_key, entity_key, attribute_key, **kwargs):
         """
@@ -6648,6 +7868,221 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="ConnectionCollection")
 
+    def list_custom_properties(self, catalog_id, namespace_id, **kwargs):
+        """
+        Returns a list of custom properties within a data catalog.
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str namespace_id: (required)
+            Unique namespace identifier.
+
+        :param str display_name: (optional)
+            A filter to return only resources that match the entire display name given. The match is not case sensitive.
+
+        :param str display_name_contains: (optional)
+            A filter to return only resources that match display name pattern given. The match is not case sensitive.
+            For Example : /folders?displayNameContains=Cu.*
+            The above would match all folders with display name that starts with \"Cu\".
+
+        :param list[str] data_types: (optional)
+            Return the custom properties which has specified data types
+
+            Allowed values are: "TEXT", "RICH_TEXT", "BOOLEAN", "NUMBER", "DATE"
+
+        :param list[str] type_name: (optional)
+            A filter to return only resources that match the entire type name given. The match is not case sensitive
+
+            Allowed values are: "DATA_ASSET", "AUTONOMOUS_DATA_WAREHOUSE", "HIVE", "KAFKA", "MYSQL", "ORACLE_OBJECT_STORAGE", "AUTONOMOUS_TRANSACTION_PROCESSING", "ORACLE", "POSTGRESQL", "MICROSOFT_AZURE_SQL_DATABASE", "MICROSOFT_SQL_SERVER", "IBM_DB2", "DATA_ENTITY", "LOGICAL_ENTITY", "TABLE", "VIEW", "ATTRIBUTE", "FOLDER", "CONNECTION", "GLOSSARY", "TERM", "CATEGORY", "FILE", "BUCKET"
+
+        :param str lifecycle_state: (optional)
+            A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+
+            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"
+
+        :param datetime time_created: (optional)
+            Time that the resource was created. An `RFC3339`__ formatted datetime string.
+
+            __ https://tools.ietf.org/html/rfc3339
+
+        :param datetime time_updated: (optional)
+            Time that the resource was updated. An `RFC3339`__ formatted datetime string.
+
+            __ https://tools.ietf.org/html/rfc3339
+
+        :param str created_by_id: (optional)
+            OCID of the user who created the resource.
+
+        :param str updated_by_id: (optional)
+            OCID of the user who updated the resource.
+
+        :param list[str] fields: (optional)
+            Specifies the fields to return in a custom property summary response.
+
+            Allowed values are: "key", "displayName", "description", "dataType", "namespaceName", "lifecycleState", "timeCreated"
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'asc' or 'desc'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for USAGECOUNT and DISPLAYNAME is Ascending
+
+            Allowed values are: "DISPLAYNAME", "USAGECOUNT"
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.CustomPropertyCollection`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}/customProperties"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "display_name",
+            "display_name_contains",
+            "data_types",
+            "type_name",
+            "lifecycle_state",
+            "time_created",
+            "time_updated",
+            "created_by_id",
+            "updated_by_id",
+            "fields",
+            "sort_order",
+            "sort_by",
+            "limit",
+            "page",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_custom_properties got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id,
+            "namespaceId": namespace_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'data_types' in kwargs:
+            data_types_allowed_values = ["TEXT", "RICH_TEXT", "BOOLEAN", "NUMBER", "DATE"]
+            for data_types_item in kwargs['data_types']:
+                if data_types_item not in data_types_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `data_types`, must be one of {0}".format(data_types_allowed_values)
+                    )
+
+        if 'type_name' in kwargs:
+            type_name_allowed_values = ["DATA_ASSET", "AUTONOMOUS_DATA_WAREHOUSE", "HIVE", "KAFKA", "MYSQL", "ORACLE_OBJECT_STORAGE", "AUTONOMOUS_TRANSACTION_PROCESSING", "ORACLE", "POSTGRESQL", "MICROSOFT_AZURE_SQL_DATABASE", "MICROSOFT_SQL_SERVER", "IBM_DB2", "DATA_ENTITY", "LOGICAL_ENTITY", "TABLE", "VIEW", "ATTRIBUTE", "FOLDER", "CONNECTION", "GLOSSARY", "TERM", "CATEGORY", "FILE", "BUCKET"]
+            for type_name_item in kwargs['type_name']:
+                if type_name_item not in type_name_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `type_name`, must be one of {0}".format(type_name_allowed_values)
+                    )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'fields' in kwargs:
+            fields_allowed_values = ["key", "displayName", "description", "dataType", "namespaceName", "lifecycleState", "timeCreated"]
+            for fields_item in kwargs['fields']:
+                if fields_item not in fields_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                    )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["DISPLAYNAME", "USAGECOUNT"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "displayName": kwargs.get("display_name", missing),
+            "displayNameContains": kwargs.get("display_name_contains", missing),
+            "dataTypes": self.base_client.generate_collection_format_param(kwargs.get("data_types", missing), 'multi'),
+            "typeName": self.base_client.generate_collection_format_param(kwargs.get("type_name", missing), 'multi'),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "timeCreated": kwargs.get("time_created", missing),
+            "timeUpdated": kwargs.get("time_updated", missing),
+            "createdById": kwargs.get("created_by_id", missing),
+            "updatedById": kwargs.get("updated_by_id", missing),
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="CustomPropertyCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="CustomPropertyCollection")
+
     def list_data_asset_tags(self, catalog_id, data_asset_key, **kwargs):
         """
         Returns a list of all tags for a data asset.
@@ -7015,6 +8450,102 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="DataAssetCollection")
 
+    def list_derived_logical_entities(self, catalog_id, pattern_key, **kwargs):
+        """
+        List logical entities derived from this pattern.
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str pattern_key: (required)
+            Unique pattern key.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.EntityCollection`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogs/{catalogId}/patterns/{patternKey}/actions/listDerivedLogicalEntities"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_derived_logical_entities got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id,
+            "patternKey": pattern_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="EntityCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="EntityCollection")
+
     def list_entities(self, catalog_id, data_asset_key, **kwargs):
         """
         Returns a list of all entities of a data asset.
@@ -7057,6 +8588,9 @@ class DataCatalogClient(object):
 
         :param str external_key: (optional)
             Unique external identifier of this resource in the external source system.
+
+        :param str pattern_key: (optional)
+            Unique pattern key.
 
         :param datetime time_external: (optional)
             Last modified timestamp of this object in the external system.
@@ -7135,6 +8669,7 @@ class DataCatalogClient(object):
             "created_by_id",
             "updated_by_id",
             "external_key",
+            "pattern_key",
             "time_external",
             "time_status_updated",
             "is_logical",
@@ -7211,6 +8746,7 @@ class DataCatalogClient(object):
             "createdById": kwargs.get("created_by_id", missing),
             "updatedById": kwargs.get("updated_by_id", missing),
             "externalKey": kwargs.get("external_key", missing),
+            "patternKey": kwargs.get("pattern_key", missing),
             "timeExternal": kwargs.get("time_external", missing),
             "timeStatusUpdated": kwargs.get("time_status_updated", missing),
             "isLogical": kwargs.get("is_logical", missing),
@@ -9131,6 +10667,368 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 response_type="JobCollection")
 
+    def list_namespaces(self, catalog_id, **kwargs):
+        """
+        Returns a list of namespaces within a data catalog.
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str display_name: (optional)
+            A filter to return only resources that match the entire display name given. The match is not case sensitive.
+
+        :param str display_name_contains: (optional)
+            A filter to return only resources that match display name pattern given. The match is not case sensitive.
+            For Example : /folders?displayNameContains=Cu.*
+            The above would match all folders with display name that starts with \"Cu\".
+
+        :param str lifecycle_state: (optional)
+            A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+
+            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"
+
+        :param datetime time_created: (optional)
+            Time that the resource was created. An `RFC3339`__ formatted datetime string.
+
+            __ https://tools.ietf.org/html/rfc3339
+
+        :param datetime time_updated: (optional)
+            Time that the resource was updated. An `RFC3339`__ formatted datetime string.
+
+            __ https://tools.ietf.org/html/rfc3339
+
+        :param str created_by_id: (optional)
+            OCID of the user who created the resource.
+
+        :param str updated_by_id: (optional)
+            OCID of the user who updated the resource.
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+
+            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'asc' or 'desc'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param list[str] fields: (optional)
+            Specifies the fields to return in a namespace summary response.
+
+            Allowed values are: "key", "displayName", "description", "lifecycleState", "timeCreated"
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.NamespaceCollection`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogs/{catalogId}/namespaces"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "display_name",
+            "display_name_contains",
+            "lifecycle_state",
+            "time_created",
+            "time_updated",
+            "created_by_id",
+            "updated_by_id",
+            "sort_by",
+            "sort_order",
+            "fields",
+            "limit",
+            "page",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_namespaces got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'fields' in kwargs:
+            fields_allowed_values = ["key", "displayName", "description", "lifecycleState", "timeCreated"]
+            for fields_item in kwargs['fields']:
+                if fields_item not in fields_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                    )
+
+        query_params = {
+            "displayName": kwargs.get("display_name", missing),
+            "displayNameContains": kwargs.get("display_name_contains", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "timeCreated": kwargs.get("time_created", missing),
+            "timeUpdated": kwargs.get("time_updated", missing),
+            "createdById": kwargs.get("created_by_id", missing),
+            "updatedById": kwargs.get("updated_by_id", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="NamespaceCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="NamespaceCollection")
+
+    def list_patterns(self, catalog_id, **kwargs):
+        """
+        Returns a list of patterns within a data catalog.
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str display_name: (optional)
+            A filter to return only resources that match the entire display name given. The match is not case sensitive.
+
+        :param str display_name_contains: (optional)
+            A filter to return only resources that match display name pattern given. The match is not case sensitive.
+            For Example : /folders?displayNameContains=Cu.*
+            The above would match all folders with display name that starts with \"Cu\".
+
+        :param str lifecycle_state: (optional)
+            A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
+
+            Allowed values are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"
+
+        :param datetime time_created: (optional)
+            Time that the resource was created. An `RFC3339`__ formatted datetime string.
+
+            __ https://tools.ietf.org/html/rfc3339
+
+        :param datetime time_updated: (optional)
+            Time that the resource was updated. An `RFC3339`__ formatted datetime string.
+
+            __ https://tools.ietf.org/html/rfc3339
+
+        :param str created_by_id: (optional)
+            OCID of the user who created the resource.
+
+        :param str updated_by_id: (optional)
+            OCID of the user who updated the resource.
+
+        :param list[str] fields: (optional)
+            Specifies the fields to return in a pattern summary response.
+
+            Allowed values are: "key", "displayName", "description", "catalogId", "expression", "lifecycleState", "timeCreated"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+
+            Allowed values are: "TIMECREATED", "DISPLAYNAME"
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'asc' or 'desc'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.PatternCollection`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogs/{catalogId}/patterns"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "display_name",
+            "display_name_contains",
+            "lifecycle_state",
+            "time_created",
+            "time_updated",
+            "created_by_id",
+            "updated_by_id",
+            "fields",
+            "sort_by",
+            "sort_order",
+            "limit",
+            "page",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_patterns got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'fields' in kwargs:
+            fields_allowed_values = ["key", "displayName", "description", "catalogId", "expression", "lifecycleState", "timeCreated"]
+            for fields_item in kwargs['fields']:
+                if fields_item not in fields_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `fields`, must be one of {0}".format(fields_allowed_values)
+                    )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "DISPLAYNAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "displayName": kwargs.get("display_name", missing),
+            "displayNameContains": kwargs.get("display_name_contains", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "timeCreated": kwargs.get("time_created", missing),
+            "timeUpdated": kwargs.get("time_updated", missing),
+            "createdById": kwargs.get("created_by_id", missing),
+            "updatedById": kwargs.get("updated_by_id", missing),
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="PatternCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="PatternCollection")
+
     def list_tags(self, catalog_id, **kwargs):
         """
         Returns a list of all user created tags in the system.
@@ -10346,6 +12244,107 @@ class DataCatalogClient(object):
                 body=parse_connection_details,
                 response_type="list[ConnectionAliasSummary]")
 
+    def remove_data_selector_patterns(self, catalog_id, data_asset_key, data_selector_pattern_details, **kwargs):
+        """
+        Remove data selector pattern from the data asset.
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str data_asset_key: (required)
+            Unique data asset key.
+
+        :param DataSelectorPatternDetails data_selector_pattern_details: (required)
+            The information used to remove the data selector patterns.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.DataAsset`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/actions/removeDataSelectorPatterns"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "if_match",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "remove_data_selector_patterns got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id,
+            "dataAssetKey": data_asset_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=data_selector_pattern_details,
+                response_type="DataAsset")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=data_selector_pattern_details,
+                response_type="DataAsset")
+
     def search_criteria(self, catalog_id, **kwargs):
         """
         Returns a list of search results within a data catalog.
@@ -10952,6 +12951,100 @@ class DataCatalogClient(object):
                 body=update_connection_details,
                 response_type="Connection")
 
+    def update_custom_property(self, catalog_id, namespace_id, custom_property_key, update_custom_property_details, **kwargs):
+        """
+        Updates a specific custom property identified by the given key.
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str namespace_id: (required)
+            Unique namespace identifier.
+
+        :param str custom_property_key: (required)
+            Unique Custom Property key
+
+        :param UpdateCustomPropertyDetails update_custom_property_details: (required)
+            The information to be updated in the custom property.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.CustomProperty`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}/customProperties/{customPropertyKey}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_custom_property got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id,
+            "namespaceId": namespace_id,
+            "customPropertyKey": custom_property_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_custom_property_details,
+                response_type="CustomProperty")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_custom_property_details,
+                response_type="CustomProperty")
+
     def update_data_asset(self, catalog_id, data_asset_key, update_data_asset_details, **kwargs):
         """
         Updates a specific data asset identified by the given key.
@@ -11500,6 +13593,186 @@ class DataCatalogClient(object):
                 body=update_job_definition_details,
                 response_type="JobDefinition")
 
+    def update_namespace(self, catalog_id, namespace_id, update_namespace_details, **kwargs):
+        """
+        Updates a specific namespace identified by the given key.
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str namespace_id: (required)
+            Unique namespace identifier.
+
+        :param UpdateNamespaceDetails update_namespace_details: (required)
+            The information to be updated in the namespace.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Namespace`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_namespace got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id,
+            "namespaceId": namespace_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_namespace_details,
+                response_type="Namespace")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_namespace_details,
+                response_type="Namespace")
+
+    def update_pattern(self, catalog_id, pattern_key, update_pattern_details, **kwargs):
+        """
+        Updates a specific pattern identified by the given key.
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str pattern_key: (required)
+            Unique pattern key.
+
+        :param UpdatePatternDetails update_pattern_details: (required)
+            The information to be updated in the pattern.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Pattern`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogs/{catalogId}/patterns/{patternKey}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_pattern got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id,
+            "patternKey": pattern_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_pattern_details,
+                response_type="Pattern")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_pattern_details,
+                response_type="Pattern")
+
     def update_term(self, catalog_id, glossary_key, term_key, update_term_details, **kwargs):
         """
         Updates a specific glossary term.
@@ -12004,3 +14277,95 @@ class DataCatalogClient(object):
                 header_params=header_params,
                 body=validate_connection_details,
                 response_type="ValidateConnectionResult")
+
+    def validate_pattern(self, catalog_id, pattern_key, validate_pattern_details, **kwargs):
+        """
+        Validate pattern by deriving file groups representing logical entities using the expression
+
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str pattern_key: (required)
+            Unique pattern key.
+
+        :param ValidatePatternDetails validate_pattern_details: (required)
+            The information used to validate the pattern.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.ValidatePatternResult`
+        :rtype: :class:`~oci.response.Response`
+        """
+        resource_path = "/catalogs/{catalogId}/patterns/{patternKey}/actions/validate"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "validate_pattern got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "catalogId": catalog_id,
+            "patternKey": pattern_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=validate_pattern_details,
+                response_type="ValidatePatternResult")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=validate_pattern_details,
+                response_type="ValidatePatternResult")

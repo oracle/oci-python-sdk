@@ -101,6 +101,10 @@ class Type(object):
             The value to assign to the uri property of this Type.
         :type uri: str
 
+        :param custom_properties:
+            The value to assign to the custom_properties property of this Type.
+        :type custom_properties: list[CustomPropertySummary]
+
         """
         self.swagger_types = {
             'key': 'str',
@@ -114,7 +118,8 @@ class Type(object):
             'is_approved': 'bool',
             'type_category': 'str',
             'external_type_name': 'str',
-            'uri': 'str'
+            'uri': 'str',
+            'custom_properties': 'list[CustomPropertySummary]'
         }
 
         self.attribute_map = {
@@ -129,7 +134,8 @@ class Type(object):
             'is_approved': 'isApproved',
             'type_category': 'typeCategory',
             'external_type_name': 'externalTypeName',
-            'uri': 'uri'
+            'uri': 'uri',
+            'custom_properties': 'customProperties'
         }
 
         self._key = None
@@ -144,6 +150,7 @@ class Type(object):
         self._type_category = None
         self._external_type_name = None
         self._uri = None
+        self._custom_properties = None
 
     @property
     def key(self):
@@ -474,6 +481,30 @@ class Type(object):
         :type: str
         """
         self._uri = uri
+
+    @property
+    def custom_properties(self):
+        """
+        Gets the custom_properties of this Type.
+        Custom properties associated with this Type.
+
+
+        :return: The custom_properties of this Type.
+        :rtype: list[CustomPropertySummary]
+        """
+        return self._custom_properties
+
+    @custom_properties.setter
+    def custom_properties(self, custom_properties):
+        """
+        Sets the custom_properties of this Type.
+        Custom properties associated with this Type.
+
+
+        :param custom_properties: The custom_properties of this Type.
+        :type: list[CustomPropertySummary]
+        """
+        self._custom_properties = custom_properties
 
     def __repr__(self):
         return formatted_flat_dict(self)
