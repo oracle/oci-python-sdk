@@ -89,8 +89,8 @@ class LogEntryBatch(object):
     def source(self):
         """
         **[Required]** Gets the source of this LogEntryBatch.
-        Source of the logs that generated the message. It could be the
-        instance name, hostname or the source used to read the event.
+        Source of the logs that generated the message. This could be the
+        instance name, hostname, or the source used to read the event. For example, \"ServerA\".
 
 
         :return: The source of this LogEntryBatch.
@@ -102,8 +102,8 @@ class LogEntryBatch(object):
     def source(self, source):
         """
         Sets the source of this LogEntryBatch.
-        Source of the logs that generated the message. It could be the
-        instance name, hostname or the source used to read the event.
+        Source of the logs that generated the message. This could be the
+        instance name, hostname, or the source used to read the event. For example, \"ServerA\".
 
 
         :param source: The source of this LogEntryBatch.
@@ -116,7 +116,7 @@ class LogEntryBatch(object):
         """
         **[Required]** Gets the type of this LogEntryBatch.
         This field signifies the type of logs being ingested.
-        For example: ServerA.requestLogs
+        For example: ServerA.requestLogs.
 
 
         :return: The type of this LogEntryBatch.
@@ -129,7 +129,7 @@ class LogEntryBatch(object):
         """
         Sets the type of this LogEntryBatch.
         This field signifies the type of logs being ingested.
-        For example: ServerA.requestLogs
+        For example: ServerA.requestLogs.
 
 
         :param type: The type of this LogEntryBatch.
@@ -141,9 +141,9 @@ class LogEntryBatch(object):
     def subject(self):
         """
         Gets the subject of this LogEntryBatch.
-        This optional field is useful for specifying the specific subresource
+        This optional field is useful for specifying the specific sub-resource
         or input file used to read the event.
-        For example: \"/var/log/application.log\"
+        For example: \"/var/log/application.log\".
 
 
         :return: The subject of this LogEntryBatch.
@@ -155,9 +155,9 @@ class LogEntryBatch(object):
     def subject(self, subject):
         """
         Sets the subject of this LogEntryBatch.
-        This optional field is useful for specifying the specific subresource
+        This optional field is useful for specifying the specific sub-resource
         or input file used to read the event.
-        For example: \"/var/log/application.log\"
+        For example: \"/var/log/application.log\".
 
 
         :param subject: The subject of this LogEntryBatch.
@@ -169,9 +169,9 @@ class LogEntryBatch(object):
     def defaultlogentrytime(self):
         """
         **[Required]** Gets the defaultlogentrytime of this LogEntryBatch.
-        The timestamp for all log entries in this request. This can be
+        The timestamp for all log entries in this batch. This can be
         considered as the default timestamp for each entry, unless it is
-        overwritten by the entry time. An RFC3339 formatted datetime
+        overwritten by the entry time. An RFC3339-formatted date-time
         string.
 
 
@@ -184,9 +184,9 @@ class LogEntryBatch(object):
     def defaultlogentrytime(self, defaultlogentrytime):
         """
         Sets the defaultlogentrytime of this LogEntryBatch.
-        The timestamp for all log entries in this request. This can be
+        The timestamp for all log entries in this batch. This can be
         considered as the default timestamp for each entry, unless it is
-        overwritten by the entry time. An RFC3339 formatted datetime
+        overwritten by the entry time. An RFC3339-formatted date-time
         string.
 
 

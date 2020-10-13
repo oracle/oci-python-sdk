@@ -88,7 +88,7 @@ class CreateLogDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateLogDetails.
-        The display name of a user-friendly name. It has to be unique within enclosing resource,
+        The user-friendly display name. This must be unique within the enclosing resource,
         and it's changeable. Avoid entering confidential information.
 
 
@@ -101,7 +101,7 @@ class CreateLogDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateLogDetails.
-        The display name of a user-friendly name. It has to be unique within enclosing resource,
+        The user-friendly display name. This must be unique within the enclosing resource,
         and it's changeable. Avoid entering confidential information.
 
 
@@ -114,7 +114,7 @@ class CreateLogDetails(object):
     def log_type(self):
         """
         **[Required]** Gets the log_type of this CreateLogDetails.
-        The logType that the log object is for, custom or service.
+        The logType that the log object is for, whether custom or service.
 
         Allowed values for this property are: "CUSTOM", "SERVICE"
 
@@ -128,7 +128,7 @@ class CreateLogDetails(object):
     def log_type(self, log_type):
         """
         Sets the log_type of this CreateLogDetails.
-        The logType that the log object is for, custom or service.
+        The logType that the log object is for, whether custom or service.
 
 
         :param log_type: The log_type of this CreateLogDetails.
@@ -256,7 +256,7 @@ class CreateLogDetails(object):
     def retention_duration(self):
         """
         Gets the retention_duration of this CreateLogDetails.
-        Log retention duration in days.
+        Log retention duration in 30-day increments (30, 60, 90 and so on).
 
 
         :return: The retention_duration of this CreateLogDetails.
@@ -268,7 +268,7 @@ class CreateLogDetails(object):
     def retention_duration(self, retention_duration):
         """
         Sets the retention_duration of this CreateLogDetails.
-        Log retention duration in days.
+        Log retention duration in 30-day increments (30, 60, 90 and so on).
 
 
         :param retention_duration: The retention_duration of this CreateLogDetails.

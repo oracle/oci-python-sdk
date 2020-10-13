@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class LoggingClient(object):
     """
-    PublicLoggingDataplane API specification
+    Use the Logging Ingestion API to ingest your application logs.
     """
 
     def __init__(self, config, **kwargs):
@@ -87,7 +87,7 @@ class LoggingClient(object):
 
     def put_logs(self, log_id, put_logs_details, **kwargs):
         """
-        This Api allows ingesting logs associated with a logId. Success
+        This API allows ingesting logs associated with a logId. A success
         response implies the data has been accepted.
 
 
@@ -99,7 +99,7 @@ class LoggingClient(object):
 
         :param datetime timestamp_opc_agent_processing: (optional)
             Effective timestamp, for when the agent started processing the log
-            segment being sent. An RFC3339 formatted datetime string.
+            segment being sent. An RFC3339-formatted date-time string.
 
         :param str opc_agent_version: (optional)
             Version of the agent sending the request.

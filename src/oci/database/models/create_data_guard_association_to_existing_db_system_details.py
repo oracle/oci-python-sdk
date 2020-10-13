@@ -43,13 +43,18 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
             The value to assign to the peer_db_system_id property of this CreateDataGuardAssociationToExistingDbSystemDetails.
         :type peer_db_system_id: str
 
+        :param peer_db_home_id:
+            The value to assign to the peer_db_home_id property of this CreateDataGuardAssociationToExistingDbSystemDetails.
+        :type peer_db_home_id: str
+
         """
         self.swagger_types = {
             'database_admin_password': 'str',
             'protection_mode': 'str',
             'transport_type': 'str',
             'creation_type': 'str',
-            'peer_db_system_id': 'str'
+            'peer_db_system_id': 'str',
+            'peer_db_home_id': 'str'
         }
 
         self.attribute_map = {
@@ -57,7 +62,8 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
             'protection_mode': 'protectionMode',
             'transport_type': 'transportType',
             'creation_type': 'creationType',
-            'peer_db_system_id': 'peerDbSystemId'
+            'peer_db_system_id': 'peerDbSystemId',
+            'peer_db_home_id': 'peerDbHomeId'
         }
 
         self._database_admin_password = None
@@ -65,6 +71,7 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
         self._transport_type = None
         self._creation_type = None
         self._peer_db_system_id = None
+        self._peer_db_home_id = None
         self._creation_type = 'ExistingDbSystem'
 
     @property
@@ -96,6 +103,36 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
         :type: str
         """
         self._peer_db_system_id = peer_db_system_id
+
+    @property
+    def peer_db_home_id(self):
+        """
+        Gets the peer_db_home_id of this CreateDataGuardAssociationToExistingDbSystemDetails.
+        The `OCID`__ of the DB home in which to create the standby database.
+        You must supply this value to create standby database with an existing DB home
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The peer_db_home_id of this CreateDataGuardAssociationToExistingDbSystemDetails.
+        :rtype: str
+        """
+        return self._peer_db_home_id
+
+    @peer_db_home_id.setter
+    def peer_db_home_id(self, peer_db_home_id):
+        """
+        Sets the peer_db_home_id of this CreateDataGuardAssociationToExistingDbSystemDetails.
+        The `OCID`__ of the DB home in which to create the standby database.
+        You must supply this value to create standby database with an existing DB home
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param peer_db_home_id: The peer_db_home_id of this CreateDataGuardAssociationToExistingDbSystemDetails.
+        :type: str
+        """
+        self._peer_db_home_id = peer_db_home_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

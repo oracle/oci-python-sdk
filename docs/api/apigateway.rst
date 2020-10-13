@@ -27,6 +27,8 @@ Apigateway
     oci.apigateway.models.AccessLogPolicy
     oci.apigateway.models.AnonymousRouteAuthorizationPolicy
     oci.apigateway.models.AnyOfRouteAuthorizationPolicy
+    oci.apigateway.models.Api
+    oci.apigateway.models.ApiCollection
     oci.apigateway.models.ApiSpecification
     oci.apigateway.models.ApiSpecificationLoggingPolicies
     oci.apigateway.models.ApiSpecificationRequestPolicies
@@ -34,15 +36,22 @@ Apigateway
     oci.apigateway.models.ApiSpecificationRouteBackend
     oci.apigateway.models.ApiSpecificationRouteRequestPolicies
     oci.apigateway.models.ApiSpecificationRouteResponsePolicies
+    oci.apigateway.models.ApiSummary
+    oci.apigateway.models.ApiValidationDetail
+    oci.apigateway.models.ApiValidationDetails
+    oci.apigateway.models.ApiValidationResult
+    oci.apigateway.models.ApiValidations
     oci.apigateway.models.AuthenticationOnlyRouteAuthorizationPolicy
     oci.apigateway.models.AuthenticationPolicy
     oci.apigateway.models.Certificate
     oci.apigateway.models.CertificateCollection
     oci.apigateway.models.CertificateSummary
+    oci.apigateway.models.ChangeApiCompartmentDetails
     oci.apigateway.models.ChangeCertificateCompartmentDetails
     oci.apigateway.models.ChangeDeploymentCompartmentDetails
     oci.apigateway.models.ChangeGatewayCompartmentDetails
     oci.apigateway.models.CorsPolicy
+    oci.apigateway.models.CreateApiDetails
     oci.apigateway.models.CreateCertificateDetails
     oci.apigateway.models.CreateDeploymentDetails
     oci.apigateway.models.CreateGatewayDetails
@@ -83,6 +92,7 @@ Apigateway
     oci.apigateway.models.StaticPublicKey
     oci.apigateway.models.StaticPublicKeySet
     oci.apigateway.models.StockResponseBackend
+    oci.apigateway.models.UpdateApiDetails
     oci.apigateway.models.UpdateCertificateDetails
     oci.apigateway.models.UpdateDeploymentDetails
     oci.apigateway.models.UpdateGatewayDetails

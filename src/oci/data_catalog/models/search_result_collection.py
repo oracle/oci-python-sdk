@@ -27,19 +27,33 @@ class SearchResultCollection(object):
             The value to assign to the items property of this SearchResultCollection.
         :type items: list[SearchResult]
 
+        :param query:
+            The value to assign to the query property of this SearchResultCollection.
+        :type query: str
+
+        :param faceted_search_aggregation:
+            The value to assign to the faceted_search_aggregation property of this SearchResultCollection.
+        :type faceted_search_aggregation: list[FacetedSearchAggregation]
+
         """
         self.swagger_types = {
             'count': 'int',
-            'items': 'list[SearchResult]'
+            'items': 'list[SearchResult]',
+            'query': 'str',
+            'faceted_search_aggregation': 'list[FacetedSearchAggregation]'
         }
 
         self.attribute_map = {
             'count': 'count',
-            'items': 'items'
+            'items': 'items',
+            'query': 'query',
+            'faceted_search_aggregation': 'facetedSearchAggregation'
         }
 
         self._count = None
         self._items = None
+        self._query = None
+        self._faceted_search_aggregation = None
 
     @property
     def count(self):
@@ -88,6 +102,54 @@ class SearchResultCollection(object):
         :type: list[SearchResult]
         """
         self._items = items
+
+    @property
+    def query(self):
+        """
+        Gets the query of this SearchResultCollection.
+        String that data objects are to be searched with.
+
+
+        :return: The query of this SearchResultCollection.
+        :rtype: str
+        """
+        return self._query
+
+    @query.setter
+    def query(self, query):
+        """
+        Sets the query of this SearchResultCollection.
+        String that data objects are to be searched with.
+
+
+        :param query: The query of this SearchResultCollection.
+        :type: str
+        """
+        self._query = query
+
+    @property
+    def faceted_search_aggregation(self):
+        """
+        Gets the faceted_search_aggregation of this SearchResultCollection.
+        Aggregations/facets on properties of data objects.
+
+
+        :return: The faceted_search_aggregation of this SearchResultCollection.
+        :rtype: list[FacetedSearchAggregation]
+        """
+        return self._faceted_search_aggregation
+
+    @faceted_search_aggregation.setter
+    def faceted_search_aggregation(self, faceted_search_aggregation):
+        """
+        Sets the faceted_search_aggregation of this SearchResultCollection.
+        Aggregations/facets on properties of data objects.
+
+
+        :param faceted_search_aggregation: The faceted_search_aggregation of this SearchResultCollection.
+        :type: list[FacetedSearchAggregation]
+        """
+        self._faceted_search_aggregation = faceted_search_aggregation
 
     def __repr__(self):
         return formatted_flat_dict(self)

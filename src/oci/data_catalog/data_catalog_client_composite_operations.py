@@ -23,6 +23,94 @@ class DataCatalogClientCompositeOperations(object):
         """
         self.client = client
 
+    def add_data_selector_patterns_and_wait_for_state(self, catalog_id, data_asset_key, data_selector_pattern_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_catalog.DataCatalogClient.add_data_selector_patterns` and waits for the :py:class:`~oci.data_catalog.models.DataAsset` acted upon
+        to enter the given state(s).
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str data_asset_key: (required)
+            Unique data asset key.
+
+        :param DataSelectorPatternDetails data_selector_pattern_details: (required)
+            The information used to add the patterns for deriving logical entities.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_catalog.models.DataAsset.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_catalog.DataCatalogClient.add_data_selector_patterns`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.add_data_selector_patterns(catalog_id, data_asset_key, data_selector_pattern_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_data_asset(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def associate_custom_property_and_wait_for_state(self, catalog_id, type_key, associate_custom_property_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_catalog.DataCatalogClient.associate_custom_property` and waits for the :py:class:`~oci.data_catalog.models.Type` acted upon
+        to enter the given state(s).
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str type_key: (required)
+            Unique type key.
+
+        :param TypeCustomPropertyDetails associate_custom_property_details: (required)
+            The information used to associate the custom property for the type.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_catalog.models.Type.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_catalog.DataCatalogClient.associate_custom_property`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.associate_custom_property(catalog_id, type_key, associate_custom_property_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_type(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def attach_catalog_private_endpoint_and_wait_for_state(self, attach_catalog_private_endpoint_details, catalog_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.data_catalog.DataCatalogClient.attach_catalog_private_endpoint` and waits for the :py:class:`~oci.data_catalog.models.WorkRequest`
@@ -354,6 +442,50 @@ class DataCatalogClientCompositeOperations(object):
             waiter_result = oci.wait_until(
                 self.client,
                 self.client.get_connection(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def create_custom_property_and_wait_for_state(self, catalog_id, namespace_id, create_custom_property_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_catalog.DataCatalogClient.create_custom_property` and waits for the :py:class:`~oci.data_catalog.models.CustomProperty` acted upon
+        to enter the given state(s).
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str namespace_id: (required)
+            Unique namespace identifier.
+
+        :param CreateCustomPropertyDetails create_custom_property_details: (required)
+            The information used to create the Custom Property.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_catalog.models.CustomProperty.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_catalog.DataCatalogClient.create_custom_property`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_custom_property(catalog_id, namespace_id, create_custom_property_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_custom_property(wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -797,6 +929,88 @@ class DataCatalogClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def create_namespace_and_wait_for_state(self, catalog_id, create_namespace_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_catalog.DataCatalogClient.create_namespace` and waits for the :py:class:`~oci.data_catalog.models.Namespace` acted upon
+        to enter the given state(s).
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param CreateNamespaceDetails create_namespace_details: (required)
+            The information used to create the Namespace.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_catalog.models.Namespace.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_catalog.DataCatalogClient.create_namespace`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_namespace(catalog_id, create_namespace_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_namespace(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def create_pattern_and_wait_for_state(self, catalog_id, create_pattern_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_catalog.DataCatalogClient.create_pattern` and waits for the :py:class:`~oci.data_catalog.models.Pattern` acted upon
+        to enter the given state(s).
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param CreatePatternDetails create_pattern_details: (required)
+            The information used to create the pattern.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_catalog.models.Pattern.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_catalog.DataCatalogClient.create_pattern`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.create_pattern(catalog_id, create_pattern_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_pattern(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def create_term_and_wait_for_state(self, catalog_id, glossary_key, create_term_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.data_catalog.DataCatalogClient.create_term` and waits for the :py:class:`~oci.data_catalog.models.Term` acted upon
@@ -1021,6 +1235,94 @@ class DataCatalogClientCompositeOperations(object):
         except Exception as e:
             raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
 
+    def disassociate_custom_property_and_wait_for_state(self, catalog_id, type_key, disassociate_custom_property_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_catalog.DataCatalogClient.disassociate_custom_property` and waits for the :py:class:`~oci.data_catalog.models.Type` acted upon
+        to enter the given state(s).
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str type_key: (required)
+            Unique type key.
+
+        :param TypeCustomPropertyDetails disassociate_custom_property_details: (required)
+            The information used to remove the custom properties.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_catalog.models.Type.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_catalog.DataCatalogClient.disassociate_custom_property`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.disassociate_custom_property(catalog_id, type_key, disassociate_custom_property_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_type(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def remove_data_selector_patterns_and_wait_for_state(self, catalog_id, data_asset_key, data_selector_pattern_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_catalog.DataCatalogClient.remove_data_selector_patterns` and waits for the :py:class:`~oci.data_catalog.models.DataAsset` acted upon
+        to enter the given state(s).
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str data_asset_key: (required)
+            Unique data asset key.
+
+        :param DataSelectorPatternDetails data_selector_pattern_details: (required)
+            The information used to remove the data selector patterns.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_catalog.models.DataAsset.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_catalog.DataCatalogClient.remove_data_selector_patterns`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.remove_data_selector_patterns(catalog_id, data_asset_key, data_selector_pattern_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_data_asset(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def update_attribute_and_wait_for_state(self, catalog_id, data_asset_key, entity_key, attribute_key, update_attribute_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.data_catalog.DataCatalogClient.update_attribute` and waits for the :py:class:`~oci.data_catalog.models.Attribute` acted upon
@@ -1191,6 +1493,53 @@ class DataCatalogClientCompositeOperations(object):
             waiter_result = oci.wait_until(
                 self.client,
                 self.client.get_connection(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_custom_property_and_wait_for_state(self, catalog_id, namespace_id, custom_property_key, update_custom_property_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_catalog.DataCatalogClient.update_custom_property` and waits for the :py:class:`~oci.data_catalog.models.CustomProperty` acted upon
+        to enter the given state(s).
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str namespace_id: (required)
+            Unique namespace identifier.
+
+        :param str custom_property_key: (required)
+            Unique Custom Property key
+
+        :param UpdateCustomPropertyDetails update_custom_property_details: (required)
+            The information to be updated in the custom property.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_catalog.models.CustomProperty.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_catalog.DataCatalogClient.update_custom_property`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_custom_property(catalog_id, namespace_id, custom_property_key, update_custom_property_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_custom_property(wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
@@ -1461,6 +1810,94 @@ class DataCatalogClientCompositeOperations(object):
             waiter_result = oci.wait_until(
                 self.client,
                 self.client.get_job_definition(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_namespace_and_wait_for_state(self, catalog_id, namespace_id, update_namespace_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_catalog.DataCatalogClient.update_namespace` and waits for the :py:class:`~oci.data_catalog.models.Namespace` acted upon
+        to enter the given state(s).
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str namespace_id: (required)
+            Unique namespace identifier.
+
+        :param UpdateNamespaceDetails update_namespace_details: (required)
+            The information to be updated in the namespace.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_catalog.models.Namespace.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_catalog.DataCatalogClient.update_namespace`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_namespace(catalog_id, namespace_id, update_namespace_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_namespace(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
+    def update_pattern_and_wait_for_state(self, catalog_id, pattern_key, update_pattern_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.data_catalog.DataCatalogClient.update_pattern` and waits for the :py:class:`~oci.data_catalog.models.Pattern` acted upon
+        to enter the given state(s).
+
+        :param str catalog_id: (required)
+            Unique catalog identifier.
+
+        :param str pattern_key: (required)
+            Unique pattern key.
+
+        :param UpdatePatternDetails update_pattern_details: (required)
+            The information to be updated in the pattern.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.data_catalog.models.Pattern.lifecycle_state`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.data_catalog.DataCatalogClient.update_pattern`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.update_pattern(catalog_id, pattern_key, update_pattern_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.data.id
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_pattern(wait_for_resource_id),
                 evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )

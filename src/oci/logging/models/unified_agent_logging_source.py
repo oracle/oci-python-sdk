@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UnifiedAgentLoggingSource(object):
     """
-    logging source object.
+    Logging source object.
     """
 
     #: A constant which can be used with the source_type property of a UnifiedAgentLoggingSource.
@@ -99,7 +99,7 @@ class UnifiedAgentLoggingSource(object):
     def source_type(self):
         """
         **[Required]** Gets the source_type of this UnifiedAgentLoggingSource.
-        unified schema logging source Type
+        Unified schema logging source type.
 
         Allowed values for this property are: "LOG_TAIL", "WINDOWS_EVENT_LOG", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -114,7 +114,7 @@ class UnifiedAgentLoggingSource(object):
     def source_type(self, source_type):
         """
         Sets the source_type of this UnifiedAgentLoggingSource.
-        unified schema logging source Type
+        Unified schema logging source type.
 
 
         :param source_type: The source_type of this UnifiedAgentLoggingSource.

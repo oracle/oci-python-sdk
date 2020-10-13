@@ -30,6 +30,10 @@ class CreateDataAssetDetails(object):
             The value to assign to the type_key property of this CreateDataAssetDetails.
         :type type_key: str
 
+        :param custom_property_members:
+            The value to assign to the custom_property_members property of this CreateDataAssetDetails.
+        :type custom_property_members: list[CustomPropertySetUsage]
+
         :param properties:
             The value to assign to the properties property of this CreateDataAssetDetails.
         :type properties: dict(str, dict(str, str))
@@ -39,6 +43,7 @@ class CreateDataAssetDetails(object):
             'display_name': 'str',
             'description': 'str',
             'type_key': 'str',
+            'custom_property_members': 'list[CustomPropertySetUsage]',
             'properties': 'dict(str, dict(str, str))'
         }
 
@@ -46,12 +51,14 @@ class CreateDataAssetDetails(object):
             'display_name': 'displayName',
             'description': 'description',
             'type_key': 'typeKey',
+            'custom_property_members': 'customPropertyMembers',
             'properties': 'properties'
         }
 
         self._display_name = None
         self._description = None
         self._type_key = None
+        self._custom_property_members = None
         self._properties = None
 
     @property
@@ -127,6 +134,30 @@ class CreateDataAssetDetails(object):
         :type: str
         """
         self._type_key = type_key
+
+    @property
+    def custom_property_members(self):
+        """
+        Gets the custom_property_members of this CreateDataAssetDetails.
+        The list of customized properties along with the values for this object
+
+
+        :return: The custom_property_members of this CreateDataAssetDetails.
+        :rtype: list[CustomPropertySetUsage]
+        """
+        return self._custom_property_members
+
+    @custom_property_members.setter
+    def custom_property_members(self, custom_property_members):
+        """
+        Sets the custom_property_members of this CreateDataAssetDetails.
+        The list of customized properties along with the values for this object
+
+
+        :param custom_property_members: The custom_property_members of this CreateDataAssetDetails.
+        :type: list[CustomPropertySetUsage]
+        """
+        self._custom_property_members = custom_property_members
 
     @property
     def properties(self):

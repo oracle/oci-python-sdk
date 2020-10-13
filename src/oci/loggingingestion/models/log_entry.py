@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LogEntry(object):
     """
-    Contains the content of the log with associated timestamp and id. Each
+    Contains the log content with the associated timestamp and ID. Each
     entry should be less than 1 MB size.
     """
 
@@ -52,7 +52,7 @@ class LogEntry(object):
     def data(self):
         """
         **[Required]** Gets the data of this LogEntry.
-        The content of the log entry.
+        The log entry content.
 
 
         :return: The data of this LogEntry.
@@ -64,7 +64,7 @@ class LogEntry(object):
     def data(self, data):
         """
         Sets the data of this LogEntry.
-        The content of the log entry.
+        The log entry content.
 
 
         :param data: The data of this LogEntry.
@@ -102,9 +102,8 @@ class LogEntry(object):
     def time(self):
         """
         Gets the time of this LogEntry.
-        Optional. The timestamp associated with the log entry. Defaults to
-        PutLogsDetails.defaultlogentrytime if unspecified. An RFC3339 formatted
-        datetime string.
+        Optional. The timestamp associated with the log entry. An RFC3339-formatted date-time string.
+        If unspecified, defaults to PutLogsDetails.defaultlogentrytime.
 
 
         :return: The time of this LogEntry.
@@ -116,9 +115,8 @@ class LogEntry(object):
     def time(self, time):
         """
         Sets the time of this LogEntry.
-        Optional. The timestamp associated with the log entry. Defaults to
-        PutLogsDetails.defaultlogentrytime if unspecified. An RFC3339 formatted
-        datetime string.
+        Optional. The timestamp associated with the log entry. An RFC3339-formatted date-time string.
+        If unspecified, defaults to PutLogsDetails.defaultlogentrytime.
 
 
         :param time: The time of this LogEntry.

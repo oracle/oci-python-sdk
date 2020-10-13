@@ -30,10 +30,6 @@ class UpdateLogSavedSearchDetails(object):
             The value to assign to the query property of this UpdateLogSavedSearchDetails.
         :type query: str
 
-        :param is_quick_start:
-            The value to assign to the is_quick_start property of this UpdateLogSavedSearchDetails.
-        :type is_quick_start: bool
-
         :param defined_tags:
             The value to assign to the defined_tags property of this UpdateLogSavedSearchDetails.
         :type defined_tags: dict(str, dict(str, object))
@@ -47,7 +43,6 @@ class UpdateLogSavedSearchDetails(object):
             'name': 'str',
             'description': 'str',
             'query': 'str',
-            'is_quick_start': 'bool',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
@@ -56,7 +51,6 @@ class UpdateLogSavedSearchDetails(object):
             'name': 'name',
             'description': 'description',
             'query': 'query',
-            'is_quick_start': 'isQuickStart',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
@@ -64,7 +58,6 @@ class UpdateLogSavedSearchDetails(object):
         self._name = None
         self._description = None
         self._query = None
-        self._is_quick_start = None
         self._defined_tags = None
         self._freeform_tags = None
 
@@ -72,7 +65,7 @@ class UpdateLogSavedSearchDetails(object):
     def name(self):
         """
         Gets the name of this UpdateLogSavedSearchDetails.
-        The display name of a user-friendly name. It has to be unique within enclosing resource,
+        The user-friendly display name. This must be unique within the enclosing resource,
         and it's changeable. Avoid entering confidential information.
 
 
@@ -85,7 +78,7 @@ class UpdateLogSavedSearchDetails(object):
     def name(self, name):
         """
         Sets the name of this UpdateLogSavedSearchDetails.
-        The display name of a user-friendly name. It has to be unique within enclosing resource,
+        The user-friendly display name. This must be unique within the enclosing resource,
         and it's changeable. Avoid entering confidential information.
 
 
@@ -141,30 +134,6 @@ class UpdateLogSavedSearchDetails(object):
         :type: str
         """
         self._query = query
-
-    @property
-    def is_quick_start(self):
-        """
-        Gets the is_quick_start of this UpdateLogSavedSearchDetails.
-        True if the LogSavedSearch should be show as quickstart in the UI
-
-
-        :return: The is_quick_start of this UpdateLogSavedSearchDetails.
-        :rtype: bool
-        """
-        return self._is_quick_start
-
-    @is_quick_start.setter
-    def is_quick_start(self, is_quick_start):
-        """
-        Sets the is_quick_start of this UpdateLogSavedSearchDetails.
-        True if the LogSavedSearch should be show as quickstart in the UI
-
-
-        :param is_quick_start: The is_quick_start of this UpdateLogSavedSearchDetails.
-        :type: bool
-        """
-        self._is_quick_start = is_quick_start
 
     @property
     def defined_tags(self):

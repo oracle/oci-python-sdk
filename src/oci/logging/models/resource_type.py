@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResourceType(object):
     """
-    Type of Resource that Service provides.
+    Type of resource that a service provides.
     """
 
     def __init__(self, **kwargs):
@@ -68,7 +68,7 @@ class ResourceType(object):
     def categories(self):
         """
         Gets the categories of this ResourceType.
-        categories for resources.
+        Categories for resources.
 
 
         :return: The categories of this ResourceType.
@@ -80,7 +80,7 @@ class ResourceType(object):
     def categories(self, categories):
         """
         Sets the categories of this ResourceType.
-        categories for resources.
+        Categories for resources.
 
 
         :param categories: The categories of this ResourceType.

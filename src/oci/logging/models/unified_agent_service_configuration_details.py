@@ -60,7 +60,7 @@ class UnifiedAgentServiceConfigurationDetails(object):
     def configuration_type(self):
         """
         **[Required]** Gets the configuration_type of this UnifiedAgentServiceConfigurationDetails.
-        Type of unified agent service configuration.
+        Type of Unified Agent service configuration.
 
         Allowed values for this property are: "LOGGING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -75,7 +75,7 @@ class UnifiedAgentServiceConfigurationDetails(object):
     def configuration_type(self, configuration_type):
         """
         Sets the configuration_type of this UnifiedAgentServiceConfigurationDetails.
-        Type of unified agent service configuration.
+        Type of Unified Agent service configuration.
 
 
         :param configuration_type: The configuration_type of this UnifiedAgentServiceConfigurationDetails.

@@ -42,6 +42,10 @@ class CreateFolderDetails(object):
             The value to assign to the description property of this CreateFolderDetails.
         :type description: str
 
+        :param custom_property_members:
+            The value to assign to the custom_property_members property of this CreateFolderDetails.
+        :type custom_property_members: list[CustomPropertySetUsage]
+
         :param properties:
             The value to assign to the properties property of this CreateFolderDetails.
         :type properties: dict(str, dict(str, str))
@@ -67,6 +71,7 @@ class CreateFolderDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'description': 'str',
+            'custom_property_members': 'list[CustomPropertySetUsage]',
             'properties': 'dict(str, dict(str, str))',
             'parent_folder_key': 'str',
             'time_external': 'datetime',
@@ -77,6 +82,7 @@ class CreateFolderDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
+            'custom_property_members': 'customPropertyMembers',
             'properties': 'properties',
             'parent_folder_key': 'parentFolderKey',
             'time_external': 'timeExternal',
@@ -86,6 +92,7 @@ class CreateFolderDetails(object):
 
         self._display_name = None
         self._description = None
+        self._custom_property_members = None
         self._properties = None
         self._parent_folder_key = None
         self._time_external = None
@@ -141,6 +148,30 @@ class CreateFolderDetails(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def custom_property_members(self):
+        """
+        Gets the custom_property_members of this CreateFolderDetails.
+        The list of customized properties along with the values for this object
+
+
+        :return: The custom_property_members of this CreateFolderDetails.
+        :rtype: list[CustomPropertySetUsage]
+        """
+        return self._custom_property_members
+
+    @custom_property_members.setter
+    def custom_property_members(self, custom_property_members):
+        """
+        Sets the custom_property_members of this CreateFolderDetails.
+        The list of customized properties along with the values for this object
+
+
+        :param custom_property_members: The custom_property_members of this CreateFolderDetails.
+        :type: list[CustomPropertySetUsage]
+        """
+        self._custom_property_members = custom_property_members
 
     @property
     def properties(self):

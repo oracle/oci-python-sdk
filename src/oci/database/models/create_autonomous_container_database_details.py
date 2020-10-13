@@ -17,6 +17,18 @@ class CreateAutonomousContainerDatabaseDetails(object):
     #: This constant has a value of "STANDARD"
     SERVICE_LEVEL_AGREEMENT_TYPE_STANDARD = "STANDARD"
 
+    #: A constant which can be used with the service_level_agreement_type property of a CreateAutonomousContainerDatabaseDetails.
+    #: This constant has a value of "AUTONOMOUS_DATAGUARD"
+    SERVICE_LEVEL_AGREEMENT_TYPE_AUTONOMOUS_DATAGUARD = "AUTONOMOUS_DATAGUARD"
+
+    #: A constant which can be used with the protection_mode property of a CreateAutonomousContainerDatabaseDetails.
+    #: This constant has a value of "MAXIMUM_AVAILABILITY"
+    PROTECTION_MODE_MAXIMUM_AVAILABILITY = "MAXIMUM_AVAILABILITY"
+
+    #: A constant which can be used with the protection_mode property of a CreateAutonomousContainerDatabaseDetails.
+    #: This constant has a value of "MAXIMUM_PERFORMANCE"
+    PROTECTION_MODE_MAXIMUM_PERFORMANCE = "MAXIMUM_PERFORMANCE"
+
     #: A constant which can be used with the patch_model property of a CreateAutonomousContainerDatabaseDetails.
     #: This constant has a value of "RELEASE_UPDATES"
     PATCH_MODEL_RELEASE_UPDATES = "RELEASE_UPDATES"
@@ -40,12 +52,25 @@ class CreateAutonomousContainerDatabaseDetails(object):
 
         :param service_level_agreement_type:
             The value to assign to the service_level_agreement_type property of this CreateAutonomousContainerDatabaseDetails.
-            Allowed values for this property are: "STANDARD"
+            Allowed values for this property are: "STANDARD", "AUTONOMOUS_DATAGUARD"
         :type service_level_agreement_type: str
 
         :param autonomous_exadata_infrastructure_id:
             The value to assign to the autonomous_exadata_infrastructure_id property of this CreateAutonomousContainerDatabaseDetails.
         :type autonomous_exadata_infrastructure_id: str
+
+        :param peer_autonomous_exadata_infrastructure_id:
+            The value to assign to the peer_autonomous_exadata_infrastructure_id property of this CreateAutonomousContainerDatabaseDetails.
+        :type peer_autonomous_exadata_infrastructure_id: str
+
+        :param peer_autonomous_container_database_display_name:
+            The value to assign to the peer_autonomous_container_database_display_name property of this CreateAutonomousContainerDatabaseDetails.
+        :type peer_autonomous_container_database_display_name: str
+
+        :param protection_mode:
+            The value to assign to the protection_mode property of this CreateAutonomousContainerDatabaseDetails.
+            Allowed values for this property are: "MAXIMUM_AVAILABILITY", "MAXIMUM_PERFORMANCE"
+        :type protection_mode: str
 
         :param autonomous_vm_cluster_id:
             The value to assign to the autonomous_vm_cluster_id property of this CreateAutonomousContainerDatabaseDetails.
@@ -63,6 +88,10 @@ class CreateAutonomousContainerDatabaseDetails(object):
         :param maintenance_window_details:
             The value to assign to the maintenance_window_details property of this CreateAutonomousContainerDatabaseDetails.
         :type maintenance_window_details: MaintenanceWindow
+
+        :param standby_maintenance_buffer_in_days:
+            The value to assign to the standby_maintenance_buffer_in_days property of this CreateAutonomousContainerDatabaseDetails.
+        :type standby_maintenance_buffer_in_days: int
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateAutonomousContainerDatabaseDetails.
@@ -94,10 +123,14 @@ class CreateAutonomousContainerDatabaseDetails(object):
             'db_unique_name': 'str',
             'service_level_agreement_type': 'str',
             'autonomous_exadata_infrastructure_id': 'str',
+            'peer_autonomous_exadata_infrastructure_id': 'str',
+            'peer_autonomous_container_database_display_name': 'str',
+            'protection_mode': 'str',
             'autonomous_vm_cluster_id': 'str',
             'compartment_id': 'str',
             'patch_model': 'str',
             'maintenance_window_details': 'MaintenanceWindow',
+            'standby_maintenance_buffer_in_days': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'backup_config': 'AutonomousContainerDatabaseBackupConfig',
@@ -111,10 +144,14 @@ class CreateAutonomousContainerDatabaseDetails(object):
             'db_unique_name': 'dbUniqueName',
             'service_level_agreement_type': 'serviceLevelAgreementType',
             'autonomous_exadata_infrastructure_id': 'autonomousExadataInfrastructureId',
+            'peer_autonomous_exadata_infrastructure_id': 'peerAutonomousExadataInfrastructureId',
+            'peer_autonomous_container_database_display_name': 'peerAutonomousContainerDatabaseDisplayName',
+            'protection_mode': 'protectionMode',
             'autonomous_vm_cluster_id': 'autonomousVmClusterId',
             'compartment_id': 'compartmentId',
             'patch_model': 'patchModel',
             'maintenance_window_details': 'maintenanceWindowDetails',
+            'standby_maintenance_buffer_in_days': 'standbyMaintenanceBufferInDays',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'backup_config': 'backupConfig',
@@ -127,10 +164,14 @@ class CreateAutonomousContainerDatabaseDetails(object):
         self._db_unique_name = None
         self._service_level_agreement_type = None
         self._autonomous_exadata_infrastructure_id = None
+        self._peer_autonomous_exadata_infrastructure_id = None
+        self._peer_autonomous_container_database_display_name = None
+        self._protection_mode = None
         self._autonomous_vm_cluster_id = None
         self._compartment_id = None
         self._patch_model = None
         self._maintenance_window_details = None
+        self._standby_maintenance_buffer_in_days = None
         self._freeform_tags = None
         self._defined_tags = None
         self._backup_config = None
@@ -192,7 +233,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
         Gets the service_level_agreement_type of this CreateAutonomousContainerDatabaseDetails.
         The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
 
-        Allowed values for this property are: "STANDARD"
+        Allowed values for this property are: "STANDARD", "AUTONOMOUS_DATAGUARD"
 
 
         :return: The service_level_agreement_type of this CreateAutonomousContainerDatabaseDetails.
@@ -210,7 +251,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
         :param service_level_agreement_type: The service_level_agreement_type of this CreateAutonomousContainerDatabaseDetails.
         :type: str
         """
-        allowed_values = ["STANDARD"]
+        allowed_values = ["STANDARD", "AUTONOMOUS_DATAGUARD"]
         if not value_allowed_none_or_none_sentinel(service_level_agreement_type, allowed_values):
             raise ValueError(
                 "Invalid value for `service_level_agreement_type`, must be None or one of {0}"
@@ -241,6 +282,94 @@ class CreateAutonomousContainerDatabaseDetails(object):
         :type: str
         """
         self._autonomous_exadata_infrastructure_id = autonomous_exadata_infrastructure_id
+
+    @property
+    def peer_autonomous_exadata_infrastructure_id(self):
+        """
+        Gets the peer_autonomous_exadata_infrastructure_id of this CreateAutonomousContainerDatabaseDetails.
+        The OCID of the peer Autonomous Exadata Infrastructure for Autonomous Data Guard.
+
+
+        :return: The peer_autonomous_exadata_infrastructure_id of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: str
+        """
+        return self._peer_autonomous_exadata_infrastructure_id
+
+    @peer_autonomous_exadata_infrastructure_id.setter
+    def peer_autonomous_exadata_infrastructure_id(self, peer_autonomous_exadata_infrastructure_id):
+        """
+        Sets the peer_autonomous_exadata_infrastructure_id of this CreateAutonomousContainerDatabaseDetails.
+        The OCID of the peer Autonomous Exadata Infrastructure for Autonomous Data Guard.
+
+
+        :param peer_autonomous_exadata_infrastructure_id: The peer_autonomous_exadata_infrastructure_id of this CreateAutonomousContainerDatabaseDetails.
+        :type: str
+        """
+        self._peer_autonomous_exadata_infrastructure_id = peer_autonomous_exadata_infrastructure_id
+
+    @property
+    def peer_autonomous_container_database_display_name(self):
+        """
+        Gets the peer_autonomous_container_database_display_name of this CreateAutonomousContainerDatabaseDetails.
+        The display name for the peer Autonomous Container Database.
+
+
+        :return: The peer_autonomous_container_database_display_name of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: str
+        """
+        return self._peer_autonomous_container_database_display_name
+
+    @peer_autonomous_container_database_display_name.setter
+    def peer_autonomous_container_database_display_name(self, peer_autonomous_container_database_display_name):
+        """
+        Sets the peer_autonomous_container_database_display_name of this CreateAutonomousContainerDatabaseDetails.
+        The display name for the peer Autonomous Container Database.
+
+
+        :param peer_autonomous_container_database_display_name: The peer_autonomous_container_database_display_name of this CreateAutonomousContainerDatabaseDetails.
+        :type: str
+        """
+        self._peer_autonomous_container_database_display_name = peer_autonomous_container_database_display_name
+
+    @property
+    def protection_mode(self):
+        """
+        Gets the protection_mode of this CreateAutonomousContainerDatabaseDetails.
+        The protection mode of this Autonomous Data Guard association. For more information, see
+        `Oracle Data Guard Protection Modes`__
+        in the Oracle Data Guard documentation.
+
+        __ http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000
+
+        Allowed values for this property are: "MAXIMUM_AVAILABILITY", "MAXIMUM_PERFORMANCE"
+
+
+        :return: The protection_mode of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: str
+        """
+        return self._protection_mode
+
+    @protection_mode.setter
+    def protection_mode(self, protection_mode):
+        """
+        Sets the protection_mode of this CreateAutonomousContainerDatabaseDetails.
+        The protection mode of this Autonomous Data Guard association. For more information, see
+        `Oracle Data Guard Protection Modes`__
+        in the Oracle Data Guard documentation.
+
+        __ http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000
+
+
+        :param protection_mode: The protection_mode of this CreateAutonomousContainerDatabaseDetails.
+        :type: str
+        """
+        allowed_values = ["MAXIMUM_AVAILABILITY", "MAXIMUM_PERFORMANCE"]
+        if not value_allowed_none_or_none_sentinel(protection_mode, allowed_values):
+            raise ValueError(
+                "Invalid value for `protection_mode`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._protection_mode = protection_mode
 
     @property
     def autonomous_vm_cluster_id(self):
@@ -345,6 +474,32 @@ class CreateAutonomousContainerDatabaseDetails(object):
         :type: MaintenanceWindow
         """
         self._maintenance_window_details = maintenance_window_details
+
+    @property
+    def standby_maintenance_buffer_in_days(self):
+        """
+        Gets the standby_maintenance_buffer_in_days of this CreateAutonomousContainerDatabaseDetails.
+        The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+        This value represents the number of days before the primary database maintenance schedule.
+
+
+        :return: The standby_maintenance_buffer_in_days of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: int
+        """
+        return self._standby_maintenance_buffer_in_days
+
+    @standby_maintenance_buffer_in_days.setter
+    def standby_maintenance_buffer_in_days(self, standby_maintenance_buffer_in_days):
+        """
+        Sets the standby_maintenance_buffer_in_days of this CreateAutonomousContainerDatabaseDetails.
+        The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database.
+        This value represents the number of days before the primary database maintenance schedule.
+
+
+        :param standby_maintenance_buffer_in_days: The standby_maintenance_buffer_in_days of this CreateAutonomousContainerDatabaseDetails.
+        :type: int
+        """
+        self._standby_maintenance_buffer_in_days = standby_maintenance_buffer_in_days
 
     @property
     def freeform_tags(self):

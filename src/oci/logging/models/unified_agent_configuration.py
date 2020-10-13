@@ -205,7 +205,7 @@ class UnifiedAgentConfiguration(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this UnifiedAgentConfiguration.
-        The display name of a user-friendly name. It has to be unique within enclosing resource,
+        The user-friendly display name. This must be unique within the enclosing resource,
         and it's changeable. Avoid entering confidential information.
 
 
@@ -218,7 +218,7 @@ class UnifiedAgentConfiguration(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UnifiedAgentConfiguration.
-        The display name of a user-friendly name. It has to be unique within enclosing resource,
+        The user-friendly display name. This must be unique within the enclosing resource,
         and it's changeable. Avoid entering confidential information.
 
 
@@ -369,7 +369,7 @@ class UnifiedAgentConfiguration(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this UnifiedAgentConfiguration.
-        The state of an pipeline.
+        The pipeline state.
 
         Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "INACTIVE", "DELETING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -384,7 +384,7 @@ class UnifiedAgentConfiguration(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this UnifiedAgentConfiguration.
-        The state of an pipeline.
+        The pipeline state.
 
 
         :param lifecycle_state: The lifecycle_state of this UnifiedAgentConfiguration.

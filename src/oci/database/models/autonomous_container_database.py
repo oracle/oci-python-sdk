@@ -21,6 +21,10 @@ class AutonomousContainerDatabase(object):
     #: This constant has a value of "MISSION_CRITICAL"
     SERVICE_LEVEL_AGREEMENT_TYPE_MISSION_CRITICAL = "MISSION_CRITICAL"
 
+    #: A constant which can be used with the service_level_agreement_type property of a AutonomousContainerDatabase.
+    #: This constant has a value of "AUTONOMOUS_DATAGUARD"
+    SERVICE_LEVEL_AGREEMENT_TYPE_AUTONOMOUS_DATAGUARD = "AUTONOMOUS_DATAGUARD"
+
     #: A constant which can be used with the infrastructure_type property of a AutonomousContainerDatabase.
     #: This constant has a value of "CLOUD"
     INFRASTRUCTURE_TYPE_CLOUD = "CLOUD"
@@ -73,6 +77,10 @@ class AutonomousContainerDatabase(object):
     #: This constant has a value of "MAINTENANCE_IN_PROGRESS"
     LIFECYCLE_STATE_MAINTENANCE_IN_PROGRESS = "MAINTENANCE_IN_PROGRESS"
 
+    #: A constant which can be used with the lifecycle_state property of a AutonomousContainerDatabase.
+    #: This constant has a value of "ROLE_CHANGE_IN_PROGRESS"
+    LIFECYCLE_STATE_ROLE_CHANGE_IN_PROGRESS = "ROLE_CHANGE_IN_PROGRESS"
+
     #: A constant which can be used with the patch_model property of a AutonomousContainerDatabase.
     #: This constant has a value of "RELEASE_UPDATES"
     PATCH_MODEL_RELEASE_UPDATES = "RELEASE_UPDATES"
@@ -80,6 +88,18 @@ class AutonomousContainerDatabase(object):
     #: A constant which can be used with the patch_model property of a AutonomousContainerDatabase.
     #: This constant has a value of "RELEASE_UPDATE_REVISIONS"
     PATCH_MODEL_RELEASE_UPDATE_REVISIONS = "RELEASE_UPDATE_REVISIONS"
+
+    #: A constant which can be used with the role property of a AutonomousContainerDatabase.
+    #: This constant has a value of "PRIMARY"
+    ROLE_PRIMARY = "PRIMARY"
+
+    #: A constant which can be used with the role property of a AutonomousContainerDatabase.
+    #: This constant has a value of "STANDBY"
+    ROLE_STANDBY = "STANDBY"
+
+    #: A constant which can be used with the role property of a AutonomousContainerDatabase.
+    #: This constant has a value of "DISABLED_STANDBY"
+    ROLE_DISABLED_STANDBY = "DISABLED_STANDBY"
 
     def __init__(self, **kwargs):
         """
@@ -104,7 +124,7 @@ class AutonomousContainerDatabase(object):
 
         :param service_level_agreement_type:
             The value to assign to the service_level_agreement_type property of this AutonomousContainerDatabase.
-            Allowed values for this property are: "STANDARD", "MISSION_CRITICAL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "STANDARD", "MISSION_CRITICAL", "AUTONOMOUS_DATAGUARD", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type service_level_agreement_type: str
 
@@ -132,7 +152,7 @@ class AutonomousContainerDatabase(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AutonomousContainerDatabase.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "BACKUP_IN_PROGRESS", "RESTORING", "RESTORE_FAILED", "RESTARTING", "MAINTENANCE_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "BACKUP_IN_PROGRESS", "RESTORING", "RESTORE_FAILED", "RESTARTING", "MAINTENANCE_IN_PROGRESS", "ROLE_CHANGE_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -166,6 +186,10 @@ class AutonomousContainerDatabase(object):
             The value to assign to the maintenance_window property of this AutonomousContainerDatabase.
         :type maintenance_window: MaintenanceWindow
 
+        :param standby_maintenance_buffer_in_days:
+            The value to assign to the standby_maintenance_buffer_in_days property of this AutonomousContainerDatabase.
+        :type standby_maintenance_buffer_in_days: int
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this AutonomousContainerDatabase.
         :type freeform_tags: dict(str, str)
@@ -173,6 +197,12 @@ class AutonomousContainerDatabase(object):
         :param defined_tags:
             The value to assign to the defined_tags property of this AutonomousContainerDatabase.
         :type defined_tags: dict(str, dict(str, object))
+
+        :param role:
+            The value to assign to the role property of this AutonomousContainerDatabase.
+            Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type role: str
 
         :param availability_domain:
             The value to assign to the availability_domain property of this AutonomousContainerDatabase.
@@ -206,8 +236,10 @@ class AutonomousContainerDatabase(object):
             'last_maintenance_run_id': 'str',
             'next_maintenance_run_id': 'str',
             'maintenance_window': 'MaintenanceWindow',
+            'standby_maintenance_buffer_in_days': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'role': 'str',
             'availability_domain': 'str',
             'db_version': 'str',
             'backup_config': 'AutonomousContainerDatabaseBackupConfig'
@@ -232,8 +264,10 @@ class AutonomousContainerDatabase(object):
             'last_maintenance_run_id': 'lastMaintenanceRunId',
             'next_maintenance_run_id': 'nextMaintenanceRunId',
             'maintenance_window': 'maintenanceWindow',
+            'standby_maintenance_buffer_in_days': 'standbyMaintenanceBufferInDays',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'role': 'role',
             'availability_domain': 'availabilityDomain',
             'db_version': 'dbVersion',
             'backup_config': 'backupConfig'
@@ -257,8 +291,10 @@ class AutonomousContainerDatabase(object):
         self._last_maintenance_run_id = None
         self._next_maintenance_run_id = None
         self._maintenance_window = None
+        self._standby_maintenance_buffer_in_days = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._role = None
         self._availability_domain = None
         self._db_version = None
         self._backup_config = None
@@ -365,7 +401,7 @@ class AutonomousContainerDatabase(object):
         **[Required]** Gets the service_level_agreement_type of this AutonomousContainerDatabase.
         The service level agreement type of the container database. The default is STANDARD.
 
-        Allowed values for this property are: "STANDARD", "MISSION_CRITICAL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STANDARD", "MISSION_CRITICAL", "AUTONOMOUS_DATAGUARD", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -384,7 +420,7 @@ class AutonomousContainerDatabase(object):
         :param service_level_agreement_type: The service_level_agreement_type of this AutonomousContainerDatabase.
         :type: str
         """
-        allowed_values = ["STANDARD", "MISSION_CRITICAL"]
+        allowed_values = ["STANDARD", "MISSION_CRITICAL", "AUTONOMOUS_DATAGUARD"]
         if not value_allowed_none_or_none_sentinel(service_level_agreement_type, allowed_values):
             service_level_agreement_type = 'UNKNOWN_ENUM_VALUE'
         self._service_level_agreement_type = service_level_agreement_type
@@ -527,7 +563,7 @@ class AutonomousContainerDatabase(object):
         **[Required]** Gets the lifecycle_state of this AutonomousContainerDatabase.
         The current state of the Autonomous Container Database.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "BACKUP_IN_PROGRESS", "RESTORING", "RESTORE_FAILED", "RESTARTING", "MAINTENANCE_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "BACKUP_IN_PROGRESS", "RESTORING", "RESTORE_FAILED", "RESTARTING", "MAINTENANCE_IN_PROGRESS", "ROLE_CHANGE_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -546,7 +582,7 @@ class AutonomousContainerDatabase(object):
         :param lifecycle_state: The lifecycle_state of this AutonomousContainerDatabase.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "BACKUP_IN_PROGRESS", "RESTORING", "RESTORE_FAILED", "RESTARTING", "MAINTENANCE_IN_PROGRESS"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "BACKUP_IN_PROGRESS", "RESTORING", "RESTORE_FAILED", "RESTARTING", "MAINTENANCE_IN_PROGRESS", "ROLE_CHANGE_IN_PROGRESS"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -734,6 +770,32 @@ class AutonomousContainerDatabase(object):
         self._maintenance_window = maintenance_window
 
     @property
+    def standby_maintenance_buffer_in_days(self):
+        """
+        Gets the standby_maintenance_buffer_in_days of this AutonomousContainerDatabase.
+        The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database.
+        This value represents the number of days before the primary database maintenance schedule.
+
+
+        :return: The standby_maintenance_buffer_in_days of this AutonomousContainerDatabase.
+        :rtype: int
+        """
+        return self._standby_maintenance_buffer_in_days
+
+    @standby_maintenance_buffer_in_days.setter
+    def standby_maintenance_buffer_in_days(self, standby_maintenance_buffer_in_days):
+        """
+        Sets the standby_maintenance_buffer_in_days of this AutonomousContainerDatabase.
+        The scheduling detail for the quarterly maintenance window of standby Autonomous Container Database.
+        This value represents the number of days before the primary database maintenance schedule.
+
+
+        :param standby_maintenance_buffer_in_days: The standby_maintenance_buffer_in_days of this AutonomousContainerDatabase.
+        :type: int
+        """
+        self._standby_maintenance_buffer_in_days = standby_maintenance_buffer_in_days
+
+    @property
     def freeform_tags(self):
         """
         Gets the freeform_tags of this AutonomousContainerDatabase.
@@ -796,6 +858,36 @@ class AutonomousContainerDatabase(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def role(self):
+        """
+        Gets the role of this AutonomousContainerDatabase.
+        The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+
+        Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The role of this AutonomousContainerDatabase.
+        :rtype: str
+        """
+        return self._role
+
+    @role.setter
+    def role(self, role):
+        """
+        Sets the role of this AutonomousContainerDatabase.
+        The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+
+
+        :param role: The role of this AutonomousContainerDatabase.
+        :type: str
+        """
+        allowed_values = ["PRIMARY", "STANDBY", "DISABLED_STANDBY"]
+        if not value_allowed_none_or_none_sentinel(role, allowed_values):
+            role = 'UNKNOWN_ENUM_VALUE'
+        self._role = role
 
     @property
     def availability_domain(self):

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UnifiedAgentApacheErrorParser(UnifiedAgentParser):
     """
-    apache error log parser
+    Apache error log parser.
     """
 
     def __init__(self, **kwargs):

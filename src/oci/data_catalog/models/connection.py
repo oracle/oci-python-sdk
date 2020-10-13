@@ -78,6 +78,10 @@ class Connection(object):
             The value to assign to the updated_by_id property of this Connection.
         :type updated_by_id: str
 
+        :param custom_property_members:
+            The value to assign to the custom_property_members property of this Connection.
+        :type custom_property_members: list[CustomPropertyGetUsage]
+
         :param properties:
             The value to assign to the properties property of this Connection.
         :type properties: dict(str, dict(str, str))
@@ -121,6 +125,7 @@ class Connection(object):
             'time_updated': 'datetime',
             'created_by_id': 'str',
             'updated_by_id': 'str',
+            'custom_property_members': 'list[CustomPropertyGetUsage]',
             'properties': 'dict(str, dict(str, str))',
             'external_key': 'str',
             'time_status_updated': 'datetime',
@@ -139,6 +144,7 @@ class Connection(object):
             'time_updated': 'timeUpdated',
             'created_by_id': 'createdById',
             'updated_by_id': 'updatedById',
+            'custom_property_members': 'customPropertyMembers',
             'properties': 'properties',
             'external_key': 'externalKey',
             'time_status_updated': 'timeStatusUpdated',
@@ -156,6 +162,7 @@ class Connection(object):
         self._time_updated = None
         self._created_by_id = None
         self._updated_by_id = None
+        self._custom_property_members = None
         self._properties = None
         self._external_key = None
         self._time_status_updated = None
@@ -344,6 +351,30 @@ class Connection(object):
         :type: str
         """
         self._updated_by_id = updated_by_id
+
+    @property
+    def custom_property_members(self):
+        """
+        Gets the custom_property_members of this Connection.
+        The list of customized properties along with the values for this object
+
+
+        :return: The custom_property_members of this Connection.
+        :rtype: list[CustomPropertyGetUsage]
+        """
+        return self._custom_property_members
+
+    @custom_property_members.setter
+    def custom_property_members(self, custom_property_members):
+        """
+        Sets the custom_property_members of this Connection.
+        The list of customized properties along with the values for this object
+
+
+        :param custom_property_members: The custom_property_members of this Connection.
+        :type: list[CustomPropertyGetUsage]
+        """
+        self._custom_property_members = custom_property_members
 
     @property
     def properties(self):

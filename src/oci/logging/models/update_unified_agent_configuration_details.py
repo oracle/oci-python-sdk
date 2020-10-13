@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateUnifiedAgentConfigurationDetails(object):
     """
-    Update Object for Unified Agent configuration.
+    Update Object for the Unified Agent configuration.
     """
 
     def __init__(self, **kwargs):
@@ -79,7 +79,7 @@ class UpdateUnifiedAgentConfigurationDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this UpdateUnifiedAgentConfigurationDetails.
-        The display name of a user-friendly name. It has to be unique within enclosing resource,
+        The user-friendly display name. This must be unique within the enclosing resource,
         and it's changeable. Avoid entering confidential information.
 
 
@@ -92,7 +92,7 @@ class UpdateUnifiedAgentConfigurationDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateUnifiedAgentConfigurationDetails.
-        The display name of a user-friendly name. It has to be unique within enclosing resource,
+        The user-friendly display name. This must be unique within the enclosing resource,
         and it's changeable. Avoid entering confidential information.
 
 

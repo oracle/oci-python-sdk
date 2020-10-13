@@ -29,6 +29,7 @@ from .create_attribute_details import CreateAttributeDetails
 from .create_catalog_details import CreateCatalogDetails
 from .create_catalog_private_endpoint_details import CreateCatalogPrivateEndpointDetails
 from .create_connection_details import CreateConnectionDetails
+from .create_custom_property_details import CreateCustomPropertyDetails
 from .create_data_asset_details import CreateDataAssetDetails
 from .create_entity_details import CreateEntityDetails
 from .create_folder_details import CreateFolderDetails
@@ -36,9 +37,17 @@ from .create_glossary_details import CreateGlossaryDetails
 from .create_job_definition_details import CreateJobDefinitionDetails
 from .create_job_details import CreateJobDetails
 from .create_job_execution_details import CreateJobExecutionDetails
+from .create_namespace_details import CreateNamespaceDetails
+from .create_pattern_details import CreatePatternDetails
 from .create_tag_details import CreateTagDetails
 from .create_term_details import CreateTermDetails
 from .create_term_relationship_details import CreateTermRelationshipDetails
+from .custom_property import CustomProperty
+from .custom_property_collection import CustomPropertyCollection
+from .custom_property_get_usage import CustomPropertyGetUsage
+from .custom_property_set_usage import CustomPropertySetUsage
+from .custom_property_summary import CustomPropertySummary
+from .custom_property_type_usage import CustomPropertyTypeUsage
 from .data_asset import DataAsset
 from .data_asset_collection import DataAssetCollection
 from .data_asset_permissions_summary import DataAssetPermissionsSummary
@@ -46,6 +55,8 @@ from .data_asset_summary import DataAssetSummary
 from .data_asset_tag import DataAssetTag
 from .data_asset_tag_collection import DataAssetTagCollection
 from .data_asset_tag_summary import DataAssetTagSummary
+from .data_selector_pattern_details import DataSelectorPatternDetails
+from .derived_logical_entities import DerivedLogicalEntities
 from .detach_catalog_private_endpoint_details import DetachCatalogPrivateEndpointDetails
 from .entity import Entity
 from .entity_collection import EntityCollection
@@ -53,6 +64,12 @@ from .entity_summary import EntitySummary
 from .entity_tag import EntityTag
 from .entity_tag_collection import EntityTagCollection
 from .entity_tag_summary import EntityTagSummary
+from .faceted_search_aggregation import FacetedSearchAggregation
+from .faceted_search_custom_property import FacetedSearchCustomProperty
+from .faceted_search_date_filter_request import FacetedSearchDateFilterRequest
+from .faceted_search_filter_request import FacetedSearchFilterRequest
+from .faceted_search_sort_request import FacetedSearchSortRequest
+from .faceted_search_string_filter_request import FacetedSearchStringFilterRequest
 from .folder import Folder
 from .folder_collection import FolderCollection
 from .folder_summary import FolderSummary
@@ -83,7 +100,13 @@ from .job_metric import JobMetric
 from .job_metric_collection import JobMetricCollection
 from .job_metric_summary import JobMetricSummary
 from .job_summary import JobSummary
+from .namespace import Namespace
+from .namespace_collection import NamespaceCollection
+from .namespace_summary import NamespaceSummary
 from .parse_connection_details import ParseConnectionDetails
+from .pattern import Pattern
+from .pattern_collection import PatternCollection
+from .pattern_summary import PatternSummary
 from .property_definition import PropertyDefinition
 from .search_criteria import SearchCriteria
 from .search_result import SearchResult
@@ -99,22 +122,28 @@ from .term_relationship_summary import TermRelationshipSummary
 from .term_summary import TermSummary
 from .type import Type
 from .type_collection import TypeCollection
+from .type_custom_property_details import TypeCustomPropertyDetails
 from .type_summary import TypeSummary
 from .update_attribute_details import UpdateAttributeDetails
 from .update_catalog_details import UpdateCatalogDetails
 from .update_catalog_private_endpoint_details import UpdateCatalogPrivateEndpointDetails
 from .update_connection_details import UpdateConnectionDetails
+from .update_custom_property_details import UpdateCustomPropertyDetails
 from .update_data_asset_details import UpdateDataAssetDetails
 from .update_entity_details import UpdateEntityDetails
 from .update_folder_details import UpdateFolderDetails
 from .update_glossary_details import UpdateGlossaryDetails
 from .update_job_definition_details import UpdateJobDefinitionDetails
 from .update_job_details import UpdateJobDetails
+from .update_namespace_details import UpdateNamespaceDetails
+from .update_pattern_details import UpdatePatternDetails
 from .update_term_details import UpdateTermDetails
 from .update_term_relationship_details import UpdateTermRelationshipDetails
 from .upload_credentials_details import UploadCredentialsDetails
 from .validate_connection_details import ValidateConnectionDetails
 from .validate_connection_result import ValidateConnectionResult
+from .validate_pattern_details import ValidatePatternDetails
+from .validate_pattern_result import ValidatePatternResult
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_log import WorkRequestLog
@@ -147,6 +176,7 @@ data_catalog_type_mapping = {
     "CreateCatalogDetails": CreateCatalogDetails,
     "CreateCatalogPrivateEndpointDetails": CreateCatalogPrivateEndpointDetails,
     "CreateConnectionDetails": CreateConnectionDetails,
+    "CreateCustomPropertyDetails": CreateCustomPropertyDetails,
     "CreateDataAssetDetails": CreateDataAssetDetails,
     "CreateEntityDetails": CreateEntityDetails,
     "CreateFolderDetails": CreateFolderDetails,
@@ -154,9 +184,17 @@ data_catalog_type_mapping = {
     "CreateJobDefinitionDetails": CreateJobDefinitionDetails,
     "CreateJobDetails": CreateJobDetails,
     "CreateJobExecutionDetails": CreateJobExecutionDetails,
+    "CreateNamespaceDetails": CreateNamespaceDetails,
+    "CreatePatternDetails": CreatePatternDetails,
     "CreateTagDetails": CreateTagDetails,
     "CreateTermDetails": CreateTermDetails,
     "CreateTermRelationshipDetails": CreateTermRelationshipDetails,
+    "CustomProperty": CustomProperty,
+    "CustomPropertyCollection": CustomPropertyCollection,
+    "CustomPropertyGetUsage": CustomPropertyGetUsage,
+    "CustomPropertySetUsage": CustomPropertySetUsage,
+    "CustomPropertySummary": CustomPropertySummary,
+    "CustomPropertyTypeUsage": CustomPropertyTypeUsage,
     "DataAsset": DataAsset,
     "DataAssetCollection": DataAssetCollection,
     "DataAssetPermissionsSummary": DataAssetPermissionsSummary,
@@ -164,6 +202,8 @@ data_catalog_type_mapping = {
     "DataAssetTag": DataAssetTag,
     "DataAssetTagCollection": DataAssetTagCollection,
     "DataAssetTagSummary": DataAssetTagSummary,
+    "DataSelectorPatternDetails": DataSelectorPatternDetails,
+    "DerivedLogicalEntities": DerivedLogicalEntities,
     "DetachCatalogPrivateEndpointDetails": DetachCatalogPrivateEndpointDetails,
     "Entity": Entity,
     "EntityCollection": EntityCollection,
@@ -171,6 +211,12 @@ data_catalog_type_mapping = {
     "EntityTag": EntityTag,
     "EntityTagCollection": EntityTagCollection,
     "EntityTagSummary": EntityTagSummary,
+    "FacetedSearchAggregation": FacetedSearchAggregation,
+    "FacetedSearchCustomProperty": FacetedSearchCustomProperty,
+    "FacetedSearchDateFilterRequest": FacetedSearchDateFilterRequest,
+    "FacetedSearchFilterRequest": FacetedSearchFilterRequest,
+    "FacetedSearchSortRequest": FacetedSearchSortRequest,
+    "FacetedSearchStringFilterRequest": FacetedSearchStringFilterRequest,
     "Folder": Folder,
     "FolderCollection": FolderCollection,
     "FolderSummary": FolderSummary,
@@ -201,7 +247,13 @@ data_catalog_type_mapping = {
     "JobMetricCollection": JobMetricCollection,
     "JobMetricSummary": JobMetricSummary,
     "JobSummary": JobSummary,
+    "Namespace": Namespace,
+    "NamespaceCollection": NamespaceCollection,
+    "NamespaceSummary": NamespaceSummary,
     "ParseConnectionDetails": ParseConnectionDetails,
+    "Pattern": Pattern,
+    "PatternCollection": PatternCollection,
+    "PatternSummary": PatternSummary,
     "PropertyDefinition": PropertyDefinition,
     "SearchCriteria": SearchCriteria,
     "SearchResult": SearchResult,
@@ -217,22 +269,28 @@ data_catalog_type_mapping = {
     "TermSummary": TermSummary,
     "Type": Type,
     "TypeCollection": TypeCollection,
+    "TypeCustomPropertyDetails": TypeCustomPropertyDetails,
     "TypeSummary": TypeSummary,
     "UpdateAttributeDetails": UpdateAttributeDetails,
     "UpdateCatalogDetails": UpdateCatalogDetails,
     "UpdateCatalogPrivateEndpointDetails": UpdateCatalogPrivateEndpointDetails,
     "UpdateConnectionDetails": UpdateConnectionDetails,
+    "UpdateCustomPropertyDetails": UpdateCustomPropertyDetails,
     "UpdateDataAssetDetails": UpdateDataAssetDetails,
     "UpdateEntityDetails": UpdateEntityDetails,
     "UpdateFolderDetails": UpdateFolderDetails,
     "UpdateGlossaryDetails": UpdateGlossaryDetails,
     "UpdateJobDefinitionDetails": UpdateJobDefinitionDetails,
     "UpdateJobDetails": UpdateJobDetails,
+    "UpdateNamespaceDetails": UpdateNamespaceDetails,
+    "UpdatePatternDetails": UpdatePatternDetails,
     "UpdateTermDetails": UpdateTermDetails,
     "UpdateTermRelationshipDetails": UpdateTermRelationshipDetails,
     "UploadCredentialsDetails": UploadCredentialsDetails,
     "ValidateConnectionDetails": ValidateConnectionDetails,
     "ValidateConnectionResult": ValidateConnectionResult,
+    "ValidatePatternDetails": ValidatePatternDetails,
+    "ValidatePatternResult": ValidatePatternResult,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestLog": WorkRequestLog,

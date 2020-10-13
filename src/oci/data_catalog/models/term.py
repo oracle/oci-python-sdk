@@ -140,6 +140,10 @@ class Term(object):
             The value to assign to the associated_objects property of this Term.
         :type associated_objects: list[TermAssociatedObject]
 
+        :param custom_property_members:
+            The value to assign to the custom_property_members property of this Term.
+        :type custom_property_members: list[CustomPropertyGetUsage]
+
         """
         self.swagger_types = {
             'key': 'str',
@@ -158,7 +162,8 @@ class Term(object):
             'workflow_status': 'str',
             'uri': 'str',
             'associated_object_count': 'int',
-            'associated_objects': 'list[TermAssociatedObject]'
+            'associated_objects': 'list[TermAssociatedObject]',
+            'custom_property_members': 'list[CustomPropertyGetUsage]'
         }
 
         self.attribute_map = {
@@ -178,7 +183,8 @@ class Term(object):
             'workflow_status': 'workflowStatus',
             'uri': 'uri',
             'associated_object_count': 'associatedObjectCount',
-            'associated_objects': 'associatedObjects'
+            'associated_objects': 'associatedObjects',
+            'custom_property_members': 'customPropertyMembers'
         }
 
         self._key = None
@@ -198,6 +204,7 @@ class Term(object):
         self._uri = None
         self._associated_object_count = None
         self._associated_objects = None
+        self._custom_property_members = None
 
     @property
     def key(self):
@@ -630,6 +637,30 @@ class Term(object):
         :type: list[TermAssociatedObject]
         """
         self._associated_objects = associated_objects
+
+    @property
+    def custom_property_members(self):
+        """
+        Gets the custom_property_members of this Term.
+        The list of customized properties along with the values for this object
+
+
+        :return: The custom_property_members of this Term.
+        :rtype: list[CustomPropertyGetUsage]
+        """
+        return self._custom_property_members
+
+    @custom_property_members.setter
+    def custom_property_members(self, custom_property_members):
+        """
+        Sets the custom_property_members of this Term.
+        The list of customized properties along with the values for this object
+
+
+        :param custom_property_members: The custom_property_members of this Term.
+        :type: list[CustomPropertyGetUsage]
+        """
+        self._custom_property_members = custom_property_members
 
     def __repr__(self):
         return formatted_flat_dict(self)
