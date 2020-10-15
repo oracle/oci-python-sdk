@@ -66,6 +66,14 @@ class SddcSummary(object):
             The value to assign to the esxi_hosts_count property of this SddcSummary.
         :type esxi_hosts_count: int
 
+        :param hcx_fqdn:
+            The value to assign to the hcx_fqdn property of this SddcSummary.
+        :type hcx_fqdn: str
+
+        :param is_hcx_enabled:
+            The value to assign to the is_hcx_enabled property of this SddcSummary.
+        :type is_hcx_enabled: bool
+
         :param vcenter_fqdn:
             The value to assign to the vcenter_fqdn property of this SddcSummary.
         :type vcenter_fqdn: str
@@ -104,6 +112,8 @@ class SddcSummary(object):
             'vmware_software_version': 'str',
             'compartment_id': 'str',
             'esxi_hosts_count': 'int',
+            'hcx_fqdn': 'str',
+            'is_hcx_enabled': 'bool',
             'vcenter_fqdn': 'str',
             'nsx_manager_fqdn': 'str',
             'time_created': 'datetime',
@@ -120,6 +130,8 @@ class SddcSummary(object):
             'vmware_software_version': 'vmwareSoftwareVersion',
             'compartment_id': 'compartmentId',
             'esxi_hosts_count': 'esxiHostsCount',
+            'hcx_fqdn': 'hcxFqdn',
+            'is_hcx_enabled': 'isHcxEnabled',
             'vcenter_fqdn': 'vcenterFqdn',
             'nsx_manager_fqdn': 'nsxManagerFqdn',
             'time_created': 'timeCreated',
@@ -135,6 +147,8 @@ class SddcSummary(object):
         self._vmware_software_version = None
         self._compartment_id = None
         self._esxi_hosts_count = None
+        self._hcx_fqdn = None
+        self._is_hcx_enabled = None
         self._vcenter_fqdn = None
         self._nsx_manager_fqdn = None
         self._time_created = None
@@ -330,6 +344,54 @@ class SddcSummary(object):
         :type: int
         """
         self._esxi_hosts_count = esxi_hosts_count
+
+    @property
+    def hcx_fqdn(self):
+        """
+        Gets the hcx_fqdn of this SddcSummary.
+        HCX Fully Qualified Domain Name
+
+
+        :return: The hcx_fqdn of this SddcSummary.
+        :rtype: str
+        """
+        return self._hcx_fqdn
+
+    @hcx_fqdn.setter
+    def hcx_fqdn(self, hcx_fqdn):
+        """
+        Sets the hcx_fqdn of this SddcSummary.
+        HCX Fully Qualified Domain Name
+
+
+        :param hcx_fqdn: The hcx_fqdn of this SddcSummary.
+        :type: str
+        """
+        self._hcx_fqdn = hcx_fqdn
+
+    @property
+    def is_hcx_enabled(self):
+        """
+        Gets the is_hcx_enabled of this SddcSummary.
+        HCX enabled or not
+
+
+        :return: The is_hcx_enabled of this SddcSummary.
+        :rtype: bool
+        """
+        return self._is_hcx_enabled
+
+    @is_hcx_enabled.setter
+    def is_hcx_enabled(self, is_hcx_enabled):
+        """
+        Sets the is_hcx_enabled of this SddcSummary.
+        HCX enabled or not
+
+
+        :param is_hcx_enabled: The is_hcx_enabled of this SddcSummary.
+        :type: bool
+        """
+        self._is_hcx_enabled = is_hcx_enabled
 
     @property
     def vcenter_fqdn(self):

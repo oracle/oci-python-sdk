@@ -15,7 +15,7 @@ class TargetDetails(object):
     For more information about flows defined by service connectors, see
     `Service Connector Hub Overview`__.
 
-    __ https://docs.cloud.oracle.com/iaas/service-connector-hub/using/index.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm
     """
 
     #: A constant which can be used with the kind property of a TargetDetails.

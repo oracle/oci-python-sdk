@@ -42,6 +42,14 @@ class CreateSddcDetails(object):
             The value to assign to the esxi_hosts_count property of this CreateSddcDetails.
         :type esxi_hosts_count: int
 
+        :param is_hcx_enabled:
+            The value to assign to the is_hcx_enabled property of this CreateSddcDetails.
+        :type is_hcx_enabled: bool
+
+        :param hcx_vlan_id:
+            The value to assign to the hcx_vlan_id property of this CreateSddcDetails.
+        :type hcx_vlan_id: str
+
         :param ssh_authorized_keys:
             The value to assign to the ssh_authorized_keys property of this CreateSddcDetails.
         :type ssh_authorized_keys: str
@@ -98,6 +106,8 @@ class CreateSddcDetails(object):
             'compartment_id': 'str',
             'instance_display_name_prefix': 'str',
             'esxi_hosts_count': 'int',
+            'is_hcx_enabled': 'bool',
+            'hcx_vlan_id': 'str',
             'ssh_authorized_keys': 'str',
             'workload_network_cidr': 'str',
             'provisioning_subnet_id': 'str',
@@ -119,6 +129,8 @@ class CreateSddcDetails(object):
             'compartment_id': 'compartmentId',
             'instance_display_name_prefix': 'instanceDisplayNamePrefix',
             'esxi_hosts_count': 'esxiHostsCount',
+            'is_hcx_enabled': 'isHcxEnabled',
+            'hcx_vlan_id': 'hcxVlanId',
             'ssh_authorized_keys': 'sshAuthorizedKeys',
             'workload_network_cidr': 'workloadNetworkCidr',
             'provisioning_subnet_id': 'provisioningSubnetId',
@@ -139,6 +151,8 @@ class CreateSddcDetails(object):
         self._compartment_id = None
         self._instance_display_name_prefix = None
         self._esxi_hosts_count = None
+        self._is_hcx_enabled = None
+        self._hcx_vlan_id = None
         self._ssh_authorized_keys = None
         self._workload_network_cidr = None
         self._provisioning_subnet_id = None
@@ -180,8 +194,8 @@ class CreateSddcDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateSddcDetails.
-        A descriptive name for the SDDC. It must be unique, start with a letter, and contain only letters, digits,
-        whitespaces, dashes and underscores.
+        A descriptive name for the SDDC.
+        SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
         Avoid entering confidential information.
 
 
@@ -194,8 +208,8 @@ class CreateSddcDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateSddcDetails.
-        A descriptive name for the SDDC. It must be unique, start with a letter, and contain only letters, digits,
-        whitespaces, dashes and underscores.
+        A descriptive name for the SDDC.
+        SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
         Avoid entering confidential information.
 
 
@@ -329,6 +343,54 @@ class CreateSddcDetails(object):
         :type: int
         """
         self._esxi_hosts_count = esxi_hosts_count
+
+    @property
+    def is_hcx_enabled(self):
+        """
+        Gets the is_hcx_enabled of this CreateSddcDetails.
+        This flag tells us if HCX is enabled or not.
+
+
+        :return: The is_hcx_enabled of this CreateSddcDetails.
+        :rtype: bool
+        """
+        return self._is_hcx_enabled
+
+    @is_hcx_enabled.setter
+    def is_hcx_enabled(self, is_hcx_enabled):
+        """
+        Sets the is_hcx_enabled of this CreateSddcDetails.
+        This flag tells us if HCX is enabled or not.
+
+
+        :param is_hcx_enabled: The is_hcx_enabled of this CreateSddcDetails.
+        :type: bool
+        """
+        self._is_hcx_enabled = is_hcx_enabled
+
+    @property
+    def hcx_vlan_id(self):
+        """
+        Gets the hcx_vlan_id of this CreateSddcDetails.
+        This id is required only when hcxEnabled is true
+
+
+        :return: The hcx_vlan_id of this CreateSddcDetails.
+        :rtype: str
+        """
+        return self._hcx_vlan_id
+
+    @hcx_vlan_id.setter
+    def hcx_vlan_id(self, hcx_vlan_id):
+        """
+        Sets the hcx_vlan_id of this CreateSddcDetails.
+        This id is required only when hcxEnabled is true
+
+
+        :param hcx_vlan_id: The hcx_vlan_id of this CreateSddcDetails.
+        :type: str
+        """
+        self._hcx_vlan_id = hcx_vlan_id
 
     @property
     def ssh_authorized_keys(self):

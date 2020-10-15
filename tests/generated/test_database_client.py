@@ -2013,6 +2013,46 @@ def test_deregister_autonomous_database_data_safe(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_disable_autonomous_database_operations_insights(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'DisableAutonomousDatabaseOperationsInsights'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'DisableAutonomousDatabaseOperationsInsights')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='DisableAutonomousDatabaseOperationsInsights')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.disable_autonomous_database_operations_insights(
+                autonomous_database_id=request.pop(util.camelize('autonomousDatabaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'DisableAutonomousDatabaseOperationsInsights',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'disable_autonomous_database_operations_insights',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_download_exadata_infrastructure_config_file(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DownloadExadataInfrastructureConfigFile'):
@@ -2089,6 +2129,46 @@ def test_download_vm_cluster_network_config_file(testing_service_client):
             result,
             service_error,
             'stream',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_enable_autonomous_database_operations_insights(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'EnableAutonomousDatabaseOperationsInsights'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'EnableAutonomousDatabaseOperationsInsights')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='EnableAutonomousDatabaseOperationsInsights')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.enable_autonomous_database_operations_insights(
+                autonomous_database_id=request.pop(util.camelize('autonomousDatabaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'EnableAutonomousDatabaseOperationsInsights',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'enable_autonomous_database_operations_insights',
             False,
             False
         )

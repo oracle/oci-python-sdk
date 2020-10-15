@@ -158,6 +158,30 @@ class Sddc(object):
             The value to assign to the nsx_edge_uplink2_vlan_id property of this Sddc.
         :type nsx_edge_uplink2_vlan_id: str
 
+        :param hcx_private_ip_id:
+            The value to assign to the hcx_private_ip_id property of this Sddc.
+        :type hcx_private_ip_id: str
+
+        :param hcx_fqdn:
+            The value to assign to the hcx_fqdn property of this Sddc.
+        :type hcx_fqdn: str
+
+        :param hcx_initial_password:
+            The value to assign to the hcx_initial_password property of this Sddc.
+        :type hcx_initial_password: str
+
+        :param hcx_vlan_id:
+            The value to assign to the hcx_vlan_id property of this Sddc.
+        :type hcx_vlan_id: str
+
+        :param is_hcx_enabled:
+            The value to assign to the is_hcx_enabled property of this Sddc.
+        :type is_hcx_enabled: bool
+
+        :param hcx_on_prem_key:
+            The value to assign to the hcx_on_prem_key property of this Sddc.
+        :type hcx_on_prem_key: str
+
         :param time_created:
             The value to assign to the time_created property of this Sddc.
         :type time_created: datetime
@@ -209,6 +233,12 @@ class Sddc(object):
             'nsx_edge_v_tep_vlan_id': 'str',
             'nsx_edge_uplink1_vlan_id': 'str',
             'nsx_edge_uplink2_vlan_id': 'str',
+            'hcx_private_ip_id': 'str',
+            'hcx_fqdn': 'str',
+            'hcx_initial_password': 'str',
+            'hcx_vlan_id': 'str',
+            'is_hcx_enabled': 'bool',
+            'hcx_on_prem_key': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
@@ -244,6 +274,12 @@ class Sddc(object):
             'nsx_edge_v_tep_vlan_id': 'nsxEdgeVTepVlanId',
             'nsx_edge_uplink1_vlan_id': 'nsxEdgeUplink1VlanId',
             'nsx_edge_uplink2_vlan_id': 'nsxEdgeUplink2VlanId',
+            'hcx_private_ip_id': 'hcxPrivateIpId',
+            'hcx_fqdn': 'hcxFqdn',
+            'hcx_initial_password': 'hcxInitialPassword',
+            'hcx_vlan_id': 'hcxVlanId',
+            'is_hcx_enabled': 'isHcxEnabled',
+            'hcx_on_prem_key': 'hcxOnPremKey',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
@@ -278,6 +314,12 @@ class Sddc(object):
         self._nsx_edge_v_tep_vlan_id = None
         self._nsx_edge_uplink1_vlan_id = None
         self._nsx_edge_uplink2_vlan_id = None
+        self._hcx_private_ip_id = None
+        self._hcx_fqdn = None
+        self._hcx_initial_password = None
+        self._hcx_vlan_id = None
+        self._is_hcx_enabled = None
+        self._hcx_on_prem_key = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
@@ -1257,6 +1299,150 @@ class Sddc(object):
         :type: str
         """
         self._nsx_edge_uplink2_vlan_id = nsx_edge_uplink2_vlan_id
+
+    @property
+    def hcx_private_ip_id(self):
+        """
+        Gets the hcx_private_ip_id of this Sddc.
+        HCX Private IP
+
+
+        :return: The hcx_private_ip_id of this Sddc.
+        :rtype: str
+        """
+        return self._hcx_private_ip_id
+
+    @hcx_private_ip_id.setter
+    def hcx_private_ip_id(self, hcx_private_ip_id):
+        """
+        Sets the hcx_private_ip_id of this Sddc.
+        HCX Private IP
+
+
+        :param hcx_private_ip_id: The hcx_private_ip_id of this Sddc.
+        :type: str
+        """
+        self._hcx_private_ip_id = hcx_private_ip_id
+
+    @property
+    def hcx_fqdn(self):
+        """
+        Gets the hcx_fqdn of this Sddc.
+        HCX Fully Qualified Domain Name
+
+
+        :return: The hcx_fqdn of this Sddc.
+        :rtype: str
+        """
+        return self._hcx_fqdn
+
+    @hcx_fqdn.setter
+    def hcx_fqdn(self, hcx_fqdn):
+        """
+        Sets the hcx_fqdn of this Sddc.
+        HCX Fully Qualified Domain Name
+
+
+        :param hcx_fqdn: The hcx_fqdn of this Sddc.
+        :type: str
+        """
+        self._hcx_fqdn = hcx_fqdn
+
+    @property
+    def hcx_initial_password(self):
+        """
+        Gets the hcx_initial_password of this Sddc.
+        HCX initial password
+
+
+        :return: The hcx_initial_password of this Sddc.
+        :rtype: str
+        """
+        return self._hcx_initial_password
+
+    @hcx_initial_password.setter
+    def hcx_initial_password(self, hcx_initial_password):
+        """
+        Sets the hcx_initial_password of this Sddc.
+        HCX initial password
+
+
+        :param hcx_initial_password: The hcx_initial_password of this Sddc.
+        :type: str
+        """
+        self._hcx_initial_password = hcx_initial_password
+
+    @property
+    def hcx_vlan_id(self):
+        """
+        Gets the hcx_vlan_id of this Sddc.
+        HCX vlan id
+
+
+        :return: The hcx_vlan_id of this Sddc.
+        :rtype: str
+        """
+        return self._hcx_vlan_id
+
+    @hcx_vlan_id.setter
+    def hcx_vlan_id(self, hcx_vlan_id):
+        """
+        Sets the hcx_vlan_id of this Sddc.
+        HCX vlan id
+
+
+        :param hcx_vlan_id: The hcx_vlan_id of this Sddc.
+        :type: str
+        """
+        self._hcx_vlan_id = hcx_vlan_id
+
+    @property
+    def is_hcx_enabled(self):
+        """
+        Gets the is_hcx_enabled of this Sddc.
+        HCX enabled or not
+
+
+        :return: The is_hcx_enabled of this Sddc.
+        :rtype: bool
+        """
+        return self._is_hcx_enabled
+
+    @is_hcx_enabled.setter
+    def is_hcx_enabled(self, is_hcx_enabled):
+        """
+        Sets the is_hcx_enabled of this Sddc.
+        HCX enabled or not
+
+
+        :param is_hcx_enabled: The is_hcx_enabled of this Sddc.
+        :type: bool
+        """
+        self._is_hcx_enabled = is_hcx_enabled
+
+    @property
+    def hcx_on_prem_key(self):
+        """
+        Gets the hcx_on_prem_key of this Sddc.
+        HCX on-premise license key
+
+
+        :return: The hcx_on_prem_key of this Sddc.
+        :rtype: str
+        """
+        return self._hcx_on_prem_key
+
+    @hcx_on_prem_key.setter
+    def hcx_on_prem_key(self, hcx_on_prem_key):
+        """
+        Sets the hcx_on_prem_key of this Sddc.
+        HCX on-premise license key
+
+
+        :param hcx_on_prem_key: The hcx_on_prem_key of this Sddc.
+        :type: str
+        """
+        self._hcx_on_prem_key = hcx_on_prem_key
 
     @property
     def time_created(self):

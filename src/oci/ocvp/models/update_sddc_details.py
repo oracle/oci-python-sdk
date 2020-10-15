@@ -64,6 +64,10 @@ class UpdateSddcDetails(object):
             The value to assign to the nsx_edge_uplink2_vlan_id property of this UpdateSddcDetails.
         :type nsx_edge_uplink2_vlan_id: str
 
+        :param hcx_vlan_id:
+            The value to assign to the hcx_vlan_id property of this UpdateSddcDetails.
+        :type hcx_vlan_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateSddcDetails.
         :type freeform_tags: dict(str, str)
@@ -84,6 +88,7 @@ class UpdateSddcDetails(object):
             'nsx_edge_v_tep_vlan_id': 'str',
             'nsx_edge_uplink1_vlan_id': 'str',
             'nsx_edge_uplink2_vlan_id': 'str',
+            'hcx_vlan_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -99,6 +104,7 @@ class UpdateSddcDetails(object):
             'nsx_edge_v_tep_vlan_id': 'nsxEdgeVTepVlanId',
             'nsx_edge_uplink1_vlan_id': 'nsxEdgeUplink1VlanId',
             'nsx_edge_uplink2_vlan_id': 'nsxEdgeUplink2VlanId',
+            'hcx_vlan_id': 'hcxVlanId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -113,6 +119,7 @@ class UpdateSddcDetails(object):
         self._nsx_edge_v_tep_vlan_id = None
         self._nsx_edge_uplink1_vlan_id = None
         self._nsx_edge_uplink2_vlan_id = None
+        self._hcx_vlan_id = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -121,6 +128,7 @@ class UpdateSddcDetails(object):
         """
         Gets the display_name of this UpdateSddcDetails.
         The `OCID`__ of the SDDC.
+        SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -135,6 +143,7 @@ class UpdateSddcDetails(object):
         """
         Sets the display_name of this UpdateSddcDetails.
         The `OCID`__ of the SDDC.
+        SDDC name requirements are 1-16 character length limit, Must start with a letter, Must be English letters, numbers, - only, No repeating hyphens, Must be unique within the region.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -417,6 +426,30 @@ class UpdateSddcDetails(object):
         :type: str
         """
         self._nsx_edge_uplink2_vlan_id = nsx_edge_uplink2_vlan_id
+
+    @property
+    def hcx_vlan_id(self):
+        """
+        Gets the hcx_vlan_id of this UpdateSddcDetails.
+        This id is editable only when hcxEnabled is true
+
+
+        :return: The hcx_vlan_id of this UpdateSddcDetails.
+        :rtype: str
+        """
+        return self._hcx_vlan_id
+
+    @hcx_vlan_id.setter
+    def hcx_vlan_id(self, hcx_vlan_id):
+        """
+        Sets the hcx_vlan_id of this UpdateSddcDetails.
+        This id is editable only when hcxEnabled is true
+
+
+        :param hcx_vlan_id: The hcx_vlan_id of this UpdateSddcDetails.
+        :type: str
+        """
+        self._hcx_vlan_id = hcx_vlan_id
 
     @property
     def freeform_tags(self):

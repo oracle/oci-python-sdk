@@ -98,3 +98,4 @@
 ^src/oci/loggingsearch/.*\.py$
 ^src/oci/management_agent/.*\.py$
 ^src/oci/cloud_guard/.*\.py$
+^src/oci/opsi/.*\.py$

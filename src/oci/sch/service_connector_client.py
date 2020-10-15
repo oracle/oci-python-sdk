@@ -20,7 +20,7 @@ class ServiceConnectorClient(object):
     """
     Use the Service Connector Hub API to transfer data between services in Oracle Cloud Infrastructure.
     For more information about Service Connector Hub, see
-    [Service Connector Hub Overview](/iaas/service-connector-hub/using/index.htm).
+    [Service Connector Hub Overview](/iaas/Content/service-connector-hub/overview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -93,11 +93,11 @@ class ServiceConnectorClient(object):
 
         After you send your request, the service connector's state is temporarily
         UPDATING. When the state changes to ACTIVE, data begins transferring from the
-        source service to the target service. For instructions on deactivating and
-        activating service connectors, see
-        `To activate or deactivate a service connector`__.
+        source service to the target service. For instructions on activating service
+        connectors, see
+        `To activate a service connector`__.
 
-        __ https://docs.cloud.oracle.com/iaas/service-connector-hub/using/index.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#activate
 
 
         :param str service_connector_id: (required)
@@ -302,10 +302,10 @@ class ServiceConnectorClient(object):
         activating service connectors, see
         `To activate or deactivate a service connector`__.
 
-        __ https://docs.cloud.oracle.com/iaas/service-connector-hub/using/index.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
-        __ https://docs.cloud.oracle.com/iaas/service-connector-hub/using/index.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm
 
 
         :param CreateServiceConnectorDetails create_service_connector_details: (required)
@@ -381,10 +381,10 @@ class ServiceConnectorClient(object):
 
         After you send your request, the service connector's state is temporarily
         UPDATING and any data transfer stops. The state then changes to INACTIVE.
-        For instructions on deactivating and activating service connectors, see
-        `To activate or deactivate a service connector`__.
+        For instructions on deactivating service connectors, see
+        `To deactivate a service connector`__.
 
-        __ https://docs.cloud.oracle.com/iaas/service-connector-hub/using/index.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#deactivate
 
 
         :param str service_connector_id: (required)
