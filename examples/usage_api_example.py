@@ -2,6 +2,15 @@
 # Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
+# This script provides a basic example of how to you can use usage api.
+# It then shows how to perform updates, reads, and deletes. It will:
+#   * Create a usage api client
+#   * get possible parameters for querying usage/cost
+#   * get cost
+#   * get cost with filter
+#   * get cost with group by compartmentPath
+# see more api detail at https://docs.cloud.oracle.com/en-us/iaas/Content/Billing/Concepts/costanalysisoverview.htm#cost_analysis_using_the_api
+
 import oci.usage_api.models
 from oci.usage_api.models import RequestSummarizedUsagesDetails, Filter, Dimension
 from datetime import datetime
