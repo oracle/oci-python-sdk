@@ -69,6 +69,17 @@ def test_deserialize_datetime(identity, config):
     assert ddt.tzinfo is not None
 
 
+def test_deserialize_enums(identity, config):
+    client = oci.BaseClient('identity', config, identity.base_client.signer, {})
+
+    # Enums are list of strings
+    data = ["list", "of", "strings"]
+    cls = 'EnumTypeWhichIsNotPresentInTypeMapping'
+    value = client._BaseClient__deserialize(data, cls)
+    # The list should be returned as is (see BaseClient.__deserialize_primitive), and code should not fail because cls is unknown
+    assert value == data
+
+
 def test_default_timeout(identity, config):
     client = oci.BaseClient('identity', config, identity.base_client.signer, {})
     assert client.timeout == (10.0, 60.0)
