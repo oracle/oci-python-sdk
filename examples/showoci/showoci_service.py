@@ -8733,7 +8733,7 @@ class ShowOCIService(object):
             limits = self.data[self.C_LIMITS]
 
             # append the data
-            limits[self.C_LIMITS_SERVICES] += self.__load_limits(limits_client, tenancy['id'])
+            limits[self.C_LIMITS_SERVICES] += self.__load_limits(limits_client, tenancy['id'], compartments)
             limits[self.C_LIMITS_QUOTAS] += self.__load_quotas(quotas_client, compartments)
             print("")
 
@@ -8747,7 +8747,7 @@ class ShowOCIService(object):
     ##########################################################################
     # __load_limits
     ##########################################################################
-    def __load_limits(self, limits_client, tenancy_id):
+    def __load_limits(self, limits_client, tenancy_id, compartments):
         data = []
         cnt = 0
         start_time = time.time()
@@ -8804,11 +8804,17 @@ class ShowOCIService(object):
 
                         # get usage per limit if available
                         try:
+                            limit_compartment = tenancy_id
+
+                            # if only one compartment filtered check the compartment limit
+                            if len(compartments) == 1:
+                                limit_compartment = compartments[0]['id']
+
                             usage = []
                             if limit.scope_type == "AD":
-                                usage = limits_client.get_resource_availability(service.name, limit.name, tenancy_id, availability_domain=limit.availability_domain).data
+                                usage = limits_client.get_resource_availability(service.name, limit.name, limit_compartment, availability_domain=limit.availability_domain).data
                             else:
-                                usage = limits_client.get_resource_availability(service.name, limit.name, tenancy_id).data
+                                usage = limits_client.get_resource_availability(service.name, limit.name, limit_compartment).data
 
                             # oci.limits.models.ResourceAvailability
                             if usage.used is not None:

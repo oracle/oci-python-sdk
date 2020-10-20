@@ -20,7 +20,7 @@ class WorkRequest(object):
     requests, see
     `Viewing the State of a Work Request`__.
 
-    __ https://docs.cloud.oracle.com/iaas/service-connector-hub/using/index.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/workrequests.htm
     """
 
     #: A constant which can be used with the operation_type property of a WorkRequest.

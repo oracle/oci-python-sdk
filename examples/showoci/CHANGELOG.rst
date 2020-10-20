@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.10.20 - 20.10.20
+=====================
+* Added limit check per compartment if only one compartment filtered
+
+=====================
 20.09.22 - 20.09.22
 =====================
 * Added Cloud Guard using -sec flag
