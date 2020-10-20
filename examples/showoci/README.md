@@ -54,19 +54,15 @@ Output can be printer friendly, CSV files or JSON file.
 
 ## Executing using Cloud Shell:
 ```
-1. Create virtual env of python
-   python3 -m venv python_venv
-   source python_venv/bin/activate
+1. install oci sdk package
+   pip3 install --user oci
 
-2. install oci sdk package
-   pip install oci
-
-3. clone the oci sdk repo
+2. clone the oci sdk repo
    git clone https://github.com/oracle/oci-python-sdk
 
-4. run showoci with delegation token
+3. run showoci with delegation token
    cd oci-python-sdk/examples/showoci
-   python showoci.py -dt -ani
+   python3 showoci.py -dt -ani
 ```
 
 ## OCI Authentication using Instance Principals 

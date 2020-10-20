@@ -72,6 +72,7 @@ API Reference
 * :doc:`Oda <oda/client/oci.oda.OdaClient>`
 * :doc:`Notification Control Plane <ons/client/oci.ons.NotificationControlPlaneClient>`
 * :doc:`Notification Data Plane <ons/client/oci.ons.NotificationDataPlaneClient>`
+* :doc:`Operations Insights <opsi/client/oci.opsi.OperationsInsightsClient>`
 * :doc:`Os Management <os_management/client/oci.os_management.OsManagementClient>`
 * :doc:`Resource Manager <resource_manager/client/oci.resource_manager.ResourceManagerClient>`
 * :doc:`Resource Search <resource_search/client/oci.resource_search.ResourceSearchClient>`
@@ -148,6 +149,7 @@ API Reference
     ocvp
     oda
     ons
+    opsi
     os_management
     resource_manager
     resource_search
