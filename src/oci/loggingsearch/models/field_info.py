@@ -88,7 +88,7 @@ class FieldInfo(object):
         **[Required]** Gets the field_type of this FieldInfo.
         Field type -
         * `STRING`: A sequence of characters.
-        * `NUMBER`: Numeric type which can be integer or floating point.
+        * `NUMBER`: Numeric type which can be an integer or floating point.
         * `BOOLEAN`: Either true or false.
         * `ARRAY`: An ordered collection of values.
 
@@ -107,7 +107,7 @@ class FieldInfo(object):
         Sets the field_type of this FieldInfo.
         Field type -
         * `STRING`: A sequence of characters.
-        * `NUMBER`: Numeric type which can be integer or floating point.
+        * `NUMBER`: Numeric type which can be an integer or floating point.
         * `BOOLEAN`: Either true or false.
         * `ARRAY`: An ordered collection of values.
 

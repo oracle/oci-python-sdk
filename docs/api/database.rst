@@ -61,6 +61,7 @@ Database
     oci.database.models.ChangeCloudVmClusterCompartmentDetails
     oci.database.models.ChangeCompartmentDetails
     oci.database.models.ChangeExadataInfrastructureCompartmentDetails
+    oci.database.models.ChangeKeyStoreCompartmentDetails
     oci.database.models.ChangeVmClusterCompartmentDetails
     oci.database.models.CloudExadataInfrastructure
     oci.database.models.CloudExadataInfrastructureSummary
@@ -107,6 +108,7 @@ Database
     oci.database.models.CreateDbHomeWithVmClusterIdFromBackupDetails
     oci.database.models.CreateExadataInfrastructureDetails
     oci.database.models.CreateExternalBackupJobDetails
+    oci.database.models.CreateKeyStoreDetails
     oci.database.models.CreateNFSBackupDestinationDetails
     oci.database.models.CreateNewDatabaseDetails
     oci.database.models.CreateRecoveryApplianceBackupDestinationDetails
@@ -147,6 +149,11 @@ Database
     oci.database.models.GenerateRecommendedNetworkDetails
     oci.database.models.GiVersionSummary
     oci.database.models.InfoForNetworkGenDetails
+    oci.database.models.KeyStore
+    oci.database.models.KeyStoreAssociatedDatabaseDetails
+    oci.database.models.KeyStoreSummary
+    oci.database.models.KeyStoreTypeDetails
+    oci.database.models.KeyStoreTypeFromOracleKeyVaultDetails
     oci.database.models.LaunchAutonomousExadataInfrastructureDetails
     oci.database.models.LaunchDbSystemBase
     oci.database.models.LaunchDbSystemDetails
@@ -191,6 +198,7 @@ Database
     oci.database.models.UpdateExadataInfrastructureDetails
     oci.database.models.UpdateHistoryEntry
     oci.database.models.UpdateHistoryEntrySummary
+    oci.database.models.UpdateKeyStoreDetails
     oci.database.models.UpdateMaintenanceRunDetails
     oci.database.models.UpdateSummary
     oci.database.models.UpdateVmClusterDetails

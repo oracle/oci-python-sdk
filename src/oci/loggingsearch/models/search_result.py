@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SearchResult(object):
     """
-    A log search result entry
+    A log search result entry.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class SearchResult(object):
     def data(self):
         """
         **[Required]** Gets the data of this SearchResult.
-        JSON blob containing the search entry with projected fields.
+        JSON blob containing the search entry with the projected fields.
 
 
         :return: The data of this SearchResult.
@@ -49,7 +49,7 @@ class SearchResult(object):
     def data(self, data):
         """
         Sets the data of this SearchResult.
-        JSON blob containing the search entry with projected fields.
+        JSON blob containing the search entry with the projected fields.
 
 
         :param data: The data of this SearchResult.
