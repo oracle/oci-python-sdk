@@ -17,5 +17,7 @@ Executing using Cloud Shell:
        python3 list_compute_tags_in_tenancy.py -dt
        python3 list_dbsystem_with_maintenance_in_tenancy.py -dt
        python3 list_bv_backups_in_tenancy.py -dt
+       python3 object_storage_list_objects.py -dt
+
 
 
