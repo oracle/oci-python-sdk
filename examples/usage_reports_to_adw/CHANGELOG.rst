@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.10.27 - 2020-10.27
+=====================
+* Added flag -sr to skip public rate
+* Fix Public Rate new SKUs
+* Added TENANT_ID with 6 last digits to support organization
+
+=====================
 20.08.04 - 2020-08-04
 =====================
 * Aligned to APEX Version 20.1
