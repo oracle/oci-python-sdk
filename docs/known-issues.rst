@@ -6,6 +6,8 @@ These are the current known issues for the Python SDK.
 
 UploadManager generates ssl3_write_pending error when a read timeout is set for the Object Storage client
 =========================================================================================================
+**Update:** This issue has been fixed in v2.23.2. This issue still may exist with using Python versions < 2.7.9. If you do encounter this issue, please consult the workaround mentioned below.
+
 **Update:** With v2.18.0 we handle the object storage client with default timeout values (connect timeout = 10 secs and read timeout = 60 secs), by overwriting the timeout to `None` in the operations.
 
 PLEASE NOTE that the operations are NOT thread-safe, and you should provide the UploadManager class with its own Object Storage client that isn't used elsewhere.

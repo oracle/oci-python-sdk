@@ -29,10 +29,6 @@ SSEC_PARAM_NAMES = [
     'opc_sse_customer_key_sha256'
 ]
 
-# This timeout value will be used only for multipart upload operations, since we're running into SSL issues with
-# sending memoryviews with a timeout.
-MULTIPART_UPLOAD_TIMEOUT = None
-
 
 class MultipartObjectAssembler:
     def __init__(self,
@@ -48,7 +44,7 @@ class MultipartObjectAssembler:
 
         An assembler can be used to begin a new upload, or resume a previous one.
 
-        PLEASE NOTE that the timeout for the object storage client is overwritten to `None` for all operations which
+        PLEASE NOTE that for oci versions < 2.23.2 and >= 2.18.0, the timeout for the object storage client is overwritten to `None` for all operations which
         call object storage. For this reason, the operations are NOT thread-safe, and you should provide the
         MultipartObjectAssembler class with its own Object Storage client that isn't used elsewhere.
         For more information please see `Known Issues <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/known-issues.html>`_
@@ -150,9 +146,6 @@ class MultipartObjectAssembler:
             if param_name in kwargs:
                 self.ssec_params[param_name] = kwargs[param_name]
 
-        # Store the original timeout value
-        self._object_storage_client_timeout = self.object_storage_client.base_client.timeout
-
     @staticmethod
     def calculate_md5(file_path, offset, chunk):
         """
@@ -214,24 +207,17 @@ class MultipartObjectAssembler:
         return retryable
 
     def _upload_part_call(self, object_storage_client, **kwargs):
-        try:
-            # Set the upload manager timeout on object storage client
-            self._set_multipart_upload_timeout()
-            with io.open(kwargs["part_file_path"], mode='rb') as file_object:
-                bpr = BufferedPartReader(file_object, kwargs["offset"], kwargs["size"])
+        with io.open(kwargs["part_file_path"], mode='rb') as file_object:
+            bpr = BufferedPartReader(file_object, kwargs["offset"], kwargs["size"])
 
-                return object_storage_client.upload_part(
-                    kwargs["namespace"],
-                    kwargs["bucket_name"],
-                    kwargs["object_name"],
-                    kwargs["upload_id"],
-                    kwargs["part_num"],
-                    bpr,
-                    **kwargs['new_kwargs'])
-
-        # Reset the object storage client timeout regardless of the result of above operations
-        finally:
-            self._reset_object_storage_client_timeout()
+            return object_storage_client.upload_part(
+                kwargs["namespace"],
+                kwargs["bucket_name"],
+                kwargs["object_name"],
+                kwargs["upload_id"],
+                kwargs["part_num"],
+                bpr,
+                **kwargs['new_kwargs'])
 
     def add_parts_from_file(self, file_path):
         """
@@ -280,24 +266,18 @@ class MultipartObjectAssembler:
         :param str opc_client_request_id: (optional)
             The client request ID for tracing
         """
-        try:
-            # Set the upload manager timeout on object storage client
-            self._set_multipart_upload_timeout()
-            if 'upload_id' in kwargs:
-                self.manifest["uploadId"] = kwargs['upload_id']
-                kwargs.pop('upload_id')
+        if 'upload_id' in kwargs:
+            self.manifest["uploadId"] = kwargs['upload_id']
+            kwargs.pop('upload_id')
 
-            if not self.manifest["uploadId"]:
-                raise ValueError("Cannot abort without an upload id.")
+        if not self.manifest["uploadId"]:
+            raise ValueError("Cannot abort without an upload id.")
 
-            self.object_storage_client.abort_multipart_upload(self.manifest["namespace"],
-                                                              self.manifest["bucketName"],
-                                                              self.manifest["objectName"],
-                                                              self.manifest["uploadId"],
-                                                              **kwargs)
-        # Reset the object storage client timeout regardless of the result of above operations
-        finally:
-            self._reset_object_storage_client_timeout()
+        self.object_storage_client.abort_multipart_upload(self.manifest["namespace"],
+                                                          self.manifest["bucketName"],
+                                                          self.manifest["objectName"],
+                                                          self.manifest["uploadId"],
+                                                          **kwargs)
 
     def resume(self, **kwargs):
         """
@@ -312,50 +292,44 @@ class MultipartObjectAssembler:
        :param str opc_client_request_id: (optional)
             The client request ID for tracing
        """
-        try:
-            # Set the upload manager timeout on object storage client
-            self._set_multipart_upload_timeout()
-            if 'upload_id' in kwargs:
-                self.manifest["uploadId"] = kwargs['upload_id']
-                kwargs.pop('upload_id')
+        if 'upload_id' in kwargs:
+            self.manifest["uploadId"] = kwargs['upload_id']
+            kwargs.pop('upload_id')
 
-            # Verify that the upload id is valid
-            if self.manifest["uploadId"] is None:
-                raise ValueError("Cannot resume without an upload id.")
+        # Verify that the upload id is valid
+        if self.manifest["uploadId"] is None:
+            raise ValueError("Cannot resume without an upload id.")
 
-            upload_kwargs = {}
-            if 'progress_callback' in kwargs:
-                upload_kwargs['progress_callback'] = kwargs['progress_callback']
-                kwargs.pop('progress_callback')
+        upload_kwargs = {}
+        if 'progress_callback' in kwargs:
+            upload_kwargs['progress_callback'] = kwargs['progress_callback']
+            kwargs.pop('progress_callback')
 
-            # Get parts details from object storage to see which parts didn't complete
-            has_next_page = True
-            while has_next_page:
-                response = self.object_storage_client.list_multipart_upload_parts(self.manifest["namespace"],
-                                                                                  self.manifest["bucketName"],
-                                                                                  self.manifest["objectName"],
-                                                                                  self.manifest["uploadId"],
-                                                                                  **kwargs)
-                # Update manifest with information from object storage
-                parts = self.manifest["parts"]
-                for part in response.data:
-                    part_index = part.part_number - 1
-                    if -1 < part_index < len(parts):
-                        manifest_part = parts[part_index]
-                        if manifest_part["size"] != part.size:
-                            raise ValueError('Cannot resume upload with different part size. Parts were uploaded with a part size of {} MiB'.format(part.size / MEBIBYTE))
-                        manifest_part["etag"] = part.etag
-                        manifest_part["opc_md5"] = part.md5
-                    elif part_index >= len(parts):
-                        raise ValueError('There are more parts on the server than parts to resume, please check the upload ID.')
-                has_next_page = response.has_next_page
-                kwargs['page'] = response.next_page
+        # Get parts details from object storage to see which parts didn't complete
+        has_next_page = True
+        while has_next_page:
+            response = self.object_storage_client.list_multipart_upload_parts(self.manifest["namespace"],
+                                                                              self.manifest["bucketName"],
+                                                                              self.manifest["objectName"],
+                                                                              self.manifest["uploadId"],
+                                                                              **kwargs)
+            # Update manifest with information from object storage
+            parts = self.manifest["parts"]
+            for part in response.data:
+                part_index = part.part_number - 1
+                if -1 < part_index < len(parts):
+                    manifest_part = parts[part_index]
+                    if manifest_part["size"] != part.size:
+                        raise ValueError('Cannot resume upload with different part size. Parts were uploaded with a part size of {} MiB'.format(part.size / MEBIBYTE))
+                    manifest_part["etag"] = part.etag
+                    manifest_part["opc_md5"] = part.md5
+                elif part_index >= len(parts):
+                    raise ValueError('There are more parts on the server than parts to resume, please check the upload ID.')
+            has_next_page = response.has_next_page
+            kwargs['page'] = response.next_page
 
-            # Upload parts that are missing or incomplete
-            self.upload(**upload_kwargs)
-        # Reset the object storage client timeout regardless of the result of above operations
-        finally:
-            self._reset_object_storage_client_timeout()
+        # Upload parts that are missing or incomplete
+        self.upload(**upload_kwargs)
 
     def new_upload(self, **kwargs):
         """
@@ -365,57 +339,50 @@ class MultipartObjectAssembler:
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
         """
-        try:
-            # Set the upload manager timeout on object storage client
-            self._set_multipart_upload_timeout()
+        if self.manifest['uploadId']:
+            raise RuntimeError('Cannot call new_upload again once an upload has already been created.')
 
-            if self.manifest['uploadId']:
-                raise RuntimeError('Cannot call new_upload again once an upload has already been created.')
+        request = models.CreateMultipartUploadDetails()
+        request.object = self.manifest["objectName"]
+        if self.content_type:
+            request.content_type = self.content_type
+        if self.content_language:
+            request.content_language = self.content_language
+        if self.content_encoding:
+            request.content_encoding = self.content_encoding
+        if self.metadata:
+            # TODO: look into moving this into codegen for create_multipart_upload like it is for put_object
+            processed_metadata = {}
+            for key, value in six.iteritems(self.metadata):
+                if not key.startswith('opc-meta-'):
+                    processed_metadata["opc-meta-" + key] = value
+                else:
+                    processed_metadata[key] = value
+            self.metadata = processed_metadata
 
-            request = models.CreateMultipartUploadDetails()
-            request.object = self.manifest["objectName"]
-            if self.content_type:
-                request.content_type = self.content_type
-            if self.content_language:
-                request.content_language = self.content_language
-            if self.content_encoding:
-                request.content_encoding = self.content_encoding
-            if self.metadata:
-                # TODO: look into moving this into codegen for create_multipart_upload like it is for put_object
-                processed_metadata = {}
-                for key, value in six.iteritems(self.metadata):
-                    if not key.startswith('opc-meta-'):
-                        processed_metadata["opc-meta-" + key] = value
-                    else:
-                        processed_metadata[key] = value
-                self.metadata = processed_metadata
+            request.metadata = self.metadata
 
-                request.metadata = self.metadata
+        client_request_id = None
+        if 'opc_client_request_id' in kwargs:
+            client_request_id = kwargs['opc_client_request_id']
 
-            client_request_id = None
-            if 'opc_client_request_id' in kwargs:
-                client_request_id = kwargs['opc_client_request_id']
+        kwargs = {}
+        if client_request_id:
+            kwargs['opc_client_request_id'] = client_request_id
+        if self.if_match:
+            kwargs['if_match'] = self.if_match
+        if self.if_none_match:
+            kwargs['if_none_match'] = self.if_none_match
 
-            kwargs = {}
-            if client_request_id:
-                kwargs['opc_client_request_id'] = client_request_id
-            if self.if_match:
-                kwargs['if_match'] = self.if_match
-            if self.if_none_match:
-                kwargs['if_none_match'] = self.if_none_match
+        # pass on SSE-C values (if any)
+        kwargs.update(self.ssec_params)
 
-            # pass on SSE-C values (if any)
-            kwargs.update(self.ssec_params)
+        response = self.object_storage_client.create_multipart_upload(self.manifest["namespace"],
+                                                                      self.manifest["bucketName"],
+                                                                      request,
+                                                                      **kwargs)
 
-            response = self.object_storage_client.create_multipart_upload(self.manifest["namespace"],
-                                                                          self.manifest["bucketName"],
-                                                                          request,
-                                                                          **kwargs)
-
-            self.manifest["uploadId"] = response.data.upload_id
-        # Reset the object storage client timeout regardless of the result of above operations
-        finally:
-            self._reset_object_storage_client_timeout()
+        self.manifest["uploadId"] = response.data.upload_id
 
     def _upload_part(self, part_num, part, **kwargs):
         """
@@ -430,86 +397,75 @@ class MultipartObjectAssembler:
             Callback function to receive the number of bytes uploaded since
             the last call to the callback function.
         """
-        try:
-            # Set the upload manager timeout on object storage client
-            self._set_multipart_upload_timeout()
+        new_kwargs = {'content_md5': part["hash"]}
+        if 'opc_client_request_id' in kwargs:
+            new_kwargs['opc_client_request_id'] = kwargs['opc_client_request_id']
 
-            new_kwargs = {'content_md5': part["hash"]}
-            if 'opc_client_request_id' in kwargs:
-                new_kwargs['opc_client_request_id'] = kwargs['opc_client_request_id']
+        # supply SSE-C key (if any) information to upload-part
+        new_kwargs.update(self.ssec_params)
 
-            # supply SSE-C key (if any) information to upload-part
-            new_kwargs.update(self.ssec_params)
+        # TODO: Calculate the hash without needing to read the file chunk twice.
+        # Calculate the hash before uploading.  The hash will be used
+        # to determine if the part needs to be uploaded.  It will also
+        # be used to determine if there is a conflict between parts that
+        # have previously been uploaded.
+        if part["hash"] is None:
+            part["hash"] = self.calculate_md5(part["file_path"], part["offset"], part["size"])
 
-            # TODO: Calculate the hash without needing to read the file chunk twice.
-            # Calculate the hash before uploading.  The hash will be used
-            # to determine if the part needs to be uploaded.  It will also
-            # be used to determine if there is a conflict between parts that
-            # have previously been uploaded.
-            if part["hash"] is None:
-                part["hash"] = self.calculate_md5(part["file_path"], part["offset"], part["size"])
+        retry_strategy = None
+        if 'retry_strategy' in kwargs:
+            retry_strategy = kwargs['retry_strategy']
 
+        if "opc_md5" not in part:
+            # Disable the retry_strategy to work around data corruption issue temporarily
             retry_strategy = None
-            if 'retry_strategy' in kwargs:
-                retry_strategy = kwargs['retry_strategy']
 
-            if "opc_md5" not in part:
+            if retry_strategy:
+                response = retry_strategy.make_retrying_call(
+                    self._upload_part_call,
+                    self.object_storage_client,
+                    namespace=self.manifest["namespace"],
+                    bucket_name=self.manifest["bucketName"],
+                    object_name=self.manifest["objectName"],
+                    upload_id=self.manifest["uploadId"],
+                    part_file_path=part["file_path"],
+                    offset=part["offset"],
+                    size=part["size"],
+                    part_num=part_num,
+                    new_kwargs=new_kwargs
+                )
+            else:
                 # Disable the retry_strategy to work around data corruption issue temporarily
-                retry_strategy = None
-
-                if retry_strategy:
-                    response = retry_strategy.make_retrying_call(
-                        self._upload_part_call,
-                        self.object_storage_client,
-                        namespace=self.manifest["namespace"],
-                        bucket_name=self.manifest["bucketName"],
-                        object_name=self.manifest["objectName"],
-                        upload_id=self.manifest["uploadId"],
-                        part_file_path=part["file_path"],
-                        offset=part["offset"],
-                        size=part["size"],
-                        part_num=part_num,
-                        new_kwargs=new_kwargs
-                    )
-                else:
-                    # Disable the retry_strategy to work around data corruption issue temporarily
-                    remaining_tries = 1
-                    while remaining_tries > 0:
-                        try:
-                            response = self._upload_part_call(self.object_storage_client,
-                                                              namespace=self.manifest["namespace"],
-                                                              bucket_name=self.manifest["bucketName"],
-                                                              object_name=self.manifest["objectName"],
-                                                              upload_id=self.manifest["uploadId"],
-                                                              part_file_path=part["file_path"],
-                                                              offset=part["offset"],
-                                                              size=part["size"],
-                                                              part_num=part_num,
-                                                              new_kwargs=new_kwargs)
-                        except Exception as e:
-                            if self._is_exception_retryable(e) and remaining_tries > 1:
-                                remaining_tries -= 1
-                            else:
-                                raise
+                remaining_tries = 1
+                while remaining_tries > 0:
+                    try:
+                        response = self._upload_part_call(self.object_storage_client,
+                                                          namespace=self.manifest["namespace"],
+                                                          bucket_name=self.manifest["bucketName"],
+                                                          object_name=self.manifest["objectName"],
+                                                          upload_id=self.manifest["uploadId"],
+                                                          part_file_path=part["file_path"],
+                                                          offset=part["offset"],
+                                                          size=part["size"],
+                                                          part_num=part_num,
+                                                          new_kwargs=new_kwargs)
+                    except Exception as e:
+                        if self._is_exception_retryable(e) and remaining_tries > 1:
+                            remaining_tries -= 1
                         else:
-                            break
+                            raise
+                    else:
+                        break
 
-                if response.status == 200:
-                    part["etag"] = response.headers['etag']
-                    part["opc_md5"] = str(response.headers['opc-content-md5'])
+            if response.status == 200:
+                part["etag"] = response.headers['etag']
+                part["opc_md5"] = str(response.headers['opc-content-md5'])
 
-            if 'progress_callback' in kwargs:
-                kwargs['progress_callback'](part["size"])
-
-        # Reset the object storage client timeout regardless of the result of above operations
-        finally:
-            self._reset_object_storage_client_timeout()
+        if 'progress_callback' in kwargs:
+            kwargs['progress_callback'](part["size"])
 
     def _upload_stream_part(self, part_num, part_bytes, **kwargs):
         try:
-            # Set the upload manager timeout on object storage client
-            self._set_multipart_upload_timeout()
-
             m = hashlib.md5()
             m.update(part_bytes)
 
@@ -553,9 +509,6 @@ class MultipartObjectAssembler:
             if 'semaphore' in kwargs:
                 kwargs['semaphore'].release()
 
-            # Reset the object storage client timeout regardless of the result of above operations
-            self._reset_object_storage_client_timeout()
-
     def upload(self, **kwargs):
         """
         Upload an object to Object Storage
@@ -566,80 +519,68 @@ class MultipartObjectAssembler:
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
         """
-        try:
-            # Set the upload manager timeout on object storage client
-            self._set_multipart_upload_timeout()
 
-            if self.manifest["uploadId"] is None:
-                raise RuntimeError('Cannot call upload before initializing an upload using new_upload.')
+        if self.manifest["uploadId"] is None:
+            raise RuntimeError('Cannot call upload before initializing an upload using new_upload.')
 
-            pool = Pool(processes=self.parallel_process_count)
-            pool.map(lambda part_tuple: self._upload_part(part_num=part_tuple[0] + 1, part=part_tuple[1], **kwargs),
-                     enumerate(self.manifest["parts"]))
-        # Reset the object storage client timeout regardless of the result of above operations
-        finally:
-            self._reset_object_storage_client_timeout()
+        pool = Pool(processes=self.parallel_process_count)
+        pool.map(lambda part_tuple: self._upload_part(part_num=part_tuple[0] + 1, part=part_tuple[1], **kwargs),
+                 enumerate(self.manifest["parts"]))
 
     def upload_stream(self, stream_ref, **kwargs):
-        try:
-            # Set the upload manager timeout on object storage client
-            self._set_multipart_upload_timeout()
 
-            if self.manifest["uploadId"] is None:
-                raise RuntimeError('Cannot call upload before initializing an upload using new_upload.')
+        if self.manifest["uploadId"] is None:
+            raise RuntimeError('Cannot call upload before initializing an upload using new_upload.')
 
-            # The pool of work we have available, and the sempahore to gate work into the pool (since just submitting
-            # work to the pool doesn't block on the number of processes available to do work in the pool)
-            pool = Pool(processes=self.parallel_process_count)
-            semaphore = Semaphore(self.parallel_process_count)
+        # The pool of work we have available, and the sempahore to gate work into the pool (since just submitting
+        # work to the pool doesn't block on the number of processes available to do work in the pool)
+        pool = Pool(processes=self.parallel_process_count)
+        semaphore = Semaphore(self.parallel_process_count)
 
-            # A dict which will be shared between the threads in our pool (this would not work as-is with processes) but
-            # we use threads via multiprocessing.dummy. If we use processes, then a Manager would likely be needed for this.
-            #
-            # should_continue will only ever be set to False by _upload_stream_part so not too worried if we have multiple
-            # writers
-            #
-            # Queue should be thread safe (though for tracking the exceptions, order doesn't strictly matter)
-            shared_dict = {'should_continue': True, 'exceptions': Queue()}
+        # A dict which will be shared between the threads in our pool (this would not work as-is with processes) but
+        # we use threads via multiprocessing.dummy. If we use processes, then a Manager would likely be needed for this.
+        #
+        # should_continue will only ever be set to False by _upload_stream_part so not too worried if we have multiple
+        # writers
+        #
+        # Queue should be thread safe (though for tracking the exceptions, order doesn't strictly matter)
+        shared_dict = {'should_continue': True, 'exceptions': Queue()}
 
-            part_counter = 0
+        part_counter = 0
 
-            apply_async_kwargs = kwargs.copy()
-            apply_async_kwargs['semaphore'] = semaphore
-            apply_async_kwargs['shared_dict'] = shared_dict
+        apply_async_kwargs = kwargs.copy()
+        apply_async_kwargs['semaphore'] = semaphore
+        apply_async_kwargs['shared_dict'] = shared_dict
 
-            # We pull data from the stream until there is no more
-            keep_reading = True
-            while keep_reading:
-                if six.PY3 and hasattr(stream_ref, 'buffer'):
-                    read_bytes = stream_ref.buffer.read(self.part_size)
-                else:
-                    read_bytes = stream_ref.read(self.part_size)
+        # We pull data from the stream until there is no more
+        keep_reading = True
+        while keep_reading:
+            if six.PY3 and hasattr(stream_ref, 'buffer'):
+                read_bytes = stream_ref.buffer.read(self.part_size)
+            else:
+                read_bytes = stream_ref.read(self.part_size)
 
-                semaphore.acquire()
+            semaphore.acquire()
 
-                if len(read_bytes) != 0:
-                    pool.apply_async(self._upload_stream_part, (part_counter, read_bytes), apply_async_kwargs)
-                    part_counter += 1
+            if len(read_bytes) != 0:
+                pool.apply_async(self._upload_stream_part, (part_counter, read_bytes), apply_async_kwargs)
+                part_counter += 1
 
-                keep_reading = (len(read_bytes) == self.part_size) and shared_dict['should_continue']
+            keep_reading = (len(read_bytes) == self.part_size) and shared_dict['should_continue']
 
-            # If we're here we've either sent off all the work we needed to (and so are waiting on remaining bits to finish)
-            # or we terminated early because of an exception in one of our uploads. In either case, close off the pool to
-            # any more work and let the remaining work finish gracefully
-            pool.close()
-            pool.join()
+        # If we're here we've either sent off all the work we needed to (and so are waiting on remaining bits to finish)
+        # or we terminated early because of an exception in one of our uploads. In either case, close off the pool to
+        # any more work and let the remaining work finish gracefully
+        pool.close()
+        pool.join()
 
-            # If we had at least one exception then throw out an error to indicate failure
-            if not shared_dict['exceptions'].empty():
-                raise MultipartUploadError(error_causes_queue=shared_dict['exceptions'])
+        # If we had at least one exception then throw out an error to indicate failure
+        if not shared_dict['exceptions'].empty():
+            raise MultipartUploadError(error_causes_queue=shared_dict['exceptions'])
 
-            # Because we processed in parallel, the parts in the manifest may be out of order. Re-order them based on the part number
-            # because commit assumes that they are ordered
-            self.manifest['parts'].sort(key=lambda part: part['part_num'])
-        # Reset the object storage client timeout regardless of the result of above operations
-        finally:
-            self._reset_object_storage_client_timeout()
+        # Because we processed in parallel, the parts in the manifest may be out of order. Re-order them based on the part number
+        # because commit assumes that they are ordered
+        self.manifest['parts'].sort(key=lambda part: part['part_num'])
 
     def commit(self, **kwargs):
         """
@@ -648,47 +589,32 @@ class MultipartObjectAssembler:
         :return: A Response object with data of type None
         :rtype: None
         """
-        try:
-            # Set the upload manager timeout on object storage client
-            self._set_multipart_upload_timeout()
+        if self.manifest["uploadId"] is None:
+            raise RuntimeError('Cannot call commit before initializing an upload using new_upload or resuming an upload using resume.')
 
-            if self.manifest["uploadId"] is None:
-                raise RuntimeError('Cannot call commit before initializing an upload using new_upload or resuming an upload using resume.')
+        commit_details = models.CommitMultipartUploadDetails()
 
-            commit_details = models.CommitMultipartUploadDetails()
+        # Determine which parts to commit and which parts to exclude.
+        parts_to_commit = []
+        parts_to_exclude = []
+        for partNum, part in enumerate(self.manifest["parts"]):
+            detail = models.CommitMultipartUploadPartDetails()
+            detail.part_num = partNum + 1
+            if "etag" in part:
+                detail.etag = part["etag"]
+                parts_to_commit.append(detail)
+            else:
+                parts_to_exclude.append(partNum + 1)
 
-            # Determine which parts to commit and which parts to exclude.
-            parts_to_commit = []
-            parts_to_exclude = []
-            for partNum, part in enumerate(self.manifest["parts"]):
-                detail = models.CommitMultipartUploadPartDetails()
-                detail.part_num = partNum + 1
-                if "etag" in part:
-                    detail.etag = part["etag"]
-                    parts_to_commit.append(detail)
-                else:
-                    parts_to_exclude.append(partNum + 1)
+        commit_details.parts_to_commit = parts_to_commit
+        commit_details.parts_to_exclude = parts_to_exclude
 
-            commit_details.parts_to_commit = parts_to_commit
-            commit_details.parts_to_exclude = parts_to_exclude
+        # Commit the multipart upload
+        response = self.object_storage_client.commit_multipart_upload(self.manifest["namespace"],
+                                                                      self.manifest["bucketName"],
+                                                                      self.manifest["objectName"],
+                                                                      self.manifest["uploadId"],
+                                                                      commit_details,
+                                                                      **kwargs)
 
-            # Commit the multipart upload
-            response = self.object_storage_client.commit_multipart_upload(self.manifest["namespace"],
-                                                                          self.manifest["bucketName"],
-                                                                          self.manifest["objectName"],
-                                                                          self.manifest["uploadId"],
-                                                                          commit_details,
-                                                                          **kwargs)
-
-            return response
-        # Reset the object storage client timeout regardless of the result of above operations
-        finally:
-            self._reset_object_storage_client_timeout()
-
-    # The following two methods are called at the beginning and at the end of every method for upload manager
-    # This is not the best way to go around the timeout issue, but it is a workaround for now
-    def _set_multipart_upload_timeout(self):
-        self.object_storage_client.base_client.timeout = MULTIPART_UPLOAD_TIMEOUT
-
-    def _reset_object_storage_client_timeout(self):
-        self.object_storage_client.base_client.timeout = self._object_storage_client_timeout
+        return response
