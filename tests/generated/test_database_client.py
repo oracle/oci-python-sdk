@@ -526,6 +526,47 @@ def test_change_exadata_infrastructure_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_change_key_store_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ChangeKeyStoreCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ChangeKeyStoreCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ChangeKeyStoreCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.change_key_store_compartment(
+                change_key_store_compartment_details=request.pop(util.camelize('ChangeKeyStoreCompartmentDetails')),
+                key_store_id=request.pop(util.camelize('keyStoreId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ChangeKeyStoreCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_key_store_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_change_vm_cluster_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ChangeVmClusterCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1290,6 +1331,46 @@ def test_create_external_backup_job(testing_service_client):
 
 
 # IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_create_key_store(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'CreateKeyStore'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'CreateKeyStore')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='CreateKeyStore')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.create_key_store(
+                create_key_store_details=request.pop(util.camelize('CreateKeyStoreDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'CreateKeyStore',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'keyStore',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_create_vm_cluster(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'CreateVmCluster'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1887,6 +1968,46 @@ def test_delete_exadata_infrastructure(testing_service_client):
             result,
             service_error,
             'delete_exadata_infrastructure',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_delete_key_store(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'DeleteKeyStore'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'DeleteKeyStore')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='DeleteKeyStore')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.delete_key_store(
+                key_store_id=request.pop(util.camelize('keyStoreId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'DeleteKeyStore',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_key_store',
             True,
             False
         )
@@ -3784,6 +3905,46 @@ def test_get_external_backup_job(testing_service_client):
             result,
             service_error,
             'externalBackupJob',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_key_store(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'GetKeyStore'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetKeyStore')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetKeyStore')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.get_key_store(
+                key_store_id=request.pop(util.camelize('keyStoreId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetKeyStore',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'keyStore',
             False,
             False
         )
@@ -6152,6 +6313,66 @@ def test_list_gi_versions(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_key_stores(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ListKeyStores'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListKeyStores')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListKeyStores')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.list_key_stores(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_key_stores(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_key_stores(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ListKeyStores',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'keyStoreSummary',
+            False,
+            True
+        )
+
+
 # IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_list_maintenance_runs(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListMaintenanceRuns'):
@@ -7995,6 +8216,47 @@ def test_update_exadata_iorm_config(testing_service_client):
             result,
             service_error,
             'exadataIormConfig',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="ExaCC" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_update_key_store(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'UpdateKeyStore'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'UpdateKeyStore')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='UpdateKeyStore')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.update_key_store(
+                key_store_id=request.pop(util.camelize('keyStoreId')),
+                update_key_store_details=request.pop(util.camelize('UpdateKeyStoreDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'UpdateKeyStore',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'keyStore',
             False,
             False
         )

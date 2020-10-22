@@ -107,8 +107,10 @@ class SearchLogsDetails(object):
         """
         **[Required]** Gets the search_query of this SearchLogsDetails.
         Query corresponding to the search operation. This query is parsed and validated before execution and
-        should follow the spec. For query language specification see:
-        https://docs.cloud.oracle.com/iaas/Content/Logging/Reference/query_language_specification.htm
+        should follow the specification. For more information on the query language specification, see
+        `Logging Query Language Specification`__.
+
+        __ https://docs.cloud.oracle.com/Content/Logging/Reference/query_language_specification.htm
 
 
         :return: The search_query of this SearchLogsDetails.
@@ -121,8 +123,10 @@ class SearchLogsDetails(object):
         """
         Sets the search_query of this SearchLogsDetails.
         Query corresponding to the search operation. This query is parsed and validated before execution and
-        should follow the spec. For query language specification see:
-        https://docs.cloud.oracle.com/iaas/Content/Logging/Reference/query_language_specification.htm
+        should follow the specification. For more information on the query language specification, see
+        `Logging Query Language Specification`__.
+
+        __ https://docs.cloud.oracle.com/Content/Logging/Reference/query_language_specification.htm
 
 
         :param search_query: The search_query of this SearchLogsDetails.

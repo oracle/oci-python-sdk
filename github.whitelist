@@ -99,3 +99,4 @@
 ^src/oci/management_agent/.*\.py$
 ^src/oci/cloud_guard/.*\.py$
 ^src/oci/opsi/.*\.py$
+^src/oci/compute_instance_agent/.*\.py$
