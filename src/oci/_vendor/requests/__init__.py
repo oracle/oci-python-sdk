@@ -95,16 +95,19 @@ except (AssertionError, ValueError):
                   "version!".format(urllib3.__version__, chardet.__version__),
                   RequestsDependencyWarning)
 
-# Attempt to enable urllib3's SNI support, if possible
-try:
-    from oci._vendor.urllib3.contrib import pyopenssl
-    pyopenssl.inject_into_urllib3()
+# Attempt to enable urllib3's SNI support, if necessary
+import ssl
 
-    # Check cryptography version
-    from cryptography import __version__ as cryptography_version
-    _check_cryptography(cryptography_version)
-except ImportError:
-    pass
+if not getattr(ssl, "HAS_SNI", False):
+    try:
+        from oci._vendor.urllib3.contrib import pyopenssl
+        pyopenssl.inject_into_urllib3()
+
+        # Check cryptography version
+        from cryptography import __version__ as cryptography_version
+        _check_cryptography(cryptography_version)
+    except ImportError:
+        pass
 
 # urllib3's DependencyWarnings should be silenced.
 from oci._vendor.urllib3.exceptions import DependencyWarning
