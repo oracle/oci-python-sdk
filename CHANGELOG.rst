@@ -4,12 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.23.2 - TBD
+2.23.2 - 2020-10-27
 ====================
 
 Added
 -----
-* TBD
+* Support for the Compute Instance Agent service
+* Support for key store resources and operations in the Database service
+* Support for specifying a key store when creating autonomous container databases in the Database service
+
+Fixed
+-------
+* Bypassed the use of PyOpenSSL in the vendored requests library only if ssl does not have SNI. This may fix a `known issue <https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/known-issues.html#uploadmanager-generates-ssl3-write-pending-error-when-a-read-timeout-is-set-for-the-object-storage-client>`_. depending on your environment. For more information, please see the link to the docs.
 
 ====================
 2.23.1 - 2020-10-20
