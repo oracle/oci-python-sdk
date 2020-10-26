@@ -42,27 +42,32 @@ Make sure to set up auto completion for both pyenv and pyenv-virtualenv.
 
     # Run once to install the python versions we test against
     pyenv install 2.7.12
-    pyenv install 3.5.1
     pyenv install 3.6.5
+    pyenv install 3.7.9
+    pyenv install 3.8.6
+    pyenv install 3.9.0
 
     # Ensure you're using a newer virtualenv, packaged with
-    # recent versions of python, pip (3.5+, 9.0+)
-    pyenv shell 3.5.1
+    # recent versions of python, pip (3.6+, 9.0+)
+    pyenv shell 3.8.6
     pip install -U pip
 
     # Create new virtual environments for sdk-specific work:
     pyenv virtualenv --copies 3.6.5 sdk-36
-    pyenv virtualenv --copies 3.5.1 sdk-3
+    pyenv virtualenv --copies 3.7.9 sdk-37
+    pyenv virtualenv --copies 3.8.6 sdk-38
+    pyenv virtualenv --copies 3.9.0 sdk-39
     pyenv virtualenv --always-copy 2.7.12 sdk-2
 
     # Check to see that pyenv recognizes the new virtualenvs
     # You should see something like this:
     #    2.7.12/envs/sdk-2 (created from ~/.pyenv/versions/2.7.12)
-    #    3.5.1/envs/sdk-3 (created from ~/.pyenv/versions/3.5.1)
     #    3.6.5/envs/sdk-36 (created from ~/.pyenv/versions/3.6.5)
     #    sdk-2 (created from ~/.pyenv/versions/2.7.12)
-    #    sdk-3 (created from ~/.pyenv/versions/3.5.1)
     #    sdk-36 (created from ~/.pyenv/versions/3.6.5)
+    #    sdk-37 (created from ~/.pyenv/versions/3.7.9)
+    #    sdk-38 (created from ~/.pyenv/versions/3.8.6)
+    #    sdk-39 (created from ~/.pyenv/versions/3.9.0)
     pyenv virtualenvs
 
     # Drop the shell venv
@@ -70,19 +75,19 @@ Make sure to set up auto completion for both pyenv and pyenv-virtualenv.
 
     # Set pyenv to use these virtualenvs when you're running commands from
     # the project or any subdirectory
-    pyenv local sdk-36 sdk-3 sdk-2
+    pyenv local sdk-36 sdk-37 sdk-38 sdk-39 sdk-2
 
     # Update pip if necessary, in all pythons
     pip3 install -U pip
     pip2 install -U pip
 
-    # Verify sdk-3 installed correctly
+    # Verify sdk-38 installed correctly
     tox -e flake8
 
 
-Using ``pyenv local`` told pyenv that within this directory and subdirectories, only the sdk-2, sdk-3
-and sdk-36 venvs should be exposed.  This will keep you from accidentally installing or mucking
-around with the system-wide 2.7.x, 3.5.x and 3.6.x environments.
+Using ``pyenv local`` told pyenv that within this directory and subdirectories, only the sdk-2, sdk-36, sdk-37,
+sdk-38 and sdk-39 venvs should be exposed.  This will keep you from accidentally installing or mucking around
+with the system-wide 2.7.x, 3.6.x, 3.7.x, 3.8.x and 3.9.x environments.
 
 To run commands with specifically the py2 or py3 venv, use ``pyenv shell`` as such::
 
@@ -106,7 +111,7 @@ You'll need to do this with all venvs.  Set the shell venv and run the
 following commands, then swap the shell venv and run them again.  For
 the venvs defined above, this would mean first using ``pyenv shell sdk-2``
 and then after setting up dependencies, repeating those steps in other venvs
-(e.g. ``pyenv shell sdk-3`` and ``pyenv shell sdk-36``)
+(e.g. ``pyenv shell sdk-36`` and ``pyenv shell sdk-38``)
 
 Tell pip that this is an editable package::
 
@@ -238,9 +243,9 @@ If you need to do it under tox, then this becomes::
 Building the SDK
 ================
 
-Because we are using a shared codebase for 2.7 and 3.5+, you
+Because we are using a shared codebase for 2.7.9+ and 3.6+, you
 can generate the wheel with either venv and ``setup.cfg`` ensures the
-resulting wheel is marked as 2.7 and 3.5 compatible.
+resulting wheel is marked as 2.7.9+ and 3.6+ compatible.
 
 ::
 
