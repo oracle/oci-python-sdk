@@ -5,7 +5,8 @@
 from . import auth_utils
 from .security_token_container import SecurityTokenContainer
 from cryptography.hazmat.primitives.serialization import Encoding, PublicFormat
-from OpenSSL import crypto
+from cryptography.hazmat.primitives.hashes import SHA1
+
 from oci._vendor import requests
 
 import oci.retry
@@ -150,7 +151,8 @@ class X509FederationClient(object):
 
             request_payload['intermediateCertificates'] = retrieved_certs
 
-        fingerprint = crypto.load_certificate(crypto.FILETYPE_PEM, self.leaf_certificate_retriever.get_certificate_raw()).digest('sha1').decode('utf-8')
+        certificate = self.leaf_certificate_retriever.get_certificate_as_certificate()
+        fingerprint = ":".join("{:02X}".format(ch) for ch in bytearray(certificate.fingerprint(SHA1())))
         signer = AuthTokenRequestSigner(self.tenancy_id, fingerprint, self.leaf_certificate_retriever)
 
         response = self.requests_session.post(self.federation_endpoint, json=request_payload, auth=signer, verify=self.cert_bundle_verify, timeout=(10, 60))

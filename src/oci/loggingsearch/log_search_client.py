@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class LogSearchClient(object):
     """
-    Search for logs in your compartements / log groups / log objects.
+    Search for logs in your compartments, log groups, and log objects.
     """
 
     def __init__(self, config, **kwargs):
@@ -101,13 +101,13 @@ class LogSearchClient(object):
             The maximum number of items to return in a paginated \"List\" call. For information about pagination, see
             `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call. For information about
             pagination, see `List Pagination`__.
 
-            __ https://docs.cloud.oracle.com/#API/Concepts/usingapi.htm#List_Pagination
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.

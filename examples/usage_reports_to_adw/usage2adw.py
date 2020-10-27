@@ -70,7 +70,7 @@ import requests
 import time
 
 
-version = "20.07.28"
+version = "20.10.27"
 usage_report_namespace = "bling"
 work_report_dir = os.curdir + "/work_report_dir"
 
@@ -212,6 +212,7 @@ def set_parser_arguments():
     parser.add_argument('-p', default="", dest='proxy', help='Set Proxy (i.e. www-proxy-server.com:80) ')
     parser.add_argument('-su', action='store_true', default=False, dest='skip_usage', help='Skip Load Usage Files')
     parser.add_argument('-sc', action='store_true', default=False, dest='skip_cost', help='Skip Load Cost Files')
+    parser.add_argument('-sr', action='store_true', default=False, dest='skip_rate', help='Skip Public Rate API')
     parser.add_argument('-ip', action='store_true', default=False, dest='instance_principals', help='Use Instance Principals for Authentication')
     parser.add_argument('-du', default="", dest='duser', help='ADB User')
     parser.add_argument('-dp', default="", dest='dpass', help='ADB Password')
@@ -246,6 +247,7 @@ def check_database_table_structure_usage(connection):
             print("   Table OCI_USAGE was not exist, creating")
             sql = "create table OCI_USAGE ("
             sql += "    TENANT_NAME             VARCHAR2(100),"
+            sql += "    TENANT_ID               VARCHAR2(100),"
             sql += "    FILE_ID                 VARCHAR2(30),"
             sql += "    USAGE_INTERVAL_START    DATE,"
             sql += "    USAGE_INTERVAL_END      DATE,"
@@ -274,10 +276,21 @@ def check_database_table_structure_usage(connection):
         cursor.execute(sql)
         val, = cursor.fetchone()
 
-        # if columns not exist, create them
+        # if columns not exist, create it
         if val == 0:
             print("   Column TAGS_DATA does not exist in the table OCI_USAGE, adding...")
             sql = "alter table OCI_USAGE add (TAGS_DATA VARCHAR2(4000))"
+            cursor.execute(sql)
+
+        # check if TENANT_ID columns exist in OCI_USAGE table, if not create
+        sql = "select count(*) from user_tab_columns where table_name = 'OCI_USAGE' and column_name='TENANT_ID'"
+        cursor.execute(sql)
+        val, = cursor.fetchone()
+
+        # if columns not exist, create it
+        if val == 0:
+            print("   Column TENANT_ID does not exist in the table OCI_USAGE, adding...")
+            sql = "alter table OCI_USAGE add (TENANT_ID VARCHAR2(100))"
             cursor.execute(sql)
 
         # check if OCI_USAGE_TAG_KEYS table exist, if not create
@@ -460,6 +473,7 @@ def update_price_list(connection):
         sql += "( "
         sql += "    SELECT "
         sql += "        TENANT_NAME, "
+        sql += "        TENANT_ID, "
         sql += "        COST_PRODUCT_SKU, "
         sql += "        PRD_DESCRIPTION, "
         sql += "        COST_CURRENCY_CODE, "
@@ -468,20 +482,21 @@ def update_price_list(connection):
         sql += "    ( "
         sql += "        SELECT  "
         sql += "            TENANT_NAME, "
+        sql += "            TENANT_ID, "
         sql += "            COST_PRODUCT_SKU, "
         sql += "            PRD_DESCRIPTION, "
         sql += "            COST_CURRENCY_CODE, "
         sql += "            COST_UNIT_PRICE, "
-        sql += "            ROW_NUMBER() OVER (PARTITION BY TENANT_NAME, COST_PRODUCT_SKU ORDER BY USAGE_INTERVAL_START DESC, COST_UNIT_PRICE DESC) RN "
-        sql += "        FROM OCI_COST A  "
+        sql += "            ROW_NUMBER() OVER (PARTITION BY TENANT_NAME, TENANT_ID, COST_PRODUCT_SKU ORDER BY USAGE_INTERVAL_START DESC, COST_UNIT_PRICE DESC) RN "
+        sql += "        FROM OCI_COST A where tenant_id is not null "
         sql += "    )     "
         sql += "    WHERE RN = 1 "
         sql += "    ORDER BY 1,2 "
         sql += ") B "
-        sql += "ON (A.TENANT_NAME = B.TENANT_NAME AND A.COST_PRODUCT_SKU = B.COST_PRODUCT_SKU) "
+        sql += "ON (A.TENANT_NAME = B.TENANT_NAME AND A.TENANT_ID = B.TENANT_ID AND A.COST_PRODUCT_SKU = B.COST_PRODUCT_SKU) "
         sql += "WHEN MATCHED THEN UPDATE SET A.PRD_DESCRIPTION=B.PRD_DESCRIPTION, A.COST_CURRENCY_CODE=B.COST_CURRENCY_CODE, A.COST_UNIT_PRICE=B.COST_UNIT_PRICE, COST_LAST_UPDATE = SYSDATE "
-        sql += "WHEN NOT MATCHED THEN INSERT (TENANT_NAME,COST_PRODUCT_SKU,PRD_DESCRIPTION,COST_CURRENCY_CODE,COST_UNIT_PRICE,COST_LAST_UPDATE)  "
-        sql += "  VALUES (B.TENANT_NAME,B.COST_PRODUCT_SKU,B.PRD_DESCRIPTION,B.COST_CURRENCY_CODE,B.COST_UNIT_PRICE,SYSDATE)"
+        sql += "WHEN NOT MATCHED THEN INSERT (TENANT_NAME,TENANT_ID,COST_PRODUCT_SKU,PRD_DESCRIPTION,COST_CURRENCY_CODE,COST_UNIT_PRICE,COST_LAST_UPDATE)  "
+        sql += "  VALUES (B.TENANT_NAME,B.TENANT_ID, B.COST_PRODUCT_SKU,B.PRD_DESCRIPTION,B.COST_CURRENCY_CODE,B.COST_UNIT_PRICE,SYSDATE)"
 
         cursor.execute(sql)
         connection.commit()
@@ -520,6 +535,8 @@ def update_cost_reference(connection):
         sql += "            else prd_compartment_path end as REF_NAME  "
         sql += "            from OCI_COST "
         sql += "        union all "
+        sql += "        select distinct TENANT_NAME, 'TENANT_ID' as REF_TYPE, TENANT_ID as ref_name from OCI_COST where tenant_id is not null"
+        sql += "        union all "
         sql += "        select distinct TENANT_NAME, 'PRD_COMPARTMENT_NAME' as REF_TYPE, PRD_COMPARTMENT_NAME as ref_name from OCI_COST "
         sql += "        union all "
         sql += "        select distinct TENANT_NAME, 'PRD_REGION' as REF_TYPE, PRD_REGION as ref_name from OCI_COST "
@@ -551,16 +568,16 @@ def update_cost_reference(connection):
 # update_public_rates
 ##########################################################################
 def update_public_rates(connection, tenant_name):
+    api_url = "https://itra.oraclecloud.com/itas/.anon/myservices/api/v1/products?partNumber="
     try:
         # open cursor
         num_rows = 0
         cursor = connection.cursor()
-        api_url = "https://itra.oraclecloud.com/itas/.anon/myservices/api/v1/products?partNumber="
 
         print("\nMerging Public Rates into OCI_RATE_CARD...")
 
         # retrieve the SKUS to query
-        sql = "select COST_PRODUCT_SKU, COST_CURRENCY_CODE from OCI_PRICE_LIST where tenant_name=:tenant_name"
+        sql = "select distinct COST_PRODUCT_SKU, COST_CURRENCY_CODE from OCI_PRICE_LIST where tenant_name=:tenant_name"
 
         cursor.execute(sql, {"tenant_name": tenant_name})
         rows = cursor.fetchall()
@@ -591,28 +608,33 @@ def update_public_rates(connection, tenant_name):
 
                 for item in resp.json()['items']:
                     rate_description = item["displayName"]
-                    for price in item['prices']:
-                        if price['model'] == 'PAY_AS_YOU_GO':
-                            rate_price = price['value']
+                    if 'price' in item:
+                        if 'value' in item['price']:
+                            rate_price = item['price']['value']
+                    else:
+                        if 'prices' in item:
+                            for price in item['prices']:
+                                if price['model'] == 'PAY_AS_YOU_GO':
+                                    rate_price = price['value']
+                if rate_price:
+                    # update database
+                    sql = "update OCI_PRICE_LIST set "
+                    sql += "RATE_DESCRIPTION=:rate_description, "
+                    sql += "RATE_PAYGO_PRICE=:rate_price, "
+                    sql += "RATE_MONTHLY_FLEX_PRICE=:rate_price, "
+                    sql += "RATE_UPDATE_DATE=sysdate "
+                    sql += "where TENANT_NAME=:tenant_name and COST_PRODUCT_SKU=:cost_product_sku "
 
-                # update database
-                sql = "update OCI_PRICE_LIST set "
-                sql += "RATE_DESCRIPTION=:rate_description, "
-                sql += "RATE_PAYGO_PRICE=:rate_price, "
-                sql += "RATE_MONTHLY_FLEX_PRICE=:rate_price, "
-                sql += "RATE_UPDATE_DATE=sysdate "
-                sql += "where TENANT_NAME=:tenant_name and COST_PRODUCT_SKU=:cost_product_sku "
+                    # only apply paygo cost after 7/13 oracle change rate
+                    sql_variables = {
+                        "rate_description": rate_description,
+                        "rate_price": rate_price,
+                        "tenant_name": tenant_name,
+                        "cost_product_sku": cost_product_sku
+                    }
 
-                # only apply paygo cost after 7/13 oracle change rate
-                sql_variables = {
-                    "rate_description": rate_description,
-                    "rate_price": rate_price,
-                    "tenant_name": tenant_name,
-                    "cost_product_sku": cost_product_sku
-                }
-
-                cursor.execute(sql, sql_variables)
-                num_rows += 1
+                    cursor.execute(sql, sql_variables)
+                    num_rows += 1
 
             # Commit
             connection.commit()
@@ -626,6 +648,7 @@ def update_public_rates(connection, tenant_name):
 
     except requests.exceptions.ConnectionError as e:
         print("\nError connecting to billing metering API at update_public_rates() - " + str(e))
+        print("\nPlease check you can connect to " + api_url + "B90000")
 
     except Exception as e:
         raise Exception("\nError manipulating database at update_public_rates() - " + str(e))
@@ -677,6 +700,50 @@ def update_usage_stats(connection):
 
 
 ##########################################################################
+# update_tenant_id_if_null - Added for organization
+##########################################################################
+def update_tenant_id_if_null(connection, tenant_name, short_tenant_id):
+    try:
+        # open cursor
+        cursor = connection.cursor()
+
+        # Check OCI_USAGE
+        print("\nCheck if TENANT_ID is null on OCI_USAGE...")
+        sql = "select /*+ full(a) parallel(a,8) */ count(*) as cnt from OCI_USAGE a where TENANT_NAME=:tenant_name and tenant_id is null"
+        cursor.execute(sql, {"tenant_name": str(tenant_name)})
+        cnt, = cursor.fetchone()
+
+        if cnt > 0:
+            print("   Update TENANT_ID on OCI_USAGE... " + str(cnt) + " rows to update... updating max 1,000,000 per execution")
+            sql = "update /*+ parallel(a,4) */ OCI_USAGE a set TENANT_ID = :tenant_id where tenant_id is null and tenant_name = :tenant_name and rownum<=1000000"
+            cursor.execute(sql, {"tenant_id": short_tenant_id, "tenant_name": tenant_name})
+            connection.commit()
+            print("   Update Completed, " + str(cursor.rowcount) + " rows updated")
+
+        # Check OCI_COST
+        print("\nCheck if TENANT_ID is null on OCI_COST...")
+        sql = "select /*+ full(a) parallel(a,8) */ count(*) as cnt from OCI_COST a where TENANT_NAME=:tenant_name and tenant_id is null"
+        cursor.execute(sql, {"tenant_name": str(tenant_name)})
+        cnt, = cursor.fetchone()
+
+        if cnt > 0:
+            print("   Update TENANT_ID on OCI_COST..." + str(cnt) + " rows to update... updating max 1,000,000 per execution")
+            sql = "update /*+ parallel(a,4) */ OCI_COST a set TENANT_ID = :tenant_id where tenant_id is null and tenant_name = :tenant_name and rownum<=1000000"
+            cursor.execute(sql, {"tenant_id": short_tenant_id, "tenant_name": tenant_name})
+            connection.commit()
+            print("   Update Completed, " + str(cursor.rowcount) + " rows updated")
+
+        cursor.close()
+
+    except cx_Oracle.DatabaseError as e:
+        print("\nError manipulating database at update_tenant_id_if_null() - " + str(e) + "\n")
+        raise SystemExit
+
+    except Exception as e:
+        raise Exception("\nError manipulating database at update_tenant_id_if_null() - " + str(e))
+
+
+##########################################################################
 # Check Table Structure Cost
 ##########################################################################
 def check_database_table_structure_cost(connection):
@@ -694,6 +761,7 @@ def check_database_table_structure_cost(connection):
             print("   Table OCI_COST was not exist, creating")
             sql = "create table OCI_COST ("
             sql += "    TENANT_NAME             VARCHAR2(100),"
+            sql += "    TENANT_ID               VARCHAR2(100),"
             sql += "    FILE_ID                 VARCHAR2(30),"
             sql += "    USAGE_INTERVAL_START    DATE,"
             sql += "    USAGE_INTERVAL_END      DATE,"
@@ -724,6 +792,17 @@ def check_database_table_structure_cost(connection):
             print("   Table OCI_COST created")
         else:
             print("   Table OCI_COST exist")
+
+        # check if TENANT_ID column exist in OCI_COST table, if not create
+        sql = "select count(*) from user_tab_columns where table_name = 'OCI_COST' and column_name='TENANT_ID'"
+        cursor.execute(sql)
+        val, = cursor.fetchone()
+
+        # if columns not exist, create it
+        if val == 0:
+            print("   Column TENANT_ID does not exist in the table OCI_COST, adding...")
+            sql = "alter table OCI_COST add (TENANT_ID VARCHAR2(100))"
+            cursor.execute(sql)
 
         # check if OCI_COST_TAG_KEYS table exist, if not create
         sql = "select count(*) from user_tables where table_name = 'OCI_COST_TAG_KEYS'"
@@ -830,6 +909,7 @@ def check_database_table_structure_price_list(connection, tenant_name):
             print("   Table OCI_PRICE_LIST was not exist, creating")
             sql = "create table OCI_PRICE_LIST ("
             sql += "    TENANT_NAME             VARCHAR2(100),"
+            sql += "    TENANT_ID               VARCHAR2(100),"
             sql += "    COST_PRODUCT_SKU        VARCHAR2(10),"
             sql += "    PRD_DESCRIPTION         VARCHAR2(1000),"
             sql += "    COST_CURRENCY_CODE      VARCHAR2(10),"
@@ -839,7 +919,7 @@ def check_database_table_structure_price_list(connection, tenant_name):
             sql += "    RATE_PAYGO_PRICE        NUMBER,"
             sql += "    RATE_MONTHLY_FLEX_PRICE NUMBER,"
             sql += "    RATE_UPDATE_DATE        DATE,"
-            sql += "    CONSTRAINT OCI_PRICE_LIST_PK PRIMARY KEY (TENANT_NAME,COST_PRODUCT_SKU) "
+            sql += "    CONSTRAINT OCI_PRICE_LIST_PK PRIMARY KEY (TENANT_NAME,TENANT_ID,COST_PRODUCT_SKU) "
             sql += ") "
             cursor.execute(sql)
             print("   Table OCI_PRICE_LIST created")
@@ -847,6 +927,27 @@ def check_database_table_structure_price_list(connection, tenant_name):
             update_public_rates(connection, tenant_name)
         else:
             print("   Table OCI_PRICE_LIST exist")
+
+        # check if TENANT_ID column exist in OCI_PRICE_LIST table, if not create
+        sql = "select count(*) from user_tab_columns where table_name = 'OCI_PRICE_LIST' and column_name='TENANT_ID'"
+        cursor.execute(sql)
+        val, = cursor.fetchone()
+
+        # if columns not exist, create them
+        if val == 0:
+            print("   Column TENANT_ID does not exist in the table OCI_PRICE_LIST, adding...")
+            sql = "alter table OCI_PRICE_LIST add (TENANT_ID VARCHAR2(100))"
+            cursor.execute(sql)
+
+            print("   truncating OCI_PRICE_LIST to make PK changes")
+            sql = "truncate table OCI_PRICE_LIST"
+            cursor.execute(sql)
+            print("   Modifying OCI_PRICE_LIST primary key to include TENANT_ID..")
+            sql = "alter table OCI_PRICE_LIST drop primary key"
+            cursor.execute(sql)
+            sql = "alter table OCI_PRICE_LIST ADD CONSTRAINT OCI_PRICE_LIST_PK PRIMARY KEY (TENANT_NAME,TENANT_ID,COST_PRODUCT_SKU)"
+            cursor.execute(sql)
+            print("   Table OCI_PRICE_LIST Changes Completed.")
 
         cursor.close()
 
@@ -937,13 +1038,14 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
             sql += "COST_BILLING_UNIT, "
             sql += "COST_OVERAGE_FLAG,"
             sql += "IS_CORRECTION, "
-            sql += "TAGS_DATA "
+            sql += "TAGS_DATA, "
+            sql += "TENANT_ID "
             sql += ") VALUES ("
             sql += ":1, :2, to_date(:3,'YYYY-MM-DD HH24:MI'), to_date(:4,'YYYY-MM-DD HH24:MI'), :5,  "
             sql += ":6, :7, :8, :9, :10, "
             sql += ":11, to_number(:12), to_number(:13) ,:14, :15, "
             sql += ":16, to_number(:17), to_number(:18), to_number(:19), to_number(:20), "
-            sql += ":21, :22, :23, :24, :25"
+            sql += ":21, :22, :23, :24, :25, :26"
             sql += ") "
 
             # insert bulk to database
@@ -979,6 +1081,7 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
                                 tags_keys.append(keyadj)
 
                 # Assign each column to variable to avoid error if column missing from the file
+                lineItem_tenantId = get_column_value_from_array('lineItem/tenantId', row)
                 lineItem_intervalUsageStart = get_column_value_from_array('lineItem/intervalUsageStart', row)
                 lineItem_intervalUsageEnd = get_column_value_from_array('lineItem/intervalUsageEnd', row)
                 product_service = get_column_value_from_array('product/service', row)
@@ -1081,7 +1184,8 @@ def load_cost_file(connection, object_storage, object_file, max_file_id, cmd, te
                     cost_billingUnitReadable,
                     cost_overageFlag,
                     lineItem_isCorrection,
-                    tags_data
+                    tags_data,
+                    lineItem_tenantId[-6:]
                 )
                 data.append(row_data)
                 num_rows += 1
@@ -1181,13 +1285,13 @@ def load_usage_file(connection, object_storage, object_file, max_file_id, cmd, t
             csv_reader = csv.DictReader(file_in)
 
             # sql statement
-            sql = "INSERT INTO OCI_USAGE (TENANT_NAME , FILE_ID, USAGE_INTERVAL_START, USAGE_INTERVAL_END, PRD_SERVICE, PRD_RESOURCE, "
+            sql = "INSERT INTO OCI_USAGE (TENANT_NAME, FILE_ID, USAGE_INTERVAL_START, USAGE_INTERVAL_END, PRD_SERVICE, PRD_RESOURCE, "
             sql += "PRD_COMPARTMENT_ID, PRD_COMPARTMENT_NAME, PRD_COMPARTMENT_PATH, PRD_REGION, PRD_AVAILABILITY_DOMAIN, USG_RESOURCE_ID, "
-            sql += "USG_BILLED_QUANTITY, USG_CONSUMED_QUANTITY, USG_CONSUMED_UNITS, USG_CONSUMED_MEASURE, IS_CORRECTION, TAGS_DATA "
+            sql += "USG_BILLED_QUANTITY, USG_CONSUMED_QUANTITY, USG_CONSUMED_UNITS, USG_CONSUMED_MEASURE, IS_CORRECTION, TAGS_DATA, TENANT_ID "
             sql += ") VALUES ("
             sql += ":1, :2, to_date(:3,'YYYY-MM-DD HH24:MI'), to_date(:4,'YYYY-MM-DD HH24:MI'), :5, :6, "
             sql += ":7, :8, :9, :10, :11, :12, "
-            sql += "to_number(:13), to_number(:14), :15, :16, :17 ,:18 "
+            sql += "to_number(:13), to_number(:14), :15, :16, :17 ,:18, :19 "
             sql += ") "
 
             # Adjust the batch size to meet memory and performance requirements
@@ -1227,6 +1331,7 @@ def load_usage_file(connection, object_storage, object_file, max_file_id, cmd, t
                                 tags_keys.append(keyadj)
 
                 # Assign each column to variable to avoid error if column missing from the file
+                lineItem_tenantId = get_column_value_from_array('lineItem/tenantId', row)
                 lineItem_intervalUsageStart = get_column_value_from_array('lineItem/intervalUsageStart', row)
                 lineItem_intervalUsageEnd = get_column_value_from_array('lineItem/intervalUsageEnd', row)
                 product_service = get_column_value_from_array('product/service', row)
@@ -1261,7 +1366,8 @@ def load_usage_file(connection, object_storage, object_file, max_file_id, cmd, t
                     usage_consumedQuantityUnits,
                     usage_consumedQuantityMeasure,
                     lineItem_isCorrection,
-                    tags_data
+                    tags_data,
+                    lineItem_tenantId[-6:]
                 )
                 data.append(row_data)
                 num_rows += 1
@@ -1337,6 +1443,8 @@ def main_process():
     ############################################
     compartments = []
     tenancy = None
+    tenant_id = ""
+    short_tenant_id = ""
     try:
         print("\nConnecting to Identity Service...")
         identity = oci.identity.IdentityClient(config, signer=signer)
@@ -1344,6 +1452,8 @@ def main_process():
             identity.base_client.session.proxies = {'https': cmd.proxy}
 
         tenancy = identity.get_tenancy(config["tenancy"]).data
+        tenant_id = str(tenancy.id)
+        short_tenant_id = tenant_id[-6:]
         tenancy_home_region = ""
 
         # find home region full name
@@ -1463,7 +1573,9 @@ def main_process():
             update_cost_stats(connection)
             update_cost_reference(connection)
             update_price_list(connection)
-            update_public_rates(connection, tenancy.name)
+            if not cmd.skip_rate:
+                update_public_rates(connection, tenancy.name)
+            update_tenant_id_if_null(connection, tenancy.name, short_tenant_id)
 
         # Close Connection
         connection.close()
@@ -1472,7 +1584,7 @@ def main_process():
         print("\nError manipulating database - " + str(e) + "\n")
 
     except Exception as e:
-        print("\nError Download Usage and insert to database - " + str(e))
+        print("\nError appeared - " + str(e))
 
     ############################################
     # print completed

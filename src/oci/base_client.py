@@ -613,7 +613,11 @@ class BaseClient(object):
             return {k: self.__deserialize(v, sub_kls)
                     for k, v in data.items()}
 
-        cls = self.type_mappings[cls]
+        # Enums are not present in type mappings, and they are strings, so we need to call  __deserialize_primitive()
+        if cls in self.type_mappings:
+            cls = self.type_mappings[cls]
+        else:
+            return self.__deserialize_primitive(data, cls)
 
         if hasattr(cls, 'get_subtype'):
             # Use the discriminator value to get the correct subtype.
