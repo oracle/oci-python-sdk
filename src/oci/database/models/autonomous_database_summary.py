@@ -446,6 +446,14 @@ class AutonomousDatabaseSummary(object):
             The value to assign to the available_upgrade_versions property of this AutonomousDatabaseSummary.
         :type available_upgrade_versions: list[str]
 
+        :param key_store_id:
+            The value to assign to the key_store_id property of this AutonomousDatabaseSummary.
+        :type key_store_id: str
+
+        :param key_store_wallet_name:
+            The value to assign to the key_store_wallet_name property of this AutonomousDatabaseSummary.
+        :type key_store_wallet_name: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -500,7 +508,9 @@ class AutonomousDatabaseSummary(object):
             'failed_data_recovery_in_seconds': 'int',
             'standby_db': 'AutonomousDatabaseStandbySummary',
             'role': 'str',
-            'available_upgrade_versions': 'list[str]'
+            'available_upgrade_versions': 'list[str]',
+            'key_store_id': 'str',
+            'key_store_wallet_name': 'str'
         }
 
         self.attribute_map = {
@@ -556,7 +566,9 @@ class AutonomousDatabaseSummary(object):
             'failed_data_recovery_in_seconds': 'failedDataRecoveryInSeconds',
             'standby_db': 'standbyDb',
             'role': 'role',
-            'available_upgrade_versions': 'availableUpgradeVersions'
+            'available_upgrade_versions': 'availableUpgradeVersions',
+            'key_store_id': 'keyStoreId',
+            'key_store_wallet_name': 'keyStoreWalletName'
         }
 
         self._id = None
@@ -612,6 +624,8 @@ class AutonomousDatabaseSummary(object):
         self._standby_db = None
         self._role = None
         self._available_upgrade_versions = None
+        self._key_store_id = None
+        self._key_store_wallet_name = None
 
     @property
     def id(self):
@@ -2046,6 +2060,58 @@ class AutonomousDatabaseSummary(object):
         :type: list[str]
         """
         self._available_upgrade_versions = available_upgrade_versions
+
+    @property
+    def key_store_id(self):
+        """
+        Gets the key_store_id of this AutonomousDatabaseSummary.
+        The `OCID`__ of the key store.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The key_store_id of this AutonomousDatabaseSummary.
+        :rtype: str
+        """
+        return self._key_store_id
+
+    @key_store_id.setter
+    def key_store_id(self, key_store_id):
+        """
+        Sets the key_store_id of this AutonomousDatabaseSummary.
+        The `OCID`__ of the key store.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param key_store_id: The key_store_id of this AutonomousDatabaseSummary.
+        :type: str
+        """
+        self._key_store_id = key_store_id
+
+    @property
+    def key_store_wallet_name(self):
+        """
+        Gets the key_store_wallet_name of this AutonomousDatabaseSummary.
+        The wallet name for Oracle Key Vault.
+
+
+        :return: The key_store_wallet_name of this AutonomousDatabaseSummary.
+        :rtype: str
+        """
+        return self._key_store_wallet_name
+
+    @key_store_wallet_name.setter
+    def key_store_wallet_name(self, key_store_wallet_name):
+        """
+        Sets the key_store_wallet_name of this AutonomousDatabaseSummary.
+        The wallet name for Oracle Key Vault.
+
+
+        :param key_store_wallet_name: The key_store_wallet_name of this AutonomousDatabaseSummary.
+        :type: str
+        """
+        self._key_store_wallet_name = key_store_wallet_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

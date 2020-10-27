@@ -98,6 +98,14 @@ class AutonomousDatabaseBackup(object):
             The value to assign to the is_restorable property of this AutonomousDatabaseBackup.
         :type is_restorable: bool
 
+        :param key_store_id:
+            The value to assign to the key_store_id property of this AutonomousDatabaseBackup.
+        :type key_store_id: str
+
+        :param key_store_wallet_name:
+            The value to assign to the key_store_wallet_name property of this AutonomousDatabaseBackup.
+        :type key_store_wallet_name: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -111,7 +119,9 @@ class AutonomousDatabaseBackup(object):
             'lifecycle_details': 'str',
             'database_size_in_tbs': 'float',
             'lifecycle_state': 'str',
-            'is_restorable': 'bool'
+            'is_restorable': 'bool',
+            'key_store_id': 'str',
+            'key_store_wallet_name': 'str'
         }
 
         self.attribute_map = {
@@ -126,7 +136,9 @@ class AutonomousDatabaseBackup(object):
             'lifecycle_details': 'lifecycleDetails',
             'database_size_in_tbs': 'databaseSizeInTBs',
             'lifecycle_state': 'lifecycleState',
-            'is_restorable': 'isRestorable'
+            'is_restorable': 'isRestorable',
+            'key_store_id': 'keyStoreId',
+            'key_store_wallet_name': 'keyStoreWalletName'
         }
 
         self._id = None
@@ -141,6 +153,8 @@ class AutonomousDatabaseBackup(object):
         self._database_size_in_tbs = None
         self._lifecycle_state = None
         self._is_restorable = None
+        self._key_store_id = None
+        self._key_store_wallet_name = None
 
     @property
     def id(self):
@@ -453,6 +467,58 @@ class AutonomousDatabaseBackup(object):
         :type: bool
         """
         self._is_restorable = is_restorable
+
+    @property
+    def key_store_id(self):
+        """
+        Gets the key_store_id of this AutonomousDatabaseBackup.
+        The `OCID`__ of the key store.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The key_store_id of this AutonomousDatabaseBackup.
+        :rtype: str
+        """
+        return self._key_store_id
+
+    @key_store_id.setter
+    def key_store_id(self, key_store_id):
+        """
+        Sets the key_store_id of this AutonomousDatabaseBackup.
+        The `OCID`__ of the key store.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param key_store_id: The key_store_id of this AutonomousDatabaseBackup.
+        :type: str
+        """
+        self._key_store_id = key_store_id
+
+    @property
+    def key_store_wallet_name(self):
+        """
+        Gets the key_store_wallet_name of this AutonomousDatabaseBackup.
+        The wallet name for Oracle Key Vault.
+
+
+        :return: The key_store_wallet_name of this AutonomousDatabaseBackup.
+        :rtype: str
+        """
+        return self._key_store_wallet_name
+
+    @key_store_wallet_name.setter
+    def key_store_wallet_name(self, key_store_wallet_name):
+        """
+        Sets the key_store_wallet_name of this AutonomousDatabaseBackup.
+        The wallet name for Oracle Key Vault.
+
+
+        :param key_store_wallet_name: The key_store_wallet_name of this AutonomousDatabaseBackup.
+        :type: str
+        """
+        self._key_store_wallet_name = key_store_wallet_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

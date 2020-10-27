@@ -47,6 +47,7 @@ from .change_cloud_exadata_infrastructure_compartment_details import ChangeCloud
 from .change_cloud_vm_cluster_compartment_details import ChangeCloudVmClusterCompartmentDetails
 from .change_compartment_details import ChangeCompartmentDetails
 from .change_exadata_infrastructure_compartment_details import ChangeExadataInfrastructureCompartmentDetails
+from .change_key_store_compartment_details import ChangeKeyStoreCompartmentDetails
 from .change_vm_cluster_compartment_details import ChangeVmClusterCompartmentDetails
 from .cloud_exadata_infrastructure import CloudExadataInfrastructure
 from .cloud_exadata_infrastructure_summary import CloudExadataInfrastructureSummary
@@ -93,6 +94,7 @@ from .create_db_home_with_vm_cluster_id_details import CreateDbHomeWithVmCluster
 from .create_db_home_with_vm_cluster_id_from_backup_details import CreateDbHomeWithVmClusterIdFromBackupDetails
 from .create_exadata_infrastructure_details import CreateExadataInfrastructureDetails
 from .create_external_backup_job_details import CreateExternalBackupJobDetails
+from .create_key_store_details import CreateKeyStoreDetails
 from .create_nfs_backup_destination_details import CreateNFSBackupDestinationDetails
 from .create_new_database_details import CreateNewDatabaseDetails
 from .create_recovery_appliance_backup_destination_details import CreateRecoveryApplianceBackupDestinationDetails
@@ -133,6 +135,11 @@ from .generate_autonomous_database_wallet_details import GenerateAutonomousDatab
 from .generate_recommended_network_details import GenerateRecommendedNetworkDetails
 from .gi_version_summary import GiVersionSummary
 from .info_for_network_gen_details import InfoForNetworkGenDetails
+from .key_store import KeyStore
+from .key_store_associated_database_details import KeyStoreAssociatedDatabaseDetails
+from .key_store_summary import KeyStoreSummary
+from .key_store_type_details import KeyStoreTypeDetails
+from .key_store_type_from_oracle_key_vault_details import KeyStoreTypeFromOracleKeyVaultDetails
 from .launch_autonomous_exadata_infrastructure_details import LaunchAutonomousExadataInfrastructureDetails
 from .launch_db_system_base import LaunchDbSystemBase
 from .launch_db_system_details import LaunchDbSystemDetails
@@ -177,6 +184,7 @@ from .update_details import UpdateDetails
 from .update_exadata_infrastructure_details import UpdateExadataInfrastructureDetails
 from .update_history_entry import UpdateHistoryEntry
 from .update_history_entry_summary import UpdateHistoryEntrySummary
+from .update_key_store_details import UpdateKeyStoreDetails
 from .update_maintenance_run_details import UpdateMaintenanceRunDetails
 from .update_summary import UpdateSummary
 from .update_vm_cluster_details import UpdateVmClusterDetails
@@ -234,6 +242,7 @@ database_type_mapping = {
     "ChangeCloudVmClusterCompartmentDetails": ChangeCloudVmClusterCompartmentDetails,
     "ChangeCompartmentDetails": ChangeCompartmentDetails,
     "ChangeExadataInfrastructureCompartmentDetails": ChangeExadataInfrastructureCompartmentDetails,
+    "ChangeKeyStoreCompartmentDetails": ChangeKeyStoreCompartmentDetails,
     "ChangeVmClusterCompartmentDetails": ChangeVmClusterCompartmentDetails,
     "CloudExadataInfrastructure": CloudExadataInfrastructure,
     "CloudExadataInfrastructureSummary": CloudExadataInfrastructureSummary,
@@ -280,6 +289,7 @@ database_type_mapping = {
     "CreateDbHomeWithVmClusterIdFromBackupDetails": CreateDbHomeWithVmClusterIdFromBackupDetails,
     "CreateExadataInfrastructureDetails": CreateExadataInfrastructureDetails,
     "CreateExternalBackupJobDetails": CreateExternalBackupJobDetails,
+    "CreateKeyStoreDetails": CreateKeyStoreDetails,
     "CreateNFSBackupDestinationDetails": CreateNFSBackupDestinationDetails,
     "CreateNewDatabaseDetails": CreateNewDatabaseDetails,
     "CreateRecoveryApplianceBackupDestinationDetails": CreateRecoveryApplianceBackupDestinationDetails,
@@ -320,6 +330,11 @@ database_type_mapping = {
     "GenerateRecommendedNetworkDetails": GenerateRecommendedNetworkDetails,
     "GiVersionSummary": GiVersionSummary,
     "InfoForNetworkGenDetails": InfoForNetworkGenDetails,
+    "KeyStore": KeyStore,
+    "KeyStoreAssociatedDatabaseDetails": KeyStoreAssociatedDatabaseDetails,
+    "KeyStoreSummary": KeyStoreSummary,
+    "KeyStoreTypeDetails": KeyStoreTypeDetails,
+    "KeyStoreTypeFromOracleKeyVaultDetails": KeyStoreTypeFromOracleKeyVaultDetails,
     "LaunchAutonomousExadataInfrastructureDetails": LaunchAutonomousExadataInfrastructureDetails,
     "LaunchDbSystemBase": LaunchDbSystemBase,
     "LaunchDbSystemDetails": LaunchDbSystemDetails,
@@ -364,6 +379,7 @@ database_type_mapping = {
     "UpdateExadataInfrastructureDetails": UpdateExadataInfrastructureDetails,
     "UpdateHistoryEntry": UpdateHistoryEntry,
     "UpdateHistoryEntrySummary": UpdateHistoryEntrySummary,
+    "UpdateKeyStoreDetails": UpdateKeyStoreDetails,
     "UpdateMaintenanceRunDetails": UpdateMaintenanceRunDetails,
     "UpdateSummary": UpdateSummary,
     "UpdateVmClusterDetails": UpdateVmClusterDetails,

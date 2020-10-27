@@ -18,6 +18,7 @@ API Reference
 * :doc:`Incident <cims/client/oci.cims.IncidentClient>`
 * :doc:`User <cims/client/oci.cims.UserClient>`
 * :doc:`Cloud Guard <cloud_guard/client/oci.cloud_guard.CloudGuardClient>`
+* :doc:`Compute Instance Agent <compute_instance_agent/client/oci.compute_instance_agent.ComputeInstanceAgentClient>`
 * :doc:`Container Engine <container_engine/client/oci.container_engine.ContainerEngineClient>`
 * :doc:`Block Storage <core/client/oci.core.BlockstorageClient>`
 * :doc:`Compute <core/client/oci.core.ComputeClient>`
@@ -114,6 +115,7 @@ API Reference
     budget
     cims
     cloud_guard
+    compute_instance_agent
     container_engine
     core
     data_catalog
