@@ -4,9 +4,20 @@ Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~
 These are the current known issues for the Python SDK.
 
+UploadManager.upload_stream() raises MultipartUploadError in oci v2.23.2
+========================================================================
+`UploadManager.upload_stream() <https://docs.cloud.oracle.com/en-us/iaas/tools/python/2.23.2/api/upload_manager.html#oci.object_storage.UploadManager.upload_stream>`_ raises MultipartUploadError when a timeout is set on the underlying object storage client, and the operation takes more than the read timeout to complete. Prior to v2.23.2, we were overwriting the timeout to None in the operations (please see this `known issue <https://docs.cloud.oracle.com/en-us/iaas/tools/python/2.23.2/known-issues.html#uploadmanager-generates-ssl3-write-pending-error-when-a-read-timeout-is-set-for-the-object-storage-client>`_). The default timeout is a read timeout of 60 seconds, hence this scenario will be triggered by default in v2.23.2 on any use of this operation where the operation takes 60 or more seconds to complete.
+You can work around the issue by explicitly setting the timeout to None. For example,
+
+.. code-block:: python
+
+    client.base_client.timeout = None
+
+This issue has been fixed in oci v2.23.3
+
 UploadManager generates ssl3_write_pending error when a read timeout is set for the Object Storage client
 =========================================================================================================
-**Update:** This issue has been fixed in v2.23.2. This issue still may exist with using Python versions < 2.7.9. If you do encounter this issue, please consult the workaround mentioned below.
+**Update:** This issue has partially been fixed in v2.23.2. This issue still may exist with using Python versions < 2.7.9. If you do encounter this issue, please consult the workaround mentioned below.
 
 **Update:** With v2.18.0 we handle the object storage client with default timeout values (connect timeout = 10 secs and read timeout = 60 secs), by overwriting the timeout to `None` in the operations.
 
