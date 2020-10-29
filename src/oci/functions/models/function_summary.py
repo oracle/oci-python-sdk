@@ -157,7 +157,7 @@ class FunctionSummary(object):
     @property
     def id(self):
         """
-        Gets the id of this FunctionSummary.
+        **[Required]** Gets the id of this FunctionSummary.
         The `OCID`__ of the function.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm

@@ -34,6 +34,10 @@ class CreateTableDetails(object):
             The value to assign to the table_limits property of this CreateTableDetails.
         :type table_limits: TableLimits
 
+        :param is_auto_reclaimable:
+            The value to assign to the is_auto_reclaimable property of this CreateTableDetails.
+        :type is_auto_reclaimable: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateTableDetails.
         :type freeform_tags: dict(str, str)
@@ -48,6 +52,7 @@ class CreateTableDetails(object):
             'compartment_id': 'str',
             'ddl_statement': 'str',
             'table_limits': 'TableLimits',
+            'is_auto_reclaimable': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -57,6 +62,7 @@ class CreateTableDetails(object):
             'compartment_id': 'compartmentId',
             'ddl_statement': 'ddlStatement',
             'table_limits': 'tableLimits',
+            'is_auto_reclaimable': 'isAutoReclaimable',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -65,6 +71,7 @@ class CreateTableDetails(object):
         self._compartment_id = None
         self._ddl_statement = None
         self._table_limits = None
+        self._is_auto_reclaimable = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -159,6 +166,30 @@ class CreateTableDetails(object):
         :type: TableLimits
         """
         self._table_limits = table_limits
+
+    @property
+    def is_auto_reclaimable(self):
+        """
+        Gets the is_auto_reclaimable of this CreateTableDetails.
+        True if table can be reclaimed after an idle period.
+
+
+        :return: The is_auto_reclaimable of this CreateTableDetails.
+        :rtype: bool
+        """
+        return self._is_auto_reclaimable
+
+    @is_auto_reclaimable.setter
+    def is_auto_reclaimable(self, is_auto_reclaimable):
+        """
+        Sets the is_auto_reclaimable of this CreateTableDetails.
+        True if table can be reclaimed after an idle period.
+
+
+        :param is_auto_reclaimable: The is_auto_reclaimable of this CreateTableDetails.
+        :type: bool
+        """
+        self._is_auto_reclaimable = is_auto_reclaimable
 
     @property
     def freeform_tags(self):

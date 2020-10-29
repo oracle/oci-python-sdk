@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RequestSummarizedUsagesDetails(object):
     """
-    details for the '/usage' query
+    Details for the '/usage' query.
     """
 
     #: A constant which can be used with the granularity property of a RequestSummarizedUsagesDetails.
@@ -112,7 +112,7 @@ class RequestSummarizedUsagesDetails(object):
     def tenant_id(self):
         """
         **[Required]** Gets the tenant_id of this RequestSummarizedUsagesDetails.
-        tenant id
+        Tenant ID
 
 
         :return: The tenant_id of this RequestSummarizedUsagesDetails.
@@ -124,7 +124,7 @@ class RequestSummarizedUsagesDetails(object):
     def tenant_id(self, tenant_id):
         """
         Sets the tenant_id of this RequestSummarizedUsagesDetails.
-        tenant id
+        Tenant ID
 
 
         :param tenant_id: The tenant_id of this RequestSummarizedUsagesDetails.
@@ -136,7 +136,7 @@ class RequestSummarizedUsagesDetails(object):
     def time_usage_started(self):
         """
         **[Required]** Gets the time_usage_started of this RequestSummarizedUsagesDetails.
-        The start time of the usage.
+        The usage start time.
 
 
         :return: The time_usage_started of this RequestSummarizedUsagesDetails.
@@ -148,7 +148,7 @@ class RequestSummarizedUsagesDetails(object):
     def time_usage_started(self, time_usage_started):
         """
         Sets the time_usage_started of this RequestSummarizedUsagesDetails.
-        The start time of the usage.
+        The usage start time.
 
 
         :param time_usage_started: The time_usage_started of this RequestSummarizedUsagesDetails.
@@ -160,7 +160,7 @@ class RequestSummarizedUsagesDetails(object):
     def time_usage_ended(self):
         """
         **[Required]** Gets the time_usage_ended of this RequestSummarizedUsagesDetails.
-        The end time of the usage.
+        The usage end time.
 
 
         :return: The time_usage_ended of this RequestSummarizedUsagesDetails.
@@ -172,7 +172,7 @@ class RequestSummarizedUsagesDetails(object):
     def time_usage_ended(self, time_usage_ended):
         """
         Sets the time_usage_ended of this RequestSummarizedUsagesDetails.
-        The end time of the usage.
+        The usage end time.
 
 
         :param time_usage_ended: The time_usage_ended of this RequestSummarizedUsagesDetails.
@@ -184,11 +184,11 @@ class RequestSummarizedUsagesDetails(object):
     def granularity(self):
         """
         **[Required]** Gets the granularity of this RequestSummarizedUsagesDetails.
-        The granularity of the usage.
-        HOURLY - Hourly aggregation of data
-        DAILY - Daily aggregation of data
-        MONTHLY - Monthly aggregation of data
-        TOTAL - Not Supported Yet
+        The usage granularity.
+        HOURLY - Hourly data aggregation.
+        DAILY - Daily data aggregation.
+        MONTHLY - Monthly data aggregation.
+        TOTAL - Not yet supported.
 
         Allowed values for this property are: "HOURLY", "DAILY", "MONTHLY", "TOTAL"
 
@@ -202,11 +202,11 @@ class RequestSummarizedUsagesDetails(object):
     def granularity(self, granularity):
         """
         Sets the granularity of this RequestSummarizedUsagesDetails.
-        The granularity of the usage.
-        HOURLY - Hourly aggregation of data
-        DAILY - Daily aggregation of data
-        MONTHLY - Monthly aggregation of data
-        TOTAL - Not Supported Yet
+        The usage granularity.
+        HOURLY - Hourly data aggregation.
+        DAILY - Daily data aggregation.
+        MONTHLY - Monthly data aggregation.
+        TOTAL - Not yet supported.
 
 
         :param granularity: The granularity of this RequestSummarizedUsagesDetails.
@@ -224,9 +224,9 @@ class RequestSummarizedUsagesDetails(object):
     def query_type(self):
         """
         Gets the query_type of this RequestSummarizedUsagesDetails.
-        The type of query of the usage.
+        The query usage type.
         Usage - Query the usage data.
-        Cost - Query the cost / billing data.
+        Cost - Query the cost/billing data.
 
         Allowed values for this property are: "USAGE", "COST"
 
@@ -240,9 +240,9 @@ class RequestSummarizedUsagesDetails(object):
     def query_type(self, query_type):
         """
         Sets the query_type of this RequestSummarizedUsagesDetails.
-        The type of query of the usage.
+        The query usage type.
         Usage - Query the usage data.
-        Cost - Query the cost / billing data.
+        Cost - Query the cost/billing data.
 
 
         :param query_type: The query_type of this RequestSummarizedUsagesDetails.
@@ -288,7 +288,7 @@ class RequestSummarizedUsagesDetails(object):
     def compartment_depth(self):
         """
         Gets the compartment_depth of this RequestSummarizedUsagesDetails.
-        The depth level of the compartment.
+        The compartment depth level.
 
 
         :return: The compartment_depth of this RequestSummarizedUsagesDetails.
@@ -300,7 +300,7 @@ class RequestSummarizedUsagesDetails(object):
     def compartment_depth(self, compartment_depth):
         """
         Sets the compartment_depth of this RequestSummarizedUsagesDetails.
-        The depth level of the compartment.
+        The compartment depth level.
 
 
         :param compartment_depth: The compartment_depth of this RequestSummarizedUsagesDetails.

@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class UsageapiClient(object):
     """
-    A description of the UsageApi API.
+    Use the Usage API to view your Oracle Cloud usage and costs. The API allows you to request data that meets the specified filter criteria, and to group that data by the dimension of your choosing. The Usage API is used by the Cost Analysis tool in the Console.
     """
 
     def __init__(self, config, **kwargs):
@@ -87,7 +87,7 @@ class UsageapiClient(object):
 
     def request_summarized_configurations(self, tenant_id, **kwargs):
         """
-        Returns the list of config for UI dropdown list
+        Returns the configurations list for the UI drop-down list.
 
 
         :param str tenant_id: (required)
@@ -155,11 +155,11 @@ class UsageapiClient(object):
 
     def request_summarized_usages(self, request_summarized_usages_details, **kwargs):
         """
-        Returns the usage for the given account
+        Returns usage for the given account.
 
 
         :param RequestSummarizedUsagesDetails request_summarized_usages_details: (required)
-            getUsageRequest contain query inforamtion
+            getUsageRequest contains query inforamtion.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a

@@ -10,13 +10,21 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UsageSummary(object):
     """
-    The result from usage store.
+    The usage store result.
     """
 
     def __init__(self, **kwargs):
         """
         Initializes a new UsageSummary object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param tenant_id:
+            The value to assign to the tenant_id property of this UsageSummary.
+        :type tenant_id: str
+
+        :param tenant_name:
+            The value to assign to the tenant_name property of this UsageSummary.
+        :type tenant_name: str
 
         :param compartment_id:
             The value to assign to the compartment_id property of this UsageSummary.
@@ -124,6 +132,8 @@ class UsageSummary(object):
 
         """
         self.swagger_types = {
+            'tenant_id': 'str',
+            'tenant_name': 'str',
             'compartment_id': 'str',
             'compartment_path': 'str',
             'compartment_name': 'str',
@@ -153,6 +163,8 @@ class UsageSummary(object):
         }
 
         self.attribute_map = {
+            'tenant_id': 'tenantId',
+            'tenant_name': 'tenantName',
             'compartment_id': 'compartmentId',
             'compartment_path': 'compartmentPath',
             'compartment_name': 'compartmentName',
@@ -181,6 +193,8 @@ class UsageSummary(object):
             'tags': 'tags'
         }
 
+        self._tenant_id = None
+        self._tenant_name = None
         self._compartment_id = None
         self._compartment_path = None
         self._compartment_name = None
@@ -209,10 +223,58 @@ class UsageSummary(object):
         self._tags = None
 
     @property
+    def tenant_id(self):
+        """
+        Gets the tenant_id of this UsageSummary.
+        The tenancy OCID.
+
+
+        :return: The tenant_id of this UsageSummary.
+        :rtype: str
+        """
+        return self._tenant_id
+
+    @tenant_id.setter
+    def tenant_id(self, tenant_id):
+        """
+        Sets the tenant_id of this UsageSummary.
+        The tenancy OCID.
+
+
+        :param tenant_id: The tenant_id of this UsageSummary.
+        :type: str
+        """
+        self._tenant_id = tenant_id
+
+    @property
+    def tenant_name(self):
+        """
+        Gets the tenant_name of this UsageSummary.
+        The tenancy name.
+
+
+        :return: The tenant_name of this UsageSummary.
+        :rtype: str
+        """
+        return self._tenant_name
+
+    @tenant_name.setter
+    def tenant_name(self, tenant_name):
+        """
+        Sets the tenant_name of this UsageSummary.
+        The tenancy name.
+
+
+        :param tenant_name: The tenant_name of this UsageSummary.
+        :type: str
+        """
+        self._tenant_name = tenant_name
+
+    @property
     def compartment_id(self):
         """
         Gets the compartment_id of this UsageSummary.
-        The OCID of the compartment.
+        The compartment OCID.
 
 
         :return: The compartment_id of this UsageSummary.
@@ -224,7 +286,7 @@ class UsageSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this UsageSummary.
-        The OCID of the compartment.
+        The compartment OCID.
 
 
         :param compartment_id: The compartment_id of this UsageSummary.
@@ -236,7 +298,7 @@ class UsageSummary(object):
     def compartment_path(self):
         """
         Gets the compartment_path of this UsageSummary.
-        The path of the compartment, starting from root.
+        The compartment path, starting from root.
 
 
         :return: The compartment_path of this UsageSummary.
@@ -248,7 +310,7 @@ class UsageSummary(object):
     def compartment_path(self, compartment_path):
         """
         Sets the compartment_path of this UsageSummary.
-        The path of the compartment, starting from root.
+        The compartment path, starting from root.
 
 
         :param compartment_path: The compartment_path of this UsageSummary.
@@ -260,7 +322,7 @@ class UsageSummary(object):
     def compartment_name(self):
         """
         Gets the compartment_name of this UsageSummary.
-        The name of the compartment.
+        The compartment name.
 
 
         :return: The compartment_name of this UsageSummary.
@@ -272,7 +334,7 @@ class UsageSummary(object):
     def compartment_name(self, compartment_name):
         """
         Sets the compartment_name of this UsageSummary.
-        The name of the compartment.
+        The compartment name.
 
 
         :param compartment_name: The compartment_name of this UsageSummary.
@@ -284,7 +346,7 @@ class UsageSummary(object):
     def service(self):
         """
         Gets the service of this UsageSummary.
-        The name of the service that is incurring the cost.
+        The service name that is incurring the cost.
 
 
         :return: The service of this UsageSummary.
@@ -296,7 +358,7 @@ class UsageSummary(object):
     def service(self, service):
         """
         Sets the service of this UsageSummary.
-        The name of the service that is incurring the cost.
+        The service name that is incurring the cost.
 
 
         :param service: The service of this UsageSummary.
@@ -308,7 +370,7 @@ class UsageSummary(object):
     def resource_name(self):
         """
         Gets the resource_name of this UsageSummary.
-        The name of the resource that is incurring the cost.
+        The resource name that is incurring the cost.
 
 
         :return: The resource_name of this UsageSummary.
@@ -320,7 +382,7 @@ class UsageSummary(object):
     def resource_name(self, resource_name):
         """
         Sets the resource_name of this UsageSummary.
-        The name of the resource that is incurring the cost.
+        The resource name that is incurring the cost.
 
 
         :param resource_name: The resource_name of this UsageSummary.
@@ -332,7 +394,7 @@ class UsageSummary(object):
     def resource_id(self):
         """
         Gets the resource_id of this UsageSummary.
-        The Ocid of the resource that is incurring the cost.
+        The resource OCID that is incurring the cost.
 
 
         :return: The resource_id of this UsageSummary.
@@ -344,7 +406,7 @@ class UsageSummary(object):
     def resource_id(self, resource_id):
         """
         Sets the resource_id of this UsageSummary.
-        The Ocid of the resource that is incurring the cost.
+        The resource OCID that is incurring the cost.
 
 
         :param resource_id: The resource_id of this UsageSummary.
@@ -404,7 +466,7 @@ class UsageSummary(object):
     def weight(self):
         """
         Gets the weight of this UsageSummary.
-        The size of resource being metered.
+        The resource size being metered.
 
 
         :return: The weight of this UsageSummary.
@@ -416,7 +478,7 @@ class UsageSummary(object):
     def weight(self, weight):
         """
         Sets the weight of this UsageSummary.
-        The size of resource being metered.
+        The resource size being metered.
 
 
         :param weight: The weight of this UsageSummary.
@@ -428,7 +490,7 @@ class UsageSummary(object):
     def shape(self):
         """
         Gets the shape of this UsageSummary.
-        The shape of the resource.
+        The resource shape.
 
 
         :return: The shape of this UsageSummary.
@@ -440,7 +502,7 @@ class UsageSummary(object):
     def shape(self, shape):
         """
         Sets the shape of this UsageSummary.
-        The shape of the resource.
+        The resource shape.
 
 
         :param shape: The shape of this UsageSummary.
@@ -452,7 +514,7 @@ class UsageSummary(object):
     def sku_part_number(self):
         """
         Gets the sku_part_number of this UsageSummary.
-        The part number of the SKU.
+        The SKU part number.
 
 
         :return: The sku_part_number of this UsageSummary.
@@ -464,7 +526,7 @@ class UsageSummary(object):
     def sku_part_number(self, sku_part_number):
         """
         Sets the sku_part_number of this UsageSummary.
-        The part number of the SKU.
+        The SKU part number.
 
 
         :param sku_part_number: The sku_part_number of this UsageSummary.
@@ -476,7 +538,7 @@ class UsageSummary(object):
     def sku_name(self):
         """
         Gets the sku_name of this UsageSummary.
-        The friendly name for the SKU.
+        The SKU friendly name.
 
 
         :return: The sku_name of this UsageSummary.
@@ -488,7 +550,7 @@ class UsageSummary(object):
     def sku_name(self, sku_name):
         """
         Sets the sku_name of this UsageSummary.
-        The friendly name for the SKU.
+        The SKU friendly name.
 
 
         :param sku_name: The sku_name of this UsageSummary.
@@ -500,7 +562,7 @@ class UsageSummary(object):
     def unit(self):
         """
         Gets the unit of this UsageSummary.
-        The unit of the usage.
+        The usage unit.
 
 
         :return: The unit of this UsageSummary.
@@ -512,7 +574,7 @@ class UsageSummary(object):
     def unit(self, unit):
         """
         Sets the unit of this UsageSummary.
-        The unit of the usage.
+        The usage unit.
 
 
         :param unit: The unit of this UsageSummary.
@@ -548,7 +610,7 @@ class UsageSummary(object):
     def list_rate(self):
         """
         Gets the list_rate of this UsageSummary.
-        The list rate for the SKU (not discount).
+        The SKU list rate (not discount).
 
 
         :return: The list_rate of this UsageSummary.
@@ -560,7 +622,7 @@ class UsageSummary(object):
     def list_rate(self, list_rate):
         """
         Sets the list_rate of this UsageSummary.
-        The list rate for the SKU (not discount).
+        The SKU list rate (not discount).
 
 
         :param list_rate: The list_rate of this UsageSummary.
@@ -596,7 +658,7 @@ class UsageSummary(object):
     def time_usage_started(self):
         """
         **[Required]** Gets the time_usage_started of this UsageSummary.
-        The start time of the usage.
+        The usage start time.
 
 
         :return: The time_usage_started of this UsageSummary.
@@ -608,7 +670,7 @@ class UsageSummary(object):
     def time_usage_started(self, time_usage_started):
         """
         Sets the time_usage_started of this UsageSummary.
-        The start time of the usage.
+        The usage start time.
 
 
         :param time_usage_started: The time_usage_started of this UsageSummary.
@@ -620,7 +682,7 @@ class UsageSummary(object):
     def time_usage_ended(self):
         """
         **[Required]** Gets the time_usage_ended of this UsageSummary.
-        The end time of the usage.
+        The usage end time.
 
 
         :return: The time_usage_ended of this UsageSummary.
@@ -632,7 +694,7 @@ class UsageSummary(object):
     def time_usage_ended(self, time_usage_ended):
         """
         Sets the time_usage_ended of this UsageSummary.
-        The end time of the usage.
+        The usage end time.
 
 
         :param time_usage_ended: The time_usage_ended of this UsageSummary.
@@ -740,7 +802,7 @@ class UsageSummary(object):
     def currency(self):
         """
         Gets the currency of this UsageSummary.
-        The currency for the price.
+        The price currency.
 
 
         :return: The currency of this UsageSummary.
@@ -752,7 +814,7 @@ class UsageSummary(object):
     def currency(self, currency):
         """
         Sets the currency of this UsageSummary.
-        The currency for the price.
+        The price currency.
 
 
         :param currency: The currency of this UsageSummary.
@@ -764,7 +826,7 @@ class UsageSummary(object):
     def subscription_id(self):
         """
         Gets the subscription_id of this UsageSummary.
-        The subscription Id.
+        The subscription ID.
 
 
         :return: The subscription_id of this UsageSummary.
@@ -776,7 +838,7 @@ class UsageSummary(object):
     def subscription_id(self, subscription_id):
         """
         Sets the subscription_id of this UsageSummary.
-        The subscription Id.
+        The subscription ID.
 
 
         :param subscription_id: The subscription_id of this UsageSummary.
@@ -812,7 +874,7 @@ class UsageSummary(object):
     def tags(self):
         """
         Gets the tags of this UsageSummary.
-        For grouping, a tag definition. For filtering, a definition and key
+        For grouping, a tag definition. For filtering, a definition and key.
 
 
         :return: The tags of this UsageSummary.
@@ -824,7 +886,7 @@ class UsageSummary(object):
     def tags(self, tags):
         """
         Sets the tags of this UsageSummary.
-        For grouping, a tag definition. For filtering, a definition and key
+        For grouping, a tag definition. For filtering, a definition and key.
 
 
         :param tags: The tags of this UsageSummary.

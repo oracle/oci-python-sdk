@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConfigurationAggregation(object):
     """
-    The available configurations
+    The available configurations.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class ConfigurationAggregation(object):
     def items(self):
         """
         **[Required]** Gets the items of this ConfigurationAggregation.
-        The list of available configurations
+        The list of available configurations.
 
 
         :return: The items of this ConfigurationAggregation.
@@ -49,7 +49,7 @@ class ConfigurationAggregation(object):
     def items(self, items):
         """
         Sets the items of this ConfigurationAggregation.
-        The list of available configurations
+        The list of available configurations.
 
 
         :param items: The items of this ConfigurationAggregation.
