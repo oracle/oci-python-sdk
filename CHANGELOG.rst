@@ -4,12 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.23.3 - TBD
+2.23.3 - 2020-10-29
 ====================
 
-Added
------
-* TBD
+Fixed
+-------
+* Fixed an issue where `UploadManager.upload_stream()` raised `MultipartUploadError` if the time to upload is greater than the read timeout. Please see `github issue #300 <https://github.com/oracle/oci-python-sdk/issues/300>`_ for more details.
 
 ====================
 2.23.2 - 2020-10-27
