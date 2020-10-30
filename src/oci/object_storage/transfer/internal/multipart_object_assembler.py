@@ -482,7 +482,7 @@ class MultipartObjectAssembler:
                         self.manifest["objectName"],
                         self.manifest["uploadId"],
                         part_num + 1,  # Internally this is 0-based but object storage is 1-based
-                        part_bytes,
+                        io.BytesIO(part_bytes),
                         **new_kwargs
                     )
                 except Exception as e:
