@@ -8,25 +8,28 @@
 # Run Multi daily usage load for crontab use
 #
 # Amend variables below and database connectivity
+# Use .oci/config profiles with user authentications
 #
 # Crontab set:
-# 0 0 * * * timeout 6h /home/opc/oci-python-sdk/examples/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw.sh > /home/opc/oci-python-sdk/examples/usage_reports_to_adw/shell_scripts/run_multi_daily_usage2adw_crontab_run.txt 2>&1
+# 0 0 * * * timeout 6h /home/opc/usage_reports_to_adw/shell_scripts/run_multi_tenants.sh > /home/opc/usage_reports_to_adw/run_multi_tenants_crontab_run.txt 2>&1
 #############################################################################################################################
 
 # Env Variables based on yum instant client
-export CLIENT_HOME=/usr/lib/oracle/18.3/client64
+export CLIENT_HOME=/usr/lib/oracle/19.8/client64
 export LD_LIBRARY_PATH=$CLIENT_HOME/lib
 export PATH=$PATH:$CLIENT_HOME/bin
 
 # App dir
 export TNS_ADMIN=$HOME/ADWCUSG
-export APPDIR=$HOME/oci-python-sdk/examples/usage_reports_to_adw
+export APPDIR=$HOME/usage_reports_to_adw
+export CREDFILE=$APPDIR/config.user
+cd $APPDIR
 
 # database info
-export DATABASE_USER=usage
-export DATABASE_PASS=PaSsw0rd2#_#
-export DATABASE_NAME=adwcusg_low
-export MIN_DATE=2020-01-01
+export DATABASE_USER=`grep "^DATABASE_USER" $CREDFILE | awk -F= '{ print $2 }'`
+export DATABASE_PASS=`grep "^DATABASE_PASS" $CREDFILE | awk -F= '{ print $2 }'`
+export DATABASE_NAME=`grep "^DATABASE_NAME" $CREDFILE | awk -F= '{ print $2 }'`
+export MIN_DATE=`grep "^EXTRACT_DATE" $CREDFILE | awk -F= '{ print $2 }'`
 
 # Fixed variables
 export DATE=`date '+%Y%m%d_%H%M'`

@@ -3478,7 +3478,9 @@ class ShowOCIService(object):
                            'image': "Not Found",
                            'image_os': "Oracle Linux",
                            'agent_is_management_disabled ': "",
-                           'agent_is_monitoring_disabled': ""
+                           'agent_is_monitoring_disabled': "",
+                           'metadata': arr.metadata,
+                           'extended_metadata': arr.extended_metadata
                            }
 
                     # agent_config
