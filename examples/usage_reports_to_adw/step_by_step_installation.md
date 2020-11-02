@@ -1,6 +1,6 @@
 # Usage2ADW - Oracle Cloud Infrastructure Usage and Cost Reports to Autonomous Database with APEX Reporting
 
-## Step by Step installation Guide on OCI VM and Autonomous Data Warehouse Database
+## Step by Step Manual installation Guide on OCI VM and Autonomous Data Warehouse Database
 usage2adw is a tool which uses the Python SDK to extract the usage reports from your tenant and load it to Oracle Autonomous Database.
 
 Oracle Application Express (APEX) will be used for reporting.  
@@ -51,10 +51,11 @@ Oracle Application Express (APEX) will be used for reporting.
    Create Policy
    --> Name = UsageDownloadPolicy
    --> Desc = Allow Dynamic Group UsageDownloadGroup to Extract Usage report script
-   --> Statement 1 = define tenancy usage-report as ocid1.tenancy.oc1..aaaaaaaaned4fkpkisbwjlr56u7cj63lf3wffbilvqknstgtvzub7vhqkggq
-   --> Statement 2 = endorse dynamic-group UsageDownloadGroup to read objects in tenancy usage-report
-   --> Statement 3 = Allow dynamic-group UsageDownloadGroup to inspect compartments in tenancy
-   --> Statement 4 = Allow dynamic-group UsageDownloadGroup to inspect tenancies in tenancy
+   Statements:
+   define tenancy usage-report as ocid1.tenancy.oc1..aaaaaaaaned4fkpkisbwjlr56u7cj63lf3wffbilvqknstgtvzub7vhqkggq
+   endorse dynamic-group UsageDownloadGroup to read objects in tenancy usage-report
+   Allow dynamic-group UsageDownloadGroup to inspect compartments in tenancy
+   Allow dynamic-group UsageDownloadGroup to inspect tenancies in tenancy
    *** Please don't change the usage report tenant OCID, it is fixed.
 ```
 
@@ -94,44 +95,21 @@ Oracle Application Express (APEX) will be used for reporting.
    ssh opc@UsageVM
 ```
 
-## 6. Install Python 3 and OCI packages
+## 6. Run Install Packages Script from Github
 
+The script will install Python3, Git and python packages - oci, oci-cli, cx_Oracle and requests
+Install Oracle Database Instance Client, Update bashrc and Clone the Python SDK
 ```
-   sudo yum install -y python3
-   sudo pip3 install oci oci-cli cx_Oracle requests
-
-   # test instance principle is working using oci-cli
-   oci os ns get --auth instance_principal
-   
-   [opc@usagevm ~]$ oci os ns get --auth instance_principal
-   {
-       "data": "orasenatdplxxxx"
-   }
+   # on oci github:
+   bash -c "$(curl -L https://raw.githubusercontent.com/oci-python-sdk/examples/usage_reports_to_adw/master/setup/setup_packages.sh)"
 ```
 
-## 7. Install Oracle instant client
+## 7. Setup Credentials
+
+This script will ask for Database Name, Admin Password, Application Password and Extract Start Date
 
 ```
-   # Please refer to the download site for Manual installation = https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html
-
-   # update Oracle Linux el7 repository
-   sudo yum install oracle-release-el7
-
-   # List instant client packages
-   sudo yum list oracle-instantclient*
-
-   # please choose basic and sqlplus package, below example on 19.6
-   sudo yum install -y oracle-instantclient19.6-basic.x86_64 oracle-instantclient19.6-sqlplus.x86_64
-
-   # setup oracle home variables
-   # Add the below to $HOME/.bashrc:
-   export CLIENT_HOME=/usr/lib/oracle/19.6/client64
-   export LD_LIBRARY_PATH=$CLIENT_HOME/lib
-   export PATH=$PATH:$CLIENT_HOME/bin
-   export TNS_ADMIN=$HOME/ADWCUSG
-
-   # set the variables
-   source $HOME/.bashrc
+   /home/opc/usage_reports_to_adw/setup/setup_credentials.sh
 ```
    
 ## 8. Download Autonomous database Wallet
@@ -145,103 +123,53 @@ Oracle Application Express (APEX) will be used for reporting.
    --> Administration
    --> Download Client Credential
    --> Specify the Admin Password
-   --> Copy the Wallet wallet_ADWCUSG.zip to the Linux folder $HOME/ADWCUSG
+   --> Copy the Wallet wallet_ADWCUSG.zip to the Linux folder /home/opc with the name wallet.zip
 ```
 
 ![](img/Image_10.png)
 
+## 9. Check OCI Connectivity and setup database users and apex
+
 ```
-   # on Linux -> Unzip Wallet
-   cd $HOME/ADWCUSG
-   unzip wallet_ADWCUSG.zip
+   # Execute:
+   /home/opc/usage_reports_to_adw/setup/setup_usage2adw.sh
    
-   # Change directory of sqlnet.ora to $HOME/ADWCUSG
-   sed -i "s#?/network/admin#$HOME/ADWCUSG#" sqlnet.ora
 ```
 
-## 9. Create Database User for the Usage repository
-
-```
-   sqlplus admin/password@adwcusg_low
-   
-   # Choose your own password
-   SQL> create user usage identified by PaSsw0rd2#_#;
-   SQL> grant connect, resource, dwrole, unlimited tablespace to usage;
-   SQL> exit
-```
-
-## 10. Clone the OCI SDK Repo from Git Hub
-
-```
-   cd $HOME
-   sudo yum install -y git
-   git clone https://github.com/oracle/oci-python-sdk
-   cd oci-python-sdk/examples/usage_reports_to_adw
-```
-
-## 11. Execute the python script - usage2adw.py
-
-```
-    # Please amend the password for the USAGE schema
-    python3 usage2adw.py -ip -du USAGE -dp PaSsw0rd2#_# -dn adwcusg_low
-```
-
-
-## 12. Open Autonomous Database APEX Application
+## 10. Open Autonomous Database APEX Workspace Admin
 
 ```
     OCI Console -> Autonomous Databases -> ADWCUSG -> Service Console
     Development Menu -> Oracle APEX
-```
+    Choose Workspace Login.
 
-![](img/Image_11.png)
+    Workspace = Usage
+    User = Usage
+    Password = Password you defined for the application
 
-```
-    Enter Admin Password - for first time setup
-```
-
-![](img/Image_12.png)
-
-
-## 13. Create APEX workspace
-
-![](img/Image_13.png)
 
 ```
-    Database User = USAGE
-    Workspace Name = USAGE
-```
-
-![](img/Image_14.png)
-
-```
-    Sign Out - Top Right Menu -> Sign Out
-```
-
-![](img/Image_15.png)
-
-## 14. Setup APEX Administrator User Application
-
-```
-   Login under USAGE Workspace
-   --> Workspace = USAGE
-   --> Username = USAGE
-   --> Password = "USAGE Schema Password"
-   --> Press Continue
- 
-   Specify your e-mail and name.
-   --> Apply Changes
-```
-
 ![](img/Image_16.png)
 
-![](img/Image_17.png)
-
-![](img/Image_18.png)
-
-## 15. Create End User Account
+## 11. Login to Apex Application
 
 ```
+    Press on App Builder on the Left side
+    Press on the application "Usage and Cost Report"
+    Execute the application
+    Bookmark this page for future use
+
+    User = Usage
+    Password = Password you defined for the application
+
+```
+![](img/Image_30.png)
+
+
+## 12. How to create additional End User Accounts
+
+```
+   Login to Workspace Managament 
    Top 3rd Right Menu -> Manage Users and Groups
    --> Create User
    
@@ -262,81 +190,13 @@ Oracle Application Express (APEX) will be used for reporting.
 
 ![](img/Image_22.png)
    
-## 16. Import APEX application
 
-Right Click and Download [usage.demo.apex.sql](https://raw.githubusercontent.com/oracle/oci-python-sdk/master/examples/usage_reports_to_adw/apex_demo_app/usage.demo.apex.sql) from github "apex_demo_app" folder (raw)
-
+## 20. How to upgrade the usage2adw application and APEX
 ```
-   APEX Top Menu -> App Builder -> Import
-   --> Choose File = usage.demo.apex.sql (Download from github apex folder)
-   --> Press Next
-   --> Press Next 
-   --> Press Install Application
-   --> Press Next 
-   --> Press Install 
+   # on oci github:
+   bash -c "$(curl -L https://raw.githubusercontent.com/oci-python-sdk/examples/usage_reports_to_adw/master/setup/setup_upgrade_usage2adw.sh)"    
 ```
 
-![](img/Image_23.png)
-
-![](img/Image_24.png)
-
-![](img/Image_25.png)
-
-![](img/Image_26.png)
-
-![](img/Image_27.png)
-
-![](img/Image_28.png)
-
-## 17. Execute Application
-
-```
-    Press Run application
-    Bookmark the page for future use.
-    Login = your end user username and password
-```
-
-![](img/Image.png)
-
-![](img/Image_30.png)
-
-![](img/Image_31.png)
-
-![](img/Image_32.png)
-
-![](img/screen_1.png)
-![](img/screen_2.png)
-![](img/screen_3.png)
-
-
-## 18. Bonus - Schedule a crontab job to execute the load daily
-```
-    # Amend the database variables of the file run_daily_usage2adw.sh according to your environment:
-    $HOME/oci-python-sdk/examples/usage_reports_to_adw/shell_scripts/run_single_daily_usage2adw.sh
-
-	# change execution permission
-	chmod +x $HOME/oci-python-sdk/examples/usage_reports_to_adw/shell_scripts/run_single_daily_usage2adw.sh
-    
-    # add crontab that execute every night
-    0 0 * * * timeout 6h /home/opc/oci-python-sdk/examples/usage_reports_to_adw/shell_scripts/run_single_daily_usage2adw.sh > /home/opc/oci-python-sdk/examples/usage_reports_to_adw/shell_scripts/run_single_daily_usage2adw_crontab_run.txt 2>&1
-```
-
-## 19. How to upgrade the usage2adw software and "OCI Usage and Cost Report" APEX application
-```
-    # clone the software from github:
-    cd $HOME
-    git clone https://github.com/oracle/oci-python-sdk
-
-    # Execute the python script in order to upgrade the metadata
-    cd oci-python-sdk/examples/usage_reports_to_adw
-    python3 usage2adw.py -ip -du USAGE -dp PaSsw0rd2#_# -dn adwcusg_low
-    
-    # Login to APEX workspace and choose "OCI Usage and Cost Report" Application
-    On the right menu -> Delete this application
-    
-    # Import the new APEX Application
-    Follow section 16 - Import APEX application
-```
 
 ## License
 

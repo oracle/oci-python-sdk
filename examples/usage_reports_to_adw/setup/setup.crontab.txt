@@ -1,0 +1,5 @@
+###############################################################################
+# Crontab to run every 6 hours
+###############################################################################
+0 */6 * * * timeout 6h /home/opc/usage_reports_to_adw/shell_scripts/run_single_daily_usage2adw.sh > /home/opc/usage_reports_to_adw/run_single_daily_usage2adw_crontab_run.txt 2>&1
+
