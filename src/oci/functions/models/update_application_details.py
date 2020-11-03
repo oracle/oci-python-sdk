@@ -22,6 +22,10 @@ class UpdateApplicationDetails(object):
             The value to assign to the config property of this UpdateApplicationDetails.
         :type config: dict(str, str)
 
+        :param syslog_url:
+            The value to assign to the syslog_url property of this UpdateApplicationDetails.
+        :type syslog_url: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateApplicationDetails.
         :type freeform_tags: dict(str, str)
@@ -33,17 +37,20 @@ class UpdateApplicationDetails(object):
         """
         self.swagger_types = {
             'config': 'dict(str, str)',
+            'syslog_url': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
             'config': 'config',
+            'syslog_url': 'syslogUrl',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._config = None
+        self._syslog_url = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -80,6 +87,38 @@ class UpdateApplicationDetails(object):
         :type: dict(str, str)
         """
         self._config = config
+
+    @property
+    def syslog_url(self):
+        """
+        Gets the syslog_url of this UpdateApplicationDetails.
+        A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls.
+        The syslog URL must be reachable from all of the subnets configured for the application.
+        Note: If you enable the OCI Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the OCI Logging service, and not to the syslog URL.
+
+        Example: `tcp://logserver.myserver:1234`
+
+
+        :return: The syslog_url of this UpdateApplicationDetails.
+        :rtype: str
+        """
+        return self._syslog_url
+
+    @syslog_url.setter
+    def syslog_url(self, syslog_url):
+        """
+        Sets the syslog_url of this UpdateApplicationDetails.
+        A syslog URL to which to send all function logs. Supports tcp, udp, and tcp+tls.
+        The syslog URL must be reachable from all of the subnets configured for the application.
+        Note: If you enable the OCI Logging service for this application, the syslogUrl value is ignored. Function logs are sent to the OCI Logging service, and not to the syslog URL.
+
+        Example: `tcp://logserver.myserver:1234`
+
+
+        :param syslog_url: The syslog_url of this UpdateApplicationDetails.
+        :type: str
+        """
+        self._syslog_url = syslog_url
 
     @property
     def freeform_tags(self):

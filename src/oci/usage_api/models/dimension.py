@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Dimension(object):
     """
-    The dimension use for filtering.
+    The dimension used for filtering. availabe dimension are \"service\", \"skuName\", \"skuPartNumber\", \"unit\", \"compartmentName\", \"compartmentPath\", \"compartmentId\", \"platform\", \"region\", \"logicalAd\", \"resourceId\", \"tenantId\", \"tenantName\"
     example:
     `[{value: \"COMPUTE\", key: \"service\"}]`
     """
@@ -46,7 +46,7 @@ class Dimension(object):
     def key(self):
         """
         **[Required]** Gets the key of this Dimension.
-        The key of the dimension.
+        The dimension key.
 
 
         :return: The key of this Dimension.
@@ -58,7 +58,7 @@ class Dimension(object):
     def key(self, key):
         """
         Sets the key of this Dimension.
-        The key of the dimension.
+        The dimension key.
 
 
         :param key: The key of this Dimension.
@@ -70,7 +70,7 @@ class Dimension(object):
     def value(self):
         """
         **[Required]** Gets the value of this Dimension.
-        The value of the dimension.
+        The dimension value.
 
 
         :return: The value of this Dimension.
@@ -82,7 +82,7 @@ class Dimension(object):
     def value(self, value):
         """
         Sets the value of this Dimension.
-        The value of the dimension.
+        The dimension value.
 
 
         :param value: The value of this Dimension.

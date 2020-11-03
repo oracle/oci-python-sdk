@@ -7,7 +7,7 @@
 # Amend variables below and database connectivity
 #
 # Crontab set:
-# 0 7 * * * timeout 6h /home/opc/oci-python-sdk/examples/usage_reports_to_adw/shell_scripts > /home/opc/oci-python-sdk/examples/usage_reports_to_adw/shell_scripts/run_daily_report_crontab_run.txt 2>&1
+# 0 7 * * * timeout 6h /home/opc/usage_reports_to_adw/shell_scripts/run_daily_report.sh > /home/opc/usage_reports_to_adw/run_daily_report_crontab_run.txt 2>&1
 #############################################################################################################################
 # Env Variables based on yum instant client
 export CLIENT_HOME=/usr/lib/oracle/19.6/client64
@@ -17,6 +17,8 @@ export PATH=$PATH:$CLIENT_HOME/bin
 # App dir
 export TNS_ADMIN=$HOME/ADWCUSG
 export APPDIR=$HOME/oci-python-sdk/examples/usage_reports_to_adw
+export CREDFILE=$APPDIR/config.user
+cd $APPDIR
 
 # Mail Info
 export DATE_PRINT="`date '+%d-%b-%Y'`"
@@ -26,9 +28,9 @@ export MAIL_TO="oci.user@oracle.com"
 export MAIL_SUBJECT="Cost Usage Report $DATE_PRINT"
 
 # database info
-export DATABASE_USER=usage
-export DATABASE_PASS=<password>
-export DATABASE_NAME=adwcusg_low
+export DATABASE_USER=`grep "^DATABASE_USER" $CREDFILE | awk -F= '{ print $2 }'`
+export DATABASE_PASS=`grep "^DATABASE_PASS" $CREDFILE | awk -F= '{ print $2 }'`
+export DATABASE_NAME=`grep "^DATABASE_NAME" $CREDFILE | awk -F= '{ print $2 }'`
 
 # Fixed variables
 export DATE=`date '+%Y%m%d_%H%M'`
@@ -37,10 +39,10 @@ export OUTPUT_FILE=${REPORT_DIR}/daily_${DATE}.txt
 mkdir -p ${REPORT_DIR}
 
 ##################################
-# run report     
+# run report
 ##################################
 echo "
-set pages 0 head off feed off lines 799 trimsp on echo off verify off 
+set pages 0 head off feed off lines 799 trimsp on echo off verify off
 set define @
 col line for a1000
 
@@ -113,7 +115,7 @@ from
         case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10)) = trunc(day10) then 'dcbold' else 'dcr' END as day10_class
     from
     (
-        select 
+        select
             tenant_name,
             sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-10) then COST_MY_COST else 0 end) DAY10,
             sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-9 ) then COST_MY_COST else 0 end) DAY9,
@@ -128,7 +130,7 @@ from
             max(UPDATE_DATE) LAST_LOAD,
             max(agent_version) AGENT
         from oci_cost_stats
-        where 
+        where
             tenant_name like '%' and
             USAGE_INTERVAL_START >= trunc(sysdate-11)
         group by tenant_name
@@ -194,7 +196,7 @@ from
         case when trunc(greatest(m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12)) = trunc(m12) then 'dcbold' else 'dcr' END as m12_class
     from
     (
-        select 
+        select
             tenant_name,
             sum(case when trunc(USAGE_INTERVAL_START,'MM') = add_months(trunc(sysdate,'MM'),-11) then COST_MY_COST else 0 end) M12,
             sum(case when trunc(USAGE_INTERVAL_START,'MM') = add_months(trunc(sysdate,'MM'),-10) then COST_MY_COST else 0 end) M11,
@@ -209,12 +211,56 @@ from
             sum(case when trunc(USAGE_INTERVAL_START,'MM') = add_months(trunc(sysdate,'MM'), -1) then COST_MY_COST else 0 end) M2,
             sum(case when trunc(USAGE_INTERVAL_START,'MM') =            trunc(sysdate,'MM')      then COST_MY_COST else 0 end) M1
         from oci_cost_stats
-        where 
+        where
             tenant_name like '%'
         group by tenant_name
         order by 1
     )
 );
+prompt </table>
+
+prompt <br><br>
+
+prompt <table border=1 cellpadding=4 cellspacing=0 width=300 >
+prompt     <tr><td colspan=2 class=tabheader>Storage Statistics</td></tr>
+
+select
+    '<tr>'||
+        '<th width=230 nowrap class=th1>Area</th>'||
+        '<th width=70  nowrap class=th1>Gigabyte</th>'||
+    '</tr>'
+    as line
+from dual
+union all
+select
+    '<tr>'||
+        '<td nowrap class=dc1> '||object_name||'</td> '||
+        '<td nowrap class=dcr> '||gb||'</td> '||
+    '</tr>' as line
+from
+(
+    select
+        'Cost Tables and Indexes' object_name,
+        to_char(sum(bytes/1024/1024/1024),'999,999.99') GB
+    from
+        user_segments
+    where segment_name like '%OCI_COST%'
+    union all
+    select
+        'Usage Tables and Indexes' object_name,
+        to_char(sum(bytes/1024/1024/1024),'999,999.99') GB
+    from
+        user_segments
+    where segment_name like '%OCI_USAGE%'
+    union all
+    select
+        'Total All Objects' object_name,
+        to_char(sum(bytes/1024/1024/1024),'999,999.99') GB
+    from
+        user_segments
+    where segment_name not like 'BIN%'
+);
+
 prompt </table>
 
 " | sqlplus -s ${DATABASE_USER}/${DATABASE_PASS}@${DATABASE_NAME} > $OUTPUT_FILE
@@ -241,3 +287,4 @@ Subject: $MAIL_SUBJECT
 Content-Type: text/html
 `cat $OUTPUT_FILE`
 eomail
+

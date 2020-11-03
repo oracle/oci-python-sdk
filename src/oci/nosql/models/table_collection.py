@@ -22,16 +22,30 @@ class TableCollection(object):
             The value to assign to the items property of this TableCollection.
         :type items: list[TableSummary]
 
+        :param max_auto_reclaimable_tables:
+            The value to assign to the max_auto_reclaimable_tables property of this TableCollection.
+        :type max_auto_reclaimable_tables: int
+
+        :param auto_reclaimable_tables:
+            The value to assign to the auto_reclaimable_tables property of this TableCollection.
+        :type auto_reclaimable_tables: int
+
         """
         self.swagger_types = {
-            'items': 'list[TableSummary]'
+            'items': 'list[TableSummary]',
+            'max_auto_reclaimable_tables': 'int',
+            'auto_reclaimable_tables': 'int'
         }
 
         self.attribute_map = {
-            'items': 'items'
+            'items': 'items',
+            'max_auto_reclaimable_tables': 'maxAutoReclaimableTables',
+            'auto_reclaimable_tables': 'autoReclaimableTables'
         }
 
         self._items = None
+        self._max_auto_reclaimable_tables = None
+        self._auto_reclaimable_tables = None
 
     @property
     def items(self):
@@ -56,6 +70,54 @@ class TableCollection(object):
         :type: list[TableSummary]
         """
         self._items = items
+
+    @property
+    def max_auto_reclaimable_tables(self):
+        """
+        Gets the max_auto_reclaimable_tables of this TableCollection.
+        The maximum number of reclaimable tables allowed in the tenancy.
+
+
+        :return: The max_auto_reclaimable_tables of this TableCollection.
+        :rtype: int
+        """
+        return self._max_auto_reclaimable_tables
+
+    @max_auto_reclaimable_tables.setter
+    def max_auto_reclaimable_tables(self, max_auto_reclaimable_tables):
+        """
+        Sets the max_auto_reclaimable_tables of this TableCollection.
+        The maximum number of reclaimable tables allowed in the tenancy.
+
+
+        :param max_auto_reclaimable_tables: The max_auto_reclaimable_tables of this TableCollection.
+        :type: int
+        """
+        self._max_auto_reclaimable_tables = max_auto_reclaimable_tables
+
+    @property
+    def auto_reclaimable_tables(self):
+        """
+        Gets the auto_reclaimable_tables of this TableCollection.
+        The current number of reclaimable tables in the tenancy.
+
+
+        :return: The auto_reclaimable_tables of this TableCollection.
+        :rtype: int
+        """
+        return self._auto_reclaimable_tables
+
+    @auto_reclaimable_tables.setter
+    def auto_reclaimable_tables(self, auto_reclaimable_tables):
+        """
+        Sets the auto_reclaimable_tables of this TableCollection.
+        The current number of reclaimable tables in the tenancy.
+
+
+        :param auto_reclaimable_tables: The auto_reclaimable_tables of this TableCollection.
+        :type: int
+        """
+        self._auto_reclaimable_tables = auto_reclaimable_tables
 
     def __repr__(self):
         return formatted_flat_dict(self)

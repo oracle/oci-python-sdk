@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.11.03 - 2020-11-03
+=====================
+* Added functionality for faster deployment (Step by Step installation amended)
+* Added functionality to support Market Place Image with automatic deployment
+* Changed shell scripts to support credential at file config.user
+
+=====================
 20.10.27 - 2020-10.27
 =====================
 * Added flag -sr to skip public rate

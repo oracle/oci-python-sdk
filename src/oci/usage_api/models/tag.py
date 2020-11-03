@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Tag(object):
     """
-    The tag use for filtering.
+    The tag used for filtering.
     """
 
     def __init__(self, **kwargs):
@@ -75,7 +75,7 @@ class Tag(object):
     def key(self):
         """
         Gets the key of this Tag.
-        The key of the tag.
+        The tag key.
 
 
         :return: The key of this Tag.
@@ -87,7 +87,7 @@ class Tag(object):
     def key(self, key):
         """
         Sets the key of this Tag.
-        The key of the tag.
+        The tag key.
 
 
         :param key: The key of this Tag.
@@ -99,7 +99,7 @@ class Tag(object):
     def value(self):
         """
         Gets the value of this Tag.
-        The value of the tag.
+        The tag value.
 
 
         :return: The value of this Tag.
@@ -111,7 +111,7 @@ class Tag(object):
     def value(self, value):
         """
         Sets the value of this Tag.
-        The value of the tag.
+        The tag value.
 
 
         :param value: The value of this Tag.
