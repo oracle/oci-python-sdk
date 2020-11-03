@@ -50,6 +50,14 @@ class TableSummary(object):
             The value to assign to the lifecycle_details property of this TableSummary.
         :type lifecycle_details: str
 
+        :param is_auto_reclaimable:
+            The value to assign to the is_auto_reclaimable property of this TableSummary.
+        :type is_auto_reclaimable: bool
+
+        :param time_of_expiration:
+            The value to assign to the time_of_expiration property of this TableSummary.
+        :type time_of_expiration: datetime
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this TableSummary.
         :type freeform_tags: dict(str, str)
@@ -57,6 +65,10 @@ class TableSummary(object):
         :param defined_tags:
             The value to assign to the defined_tags property of this TableSummary.
         :type defined_tags: dict(str, dict(str, object))
+
+        :param system_tags:
+            The value to assign to the system_tags property of this TableSummary.
+        :type system_tags: dict(str, dict(str, object))
 
         """
         self.swagger_types = {
@@ -68,8 +80,11 @@ class TableSummary(object):
             'table_limits': 'TableLimits',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'is_auto_reclaimable': 'bool',
+            'time_of_expiration': 'datetime',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -81,8 +96,11 @@ class TableSummary(object):
             'table_limits': 'tableLimits',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'is_auto_reclaimable': 'isAutoReclaimable',
+            'time_of_expiration': 'timeOfExpiration',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'system_tags': 'systemTags'
         }
 
         self._id = None
@@ -93,8 +111,11 @@ class TableSummary(object):
         self._table_limits = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._is_auto_reclaimable = None
+        self._time_of_expiration = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
 
     @property
     def id(self):
@@ -289,6 +310,58 @@ class TableSummary(object):
         self._lifecycle_details = lifecycle_details
 
     @property
+    def is_auto_reclaimable(self):
+        """
+        Gets the is_auto_reclaimable of this TableSummary.
+        True if this table can be reclaimed after an idle period.
+
+
+        :return: The is_auto_reclaimable of this TableSummary.
+        :rtype: bool
+        """
+        return self._is_auto_reclaimable
+
+    @is_auto_reclaimable.setter
+    def is_auto_reclaimable(self, is_auto_reclaimable):
+        """
+        Sets the is_auto_reclaimable of this TableSummary.
+        True if this table can be reclaimed after an idle period.
+
+
+        :param is_auto_reclaimable: The is_auto_reclaimable of this TableSummary.
+        :type: bool
+        """
+        self._is_auto_reclaimable = is_auto_reclaimable
+
+    @property
+    def time_of_expiration(self):
+        """
+        Gets the time_of_expiration of this TableSummary.
+        If lifecycleState is INACTIVE, indicates when
+        this table will be automatically removed.
+        An RFC3339 formatted datetime string.
+
+
+        :return: The time_of_expiration of this TableSummary.
+        :rtype: datetime
+        """
+        return self._time_of_expiration
+
+    @time_of_expiration.setter
+    def time_of_expiration(self, time_of_expiration):
+        """
+        Sets the time_of_expiration of this TableSummary.
+        If lifecycleState is INACTIVE, indicates when
+        this table will be automatically removed.
+        An RFC3339 formatted datetime string.
+
+
+        :param time_of_expiration: The time_of_expiration of this TableSummary.
+        :type: datetime
+        """
+        self._time_of_expiration = time_of_expiration
+
+    @property
     def freeform_tags(self):
         """
         Gets the freeform_tags of this TableSummary.
@@ -343,6 +416,38 @@ class TableSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this TableSummary.
+        Read-only system tag. These predefined keys are scoped to
+        namespaces.  At present the only supported namespace is
+        `\"orcl-cloud\"`; and the only key in that namespace is
+        `\"free-tier-retained\"`.
+        Example: `{\"orcl-cloud\"\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this TableSummary.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this TableSummary.
+        Read-only system tag. These predefined keys are scoped to
+        namespaces.  At present the only supported namespace is
+        `\"orcl-cloud\"`; and the only key in that namespace is
+        `\"free-tier-retained\"`.
+        Example: `{\"orcl-cloud\"\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this TableSummary.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

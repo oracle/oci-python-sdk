@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Configuration(object):
     """
-    A configuration
+    A configuration.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class Configuration(object):
     def key(self):
         """
         **[Required]** Gets the key of this Configuration.
-        The key of the config
+        The configuration key.
 
 
         :return: The key of this Configuration.
@@ -56,7 +56,7 @@ class Configuration(object):
     def key(self, key):
         """
         Sets the key of this Configuration.
-        The key of the config
+        The configuration key.
 
 
         :param key: The key of this Configuration.
@@ -68,7 +68,7 @@ class Configuration(object):
     def values(self):
         """
         Gets the values of this Configuration.
-        The value of the config
+        The configuration value.
 
 
         :return: The values of this Configuration.
@@ -80,7 +80,7 @@ class Configuration(object):
     def values(self, values):
         """
         Sets the values of this Configuration.
-        The value of the config
+        The configuration value.
 
 
         :param values: The values of this Configuration.

@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+20.11.03 - 20.11.03
+=====================
+* Added metadata and extended metadata for instances using json output
+* Added tags to load balancer resource
+
+=====================
 20.10.20 - 20.10.20
 =====================
 * Added limit check per compartment if only one compartment filtered

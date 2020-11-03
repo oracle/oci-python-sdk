@@ -92,7 +92,7 @@ class ApplicationSummary(object):
     @property
     def id(self):
         """
-        Gets the id of this ApplicationSummary.
+        **[Required]** Gets the id of this ApplicationSummary.
         The `OCID`__ of the application.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm

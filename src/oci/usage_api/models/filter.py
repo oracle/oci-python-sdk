@@ -71,7 +71,7 @@ class Filter(object):
     def operator(self):
         """
         Gets the operator of this Filter.
-        The operator of the filter. Example: 'AND', 'OR', 'NOT'.
+        The filter operator. Example: 'AND', 'OR', 'NOT'.
 
         Allowed values for this property are: "AND", "NOT", "OR"
 
@@ -85,7 +85,7 @@ class Filter(object):
     def operator(self, operator):
         """
         Sets the operator of this Filter.
-        The operator of the filter. Example: 'AND', 'OR', 'NOT'.
+        The filter operator. Example: 'AND', 'OR', 'NOT'.
 
 
         :param operator: The operator of this Filter.

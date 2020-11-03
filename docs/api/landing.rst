@@ -74,6 +74,7 @@ API Reference
 * :doc:`Notification Control Plane <ons/client/oci.ons.NotificationControlPlaneClient>`
 * :doc:`Notification Data Plane <ons/client/oci.ons.NotificationDataPlaneClient>`
 * :doc:`Operations Insights <opsi/client/oci.opsi.OperationsInsightsClient>`
+* :doc:`Optimizer <optimizer/client/oci.optimizer.OptimizerClient>`
 * :doc:`Os Management <os_management/client/oci.os_management.OsManagementClient>`
 * :doc:`Resource Manager <resource_manager/client/oci.resource_manager.ResourceManagerClient>`
 * :doc:`Resource Search <resource_search/client/oci.resource_search.ResourceSearchClient>`
@@ -81,6 +82,10 @@ API Reference
 * :doc:`Secrets <secrets/client/oci.secrets.SecretsClient>`
 * :doc:`Stream Admin <streaming/client/oci.streaming.StreamAdminClient>`
 * :doc:`Stream <streaming/client/oci.streaming.StreamClient>`
+* :doc:`Link <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.LinkClient>`
+* :doc:`Recipient Invitation <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.RecipientInvitationClient>`
+* :doc:`Sender Invitation <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.SenderInvitationClient>`
+* :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
 * :doc:`Usageapi <usage_api/client/oci.usage_api.UsageapiClient>`
 * :doc:`Vaults <vault/client/oci.vault.VaultsClient>`
 * :doc:`Redirect <waas/client/oci.waas.RedirectClient>`
@@ -152,12 +157,14 @@ API Reference
     oda
     ons
     opsi
+    optimizer
     os_management
     resource_manager
     resource_search
     sch
     secrets
     streaming
+    tenant_manager_control_plane
     usage_api
     vault
     waas

@@ -37,6 +37,10 @@ class Table(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the lifecycle_state property of a Table.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Table object with values from keyword arguments.
@@ -68,9 +72,17 @@ class Table(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Table.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
+
+        :param is_auto_reclaimable:
+            The value to assign to the is_auto_reclaimable property of this Table.
+        :type is_auto_reclaimable: bool
+
+        :param time_of_expiration:
+            The value to assign to the time_of_expiration property of this Table.
+        :type time_of_expiration: datetime
 
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this Table.
@@ -92,6 +104,10 @@ class Table(object):
             The value to assign to the defined_tags property of this Table.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param system_tags:
+            The value to assign to the system_tags property of this Table.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -101,11 +117,14 @@ class Table(object):
             'time_updated': 'datetime',
             'table_limits': 'TableLimits',
             'lifecycle_state': 'str',
+            'is_auto_reclaimable': 'bool',
+            'time_of_expiration': 'datetime',
             'lifecycle_details': 'str',
             'schema': 'Schema',
             'ddl_statement': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -116,11 +135,14 @@ class Table(object):
             'time_updated': 'timeUpdated',
             'table_limits': 'tableLimits',
             'lifecycle_state': 'lifecycleState',
+            'is_auto_reclaimable': 'isAutoReclaimable',
+            'time_of_expiration': 'timeOfExpiration',
             'lifecycle_details': 'lifecycleDetails',
             'schema': 'schema',
             'ddl_statement': 'ddlStatement',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'system_tags': 'systemTags'
         }
 
         self._id = None
@@ -130,11 +152,14 @@ class Table(object):
         self._time_updated = None
         self._table_limits = None
         self._lifecycle_state = None
+        self._is_auto_reclaimable = None
+        self._time_of_expiration = None
         self._lifecycle_details = None
         self._schema = None
         self._ddl_statement = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._system_tags = None
 
     @property
     def id(self):
@@ -286,7 +311,7 @@ class Table(object):
         Gets the lifecycle_state of this Table.
         The state of a table.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -305,10 +330,62 @@ class Table(object):
         :param lifecycle_state: The lifecycle_state of this Table.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "INACTIVE"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def is_auto_reclaimable(self):
+        """
+        Gets the is_auto_reclaimable of this Table.
+        True if this table can be reclaimed after an idle period.
+
+
+        :return: The is_auto_reclaimable of this Table.
+        :rtype: bool
+        """
+        return self._is_auto_reclaimable
+
+    @is_auto_reclaimable.setter
+    def is_auto_reclaimable(self, is_auto_reclaimable):
+        """
+        Sets the is_auto_reclaimable of this Table.
+        True if this table can be reclaimed after an idle period.
+
+
+        :param is_auto_reclaimable: The is_auto_reclaimable of this Table.
+        :type: bool
+        """
+        self._is_auto_reclaimable = is_auto_reclaimable
+
+    @property
+    def time_of_expiration(self):
+        """
+        Gets the time_of_expiration of this Table.
+        If lifecycleState is INACTIVE, indicates when
+        this table will be automatically removed.
+        An RFC3339 formatted datetime string.
+
+
+        :return: The time_of_expiration of this Table.
+        :rtype: datetime
+        """
+        return self._time_of_expiration
+
+    @time_of_expiration.setter
+    def time_of_expiration(self, time_of_expiration):
+        """
+        Sets the time_of_expiration of this Table.
+        If lifecycleState is INACTIVE, indicates when
+        this table will be automatically removed.
+        An RFC3339 formatted datetime string.
+
+
+        :param time_of_expiration: The time_of_expiration of this Table.
+        :type: datetime
+        """
+        self._time_of_expiration = time_of_expiration
 
     @property
     def lifecycle_details(self):
@@ -433,6 +510,38 @@ class Table(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this Table.
+        Read-only system tag. These predefined keys are scoped to
+        namespaces.  At present the only supported namespace is
+        `\"orcl-cloud\"`; and the only key in that namespace is
+        `\"free-tier-retained\"`.
+        Example: `{\"orcl-cloud\"\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this Table.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this Table.
+        Read-only system tag. These predefined keys are scoped to
+        namespaces.  At present the only supported namespace is
+        `\"orcl-cloud\"`; and the only key in that namespace is
+        `\"free-tier-retained\"`.
+        Example: `{\"orcl-cloud\"\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this Table.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

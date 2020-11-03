@@ -641,7 +641,7 @@ class FunctionsManagementClient(object):
             A filter to return only applications with display names that match the display name string. Matching is exact.
 
         :param str id: (optional)
-            A filter to return only applications with the specfied OCID.
+            A filter to return only applications with the specified OCID.
 
         :param str sort_order: (optional)
             Specifies sort order.

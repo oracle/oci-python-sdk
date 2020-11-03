@@ -117,7 +117,11 @@ class ObjectLifecycleRule(object):
     def target(self):
         """
         Gets the target of this ObjectLifecycleRule.
-
+        The target of the object lifecycle policy rule. The values of target can be either \"objects\",
+        \"multipart-uploads\" or \"previous-object-versions\". This field when declared as \"objects\" is used to specify
+        archive or delete rule for objects. This field when declared as \"multipart-uploads\" is used to specify
+        the abort (only) rule for uncommitted multipart-uploads. This field when declared as \"previous-object-versions\"
+        is used to specify archive or delete rule for previous versions of existing objects.
 
 
         :return: The target of this ObjectLifecycleRule.
@@ -129,7 +133,11 @@ class ObjectLifecycleRule(object):
     def target(self, target):
         """
         Sets the target of this ObjectLifecycleRule.
-
+        The target of the object lifecycle policy rule. The values of target can be either \"objects\",
+        \"multipart-uploads\" or \"previous-object-versions\". This field when declared as \"objects\" is used to specify
+        archive or delete rule for objects. This field when declared as \"multipart-uploads\" is used to specify
+        the abort (only) rule for uncommitted multipart-uploads. This field when declared as \"previous-object-versions\"
+        is used to specify archive or delete rule for previous versions of existing objects.
 
 
         :param target: The target of this ObjectLifecycleRule.
