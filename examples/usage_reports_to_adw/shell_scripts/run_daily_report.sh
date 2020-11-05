@@ -58,7 +58,7 @@ prompt        .tabheader {font-size:12pt; font-family:arial; font-weight:bold; c
 prompt    </style>
 
 prompt <table border=1 cellpadding=3 cellspacing=0 width=1024 >
-prompt     <tr><td colspan=15 class=tabheader>Cost Usage Daily Report - $DATE_PRINT </td></tr>
+prompt     <tr><td colspan=16 class=tabheader>Cost Usage Daily Report - $DATE_PRINT </td></tr>
 
 select
     '<tr>'||
@@ -75,6 +75,7 @@ select
         '<th width=80  nowrap class=th1>'||to_char(trunc(sysdate-1),'DD-MON-YYYY')||'</th>'||
         '<th width=80  nowrap class=th1>Month 31 Prediction</th>'||
         '<th width=80  nowrap class=th1>Year Prediction</th>'||
+        '<th width=80  nowrap class=th1>Sub Tenants</th>'||
         '<th width=80  nowrap class=th1>Last Load</th>'||
         '<th width=80  nowrap class=th1>Agent Used</th>'||
     '</tr>'
@@ -96,13 +97,14 @@ select
         '<td nowrap class='||day1_class||'> '||to_char(day1,'999,999')||'</td>'||
         '<td nowrap class=dcr> '||to_char(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10)*31,'999,999,999')||'</td>'||
         '<td nowrap class=dcr> '||to_char(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10)*365,'999,999,999')||'</td>'||
+        '<td nowrap class=dcc> '||sub_tenants||'</td>'||
         '<td nowrap class=dcc> '||to_char(LAST_LOAD,'DD-MON-YYYY HH24:MI')||'</td>'||
         '<td nowrap class=dcc> '||agent||'</td> '||
     '</tr>' as line
 from
 (
     select
-        tenant_name,day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,last_load,agent,
+        tenant_name,day1,day2,day3,day4,day5,day6,day7,day8,day9,day10,last_load,agent,sub_tenants,
         case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10)) = trunc(day1) then 'dcbold' else 'dcr' END as day1_class,
         case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10)) = trunc(day2) then 'dcbold' else 'dcr' END as day2_class,
         case when trunc(greatest(day1,day2,day3,day4,day5,day6,day7,day8,day9,day10)) = trunc(day3) then 'dcbold' else 'dcr' END as day3_class,
@@ -127,9 +129,10 @@ from
             sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-3 ) then COST_MY_COST else 0 end) DAY3,
             sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-2 ) then COST_MY_COST else 0 end) DAY2,
             sum(case when trunc(USAGE_INTERVAL_START) = trunc(sysdate-1 ) then COST_MY_COST else 0 end) DAY1,
+            (select count(*) from OCI_COST_REFERENCE b where s.tenant_name=b.tenant_name and ref_type='TENANT_ID') sub_tenants,
             max(UPDATE_DATE) LAST_LOAD,
             max(agent_version) AGENT
-        from oci_cost_stats
+        from oci_cost_stats s
         where
             tenant_name like '%' and
             USAGE_INTERVAL_START >= trunc(sysdate-11)
